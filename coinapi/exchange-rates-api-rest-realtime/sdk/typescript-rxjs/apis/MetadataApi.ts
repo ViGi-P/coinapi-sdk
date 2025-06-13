@@ -46,7 +46,8 @@ export class MetadataApi extends BaseAPI {
         throwIfNullOrUndefined(assetId, 'assetId', 'v1AssetsAssetIdGet');
 
         const headers: HttpHeaders = {
-            ...(this.configuration.apiKey && { 'X-CoinAPI-Key': this.configuration.apiKey('X-CoinAPI-Key') }), // APIKey authentication
+            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
+            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         return this.request<Array<V1Asset>>({
@@ -57,7 +58,7 @@ export class MetadataApi extends BaseAPI {
     };
 
     /**
-     * Retrieves all assets.                :::info  Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency).  :::                :::info  Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source.  :::
+     * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
      * List all assets
      */
     v1AssetsGet({ filterAssetId }: V1AssetsGetRequest): Observable<Array<V1Asset>>
@@ -65,7 +66,8 @@ export class MetadataApi extends BaseAPI {
     v1AssetsGet({ filterAssetId }: V1AssetsGetRequest, opts?: OperationOpts): Observable<Array<V1Asset> | AjaxResponse<Array<V1Asset>>> {
 
         const headers: HttpHeaders = {
-            ...(this.configuration.apiKey && { 'X-CoinAPI-Key': this.configuration.apiKey('X-CoinAPI-Key') }), // APIKey authentication
+            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
+            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         const query: HttpQuery = {};
@@ -90,7 +92,8 @@ export class MetadataApi extends BaseAPI {
         throwIfNullOrUndefined(size, 'size', 'v1AssetsIconsSizeGet');
 
         const headers: HttpHeaders = {
-            ...(this.configuration.apiKey && { 'X-CoinAPI-Key': this.configuration.apiKey('X-CoinAPI-Key') }), // APIKey authentication
+            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
+            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         return this.request<Array<V1Icon>>({

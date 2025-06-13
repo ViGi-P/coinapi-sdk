@@ -127,6 +127,13 @@ Authentication schemes defined for the API:
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
 
+<a id="JWT"></a>
+### JWT
+
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
+
 
 ## Build
 - SDK version: 1.0.0
@@ -173,7 +180,7 @@ Authentication schemes defined for the API:
 - packageCompany: OpenAPI
 - packageCopyright: No Copyright
 - packageDescription: A library generated from a OpenAPI doc
-- packageGuid: {8F41FFF2-DB32-42DE-8094-8331D79C2599}
+- packageGuid: {2ADB2F10-3BD7-4E4C-8A2B-0BC756E7C896}
 - packageName: APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime
 - packageTags: 
 - packageTitle: OpenAPI Library

@@ -98,7 +98,21 @@ func (a *MetadataAPIService) V1AssetsAssetIdGetExecute(r ApiV1AssetsAssetIdGetRe
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["X-CoinAPI-Key"] = key
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["JWT"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
 			}
 		}
 	}
@@ -229,7 +243,21 @@ func (a *MetadataAPIService) V1AssetsGetExecute(r ApiV1AssetsGetRequest) ([]V1As
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["X-CoinAPI-Key"] = key
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["JWT"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
 			}
 		}
 	}
@@ -346,7 +374,21 @@ func (a *MetadataAPIService) V1AssetsIconsSizeGetExecute(r ApiV1AssetsIconsSizeG
 				} else {
 					key = apiKey.Key
 				}
-				localVarHeaderParams["X-CoinAPI-Key"] = key
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["JWT"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
 			}
 		}
 	}

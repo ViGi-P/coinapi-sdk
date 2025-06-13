@@ -1,5 +1,5 @@
 /**
- * REST API
+ * FinFeedAPI Stock REST API
  *
  * Contact: support@apibricks.io
  *
@@ -19,5 +19,14 @@ export interface FinFeedAPISymbolModel {
     name?: string | null;
     date?: string | null;
     asset_class?: string | null;
+    cfi_code?: string | null;
+    readonly cfi_category?: string | null;
+    readonly cfi_group?: string | null;
+    readonly cfi_attribute1?: string | null;
+    readonly cfi_attribute2?: string | null;
+    readonly cfi_attribute3?: string | null;
+    readonly cfi_attribute4?: string | null;
+    readonly cfi_category_desc?: string | null;
+    readonly cfi_group_desc?: string | null;
 }
 

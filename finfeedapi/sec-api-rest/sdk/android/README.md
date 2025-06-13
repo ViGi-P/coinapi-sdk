@@ -80,7 +80,7 @@ public class ContentExtractionApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api-historical.sec.finfeedapi.com*
+All URIs are relative to *https://api.sec.finfeedapi.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -111,7 +111,7 @@ Authentication schemes defined for the API:
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
 
-### Bearer
+### JWT
 
 - **Type**: HTTP Bearer Token authentication (JWT)
 

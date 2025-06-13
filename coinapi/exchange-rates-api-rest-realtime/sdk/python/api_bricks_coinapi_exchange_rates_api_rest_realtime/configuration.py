@@ -115,6 +115,7 @@ AuthSettings = TypedDict(
     "AuthSettings",
     {
         "APIKey": APIKeyAuthSetting,
+        "JWT": APIKeyAuthSetting,
     },
     total=False,
 )
@@ -516,9 +517,18 @@ conf = api_bricks_coinapi_exchange_rates_api_rest_realtime.Configuration(
             auth['APIKey'] = {
                 'type': 'api_key',
                 'in': 'header',
-                'key': 'X-CoinAPI-Key',
+                'key': 'Authorization',
                 'value': self.get_api_key_with_prefix(
                     'APIKey',
+                ),
+            }
+        if 'JWT' in self.api_key:
+            auth['JWT'] = {
+                'type': 'api_key',
+                'in': 'header',
+                'key': 'Authorization',
+                'value': self.get_api_key_with_prefix(
+                    'JWT',
                 ),
             }
         return auth

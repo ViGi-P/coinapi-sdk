@@ -59,9 +59,13 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Client
         public enum ApiKeyHeader
         {
             /// <summary>
-            /// The X-CoinAPI-Key header
+            /// The Authorization header
             /// </summary>
-            X_CoinAPI_Key
+            Authorization,
+            /// <summary>
+            /// The Authorization header
+            /// </summary>
+            Authorization
         }
 
         /// <summary>
@@ -74,7 +78,8 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Client
         {
             return value switch
             {
-                ApiKeyHeader.X_CoinAPI_Key => "X-CoinAPI-Key",
+                ApiKeyHeader.Authorization => "Authorization",
+                ApiKeyHeader.Authorization => "Authorization",
                 _ => throw new System.ComponentModel.InvalidEnumArgumentException(nameof(value), (int)value, typeof(ApiKeyHeader)),
             };
         }

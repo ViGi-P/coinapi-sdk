@@ -37,7 +37,7 @@ export interface V1ExchangerateAssetIdBaseGetRequest {
 export class ExchangeRatesApi extends BaseAPI {
 
     /**
-     * Retrieves the exchange rate for a specific base and quote asset at a given time or the current rate.                :::info  If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements.  :::
+     * Retrieves the exchange rate for a specific base and quote asset at a given time or the current rate.              :::info If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements. :::
      * Get specific rate
      */
     getSpecificRate({ assetIdBase, assetIdQuote }: GetSpecificRateRequest): Observable<V1ExchangeRate>
@@ -47,7 +47,8 @@ export class ExchangeRatesApi extends BaseAPI {
         throwIfNullOrUndefined(assetIdQuote, 'assetIdQuote', 'getSpecificRate');
 
         const headers: HttpHeaders = {
-            ...(this.configuration.apiKey && { 'X-CoinAPI-Key': this.configuration.apiKey('X-CoinAPI-Key') }), // APIKey authentication
+            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
+            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         return this.request<V1ExchangeRate>({
@@ -58,7 +59,7 @@ export class ExchangeRatesApi extends BaseAPI {
     };
 
     /**
-     * Get the current exchange rate between requested asset and all other assets.                :::info  If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements.  :::                :::info  You can invert the rates by using Y = 1 / X equation, for example BTC/USD = 1 / (USD/BTC);  :::
+     * Get the current exchange rate between requested asset and all other assets.              :::info If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements. :::              :::info You can invert the rates by using Y = 1 / X equation, for example BTC/USD = 1 / (USD/BTC); :::
      * Get all current rates
      */
     v1ExchangerateAssetIdBaseGet({ assetIdBase, filterAssetId, invert }: V1ExchangerateAssetIdBaseGetRequest): Observable<V1ExchangeRates>
@@ -67,7 +68,8 @@ export class ExchangeRatesApi extends BaseAPI {
         throwIfNullOrUndefined(assetIdBase, 'assetIdBase', 'v1ExchangerateAssetIdBaseGet');
 
         const headers: HttpHeaders = {
-            ...(this.configuration.apiKey && { 'X-CoinAPI-Key': this.configuration.apiKey('X-CoinAPI-Key') }), // APIKey authentication
+            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
+            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         const query: HttpQuery = {};

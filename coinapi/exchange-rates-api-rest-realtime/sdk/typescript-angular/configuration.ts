@@ -97,7 +97,18 @@ constructor({ accessToken, apiKeys, basePath, credentials, encodeParam, encoder,
                 if (this.apiKeys === null || this.apiKeys === undefined) {
                     return undefined;
                 } else {
-                    return this.apiKeys['APIKey'] || this.apiKeys['X-CoinAPI-Key'];
+                    return this.apiKeys['APIKey'] || this.apiKeys['Authorization'];
+                }
+            };
+        }
+
+        // init default JWT credential
+        if (!this.credentials['JWT']) {
+            this.credentials['JWT'] = () => {
+                if (this.apiKeys === null || this.apiKeys === undefined) {
+                    return undefined;
+                } else {
+                    return this.apiKeys['JWT'] || this.apiKeys['Authorization'];
                 }
             };
         }

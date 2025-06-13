@@ -336,7 +336,7 @@ export type V1Icon = {
 export const ExchangeRatesApiFetchParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Retrieves the exchange rate for a specific base and quote asset at a given time or the current rate.                :::info  If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements.  :::
+         * Retrieves the exchange rate for a specific base and quote asset at a given time or the current rate.              :::info If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements. :::
          * @summary Get specific rate
          * @throws {RequiredError}
          */
@@ -360,9 +360,17 @@ export const ExchangeRatesApiFetchParamCreator = function (configuration?: Confi
             // authentication APIKey required
             if (configuration && configuration.apiKey) {
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("X-CoinAPI-Key")
+                    ? configuration.apiKey("Authorization")
                     : configuration.apiKey;
-                localVarHeaderParameter["X-CoinAPI-Key"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
@@ -376,7 +384,7 @@ export const ExchangeRatesApiFetchParamCreator = function (configuration?: Confi
             };
         },
         /**
-         * Get the current exchange rate between requested asset and all other assets.                :::info  If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements.  :::                :::info  You can invert the rates by using Y = 1 / X equation, for example BTC/USD = 1 / (USD/BTC);  :::
+         * Get the current exchange rate between requested asset and all other assets.              :::info If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements. :::              :::info You can invert the rates by using Y = 1 / X equation, for example BTC/USD = 1 / (USD/BTC); :::
          * @summary Get all current rates
          * @throws {RequiredError}
          */
@@ -395,9 +403,17 @@ export const ExchangeRatesApiFetchParamCreator = function (configuration?: Confi
             // authentication APIKey required
             if (configuration && configuration.apiKey) {
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("X-CoinAPI-Key")
+                    ? configuration.apiKey("Authorization")
                     : configuration.apiKey;
-                localVarHeaderParameter["X-CoinAPI-Key"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
             if (filterAssetId !== undefined) {
@@ -435,7 +451,7 @@ export const ExchangeRatesApi = function(configuration?: Configuration, fetch: F
     const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
     return {
         /**
-         * Retrieves the exchange rate for a specific base and quote asset at a given time or the current rate.                :::info  If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements.  :::
+         * Retrieves the exchange rate for a specific base and quote asset at a given time or the current rate.              :::info If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements. :::
          * @summary Get specific rate
          * @throws {RequiredError}
          */
@@ -450,7 +466,7 @@ export const ExchangeRatesApi = function(configuration?: Configuration, fetch: F
             });
         },
         /**
-         * Get the current exchange rate between requested asset and all other assets.                :::info  If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements.  :::                :::info  You can invert the rates by using Y = 1 / X equation, for example BTC/USD = 1 / (USD/BTC);  :::
+         * Get the current exchange rate between requested asset and all other assets.              :::info If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements. :::              :::info You can invert the rates by using Y = 1 / X equation, for example BTC/USD = 1 / (USD/BTC); :::
          * @summary Get all current rates
          * @throws {RequiredError}
          */
@@ -494,9 +510,17 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
             // authentication APIKey required
             if (configuration && configuration.apiKey) {
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("X-CoinAPI-Key")
+                    ? configuration.apiKey("Authorization")
                     : configuration.apiKey;
-                localVarHeaderParameter["X-CoinAPI-Key"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
@@ -510,7 +534,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Retrieves all assets.                :::info  Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency).  :::                :::info  Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source.  :::
+         * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
          * @summary List all assets
          * @throws {RequiredError}
          */
@@ -524,9 +548,17 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
             // authentication APIKey required
             if (configuration && configuration.apiKey) {
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("X-CoinAPI-Key")
+                    ? configuration.apiKey("Authorization")
                     : configuration.apiKey;
-                localVarHeaderParameter["X-CoinAPI-Key"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
             if (filterAssetId !== undefined) {
@@ -563,9 +595,17 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
             // authentication APIKey required
             if (configuration && configuration.apiKey) {
                 const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("X-CoinAPI-Key")
+                    ? configuration.apiKey("Authorization")
                     : configuration.apiKey;
-                localVarHeaderParameter["X-CoinAPI-Key"] = localVarApiKeyValue;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
             }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
@@ -612,7 +652,7 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
             });
         },
         /**
-         * Retrieves all assets.                :::info  Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency).  :::                :::info  Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source.  :::
+         * Retrieves all assets.              :::info Our asset identifiers are aligned with the ISO 4217 currency codes standard only for fiat money (government or law regulated currency). :::              :::info Properties of the output are providing aggregated information from across all symbols related to the specific asset. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
          * @summary List all assets
          * @throws {RequiredError}
          */

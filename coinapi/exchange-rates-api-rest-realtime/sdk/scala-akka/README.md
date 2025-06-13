@@ -81,6 +81,9 @@ object ExchangeRatesApiExample extends App {
     // Configure API key authorization: APIKey
     implicit val APIKey: ApiKeyValue = ApiKeyValue("YOUR API KEY")
 
+    // Configure API key authorization: JWT
+    implicit val JWT: ApiKeyValue = ApiKeyValue("YOUR API KEY")
+
     // Create invoker to execute requests
     val apiInvoker = ApiInvoker()
     val apiInstance = ExchangeRatesApi("https://api-realtime.exrates.coinapi.io")
@@ -145,7 +148,14 @@ Authentication schemes defined for the API:
 ### APIKey
 
 - **Type**: API key
-- **API key parameter name**: X-CoinAPI-Key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
+
+<a id="JWT"></a>
+### JWT
+
+- **Type**: API key
+- **API key parameter name**: Authorization
 - **Location**: HTTP header
 
 
