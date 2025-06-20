@@ -45,7 +45,8 @@ class ApiClient {
          * @type {Array.<String>}
          */
         this.authentications = {
-            'APIKey': {type: 'apiKey', 'in': 'header', name: 'X-CoinAPI-Key'}
+            'APIKey': {type: 'apiKey', 'in': 'header', name: 'Authorization'},
+            'JWT': {type: 'bearer'} // JWT
         }
 
 	/**

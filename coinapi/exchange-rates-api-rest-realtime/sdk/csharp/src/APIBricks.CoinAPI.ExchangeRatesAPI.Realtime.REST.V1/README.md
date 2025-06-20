@@ -124,8 +124,13 @@ Authentication schemes defined for the API:
 ### APIKey
 
 - **Type**: API key
-- **API key parameter name**: X-CoinAPI-Key
+- **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+<a id="JWT"></a>
+### JWT
+
+- **Type**: Bearer Authentication
 
 
 ## Build
@@ -173,7 +178,7 @@ Authentication schemes defined for the API:
 - packageCompany: OpenAPI
 - packageCopyright: No Copyright
 - packageDescription: A library generated from a OpenAPI doc
-- packageGuid: {5781D1E9-19CD-4C97-93B4-CB3A57F7F69E}
+- packageGuid: {7EF6DFD9-B72C-472B-991A-0ADBA5498A13}
 - packageName: APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1
 - packageTags: 
 - packageTitle: OpenAPI Library

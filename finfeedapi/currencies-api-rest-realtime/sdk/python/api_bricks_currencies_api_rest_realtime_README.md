@@ -52,6 +52,11 @@ configuration.api_key['APIKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['APIKey'] = 'Bearer'
 
+# Configure Bearer authorization (JWT): JWT
+configuration = api_bricks_currencies_api_rest_realtime.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
 
 # Enter a context with an instance of the API client
 with api_bricks_currencies_api_rest_realtime.ApiClient(configuration) as api_client:
@@ -104,6 +109,11 @@ Authentication schemes defined for the API:
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+<a id="JWT"></a>
+### JWT
+
+- **Type**: Bearer authentication (JWT)
 
 
 ## Author

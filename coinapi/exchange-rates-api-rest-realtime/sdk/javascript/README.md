@@ -107,7 +107,10 @@ var defaultClient = ExchangeRatesRealtimeRestApi.ApiClient.instance;
 var APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = "YOUR API KEY"
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//APIKey.apiKeyPrefix['X-CoinAPI-Key'] = "Token"
+//APIKey.apiKeyPrefix['Authorization'] = "Token"
+// Configure Bearer (JWT) access token for authorization: JWT
+var JWT = defaultClient.authentications['JWT'];
+JWT.accessToken = "YOUR ACCESS TOKEN"
 
 var api = new ExchangeRatesRealtimeRestApi.ExchangeRatesApi()
 var assetIdBase = "assetIdBase_example"; // {String} Requested exchange rate base asset identifier (from the Metadata -> Assets)
@@ -154,6 +157,10 @@ Authentication schemes defined for the API:
 
 
 - **Type**: API key
-- **API key parameter name**: X-CoinAPI-Key
+- **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+### JWT
+
+- **Type**: Bearer authentication (JWT)
 

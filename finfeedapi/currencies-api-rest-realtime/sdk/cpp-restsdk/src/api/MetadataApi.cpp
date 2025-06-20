@@ -112,6 +112,7 @@ pplx::task<std::vector<std::shared_ptr<V1_Asset>>> MetadataApi::v1AssetsAssetIdG
             localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
         }
     }
+    // authentication (JWT) required
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)
@@ -253,6 +254,7 @@ pplx::task<std::vector<std::shared_ptr<V1_Asset>>> MetadataApi::v1AssetsGet(boos
             localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
         }
     }
+    // authentication (JWT) required
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)
@@ -391,6 +393,7 @@ pplx::task<std::vector<std::shared_ptr<V1_Icon>>> MetadataApi::v1AssetsIconsSize
             localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
         }
     }
+    // authentication (JWT) required
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)

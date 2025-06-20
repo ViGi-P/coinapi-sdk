@@ -1,5 +1,5 @@
 /**
- * REST API
+ * FinFeedAPI SEC REST API
  *
  * Contact: support@apibricks.io
  *
@@ -12,7 +12,7 @@ import { CustomHttpParameterCodec } from './encoder';
 import { Configuration } from './configuration';
 
 export class BaseService {
-    protected basePath = 'https://api-historical.sec.finfeedapi.com';
+    protected basePath = 'https://api.sec.finfeedapi.com';
     public defaultHeaders = new HttpHeaders();
     public configuration: Configuration;
     public encoder: HttpParameterCodec;

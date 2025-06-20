@@ -17,6 +17,7 @@ apiClient_t *apiClient_create() {
     apiClient->progress_data = NULL;
     apiClient->response_code = 0;
     apiClient->apiKeys_APIKey = NULL;
+    apiClient->accessToken = NULL;
 
     return apiClient;
 }
@@ -55,6 +56,7 @@ apiClient_t *apiClient_create_with_base_path(const char *basePath
     }else{
         apiClient->apiKeys_APIKey = NULL;
     }
+    apiClient->accessToken = NULL;
 
     return apiClient;
 }
@@ -79,6 +81,9 @@ void apiClient_free(apiClient_t *apiClient) {
             keyValuePair_free(pair);
         }
         list_freeList(apiClient->apiKeys_APIKey);
+    }
+    if(apiClient->accessToken) {
+        free(apiClient->accessToken);
     }
     free(apiClient);
 }
@@ -401,6 +406,18 @@ void apiClient_invoke(apiClient_t    *apiClient,
             free(headerValueToWrite);
         }
         }
+        }
+        // this would only be generated for bearer token authentication
+        if(apiClient->accessToken != NULL)
+        {
+            int authHeaderSize;
+            char *authHeader = NULL;
+
+            authHeaderSize = snprintf(NULL, 0, "Authorization: Bearer %s", apiClient->accessToken) + 1;
+            authHeader = malloc(authHeaderSize);
+            snprintf(authHeader, authHeaderSize, "Authorization: Bearer %s", apiClient->accessToken);
+            headers = curl_slist_append(headers, authHeader);
+            free(authHeader);
         }
 
         char *targetUrl =

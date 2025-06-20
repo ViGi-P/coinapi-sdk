@@ -13,10 +13,10 @@
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #
-# This is a Bash client for REST API.
+# This is a Bash client for FinFeedAPI SEC REST API.
 #
 # LICENSE:
-# 
+# https://github.com/api-bricks/api-bricks-sdk/blob/master/LICENSE
 #
 # CONTACT:
 # support@apibricks.io
@@ -101,6 +101,8 @@ operation_parameters_minimum_occurrences["v1ExtractorGet:::type"]=0
 operation_parameters_minimum_occurrences["v1ExtractorItemGet:::accession_number"]=1
 operation_parameters_minimum_occurrences["v1ExtractorItemGet:::item_number"]=1
 operation_parameters_minimum_occurrences["v1ExtractorItemGet:::type"]=0
+operation_parameters_minimum_occurrences["v1DownloadGet:::accession_no"]=1
+operation_parameters_minimum_occurrences["v1DownloadGet:::file_name"]=1
 operation_parameters_minimum_occurrences["v1FilingsGet:::cik"]=0
 operation_parameters_minimum_occurrences["v1FilingsGet:::ticker"]=0
 operation_parameters_minimum_occurrences["v1FilingsGet:::form_type"]=0
@@ -138,6 +140,8 @@ operation_parameters_maximum_occurrences["v1ExtractorGet:::type"]=0
 operation_parameters_maximum_occurrences["v1ExtractorItemGet:::accession_number"]=0
 operation_parameters_maximum_occurrences["v1ExtractorItemGet:::item_number"]=0
 operation_parameters_maximum_occurrences["v1ExtractorItemGet:::type"]=0
+operation_parameters_maximum_occurrences["v1DownloadGet:::accession_no"]=0
+operation_parameters_maximum_occurrences["v1DownloadGet:::file_name"]=0
 operation_parameters_maximum_occurrences["v1FilingsGet:::cik"]=0
 operation_parameters_maximum_occurrences["v1FilingsGet:::ticker"]=0
 operation_parameters_maximum_occurrences["v1FilingsGet:::form_type"]=0
@@ -172,6 +176,8 @@ operation_parameters_collection_type["v1ExtractorGet:::type"]=""
 operation_parameters_collection_type["v1ExtractorItemGet:::accession_number"]=""
 operation_parameters_collection_type["v1ExtractorItemGet:::item_number"]=""
 operation_parameters_collection_type["v1ExtractorItemGet:::type"]=""
+operation_parameters_collection_type["v1DownloadGet:::accession_no"]=""
+operation_parameters_collection_type["v1DownloadGet:::file_name"]=""
 operation_parameters_collection_type["v1FilingsGet:::cik"]=""
 operation_parameters_collection_type["v1FilingsGet:::ticker"]=""
 operation_parameters_collection_type["v1FilingsGet:::form_type"]=""
@@ -569,7 +575,7 @@ build_request_path() {
 print_help() {
 cat <<EOF
 
-${BOLD}${WHITE}REST API command line client (API version v1)${OFF}
+${BOLD}${WHITE}FinFeedAPI SEC REST API command line client (API version v1)${OFF}
 
 ${BOLD}${WHITE}Usage${OFF}
 
@@ -605,26 +611,32 @@ EOF
     echo ""
     echo -e "${BOLD}${WHITE}[contentExtraction]${OFF}"
 read -r -d '' ops <<EOF
-  ${CYAN}v1ExtractorGet${OFF};Extract and classify SEC filing content
-  ${CYAN}v1ExtractorItemGet${OFF};Extract specific item content from SEC filing
+  ${CYAN}v1ExtractorGet${OFF};Extract and classify SEC filing content (AUTH) (AUTH)
+  ${CYAN}v1ExtractorItemGet${OFF};Extract specific item content from SEC filing (AUTH) (AUTH)
+EOF
+echo "  $ops" | column -t -s ';'
+    echo ""
+    echo -e "${BOLD}${WHITE}[fileDownload]${OFF}"
+read -r -d '' ops <<EOF
+  ${CYAN}v1DownloadGet${OFF};Download file from SEC EDGAR archive (AUTH) (AUTH)
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
     echo -e "${BOLD}${WHITE}[filingMetadata]${OFF}"
 read -r -d '' ops <<EOF
-  ${CYAN}v1FilingsGet${OFF};Query SEC filing metadata
+  ${CYAN}v1FilingsGet${OFF};Query SEC filing metadata (AUTH) (AUTH)
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
     echo -e "${BOLD}${WHITE}[fullTextSearch]${OFF}"
 read -r -d '' ops <<EOF
-  ${CYAN}v1FullTextGet${OFF};Full-text search of SEC filing documents
+  ${CYAN}v1FullTextGet${OFF};Full-text search of SEC filing documents (AUTH) (AUTH)
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
     echo -e "${BOLD}${WHITE}[xBRLConversion]${OFF}"
 read -r -d '' ops <<EOF
-  ${CYAN}v1XbrlConverterGet${OFF};Convert XBRL data to JSON format
+  ${CYAN}v1XbrlConverterGet${OFF};Convert XBRL data to JSON format (AUTH) (AUTH)
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
@@ -633,7 +645,7 @@ echo "  $ops" | column -t -s ';'
     echo -e "  -V,--version\\t\\t\\t\\tPrint API version"
     echo -e "  --about\\t\\t\\t\\tPrint the information about service"
     echo -e "  --host ${CYAN}<url>${OFF}\\t\\t\\t\\tSpecify the host URL "
-echo -e "              \\t\\t\\t\\t(e.g. 'https://api-historical.sec.finfeedapi.com')"
+echo -e "              \\t\\t\\t\\t(e.g. 'https://api.sec.finfeedapi.com')"
 
     echo -e "  --force\\t\\t\\t\\tForce command invocation in spite of missing"
     echo -e "         \\t\\t\\t\\trequired parameters or wrong content type"
@@ -654,9 +666,9 @@ echo -e "              \\t\\t\\t\\t(e.g. 'https://api-historical.sec.finfeedapi.
 ##############################################################################
 print_about() {
     echo ""
-    echo -e "${BOLD}${WHITE}REST API command line client (API version v1)${OFF}"
+    echo -e "${BOLD}${WHITE}FinFeedAPI SEC REST API command line client (API version v1)${OFF}"
     echo ""
-    echo -e "License: "
+    echo -e "License: MIT License"
     echo -e "Contact: support@apibricks.io"
     echo ""
 read -r -d '' appdescription <<EOF
@@ -674,7 +686,7 @@ echo "$appdescription" | paste -sd' ' | fold -sw 80
 ##############################################################################
 print_version() {
     echo ""
-    echo -e "${BOLD}REST API command line client (API version v1)${OFF}"
+    echo -e "${BOLD}FinFeedAPI SEC REST API command line client (API version v1)${OFF}"
     echo ""
 }
 
@@ -685,7 +697,7 @@ print_version() {
 ##############################################################################
 print_v1ExtractorGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1ExtractorGet - Extract and classify SEC filing content${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1ExtractorGet - Extract and classify SEC filing content${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Retrieves filing content from the EDGAR database and intelligently classifies it according to form type and item categories.
 
@@ -728,7 +740,7 @@ Both HTML and plain text documents are supported for content extraction.
 ##############################################################################
 print_v1ExtractorItemGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1ExtractorItemGet - Extract specific item content from SEC filing${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1ExtractorItemGet - Extract specific item content from SEC filing${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Retrieves filing content from the EDGAR database and returns only the text content of the specified item number.
 
@@ -764,12 +776,64 @@ For best results, ensure the item number matches exactly with the filing's struc
 }
 ##############################################################################
 #
+# Print help for v1DownloadGet operation
+#
+##############################################################################
+print_v1DownloadGet_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}v1DownloadGet - Download file from SEC EDGAR archive${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo -e "Downloads a specific file from the SEC EDGAR archive using the accession number and filename.
+The file is streamed directly from the SEC servers to the client.
+
+### Accession Number Format
+Accession numbers must be in the format: 0000000000-00-000000 (10 digits, dash, 2 digits, dash, 6 digits)
+
+### File Name Examples
+- Primary documents: 'd123456d10k.htm', 'd789012d8k.htm'
+- XBRL files: 'd123456d10k_htm.xml', 'FilingSummary.xml'
+- Exhibits: 'd123456dexhibit99.htm', 'd123456dex101.htm'
+
+### File Types
+The endpoint supports downloading various file types from SEC filings:
+- HTML documents (.htm, .html)
+- XBRL files (.xml, .xsd)
+- Text files (.txt)
+- PDF files (.pdf)
+- Other document formats as submitted to SEC
+
+:::tip
+You can find available filenames for a specific filing using the '/v1/filings' endpoint first
+:::
+
+:::warning
+This endpoint streams files directly from the SEC. Large files may take longer to download.
+:::" | paste -sd' ' | fold -sw 80
+    echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}accession_no${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - SEC filing accession number in format: 0000000000-00-000000${YELLOW} Specify as: accession_no=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}file_name${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Name of the file to download from the filing${YELLOW} Specify as: file_name=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;File downloaded successfully${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=400
+    echo -e "${result_color_table[${code:0:1}]}  400;Invalid request parameters${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=404
+    echo -e "${result_color_table[${code:0:1}]}  404;Filing or file not found${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=500
+    echo -e "${result_color_table[${code:0:1}]}  500;Server error${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
 # Print help for v1FilingsGet operation
 #
 ##############################################################################
 print_v1FilingsGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1FilingsGet - Query SEC filing metadata${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1FilingsGet - Query SEC filing metadata${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.
 
@@ -834,7 +898,7 @@ For optimal performance, use date ranges and form types to narrow down your sear
 ##############################################################################
 print_v1FullTextGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1FullTextGet - Full-text search of SEC filing documents${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1FullTextGet - Full-text search of SEC filing documents${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Search across SEC filing documents with advanced filtering and sorting capabilities.
 
@@ -903,7 +967,7 @@ The search is case-insensitive and supports partial word matches
 ##############################################################################
 print_v1XbrlConverterGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1XbrlConverterGet - Convert XBRL data to JSON format${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1XbrlConverterGet - Convert XBRL data to JSON format${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Converts XBRL data to JSON format using one of three possible input methods.
 
@@ -996,7 +1060,7 @@ call_v1ExtractorGet() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(accession_number type)
+    local query_parameter_names=(accession_number type    )
     local path
 
     if ! path=$(build_request_path "/v1/extractor" path_parameter_names query_parameter_names); then
@@ -1032,10 +1096,46 @@ call_v1ExtractorItemGet() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(accession_number item_number type)
+    local query_parameter_names=(accession_number item_number type    )
     local path
 
     if ! path=$(build_request_path "/v1/extractor/item" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="GET"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    if [[ "$print_curl" = true ]]; then
+        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    else
+        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    fi
+}
+
+##############################################################################
+#
+# Call v1DownloadGet operation
+#
+##############################################################################
+call_v1DownloadGet() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(accession_no file_name    )
+    local path
+
+    if ! path=$(build_request_path "/v1/download" path_parameter_names query_parameter_names); then
         ERROR_MSG=$path
         exit 1
     fi
@@ -1068,7 +1168,7 @@ call_v1FilingsGet() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(cik ticker form_type filling_date_start filling_date_end report_date_start report_date_end items_contain page_size page_number sort_by sort_order)
+    local query_parameter_names=(cik ticker form_type filling_date_start filling_date_end report_date_start report_date_end items_contain page_size page_number sort_by sort_order    )
     local path
 
     if ! path=$(build_request_path "/v1/filings" path_parameter_names query_parameter_names); then
@@ -1104,7 +1204,7 @@ call_v1FullTextGet() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(form_type filling_date_start filling_date_end text_contains text_not_contain page_size page_number sort_by sort_order)
+    local query_parameter_names=(form_type filling_date_start filling_date_end text_contains text_not_contain page_size page_number sort_by sort_order    )
     local path
 
     if ! path=$(build_request_path "/v1/full-text" path_parameter_names query_parameter_names); then
@@ -1140,7 +1240,7 @@ call_v1XbrlConverterGet() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(htm-url xbrl-url accession-no)
+    local query_parameter_names=(htm-url xbrl-url accession-no    )
     local path
 
     if ! path=$(build_request_path "/v1/xbrl-converter" path_parameter_names query_parameter_names); then
@@ -1268,6 +1368,9 @@ case $key in
     v1ExtractorItemGet)
     operation="v1ExtractorItemGet"
     ;;
+    v1DownloadGet)
+    operation="v1DownloadGet"
+    ;;
     v1FilingsGet)
     operation="v1FilingsGet"
     ;;
@@ -1376,6 +1479,9 @@ case $operation in
     ;;
     v1ExtractorItemGet)
     call_v1ExtractorItemGet
+    ;;
+    v1DownloadGet)
+    call_v1DownloadGet
     ;;
     v1FilingsGet)
     call_v1FilingsGet

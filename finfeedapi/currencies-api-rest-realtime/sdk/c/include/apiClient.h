@@ -29,6 +29,7 @@ typedef struct apiClient_t {
     void *progress_data;
     long response_code;
     list_t *apiKeys_APIKey;
+    char *accessToken;
 } apiClient_t;
 
 apiClient_t* apiClient_create();

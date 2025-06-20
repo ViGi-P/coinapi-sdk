@@ -342,9 +342,15 @@ sub update_params_for_auth {
             # TODO show warning about auth setting not defined
         }
         elsif ($auth eq 'APIKey') {
-            my $api_key = $self->get_api_key_with_prefix('X-CoinAPI-Key');
+            my $api_key = $self->get_api_key_with_prefix('Authorization');
             if ($api_key) {
-                $header_params->{'X-CoinAPI-Key'} = $api_key;
+                $header_params->{'Authorization'} = $api_key;
+            }
+        }
+        elsif ($auth eq 'JWT') {
+            # this endpoint requires Bearer (JWT) authentication (access token)
+            if ($self->{config}{access_token}) {
+                $header_params->{'Authorization'} = 'Bearer ' . $self->{config}{access_token};
             }
         }
         else {

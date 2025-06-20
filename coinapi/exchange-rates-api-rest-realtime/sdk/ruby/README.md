@@ -61,9 +61,14 @@ require 'openapi_client'
 # Setup authorization
 OpenapiClient.configure do |config|
   # Configure API key authorization: APIKey
-  config.api_key['X-CoinAPI-Key'] = 'YOUR API KEY'
+  config.api_key['Authorization'] = 'YOUR API KEY'
   # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['X-CoinAPI-Key'] = 'Bearer'
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure Bearer authorization (JWT): JWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure a proc to get access tokens in lieu of the static access_token configuration
+  config.access_token_getter = -> { 'YOUR TOKEN GETTER PROC' } 
 end
 
 api_instance = OpenapiClient::ExchangeRatesApi.new
@@ -111,6 +116,10 @@ Authentication schemes defined for the API:
 
 
 - **Type**: API key
-- **API key parameter name**: X-CoinAPI-Key
+- **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+### JWT
+
+- **Type**: Bearer authentication (JWT)
 

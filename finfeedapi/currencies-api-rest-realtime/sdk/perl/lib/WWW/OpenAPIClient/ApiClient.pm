@@ -347,6 +347,12 @@ sub update_params_for_auth {
                 $header_params->{'Authorization'} = $api_key;
             }
         }
+        elsif ($auth eq 'JWT') {
+            # this endpoint requires Bearer (JWT) authentication (access token)
+            if ($self->{config}{access_token}) {
+                $header_params->{'Authorization'} = 'Bearer ' . $self->{config}{access_token};
+            }
+        }
         else {
            # TODO show warning about security definition not found
         }

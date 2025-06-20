@@ -56,6 +56,10 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test.Api
                 string apiKeyTokenValue1 = context.Configuration["<token>"] ?? throw new Exception("Token not found.");
                 ApiKeyToken apiKeyToken1 = new(apiKeyTokenValue1, ClientUtils.ApiKeyHeader.Authorization, timeout: TimeSpan.FromSeconds(1));
                 options.AddTokens(apiKeyToken1);
+
+                string bearerTokenValue1 = context.Configuration["<token>"] ?? throw new Exception("Token not found.");
+                BearerToken bearerToken1 = new(bearerTokenValue1, timeout: TimeSpan.FromSeconds(1));
+                options.AddTokens(bearerToken1);
             });
     }
 }

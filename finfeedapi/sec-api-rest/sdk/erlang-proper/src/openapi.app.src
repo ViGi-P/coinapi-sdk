@@ -10,12 +10,12 @@
       ]
     }
   , { env
-    , [ {host, "http://api-historical.sec.finfeedapi.com"}
+    , [ {host, "http://api.sec.finfeedapi.com"}
       , {basic_auth, {"admin", "admin"}}
       ]
     }
   , {modules, []}
   , {maintainers, []}
-  , {licenses, []}
-  , {links, ["https://www.finfeedapi.com"]}
+  , {licenses, ["MIT License"]}
+  , {links, ["https://www.coinapi.io"]}
 ]}.

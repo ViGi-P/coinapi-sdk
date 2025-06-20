@@ -101,6 +101,15 @@ constructor({ accessToken, apiKeys, basePath, credentials, encodeParam, encoder,
                 }
             };
         }
+
+        // init default JWT credential
+        if (!this.credentials['JWT']) {
+            this.credentials['JWT'] = () => {
+                return typeof this.accessToken === 'function'
+                    ? this.accessToken()
+                    : this.accessToken;
+            };
+        }
     }
 
     /**

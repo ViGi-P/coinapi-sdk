@@ -41,6 +41,7 @@ export class ExchangeRatesApi {
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
         'APIKey': new ApiKeyAuth('header', 'Authorization'),
+        'JWT': new HttpBearerAuth(),
     }
 
     protected interceptors: Interceptor[] = [];
@@ -86,12 +87,16 @@ export class ExchangeRatesApi {
         (this.authentications as any)[ExchangeRatesApiApiKeys[key]].apiKey = value;
     }
 
+    set accessToken(accessToken: string | (() => string)) {
+        this.authentications.JWT.accessToken = accessToken;
+    }
+
     public addInterceptor(interceptor: Interceptor) {
         this.interceptors.push(interceptor);
     }
 
     /**
-     * Retrieves the exchange rate for a specific base and quote asset at a given time or the current rate.                :::info  If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements.  :::
+     * Retrieves the exchange rate for a specific base and quote asset at a given time or the current rate.              :::info If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements. :::
      * @summary Get specific rate
      * @param assetIdBase Requested exchange rate base asset identifier (from the Metadata -&gt; Assets)
      * @param assetIdQuote Requested exchange rate quote asset identifier (from the Metadata -&gt; Assets)
@@ -138,6 +143,9 @@ export class ExchangeRatesApi {
         if (this.authentications.APIKey.apiKey) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.APIKey.applyToRequest(localVarRequestOptions));
         }
+        if (this.authentications.JWT.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.JWT.applyToRequest(localVarRequestOptions));
+        }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 
         let interceptorPromise = authenticationPromise;
@@ -170,7 +178,7 @@ export class ExchangeRatesApi {
         });
     }
     /**
-     * Get the current exchange rate between requested asset and all other assets.                :::info  If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements.  :::                :::info  You can invert the rates by using Y = 1 / X equation, for example BTC/USD = 1 / (USD/BTC);  :::
+     * Get the current exchange rate between requested asset and all other assets.              :::info If you are using an exchange rate for mission-critical operations, then for best reliability, you should measure the difference between current time and the time returned from the response to ensure that value of the difference between those meets your internal requirements. :::              :::info You can invert the rates by using Y = 1 / X equation, for example BTC/USD = 1 / (USD/BTC); :::
      * @summary Get all current rates
      * @param assetIdBase Requested exchange rates base asset identifier (from the Metadata -&gt; Assets)
      * @param filterAssetId Comma or semicolon delimited asset identifiers used to filter response (optional)
@@ -219,6 +227,9 @@ export class ExchangeRatesApi {
         let authenticationPromise = Promise.resolve();
         if (this.authentications.APIKey.apiKey) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.APIKey.applyToRequest(localVarRequestOptions));
+        }
+        if (this.authentications.JWT.accessToken) {
+            authenticationPromise = authenticationPromise.then(() => this.authentications.JWT.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
 

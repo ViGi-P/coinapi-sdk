@@ -28,6 +28,19 @@ import com.squareup.moshi.JsonClass
  * @param name 
  * @param date 
  * @param assetClass 
+ * @param cfiCode 
+ * @param cfiCategory 
+ * @param cfiGroup 
+ * @param cfiAttribute1 
+ * @param cfiAttribute2 
+ * @param cfiAttribute3 
+ * @param cfiAttribute4 
+ * @param cfiCategoryDesc 
+ * @param cfiGroupDesc 
+ * @param cfiAttribute1Desc 
+ * @param cfiAttribute2Desc 
+ * @param cfiAttribute3Desc 
+ * @param cfiAttribute4Desc 
  */
 
 
@@ -49,7 +62,46 @@ data class FinFeedAPISymbolModel (
     val date: kotlin.String? = null,
 
     @Json(name = "asset_class")
-    val assetClass: kotlin.String? = null
+    val assetClass: kotlin.String? = null,
+
+    @Json(name = "cfi_code")
+    val cfiCode: kotlin.String? = null,
+
+    @Json(name = "cfi_category")
+    val cfiCategory: kotlin.String? = null,
+
+    @Json(name = "cfi_group")
+    val cfiGroup: kotlin.String? = null,
+
+    @Json(name = "cfi_attribute1")
+    val cfiAttribute1: kotlin.String? = null,
+
+    @Json(name = "cfi_attribute2")
+    val cfiAttribute2: kotlin.String? = null,
+
+    @Json(name = "cfi_attribute3")
+    val cfiAttribute3: kotlin.String? = null,
+
+    @Json(name = "cfi_attribute4")
+    val cfiAttribute4: kotlin.String? = null,
+
+    @Json(name = "cfi_category_desc")
+    val cfiCategoryDesc: kotlin.String? = null,
+
+    @Json(name = "cfi_group_desc")
+    val cfiGroupDesc: kotlin.String? = null,
+
+    @Json(name = "cfi_attribute1_desc")
+    val cfiAttribute1Desc: kotlin.String? = null,
+
+    @Json(name = "cfi_attribute2_desc")
+    val cfiAttribute2Desc: kotlin.String? = null,
+
+    @Json(name = "cfi_attribute3_desc")
+    val cfiAttribute3Desc: kotlin.String? = null,
+
+    @Json(name = "cfi_attribute4_desc")
+    val cfiAttribute4Desc: kotlin.String? = null
 
 ) : kotlin.collections.HashMap<String, kotlin.Any>() {
 

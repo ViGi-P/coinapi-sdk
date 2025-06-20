@@ -1,6 +1,6 @@
 # api_bricks_sec_api_rest.FilingMetadataApi
 
-All URIs are relative to *https://api-historical.sec.finfeedapi.com*
+All URIs are relative to *https://api.sec.finfeedapi.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -36,6 +36,8 @@ For optimal performance, use date ranges and form types to narrow down your sear
 
 ### Example
 
+* Api Key Authentication (APIKey):
+* Bearer (JWT) Authentication (JWT):
 
 ```python
 import api_bricks_sec_api_rest
@@ -44,12 +46,27 @@ from api_bricks_sec_api_rest.models.dto_filing_sort_by import DTOFilingSortBy
 from api_bricks_sec_api_rest.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api-historical.sec.finfeedapi.com
+# Defining the host is optional and defaults to https://api.sec.finfeedapi.com
 # See configuration.py for a list of all supported configuration parameters.
 configuration = api_bricks_sec_api_rest.Configuration(
-    host = "https://api-historical.sec.finfeedapi.com"
+    host = "https://api.sec.finfeedapi.com"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: APIKey
+configuration.api_key['APIKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['APIKey'] = 'Bearer'
+
+# Configure Bearer authorization (JWT): JWT
+configuration = api_bricks_sec_api_rest.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with api_bricks_sec_api_rest.ApiClient(configuration) as api_client:
@@ -103,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
 
 ### HTTP request headers
 

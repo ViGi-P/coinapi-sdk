@@ -248,8 +248,16 @@ module OpenapiClient
           {
             type: 'api_key',
             in: 'header',
-            key: 'X-CoinAPI-Key',
-            value: api_key_with_prefix('X-CoinAPI-Key')
+            key: 'Authorization',
+            value: api_key_with_prefix('Authorization')
+          },
+        'JWT' =>
+          {
+            type: 'bearer',
+            in: 'header',
+            format: 'JWT',
+            key: 'Authorization',
+            value: "Bearer #{access_token_with_refresh}"
           },
       }
     end
