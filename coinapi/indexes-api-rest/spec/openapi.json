@@ -1692,10 +1692,10 @@
         "in": "header"
       },
       "JWT": {
-        "type": "apiKey",
-        "description": "JWT token needed to access the endpoints",
-        "name": "Authorization",
-        "in": "header"
+        "type": "http",
+        "description": "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
       }
     }
   },
