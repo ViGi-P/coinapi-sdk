@@ -45,10 +45,12 @@ import 'package:openapi/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIKey').apiKey = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIKey').apiKeyPrefix = 'Bearer';
-// TODO Configure API key authorization: JWT
-//defaultApiClient.getAuthentication<ApiKeyAuth>('JWT').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('JWT').apiKeyPrefix = 'Bearer';
+// TODO Configure HTTP Bearer authorization: JWT
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('JWT').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('JWT').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = IndexesApi();
 final indexDefinitionId = indexDefinitionId_example; // String | 
@@ -108,9 +110,7 @@ Authentication schemes defined for the API:
 
 ### JWT
 
-- **Type**: API key
-- **API key parameter name**: Authorization
-- **Location**: HTTP header
+- **Type**: HTTP Bearer authentication
 
 
 ## Author

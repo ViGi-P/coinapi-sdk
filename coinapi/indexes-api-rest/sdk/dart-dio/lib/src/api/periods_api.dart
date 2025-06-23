@@ -54,10 +54,9 @@ class PeriodsApi {
             'keyName': 'Authorization',
             'where': 'header',
           },{
-            'type': 'apiKey',
+            'type': 'http',
+            'scheme': 'bearer',
             'name': 'JWT',
-            'keyName': 'Authorization',
-            'where': 'header',
           },
         ],
         ...?extra,

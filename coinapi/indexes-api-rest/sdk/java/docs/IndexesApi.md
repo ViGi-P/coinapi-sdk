@@ -43,11 +43,9 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //APIKey.setApiKeyPrefix("Token");
 
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    // Configure HTTP bearer authorization: JWT
+    HttpBearerAuth JWT = (HttpBearerAuth) defaultClient.getAuthentication("JWT");
+    JWT.setBearerToken("BEARER TOKEN");
 
     IndexesApi apiInstance = new IndexesApi(defaultClient);
     String indexDefinitionId = "indexDefinitionId_example"; // String | 
@@ -116,11 +114,9 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //APIKey.setApiKeyPrefix("Token");
 
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    // Configure HTTP bearer authorization: JWT
+    HttpBearerAuth JWT = (HttpBearerAuth) defaultClient.getAuthentication("JWT");
+    JWT.setBearerToken("BEARER TOKEN");
 
     IndexesApi apiInstance = new IndexesApi(defaultClient);
     String indexDefinitionId = "indexDefinitionId_example"; // String | 
@@ -199,11 +195,9 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //APIKey.setApiKeyPrefix("Token");
 
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    // Configure HTTP bearer authorization: JWT
+    HttpBearerAuth JWT = (HttpBearerAuth) defaultClient.getAuthentication("JWT");
+    JWT.setBearerToken("BEARER TOKEN");
 
     IndexesApi apiInstance = new IndexesApi(defaultClient);
     try {
@@ -268,11 +262,9 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //APIKey.setApiKeyPrefix("Token");
 
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    // Configure HTTP bearer authorization: JWT
+    HttpBearerAuth JWT = (HttpBearerAuth) defaultClient.getAuthentication("JWT");
+    JWT.setBearerToken("BEARER TOKEN");
 
     IndexesApi apiInstance = new IndexesApi(defaultClient);
     String indexId = "indexId_example"; // String | 
@@ -341,11 +333,9 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //APIKey.setApiKeyPrefix("Token");
 
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    // Configure HTTP bearer authorization: JWT
+    HttpBearerAuth JWT = (HttpBearerAuth) defaultClient.getAuthentication("JWT");
+    JWT.setBearerToken("BEARER TOKEN");
 
     IndexesApi apiInstance = new IndexesApi(defaultClient);
     try {
@@ -410,11 +400,9 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //APIKey.setApiKeyPrefix("Token");
 
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    // Configure HTTP bearer authorization: JWT
+    HttpBearerAuth JWT = (HttpBearerAuth) defaultClient.getAuthentication("JWT");
+    JWT.setBearerToken("BEARER TOKEN");
 
     IndexesApi apiInstance = new IndexesApi(defaultClient);
     String indexDefinitionId = "indexDefinitionId_example"; // String | 
@@ -483,11 +471,9 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //APIKey.setApiKeyPrefix("Token");
 
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    // Configure HTTP bearer authorization: JWT
+    HttpBearerAuth JWT = (HttpBearerAuth) defaultClient.getAuthentication("JWT");
+    JWT.setBearerToken("BEARER TOKEN");
 
     IndexesApi apiInstance = new IndexesApi(defaultClient);
     String indexDefinitionId = "indexDefinitionId_example"; // String | 
@@ -558,11 +544,9 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //APIKey.setApiKeyPrefix("Token");
 
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    // Configure HTTP bearer authorization: JWT
+    HttpBearerAuth JWT = (HttpBearerAuth) defaultClient.getAuthentication("JWT");
+    JWT.setBearerToken("BEARER TOKEN");
 
     IndexesApi apiInstance = new IndexesApi(defaultClient);
     String indexId = "indexId_example"; // String | 
@@ -631,11 +615,9 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //APIKey.setApiKeyPrefix("Token");
 
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    // Configure HTTP bearer authorization: JWT
+    HttpBearerAuth JWT = (HttpBearerAuth) defaultClient.getAuthentication("JWT");
+    JWT.setBearerToken("BEARER TOKEN");
 
     IndexesApi apiInstance = new IndexesApi(defaultClient);
     String indexId = "indexId_example"; // String | 
@@ -710,11 +692,9 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //APIKey.setApiKeyPrefix("Token");
 
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    // Configure HTTP bearer authorization: JWT
+    HttpBearerAuth JWT = (HttpBearerAuth) defaultClient.getAuthentication("JWT");
+    JWT.setBearerToken("BEARER TOKEN");
 
     IndexesApi apiInstance = new IndexesApi(defaultClient);
     String indexId = "indexId_example"; // String | 

@@ -65,7 +65,7 @@ export class IndexesService extends BaseService {
         localVarHeaders = this.configuration.addCredentialToHeaders('APIKey', 'Authorization', localVarHeaders);
 
         // authentication (JWT) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders);
+        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'text/plain',
@@ -145,7 +145,7 @@ export class IndexesService extends BaseService {
         localVarHeaders = this.configuration.addCredentialToHeaders('APIKey', 'Authorization', localVarHeaders);
 
         // authentication (JWT) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders);
+        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'text/plain',
@@ -205,7 +205,7 @@ export class IndexesService extends BaseService {
         localVarHeaders = this.configuration.addCredentialToHeaders('APIKey', 'Authorization', localVarHeaders);
 
         // authentication (JWT) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders);
+        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'text/plain',
@@ -268,7 +268,7 @@ export class IndexesService extends BaseService {
         localVarHeaders = this.configuration.addCredentialToHeaders('APIKey', 'Authorization', localVarHeaders);
 
         // authentication (JWT) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders);
+        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'text/plain',
@@ -327,7 +327,7 @@ export class IndexesService extends BaseService {
         localVarHeaders = this.configuration.addCredentialToHeaders('APIKey', 'Authorization', localVarHeaders);
 
         // authentication (JWT) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders);
+        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'text/plain',
@@ -390,7 +390,7 @@ export class IndexesService extends BaseService {
         localVarHeaders = this.configuration.addCredentialToHeaders('APIKey', 'Authorization', localVarHeaders);
 
         // authentication (JWT) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders);
+        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'text/plain',
@@ -458,7 +458,7 @@ export class IndexesService extends BaseService {
         localVarHeaders = this.configuration.addCredentialToHeaders('APIKey', 'Authorization', localVarHeaders);
 
         // authentication (JWT) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders);
+        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'text/plain',
@@ -522,7 +522,7 @@ export class IndexesService extends BaseService {
         localVarHeaders = this.configuration.addCredentialToHeaders('APIKey', 'Authorization', localVarHeaders);
 
         // authentication (JWT) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders);
+        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'text/plain',
@@ -596,7 +596,7 @@ export class IndexesService extends BaseService {
         localVarHeaders = this.configuration.addCredentialToHeaders('APIKey', 'Authorization', localVarHeaders);
 
         // authentication (JWT) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders);
+        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'text/plain',
@@ -683,7 +683,7 @@ export class IndexesService extends BaseService {
         localVarHeaders = this.configuration.addCredentialToHeaders('APIKey', 'Authorization', localVarHeaders);
 
         // authentication (JWT) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders);
+        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders, 'Bearer ');
 
         const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
             'text/plain',

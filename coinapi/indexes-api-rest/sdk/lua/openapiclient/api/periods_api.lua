@@ -63,10 +63,6 @@ function periods_api:v1_metadata_periods_get()
 	if self.api_key['Authorization'] then
 		req.headers:upsert("APIKey", self.api_key['Authorization'])
 	end
-	-- api key in headers 'Authorization'
-	if self.api_key['Authorization'] then
-		req.headers:upsert("JWT", self.api_key['Authorization'])
-	end
 
 	-- make the HTTP call
 	local headers, stream, errno = req:go()

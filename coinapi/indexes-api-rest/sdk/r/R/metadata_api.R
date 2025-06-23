@@ -25,8 +25,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$ApiMetadataExchangesExchangeIdGet(var_exchange_iddata_file = "result.txt")
@@ -45,8 +45,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$ApiMetadataExchangesGet(filter_exchange_id = var_filter_exchange_iddata_file = "result.txt")
@@ -128,9 +128,9 @@ MetadataApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header
@@ -228,9 +228,9 @@ MetadataApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header

@@ -130,9 +130,7 @@ Authentication schemes defined for the API:
 <a id="JWT"></a>
 ### JWT
 
-- **Type**: API key
-- **API key parameter name**: Authorization
-- **Location**: HTTP header
+- **Type**: Bearer Authentication
 
 
 ## Build
@@ -180,7 +178,7 @@ Authentication schemes defined for the API:
 - packageCompany: OpenAPI
 - packageCopyright: No Copyright
 - packageDescription: A library generated from a OpenAPI doc
-- packageGuid: {2ED6B025-E27F-4B66-B4C6-94ABA52FE44C}
+- packageGuid: {3119E880-BD9D-4047-9CBC-43BD8E4D6600}
 - packageName: APIBricks.CoinAPI.IndexesAPI.REST.V1
 - packageTags: 
 - packageTitle: OpenAPI Library

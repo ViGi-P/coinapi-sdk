@@ -28,10 +28,9 @@ my $api_instance = WWW::OpenAPIClient::MetadataApi->new(
     api_key => {'Authorization' => 'YOUR_API_KEY'},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'Authorization' => 'Bearer'},
-    # Configure API key authorization: JWT
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
+    # Configure bearer access token for authorization: JWT
+    access_token => 'YOUR_BEARER_TOKEN',
+    
 );
 
 my $exchange_id = "exchange_id_example"; # string | The ID of the exchange.
@@ -83,10 +82,9 @@ my $api_instance = WWW::OpenAPIClient::MetadataApi->new(
     api_key => {'Authorization' => 'YOUR_API_KEY'},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'Authorization' => 'Bearer'},
-    # Configure API key authorization: JWT
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
+    # Configure bearer access token for authorization: JWT
+    access_token => 'YOUR_BEARER_TOKEN',
+    
 );
 
 my $filter_exchange_id = "filter_exchange_id_example"; # string | Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. `BITSTAMP;GEMINI`)

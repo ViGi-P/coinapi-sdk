@@ -35,8 +35,6 @@ private class OASIndexesApiTest {
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
-        ((OAS.ApiKeyAuth)client.getAuthentication('JWT')).setApiKey('foo-bar-api-key');
-
 
         js = JSON.serialize(new List<OASIndexesIndexDefinitionInputData>{OASIndexesIndexDefinitionInputData.getExample()});
         res.setHeader('Content-Type', 'application/json');
@@ -86,8 +84,6 @@ private class OASIndexesApiTest {
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
-        ((OAS.ApiKeyAuth)client.getAuthentication('JWT')).setApiKey('foo-bar-api-key');
-
 
         js = JSON.serialize(new List<OASIndexesIndexDefinitionSnapshotEnt>{OASIndexesIndexDefinitionSnapshotEnt.getExample()});
         res.setHeader('Content-Type', 'application/json');
@@ -128,8 +124,6 @@ private class OASIndexesApiTest {
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
-        ((OAS.ApiKeyAuth)client.getAuthentication('JWT')).setApiKey('foo-bar-api-key');
-
 
         js = JSON.serialize(new List<OASIndexesIndexMultiAssetWeight>{OASIndexesIndexMultiAssetWeight.getExample()});
         res.setHeader('Content-Type', 'application/json');
@@ -174,8 +168,6 @@ private class OASIndexesApiTest {
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
-        ((OAS.ApiKeyAuth)client.getAuthentication('JWT')).setApiKey('foo-bar-api-key');
-
 
         js = JSON.serialize(new List<OASIndexesIndexMultiAssetWeight>{OASIndexesIndexMultiAssetWeight.getExample()});
         res.setHeader('Content-Type', 'application/json');
@@ -216,8 +208,6 @@ private class OASIndexesApiTest {
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
-        ((OAS.ApiKeyAuth)client.getAuthentication('JWT')).setApiKey('foo-bar-api-key');
-
 
         js = JSON.serialize(new List<OASIndexesIndexIdentifier>{OASIndexesIndexIdentifier.getExample()});
         res.setHeader('Content-Type', 'application/json');
@@ -262,8 +252,6 @@ private class OASIndexesApiTest {
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
-        ((OAS.ApiKeyAuth)client.getAuthentication('JWT')).setApiKey('foo-bar-api-key');
-
 
         js = JSON.serialize(new List<OASIndexesIndexDefinitionSnapshotEnt>{OASIndexesIndexDefinitionSnapshotEnt.getExample()});
         res.setHeader('Content-Type', 'application/json');
@@ -309,8 +297,6 @@ private class OASIndexesApiTest {
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
-        ((OAS.ApiKeyAuth)client.getAuthentication('JWT')).setApiKey('foo-bar-api-key');
-
 
         js = JSON.serialize(new List<OASIndexesIndexDefinitionSnapshotEnt>{OASIndexesIndexDefinitionSnapshotEnt.getExample()});
         res.setHeader('Content-Type', 'application/json');
@@ -379,8 +365,6 @@ private class OASIndexesApiTest {
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
-        ((OAS.ApiKeyAuth)client.getAuthentication('JWT')).setApiKey('foo-bar-api-key');
-
 
         js = JSON.serialize(OASIndexesIndexValue.getExample());
         res.setHeader('Content-Type', 'application/json');
@@ -452,8 +436,6 @@ private class OASIndexesApiTest {
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
-        ((OAS.ApiKeyAuth)client.getAuthentication('JWT')).setApiKey('foo-bar-api-key');
-
 
         js = JSON.serialize(new List<OASIndexesIndexValue>{OASIndexesIndexValue.getExample()});
         res.setHeader('Content-Type', 'application/json');
@@ -502,8 +484,6 @@ private class OASIndexesApiTest {
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
-        ((OAS.ApiKeyAuth)client.getAuthentication('JWT')).setApiKey('foo-bar-api-key');
-
 
         js = JSON.serialize(new List<OASIndexesIndexTimeseriesItem>{OASIndexesIndexTimeseriesItem.getExample()});
         res.setHeader('Content-Type', 'application/json');

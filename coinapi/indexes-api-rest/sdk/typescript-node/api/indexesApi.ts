@@ -35,7 +35,6 @@ let defaultBasePath = 'https://rest-api.indexes.coinapi.io';
 
 export enum IndexesApiApiKeys {
     APIKey,
-    JWT,
 }
 
 export class IndexesApi {
@@ -46,7 +45,7 @@ export class IndexesApi {
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
         'APIKey': new ApiKeyAuth('header', 'Authorization'),
-        'JWT': new ApiKeyAuth('header', 'Authorization'),
+        'JWT': new HttpBearerAuth(),
     }
 
     protected interceptors: Interceptor[] = [];
@@ -90,6 +89,10 @@ export class IndexesApi {
 
     public setApiKey(key: IndexesApiApiKeys, value: string) {
         (this.authentications as any)[IndexesApiApiKeys[key]].apiKey = value;
+    }
+
+    set accessToken(accessToken: string | (() => string)) {
+        this.authentications.JWT.accessToken = accessToken;
     }
 
     public addInterceptor(interceptor: Interceptor) {
@@ -137,7 +140,7 @@ export class IndexesApi {
         if (this.authentications.APIKey.apiKey) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.APIKey.applyToRequest(localVarRequestOptions));
         }
-        if (this.authentications.JWT.apiKey) {
+        if (this.authentications.JWT.accessToken) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.JWT.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
@@ -237,7 +240,7 @@ export class IndexesApi {
         if (this.authentications.APIKey.apiKey) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.APIKey.applyToRequest(localVarRequestOptions));
         }
-        if (this.authentications.JWT.apiKey) {
+        if (this.authentications.JWT.accessToken) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.JWT.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
@@ -305,7 +308,7 @@ export class IndexesApi {
         if (this.authentications.APIKey.apiKey) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.APIKey.applyToRequest(localVarRequestOptions));
         }
-        if (this.authentications.JWT.apiKey) {
+        if (this.authentications.JWT.accessToken) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.JWT.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
@@ -380,7 +383,7 @@ export class IndexesApi {
         if (this.authentications.APIKey.apiKey) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.APIKey.applyToRequest(localVarRequestOptions));
         }
-        if (this.authentications.JWT.apiKey) {
+        if (this.authentications.JWT.accessToken) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.JWT.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
@@ -448,7 +451,7 @@ export class IndexesApi {
         if (this.authentications.APIKey.apiKey) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.APIKey.applyToRequest(localVarRequestOptions));
         }
-        if (this.authentications.JWT.apiKey) {
+        if (this.authentications.JWT.accessToken) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.JWT.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
@@ -523,7 +526,7 @@ export class IndexesApi {
         if (this.authentications.APIKey.apiKey) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.APIKey.applyToRequest(localVarRequestOptions));
         }
-        if (this.authentications.JWT.apiKey) {
+        if (this.authentications.JWT.accessToken) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.JWT.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
@@ -603,7 +606,7 @@ export class IndexesApi {
         if (this.authentications.APIKey.apiKey) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.APIKey.applyToRequest(localVarRequestOptions));
         }
-        if (this.authentications.JWT.apiKey) {
+        if (this.authentications.JWT.accessToken) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.JWT.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
@@ -678,7 +681,7 @@ export class IndexesApi {
         if (this.authentications.APIKey.apiKey) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.APIKey.applyToRequest(localVarRequestOptions));
         }
-        if (this.authentications.JWT.apiKey) {
+        if (this.authentications.JWT.accessToken) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.JWT.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
@@ -768,7 +771,7 @@ export class IndexesApi {
         if (this.authentications.APIKey.apiKey) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.APIKey.applyToRequest(localVarRequestOptions));
         }
-        if (this.authentications.JWT.apiKey) {
+        if (this.authentications.JWT.accessToken) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.JWT.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));
@@ -878,7 +881,7 @@ export class IndexesApi {
         if (this.authentications.APIKey.apiKey) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.APIKey.applyToRequest(localVarRequestOptions));
         }
-        if (this.authentications.JWT.apiKey) {
+        if (this.authentications.JWT.accessToken) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.JWT.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));

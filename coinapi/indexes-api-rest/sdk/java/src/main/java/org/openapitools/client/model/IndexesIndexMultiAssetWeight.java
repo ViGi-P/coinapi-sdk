@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * IndexesIndexMultiAssetWeight
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-11T06:06:56.411366003Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T06:06:58.682189309Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IndexesIndexMultiAssetWeight {
   public static final String SERIALIZED_NAME_INDEX_ID = "indexId";
   @SerializedName(SERIALIZED_NAME_INDEX_ID)

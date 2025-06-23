@@ -31,8 +31,6 @@ private class OASPeriodsApiTest {
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASPeriodsApi(client);
-        ((OAS.ApiKeyAuth)client.getAuthentication('JWT')).setApiKey('foo-bar-api-key');
-
 
         js = JSON.serialize(new List<OASMetadataTimeseriesPeriod>{OASMetadataTimeseriesPeriod.getExample()});
         res.setHeader('Content-Type', 'application/json');

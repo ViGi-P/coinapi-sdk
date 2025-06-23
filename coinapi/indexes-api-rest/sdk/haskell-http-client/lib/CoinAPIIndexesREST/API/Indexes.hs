@@ -64,7 +64,7 @@ import qualified Prelude as P
 -- 
 -- Returns all data inputs for a specific index definition
 -- 
--- AuthMethod: 'AuthApiKeyAPIKey', 'AuthApiKeyJWT'
+-- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1IndexdefInputDataIndexDefinitionIdAllGet
   :: Accept accept -- ^ request accept ('MimeType')
@@ -73,7 +73,7 @@ v1IndexdefInputDataIndexDefinitionIdAllGet
 v1IndexdefInputDataIndexDefinitionIdAllGet  _ (IndexDefinitionId indexDefinitionId) =
   _mkRequest "GET" ["/v1/indexdef/input-data/",toPath indexDefinitionId,"/all"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
-    `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyJWT)
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
 
 data V1IndexdefInputDataIndexDefinitionIdAllGet  
 -- | @application/json@
@@ -92,7 +92,7 @@ instance Produces V1IndexdefInputDataIndexDefinitionIdAllGet MimePlainText
 -- 
 -- Returns data inputs for certain index definition and time
 -- 
--- AuthMethod: 'AuthApiKeyAPIKey', 'AuthApiKeyJWT'
+-- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1IndexdefInputDataIndexDefinitionIdGet
   :: Accept accept -- ^ request accept ('MimeType')
@@ -101,7 +101,7 @@ v1IndexdefInputDataIndexDefinitionIdGet
 v1IndexdefInputDataIndexDefinitionIdGet  _ (IndexDefinitionId indexDefinitionId) =
   _mkRequest "GET" ["/v1/indexdef/input-data/",toPath indexDefinitionId]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
-    `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyJWT)
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
 
 data V1IndexdefInputDataIndexDefinitionIdGet  
 instance HasOptionalParam V1IndexdefInputDataIndexDefinitionIdGet Time where
@@ -135,7 +135,7 @@ instance Produces V1IndexdefInputDataIndexDefinitionIdGet MimePlainText
 -- 
 -- Get all multi-asset weights
 -- 
--- AuthMethod: 'AuthApiKeyAPIKey', 'AuthApiKeyJWT'
+-- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1IndexdefMultiassetGet
   :: Accept accept -- ^ request accept ('MimeType')
@@ -143,7 +143,7 @@ v1IndexdefMultiassetGet
 v1IndexdefMultiassetGet  _ =
   _mkRequest "GET" ["/v1/indexdef/multiasset"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
-    `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyJWT)
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
 
 data V1IndexdefMultiassetGet  
 -- | @application/json@
@@ -162,7 +162,7 @@ instance Produces V1IndexdefMultiassetGet MimePlainText
 -- 
 -- Get multi-asset weights for specific index
 -- 
--- AuthMethod: 'AuthApiKeyAPIKey', 'AuthApiKeyJWT'
+-- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1IndexdefMultiassetIndexIdGet
   :: Accept accept -- ^ request accept ('MimeType')
@@ -171,7 +171,7 @@ v1IndexdefMultiassetIndexIdGet
 v1IndexdefMultiassetIndexIdGet  _ (IndexId indexId) =
   _mkRequest "GET" ["/v1/indexdef/multiasset/",toPath indexId]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
-    `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyJWT)
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
 
 data V1IndexdefMultiassetIndexIdGet  
 -- | @application/json@
@@ -190,7 +190,7 @@ instance Produces V1IndexdefMultiassetIndexIdGet MimePlainText
 -- 
 -- List indexes
 -- 
--- AuthMethod: 'AuthApiKeyAPIKey', 'AuthApiKeyJWT'
+-- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1IndexesGet
   :: Accept accept -- ^ request accept ('MimeType')
@@ -198,7 +198,7 @@ v1IndexesGet
 v1IndexesGet  _ =
   _mkRequest "GET" ["/v1/indexes"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
-    `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyJWT)
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
 
 data V1IndexesGet  
 -- | @application/json@
@@ -217,7 +217,7 @@ instance Produces V1IndexesGet MimePlainText
 -- 
 -- Current Index Values for index definition
 -- 
--- AuthMethod: 'AuthApiKeyAPIKey', 'AuthApiKeyJWT'
+-- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1IndexesIndexDefinitionIdCurrentSnapshotGet
   :: Accept accept -- ^ request accept ('MimeType')
@@ -226,7 +226,7 @@ v1IndexesIndexDefinitionIdCurrentSnapshotGet
 v1IndexesIndexDefinitionIdCurrentSnapshotGet  _ (IndexDefinitionId indexDefinitionId) =
   _mkRequest "GET" ["/v1/indexes/",toPath indexDefinitionId,"/currentSnapshot"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
-    `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyJWT)
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
 
 data V1IndexesIndexDefinitionIdCurrentSnapshotGet  
 -- | @application/json@
@@ -245,7 +245,7 @@ instance Produces V1IndexesIndexDefinitionIdCurrentSnapshotGet MimePlainText
 -- 
 -- Historical Index Values for index definition
 -- 
--- AuthMethod: 'AuthApiKeyAPIKey', 'AuthApiKeyJWT'
+-- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1IndexesIndexDefinitionIdHistorySnapshotGet
   :: Accept accept -- ^ request accept ('MimeType')
@@ -254,7 +254,7 @@ v1IndexesIndexDefinitionIdHistorySnapshotGet
 v1IndexesIndexDefinitionIdHistorySnapshotGet  _ (IndexDefinitionId indexDefinitionId) =
   _mkRequest "GET" ["/v1/indexes/",toPath indexDefinitionId,"/historySnapshot"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
-    `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyJWT)
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
 
 data V1IndexesIndexDefinitionIdHistorySnapshotGet  
 instance HasOptionalParam V1IndexesIndexDefinitionIdHistorySnapshotGet Time where
@@ -276,7 +276,7 @@ instance Produces V1IndexesIndexDefinitionIdHistorySnapshotGet MimePlainText
 -- 
 -- Current Index Value
 -- 
--- AuthMethod: 'AuthApiKeyAPIKey', 'AuthApiKeyJWT'
+-- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1IndexesIndexIdCurrentGet
   :: Accept accept -- ^ request accept ('MimeType')
@@ -285,7 +285,7 @@ v1IndexesIndexIdCurrentGet
 v1IndexesIndexIdCurrentGet  _ (IndexId indexId) =
   _mkRequest "GET" ["/v1/indexes/",toPath indexId,"/current"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
-    `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyJWT)
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
 
 data V1IndexesIndexIdCurrentGet  
 -- | @application/json@
@@ -304,7 +304,7 @@ instance Produces V1IndexesIndexIdCurrentGet MimePlainText
 -- 
 -- Historical Index Value w/Composition
 -- 
--- AuthMethod: 'AuthApiKeyAPIKey', 'AuthApiKeyJWT'
+-- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1IndexesIndexIdHistoryGet
   :: Accept accept -- ^ request accept ('MimeType')
@@ -313,7 +313,7 @@ v1IndexesIndexIdHistoryGet
 v1IndexesIndexIdHistoryGet  _ (IndexId indexId) =
   _mkRequest "GET" ["/v1/indexes/",toPath indexId,"/history"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
-    `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyJWT)
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
 
 data V1IndexesIndexIdHistoryGet  
 instance HasOptionalParam V1IndexesIndexIdHistoryGet TimeStart where
@@ -341,7 +341,7 @@ instance Produces V1IndexesIndexIdHistoryGet MimePlainText
 -- 
 -- Timeseries Index Value
 -- 
--- AuthMethod: 'AuthApiKeyAPIKey', 'AuthApiKeyJWT'
+-- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1IndexesIndexIdTimeseriesGet
   :: Accept accept -- ^ request accept ('MimeType')
@@ -353,7 +353,7 @@ v1IndexesIndexIdTimeseriesGet
 v1IndexesIndexIdTimeseriesGet  _ (IndexId indexId) (PeriodId periodId) (TimeStartText timeStart) (TimeEndText timeEnd) =
   _mkRequest "GET" ["/v1/indexes/",toPath indexId,"/timeseries"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
-    `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyJWT)
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
     `addQuery` toQuery ("period_id", Just periodId)
     `addQuery` toQuery ("time_start", Just timeStart)
     `addQuery` toQuery ("time_end", Just timeEnd)

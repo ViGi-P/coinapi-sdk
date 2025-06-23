@@ -113,13 +113,6 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexDefinitionInputData>>> Index
         }
     }
     // authentication (JWT) required
-    {
-        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("Authorization"));
-        if ( localVarApiKey.size() > 0 )
-        {
-            localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
-        }
-    }
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)
@@ -279,13 +272,6 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry>>> I
         }
     }
     // authentication (JWT) required
-    {
-        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("Authorization"));
-        if ( localVarApiKey.size() > 0 )
-        {
-            localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
-        }
-    }
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)
@@ -424,13 +410,6 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexMultiAssetWeight>>> IndexesA
         }
     }
     // authentication (JWT) required
-    {
-        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("Authorization"));
-        if ( localVarApiKey.size() > 0 )
-        {
-            localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
-        }
-    }
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)
@@ -570,13 +549,6 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexMultiAssetWeight>>> IndexesA
         }
     }
     // authentication (JWT) required
-    {
-        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("Authorization"));
-        if ( localVarApiKey.size() > 0 )
-        {
-            localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
-        }
-    }
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)
@@ -715,13 +687,6 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexIdentifier>>> IndexesApi::v1
         }
     }
     // authentication (JWT) required
-    {
-        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("Authorization"));
-        if ( localVarApiKey.size() > 0 )
-        {
-            localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
-        }
-    }
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)
@@ -861,13 +826,6 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry>>> I
         }
     }
     // authentication (JWT) required
-    {
-        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("Authorization"));
-        if ( localVarApiKey.size() > 0 )
-        {
-            localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
-        }
-    }
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)
@@ -1011,13 +969,6 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry>>> I
         }
     }
     // authentication (JWT) required
-    {
-        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("Authorization"));
-        if ( localVarApiKey.size() > 0 )
-        {
-            localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
-        }
-    }
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)
@@ -1157,13 +1108,6 @@ pplx::task<std::shared_ptr<Indexes_IndexValue>> IndexesApi::v1IndexesIndexIdCurr
         }
     }
     // authentication (JWT) required
-    {
-        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("Authorization"));
-        if ( localVarApiKey.size() > 0 )
-        {
-            localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
-        }
-    }
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)
@@ -1311,13 +1255,6 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexValue>>> IndexesApi::v1Index
         }
     }
     // authentication (JWT) required
-    {
-        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("Authorization"));
-        if ( localVarApiKey.size() > 0 )
-        {
-            localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
-        }
-    }
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)
@@ -1470,13 +1407,6 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexTimeseriesItem>>> IndexesApi
         }
     }
     // authentication (JWT) required
-    {
-        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("Authorization"));
-        if ( localVarApiKey.size() > 0 )
-        {
-            localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
-        }
-    }
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)

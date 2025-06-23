@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * IndexesIndexDefinitionInputData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-11T06:06:56.411366003Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-23T06:06:58.682189309Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class IndexesIndexDefinitionInputData {
   public static final String SERIALIZED_NAME_EXCHANGE_ID = "exchangeId";
   @SerializedName(SERIALIZED_NAME_EXCHANGE_ID)

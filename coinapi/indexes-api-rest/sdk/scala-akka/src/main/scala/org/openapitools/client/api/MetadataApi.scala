@@ -29,15 +29,14 @@ class MetadataApi(baseUrl: String) {
    * 
    * Available security schemes:
    *   APIKey (apiKey)
-   *   JWT (apiKey)
+   *   JWT (http)
    * 
    * @param exchangeId The ID of the exchange.
    */
-  def apiMetadataExchangesExchangeIdGet(exchangeId: String)(implicit apiKey: ApiKeyValue, apiKey: ApiKeyValue): ApiRequest[Seq[Exchange]] =
+  def apiMetadataExchangesExchangeIdGet(exchangeId: String)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[Exchange]] =
     ApiRequest[Seq[Exchange]](ApiMethods.GET, baseUrl, "/api/metadata/exchanges/{exchange_id}", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
-      .withApiKey(apiKey, "Authorization", HEADER)
-      .withPathParam("exchange_id", exchangeId)
+      .withCredentials(bearerToken).withPathParam("exchange_id", exchangeId)
       .withSuccessResponse[Seq[Exchange]](200)
       
 
@@ -49,15 +48,14 @@ class MetadataApi(baseUrl: String) {
    * 
    * Available security schemes:
    *   APIKey (apiKey)
-   *   JWT (apiKey)
+   *   JWT (http)
    * 
    * @param filterExchangeId Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. `BITSTAMP;GEMINI`)
    */
-  def apiMetadataExchangesGet(filterExchangeId: Option[String] = None)(implicit apiKey: ApiKeyValue, apiKey: ApiKeyValue): ApiRequest[Seq[Exchange]] =
+  def apiMetadataExchangesGet(filterExchangeId: Option[String] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[Exchange]] =
     ApiRequest[Seq[Exchange]](ApiMethods.GET, baseUrl, "/api/metadata/exchanges", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
-      .withApiKey(apiKey, "Authorization", HEADER)
-      .withQueryParam("filter_exchange_id", filterExchangeId)
+      .withCredentials(bearerToken).withQueryParam("filter_exchange_id", filterExchangeId)
       .withSuccessResponse[Seq[Exchange]](200)
       
 

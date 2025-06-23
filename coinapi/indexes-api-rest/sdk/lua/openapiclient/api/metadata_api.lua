@@ -63,10 +63,6 @@ function metadata_api:api_metadata_exchanges_exchange_id_get(exchange_id)
 	if self.api_key['Authorization'] then
 		req.headers:upsert("APIKey", self.api_key['Authorization'])
 	end
-	-- api key in headers 'Authorization'
-	if self.api_key['Authorization'] then
-		req.headers:upsert("JWT", self.api_key['Authorization'])
-	end
 
 	-- make the HTTP call
 	local headers, stream, errno = req:go()
@@ -119,10 +115,6 @@ function metadata_api:api_metadata_exchanges_get(filter_exchange_id)
 	-- api key in headers 'Authorization'
 	if self.api_key['Authorization'] then
 		req.headers:upsert("APIKey", self.api_key['Authorization'])
-	end
-	-- api key in headers 'Authorization'
-	if self.api_key['Authorization'] then
-		req.headers:upsert("JWT", self.api_key['Authorization'])
 	end
 
 	-- make the HTTP call

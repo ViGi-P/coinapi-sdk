@@ -29,8 +29,8 @@ import Json.Encode
 
 {-| List all exchanges by exchange_id
 -}
-apiMetadataExchangesExchangeIdGet : String -> Api.Request (List Api.Data.MetadataExchange)
-apiMetadataExchangesExchangeIdGet exchangeId_path =
+apiMetadataExchangesExchangeIdGet : String -> String -> Api.Request (List Api.Data.MetadataExchange)
+apiMetadataExchangesExchangeIdGet exchangeId_path auth_token =
     Api.request
         "GET"
         "/api/metadata/exchanges/{exchange_id}"
@@ -39,15 +39,15 @@ apiMetadataExchangesExchangeIdGet exchangeId_path =
         []
         Nothing
         (Json.Decode.list Api.Data.metadataExchangeDecoder)
-
+        |> Api.withBearerToken auth_token
 
 {-| List all exchanges
 
 Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
 
 -}
-apiMetadataExchangesGet : Maybe String -> Api.Request (List Api.Data.MetadataExchange)
-apiMetadataExchangesGet filterExchangeId_query =
+apiMetadataExchangesGet : Maybe String -> String -> Api.Request (List Api.Data.MetadataExchange)
+apiMetadataExchangesGet filterExchangeId_query auth_token =
     Api.request
         "GET"
         "/api/metadata/exchanges"
@@ -56,4 +56,4 @@ apiMetadataExchangesGet filterExchangeId_query =
         []
         Nothing
         (Json.Decode.list Api.Data.metadataExchangeDecoder)
-
+        |> Api.withBearerToken auth_token

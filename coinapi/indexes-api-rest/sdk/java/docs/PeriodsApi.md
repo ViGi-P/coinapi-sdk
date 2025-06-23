@@ -36,11 +36,9 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //APIKey.setApiKeyPrefix("Token");
 
-    // Configure API key authorization: JWT
-    ApiKeyAuth JWT = (ApiKeyAuth) defaultClient.getAuthentication("JWT");
-    JWT.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //JWT.setApiKeyPrefix("Token");
+    // Configure HTTP bearer authorization: JWT
+    HttpBearerAuth JWT = (HttpBearerAuth) defaultClient.getAuthentication("JWT");
+    JWT.setBearerToken("BEARER TOKEN");
 
     PeriodsApi apiInstance = new PeriodsApi(defaultClient);
     try {

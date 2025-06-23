@@ -400,12 +400,6 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
             }
 
             // authentication JWT required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -443,12 +437,6 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
             }
 
             // authentication JWT required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
 
             if (time !== undefined) {
                 localVarQueryParameter['time'] = ((time:any):Date).toISOString();
@@ -501,12 +489,6 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
             }
 
             // authentication JWT required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -544,12 +526,6 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
             }
 
             // authentication JWT required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -582,12 +558,6 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
             }
 
             // authentication JWT required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -625,12 +595,6 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
             }
 
             // authentication JWT required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -668,12 +632,6 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
             }
 
             // authentication JWT required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
 
             if (time !== undefined) {
                 localVarQueryParameter['time'] = ((time:any):Date).toISOString();
@@ -715,12 +673,6 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
             }
 
             // authentication JWT required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -758,12 +710,6 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
             }
 
             // authentication JWT required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
 
             if (timeStart !== undefined) {
                 localVarQueryParameter['time_start'] = ((timeStart:any):Date).toISOString();
@@ -825,12 +771,6 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
             }
 
             // authentication JWT required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
 
             if (periodId !== undefined) {
                 localVarQueryParameter['period_id'] = ((periodId:any):string);
@@ -1076,12 +1016,6 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
             }
 
             // authentication JWT required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
@@ -1114,12 +1048,6 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
             }
 
             // authentication JWT required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
 
             if (filterExchangeId !== undefined) {
                 localVarQueryParameter['filter_exchange_id'] = ((filterExchangeId:any):string);
@@ -1212,12 +1140,6 @@ export const PeriodsApiFetchParamCreator = function (configuration?: Configurati
             }
 
             // authentication JWT required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943

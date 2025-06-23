@@ -24,10 +24,6 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 #$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
-# Configure API key authorization: JWT
-$Configuration.ApiKey.Authorization = "YOUR_API_KEY"
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-#$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
 
 # List all periods

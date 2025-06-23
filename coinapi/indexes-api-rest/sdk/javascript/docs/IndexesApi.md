@@ -33,11 +33,9 @@ let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: JWT
+// Configure Bearer (JWT) access token for authorization: JWT
 let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiIndexesRestApi.IndexesApi();
 let indexDefinitionId = "indexDefinitionId_example"; // String | 
@@ -87,11 +85,9 @@ let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: JWT
+// Configure Bearer (JWT) access token for authorization: JWT
 let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiIndexesRestApi.IndexesApi();
 let indexDefinitionId = "indexDefinitionId_example"; // String | 
@@ -153,11 +149,9 @@ let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: JWT
+// Configure Bearer (JWT) access token for authorization: JWT
 let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiIndexesRestApi.IndexesApi();
 apiInstance.v1IndexdefMultiassetGet((error, data, response) => {
@@ -203,11 +197,9 @@ let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: JWT
+// Configure Bearer (JWT) access token for authorization: JWT
 let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiIndexesRestApi.IndexesApi();
 let indexId = "indexId_example"; // String | 
@@ -257,11 +249,9 @@ let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: JWT
+// Configure Bearer (JWT) access token for authorization: JWT
 let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiIndexesRestApi.IndexesApi();
 apiInstance.v1IndexesGet((error, data, response) => {
@@ -307,11 +297,9 @@ let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: JWT
+// Configure Bearer (JWT) access token for authorization: JWT
 let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiIndexesRestApi.IndexesApi();
 let indexDefinitionId = "indexDefinitionId_example"; // String | 
@@ -361,11 +349,9 @@ let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: JWT
+// Configure Bearer (JWT) access token for authorization: JWT
 let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiIndexesRestApi.IndexesApi();
 let indexDefinitionId = "indexDefinitionId_example"; // String | 
@@ -419,11 +405,9 @@ let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: JWT
+// Configure Bearer (JWT) access token for authorization: JWT
 let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiIndexesRestApi.IndexesApi();
 let indexId = "indexId_example"; // String | 
@@ -473,11 +457,9 @@ let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: JWT
+// Configure Bearer (JWT) access token for authorization: JWT
 let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiIndexesRestApi.IndexesApi();
 let indexId = "indexId_example"; // String | 
@@ -535,11 +517,9 @@ let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
-// Configure API key authorization: JWT
+// Configure Bearer (JWT) access token for authorization: JWT
 let JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix = 'Token';
+JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiIndexesRestApi.IndexesApi();
 let indexId = "indexId_example"; // String | 

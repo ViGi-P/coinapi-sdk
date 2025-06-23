@@ -33,10 +33,8 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: JWT
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: JWT
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new MetadataApi(config);
             var exchangeId = "exchangeId_example";  // string | The ID of the exchange.
@@ -133,10 +131,8 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: JWT
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: JWT
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new MetadataApi(config);
             var filterExchangeId = "filterExchangeId_example";  // string | Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. `BITSTAMP;GEMINI`) (optional) 

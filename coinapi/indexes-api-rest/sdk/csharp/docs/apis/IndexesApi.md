@@ -41,10 +41,8 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: JWT
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: JWT
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new IndexesApi(config);
             var indexDefinitionId = "indexDefinitionId_example";  // string | 
@@ -139,10 +137,8 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: JWT
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: JWT
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new IndexesApi(config);
             var indexDefinitionId = "indexDefinitionId_example";  // string | 
@@ -247,10 +243,8 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: JWT
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: JWT
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new IndexesApi(config);
 
@@ -340,10 +334,8 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: JWT
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: JWT
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new IndexesApi(config);
             var indexId = "indexId_example";  // string | 
@@ -438,10 +430,8 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: JWT
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: JWT
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new IndexesApi(config);
 
@@ -531,10 +521,8 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: JWT
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: JWT
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new IndexesApi(config);
             var indexDefinitionId = "indexDefinitionId_example";  // string | 
@@ -629,10 +617,8 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: JWT
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: JWT
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new IndexesApi(config);
             var indexDefinitionId = "indexDefinitionId_example";  // string | 
@@ -729,10 +715,8 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: JWT
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: JWT
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new IndexesApi(config);
             var indexId = "indexId_example";  // string | 
@@ -827,10 +811,8 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: JWT
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: JWT
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new IndexesApi(config);
             var indexId = "indexId_example";  // string | 
@@ -931,10 +913,8 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: JWT
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure Bearer token for authorization: JWT
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
             var apiInstance = new IndexesApi(config);
             var indexId = "indexId_example";  // string | 

@@ -44,6 +44,7 @@ src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Client/ApiFactory.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Client/ApiKeyToken.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Client/ApiResponseEventArgs.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Client/ApiResponse`1.cs
+src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Client/BearerToken.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Client/ClientUtils.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Client/CookieContainer.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Client/DateOnlyJsonConverter.cs

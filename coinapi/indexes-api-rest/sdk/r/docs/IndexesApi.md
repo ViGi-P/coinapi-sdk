@@ -33,8 +33,8 @@ var_index_definition_id <- "index_definition_id_example" # character |
 api_instance <- IndexesApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-# Configure API key authorization: JWT
-# api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 # result <- api_instance$V1IndexdefInputDataIndexDefinitionIdAllGet(var_index_definition_iddata_file = "result.txt")
 result <- api_instance$V1IndexdefInputDataIndexDefinitionIdAllGet(var_index_definition_id)
@@ -87,8 +87,8 @@ var_with_status_info <- FALSE # character |  (Optional)
 api_instance <- IndexesApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-# Configure API key authorization: JWT
-# api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 # result <- api_instance$V1IndexdefInputDataIndexDefinitionIdGet(var_index_definition_id, time = var_time, enabled_only = var_enabled_only, pending_only = var_pending_only, filter_asset_id = var_filter_asset_id, with_status_info = var_with_status_infodata_file = "result.txt")
 result <- api_instance$V1IndexdefInputDataIndexDefinitionIdGet(var_index_definition_id, time = var_time, enabled_only = var_enabled_only, pending_only = var_pending_only, filter_asset_id = var_filter_asset_id, with_status_info = var_with_status_info)
@@ -139,8 +139,8 @@ library(openapi)
 api_instance <- IndexesApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-# Configure API key authorization: JWT
-# api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 # result <- api_instance$V1IndexdefMultiassetGet(data_file = "result.txt")
 result <- api_instance$V1IndexdefMultiassetGet()
@@ -185,8 +185,8 @@ var_index_id <- "index_id_example" # character |
 api_instance <- IndexesApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-# Configure API key authorization: JWT
-# api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 # result <- api_instance$V1IndexdefMultiassetIndexIdGet(var_index_iddata_file = "result.txt")
 result <- api_instance$V1IndexdefMultiassetIndexIdGet(var_index_id)
@@ -232,8 +232,8 @@ library(openapi)
 api_instance <- IndexesApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-# Configure API key authorization: JWT
-# api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 # result <- api_instance$V1IndexesGet(data_file = "result.txt")
 result <- api_instance$V1IndexesGet()
@@ -278,8 +278,8 @@ var_index_definition_id <- "index_definition_id_example" # character |
 api_instance <- IndexesApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-# Configure API key authorization: JWT
-# api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 # result <- api_instance$V1IndexesIndexDefinitionIdCurrentSnapshotGet(var_index_definition_iddata_file = "result.txt")
 result <- api_instance$V1IndexesIndexDefinitionIdCurrentSnapshotGet(var_index_definition_id)
@@ -328,8 +328,8 @@ var_time <- "time_example" # character |  (Optional)
 api_instance <- IndexesApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-# Configure API key authorization: JWT
-# api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 # result <- api_instance$V1IndexesIndexDefinitionIdHistorySnapshotGet(var_index_definition_id, time = var_timedata_file = "result.txt")
 result <- api_instance$V1IndexesIndexDefinitionIdHistorySnapshotGet(var_index_definition_id, time = var_time)
@@ -378,8 +378,8 @@ var_index_id <- "index_id_example" # character |
 api_instance <- IndexesApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-# Configure API key authorization: JWT
-# api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 # result <- api_instance$V1IndexesIndexIdCurrentGet(var_index_iddata_file = "result.txt")
 result <- api_instance$V1IndexesIndexIdCurrentGet(var_index_id)
@@ -430,8 +430,8 @@ var_limit <- 100 # integer |  (Optional)
 api_instance <- IndexesApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-# Configure API key authorization: JWT
-# api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 # result <- api_instance$V1IndexesIndexIdHistoryGet(var_index_id, time_start = var_time_start, time_end = var_time_end, limit = var_limitdata_file = "result.txt")
 result <- api_instance$V1IndexesIndexIdHistoryGet(var_index_id, time_start = var_time_start, time_end = var_time_end, limit = var_limit)
@@ -486,8 +486,8 @@ var_limit <- 100 # integer | Amount of items to return (optional, mininum is 1, 
 api_instance <- IndexesApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-# Configure API key authorization: JWT
-# api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 # result <- api_instance$V1IndexesIndexIdTimeseriesGet(var_index_id, var_period_id, var_time_start, var_time_end, limit = var_limitdata_file = "result.txt")
 result <- api_instance$V1IndexesIndexIdTimeseriesGet(var_index_id, var_period_id, var_time_start, var_time_end, limit = var_limit)

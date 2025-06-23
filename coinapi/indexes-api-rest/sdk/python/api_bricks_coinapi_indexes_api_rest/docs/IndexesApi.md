@@ -24,7 +24,7 @@ Returns all data inputs for a specific index definition
 ### Example
 
 * Api Key Authentication (APIKey):
-* Api Key Authentication (JWT):
+* Bearer (JWT) Authentication (JWT):
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
@@ -49,11 +49,10 @@ configuration.api_key['APIKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['APIKey'] = 'Bearer'
 
-# Configure API key authorization: JWT
-configuration.api_key['JWT'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['JWT'] = 'Bearer'
+# Configure Bearer authorization (JWT): JWT
+configuration = api_bricks_coinapi_indexes_api_rest.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with api_bricks_coinapi_indexes_api_rest.ApiClient(configuration) as api_client:
@@ -108,7 +107,7 @@ Returns data inputs for certain index definition and time
 ### Example
 
 * Api Key Authentication (APIKey):
-* Api Key Authentication (JWT):
+* Bearer (JWT) Authentication (JWT):
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
@@ -133,11 +132,10 @@ configuration.api_key['APIKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['APIKey'] = 'Bearer'
 
-# Configure API key authorization: JWT
-configuration.api_key['JWT'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['JWT'] = 'Bearer'
+# Configure Bearer authorization (JWT): JWT
+configuration = api_bricks_coinapi_indexes_api_rest.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with api_bricks_coinapi_indexes_api_rest.ApiClient(configuration) as api_client:
@@ -202,7 +200,7 @@ Get all multi-asset weights
 ### Example
 
 * Api Key Authentication (APIKey):
-* Api Key Authentication (JWT):
+* Bearer (JWT) Authentication (JWT):
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
@@ -227,11 +225,10 @@ configuration.api_key['APIKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['APIKey'] = 'Bearer'
 
-# Configure API key authorization: JWT
-configuration.api_key['JWT'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['JWT'] = 'Bearer'
+# Configure Bearer authorization (JWT): JWT
+configuration = api_bricks_coinapi_indexes_api_rest.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with api_bricks_coinapi_indexes_api_rest.ApiClient(configuration) as api_client:
@@ -282,7 +279,7 @@ Get multi-asset weights for specific index
 ### Example
 
 * Api Key Authentication (APIKey):
-* Api Key Authentication (JWT):
+* Bearer (JWT) Authentication (JWT):
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
@@ -307,11 +304,10 @@ configuration.api_key['APIKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['APIKey'] = 'Bearer'
 
-# Configure API key authorization: JWT
-configuration.api_key['JWT'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['JWT'] = 'Bearer'
+# Configure Bearer authorization (JWT): JWT
+configuration = api_bricks_coinapi_indexes_api_rest.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with api_bricks_coinapi_indexes_api_rest.ApiClient(configuration) as api_client:
@@ -366,7 +362,7 @@ List indexes
 ### Example
 
 * Api Key Authentication (APIKey):
-* Api Key Authentication (JWT):
+* Bearer (JWT) Authentication (JWT):
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
@@ -391,11 +387,10 @@ configuration.api_key['APIKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['APIKey'] = 'Bearer'
 
-# Configure API key authorization: JWT
-configuration.api_key['JWT'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['JWT'] = 'Bearer'
+# Configure Bearer authorization (JWT): JWT
+configuration = api_bricks_coinapi_indexes_api_rest.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with api_bricks_coinapi_indexes_api_rest.ApiClient(configuration) as api_client:
@@ -446,7 +441,7 @@ Current Index Values for index definition
 ### Example
 
 * Api Key Authentication (APIKey):
-* Api Key Authentication (JWT):
+* Bearer (JWT) Authentication (JWT):
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
@@ -471,11 +466,10 @@ configuration.api_key['APIKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['APIKey'] = 'Bearer'
 
-# Configure API key authorization: JWT
-configuration.api_key['JWT'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['JWT'] = 'Bearer'
+# Configure Bearer authorization (JWT): JWT
+configuration = api_bricks_coinapi_indexes_api_rest.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with api_bricks_coinapi_indexes_api_rest.ApiClient(configuration) as api_client:
@@ -530,7 +524,7 @@ Historical Index Values for index definition
 ### Example
 
 * Api Key Authentication (APIKey):
-* Api Key Authentication (JWT):
+* Bearer (JWT) Authentication (JWT):
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
@@ -555,11 +549,10 @@ configuration.api_key['APIKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['APIKey'] = 'Bearer'
 
-# Configure API key authorization: JWT
-configuration.api_key['JWT'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['JWT'] = 'Bearer'
+# Configure Bearer authorization (JWT): JWT
+configuration = api_bricks_coinapi_indexes_api_rest.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with api_bricks_coinapi_indexes_api_rest.ApiClient(configuration) as api_client:
@@ -616,7 +609,7 @@ Current Index Value
 ### Example
 
 * Api Key Authentication (APIKey):
-* Api Key Authentication (JWT):
+* Bearer (JWT) Authentication (JWT):
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
@@ -641,11 +634,10 @@ configuration.api_key['APIKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['APIKey'] = 'Bearer'
 
-# Configure API key authorization: JWT
-configuration.api_key['JWT'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['JWT'] = 'Bearer'
+# Configure Bearer authorization (JWT): JWT
+configuration = api_bricks_coinapi_indexes_api_rest.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with api_bricks_coinapi_indexes_api_rest.ApiClient(configuration) as api_client:
@@ -700,7 +692,7 @@ Historical Index Value w/Composition
 ### Example
 
 * Api Key Authentication (APIKey):
-* Api Key Authentication (JWT):
+* Bearer (JWT) Authentication (JWT):
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
@@ -725,11 +717,10 @@ configuration.api_key['APIKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['APIKey'] = 'Bearer'
 
-# Configure API key authorization: JWT
-configuration.api_key['JWT'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['JWT'] = 'Bearer'
+# Configure Bearer authorization (JWT): JWT
+configuration = api_bricks_coinapi_indexes_api_rest.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with api_bricks_coinapi_indexes_api_rest.ApiClient(configuration) as api_client:
@@ -790,7 +781,7 @@ Timeseries Index Value
 ### Example
 
 * Api Key Authentication (APIKey):
-* Api Key Authentication (JWT):
+* Bearer (JWT) Authentication (JWT):
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
@@ -815,11 +806,10 @@ configuration.api_key['APIKey'] = os.environ["API_KEY"]
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['APIKey'] = 'Bearer'
 
-# Configure API key authorization: JWT
-configuration.api_key['JWT'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['JWT'] = 'Bearer'
+# Configure Bearer authorization (JWT): JWT
+configuration = api_bricks_coinapi_indexes_api_rest.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with api_bricks_coinapi_indexes_api_rest.ApiClient(configuration) as api_client:

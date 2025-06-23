@@ -33,7 +33,6 @@ export class PeriodsApi extends BaseAPI {
     v1MetadataPeriodsGet(opts?: OperationOpts): Observable<Array<MetadataTimeseriesPeriod> | AjaxResponse<Array<MetadataTimeseriesPeriod>>> {
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         return this.request<Array<MetadataTimeseriesPeriod>>({

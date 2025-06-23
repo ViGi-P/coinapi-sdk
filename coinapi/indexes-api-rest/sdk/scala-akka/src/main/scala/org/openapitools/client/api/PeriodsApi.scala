@@ -31,13 +31,12 @@ class PeriodsApi(baseUrl: String) {
    * 
    * Available security schemes:
    *   APIKey (apiKey)
-   *   JWT (apiKey)
+   *   JWT (http)
    */
-  def v1MetadataPeriodsGet()(implicit apiKey: ApiKeyValue, apiKey: ApiKeyValue): ApiRequest[Seq[TimeseriesPeriod]] =
+  def v1MetadataPeriodsGet()(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[TimeseriesPeriod]] =
     ApiRequest[Seq[TimeseriesPeriod]](ApiMethods.GET, baseUrl, "/v1/metadata/periods", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
-      .withApiKey(apiKey, "Authorization", HEADER)
-      .withSuccessResponse[Seq[TimeseriesPeriod]](200)
+      .withCredentials(bearerToken).withSuccessResponse[Seq[TimeseriesPeriod]](200)
       
 
 

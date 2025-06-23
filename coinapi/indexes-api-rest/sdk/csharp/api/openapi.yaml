@@ -1220,8 +1220,9 @@ components:
       name: Authorization
       type: apiKey
     JWT:
-      description: JWT token needed to access the endpoints
-      in: header
-      name: Authorization
-      type: apiKey
+      bearerFormat: JWT
+      description: "JWT Authorization header using the Bearer scheme. Example: \"\
+        Bearer {token}\""
+      scheme: bearer
+      type: http
 

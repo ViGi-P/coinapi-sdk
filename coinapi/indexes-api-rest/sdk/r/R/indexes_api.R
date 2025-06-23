@@ -25,8 +25,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$V1IndexdefInputDataIndexDefinitionIdAllGet(var_index_definition_iddata_file = "result.txt")
@@ -50,8 +50,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$V1IndexdefInputDataIndexDefinitionIdGet(var_index_definition_id, time = var_time, enabled_only = var_enabled_only, pending_only = var_pending_only, filter_asset_id = var_filter_asset_id, with_status_info = var_with_status_infodata_file = "result.txt")
@@ -69,8 +69,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$V1IndexdefMultiassetGet(data_file = "result.txt")
@@ -89,8 +89,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$V1IndexdefMultiassetIndexIdGet(var_index_iddata_file = "result.txt")
@@ -108,8 +108,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$V1IndexesGet(data_file = "result.txt")
@@ -128,8 +128,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$V1IndexesIndexDefinitionIdCurrentSnapshotGet(var_index_definition_iddata_file = "result.txt")
@@ -149,8 +149,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$V1IndexesIndexDefinitionIdHistorySnapshotGet(var_index_definition_id, time = var_timedata_file = "result.txt")
@@ -169,8 +169,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$V1IndexesIndexIdCurrentGet(var_index_iddata_file = "result.txt")
@@ -192,8 +192,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$V1IndexesIndexIdHistoryGet(var_index_id, time_start = var_time_start, time_end = var_time_end, limit = var_limitdata_file = "result.txt")
@@ -216,8 +216,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$V1IndexesIndexIdTimeseriesGet(var_index_id, var_period_id, var_time_start, var_time_end, limit = var_limitdata_file = "result.txt")
@@ -299,9 +299,9 @@ IndexesApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header
@@ -430,9 +430,9 @@ IndexesApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header
@@ -525,9 +525,9 @@ IndexesApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header
@@ -631,9 +631,9 @@ IndexesApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header
@@ -726,9 +726,9 @@ IndexesApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header
@@ -832,9 +832,9 @@ IndexesApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header
@@ -943,9 +943,9 @@ IndexesApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header
@@ -1049,9 +1049,9 @@ IndexesApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header
@@ -1170,9 +1170,9 @@ IndexesApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header
@@ -1308,9 +1308,9 @@ IndexesApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header

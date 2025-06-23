@@ -201,9 +201,6 @@ basic_auth_credential=""
 ##
 # The user API key
 apikey_auth_credential=""
-##
-# The user API key
-apikey_auth_credential=""
 
 ##
 # If true, the script will only output the actual cURL command that would be
@@ -309,26 +306,13 @@ header_arguments_to_curl() {
     local api_key_header=""
     local api_key_header_in_cli=""
     api_key_header="Authorization"
-    local api_key_header=""
-    local api_key_header_in_cli=""
-    api_key_header="Authorization"
 
     for key in "${!header_arguments[@]}"; do
         headers_curl+="-H \"${key}: ${header_arguments[${key}]}\" "
         if [[ "${key}XX" == "${api_key_header}XX" ]]; then
             api_key_header_in_cli="YES"
         fi
-        if [[ "${key}XX" == "${api_key_header}XX" ]]; then
-            api_key_header_in_cli="YES"
-        fi
     done
-    #
-    # If the api_key was not provided in the header, try one from the
-    # environment variable
-    #
-    if [[ -z $api_key_header_in_cli && -n $apikey_auth_credential ]]; then
-        headers_curl+="-H \"${api_key_header}: ${apikey_auth_credential}\""
-    fi
     #
     # If the api_key was not provided in the header, try one from the
     # environment variable
@@ -598,8 +582,6 @@ EOF
     echo -e ""
     echo -e "  - ${BLUE}Api-key${OFF} - add '${RED}Authorization:<api-key>${OFF}' after ${YELLOW}<operation>${OFF}"
     
-    echo -e "  - ${BLUE}Api-key${OFF} - add '${RED}Authorization:<api-key>${OFF}' after ${YELLOW}<operation>${OFF}"
-    
     echo ""
     echo -e "${BOLD}${WHITE}Operations (grouped by tags)${OFF}"
     echo ""
@@ -688,7 +670,7 @@ print_version() {
 ##############################################################################
 print_v1IndexdefInputDataIndexDefinitionIdAllGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1IndexdefInputDataIndexDefinitionIdAllGet - Returns all data inputs for a specific index definition${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1IndexdefInputDataIndexDefinitionIdAllGet - Returns all data inputs for a specific index definition${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}index_definition_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} -  ${YELLOW}Specify as: index_definition_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -704,7 +686,7 @@ print_v1IndexdefInputDataIndexDefinitionIdAllGet_help() {
 ##############################################################################
 print_v1IndexdefInputDataIndexDefinitionIdGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1IndexdefInputDataIndexDefinitionIdGet - Returns data inputs for certain index definition and time${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1IndexdefInputDataIndexDefinitionIdGet - Returns data inputs for certain index definition and time${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}index_definition_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} -  ${YELLOW}Specify as: index_definition_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -730,7 +712,7 @@ print_v1IndexdefInputDataIndexDefinitionIdGet_help() {
 ##############################################################################
 print_v1IndexdefMultiassetGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1IndexdefMultiassetGet - Get all multi-asset weights${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1IndexdefMultiassetGet - Get all multi-asset weights${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -744,7 +726,7 @@ print_v1IndexdefMultiassetGet_help() {
 ##############################################################################
 print_v1IndexdefMultiassetIndexIdGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1IndexdefMultiassetIndexIdGet - Get multi-asset weights for specific index${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1IndexdefMultiassetIndexIdGet - Get multi-asset weights for specific index${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}index_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} -  ${YELLOW}Specify as: index_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -760,7 +742,7 @@ print_v1IndexdefMultiassetIndexIdGet_help() {
 ##############################################################################
 print_v1IndexesGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1IndexesGet - List indexes${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1IndexesGet - List indexes${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -774,7 +756,7 @@ print_v1IndexesGet_help() {
 ##############################################################################
 print_v1IndexesIndexDefinitionIdCurrentSnapshotGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1IndexesIndexDefinitionIdCurrentSnapshotGet - Current Index Values for index definition${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1IndexesIndexDefinitionIdCurrentSnapshotGet - Current Index Values for index definition${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}index_definition_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} -  ${YELLOW}Specify as: index_definition_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -790,7 +772,7 @@ print_v1IndexesIndexDefinitionIdCurrentSnapshotGet_help() {
 ##############################################################################
 print_v1IndexesIndexDefinitionIdHistorySnapshotGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1IndexesIndexDefinitionIdHistorySnapshotGet - Historical Index Values for index definition${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1IndexesIndexDefinitionIdHistorySnapshotGet - Historical Index Values for index definition${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}index_definition_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} -  ${YELLOW}Specify as: index_definition_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -808,7 +790,7 @@ print_v1IndexesIndexDefinitionIdHistorySnapshotGet_help() {
 ##############################################################################
 print_v1IndexesIndexIdCurrentGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1IndexesIndexIdCurrentGet - Current Index Value${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1IndexesIndexIdCurrentGet - Current Index Value${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}index_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} -  ${YELLOW}Specify as: index_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -824,7 +806,7 @@ print_v1IndexesIndexIdCurrentGet_help() {
 ##############################################################################
 print_v1IndexesIndexIdHistoryGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1IndexesIndexIdHistoryGet - Historical Index Value w/Composition${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1IndexesIndexIdHistoryGet - Historical Index Value w/Composition${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}index_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} -  ${YELLOW}Specify as: index_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -846,7 +828,7 @@ print_v1IndexesIndexIdHistoryGet_help() {
 ##############################################################################
 print_v1IndexesIndexIdTimeseriesGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1IndexesIndexIdTimeseriesGet - Timeseries Index Value${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1IndexesIndexIdTimeseriesGet - Timeseries Index Value${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}index_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} -  ${YELLOW}Specify as: index_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -870,7 +852,7 @@ print_v1IndexesIndexIdTimeseriesGet_help() {
 ##############################################################################
 print_apiMetadataExchangesExchangeIdGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}apiMetadataExchangesExchangeIdGet - List all exchanges by exchange_id${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}apiMetadataExchangesExchangeIdGet - List all exchanges by exchange_id${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The ID of the exchange. ${YELLOW}Specify as: exchange_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -886,7 +868,7 @@ print_apiMetadataExchangesExchangeIdGet_help() {
 ##############################################################################
 print_apiMetadataExchangesGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}apiMetadataExchangesGet - List all exchanges${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}apiMetadataExchangesGet - List all exchanges${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Get a detailed list of exchanges provided by the system.
             
@@ -909,7 +891,7 @@ Properties of the output are providing aggregated information from across all sy
 ##############################################################################
 print_v1MetadataPeriodsGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1MetadataPeriodsGet - List all periods${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - HEADER)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1MetadataPeriodsGet - List all periods${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Get full list of supported time periods
             
@@ -1572,13 +1554,6 @@ case $key in
     # only after the operation argument
     if [[ "$operation" ]]; then
         IFS=':' read -r header_name header_value <<< "$key"
-        #
-        # If the header key is the same as the api_key expected by API in the
-        # header, override the ${apikey_auth_credential} variable
-        #
-        if [[ $header_name == "Authorization" ]]; then
-            apikey_auth_credential=$header_value
-        fi
         #
         # If the header key is the same as the api_key expected by API in the
         # header, override the ${apikey_auth_credential} variable

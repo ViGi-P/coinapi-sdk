@@ -81,14 +81,9 @@ function Invoke-V1IndexdefInputDataIndexDefinitionIdAllGet {
             Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
-        if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
-            $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
-        } else {
-            $apiKeyPrefix = ""
-        }
-        if ($Configuration["ApiKey"] -and $Configuration["ApiKey"]["Authorization"]) {
-            $LocalVarHeaderParameters['Authorization'] = $apiKeyPrefix + $Configuration["ApiKey"]["Authorization"]
-            Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
+        if ($Configuration["AccessToken"]) {
+            $LocalVarHeaderParameters['Authorization'] = "Bearer " + $Configuration["AccessToken"]
+            Write-Verbose ("Using Bearer authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
         $LocalVarResult = Invoke-ApiClient -Method 'GET' `
@@ -236,14 +231,9 @@ function Invoke-V1IndexdefInputDataIndexDefinitionIdGet {
             Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
-        if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
-            $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
-        } else {
-            $apiKeyPrefix = ""
-        }
-        if ($Configuration["ApiKey"] -and $Configuration["ApiKey"]["Authorization"]) {
-            $LocalVarHeaderParameters['Authorization'] = $apiKeyPrefix + $Configuration["ApiKey"]["Authorization"]
-            Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
+        if ($Configuration["AccessToken"]) {
+            $LocalVarHeaderParameters['Authorization'] = "Bearer " + $Configuration["AccessToken"]
+            Write-Verbose ("Using Bearer authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
         $LocalVarResult = Invoke-ApiClient -Method 'GET' `
@@ -331,14 +321,9 @@ function Invoke-V1IndexdefMultiassetGet {
             Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
-        if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
-            $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
-        } else {
-            $apiKeyPrefix = ""
-        }
-        if ($Configuration["ApiKey"] -and $Configuration["ApiKey"]["Authorization"]) {
-            $LocalVarHeaderParameters['Authorization'] = $apiKeyPrefix + $Configuration["ApiKey"]["Authorization"]
-            Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
+        if ($Configuration["AccessToken"]) {
+            $LocalVarHeaderParameters['Authorization'] = "Bearer " + $Configuration["AccessToken"]
+            Write-Verbose ("Using Bearer authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
         $LocalVarResult = Invoke-ApiClient -Method 'GET' `
@@ -436,14 +421,9 @@ function Invoke-V1IndexdefMultiassetIndexIdGet {
             Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
-        if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
-            $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
-        } else {
-            $apiKeyPrefix = ""
-        }
-        if ($Configuration["ApiKey"] -and $Configuration["ApiKey"]["Authorization"]) {
-            $LocalVarHeaderParameters['Authorization'] = $apiKeyPrefix + $Configuration["ApiKey"]["Authorization"]
-            Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
+        if ($Configuration["AccessToken"]) {
+            $LocalVarHeaderParameters['Authorization'] = "Bearer " + $Configuration["AccessToken"]
+            Write-Verbose ("Using Bearer authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
         $LocalVarResult = Invoke-ApiClient -Method 'GET' `
@@ -531,14 +511,9 @@ function Invoke-V1IndexesGet {
             Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
-        if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
-            $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
-        } else {
-            $apiKeyPrefix = ""
-        }
-        if ($Configuration["ApiKey"] -and $Configuration["ApiKey"]["Authorization"]) {
-            $LocalVarHeaderParameters['Authorization'] = $apiKeyPrefix + $Configuration["ApiKey"]["Authorization"]
-            Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
+        if ($Configuration["AccessToken"]) {
+            $LocalVarHeaderParameters['Authorization'] = "Bearer " + $Configuration["AccessToken"]
+            Write-Verbose ("Using Bearer authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
         $LocalVarResult = Invoke-ApiClient -Method 'GET' `
@@ -636,14 +611,9 @@ function Invoke-V1IndexesIndexDefinitionIdCurrentSnapshotGet {
             Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
-        if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
-            $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
-        } else {
-            $apiKeyPrefix = ""
-        }
-        if ($Configuration["ApiKey"] -and $Configuration["ApiKey"]["Authorization"]) {
-            $LocalVarHeaderParameters['Authorization'] = $apiKeyPrefix + $Configuration["ApiKey"]["Authorization"]
-            Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
+        if ($Configuration["AccessToken"]) {
+            $LocalVarHeaderParameters['Authorization'] = "Bearer " + $Configuration["AccessToken"]
+            Write-Verbose ("Using Bearer authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
         $LocalVarResult = Invoke-ApiClient -Method 'GET' `
@@ -751,14 +721,9 @@ function Invoke-V1IndexesIndexDefinitionIdHistorySnapshotGet {
             Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
-        if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
-            $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
-        } else {
-            $apiKeyPrefix = ""
-        }
-        if ($Configuration["ApiKey"] -and $Configuration["ApiKey"]["Authorization"]) {
-            $LocalVarHeaderParameters['Authorization'] = $apiKeyPrefix + $Configuration["ApiKey"]["Authorization"]
-            Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
+        if ($Configuration["AccessToken"]) {
+            $LocalVarHeaderParameters['Authorization'] = "Bearer " + $Configuration["AccessToken"]
+            Write-Verbose ("Using Bearer authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
         $LocalVarResult = Invoke-ApiClient -Method 'GET' `
@@ -856,14 +821,9 @@ function Invoke-V1IndexesIndexIdCurrentGet {
             Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
-        if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
-            $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
-        } else {
-            $apiKeyPrefix = ""
-        }
-        if ($Configuration["ApiKey"] -and $Configuration["ApiKey"]["Authorization"]) {
-            $LocalVarHeaderParameters['Authorization'] = $apiKeyPrefix + $Configuration["ApiKey"]["Authorization"]
-            Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
+        if ($Configuration["AccessToken"]) {
+            $LocalVarHeaderParameters['Authorization'] = "Bearer " + $Configuration["AccessToken"]
+            Write-Verbose ("Using Bearer authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
         $LocalVarResult = Invoke-ApiClient -Method 'GET' `
@@ -991,14 +951,9 @@ function Invoke-V1IndexesIndexIdHistoryGet {
             Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
-        if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
-            $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
-        } else {
-            $apiKeyPrefix = ""
-        }
-        if ($Configuration["ApiKey"] -and $Configuration["ApiKey"]["Authorization"]) {
-            $LocalVarHeaderParameters['Authorization'] = $apiKeyPrefix + $Configuration["ApiKey"]["Authorization"]
-            Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
+        if ($Configuration["AccessToken"]) {
+            $LocalVarHeaderParameters['Authorization'] = "Bearer " + $Configuration["AccessToken"]
+            Write-Verbose ("Using Bearer authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
         $LocalVarResult = Invoke-ApiClient -Method 'GET' `
@@ -1139,14 +1094,9 @@ function Invoke-V1IndexesIndexIdTimeseriesGet {
             Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
-        if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
-            $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
-        } else {
-            $apiKeyPrefix = ""
-        }
-        if ($Configuration["ApiKey"] -and $Configuration["ApiKey"]["Authorization"]) {
-            $LocalVarHeaderParameters['Authorization'] = $apiKeyPrefix + $Configuration["ApiKey"]["Authorization"]
-            Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
+        if ($Configuration["AccessToken"]) {
+            $LocalVarHeaderParameters['Authorization'] = "Bearer " + $Configuration["AccessToken"]
+            Write-Verbose ("Using Bearer authentication in {0}" -f $MyInvocation.MyCommand)
         }
 
         $LocalVarResult = Invoke-ApiClient -Method 'GET' `

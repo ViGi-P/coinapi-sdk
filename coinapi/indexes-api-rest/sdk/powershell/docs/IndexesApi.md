@@ -32,10 +32,6 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 #$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
-# Configure API key authorization: JWT
-$Configuration.ApiKey.Authorization = "YOUR_API_KEY"
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-#$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
 $IndexDefinitionId = "MyIndexDefinitionId" # String | 
 
@@ -90,10 +86,6 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 #$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
-# Configure API key authorization: JWT
-$Configuration.ApiKey.Authorization = "YOUR_API_KEY"
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-#$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
 $IndexDefinitionId = "MyIndexDefinitionId" # String | 
 $Time = (Get-Date) # System.DateTime |  (optional)
@@ -152,10 +144,6 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 #$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
-# Configure API key authorization: JWT
-$Configuration.ApiKey.Authorization = "YOUR_API_KEY"
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-#$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
 
 # Get all multi-asset weights
@@ -201,10 +189,6 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 #$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
-# Configure API key authorization: JWT
-$Configuration.ApiKey.Authorization = "YOUR_API_KEY"
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-#$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
 $IndexId = "MyIndexId" # String | 
 
@@ -253,10 +237,6 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 #$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
-# Configure API key authorization: JWT
-$Configuration.ApiKey.Authorization = "YOUR_API_KEY"
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-#$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
 
 # List indexes
@@ -302,10 +282,6 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 #$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
-# Configure API key authorization: JWT
-$Configuration.ApiKey.Authorization = "YOUR_API_KEY"
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-#$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
 $IndexDefinitionId = "MyIndexDefinitionId" # String | 
 
@@ -356,10 +332,6 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 #$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
-# Configure API key authorization: JWT
-$Configuration.ApiKey.Authorization = "YOUR_API_KEY"
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-#$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
 $IndexDefinitionId = "MyIndexDefinitionId" # String | 
 $Time = (Get-Date) # System.DateTime |  (optional)
@@ -411,10 +383,6 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 #$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
-# Configure API key authorization: JWT
-$Configuration.ApiKey.Authorization = "YOUR_API_KEY"
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-#$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
 $IndexId = "MyIndexId" # String | 
 
@@ -467,10 +435,6 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 #$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
-# Configure API key authorization: JWT
-$Configuration.ApiKey.Authorization = "YOUR_API_KEY"
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-#$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
 $IndexId = "MyIndexId" # String | 
 $TimeStart = (Get-Date) # System.DateTime |  (optional)
@@ -530,10 +494,6 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 #$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
-# Configure API key authorization: JWT
-$Configuration.ApiKey.Authorization = "YOUR_API_KEY"
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-#$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
 $IndexId = "MyIndexId" # String | 
 $PeriodId = "MyPeriodId" # String | Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)

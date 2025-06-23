@@ -54,8 +54,8 @@ object Example extends App {
     // Configure API key authorization: APIKey
     implicit val APIKey: ApiKeyValue = ApiKeyValue("YOUR API KEY")
 
-    // Configure API key authorization: JWT
-    implicit val JWT: ApiKeyValue = ApiKeyValue("YOUR API KEY")
+    // Configure HTTP bearer authorization: JWT
+    implicit val JWT: BearerToken = BearerToken("BEARER TOKEN")
 
     val apiInvoker = ApiInvoker()
     val apiInstance = IndexesApi("https://rest-api.indexes.coinapi.io")
@@ -139,8 +139,8 @@ object Example extends App {
     // Configure API key authorization: APIKey
     implicit val APIKey: ApiKeyValue = ApiKeyValue("YOUR API KEY")
 
-    // Configure API key authorization: JWT
-    implicit val JWT: ApiKeyValue = ApiKeyValue("YOUR API KEY")
+    // Configure HTTP bearer authorization: JWT
+    implicit val JWT: BearerToken = BearerToken("BEARER TOKEN")
 
     val apiInvoker = ApiInvoker()
     val apiInstance = IndexesApi("https://rest-api.indexes.coinapi.io")
@@ -238,8 +238,8 @@ object Example extends App {
     // Configure API key authorization: APIKey
     implicit val APIKey: ApiKeyValue = ApiKeyValue("YOUR API KEY")
 
-    // Configure API key authorization: JWT
-    implicit val JWT: ApiKeyValue = ApiKeyValue("YOUR API KEY")
+    // Configure HTTP bearer authorization: JWT
+    implicit val JWT: BearerToken = BearerToken("BEARER TOKEN")
 
     val apiInvoker = ApiInvoker()
     val apiInstance = IndexesApi("https://rest-api.indexes.coinapi.io")    
@@ -317,8 +317,8 @@ object Example extends App {
     // Configure API key authorization: APIKey
     implicit val APIKey: ApiKeyValue = ApiKeyValue("YOUR API KEY")
 
-    // Configure API key authorization: JWT
-    implicit val JWT: ApiKeyValue = ApiKeyValue("YOUR API KEY")
+    // Configure HTTP bearer authorization: JWT
+    implicit val JWT: BearerToken = BearerToken("BEARER TOKEN")
 
     val apiInvoker = ApiInvoker()
     val apiInstance = IndexesApi("https://rest-api.indexes.coinapi.io")
@@ -401,8 +401,8 @@ object Example extends App {
     // Configure API key authorization: APIKey
     implicit val APIKey: ApiKeyValue = ApiKeyValue("YOUR API KEY")
 
-    // Configure API key authorization: JWT
-    implicit val JWT: ApiKeyValue = ApiKeyValue("YOUR API KEY")
+    // Configure HTTP bearer authorization: JWT
+    implicit val JWT: BearerToken = BearerToken("BEARER TOKEN")
 
     val apiInvoker = ApiInvoker()
     val apiInstance = IndexesApi("https://rest-api.indexes.coinapi.io")    
@@ -480,8 +480,8 @@ object Example extends App {
     // Configure API key authorization: APIKey
     implicit val APIKey: ApiKeyValue = ApiKeyValue("YOUR API KEY")
 
-    // Configure API key authorization: JWT
-    implicit val JWT: ApiKeyValue = ApiKeyValue("YOUR API KEY")
+    // Configure HTTP bearer authorization: JWT
+    implicit val JWT: BearerToken = BearerToken("BEARER TOKEN")
 
     val apiInvoker = ApiInvoker()
     val apiInstance = IndexesApi("https://rest-api.indexes.coinapi.io")
@@ -565,8 +565,8 @@ object Example extends App {
     // Configure API key authorization: APIKey
     implicit val APIKey: ApiKeyValue = ApiKeyValue("YOUR API KEY")
 
-    // Configure API key authorization: JWT
-    implicit val JWT: ApiKeyValue = ApiKeyValue("YOUR API KEY")
+    // Configure HTTP bearer authorization: JWT
+    implicit val JWT: BearerToken = BearerToken("BEARER TOKEN")
 
     val apiInvoker = ApiInvoker()
     val apiInstance = IndexesApi("https://rest-api.indexes.coinapi.io")
@@ -652,8 +652,8 @@ object Example extends App {
     // Configure API key authorization: APIKey
     implicit val APIKey: ApiKeyValue = ApiKeyValue("YOUR API KEY")
 
-    // Configure API key authorization: JWT
-    implicit val JWT: ApiKeyValue = ApiKeyValue("YOUR API KEY")
+    // Configure HTTP bearer authorization: JWT
+    implicit val JWT: BearerToken = BearerToken("BEARER TOKEN")
 
     val apiInvoker = ApiInvoker()
     val apiInstance = IndexesApi("https://rest-api.indexes.coinapi.io")
@@ -737,8 +737,8 @@ object Example extends App {
     // Configure API key authorization: APIKey
     implicit val APIKey: ApiKeyValue = ApiKeyValue("YOUR API KEY")
 
-    // Configure API key authorization: JWT
-    implicit val JWT: ApiKeyValue = ApiKeyValue("YOUR API KEY")
+    // Configure HTTP bearer authorization: JWT
+    implicit val JWT: BearerToken = BearerToken("BEARER TOKEN")
 
     val apiInvoker = ApiInvoker()
     val apiInstance = IndexesApi("https://rest-api.indexes.coinapi.io")
@@ -830,8 +830,8 @@ object Example extends App {
     // Configure API key authorization: APIKey
     implicit val APIKey: ApiKeyValue = ApiKeyValue("YOUR API KEY")
 
-    // Configure API key authorization: JWT
-    implicit val JWT: ApiKeyValue = ApiKeyValue("YOUR API KEY")
+    // Configure HTTP bearer authorization: JWT
+    implicit val JWT: BearerToken = BearerToken("BEARER TOKEN")
 
     val apiInvoker = ApiInvoker()
     val apiInstance = IndexesApi("https://rest-api.indexes.coinapi.io")

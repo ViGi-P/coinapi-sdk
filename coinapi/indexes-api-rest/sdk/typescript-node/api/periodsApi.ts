@@ -30,7 +30,6 @@ let defaultBasePath = 'https://rest-api.indexes.coinapi.io';
 
 export enum PeriodsApiApiKeys {
     APIKey,
-    JWT,
 }
 
 export class PeriodsApi {
@@ -41,7 +40,7 @@ export class PeriodsApi {
     protected authentications = {
         'default': <Authentication>new VoidAuth(),
         'APIKey': new ApiKeyAuth('header', 'Authorization'),
-        'JWT': new ApiKeyAuth('header', 'Authorization'),
+        'JWT': new HttpBearerAuth(),
     }
 
     protected interceptors: Interceptor[] = [];
@@ -87,6 +86,10 @@ export class PeriodsApi {
         (this.authentications as any)[PeriodsApiApiKeys[key]].apiKey = value;
     }
 
+    set accessToken(accessToken: string | (() => string)) {
+        this.authentications.JWT.accessToken = accessToken;
+    }
+
     public addInterceptor(interceptor: Interceptor) {
         this.interceptors.push(interceptor);
     }
@@ -125,7 +128,7 @@ export class PeriodsApi {
         if (this.authentications.APIKey.apiKey) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.APIKey.applyToRequest(localVarRequestOptions));
         }
-        if (this.authentications.JWT.apiKey) {
+        if (this.authentications.JWT.accessToken) {
             authenticationPromise = authenticationPromise.then(() => this.authentications.JWT.applyToRequest(localVarRequestOptions));
         }
         authenticationPromise = authenticationPromise.then(() => this.authentications.default.applyToRequest(localVarRequestOptions));

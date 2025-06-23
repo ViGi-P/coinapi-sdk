@@ -68,10 +68,6 @@ function indexes_api:v1_indexdef_input_data_index_definition_id_all_get(index_de
 	if self.api_key['Authorization'] then
 		req.headers:upsert("APIKey", self.api_key['Authorization'])
 	end
-	-- api key in headers 'Authorization'
-	if self.api_key['Authorization'] then
-		req.headers:upsert("JWT", self.api_key['Authorization'])
-	end
 
 	-- make the HTTP call
 	local headers, stream, errno = req:go()
@@ -124,10 +120,6 @@ function indexes_api:v1_indexdef_input_data_index_definition_id_get(index_defini
 	-- api key in headers 'Authorization'
 	if self.api_key['Authorization'] then
 		req.headers:upsert("APIKey", self.api_key['Authorization'])
-	end
-	-- api key in headers 'Authorization'
-	if self.api_key['Authorization'] then
-		req.headers:upsert("JWT", self.api_key['Authorization'])
 	end
 
 	-- make the HTTP call
@@ -182,10 +174,6 @@ function indexes_api:v1_indexdef_multiasset_get()
 	if self.api_key['Authorization'] then
 		req.headers:upsert("APIKey", self.api_key['Authorization'])
 	end
-	-- api key in headers 'Authorization'
-	if self.api_key['Authorization'] then
-		req.headers:upsert("JWT", self.api_key['Authorization'])
-	end
 
 	-- make the HTTP call
 	local headers, stream, errno = req:go()
@@ -238,10 +226,6 @@ function indexes_api:v1_indexdef_multiasset_index_id_get(index_id)
 	-- api key in headers 'Authorization'
 	if self.api_key['Authorization'] then
 		req.headers:upsert("APIKey", self.api_key['Authorization'])
-	end
-	-- api key in headers 'Authorization'
-	if self.api_key['Authorization'] then
-		req.headers:upsert("JWT", self.api_key['Authorization'])
 	end
 
 	-- make the HTTP call
@@ -296,10 +280,6 @@ function indexes_api:v1_indexes_get()
 	if self.api_key['Authorization'] then
 		req.headers:upsert("APIKey", self.api_key['Authorization'])
 	end
-	-- api key in headers 'Authorization'
-	if self.api_key['Authorization'] then
-		req.headers:upsert("JWT", self.api_key['Authorization'])
-	end
 
 	-- make the HTTP call
 	local headers, stream, errno = req:go()
@@ -352,10 +332,6 @@ function indexes_api:v1_indexes_index_definition_id_current_snapshot_get(index_d
 	-- api key in headers 'Authorization'
 	if self.api_key['Authorization'] then
 		req.headers:upsert("APIKey", self.api_key['Authorization'])
-	end
-	-- api key in headers 'Authorization'
-	if self.api_key['Authorization'] then
-		req.headers:upsert("JWT", self.api_key['Authorization'])
 	end
 
 	-- make the HTTP call
@@ -410,10 +386,6 @@ function indexes_api:v1_indexes_index_definition_id_history_snapshot_get(index_d
 	if self.api_key['Authorization'] then
 		req.headers:upsert("APIKey", self.api_key['Authorization'])
 	end
-	-- api key in headers 'Authorization'
-	if self.api_key['Authorization'] then
-		req.headers:upsert("JWT", self.api_key['Authorization'])
-	end
 
 	-- make the HTTP call
 	local headers, stream, errno = req:go()
@@ -467,10 +439,6 @@ function indexes_api:v1_indexes_index_id_current_get(index_id)
 	if self.api_key['Authorization'] then
 		req.headers:upsert("APIKey", self.api_key['Authorization'])
 	end
-	-- api key in headers 'Authorization'
-	if self.api_key['Authorization'] then
-		req.headers:upsert("JWT", self.api_key['Authorization'])
-	end
 
 	-- make the HTTP call
 	local headers, stream, errno = req:go()
@@ -520,10 +488,6 @@ function indexes_api:v1_indexes_index_id_history_get(index_id, time_start, time_
 	-- api key in headers 'Authorization'
 	if self.api_key['Authorization'] then
 		req.headers:upsert("APIKey", self.api_key['Authorization'])
-	end
-	-- api key in headers 'Authorization'
-	if self.api_key['Authorization'] then
-		req.headers:upsert("JWT", self.api_key['Authorization'])
 	end
 
 	-- make the HTTP call
@@ -577,10 +541,6 @@ function indexes_api:v1_indexes_index_id_timeseries_get(index_id, period_id, tim
 	-- api key in headers 'Authorization'
 	if self.api_key['Authorization'] then
 		req.headers:upsert("APIKey", self.api_key['Authorization'])
-	end
-	-- api key in headers 'Authorization'
-	if self.api_key['Authorization'] then
-		req.headers:upsert("JWT", self.api_key['Authorization'])
 	end
 
 	-- make the HTTP call

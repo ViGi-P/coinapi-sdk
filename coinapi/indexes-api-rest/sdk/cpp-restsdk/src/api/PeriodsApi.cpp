@@ -112,13 +112,6 @@ pplx::task<std::vector<std::shared_ptr<Metadata_TimeseriesPeriod>>> PeriodsApi::
         }
     }
     // authentication (JWT) required
-    {
-        utility::string_t localVarApiKey = localVarApiConfiguration->getApiKey(utility::conversions::to_string_t("Authorization"));
-        if ( localVarApiKey.size() > 0 )
-        {
-            localVarHeaderParams[utility::conversions::to_string_t("Authorization")] = localVarApiKey;
-        }
-    }
 
     return m_ApiClient->callApi(localVarPath, utility::conversions::to_string_t("GET"), localVarQueryParams, localVarHttpBody, localVarHeaderParams, localVarFormParams, localVarFileParams, localVarRequestHttpContentType)
     .then([=, this](web::http::http_response localVarResponse)

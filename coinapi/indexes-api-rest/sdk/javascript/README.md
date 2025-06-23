@@ -108,11 +108,9 @@ var APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = "YOUR API KEY"
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix['Authorization'] = "Token"
-// Configure API key authorization: JWT
+// Configure Bearer (JWT) access token for authorization: JWT
 var JWT = defaultClient.authentications['JWT'];
-JWT.apiKey = "YOUR API KEY"
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//JWT.apiKeyPrefix['Authorization'] = "Token"
+JWT.accessToken = "YOUR ACCESS TOKEN"
 
 var api = new CoinApiIndexesRestApi.IndexesApi()
 var indexDefinitionId = "indexDefinitionId_example"; // {String} 
@@ -174,8 +172,5 @@ Authentication schemes defined for the API:
 
 ### JWT
 
-
-- **Type**: API key
-- **API key parameter name**: Authorization
-- **Location**: HTTP header
+- **Type**: Bearer authentication (JWT)
 

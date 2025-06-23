@@ -64,7 +64,7 @@ import qualified Prelude as P
 -- 
 -- List all exchanges by exchange_id
 -- 
--- AuthMethod: 'AuthApiKeyAPIKey', 'AuthApiKeyJWT'
+-- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 apiMetadataExchangesExchangeIdGet
   :: Accept accept -- ^ request accept ('MimeType')
@@ -73,7 +73,7 @@ apiMetadataExchangesExchangeIdGet
 apiMetadataExchangesExchangeIdGet  _ (ExchangeId exchangeId) =
   _mkRequest "GET" ["/api/metadata/exchanges/",toPath exchangeId]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
-    `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyJWT)
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
 
 data ApiMetadataExchangesExchangeIdGet  
 -- | @application/json@
@@ -94,7 +94,7 @@ instance Produces ApiMetadataExchangesExchangeIdGet MimePlainText
 -- 
 -- Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
 -- 
--- AuthMethod: 'AuthApiKeyAPIKey', 'AuthApiKeyJWT'
+-- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 apiMetadataExchangesGet
   :: Accept accept -- ^ request accept ('MimeType')
@@ -102,7 +102,7 @@ apiMetadataExchangesGet
 apiMetadataExchangesGet  _ =
   _mkRequest "GET" ["/api/metadata/exchanges"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
-    `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyJWT)
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
 
 data ApiMetadataExchangesGet  
 

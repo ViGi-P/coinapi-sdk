@@ -84,7 +84,6 @@ export class IndexesApi extends BaseAPI {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         return this.request<Array<IndexesIndexDefinitionInputData>>({
@@ -104,7 +103,6 @@ export class IndexesApi extends BaseAPI {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         const query: HttpQuery = {};
@@ -131,7 +129,6 @@ export class IndexesApi extends BaseAPI {
     v1IndexdefMultiassetGet(opts?: OperationOpts): Observable<Array<IndexesIndexMultiAssetWeight> | AjaxResponse<Array<IndexesIndexMultiAssetWeight>>> {
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         return this.request<Array<IndexesIndexMultiAssetWeight>>({
@@ -151,7 +148,6 @@ export class IndexesApi extends BaseAPI {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         return this.request<Array<IndexesIndexMultiAssetWeight>>({
@@ -169,7 +165,6 @@ export class IndexesApi extends BaseAPI {
     v1IndexesGet(opts?: OperationOpts): Observable<Array<IndexesIndexIdentifier> | AjaxResponse<Array<IndexesIndexIdentifier>>> {
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         return this.request<Array<IndexesIndexIdentifier>>({
@@ -189,7 +184,6 @@ export class IndexesApi extends BaseAPI {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         return this.request<Array<IndexesIndexDefinitionSnapshotEntry>>({
@@ -209,7 +203,6 @@ export class IndexesApi extends BaseAPI {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         const query: HttpQuery = {};
@@ -234,7 +227,6 @@ export class IndexesApi extends BaseAPI {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         return this.request<IndexesIndexValue>({
@@ -254,7 +246,6 @@ export class IndexesApi extends BaseAPI {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         const query: HttpQuery = {};
@@ -284,7 +275,6 @@ export class IndexesApi extends BaseAPI {
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // JWT authentication
         };
 
         const query: HttpQuery = { // required parameters are used directly since they are already checked by throwIfNullOrUndefined

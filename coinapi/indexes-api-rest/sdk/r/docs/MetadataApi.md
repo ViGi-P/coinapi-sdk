@@ -25,8 +25,8 @@ var_exchange_id <- "exchange_id_example" # character | The ID of the exchange.
 api_instance <- MetadataApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-# Configure API key authorization: JWT
-# api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 # result <- api_instance$ApiMetadataExchangesExchangeIdGet(var_exchange_iddata_file = "result.txt")
 result <- api_instance$ApiMetadataExchangesExchangeIdGet(var_exchange_id)
@@ -76,8 +76,8 @@ var_filter_exchange_id <- "filter_exchange_id_example" # character | Comma or se
 api_instance <- MetadataApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-# Configure API key authorization: JWT
-# api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 # result <- api_instance$ApiMetadataExchangesGet(filter_exchange_id = var_filter_exchange_iddata_file = "result.txt")
 result <- api_instance$ApiMetadataExchangesGet(filter_exchange_id = var_filter_exchange_id)

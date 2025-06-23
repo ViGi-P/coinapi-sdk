@@ -24,8 +24,8 @@ library(openapi)
 api_instance <- PeriodsApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-# Configure API key authorization: JWT
-# api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 # result <- api_instance$V1MetadataPeriodsGet(data_file = "result.txt")
 result <- api_instance$V1MetadataPeriodsGet()

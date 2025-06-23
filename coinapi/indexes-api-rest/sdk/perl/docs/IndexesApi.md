@@ -36,10 +36,9 @@ my $api_instance = WWW::OpenAPIClient::IndexesApi->new(
     api_key => {'Authorization' => 'YOUR_API_KEY'},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'Authorization' => 'Bearer'},
-    # Configure API key authorization: JWT
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
+    # Configure bearer access token for authorization: JWT
+    access_token => 'YOUR_BEARER_TOKEN',
+    
 );
 
 my $index_definition_id = "index_definition_id_example"; # string | 
@@ -89,10 +88,9 @@ my $api_instance = WWW::OpenAPIClient::IndexesApi->new(
     api_key => {'Authorization' => 'YOUR_API_KEY'},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'Authorization' => 'Bearer'},
-    # Configure API key authorization: JWT
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
+    # Configure bearer access token for authorization: JWT
+    access_token => 'YOUR_BEARER_TOKEN',
+    
 );
 
 my $index_definition_id = "index_definition_id_example"; # string | 
@@ -152,10 +150,9 @@ my $api_instance = WWW::OpenAPIClient::IndexesApi->new(
     api_key => {'Authorization' => 'YOUR_API_KEY'},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'Authorization' => 'Bearer'},
-    # Configure API key authorization: JWT
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
+    # Configure bearer access token for authorization: JWT
+    access_token => 'YOUR_BEARER_TOKEN',
+    
 );
 
 
@@ -201,10 +198,9 @@ my $api_instance = WWW::OpenAPIClient::IndexesApi->new(
     api_key => {'Authorization' => 'YOUR_API_KEY'},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'Authorization' => 'Bearer'},
-    # Configure API key authorization: JWT
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
+    # Configure bearer access token for authorization: JWT
+    access_token => 'YOUR_BEARER_TOKEN',
+    
 );
 
 my $index_id = "index_id_example"; # string | 
@@ -254,10 +250,9 @@ my $api_instance = WWW::OpenAPIClient::IndexesApi->new(
     api_key => {'Authorization' => 'YOUR_API_KEY'},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'Authorization' => 'Bearer'},
-    # Configure API key authorization: JWT
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
+    # Configure bearer access token for authorization: JWT
+    access_token => 'YOUR_BEARER_TOKEN',
+    
 );
 
 
@@ -303,10 +298,9 @@ my $api_instance = WWW::OpenAPIClient::IndexesApi->new(
     api_key => {'Authorization' => 'YOUR_API_KEY'},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'Authorization' => 'Bearer'},
-    # Configure API key authorization: JWT
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
+    # Configure bearer access token for authorization: JWT
+    access_token => 'YOUR_BEARER_TOKEN',
+    
 );
 
 my $index_definition_id = "index_definition_id_example"; # string | 
@@ -356,10 +350,9 @@ my $api_instance = WWW::OpenAPIClient::IndexesApi->new(
     api_key => {'Authorization' => 'YOUR_API_KEY'},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'Authorization' => 'Bearer'},
-    # Configure API key authorization: JWT
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
+    # Configure bearer access token for authorization: JWT
+    access_token => 'YOUR_BEARER_TOKEN',
+    
 );
 
 my $index_definition_id = "index_definition_id_example"; # string | 
@@ -411,10 +404,9 @@ my $api_instance = WWW::OpenAPIClient::IndexesApi->new(
     api_key => {'Authorization' => 'YOUR_API_KEY'},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'Authorization' => 'Bearer'},
-    # Configure API key authorization: JWT
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
+    # Configure bearer access token for authorization: JWT
+    access_token => 'YOUR_BEARER_TOKEN',
+    
 );
 
 my $index_id = "index_id_example"; # string | 
@@ -464,10 +456,9 @@ my $api_instance = WWW::OpenAPIClient::IndexesApi->new(
     api_key => {'Authorization' => 'YOUR_API_KEY'},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'Authorization' => 'Bearer'},
-    # Configure API key authorization: JWT
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
+    # Configure bearer access token for authorization: JWT
+    access_token => 'YOUR_BEARER_TOKEN',
+    
 );
 
 my $index_id = "index_id_example"; # string | 
@@ -523,10 +514,9 @@ my $api_instance = WWW::OpenAPIClient::IndexesApi->new(
     api_key => {'Authorization' => 'YOUR_API_KEY'},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'Authorization' => 'Bearer'},
-    # Configure API key authorization: JWT
-    api_key => {'Authorization' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'Authorization' => 'Bearer'},
+    # Configure bearer access token for authorization: JWT
+    access_token => 'YOUR_BEARER_TOKEN',
+    
 );
 
 my $index_id = "index_id_example"; # string | 
