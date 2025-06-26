@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for a single trade event (report or break).
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T06:06:39.169101097Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T06:12:01.916221421Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class TradeTradeModel {
   public static final String SERIALIZED_NAME_IS_TRADE_BREAK = "is_trade_break";
   @SerializedName(SERIALIZED_NAME_IS_TRADE_BREAK)
@@ -420,22 +420,10 @@ public class TradeTradeModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("is_trade_break");
-    openapiFields.add("symbol");
-    openapiFields.add("timestamp_nanos");
-    openapiFields.add("timestamp");
-    openapiFields.add("size");
-    openapiFields.add("price");
-    openapiFields.add("trade_id");
-    openapiFields.add("is_intermarket_sweep");
-    openapiFields.add("is_extended_hours_trade");
-    openapiFields.add("is_odd_lot_trade");
-    openapiFields.add("is_trade_through_exempt");
-    openapiFields.add("is_single_price_cross_trade");
+    openapiFields = new HashSet<String>(Arrays.asList("is_trade_break", "symbol", "timestamp_nanos", "timestamp", "size", "price", "trade_id", "is_intermarket_sweep", "is_extended_hours_trade", "is_odd_lot_trade", "is_trade_through_exempt", "is_single_price_cross_trade"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

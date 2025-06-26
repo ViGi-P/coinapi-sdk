@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a timeseries item with price and volume information.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T06:06:39.169101097Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T06:12:01.916221421Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class OHLCVExchangeTimeseriesItem {
   public static final String SERIALIZED_NAME_TIME_PERIOD_START = "time_period_start";
   @SerializedName(SERIALIZED_NAME_TIME_PERIOD_START)
@@ -394,21 +394,10 @@ public class OHLCVExchangeTimeseriesItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("time_period_start");
-    openapiFields.add("time_period_end");
-    openapiFields.add("time_open");
-    openapiFields.add("time_close");
-    openapiFields.add("price_open");
-    openapiFields.add("price_high");
-    openapiFields.add("price_low");
-    openapiFields.add("price_close");
-    openapiFields.add("volume_traded");
-    openapiFields.add("trades_count");
-    openapiFields.add("symbol_id_exchange");
+    openapiFields = new HashSet<String>(Arrays.asList("time_period_start", "time_period_end", "time_open", "time_close", "price_open", "price_high", "price_low", "price_close", "volume_traded", "trades_count", "symbol_id_exchange"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

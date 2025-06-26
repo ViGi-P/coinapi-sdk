@@ -57,7 +57,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for IEX admin information, combining all symbol-based admin message types
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T06:06:39.169101097Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T06:12:01.916221421Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AdminAdminMessageModel {
   public static final String SERIALIZED_NAME_TRADING_STATUS = "trading_status";
   @SerializedName(SERIALIZED_NAME_TRADING_STATUS)
@@ -338,19 +338,10 @@ public class AdminAdminMessageModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("trading_status");
-    openapiFields.add("official_price");
-    openapiFields.add("security_event");
-    openapiFields.add("auction_information");
-    openapiFields.add("short_sale_price_test");
-    openapiFields.add("operational_halt_status");
-    openapiFields.add("retail_liquidity_indicator");
-    openapiFields.add("system_event");
-    openapiFields.add("security_directory");
+    openapiFields = new HashSet<String>(Arrays.asList("trading_status", "official_price", "security_event", "auction_information", "short_sale_price_test", "operational_halt_status", "retail_liquidity_indicator", "system_event", "security_directory"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

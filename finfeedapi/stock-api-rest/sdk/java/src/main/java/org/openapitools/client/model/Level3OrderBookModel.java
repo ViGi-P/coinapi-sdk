@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for Level-3 order book information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T06:06:39.169101097Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T06:12:01.916221421Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class Level3OrderBookModel {
   public static final String SERIALIZED_NAME_ADD_ORDER = "add_order";
   @SerializedName(SERIALIZED_NAME_ADD_ORDER)
@@ -230,15 +230,10 @@ public class Level3OrderBookModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("add_order");
-    openapiFields.add("delete_order");
-    openapiFields.add("modify_order");
-    openapiFields.add("executed_order");
-    openapiFields.add("clear_book");
+    openapiFields = new HashSet<String>(Arrays.asList("add_order", "delete_order", "modify_order", "executed_order", "clear_book"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

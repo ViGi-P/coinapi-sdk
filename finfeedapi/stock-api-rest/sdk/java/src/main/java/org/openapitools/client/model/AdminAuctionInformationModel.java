@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for auction information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T06:06:39.169101097Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T06:12:01.916221421Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AdminAuctionInformationModel {
   public static final String SERIALIZED_NAME_SYMBOL = "symbol";
   @SerializedName(SERIALIZED_NAME_SYMBOL)
@@ -836,38 +836,10 @@ public class AdminAuctionInformationModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("symbol");
-    openapiFields.add("timestamp_nanos");
-    openapiFields.add("timestamp");
-    openapiFields.add("auction_type");
-    openapiFields.add("auction_type_code");
-    openapiFields.add("auction_type_text");
-    openapiFields.add("is_auction_type_opening");
-    openapiFields.add("is_auction_type_closing");
-    openapiFields.add("is_auction_type_ipo");
-    openapiFields.add("is_auction_type_halt");
-    openapiFields.add("is_auction_type_volatility");
-    openapiFields.add("paired_shares");
-    openapiFields.add("reference_price");
-    openapiFields.add("indicative_clearing_price");
-    openapiFields.add("imbalance_shares");
-    openapiFields.add("imbalance_side");
-    openapiFields.add("imbalance_side_code");
-    openapiFields.add("imbalance_side_text");
-    openapiFields.add("is_imbalance_side_buy");
-    openapiFields.add("is_imbalance_side_sell");
-    openapiFields.add("is_imbalance_side_none");
-    openapiFields.add("extension_number");
-    openapiFields.add("scheduled_auction_time_seconds");
-    openapiFields.add("scheduled_auction_time");
-    openapiFields.add("auction_book_clearing_price");
-    openapiFields.add("collar_reference_price");
-    openapiFields.add("lower_auction_collar");
-    openapiFields.add("upper_auction_collar");
+    openapiFields = new HashSet<String>(Arrays.asList("symbol", "timestamp_nanos", "timestamp", "auction_type", "auction_type_code", "auction_type_text", "is_auction_type_opening", "is_auction_type_closing", "is_auction_type_ipo", "is_auction_type_halt", "is_auction_type_volatility", "paired_shares", "reference_price", "indicative_clearing_price", "imbalance_shares", "imbalance_side", "imbalance_side_code", "imbalance_side_text", "is_imbalance_side_buy", "is_imbalance_side_sell", "is_imbalance_side_none", "extension_number", "scheduled_auction_time_seconds", "scheduled_auction_time", "auction_book_clearing_price", "collar_reference_price", "lower_auction_collar", "upper_auction_collar"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

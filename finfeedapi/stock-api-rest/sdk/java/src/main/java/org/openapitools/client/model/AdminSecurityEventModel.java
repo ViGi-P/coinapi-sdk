@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for security event information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T06:06:39.169101097Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T06:12:01.916221421Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AdminSecurityEventModel {
   public static final String SERIALIZED_NAME_SYMBOL = "symbol";
   @SerializedName(SERIALIZED_NAME_SYMBOL)
@@ -316,18 +316,10 @@ public class AdminSecurityEventModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("symbol");
-    openapiFields.add("timestamp_nanos");
-    openapiFields.add("timestamp");
-    openapiFields.add("security_event");
-    openapiFields.add("security_event_code");
-    openapiFields.add("security_event_text");
-    openapiFields.add("is_opening_process_complete");
-    openapiFields.add("is_closing_process_complete");
+    openapiFields = new HashSet<String>(Arrays.asList("symbol", "timestamp_nanos", "timestamp", "security_event", "security_event_code", "security_event_text", "is_opening_process_complete", "is_closing_process_complete"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

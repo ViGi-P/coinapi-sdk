@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for quote update information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T06:06:39.169101097Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T06:12:01.916221421Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class Level1QuoteUpdateModel {
   public static final String SERIALIZED_NAME_SYMBOL = "symbol";
   @SerializedName(SERIALIZED_NAME_SYMBOL)
@@ -342,19 +342,10 @@ public class Level1QuoteUpdateModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("symbol");
-    openapiFields.add("timestamp_nanos");
-    openapiFields.add("timestamp");
-    openapiFields.add("is_symbol_available");
-    openapiFields.add("is_pre_post_market_session");
-    openapiFields.add("ask_size");
-    openapiFields.add("ask_price");
-    openapiFields.add("bid_price");
-    openapiFields.add("bid_size");
+    openapiFields = new HashSet<String>(Arrays.asList("symbol", "timestamp_nanos", "timestamp", "is_symbol_available", "is_pre_post_market_session", "ask_size", "ask_price", "bid_price", "bid_size"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

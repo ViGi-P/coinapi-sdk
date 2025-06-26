@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for retail liquidity indicator information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T06:06:39.169101097Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T06:12:01.916221421Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AdminRetailLiquidityIndicatorModel {
   public static final String SERIALIZED_NAME_SYMBOL = "symbol";
   @SerializedName(SERIALIZED_NAME_SYMBOL)
@@ -368,20 +368,10 @@ public class AdminRetailLiquidityIndicatorModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("symbol");
-    openapiFields.add("timestamp_nanos");
-    openapiFields.add("timestamp");
-    openapiFields.add("retail_liquidity_indicator");
-    openapiFields.add("retail_liquidity_indicator_code");
-    openapiFields.add("retail_liquidity_indicator_text");
-    openapiFields.add("is_retail_indicator_not_applicable");
-    openapiFields.add("is_retail_indicator_buy_interest");
-    openapiFields.add("is_retail_indicator_sell_interest");
-    openapiFields.add("is_retail_indicator_buy_and_sell_interest");
+    openapiFields = new HashSet<String>(Arrays.asList("symbol", "timestamp_nanos", "timestamp", "retail_liquidity_indicator", "retail_liquidity_indicator_code", "retail_liquidity_indicator_text", "is_retail_indicator_not_applicable", "is_retail_indicator_buy_interest", "is_retail_indicator_sell_interest", "is_retail_indicator_buy_and_sell_interest"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for trading status information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T06:06:39.169101097Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T06:12:01.916221421Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class AdminTradingStatusModel {
   public static final String SERIALIZED_NAME_SYMBOL = "symbol";
   @SerializedName(SERIALIZED_NAME_SYMBOL)
@@ -576,28 +576,10 @@ public class AdminTradingStatusModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("symbol");
-    openapiFields.add("timestamp_nanos");
-    openapiFields.add("timestamp");
-    openapiFields.add("is_trading_live");
-    openapiFields.add("is_trading_halted");
-    openapiFields.add("is_trading_in_order_acceptance_period");
-    openapiFields.add("is_trading_paused");
-    openapiFields.add("is_reason_halt_news_pending");
-    openapiFields.add("is_reason_ipo_not_yet_trading");
-    openapiFields.add("is_reason_ipo_deferred");
-    openapiFields.add("is_reason_halt_news_dissemination");
-    openapiFields.add("is_reason_ipo_order_acceptance_period");
-    openapiFields.add("is_reason_ipo_pre_launch_period");
-    openapiFields.add("is_reason_market_wide_circuit_breaker_level1");
-    openapiFields.add("is_reason_market_wide_circuit_breaker_level2");
-    openapiFields.add("is_reason_market_wide_circuit_breaker_level3");
-    openapiFields.add("is_reason_not_applicable");
-    openapiFields.add("is_reason_not_available");
+    openapiFields = new HashSet<String>(Arrays.asList("symbol", "timestamp_nanos", "timestamp", "is_trading_live", "is_trading_halted", "is_trading_in_order_acceptance_period", "is_trading_paused", "is_reason_halt_news_pending", "is_reason_ipo_not_yet_trading", "is_reason_ipo_deferred", "is_reason_halt_news_dissemination", "is_reason_ipo_order_acceptance_period", "is_reason_ipo_pre_launch_period", "is_reason_market_wide_circuit_breaker_level1", "is_reason_market_wide_circuit_breaker_level2", "is_reason_market_wide_circuit_breaker_level3", "is_reason_not_applicable", "is_reason_not_available"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

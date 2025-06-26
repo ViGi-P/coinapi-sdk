@@ -37,4 +37,5 @@ model/oHLCVTimeseriesItem.ts
 model/oHLCVTimeseriesPeriod.ts
 model/tradeTradeModel.ts
 param.ts
+provide-api.ts
 variables.ts
