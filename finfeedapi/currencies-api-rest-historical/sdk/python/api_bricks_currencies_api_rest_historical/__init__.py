@@ -17,27 +17,50 @@
 
 __version__ = "1.0.0"
 
+# Define package exports
+__all__ = [
+    "ExchangeRatesApi",
+    "MetadataApi",
+    "ApiResponse",
+    "ApiClient",
+    "Configuration",
+    "OpenApiException",
+    "ApiTypeError",
+    "ApiValueError",
+    "ApiKeyError",
+    "ApiAttributeError",
+    "ApiException",
+    "V1Asset",
+    "V1ChainNetworkAddress",
+    "V1ExchangeRate",
+    "V1ExchangeRates",
+    "V1ExchangeRatesRate",
+    "V1ExchangeRatesTimeseriesItem",
+    "V1Icon",
+    "V1TimeseriesPeriod",
+]
+
 # import apis into sdk package
-from api_bricks_currencies_api_rest_historical.api.exchange_rates_api import ExchangeRatesApi
-from api_bricks_currencies_api_rest_historical.api.metadata_api import MetadataApi
+from api_bricks_currencies_api_rest_historical.api.exchange_rates_api import ExchangeRatesApi as ExchangeRatesApi
+from api_bricks_currencies_api_rest_historical.api.metadata_api import MetadataApi as MetadataApi
 
 # import ApiClient
-from api_bricks_currencies_api_rest_historical.api_response import ApiResponse
-from api_bricks_currencies_api_rest_historical.api_client import ApiClient
-from api_bricks_currencies_api_rest_historical.configuration import Configuration
-from api_bricks_currencies_api_rest_historical.exceptions import OpenApiException
-from api_bricks_currencies_api_rest_historical.exceptions import ApiTypeError
-from api_bricks_currencies_api_rest_historical.exceptions import ApiValueError
-from api_bricks_currencies_api_rest_historical.exceptions import ApiKeyError
-from api_bricks_currencies_api_rest_historical.exceptions import ApiAttributeError
-from api_bricks_currencies_api_rest_historical.exceptions import ApiException
+from api_bricks_currencies_api_rest_historical.api_response import ApiResponse as ApiResponse
+from api_bricks_currencies_api_rest_historical.api_client import ApiClient as ApiClient
+from api_bricks_currencies_api_rest_historical.configuration import Configuration as Configuration
+from api_bricks_currencies_api_rest_historical.exceptions import OpenApiException as OpenApiException
+from api_bricks_currencies_api_rest_historical.exceptions import ApiTypeError as ApiTypeError
+from api_bricks_currencies_api_rest_historical.exceptions import ApiValueError as ApiValueError
+from api_bricks_currencies_api_rest_historical.exceptions import ApiKeyError as ApiKeyError
+from api_bricks_currencies_api_rest_historical.exceptions import ApiAttributeError as ApiAttributeError
+from api_bricks_currencies_api_rest_historical.exceptions import ApiException as ApiException
 
 # import models into sdk package
-from api_bricks_currencies_api_rest_historical.models.v1_asset import V1Asset
-from api_bricks_currencies_api_rest_historical.models.v1_chain_network_address import V1ChainNetworkAddress
-from api_bricks_currencies_api_rest_historical.models.v1_exchange_rate import V1ExchangeRate
-from api_bricks_currencies_api_rest_historical.models.v1_exchange_rates import V1ExchangeRates
-from api_bricks_currencies_api_rest_historical.models.v1_exchange_rates_rate import V1ExchangeRatesRate
-from api_bricks_currencies_api_rest_historical.models.v1_exchange_rates_timeseries_item import V1ExchangeRatesTimeseriesItem
-from api_bricks_currencies_api_rest_historical.models.v1_icon import V1Icon
-from api_bricks_currencies_api_rest_historical.models.v1_timeseries_period import V1TimeseriesPeriod
+from api_bricks_currencies_api_rest_historical.models.v1_asset import V1Asset as V1Asset
+from api_bricks_currencies_api_rest_historical.models.v1_chain_network_address import V1ChainNetworkAddress as V1ChainNetworkAddress
+from api_bricks_currencies_api_rest_historical.models.v1_exchange_rate import V1ExchangeRate as V1ExchangeRate
+from api_bricks_currencies_api_rest_historical.models.v1_exchange_rates import V1ExchangeRates as V1ExchangeRates
+from api_bricks_currencies_api_rest_historical.models.v1_exchange_rates_rate import V1ExchangeRatesRate as V1ExchangeRatesRate
+from api_bricks_currencies_api_rest_historical.models.v1_exchange_rates_timeseries_item import V1ExchangeRatesTimeseriesItem as V1ExchangeRatesTimeseriesItem
+from api_bricks_currencies_api_rest_historical.models.v1_icon import V1Icon as V1Icon
+from api_bricks_currencies_api_rest_historical.models.v1_timeseries_period import V1TimeseriesPeriod as V1TimeseriesPeriod
