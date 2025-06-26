@@ -14,68 +14,6 @@ Current data by Exchange
 
 Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api;
-using APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client;
-using APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model;
-
-namespace Example
-{
-    public class V1OptionsExchangeIdCurrentGetExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://rest.coinapi.io";
-            // Configure API key authorization: APIKey
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure Bearer token for authorization: JWT
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new OptionsApi(config);
-            var exchangeId = "exchangeId_example";  // string | Exchange identifier (from the Metadata -> Exchanges)
-
-            try
-            {
-                // Current data by Exchange
-                List<OptionsOptionExchangeGroup> result = apiInstance.V1OptionsExchangeIdCurrentGet(exchangeId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling OptionsApi.V1OptionsExchangeIdCurrentGet: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the V1OptionsExchangeIdCurrentGetWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Current data by Exchange
-    ApiResponse<List<OptionsOptionExchangeGroup>> response = apiInstance.V1OptionsExchangeIdCurrentGetWithHttpInfo(exchangeId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling OptionsApi.V1OptionsExchangeIdCurrentGetWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 

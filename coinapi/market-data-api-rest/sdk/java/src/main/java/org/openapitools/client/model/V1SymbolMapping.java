@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents symbol mapping information for exchange symbols.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T06:05:20.192832435Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T06:05:39.690401651Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class V1SymbolMapping {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
@@ -341,19 +341,10 @@ public class V1SymbolMapping {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("symbol_id");
-    openapiFields.add("symbol_id_exchange");
-    openapiFields.add("coinapi_datainfo_id");
-    openapiFields.add("asset_id_base_exchange");
-    openapiFields.add("asset_id_quote_exchange");
-    openapiFields.add("asset_id_base");
-    openapiFields.add("asset_id_quote");
-    openapiFields.add("price_precision");
-    openapiFields.add("size_precision");
+    openapiFields = new HashSet<String>(Arrays.asList("symbol_id", "symbol_id_exchange", "coinapi_datainfo_id", "asset_id_base_exchange", "asset_id_quote_exchange", "asset_id_base", "asset_id_quote", "price_precision", "size_precision"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

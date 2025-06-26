@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a listing item.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-25T06:05:20.192832435Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-26T06:05:39.690401651Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class V1ListingItem {
   public static final String SERIALIZED_NAME_METRIC_ID = "metric_id";
   @SerializedName(SERIALIZED_NAME_METRIC_ID)
@@ -315,18 +315,10 @@ public class V1ListingItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("metric_id");
-    openapiFields.add("symbol_id");
-    openapiFields.add("symbol_id_external");
-    openapiFields.add("exchange_id");
-    openapiFields.add("asset_id");
-    openapiFields.add("asset_id_external");
-    openapiFields.add("chain_id");
-    openapiFields.add("network_id");
+    openapiFields = new HashSet<String>(Arrays.asList("metric_id", "symbol_id", "symbol_id_external", "exchange_id", "asset_id", "asset_id_external", "chain_id", "network_id"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
