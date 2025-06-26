@@ -56,9 +56,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Client
             _services.AddSingleton(jsonSerializerOptionsProvider);
             _services.AddSingleton<IApiFactory, ApiFactory>();
             _services.AddSingleton<ExchangeRatesApiEvents>();
-            _services.AddTransient<IExchangeRatesApi, ExchangeRatesApi>();
             _services.AddSingleton<MetadataApiEvents>();
-            _services.AddTransient<IMetadataApi, MetadataApi>();
         }
 
         /// <summary>
