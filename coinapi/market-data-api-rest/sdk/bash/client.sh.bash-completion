@@ -82,6 +82,7 @@ _()
     operations["v1ExchangesGet"]=1
     operations["v1ExchangesIconsSizeGet"]=1
     operations["v1SymbolsExchangeIdGet"]=1
+    operations["v1SymbolsExchangeIdHistoryGet"]=1
     operations["v1SymbolsGet"]=1
     operations["v1SymbolsMapExchangeIdGet"]=1
     operations["v1MetricsAssetCurrentGet"]=1
@@ -137,6 +138,7 @@ _()
     operation_parameters["v1ExchangesGet"]="filter_exchange_id= "
     operation_parameters["v1ExchangesIconsSizeGet"]="size= "
     operation_parameters["v1SymbolsExchangeIdGet"]="exchange_id= filter_symbol_id= filter_asset_id= "
+    operation_parameters["v1SymbolsExchangeIdHistoryGet"]="exchange_id= page= limit= "
     operation_parameters["v1SymbolsGet"]="filter_symbol_id= filter_exchange_id= filter_asset_id= "
     operation_parameters["v1SymbolsMapExchangeIdGet"]="exchange_id= "
     operation_parameters["v1MetricsAssetCurrentGet"]="metric_id= asset_id= asset_id_external= exchange_id= "

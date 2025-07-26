@@ -79,6 +79,14 @@ Describe -tag 'PSOpenAPITools' -name 'MetadataApi' {
         }
     }
 
+    Context 'Invoke-V1SymbolsExchangeIdHistoryGet' {
+        It 'Test Invoke-V1SymbolsExchangeIdHistoryGet' {
+            #$TestResult = Invoke-V1SymbolsExchangeIdHistoryGet -ExchangeId "TEST_VALUE" -Page "TEST_VALUE" -Limit "TEST_VALUE"
+            #$TestResult | Should -BeOfType TODO
+            #$TestResult.property | Should -Be 0
+        }
+    }
+
     Context 'Invoke-V1SymbolsGet' {
         It 'Test Invoke-V1SymbolsGet' {
             #$TestResult = Invoke-V1SymbolsGet -FilterSymbolId "TEST_VALUE" -FilterExchangeId "TEST_VALUE" -FilterAssetId "TEST_VALUE"

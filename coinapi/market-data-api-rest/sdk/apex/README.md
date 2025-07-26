@@ -80,6 +80,7 @@ Class | Method | HTTP request | Description
 *OASMetadataApi* | [**v1ExchangesGet**](OASMetadataApi.md#v1ExchangesGet) | **GET** /v1/exchanges | List all exchanges
 *OASMetadataApi* | [**v1ExchangesIconsSizeGet**](OASMetadataApi.md#v1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
 *OASMetadataApi* | [**v1SymbolsExchangeIdGet**](OASMetadataApi.md#v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
+*OASMetadataApi* | [**v1SymbolsExchangeIdHistoryGet**](OASMetadataApi.md#v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 *OASMetadataApi* | [**v1SymbolsGet**](OASMetadataApi.md#v1SymbolsGet) | **GET** /v1/symbols | List all symbols
 *OASMetadataApi* | [**v1SymbolsMapExchangeIdGet**](OASMetadataApi.md#v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
 *OASMetricsV1Api* | [**v1MetricsAssetCurrentGet**](OASMetricsV1Api.md#v1MetricsAssetCurrentGet) | **GET** /v1/metrics/asset/current | Current metrics for given asset

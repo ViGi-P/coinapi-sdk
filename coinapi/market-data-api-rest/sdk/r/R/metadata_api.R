@@ -196,6 +196,28 @@
 #' dput(result)
 #'
 #'
+#' ####################  V1SymbolsExchangeIdHistoryGet  ####################
+#'
+#' library(openapi)
+#' var_exchange_id <- "exchange_id_example" # character | The ID of the exchange.
+#' var_page <- 1 # integer | The page number. (Optional)
+#' var_limit <- 100 # integer | Number of records to return. (Optional)
+#'
+#' #Get symbol history for an exchange with pagination.
+#' api_instance <- MetadataApi$new()
+#'
+#' # Configure API key authorization: APIKey
+#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#'
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
+#'
+#' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
+#' # result <- api_instance$V1SymbolsExchangeIdHistoryGet(var_exchange_id, page = var_page, limit = var_limitdata_file = "result.txt")
+#' result <- api_instance$V1SymbolsExchangeIdHistoryGet(var_exchange_id, page = var_page, limit = var_limit)
+#' dput(result)
+#'
+#'
 #' ####################  V1SymbolsGet  ####################
 #'
 #' library(openapi)
@@ -1144,6 +1166,122 @@ MetadataApi <- R6::R6Class(
       query_params[["filter_asset_id"]] <- `filter_asset_id`
 
       local_var_url_path <- "/v1/symbols/{exchange_id}"
+      if (!missing(`exchange_id`)) {
+        local_var_url_path <- gsub("\\{exchange_id\\}", URLencode(as.character(`exchange_id`), reserved = TRUE), local_var_url_path)
+      }
+
+      # API key authentication
+      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
+        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      }
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
+      }
+
+      # The Accept request HTTP header
+      local_var_accepts <- list("text/plain", "application/json", "text/json", "application/x-msgpack")
+
+      # The Content-Type representation header
+      local_var_content_types <- list()
+
+      local_var_resp <- self$api_client$CallApi(url = paste0(self$api_client$base_path, local_var_url_path),
+                                 method = "GET",
+                                 query_params = query_params,
+                                 header_params = header_params,
+                                 form_params = form_params,
+                                 file_params = file_params,
+                                 accepts = local_var_accepts,
+                                 content_types = local_var_content_types,
+                                 body = local_var_body,
+                                 is_oauth = is_oauth,
+                                 oauth_scopes = oauth_scopes,
+                                 ...)
+
+      if (local_var_resp$status_code >= 200 && local_var_resp$status_code <= 299) {
+        # save response in a file
+        if (!is.null(data_file)) {
+          self$api_client$WriteFile(local_var_resp, data_file)
+        }
+
+        deserialized_resp_obj <- tryCatch(
+          self$api_client$DeserializeResponse(local_var_resp, "array[V1Symbol]"),
+          error = function(e) {
+            stop("Failed to deserialize response")
+          }
+        )
+        local_var_resp$content <- deserialized_resp_obj
+        return(local_var_resp)
+      } 
+      
+      local_var_error_msg <- local_var_resp$response_as_text()      
+      if (local_var_resp$status_code >= 300 && local_var_resp$status_code <= 399) {
+        ApiResponse$new(paste("Server returned ", local_var_resp$status_code, " response status code."), local_var_resp)
+      } else if (local_var_resp$status_code >= 400 && local_var_resp$status_code <= 499) {
+        ApiResponse$new("API client error", local_var_resp)
+      } else if (local_var_resp$status_code >= 500 && local_var_resp$status_code <= 599) {
+        if (is.null(local_var_resp$response) || local_var_resp$response == "") {
+          local_var_resp$response <- "API server error"
+        }
+        return(local_var_resp)
+      }
+    },
+
+    #' @description
+    #' Get symbol history for an exchange with pagination.
+    #'
+    #' @param exchange_id The ID of the exchange.
+    #' @param page (optional) The page number. (default value: 1)
+    #' @param limit (optional) Number of records to return. (default value: 100)
+    #' @param data_file (optional) name of the data file to save the result
+    #' @param ... Other optional arguments
+    #'
+    #' @return array[V1Symbol]
+    V1SymbolsExchangeIdHistoryGet = function(exchange_id, page = 1, limit = 100, data_file = NULL, ...) {
+      local_var_response <- self$V1SymbolsExchangeIdHistoryGetWithHttpInfo(exchange_id, page, limit, data_file = data_file, ...)
+      if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
+        return(local_var_response$content)
+      } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
+        return(local_var_response)
+      } else if (local_var_response$status_code >= 400 && local_var_response$status_code <= 499) {
+        return(local_var_response)
+      } else if (local_var_response$status_code >= 500 && local_var_response$status_code <= 599) {
+        return(local_var_response)
+      }
+    },
+
+    #' @description
+    #' Get symbol history for an exchange with pagination.
+    #'
+    #' @param exchange_id The ID of the exchange.
+    #' @param page (optional) The page number. (default value: 1)
+    #' @param limit (optional) Number of records to return. (default value: 100)
+    #' @param data_file (optional) name of the data file to save the result
+    #' @param ... Other optional arguments
+    #'
+    #' @return API response (array[V1Symbol]) with additional information such as HTTP status code, headers
+    V1SymbolsExchangeIdHistoryGetWithHttpInfo = function(exchange_id, page = 1, limit = 100, data_file = NULL, ...) {
+      args <- list(...)
+      query_params <- list()
+      header_params <- c()
+      form_params <- list()
+      file_params <- list()
+      local_var_body <- NULL
+      oauth_scopes <- NULL
+      is_oauth <- FALSE
+
+      if (missing(`exchange_id`)) {
+        stop("Missing required parameter `exchange_id`.")
+      }
+
+
+
+
+      query_params[["page"]] <- `page`
+
+      query_params[["limit"]] <- `limit`
+
+      local_var_url_path <- "/v1/symbols/{exchange_id}/history"
       if (!missing(`exchange_id`)) {
         local_var_url_path <- gsub("\\{exchange_id\\}", URLencode(as.character(`exchange_id`), reserved = TRUE), local_var_url_path)
       }

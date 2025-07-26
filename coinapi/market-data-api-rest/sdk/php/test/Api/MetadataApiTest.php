@@ -181,6 +181,18 @@ class MetadataApiTest extends TestCase
     }
 
     /**
+     * Test case for v1SymbolsExchangeIdHistoryGet
+     *
+     * Get symbol history for an exchange with pagination..
+     *
+     */
+    public function testV1SymbolsExchangeIdHistoryGet()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for v1SymbolsGet
      *
      * List all symbols.

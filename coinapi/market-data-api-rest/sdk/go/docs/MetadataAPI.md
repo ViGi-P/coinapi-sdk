@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**V1ExchangesGet**](MetadataAPI.md#V1ExchangesGet) | **Get** /v1/exchanges | List all exchanges
 [**V1ExchangesIconsSizeGet**](MetadataAPI.md#V1ExchangesIconsSizeGet) | **Get** /v1/exchanges/icons/{size} | List of icons for the exchanges
 [**V1SymbolsExchangeIdGet**](MetadataAPI.md#V1SymbolsExchangeIdGet) | **Get** /v1/symbols/{exchange_id} | List of symbols for the exchange
+[**V1SymbolsExchangeIdHistoryGet**](MetadataAPI.md#V1SymbolsExchangeIdHistoryGet) | **Get** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 [**V1SymbolsGet**](MetadataAPI.md#V1SymbolsGet) | **Get** /v1/symbols | List all symbols
 [**V1SymbolsMapExchangeIdGet**](MetadataAPI.md#V1SymbolsMapExchangeIdGet) | **Get** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
 
@@ -611,6 +612,78 @@ Name | Type | Description  | Notes
 
  **filterSymbolId** | **string** | The filter for symbol ID. | 
  **filterAssetId** | **string** | The filter for asset ID. | 
+
+### Return type
+
+[**[]V1Symbol**](V1Symbol.md)
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## V1SymbolsExchangeIdHistoryGet
+
+> []V1Symbol V1SymbolsExchangeIdHistoryGet(ctx, exchangeId).Page(page).Limit(limit).Execute()
+
+Get symbol history for an exchange with pagination.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
+)
+
+func main() {
+	exchangeId := "exchangeId_example" // string | The ID of the exchange.
+	page := int32(56) // int32 | The page number. (optional) (default to 1)
+	limit := int32(56) // int32 | Number of records to return. (optional) (default to 100)
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	resp, r, err := apiClient.MetadataAPI.V1SymbolsExchangeIdHistoryGet(context.Background(), exchangeId).Page(page).Limit(limit).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1SymbolsExchangeIdHistoryGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `V1SymbolsExchangeIdHistoryGet`: []V1Symbol
+	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1SymbolsExchangeIdHistoryGet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**exchangeId** | **string** | The ID of the exchange. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiV1SymbolsExchangeIdHistoryGetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **page** | **int32** | The page number. | [default to 1]
+ **limit** | **int32** | Number of records to return. | [default to 100]
 
 ### Return type
 

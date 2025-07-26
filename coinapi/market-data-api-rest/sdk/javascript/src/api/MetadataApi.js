@@ -422,6 +422,54 @@ export default class MetadataApi {
     }
 
     /**
+     * Callback function to receive the result of the v1SymbolsExchangeIdHistoryGet operation.
+     * @callback module:api/MetadataApi~v1SymbolsExchangeIdHistoryGetCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/V1Symbol>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get symbol history for an exchange with pagination.
+     * @param {String} exchangeId The ID of the exchange.
+     * @param {Object} opts Optional parameters
+     * @param {Number} [page = 1)] The page number.
+     * @param {Number} [limit = 100)] Number of records to return.
+     * @param {module:api/MetadataApi~v1SymbolsExchangeIdHistoryGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/V1Symbol>}
+     */
+    v1SymbolsExchangeIdHistoryGet(exchangeId, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'exchangeId' is set
+      if (exchangeId === undefined || exchangeId === null) {
+        throw new Error("Missing the required parameter 'exchangeId' when calling v1SymbolsExchangeIdHistoryGet");
+      }
+
+      let pathParams = {
+        'exchange_id': exchangeId
+      };
+      let queryParams = {
+        'page': opts['page'],
+        'limit': opts['limit']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['APIKey', 'JWT'];
+      let contentTypes = [];
+      let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
+      let returnType = [V1Symbol];
+      return this.apiClient.callApi(
+        '/v1/symbols/{exchange_id}/history', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the v1SymbolsGet operation.
      * @callback module:api/MetadataApi~v1SymbolsGetCallback
      * @param {String} error Error message, if any.

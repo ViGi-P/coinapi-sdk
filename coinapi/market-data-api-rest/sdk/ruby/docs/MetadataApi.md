@@ -13,6 +13,7 @@ All URIs are relative to *https://rest.coinapi.io*
 | [**v1_exchanges_get**](MetadataApi.md#v1_exchanges_get) | **GET** /v1/exchanges | List all exchanges |
 | [**v1_exchanges_icons_size_get**](MetadataApi.md#v1_exchanges_icons_size_get) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges |
 | [**v1_symbols_exchange_id_get**](MetadataApi.md#v1_symbols_exchange_id_get) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange |
+| [**v1_symbols_exchange_id_history_get**](MetadataApi.md#v1_symbols_exchange_id_history_get) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination. |
 | [**v1_symbols_get**](MetadataApi.md#v1_symbols_get) | **GET** /v1/symbols | List all symbols |
 | [**v1_symbols_map_exchange_id_get**](MetadataApi.md#v1_symbols_map_exchange_id_get) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange |
 
@@ -670,6 +671,84 @@ end
 | **exchange_id** | **String** | The ID of the exchange (from the Metadata -&gt; Exchanges) |  |
 | **filter_symbol_id** | **String** | The filter for symbol ID. | [optional] |
 | **filter_asset_id** | **String** | The filter for asset ID. | [optional] |
+
+### Return type
+
+[**Array&lt;V1Symbol&gt;**](V1Symbol.md)
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+
+## v1_symbols_exchange_id_history_get
+
+> <Array<V1Symbol>> v1_symbols_exchange_id_history_get(exchange_id, opts)
+
+Get symbol history for an exchange with pagination.
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: APIKey
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure Bearer authorization (JWT): JWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+end
+
+api_instance = OpenapiClient::MetadataApi.new
+exchange_id = 'exchange_id_example' # String | The ID of the exchange.
+opts = {
+  page: 56, # Integer | The page number.
+  limit: 56 # Integer | Number of records to return.
+}
+
+begin
+  # Get symbol history for an exchange with pagination.
+  result = api_instance.v1_symbols_exchange_id_history_get(exchange_id, opts)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling MetadataApi->v1_symbols_exchange_id_history_get: #{e}"
+end
+```
+
+#### Using the v1_symbols_exchange_id_history_get_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Array<V1Symbol>>, Integer, Hash)> v1_symbols_exchange_id_history_get_with_http_info(exchange_id, opts)
+
+```ruby
+begin
+  # Get symbol history for an exchange with pagination.
+  data, status_code, headers = api_instance.v1_symbols_exchange_id_history_get_with_http_info(exchange_id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Array<V1Symbol>>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling MetadataApi->v1_symbols_exchange_id_history_get_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **exchange_id** | **String** | The ID of the exchange. |  |
+| **page** | **Integer** | The page number. | [optional][default to 1] |
+| **limit** | **Integer** | Number of records to return. | [optional][default to 100] |
 
 ### Return type
 

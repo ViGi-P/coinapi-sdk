@@ -313,6 +313,27 @@ package body .Clients is
       .Models.Deserialize (Reply, "", Result);
    end V_1Symbols_Exchange_Id_Get;
 
+   --  Get symbol history for an exchange with pagination.
+   procedure V_1Symbols_Exchange_Id_History_Get
+      (Client : in out Client_Type;
+       Exchange_Id : in Swagger.UString;
+       Page : in Swagger.Nullable_Integer;
+       Limit : in Swagger.Nullable_Integer;
+       Result : out .Models.V1Symbol_Type_Vectors.Vector) is
+      URI   : Swagger.Clients.URI_Type;
+      Reply : Swagger.Value_Type;
+   begin
+      Client.Set_Accept (Media_List_1);
+
+
+      URI.Add_Param ("page", Page);
+      URI.Add_Param ("limit", Limit);
+      URI.Set_Path ("/v1/symbols/{exchange_id}/history");
+      URI.Set_Path_Param ("exchange_id", Exchange_Id);
+      Client.Call (Swagger.Clients.GET, URI, Reply);
+      .Models.Deserialize (Reply, "", Result);
+   end V_1Symbols_Exchange_Id_History_Get;
+
    --  List all symbols
    --  Retrieves all symbols with optional filtering.
    --              

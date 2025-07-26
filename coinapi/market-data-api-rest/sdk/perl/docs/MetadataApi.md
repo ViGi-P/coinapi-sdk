@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**v1_exchanges_get**](MetadataApi.md#v1_exchanges_get) | **GET** /v1/exchanges | List all exchanges
 [**v1_exchanges_icons_size_get**](MetadataApi.md#v1_exchanges_icons_size_get) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
 [**v1_symbols_exchange_id_get**](MetadataApi.md#v1_symbols_exchange_id_get) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
+[**v1_symbols_exchange_id_history_get**](MetadataApi.md#v1_symbols_exchange_id_history_get) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 [**v1_symbols_get**](MetadataApi.md#v1_symbols_get) | **GET** /v1/symbols | List all symbols
 [**v1_symbols_map_exchange_id_get**](MetadataApi.md#v1_symbols_map_exchange_id_get) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
 
@@ -486,6 +487,62 @@ Name | Type | Description  | Notes
  **exchange_id** | **string**| The ID of the exchange (from the Metadata -&gt; Exchanges) | 
  **filter_symbol_id** | **string**| The filter for symbol ID. | [optional] 
  **filter_asset_id** | **string**| The filter for asset ID. | [optional] 
+
+### Return type
+
+[**ARRAY[V1Symbol]**](V1Symbol.md)
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1_symbols_exchange_id_history_get**
+> ARRAY[V1Symbol] v1_symbols_exchange_id_history_get(exchange_id => $exchange_id, page => $page, limit => $limit)
+
+Get symbol history for an exchange with pagination.
+
+### Example
+```perl
+use Data::Dumper;
+use WWW::OpenAPIClient::MetadataApi;
+my $api_instance = WWW::OpenAPIClient::MetadataApi->new(
+
+    # Configure API key authorization: APIKey
+    api_key => {'Authorization' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'Authorization' => 'Bearer'},
+    # Configure bearer access token for authorization: JWT
+    access_token => 'YOUR_BEARER_TOKEN',
+    
+);
+
+my $exchange_id = "exchange_id_example"; # string | The ID of the exchange.
+my $page = 1; # int | The page number.
+my $limit = 100; # int | Number of records to return.
+
+eval {
+    my $result = $api_instance->v1_symbols_exchange_id_history_get(exchange_id => $exchange_id, page => $page, limit => $limit);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling MetadataApi->v1_symbols_exchange_id_history_get: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exchange_id** | **string**| The ID of the exchange. | 
+ **page** | **int**| The page number. | [optional] [default to 1]
+ **limit** | **int**| Number of records to return. | [optional] [default to 100]
 
 ### Return type
 

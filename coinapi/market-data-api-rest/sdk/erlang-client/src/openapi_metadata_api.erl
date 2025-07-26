@@ -9,6 +9,7 @@
          v1_exchanges_get/1, v1_exchanges_get/2,
          v1_exchanges_icons_size_get/2, v1_exchanges_icons_size_get/3,
          v1_symbols_exchange_id_get/2, v1_symbols_exchange_id_get/3,
+         v1_symbols_exchange_id_history_get/2, v1_symbols_exchange_id_history_get/3,
          v1_symbols_get/1, v1_symbols_get/2,
          v1_symbols_map_exchange_id_get/2, v1_symbols_map_exchange_id_get/3]).
 
@@ -196,6 +197,27 @@ v1_symbols_exchange_id_get(Ctx, ExchangeId, Optional) ->
     Method = get,
     Path = [?BASE_URL, "/v1/symbols/", ExchangeId, ""],
     QS = lists:flatten([])++openapi_utils:optional_params(['filter_symbol_id', 'filter_asset_id'], _OptionalParams),
+    Headers = [],
+    Body1 = [],
+    ContentTypeHeader = openapi_utils:select_header_content_type([]),
+    Opts = maps:get(hackney_opts, Optional, []),
+
+    openapi_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
+
+%% @doc Get symbol history for an exchange with pagination.
+%% 
+-spec v1_symbols_exchange_id_history_get(ctx:ctx(), binary()) -> {ok, [openapi_v1_symbol:openapi_v1_symbol()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v1_symbols_exchange_id_history_get(Ctx, ExchangeId) ->
+    v1_symbols_exchange_id_history_get(Ctx, ExchangeId, #{}).
+
+-spec v1_symbols_exchange_id_history_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_v1_symbol:openapi_v1_symbol()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v1_symbols_exchange_id_history_get(Ctx, ExchangeId, Optional) ->
+    _OptionalParams = maps:get(params, Optional, #{}),
+    Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
+
+    Method = get,
+    Path = [?BASE_URL, "/v1/symbols/", ExchangeId, "/history"],
+    QS = lists:flatten([])++openapi_utils:optional_params(['page', 'limit'], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),

@@ -309,6 +309,7 @@ case $state in
             "v1ExchangesGet[List all exchanges]" \
             "v1ExchangesIconsSizeGet[List of icons for the exchanges]" \
             "v1SymbolsExchangeIdGet[List of symbols for the exchange]" \
+            "v1SymbolsExchangeIdHistoryGet[Get symbol history for an exchange with pagination.]" \
             "v1SymbolsGet[List all symbols]" \
             "v1SymbolsMapExchangeIdGet[List symbol mapping for the exchange]"             "v1MetricsAssetCurrentGet[Current metrics for given asset]" \
             "v1MetricsAssetHistoryGet[Historical metrics for asset]" \
@@ -446,6 +447,15 @@ case $state in
           "exchange_id=:[PATH] The ID of the exchange (from the Metadata -&gt; Exchanges)"
           "filter_symbol_id=:[QUERY] The filter for symbol ID."
 "filter_asset_id=:[QUERY] The filter for asset ID."
+          )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      v1SymbolsExchangeIdHistoryGet)
+        local -a _op_arguments
+        _op_arguments=(
+          "exchange_id=:[PATH] The ID of the exchange."
+          "page=:[QUERY] The page number."
+"limit=:[QUERY] Number of records to return."
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

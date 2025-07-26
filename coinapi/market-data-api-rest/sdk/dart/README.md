@@ -85,6 +85,7 @@ Class | Method | HTTP request | Description
 *MetadataApi* | [**v1ExchangesGet**](doc//MetadataApi.md#v1exchangesget) | **GET** /v1/exchanges | List all exchanges
 *MetadataApi* | [**v1ExchangesIconsSizeGet**](doc//MetadataApi.md#v1exchangesiconssizeget) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
 *MetadataApi* | [**v1SymbolsExchangeIdGet**](doc//MetadataApi.md#v1symbolsexchangeidget) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
+*MetadataApi* | [**v1SymbolsExchangeIdHistoryGet**](doc//MetadataApi.md#v1symbolsexchangeidhistoryget) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 *MetadataApi* | [**v1SymbolsGet**](doc//MetadataApi.md#v1symbolsget) | **GET** /v1/symbols | List all symbols
 *MetadataApi* | [**v1SymbolsMapExchangeIdGet**](doc//MetadataApi.md#v1symbolsmapexchangeidget) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
 *MetricsV1Api* | [**v1MetricsAssetCurrentGet**](doc//MetricsV1Api.md#v1metricsassetcurrentget) | **GET** /v1/metrics/asset/current | Current metrics for given asset

@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**MetadataAPI_v1ExchangesGet**](MetadataAPI.md#MetadataAPI_v1ExchangesGet) | **GET** /v1/exchanges | List all exchanges
 [**MetadataAPI_v1ExchangesIconsSizeGet**](MetadataAPI.md#MetadataAPI_v1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
 [**MetadataAPI_v1SymbolsExchangeIdGet**](MetadataAPI.md#MetadataAPI_v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
+[**MetadataAPI_v1SymbolsExchangeIdHistoryGet**](MetadataAPI.md#MetadataAPI_v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 [**MetadataAPI_v1SymbolsGet**](MetadataAPI.md#MetadataAPI_v1SymbolsGet) | **GET** /v1/symbols | List all symbols
 [**MetadataAPI_v1SymbolsMapExchangeIdGet**](MetadataAPI.md#MetadataAPI_v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
 
@@ -271,6 +272,37 @@ Name | Type | Description  | Notes
 **exchange_id** | **char \*** | The ID of the exchange (from the Metadata -&gt; Exchanges) | 
 **filter_symbol_id** | **char \*** | The filter for symbol ID. | [optional] 
 **filter_asset_id** | **char \*** | The filter for asset ID. | [optional] 
+
+### Return type
+
+[list_t](v1_symbol.md) *
+
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **MetadataAPI_v1SymbolsExchangeIdHistoryGet**
+```c
+// Get symbol history for an exchange with pagination.
+//
+list_t* MetadataAPI_v1SymbolsExchangeIdHistoryGet(apiClient_t *apiClient, char *exchange_id, int *page, int *limit);
+```
+
+### Parameters
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**apiClient** | **apiClient_t \*** | context containing the client configuration |
+**exchange_id** | **char \*** | The ID of the exchange. | 
+**page** | **int \*** | The page number. | [optional] [default to 1]
+**limit** | **int \*** | Number of records to return. | [optional] [default to 100]
 
 ### Return type
 

@@ -162,6 +162,20 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
         }
 
         /// <summary>
+        /// Test V1SymbolsExchangeIdHistoryGet
+        /// </summary>
+        [Fact (Skip = "not implemented")]
+        public async Task V1SymbolsExchangeIdHistoryGetAsyncTest()
+        {
+            string exchangeId = default!;
+            Client.Option<int> page = default!;
+            Client.Option<int> limit = default!;
+            var response = await _instance.V1SymbolsExchangeIdHistoryGetAsync(exchangeId, page, limit);
+            var model = response.Ok();
+            Assert.IsType<List<V1Symbol>>(model);
+        }
+
+        /// <summary>
         /// Test V1SymbolsGet
         /// </summary>
         [Fact (Skip = "not implemented")]

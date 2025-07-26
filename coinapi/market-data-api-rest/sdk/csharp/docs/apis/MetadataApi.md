@@ -13,6 +13,7 @@ All URIs are relative to *https://rest.coinapi.io*
 | [**V1ExchangesGet**](MetadataApi.md#v1exchangesget) | **GET** /v1/exchanges | List all exchanges |
 | [**V1ExchangesIconsSizeGet**](MetadataApi.md#v1exchangesiconssizeget) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges |
 | [**V1SymbolsExchangeIdGet**](MetadataApi.md#v1symbolsexchangeidget) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange |
+| [**V1SymbolsExchangeIdHistoryGet**](MetadataApi.md#v1symbolsexchangeidhistoryget) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination. |
 | [**V1SymbolsGet**](MetadataApi.md#v1symbolsget) | **GET** /v1/symbols | List all symbols |
 | [**V1SymbolsMapExchangeIdGet**](MetadataApi.md#v1symbolsmapexchangeidget) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange |
 
@@ -310,6 +311,42 @@ List of symbols for the exchange
 | **exchangeId** | **string** | The ID of the exchange (from the Metadata -&gt; Exchanges) |  |
 | **filterSymbolId** | **string** | The filter for symbol ID. | [optional]  |
 | **filterAssetId** | **string** | The filter for asset ID. | [optional]  |
+
+### Return type
+
+[**List&lt;V1Symbol&gt;**](V1Symbol.md)
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+<a id="v1symbolsexchangeidhistoryget"></a>
+# **V1SymbolsExchangeIdHistoryGet**
+> List&lt;V1Symbol&gt; V1SymbolsExchangeIdHistoryGet (string exchangeId, int page = null, int limit = null)
+
+Get symbol history for an exchange with pagination.
+
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **exchangeId** | **string** | The ID of the exchange. |  |
+| **page** | **int** | The page number. | [optional] [default to 1] |
+| **limit** | **int** | Number of records to return. | [optional] [default to 100] |
 
 ### Return type
 

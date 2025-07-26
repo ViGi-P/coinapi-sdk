@@ -248,6 +248,33 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         Task<IV1SymbolsExchangeIdGetApiResponse?> V1SymbolsExchangeIdGetOrDefaultAsync(string exchangeId, Option<string> filterSymbolId = default, Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Get symbol history for an exchange with pagination.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exchangeId">The ID of the exchange.</param>
+        /// <param name="page">The page number. (optional, default to 1)</param>
+        /// <param name="limit">Number of records to return. (optional, default to 100)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdHistoryGetApiResponse"/>&gt;</returns>
+        Task<IV1SymbolsExchangeIdHistoryGetApiResponse> V1SymbolsExchangeIdHistoryGetAsync(string exchangeId, Option<int> page = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get symbol history for an exchange with pagination.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <param name="exchangeId">The ID of the exchange.</param>
+        /// <param name="page">The page number. (optional, default to 1)</param>
+        /// <param name="limit">Number of records to return. (optional, default to 100)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdHistoryGetApiResponse"/>?&gt;</returns>
+        Task<IV1SymbolsExchangeIdHistoryGetApiResponse?> V1SymbolsExchangeIdHistoryGetOrDefaultAsync(string exchangeId, Option<int> page = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
         /// List all symbols
         /// </summary>
         /// <remarks>
@@ -398,6 +425,18 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     /// The <see cref="IV1SymbolsExchangeIdGetApiResponse"/>
     /// </summary>
     public interface IV1SymbolsExchangeIdGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Symbol>?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IV1SymbolsExchangeIdHistoryGetApiResponse"/>
+    /// </summary>
+    public interface IV1SymbolsExchangeIdHistoryGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Symbol>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -613,6 +652,26 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         internal void ExecuteOnErrorV1SymbolsExchangeIdGet(Exception exception)
         {
             OnErrorV1SymbolsExchangeIdGet?.Invoke(this, new ExceptionEventArgs(exception));
+        }
+
+        /// <summary>
+        /// The event raised after the server response
+        /// </summary>
+        public event EventHandler<ApiResponseEventArgs>? OnV1SymbolsExchangeIdHistoryGet;
+
+        /// <summary>
+        /// The event raised after an error querying the server
+        /// </summary>
+        public event EventHandler<ExceptionEventArgs>? OnErrorV1SymbolsExchangeIdHistoryGet;
+
+        internal void ExecuteOnV1SymbolsExchangeIdHistoryGet(MetadataApi.V1SymbolsExchangeIdHistoryGetApiResponse apiResponse)
+        {
+            OnV1SymbolsExchangeIdHistoryGet?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+        }
+
+        internal void ExecuteOnErrorV1SymbolsExchangeIdHistoryGet(Exception exception)
+        {
+            OnErrorV1SymbolsExchangeIdHistoryGet?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
@@ -2818,6 +2877,266 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
             public V1SymbolsExchangeIdGetApiResponse(ILogger<V1SymbolsExchangeIdGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public bool IsOk => 200 == (int)StatusCode;
+
+            /// <summary>
+            /// Deserializes the response if the response is 200 Ok
+            /// </summary>
+            /// <returns></returns>
+            public List<V1Symbol>? Ok()
+            {
+                // This logic may be modified with the AsModel.mustache template
+                return IsOk
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<V1Symbol>>(RawContent, _jsonSerializerOptions)
+                    : null;
+            }
+
+            /// <summary>
+            /// Returns true if the response is 200 Ok and the deserialized response is not null
+            /// </summary>
+            /// <param name="result"></param>
+            /// <returns></returns>
+            public bool TryOk([NotNullWhen(true)]out List<V1Symbol>? result)
+            {
+                result = null;
+
+                try
+                {
+                    result = Ok();
+                } catch (Exception e)
+                {
+                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
+                }
+
+                return result != null;
+            }
+
+            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
+            {
+                bool suppressDefaultLog = false;
+                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
+                if (!suppressDefaultLog)
+                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+            }
+
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+        }
+
+        partial void FormatV1SymbolsExchangeIdHistoryGet(ref string exchangeId, ref Option<int> page, ref Option<int> limit);
+
+        /// <summary>
+        /// Validates the request parameters
+        /// </summary>
+        /// <param name="exchangeId"></param>
+        /// <returns></returns>
+        private void ValidateV1SymbolsExchangeIdHistoryGet(string exchangeId)
+        {
+            if (exchangeId == null)
+                throw new ArgumentNullException(nameof(exchangeId));
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="exchangeId"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        private void AfterV1SymbolsExchangeIdHistoryGetDefaultImplementation(IV1SymbolsExchangeIdHistoryGetApiResponse apiResponseLocalVar, string exchangeId, Option<int> page, Option<int> limit)
+        {
+            bool suppressDefaultLog = false;
+            AfterV1SymbolsExchangeIdHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, exchangeId, page, limit);
+            if (!suppressDefaultLog)
+                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+        }
+
+        /// <summary>
+        /// Processes the server response
+        /// </summary>
+        /// <param name="suppressDefaultLog"></param>
+        /// <param name="apiResponseLocalVar"></param>
+        /// <param name="exchangeId"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        partial void AfterV1SymbolsExchangeIdHistoryGet(ref bool suppressDefaultLog, IV1SymbolsExchangeIdHistoryGetApiResponse apiResponseLocalVar, string exchangeId, Option<int> page, Option<int> limit);
+
+        /// <summary>
+        /// Logs exceptions that occur while retrieving the server response
+        /// </summary>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="exchangeId"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        private void OnErrorV1SymbolsExchangeIdHistoryGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, Option<int> page, Option<int> limit)
+        {
+            bool suppressDefaultLogLocalVar = false;
+            OnErrorV1SymbolsExchangeIdHistoryGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, exchangeId, page, limit);
+            if (!suppressDefaultLogLocalVar)
+                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
+        }
+
+        /// <summary>
+        /// A partial method that gives developers a way to provide customized exception handling
+        /// </summary>
+        /// <param name="suppressDefaultLogLocalVar"></param>
+        /// <param name="exceptionLocalVar"></param>
+        /// <param name="pathFormatLocalVar"></param>
+        /// <param name="pathLocalVar"></param>
+        /// <param name="exchangeId"></param>
+        /// <param name="page"></param>
+        /// <param name="limit"></param>
+        partial void OnErrorV1SymbolsExchangeIdHistoryGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, Option<int> page, Option<int> limit);
+
+        /// <summary>
+        /// Get symbol history for an exchange with pagination. 
+        /// </summary>
+        /// <param name="exchangeId">The ID of the exchange.</param>
+        /// <param name="page">The page number. (optional, default to 1)</param>
+        /// <param name="limit">Number of records to return. (optional, default to 100)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdHistoryGetApiResponse"/>&gt;</returns>
+        public async Task<IV1SymbolsExchangeIdHistoryGetApiResponse?> V1SymbolsExchangeIdHistoryGetOrDefaultAsync(string exchangeId, Option<int> page = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                return await V1SymbolsExchangeIdHistoryGetAsync(exchangeId, page, limit, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Get symbol history for an exchange with pagination. 
+        /// </summary>
+        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
+        /// <param name="exchangeId">The ID of the exchange.</param>
+        /// <param name="page">The page number. (optional, default to 1)</param>
+        /// <param name="limit">Number of records to return. (optional, default to 100)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdHistoryGetApiResponse"/>&gt;</returns>
+        public async Task<IV1SymbolsExchangeIdHistoryGetApiResponse> V1SymbolsExchangeIdHistoryGetAsync(string exchangeId, Option<int> page = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            UriBuilder uriBuilderLocalVar = new UriBuilder();
+
+            try
+            {
+                ValidateV1SymbolsExchangeIdHistoryGet(exchangeId);
+
+                FormatV1SymbolsExchangeIdHistoryGet(ref exchangeId, ref page, ref limit);
+
+                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
+                {
+                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
+                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
+                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
+                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
+                        ? "/v1/symbols/{exchange_id}/history"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/symbols/{exchange_id}/history");
+                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bexchange_id%7D", Uri.EscapeDataString(exchangeId.ToString()));
+
+                    System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
+
+                    if (page.IsSet)
+                        parseQueryStringLocalVar["page"] = ClientUtils.ParameterToString(page.Value);
+
+                    if (limit.IsSet)
+                        parseQueryStringLocalVar["limit"] = ClientUtils.ParameterToString(limit.Value);
+
+                    uriBuilderLocalVar.Query = parseQueryStringLocalVar.ToString();
+
+                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
+                    ApiKeyToken apiKeyTokenLocalVar1 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
+                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar1);
+                    apiKeyTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar);
+
+                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
+
+                    BearerToken bearerTokenLocalVar2 = (BearerToken) await BearerTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
+
+                    tokenBaseLocalVars.Add(bearerTokenLocalVar2);
+
+                    bearerTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar, "");
+
+                    string[] acceptLocalVars = new string[] {
+                        "text/plain",
+                        "application/json",
+                        "text/json",
+                        "application/x-msgpack"
+                    };
+
+                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
+
+                    if (acceptLocalVar != null)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
+
+                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
+
+                    DateTime requestedAtLocalVar = DateTime.UtcNow;
+
+                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
+                    {
+                        string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+
+                        ILogger<V1SymbolsExchangeIdHistoryGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1SymbolsExchangeIdHistoryGetApiResponse>();
+
+                        V1SymbolsExchangeIdHistoryGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/symbols/{exchange_id}/history", requestedAtLocalVar, _jsonSerializerOptions);
+
+                        AfterV1SymbolsExchangeIdHistoryGetDefaultImplementation(apiResponseLocalVar, exchangeId, page, limit);
+
+                        Events.ExecuteOnV1SymbolsExchangeIdHistoryGet(apiResponseLocalVar);
+
+                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
+                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
+                                tokenBaseLocalVar.BeginRateLimit();
+
+                        return apiResponseLocalVar;
+                    }
+                }
+            }
+            catch(Exception e)
+            {
+                OnErrorV1SymbolsExchangeIdHistoryGetDefaultImplementation(e, "/v1/symbols/{exchange_id}/history", uriBuilderLocalVar.Path, exchangeId, page, limit);
+                Events.ExecuteOnErrorV1SymbolsExchangeIdHistoryGet(e);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// The <see cref="V1SymbolsExchangeIdHistoryGetApiResponse"/>
+        /// </summary>
+        public partial class V1SymbolsExchangeIdHistoryGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IV1SymbolsExchangeIdHistoryGetApiResponse
+        {
+            /// <summary>
+            /// The logger
+            /// </summary>
+            public ILogger<V1SymbolsExchangeIdHistoryGetApiResponse> Logger { get; }
+
+            /// <summary>
+            /// The <see cref="V1SymbolsExchangeIdHistoryGetApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="rawContent"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public V1SymbolsExchangeIdHistoryGetApiResponse(ILogger<V1SymbolsExchangeIdHistoryGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);

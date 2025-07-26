@@ -147,6 +147,23 @@ feature -- Test routines
             assert ("not_implemented", False)
         end
 
+    test_v1_symbols_exchange_id_history_get
+            -- Get symbol history for an exchange with pagination.
+            --
+            -- 
+        local
+            l_response: LIST [V1_SYMBOL]
+            l_exchange_id: STRING_32
+            l_page: INTEGER_32
+            l_limit: INTEGER_32
+        do
+            -- TODO: Initialize required params.
+            -- l_exchange_id
+
+            -- l_response := api.v1_symbols_exchange_id_history_get(l_exchange_id, l_page, l_limit)
+            assert ("not_implemented", False)
+        end
+
     test_v1_symbols_get
             -- List all symbols
             --

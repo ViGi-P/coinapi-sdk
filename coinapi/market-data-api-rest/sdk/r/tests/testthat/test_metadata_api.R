@@ -110,6 +110,19 @@ test_that("V1SymbolsExchangeIdGet", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
+test_that("V1SymbolsExchangeIdHistoryGet", {
+  # tests for V1SymbolsExchangeIdHistoryGet
+  # base path: https://rest.coinapi.io
+  # Get symbol history for an exchange with pagination.
+  # @param exchange_id character The ID of the exchange.
+  # @param page integer The page number. (optional)
+  # @param limit integer Number of records to return. (optional)
+  # @return [array[V1Symbol]]
+
+  # uncomment below to test the operation
+  #expect_equal(result, "EXPECTED_RESULT")
+})
+
 test_that("V1SymbolsGet", {
   # tests for V1SymbolsGet
   # base path: https://rest.coinapi.io

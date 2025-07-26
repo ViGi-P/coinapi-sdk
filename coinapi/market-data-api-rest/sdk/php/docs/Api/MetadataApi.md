@@ -13,6 +13,7 @@ All URIs are relative to https://rest.coinapi.io, except if the operation define
 | [**v1ExchangesGet()**](MetadataApi.md#v1ExchangesGet) | **GET** /v1/exchanges | List all exchanges |
 | [**v1ExchangesIconsSizeGet()**](MetadataApi.md#v1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges |
 | [**v1SymbolsExchangeIdGet()**](MetadataApi.md#v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange |
+| [**v1SymbolsExchangeIdHistoryGet()**](MetadataApi.md#v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination. |
 | [**v1SymbolsGet()**](MetadataApi.md#v1SymbolsGet) | **GET** /v1/symbols | List all symbols |
 | [**v1SymbolsMapExchangeIdGet()**](MetadataApi.md#v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange |
 
@@ -578,6 +579,73 @@ try {
 | **exchange_id** | **string**| The ID of the exchange (from the Metadata -&gt; Exchanges) | |
 | **filter_symbol_id** | **string**| The filter for symbol ID. | [optional] |
 | **filter_asset_id** | **string**| The filter for asset ID. | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\V1Symbol[]**](../Model/V1Symbol.md)
+
+### Authorization
+
+[APIKey](../../README.md#APIKey), [JWT](../../README.md#JWT)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `text/plain`, `application/json`, `text/json`, `application/x-msgpack`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `v1SymbolsExchangeIdHistoryGet()`
+
+```php
+v1SymbolsExchangeIdHistoryGet($exchange_id, $page, $limit): \OpenAPI\Client\Model\V1Symbol[]
+```
+
+Get symbol history for an exchange with pagination.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: APIKey
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+// Configure Bearer (JWT) authorization: JWT
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new OpenAPI\Client\Api\MetadataApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$exchange_id = 'exchange_id_example'; // string | The ID of the exchange.
+$page = 1; // int | The page number.
+$limit = 100; // int | Number of records to return.
+
+try {
+    $result = $apiInstance->v1SymbolsExchangeIdHistoryGet($exchange_id, $page, $limit);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MetadataApi->v1SymbolsExchangeIdHistoryGet: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **exchange_id** | **string**| The ID of the exchange. | |
+| **page** | **int**| The page number. | [optional] [default to 1] |
+| **limit** | **int**| Number of records to return. | [optional] [default to 100] |
 
 ### Return type
 

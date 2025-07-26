@@ -653,6 +653,95 @@ sub v1_symbols_exchange_id_get {
 }
 
 #
+# v1_symbols_exchange_id_history_get
+#
+# Get symbol history for an exchange with pagination.
+#
+# @param string $exchange_id The ID of the exchange. (required)
+# @param int $page The page number. (optional, default to 1)
+# @param int $limit Number of records to return. (optional, default to 100)
+{
+    my $params = {
+    'exchange_id' => {
+        data_type => 'string',
+        description => 'The ID of the exchange.',
+        required => '1',
+    },
+    'page' => {
+        data_type => 'int',
+        description => 'The page number.',
+        required => '0',
+    },
+    'limit' => {
+        data_type => 'int',
+        description => 'Number of records to return.',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'v1_symbols_exchange_id_history_get' } = {
+        summary => 'Get symbol history for an exchange with pagination.',
+        params => $params,
+        returns => 'ARRAY[V1Symbol]',
+        };
+}
+# @return ARRAY[V1Symbol]
+#
+sub v1_symbols_exchange_id_history_get {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'exchange_id' is set
+    unless (exists $args{'exchange_id'}) {
+      croak("Missing the required parameter 'exchange_id' when calling v1_symbols_exchange_id_history_get");
+    }
+
+    # parse inputs
+    my $_resource_path = '/v1/symbols/{exchange_id}/history';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('text/plain', 'application/json', 'text/json', 'application/x-msgpack');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # query params
+    if ( exists $args{'page'}) {
+        $query_params->{'page'} = $self->{api_client}->to_query_value($args{'page'});
+    }
+
+    # query params
+    if ( exists $args{'limit'}) {
+        $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
+    }
+
+    # path params
+    if ( exists $args{'exchange_id'}) {
+        my $_base_variable = "{" . "exchange_id" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'exchange_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(APIKey JWT )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[V1Symbol]', $response);
+    return $_response_object;
+}
+
+#
 # v1_symbols_get
 #
 # List all symbols

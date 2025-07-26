@@ -22,6 +22,8 @@ Method | HTTP request | Description
 [**v1ExchangesIconsSizeGetWithHttpInfo**](MetadataApi.md#v1ExchangesIconsSizeGetWithHttpInfo) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
 [**v1SymbolsExchangeIdGet**](MetadataApi.md#v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
 [**v1SymbolsExchangeIdGetWithHttpInfo**](MetadataApi.md#v1SymbolsExchangeIdGetWithHttpInfo) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
+[**v1SymbolsExchangeIdHistoryGet**](MetadataApi.md#v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
+[**v1SymbolsExchangeIdHistoryGetWithHttpInfo**](MetadataApi.md#v1SymbolsExchangeIdHistoryGetWithHttpInfo) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 [**v1SymbolsGet**](MetadataApi.md#v1SymbolsGet) | **GET** /v1/symbols | List all symbols
 [**v1SymbolsGetWithHttpInfo**](MetadataApi.md#v1SymbolsGetWithHttpInfo) | **GET** /v1/symbols | List all symbols
 [**v1SymbolsMapExchangeIdGet**](MetadataApi.md#v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
@@ -778,6 +780,96 @@ Name | Type | Description  | Notes
  **exchangeId** | **String**| The ID of the exchange (from the Metadata -&gt; Exchanges) |
  **filterSymbolId** | **String**| The filter for symbol ID. | [optional]
  **filterAssetId** | **String**| The filter for asset ID. | [optional]
+
+### Return type
+
+ApiRequest[[**Seq[Symbol]**](Symbol.md)]
+
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | successful operation |  -  |
+
+
+## v1SymbolsExchangeIdHistoryGet
+
+> v1SymbolsExchangeIdHistoryGet(v1SymbolsExchangeIdHistoryGetRequest): ApiRequest[Seq[Symbol]]
+
+Get symbol history for an exchange with pagination.
+
+### Example
+
+```scala
+// Import classes:
+import 
+import org.openapitools.client.core._
+import org.openapitools.client.core.CollectionFormats._
+import org.openapitools.client.core.ApiKeyLocations._
+
+import akka.actor.ActorSystem
+import scala.concurrent.Future
+import scala.util.{Failure, Success}
+
+object Example extends App {
+    
+    implicit val system: ActorSystem = ActorSystem()
+    import system.dispatcher
+    
+    // Configure API key authorization: APIKey
+    implicit val APIKey: ApiKeyValue = ApiKeyValue("YOUR API KEY")
+
+    // Configure HTTP bearer authorization: JWT
+    implicit val JWT: BearerToken = BearerToken("BEARER TOKEN")
+
+    val apiInvoker = ApiInvoker()
+    val apiInstance = MetadataApi("https://rest.coinapi.io")
+    val exchangeId: String = exchangeId_example // String | The ID of the exchange.
+
+    val page: Int = 56 // Int | The page number.
+
+    val limit: Int = 56 // Int | Number of records to return.
+    
+    val request = apiInstance.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
+    val response = apiInvoker.execute(request)
+
+    response.onComplete {
+        case Success(ApiResponse(code, content, headers)) =>
+            System.out.println(s"Status code: $code}")
+            System.out.println(s"Response headers: ${headers.mkString(", ")}")
+            System.out.println(s"Response body: $content")
+        
+        case Failure(error @ ApiError(code, message, responseContent, cause, headers)) =>
+            System.err.println("Exception when calling MetadataApi#v1SymbolsExchangeIdHistoryGet")
+            System.err.println(s"Status code: $code}")
+            System.err.println(s"Reason: $responseContent")
+            System.err.println(s"Response headers: ${headers.mkString(", ")}")
+            error.printStackTrace();
+
+        case Failure(exception) => 
+            System.err.println("Exception when calling MetadataApi#v1SymbolsExchangeIdHistoryGet")
+            exception.printStackTrace();
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exchangeId** | **String**| The ID of the exchange. |
+ **page** | **Int**| The page number. | [optional]
+ **limit** | **Int**| Number of records to return. | [optional]
 
 ### Return type
 

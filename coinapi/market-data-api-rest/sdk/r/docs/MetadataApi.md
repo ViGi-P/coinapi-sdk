@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**V1ExchangesGet**](MetadataApi.md#V1ExchangesGet) | **GET** /v1/exchanges | List all exchanges
 [**V1ExchangesIconsSizeGet**](MetadataApi.md#V1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
 [**V1SymbolsExchangeIdGet**](MetadataApi.md#V1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
+[**V1SymbolsExchangeIdHistoryGet**](MetadataApi.md#V1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 [**V1SymbolsGet**](MetadataApi.md#V1SymbolsGet) | **GET** /v1/symbols | List all symbols
 [**V1SymbolsMapExchangeIdGet**](MetadataApi.md#V1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
 
@@ -451,6 +452,59 @@ Name | Type | Description  | Notes
  **exchange_id** | **character**| The ID of the exchange (from the Metadata -&gt; Exchanges) | 
  **filter_symbol_id** | **character**| The filter for symbol ID. | [optional] 
  **filter_asset_id** | **character**| The filter for asset ID. | [optional] 
+
+### Return type
+
+[**array[V1Symbol]**](v1.Symbol.md)
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | successful operation |  -  |
+
+# **V1SymbolsExchangeIdHistoryGet**
+> array[V1Symbol] V1SymbolsExchangeIdHistoryGet(exchange_id, page = 1, limit = 100)
+
+Get symbol history for an exchange with pagination.
+
+### Example
+```R
+library(openapi)
+
+# Get symbol history for an exchange with pagination.
+#
+# prepare function argument(s)
+var_exchange_id <- "exchange_id_example" # character | The ID of the exchange.
+var_page <- 1 # integer | The page number. (Optional)
+var_limit <- 100 # integer | Number of records to return. (Optional)
+
+api_instance <- MetadataApi$new()
+# Configure API key authorization: APIKey
+api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+# Configure HTTP bearer authorization: JWT
+# api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
+# to save the result into a file, simply add the optional `data_file` parameter, e.g.
+# result <- api_instance$V1SymbolsExchangeIdHistoryGet(var_exchange_id, page = var_page, limit = var_limitdata_file = "result.txt")
+result <- api_instance$V1SymbolsExchangeIdHistoryGet(var_exchange_id, page = var_page, limit = var_limit)
+dput(result)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exchange_id** | **character**| The ID of the exchange. | 
+ **page** | **integer**| The page number. | [optional] [default to 1]
+ **limit** | **integer**| Number of records to return. | [optional] [default to 100]
 
 ### Return type
 

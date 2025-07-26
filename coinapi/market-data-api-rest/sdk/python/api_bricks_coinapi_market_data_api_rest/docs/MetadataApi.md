@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**v1_exchanges_get**](MetadataApi.md#v1_exchanges_get) | **GET** /v1/exchanges | List all exchanges
 [**v1_exchanges_icons_size_get**](MetadataApi.md#v1_exchanges_icons_size_get) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
 [**v1_symbols_exchange_id_get**](MetadataApi.md#v1_symbols_exchange_id_get) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
+[**v1_symbols_exchange_id_history_get**](MetadataApi.md#v1_symbols_exchange_id_history_get) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 [**v1_symbols_get**](MetadataApi.md#v1_symbols_get) | **GET** /v1/symbols | List all symbols
 [**v1_symbols_map_exchange_id_get**](MetadataApi.md#v1_symbols_map_exchange_id_get) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
 
@@ -770,6 +771,93 @@ Name | Type | Description  | Notes
  **exchange_id** | **str**| The ID of the exchange (from the Metadata -&gt; Exchanges) | 
  **filter_symbol_id** | **str**| The filter for symbol ID. | [optional] 
  **filter_asset_id** | **str**| The filter for asset ID. | [optional] 
+
+### Return type
+
+[**List[V1Symbol]**](V1Symbol.md)
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | successful operation |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1_symbols_exchange_id_history_get**
+> List[V1Symbol] v1_symbols_exchange_id_history_get(exchange_id, page=page, limit=limit)
+
+Get symbol history for an exchange with pagination.
+
+### Example
+
+* Api Key Authentication (APIKey):
+* Bearer (JWT) Authentication (JWT):
+
+```python
+import api_bricks_coinapi_market_data_api_rest
+from api_bricks_coinapi_market_data_api_rest.models.v1_symbol import V1Symbol
+from api_bricks_coinapi_market_data_api_rest.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://rest.coinapi.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = api_bricks_coinapi_market_data_api_rest.Configuration(
+    host = "https://rest.coinapi.io"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: APIKey
+configuration.api_key['APIKey'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['APIKey'] = 'Bearer'
+
+# Configure Bearer authorization (JWT): JWT
+configuration = api_bricks_coinapi_market_data_api_rest.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = api_bricks_coinapi_market_data_api_rest.MetadataApi(api_client)
+    exchange_id = 'exchange_id_example' # str | The ID of the exchange.
+    page = 1 # int | The page number. (optional) (default to 1)
+    limit = 100 # int | Number of records to return. (optional) (default to 100)
+
+    try:
+        # Get symbol history for an exchange with pagination.
+        api_response = api_instance.v1_symbols_exchange_id_history_get(exchange_id, page=page, limit=limit)
+        print("The response of MetadataApi->v1_symbols_exchange_id_history_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetadataApi->v1_symbols_exchange_id_history_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exchange_id** | **str**| The ID of the exchange. | 
+ **page** | **int**| The page number. | [optional] [default to 1]
+ **limit** | **int**| Number of records to return. | [optional] [default to 100]
 
 ### Return type
 

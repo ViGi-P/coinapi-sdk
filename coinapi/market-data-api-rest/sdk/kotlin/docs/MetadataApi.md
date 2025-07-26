@@ -13,6 +13,7 @@ All URIs are relative to *https://rest.coinapi.io*
 | [**v1ExchangesGet**](MetadataApi.md#v1ExchangesGet) | **GET** /v1/exchanges | List all exchanges |
 | [**v1ExchangesIconsSizeGet**](MetadataApi.md#v1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges |
 | [**v1SymbolsExchangeIdGet**](MetadataApi.md#v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange |
+| [**v1SymbolsExchangeIdHistoryGet**](MetadataApi.md#v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination. |
 | [**v1SymbolsGet**](MetadataApi.md#v1SymbolsGet) | **GET** /v1/symbols | List all symbols |
 | [**v1SymbolsMapExchangeIdGet**](MetadataApi.md#v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange |
 
@@ -451,6 +452,59 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **filterAssetId** | **kotlin.String**| The filter for asset ID. | [optional] |
+
+### Return type
+
+[**kotlin.collections.List&lt;V1Symbol&gt;**](V1Symbol.md)
+
+### Authorization
+
+
+Configure APIKey:
+    ApiClient.apiKey["Authorization"] = ""
+    ApiClient.apiKeyPrefix["Authorization"] = ""
+Configure JWT:
+    ApiClient.accessToken = ""
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json
+
+<a id="v1SymbolsExchangeIdHistoryGet"></a>
+# **v1SymbolsExchangeIdHistoryGet**
+> kotlin.collections.List&lt;V1Symbol&gt; v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
+
+Get symbol history for an exchange with pagination.
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiInstance = MetadataApi()
+val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of the exchange.
+val page : kotlin.Int = 56 // kotlin.Int | The page number.
+val limit : kotlin.Int = 56 // kotlin.Int | Number of records to return.
+try {
+    val result : kotlin.collections.List<V1Symbol> = apiInstance.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling MetadataApi#v1SymbolsExchangeIdHistoryGet")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling MetadataApi#v1SymbolsExchangeIdHistoryGet")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| **exchangeId** | **kotlin.String**| The ID of the exchange. | |
+| **page** | **kotlin.Int**| The page number. | [optional] [default to 1] |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **kotlin.Int**| Number of records to return. | [optional] [default to 100] |
 
 ### Return type
 

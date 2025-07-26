@@ -13,6 +13,7 @@ Feature | HTTP request | Description
 [**v1_exchanges_get**](METADATA_API.md#v1_exchanges_get) | **Get** /v1/exchanges | List all exchanges
 [**v1_exchanges_icons_size_get**](METADATA_API.md#v1_exchanges_icons_size_get) | **Get** /v1/exchanges/icons/{size} | List of icons for the exchanges
 [**v1_symbols_exchange_id_get**](METADATA_API.md#v1_symbols_exchange_id_get) | **Get** /v1/symbols/{exchange_id} | List of symbols for the exchange
+[**v1_symbols_exchange_id_history_get**](METADATA_API.md#v1_symbols_exchange_id_history_get) | **Get** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 [**v1_symbols_get**](METADATA_API.md#v1_symbols_get) | **Get** /v1/symbols | List all symbols
 [**v1_symbols_map_exchange_id_get**](METADATA_API.md#v1_symbols_map_exchange_id_get) | **Get** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
 
@@ -263,6 +264,36 @@ Name | Type | Description  | Notes
  **exchange_id** | **STRING_32**| The ID of the exchange (from the Metadata -&gt; Exchanges) | [default to null]
  **filter_symbol_id** | **STRING_32**| The filter for symbol ID. | [optional] [default to null]
  **filter_asset_id** | **STRING_32**| The filter for asset ID. | [optional] [default to null]
+
+### Return type
+
+[**LIST [V1_SYMBOL]**](v1.Symbol.md)
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1_symbols_exchange_id_history_get**
+> v1_symbols_exchange_id_history_get (exchange_id: STRING_32 ; page:  detachable INTEGER_32 ; limit:  detachable INTEGER_32 ): detachable LIST [V1_SYMBOL]
+
+
+Get symbol history for an exchange with pagination.
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exchange_id** | **STRING_32**| The ID of the exchange. | [default to null]
+ **page** | **INTEGER_32**| The page number. | [optional] [default to 1]
+ **limit** | **INTEGER_32**| Number of records to return. | [optional] [default to 100]
 
 ### Return type
 

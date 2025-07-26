@@ -62,6 +62,12 @@ export interface V1SymbolsExchangeIdGetRequest {
     filterAssetId?: string;
 }
 
+export interface V1SymbolsExchangeIdHistoryGetRequest {
+    exchangeId: string;
+    page?: number;
+    limit?: number;
+}
+
 export interface V1SymbolsGetRequest {
     filterSymbolId?: string;
     filterExchangeId?: string;
@@ -264,6 +270,31 @@ export class MetadataApi extends BaseAPI {
 
         return this.request<Array<V1Symbol>>({
             url: '/v1/symbols/{exchange_id}'.replace('{exchange_id}', encodeURI(exchangeId)),
+            method: 'GET',
+            headers,
+            query,
+        }, opts?.responseOpts);
+    };
+
+    /**
+     * Get symbol history for an exchange with pagination.
+     */
+    v1SymbolsExchangeIdHistoryGet({ exchangeId, page, limit }: V1SymbolsExchangeIdHistoryGetRequest): Observable<Array<V1Symbol>>
+    v1SymbolsExchangeIdHistoryGet({ exchangeId, page, limit }: V1SymbolsExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1Symbol>>>
+    v1SymbolsExchangeIdHistoryGet({ exchangeId, page, limit }: V1SymbolsExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<Array<V1Symbol> | AjaxResponse<Array<V1Symbol>>> {
+        throwIfNullOrUndefined(exchangeId, 'exchangeId', 'v1SymbolsExchangeIdHistoryGet');
+
+        const headers: HttpHeaders = {
+            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
+        };
+
+        const query: HttpQuery = {};
+
+        if (page != null) { query['page'] = page; }
+        if (limit != null) { query['limit'] = limit; }
+
+        return this.request<Array<V1Symbol>>({
+            url: '/v1/symbols/{exchange_id}/history'.replace('{exchange_id}', encodeURI(exchangeId)),
             method: 'GET',
             headers,
             query,

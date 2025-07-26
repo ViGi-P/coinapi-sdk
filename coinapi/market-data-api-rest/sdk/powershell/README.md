@@ -66,6 +66,7 @@ Class | Method | HTTP request | Description
 *MetadataApi* | [**Invoke-V1ExchangesGet**](docs/MetadataApi.md#Invoke-V1ExchangesGet) | **GET** /v1/exchanges | List all exchanges
 *MetadataApi* | [**Invoke-V1ExchangesIconsSizeGet**](docs/MetadataApi.md#Invoke-V1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
 *MetadataApi* | [**Invoke-V1SymbolsExchangeIdGet**](docs/MetadataApi.md#Invoke-V1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
+*MetadataApi* | [**Invoke-V1SymbolsExchangeIdHistoryGet**](docs/MetadataApi.md#Invoke-V1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 *MetadataApi* | [**Invoke-V1SymbolsGet**](docs/MetadataApi.md#Invoke-V1SymbolsGet) | **GET** /v1/symbols | List all symbols
 *MetadataApi* | [**Invoke-V1SymbolsMapExchangeIdGet**](docs/MetadataApi.md#Invoke-V1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
 *MetricsV1Api* | [**Invoke-V1MetricsAssetCurrentGet**](docs/MetricsV1Api.md#Invoke-V1MetricsAssetCurrentGet) | **GET** /v1/metrics/asset/current | Current metrics for given asset

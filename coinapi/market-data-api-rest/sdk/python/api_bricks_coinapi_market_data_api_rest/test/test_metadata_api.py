@@ -90,6 +90,13 @@ class TestMetadataApi(unittest.TestCase):
         """
         pass
 
+    def test_v1_symbols_exchange_id_history_get(self) -> None:
+        """Test case for v1_symbols_exchange_id_history_get
+
+        Get symbol history for an exchange with pagination.
+        """
+        pass
+
     def test_v1_symbols_get(self) -> None:
         """Test case for v1_symbols_get
 

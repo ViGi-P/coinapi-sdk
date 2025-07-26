@@ -24,6 +24,7 @@ module Api.Request.Metadata exposing
     , v1ExchangesGet
     , v1ExchangesIconsSizeGet
     , v1SymbolsExchangeIdGet
+    , v1SymbolsExchangeIdHistoryGet
     , v1SymbolsGet
     , v1SymbolsMapExchangeIdGet
     )
@@ -169,6 +170,20 @@ v1SymbolsExchangeIdGet exchangeId_path filterSymbolId_query filterAssetId_query 
         "/v1/symbols/{exchange_id}"
         [ ( "exchange_id", identity exchangeId_path ) ]
         [ ( "filter_symbol_id", Maybe.map identity filterSymbolId_query ), ( "filter_asset_id", Maybe.map identity filterAssetId_query ) ]
+        []
+        Nothing
+        (Json.Decode.list Api.Data.v1SymbolDecoder)
+        |> Api.withBearerToken auth_token
+
+{-| Get symbol history for an exchange with pagination.
+-}
+v1SymbolsExchangeIdHistoryGet : String -> Maybe Int -> Maybe Int -> String -> Api.Request (List Api.Data.V1Symbol)
+v1SymbolsExchangeIdHistoryGet exchangeId_path page_query limit_query auth_token =
+    Api.request
+        "GET"
+        "/v1/symbols/{exchange_id}/history"
+        [ ( "exchange_id", identity exchangeId_path ) ]
+        [ ( "page", Maybe.map String.fromInt page_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.v1SymbolDecoder)

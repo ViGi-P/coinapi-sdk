@@ -73,6 +73,8 @@ Method | HTTP request | Description
 *v1ExchangesIconsSizeGetASync* | *GET* /v1/exchanges/icons/{size} | List of icons for the exchanges.
 *v1SymbolsExchangeIdGetSync* | *GET* /v1/symbols/{exchange_id} | List of symbols for the exchange.
 *v1SymbolsExchangeIdGetASync* | *GET* /v1/symbols/{exchange_id} | List of symbols for the exchange.
+*v1SymbolsExchangeIdHistoryGetSync* | *GET* /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination..
+*v1SymbolsExchangeIdHistoryGetASync* | *GET* /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination..
 *v1SymbolsGetSync* | *GET* /v1/symbols | List all symbols.
 *v1SymbolsGetASync* | *GET* /v1/symbols | List all symbols.
 *v1SymbolsMapExchangeIdGetSync* | *GET* /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange.

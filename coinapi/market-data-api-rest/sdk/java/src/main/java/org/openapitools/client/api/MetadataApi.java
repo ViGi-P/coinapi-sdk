@@ -1258,6 +1258,152 @@ public class MetadataApi {
         return localVarCall;
     }
     /**
+     * Build call for v1SymbolsExchangeIdHistoryGet
+     * @param exchangeId The ID of the exchange. (required)
+     * @param page The page number. (optional, default to 1)
+     * @param limit Number of records to return. (optional, default to 100)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v1SymbolsExchangeIdHistoryGetCall(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/symbols/{exchange_id}/history"
+            .replace("{" + "exchange_id" + "}", localVarApiClient.escapeString(exchangeId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (page != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        final String[] localVarAccepts = {
+            "text/plain",
+            "application/json",
+            "text/json",
+            "application/x-msgpack"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "APIKey", "JWT" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call v1SymbolsExchangeIdHistoryGetValidateBeforeCall(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'exchangeId' is set
+        if (exchangeId == null) {
+            throw new ApiException("Missing the required parameter 'exchangeId' when calling v1SymbolsExchangeIdHistoryGet(Async)");
+        }
+
+        return v1SymbolsExchangeIdHistoryGetCall(exchangeId, page, limit, _callback);
+
+    }
+
+    /**
+     * Get symbol history for an exchange with pagination.
+     * 
+     * @param exchangeId The ID of the exchange. (required)
+     * @param page The page number. (optional, default to 1)
+     * @param limit Number of records to return. (optional, default to 100)
+     * @return List&lt;V1Symbol&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<V1Symbol> v1SymbolsExchangeIdHistoryGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<List<V1Symbol>> localVarResp = v1SymbolsExchangeIdHistoryGetWithHttpInfo(exchangeId, page, limit);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get symbol history for an exchange with pagination.
+     * 
+     * @param exchangeId The ID of the exchange. (required)
+     * @param page The page number. (optional, default to 1)
+     * @param limit Number of records to return. (optional, default to 100)
+     * @return ApiResponse&lt;List&lt;V1Symbol&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<V1Symbol>> v1SymbolsExchangeIdHistoryGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = v1SymbolsExchangeIdHistoryGetValidateBeforeCall(exchangeId, page, limit, null);
+        Type localVarReturnType = new TypeToken<List<V1Symbol>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get symbol history for an exchange with pagination. (asynchronously)
+     * 
+     * @param exchangeId The ID of the exchange. (required)
+     * @param page The page number. (optional, default to 1)
+     * @param limit Number of records to return. (optional, default to 100)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call v1SymbolsExchangeIdHistoryGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable Integer page, @javax.annotation.Nullable Integer limit, final ApiCallback<List<V1Symbol>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = v1SymbolsExchangeIdHistoryGetValidateBeforeCall(exchangeId, page, limit, _callback);
+        Type localVarReturnType = new TypeToken<List<V1Symbol>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for v1SymbolsGet
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
      * @param filterExchangeId The filter for exchange ID. (optional)

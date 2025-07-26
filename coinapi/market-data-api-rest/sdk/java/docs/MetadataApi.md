@@ -13,6 +13,7 @@ All URIs are relative to *https://rest.coinapi.io*
 | [**v1ExchangesGet**](MetadataApi.md#v1ExchangesGet) | **GET** /v1/exchanges | List all exchanges |
 | [**v1ExchangesIconsSizeGet**](MetadataApi.md#v1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges |
 | [**v1SymbolsExchangeIdGet**](MetadataApi.md#v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange |
+| [**v1SymbolsExchangeIdHistoryGet**](MetadataApi.md#v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination. |
 | [**v1SymbolsGet**](MetadataApi.md#v1SymbolsGet) | **GET** /v1/symbols | List all symbols |
 | [**v1SymbolsMapExchangeIdGet**](MetadataApi.md#v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange |
 
@@ -649,6 +650,81 @@ public class Example {
 | **exchangeId** | **String**| The ID of the exchange (from the Metadata -&gt; Exchanges) | |
 | **filterSymbolId** | **String**| The filter for symbol ID. | [optional] |
 | **filterAssetId** | **String**| The filter for asset ID. | [optional] |
+
+### Return type
+
+[**List&lt;V1Symbol&gt;**](V1Symbol.md)
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | successful operation |  -  |
+
+<a id="v1SymbolsExchangeIdHistoryGet"></a>
+# **v1SymbolsExchangeIdHistoryGet**
+> List&lt;V1Symbol&gt; v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
+
+Get symbol history for an exchange with pagination.
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.MetadataApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://rest.coinapi.io");
+    
+    // Configure API key authorization: APIKey
+    ApiKeyAuth APIKey = (ApiKeyAuth) defaultClient.getAuthentication("APIKey");
+    APIKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //APIKey.setApiKeyPrefix("Token");
+
+    // Configure HTTP bearer authorization: JWT
+    HttpBearerAuth JWT = (HttpBearerAuth) defaultClient.getAuthentication("JWT");
+    JWT.setBearerToken("BEARER TOKEN");
+
+    MetadataApi apiInstance = new MetadataApi(defaultClient);
+    String exchangeId = "exchangeId_example"; // String | The ID of the exchange.
+    Integer page = 1; // Integer | The page number.
+    Integer limit = 100; // Integer | Number of records to return.
+    try {
+      List<V1Symbol> result = apiInstance.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling MetadataApi#v1SymbolsExchangeIdHistoryGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **exchangeId** | **String**| The ID of the exchange. | |
+| **page** | **Integer**| The page number. | [optional] [default to 1] |
+| **limit** | **Integer**| Number of records to return. | [optional] [default to 100] |
 
 ### Return type
 

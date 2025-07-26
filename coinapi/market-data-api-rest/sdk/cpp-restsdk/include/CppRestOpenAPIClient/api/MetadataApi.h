@@ -145,6 +145,20 @@ public:
         boost::optional<utility::string_t> filterAssetId
     ) const;
     /// <summary>
+    /// Get symbol history for an exchange with pagination.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <param name="exchangeId">The ID of the exchange.</param>
+    /// <param name="page">The page number. (optional, default to 0)</param>
+    /// <param name="limit">Number of records to return. (optional, default to 0)</param>
+    pplx::task<std::vector<std::shared_ptr<V1_Symbol>>> v1SymbolsExchangeIdHistoryGet(
+        utility::string_t exchangeId,
+        boost::optional<int32_t> page,
+        boost::optional<int32_t> limit
+    ) const;
+    /// <summary>
     /// List all symbols
     /// </summary>
     /// <remarks>

@@ -232,6 +232,36 @@ class MetadataApi {
 
     }
 
+    def v1SymbolsExchangeIdHistoryGet ( String exchangeId, Integer page, Integer limit, Closure onSuccess, Closure onFailure)  {
+        String resourcePath = "/v1/symbols/${exchange_id}/history"
+
+        // params
+        def queryParams = [:]
+        def headerParams = [:]
+        def bodyParams
+        def contentType
+
+        // verify required params are set
+        if (exchangeId == null) {
+            throw new RuntimeException("missing required params exchangeId")
+        }
+
+        if (page != null) {
+            queryParams.put("page", page)
+        }
+        if (limit != null) {
+            queryParams.put("limit", limit)
+        }
+
+
+
+
+        apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
+                    "GET", "array",
+                    V1Symbol.class )
+
+    }
+
     def v1SymbolsGet ( String filterSymbolId, String filterExchangeId, String filterAssetId, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/symbols"
 

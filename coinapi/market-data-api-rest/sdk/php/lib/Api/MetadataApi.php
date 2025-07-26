@@ -102,6 +102,9 @@ class MetadataApi
         'v1SymbolsExchangeIdGet' => [
             'application/json',
         ],
+        'v1SymbolsExchangeIdHistoryGet' => [
+            'application/json',
+        ],
         'v1SymbolsGet' => [
             'application/json',
         ],
@@ -2586,6 +2589,313 @@ class MetadataApi
             $filter_asset_id,
             'filter_asset_id', // param base name
             'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+        // path params
+        if ($exchange_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'exchange_id' . '}',
+                ObjectSerializer::toPathValue($exchange_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['text/plain', 'application/json', 'text/json', 'application/x-msgpack', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation v1SymbolsExchangeIdHistoryGet
+     *
+     * Get symbol history for an exchange with pagination.
+     *
+     * @param  string $exchange_id The ID of the exchange. (required)
+     * @param  int|null $page The page number. (optional, default to 1)
+     * @param  int|null $limit Number of records to return. (optional, default to 100)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdHistoryGet'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\V1Symbol[]
+     */
+    public function v1SymbolsExchangeIdHistoryGet($exchange_id, $page = 1, $limit = 100, string $contentType = self::contentTypes['v1SymbolsExchangeIdHistoryGet'][0])
+    {
+        list($response) = $this->v1SymbolsExchangeIdHistoryGetWithHttpInfo($exchange_id, $page, $limit, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation v1SymbolsExchangeIdHistoryGetWithHttpInfo
+     *
+     * Get symbol history for an exchange with pagination.
+     *
+     * @param  string $exchange_id The ID of the exchange. (required)
+     * @param  int|null $page The page number. (optional, default to 1)
+     * @param  int|null $limit Number of records to return. (optional, default to 100)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdHistoryGet'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\V1Symbol[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function v1SymbolsExchangeIdHistoryGetWithHttpInfo($exchange_id, $page = 1, $limit = 100, string $contentType = self::contentTypes['v1SymbolsExchangeIdHistoryGet'][0])
+    {
+        $request = $this->v1SymbolsExchangeIdHistoryGetRequest($exchange_id, $page, $limit, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\V1Symbol[]',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenAPI\Client\Model\V1Symbol[]',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\V1Symbol[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation v1SymbolsExchangeIdHistoryGetAsync
+     *
+     * Get symbol history for an exchange with pagination.
+     *
+     * @param  string $exchange_id The ID of the exchange. (required)
+     * @param  int|null $page The page number. (optional, default to 1)
+     * @param  int|null $limit Number of records to return. (optional, default to 100)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdHistoryGet'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function v1SymbolsExchangeIdHistoryGetAsync($exchange_id, $page = 1, $limit = 100, string $contentType = self::contentTypes['v1SymbolsExchangeIdHistoryGet'][0])
+    {
+        return $this->v1SymbolsExchangeIdHistoryGetAsyncWithHttpInfo($exchange_id, $page, $limit, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation v1SymbolsExchangeIdHistoryGetAsyncWithHttpInfo
+     *
+     * Get symbol history for an exchange with pagination.
+     *
+     * @param  string $exchange_id The ID of the exchange. (required)
+     * @param  int|null $page The page number. (optional, default to 1)
+     * @param  int|null $limit Number of records to return. (optional, default to 100)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdHistoryGet'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function v1SymbolsExchangeIdHistoryGetAsyncWithHttpInfo($exchange_id, $page = 1, $limit = 100, string $contentType = self::contentTypes['v1SymbolsExchangeIdHistoryGet'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\V1Symbol[]';
+        $request = $this->v1SymbolsExchangeIdHistoryGetRequest($exchange_id, $page, $limit, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'v1SymbolsExchangeIdHistoryGet'
+     *
+     * @param  string $exchange_id The ID of the exchange. (required)
+     * @param  int|null $page The page number. (optional, default to 1)
+     * @param  int|null $limit Number of records to return. (optional, default to 100)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdHistoryGet'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function v1SymbolsExchangeIdHistoryGetRequest($exchange_id, $page = 1, $limit = 100, string $contentType = self::contentTypes['v1SymbolsExchangeIdHistoryGet'][0])
+    {
+
+        // verify the required parameter 'exchange_id' is set
+        if ($exchange_id === null || (is_array($exchange_id) && count($exchange_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $exchange_id when calling v1SymbolsExchangeIdHistoryGet'
+            );
+        }
+
+
+
+
+        $resourcePath = '/v1/symbols/{exchange_id}/history';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**Invoke-V1ExchangesGet**](MetadataApi.md#Invoke-V1ExchangesGet) | **GET** /v1/exchanges | List all exchanges
 [**Invoke-V1ExchangesIconsSizeGet**](MetadataApi.md#Invoke-V1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
 [**Invoke-V1SymbolsExchangeIdGet**](MetadataApi.md#Invoke-V1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
+[**Invoke-V1SymbolsExchangeIdHistoryGet**](MetadataApi.md#Invoke-V1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 [**Invoke-V1SymbolsGet**](MetadataApi.md#Invoke-V1SymbolsGet) | **GET** /v1/symbols | List all symbols
 [**Invoke-V1SymbolsMapExchangeIdGet**](MetadataApi.md#Invoke-V1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
 
@@ -456,6 +457,61 @@ Name | Type | Description  | Notes
  **ExchangeId** | **String**| The ID of the exchange (from the Metadata -&gt; Exchanges) | 
  **FilterSymbolId** | **String**| The filter for symbol ID. | [optional] 
  **FilterAssetId** | **String**| The filter for asset ID. | [optional] 
+
+### Return type
+
+[**V1Symbol[]**](V1Symbol.md) (PSCustomObject)
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="Invoke-V1SymbolsExchangeIdHistoryGet"></a>
+# **Invoke-V1SymbolsExchangeIdHistoryGet**
+> V1Symbol[] Invoke-V1SymbolsExchangeIdHistoryGet<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ExchangeId] <String><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Page] <System.Nullable[Int32]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Limit] <System.Nullable[Int32]><br>
+
+Get symbol history for an exchange with pagination.
+
+### Example
+```powershell
+# general setting of the PowerShell module, e.g. base URL, authentication, etc
+$Configuration = Get-Configuration
+# Configure API key authorization: APIKey
+$Configuration.ApiKey.Authorization = "YOUR_API_KEY"
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+#$Configuration.ApiKeyPrefix.Authorization = "Bearer"
+
+
+$ExchangeId = "MyExchangeId" # String | The ID of the exchange.
+$Page = 56 # Int32 | The page number. (optional) (default to 1)
+$Limit = 56 # Int32 | Number of records to return. (optional) (default to 100)
+
+# Get symbol history for an exchange with pagination.
+try {
+    $Result = Invoke-V1SymbolsExchangeIdHistoryGet -ExchangeId $ExchangeId -Page $Page -Limit $Limit
+} catch {
+    Write-Host ("Exception occurred when calling Invoke-V1SymbolsExchangeIdHistoryGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ExchangeId** | **String**| The ID of the exchange. | 
+ **Page** | **Int32**| The page number. | [optional] [default to 1]
+ **Limit** | **Int32**| Number of records to return. | [optional] [default to 100]
 
 ### Return type
 

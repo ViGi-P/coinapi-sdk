@@ -105,6 +105,16 @@ class MetadataApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
+        // to test v1SymbolsExchangeIdHistoryGet
+        should("test v1SymbolsExchangeIdHistoryGet") {
+            // uncomment below to test v1SymbolsExchangeIdHistoryGet
+            //val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of the exchange.
+            //val page : kotlin.Int = 56 // kotlin.Int | The page number.
+            //val limit : kotlin.Int = 56 // kotlin.Int | Number of records to return.
+            //val result : kotlin.collections.List<V1Symbol> = apiInstance.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
+            //result shouldBe ("TODO")
+        }
+
         // to test v1SymbolsGet
         should("test v1SymbolsGet") {
             // uncomment below to test v1SymbolsGet

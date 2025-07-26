@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**v1ExchangesGet**](MetadataApi.md#v1exchangesget) | **GET** /v1/exchanges | List all exchanges
 [**v1ExchangesIconsSizeGet**](MetadataApi.md#v1exchangesiconssizeget) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
 [**v1SymbolsExchangeIdGet**](MetadataApi.md#v1symbolsexchangeidget) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
+[**v1SymbolsExchangeIdHistoryGet**](MetadataApi.md#v1symbolsexchangeidhistoryget) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 [**v1SymbolsGet**](MetadataApi.md#v1symbolsget) | **GET** /v1/symbols | List all symbols
 [**v1SymbolsMapExchangeIdGet**](MetadataApi.md#v1symbolsmapexchangeidget) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
 
@@ -423,6 +424,55 @@ Name | Type | Description  | Notes
  **exchangeId** | **String**| The ID of the exchange (from the Metadata -> Exchanges) | 
  **filterSymbolId** | **String**| The filter for symbol ID. | [optional] 
  **filterAssetId** | **String**| The filter for asset ID. | [optional] 
+
+### Return type
+
+[**BuiltList&lt;V1Symbol&gt;**](V1Symbol.md)
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1SymbolsExchangeIdHistoryGet**
+> BuiltList<V1Symbol> v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
+
+Get symbol history for an exchange with pagination.
+
+### Example
+```dart
+import 'package:openapi/api.dart';
+// TODO Configure API key authorization: APIKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('APIKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('APIKey').apiKeyPrefix = 'Bearer';
+
+final api = Openapi().getMetadataApi();
+final String exchangeId = exchangeId_example; // String | The ID of the exchange.
+final int page = 56; // int | The page number.
+final int limit = 56; // int | Number of records to return.
+
+try {
+    final response = api.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling MetadataApi->v1SymbolsExchangeIdHistoryGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exchangeId** | **String**| The ID of the exchange. | 
+ **page** | **int**| The page number. | [optional] [default to 1]
+ **limit** | **int**| Number of records to return. | [optional] [default to 100]
 
 ### Return type
 

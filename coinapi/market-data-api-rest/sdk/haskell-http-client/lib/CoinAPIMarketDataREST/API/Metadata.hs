@@ -340,6 +340,44 @@ instance Produces V1SymbolsExchangeIdGet MimeTextJson
 instance Produces V1SymbolsExchangeIdGet MimePlainText
 
 
+-- *** v1SymbolsExchangeIdHistoryGet
+
+-- | @GET \/v1\/symbols\/{exchange_id}\/history@
+-- 
+-- Get symbol history for an exchange with pagination.
+-- 
+-- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
+-- 
+v1SymbolsExchangeIdHistoryGet
+  :: Accept accept -- ^ request accept ('MimeType')
+  -> ExchangeId -- ^ "exchangeId" -  The ID of the exchange.
+  -> CoinAPIMarketDataRESTRequest V1SymbolsExchangeIdHistoryGet MimeNoContent [V1Symbol] accept
+v1SymbolsExchangeIdHistoryGet  _ (ExchangeId exchangeId) =
+  _mkRequest "GET" ["/v1/symbols/",toPath exchangeId,"/history"]
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
+    `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
+
+data V1SymbolsExchangeIdHistoryGet  
+
+-- | /Optional Param/ "page" - The page number.
+instance HasOptionalParam V1SymbolsExchangeIdHistoryGet Page where
+  applyOptionalParam req (Page xs) =
+    req `addQuery` toQuery ("page", Just xs)
+
+-- | /Optional Param/ "limit" - Number of records to return.
+instance HasOptionalParam V1SymbolsExchangeIdHistoryGet Limit where
+  applyOptionalParam req (Limit xs) =
+    req `addQuery` toQuery ("limit", Just xs)
+-- | @application/json@
+instance Produces V1SymbolsExchangeIdHistoryGet MimeJSON
+-- | @application/x-msgpack@
+instance Produces V1SymbolsExchangeIdHistoryGet MimeXMsgpack
+-- | @text/json@
+instance Produces V1SymbolsExchangeIdHistoryGet MimeTextJson
+-- | @text/plain@
+instance Produces V1SymbolsExchangeIdHistoryGet MimePlainText
+
+
 -- *** v1SymbolsGet
 
 -- | @GET \/v1\/symbols@

@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**v1ExchangesGet**](MetadataApi.md#v1ExchangesGet) | **GET** /v1/exchanges | List all exchanges
 [**v1ExchangesIconsSizeGet**](MetadataApi.md#v1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
 [**v1SymbolsExchangeIdGet**](MetadataApi.md#v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
+[**v1SymbolsExchangeIdHistoryGet**](MetadataApi.md#v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 [**v1SymbolsGet**](MetadataApi.md#v1SymbolsGet) | **GET** /v1/symbols | List all symbols
 [**v1SymbolsMapExchangeIdGet**](MetadataApi.md#v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
 
@@ -491,6 +492,64 @@ Name | Type | Description  | Notes
  **exchangeId** | **String**| The ID of the exchange (from the Metadata -&gt; Exchanges) | 
  **filterSymbolId** | **String**| The filter for symbol ID. | [optional] 
  **filterAssetId** | **String**| The filter for asset ID. | [optional] 
+
+### Return type
+
+[**[V1Symbol]**](V1Symbol.md)
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+
+## v1SymbolsExchangeIdHistoryGet
+
+> [V1Symbol] v1SymbolsExchangeIdHistoryGet(exchangeId, opts)
+
+Get symbol history for an exchange with pagination.
+
+### Example
+
+```javascript
+import CoinApiMarketDataRestApi from 'coin_api_market_data_rest_api';
+let defaultClient = CoinApiMarketDataRestApi.ApiClient.instance;
+// Configure API key authorization: APIKey
+let APIKey = defaultClient.authentications['APIKey'];
+APIKey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//APIKey.apiKeyPrefix = 'Token';
+// Configure Bearer (JWT) access token for authorization: JWT
+let JWT = defaultClient.authentications['JWT'];
+JWT.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CoinApiMarketDataRestApi.MetadataApi();
+let exchangeId = "exchangeId_example"; // String | The ID of the exchange.
+let opts = {
+  'page': 1, // Number | The page number.
+  'limit': 100 // Number | Number of records to return.
+};
+apiInstance.v1SymbolsExchangeIdHistoryGet(exchangeId, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exchangeId** | **String**| The ID of the exchange. | 
+ **page** | **Number**| The page number. | [optional] [default to 1]
+ **limit** | **Number**| Number of records to return. | [optional] [default to 100]
 
 ### Return type
 

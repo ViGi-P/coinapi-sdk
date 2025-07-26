@@ -119,6 +119,9 @@ newtype MetricId = MetricId { unMetricId :: Text } deriving (P.Eq, P.Show)
 -- ** NetworkId
 newtype NetworkId = NetworkId { unNetworkId :: Text } deriving (P.Eq, P.Show)
 
+-- ** Page
+newtype Page = Page { unPage :: Int } deriving (P.Eq, P.Show)
+
 -- ** ParamDate
 newtype ParamDate = ParamDate { unParamDate :: Text } deriving (P.Eq, P.Show)
 

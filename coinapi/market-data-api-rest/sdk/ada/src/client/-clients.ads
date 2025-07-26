@@ -149,6 +149,14 @@ package .Clients is
        Filter_Asset_Id : in Swagger.Nullable_UString;
        Result : out .Models.V1Symbol_Type_Vectors.Vector);
 
+   --  Get symbol history for an exchange with pagination.
+   procedure V_1Symbols_Exchange_Id_History_Get
+      (Client : in out Client_Type;
+       Exchange_Id : in Swagger.UString;
+       Page : in Swagger.Nullable_Integer;
+       Limit : in Swagger.Nullable_Integer;
+       Result : out .Models.V1Symbol_Type_Vectors.Vector);
+
    --  List all symbols
    --  Retrieves all symbols with optional filtering.
    --              

@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**v1ExchangesGet**](MetadataApi.md#v1ExchangesGet) | **GET** /v1/exchanges | List all exchanges
 [**v1ExchangesIconsSizeGet**](MetadataApi.md#v1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
 [**v1SymbolsExchangeIdGet**](MetadataApi.md#v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
+[**v1SymbolsExchangeIdHistoryGet**](MetadataApi.md#v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
 [**v1SymbolsGet**](MetadataApi.md#v1SymbolsGet) | **GET** /v1/symbols | List all symbols
 [**v1SymbolsMapExchangeIdGet**](MetadataApi.md#v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
 
@@ -324,6 +325,41 @@ Name | Type | Description  | Notes
  **exchangeId** | **string** | The ID of the exchange (from the Metadata -> Exchanges) | [default to null]
  **filterSymbolId** | **string** | The filter for symbol ID. | [optional] [default to null]
  **filterAssetId** | **string** | The filter for asset ID. | [optional] [default to null]
+
+### Return type
+
+[**array[V1Symbol]**](V1Symbol.md)
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+- **Content-Type**: Not Applicable
+- **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v1SymbolsExchangeIdHistoryGet
+
+Get symbol history for an exchange with pagination.
+
+### Example
+
+```bash
+ v1SymbolsExchangeIdHistoryGet exchange_id=value  page=value  limit=value
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exchangeId** | **string** | The ID of the exchange. | [default to null]
+ **page** | **integer** | The page number. | [optional] [default to 1]
+ **limit** | **integer** | Number of records to return. | [optional] [default to 100]
 
 ### Return type
 

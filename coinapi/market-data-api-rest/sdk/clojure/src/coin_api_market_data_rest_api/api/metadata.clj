@@ -278,6 +278,30 @@ Properties of the output are providing aggregated information from across all sy
         res))))
 
 
+(defn-spec v1-symbols-exchange-id-history-get-with-http-info any?
+  "Get symbol history for an exchange with pagination."
+  ([exchange_id string?, ] (v1-symbols-exchange-id-history-get-with-http-info exchange_id nil))
+  ([exchange_id string?, {:keys [page limit]} (s/map-of keyword? any?)]
+   (check-required-params exchange_id)
+   (call-api "/v1/symbols/{exchange_id}/history" :get
+             {:path-params   {"exchange_id" exchange_id }
+              :header-params {}
+              :query-params  {"page" page "limit" limit }
+              :form-params   {}
+              :content-types []
+              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
+              :auth-names    ["APIKey" "JWT"]})))
+
+(defn-spec v1-symbols-exchange-id-history-get (s/coll-of v1/symbol-spec)
+  "Get symbol history for an exchange with pagination."
+  ([exchange_id string?, ] (v1-symbols-exchange-id-history-get exchange_id nil))
+  ([exchange_id string?, optional-params any?]
+   (let [res (:data (v1-symbols-exchange-id-history-get-with-http-info exchange_id optional-params))]
+     (if (:decode-models *api-context*)
+        (st/decode (s/coll-of v1/symbol-spec) res st/string-transformer)
+        res))))
+
+
 (defn-spec v1-symbols-get-with-http-info any?
   "List all symbols
   Retrieves all symbols with optional filtering.
