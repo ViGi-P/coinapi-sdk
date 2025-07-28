@@ -91,10 +91,10 @@ Class | Method | HTTP request | Description
 *MetadataAPI* | [**V1ExchangesExchangeIdGet**](docs/MetadataAPI.md#v1exchangesexchangeidget) | **Get** /v1/exchanges/{exchange_id} | List all exchanges by exchange_id
 *MetadataAPI* | [**V1ExchangesGet**](docs/MetadataAPI.md#v1exchangesget) | **Get** /v1/exchanges | List all exchanges
 *MetadataAPI* | [**V1ExchangesIconsSizeGet**](docs/MetadataAPI.md#v1exchangesiconssizeget) | **Get** /v1/exchanges/icons/{size} | List of icons for the exchanges
-*MetadataAPI* | [**V1SymbolsExchangeIdGet**](docs/MetadataAPI.md#v1symbolsexchangeidget) | **Get** /v1/symbols/{exchange_id} | List of symbols for the exchange
-*MetadataAPI* | [**V1SymbolsExchangeIdHistoryGet**](docs/MetadataAPI.md#v1symbolsexchangeidhistoryget) | **Get** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
-*MetadataAPI* | [**V1SymbolsGet**](docs/MetadataAPI.md#v1symbolsget) | **Get** /v1/symbols | List all symbols
-*MetadataAPI* | [**V1SymbolsMapExchangeIdGet**](docs/MetadataAPI.md#v1symbolsmapexchangeidget) | **Get** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
+*MetadataAPI* | [**V1SymbolsExchangeIdGet**](docs/MetadataAPI.md#v1symbolsexchangeidget) | **Get** /v1/symbols/{exchange_id} | List of active symbols for the exchange
+*MetadataAPI* | [**V1SymbolsExchangeIdHistoryGet**](docs/MetadataAPI.md#v1symbolsexchangeidhistoryget) | **Get** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
+*MetadataAPI* | [**V1SymbolsGet**](docs/MetadataAPI.md#v1symbolsget) | **Get** /v1/symbols | List all active symbols
+*MetadataAPI* | [**V1SymbolsMapExchangeIdGet**](docs/MetadataAPI.md#v1symbolsmapexchangeidget) | **Get** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
 *MetricsV1API* | [**V1MetricsAssetCurrentGet**](docs/MetricsV1API.md#v1metricsassetcurrentget) | **Get** /v1/metrics/asset/current | Current metrics for given asset
 *MetricsV1API* | [**V1MetricsAssetHistoryGet**](docs/MetricsV1API.md#v1metricsassethistoryget) | **Get** /v1/metrics/asset/history | Historical metrics for asset
 *MetricsV1API* | [**V1MetricsAssetListingGet**](docs/MetricsV1API.md#v1metricsassetlistingget) | **Get** /v1/metrics/asset/listing | Listing of all supported metrics for asset

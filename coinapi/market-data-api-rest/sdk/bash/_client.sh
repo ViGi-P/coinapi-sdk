@@ -308,10 +308,10 @@ case $state in
             "v1ExchangesExchangeIdGet[List all exchanges by exchange_id]" \
             "v1ExchangesGet[List all exchanges]" \
             "v1ExchangesIconsSizeGet[List of icons for the exchanges]" \
-            "v1SymbolsExchangeIdGet[List of symbols for the exchange]" \
-            "v1SymbolsExchangeIdHistoryGet[Get symbol history for an exchange with pagination.]" \
-            "v1SymbolsGet[List all symbols]" \
-            "v1SymbolsMapExchangeIdGet[List symbol mapping for the exchange]"             "v1MetricsAssetCurrentGet[Current metrics for given asset]" \
+            "v1SymbolsExchangeIdGet[List of active symbols for the exchange]" \
+            "v1SymbolsExchangeIdHistoryGet[List all historical symbols for an exchange.]" \
+            "v1SymbolsGet[List all active symbols]" \
+            "v1SymbolsMapExchangeIdGet[List active symbol mapping for the exchange]"             "v1MetricsAssetCurrentGet[Current metrics for given asset]" \
             "v1MetricsAssetHistoryGet[Historical metrics for asset]" \
             "v1MetricsAssetListingGet[Listing of all supported metrics for asset]" \
             "v1MetricsExchangeCurrentGet[Current metrics for given exchange]" \
@@ -454,8 +454,8 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
           "exchange_id=:[PATH] The ID of the exchange."
-          "page=:[QUERY] The page number."
-"limit=:[QUERY] Number of records to return."
+          "page=:[QUERY] The page number for pagination (starts from 1)."
+"limit=:[QUERY] Number of records to return per page."
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

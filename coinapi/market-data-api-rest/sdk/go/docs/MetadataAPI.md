@@ -12,10 +12,10 @@ Method | HTTP request | Description
 [**V1ExchangesExchangeIdGet**](MetadataAPI.md#V1ExchangesExchangeIdGet) | **Get** /v1/exchanges/{exchange_id} | List all exchanges by exchange_id
 [**V1ExchangesGet**](MetadataAPI.md#V1ExchangesGet) | **Get** /v1/exchanges | List all exchanges
 [**V1ExchangesIconsSizeGet**](MetadataAPI.md#V1ExchangesIconsSizeGet) | **Get** /v1/exchanges/icons/{size} | List of icons for the exchanges
-[**V1SymbolsExchangeIdGet**](MetadataAPI.md#V1SymbolsExchangeIdGet) | **Get** /v1/symbols/{exchange_id} | List of symbols for the exchange
-[**V1SymbolsExchangeIdHistoryGet**](MetadataAPI.md#V1SymbolsExchangeIdHistoryGet) | **Get** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
-[**V1SymbolsGet**](MetadataAPI.md#V1SymbolsGet) | **Get** /v1/symbols | List all symbols
-[**V1SymbolsMapExchangeIdGet**](MetadataAPI.md#V1SymbolsMapExchangeIdGet) | **Get** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
+[**V1SymbolsExchangeIdGet**](MetadataAPI.md#V1SymbolsExchangeIdGet) | **Get** /v1/symbols/{exchange_id} | List of active symbols for the exchange
+[**V1SymbolsExchangeIdHistoryGet**](MetadataAPI.md#V1SymbolsExchangeIdHistoryGet) | **Get** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
+[**V1SymbolsGet**](MetadataAPI.md#V1SymbolsGet) | **Get** /v1/symbols | List all active symbols
+[**V1SymbolsMapExchangeIdGet**](MetadataAPI.md#V1SymbolsMapExchangeIdGet) | **Get** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
 
 
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 > []V1Symbol V1SymbolsExchangeIdGet(ctx, exchangeId).FilterSymbolId(filterSymbolId).FilterAssetId(filterAssetId).Execute()
 
-List of symbols for the exchange
+List of active symbols for the exchange
 
 ### Example
 
@@ -635,7 +635,9 @@ Name | Type | Description  | Notes
 
 > []V1Symbol V1SymbolsExchangeIdHistoryGet(ctx, exchangeId).Page(page).Limit(limit).Execute()
 
-Get symbol history for an exchange with pagination.
+List all historical symbols for an exchange.
+
+
 
 ### Example
 
@@ -651,8 +653,8 @@ import (
 
 func main() {
 	exchangeId := "exchangeId_example" // string | The ID of the exchange.
-	page := int32(56) // int32 | The page number. (optional) (default to 1)
-	limit := int32(56) // int32 | Number of records to return. (optional) (default to 100)
+	page := int32(56) // int32 | The page number for pagination (starts from 1). (optional) (default to 1)
+	limit := int32(56) // int32 | Number of records to return per page. (optional) (default to 100)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -682,8 +684,8 @@ Other parameters are passed through a pointer to a apiV1SymbolsExchangeIdHistory
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **page** | **int32** | The page number. | [default to 1]
- **limit** | **int32** | Number of records to return. | [default to 100]
+ **page** | **int32** | The page number for pagination (starts from 1). | [default to 1]
+ **limit** | **int32** | Number of records to return per page. | [default to 100]
 
 ### Return type
 
@@ -707,7 +709,7 @@ Name | Type | Description  | Notes
 
 > []V1Symbol V1SymbolsGet(ctx).FilterSymbolId(filterSymbolId).FilterExchangeId(filterExchangeId).FilterAssetId(filterAssetId).Execute()
 
-List all symbols
+List all active symbols
 
 
 
@@ -777,7 +779,7 @@ Name | Type | Description  | Notes
 
 > []V1SymbolMapping V1SymbolsMapExchangeIdGet(ctx, exchangeId).Execute()
 
-List symbol mapping for the exchange
+List active symbol mapping for the exchange
 
 ### Example
 

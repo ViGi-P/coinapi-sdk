@@ -106,10 +106,10 @@ Class | Method | HTTP request | Description
 *OpenapiClient::MetadataApi* | [**v1_exchanges_exchange_id_get**](docs/MetadataApi.md#v1_exchanges_exchange_id_get) | **GET** /v1/exchanges/{exchange_id} | List all exchanges by exchange_id
 *OpenapiClient::MetadataApi* | [**v1_exchanges_get**](docs/MetadataApi.md#v1_exchanges_get) | **GET** /v1/exchanges | List all exchanges
 *OpenapiClient::MetadataApi* | [**v1_exchanges_icons_size_get**](docs/MetadataApi.md#v1_exchanges_icons_size_get) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
-*OpenapiClient::MetadataApi* | [**v1_symbols_exchange_id_get**](docs/MetadataApi.md#v1_symbols_exchange_id_get) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
-*OpenapiClient::MetadataApi* | [**v1_symbols_exchange_id_history_get**](docs/MetadataApi.md#v1_symbols_exchange_id_history_get) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
-*OpenapiClient::MetadataApi* | [**v1_symbols_get**](docs/MetadataApi.md#v1_symbols_get) | **GET** /v1/symbols | List all symbols
-*OpenapiClient::MetadataApi* | [**v1_symbols_map_exchange_id_get**](docs/MetadataApi.md#v1_symbols_map_exchange_id_get) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
+*OpenapiClient::MetadataApi* | [**v1_symbols_exchange_id_get**](docs/MetadataApi.md#v1_symbols_exchange_id_get) | **GET** /v1/symbols/{exchange_id} | List of active symbols for the exchange
+*OpenapiClient::MetadataApi* | [**v1_symbols_exchange_id_history_get**](docs/MetadataApi.md#v1_symbols_exchange_id_history_get) | **GET** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
+*OpenapiClient::MetadataApi* | [**v1_symbols_get**](docs/MetadataApi.md#v1_symbols_get) | **GET** /v1/symbols | List all active symbols
+*OpenapiClient::MetadataApi* | [**v1_symbols_map_exchange_id_get**](docs/MetadataApi.md#v1_symbols_map_exchange_id_get) | **GET** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
 *OpenapiClient::MetricsV1Api* | [**v1_metrics_asset_current_get**](docs/MetricsV1Api.md#v1_metrics_asset_current_get) | **GET** /v1/metrics/asset/current | Current metrics for given asset
 *OpenapiClient::MetricsV1Api* | [**v1_metrics_asset_history_get**](docs/MetricsV1Api.md#v1_metrics_asset_history_get) | **GET** /v1/metrics/asset/history | Historical metrics for asset
 *OpenapiClient::MetricsV1Api* | [**v1_metrics_asset_listing_get**](docs/MetricsV1Api.md#v1_metrics_asset_listing_get) | **GET** /v1/metrics/asset/listing | Listing of all supported metrics for asset

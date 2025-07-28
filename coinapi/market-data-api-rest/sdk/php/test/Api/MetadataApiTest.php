@@ -171,7 +171,7 @@ class MetadataApiTest extends TestCase
     /**
      * Test case for v1SymbolsExchangeIdGet
      *
-     * List of symbols for the exchange.
+     * List of active symbols for the exchange.
      *
      */
     public function testV1SymbolsExchangeIdGet()
@@ -183,7 +183,7 @@ class MetadataApiTest extends TestCase
     /**
      * Test case for v1SymbolsExchangeIdHistoryGet
      *
-     * Get symbol history for an exchange with pagination..
+     * List all historical symbols for an exchange..
      *
      */
     public function testV1SymbolsExchangeIdHistoryGet()
@@ -195,7 +195,7 @@ class MetadataApiTest extends TestCase
     /**
      * Test case for v1SymbolsGet
      *
-     * List all symbols.
+     * List all active symbols.
      *
      */
     public function testV1SymbolsGet()
@@ -207,7 +207,7 @@ class MetadataApiTest extends TestCase
     /**
      * Test case for v1SymbolsMapExchangeIdGet
      *
-     * List symbol mapping for the exchange.
+     * List active symbol mapping for the exchange.
      *
      */
     public function testV1SymbolsMapExchangeIdGet()

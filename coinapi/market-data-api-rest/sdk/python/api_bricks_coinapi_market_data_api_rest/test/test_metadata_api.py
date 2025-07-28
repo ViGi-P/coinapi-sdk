@@ -86,28 +86,28 @@ class TestMetadataApi(unittest.TestCase):
     def test_v1_symbols_exchange_id_get(self) -> None:
         """Test case for v1_symbols_exchange_id_get
 
-        List of symbols for the exchange
+        List of active symbols for the exchange
         """
         pass
 
     def test_v1_symbols_exchange_id_history_get(self) -> None:
         """Test case for v1_symbols_exchange_id_history_get
 
-        Get symbol history for an exchange with pagination.
+        List all historical symbols for an exchange.
         """
         pass
 
     def test_v1_symbols_get(self) -> None:
         """Test case for v1_symbols_get
 
-        List all symbols
+        List all active symbols
         """
         pass
 
     def test_v1_symbols_map_exchange_id_get(self) -> None:
         """Test case for v1_symbols_map_exchange_id_get
 
-        List symbol mapping for the exchange
+        List active symbol mapping for the exchange
         """
         pass
 

@@ -255,7 +255,7 @@ Properties of the output are providing aggregated information from across all sy
 
 
 (defn-spec v1-symbols-exchange-id-get-with-http-info any?
-  "List of symbols for the exchange"
+  "List of active symbols for the exchange"
   ([exchange_id string?, ] (v1-symbols-exchange-id-get-with-http-info exchange_id nil))
   ([exchange_id string?, {:keys [filter_symbol_id filter_asset_id]} (s/map-of keyword? any?)]
    (check-required-params exchange_id)
@@ -269,7 +269,7 @@ Properties of the output are providing aggregated information from across all sy
               :auth-names    ["APIKey" "JWT"]})))
 
 (defn-spec v1-symbols-exchange-id-get (s/coll-of v1/symbol-spec)
-  "List of symbols for the exchange"
+  "List of active symbols for the exchange"
   ([exchange_id string?, ] (v1-symbols-exchange-id-get exchange_id nil))
   ([exchange_id string?, optional-params any?]
    (let [res (:data (v1-symbols-exchange-id-get-with-http-info exchange_id optional-params))]
@@ -279,7 +279,9 @@ Properties of the output are providing aggregated information from across all sy
 
 
 (defn-spec v1-symbols-exchange-id-history-get-with-http-info any?
-  "Get symbol history for an exchange with pagination."
+  "List all historical symbols for an exchange.
+  This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
+The data is provided with pagination support."
   ([exchange_id string?, ] (v1-symbols-exchange-id-history-get-with-http-info exchange_id nil))
   ([exchange_id string?, {:keys [page limit]} (s/map-of keyword? any?)]
    (check-required-params exchange_id)
@@ -293,7 +295,9 @@ Properties of the output are providing aggregated information from across all sy
               :auth-names    ["APIKey" "JWT"]})))
 
 (defn-spec v1-symbols-exchange-id-history-get (s/coll-of v1/symbol-spec)
-  "Get symbol history for an exchange with pagination."
+  "List all historical symbols for an exchange.
+  This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
+The data is provided with pagination support."
   ([exchange_id string?, ] (v1-symbols-exchange-id-history-get exchange_id nil))
   ([exchange_id string?, optional-params any?]
    (let [res (:data (v1-symbols-exchange-id-history-get-with-http-info exchange_id optional-params))]
@@ -303,8 +307,8 @@ Properties of the output are providing aggregated information from across all sy
 
 
 (defn-spec v1-symbols-get-with-http-info any?
-  "List all symbols
-  Retrieves all symbols with optional filtering.
+  "List all active symbols
+  Retrieves all currently active (listed) symbols, with optional filtering.
             
 :::info
 \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges.
@@ -397,8 +401,8 @@ contract_id | Identifier of contract by the exchange"
               :auth-names    ["APIKey" "JWT"]})))
 
 (defn-spec v1-symbols-get (s/coll-of v1/symbol-spec)
-  "List all symbols
-  Retrieves all symbols with optional filtering.
+  "List all active symbols
+  Retrieves all currently active (listed) symbols, with optional filtering.
             
 :::info
 \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges.
@@ -488,7 +492,7 @@ contract_id | Identifier of contract by the exchange"
 
 
 (defn-spec v1-symbols-map-exchange-id-get-with-http-info any?
-  "List symbol mapping for the exchange"
+  "List active symbol mapping for the exchange"
   [exchange_id string?]
   (check-required-params exchange_id)
   (call-api "/v1/symbols/map/{exchange_id}" :get
@@ -501,7 +505,7 @@ contract_id | Identifier of contract by the exchange"
              :auth-names    ["APIKey" "JWT"]}))
 
 (defn-spec v1-symbols-map-exchange-id-get (s/coll-of v1/symbol-mapping-spec)
-  "List symbol mapping for the exchange"
+  "List active symbol mapping for the exchange"
   [exchange_id string?]
   (let [res (:data (v1-symbols-map-exchange-id-get-with-http-info exchange_id))]
     (if (:decode-models *api-context*)

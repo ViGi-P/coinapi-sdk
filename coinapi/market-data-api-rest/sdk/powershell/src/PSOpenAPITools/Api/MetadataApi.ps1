@@ -809,7 +809,7 @@ function Invoke-V1ExchangesIconsSizeGet {
 <#
 .SYNOPSIS
 
-List of symbols for the exchange
+List of active symbols for the exchange
 
 .DESCRIPTION
 
@@ -929,7 +929,7 @@ function Invoke-V1SymbolsExchangeIdGet {
 <#
 .SYNOPSIS
 
-Get symbol history for an exchange with pagination.
+List all historical symbols for an exchange.
 
 .DESCRIPTION
 
@@ -939,10 +939,10 @@ No description available.
 The ID of the exchange.
 
 .PARAMETER Page
-The page number.
+The page number for pagination (starts from 1).
 
 .PARAMETER Limit
-Number of records to return.
+Number of records to return per page.
 
 .PARAMETER ReturnType
 
@@ -1049,7 +1049,7 @@ function Invoke-V1SymbolsExchangeIdHistoryGet {
 <#
 .SYNOPSIS
 
-List all symbols
+List all active symbols
 
 .DESCRIPTION
 
@@ -1169,7 +1169,7 @@ function Invoke-V1SymbolsGet {
 <#
 .SYNOPSIS
 
-List symbol mapping for the exchange
+List active symbol mapping for the exchange
 
 .DESCRIPTION
 

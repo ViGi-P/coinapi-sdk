@@ -566,7 +566,7 @@ sub v1_exchanges_icons_size_get {
 #
 # v1_symbols_exchange_id_get
 #
-# List of symbols for the exchange
+# List of active symbols for the exchange
 #
 # @param string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
 # @param string $filter_symbol_id The filter for symbol ID. (optional)
@@ -590,7 +590,7 @@ sub v1_exchanges_icons_size_get {
     },
     };
     __PACKAGE__->method_documentation->{ 'v1_symbols_exchange_id_get' } = {
-        summary => 'List of symbols for the exchange',
+        summary => 'List of active symbols for the exchange',
         params => $params,
         returns => 'ARRAY[V1Symbol]',
         };
@@ -655,11 +655,11 @@ sub v1_symbols_exchange_id_get {
 #
 # v1_symbols_exchange_id_history_get
 #
-# Get symbol history for an exchange with pagination.
+# List all historical symbols for an exchange.
 #
 # @param string $exchange_id The ID of the exchange. (required)
-# @param int $page The page number. (optional, default to 1)
-# @param int $limit Number of records to return. (optional, default to 100)
+# @param int $page The page number for pagination (starts from 1). (optional, default to 1)
+# @param int $limit Number of records to return per page. (optional, default to 100)
 {
     my $params = {
     'exchange_id' => {
@@ -669,17 +669,17 @@ sub v1_symbols_exchange_id_get {
     },
     'page' => {
         data_type => 'int',
-        description => 'The page number.',
+        description => 'The page number for pagination (starts from 1).',
         required => '0',
     },
     'limit' => {
         data_type => 'int',
-        description => 'Number of records to return.',
+        description => 'Number of records to return per page.',
         required => '0',
     },
     };
     __PACKAGE__->method_documentation->{ 'v1_symbols_exchange_id_history_get' } = {
-        summary => 'Get symbol history for an exchange with pagination.',
+        summary => 'List all historical symbols for an exchange.',
         params => $params,
         returns => 'ARRAY[V1Symbol]',
         };
@@ -744,7 +744,7 @@ sub v1_symbols_exchange_id_history_get {
 #
 # v1_symbols_get
 #
-# List all symbols
+# List all active symbols
 #
 # @param string $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
 # @param string $filter_exchange_id The filter for exchange ID. (optional)
@@ -768,7 +768,7 @@ sub v1_symbols_exchange_id_history_get {
     },
     };
     __PACKAGE__->method_documentation->{ 'v1_symbols_get' } = {
-        summary => 'List all symbols',
+        summary => 'List all active symbols',
         params => $params,
         returns => 'ARRAY[V1Symbol]',
         };
@@ -826,7 +826,7 @@ sub v1_symbols_get {
 #
 # v1_symbols_map_exchange_id_get
 #
-# List symbol mapping for the exchange
+# List active symbol mapping for the exchange
 #
 # @param string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
 {
@@ -838,7 +838,7 @@ sub v1_symbols_get {
     },
     };
     __PACKAGE__->method_documentation->{ 'v1_symbols_map_exchange_id_get' } = {
-        summary => 'List symbol mapping for the exchange',
+        summary => 'List active symbol mapping for the exchange',
         params => $params,
         returns => 'ARRAY[V1SymbolMapping]',
         };

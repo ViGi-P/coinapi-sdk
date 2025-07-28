@@ -2363,7 +2363,7 @@ class MetadataApi
     /**
      * Operation v1SymbolsExchangeIdGet
      *
-     * List of symbols for the exchange
+     * List of active symbols for the exchange
      *
      * @param  string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param  string|null $filter_symbol_id The filter for symbol ID. (optional)
@@ -2383,7 +2383,7 @@ class MetadataApi
     /**
      * Operation v1SymbolsExchangeIdGetWithHttpInfo
      *
-     * List of symbols for the exchange
+     * List of active symbols for the exchange
      *
      * @param  string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param  string|null $filter_symbol_id The filter for symbol ID. (optional)
@@ -2470,7 +2470,7 @@ class MetadataApi
     /**
      * Operation v1SymbolsExchangeIdGetAsync
      *
-     * List of symbols for the exchange
+     * List of active symbols for the exchange
      *
      * @param  string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param  string|null $filter_symbol_id The filter for symbol ID. (optional)
@@ -2493,7 +2493,7 @@ class MetadataApi
     /**
      * Operation v1SymbolsExchangeIdGetAsyncWithHttpInfo
      *
-     * List of symbols for the exchange
+     * List of active symbols for the exchange
      *
      * @param  string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param  string|null $filter_symbol_id The filter for symbol ID. (optional)
@@ -2670,11 +2670,11 @@ class MetadataApi
     /**
      * Operation v1SymbolsExchangeIdHistoryGet
      *
-     * Get symbol history for an exchange with pagination.
+     * List all historical symbols for an exchange.
      *
      * @param  string $exchange_id The ID of the exchange. (required)
-     * @param  int|null $page The page number. (optional, default to 1)
-     * @param  int|null $limit Number of records to return. (optional, default to 100)
+     * @param  int|null $page The page number for pagination (starts from 1). (optional, default to 1)
+     * @param  int|null $limit Number of records to return per page. (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2690,11 +2690,11 @@ class MetadataApi
     /**
      * Operation v1SymbolsExchangeIdHistoryGetWithHttpInfo
      *
-     * Get symbol history for an exchange with pagination.
+     * List all historical symbols for an exchange.
      *
      * @param  string $exchange_id The ID of the exchange. (required)
-     * @param  int|null $page The page number. (optional, default to 1)
-     * @param  int|null $limit Number of records to return. (optional, default to 100)
+     * @param  int|null $page The page number for pagination (starts from 1). (optional, default to 1)
+     * @param  int|null $limit Number of records to return per page. (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -2777,11 +2777,11 @@ class MetadataApi
     /**
      * Operation v1SymbolsExchangeIdHistoryGetAsync
      *
-     * Get symbol history for an exchange with pagination.
+     * List all historical symbols for an exchange.
      *
      * @param  string $exchange_id The ID of the exchange. (required)
-     * @param  int|null $page The page number. (optional, default to 1)
-     * @param  int|null $limit Number of records to return. (optional, default to 100)
+     * @param  int|null $page The page number for pagination (starts from 1). (optional, default to 1)
+     * @param  int|null $limit Number of records to return per page. (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2800,11 +2800,11 @@ class MetadataApi
     /**
      * Operation v1SymbolsExchangeIdHistoryGetAsyncWithHttpInfo
      *
-     * Get symbol history for an exchange with pagination.
+     * List all historical symbols for an exchange.
      *
      * @param  string $exchange_id The ID of the exchange. (required)
-     * @param  int|null $page The page number. (optional, default to 1)
-     * @param  int|null $limit Number of records to return. (optional, default to 100)
+     * @param  int|null $page The page number for pagination (starts from 1). (optional, default to 1)
+     * @param  int|null $limit Number of records to return per page. (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2855,8 +2855,8 @@ class MetadataApi
      * Create request for operation 'v1SymbolsExchangeIdHistoryGet'
      *
      * @param  string $exchange_id The ID of the exchange. (required)
-     * @param  int|null $page The page number. (optional, default to 1)
-     * @param  int|null $limit Number of records to return. (optional, default to 100)
+     * @param  int|null $page The page number for pagination (starts from 1). (optional, default to 1)
+     * @param  int|null $limit Number of records to return per page. (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -2977,7 +2977,7 @@ class MetadataApi
     /**
      * Operation v1SymbolsGet
      *
-     * List all symbols
+     * List all active symbols
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
      * @param  string|null $filter_exchange_id The filter for exchange ID. (optional)
@@ -2997,7 +2997,7 @@ class MetadataApi
     /**
      * Operation v1SymbolsGetWithHttpInfo
      *
-     * List all symbols
+     * List all active symbols
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
      * @param  string|null $filter_exchange_id The filter for exchange ID. (optional)
@@ -3084,7 +3084,7 @@ class MetadataApi
     /**
      * Operation v1SymbolsGetAsync
      *
-     * List all symbols
+     * List all active symbols
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
      * @param  string|null $filter_exchange_id The filter for exchange ID. (optional)
@@ -3107,7 +3107,7 @@ class MetadataApi
     /**
      * Operation v1SymbolsGetAsyncWithHttpInfo
      *
-     * List all symbols
+     * List all active symbols
      *
      * @param  string|null $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
      * @param  string|null $filter_exchange_id The filter for exchange ID. (optional)
@@ -3279,7 +3279,7 @@ class MetadataApi
     /**
      * Operation v1SymbolsMapExchangeIdGet
      *
-     * List symbol mapping for the exchange
+     * List active symbol mapping for the exchange
      *
      * @param  string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsMapExchangeIdGet'] to see the possible values for this operation
@@ -3297,7 +3297,7 @@ class MetadataApi
     /**
      * Operation v1SymbolsMapExchangeIdGetWithHttpInfo
      *
-     * List symbol mapping for the exchange
+     * List active symbol mapping for the exchange
      *
      * @param  string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsMapExchangeIdGet'] to see the possible values for this operation
@@ -3382,7 +3382,7 @@ class MetadataApi
     /**
      * Operation v1SymbolsMapExchangeIdGetAsync
      *
-     * List symbol mapping for the exchange
+     * List active symbol mapping for the exchange
      *
      * @param  string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsMapExchangeIdGet'] to see the possible values for this operation
@@ -3403,7 +3403,7 @@ class MetadataApi
     /**
      * Operation v1SymbolsMapExchangeIdGetAsyncWithHttpInfo
      *
-     * List symbol mapping for the exchange
+     * List active symbol mapping for the exchange
      *
      * @param  string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsMapExchangeIdGet'] to see the possible values for this operation

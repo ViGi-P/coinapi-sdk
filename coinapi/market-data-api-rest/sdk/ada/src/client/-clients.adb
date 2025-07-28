@@ -292,7 +292,7 @@ package body .Clients is
       .Models.Deserialize (Reply, "", Result);
    end V_1Exchanges_Icons_Size_Get;
 
-   --  List of symbols for the exchange
+   --  List of active symbols for the exchange
    procedure V_1Symbols_Exchange_Id_Get
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;
@@ -313,7 +313,9 @@ package body .Clients is
       .Models.Deserialize (Reply, "", Result);
    end V_1Symbols_Exchange_Id_Get;
 
-   --  Get symbol history for an exchange with pagination.
+   --  List all historical symbols for an exchange.
+   --  This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
+   --  The data is provided with pagination support.
    procedure V_1Symbols_Exchange_Id_History_Get
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;
@@ -334,8 +336,8 @@ package body .Clients is
       .Models.Deserialize (Reply, "", Result);
    end V_1Symbols_Exchange_Id_History_Get;
 
-   --  List all symbols
-   --  Retrieves all symbols with optional filtering.
+   --  List all active symbols
+   --  Retrieves all currently active (listed) symbols, with optional filtering.
    --              
    --  :::info
    --  "price_precision" and "size_precision" are data precisions and are not always the same precisions used for trading eg. for the "BINANCE" exchanges.
@@ -436,7 +438,7 @@ package body .Clients is
       .Models.Deserialize (Reply, "", Result);
    end V_1Symbols_Get;
 
-   --  List symbol mapping for the exchange
+   --  List active symbol mapping for the exchange
    procedure V_1Symbols_Map_Exchange_Id_Get
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;

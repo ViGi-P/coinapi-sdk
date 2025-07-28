@@ -80,10 +80,10 @@ Class | Method | HTTP request | Description
 [*MetadataApi*](doc/MetadataApi.md) | [**v1ExchangesExchangeIdGet**](doc/MetadataApi.md#v1exchangesexchangeidget) | **GET** /v1/exchanges/{exchange_id} | List all exchanges by exchange_id
 [*MetadataApi*](doc/MetadataApi.md) | [**v1ExchangesGet**](doc/MetadataApi.md#v1exchangesget) | **GET** /v1/exchanges | List all exchanges
 [*MetadataApi*](doc/MetadataApi.md) | [**v1ExchangesIconsSizeGet**](doc/MetadataApi.md#v1exchangesiconssizeget) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
-[*MetadataApi*](doc/MetadataApi.md) | [**v1SymbolsExchangeIdGet**](doc/MetadataApi.md#v1symbolsexchangeidget) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
-[*MetadataApi*](doc/MetadataApi.md) | [**v1SymbolsExchangeIdHistoryGet**](doc/MetadataApi.md#v1symbolsexchangeidhistoryget) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
-[*MetadataApi*](doc/MetadataApi.md) | [**v1SymbolsGet**](doc/MetadataApi.md#v1symbolsget) | **GET** /v1/symbols | List all symbols
-[*MetadataApi*](doc/MetadataApi.md) | [**v1SymbolsMapExchangeIdGet**](doc/MetadataApi.md#v1symbolsmapexchangeidget) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
+[*MetadataApi*](doc/MetadataApi.md) | [**v1SymbolsExchangeIdGet**](doc/MetadataApi.md#v1symbolsexchangeidget) | **GET** /v1/symbols/{exchange_id} | List of active symbols for the exchange
+[*MetadataApi*](doc/MetadataApi.md) | [**v1SymbolsExchangeIdHistoryGet**](doc/MetadataApi.md#v1symbolsexchangeidhistoryget) | **GET** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
+[*MetadataApi*](doc/MetadataApi.md) | [**v1SymbolsGet**](doc/MetadataApi.md#v1symbolsget) | **GET** /v1/symbols | List all active symbols
+[*MetadataApi*](doc/MetadataApi.md) | [**v1SymbolsMapExchangeIdGet**](doc/MetadataApi.md#v1symbolsmapexchangeidget) | **GET** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
 [*MetricsV1Api*](doc/MetricsV1Api.md) | [**v1MetricsAssetCurrentGet**](doc/MetricsV1Api.md#v1metricsassetcurrentget) | **GET** /v1/metrics/asset/current | Current metrics for given asset
 [*MetricsV1Api*](doc/MetricsV1Api.md) | [**v1MetricsAssetHistoryGet**](doc/MetricsV1Api.md#v1metricsassethistoryget) | **GET** /v1/metrics/asset/history | Historical metrics for asset
 [*MetricsV1Api*](doc/MetricsV1Api.md) | [**v1MetricsAssetListingGet**](doc/MetricsV1Api.md#v1metricsassetlistingget) | **GET** /v1/metrics/asset/listing | Listing of all supported metrics for asset

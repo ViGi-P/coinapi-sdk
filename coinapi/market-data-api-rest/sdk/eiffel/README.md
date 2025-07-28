@@ -35,10 +35,10 @@ Class | Method | HTTP request | Description
 *METADATA_API* | [**v1_exchanges_exchange_id_get**](docs/METADATA_API.md#v1_exchanges_exchange_id_get) | **Get** /v1/exchanges/{exchange_id} | List all exchanges by exchange_id
 *METADATA_API* | [**v1_exchanges_get**](docs/METADATA_API.md#v1_exchanges_get) | **Get** /v1/exchanges | List all exchanges
 *METADATA_API* | [**v1_exchanges_icons_size_get**](docs/METADATA_API.md#v1_exchanges_icons_size_get) | **Get** /v1/exchanges/icons/{size} | List of icons for the exchanges
-*METADATA_API* | [**v1_symbols_exchange_id_get**](docs/METADATA_API.md#v1_symbols_exchange_id_get) | **Get** /v1/symbols/{exchange_id} | List of symbols for the exchange
-*METADATA_API* | [**v1_symbols_exchange_id_history_get**](docs/METADATA_API.md#v1_symbols_exchange_id_history_get) | **Get** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
-*METADATA_API* | [**v1_symbols_get**](docs/METADATA_API.md#v1_symbols_get) | **Get** /v1/symbols | List all symbols
-*METADATA_API* | [**v1_symbols_map_exchange_id_get**](docs/METADATA_API.md#v1_symbols_map_exchange_id_get) | **Get** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
+*METADATA_API* | [**v1_symbols_exchange_id_get**](docs/METADATA_API.md#v1_symbols_exchange_id_get) | **Get** /v1/symbols/{exchange_id} | List of active symbols for the exchange
+*METADATA_API* | [**v1_symbols_exchange_id_history_get**](docs/METADATA_API.md#v1_symbols_exchange_id_history_get) | **Get** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
+*METADATA_API* | [**v1_symbols_get**](docs/METADATA_API.md#v1_symbols_get) | **Get** /v1/symbols | List all active symbols
+*METADATA_API* | [**v1_symbols_map_exchange_id_get**](docs/METADATA_API.md#v1_symbols_map_exchange_id_get) | **Get** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
 *METRICSV1_API* | [**v1_metrics_asset_current_get**](docs/METRICSV1_API.md#v1_metrics_asset_current_get) | **Get** /v1/metrics/asset/current | Current metrics for given asset
 *METRICSV1_API* | [**v1_metrics_asset_history_get**](docs/METRICSV1_API.md#v1_metrics_asset_history_get) | **Get** /v1/metrics/asset/history | Historical metrics for asset
 *METRICSV1_API* | [**v1_metrics_asset_listing_get**](docs/METRICSV1_API.md#v1_metrics_asset_listing_get) | **Get** /v1/metrics/asset/listing | Listing of all supported metrics for asset

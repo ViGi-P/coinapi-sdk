@@ -181,7 +181,7 @@
 #' var_filter_symbol_id <- "filter_symbol_id_example" # character | The filter for symbol ID. (Optional)
 #' var_filter_asset_id <- "filter_asset_id_example" # character | The filter for asset ID. (Optional)
 #'
-#' #List of symbols for the exchange
+#' #List of active symbols for the exchange
 #' api_instance <- MetadataApi$new()
 #'
 #' # Configure API key authorization: APIKey
@@ -200,10 +200,10 @@
 #'
 #' library(openapi)
 #' var_exchange_id <- "exchange_id_example" # character | The ID of the exchange.
-#' var_page <- 1 # integer | The page number. (Optional)
-#' var_limit <- 100 # integer | Number of records to return. (Optional)
+#' var_page <- 1 # integer | The page number for pagination (starts from 1). (Optional)
+#' var_limit <- 100 # integer | Number of records to return per page. (Optional)
 #'
-#' #Get symbol history for an exchange with pagination.
+#' #List all historical symbols for an exchange.
 #' api_instance <- MetadataApi$new()
 #'
 #' # Configure API key authorization: APIKey
@@ -225,7 +225,7 @@
 #' var_filter_exchange_id <- "filter_exchange_id_example" # character | The filter for exchange ID. (Optional)
 #' var_filter_asset_id <- "filter_asset_id_example" # character | The filter for asset ID. (Optional)
 #'
-#' #List all symbols
+#' #List all active symbols
 #' api_instance <- MetadataApi$new()
 #'
 #' # Configure API key authorization: APIKey
@@ -245,7 +245,7 @@
 #' library(openapi)
 #' var_exchange_id <- "exchange_id_example" # character | The ID of the exchange (from the Metadata -> Exchanges)
 #'
-#' #List symbol mapping for the exchange
+#' #List active symbol mapping for the exchange
 #' api_instance <- MetadataApi$new()
 #'
 #' # Configure API key authorization: APIKey
@@ -1112,7 +1112,7 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' List of symbols for the exchange
+    #' List of active symbols for the exchange
     #'
     #' @param exchange_id The ID of the exchange (from the Metadata -> Exchanges)
     #' @param filter_symbol_id (optional) The filter for symbol ID.
@@ -1135,7 +1135,7 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' List of symbols for the exchange
+    #' List of active symbols for the exchange
     #'
     #' @param exchange_id The ID of the exchange (from the Metadata -> Exchanges)
     #' @param filter_symbol_id (optional) The filter for symbol ID.
@@ -1228,11 +1228,11 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' Get symbol history for an exchange with pagination.
+    #' List all historical symbols for an exchange.
     #'
     #' @param exchange_id The ID of the exchange.
-    #' @param page (optional) The page number. (default value: 1)
-    #' @param limit (optional) Number of records to return. (default value: 100)
+    #' @param page (optional) The page number for pagination (starts from 1). (default value: 1)
+    #' @param limit (optional) Number of records to return per page. (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #'
@@ -1251,11 +1251,11 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' Get symbol history for an exchange with pagination.
+    #' List all historical symbols for an exchange.
     #'
     #' @param exchange_id The ID of the exchange.
-    #' @param page (optional) The page number. (default value: 1)
-    #' @param limit (optional) Number of records to return. (default value: 100)
+    #' @param page (optional) The page number for pagination (starts from 1). (default value: 1)
+    #' @param limit (optional) Number of records to return per page. (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #'
@@ -1344,7 +1344,7 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' List all symbols
+    #' List all active symbols
     #'
     #' @param filter_symbol_id (optional) Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
     #' @param filter_exchange_id (optional) The filter for exchange ID.
@@ -1367,7 +1367,7 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' List all symbols
+    #' List all active symbols
     #'
     #' @param filter_symbol_id (optional) Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
     #' @param filter_exchange_id (optional) The filter for exchange ID.
@@ -1454,7 +1454,7 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' List symbol mapping for the exchange
+    #' List active symbol mapping for the exchange
     #'
     #' @param exchange_id The ID of the exchange (from the Metadata -> Exchanges)
     #' @param data_file (optional) name of the data file to save the result
@@ -1475,7 +1475,7 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' List symbol mapping for the exchange
+    #' List active symbol mapping for the exchange
     #'
     #' @param exchange_id The ID of the exchange (from the Metadata -> Exchanges)
     #' @param data_file (optional) name of the data file to save the result

@@ -141,7 +141,7 @@ package .Clients is
        Size : in Integer;
        Result : out .Models.V1Icon_Type_Vectors.Vector);
 
-   --  List of symbols for the exchange
+   --  List of active symbols for the exchange
    procedure V_1Symbols_Exchange_Id_Get
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;
@@ -149,7 +149,9 @@ package .Clients is
        Filter_Asset_Id : in Swagger.Nullable_UString;
        Result : out .Models.V1Symbol_Type_Vectors.Vector);
 
-   --  Get symbol history for an exchange with pagination.
+   --  List all historical symbols for an exchange.
+   --  This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
+   --  The data is provided with pagination support.
    procedure V_1Symbols_Exchange_Id_History_Get
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;
@@ -157,8 +159,8 @@ package .Clients is
        Limit : in Swagger.Nullable_Integer;
        Result : out .Models.V1Symbol_Type_Vectors.Vector);
 
-   --  List all symbols
-   --  Retrieves all symbols with optional filtering.
+   --  List all active symbols
+   --  Retrieves all currently active (listed) symbols, with optional filtering.
    --              
    --  :::info
    --  "price_precision" and "size_precision" are data precisions and are not always the same precisions used for trading eg. for the "BINANCE" exchanges.
@@ -246,7 +248,7 @@ package .Clients is
        Filter_Asset_Id : in Swagger.Nullable_UString;
        Result : out .Models.V1Symbol_Type_Vectors.Vector);
 
-   --  List symbol mapping for the exchange
+   --  List active symbol mapping for the exchange
    procedure V_1Symbols_Map_Exchange_Id_Get
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;

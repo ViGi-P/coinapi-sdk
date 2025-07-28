@@ -20,14 +20,14 @@ Method | HTTP request | Description
 [**v1ExchangesGetWithHttpInfo**](MetadataApi.md#v1ExchangesGetWithHttpInfo) | **GET** /v1/exchanges | List all exchanges
 [**v1ExchangesIconsSizeGet**](MetadataApi.md#v1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
 [**v1ExchangesIconsSizeGetWithHttpInfo**](MetadataApi.md#v1ExchangesIconsSizeGetWithHttpInfo) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
-[**v1SymbolsExchangeIdGet**](MetadataApi.md#v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
-[**v1SymbolsExchangeIdGetWithHttpInfo**](MetadataApi.md#v1SymbolsExchangeIdGetWithHttpInfo) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
-[**v1SymbolsExchangeIdHistoryGet**](MetadataApi.md#v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
-[**v1SymbolsExchangeIdHistoryGetWithHttpInfo**](MetadataApi.md#v1SymbolsExchangeIdHistoryGetWithHttpInfo) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
-[**v1SymbolsGet**](MetadataApi.md#v1SymbolsGet) | **GET** /v1/symbols | List all symbols
-[**v1SymbolsGetWithHttpInfo**](MetadataApi.md#v1SymbolsGetWithHttpInfo) | **GET** /v1/symbols | List all symbols
-[**v1SymbolsMapExchangeIdGet**](MetadataApi.md#v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
-[**v1SymbolsMapExchangeIdGetWithHttpInfo**](MetadataApi.md#v1SymbolsMapExchangeIdGetWithHttpInfo) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
+[**v1SymbolsExchangeIdGet**](MetadataApi.md#v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of active symbols for the exchange
+[**v1SymbolsExchangeIdGetWithHttpInfo**](MetadataApi.md#v1SymbolsExchangeIdGetWithHttpInfo) | **GET** /v1/symbols/{exchange_id} | List of active symbols for the exchange
+[**v1SymbolsExchangeIdHistoryGet**](MetadataApi.md#v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
+[**v1SymbolsExchangeIdHistoryGetWithHttpInfo**](MetadataApi.md#v1SymbolsExchangeIdHistoryGetWithHttpInfo) | **GET** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
+[**v1SymbolsGet**](MetadataApi.md#v1SymbolsGet) | **GET** /v1/symbols | List all active symbols
+[**v1SymbolsGetWithHttpInfo**](MetadataApi.md#v1SymbolsGetWithHttpInfo) | **GET** /v1/symbols | List all active symbols
+[**v1SymbolsMapExchangeIdGet**](MetadataApi.md#v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
+[**v1SymbolsMapExchangeIdGetWithHttpInfo**](MetadataApi.md#v1SymbolsMapExchangeIdGetWithHttpInfo) | **GET** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
 
 
 
@@ -715,7 +715,7 @@ ApiRequest[[**Seq[Icon]**](Icon.md)]
 
 > v1SymbolsExchangeIdGet(v1SymbolsExchangeIdGetRequest): ApiRequest[Seq[Symbol]]
 
-List of symbols for the exchange
+List of active symbols for the exchange
 
 ### Example
 
@@ -805,7 +805,9 @@ ApiRequest[[**Seq[Symbol]**](Symbol.md)]
 
 > v1SymbolsExchangeIdHistoryGet(v1SymbolsExchangeIdHistoryGetRequest): ApiRequest[Seq[Symbol]]
 
-Get symbol history for an exchange with pagination.
+List all historical symbols for an exchange.
+
+This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange. The data is provided with pagination support.
 
 ### Example
 
@@ -835,9 +837,9 @@ object Example extends App {
     val apiInstance = MetadataApi("https://rest.coinapi.io")
     val exchangeId: String = exchangeId_example // String | The ID of the exchange.
 
-    val page: Int = 56 // Int | The page number.
+    val page: Int = 56 // Int | The page number for pagination (starts from 1).
 
-    val limit: Int = 56 // Int | Number of records to return.
+    val limit: Int = 56 // Int | Number of records to return per page.
     
     val request = apiInstance.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
     val response = apiInvoker.execute(request)
@@ -868,8 +870,8 @@ object Example extends App {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exchangeId** | **String**| The ID of the exchange. |
- **page** | **Int**| The page number. | [optional]
- **limit** | **Int**| Number of records to return. | [optional]
+ **page** | **Int**| The page number for pagination (starts from 1). | [optional]
+ **limit** | **Int**| Number of records to return per page. | [optional]
 
 ### Return type
 
@@ -895,9 +897,9 @@ ApiRequest[[**Seq[Symbol]**](Symbol.md)]
 
 > v1SymbolsGet(v1SymbolsGetRequest): ApiRequest[Seq[Symbol]]
 
-List all symbols
+List all active symbols
 
-Retrieves all symbols with optional filtering.              :::info \&quot;price_precision\&quot; and \&quot;size_precision\&quot; are data precisions and are not always the same precisions used for trading eg. for the \&quot;BINANCE\&quot; exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \&quot;price_precision\&quot; and \&quot;size_precision\&quot;. The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | &#x60;symbol_id&#x60; pattern --------- | --------- SPOT | &#x60;{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}&#x60; FUTURES | &#x60;{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}&#x60; OPTION | &#x60;{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}&#x60; PERPETUAL | &#x60;{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}&#x60; INDEX | &#x60;{exchange_id}_IDX_{index_id}&#x60; CREDIT | &#x60;{exchange_id}_CRE_{asset_id_base}&#x60; CONTACT  | &#x60;{exchange_id}_COT_{contract_id}&#x60;              :::info In the unlikely event when the \&quot;symbol_id\&quot; for more than one market is the same. We will append the additional term (prefixed with the \&quot;_\&quot;) at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of &#x60;symbol_type&#x60; output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for &#x60;symbol_type &#x3D; INDEX&#x60;              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for &#x60;symbol_type &#x3D; FUTURES&#x60;              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; PERPETUAL&#x60;              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; OPTION&#x60;              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. &#x60;true&#x60; for Call options, &#x60;false&#x60; for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be &#x60;EUROPEAN&#x60; or &#x60;AMERICAN&#x60; option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for &#x60;symbol_type &#x3D; CONTRACT&#x60;              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if &#x60;contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
+Retrieves all currently active (listed) symbols, with optional filtering.              :::info \&quot;price_precision\&quot; and \&quot;size_precision\&quot; are data precisions and are not always the same precisions used for trading eg. for the \&quot;BINANCE\&quot; exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \&quot;price_precision\&quot; and \&quot;size_precision\&quot;. The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | &#x60;symbol_id&#x60; pattern --------- | --------- SPOT | &#x60;{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}&#x60; FUTURES | &#x60;{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}&#x60; OPTION | &#x60;{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}&#x60; PERPETUAL | &#x60;{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}&#x60; INDEX | &#x60;{exchange_id}_IDX_{index_id}&#x60; CREDIT | &#x60;{exchange_id}_CRE_{asset_id_base}&#x60; CONTACT  | &#x60;{exchange_id}_COT_{contract_id}&#x60;              :::info In the unlikely event when the \&quot;symbol_id\&quot; for more than one market is the same. We will append the additional term (prefixed with the \&quot;_\&quot;) at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of &#x60;symbol_type&#x60; output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for &#x60;symbol_type &#x3D; INDEX&#x60;              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for &#x60;symbol_type &#x3D; FUTURES&#x60;              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; PERPETUAL&#x60;              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; OPTION&#x60;              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. &#x60;true&#x60; for Call options, &#x60;false&#x60; for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be &#x60;EUROPEAN&#x60; or &#x60;AMERICAN&#x60; option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for &#x60;symbol_type &#x3D; CONTRACT&#x60;              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if &#x60;contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
 
 ### Example
 
@@ -987,7 +989,7 @@ ApiRequest[[**Seq[Symbol]**](Symbol.md)]
 
 > v1SymbolsMapExchangeIdGet(v1SymbolsMapExchangeIdGetRequest): ApiRequest[Seq[SymbolMapping]]
 
-List symbol mapping for the exchange
+List active symbol mapping for the exchange
 
 ### Example
 

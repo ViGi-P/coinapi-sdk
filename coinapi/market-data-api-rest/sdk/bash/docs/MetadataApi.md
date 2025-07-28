@@ -12,10 +12,10 @@ Method | HTTP request | Description
 [**v1ExchangesExchangeIdGet**](MetadataApi.md#v1ExchangesExchangeIdGet) | **GET** /v1/exchanges/{exchange_id} | List all exchanges by exchange_id
 [**v1ExchangesGet**](MetadataApi.md#v1ExchangesGet) | **GET** /v1/exchanges | List all exchanges
 [**v1ExchangesIconsSizeGet**](MetadataApi.md#v1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
-[**v1SymbolsExchangeIdGet**](MetadataApi.md#v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
-[**v1SymbolsExchangeIdHistoryGet**](MetadataApi.md#v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
-[**v1SymbolsGet**](MetadataApi.md#v1SymbolsGet) | **GET** /v1/symbols | List all symbols
-[**v1SymbolsMapExchangeIdGet**](MetadataApi.md#v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
+[**v1SymbolsExchangeIdGet**](MetadataApi.md#v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of active symbols for the exchange
+[**v1SymbolsExchangeIdHistoryGet**](MetadataApi.md#v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
+[**v1SymbolsGet**](MetadataApi.md#v1SymbolsGet) | **GET** /v1/symbols | List all active symbols
+[**v1SymbolsMapExchangeIdGet**](MetadataApi.md#v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
 
 
 
@@ -309,7 +309,7 @@ Name | Type | Description  | Notes
 
 ## v1SymbolsExchangeIdGet
 
-List of symbols for the exchange
+List of active symbols for the exchange
 
 ### Example
 
@@ -344,7 +344,10 @@ Name | Type | Description  | Notes
 
 ## v1SymbolsExchangeIdHistoryGet
 
-Get symbol history for an exchange with pagination.
+List all historical symbols for an exchange.
+
+This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
+The data is provided with pagination support.
 
 ### Example
 
@@ -358,8 +361,8 @@ Get symbol history for an exchange with pagination.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exchangeId** | **string** | The ID of the exchange. | [default to null]
- **page** | **integer** | The page number. | [optional] [default to 1]
- **limit** | **integer** | Number of records to return. | [optional] [default to 100]
+ **page** | **integer** | The page number for pagination (starts from 1). | [optional] [default to 1]
+ **limit** | **integer** | Number of records to return per page. | [optional] [default to 100]
 
 ### Return type
 
@@ -379,9 +382,9 @@ Name | Type | Description  | Notes
 
 ## v1SymbolsGet
 
-List all symbols
+List all active symbols
 
-Retrieves all symbols with optional filtering.
+Retrieves all currently active (listed) symbols, with optional filtering.
             
 :::info
 \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges.
@@ -496,7 +499,7 @@ Name | Type | Description  | Notes
 
 ## v1SymbolsMapExchangeIdGet
 
-List symbol mapping for the exchange
+List active symbol mapping for the exchange
 
 ### Example
 

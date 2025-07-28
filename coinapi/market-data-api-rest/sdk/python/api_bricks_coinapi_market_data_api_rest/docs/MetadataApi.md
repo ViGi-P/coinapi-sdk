@@ -12,10 +12,10 @@ Method | HTTP request | Description
 [**v1_exchanges_exchange_id_get**](MetadataApi.md#v1_exchanges_exchange_id_get) | **GET** /v1/exchanges/{exchange_id} | List all exchanges by exchange_id
 [**v1_exchanges_get**](MetadataApi.md#v1_exchanges_get) | **GET** /v1/exchanges | List all exchanges
 [**v1_exchanges_icons_size_get**](MetadataApi.md#v1_exchanges_icons_size_get) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
-[**v1_symbols_exchange_id_get**](MetadataApi.md#v1_symbols_exchange_id_get) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
-[**v1_symbols_exchange_id_history_get**](MetadataApi.md#v1_symbols_exchange_id_history_get) | **GET** /v1/symbols/{exchange_id}/history | Get symbol history for an exchange with pagination.
-[**v1_symbols_get**](MetadataApi.md#v1_symbols_get) | **GET** /v1/symbols | List all symbols
-[**v1_symbols_map_exchange_id_get**](MetadataApi.md#v1_symbols_map_exchange_id_get) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
+[**v1_symbols_exchange_id_get**](MetadataApi.md#v1_symbols_exchange_id_get) | **GET** /v1/symbols/{exchange_id} | List of active symbols for the exchange
+[**v1_symbols_exchange_id_history_get**](MetadataApi.md#v1_symbols_exchange_id_history_get) | **GET** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
+[**v1_symbols_get**](MetadataApi.md#v1_symbols_get) | **GET** /v1/symbols | List all active symbols
+[**v1_symbols_map_exchange_id_get**](MetadataApi.md#v1_symbols_map_exchange_id_get) | **GET** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
 
 
 # **v1_assets_asset_id_get**
@@ -709,7 +709,7 @@ Name | Type | Description  | Notes
 # **v1_symbols_exchange_id_get**
 > List[V1Symbol] v1_symbols_exchange_id_get(exchange_id, filter_symbol_id=filter_symbol_id, filter_asset_id=filter_asset_id)
 
-List of symbols for the exchange
+List of active symbols for the exchange
 
 ### Example
 
@@ -753,7 +753,7 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
     filter_asset_id = 'filter_asset_id_example' # str | The filter for asset ID. (optional)
 
     try:
-        # List of symbols for the exchange
+        # List of active symbols for the exchange
         api_response = api_instance.v1_symbols_exchange_id_get(exchange_id, filter_symbol_id=filter_symbol_id, filter_asset_id=filter_asset_id)
         print("The response of MetadataApi->v1_symbols_exchange_id_get:\n")
         pprint(api_response)
@@ -796,7 +796,10 @@ Name | Type | Description  | Notes
 # **v1_symbols_exchange_id_history_get**
 > List[V1Symbol] v1_symbols_exchange_id_history_get(exchange_id, page=page, limit=limit)
 
-Get symbol history for an exchange with pagination.
+List all historical symbols for an exchange.
+
+This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
+The data is provided with pagination support.
 
 ### Example
 
@@ -836,11 +839,11 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
     # Create an instance of the API class
     api_instance = api_bricks_coinapi_market_data_api_rest.MetadataApi(api_client)
     exchange_id = 'exchange_id_example' # str | The ID of the exchange.
-    page = 1 # int | The page number. (optional) (default to 1)
-    limit = 100 # int | Number of records to return. (optional) (default to 100)
+    page = 1 # int | The page number for pagination (starts from 1). (optional) (default to 1)
+    limit = 100 # int | Number of records to return per page. (optional) (default to 100)
 
     try:
-        # Get symbol history for an exchange with pagination.
+        # List all historical symbols for an exchange.
         api_response = api_instance.v1_symbols_exchange_id_history_get(exchange_id, page=page, limit=limit)
         print("The response of MetadataApi->v1_symbols_exchange_id_history_get:\n")
         pprint(api_response)
@@ -856,8 +859,8 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exchange_id** | **str**| The ID of the exchange. | 
- **page** | **int**| The page number. | [optional] [default to 1]
- **limit** | **int**| Number of records to return. | [optional] [default to 100]
+ **page** | **int**| The page number for pagination (starts from 1). | [optional] [default to 1]
+ **limit** | **int**| Number of records to return per page. | [optional] [default to 100]
 
 ### Return type
 
@@ -883,9 +886,9 @@ Name | Type | Description  | Notes
 # **v1_symbols_get**
 > List[V1Symbol] v1_symbols_get(filter_symbol_id=filter_symbol_id, filter_exchange_id=filter_exchange_id, filter_asset_id=filter_asset_id)
 
-List all symbols
+List all active symbols
 
-Retrieves all symbols with optional filtering.
+Retrieves all currently active (listed) symbols, with optional filtering.
             
 :::info
 "price_precision" and "size_precision" are data precisions and are not always the same precisions used for trading eg. for the "BINANCE" exchanges.
@@ -1009,7 +1012,7 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
     filter_asset_id = 'filter_asset_id_example' # str | The filter for asset ID. (optional)
 
     try:
-        # List all symbols
+        # List all active symbols
         api_response = api_instance.v1_symbols_get(filter_symbol_id=filter_symbol_id, filter_exchange_id=filter_exchange_id, filter_asset_id=filter_asset_id)
         print("The response of MetadataApi->v1_symbols_get:\n")
         pprint(api_response)
@@ -1052,7 +1055,7 @@ Name | Type | Description  | Notes
 # **v1_symbols_map_exchange_id_get**
 > List[V1SymbolMapping] v1_symbols_map_exchange_id_get(exchange_id)
 
-List symbol mapping for the exchange
+List active symbol mapping for the exchange
 
 ### Example
 
@@ -1094,7 +1097,7 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
     exchange_id = 'exchange_id_example' # str | The ID of the exchange (from the Metadata -> Exchanges)
 
     try:
-        # List symbol mapping for the exchange
+        # List active symbol mapping for the exchange
         api_response = api_instance.v1_symbols_map_exchange_id_get(exchange_id)
         print("The response of MetadataApi->v1_symbols_map_exchange_id_get:\n")
         pprint(api_response)

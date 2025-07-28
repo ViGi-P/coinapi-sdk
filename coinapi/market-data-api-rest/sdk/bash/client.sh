@@ -994,10 +994,10 @@ read -r -d '' ops <<EOF
   ${CYAN}v1ExchangesExchangeIdGet${OFF};List all exchanges by exchange_id (AUTH) (AUTH)
   ${CYAN}v1ExchangesGet${OFF};List all exchanges (AUTH) (AUTH)
   ${CYAN}v1ExchangesIconsSizeGet${OFF};List of icons for the exchanges (AUTH) (AUTH)
-  ${CYAN}v1SymbolsExchangeIdGet${OFF};List of symbols for the exchange (AUTH) (AUTH)
-  ${CYAN}v1SymbolsExchangeIdHistoryGet${OFF};Get symbol history for an exchange with pagination. (AUTH) (AUTH)
-  ${CYAN}v1SymbolsGet${OFF};List all symbols (AUTH) (AUTH)
-  ${CYAN}v1SymbolsMapExchangeIdGet${OFF};List symbol mapping for the exchange (AUTH) (AUTH)
+  ${CYAN}v1SymbolsExchangeIdGet${OFF};List of active symbols for the exchange (AUTH) (AUTH)
+  ${CYAN}v1SymbolsExchangeIdHistoryGet${OFF};List all historical symbols for an exchange. (AUTH) (AUTH)
+  ${CYAN}v1SymbolsGet${OFF};List all active symbols (AUTH) (AUTH)
+  ${CYAN}v1SymbolsMapExchangeIdGet${OFF};List active symbol mapping for the exchange (AUTH) (AUTH)
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
@@ -1398,7 +1398,7 @@ print_v1ExchangesIconsSizeGet_help() {
 ##############################################################################
 print_v1SymbolsExchangeIdGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1SymbolsExchangeIdGet - List of symbols for the exchange${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1SymbolsExchangeIdGet - List of active symbols for the exchange${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The ID of the exchange (from the Metadata -> Exchanges) ${YELLOW}Specify as: exchange_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -1418,13 +1418,16 @@ print_v1SymbolsExchangeIdGet_help() {
 ##############################################################################
 print_v1SymbolsExchangeIdHistoryGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1SymbolsExchangeIdHistoryGet - Get symbol history for an exchange with pagination.${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1SymbolsExchangeIdHistoryGet - List all historical symbols for an exchange.${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo -e "This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
+The data is provided with pagination support." | paste -sd' ' | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The ID of the exchange. ${YELLOW}Specify as: exchange_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}page${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 1)${OFF} - The page number.${YELLOW} Specify as: page=value${OFF}" \
+    echo -e "  * ${GREEN}page${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 1)${OFF} - The page number for pagination (starts from 1).${YELLOW} Specify as: page=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Number of records to return.${YELLOW} Specify as: limit=value${OFF}" \
+    echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Number of records to return per page.${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -1438,9 +1441,9 @@ print_v1SymbolsExchangeIdHistoryGet_help() {
 ##############################################################################
 print_v1SymbolsGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1SymbolsGet - List all symbols${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1SymbolsGet - List all active symbols${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
-    echo -e "Retrieves all symbols with optional filtering.
+    echo -e "Retrieves all currently active (listed) symbols, with optional filtering.
             
 :::info
 \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges.
@@ -1541,7 +1544,7 @@ contract_id | Identifier of contract by the exchange" | paste -sd' ' | fold -sw 
 ##############################################################################
 print_v1SymbolsMapExchangeIdGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1SymbolsMapExchangeIdGet - List symbol mapping for the exchange${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1SymbolsMapExchangeIdGet - List active symbol mapping for the exchange${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The ID of the exchange (from the Metadata -> Exchanges) ${YELLOW}Specify as: exchange_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'

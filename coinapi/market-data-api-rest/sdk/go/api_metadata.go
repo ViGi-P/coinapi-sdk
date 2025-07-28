@@ -1011,7 +1011,7 @@ func (r ApiV1SymbolsExchangeIdGetRequest) Execute() ([]V1Symbol, *http.Response,
 }
 
 /*
-V1SymbolsExchangeIdGet List of symbols for the exchange
+V1SymbolsExchangeIdGet List of active symbols for the exchange
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param exchangeId The ID of the exchange (from the Metadata -> Exchanges)
@@ -1129,13 +1129,13 @@ type ApiV1SymbolsExchangeIdHistoryGetRequest struct {
 	limit *int32
 }
 
-// The page number.
+// The page number for pagination (starts from 1).
 func (r ApiV1SymbolsExchangeIdHistoryGetRequest) Page(page int32) ApiV1SymbolsExchangeIdHistoryGetRequest {
 	r.page = &page
 	return r
 }
 
-// Number of records to return.
+// Number of records to return per page.
 func (r ApiV1SymbolsExchangeIdHistoryGetRequest) Limit(limit int32) ApiV1SymbolsExchangeIdHistoryGetRequest {
 	r.limit = &limit
 	return r
@@ -1146,7 +1146,10 @@ func (r ApiV1SymbolsExchangeIdHistoryGetRequest) Execute() ([]V1Symbol, *http.Re
 }
 
 /*
-V1SymbolsExchangeIdHistoryGet Get symbol history for an exchange with pagination.
+V1SymbolsExchangeIdHistoryGet List all historical symbols for an exchange.
+
+This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
+The data is provided with pagination support.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param exchangeId The ID of the exchange.
@@ -1293,9 +1296,9 @@ func (r ApiV1SymbolsGetRequest) Execute() ([]V1Symbol, *http.Response, error) {
 }
 
 /*
-V1SymbolsGet List all symbols
+V1SymbolsGet List all active symbols
 
-Retrieves all symbols with optional filtering.
+Retrieves all currently active (listed) symbols, with optional filtering.
             
 :::info
 "price_precision" and "size_precision" are data precisions and are not always the same precisions used for trading eg. for the "BINANCE" exchanges.
@@ -1496,7 +1499,7 @@ func (r ApiV1SymbolsMapExchangeIdGetRequest) Execute() ([]V1SymbolMapping, *http
 }
 
 /*
-V1SymbolsMapExchangeIdGet List symbol mapping for the exchange
+V1SymbolsMapExchangeIdGet List active symbol mapping for the exchange
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param exchangeId The ID of the exchange (from the Metadata -> Exchanges)
