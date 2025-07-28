@@ -893,7 +893,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-07-28T06:04:14.5722987Z",
+  "time": "2025-07-28T11:24:41.2537175Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -904,7 +904,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-07-28T06:04:14.5722987Z",
+  "time": "2025-07-28T11:24:41.2537175Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -915,7 +915,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-07-28T06:04:14.5722987Z",
+  "time": "2025-07-28T11:24:41.2537175Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -926,7 +926,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-07-28T06:04:14.5722987Z",
+  "time": "2025-07-28T11:24:41.2537175Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -6136,8 +6136,8 @@ paths:
     get:
       tags:
         - Metadata
-      summary: List all symbols
-      description: "Retrieves all symbols with optional filtering.\n            \n:::info\n\"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges.\n:::\n            \n:::info\nYou should not assume that the market data will be always within the resolution provided by the \"price_precision\" and \"size_precision\". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately.\n:::\n            \n### Symbol identifier\n            \nOur symbol identifier is created using a pattern that depends on symbol type.\n            \nType | `symbol_id` pattern\n--------- | ---------\nSPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}`\nFUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}`\nOPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}`\nPERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}`\nINDEX | `{exchange_id}_IDX_{index_id}`\nCREDIT | `{exchange_id}_CRE_{asset_id_base}`\nCONTACT  | `{exchange_id}_COT_{contract_id}`\n            \n:::info\nIn the unlikely event when the \"symbol_id\" for more than one market is the same. We will append the additional term (prefixed with the \"_\") at the end of the duplicated identifiers to differentiate them.\n:::info\n            \n### Symbol types list (enumeration of `symbol_type` output variable)\n            \nType | Name | Description\n-------- | - | -----------\nSPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)*\nFUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time\nOPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date\nPERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time\nINDEX | Index | Statistical composite that measures changes in the economy or markets.\nCREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate.\nCONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*\n            \n### Additional output variables for `symbol_type = INDEX`\n            \nVariable | Description\n--------- | -----------\nindex_id | Index identifier\nindex_display_name | Human readable name of the index *(optional)*\nindex_display_description | Description of the index *(optional)*\n            \n### Additional output variables for `symbol_type = FUTURES`\n            \nVariable | Description\n--------- | -----------\nfuture_delivery_time | Predetermined time of futures contract delivery date in ISO 8601\nfuture_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)*\nfuture_contract_unit_asset | Identifier of the asset used to denominate the contract unit\n            \n### Additional output variables for `symbol_type = PERPETUAL`\n            \nVariable | Description\n--------- | -----------\nfuture_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)*\nfuture_contract_unit_asset | Identifier of the asset used to denominate the contract unit\n            \n### Additional output variables for `symbol_type = OPTION`\n            \nVariable | Description\n--------- | -----------\noption_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options\noption_strike_price | Price at which option contract can be exercised\noption_contract_unit | Base asset amount of underlying spot which single option represents\noption_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN`\noption_expiration_time | Option contract expiration time in ISO 8601\n            \n### Additional output variables for `symbol_type = CONTRACT`\n            \nVariable | Description\n--------- | -----------\ncontract_delivery_time | Predetermined time of contract delivery date in ISO 8601\ncontract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)*\ncontract_unit_asset | Identifier of the asset used to denominate the contract unit\ncontract_id | Identifier of contract by the exchange"
+      summary: List all active symbols
+      description: "Retrieves all currently active (listed) symbols, with optional filtering.\n            \n:::info\n\"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges.\n:::\n            \n:::info\nYou should not assume that the market data will be always within the resolution provided by the \"price_precision\" and \"size_precision\". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately.\n:::\n            \n### Symbol identifier\n            \nOur symbol identifier is created using a pattern that depends on symbol type.\n            \nType | `symbol_id` pattern\n--------- | ---------\nSPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}`\nFUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}`\nOPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}`\nPERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}`\nINDEX | `{exchange_id}_IDX_{index_id}`\nCREDIT | `{exchange_id}_CRE_{asset_id_base}`\nCONTACT  | `{exchange_id}_COT_{contract_id}`\n            \n:::info\nIn the unlikely event when the \"symbol_id\" for more than one market is the same. We will append the additional term (prefixed with the \"_\") at the end of the duplicated identifiers to differentiate them.\n:::info\n            \n### Symbol types list (enumeration of `symbol_type` output variable)\n            \nType | Name | Description\n-------- | - | -----------\nSPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)*\nFUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time\nOPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date\nPERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time\nINDEX | Index | Statistical composite that measures changes in the economy or markets.\nCREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate.\nCONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*\n            \n### Additional output variables for `symbol_type = INDEX`\n            \nVariable | Description\n--------- | -----------\nindex_id | Index identifier\nindex_display_name | Human readable name of the index *(optional)*\nindex_display_description | Description of the index *(optional)*\n            \n### Additional output variables for `symbol_type = FUTURES`\n            \nVariable | Description\n--------- | -----------\nfuture_delivery_time | Predetermined time of futures contract delivery date in ISO 8601\nfuture_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)*\nfuture_contract_unit_asset | Identifier of the asset used to denominate the contract unit\n            \n### Additional output variables for `symbol_type = PERPETUAL`\n            \nVariable | Description\n--------- | -----------\nfuture_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)*\nfuture_contract_unit_asset | Identifier of the asset used to denominate the contract unit\n            \n### Additional output variables for `symbol_type = OPTION`\n            \nVariable | Description\n--------- | -----------\noption_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options\noption_strike_price | Price at which option contract can be exercised\noption_contract_unit | Base asset amount of underlying spot which single option represents\noption_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN`\noption_expiration_time | Option contract expiration time in ISO 8601\n            \n### Additional output variables for `symbol_type = CONTRACT`\n            \nVariable | Description\n--------- | -----------\ncontract_delivery_time | Predetermined time of contract delivery date in ISO 8601\ncontract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)*\ncontract_unit_asset | Identifier of the asset used to denominate the contract unit\ncontract_id | Identifier of contract by the exchange"
       parameters:
         - name: filter_symbol_id
           in: query
@@ -6422,7 +6422,7 @@ paths:
     get:
       tags:
         - Metadata
-      summary: List symbol mapping for the exchange
+      summary: List active symbol mapping for the exchange
       parameters:
         - name: exchange_id
           in: path
@@ -6458,7 +6458,7 @@ paths:
     get:
       tags:
         - Metadata
-      summary: List of symbols for the exchange
+      summary: List of active symbols for the exchange
       parameters:
         - name: exchange_id
           in: path
@@ -6744,7 +6744,8 @@ paths:
     get:
       tags:
         - Metadata
-      summary: Get symbol history for an exchange with pagination.
+      summary: List all historical symbols for an exchange.
+      description: "This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.\nThe data is provided with pagination support."
       parameters:
         - name: exchange_id
           in: path
@@ -6754,14 +6755,14 @@ paths:
             type: string
         - name: page
           in: query
-          description: The page number.
+          description: The page number for pagination (starts from 1).
           schema:
             type: integer
             format: int32
             default: 1
         - name: limit
           in: query
-          description: Number of records to return.
+          description: Number of records to return per page.
           schema:
             type: integer
             format: int32
