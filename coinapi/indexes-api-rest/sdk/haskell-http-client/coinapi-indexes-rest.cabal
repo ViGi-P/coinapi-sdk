@@ -12,7 +12,7 @@ description:    .
                 .
                 OpenAPI version: 3.0.4
                 .
-                Generator version: 7.13.0
+                Generator version: 7.14.0
                 .
 category:       Web
 homepage:       https://openapi-generator.tech
@@ -66,9 +66,6 @@ library
   exposed-modules:
       CoinAPIIndexesREST
       CoinAPIIndexesREST.API
-      CoinAPIIndexesREST.API.Indexes
-      CoinAPIIndexesREST.API.Metadata
-      CoinAPIIndexesREST.API.Periods
       CoinAPIIndexesREST.Client
       CoinAPIIndexesREST.Core
       CoinAPIIndexesREST.Logging

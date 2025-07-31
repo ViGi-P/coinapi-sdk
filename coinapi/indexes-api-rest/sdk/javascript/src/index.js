@@ -13,18 +13,6 @@
 
 
 import ApiClient from './ApiClient';
-import IndexesIndexDefinitionInputData from './model/IndexesIndexDefinitionInputData';
-import IndexesIndexDefinitionSnapshotEntry from './model/IndexesIndexDefinitionSnapshotEntry';
-import IndexesIndexIdentifier from './model/IndexesIndexIdentifier';
-import IndexesIndexMultiAssetWeight from './model/IndexesIndexMultiAssetWeight';
-import IndexesIndexTimeseriesItem from './model/IndexesIndexTimeseriesItem';
-import IndexesIndexValue from './model/IndexesIndexValue';
-import IndexesIndexValueComponent from './model/IndexesIndexValueComponent';
-import MetadataExchange from './model/MetadataExchange';
-import MetadataTimeseriesPeriod from './model/MetadataTimeseriesPeriod';
-import IndexesApi from './api/IndexesApi';
-import MetadataApi from './api/MetadataApi';
-import PeriodsApi from './api/PeriodsApi';
 
 
 /**
@@ -63,77 +51,5 @@ export {
      * The ApiClient constructor.
      * @property {module:ApiClient}
      */
-    ApiClient,
-
-    /**
-     * The IndexesIndexDefinitionInputData model constructor.
-     * @property {module:model/IndexesIndexDefinitionInputData}
-     */
-    IndexesIndexDefinitionInputData,
-
-    /**
-     * The IndexesIndexDefinitionSnapshotEntry model constructor.
-     * @property {module:model/IndexesIndexDefinitionSnapshotEntry}
-     */
-    IndexesIndexDefinitionSnapshotEntry,
-
-    /**
-     * The IndexesIndexIdentifier model constructor.
-     * @property {module:model/IndexesIndexIdentifier}
-     */
-    IndexesIndexIdentifier,
-
-    /**
-     * The IndexesIndexMultiAssetWeight model constructor.
-     * @property {module:model/IndexesIndexMultiAssetWeight}
-     */
-    IndexesIndexMultiAssetWeight,
-
-    /**
-     * The IndexesIndexTimeseriesItem model constructor.
-     * @property {module:model/IndexesIndexTimeseriesItem}
-     */
-    IndexesIndexTimeseriesItem,
-
-    /**
-     * The IndexesIndexValue model constructor.
-     * @property {module:model/IndexesIndexValue}
-     */
-    IndexesIndexValue,
-
-    /**
-     * The IndexesIndexValueComponent model constructor.
-     * @property {module:model/IndexesIndexValueComponent}
-     */
-    IndexesIndexValueComponent,
-
-    /**
-     * The MetadataExchange model constructor.
-     * @property {module:model/MetadataExchange}
-     */
-    MetadataExchange,
-
-    /**
-     * The MetadataTimeseriesPeriod model constructor.
-     * @property {module:model/MetadataTimeseriesPeriod}
-     */
-    MetadataTimeseriesPeriod,
-
-    /**
-    * The IndexesApi service constructor.
-    * @property {module:api/IndexesApi}
-    */
-    IndexesApi,
-
-    /**
-    * The MetadataApi service constructor.
-    * @property {module:api/MetadataApi}
-    */
-    MetadataApi,
-
-    /**
-    * The PeriodsApi service constructor.
-    * @property {module:api/PeriodsApi}
-    */
-    PeriodsApi
+    ApiClient
 };

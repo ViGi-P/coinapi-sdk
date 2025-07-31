@@ -18,7 +18,6 @@ using System.Text.Json.Serialization;
 using System.Net.Http;
 using Microsoft.Extensions.DependencyInjection;
 using APIBricks.CoinAPI.IndexesAPI.REST.V1.Api;
-using APIBricks.CoinAPI.IndexesAPI.REST.V1.Model;
 
 namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Client
 {
@@ -44,24 +43,9 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Client
             _jsonOptions.Converters.Add(new DateTimeNullableJsonConverter());
             _jsonOptions.Converters.Add(new DateOnlyJsonConverter());
             _jsonOptions.Converters.Add(new DateOnlyNullableJsonConverter());
-            _jsonOptions.Converters.Add(new IndexesIndexDefinitionInputDataJsonConverter());
-            _jsonOptions.Converters.Add(new IndexesIndexDefinitionSnapshotEntryJsonConverter());
-            _jsonOptions.Converters.Add(new IndexesIndexIdentifierJsonConverter());
-            _jsonOptions.Converters.Add(new IndexesIndexMultiAssetWeightJsonConverter());
-            _jsonOptions.Converters.Add(new IndexesIndexTimeseriesItemJsonConverter());
-            _jsonOptions.Converters.Add(new IndexesIndexValueJsonConverter());
-            _jsonOptions.Converters.Add(new IndexesIndexValueComponentJsonConverter());
-            _jsonOptions.Converters.Add(new MetadataExchangeJsonConverter());
-            _jsonOptions.Converters.Add(new MetadataTimeseriesPeriodJsonConverter());
             JsonSerializerOptionsProvider jsonSerializerOptionsProvider = new(_jsonOptions);
             _services.AddSingleton(jsonSerializerOptionsProvider);
             _services.AddSingleton<IApiFactory, ApiFactory>();
-            _services.AddSingleton<IndexesApiEvents>();
-            _services.AddTransient<IIndexesApi, IndexesApi>();
-            _services.AddSingleton<MetadataApiEvents>();
-            _services.AddTransient<IMetadataApi, MetadataApi>();
-            _services.AddSingleton<PeriodsApiEvents>();
-            _services.AddTransient<IPeriodsApi, PeriodsApi>();
         }
 
         /// <summary>
@@ -79,9 +63,6 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Client
 
             List<IHttpClientBuilder> builders = new List<IHttpClientBuilder>();
 
-            builders.Add(_services.AddHttpClient<IIndexesApi, IndexesApi>(client));
-            builders.Add(_services.AddHttpClient<IMetadataApi, MetadataApi>(client));
-            builders.Add(_services.AddHttpClient<IPeriodsApi, PeriodsApi>(client));
             
             if (builder != null)
                 foreach (IHttpClientBuilder instance in builders)

@@ -23,17 +23,5 @@ dependencies = {
 build = {
 	type = "builtin",
 	modules = {
-		["openapiclient.api.indexes_api"] = "openapiclient/api/indexes_api.lua";
-		["openapiclient.api.metadata_api"] = "openapiclient/api/metadata_api.lua";
-		["openapiclient.api.periods_api"] = "openapiclient/api/periods_api.lua";
-		["openapiclient.model.indexes_index_definition_input_data"] = "openapiclient/model/indexes_index_definition_input_data.lua";
-		["openapiclient.model.indexes_index_definition_snapshot_entry"] = "openapiclient/model/indexes_index_definition_snapshot_entry.lua";
-		["openapiclient.model.indexes_index_identifier"] = "openapiclient/model/indexes_index_identifier.lua";
-		["openapiclient.model.indexes_index_multi_asset_weight"] = "openapiclient/model/indexes_index_multi_asset_weight.lua";
-		["openapiclient.model.indexes_index_timeseries_item"] = "openapiclient/model/indexes_index_timeseries_item.lua";
-		["openapiclient.model.indexes_index_value"] = "openapiclient/model/indexes_index_value.lua";
-		["openapiclient.model.indexes_index_value_component"] = "openapiclient/model/indexes_index_value_component.lua";
-		["openapiclient.model.metadata_exchange"] = "openapiclient/model/metadata_exchange.lua";
-		["openapiclient.model.metadata_timeseries_period"] = "openapiclient/model/metadata_timeseries_period.lua";
 	}
 }

@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using KellermanSoftware.CompareNetObjects;
-using APIBricks.CoinAPI.IndexesAPI.REST.V1.Model;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("APIBricks.CoinAPI.IndexesAPI.REST.V1.Test")]

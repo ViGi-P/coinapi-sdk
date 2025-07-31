@@ -48,18 +48,6 @@ set(SRCS
     src/binary.c
     external/cJSON.c
     model/object.c
-    model/indexes_index_definition_input_data.c
-    model/indexes_index_definition_snapshot_entry.c
-    model/indexes_index_identifier.c
-    model/indexes_index_multi_asset_weight.c
-    model/indexes_index_timeseries_item.c
-    model/indexes_index_value.c
-    model/indexes_index_value_component.c
-    model/metadata_exchange.c
-    model/metadata_timeseries_period.c
-    api/IndexesAPI.c
-    api/MetadataAPI.c
-    api/PeriodsAPI.c
 
 )
 
@@ -71,18 +59,6 @@ set(HDRS
     external/cJSON.h
     model/object.h
     model/any_type.h
-    model/indexes_index_definition_input_data.h
-    model/indexes_index_definition_snapshot_entry.h
-    model/indexes_index_identifier.h
-    model/indexes_index_multi_asset_weight.h
-    model/indexes_index_timeseries_item.h
-    model/indexes_index_value.h
-    model/indexes_index_value_component.h
-    model/metadata_exchange.h
-    model/metadata_timeseries_period.h
-    api/IndexesAPI.h
-    api/MetadataAPI.h
-    api/PeriodsAPI.h
 
 )
 
@@ -164,9 +140,6 @@ set(HDRS "")
 ## This section shows how to use the above compiled library to compile the source files
 ## set source files
 #set(SRCS
-#    unit-tests/manual-IndexesAPI.c
-#    unit-tests/manual-MetadataAPI.c
-#    unit-tests/manual-PeriodsAPI.c
 #)
 
 ##set header files

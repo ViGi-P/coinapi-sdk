@@ -202,25 +202,3 @@ instance MimeUnrender MimeOctetStream String where mimeUnrender _ = P.Right . BC
 instance MimeUnrender MimeNoContent NoContent where mimeUnrender _ = P.Right . P.const NoContent
 
 
--- * Custom Mime Types
-
--- ** MimeXMsgpack
-
-data MimeXMsgpack = MimeXMsgpack deriving (P.Typeable)
-
--- | @application/x-msgpack@
-instance MimeType MimeXMsgpack where
-  mimeType _ = Just $ P.fromString "application/x-msgpack"
--- instance MimeRender MimeXMsgpack T.Text where mimeRender _ = undefined
--- instance MimeUnrender MimeXMsgpack T.Text where mimeUnrender _ = undefined
-
--- ** MimeTextJson
-
-data MimeTextJson = MimeTextJson deriving (P.Typeable)
-
--- | @text/json@
-instance MimeType MimeTextJson where
-  mimeType _ = Just $ P.fromString "text/json"
--- instance MimeRender MimeTextJson T.Text where mimeRender _ = undefined
--- instance MimeUnrender MimeTextJson T.Text where mimeUnrender _ = undefined
-

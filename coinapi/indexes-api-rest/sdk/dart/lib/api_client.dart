@@ -182,24 +182,6 @@ class ApiClient {
           return valueString == 'true' || valueString == '1';
         case 'DateTime':
           return value is DateTime ? value : DateTime.tryParse(value);
-        case 'IndexesIndexDefinitionInputData':
-          return IndexesIndexDefinitionInputData.fromJson(value);
-        case 'IndexesIndexDefinitionSnapshotEntry':
-          return IndexesIndexDefinitionSnapshotEntry.fromJson(value);
-        case 'IndexesIndexIdentifier':
-          return IndexesIndexIdentifier.fromJson(value);
-        case 'IndexesIndexMultiAssetWeight':
-          return IndexesIndexMultiAssetWeight.fromJson(value);
-        case 'IndexesIndexTimeseriesItem':
-          return IndexesIndexTimeseriesItem.fromJson(value);
-        case 'IndexesIndexValue':
-          return IndexesIndexValue.fromJson(value);
-        case 'IndexesIndexValueComponent':
-          return IndexesIndexValueComponent.fromJson(value);
-        case 'MetadataExchange':
-          return MetadataExchange.fromJson(value);
-        case 'MetadataTimeseriesPeriod':
-          return MetadataTimeseriesPeriod.fromJson(value);
         default:
           dynamic match;
           if (value is List && (match = _regList.firstMatch(targetType)?.group(1)) != null) {
