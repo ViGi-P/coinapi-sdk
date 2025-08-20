@@ -625,7 +625,7 @@ class V1TimeseriesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets volume_traded
      *
-     * @param float|null $volume_traded The total volume traded during the time period.
+     * @param float|null $volume_traded The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
      *
      * @return self
      */
@@ -652,7 +652,7 @@ class V1TimeseriesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets trades_count
      *
-     * @param int|null $trades_count The number of trades executed during the time period.
+     * @param int|null $trades_count The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
      *
      * @return self
      */

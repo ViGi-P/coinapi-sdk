@@ -616,7 +616,6 @@ class OhlcvApi:
         time_start: Annotated[Optional[StrictStr], Field(description="Timeseries starting time in ISO 8601")] = None,
         time_end: Annotated[Optional[StrictStr], Field(description="Timeseries ending time in ISO 8601")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
-        include_empty_items: Annotated[Optional[StrictBool], Field(description="Include items with no activity? (default value is `false`, possible values are `true` or `false`)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -644,8 +643,6 @@ class OhlcvApi:
         :type time_end: str
         :param limit: Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
-        :param include_empty_items: Include items with no activity? (default value is `false`, possible values are `true` or `false`)
-        :type include_empty_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -674,7 +671,6 @@ class OhlcvApi:
             time_start=time_start,
             time_end=time_end,
             limit=limit,
-            include_empty_items=include_empty_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -703,7 +699,6 @@ class OhlcvApi:
         time_start: Annotated[Optional[StrictStr], Field(description="Timeseries starting time in ISO 8601")] = None,
         time_end: Annotated[Optional[StrictStr], Field(description="Timeseries ending time in ISO 8601")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
-        include_empty_items: Annotated[Optional[StrictBool], Field(description="Include items with no activity? (default value is `false`, possible values are `true` or `false`)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -731,8 +726,6 @@ class OhlcvApi:
         :type time_end: str
         :param limit: Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
-        :param include_empty_items: Include items with no activity? (default value is `false`, possible values are `true` or `false`)
-        :type include_empty_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -761,7 +754,6 @@ class OhlcvApi:
             time_start=time_start,
             time_end=time_end,
             limit=limit,
-            include_empty_items=include_empty_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -790,7 +782,6 @@ class OhlcvApi:
         time_start: Annotated[Optional[StrictStr], Field(description="Timeseries starting time in ISO 8601")] = None,
         time_end: Annotated[Optional[StrictStr], Field(description="Timeseries ending time in ISO 8601")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
-        include_empty_items: Annotated[Optional[StrictBool], Field(description="Include items with no activity? (default value is `false`, possible values are `true` or `false`)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -818,8 +809,6 @@ class OhlcvApi:
         :type time_end: str
         :param limit: Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
-        :param include_empty_items: Include items with no activity? (default value is `false`, possible values are `true` or `false`)
-        :type include_empty_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -848,7 +837,6 @@ class OhlcvApi:
             time_start=time_start,
             time_end=time_end,
             limit=limit,
-            include_empty_items=include_empty_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -872,7 +860,6 @@ class OhlcvApi:
         time_start,
         time_end,
         limit,
-        include_empty_items,
         _request_auth,
         _content_type,
         _headers,
@@ -912,10 +899,6 @@ class OhlcvApi:
         if limit is not None:
             
             _query_params.append(('limit', limit))
-            
-        if include_empty_items is not None:
-            
-            _query_params.append(('include_empty_items', include_empty_items))
             
         # process the header parameters
         # process the form parameters
@@ -964,7 +947,7 @@ class OhlcvApi:
         symbol_id: Annotated[StrictStr, Field(description="Symbol identifier of requested timeseries (from the Metadata -> Symbols)")],
         period_id: Annotated[StrictStr, Field(description="Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)")],
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
-        include_empty_items: Annotated[Optional[StrictBool], Field(description="Include items with no activity? (default value is `false`, possible values are `true` or `false`)")] = None,
+        include_empty_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -988,7 +971,7 @@ class OhlcvApi:
         :type period_id: str
         :param limit: Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
-        :param include_empty_items: Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+        :param include_empty_items:
         :type include_empty_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1043,7 +1026,7 @@ class OhlcvApi:
         symbol_id: Annotated[StrictStr, Field(description="Symbol identifier of requested timeseries (from the Metadata -> Symbols)")],
         period_id: Annotated[StrictStr, Field(description="Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)")],
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
-        include_empty_items: Annotated[Optional[StrictBool], Field(description="Include items with no activity? (default value is `false`, possible values are `true` or `false`)")] = None,
+        include_empty_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1067,7 +1050,7 @@ class OhlcvApi:
         :type period_id: str
         :param limit: Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
-        :param include_empty_items: Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+        :param include_empty_items:
         :type include_empty_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1122,7 +1105,7 @@ class OhlcvApi:
         symbol_id: Annotated[StrictStr, Field(description="Symbol identifier of requested timeseries (from the Metadata -> Symbols)")],
         period_id: Annotated[StrictStr, Field(description="Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)")],
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
-        include_empty_items: Annotated[Optional[StrictBool], Field(description="Include items with no activity? (default value is `false`, possible values are `true` or `false`)")] = None,
+        include_empty_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1146,7 +1129,7 @@ class OhlcvApi:
         :type period_id: str
         :param limit: Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
-        :param include_empty_items: Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+        :param include_empty_items:
         :type include_empty_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

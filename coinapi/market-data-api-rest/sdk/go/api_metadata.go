@@ -986,7 +986,7 @@ func (a *MetadataAPIService) V1ExchangesIconsSizeGetExecute(r ApiV1ExchangesIcon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiV1SymbolsExchangeIdGetRequest struct {
+type ApiV1SymbolsExchangeIdActiveGetRequest struct {
 	ctx context.Context
 	ApiService *MetadataAPIService
 	exchangeId string
@@ -994,31 +994,113 @@ type ApiV1SymbolsExchangeIdGetRequest struct {
 	filterAssetId *string
 }
 
-// The filter for symbol ID.
-func (r ApiV1SymbolsExchangeIdGetRequest) FilterSymbolId(filterSymbolId string) ApiV1SymbolsExchangeIdGetRequest {
+// Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;)
+func (r ApiV1SymbolsExchangeIdActiveGetRequest) FilterSymbolId(filterSymbolId string) ApiV1SymbolsExchangeIdActiveGetRequest {
 	r.filterSymbolId = &filterSymbolId
 	return r
 }
 
 // The filter for asset ID.
-func (r ApiV1SymbolsExchangeIdGetRequest) FilterAssetId(filterAssetId string) ApiV1SymbolsExchangeIdGetRequest {
+func (r ApiV1SymbolsExchangeIdActiveGetRequest) FilterAssetId(filterAssetId string) ApiV1SymbolsExchangeIdActiveGetRequest {
 	r.filterAssetId = &filterAssetId
 	return r
 }
 
-func (r ApiV1SymbolsExchangeIdGetRequest) Execute() ([]V1Symbol, *http.Response, error) {
-	return r.ApiService.V1SymbolsExchangeIdGetExecute(r)
+func (r ApiV1SymbolsExchangeIdActiveGetRequest) Execute() ([]V1Symbol, *http.Response, error) {
+	return r.ApiService.V1SymbolsExchangeIdActiveGetExecute(r)
 }
 
 /*
-V1SymbolsExchangeIdGet List of active symbols for the exchange
+V1SymbolsExchangeIdActiveGet List all active symbols
+
+Retrieves all currently active (listed) symbols, with optional filtering.
+            
+:::info
+"price_precision" and "size_precision" are data precisions and are not always the same precisions used for trading eg. for the "BINANCE" exchanges.
+:::
+            
+:::info
+You should not assume that the market data will be always within the resolution provided by the "price_precision" and "size_precision". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately.
+:::
+            
+### Symbol identifier
+            
+Our symbol identifier is created using a pattern that depends on symbol type.
+            
+Type | `symbol_id` pattern
+--------- | ---------
+SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}`
+FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}`
+OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}`
+PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}`
+INDEX | `{exchange_id}_IDX_{index_id}`
+CREDIT | `{exchange_id}_CRE_{asset_id_base}`
+CONTACT  | `{exchange_id}_COT_{contract_id}`
+            
+:::info
+In the unlikely event when the "symbol_id" for more than one market is the same. We will append the additional term (prefixed with the "_") at the end of the duplicated identifiers to differentiate them.
+:::info
+            
+### Symbol types list (enumeration of `symbol_type` output variable)
+            
+Type | Name | Description
+-------- | - | -----------
+SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)*
+FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time
+OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date
+PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time
+INDEX | Index | Statistical composite that measures changes in the economy or markets.
+CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate.
+CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*
+            
+### Additional output variables for `symbol_type = INDEX`
+            
+Variable | Description
+--------- | -----------
+index_id | Index identifier
+index_display_name | Human readable name of the index *(optional)*
+index_display_description | Description of the index *(optional)*
+            
+### Additional output variables for `symbol_type = FUTURES`
+            
+Variable | Description
+--------- | -----------
+future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601
+future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)*
+future_contract_unit_asset | Identifier of the asset used to denominate the contract unit
+            
+### Additional output variables for `symbol_type = PERPETUAL`
+            
+Variable | Description
+--------- | -----------
+future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)*
+future_contract_unit_asset | Identifier of the asset used to denominate the contract unit
+            
+### Additional output variables for `symbol_type = OPTION`
+            
+Variable | Description
+--------- | -----------
+option_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options
+option_strike_price | Price at which option contract can be exercised
+option_contract_unit | Base asset amount of underlying spot which single option represents
+option_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN`
+option_expiration_time | Option contract expiration time in ISO 8601
+            
+### Additional output variables for `symbol_type = CONTRACT`
+            
+Variable | Description
+--------- | -----------
+contract_delivery_time | Predetermined time of contract delivery date in ISO 8601
+contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)*
+contract_unit_asset | Identifier of the asset used to denominate the contract unit
+contract_id | Identifier of contract by the exchange
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param exchangeId The ID of the exchange (from the Metadata -> Exchanges)
- @return ApiV1SymbolsExchangeIdGetRequest
+ @param exchangeId The ID of the exchange.
+ @return ApiV1SymbolsExchangeIdActiveGetRequest
 */
-func (a *MetadataAPIService) V1SymbolsExchangeIdGet(ctx context.Context, exchangeId string) ApiV1SymbolsExchangeIdGetRequest {
-	return ApiV1SymbolsExchangeIdGetRequest{
+func (a *MetadataAPIService) V1SymbolsExchangeIdActiveGet(ctx context.Context, exchangeId string) ApiV1SymbolsExchangeIdActiveGetRequest {
+	return ApiV1SymbolsExchangeIdActiveGetRequest{
 		ApiService: a,
 		ctx: ctx,
 		exchangeId: exchangeId,
@@ -1027,7 +1109,7 @@ func (a *MetadataAPIService) V1SymbolsExchangeIdGet(ctx context.Context, exchang
 
 // Execute executes the request
 //  @return []V1Symbol
-func (a *MetadataAPIService) V1SymbolsExchangeIdGetExecute(r ApiV1SymbolsExchangeIdGetRequest) ([]V1Symbol, *http.Response, error) {
+func (a *MetadataAPIService) V1SymbolsExchangeIdActiveGetExecute(r ApiV1SymbolsExchangeIdActiveGetRequest) ([]V1Symbol, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -1035,12 +1117,12 @@ func (a *MetadataAPIService) V1SymbolsExchangeIdGetExecute(r ApiV1SymbolsExchang
 		localVarReturnValue  []V1Symbol
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.V1SymbolsExchangeIdGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.V1SymbolsExchangeIdActiveGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/symbols/{exchange_id}"
+	localVarPath := localBasePath + "/v1/symbols/{exchange_id}/active"
 	localVarPath = strings.Replace(localVarPath, "{"+"exchange_id"+"}", url.PathEscape(parameterValueToString(r.exchangeId, "exchangeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -1196,229 +1278,6 @@ func (a *MetadataAPIService) V1SymbolsExchangeIdHistoryGetExecute(r ApiV1Symbols
 	} else {
 		var defaultValue int32 = 100
 		r.limit = &defaultValue
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json", "application/x-msgpack"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.ctx != nil {
-		// API Key Authentication
-		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
-			if apiKey, ok := auth["APIKey"]; ok {
-				var key string
-				if apiKey.Prefix != "" {
-					key = apiKey.Prefix + " " + apiKey.Key
-				} else {
-					key = apiKey.Key
-				}
-				localVarHeaderParams["Authorization"] = key
-			}
-		}
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiV1SymbolsGetRequest struct {
-	ctx context.Context
-	ApiService *MetadataAPIService
-	filterSymbolId *string
-	filterExchangeId *string
-	filterAssetId *string
-}
-
-// Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;)
-func (r ApiV1SymbolsGetRequest) FilterSymbolId(filterSymbolId string) ApiV1SymbolsGetRequest {
-	r.filterSymbolId = &filterSymbolId
-	return r
-}
-
-// The filter for exchange ID.
-func (r ApiV1SymbolsGetRequest) FilterExchangeId(filterExchangeId string) ApiV1SymbolsGetRequest {
-	r.filterExchangeId = &filterExchangeId
-	return r
-}
-
-// The filter for asset ID.
-func (r ApiV1SymbolsGetRequest) FilterAssetId(filterAssetId string) ApiV1SymbolsGetRequest {
-	r.filterAssetId = &filterAssetId
-	return r
-}
-
-func (r ApiV1SymbolsGetRequest) Execute() ([]V1Symbol, *http.Response, error) {
-	return r.ApiService.V1SymbolsGetExecute(r)
-}
-
-/*
-V1SymbolsGet List all active symbols
-
-Retrieves all currently active (listed) symbols, with optional filtering.
-            
-:::info
-"price_precision" and "size_precision" are data precisions and are not always the same precisions used for trading eg. for the "BINANCE" exchanges.
-:::
-            
-:::info
-You should not assume that the market data will be always within the resolution provided by the "price_precision" and "size_precision". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately.
-:::
-            
-### Symbol identifier
-            
-Our symbol identifier is created using a pattern that depends on symbol type.
-            
-Type | `symbol_id` pattern
---------- | ---------
-SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}`
-FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}`
-OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}`
-PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}`
-INDEX | `{exchange_id}_IDX_{index_id}`
-CREDIT | `{exchange_id}_CRE_{asset_id_base}`
-CONTACT  | `{exchange_id}_COT_{contract_id}`
-            
-:::info
-In the unlikely event when the "symbol_id" for more than one market is the same. We will append the additional term (prefixed with the "_") at the end of the duplicated identifiers to differentiate them.
-:::info
-            
-### Symbol types list (enumeration of `symbol_type` output variable)
-            
-Type | Name | Description
--------- | - | -----------
-SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)*
-FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time
-OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date
-PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time
-INDEX | Index | Statistical composite that measures changes in the economy or markets.
-CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate.
-CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*
-            
-### Additional output variables for `symbol_type = INDEX`
-            
-Variable | Description
---------- | -----------
-index_id | Index identifier
-index_display_name | Human readable name of the index *(optional)*
-index_display_description | Description of the index *(optional)*
-            
-### Additional output variables for `symbol_type = FUTURES`
-            
-Variable | Description
---------- | -----------
-future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601
-future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)*
-future_contract_unit_asset | Identifier of the asset used to denominate the contract unit
-            
-### Additional output variables for `symbol_type = PERPETUAL`
-            
-Variable | Description
---------- | -----------
-future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)*
-future_contract_unit_asset | Identifier of the asset used to denominate the contract unit
-            
-### Additional output variables for `symbol_type = OPTION`
-            
-Variable | Description
---------- | -----------
-option_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options
-option_strike_price | Price at which option contract can be exercised
-option_contract_unit | Base asset amount of underlying spot which single option represents
-option_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN`
-option_expiration_time | Option contract expiration time in ISO 8601
-            
-### Additional output variables for `symbol_type = CONTRACT`
-            
-Variable | Description
---------- | -----------
-contract_delivery_time | Predetermined time of contract delivery date in ISO 8601
-contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)*
-contract_unit_asset | Identifier of the asset used to denominate the contract unit
-contract_id | Identifier of contract by the exchange
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiV1SymbolsGetRequest
-*/
-func (a *MetadataAPIService) V1SymbolsGet(ctx context.Context) ApiV1SymbolsGetRequest {
-	return ApiV1SymbolsGetRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return []V1Symbol
-func (a *MetadataAPIService) V1SymbolsGetExecute(r ApiV1SymbolsGetRequest) ([]V1Symbol, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []V1Symbol
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetadataAPIService.V1SymbolsGet")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/symbols"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.filterSymbolId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter_symbol_id", r.filterSymbolId, "form", "")
-	}
-	if r.filterExchangeId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter_exchange_id", r.filterExchangeId, "form", "")
-	}
-	if r.filterAssetId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter_asset_id", r.filterAssetId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

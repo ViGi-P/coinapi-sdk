@@ -12,9 +12,8 @@ Method | HTTP request | Description
 [**V1ExchangesExchangeIdGet**](MetadataAPI.md#V1ExchangesExchangeIdGet) | **Get** /v1/exchanges/{exchange_id} | List all exchanges by exchange_id
 [**V1ExchangesGet**](MetadataAPI.md#V1ExchangesGet) | **Get** /v1/exchanges | List all exchanges
 [**V1ExchangesIconsSizeGet**](MetadataAPI.md#V1ExchangesIconsSizeGet) | **Get** /v1/exchanges/icons/{size} | List of icons for the exchanges
-[**V1SymbolsExchangeIdGet**](MetadataAPI.md#V1SymbolsExchangeIdGet) | **Get** /v1/symbols/{exchange_id} | List of active symbols for the exchange
+[**V1SymbolsExchangeIdActiveGet**](MetadataAPI.md#V1SymbolsExchangeIdActiveGet) | **Get** /v1/symbols/{exchange_id}/active | List all active symbols
 [**V1SymbolsExchangeIdHistoryGet**](MetadataAPI.md#V1SymbolsExchangeIdHistoryGet) | **Get** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
-[**V1SymbolsGet**](MetadataAPI.md#V1SymbolsGet) | **Get** /v1/symbols | List all active symbols
 [**V1SymbolsMapExchangeIdGet**](MetadataAPI.md#V1SymbolsMapExchangeIdGet) | **Get** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
 
 
@@ -559,11 +558,13 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## V1SymbolsExchangeIdGet
+## V1SymbolsExchangeIdActiveGet
 
-> []V1Symbol V1SymbolsExchangeIdGet(ctx, exchangeId).FilterSymbolId(filterSymbolId).FilterAssetId(filterAssetId).Execute()
+> []V1Symbol V1SymbolsExchangeIdActiveGet(ctx, exchangeId).FilterSymbolId(filterSymbolId).FilterAssetId(filterAssetId).Execute()
 
-List of active symbols for the exchange
+List all active symbols
+
+
 
 ### Example
 
@@ -578,19 +579,19 @@ import (
 )
 
 func main() {
-	exchangeId := "exchangeId_example" // string | The ID of the exchange (from the Metadata -> Exchanges)
-	filterSymbolId := "filterSymbolId_example" // string | The filter for symbol ID. (optional)
+	exchangeId := "exchangeId_example" // string | The ID of the exchange.
+	filterSymbolId := "filterSymbolId_example" // string | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`) (optional)
 	filterAssetId := "filterAssetId_example" // string | The filter for asset ID. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetadataAPI.V1SymbolsExchangeIdGet(context.Background(), exchangeId).FilterSymbolId(filterSymbolId).FilterAssetId(filterAssetId).Execute()
+	resp, r, err := apiClient.MetadataAPI.V1SymbolsExchangeIdActiveGet(context.Background(), exchangeId).FilterSymbolId(filterSymbolId).FilterAssetId(filterAssetId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1SymbolsExchangeIdGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1SymbolsExchangeIdActiveGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1SymbolsExchangeIdGet`: []V1Symbol
-	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1SymbolsExchangeIdGet`: %v\n", resp)
+	// response from `V1SymbolsExchangeIdActiveGet`: []V1Symbol
+	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1SymbolsExchangeIdActiveGet`: %v\n", resp)
 }
 ```
 
@@ -600,17 +601,17 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**exchangeId** | **string** | The ID of the exchange (from the Metadata -&gt; Exchanges) | 
+**exchangeId** | **string** | The ID of the exchange. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV1SymbolsExchangeIdGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiV1SymbolsExchangeIdActiveGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **filterSymbolId** | **string** | The filter for symbol ID. | 
+ **filterSymbolId** | **string** | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) | 
  **filterAssetId** | **string** | The filter for asset ID. | 
 
 ### Return type
@@ -686,76 +687,6 @@ Name | Type | Description  | Notes
 
  **page** | **int32** | The page number for pagination (starts from 1). | [default to 1]
  **limit** | **int32** | Number of records to return per page. | [default to 100]
-
-### Return type
-
-[**[]V1Symbol**](V1Symbol.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## V1SymbolsGet
-
-> []V1Symbol V1SymbolsGet(ctx).FilterSymbolId(filterSymbolId).FilterExchangeId(filterExchangeId).FilterAssetId(filterAssetId).Execute()
-
-List all active symbols
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
-)
-
-func main() {
-	filterSymbolId := "filterSymbolId_example" // string | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`) (optional)
-	filterExchangeId := "filterExchangeId_example" // string | The filter for exchange ID. (optional)
-	filterAssetId := "filterAssetId_example" // string | The filter for asset ID. (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetadataAPI.V1SymbolsGet(context.Background()).FilterSymbolId(filterSymbolId).FilterExchangeId(filterExchangeId).FilterAssetId(filterAssetId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1SymbolsGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `V1SymbolsGet`: []V1Symbol
-	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.V1SymbolsGet`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiV1SymbolsGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filterSymbolId** | **string** | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) | 
- **filterExchangeId** | **string** | The filter for exchange ID. | 
- **filterAssetId** | **string** | The filter for asset ID. | 
 
 ### Return type
 

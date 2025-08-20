@@ -204,7 +204,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_ohlcv_symbol_id_history_get**
-> List[V1TimeseriesItem] v1_ohlcv_symbol_id_history_get(symbol_id, period_id, time_start=time_start, time_end=time_end, limit=limit, include_empty_items=include_empty_items)
+> List[V1TimeseriesItem] v1_ohlcv_symbol_id_history_get(symbol_id, period_id, time_start=time_start, time_end=time_end, limit=limit)
 
 Historical data
 
@@ -256,11 +256,10 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
     time_start = 'time_start_example' # str | Timeseries starting time in ISO 8601 (optional)
     time_end = 'time_end_example' # str | Timeseries ending time in ISO 8601 (optional)
     limit = 100 # int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
-    include_empty_items = False # bool | Include items with no activity? (default value is `false`, possible values are `true` or `false`) (optional) (default to False)
 
     try:
         # Historical data
-        api_response = api_instance.v1_ohlcv_symbol_id_history_get(symbol_id, period_id, time_start=time_start, time_end=time_end, limit=limit, include_empty_items=include_empty_items)
+        api_response = api_instance.v1_ohlcv_symbol_id_history_get(symbol_id, period_id, time_start=time_start, time_end=time_end, limit=limit)
         print("The response of OhlcvApi->v1_ohlcv_symbol_id_history_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -279,7 +278,6 @@ Name | Type | Description  | Notes
  **time_start** | **str**| Timeseries starting time in ISO 8601 | [optional] 
  **time_end** | **str**| Timeseries ending time in ISO 8601 | [optional] 
  **limit** | **int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **include_empty_items** | **bool**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to False]
 
 ### Return type
 
@@ -354,7 +352,7 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
     symbol_id = 'symbol_id_example' # str | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
     period_id = 'period_id_example' # str | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
     limit = 100 # int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
-    include_empty_items = False # bool | Include items with no activity? (default value is `false`, possible values are `true` or `false`) (optional) (default to False)
+    include_empty_items = False # bool |  (optional) (default to False)
 
     try:
         # Latest data
@@ -375,7 +373,7 @@ Name | Type | Description  | Notes
  **symbol_id** | **str**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | 
  **period_id** | **str**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | 
  **limit** | **int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **include_empty_items** | **bool**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to False]
+ **include_empty_items** | **bool**|  | [optional] [default to False]
 
 ### Return type
 

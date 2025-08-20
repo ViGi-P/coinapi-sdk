@@ -150,7 +150,7 @@ Other parameters are passed through a pointer to a apiV1OhlcvPeriodsGetRequest s
 
 ## V1OhlcvSymbolIdHistoryGet
 
-> []V1TimeseriesItem V1OhlcvSymbolIdHistoryGet(ctx, symbolId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).IncludeEmptyItems(includeEmptyItems).Execute()
+> []V1TimeseriesItem V1OhlcvSymbolIdHistoryGet(ctx, symbolId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).Execute()
 
 Historical data
 
@@ -174,11 +174,10 @@ func main() {
 	timeStart := "timeStart_example" // string | Timeseries starting time in ISO 8601 (optional)
 	timeEnd := "timeEnd_example" // string | Timeseries ending time in ISO 8601 (optional)
 	limit := int32(56) // int32 | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
-	includeEmptyItems := true // bool | Include items with no activity? (default value is `false`, possible values are `true` or `false`) (optional) (default to false)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OhlcvAPI.V1OhlcvSymbolIdHistoryGet(context.Background(), symbolId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).IncludeEmptyItems(includeEmptyItems).Execute()
+	resp, r, err := apiClient.OhlcvAPI.V1OhlcvSymbolIdHistoryGet(context.Background(), symbolId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OhlcvAPI.V1OhlcvSymbolIdHistoryGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -208,7 +207,6 @@ Name | Type | Description  | Notes
  **timeStart** | **string** | Timeseries starting time in ISO 8601 | 
  **timeEnd** | **string** | Timeseries ending time in ISO 8601 | 
  **limit** | **int32** | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [default to 100]
- **includeEmptyItems** | **bool** | Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [default to false]
 
 ### Return type
 
@@ -252,7 +250,7 @@ func main() {
 	symbolId := "symbolId_example" // string | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 	periodId := "periodId_example" // string | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 	limit := int32(56) // int32 | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
-	includeEmptyItems := true // bool | Include items with no activity? (default value is `false`, possible values are `true` or `false`) (optional) (default to false)
+	includeEmptyItems := true // bool |  (optional) (default to false)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -284,7 +282,7 @@ Name | Type | Description  | Notes
 
  **periodId** | **string** | Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | 
  **limit** | **int32** | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [default to 100]
- **includeEmptyItems** | **bool** | Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [default to false]
+ **includeEmptyItems** | **bool** |  | [default to false]
 
 ### Return type
 

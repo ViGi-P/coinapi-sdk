@@ -67,7 +67,6 @@ describe 'OhlcvApi' do
   # @option opts [String] :time_start Timeseries starting time in ISO 8601
   # @option opts [String] :time_end Timeseries ending time in ISO 8601
   # @option opts [Integer] :limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  # @option opts [Boolean] :include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;)
   # @return [Array<V1TimeseriesItem>]
   describe 'v1_ohlcv_symbol_id_history_get test' do
     it 'should work' do
@@ -82,7 +81,7 @@ describe 'OhlcvApi' do
   # @param period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  # @option opts [Boolean] :include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;)
+  # @option opts [Boolean] :include_empty_items 
   # @return [Array<V1TimeseriesItem>]
   describe 'v1_ohlcv_symbol_id_latest_get test' do
     it 'should work' do

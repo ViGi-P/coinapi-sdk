@@ -71,12 +71,10 @@ Method | HTTP request | Description
 *v1ExchangesGetASync* | *GET* /v1/exchanges | List all exchanges.
 *v1ExchangesIconsSizeGetSync* | *GET* /v1/exchanges/icons/{size} | List of icons for the exchanges.
 *v1ExchangesIconsSizeGetASync* | *GET* /v1/exchanges/icons/{size} | List of icons for the exchanges.
-*v1SymbolsExchangeIdGetSync* | *GET* /v1/symbols/{exchange_id} | List of active symbols for the exchange.
-*v1SymbolsExchangeIdGetASync* | *GET* /v1/symbols/{exchange_id} | List of active symbols for the exchange.
+*v1SymbolsExchangeIdActiveGetSync* | *GET* /v1/symbols/{exchange_id}/active | List all active symbols.
+*v1SymbolsExchangeIdActiveGetASync* | *GET* /v1/symbols/{exchange_id}/active | List all active symbols.
 *v1SymbolsExchangeIdHistoryGetSync* | *GET* /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange..
 *v1SymbolsExchangeIdHistoryGetASync* | *GET* /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange..
-*v1SymbolsGetSync* | *GET* /v1/symbols | List all active symbols.
-*v1SymbolsGetASync* | *GET* /v1/symbols | List all active symbols.
 *v1SymbolsMapExchangeIdGetSync* | *GET* /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange.
 *v1SymbolsMapExchangeIdGetASync* | *GET* /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange.
 

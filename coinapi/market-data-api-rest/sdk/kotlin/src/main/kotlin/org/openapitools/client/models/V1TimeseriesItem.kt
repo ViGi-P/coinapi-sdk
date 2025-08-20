@@ -30,8 +30,8 @@ import com.squareup.moshi.JsonClass
  * @param priceHigh The highest price during the time period.
  * @param priceLow The lowest price during the time period.
  * @param priceClose The closing price.
- * @param volumeTraded The total volume traded during the time period.
- * @param tradesCount The number of trades executed during the time period.
+ * @param volumeTraded The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+ * @param tradesCount The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
  */
 
 
@@ -69,11 +69,11 @@ data class V1TimeseriesItem (
     @Json(name = "price_close")
     val priceClose: kotlin.Double? = null,
 
-    /* The total volume traded during the time period. */
+    /* The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. */
     @Json(name = "volume_traded")
     val volumeTraded: kotlin.Double? = null,
 
-    /* The number of trades executed during the time period. */
+    /* The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. */
     @Json(name = "trades_count")
     val tradesCount: kotlin.Long? = null
 

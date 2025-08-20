@@ -1203,7 +1203,7 @@ bool MetadataManager::v1ExchangesIconsSizeGetSync(char * accessToken,
 	handler, userData, false);
 }
 
-static bool v1SymbolsExchangeIdGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
+static bool v1SymbolsExchangeIdActiveGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
 	void(* handler)(std::list<V1.Symbol>, Error, void* )
@@ -1250,7 +1250,7 @@ static bool v1SymbolsExchangeIdGetProcessor(MemoryStruct_s p_chunk, long code, c
 			}
 }
 
-static bool v1SymbolsExchangeIdGetHelper(char * accessToken,
+static bool v1SymbolsExchangeIdActiveGetHelper(char * accessToken,
 	std::string exchangeId, std::string filterSymbolId, std::string filterAssetId, 
 	void(* handler)(std::list<V1.Symbol>, Error, void* )
 	, void* userData, bool isAsync)
@@ -1286,7 +1286,7 @@ static bool v1SymbolsExchangeIdGetHelper(char * accessToken,
 	JsonNode* node;
 	JsonArray* json_array;
 
-	string url("/v1/symbols/{exchange_id}");
+	string url("/v1/symbols/{exchange_id}/active");
 	int pos;
 
 	string s_exchangeId("{");
@@ -1311,7 +1311,7 @@ static bool v1SymbolsExchangeIdGetHelper(char * accessToken,
 	if(!isAsync){
 		NetClient::easycurl(MetadataManager::getBasePath(), url, myhttpmethod, queryParams,
 			mBody, headerList, p_chunk, &code, errormsg);
-		bool retval = v1SymbolsExchangeIdGetProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
+		bool retval = v1SymbolsExchangeIdActiveGetProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
 
 		curl_slist_free_all(headerList);
 		if (p_chunk) {
@@ -1329,7 +1329,7 @@ static bool v1SymbolsExchangeIdGetHelper(char * accessToken,
 		RequestInfo *requestInfo = NULL;
 
 		requestInfo = new(nothrow) RequestInfo (MetadataManager::getBasePath(), url, myhttpmethod, queryParams,
-			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), v1SymbolsExchangeIdGetProcessor);;
+			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), v1SymbolsExchangeIdActiveGetProcessor);;
 		if(requestInfo == NULL)
 			return false;
 
@@ -1341,22 +1341,22 @@ static bool v1SymbolsExchangeIdGetHelper(char * accessToken,
 
 
 
-bool MetadataManager::v1SymbolsExchangeIdGetAsync(char * accessToken,
+bool MetadataManager::v1SymbolsExchangeIdActiveGetAsync(char * accessToken,
 	std::string exchangeId, std::string filterSymbolId, std::string filterAssetId, 
 	void(* handler)(std::list<V1.Symbol>, Error, void* )
 	, void* userData)
 {
-	return v1SymbolsExchangeIdGetHelper(accessToken,
+	return v1SymbolsExchangeIdActiveGetHelper(accessToken,
 	exchangeId, filterSymbolId, filterAssetId, 
 	handler, userData, true);
 }
 
-bool MetadataManager::v1SymbolsExchangeIdGetSync(char * accessToken,
+bool MetadataManager::v1SymbolsExchangeIdActiveGetSync(char * accessToken,
 	std::string exchangeId, std::string filterSymbolId, std::string filterAssetId, 
 	void(* handler)(std::list<V1.Symbol>, Error, void* )
 	, void* userData)
 {
-	return v1SymbolsExchangeIdGetHelper(accessToken,
+	return v1SymbolsExchangeIdActiveGetHelper(accessToken,
 	exchangeId, filterSymbolId, filterAssetId, 
 	handler, userData, false);
 }
@@ -1516,165 +1516,6 @@ bool MetadataManager::v1SymbolsExchangeIdHistoryGetSync(char * accessToken,
 {
 	return v1SymbolsExchangeIdHistoryGetHelper(accessToken,
 	exchangeId, page, limit, 
-	handler, userData, false);
-}
-
-static bool v1SymbolsGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
-	void(* voidHandler)())
-{
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<V1.Symbol>, Error, void* )> (voidHandler);
-	
-	JsonNode* pJson;
-	char * data = p_chunk.memory;
-
-	std::list<V1.Symbol> out;
-	
-
-	if (code >= 200 && code < 300) {
-		Error error(code, string("No Error"));
-
-
-
-		pJson = json_from_string(data, NULL);
-		JsonArray * jsonarray = json_node_get_array (pJson);
-		guint length = json_array_get_length (jsonarray);
-		for(guint i = 0; i < length; i++){
-			JsonNode* myJson = json_array_get_element (jsonarray, i);
-			char * singlenodestr = json_to_string(myJson, false);
-			V1.Symbol singlemodel;
-			singlemodel.fromJson(singlenodestr);
-			out.push_front(singlemodel);
-			g_free(static_cast<gpointer>(singlenodestr));
-			json_node_free(myJson);
-		}
-		json_array_unref (jsonarray);
-		json_node_free(pJson);
-
-
-	} else {
-		Error error;
-		if (errormsg != NULL) {
-			error = Error(code, string(errormsg));
-		} else if (p_chunk.memory != NULL) {
-			error = Error(code, string(p_chunk.memory));
-		} else {
-			error = Error(code, string("Unknown Error"));
-		}
-		 handler(out, error, userData);
-		return false;
-			}
-}
-
-static bool v1SymbolsGetHelper(char * accessToken,
-	std::string filterSymbolId, std::string filterExchangeId, std::string filterAssetId, 
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
-	, void* userData, bool isAsync)
-{
-
-	//TODO: maybe delete headerList after its used to free up space?
-	struct curl_slist *headerList = NULL;
-
-	
-	string accessHeader = "Authorization: Bearer ";
-	accessHeader.append(accessToken);
-	headerList = curl_slist_append(headerList, accessHeader.c_str());
-	headerList = curl_slist_append(headerList, "Content-Type: application/json");
-
-	map <string, string> queryParams;
-	string itemAtq;
-	
-
-	itemAtq = stringify(&filterSymbolId, "std::string");
-	queryParams.insert(pair<string, string>("filter_symbol_id", itemAtq));
-	if( itemAtq.empty()==true){
-		queryParams.erase("filter_symbol_id");
-	}
-
-
-	itemAtq = stringify(&filterExchangeId, "std::string");
-	queryParams.insert(pair<string, string>("filter_exchange_id", itemAtq));
-	if( itemAtq.empty()==true){
-		queryParams.erase("filter_exchange_id");
-	}
-
-
-	itemAtq = stringify(&filterAssetId, "std::string");
-	queryParams.insert(pair<string, string>("filter_asset_id", itemAtq));
-	if( itemAtq.empty()==true){
-		queryParams.erase("filter_asset_id");
-	}
-
-	string mBody = "";
-	JsonNode* node;
-	JsonArray* json_array;
-
-	string url("/v1/symbols");
-	int pos;
-
-
-	//TODO: free memory of errormsg, memorystruct
-	MemoryStruct_s* p_chunk = new MemoryStruct_s();
-	long code;
-	char* errormsg = NULL;
-	string myhttpmethod("GET");
-
-	if(strcmp("PUT", "GET") == 0){
-		if(strcmp("", mBody.c_str()) == 0){
-			mBody.append("{}");
-		}
-	}
-
-	if(!isAsync){
-		NetClient::easycurl(MetadataManager::getBasePath(), url, myhttpmethod, queryParams,
-			mBody, headerList, p_chunk, &code, errormsg);
-		bool retval = v1SymbolsGetProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
-
-		curl_slist_free_all(headerList);
-		if (p_chunk) {
-			if(p_chunk->memory) {
-				free(p_chunk->memory);
-			}
-			delete (p_chunk);
-		}
-		if (errormsg) {
-			free(errormsg);
-		}
-		return retval;
-	} else{
-		GThread *thread = NULL;
-		RequestInfo *requestInfo = NULL;
-
-		requestInfo = new(nothrow) RequestInfo (MetadataManager::getBasePath(), url, myhttpmethod, queryParams,
-			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), v1SymbolsGetProcessor);;
-		if(requestInfo == NULL)
-			return false;
-
-		thread = g_thread_new(NULL, __MetadataManagerthreadFunc, static_cast<gpointer>(requestInfo));
-		return true;
-	}
-}
-
-
-
-
-bool MetadataManager::v1SymbolsGetAsync(char * accessToken,
-	std::string filterSymbolId, std::string filterExchangeId, std::string filterAssetId, 
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
-	, void* userData)
-{
-	return v1SymbolsGetHelper(accessToken,
-	filterSymbolId, filterExchangeId, filterAssetId, 
-	handler, userData, true);
-}
-
-bool MetadataManager::v1SymbolsGetSync(char * accessToken,
-	std::string filterSymbolId, std::string filterExchangeId, std::string filterAssetId, 
-	void(* handler)(std::list<V1.Symbol>, Error, void* )
-	, void* userData)
-{
-	return v1SymbolsGetHelper(accessToken,
-	filterSymbolId, filterExchangeId, filterAssetId, 
 	handler, userData, false);
 }
 

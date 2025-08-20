@@ -278,14 +278,14 @@ __PACKAGE__->method_documentation({
     'volume_traded' => {
         datatype => 'double',
         base_name => 'volume_traded',
-        description => 'The total volume traded during the time period.',
+        description => 'The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.',
         format => '',
         read_only => '',
             },
     'trades_count' => {
         datatype => 'int',
         base_name => 'trades_count',
-        description => 'The number of trades executed during the time period.',
+        description => 'The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.',
         format => '',
         read_only => '',
             },

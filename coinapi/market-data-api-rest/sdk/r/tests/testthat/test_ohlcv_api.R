@@ -41,7 +41,6 @@ test_that("V1OhlcvSymbolIdHistoryGet", {
   # @param time_start character Timeseries starting time in ISO 8601 (optional)
   # @param time_end character Timeseries ending time in ISO 8601 (optional)
   # @param limit integer Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional)
-  # @param include_empty_items character Include items with no activity? (default value is `false`, possible values are `true` or `false`) (optional)
   # @return [array[V1TimeseriesItem]]
 
   # uncomment below to test the operation
@@ -56,7 +55,7 @@ test_that("V1OhlcvSymbolIdLatestGet", {
   # @param symbol_id character Symbol identifier of requested timeseries (from the Metadata -> Symbols)
   # @param period_id character Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
   # @param limit integer Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional)
-  # @param include_empty_items character Include items with no activity? (default value is `false`, possible values are `true` or `false`) (optional)
+  # @param include_empty_items character  (optional)
   # @return [array[V1TimeseriesItem]]
 
   # uncomment below to test the operation

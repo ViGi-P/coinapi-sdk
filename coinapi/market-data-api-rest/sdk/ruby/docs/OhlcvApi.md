@@ -191,8 +191,7 @@ period_id = 'period_id_example' # String | Identifier of requested timeseries pe
 opts = {
   time_start: 'time_start_example', # String | Timeseries starting time in ISO 8601
   time_end: 'time_end_example', # String | Timeseries ending time in ISO 8601
-  limit: 56, # Integer | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  include_empty_items: true # Boolean | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+  limit: 56 # Integer | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 }
 
 begin
@@ -231,7 +230,6 @@ end
 | **time_start** | **String** | Timeseries starting time in ISO 8601 | [optional] |
 | **time_end** | **String** | Timeseries ending time in ISO 8601 | [optional] |
 | **limit** | **Integer** | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional][default to 100] |
-| **include_empty_items** | **Boolean** | Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional][default to false] |
 
 ### Return type
 
@@ -276,7 +274,7 @@ symbol_id = 'symbol_id_example' # String | Symbol identifier of requested timese
 period_id = 'period_id_example' # String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 opts = {
   limit: 56, # Integer | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  include_empty_items: true # Boolean | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+  include_empty_items: true # Boolean | 
 }
 
 begin
@@ -313,7 +311,7 @@ end
 | **symbol_id** | **String** | Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) |  |
 | **period_id** | **String** | Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) |  |
 | **limit** | **Integer** | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional][default to 100] |
-| **include_empty_items** | **Boolean** | Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional][default to false] |
+| **include_empty_items** | **Boolean** |  | [optional][default to false] |
 
 ### Return type
 

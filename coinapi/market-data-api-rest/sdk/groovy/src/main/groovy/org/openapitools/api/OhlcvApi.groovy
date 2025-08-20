@@ -75,7 +75,7 @@ class OhlcvApi {
 
     }
 
-    def v1OhlcvSymbolIdHistoryGet ( String symbolId, String periodId, String timeStart, String timeEnd, Integer limit, Boolean includeEmptyItems, Closure onSuccess, Closure onFailure)  {
+    def v1OhlcvSymbolIdHistoryGet ( String symbolId, String periodId, String timeStart, String timeEnd, Integer limit, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/ohlcv/${symbol_id}/history"
 
         // params
@@ -104,9 +104,6 @@ class OhlcvApi {
         }
         if (limit != null) {
             queryParams.put("limit", limit)
-        }
-        if (includeEmptyItems != null) {
-            queryParams.put("include_empty_items", includeEmptyItems)
         }
 
 

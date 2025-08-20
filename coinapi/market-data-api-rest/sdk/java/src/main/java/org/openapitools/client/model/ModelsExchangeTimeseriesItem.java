@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a timeseries item with price and volume information.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T06:04:36.983122793Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T17:36:07.273740667Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class ModelsExchangeTimeseriesItem {
   public static final String SERIALIZED_NAME_TIME_PERIOD_START = "time_period_start";
   @SerializedName(SERIALIZED_NAME_TIME_PERIOD_START)
@@ -273,7 +273,7 @@ public class ModelsExchangeTimeseriesItem {
   }
 
   /**
-   * The total volume traded during the time period.
+   * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
    * @return volumeTraded
    */
   @javax.annotation.Nullable
@@ -292,7 +292,7 @@ public class ModelsExchangeTimeseriesItem {
   }
 
   /**
-   * The number of trades executed during the time period.
+   * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
    * @return tradesCount
    */
   @javax.annotation.Nullable

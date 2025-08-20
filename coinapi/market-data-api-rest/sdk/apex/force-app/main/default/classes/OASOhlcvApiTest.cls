@@ -104,8 +104,7 @@ private class OASOhlcvApiTest {
             'periodId' => 'null',
             'timeStart' => 'null',
             'timeEnd' => 'null',
-            'r_limit' => '',
-            'includeEmptyItems' => ''
+            'r_limit' => ''
         };
 
         OASClient client;

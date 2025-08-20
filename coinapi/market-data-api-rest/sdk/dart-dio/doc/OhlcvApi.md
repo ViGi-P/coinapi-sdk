@@ -112,7 +112,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1OhlcvSymbolIdHistoryGet**
-> BuiltList<V1TimeseriesItem> v1OhlcvSymbolIdHistoryGet(symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems)
+> BuiltList<V1TimeseriesItem> v1OhlcvSymbolIdHistoryGet(symbolId, periodId, timeStart, timeEnd, limit)
 
 Historical data
 
@@ -132,10 +132,9 @@ final String periodId = periodId_example; // String | Identifier of requested ti
 final String timeStart = timeStart_example; // String | Timeseries starting time in ISO 8601
 final String timeEnd = timeEnd_example; // String | Timeseries ending time in ISO 8601
 final int limit = 56; // int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-final bool includeEmptyItems = true; // bool | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
 
 try {
-    final response = api.v1OhlcvSymbolIdHistoryGet(symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems);
+    final response = api.v1OhlcvSymbolIdHistoryGet(symbolId, periodId, timeStart, timeEnd, limit);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling OhlcvApi->v1OhlcvSymbolIdHistoryGet: $e\n');
@@ -151,7 +150,6 @@ Name | Type | Description  | Notes
  **timeStart** | **String**| Timeseries starting time in ISO 8601 | [optional] 
  **timeEnd** | **String**| Timeseries ending time in ISO 8601 | [optional] 
  **limit** | **int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **includeEmptyItems** | **bool**| Include items with no activity? (default value is `false`, possible values are `true` or `false`) | [optional] [default to false]
 
 ### Return type
 
@@ -187,7 +185,7 @@ final api = Openapi().getOhlcvApi();
 final String symbolId = symbolId_example; // String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 final String periodId = periodId_example; // String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 final int limit = 56; // int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-final bool includeEmptyItems = true; // bool | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+final bool includeEmptyItems = true; // bool | 
 
 try {
     final response = api.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit, includeEmptyItems);
@@ -204,7 +202,7 @@ Name | Type | Description  | Notes
  **symbolId** | **String**| Symbol identifier of requested timeseries (from the Metadata -> Symbols) | 
  **periodId** | **String**| Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`) | 
  **limit** | **int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **includeEmptyItems** | **bool**| Include items with no activity? (default value is `false`, possible values are `true` or `false`) | [optional] [default to false]
+ **includeEmptyItems** | **bool**|  | [optional] [default to false]
 
 ### Return type
 

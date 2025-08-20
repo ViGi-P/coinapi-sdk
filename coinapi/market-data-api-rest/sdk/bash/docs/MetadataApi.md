@@ -12,9 +12,8 @@ Method | HTTP request | Description
 [**v1ExchangesExchangeIdGet**](MetadataApi.md#v1ExchangesExchangeIdGet) | **GET** /v1/exchanges/{exchange_id} | List all exchanges by exchange_id
 [**v1ExchangesGet**](MetadataApi.md#v1ExchangesGet) | **GET** /v1/exchanges | List all exchanges
 [**v1ExchangesIconsSizeGet**](MetadataApi.md#v1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
-[**v1SymbolsExchangeIdGet**](MetadataApi.md#v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of active symbols for the exchange
+[**v1SymbolsExchangeIdActiveGet**](MetadataApi.md#v1SymbolsExchangeIdActiveGet) | **GET** /v1/symbols/{exchange_id}/active | List all active symbols
 [**v1SymbolsExchangeIdHistoryGet**](MetadataApi.md#v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
-[**v1SymbolsGet**](MetadataApi.md#v1SymbolsGet) | **GET** /v1/symbols | List all active symbols
 [**v1SymbolsMapExchangeIdGet**](MetadataApi.md#v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
 
 
@@ -307,80 +306,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## v1SymbolsExchangeIdGet
-
-List of active symbols for the exchange
-
-### Example
-
-```bash
- v1SymbolsExchangeIdGet exchange_id=value  filter_symbol_id=value  filter_asset_id=value
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **exchangeId** | **string** | The ID of the exchange (from the Metadata -> Exchanges) | [default to null]
- **filterSymbolId** | **string** | The filter for symbol ID. | [optional] [default to null]
- **filterAssetId** | **string** | The filter for asset ID. | [optional] [default to null]
-
-### Return type
-
-[**array[V1Symbol]**](V1Symbol.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
-- **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## v1SymbolsExchangeIdHistoryGet
-
-List all historical symbols for an exchange.
-
-This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
-The data is provided with pagination support.
-
-### Example
-
-```bash
- v1SymbolsExchangeIdHistoryGet exchange_id=value  page=value  limit=value
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **exchangeId** | **string** | The ID of the exchange. | [default to null]
- **page** | **integer** | The page number for pagination (starts from 1). | [optional] [default to 1]
- **limit** | **integer** | Number of records to return per page. | [optional] [default to 100]
-
-### Return type
-
-[**array[V1Symbol]**](V1Symbol.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
-- **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## v1SymbolsGet
+## v1SymbolsExchangeIdActiveGet
 
 List all active symbols
 
@@ -469,7 +395,7 @@ contract_id | Identifier of contract by the exchange
 ### Example
 
 ```bash
- v1SymbolsGet  filter_symbol_id=value  filter_exchange_id=value  filter_asset_id=value
+ v1SymbolsExchangeIdActiveGet exchange_id=value  filter_symbol_id=value  filter_asset_id=value
 ```
 
 ### Parameters
@@ -477,9 +403,47 @@ contract_id | Identifier of contract by the exchange
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **exchangeId** | **string** | The ID of the exchange. | [default to null]
  **filterSymbolId** | **string** | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. 'BITSTAMP'_ or 'BINANCE_SPOT_') | [optional] [default to null]
- **filterExchangeId** | **string** | The filter for exchange ID. | [optional] [default to null]
  **filterAssetId** | **string** | The filter for asset ID. | [optional] [default to null]
+
+### Return type
+
+[**array[V1Symbol]**](V1Symbol.md)
+
+### Authorization
+
+[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
+
+### HTTP request headers
+
+- **Content-Type**: Not Applicable
+- **Accept**: text/plain, application/json, text/json, application/x-msgpack
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## v1SymbolsExchangeIdHistoryGet
+
+List all historical symbols for an exchange.
+
+This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
+The data is provided with pagination support.
+
+### Example
+
+```bash
+ v1SymbolsExchangeIdHistoryGet exchange_id=value  page=value  limit=value
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exchangeId** | **string** | The ID of the exchange. | [default to null]
+ **page** | **integer** | The page number for pagination (starts from 1). | [optional] [default to 1]
+ **limit** | **integer** | Number of records to return per page. | [optional] [default to 100]
 
 ### Return type
 

@@ -149,11 +149,10 @@ API.Client.OhlcvApi.prototype.v1OhlcvPeriodsGet = function(opt_extraHttpRequestP
  * @param {!string=} opt_timeStart Timeseries starting time in ISO 8601
  * @param {!string=} opt_timeEnd Timeseries ending time in ISO 8601
  * @param {!number=} opt_limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
- * @param {!boolean=} opt_includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.v1.TimeseriesItem>>}
  */
-API.Client.OhlcvApi.prototype.v1OhlcvSymbolIdHistoryGet = function(symbolId, periodId, opt_timeStart, opt_timeEnd, opt_limit, opt_includeEmptyItems, opt_extraHttpRequestParams) {
+API.Client.OhlcvApi.prototype.v1OhlcvSymbolIdHistoryGet = function(symbolId, periodId, opt_timeStart, opt_timeEnd, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/ohlcv/{symbol_id}/history'
       .replace('{' + 'symbol_id' + '}', String(symbolId));
@@ -187,10 +186,6 @@ API.Client.OhlcvApi.prototype.v1OhlcvSymbolIdHistoryGet = function(symbolId, per
     queryParameters['limit'] = opt_limit;
   }
 
-  if (opt_includeEmptyItems !== undefined) {
-    queryParameters['include_empty_items'] = opt_includeEmptyItems;
-  }
-
   /** @type {!Object} */
   var httpRequestParams = {
     method: 'GET',
@@ -213,7 +208,7 @@ API.Client.OhlcvApi.prototype.v1OhlcvSymbolIdHistoryGet = function(symbolId, per
  * @param {!string} symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
  * @param {!string} periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
  * @param {!number=} opt_limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
- * @param {!boolean=} opt_includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;)
+ * @param {!boolean=} opt_includeEmptyItems 
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.v1.TimeseriesItem>>}
  */

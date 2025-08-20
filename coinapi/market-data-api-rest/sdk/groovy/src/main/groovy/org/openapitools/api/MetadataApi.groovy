@@ -202,8 +202,8 @@ class MetadataApi {
 
     }
 
-    def v1SymbolsExchangeIdGet ( String exchangeId, String filterSymbolId, String filterAssetId, Closure onSuccess, Closure onFailure)  {
-        String resourcePath = "/v1/symbols/${exchange_id}"
+    def v1SymbolsExchangeIdActiveGet ( String exchangeId, String filterSymbolId, String filterAssetId, Closure onSuccess, Closure onFailure)  {
+        String resourcePath = "/v1/symbols/${exchange_id}/active"
 
         // params
         def queryParams = [:]
@@ -251,35 +251,6 @@ class MetadataApi {
         }
         if (limit != null) {
             queryParams.put("limit", limit)
-        }
-
-
-
-
-        apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
-                    "GET", "array",
-                    V1Symbol.class )
-
-    }
-
-    def v1SymbolsGet ( String filterSymbolId, String filterExchangeId, String filterAssetId, Closure onSuccess, Closure onFailure)  {
-        String resourcePath = "/v1/symbols"
-
-        // params
-        def queryParams = [:]
-        def headerParams = [:]
-        def bodyParams
-        def contentType
-
-
-        if (filterSymbolId != null) {
-            queryParams.put("filter_symbol_id", filterSymbolId)
-        }
-        if (filterExchangeId != null) {
-            queryParams.put("filter_exchange_id", filterExchangeId)
-        }
-        if (filterAssetId != null) {
-            queryParams.put("filter_asset_id", filterAssetId)
         }
 
 

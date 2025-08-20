@@ -160,13 +160,13 @@ ModelsExchangeTimeseriesItem.prototype['price_low'] = undefined;
 ModelsExchangeTimeseriesItem.prototype['price_close'] = undefined;
 
 /**
- * The total volume traded during the time period.
+ * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
  * @member {Number} volume_traded
  */
 ModelsExchangeTimeseriesItem.prototype['volume_traded'] = undefined;
 
 /**
- * The number of trades executed during the time period.
+ * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
  * @member {Number} trades_count
  */
 ModelsExchangeTimeseriesItem.prototype['trades_count'] = undefined;

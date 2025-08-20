@@ -742,16 +742,15 @@ class OhlcvApi
      * @param  string|null $time_start Timeseries starting time in ISO 8601 (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional)
      * @param  int|null $limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  bool|null $include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvSymbolIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\V1TimeseriesItem[]
      */
-    public function v1OhlcvSymbolIdHistoryGet($symbol_id, $period_id, $time_start = null, $time_end = null, $limit = 100, $include_empty_items = false, string $contentType = self::contentTypes['v1OhlcvSymbolIdHistoryGet'][0])
+    public function v1OhlcvSymbolIdHistoryGet($symbol_id, $period_id, $time_start = null, $time_end = null, $limit = 100, string $contentType = self::contentTypes['v1OhlcvSymbolIdHistoryGet'][0])
     {
-        list($response) = $this->v1OhlcvSymbolIdHistoryGetWithHttpInfo($symbol_id, $period_id, $time_start, $time_end, $limit, $include_empty_items, $contentType);
+        list($response) = $this->v1OhlcvSymbolIdHistoryGetWithHttpInfo($symbol_id, $period_id, $time_start, $time_end, $limit, $contentType);
         return $response;
     }
 
@@ -765,16 +764,15 @@ class OhlcvApi
      * @param  string|null $time_start Timeseries starting time in ISO 8601 (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional)
      * @param  int|null $limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  bool|null $include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvSymbolIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\V1TimeseriesItem[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v1OhlcvSymbolIdHistoryGetWithHttpInfo($symbol_id, $period_id, $time_start = null, $time_end = null, $limit = 100, $include_empty_items = false, string $contentType = self::contentTypes['v1OhlcvSymbolIdHistoryGet'][0])
+    public function v1OhlcvSymbolIdHistoryGetWithHttpInfo($symbol_id, $period_id, $time_start = null, $time_end = null, $limit = 100, string $contentType = self::contentTypes['v1OhlcvSymbolIdHistoryGet'][0])
     {
-        $request = $this->v1OhlcvSymbolIdHistoryGetRequest($symbol_id, $period_id, $time_start, $time_end, $limit, $include_empty_items, $contentType);
+        $request = $this->v1OhlcvSymbolIdHistoryGetRequest($symbol_id, $period_id, $time_start, $time_end, $limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -855,15 +853,14 @@ class OhlcvApi
      * @param  string|null $time_start Timeseries starting time in ISO 8601 (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional)
      * @param  int|null $limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  bool|null $include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvSymbolIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1OhlcvSymbolIdHistoryGetAsync($symbol_id, $period_id, $time_start = null, $time_end = null, $limit = 100, $include_empty_items = false, string $contentType = self::contentTypes['v1OhlcvSymbolIdHistoryGet'][0])
+    public function v1OhlcvSymbolIdHistoryGetAsync($symbol_id, $period_id, $time_start = null, $time_end = null, $limit = 100, string $contentType = self::contentTypes['v1OhlcvSymbolIdHistoryGet'][0])
     {
-        return $this->v1OhlcvSymbolIdHistoryGetAsyncWithHttpInfo($symbol_id, $period_id, $time_start, $time_end, $limit, $include_empty_items, $contentType)
+        return $this->v1OhlcvSymbolIdHistoryGetAsyncWithHttpInfo($symbol_id, $period_id, $time_start, $time_end, $limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -881,16 +878,15 @@ class OhlcvApi
      * @param  string|null $time_start Timeseries starting time in ISO 8601 (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional)
      * @param  int|null $limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  bool|null $include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvSymbolIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1OhlcvSymbolIdHistoryGetAsyncWithHttpInfo($symbol_id, $period_id, $time_start = null, $time_end = null, $limit = 100, $include_empty_items = false, string $contentType = self::contentTypes['v1OhlcvSymbolIdHistoryGet'][0])
+    public function v1OhlcvSymbolIdHistoryGetAsyncWithHttpInfo($symbol_id, $period_id, $time_start = null, $time_end = null, $limit = 100, string $contentType = self::contentTypes['v1OhlcvSymbolIdHistoryGet'][0])
     {
         $returnType = '\OpenAPI\Client\Model\V1TimeseriesItem[]';
-        $request = $this->v1OhlcvSymbolIdHistoryGetRequest($symbol_id, $period_id, $time_start, $time_end, $limit, $include_empty_items, $contentType);
+        $request = $this->v1OhlcvSymbolIdHistoryGetRequest($symbol_id, $period_id, $time_start, $time_end, $limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -936,13 +932,12 @@ class OhlcvApi
      * @param  string|null $time_start Timeseries starting time in ISO 8601 (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional)
      * @param  int|null $limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  bool|null $include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvSymbolIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v1OhlcvSymbolIdHistoryGetRequest($symbol_id, $period_id, $time_start = null, $time_end = null, $limit = 100, $include_empty_items = false, string $contentType = self::contentTypes['v1OhlcvSymbolIdHistoryGet'][0])
+    public function v1OhlcvSymbolIdHistoryGetRequest($symbol_id, $period_id, $time_start = null, $time_end = null, $limit = 100, string $contentType = self::contentTypes['v1OhlcvSymbolIdHistoryGet'][0])
     {
 
         // verify the required parameter 'symbol_id' is set
@@ -958,7 +953,6 @@ class OhlcvApi
                 'Missing the required parameter $period_id when calling v1OhlcvSymbolIdHistoryGet'
             );
         }
-
 
 
 
@@ -1003,15 +997,6 @@ class OhlcvApi
             $limit,
             'limit', // param base name
             'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $include_empty_items,
-            'include_empty_items', // param base name
-            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required
@@ -1098,7 +1083,7 @@ class OhlcvApi
      * @param  string $symbol_id Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param  string $period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
      * @param  int|null $limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  bool|null $include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
+     * @param  bool|null $include_empty_items include_empty_items (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvSymbolIdLatestGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1119,7 +1104,7 @@ class OhlcvApi
      * @param  string $symbol_id Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param  string $period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
      * @param  int|null $limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  bool|null $include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
+     * @param  bool|null $include_empty_items (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvSymbolIdLatestGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1207,7 +1192,7 @@ class OhlcvApi
      * @param  string $symbol_id Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param  string $period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
      * @param  int|null $limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  bool|null $include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
+     * @param  bool|null $include_empty_items (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvSymbolIdLatestGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1231,7 +1216,7 @@ class OhlcvApi
      * @param  string $symbol_id Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param  string $period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
      * @param  int|null $limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  bool|null $include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
+     * @param  bool|null $include_empty_items (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvSymbolIdLatestGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1284,7 +1269,7 @@ class OhlcvApi
      * @param  string $symbol_id Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param  string $period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
      * @param  int|null $limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  bool|null $include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
+     * @param  bool|null $include_empty_items (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvSymbolIdLatestGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

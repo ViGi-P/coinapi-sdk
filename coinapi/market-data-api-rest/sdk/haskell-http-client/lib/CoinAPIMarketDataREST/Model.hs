@@ -167,8 +167,8 @@ data ModelsExchangeTimeseriesItem = ModelsExchangeTimeseriesItem
   , modelsExchangeTimeseriesItemPriceHigh :: !(Maybe Double) -- ^ "price_high" - The highest price during the time period.
   , modelsExchangeTimeseriesItemPriceLow :: !(Maybe Double) -- ^ "price_low" - The lowest price during the time period.
   , modelsExchangeTimeseriesItemPriceClose :: !(Maybe Double) -- ^ "price_close" - The closing price.
-  , modelsExchangeTimeseriesItemVolumeTraded :: !(Maybe Double) -- ^ "volume_traded" - The total volume traded during the time period.
-  , modelsExchangeTimeseriesItemTradesCount :: !(Maybe Integer) -- ^ "trades_count" - The number of trades executed during the time period.
+  , modelsExchangeTimeseriesItemVolumeTraded :: !(Maybe Double) -- ^ "volume_traded" - The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+  , modelsExchangeTimeseriesItemTradesCount :: !(Maybe Integer) -- ^ "trades_count" - The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
   , modelsExchangeTimeseriesItemSymbolIdExchange :: !(Maybe Text) -- ^ "symbol_id_exchange"
   , modelsExchangeTimeseriesItemSymbolIdCoinapi :: !(Maybe Text) -- ^ "symbol_id_coinapi"
   } deriving (P.Show, P.Eq, P.Typeable)
@@ -1604,8 +1604,8 @@ data V1TimeseriesItem = V1TimeseriesItem
   , v1TimeseriesItemPriceHigh :: !(Maybe Double) -- ^ "price_high" - The highest price during the time period.
   , v1TimeseriesItemPriceLow :: !(Maybe Double) -- ^ "price_low" - The lowest price during the time period.
   , v1TimeseriesItemPriceClose :: !(Maybe Double) -- ^ "price_close" - The closing price.
-  , v1TimeseriesItemVolumeTraded :: !(Maybe Double) -- ^ "volume_traded" - The total volume traded during the time period.
-  , v1TimeseriesItemTradesCount :: !(Maybe Integer) -- ^ "trades_count" - The number of trades executed during the time period.
+  , v1TimeseriesItemVolumeTraded :: !(Maybe Double) -- ^ "volume_traded" - The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+  , v1TimeseriesItemTradesCount :: !(Maybe Integer) -- ^ "trades_count" - The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1TimeseriesItem

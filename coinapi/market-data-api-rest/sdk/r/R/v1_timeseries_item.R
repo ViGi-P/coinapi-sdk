@@ -15,8 +15,8 @@
 #' @field price_high The highest price during the time period. numeric [optional]
 #' @field price_low The lowest price during the time period. numeric [optional]
 #' @field price_close The closing price. numeric [optional]
-#' @field volume_traded The total volume traded during the time period. numeric [optional]
-#' @field trades_count The number of trades executed during the time period. integer [optional]
+#' @field volume_traded The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. numeric [optional]
+#' @field trades_count The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. integer [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -45,8 +45,8 @@ V1TimeseriesItem <- R6::R6Class(
     #' @param price_high The highest price during the time period.
     #' @param price_low The lowest price during the time period.
     #' @param price_close The closing price.
-    #' @param volume_traded The total volume traded during the time period.
-    #' @param trades_count The number of trades executed during the time period.
+    #' @param volume_traded The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+    #' @param trades_count The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
     #' @param ... Other optional arguments.
     initialize = function(`time_period_start` = NULL, `time_period_end` = NULL, `time_open` = NULL, `time_close` = NULL, `price_open` = NULL, `price_high` = NULL, `price_low` = NULL, `price_close` = NULL, `volume_traded` = NULL, `trades_count` = NULL, ...) {
       if (!is.null(`time_period_start`)) {

@@ -68,13 +68,13 @@ v1OhlcvPeriodsGet auth_token =
 Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific symbol eg `BITSTAMP_SPOT_BTC_USD`, if you need to query timeseries by asset pairs eg. `BTC/USD`, then please reffer to the Exchange Rates Timeseries data              :::info The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
 
 -}
-v1OhlcvSymbolIdHistoryGet : String -> String -> Maybe String -> Maybe String -> Maybe Int -> Maybe Bool -> String -> Api.Request (List Api.Data.V1TimeseriesItem)
-v1OhlcvSymbolIdHistoryGet symbolId_path periodId_query timeStart_query timeEnd_query limit_query includeEmptyItems_query auth_token =
+v1OhlcvSymbolIdHistoryGet : String -> String -> Maybe String -> Maybe String -> Maybe Int -> String -> Api.Request (List Api.Data.V1TimeseriesItem)
+v1OhlcvSymbolIdHistoryGet symbolId_path periodId_query timeStart_query timeEnd_query limit_query auth_token =
     Api.request
         "GET"
         "/v1/ohlcv/{symbol_id}/history"
         [ ( "symbol_id", identity symbolId_path ) ]
-        [ ( "period_id", Just <| identity periodId_query ), ( "time_start", Maybe.map identity timeStart_query ), ( "time_end", Maybe.map identity timeEnd_query ), ( "limit", Maybe.map String.fromInt limit_query ), ( "include_empty_items", Maybe.map (\val -> if val then "true" else "false") includeEmptyItems_query ) ]
+        [ ( "period_id", Just <| identity periodId_query ), ( "time_start", Maybe.map identity timeStart_query ), ( "time_end", Maybe.map identity timeEnd_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.v1TimeseriesItemDecoder)

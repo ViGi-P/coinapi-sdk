@@ -31,9 +31,9 @@ case class ExchangeTimeseriesItem (
   priceLow: Option[Double] = None,
   /* The closing price. */
   priceClose: Option[Double] = None,
-  /* The total volume traded during the time period. */
+  /* The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. */
   volumeTraded: Option[Double] = None,
-  /* The number of trades executed during the time period. */
+  /* The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. */
   tradesCount: Option[Long] = None,
   symbolIdExchange: Option[String] = None,
   symbolIdCoinapi: Option[String] = None

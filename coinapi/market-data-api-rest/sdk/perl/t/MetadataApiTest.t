@@ -86,13 +86,13 @@ isa_ok($api, 'WWW::OpenAPIClient::MetadataApi');
 #my $v1_exchanges_icons_size_get_result = $api->v1_exchanges_icons_size_get(size => $v1_exchanges_icons_size_get_size);
 
 #
-# v1_symbols_exchange_id_get test
+# v1_symbols_exchange_id_active_get test
 #
 # uncomment below and update the test
-#my $v1_symbols_exchange_id_get_exchange_id = undef; # replace NULL with a proper value
-#my $v1_symbols_exchange_id_get_filter_symbol_id = undef; # replace NULL with a proper value
-#my $v1_symbols_exchange_id_get_filter_asset_id = undef; # replace NULL with a proper value
-#my $v1_symbols_exchange_id_get_result = $api->v1_symbols_exchange_id_get(exchange_id => $v1_symbols_exchange_id_get_exchange_id, filter_symbol_id => $v1_symbols_exchange_id_get_filter_symbol_id, filter_asset_id => $v1_symbols_exchange_id_get_filter_asset_id);
+#my $v1_symbols_exchange_id_active_get_exchange_id = undef; # replace NULL with a proper value
+#my $v1_symbols_exchange_id_active_get_filter_symbol_id = undef; # replace NULL with a proper value
+#my $v1_symbols_exchange_id_active_get_filter_asset_id = undef; # replace NULL with a proper value
+#my $v1_symbols_exchange_id_active_get_result = $api->v1_symbols_exchange_id_active_get(exchange_id => $v1_symbols_exchange_id_active_get_exchange_id, filter_symbol_id => $v1_symbols_exchange_id_active_get_filter_symbol_id, filter_asset_id => $v1_symbols_exchange_id_active_get_filter_asset_id);
 
 #
 # v1_symbols_exchange_id_history_get test
@@ -102,15 +102,6 @@ isa_ok($api, 'WWW::OpenAPIClient::MetadataApi');
 #my $v1_symbols_exchange_id_history_get_page = undef; # replace NULL with a proper value
 #my $v1_symbols_exchange_id_history_get_limit = undef; # replace NULL with a proper value
 #my $v1_symbols_exchange_id_history_get_result = $api->v1_symbols_exchange_id_history_get(exchange_id => $v1_symbols_exchange_id_history_get_exchange_id, page => $v1_symbols_exchange_id_history_get_page, limit => $v1_symbols_exchange_id_history_get_limit);
-
-#
-# v1_symbols_get test
-#
-# uncomment below and update the test
-#my $v1_symbols_get_filter_symbol_id = undef; # replace NULL with a proper value
-#my $v1_symbols_get_filter_exchange_id = undef; # replace NULL with a proper value
-#my $v1_symbols_get_filter_asset_id = undef; # replace NULL with a proper value
-#my $v1_symbols_get_result = $api->v1_symbols_get(filter_symbol_id => $v1_symbols_get_filter_symbol_id, filter_exchange_id => $v1_symbols_get_filter_exchange_id, filter_asset_id => $v1_symbols_get_filter_asset_id);
 
 #
 # v1_symbols_map_exchange_id_get test

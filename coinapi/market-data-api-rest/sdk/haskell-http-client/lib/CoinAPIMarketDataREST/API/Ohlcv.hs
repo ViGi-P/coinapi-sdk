@@ -160,11 +160,6 @@ instance HasOptionalParam V1OhlcvSymbolIdHistoryGet TimeEnd where
 instance HasOptionalParam V1OhlcvSymbolIdHistoryGet Limit where
   applyOptionalParam req (Limit xs) =
     req `addQuery` toQuery ("limit", Just xs)
-
--- | /Optional Param/ "include_empty_items" - Include items with no activity? (default value is `false`, possible values are `true` or `false`)
-instance HasOptionalParam V1OhlcvSymbolIdHistoryGet IncludeEmptyItems where
-  applyOptionalParam req (IncludeEmptyItems xs) =
-    req `addQuery` toQuery ("include_empty_items", Just xs)
 -- | @application/json@
 instance Produces V1OhlcvSymbolIdHistoryGet MimeJSON
 -- | @application/x-msgpack@
@@ -202,8 +197,6 @@ data V1OhlcvSymbolIdLatestGet
 instance HasOptionalParam V1OhlcvSymbolIdLatestGet Limit where
   applyOptionalParam req (Limit xs) =
     req `addQuery` toQuery ("limit", Just xs)
-
--- | /Optional Param/ "include_empty_items" - Include items with no activity? (default value is `false`, possible values are `true` or `false`)
 instance HasOptionalParam V1OhlcvSymbolIdLatestGet IncludeEmptyItems where
   applyOptionalParam req (IncludeEmptyItems xs) =
     req `addQuery` toQuery ("include_empty_items", Just xs)

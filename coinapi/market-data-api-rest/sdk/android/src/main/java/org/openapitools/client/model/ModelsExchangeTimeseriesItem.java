@@ -136,9 +136,9 @@ public class ModelsExchangeTimeseriesItem {
   }
 
   /**
-   * The total volume traded during the time period.
+   * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
    **/
-  @ApiModelProperty(value = "The total volume traded during the time period.")
+  @ApiModelProperty(value = "The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.")
   public Double getVolumeTraded() {
     return volumeTraded;
   }
@@ -147,9 +147,9 @@ public class ModelsExchangeTimeseriesItem {
   }
 
   /**
-   * The number of trades executed during the time period.
+   * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
    **/
-  @ApiModelProperty(value = "The number of trades executed during the time period.")
+  @ApiModelProperty(value = "The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.")
   public Long getTradesCount() {
     return tradesCount;
   }

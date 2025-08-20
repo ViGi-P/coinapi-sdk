@@ -169,12 +169,12 @@ class MetadataApiTest extends TestCase
     }
 
     /**
-     * Test case for v1SymbolsExchangeIdGet
+     * Test case for v1SymbolsExchangeIdActiveGet
      *
-     * List of active symbols for the exchange.
+     * List all active symbols.
      *
      */
-    public function testV1SymbolsExchangeIdGet()
+    public function testV1SymbolsExchangeIdActiveGet()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -187,18 +187,6 @@ class MetadataApiTest extends TestCase
      *
      */
     public function testV1SymbolsExchangeIdHistoryGet()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for v1SymbolsGet
-     *
-     * List all active symbols.
-     *
-     */
-    public function testV1SymbolsGet()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

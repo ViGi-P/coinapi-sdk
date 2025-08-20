@@ -34,7 +34,6 @@ export interface V1OhlcvSymbolIdHistoryGetRequest {
     timeStart?: string;
     timeEnd?: string;
     limit?: number;
-    includeEmptyItems?: boolean;
 }
 
 export interface V1OhlcvSymbolIdLatestGetRequest {
@@ -101,9 +100,9 @@ export class OhlcvApi extends BaseAPI {
      * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific symbol eg `BITSTAMP_SPOT_BTC_USD`, if you need to query timeseries by asset pairs eg. `BTC/USD`, then please reffer to the Exchange Rates Timeseries data              :::info The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
      * Historical data
      */
-    v1OhlcvSymbolIdHistoryGet({ symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems }: V1OhlcvSymbolIdHistoryGetRequest): Observable<Array<V1TimeseriesItem>>
-    v1OhlcvSymbolIdHistoryGet({ symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems }: V1OhlcvSymbolIdHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1TimeseriesItem>>>
-    v1OhlcvSymbolIdHistoryGet({ symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems }: V1OhlcvSymbolIdHistoryGetRequest, opts?: OperationOpts): Observable<Array<V1TimeseriesItem> | AjaxResponse<Array<V1TimeseriesItem>>> {
+    v1OhlcvSymbolIdHistoryGet({ symbolId, periodId, timeStart, timeEnd, limit }: V1OhlcvSymbolIdHistoryGetRequest): Observable<Array<V1TimeseriesItem>>
+    v1OhlcvSymbolIdHistoryGet({ symbolId, periodId, timeStart, timeEnd, limit }: V1OhlcvSymbolIdHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1TimeseriesItem>>>
+    v1OhlcvSymbolIdHistoryGet({ symbolId, periodId, timeStart, timeEnd, limit }: V1OhlcvSymbolIdHistoryGetRequest, opts?: OperationOpts): Observable<Array<V1TimeseriesItem> | AjaxResponse<Array<V1TimeseriesItem>>> {
         throwIfNullOrUndefined(symbolId, 'symbolId', 'v1OhlcvSymbolIdHistoryGet');
         throwIfNullOrUndefined(periodId, 'periodId', 'v1OhlcvSymbolIdHistoryGet');
 
@@ -118,7 +117,6 @@ export class OhlcvApi extends BaseAPI {
         if (timeStart != null) { query['time_start'] = timeStart; }
         if (timeEnd != null) { query['time_end'] = timeEnd; }
         if (limit != null) { query['limit'] = limit; }
-        if (includeEmptyItems != null) { query['include_empty_items'] = includeEmptyItems; }
 
         return this.request<Array<V1TimeseriesItem>>({
             url: '/v1/ohlcv/{symbol_id}/history'.replace('{symbol_id}', encodeURI(symbolId)),

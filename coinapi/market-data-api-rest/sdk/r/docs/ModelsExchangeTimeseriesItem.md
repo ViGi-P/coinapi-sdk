@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **price_high** | **numeric** | The highest price during the time period. | [optional] 
 **price_low** | **numeric** | The lowest price during the time period. | [optional] 
 **price_close** | **numeric** | The closing price. | [optional] 
-**volume_traded** | **numeric** | The total volume traded during the time period. | [optional] 
-**trades_count** | **integer** | The number of trades executed during the time period. | [optional] 
+**volume_traded** | **numeric** | The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
+**trades_count** | **integer** | The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
 **symbol_id_exchange** | **character** |  | [optional] 
 **symbol_id_coinapi** | **character** |  | [optional] 
 

@@ -32,9 +32,9 @@ The lowest price during the time period.
 .PARAMETER PriceClose
 The closing price.
 .PARAMETER VolumeTraded
-The total volume traded during the time period.
+The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
 .PARAMETER TradesCount
-The number of trades executed during the time period.
+The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
 .OUTPUTS
 
 V1TimeseriesItem<PSCustomObject>

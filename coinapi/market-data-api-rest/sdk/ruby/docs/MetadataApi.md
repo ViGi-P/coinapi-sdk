@@ -12,9 +12,8 @@ All URIs are relative to *https://rest.coinapi.io*
 | [**v1_exchanges_exchange_id_get**](MetadataApi.md#v1_exchanges_exchange_id_get) | **GET** /v1/exchanges/{exchange_id} | List all exchanges by exchange_id |
 | [**v1_exchanges_get**](MetadataApi.md#v1_exchanges_get) | **GET** /v1/exchanges | List all exchanges |
 | [**v1_exchanges_icons_size_get**](MetadataApi.md#v1_exchanges_icons_size_get) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges |
-| [**v1_symbols_exchange_id_get**](MetadataApi.md#v1_symbols_exchange_id_get) | **GET** /v1/symbols/{exchange_id} | List of active symbols for the exchange |
+| [**v1_symbols_exchange_id_active_get**](MetadataApi.md#v1_symbols_exchange_id_active_get) | **GET** /v1/symbols/{exchange_id}/active | List all active symbols |
 | [**v1_symbols_exchange_id_history_get**](MetadataApi.md#v1_symbols_exchange_id_history_get) | **GET** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange. |
-| [**v1_symbols_get**](MetadataApi.md#v1_symbols_get) | **GET** /v1/symbols | List all active symbols |
 | [**v1_symbols_map_exchange_id_get**](MetadataApi.md#v1_symbols_map_exchange_id_get) | **GET** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange |
 
 
@@ -608,11 +607,13 @@ end
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## v1_symbols_exchange_id_get
+## v1_symbols_exchange_id_active_get
 
-> <Array<V1Symbol>> v1_symbols_exchange_id_get(exchange_id, opts)
+> <Array<V1Symbol>> v1_symbols_exchange_id_active_get(exchange_id, opts)
 
-List of active symbols for the exchange
+List all active symbols
+
+Retrieves all currently active (listed) symbols, with optional filtering.              :::info \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \"price_precision\" and \"size_precision\". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | `symbol_id` pattern --------- | --------- SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}` FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}` OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}` PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}` INDEX | `{exchange_id}_IDX_{index_id}` CREDIT | `{exchange_id}_CRE_{asset_id_base}` CONTACT  | `{exchange_id}_COT_{contract_id}`              :::info In the unlikely event when the \"symbol_id\" for more than one market is the same. We will append the additional term (prefixed with the \"_\") at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of `symbol_type` output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for `symbol_type = INDEX`              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for `symbol_type = FUTURES`              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = PERPETUAL`              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = OPTION`              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN` option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for `symbol_type = CONTRACT`              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
 
 ### Examples
 
@@ -631,36 +632,36 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::MetadataApi.new
-exchange_id = 'exchange_id_example' # String | The ID of the exchange (from the Metadata -> Exchanges)
+exchange_id = 'exchange_id_example' # String | The ID of the exchange.
 opts = {
-  filter_symbol_id: 'filter_symbol_id_example', # String | The filter for symbol ID.
+  filter_symbol_id: 'filter_symbol_id_example', # String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
   filter_asset_id: 'filter_asset_id_example' # String | The filter for asset ID.
 }
 
 begin
-  # List of active symbols for the exchange
-  result = api_instance.v1_symbols_exchange_id_get(exchange_id, opts)
+  # List all active symbols
+  result = api_instance.v1_symbols_exchange_id_active_get(exchange_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetadataApi->v1_symbols_exchange_id_get: #{e}"
+  puts "Error when calling MetadataApi->v1_symbols_exchange_id_active_get: #{e}"
 end
 ```
 
-#### Using the v1_symbols_exchange_id_get_with_http_info variant
+#### Using the v1_symbols_exchange_id_active_get_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1Symbol>>, Integer, Hash)> v1_symbols_exchange_id_get_with_http_info(exchange_id, opts)
+> <Array(<Array<V1Symbol>>, Integer, Hash)> v1_symbols_exchange_id_active_get_with_http_info(exchange_id, opts)
 
 ```ruby
 begin
-  # List of active symbols for the exchange
-  data, status_code, headers = api_instance.v1_symbols_exchange_id_get_with_http_info(exchange_id, opts)
+  # List all active symbols
+  data, status_code, headers = api_instance.v1_symbols_exchange_id_active_get_with_http_info(exchange_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<V1Symbol>>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetadataApi->v1_symbols_exchange_id_get_with_http_info: #{e}"
+  puts "Error when calling MetadataApi->v1_symbols_exchange_id_active_get_with_http_info: #{e}"
 end
 ```
 
@@ -668,8 +669,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **exchange_id** | **String** | The ID of the exchange (from the Metadata -&gt; Exchanges) |  |
-| **filter_symbol_id** | **String** | The filter for symbol ID. | [optional] |
+| **exchange_id** | **String** | The ID of the exchange. |  |
+| **filter_symbol_id** | **String** | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) | [optional] |
 | **filter_asset_id** | **String** | The filter for asset ID. | [optional] |
 
 ### Return type
@@ -751,86 +752,6 @@ end
 | **exchange_id** | **String** | The ID of the exchange. |  |
 | **page** | **Integer** | The page number for pagination (starts from 1). | [optional][default to 1] |
 | **limit** | **Integer** | Number of records to return per page. | [optional][default to 100] |
-
-### Return type
-
-[**Array&lt;V1Symbol&gt;**](V1Symbol.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-
-## v1_symbols_get
-
-> <Array<V1Symbol>> v1_symbols_get(opts)
-
-List all active symbols
-
-Retrieves all currently active (listed) symbols, with optional filtering.              :::info \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \"price_precision\" and \"size_precision\". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | `symbol_id` pattern --------- | --------- SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}` FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}` OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}` PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}` INDEX | `{exchange_id}_IDX_{index_id}` CREDIT | `{exchange_id}_CRE_{asset_id_base}` CONTACT  | `{exchange_id}_COT_{contract_id}`              :::info In the unlikely event when the \"symbol_id\" for more than one market is the same. We will append the additional term (prefixed with the \"_\") at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of `symbol_type` output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for `symbol_type = INDEX`              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for `symbol_type = FUTURES`              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = PERPETUAL`              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = OPTION`              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN` option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for `symbol_type = CONTRACT`              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-# setup authorization
-OpenapiClient.configure do |config|
-  # Configure API key authorization: APIKey
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure Bearer authorization (JWT): JWT
-  config.access_token = 'YOUR_BEARER_TOKEN'
-end
-
-api_instance = OpenapiClient::MetadataApi.new
-opts = {
-  filter_symbol_id: 'filter_symbol_id_example', # String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
-  filter_exchange_id: 'filter_exchange_id_example', # String | The filter for exchange ID.
-  filter_asset_id: 'filter_asset_id_example' # String | The filter for asset ID.
-}
-
-begin
-  # List all active symbols
-  result = api_instance.v1_symbols_get(opts)
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetadataApi->v1_symbols_get: #{e}"
-end
-```
-
-#### Using the v1_symbols_get_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<Array<V1Symbol>>, Integer, Hash)> v1_symbols_get_with_http_info(opts)
-
-```ruby
-begin
-  # List all active symbols
-  data, status_code, headers = api_instance.v1_symbols_get_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <Array<V1Symbol>>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetadataApi->v1_symbols_get_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **filter_symbol_id** | **String** | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) | [optional] |
-| **filter_exchange_id** | **String** | The filter for exchange ID. | [optional] |
-| **filter_asset_id** | **String** | The filter for asset ID. | [optional] |
 
 ### Return type
 

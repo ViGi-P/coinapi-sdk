@@ -40,10 +40,10 @@ module OpenapiClient
     # The closing price.
     attr_accessor :price_close
 
-    # The total volume traded during the time period.
+    # The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
     attr_accessor :volume_traded
 
-    # The number of trades executed during the time period.
+    # The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
     attr_accessor :trades_count
 
     # Attribute mapping from ruby-style variable name to JSON key.

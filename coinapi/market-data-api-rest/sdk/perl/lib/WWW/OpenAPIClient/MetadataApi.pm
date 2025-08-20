@@ -564,23 +564,23 @@ sub v1_exchanges_icons_size_get {
 }
 
 #
-# v1_symbols_exchange_id_get
+# v1_symbols_exchange_id_active_get
 #
-# List of active symbols for the exchange
+# List all active symbols
 #
-# @param string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
-# @param string $filter_symbol_id The filter for symbol ID. (optional)
+# @param string $exchange_id The ID of the exchange. (required)
+# @param string $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
 # @param string $filter_asset_id The filter for asset ID. (optional)
 {
     my $params = {
     'exchange_id' => {
         data_type => 'string',
-        description => 'The ID of the exchange (from the Metadata -&gt; Exchanges)',
+        description => 'The ID of the exchange.',
         required => '1',
     },
     'filter_symbol_id' => {
         data_type => 'string',
-        description => 'The filter for symbol ID.',
+        description => 'Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;)',
         required => '0',
     },
     'filter_asset_id' => {
@@ -589,24 +589,24 @@ sub v1_exchanges_icons_size_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'v1_symbols_exchange_id_get' } = {
-        summary => 'List of active symbols for the exchange',
+    __PACKAGE__->method_documentation->{ 'v1_symbols_exchange_id_active_get' } = {
+        summary => 'List all active symbols',
         params => $params,
         returns => 'ARRAY[V1Symbol]',
         };
 }
 # @return ARRAY[V1Symbol]
 #
-sub v1_symbols_exchange_id_get {
+sub v1_symbols_exchange_id_active_get {
     my ($self, %args) = @_;
 
     # verify the required parameter 'exchange_id' is set
     unless (exists $args{'exchange_id'}) {
-      croak("Missing the required parameter 'exchange_id' when calling v1_symbols_exchange_id_get");
+      croak("Missing the required parameter 'exchange_id' when calling v1_symbols_exchange_id_active_get");
     }
 
     # parse inputs
-    my $_resource_path = '/v1/symbols/{exchange_id}';
+    my $_resource_path = '/v1/symbols/{exchange_id}/active';
 
     my $_method = 'GET';
     my $query_params = {};
@@ -724,88 +724,6 @@ sub v1_symbols_exchange_id_history_get {
         my $_base_variable = "{" . "exchange_id" . "}";
         my $_base_value = $self->{api_client}->to_path_value($args{'exchange_id'});
         $_resource_path =~ s/$_base_variable/$_base_value/g;
-    }
-
-    my $_body_data;
-    # authentication setting, if any
-    my $auth_settings = [qw(APIKey JWT )];
-
-    # make the API Call
-    my $response = $self->{api_client}->call_api($_resource_path, $_method,
-                                           $query_params, $form_params,
-                                           $header_params, $_body_data, $auth_settings);
-    if (!$response) {
-        return;
-    }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[V1Symbol]', $response);
-    return $_response_object;
-}
-
-#
-# v1_symbols_get
-#
-# List all active symbols
-#
-# @param string $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
-# @param string $filter_exchange_id The filter for exchange ID. (optional)
-# @param string $filter_asset_id The filter for asset ID. (optional)
-{
-    my $params = {
-    'filter_symbol_id' => {
-        data_type => 'string',
-        description => 'Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;)',
-        required => '0',
-    },
-    'filter_exchange_id' => {
-        data_type => 'string',
-        description => 'The filter for exchange ID.',
-        required => '0',
-    },
-    'filter_asset_id' => {
-        data_type => 'string',
-        description => 'The filter for asset ID.',
-        required => '0',
-    },
-    };
-    __PACKAGE__->method_documentation->{ 'v1_symbols_get' } = {
-        summary => 'List all active symbols',
-        params => $params,
-        returns => 'ARRAY[V1Symbol]',
-        };
-}
-# @return ARRAY[V1Symbol]
-#
-sub v1_symbols_get {
-    my ($self, %args) = @_;
-
-    # parse inputs
-    my $_resource_path = '/v1/symbols';
-
-    my $_method = 'GET';
-    my $query_params = {};
-    my $header_params = {};
-    my $form_params = {};
-
-    # 'Accept' and 'Content-Type' header
-    my $_header_accept = $self->{api_client}->select_header_accept('text/plain', 'application/json', 'text/json', 'application/x-msgpack');
-    if ($_header_accept) {
-        $header_params->{'Accept'} = $_header_accept;
-    }
-    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
-
-    # query params
-    if ( exists $args{'filter_symbol_id'}) {
-        $query_params->{'filter_symbol_id'} = $self->{api_client}->to_query_value($args{'filter_symbol_id'});
-    }
-
-    # query params
-    if ( exists $args{'filter_exchange_id'}) {
-        $query_params->{'filter_exchange_id'} = $self->{api_client}->to_query_value($args{'filter_exchange_id'});
-    }
-
-    # query params
-    if ( exists $args{'filter_asset_id'}) {
-        $query_params->{'filter_asset_id'} = $self->{api_client}->to_query_value($args{'filter_asset_id'});
     }
 
     my $_body_data;

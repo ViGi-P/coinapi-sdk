@@ -15,8 +15,8 @@
 #' @field price_high The highest price during the time period. numeric [optional]
 #' @field price_low The lowest price during the time period. numeric [optional]
 #' @field price_close The closing price. numeric [optional]
-#' @field volume_traded The total volume traded during the time period. numeric [optional]
-#' @field trades_count The number of trades executed during the time period. integer [optional]
+#' @field volume_traded The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. numeric [optional]
+#' @field trades_count The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. integer [optional]
 #' @field symbol_id_exchange  character [optional]
 #' @field symbol_id_coinapi  character [optional]
 #' @importFrom R6 R6Class
@@ -49,8 +49,8 @@ ModelsExchangeTimeseriesItem <- R6::R6Class(
     #' @param price_high The highest price during the time period.
     #' @param price_low The lowest price during the time period.
     #' @param price_close The closing price.
-    #' @param volume_traded The total volume traded during the time period.
-    #' @param trades_count The number of trades executed during the time period.
+    #' @param volume_traded The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+    #' @param trades_count The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
     #' @param symbol_id_exchange symbol_id_exchange
     #' @param symbol_id_coinapi symbol_id_coinapi
     #' @param ... Other optional arguments.

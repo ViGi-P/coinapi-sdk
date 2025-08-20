@@ -19,8 +19,8 @@ part 'v1_timeseries_item.g.dart';
 /// * [priceHigh] - The highest price during the time period.
 /// * [priceLow] - The lowest price during the time period.
 /// * [priceClose] - The closing price.
-/// * [volumeTraded] - The total volume traded during the time period.
-/// * [tradesCount] - The number of trades executed during the time period.
+/// * [volumeTraded] - The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+/// * [tradesCount] - The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
 @BuiltValue()
 abstract class V1TimeseriesItem implements Built<V1TimeseriesItem, V1TimeseriesItemBuilder> {
   /// The start time of the time period.
@@ -55,11 +55,11 @@ abstract class V1TimeseriesItem implements Built<V1TimeseriesItem, V1TimeseriesI
   @BuiltValueField(wireName: r'price_close')
   double? get priceClose;
 
-  /// The total volume traded during the time period.
+  /// The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
   @BuiltValueField(wireName: r'volume_traded')
   double? get volumeTraded;
 
-  /// The number of trades executed during the time period.
+  /// The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
   @BuiltValueField(wireName: r'trades_count')
   int? get tradesCount;
 

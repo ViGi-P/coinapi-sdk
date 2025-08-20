@@ -63,13 +63,13 @@ public class OASModelsExchangeTimeseriesItem implements OAS.MappedProperties {
     public Double priceClose { get; set; }
 
     /**
-     * The total volume traded during the time period.
+     * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
      * @return volumeTraded
      */
     public Double volumeTraded { get; set; }
 
     /**
-     * The number of trades executed during the time period.
+     * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
      * @return tradesCount
      */
     public Long tradesCount { get; set; }

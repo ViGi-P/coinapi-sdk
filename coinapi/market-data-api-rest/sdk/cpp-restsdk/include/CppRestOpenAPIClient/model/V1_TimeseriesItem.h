@@ -122,7 +122,7 @@ public:
     void setPriceClose(double value);
 
     /// <summary>
-    /// The total volume traded during the time period.
+    /// The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
     /// </summary>
     double getVolumeTraded() const;
     bool volumeTradedIsSet() const;
@@ -130,7 +130,7 @@ public:
     void setVolumeTraded(double value);
 
     /// <summary>
-    /// The number of trades executed during the time period.
+    /// The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
     /// </summary>
     int64_t getTradesCount() const;
     bool tradesCountIsSet() const;

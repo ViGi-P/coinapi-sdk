@@ -809,17 +809,17 @@ function Invoke-V1ExchangesIconsSizeGet {
 <#
 .SYNOPSIS
 
-List of active symbols for the exchange
+List all active symbols
 
 .DESCRIPTION
 
 No description available.
 
 .PARAMETER ExchangeId
-The ID of the exchange (from the Metadata -> Exchanges)
+The ID of the exchange.
 
 .PARAMETER FilterSymbolId
-The filter for symbol ID.
+Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
 
 .PARAMETER FilterAssetId
 The filter for asset ID.
@@ -836,7 +836,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 V1Symbol[]
 #>
-function Invoke-V1SymbolsExchangeIdGet {
+function Invoke-V1SymbolsExchangeIdActiveGet {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -856,7 +856,7 @@ function Invoke-V1SymbolsExchangeIdGet {
     )
 
     Process {
-        'Calling method: Invoke-V1SymbolsExchangeIdGet' | Write-Debug
+        'Calling method: Invoke-V1SymbolsExchangeIdActiveGet' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -877,9 +877,9 @@ function Invoke-V1SymbolsExchangeIdGet {
             $LocalVarAccepts = @($ReturnType)
         }
 
-        $LocalVarUri = '/v1/symbols/{exchange_id}'
+        $LocalVarUri = '/v1/symbols/{exchange_id}/active'
         if (!$ExchangeId) {
-            throw "Error! The required parameter `ExchangeId` missing when calling v1SymbolsExchangeIdGet."
+            throw "Error! The required parameter `ExchangeId` missing when calling v1SymbolsExchangeIdActiveGet."
         }
         $LocalVarUri = $LocalVarUri.replace('{exchange_id}', [System.Web.HTTPUtility]::UrlEncode($ExchangeId))
 
@@ -1009,126 +1009,6 @@ function Invoke-V1SymbolsExchangeIdHistoryGet {
 
         if ($Limit) {
             $LocalVarQueryParameters['limit'] = $Limit
-        }
-
-        if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
-            $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
-        } else {
-            $apiKeyPrefix = ""
-        }
-        if ($Configuration["ApiKey"] -and $Configuration["ApiKey"]["Authorization"]) {
-            $LocalVarHeaderParameters['Authorization'] = $apiKeyPrefix + $Configuration["ApiKey"]["Authorization"]
-            Write-Verbose ("Using API key 'Authorization' in the header for authentication in {0}" -f $MyInvocation.MyCommand)
-        }
-
-        if ($Configuration["AccessToken"]) {
-            $LocalVarHeaderParameters['Authorization'] = "Bearer " + $Configuration["AccessToken"]
-            Write-Verbose ("Using Bearer authentication in {0}" -f $MyInvocation.MyCommand)
-        }
-
-        $LocalVarResult = Invoke-ApiClient -Method 'GET' `
-                                -Uri $LocalVarUri `
-                                -Accepts $LocalVarAccepts `
-                                -ContentTypes $LocalVarContentTypes `
-                                -Body $LocalVarBodyParameter `
-                                -HeaderParameters $LocalVarHeaderParameters `
-                                -QueryParameters $LocalVarQueryParameters `
-                                -FormParameters $LocalVarFormParameters `
-                                -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "V1Symbol[]" `
-                                -IsBodyNullable $false
-
-        if ($WithHttpInfo.IsPresent) {
-            return $LocalVarResult
-        } else {
-            return $LocalVarResult["Response"]
-        }
-    }
-}
-
-<#
-.SYNOPSIS
-
-List all active symbols
-
-.DESCRIPTION
-
-No description available.
-
-.PARAMETER FilterSymbolId
-Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
-
-.PARAMETER FilterExchangeId
-The filter for exchange ID.
-
-.PARAMETER FilterAssetId
-The filter for asset ID.
-
-.PARAMETER ReturnType
-
-Select the return type (optional): text/plain, application/json, text/json, application/x-msgpack
-
-.PARAMETER WithHttpInfo
-
-A switch when turned on will return a hash table of Response, StatusCode and Headers instead of just the Response
-
-.OUTPUTS
-
-V1Symbol[]
-#>
-function Invoke-V1SymbolsGet {
-    [CmdletBinding()]
-    Param (
-        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [String]
-        ${FilterSymbolId},
-        [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [String]
-        ${FilterExchangeId},
-        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [String]
-        ${FilterAssetId},
-        [String]
-        [ValidateSet("text/plain", "application/json", "text/json", "application/x-msgpack")]
-        $ReturnType,
-        [Switch]
-        $WithHttpInfo
-    )
-
-    Process {
-        'Calling method: Invoke-V1SymbolsGet' | Write-Debug
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-        $LocalVarAccepts = @()
-        $LocalVarContentTypes = @()
-        $LocalVarQueryParameters = @{}
-        $LocalVarHeaderParameters = @{}
-        $LocalVarFormParameters = @{}
-        $LocalVarPathParameters = @{}
-        $LocalVarCookieParameters = @{}
-        $LocalVarBodyParameter = $null
-
-        $Configuration = Get-Configuration
-        # HTTP header 'Accept' (if needed)
-        $LocalVarAccepts = @('text/plain', 'application/json', 'text/json', 'application/x-msgpack')
-
-        if ($ReturnType) {
-            # use the return type (MIME) provided by the user
-            $LocalVarAccepts = @($ReturnType)
-        }
-
-        $LocalVarUri = '/v1/symbols'
-
-        if ($FilterSymbolId) {
-            $LocalVarQueryParameters['filter_symbol_id'] = $FilterSymbolId
-        }
-
-        if ($FilterExchangeId) {
-            $LocalVarQueryParameters['filter_exchange_id'] = $FilterExchangeId
-        }
-
-        if ($FilterAssetId) {
-            $LocalVarQueryParameters['filter_asset_id'] = $FilterAssetId
         }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {

@@ -147,9 +147,8 @@ Class | Method | HTTP request | Description
 *CoinApiMarketDataRestApi.MetadataApi* | [**v1ExchangesExchangeIdGet**](docs/MetadataApi.md#v1ExchangesExchangeIdGet) | **GET** /v1/exchanges/{exchange_id} | List all exchanges by exchange_id
 *CoinApiMarketDataRestApi.MetadataApi* | [**v1ExchangesGet**](docs/MetadataApi.md#v1ExchangesGet) | **GET** /v1/exchanges | List all exchanges
 *CoinApiMarketDataRestApi.MetadataApi* | [**v1ExchangesIconsSizeGet**](docs/MetadataApi.md#v1ExchangesIconsSizeGet) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
-*CoinApiMarketDataRestApi.MetadataApi* | [**v1SymbolsExchangeIdGet**](docs/MetadataApi.md#v1SymbolsExchangeIdGet) | **GET** /v1/symbols/{exchange_id} | List of active symbols for the exchange
+*CoinApiMarketDataRestApi.MetadataApi* | [**v1SymbolsExchangeIdActiveGet**](docs/MetadataApi.md#v1SymbolsExchangeIdActiveGet) | **GET** /v1/symbols/{exchange_id}/active | List all active symbols
 *CoinApiMarketDataRestApi.MetadataApi* | [**v1SymbolsExchangeIdHistoryGet**](docs/MetadataApi.md#v1SymbolsExchangeIdHistoryGet) | **GET** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
-*CoinApiMarketDataRestApi.MetadataApi* | [**v1SymbolsGet**](docs/MetadataApi.md#v1SymbolsGet) | **GET** /v1/symbols | List all active symbols
 *CoinApiMarketDataRestApi.MetadataApi* | [**v1SymbolsMapExchangeIdGet**](docs/MetadataApi.md#v1SymbolsMapExchangeIdGet) | **GET** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
 *CoinApiMarketDataRestApi.MetricsV1Api* | [**v1MetricsAssetCurrentGet**](docs/MetricsV1Api.md#v1MetricsAssetCurrentGet) | **GET** /v1/metrics/asset/current | Current metrics for given asset
 *CoinApiMarketDataRestApi.MetricsV1Api* | [**v1MetricsAssetHistoryGet**](docs/MetricsV1Api.md#v1MetricsAssetHistoryGet) | **GET** /v1/metrics/asset/history | Historical metrics for asset

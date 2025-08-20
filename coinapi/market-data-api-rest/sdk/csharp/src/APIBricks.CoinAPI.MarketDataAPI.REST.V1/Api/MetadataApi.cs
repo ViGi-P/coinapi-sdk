@@ -221,31 +221,31 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         Task<IV1ExchangesIconsSizeGetApiResponse?> V1ExchangesIconsSizeGetOrDefaultAsync(int size, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List of active symbols for the exchange
+        /// List all active symbols
         /// </summary>
         /// <remarks>
-        /// 
+        /// Retrieves all currently active (listed) symbols, with optional filtering.              :::info \&quot;price_precision\&quot; and \&quot;size_precision\&quot; are data precisions and are not always the same precisions used for trading eg. for the \&quot;BINANCE\&quot; exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \&quot;price_precision\&quot; and \&quot;size_precision\&quot;. The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | &#x60;symbol_id&#x60; pattern - -- -- -- -- | - -- -- -- -- SPOT | &#x60;{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}&#x60; FUTURES | &#x60;{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}&#x60; OPTION | &#x60;{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}&#x60; PERPETUAL | &#x60;{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}&#x60; INDEX | &#x60;{exchange_id}_IDX_{index_id}&#x60; CREDIT | &#x60;{exchange_id}_CRE_{asset_id_base}&#x60; CONTACT  | &#x60;{exchange_id}_COT_{contract_id}&#x60;              :::info In the unlikely event when the \&quot;symbol_id\&quot; for more than one market is the same. We will append the additional term (prefixed with the \&quot;_\&quot;) at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of &#x60;symbol_type&#x60; output variable)              Type | Name | Description - -- -- -- - | - | - -- -- -- -- -- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for &#x60;symbol_type &#x3D; INDEX&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for &#x60;symbol_type &#x3D; FUTURES&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; PERPETUAL&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; OPTION&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- option_type_is_call | Boolean value representing option type. &#x60;true&#x60; for Call options, &#x60;false&#x60; for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be &#x60;EUROPEAN&#x60; or &#x60;AMERICAN&#x60; option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for &#x60;symbol_type &#x3D; CONTRACT&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if &#x60;contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
-        /// <param name="filterSymbolId">The filter for symbol ID. (optional)</param>
+        /// <param name="exchangeId">The ID of the exchange.</param>
+        /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)</param>
         /// <param name="filterAssetId">The filter for asset ID. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdGetApiResponse"/>&gt;</returns>
-        Task<IV1SymbolsExchangeIdGetApiResponse> V1SymbolsExchangeIdGetAsync(string exchangeId, Option<string> filterSymbolId = default, Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdActiveGetApiResponse"/>&gt;</returns>
+        Task<IV1SymbolsExchangeIdActiveGetApiResponse> V1SymbolsExchangeIdActiveGetAsync(string exchangeId, Option<string> filterSymbolId = default, Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List of active symbols for the exchange
+        /// List all active symbols
         /// </summary>
         /// <remarks>
-        /// 
+        /// Retrieves all currently active (listed) symbols, with optional filtering.              :::info \&quot;price_precision\&quot; and \&quot;size_precision\&quot; are data precisions and are not always the same precisions used for trading eg. for the \&quot;BINANCE\&quot; exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \&quot;price_precision\&quot; and \&quot;size_precision\&quot;. The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | &#x60;symbol_id&#x60; pattern - -- -- -- -- | - -- -- -- -- SPOT | &#x60;{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}&#x60; FUTURES | &#x60;{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}&#x60; OPTION | &#x60;{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}&#x60; PERPETUAL | &#x60;{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}&#x60; INDEX | &#x60;{exchange_id}_IDX_{index_id}&#x60; CREDIT | &#x60;{exchange_id}_CRE_{asset_id_base}&#x60; CONTACT  | &#x60;{exchange_id}_COT_{contract_id}&#x60;              :::info In the unlikely event when the \&quot;symbol_id\&quot; for more than one market is the same. We will append the additional term (prefixed with the \&quot;_\&quot;) at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of &#x60;symbol_type&#x60; output variable)              Type | Name | Description - -- -- -- - | - | - -- -- -- -- -- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for &#x60;symbol_type &#x3D; INDEX&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for &#x60;symbol_type &#x3D; FUTURES&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; PERPETUAL&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; OPTION&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- option_type_is_call | Boolean value representing option type. &#x60;true&#x60; for Call options, &#x60;false&#x60; for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be &#x60;EUROPEAN&#x60; or &#x60;AMERICAN&#x60; option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for &#x60;symbol_type &#x3D; CONTRACT&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if &#x60;contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
         /// </remarks>
-        /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
-        /// <param name="filterSymbolId">The filter for symbol ID. (optional)</param>
+        /// <param name="exchangeId">The ID of the exchange.</param>
+        /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)</param>
         /// <param name="filterAssetId">The filter for asset ID. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdGetApiResponse"/>?&gt;</returns>
-        Task<IV1SymbolsExchangeIdGetApiResponse?> V1SymbolsExchangeIdGetOrDefaultAsync(string exchangeId, Option<string> filterSymbolId = default, Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdActiveGetApiResponse"/>?&gt;</returns>
+        Task<IV1SymbolsExchangeIdActiveGetApiResponse?> V1SymbolsExchangeIdActiveGetOrDefaultAsync(string exchangeId, Option<string> filterSymbolId = default, Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List all historical symbols for an exchange.
@@ -273,33 +273,6 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdHistoryGetApiResponse"/>?&gt;</returns>
         Task<IV1SymbolsExchangeIdHistoryGetApiResponse?> V1SymbolsExchangeIdHistoryGetOrDefaultAsync(string exchangeId, Option<int> page = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// List all active symbols
-        /// </summary>
-        /// <remarks>
-        /// Retrieves all currently active (listed) symbols, with optional filtering.              :::info \&quot;price_precision\&quot; and \&quot;size_precision\&quot; are data precisions and are not always the same precisions used for trading eg. for the \&quot;BINANCE\&quot; exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \&quot;price_precision\&quot; and \&quot;size_precision\&quot;. The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | &#x60;symbol_id&#x60; pattern - -- -- -- -- | - -- -- -- -- SPOT | &#x60;{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}&#x60; FUTURES | &#x60;{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}&#x60; OPTION | &#x60;{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}&#x60; PERPETUAL | &#x60;{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}&#x60; INDEX | &#x60;{exchange_id}_IDX_{index_id}&#x60; CREDIT | &#x60;{exchange_id}_CRE_{asset_id_base}&#x60; CONTACT  | &#x60;{exchange_id}_COT_{contract_id}&#x60;              :::info In the unlikely event when the \&quot;symbol_id\&quot; for more than one market is the same. We will append the additional term (prefixed with the \&quot;_\&quot;) at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of &#x60;symbol_type&#x60; output variable)              Type | Name | Description - -- -- -- - | - | - -- -- -- -- -- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for &#x60;symbol_type &#x3D; INDEX&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for &#x60;symbol_type &#x3D; FUTURES&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; PERPETUAL&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; OPTION&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- option_type_is_call | Boolean value representing option type. &#x60;true&#x60; for Call options, &#x60;false&#x60; for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be &#x60;EUROPEAN&#x60; or &#x60;AMERICAN&#x60; option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for &#x60;symbol_type &#x3D; CONTRACT&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if &#x60;contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)</param>
-        /// <param name="filterExchangeId">The filter for exchange ID. (optional)</param>
-        /// <param name="filterAssetId">The filter for asset ID. (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsGetApiResponse"/>&gt;</returns>
-        Task<IV1SymbolsGetApiResponse> V1SymbolsGetAsync(Option<string> filterSymbolId = default, Option<string> filterExchangeId = default, Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// List all active symbols
-        /// </summary>
-        /// <remarks>
-        /// Retrieves all currently active (listed) symbols, with optional filtering.              :::info \&quot;price_precision\&quot; and \&quot;size_precision\&quot; are data precisions and are not always the same precisions used for trading eg. for the \&quot;BINANCE\&quot; exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \&quot;price_precision\&quot; and \&quot;size_precision\&quot;. The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | &#x60;symbol_id&#x60; pattern - -- -- -- -- | - -- -- -- -- SPOT | &#x60;{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}&#x60; FUTURES | &#x60;{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}&#x60; OPTION | &#x60;{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}&#x60; PERPETUAL | &#x60;{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}&#x60; INDEX | &#x60;{exchange_id}_IDX_{index_id}&#x60; CREDIT | &#x60;{exchange_id}_CRE_{asset_id_base}&#x60; CONTACT  | &#x60;{exchange_id}_COT_{contract_id}&#x60;              :::info In the unlikely event when the \&quot;symbol_id\&quot; for more than one market is the same. We will append the additional term (prefixed with the \&quot;_\&quot;) at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of &#x60;symbol_type&#x60; output variable)              Type | Name | Description - -- -- -- - | - | - -- -- -- -- -- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for &#x60;symbol_type &#x3D; INDEX&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for &#x60;symbol_type &#x3D; FUTURES&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; PERPETUAL&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; OPTION&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- option_type_is_call | Boolean value representing option type. &#x60;true&#x60; for Call options, &#x60;false&#x60; for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be &#x60;EUROPEAN&#x60; or &#x60;AMERICAN&#x60; option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for &#x60;symbol_type &#x3D; CONTRACT&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if &#x60;contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
-        /// </remarks>
-        /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)</param>
-        /// <param name="filterExchangeId">The filter for exchange ID. (optional)</param>
-        /// <param name="filterAssetId">The filter for asset ID. (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsGetApiResponse"/>?&gt;</returns>
-        Task<IV1SymbolsGetApiResponse?> V1SymbolsGetOrDefaultAsync(Option<string> filterSymbolId = default, Option<string> filterExchangeId = default, Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List active symbol mapping for the exchange
@@ -422,9 +395,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     }
 
     /// <summary>
-    /// The <see cref="IV1SymbolsExchangeIdGetApiResponse"/>
+    /// The <see cref="IV1SymbolsExchangeIdActiveGetApiResponse"/>
     /// </summary>
-    public interface IV1SymbolsExchangeIdGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Symbol>?>
+    public interface IV1SymbolsExchangeIdActiveGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Symbol>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -437,18 +410,6 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     /// The <see cref="IV1SymbolsExchangeIdHistoryGetApiResponse"/>
     /// </summary>
     public interface IV1SymbolsExchangeIdHistoryGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Symbol>?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IV1SymbolsGetApiResponse"/>
-    /// </summary>
-    public interface IV1SymbolsGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1Symbol>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -637,21 +598,21 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnV1SymbolsExchangeIdGet;
+        public event EventHandler<ApiResponseEventArgs>? OnV1SymbolsExchangeIdActiveGet;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorV1SymbolsExchangeIdGet;
+        public event EventHandler<ExceptionEventArgs>? OnErrorV1SymbolsExchangeIdActiveGet;
 
-        internal void ExecuteOnV1SymbolsExchangeIdGet(MetadataApi.V1SymbolsExchangeIdGetApiResponse apiResponse)
+        internal void ExecuteOnV1SymbolsExchangeIdActiveGet(MetadataApi.V1SymbolsExchangeIdActiveGetApiResponse apiResponse)
         {
-            OnV1SymbolsExchangeIdGet?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnV1SymbolsExchangeIdActiveGet?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorV1SymbolsExchangeIdGet(Exception exception)
+        internal void ExecuteOnErrorV1SymbolsExchangeIdActiveGet(Exception exception)
         {
-            OnErrorV1SymbolsExchangeIdGet?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorV1SymbolsExchangeIdActiveGet?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
@@ -672,26 +633,6 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         internal void ExecuteOnErrorV1SymbolsExchangeIdHistoryGet(Exception exception)
         {
             OnErrorV1SymbolsExchangeIdHistoryGet?.Invoke(this, new ExceptionEventArgs(exception));
-        }
-
-        /// <summary>
-        /// The event raised after the server response
-        /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnV1SymbolsGet;
-
-        /// <summary>
-        /// The event raised after an error querying the server
-        /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorV1SymbolsGet;
-
-        internal void ExecuteOnV1SymbolsGet(MetadataApi.V1SymbolsGetApiResponse apiResponse)
-        {
-            OnV1SymbolsGet?.Invoke(this, new ApiResponseEventArgs(apiResponse));
-        }
-
-        internal void ExecuteOnErrorV1SymbolsGet(Exception exception)
-        {
-            OnErrorV1SymbolsGet?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
@@ -2665,7 +2606,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatV1SymbolsExchangeIdGet(ref string exchangeId, ref Option<string> filterSymbolId, ref Option<string> filterAssetId);
+        partial void FormatV1SymbolsExchangeIdActiveGet(ref string exchangeId, ref Option<string> filterSymbolId, ref Option<string> filterAssetId);
 
         /// <summary>
         /// Validates the request parameters
@@ -2674,7 +2615,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="filterSymbolId"></param>
         /// <param name="filterAssetId"></param>
         /// <returns></returns>
-        private void ValidateV1SymbolsExchangeIdGet(string exchangeId, Option<string> filterSymbolId, Option<string> filterAssetId)
+        private void ValidateV1SymbolsExchangeIdActiveGet(string exchangeId, Option<string> filterSymbolId, Option<string> filterAssetId)
         {
             if (exchangeId == null)
                 throw new ArgumentNullException(nameof(exchangeId));
@@ -2693,10 +2634,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="exchangeId"></param>
         /// <param name="filterSymbolId"></param>
         /// <param name="filterAssetId"></param>
-        private void AfterV1SymbolsExchangeIdGetDefaultImplementation(IV1SymbolsExchangeIdGetApiResponse apiResponseLocalVar, string exchangeId, Option<string> filterSymbolId, Option<string> filterAssetId)
+        private void AfterV1SymbolsExchangeIdActiveGetDefaultImplementation(IV1SymbolsExchangeIdActiveGetApiResponse apiResponseLocalVar, string exchangeId, Option<string> filterSymbolId, Option<string> filterAssetId)
         {
             bool suppressDefaultLog = false;
-            AfterV1SymbolsExchangeIdGet(ref suppressDefaultLog, apiResponseLocalVar, exchangeId, filterSymbolId, filterAssetId);
+            AfterV1SymbolsExchangeIdActiveGet(ref suppressDefaultLog, apiResponseLocalVar, exchangeId, filterSymbolId, filterAssetId);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2709,7 +2650,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="exchangeId"></param>
         /// <param name="filterSymbolId"></param>
         /// <param name="filterAssetId"></param>
-        partial void AfterV1SymbolsExchangeIdGet(ref bool suppressDefaultLog, IV1SymbolsExchangeIdGetApiResponse apiResponseLocalVar, string exchangeId, Option<string> filterSymbolId, Option<string> filterAssetId);
+        partial void AfterV1SymbolsExchangeIdActiveGet(ref bool suppressDefaultLog, IV1SymbolsExchangeIdActiveGetApiResponse apiResponseLocalVar, string exchangeId, Option<string> filterSymbolId, Option<string> filterAssetId);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2720,10 +2661,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="exchangeId"></param>
         /// <param name="filterSymbolId"></param>
         /// <param name="filterAssetId"></param>
-        private void OnErrorV1SymbolsExchangeIdGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, Option<string> filterSymbolId, Option<string> filterAssetId)
+        private void OnErrorV1SymbolsExchangeIdActiveGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, Option<string> filterSymbolId, Option<string> filterAssetId)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorV1SymbolsExchangeIdGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, exchangeId, filterSymbolId, filterAssetId);
+            OnErrorV1SymbolsExchangeIdActiveGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, exchangeId, filterSymbolId, filterAssetId);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2738,21 +2679,21 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="exchangeId"></param>
         /// <param name="filterSymbolId"></param>
         /// <param name="filterAssetId"></param>
-        partial void OnErrorV1SymbolsExchangeIdGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, Option<string> filterSymbolId, Option<string> filterAssetId);
+        partial void OnErrorV1SymbolsExchangeIdActiveGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, Option<string> filterSymbolId, Option<string> filterAssetId);
 
         /// <summary>
-        /// List of active symbols for the exchange 
+        /// List all active symbols Retrieves all currently active (listed) symbols, with optional filtering.              :::info \&quot;price_precision\&quot; and \&quot;size_precision\&quot; are data precisions and are not always the same precisions used for trading eg. for the \&quot;BINANCE\&quot; exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \&quot;price_precision\&quot; and \&quot;size_precision\&quot;. The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | &#x60;symbol_id&#x60; pattern - -- -- -- -- | - -- -- -- -- SPOT | &#x60;{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}&#x60; FUTURES | &#x60;{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}&#x60; OPTION | &#x60;{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}&#x60; PERPETUAL | &#x60;{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}&#x60; INDEX | &#x60;{exchange_id}_IDX_{index_id}&#x60; CREDIT | &#x60;{exchange_id}_CRE_{asset_id_base}&#x60; CONTACT  | &#x60;{exchange_id}_COT_{contract_id}&#x60;              :::info In the unlikely event when the \&quot;symbol_id\&quot; for more than one market is the same. We will append the additional term (prefixed with the \&quot;_\&quot;) at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of &#x60;symbol_type&#x60; output variable)              Type | Name | Description - -- -- -- - | - | - -- -- -- -- -- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for &#x60;symbol_type &#x3D; INDEX&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for &#x60;symbol_type &#x3D; FUTURES&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; PERPETUAL&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; OPTION&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- option_type_is_call | Boolean value representing option type. &#x60;true&#x60; for Call options, &#x60;false&#x60; for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be &#x60;EUROPEAN&#x60; or &#x60;AMERICAN&#x60; option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for &#x60;symbol_type &#x3D; CONTRACT&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if &#x60;contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
         /// </summary>
-        /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
-        /// <param name="filterSymbolId">The filter for symbol ID. (optional)</param>
+        /// <param name="exchangeId">The ID of the exchange.</param>
+        /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)</param>
         /// <param name="filterAssetId">The filter for asset ID. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdGetApiResponse"/>&gt;</returns>
-        public async Task<IV1SymbolsExchangeIdGetApiResponse?> V1SymbolsExchangeIdGetOrDefaultAsync(string exchangeId, Option<string> filterSymbolId = default, Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdActiveGetApiResponse"/>&gt;</returns>
+        public async Task<IV1SymbolsExchangeIdActiveGetApiResponse?> V1SymbolsExchangeIdActiveGetOrDefaultAsync(string exchangeId, Option<string> filterSymbolId = default, Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await V1SymbolsExchangeIdGetAsync(exchangeId, filterSymbolId, filterAssetId, cancellationToken).ConfigureAwait(false);
+                return await V1SymbolsExchangeIdActiveGetAsync(exchangeId, filterSymbolId, filterAssetId, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2761,23 +2702,23 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         }
 
         /// <summary>
-        /// List of active symbols for the exchange 
+        /// List all active symbols Retrieves all currently active (listed) symbols, with optional filtering.              :::info \&quot;price_precision\&quot; and \&quot;size_precision\&quot; are data precisions and are not always the same precisions used for trading eg. for the \&quot;BINANCE\&quot; exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \&quot;price_precision\&quot; and \&quot;size_precision\&quot;. The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | &#x60;symbol_id&#x60; pattern - -- -- -- -- | - -- -- -- -- SPOT | &#x60;{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}&#x60; FUTURES | &#x60;{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}&#x60; OPTION | &#x60;{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}&#x60; PERPETUAL | &#x60;{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}&#x60; INDEX | &#x60;{exchange_id}_IDX_{index_id}&#x60; CREDIT | &#x60;{exchange_id}_CRE_{asset_id_base}&#x60; CONTACT  | &#x60;{exchange_id}_COT_{contract_id}&#x60;              :::info In the unlikely event when the \&quot;symbol_id\&quot; for more than one market is the same. We will append the additional term (prefixed with the \&quot;_\&quot;) at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of &#x60;symbol_type&#x60; output variable)              Type | Name | Description - -- -- -- - | - | - -- -- -- -- -- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for &#x60;symbol_type &#x3D; INDEX&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for &#x60;symbol_type &#x3D; FUTURES&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; PERPETUAL&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; OPTION&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- option_type_is_call | Boolean value representing option type. &#x60;true&#x60; for Call options, &#x60;false&#x60; for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be &#x60;EUROPEAN&#x60; or &#x60;AMERICAN&#x60; option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for &#x60;symbol_type &#x3D; CONTRACT&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if &#x60;contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
-        /// <param name="filterSymbolId">The filter for symbol ID. (optional)</param>
+        /// <param name="exchangeId">The ID of the exchange.</param>
+        /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)</param>
         /// <param name="filterAssetId">The filter for asset ID. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdGetApiResponse"/>&gt;</returns>
-        public async Task<IV1SymbolsExchangeIdGetApiResponse> V1SymbolsExchangeIdGetAsync(string exchangeId, Option<string> filterSymbolId = default, Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdActiveGetApiResponse"/>&gt;</returns>
+        public async Task<IV1SymbolsExchangeIdActiveGetApiResponse> V1SymbolsExchangeIdActiveGetAsync(string exchangeId, Option<string> filterSymbolId = default, Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateV1SymbolsExchangeIdGet(exchangeId, filterSymbolId, filterAssetId);
+                ValidateV1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId);
 
-                FormatV1SymbolsExchangeIdGet(ref exchangeId, ref filterSymbolId, ref filterAssetId);
+                FormatV1SymbolsExchangeIdActiveGet(ref exchangeId, ref filterSymbolId, ref filterAssetId);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2785,8 +2726,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                     uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/v1/symbols/{exchange_id}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/symbols/{exchange_id}");
+                        ? "/v1/symbols/{exchange_id}/active"
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/symbols/{exchange_id}/active");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bexchange_id%7D", Uri.EscapeDataString(exchangeId.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
@@ -2832,13 +2773,13 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                     {
                         string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
-                        ILogger<V1SymbolsExchangeIdGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1SymbolsExchangeIdGetApiResponse>();
+                        ILogger<V1SymbolsExchangeIdActiveGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1SymbolsExchangeIdActiveGetApiResponse>();
 
-                        V1SymbolsExchangeIdGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/symbols/{exchange_id}", requestedAtLocalVar, _jsonSerializerOptions);
+                        V1SymbolsExchangeIdActiveGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/symbols/{exchange_id}/active", requestedAtLocalVar, _jsonSerializerOptions);
 
-                        AfterV1SymbolsExchangeIdGetDefaultImplementation(apiResponseLocalVar, exchangeId, filterSymbolId, filterAssetId);
+                        AfterV1SymbolsExchangeIdActiveGetDefaultImplementation(apiResponseLocalVar, exchangeId, filterSymbolId, filterAssetId);
 
-                        Events.ExecuteOnV1SymbolsExchangeIdGet(apiResponseLocalVar);
+                        Events.ExecuteOnV1SymbolsExchangeIdActiveGet(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2850,24 +2791,24 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorV1SymbolsExchangeIdGetDefaultImplementation(e, "/v1/symbols/{exchange_id}", uriBuilderLocalVar.Path, exchangeId, filterSymbolId, filterAssetId);
-                Events.ExecuteOnErrorV1SymbolsExchangeIdGet(e);
+                OnErrorV1SymbolsExchangeIdActiveGetDefaultImplementation(e, "/v1/symbols/{exchange_id}/active", uriBuilderLocalVar.Path, exchangeId, filterSymbolId, filterAssetId);
+                Events.ExecuteOnErrorV1SymbolsExchangeIdActiveGet(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="V1SymbolsExchangeIdGetApiResponse"/>
+        /// The <see cref="V1SymbolsExchangeIdActiveGetApiResponse"/>
         /// </summary>
-        public partial class V1SymbolsExchangeIdGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IV1SymbolsExchangeIdGetApiResponse
+        public partial class V1SymbolsExchangeIdActiveGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IV1SymbolsExchangeIdActiveGetApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<V1SymbolsExchangeIdGetApiResponse> Logger { get; }
+            public ILogger<V1SymbolsExchangeIdActiveGetApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="V1SymbolsExchangeIdGetApiResponse"/>
+            /// The <see cref="V1SymbolsExchangeIdActiveGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2876,7 +2817,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public V1SymbolsExchangeIdGetApiResponse(ILogger<V1SymbolsExchangeIdGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V1SymbolsExchangeIdActiveGetApiResponse(ILogger<V1SymbolsExchangeIdActiveGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -3137,276 +3078,6 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
             public V1SymbolsExchangeIdHistoryGetApiResponse(ILogger<V1SymbolsExchangeIdHistoryGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public List<V1Symbol>? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<V1Symbol>>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<V1Symbol>? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatV1SymbolsGet(ref Option<string> filterSymbolId, ref Option<string> filterExchangeId, ref Option<string> filterAssetId);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="filterSymbolId"></param>
-        /// <param name="filterExchangeId"></param>
-        /// <param name="filterAssetId"></param>
-        /// <returns></returns>
-        private void ValidateV1SymbolsGet(Option<string> filterSymbolId, Option<string> filterExchangeId, Option<string> filterAssetId)
-        {
-            if (filterSymbolId.IsSet && filterSymbolId.Value == null)
-                throw new ArgumentNullException(nameof(filterSymbolId));
-
-            if (filterExchangeId.IsSet && filterExchangeId.Value == null)
-                throw new ArgumentNullException(nameof(filterExchangeId));
-
-            if (filterAssetId.IsSet && filterAssetId.Value == null)
-                throw new ArgumentNullException(nameof(filterAssetId));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="filterSymbolId"></param>
-        /// <param name="filterExchangeId"></param>
-        /// <param name="filterAssetId"></param>
-        private void AfterV1SymbolsGetDefaultImplementation(IV1SymbolsGetApiResponse apiResponseLocalVar, Option<string> filterSymbolId, Option<string> filterExchangeId, Option<string> filterAssetId)
-        {
-            bool suppressDefaultLog = false;
-            AfterV1SymbolsGet(ref suppressDefaultLog, apiResponseLocalVar, filterSymbolId, filterExchangeId, filterAssetId);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="filterSymbolId"></param>
-        /// <param name="filterExchangeId"></param>
-        /// <param name="filterAssetId"></param>
-        partial void AfterV1SymbolsGet(ref bool suppressDefaultLog, IV1SymbolsGetApiResponse apiResponseLocalVar, Option<string> filterSymbolId, Option<string> filterExchangeId, Option<string> filterAssetId);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="filterSymbolId"></param>
-        /// <param name="filterExchangeId"></param>
-        /// <param name="filterAssetId"></param>
-        private void OnErrorV1SymbolsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterSymbolId, Option<string> filterExchangeId, Option<string> filterAssetId)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorV1SymbolsGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, filterSymbolId, filterExchangeId, filterAssetId);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="filterSymbolId"></param>
-        /// <param name="filterExchangeId"></param>
-        /// <param name="filterAssetId"></param>
-        partial void OnErrorV1SymbolsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> filterSymbolId, Option<string> filterExchangeId, Option<string> filterAssetId);
-
-        /// <summary>
-        /// List all active symbols Retrieves all currently active (listed) symbols, with optional filtering.              :::info \&quot;price_precision\&quot; and \&quot;size_precision\&quot; are data precisions and are not always the same precisions used for trading eg. for the \&quot;BINANCE\&quot; exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \&quot;price_precision\&quot; and \&quot;size_precision\&quot;. The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | &#x60;symbol_id&#x60; pattern - -- -- -- -- | - -- -- -- -- SPOT | &#x60;{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}&#x60; FUTURES | &#x60;{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}&#x60; OPTION | &#x60;{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}&#x60; PERPETUAL | &#x60;{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}&#x60; INDEX | &#x60;{exchange_id}_IDX_{index_id}&#x60; CREDIT | &#x60;{exchange_id}_CRE_{asset_id_base}&#x60; CONTACT  | &#x60;{exchange_id}_COT_{contract_id}&#x60;              :::info In the unlikely event when the \&quot;symbol_id\&quot; for more than one market is the same. We will append the additional term (prefixed with the \&quot;_\&quot;) at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of &#x60;symbol_type&#x60; output variable)              Type | Name | Description - -- -- -- - | - | - -- -- -- -- -- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for &#x60;symbol_type &#x3D; INDEX&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for &#x60;symbol_type &#x3D; FUTURES&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; PERPETUAL&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; OPTION&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- option_type_is_call | Boolean value representing option type. &#x60;true&#x60; for Call options, &#x60;false&#x60; for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be &#x60;EUROPEAN&#x60; or &#x60;AMERICAN&#x60; option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for &#x60;symbol_type &#x3D; CONTRACT&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if &#x60;contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
-        /// </summary>
-        /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)</param>
-        /// <param name="filterExchangeId">The filter for exchange ID. (optional)</param>
-        /// <param name="filterAssetId">The filter for asset ID. (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsGetApiResponse"/>&gt;</returns>
-        public async Task<IV1SymbolsGetApiResponse?> V1SymbolsGetOrDefaultAsync(Option<string> filterSymbolId = default, Option<string> filterExchangeId = default, Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await V1SymbolsGetAsync(filterSymbolId, filterExchangeId, filterAssetId, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// List all active symbols Retrieves all currently active (listed) symbols, with optional filtering.              :::info \&quot;price_precision\&quot; and \&quot;size_precision\&quot; are data precisions and are not always the same precisions used for trading eg. for the \&quot;BINANCE\&quot; exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \&quot;price_precision\&quot; and \&quot;size_precision\&quot;. The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | &#x60;symbol_id&#x60; pattern - -- -- -- -- | - -- -- -- -- SPOT | &#x60;{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}&#x60; FUTURES | &#x60;{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}&#x60; OPTION | &#x60;{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}&#x60; PERPETUAL | &#x60;{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}&#x60; INDEX | &#x60;{exchange_id}_IDX_{index_id}&#x60; CREDIT | &#x60;{exchange_id}_CRE_{asset_id_base}&#x60; CONTACT  | &#x60;{exchange_id}_COT_{contract_id}&#x60;              :::info In the unlikely event when the \&quot;symbol_id\&quot; for more than one market is the same. We will append the additional term (prefixed with the \&quot;_\&quot;) at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of &#x60;symbol_type&#x60; output variable)              Type | Name | Description - -- -- -- - | - | - -- -- -- -- -- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for &#x60;symbol_type &#x3D; INDEX&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for &#x60;symbol_type &#x3D; FUTURES&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; PERPETUAL&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- future_contract_unit | Contact size *(eg. 10 BTC if &#x60;future_contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;future_contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for &#x60;symbol_type &#x3D; OPTION&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- option_type_is_call | Boolean value representing option type. &#x60;true&#x60; for Call options, &#x60;false&#x60; for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be &#x60;EUROPEAN&#x60; or &#x60;AMERICAN&#x60; option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for &#x60;symbol_type &#x3D; CONTRACT&#x60;              Variable | Description - -- -- -- -- | - -- -- -- -- -- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if &#x60;contract_unit&#x60; &#x3D; &#x60;10&#x60; and &#x60;contract_unit_asset&#x60; &#x3D; &#x60;BTC&#x60;)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="filterSymbolId">Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)</param>
-        /// <param name="filterExchangeId">The filter for exchange ID. (optional)</param>
-        /// <param name="filterAssetId">The filter for asset ID. (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsGetApiResponse"/>&gt;</returns>
-        public async Task<IV1SymbolsGetApiResponse> V1SymbolsGetAsync(Option<string> filterSymbolId = default, Option<string> filterExchangeId = default, Option<string> filterAssetId = default, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateV1SymbolsGet(filterSymbolId, filterExchangeId, filterAssetId);
-
-                FormatV1SymbolsGet(ref filterSymbolId, ref filterExchangeId, ref filterAssetId);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/v1/symbols"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/symbols");
-
-                    System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
-
-                    if (filterSymbolId.IsSet)
-                        parseQueryStringLocalVar["filter_symbol_id"] = ClientUtils.ParameterToString(filterSymbolId.Value);
-
-                    if (filterExchangeId.IsSet)
-                        parseQueryStringLocalVar["filter_exchange_id"] = ClientUtils.ParameterToString(filterExchangeId.Value);
-
-                    if (filterAssetId.IsSet)
-                        parseQueryStringLocalVar["filter_asset_id"] = ClientUtils.ParameterToString(filterAssetId.Value);
-
-                    uriBuilderLocalVar.Query = parseQueryStringLocalVar.ToString();
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar1 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar1);
-                    apiKeyTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    BearerToken bearerTokenLocalVar2 = (BearerToken) await BearerTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(bearerTokenLocalVar2);
-
-                    bearerTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "text/plain",
-                        "application/json",
-                        "text/json",
-                        "application/x-msgpack"
-                    };
-
-                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
-
-                    if (acceptLocalVar != null)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        ILogger<V1SymbolsGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1SymbolsGetApiResponse>();
-
-                        V1SymbolsGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/symbols", requestedAtLocalVar, _jsonSerializerOptions);
-
-                        AfterV1SymbolsGetDefaultImplementation(apiResponseLocalVar, filterSymbolId, filterExchangeId, filterAssetId);
-
-                        Events.ExecuteOnV1SymbolsGet(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorV1SymbolsGetDefaultImplementation(e, "/v1/symbols", uriBuilderLocalVar.Path, filterSymbolId, filterExchangeId, filterAssetId);
-                Events.ExecuteOnErrorV1SymbolsGet(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="V1SymbolsGetApiResponse"/>
-        /// </summary>
-        public partial class V1SymbolsGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IV1SymbolsGetApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<V1SymbolsGetApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="V1SymbolsGetApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public V1SymbolsGetApiResponse(ILogger<V1SymbolsGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);

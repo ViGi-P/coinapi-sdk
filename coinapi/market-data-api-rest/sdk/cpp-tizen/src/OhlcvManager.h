@@ -93,13 +93,12 @@ bool v1OhlcvPeriodsGetAsync(char * accessToken,
  * \param timeStart Timeseries starting time in ISO 8601
  * \param timeEnd Timeseries ending time in ISO 8601
  * \param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
- * \param includeEmptyItems Include items with no activity? (default value is `false`, possible values are `true` or `false`)
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1OhlcvSymbolIdHistoryGetSync(char * accessToken,
-	std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, bool includeEmptyItems, 
+	std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
 	void(* handler)(std::list<V1.TimeseriesItem>, Error, void* )
 	, void* userData);
 
@@ -111,13 +110,12 @@ bool v1OhlcvSymbolIdHistoryGetSync(char * accessToken,
  * \param timeStart Timeseries starting time in ISO 8601
  * \param timeEnd Timeseries ending time in ISO 8601
  * \param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
- * \param includeEmptyItems Include items with no activity? (default value is `false`, possible values are `true` or `false`)
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1OhlcvSymbolIdHistoryGetAsync(char * accessToken,
-	std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, bool includeEmptyItems, 
+	std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
 	void(* handler)(std::list<V1.TimeseriesItem>, Error, void* )
 	, void* userData);
 
@@ -128,7 +126,7 @@ bool v1OhlcvSymbolIdHistoryGetAsync(char * accessToken,
  * \param symbolId Symbol identifier of requested timeseries (from the Metadata -> Symbols) *Required*
  * \param periodId Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`) *Required*
  * \param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
- * \param includeEmptyItems Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+ * \param includeEmptyItems 
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
@@ -144,7 +142,7 @@ bool v1OhlcvSymbolIdLatestGetSync(char * accessToken,
  * \param symbolId Symbol identifier of requested timeseries (from the Metadata -> Symbols) *Required*
  * \param periodId Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`) *Required*
  * \param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
- * \param includeEmptyItems Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+ * \param includeEmptyItems 
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.

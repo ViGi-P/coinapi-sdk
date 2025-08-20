@@ -390,7 +390,7 @@ static bool v1OhlcvSymbolIdHistoryGetProcessor(MemoryStruct_s p_chunk, long code
 }
 
 static bool v1OhlcvSymbolIdHistoryGetHelper(char * accessToken,
-	std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, bool includeEmptyItems, 
+	std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
 	void(* handler)(std::list<V1.TimeseriesItem>, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -430,13 +430,6 @@ static bool v1OhlcvSymbolIdHistoryGetHelper(char * accessToken,
 	queryParams.insert(pair<string, string>("limit", itemAtq));
 	if( itemAtq.empty()==true){
 		queryParams.erase("limit");
-	}
-
-
-	itemAtq = stringify(&includeEmptyItems, "bool");
-	queryParams.insert(pair<string, string>("include_empty_items", itemAtq));
-	if( itemAtq.empty()==true){
-		queryParams.erase("include_empty_items");
 	}
 
 	string mBody = "";
@@ -499,22 +492,22 @@ static bool v1OhlcvSymbolIdHistoryGetHelper(char * accessToken,
 
 
 bool OhlcvManager::v1OhlcvSymbolIdHistoryGetAsync(char * accessToken,
-	std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, bool includeEmptyItems, 
+	std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
 	void(* handler)(std::list<V1.TimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1OhlcvSymbolIdHistoryGetHelper(accessToken,
-	symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems, 
+	symbolId, periodId, timeStart, timeEnd, limit, 
 	handler, userData, true);
 }
 
 bool OhlcvManager::v1OhlcvSymbolIdHistoryGetSync(char * accessToken,
-	std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, bool includeEmptyItems, 
+	std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
 	void(* handler)(std::list<V1.TimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1OhlcvSymbolIdHistoryGetHelper(accessToken,
-	symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems, 
+	symbolId, periodId, timeStart, timeEnd, limit, 
 	handler, userData, false);
 }
 

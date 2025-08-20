@@ -117,15 +117,12 @@ operation_parameters_minimum_occurrences["v1ChainsGet:::filter_chain_id"]=0
 operation_parameters_minimum_occurrences["v1ExchangesExchangeIdGet:::exchange_id"]=1
 operation_parameters_minimum_occurrences["v1ExchangesGet:::filter_exchange_id"]=0
 operation_parameters_minimum_occurrences["v1ExchangesIconsSizeGet:::size"]=1
-operation_parameters_minimum_occurrences["v1SymbolsExchangeIdGet:::exchange_id"]=1
-operation_parameters_minimum_occurrences["v1SymbolsExchangeIdGet:::filter_symbol_id"]=0
-operation_parameters_minimum_occurrences["v1SymbolsExchangeIdGet:::filter_asset_id"]=0
+operation_parameters_minimum_occurrences["v1SymbolsExchangeIdActiveGet:::exchange_id"]=1
+operation_parameters_minimum_occurrences["v1SymbolsExchangeIdActiveGet:::filter_symbol_id"]=0
+operation_parameters_minimum_occurrences["v1SymbolsExchangeIdActiveGet:::filter_asset_id"]=0
 operation_parameters_minimum_occurrences["v1SymbolsExchangeIdHistoryGet:::exchange_id"]=1
 operation_parameters_minimum_occurrences["v1SymbolsExchangeIdHistoryGet:::page"]=0
 operation_parameters_minimum_occurrences["v1SymbolsExchangeIdHistoryGet:::limit"]=0
-operation_parameters_minimum_occurrences["v1SymbolsGet:::filter_symbol_id"]=0
-operation_parameters_minimum_occurrences["v1SymbolsGet:::filter_exchange_id"]=0
-operation_parameters_minimum_occurrences["v1SymbolsGet:::filter_asset_id"]=0
 operation_parameters_minimum_occurrences["v1SymbolsMapExchangeIdGet:::exchange_id"]=1
 operation_parameters_minimum_occurrences["v1MetricsAssetCurrentGet:::metric_id"]=0
 operation_parameters_minimum_occurrences["v1MetricsAssetCurrentGet:::asset_id"]=0
@@ -203,7 +200,6 @@ operation_parameters_minimum_occurrences["v1OhlcvSymbolIdHistoryGet:::period_id"
 operation_parameters_minimum_occurrences["v1OhlcvSymbolIdHistoryGet:::time_start"]=0
 operation_parameters_minimum_occurrences["v1OhlcvSymbolIdHistoryGet:::time_end"]=0
 operation_parameters_minimum_occurrences["v1OhlcvSymbolIdHistoryGet:::limit"]=0
-operation_parameters_minimum_occurrences["v1OhlcvSymbolIdHistoryGet:::include_empty_items"]=0
 operation_parameters_minimum_occurrences["v1OhlcvSymbolIdLatestGet:::symbol_id"]=1
 operation_parameters_minimum_occurrences["v1OhlcvSymbolIdLatestGet:::period_id"]=1
 operation_parameters_minimum_occurrences["v1OhlcvSymbolIdLatestGet:::limit"]=0
@@ -278,15 +274,12 @@ operation_parameters_maximum_occurrences["v1ChainsGet:::filter_chain_id"]=0
 operation_parameters_maximum_occurrences["v1ExchangesExchangeIdGet:::exchange_id"]=0
 operation_parameters_maximum_occurrences["v1ExchangesGet:::filter_exchange_id"]=0
 operation_parameters_maximum_occurrences["v1ExchangesIconsSizeGet:::size"]=0
-operation_parameters_maximum_occurrences["v1SymbolsExchangeIdGet:::exchange_id"]=0
-operation_parameters_maximum_occurrences["v1SymbolsExchangeIdGet:::filter_symbol_id"]=0
-operation_parameters_maximum_occurrences["v1SymbolsExchangeIdGet:::filter_asset_id"]=0
+operation_parameters_maximum_occurrences["v1SymbolsExchangeIdActiveGet:::exchange_id"]=0
+operation_parameters_maximum_occurrences["v1SymbolsExchangeIdActiveGet:::filter_symbol_id"]=0
+operation_parameters_maximum_occurrences["v1SymbolsExchangeIdActiveGet:::filter_asset_id"]=0
 operation_parameters_maximum_occurrences["v1SymbolsExchangeIdHistoryGet:::exchange_id"]=0
 operation_parameters_maximum_occurrences["v1SymbolsExchangeIdHistoryGet:::page"]=0
 operation_parameters_maximum_occurrences["v1SymbolsExchangeIdHistoryGet:::limit"]=0
-operation_parameters_maximum_occurrences["v1SymbolsGet:::filter_symbol_id"]=0
-operation_parameters_maximum_occurrences["v1SymbolsGet:::filter_exchange_id"]=0
-operation_parameters_maximum_occurrences["v1SymbolsGet:::filter_asset_id"]=0
 operation_parameters_maximum_occurrences["v1SymbolsMapExchangeIdGet:::exchange_id"]=0
 operation_parameters_maximum_occurrences["v1MetricsAssetCurrentGet:::metric_id"]=0
 operation_parameters_maximum_occurrences["v1MetricsAssetCurrentGet:::asset_id"]=0
@@ -364,7 +357,6 @@ operation_parameters_maximum_occurrences["v1OhlcvSymbolIdHistoryGet:::period_id"
 operation_parameters_maximum_occurrences["v1OhlcvSymbolIdHistoryGet:::time_start"]=0
 operation_parameters_maximum_occurrences["v1OhlcvSymbolIdHistoryGet:::time_end"]=0
 operation_parameters_maximum_occurrences["v1OhlcvSymbolIdHistoryGet:::limit"]=0
-operation_parameters_maximum_occurrences["v1OhlcvSymbolIdHistoryGet:::include_empty_items"]=0
 operation_parameters_maximum_occurrences["v1OhlcvSymbolIdLatestGet:::symbol_id"]=0
 operation_parameters_maximum_occurrences["v1OhlcvSymbolIdLatestGet:::period_id"]=0
 operation_parameters_maximum_occurrences["v1OhlcvSymbolIdLatestGet:::limit"]=0
@@ -436,15 +428,12 @@ operation_parameters_collection_type["v1ChainsGet:::filter_chain_id"]=""
 operation_parameters_collection_type["v1ExchangesExchangeIdGet:::exchange_id"]=""
 operation_parameters_collection_type["v1ExchangesGet:::filter_exchange_id"]=""
 operation_parameters_collection_type["v1ExchangesIconsSizeGet:::size"]=""
-operation_parameters_collection_type["v1SymbolsExchangeIdGet:::exchange_id"]=""
-operation_parameters_collection_type["v1SymbolsExchangeIdGet:::filter_symbol_id"]=""
-operation_parameters_collection_type["v1SymbolsExchangeIdGet:::filter_asset_id"]=""
+operation_parameters_collection_type["v1SymbolsExchangeIdActiveGet:::exchange_id"]=""
+operation_parameters_collection_type["v1SymbolsExchangeIdActiveGet:::filter_symbol_id"]=""
+operation_parameters_collection_type["v1SymbolsExchangeIdActiveGet:::filter_asset_id"]=""
 operation_parameters_collection_type["v1SymbolsExchangeIdHistoryGet:::exchange_id"]=""
 operation_parameters_collection_type["v1SymbolsExchangeIdHistoryGet:::page"]=""
 operation_parameters_collection_type["v1SymbolsExchangeIdHistoryGet:::limit"]=""
-operation_parameters_collection_type["v1SymbolsGet:::filter_symbol_id"]=""
-operation_parameters_collection_type["v1SymbolsGet:::filter_exchange_id"]=""
-operation_parameters_collection_type["v1SymbolsGet:::filter_asset_id"]=""
 operation_parameters_collection_type["v1SymbolsMapExchangeIdGet:::exchange_id"]=""
 operation_parameters_collection_type["v1MetricsAssetCurrentGet:::metric_id"]=""
 operation_parameters_collection_type["v1MetricsAssetCurrentGet:::asset_id"]=""
@@ -522,7 +511,6 @@ operation_parameters_collection_type["v1OhlcvSymbolIdHistoryGet:::period_id"]=""
 operation_parameters_collection_type["v1OhlcvSymbolIdHistoryGet:::time_start"]=""
 operation_parameters_collection_type["v1OhlcvSymbolIdHistoryGet:::time_end"]=""
 operation_parameters_collection_type["v1OhlcvSymbolIdHistoryGet:::limit"]=""
-operation_parameters_collection_type["v1OhlcvSymbolIdHistoryGet:::include_empty_items"]=""
 operation_parameters_collection_type["v1OhlcvSymbolIdLatestGet:::symbol_id"]=""
 operation_parameters_collection_type["v1OhlcvSymbolIdLatestGet:::period_id"]=""
 operation_parameters_collection_type["v1OhlcvSymbolIdLatestGet:::limit"]=""
@@ -994,9 +982,8 @@ read -r -d '' ops <<EOF
   ${CYAN}v1ExchangesExchangeIdGet${OFF};List all exchanges by exchange_id (AUTH) (AUTH)
   ${CYAN}v1ExchangesGet${OFF};List all exchanges (AUTH) (AUTH)
   ${CYAN}v1ExchangesIconsSizeGet${OFF};List of icons for the exchanges (AUTH) (AUTH)
-  ${CYAN}v1SymbolsExchangeIdGet${OFF};List of active symbols for the exchange (AUTH) (AUTH)
+  ${CYAN}v1SymbolsExchangeIdActiveGet${OFF};List all active symbols (AUTH) (AUTH)
   ${CYAN}v1SymbolsExchangeIdHistoryGet${OFF};List all historical symbols for an exchange. (AUTH) (AUTH)
-  ${CYAN}v1SymbolsGet${OFF};List all active symbols (AUTH) (AUTH)
   ${CYAN}v1SymbolsMapExchangeIdGet${OFF};List active symbol mapping for the exchange (AUTH) (AUTH)
 EOF
 echo "  $ops" | column -t -s ';'
@@ -1393,55 +1380,12 @@ print_v1ExchangesIconsSizeGet_help() {
 }
 ##############################################################################
 #
-# Print help for v1SymbolsExchangeIdGet operation
+# Print help for v1SymbolsExchangeIdActiveGet operation
 #
 ##############################################################################
-print_v1SymbolsExchangeIdGet_help() {
+print_v1SymbolsExchangeIdActiveGet_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v1SymbolsExchangeIdGet - List of active symbols for the exchange${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The ID of the exchange (from the Metadata -> Exchanges) ${YELLOW}Specify as: exchange_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}filter_symbol_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - The filter for symbol ID.${YELLOW} Specify as: filter_symbol_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}filter_asset_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - The filter for asset ID.${YELLOW} Specify as: filter_asset_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
-# Print help for v1SymbolsExchangeIdHistoryGet operation
-#
-##############################################################################
-print_v1SymbolsExchangeIdHistoryGet_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}v1SymbolsExchangeIdHistoryGet - List all historical symbols for an exchange.${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
-The data is provided with pagination support." | paste -sd' ' | fold -sw 80
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The ID of the exchange. ${YELLOW}Specify as: exchange_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}page${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 1)${OFF} - The page number for pagination (starts from 1).${YELLOW} Specify as: page=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Number of records to return per page.${YELLOW} Specify as: limit=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
-# Print help for v1SymbolsGet operation
-#
-##############################################################################
-print_v1SymbolsGet_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}v1SymbolsGet - List all active symbols${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}v1SymbolsExchangeIdActiveGet - List all active symbols${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Retrieves all currently active (listed) symbols, with optional filtering.
             
@@ -1526,11 +1470,33 @@ contract_unit_asset | Identifier of the asset used to denominate the contract un
 contract_id | Identifier of contract by the exchange" | paste -sd' ' | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The ID of the exchange. ${YELLOW}Specify as: exchange_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}filter_symbol_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. 'BITSTAMP'_ or 'BINANCE_SPOT_')${YELLOW} Specify as: filter_symbol_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}filter_exchange_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - The filter for exchange ID.${YELLOW} Specify as: filter_exchange_id=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}filter_asset_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - The filter for asset ID.${YELLOW} Specify as: filter_asset_id=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
+# Print help for v1SymbolsExchangeIdHistoryGet operation
+#
+##############################################################################
+print_v1SymbolsExchangeIdHistoryGet_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}v1SymbolsExchangeIdHistoryGet - List all historical symbols for an exchange.${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo -e "This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
+The data is provided with pagination support." | paste -sd' ' | fold -sw 80
+    echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The ID of the exchange. ${YELLOW}Specify as: exchange_id=value${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}page${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 1)${OFF} - The page number for pagination (starts from 1).${YELLOW} Specify as: page=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Number of records to return per page.${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -2072,8 +2038,6 @@ The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}include_empty_items${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Include items with no activity? (default value is 'false', possible values are 'true' or 'false')${YELLOW} Specify as: include_empty_items=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -2101,7 +2065,7 @@ The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}include_empty_items${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - Include items with no activity? (default value is 'false', possible values are 'true' or 'false')${YELLOW} Specify as: include_empty_items=value${OFF}" \
+    echo -e "  * ${GREEN}include_empty_items${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - ${YELLOW} Specify as: include_empty_items=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -2894,10 +2858,10 @@ call_v1ExchangesIconsSizeGet() {
 
 ##############################################################################
 #
-# Call v1SymbolsExchangeIdGet operation
+# Call v1SymbolsExchangeIdActiveGet operation
 #
 ##############################################################################
-call_v1SymbolsExchangeIdGet() {
+call_v1SymbolsExchangeIdActiveGet() {
     # ignore error about 'path_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
     local path_parameter_names=(exchange_id)
@@ -2906,7 +2870,7 @@ call_v1SymbolsExchangeIdGet() {
     local query_parameter_names=(filter_symbol_id filter_asset_id    )
     local path
 
-    if ! path=$(build_request_path "/v1/symbols/{exchange_id}" path_parameter_names query_parameter_names); then
+    if ! path=$(build_request_path "/v1/symbols/{exchange_id}/active" path_parameter_names query_parameter_names); then
         ERROR_MSG=$path
         exit 1
     fi
@@ -2943,42 +2907,6 @@ call_v1SymbolsExchangeIdHistoryGet() {
     local path
 
     if ! path=$(build_request_path "/v1/symbols/{exchange_id}/history" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
-# Call v1SymbolsGet operation
-#
-##############################################################################
-call_v1SymbolsGet() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(filter_symbol_id filter_exchange_id filter_asset_id    )
-    local path
-
-    if ! path=$(build_request_path "/v1/symbols" path_parameter_names query_parameter_names); then
         ERROR_MSG=$path
         exit 1
     fi
@@ -3731,7 +3659,7 @@ call_v1OhlcvSymbolIdHistoryGet() {
     local path_parameter_names=(symbol_id)
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(period_id time_start time_end limit include_empty_items    )
+    local query_parameter_names=(period_id time_start time_end limit    )
     local path
 
     if ! path=$(build_request_path "/v1/ohlcv/{symbol_id}/history" path_parameter_names query_parameter_names); then
@@ -4465,14 +4393,11 @@ case $key in
     v1ExchangesIconsSizeGet)
     operation="v1ExchangesIconsSizeGet"
     ;;
-    v1SymbolsExchangeIdGet)
-    operation="v1SymbolsExchangeIdGet"
+    v1SymbolsExchangeIdActiveGet)
+    operation="v1SymbolsExchangeIdActiveGet"
     ;;
     v1SymbolsExchangeIdHistoryGet)
     operation="v1SymbolsExchangeIdHistoryGet"
-    ;;
-    v1SymbolsGet)
-    operation="v1SymbolsGet"
     ;;
     v1SymbolsMapExchangeIdGet)
     operation="v1SymbolsMapExchangeIdGet"
@@ -4715,14 +4640,11 @@ case $operation in
     v1ExchangesIconsSizeGet)
     call_v1ExchangesIconsSizeGet
     ;;
-    v1SymbolsExchangeIdGet)
-    call_v1SymbolsExchangeIdGet
+    v1SymbolsExchangeIdActiveGet)
+    call_v1SymbolsExchangeIdActiveGet
     ;;
     v1SymbolsExchangeIdHistoryGet)
     call_v1SymbolsExchangeIdHistoryGet
-    ;;
-    v1SymbolsGet)
-    call_v1SymbolsGet
     ;;
     v1SymbolsMapExchangeIdGet)
     call_v1SymbolsMapExchangeIdGet

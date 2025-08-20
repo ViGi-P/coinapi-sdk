@@ -73,13 +73,13 @@ class ModelsExchangeTimeseriesItemTest : ShouldSpec() {
             //modelInstance.priceClose shouldBe ("TODO")
         }
 
-        // to test the property `volumeTraded` - The total volume traded during the time period.
+        // to test the property `volumeTraded` - The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
         should("test volumeTraded") {
             // uncomment below to test the property
             //modelInstance.volumeTraded shouldBe ("TODO")
         }
 
-        // to test the property `tradesCount` - The number of trades executed during the time period.
+        // to test the property `tradesCount` - The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
         should("test tradesCount") {
             // uncomment below to test the property
             //modelInstance.tradesCount shouldBe ("TODO")

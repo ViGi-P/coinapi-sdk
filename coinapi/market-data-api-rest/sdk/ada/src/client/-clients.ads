@@ -141,24 +141,6 @@ package .Clients is
        Size : in Integer;
        Result : out .Models.V1Icon_Type_Vectors.Vector);
 
-   --  List of active symbols for the exchange
-   procedure V_1Symbols_Exchange_Id_Get
-      (Client : in out Client_Type;
-       Exchange_Id : in Swagger.UString;
-       Filter_Symbol_Id : in Swagger.Nullable_UString;
-       Filter_Asset_Id : in Swagger.Nullable_UString;
-       Result : out .Models.V1Symbol_Type_Vectors.Vector);
-
-   --  List all historical symbols for an exchange.
-   --  This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
-   --  The data is provided with pagination support.
-   procedure V_1Symbols_Exchange_Id_History_Get
-      (Client : in out Client_Type;
-       Exchange_Id : in Swagger.UString;
-       Page : in Swagger.Nullable_Integer;
-       Limit : in Swagger.Nullable_Integer;
-       Result : out .Models.V1Symbol_Type_Vectors.Vector);
-
    --  List all active symbols
    --  Retrieves all currently active (listed) symbols, with optional filtering.
    --              
@@ -241,11 +223,21 @@ package .Clients is
    --  contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)*
    --  contract_unit_asset | Identifier of the asset used to denominate the contract unit
    --  contract_id | Identifier of contract by the exchange
-   procedure V_1Symbols_Get
+   procedure V_1Symbols_Exchange_Id_Active_Get
       (Client : in out Client_Type;
+       Exchange_Id : in Swagger.UString;
        Filter_Symbol_Id : in Swagger.Nullable_UString;
-       Filter_Exchange_Id : in Swagger.Nullable_UString;
        Filter_Asset_Id : in Swagger.Nullable_UString;
+       Result : out .Models.V1Symbol_Type_Vectors.Vector);
+
+   --  List all historical symbols for an exchange.
+   --  This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
+   --  The data is provided with pagination support.
+   procedure V_1Symbols_Exchange_Id_History_Get
+      (Client : in out Client_Type;
+       Exchange_Id : in Swagger.UString;
+       Page : in Swagger.Nullable_Integer;
+       Limit : in Swagger.Nullable_Integer;
        Result : out .Models.V1Symbol_Type_Vectors.Vector);
 
    --  List active symbol mapping for the exchange
@@ -473,7 +465,6 @@ package .Clients is
        Time_Start : in Swagger.Nullable_UString;
        Time_End : in Swagger.Nullable_UString;
        Limit : in Swagger.Nullable_Integer;
-       Include_Empty_Items : in Swagger.Nullable_Boolean;
        Result : out .Models.V1TimeseriesItem_Type_Vectors.Vector);
 
    --  Latest data

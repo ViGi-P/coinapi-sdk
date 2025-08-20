@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **price_high** | **float** | The highest price during the time period. | [optional]
 **price_low** | **float** | The lowest price during the time period. | [optional]
 **price_close** | **float** | The closing price. | [optional]
-**volume_traded** | **float** | The total volume traded during the time period. | [optional]
-**trades_count** | **int** | The number of trades executed during the time period. | [optional]
+**volume_traded** | **float** | The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional]
+**trades_count** | **int** | The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

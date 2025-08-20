@@ -81,16 +81,14 @@ class OhlcvApi(baseUrl: String) {
    * @param timeStart Timeseries starting time in ISO 8601
    * @param timeEnd Timeseries ending time in ISO 8601
    * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-   * @param includeEmptyItems Include items with no activity? (default value is `false`, possible values are `true` or `false`)
    */
-  def v1OhlcvSymbolIdHistoryGet(symbolId: String, periodId: String, timeStart: Option[String] = None, timeEnd: Option[String] = None, limit: Option[Int] = None, includeEmptyItems: Option[Boolean] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[TimeseriesItem]] =
+  def v1OhlcvSymbolIdHistoryGet(symbolId: String, periodId: String, timeStart: Option[String] = None, timeEnd: Option[String] = None, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[TimeseriesItem]] =
     ApiRequest[Seq[TimeseriesItem]](ApiMethods.GET, baseUrl, "/v1/ohlcv/{symbol_id}/history", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("period_id", periodId)
       .withQueryParam("time_start", timeStart)
       .withQueryParam("time_end", timeEnd)
       .withQueryParam("limit", limit)
-      .withQueryParam("include_empty_items", includeEmptyItems)
       .withPathParam("symbol_id", symbolId)
       .withSuccessResponse[Seq[TimeseriesItem]](200)
       
@@ -108,7 +106,7 @@ class OhlcvApi(baseUrl: String) {
    * @param symbolId Symbol identifier of requested timeseries (from the Metadata -> Symbols)
    * @param periodId Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
    * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-   * @param includeEmptyItems Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+   * @param includeEmptyItems 
    */
   def v1OhlcvSymbolIdLatestGet(symbolId: String, periodId: String, limit: Option[Int] = None, includeEmptyItems: Option[Boolean] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[TimeseriesItem]] =
     ApiRequest[Seq[TimeseriesItem]](ApiMethods.GET, baseUrl, "/v1/ohlcv/{symbol_id}/latest", "application/json")

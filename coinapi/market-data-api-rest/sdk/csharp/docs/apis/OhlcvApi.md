@@ -82,7 +82,7 @@ This endpoint does not need any parameter.
 
 <a id="v1ohlcvsymbolidhistoryget"></a>
 # **V1OhlcvSymbolIdHistoryGet**
-> List&lt;V1TimeseriesItem&gt; V1OhlcvSymbolIdHistoryGet (string symbolId, string periodId, string timeStart = null, string timeEnd = null, int limit = null, bool includeEmptyItems = null)
+> List&lt;V1TimeseriesItem&gt; V1OhlcvSymbolIdHistoryGet (string symbolId, string periodId, string timeStart = null, string timeEnd = null, int limit = null)
 
 Historical data
 
@@ -98,7 +98,6 @@ Get OHLCV timeseries data returned in time ascending order. Data can be requeste
 | **timeStart** | **string** | Timeseries starting time in ISO 8601 | [optional]  |
 | **timeEnd** | **string** | Timeseries ending time in ISO 8601 | [optional]  |
 | **limit** | **int** | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
-| **includeEmptyItems** | **bool** | Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to false] |
 
 ### Return type
 
@@ -137,7 +136,7 @@ Get OHLCV latest timeseries data returned in time descending order. Data can be 
 | **symbolId** | **string** | Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) |  |
 | **periodId** | **string** | Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) |  |
 | **limit** | **int** | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
-| **includeEmptyItems** | **bool** | Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to false] |
+| **includeEmptyItems** | **bool** |  | [optional] [default to false] |
 
 ### Return type
 

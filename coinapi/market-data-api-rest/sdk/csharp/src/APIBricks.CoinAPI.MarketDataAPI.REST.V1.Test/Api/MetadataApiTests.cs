@@ -148,15 +148,15 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
         }
 
         /// <summary>
-        /// Test V1SymbolsExchangeIdGet
+        /// Test V1SymbolsExchangeIdActiveGet
         /// </summary>
         [Fact (Skip = "not implemented")]
-        public async Task V1SymbolsExchangeIdGetAsyncTest()
+        public async Task V1SymbolsExchangeIdActiveGetAsyncTest()
         {
             string exchangeId = default!;
             Client.Option<string> filterSymbolId = default!;
             Client.Option<string> filterAssetId = default!;
-            var response = await _instance.V1SymbolsExchangeIdGetAsync(exchangeId, filterSymbolId, filterAssetId);
+            var response = await _instance.V1SymbolsExchangeIdActiveGetAsync(exchangeId, filterSymbolId, filterAssetId);
             var model = response.Ok();
             Assert.IsType<List<V1Symbol>>(model);
         }
@@ -171,20 +171,6 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             Client.Option<int> page = default!;
             Client.Option<int> limit = default!;
             var response = await _instance.V1SymbolsExchangeIdHistoryGetAsync(exchangeId, page, limit);
-            var model = response.Ok();
-            Assert.IsType<List<V1Symbol>>(model);
-        }
-
-        /// <summary>
-        /// Test V1SymbolsGet
-        /// </summary>
-        [Fact (Skip = "not implemented")]
-        public async Task V1SymbolsGetAsyncTest()
-        {
-            Client.Option<string> filterSymbolId = default!;
-            Client.Option<string> filterExchangeId = default!;
-            Client.Option<string> filterAssetId = default!;
-            var response = await _instance.V1SymbolsGetAsync(filterSymbolId, filterExchangeId, filterAssetId);
             var model = response.Ok();
             Assert.IsType<List<V1Symbol>>(model);
         }

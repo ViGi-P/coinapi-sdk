@@ -124,7 +124,6 @@ This endpoint does not need any parameter.
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TimeStart] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TimeEnd] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Limit] <System.Nullable[Int32]><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-IncludeEmptyItems] <System.Nullable[Boolean]><br>
 
 Historical data
 
@@ -145,11 +144,10 @@ $PeriodId = "MyPeriodId" # String | Identifier of requested timeseries period (e
 $TimeStart = "MyTimeStart" # String | Timeseries starting time in ISO 8601 (optional)
 $TimeEnd = "MyTimeEnd" # String | Timeseries ending time in ISO 8601 (optional)
 $Limit = 56 # Int32 | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
-$IncludeEmptyItems = $true # Boolean | Include items with no activity? (default value is `false`, possible values are `true` or `false`) (optional) (default to $false)
 
 # Historical data
 try {
-    $Result = Invoke-V1OhlcvSymbolIdHistoryGet -SymbolId $SymbolId -PeriodId $PeriodId -TimeStart $TimeStart -TimeEnd $TimeEnd -Limit $Limit -IncludeEmptyItems $IncludeEmptyItems
+    $Result = Invoke-V1OhlcvSymbolIdHistoryGet -SymbolId $SymbolId -PeriodId $PeriodId -TimeStart $TimeStart -TimeEnd $TimeEnd -Limit $Limit
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1OhlcvSymbolIdHistoryGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -165,7 +163,6 @@ Name | Type | Description  | Notes
  **TimeStart** | **String**| Timeseries starting time in ISO 8601 | [optional] 
  **TimeEnd** | **String**| Timeseries ending time in ISO 8601 | [optional] 
  **Limit** | **Int32**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **IncludeEmptyItems** | **Boolean**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to $false]
 
 ### Return type
 
@@ -207,7 +204,7 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 $SymbolId = "MySymbolId" # String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 $PeriodId = "MyPeriodId" # String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 $Limit = 56 # Int32 | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
-$IncludeEmptyItems = $true # Boolean | Include items with no activity? (default value is `false`, possible values are `true` or `false`) (optional) (default to $false)
+$IncludeEmptyItems = $true # Boolean |  (optional) (default to $false)
 
 # Latest data
 try {
@@ -225,7 +222,7 @@ Name | Type | Description  | Notes
  **SymbolId** | **String**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | 
  **PeriodId** | **String**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | 
  **Limit** | **Int32**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **IncludeEmptyItems** | **Boolean**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to $false]
+ **IncludeEmptyItems** | **Boolean**|  | [optional] [default to $false]
 
 ### Return type
 

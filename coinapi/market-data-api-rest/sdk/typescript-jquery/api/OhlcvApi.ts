@@ -217,9 +217,8 @@ export class OhlcvApi {
      * @param timeStart Timeseries starting time in ISO 8601
      * @param timeEnd Timeseries ending time in ISO 8601
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-     * @param includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;)
      */
-    public v1OhlcvSymbolIdHistoryGet(symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, includeEmptyItems?: boolean, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public v1OhlcvSymbolIdHistoryGet(symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.V1TimeseriesItem>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -248,9 +247,6 @@ export class OhlcvApi {
         }
         if (limit !== null && limit !== undefined) {
             queryParameters['limit'] = <string><any>limit;
-        }
-        if (includeEmptyItems !== null && includeEmptyItems !== undefined) {
-            queryParameters['include_empty_items'] = <string><any>includeEmptyItems;
         }
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);
@@ -311,7 +307,7 @@ export class OhlcvApi {
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-     * @param includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;)
+     * @param includeEmptyItems 
      */
     public v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, includeEmptyItems?: boolean, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.V1TimeseriesItem>;  },

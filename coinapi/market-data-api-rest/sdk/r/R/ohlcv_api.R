@@ -64,7 +64,6 @@
 #' var_time_start <- "time_start_example" # character | Timeseries starting time in ISO 8601 (Optional)
 #' var_time_end <- "time_end_example" # character | Timeseries ending time in ISO 8601 (Optional)
 #' var_limit <- 100 # integer | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (Optional)
-#' var_include_empty_items <- FALSE # character | Include items with no activity? (default value is `false`, possible values are `true` or `false`) (Optional)
 #'
 #' #Historical data
 #' api_instance <- OhlcvApi$new()
@@ -76,8 +75,8 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1OhlcvSymbolIdHistoryGet(var_symbol_id, var_period_id, time_start = var_time_start, time_end = var_time_end, limit = var_limit, include_empty_items = var_include_empty_itemsdata_file = "result.txt")
-#' result <- api_instance$V1OhlcvSymbolIdHistoryGet(var_symbol_id, var_period_id, time_start = var_time_start, time_end = var_time_end, limit = var_limit, include_empty_items = var_include_empty_items)
+#' # result <- api_instance$V1OhlcvSymbolIdHistoryGet(var_symbol_id, var_period_id, time_start = var_time_start, time_end = var_time_end, limit = var_limitdata_file = "result.txt")
+#' result <- api_instance$V1OhlcvSymbolIdHistoryGet(var_symbol_id, var_period_id, time_start = var_time_start, time_end = var_time_end, limit = var_limit)
 #' dput(result)
 #'
 #'
@@ -87,7 +86,7 @@
 #' var_symbol_id <- "symbol_id_example" # character | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 #' var_period_id <- "period_id_example" # character | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 #' var_limit <- 100 # integer | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (Optional)
-#' var_include_empty_items <- FALSE # character | Include items with no activity? (default value is `false`, possible values are `true` or `false`) (Optional)
+#' var_include_empty_items <- FALSE # character |  (Optional)
 #'
 #' #Latest data
 #' api_instance <- OhlcvApi$new()
@@ -361,13 +360,12 @@ OhlcvApi <- R6::R6Class(
     #' @param time_start (optional) Timeseries starting time in ISO 8601
     #' @param time_end (optional) Timeseries ending time in ISO 8601
     #' @param limit (optional) Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
-    #' @param include_empty_items (optional) Include items with no activity? (default value is `false`, possible values are `true` or `false`) (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #'
     #' @return array[V1TimeseriesItem]
-    V1OhlcvSymbolIdHistoryGet = function(symbol_id, period_id, time_start = NULL, time_end = NULL, limit = 100, include_empty_items = FALSE, data_file = NULL, ...) {
-      local_var_response <- self$V1OhlcvSymbolIdHistoryGetWithHttpInfo(symbol_id, period_id, time_start, time_end, limit, include_empty_items, data_file = data_file, ...)
+    V1OhlcvSymbolIdHistoryGet = function(symbol_id, period_id, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ...) {
+      local_var_response <- self$V1OhlcvSymbolIdHistoryGetWithHttpInfo(symbol_id, period_id, time_start, time_end, limit, data_file = data_file, ...)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -387,12 +385,11 @@ OhlcvApi <- R6::R6Class(
     #' @param time_start (optional) Timeseries starting time in ISO 8601
     #' @param time_end (optional) Timeseries ending time in ISO 8601
     #' @param limit (optional) Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
-    #' @param include_empty_items (optional) Include items with no activity? (default value is `false`, possible values are `true` or `false`) (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #'
     #' @return API response (array[V1TimeseriesItem]) with additional information such as HTTP status code, headers
-    V1OhlcvSymbolIdHistoryGetWithHttpInfo = function(symbol_id, period_id, time_start = NULL, time_end = NULL, limit = 100, include_empty_items = FALSE, data_file = NULL, ...) {
+    V1OhlcvSymbolIdHistoryGetWithHttpInfo = function(symbol_id, period_id, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ...) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -415,7 +412,6 @@ OhlcvApi <- R6::R6Class(
 
 
 
-
       query_params[["period_id"]] <- `period_id`
 
       query_params[["time_start"]] <- `time_start`
@@ -423,8 +419,6 @@ OhlcvApi <- R6::R6Class(
       query_params[["time_end"]] <- `time_end`
 
       query_params[["limit"]] <- `limit`
-
-      query_params[["include_empty_items"]] <- `include_empty_items`
 
       local_var_url_path <- "/v1/ohlcv/{symbol_id}/history"
       if (!missing(`symbol_id`)) {
@@ -494,7 +488,7 @@ OhlcvApi <- R6::R6Class(
     #' @param symbol_id Symbol identifier of requested timeseries (from the Metadata -> Symbols)
     #' @param period_id Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
     #' @param limit (optional) Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
-    #' @param include_empty_items (optional) Include items with no activity? (default value is `false`, possible values are `true` or `false`) (default value: FALSE)
+    #' @param include_empty_items (optional) No description (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #'
@@ -518,7 +512,7 @@ OhlcvApi <- R6::R6Class(
     #' @param symbol_id Symbol identifier of requested timeseries (from the Metadata -> Symbols)
     #' @param period_id Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
     #' @param limit (optional) Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
-    #' @param include_empty_items (optional) Include items with no activity? (default value is `false`, possible values are `true` or `false`) (default value: FALSE)
+    #' @param include_empty_items (optional) No description (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #'

@@ -98,10 +98,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeStart">Timeseries starting time in ISO 8601 (optional)</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601 (optional)</param>
         /// <param name="limit">Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
-        /// <param name="includeEmptyItems">Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OhlcvSymbolIdHistoryGetApiResponse"/>&gt;</returns>
-        Task<IV1OhlcvSymbolIdHistoryGetApiResponse> V1OhlcvSymbolIdHistoryGetAsync(string symbolId, string periodId, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, Option<bool> includeEmptyItems = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1OhlcvSymbolIdHistoryGetApiResponse> V1OhlcvSymbolIdHistoryGetAsync(string symbolId, string periodId, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Historical data
@@ -114,10 +113,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeStart">Timeseries starting time in ISO 8601 (optional)</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601 (optional)</param>
         /// <param name="limit">Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
-        /// <param name="includeEmptyItems">Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OhlcvSymbolIdHistoryGetApiResponse"/>?&gt;</returns>
-        Task<IV1OhlcvSymbolIdHistoryGetApiResponse?> V1OhlcvSymbolIdHistoryGetOrDefaultAsync(string symbolId, string periodId, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, Option<bool> includeEmptyItems = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1OhlcvSymbolIdHistoryGetApiResponse?> V1OhlcvSymbolIdHistoryGetOrDefaultAsync(string symbolId, string periodId, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Latest data
@@ -129,7 +127,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="symbolId">Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)</param>
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)</param>
         /// <param name="limit">Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
-        /// <param name="includeEmptyItems">Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)</param>
+        /// <param name="includeEmptyItems"> (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OhlcvSymbolIdLatestGetApiResponse"/>&gt;</returns>
         Task<IV1OhlcvSymbolIdLatestGetApiResponse> V1OhlcvSymbolIdLatestGetAsync(string symbolId, string periodId, Option<int> limit = default, Option<bool> includeEmptyItems = default, System.Threading.CancellationToken cancellationToken = default);
@@ -143,7 +141,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="symbolId">Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)</param>
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)</param>
         /// <param name="limit">Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
-        /// <param name="includeEmptyItems">Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)</param>
+        /// <param name="includeEmptyItems"> (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OhlcvSymbolIdLatestGetApiResponse"/>?&gt;</returns>
         Task<IV1OhlcvSymbolIdLatestGetApiResponse?> V1OhlcvSymbolIdLatestGetOrDefaultAsync(string symbolId, string periodId, Option<int> limit = default, Option<bool> includeEmptyItems = default, System.Threading.CancellationToken cancellationToken = default);
@@ -827,7 +825,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatV1OhlcvSymbolIdHistoryGet(ref string symbolId, ref string periodId, ref Option<string> timeStart, ref Option<string> timeEnd, ref Option<int> limit, ref Option<bool> includeEmptyItems);
+        partial void FormatV1OhlcvSymbolIdHistoryGet(ref string symbolId, ref string periodId, ref Option<string> timeStart, ref Option<string> timeEnd, ref Option<int> limit);
 
         /// <summary>
         /// Validates the request parameters
@@ -861,11 +859,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeStart"></param>
         /// <param name="timeEnd"></param>
         /// <param name="limit"></param>
-        /// <param name="includeEmptyItems"></param>
-        private void AfterV1OhlcvSymbolIdHistoryGetDefaultImplementation(IV1OhlcvSymbolIdHistoryGetApiResponse apiResponseLocalVar, string symbolId, string periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit, Option<bool> includeEmptyItems)
+        private void AfterV1OhlcvSymbolIdHistoryGetDefaultImplementation(IV1OhlcvSymbolIdHistoryGetApiResponse apiResponseLocalVar, string symbolId, string periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit)
         {
             bool suppressDefaultLog = false;
-            AfterV1OhlcvSymbolIdHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems);
+            AfterV1OhlcvSymbolIdHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, symbolId, periodId, timeStart, timeEnd, limit);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -880,8 +877,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeStart"></param>
         /// <param name="timeEnd"></param>
         /// <param name="limit"></param>
-        /// <param name="includeEmptyItems"></param>
-        partial void AfterV1OhlcvSymbolIdHistoryGet(ref bool suppressDefaultLog, IV1OhlcvSymbolIdHistoryGetApiResponse apiResponseLocalVar, string symbolId, string periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit, Option<bool> includeEmptyItems);
+        partial void AfterV1OhlcvSymbolIdHistoryGet(ref bool suppressDefaultLog, IV1OhlcvSymbolIdHistoryGetApiResponse apiResponseLocalVar, string symbolId, string periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -894,11 +890,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeStart"></param>
         /// <param name="timeEnd"></param>
         /// <param name="limit"></param>
-        /// <param name="includeEmptyItems"></param>
-        private void OnErrorV1OhlcvSymbolIdHistoryGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string symbolId, string periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit, Option<bool> includeEmptyItems)
+        private void OnErrorV1OhlcvSymbolIdHistoryGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string symbolId, string periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorV1OhlcvSymbolIdHistoryGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems);
+            OnErrorV1OhlcvSymbolIdHistoryGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, symbolId, periodId, timeStart, timeEnd, limit);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -915,8 +910,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeStart"></param>
         /// <param name="timeEnd"></param>
         /// <param name="limit"></param>
-        /// <param name="includeEmptyItems"></param>
-        partial void OnErrorV1OhlcvSymbolIdHistoryGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string symbolId, string periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit, Option<bool> includeEmptyItems);
+        partial void OnErrorV1OhlcvSymbolIdHistoryGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string symbolId, string periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit);
 
         /// <summary>
         /// Historical data Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific symbol eg &#x60;BITSTAMP_SPOT_BTC_USD&#x60;, if you need to query timeseries by asset pairs eg. &#x60;BTC/USD&#x60;, then please reffer to the Exchange Rates Timeseries data              :::info The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
@@ -926,14 +920,13 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeStart">Timeseries starting time in ISO 8601 (optional)</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601 (optional)</param>
         /// <param name="limit">Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
-        /// <param name="includeEmptyItems">Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OhlcvSymbolIdHistoryGetApiResponse"/>&gt;</returns>
-        public async Task<IV1OhlcvSymbolIdHistoryGetApiResponse?> V1OhlcvSymbolIdHistoryGetOrDefaultAsync(string symbolId, string periodId, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, Option<bool> includeEmptyItems = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1OhlcvSymbolIdHistoryGetApiResponse?> V1OhlcvSymbolIdHistoryGetOrDefaultAsync(string symbolId, string periodId, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await V1OhlcvSymbolIdHistoryGetAsync(symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems, cancellationToken).ConfigureAwait(false);
+                return await V1OhlcvSymbolIdHistoryGetAsync(symbolId, periodId, timeStart, timeEnd, limit, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -950,10 +943,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeStart">Timeseries starting time in ISO 8601 (optional)</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601 (optional)</param>
         /// <param name="limit">Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
-        /// <param name="includeEmptyItems">Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OhlcvSymbolIdHistoryGetApiResponse"/>&gt;</returns>
-        public async Task<IV1OhlcvSymbolIdHistoryGetApiResponse> V1OhlcvSymbolIdHistoryGetAsync(string symbolId, string periodId, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, Option<bool> includeEmptyItems = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1OhlcvSymbolIdHistoryGetApiResponse> V1OhlcvSymbolIdHistoryGetAsync(string symbolId, string periodId, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -961,7 +953,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             {
                 ValidateV1OhlcvSymbolIdHistoryGet(symbolId, periodId, timeStart, timeEnd);
 
-                FormatV1OhlcvSymbolIdHistoryGet(ref symbolId, ref periodId, ref timeStart, ref timeEnd, ref limit, ref includeEmptyItems);
+                FormatV1OhlcvSymbolIdHistoryGet(ref symbolId, ref periodId, ref timeStart, ref timeEnd, ref limit);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -985,9 +977,6 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
 
                     if (limit.IsSet)
                         parseQueryStringLocalVar["limit"] = ClientUtils.ParameterToString(limit.Value);
-
-                    if (includeEmptyItems.IsSet)
-                        parseQueryStringLocalVar["include_empty_items"] = ClientUtils.ParameterToString(includeEmptyItems.Value);
 
                     uriBuilderLocalVar.Query = parseQueryStringLocalVar.ToString();
 
@@ -1028,7 +1017,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
 
                         V1OhlcvSymbolIdHistoryGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/ohlcv/{symbol_id}/history", requestedAtLocalVar, _jsonSerializerOptions);
 
-                        AfterV1OhlcvSymbolIdHistoryGetDefaultImplementation(apiResponseLocalVar, symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems);
+                        AfterV1OhlcvSymbolIdHistoryGetDefaultImplementation(apiResponseLocalVar, symbolId, periodId, timeStart, timeEnd, limit);
 
                         Events.ExecuteOnV1OhlcvSymbolIdHistoryGet(apiResponseLocalVar);
 
@@ -1042,7 +1031,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorV1OhlcvSymbolIdHistoryGetDefaultImplementation(e, "/v1/ohlcv/{symbol_id}/history", uriBuilderLocalVar.Path, symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems);
+                OnErrorV1OhlcvSymbolIdHistoryGetDefaultImplementation(e, "/v1/ohlcv/{symbol_id}/history", uriBuilderLocalVar.Path, symbolId, periodId, timeStart, timeEnd, limit);
                 Events.ExecuteOnErrorV1OhlcvSymbolIdHistoryGet(e);
                 throw;
             }
@@ -1206,7 +1195,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="symbolId">Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)</param>
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)</param>
         /// <param name="limit">Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
-        /// <param name="includeEmptyItems">Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)</param>
+        /// <param name="includeEmptyItems"> (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OhlcvSymbolIdLatestGetApiResponse"/>&gt;</returns>
         public async Task<IV1OhlcvSymbolIdLatestGetApiResponse?> V1OhlcvSymbolIdLatestGetOrDefaultAsync(string symbolId, string periodId, Option<int> limit = default, Option<bool> includeEmptyItems = default, System.Threading.CancellationToken cancellationToken = default)
@@ -1228,7 +1217,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="symbolId">Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)</param>
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)</param>
         /// <param name="limit">Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
-        /// <param name="includeEmptyItems">Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)</param>
+        /// <param name="includeEmptyItems"> (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OhlcvSymbolIdLatestGetApiResponse"/>&gt;</returns>
         public async Task<IV1OhlcvSymbolIdLatestGetApiResponse> V1OhlcvSymbolIdLatestGetAsync(string symbolId, string periodId, Option<int> limit = default, Option<bool> includeEmptyItems = default, System.Threading.CancellationToken cancellationToken = default)

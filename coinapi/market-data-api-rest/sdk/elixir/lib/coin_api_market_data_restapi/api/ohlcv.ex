@@ -87,7 +87,6 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Ohlcv do
     - `:time_start` (String.t): Timeseries starting time in ISO 8601
     - `:time_end` (String.t): Timeseries ending time in ISO 8601
     - `:limit` (integer()): Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-    - `:include_empty_items` (boolean()): Include items with no activity? (default value is `false`, possible values are `true` or `false`)
 
   ### Returns
 
@@ -99,8 +98,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Ohlcv do
     optional_params = %{
       :time_start => :query,
       :time_end => :query,
-      :limit => :query,
-      :include_empty_items => :query
+      :limit => :query
     }
 
     request =
@@ -129,7 +127,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Ohlcv do
   - `period_id` (String.t): Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
   - `opts` (keyword): Optional parameters
     - `:limit` (integer()): Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-    - `:include_empty_items` (boolean()): Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+    - `:include_empty_items` (boolean()): 
 
   ### Returns
 

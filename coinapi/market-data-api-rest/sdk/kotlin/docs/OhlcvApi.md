@@ -117,7 +117,7 @@ Configure JWT:
 
 <a id="v1OhlcvSymbolIdHistoryGet"></a>
 # **v1OhlcvSymbolIdHistoryGet**
-> kotlin.collections.List&lt;V1TimeseriesItem&gt; v1OhlcvSymbolIdHistoryGet(symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems)
+> kotlin.collections.List&lt;V1TimeseriesItem&gt; v1OhlcvSymbolIdHistoryGet(symbolId, periodId, timeStart, timeEnd, limit)
 
 Historical data
 
@@ -135,9 +135,8 @@ val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of
 val timeStart : kotlin.String = timeStart_example // kotlin.String | Timeseries starting time in ISO 8601
 val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601
 val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-val includeEmptyItems : kotlin.Boolean = true // kotlin.Boolean | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
 try {
-    val result : kotlin.collections.List<V1TimeseriesItem> = apiInstance.v1OhlcvSymbolIdHistoryGet(symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems)
+    val result : kotlin.collections.List<V1TimeseriesItem> = apiInstance.v1OhlcvSymbolIdHistoryGet(symbolId, periodId, timeStart, timeEnd, limit)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling OhlcvApi#v1OhlcvSymbolIdHistoryGet")
@@ -153,10 +152,9 @@ try {
 | **periodId** | **kotlin.String**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | |
 | **timeStart** | **kotlin.String**| Timeseries starting time in ISO 8601 | [optional] |
 | **timeEnd** | **kotlin.String**| Timeseries ending time in ISO 8601 | [optional] |
-| **limit** | **kotlin.Int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **includeEmptyItems** | **kotlin.Boolean**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to false] |
+| **limit** | **kotlin.Int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
 
 ### Return type
 
@@ -194,7 +192,7 @@ val apiInstance = OhlcvApi()
 val symbolId : kotlin.String = symbolId_example // kotlin.String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-val includeEmptyItems : kotlin.Boolean = true // kotlin.Boolean | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+val includeEmptyItems : kotlin.Boolean = true // kotlin.Boolean | 
 try {
     val result : kotlin.collections.List<V1TimeseriesItem> = apiInstance.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit, includeEmptyItems)
     println(result)
@@ -213,7 +211,7 @@ try {
 | **limit** | **kotlin.Int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **includeEmptyItems** | **kotlin.Boolean**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to false] |
+| **includeEmptyItems** | **kotlin.Boolean**|  | [optional] [default to false] |
 
 ### Return type
 

@@ -62,7 +62,7 @@ v1_ohlcv_symbol_id_history_get(Ctx, SymbolId, PeriodId, Optional) ->
 
     Method = get,
     Path = [?BASE_URL, "/v1/ohlcv/", SymbolId, "/history"],
-    QS = lists:flatten([{<<"period_id">>, PeriodId}])++openapi_utils:optional_params(['time_start', 'time_end', 'limit', 'include_empty_items'], _OptionalParams),
+    QS = lists:flatten([{<<"period_id">>, PeriodId}])++openapi_utils:optional_params(['time_start', 'time_end', 'limit'], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),

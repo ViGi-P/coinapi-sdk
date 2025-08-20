@@ -66,12 +66,18 @@ tags:
   name: Order Book
 - description: "\nAPI calls described in this section are related to downloading OHLCV\
     \ *(Open, High, Low, Close, Volume)* timeseries data.\nEach data point of this\
-    \ timeseries represents several indicators calculated from transactions activity\
-    \ inside a time range (period).\n\n:::info\nOHLCV data primary purpose is to present\
-    \ an overview of the market in human readable form. \nIt's often used to visualize\
-    \ market data on charts, websites, and various kinds of reports.\n:::\n\n:::tip\n\
-    CoinAPI expanded the standard OHLCV timeseries by including time of first and\
-    \ last trade and amount of trades executed inside period.\n:::\n    "
+    \ timeseries represents several indicators calculated from orderbook and transactions\
+    \ activity inside a time range (period).\n\n:::info\nOHLCV data primary purpose\
+    \ is to present an overview of the market in human readable form. \nIt's often\
+    \ used to visualize market data on charts, websites, and various kinds of reports.\n\
+    :::\n\n:::tip\nCoinAPI expanded the standard OHLCV timeseries by including time\
+    \ of first and last trade and amount of trades executed inside period.\n:::\n\n\
+    :::info\nWhile working on the OHLCV data, especially lower time periods, you can\
+    \ notice that there are cases where there was no transactions and only orderbook\
+    \ activity.\nIn such cases, the volume_traded and trades_count fields are set\
+    \ to 0.\nThis is because the OHLCV data is calculated from the orderbook and transactions\
+    \ activity.\nIf there was no transactions and only orderbook activity, then the\
+    \ volume_traded and trades_count fields are set to 0.\n:::\n    "
   name: Ohlcv
 - description: ""
   name: Metadata
@@ -880,7 +886,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-08-20T06:03:47.3176336Z
+                    time: 2025-08-20T17:35:20.8195265Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -890,7 +896,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-08-20T06:03:47.3176336Z
+                    time: 2025-08-20T17:35:20.8195265Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -900,7 +906,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-08-20T06:03:47.3176336Z
+                    time: 2025-08-20T17:35:20.8195265Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -910,7 +916,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-08-20T06:03:47.3176336Z
+                    time: 2025-08-20T17:35:20.8195265Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -5782,7 +5788,50 @@ paths:
       - application/x-msgpack
       - text/json
       - text/plain
-  /v1/symbols:
+  /v1/symbols/map/{exchange_id}:
+    get:
+      parameters:
+      - description: The ID of the exchange (from the Metadata -> Exchanges)
+        explode: false
+        in: path
+        name: exchange_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: "#/components/schemas/v1.SymbolMapping"
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/v1.SymbolMapping"
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/v1.SymbolMapping"
+                type: array
+            application/x-msgpack:
+              schema:
+                items:
+                  $ref: "#/components/schemas/v1.SymbolMapping"
+                type: array
+          description: successful operation
+      summary: List active symbol mapping for the exchange
+      tags:
+      - Metadata
+      x-accepts:
+      - application/json
+      - application/x-msgpack
+      - text/json
+      - text/plain
+  /v1/symbols/{exchange_id}/active:
     get:
       description: "Retrieves all currently active (listed) symbols, with optional\
         \ filtering.\n            \n:::info\n\"price_precision\" and \"size_precision\"\
@@ -5848,19 +5897,19 @@ paths:
         \ | Identifier of the asset used to denominate the contract unit\ncontract_id\
         \ | Identifier of contract by the exchange"
       parameters:
+      - description: The ID of the exchange.
+        explode: false
+        in: path
+        name: exchange_id
+        required: true
+        schema:
+          type: string
+        style: simple
       - description: "Comma or semicolon delimited parts of symbol identifier used\
           \ to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)"
         explode: true
         in: query
         name: filter_symbol_id
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: The filter for exchange ID.
-        explode: true
-        in: query
-        name: filter_exchange_id
         required: false
         schema:
           type: string
@@ -6118,328 +6167,6 @@ paths:
                 type: array
           description: successful operation
       summary: List all active symbols
-      tags:
-      - Metadata
-      x-accepts:
-      - application/json
-      - application/x-msgpack
-      - text/json
-      - text/plain
-  /v1/symbols/map/{exchange_id}:
-    get:
-      parameters:
-      - description: The ID of the exchange (from the Metadata -> Exchanges)
-        explode: false
-        in: path
-        name: exchange_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            text/plain:
-              schema:
-                items:
-                  $ref: "#/components/schemas/v1.SymbolMapping"
-                type: array
-            application/json:
-              schema:
-                items:
-                  $ref: "#/components/schemas/v1.SymbolMapping"
-                type: array
-            text/json:
-              schema:
-                items:
-                  $ref: "#/components/schemas/v1.SymbolMapping"
-                type: array
-            application/x-msgpack:
-              schema:
-                items:
-                  $ref: "#/components/schemas/v1.SymbolMapping"
-                type: array
-          description: successful operation
-      summary: List active symbol mapping for the exchange
-      tags:
-      - Metadata
-      x-accepts:
-      - application/json
-      - application/x-msgpack
-      - text/json
-      - text/plain
-  /v1/symbols/{exchange_id}:
-    get:
-      parameters:
-      - description: The ID of the exchange (from the Metadata -> Exchanges)
-        explode: false
-        in: path
-        name: exchange_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: The filter for symbol ID.
-        explode: true
-        in: query
-        name: filter_symbol_id
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: The filter for asset ID.
-        explode: true
-        in: query
-        name: filter_asset_id
-        required: false
-        schema:
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            text/plain:
-              examples:
-                Example response:
-                  value:
-                  - symbol_id: KRAKENFTS_PERP_BTC_USD
-                    exchange_id: KRAKENFTS
-                    symbol_type: PERPETUAL
-                    asset_id_base: BTC
-                    asset_id_quote: USD
-                    asset_id_unit: USD
-                    future_contract_unit: 1.0
-                    future_contract_unit_asset: USD
-                    data_start: 2019-10-30
-                    data_end: 2021-03-03
-                    data_quote_start: 2019-10-30T16:53:10.3262317Z
-                    data_quote_end: 2021-03-03T13:51:45.6970000Z
-                    data_orderbook_start: 2019-10-30T16:53:10.3262317Z
-                    data_orderbook_end: 2020-08-05T14:37:32.0080000Z
-                    data_trade_start: 2019-10-30T16:38:52.1620000Z
-                    data_trade_end: 2021-03-03T13:46:25.7810000Z
-                    volume_1hrs: 22897091
-                    volume_1hrs_usd: 2.2897091E7
-                    volume_1day: 459390289
-                    volume_1day_usd: 4.59390289E8
-                    volume_1mth: 12875674995
-                    volume_1mth_usd: 1.2875674995E10
-                    price: 51266
-                    symbol_id_exchange: pi_xbtusd
-                    asset_id_base_exchange: XBT
-                    asset_id_quote_exchange: USD
-                    price_precision: 0.1
-                    size_precision: 1.0
-                  - symbol_id: POLONIEX_SPOT_LTC_USDC
-                    exchange_id: POLONIEX
-                    symbol_type: SPOT
-                    asset_id_base: LTC
-                    asset_id_quote: USDC
-                    data_start: 2018-11-20
-                    data_end: 2021-03-01
-                    data_quote_start: 2018-11-20T15:24:58.4128803Z
-                    data_quote_end: 2021-03-01T16:07:09.3475456Z
-                    data_orderbook_start: 2018-11-20T15:24:58.4128803Z
-                    data_orderbook_end: 2020-08-05T14:37:20.2695780Z
-                    data_trade_start: 2018-11-20T15:25:38.0000000Z
-                    data_trade_end: 2021-03-01T16:03:18.0000000Z
-                    volume_1hrs: 51.68645899
-                    volume_1hrs_usd: 9036.44
-                    volume_1day: 465.568863
-                    volume_1day_usd: 81396.28
-                    volume_1mth: 22528.27638495
-                    volume_1mth_usd: 3938661.0
-                    symbol_id_exchange: USDC_LTC
-                    asset_id_base_exchange: LTC
-                    asset_id_quote_exchange: USDC
-                    price_precision: 1.0E-8
-                    size_precision: 1.0E-8
-              schema:
-                items:
-                  $ref: "#/components/schemas/v1.Symbol"
-                type: array
-            application/json:
-              examples:
-                Example response:
-                  value:
-                  - symbol_id: KRAKENFTS_PERP_BTC_USD
-                    exchange_id: KRAKENFTS
-                    symbol_type: PERPETUAL
-                    asset_id_base: BTC
-                    asset_id_quote: USD
-                    asset_id_unit: USD
-                    future_contract_unit: 1.0
-                    future_contract_unit_asset: USD
-                    data_start: 2019-10-30
-                    data_end: 2021-03-03
-                    data_quote_start: 2019-10-30T16:53:10.3262317Z
-                    data_quote_end: 2021-03-03T13:51:45.6970000Z
-                    data_orderbook_start: 2019-10-30T16:53:10.3262317Z
-                    data_orderbook_end: 2020-08-05T14:37:32.0080000Z
-                    data_trade_start: 2019-10-30T16:38:52.1620000Z
-                    data_trade_end: 2021-03-03T13:46:25.7810000Z
-                    volume_1hrs: 22897091
-                    volume_1hrs_usd: 2.2897091E7
-                    volume_1day: 459390289
-                    volume_1day_usd: 4.59390289E8
-                    volume_1mth: 12875674995
-                    volume_1mth_usd: 1.2875674995E10
-                    price: 51266
-                    symbol_id_exchange: pi_xbtusd
-                    asset_id_base_exchange: XBT
-                    asset_id_quote_exchange: USD
-                    price_precision: 0.1
-                    size_precision: 1.0
-                  - symbol_id: POLONIEX_SPOT_LTC_USDC
-                    exchange_id: POLONIEX
-                    symbol_type: SPOT
-                    asset_id_base: LTC
-                    asset_id_quote: USDC
-                    data_start: 2018-11-20
-                    data_end: 2021-03-01
-                    data_quote_start: 2018-11-20T15:24:58.4128803Z
-                    data_quote_end: 2021-03-01T16:07:09.3475456Z
-                    data_orderbook_start: 2018-11-20T15:24:58.4128803Z
-                    data_orderbook_end: 2020-08-05T14:37:20.2695780Z
-                    data_trade_start: 2018-11-20T15:25:38.0000000Z
-                    data_trade_end: 2021-03-01T16:03:18.0000000Z
-                    volume_1hrs: 51.68645899
-                    volume_1hrs_usd: 9036.44
-                    volume_1day: 465.568863
-                    volume_1day_usd: 81396.28
-                    volume_1mth: 22528.27638495
-                    volume_1mth_usd: 3938661.0
-                    symbol_id_exchange: USDC_LTC
-                    asset_id_base_exchange: LTC
-                    asset_id_quote_exchange: USDC
-                    price_precision: 1.0E-8
-                    size_precision: 1.0E-8
-              schema:
-                items:
-                  $ref: "#/components/schemas/v1.Symbol"
-                type: array
-            text/json:
-              examples:
-                Example response:
-                  value:
-                  - symbol_id: KRAKENFTS_PERP_BTC_USD
-                    exchange_id: KRAKENFTS
-                    symbol_type: PERPETUAL
-                    asset_id_base: BTC
-                    asset_id_quote: USD
-                    asset_id_unit: USD
-                    future_contract_unit: 1.0
-                    future_contract_unit_asset: USD
-                    data_start: 2019-10-30
-                    data_end: 2021-03-03
-                    data_quote_start: 2019-10-30T16:53:10.3262317Z
-                    data_quote_end: 2021-03-03T13:51:45.6970000Z
-                    data_orderbook_start: 2019-10-30T16:53:10.3262317Z
-                    data_orderbook_end: 2020-08-05T14:37:32.0080000Z
-                    data_trade_start: 2019-10-30T16:38:52.1620000Z
-                    data_trade_end: 2021-03-03T13:46:25.7810000Z
-                    volume_1hrs: 22897091
-                    volume_1hrs_usd: 2.2897091E7
-                    volume_1day: 459390289
-                    volume_1day_usd: 4.59390289E8
-                    volume_1mth: 12875674995
-                    volume_1mth_usd: 1.2875674995E10
-                    price: 51266
-                    symbol_id_exchange: pi_xbtusd
-                    asset_id_base_exchange: XBT
-                    asset_id_quote_exchange: USD
-                    price_precision: 0.1
-                    size_precision: 1.0
-                  - symbol_id: POLONIEX_SPOT_LTC_USDC
-                    exchange_id: POLONIEX
-                    symbol_type: SPOT
-                    asset_id_base: LTC
-                    asset_id_quote: USDC
-                    data_start: 2018-11-20
-                    data_end: 2021-03-01
-                    data_quote_start: 2018-11-20T15:24:58.4128803Z
-                    data_quote_end: 2021-03-01T16:07:09.3475456Z
-                    data_orderbook_start: 2018-11-20T15:24:58.4128803Z
-                    data_orderbook_end: 2020-08-05T14:37:20.2695780Z
-                    data_trade_start: 2018-11-20T15:25:38.0000000Z
-                    data_trade_end: 2021-03-01T16:03:18.0000000Z
-                    volume_1hrs: 51.68645899
-                    volume_1hrs_usd: 9036.44
-                    volume_1day: 465.568863
-                    volume_1day_usd: 81396.28
-                    volume_1mth: 22528.27638495
-                    volume_1mth_usd: 3938661.0
-                    symbol_id_exchange: USDC_LTC
-                    asset_id_base_exchange: LTC
-                    asset_id_quote_exchange: USDC
-                    price_precision: 1.0E-8
-                    size_precision: 1.0E-8
-              schema:
-                items:
-                  $ref: "#/components/schemas/v1.Symbol"
-                type: array
-            application/x-msgpack:
-              examples:
-                Example response:
-                  value:
-                  - symbol_id: KRAKENFTS_PERP_BTC_USD
-                    exchange_id: KRAKENFTS
-                    symbol_type: PERPETUAL
-                    asset_id_base: BTC
-                    asset_id_quote: USD
-                    asset_id_unit: USD
-                    future_contract_unit: 1.0
-                    future_contract_unit_asset: USD
-                    data_start: 2019-10-30
-                    data_end: 2021-03-03
-                    data_quote_start: 2019-10-30T16:53:10.3262317Z
-                    data_quote_end: 2021-03-03T13:51:45.6970000Z
-                    data_orderbook_start: 2019-10-30T16:53:10.3262317Z
-                    data_orderbook_end: 2020-08-05T14:37:32.0080000Z
-                    data_trade_start: 2019-10-30T16:38:52.1620000Z
-                    data_trade_end: 2021-03-03T13:46:25.7810000Z
-                    volume_1hrs: 22897091
-                    volume_1hrs_usd: 2.2897091E7
-                    volume_1day: 459390289
-                    volume_1day_usd: 4.59390289E8
-                    volume_1mth: 12875674995
-                    volume_1mth_usd: 1.2875674995E10
-                    price: 51266
-                    symbol_id_exchange: pi_xbtusd
-                    asset_id_base_exchange: XBT
-                    asset_id_quote_exchange: USD
-                    price_precision: 0.1
-                    size_precision: 1.0
-                  - symbol_id: POLONIEX_SPOT_LTC_USDC
-                    exchange_id: POLONIEX
-                    symbol_type: SPOT
-                    asset_id_base: LTC
-                    asset_id_quote: USDC
-                    data_start: 2018-11-20
-                    data_end: 2021-03-01
-                    data_quote_start: 2018-11-20T15:24:58.4128803Z
-                    data_quote_end: 2021-03-01T16:07:09.3475456Z
-                    data_orderbook_start: 2018-11-20T15:24:58.4128803Z
-                    data_orderbook_end: 2020-08-05T14:37:20.2695780Z
-                    data_trade_start: 2018-11-20T15:25:38.0000000Z
-                    data_trade_end: 2021-03-01T16:03:18.0000000Z
-                    volume_1hrs: 51.68645899
-                    volume_1hrs_usd: 9036.44
-                    volume_1day: 465.568863
-                    volume_1day_usd: 81396.28
-                    volume_1mth: 22528.27638495
-                    volume_1mth_usd: 3938661.0
-                    symbol_id_exchange: USDC_LTC
-                    asset_id_base_exchange: LTC
-                    asset_id_quote_exchange: USDC
-                    price_precision: 1.0E-8
-                    size_precision: 1.0E-8
-              schema:
-                items:
-                  $ref: "#/components/schemas/v1.Symbol"
-                type: array
-          description: successful operation
-      summary: List of active symbols for the exchange
       tags:
       - Metadata
       x-accepts:
@@ -6914,16 +6641,6 @@ paths:
           format: int32
           type: integer
         style: form
-      - description: "Include items with no activity? (default value is `false`, possible\
-          \ values are `true` or `false`)"
-        explode: true
-        in: query
-        name: include_empty_items
-        required: false
-        schema:
-          default: false
-          type: boolean
-        style: form
       responses:
         "200":
           content:
@@ -7162,9 +6879,7 @@ paths:
           format: int32
           type: integer
         style: form
-      - description: "Include items with no activity? (default value is `false`, possible\
-          \ values are `true` or `false`)"
-        explode: true
+      - explode: true
         in: query
         name: include_empty_items
         required: false
@@ -7798,11 +7513,14 @@ components:
           nullable: true
           type: number
         volume_traded:
-          description: The total volume traded during the time period.
+          description: The total volume traded during the time period. This could
+            be zero if there was not transactions and there was only orderbook activity.
           format: double
           type: number
         trades_count:
-          description: The number of trades executed during the time period.
+          description: The number of trades executed during the time period. This
+            could be zero if there was not transactions and there was only orderbook
+            activity.
           format: int64
           type: integer
         symbol_id_exchange:
@@ -9159,11 +8877,14 @@ components:
           nullable: true
           type: number
         volume_traded:
-          description: The total volume traded during the time period.
+          description: The total volume traded during the time period. This could
+            be zero if there was not transactions and there was only orderbook activity.
           format: double
           type: number
         trades_count:
-          description: The number of trades executed during the time period.
+          description: The number of trades executed during the time period. This
+            could be zero if there was not transactions and there was only orderbook
+            activity.
           format: int64
           type: integer
       type: object

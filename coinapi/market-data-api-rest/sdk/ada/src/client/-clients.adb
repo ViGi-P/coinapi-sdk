@@ -292,50 +292,6 @@ package body .Clients is
       .Models.Deserialize (Reply, "", Result);
    end V_1Exchanges_Icons_Size_Get;
 
-   --  List of active symbols for the exchange
-   procedure V_1Symbols_Exchange_Id_Get
-      (Client : in out Client_Type;
-       Exchange_Id : in Swagger.UString;
-       Filter_Symbol_Id : in Swagger.Nullable_UString;
-       Filter_Asset_Id : in Swagger.Nullable_UString;
-       Result : out .Models.V1Symbol_Type_Vectors.Vector) is
-      URI   : Swagger.Clients.URI_Type;
-      Reply : Swagger.Value_Type;
-   begin
-      Client.Set_Accept (Media_List_1);
-
-
-      URI.Add_Param ("filter_symbol_id", Filter_Symbol_Id);
-      URI.Add_Param ("filter_asset_id", Filter_Asset_Id);
-      URI.Set_Path ("/v1/symbols/{exchange_id}");
-      URI.Set_Path_Param ("exchange_id", Exchange_Id);
-      Client.Call (Swagger.Clients.GET, URI, Reply);
-      .Models.Deserialize (Reply, "", Result);
-   end V_1Symbols_Exchange_Id_Get;
-
-   --  List all historical symbols for an exchange.
-   --  This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
-   --  The data is provided with pagination support.
-   procedure V_1Symbols_Exchange_Id_History_Get
-      (Client : in out Client_Type;
-       Exchange_Id : in Swagger.UString;
-       Page : in Swagger.Nullable_Integer;
-       Limit : in Swagger.Nullable_Integer;
-       Result : out .Models.V1Symbol_Type_Vectors.Vector) is
-      URI   : Swagger.Clients.URI_Type;
-      Reply : Swagger.Value_Type;
-   begin
-      Client.Set_Accept (Media_List_1);
-
-
-      URI.Add_Param ("page", Page);
-      URI.Add_Param ("limit", Limit);
-      URI.Set_Path ("/v1/symbols/{exchange_id}/history");
-      URI.Set_Path_Param ("exchange_id", Exchange_Id);
-      Client.Call (Swagger.Clients.GET, URI, Reply);
-      .Models.Deserialize (Reply, "", Result);
-   end V_1Symbols_Exchange_Id_History_Get;
-
    --  List all active symbols
    --  Retrieves all currently active (listed) symbols, with optional filtering.
    --              
@@ -418,10 +374,10 @@ package body .Clients is
    --  contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)*
    --  contract_unit_asset | Identifier of the asset used to denominate the contract unit
    --  contract_id | Identifier of contract by the exchange
-   procedure V_1Symbols_Get
+   procedure V_1Symbols_Exchange_Id_Active_Get
       (Client : in out Client_Type;
+       Exchange_Id : in Swagger.UString;
        Filter_Symbol_Id : in Swagger.Nullable_UString;
-       Filter_Exchange_Id : in Swagger.Nullable_UString;
        Filter_Asset_Id : in Swagger.Nullable_UString;
        Result : out .Models.V1Symbol_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
@@ -431,12 +387,35 @@ package body .Clients is
 
 
       URI.Add_Param ("filter_symbol_id", Filter_Symbol_Id);
-      URI.Add_Param ("filter_exchange_id", Filter_Exchange_Id);
       URI.Add_Param ("filter_asset_id", Filter_Asset_Id);
-      URI.Set_Path ("/v1/symbols");
+      URI.Set_Path ("/v1/symbols/{exchange_id}/active");
+      URI.Set_Path_Param ("exchange_id", Exchange_Id);
       Client.Call (Swagger.Clients.GET, URI, Reply);
       .Models.Deserialize (Reply, "", Result);
-   end V_1Symbols_Get;
+   end V_1Symbols_Exchange_Id_Active_Get;
+
+   --  List all historical symbols for an exchange.
+   --  This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
+   --  The data is provided with pagination support.
+   procedure V_1Symbols_Exchange_Id_History_Get
+      (Client : in out Client_Type;
+       Exchange_Id : in Swagger.UString;
+       Page : in Swagger.Nullable_Integer;
+       Limit : in Swagger.Nullable_Integer;
+       Result : out .Models.V1Symbol_Type_Vectors.Vector) is
+      URI   : Swagger.Clients.URI_Type;
+      Reply : Swagger.Value_Type;
+   begin
+      Client.Set_Accept (Media_List_1);
+
+
+      URI.Add_Param ("page", Page);
+      URI.Add_Param ("limit", Limit);
+      URI.Set_Path ("/v1/symbols/{exchange_id}/history");
+      URI.Set_Path_Param ("exchange_id", Exchange_Id);
+      Client.Call (Swagger.Clients.GET, URI, Reply);
+      .Models.Deserialize (Reply, "", Result);
+   end V_1Symbols_Exchange_Id_History_Get;
 
    --  List active symbol mapping for the exchange
    procedure V_1Symbols_Map_Exchange_Id_Get
@@ -947,7 +926,6 @@ package body .Clients is
        Time_Start : in Swagger.Nullable_UString;
        Time_End : in Swagger.Nullable_UString;
        Limit : in Swagger.Nullable_Integer;
-       Include_Empty_Items : in Swagger.Nullable_Boolean;
        Result : out .Models.V1TimeseriesItem_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -959,7 +937,6 @@ package body .Clients is
       URI.Add_Param ("time_start", Time_Start);
       URI.Add_Param ("time_end", Time_End);
       URI.Add_Param ("limit", Limit);
-      URI.Add_Param ("include_empty_items", Include_Empty_Items);
       URI.Set_Path ("/v1/ohlcv/{symbol_id}/history");
       URI.Set_Path_Param ("symbol_id", Symbol_Id);
       Client.Call (Swagger.Clients.GET, URI, Reply);

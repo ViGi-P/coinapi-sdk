@@ -132,12 +132,12 @@ You can assume that we will not remove any periods from this response, however, 
 The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay.
 :::"
   ([symbol_id string?, period_id string?, ] (v1-ohlcv-symbol-id-history-get-with-http-info symbol_id period_id nil))
-  ([symbol_id string?, period_id string?, {:keys [time_start time_end limit include_empty_items]} (s/map-of keyword? any?)]
+  ([symbol_id string?, period_id string?, {:keys [time_start time_end limit]} (s/map-of keyword? any?)]
    (check-required-params symbol_id period_id)
    (call-api "/v1/ohlcv/{symbol_id}/history" :get
              {:path-params   {"symbol_id" symbol_id }
               :header-params {}
-              :query-params  {"period_id" period_id "time_start" time_start "time_end" time_end "limit" limit "include_empty_items" include_empty_items }
+              :query-params  {"period_id" period_id "time_start" time_start "time_end" time_end "limit" limit }
               :form-params   {}
               :content-types []
               :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]

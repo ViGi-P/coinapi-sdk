@@ -126,7 +126,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_ohlcv_symbol_id_history_get**
-> ARRAY[V1TimeseriesItem] v1_ohlcv_symbol_id_history_get(symbol_id => $symbol_id, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit, include_empty_items => $include_empty_items)
+> ARRAY[V1TimeseriesItem] v1_ohlcv_symbol_id_history_get(symbol_id => $symbol_id, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit)
 
 Historical data
 
@@ -152,10 +152,9 @@ my $period_id = "period_id_example"; # string | Identifier of requested timeseri
 my $time_start = "time_start_example"; # string | Timeseries starting time in ISO 8601
 my $time_end = "time_end_example"; # string | Timeseries ending time in ISO 8601
 my $limit = 100; # int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-my $include_empty_items = false; # boolean | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
 
 eval {
-    my $result = $api_instance->v1_ohlcv_symbol_id_history_get(symbol_id => $symbol_id, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit, include_empty_items => $include_empty_items);
+    my $result = $api_instance->v1_ohlcv_symbol_id_history_get(symbol_id => $symbol_id, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit);
     print Dumper($result);
 };
 if ($@) {
@@ -172,7 +171,6 @@ Name | Type | Description  | Notes
  **time_start** | **string**| Timeseries starting time in ISO 8601 | [optional] 
  **time_end** | **string**| Timeseries ending time in ISO 8601 | [optional] 
  **limit** | **int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **include_empty_items** | **boolean**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to false]
 
 ### Return type
 
@@ -214,7 +212,7 @@ my $api_instance = WWW::OpenAPIClient::OhlcvApi->new(
 my $symbol_id = "symbol_id_example"; # string | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 my $period_id = "period_id_example"; # string | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 my $limit = 100; # int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-my $include_empty_items = false; # boolean | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+my $include_empty_items = false; # boolean | 
 
 eval {
     my $result = $api_instance->v1_ohlcv_symbol_id_latest_get(symbol_id => $symbol_id, period_id => $period_id, limit => $limit, include_empty_items => $include_empty_items);
@@ -232,7 +230,7 @@ Name | Type | Description  | Notes
  **symbol_id** | **string**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | 
  **period_id** | **string**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | 
  **limit** | **int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **include_empty_items** | **boolean**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to false]
+ **include_empty_items** | **boolean**|  | [optional] [default to false]
 
 ### Return type
 

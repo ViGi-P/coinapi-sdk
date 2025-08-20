@@ -146,13 +146,13 @@ V1TimeseriesItem.prototype['price_low'] = undefined;
 V1TimeseriesItem.prototype['price_close'] = undefined;
 
 /**
- * The total volume traded during the time period.
+ * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
  * @member {Number} volume_traded
  */
 V1TimeseriesItem.prototype['volume_traded'] = undefined;
 
 /**
- * The number of trades executed during the time period.
+ * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
  * @member {Number} trades_count
  */
 V1TimeseriesItem.prototype['trades_count'] = undefined;

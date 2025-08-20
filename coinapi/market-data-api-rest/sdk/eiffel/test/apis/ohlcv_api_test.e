@@ -58,13 +58,12 @@ feature -- Test routines
             l_time_start: STRING_32
             l_time_end: STRING_32
             l_limit: INTEGER_32
-            l_include_empty_items: BOOLEAN
         do
             -- TODO: Initialize required params.
             -- l_symbol_id
             -- l_period_id
 
-            -- l_response := api.v1_ohlcv_symbol_id_history_get(l_symbol_id, l_period_id, l_time_start, l_time_end, l_limit, l_include_empty_items)
+            -- l_response := api.v1_ohlcv_symbol_id_history_get(l_symbol_id, l_period_id, l_time_start, l_time_end, l_limit)
             assert ("not_implemented", False)
         end
 

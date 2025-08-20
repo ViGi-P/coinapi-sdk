@@ -102,7 +102,7 @@ feature -- API Access
 			end
 		end
 
-	v1_ohlcv_symbol_id_history_get (symbol_id: STRING_32; period_id: STRING_32; time_start: STRING_32; time_end: STRING_32; limit: INTEGER_32; include_empty_items: BOOLEAN): detachable LIST [V1_TIMESERIES_ITEM]
+	v1_ohlcv_symbol_id_history_get (symbol_id: STRING_32; period_id: STRING_32; time_start: STRING_32; time_end: STRING_32; limit: INTEGER_32): detachable LIST [V1_TIMESERIES_ITEM]
 			-- Historical data
 			-- Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific symbol eg &#x60;BITSTAMP_SPOT_BTC_USD&#x60;, if you need to query timeseries by asset pairs eg. &#x60;BTC/USD&#x60;, then please reffer to the Exchange Rates Timeseries data              :::info The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
 			-- 
@@ -115,8 +115,6 @@ feature -- API Access
 			-- argument: time_end Timeseries ending time in ISO 8601 (optional, default to null)
 			-- 
 			-- argument: limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-			-- 
-			-- argument: include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
 			-- 
 			-- 
 			-- Result LIST [V1_TIMESERIES_ITEM]
@@ -135,7 +133,6 @@ feature -- API Access
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "time_start", time_start));
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "time_end", time_end));
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "limit", limit));
-			l_request.fill_query_params(api_client.parameter_to_tuple("", "include_empty_items", include_empty_items));
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"text/plain", "application/json", "text/json", "application/x-msgpack">>)  as l_accept then
@@ -163,7 +160,7 @@ feature -- API Access
 			-- 
 			-- argument: limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
 			-- 
-			-- argument: include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
+			-- argument: include_empty_items  (optional, default to false)
 			-- 
 			-- 
 			-- Result LIST [V1_TIMESERIES_ITEM]
