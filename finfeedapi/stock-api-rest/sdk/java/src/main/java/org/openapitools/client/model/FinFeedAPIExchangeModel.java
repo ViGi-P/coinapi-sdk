@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * FinFeedAPIExchangeModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-18T06:08:15.107424269Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-20T17:37:12.424255291Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class FinFeedAPIExchangeModel {
   public static final String SERIALIZED_NAME_EXCHANGE_ID = "exchange_id";
   @SerializedName(SERIALIZED_NAME_EXCHANGE_ID)
