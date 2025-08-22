@@ -893,7 +893,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-08-21T06:04:00.6430077Z",
+  "time": "2025-08-22T08:34:24.7390554Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -904,7 +904,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-08-21T06:04:00.6430077Z",
+  "time": "2025-08-22T08:34:24.7390554Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -915,7 +915,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-08-21T06:04:00.6430077Z",
+  "time": "2025-08-22T08:34:24.7390554Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -926,7 +926,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-08-21T06:04:00.6430077Z",
+  "time": "2025-08-22T08:34:24.7390554Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -7141,11 +7141,6 @@ paths:
             type: integer
             format: int32
             default: 100
-        - name: include_empty_items
-          in: query
-          schema:
-            type: boolean
-            default: false
       responses:
         '200':
           description: successful operation
