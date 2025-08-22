@@ -98,9 +98,6 @@ newtype FilterExchangeId = FilterExchangeId { unFilterExchangeId :: Text } deriv
 -- ** FilterSymbolId
 newtype FilterSymbolId = FilterSymbolId { unFilterSymbolId :: Text } deriving (P.Eq, P.Show)
 
--- ** IncludeEmptyItems
-newtype IncludeEmptyItems = IncludeEmptyItems { unIncludeEmptyItems :: Bool } deriving (P.Eq, P.Show)
-
 -- ** IncludeId
 newtype IncludeId = IncludeId { unIncludeId :: Bool } deriving (P.Eq, P.Show)
 

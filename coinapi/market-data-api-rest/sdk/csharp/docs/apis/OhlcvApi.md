@@ -122,7 +122,7 @@ Get OHLCV timeseries data returned in time ascending order. Data can be requeste
 
 <a id="v1ohlcvsymbolidlatestget"></a>
 # **V1OhlcvSymbolIdLatestGet**
-> List&lt;V1TimeseriesItem&gt; V1OhlcvSymbolIdLatestGet (string symbolId, string periodId, int limit = null, bool includeEmptyItems = null)
+> List&lt;V1TimeseriesItem&gt; V1OhlcvSymbolIdLatestGet (string symbolId, string periodId, int limit = null)
 
 Latest data
 
@@ -136,7 +136,6 @@ Get OHLCV latest timeseries data returned in time descending order. Data can be 
 | **symbolId** | **string** | Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) |  |
 | **periodId** | **string** | Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) |  |
 | **limit** | **int** | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
-| **includeEmptyItems** | **bool** |  | [optional] [default to false] |
 
 ### Return type
 

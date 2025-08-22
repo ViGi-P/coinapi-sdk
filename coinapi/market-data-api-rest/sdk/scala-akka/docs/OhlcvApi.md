@@ -328,10 +328,8 @@ object Example extends App {
     val periodId: String = periodId_example // String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 
     val limit: Int = 56 // Int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-
-    val includeEmptyItems: Boolean = true // Boolean | 
     
-    val request = apiInstance.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit, includeEmptyItems)
+    val request = apiInstance.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -362,7 +360,6 @@ Name | Type | Description  | Notes
  **symbolId** | **String**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) |
  **periodId** | **String**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) |
  **limit** | **Int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional]
- **includeEmptyItems** | **Boolean**|  | [optional]
 
 ### Return type
 

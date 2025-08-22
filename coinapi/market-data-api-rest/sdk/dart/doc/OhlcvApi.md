@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1OhlcvSymbolIdLatestGet**
-> List<V1TimeseriesItem> v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit, includeEmptyItems)
+> List<V1TimeseriesItem> v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit)
 
 Latest data
 
@@ -209,10 +209,9 @@ final api_instance = OhlcvApi();
 final symbolId = symbolId_example; // String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 final periodId = periodId_example; // String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 final limit = 56; // int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-final includeEmptyItems = true; // bool | 
 
 try {
-    final result = api_instance.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit, includeEmptyItems);
+    final result = api_instance.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit);
     print(result);
 } catch (e) {
     print('Exception when calling OhlcvApi->v1OhlcvSymbolIdLatestGet: $e\n');
@@ -226,7 +225,6 @@ Name | Type | Description  | Notes
  **symbolId** | **String**| Symbol identifier of requested timeseries (from the Metadata -> Symbols) | 
  **periodId** | **String**| Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`) | 
  **limit** | **int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **includeEmptyItems** | **bool**|  | [optional] [default to false]
 
 ### Return type
 

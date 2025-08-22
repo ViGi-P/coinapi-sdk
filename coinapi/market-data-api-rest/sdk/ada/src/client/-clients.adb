@@ -955,7 +955,6 @@ package body .Clients is
        Symbol_Id : in Swagger.UString;
        Period_Id : in Swagger.UString;
        Limit : in Swagger.Nullable_Integer;
-       Include_Empty_Items : in Swagger.Nullable_Boolean;
        Result : out .Models.V1TimeseriesItem_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -965,7 +964,6 @@ package body .Clients is
 
       URI.Add_Param ("period_id", Period_Id);
       URI.Add_Param ("limit", Limit);
-      URI.Add_Param ("include_empty_items", Include_Empty_Items);
       URI.Set_Path ("/v1/ohlcv/{symbol_id}/latest");
       URI.Set_Path_Param ("symbol_id", Symbol_Id);
       Client.Call (Swagger.Clients.GET, URI, Reply);

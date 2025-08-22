@@ -495,10 +495,9 @@ public class OhlcvApi {
    * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
    * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
    * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-   * @param includeEmptyItems 
    * @return List<V1TimeseriesItem>
   */
-  public List<V1TimeseriesItem> v1OhlcvSymbolIdLatestGet (String symbolId, String periodId, Integer limit, Boolean includeEmptyItems) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<V1TimeseriesItem> v1OhlcvSymbolIdLatestGet (String symbolId, String periodId, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'symbolId' is set
     if (symbolId == null) {
@@ -522,7 +521,6 @@ public class OhlcvApi {
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "period_id", periodId));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "include_empty_items", includeEmptyItems));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -565,9 +563,9 @@ public class OhlcvApi {
       /**
    * Latest data
    * Get OHLCV latest timeseries data returned in time descending order. Data can be requested by the period and for the specific symbol eg &#x60;BITSTAMP_SPOT_BTC_USD&#x60;, if you need to query timeseries by asset pairs eg. &#x60;BTC/USD&#x60;, then please reffer to the Exchange Rates Timeseries data              :::info OHLCV Latest endpoint is just the shortcut to the OHLCV Historical endpoint with substituted &#x60;time_start&#x60; and &#x60;time_end&#x60; parameters.  The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
-   * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)   * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)   * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)   * @param includeEmptyItems 
+   * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)   * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)   * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   */
-  public void v1OhlcvSymbolIdLatestGet (String symbolId, String periodId, Integer limit, Boolean includeEmptyItems, final Response.Listener<List<V1TimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1OhlcvSymbolIdLatestGet (String symbolId, String periodId, Integer limit, final Response.Listener<List<V1TimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'symbolId' is set
@@ -593,7 +591,6 @@ public class OhlcvApi {
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "period_id", periodId));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "include_empty_items", includeEmptyItems));
 
 
     String[] contentTypes = {

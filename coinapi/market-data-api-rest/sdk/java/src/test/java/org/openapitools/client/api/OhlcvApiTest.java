@@ -93,8 +93,7 @@ public class OhlcvApiTest {
         String symbolId = null;
         String periodId = null;
         Integer limit = null;
-        Boolean includeEmptyItems = null;
-        List<V1TimeseriesItem> response = api.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit, includeEmptyItems);
+        List<V1TimeseriesItem> response = api.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit);
         // TODO: test validations
     }
 

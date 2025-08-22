@@ -126,7 +126,6 @@ public class OASOhlcvApi {
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
      * @param r_limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param includeEmptyItems  (optional, default to false)
      * @return List<OASV1TimeseriesItem>
      * @throws OAS.ApiException if fails to make API call
      */
@@ -138,7 +137,6 @@ public class OASOhlcvApi {
         // cast query params to verify their expected type
         query.addAll(client.makeParam('period_id', (String) params.get('periodId')));
         query.addAll(client.makeParam('limit', (Integer) params.get('r_limit')));
-        query.addAll(client.makeParam('include_empty_items', (Boolean) params.get('includeEmptyItems')));
 
         List<OAS.Param> form = new List<OAS.Param>();
 

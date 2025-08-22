@@ -273,8 +273,7 @@ api_instance = OpenapiClient::OhlcvApi.new
 symbol_id = 'symbol_id_example' # String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 period_id = 'period_id_example' # String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 opts = {
-  limit: 56, # Integer | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  include_empty_items: true # Boolean | 
+  limit: 56 # Integer | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 }
 
 begin
@@ -311,7 +310,6 @@ end
 | **symbol_id** | **String** | Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) |  |
 | **period_id** | **String** | Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) |  |
 | **limit** | **Integer** | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional][default to 100] |
-| **include_empty_items** | **Boolean** |  | [optional][default to false] |
 
 ### Return type
 

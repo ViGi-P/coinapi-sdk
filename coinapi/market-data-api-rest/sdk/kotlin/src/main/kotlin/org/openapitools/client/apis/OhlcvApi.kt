@@ -308,7 +308,6 @@ class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param includeEmptyItems  (optional, default to false)
      * @return kotlin.collections.List<V1TimeseriesItem>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -318,8 +317,8 @@ class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1OhlcvSymbolIdLatestGet(symbolId: kotlin.String, periodId: kotlin.String, limit: kotlin.Int? = 100, includeEmptyItems: kotlin.Boolean? = false) : kotlin.collections.List<V1TimeseriesItem> {
-        val localVarResponse = v1OhlcvSymbolIdLatestGetWithHttpInfo(symbolId = symbolId, periodId = periodId, limit = limit, includeEmptyItems = includeEmptyItems)
+    fun v1OhlcvSymbolIdLatestGet(symbolId: kotlin.String, periodId: kotlin.String, limit: kotlin.Int? = 100) : kotlin.collections.List<V1TimeseriesItem> {
+        val localVarResponse = v1OhlcvSymbolIdLatestGetWithHttpInfo(symbolId = symbolId, periodId = periodId, limit = limit)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1TimeseriesItem>
@@ -343,15 +342,14 @@ class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param includeEmptyItems  (optional, default to false)
      * @return ApiResponse<kotlin.collections.List<V1TimeseriesItem>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1OhlcvSymbolIdLatestGetWithHttpInfo(symbolId: kotlin.String, periodId: kotlin.String, limit: kotlin.Int?, includeEmptyItems: kotlin.Boolean?) : ApiResponse<kotlin.collections.List<V1TimeseriesItem>?> {
-        val localVariableConfig = v1OhlcvSymbolIdLatestGetRequestConfig(symbolId = symbolId, periodId = periodId, limit = limit, includeEmptyItems = includeEmptyItems)
+    fun v1OhlcvSymbolIdLatestGetWithHttpInfo(symbolId: kotlin.String, periodId: kotlin.String, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<V1TimeseriesItem>?> {
+        val localVariableConfig = v1OhlcvSymbolIdLatestGetRequestConfig(symbolId = symbolId, periodId = periodId, limit = limit)
 
         return request<Unit, kotlin.collections.List<V1TimeseriesItem>>(
             localVariableConfig
@@ -364,19 +362,15 @@ class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param includeEmptyItems  (optional, default to false)
      * @return RequestConfig
      */
-    fun v1OhlcvSymbolIdLatestGetRequestConfig(symbolId: kotlin.String, periodId: kotlin.String, limit: kotlin.Int?, includeEmptyItems: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun v1OhlcvSymbolIdLatestGetRequestConfig(symbolId: kotlin.String, periodId: kotlin.String, limit: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("period_id", listOf(periodId.toString()))
                 if (limit != null) {
                     put("limit", listOf(limit.toString()))
-                }
-                if (includeEmptyItems != null) {
-                    put("include_empty_items", listOf(includeEmptyItems.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_ohlcv_symbol_id_latest_get**
-> ARRAY[V1TimeseriesItem] v1_ohlcv_symbol_id_latest_get(symbol_id => $symbol_id, period_id => $period_id, limit => $limit, include_empty_items => $include_empty_items)
+> ARRAY[V1TimeseriesItem] v1_ohlcv_symbol_id_latest_get(symbol_id => $symbol_id, period_id => $period_id, limit => $limit)
 
 Latest data
 
@@ -212,10 +212,9 @@ my $api_instance = WWW::OpenAPIClient::OhlcvApi->new(
 my $symbol_id = "symbol_id_example"; # string | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 my $period_id = "period_id_example"; # string | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 my $limit = 100; # int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-my $include_empty_items = false; # boolean | 
 
 eval {
-    my $result = $api_instance->v1_ohlcv_symbol_id_latest_get(symbol_id => $symbol_id, period_id => $period_id, limit => $limit, include_empty_items => $include_empty_items);
+    my $result = $api_instance->v1_ohlcv_symbol_id_latest_get(symbol_id => $symbol_id, period_id => $period_id, limit => $limit);
     print Dumper($result);
 };
 if ($@) {
@@ -230,7 +229,6 @@ Name | Type | Description  | Notes
  **symbol_id** | **string**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | 
  **period_id** | **string**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | 
  **limit** | **int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **include_empty_items** | **boolean**|  | [optional] [default to false]
 
 ### Return type
 

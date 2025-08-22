@@ -17,7 +17,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictBool, StrictInt, StrictStr
+from pydantic import Field, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
 from api_bricks_coinapi_market_data_api_rest.models.models_exchange_timeseries_item import ModelsExchangeTimeseriesItem
@@ -947,7 +947,6 @@ class OhlcvApi:
         symbol_id: Annotated[StrictStr, Field(description="Symbol identifier of requested timeseries (from the Metadata -> Symbols)")],
         period_id: Annotated[StrictStr, Field(description="Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)")],
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
-        include_empty_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -971,8 +970,6 @@ class OhlcvApi:
         :type period_id: str
         :param limit: Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
-        :param include_empty_items:
-        :type include_empty_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -999,7 +996,6 @@ class OhlcvApi:
             symbol_id=symbol_id,
             period_id=period_id,
             limit=limit,
-            include_empty_items=include_empty_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1026,7 +1022,6 @@ class OhlcvApi:
         symbol_id: Annotated[StrictStr, Field(description="Symbol identifier of requested timeseries (from the Metadata -> Symbols)")],
         period_id: Annotated[StrictStr, Field(description="Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)")],
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
-        include_empty_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1050,8 +1045,6 @@ class OhlcvApi:
         :type period_id: str
         :param limit: Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
-        :param include_empty_items:
-        :type include_empty_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1078,7 +1071,6 @@ class OhlcvApi:
             symbol_id=symbol_id,
             period_id=period_id,
             limit=limit,
-            include_empty_items=include_empty_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1105,7 +1097,6 @@ class OhlcvApi:
         symbol_id: Annotated[StrictStr, Field(description="Symbol identifier of requested timeseries (from the Metadata -> Symbols)")],
         period_id: Annotated[StrictStr, Field(description="Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)")],
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
-        include_empty_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1129,8 +1120,6 @@ class OhlcvApi:
         :type period_id: str
         :param limit: Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
-        :param include_empty_items:
-        :type include_empty_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1157,7 +1146,6 @@ class OhlcvApi:
             symbol_id=symbol_id,
             period_id=period_id,
             limit=limit,
-            include_empty_items=include_empty_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1179,7 +1167,6 @@ class OhlcvApi:
         symbol_id,
         period_id,
         limit,
-        include_empty_items,
         _request_auth,
         _content_type,
         _headers,
@@ -1211,10 +1198,6 @@ class OhlcvApi:
         if limit is not None:
             
             _query_params.append(('limit', limit))
-            
-        if include_empty_items is not None:
-            
-            _query_params.append(('include_empty_items', include_empty_items))
             
         # process the header parameters
         # process the form parameters

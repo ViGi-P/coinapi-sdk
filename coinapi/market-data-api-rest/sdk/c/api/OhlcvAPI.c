@@ -456,7 +456,7 @@ end:
 // Get OHLCV latest timeseries data returned in time descending order. Data can be requested by the period and for the specific symbol eg `BITSTAMP_SPOT_BTC_USD`, if you need to query timeseries by asset pairs eg. `BTC/USD`, then please reffer to the Exchange Rates Timeseries data              :::info OHLCV Latest endpoint is just the shortcut to the OHLCV Historical endpoint with substituted `time_start` and `time_end` parameters.  The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
 //
 list_t*
-OhlcvAPI_v1OhlcvSymbolIdLatestGet(apiClient_t *apiClient, char *symbol_id, char *period_id, int *limit, int *include_empty_items)
+OhlcvAPI_v1OhlcvSymbolIdLatestGet(apiClient_t *apiClient, char *symbol_id, char *period_id, int *limit)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -511,19 +511,6 @@ OhlcvAPI_v1OhlcvSymbolIdLatestGet(apiClient_t *apiClient, char *symbol_id, char 
         snprintf(valueQuery_limit, MAX_NUMBER_LENGTH, "%d", *limit);
         keyPairQuery_limit = keyValuePair_create(keyQuery_limit, valueQuery_limit);
         list_addElement(localVarQueryParameters,keyPairQuery_limit);
-    }
-
-    // query parameters
-    char *keyQuery_include_empty_items = NULL;
-    char * valueQuery_include_empty_items = NULL;
-    keyValuePair_t *keyPairQuery_include_empty_items = 0;
-    if (include_empty_items)
-    {
-        keyQuery_include_empty_items = strdup("include_empty_items");
-        valueQuery_include_empty_items = calloc(1,MAX_NUMBER_LENGTH);
-        snprintf(valueQuery_include_empty_items, MAX_NUMBER_LENGTH, "%d", *include_empty_items);
-        keyPairQuery_include_empty_items = keyValuePair_create(keyQuery_include_empty_items, valueQuery_include_empty_items);
-        list_addElement(localVarQueryParameters,keyPairQuery_include_empty_items);
     }
     list_addElement(localVarHeaderType,"text/plain"); //produces
     list_addElement(localVarHeaderType,"application/json"); //produces
@@ -601,18 +588,6 @@ OhlcvAPI_v1OhlcvSymbolIdLatestGet(apiClient_t *apiClient, char *symbol_id, char 
     if(keyPairQuery_limit){
         keyValuePair_free(keyPairQuery_limit);
         keyPairQuery_limit = NULL;
-    }
-    if(keyQuery_include_empty_items){
-        free(keyQuery_include_empty_items);
-        keyQuery_include_empty_items = NULL;
-    }
-    if(valueQuery_include_empty_items){
-        free(valueQuery_include_empty_items);
-        valueQuery_include_empty_items = NULL;
-    }
-    if(keyPairQuery_include_empty_items){
-        keyValuePair_free(keyPairQuery_include_empty_items);
-        keyPairQuery_include_empty_items = NULL;
     }
     return elementToReturn;
 end:

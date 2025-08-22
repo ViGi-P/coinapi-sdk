@@ -264,9 +264,7 @@ class OhlcvApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  ///
-  /// * [bool] includeEmptyItems:
-  Future<Response> v1OhlcvSymbolIdLatestGetWithHttpInfo(String symbolId, String periodId, { int? limit, bool? includeEmptyItems, }) async {
+  Future<Response> v1OhlcvSymbolIdLatestGetWithHttpInfo(String symbolId, String periodId, { int? limit, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/ohlcv/{symbol_id}/latest'
       .replaceAll('{symbol_id}', symbolId);
@@ -281,9 +279,6 @@ class OhlcvApi {
       queryParams.addAll(_queryParams('', 'period_id', periodId));
     if (limit != null) {
       queryParams.addAll(_queryParams('', 'limit', limit));
-    }
-    if (includeEmptyItems != null) {
-      queryParams.addAll(_queryParams('', 'include_empty_items', includeEmptyItems));
     }
 
     const contentTypes = <String>[];
@@ -314,10 +309,8 @@ class OhlcvApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  ///
-  /// * [bool] includeEmptyItems:
-  Future<List<V1TimeseriesItem>?> v1OhlcvSymbolIdLatestGet(String symbolId, String periodId, { int? limit, bool? includeEmptyItems, }) async {
-    final response = await v1OhlcvSymbolIdLatestGetWithHttpInfo(symbolId, periodId,  limit: limit, includeEmptyItems: includeEmptyItems, );
+  Future<List<V1TimeseriesItem>?> v1OhlcvSymbolIdLatestGet(String symbolId, String periodId, { int? limit, }) async {
+    final response = await v1OhlcvSymbolIdLatestGetWithHttpInfo(symbolId, periodId,  limit: limit, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ## V1OhlcvSymbolIdLatestGet
 
-> []V1TimeseriesItem V1OhlcvSymbolIdLatestGet(ctx, symbolId).PeriodId(periodId).Limit(limit).IncludeEmptyItems(includeEmptyItems).Execute()
+> []V1TimeseriesItem V1OhlcvSymbolIdLatestGet(ctx, symbolId).PeriodId(periodId).Limit(limit).Execute()
 
 Latest data
 
@@ -250,11 +250,10 @@ func main() {
 	symbolId := "symbolId_example" // string | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 	periodId := "periodId_example" // string | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 	limit := int32(56) // int32 | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
-	includeEmptyItems := true // bool |  (optional) (default to false)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OhlcvAPI.V1OhlcvSymbolIdLatestGet(context.Background(), symbolId).PeriodId(periodId).Limit(limit).IncludeEmptyItems(includeEmptyItems).Execute()
+	resp, r, err := apiClient.OhlcvAPI.V1OhlcvSymbolIdLatestGet(context.Background(), symbolId).PeriodId(periodId).Limit(limit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OhlcvAPI.V1OhlcvSymbolIdLatestGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -282,7 +281,6 @@ Name | Type | Description  | Notes
 
  **periodId** | **string** | Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | 
  **limit** | **int32** | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [default to 100]
- **includeEmptyItems** | **bool** |  | [default to false]
 
 ### Return type
 

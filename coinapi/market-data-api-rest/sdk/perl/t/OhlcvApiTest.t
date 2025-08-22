@@ -63,8 +63,7 @@ isa_ok($api, 'WWW::OpenAPIClient::OhlcvApi');
 #my $v1_ohlcv_symbol_id_latest_get_symbol_id = undef; # replace NULL with a proper value
 #my $v1_ohlcv_symbol_id_latest_get_period_id = undef; # replace NULL with a proper value
 #my $v1_ohlcv_symbol_id_latest_get_limit = undef; # replace NULL with a proper value
-#my $v1_ohlcv_symbol_id_latest_get_include_empty_items = undef; # replace NULL with a proper value
-#my $v1_ohlcv_symbol_id_latest_get_result = $api->v1_ohlcv_symbol_id_latest_get(symbol_id => $v1_ohlcv_symbol_id_latest_get_symbol_id, period_id => $v1_ohlcv_symbol_id_latest_get_period_id, limit => $v1_ohlcv_symbol_id_latest_get_limit, include_empty_items => $v1_ohlcv_symbol_id_latest_get_include_empty_items);
+#my $v1_ohlcv_symbol_id_latest_get_result = $api->v1_ohlcv_symbol_id_latest_get(symbol_id => $v1_ohlcv_symbol_id_latest_get_symbol_id, period_id => $v1_ohlcv_symbol_id_latest_get_period_id, limit => $v1_ohlcv_symbol_id_latest_get_limit);
 
 
 done_testing();

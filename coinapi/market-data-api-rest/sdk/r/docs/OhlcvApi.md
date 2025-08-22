@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1OhlcvSymbolIdLatestGet**
-> array[V1TimeseriesItem] V1OhlcvSymbolIdLatestGet(symbol_id, period_id, limit = 100, include_empty_items = FALSE)
+> array[V1TimeseriesItem] V1OhlcvSymbolIdLatestGet(symbol_id, period_id, limit = 100)
 
 Latest data
 
@@ -189,7 +189,6 @@ library(openapi)
 var_symbol_id <- "symbol_id_example" # character | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 var_period_id <- "period_id_example" # character | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 var_limit <- 100 # integer | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (Optional)
-var_include_empty_items <- FALSE # character |  (Optional)
 
 api_instance <- OhlcvApi$new()
 # Configure API key authorization: APIKey
@@ -197,8 +196,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$V1OhlcvSymbolIdLatestGet(var_symbol_id, var_period_id, limit = var_limit, include_empty_items = var_include_empty_itemsdata_file = "result.txt")
-result <- api_instance$V1OhlcvSymbolIdLatestGet(var_symbol_id, var_period_id, limit = var_limit, include_empty_items = var_include_empty_items)
+# result <- api_instance$V1OhlcvSymbolIdLatestGet(var_symbol_id, var_period_id, limit = var_limitdata_file = "result.txt")
+result <- api_instance$V1OhlcvSymbolIdLatestGet(var_symbol_id, var_period_id, limit = var_limit)
 dput(result)
 ```
 
@@ -209,7 +208,6 @@ Name | Type | Description  | Notes
  **symbol_id** | **character**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | 
  **period_id** | **character**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | 
  **limit** | **integer**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **include_empty_items** | **character**|  | [optional] [default to FALSE]
 
 ### Return type
 

@@ -39,6 +39,6 @@ OhlcvAPI_v1OhlcvSymbolIdHistoryGet(apiClient_t *apiClient, char *symbol_id, char
 // Get OHLCV latest timeseries data returned in time descending order. Data can be requested by the period and for the specific symbol eg `BITSTAMP_SPOT_BTC_USD`, if you need to query timeseries by asset pairs eg. `BTC/USD`, then please reffer to the Exchange Rates Timeseries data              :::info OHLCV Latest endpoint is just the shortcut to the OHLCV Historical endpoint with substituted `time_start` and `time_end` parameters.  The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
 //
 list_t*
-OhlcvAPI_v1OhlcvSymbolIdLatestGet(apiClient_t *apiClient, char *symbol_id, char *period_id, int *limit, int *include_empty_items);
+OhlcvAPI_v1OhlcvSymbolIdLatestGet(apiClient_t *apiClient, char *symbol_id, char *period_id, int *limit);
 
 

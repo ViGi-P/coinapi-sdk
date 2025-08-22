@@ -98,12 +98,10 @@ public:
     /// <param name="symbolId">Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)</param>
     /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)</param>
     /// <param name="limit">Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 0)</param>
-    /// <param name="includeEmptyItems"> (optional, default to false)</param>
     pplx::task<std::vector<std::shared_ptr<V1_TimeseriesItem>>> v1OhlcvSymbolIdLatestGet(
         utility::string_t symbolId,
         utility::string_t periodId,
-        boost::optional<int32_t> limit,
-        boost::optional<bool> includeEmptyItems
+        boost::optional<int32_t> limit
     ) const;
 
 protected:

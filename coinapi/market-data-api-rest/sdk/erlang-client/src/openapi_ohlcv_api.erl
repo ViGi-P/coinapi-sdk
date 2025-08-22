@@ -83,7 +83,7 @@ v1_ohlcv_symbol_id_latest_get(Ctx, SymbolId, PeriodId, Optional) ->
 
     Method = get,
     Path = [?BASE_URL, "/v1/ohlcv/", SymbolId, "/latest"],
-    QS = lists:flatten([{<<"period_id">>, PeriodId}])++openapi_utils:optional_params(['limit', 'include_empty_items'], _OptionalParams),
+    QS = lists:flatten([{<<"period_id">>, PeriodId}])++openapi_utils:optional_params(['limit'], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),

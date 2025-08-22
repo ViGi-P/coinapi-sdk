@@ -245,7 +245,6 @@ module OpenapiClient
     # @param period_id [String] Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
-    # @option opts [Boolean] :include_empty_items  (default to false)
     # @return [Array<V1TimeseriesItem>]
     def v1_ohlcv_symbol_id_latest_get(symbol_id, period_id, opts = {})
       data, _status_code, _headers = v1_ohlcv_symbol_id_latest_get_with_http_info(symbol_id, period_id, opts)
@@ -258,7 +257,6 @@ module OpenapiClient
     # @param period_id [String] Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
-    # @option opts [Boolean] :include_empty_items  (default to false)
     # @return [Array<(Array<V1TimeseriesItem>, Integer, Hash)>] Array<V1TimeseriesItem> data, response status code and response headers
     def v1_ohlcv_symbol_id_latest_get_with_http_info(symbol_id, period_id, opts = {})
       if @api_client.config.debugging
@@ -279,7 +277,6 @@ module OpenapiClient
       query_params = opts[:query_params] || {}
       query_params[:'period_id'] = period_id
       query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
-      query_params[:'include_empty_items'] = opts[:'include_empty_items'] if !opts[:'include_empty_items'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

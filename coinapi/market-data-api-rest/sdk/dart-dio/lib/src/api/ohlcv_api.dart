@@ -314,7 +314,6 @@ class OhlcvApi {
   /// * [symbolId] - Symbol identifier of requested timeseries (from the Metadata -> Symbols)
   /// * [periodId] - Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
   /// * [limit] - Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  /// * [includeEmptyItems] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -328,7 +327,6 @@ class OhlcvApi {
     required String symbolId,
     required String periodId,
     int? limit = 100,
-    bool? includeEmptyItems = false,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -363,7 +361,6 @@ class OhlcvApi {
     final _queryParameters = <String, dynamic>{
       r'period_id': encodeQueryParameter(_serializers, periodId, const FullType(String)),
       if (limit != null) r'limit': encodeQueryParameter(_serializers, limit, const FullType(int)),
-      if (includeEmptyItems != null) r'include_empty_items': encodeQueryParameter(_serializers, includeEmptyItems, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(

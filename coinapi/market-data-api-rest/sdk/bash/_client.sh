@@ -667,8 +667,6 @@ case $state in
           "symbol_id=:[PATH] Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)"
           "period_id=:[QUERY] Identifier of requested timeseries period (e.g. &#39;5SEC&#39; or &#39;2MTH&#39;)"
 "limit=:[QUERY] Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)"
-"include_empty_items=true:[QUERY] "
-          "include_empty_items=false:[QUERY] "
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

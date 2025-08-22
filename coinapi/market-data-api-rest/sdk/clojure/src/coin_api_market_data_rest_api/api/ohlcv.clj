@@ -167,12 +167,12 @@ OHLCV Latest endpoint is just the shortcut to the OHLCV Historical endpoint with
 The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay.
 :::"
   ([symbol_id string?, period_id string?, ] (v1-ohlcv-symbol-id-latest-get-with-http-info symbol_id period_id nil))
-  ([symbol_id string?, period_id string?, {:keys [limit include_empty_items]} (s/map-of keyword? any?)]
+  ([symbol_id string?, period_id string?, {:keys [limit]} (s/map-of keyword? any?)]
    (check-required-params symbol_id period_id)
    (call-api "/v1/ohlcv/{symbol_id}/latest" :get
              {:path-params   {"symbol_id" symbol_id }
               :header-params {}
-              :query-params  {"period_id" period_id "limit" limit "include_empty_items" include_empty_items }
+              :query-params  {"period_id" period_id "limit" limit }
               :form-params   {}
               :content-types []
               :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]

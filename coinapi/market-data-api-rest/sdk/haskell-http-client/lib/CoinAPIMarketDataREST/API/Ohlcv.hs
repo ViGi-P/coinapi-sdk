@@ -197,9 +197,6 @@ data V1OhlcvSymbolIdLatestGet
 instance HasOptionalParam V1OhlcvSymbolIdLatestGet Limit where
   applyOptionalParam req (Limit xs) =
     req `addQuery` toQuery ("limit", Just xs)
-instance HasOptionalParam V1OhlcvSymbolIdLatestGet IncludeEmptyItems where
-  applyOptionalParam req (IncludeEmptyItems xs) =
-    req `addQuery` toQuery ("include_empty_items", Just xs)
 -- | @application/json@
 instance Produces V1OhlcvSymbolIdLatestGet MimeJSON
 -- | @application/x-msgpack@

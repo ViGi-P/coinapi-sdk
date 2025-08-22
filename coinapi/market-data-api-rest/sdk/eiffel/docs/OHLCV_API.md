@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_ohlcv_symbol_id_latest_get**
-> v1_ohlcv_symbol_id_latest_get (symbol_id: STRING_32 ; period_id: STRING_32 ; limit:  detachable INTEGER_32 ; include_empty_items:  detachable BOOLEAN ): detachable LIST [V1_TIMESERIES_ITEM]
+> v1_ohlcv_symbol_id_latest_get (symbol_id: STRING_32 ; period_id: STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [V1_TIMESERIES_ITEM]
 
 
 Latest data
@@ -120,7 +120,6 @@ Name | Type | Description  | Notes
  **symbol_id** | **STRING_32**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | [default to null]
  **period_id** | **STRING_32**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | [default to null]
  **limit** | **INTEGER_32**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **include_empty_items** | **BOOLEAN**|  | [optional] [default to false]
 
 ### Return type
 

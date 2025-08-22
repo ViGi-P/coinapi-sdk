@@ -40,7 +40,6 @@ export interface V1OhlcvSymbolIdLatestGetRequest {
     symbolId: string;
     periodId: string;
     limit?: number;
-    includeEmptyItems?: boolean;
 }
 
 /**
@@ -130,9 +129,9 @@ export class OhlcvApi extends BaseAPI {
      * Get OHLCV latest timeseries data returned in time descending order. Data can be requested by the period and for the specific symbol eg `BITSTAMP_SPOT_BTC_USD`, if you need to query timeseries by asset pairs eg. `BTC/USD`, then please reffer to the Exchange Rates Timeseries data              :::info OHLCV Latest endpoint is just the shortcut to the OHLCV Historical endpoint with substituted `time_start` and `time_end` parameters.  The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
      * Latest data
      */
-    v1OhlcvSymbolIdLatestGet({ symbolId, periodId, limit, includeEmptyItems }: V1OhlcvSymbolIdLatestGetRequest): Observable<Array<V1TimeseriesItem>>
-    v1OhlcvSymbolIdLatestGet({ symbolId, periodId, limit, includeEmptyItems }: V1OhlcvSymbolIdLatestGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1TimeseriesItem>>>
-    v1OhlcvSymbolIdLatestGet({ symbolId, periodId, limit, includeEmptyItems }: V1OhlcvSymbolIdLatestGetRequest, opts?: OperationOpts): Observable<Array<V1TimeseriesItem> | AjaxResponse<Array<V1TimeseriesItem>>> {
+    v1OhlcvSymbolIdLatestGet({ symbolId, periodId, limit }: V1OhlcvSymbolIdLatestGetRequest): Observable<Array<V1TimeseriesItem>>
+    v1OhlcvSymbolIdLatestGet({ symbolId, periodId, limit }: V1OhlcvSymbolIdLatestGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1TimeseriesItem>>>
+    v1OhlcvSymbolIdLatestGet({ symbolId, periodId, limit }: V1OhlcvSymbolIdLatestGetRequest, opts?: OperationOpts): Observable<Array<V1TimeseriesItem> | AjaxResponse<Array<V1TimeseriesItem>>> {
         throwIfNullOrUndefined(symbolId, 'symbolId', 'v1OhlcvSymbolIdLatestGet');
         throwIfNullOrUndefined(periodId, 'periodId', 'v1OhlcvSymbolIdLatestGet');
 
@@ -145,7 +144,6 @@ export class OhlcvApi extends BaseAPI {
         };
 
         if (limit != null) { query['limit'] = limit; }
-        if (includeEmptyItems != null) { query['include_empty_items'] = includeEmptyItems; }
 
         return this.request<Array<V1TimeseriesItem>>({
             url: '/v1/ohlcv/{symbol_id}/latest'.replace('{symbol_id}', encodeURI(symbolId)),

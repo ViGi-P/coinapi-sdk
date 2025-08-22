@@ -479,7 +479,6 @@ package .Clients is
        Symbol_Id : in Swagger.UString;
        Period_Id : in Swagger.UString;
        Limit : in Swagger.Nullable_Integer;
-       Include_Empty_Items : in Swagger.Nullable_Boolean;
        Result : out .Models.V1TimeseriesItem_Type_Vectors.Vector);
 
    --  Current data by Exchange

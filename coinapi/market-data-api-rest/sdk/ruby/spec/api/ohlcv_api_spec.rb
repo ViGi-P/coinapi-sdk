@@ -81,7 +81,6 @@ describe 'OhlcvApi' do
   # @param period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  # @option opts [Boolean] :include_empty_items 
   # @return [Array<V1TimeseriesItem>]
   describe 'v1_ohlcv_symbol_id_latest_get test' do
     it 'should work' do

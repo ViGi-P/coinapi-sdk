@@ -211,8 +211,7 @@ let apiInstance = new CoinApiMarketDataRestApi.OhlcvApi();
 let symbolId = "symbolId_example"; // String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 let periodId = "periodId_example"; // String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 let opts = {
-  'limit': 100, // Number | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  'includeEmptyItems': false // Boolean | 
+  'limit': 100 // Number | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 };
 apiInstance.v1OhlcvSymbolIdLatestGet(symbolId, periodId, opts, (error, data, response) => {
   if (error) {
@@ -231,7 +230,6 @@ Name | Type | Description  | Notes
  **symbolId** | **String**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | 
  **periodId** | **String**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | 
  **limit** | **Number**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **includeEmptyItems** | **Boolean**|  | [optional] [default to false]
 
 ### Return type
 

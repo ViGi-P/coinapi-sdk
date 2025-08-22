@@ -203,7 +203,6 @@ operation_parameters_minimum_occurrences["v1OhlcvSymbolIdHistoryGet:::limit"]=0
 operation_parameters_minimum_occurrences["v1OhlcvSymbolIdLatestGet:::symbol_id"]=1
 operation_parameters_minimum_occurrences["v1OhlcvSymbolIdLatestGet:::period_id"]=1
 operation_parameters_minimum_occurrences["v1OhlcvSymbolIdLatestGet:::limit"]=0
-operation_parameters_minimum_occurrences["v1OhlcvSymbolIdLatestGet:::include_empty_items"]=0
 operation_parameters_minimum_occurrences["v1OptionsExchangeIdCurrentGet:::exchange_id"]=1
 operation_parameters_minimum_occurrences["v1OrderbooksSymbolIdCurrentGet:::symbol_id"]=1
 operation_parameters_minimum_occurrences["v1OrderbooksSymbolIdCurrentGet:::limit_levels"]=0
@@ -360,7 +359,6 @@ operation_parameters_maximum_occurrences["v1OhlcvSymbolIdHistoryGet:::limit"]=0
 operation_parameters_maximum_occurrences["v1OhlcvSymbolIdLatestGet:::symbol_id"]=0
 operation_parameters_maximum_occurrences["v1OhlcvSymbolIdLatestGet:::period_id"]=0
 operation_parameters_maximum_occurrences["v1OhlcvSymbolIdLatestGet:::limit"]=0
-operation_parameters_maximum_occurrences["v1OhlcvSymbolIdLatestGet:::include_empty_items"]=0
 operation_parameters_maximum_occurrences["v1OptionsExchangeIdCurrentGet:::exchange_id"]=0
 operation_parameters_maximum_occurrences["v1OrderbooksSymbolIdCurrentGet:::symbol_id"]=0
 operation_parameters_maximum_occurrences["v1OrderbooksSymbolIdCurrentGet:::limit_levels"]=0
@@ -514,7 +512,6 @@ operation_parameters_collection_type["v1OhlcvSymbolIdHistoryGet:::limit"]=""
 operation_parameters_collection_type["v1OhlcvSymbolIdLatestGet:::symbol_id"]=""
 operation_parameters_collection_type["v1OhlcvSymbolIdLatestGet:::period_id"]=""
 operation_parameters_collection_type["v1OhlcvSymbolIdLatestGet:::limit"]=""
-operation_parameters_collection_type["v1OhlcvSymbolIdLatestGet:::include_empty_items"]=""
 operation_parameters_collection_type["v1OptionsExchangeIdCurrentGet:::exchange_id"]=""
 operation_parameters_collection_type["v1OrderbooksSymbolIdCurrentGet:::symbol_id"]=""
 operation_parameters_collection_type["v1OrderbooksSymbolIdCurrentGet:::limit_levels"]=""
@@ -2064,8 +2061,6 @@ The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-
     echo -e "  * ${GREEN}period_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Identifier of requested timeseries period (e.g. '5SEC' or '2MTH')${YELLOW} Specify as: period_id=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)${YELLOW} Specify as: limit=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}include_empty_items${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - ${YELLOW} Specify as: include_empty_items=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -3695,7 +3690,7 @@ call_v1OhlcvSymbolIdLatestGet() {
     local path_parameter_names=(symbol_id)
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(period_id limit include_empty_items    )
+    local query_parameter_names=(period_id limit    )
     local path
 
     if ! path=$(build_request_path "/v1/ohlcv/{symbol_id}/latest" path_parameter_names query_parameter_names); then

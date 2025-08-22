@@ -476,7 +476,7 @@ pplx::task<std::vector<std::shared_ptr<V1_TimeseriesItem>>> OhlcvApi::v1OhlcvSym
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_TimeseriesItem>>> OhlcvApi::v1OhlcvSymbolIdLatestGet(utility::string_t symbolId, utility::string_t periodId, boost::optional<int32_t> limit, boost::optional<bool> includeEmptyItems) const
+pplx::task<std::vector<std::shared_ptr<V1_TimeseriesItem>>> OhlcvApi::v1OhlcvSymbolIdLatestGet(utility::string_t symbolId, utility::string_t periodId, boost::optional<int32_t> limit) const
 {
 
 
@@ -527,10 +527,6 @@ pplx::task<std::vector<std::shared_ptr<V1_TimeseriesItem>>> OhlcvApi::v1OhlcvSym
     if (limit)
     {
         localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
-    }
-    if (includeEmptyItems)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("include_empty_items")] = ApiClient::parameterToString(*includeEmptyItems);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

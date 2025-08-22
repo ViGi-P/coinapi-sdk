@@ -106,14 +106,12 @@ class OhlcvApi(baseUrl: String) {
    * @param symbolId Symbol identifier of requested timeseries (from the Metadata -> Symbols)
    * @param periodId Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
    * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-   * @param includeEmptyItems 
    */
-  def v1OhlcvSymbolIdLatestGet(symbolId: String, periodId: String, limit: Option[Int] = None, includeEmptyItems: Option[Boolean] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[TimeseriesItem]] =
+  def v1OhlcvSymbolIdLatestGet(symbolId: String, periodId: String, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[TimeseriesItem]] =
     ApiRequest[Seq[TimeseriesItem]](ApiMethods.GET, baseUrl, "/v1/ohlcv/{symbol_id}/latest", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("period_id", periodId)
       .withQueryParam("limit", limit)
-      .withQueryParam("include_empty_items", includeEmptyItems)
       .withPathParam("symbol_id", symbolId)
       .withSuccessResponse[Seq[TimeseriesItem]](200)
       

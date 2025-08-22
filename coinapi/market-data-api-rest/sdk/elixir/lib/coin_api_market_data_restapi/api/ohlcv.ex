@@ -127,7 +127,6 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Ohlcv do
   - `period_id` (String.t): Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
   - `opts` (keyword): Optional parameters
     - `:limit` (integer()): Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-    - `:include_empty_items` (boolean()): 
 
   ### Returns
 
@@ -137,8 +136,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Ohlcv do
   @spec v1_ohlcv_symbol_id_latest_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1TimeseriesItem.t]} | {:error, Tesla.Env.t}
   def v1_ohlcv_symbol_id_latest_get(connection, symbol_id, period_id, opts \\ []) do
     optional_params = %{
-      :limit => :query,
-      :include_empty_items => :query
+      :limit => :query
     }
 
     request =

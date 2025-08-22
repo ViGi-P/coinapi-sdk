@@ -208,11 +208,10 @@ API.Client.OhlcvApi.prototype.v1OhlcvSymbolIdHistoryGet = function(symbolId, per
  * @param {!string} symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
  * @param {!string} periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
  * @param {!number=} opt_limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
- * @param {!boolean=} opt_includeEmptyItems 
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.v1.TimeseriesItem>>}
  */
-API.Client.OhlcvApi.prototype.v1OhlcvSymbolIdLatestGet = function(symbolId, periodId, opt_limit, opt_includeEmptyItems, opt_extraHttpRequestParams) {
+API.Client.OhlcvApi.prototype.v1OhlcvSymbolIdLatestGet = function(symbolId, periodId, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/ohlcv/{symbol_id}/latest'
       .replace('{' + 'symbol_id' + '}', String(symbolId));
@@ -236,10 +235,6 @@ API.Client.OhlcvApi.prototype.v1OhlcvSymbolIdLatestGet = function(symbolId, peri
 
   if (opt_limit !== undefined) {
     queryParameters['limit'] = opt_limit;
-  }
-
-  if (opt_includeEmptyItems !== undefined) {
-    queryParameters['include_empty_items'] = opt_includeEmptyItems;
   }
 
   /** @type {!Object} */

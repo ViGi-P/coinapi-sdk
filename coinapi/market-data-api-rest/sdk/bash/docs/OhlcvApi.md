@@ -159,7 +159,7 @@ The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-
 ### Example
 
 ```bash
- v1OhlcvSymbolIdLatestGet symbol_id=value  period_id=value  limit=value  include_empty_items=value
+ v1OhlcvSymbolIdLatestGet symbol_id=value  period_id=value  limit=value
 ```
 
 ### Parameters
@@ -170,7 +170,6 @@ Name | Type | Description  | Notes
  **symbolId** | **string** | Symbol identifier of requested timeseries (from the Metadata -> Symbols) | [default to null]
  **periodId** | **string** | Identifier of requested timeseries period (e.g. '5SEC' or '2MTH') | [default to null]
  **limit** | **integer** | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **includeEmptyItems** | **boolean** |  | [optional] [default to false]
 
 ### Return type
 

@@ -272,14 +272,13 @@ export class OhlcvService extends BaseService {
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-     * @param includeEmptyItems 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, includeEmptyItems?: boolean, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1TimeseriesItem>>;
-    public v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, includeEmptyItems?: boolean, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1TimeseriesItem>>>;
-    public v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, includeEmptyItems?: boolean, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1TimeseriesItem>>>;
-    public v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, includeEmptyItems?: boolean, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1TimeseriesItem>>;
+    public v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1TimeseriesItem>>>;
+    public v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1TimeseriesItem>>>;
+    public v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (symbolId === null || symbolId === undefined) {
             throw new Error('Required parameter symbolId was null or undefined when calling v1OhlcvSymbolIdLatestGet.');
         }
@@ -292,8 +291,6 @@ export class OhlcvService extends BaseService {
           <any>periodId, 'period_id');
         localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
           <any>limit, 'limit');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>includeEmptyItems, 'include_empty_items');
 
         let localVarHeaders = this.defaultHeaders;
 

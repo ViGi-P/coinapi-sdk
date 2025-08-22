@@ -64,8 +64,7 @@ class OhlcvApiTest : ShouldSpec() {
             //val symbolId : kotlin.String = symbolId_example // kotlin.String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
             //val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
             //val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-            //val includeEmptyItems : kotlin.Boolean = true // kotlin.Boolean | 
-            //val result : kotlin.collections.List<V1TimeseriesItem> = apiInstance.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit, includeEmptyItems)
+            //val result : kotlin.collections.List<V1TimeseriesItem> = apiInstance.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit)
             //result shouldBe ("TODO")
         }
 

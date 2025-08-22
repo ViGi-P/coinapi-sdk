@@ -3919,7 +3919,7 @@ export const OhlcvApiFetchParamCreator = function (configuration?: Configuration
          * @summary Latest data
          * @throws {RequiredError}
          */
-        v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, includeEmptyItems?: boolean, options: RequestOptions): FetchArgs {
+        v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, options: RequestOptions): FetchArgs {
             // verify required parameter 'symbolId' is not null or undefined
             if (symbolId === null || symbolId === undefined) {
                 throw new RequiredError('symbolId','Required parameter symbolId was null or undefined when calling v1OhlcvSymbolIdLatestGet.');
@@ -3953,10 +3953,6 @@ export const OhlcvApiFetchParamCreator = function (configuration?: Configuration
                 localVarQueryParameter['limit'] = ((limit:any):string);
             }
 
-            if (includeEmptyItems !== undefined) {
-                localVarQueryParameter['include_empty_items'] = ((includeEmptyItems:any):string);
-            }
-
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             localVarUrlObj.search = null;
@@ -3977,7 +3973,7 @@ export type OhlcvApiType = {
 
     v1OhlcvSymbolIdHistoryGet(symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, options?: RequestOptions): Promise<Array<V1TimeseriesItem>>,
 
-    v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, includeEmptyItems?: boolean, options?: RequestOptions): Promise<Array<V1TimeseriesItem>>,
+    v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, options?: RequestOptions): Promise<Array<V1TimeseriesItem>>,
 }
 
 /**
@@ -4037,8 +4033,8 @@ export const OhlcvApi = function(configuration?: Configuration, fetch: FetchAPI 
          * @summary Latest data
          * @throws {RequiredError}
          */
-        v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, includeEmptyItems?: boolean, options?: RequestOptions = {}): Promise<Array<V1TimeseriesItem>> {
-            const localVarFetchArgs = OhlcvApiFetchParamCreator(configuration).v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit, includeEmptyItems, options);
+        v1OhlcvSymbolIdLatestGet(symbolId: string, periodId: string, limit?: number, options?: RequestOptions = {}): Promise<Array<V1TimeseriesItem>> {
+            const localVarFetchArgs = OhlcvApiFetchParamCreator(configuration).v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();

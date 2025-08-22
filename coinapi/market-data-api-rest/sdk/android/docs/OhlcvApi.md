@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ## v1OhlcvSymbolIdLatestGet
 
-> List&lt;V1TimeseriesItem&gt; v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit, includeEmptyItems)
+> List&lt;V1TimeseriesItem&gt; v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit)
 
 Latest data
 
@@ -177,9 +177,8 @@ OhlcvApi apiInstance = new OhlcvApi();
 String symbolId = null; // String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 String periodId = null; // String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 Integer limit = 100; // Integer | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-Boolean includeEmptyItems = false; // Boolean | 
 try {
-    List<V1TimeseriesItem> result = apiInstance.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit, includeEmptyItems);
+    List<V1TimeseriesItem> result = apiInstance.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OhlcvApi#v1OhlcvSymbolIdLatestGet");
@@ -195,7 +194,6 @@ Name | Type | Description  | Notes
  **symbolId** | **String**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | [default to null]
  **periodId** | **String**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | [default to null]
  **limit** | **Integer**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **includeEmptyItems** | **Boolean**|  | [optional] [default to false]
 
 ### Return type
 

@@ -861,7 +861,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-08-21T06:04:00.4718542Z
+                    time: 2025-08-22T08:34:24.6168520Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -871,7 +871,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-08-21T06:04:00.4718542Z
+                    time: 2025-08-22T08:34:24.6168520Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -881,7 +881,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-08-21T06:04:00.4718542Z
+                    time: 2025-08-22T08:34:24.6168520Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -891,7 +891,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-08-21T06:04:00.4718542Z
+                    time: 2025-08-22T08:34:24.6168520Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -6643,14 +6643,6 @@ paths:
           default: 100
           format: int32
           type: integer
-        style: form
-      - explode: true
-        in: query
-        name: include_empty_items
-        required: false
-        schema:
-          default: false
-          type: boolean
         style: form
       responses:
         "200":

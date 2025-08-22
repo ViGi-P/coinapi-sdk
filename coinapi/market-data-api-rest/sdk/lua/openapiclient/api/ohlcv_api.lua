@@ -205,13 +205,13 @@ function ohlcv_api:v1_ohlcv_symbol_id_history_get(symbol_id, period_id, time_sta
 	end
 end
 
-function ohlcv_api:v1_ohlcv_symbol_id_latest_get(symbol_id, period_id, limit, include_empty_items)
+function ohlcv_api:v1_ohlcv_symbol_id_latest_get(symbol_id, period_id, limit)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/v1/ohlcv/%s/latest?period_id=%s&limit=%s&include_empty_items=%s",
-			self.basePath, symbol_id, http_util.encodeURIComponent(period_id), http_util.encodeURIComponent(limit), http_util.encodeURIComponent(include_empty_items));
+		path = string.format("%s/v1/ohlcv/%s/latest?period_id=%s&limit=%s",
+			self.basePath, symbol_id, http_util.encodeURIComponent(period_id), http_util.encodeURIComponent(limit));
 	})
 
 	-- set HTTP verb

@@ -76,13 +76,12 @@ feature -- Test routines
             l_symbol_id: STRING_32
             l_period_id: STRING_32
             l_limit: INTEGER_32
-            l_include_empty_items: BOOLEAN
         do
             -- TODO: Initialize required params.
             -- l_symbol_id
             -- l_period_id
 
-            -- l_response := api.v1_ohlcv_symbol_id_latest_get(l_symbol_id, l_period_id, l_limit, l_include_empty_items)
+            -- l_response := api.v1_ohlcv_symbol_id_latest_get(l_symbol_id, l_period_id, l_limit)
             assert ("not_implemented", False)
         end
 

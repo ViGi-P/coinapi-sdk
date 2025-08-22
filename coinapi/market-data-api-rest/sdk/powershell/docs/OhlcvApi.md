@@ -185,7 +185,6 @@ Name | Type | Description  | Notes
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-SymbolId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-PeriodId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Limit] <System.Nullable[Int32]><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-IncludeEmptyItems] <System.Nullable[Boolean]><br>
 
 Latest data
 
@@ -204,11 +203,10 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 $SymbolId = "MySymbolId" # String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 $PeriodId = "MyPeriodId" # String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 $Limit = 56 # Int32 | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
-$IncludeEmptyItems = $true # Boolean |  (optional) (default to $false)
 
 # Latest data
 try {
-    $Result = Invoke-V1OhlcvSymbolIdLatestGet -SymbolId $SymbolId -PeriodId $PeriodId -Limit $Limit -IncludeEmptyItems $IncludeEmptyItems
+    $Result = Invoke-V1OhlcvSymbolIdLatestGet -SymbolId $SymbolId -PeriodId $PeriodId -Limit $Limit
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1OhlcvSymbolIdLatestGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -222,7 +220,6 @@ Name | Type | Description  | Notes
  **SymbolId** | **String**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | 
  **PeriodId** | **String**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | 
  **Limit** | **Int32**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **IncludeEmptyItems** | **Boolean**|  | [optional] [default to $false]
 
 ### Return type
 
