@@ -184,9 +184,21 @@ OhlcvApi <- R6::R6Class(
         stop("Missing required parameter `time_end`.")
       }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling OhlcvApi$V1OhlcvExchangesExchangeIdHistoryGet, `exchange_id` is not nullable")
+      }
 
+      if (!missing(`period_id`) && is.null(`period_id`)) {
+        stop("Invalid value for `period_id` when calling OhlcvApi$V1OhlcvExchangesExchangeIdHistoryGet, `period_id` is not nullable")
+      }
 
+      if (!missing(`time_start`) && is.null(`time_start`)) {
+        stop("Invalid value for `time_start` when calling OhlcvApi$V1OhlcvExchangesExchangeIdHistoryGet, `time_start` is not nullable")
+      }
 
+      if (!missing(`time_end`) && is.null(`time_end`)) {
+        stop("Invalid value for `time_end` when calling OhlcvApi$V1OhlcvExchangesExchangeIdHistoryGet, `time_end` is not nullable")
+      }
 
       query_params[["period_id"]] <- `period_id`
 
@@ -406,10 +418,25 @@ OhlcvApi <- R6::R6Class(
         stop("Missing required parameter `period_id`.")
       }
 
+      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
+        stop("Invalid value for `symbol_id` when calling OhlcvApi$V1OhlcvSymbolIdHistoryGet, `symbol_id` is not nullable")
+      }
 
+      if (!missing(`period_id`) && is.null(`period_id`)) {
+        stop("Invalid value for `period_id` when calling OhlcvApi$V1OhlcvSymbolIdHistoryGet, `period_id` is not nullable")
+      }
 
+      if (!missing(`time_start`) && is.null(`time_start`)) {
+        stop("Invalid value for `time_start` when calling OhlcvApi$V1OhlcvSymbolIdHistoryGet, `time_start` is not nullable")
+      }
 
+      if (!missing(`time_end`) && is.null(`time_end`)) {
+        stop("Invalid value for `time_end` when calling OhlcvApi$V1OhlcvSymbolIdHistoryGet, `time_end` is not nullable")
+      }
 
+      if (!missing(`limit`) && is.null(`limit`)) {
+        stop("Invalid value for `limit` when calling OhlcvApi$V1OhlcvSymbolIdHistoryGet, `limit` is not nullable")
+      }
 
       query_params[["period_id"]] <- `period_id`
 
@@ -532,8 +559,17 @@ OhlcvApi <- R6::R6Class(
         stop("Missing required parameter `period_id`.")
       }
 
+      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
+        stop("Invalid value for `symbol_id` when calling OhlcvApi$V1OhlcvSymbolIdLatestGet, `symbol_id` is not nullable")
+      }
 
+      if (!missing(`period_id`) && is.null(`period_id`)) {
+        stop("Invalid value for `period_id` when calling OhlcvApi$V1OhlcvSymbolIdLatestGet, `period_id` is not nullable")
+      }
 
+      if (!missing(`limit`) && is.null(`limit`)) {
+        stop("Invalid value for `limit` when calling OhlcvApi$V1OhlcvSymbolIdLatestGet, `limit` is not nullable")
+      }
 
       query_params[["period_id"]] <- `period_id`
 

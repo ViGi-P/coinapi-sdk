@@ -175,8 +175,17 @@ ExchangeRatesApi <- R6::R6Class(
         stop("Missing required parameter `asset_id_quote`.")
       }
 
+      if (!missing(`asset_id_base`) && is.null(`asset_id_base`)) {
+        stop("Invalid value for `asset_id_base` when calling ExchangeRatesApi$GetSpecificRate, `asset_id_base` is not nullable")
+      }
 
+      if (!missing(`asset_id_quote`) && is.null(`asset_id_quote`)) {
+        stop("Invalid value for `asset_id_quote` when calling ExchangeRatesApi$GetSpecificRate, `asset_id_quote` is not nullable")
+      }
 
+      if (!missing(`time`) && is.null(`time`)) {
+        stop("Invalid value for `time` when calling ExchangeRatesApi$GetSpecificRate, `time` is not nullable")
+      }
 
       query_params[["time"]] <- `time`
 
@@ -303,11 +312,29 @@ ExchangeRatesApi <- R6::R6Class(
         stop("Missing required parameter `asset_id_quote`.")
       }
 
+      if (!missing(`asset_id_base`) && is.null(`asset_id_base`)) {
+        stop("Invalid value for `asset_id_base` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet, `asset_id_base` is not nullable")
+      }
 
+      if (!missing(`asset_id_quote`) && is.null(`asset_id_quote`)) {
+        stop("Invalid value for `asset_id_quote` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet, `asset_id_quote` is not nullable")
+      }
 
+      if (!missing(`period_id`) && is.null(`period_id`)) {
+        stop("Invalid value for `period_id` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet, `period_id` is not nullable")
+      }
 
+      if (!missing(`time_start`) && is.null(`time_start`)) {
+        stop("Invalid value for `time_start` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet, `time_start` is not nullable")
+      }
 
+      if (!missing(`time_end`) && is.null(`time_end`)) {
+        stop("Invalid value for `time_end` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet, `time_end` is not nullable")
+      }
 
+      if (!missing(`limit`) && is.null(`limit`)) {
+        stop("Invalid value for `limit` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet, `limit` is not nullable")
+      }
 
       query_params[["period_id"]] <- `period_id`
 
@@ -432,9 +459,21 @@ ExchangeRatesApi <- R6::R6Class(
         stop("Missing required parameter `asset_id_base`.")
       }
 
+      if (!missing(`asset_id_base`) && is.null(`asset_id_base`)) {
+        stop("Invalid value for `asset_id_base` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseGet, `asset_id_base` is not nullable")
+      }
 
+      if (!missing(`filter_asset_id`) && is.null(`filter_asset_id`)) {
+        stop("Invalid value for `filter_asset_id` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseGet, `filter_asset_id` is not nullable")
+      }
 
+      if (!missing(`invert`) && is.null(`invert`)) {
+        stop("Invalid value for `invert` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseGet, `invert` is not nullable")
+      }
 
+      if (!missing(`time`) && is.null(`time`)) {
+        stop("Invalid value for `time` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseGet, `time` is not nullable")
+      }
 
       query_params[["filter_asset_id"]] <- `filter_asset_id`
 
