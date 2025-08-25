@@ -68,7 +68,69 @@ __all__ = [
     "V1Trade",
 ]
 
-# import apis into sdk package
+if __import__("typing").TYPE_CHECKING:
+    # import apis into sdk package
+    from api_bricks_coinapi_market_data_api_rest.api.exchange_rates_api import ExchangeRatesApi as ExchangeRatesApi
+    from api_bricks_coinapi_market_data_api_rest.api.metadata_api import MetadataApi as MetadataApi
+    from api_bricks_coinapi_market_data_api_rest.api.metrics_v1_api import MetricsV1Api as MetricsV1Api
+    from api_bricks_coinapi_market_data_api_rest.api.metrics_v2_api import MetricsV2Api as MetricsV2Api
+    from api_bricks_coinapi_market_data_api_rest.api.ohlcv_api import OhlcvApi as OhlcvApi
+    from api_bricks_coinapi_market_data_api_rest.api.options_api import OptionsApi as OptionsApi
+    from api_bricks_coinapi_market_data_api_rest.api.order_book_api import OrderBookApi as OrderBookApi
+    from api_bricks_coinapi_market_data_api_rest.api.order_book_l3_api import OrderBookL3Api as OrderBookL3Api
+    from api_bricks_coinapi_market_data_api_rest.api.quotes_api import QuotesApi as QuotesApi
+    from api_bricks_coinapi_market_data_api_rest.api.trades_api import TradesApi as TradesApi
+    
+    # import ApiClient
+    from api_bricks_coinapi_market_data_api_rest.api_response import ApiResponse as ApiResponse
+    from api_bricks_coinapi_market_data_api_rest.api_client import ApiClient as ApiClient
+    from api_bricks_coinapi_market_data_api_rest.configuration import Configuration as Configuration
+    from api_bricks_coinapi_market_data_api_rest.exceptions import OpenApiException as OpenApiException
+    from api_bricks_coinapi_market_data_api_rest.exceptions import ApiTypeError as ApiTypeError
+    from api_bricks_coinapi_market_data_api_rest.exceptions import ApiValueError as ApiValueError
+    from api_bricks_coinapi_market_data_api_rest.exceptions import ApiKeyError as ApiKeyError
+    from api_bricks_coinapi_market_data_api_rest.exceptions import ApiAttributeError as ApiAttributeError
+    from api_bricks_coinapi_market_data_api_rest.exceptions import ApiException as ApiException
+    
+    # import models into sdk package
+    from api_bricks_coinapi_market_data_api_rest.models.models_exchange_timeseries_item import ModelsExchangeTimeseriesItem as ModelsExchangeTimeseriesItem
+    from api_bricks_coinapi_market_data_api_rest.models.options_option_exchange_group import OptionsOptionExchangeGroup as OptionsOptionExchangeGroup
+    from api_bricks_coinapi_market_data_api_rest.models.options_strike import OptionsStrike as OptionsStrike
+    from api_bricks_coinapi_market_data_api_rest.models.v1_asset import V1Asset as V1Asset
+    from api_bricks_coinapi_market_data_api_rest.models.v1_chain import V1Chain as V1Chain
+    from api_bricks_coinapi_market_data_api_rest.models.v1_chain_network_address import V1ChainNetworkAddress as V1ChainNetworkAddress
+    from api_bricks_coinapi_market_data_api_rest.models.v1_exchange import V1Exchange as V1Exchange
+    from api_bricks_coinapi_market_data_api_rest.models.v1_exchange_rate import V1ExchangeRate as V1ExchangeRate
+    from api_bricks_coinapi_market_data_api_rest.models.v1_exchange_rates import V1ExchangeRates as V1ExchangeRates
+    from api_bricks_coinapi_market_data_api_rest.models.v1_exchange_rates_rate import V1ExchangeRatesRate as V1ExchangeRatesRate
+    from api_bricks_coinapi_market_data_api_rest.models.v1_exchange_rates_timeseries_item import V1ExchangeRatesTimeseriesItem as V1ExchangeRatesTimeseriesItem
+    from api_bricks_coinapi_market_data_api_rest.models.v1_general_data import V1GeneralData as V1GeneralData
+    from api_bricks_coinapi_market_data_api_rest.models.v1_icon import V1Icon as V1Icon
+    from api_bricks_coinapi_market_data_api_rest.models.v1_last_trade import V1LastTrade as V1LastTrade
+    from api_bricks_coinapi_market_data_api_rest.models.v1_listing_item import V1ListingItem as V1ListingItem
+    from api_bricks_coinapi_market_data_api_rest.models.v1_metric import V1Metric as V1Metric
+    from api_bricks_coinapi_market_data_api_rest.models.v1_metric_data import V1MetricData as V1MetricData
+    from api_bricks_coinapi_market_data_api_rest.models.v1_metric_info import V1MetricInfo as V1MetricInfo
+    from api_bricks_coinapi_market_data_api_rest.models.v1_order_book import V1OrderBook as V1OrderBook
+    from api_bricks_coinapi_market_data_api_rest.models.v1_order_book_base import V1OrderBookBase as V1OrderBookBase
+    from api_bricks_coinapi_market_data_api_rest.models.v1_order_book_depth import V1OrderBookDepth as V1OrderBookDepth
+    from api_bricks_coinapi_market_data_api_rest.models.v1_quote import V1Quote as V1Quote
+    from api_bricks_coinapi_market_data_api_rest.models.v1_quote_trade import V1QuoteTrade as V1QuoteTrade
+    from api_bricks_coinapi_market_data_api_rest.models.v1_symbol import V1Symbol as V1Symbol
+    from api_bricks_coinapi_market_data_api_rest.models.v1_symbol_mapping import V1SymbolMapping as V1SymbolMapping
+    from api_bricks_coinapi_market_data_api_rest.models.v1_timeseries_item import V1TimeseriesItem as V1TimeseriesItem
+    from api_bricks_coinapi_market_data_api_rest.models.v1_timeseries_period import V1TimeseriesPeriod as V1TimeseriesPeriod
+    from api_bricks_coinapi_market_data_api_rest.models.v1_trade import V1Trade as V1Trade
+    
+else:
+    from lazy_imports import LazyModule, as_package, load
+
+    load(
+        LazyModule(
+            *as_package(__file__),
+            ("__version__", __version__),
+            ("__all__", __all__),
+            """# import apis into sdk package
 from api_bricks_coinapi_market_data_api_rest.api.exchange_rates_api import ExchangeRatesApi as ExchangeRatesApi
 from api_bricks_coinapi_market_data_api_rest.api.metadata_api import MetadataApi as MetadataApi
 from api_bricks_coinapi_market_data_api_rest.api.metrics_v1_api import MetricsV1Api as MetricsV1Api
@@ -120,3 +182,9 @@ from api_bricks_coinapi_market_data_api_rest.models.v1_symbol_mapping import V1S
 from api_bricks_coinapi_market_data_api_rest.models.v1_timeseries_item import V1TimeseriesItem as V1TimeseriesItem
 from api_bricks_coinapi_market_data_api_rest.models.v1_timeseries_period import V1TimeseriesPeriod as V1TimeseriesPeriod
 from api_bricks_coinapi_market_data_api_rest.models.v1_trade import V1Trade as V1Trade
+
+""",
+            name=__name__,
+            doc=__doc__,
+        )
+    )

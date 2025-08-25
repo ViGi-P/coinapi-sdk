@@ -98,6 +98,9 @@ OptionsApi <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling OptionsApi$V1OptionsExchangeIdCurrentGet, `exchange_id` is not nullable")
+      }
 
       local_var_url_path <- "/v1/options/{exchange_id}/current"
       if (!missing(`exchange_id`)) {
