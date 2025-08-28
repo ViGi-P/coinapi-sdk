@@ -36,9 +36,9 @@ feature --Access
     price_close: REAL_64
       -- The closing price.
     volume_traded: REAL_64
-      -- The total volume traded during the time period.
+      -- The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
     trades_count: INTEGER_64
-      -- The number of trades executed during the time period.
+      -- The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
     symbol_id_exchange: detachable STRING_32
       
     symbol_id_coinapi: detachable STRING_32

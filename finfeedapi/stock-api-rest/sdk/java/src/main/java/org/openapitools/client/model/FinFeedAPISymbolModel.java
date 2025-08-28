@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * FinFeedAPISymbolModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T06:12:24.008717897Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T06:09:12.686527588Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class FinFeedAPISymbolModel {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
@@ -574,29 +574,10 @@ public class FinFeedAPISymbolModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("symbol_id");
-    openapiFields.add("exchange_id");
-    openapiFields.add("security_category");
-    openapiFields.add("name");
-    openapiFields.add("date");
-    openapiFields.add("asset_class");
-    openapiFields.add("cfi_code");
-    openapiFields.add("cfi_category");
-    openapiFields.add("cfi_group");
-    openapiFields.add("cfi_attribute1");
-    openapiFields.add("cfi_attribute2");
-    openapiFields.add("cfi_attribute3");
-    openapiFields.add("cfi_attribute4");
-    openapiFields.add("cfi_category_desc");
-    openapiFields.add("cfi_group_desc");
-    openapiFields.add("cfi_attribute1_desc");
-    openapiFields.add("cfi_attribute2_desc");
-    openapiFields.add("cfi_attribute3_desc");
-    openapiFields.add("cfi_attribute4_desc");
+    openapiFields = new HashSet<String>(Arrays.asList("symbol_id", "exchange_id", "security_category", "name", "date", "asset_class", "cfi_code", "cfi_category", "cfi_group", "cfi_attribute1", "cfi_attribute2", "cfi_attribute3", "cfi_attribute4", "cfi_category_desc", "cfi_group_desc", "cfi_attribute1_desc", "cfi_attribute2_desc", "cfi_attribute3_desc", "cfi_attribute4_desc"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

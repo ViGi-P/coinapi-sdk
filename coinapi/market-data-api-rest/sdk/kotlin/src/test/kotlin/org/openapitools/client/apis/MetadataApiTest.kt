@@ -95,23 +95,23 @@ class MetadataApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
-        // to test v1SymbolsExchangeIdGet
-        should("test v1SymbolsExchangeIdGet") {
-            // uncomment below to test v1SymbolsExchangeIdGet
-            //val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of the exchange (from the Metadata -> Exchanges)
-            //val filterSymbolId : kotlin.String = filterSymbolId_example // kotlin.String | The filter for symbol ID.
+        // to test v1SymbolsExchangeIdActiveGet
+        should("test v1SymbolsExchangeIdActiveGet") {
+            // uncomment below to test v1SymbolsExchangeIdActiveGet
+            //val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of the exchange.
+            //val filterSymbolId : kotlin.String = filterSymbolId_example // kotlin.String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
             //val filterAssetId : kotlin.String = filterAssetId_example // kotlin.String | The filter for asset ID.
-            //val result : kotlin.collections.List<V1Symbol> = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId, filterAssetId)
+            //val result : kotlin.collections.List<V1Symbol> = apiInstance.v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId)
             //result shouldBe ("TODO")
         }
 
-        // to test v1SymbolsGet
-        should("test v1SymbolsGet") {
-            // uncomment below to test v1SymbolsGet
-            //val filterSymbolId : kotlin.String = filterSymbolId_example // kotlin.String | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
-            //val filterExchangeId : kotlin.String = filterExchangeId_example // kotlin.String | The filter for exchange ID.
-            //val filterAssetId : kotlin.String = filterAssetId_example // kotlin.String | The filter for asset ID.
-            //val result : kotlin.collections.List<V1Symbol> = apiInstance.v1SymbolsGet(filterSymbolId, filterExchangeId, filterAssetId)
+        // to test v1SymbolsExchangeIdHistoryGet
+        should("test v1SymbolsExchangeIdHistoryGet") {
+            // uncomment below to test v1SymbolsExchangeIdHistoryGet
+            //val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of the exchange.
+            //val page : kotlin.Int = 56 // kotlin.Int | The page number for pagination (starts from 1).
+            //val limit : kotlin.Int = 56 // kotlin.Int | Number of records to return per page.
+            //val result : kotlin.collections.List<V1Symbol> = apiInstance.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit)
             //result shouldBe ("TODO")
         }
 

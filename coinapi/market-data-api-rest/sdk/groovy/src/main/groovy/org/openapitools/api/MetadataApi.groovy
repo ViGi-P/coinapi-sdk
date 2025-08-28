@@ -202,8 +202,8 @@ class MetadataApi {
 
     }
 
-    def v1SymbolsExchangeIdGet ( String exchangeId, String filterSymbolId, String filterAssetId, Closure onSuccess, Closure onFailure)  {
-        String resourcePath = "/v1/symbols/${exchange_id}"
+    def v1SymbolsExchangeIdActiveGet ( String exchangeId, String filterSymbolId, String filterAssetId, Closure onSuccess, Closure onFailure)  {
+        String resourcePath = "/v1/symbols/${exchange_id}/active"
 
         // params
         def queryParams = [:]
@@ -232,8 +232,8 @@ class MetadataApi {
 
     }
 
-    def v1SymbolsGet ( String filterSymbolId, String filterExchangeId, String filterAssetId, Closure onSuccess, Closure onFailure)  {
-        String resourcePath = "/v1/symbols"
+    def v1SymbolsExchangeIdHistoryGet ( String exchangeId, Integer page, Integer limit, Closure onSuccess, Closure onFailure)  {
+        String resourcePath = "/v1/symbols/${exchange_id}/history"
 
         // params
         def queryParams = [:]
@@ -241,15 +241,16 @@ class MetadataApi {
         def bodyParams
         def contentType
 
+        // verify required params are set
+        if (exchangeId == null) {
+            throw new RuntimeException("missing required params exchangeId")
+        }
 
-        if (filterSymbolId != null) {
-            queryParams.put("filter_symbol_id", filterSymbolId)
+        if (page != null) {
+            queryParams.put("page", page)
         }
-        if (filterExchangeId != null) {
-            queryParams.put("filter_exchange_id", filterExchangeId)
-        }
-        if (filterAssetId != null) {
-            queryParams.put("filter_asset_id", filterAssetId)
+        if (limit != null) {
+            queryParams.put("limit", limit)
         }
 
 

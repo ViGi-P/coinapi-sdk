@@ -37,9 +37,9 @@ type V1TimeseriesItem struct {
 	PriceLow NullableFloat64 `json:"price_low,omitempty"`
 	// The closing price.
 	PriceClose NullableFloat64 `json:"price_close,omitempty"`
-	// The total volume traded during the time period.
+	// The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
 	VolumeTraded *float64 `json:"volume_traded,omitempty"`
-	// The number of trades executed during the time period.
+	// The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
 	TradesCount *int64 `json:"trades_count,omitempty"`
 }
 

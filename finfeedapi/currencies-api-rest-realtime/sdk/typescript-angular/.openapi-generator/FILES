@@ -18,4 +18,5 @@ model/v1ExchangeRates.ts
 model/v1ExchangeRatesRate.ts
 model/v1Icon.ts
 param.ts
+provide-api.ts
 variables.ts

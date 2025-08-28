@@ -19,8 +19,8 @@ part 'models_exchange_timeseries_item.g.dart';
 /// * [priceHigh] - The highest price during the time period.
 /// * [priceLow] - The lowest price during the time period.
 /// * [priceClose] - The closing price.
-/// * [volumeTraded] - The total volume traded during the time period.
-/// * [tradesCount] - The number of trades executed during the time period.
+/// * [volumeTraded] - The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+/// * [tradesCount] - The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
 /// * [symbolIdExchange] 
 /// * [symbolIdCoinapi] 
 @BuiltValue()
@@ -57,11 +57,11 @@ abstract class ModelsExchangeTimeseriesItem implements Built<ModelsExchangeTimes
   @BuiltValueField(wireName: r'price_close')
   double? get priceClose;
 
-  /// The total volume traded during the time period.
+  /// The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
   @BuiltValueField(wireName: r'volume_traded')
   double? get volumeTraded;
 
-  /// The number of trades executed during the time period.
+  /// The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
   @BuiltValueField(wireName: r'trades_count')
   int? get tradesCount;
 

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a quote data model.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T09:28:32.257027216Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T06:05:57.564598397Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class V1Quote {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
@@ -290,17 +290,10 @@ public class V1Quote {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("symbol_id");
-    openapiFields.add("time_exchange");
-    openapiFields.add("time_coinapi");
-    openapiFields.add("ask_price");
-    openapiFields.add("ask_size");
-    openapiFields.add("bid_price");
-    openapiFields.add("bid_size");
+    openapiFields = new HashSet<String>(Arrays.asList("symbol_id", "time_exchange", "time_coinapi", "ask_price", "ask_size", "bid_price", "bid_size"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

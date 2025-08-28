@@ -146,7 +146,7 @@ This endpoint does not need any parameter.
 ## `v1OhlcvSymbolIdHistoryGet()`
 
 ```php
-v1OhlcvSymbolIdHistoryGet($symbol_id, $period_id, $time_start, $time_end, $limit, $include_empty_items): \OpenAPI\Client\Model\V1TimeseriesItem[]
+v1OhlcvSymbolIdHistoryGet($symbol_id, $period_id, $time_start, $time_end, $limit): \OpenAPI\Client\Model\V1TimeseriesItem[]
 ```
 
 Historical data
@@ -180,10 +180,9 @@ $period_id = 'period_id_example'; // string | Identifier of requested timeseries
 $time_start = 'time_start_example'; // string | Timeseries starting time in ISO 8601
 $time_end = 'time_end_example'; // string | Timeseries ending time in ISO 8601
 $limit = 100; // int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-$include_empty_items = false; // bool | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
 
 try {
-    $result = $apiInstance->v1OhlcvSymbolIdHistoryGet($symbol_id, $period_id, $time_start, $time_end, $limit, $include_empty_items);
+    $result = $apiInstance->v1OhlcvSymbolIdHistoryGet($symbol_id, $period_id, $time_start, $time_end, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OhlcvApi->v1OhlcvSymbolIdHistoryGet: ', $e->getMessage(), PHP_EOL;
@@ -199,7 +198,6 @@ try {
 | **time_start** | **string**| Timeseries starting time in ISO 8601 | [optional] |
 | **time_end** | **string**| Timeseries ending time in ISO 8601 | [optional] |
 | **limit** | **int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
-| **include_empty_items** | **bool**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to false] |
 
 ### Return type
 
@@ -221,7 +219,7 @@ try {
 ## `v1OhlcvSymbolIdLatestGet()`
 
 ```php
-v1OhlcvSymbolIdLatestGet($symbol_id, $period_id, $limit, $include_empty_items): \OpenAPI\Client\Model\V1TimeseriesItem[]
+v1OhlcvSymbolIdLatestGet($symbol_id, $period_id, $limit): \OpenAPI\Client\Model\V1TimeseriesItem[]
 ```
 
 Latest data
@@ -253,10 +251,9 @@ $apiInstance = new OpenAPI\Client\Api\OhlcvApi(
 $symbol_id = 'symbol_id_example'; // string | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 $period_id = 'period_id_example'; // string | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 $limit = 100; // int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-$include_empty_items = false; // bool | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
 
 try {
-    $result = $apiInstance->v1OhlcvSymbolIdLatestGet($symbol_id, $period_id, $limit, $include_empty_items);
+    $result = $apiInstance->v1OhlcvSymbolIdLatestGet($symbol_id, $period_id, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OhlcvApi->v1OhlcvSymbolIdLatestGet: ', $e->getMessage(), PHP_EOL;
@@ -270,7 +267,6 @@ try {
 | **symbol_id** | **string**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | |
 | **period_id** | **string**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | |
 | **limit** | **int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
-| **include_empty_items** | **bool**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to false] |
 
 ### Return type
 

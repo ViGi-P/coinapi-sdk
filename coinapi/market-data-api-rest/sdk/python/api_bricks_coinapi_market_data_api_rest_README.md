@@ -5,7 +5,7 @@ The `api_bricks_coinapi_market_data_api_rest` package is automatically generated
 
 - API version: v1
 - Package version: 1.0.0
-- Generator version: 7.13.0
+- Generator version: 7.15.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 For more information, please visit [https://www.coinapi.io](https://www.coinapi.io)
 
@@ -94,9 +94,9 @@ Class | Method | HTTP request | Description
 *MetadataApi* | [**v1_exchanges_exchange_id_get**](api_bricks_coinapi_market_data_api_rest/docs/MetadataApi.md#v1_exchanges_exchange_id_get) | **GET** /v1/exchanges/{exchange_id} | List all exchanges by exchange_id
 *MetadataApi* | [**v1_exchanges_get**](api_bricks_coinapi_market_data_api_rest/docs/MetadataApi.md#v1_exchanges_get) | **GET** /v1/exchanges | List all exchanges
 *MetadataApi* | [**v1_exchanges_icons_size_get**](api_bricks_coinapi_market_data_api_rest/docs/MetadataApi.md#v1_exchanges_icons_size_get) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
-*MetadataApi* | [**v1_symbols_exchange_id_get**](api_bricks_coinapi_market_data_api_rest/docs/MetadataApi.md#v1_symbols_exchange_id_get) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
-*MetadataApi* | [**v1_symbols_get**](api_bricks_coinapi_market_data_api_rest/docs/MetadataApi.md#v1_symbols_get) | **GET** /v1/symbols | List all symbols
-*MetadataApi* | [**v1_symbols_map_exchange_id_get**](api_bricks_coinapi_market_data_api_rest/docs/MetadataApi.md#v1_symbols_map_exchange_id_get) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
+*MetadataApi* | [**v1_symbols_exchange_id_active_get**](api_bricks_coinapi_market_data_api_rest/docs/MetadataApi.md#v1_symbols_exchange_id_active_get) | **GET** /v1/symbols/{exchange_id}/active | List all active symbols
+*MetadataApi* | [**v1_symbols_exchange_id_history_get**](api_bricks_coinapi_market_data_api_rest/docs/MetadataApi.md#v1_symbols_exchange_id_history_get) | **GET** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
+*MetadataApi* | [**v1_symbols_map_exchange_id_get**](api_bricks_coinapi_market_data_api_rest/docs/MetadataApi.md#v1_symbols_map_exchange_id_get) | **GET** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
 *MetricsV1Api* | [**v1_metrics_asset_current_get**](api_bricks_coinapi_market_data_api_rest/docs/MetricsV1Api.md#v1_metrics_asset_current_get) | **GET** /v1/metrics/asset/current | Current metrics for given asset
 *MetricsV1Api* | [**v1_metrics_asset_history_get**](api_bricks_coinapi_market_data_api_rest/docs/MetricsV1Api.md#v1_metrics_asset_history_get) | **GET** /v1/metrics/asset/history | Historical metrics for asset
 *MetricsV1Api* | [**v1_metrics_asset_listing_get**](api_bricks_coinapi_market_data_api_rest/docs/MetricsV1Api.md#v1_metrics_asset_listing_get) | **GET** /v1/metrics/asset/listing | Listing of all supported metrics for asset

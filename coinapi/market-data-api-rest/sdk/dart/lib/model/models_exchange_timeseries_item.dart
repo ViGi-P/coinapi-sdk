@@ -63,7 +63,7 @@ class ModelsExchangeTimeseriesItem {
   /// The closing price.
   double? priceClose;
 
-  /// The total volume traded during the time period.
+  /// The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -72,7 +72,7 @@ class ModelsExchangeTimeseriesItem {
   ///
   double? volumeTraded;
 
-  /// The number of trades executed during the time period.
+  /// The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated

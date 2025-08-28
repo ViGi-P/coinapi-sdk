@@ -8,7 +8,7 @@
 # ! openapi-generator (https://openapi-generator.tech)
 # ! FROM OPENAPI SPECIFICATION IN JSON.
 # !
-# ! Generator version: 7.13.0
+# ! Generator version: 7.14.0
 # !
 # !
 # ! System wide installation:
@@ -69,57 +69,13 @@ _()
     # The list of available operation in the REST service
     # It's modelled as an associative array for efficient key lookup
     declare -A operations
-    operations["v1IndexdefInputDataIndexDefinitionIdAllGet"]=1
-    operations["v1IndexdefInputDataIndexDefinitionIdGet"]=1
-    operations["v1IndexdefMultiassetGet"]=1
-    operations["v1IndexdefMultiassetIndexIdGet"]=1
-    operations["v1IndexesGet"]=1
-    operations["v1IndexesIndexDefinitionIdCurrentSnapshotGet"]=1
-    operations["v1IndexesIndexDefinitionIdHistorySnapshotGet"]=1
-    operations["v1IndexesIndexIdCurrentGet"]=1
-    operations["v1IndexesIndexIdHistoryGet"]=1
-    operations["v1IndexesIndexIdTimeseriesGet"]=1
-    operations["apiMetadataExchangesExchangeIdGet"]=1
-    operations["apiMetadataExchangesGet"]=1
-    operations["v1MetadataPeriodsGet"]=1
 
     # An associative array of operations to their parameters
     # Only include path, query and header parameters
     declare -A operation_parameters
-    operation_parameters["v1IndexdefInputDataIndexDefinitionIdAllGet"]="index_definition_id= "
-    operation_parameters["v1IndexdefInputDataIndexDefinitionIdGet"]="index_definition_id= time= enabled_only= pending_only= filter_asset_id= with_status_info= "
-    operation_parameters["v1IndexdefMultiassetGet"]=""
-    operation_parameters["v1IndexdefMultiassetIndexIdGet"]="index_id= "
-    operation_parameters["v1IndexesGet"]=""
-    operation_parameters["v1IndexesIndexDefinitionIdCurrentSnapshotGet"]="index_definition_id= "
-    operation_parameters["v1IndexesIndexDefinitionIdHistorySnapshotGet"]="index_definition_id= time= "
-    operation_parameters["v1IndexesIndexIdCurrentGet"]="index_id= "
-    operation_parameters["v1IndexesIndexIdHistoryGet"]="index_id= time_start= time_end= limit= "
-    operation_parameters["v1IndexesIndexIdTimeseriesGet"]="index_id= period_id= time_start= time_end= limit= "
-    operation_parameters["apiMetadataExchangesExchangeIdGet"]="exchange_id= "
-    operation_parameters["apiMetadataExchangesGet"]="filter_exchange_id= "
-    operation_parameters["v1MetadataPeriodsGet"]=""
 
     # An associative array of possible values for enum parameters
     declare -A operation_parameters_enum_values
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::enabled_only"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::pending_only"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::with_status_info"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::enabled_only"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::pending_only"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::with_status_info"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::enabled_only"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::pending_only"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::with_status_info"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::enabled_only"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::pending_only"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::with_status_info"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::enabled_only"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::pending_only"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::with_status_info"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::enabled_only"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::pending_only"]="true false"
-    operation_parameters_enum_values["v1IndexdefInputDataIndexDefinitionIdGet::with_status_info"]="true false"
 
     #
     # Check if this is OSX and use special __osx_init_completion function

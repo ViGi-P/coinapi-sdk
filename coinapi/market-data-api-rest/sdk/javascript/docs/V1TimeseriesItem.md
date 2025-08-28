@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **priceHigh** | **Number** | The highest price during the time period. | [optional] 
 **priceLow** | **Number** | The lowest price during the time period. | [optional] 
 **priceClose** | **Number** | The closing price. | [optional] 
-**volumeTraded** | **Number** | The total volume traded during the time period. | [optional] 
-**tradesCount** | **Number** | The number of trades executed during the time period. | [optional] 
+**volumeTraded** | **Number** | The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
+**tradesCount** | **Number** | The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
 
 

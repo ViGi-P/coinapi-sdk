@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an asset.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T06:06:45.631249168Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T06:11:50.955701440Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class V1Asset {
   public static final String SERIALIZED_NAME_ASSET_ID = "asset_id";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -659,31 +659,10 @@ public class V1Asset {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("asset_id");
-    openapiFields.add("name");
-    openapiFields.add("type_is_crypto");
-    openapiFields.add("data_quote_start");
-    openapiFields.add("data_quote_end");
-    openapiFields.add("data_orderbook_start");
-    openapiFields.add("data_orderbook_end");
-    openapiFields.add("data_trade_start");
-    openapiFields.add("data_trade_end");
-    openapiFields.add("data_symbols_count");
-    openapiFields.add("volume_1hrs_usd");
-    openapiFields.add("volume_1day_usd");
-    openapiFields.add("volume_1mth_usd");
-    openapiFields.add("price_usd");
-    openapiFields.add("id_icon");
-    openapiFields.add("supply_current");
-    openapiFields.add("supply_total");
-    openapiFields.add("supply_max");
-    openapiFields.add("chain_addresses");
-    openapiFields.add("data_start");
-    openapiFields.add("data_end");
+    openapiFields = new HashSet<String>(Arrays.asList("asset_id", "name", "type_is_crypto", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "data_symbols_count", "volume_1hrs_usd", "volume_1day_usd", "volume_1mth_usd", "price_usd", "id_icon", "supply_current", "supply_total", "supply_max", "chain_addresses", "data_start", "data_end"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

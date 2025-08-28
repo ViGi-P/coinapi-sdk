@@ -49,12 +49,6 @@ type APIClient struct {
 	common service // Reuse a single struct instead of allocating one for each service on the heap.
 
 	// API Services
-
-	IndexesAPI *IndexesAPIService
-
-	MetadataAPI *MetadataAPIService
-
-	PeriodsAPI *PeriodsAPIService
 }
 
 type service struct {
@@ -73,9 +67,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.IndexesAPI = (*IndexesAPIService)(&c.common)
-	c.MetadataAPI = (*MetadataAPIService)(&c.common)
-	c.PeriodsAPI = (*PeriodsAPIService)(&c.common)
 
 	return c
 }
@@ -424,6 +415,11 @@ func (c *APIClient) prepareRequest(
 		localVarRequest = localVarRequest.WithContext(ctx)
 
 		// Walk through any authentication.
+
+		// AccessToken Authentication
+		if auth, ok := ctx.Value(ContextAccessToken).(string); ok {
+			localVarRequest.Header.Add("Authorization", "Bearer "+auth)
+		}
 
 	}
 

@@ -234,10 +234,8 @@ object Example extends App {
     val timeEnd: String = timeEnd_example // String | Timeseries ending time in ISO 8601
 
     val limit: Int = 56 // Int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-
-    val includeEmptyItems: Boolean = true // Boolean | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
     
-    val request = apiInstance.v1OhlcvSymbolIdHistoryGet(symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems)
+    val request = apiInstance.v1OhlcvSymbolIdHistoryGet(symbolId, periodId, timeStart, timeEnd, limit)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -270,7 +268,6 @@ Name | Type | Description  | Notes
  **timeStart** | **String**| Timeseries starting time in ISO 8601 | [optional]
  **timeEnd** | **String**| Timeseries ending time in ISO 8601 | [optional]
  **limit** | **Int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional]
- **includeEmptyItems** | **Boolean**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional]
 
 ### Return type
 
@@ -331,10 +328,8 @@ object Example extends App {
     val periodId: String = periodId_example // String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 
     val limit: Int = 56 // Int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-
-    val includeEmptyItems: Boolean = true // Boolean | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
     
-    val request = apiInstance.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit, includeEmptyItems)
+    val request = apiInstance.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -365,7 +360,6 @@ Name | Type | Description  | Notes
  **symbolId** | **String**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) |
  **periodId** | **String**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) |
  **limit** | **Int**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional]
- **includeEmptyItems** | **Boolean**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional]
 
 ### Return type
 

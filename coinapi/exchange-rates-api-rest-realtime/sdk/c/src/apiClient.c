@@ -10,6 +10,8 @@ apiClient_t *apiClient_create() {
     apiClient_t *apiClient = malloc(sizeof(apiClient_t));
     apiClient->basePath = strdup("https://api-realtime.exrates.coinapi.io");
     apiClient->sslConfig = NULL;
+    apiClient->curlConfig = NULL;
+    apiClient->curl_pre_invoke_func = NULL;
     apiClient->dataReceived = NULL;
     apiClient->dataReceivedLen = 0;
     apiClient->data_callback_func = NULL;
@@ -17,7 +19,7 @@ apiClient_t *apiClient_create() {
     apiClient->progress_data = NULL;
     apiClient->response_code = 0;
     apiClient->apiKeys_APIKey = NULL;
-    apiClient->apiKeys_JWT = NULL;
+    apiClient->accessToken = NULL;
 
     return apiClient;
 }
@@ -25,7 +27,6 @@ apiClient_t *apiClient_create() {
 apiClient_t *apiClient_create_with_base_path(const char *basePath
 , sslConfig_t *sslConfig
 , list_t *apiKeys_APIKey
-, list_t *apiKeys_JWT
 ) {
     apiClient_t *apiClient = malloc(sizeof(apiClient_t));
     if(basePath){
@@ -40,6 +41,13 @@ apiClient_t *apiClient_create_with_base_path(const char *basePath
         apiClient->sslConfig = NULL;
     }
 
+    apiClient->curlConfig = malloc(sizeof(curlConfig_t));
+    apiClient->curlConfig->verbose = 0;
+    apiClient->curlConfig->keepalive = 0;
+    apiClient->curlConfig->keepidle = 120;
+    apiClient->curlConfig->keepintvl = 60;
+
+    apiClient->curl_pre_invoke_func = NULL;
     apiClient->dataReceived = NULL;
     apiClient->dataReceivedLen = 0;
     apiClient->data_callback_func = NULL;
@@ -57,17 +65,7 @@ apiClient_t *apiClient_create_with_base_path(const char *basePath
     }else{
         apiClient->apiKeys_APIKey = NULL;
     }
-    if(apiKeys_JWT!= NULL) {
-        apiClient->apiKeys_JWT = list_createList();
-        listEntry_t *listEntry = NULL;
-        list_ForEach(listEntry, apiKeys_JWT) {
-            keyValuePair_t *pair = listEntry->data;
-            keyValuePair_t *pairDup = keyValuePair_create(strdup(pair->key), strdup(pair->value));
-            list_addElement(apiClient->apiKeys_JWT, pairDup);
-        }
-    }else{
-        apiClient->apiKeys_JWT = NULL;
-    }
+    apiClient->accessToken = NULL;
 
     return apiClient;
 }
@@ -93,20 +91,17 @@ void apiClient_free(apiClient_t *apiClient) {
         }
         list_freeList(apiClient->apiKeys_APIKey);
     }
-    if(apiClient->apiKeys_JWT) {
-        listEntry_t *listEntry = NULL;
-        list_ForEach(listEntry, apiClient->apiKeys_JWT) {
-            keyValuePair_t *pair = listEntry->data;
-            if(pair->key){
-                free(pair->key);
-            }
-            if(pair->value){
-                free(pair->value);
-            }
-            keyValuePair_free(pair);
-        }
-        list_freeList(apiClient->apiKeys_JWT);
+    if(apiClient->accessToken) {
+        free(apiClient->accessToken);
     }
+
+    if(apiClient->curlConfig) {
+        free(apiClient->curlConfig);
+        apiClient->curlConfig = NULL;
+    }
+
+    apiClient->curl_pre_invoke_func = NULL;
+
     free(apiClient);
 }
 
@@ -429,20 +424,17 @@ void apiClient_invoke(apiClient_t    *apiClient,
         }
         }
         }
-        // this would only be generated for apiKey authentication
-        if (apiClient->apiKeys_JWT != NULL)
+        // this would only be generated for bearer token authentication
+        if(apiClient->accessToken != NULL)
         {
-        list_ForEach(listEntry, apiClient->apiKeys_JWT) {
-        keyValuePair_t *apiKey = listEntry->data;
-        if((apiKey->key != NULL) &&
-           (apiKey->value != NULL) )
-        {
-            char *headerValueToWrite = assembleHeaderField(
-                apiKey->key, apiKey->value);
-            curl_slist_append(headers, headerValueToWrite);
-            free(headerValueToWrite);
-        }
-        }
+            int authHeaderSize;
+            char *authHeader = NULL;
+
+            authHeaderSize = snprintf(NULL, 0, "Authorization: Bearer %s", apiClient->accessToken) + 1;
+            authHeader = malloc(authHeaderSize);
+            snprintf(authHeader, authHeaderSize, "Authorization: Bearer %s", apiClient->accessToken);
+            headers = curl_slist_append(headers, authHeader);
+            free(authHeader);
         }
 
         char *targetUrl =
@@ -458,11 +450,23 @@ void apiClient_invoke(apiClient_t    *apiClient,
                          CURLOPT_WRITEDATA,
                          apiClient);
         curl_easy_setopt(handle, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(handle, CURLOPT_VERBOSE, 0); // to get curl debug msg 0: to disable, 1L:to enable
 
 
         if(bodyParameters != NULL) {
             postData(handle, bodyParameters, bodyParametersLength);
+        }
+
+        if(apiClient->curlConfig != NULL) {
+            if(apiClient->curlConfig->keepalive == 1) {
+                curl_easy_setopt(handle, CURLOPT_TCP_KEEPALIVE, 1L);
+                curl_easy_setopt(handle, CURLOPT_TCP_KEEPIDLE, apiClient->curlConfig->keepidle);
+                curl_easy_setopt(handle, CURLOPT_TCP_KEEPINTVL, apiClient->curlConfig->keepintvl);
+            }
+            curl_easy_setopt(handle, CURLOPT_VERBOSE, apiClient->curlConfig->verbose);
+        }
+
+        if(apiClient->curl_pre_invoke_func) {
+            apiClient->curl_pre_invoke_func(handle);
         }
 
         res = curl_easy_perform(handle);

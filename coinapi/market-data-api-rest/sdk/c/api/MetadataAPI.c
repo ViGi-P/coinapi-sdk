@@ -804,10 +804,12 @@ end:
 
 }
 
-// List of symbols for the exchange
+// List all active symbols
+//
+// Retrieves all currently active (listed) symbols, with optional filtering.              :::info \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \"price_precision\" and \"size_precision\". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | `symbol_id` pattern --------- | --------- SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}` FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}` OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}` PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}` INDEX | `{exchange_id}_IDX_{index_id}` CREDIT | `{exchange_id}_CRE_{asset_id_base}` CONTACT  | `{exchange_id}_COT_{contract_id}`              :::info In the unlikely event when the \"symbol_id\" for more than one market is the same. We will append the additional term (prefixed with the \"_\") at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of `symbol_type` output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for `symbol_type = INDEX`              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for `symbol_type = FUTURES`              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = PERPETUAL`              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = OPTION`              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN` option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for `symbol_type = CONTRACT`              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
 //
 list_t*
-MetadataAPI_v1SymbolsExchangeIdGet(apiClient_t *apiClient, char *exchange_id, char *filter_symbol_id, char *filter_asset_id)
+MetadataAPI_v1SymbolsExchangeIdActiveGet(apiClient_t *apiClient, char *exchange_id, char *filter_symbol_id, char *filter_asset_id)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -821,7 +823,7 @@ MetadataAPI_v1SymbolsExchangeIdGet(apiClient_t *apiClient, char *exchange_id, ch
     apiClient->response_code = 0;
 
     // create the path
-    char *localVarPath = strdup("/v1/symbols/{exchange_id}");
+    char *localVarPath = strdup("/v1/symbols/{exchange_id}/active");
 
     if(!exchange_id)
         goto end;
@@ -946,12 +948,12 @@ end:
 
 }
 
-// List all symbols
+// List all historical symbols for an exchange.
 //
-// Retrieves all symbols with optional filtering.              :::info \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \"price_precision\" and \"size_precision\". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | `symbol_id` pattern --------- | --------- SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}` FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}` OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}` PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}` INDEX | `{exchange_id}_IDX_{index_id}` CREDIT | `{exchange_id}_CRE_{asset_id_base}` CONTACT  | `{exchange_id}_COT_{contract_id}`              :::info In the unlikely event when the \"symbol_id\" for more than one market is the same. We will append the additional term (prefixed with the \"_\") at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of `symbol_type` output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for `symbol_type = INDEX`              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for `symbol_type = FUTURES`              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = PERPETUAL`              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = OPTION`              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN` option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for `symbol_type = CONTRACT`              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
+// This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange. The data is provided with pagination support.
 //
 list_t*
-MetadataAPI_v1SymbolsGet(apiClient_t *apiClient, char *filter_symbol_id, char *filter_exchange_id, char *filter_asset_id)
+MetadataAPI_v1SymbolsExchangeIdHistoryGet(apiClient_t *apiClient, char *exchange_id, int *page, int *limit)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -965,46 +967,48 @@ MetadataAPI_v1SymbolsGet(apiClient_t *apiClient, char *filter_symbol_id, char *f
     apiClient->response_code = 0;
 
     // create the path
-    char *localVarPath = strdup("/v1/symbols");
+    char *localVarPath = strdup("/v1/symbols/{exchange_id}/history");
+
+    if(!exchange_id)
+        goto end;
 
 
+    // Path Params
+    long sizeOfPathParams_exchange_id = strlen(exchange_id)+3 + sizeof("{ exchange_id }") - 1;
+    if(exchange_id == NULL) {
+        goto end;
+    }
+    char* localVarToReplace_exchange_id = malloc(sizeOfPathParams_exchange_id);
+    sprintf(localVarToReplace_exchange_id, "{%s}", "exchange_id");
+
+    localVarPath = strReplace(localVarPath, localVarToReplace_exchange_id, exchange_id);
 
 
 
     // query parameters
-    char *keyQuery_filter_symbol_id = NULL;
-    char * valueQuery_filter_symbol_id = NULL;
-    keyValuePair_t *keyPairQuery_filter_symbol_id = 0;
-    if (filter_symbol_id)
+    char *keyQuery_page = NULL;
+    char * valueQuery_page = NULL;
+    keyValuePair_t *keyPairQuery_page = 0;
+    if (page)
     {
-        keyQuery_filter_symbol_id = strdup("filter_symbol_id");
-        valueQuery_filter_symbol_id = strdup((filter_symbol_id));
-        keyPairQuery_filter_symbol_id = keyValuePair_create(keyQuery_filter_symbol_id, valueQuery_filter_symbol_id);
-        list_addElement(localVarQueryParameters,keyPairQuery_filter_symbol_id);
+        keyQuery_page = strdup("page");
+        valueQuery_page = calloc(1,MAX_NUMBER_LENGTH);
+        snprintf(valueQuery_page, MAX_NUMBER_LENGTH, "%d", *page);
+        keyPairQuery_page = keyValuePair_create(keyQuery_page, valueQuery_page);
+        list_addElement(localVarQueryParameters,keyPairQuery_page);
     }
 
     // query parameters
-    char *keyQuery_filter_exchange_id = NULL;
-    char * valueQuery_filter_exchange_id = NULL;
-    keyValuePair_t *keyPairQuery_filter_exchange_id = 0;
-    if (filter_exchange_id)
+    char *keyQuery_limit = NULL;
+    char * valueQuery_limit = NULL;
+    keyValuePair_t *keyPairQuery_limit = 0;
+    if (limit)
     {
-        keyQuery_filter_exchange_id = strdup("filter_exchange_id");
-        valueQuery_filter_exchange_id = strdup((filter_exchange_id));
-        keyPairQuery_filter_exchange_id = keyValuePair_create(keyQuery_filter_exchange_id, valueQuery_filter_exchange_id);
-        list_addElement(localVarQueryParameters,keyPairQuery_filter_exchange_id);
-    }
-
-    // query parameters
-    char *keyQuery_filter_asset_id = NULL;
-    char * valueQuery_filter_asset_id = NULL;
-    keyValuePair_t *keyPairQuery_filter_asset_id = 0;
-    if (filter_asset_id)
-    {
-        keyQuery_filter_asset_id = strdup("filter_asset_id");
-        valueQuery_filter_asset_id = strdup((filter_asset_id));
-        keyPairQuery_filter_asset_id = keyValuePair_create(keyQuery_filter_asset_id, valueQuery_filter_asset_id);
-        list_addElement(localVarQueryParameters,keyPairQuery_filter_asset_id);
+        keyQuery_limit = strdup("limit");
+        valueQuery_limit = calloc(1,MAX_NUMBER_LENGTH);
+        snprintf(valueQuery_limit, MAX_NUMBER_LENGTH, "%d", *limit);
+        keyPairQuery_limit = keyValuePair_create(keyQuery_limit, valueQuery_limit);
+        list_addElement(localVarQueryParameters,keyPairQuery_limit);
     }
     list_addElement(localVarHeaderType,"text/plain"); //produces
     list_addElement(localVarHeaderType,"application/json"); //produces
@@ -1058,41 +1062,30 @@ MetadataAPI_v1SymbolsGet(apiClient_t *apiClient, char *filter_symbol_id, char *f
     list_freeList(localVarHeaderType);
     
     free(localVarPath);
-    if(keyQuery_filter_symbol_id){
-        free(keyQuery_filter_symbol_id);
-        keyQuery_filter_symbol_id = NULL;
+    free(localVarToReplace_exchange_id);
+    if(keyQuery_page){
+        free(keyQuery_page);
+        keyQuery_page = NULL;
     }
-    if(valueQuery_filter_symbol_id){
-        free(valueQuery_filter_symbol_id);
-        valueQuery_filter_symbol_id = NULL;
+    if(valueQuery_page){
+        free(valueQuery_page);
+        valueQuery_page = NULL;
     }
-    if(keyPairQuery_filter_symbol_id){
-        keyValuePair_free(keyPairQuery_filter_symbol_id);
-        keyPairQuery_filter_symbol_id = NULL;
+    if(keyPairQuery_page){
+        keyValuePair_free(keyPairQuery_page);
+        keyPairQuery_page = NULL;
     }
-    if(keyQuery_filter_exchange_id){
-        free(keyQuery_filter_exchange_id);
-        keyQuery_filter_exchange_id = NULL;
+    if(keyQuery_limit){
+        free(keyQuery_limit);
+        keyQuery_limit = NULL;
     }
-    if(valueQuery_filter_exchange_id){
-        free(valueQuery_filter_exchange_id);
-        valueQuery_filter_exchange_id = NULL;
+    if(valueQuery_limit){
+        free(valueQuery_limit);
+        valueQuery_limit = NULL;
     }
-    if(keyPairQuery_filter_exchange_id){
-        keyValuePair_free(keyPairQuery_filter_exchange_id);
-        keyPairQuery_filter_exchange_id = NULL;
-    }
-    if(keyQuery_filter_asset_id){
-        free(keyQuery_filter_asset_id);
-        keyQuery_filter_asset_id = NULL;
-    }
-    if(valueQuery_filter_asset_id){
-        free(valueQuery_filter_asset_id);
-        valueQuery_filter_asset_id = NULL;
-    }
-    if(keyPairQuery_filter_asset_id){
-        keyValuePair_free(keyPairQuery_filter_asset_id);
-        keyPairQuery_filter_asset_id = NULL;
+    if(keyPairQuery_limit){
+        keyValuePair_free(keyPairQuery_limit);
+        keyPairQuery_limit = NULL;
     }
     return elementToReturn;
 end:
@@ -1101,7 +1094,7 @@ end:
 
 }
 
-// List symbol mapping for the exchange
+// List active symbol mapping for the exchange
 //
 list_t*
 MetadataAPI_v1SymbolsMapExchangeIdGet(apiClient_t *apiClient, char *exchange_id)

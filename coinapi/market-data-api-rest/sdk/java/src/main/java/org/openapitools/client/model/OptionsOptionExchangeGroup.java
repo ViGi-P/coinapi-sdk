@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an option exchange group data model.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T09:28:32.257027216Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T06:05:57.564598397Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class OptionsOptionExchangeGroup {
   public static final String SERIALIZED_NAME_ASSET_ID_BASE = "asset_id_base";
   @SerializedName(SERIALIZED_NAME_ASSET_ID_BASE)
@@ -249,15 +249,10 @@ public class OptionsOptionExchangeGroup {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("asset_id_base");
-    openapiFields.add("asset_id_quote");
-    openapiFields.add("underlying_price");
-    openapiFields.add("time_expiration");
-    openapiFields.add("strikes");
+    openapiFields = new HashSet<String>(Arrays.asList("asset_id_base", "asset_id_quote", "underlying_price", "time_expiration", "strikes"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

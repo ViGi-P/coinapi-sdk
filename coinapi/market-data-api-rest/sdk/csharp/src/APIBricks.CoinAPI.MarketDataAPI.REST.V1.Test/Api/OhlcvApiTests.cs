@@ -88,8 +88,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             Client.Option<string> timeStart = default!;
             Client.Option<string> timeEnd = default!;
             Client.Option<int> limit = default!;
-            Client.Option<bool> includeEmptyItems = default!;
-            var response = await _instance.V1OhlcvSymbolIdHistoryGetAsync(symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems);
+            var response = await _instance.V1OhlcvSymbolIdHistoryGetAsync(symbolId, periodId, timeStart, timeEnd, limit);
             var model = response.Ok();
             Assert.IsType<List<V1TimeseriesItem>>(model);
         }
@@ -103,8 +102,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             string symbolId = default!;
             string periodId = default!;
             Client.Option<int> limit = default!;
-            Client.Option<bool> includeEmptyItems = default!;
-            var response = await _instance.V1OhlcvSymbolIdLatestGetAsync(symbolId, periodId, limit, includeEmptyItems);
+            var response = await _instance.V1OhlcvSymbolIdLatestGetAsync(symbolId, periodId, limit);
             var model = response.Ok();
             Assert.IsType<List<V1TimeseriesItem>>(model);
         }

@@ -12,8 +12,8 @@
 | **price_high** | **Float** | The highest price during the time period. | [optional] |
 | **price_low** | **Float** | The lowest price during the time period. | [optional] |
 | **price_close** | **Float** | The closing price. | [optional] |
-| **volume_traded** | **Float** | The total volume traded during the time period. | [optional] |
-| **trades_count** | **Integer** | The number of trades executed during the time period. | [optional] |
+| **volume_traded** | **Float** | The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] |
+| **trades_count** | **Integer** | The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] |
 
 ## Example
 

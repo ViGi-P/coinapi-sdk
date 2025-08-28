@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for short sale price test status information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T06:12:24.008717897Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T06:09:12.686527588Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class AdminShortSalePriceTestStatusModel {
   public static final String SERIALIZED_NAME_SYMBOL = "symbol";
   @SerializedName(SERIALIZED_NAME_SYMBOL)
@@ -524,26 +524,10 @@ public class AdminShortSalePriceTestStatusModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("symbol");
-    openapiFields.add("timestamp_nanos");
-    openapiFields.add("timestamp");
-    openapiFields.add("short_sale_price_test_status");
-    openapiFields.add("short_sale_price_test_status_code");
-    openapiFields.add("short_sale_price_test_status_text");
-    openapiFields.add("is_short_sale_price_test_not_in_effect");
-    openapiFields.add("is_short_sale_price_test_in_effect");
-    openapiFields.add("detail");
-    openapiFields.add("detail_code");
-    openapiFields.add("detail_text");
-    openapiFields.add("is_detail_no_price_test");
-    openapiFields.add("is_detail_activated");
-    openapiFields.add("is_detail_continued");
-    openapiFields.add("is_detail_deactivated");
-    openapiFields.add("is_detail_not_available");
+    openapiFields = new HashSet<String>(Arrays.asList("symbol", "timestamp_nanos", "timestamp", "short_sale_price_test_status", "short_sale_price_test_status_code", "short_sale_price_test_status_text", "is_short_sale_price_test_not_in_effect", "is_short_sale_price_test_in_effect", "detail", "detail_code", "detail_text", "is_detail_no_price_test", "is_detail_activated", "is_detail_continued", "is_detail_deactivated", "is_detail_not_available"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

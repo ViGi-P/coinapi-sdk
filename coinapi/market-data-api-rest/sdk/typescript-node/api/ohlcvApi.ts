@@ -277,9 +277,8 @@ export class OhlcvApi {
      * @param timeStart Timeseries starting time in ISO 8601
      * @param timeEnd Timeseries ending time in ISO 8601
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-     * @param includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;)
      */
-    public async v1OhlcvSymbolIdHistoryGet (symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, includeEmptyItems?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1TimeseriesItem>;  }> {
+    public async v1OhlcvSymbolIdHistoryGet (symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1TimeseriesItem>;  }> {
         const localVarPath = this.basePath + '/v1/ohlcv/{symbol_id}/history'
             .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
@@ -317,10 +316,6 @@ export class OhlcvApi {
 
         if (limit !== undefined) {
             localVarQueryParameters['limit'] = ObjectSerializer.serialize(limit, "number");
-        }
-
-        if (includeEmptyItems !== undefined) {
-            localVarQueryParameters['include_empty_items'] = ObjectSerializer.serialize(includeEmptyItems, "boolean");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -380,9 +375,8 @@ export class OhlcvApi {
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-     * @param includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;)
      */
-    public async v1OhlcvSymbolIdLatestGet (symbolId: string, periodId: string, limit?: number, includeEmptyItems?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1TimeseriesItem>;  }> {
+    public async v1OhlcvSymbolIdLatestGet (symbolId: string, periodId: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1TimeseriesItem>;  }> {
         const localVarPath = this.basePath + '/v1/ohlcv/{symbol_id}/latest'
             .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
@@ -412,10 +406,6 @@ export class OhlcvApi {
 
         if (limit !== undefined) {
             localVarQueryParameters['limit'] = ObjectSerializer.serialize(limit, "number");
-        }
-
-        if (includeEmptyItems !== undefined) {
-            localVarQueryParameters['include_empty_items'] = ObjectSerializer.serialize(includeEmptyItems, "boolean");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);

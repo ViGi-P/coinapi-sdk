@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a timeseries period used in exchange rate data.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T06:14:55.859735372Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T06:08:59.112920782Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class V1TimeseriesPeriod {
   public static final String SERIALIZED_NAME_PERIOD_ID = "period_id";
   @SerializedName(SERIALIZED_NAME_PERIOD_ID)
@@ -263,16 +263,10 @@ public class V1TimeseriesPeriod {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("period_id");
-    openapiFields.add("length_seconds");
-    openapiFields.add("length_months");
-    openapiFields.add("unit_count");
-    openapiFields.add("unit_name");
-    openapiFields.add("display_name");
+    openapiFields = new HashSet<String>(Arrays.asList("period_id", "length_seconds", "length_months", "unit_count", "unit_name", "display_name"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

@@ -316,7 +316,6 @@ type ApiV1OhlcvSymbolIdHistoryGetRequest struct {
 	timeStart *string
 	timeEnd *string
 	limit *int32
-	includeEmptyItems *bool
 }
 
 // Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
@@ -340,12 +339,6 @@ func (r ApiV1OhlcvSymbolIdHistoryGetRequest) TimeEnd(timeEnd string) ApiV1OhlcvS
 // Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 func (r ApiV1OhlcvSymbolIdHistoryGetRequest) Limit(limit int32) ApiV1OhlcvSymbolIdHistoryGetRequest {
 	r.limit = &limit
-	return r
-}
-
-// Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;)
-func (r ApiV1OhlcvSymbolIdHistoryGetRequest) IncludeEmptyItems(includeEmptyItems bool) ApiV1OhlcvSymbolIdHistoryGetRequest {
-	r.includeEmptyItems = &includeEmptyItems
 	return r
 }
 
@@ -411,12 +404,6 @@ func (a *OhlcvAPIService) V1OhlcvSymbolIdHistoryGetExecute(r ApiV1OhlcvSymbolIdH
 	} else {
 		var defaultValue int32 = 100
 		r.limit = &defaultValue
-	}
-	if r.includeEmptyItems != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "include_empty_items", r.includeEmptyItems, "form", "")
-	} else {
-		var defaultValue bool = false
-		r.includeEmptyItems = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -492,7 +479,6 @@ type ApiV1OhlcvSymbolIdLatestGetRequest struct {
 	symbolId string
 	periodId *string
 	limit *int32
-	includeEmptyItems *bool
 }
 
 // Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
@@ -504,12 +490,6 @@ func (r ApiV1OhlcvSymbolIdLatestGetRequest) PeriodId(periodId string) ApiV1Ohlcv
 // Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 func (r ApiV1OhlcvSymbolIdLatestGetRequest) Limit(limit int32) ApiV1OhlcvSymbolIdLatestGetRequest {
 	r.limit = &limit
-	return r
-}
-
-// Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;)
-func (r ApiV1OhlcvSymbolIdLatestGetRequest) IncludeEmptyItems(includeEmptyItems bool) ApiV1OhlcvSymbolIdLatestGetRequest {
-	r.includeEmptyItems = &includeEmptyItems
 	return r
 }
 
@@ -570,12 +550,6 @@ func (a *OhlcvAPIService) V1OhlcvSymbolIdLatestGetExecute(r ApiV1OhlcvSymbolIdLa
 	} else {
 		var defaultValue int32 = 100
 		r.limit = &defaultValue
-	}
-	if r.includeEmptyItems != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "include_empty_items", r.includeEmptyItems, "form", "")
-	} else {
-		var defaultValue bool = false
-		r.includeEmptyItems = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

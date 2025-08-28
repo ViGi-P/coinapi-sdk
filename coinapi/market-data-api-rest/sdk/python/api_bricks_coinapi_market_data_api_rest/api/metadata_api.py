@@ -2160,10 +2160,10 @@ class MetadataApi:
 
 
     @validate_call
-    def v1_symbols_exchange_id_get(
+    def v1_symbols_exchange_id_active_get(
         self,
-        exchange_id: Annotated[StrictStr, Field(description="The ID of the exchange (from the Metadata -> Exchanges)")],
-        filter_symbol_id: Annotated[Optional[StrictStr], Field(description="The filter for symbol ID.")] = None,
+        exchange_id: Annotated[StrictStr, Field(description="The ID of the exchange.")],
+        filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)")] = None,
         filter_asset_id: Annotated[Optional[StrictStr], Field(description="The filter for asset ID.")] = None,
         _request_timeout: Union[
             None,
@@ -2178,12 +2178,13 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[V1Symbol]:
-        """List of symbols for the exchange
+        """List all active symbols
 
+        Retrieves all currently active (listed) symbols, with optional filtering.              :::info \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \"price_precision\" and \"size_precision\". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | `symbol_id` pattern --------- | --------- SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}` FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}` OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}` PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}` INDEX | `{exchange_id}_IDX_{index_id}` CREDIT | `{exchange_id}_CRE_{asset_id_base}` CONTACT  | `{exchange_id}_COT_{contract_id}`              :::info In the unlikely event when the \"symbol_id\" for more than one market is the same. We will append the additional term (prefixed with the \"_\") at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of `symbol_type` output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for `symbol_type = INDEX`              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for `symbol_type = FUTURES`              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = PERPETUAL`              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = OPTION`              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN` option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for `symbol_type = CONTRACT`              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
 
-        :param exchange_id: The ID of the exchange (from the Metadata -> Exchanges) (required)
+        :param exchange_id: The ID of the exchange. (required)
         :type exchange_id: str
-        :param filter_symbol_id: The filter for symbol ID.
+        :param filter_symbol_id: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
         :type filter_symbol_id: str
         :param filter_asset_id: The filter for asset ID.
         :type filter_asset_id: str
@@ -2209,7 +2210,7 @@ class MetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v1_symbols_exchange_id_get_serialize(
+        _param = self._v1_symbols_exchange_id_active_get_serialize(
             exchange_id=exchange_id,
             filter_symbol_id=filter_symbol_id,
             filter_asset_id=filter_asset_id,
@@ -2234,10 +2235,10 @@ class MetadataApi:
 
 
     @validate_call
-    def v1_symbols_exchange_id_get_with_http_info(
+    def v1_symbols_exchange_id_active_get_with_http_info(
         self,
-        exchange_id: Annotated[StrictStr, Field(description="The ID of the exchange (from the Metadata -> Exchanges)")],
-        filter_symbol_id: Annotated[Optional[StrictStr], Field(description="The filter for symbol ID.")] = None,
+        exchange_id: Annotated[StrictStr, Field(description="The ID of the exchange.")],
+        filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)")] = None,
         filter_asset_id: Annotated[Optional[StrictStr], Field(description="The filter for asset ID.")] = None,
         _request_timeout: Union[
             None,
@@ -2252,12 +2253,13 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[V1Symbol]]:
-        """List of symbols for the exchange
+        """List all active symbols
 
+        Retrieves all currently active (listed) symbols, with optional filtering.              :::info \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \"price_precision\" and \"size_precision\". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | `symbol_id` pattern --------- | --------- SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}` FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}` OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}` PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}` INDEX | `{exchange_id}_IDX_{index_id}` CREDIT | `{exchange_id}_CRE_{asset_id_base}` CONTACT  | `{exchange_id}_COT_{contract_id}`              :::info In the unlikely event when the \"symbol_id\" for more than one market is the same. We will append the additional term (prefixed with the \"_\") at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of `symbol_type` output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for `symbol_type = INDEX`              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for `symbol_type = FUTURES`              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = PERPETUAL`              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = OPTION`              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN` option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for `symbol_type = CONTRACT`              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
 
-        :param exchange_id: The ID of the exchange (from the Metadata -> Exchanges) (required)
+        :param exchange_id: The ID of the exchange. (required)
         :type exchange_id: str
-        :param filter_symbol_id: The filter for symbol ID.
+        :param filter_symbol_id: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
         :type filter_symbol_id: str
         :param filter_asset_id: The filter for asset ID.
         :type filter_asset_id: str
@@ -2283,7 +2285,7 @@ class MetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v1_symbols_exchange_id_get_serialize(
+        _param = self._v1_symbols_exchange_id_active_get_serialize(
             exchange_id=exchange_id,
             filter_symbol_id=filter_symbol_id,
             filter_asset_id=filter_asset_id,
@@ -2308,10 +2310,10 @@ class MetadataApi:
 
 
     @validate_call
-    def v1_symbols_exchange_id_get_without_preload_content(
+    def v1_symbols_exchange_id_active_get_without_preload_content(
         self,
-        exchange_id: Annotated[StrictStr, Field(description="The ID of the exchange (from the Metadata -> Exchanges)")],
-        filter_symbol_id: Annotated[Optional[StrictStr], Field(description="The filter for symbol ID.")] = None,
+        exchange_id: Annotated[StrictStr, Field(description="The ID of the exchange.")],
+        filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)")] = None,
         filter_asset_id: Annotated[Optional[StrictStr], Field(description="The filter for asset ID.")] = None,
         _request_timeout: Union[
             None,
@@ -2326,12 +2328,13 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List of symbols for the exchange
+        """List all active symbols
 
+        Retrieves all currently active (listed) symbols, with optional filtering.              :::info \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \"price_precision\" and \"size_precision\". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | `symbol_id` pattern --------- | --------- SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}` FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}` OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}` PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}` INDEX | `{exchange_id}_IDX_{index_id}` CREDIT | `{exchange_id}_CRE_{asset_id_base}` CONTACT  | `{exchange_id}_COT_{contract_id}`              :::info In the unlikely event when the \"symbol_id\" for more than one market is the same. We will append the additional term (prefixed with the \"_\") at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of `symbol_type` output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for `symbol_type = INDEX`              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for `symbol_type = FUTURES`              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = PERPETUAL`              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = OPTION`              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN` option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for `symbol_type = CONTRACT`              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
 
-        :param exchange_id: The ID of the exchange (from the Metadata -> Exchanges) (required)
+        :param exchange_id: The ID of the exchange. (required)
         :type exchange_id: str
-        :param filter_symbol_id: The filter for symbol ID.
+        :param filter_symbol_id: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
         :type filter_symbol_id: str
         :param filter_asset_id: The filter for asset ID.
         :type filter_asset_id: str
@@ -2357,7 +2360,7 @@ class MetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v1_symbols_exchange_id_get_serialize(
+        _param = self._v1_symbols_exchange_id_active_get_serialize(
             exchange_id=exchange_id,
             filter_symbol_id=filter_symbol_id,
             filter_asset_id=filter_asset_id,
@@ -2377,7 +2380,7 @@ class MetadataApi:
         return response_data.response
 
 
-    def _v1_symbols_exchange_id_get_serialize(
+    def _v1_symbols_exchange_id_active_get_serialize(
         self,
         exchange_id,
         filter_symbol_id,
@@ -2439,7 +2442,7 @@ class MetadataApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v1/symbols/{exchange_id}',
+            resource_path='/v1/symbols/{exchange_id}/active',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2456,11 +2459,11 @@ class MetadataApi:
 
 
     @validate_call
-    def v1_symbols_get(
+    def v1_symbols_exchange_id_history_get(
         self,
-        filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)")] = None,
-        filter_exchange_id: Annotated[Optional[StrictStr], Field(description="The filter for exchange ID.")] = None,
-        filter_asset_id: Annotated[Optional[StrictStr], Field(description="The filter for asset ID.")] = None,
+        exchange_id: Annotated[StrictStr, Field(description="The ID of the exchange.")],
+        page: Annotated[Optional[StrictInt], Field(description="The page number for pagination (starts from 1).")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Number of records to return per page.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2474,16 +2477,16 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[V1Symbol]:
-        """List all symbols
+        """List all historical symbols for an exchange.
 
-        Retrieves all symbols with optional filtering.              :::info \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \"price_precision\" and \"size_precision\". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | `symbol_id` pattern --------- | --------- SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}` FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}` OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}` PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}` INDEX | `{exchange_id}_IDX_{index_id}` CREDIT | `{exchange_id}_CRE_{asset_id_base}` CONTACT  | `{exchange_id}_COT_{contract_id}`              :::info In the unlikely event when the \"symbol_id\" for more than one market is the same. We will append the additional term (prefixed with the \"_\") at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of `symbol_type` output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for `symbol_type = INDEX`              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for `symbol_type = FUTURES`              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = PERPETUAL`              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = OPTION`              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN` option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for `symbol_type = CONTRACT`              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
+        This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange. The data is provided with pagination support.
 
-        :param filter_symbol_id: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
-        :type filter_symbol_id: str
-        :param filter_exchange_id: The filter for exchange ID.
-        :type filter_exchange_id: str
-        :param filter_asset_id: The filter for asset ID.
-        :type filter_asset_id: str
+        :param exchange_id: The ID of the exchange. (required)
+        :type exchange_id: str
+        :param page: The page number for pagination (starts from 1).
+        :type page: int
+        :param limit: Number of records to return per page.
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2506,10 +2509,10 @@ class MetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v1_symbols_get_serialize(
-            filter_symbol_id=filter_symbol_id,
-            filter_exchange_id=filter_exchange_id,
-            filter_asset_id=filter_asset_id,
+        _param = self._v1_symbols_exchange_id_history_get_serialize(
+            exchange_id=exchange_id,
+            page=page,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2531,11 +2534,11 @@ class MetadataApi:
 
 
     @validate_call
-    def v1_symbols_get_with_http_info(
+    def v1_symbols_exchange_id_history_get_with_http_info(
         self,
-        filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)")] = None,
-        filter_exchange_id: Annotated[Optional[StrictStr], Field(description="The filter for exchange ID.")] = None,
-        filter_asset_id: Annotated[Optional[StrictStr], Field(description="The filter for asset ID.")] = None,
+        exchange_id: Annotated[StrictStr, Field(description="The ID of the exchange.")],
+        page: Annotated[Optional[StrictInt], Field(description="The page number for pagination (starts from 1).")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Number of records to return per page.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2549,16 +2552,16 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[V1Symbol]]:
-        """List all symbols
+        """List all historical symbols for an exchange.
 
-        Retrieves all symbols with optional filtering.              :::info \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \"price_precision\" and \"size_precision\". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | `symbol_id` pattern --------- | --------- SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}` FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}` OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}` PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}` INDEX | `{exchange_id}_IDX_{index_id}` CREDIT | `{exchange_id}_CRE_{asset_id_base}` CONTACT  | `{exchange_id}_COT_{contract_id}`              :::info In the unlikely event when the \"symbol_id\" for more than one market is the same. We will append the additional term (prefixed with the \"_\") at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of `symbol_type` output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for `symbol_type = INDEX`              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for `symbol_type = FUTURES`              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = PERPETUAL`              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = OPTION`              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN` option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for `symbol_type = CONTRACT`              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
+        This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange. The data is provided with pagination support.
 
-        :param filter_symbol_id: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
-        :type filter_symbol_id: str
-        :param filter_exchange_id: The filter for exchange ID.
-        :type filter_exchange_id: str
-        :param filter_asset_id: The filter for asset ID.
-        :type filter_asset_id: str
+        :param exchange_id: The ID of the exchange. (required)
+        :type exchange_id: str
+        :param page: The page number for pagination (starts from 1).
+        :type page: int
+        :param limit: Number of records to return per page.
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2581,10 +2584,10 @@ class MetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v1_symbols_get_serialize(
-            filter_symbol_id=filter_symbol_id,
-            filter_exchange_id=filter_exchange_id,
-            filter_asset_id=filter_asset_id,
+        _param = self._v1_symbols_exchange_id_history_get_serialize(
+            exchange_id=exchange_id,
+            page=page,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2606,11 +2609,11 @@ class MetadataApi:
 
 
     @validate_call
-    def v1_symbols_get_without_preload_content(
+    def v1_symbols_exchange_id_history_get_without_preload_content(
         self,
-        filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)")] = None,
-        filter_exchange_id: Annotated[Optional[StrictStr], Field(description="The filter for exchange ID.")] = None,
-        filter_asset_id: Annotated[Optional[StrictStr], Field(description="The filter for asset ID.")] = None,
+        exchange_id: Annotated[StrictStr, Field(description="The ID of the exchange.")],
+        page: Annotated[Optional[StrictInt], Field(description="The page number for pagination (starts from 1).")] = None,
+        limit: Annotated[Optional[StrictInt], Field(description="Number of records to return per page.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2624,16 +2627,16 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List all symbols
+        """List all historical symbols for an exchange.
 
-        Retrieves all symbols with optional filtering.              :::info \"price_precision\" and \"size_precision\" are data precisions and are not always the same precisions used for trading eg. for the \"BINANCE\" exchanges. :::              :::info You should not assume that the market data will be always within the resolution provided by the \"price_precision\" and \"size_precision\". The fact that the precision values can be derived from a posterior implies the fact that this data could be delayed, also it can be changed by the data source without notice and we will immediately deliver data with the new precision while could not update the precision values in this endpoint immediately. :::              ### Symbol identifier              Our symbol identifier is created using a pattern that depends on symbol type.              Type | `symbol_id` pattern --------- | --------- SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}` FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}` OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}` PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}` INDEX | `{exchange_id}_IDX_{index_id}` CREDIT | `{exchange_id}_CRE_{asset_id_base}` CONTACT  | `{exchange_id}_COT_{contract_id}`              :::info In the unlikely event when the \"symbol_id\" for more than one market is the same. We will append the additional term (prefixed with the \"_\") at the end of the duplicated identifiers to differentiate them. :::info              ### Symbol types list (enumeration of `symbol_type` output variable)              Type | Name | Description -------- | - | ----------- SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC for USD)* FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time INDEX | Index | Statistical composite that measures changes in the economy or markets. CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate. CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*              ### Additional output variables for `symbol_type = INDEX`              Variable | Description --------- | ----------- index_id | Index identifier index_display_name | Human readable name of the index *(optional)* index_display_description | Description of the index *(optional)*              ### Additional output variables for `symbol_type = FUTURES`              Variable | Description --------- | ----------- future_delivery_time | Predetermined time of futures contract delivery date in ISO 8601 future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = PERPETUAL`              Variable | Description --------- | ----------- future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)* future_contract_unit_asset | Identifier of the asset used to denominate the contract unit              ### Additional output variables for `symbol_type = OPTION`              Variable | Description --------- | ----------- option_type_is_call | Boolean value representing option type. `true` for Call options, `false` for Put options option_strike_price | Price at which option contract can be exercised option_contract_unit | Base asset amount of underlying spot which single option represents option_exercise_style | Option exercise style. Can be `EUROPEAN` or `AMERICAN` option_expiration_time | Option contract expiration time in ISO 8601              ### Additional output variables for `symbol_type = CONTRACT`              Variable | Description --------- | ----------- contract_delivery_time | Predetermined time of contract delivery date in ISO 8601 contract_unit | Contact size *(eg. 10 BTC if `contract_unit` = `10` and `contract_unit_asset` = `BTC`)* contract_unit_asset | Identifier of the asset used to denominate the contract unit contract_id | Identifier of contract by the exchange
+        This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange. The data is provided with pagination support.
 
-        :param filter_symbol_id: Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
-        :type filter_symbol_id: str
-        :param filter_exchange_id: The filter for exchange ID.
-        :type filter_exchange_id: str
-        :param filter_asset_id: The filter for asset ID.
-        :type filter_asset_id: str
+        :param exchange_id: The ID of the exchange. (required)
+        :type exchange_id: str
+        :param page: The page number for pagination (starts from 1).
+        :type page: int
+        :param limit: Number of records to return per page.
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2656,10 +2659,10 @@ class MetadataApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v1_symbols_get_serialize(
-            filter_symbol_id=filter_symbol_id,
-            filter_exchange_id=filter_exchange_id,
-            filter_asset_id=filter_asset_id,
+        _param = self._v1_symbols_exchange_id_history_get_serialize(
+            exchange_id=exchange_id,
+            page=page,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2676,11 +2679,11 @@ class MetadataApi:
         return response_data.response
 
 
-    def _v1_symbols_get_serialize(
+    def _v1_symbols_exchange_id_history_get_serialize(
         self,
-        filter_symbol_id,
-        filter_exchange_id,
-        filter_asset_id,
+        exchange_id,
+        page,
+        limit,
         _request_auth,
         _content_type,
         _headers,
@@ -2702,18 +2705,16 @@ class MetadataApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if exchange_id is not None:
+            _path_params['exchange_id'] = exchange_id
         # process the query parameters
-        if filter_symbol_id is not None:
+        if page is not None:
             
-            _query_params.append(('filter_symbol_id', filter_symbol_id))
+            _query_params.append(('page', page))
             
-        if filter_exchange_id is not None:
+        if limit is not None:
             
-            _query_params.append(('filter_exchange_id', filter_exchange_id))
-            
-        if filter_asset_id is not None:
-            
-            _query_params.append(('filter_asset_id', filter_asset_id))
+            _query_params.append(('limit', limit))
             
         # process the header parameters
         # process the form parameters
@@ -2740,7 +2741,7 @@ class MetadataApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v1/symbols',
+            resource_path='/v1/symbols/{exchange_id}/history',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2773,7 +2774,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[V1SymbolMapping]:
-        """List symbol mapping for the exchange
+        """List active symbol mapping for the exchange
 
 
         :param exchange_id: The ID of the exchange (from the Metadata -> Exchanges) (required)
@@ -2839,7 +2840,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[V1SymbolMapping]]:
-        """List symbol mapping for the exchange
+        """List active symbol mapping for the exchange
 
 
         :param exchange_id: The ID of the exchange (from the Metadata -> Exchanges) (required)
@@ -2905,7 +2906,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List symbol mapping for the exchange
+        """List active symbol mapping for the exchange
 
 
         :param exchange_id: The ID of the exchange (from the Metadata -> Exchanges) (required)

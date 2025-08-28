@@ -43,8 +43,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <param name="priceHigh">The highest price during the time period.</param>
         /// <param name="priceLow">The lowest price during the time period.</param>
         /// <param name="priceClose">The closing price.</param>
-        /// <param name="volumeTraded">The total volume traded during the time period.</param>
-        /// <param name="tradesCount">The number of trades executed during the time period.</param>
+        /// <param name="volumeTraded">The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.</param>
+        /// <param name="tradesCount">The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.</param>
         /// <param name="symbolIdExchange">symbolIdExchange</param>
         /// <param name="symbolIdCoinapi">symbolIdCoinapi</param>
         [JsonConstructor]
@@ -187,9 +187,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> VolumeTradedOption { get; private set; }
 
         /// <summary>
-        /// The total volume traded during the time period.
+        /// The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
         /// </summary>
-        /// <value>The total volume traded during the time period.</value>
+        /// <value>The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.</value>
         [JsonPropertyName("volume_traded")]
         public double? VolumeTraded { get { return this.VolumeTradedOption; } set { this.VolumeTradedOption = new(value); } }
 
@@ -201,9 +201,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<long?> TradesCountOption { get; private set; }
 
         /// <summary>
-        /// The number of trades executed during the time period.
+        /// The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
         /// </summary>
-        /// <value>The number of trades executed during the time period.</value>
+        /// <value>The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.</value>
         [JsonPropertyName("trades_count")]
         public long? TradesCount { get { return this.TradesCountOption; } set { this.TradesCountOption = new(value); } }
 

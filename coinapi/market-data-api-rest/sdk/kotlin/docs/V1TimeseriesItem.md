@@ -12,8 +12,8 @@
 | **priceHigh** | **kotlin.Double** | The highest price during the time period. |  [optional] |
 | **priceLow** | **kotlin.Double** | The lowest price during the time period. |  [optional] |
 | **priceClose** | **kotlin.Double** | The closing price. |  [optional] |
-| **volumeTraded** | **kotlin.Double** | The total volume traded during the time period. |  [optional] |
-| **tradesCount** | **kotlin.Long** | The number of trades executed during the time period. |  [optional] |
+| **volumeTraded** | **kotlin.Double** | The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. |  [optional] |
+| **tradesCount** | **kotlin.Long** | The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. |  [optional] |
 
 
 

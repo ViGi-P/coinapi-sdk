@@ -25,8 +25,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$V1AssetsAssetIdGet(var_asset_iddata_file = "result.txt")
@@ -45,8 +45,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$V1AssetsGet(filter_asset_id = var_filter_asset_iddata_file = "result.txt")
@@ -65,8 +65,8 @@
 #' # Configure API key authorization: APIKey
 #' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 #'
-#' # Configure API key authorization: JWT
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
+#' # Configure HTTP bearer authorization: JWT
+#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
 #' # result <- api_instance$V1AssetsIconsSizeGet(var_sizedata_file = "result.txt")
@@ -138,6 +138,9 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `asset_id`.")
       }
 
+      if (!missing(`asset_id`) && is.null(`asset_id`)) {
+        stop("Invalid value for `asset_id` when calling MetadataApi$V1AssetsAssetIdGet, `asset_id` is not nullable")
+      }
 
       local_var_url_path <- "/v1/assets/{asset_id}"
       if (!missing(`asset_id`)) {
@@ -148,9 +151,9 @@ MetadataApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header
@@ -240,6 +243,9 @@ MetadataApi <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
+      if (!missing(`filter_asset_id`) && is.null(`filter_asset_id`)) {
+        stop("Invalid value for `filter_asset_id` when calling MetadataApi$V1AssetsGet, `filter_asset_id` is not nullable")
+      }
 
       query_params[["filter_asset_id"]] <- `filter_asset_id`
 
@@ -248,9 +254,9 @@ MetadataApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header
@@ -344,6 +350,9 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `size`.")
       }
 
+      if (!missing(`size`) && is.null(`size`)) {
+        stop("Invalid value for `size` when calling MetadataApi$V1AssetsIconsSizeGet, `size` is not nullable")
+      }
 
       local_var_url_path <- "/v1/assets/icons/{size}"
       if (!missing(`size`)) {
@@ -354,9 +363,9 @@ MetadataApi <- R6::R6Class(
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
       }
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
+      # Bearer token
+      if (!is.null(self$api_client$bearer_token)) {
+        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
       }
 
       # The Accept request HTTP header

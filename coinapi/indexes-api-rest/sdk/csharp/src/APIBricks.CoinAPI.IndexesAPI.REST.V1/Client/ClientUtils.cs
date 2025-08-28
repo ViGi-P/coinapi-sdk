@@ -19,7 +19,6 @@ using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using KellermanSoftware.CompareNetObjects;
-using APIBricks.CoinAPI.IndexesAPI.REST.V1.Model;
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("APIBricks.CoinAPI.IndexesAPI.REST.V1.Test")]
@@ -61,10 +60,6 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Client
             /// <summary>
             /// The Authorization header
             /// </summary>
-            Authorization,
-            /// <summary>
-            /// The Authorization header
-            /// </summary>
             Authorization
         }
 
@@ -78,7 +73,6 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Client
         {
             return value switch
             {
-                ApiKeyHeader.Authorization => "Authorization",
                 ApiKeyHeader.Authorization => "Authorization",
                 _ => throw new System.ComponentModel.InvalidEnumArgumentException(nameof(value), (int)value, typeof(ApiKeyHeader)),
             };

@@ -71,15 +71,15 @@ describe("metadata_api", function()
     end)
   end)
 
-  -- unit tests for v1_symbols_exchange_id_get
-  describe("v1_symbols_exchange_id_get test", function()
+  -- unit tests for v1_symbols_exchange_id_active_get
+  describe("v1_symbols_exchange_id_active_get test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for v1_symbols_get
-  describe("v1_symbols_get test", function()
+  -- unit tests for v1_symbols_exchange_id_history_get
+  describe("v1_symbols_exchange_id_history_get test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

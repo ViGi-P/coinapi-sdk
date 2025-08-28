@@ -103,32 +103,10 @@ All URIs are relative to **
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*IndexesApi* | [**v1IndexdefInputDataIndexDefinitionIdAllGet**](docs/IndexesApi.md#v1indexdefinputdataindexdefinitionidallget) | **GET** /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition
-*IndexesApi* | [**v1IndexdefInputDataIndexDefinitionIdGet**](docs/IndexesApi.md#v1indexdefinputdataindexdefinitionidget) | **GET** /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time
-*IndexesApi* | [**v1IndexdefMultiassetGet**](docs/IndexesApi.md#v1indexdefmultiassetget) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
-*IndexesApi* | [**v1IndexdefMultiassetIndexIdGet**](docs/IndexesApi.md#v1indexdefmultiassetindexidget) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
-*IndexesApi* | [**v1IndexesGet**](docs/IndexesApi.md#v1indexesget) | **GET** /v1/indexes | List indexes
-*IndexesApi* | [**v1IndexesIndexDefinitionIdCurrentSnapshotGet**](docs/IndexesApi.md#v1indexesindexdefinitionidcurrentsnapshotget) | **GET** /v1/indexes/{index_definition_id}/currentSnapshot | Current Index Values for index definition
-*IndexesApi* | [**v1IndexesIndexDefinitionIdHistorySnapshotGet**](docs/IndexesApi.md#v1indexesindexdefinitionidhistorysnapshotget) | **GET** /v1/indexes/{index_definition_id}/historySnapshot | Historical Index Values for index definition
-*IndexesApi* | [**v1IndexesIndexIdCurrentGet**](docs/IndexesApi.md#v1indexesindexidcurrentget) | **GET** /v1/indexes/{index_id}/current | Current Index Value
-*IndexesApi* | [**v1IndexesIndexIdHistoryGet**](docs/IndexesApi.md#v1indexesindexidhistoryget) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
-*IndexesApi* | [**v1IndexesIndexIdTimeseriesGet**](docs/IndexesApi.md#v1indexesindexidtimeseriesget) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
-*MetadataApi* | [**apiMetadataExchangesExchangeIdGet**](docs/MetadataApi.md#apimetadataexchangesexchangeidget) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
-*MetadataApi* | [**apiMetadataExchangesGet**](docs/MetadataApi.md#apimetadataexchangesget) | **GET** /api/metadata/exchanges | List all exchanges
-*PeriodsApi* | [**v1MetadataPeriodsGet**](docs/PeriodsApi.md#v1metadataperiodsget) | **GET** /v1/metadata/periods | List all periods
 
 
 ## Documentation For Models
 
- - [IndexesIndexDefinitionInputData](docs/IndexesIndexDefinitionInputData.md)
- - [IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
- - [IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
- - [IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)
- - [IndexesIndexTimeseriesItem](docs/IndexesIndexTimeseriesItem.md)
- - [IndexesIndexValue](docs/IndexesIndexValue.md)
- - [IndexesIndexValueComponent](docs/IndexesIndexValueComponent.md)
- - [MetadataExchange](docs/MetadataExchange.md)
- - [MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
 
 
 ## Documentation For Authorization
@@ -144,7 +122,5 @@ Class | Method | HTTP request | Description
 ## JWT
 
 
-- **Type**: API key
-- **API key parameter name**: Authorization
-- **Location**: HTTP header
+- **Type**: HTTP Bearer Token authentication (JWT)
 

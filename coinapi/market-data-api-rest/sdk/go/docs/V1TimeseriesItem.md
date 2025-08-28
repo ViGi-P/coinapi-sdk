@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **PriceHigh** | Pointer to **NullableFloat64** | The highest price during the time period. | [optional] 
 **PriceLow** | Pointer to **NullableFloat64** | The lowest price during the time period. | [optional] 
 **PriceClose** | Pointer to **NullableFloat64** | The closing price. | [optional] 
-**VolumeTraded** | Pointer to **float64** | The total volume traded during the time period. | [optional] 
-**TradesCount** | Pointer to **int64** | The number of trades executed during the time period. | [optional] 
+**VolumeTraded** | Pointer to **float64** | The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
+**TradesCount** | Pointer to **int64** | The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
 
 ## Methods
 

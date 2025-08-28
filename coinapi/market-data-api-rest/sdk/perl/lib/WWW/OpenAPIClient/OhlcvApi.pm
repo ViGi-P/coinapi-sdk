@@ -222,7 +222,6 @@ sub v1_ohlcv_periods_get {
 # @param string $time_start Timeseries starting time in ISO 8601 (optional)
 # @param string $time_end Timeseries ending time in ISO 8601 (optional)
 # @param int $limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-# @param boolean $include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
 {
     my $params = {
     'symbol_id' => {
@@ -248,11 +247,6 @@ sub v1_ohlcv_periods_get {
     'limit' => {
         data_type => 'int',
         description => 'Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)',
-        required => '0',
-    },
-    'include_empty_items' => {
-        data_type => 'boolean',
-        description => 'Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;)',
         required => '0',
     },
     };
@@ -312,11 +306,6 @@ sub v1_ohlcv_symbol_id_history_get {
         $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
     }
 
-    # query params
-    if ( exists $args{'include_empty_items'}) {
-        $query_params->{'include_empty_items'} = $self->{api_client}->to_query_value($args{'include_empty_items'});
-    }
-
     # path params
     if ( exists $args{'symbol_id'}) {
         my $_base_variable = "{" . "symbol_id" . "}";
@@ -347,7 +336,6 @@ sub v1_ohlcv_symbol_id_history_get {
 # @param string $symbol_id Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
 # @param string $period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
 # @param int $limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-# @param boolean $include_empty_items Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
 {
     my $params = {
     'symbol_id' => {
@@ -363,11 +351,6 @@ sub v1_ohlcv_symbol_id_history_get {
     'limit' => {
         data_type => 'int',
         description => 'Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)',
-        required => '0',
-    },
-    'include_empty_items' => {
-        data_type => 'boolean',
-        description => 'Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;)',
         required => '0',
     },
     };
@@ -415,11 +398,6 @@ sub v1_ohlcv_symbol_id_latest_get {
     # query params
     if ( exists $args{'limit'}) {
         $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
-    }
-
-    # query params
-    if ( exists $args{'include_empty_items'}) {
-        $query_params->{'include_empty_items'} = $self->{api_client}->to_query_value($args{'include_empty_items'});
     }
 
     # path params

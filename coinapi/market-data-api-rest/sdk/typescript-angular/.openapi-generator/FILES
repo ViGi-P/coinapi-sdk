@@ -48,4 +48,5 @@ model/v1TimeseriesItem.ts
 model/v1TimeseriesPeriod.ts
 model/v1Trade.ts
 param.ts
+provide-api.ts
 variables.ts

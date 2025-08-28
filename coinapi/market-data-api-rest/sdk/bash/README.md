@@ -115,9 +115,9 @@ Class | Method | HTTP request | Description
 *MetadataApi* | [**v1ExchangesExchangeIdGet**](docs/MetadataApi.md#v1exchangesexchangeidget) | **GET** /v1/exchanges/{exchange_id} | List all exchanges by exchange_id
 *MetadataApi* | [**v1ExchangesGet**](docs/MetadataApi.md#v1exchangesget) | **GET** /v1/exchanges | List all exchanges
 *MetadataApi* | [**v1ExchangesIconsSizeGet**](docs/MetadataApi.md#v1exchangesiconssizeget) | **GET** /v1/exchanges/icons/{size} | List of icons for the exchanges
-*MetadataApi* | [**v1SymbolsExchangeIdGet**](docs/MetadataApi.md#v1symbolsexchangeidget) | **GET** /v1/symbols/{exchange_id} | List of symbols for the exchange
-*MetadataApi* | [**v1SymbolsGet**](docs/MetadataApi.md#v1symbolsget) | **GET** /v1/symbols | List all symbols
-*MetadataApi* | [**v1SymbolsMapExchangeIdGet**](docs/MetadataApi.md#v1symbolsmapexchangeidget) | **GET** /v1/symbols/map/{exchange_id} | List symbol mapping for the exchange
+*MetadataApi* | [**v1SymbolsExchangeIdActiveGet**](docs/MetadataApi.md#v1symbolsexchangeidactiveget) | **GET** /v1/symbols/{exchange_id}/active | List all active symbols
+*MetadataApi* | [**v1SymbolsExchangeIdHistoryGet**](docs/MetadataApi.md#v1symbolsexchangeidhistoryget) | **GET** /v1/symbols/{exchange_id}/history | List all historical symbols for an exchange.
+*MetadataApi* | [**v1SymbolsMapExchangeIdGet**](docs/MetadataApi.md#v1symbolsmapexchangeidget) | **GET** /v1/symbols/map/{exchange_id} | List active symbol mapping for the exchange
 *MetricsV1Api* | [**v1MetricsAssetCurrentGet**](docs/MetricsV1Api.md#v1metricsassetcurrentget) | **GET** /v1/metrics/asset/current | Current metrics for given asset
 *MetricsV1Api* | [**v1MetricsAssetHistoryGet**](docs/MetricsV1Api.md#v1metricsassethistoryget) | **GET** /v1/metrics/asset/history | Historical metrics for asset
 *MetricsV1Api* | [**v1MetricsAssetListingGet**](docs/MetricsV1Api.md#v1metricsassetlistingget) | **GET** /v1/metrics/asset/listing | Listing of all supported metrics for asset

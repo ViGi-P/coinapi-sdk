@@ -64,13 +64,13 @@ void main() {
       // TODO
     });
 
-    // The total volume traded during the time period.
+    // The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
     // double volumeTraded
     test('to test the property `volumeTraded`', () async {
       // TODO
     });
 
-    // The number of trades executed during the time period.
+    // The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
     // int tradesCount
     test('to test the property `tradesCount`', () async {
       // TODO

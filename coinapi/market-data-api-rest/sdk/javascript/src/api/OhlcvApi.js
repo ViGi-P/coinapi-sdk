@@ -151,7 +151,6 @@ export default class OhlcvApi {
      * @param {String} [timeStart] Timeseries starting time in ISO 8601
      * @param {String} [timeEnd] Timeseries ending time in ISO 8601
      * @param {Number} [limit = 100)] Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-     * @param {Boolean} [includeEmptyItems = false)] Include items with no activity? (default value is `false`, possible values are `true` or `false`)
      * @param {module:api/OhlcvApi~v1OhlcvSymbolIdHistoryGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/V1TimeseriesItem>}
      */
@@ -174,8 +173,7 @@ export default class OhlcvApi {
         'period_id': periodId,
         'time_start': opts['timeStart'],
         'time_end': opts['timeEnd'],
-        'limit': opts['limit'],
-        'include_empty_items': opts['includeEmptyItems']
+        'limit': opts['limit']
       };
       let headerParams = {
       };
@@ -208,7 +206,6 @@ export default class OhlcvApi {
      * @param {String} periodId Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
      * @param {Object} opts Optional parameters
      * @param {Number} [limit = 100)] Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-     * @param {Boolean} [includeEmptyItems = false)] Include items with no activity? (default value is `false`, possible values are `true` or `false`)
      * @param {module:api/OhlcvApi~v1OhlcvSymbolIdLatestGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/V1TimeseriesItem>}
      */
@@ -229,8 +226,7 @@ export default class OhlcvApi {
       };
       let queryParams = {
         'period_id': periodId,
-        'limit': opts['limit'],
-        'include_empty_items': opts['includeEmptyItems']
+        'limit': opts['limit']
       };
       let headerParams = {
       };

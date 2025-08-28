@@ -101,18 +101,18 @@ public:
 	/*! \brief Set The closing price.
 	 */
 	void setPriceClose(double  price_close);
-	/*! \brief Get The total volume traded during the time period.
+	/*! \brief Get The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
 	 */
 	double getVolumeTraded();
 
-	/*! \brief Set The total volume traded during the time period.
+	/*! \brief Set The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
 	 */
 	void setVolumeTraded(double  volume_traded);
-	/*! \brief Get The number of trades executed during the time period.
+	/*! \brief Get The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
 	 */
 	long long getTradesCount();
 
-	/*! \brief Set The number of trades executed during the time period.
+	/*! \brief Set The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
 	 */
 	void setTradesCount(long long  trades_count);
 	/*! \brief Get 

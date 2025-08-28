@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **price_high** | **REAL_64** | The highest price during the time period. | [optional] [default to null]
 **price_low** | **REAL_64** | The lowest price during the time period. | [optional] [default to null]
 **price_close** | **REAL_64** | The closing price. | [optional] [default to null]
-**volume_traded** | **REAL_64** | The total volume traded during the time period. | [optional] [default to null]
-**trades_count** | **INTEGER_64** | The number of trades executed during the time period. | [optional] [default to null]
+**volume_traded** | **REAL_64** | The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] [default to null]
+**trades_count** | **INTEGER_64** | The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

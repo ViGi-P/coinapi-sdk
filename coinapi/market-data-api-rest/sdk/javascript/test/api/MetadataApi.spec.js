@@ -128,20 +128,20 @@
         done();
       });
     });
-    describe('v1SymbolsExchangeIdGet', function() {
-      it('should call v1SymbolsExchangeIdGet successfully', function(done) {
-        //uncomment below and update the code to test v1SymbolsExchangeIdGet
-        //instance.v1SymbolsExchangeIdGet(function(error) {
+    describe('v1SymbolsExchangeIdActiveGet', function() {
+      it('should call v1SymbolsExchangeIdActiveGet successfully', function(done) {
+        //uncomment below and update the code to test v1SymbolsExchangeIdActiveGet
+        //instance.v1SymbolsExchangeIdActiveGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('v1SymbolsGet', function() {
-      it('should call v1SymbolsGet successfully', function(done) {
-        //uncomment below and update the code to test v1SymbolsGet
-        //instance.v1SymbolsGet(function(error) {
+    describe('v1SymbolsExchangeIdHistoryGet', function() {
+      it('should call v1SymbolsExchangeIdHistoryGet successfully', function(done) {
+        //uncomment below and update the code to test v1SymbolsExchangeIdHistoryGet
+        //instance.v1SymbolsExchangeIdHistoryGet(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

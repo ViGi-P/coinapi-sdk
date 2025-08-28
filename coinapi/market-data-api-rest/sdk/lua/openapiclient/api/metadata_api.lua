@@ -473,12 +473,12 @@ function metadata_api:v1_exchanges_icons_size_get(size)
 	end
 end
 
-function metadata_api:v1_symbols_exchange_id_get(exchange_id, filter_symbol_id, filter_asset_id)
+function metadata_api:v1_symbols_exchange_id_active_get(exchange_id, filter_symbol_id, filter_asset_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/v1/symbols/%s?filter_symbol_id=%s&filter_asset_id=%s",
+		path = string.format("%s/v1/symbols/%s/active?filter_symbol_id=%s&filter_asset_id=%s",
 			self.basePath, exchange_id, http_util.encodeURIComponent(filter_symbol_id), http_util.encodeURIComponent(filter_asset_id));
 	})
 
@@ -526,13 +526,13 @@ function metadata_api:v1_symbols_exchange_id_get(exchange_id, filter_symbol_id, 
 	end
 end
 
-function metadata_api:v1_symbols_get(filter_symbol_id, filter_exchange_id, filter_asset_id)
+function metadata_api:v1_symbols_exchange_id_history_get(exchange_id, page, limit)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/v1/symbols?filter_symbol_id=%s&filter_exchange_id=%s&filter_asset_id=%s",
-			self.basePath, http_util.encodeURIComponent(filter_symbol_id), http_util.encodeURIComponent(filter_exchange_id), http_util.encodeURIComponent(filter_asset_id));
+		path = string.format("%s/v1/symbols/%s/history?page=%s&limit=%s",
+			self.basePath, exchange_id, http_util.encodeURIComponent(page), http_util.encodeURIComponent(limit));
 	})
 
 	-- set HTTP verb

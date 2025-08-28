@@ -13,69 +13,6 @@ All URIs are relative to *https://rest.coinapi.io*
 
 Current order books
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api;
-using APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client;
-using APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model;
-
-namespace Example
-{
-    public class V1Orderbooks3CurrentGetExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://rest.coinapi.io";
-            // Configure API key authorization: APIKey
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure Bearer token for authorization: JWT
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new OrderBookL3Api(config);
-            var filterSymbolId = "filterSymbolId_example";  // string | Comma or semicolon delimited parts of symbol identifier used to filter the response. (optional) 
-            var limitLevels = 56;  // int | The maximum number of levels to include in the response. (optional) 
-
-            try
-            {
-                // Current order books
-                List<V1OrderBookBase> result = apiInstance.V1Orderbooks3CurrentGet(filterSymbolId, limitLevels);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling OrderBookL3Api.V1Orderbooks3CurrentGet: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the V1Orderbooks3CurrentGetWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Current order books
-    ApiResponse<List<V1OrderBookBase>> response = apiInstance.V1Orderbooks3CurrentGetWithHttpInfo(filterSymbolId, limitLevels);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling OrderBookL3Api.V1Orderbooks3CurrentGetWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -113,69 +50,6 @@ Current order book by symbol_id
 
 Retrieves the current order book for the specified symbol.
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api;
-using APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client;
-using APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model;
-
-namespace Example
-{
-    public class V1Orderbooks3SymbolIdCurrentGetExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://rest.coinapi.io";
-            // Configure API key authorization: APIKey
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure Bearer token for authorization: JWT
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            var apiInstance = new OrderBookL3Api(config);
-            var symbolId = "symbolId_example";  // string | The symbol ID (from the Metadata -> Symbols)
-            var limitLevels = 56;  // int | The maximum number of levels to include in the response. (optional) 
-
-            try
-            {
-                // Current order book by symbol_id
-                V1OrderBookBase result = apiInstance.V1Orderbooks3SymbolIdCurrentGet(symbolId, limitLevels);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling OrderBookL3Api.V1Orderbooks3SymbolIdCurrentGet: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the V1Orderbooks3SymbolIdCurrentGetWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Current order book by symbol_id
-    ApiResponse<V1OrderBookBase> response = apiInstance.V1Orderbooks3SymbolIdCurrentGetWithHttpInfo(symbolId, limitLevels);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling OrderBookL3Api.V1Orderbooks3SymbolIdCurrentGetWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 

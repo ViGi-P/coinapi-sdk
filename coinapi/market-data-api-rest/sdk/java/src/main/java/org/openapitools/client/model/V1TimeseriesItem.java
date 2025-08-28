@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a timeseries item with price and volume information.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T09:28:32.257027216Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T06:05:57.564598397Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class V1TimeseriesItem {
   public static final String SERIALIZED_NAME_TIME_PERIOD_START = "time_period_start";
   @SerializedName(SERIALIZED_NAME_TIME_PERIOD_START)
@@ -263,7 +263,7 @@ public class V1TimeseriesItem {
   }
 
   /**
-   * The total volume traded during the time period.
+   * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
    * @return volumeTraded
    */
   @javax.annotation.Nullable
@@ -282,7 +282,7 @@ public class V1TimeseriesItem {
   }
 
   /**
-   * The number of trades executed during the time period.
+   * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
    * @return tradesCount
    */
   @javax.annotation.Nullable
@@ -368,20 +368,10 @@ public class V1TimeseriesItem {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("time_period_start");
-    openapiFields.add("time_period_end");
-    openapiFields.add("time_open");
-    openapiFields.add("time_close");
-    openapiFields.add("price_open");
-    openapiFields.add("price_high");
-    openapiFields.add("price_low");
-    openapiFields.add("price_close");
-    openapiFields.add("volume_traded");
-    openapiFields.add("trades_count");
+    openapiFields = new HashSet<String>(Arrays.asList("time_period_start", "time_period_end", "time_open", "time_close", "price_open", "price_high", "price_low", "price_close", "volume_traded", "trades_count"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

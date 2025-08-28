@@ -39,7 +39,7 @@ void main() {
     //
     // Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific symbol eg `BITSTAMP_SPOT_BTC_USD`, if you need to query timeseries by asset pairs eg. `BTC/USD`, then please reffer to the Exchange Rates Timeseries data              :::info The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
     //
-    //Future<List<V1TimeseriesItem>> v1OhlcvSymbolIdHistoryGet(String symbolId, String periodId, { String timeStart, String timeEnd, int limit, bool includeEmptyItems }) async
+    //Future<List<V1TimeseriesItem>> v1OhlcvSymbolIdHistoryGet(String symbolId, String periodId, { String timeStart, String timeEnd, int limit }) async
     test('test v1OhlcvSymbolIdHistoryGet', () async {
       // TODO
     });
@@ -48,7 +48,7 @@ void main() {
     //
     // Get OHLCV latest timeseries data returned in time descending order. Data can be requested by the period and for the specific symbol eg `BITSTAMP_SPOT_BTC_USD`, if you need to query timeseries by asset pairs eg. `BTC/USD`, then please reffer to the Exchange Rates Timeseries data              :::info OHLCV Latest endpoint is just the shortcut to the OHLCV Historical endpoint with substituted `time_start` and `time_end` parameters.  The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
     //
-    //Future<List<V1TimeseriesItem>> v1OhlcvSymbolIdLatestGet(String symbolId, String periodId, { int limit, bool includeEmptyItems }) async
+    //Future<List<V1TimeseriesItem>> v1OhlcvSymbolIdLatestGet(String symbolId, String periodId, { int limit }) async
     test('test v1OhlcvSymbolIdLatestGet', () async {
       // TODO
     });

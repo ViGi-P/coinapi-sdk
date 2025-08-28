@@ -809,17 +809,17 @@ function Invoke-V1ExchangesIconsSizeGet {
 <#
 .SYNOPSIS
 
-List of symbols for the exchange
+List all active symbols
 
 .DESCRIPTION
 
 No description available.
 
 .PARAMETER ExchangeId
-The ID of the exchange (from the Metadata -> Exchanges)
+The ID of the exchange.
 
 .PARAMETER FilterSymbolId
-The filter for symbol ID.
+Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
 
 .PARAMETER FilterAssetId
 The filter for asset ID.
@@ -836,7 +836,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 V1Symbol[]
 #>
-function Invoke-V1SymbolsExchangeIdGet {
+function Invoke-V1SymbolsExchangeIdActiveGet {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -856,7 +856,7 @@ function Invoke-V1SymbolsExchangeIdGet {
     )
 
     Process {
-        'Calling method: Invoke-V1SymbolsExchangeIdGet' | Write-Debug
+        'Calling method: Invoke-V1SymbolsExchangeIdActiveGet' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -877,9 +877,9 @@ function Invoke-V1SymbolsExchangeIdGet {
             $LocalVarAccepts = @($ReturnType)
         }
 
-        $LocalVarUri = '/v1/symbols/{exchange_id}'
+        $LocalVarUri = '/v1/symbols/{exchange_id}/active'
         if (!$ExchangeId) {
-            throw "Error! The required parameter `ExchangeId` missing when calling v1SymbolsExchangeIdGet."
+            throw "Error! The required parameter `ExchangeId` missing when calling v1SymbolsExchangeIdActiveGet."
         }
         $LocalVarUri = $LocalVarUri.replace('{exchange_id}', [System.Web.HTTPUtility]::UrlEncode($ExchangeId))
 
@@ -929,20 +929,20 @@ function Invoke-V1SymbolsExchangeIdGet {
 <#
 .SYNOPSIS
 
-List all symbols
+List all historical symbols for an exchange.
 
 .DESCRIPTION
 
 No description available.
 
-.PARAMETER FilterSymbolId
-Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
+.PARAMETER ExchangeId
+The ID of the exchange.
 
-.PARAMETER FilterExchangeId
-The filter for exchange ID.
+.PARAMETER Page
+The page number for pagination (starts from 1).
 
-.PARAMETER FilterAssetId
-The filter for asset ID.
+.PARAMETER Limit
+Number of records to return per page.
 
 .PARAMETER ReturnType
 
@@ -956,18 +956,18 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 V1Symbol[]
 #>
-function Invoke-V1SymbolsGet {
+function Invoke-V1SymbolsExchangeIdHistoryGet {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
-        ${FilterSymbolId},
+        ${ExchangeId},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [String]
-        ${FilterExchangeId},
+        [System.Nullable[Int32]]
+        ${Page},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [String]
-        ${FilterAssetId},
+        [System.Nullable[Int32]]
+        ${Limit},
         [String]
         [ValidateSet("text/plain", "application/json", "text/json", "application/x-msgpack")]
         $ReturnType,
@@ -976,7 +976,7 @@ function Invoke-V1SymbolsGet {
     )
 
     Process {
-        'Calling method: Invoke-V1SymbolsGet' | Write-Debug
+        'Calling method: Invoke-V1SymbolsExchangeIdHistoryGet' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -997,18 +997,18 @@ function Invoke-V1SymbolsGet {
             $LocalVarAccepts = @($ReturnType)
         }
 
-        $LocalVarUri = '/v1/symbols'
+        $LocalVarUri = '/v1/symbols/{exchange_id}/history'
+        if (!$ExchangeId) {
+            throw "Error! The required parameter `ExchangeId` missing when calling v1SymbolsExchangeIdHistoryGet."
+        }
+        $LocalVarUri = $LocalVarUri.replace('{exchange_id}', [System.Web.HTTPUtility]::UrlEncode($ExchangeId))
 
-        if ($FilterSymbolId) {
-            $LocalVarQueryParameters['filter_symbol_id'] = $FilterSymbolId
+        if ($Page) {
+            $LocalVarQueryParameters['page'] = $Page
         }
 
-        if ($FilterExchangeId) {
-            $LocalVarQueryParameters['filter_exchange_id'] = $FilterExchangeId
-        }
-
-        if ($FilterAssetId) {
-            $LocalVarQueryParameters['filter_asset_id'] = $FilterAssetId
+        if ($Limit) {
+            $LocalVarQueryParameters['limit'] = $Limit
         }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
@@ -1049,7 +1049,7 @@ function Invoke-V1SymbolsGet {
 <#
 .SYNOPSIS
 
-List symbol mapping for the exchange
+List active symbol mapping for the exchange
 
 .DESCRIPTION
 

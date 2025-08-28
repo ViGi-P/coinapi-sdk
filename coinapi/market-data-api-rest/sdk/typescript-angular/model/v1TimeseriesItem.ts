@@ -46,11 +46,11 @@ export interface V1TimeseriesItem {
      */
     price_close?: number | null;
     /**
-     * The total volume traded during the time period.
+     * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
      */
     volume_traded?: number;
     /**
-     * The number of trades executed during the time period.
+     * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
      */
     trades_count?: number;
 }

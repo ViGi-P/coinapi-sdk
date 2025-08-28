@@ -259,13 +259,9 @@ open class ApiClient(val baseUrl: String, val client: Call.Factory = defaultClie
                 }
             }
         }
-        if (requestConfig.headers["Authorization"].isNullOrEmpty()) {
-            if (apiKey["Authorization"] != null) {
-                if (apiKeyPrefix["Authorization"] != null) {
-                    requestConfig.headers["Authorization"] = apiKeyPrefix["Authorization"]!! + " " + apiKey["Authorization"]!!
-                } else {
-                    requestConfig.headers["Authorization"] = apiKey["Authorization"]!!
-                }
+        if (requestConfig.headers[Authorization].isNullOrEmpty()) {
+            accessToken?.let { accessToken ->
+                requestConfig.headers[Authorization] = "Bearer $accessToken"
             }
         }
     }
@@ -364,8 +360,11 @@ open class ApiClient(val baseUrl: String, val client: Call.Factory = defaultClie
         null -> ""
         is Array<*> -> toMultiValue(value, "csv").toString()
         is Iterable<*> -> toMultiValue(value, "csv").toString()
-        is OffsetDateTime, is OffsetTime, is LocalDateTime, is LocalDate, is LocalTime ->
-            parseDateToQueryString(value)
+        is OffsetDateTime -> parseDateToQueryString(value)
+        is OffsetTime -> parseDateToQueryString(value)
+        is LocalDateTime -> parseDateToQueryString(value)
+        is LocalDate -> parseDateToQueryString(value)
+        is LocalTime -> parseDateToQueryString(value)
         else -> value.toString()
     }
 

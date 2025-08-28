@@ -66,12 +66,18 @@ tags:
   name: Order Book
 - description: "\nAPI calls described in this section are related to downloading OHLCV\
     \ *(Open, High, Low, Close, Volume)* timeseries data.\nEach data point of this\
-    \ timeseries represents several indicators calculated from transactions activity\
-    \ inside a time range (period).\n\n:::info\nOHLCV data primary purpose is to present\
-    \ an overview of the market in human readable form. \nIt's often used to visualize\
-    \ market data on charts, websites, and various kinds of reports.\n:::\n\n:::tip\n\
-    CoinAPI expanded the standard OHLCV timeseries by including time of first and\
-    \ last trade and amount of trades executed inside period.\n:::\n    "
+    \ timeseries represents several indicators calculated from orderbook and transactions\
+    \ activity inside a time range (period).\n\n:::info\nOHLCV data primary purpose\
+    \ is to present an overview of the market in human readable form. \nIt's often\
+    \ used to visualize market data on charts, websites, and various kinds of reports.\n\
+    :::\n\n:::tip\nCoinAPI expanded the standard OHLCV timeseries by including time\
+    \ of first and last trade and amount of trades executed inside period.\n:::\n\n\
+    :::info\nWhile working on the OHLCV data, especially lower time periods, you can\
+    \ notice that there are cases where there was no transactions and only orderbook\
+    \ activity.\nIn such cases, the volume_traded and trades_count fields are set\
+    \ to 0.\nThis is because the OHLCV data is calculated from the orderbook and transactions\
+    \ activity.\nIf there was no transactions and only orderbook activity, then the\
+    \ volume_traded and trades_count fields are set to 0.\n:::\n    "
   name: Ohlcv
 - description: ""
   name: Metadata
@@ -200,7 +206,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             application/json:
               examples:
@@ -251,7 +257,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             text/json:
               examples:
@@ -302,7 +308,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             application/x-msgpack:
               examples:
@@ -353,7 +359,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
           description: successful operation
       summary: List all assets
@@ -427,7 +433,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             application/json:
               examples:
@@ -478,7 +484,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             text/json:
               examples:
@@ -529,7 +535,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             application/x-msgpack:
               examples:
@@ -580,7 +586,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
           description: successful operation
       summary: List all assets by asset ID
@@ -619,7 +625,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
             application/json:
               examples:
@@ -633,7 +639,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
             text/json:
               examples:
@@ -647,7 +653,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
             application/x-msgpack:
               examples:
@@ -661,7 +667,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
           description: successful operation
       summary: List all asset icons
@@ -704,7 +710,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Chain'
+                  $ref: "#/components/schemas/v1.Chain"
                 type: array
             application/json:
               examples:
@@ -718,7 +724,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Chain'
+                  $ref: "#/components/schemas/v1.Chain"
                 type: array
             text/json:
               examples:
@@ -732,7 +738,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Chain'
+                  $ref: "#/components/schemas/v1.Chain"
                 type: array
             application/x-msgpack:
               examples:
@@ -746,7 +752,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Chain'
+                  $ref: "#/components/schemas/v1.Chain"
                 type: array
           description: successful operation
       summary: List all blockchain chains
@@ -783,7 +789,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Chain'
+                  $ref: "#/components/schemas/v1.Chain"
                 type: array
             application/json:
               examples:
@@ -797,7 +803,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Chain'
+                  $ref: "#/components/schemas/v1.Chain"
                 type: array
             text/json:
               examples:
@@ -811,7 +817,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Chain'
+                  $ref: "#/components/schemas/v1.Chain"
                 type: array
             application/x-msgpack:
               examples:
@@ -825,7 +831,7 @@ paths:
                     name: Polygon
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Chain'
+                  $ref: "#/components/schemas/v1.Chain"
                 type: array
           description: successful operation
       summary: List all chains by chain ID
@@ -880,42 +886,42 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-06-18T09:27:42.4446129Z
+                    time: 2025-08-28T06:04:08.8304850Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRate'
+                $ref: "#/components/schemas/v1.ExchangeRate"
             application/json:
               examples:
                 Example response:
                   value:
-                    time: 2025-06-18T09:27:42.4446129Z
+                    time: 2025-08-28T06:04:08.8304850Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRate'
+                $ref: "#/components/schemas/v1.ExchangeRate"
             text/json:
               examples:
                 Example response:
                   value:
-                    time: 2025-06-18T09:27:42.4446129Z
+                    time: 2025-08-28T06:04:08.8304850Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRate'
+                $ref: "#/components/schemas/v1.ExchangeRate"
             application/x-msgpack:
               examples:
                 Example response:
                   value:
-                    time: 2025-06-18T09:27:42.4446129Z
+                    time: 2025-08-28T06:04:08.8304850Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRate'
+                $ref: "#/components/schemas/v1.ExchangeRate"
           description: successful operation
       summary: Get specific rate
       tags:
@@ -993,7 +999,7 @@ paths:
                       asset_id_quote: GBP
                       rate: 2509.602420379958
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRates'
+                $ref: "#/components/schemas/v1.ExchangeRates"
             application/json:
               examples:
                 Example response:
@@ -1013,7 +1019,7 @@ paths:
                       asset_id_quote: GBP
                       rate: 2509.602420379958
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRates'
+                $ref: "#/components/schemas/v1.ExchangeRates"
             text/json:
               examples:
                 Example response:
@@ -1033,7 +1039,7 @@ paths:
                       asset_id_quote: GBP
                       rate: 2509.602420379958
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRates'
+                $ref: "#/components/schemas/v1.ExchangeRates"
             application/x-msgpack:
               examples:
                 Example response:
@@ -1053,7 +1059,7 @@ paths:
                       asset_id_quote: GBP
                       rate: 2509.602420379958
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRates'
+                $ref: "#/components/schemas/v1.ExchangeRates"
           description: successful operation
       summary: Get all current rates
       tags:
@@ -1100,7 +1106,7 @@ paths:
                     display_name: 10 Days
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesPeriod'
+                  $ref: "#/components/schemas/v1.TimeseriesPeriod"
                 type: array
             application/json:
               examples:
@@ -1126,7 +1132,7 @@ paths:
                     display_name: 10 Days
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesPeriod'
+                  $ref: "#/components/schemas/v1.TimeseriesPeriod"
                 type: array
             text/json:
               examples:
@@ -1152,7 +1158,7 @@ paths:
                     display_name: 10 Days
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesPeriod'
+                  $ref: "#/components/schemas/v1.TimeseriesPeriod"
                 type: array
             application/x-msgpack:
               examples:
@@ -1178,7 +1184,7 @@ paths:
                     display_name: 10 Days
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesPeriod'
+                  $ref: "#/components/schemas/v1.TimeseriesPeriod"
                 type: array
           description: successful operation
       summary: Timeseries periods
@@ -1282,7 +1288,7 @@ paths:
                     rate_close: 430.6522189770523
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ExchangeRatesTimeseriesItem'
+                  $ref: "#/components/schemas/v1.ExchangeRatesTimeseriesItem"
                 type: array
             application/json:
               examples:
@@ -1314,7 +1320,7 @@ paths:
                     rate_close: 430.6522189770523
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ExchangeRatesTimeseriesItem'
+                  $ref: "#/components/schemas/v1.ExchangeRatesTimeseriesItem"
                 type: array
             text/json:
               examples:
@@ -1346,7 +1352,7 @@ paths:
                     rate_close: 430.6522189770523
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ExchangeRatesTimeseriesItem'
+                  $ref: "#/components/schemas/v1.ExchangeRatesTimeseriesItem"
                 type: array
             application/x-msgpack:
               examples:
@@ -1378,7 +1384,7 @@ paths:
                     rate_close: 430.6522189770523
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ExchangeRatesTimeseriesItem'
+                  $ref: "#/components/schemas/v1.ExchangeRatesTimeseriesItem"
                 type: array
           description: successful operation
       summary: Timeseries data
@@ -1443,7 +1449,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Exchange'
+                  $ref: "#/components/schemas/v1.Exchange"
                 type: array
             application/json:
               examples:
@@ -1479,7 +1485,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Exchange'
+                  $ref: "#/components/schemas/v1.Exchange"
                 type: array
             text/json:
               examples:
@@ -1515,7 +1521,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Exchange'
+                  $ref: "#/components/schemas/v1.Exchange"
                 type: array
             application/x-msgpack:
               examples:
@@ -1551,7 +1557,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Exchange'
+                  $ref: "#/components/schemas/v1.Exchange"
                 type: array
           description: successful operation
       summary: List all exchanges
@@ -1610,7 +1616,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Exchange'
+                  $ref: "#/components/schemas/v1.Exchange"
                 type: array
             application/json:
               examples:
@@ -1646,7 +1652,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Exchange'
+                  $ref: "#/components/schemas/v1.Exchange"
                 type: array
             text/json:
               examples:
@@ -1682,7 +1688,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Exchange'
+                  $ref: "#/components/schemas/v1.Exchange"
                 type: array
             application/x-msgpack:
               examples:
@@ -1718,7 +1724,7 @@ paths:
                     rank: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Exchange'
+                  $ref: "#/components/schemas/v1.Exchange"
                 type: array
           description: successful operation
       summary: List all exchanges by exchange_id
@@ -1756,7 +1762,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/b7c77041cdef4f359b4044b2d73c7741.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
             application/json:
               examples:
@@ -1770,7 +1776,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/b7c77041cdef4f359b4044b2d73c7741.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
             text/json:
               examples:
@@ -1784,7 +1790,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/b7c77041cdef4f359b4044b2d73c7741.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
             application/x-msgpack:
               examples:
@@ -1798,7 +1804,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/b7c77041cdef4f359b4044b2d73c7741.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
           description: successful operation
       summary: List of icons for the exchanges
@@ -1837,7 +1843,7 @@ paths:
                       \ effectively."
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Metric'
+                  $ref: "#/components/schemas/v1.Metric"
                 type: array
             application/json:
               examples:
@@ -1861,7 +1867,7 @@ paths:
                       \ effectively."
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Metric'
+                  $ref: "#/components/schemas/v1.Metric"
                 type: array
             text/json:
               examples:
@@ -1885,7 +1891,7 @@ paths:
                       \ effectively."
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Metric'
+                  $ref: "#/components/schemas/v1.Metric"
                 type: array
             application/x-msgpack:
               examples:
@@ -1909,7 +1915,7 @@ paths:
                       \ effectively."
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Metric'
+                  $ref: "#/components/schemas/v1.Metric"
                 type: array
           description: successful operation
       summary: Listing of all supported metrics by CoinAPI
@@ -1955,7 +1961,7 @@ paths:
                     exchange_id: BINANCEFTS
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ListingItem'
+                  $ref: "#/components/schemas/v1.ListingItem"
                 type: array
             application/json:
               examples:
@@ -1969,7 +1975,7 @@ paths:
                     exchange_id: BINANCEFTS
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ListingItem'
+                  $ref: "#/components/schemas/v1.ListingItem"
                 type: array
             text/json:
               examples:
@@ -1983,7 +1989,7 @@ paths:
                     exchange_id: BINANCEFTS
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ListingItem'
+                  $ref: "#/components/schemas/v1.ListingItem"
                 type: array
             application/x-msgpack:
               examples:
@@ -1997,7 +2003,7 @@ paths:
                     exchange_id: BINANCEFTS
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ListingItem'
+                  $ref: "#/components/schemas/v1.ListingItem"
                 type: array
           description: successful operation
       summary: Listing of all supported exchange metrics
@@ -2052,7 +2058,7 @@ paths:
                     value_decimal: 60.77
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.GeneralData'
+                  $ref: "#/components/schemas/v1.GeneralData"
                 type: array
             application/json:
               examples:
@@ -2075,7 +2081,7 @@ paths:
                     value_decimal: 60.77
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.GeneralData'
+                  $ref: "#/components/schemas/v1.GeneralData"
                 type: array
             text/json:
               examples:
@@ -2098,7 +2104,7 @@ paths:
                     value_decimal: 60.77
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.GeneralData'
+                  $ref: "#/components/schemas/v1.GeneralData"
                 type: array
             application/x-msgpack:
               examples:
@@ -2121,7 +2127,7 @@ paths:
                     value_decimal: 60.77
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.GeneralData'
+                  $ref: "#/components/schemas/v1.GeneralData"
                 type: array
           description: successful operation
       summary: Current metrics for given exchange
@@ -2239,7 +2245,7 @@ paths:
                     sum: 7.0257000000000005
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricData'
+                  $ref: "#/components/schemas/v1.MetricData"
                 type: array
             application/json:
               examples:
@@ -2277,7 +2283,7 @@ paths:
                     sum: 7.0257000000000005
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricData'
+                  $ref: "#/components/schemas/v1.MetricData"
                 type: array
             text/json:
               examples:
@@ -2315,7 +2321,7 @@ paths:
                     sum: 7.0257000000000005
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricData'
+                  $ref: "#/components/schemas/v1.MetricData"
                 type: array
             application/x-msgpack:
               examples:
@@ -2353,7 +2359,7 @@ paths:
                     sum: 7.0257000000000005
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricData'
+                  $ref: "#/components/schemas/v1.MetricData"
                 type: array
           description: successful operation
       summary: Historical metrics for the exchange
@@ -2410,7 +2416,7 @@ paths:
                     exchange_id: BINANCEFTS
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ListingItem'
+                  $ref: "#/components/schemas/v1.ListingItem"
                 type: array
             application/json:
               examples:
@@ -2427,7 +2433,7 @@ paths:
                     exchange_id: BINANCEFTS
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ListingItem'
+                  $ref: "#/components/schemas/v1.ListingItem"
                 type: array
             text/json:
               examples:
@@ -2444,7 +2450,7 @@ paths:
                     exchange_id: BINANCEFTS
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ListingItem'
+                  $ref: "#/components/schemas/v1.ListingItem"
                 type: array
             application/x-msgpack:
               examples:
@@ -2461,7 +2467,7 @@ paths:
                     exchange_id: BINANCEFTS
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ListingItem'
+                  $ref: "#/components/schemas/v1.ListingItem"
                 type: array
           description: successful operation
       summary: Listing of all supported metrics for symbol
@@ -2533,7 +2539,7 @@ paths:
                     value_decimal: 30027.74
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.GeneralData'
+                  $ref: "#/components/schemas/v1.GeneralData"
                 type: array
             application/json:
               examples:
@@ -2565,7 +2571,7 @@ paths:
                     value_decimal: 30027.74
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.GeneralData'
+                  $ref: "#/components/schemas/v1.GeneralData"
                 type: array
             text/json:
               examples:
@@ -2597,7 +2603,7 @@ paths:
                     value_decimal: 30027.74
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.GeneralData'
+                  $ref: "#/components/schemas/v1.GeneralData"
                 type: array
             application/x-msgpack:
               examples:
@@ -2629,7 +2635,7 @@ paths:
                     value_decimal: 30027.74
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.GeneralData'
+                  $ref: "#/components/schemas/v1.GeneralData"
                 type: array
           description: successful operation
       summary: Current metrics for given symbol
@@ -2747,7 +2753,7 @@ paths:
                     sum: 7.0257000000000005
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricData'
+                  $ref: "#/components/schemas/v1.MetricData"
                 type: array
             application/json:
               examples:
@@ -2785,7 +2791,7 @@ paths:
                     sum: 7.0257000000000005
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricData'
+                  $ref: "#/components/schemas/v1.MetricData"
                 type: array
             text/json:
               examples:
@@ -2823,7 +2829,7 @@ paths:
                     sum: 7.0257000000000005
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricData'
+                  $ref: "#/components/schemas/v1.MetricData"
                 type: array
             application/x-msgpack:
               examples:
@@ -2861,7 +2867,7 @@ paths:
                     sum: 7.0257000000000005
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricData'
+                  $ref: "#/components/schemas/v1.MetricData"
                 type: array
           description: successful operation
       summary: Historical metrics for symbol
@@ -2942,7 +2948,7 @@ paths:
                     exchange_id: BINANCEFTS
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ListingItem'
+                  $ref: "#/components/schemas/v1.ListingItem"
                 type: array
             application/json:
               examples:
@@ -2959,7 +2965,7 @@ paths:
                     exchange_id: BINANCEFTS
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ListingItem'
+                  $ref: "#/components/schemas/v1.ListingItem"
                 type: array
             text/json:
               examples:
@@ -2976,7 +2982,7 @@ paths:
                     exchange_id: BINANCEFTS
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ListingItem'
+                  $ref: "#/components/schemas/v1.ListingItem"
                 type: array
             application/x-msgpack:
               examples:
@@ -2993,7 +2999,7 @@ paths:
                     exchange_id: BINANCEFTS
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ListingItem'
+                  $ref: "#/components/schemas/v1.ListingItem"
                 type: array
           description: successful operation
       summary: Listing of all supported metrics for asset
@@ -3064,7 +3070,7 @@ paths:
                     value_decimal: 60.77
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.GeneralData'
+                  $ref: "#/components/schemas/v1.GeneralData"
                 type: array
             application/json:
               examples:
@@ -3087,7 +3093,7 @@ paths:
                     value_decimal: 60.77
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.GeneralData'
+                  $ref: "#/components/schemas/v1.GeneralData"
                 type: array
             text/json:
               examples:
@@ -3110,7 +3116,7 @@ paths:
                     value_decimal: 60.77
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.GeneralData'
+                  $ref: "#/components/schemas/v1.GeneralData"
                 type: array
             application/x-msgpack:
               examples:
@@ -3133,7 +3139,7 @@ paths:
                     value_decimal: 60.77
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.GeneralData'
+                  $ref: "#/components/schemas/v1.GeneralData"
                 type: array
           description: successful operation
       summary: Current metrics for given asset
@@ -3234,22 +3240,22 @@ paths:
             text/plain:
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricData'
+                  $ref: "#/components/schemas/v1.MetricData"
                 type: array
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricData'
+                  $ref: "#/components/schemas/v1.MetricData"
                 type: array
             text/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricData'
+                  $ref: "#/components/schemas/v1.MetricData"
                 type: array
             application/x-msgpack:
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricData'
+                  $ref: "#/components/schemas/v1.MetricData"
                 type: array
           description: successful operation
       summary: Historical metrics for asset
@@ -3282,7 +3288,7 @@ paths:
                     description: Total circulating USD stablecoins
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
             application/json:
               examples:
@@ -3300,7 +3306,7 @@ paths:
                     description: Total circulating USD stablecoins
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
             text/json:
               examples:
@@ -3318,7 +3324,7 @@ paths:
                     description: Total circulating USD stablecoins
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
             application/x-msgpack:
               examples:
@@ -3336,7 +3342,7 @@ paths:
                     description: Total circulating USD stablecoins
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
           description: successful operation
       summary: Listing of all supported metrics
@@ -3376,7 +3382,7 @@ paths:
                     description: "Generic metric: VOLUME_QUOTED"
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
             application/json:
               examples:
@@ -3392,7 +3398,7 @@ paths:
                     description: "Generic metric: VOLUME_QUOTED"
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
             text/json:
               examples:
@@ -3408,7 +3414,7 @@ paths:
                     description: "Generic metric: VOLUME_QUOTED"
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
             application/x-msgpack:
               examples:
@@ -3424,7 +3430,7 @@ paths:
                     description: "Generic metric: VOLUME_QUOTED"
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
           description: successful operation
       summary: Listing of metrics available for specific exchange
@@ -3534,7 +3540,7 @@ paths:
                     value_sum: 25000
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.BaseCsvModel'
+                  $ref: "#/components/schemas/Models.BaseCsvModel"
                 type: array
             application/json:
               examples:
@@ -3564,7 +3570,7 @@ paths:
                     value_sum: 25000
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.BaseCsvModel'
+                  $ref: "#/components/schemas/Models.BaseCsvModel"
                 type: array
             text/json:
               examples:
@@ -3594,7 +3600,7 @@ paths:
                     value_sum: 25000
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.BaseCsvModel'
+                  $ref: "#/components/schemas/Models.BaseCsvModel"
                 type: array
             application/x-msgpack:
               examples:
@@ -3624,7 +3630,7 @@ paths:
                     value_sum: 25000
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.BaseCsvModel'
+                  $ref: "#/components/schemas/Models.BaseCsvModel"
                 type: array
           description: successful operation
         "400":
@@ -3737,7 +3743,7 @@ paths:
                     sum_values: 372000000000
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.BaseCsvModel'
+                  $ref: "#/components/schemas/Models.BaseCsvModel"
                 type: array
             application/json:
               examples:
@@ -3765,7 +3771,7 @@ paths:
                     sum_values: 372000000000
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.BaseCsvModel'
+                  $ref: "#/components/schemas/Models.BaseCsvModel"
                 type: array
             text/json:
               examples:
@@ -3793,7 +3799,7 @@ paths:
                     sum_values: 372000000000
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.BaseCsvModel'
+                  $ref: "#/components/schemas/Models.BaseCsvModel"
                 type: array
             application/x-msgpack:
               examples:
@@ -3821,7 +3827,7 @@ paths:
                     sum_values: 372000000000
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.BaseCsvModel'
+                  $ref: "#/components/schemas/Models.BaseCsvModel"
                 type: array
           description: successful operation
         "400":
@@ -3934,7 +3940,7 @@ paths:
                     sum_values: 620000000000
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.BaseCsvModel'
+                  $ref: "#/components/schemas/Models.BaseCsvModel"
                 type: array
             application/json:
               examples:
@@ -3962,7 +3968,7 @@ paths:
                     sum_values: 620000000000
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.BaseCsvModel'
+                  $ref: "#/components/schemas/Models.BaseCsvModel"
                 type: array
             text/json:
               examples:
@@ -3990,7 +3996,7 @@ paths:
                     sum_values: 620000000000
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.BaseCsvModel'
+                  $ref: "#/components/schemas/Models.BaseCsvModel"
                 type: array
             application/x-msgpack:
               examples:
@@ -4018,7 +4024,7 @@ paths:
                     sum_values: 620000000000
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.BaseCsvModel'
+                  $ref: "#/components/schemas/Models.BaseCsvModel"
                 type: array
           description: successful operation
         "400":
@@ -4061,7 +4067,7 @@ paths:
                     description: Total minted USD stablecoins
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
             application/json:
               examples:
@@ -4075,7 +4081,7 @@ paths:
                     description: Total minted USD stablecoins
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
             text/json:
               examples:
@@ -4089,7 +4095,7 @@ paths:
                     description: Total minted USD stablecoins
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
             application/x-msgpack:
               examples:
@@ -4103,7 +4109,7 @@ paths:
                     description: Total minted USD stablecoins
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
           description: successful operation
       summary: Listing of metrics available for specific asset
@@ -4142,7 +4148,7 @@ paths:
                     description: Total circulating USD stablecoins
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
             application/json:
               examples:
@@ -4156,7 +4162,7 @@ paths:
                     description: Total circulating USD stablecoins
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
             text/json:
               examples:
@@ -4170,7 +4176,7 @@ paths:
                     description: Total circulating USD stablecoins
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
             application/x-msgpack:
               examples:
@@ -4184,7 +4190,7 @@ paths:
                     description: Total circulating USD stablecoins
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.MetricInfo'
+                  $ref: "#/components/schemas/v1.MetricInfo"
                 type: array
           description: successful operation
       summary: Listing of metrics available for specific chain
@@ -4256,7 +4262,7 @@ paths:
                           taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/Options.OptionExchangeGroup'
+                  $ref: "#/components/schemas/Options.OptionExchangeGroup"
                 type: array
             application/json:
               examples:
@@ -4300,7 +4306,7 @@ paths:
                           taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/Options.OptionExchangeGroup'
+                  $ref: "#/components/schemas/Options.OptionExchangeGroup"
                 type: array
             text/json:
               examples:
@@ -4344,7 +4350,7 @@ paths:
                           taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/Options.OptionExchangeGroup'
+                  $ref: "#/components/schemas/Options.OptionExchangeGroup"
                 type: array
             application/x-msgpack:
               examples:
@@ -4388,7 +4394,7 @@ paths:
                           taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/Options.OptionExchangeGroup'
+                  $ref: "#/components/schemas/Options.OptionExchangeGroup"
                 type: array
           description: successful operation
       summary: Current data by Exchange
@@ -4426,16 +4432,16 @@ paths:
           content:
             text/plain:
               schema:
-                $ref: '#/components/schemas/v1.OrderBookDepth'
+                $ref: "#/components/schemas/v1.OrderBookDepth"
             application/json:
               schema:
-                $ref: '#/components/schemas/v1.OrderBookDepth'
+                $ref: "#/components/schemas/v1.OrderBookDepth"
             text/json:
               schema:
-                $ref: '#/components/schemas/v1.OrderBookDepth'
+                $ref: "#/components/schemas/v1.OrderBookDepth"
             application/x-msgpack:
               schema:
-                $ref: '#/components/schemas/v1.OrderBookDepth'
+                $ref: "#/components/schemas/v1.OrderBookDepth"
           description: successful operation
       summary: Current depth of the order book
       tags:
@@ -4534,7 +4540,7 @@ paths:
                       size: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.OrderBook'
+                  $ref: "#/components/schemas/v1.OrderBook"
                 type: array
             application/json:
               examples:
@@ -4555,7 +4561,7 @@ paths:
                       size: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.OrderBook'
+                  $ref: "#/components/schemas/v1.OrderBook"
                 type: array
             text/json:
               examples:
@@ -4576,7 +4582,7 @@ paths:
                       size: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.OrderBook'
+                  $ref: "#/components/schemas/v1.OrderBook"
                 type: array
             application/x-msgpack:
               examples:
@@ -4597,7 +4603,7 @@ paths:
                       size: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.OrderBook'
+                  $ref: "#/components/schemas/v1.OrderBook"
                 type: array
           description: successful operation
       summary: Historical data
@@ -4654,7 +4660,7 @@ paths:
                       price: 272.83
                       size: 0.64185083
               schema:
-                $ref: '#/components/schemas/v1.OrderBookBase'
+                $ref: "#/components/schemas/v1.OrderBookBase"
             application/json:
               examples:
                 Example response:
@@ -4677,7 +4683,7 @@ paths:
                       price: 272.83
                       size: 0.64185083
               schema:
-                $ref: '#/components/schemas/v1.OrderBookBase'
+                $ref: "#/components/schemas/v1.OrderBookBase"
             text/json:
               examples:
                 Example response:
@@ -4700,7 +4706,7 @@ paths:
                       price: 272.83
                       size: 0.64185083
               schema:
-                $ref: '#/components/schemas/v1.OrderBookBase'
+                $ref: "#/components/schemas/v1.OrderBookBase"
             application/x-msgpack:
               examples:
                 Example response:
@@ -4723,7 +4729,7 @@ paths:
                       price: 272.83
                       size: 0.64185083
               schema:
-                $ref: '#/components/schemas/v1.OrderBookBase'
+                $ref: "#/components/schemas/v1.OrderBookBase"
           description: successful operation
       summary: Get current order book
       tags:
@@ -4793,7 +4799,7 @@ paths:
                       size: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.OrderBook'
+                  $ref: "#/components/schemas/v1.OrderBook"
                 type: array
             application/json:
               examples:
@@ -4814,7 +4820,7 @@ paths:
                       size: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.OrderBook'
+                  $ref: "#/components/schemas/v1.OrderBook"
                 type: array
             text/json:
               examples:
@@ -4835,7 +4841,7 @@ paths:
                       size: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.OrderBook'
+                  $ref: "#/components/schemas/v1.OrderBook"
                 type: array
             application/x-msgpack:
               examples:
@@ -4856,7 +4862,7 @@ paths:
                       size: 5
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.OrderBook'
+                  $ref: "#/components/schemas/v1.OrderBook"
                 type: array
           description: successful operation
       summary: Latest data
@@ -4894,22 +4900,22 @@ paths:
             text/plain:
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.OrderBookBase'
+                  $ref: "#/components/schemas/v1.OrderBookBase"
                 type: array
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.OrderBookBase'
+                  $ref: "#/components/schemas/v1.OrderBookBase"
                 type: array
             text/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.OrderBookBase'
+                  $ref: "#/components/schemas/v1.OrderBookBase"
                 type: array
             application/x-msgpack:
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.OrderBookBase'
+                  $ref: "#/components/schemas/v1.OrderBookBase"
                 type: array
           description: successful operation
       summary: Current order books
@@ -4966,7 +4972,7 @@ paths:
                       price: 272.83
                       size: 0.64185083
               schema:
-                $ref: '#/components/schemas/v1.OrderBookBase'
+                $ref: "#/components/schemas/v1.OrderBookBase"
             application/json:
               examples:
                 Example response:
@@ -4989,7 +4995,7 @@ paths:
                       price: 272.83
                       size: 0.64185083
               schema:
-                $ref: '#/components/schemas/v1.OrderBookBase'
+                $ref: "#/components/schemas/v1.OrderBookBase"
             text/json:
               examples:
                 Example response:
@@ -5012,7 +5018,7 @@ paths:
                       price: 272.83
                       size: 0.64185083
               schema:
-                $ref: '#/components/schemas/v1.OrderBookBase'
+                $ref: "#/components/schemas/v1.OrderBookBase"
             application/x-msgpack:
               examples:
                 Example response:
@@ -5035,7 +5041,7 @@ paths:
                       price: 272.83
                       size: 0.64185083
               schema:
-                $ref: '#/components/schemas/v1.OrderBookBase'
+                $ref: "#/components/schemas/v1.OrderBookBase"
           description: successful operation
       summary: Current order book by symbol_id
       tags:
@@ -5124,7 +5130,7 @@ paths:
                     bid_size: 124
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Quote'
+                  $ref: "#/components/schemas/v1.Quote"
                 type: array
             application/json:
               examples:
@@ -5146,7 +5152,7 @@ paths:
                     bid_size: 124
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Quote'
+                  $ref: "#/components/schemas/v1.Quote"
                 type: array
             text/json:
               examples:
@@ -5168,7 +5174,7 @@ paths:
                     bid_size: 124
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Quote'
+                  $ref: "#/components/schemas/v1.Quote"
                 type: array
             application/x-msgpack:
               examples:
@@ -5190,7 +5196,7 @@ paths:
                     bid_size: 124
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Quote'
+                  $ref: "#/components/schemas/v1.Quote"
                 type: array
           description: successful operation
       summary: Historical data
@@ -5254,7 +5260,7 @@ paths:
                       taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.QuoteTrade'
+                  $ref: "#/components/schemas/v1.QuoteTrade"
                 type: array
             application/json:
               examples:
@@ -5290,7 +5296,7 @@ paths:
                       taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.QuoteTrade'
+                  $ref: "#/components/schemas/v1.QuoteTrade"
                 type: array
             text/json:
               examples:
@@ -5326,7 +5332,7 @@ paths:
                       taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.QuoteTrade'
+                  $ref: "#/components/schemas/v1.QuoteTrade"
                 type: array
             application/x-msgpack:
               examples:
@@ -5362,7 +5368,7 @@ paths:
                       taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.QuoteTrade'
+                  $ref: "#/components/schemas/v1.QuoteTrade"
                 type: array
           description: successful operation
       summary: Current data
@@ -5420,7 +5426,7 @@ paths:
                       size: 0.05
                       taker_side: SELL
               schema:
-                $ref: '#/components/schemas/v1.QuoteTrade'
+                $ref: "#/components/schemas/v1.QuoteTrade"
             application/json:
               examples:
                 Example response:
@@ -5454,7 +5460,7 @@ paths:
                       size: 0.05
                       taker_side: SELL
               schema:
-                $ref: '#/components/schemas/v1.QuoteTrade'
+                $ref: "#/components/schemas/v1.QuoteTrade"
             text/json:
               examples:
                 Example response:
@@ -5488,7 +5494,7 @@ paths:
                       size: 0.05
                       taker_side: SELL
               schema:
-                $ref: '#/components/schemas/v1.QuoteTrade'
+                $ref: "#/components/schemas/v1.QuoteTrade"
             application/x-msgpack:
               examples:
                 Example response:
@@ -5522,7 +5528,7 @@ paths:
                       size: 0.05
                       taker_side: SELL
               schema:
-                $ref: '#/components/schemas/v1.QuoteTrade'
+                $ref: "#/components/schemas/v1.QuoteTrade"
           description: successful operation
       summary: Current quotes for a specific symbol
       tags:
@@ -5581,7 +5587,7 @@ paths:
                     bid_size: 124
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Quote'
+                  $ref: "#/components/schemas/v1.Quote"
                 type: array
             application/json:
               examples:
@@ -5603,7 +5609,7 @@ paths:
                     bid_size: 124
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Quote'
+                  $ref: "#/components/schemas/v1.Quote"
                 type: array
             text/json:
               examples:
@@ -5625,7 +5631,7 @@ paths:
                     bid_size: 124
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Quote'
+                  $ref: "#/components/schemas/v1.Quote"
                 type: array
             application/x-msgpack:
               examples:
@@ -5647,7 +5653,7 @@ paths:
                     bid_size: 124
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Quote'
+                  $ref: "#/components/schemas/v1.Quote"
                 type: array
           description: successful operation
       summary: Latest data
@@ -5705,7 +5711,7 @@ paths:
                     bid_size: 124
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Quote'
+                  $ref: "#/components/schemas/v1.Quote"
                 type: array
             application/json:
               examples:
@@ -5727,7 +5733,7 @@ paths:
                     bid_size: 124
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Quote'
+                  $ref: "#/components/schemas/v1.Quote"
                 type: array
             text/json:
               examples:
@@ -5749,7 +5755,7 @@ paths:
                     bid_size: 124
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Quote'
+                  $ref: "#/components/schemas/v1.Quote"
                 type: array
             application/x-msgpack:
               examples:
@@ -5771,7 +5777,7 @@ paths:
                     bid_size: 124
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Quote'
+                  $ref: "#/components/schemas/v1.Quote"
                 type: array
           description: successful operation
       summary: Latest quote updates for a specific symbol
@@ -5782,24 +5788,67 @@ paths:
       - application/x-msgpack
       - text/json
       - text/plain
-  /v1/symbols:
+  /v1/symbols/map/{exchange_id}:
     get:
-      description: "Retrieves all symbols with optional filtering.\n            \n\
-        :::info\n\"price_precision\" and \"size_precision\" are data precisions and\
-        \ are not always the same precisions used for trading eg. for the \"BINANCE\"\
-        \ exchanges.\n:::\n            \n:::info\nYou should not assume that the market\
-        \ data will be always within the resolution provided by the \"price_precision\"\
-        \ and \"size_precision\". The fact that the precision values can be derived\
-        \ from a posterior implies the fact that this data could be delayed, also\
-        \ it can be changed by the data source without notice and we will immediately\
-        \ deliver data with the new precision while could not update the precision\
-        \ values in this endpoint immediately.\n:::\n            \n### Symbol identifier\n\
-        \            \nOur symbol identifier is created using a pattern that depends\
-        \ on symbol type.\n            \nType | `symbol_id` pattern\n--------- | ---------\n\
-        SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}`\nFUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD\
-        \ of future_delivery_time}`\nOPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD\
-        \ of option_expiration_time}_{option_strike_price}_{option_type_is_call as\
-        \ C/P}`\nPERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}`\n\
+      parameters:
+      - description: The ID of the exchange (from the Metadata -> Exchanges)
+        explode: false
+        in: path
+        name: exchange_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: "#/components/schemas/v1.SymbolMapping"
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/v1.SymbolMapping"
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/v1.SymbolMapping"
+                type: array
+            application/x-msgpack:
+              schema:
+                items:
+                  $ref: "#/components/schemas/v1.SymbolMapping"
+                type: array
+          description: successful operation
+      summary: List active symbol mapping for the exchange
+      tags:
+      - Metadata
+      x-accepts:
+      - application/json
+      - application/x-msgpack
+      - text/json
+      - text/plain
+  /v1/symbols/{exchange_id}/active:
+    get:
+      description: "Retrieves all currently active (listed) symbols, with optional\
+        \ filtering.\n            \n:::info\n\"price_precision\" and \"size_precision\"\
+        \ are data precisions and are not always the same precisions used for trading\
+        \ eg. for the \"BINANCE\" exchanges.\n:::\n            \n:::info\nYou should\
+        \ not assume that the market data will be always within the resolution provided\
+        \ by the \"price_precision\" and \"size_precision\". The fact that the precision\
+        \ values can be derived from a posterior implies the fact that this data could\
+        \ be delayed, also it can be changed by the data source without notice and\
+        \ we will immediately deliver data with the new precision while could not\
+        \ update the precision values in this endpoint immediately.\n:::\n       \
+        \     \n### Symbol identifier\n            \nOur symbol identifier is created\
+        \ using a pattern that depends on symbol type.\n            \nType | `symbol_id`\
+        \ pattern\n--------- | ---------\nSPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}`\n\
+        FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}`\n\
+        OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call\
+        \ as C/P}`\nPERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}`\n\
         INDEX | `{exchange_id}_IDX_{index_id}`\nCREDIT | `{exchange_id}_CRE_{asset_id_base}`\n\
         CONTACT  | `{exchange_id}_COT_{contract_id}`\n            \n:::info\nIn the\
         \ unlikely event when the \"symbol_id\" for more than one market is the same.\
@@ -5848,6 +5897,14 @@ paths:
         \ | Identifier of the asset used to denominate the contract unit\ncontract_id\
         \ | Identifier of contract by the exchange"
       parameters:
+      - description: The ID of the exchange.
+        explode: false
+        in: path
+        name: exchange_id
+        required: true
+        schema:
+          type: string
+        style: simple
       - description: "Comma or semicolon delimited parts of symbol identifier used\
           \ to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)"
         explode: true
@@ -5857,14 +5914,6 @@ paths:
         schema:
           type: string
         style: form
-      - description: The filter for exchange ID.
-        explode: true
-        in: query
-        name: filter_exchange_id
-        required: false
-        schema:
-          type: string
-        style: form
       - description: The filter for asset ID.
         explode: true
         in: query
@@ -5934,7 +5983,7 @@ paths:
                     size_precision: 1.0E-8
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Symbol'
+                  $ref: "#/components/schemas/v1.Symbol"
                 type: array
             application/json:
               examples:
@@ -5994,7 +6043,7 @@ paths:
                     size_precision: 1.0E-8
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Symbol'
+                  $ref: "#/components/schemas/v1.Symbol"
                 type: array
             text/json:
               examples:
@@ -6054,7 +6103,7 @@ paths:
                     size_precision: 1.0E-8
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Symbol'
+                  $ref: "#/components/schemas/v1.Symbol"
                 type: array
             application/x-msgpack:
               examples:
@@ -6114,10 +6163,10 @@ paths:
                     size_precision: 1.0E-8
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Symbol'
+                  $ref: "#/components/schemas/v1.Symbol"
                 type: array
           description: successful operation
-      summary: List all symbols
+      summary: List all active symbols
       tags:
       - Metadata
       x-accepts:
@@ -6125,10 +6174,13 @@ paths:
       - application/x-msgpack
       - text/json
       - text/plain
-  /v1/symbols/map/{exchange_id}:
+  /v1/symbols/{exchange_id}/history:
     get:
+      description: |-
+        This endpoint provides access to symbols that are no longer actively traded or listed on a given exchange.
+        The data is provided with pagination support.
       parameters:
-      - description: The ID of the exchange (from the Metadata -> Exchanges)
+      - description: The ID of the exchange.
         explode: false
         in: path
         name: exchange_id
@@ -6136,64 +6188,25 @@ paths:
         schema:
           type: string
         style: simple
-      responses:
-        "200":
-          content:
-            text/plain:
-              schema:
-                items:
-                  $ref: '#/components/schemas/v1.SymbolMapping'
-                type: array
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/v1.SymbolMapping'
-                type: array
-            text/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/v1.SymbolMapping'
-                type: array
-            application/x-msgpack:
-              schema:
-                items:
-                  $ref: '#/components/schemas/v1.SymbolMapping'
-                type: array
-          description: successful operation
-      summary: List symbol mapping for the exchange
-      tags:
-      - Metadata
-      x-accepts:
-      - application/json
-      - application/x-msgpack
-      - text/json
-      - text/plain
-  /v1/symbols/{exchange_id}:
-    get:
-      parameters:
-      - description: The ID of the exchange (from the Metadata -> Exchanges)
-        explode: false
-        in: path
-        name: exchange_id
-        required: true
-        schema:
-          type: string
-        style: simple
-      - description: The filter for symbol ID.
+      - description: The page number for pagination (starts from 1).
         explode: true
         in: query
-        name: filter_symbol_id
+        name: page
         required: false
         schema:
-          type: string
+          default: 1
+          format: int32
+          type: integer
         style: form
-      - description: The filter for asset ID.
+      - description: Number of records to return per page.
         explode: true
         in: query
-        name: filter_asset_id
+        name: limit
         required: false
         schema:
-          type: string
+          default: 100
+          format: int32
+          type: integer
         style: form
       responses:
         "200":
@@ -6256,7 +6269,7 @@ paths:
                     size_precision: 1.0E-8
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Symbol'
+                  $ref: "#/components/schemas/v1.Symbol"
                 type: array
             application/json:
               examples:
@@ -6316,7 +6329,7 @@ paths:
                     size_precision: 1.0E-8
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Symbol'
+                  $ref: "#/components/schemas/v1.Symbol"
                 type: array
             text/json:
               examples:
@@ -6376,7 +6389,7 @@ paths:
                     size_precision: 1.0E-8
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Symbol'
+                  $ref: "#/components/schemas/v1.Symbol"
                 type: array
             application/x-msgpack:
               examples:
@@ -6436,10 +6449,10 @@ paths:
                     size_precision: 1.0E-8
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Symbol'
+                  $ref: "#/components/schemas/v1.Symbol"
                 type: array
           description: successful operation
-      summary: List of symbols for the exchange
+      summary: List all historical symbols for an exchange.
       tags:
       - Metadata
       x-accepts:
@@ -6485,7 +6498,7 @@ paths:
                     display_name: 2 Years
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesPeriod'
+                  $ref: "#/components/schemas/v1.TimeseriesPeriod"
                 type: array
             application/json:
               examples:
@@ -6511,7 +6524,7 @@ paths:
                     display_name: 2 Years
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesPeriod'
+                  $ref: "#/components/schemas/v1.TimeseriesPeriod"
                 type: array
             text/json:
               examples:
@@ -6537,7 +6550,7 @@ paths:
                     display_name: 2 Years
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesPeriod'
+                  $ref: "#/components/schemas/v1.TimeseriesPeriod"
                 type: array
             application/x-msgpack:
               examples:
@@ -6563,7 +6576,7 @@ paths:
                     display_name: 2 Years
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesPeriod'
+                  $ref: "#/components/schemas/v1.TimeseriesPeriod"
                 type: array
           description: successful operation
       summary: List all periods
@@ -6628,16 +6641,6 @@ paths:
           format: int32
           type: integer
         style: form
-      - description: "Include items with no activity? (default value is `false`, possible\
-          \ values are `true` or `false`)"
-        explode: true
-        in: query
-        name: include_empty_items
-        required: false
-        schema:
-          default: false
-          type: boolean
-        style: form
       responses:
         "200":
           content:
@@ -6667,7 +6670,7 @@ paths:
                     trades_count: 7871
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesItem'
+                  $ref: "#/components/schemas/v1.TimeseriesItem"
                 type: array
             application/json:
               examples:
@@ -6695,7 +6698,7 @@ paths:
                     trades_count: 7871
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesItem'
+                  $ref: "#/components/schemas/v1.TimeseriesItem"
                 type: array
             text/json:
               examples:
@@ -6723,7 +6726,7 @@ paths:
                     trades_count: 7871
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesItem'
+                  $ref: "#/components/schemas/v1.TimeseriesItem"
                 type: array
             application/x-msgpack:
               examples:
@@ -6751,7 +6754,7 @@ paths:
                     trades_count: 7871
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesItem'
+                  $ref: "#/components/schemas/v1.TimeseriesItem"
                 type: array
           description: successful operation
       summary: Historical data
@@ -6810,22 +6813,22 @@ paths:
             text/plain:
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.ExchangeTimeseriesItem'
+                  $ref: "#/components/schemas/Models.ExchangeTimeseriesItem"
                 type: array
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.ExchangeTimeseriesItem'
+                  $ref: "#/components/schemas/Models.ExchangeTimeseriesItem"
                 type: array
             text/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.ExchangeTimeseriesItem'
+                  $ref: "#/components/schemas/Models.ExchangeTimeseriesItem"
                 type: array
             application/x-msgpack:
               schema:
                 items:
-                  $ref: '#/components/schemas/Models.ExchangeTimeseriesItem'
+                  $ref: "#/components/schemas/Models.ExchangeTimeseriesItem"
                 type: array
           description: successful operation
       summary: Historical data by exchange
@@ -6876,16 +6879,6 @@ paths:
           format: int32
           type: integer
         style: form
-      - description: "Include items with no activity? (default value is `false`, possible\
-          \ values are `true` or `false`)"
-        explode: true
-        in: query
-        name: include_empty_items
-        required: false
-        schema:
-          default: false
-          type: boolean
-        style: form
       responses:
         "200":
           content:
@@ -6915,7 +6908,7 @@ paths:
                     trades_count: 33
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesItem'
+                  $ref: "#/components/schemas/v1.TimeseriesItem"
                 type: array
             application/json:
               examples:
@@ -6943,7 +6936,7 @@ paths:
                     trades_count: 33
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesItem'
+                  $ref: "#/components/schemas/v1.TimeseriesItem"
                 type: array
             text/json:
               examples:
@@ -6971,7 +6964,7 @@ paths:
                     trades_count: 33
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesItem'
+                  $ref: "#/components/schemas/v1.TimeseriesItem"
                 type: array
             application/x-msgpack:
               examples:
@@ -6999,7 +6992,7 @@ paths:
                     trades_count: 33
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesItem'
+                  $ref: "#/components/schemas/v1.TimeseriesItem"
                 type: array
           description: successful operation
       summary: Latest data
@@ -7100,7 +7093,7 @@ paths:
                     taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Trade'
+                  $ref: "#/components/schemas/v1.Trade"
                 type: array
             application/json:
               examples:
@@ -7122,7 +7115,7 @@ paths:
                     taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Trade'
+                  $ref: "#/components/schemas/v1.Trade"
                 type: array
             text/json:
               examples:
@@ -7144,7 +7137,7 @@ paths:
                     taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Trade'
+                  $ref: "#/components/schemas/v1.Trade"
                 type: array
             application/x-msgpack:
               examples:
@@ -7166,7 +7159,7 @@ paths:
                     taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Trade'
+                  $ref: "#/components/schemas/v1.Trade"
                 type: array
           description: successful operation
       summary: Historical data
@@ -7237,7 +7230,7 @@ paths:
                     taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Trade'
+                  $ref: "#/components/schemas/v1.Trade"
                 type: array
             application/json:
               examples:
@@ -7259,7 +7252,7 @@ paths:
                     taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Trade'
+                  $ref: "#/components/schemas/v1.Trade"
                 type: array
             text/json:
               examples:
@@ -7281,7 +7274,7 @@ paths:
                     taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Trade'
+                  $ref: "#/components/schemas/v1.Trade"
                 type: array
             application/x-msgpack:
               examples:
@@ -7303,7 +7296,7 @@ paths:
                     taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Trade'
+                  $ref: "#/components/schemas/v1.Trade"
                 type: array
           description: successful operation
       summary: Latest data by symbol_id
@@ -7374,7 +7367,7 @@ paths:
                     taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Trade'
+                  $ref: "#/components/schemas/v1.Trade"
                 type: array
             application/json:
               examples:
@@ -7396,7 +7389,7 @@ paths:
                     taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Trade'
+                  $ref: "#/components/schemas/v1.Trade"
                 type: array
             text/json:
               examples:
@@ -7418,7 +7411,7 @@ paths:
                     taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Trade'
+                  $ref: "#/components/schemas/v1.Trade"
                 type: array
             application/x-msgpack:
               examples:
@@ -7440,7 +7433,7 @@ paths:
                     taker_side: SELL
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Trade'
+                  $ref: "#/components/schemas/v1.Trade"
                 type: array
           description: successful operation
       summary: Latest data
@@ -7512,11 +7505,14 @@ components:
           nullable: true
           type: number
         volume_traded:
-          description: The total volume traded during the time period.
+          description: The total volume traded during the time period. This could
+            be zero if there was not transactions and there was only orderbook activity.
           format: double
           type: number
         trades_count:
-          description: The number of trades executed during the time period.
+          description: The number of trades executed during the time period. This
+            could be zero if there was not transactions and there was only orderbook
+            activity.
           format: int64
           type: integer
         symbol_id_exchange:
@@ -7618,7 +7614,7 @@ components:
         strikes:
           description: The list of strikes available.
           items:
-            $ref: '#/components/schemas/Options.Strike'
+            $ref: "#/components/schemas/Options.Strike"
           nullable: true
           type: array
       type: object
@@ -7663,9 +7659,9 @@ components:
           format: double
           type: number
         call:
-          $ref: '#/components/schemas/v1.QuoteTrade'
+          $ref: "#/components/schemas/v1.QuoteTrade"
         put:
-          $ref: '#/components/schemas/v1.QuoteTrade'
+          $ref: "#/components/schemas/v1.QuoteTrade"
       type: object
     v1.Asset:
       additionalProperties: false
@@ -7789,7 +7785,7 @@ components:
         chain_addresses:
           description: ""
           items:
-            $ref: '#/components/schemas/v1.ChainNetworkAddress'
+            $ref: "#/components/schemas/v1.ChainNetworkAddress"
           nullable: true
           type: array
         data_start:
@@ -7955,7 +7951,7 @@ components:
         icons:
           description: Gets or sets the list of icons for the exchange.
           items:
-            $ref: '#/components/schemas/v1.Icon'
+            $ref: "#/components/schemas/v1.Icon"
           nullable: true
           readOnly: true
           type: array
@@ -8014,7 +8010,7 @@ components:
         rates:
           description: Gets or sets the list of exchange rates.
           items:
-            $ref: '#/components/schemas/v1.ExchangeRatesRate'
+            $ref: "#/components/schemas/v1.ExchangeRatesRate"
           nullable: true
           type: array
       type: object
@@ -8507,7 +8503,7 @@ components:
           nullable: true
           type: number
         last_trade:
-          $ref: '#/components/schemas/v1.LastTrade'
+          $ref: "#/components/schemas/v1.LastTrade"
       type: object
     v1.Symbol:
       additionalProperties: false
@@ -8873,11 +8869,14 @@ components:
           nullable: true
           type: number
         volume_traded:
-          description: The total volume traded during the time period.
+          description: The total volume traded during the time period. This could
+            be zero if there was not transactions and there was only orderbook activity.
           format: double
           type: number
         trades_count:
-          description: The number of trades executed during the time period.
+          description: The number of trades executed during the time period. This
+            could be zero if there was not transactions and there was only orderbook
+            activity.
           format: int64
           type: integer
       type: object

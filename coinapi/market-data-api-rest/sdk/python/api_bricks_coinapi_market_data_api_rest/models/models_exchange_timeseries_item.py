@@ -36,8 +36,8 @@ class ModelsExchangeTimeseriesItem(BaseModel):
     price_high: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The highest price during the time period.")
     price_low: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The lowest price during the time period.")
     price_close: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The closing price.")
-    volume_traded: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The total volume traded during the time period.")
-    trades_count: Optional[StrictInt] = Field(default=None, description="The number of trades executed during the time period.")
+    volume_traded: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.")
+    trades_count: Optional[StrictInt] = Field(default=None, description="The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.")
     symbol_id_exchange: Optional[StrictStr] = None
     symbol_id_coinapi: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["time_period_start", "time_period_end", "time_open", "time_close", "price_open", "price_high", "price_low", "price_close", "volume_traded", "trades_count", "symbol_id_exchange", "symbol_id_coinapi"]

@@ -119,7 +119,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             application/json:
               examples:
@@ -170,7 +170,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             text/json:
               examples:
@@ -221,7 +221,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
           description: successful operation
       summary: List all assets
@@ -294,7 +294,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             application/json:
               examples:
@@ -345,7 +345,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             text/json:
               examples:
@@ -396,7 +396,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
           description: successful operation
       summary: List all assets by asset ID
@@ -434,7 +434,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
             application/json:
               examples:
@@ -448,7 +448,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
             text/json:
               examples:
@@ -462,7 +462,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
           description: successful operation
       summary: List all asset icons
@@ -516,32 +516,32 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-06-18T06:14:10.1105302Z
+                    time: 2025-08-28T06:07:14.5823097Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRate'
+                $ref: "#/components/schemas/v1.ExchangeRate"
             application/json:
               examples:
                 Example response:
                   value:
-                    time: 2025-06-18T06:14:10.1105302Z
+                    time: 2025-08-28T06:07:14.5823097Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRate'
+                $ref: "#/components/schemas/v1.ExchangeRate"
             text/json:
               examples:
                 Example response:
                   value:
-                    time: 2025-06-18T06:14:10.1105302Z
+                    time: 2025-08-28T06:07:14.5823097Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRate'
+                $ref: "#/components/schemas/v1.ExchangeRate"
           description: successful operation
       summary: Get specific rate
       tags:
@@ -618,7 +618,7 @@ paths:
                       asset_id_quote: GBP
                       rate: 2509.602420379958
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRates'
+                $ref: "#/components/schemas/v1.ExchangeRates"
             application/json:
               examples:
                 Example response:
@@ -638,7 +638,7 @@ paths:
                       asset_id_quote: GBP
                       rate: 2509.602420379958
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRates'
+                $ref: "#/components/schemas/v1.ExchangeRates"
             text/json:
               examples:
                 Example response:
@@ -658,7 +658,7 @@ paths:
                       asset_id_quote: GBP
                       rate: 2509.602420379958
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRates'
+                $ref: "#/components/schemas/v1.ExchangeRates"
           description: successful operation
       summary: Get all current rates
       tags:
@@ -704,7 +704,7 @@ paths:
                     display_name: 10 Days
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesPeriod'
+                  $ref: "#/components/schemas/v1.TimeseriesPeriod"
                 type: array
             application/json:
               examples:
@@ -730,7 +730,7 @@ paths:
                     display_name: 10 Days
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesPeriod'
+                  $ref: "#/components/schemas/v1.TimeseriesPeriod"
                 type: array
             text/json:
               examples:
@@ -756,7 +756,7 @@ paths:
                     display_name: 10 Days
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.TimeseriesPeriod'
+                  $ref: "#/components/schemas/v1.TimeseriesPeriod"
                 type: array
           description: successful operation
       summary: Timeseries periods
@@ -859,7 +859,7 @@ paths:
                     rate_close: 430.6522189770523
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ExchangeRatesTimeseriesItem'
+                  $ref: "#/components/schemas/v1.ExchangeRatesTimeseriesItem"
                 type: array
             application/json:
               examples:
@@ -891,7 +891,7 @@ paths:
                     rate_close: 430.6522189770523
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ExchangeRatesTimeseriesItem'
+                  $ref: "#/components/schemas/v1.ExchangeRatesTimeseriesItem"
                 type: array
             text/json:
               examples:
@@ -923,7 +923,7 @@ paths:
                     rate_close: 430.6522189770523
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.ExchangeRatesTimeseriesItem'
+                  $ref: "#/components/schemas/v1.ExchangeRatesTimeseriesItem"
                 type: array
           description: successful operation
       summary: Timeseries data
@@ -1057,7 +1057,7 @@ components:
         chain_addresses:
           description: ""
           items:
-            $ref: '#/components/schemas/v1.ChainNetworkAddress'
+            $ref: "#/components/schemas/v1.ChainNetworkAddress"
           nullable: true
           type: array
         data_start:
@@ -1136,7 +1136,7 @@ components:
         rates:
           description: Gets or sets the list of exchange rates.
           items:
-            $ref: '#/components/schemas/v1.ExchangeRatesRate'
+            $ref: "#/components/schemas/v1.ExchangeRatesRate"
           nullable: true
           type: array
       type: object

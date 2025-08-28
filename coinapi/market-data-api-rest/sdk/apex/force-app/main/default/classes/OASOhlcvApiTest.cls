@@ -104,8 +104,7 @@ private class OASOhlcvApiTest {
             'periodId' => 'null',
             'timeStart' => 'null',
             'timeEnd' => 'null',
-            'r_limit' => '',
-            'includeEmptyItems' => ''
+            'r_limit' => ''
         };
 
         OASClient client;
@@ -151,8 +150,7 @@ private class OASOhlcvApiTest {
         Map<String, Object> params = new Map<String, Object>{
             'symbolId' => 'null',
             'periodId' => 'null',
-            'r_limit' => '',
-            'includeEmptyItems' => ''
+            'r_limit' => ''
         };
 
         OASClient client;

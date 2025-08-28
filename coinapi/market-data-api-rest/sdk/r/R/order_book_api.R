@@ -169,7 +169,13 @@ OrderBookApi <- R6::R6Class(
         stop("Missing required parameter `symbol_id`.")
       }
 
+      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
+        stop("Invalid value for `symbol_id` when calling OrderBookApi$V1OrderbooksSymbolIdCurrentGet, `symbol_id` is not nullable")
+      }
 
+      if (!missing(`limit_levels`) && is.null(`limit_levels`)) {
+        stop("Invalid value for `limit_levels` when calling OrderBookApi$V1OrderbooksSymbolIdCurrentGet, `limit_levels` is not nullable")
+      }
 
       query_params[["limit_levels"]] <- `limit_levels`
 
@@ -280,7 +286,13 @@ OrderBookApi <- R6::R6Class(
         stop("Missing required parameter `symbol_id`.")
       }
 
+      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
+        stop("Invalid value for `symbol_id` when calling OrderBookApi$V1OrderbooksSymbolIdDepthCurrentGet, `symbol_id` is not nullable")
+      }
 
+      if (!missing(`limit_levels`) && is.null(`limit_levels`)) {
+        stop("Invalid value for `limit_levels` when calling OrderBookApi$V1OrderbooksSymbolIdDepthCurrentGet, `limit_levels` is not nullable")
+      }
 
       query_params[["limit_levels"]] <- `limit_levels`
 
@@ -399,11 +411,29 @@ OrderBookApi <- R6::R6Class(
         stop("Missing required parameter `symbol_id`.")
       }
 
+      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
+        stop("Invalid value for `symbol_id` when calling OrderBookApi$V1OrderbooksSymbolIdHistoryGet, `symbol_id` is not nullable")
+      }
 
+      if (!missing(`date`) && is.null(`date`)) {
+        stop("Invalid value for `date` when calling OrderBookApi$V1OrderbooksSymbolIdHistoryGet, `date` is not nullable")
+      }
 
+      if (!missing(`time_start`) && is.null(`time_start`)) {
+        stop("Invalid value for `time_start` when calling OrderBookApi$V1OrderbooksSymbolIdHistoryGet, `time_start` is not nullable")
+      }
 
+      if (!missing(`time_end`) && is.null(`time_end`)) {
+        stop("Invalid value for `time_end` when calling OrderBookApi$V1OrderbooksSymbolIdHistoryGet, `time_end` is not nullable")
+      }
 
+      if (!missing(`limit`) && is.null(`limit`)) {
+        stop("Invalid value for `limit` when calling OrderBookApi$V1OrderbooksSymbolIdHistoryGet, `limit` is not nullable")
+      }
 
+      if (!missing(`limit_levels`) && is.null(`limit_levels`)) {
+        stop("Invalid value for `limit_levels` when calling OrderBookApi$V1OrderbooksSymbolIdHistoryGet, `limit_levels` is not nullable")
+      }
 
       query_params[["date"]] <- `date`
 
@@ -524,8 +554,17 @@ OrderBookApi <- R6::R6Class(
         stop("Missing required parameter `symbol_id`.")
       }
 
+      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
+        stop("Invalid value for `symbol_id` when calling OrderBookApi$V1OrderbooksSymbolIdLatestGet, `symbol_id` is not nullable")
+      }
 
+      if (!missing(`limit`) && is.null(`limit`)) {
+        stop("Invalid value for `limit` when calling OrderBookApi$V1OrderbooksSymbolIdLatestGet, `limit` is not nullable")
+      }
 
+      if (!missing(`limit_levels`) && is.null(`limit_levels`)) {
+        stop("Invalid value for `limit_levels` when calling OrderBookApi$V1OrderbooksSymbolIdLatestGet, `limit_levels` is not nullable")
+      }
 
       query_params[["limit"]] <- `limit`
 

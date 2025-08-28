@@ -71,7 +71,7 @@ test_that("price_close", {
 
 test_that("volume_traded", {
   # tests for the property `volume_traded` (numeric)
-  # The total volume traded during the time period.
+  # The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`volume_traded`, "EXPECTED_RESULT")
@@ -79,7 +79,7 @@ test_that("volume_traded", {
 
 test_that("trades_count", {
   # tests for the property `trades_count` (integer)
-  # The number of trades executed during the time period.
+  # The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`trades_count`, "EXPECTED_RESULT")

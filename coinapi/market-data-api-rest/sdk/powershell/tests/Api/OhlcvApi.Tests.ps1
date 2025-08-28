@@ -25,7 +25,7 @@ Describe -tag 'PSOpenAPITools' -name 'OhlcvApi' {
 
     Context 'Invoke-V1OhlcvSymbolIdHistoryGet' {
         It 'Test Invoke-V1OhlcvSymbolIdHistoryGet' {
-            #$TestResult = Invoke-V1OhlcvSymbolIdHistoryGet -SymbolId "TEST_VALUE" -PeriodId "TEST_VALUE" -TimeStart "TEST_VALUE" -TimeEnd "TEST_VALUE" -Limit "TEST_VALUE" -IncludeEmptyItems "TEST_VALUE"
+            #$TestResult = Invoke-V1OhlcvSymbolIdHistoryGet -SymbolId "TEST_VALUE" -PeriodId "TEST_VALUE" -TimeStart "TEST_VALUE" -TimeEnd "TEST_VALUE" -Limit "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }
@@ -33,7 +33,7 @@ Describe -tag 'PSOpenAPITools' -name 'OhlcvApi' {
 
     Context 'Invoke-V1OhlcvSymbolIdLatestGet' {
         It 'Test Invoke-V1OhlcvSymbolIdLatestGet' {
-            #$TestResult = Invoke-V1OhlcvSymbolIdLatestGet -SymbolId "TEST_VALUE" -PeriodId "TEST_VALUE" -Limit "TEST_VALUE" -IncludeEmptyItems "TEST_VALUE"
+            #$TestResult = Invoke-V1OhlcvSymbolIdLatestGet -SymbolId "TEST_VALUE" -PeriodId "TEST_VALUE" -Limit "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }

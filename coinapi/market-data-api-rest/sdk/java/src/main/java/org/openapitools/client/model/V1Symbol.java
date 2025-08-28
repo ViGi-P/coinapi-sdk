@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a symbol data model.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T09:28:32.257027216Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T06:05:57.564598397Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class V1Symbol {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
@@ -1281,55 +1281,10 @@ public class V1Symbol {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("symbol_id");
-    openapiFields.add("exchange_id");
-    openapiFields.add("symbol_type");
-    openapiFields.add("asset_id_base");
-    openapiFields.add("asset_id_quote");
-    openapiFields.add("asset_id_unit");
-    openapiFields.add("future_contract_unit");
-    openapiFields.add("future_contract_unit_asset");
-    openapiFields.add("future_delivery_time");
-    openapiFields.add("option_type_is_call");
-    openapiFields.add("option_strike_price");
-    openapiFields.add("option_contract_unit");
-    openapiFields.add("option_exercise_style");
-    openapiFields.add("option_expiration_time");
-    openapiFields.add("contract_delivery_time");
-    openapiFields.add("contract_unit");
-    openapiFields.add("contract_unit_asset");
-    openapiFields.add("contract_id");
-    openapiFields.add("contract_display_name");
-    openapiFields.add("contract_display_description");
-    openapiFields.add("data_start");
-    openapiFields.add("data_end");
-    openapiFields.add("data_quote_start");
-    openapiFields.add("data_quote_end");
-    openapiFields.add("data_orderbook_start");
-    openapiFields.add("data_orderbook_end");
-    openapiFields.add("data_trade_start");
-    openapiFields.add("data_trade_end");
-    openapiFields.add("index_id");
-    openapiFields.add("index_display_name");
-    openapiFields.add("index_display_description");
-    openapiFields.add("volume_1hrs");
-    openapiFields.add("volume_1hrs_usd");
-    openapiFields.add("volume_1day");
-    openapiFields.add("volume_1day_usd");
-    openapiFields.add("volume_1mth");
-    openapiFields.add("volume_1mth_usd");
-    openapiFields.add("price");
-    openapiFields.add("symbol_id_exchange");
-    openapiFields.add("asset_id_base_exchange");
-    openapiFields.add("asset_id_quote_exchange");
-    openapiFields.add("price_precision");
-    openapiFields.add("size_precision");
-    openapiFields.add("raw_kvp");
-    openapiFields.add("volume_to_usd");
+    openapiFields = new HashSet<String>(Arrays.asList("symbol_id", "exchange_id", "symbol_type", "asset_id_base", "asset_id_quote", "asset_id_unit", "future_contract_unit", "future_contract_unit_asset", "future_delivery_time", "option_type_is_call", "option_strike_price", "option_contract_unit", "option_exercise_style", "option_expiration_time", "contract_delivery_time", "contract_unit", "contract_unit_asset", "contract_id", "contract_display_name", "contract_display_description", "data_start", "data_end", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "index_id", "index_display_name", "index_display_description", "volume_1hrs", "volume_1hrs_usd", "volume_1day", "volume_1day_usd", "volume_1mth", "volume_1mth_usd", "price", "symbol_id_exchange", "asset_id_base_exchange", "asset_id_quote_exchange", "price_precision", "size_precision", "raw_kvp", "volume_to_usd"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

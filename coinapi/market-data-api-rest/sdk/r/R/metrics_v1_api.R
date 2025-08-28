@@ -313,9 +313,21 @@ MetricsV1Api <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
+      if (!missing(`metric_id`) && is.null(`metric_id`)) {
+        stop("Invalid value for `metric_id` when calling MetricsV1Api$V1MetricsAssetCurrentGet, `metric_id` is not nullable")
+      }
 
+      if (!missing(`asset_id`) && is.null(`asset_id`)) {
+        stop("Invalid value for `asset_id` when calling MetricsV1Api$V1MetricsAssetCurrentGet, `asset_id` is not nullable")
+      }
 
+      if (!missing(`asset_id_external`) && is.null(`asset_id_external`)) {
+        stop("Invalid value for `asset_id_external` when calling MetricsV1Api$V1MetricsAssetCurrentGet, `asset_id_external` is not nullable")
+      }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling MetricsV1Api$V1MetricsAssetCurrentGet, `exchange_id` is not nullable")
+      }
 
       query_params[["metric_id"]] <- `metric_id`
 
@@ -446,14 +458,41 @@ MetricsV1Api <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
+      if (!missing(`metric_id`) && is.null(`metric_id`)) {
+        stop("Invalid value for `metric_id` when calling MetricsV1Api$V1MetricsAssetHistoryGet, `metric_id` is not nullable")
+      }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling MetricsV1Api$V1MetricsAssetHistoryGet, `exchange_id` is not nullable")
+      }
 
+      if (!missing(`asset_id`) && is.null(`asset_id`)) {
+        stop("Invalid value for `asset_id` when calling MetricsV1Api$V1MetricsAssetHistoryGet, `asset_id` is not nullable")
+      }
 
+      if (!missing(`asset_id_external`) && is.null(`asset_id_external`)) {
+        stop("Invalid value for `asset_id_external` when calling MetricsV1Api$V1MetricsAssetHistoryGet, `asset_id_external` is not nullable")
+      }
 
+      if (!missing(`time_start`) && is.null(`time_start`)) {
+        stop("Invalid value for `time_start` when calling MetricsV1Api$V1MetricsAssetHistoryGet, `time_start` is not nullable")
+      }
 
+      if (!missing(`time_end`) && is.null(`time_end`)) {
+        stop("Invalid value for `time_end` when calling MetricsV1Api$V1MetricsAssetHistoryGet, `time_end` is not nullable")
+      }
 
+      if (!missing(`time_format`) && is.null(`time_format`)) {
+        stop("Invalid value for `time_format` when calling MetricsV1Api$V1MetricsAssetHistoryGet, `time_format` is not nullable")
+      }
 
+      if (!missing(`period_id`) && is.null(`period_id`)) {
+        stop("Invalid value for `period_id` when calling MetricsV1Api$V1MetricsAssetHistoryGet, `period_id` is not nullable")
+      }
 
+      if (!missing(`limit`) && is.null(`limit`)) {
+        stop("Invalid value for `limit` when calling MetricsV1Api$V1MetricsAssetHistoryGet, `limit` is not nullable")
+      }
 
       query_params[["metric_id"]] <- `metric_id`
 
@@ -580,11 +619,29 @@ MetricsV1Api <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
+      if (!missing(`metric_id`) && is.null(`metric_id`)) {
+        stop("Invalid value for `metric_id` when calling MetricsV1Api$V1MetricsAssetListingGet, `metric_id` is not nullable")
+      }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling MetricsV1Api$V1MetricsAssetListingGet, `exchange_id` is not nullable")
+      }
 
+      if (!missing(`chain_id`) && is.null(`chain_id`)) {
+        stop("Invalid value for `chain_id` when calling MetricsV1Api$V1MetricsAssetListingGet, `chain_id` is not nullable")
+      }
 
+      if (!missing(`network_id`) && is.null(`network_id`)) {
+        stop("Invalid value for `network_id` when calling MetricsV1Api$V1MetricsAssetListingGet, `network_id` is not nullable")
+      }
 
+      if (!missing(`asset_id`) && is.null(`asset_id`)) {
+        stop("Invalid value for `asset_id` when calling MetricsV1Api$V1MetricsAssetListingGet, `asset_id` is not nullable")
+      }
 
+      if (!missing(`asset_id_external`) && is.null(`asset_id_external`)) {
+        stop("Invalid value for `asset_id_external` when calling MetricsV1Api$V1MetricsAssetListingGet, `asset_id_external` is not nullable")
+      }
 
       query_params[["metric_id"]] <- `metric_id`
 
@@ -701,7 +758,13 @@ MetricsV1Api <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling MetricsV1Api$V1MetricsExchangeCurrentGet, `exchange_id` is not nullable")
+      }
 
+      if (!missing(`metric_id`) && is.null(`metric_id`)) {
+        stop("Invalid value for `metric_id` when calling MetricsV1Api$V1MetricsExchangeCurrentGet, `metric_id` is not nullable")
+      }
 
       query_params[["metric_id"]] <- `metric_id`
 
@@ -824,12 +887,33 @@ MetricsV1Api <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
+      if (!missing(`metric_id`) && is.null(`metric_id`)) {
+        stop("Invalid value for `metric_id` when calling MetricsV1Api$V1MetricsExchangeHistoryGet, `metric_id` is not nullable")
+      }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling MetricsV1Api$V1MetricsExchangeHistoryGet, `exchange_id` is not nullable")
+      }
 
+      if (!missing(`time_start`) && is.null(`time_start`)) {
+        stop("Invalid value for `time_start` when calling MetricsV1Api$V1MetricsExchangeHistoryGet, `time_start` is not nullable")
+      }
 
+      if (!missing(`time_end`) && is.null(`time_end`)) {
+        stop("Invalid value for `time_end` when calling MetricsV1Api$V1MetricsExchangeHistoryGet, `time_end` is not nullable")
+      }
 
+      if (!missing(`time_format`) && is.null(`time_format`)) {
+        stop("Invalid value for `time_format` when calling MetricsV1Api$V1MetricsExchangeHistoryGet, `time_format` is not nullable")
+      }
 
+      if (!missing(`period_id`) && is.null(`period_id`)) {
+        stop("Invalid value for `period_id` when calling MetricsV1Api$V1MetricsExchangeHistoryGet, `period_id` is not nullable")
+      }
 
+      if (!missing(`limit`) && is.null(`limit`)) {
+        stop("Invalid value for `limit` when calling MetricsV1Api$V1MetricsExchangeHistoryGet, `limit` is not nullable")
+      }
 
       query_params[["metric_id"]] <- `metric_id`
 
@@ -948,7 +1032,13 @@ MetricsV1Api <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling MetricsV1Api$V1MetricsExchangeListingGet, `exchange_id` is not nullable")
+      }
 
+      if (!missing(`metric_id`) && is.null(`metric_id`)) {
+        stop("Invalid value for `metric_id` when calling MetricsV1Api$V1MetricsExchangeListingGet, `metric_id` is not nullable")
+      }
 
       query_params[["metric_id"]] <- `metric_id`
 
@@ -1150,8 +1240,17 @@ MetricsV1Api <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
+      if (!missing(`metric_id`) && is.null(`metric_id`)) {
+        stop("Invalid value for `metric_id` when calling MetricsV1Api$V1MetricsSymbolCurrentGet, `metric_id` is not nullable")
+      }
 
+      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
+        stop("Invalid value for `symbol_id` when calling MetricsV1Api$V1MetricsSymbolCurrentGet, `symbol_id` is not nullable")
+      }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling MetricsV1Api$V1MetricsSymbolCurrentGet, `exchange_id` is not nullable")
+      }
 
       query_params[["metric_id"]] <- `metric_id`
 
@@ -1276,12 +1375,33 @@ MetricsV1Api <- R6::R6Class(
         stop("Missing required parameter `symbol_id`.")
       }
 
+      if (!missing(`metric_id`) && is.null(`metric_id`)) {
+        stop("Invalid value for `metric_id` when calling MetricsV1Api$V1MetricsSymbolHistoryGet, `metric_id` is not nullable")
+      }
 
+      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
+        stop("Invalid value for `symbol_id` when calling MetricsV1Api$V1MetricsSymbolHistoryGet, `symbol_id` is not nullable")
+      }
 
+      if (!missing(`time_start`) && is.null(`time_start`)) {
+        stop("Invalid value for `time_start` when calling MetricsV1Api$V1MetricsSymbolHistoryGet, `time_start` is not nullable")
+      }
 
+      if (!missing(`time_end`) && is.null(`time_end`)) {
+        stop("Invalid value for `time_end` when calling MetricsV1Api$V1MetricsSymbolHistoryGet, `time_end` is not nullable")
+      }
 
+      if (!missing(`time_format`) && is.null(`time_format`)) {
+        stop("Invalid value for `time_format` when calling MetricsV1Api$V1MetricsSymbolHistoryGet, `time_format` is not nullable")
+      }
 
+      if (!missing(`period_id`) && is.null(`period_id`)) {
+        stop("Invalid value for `period_id` when calling MetricsV1Api$V1MetricsSymbolHistoryGet, `period_id` is not nullable")
+      }
 
+      if (!missing(`limit`) && is.null(`limit`)) {
+        stop("Invalid value for `limit` when calling MetricsV1Api$V1MetricsSymbolHistoryGet, `limit` is not nullable")
+      }
 
       query_params[["metric_id"]] <- `metric_id`
 
@@ -1398,8 +1518,17 @@ MetricsV1Api <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
+      if (!missing(`metric_id`) && is.null(`metric_id`)) {
+        stop("Invalid value for `metric_id` when calling MetricsV1Api$V1MetricsSymbolListingGet, `metric_id` is not nullable")
+      }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling MetricsV1Api$V1MetricsSymbolListingGet, `exchange_id` is not nullable")
+      }
 
+      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
+        stop("Invalid value for `symbol_id` when calling MetricsV1Api$V1MetricsSymbolListingGet, `symbol_id` is not nullable")
+      }
 
       query_params[["metric_id"]] <- `metric_id`
 

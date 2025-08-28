@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * FinFeedAPIExchangeModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T06:12:24.008717897Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T06:09:12.686527588Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class FinFeedAPIExchangeModel {
   public static final String SERIALIZED_NAME_EXCHANGE_ID = "exchange_id";
   @SerializedName(SERIALIZED_NAME_EXCHANGE_ID)
@@ -648,29 +648,10 @@ public class FinFeedAPIExchangeModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("exchange_id");
-    openapiFields.add("last_datapoint_date");
-    openapiFields.add("mic");
-    openapiFields.add("operating_mic");
-    openapiFields.add("oprt_sgmt");
-    openapiFields.add("market_name_institution_description");
-    openapiFields.add("legal_entity_name");
-    openapiFields.add("lei");
-    openapiFields.add("market_category_code");
-    openapiFields.add("acronym");
-    openapiFields.add("iso_country_code");
-    openapiFields.add("city");
-    openapiFields.add("website");
-    openapiFields.add("status");
-    openapiFields.add("creation_date");
-    openapiFields.add("last_update_date");
-    openapiFields.add("last_validation_date");
-    openapiFields.add("expiry_date");
-    openapiFields.add("comments");
+    openapiFields = new HashSet<String>(Arrays.asList("exchange_id", "last_datapoint_date", "mic", "operating_mic", "oprt_sgmt", "market_name_institution_description", "legal_entity_name", "lei", "market_category_code", "acronym", "iso_country_code", "city", "website", "status", "creation_date", "last_update_date", "last_validation_date", "expiry_date", "comments"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

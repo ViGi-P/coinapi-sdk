@@ -564,23 +564,23 @@ sub v1_exchanges_icons_size_get {
 }
 
 #
-# v1_symbols_exchange_id_get
+# v1_symbols_exchange_id_active_get
 #
-# List of symbols for the exchange
+# List all active symbols
 #
-# @param string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
-# @param string $filter_symbol_id The filter for symbol ID. (optional)
+# @param string $exchange_id The ID of the exchange. (required)
+# @param string $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
 # @param string $filter_asset_id The filter for asset ID. (optional)
 {
     my $params = {
     'exchange_id' => {
         data_type => 'string',
-        description => 'The ID of the exchange (from the Metadata -&gt; Exchanges)',
+        description => 'The ID of the exchange.',
         required => '1',
     },
     'filter_symbol_id' => {
         data_type => 'string',
-        description => 'The filter for symbol ID.',
+        description => 'Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;)',
         required => '0',
     },
     'filter_asset_id' => {
@@ -589,24 +589,24 @@ sub v1_exchanges_icons_size_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'v1_symbols_exchange_id_get' } = {
-        summary => 'List of symbols for the exchange',
+    __PACKAGE__->method_documentation->{ 'v1_symbols_exchange_id_active_get' } = {
+        summary => 'List all active symbols',
         params => $params,
         returns => 'ARRAY[V1Symbol]',
         };
 }
 # @return ARRAY[V1Symbol]
 #
-sub v1_symbols_exchange_id_get {
+sub v1_symbols_exchange_id_active_get {
     my ($self, %args) = @_;
 
     # verify the required parameter 'exchange_id' is set
     unless (exists $args{'exchange_id'}) {
-      croak("Missing the required parameter 'exchange_id' when calling v1_symbols_exchange_id_get");
+      croak("Missing the required parameter 'exchange_id' when calling v1_symbols_exchange_id_active_get");
     }
 
     # parse inputs
-    my $_resource_path = '/v1/symbols/{exchange_id}';
+    my $_resource_path = '/v1/symbols/{exchange_id}/active';
 
     my $_method = 'GET';
     my $query_params = {};
@@ -653,44 +653,49 @@ sub v1_symbols_exchange_id_get {
 }
 
 #
-# v1_symbols_get
+# v1_symbols_exchange_id_history_get
 #
-# List all symbols
+# List all historical symbols for an exchange.
 #
-# @param string $filter_symbol_id Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;) (optional)
-# @param string $filter_exchange_id The filter for exchange ID. (optional)
-# @param string $filter_asset_id The filter for asset ID. (optional)
+# @param string $exchange_id The ID of the exchange. (required)
+# @param int $page The page number for pagination (starts from 1). (optional, default to 1)
+# @param int $limit Number of records to return per page. (optional, default to 100)
 {
     my $params = {
-    'filter_symbol_id' => {
+    'exchange_id' => {
         data_type => 'string',
-        description => 'Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. &#x60;BITSTAMP&#x60;_ or &#x60;BINANCE_SPOT_&#x60;)',
+        description => 'The ID of the exchange.',
+        required => '1',
+    },
+    'page' => {
+        data_type => 'int',
+        description => 'The page number for pagination (starts from 1).',
         required => '0',
     },
-    'filter_exchange_id' => {
-        data_type => 'string',
-        description => 'The filter for exchange ID.',
-        required => '0',
-    },
-    'filter_asset_id' => {
-        data_type => 'string',
-        description => 'The filter for asset ID.',
+    'limit' => {
+        data_type => 'int',
+        description => 'Number of records to return per page.',
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'v1_symbols_get' } = {
-        summary => 'List all symbols',
+    __PACKAGE__->method_documentation->{ 'v1_symbols_exchange_id_history_get' } = {
+        summary => 'List all historical symbols for an exchange.',
         params => $params,
         returns => 'ARRAY[V1Symbol]',
         };
 }
 # @return ARRAY[V1Symbol]
 #
-sub v1_symbols_get {
+sub v1_symbols_exchange_id_history_get {
     my ($self, %args) = @_;
 
+    # verify the required parameter 'exchange_id' is set
+    unless (exists $args{'exchange_id'}) {
+      croak("Missing the required parameter 'exchange_id' when calling v1_symbols_exchange_id_history_get");
+    }
+
     # parse inputs
-    my $_resource_path = '/v1/symbols';
+    my $_resource_path = '/v1/symbols/{exchange_id}/history';
 
     my $_method = 'GET';
     my $query_params = {};
@@ -705,18 +710,20 @@ sub v1_symbols_get {
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
 
     # query params
-    if ( exists $args{'filter_symbol_id'}) {
-        $query_params->{'filter_symbol_id'} = $self->{api_client}->to_query_value($args{'filter_symbol_id'});
+    if ( exists $args{'page'}) {
+        $query_params->{'page'} = $self->{api_client}->to_query_value($args{'page'});
     }
 
     # query params
-    if ( exists $args{'filter_exchange_id'}) {
-        $query_params->{'filter_exchange_id'} = $self->{api_client}->to_query_value($args{'filter_exchange_id'});
+    if ( exists $args{'limit'}) {
+        $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
     }
 
-    # query params
-    if ( exists $args{'filter_asset_id'}) {
-        $query_params->{'filter_asset_id'} = $self->{api_client}->to_query_value($args{'filter_asset_id'});
+    # path params
+    if ( exists $args{'exchange_id'}) {
+        my $_base_variable = "{" . "exchange_id" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'exchange_id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
     }
 
     my $_body_data;
@@ -737,7 +744,7 @@ sub v1_symbols_get {
 #
 # v1_symbols_map_exchange_id_get
 #
-# List symbol mapping for the exchange
+# List active symbol mapping for the exchange
 #
 # @param string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
 {
@@ -749,7 +756,7 @@ sub v1_symbols_get {
     },
     };
     __PACKAGE__->method_documentation->{ 'v1_symbols_map_exchange_id_get' } = {
-        summary => 'List symbol mapping for the exchange',
+        summary => 'List active symbol mapping for the exchange',
         params => $params,
         returns => 'ARRAY[V1SymbolMapping]',
         };

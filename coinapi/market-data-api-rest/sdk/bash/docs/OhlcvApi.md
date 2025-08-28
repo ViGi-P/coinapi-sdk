@@ -115,7 +115,7 @@ The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-
 ### Example
 
 ```bash
- v1OhlcvSymbolIdHistoryGet symbol_id=value  period_id=value  time_start=value  time_end=value  limit=value  include_empty_items=value
+ v1OhlcvSymbolIdHistoryGet symbol_id=value  period_id=value  time_start=value  time_end=value  limit=value
 ```
 
 ### Parameters
@@ -128,7 +128,6 @@ Name | Type | Description  | Notes
  **timeStart** | **string** | Timeseries starting time in ISO 8601 | [optional] [default to null]
  **timeEnd** | **string** | Timeseries ending time in ISO 8601 | [optional] [default to null]
  **limit** | **integer** | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **includeEmptyItems** | **boolean** | Include items with no activity? (default value is 'false', possible values are 'true' or 'false') | [optional] [default to false]
 
 ### Return type
 
@@ -160,7 +159,7 @@ The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-
 ### Example
 
 ```bash
- v1OhlcvSymbolIdLatestGet symbol_id=value  period_id=value  limit=value  include_empty_items=value
+ v1OhlcvSymbolIdLatestGet symbol_id=value  period_id=value  limit=value
 ```
 
 ### Parameters
@@ -171,7 +170,6 @@ Name | Type | Description  | Notes
  **symbolId** | **string** | Symbol identifier of requested timeseries (from the Metadata -> Symbols) | [default to null]
  **periodId** | **string** | Identifier of requested timeseries period (e.g. '5SEC' or '2MTH') | [default to null]
  **limit** | **integer** | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **includeEmptyItems** | **boolean** | Include items with no activity? (default value is 'false', possible values are 'true' or 'false') | [optional] [default to false]
 
 ### Return type
 

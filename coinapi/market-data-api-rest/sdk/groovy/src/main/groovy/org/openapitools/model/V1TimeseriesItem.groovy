@@ -23,8 +23,8 @@ class V1TimeseriesItem {
     Double priceLow
     /* The closing price. */
     Double priceClose
-    /* The total volume traded during the time period. */
+    /* The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. */
     Double volumeTraded
-    /* The number of trades executed during the time period. */
+    /* The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. */
     Long tradesCount
 }

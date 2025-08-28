@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an exchange.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T09:28:32.257027216Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T06:05:57.564598397Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class V1Exchange {
   public static final String SERIALIZED_NAME_EXCHANGE_ID = "exchange_id";
   @SerializedName(SERIALIZED_NAME_EXCHANGE_ID)
@@ -626,30 +626,10 @@ public class V1Exchange {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("exchange_id");
-    openapiFields.add("website");
-    openapiFields.add("name");
-    openapiFields.add("data_start");
-    openapiFields.add("data_end");
-    openapiFields.add("data_quote_start");
-    openapiFields.add("data_quote_end");
-    openapiFields.add("data_orderbook_start");
-    openapiFields.add("data_orderbook_end");
-    openapiFields.add("data_trade_start");
-    openapiFields.add("data_trade_end");
-    openapiFields.add("data_trade_count");
-    openapiFields.add("data_symbols_count");
-    openapiFields.add("volume_1hrs_usd");
-    openapiFields.add("volume_1day_usd");
-    openapiFields.add("volume_1mth_usd");
-    openapiFields.add("metric_id");
-    openapiFields.add("icons");
-    openapiFields.add("rank");
-    openapiFields.add("integration_status");
+    openapiFields = new HashSet<String>(Arrays.asList("exchange_id", "website", "name", "data_start", "data_end", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "data_trade_count", "data_symbols_count", "volume_1hrs_usd", "volume_1day_usd", "volume_1mth_usd", "metric_id", "icons", "rank", "integration_status"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

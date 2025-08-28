@@ -370,7 +370,6 @@ public class OhlcvApi {
      * @param timeStart Timeseries starting time in ISO 8601 (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (optional)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -381,7 +380,7 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OhlcvSymbolIdHistoryGetCall(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean includeEmptyItems, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OhlcvSymbolIdHistoryGetCall(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -423,10 +422,6 @@ public class OhlcvApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
         }
 
-        if (includeEmptyItems != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include_empty_items", includeEmptyItems));
-        }
-
         final String[] localVarAccepts = {
             "text/plain",
             "application/json",
@@ -450,7 +445,7 @@ public class OhlcvApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OhlcvSymbolIdHistoryGetValidateBeforeCall(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean includeEmptyItems, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OhlcvSymbolIdHistoryGetValidateBeforeCall(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'symbolId' is set
         if (symbolId == null) {
             throw new ApiException("Missing the required parameter 'symbolId' when calling v1OhlcvSymbolIdHistoryGet(Async)");
@@ -461,7 +456,7 @@ public class OhlcvApi {
             throw new ApiException("Missing the required parameter 'periodId' when calling v1OhlcvSymbolIdHistoryGet(Async)");
         }
 
-        return v1OhlcvSymbolIdHistoryGetCall(symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems, _callback);
+        return v1OhlcvSymbolIdHistoryGetCall(symbolId, periodId, timeStart, timeEnd, limit, _callback);
 
     }
 
@@ -473,7 +468,6 @@ public class OhlcvApi {
      * @param timeStart Timeseries starting time in ISO 8601 (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (optional)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
      * @return List&lt;V1TimeseriesItem&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -483,8 +477,8 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1TimeseriesItem> v1OhlcvSymbolIdHistoryGet(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean includeEmptyItems) throws ApiException {
-        ApiResponse<List<V1TimeseriesItem>> localVarResp = v1OhlcvSymbolIdHistoryGetWithHttpInfo(symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems);
+    public List<V1TimeseriesItem> v1OhlcvSymbolIdHistoryGet(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<List<V1TimeseriesItem>> localVarResp = v1OhlcvSymbolIdHistoryGetWithHttpInfo(symbolId, periodId, timeStart, timeEnd, limit);
         return localVarResp.getData();
     }
 
@@ -496,7 +490,6 @@ public class OhlcvApi {
      * @param timeStart Timeseries starting time in ISO 8601 (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (optional)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
      * @return ApiResponse&lt;List&lt;V1TimeseriesItem&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -506,8 +499,8 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1TimeseriesItem>> v1OhlcvSymbolIdHistoryGetWithHttpInfo(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean includeEmptyItems) throws ApiException {
-        okhttp3.Call localVarCall = v1OhlcvSymbolIdHistoryGetValidateBeforeCall(symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems, null);
+    public ApiResponse<List<V1TimeseriesItem>> v1OhlcvSymbolIdHistoryGetWithHttpInfo(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = v1OhlcvSymbolIdHistoryGetValidateBeforeCall(symbolId, periodId, timeStart, timeEnd, limit, null);
         Type localVarReturnType = new TypeToken<List<V1TimeseriesItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -520,7 +513,6 @@ public class OhlcvApi {
      * @param timeStart Timeseries starting time in ISO 8601 (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (optional)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -531,9 +523,9 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OhlcvSymbolIdHistoryGetAsync(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean includeEmptyItems, final ApiCallback<List<V1TimeseriesItem>> _callback) throws ApiException {
+    public okhttp3.Call v1OhlcvSymbolIdHistoryGetAsync(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback<List<V1TimeseriesItem>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1OhlcvSymbolIdHistoryGetValidateBeforeCall(symbolId, periodId, timeStart, timeEnd, limit, includeEmptyItems, _callback);
+        okhttp3.Call localVarCall = v1OhlcvSymbolIdHistoryGetValidateBeforeCall(symbolId, periodId, timeStart, timeEnd, limit, _callback);
         Type localVarReturnType = new TypeToken<List<V1TimeseriesItem>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -543,7 +535,6 @@ public class OhlcvApi {
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -554,7 +545,7 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OhlcvSymbolIdLatestGetCall(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean includeEmptyItems, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OhlcvSymbolIdLatestGetCall(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -588,10 +579,6 @@ public class OhlcvApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
         }
 
-        if (includeEmptyItems != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include_empty_items", includeEmptyItems));
-        }
-
         final String[] localVarAccepts = {
             "text/plain",
             "application/json",
@@ -615,7 +602,7 @@ public class OhlcvApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OhlcvSymbolIdLatestGetValidateBeforeCall(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean includeEmptyItems, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OhlcvSymbolIdLatestGetValidateBeforeCall(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'symbolId' is set
         if (symbolId == null) {
             throw new ApiException("Missing the required parameter 'symbolId' when calling v1OhlcvSymbolIdLatestGet(Async)");
@@ -626,7 +613,7 @@ public class OhlcvApi {
             throw new ApiException("Missing the required parameter 'periodId' when calling v1OhlcvSymbolIdLatestGet(Async)");
         }
 
-        return v1OhlcvSymbolIdLatestGetCall(symbolId, periodId, limit, includeEmptyItems, _callback);
+        return v1OhlcvSymbolIdLatestGetCall(symbolId, periodId, limit, _callback);
 
     }
 
@@ -636,7 +623,6 @@ public class OhlcvApi {
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
      * @return List&lt;V1TimeseriesItem&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -646,8 +632,8 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1TimeseriesItem> v1OhlcvSymbolIdLatestGet(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean includeEmptyItems) throws ApiException {
-        ApiResponse<List<V1TimeseriesItem>> localVarResp = v1OhlcvSymbolIdLatestGetWithHttpInfo(symbolId, periodId, limit, includeEmptyItems);
+    public List<V1TimeseriesItem> v1OhlcvSymbolIdLatestGet(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<List<V1TimeseriesItem>> localVarResp = v1OhlcvSymbolIdLatestGetWithHttpInfo(symbolId, periodId, limit);
         return localVarResp.getData();
     }
 
@@ -657,7 +643,6 @@ public class OhlcvApi {
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
      * @return ApiResponse&lt;List&lt;V1TimeseriesItem&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -667,8 +652,8 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1TimeseriesItem>> v1OhlcvSymbolIdLatestGetWithHttpInfo(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean includeEmptyItems) throws ApiException {
-        okhttp3.Call localVarCall = v1OhlcvSymbolIdLatestGetValidateBeforeCall(symbolId, periodId, limit, includeEmptyItems, null);
+    public ApiResponse<List<V1TimeseriesItem>> v1OhlcvSymbolIdLatestGetWithHttpInfo(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = v1OhlcvSymbolIdLatestGetValidateBeforeCall(symbolId, periodId, limit, null);
         Type localVarReturnType = new TypeToken<List<V1TimeseriesItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -679,7 +664,6 @@ public class OhlcvApi {
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param includeEmptyItems Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -690,9 +674,9 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OhlcvSymbolIdLatestGetAsync(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean includeEmptyItems, final ApiCallback<List<V1TimeseriesItem>> _callback) throws ApiException {
+    public okhttp3.Call v1OhlcvSymbolIdLatestGetAsync(@javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback<List<V1TimeseriesItem>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1OhlcvSymbolIdLatestGetValidateBeforeCall(symbolId, periodId, limit, includeEmptyItems, _callback);
+        okhttp3.Call localVarCall = v1OhlcvSymbolIdLatestGetValidateBeforeCall(symbolId, periodId, limit, _callback);
         Type localVarReturnType = new TypeToken<List<V1TimeseriesItem>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

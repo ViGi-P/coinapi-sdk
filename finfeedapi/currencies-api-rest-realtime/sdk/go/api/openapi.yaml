@@ -120,7 +120,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             application/json:
               examples:
@@ -171,7 +171,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             text/json:
               examples:
@@ -222,7 +222,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             application/x-msgpack:
               examples:
@@ -273,7 +273,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
           description: successful operation
       summary: List all assets
@@ -342,7 +342,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             application/json:
               examples:
@@ -393,7 +393,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             text/json:
               examples:
@@ -444,7 +444,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
             application/x-msgpack:
               examples:
@@ -495,7 +495,7 @@ paths:
                     data_end: 2019-11-03
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Asset'
+                  $ref: "#/components/schemas/v1.Asset"
                 type: array
           description: successful operation
       summary: List all assets by asset ID
@@ -529,7 +529,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
             application/json:
               examples:
@@ -543,7 +543,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
             text/json:
               examples:
@@ -557,7 +557,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
             application/x-msgpack:
               examples:
@@ -571,7 +571,7 @@ paths:
                     url: https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4873707f25fe4de3b4bca6fa5c631011.png
               schema:
                 items:
-                  $ref: '#/components/schemas/v1.Icon'
+                  $ref: "#/components/schemas/v1.Icon"
                 type: array
           description: successful operation
       summary: List all asset icons
@@ -612,42 +612,42 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-06-18T06:06:01.7694160Z
+                    time: 2025-08-28T06:08:10.7571817Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRate'
+                $ref: "#/components/schemas/v1.ExchangeRate"
             application/json:
               examples:
                 Example response:
                   value:
-                    time: 2025-06-18T06:06:01.7694160Z
+                    time: 2025-08-28T06:08:10.7571817Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRate'
+                $ref: "#/components/schemas/v1.ExchangeRate"
             text/json:
               examples:
                 Example response:
                   value:
-                    time: 2025-06-18T06:06:01.7694160Z
+                    time: 2025-08-28T06:08:10.7571817Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRate'
+                $ref: "#/components/schemas/v1.ExchangeRate"
             application/x-msgpack:
               examples:
                 Example response:
                   value:
-                    time: 2025-06-18T06:06:01.7694160Z
+                    time: 2025-08-28T06:08:10.7571817Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRate'
+                $ref: "#/components/schemas/v1.ExchangeRate"
           description: successful operation
       summary: Get specific rate
       tags:
@@ -712,7 +712,7 @@ paths:
                       asset_id_quote: GBP
                       rate: 2509.602420379958
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRates'
+                $ref: "#/components/schemas/v1.ExchangeRates"
             application/json:
               examples:
                 Example response:
@@ -732,7 +732,7 @@ paths:
                       asset_id_quote: GBP
                       rate: 2509.602420379958
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRates'
+                $ref: "#/components/schemas/v1.ExchangeRates"
             text/json:
               examples:
                 Example response:
@@ -752,7 +752,7 @@ paths:
                       asset_id_quote: GBP
                       rate: 2509.602420379958
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRates'
+                $ref: "#/components/schemas/v1.ExchangeRates"
             application/x-msgpack:
               examples:
                 Example response:
@@ -772,7 +772,7 @@ paths:
                       asset_id_quote: GBP
                       rate: 2509.602420379958
               schema:
-                $ref: '#/components/schemas/v1.ExchangeRates'
+                $ref: "#/components/schemas/v1.ExchangeRates"
           description: successful operation
       summary: Get all current rates
       tags:
@@ -901,7 +901,7 @@ components:
         chain_addresses:
           description: ""
           items:
-            $ref: '#/components/schemas/v1.ChainNetworkAddress'
+            $ref: "#/components/schemas/v1.ChainNetworkAddress"
           nullable: true
           type: array
         data_start:
@@ -980,7 +980,7 @@ components:
         rates:
           description: Gets or sets the list of exchange rates.
           items:
-            $ref: '#/components/schemas/v1.ExchangeRatesRate'
+            $ref: "#/components/schemas/v1.ExchangeRatesRate"
           nullable: true
           type: array
       type: object
@@ -1033,7 +1033,8 @@ components:
       name: Authorization
       type: apiKey
     JWT:
-      description: JWT token needed to access the endpoints
-      in: header
-      name: Authorization
-      type: apiKey
+      bearerFormat: JWT
+      description: "JWT Authorization header using the Bearer scheme. Example: \"\
+        Bearer {token}\""
+      scheme: bearer
+      type: http

@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a trade executed on the exchange.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T09:28:32.257027216Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T06:05:57.564598397Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class V1Trade {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
@@ -369,20 +369,10 @@ public class V1Trade {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("symbol_id");
-    openapiFields.add("time_exchange");
-    openapiFields.add("time_coinapi");
-    openapiFields.add("uuid");
-    openapiFields.add("price");
-    openapiFields.add("size");
-    openapiFields.add("taker_side");
-    openapiFields.add("id_trade");
-    openapiFields.add("id_order_maker");
-    openapiFields.add("id_order_taker");
+    openapiFields = new HashSet<String>(Arrays.asList("symbol_id", "time_exchange", "time_coinapi", "uuid", "price", "size", "taker_side", "id_trade", "id_order_maker", "id_order_taker"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

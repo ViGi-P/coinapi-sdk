@@ -72,11 +72,8 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client
             _services.AddSingleton(jsonSerializerOptionsProvider);
             _services.AddSingleton<IApiFactory, ApiFactory>();
             _services.AddSingleton<MetadataApiEvents>();
-            _services.AddTransient<IMetadataApi, MetadataApi>();
             _services.AddSingleton<NativeIEXApiEvents>();
-            _services.AddTransient<INativeIEXApi, NativeIEXApi>();
             _services.AddSingleton<OhlcvApiEvents>();
-            _services.AddTransient<IOhlcvApi, OhlcvApi>();
         }
 
         /// <summary>

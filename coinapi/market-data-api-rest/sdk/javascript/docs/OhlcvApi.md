@@ -149,8 +149,7 @@ let periodId = "periodId_example"; // String | Identifier of requested timeserie
 let opts = {
   'timeStart': "timeStart_example", // String | Timeseries starting time in ISO 8601
   'timeEnd': "timeEnd_example", // String | Timeseries ending time in ISO 8601
-  'limit': 100, // Number | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  'includeEmptyItems': false // Boolean | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+  'limit': 100 // Number | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 };
 apiInstance.v1OhlcvSymbolIdHistoryGet(symbolId, periodId, opts, (error, data, response) => {
   if (error) {
@@ -171,7 +170,6 @@ Name | Type | Description  | Notes
  **timeStart** | **String**| Timeseries starting time in ISO 8601 | [optional] 
  **timeEnd** | **String**| Timeseries ending time in ISO 8601 | [optional] 
  **limit** | **Number**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **includeEmptyItems** | **Boolean**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to false]
 
 ### Return type
 
@@ -213,8 +211,7 @@ let apiInstance = new CoinApiMarketDataRestApi.OhlcvApi();
 let symbolId = "symbolId_example"; // String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
 let periodId = "periodId_example"; // String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 let opts = {
-  'limit': 100, // Number | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  'includeEmptyItems': false // Boolean | Include items with no activity? (default value is `false`, possible values are `true` or `false`)
+  'limit': 100 // Number | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 };
 apiInstance.v1OhlcvSymbolIdLatestGet(symbolId, periodId, opts, (error, data, response) => {
   if (error) {
@@ -233,7 +230,6 @@ Name | Type | Description  | Notes
  **symbolId** | **String**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | 
  **periodId** | **String**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) | 
  **limit** | **Number**| Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **includeEmptyItems** | **Boolean**| Include items with no activity? (default value is &#x60;false&#x60;, possible values are &#x60;true&#x60; or &#x60;false&#x60;) | [optional] [default to false]
 
 ### Return type
 

@@ -76,25 +76,15 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client
             _services.AddSingleton(jsonSerializerOptionsProvider);
             _services.AddSingleton<IApiFactory, ApiFactory>();
             _services.AddSingleton<ExchangeRatesApiEvents>();
-            _services.AddTransient<IExchangeRatesApi, ExchangeRatesApi>();
             _services.AddSingleton<MetadataApiEvents>();
-            _services.AddTransient<IMetadataApi, MetadataApi>();
             _services.AddSingleton<MetricsV1ApiEvents>();
-            _services.AddTransient<IMetricsV1Api, MetricsV1Api>();
             _services.AddSingleton<MetricsV2ApiEvents>();
-            _services.AddTransient<IMetricsV2Api, MetricsV2Api>();
             _services.AddSingleton<OhlcvApiEvents>();
-            _services.AddTransient<IOhlcvApi, OhlcvApi>();
             _services.AddSingleton<OptionsApiEvents>();
-            _services.AddTransient<IOptionsApi, OptionsApi>();
             _services.AddSingleton<OrderBookApiEvents>();
-            _services.AddTransient<IOrderBookApi, OrderBookApi>();
             _services.AddSingleton<OrderBookL3ApiEvents>();
-            _services.AddTransient<IOrderBookL3Api, OrderBookL3Api>();
             _services.AddSingleton<QuotesApiEvents>();
-            _services.AddTransient<IQuotesApi, QuotesApi>();
             _services.AddSingleton<TradesApiEvents>();
-            _services.AddTransient<ITradesApi, TradesApi>();
         }
 
         /// <summary>

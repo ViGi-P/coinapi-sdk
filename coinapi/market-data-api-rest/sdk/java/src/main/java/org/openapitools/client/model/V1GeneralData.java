@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Class representation of general metric data. This class is an XML type with name &#39;general_data&#39; and inherits from the BaseCsvModel class.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-18T09:28:32.257027216Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-28T06:05:57.564598397Z[Etc/UTC]", comments = "Generator version: 7.15.0")
 public class V1GeneralData {
   public static final String SERIALIZED_NAME_ENTRY_TIME = "entry_time";
   @SerializedName(SERIALIZED_NAME_ENTRY_TIME)
@@ -342,19 +342,10 @@ public class V1GeneralData {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("entry_time");
-    openapiFields.add("recv_time");
-    openapiFields.add("exchange_id");
-    openapiFields.add("asset_id");
-    openapiFields.add("symbol_id");
-    openapiFields.add("metric_id");
-    openapiFields.add("value_decimal");
-    openapiFields.add("value_text");
-    openapiFields.add("value_time");
+    openapiFields = new HashSet<String>(Arrays.asList("entry_time", "recv_time", "exchange_id", "asset_id", "symbol_id", "metric_id", "value_decimal", "value_text", "value_time"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**

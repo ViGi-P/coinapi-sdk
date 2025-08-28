@@ -174,14 +174,14 @@
 #' dput(result)
 #'
 #'
-#' ####################  V1SymbolsExchangeIdGet  ####################
+#' ####################  V1SymbolsExchangeIdActiveGet  ####################
 #'
 #' library(openapi)
-#' var_exchange_id <- "exchange_id_example" # character | The ID of the exchange (from the Metadata -> Exchanges)
-#' var_filter_symbol_id <- "filter_symbol_id_example" # character | The filter for symbol ID. (Optional)
+#' var_exchange_id <- "exchange_id_example" # character | The ID of the exchange.
+#' var_filter_symbol_id <- "filter_symbol_id_example" # character | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`) (Optional)
 #' var_filter_asset_id <- "filter_asset_id_example" # character | The filter for asset ID. (Optional)
 #'
-#' #List of symbols for the exchange
+#' #List all active symbols
 #' api_instance <- MetadataApi$new()
 #'
 #' # Configure API key authorization: APIKey
@@ -191,19 +191,19 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1SymbolsExchangeIdGet(var_exchange_id, filter_symbol_id = var_filter_symbol_id, filter_asset_id = var_filter_asset_iddata_file = "result.txt")
-#' result <- api_instance$V1SymbolsExchangeIdGet(var_exchange_id, filter_symbol_id = var_filter_symbol_id, filter_asset_id = var_filter_asset_id)
+#' # result <- api_instance$V1SymbolsExchangeIdActiveGet(var_exchange_id, filter_symbol_id = var_filter_symbol_id, filter_asset_id = var_filter_asset_iddata_file = "result.txt")
+#' result <- api_instance$V1SymbolsExchangeIdActiveGet(var_exchange_id, filter_symbol_id = var_filter_symbol_id, filter_asset_id = var_filter_asset_id)
 #' dput(result)
 #'
 #'
-#' ####################  V1SymbolsGet  ####################
+#' ####################  V1SymbolsExchangeIdHistoryGet  ####################
 #'
 #' library(openapi)
-#' var_filter_symbol_id <- "filter_symbol_id_example" # character | Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`) (Optional)
-#' var_filter_exchange_id <- "filter_exchange_id_example" # character | The filter for exchange ID. (Optional)
-#' var_filter_asset_id <- "filter_asset_id_example" # character | The filter for asset ID. (Optional)
+#' var_exchange_id <- "exchange_id_example" # character | The ID of the exchange.
+#' var_page <- 1 # integer | The page number for pagination (starts from 1). (Optional)
+#' var_limit <- 100 # integer | Number of records to return per page. (Optional)
 #'
-#' #List all symbols
+#' #List all historical symbols for an exchange.
 #' api_instance <- MetadataApi$new()
 #'
 #' # Configure API key authorization: APIKey
@@ -213,8 +213,8 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1SymbolsGet(filter_symbol_id = var_filter_symbol_id, filter_exchange_id = var_filter_exchange_id, filter_asset_id = var_filter_asset_iddata_file = "result.txt")
-#' result <- api_instance$V1SymbolsGet(filter_symbol_id = var_filter_symbol_id, filter_exchange_id = var_filter_exchange_id, filter_asset_id = var_filter_asset_id)
+#' # result <- api_instance$V1SymbolsExchangeIdHistoryGet(var_exchange_id, page = var_page, limit = var_limitdata_file = "result.txt")
+#' result <- api_instance$V1SymbolsExchangeIdHistoryGet(var_exchange_id, page = var_page, limit = var_limit)
 #' dput(result)
 #'
 #'
@@ -223,7 +223,7 @@
 #' library(openapi)
 #' var_exchange_id <- "exchange_id_example" # character | The ID of the exchange (from the Metadata -> Exchanges)
 #'
-#' #List symbol mapping for the exchange
+#' #List active symbol mapping for the exchange
 #' api_instance <- MetadataApi$new()
 #'
 #' # Configure API key authorization: APIKey
@@ -302,6 +302,9 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `asset_id`.")
       }
 
+      if (!missing(`asset_id`) && is.null(`asset_id`)) {
+        stop("Invalid value for `asset_id` when calling MetadataApi$V1AssetsAssetIdGet, `asset_id` is not nullable")
+      }
 
       local_var_url_path <- "/v1/assets/{asset_id}"
       if (!missing(`asset_id`)) {
@@ -404,6 +407,9 @@ MetadataApi <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
+      if (!missing(`filter_asset_id`) && is.null(`filter_asset_id`)) {
+        stop("Invalid value for `filter_asset_id` when calling MetadataApi$V1AssetsGet, `filter_asset_id` is not nullable")
+      }
 
       query_params[["filter_asset_id"]] <- `filter_asset_id`
 
@@ -508,6 +514,9 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `size`.")
       }
 
+      if (!missing(`size`) && is.null(`size`)) {
+        stop("Invalid value for `size` when calling MetadataApi$V1AssetsIconsSizeGet, `size` is not nullable")
+      }
 
       local_var_url_path <- "/v1/assets/icons/{size}"
       if (!missing(`size`)) {
@@ -614,6 +623,9 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `chain_id`.")
       }
 
+      if (!missing(`chain_id`) && is.null(`chain_id`)) {
+        stop("Invalid value for `chain_id` when calling MetadataApi$V1ChainsChainIdGet, `chain_id` is not nullable")
+      }
 
       local_var_url_path <- "/v1/chains/{chain_id}"
       if (!missing(`chain_id`)) {
@@ -716,6 +728,9 @@ MetadataApi <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
+      if (!missing(`filter_chain_id`) && is.null(`filter_chain_id`)) {
+        stop("Invalid value for `filter_chain_id` when calling MetadataApi$V1ChainsGet, `filter_chain_id` is not nullable")
+      }
 
       query_params[["filter_chain_id"]] <- `filter_chain_id`
 
@@ -820,6 +835,9 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling MetadataApi$V1ExchangesExchangeIdGet, `exchange_id` is not nullable")
+      }
 
       local_var_url_path <- "/v1/exchanges/{exchange_id}"
       if (!missing(`exchange_id`)) {
@@ -922,6 +940,9 @@ MetadataApi <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
+      if (!missing(`filter_exchange_id`) && is.null(`filter_exchange_id`)) {
+        stop("Invalid value for `filter_exchange_id` when calling MetadataApi$V1ExchangesGet, `filter_exchange_id` is not nullable")
+      }
 
       query_params[["filter_exchange_id"]] <- `filter_exchange_id`
 
@@ -1026,6 +1047,9 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `size`.")
       }
 
+      if (!missing(`size`) && is.null(`size`)) {
+        stop("Invalid value for `size` when calling MetadataApi$V1ExchangesIconsSizeGet, `size` is not nullable")
+      }
 
       local_var_url_path <- "/v1/exchanges/icons/{size}"
       if (!missing(`size`)) {
@@ -1090,17 +1114,17 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' List of symbols for the exchange
+    #' List all active symbols
     #'
-    #' @param exchange_id The ID of the exchange (from the Metadata -> Exchanges)
-    #' @param filter_symbol_id (optional) The filter for symbol ID.
+    #' @param exchange_id The ID of the exchange.
+    #' @param filter_symbol_id (optional) Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
     #' @param filter_asset_id (optional) The filter for asset ID.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #'
     #' @return array[V1Symbol]
-    V1SymbolsExchangeIdGet = function(exchange_id, filter_symbol_id = NULL, filter_asset_id = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1SymbolsExchangeIdGetWithHttpInfo(exchange_id, filter_symbol_id, filter_asset_id, data_file = data_file, ...)
+    V1SymbolsExchangeIdActiveGet = function(exchange_id, filter_symbol_id = NULL, filter_asset_id = NULL, data_file = NULL, ...) {
+      local_var_response <- self$V1SymbolsExchangeIdActiveGetWithHttpInfo(exchange_id, filter_symbol_id, filter_asset_id, data_file = data_file, ...)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1113,16 +1137,16 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' List of symbols for the exchange
+    #' List all active symbols
     #'
-    #' @param exchange_id The ID of the exchange (from the Metadata -> Exchanges)
-    #' @param filter_symbol_id (optional) The filter for symbol ID.
+    #' @param exchange_id The ID of the exchange.
+    #' @param filter_symbol_id (optional) Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
     #' @param filter_asset_id (optional) The filter for asset ID.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #'
     #' @return API response (array[V1Symbol]) with additional information such as HTTP status code, headers
-    V1SymbolsExchangeIdGetWithHttpInfo = function(exchange_id, filter_symbol_id = NULL, filter_asset_id = NULL, data_file = NULL, ...) {
+    V1SymbolsExchangeIdActiveGetWithHttpInfo = function(exchange_id, filter_symbol_id = NULL, filter_asset_id = NULL, data_file = NULL, ...) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1136,14 +1160,23 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling MetadataApi$V1SymbolsExchangeIdActiveGet, `exchange_id` is not nullable")
+      }
 
+      if (!missing(`filter_symbol_id`) && is.null(`filter_symbol_id`)) {
+        stop("Invalid value for `filter_symbol_id` when calling MetadataApi$V1SymbolsExchangeIdActiveGet, `filter_symbol_id` is not nullable")
+      }
 
+      if (!missing(`filter_asset_id`) && is.null(`filter_asset_id`)) {
+        stop("Invalid value for `filter_asset_id` when calling MetadataApi$V1SymbolsExchangeIdActiveGet, `filter_asset_id` is not nullable")
+      }
 
       query_params[["filter_symbol_id"]] <- `filter_symbol_id`
 
       query_params[["filter_asset_id"]] <- `filter_asset_id`
 
-      local_var_url_path <- "/v1/symbols/{exchange_id}"
+      local_var_url_path <- "/v1/symbols/{exchange_id}/active"
       if (!missing(`exchange_id`)) {
         local_var_url_path <- gsub("\\{exchange_id\\}", URLencode(as.character(`exchange_id`), reserved = TRUE), local_var_url_path)
       }
@@ -1206,17 +1239,17 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' List all symbols
+    #' List all historical symbols for an exchange.
     #'
-    #' @param filter_symbol_id (optional) Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
-    #' @param filter_exchange_id (optional) The filter for exchange ID.
-    #' @param filter_asset_id (optional) The filter for asset ID.
+    #' @param exchange_id The ID of the exchange.
+    #' @param page (optional) The page number for pagination (starts from 1). (default value: 1)
+    #' @param limit (optional) Number of records to return per page. (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #'
     #' @return array[V1Symbol]
-    V1SymbolsGet = function(filter_symbol_id = NULL, filter_exchange_id = NULL, filter_asset_id = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1SymbolsGetWithHttpInfo(filter_symbol_id, filter_exchange_id, filter_asset_id, data_file = data_file, ...)
+    V1SymbolsExchangeIdHistoryGet = function(exchange_id, page = 1, limit = 100, data_file = NULL, ...) {
+      local_var_response <- self$V1SymbolsExchangeIdHistoryGetWithHttpInfo(exchange_id, page, limit, data_file = data_file, ...)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1229,16 +1262,16 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' List all symbols
+    #' List all historical symbols for an exchange.
     #'
-    #' @param filter_symbol_id (optional) Comma or semicolon delimited parts of symbol identifier used to filter response. (optional, eg. `BITSTAMP`_ or `BINANCE_SPOT_`)
-    #' @param filter_exchange_id (optional) The filter for exchange ID.
-    #' @param filter_asset_id (optional) The filter for asset ID.
+    #' @param exchange_id The ID of the exchange.
+    #' @param page (optional) The page number for pagination (starts from 1). (default value: 1)
+    #' @param limit (optional) Number of records to return per page. (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #'
     #' @return API response (array[V1Symbol]) with additional information such as HTTP status code, headers
-    V1SymbolsGetWithHttpInfo = function(filter_symbol_id = NULL, filter_exchange_id = NULL, filter_asset_id = NULL, data_file = NULL, ...) {
+    V1SymbolsExchangeIdHistoryGetWithHttpInfo = function(exchange_id, page = 1, limit = 100, data_file = NULL, ...) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1248,16 +1281,31 @@ MetadataApi <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
+      if (missing(`exchange_id`)) {
+        stop("Missing required parameter `exchange_id`.")
+      }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling MetadataApi$V1SymbolsExchangeIdHistoryGet, `exchange_id` is not nullable")
+      }
 
+      if (!missing(`page`) && is.null(`page`)) {
+        stop("Invalid value for `page` when calling MetadataApi$V1SymbolsExchangeIdHistoryGet, `page` is not nullable")
+      }
 
-      query_params[["filter_symbol_id"]] <- `filter_symbol_id`
+      if (!missing(`limit`) && is.null(`limit`)) {
+        stop("Invalid value for `limit` when calling MetadataApi$V1SymbolsExchangeIdHistoryGet, `limit` is not nullable")
+      }
 
-      query_params[["filter_exchange_id"]] <- `filter_exchange_id`
+      query_params[["page"]] <- `page`
 
-      query_params[["filter_asset_id"]] <- `filter_asset_id`
+      query_params[["limit"]] <- `limit`
 
-      local_var_url_path <- "/v1/symbols"
+      local_var_url_path <- "/v1/symbols/{exchange_id}/history"
+      if (!missing(`exchange_id`)) {
+        local_var_url_path <- gsub("\\{exchange_id\\}", URLencode(as.character(`exchange_id`), reserved = TRUE), local_var_url_path)
+      }
+
       # API key authentication
       if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
         header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
@@ -1316,7 +1364,7 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' List symbol mapping for the exchange
+    #' List active symbol mapping for the exchange
     #'
     #' @param exchange_id The ID of the exchange (from the Metadata -> Exchanges)
     #' @param data_file (optional) name of the data file to save the result
@@ -1337,7 +1385,7 @@ MetadataApi <- R6::R6Class(
     },
 
     #' @description
-    #' List symbol mapping for the exchange
+    #' List active symbol mapping for the exchange
     #'
     #' @param exchange_id The ID of the exchange (from the Metadata -> Exchanges)
     #' @param data_file (optional) name of the data file to save the result
@@ -1358,6 +1406,9 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling MetadataApi$V1SymbolsMapExchangeIdGet, `exchange_id` is not nullable")
+      }
 
       local_var_url_path <- "/v1/symbols/map/{exchange_id}"
       if (!missing(`exchange_id`)) {
