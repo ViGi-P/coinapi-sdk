@@ -16,19 +16,23 @@ namespace CoinAPI.REST.V1
 
         public static HttpClient GetClient(string apiKey)
         {
-            if (!clients.TryGetValue(apiKey, out HttpClient client))
+            lock (clients)
             {
-                var handler = new HttpClientHandler
+                if (!clients.TryGetValue(apiKey, out HttpClient client))
                 {
-                    AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
-                };
-                client = new HttpClient(handler);
-                client.DefaultRequestHeaders.Add("X-CoinAPI-Key", apiKey);
-                clients[apiKey] = client;
+                    var handler = new HttpClientHandler
+                    {
+                        AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
+                    };
+                    client = new HttpClient(handler);
+                    client.DefaultRequestHeaders.Add("X-CoinAPI-Key", apiKey);
+                    clients[apiKey] = client;
+                }
+                return client;
             }
-            return client;
         }
     }
+    
     public class CoinApiRestClient
     {
         private string apiKey;
