@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard1.1</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>CoinAPI.REST.V1</PackageId>
-    <Authors>COINAPI LTD</Authors>
+    <Authors>API BRICKS LTD</Authors>
     <Product>CoinAPI.REST</Product>
     <Description>SDK for www.CoinAPI.io REST API</Description>
     <PackageProjectUrl>https://www.CoinAPI.io</PackageProjectUrl>
@@ -14,8 +14,8 @@
     <PackageTags>coinapi sdk rest v1 api</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Company>COINAPI LTD</Company>
-    <Copyright>COINAPI LTD or its affiliates</Copyright>
+    <Company>API BRICKS LTD</Company>
+    <Copyright>API BRICKS LTD or its affiliates</Copyright>
     <Version>3.2.5</Version>
     <UserSecretsId>17704ec2-7050-452e-99b5-0eddf76dea5d</UserSecretsId>
   </PropertyGroup>
