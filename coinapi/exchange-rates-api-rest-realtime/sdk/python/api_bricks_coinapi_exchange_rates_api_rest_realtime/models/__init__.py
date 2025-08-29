@@ -14,31 +14,10 @@
 """  # noqa: E501
 
 
-if __import__("typing").TYPE_CHECKING:
-    # import models into model package
-    from api_bricks_coinapi_exchange_rates_api_rest_realtime.models.v1_asset import V1Asset
-    from api_bricks_coinapi_exchange_rates_api_rest_realtime.models.v1_chain_network_address import V1ChainNetworkAddress
-    from api_bricks_coinapi_exchange_rates_api_rest_realtime.models.v1_exchange_rate import V1ExchangeRate
-    from api_bricks_coinapi_exchange_rates_api_rest_realtime.models.v1_exchange_rates import V1ExchangeRates
-    from api_bricks_coinapi_exchange_rates_api_rest_realtime.models.v1_exchange_rates_rate import V1ExchangeRatesRate
-    from api_bricks_coinapi_exchange_rates_api_rest_realtime.models.v1_icon import V1Icon
-    
-else:
-    from lazy_imports import LazyModule, as_package, load
-
-    load(
-        LazyModule(
-            *as_package(__file__),
-            """# import models into model package
+# import models into model package
 from api_bricks_coinapi_exchange_rates_api_rest_realtime.models.v1_asset import V1Asset
 from api_bricks_coinapi_exchange_rates_api_rest_realtime.models.v1_chain_network_address import V1ChainNetworkAddress
 from api_bricks_coinapi_exchange_rates_api_rest_realtime.models.v1_exchange_rate import V1ExchangeRate
 from api_bricks_coinapi_exchange_rates_api_rest_realtime.models.v1_exchange_rates import V1ExchangeRates
 from api_bricks_coinapi_exchange_rates_api_rest_realtime.models.v1_exchange_rates_rate import V1ExchangeRatesRate
 from api_bricks_coinapi_exchange_rates_api_rest_realtime.models.v1_icon import V1Icon
-
-""",
-            name=__name__,
-            doc=__doc__,
-        )
-    )
