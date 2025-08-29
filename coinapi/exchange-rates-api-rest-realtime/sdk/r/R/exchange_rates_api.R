@@ -127,13 +127,7 @@ ExchangeRatesApi <- R6::R6Class(
         stop("Missing required parameter `asset_id_quote`.")
       }
 
-      if (!missing(`asset_id_base`) && is.null(`asset_id_base`)) {
-        stop("Invalid value for `asset_id_base` when calling ExchangeRatesApi$GetSpecificRate, `asset_id_base` is not nullable")
-      }
 
-      if (!missing(`asset_id_quote`) && is.null(`asset_id_quote`)) {
-        stop("Invalid value for `asset_id_quote` when calling ExchangeRatesApi$GetSpecificRate, `asset_id_quote` is not nullable")
-      }
 
       local_var_url_path <- "/v1/exchangerate/{asset_id_base}/{asset_id_quote}"
       if (!missing(`asset_id_base`)) {
@@ -248,17 +242,8 @@ ExchangeRatesApi <- R6::R6Class(
         stop("Missing required parameter `asset_id_base`.")
       }
 
-      if (!missing(`asset_id_base`) && is.null(`asset_id_base`)) {
-        stop("Invalid value for `asset_id_base` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseGet, `asset_id_base` is not nullable")
-      }
 
-      if (!missing(`filter_asset_id`) && is.null(`filter_asset_id`)) {
-        stop("Invalid value for `filter_asset_id` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseGet, `filter_asset_id` is not nullable")
-      }
 
-      if (!missing(`invert`) && is.null(`invert`)) {
-        stop("Invalid value for `invert` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseGet, `invert` is not nullable")
-      }
 
       query_params[["filter_asset_id"]] <- `filter_asset_id`
 
