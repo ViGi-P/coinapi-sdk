@@ -251,33 +251,12 @@ MetricsV2Api <- R6::R6Class(
         stop("Missing required parameter `asset_id`.")
       }
 
-      if (!missing(`metric_id`) && is.null(`metric_id`)) {
-        stop("Invalid value for `metric_id` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `metric_id` is not nullable")
-      }
 
-      if (!missing(`asset_id`) && is.null(`asset_id`)) {
-        stop("Invalid value for `asset_id` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `asset_id` is not nullable")
-      }
 
-      if (!missing(`time_start`) && is.null(`time_start`)) {
-        stop("Invalid value for `time_start` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `time_start` is not nullable")
-      }
 
-      if (!missing(`time_end`) && is.null(`time_end`)) {
-        stop("Invalid value for `time_end` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `time_end` is not nullable")
-      }
 
-      if (!missing(`time_format`) && is.null(`time_format`)) {
-        stop("Invalid value for `time_format` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `time_format` is not nullable")
-      }
 
-      if (!missing(`period_id`) && is.null(`period_id`)) {
-        stop("Invalid value for `period_id` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `period_id` is not nullable")
-      }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `limit` is not nullable")
-      }
 
       query_params[["metric_id"]] <- `metric_id`
 
@@ -394,9 +373,6 @@ MetricsV2Api <- R6::R6Class(
         stop("Missing required parameter `asset_id`.")
       }
 
-      if (!missing(`asset_id`) && is.null(`asset_id`)) {
-        stop("Invalid value for `asset_id` when calling MetricsV2Api$V2MetricsAssetListingGet, `asset_id` is not nullable")
-      }
 
       query_params[["asset_id"]] <- `asset_id`
 
@@ -517,33 +493,12 @@ MetricsV2Api <- R6::R6Class(
         stop("Missing required parameter `chain_id`.")
       }
 
-      if (!missing(`metric_id`) && is.null(`metric_id`)) {
-        stop("Invalid value for `metric_id` when calling MetricsV2Api$V2MetricsChainHistoryGet, `metric_id` is not nullable")
-      }
 
-      if (!missing(`chain_id`) && is.null(`chain_id`)) {
-        stop("Invalid value for `chain_id` when calling MetricsV2Api$V2MetricsChainHistoryGet, `chain_id` is not nullable")
-      }
 
-      if (!missing(`time_start`) && is.null(`time_start`)) {
-        stop("Invalid value for `time_start` when calling MetricsV2Api$V2MetricsChainHistoryGet, `time_start` is not nullable")
-      }
 
-      if (!missing(`time_end`) && is.null(`time_end`)) {
-        stop("Invalid value for `time_end` when calling MetricsV2Api$V2MetricsChainHistoryGet, `time_end` is not nullable")
-      }
 
-      if (!missing(`time_format`) && is.null(`time_format`)) {
-        stop("Invalid value for `time_format` when calling MetricsV2Api$V2MetricsChainHistoryGet, `time_format` is not nullable")
-      }
 
-      if (!missing(`period_id`) && is.null(`period_id`)) {
-        stop("Invalid value for `period_id` when calling MetricsV2Api$V2MetricsChainHistoryGet, `period_id` is not nullable")
-      }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling MetricsV2Api$V2MetricsChainHistoryGet, `limit` is not nullable")
-      }
 
       query_params[["metric_id"]] <- `metric_id`
 
@@ -660,9 +615,6 @@ MetricsV2Api <- R6::R6Class(
         stop("Missing required parameter `chain_id`.")
       }
 
-      if (!missing(`chain_id`) && is.null(`chain_id`)) {
-        stop("Invalid value for `chain_id` when calling MetricsV2Api$V2MetricsChainListingGet, `chain_id` is not nullable")
-      }
 
       query_params[["chain_id"]] <- `chain_id`
 
@@ -783,33 +735,12 @@ MetricsV2Api <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
-      if (!missing(`metric_id`) && is.null(`metric_id`)) {
-        stop("Invalid value for `metric_id` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `metric_id` is not nullable")
-      }
 
-      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
-        stop("Invalid value for `exchange_id` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `exchange_id` is not nullable")
-      }
 
-      if (!missing(`time_start`) && is.null(`time_start`)) {
-        stop("Invalid value for `time_start` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `time_start` is not nullable")
-      }
 
-      if (!missing(`time_end`) && is.null(`time_end`)) {
-        stop("Invalid value for `time_end` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `time_end` is not nullable")
-      }
 
-      if (!missing(`time_format`) && is.null(`time_format`)) {
-        stop("Invalid value for `time_format` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `time_format` is not nullable")
-      }
 
-      if (!missing(`period_id`) && is.null(`period_id`)) {
-        stop("Invalid value for `period_id` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `period_id` is not nullable")
-      }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `limit` is not nullable")
-      }
 
       query_params[["metric_id"]] <- `metric_id`
 
@@ -926,9 +857,6 @@ MetricsV2Api <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
-      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
-        stop("Invalid value for `exchange_id` when calling MetricsV2Api$V2MetricsExchangeListingGet, `exchange_id` is not nullable")
-      }
 
       query_params[["exchange_id"]] <- `exchange_id`
 

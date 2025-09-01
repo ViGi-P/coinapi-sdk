@@ -302,9 +302,6 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `asset_id`.")
       }
 
-      if (!missing(`asset_id`) && is.null(`asset_id`)) {
-        stop("Invalid value for `asset_id` when calling MetadataApi$V1AssetsAssetIdGet, `asset_id` is not nullable")
-      }
 
       local_var_url_path <- "/v1/assets/{asset_id}"
       if (!missing(`asset_id`)) {
@@ -407,9 +404,6 @@ MetadataApi <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
-      if (!missing(`filter_asset_id`) && is.null(`filter_asset_id`)) {
-        stop("Invalid value for `filter_asset_id` when calling MetadataApi$V1AssetsGet, `filter_asset_id` is not nullable")
-      }
 
       query_params[["filter_asset_id"]] <- `filter_asset_id`
 
@@ -514,9 +508,6 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `size`.")
       }
 
-      if (!missing(`size`) && is.null(`size`)) {
-        stop("Invalid value for `size` when calling MetadataApi$V1AssetsIconsSizeGet, `size` is not nullable")
-      }
 
       local_var_url_path <- "/v1/assets/icons/{size}"
       if (!missing(`size`)) {
@@ -623,9 +614,6 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `chain_id`.")
       }
 
-      if (!missing(`chain_id`) && is.null(`chain_id`)) {
-        stop("Invalid value for `chain_id` when calling MetadataApi$V1ChainsChainIdGet, `chain_id` is not nullable")
-      }
 
       local_var_url_path <- "/v1/chains/{chain_id}"
       if (!missing(`chain_id`)) {
@@ -728,9 +716,6 @@ MetadataApi <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
-      if (!missing(`filter_chain_id`) && is.null(`filter_chain_id`)) {
-        stop("Invalid value for `filter_chain_id` when calling MetadataApi$V1ChainsGet, `filter_chain_id` is not nullable")
-      }
 
       query_params[["filter_chain_id"]] <- `filter_chain_id`
 
@@ -835,9 +820,6 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
-      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
-        stop("Invalid value for `exchange_id` when calling MetadataApi$V1ExchangesExchangeIdGet, `exchange_id` is not nullable")
-      }
 
       local_var_url_path <- "/v1/exchanges/{exchange_id}"
       if (!missing(`exchange_id`)) {
@@ -940,9 +922,6 @@ MetadataApi <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
-      if (!missing(`filter_exchange_id`) && is.null(`filter_exchange_id`)) {
-        stop("Invalid value for `filter_exchange_id` when calling MetadataApi$V1ExchangesGet, `filter_exchange_id` is not nullable")
-      }
 
       query_params[["filter_exchange_id"]] <- `filter_exchange_id`
 
@@ -1047,9 +1026,6 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `size`.")
       }
 
-      if (!missing(`size`) && is.null(`size`)) {
-        stop("Invalid value for `size` when calling MetadataApi$V1ExchangesIconsSizeGet, `size` is not nullable")
-      }
 
       local_var_url_path <- "/v1/exchanges/icons/{size}"
       if (!missing(`size`)) {
@@ -1160,17 +1136,8 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
-      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
-        stop("Invalid value for `exchange_id` when calling MetadataApi$V1SymbolsExchangeIdActiveGet, `exchange_id` is not nullable")
-      }
 
-      if (!missing(`filter_symbol_id`) && is.null(`filter_symbol_id`)) {
-        stop("Invalid value for `filter_symbol_id` when calling MetadataApi$V1SymbolsExchangeIdActiveGet, `filter_symbol_id` is not nullable")
-      }
 
-      if (!missing(`filter_asset_id`) && is.null(`filter_asset_id`)) {
-        stop("Invalid value for `filter_asset_id` when calling MetadataApi$V1SymbolsExchangeIdActiveGet, `filter_asset_id` is not nullable")
-      }
 
       query_params[["filter_symbol_id"]] <- `filter_symbol_id`
 
@@ -1285,17 +1252,8 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
-      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
-        stop("Invalid value for `exchange_id` when calling MetadataApi$V1SymbolsExchangeIdHistoryGet, `exchange_id` is not nullable")
-      }
 
-      if (!missing(`page`) && is.null(`page`)) {
-        stop("Invalid value for `page` when calling MetadataApi$V1SymbolsExchangeIdHistoryGet, `page` is not nullable")
-      }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling MetadataApi$V1SymbolsExchangeIdHistoryGet, `limit` is not nullable")
-      }
 
       query_params[["page"]] <- `page`
 
@@ -1406,9 +1364,6 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
-      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
-        stop("Invalid value for `exchange_id` when calling MetadataApi$V1SymbolsMapExchangeIdGet, `exchange_id` is not nullable")
-      }
 
       local_var_url_path <- "/v1/symbols/map/{exchange_id}"
       if (!missing(`exchange_id`)) {

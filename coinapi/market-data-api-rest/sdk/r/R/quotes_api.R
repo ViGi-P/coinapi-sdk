@@ -180,9 +180,6 @@ QuotesApi <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
-      if (!missing(`filter_symbol_id`) && is.null(`filter_symbol_id`)) {
-        stop("Invalid value for `filter_symbol_id` when calling QuotesApi$V1QuotesCurrentGet, `filter_symbol_id` is not nullable")
-      }
 
       query_params[["filter_symbol_id"]] <- `filter_symbol_id`
 
@@ -285,13 +282,7 @@ QuotesApi <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
-      if (!missing(`filter_symbol_id`) && is.null(`filter_symbol_id`)) {
-        stop("Invalid value for `filter_symbol_id` when calling QuotesApi$V1QuotesLatestGet, `filter_symbol_id` is not nullable")
-      }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling QuotesApi$V1QuotesLatestGet, `limit` is not nullable")
-      }
 
       query_params[["filter_symbol_id"]] <- `filter_symbol_id`
 
@@ -398,9 +389,6 @@ QuotesApi <- R6::R6Class(
         stop("Missing required parameter `symbol_id`.")
       }
 
-      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
-        stop("Invalid value for `symbol_id` when calling QuotesApi$V1QuotesSymbolIdCurrentGet, `symbol_id` is not nullable")
-      }
 
       local_var_url_path <- "/v1/quotes/{symbol_id}/current"
       if (!missing(`symbol_id`)) {
@@ -515,25 +503,10 @@ QuotesApi <- R6::R6Class(
         stop("Missing required parameter `symbol_id`.")
       }
 
-      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
-        stop("Invalid value for `symbol_id` when calling QuotesApi$V1QuotesSymbolIdHistoryGet, `symbol_id` is not nullable")
-      }
 
-      if (!missing(`date`) && is.null(`date`)) {
-        stop("Invalid value for `date` when calling QuotesApi$V1QuotesSymbolIdHistoryGet, `date` is not nullable")
-      }
 
-      if (!missing(`time_start`) && is.null(`time_start`)) {
-        stop("Invalid value for `time_start` when calling QuotesApi$V1QuotesSymbolIdHistoryGet, `time_start` is not nullable")
-      }
 
-      if (!missing(`time_end`) && is.null(`time_end`)) {
-        stop("Invalid value for `time_end` when calling QuotesApi$V1QuotesSymbolIdHistoryGet, `time_end` is not nullable")
-      }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling QuotesApi$V1QuotesSymbolIdHistoryGet, `limit` is not nullable")
-      }
 
       query_params[["date"]] <- `date`
 
@@ -650,13 +623,7 @@ QuotesApi <- R6::R6Class(
         stop("Missing required parameter `symbol_id`.")
       }
 
-      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
-        stop("Invalid value for `symbol_id` when calling QuotesApi$V1QuotesSymbolIdLatestGet, `symbol_id` is not nullable")
-      }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling QuotesApi$V1QuotesSymbolIdLatestGet, `limit` is not nullable")
-      }
 
       query_params[["limit"]] <- `limit`
 

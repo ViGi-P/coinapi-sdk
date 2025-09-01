@@ -21,7 +21,6 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +31,7 @@ class V1Trade(BaseModel):
     symbol_id: Optional[StrictStr] = Field(default=None, description="The symbol identifier.")
     time_exchange: Optional[datetime] = Field(default=None, description="The time of trade reported by the exchange.")
     time_coinapi: Optional[datetime] = Field(default=None, description="The time when the trade was received by CoinAPI.")
-    uuid: Optional[UUID] = Field(default=None, description="The unique identifier for the trade.")
+    uuid: Optional[StrictStr] = Field(default=None, description="The unique identifier for the trade.")
     price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The price of the transaction.")
     size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The base asset amount traded in the transaction.")
     taker_side: Optional[StrictStr] = Field(default=None, description="The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN).")

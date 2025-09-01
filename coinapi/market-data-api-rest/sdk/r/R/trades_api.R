@@ -147,17 +147,8 @@ TradesApi <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
-      if (!missing(`filter_symbol_id`) && is.null(`filter_symbol_id`)) {
-        stop("Invalid value for `filter_symbol_id` when calling TradesApi$V1TradesLatestGet, `filter_symbol_id` is not nullable")
-      }
 
-      if (!missing(`include_id`) && is.null(`include_id`)) {
-        stop("Invalid value for `include_id` when calling TradesApi$V1TradesLatestGet, `include_id` is not nullable")
-      }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling TradesApi$V1TradesLatestGet, `limit` is not nullable")
-      }
 
       query_params[["filter_symbol_id"]] <- `filter_symbol_id`
 
@@ -276,29 +267,11 @@ TradesApi <- R6::R6Class(
         stop("Missing required parameter `symbol_id`.")
       }
 
-      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
-        stop("Invalid value for `symbol_id` when calling TradesApi$V1TradesSymbolIdHistoryGet, `symbol_id` is not nullable")
-      }
 
-      if (!missing(`date`) && is.null(`date`)) {
-        stop("Invalid value for `date` when calling TradesApi$V1TradesSymbolIdHistoryGet, `date` is not nullable")
-      }
 
-      if (!missing(`time_start`) && is.null(`time_start`)) {
-        stop("Invalid value for `time_start` when calling TradesApi$V1TradesSymbolIdHistoryGet, `time_start` is not nullable")
-      }
 
-      if (!missing(`time_end`) && is.null(`time_end`)) {
-        stop("Invalid value for `time_end` when calling TradesApi$V1TradesSymbolIdHistoryGet, `time_end` is not nullable")
-      }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling TradesApi$V1TradesSymbolIdHistoryGet, `limit` is not nullable")
-      }
 
-      if (!missing(`include_id`) && is.null(`include_id`)) {
-        stop("Invalid value for `include_id` when calling TradesApi$V1TradesSymbolIdHistoryGet, `include_id` is not nullable")
-      }
 
       query_params[["date"]] <- `date`
 
@@ -419,17 +392,8 @@ TradesApi <- R6::R6Class(
         stop("Missing required parameter `symbol_id`.")
       }
 
-      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
-        stop("Invalid value for `symbol_id` when calling TradesApi$V1TradesSymbolIdLatestGet, `symbol_id` is not nullable")
-      }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling TradesApi$V1TradesSymbolIdLatestGet, `limit` is not nullable")
-      }
 
-      if (!missing(`include_id`) && is.null(`include_id`)) {
-        stop("Invalid value for `include_id` when calling TradesApi$V1TradesSymbolIdLatestGet, `include_id` is not nullable")
-      }
 
       query_params[["limit"]] <- `limit`
 

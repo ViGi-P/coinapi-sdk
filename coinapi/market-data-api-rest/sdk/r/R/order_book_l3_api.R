@@ -118,13 +118,7 @@ OrderBookL3Api <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
-      if (!missing(`filter_symbol_id`) && is.null(`filter_symbol_id`)) {
-        stop("Invalid value for `filter_symbol_id` when calling OrderBookL3Api$V1Orderbooks3CurrentGet, `filter_symbol_id` is not nullable")
-      }
 
-      if (!missing(`limit_levels`) && is.null(`limit_levels`)) {
-        stop("Invalid value for `limit_levels` when calling OrderBookL3Api$V1Orderbooks3CurrentGet, `limit_levels` is not nullable")
-      }
 
       query_params[["filter_symbol_id"]] <- `filter_symbol_id`
 
@@ -233,13 +227,7 @@ OrderBookL3Api <- R6::R6Class(
         stop("Missing required parameter `symbol_id`.")
       }
 
-      if (!missing(`symbol_id`) && is.null(`symbol_id`)) {
-        stop("Invalid value for `symbol_id` when calling OrderBookL3Api$V1Orderbooks3SymbolIdCurrentGet, `symbol_id` is not nullable")
-      }
 
-      if (!missing(`limit_levels`) && is.null(`limit_levels`)) {
-        stop("Invalid value for `limit_levels` when calling OrderBookL3Api$V1Orderbooks3SymbolIdCurrentGet, `limit_levels` is not nullable")
-      }
 
       query_params[["limit_levels"]] <- `limit_levels`
 

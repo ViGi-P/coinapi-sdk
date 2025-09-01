@@ -14,44 +14,7 @@
 """  # noqa: E501
 
 
-if __import__("typing").TYPE_CHECKING:
-    # import models into model package
-    from api_bricks_coinapi_market_data_api_rest.models.models_exchange_timeseries_item import ModelsExchangeTimeseriesItem
-    from api_bricks_coinapi_market_data_api_rest.models.options_option_exchange_group import OptionsOptionExchangeGroup
-    from api_bricks_coinapi_market_data_api_rest.models.options_strike import OptionsStrike
-    from api_bricks_coinapi_market_data_api_rest.models.v1_asset import V1Asset
-    from api_bricks_coinapi_market_data_api_rest.models.v1_chain import V1Chain
-    from api_bricks_coinapi_market_data_api_rest.models.v1_chain_network_address import V1ChainNetworkAddress
-    from api_bricks_coinapi_market_data_api_rest.models.v1_exchange import V1Exchange
-    from api_bricks_coinapi_market_data_api_rest.models.v1_exchange_rate import V1ExchangeRate
-    from api_bricks_coinapi_market_data_api_rest.models.v1_exchange_rates import V1ExchangeRates
-    from api_bricks_coinapi_market_data_api_rest.models.v1_exchange_rates_rate import V1ExchangeRatesRate
-    from api_bricks_coinapi_market_data_api_rest.models.v1_exchange_rates_timeseries_item import V1ExchangeRatesTimeseriesItem
-    from api_bricks_coinapi_market_data_api_rest.models.v1_general_data import V1GeneralData
-    from api_bricks_coinapi_market_data_api_rest.models.v1_icon import V1Icon
-    from api_bricks_coinapi_market_data_api_rest.models.v1_last_trade import V1LastTrade
-    from api_bricks_coinapi_market_data_api_rest.models.v1_listing_item import V1ListingItem
-    from api_bricks_coinapi_market_data_api_rest.models.v1_metric import V1Metric
-    from api_bricks_coinapi_market_data_api_rest.models.v1_metric_data import V1MetricData
-    from api_bricks_coinapi_market_data_api_rest.models.v1_metric_info import V1MetricInfo
-    from api_bricks_coinapi_market_data_api_rest.models.v1_order_book import V1OrderBook
-    from api_bricks_coinapi_market_data_api_rest.models.v1_order_book_base import V1OrderBookBase
-    from api_bricks_coinapi_market_data_api_rest.models.v1_order_book_depth import V1OrderBookDepth
-    from api_bricks_coinapi_market_data_api_rest.models.v1_quote import V1Quote
-    from api_bricks_coinapi_market_data_api_rest.models.v1_quote_trade import V1QuoteTrade
-    from api_bricks_coinapi_market_data_api_rest.models.v1_symbol import V1Symbol
-    from api_bricks_coinapi_market_data_api_rest.models.v1_symbol_mapping import V1SymbolMapping
-    from api_bricks_coinapi_market_data_api_rest.models.v1_timeseries_item import V1TimeseriesItem
-    from api_bricks_coinapi_market_data_api_rest.models.v1_timeseries_period import V1TimeseriesPeriod
-    from api_bricks_coinapi_market_data_api_rest.models.v1_trade import V1Trade
-    
-else:
-    from lazy_imports import LazyModule, as_package, load
-
-    load(
-        LazyModule(
-            *as_package(__file__),
-            """# import models into model package
+# import models into model package
 from api_bricks_coinapi_market_data_api_rest.models.models_exchange_timeseries_item import ModelsExchangeTimeseriesItem
 from api_bricks_coinapi_market_data_api_rest.models.options_option_exchange_group import OptionsOptionExchangeGroup
 from api_bricks_coinapi_market_data_api_rest.models.options_strike import OptionsStrike
@@ -80,9 +43,3 @@ from api_bricks_coinapi_market_data_api_rest.models.v1_symbol_mapping import V1S
 from api_bricks_coinapi_market_data_api_rest.models.v1_timeseries_item import V1TimeseriesItem
 from api_bricks_coinapi_market_data_api_rest.models.v1_timeseries_period import V1TimeseriesPeriod
 from api_bricks_coinapi_market_data_api_rest.models.v1_trade import V1Trade
-
-""",
-            name=__name__,
-            doc=__doc__,
-        )
-    )

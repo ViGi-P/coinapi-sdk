@@ -21,7 +21,6 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +30,7 @@ class V1LastTrade(BaseModel):
     """ # noqa: E501
     time_exchange: Optional[datetime] = Field(default=None, description="The exchange time of the last trade.")
     time_coinapi: Optional[datetime] = Field(default=None, description="The CoinAPI time when the last trade was received.")
-    uuid: Optional[UUID] = Field(default=None, description="The UUID of the last trade.")
+    uuid: Optional[StrictStr] = Field(default=None, description="The UUID of the last trade.")
     price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The price of the last trade.")
     size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The size of the last trade.")
     taker_side: Optional[StrictStr] = Field(default=None, description="The taker side of the last trade.")
