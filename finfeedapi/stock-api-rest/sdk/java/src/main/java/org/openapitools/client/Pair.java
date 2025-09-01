@@ -13,25 +13,45 @@
 
 package org.openapitools.client;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-08-29T06:10:23.092861685Z[Etc/UTC]", comments = "Generator version: 7.15.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-01T06:07:12.135745781Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class Pair {
-  private final String name;
-  private final String value;
+    private String name = "";
+    private String value = "";
 
-  public Pair(String name, String value) {
-    this.name = isValidString(name) ? name : "";
-    this.value = isValidString(value) ? value : "";
-  }
+    public Pair (String name, String value) {
+        setName(name);
+        setValue(value);
+    }
 
-  public String getName() {
-    return this.name;
-  }
+    private void setName(String name) {
+        if (!isValidString(name)) {
+            return;
+        }
 
-  public String getValue() {
-    return this.value;
-  }
+        this.name = name;
+    }
 
-  private static boolean isValidString(String arg) {
-    return arg != null;
-  }
+    private void setValue(String value) {
+        if (!isValidString(value)) {
+            return;
+        }
+
+        this.value = value;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getValue() {
+        return this.value;
+    }
+
+    private boolean isValidString(String arg) {
+        if (arg == null) {
+            return false;
+        }
+
+        return true;
+    }
 }

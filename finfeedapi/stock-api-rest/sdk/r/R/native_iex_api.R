@@ -209,13 +209,7 @@ NativeIEXApi <- R6::R6Class(
         stop("Missing required parameter `date`.")
       }
 
-      if (!missing(`symbol`) && is.null(`symbol`)) {
-        stop("Invalid value for `symbol` when calling NativeIEXApi$V1NativeIexAdminMessagesSymbolGet, `symbol` is not nullable")
-      }
 
-      if (!missing(`date`) && is.null(`date`)) {
-        stop("Invalid value for `date` when calling NativeIEXApi$V1NativeIexAdminMessagesSymbolGet, `date` is not nullable")
-      }
 
       query_params[["date"]] <- `date`
 
@@ -324,9 +318,6 @@ NativeIEXApi <- R6::R6Class(
         stop("Missing required parameter `date`.")
       }
 
-      if (!missing(`date`) && is.null(`date`)) {
-        stop("Invalid value for `date` when calling NativeIEXApi$V1NativeIexAdminSystemEventGet, `date` is not nullable")
-      }
 
       query_params[["date"]] <- `date`
 
@@ -437,13 +428,7 @@ NativeIEXApi <- R6::R6Class(
         stop("Missing required parameter `date`.")
       }
 
-      if (!missing(`symbol`) && is.null(`symbol`)) {
-        stop("Invalid value for `symbol` when calling NativeIEXApi$V1NativeIexLevel1QuoteSymbolGet, `symbol` is not nullable")
-      }
 
-      if (!missing(`date`) && is.null(`date`)) {
-        stop("Invalid value for `date` when calling NativeIEXApi$V1NativeIexLevel1QuoteSymbolGet, `date` is not nullable")
-      }
 
       query_params[["date"]] <- `date`
 
@@ -558,13 +543,7 @@ NativeIEXApi <- R6::R6Class(
         stop("Missing required parameter `date`.")
       }
 
-      if (!missing(`symbol`) && is.null(`symbol`)) {
-        stop("Invalid value for `symbol` when calling NativeIEXApi$V1NativeIexLevel2PriceLevelUpdateSymbolGet, `symbol` is not nullable")
-      }
 
-      if (!missing(`date`) && is.null(`date`)) {
-        stop("Invalid value for `date` when calling NativeIEXApi$V1NativeIexLevel2PriceLevelUpdateSymbolGet, `date` is not nullable")
-      }
 
       query_params[["date"]] <- `date`
 
@@ -679,13 +658,7 @@ NativeIEXApi <- R6::R6Class(
         stop("Missing required parameter `date`.")
       }
 
-      if (!missing(`symbol`) && is.null(`symbol`)) {
-        stop("Invalid value for `symbol` when calling NativeIEXApi$V1NativeIexLevel3OrderBookSymbolGet, `symbol` is not nullable")
-      }
 
-      if (!missing(`date`) && is.null(`date`)) {
-        stop("Invalid value for `date` when calling NativeIEXApi$V1NativeIexLevel3OrderBookSymbolGet, `date` is not nullable")
-      }
 
       query_params[["date"]] <- `date`
 
@@ -800,13 +773,7 @@ NativeIEXApi <- R6::R6Class(
         stop("Missing required parameter `date`.")
       }
 
-      if (!missing(`symbol`) && is.null(`symbol`)) {
-        stop("Invalid value for `symbol` when calling NativeIEXApi$V1NativeIexTradeSymbolGet, `symbol` is not nullable")
-      }
 
-      if (!missing(`date`) && is.null(`date`)) {
-        stop("Invalid value for `date` when calling NativeIEXApi$V1NativeIexTradeSymbolGet, `date` is not nullable")
-      }
 
       query_params[["date"]] <- `date`
 

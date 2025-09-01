@@ -57,58 +57,7 @@ __all__ = [
     "TradeTradeModel",
 ]
 
-if __import__("typing").TYPE_CHECKING:
-    # import apis into sdk package
-    from api_bricks_stock_api_rest.api.metadata_api import MetadataApi as MetadataApi
-    from api_bricks_stock_api_rest.api.native_iex_api import NativeIEXApi as NativeIEXApi
-    from api_bricks_stock_api_rest.api.ohlcv_api import OhlcvApi as OhlcvApi
-    
-    # import ApiClient
-    from api_bricks_stock_api_rest.api_response import ApiResponse as ApiResponse
-    from api_bricks_stock_api_rest.api_client import ApiClient as ApiClient
-    from api_bricks_stock_api_rest.configuration import Configuration as Configuration
-    from api_bricks_stock_api_rest.exceptions import OpenApiException as OpenApiException
-    from api_bricks_stock_api_rest.exceptions import ApiTypeError as ApiTypeError
-    from api_bricks_stock_api_rest.exceptions import ApiValueError as ApiValueError
-    from api_bricks_stock_api_rest.exceptions import ApiKeyError as ApiKeyError
-    from api_bricks_stock_api_rest.exceptions import ApiAttributeError as ApiAttributeError
-    from api_bricks_stock_api_rest.exceptions import ApiException as ApiException
-    
-    # import models into sdk package
-    from api_bricks_stock_api_rest.models.admin_admin_message_model import AdminAdminMessageModel as AdminAdminMessageModel
-    from api_bricks_stock_api_rest.models.admin_auction_information_model import AdminAuctionInformationModel as AdminAuctionInformationModel
-    from api_bricks_stock_api_rest.models.admin_official_price_model import AdminOfficialPriceModel as AdminOfficialPriceModel
-    from api_bricks_stock_api_rest.models.admin_operational_halt_status_model import AdminOperationalHaltStatusModel as AdminOperationalHaltStatusModel
-    from api_bricks_stock_api_rest.models.admin_retail_liquidity_indicator_model import AdminRetailLiquidityIndicatorModel as AdminRetailLiquidityIndicatorModel
-    from api_bricks_stock_api_rest.models.admin_security_directory_model import AdminSecurityDirectoryModel as AdminSecurityDirectoryModel
-    from api_bricks_stock_api_rest.models.admin_security_event_model import AdminSecurityEventModel as AdminSecurityEventModel
-    from api_bricks_stock_api_rest.models.admin_short_sale_price_test_status_model import AdminShortSalePriceTestStatusModel as AdminShortSalePriceTestStatusModel
-    from api_bricks_stock_api_rest.models.admin_system_event_model import AdminSystemEventModel as AdminSystemEventModel
-    from api_bricks_stock_api_rest.models.admin_trading_status_model import AdminTradingStatusModel as AdminTradingStatusModel
-    from api_bricks_stock_api_rest.models.fin_feed_api_exchange_model import FinFeedAPIExchangeModel as FinFeedAPIExchangeModel
-    from api_bricks_stock_api_rest.models.fin_feed_api_symbol_model import FinFeedAPISymbolModel as FinFeedAPISymbolModel
-    from api_bricks_stock_api_rest.models.level1_quote_update_model import Level1QuoteUpdateModel as Level1QuoteUpdateModel
-    from api_bricks_stock_api_rest.models.level2_price_level_update_model import Level2PriceLevelUpdateModel as Level2PriceLevelUpdateModel
-    from api_bricks_stock_api_rest.models.level3_add_order_model import Level3AddOrderModel as Level3AddOrderModel
-    from api_bricks_stock_api_rest.models.level3_clear_book_model import Level3ClearBookModel as Level3ClearBookModel
-    from api_bricks_stock_api_rest.models.level3_delete_order_model import Level3DeleteOrderModel as Level3DeleteOrderModel
-    from api_bricks_stock_api_rest.models.level3_executed_order_model import Level3ExecutedOrderModel as Level3ExecutedOrderModel
-    from api_bricks_stock_api_rest.models.level3_modify_order_model import Level3ModifyOrderModel as Level3ModifyOrderModel
-    from api_bricks_stock_api_rest.models.level3_order_book_model import Level3OrderBookModel as Level3OrderBookModel
-    from api_bricks_stock_api_rest.models.ohlcv_exchange_timeseries_item import OHLCVExchangeTimeseriesItem as OHLCVExchangeTimeseriesItem
-    from api_bricks_stock_api_rest.models.ohlcv_timeseries_item import OHLCVTimeseriesItem as OHLCVTimeseriesItem
-    from api_bricks_stock_api_rest.models.ohlcv_timeseries_period import OHLCVTimeseriesPeriod as OHLCVTimeseriesPeriod
-    from api_bricks_stock_api_rest.models.trade_trade_model import TradeTradeModel as TradeTradeModel
-    
-else:
-    from lazy_imports import LazyModule, as_package, load
-
-    load(
-        LazyModule(
-            *as_package(__file__),
-            ("__version__", __version__),
-            ("__all__", __all__),
-            """# import apis into sdk package
+# import apis into sdk package
 from api_bricks_stock_api_rest.api.metadata_api import MetadataApi as MetadataApi
 from api_bricks_stock_api_rest.api.native_iex_api import NativeIEXApi as NativeIEXApi
 from api_bricks_stock_api_rest.api.ohlcv_api import OhlcvApi as OhlcvApi
@@ -149,9 +98,3 @@ from api_bricks_stock_api_rest.models.ohlcv_exchange_timeseries_item import OHLC
 from api_bricks_stock_api_rest.models.ohlcv_timeseries_item import OHLCVTimeseriesItem as OHLCVTimeseriesItem
 from api_bricks_stock_api_rest.models.ohlcv_timeseries_period import OHLCVTimeseriesPeriod as OHLCVTimeseriesPeriod
 from api_bricks_stock_api_rest.models.trade_trade_model import TradeTradeModel as TradeTradeModel
-
-""",
-            name=__name__,
-            doc=__doc__,
-        )
-    )
