@@ -138,9 +138,6 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `asset_id`.")
       }
 
-      if (!missing(`asset_id`) && is.null(`asset_id`)) {
-        stop("Invalid value for `asset_id` when calling MetadataApi$V1AssetsAssetIdGet, `asset_id` is not nullable")
-      }
 
       local_var_url_path <- "/v1/assets/{asset_id}"
       if (!missing(`asset_id`)) {
@@ -243,9 +240,6 @@ MetadataApi <- R6::R6Class(
       oauth_scopes <- NULL
       is_oauth <- FALSE
 
-      if (!missing(`filter_asset_id`) && is.null(`filter_asset_id`)) {
-        stop("Invalid value for `filter_asset_id` when calling MetadataApi$V1AssetsGet, `filter_asset_id` is not nullable")
-      }
 
       query_params[["filter_asset_id"]] <- `filter_asset_id`
 
@@ -350,9 +344,6 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `size`.")
       }
 
-      if (!missing(`size`) && is.null(`size`)) {
-        stop("Invalid value for `size` when calling MetadataApi$V1AssetsIconsSizeGet, `size` is not nullable")
-      }
 
       local_var_url_path <- "/v1/assets/icons/{size}"
       if (!missing(`size`)) {
