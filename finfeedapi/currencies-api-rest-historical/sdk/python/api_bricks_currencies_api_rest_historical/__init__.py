@@ -40,41 +40,7 @@ __all__ = [
     "V1TimeseriesPeriod",
 ]
 
-if __import__("typing").TYPE_CHECKING:
-    # import apis into sdk package
-    from api_bricks_currencies_api_rest_historical.api.exchange_rates_api import ExchangeRatesApi as ExchangeRatesApi
-    from api_bricks_currencies_api_rest_historical.api.metadata_api import MetadataApi as MetadataApi
-    
-    # import ApiClient
-    from api_bricks_currencies_api_rest_historical.api_response import ApiResponse as ApiResponse
-    from api_bricks_currencies_api_rest_historical.api_client import ApiClient as ApiClient
-    from api_bricks_currencies_api_rest_historical.configuration import Configuration as Configuration
-    from api_bricks_currencies_api_rest_historical.exceptions import OpenApiException as OpenApiException
-    from api_bricks_currencies_api_rest_historical.exceptions import ApiTypeError as ApiTypeError
-    from api_bricks_currencies_api_rest_historical.exceptions import ApiValueError as ApiValueError
-    from api_bricks_currencies_api_rest_historical.exceptions import ApiKeyError as ApiKeyError
-    from api_bricks_currencies_api_rest_historical.exceptions import ApiAttributeError as ApiAttributeError
-    from api_bricks_currencies_api_rest_historical.exceptions import ApiException as ApiException
-    
-    # import models into sdk package
-    from api_bricks_currencies_api_rest_historical.models.v1_asset import V1Asset as V1Asset
-    from api_bricks_currencies_api_rest_historical.models.v1_chain_network_address import V1ChainNetworkAddress as V1ChainNetworkAddress
-    from api_bricks_currencies_api_rest_historical.models.v1_exchange_rate import V1ExchangeRate as V1ExchangeRate
-    from api_bricks_currencies_api_rest_historical.models.v1_exchange_rates import V1ExchangeRates as V1ExchangeRates
-    from api_bricks_currencies_api_rest_historical.models.v1_exchange_rates_rate import V1ExchangeRatesRate as V1ExchangeRatesRate
-    from api_bricks_currencies_api_rest_historical.models.v1_exchange_rates_timeseries_item import V1ExchangeRatesTimeseriesItem as V1ExchangeRatesTimeseriesItem
-    from api_bricks_currencies_api_rest_historical.models.v1_icon import V1Icon as V1Icon
-    from api_bricks_currencies_api_rest_historical.models.v1_timeseries_period import V1TimeseriesPeriod as V1TimeseriesPeriod
-    
-else:
-    from lazy_imports import LazyModule, as_package, load
-
-    load(
-        LazyModule(
-            *as_package(__file__),
-            ("__version__", __version__),
-            ("__all__", __all__),
-            """# import apis into sdk package
+# import apis into sdk package
 from api_bricks_currencies_api_rest_historical.api.exchange_rates_api import ExchangeRatesApi as ExchangeRatesApi
 from api_bricks_currencies_api_rest_historical.api.metadata_api import MetadataApi as MetadataApi
 
@@ -98,9 +64,3 @@ from api_bricks_currencies_api_rest_historical.models.v1_exchange_rates_rate imp
 from api_bricks_currencies_api_rest_historical.models.v1_exchange_rates_timeseries_item import V1ExchangeRatesTimeseriesItem as V1ExchangeRatesTimeseriesItem
 from api_bricks_currencies_api_rest_historical.models.v1_icon import V1Icon as V1Icon
 from api_bricks_currencies_api_rest_historical.models.v1_timeseries_period import V1TimeseriesPeriod as V1TimeseriesPeriod
-
-""",
-            name=__name__,
-            doc=__doc__,
-        )
-    )
