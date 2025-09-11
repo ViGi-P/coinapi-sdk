@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a data model for metric data.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-10T06:05:05.162658657Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-11T06:05:05.420692990Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class V1MetricData {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
