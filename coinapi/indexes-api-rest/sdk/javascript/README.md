@@ -102,6 +102,27 @@ Please follow the [installation](#installation) instruction and execute the foll
 ```javascript
 var CoinApiIndexesRestApi = require('coin_api_indexes_rest_api');
 
+var defaultClient = CoinApiIndexesRestApi.ApiClient.instance;
+// Configure API key authorization: APIKey
+var APIKey = defaultClient.authentications['APIKey'];
+APIKey.apiKey = "YOUR API KEY"
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//APIKey.apiKeyPrefix['Authorization'] = "Token"
+// Configure Bearer (JWT) access token for authorization: JWT
+var JWT = defaultClient.authentications['JWT'];
+JWT.accessToken = "YOUR ACCESS TOKEN"
+
+var api = new CoinApiIndexesRestApi.IndexesApi()
+var indexDefinitionId = "indexDefinitionId_example"; // {String} 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId, callback);
+
 ```
 
 ## Documentation for API Endpoints
@@ -110,10 +131,32 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*CoinApiIndexesRestApi.IndexesApi* | [**v1IndexdefInputDataIndexDefinitionIdAllGet**](docs/IndexesApi.md#v1IndexdefInputDataIndexDefinitionIdAllGet) | **GET** /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition
+*CoinApiIndexesRestApi.IndexesApi* | [**v1IndexdefInputDataIndexDefinitionIdGet**](docs/IndexesApi.md#v1IndexdefInputDataIndexDefinitionIdGet) | **GET** /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time
+*CoinApiIndexesRestApi.IndexesApi* | [**v1IndexdefMultiassetGet**](docs/IndexesApi.md#v1IndexdefMultiassetGet) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
+*CoinApiIndexesRestApi.IndexesApi* | [**v1IndexdefMultiassetIndexIdGet**](docs/IndexesApi.md#v1IndexdefMultiassetIndexIdGet) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
+*CoinApiIndexesRestApi.IndexesApi* | [**v1IndexesGet**](docs/IndexesApi.md#v1IndexesGet) | **GET** /v1/indexes | List indexes
+*CoinApiIndexesRestApi.IndexesApi* | [**v1IndexesIndexDefinitionIdCurrentSnapshotGet**](docs/IndexesApi.md#v1IndexesIndexDefinitionIdCurrentSnapshotGet) | **GET** /v1/indexes/{index_definition_id}/currentSnapshot | Current Index Values for index definition
+*CoinApiIndexesRestApi.IndexesApi* | [**v1IndexesIndexDefinitionIdHistorySnapshotGet**](docs/IndexesApi.md#v1IndexesIndexDefinitionIdHistorySnapshotGet) | **GET** /v1/indexes/{index_definition_id}/historySnapshot | Historical Index Values for index definition
+*CoinApiIndexesRestApi.IndexesApi* | [**v1IndexesIndexIdCurrentGet**](docs/IndexesApi.md#v1IndexesIndexIdCurrentGet) | **GET** /v1/indexes/{index_id}/current | Current Index Value
+*CoinApiIndexesRestApi.IndexesApi* | [**v1IndexesIndexIdHistoryGet**](docs/IndexesApi.md#v1IndexesIndexIdHistoryGet) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
+*CoinApiIndexesRestApi.IndexesApi* | [**v1IndexesIndexIdTimeseriesGet**](docs/IndexesApi.md#v1IndexesIndexIdTimeseriesGet) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
+*CoinApiIndexesRestApi.MetadataApi* | [**apiMetadataExchangesExchangeIdGet**](docs/MetadataApi.md#apiMetadataExchangesExchangeIdGet) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
+*CoinApiIndexesRestApi.MetadataApi* | [**apiMetadataExchangesGet**](docs/MetadataApi.md#apiMetadataExchangesGet) | **GET** /api/metadata/exchanges | List all exchanges
+*CoinApiIndexesRestApi.PeriodsApi* | [**v1MetadataPeriodsGet**](docs/PeriodsApi.md#v1MetadataPeriodsGet) | **GET** /v1/metadata/periods | List all periods
 
 
 ## Documentation for Models
 
+ - [CoinApiIndexesRestApi.IndexesIndexDefinitionInputData](docs/IndexesIndexDefinitionInputData.md)
+ - [CoinApiIndexesRestApi.IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
+ - [CoinApiIndexesRestApi.IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
+ - [CoinApiIndexesRestApi.IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)
+ - [CoinApiIndexesRestApi.IndexesIndexTimeseriesItem](docs/IndexesIndexTimeseriesItem.md)
+ - [CoinApiIndexesRestApi.IndexesIndexValue](docs/IndexesIndexValue.md)
+ - [CoinApiIndexesRestApi.IndexesIndexValueComponent](docs/IndexesIndexValueComponent.md)
+ - [CoinApiIndexesRestApi.MetadataExchange](docs/MetadataExchange.md)
+ - [CoinApiIndexesRestApi.MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
 
 
 ## Documentation for Authorization

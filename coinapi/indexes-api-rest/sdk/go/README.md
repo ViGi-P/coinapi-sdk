@@ -79,10 +79,32 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*IndexesAPI* | [**V1IndexdefInputDataIndexDefinitionIdAllGet**](docs/IndexesAPI.md#v1indexdefinputdataindexdefinitionidallget) | **Get** /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition
+*IndexesAPI* | [**V1IndexdefInputDataIndexDefinitionIdGet**](docs/IndexesAPI.md#v1indexdefinputdataindexdefinitionidget) | **Get** /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time
+*IndexesAPI* | [**V1IndexdefMultiassetGet**](docs/IndexesAPI.md#v1indexdefmultiassetget) | **Get** /v1/indexdef/multiasset | Get all multi-asset weights
+*IndexesAPI* | [**V1IndexdefMultiassetIndexIdGet**](docs/IndexesAPI.md#v1indexdefmultiassetindexidget) | **Get** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
+*IndexesAPI* | [**V1IndexesGet**](docs/IndexesAPI.md#v1indexesget) | **Get** /v1/indexes | List indexes
+*IndexesAPI* | [**V1IndexesIndexDefinitionIdCurrentSnapshotGet**](docs/IndexesAPI.md#v1indexesindexdefinitionidcurrentsnapshotget) | **Get** /v1/indexes/{index_definition_id}/currentSnapshot | Current Index Values for index definition
+*IndexesAPI* | [**V1IndexesIndexDefinitionIdHistorySnapshotGet**](docs/IndexesAPI.md#v1indexesindexdefinitionidhistorysnapshotget) | **Get** /v1/indexes/{index_definition_id}/historySnapshot | Historical Index Values for index definition
+*IndexesAPI* | [**V1IndexesIndexIdCurrentGet**](docs/IndexesAPI.md#v1indexesindexidcurrentget) | **Get** /v1/indexes/{index_id}/current | Current Index Value
+*IndexesAPI* | [**V1IndexesIndexIdHistoryGet**](docs/IndexesAPI.md#v1indexesindexidhistoryget) | **Get** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
+*IndexesAPI* | [**V1IndexesIndexIdTimeseriesGet**](docs/IndexesAPI.md#v1indexesindexidtimeseriesget) | **Get** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
+*MetadataAPI* | [**ApiMetadataExchangesExchangeIdGet**](docs/MetadataAPI.md#apimetadataexchangesexchangeidget) | **Get** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
+*MetadataAPI* | [**ApiMetadataExchangesGet**](docs/MetadataAPI.md#apimetadataexchangesget) | **Get** /api/metadata/exchanges | List all exchanges
+*PeriodsAPI* | [**V1MetadataPeriodsGet**](docs/PeriodsAPI.md#v1metadataperiodsget) | **Get** /v1/metadata/periods | List all periods
 
 
 ## Documentation For Models
 
+ - [IndexesIndexDefinitionInputData](docs/IndexesIndexDefinitionInputData.md)
+ - [IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
+ - [IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
+ - [IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)
+ - [IndexesIndexTimeseriesItem](docs/IndexesIndexTimeseriesItem.md)
+ - [IndexesIndexValue](docs/IndexesIndexValue.md)
+ - [IndexesIndexValueComponent](docs/IndexesIndexValueComponent.md)
+ - [MetadataExchange](docs/MetadataExchange.md)
+ - [MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
 
 
 ## Documentation For Authorization
@@ -140,4 +162,5 @@ Each of these functions takes a value of the given basic type and returns a poin
 
 ## Author
 
+support@apibricks.io
 

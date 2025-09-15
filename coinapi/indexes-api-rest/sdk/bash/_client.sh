@@ -297,7 +297,17 @@ case $state in
   ops)
     # Operations
     _values "Operations" \
-\
+            "v1IndexdefInputDataIndexDefinitionIdAllGet[Returns all data inputs for a specific index definition]" \
+            "v1IndexdefInputDataIndexDefinitionIdGet[Returns data inputs for certain index definition and time]" \
+            "v1IndexdefMultiassetGet[Get all multi-asset weights]" \
+            "v1IndexdefMultiassetIndexIdGet[Get multi-asset weights for specific index]" \
+            "v1IndexesGet[List indexes]" \
+            "v1IndexesIndexDefinitionIdCurrentSnapshotGet[Current Index Values for index definition]" \
+            "v1IndexesIndexDefinitionIdHistorySnapshotGet[Historical Index Values for index definition]" \
+            "v1IndexesIndexIdCurrentGet[Current Index Value]" \
+            "v1IndexesIndexIdHistoryGet[Historical Index Value w/Composition]" \
+            "v1IndexesIndexIdTimeseriesGet[Timeseries Index Value]"             "apiMetadataExchangesExchangeIdGet[List all exchanges by exchange_id]" \
+            "apiMetadataExchangesGet[List all exchanges]"             "v1MetadataPeriodsGet[List all periods]" \
 
     _arguments "(--help)--help[Print information about operation]"
 
@@ -305,6 +315,110 @@ case $state in
     ;;
   args)
     case $line[1] in
+      v1IndexdefInputDataIndexDefinitionIdAllGet)
+        local -a _op_arguments
+        _op_arguments=(
+          "index_definition_id=:[PATH] "
+                    )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      v1IndexdefInputDataIndexDefinitionIdGet)
+        local -a _op_arguments
+        _op_arguments=(
+          "index_definition_id=:[PATH] "
+          "time=:[QUERY] "
+"enabled_only=true:[QUERY] "
+          "enabled_only=false:[QUERY] "
+"pending_only=true:[QUERY] "
+          "pending_only=false:[QUERY] "
+"filter_asset_id=:[QUERY] "
+"with_status_info=true:[QUERY] "
+          "with_status_info=false:[QUERY] "
+          )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      v1IndexdefMultiassetGet)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      v1IndexdefMultiassetIndexIdGet)
+        local -a _op_arguments
+        _op_arguments=(
+          "index_id=:[PATH] "
+                    )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      v1IndexesGet)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      v1IndexesIndexDefinitionIdCurrentSnapshotGet)
+        local -a _op_arguments
+        _op_arguments=(
+          "index_definition_id=:[PATH] "
+                    )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      v1IndexesIndexDefinitionIdHistorySnapshotGet)
+        local -a _op_arguments
+        _op_arguments=(
+          "index_definition_id=:[PATH] "
+          "time=:[QUERY] "
+          )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      v1IndexesIndexIdCurrentGet)
+        local -a _op_arguments
+        _op_arguments=(
+          "index_id=:[PATH] "
+                    )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      v1IndexesIndexIdHistoryGet)
+        local -a _op_arguments
+        _op_arguments=(
+          "index_id=:[PATH] "
+          "time_start=:[QUERY] "
+"time_end=:[QUERY] "
+"limit=:[QUERY] "
+          )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      v1IndexesIndexIdTimeseriesGet)
+        local -a _op_arguments
+        _op_arguments=(
+          "index_id=:[PATH] "
+          "period_id=:[QUERY] Identifier of requested timeseries period (e.g. &#39;5SEC&#39; or &#39;1DAY&#39;)"
+"time_start=:[QUERY] Timeseries starting time in ISO 8601"
+"time_end=:[QUERY] Timeseries ending time in ISO 8601"
+"limit=:[QUERY] Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)"
+          )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      apiMetadataExchangesExchangeIdGet)
+        local -a _op_arguments
+        _op_arguments=(
+          "exchange_id=:[PATH] The ID of the exchange."
+                    )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      apiMetadataExchangesGet)
+        local -a _op_arguments
+        _op_arguments=(
+                    "filter_exchange_id=:[QUERY] Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#39;BITSTAMP;GEMINI&#39;)"
+          )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      v1MetadataPeriodsGet)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
     esac
     ;;
 

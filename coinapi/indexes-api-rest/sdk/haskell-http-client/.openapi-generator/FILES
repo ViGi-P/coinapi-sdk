@@ -7,6 +7,9 @@ coinapi-indexes-rest.cabal
 git_push.sh
 lib/CoinAPIIndexesREST.hs
 lib/CoinAPIIndexesREST/API.hs
+lib/CoinAPIIndexesREST/API/Indexes.hs
+lib/CoinAPIIndexesREST/API/Metadata.hs
+lib/CoinAPIIndexesREST/API/Periods.hs
 lib/CoinAPIIndexesREST/Client.hs
 lib/CoinAPIIndexesREST/Core.hs
 lib/CoinAPIIndexesREST/Logging.hs

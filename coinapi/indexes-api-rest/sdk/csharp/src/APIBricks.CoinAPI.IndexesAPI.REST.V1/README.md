@@ -11,7 +11,7 @@ outputDir: out
 
 # https://openapi-generator.tech/docs/generators/csharp
 additionalProperties:
-  packageGuid: '{AA71F1D4-C8AB-4E13-BCD5-4283002421B6}'
+  packageGuid: '{DC1885CE-3DA7-45A6-80E1-B1D461913B90}'
 
 # https://openapi-generator.tech/docs/integrations/#github-integration
 # gitHost:
@@ -54,6 +54,9 @@ namespace YourProject
         public static async Task Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
+            var api = host.Services.GetRequiredService<IIndexesApi>();
+            IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse apiResponse = await api.V1IndexdefInputDataIndexDefinitionIdAllGetAsync("todo");
+            List<IndexesIndexDefinitionInputData>? model = apiResponse.Ok();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) => Host.CreateDefaultBuilder(args)

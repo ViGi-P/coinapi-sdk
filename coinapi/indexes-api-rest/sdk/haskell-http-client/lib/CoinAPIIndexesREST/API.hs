@@ -14,4 +14,11 @@ Module : CoinAPIIndexesREST.API
 -}
 
 module CoinAPIIndexesREST.API
-  ( ) where
+  ( module CoinAPIIndexesREST.API.Indexes
+  , module CoinAPIIndexesREST.API.Metadata
+  , module CoinAPIIndexesREST.API.Periods
+  ) where
+
+import CoinAPIIndexesREST.API.Indexes
+import CoinAPIIndexesREST.API.Metadata
+import CoinAPIIndexesREST.API.Periods

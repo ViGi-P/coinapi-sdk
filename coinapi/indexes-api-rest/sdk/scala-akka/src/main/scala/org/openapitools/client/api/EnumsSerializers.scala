@@ -11,6 +11,7 @@
  */
 package org.openapitools.client.api
 
+import org.openapitools.client.model._
 import org.json4s._
 import scala.reflect.ClassTag
 

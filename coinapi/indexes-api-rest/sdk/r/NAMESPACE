@@ -13,5 +13,17 @@ export(ApiClient)
 export(ApiResponse)
 
 # Models
+export(IndexesIndexDefinitionInputData)
+export(IndexesIndexDefinitionSnapshotEntry)
+export(IndexesIndexIdentifier)
+export(IndexesIndexMultiAssetWeight)
+export(IndexesIndexTimeseriesItem)
+export(IndexesIndexValue)
+export(IndexesIndexValueComponent)
+export(MetadataExchange)
+export(MetadataTimeseriesPeriod)
 
 # APIs
+export(IndexesApi)
+export(MetadataApi)
+export(PeriodsApi)

@@ -22,6 +22,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Date;
+import org.openapitools.client.model.*;
 
 public class JsonUtil {
   public static GsonBuilder gsonBuilder;
@@ -56,11 +57,83 @@ public class JsonUtil {
   public static Type getListTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
+    if ("IndexesIndexDefinitionInputData".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IndexesIndexDefinitionInputData>>(){}.getType();
+    }
+    
+    if ("IndexesIndexDefinitionSnapshotEntry".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IndexesIndexDefinitionSnapshotEntry>>(){}.getType();
+    }
+    
+    if ("IndexesIndexIdentifier".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IndexesIndexIdentifier>>(){}.getType();
+    }
+    
+    if ("IndexesIndexMultiAssetWeight".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IndexesIndexMultiAssetWeight>>(){}.getType();
+    }
+    
+    if ("IndexesIndexTimeseriesItem".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IndexesIndexTimeseriesItem>>(){}.getType();
+    }
+    
+    if ("IndexesIndexValue".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IndexesIndexValue>>(){}.getType();
+    }
+    
+    if ("IndexesIndexValueComponent".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IndexesIndexValueComponent>>(){}.getType();
+    }
+    
+    if ("MetadataExchange".equalsIgnoreCase(className)) {
+      return new TypeToken<List<MetadataExchange>>(){}.getType();
+    }
+    
+    if ("MetadataTimeseriesPeriod".equalsIgnoreCase(className)) {
+      return new TypeToken<List<MetadataTimeseriesPeriod>>(){}.getType();
+    }
+    
     return new TypeToken<List<Object>>(){}.getType();
   }
 
   public static Type getTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
+    
+    if ("IndexesIndexDefinitionInputData".equalsIgnoreCase(className)) {
+      return new TypeToken<IndexesIndexDefinitionInputData>(){}.getType();
+    }
+    
+    if ("IndexesIndexDefinitionSnapshotEntry".equalsIgnoreCase(className)) {
+      return new TypeToken<IndexesIndexDefinitionSnapshotEntry>(){}.getType();
+    }
+    
+    if ("IndexesIndexIdentifier".equalsIgnoreCase(className)) {
+      return new TypeToken<IndexesIndexIdentifier>(){}.getType();
+    }
+    
+    if ("IndexesIndexMultiAssetWeight".equalsIgnoreCase(className)) {
+      return new TypeToken<IndexesIndexMultiAssetWeight>(){}.getType();
+    }
+    
+    if ("IndexesIndexTimeseriesItem".equalsIgnoreCase(className)) {
+      return new TypeToken<IndexesIndexTimeseriesItem>(){}.getType();
+    }
+    
+    if ("IndexesIndexValue".equalsIgnoreCase(className)) {
+      return new TypeToken<IndexesIndexValue>(){}.getType();
+    }
+    
+    if ("IndexesIndexValueComponent".equalsIgnoreCase(className)) {
+      return new TypeToken<IndexesIndexValueComponent>(){}.getType();
+    }
+    
+    if ("MetadataExchange".equalsIgnoreCase(className)) {
+      return new TypeToken<MetadataExchange>(){}.getType();
+    }
+    
+    if ("MetadataTimeseriesPeriod".equalsIgnoreCase(className)) {
+      return new TypeToken<MetadataTimeseriesPeriod>(){}.getType();
+    }
     
     return new TypeToken<Object>(){}.getType();
   }

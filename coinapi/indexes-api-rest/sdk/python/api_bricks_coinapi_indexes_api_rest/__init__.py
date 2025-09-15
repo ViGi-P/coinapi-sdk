@@ -19,6 +19,9 @@ __version__ = "1.0.0"
 
 # Define package exports
 __all__ = [
+    "IndexesApi",
+    "MetadataApi",
+    "PeriodsApi",
     "ApiResponse",
     "ApiClient",
     "Configuration",
@@ -28,10 +31,21 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
-    
+    "IndexesIndexDefinitionInputData",
+    "IndexesIndexDefinitionSnapshotEntry",
+    "IndexesIndexIdentifier",
+    "IndexesIndexMultiAssetWeight",
+    "IndexesIndexTimeseriesItem",
+    "IndexesIndexValue",
+    "IndexesIndexValueComponent",
+    "MetadataExchange",
+    "MetadataTimeseriesPeriod",
 ]
 
 # import apis into sdk package
+from api_bricks_coinapi_indexes_api_rest.api.indexes_api import IndexesApi as IndexesApi
+from api_bricks_coinapi_indexes_api_rest.api.metadata_api import MetadataApi as MetadataApi
+from api_bricks_coinapi_indexes_api_rest.api.periods_api import PeriodsApi as PeriodsApi
 
 # import ApiClient
 from api_bricks_coinapi_indexes_api_rest.api_response import ApiResponse as ApiResponse
@@ -45,3 +59,12 @@ from api_bricks_coinapi_indexes_api_rest.exceptions import ApiAttributeError as 
 from api_bricks_coinapi_indexes_api_rest.exceptions import ApiException as ApiException
 
 # import models into sdk package
+from api_bricks_coinapi_indexes_api_rest.models.indexes_index_definition_input_data import IndexesIndexDefinitionInputData as IndexesIndexDefinitionInputData
+from api_bricks_coinapi_indexes_api_rest.models.indexes_index_definition_snapshot_entry import IndexesIndexDefinitionSnapshotEntry as IndexesIndexDefinitionSnapshotEntry
+from api_bricks_coinapi_indexes_api_rest.models.indexes_index_identifier import IndexesIndexIdentifier as IndexesIndexIdentifier
+from api_bricks_coinapi_indexes_api_rest.models.indexes_index_multi_asset_weight import IndexesIndexMultiAssetWeight as IndexesIndexMultiAssetWeight
+from api_bricks_coinapi_indexes_api_rest.models.indexes_index_timeseries_item import IndexesIndexTimeseriesItem as IndexesIndexTimeseriesItem
+from api_bricks_coinapi_indexes_api_rest.models.indexes_index_value import IndexesIndexValue as IndexesIndexValue
+from api_bricks_coinapi_indexes_api_rest.models.indexes_index_value_component import IndexesIndexValueComponent as IndexesIndexValueComponent
+from api_bricks_coinapi_indexes_api_rest.models.metadata_exchange import MetadataExchange as MetadataExchange
+from api_bricks_coinapi_indexes_api_rest.models.metadata_timeseries_period import MetadataTimeseriesPeriod as MetadataTimeseriesPeriod

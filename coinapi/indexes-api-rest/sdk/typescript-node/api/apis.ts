@@ -1,3 +1,9 @@
+export * from './indexesApi';
+import { IndexesApi } from './indexesApi';
+export * from './metadataApi';
+import { MetadataApi } from './metadataApi';
+export * from './periodsApi';
+import { PeriodsApi } from './periodsApi';
 import * as http from 'http';
 
 export class HttpError extends Error {
@@ -9,4 +15,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [];
+export const APIS = [IndexesApi, MetadataApi, PeriodsApi];

@@ -150,4 +150,24 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Client
 
         partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
     }
+
+    /// <summary>
+    /// An interface for responses of type 
+    /// </summary>
+    /// <typeparam name="TType"></typeparam>
+    public interface IOk<TType> : IApiResponse
+    {
+        /// <summary>
+        /// Deserializes the response if the response is Ok
+        /// </summary>
+        /// <returns></returns>
+        TType Ok();
+
+        /// <summary>
+        /// Returns true if the response is Ok and the deserialized response is not null
+        /// </summary>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        bool TryOk([NotNullWhen(true)]out TType? result);
+    }
 }

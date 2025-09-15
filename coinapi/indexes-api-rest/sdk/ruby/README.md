@@ -58,6 +58,30 @@ Please follow the [installation](#installation) procedure and then run the follo
 # Load the gem
 require 'openapi_client'
 
+# Setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: APIKey
+  config.api_key['Authorization'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['Authorization'] = 'Bearer'
+
+  # Configure Bearer authorization (JWT): JWT
+  config.access_token = 'YOUR_BEARER_TOKEN'
+  # Configure a proc to get access tokens in lieu of the static access_token configuration
+  config.access_token_getter = -> { 'YOUR TOKEN GETTER PROC' } 
+end
+
+api_instance = OpenapiClient::IndexesApi.new
+index_definition_id = 'index_definition_id_example' # String | 
+
+begin
+  #Returns all data inputs for a specific index definition
+  result = api_instance.v1_indexdef_input_data_index_definition_id_all_get(index_definition_id)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Exception when calling IndexesApi->v1_indexdef_input_data_index_definition_id_all_get: #{e}"
+end
+
 ```
 
 ## Documentation for API Endpoints
@@ -66,10 +90,32 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*OpenapiClient::IndexesApi* | [**v1_indexdef_input_data_index_definition_id_all_get**](docs/IndexesApi.md#v1_indexdef_input_data_index_definition_id_all_get) | **GET** /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition
+*OpenapiClient::IndexesApi* | [**v1_indexdef_input_data_index_definition_id_get**](docs/IndexesApi.md#v1_indexdef_input_data_index_definition_id_get) | **GET** /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time
+*OpenapiClient::IndexesApi* | [**v1_indexdef_multiasset_get**](docs/IndexesApi.md#v1_indexdef_multiasset_get) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
+*OpenapiClient::IndexesApi* | [**v1_indexdef_multiasset_index_id_get**](docs/IndexesApi.md#v1_indexdef_multiasset_index_id_get) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
+*OpenapiClient::IndexesApi* | [**v1_indexes_get**](docs/IndexesApi.md#v1_indexes_get) | **GET** /v1/indexes | List indexes
+*OpenapiClient::IndexesApi* | [**v1_indexes_index_definition_id_current_snapshot_get**](docs/IndexesApi.md#v1_indexes_index_definition_id_current_snapshot_get) | **GET** /v1/indexes/{index_definition_id}/currentSnapshot | Current Index Values for index definition
+*OpenapiClient::IndexesApi* | [**v1_indexes_index_definition_id_history_snapshot_get**](docs/IndexesApi.md#v1_indexes_index_definition_id_history_snapshot_get) | **GET** /v1/indexes/{index_definition_id}/historySnapshot | Historical Index Values for index definition
+*OpenapiClient::IndexesApi* | [**v1_indexes_index_id_current_get**](docs/IndexesApi.md#v1_indexes_index_id_current_get) | **GET** /v1/indexes/{index_id}/current | Current Index Value
+*OpenapiClient::IndexesApi* | [**v1_indexes_index_id_history_get**](docs/IndexesApi.md#v1_indexes_index_id_history_get) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
+*OpenapiClient::IndexesApi* | [**v1_indexes_index_id_timeseries_get**](docs/IndexesApi.md#v1_indexes_index_id_timeseries_get) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
+*OpenapiClient::MetadataApi* | [**api_metadata_exchanges_exchange_id_get**](docs/MetadataApi.md#api_metadata_exchanges_exchange_id_get) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
+*OpenapiClient::MetadataApi* | [**api_metadata_exchanges_get**](docs/MetadataApi.md#api_metadata_exchanges_get) | **GET** /api/metadata/exchanges | List all exchanges
+*OpenapiClient::PeriodsApi* | [**v1_metadata_periods_get**](docs/PeriodsApi.md#v1_metadata_periods_get) | **GET** /v1/metadata/periods | List all periods
 
 
 ## Documentation for Models
 
+ - [OpenapiClient::IndexesIndexDefinitionInputData](docs/IndexesIndexDefinitionInputData.md)
+ - [OpenapiClient::IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
+ - [OpenapiClient::IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
+ - [OpenapiClient::IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)
+ - [OpenapiClient::IndexesIndexTimeseriesItem](docs/IndexesIndexTimeseriesItem.md)
+ - [OpenapiClient::IndexesIndexValue](docs/IndexesIndexValue.md)
+ - [OpenapiClient::IndexesIndexValueComponent](docs/IndexesIndexValueComponent.md)
+ - [OpenapiClient::MetadataExchange](docs/MetadataExchange.md)
+ - [OpenapiClient::MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
 
 
 ## Documentation for Authorization

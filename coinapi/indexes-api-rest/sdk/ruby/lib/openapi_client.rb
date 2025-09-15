@@ -17,8 +17,20 @@ require 'openapi_client/version'
 require 'openapi_client/configuration'
 
 # Models
+require 'openapi_client/models/indexes_index_definition_input_data'
+require 'openapi_client/models/indexes_index_definition_snapshot_entry'
+require 'openapi_client/models/indexes_index_identifier'
+require 'openapi_client/models/indexes_index_multi_asset_weight'
+require 'openapi_client/models/indexes_index_timeseries_item'
+require 'openapi_client/models/indexes_index_value'
+require 'openapi_client/models/indexes_index_value_component'
+require 'openapi_client/models/metadata_exchange'
+require 'openapi_client/models/metadata_timeseries_period'
 
 # APIs
+require 'openapi_client/api/indexes_api'
+require 'openapi_client/api/metadata_api'
+require 'openapi_client/api/periods_api'
 
 module OpenapiClient
   class << self

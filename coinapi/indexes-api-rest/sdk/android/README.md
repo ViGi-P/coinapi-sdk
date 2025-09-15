@@ -58,6 +58,23 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
+import org.openapitools.client.api.IndexesApi;
+
+public class IndexesApiExample {
+
+    public static void main(String[] args) {
+        IndexesApi apiInstance = new IndexesApi();
+        String indexDefinitionId = null; // String | 
+        try {
+            List<IndexesIndexDefinitionInputData> result = apiInstance.v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling IndexesApi#v1IndexdefInputDataIndexDefinitionIdAllGet");
+            e.printStackTrace();
+        }
+    }
+}
+
 ```
 
 ## Documentation for API Endpoints
@@ -66,10 +83,32 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*IndexesApi* | [**v1IndexdefInputDataIndexDefinitionIdAllGet**](docs/IndexesApi.md#v1IndexdefInputDataIndexDefinitionIdAllGet) | **GET** /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition
+*IndexesApi* | [**v1IndexdefInputDataIndexDefinitionIdGet**](docs/IndexesApi.md#v1IndexdefInputDataIndexDefinitionIdGet) | **GET** /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time
+*IndexesApi* | [**v1IndexdefMultiassetGet**](docs/IndexesApi.md#v1IndexdefMultiassetGet) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
+*IndexesApi* | [**v1IndexdefMultiassetIndexIdGet**](docs/IndexesApi.md#v1IndexdefMultiassetIndexIdGet) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
+*IndexesApi* | [**v1IndexesGet**](docs/IndexesApi.md#v1IndexesGet) | **GET** /v1/indexes | List indexes
+*IndexesApi* | [**v1IndexesIndexDefinitionIdCurrentSnapshotGet**](docs/IndexesApi.md#v1IndexesIndexDefinitionIdCurrentSnapshotGet) | **GET** /v1/indexes/{index_definition_id}/currentSnapshot | Current Index Values for index definition
+*IndexesApi* | [**v1IndexesIndexDefinitionIdHistorySnapshotGet**](docs/IndexesApi.md#v1IndexesIndexDefinitionIdHistorySnapshotGet) | **GET** /v1/indexes/{index_definition_id}/historySnapshot | Historical Index Values for index definition
+*IndexesApi* | [**v1IndexesIndexIdCurrentGet**](docs/IndexesApi.md#v1IndexesIndexIdCurrentGet) | **GET** /v1/indexes/{index_id}/current | Current Index Value
+*IndexesApi* | [**v1IndexesIndexIdHistoryGet**](docs/IndexesApi.md#v1IndexesIndexIdHistoryGet) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
+*IndexesApi* | [**v1IndexesIndexIdTimeseriesGet**](docs/IndexesApi.md#v1IndexesIndexIdTimeseriesGet) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
+*MetadataApi* | [**apiMetadataExchangesExchangeIdGet**](docs/MetadataApi.md#apiMetadataExchangesExchangeIdGet) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
+*MetadataApi* | [**apiMetadataExchangesGet**](docs/MetadataApi.md#apiMetadataExchangesGet) | **GET** /api/metadata/exchanges | List all exchanges
+*PeriodsApi* | [**v1MetadataPeriodsGet**](docs/PeriodsApi.md#v1MetadataPeriodsGet) | **GET** /v1/metadata/periods | List all periods
 
 
 ## Documentation for Models
 
+ - [IndexesIndexDefinitionInputData](docs/IndexesIndexDefinitionInputData.md)
+ - [IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
+ - [IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
+ - [IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)
+ - [IndexesIndexTimeseriesItem](docs/IndexesIndexTimeseriesItem.md)
+ - [IndexesIndexValue](docs/IndexesIndexValue.md)
+ - [IndexesIndexValueComponent](docs/IndexesIndexValueComponent.md)
+ - [MetadataExchange](docs/MetadataExchange.md)
+ - [MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
 
 
 ## Documentation for Authorization
@@ -93,4 +132,5 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 
 ## Author
 
+support@apibricks.io
 
