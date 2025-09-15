@@ -401,4 +401,12 @@ public class V1SymbolTest {
         // TODO: test volumeToUsd
     }
 
+    /**
+     * Test the property 'symbolIdInteger'
+     */
+    @Test
+    public void symbolIdIntegerTest() {
+        // TODO: test symbolIdInteger
+    }
+
 }

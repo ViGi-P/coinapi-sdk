@@ -235,4 +235,9 @@ export interface V1Symbol {
      */
     volume_to_usd?: number;
 
+    /**
+     * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+     */
+    symbol_id_integer?: number;
+
 }

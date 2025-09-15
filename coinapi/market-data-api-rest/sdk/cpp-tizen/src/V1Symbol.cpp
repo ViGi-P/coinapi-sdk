@@ -68,6 +68,7 @@ V1.Symbol::__init()
 	//size_precision = double(0);
 	//new std::map()std::map> raw_kvp;
 	//volume_to_usd = double(0);
+	//symbol_id_integer = int(0);
 }
 
 void
@@ -297,6 +298,11 @@ V1.Symbol::__cleanup()
 	//
 	//delete volume_to_usd;
 	//volume_to_usd = NULL;
+	//}
+	//if(symbol_id_integer != NULL) {
+	//
+	//delete symbol_id_integer;
+	//symbol_id_integer = NULL;
 	//}
 	//
 }
@@ -802,6 +808,17 @@ V1.Symbol::fromJson(char* jsonStr)
 			
 		}
 	}
+	const gchar *symbol_id_integerKey = "symbol_id_integer";
+	node = json_object_get_member(pJsonObject, symbol_id_integerKey);
+	if (node !=NULL) {
+	
+
+		if (isprimitive("int")) {
+			jsonToValue(&symbol_id_integer, node, "int", "");
+		} else {
+			
+		}
+	}
 }
 
 V1.Symbol::V1.Symbol(char* json)
@@ -1229,6 +1246,15 @@ V1.Symbol::toJson()
 	}
 	const gchar *volume_to_usdKey = "volume_to_usd";
 	json_object_set_member(pJsonObject, volume_to_usdKey, node);
+	if (isprimitive("int")) {
+		int obj = getSymbolIdInteger();
+		node = converttoJson(&obj, "int", "");
+	}
+	else {
+		
+	}
+	const gchar *symbol_id_integerKey = "symbol_id_integer";
+	json_object_set_member(pJsonObject, symbol_id_integerKey, node);
 	node = json_node_alloc();
 	json_node_init(node, JSON_NODE_OBJECT);
 	json_node_take_object(node, pJsonObject);
@@ -1775,6 +1801,18 @@ void
 V1.Symbol::setVolumeToUsd(double  volume_to_usd)
 {
 	this->volume_to_usd = volume_to_usd;
+}
+
+int
+V1.Symbol::getSymbolIdInteger()
+{
+	return symbol_id_integer;
+}
+
+void
+V1.Symbol::setSymbolIdInteger(int  symbol_id_integer)
+{
+	this->symbol_id_integer = symbol_id_integer;
 }
 
 

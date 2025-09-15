@@ -113,6 +113,8 @@ public class V1Symbol {
   private Map<String, String> rawKvp = null;
   @SerializedName("volume_to_usd")
   private Double volumeToUsd = null;
+  @SerializedName("symbol_id_integer")
+  private Integer symbolIdInteger = null;
 
   /**
    * The symbol identifier.
@@ -607,6 +609,17 @@ public class V1Symbol {
     this.volumeToUsd = volumeToUsd;
   }
 
+  /**
+   * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+   **/
+  @ApiModelProperty(value = "The symbol identifier in integer immutable format, used to correlate data across different APIs.")
+  public Integer getSymbolIdInteger() {
+    return symbolIdInteger;
+  }
+  public void setSymbolIdInteger(Integer symbolIdInteger) {
+    this.symbolIdInteger = symbolIdInteger;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -661,7 +674,8 @@ public class V1Symbol {
         (this.pricePrecision == null ? v1Symbol.pricePrecision == null : this.pricePrecision.equals(v1Symbol.pricePrecision)) &&
         (this.sizePrecision == null ? v1Symbol.sizePrecision == null : this.sizePrecision.equals(v1Symbol.sizePrecision)) &&
         (this.rawKvp == null ? v1Symbol.rawKvp == null : this.rawKvp.equals(v1Symbol.rawKvp)) &&
-        (this.volumeToUsd == null ? v1Symbol.volumeToUsd == null : this.volumeToUsd.equals(v1Symbol.volumeToUsd));
+        (this.volumeToUsd == null ? v1Symbol.volumeToUsd == null : this.volumeToUsd.equals(v1Symbol.volumeToUsd)) &&
+        (this.symbolIdInteger == null ? v1Symbol.symbolIdInteger == null : this.symbolIdInteger.equals(v1Symbol.symbolIdInteger));
   }
 
   @Override
@@ -712,6 +726,7 @@ public class V1Symbol {
     result = 31 * result + (this.sizePrecision == null ? 0: this.sizePrecision.hashCode());
     result = 31 * result + (this.rawKvp == null ? 0: this.rawKvp.hashCode());
     result = 31 * result + (this.volumeToUsd == null ? 0: this.volumeToUsd.hashCode());
+    result = 31 * result + (this.symbolIdInteger == null ? 0: this.symbolIdInteger.hashCode());
     return result;
   }
 
@@ -765,6 +780,7 @@ public class V1Symbol {
     sb.append("  sizePrecision: ").append(sizePrecision).append("\n");
     sb.append("  rawKvp: ").append(rawKvp).append("\n");
     sb.append("  volumeToUsd: ").append(volumeToUsd).append("\n");
+    sb.append("  symbolIdInteger: ").append(symbolIdInteger).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

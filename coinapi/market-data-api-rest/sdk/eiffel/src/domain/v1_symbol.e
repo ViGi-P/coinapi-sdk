@@ -109,6 +109,8 @@ feature --Access
       -- Not normalized raw kvp data.
     volume_to_usd: REAL_64
       -- Volume unit in USD.
+    symbol_id_integer: INTEGER_32
+      -- The symbol identifier in integer immutable format, used to correlate data across different APIs.
 
 feature -- Change Element
 
@@ -472,6 +474,14 @@ feature -- Change Element
         volume_to_usd_set: volume_to_usd = a_name
       end
 
+    set_symbol_id_integer (a_name: like symbol_id_integer)
+        -- Set 'symbol_id_integer' with 'a_name'.
+      do
+        symbol_id_integer := a_name
+      ensure
+        symbol_id_integer_set: symbol_id_integer = a_name
+      end
+
 
  feature -- Status Report
 
@@ -710,6 +720,11 @@ feature -- Change Element
         if attached volume_to_usd as l_volume_to_usd then
           Result.append ("%Nvolume_to_usd:")
           Result.append (l_volume_to_usd.out)
+          Result.append ("%N")
+        end
+        if attached symbol_id_integer as l_symbol_id_integer then
+          Result.append ("%Nsymbol_id_integer:")
+          Result.append (l_symbol_id_integer.out)
           Result.append ("%N")
         end
       end

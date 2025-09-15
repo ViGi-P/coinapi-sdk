@@ -52,6 +52,7 @@
    (ds/opt :size_precision) float?
    (ds/opt :raw_kvp) (s/map-of string? string?)
    (ds/opt :volume_to_usd) float?
+   (ds/opt :symbol_id_integer) int?
    })
 
 (def v1/symbol-spec

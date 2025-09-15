@@ -48,6 +48,7 @@ Name | Type | Description | Notes
 **size_precision** | **REAL_64** | The size precision. | [optional] [default to null]
 **raw_kvp** | [**STRING_TABLE [STRING_32]**](STRING_32.md) | Not normalized raw kvp data. | [optional] [default to null]
 **volume_to_usd** | **REAL_64** | Volume unit in USD. | [optional] [default to null]
+**symbol_id_integer** | **INTEGER_32** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

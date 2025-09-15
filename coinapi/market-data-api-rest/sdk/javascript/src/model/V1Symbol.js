@@ -183,6 +183,9 @@ class V1Symbol {
             if (data.hasOwnProperty('volume_to_usd')) {
                 obj['volume_to_usd'] = ApiClient.convertToType(data['volume_to_usd'], 'Number');
             }
+            if (data.hasOwnProperty('symbol_id_integer')) {
+                obj['symbol_id_integer'] = ApiClient.convertToType(data['symbol_id_integer'], 'Number');
+            }
         }
         return obj;
     }
@@ -549,6 +552,12 @@ V1Symbol.prototype['raw_kvp'] = undefined;
  * @member {Number} volume_to_usd
  */
 V1Symbol.prototype['volume_to_usd'] = undefined;
+
+/**
+ * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+ * @member {Number} symbol_id_integer
+ */
+V1Symbol.prototype['symbol_id_integer'] = undefined;
 
 
 

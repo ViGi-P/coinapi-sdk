@@ -319,3 +319,10 @@ API.Client.V1Symbol.prototype.rawKvp;
  */
 API.Client.V1Symbol.prototype.volumeToUsd;
 
+/**
+ * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+ * @type {!number}
+ * @export
+ */
+API.Client.V1Symbol.prototype.symbolIdInteger;
+

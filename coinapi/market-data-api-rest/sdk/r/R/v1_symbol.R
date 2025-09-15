@@ -52,6 +52,7 @@
 #' @field size_precision The size precision. numeric [optional]
 #' @field raw_kvp Not normalized raw kvp data. named list(character) [optional]
 #' @field volume_to_usd Volume unit in USD. numeric [optional]
+#' @field symbol_id_integer The symbol identifier in integer immutable format, used to correlate data across different APIs. integer [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -103,6 +104,7 @@ V1Symbol <- R6::R6Class(
     `size_precision` = NULL,
     `raw_kvp` = NULL,
     `volume_to_usd` = NULL,
+    `symbol_id_integer` = NULL,
 
     #' @description
     #' Initialize a new V1Symbol class.
@@ -152,8 +154,9 @@ V1Symbol <- R6::R6Class(
     #' @param size_precision The size precision.
     #' @param raw_kvp Not normalized raw kvp data.
     #' @param volume_to_usd Volume unit in USD.
+    #' @param symbol_id_integer The symbol identifier in integer immutable format, used to correlate data across different APIs.
     #' @param ... Other optional arguments.
-    initialize = function(`symbol_id` = NULL, `exchange_id` = NULL, `symbol_type` = NULL, `asset_id_base` = NULL, `asset_id_quote` = NULL, `asset_id_unit` = NULL, `future_contract_unit` = NULL, `future_contract_unit_asset` = NULL, `future_delivery_time` = NULL, `option_type_is_call` = NULL, `option_strike_price` = NULL, `option_contract_unit` = NULL, `option_exercise_style` = NULL, `option_expiration_time` = NULL, `contract_delivery_time` = NULL, `contract_unit` = NULL, `contract_unit_asset` = NULL, `contract_id` = NULL, `contract_display_name` = NULL, `contract_display_description` = NULL, `data_start` = NULL, `data_end` = NULL, `data_quote_start` = NULL, `data_quote_end` = NULL, `data_orderbook_start` = NULL, `data_orderbook_end` = NULL, `data_trade_start` = NULL, `data_trade_end` = NULL, `index_id` = NULL, `index_display_name` = NULL, `index_display_description` = NULL, `volume_1hrs` = NULL, `volume_1hrs_usd` = NULL, `volume_1day` = NULL, `volume_1day_usd` = NULL, `volume_1mth` = NULL, `volume_1mth_usd` = NULL, `price` = NULL, `symbol_id_exchange` = NULL, `asset_id_base_exchange` = NULL, `asset_id_quote_exchange` = NULL, `price_precision` = NULL, `size_precision` = NULL, `raw_kvp` = NULL, `volume_to_usd` = NULL, ...) {
+    initialize = function(`symbol_id` = NULL, `exchange_id` = NULL, `symbol_type` = NULL, `asset_id_base` = NULL, `asset_id_quote` = NULL, `asset_id_unit` = NULL, `future_contract_unit` = NULL, `future_contract_unit_asset` = NULL, `future_delivery_time` = NULL, `option_type_is_call` = NULL, `option_strike_price` = NULL, `option_contract_unit` = NULL, `option_exercise_style` = NULL, `option_expiration_time` = NULL, `contract_delivery_time` = NULL, `contract_unit` = NULL, `contract_unit_asset` = NULL, `contract_id` = NULL, `contract_display_name` = NULL, `contract_display_description` = NULL, `data_start` = NULL, `data_end` = NULL, `data_quote_start` = NULL, `data_quote_end` = NULL, `data_orderbook_start` = NULL, `data_orderbook_end` = NULL, `data_trade_start` = NULL, `data_trade_end` = NULL, `index_id` = NULL, `index_display_name` = NULL, `index_display_description` = NULL, `volume_1hrs` = NULL, `volume_1hrs_usd` = NULL, `volume_1day` = NULL, `volume_1day_usd` = NULL, `volume_1mth` = NULL, `volume_1mth_usd` = NULL, `price` = NULL, `symbol_id_exchange` = NULL, `asset_id_base_exchange` = NULL, `asset_id_quote_exchange` = NULL, `price_precision` = NULL, `size_precision` = NULL, `raw_kvp` = NULL, `volume_to_usd` = NULL, `symbol_id_integer` = NULL, ...) {
       if (!is.null(`symbol_id`)) {
         if (!(is.character(`symbol_id`) && length(`symbol_id`) == 1)) {
           stop(paste("Error! Invalid data for `symbol_id`. Must be a string:", `symbol_id`))
@@ -423,6 +426,12 @@ V1Symbol <- R6::R6Class(
         }
         self$`volume_to_usd` <- `volume_to_usd`
       }
+      if (!is.null(`symbol_id_integer`)) {
+        if (!(is.numeric(`symbol_id_integer`) && length(`symbol_id_integer`) == 1)) {
+          stop(paste("Error! Invalid data for `symbol_id_integer`. Must be an integer:", `symbol_id_integer`))
+        }
+        self$`symbol_id_integer` <- `symbol_id_integer`
+      }
     },
 
     #' @description
@@ -636,6 +645,10 @@ V1Symbol <- R6::R6Class(
         V1SymbolObject[["volume_to_usd"]] <-
           self$`volume_to_usd`
       }
+      if (!is.null(self$`symbol_id_integer`)) {
+        V1SymbolObject[["symbol_id_integer"]] <-
+          self$`symbol_id_integer`
+      }
       return(V1SymbolObject)
     },
 
@@ -781,6 +794,9 @@ V1Symbol <- R6::R6Class(
       if (!is.null(this_object$`volume_to_usd`)) {
         self$`volume_to_usd` <- this_object$`volume_to_usd`
       }
+      if (!is.null(this_object$`symbol_id_integer`)) {
+        self$`symbol_id_integer` <- this_object$`symbol_id_integer`
+      }
       self
     },
 
@@ -847,6 +863,7 @@ V1Symbol <- R6::R6Class(
       self$`size_precision` <- this_object$`size_precision`
       self$`raw_kvp` <- ApiClient$new()$deserializeObj(this_object$`raw_kvp`, "map(character)", loadNamespace("openapi"))
       self$`volume_to_usd` <- this_object$`volume_to_usd`
+      self$`symbol_id_integer` <- this_object$`symbol_id_integer`
       self
     },
 

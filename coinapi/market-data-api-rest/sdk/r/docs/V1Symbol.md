@@ -50,5 +50,6 @@ Name | Type | Description | Notes
 **size_precision** | **numeric** | The size precision. | [optional] 
 **raw_kvp** | **map(character)** | Not normalized raw kvp data. | [optional] 
 **volume_to_usd** | **numeric** | Volume unit in USD. | [optional] 
+**symbol_id_integer** | **integer** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly] 
 
 

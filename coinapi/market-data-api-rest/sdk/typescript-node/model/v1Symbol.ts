@@ -190,6 +190,10 @@ export class V1Symbol {
     * Volume unit in USD.
     */
     'volumeToUsd'?: number | null;
+    /**
+    * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+    */
+    'symbolIdInteger'?: number | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -417,6 +421,11 @@ export class V1Symbol {
         {
             "name": "volumeToUsd",
             "baseName": "volume_to_usd",
+            "type": "number"
+        },
+        {
+            "name": "symbolIdInteger",
+            "baseName": "symbol_id_integer",
             "type": "number"
         }    ];
 

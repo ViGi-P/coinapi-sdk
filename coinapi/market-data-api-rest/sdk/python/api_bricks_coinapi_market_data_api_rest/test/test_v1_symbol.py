@@ -82,7 +82,8 @@ class TestV1Symbol(unittest.TestCase):
                 raw_kvp = {
                     'key' : ''
                     },
-                volume_to_usd = 1.337
+                volume_to_usd = 1.337,
+                symbol_id_integer = 56
             )
         else:
             return V1Symbol(

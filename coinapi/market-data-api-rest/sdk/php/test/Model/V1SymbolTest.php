@@ -484,4 +484,13 @@ class V1SymbolTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "symbol_id_integer"
+     */
+    public function testPropertySymbolIdInteger()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

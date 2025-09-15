@@ -865,7 +865,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-09-12T06:04:04.3363822Z
+                    time: 2025-09-15T06:04:03.6857173Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -875,7 +875,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-09-12T06:04:04.3363822Z
+                    time: 2025-09-15T06:04:03.6857173Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -885,7 +885,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-09-12T06:04:04.3363822Z
+                    time: 2025-09-15T06:04:03.6857173Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -895,7 +895,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-09-12T06:04:04.3363822Z
+                    time: 2025-09-15T06:04:03.6857173Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -5751,6 +5751,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
+                    symbol_id_integer: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -5775,6 +5776,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
+                    symbol_id_integer: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -5811,6 +5813,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
+                    symbol_id_integer: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -5835,6 +5838,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
+                    symbol_id_integer: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -5871,6 +5875,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
+                    symbol_id_integer: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -5895,6 +5900,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
+                    symbol_id_integer: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -5931,6 +5937,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
+                    symbol_id_integer: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -5955,6 +5962,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
+                    symbol_id_integer: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -6032,6 +6040,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
+                    symbol_id_integer: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -6056,6 +6065,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
+                    symbol_id_integer: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -6092,6 +6102,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
+                    symbol_id_integer: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -6116,6 +6127,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
+                    symbol_id_integer: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -6152,6 +6164,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
+                    symbol_id_integer: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -6176,6 +6189,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
+                    symbol_id_integer: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -6212,6 +6226,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
+                    symbol_id_integer: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -6236,6 +6251,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
+                    symbol_id_integer: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -8294,6 +8310,7 @@ components:
         volume_1mth: 3.616076749251911
         volume_1day: 7.061401241503109
         price_precision: 7.386281948385884
+        symbol_id_integer: 1
         option_type_is_call: true
         option_strike_price: 6.027456183070403
         future_contract_unit: 0.8008281904610115
@@ -8510,6 +8527,13 @@ components:
           format: double
           nullable: true
           type: number
+        symbol_id_integer:
+          description: "The symbol identifier in integer immutable format, used to\
+            \ correlate data across different APIs."
+          format: int32
+          nullable: true
+          readOnly: true
+          type: integer
       type: object
     v1.SymbolMapping:
       additionalProperties: false

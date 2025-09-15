@@ -102,6 +102,8 @@ case class Symbol (
   /* Not normalized raw kvp data. */
   rawKvp: Option[Map[String, String]] = None,
   /* Volume unit in USD. */
-  volumeToUsd: Option[Double] = None
+  volumeToUsd: Option[Double] = None,
+  /* The symbol identifier in integer immutable format, used to correlate data across different APIs. */
+  symbolIdInteger: Option[Int] = None
 ) extends ApiModel
 

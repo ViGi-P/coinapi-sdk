@@ -49,6 +49,7 @@
 | **sizePrecision** | **kotlin.Double** | The size precision. |  [optional] |
 | **rawKvp** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** | Not normalized raw kvp data. |  [optional] |
 | **volumeToUsd** | **kotlin.Double** | Volume unit in USD. |  [optional] |
+| **symbolIdInteger** | **kotlin.Int** | The symbol identifier in integer immutable format, used to correlate data across different APIs. |  [optional] [readonly] |
 
 
 

@@ -49,5 +49,6 @@ Name | Type | Description | Notes
 **size_precision** | **float** | The size precision. | [optional]
 **raw_kvp** | **array<string,string>** | Not normalized raw kvp data. | [optional]
 **volume_to_usd** | **float** | Volume unit in USD. | [optional]
+**symbol_id_integer** | **int** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

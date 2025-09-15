@@ -98,4 +98,6 @@ class V1Symbol {
     Map<String, String> rawKvp
     /* Volume unit in USD. */
     Double volumeToUsd
+    /* The symbol identifier in integer immutable format, used to correlate data across different APIs. */
+    Integer symbolIdInteger
 }

@@ -110,6 +110,8 @@ V1_Symbol::V1_Symbol()
     m_Raw_kvpIsSet = false;
     m_Volume_to_usd = 0.0;
     m_Volume_to_usdIsSet = false;
+    m_Symbol_id_integer = 0;
+    m_Symbol_id_integerIsSet = false;
 }
 
 V1_Symbol::~V1_Symbol()
@@ -348,6 +350,11 @@ web::json::value V1_Symbol::toJson() const
     {   
         
         val[utility::conversions::to_string_t(_XPLATSTR("volume_to_usd"))] = ModelBase::toJson(m_Volume_to_usd);
+    }
+    if(m_Symbol_id_integerIsSet)
+    {   
+        
+        val[utility::conversions::to_string_t(_XPLATSTR("symbol_id_integer"))] = ModelBase::toJson(m_Symbol_id_integer);
     }
 
     return val;
@@ -851,6 +858,17 @@ bool V1_Symbol::fromJson(const web::json::value& val)
             
         }
     }
+    if(val.has_field(utility::conversions::to_string_t(_XPLATSTR("symbol_id_integer"))))
+    {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t(_XPLATSTR("symbol_id_integer")));
+        if(!fieldValue.is_null())
+        {
+            int32_t refVal_setSymbolIdInteger;
+            ok &= ModelBase::fromJson(fieldValue, refVal_setSymbolIdInteger);
+            setSymbolIdInteger(refVal_setSymbolIdInteger);
+            
+        }
+    }
     return ok;
 }
 
@@ -1040,6 +1058,10 @@ void V1_Symbol::toMultipart(std::shared_ptr<MultipartFormData> multipart, const 
     if(m_Volume_to_usdIsSet)
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + utility::conversions::to_string_t(_XPLATSTR("volume_to_usd")), m_Volume_to_usd));
+    }
+    if(m_Symbol_id_integerIsSet)
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + utility::conversions::to_string_t(_XPLATSTR("symbol_id_integer")), m_Symbol_id_integer));
     }
 }
 
@@ -1321,6 +1343,12 @@ bool V1_Symbol::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, cons
         double refVal_setVolumeToUsd;
         ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(_XPLATSTR("volume_to_usd"))), refVal_setVolumeToUsd );
         setVolumeToUsd(refVal_setVolumeToUsd);
+    }
+    if(multipart->hasContent(utility::conversions::to_string_t(_XPLATSTR("symbol_id_integer"))))
+    {
+        int32_t refVal_setSymbolIdInteger;
+        ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(_XPLATSTR("symbol_id_integer"))), refVal_setSymbolIdInteger );
+        setSymbolIdInteger(refVal_setSymbolIdInteger);
     }
     return ok;
 }
@@ -2255,6 +2283,26 @@ bool V1_Symbol::volumeToUsdIsSet() const
 void V1_Symbol::unsetVolume_to_usd()
 {
     m_Volume_to_usdIsSet = false;
+}
+int32_t V1_Symbol::getSymbolIdInteger() const
+{
+    return m_Symbol_id_integer;
+}
+
+void V1_Symbol::setSymbolIdInteger(int32_t value)
+{
+    m_Symbol_id_integer = value;
+    m_Symbol_id_integerIsSet = true;
+}
+
+bool V1_Symbol::symbolIdIntegerIsSet() const
+{
+    return m_Symbol_id_integerIsSet;
+}
+
+void V1_Symbol::unsetSymbol_id_integer()
+{
+    m_Symbol_id_integerIsSet = false;
 }
 
 }

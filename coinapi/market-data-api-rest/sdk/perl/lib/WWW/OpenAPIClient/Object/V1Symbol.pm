@@ -534,6 +534,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'symbol_id_integer' => {
+        datatype => 'int',
+        base_name => 'symbol_id_integer',
+        description => 'The symbol identifier in integer immutable format, used to correlate data across different APIs.',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -581,7 +588,8 @@ __PACKAGE__->openapi_types( {
     'price_precision' => 'double',
     'size_precision' => 'double',
     'raw_kvp' => 'HASH[string,string]',
-    'volume_to_usd' => 'double'
+    'volume_to_usd' => 'double',
+    'symbol_id_integer' => 'int'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -629,7 +637,8 @@ __PACKAGE__->attribute_map( {
     'price_precision' => 'price_precision',
     'size_precision' => 'size_precision',
     'raw_kvp' => 'raw_kvp',
-    'volume_to_usd' => 'volume_to_usd'
+    'volume_to_usd' => 'volume_to_usd',
+    'symbol_id_integer' => 'symbol_id_integer'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

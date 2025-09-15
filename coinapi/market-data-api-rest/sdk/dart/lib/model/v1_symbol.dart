@@ -58,6 +58,7 @@ class V1Symbol {
     this.sizePrecision,
     this.rawKvp = const {},
     this.volumeToUsd,
+    this.symbolIdInteger,
   });
 
   /// The symbol identifier.
@@ -193,6 +194,9 @@ class V1Symbol {
   /// Volume unit in USD.
   double? volumeToUsd;
 
+  /// The symbol identifier in integer immutable format, used to correlate data across different APIs.
+  int? symbolIdInteger;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is V1Symbol &&
     other.symbolId == symbolId &&
@@ -239,7 +243,8 @@ class V1Symbol {
     other.pricePrecision == pricePrecision &&
     other.sizePrecision == sizePrecision &&
     _deepEquality.equals(other.rawKvp, rawKvp) &&
-    other.volumeToUsd == volumeToUsd;
+    other.volumeToUsd == volumeToUsd &&
+    other.symbolIdInteger == symbolIdInteger;
 
   @override
   int get hashCode =>
@@ -288,10 +293,11 @@ class V1Symbol {
     (pricePrecision == null ? 0 : pricePrecision!.hashCode) +
     (sizePrecision == null ? 0 : sizePrecision!.hashCode) +
     (rawKvp == null ? 0 : rawKvp!.hashCode) +
-    (volumeToUsd == null ? 0 : volumeToUsd!.hashCode);
+    (volumeToUsd == null ? 0 : volumeToUsd!.hashCode) +
+    (symbolIdInteger == null ? 0 : symbolIdInteger!.hashCode);
 
   @override
-  String toString() => 'V1Symbol[symbolId=$symbolId, exchangeId=$exchangeId, symbolType=$symbolType, assetIdBase=$assetIdBase, assetIdQuote=$assetIdQuote, assetIdUnit=$assetIdUnit, futureContractUnit=$futureContractUnit, futureContractUnitAsset=$futureContractUnitAsset, futureDeliveryTime=$futureDeliveryTime, optionTypeIsCall=$optionTypeIsCall, optionStrikePrice=$optionStrikePrice, optionContractUnit=$optionContractUnit, optionExerciseStyle=$optionExerciseStyle, optionExpirationTime=$optionExpirationTime, contractDeliveryTime=$contractDeliveryTime, contractUnit=$contractUnit, contractUnitAsset=$contractUnitAsset, contractId=$contractId, contractDisplayName=$contractDisplayName, contractDisplayDescription=$contractDisplayDescription, dataStart=$dataStart, dataEnd=$dataEnd, dataQuoteStart=$dataQuoteStart, dataQuoteEnd=$dataQuoteEnd, dataOrderbookStart=$dataOrderbookStart, dataOrderbookEnd=$dataOrderbookEnd, dataTradeStart=$dataTradeStart, dataTradeEnd=$dataTradeEnd, indexId=$indexId, indexDisplayName=$indexDisplayName, indexDisplayDescription=$indexDisplayDescription, volume1hrs=$volume1hrs, volume1hrsUsd=$volume1hrsUsd, volume1day=$volume1day, volume1dayUsd=$volume1dayUsd, volume1mth=$volume1mth, volume1mthUsd=$volume1mthUsd, price=$price, symbolIdExchange=$symbolIdExchange, assetIdBaseExchange=$assetIdBaseExchange, assetIdQuoteExchange=$assetIdQuoteExchange, pricePrecision=$pricePrecision, sizePrecision=$sizePrecision, rawKvp=$rawKvp, volumeToUsd=$volumeToUsd]';
+  String toString() => 'V1Symbol[symbolId=$symbolId, exchangeId=$exchangeId, symbolType=$symbolType, assetIdBase=$assetIdBase, assetIdQuote=$assetIdQuote, assetIdUnit=$assetIdUnit, futureContractUnit=$futureContractUnit, futureContractUnitAsset=$futureContractUnitAsset, futureDeliveryTime=$futureDeliveryTime, optionTypeIsCall=$optionTypeIsCall, optionStrikePrice=$optionStrikePrice, optionContractUnit=$optionContractUnit, optionExerciseStyle=$optionExerciseStyle, optionExpirationTime=$optionExpirationTime, contractDeliveryTime=$contractDeliveryTime, contractUnit=$contractUnit, contractUnitAsset=$contractUnitAsset, contractId=$contractId, contractDisplayName=$contractDisplayName, contractDisplayDescription=$contractDisplayDescription, dataStart=$dataStart, dataEnd=$dataEnd, dataQuoteStart=$dataQuoteStart, dataQuoteEnd=$dataQuoteEnd, dataOrderbookStart=$dataOrderbookStart, dataOrderbookEnd=$dataOrderbookEnd, dataTradeStart=$dataTradeStart, dataTradeEnd=$dataTradeEnd, indexId=$indexId, indexDisplayName=$indexDisplayName, indexDisplayDescription=$indexDisplayDescription, volume1hrs=$volume1hrs, volume1hrsUsd=$volume1hrsUsd, volume1day=$volume1day, volume1dayUsd=$volume1dayUsd, volume1mth=$volume1mth, volume1mthUsd=$volume1mthUsd, price=$price, symbolIdExchange=$symbolIdExchange, assetIdBaseExchange=$assetIdBaseExchange, assetIdQuoteExchange=$assetIdQuoteExchange, pricePrecision=$pricePrecision, sizePrecision=$sizePrecision, rawKvp=$rawKvp, volumeToUsd=$volumeToUsd, symbolIdInteger=$symbolIdInteger]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -520,6 +526,11 @@ class V1Symbol {
     } else {
       json[r'volume_to_usd'] = null;
     }
+    if (this.symbolIdInteger != null) {
+      json[r'symbol_id_integer'] = this.symbolIdInteger;
+    } else {
+      json[r'symbol_id_integer'] = null;
+    }
     return json;
   }
 
@@ -587,6 +598,7 @@ class V1Symbol {
         sizePrecision: mapValueOfType<double>(json, r'size_precision'),
         rawKvp: mapCastOfType<String, String>(json, r'raw_kvp') ?? const {},
         volumeToUsd: mapValueOfType<double>(json, r'volume_to_usd'),
+        symbolIdInteger: mapValueOfType<int>(json, r'symbol_id_integer'),
       );
     }
     return null;

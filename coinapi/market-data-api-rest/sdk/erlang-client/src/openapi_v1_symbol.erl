@@ -49,7 +49,8 @@
        'price_precision' => float(),
        'size_precision' => float(),
        'raw_kvp' => maps:map(),
-       'volume_to_usd' => float()
+       'volume_to_usd' => float(),
+       'symbol_id_integer' => integer()
      }.
 
 encode(#{ 'symbol_id' := SymbolId,
@@ -96,7 +97,8 @@ encode(#{ 'symbol_id' := SymbolId,
           'price_precision' := PricePrecision,
           'size_precision' := SizePrecision,
           'raw_kvp' := RawKvp,
-          'volume_to_usd' := VolumeToUsd
+          'volume_to_usd' := VolumeToUsd,
+          'symbol_id_integer' := SymbolIdInteger
         }) ->
     #{ 'symbol_id' => SymbolId,
        'exchange_id' => ExchangeId,
@@ -142,5 +144,6 @@ encode(#{ 'symbol_id' := SymbolId,
        'price_precision' => PricePrecision,
        'size_precision' => SizePrecision,
        'raw_kvp' => RawKvp,
-       'volume_to_usd' => VolumeToUsd
+       'volume_to_usd' => VolumeToUsd,
+       'symbol_id_integer' => SymbolIdInteger
      }.

@@ -295,5 +295,11 @@ class V1SymbolTest : ShouldSpec() {
             //modelInstance.volumeToUsd shouldBe ("TODO")
         }
 
+        // to test the property `symbolIdInteger` - The symbol identifier in integer immutable format, used to correlate data across different APIs.
+        should("test symbolIdInteger") {
+            // uncomment below to test the property
+            //modelInstance.symbolIdInteger shouldBe ("TODO")
+        }
+
     }
 }

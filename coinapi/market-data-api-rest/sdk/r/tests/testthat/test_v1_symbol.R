@@ -362,3 +362,11 @@ test_that("volume_to_usd", {
   # uncomment below to test the property
   #expect_equal(model.instance$`volume_to_usd`, "EXPECTED_RESULT")
 })
+
+test_that("symbol_id_integer", {
+  # tests for the property `symbol_id_integer` (integer)
+  # The symbol identifier in integer immutable format, used to correlate data across different APIs.
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`symbol_id_integer`, "EXPECTED_RESULT")
+})

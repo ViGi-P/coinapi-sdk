@@ -939,6 +939,7 @@ package body .Models is
       Serialize (Into, "size_precision", Value.Size_Precision);
       Serialize (Into, "raw_kvp", Value.Raw_Kvp);
       Serialize (Into, "volume_to_usd", Value.Volume_To_Usd);
+      Into.Write_Entity ("symbol_id_integer", Value.Symbol_Id_Integer);
       Into.End_Entity (Name);
    end Serialize;
 
@@ -1004,6 +1005,7 @@ package body .Models is
       Swagger.Streams.Deserialize (Object, "size_precision", Value.Size_Precision);
       Swagger.Streams.Deserialize (Object, "raw_kvp", Value.Raw_Kvp);
       Swagger.Streams.Deserialize (Object, "volume_to_usd", Value.Volume_To_Usd);
+      Swagger.Streams.Deserialize (Object, "symbol_id_integer", Value.Symbol_Id_Integer);
    end Deserialize;
 
    procedure Deserialize (From  : in Swagger.Value_Type;

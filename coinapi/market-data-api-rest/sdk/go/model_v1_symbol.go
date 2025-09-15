@@ -109,6 +109,8 @@ type V1Symbol struct {
 	RawKvp map[string]string `json:"raw_kvp,omitempty"`
 	// Volume unit in USD.
 	VolumeToUsd NullableFloat64 `json:"volume_to_usd,omitempty"`
+	// The symbol identifier in integer immutable format, used to correlate data across different APIs.
+	SymbolIdInteger NullableInt32 `json:"symbol_id_integer,omitempty"`
 }
 
 // NewV1Symbol instantiates a new V1Symbol object
@@ -2009,6 +2011,48 @@ func (o *V1Symbol) UnsetVolumeToUsd() {
 	o.VolumeToUsd.Unset()
 }
 
+// GetSymbolIdInteger returns the SymbolIdInteger field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *V1Symbol) GetSymbolIdInteger() int32 {
+	if o == nil || IsNil(o.SymbolIdInteger.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.SymbolIdInteger.Get()
+}
+
+// GetSymbolIdIntegerOk returns a tuple with the SymbolIdInteger field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *V1Symbol) GetSymbolIdIntegerOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.SymbolIdInteger.Get(), o.SymbolIdInteger.IsSet()
+}
+
+// HasSymbolIdInteger returns a boolean if a field has been set.
+func (o *V1Symbol) HasSymbolIdInteger() bool {
+	if o != nil && o.SymbolIdInteger.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSymbolIdInteger gets a reference to the given NullableInt32 and assigns it to the SymbolIdInteger field.
+func (o *V1Symbol) SetSymbolIdInteger(v int32) {
+	o.SymbolIdInteger.Set(&v)
+}
+// SetSymbolIdIntegerNil sets the value for SymbolIdInteger to be an explicit nil
+func (o *V1Symbol) SetSymbolIdIntegerNil() {
+	o.SymbolIdInteger.Set(nil)
+}
+
+// UnsetSymbolIdInteger ensures that no value is present for SymbolIdInteger, not even an explicit nil
+func (o *V1Symbol) UnsetSymbolIdInteger() {
+	o.SymbolIdInteger.Unset()
+}
+
 func (o V1Symbol) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -2153,6 +2197,9 @@ func (o V1Symbol) ToMap() (map[string]interface{}, error) {
 	}
 	if o.VolumeToUsd.IsSet() {
 		toSerialize["volume_to_usd"] = o.VolumeToUsd.Get()
+	}
+	if o.SymbolIdInteger.IsSet() {
+		toSerialize["symbol_id_integer"] = o.SymbolIdInteger.Get()
 	}
 	return toSerialize, nil
 }

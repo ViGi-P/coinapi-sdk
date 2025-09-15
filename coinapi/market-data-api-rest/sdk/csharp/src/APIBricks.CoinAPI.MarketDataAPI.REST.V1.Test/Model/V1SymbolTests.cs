@@ -458,5 +458,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Model
         {
             // TODO unit test for the property 'VolumeToUsd'
         }
+
+        /// <summary>
+        /// Test the property 'SymbolIdInteger'
+        /// </summary>
+        [Fact]
+        public void SymbolIdIntegerTest()
+        {
+            // TODO unit test for the property 'SymbolIdInteger'
+        }
     }
 }

@@ -19,7 +19,7 @@ local function cast_v1_symbol(t)
 	return setmetatable(t, v1_symbol_mt)
 end
 
-local function new_v1_symbol(symbol_id, exchange_id, symbol_type, asset_id_base, asset_id_quote, asset_id_unit, future_contract_unit, future_contract_unit_asset, future_delivery_time, option_type_is_call, option_strike_price, option_contract_unit, option_exercise_style, option_expiration_time, contract_delivery_time, contract_unit, contract_unit_asset, contract_id, contract_display_name, contract_display_description, data_start, data_end, data_quote_start, data_quote_end, data_orderbook_start, data_orderbook_end, data_trade_start, data_trade_end, index_id, index_display_name, index_display_description, volume_1hrs, volume_1hrs_usd, volume_1day, volume_1day_usd, volume_1mth, volume_1mth_usd, price, symbol_id_exchange, asset_id_base_exchange, asset_id_quote_exchange, price_precision, size_precision, raw_kvp, volume_to_usd)
+local function new_v1_symbol(symbol_id, exchange_id, symbol_type, asset_id_base, asset_id_quote, asset_id_unit, future_contract_unit, future_contract_unit_asset, future_delivery_time, option_type_is_call, option_strike_price, option_contract_unit, option_exercise_style, option_expiration_time, contract_delivery_time, contract_unit, contract_unit_asset, contract_id, contract_display_name, contract_display_description, data_start, data_end, data_quote_start, data_quote_end, data_orderbook_start, data_orderbook_end, data_trade_start, data_trade_end, index_id, index_display_name, index_display_description, volume_1hrs, volume_1hrs_usd, volume_1day, volume_1day_usd, volume_1mth, volume_1mth_usd, price, symbol_id_exchange, asset_id_base_exchange, asset_id_quote_exchange, price_precision, size_precision, raw_kvp, volume_to_usd, symbol_id_integer)
 	return cast_v1_symbol({
 		["symbol_id"] = symbol_id;
 		["exchange_id"] = exchange_id;
@@ -66,6 +66,7 @@ local function new_v1_symbol(symbol_id, exchange_id, symbol_type, asset_id_base,
 		["size_precision"] = size_precision;
 		["raw_kvp"] = raw_kvp;
 		["volume_to_usd"] = volume_to_usd;
+		["symbol_id_integer"] = symbol_id_integer;
 	})
 end
 

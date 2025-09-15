@@ -535,6 +535,7 @@ package .Models is
        Size_Precision : Swagger.Number;
        Raw_Kvp : Swagger.UString_Map;
        Volume_To_Usd : Swagger.Number;
+       Symbol_Id_Integer : Swagger.Nullable_Integer;
      end record;
 
 

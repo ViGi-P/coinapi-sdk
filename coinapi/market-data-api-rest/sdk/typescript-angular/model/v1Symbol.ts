@@ -187,5 +187,9 @@ export interface V1Symbol {
      * Volume unit in USD.
      */
     volume_to_usd?: number | null;
+    /**
+     * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+     */
+    readonly symbol_id_integer?: number | null;
 }
 

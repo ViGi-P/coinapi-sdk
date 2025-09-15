@@ -64,6 +64,7 @@ typedef struct v1_symbol_t {
     double size_precision; //numeric
     list_t* raw_kvp; //map
     double volume_to_usd; //numeric
+    int symbol_id_integer; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } v1_symbol_t;
@@ -113,7 +114,8 @@ __attribute__((deprecated)) v1_symbol_t *v1_symbol_create(
     double price_precision,
     double size_precision,
     list_t* raw_kvp,
-    double volume_to_usd
+    double volume_to_usd,
+    int symbol_id_integer
 );
 
 void v1_symbol_free(v1_symbol_t *v1_symbol);
