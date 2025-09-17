@@ -110,7 +110,7 @@ type V1Symbol struct {
 	// Volume unit in USD.
 	VolumeToUsd NullableFloat64 `json:"volume_to_usd,omitempty"`
 	// The symbol identifier in integer immutable format, used to correlate data across different APIs.
-	SymbolIdInteger NullableInt32 `json:"symbol_id_integer,omitempty"`
+	SymbolIdInt NullableInt32 `json:"symbol_id_int,omitempty"`
 }
 
 // NewV1Symbol instantiates a new V1Symbol object
@@ -2011,46 +2011,46 @@ func (o *V1Symbol) UnsetVolumeToUsd() {
 	o.VolumeToUsd.Unset()
 }
 
-// GetSymbolIdInteger returns the SymbolIdInteger field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *V1Symbol) GetSymbolIdInteger() int32 {
-	if o == nil || IsNil(o.SymbolIdInteger.Get()) {
+// GetSymbolIdInt returns the SymbolIdInt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *V1Symbol) GetSymbolIdInt() int32 {
+	if o == nil || IsNil(o.SymbolIdInt.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.SymbolIdInteger.Get()
+	return *o.SymbolIdInt.Get()
 }
 
-// GetSymbolIdIntegerOk returns a tuple with the SymbolIdInteger field value if set, nil otherwise
+// GetSymbolIdIntOk returns a tuple with the SymbolIdInt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *V1Symbol) GetSymbolIdIntegerOk() (*int32, bool) {
+func (o *V1Symbol) GetSymbolIdIntOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.SymbolIdInteger.Get(), o.SymbolIdInteger.IsSet()
+	return o.SymbolIdInt.Get(), o.SymbolIdInt.IsSet()
 }
 
-// HasSymbolIdInteger returns a boolean if a field has been set.
-func (o *V1Symbol) HasSymbolIdInteger() bool {
-	if o != nil && o.SymbolIdInteger.IsSet() {
+// HasSymbolIdInt returns a boolean if a field has been set.
+func (o *V1Symbol) HasSymbolIdInt() bool {
+	if o != nil && o.SymbolIdInt.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSymbolIdInteger gets a reference to the given NullableInt32 and assigns it to the SymbolIdInteger field.
-func (o *V1Symbol) SetSymbolIdInteger(v int32) {
-	o.SymbolIdInteger.Set(&v)
+// SetSymbolIdInt gets a reference to the given NullableInt32 and assigns it to the SymbolIdInt field.
+func (o *V1Symbol) SetSymbolIdInt(v int32) {
+	o.SymbolIdInt.Set(&v)
 }
-// SetSymbolIdIntegerNil sets the value for SymbolIdInteger to be an explicit nil
-func (o *V1Symbol) SetSymbolIdIntegerNil() {
-	o.SymbolIdInteger.Set(nil)
+// SetSymbolIdIntNil sets the value for SymbolIdInt to be an explicit nil
+func (o *V1Symbol) SetSymbolIdIntNil() {
+	o.SymbolIdInt.Set(nil)
 }
 
-// UnsetSymbolIdInteger ensures that no value is present for SymbolIdInteger, not even an explicit nil
-func (o *V1Symbol) UnsetSymbolIdInteger() {
-	o.SymbolIdInteger.Unset()
+// UnsetSymbolIdInt ensures that no value is present for SymbolIdInt, not even an explicit nil
+func (o *V1Symbol) UnsetSymbolIdInt() {
+	o.SymbolIdInt.Unset()
 }
 
 func (o V1Symbol) MarshalJSON() ([]byte, error) {
@@ -2198,8 +2198,8 @@ func (o V1Symbol) ToMap() (map[string]interface{}, error) {
 	if o.VolumeToUsd.IsSet() {
 		toSerialize["volume_to_usd"] = o.VolumeToUsd.Get()
 	}
-	if o.SymbolIdInteger.IsSet() {
-		toSerialize["symbol_id_integer"] = o.SymbolIdInteger.Get()
+	if o.SymbolIdInt.IsSet() {
+		toSerialize["symbol_id_int"] = o.SymbolIdInt.Get()
 	}
 	return toSerialize, nil
 }

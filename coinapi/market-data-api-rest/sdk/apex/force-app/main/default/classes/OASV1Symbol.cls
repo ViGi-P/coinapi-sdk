@@ -286,9 +286,9 @@ public class OASV1Symbol implements OAS.MappedProperties {
 
     /**
      * The symbol identifier in integer immutable format, used to correlate data across different APIs.
-     * @return symbolIdInteger
+     * @return symbolIdInt
      */
-    public Integer symbolIdInteger { get; private set; }
+    public Integer symbolIdInt { get; private set; }
 
     private static final Map<String, String> propertyMappings = new Map<String, String>{
         'symbol_id' => 'symbolId',
@@ -335,7 +335,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -387,7 +387,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -439,7 +439,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -491,7 +491,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -543,7 +543,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -595,7 +595,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -647,7 +647,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -699,7 +699,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -751,7 +751,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -803,7 +803,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -855,7 +855,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -907,7 +907,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -959,7 +959,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1011,7 +1011,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1063,7 +1063,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1115,7 +1115,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1167,7 +1167,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1219,7 +1219,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1271,7 +1271,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1323,7 +1323,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1375,7 +1375,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1427,7 +1427,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1479,7 +1479,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1531,7 +1531,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1583,7 +1583,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1635,7 +1635,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1687,7 +1687,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1739,7 +1739,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1791,7 +1791,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1843,7 +1843,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1895,7 +1895,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1947,7 +1947,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -1999,7 +1999,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -2051,7 +2051,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -2103,7 +2103,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -2155,7 +2155,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -2207,7 +2207,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -2259,7 +2259,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -2311,7 +2311,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -2363,7 +2363,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -2415,7 +2415,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -2467,7 +2467,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -2519,7 +2519,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -2571,7 +2571,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -2623,7 +2623,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         'size_precision' => 'sizePrecision',
         'raw_kvp' => 'rawKvp',
         'volume_to_usd' => 'volumeToUsd',
-        'symbol_id_integer' => 'symbolIdInteger'
+        'symbol_id_int' => 'symbolIdInt'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -2681,7 +2681,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
           v1Symbol.sizePrecision = 1.3579;
           v1Symbol.rawKvp = new Map<String, String>{'key'=>''};
           v1Symbol.volumeToUsd = 1.3579;
-          v1Symbol.symbolIdInteger = 0;
+          v1Symbol.symbolIdInt = 0;
         return v1Symbol;
     }
 
@@ -2733,7 +2733,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
                 && this.sizePrecision == v1Symbol.sizePrecision
                 && this.rawKvp == v1Symbol.rawKvp
                 && this.volumeToUsd == v1Symbol.volumeToUsd
-                && this.symbolIdInteger == v1Symbol.symbolIdInteger;
+                && this.symbolIdInt == v1Symbol.symbolIdInt;
         }
         return false;
     }
@@ -2785,7 +2785,7 @@ public class OASV1Symbol implements OAS.MappedProperties {
         hashCode = (17 * hashCode) + (sizePrecision == null ? 0 : System.hashCode(sizePrecision));
         hashCode = (17 * hashCode) + (rawKvp == null ? 0 : System.hashCode(rawKvp));
         hashCode = (17 * hashCode) + (volumeToUsd == null ? 0 : System.hashCode(volumeToUsd));
-        hashCode = (17 * hashCode) + (symbolIdInteger == null ? 0 : System.hashCode(symbolIdInteger));
+        hashCode = (17 * hashCode) + (symbolIdInt == null ? 0 : System.hashCode(symbolIdInt));
         return hashCode;
     }
 }

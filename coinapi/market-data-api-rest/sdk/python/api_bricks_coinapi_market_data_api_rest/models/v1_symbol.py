@@ -73,8 +73,8 @@ class V1Symbol(BaseModel):
     size_precision: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The size precision.")
     raw_kvp: Optional[Dict[str, StrictStr]] = Field(default=None, description="Not normalized raw kvp data.")
     volume_to_usd: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Volume unit in USD.")
-    symbol_id_integer: Optional[StrictInt] = Field(default=None, description="The symbol identifier in integer immutable format, used to correlate data across different APIs.")
-    __properties: ClassVar[List[str]] = ["symbol_id", "exchange_id", "symbol_type", "asset_id_base", "asset_id_quote", "asset_id_unit", "future_contract_unit", "future_contract_unit_asset", "future_delivery_time", "option_type_is_call", "option_strike_price", "option_contract_unit", "option_exercise_style", "option_expiration_time", "contract_delivery_time", "contract_unit", "contract_unit_asset", "contract_id", "contract_display_name", "contract_display_description", "data_start", "data_end", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "index_id", "index_display_name", "index_display_description", "volume_1hrs", "volume_1hrs_usd", "volume_1day", "volume_1day_usd", "volume_1mth", "volume_1mth_usd", "price", "symbol_id_exchange", "asset_id_base_exchange", "asset_id_quote_exchange", "price_precision", "size_precision", "raw_kvp", "volume_to_usd", "symbol_id_integer"]
+    symbol_id_int: Optional[StrictInt] = Field(default=None, description="The symbol identifier in integer immutable format, used to correlate data across different APIs.")
+    __properties: ClassVar[List[str]] = ["symbol_id", "exchange_id", "symbol_type", "asset_id_base", "asset_id_quote", "asset_id_unit", "future_contract_unit", "future_contract_unit_asset", "future_delivery_time", "option_type_is_call", "option_strike_price", "option_contract_unit", "option_exercise_style", "option_expiration_time", "contract_delivery_time", "contract_unit", "contract_unit_asset", "contract_id", "contract_display_name", "contract_display_description", "data_start", "data_end", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "index_id", "index_display_name", "index_display_description", "volume_1hrs", "volume_1hrs_usd", "volume_1day", "volume_1day_usd", "volume_1mth", "volume_1mth_usd", "price", "symbol_id_exchange", "asset_id_base_exchange", "asset_id_quote_exchange", "price_precision", "size_precision", "raw_kvp", "volume_to_usd", "symbol_id_int"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,7 +113,7 @@ class V1Symbol(BaseModel):
         excluded_fields: Set[str] = set([
             "data_start",
             "data_end",
-            "symbol_id_integer",
+            "symbol_id_int",
         ])
 
         _dict = self.model_dump(
@@ -346,10 +346,10 @@ class V1Symbol(BaseModel):
         if self.volume_to_usd is None and "volume_to_usd" in self.model_fields_set:
             _dict['volume_to_usd'] = None
 
-        # set to None if symbol_id_integer (nullable) is None
+        # set to None if symbol_id_int (nullable) is None
         # and model_fields_set contains the field
-        if self.symbol_id_integer is None and "symbol_id_integer" in self.model_fields_set:
-            _dict['symbol_id_integer'] = None
+        if self.symbol_id_int is None and "symbol_id_int" in self.model_fields_set:
+            _dict['symbol_id_int'] = None
 
         return _dict
 
@@ -408,7 +408,7 @@ class V1Symbol(BaseModel):
             "size_precision": obj.get("size_precision"),
             "raw_kvp": obj.get("raw_kvp"),
             "volume_to_usd": obj.get("volume_to_usd"),
-            "symbol_id_integer": obj.get("symbol_id_integer")
+            "symbol_id_int": obj.get("symbol_id_int")
         })
         return _obj
 

@@ -53,7 +53,7 @@ defmodule CoinAPIMarketDataRESTAPI.Model.V1Symbol do
     :size_precision,
     :raw_kvp,
     :volume_to_usd,
-    :symbol_id_integer
+    :symbol_id_int
   ]
 
   @type t :: %__MODULE__{
@@ -102,7 +102,7 @@ defmodule CoinAPIMarketDataRESTAPI.Model.V1Symbol do
     :size_precision => float() | nil,
     :raw_kvp => %{optional(String.t) => String.t} | nil,
     :volume_to_usd => float() | nil,
-    :symbol_id_integer => integer() | nil
+    :symbol_id_int => integer() | nil
   }
 
   def decode(value) do

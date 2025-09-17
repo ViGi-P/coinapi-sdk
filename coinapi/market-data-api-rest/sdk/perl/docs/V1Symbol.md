@@ -53,7 +53,7 @@ Name | Type | Description | Notes
 **size_precision** | **double** | The size precision. | [optional] 
 **raw_kvp** | **HASH[string,string]** | Not normalized raw kvp data. | [optional] 
 **volume_to_usd** | **double** | Volume unit in USD. | [optional] 
-**symbol_id_integer** | **int** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly] 
+**symbol_id_int** | **int** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

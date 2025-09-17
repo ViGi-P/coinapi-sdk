@@ -104,7 +104,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
         'size_precision' => 'float',
         'raw_kvp' => 'array<string,string>',
         'volume_to_usd' => 'float',
-        'symbol_id_integer' => 'int'
+        'symbol_id_int' => 'int'
     ];
 
     /**
@@ -160,7 +160,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
         'size_precision' => 'double',
         'raw_kvp' => null,
         'volume_to_usd' => 'double',
-        'symbol_id_integer' => 'int32'
+        'symbol_id_int' => 'int32'
     ];
 
     /**
@@ -214,7 +214,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
         'size_precision' => true,
         'raw_kvp' => true,
         'volume_to_usd' => true,
-        'symbol_id_integer' => true
+        'symbol_id_int' => true
     ];
 
     /**
@@ -348,7 +348,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
         'size_precision' => 'size_precision',
         'raw_kvp' => 'raw_kvp',
         'volume_to_usd' => 'volume_to_usd',
-        'symbol_id_integer' => 'symbol_id_integer'
+        'symbol_id_int' => 'symbol_id_int'
     ];
 
     /**
@@ -402,7 +402,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
         'size_precision' => 'setSizePrecision',
         'raw_kvp' => 'setRawKvp',
         'volume_to_usd' => 'setVolumeToUsd',
-        'symbol_id_integer' => 'setSymbolIdInteger'
+        'symbol_id_int' => 'setSymbolIdInt'
     ];
 
     /**
@@ -456,7 +456,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
         'size_precision' => 'getSizePrecision',
         'raw_kvp' => 'getRawKvp',
         'volume_to_usd' => 'getVolumeToUsd',
-        'symbol_id_integer' => 'getSymbolIdInteger'
+        'symbol_id_int' => 'getSymbolIdInt'
     ];
 
     /**
@@ -561,7 +561,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('size_precision', $data ?? [], null);
         $this->setIfExists('raw_kvp', $data ?? [], null);
         $this->setIfExists('volume_to_usd', $data ?? [], null);
-        $this->setIfExists('symbol_id_integer', $data ?? [], null);
+        $this->setIfExists('symbol_id_int', $data ?? [], null);
     }
 
     /**
@@ -2137,35 +2137,35 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets symbol_id_integer
+     * Gets symbol_id_int
      *
      * @return int|null
      */
-    public function getSymbolIdInteger()
+    public function getSymbolIdInt()
     {
-        return $this->container['symbol_id_integer'];
+        return $this->container['symbol_id_int'];
     }
 
     /**
-     * Sets symbol_id_integer
+     * Sets symbol_id_int
      *
-     * @param int|null $symbol_id_integer The symbol identifier in integer immutable format, used to correlate data across different APIs.
+     * @param int|null $symbol_id_int The symbol identifier in integer immutable format, used to correlate data across different APIs.
      *
      * @return self
      */
-    public function setSymbolIdInteger($symbol_id_integer)
+    public function setSymbolIdInt($symbol_id_int)
     {
-        if (is_null($symbol_id_integer)) {
-            array_push($this->openAPINullablesSetToNull, 'symbol_id_integer');
+        if (is_null($symbol_id_int)) {
+            array_push($this->openAPINullablesSetToNull, 'symbol_id_int');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('symbol_id_integer', $nullablesSetToNull);
+            $index = array_search('symbol_id_int', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['symbol_id_integer'] = $symbol_id_integer;
+        $this->container['symbol_id_int'] = $symbol_id_int;
 
         return $this;
     }

@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 **SizePrecision** | **Double** | The size precision. | [optional] 
 **RawKvp** | **System.Collections.Hashtable** | Not normalized raw kvp data. | [optional] 
 **VolumeToUsd** | **Double** | Volume unit in USD. | [optional] 
-**SymbolIdInteger** | **Int32** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly] 
+**SymbolIdInt** | **Int32** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly] 
 
 ## Examples
 
@@ -99,7 +99,7 @@ $V1Symbol = Initialize-PSOpenAPIToolsV1Symbol  -SymbolId null `
  -SizePrecision null `
  -RawKvp null `
  -VolumeToUsd null `
- -SymbolIdInteger null
+ -SymbolIdInt null
 ```
 
 - Convert the resource to JSON

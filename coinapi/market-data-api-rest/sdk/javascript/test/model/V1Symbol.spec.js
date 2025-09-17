@@ -324,8 +324,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property symbolIdInteger (base name: "symbol_id_integer")', function() {
-      // uncomment below and update the code to test the property symbolIdInteger
+    it('should have the property symbolIdInt (base name: "symbol_id_int")', function() {
+      // uncomment below and update the code to test the property symbolIdInt
       //var instance = new CoinApiMarketDataRestApi.V1Symbol();
       //expect(instance).to.be();
     });

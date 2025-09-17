@@ -50,7 +50,7 @@ Name | Type | Description | Notes
 **SizePrecision** | **double** | The size precision. | [optional] 
 **RawKvp** | **Dictionary&lt;string, string&gt;** | Not normalized raw kvp data. | [optional] 
 **VolumeToUsd** | **double** | Volume unit in USD. | [optional] 
-**SymbolIdInteger** | **int** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly] 
+**SymbolIdInt** | **int** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

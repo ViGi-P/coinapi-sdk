@@ -193,7 +193,7 @@ export class V1Symbol {
     /**
     * The symbol identifier in integer immutable format, used to correlate data across different APIs.
     */
-    'symbolIdInteger'?: number | null;
+    'symbolIdInt'?: number | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -424,8 +424,8 @@ export class V1Symbol {
             "type": "number"
         },
         {
-            "name": "symbolIdInteger",
-            "baseName": "symbol_id_integer",
+            "name": "symbolIdInt",
+            "baseName": "symbol_id_int",
             "type": "number"
         }    ];
 

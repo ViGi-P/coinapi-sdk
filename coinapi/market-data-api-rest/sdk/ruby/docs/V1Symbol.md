@@ -49,7 +49,7 @@
 | **size_precision** | **Float** | The size precision. | [optional] |
 | **raw_kvp** | **Hash&lt;String, String&gt;** | Not normalized raw kvp data. | [optional] |
 | **volume_to_usd** | **Float** | Volume unit in USD. | [optional] |
-| **symbol_id_integer** | **Integer** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional][readonly] |
+| **symbol_id_int** | **Integer** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional][readonly] |
 
 ## Example
 
@@ -102,7 +102,7 @@ instance = OpenapiClient::V1Symbol.new(
   size_precision: null,
   raw_kvp: null,
   volume_to_usd: null,
-  symbol_id_integer: null
+  symbol_id_int: null
 )
 ```
 

@@ -104,6 +104,6 @@ case class Symbol (
   /* Volume unit in USD. */
   volumeToUsd: Option[Double] = None,
   /* The symbol identifier in integer immutable format, used to correlate data across different APIs. */
-  symbolIdInteger: Option[Int] = None
+  symbolIdInt: Option[Int] = None
 ) extends ApiModel
 

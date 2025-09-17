@@ -99,5 +99,5 @@ class V1Symbol {
     /* Volume unit in USD. */
     Double volumeToUsd
     /* The symbol identifier in integer immutable format, used to correlate data across different APIs. */
-    Integer symbolIdInteger
+    Integer symbolIdInt
 }

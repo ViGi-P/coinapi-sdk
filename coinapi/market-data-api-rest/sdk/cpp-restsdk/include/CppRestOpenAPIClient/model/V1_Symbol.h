@@ -415,10 +415,10 @@ public:
     /// <summary>
     /// The symbol identifier in integer immutable format, used to correlate data across different APIs.
     /// </summary>
-    int32_t getSymbolIdInteger() const;
-    bool symbolIdIntegerIsSet() const;
-    void unsetSymbol_id_integer();
-    void setSymbolIdInteger(int32_t value);
+    int32_t getSymbolIdInt() const;
+    bool symbolIdIntIsSet() const;
+    void unsetSymbol_id_int();
+    void setSymbolIdInt(int32_t value);
 
 
 protected:
@@ -557,8 +557,8 @@ protected:
     double m_Volume_to_usd;
     bool m_Volume_to_usdIsSet;
 
-    int32_t m_Symbol_id_integer;
-    bool m_Symbol_id_integerIsSet;
+    int32_t m_Symbol_id_int;
+    bool m_Symbol_id_intIsSet;
 
 };
 

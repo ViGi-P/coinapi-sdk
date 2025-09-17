@@ -51,7 +51,7 @@ Name | Type | Description | Notes
 **sizePrecision** | **Double** | The size precision. |  [optional]
 **rawKvp** | **Map&lt;String, String&gt;** | Not normalized raw kvp data. |  [optional]
 **volumeToUsd** | **Double** | Volume unit in USD. |  [optional]
-**symbolIdInteger** | **Integer** | The symbol identifier in integer immutable format, used to correlate data across different APIs. |  [optional] [readonly]
+**symbolIdInt** | **Integer** | The symbol identifier in integer immutable format, used to correlate data across different APIs. |  [optional] [readonly]
 
 
 

@@ -190,6 +190,6 @@ export interface V1Symbol {
     /**
      * The symbol identifier in integer immutable format, used to correlate data across different APIs.
      */
-    readonly symbol_id_integer?: number | null;
+    readonly symbol_id_int?: number | null;
 }
 

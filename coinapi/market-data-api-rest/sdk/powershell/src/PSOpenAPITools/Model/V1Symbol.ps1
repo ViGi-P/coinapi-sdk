@@ -105,7 +105,7 @@ The size precision.
 Not normalized raw kvp data.
 .PARAMETER VolumeToUsd
 Volume unit in USD.
-.PARAMETER SymbolIdInteger
+.PARAMETER SymbolIdInt
 The symbol identifier in integer immutable format, used to correlate data across different APIs.
 .OUTPUTS
 
@@ -252,7 +252,7 @@ function Initialize-V1Symbol {
         ${VolumeToUsd},
         [Parameter(Position = 45, ValueFromPipelineByPropertyName = $true)]
         [System.Nullable[Int32]]
-        ${SymbolIdInteger}
+        ${SymbolIdInt}
     )
 
     Process {
@@ -306,7 +306,7 @@ function Initialize-V1Symbol {
             "size_precision" = ${SizePrecision}
             "raw_kvp" = ${RawKvp}
             "volume_to_usd" = ${VolumeToUsd}
-            "symbol_id_integer" = ${SymbolIdInteger}
+            "symbol_id_int" = ${SymbolIdInt}
         }
 
 
@@ -344,7 +344,7 @@ function ConvertFrom-JsonToV1Symbol {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1Symbol
-        $AllProperties = ("symbol_id", "exchange_id", "symbol_type", "asset_id_base", "asset_id_quote", "asset_id_unit", "future_contract_unit", "future_contract_unit_asset", "future_delivery_time", "option_type_is_call", "option_strike_price", "option_contract_unit", "option_exercise_style", "option_expiration_time", "contract_delivery_time", "contract_unit", "contract_unit_asset", "contract_id", "contract_display_name", "contract_display_description", "data_start", "data_end", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "index_id", "index_display_name", "index_display_description", "volume_1hrs", "volume_1hrs_usd", "volume_1day", "volume_1day_usd", "volume_1mth", "volume_1mth_usd", "price", "symbol_id_exchange", "asset_id_base_exchange", "asset_id_quote_exchange", "price_precision", "size_precision", "raw_kvp", "volume_to_usd", "symbol_id_integer")
+        $AllProperties = ("symbol_id", "exchange_id", "symbol_type", "asset_id_base", "asset_id_quote", "asset_id_unit", "future_contract_unit", "future_contract_unit_asset", "future_delivery_time", "option_type_is_call", "option_strike_price", "option_contract_unit", "option_exercise_style", "option_expiration_time", "contract_delivery_time", "contract_unit", "contract_unit_asset", "contract_id", "contract_display_name", "contract_display_description", "data_start", "data_end", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "index_id", "index_display_name", "index_display_description", "volume_1hrs", "volume_1hrs_usd", "volume_1day", "volume_1day_usd", "volume_1mth", "volume_1mth_usd", "price", "symbol_id_exchange", "asset_id_base_exchange", "asset_id_quote_exchange", "price_precision", "size_precision", "raw_kvp", "volume_to_usd", "symbol_id_int")
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
@@ -621,10 +621,10 @@ function ConvertFrom-JsonToV1Symbol {
             $VolumeToUsd = $JsonParameters.PSobject.Properties["volume_to_usd"].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id_integer"))) { #optional property not found
-            $SymbolIdInteger = $null
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id_int"))) { #optional property not found
+            $SymbolIdInt = $null
         } else {
-            $SymbolIdInteger = $JsonParameters.PSobject.Properties["symbol_id_integer"].value
+            $SymbolIdInt = $JsonParameters.PSobject.Properties["symbol_id_int"].value
         }
 
         $PSO = [PSCustomObject]@{
@@ -673,7 +673,7 @@ function ConvertFrom-JsonToV1Symbol {
             "size_precision" = ${SizePrecision}
             "raw_kvp" = ${RawKvp}
             "volume_to_usd" = ${VolumeToUsd}
-            "symbol_id_integer" = ${SymbolIdInteger}
+            "symbol_id_int" = ${SymbolIdInt}
         }
 
         return $PSO

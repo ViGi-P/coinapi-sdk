@@ -285,8 +285,8 @@ void main() {
     });
 
     // The symbol identifier in integer immutable format, used to correlate data across different APIs.
-    // int symbolIdInteger
-    test('to test the property `symbolIdInteger`', () async {
+    // int symbolIdInt
+    test('to test the property `symbolIdInt`', () async {
       // TODO
     });
 

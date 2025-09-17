@@ -1404,7 +1404,7 @@ export type V1Symbol = {
      * @type {number}
      * @memberof V1Symbol
      */
-    symbol_id_integer?: number;
+    symbol_id_int?: number;
 }
 
 /**

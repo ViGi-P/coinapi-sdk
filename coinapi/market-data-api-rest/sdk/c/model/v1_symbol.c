@@ -51,7 +51,7 @@ static v1_symbol_t *v1_symbol_create_internal(
     double size_precision,
     list_t* raw_kvp,
     double volume_to_usd,
-    int symbol_id_integer
+    int symbol_id_int
     ) {
     v1_symbol_t *v1_symbol_local_var = malloc(sizeof(v1_symbol_t));
     if (!v1_symbol_local_var) {
@@ -102,7 +102,7 @@ static v1_symbol_t *v1_symbol_create_internal(
     v1_symbol_local_var->size_precision = size_precision;
     v1_symbol_local_var->raw_kvp = raw_kvp;
     v1_symbol_local_var->volume_to_usd = volume_to_usd;
-    v1_symbol_local_var->symbol_id_integer = symbol_id_integer;
+    v1_symbol_local_var->symbol_id_int = symbol_id_int;
 
     v1_symbol_local_var->_library_owned = 1;
     return v1_symbol_local_var;
@@ -154,7 +154,7 @@ __attribute__((deprecated)) v1_symbol_t *v1_symbol_create(
     double size_precision,
     list_t* raw_kvp,
     double volume_to_usd,
-    int symbol_id_integer
+    int symbol_id_int
     ) {
     return v1_symbol_create_internal (
         symbol_id,
@@ -202,7 +202,7 @@ __attribute__((deprecated)) v1_symbol_t *v1_symbol_create(
         size_precision,
         raw_kvp,
         volume_to_usd,
-        symbol_id_integer
+        symbol_id_int
         );
 }
 
@@ -719,9 +719,9 @@ cJSON *v1_symbol_convertToJSON(v1_symbol_t *v1_symbol) {
     }
 
 
-    // v1_symbol->symbol_id_integer
-    if(v1_symbol->symbol_id_integer) {
-    if(cJSON_AddNumberToObject(item, "symbol_id_integer", v1_symbol->symbol_id_integer) == NULL) {
+    // v1_symbol->symbol_id_int
+    if(v1_symbol->symbol_id_int) {
+    if(cJSON_AddNumberToObject(item, "symbol_id_int", v1_symbol->symbol_id_int) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -1297,13 +1297,13 @@ v1_symbol_t *v1_symbol_parseFromJSON(cJSON *v1_symbolJSON){
     }
     }
 
-    // v1_symbol->symbol_id_integer
-    cJSON *symbol_id_integer = cJSON_GetObjectItemCaseSensitive(v1_symbolJSON, "symbol_id_integer");
-    if (cJSON_IsNull(symbol_id_integer)) {
-        symbol_id_integer = NULL;
+    // v1_symbol->symbol_id_int
+    cJSON *symbol_id_int = cJSON_GetObjectItemCaseSensitive(v1_symbolJSON, "symbol_id_int");
+    if (cJSON_IsNull(symbol_id_int)) {
+        symbol_id_int = NULL;
     }
-    if (symbol_id_integer) { 
-    if(!cJSON_IsNumber(symbol_id_integer))
+    if (symbol_id_int) { 
+    if(!cJSON_IsNumber(symbol_id_int))
     {
     goto end; //Numeric
     }
@@ -1356,7 +1356,7 @@ v1_symbol_t *v1_symbol_parseFromJSON(cJSON *v1_symbolJSON){
         size_precision ? size_precision->valuedouble : 0,
         raw_kvp ? raw_kvpList : NULL,
         volume_to_usd ? volume_to_usd->valuedouble : 0,
-        symbol_id_integer ? symbol_id_integer->valuedouble : 0
+        symbol_id_int ? symbol_id_int->valuedouble : 0
         );
 
     return v1_symbol_local_var;

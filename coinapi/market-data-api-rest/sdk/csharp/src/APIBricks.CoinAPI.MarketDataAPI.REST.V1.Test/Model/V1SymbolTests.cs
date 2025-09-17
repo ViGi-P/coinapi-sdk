@@ -460,12 +460,12 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'SymbolIdInteger'
+        /// Test the property 'SymbolIdInt'
         /// </summary>
         [Fact]
-        public void SymbolIdIntegerTest()
+        public void SymbolIdIntTest()
         {
-            // TODO unit test for the property 'SymbolIdInteger'
+            // TODO unit test for the property 'SymbolIdInt'
         }
     }
 }

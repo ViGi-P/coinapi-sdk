@@ -48,7 +48,7 @@ Name | Type | Description | Notes
 **sizeUnderscoreprecision** | **float** |  | [optional] [default to null]
 **rawUnderscorekvp** | **map[String, string]** |  | [optional] [default to null]
 **volumeUnderscoretoUnderscoreusd** | **float** |  | [optional] [default to null]
-**symbolUnderscoreidUnderscoreinteger** | **integer** |  | [optional] [readonly] [default to null]
+**symbolUnderscoreidUnderscoreint** | **integer** |  | [optional] [readonly] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

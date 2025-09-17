@@ -447,7 +447,7 @@ type alias V1Symbol =
     , sizePrecision : Maybe Float
     , rawKvp : Maybe ( Dict.Dict String String )
     , volumeToUsd : Maybe Float
-    , symbolIdInteger : Maybe Int
+    , symbolIdInt : Maybe Int
     }
 
 
@@ -1158,7 +1158,7 @@ encodeV1SymbolPairs model =
             , maybeEncodeNullable "size_precision" Json.Encode.float model.sizePrecision
             , maybeEncodeNullable "raw_kvp" (Json.Encode.dict identity Json.Encode.string) model.rawKvp
             , maybeEncodeNullable "volume_to_usd" Json.Encode.float model.volumeToUsd
-            , maybeEncodeNullable "symbol_id_integer" Json.Encode.int model.symbolIdInteger
+            , maybeEncodeNullable "symbol_id_int" Json.Encode.int model.symbolIdInt
             ]
     in
     pairs
@@ -1590,7 +1590,7 @@ v1SymbolDecoder =
         |> maybeDecodeNullable "size_precision" Json.Decode.float Nothing
         |> maybeDecodeNullable "raw_kvp" (Json.Decode.dict Json.Decode.string) Nothing
         |> maybeDecodeNullable "volume_to_usd" Json.Decode.float Nothing
-        |> maybeDecodeNullable "symbol_id_integer" Json.Decode.int Nothing
+        |> maybeDecodeNullable "symbol_id_int" Json.Decode.int Nothing
 
 
 v1SymbolMappingDecoder : Json.Decode.Decoder V1SymbolMapping

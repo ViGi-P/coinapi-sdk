@@ -1101,10 +1101,10 @@ v1SymbolVolumeToUsdL :: Lens_' V1Symbol (Maybe Double)
 v1SymbolVolumeToUsdL f V1Symbol{..} = (\v1SymbolVolumeToUsd -> V1Symbol { v1SymbolVolumeToUsd, ..} ) <$> f v1SymbolVolumeToUsd
 {-# INLINE v1SymbolVolumeToUsdL #-}
 
--- | 'v1SymbolSymbolIdInteger' Lens
-v1SymbolSymbolIdIntegerL :: Lens_' V1Symbol (Maybe Int)
-v1SymbolSymbolIdIntegerL f V1Symbol{..} = (\v1SymbolSymbolIdInteger -> V1Symbol { v1SymbolSymbolIdInteger, ..} ) <$> f v1SymbolSymbolIdInteger
-{-# INLINE v1SymbolSymbolIdIntegerL #-}
+-- | 'v1SymbolSymbolIdInt' Lens
+v1SymbolSymbolIdIntL :: Lens_' V1Symbol (Maybe Int)
+v1SymbolSymbolIdIntL f V1Symbol{..} = (\v1SymbolSymbolIdInt -> V1Symbol { v1SymbolSymbolIdInt, ..} ) <$> f v1SymbolSymbolIdInt
+{-# INLINE v1SymbolSymbolIdIntL #-}
 
 
 

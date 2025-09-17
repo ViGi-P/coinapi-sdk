@@ -110,8 +110,8 @@ V1_Symbol::V1_Symbol()
     m_Raw_kvpIsSet = false;
     m_Volume_to_usd = 0.0;
     m_Volume_to_usdIsSet = false;
-    m_Symbol_id_integer = 0;
-    m_Symbol_id_integerIsSet = false;
+    m_Symbol_id_int = 0;
+    m_Symbol_id_intIsSet = false;
 }
 
 V1_Symbol::~V1_Symbol()
@@ -351,10 +351,10 @@ web::json::value V1_Symbol::toJson() const
         
         val[utility::conversions::to_string_t(_XPLATSTR("volume_to_usd"))] = ModelBase::toJson(m_Volume_to_usd);
     }
-    if(m_Symbol_id_integerIsSet)
+    if(m_Symbol_id_intIsSet)
     {   
         
-        val[utility::conversions::to_string_t(_XPLATSTR("symbol_id_integer"))] = ModelBase::toJson(m_Symbol_id_integer);
+        val[utility::conversions::to_string_t(_XPLATSTR("symbol_id_int"))] = ModelBase::toJson(m_Symbol_id_int);
     }
 
     return val;
@@ -858,14 +858,14 @@ bool V1_Symbol::fromJson(const web::json::value& val)
             
         }
     }
-    if(val.has_field(utility::conversions::to_string_t(_XPLATSTR("symbol_id_integer"))))
+    if(val.has_field(utility::conversions::to_string_t(_XPLATSTR("symbol_id_int"))))
     {
-        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t(_XPLATSTR("symbol_id_integer")));
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t(_XPLATSTR("symbol_id_int")));
         if(!fieldValue.is_null())
         {
-            int32_t refVal_setSymbolIdInteger;
-            ok &= ModelBase::fromJson(fieldValue, refVal_setSymbolIdInteger);
-            setSymbolIdInteger(refVal_setSymbolIdInteger);
+            int32_t refVal_setSymbolIdInt;
+            ok &= ModelBase::fromJson(fieldValue, refVal_setSymbolIdInt);
+            setSymbolIdInt(refVal_setSymbolIdInt);
             
         }
     }
@@ -1059,9 +1059,9 @@ void V1_Symbol::toMultipart(std::shared_ptr<MultipartFormData> multipart, const 
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + utility::conversions::to_string_t(_XPLATSTR("volume_to_usd")), m_Volume_to_usd));
     }
-    if(m_Symbol_id_integerIsSet)
+    if(m_Symbol_id_intIsSet)
     {
-        multipart->add(ModelBase::toHttpContent(namePrefix + utility::conversions::to_string_t(_XPLATSTR("symbol_id_integer")), m_Symbol_id_integer));
+        multipart->add(ModelBase::toHttpContent(namePrefix + utility::conversions::to_string_t(_XPLATSTR("symbol_id_int")), m_Symbol_id_int));
     }
 }
 
@@ -1344,11 +1344,11 @@ bool V1_Symbol::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, cons
         ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(_XPLATSTR("volume_to_usd"))), refVal_setVolumeToUsd );
         setVolumeToUsd(refVal_setVolumeToUsd);
     }
-    if(multipart->hasContent(utility::conversions::to_string_t(_XPLATSTR("symbol_id_integer"))))
+    if(multipart->hasContent(utility::conversions::to_string_t(_XPLATSTR("symbol_id_int"))))
     {
-        int32_t refVal_setSymbolIdInteger;
-        ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(_XPLATSTR("symbol_id_integer"))), refVal_setSymbolIdInteger );
-        setSymbolIdInteger(refVal_setSymbolIdInteger);
+        int32_t refVal_setSymbolIdInt;
+        ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(_XPLATSTR("symbol_id_int"))), refVal_setSymbolIdInt );
+        setSymbolIdInt(refVal_setSymbolIdInt);
     }
     return ok;
 }
@@ -2284,25 +2284,25 @@ void V1_Symbol::unsetVolume_to_usd()
 {
     m_Volume_to_usdIsSet = false;
 }
-int32_t V1_Symbol::getSymbolIdInteger() const
+int32_t V1_Symbol::getSymbolIdInt() const
 {
-    return m_Symbol_id_integer;
+    return m_Symbol_id_int;
 }
 
-void V1_Symbol::setSymbolIdInteger(int32_t value)
+void V1_Symbol::setSymbolIdInt(int32_t value)
 {
-    m_Symbol_id_integer = value;
-    m_Symbol_id_integerIsSet = true;
+    m_Symbol_id_int = value;
+    m_Symbol_id_intIsSet = true;
 }
 
-bool V1_Symbol::symbolIdIntegerIsSet() const
+bool V1_Symbol::symbolIdIntIsSet() const
 {
-    return m_Symbol_id_integerIsSet;
+    return m_Symbol_id_intIsSet;
 }
 
-void V1_Symbol::unsetSymbol_id_integer()
+void V1_Symbol::unsetSymbol_id_int()
 {
-    m_Symbol_id_integerIsSet = false;
+    m_Symbol_id_intIsSet = false;
 }
 
 }

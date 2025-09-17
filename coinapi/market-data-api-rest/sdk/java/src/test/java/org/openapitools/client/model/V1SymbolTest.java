@@ -402,11 +402,11 @@ public class V1SymbolTest {
     }
 
     /**
-     * Test the property 'symbolIdInteger'
+     * Test the property 'symbolIdInt'
      */
     @Test
-    public void symbolIdIntegerTest() {
-        // TODO: test symbolIdInteger
+    public void symbolIdIntTest() {
+        // TODO: test symbolIdInt
     }
 
 }

@@ -80,9 +80,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <param name="sizePrecision">The size precision.</param>
         /// <param name="rawKvp">Not normalized raw kvp data.</param>
         /// <param name="volumeToUsd">Volume unit in USD.</param>
-        /// <param name="symbolIdInteger">The symbol identifier in integer immutable format, used to correlate data across different APIs.</param>
+        /// <param name="symbolIdInt">The symbol identifier in integer immutable format, used to correlate data across different APIs.</param>
         [JsonConstructor]
-        public V1Symbol(Option<string?> symbolId = default, Option<string?> exchangeId = default, Option<string?> symbolType = default, Option<string?> assetIdBase = default, Option<string?> assetIdQuote = default, Option<string?> assetIdUnit = default, Option<double?> futureContractUnit = default, Option<string?> futureContractUnitAsset = default, Option<DateTime?> futureDeliveryTime = default, Option<bool?> optionTypeIsCall = default, Option<double?> optionStrikePrice = default, Option<double?> optionContractUnit = default, Option<string?> optionExerciseStyle = default, Option<DateTime?> optionExpirationTime = default, Option<DateTime?> contractDeliveryTime = default, Option<double?> contractUnit = default, Option<string?> contractUnitAsset = default, Option<string?> contractId = default, Option<string?> contractDisplayName = default, Option<string?> contractDisplayDescription = default, Option<string?> dataStart = default, Option<string?> dataEnd = default, Option<DateTime?> dataQuoteStart = default, Option<DateTime?> dataQuoteEnd = default, Option<DateTime?> dataOrderbookStart = default, Option<DateTime?> dataOrderbookEnd = default, Option<DateTime?> dataTradeStart = default, Option<DateTime?> dataTradeEnd = default, Option<string?> indexId = default, Option<string?> indexDisplayName = default, Option<string?> indexDisplayDescription = default, Option<double?> volume1hrs = default, Option<double?> volume1hrsUsd = default, Option<double?> volume1day = default, Option<double?> volume1dayUsd = default, Option<double?> volume1mth = default, Option<double?> volume1mthUsd = default, Option<double?> price = default, Option<string?> symbolIdExchange = default, Option<string?> assetIdBaseExchange = default, Option<string?> assetIdQuoteExchange = default, Option<double?> pricePrecision = default, Option<double?> sizePrecision = default, Option<Dictionary<string, string>?> rawKvp = default, Option<double?> volumeToUsd = default, Option<int?> symbolIdInteger = default)
+        public V1Symbol(Option<string?> symbolId = default, Option<string?> exchangeId = default, Option<string?> symbolType = default, Option<string?> assetIdBase = default, Option<string?> assetIdQuote = default, Option<string?> assetIdUnit = default, Option<double?> futureContractUnit = default, Option<string?> futureContractUnitAsset = default, Option<DateTime?> futureDeliveryTime = default, Option<bool?> optionTypeIsCall = default, Option<double?> optionStrikePrice = default, Option<double?> optionContractUnit = default, Option<string?> optionExerciseStyle = default, Option<DateTime?> optionExpirationTime = default, Option<DateTime?> contractDeliveryTime = default, Option<double?> contractUnit = default, Option<string?> contractUnitAsset = default, Option<string?> contractId = default, Option<string?> contractDisplayName = default, Option<string?> contractDisplayDescription = default, Option<string?> dataStart = default, Option<string?> dataEnd = default, Option<DateTime?> dataQuoteStart = default, Option<DateTime?> dataQuoteEnd = default, Option<DateTime?> dataOrderbookStart = default, Option<DateTime?> dataOrderbookEnd = default, Option<DateTime?> dataTradeStart = default, Option<DateTime?> dataTradeEnd = default, Option<string?> indexId = default, Option<string?> indexDisplayName = default, Option<string?> indexDisplayDescription = default, Option<double?> volume1hrs = default, Option<double?> volume1hrsUsd = default, Option<double?> volume1day = default, Option<double?> volume1dayUsd = default, Option<double?> volume1mth = default, Option<double?> volume1mthUsd = default, Option<double?> price = default, Option<string?> symbolIdExchange = default, Option<string?> assetIdBaseExchange = default, Option<string?> assetIdQuoteExchange = default, Option<double?> pricePrecision = default, Option<double?> sizePrecision = default, Option<Dictionary<string, string>?> rawKvp = default, Option<double?> volumeToUsd = default, Option<int?> symbolIdInt = default)
         {
             SymbolIdOption = symbolId;
             ExchangeIdOption = exchangeId;
@@ -129,7 +129,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
             SizePrecisionOption = sizePrecision;
             RawKvpOption = rawKvp;
             VolumeToUsdOption = volumeToUsd;
-            SymbolIdIntegerOption = symbolIdInteger;
+            SymbolIdIntOption = symbolIdInt;
             OnCreated();
         }
 
@@ -764,18 +764,18 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public double? VolumeToUsd { get { return this.VolumeToUsdOption; } set { this.VolumeToUsdOption = new(value); } }
 
         /// <summary>
-        /// Used to track the state of SymbolIdInteger
+        /// Used to track the state of SymbolIdInt
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<int?> SymbolIdIntegerOption { get; }
+        public Option<int?> SymbolIdIntOption { get; }
 
         /// <summary>
         /// The symbol identifier in integer immutable format, used to correlate data across different APIs.
         /// </summary>
         /// <value>The symbol identifier in integer immutable format, used to correlate data across different APIs.</value>
-        [JsonPropertyName("symbol_id_integer")]
-        public int? SymbolIdInteger { get { return this.SymbolIdIntegerOption; } }
+        [JsonPropertyName("symbol_id_int")]
+        public int? SymbolIdInt { get { return this.SymbolIdIntOption; } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -830,7 +830,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
             sb.Append("  SizePrecision: ").Append(SizePrecision).Append("\n");
             sb.Append("  RawKvp: ").Append(RawKvp).Append("\n");
             sb.Append("  VolumeToUsd: ").Append(VolumeToUsd).Append("\n");
-            sb.Append("  SymbolIdInteger: ").Append(SymbolIdInteger).Append("\n");
+            sb.Append("  SymbolIdInt: ").Append(SymbolIdInt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -958,7 +958,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
             Option<double?> sizePrecision = default;
             Option<Dictionary<string, string>?> rawKvp = default;
             Option<double?> volumeToUsd = default;
-            Option<int?> symbolIdInteger = default;
+            Option<int?> symbolIdInt = default;
 
             while (utf8JsonReader.Read())
             {
@@ -1110,8 +1110,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
                         case "volume_to_usd":
                             volumeToUsd = new Option<double?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (double?)null : utf8JsonReader.GetDouble());
                             break;
-                        case "symbol_id_integer":
-                            symbolIdInteger = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
+                        case "symbol_id_int":
+                            symbolIdInt = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
                             break;
                         default:
                             break;
@@ -1119,7 +1119,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
                 }
             }
 
-            return new V1Symbol(symbolId, exchangeId, symbolType, assetIdBase, assetIdQuote, assetIdUnit, futureContractUnit, futureContractUnitAsset, futureDeliveryTime, optionTypeIsCall, optionStrikePrice, optionContractUnit, optionExerciseStyle, optionExpirationTime, contractDeliveryTime, contractUnit, contractUnitAsset, contractId, contractDisplayName, contractDisplayDescription, dataStart, dataEnd, dataQuoteStart, dataQuoteEnd, dataOrderbookStart, dataOrderbookEnd, dataTradeStart, dataTradeEnd, indexId, indexDisplayName, indexDisplayDescription, volume1hrs, volume1hrsUsd, volume1day, volume1dayUsd, volume1mth, volume1mthUsd, price, symbolIdExchange, assetIdBaseExchange, assetIdQuoteExchange, pricePrecision, sizePrecision, rawKvp, volumeToUsd, symbolIdInteger);
+            return new V1Symbol(symbolId, exchangeId, symbolType, assetIdBase, assetIdQuote, assetIdUnit, futureContractUnit, futureContractUnitAsset, futureDeliveryTime, optionTypeIsCall, optionStrikePrice, optionContractUnit, optionExerciseStyle, optionExpirationTime, contractDeliveryTime, contractUnit, contractUnitAsset, contractId, contractDisplayName, contractDisplayDescription, dataStart, dataEnd, dataQuoteStart, dataQuoteEnd, dataOrderbookStart, dataOrderbookEnd, dataTradeStart, dataTradeEnd, indexId, indexDisplayName, indexDisplayDescription, volume1hrs, volume1hrsUsd, volume1day, volume1dayUsd, volume1mth, volume1mthUsd, price, symbolIdExchange, assetIdBaseExchange, assetIdQuoteExchange, pricePrecision, sizePrecision, rawKvp, volumeToUsd, symbolIdInt);
         }
 
         /// <summary>
@@ -1418,11 +1418,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
                 else
                     writer.WriteNull("volume_to_usd");
 
-            if (v1Symbol.SymbolIdIntegerOption.IsSet)
-                if (v1Symbol.SymbolIdIntegerOption.Value != null)
-                    writer.WriteNumber("symbol_id_integer", v1Symbol.SymbolIdIntegerOption.Value!.Value);
+            if (v1Symbol.SymbolIdIntOption.IsSet)
+                if (v1Symbol.SymbolIdIntOption.Value != null)
+                    writer.WriteNumber("symbol_id_int", v1Symbol.SymbolIdIntOption.Value!.Value);
                 else
-                    writer.WriteNull("symbol_id_integer");
+                    writer.WriteNull("symbol_id_int");
         }
     }
 }

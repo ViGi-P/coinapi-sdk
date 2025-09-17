@@ -49,7 +49,7 @@ Name | Type | Description | Notes
 **SizePrecision** | Pointer to **NullableFloat64** | The size precision. | [optional] 
 **RawKvp** | Pointer to **map[string]string** | Not normalized raw kvp data. | [optional] 
 **VolumeToUsd** | Pointer to **NullableFloat64** | Volume unit in USD. | [optional] 
-**SymbolIdInteger** | Pointer to **NullableInt32** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly] 
+**SymbolIdInt** | Pointer to **NullableInt32** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly] 
 
 ## Methods
 
@@ -1645,41 +1645,41 @@ HasVolumeToUsd returns a boolean if a field has been set.
 `func (o *V1Symbol) UnsetVolumeToUsd()`
 
 UnsetVolumeToUsd ensures that no value is present for VolumeToUsd, not even an explicit nil
-### GetSymbolIdInteger
+### GetSymbolIdInt
 
-`func (o *V1Symbol) GetSymbolIdInteger() int32`
+`func (o *V1Symbol) GetSymbolIdInt() int32`
 
-GetSymbolIdInteger returns the SymbolIdInteger field if non-nil, zero value otherwise.
+GetSymbolIdInt returns the SymbolIdInt field if non-nil, zero value otherwise.
 
-### GetSymbolIdIntegerOk
+### GetSymbolIdIntOk
 
-`func (o *V1Symbol) GetSymbolIdIntegerOk() (*int32, bool)`
+`func (o *V1Symbol) GetSymbolIdIntOk() (*int32, bool)`
 
-GetSymbolIdIntegerOk returns a tuple with the SymbolIdInteger field if it's non-nil, zero value otherwise
+GetSymbolIdIntOk returns a tuple with the SymbolIdInt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSymbolIdInteger
+### SetSymbolIdInt
 
-`func (o *V1Symbol) SetSymbolIdInteger(v int32)`
+`func (o *V1Symbol) SetSymbolIdInt(v int32)`
 
-SetSymbolIdInteger sets SymbolIdInteger field to given value.
+SetSymbolIdInt sets SymbolIdInt field to given value.
 
-### HasSymbolIdInteger
+### HasSymbolIdInt
 
-`func (o *V1Symbol) HasSymbolIdInteger() bool`
+`func (o *V1Symbol) HasSymbolIdInt() bool`
 
-HasSymbolIdInteger returns a boolean if a field has been set.
+HasSymbolIdInt returns a boolean if a field has been set.
 
-### SetSymbolIdIntegerNil
+### SetSymbolIdIntNil
 
-`func (o *V1Symbol) SetSymbolIdIntegerNil(b bool)`
+`func (o *V1Symbol) SetSymbolIdIntNil(b bool)`
 
- SetSymbolIdIntegerNil sets the value for SymbolIdInteger to be an explicit nil
+ SetSymbolIdIntNil sets the value for SymbolIdInt to be an explicit nil
 
-### UnsetSymbolIdInteger
-`func (o *V1Symbol) UnsetSymbolIdInteger()`
+### UnsetSymbolIdInt
+`func (o *V1Symbol) UnsetSymbolIdInt()`
 
-UnsetSymbolIdInteger ensures that no value is present for SymbolIdInteger, not even an explicit nil
+UnsetSymbolIdInt ensures that no value is present for SymbolIdInt, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

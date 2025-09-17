@@ -331,8 +331,8 @@ describe("v1_symbol", function()
     end)
   end)
 
-  -- unit tests for the property 'symbol_id_integer'
-  describe("property symbol_id_integer test", function()
+  -- unit tests for the property 'symbol_id_int'
+  describe("property symbol_id_int test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

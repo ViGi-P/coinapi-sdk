@@ -474,7 +474,7 @@ genV1Symbol n =
     <*> arbitraryReducedMaybe n -- v1SymbolSizePrecision :: Maybe Double
     <*> arbitraryReducedMaybe n -- v1SymbolRawKvp :: Maybe (Map.Map String Text)
     <*> arbitraryReducedMaybe n -- v1SymbolVolumeToUsd :: Maybe Double
-    <*> arbitraryReducedMaybe n -- v1SymbolSymbolIdInteger :: Maybe Int
+    <*> arbitraryReducedMaybe n -- v1SymbolSymbolIdInt :: Maybe Int
   
 instance Arbitrary V1SymbolMapping where
   arbitrary = sized genV1SymbolMapping

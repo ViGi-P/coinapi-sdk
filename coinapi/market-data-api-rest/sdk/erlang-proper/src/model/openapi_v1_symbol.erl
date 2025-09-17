@@ -54,7 +54,7 @@
   | {'size_precision', float() }
   | {'raw_kvp', map() }
   | {'volume_to_usd', float() }
-  | {'symbol_id_integer', integer() }
+  | {'symbol_id_int', integer() }
   ].
 
 
@@ -107,7 +107,7 @@ openapi_v1_symbol(Fields) ->
             , {'size_precision', float() }
             , {'raw_kvp', map() }
             , {'volume_to_usd', float() }
-            , {'symbol_id_integer', integer() }
+            , {'symbol_id_int', integer() }
             ],
   lists:ukeymerge(1, lists:sort(Fields), lists:sort(Default)).
 

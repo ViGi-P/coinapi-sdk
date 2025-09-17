@@ -290,5 +290,5 @@ export interface V1Symbol {
      * @type {number}
      * @memberof V1Symbol
      */
-    readonly symbol_id_integer?: number | null;
+    readonly symbol_id_int?: number | null;
 }

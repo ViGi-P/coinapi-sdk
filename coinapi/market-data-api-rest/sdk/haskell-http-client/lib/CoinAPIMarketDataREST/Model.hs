@@ -1372,7 +1372,7 @@ data V1Symbol = V1Symbol
   , v1SymbolSizePrecision :: !(Maybe Double) -- ^ "size_precision" - The size precision.
   , v1SymbolRawKvp :: !(Maybe (Map.Map String Text)) -- ^ "raw_kvp" - Not normalized raw kvp data.
   , v1SymbolVolumeToUsd :: !(Maybe Double) -- ^ "volume_to_usd" - Volume unit in USD.
-  , v1SymbolSymbolIdInteger :: !(Maybe Int) -- ^ /ReadOnly/ "symbol_id_integer" - The symbol identifier in integer immutable format, used to correlate data across different APIs.
+  , v1SymbolSymbolIdInt :: !(Maybe Int) -- ^ /ReadOnly/ "symbol_id_int" - The symbol identifier in integer immutable format, used to correlate data across different APIs.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1Symbol
@@ -1424,7 +1424,7 @@ instance A.FromJSON V1Symbol where
       <*> (o .:? "size_precision")
       <*> (o .:? "raw_kvp")
       <*> (o .:? "volume_to_usd")
-      <*> (o .:? "symbol_id_integer")
+      <*> (o .:? "symbol_id_int")
 
 -- | ToJSON V1Symbol
 instance A.ToJSON V1Symbol where
@@ -1475,7 +1475,7 @@ instance A.ToJSON V1Symbol where
       , "size_precision" .= v1SymbolSizePrecision
       , "raw_kvp" .= v1SymbolRawKvp
       , "volume_to_usd" .= v1SymbolVolumeToUsd
-      , "symbol_id_integer" .= v1SymbolSymbolIdInteger
+      , "symbol_id_int" .= v1SymbolSymbolIdInt
       ]
 
 
@@ -1529,7 +1529,7 @@ mkV1Symbol =
   , v1SymbolSizePrecision = Nothing
   , v1SymbolRawKvp = Nothing
   , v1SymbolVolumeToUsd = Nothing
-  , v1SymbolSymbolIdInteger = Nothing
+  , v1SymbolSymbolIdInt = Nothing
   }
 
 -- ** V1SymbolMapping

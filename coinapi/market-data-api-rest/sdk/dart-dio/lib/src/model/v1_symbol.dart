@@ -57,7 +57,7 @@ part 'v1_symbol.g.dart';
 /// * [sizePrecision] - The size precision.
 /// * [rawKvp] - Not normalized raw kvp data.
 /// * [volumeToUsd] - Volume unit in USD.
-/// * [symbolIdInteger] - The symbol identifier in integer immutable format, used to correlate data across different APIs.
+/// * [symbolIdInt] - The symbol identifier in integer immutable format, used to correlate data across different APIs.
 @BuiltValue()
 abstract class V1Symbol implements Built<V1Symbol, V1SymbolBuilder> {
   /// The symbol identifier.
@@ -239,8 +239,8 @@ abstract class V1Symbol implements Built<V1Symbol, V1SymbolBuilder> {
   double? get volumeToUsd;
 
   /// The symbol identifier in integer immutable format, used to correlate data across different APIs.
-  @BuiltValueField(wireName: r'symbol_id_integer')
-  int? get symbolIdInteger;
+  @BuiltValueField(wireName: r'symbol_id_int')
+  int? get symbolIdInt;
 
   V1Symbol._();
 
@@ -580,10 +580,10 @@ class _$V1SymbolSerializer implements PrimitiveSerializer<V1Symbol> {
         specifiedType: const FullType.nullable(double),
       );
     }
-    if (object.symbolIdInteger != null) {
-      yield r'symbol_id_integer';
+    if (object.symbolIdInt != null) {
+      yield r'symbol_id_int';
       yield serializers.serialize(
-        object.symbolIdInteger,
+        object.symbolIdInt,
         specifiedType: const FullType.nullable(int),
       );
     }
@@ -970,13 +970,13 @@ class _$V1SymbolSerializer implements PrimitiveSerializer<V1Symbol> {
           if (valueDes == null) continue;
           result.volumeToUsd = valueDes;
           break;
-        case r'symbol_id_integer':
+        case r'symbol_id_int':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType.nullable(int),
           ) as int?;
           if (valueDes == null) continue;
-          result.symbolIdInteger = valueDes;
+          result.symbolIdInt = valueDes;
           break;
         default:
           unhandled.add(key);

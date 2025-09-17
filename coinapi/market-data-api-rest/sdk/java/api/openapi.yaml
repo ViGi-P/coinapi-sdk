@@ -890,7 +890,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-09-16T06:04:29.5344591Z
+                    time: 2025-09-17T06:04:06.4529431Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -900,7 +900,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-09-16T06:04:29.5344591Z
+                    time: 2025-09-17T06:04:06.4529431Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -910,7 +910,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-09-16T06:04:29.5344591Z
+                    time: 2025-09-17T06:04:06.4529431Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -920,7 +920,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2025-09-16T06:04:29.5344591Z
+                    time: 2025-09-17T06:04:06.4529431Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -5961,7 +5961,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -5986,7 +5986,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -6023,7 +6023,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -6048,7 +6048,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -6085,7 +6085,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -6110,7 +6110,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -6147,7 +6147,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -6172,7 +6172,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -6255,7 +6255,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -6280,7 +6280,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -6317,7 +6317,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -6342,7 +6342,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -6379,7 +6379,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -6404,7 +6404,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -6441,7 +6441,7 @@ paths:
                     asset_id_quote_exchange: USD
                     price_precision: 0.1
                     size_precision: 1.0
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
                   - symbol_id: POLONIEX_SPOT_LTC_USDC
                     exchange_id: POLONIEX
                     symbol_type: SPOT
@@ -6466,7 +6466,7 @@ paths:
                     asset_id_quote_exchange: USDC
                     price_precision: 1.0E-8
                     size_precision: 1.0E-8
-                    symbol_id_integer: 0
+                    symbol_id_int: 0
               schema:
                 items:
                   $ref: "#/components/schemas/v1.Symbol"
@@ -8541,6 +8541,7 @@ components:
         exchange_id: exchange_id
         contract_display_description: contract_display_description
         data_quote_end: 2000-01-23T04:56:07.000+00:00
+        symbol_id_int: 1
         future_contract_unit_asset: future_contract_unit_asset
         data_trade_start: 2000-01-23T04:56:07.000+00:00
         price: 4.145608029883936
@@ -8565,7 +8566,6 @@ components:
         volume_1mth: 3.616076749251911
         volume_1day: 7.061401241503109
         price_precision: 7.386281948385884
-        symbol_id_integer: 1
         option_type_is_call: true
         option_strike_price: 6.027456183070403
         future_contract_unit: 0.8008281904610115
@@ -8782,7 +8782,7 @@ components:
           format: double
           nullable: true
           type: number
-        symbol_id_integer:
+        symbol_id_int:
           description: "The symbol identifier in integer immutable format, used to\
             \ correlate data across different APIs."
           format: int32

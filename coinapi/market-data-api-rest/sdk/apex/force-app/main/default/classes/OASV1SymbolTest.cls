@@ -117,7 +117,7 @@ private class OASV1SymbolTest {
         System.assertEquals('sizePrecision', x-property-mappings.get('size_precision'));
         System.assertEquals('rawKvp', x-property-mappings.get('raw_kvp'));
         System.assertEquals('volumeToUsd', x-property-mappings.get('volume_to_usd'));
-        System.assertEquals('symbolIdInteger', x-property-mappings.get('symbol_id_integer'));
+        System.assertEquals('symbolIdInt', x-property-mappings.get('symbol_id_int'));
     }
 
     @isTest
@@ -168,6 +168,6 @@ private class OASV1SymbolTest {
         System.assertEquals(null, v1Symbol.pricePrecision);
         System.assertEquals(null, v1Symbol.sizePrecision);
         System.assertEquals(null, v1Symbol.volumeToUsd);
-        System.assertEquals(null, v1Symbol.symbolIdInteger);
+        System.assertEquals(null, v1Symbol.symbolIdInt);
     }
 }

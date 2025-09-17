@@ -150,7 +150,7 @@ module OpenapiClient
     attr_accessor :volume_to_usd
 
     # The symbol identifier in integer immutable format, used to correlate data across different APIs.
-    attr_accessor :symbol_id_integer
+    attr_accessor :symbol_id_int
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -200,7 +200,7 @@ module OpenapiClient
         :'size_precision' => :'size_precision',
         :'raw_kvp' => :'raw_kvp',
         :'volume_to_usd' => :'volume_to_usd',
-        :'symbol_id_integer' => :'symbol_id_integer'
+        :'symbol_id_int' => :'symbol_id_int'
       }
     end
 
@@ -262,7 +262,7 @@ module OpenapiClient
         :'size_precision' => :'Float',
         :'raw_kvp' => :'Hash<String, String>',
         :'volume_to_usd' => :'Float',
-        :'symbol_id_integer' => :'Integer'
+        :'symbol_id_int' => :'Integer'
       }
     end
 
@@ -314,7 +314,7 @@ module OpenapiClient
         :'size_precision',
         :'raw_kvp',
         :'volume_to_usd',
-        :'symbol_id_integer'
+        :'symbol_id_int'
       ])
     end
 
@@ -516,8 +516,8 @@ module OpenapiClient
         self.volume_to_usd = attributes[:'volume_to_usd']
       end
 
-      if attributes.key?(:'symbol_id_integer')
-        self.symbol_id_integer = attributes[:'symbol_id_integer']
+      if attributes.key?(:'symbol_id_int')
+        self.symbol_id_int = attributes[:'symbol_id_int']
       end
     end
 
@@ -586,7 +586,7 @@ module OpenapiClient
           size_precision == o.size_precision &&
           raw_kvp == o.raw_kvp &&
           volume_to_usd == o.volume_to_usd &&
-          symbol_id_integer == o.symbol_id_integer
+          symbol_id_int == o.symbol_id_int
     end
 
     # @see the `==` method
@@ -598,7 +598,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [symbol_id, exchange_id, symbol_type, asset_id_base, asset_id_quote, asset_id_unit, future_contract_unit, future_contract_unit_asset, future_delivery_time, option_type_is_call, option_strike_price, option_contract_unit, option_exercise_style, option_expiration_time, contract_delivery_time, contract_unit, contract_unit_asset, contract_id, contract_display_name, contract_display_description, data_start, data_end, data_quote_start, data_quote_end, data_orderbook_start, data_orderbook_end, data_trade_start, data_trade_end, index_id, index_display_name, index_display_description, volume_1hrs, volume_1hrs_usd, volume_1day, volume_1day_usd, volume_1mth, volume_1mth_usd, price, symbol_id_exchange, asset_id_base_exchange, asset_id_quote_exchange, price_precision, size_precision, raw_kvp, volume_to_usd, symbol_id_integer].hash
+      [symbol_id, exchange_id, symbol_type, asset_id_base, asset_id_quote, asset_id_unit, future_contract_unit, future_contract_unit_asset, future_delivery_time, option_type_is_call, option_strike_price, option_contract_unit, option_exercise_style, option_expiration_time, contract_delivery_time, contract_unit, contract_unit_asset, contract_id, contract_display_name, contract_display_description, data_start, data_end, data_quote_start, data_quote_end, data_orderbook_start, data_orderbook_end, data_trade_start, data_trade_end, index_id, index_display_name, index_display_description, volume_1hrs, volume_1hrs_usd, volume_1day, volume_1day_usd, volume_1mth, volume_1mth_usd, price, symbol_id_exchange, asset_id_base_exchange, asset_id_quote_exchange, price_precision, size_precision, raw_kvp, volume_to_usd, symbol_id_int].hash
     end
 
     # Builds the object from hash

@@ -324,5 +324,5 @@ API.Client.V1Symbol.prototype.volumeToUsd;
  * @type {!number}
  * @export
  */
-API.Client.V1Symbol.prototype.symbolIdInteger;
+API.Client.V1Symbol.prototype.symbolIdInt;
 

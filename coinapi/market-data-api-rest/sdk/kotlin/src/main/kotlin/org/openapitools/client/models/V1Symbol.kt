@@ -67,7 +67,7 @@ import com.squareup.moshi.JsonClass
  * @param sizePrecision The size precision.
  * @param rawKvp Not normalized raw kvp data.
  * @param volumeToUsd Volume unit in USD.
- * @param symbolIdInteger The symbol identifier in integer immutable format, used to correlate data across different APIs.
+ * @param symbolIdInt The symbol identifier in integer immutable format, used to correlate data across different APIs.
  */
 
 
@@ -252,8 +252,8 @@ data class V1Symbol (
     val volumeToUsd: kotlin.Double? = null,
 
     /* The symbol identifier in integer immutable format, used to correlate data across different APIs. */
-    @Json(name = "symbol_id_integer")
-    val symbolIdInteger: kotlin.Int? = null
+    @Json(name = "symbol_id_int")
+    val symbolIdInt: kotlin.Int? = null
 
 ) {
 

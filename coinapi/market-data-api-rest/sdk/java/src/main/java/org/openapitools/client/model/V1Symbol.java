@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a symbol data model.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-16T06:06:03.287736120Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-17T06:05:03.246679869Z[Etc/UTC]", comments = "Generator version: 7.14.0")
 public class V1Symbol {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
@@ -279,10 +279,10 @@ public class V1Symbol {
   @javax.annotation.Nullable
   private Double volumeToUsd;
 
-  public static final String SERIALIZED_NAME_SYMBOL_ID_INTEGER = "symbol_id_integer";
-  @SerializedName(SERIALIZED_NAME_SYMBOL_ID_INTEGER)
+  public static final String SERIALIZED_NAME_SYMBOL_ID_INT = "symbol_id_int";
+  @SerializedName(SERIALIZED_NAME_SYMBOL_ID_INT)
   @javax.annotation.Nullable
-  private Integer symbolIdInteger;
+  private Integer symbolIdInt;
 
   public V1Symbol() {
   }
@@ -290,12 +290,12 @@ public class V1Symbol {
   public V1Symbol(
      String dataStart, 
      String dataEnd, 
-     Integer symbolIdInteger
+     Integer symbolIdInt
   ) {
     this();
     this.dataStart = dataStart;
     this.dataEnd = dataEnd;
-    this.symbolIdInteger = symbolIdInteger;
+    this.symbolIdInt = symbolIdInt;
   }
 
   public V1Symbol symbolId(@javax.annotation.Nullable String symbolId) {
@@ -1147,11 +1147,11 @@ public class V1Symbol {
 
   /**
    * The symbol identifier in integer immutable format, used to correlate data across different APIs.
-   * @return symbolIdInteger
+   * @return symbolIdInt
    */
   @javax.annotation.Nullable
-  public Integer getSymbolIdInteger() {
-    return symbolIdInteger;
+  public Integer getSymbolIdInt() {
+    return symbolIdInt;
   }
 
 
@@ -1211,7 +1211,7 @@ public class V1Symbol {
         Objects.equals(this.sizePrecision, v1Symbol.sizePrecision) &&
         Objects.equals(this.rawKvp, v1Symbol.rawKvp) &&
         Objects.equals(this.volumeToUsd, v1Symbol.volumeToUsd) &&
-        Objects.equals(this.symbolIdInteger, v1Symbol.symbolIdInteger);
+        Objects.equals(this.symbolIdInt, v1Symbol.symbolIdInt);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -1220,7 +1220,7 @@ public class V1Symbol {
 
   @Override
   public int hashCode() {
-    return Objects.hash(symbolId, exchangeId, symbolType, assetIdBase, assetIdQuote, assetIdUnit, futureContractUnit, futureContractUnitAsset, futureDeliveryTime, optionTypeIsCall, optionStrikePrice, optionContractUnit, optionExerciseStyle, optionExpirationTime, contractDeliveryTime, contractUnit, contractUnitAsset, contractId, contractDisplayName, contractDisplayDescription, dataStart, dataEnd, dataQuoteStart, dataQuoteEnd, dataOrderbookStart, dataOrderbookEnd, dataTradeStart, dataTradeEnd, indexId, indexDisplayName, indexDisplayDescription, volume1hrs, volume1hrsUsd, volume1day, volume1dayUsd, volume1mth, volume1mthUsd, price, symbolIdExchange, assetIdBaseExchange, assetIdQuoteExchange, pricePrecision, sizePrecision, rawKvp, volumeToUsd, symbolIdInteger);
+    return Objects.hash(symbolId, exchangeId, symbolType, assetIdBase, assetIdQuote, assetIdUnit, futureContractUnit, futureContractUnitAsset, futureDeliveryTime, optionTypeIsCall, optionStrikePrice, optionContractUnit, optionExerciseStyle, optionExpirationTime, contractDeliveryTime, contractUnit, contractUnitAsset, contractId, contractDisplayName, contractDisplayDescription, dataStart, dataEnd, dataQuoteStart, dataQuoteEnd, dataOrderbookStart, dataOrderbookEnd, dataTradeStart, dataTradeEnd, indexId, indexDisplayName, indexDisplayDescription, volume1hrs, volume1hrsUsd, volume1day, volume1dayUsd, volume1mth, volume1mthUsd, price, symbolIdExchange, assetIdBaseExchange, assetIdQuoteExchange, pricePrecision, sizePrecision, rawKvp, volumeToUsd, symbolIdInt);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -1279,7 +1279,7 @@ public class V1Symbol {
     sb.append("    sizePrecision: ").append(toIndentedString(sizePrecision)).append("\n");
     sb.append("    rawKvp: ").append(toIndentedString(rawKvp)).append("\n");
     sb.append("    volumeToUsd: ").append(toIndentedString(volumeToUsd)).append("\n");
-    sb.append("    symbolIdInteger: ").append(toIndentedString(symbolIdInteger)).append("\n");
+    sb.append("    symbolIdInt: ").append(toIndentedString(symbolIdInt)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1301,7 +1301,7 @@ public class V1Symbol {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("symbol_id", "exchange_id", "symbol_type", "asset_id_base", "asset_id_quote", "asset_id_unit", "future_contract_unit", "future_contract_unit_asset", "future_delivery_time", "option_type_is_call", "option_strike_price", "option_contract_unit", "option_exercise_style", "option_expiration_time", "contract_delivery_time", "contract_unit", "contract_unit_asset", "contract_id", "contract_display_name", "contract_display_description", "data_start", "data_end", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "index_id", "index_display_name", "index_display_description", "volume_1hrs", "volume_1hrs_usd", "volume_1day", "volume_1day_usd", "volume_1mth", "volume_1mth_usd", "price", "symbol_id_exchange", "asset_id_base_exchange", "asset_id_quote_exchange", "price_precision", "size_precision", "raw_kvp", "volume_to_usd", "symbol_id_integer"));
+    openapiFields = new HashSet<String>(Arrays.asList("symbol_id", "exchange_id", "symbol_type", "asset_id_base", "asset_id_quote", "asset_id_unit", "future_contract_unit", "future_contract_unit_asset", "future_delivery_time", "option_type_is_call", "option_strike_price", "option_contract_unit", "option_exercise_style", "option_expiration_time", "contract_delivery_time", "contract_unit", "contract_unit_asset", "contract_id", "contract_display_name", "contract_display_description", "data_start", "data_end", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "index_id", "index_display_name", "index_display_description", "volume_1hrs", "volume_1hrs_usd", "volume_1day", "volume_1day_usd", "volume_1mth", "volume_1mth_usd", "price", "symbol_id_exchange", "asset_id_base_exchange", "asset_id_quote_exchange", "price_precision", "size_precision", "raw_kvp", "volume_to_usd", "symbol_id_int"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

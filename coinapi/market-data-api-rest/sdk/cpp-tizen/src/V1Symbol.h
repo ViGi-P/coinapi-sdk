@@ -363,11 +363,11 @@ public:
 	void setVolumeToUsd(double  volume_to_usd);
 	/*! \brief Get The symbol identifier in integer immutable format, used to correlate data across different APIs.
 	 */
-	int getSymbolIdInteger();
+	int getSymbolIdInt();
 
 	/*! \brief Set The symbol identifier in integer immutable format, used to correlate data across different APIs.
 	 */
-	void setSymbolIdInteger(int  symbol_id_integer);
+	void setSymbolIdInt(int  symbol_id_int);
 
 private:
 	std::string symbol_id;
@@ -415,7 +415,7 @@ private:
 	double size_precision;
 	std::map <std::string, std::string>raw_kvp;
 	double volume_to_usd;
-	int symbol_id_integer;
+	int symbol_id_int;
 	void __init();
 	void __cleanup();
 
