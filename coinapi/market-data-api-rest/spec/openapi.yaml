@@ -893,7 +893,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-09-16T06:04:29.6914234Z",
+  "time": "2025-09-17T06:04:06.8205661Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -904,7 +904,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-09-16T06:04:29.6914234Z",
+  "time": "2025-09-17T06:04:06.8205661Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -915,7 +915,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-09-16T06:04:29.6914234Z",
+  "time": "2025-09-17T06:04:06.8205661Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -926,7 +926,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-09-16T06:04:29.6914234Z",
+  "time": "2025-09-17T06:04:06.8205661Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -6232,7 +6232,7 @@ paths:
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -6259,7 +6259,7 @@ paths:
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
             application/json:
@@ -6299,7 +6299,7 @@ paths:
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -6326,7 +6326,7 @@ paths:
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
             text/json:
@@ -6366,7 +6366,7 @@ paths:
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -6393,7 +6393,7 @@ paths:
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
             application/x-msgpack:
@@ -6433,7 +6433,7 @@ paths:
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -6460,7 +6460,7 @@ paths:
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
   '/v1/symbols/{exchange_id}/history':
@@ -6531,7 +6531,7 @@ paths:
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -6558,7 +6558,7 @@ paths:
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
             application/json:
@@ -6598,7 +6598,7 @@ paths:
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -6625,7 +6625,7 @@ paths:
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
             text/json:
@@ -6665,7 +6665,7 @@ paths:
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -6692,7 +6692,7 @@ paths:
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
             application/x-msgpack:
@@ -6732,7 +6732,7 @@ paths:
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -6759,7 +6759,7 @@ paths:
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
   /v1/ohlcv/periods:
@@ -8693,7 +8693,7 @@ components:
           description: Volume unit in USD.
           format: double
           nullable: true
-        symbol_id_integer:
+        symbol_id_int:
           type: integer
           description: 'The symbol identifier in integer immutable format, used to correlate data across different APIs.'
           format: int32

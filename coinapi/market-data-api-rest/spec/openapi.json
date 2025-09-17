@@ -1062,7 +1062,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2025-09-16T06:04:29.5344591Z",
+  "time": "2025-09-17T06:04:06.4529431Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -1077,7 +1077,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2025-09-16T06:04:29.5344591Z",
+  "time": "2025-09-17T06:04:06.4529431Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -1092,7 +1092,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2025-09-16T06:04:29.5344591Z",
+  "time": "2025-09-17T06:04:06.4529431Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -1107,7 +1107,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2025-09-16T06:04:29.5344591Z",
+  "time": "2025-09-17T06:04:06.4529431Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -7691,7 +7691,7 @@
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -7718,7 +7718,7 @@
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
                   }
@@ -7763,7 +7763,7 @@
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -7790,7 +7790,7 @@
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
                   }
@@ -7835,7 +7835,7 @@
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -7862,7 +7862,7 @@
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
                   }
@@ -7907,7 +7907,7 @@
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -7934,7 +7934,7 @@
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
                   }
@@ -8026,7 +8026,7 @@
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -8053,7 +8053,7 @@
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
                   }
@@ -8098,7 +8098,7 @@
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -8125,7 +8125,7 @@
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
                   }
@@ -8170,7 +8170,7 @@
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -8197,7 +8197,7 @@
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
                   }
@@ -8242,7 +8242,7 @@
     "asset_id_quote_exchange": "USD",
     "price_precision": 0.100000000,
     "size_precision": 1.000000000,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   },
   {
     "symbol_id": "POLONIEX_SPOT_LTC_USDC",
@@ -8269,7 +8269,7 @@
     "asset_id_quote_exchange": "USDC",
     "price_precision": 0.000000010,
     "size_precision": 0.000000010,
-    "symbol_id_integer": 0
+    "symbol_id_int": 0
   }
 ]
                   }
@@ -10711,7 +10711,7 @@
             "format": "double",
             "nullable": true
           },
-          "symbol_id_integer": {
+          "symbol_id_int": {
             "type": "integer",
             "description": "The symbol identifier in integer immutable format, used to correlate data across different APIs.",
             "format": "int32",
