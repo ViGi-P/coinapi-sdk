@@ -212,6 +212,9 @@ MetadataApi <- R6::R6Class(
         stop("Missing required parameter `exchange_id`.")
       }
 
+      if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
+        stop("Invalid value for `exchange_id` when calling MetadataApi$V1SymbolsExchangeIdGet, `exchange_id` is not nullable")
+      }
 
       local_var_url_path <- "/v1/symbols/{exchange_id}"
       if (!missing(`exchange_id`)) {

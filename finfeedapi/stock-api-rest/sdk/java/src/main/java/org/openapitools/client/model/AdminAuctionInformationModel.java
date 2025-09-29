@@ -14,6 +14,7 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,13 +45,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import org.openapitools.client.JSON;
 
 /**
  * Represents the response DTO for auction information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-26T06:10:06.687074681Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-29T06:14:27.764073412Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AdminAuctionInformationModel {
   public static final String SERIALIZED_NAME_SYMBOL = "symbol";
   @SerializedName(SERIALIZED_NAME_SYMBOL)
@@ -851,7 +853,7 @@ public class AdminAuctionInformationModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AdminAuctionInformationModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AdminAuctionInformationModel is not found in the empty JSON string", AdminAuctionInformationModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AdminAuctionInformationModel is not found in the empty JSON string", AdminAuctionInformationModel.openapiRequiredFields.toString()));
         }
       }
 
@@ -859,24 +861,24 @@ public class AdminAuctionInformationModel {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!AdminAuctionInformationModel.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AdminAuctionInformationModel` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AdminAuctionInformationModel` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull()) && !jsonObj.get("symbol").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `symbol` to be a primitive type in the JSON string but got `%s`", jsonObj.get("symbol").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `symbol` to be a primitive type in the JSON string but got `%s`", jsonObj.get("symbol").toString()));
       }
       if ((jsonObj.get("auction_type_code") != null && !jsonObj.get("auction_type_code").isJsonNull()) && !jsonObj.get("auction_type_code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `auction_type_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auction_type_code").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `auction_type_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auction_type_code").toString()));
       }
       if ((jsonObj.get("auction_type_text") != null && !jsonObj.get("auction_type_text").isJsonNull()) && !jsonObj.get("auction_type_text").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `auction_type_text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auction_type_text").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `auction_type_text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("auction_type_text").toString()));
       }
       if ((jsonObj.get("imbalance_side_code") != null && !jsonObj.get("imbalance_side_code").isJsonNull()) && !jsonObj.get("imbalance_side_code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `imbalance_side_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imbalance_side_code").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `imbalance_side_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imbalance_side_code").toString()));
       }
       if ((jsonObj.get("imbalance_side_text") != null && !jsonObj.get("imbalance_side_text").isJsonNull()) && !jsonObj.get("imbalance_side_text").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `imbalance_side_text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imbalance_side_text").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `imbalance_side_text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imbalance_side_text").toString()));
       }
   }
 
