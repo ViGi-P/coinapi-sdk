@@ -13,6 +13,7 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+
 # import models into model package
 from api_bricks_stock_api_rest.models.admin_admin_message_model import AdminAdminMessageModel
 from api_bricks_stock_api_rest.models.admin_auction_information_model import AdminAuctionInformationModel
@@ -38,4 +39,3 @@ from api_bricks_stock_api_rest.models.ohlcv_exchange_timeseries_item import OHLC
 from api_bricks_stock_api_rest.models.ohlcv_timeseries_item import OHLCVTimeseriesItem
 from api_bricks_stock_api_rest.models.ohlcv_timeseries_period import OHLCVTimeseriesPeriod
 from api_bricks_stock_api_rest.models.trade_trade_model import TradeTradeModel
-

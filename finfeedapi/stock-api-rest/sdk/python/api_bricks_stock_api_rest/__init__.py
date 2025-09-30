@@ -98,4 +98,3 @@ from api_bricks_stock_api_rest.models.ohlcv_exchange_timeseries_item import OHLC
 from api_bricks_stock_api_rest.models.ohlcv_timeseries_item import OHLCVTimeseriesItem as OHLCVTimeseriesItem
 from api_bricks_stock_api_rest.models.ohlcv_timeseries_period import OHLCVTimeseriesPeriod as OHLCVTimeseriesPeriod
 from api_bricks_stock_api_rest.models.trade_trade_model import TradeTradeModel as TradeTradeModel
-
