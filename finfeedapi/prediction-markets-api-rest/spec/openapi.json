@@ -1,0 +1,1786 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Prediction Markets API",
+    "contact": {
+      "name": "API BRICKS LTD",
+      "url": "https://www.finfeedapi.com",
+      "email": "support@apibricks.io"
+    },
+    "license": {
+      "name": "MIT License",
+      "url": "https://github.com/api-bricks/api-bricks-sdk/blob/master/LICENSE"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://api.prediction-markets.finfeedapi.com"
+    }
+  ],
+  "paths": {
+    "/v1/exchanges": {
+      "get": {
+        "tags": [
+          "Exchanges"
+        ],
+        "summary": "Gets a list of all supported exchanges.",
+        "responses": {
+          "200": {
+            "description": "A list of all supported exchanges.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Metadata.ExchangeModel"
+                  }
+                },
+                "examples": {
+                  "Example list": {
+                    "value": [
+  {
+    "exchange_id": "KALSHI",
+    "market_name_institution_description": "A US‑regulated exchange for trading event contracts.",
+    "website": "https://kalshi.com"
+  },
+  {
+    "exchange_id": "POLYMARKET",
+    "market_name_institution_description": "The world's largest prediction market.",
+    "website": "https://polymarket.com"
+  },
+  {
+    "exchange_id": "MYRIAD",
+    "market_name_institution_description": "A decentralized prediction markets platform.",
+    "website": "https://myriad.markets"
+  },
+  {
+    "exchange_id": "MANIFOLD",
+    "market_name_institution_description": "The world's largest social prediction market (play‑money).",
+    "website": "https://manifold.markets"
+  }
+]
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Metadata.ExchangeModel"
+                  }
+                },
+                "examples": {
+                  "Example list": {
+                    "value": [
+  {
+    "exchange_id": "KALSHI",
+    "market_name_institution_description": "A US‑regulated exchange for trading event contracts.",
+    "website": "https://kalshi.com"
+  },
+  {
+    "exchange_id": "POLYMARKET",
+    "market_name_institution_description": "The world's largest prediction market.",
+    "website": "https://polymarket.com"
+  },
+  {
+    "exchange_id": "MYRIAD",
+    "market_name_institution_description": "A decentralized prediction markets platform.",
+    "website": "https://myriad.markets"
+  },
+  {
+    "exchange_id": "MANIFOLD",
+    "market_name_institution_description": "The world's largest social prediction market (play‑money).",
+    "website": "https://manifold.markets"
+  }
+]
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Metadata.ExchangeModel"
+                  }
+                },
+                "examples": {
+                  "Example list": {
+                    "value": [
+  {
+    "exchange_id": "KALSHI",
+    "market_name_institution_description": "A US‑regulated exchange for trading event contracts.",
+    "website": "https://kalshi.com"
+  },
+  {
+    "exchange_id": "POLYMARKET",
+    "market_name_institution_description": "The world's largest prediction market.",
+    "website": "https://polymarket.com"
+  },
+  {
+    "exchange_id": "MYRIAD",
+    "market_name_institution_description": "A decentralized prediction markets platform.",
+    "website": "https://myriad.markets"
+  },
+  {
+    "exchange_id": "MANIFOLD",
+    "market_name_institution_description": "The world's largest social prediction market (play‑money).",
+    "website": "https://manifold.markets"
+  }
+]
+                  }
+                }
+              },
+              "application/x-msgpack": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Metadata.ExchangeModel"
+                  }
+                },
+                "examples": {
+                  "Example list": {
+                    "value": [
+  {
+    "exchange_id": "KALSHI",
+    "market_name_institution_description": "A US‑regulated exchange for trading event contracts.",
+    "website": "https://kalshi.com"
+  },
+  {
+    "exchange_id": "POLYMARKET",
+    "market_name_institution_description": "The world's largest prediction market.",
+    "website": "https://polymarket.com"
+  },
+  {
+    "exchange_id": "MYRIAD",
+    "market_name_institution_description": "A decentralized prediction markets platform.",
+    "website": "https://myriad.markets"
+  },
+  {
+    "exchange_id": "MANIFOLD",
+    "market_name_institution_description": "The world's largest social prediction market (play‑money).",
+    "website": "https://manifold.markets"
+  }
+]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/exchanges/{exchange_id}": {
+      "get": {
+        "tags": [
+          "Exchanges"
+        ],
+        "summary": "Gets a specific exchange by its unique identifier.",
+        "parameters": [
+          {
+            "name": "exchange_id",
+            "in": "path",
+            "description": "The unique identifier of the exchange (e.g., `POLYMARKET`).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The detailed information for the requested exchange.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Metadata.ExchangeModel"
+                },
+                "examples": {
+                  "Example exchange": {
+                    "value": {
+  "exchange_id": "POLYMARKET",
+  "market_name_institution_description": "The world's largest prediction market.",
+  "website": "https://polymarket.com"
+}
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Metadata.ExchangeModel"
+                },
+                "examples": {
+                  "Example exchange": {
+                    "value": {
+  "exchange_id": "POLYMARKET",
+  "market_name_institution_description": "The world's largest prediction market.",
+  "website": "https://polymarket.com"
+}
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Metadata.ExchangeModel"
+                },
+                "examples": {
+                  "Example exchange": {
+                    "value": {
+  "exchange_id": "POLYMARKET",
+  "market_name_institution_description": "The world's largest prediction market.",
+  "website": "https://polymarket.com"
+}
+                  }
+                }
+              },
+              "application/x-msgpack": {
+                "schema": {
+                  "$ref": "#/components/schemas/Metadata.ExchangeModel"
+                },
+                "examples": {
+                  "Example exchange": {
+                    "value": {
+  "exchange_id": "POLYMARKET",
+  "market_name_institution_description": "The world's largest prediction market.",
+  "website": "https://polymarket.com"
+}
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Exchange not found"
+          }
+        }
+      }
+    },
+    "/v1/activity/{exchange_id}/{market_id}/current": {
+      "get": {
+        "tags": [
+          "MarketActivity"
+        ],
+        "summary": "Returns the latest trade and the latest quote for a market.",
+        "parameters": [
+          {
+            "name": "exchange_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "market_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Latest trade and latest quote (either may be null).",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity.MarketActivityCurrent"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity.MarketActivityCurrent"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity.MarketActivityCurrent"
+                }
+              },
+              "application/x-msgpack": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity.MarketActivityCurrent"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Market not found or no activity"
+          }
+        }
+      }
+    },
+    "/v1/activity/{exchange_id}/{market_id}/latest": {
+      "get": {
+        "tags": [
+          "MarketActivity"
+        ],
+        "summary": "Returns recent trades and recent quotes for a market.",
+        "parameters": [
+          {
+            "name": "exchange_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "market_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Recent trades and quotes (lists may be empty).",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity.MarketActivityBatch"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity.MarketActivityBatch"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity.MarketActivityBatch"
+                }
+              },
+              "application/x-msgpack": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity.MarketActivityBatch"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Market not found or no activity"
+          }
+        }
+      }
+    },
+    "/v1/markets/{exchange_id}/history": {
+      "get": {
+        "tags": [
+          "Markets"
+        ],
+        "summary": "Lists markets for a specific exchange.",
+        "parameters": [
+          {
+            "name": "exchange_id",
+            "in": "path",
+            "description": "The unique identifier of the exchange (e.g., `POLYMARKET`).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of markets to return (1-1000, default 100).",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number (1-based, >= 1, default 1). Internally converted to offset = (page - 1) * limit.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of markets for the given exchange.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Markets.MarketModel"
+                  }
+                },
+                "examples": {
+                  "Example list": {
+                    "value": [
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "description": "Resolves based on official reporting by the Trump Administration.",
+    "outcome_name": "Yes",
+    "price": 0.12,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1170059Z",
+    "end_date": "2026-01-10T13:27:12.1170094Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  },
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "outcome_name": "No",
+    "price": 0.88,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1170114Z",
+    "end_date": "2026-01-10T13:27:12.1170115Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  }
+]
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Markets.MarketModel"
+                  }
+                },
+                "examples": {
+                  "Example list": {
+                    "value": [
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "description": "Resolves based on official reporting by the Trump Administration.",
+    "outcome_name": "Yes",
+    "price": 0.12,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1170059Z",
+    "end_date": "2026-01-10T13:27:12.1170094Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  },
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "outcome_name": "No",
+    "price": 0.88,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1170114Z",
+    "end_date": "2026-01-10T13:27:12.1170115Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  }
+]
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Markets.MarketModel"
+                  }
+                },
+                "examples": {
+                  "Example list": {
+                    "value": [
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "description": "Resolves based on official reporting by the Trump Administration.",
+    "outcome_name": "Yes",
+    "price": 0.12,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1170059Z",
+    "end_date": "2026-01-10T13:27:12.1170094Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  },
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "outcome_name": "No",
+    "price": 0.88,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1170114Z",
+    "end_date": "2026-01-10T13:27:12.1170115Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  }
+]
+                  }
+                }
+              },
+              "application/x-msgpack": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Markets.MarketModel"
+                  }
+                },
+                "examples": {
+                  "Example list": {
+                    "value": [
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "description": "Resolves based on official reporting by the Trump Administration.",
+    "outcome_name": "Yes",
+    "price": 0.12,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1170059Z",
+    "end_date": "2026-01-10T13:27:12.1170094Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  },
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "outcome_name": "No",
+    "price": 0.88,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1170114Z",
+    "end_date": "2026-01-10T13:27:12.1170115Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  }
+]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid limit/offset"
+          },
+          "404": {
+            "description": "Market not found"
+          }
+        }
+      }
+    },
+    "/v1/markets/{exchange_id}/active": {
+      "get": {
+        "tags": [
+          "Markets"
+        ],
+        "summary": "Lists active markets for a specific exchange.",
+        "parameters": [
+          {
+            "name": "exchange_id",
+            "in": "path",
+            "description": "The unique identifier of the exchange (e.g., `POLYMARKET`).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of markets to return (1-1000, default 100).",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number (1-based, >= 1, default 1). Internally converted to offset = (page - 1) * limit.",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of markets for the given exchange.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Markets.MarketModel"
+                  }
+                },
+                "examples": {
+                  "Example list": {
+                    "value": [
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "description": "Resolves based on official reporting by the Trump Administration.",
+    "outcome_name": "Yes",
+    "price": 0.12,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1179241Z",
+    "end_date": "2026-01-10T13:27:12.1179245Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  },
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "outcome_name": "No",
+    "price": 0.88,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1179257Z",
+    "end_date": "2026-01-10T13:27:12.1179257Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  }
+]
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Markets.MarketModel"
+                  }
+                },
+                "examples": {
+                  "Example list": {
+                    "value": [
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "description": "Resolves based on official reporting by the Trump Administration.",
+    "outcome_name": "Yes",
+    "price": 0.12,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1179241Z",
+    "end_date": "2026-01-10T13:27:12.1179245Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  },
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "outcome_name": "No",
+    "price": 0.88,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1179257Z",
+    "end_date": "2026-01-10T13:27:12.1179257Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  }
+]
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Markets.MarketModel"
+                  }
+                },
+                "examples": {
+                  "Example list": {
+                    "value": [
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "description": "Resolves based on official reporting by the Trump Administration.",
+    "outcome_name": "Yes",
+    "price": 0.12,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1179241Z",
+    "end_date": "2026-01-10T13:27:12.1179245Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  },
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "outcome_name": "No",
+    "price": 0.88,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1179257Z",
+    "end_date": "2026-01-10T13:27:12.1179257Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  }
+]
+                  }
+                }
+              },
+              "application/x-msgpack": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Markets.MarketModel"
+                  }
+                },
+                "examples": {
+                  "Example list": {
+                    "value": [
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "description": "Resolves based on official reporting by the Trump Administration.",
+    "outcome_name": "Yes",
+    "price": 0.12,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1179241Z",
+    "end_date": "2026-01-10T13:27:12.1179245Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  },
+  {
+    "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_NO",
+    "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+    "outcome_name": "No",
+    "price": 0.88,
+    "status": "Open",
+    "creation_date": "2025-10-07T13:27:12.1179257Z",
+    "end_date": "2026-01-10T13:27:12.1179257Z",
+    "exchange_id": "POLYMARKET",
+    "outcome_type": "Binary"
+  }
+]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid limit/offset"
+          },
+          "404": {
+            "description": "Market not found"
+          }
+        }
+      }
+    },
+    "/v1/ohlcv/periods": {
+      "get": {
+        "tags": [
+          "Ohlcv"
+        ],
+        "summary": "List all periods",
+        "description": "Get full list of supported time periods available for requesting OHLCV timeseries data.\n            \n### Available periods\n            \nTime unit | Period identifiers\n--------- | -----------\nSecond | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC\nMinute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN\nHour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS\nDay | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY\nMonth | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH\nYear | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS\n            \n:::tip\nYou can assume that we will not remove any periods from this response, however, we may add new ones.\n:::",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.TimeseriesPeriod"
+                  }
+                },
+                "examples": {
+                  "Example response": {
+                    "value": [
+  {
+    "period_id": "1SEC",
+    "length_seconds": 1,
+    "length_months": 0,
+    "unit_count": 1,
+    "unit_name": "second",
+    "display_name": "1 Second"
+  },
+  {
+    "period_id": "10DAY",
+    "length_seconds": 864000,
+    "length_months": 0,
+    "unit_count": 10,
+    "unit_name": "day",
+    "display_name": "10 Days"
+  },
+  {
+    "period_id": "2YRS",
+    "length_seconds": 0,
+    "length_months": 24,
+    "unit_count": 2,
+    "unit_name": "year",
+    "display_name": "2 Years"
+  }
+]
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.TimeseriesPeriod"
+                  }
+                },
+                "examples": {
+                  "Example response": {
+                    "value": [
+  {
+    "period_id": "1SEC",
+    "length_seconds": 1,
+    "length_months": 0,
+    "unit_count": 1,
+    "unit_name": "second",
+    "display_name": "1 Second"
+  },
+  {
+    "period_id": "10DAY",
+    "length_seconds": 864000,
+    "length_months": 0,
+    "unit_count": 10,
+    "unit_name": "day",
+    "display_name": "10 Days"
+  },
+  {
+    "period_id": "2YRS",
+    "length_seconds": 0,
+    "length_months": 24,
+    "unit_count": 2,
+    "unit_name": "year",
+    "display_name": "2 Years"
+  }
+]
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.TimeseriesPeriod"
+                  }
+                },
+                "examples": {
+                  "Example response": {
+                    "value": [
+  {
+    "period_id": "1SEC",
+    "length_seconds": 1,
+    "length_months": 0,
+    "unit_count": 1,
+    "unit_name": "second",
+    "display_name": "1 Second"
+  },
+  {
+    "period_id": "10DAY",
+    "length_seconds": 864000,
+    "length_months": 0,
+    "unit_count": 10,
+    "unit_name": "day",
+    "display_name": "10 Days"
+  },
+  {
+    "period_id": "2YRS",
+    "length_seconds": 0,
+    "length_months": 24,
+    "unit_count": 2,
+    "unit_name": "year",
+    "display_name": "2 Years"
+  }
+]
+                  }
+                }
+              },
+              "application/x-msgpack": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.TimeseriesPeriod"
+                  }
+                },
+                "examples": {
+                  "Example response": {
+                    "value": [
+  {
+    "period_id": "1SEC",
+    "length_seconds": 1,
+    "length_months": 0,
+    "unit_count": 1,
+    "unit_name": "second",
+    "display_name": "1 Second"
+  },
+  {
+    "period_id": "10DAY",
+    "length_seconds": 864000,
+    "length_months": 0,
+    "unit_count": 10,
+    "unit_name": "day",
+    "display_name": "10 Days"
+  },
+  {
+    "period_id": "2YRS",
+    "length_seconds": 0,
+    "length_months": 24,
+    "unit_count": 2,
+    "unit_name": "year",
+    "display_name": "2 Years"
+  }
+]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ohlcv/{exchange_id}/history": {
+      "get": {
+        "tags": [
+          "Ohlcv"
+        ],
+        "summary": "Historical data for a market",
+        "description": "Get OHLCV timeseries data for an exchange, returned in time ascending order.",
+        "parameters": [
+          {
+            "name": "exchange_id",
+            "in": "path",
+            "description": "The unique identifier of the exchange.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "period_id",
+            "in": "query",
+            "description": "Identifier of requested timeseries period (e.g. `1DAY` or `1HRS`)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "time_start",
+            "in": "query",
+            "description": "Timeseries starting time in ISO 8601",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "time_end",
+            "in": "query",
+            "description": "Timeseries ending time in ISO 8601",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.ExchangeTimeseriesItem"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.ExchangeTimeseriesItem"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.ExchangeTimeseriesItem"
+                  }
+                }
+              },
+              "application/x-msgpack": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.ExchangeTimeseriesItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ohlcv/{exchange_id}/{market_id}/history": {
+      "get": {
+        "tags": [
+          "Ohlcv"
+        ],
+        "summary": "Historical data for a market",
+        "description": "Get OHLCV timeseries data for a specific market, returned in time ascending order.",
+        "parameters": [
+          {
+            "name": "exchange_id",
+            "in": "path",
+            "description": "The unique identifier of the exchange.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "market_id",
+            "in": "path",
+            "description": "The unique identifier of the market, including the outcome (e.g., `will-it-rain-tomorrow_yes`).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "period_id",
+            "in": "query",
+            "description": "Identifier of requested timeseries period (e.g. `1DAY` or `1HRS`)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "time_start",
+            "in": "query",
+            "description": "Timeseries starting time in ISO 8601",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "time_end",
+            "in": "query",
+            "description": "Timeseries ending time in ISO 8601",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Amount of items to return (maximum is 100000, default value is 100)",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.TimeseriesItem"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.TimeseriesItem"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.TimeseriesItem"
+                  }
+                }
+              },
+              "application/x-msgpack": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.TimeseriesItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ohlcv/{exchange_id}/{market_id}/latest": {
+      "get": {
+        "tags": [
+          "Ohlcv"
+        ],
+        "summary": "Latest data for a market",
+        "description": "Get OHLCV latest timeseries data for a specific market, returned in time descending order.",
+        "parameters": [
+          {
+            "name": "exchange_id",
+            "in": "path",
+            "description": "The unique identifier of the exchange.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "market_id",
+            "in": "path",
+            "description": "The unique identifier of the market, including the outcome (e.g., `will-it-rain-tomorrow_yes`).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "period_id",
+            "in": "query",
+            "description": "Identifier of requested timeseries period (e.g. `1DAY` or `1HRS`)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Amount of items to return (maximum is 100000, default value is 100)",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.TimeseriesItem"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.TimeseriesItem"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.TimeseriesItem"
+                  }
+                }
+              },
+              "application/x-msgpack": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OHLCV.TimeseriesItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/orderbook/{exchange_id}/{market_id}/current": {
+      "get": {
+        "tags": [
+          "Orderbooks"
+        ],
+        "summary": "Gets the current order book snapshot for a specific market outcome.",
+        "parameters": [
+          {
+            "name": "exchange_id",
+            "in": "path",
+            "description": "The unique identifier of the exchange (e.g., `POLYMARKET`).",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "market_id",
+            "in": "path",
+            "description": "The unique identifier of the market (including outcome), e.g., `will-it-rain_yes`.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The current order book snapshot for the specified market outcome.",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Orderbooks.OrderBook"
+                },
+                "examples": {
+                  "Example orderbook": {
+                    "value": {
+  "exchange_id": "POLYMARKET",
+  "market_id": "market_yes",
+  "time_exchange": "0001-01-01T00:00:00.0000000Z",
+  "time_coinapi": "0001-01-01T00:00:00.0000000Z",
+  "asks": [],
+  "bids": []
+}
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Orderbooks.OrderBook"
+                },
+                "examples": {
+                  "Example orderbook": {
+                    "value": {
+  "exchange_id": "POLYMARKET",
+  "market_id": "market_yes",
+  "time_exchange": "0001-01-01T00:00:00.0000000Z",
+  "time_coinapi": "0001-01-01T00:00:00.0000000Z",
+  "asks": [],
+  "bids": []
+}
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Orderbooks.OrderBook"
+                },
+                "examples": {
+                  "Example orderbook": {
+                    "value": {
+  "exchange_id": "POLYMARKET",
+  "market_id": "market_yes",
+  "time_exchange": "0001-01-01T00:00:00.0000000Z",
+  "time_coinapi": "0001-01-01T00:00:00.0000000Z",
+  "asks": [],
+  "bids": []
+}
+                  }
+                }
+              },
+              "application/x-msgpack": {
+                "schema": {
+                  "$ref": "#/components/schemas/Orderbooks.OrderBook"
+                },
+                "examples": {
+                  "Example orderbook": {
+                    "value": {
+  "exchange_id": "POLYMARKET",
+  "market_id": "market_yes",
+  "time_exchange": "0001-01-01T00:00:00.0000000Z",
+  "time_coinapi": "0001-01-01T00:00:00.0000000Z",
+  "asks": [],
+  "bids": []
+}
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Market or outcome not found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Activity.MarketActivityBatch": {
+        "type": "object",
+        "properties": {
+          "trades": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Activity.TradeModel"
+            },
+            "nullable": true
+          },
+          "quotes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuoteTicks.QuoteTick"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Activity.MarketActivityCurrent": {
+        "type": "object",
+        "properties": {
+          "trade": {
+            "$ref": "#/components/schemas/Activity.TradeModel"
+          },
+          "quote": {
+            "$ref": "#/components/schemas/QuoteTicks.QuoteTick"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Activity.TradeModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The unique identifier for the trade.",
+            "nullable": true
+          },
+          "market_id": {
+            "type": "string",
+            "description": "The unique identifier for the market where the trade occurred (e.g., `will-it-rain-tomorrow_yes`).",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "description": "The price at which the trade was executed.",
+            "format": "double"
+          },
+          "quantity": {
+            "type": "number",
+            "description": "The quantity of shares traded.",
+            "format": "double"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "The timestamp of when the trade occurred.",
+            "format": "date-time"
+          },
+          "outcome": {
+            "type": "string",
+            "description": "The specific outcome that was traded.",
+            "nullable": true
+          },
+          "side": {
+            "$ref": "#/components/schemas/Activity.TradeSide"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a single trade executed in a market."
+      },
+      "Activity.TradeSide": {
+        "enum": [
+          "Buy",
+          "Sell"
+        ],
+        "type": "string",
+        "description": "The side of the trade (buy or sell)."
+      },
+      "Markets.MarketModel": {
+        "type": "object",
+        "properties": {
+          "market_id": {
+            "type": "string",
+            "description": "The unique, human-readable identifier for the market and its outcome (e.g., `will-it-rain-tomorrow_yes`).",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "The title or question of the market.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "A detailed description of the market and its resolution criteria.",
+            "nullable": true
+          },
+          "outcome_name": {
+            "type": "string",
+            "description": "The name of the specific outcome this market represents (e.g., \"Yes\", \"No\").",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "description": "The current price of this specific market outcome.",
+            "format": "double"
+          },
+          "status": {
+            "$ref": "#/components/schemas/Markets.MarketStatus"
+          },
+          "creation_date": {
+            "type": "string",
+            "description": "The date and time when the market was created.",
+            "format": "date-time"
+          },
+          "end_date": {
+            "type": "string",
+            "description": "The date and time when the market is scheduled to close or resolve.",
+            "format": "date-time"
+          },
+          "exchange": {
+            "$ref": "#/components/schemas/Metadata.ExchangeModel"
+          },
+          "exchange_id": {
+            "type": "string",
+            "description": "The ID of the exchange where this market is traded.",
+            "nullable": true
+          },
+          "outcome_type": {
+            "$ref": "#/components/schemas/Markets.OutcomeType"
+          },
+          "mechanism": {
+            "type": "string",
+            "description": "The trading mechanism used by the market (e.g., CPMM, CLOB).",
+            "nullable": true
+          },
+          "source_specific_data": {
+            "type": "object",
+            "additionalProperties": {
+              "nullable": true
+            },
+            "description": "A flexible dictionary to store any source-specific raw data.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a detailed view of a single prediction market."
+      },
+      "Markets.MarketStatus": {
+        "enum": [
+          "Open",
+          "Closed",
+          "Resolved",
+          "Suspended"
+        ],
+        "type": "string",
+        "description": "The status of a prediction market."
+      },
+      "Markets.OutcomeType": {
+        "enum": [
+          "Binary",
+          "MultipleChoice",
+          "Numeric"
+        ],
+        "type": "string",
+        "description": "The type of outcome a market can have."
+      },
+      "Metadata.ExchangeModel": {
+        "type": "object",
+        "properties": {
+          "exchange_id": {
+            "type": "string",
+            "description": "The unique name of the exchange (e.g., POLYMARKET, KALSHI).",
+            "nullable": true
+          },
+          "market_name_institution_description": {
+            "type": "string",
+            "description": "A brief description of the exchange.",
+            "nullable": true
+          },
+          "website": {
+            "type": "string",
+            "description": "The official URL of the exchange's website.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents an exchange or platform where prediction markets are traded."
+      },
+      "OHLCV.ExchangeTimeseriesItem": {
+        "type": "object",
+        "properties": {
+          "time_period_start": {
+            "type": "string",
+            "description": "Gets or sets the start time of the time period.",
+            "format": "date-time"
+          },
+          "time_period_end": {
+            "type": "string",
+            "description": "Gets or sets the end time of the time period.",
+            "format": "date-time"
+          },
+          "time_open": {
+            "type": "string",
+            "description": "Gets or sets the time when the price opened.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "time_close": {
+            "type": "string",
+            "description": "Gets or sets the time when the price closed.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "price_open": {
+            "type": "number",
+            "description": "Gets or sets the opening price.",
+            "format": "double",
+            "nullable": true
+          },
+          "price_high": {
+            "type": "number",
+            "description": "Gets or sets the highest price during the time period.",
+            "format": "double",
+            "nullable": true
+          },
+          "price_low": {
+            "type": "number",
+            "description": "Gets or sets the lowest price during the time period.",
+            "format": "double",
+            "nullable": true
+          },
+          "price_close": {
+            "type": "number",
+            "description": "Gets or sets the closing price.",
+            "format": "double",
+            "nullable": true
+          },
+          "volume_traded": {
+            "type": "number",
+            "description": "Gets or sets the total volume traded during the time period.",
+            "format": "double"
+          },
+          "trades_count": {
+            "type": "integer",
+            "description": "Gets or sets the number of trades executed during the time period.",
+            "format": "int64"
+          },
+          "market_id_exchange": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a timeseries item with price and volume information."
+      },
+      "OHLCV.TimeseriesItem": {
+        "type": "object",
+        "properties": {
+          "time_period_start": {
+            "type": "string",
+            "description": "Gets or sets the start time of the time period.",
+            "format": "date-time"
+          },
+          "time_period_end": {
+            "type": "string",
+            "description": "Gets or sets the end time of the time period.",
+            "format": "date-time"
+          },
+          "time_open": {
+            "type": "string",
+            "description": "Gets or sets the time when the price opened.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "time_close": {
+            "type": "string",
+            "description": "Gets or sets the time when the price closed.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "price_open": {
+            "type": "number",
+            "description": "Gets or sets the opening price.",
+            "format": "double",
+            "nullable": true
+          },
+          "price_high": {
+            "type": "number",
+            "description": "Gets or sets the highest price during the time period.",
+            "format": "double",
+            "nullable": true
+          },
+          "price_low": {
+            "type": "number",
+            "description": "Gets or sets the lowest price during the time period.",
+            "format": "double",
+            "nullable": true
+          },
+          "price_close": {
+            "type": "number",
+            "description": "Gets or sets the closing price.",
+            "format": "double",
+            "nullable": true
+          },
+          "volume_traded": {
+            "type": "number",
+            "description": "Gets or sets the total volume traded during the time period.",
+            "format": "double"
+          },
+          "trades_count": {
+            "type": "integer",
+            "description": "Gets or sets the number of trades executed during the time period.",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a timeseries item with price and volume information."
+      },
+      "OHLCV.TimeseriesPeriod": {
+        "type": "object",
+        "properties": {
+          "period_id": {
+            "type": "string",
+            "description": "Gets or sets the period ID.",
+            "nullable": true
+          },
+          "length_seconds": {
+            "type": "integer",
+            "description": "Gets or sets the length of the period in seconds.",
+            "format": "int32"
+          },
+          "length_months": {
+            "type": "integer",
+            "description": "Gets or sets the length of the period in months.",
+            "format": "int32"
+          },
+          "unit_count": {
+            "type": "integer",
+            "description": "Gets or sets the unit count.",
+            "format": "int32",
+            "nullable": true
+          },
+          "unit_name": {
+            "type": "string",
+            "description": "Gets or sets the unit name.",
+            "nullable": true
+          },
+          "display_name": {
+            "type": "string",
+            "description": "Gets or sets the display name of the timeseries period.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a timeseries period used in exchange rate data."
+      },
+      "Orderbooks.OrderBook": {
+        "type": "object",
+        "properties": {
+          "exchange_id": {
+            "type": "string",
+            "description": "Gets or sets the exchange identifier.",
+            "nullable": true
+          },
+          "market_id": {
+            "type": "string",
+            "description": "Gets or sets the market identifier.",
+            "nullable": true
+          },
+          "time_exchange": {
+            "type": "string",
+            "description": "Gets or sets the exchange time of the order book.",
+            "format": "date-time"
+          },
+          "time_coinapi": {
+            "type": "string",
+            "description": "Gets or sets the CoinAPI time when the order book was received.",
+            "format": "date-time"
+          },
+          "asks": {
+            "description": "Gets or sets the asks made by market makers.",
+            "nullable": true
+          },
+          "bids": {
+            "description": "Gets or sets the bids made by market makers.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents an order book with additional information and functionality."
+      },
+      "QuoteTicks.QuoteTick": {
+        "type": "object",
+        "properties": {
+          "entry_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "recv_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ask": {
+            "type": "number",
+            "format": "double"
+          },
+          "bid": {
+            "type": "number",
+            "format": "double"
+          },
+          "ask_volume": {
+            "type": "number",
+            "format": "double"
+          },
+          "bid_volume": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "APIKey": {
+        "type": "apiKey",
+        "description": "API Key is required to access the endpoints",
+        "name": "Authorization",
+        "in": "header"
+      },
+      "JWT": {
+        "type": "http",
+        "description": "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    {
+      "APIKey": [ ]
+    },
+    {
+      "JWT": [ ]
+    }
+  ],
+  "tags": [
+    {
+      "name": "Orderbooks",
+      "description": "Provides access to current market order book snapshots."
+    },
+    {
+      "name": "Ohlcv",
+      "description": "Retrieves OHLCV (Open, High, Low, Close, Volume) timeseries data for specific markets."
+    },
+    {
+      "name": "Markets",
+      "description": "Provides access to detailed information for prediction markets.\nA Market is a rich object containing all details for a specific prediction market, retrieved using a market_id."
+    },
+    {
+      "name": "Exchanges",
+      "description": "Provides access to exchange metadata."
+    }
+  ]
+}
