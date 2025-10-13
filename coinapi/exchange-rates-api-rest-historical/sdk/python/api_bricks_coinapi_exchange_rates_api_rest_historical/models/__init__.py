@@ -13,7 +13,6 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
 # import models into model package
 from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_asset import V1Asset
 from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_chain_network_address import V1ChainNetworkAddress
@@ -23,3 +22,4 @@ from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_exchange_ra
 from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_exchange_rates_timeseries_item import V1ExchangeRatesTimeseriesItem
 from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_icon import V1Icon
 from api_bricks_coinapi_exchange_rates_api_rest_historical.models.v1_timeseries_period import V1TimeseriesPeriod
+
