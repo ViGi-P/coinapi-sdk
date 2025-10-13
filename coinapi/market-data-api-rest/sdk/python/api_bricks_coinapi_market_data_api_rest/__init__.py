@@ -120,3 +120,4 @@ from api_bricks_coinapi_market_data_api_rest.models.v1_symbol_mapping import V1S
 from api_bricks_coinapi_market_data_api_rest.models.v1_timeseries_item import V1TimeseriesItem as V1TimeseriesItem
 from api_bricks_coinapi_market_data_api_rest.models.v1_timeseries_period import V1TimeseriesPeriod as V1TimeseriesPeriod
 from api_bricks_coinapi_market_data_api_rest.models.v1_trade import V1Trade as V1Trade
+
