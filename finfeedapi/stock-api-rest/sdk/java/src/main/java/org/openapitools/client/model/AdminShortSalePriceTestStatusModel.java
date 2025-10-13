@@ -14,6 +14,7 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
+import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -44,13 +45,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Locale;
 
 import org.openapitools.client.JSON;
 
 /**
  * Represents the response DTO for short sale price test status information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-10T13:21:44.778506748Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-13T06:10:21.422548328Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AdminShortSalePriceTestStatusModel {
   public static final String SERIALIZED_NAME_SYMBOL = "symbol";
   @SerializedName(SERIALIZED_NAME_SYMBOL)
@@ -539,7 +541,7 @@ public class AdminShortSalePriceTestStatusModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!AdminShortSalePriceTestStatusModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AdminShortSalePriceTestStatusModel is not found in the empty JSON string", AdminShortSalePriceTestStatusModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in AdminShortSalePriceTestStatusModel is not found in the empty JSON string", AdminShortSalePriceTestStatusModel.openapiRequiredFields.toString()));
         }
       }
 
@@ -547,24 +549,24 @@ public class AdminShortSalePriceTestStatusModel {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!AdminShortSalePriceTestStatusModel.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AdminShortSalePriceTestStatusModel` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `AdminShortSalePriceTestStatusModel` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("symbol") != null && !jsonObj.get("symbol").isJsonNull()) && !jsonObj.get("symbol").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `symbol` to be a primitive type in the JSON string but got `%s`", jsonObj.get("symbol").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `symbol` to be a primitive type in the JSON string but got `%s`", jsonObj.get("symbol").toString()));
       }
       if ((jsonObj.get("short_sale_price_test_status_code") != null && !jsonObj.get("short_sale_price_test_status_code").isJsonNull()) && !jsonObj.get("short_sale_price_test_status_code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `short_sale_price_test_status_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("short_sale_price_test_status_code").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `short_sale_price_test_status_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("short_sale_price_test_status_code").toString()));
       }
       if ((jsonObj.get("short_sale_price_test_status_text") != null && !jsonObj.get("short_sale_price_test_status_text").isJsonNull()) && !jsonObj.get("short_sale_price_test_status_text").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `short_sale_price_test_status_text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("short_sale_price_test_status_text").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `short_sale_price_test_status_text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("short_sale_price_test_status_text").toString()));
       }
       if ((jsonObj.get("detail_code") != null && !jsonObj.get("detail_code").isJsonNull()) && !jsonObj.get("detail_code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `detail_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("detail_code").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `detail_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("detail_code").toString()));
       }
       if ((jsonObj.get("detail_text") != null && !jsonObj.get("detail_text").isJsonNull()) && !jsonObj.get("detail_text").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `detail_text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("detail_text").toString()));
+        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `detail_text` to be a primitive type in the JSON string but got `%s`", jsonObj.get("detail_text").toString()));
       }
   }
 
