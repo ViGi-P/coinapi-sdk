@@ -60,3 +60,4 @@ from api_bricks_currencies_api_rest_realtime.models.v1_exchange_rate import V1Ex
 from api_bricks_currencies_api_rest_realtime.models.v1_exchange_rates import V1ExchangeRates as V1ExchangeRates
 from api_bricks_currencies_api_rest_realtime.models.v1_exchange_rates_rate import V1ExchangeRatesRate as V1ExchangeRatesRate
 from api_bricks_currencies_api_rest_realtime.models.v1_icon import V1Icon as V1Icon
+
