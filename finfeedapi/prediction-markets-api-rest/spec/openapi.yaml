@@ -308,8 +308,8 @@ paths:
     "outcome_name": "Yes",
     "price": 0.12,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0566247Z",
-    "end_date": "2026-01-13T06:12:45.0566273Z",
+    "creation_date": "2025-10-11T06:06:39.7071014Z",
+    "end_date": "2026-01-14T06:06:39.7071031Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   },
@@ -319,8 +319,8 @@ paths:
     "outcome_name": "No",
     "price": 0.88,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0566328Z",
-    "end_date": "2026-01-13T06:12:45.0566328Z",
+    "creation_date": "2025-10-11T06:06:39.7071056Z",
+    "end_date": "2026-01-14T06:06:39.7071058Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   }
@@ -340,8 +340,8 @@ paths:
     "outcome_name": "Yes",
     "price": 0.12,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0566247Z",
-    "end_date": "2026-01-13T06:12:45.0566273Z",
+    "creation_date": "2025-10-11T06:06:39.7071014Z",
+    "end_date": "2026-01-14T06:06:39.7071031Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   },
@@ -351,8 +351,8 @@ paths:
     "outcome_name": "No",
     "price": 0.88,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0566328Z",
-    "end_date": "2026-01-13T06:12:45.0566328Z",
+    "creation_date": "2025-10-11T06:06:39.7071056Z",
+    "end_date": "2026-01-14T06:06:39.7071058Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   }
@@ -372,8 +372,8 @@ paths:
     "outcome_name": "Yes",
     "price": 0.12,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0566247Z",
-    "end_date": "2026-01-13T06:12:45.0566273Z",
+    "creation_date": "2025-10-11T06:06:39.7071014Z",
+    "end_date": "2026-01-14T06:06:39.7071031Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   },
@@ -383,8 +383,8 @@ paths:
     "outcome_name": "No",
     "price": 0.88,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0566328Z",
-    "end_date": "2026-01-13T06:12:45.0566328Z",
+    "creation_date": "2025-10-11T06:06:39.7071056Z",
+    "end_date": "2026-01-14T06:06:39.7071058Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   }
@@ -404,8 +404,8 @@ paths:
     "outcome_name": "Yes",
     "price": 0.12,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0566247Z",
-    "end_date": "2026-01-13T06:12:45.0566273Z",
+    "creation_date": "2025-10-11T06:06:39.7071014Z",
+    "end_date": "2026-01-14T06:06:39.7071031Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   },
@@ -415,8 +415,8 @@ paths:
     "outcome_name": "No",
     "price": 0.88,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0566328Z",
-    "end_date": "2026-01-13T06:12:45.0566328Z",
+    "creation_date": "2025-10-11T06:06:39.7071056Z",
+    "end_date": "2026-01-14T06:06:39.7071058Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   }
@@ -470,8 +470,8 @@ paths:
     "outcome_name": "Yes",
     "price": 0.12,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0589994Z",
-    "end_date": "2026-01-13T06:12:45.0590016Z",
+    "creation_date": "2025-10-11T06:06:39.7100416Z",
+    "end_date": "2026-01-14T06:06:39.7100436Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   },
@@ -481,8 +481,8 @@ paths:
     "outcome_name": "No",
     "price": 0.88,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0590061Z",
-    "end_date": "2026-01-13T06:12:45.0590062Z",
+    "creation_date": "2025-10-11T06:06:39.7100488Z",
+    "end_date": "2026-01-14T06:06:39.7100490Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   }
@@ -502,8 +502,8 @@ paths:
     "outcome_name": "Yes",
     "price": 0.12,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0589994Z",
-    "end_date": "2026-01-13T06:12:45.0590016Z",
+    "creation_date": "2025-10-11T06:06:39.7100416Z",
+    "end_date": "2026-01-14T06:06:39.7100436Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   },
@@ -513,8 +513,8 @@ paths:
     "outcome_name": "No",
     "price": 0.88,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0590061Z",
-    "end_date": "2026-01-13T06:12:45.0590062Z",
+    "creation_date": "2025-10-11T06:06:39.7100488Z",
+    "end_date": "2026-01-14T06:06:39.7100490Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   }
@@ -534,8 +534,8 @@ paths:
     "outcome_name": "Yes",
     "price": 0.12,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0589994Z",
-    "end_date": "2026-01-13T06:12:45.0590016Z",
+    "creation_date": "2025-10-11T06:06:39.7100416Z",
+    "end_date": "2026-01-14T06:06:39.7100436Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   },
@@ -545,8 +545,8 @@ paths:
     "outcome_name": "No",
     "price": 0.88,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0590061Z",
-    "end_date": "2026-01-13T06:12:45.0590062Z",
+    "creation_date": "2025-10-11T06:06:39.7100488Z",
+    "end_date": "2026-01-14T06:06:39.7100490Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   }
@@ -566,8 +566,8 @@ paths:
     "outcome_name": "Yes",
     "price": 0.12,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0589994Z",
-    "end_date": "2026-01-13T06:12:45.0590016Z",
+    "creation_date": "2025-10-11T06:06:39.7100416Z",
+    "end_date": "2026-01-14T06:06:39.7100436Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   },
@@ -577,8 +577,8 @@ paths:
     "outcome_name": "No",
     "price": 0.88,
     "status": "Open",
-    "creation_date": "2025-10-10T06:12:45.0590061Z",
-    "end_date": "2026-01-13T06:12:45.0590062Z",
+    "creation_date": "2025-10-11T06:06:39.7100488Z",
+    "end_date": "2026-01-14T06:06:39.7100490Z",
     "exchange_id": "POLYMARKET",
     "outcome_type": "Binary"
   }
