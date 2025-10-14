@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for official price information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-13T06:10:21.422548328Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-14T06:11:47.926101425Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AdminOfficialPriceModel {
   public static final String SERIALIZED_NAME_SYMBOL = "symbol";
   @SerializedName(SERIALIZED_NAME_SYMBOL)
