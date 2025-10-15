@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for system event information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-14T06:11:47.926101425Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-15T06:10:31.348068192Z[Etc/UTC]", comments = "Generator version: 7.16.0")
 public class AdminSystemEventModel {
   public static final String SERIALIZED_NAME_TIMESTAMP_NANOS = "timestamp_nanos";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP_NANOS)
