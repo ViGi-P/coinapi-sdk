@@ -556,7 +556,8 @@
         "tags": [
           "Markets"
         ],
-        "summary": "Lists active market IDs for a specific exchange.\nReturns only market IDs (not full market objects) because this data is derived from recent quotes and transactions only.\nUse the /history endpoint to retrieve full market details.",
+        "summary": "Lists active market IDs for a specific exchange.",
+        "description": "Returns only market IDs (not full market objects) because this data is derived from recent quotes and transactions only.\nUse the /history endpoint to retrieve full market details.",
         "parameters": [
           {
             "name": "exchange_id",
