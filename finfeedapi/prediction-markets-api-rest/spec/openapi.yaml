@@ -646,7 +646,7 @@ paths:
     get:
       tags:
         - Ohlcv
-      summary: Historical data for a market
+      summary: Historical data for an exchange
       description: 'Get OHLCV timeseries data for an exchange, returned in time ascending order.'
       parameters:
         - name: exchange_id
@@ -699,7 +699,7 @@ paths:
     get:
       tags:
         - Ohlcv
-      summary: Historical data for a market
+      summary: Historical data for a specific market
       description: 'Get OHLCV timeseries data for a specific market, returned in time ascending order.'
       parameters:
         - name: exchange_id
