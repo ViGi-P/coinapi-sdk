@@ -37,6 +37,7 @@ export class OrderBookL3Service extends BaseService {
 
     /**
      * Current order books
+     * @endpoint get /v1/orderbooks3/current
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter the response.
      * @param limitLevels The maximum number of levels to include in the response.
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -97,7 +98,7 @@ export class OrderBookL3Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -106,6 +107,7 @@ export class OrderBookL3Service extends BaseService {
     /**
      * Current order book by symbol_id
      * Retrieves the current order book for the specified symbol.
+     * @endpoint get /v1/orderbooks3/{symbol_id}/current
      * @param symbolId The symbol ID (from the Metadata -&gt; Symbols)
      * @param limitLevels The maximum number of levels to include in the response.
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -167,7 +169,7 @@ export class OrderBookL3Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );

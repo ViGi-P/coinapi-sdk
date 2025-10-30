@@ -38,6 +38,7 @@ export class MetricsV2Service extends BaseService {
     /**
      * Historical metrics for the asset
      * Get asset metrics history.
+     * @endpoint get /v2/metrics/asset/history
      * @param metricId Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)
      * @param assetId Asset identifier (e.g., &#x60;USDC&#x60;, &#x60;USDT&#x60;)
      * @param timeStart Starting time in ISO 8601
@@ -119,7 +120,7 @@ export class MetricsV2Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -128,6 +129,7 @@ export class MetricsV2Service extends BaseService {
     /**
      * Listing of metrics available for specific asset
      * Get all metrics that are actually available for the specified asset.
+     * @endpoint get /v2/metrics/asset/listing
      * @param assetId Asset identifier (e.g., USDC, USDT)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -188,7 +190,7 @@ export class MetricsV2Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -197,6 +199,7 @@ export class MetricsV2Service extends BaseService {
     /**
      * Historical metrics for the chain
      * Get chain metrics history.
+     * @endpoint get /v2/metrics/chain/history
      * @param metricId Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)
      * @param chainId Chain identifier (e.g., &#x60;Ethereum&#x60;, &#x60;Arbitrum&#x60;)
      * @param timeStart Starting time in ISO 8601
@@ -278,7 +281,7 @@ export class MetricsV2Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -287,6 +290,7 @@ export class MetricsV2Service extends BaseService {
     /**
      * Listing of metrics available for specific chain
      * Get all metrics that are actually available for the specified blockchain chain.
+     * @endpoint get /v2/metrics/chain/listing
      * @param chainId Chain identifier (e.g., ETHEREUM, ARBITRUM)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -347,7 +351,7 @@ export class MetricsV2Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -356,6 +360,7 @@ export class MetricsV2Service extends BaseService {
     /**
      * Historical metrics for the exchange
      * Get exchange metrics history.
+     * @endpoint get /v2/metrics/exchange/history
      * @param metricId Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)
      * @param exchangeId Exchange identifier (e.g., &#x60;BINANCE&#x60;, &#x60;UNISWAP-V3-ETHEREUM&#x60;)
      * @param timeStart Starting time in ISO 8601
@@ -437,7 +442,7 @@ export class MetricsV2Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -446,6 +451,7 @@ export class MetricsV2Service extends BaseService {
     /**
      * Listing of metrics available for specific exchange
      * Get all metrics that are actually available for the specified exchange.
+     * @endpoint get /v2/metrics/exchange/listing
      * @param exchangeId Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -506,7 +512,7 @@ export class MetricsV2Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -515,6 +521,7 @@ export class MetricsV2Service extends BaseService {
     /**
      * Listing of all supported metrics
      * Get all metrics available in the system.
+     * @endpoint get /v2/metrics/listing
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -566,7 +573,7 @@ export class MetricsV2Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );

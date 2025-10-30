@@ -1,5 +1,7 @@
 # OpenAPI\Client\QuotesApi
 
+Controller for retrieving quotes data, also known as quotes or passive level 1 data.
+
 All URIs are relative to https://rest.coinapi.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |

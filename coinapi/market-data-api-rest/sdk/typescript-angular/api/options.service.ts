@@ -38,6 +38,7 @@ export class OptionsService extends BaseService {
     /**
      * Current data by Exchange
      * Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
+     * @endpoint get /v1/options/{exchange_id}/current
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -93,7 +94,7 @@ export class OptionsService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );

@@ -1,5 +1,7 @@
 # OpenAPI\Client\OptionsApi
 
+This set of endpoints providing easy access to data related to Options Markets.
+
 All URIs are relative to https://rest.coinapi.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |

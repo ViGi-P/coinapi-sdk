@@ -40,6 +40,7 @@ export class QuotesService extends BaseService {
     /**
      * Current data
      * Get current quotes for all symbols or for a specific symbol.              :::info When requesting current data for a specific symbol, output is not encapsulated into JSON array as only one item is returned. :::
+     * @endpoint get /v1/quotes/current
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -97,7 +98,7 @@ export class QuotesService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -106,6 +107,7 @@ export class QuotesService extends BaseService {
     /**
      * Latest data
      * Get latest updates of the quotes up to 1 minute ago. Latest data is always returned in time descending order.
+     * @endpoint get /v1/quotes/latest
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -166,7 +168,7 @@ export class QuotesService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -174,6 +176,7 @@ export class QuotesService extends BaseService {
 
     /**
      * Current quotes for a specific symbol
+     * @endpoint get /v1/quotes/{symbol_id}/current
      * @param symbolId The symbol identifier (from the Metadata -&gt; Symbols)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -229,7 +232,7 @@ export class QuotesService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -238,6 +241,7 @@ export class QuotesService extends BaseService {
     /**
      * Historical data
      * Get historical quote updates within requested time range, returned in time ascending order.  :::warning The \&#39;time_start\&#39; and \&#39;time_end\&#39; parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the \&#39;date\&#39; parameter instead for querying data for a specific day without filter. :::
+     * @endpoint get /v1/quotes/{symbol_id}/history
      * @param symbolId Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols)
      * @param date Date in ISO 8601, returned data is for the whole given day (preferred method, required if \&#39;time_start\&#39; is not provided)
      * @param timeStart Starting time in ISO 8601
@@ -308,7 +312,7 @@ export class QuotesService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -316,6 +320,7 @@ export class QuotesService extends BaseService {
 
     /**
      * Latest quote updates for a specific symbol
+     * @endpoint get /v1/quotes/{symbol_id}/latest
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -377,7 +382,7 @@ export class QuotesService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );

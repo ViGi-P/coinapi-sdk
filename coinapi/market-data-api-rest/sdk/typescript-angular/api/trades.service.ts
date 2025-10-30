@@ -38,6 +38,7 @@ export class TradesService extends BaseService {
     /**
      * Latest data
      * Get latest trades executed up to 1 minute ago. Latest data is always returned in time descending order.
+     * @endpoint get /v1/trades/latest
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
      * @param includeId Information that additional exchange trade identifier should be included in the &#x60;id_trade&#x60; parameter of the trade if exchange providing identifiers.
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
@@ -101,7 +102,7 @@ export class TradesService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -110,6 +111,7 @@ export class TradesService extends BaseService {
     /**
      * Historical data
      * Get history transactions from specific symbol, returned in time ascending order.  :::warning The \&#39;time_start\&#39; and \&#39;time_end\&#39; parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the \&#39;date\&#39; parameter instead for querying data for a specific day without filter. :::
+     * @endpoint get /v1/trades/{symbol_id}/history
      * @param symbolId Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols)
      * @param date Date in ISO 8601, returned data is for the whole given day (required if \&#39;time_start\&#39; is not provided)
      * @param timeStart Starting time in ISO 8601
@@ -183,7 +185,7 @@ export class TradesService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -192,6 +194,7 @@ export class TradesService extends BaseService {
     /**
      * Latest data by symbol_id
      * Get latest trades executed up to 1 minute ago. Latest data is always returned in time descending order.
+     * @endpoint get /v1/trades/{symbol_id}/latest
      * @param symbolId Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param includeId Information that additional exchange trade identifier should be included in the &#x60;id_trade&#x60; parameter of the trade if exchange providing identifiers.
@@ -256,7 +259,7 @@ export class TradesService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );

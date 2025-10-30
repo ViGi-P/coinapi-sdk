@@ -1,5 +1,7 @@
 # OpenAPI\Client\OhlcvApi
 
+API calls described in this section are related to downloading OHLCV *(Open, High, Low, Close, Volume)* timeseries data.  Each data point of this timeseries represents several indicators calculated from orderbook and transactions activity inside a time range (period).    :::info  OHLCV data primary purpose is to present an overview of the market in human readable form.   It&#39;s often used to visualize market data on charts, websites, and various kinds of reports.  :::    :::tip  CoinAPI expanded the standard OHLCV timeseries by including time of first and last trade and amount of trades executed inside period.  :::    :::info  While working on the OHLCV data, especially lower time periods, you can notice that there are cases where there was no transactions and only orderbook activity.  In such cases, the volume_traded and trades_count fields are set to 0.  This is because the OHLCV data is calculated from the orderbook and transactions activity.  If there was no transactions and only orderbook activity, then the volume_traded and trades_count fields are set to 0.  :::
+
 All URIs are relative to https://rest.coinapi.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |

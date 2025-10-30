@@ -42,6 +42,7 @@ export class OrderBookService extends BaseService {
     /**
      * Get current order book
      * Retrieves the current order book for the specified symbol.
+     * @endpoint get /v1/orderbooks/{symbol_id}/current
      * @param symbolId The symbol ID (from the Metadata -&gt; Symbols)
      * @param limitLevels The maximum number of levels to include in the response.
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -103,7 +104,7 @@ export class OrderBookService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -112,6 +113,7 @@ export class OrderBookService extends BaseService {
     /**
      * Current depth of the order book
      * Retrieves the current depth of the order book for the specified symbol.
+     * @endpoint get /v1/orderbooks/{symbol_id}/depth/current
      * @param symbolId The symbol ID (from the Metadata -&gt; Symbols)
      * @param limitLevels The maximum number of levels to include in the response.
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -173,7 +175,7 @@ export class OrderBookService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -182,6 +184,7 @@ export class OrderBookService extends BaseService {
     /**
      * Historical data
      * Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::  :::warning The \&#39;time_start\&#39; and \&#39;time_end\&#39; parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the \&#39;date\&#39; parameter instead for querying data for a specific day without filter. :::
+     * @endpoint get /v1/orderbooks/{symbol_id}/history
      * @param symbolId Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols)
      * @param date Date in ISO 8601, returned data is for the whole given day (preferred method, required if \&#39;time_start\&#39; is not provided)
      * @param timeStart Starting time in ISO 8601 (deprecated, use \&#39;date\&#39; instead)
@@ -255,7 +258,7 @@ export class OrderBookService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -264,6 +267,7 @@ export class OrderBookService extends BaseService {
     /**
      * Latest data
      * Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
+     * @endpoint get /v1/orderbooks/{symbol_id}/latest
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param limitLevels Maximum amount of levels from each side of the book to include in response (optional)
@@ -328,7 +332,7 @@ export class OrderBookService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );

@@ -44,6 +44,7 @@ export class MetricsV1Service extends BaseService {
     /**
      * Current metrics for given asset
      * Get current asset metrics.
+     * @endpoint get /v1/metrics/asset/current
      * @param metricId Metric identifier (from the Metrics -&gt; Listing)
      * @param assetId Asset identifier (from the Metadata -&gt; Assets)
      * @param assetIdExternal Exchange asset identifier
@@ -110,7 +111,7 @@ export class MetricsV1Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -119,6 +120,7 @@ export class MetricsV1Service extends BaseService {
     /**
      * Historical metrics for asset
      * Get asset metrics history.
+     * @endpoint get /v1/metrics/asset/history
      * @param metricId Metric identifier (from the Metrics -&gt; Listing)
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
      * @param assetId Asset identifier (from the Metadata -&gt; Assets)
@@ -206,7 +208,7 @@ export class MetricsV1Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -215,6 +217,7 @@ export class MetricsV1Service extends BaseService {
     /**
      * Listing of all supported metrics for asset
      * Get data metrics for asset.
+     * @endpoint get /v1/metrics/asset/listing
      * @param metricId Metric identifier (from the Metrics -&gt; Listing)
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
      * @param chainId Chain identifier
@@ -287,7 +290,7 @@ export class MetricsV1Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -296,6 +299,7 @@ export class MetricsV1Service extends BaseService {
     /**
      * Current metrics for given exchange
      * Get current exchange metrics values.
+     * @endpoint get /v1/metrics/exchange/current
      * @param exchangeId The exchange identifier (from the Metadata -&gt; Exchanges)
      * @param metricId The metric identifier (from the Metrics -&gt; Listing)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -359,7 +363,7 @@ export class MetricsV1Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -368,6 +372,7 @@ export class MetricsV1Service extends BaseService {
     /**
      * Historical metrics for the exchange
      * Get exchange metrics history.
+     * @endpoint get /v1/metrics/exchange/history
      * @param metricId Metric identifier (from the Metrics -&gt; Listing)
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
      * @param timeStart Starting time in ISO 8601
@@ -449,7 +454,7 @@ export class MetricsV1Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -458,6 +463,7 @@ export class MetricsV1Service extends BaseService {
     /**
      * Listing of all supported exchange metrics
      * Get data metrics for exchange.
+     * @endpoint get /v1/metrics/exchange/listing
      * @param exchangeId The exchange identifier (from the Metadata -&gt; Exchanges)
      * @param metricId The metric identifier (from the Metrics -&gt; Listing)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -521,7 +527,7 @@ export class MetricsV1Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -530,6 +536,7 @@ export class MetricsV1Service extends BaseService {
     /**
      * Listing of all supported metrics by CoinAPI
      * Get all data metrics.
+     * @endpoint get /v1/metrics/listing
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
@@ -581,7 +588,7 @@ export class MetricsV1Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -590,6 +597,7 @@ export class MetricsV1Service extends BaseService {
     /**
      * Current metrics for given symbol
      * Get current symbol metrics.
+     * @endpoint get /v1/metrics/symbol/current
      * @param metricId Metric identifier (from the Metrics -&gt; Listing)
      * @param symbolId Symbol identifier (from the Metadata -&gt; Symbols)
      * @param exchangeId Exchange id (from the Metadata -&gt; Exchanges)
@@ -653,7 +661,7 @@ export class MetricsV1Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -662,6 +670,7 @@ export class MetricsV1Service extends BaseService {
     /**
      * Historical metrics for symbol
      * Get symbol metrics history.
+     * @endpoint get /v1/metrics/symbol/history
      * @param metricId Metric identifier (from the Metrics -&gt; Listing)
      * @param symbolId Symbol identifier (from the Metadata -&gt; Symbols)
      * @param timeStart Starting time in ISO 8601
@@ -743,7 +752,7 @@ export class MetricsV1Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -752,6 +761,7 @@ export class MetricsV1Service extends BaseService {
     /**
      * Listing of all supported metrics for symbol
      * Get data metrics for symbol.
+     * @endpoint get /v1/metrics/symbol/listing
      * @param metricId Metric identifier (from the Metrics -&gt; Listing)
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
      * @param symbolId Symbol identifier (from the Metadata -&gt; Symbols)
@@ -815,7 +825,7 @@ export class MetricsV1Service extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );

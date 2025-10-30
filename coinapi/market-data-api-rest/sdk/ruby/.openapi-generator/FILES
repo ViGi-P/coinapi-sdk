@@ -59,6 +59,7 @@ lib/openapi_client/api/quotes_api.rb
 lib/openapi_client/api/trades_api.rb
 lib/openapi_client/api_client.rb
 lib/openapi_client/api_error.rb
+lib/openapi_client/api_model_base.rb
 lib/openapi_client/configuration.rb
 lib/openapi_client/models/models_exchange_timeseries_item.rb
 lib/openapi_client/models/options_option_exchange_group.rb
