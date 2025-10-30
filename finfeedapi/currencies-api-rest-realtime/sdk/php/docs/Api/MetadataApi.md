@@ -1,5 +1,7 @@
 # OpenAPI\Client\MetadataApi
 
+&lt;span data-status-page&#x3D;\&quot;28923\&quot;&gt;&lt;/span&gt;
+
 All URIs are relative to https://api-realtime.fx.finfeedapi.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
