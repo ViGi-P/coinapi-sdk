@@ -1,5 +1,7 @@
 # OpenAPI\Client\MetadataApi
 
+
+
 All URIs are relative to https://api-historical.stock.finfeedapi.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |

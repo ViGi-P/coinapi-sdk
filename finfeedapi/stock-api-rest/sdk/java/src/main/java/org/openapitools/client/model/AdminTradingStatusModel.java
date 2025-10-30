@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for trading status information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-29T06:09:03.229705076Z[Etc/UTC]", comments = "Generator version: 7.16.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-30T06:08:27.959525876Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class AdminTradingStatusModel {
   public static final String SERIALIZED_NAME_SYMBOL = "symbol";
   @SerializedName(SERIALIZED_NAME_SYMBOL)

@@ -47,6 +47,7 @@ export class NativeIEXService extends BaseService {
 
     /**
      * Get Admin Messages
+     * @endpoint get /v1/native/iex/admin/messages/{symbol}
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -108,7 +109,7 @@ export class NativeIEXService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -116,6 +117,7 @@ export class NativeIEXService extends BaseService {
 
     /**
      * Get System Events
+     * @endpoint get /v1/native/iex/admin/system-event
      * @param date Date in format YYYY-MM-DD
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
@@ -173,7 +175,7 @@ export class NativeIEXService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -181,6 +183,7 @@ export class NativeIEXService extends BaseService {
 
     /**
      * Get Level-1 Quotes
+     * @endpoint get /v1/native/iex/level1-quote/{symbol}
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -242,7 +245,7 @@ export class NativeIEXService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -250,6 +253,7 @@ export class NativeIEXService extends BaseService {
 
     /**
      * Get Level-2 Price Level Book
+     * @endpoint get /v1/native/iex/level2-price-level-update/{symbol}
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -311,7 +315,7 @@ export class NativeIEXService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -319,6 +323,7 @@ export class NativeIEXService extends BaseService {
 
     /**
      * Get Level-3 Order Book
+     * @endpoint get /v1/native/iex/level3-order-book/{symbol}
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -380,7 +385,7 @@ export class NativeIEXService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -388,6 +393,7 @@ export class NativeIEXService extends BaseService {
 
     /**
      * Get Trades
+     * @endpoint get /v1/native/iex/trade/{symbol}
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
@@ -449,7 +455,7 @@ export class NativeIEXService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );

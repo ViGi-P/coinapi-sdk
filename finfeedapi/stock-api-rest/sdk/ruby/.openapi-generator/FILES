@@ -41,6 +41,7 @@ lib/openapi_client/api/native_iex_api.rb
 lib/openapi_client/api/ohlcv_api.rb
 lib/openapi_client/api_client.rb
 lib/openapi_client/api_error.rb
+lib/openapi_client/api_model_base.rb
 lib/openapi_client/configuration.rb
 lib/openapi_client/models/admin_admin_message_model.rb
 lib/openapi_client/models/admin_auction_information_model.rb

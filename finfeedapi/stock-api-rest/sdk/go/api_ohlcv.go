@@ -268,8 +268,9 @@ func (a *OhlcvAPIService) V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetExecu
 	if r.limit != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	} else {
-		var defaultValue int32 = 100
-		r.limit = &defaultValue
+        var defaultValue int32 = 100
+        parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
+        r.limit = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -418,8 +419,9 @@ func (a *OhlcvAPIService) V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetExecut
 	if r.limit != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	} else {
-		var defaultValue int32 = 100
-		r.limit = &defaultValue
+        var defaultValue int32 = 100
+        parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
+        r.limit = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
