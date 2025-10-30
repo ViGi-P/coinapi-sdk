@@ -23,6 +23,7 @@ lib/openapi_client/api/exchange_rates_api.rb
 lib/openapi_client/api/metadata_api.rb
 lib/openapi_client/api_client.rb
 lib/openapi_client/api_error.rb
+lib/openapi_client/api_model_base.rb
 lib/openapi_client/configuration.rb
 lib/openapi_client/models/v1_asset.rb
 lib/openapi_client/models/v1_chain_network_address.rb
