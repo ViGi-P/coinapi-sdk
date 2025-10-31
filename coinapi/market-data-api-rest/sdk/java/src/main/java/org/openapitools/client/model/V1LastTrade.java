@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the last executed transaction.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-30T06:05:15.384911530Z[Etc/UTC]", comments = "Generator version: 7.17.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-10-31T06:05:51.314379432Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class V1LastTrade {
   public static final String SERIALIZED_NAME_TIME_EXCHANGE = "time_exchange";
   @SerializedName(SERIALIZED_NAME_TIME_EXCHANGE)
