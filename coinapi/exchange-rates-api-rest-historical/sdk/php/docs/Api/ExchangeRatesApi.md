@@ -1,5 +1,7 @@
 # OpenAPI\Client\ExchangeRatesApi
 
+
+
 All URIs are relative to https://api-historical.exrates.coinapi.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
