@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents exchange rates for a specific base asset.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-04T06:14:10.300709315Z[Etc/UTC]", comments = "Generator version: 7.17.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-05T06:11:42.267927318Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class V1ExchangeRates {
   public static final String SERIALIZED_NAME_ASSET_ID_BASE = "asset_id_base";
   @SerializedName(SERIALIZED_NAME_ASSET_ID_BASE)
