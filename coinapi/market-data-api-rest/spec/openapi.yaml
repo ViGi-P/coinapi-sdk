@@ -893,7 +893,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-11-04T06:04:32.7526331Z",
+  "time": "2025-11-05T06:03:55.8821411Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -904,7 +904,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-11-04T06:04:32.7526331Z",
+  "time": "2025-11-05T06:03:55.8821411Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -915,7 +915,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-11-04T06:04:32.7526331Z",
+  "time": "2025-11-05T06:03:55.8821411Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -926,7 +926,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2025-11-04T06:04:32.7526331Z",
+  "time": "2025-11-05T06:03:55.8821411Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -4989,172 +4989,6 @@ paths:
     }
   ]
 }
-  '/v1/orderbooks/{symbol_id}/latest':
-    get:
-      tags:
-        - Order Book
-      summary: Latest data
-      description: "Get latest order book snapshots for a specific symbol, returned in time descending order.\n            \n:::info\nThe historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.\n:::"
-      parameters:
-        - name: symbol_id
-          in: path
-          description: Symbol identifier of requested timeseries (from the Metadata -> Symbols)
-          required: true
-          schema:
-            type: string
-        - name: limit
-          in: query
-          description: 'Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)'
-          schema:
-            type: integer
-            format: int32
-            default: 100
-        - name: limit_levels
-          in: query
-          description: Maximum amount of levels from each side of the book to include in response (optional)
-          schema:
-            type: integer
-            format: int32
-      responses:
-        '200':
-          description: successful operation
-          content:
-            text/plain:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/v1.OrderBook'
-              examples:
-                Example response:
-                  value: [
-  {
-    "symbol_id": "BITSTAMP_SPOT_BTC_USD",
-    "time_exchange": "2013-09-28T22:40:50.0000000Z",
-    "time_coinapi": "2017-03-18T22:42:21.3763342Z",
-    "asks": [
-      {
-        "price": 456.35,
-        "size": 123
-      },
-      {
-        "price": 456.36,
-        "size": 23
-      }
-    ],
-    "bids": [
-      {
-        "price": 456.1,
-        "size": 42
-      },
-      {
-        "price": 456.09,
-        "size": 5
-      }
-    ]
-  }
-]
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/v1.OrderBook'
-              examples:
-                Example response:
-                  value: [
-  {
-    "symbol_id": "BITSTAMP_SPOT_BTC_USD",
-    "time_exchange": "2013-09-28T22:40:50.0000000Z",
-    "time_coinapi": "2017-03-18T22:42:21.3763342Z",
-    "asks": [
-      {
-        "price": 456.35,
-        "size": 123
-      },
-      {
-        "price": 456.36,
-        "size": 23
-      }
-    ],
-    "bids": [
-      {
-        "price": 456.1,
-        "size": 42
-      },
-      {
-        "price": 456.09,
-        "size": 5
-      }
-    ]
-  }
-]
-            text/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/v1.OrderBook'
-              examples:
-                Example response:
-                  value: [
-  {
-    "symbol_id": "BITSTAMP_SPOT_BTC_USD",
-    "time_exchange": "2013-09-28T22:40:50.0000000Z",
-    "time_coinapi": "2017-03-18T22:42:21.3763342Z",
-    "asks": [
-      {
-        "price": 456.35,
-        "size": 123
-      },
-      {
-        "price": 456.36,
-        "size": 23
-      }
-    ],
-    "bids": [
-      {
-        "price": 456.1,
-        "size": 42
-      },
-      {
-        "price": 456.09,
-        "size": 5
-      }
-    ]
-  }
-]
-            application/x-msgpack:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/v1.OrderBook'
-              examples:
-                Example response:
-                  value: [
-  {
-    "symbol_id": "BITSTAMP_SPOT_BTC_USD",
-    "time_exchange": "2013-09-28T22:40:50.0000000Z",
-    "time_coinapi": "2017-03-18T22:42:21.3763342Z",
-    "asks": [
-      {
-        "price": 456.35,
-        "size": 123
-      },
-      {
-        "price": 456.36,
-        "size": 23
-      }
-    ],
-    "bids": [
-      {
-        "price": 456.1,
-        "size": 42
-      },
-      {
-        "price": 456.09,
-        "size": 5
-      }
-    ]
-  }
-]
   /v1/orderbooks3/current:
     get:
       tags:
