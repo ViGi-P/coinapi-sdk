@@ -40,12 +40,6 @@ export interface V1OrderbooksSymbolIdHistoryGetRequest {
     limitLevels?: number;
 }
 
-export interface V1OrderbooksSymbolIdLatestGetRequest {
-    symbolId: string;
-    limit?: number;
-    limitLevels?: number;
-}
-
 /**
  * no description
  */
@@ -124,32 +118,6 @@ export class OrderBookApi extends BaseAPI {
 
         return this.request<Array<V1OrderBook>>({
             url: '/v1/orderbooks/{symbol_id}/history'.replace('{symbol_id}', encodeURI(symbolId)),
-            method: 'GET',
-            headers,
-            query,
-        }, opts?.responseOpts);
-    };
-
-    /**
-     * Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-     * Latest data
-     */
-    v1OrderbooksSymbolIdLatestGet({ symbolId, limit, limitLevels }: V1OrderbooksSymbolIdLatestGetRequest): Observable<Array<V1OrderBook>>
-    v1OrderbooksSymbolIdLatestGet({ symbolId, limit, limitLevels }: V1OrderbooksSymbolIdLatestGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1OrderBook>>>
-    v1OrderbooksSymbolIdLatestGet({ symbolId, limit, limitLevels }: V1OrderbooksSymbolIdLatestGetRequest, opts?: OperationOpts): Observable<Array<V1OrderBook> | AjaxResponse<Array<V1OrderBook>>> {
-        throwIfNullOrUndefined(symbolId, 'symbolId', 'v1OrderbooksSymbolIdLatestGet');
-
-        const headers: HttpHeaders = {
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-        };
-
-        const query: HttpQuery = {};
-
-        if (limit != null) { query['limit'] = limit; }
-        if (limitLevels != null) { query['limit_levels'] = limitLevels; }
-
-        return this.request<Array<V1OrderBook>>({
-            url: '/v1/orderbooks/{symbol_id}/latest'.replace('{symbol_id}', encodeURI(symbolId)),
             method: 'GET',
             headers,
             query,

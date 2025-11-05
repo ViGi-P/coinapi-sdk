@@ -75,18 +75,4 @@ describe 'OrderBookApi' do
     end
   end
 
-  # unit tests for v1_orderbooks_symbol_id_latest_get
-  # Latest data
-  # Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-  # @param symbol_id Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
-  # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  # @option opts [Integer] :limit_levels Maximum amount of levels from each side of the book to include in response (optional)
-  # @return [Array<V1OrderBook>]
-  describe 'v1_orderbooks_symbol_id_latest_get test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
 end

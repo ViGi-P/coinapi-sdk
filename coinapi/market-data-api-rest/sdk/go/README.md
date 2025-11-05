@@ -119,7 +119,6 @@ Class | Method | HTTP request | Description
 *OrderBookAPI* | [**V1OrderbooksSymbolIdCurrentGet**](docs/OrderBookAPI.md#v1orderbookssymbolidcurrentget) | **Get** /v1/orderbooks/{symbol_id}/current | Get current order book
 *OrderBookAPI* | [**V1OrderbooksSymbolIdDepthCurrentGet**](docs/OrderBookAPI.md#v1orderbookssymboliddepthcurrentget) | **Get** /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book
 *OrderBookAPI* | [**V1OrderbooksSymbolIdHistoryGet**](docs/OrderBookAPI.md#v1orderbookssymbolidhistoryget) | **Get** /v1/orderbooks/{symbol_id}/history | Historical data
-*OrderBookAPI* | [**V1OrderbooksSymbolIdLatestGet**](docs/OrderBookAPI.md#v1orderbookssymbolidlatestget) | **Get** /v1/orderbooks/{symbol_id}/latest | Latest data
 *OrderBookL3API* | [**V1Orderbooks3CurrentGet**](docs/OrderBookL3API.md#v1orderbooks3currentget) | **Get** /v1/orderbooks3/current | Current order books
 *OrderBookL3API* | [**V1Orderbooks3SymbolIdCurrentGet**](docs/OrderBookL3API.md#v1orderbooks3symbolidcurrentget) | **Get** /v1/orderbooks3/{symbol_id}/current | Current order book by symbol_id
 *QuotesAPI* | [**V1QuotesCurrentGet**](docs/QuotesAPI.md#v1quotescurrentget) | **Get** /v1/quotes/current | Current data

@@ -64,18 +64,4 @@ func Test_openapi_OrderBookAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test OrderBookAPIService V1OrderbooksSymbolIdLatestGet", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var symbolId string
-
-		resp, httpRes, err := apiClient.OrderBookAPI.V1OrderbooksSymbolIdLatestGet(context.Background(), symbolId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 }

@@ -152,8 +152,6 @@ Method | HTTP request | Description
 *v1OrderbooksSymbolIdDepthCurrentGetASync* | *GET* /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book.
 *v1OrderbooksSymbolIdHistoryGetSync* | *GET* /v1/orderbooks/{symbol_id}/history | Historical data.
 *v1OrderbooksSymbolIdHistoryGetASync* | *GET* /v1/orderbooks/{symbol_id}/history | Historical data.
-*v1OrderbooksSymbolIdLatestGetSync* | *GET* /v1/orderbooks/{symbol_id}/latest | Latest data.
-*v1OrderbooksSymbolIdLatestGetASync* | *GET* /v1/orderbooks/{symbol_id}/latest | Latest data.
 
 
 ### OrderBookL3Manager

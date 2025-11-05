@@ -9,7 +9,6 @@ All URIs are relative to https://rest.coinapi.io, except if the operation define
 | [**v1OrderbooksSymbolIdCurrentGet()**](OrderBookApi.md#v1OrderbooksSymbolIdCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/current | Get current order book |
 | [**v1OrderbooksSymbolIdDepthCurrentGet()**](OrderBookApi.md#v1OrderbooksSymbolIdDepthCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book |
 | [**v1OrderbooksSymbolIdHistoryGet()**](OrderBookApi.md#v1OrderbooksSymbolIdHistoryGet) | **GET** /v1/orderbooks/{symbol_id}/history | Historical data |
-| [**v1OrderbooksSymbolIdLatestGet()**](OrderBookApi.md#v1OrderbooksSymbolIdLatestGet) | **GET** /v1/orderbooks/{symbol_id}/latest | Latest data |
 
 
 ## `v1OrderbooksSymbolIdCurrentGet()`
@@ -202,75 +201,6 @@ try {
 | **time_start** | **string**| Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] |
 | **time_end** | **string**| Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] |
 | **limit** | **int**| Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
-| **limit_levels** | **int**| Maximum amount of levels from each side of the book to include in response (optional) | [optional] |
-
-### Return type
-
-[**\OpenAPI\Client\Model\V1OrderBook[]**](../Model/V1OrderBook.md)
-
-### Authorization
-
-[APIKey](../../README.md#APIKey), [JWT](../../README.md#JWT)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `text/plain`, `application/json`, `text/json`, `application/x-msgpack`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `v1OrderbooksSymbolIdLatestGet()`
-
-```php
-v1OrderbooksSymbolIdLatestGet($symbol_id, $limit, $limit_levels): \OpenAPI\Client\Model\V1OrderBook[]
-```
-
-Latest data
-
-Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: APIKey
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-// Configure Bearer (JWT) authorization: JWT
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new OpenAPI\Client\Api\OrderBookApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$symbol_id = 'symbol_id_example'; // string | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
-$limit = 100; // int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-$limit_levels = 56; // int | Maximum amount of levels from each side of the book to include in response (optional)
-
-try {
-    $result = $apiInstance->v1OrderbooksSymbolIdLatestGet($symbol_id, $limit, $limit_levels);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling OrderBookApi->v1OrderbooksSymbolIdLatestGet: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **symbol_id** | **string**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | |
-| **limit** | **int**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
 | **limit_levels** | **int**| Maximum amount of levels from each side of the book to include in response (optional) | [optional] |
 
 ### Return type

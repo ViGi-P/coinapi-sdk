@@ -18,7 +18,6 @@ module Api.Request.OrderBook exposing
     ( v1OrderbooksSymbolIdCurrentGet
     , v1OrderbooksSymbolIdDepthCurrentGet
     , v1OrderbooksSymbolIdHistoryGet
-    , v1OrderbooksSymbolIdLatestGet
     )
 
 import Api
@@ -75,23 +74,6 @@ v1OrderbooksSymbolIdHistoryGet symbolId_path date_query timeStart_query timeEnd_
         "/v1/orderbooks/{symbol_id}/history"
         [ ( "symbol_id", identity symbolId_path ) ]
         [ ( "date", Maybe.map identity date_query ), ( "time_start", Maybe.map identity timeStart_query ), ( "time_end", Maybe.map identity timeEnd_query ), ( "limit", Maybe.map String.fromInt limit_query ), ( "limit_levels", Maybe.map String.fromInt limitLevels_query ) ]
-        []
-        Nothing
-        (Json.Decode.list Api.Data.v1OrderBookDecoder)
-        |> Api.withBearerToken auth_token
-
-{-| Latest data
-
-Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-
--}
-v1OrderbooksSymbolIdLatestGet : String -> Maybe Int -> Maybe Int -> String -> Api.Request (List Api.Data.V1OrderBook)
-v1OrderbooksSymbolIdLatestGet symbolId_path limit_query limitLevels_query auth_token =
-    Api.request
-        "GET"
-        "/v1/orderbooks/{symbol_id}/latest"
-        [ ( "symbol_id", identity symbolId_path ) ]
-        [ ( "limit", Maybe.map String.fromInt limit_query ), ( "limit_levels", Maybe.map String.fromInt limitLevels_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.v1OrderBookDecoder)

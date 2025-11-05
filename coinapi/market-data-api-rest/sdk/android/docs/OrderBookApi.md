@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**v1OrderbooksSymbolIdCurrentGet**](OrderBookApi.md#v1OrderbooksSymbolIdCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/current | Get current order book
 [**v1OrderbooksSymbolIdDepthCurrentGet**](OrderBookApi.md#v1OrderbooksSymbolIdDepthCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book
 [**v1OrderbooksSymbolIdHistoryGet**](OrderBookApi.md#v1OrderbooksSymbolIdHistoryGet) | **GET** /v1/orderbooks/{symbol_id}/history | Historical data
-[**v1OrderbooksSymbolIdLatestGet**](OrderBookApi.md#v1OrderbooksSymbolIdLatestGet) | **GET** /v1/orderbooks/{symbol_id}/latest | Latest data
 
 
 
@@ -147,56 +146,6 @@ Name | Type | Description  | Notes
  **timeStart** | **String**| Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] [default to null]
  **timeEnd** | **String**| Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] [default to null]
  **limit** | **Integer**| Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **limitLevels** | **Integer**| Maximum amount of levels from each side of the book to include in response (optional) | [optional] [default to null]
-
-### Return type
-
-[**List&lt;V1OrderBook&gt;**](V1OrderBook.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-
-## v1OrderbooksSymbolIdLatestGet
-
-> List&lt;V1OrderBook&gt; v1OrderbooksSymbolIdLatestGet(symbolId, limit, limitLevels)
-
-Latest data
-
-Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-
-### Example
-
-```java
-// Import classes:
-//import org.openapitools.client.api.OrderBookApi;
-
-OrderBookApi apiInstance = new OrderBookApi();
-String symbolId = null; // String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
-Integer limit = 100; // Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-Integer limitLevels = null; // Integer | Maximum amount of levels from each side of the book to include in response (optional)
-try {
-    List<V1OrderBook> result = apiInstance.v1OrderbooksSymbolIdLatestGet(symbolId, limit, limitLevels);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OrderBookApi#v1OrderbooksSymbolIdLatestGet");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **symbolId** | **String**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | [default to null]
- **limit** | **Integer**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
  **limitLevels** | **Integer**| Maximum amount of levels from each side of the book to include in response (optional) | [optional] [default to null]
 
 ### Return type

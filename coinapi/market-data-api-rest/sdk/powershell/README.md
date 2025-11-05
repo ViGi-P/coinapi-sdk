@@ -93,7 +93,6 @@ Class | Method | HTTP request | Description
 *OrderBookApi* | [**Invoke-V1OrderbooksSymbolIdCurrentGet**](docs/OrderBookApi.md#Invoke-V1OrderbooksSymbolIdCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/current | Get current order book
 *OrderBookApi* | [**Invoke-V1OrderbooksSymbolIdDepthCurrentGet**](docs/OrderBookApi.md#Invoke-V1OrderbooksSymbolIdDepthCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book
 *OrderBookApi* | [**Invoke-V1OrderbooksSymbolIdHistoryGet**](docs/OrderBookApi.md#Invoke-V1OrderbooksSymbolIdHistoryGet) | **GET** /v1/orderbooks/{symbol_id}/history | Historical data
-*OrderBookApi* | [**Invoke-V1OrderbooksSymbolIdLatestGet**](docs/OrderBookApi.md#Invoke-V1OrderbooksSymbolIdLatestGet) | **GET** /v1/orderbooks/{symbol_id}/latest | Latest data
 *OrderBookL3Api* | [**Invoke-V1Orderbooks3CurrentGet**](docs/OrderBookL3Api.md#Invoke-V1Orderbooks3CurrentGet) | **GET** /v1/orderbooks3/current | Current order books
 *OrderBookL3Api* | [**Invoke-V1Orderbooks3SymbolIdCurrentGet**](docs/OrderBookL3Api.md#Invoke-V1Orderbooks3SymbolIdCurrentGet) | **GET** /v1/orderbooks3/{symbol_id}/current | Current order book by symbol_id
 *QuotesApi* | [**Invoke-V1QuotesCurrentGet**](docs/QuotesApi.md#Invoke-V1QuotesCurrentGet) | **GET** /v1/quotes/current | Current data

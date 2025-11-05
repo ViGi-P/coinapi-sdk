@@ -109,7 +109,6 @@ _()
     operations["v1OrderbooksSymbolIdCurrentGet"]=1
     operations["v1OrderbooksSymbolIdDepthCurrentGet"]=1
     operations["v1OrderbooksSymbolIdHistoryGet"]=1
-    operations["v1OrderbooksSymbolIdLatestGet"]=1
     operations["v1Orderbooks3CurrentGet"]=1
     operations["v1Orderbooks3SymbolIdCurrentGet"]=1
     operations["v1QuotesCurrentGet"]=1
@@ -164,7 +163,6 @@ _()
     operation_parameters["v1OrderbooksSymbolIdCurrentGet"]="symbol_id= limit_levels= "
     operation_parameters["v1OrderbooksSymbolIdDepthCurrentGet"]="symbol_id= limit_levels= "
     operation_parameters["v1OrderbooksSymbolIdHistoryGet"]="symbol_id= date= time_start= time_end= limit= limit_levels= "
-    operation_parameters["v1OrderbooksSymbolIdLatestGet"]="symbol_id= limit= limit_levels= "
     operation_parameters["v1Orderbooks3CurrentGet"]="filter_symbol_id= limit_levels= "
     operation_parameters["v1Orderbooks3SymbolIdCurrentGet"]="symbol_id= limit_levels= "
     operation_parameters["v1QuotesCurrentGet"]="filter_symbol_id= "

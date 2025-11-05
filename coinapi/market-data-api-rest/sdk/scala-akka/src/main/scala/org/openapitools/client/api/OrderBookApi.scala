@@ -96,29 +96,6 @@ class OrderBookApi(baseUrl: String) {
       .withSuccessResponse[Seq[OrderBook]](200)
       
 
-  /**
-   * Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-   * 
-   * Expected answers:
-   *   code 200 : Seq[OrderBook] (successful operation)
-   * 
-   * Available security schemes:
-   *   APIKey (apiKey)
-   *   JWT (http)
-   * 
-   * @param symbolId Symbol identifier of requested timeseries (from the Metadata -> Symbols)
-   * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-   * @param limitLevels Maximum amount of levels from each side of the book to include in response (optional)
-   */
-  def v1OrderbooksSymbolIdLatestGet(symbolId: String, limit: Option[Int] = None, limitLevels: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[OrderBook]] =
-    ApiRequest[Seq[OrderBook]](ApiMethods.GET, baseUrl, "/v1/orderbooks/{symbol_id}/latest", "application/json")
-      .withApiKey(apiKey, "Authorization", HEADER)
-      .withCredentials(bearerToken).withQueryParam("limit", limit)
-      .withQueryParam("limit_levels", limitLevels)
-      .withPathParam("symbol_id", symbolId)
-      .withSuccessResponse[Seq[OrderBook]](200)
-      
-
 
 
 }

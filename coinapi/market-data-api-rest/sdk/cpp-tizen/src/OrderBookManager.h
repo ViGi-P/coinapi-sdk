@@ -122,37 +122,6 @@ bool v1OrderbooksSymbolIdHistoryGetAsync(char * accessToken,
 	, void* userData);
 
 
-/*! \brief Latest data. *Synchronous*
- *
- * Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
- * \param symbolId Symbol identifier of requested timeseries (from the Metadata -> Symbols) *Required*
- * \param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
- * \param limitLevels Maximum amount of levels from each side of the book to include in response (optional)
- * \param handler The callback function to be invoked on completion. *Required*
- * \param accessToken The Authorization token. *Required*
- * \param userData The user data to be passed to the callback function.
- */
-bool v1OrderbooksSymbolIdLatestGetSync(char * accessToken,
-	std::string symbolId, int limit, int limitLevels, 
-	void(* handler)(std::list<V1.OrderBook>, Error, void* )
-	, void* userData);
-
-/*! \brief Latest data. *Asynchronous*
- *
- * Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
- * \param symbolId Symbol identifier of requested timeseries (from the Metadata -> Symbols) *Required*
- * \param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
- * \param limitLevels Maximum amount of levels from each side of the book to include in response (optional)
- * \param handler The callback function to be invoked on completion. *Required*
- * \param accessToken The Authorization token. *Required*
- * \param userData The user data to be passed to the callback function.
- */
-bool v1OrderbooksSymbolIdLatestGetAsync(char * accessToken,
-	std::string symbolId, int limit, int limitLevels, 
-	void(* handler)(std::list<V1.OrderBook>, Error, void* )
-	, void* userData);
-
-
 
 	static std::string getBasePath()
 	{

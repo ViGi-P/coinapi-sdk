@@ -131,37 +131,3 @@ Please use the 'date' parameter instead for querying data for a specific day wit
         res))))
 
 
-(defn-spec v1-orderbooks-symbol-id-latest-get-with-http-info any?
-  "Latest data
-  Get latest order book snapshots for a specific symbol, returned in time descending order.
-            
-:::info
-The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.
-:::"
-  ([symbol_id string?, ] (v1-orderbooks-symbol-id-latest-get-with-http-info symbol_id nil))
-  ([symbol_id string?, {:keys [limit limit_levels]} (s/map-of keyword? any?)]
-   (check-required-params symbol_id)
-   (call-api "/v1/orderbooks/{symbol_id}/latest" :get
-             {:path-params   {"symbol_id" symbol_id }
-              :header-params {}
-              :query-params  {"limit" limit "limit_levels" limit_levels }
-              :form-params   {}
-              :content-types []
-              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
-              :auth-names    ["APIKey" "JWT"]})))
-
-(defn-spec v1-orderbooks-symbol-id-latest-get (s/coll-of v1/order-book-spec)
-  "Latest data
-  Get latest order book snapshots for a specific symbol, returned in time descending order.
-            
-:::info
-The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.
-:::"
-  ([symbol_id string?, ] (v1-orderbooks-symbol-id-latest-get symbol_id nil))
-  ([symbol_id string?, optional-params any?]
-   (let [res (:data (v1-orderbooks-symbol-id-latest-get-with-http-info symbol_id optional-params))]
-     (if (:decode-models *api-context*)
-        (st/decode (s/coll-of v1/order-book-spec) res st/string-transformer)
-        res))))
-
-

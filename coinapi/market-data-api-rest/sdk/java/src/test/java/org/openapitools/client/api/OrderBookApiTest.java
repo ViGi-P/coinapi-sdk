@@ -82,20 +82,4 @@ public class OrderBookApiTest {
         // TODO: test validations
     }
 
-    /**
-     * Latest data
-     *
-     * Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void v1OrderbooksSymbolIdLatestGetTest() throws ApiException {
-        String symbolId = null;
-        Integer limit = null;
-        Integer limitLevels = null;
-        List<V1OrderBook> response = api.v1OrderbooksSymbolIdLatestGet(symbolId, limit, limitLevels);
-        // TODO: test validations
-    }
-
 }

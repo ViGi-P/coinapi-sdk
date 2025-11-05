@@ -7,7 +7,6 @@ All URIs are relative to *https://rest.coinapi.io*
 | [**v1_orderbooks_symbol_id_current_get**](OrderBookApi.md#v1_orderbooks_symbol_id_current_get) | **GET** /v1/orderbooks/{symbol_id}/current | Get current order book |
 | [**v1_orderbooks_symbol_id_depth_current_get**](OrderBookApi.md#v1_orderbooks_symbol_id_depth_current_get) | **GET** /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book |
 | [**v1_orderbooks_symbol_id_history_get**](OrderBookApi.md#v1_orderbooks_symbol_id_history_get) | **GET** /v1/orderbooks/{symbol_id}/history | Historical data |
-| [**v1_orderbooks_symbol_id_latest_get**](OrderBookApi.md#v1_orderbooks_symbol_id_latest_get) | **GET** /v1/orderbooks/{symbol_id}/latest | Latest data |
 
 
 ## v1_orderbooks_symbol_id_current_get
@@ -236,86 +235,6 @@ end
 | **time_start** | **String** | Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] |
 | **time_end** | **String** | Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] |
 | **limit** | **Integer** | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional][default to 100] |
-| **limit_levels** | **Integer** | Maximum amount of levels from each side of the book to include in response (optional) | [optional] |
-
-### Return type
-
-[**Array&lt;V1OrderBook&gt;**](V1OrderBook.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-
-## v1_orderbooks_symbol_id_latest_get
-
-> <Array<V1OrderBook>> v1_orderbooks_symbol_id_latest_get(symbol_id, opts)
-
-Latest data
-
-Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-# setup authorization
-OpenapiClient.configure do |config|
-  # Configure API key authorization: APIKey
-  config.api_key['Authorization'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['Authorization'] = 'Bearer'
-
-  # Configure Bearer authorization (JWT): JWT
-  config.access_token = 'YOUR_BEARER_TOKEN'
-end
-
-api_instance = OpenapiClient::OrderBookApi.new
-symbol_id = 'symbol_id_example' # String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
-opts = {
-  limit: 56, # Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  limit_levels: 56 # Integer | Maximum amount of levels from each side of the book to include in response (optional)
-}
-
-begin
-  # Latest data
-  result = api_instance.v1_orderbooks_symbol_id_latest_get(symbol_id, opts)
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling OrderBookApi->v1_orderbooks_symbol_id_latest_get: #{e}"
-end
-```
-
-#### Using the v1_orderbooks_symbol_id_latest_get_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<Array<V1OrderBook>>, Integer, Hash)> v1_orderbooks_symbol_id_latest_get_with_http_info(symbol_id, opts)
-
-```ruby
-begin
-  # Latest data
-  data, status_code, headers = api_instance.v1_orderbooks_symbol_id_latest_get_with_http_info(symbol_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <Array<V1OrderBook>>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling OrderBookApi->v1_orderbooks_symbol_id_latest_get_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **symbol_id** | **String** | Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) |  |
-| **limit** | **Integer** | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional][default to 100] |
 | **limit_levels** | **Integer** | Maximum amount of levels from each side of the book to include in response (optional) | [optional] |
 
 ### Return type

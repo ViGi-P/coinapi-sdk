@@ -124,42 +124,4 @@ defmodule CoinAPIMarketDataRESTAPI.Api.OrderBook do
       {200, CoinAPIMarketDataRESTAPI.Model.V1OrderBook}
     ])
   end
-
-  @doc """
-  Latest data
-  Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-
-  ### Parameters
-
-  - `connection` (CoinAPIMarketDataRESTAPI.Connection): Connection to server
-  - `symbol_id` (String.t): Symbol identifier of requested timeseries (from the Metadata -> Symbols)
-  - `opts` (keyword): Optional parameters
-    - `:limit` (integer()): Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-    - `:limit_levels` (integer()): Maximum amount of levels from each side of the book to include in response (optional)
-
-  ### Returns
-
-  - `{:ok, [%V1OrderBook{}, ...]}` on success
-  - `{:error, Tesla.Env.t}` on failure
-  """
-  @spec v1_orderbooks_symbol_id_latest_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1OrderBook.t]} | {:error, Tesla.Env.t}
-  def v1_orderbooks_symbol_id_latest_get(connection, symbol_id, opts \\ []) do
-    optional_params = %{
-      :limit => :query,
-      :limit_levels => :query
-    }
-
-    request =
-      %{}
-      |> method(:get)
-      |> url("/v1/orderbooks/#{symbol_id}/latest")
-      |> add_optional_params(optional_params, opts)
-      |> Enum.into([])
-
-    connection
-    |> Connection.request(request)
-    |> evaluate_response([
-      {200, CoinAPIMarketDataRESTAPI.Model.V1OrderBook}
-    ])
-  end
 end

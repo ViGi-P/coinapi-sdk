@@ -31,12 +31,4 @@ Describe -tag 'PSOpenAPITools' -name 'OrderBookApi' {
         }
     }
 
-    Context 'Invoke-V1OrderbooksSymbolIdLatestGet' {
-        It 'Test Invoke-V1OrderbooksSymbolIdLatestGet' {
-            #$TestResult = Invoke-V1OrderbooksSymbolIdLatestGet -SymbolId "TEST_VALUE" -Limit "TEST_VALUE" -LimitLevels "TEST_VALUE"
-            #$TestResult | Should -BeOfType TODO
-            #$TestResult.property | Should -Be 0
-        }
-    }
-
 }

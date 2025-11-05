@@ -34,11 +34,3 @@ list_t*
 OrderBookAPI_v1OrderbooksSymbolIdHistoryGet(apiClient_t *apiClient, char *symbol_id, char *date, char *time_start, char *time_end, int *limit, int *limit_levels);
 
 
-// Latest data
-//
-// Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-//
-list_t*
-OrderBookAPI_v1OrderbooksSymbolIdLatestGet(apiClient_t *apiClient, char *symbol_id, int *limit, int *limit_levels);
-
-

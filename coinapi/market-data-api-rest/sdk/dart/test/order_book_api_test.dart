@@ -44,14 +44,5 @@ void main() {
       // TODO
     });
 
-    // Latest data
-    //
-    // Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-    //
-    //Future<List<V1OrderBook>> v1OrderbooksSymbolIdLatestGet(String symbolId, { int limit, int limitLevels }) async
-    test('test v1OrderbooksSymbolIdLatestGet', () async {
-      // TODO
-    });
-
   });
 }

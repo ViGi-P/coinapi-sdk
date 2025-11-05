@@ -48,13 +48,6 @@ class TestOrderBookApi(unittest.TestCase):
         """
         pass
 
-    def test_v1_orderbooks_symbol_id_latest_get(self) -> None:
-        """Test case for v1_orderbooks_symbol_id_latest_get
-
-        Latest data
-        """
-        pass
-
 
 if __name__ == '__main__':
     unittest.main()

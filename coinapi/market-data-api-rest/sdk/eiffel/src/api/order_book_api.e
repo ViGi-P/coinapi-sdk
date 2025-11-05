@@ -153,47 +153,5 @@ feature -- API Access
 			end
 		end
 
-	v1_orderbooks_symbol_id_latest_get (symbol_id: STRING_32; limit: INTEGER_32; limit_levels: INTEGER_32): detachable LIST [V1_ORDER_BOOK]
-			-- Latest data
-			-- Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-			-- 
-			-- argument: symbol_id Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
-			-- 
-			-- argument: limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-			-- 
-			-- argument: limit_levels Maximum amount of levels from each side of the book to include in response (optional) (optional, default to null)
-			-- 
-			-- 
-			-- Result LIST [V1_ORDER_BOOK]
-		require
-		local
-  			l_path: STRING
-  			l_request: API_CLIENT_REQUEST
-  			l_response: API_CLIENT_RESPONSE
-		do
-			reset_error
-			create l_request
-			
-			l_path := "/v1/orderbooks/{symbol_id}/latest"
-			l_path.replace_substring_all ("{"+"symbol_id"+"}", api_client.url_encode (symbol_id.out))
-			l_request.fill_query_params(api_client.parameter_to_tuple("", "limit", limit));
-			l_request.fill_query_params(api_client.parameter_to_tuple("", "limit_levels", limit_levels));
-
-
-			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"text/plain", "application/json", "text/json", "application/x-msgpack">>)  as l_accept then
-				l_request.add_header(l_accept,"Accept");
-			end
-			l_request.add_header(api_client.select_header_content_type ({ARRAY [STRING]}<<>>),"Content-Type")
-			l_request.set_auth_names ({ARRAY [STRING]}<<"APIKey", "JWT">>)
-			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
-			if l_response.has_error then
-				last_error := l_response.error
-			elseif attached { LIST [V1_ORDER_BOOK] } l_response.data ({ LIST [V1_ORDER_BOOK] }) as l_data then
-				Result := l_data
-			else
-				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
-			end
-		end
-
 
 end

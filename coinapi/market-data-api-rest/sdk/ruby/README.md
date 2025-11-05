@@ -134,7 +134,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::OrderBookApi* | [**v1_orderbooks_symbol_id_current_get**](docs/OrderBookApi.md#v1_orderbooks_symbol_id_current_get) | **GET** /v1/orderbooks/{symbol_id}/current | Get current order book
 *OpenapiClient::OrderBookApi* | [**v1_orderbooks_symbol_id_depth_current_get**](docs/OrderBookApi.md#v1_orderbooks_symbol_id_depth_current_get) | **GET** /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book
 *OpenapiClient::OrderBookApi* | [**v1_orderbooks_symbol_id_history_get**](docs/OrderBookApi.md#v1_orderbooks_symbol_id_history_get) | **GET** /v1/orderbooks/{symbol_id}/history | Historical data
-*OpenapiClient::OrderBookApi* | [**v1_orderbooks_symbol_id_latest_get**](docs/OrderBookApi.md#v1_orderbooks_symbol_id_latest_get) | **GET** /v1/orderbooks/{symbol_id}/latest | Latest data
 *OpenapiClient::OrderBookL3Api* | [**v1_orderbooks3_current_get**](docs/OrderBookL3Api.md#v1_orderbooks3_current_get) | **GET** /v1/orderbooks3/current | Current order books
 *OpenapiClient::OrderBookL3Api* | [**v1_orderbooks3_symbol_id_current_get**](docs/OrderBookL3Api.md#v1_orderbooks3_symbol_id_current_get) | **GET** /v1/orderbooks3/{symbol_id}/current | Current order book by symbol_id
 *OpenapiClient::QuotesApi* | [**v1_quotes_current_get**](docs/QuotesApi.md#v1_quotes_current_get) | **GET** /v1/quotes/current | Current data

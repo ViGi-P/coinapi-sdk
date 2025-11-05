@@ -7,7 +7,6 @@ All URIs are relative to *https://rest.coinapi.io*
 | [**v1OrderbooksSymbolIdCurrentGet**](OrderBookApi.md#v1OrderbooksSymbolIdCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/current | Get current order book |
 | [**v1OrderbooksSymbolIdDepthCurrentGet**](OrderBookApi.md#v1OrderbooksSymbolIdDepthCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book |
 | [**v1OrderbooksSymbolIdHistoryGet**](OrderBookApi.md#v1OrderbooksSymbolIdHistoryGet) | **GET** /v1/orderbooks/{symbol_id}/history | Historical data |
-| [**v1OrderbooksSymbolIdLatestGet**](OrderBookApi.md#v1OrderbooksSymbolIdLatestGet) | **GET** /v1/orderbooks/{symbol_id}/latest | Latest data |
 
 
 <a id="v1OrderbooksSymbolIdCurrentGet"></a>
@@ -223,83 +222,6 @@ public class Example {
 | **timeStart** | **String**| Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] |
 | **timeEnd** | **String**| Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] |
 | **limit** | **Integer**| Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
-| **limitLevels** | **Integer**| Maximum amount of levels from each side of the book to include in response (optional) | [optional] |
-
-### Return type
-
-[**List&lt;V1OrderBook&gt;**](V1OrderBook.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | successful operation |  -  |
-
-<a id="v1OrderbooksSymbolIdLatestGet"></a>
-# **v1OrderbooksSymbolIdLatestGet**
-> List&lt;V1OrderBook&gt; v1OrderbooksSymbolIdLatestGet(symbolId, limit, limitLevels)
-
-Latest data
-
-Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.OrderBookApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://rest.coinapi.io");
-    
-    // Configure API key authorization: APIKey
-    ApiKeyAuth APIKey = (ApiKeyAuth) defaultClient.getAuthentication("APIKey");
-    APIKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //APIKey.setApiKeyPrefix("Token");
-
-    // Configure HTTP bearer authorization: JWT
-    HttpBearerAuth JWT = (HttpBearerAuth) defaultClient.getAuthentication("JWT");
-    JWT.setBearerToken("BEARER TOKEN");
-
-    OrderBookApi apiInstance = new OrderBookApi(defaultClient);
-    String symbolId = "symbolId_example"; // String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
-    Integer limit = 100; // Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-    Integer limitLevels = 56; // Integer | Maximum amount of levels from each side of the book to include in response (optional)
-    try {
-      List<V1OrderBook> result = apiInstance.v1OrderbooksSymbolIdLatestGet(symbolId, limit, limitLevels);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling OrderBookApi#v1OrderbooksSymbolIdLatestGet");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **symbolId** | **String**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | |
-| **limit** | **Integer**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
 | **limitLevels** | **Integer**| Maximum amount of levels from each side of the book to include in response (optional) | [optional] |
 
 ### Return type

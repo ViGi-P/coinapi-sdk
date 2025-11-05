@@ -91,20 +91,6 @@ public:
         boost::optional<int32_t> limit,
         boost::optional<int32_t> limitLevels
     ) const;
-    /// <summary>
-    /// Latest data
-    /// </summary>
-    /// <remarks>
-    /// Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-    /// </remarks>
-    /// <param name="symbolId">Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)</param>
-    /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 0)</param>
-    /// <param name="limitLevels">Maximum amount of levels from each side of the book to include in response (optional) (optional, default to 0)</param>
-    pplx::task<std::vector<std::shared_ptr<V1_OrderBook>>> v1OrderbooksSymbolIdLatestGet(
-        utility::string_t symbolId,
-        boost::optional<int32_t> limit,
-        boost::optional<int32_t> limitLevels
-    ) const;
 
 protected:
     std::shared_ptr<const ApiClient> m_ApiClient;

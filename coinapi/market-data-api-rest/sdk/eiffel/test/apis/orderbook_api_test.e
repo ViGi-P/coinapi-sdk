@@ -65,23 +65,6 @@ feature -- Test routines
             assert ("not_implemented", False)
         end
 
-    test_v1_orderbooks_symbol_id_latest_get
-            -- Latest data
-            --
-            -- Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-        local
-            l_response: LIST [V1_ORDER_BOOK]
-            l_symbol_id: STRING_32
-            l_limit: INTEGER_32
-            l_limit_levels: INTEGER_32
-        do
-            -- TODO: Initialize required params.
-            -- l_symbol_id
-
-            -- l_response := api.v1_orderbooks_symbol_id_latest_get(l_symbol_id, l_limit, l_limit_levels)
-            assert ("not_implemented", False)
-        end
-
 feature {NONE} -- Implementation
 
     api: ORDERBOOK_API

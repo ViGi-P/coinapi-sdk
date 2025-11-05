@@ -47,17 +47,3 @@ test_that("V1OrderbooksSymbolIdHistoryGet", {
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
 })
-
-test_that("V1OrderbooksSymbolIdLatestGet", {
-  # tests for V1OrderbooksSymbolIdLatestGet
-  # base path: https://rest.coinapi.io
-  # Latest data
-  # Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-  # @param symbol_id character Symbol identifier of requested timeseries (from the Metadata -> Symbols)
-  # @param limit integer Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional)
-  # @param limit_levels integer Maximum amount of levels from each side of the book to include in response (optional) (optional)
-  # @return [array[V1OrderBook]]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})

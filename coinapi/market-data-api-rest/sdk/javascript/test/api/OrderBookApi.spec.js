@@ -78,16 +78,6 @@
         done();
       });
     });
-    describe('v1OrderbooksSymbolIdLatestGet', function() {
-      it('should call v1OrderbooksSymbolIdLatestGet successfully', function(done) {
-        //uncomment below and update the code to test v1OrderbooksSymbolIdLatestGet
-        //instance.v1OrderbooksSymbolIdLatestGet(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
   });
 
 }));

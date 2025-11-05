@@ -330,8 +330,7 @@ case $state in
             "v1OhlcvSymbolIdHistoryGet[Historical data]" \
             "v1OhlcvSymbolIdLatestGet[Latest data]"             "v1OptionsExchangeIdCurrentGet[Current data by Exchange]"             "v1OrderbooksSymbolIdCurrentGet[Get current order book]" \
             "v1OrderbooksSymbolIdDepthCurrentGet[Current depth of the order book]" \
-            "v1OrderbooksSymbolIdHistoryGet[Historical data]" \
-            "v1OrderbooksSymbolIdLatestGet[Latest data]"             "v1Orderbooks3CurrentGet[Current order books]" \
+            "v1OrderbooksSymbolIdHistoryGet[Historical data]"             "v1Orderbooks3CurrentGet[Current order books]" \
             "v1Orderbooks3SymbolIdCurrentGet[Current order book by symbol_id]"             "v1QuotesCurrentGet[Current data]" \
             "v1QuotesLatestGet[Latest data]" \
             "v1QuotesSymbolIdCurrentGet[Current quotes for a specific symbol]" \
@@ -701,15 +700,6 @@ case $state in
 "time_start=:[QUERY] Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead)"
 "time_end=:[QUERY] Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead)"
 "limit=:[QUERY] Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)"
-"limit_levels=:[QUERY] Maximum amount of levels from each side of the book to include in response (optional)"
-          )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      v1OrderbooksSymbolIdLatestGet)
-        local -a _op_arguments
-        _op_arguments=(
-          "symbol_id=:[PATH] Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)"
-          "limit=:[QUERY] Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)"
 "limit_levels=:[QUERY] Maximum amount of levels from each side of the book to include in response (optional)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0

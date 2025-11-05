@@ -103,34 +103,4 @@ class OrderBookApi {
 
     }
 
-    def v1OrderbooksSymbolIdLatestGet ( String symbolId, Integer limit, Integer limitLevels, Closure onSuccess, Closure onFailure)  {
-        String resourcePath = "/v1/orderbooks/${symbol_id}/latest"
-
-        // params
-        def queryParams = [:]
-        def headerParams = [:]
-        def bodyParams
-        def contentType
-
-        // verify required params are set
-        if (symbolId == null) {
-            throw new RuntimeException("missing required params symbolId")
-        }
-
-        if (limit != null) {
-            queryParams.put("limit", limit)
-        }
-        if (limitLevels != null) {
-            queryParams.put("limit_levels", limitLevels)
-        }
-
-
-
-
-        apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
-                    "GET", "array",
-                    V1OrderBook.class )
-
-    }
-
 }

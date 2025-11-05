@@ -4274,51 +4274,6 @@ export const OrderBookApiFetchParamCreator = function (configuration?: Configura
                 options: localVarRequestOptions,
             };
         },
-        /**
-         * Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-         * @summary Latest data
-         * @throws {RequiredError}
-         */
-        v1OrderbooksSymbolIdLatestGet(symbolId: string, limit?: number, limitLevels?: number, options: RequestOptions): FetchArgs {
-            // verify required parameter 'symbolId' is not null or undefined
-            if (symbolId === null || symbolId === undefined) {
-                throw new RequiredError('symbolId','Required parameter symbolId was null or undefined when calling v1OrderbooksSymbolIdLatestGet.');
-            }
-            const localVarPath = `/v1/orderbooks/{symbol_id}/latest`
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
-            const localVarUrlObj = url.parse(localVarPath, true);
-            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
-            const localVarHeaderParameter = {};
-            const localVarQueryParameter = {};
-
-            // authentication APIKey required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
-
-            // authentication JWT required
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = ((limit:any):string);
-            }
-
-            if (limitLevels !== undefined) {
-                localVarQueryParameter['limit_levels'] = ((limitLevels:any):string);
-            }
-
-            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            localVarUrlObj.search = null;
-            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-
-            return {
-                url: url.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
     }
 };
 
@@ -4328,8 +4283,6 @@ export type OrderBookApiType = {
     v1OrderbooksSymbolIdDepthCurrentGet(symbolId: string, limitLevels?: number, options?: RequestOptions): Promise<V1OrderBookDepth>,
 
     v1OrderbooksSymbolIdHistoryGet(symbolId: string, _date?: string, timeStart?: string, timeEnd?: string, limit?: number, limitLevels?: number, options?: RequestOptions): Promise<Array<V1OrderBook>>,
-
-    v1OrderbooksSymbolIdLatestGet(symbolId: string, limit?: number, limitLevels?: number, options?: RequestOptions): Promise<Array<V1OrderBook>>,
 }
 
 /**
@@ -4376,21 +4329,6 @@ export const OrderBookApi = function(configuration?: Configuration, fetch: Fetch
          */
         v1OrderbooksSymbolIdHistoryGet(symbolId: string, _date?: string, timeStart?: string, timeEnd?: string, limit?: number, limitLevels?: number, options?: RequestOptions = {}): Promise<Array<V1OrderBook>> {
             const localVarFetchArgs = OrderBookApiFetchParamCreator(configuration).v1OrderbooksSymbolIdHistoryGet(symbolId, _date, timeStart, timeEnd, limit, limitLevels, options);
-            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
-                if (response.status >= 200 && response.status < 300) {
-                    return response.json();
-                } else {
-                    throw response;
-                }
-            });
-        },
-        /**
-         * Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-         * @summary Latest data
-         * @throws {RequiredError}
-         */
-        v1OrderbooksSymbolIdLatestGet(symbolId: string, limit?: number, limitLevels?: number, options?: RequestOptions = {}): Promise<Array<V1OrderBook>> {
-            const localVarFetchArgs = OrderBookApiFetchParamCreator(configuration).v1OrderbooksSymbolIdLatestGet(symbolId, limit, limitLevels, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();

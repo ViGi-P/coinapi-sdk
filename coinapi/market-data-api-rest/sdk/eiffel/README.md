@@ -63,7 +63,6 @@ Class | Method | HTTP request | Description
 *ORDERBOOK_API* | [**v1_orderbooks_symbol_id_current_get**](docs/ORDERBOOK_API.md#v1_orderbooks_symbol_id_current_get) | **Get** /v1/orderbooks/{symbol_id}/current | Get current order book
 *ORDERBOOK_API* | [**v1_orderbooks_symbol_id_depth_current_get**](docs/ORDERBOOK_API.md#v1_orderbooks_symbol_id_depth_current_get) | **Get** /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book
 *ORDERBOOK_API* | [**v1_orderbooks_symbol_id_history_get**](docs/ORDERBOOK_API.md#v1_orderbooks_symbol_id_history_get) | **Get** /v1/orderbooks/{symbol_id}/history | Historical data
-*ORDERBOOK_API* | [**v1_orderbooks_symbol_id_latest_get**](docs/ORDERBOOK_API.md#v1_orderbooks_symbol_id_latest_get) | **Get** /v1/orderbooks/{symbol_id}/latest | Latest data
 *ORDERBOOKL3_API* | [**v1_orderbooks3_current_get**](docs/ORDERBOOKL3_API.md#v1_orderbooks3_current_get) | **Get** /v1/orderbooks3/current | Current order books
 *ORDERBOOKL3_API* | [**v1_orderbooks3_symbol_id_current_get**](docs/ORDERBOOKL3_API.md#v1_orderbooks3_symbol_id_current_get) | **Get** /v1/orderbooks3/{symbol_id}/current | Current order book by symbol_id
 *QUOTES_API* | [**v1_quotes_current_get**](docs/QUOTES_API.md#v1_quotes_current_get) | **Get** /v1/quotes/current | Current data

@@ -7,7 +7,6 @@ Feature | HTTP request | Description
 [**v1_orderbooks_symbol_id_current_get**](ORDERBOOK_API.md#v1_orderbooks_symbol_id_current_get) | **Get** /v1/orderbooks/{symbol_id}/current | Get current order book
 [**v1_orderbooks_symbol_id_depth_current_get**](ORDERBOOK_API.md#v1_orderbooks_symbol_id_depth_current_get) | **Get** /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book
 [**v1_orderbooks_symbol_id_history_get**](ORDERBOOK_API.md#v1_orderbooks_symbol_id_history_get) | **Get** /v1/orderbooks/{symbol_id}/history | Historical data
-[**v1_orderbooks_symbol_id_latest_get**](ORDERBOOK_API.md#v1_orderbooks_symbol_id_latest_get) | **Get** /v1/orderbooks/{symbol_id}/latest | Latest data
 
 
 # **v1_orderbooks_symbol_id_current_get**
@@ -90,38 +89,6 @@ Name | Type | Description  | Notes
  **time_start** | **STRING_32**| Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] [default to null]
  **time_end** | **STRING_32**| Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] [default to null]
  **limit** | **INTEGER_32**| Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **limit_levels** | **INTEGER_32**| Maximum amount of levels from each side of the book to include in response (optional) | [optional] [default to null]
-
-### Return type
-
-[**LIST [V1_ORDER_BOOK]**](v1.OrderBook.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **v1_orderbooks_symbol_id_latest_get**
-> v1_orderbooks_symbol_id_latest_get (symbol_id: STRING_32 ; limit:  detachable INTEGER_32 ; limit_levels:  detachable INTEGER_32 ): detachable LIST [V1_ORDER_BOOK]
-
-
-Latest data
-
-Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **symbol_id** | **STRING_32**| Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | [default to null]
- **limit** | **INTEGER_32**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
  **limit_levels** | **INTEGER_32**| Maximum amount of levels from each side of the book to include in response (optional) | [optional] [default to null]
 
 ### Return type

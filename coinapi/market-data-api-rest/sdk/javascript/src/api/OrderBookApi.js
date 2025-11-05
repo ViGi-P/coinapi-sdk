@@ -185,54 +185,5 @@ export default class OrderBookApi {
       );
     }
 
-    /**
-     * Callback function to receive the result of the v1OrderbooksSymbolIdLatestGet operation.
-     * @callback module:api/OrderBookApi~v1OrderbooksSymbolIdLatestGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/V1OrderBook>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Latest data
-     * Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-     * @param {String} symbolId Symbol identifier of requested timeseries (from the Metadata -> Symbols)
-     * @param {Object} opts Optional parameters
-     * @param {Number} [limit = 100)] Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-     * @param {Number} [limitLevels] Maximum amount of levels from each side of the book to include in response (optional)
-     * @param {module:api/OrderBookApi~v1OrderbooksSymbolIdLatestGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/V1OrderBook>}
-     */
-    v1OrderbooksSymbolIdLatestGet(symbolId, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'symbolId' is set
-      if (symbolId === undefined || symbolId === null) {
-        throw new Error("Missing the required parameter 'symbolId' when calling v1OrderbooksSymbolIdLatestGet");
-      }
-
-      let pathParams = {
-        'symbol_id': symbolId
-      };
-      let queryParams = {
-        'limit': opts['limit'],
-        'limit_levels': opts['limitLevels']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['APIKey', 'JWT'];
-      let contentTypes = [];
-      let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [V1OrderBook];
-      return this.apiClient.callApi(
-        '/v1/orderbooks/{symbol_id}/latest', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
 
 }

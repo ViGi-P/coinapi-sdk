@@ -107,16 +107,4 @@ class OrderBookApiTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test case for v1OrderbooksSymbolIdLatestGet
-     *
-     * Latest data.
-     *
-     */
-    public function testV1OrderbooksSymbolIdLatestGet()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

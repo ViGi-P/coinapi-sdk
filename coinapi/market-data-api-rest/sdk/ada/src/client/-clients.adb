@@ -1068,32 +1068,6 @@ package body .Clients is
       .Models.Deserialize (Reply, "", Result);
    end V_1Orderbooks_Symbol_Id_History_Get;
 
-   --  Latest data
-   --  Get latest order book snapshots for a specific symbol, returned in time descending order.
-   --              
-   --  :::info
-   --  The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.
-   --  :::
-   procedure V_1Orderbooks_Symbol_Id_Latest_Get
-      (Client : in out Client_Type;
-       Symbol_Id : in Swagger.UString;
-       Limit : in Swagger.Nullable_Integer;
-       Limit_Levels : in Swagger.Nullable_Integer;
-       Result : out .Models.V1OrderBook_Type_Vectors.Vector) is
-      URI   : Swagger.Clients.URI_Type;
-      Reply : Swagger.Value_Type;
-   begin
-      Client.Set_Accept (Media_List_1);
-
-
-      URI.Add_Param ("limit", Limit);
-      URI.Add_Param ("limit_levels", Limit_Levels);
-      URI.Set_Path ("/v1/orderbooks/{symbol_id}/latest");
-      URI.Set_Path_Param ("symbol_id", Symbol_Id);
-      Client.Call (Swagger.Clients.GET, URI, Reply);
-      .Models.Deserialize (Reply, "", Result);
-   end V_1Orderbooks_Symbol_Id_Latest_Get;
-
    --  Current order books
    procedure V_1Orderbooks_3Current_Get
       (Client : in out Client_Type;

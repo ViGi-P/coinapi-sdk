@@ -57,14 +57,5 @@ isa_ok($api, 'WWW::OpenAPIClient::OrderBookApi');
 #my $v1_orderbooks_symbol_id_history_get_limit_levels = undef; # replace NULL with a proper value
 #my $v1_orderbooks_symbol_id_history_get_result = $api->v1_orderbooks_symbol_id_history_get(symbol_id => $v1_orderbooks_symbol_id_history_get_symbol_id, date => $v1_orderbooks_symbol_id_history_get_date, time_start => $v1_orderbooks_symbol_id_history_get_time_start, time_end => $v1_orderbooks_symbol_id_history_get_time_end, limit => $v1_orderbooks_symbol_id_history_get_limit, limit_levels => $v1_orderbooks_symbol_id_history_get_limit_levels);
 
-#
-# v1_orderbooks_symbol_id_latest_get test
-#
-# uncomment below and update the test
-#my $v1_orderbooks_symbol_id_latest_get_symbol_id = undef; # replace NULL with a proper value
-#my $v1_orderbooks_symbol_id_latest_get_limit = undef; # replace NULL with a proper value
-#my $v1_orderbooks_symbol_id_latest_get_limit_levels = undef; # replace NULL with a proper value
-#my $v1_orderbooks_symbol_id_latest_get_result = $api->v1_orderbooks_symbol_id_latest_get(symbol_id => $v1_orderbooks_symbol_id_latest_get_symbol_id, limit => $v1_orderbooks_symbol_id_latest_get_limit, limit_levels => $v1_orderbooks_symbol_id_latest_get_limit_levels);
-
 
 done_testing();

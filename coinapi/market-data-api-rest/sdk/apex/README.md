@@ -107,7 +107,6 @@ Class | Method | HTTP request | Description
 *OASOrderBookApi* | [**v1OrderbooksSymbolIdCurrentGet**](OASOrderBookApi.md#v1OrderbooksSymbolIdCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/current | Get current order book
 *OASOrderBookApi* | [**v1OrderbooksSymbolIdDepthCurrentGet**](OASOrderBookApi.md#v1OrderbooksSymbolIdDepthCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book
 *OASOrderBookApi* | [**v1OrderbooksSymbolIdHistoryGet**](OASOrderBookApi.md#v1OrderbooksSymbolIdHistoryGet) | **GET** /v1/orderbooks/{symbol_id}/history | Historical data
-*OASOrderBookApi* | [**v1OrderbooksSymbolIdLatestGet**](OASOrderBookApi.md#v1OrderbooksSymbolIdLatestGet) | **GET** /v1/orderbooks/{symbol_id}/latest | Latest data
 *OASOrderBookL3Api* | [**v1Orderbooks3CurrentGet**](OASOrderBookL3Api.md#v1Orderbooks3CurrentGet) | **GET** /v1/orderbooks3/current | Current order books
 *OASOrderBookL3Api* | [**v1Orderbooks3SymbolIdCurrentGet**](OASOrderBookL3Api.md#v1Orderbooks3SymbolIdCurrentGet) | **GET** /v1/orderbooks3/{symbol_id}/current | Current order book by symbol_id
 *OASQuotesApi* | [**v1QuotesCurrentGet**](OASQuotesApi.md#v1QuotesCurrentGet) | **GET** /v1/quotes/current | Current data

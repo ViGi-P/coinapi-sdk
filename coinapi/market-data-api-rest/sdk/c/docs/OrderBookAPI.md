@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**OrderBookAPI_v1OrderbooksSymbolIdCurrentGet**](OrderBookAPI.md#OrderBookAPI_v1OrderbooksSymbolIdCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/current | Get current order book
 [**OrderBookAPI_v1OrderbooksSymbolIdDepthCurrentGet**](OrderBookAPI.md#OrderBookAPI_v1OrderbooksSymbolIdDepthCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book
 [**OrderBookAPI_v1OrderbooksSymbolIdHistoryGet**](OrderBookAPI.md#OrderBookAPI_v1OrderbooksSymbolIdHistoryGet) | **GET** /v1/orderbooks/{symbol_id}/history | Historical data
-[**OrderBookAPI_v1OrderbooksSymbolIdLatestGet**](OrderBookAPI.md#OrderBookAPI_v1OrderbooksSymbolIdLatestGet) | **GET** /v1/orderbooks/{symbol_id}/latest | Latest data
 
 
 # **OrderBookAPI_v1OrderbooksSymbolIdCurrentGet**
@@ -92,39 +91,6 @@ Name | Type | Description  | Notes
 **time_start** | **char \*** | Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] 
 **time_end** | **char \*** | Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] 
 **limit** | **int \*** | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
-**limit_levels** | **int \*** | Maximum amount of levels from each side of the book to include in response (optional) | [optional] 
-
-### Return type
-
-[list_t](v1_order_book.md) *
-
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **OrderBookAPI_v1OrderbooksSymbolIdLatestGet**
-```c
-// Latest data
-//
-// Get latest order book snapshots for a specific symbol, returned in time descending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::
-//
-list_t* OrderBookAPI_v1OrderbooksSymbolIdLatestGet(apiClient_t *apiClient, char *symbol_id, int *limit, int *limit_levels);
-```
-
-### Parameters
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**apiClient** | **apiClient_t \*** | context containing the client configuration |
-**symbol_id** | **char \*** | Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) | 
-**limit** | **int \*** | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
 **limit_levels** | **int \*** | Maximum amount of levels from each side of the book to include in response (optional) | [optional] 
 
 ### Return type

@@ -123,36 +123,4 @@ public class OASOrderBookApi {
             List<OASV1OrderBook>.class
         );
     }
-    /**
-     * Latest data
-     * Get latest order book snapshots for a specific symbol, returned in time descending order.\n            \n:::info\nThe historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.\n:::
-     * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
-     * @param r_limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param limitLevels Maximum amount of levels from each side of the book to include in response (optional) (optional)
-     * @return List<OASV1OrderBook>
-     * @throws OAS.ApiException if fails to make API call
-     */
-    public List<OASV1OrderBook> v1OrderbooksSymbolIdLatestGet(Map<String, Object> params) {
-        client.assertNotNull(params.get('symbolId'), 'symbolId');
-        List<OAS.Param> query = new List<OAS.Param>();
-
-        // cast query params to verify their expected type
-        query.addAll(client.makeParam('limit', (Integer) params.get('r_limit')));
-        query.addAll(client.makeParam('limit_levels', (Integer) params.get('limitLevels')));
-
-        List<OAS.Param> form = new List<OAS.Param>();
-
-        return (List<OASV1OrderBook>) client.invoke(
-            'GET', '/v1/orderbooks/{symbol_id}/latest', '',
-            query, form,
-            new Map<String, Object>{
-                'symbol_id' => (String) params.get('symbolId')
-            },
-            new Map<String, Object>(),
-            new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
-            new List<String>(),
-            new List<String> { 'APIKey', 'JWT' },
-            List<OASV1OrderBook>.class
-        );
-    }
 }

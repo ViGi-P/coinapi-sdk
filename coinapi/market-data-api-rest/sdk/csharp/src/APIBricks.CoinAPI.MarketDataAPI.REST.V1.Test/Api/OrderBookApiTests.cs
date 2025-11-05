@@ -93,19 +93,5 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             var model = response.Ok();
             Assert.IsType<List<V1OrderBook>>(model);
         }
-
-        /// <summary>
-        /// Test V1OrderbooksSymbolIdLatestGet
-        /// </summary>
-        [Fact (Skip = "not implemented")]
-        public async Task V1OrderbooksSymbolIdLatestGetAsyncTest()
-        {
-            string symbolId = default!;
-            Client.Option<int> limit = default!;
-            Client.Option<int> limitLevels = default!;
-            var response = await _instance.V1OrderbooksSymbolIdLatestGetAsync(symbolId, limit, limitLevels);
-            var model = response.Ok();
-            Assert.IsType<List<V1OrderBook>>(model);
-        }
     }
 }
