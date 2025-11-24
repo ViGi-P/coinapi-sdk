@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * Contains information about assets&#39; chain network addresses
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-21T06:05:32.569782138Z[Etc/UTC]", comments = "Generator version: 7.17.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-24T06:06:46.970892349Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class V1ChainNetworkAddress {
   public static final String SERIALIZED_NAME_CHAIN_ID = "chain_id";
   @SerializedName(SERIALIZED_NAME_CHAIN_ID)
