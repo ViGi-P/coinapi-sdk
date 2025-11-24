@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for security event information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-21T06:08:43.607611876Z[Etc/UTC]", comments = "Generator version: 7.17.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-24T06:08:15.209131798Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class AdminSecurityEventModel {
   public static final String SERIALIZED_NAME_SYMBOL = "symbol";
   @SerializedName(SERIALIZED_NAME_SYMBOL)
