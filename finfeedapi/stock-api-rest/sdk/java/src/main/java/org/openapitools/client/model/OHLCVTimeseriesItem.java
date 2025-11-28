@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a timeseries item with price and volume information.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-27T06:07:47.738671737Z[Etc/UTC]", comments = "Generator version: 7.17.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-28T06:05:57.677787593Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class OHLCVTimeseriesItem {
   public static final String SERIALIZED_NAME_TIME_PERIOD_START = "time_period_start";
   @SerializedName(SERIALIZED_NAME_TIME_PERIOD_START)
