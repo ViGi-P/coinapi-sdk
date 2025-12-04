@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for add order information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-03T06:21:30.154739960Z[Etc/UTC]", comments = "Generator version: 7.17.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-04T06:20:36.566351461Z[Etc/UTC]", comments = "Generator version: 7.17.0")
 public class Level3AddOrderModel {
   public static final String SERIALIZED_NAME_SYMBOL = "symbol";
   @SerializedName(SERIALIZED_NAME_SYMBOL)
