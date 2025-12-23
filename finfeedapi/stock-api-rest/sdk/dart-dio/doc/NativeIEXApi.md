@@ -37,7 +37,7 @@ final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Optional date in 
 try {
     final response = api.v1NativeIexAdminMessagesSymbolGet(symbol, date);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NativeIEXApi->v1NativeIexAdminMessagesSymbolGet: $e\n');
 }
 ```
@@ -83,7 +83,7 @@ final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Date in format YY
 try {
     final response = api.v1NativeIexAdminSystemEventGet(date);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NativeIEXApi->v1NativeIexAdminSystemEventGet: $e\n');
 }
 ```
@@ -129,7 +129,7 @@ final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Optional date in 
 try {
     final response = api.v1NativeIexLevel1QuoteSymbolGet(symbol, date);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NativeIEXApi->v1NativeIexLevel1QuoteSymbolGet: $e\n');
 }
 ```
@@ -176,7 +176,7 @@ final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Optional date in 
 try {
     final response = api.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NativeIEXApi->v1NativeIexLevel2PriceLevelUpdateSymbolGet: $e\n');
 }
 ```
@@ -223,7 +223,7 @@ final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Optional date in 
 try {
     final response = api.v1NativeIexLevel3OrderBookSymbolGet(symbol, date);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NativeIEXApi->v1NativeIexLevel3OrderBookSymbolGet: $e\n');
 }
 ```
@@ -270,7 +270,7 @@ final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Optional date in 
 try {
     final response = api.v1NativeIexTradeSymbolGet(symbol, date);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NativeIEXApi->v1NativeIexTradeSymbolGet: $e\n');
 }
 ```

@@ -12,7 +12,7 @@
 
 import { RequestFile } from './models';
 
-export class FinFeedAPIExchangeModel extends any {
+export class FinFeedAPIExchangeModel {
     'exchangeId'?: string | null;
     'lastDatapointDate'?: string | null;
     'mic'?: string | null;
@@ -133,7 +133,7 @@ export class FinFeedAPIExchangeModel extends any {
         }    ];
 
     static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(FinFeedAPIExchangeModel.attributeTypeMap);
+        return FinFeedAPIExchangeModel.attributeTypeMap;
     }
 }
 

@@ -31,7 +31,7 @@ final api = Openapi().getMetadataApi();
 try {
     final response = api.v1ExchangesGet();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1ExchangesGet: $e\n');
 }
 ```
@@ -73,7 +73,7 @@ final String exchangeId = exchangeId_example; // String |
 try {
     final response = api.v1SymbolsExchangeIdGet(exchangeId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1SymbolsExchangeIdGet: $e\n');
 }
 ```

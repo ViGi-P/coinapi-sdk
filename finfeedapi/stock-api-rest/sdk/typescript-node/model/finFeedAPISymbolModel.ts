@@ -12,7 +12,7 @@
 
 import { RequestFile } from './models';
 
-export class FinFeedAPISymbolModel extends any {
+export class FinFeedAPISymbolModel {
     'symbolId'?: string | null;
     'exchangeId'?: string | null;
     'securityCategory'?: string | null;
@@ -133,7 +133,7 @@ export class FinFeedAPISymbolModel extends any {
         }    ];
 
     static getAttributeTypeMap() {
-        return super.getAttributeTypeMap().concat(FinFeedAPISymbolModel.attributeTypeMap);
+        return FinFeedAPISymbolModel.attributeTypeMap;
     }
 }
 

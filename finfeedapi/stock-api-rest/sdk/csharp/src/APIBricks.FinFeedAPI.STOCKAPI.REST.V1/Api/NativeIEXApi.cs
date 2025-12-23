@@ -461,7 +461,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1NativeIexAdminMessagesSymbolGet(ref suppressDefaultLog, apiResponseLocalVar, symbol, date);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -718,7 +718,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1NativeIexAdminSystemEventGet(ref suppressDefaultLog, apiResponseLocalVar, date);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -979,7 +979,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1NativeIexLevel1QuoteSymbolGet(ref suppressDefaultLog, apiResponseLocalVar, symbol, date);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1248,7 +1248,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1NativeIexLevel2PriceLevelUpdateSymbolGet(ref suppressDefaultLog, apiResponseLocalVar, symbol, date);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1517,7 +1517,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1NativeIexLevel3OrderBookSymbolGet(ref suppressDefaultLog, apiResponseLocalVar, symbol, date);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1786,7 +1786,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1NativeIexTradeSymbolGet(ref suppressDefaultLog, apiResponseLocalVar, symbol, date);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>

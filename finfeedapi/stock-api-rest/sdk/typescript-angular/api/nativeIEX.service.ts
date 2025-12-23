@@ -11,10 +11,10 @@
 
 import { Inject, Injectable, Optional }                      from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams,
-         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext 
+         HttpResponse, HttpEvent, HttpContext 
         }       from '@angular/common/http';
-import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
+import { OpenApiHttpParams, QueryParamStyle } from '../query.params';
 
 // @ts-ignore
 import { AdminAdminMessageModel } from '../model/adminAdminMessageModel';
@@ -52,6 +52,7 @@ export class NativeIEXService extends BaseService {
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<AdminAdminMessageModel>>;
     public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<AdminAdminMessageModel>>>;
@@ -64,9 +65,16 @@ export class NativeIEXService extends BaseService {
             throw new Error('Required parameter date was null or undefined when calling v1NativeIexAdminMessagesSymbolGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>date, 'date');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'date',
+            <any>date,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -104,7 +112,7 @@ export class NativeIEXService extends BaseService {
         return this.httpClient.request<Array<AdminAdminMessageModel>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -121,6 +129,7 @@ export class NativeIEXService extends BaseService {
      * @param date Date in format YYYY-MM-DD
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1NativeIexAdminSystemEventGet(date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<AdminSystemEventModel>>;
     public v1NativeIexAdminSystemEventGet(date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<AdminSystemEventModel>>>;
@@ -130,9 +139,16 @@ export class NativeIEXService extends BaseService {
             throw new Error('Required parameter date was null or undefined when calling v1NativeIexAdminSystemEventGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>date, 'date');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'date',
+            <any>date,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -170,7 +186,7 @@ export class NativeIEXService extends BaseService {
         return this.httpClient.request<Array<AdminSystemEventModel>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -188,6 +204,7 @@ export class NativeIEXService extends BaseService {
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<Level1QuoteUpdateModel>>;
     public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Level1QuoteUpdateModel>>>;
@@ -200,9 +217,16 @@ export class NativeIEXService extends BaseService {
             throw new Error('Required parameter date was null or undefined when calling v1NativeIexLevel1QuoteSymbolGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>date, 'date');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'date',
+            <any>date,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -240,7 +264,7 @@ export class NativeIEXService extends BaseService {
         return this.httpClient.request<Array<Level1QuoteUpdateModel>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -258,6 +282,7 @@ export class NativeIEXService extends BaseService {
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<Level2PriceLevelUpdateModel>>;
     public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Level2PriceLevelUpdateModel>>>;
@@ -270,9 +295,16 @@ export class NativeIEXService extends BaseService {
             throw new Error('Required parameter date was null or undefined when calling v1NativeIexLevel2PriceLevelUpdateSymbolGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>date, 'date');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'date',
+            <any>date,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -310,7 +342,7 @@ export class NativeIEXService extends BaseService {
         return this.httpClient.request<Array<Level2PriceLevelUpdateModel>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -328,6 +360,7 @@ export class NativeIEXService extends BaseService {
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<Level3OrderBookModel>>;
     public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Level3OrderBookModel>>>;
@@ -340,9 +373,16 @@ export class NativeIEXService extends BaseService {
             throw new Error('Required parameter date was null or undefined when calling v1NativeIexLevel3OrderBookSymbolGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>date, 'date');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'date',
+            <any>date,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -380,7 +420,7 @@ export class NativeIEXService extends BaseService {
         return this.httpClient.request<Array<Level3OrderBookModel>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -398,6 +438,7 @@ export class NativeIEXService extends BaseService {
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1NativeIexTradeSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<TradeTradeModel>>;
     public v1NativeIexTradeSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<TradeTradeModel>>>;
@@ -410,9 +451,16 @@ export class NativeIEXService extends BaseService {
             throw new Error('Required parameter date was null or undefined when calling v1NativeIexTradeSymbolGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>date, 'date');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'date',
+            <any>date,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -450,7 +498,7 @@ export class NativeIEXService extends BaseService {
         return this.httpClient.request<Array<TradeTradeModel>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,

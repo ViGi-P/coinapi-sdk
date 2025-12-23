@@ -14,7 +14,6 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -45,14 +44,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Locale;
 
 import org.openapitools.client.JSON;
 
 /**
  * FinFeedAPIExchangeModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-22T06:05:19.833317737Z[Etc/UTC]", comments = "Generator version: 7.17.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-23T06:04:35.776141642Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class FinFeedAPIExchangeModel {
   public static final String SERIALIZED_NAME_EXCHANGE_ID = "exchange_id";
   @SerializedName(SERIALIZED_NAME_EXCHANGE_ID)
@@ -665,54 +663,54 @@ public class FinFeedAPIExchangeModel {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FinFeedAPIExchangeModel.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in FinFeedAPIExchangeModel is not found in the empty JSON string", FinFeedAPIExchangeModel.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in FinFeedAPIExchangeModel is not found in the empty JSON string", FinFeedAPIExchangeModel.openapiRequiredFields.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("exchange_id") != null && !jsonObj.get("exchange_id").isJsonNull()) && !jsonObj.get("exchange_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `exchange_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("exchange_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `exchange_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("exchange_id").toString()));
       }
       if ((jsonObj.get("last_datapoint_date") != null && !jsonObj.get("last_datapoint_date").isJsonNull()) && !jsonObj.get("last_datapoint_date").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `last_datapoint_date` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_datapoint_date").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `last_datapoint_date` to be a primitive type in the JSON string but got `%s`", jsonObj.get("last_datapoint_date").toString()));
       }
       if ((jsonObj.get("mic") != null && !jsonObj.get("mic").isJsonNull()) && !jsonObj.get("mic").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `mic` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mic").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `mic` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mic").toString()));
       }
       if ((jsonObj.get("operating_mic") != null && !jsonObj.get("operating_mic").isJsonNull()) && !jsonObj.get("operating_mic").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `operating_mic` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operating_mic").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `operating_mic` to be a primitive type in the JSON string but got `%s`", jsonObj.get("operating_mic").toString()));
       }
       if ((jsonObj.get("oprt_sgmt") != null && !jsonObj.get("oprt_sgmt").isJsonNull()) && !jsonObj.get("oprt_sgmt").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `oprt_sgmt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oprt_sgmt").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `oprt_sgmt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oprt_sgmt").toString()));
       }
       if ((jsonObj.get("market_name_institution_description") != null && !jsonObj.get("market_name_institution_description").isJsonNull()) && !jsonObj.get("market_name_institution_description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `market_name_institution_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("market_name_institution_description").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `market_name_institution_description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("market_name_institution_description").toString()));
       }
       if ((jsonObj.get("legal_entity_name") != null && !jsonObj.get("legal_entity_name").isJsonNull()) && !jsonObj.get("legal_entity_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `legal_entity_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("legal_entity_name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `legal_entity_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("legal_entity_name").toString()));
       }
       if ((jsonObj.get("lei") != null && !jsonObj.get("lei").isJsonNull()) && !jsonObj.get("lei").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `lei` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lei").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `lei` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lei").toString()));
       }
       if ((jsonObj.get("market_category_code") != null && !jsonObj.get("market_category_code").isJsonNull()) && !jsonObj.get("market_category_code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `market_category_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("market_category_code").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `market_category_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("market_category_code").toString()));
       }
       if ((jsonObj.get("acronym") != null && !jsonObj.get("acronym").isJsonNull()) && !jsonObj.get("acronym").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `acronym` to be a primitive type in the JSON string but got `%s`", jsonObj.get("acronym").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `acronym` to be a primitive type in the JSON string but got `%s`", jsonObj.get("acronym").toString()));
       }
       if ((jsonObj.get("iso_country_code") != null && !jsonObj.get("iso_country_code").isJsonNull()) && !jsonObj.get("iso_country_code").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `iso_country_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iso_country_code").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `iso_country_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("iso_country_code").toString()));
       }
       if ((jsonObj.get("city") != null && !jsonObj.get("city").isJsonNull()) && !jsonObj.get("city").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `city` to be a primitive type in the JSON string but got `%s`", jsonObj.get("city").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `city` to be a primitive type in the JSON string but got `%s`", jsonObj.get("city").toString()));
       }
       if ((jsonObj.get("website") != null && !jsonObj.get("website").isJsonNull()) && !jsonObj.get("website").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `website` to be a primitive type in the JSON string but got `%s`", jsonObj.get("website").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `website` to be a primitive type in the JSON string but got `%s`", jsonObj.get("website").toString()));
       }
       if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       if ((jsonObj.get("comments") != null && !jsonObj.get("comments").isJsonNull()) && !jsonObj.get("comments").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `comments` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comments").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `comments` to be a primitive type in the JSON string but got `%s`", jsonObj.get("comments").toString()));
       }
   }
 
@@ -773,7 +771,7 @@ public class FinFeedAPIExchangeModel {
                    else if (entry.getValue().getAsJsonPrimitive().isBoolean())
                      instance.putAdditionalProperty(entry.getKey(), entry.getValue().getAsBoolean());
                    else
-                     throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
+                     throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` has unknown primitive type. Value: %s", entry.getKey(), entry.getValue().toString()));
                  } else if (entry.getValue().isJsonArray()) {
                      instance.putAdditionalProperty(entry.getKey(), gson.fromJson(entry.getValue(), List.class));
                  } else { // JSON object
