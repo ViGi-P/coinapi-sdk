@@ -35,7 +35,7 @@ final String assetIdQuote = assetIdQuote_example; // String | Requested exchange
 try {
     final response = api.getSpecificRate(assetIdBase, assetIdQuote);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ExchangeRatesApi->getSpecificRate: $e\n');
 }
 ```
@@ -85,7 +85,7 @@ final bool invert = true; // bool | True will invert all the rates (optional, if
 try {
     final response = api.v1ExchangerateAssetIdBaseGet(assetIdBase, filterAssetId, invert);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ExchangeRatesApi->v1ExchangerateAssetIdBaseGet: $e\n');
 }
 ```
