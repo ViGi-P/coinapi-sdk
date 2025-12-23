@@ -11,10 +11,10 @@
 
 import { Inject, Injectable, Optional }                      from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams,
-         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext 
+         HttpResponse, HttpEvent, HttpContext 
         }       from '@angular/common/http';
-import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
+import { OpenApiHttpParams, QueryParamStyle } from '../query.params';
 
 // @ts-ignore
 import { V1ExchangeRate } from '../model/v1ExchangeRate';
@@ -45,6 +45,7 @@ export class ExchangeRatesService extends BaseService {
      * @param assetIdQuote Requested exchange rate quote asset identifier (from the Metadata -&gt; Assets)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public getSpecificRate(assetIdBase: string, assetIdQuote: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<V1ExchangeRate>;
     public getSpecificRate(assetIdBase: string, assetIdQuote: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<V1ExchangeRate>>;
@@ -115,6 +116,7 @@ export class ExchangeRatesService extends BaseService {
      * @param invert True will invert all the rates (optional, if true then rates will be calculated as &#x60;rate &#x3D; 1 / actual_rate&#x60; eg. &#x60;USD/BTC&#x60; as &#x60;BTC/USD&#x60;)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1ExchangerateAssetIdBaseGet(assetIdBase: string, filterAssetId?: string, invert?: boolean, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<V1ExchangeRates>;
     public v1ExchangerateAssetIdBaseGet(assetIdBase: string, filterAssetId?: string, invert?: boolean, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<V1ExchangeRates>>;
@@ -124,11 +126,25 @@ export class ExchangeRatesService extends BaseService {
             throw new Error('Required parameter assetIdBase was null or undefined when calling v1ExchangerateAssetIdBaseGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>filterAssetId, 'filter_asset_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>invert, 'invert');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'filter_asset_id',
+            <any>filterAssetId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'invert',
+            <any>invert,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -169,7 +185,7 @@ export class ExchangeRatesService extends BaseService {
         return this.httpClient.request<V1ExchangeRates>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,

@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **volume_1day_usd** | **float** | Gets or sets the USD volume in the last 1 day. | [optional] 
 **volume_1mth_usd** | **float** | Gets or sets the USD volume in the last 1 month. | [optional] 
 **price_usd** | **float** | Gets or sets the USD price of the asset. | [optional] 
-**id_icon** | **str** | Gets or sets the ID of the icon for the asset. | [optional] 
+**id_icon** | **UUID** | Gets or sets the ID of the icon for the asset. | [optional] 
 **supply_current** | **float** | Gets or sets the current supply of the asset. | [optional] 
 **supply_total** | **float** | Gets or sets the total supply of the asset. | [optional] 
 **supply_max** | **float** | Gets or sets the maximum supply of the asset. | [optional] 
