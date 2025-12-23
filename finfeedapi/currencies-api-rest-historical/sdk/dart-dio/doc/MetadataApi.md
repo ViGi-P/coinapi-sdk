@@ -33,7 +33,7 @@ final String assetId = assetId_example; // String | The asset ID.
 try {
     final response = api.v1AssetsAssetIdGet(assetId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1AssetsAssetIdGet: $e\n');
 }
 ```
@@ -80,7 +80,7 @@ final String filterAssetId = filterAssetId_example; // String | Comma or semicol
 try {
     final response = api.v1AssetsGet(filterAssetId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1AssetsGet: $e\n');
 }
 ```
@@ -127,7 +127,7 @@ final int size = 56; // int | The size of the icons.
 try {
     final response = api.v1AssetsIconsSizeGet(size);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1AssetsIconsSizeGet: $e\n');
 }
 ```
