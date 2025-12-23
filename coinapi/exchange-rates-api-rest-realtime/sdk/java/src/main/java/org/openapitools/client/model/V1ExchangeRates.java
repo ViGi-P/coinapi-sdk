@@ -14,7 +14,6 @@
 package org.openapitools.client.model;
 
 import java.util.Objects;
-import java.util.Locale;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,14 +46,13 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.Locale;
 
 import org.openapitools.client.JSON;
 
 /**
  * Represents exchange rates for a specific base asset.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-22T06:04:36.684624526Z[Etc/UTC]", comments = "Generator version: 7.17.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-12-23T06:03:52.722198337Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class V1ExchangeRates {
   public static final String SERIALIZED_NAME_ASSET_ID_BASE = "asset_id_base";
   @SerializedName(SERIALIZED_NAME_ASSET_ID_BASE)
@@ -187,7 +185,7 @@ public class V1ExchangeRates {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!V1ExchangeRates.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The required field(s) %s in V1ExchangeRates is not found in the empty JSON string", V1ExchangeRates.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in V1ExchangeRates is not found in the empty JSON string", V1ExchangeRates.openapiRequiredFields.toString()));
         }
       }
 
@@ -195,19 +193,19 @@ public class V1ExchangeRates {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!V1ExchangeRates.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(Locale.ROOT, "The field `%s` in the JSON string is not defined in the `V1ExchangeRates` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `V1ExchangeRates` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("asset_id_base") != null && !jsonObj.get("asset_id_base").isJsonNull()) && !jsonObj.get("asset_id_base").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `asset_id_base` to be a primitive type in the JSON string but got `%s`", jsonObj.get("asset_id_base").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `asset_id_base` to be a primitive type in the JSON string but got `%s`", jsonObj.get("asset_id_base").toString()));
       }
       if (jsonObj.get("rates") != null && !jsonObj.get("rates").isJsonNull()) {
         JsonArray jsonArrayrates = jsonObj.getAsJsonArray("rates");
         if (jsonArrayrates != null) {
           // ensure the json data is an array
           if (!jsonObj.get("rates").isJsonArray()) {
-            throw new IllegalArgumentException(String.format(Locale.ROOT, "Expected the field `rates` to be an array in the JSON string but got `%s`", jsonObj.get("rates").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `rates` to be an array in the JSON string but got `%s`", jsonObj.get("rates").toString()));
           }
 
           // validate the optional field `rates` (array)
