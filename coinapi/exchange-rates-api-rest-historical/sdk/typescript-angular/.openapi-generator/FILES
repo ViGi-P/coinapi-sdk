@@ -21,4 +21,5 @@ model/v1Icon.ts
 model/v1TimeseriesPeriod.ts
 param.ts
 provide-api.ts
+query.params.ts
 variables.ts
