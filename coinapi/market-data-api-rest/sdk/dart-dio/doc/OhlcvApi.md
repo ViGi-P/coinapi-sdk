@@ -39,7 +39,7 @@ final String timeEnd = timeEnd_example; // String | Timeseries ending time in IS
 try {
     final response = api.v1OhlcvExchangesExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling OhlcvApi->v1OhlcvExchangesExchangeIdHistoryGet: $e\n');
 }
 ```
@@ -88,7 +88,7 @@ final api = Openapi().getOhlcvApi();
 try {
     final response = api.v1OhlcvPeriodsGet();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling OhlcvApi->v1OhlcvPeriodsGet: $e\n');
 }
 ```
@@ -136,7 +136,7 @@ final int limit = 56; // int | Amount of items to return (mininum is 1, maximum 
 try {
     final response = api.v1OhlcvSymbolIdHistoryGet(symbolId, periodId, timeStart, timeEnd, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling OhlcvApi->v1OhlcvSymbolIdHistoryGet: $e\n');
 }
 ```
@@ -189,7 +189,7 @@ final int limit = 56; // int | Amount of items to return (mininum is 1, maximum 
 try {
     final response = api.v1OhlcvSymbolIdLatestGet(symbolId, periodId, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling OhlcvApi->v1OhlcvSymbolIdLatestGet: $e\n');
 }
 ```

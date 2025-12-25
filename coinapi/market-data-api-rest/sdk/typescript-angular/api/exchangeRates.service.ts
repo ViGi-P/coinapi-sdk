@@ -11,10 +11,10 @@
 
 import { Inject, Injectable, Optional }                      from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams,
-         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext 
+         HttpResponse, HttpEvent, HttpContext 
         }       from '@angular/common/http';
-import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
+import { OpenApiHttpParams, QueryParamStyle } from '../query.params';
 
 // @ts-ignore
 import { V1ExchangeRate } from '../model/v1ExchangeRate';
@@ -50,6 +50,7 @@ export class ExchangeRatesService extends BaseService {
      * @param time Time at which exchange rate is calculated (optional, if not supplied then current rate is returned)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public getSpecificRate(assetIdBase: string, assetIdQuote: string, time?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<V1ExchangeRate>;
     public getSpecificRate(assetIdBase: string, assetIdQuote: string, time?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<V1ExchangeRate>>;
@@ -62,9 +63,16 @@ export class ExchangeRatesService extends BaseService {
             throw new Error('Required parameter assetIdQuote was null or undefined when calling getSpecificRate.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>time, 'time');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time',
+            <any>time,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -105,7 +113,7 @@ export class ExchangeRatesService extends BaseService {
         return this.httpClient.request<V1ExchangeRate>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -128,6 +136,7 @@ export class ExchangeRatesService extends BaseService {
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1ExchangeRatesTimeseriesItem>>;
     public v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1ExchangeRatesTimeseriesItem>>>;
@@ -140,15 +149,43 @@ export class ExchangeRatesService extends BaseService {
             throw new Error('Required parameter assetIdQuote was null or undefined when calling v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>periodId, 'period_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeStart, 'time_start');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeEnd, 'time_end');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>limit, 'limit');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'period_id',
+            <any>periodId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_start',
+            <any>timeStart,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_end',
+            <any>timeEnd,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -189,7 +226,7 @@ export class ExchangeRatesService extends BaseService {
         return this.httpClient.request<Array<V1ExchangeRatesTimeseriesItem>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -210,6 +247,7 @@ export class ExchangeRatesService extends BaseService {
      * @param time Time for historical rates (optional)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1ExchangerateAssetIdBaseGet(assetIdBase: string, filterAssetId?: string, invert?: boolean, time?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<V1ExchangeRates>;
     public v1ExchangerateAssetIdBaseGet(assetIdBase: string, filterAssetId?: string, invert?: boolean, time?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<V1ExchangeRates>>;
@@ -219,13 +257,34 @@ export class ExchangeRatesService extends BaseService {
             throw new Error('Required parameter assetIdBase was null or undefined when calling v1ExchangerateAssetIdBaseGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>filterAssetId, 'filter_asset_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>invert, 'invert');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>time, 'time');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'filter_asset_id',
+            <any>filterAssetId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'invert',
+            <any>invert,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time',
+            <any>time,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -266,7 +325,7 @@ export class ExchangeRatesService extends BaseService {
         return this.httpClient.request<V1ExchangeRates>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -283,6 +342,7 @@ export class ExchangeRatesService extends BaseService {
      * @endpoint get /v1/exchangerate/history/periods
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1ExchangerateHistoryPeriodsGet(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1TimeseriesPeriod>>;
     public v1ExchangerateHistoryPeriodsGet(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1TimeseriesPeriod>>>;

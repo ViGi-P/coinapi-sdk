@@ -38,7 +38,7 @@ final String time = time_example; // String | Time at which exchange rate is cal
 try {
     final response = api.getSpecificRate(assetIdBase, assetIdQuote, time);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ExchangeRatesApi->getSpecificRate: $e\n');
 }
 ```
@@ -92,7 +92,7 @@ final int limit = 56; // int | Amount of items to return (optional, mininum is 1
 try {
     final response = api.v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ExchangeRatesApi->v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet: $e\n');
 }
 ```
@@ -147,7 +147,7 @@ final String time = time_example; // String | Time for historical rates (optiona
 try {
     final response = api.v1ExchangerateAssetIdBaseGet(assetIdBase, filterAssetId, invert, time);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ExchangeRatesApi->v1ExchangerateAssetIdBaseGet: $e\n');
 }
 ```
@@ -196,7 +196,7 @@ final api = Openapi().getExchangeRatesApi();
 try {
     final response = api.v1ExchangerateHistoryPeriodsGet();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ExchangeRatesApi->v1ExchangerateHistoryPeriodsGet: $e\n');
 }
 ```

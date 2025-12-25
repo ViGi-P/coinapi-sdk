@@ -45,7 +45,7 @@ final String exchangeId = exchangeId_example; // String | Exchange identifier (f
 try {
     final response = api.v1MetricsAssetCurrentGet(metricId, assetId, assetIdExternal, exchangeId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV1Api->v1MetricsAssetCurrentGet: $e\n');
 }
 ```
@@ -103,7 +103,7 @@ final int limit = 56; // int | Amount of items to return (optional, mininum is 1
 try {
     final response = api.v1MetricsAssetHistoryGet(metricId, exchangeId, assetId, assetIdExternal, timeStart, timeEnd, timeFormat, periodId, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV1Api->v1MetricsAssetHistoryGet: $e\n');
 }
 ```
@@ -163,7 +163,7 @@ final String assetIdExternal = assetIdExternal_example; // String | The asset ex
 try {
     final response = api.v1MetricsAssetListingGet(metricId, exchangeId, chainId, networkId, assetId, assetIdExternal);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV1Api->v1MetricsAssetListingGet: $e\n');
 }
 ```
@@ -216,7 +216,7 @@ final String metricId = metricId_example; // String | The metric identifier (fro
 try {
     final response = api.v1MetricsExchangeCurrentGet(exchangeId, metricId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV1Api->v1MetricsExchangeCurrentGet: $e\n');
 }
 ```
@@ -270,7 +270,7 @@ final int limit = 56; // int | Amount of items to return (optional, mininum is 1
 try {
     final response = api.v1MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV1Api->v1MetricsExchangeHistoryGet: $e\n');
 }
 ```
@@ -324,7 +324,7 @@ final String metricId = metricId_example; // String | The metric identifier (fro
 try {
     final response = api.v1MetricsExchangeListingGet(exchangeId, metricId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV1Api->v1MetricsExchangeListingGet: $e\n');
 }
 ```
@@ -371,7 +371,7 @@ final api = Openapi().getMetricsV1Api();
 try {
     final response = api.v1MetricsListingGet();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV1Api->v1MetricsListingGet: $e\n');
 }
 ```
@@ -417,7 +417,7 @@ final String exchangeId = exchangeId_example; // String | Exchange id (from the 
 try {
     final response = api.v1MetricsSymbolCurrentGet(metricId, symbolId, exchangeId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV1Api->v1MetricsSymbolCurrentGet: $e\n');
 }
 ```
@@ -472,7 +472,7 @@ final int limit = 56; // int | Amount of items to return (optional, mininum is 1
 try {
     final response = api.v1MetricsSymbolHistoryGet(metricId, symbolId, timeStart, timeEnd, timeFormat, periodId, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV1Api->v1MetricsSymbolHistoryGet: $e\n');
 }
 ```
@@ -527,7 +527,7 @@ final String symbolId = symbolId_example; // String | Symbol identifier (from th
 try {
     final response = api.v1MetricsSymbolListingGet(metricId, exchangeId, symbolId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV1Api->v1MetricsSymbolListingGet: $e\n');
 }
 ```

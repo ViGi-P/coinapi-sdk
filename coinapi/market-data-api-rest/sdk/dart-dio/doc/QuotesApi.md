@@ -37,7 +37,7 @@ final String filterSymbolId = filterSymbolId_example; // String | Comma or semic
 try {
     final response = api.v1QuotesCurrentGet(filterSymbolId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling QuotesApi->v1QuotesCurrentGet: $e\n');
 }
 ```
@@ -85,7 +85,7 @@ final int limit = 56; // int | Amount of items to return (optional, mininum is 1
 try {
     final response = api.v1QuotesLatestGet(filterSymbolId, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling QuotesApi->v1QuotesLatestGet: $e\n');
 }
 ```
@@ -131,7 +131,7 @@ final String symbolId = symbolId_example; // String | The symbol identifier (fro
 try {
     final response = api.v1QuotesSymbolIdCurrentGet(symbolId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling QuotesApi->v1QuotesSymbolIdCurrentGet: $e\n');
 }
 ```
@@ -182,7 +182,7 @@ final int limit = 56; // int | Amount of items to return (optional, minimum is 1
 try {
     final response = api.v1QuotesSymbolIdHistoryGet(symbolId, date, timeStart, timeEnd, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling QuotesApi->v1QuotesSymbolIdHistoryGet: $e\n');
 }
 ```
@@ -232,7 +232,7 @@ final int limit = 56; // int | Amount of items to return (optional, mininum is 1
 try {
     final response = api.v1QuotesSymbolIdLatestGet(symbolId, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling QuotesApi->v1QuotesSymbolIdLatestGet: $e\n');
 }
 ```

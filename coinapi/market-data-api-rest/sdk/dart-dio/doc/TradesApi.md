@@ -37,7 +37,7 @@ final int limit = 56; // int | Amount of items to return (optional, mininum is 1
 try {
     final response = api.v1TradesLatestGet(filterSymbolId, includeId, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TradesApi->v1TradesLatestGet: $e\n');
 }
 ```
@@ -91,7 +91,7 @@ final bool includeId = true; // bool | Information that additional exchange trad
 try {
     final response = api.v1TradesSymbolIdHistoryGet(symbolId, date, timeStart, timeEnd, limit, includeId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TradesApi->v1TradesSymbolIdHistoryGet: $e\n');
 }
 ```
@@ -145,7 +145,7 @@ final bool includeId = true; // bool | Information that additional exchange trad
 try {
     final response = api.v1TradesSymbolIdLatestGet(symbolId, limit, includeId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TradesApi->v1TradesSymbolIdLatestGet: $e\n');
 }
 ```

@@ -33,7 +33,7 @@ final String exchangeId = exchangeId_example; // String | Exchange identifier (f
 try {
     final response = api.v1OptionsExchangeIdCurrentGet(exchangeId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling OptionsApi->v1OptionsExchangeIdCurrentGet: $e\n');
 }
 ```

@@ -45,7 +45,7 @@ final int limit = 56; // int | Amount of items to return (optional, mininum is 1
 try {
     final response = api.v2MetricsAssetHistoryGet(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV2Api->v2MetricsAssetHistoryGet: $e\n');
 }
 ```
@@ -98,7 +98,7 @@ final String assetId = assetId_example; // String | Asset identifier (e.g., USDC
 try {
     final response = api.v2MetricsAssetListingGet(assetId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV2Api->v2MetricsAssetListingGet: $e\n');
 }
 ```
@@ -151,7 +151,7 @@ final int limit = 56; // int | Amount of items to return (optional, mininum is 1
 try {
     final response = api.v2MetricsChainHistoryGet(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV2Api->v2MetricsChainHistoryGet: $e\n');
 }
 ```
@@ -204,7 +204,7 @@ final String chainId = chainId_example; // String | Chain identifier (e.g., ETHE
 try {
     final response = api.v2MetricsChainListingGet(chainId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV2Api->v2MetricsChainListingGet: $e\n');
 }
 ```
@@ -257,7 +257,7 @@ final int limit = 56; // int | Amount of items to return (optional, mininum is 1
 try {
     final response = api.v2MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV2Api->v2MetricsExchangeHistoryGet: $e\n');
 }
 ```
@@ -310,7 +310,7 @@ final String exchangeId = exchangeId_example; // String | Exchange identifier (e
 try {
     final response = api.v2MetricsExchangeListingGet(exchangeId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV2Api->v2MetricsExchangeListingGet: $e\n');
 }
 ```
@@ -356,7 +356,7 @@ final api = Openapi().getMetricsV2Api();
 try {
     final response = api.v2MetricsListingGet();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetricsV2Api->v2MetricsListingGet: $e\n');
 }
 ```
