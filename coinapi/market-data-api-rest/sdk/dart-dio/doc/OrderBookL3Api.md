@@ -33,7 +33,7 @@ final int limitLevels = 56; // int | The maximum number of levels to include in 
 try {
     final response = api.v1Orderbooks3CurrentGet(filterSymbolId, limitLevels);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling OrderBookL3Api->v1Orderbooks3CurrentGet: $e\n');
 }
 ```
@@ -82,7 +82,7 @@ final int limitLevels = 56; // int | The maximum number of levels to include in 
 try {
     final response = api.v1Orderbooks3SymbolIdCurrentGet(symbolId, limitLevels);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling OrderBookL3Api->v1Orderbooks3SymbolIdCurrentGet: $e\n');
 }
 ```

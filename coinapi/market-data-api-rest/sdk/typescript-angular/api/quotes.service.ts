@@ -11,10 +11,10 @@
 
 import { Inject, Injectable, Optional }                      from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams,
-         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext 
+         HttpResponse, HttpEvent, HttpContext 
         }       from '@angular/common/http';
-import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
+import { OpenApiHttpParams, QueryParamStyle } from '../query.params';
 
 // @ts-ignore
 import { V1Quote } from '../model/v1Quote';
@@ -44,15 +44,23 @@ export class QuotesService extends BaseService {
      * @param filterSymbolId Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1QuotesCurrentGet(filterSymbolId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1QuoteTrade>>;
     public v1QuotesCurrentGet(filterSymbolId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1QuoteTrade>>>;
     public v1QuotesCurrentGet(filterSymbolId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1QuoteTrade>>>;
     public v1QuotesCurrentGet(filterSymbolId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>filterSymbolId, 'filter_symbol_id');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'filter_symbol_id',
+            <any>filterSymbolId,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -93,7 +101,7 @@ export class QuotesService extends BaseService {
         return this.httpClient.request<Array<V1QuoteTrade>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -112,17 +120,32 @@ export class QuotesService extends BaseService {
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1QuotesLatestGet(filterSymbolId?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Quote>>;
     public v1QuotesLatestGet(filterSymbolId?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Quote>>>;
     public v1QuotesLatestGet(filterSymbolId?: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1Quote>>>;
     public v1QuotesLatestGet(filterSymbolId?: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>filterSymbolId, 'filter_symbol_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>limit, 'limit');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'filter_symbol_id',
+            <any>filterSymbolId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -163,7 +186,7 @@ export class QuotesService extends BaseService {
         return this.httpClient.request<Array<V1Quote>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -180,6 +203,7 @@ export class QuotesService extends BaseService {
      * @param symbolId The symbol identifier (from the Metadata -&gt; Symbols)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1QuotesSymbolIdCurrentGet(symbolId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<V1QuoteTrade>;
     public v1QuotesSymbolIdCurrentGet(symbolId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<V1QuoteTrade>>;
@@ -249,6 +273,7 @@ export class QuotesService extends BaseService {
      * @param limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1QuotesSymbolIdHistoryGet(symbolId: string, date?: string, timeStart?: string, timeEnd?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Quote>>;
     public v1QuotesSymbolIdHistoryGet(symbolId: string, date?: string, timeStart?: string, timeEnd?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Quote>>>;
@@ -258,15 +283,43 @@ export class QuotesService extends BaseService {
             throw new Error('Required parameter symbolId was null or undefined when calling v1QuotesSymbolIdHistoryGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>date, 'date');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeStart, 'time_start');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeEnd, 'time_end');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>limit, 'limit');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'date',
+            <any>date,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_start',
+            <any>timeStart,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_end',
+            <any>timeEnd,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -307,7 +360,7 @@ export class QuotesService extends BaseService {
         return this.httpClient.request<Array<V1Quote>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -325,6 +378,7 @@ export class QuotesService extends BaseService {
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1QuotesSymbolIdLatestGet(symbolId: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Quote>>;
     public v1QuotesSymbolIdLatestGet(symbolId: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Quote>>>;
@@ -334,9 +388,16 @@ export class QuotesService extends BaseService {
             throw new Error('Required parameter symbolId was null or undefined when calling v1QuotesSymbolIdLatestGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>limit, 'limit');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -377,7 +438,7 @@ export class QuotesService extends BaseService {
         return this.httpClient.request<Array<V1Quote>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,

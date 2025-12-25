@@ -11,10 +11,10 @@
 
 import { Inject, Injectable, Optional }                      from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams,
-         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext 
+         HttpResponse, HttpEvent, HttpContext 
         }       from '@angular/common/http';
-import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
+import { OpenApiHttpParams, QueryParamStyle } from '../query.params';
 
 // @ts-ignore
 import { V1GeneralData } from '../model/v1GeneralData';
@@ -51,21 +51,50 @@ export class MetricsV1Service extends BaseService {
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1MetricsAssetCurrentGet(metricId?: string, assetId?: string, assetIdExternal?: string, exchangeId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1GeneralData>>;
     public v1MetricsAssetCurrentGet(metricId?: string, assetId?: string, assetIdExternal?: string, exchangeId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1GeneralData>>>;
     public v1MetricsAssetCurrentGet(metricId?: string, assetId?: string, assetIdExternal?: string, exchangeId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1GeneralData>>>;
     public v1MetricsAssetCurrentGet(metricId?: string, assetId?: string, assetIdExternal?: string, exchangeId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>metricId, 'metric_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>assetId, 'asset_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>assetIdExternal, 'asset_id_external');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>exchangeId, 'exchange_id');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'metric_id',
+            <any>metricId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'asset_id',
+            <any>assetId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'asset_id_external',
+            <any>assetIdExternal,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'exchange_id',
+            <any>exchangeId,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -106,7 +135,7 @@ export class MetricsV1Service extends BaseService {
         return this.httpClient.request<Array<V1GeneralData>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -132,6 +161,7 @@ export class MetricsV1Service extends BaseService {
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1MetricsAssetHistoryGet(metricId: string, exchangeId: string, assetId?: string, assetIdExternal?: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1MetricData>>;
     public v1MetricsAssetHistoryGet(metricId: string, exchangeId: string, assetId?: string, assetIdExternal?: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1MetricData>>>;
@@ -144,25 +174,88 @@ export class MetricsV1Service extends BaseService {
             throw new Error('Required parameter exchangeId was null or undefined when calling v1MetricsAssetHistoryGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>metricId, 'metric_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>assetId, 'asset_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>assetIdExternal, 'asset_id_external');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>exchangeId, 'exchange_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeStart, 'time_start');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeEnd, 'time_end');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeFormat, 'time_format');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>periodId, 'period_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>limit, 'limit');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'metric_id',
+            <any>metricId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'asset_id',
+            <any>assetId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'asset_id_external',
+            <any>assetIdExternal,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'exchange_id',
+            <any>exchangeId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_start',
+            <any>timeStart,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_end',
+            <any>timeEnd,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_format',
+            <any>timeFormat,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'period_id',
+            <any>periodId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -203,7 +296,7 @@ export class MetricsV1Service extends BaseService {
         return this.httpClient.request<Array<V1MetricData>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -226,25 +319,68 @@ export class MetricsV1Service extends BaseService {
      * @param assetIdExternal The asset external identifier
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1MetricsAssetListingGet(metricId?: string, exchangeId?: string, chainId?: string, networkId?: string, assetId?: string, assetIdExternal?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1ListingItem>>;
     public v1MetricsAssetListingGet(metricId?: string, exchangeId?: string, chainId?: string, networkId?: string, assetId?: string, assetIdExternal?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1ListingItem>>>;
     public v1MetricsAssetListingGet(metricId?: string, exchangeId?: string, chainId?: string, networkId?: string, assetId?: string, assetIdExternal?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1ListingItem>>>;
     public v1MetricsAssetListingGet(metricId?: string, exchangeId?: string, chainId?: string, networkId?: string, assetId?: string, assetIdExternal?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>metricId, 'metric_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>exchangeId, 'exchange_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>chainId, 'chain_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>networkId, 'network_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>assetId, 'asset_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>assetIdExternal, 'asset_id_external');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'metric_id',
+            <any>metricId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'exchange_id',
+            <any>exchangeId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'chain_id',
+            <any>chainId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'network_id',
+            <any>networkId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'asset_id',
+            <any>assetId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'asset_id_external',
+            <any>assetIdExternal,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -285,7 +421,7 @@ export class MetricsV1Service extends BaseService {
         return this.httpClient.request<Array<V1ListingItem>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -304,6 +440,7 @@ export class MetricsV1Service extends BaseService {
      * @param metricId The metric identifier (from the Metrics -&gt; Listing)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1MetricsExchangeCurrentGet(exchangeId: string, metricId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1GeneralData>>;
     public v1MetricsExchangeCurrentGet(exchangeId: string, metricId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1GeneralData>>>;
@@ -313,11 +450,25 @@ export class MetricsV1Service extends BaseService {
             throw new Error('Required parameter exchangeId was null or undefined when calling v1MetricsExchangeCurrentGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>metricId, 'metric_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>exchangeId, 'exchange_id');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'metric_id',
+            <any>metricId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'exchange_id',
+            <any>exchangeId,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -358,7 +509,7 @@ export class MetricsV1Service extends BaseService {
         return this.httpClient.request<Array<V1GeneralData>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -382,6 +533,7 @@ export class MetricsV1Service extends BaseService {
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1MetricsExchangeHistoryGet(metricId: string, exchangeId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1MetricData>>;
     public v1MetricsExchangeHistoryGet(metricId: string, exchangeId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1MetricData>>>;
@@ -394,21 +546,70 @@ export class MetricsV1Service extends BaseService {
             throw new Error('Required parameter exchangeId was null or undefined when calling v1MetricsExchangeHistoryGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>metricId, 'metric_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>exchangeId, 'exchange_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeStart, 'time_start');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeEnd, 'time_end');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeFormat, 'time_format');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>periodId, 'period_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>limit, 'limit');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'metric_id',
+            <any>metricId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'exchange_id',
+            <any>exchangeId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_start',
+            <any>timeStart,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_end',
+            <any>timeEnd,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_format',
+            <any>timeFormat,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'period_id',
+            <any>periodId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -449,7 +650,7 @@ export class MetricsV1Service extends BaseService {
         return this.httpClient.request<Array<V1MetricData>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -468,6 +669,7 @@ export class MetricsV1Service extends BaseService {
      * @param metricId The metric identifier (from the Metrics -&gt; Listing)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1MetricsExchangeListingGet(exchangeId: string, metricId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1ListingItem>>;
     public v1MetricsExchangeListingGet(exchangeId: string, metricId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1ListingItem>>>;
@@ -477,11 +679,25 @@ export class MetricsV1Service extends BaseService {
             throw new Error('Required parameter exchangeId was null or undefined when calling v1MetricsExchangeListingGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>metricId, 'metric_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>exchangeId, 'exchange_id');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'metric_id',
+            <any>metricId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'exchange_id',
+            <any>exchangeId,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -522,7 +738,7 @@ export class MetricsV1Service extends BaseService {
         return this.httpClient.request<Array<V1ListingItem>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -539,6 +755,7 @@ export class MetricsV1Service extends BaseService {
      * @endpoint get /v1/metrics/listing
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1MetricsListingGet(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1Metric>>;
     public v1MetricsListingGet(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1Metric>>>;
@@ -603,19 +820,41 @@ export class MetricsV1Service extends BaseService {
      * @param exchangeId Exchange id (from the Metadata -&gt; Exchanges)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1MetricsSymbolCurrentGet(metricId?: string, symbolId?: string, exchangeId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1GeneralData>>;
     public v1MetricsSymbolCurrentGet(metricId?: string, symbolId?: string, exchangeId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1GeneralData>>>;
     public v1MetricsSymbolCurrentGet(metricId?: string, symbolId?: string, exchangeId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1GeneralData>>>;
     public v1MetricsSymbolCurrentGet(metricId?: string, symbolId?: string, exchangeId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>metricId, 'metric_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>symbolId, 'symbol_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>exchangeId, 'exchange_id');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'metric_id',
+            <any>metricId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'symbol_id',
+            <any>symbolId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'exchange_id',
+            <any>exchangeId,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -656,7 +895,7 @@ export class MetricsV1Service extends BaseService {
         return this.httpClient.request<Array<V1GeneralData>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -680,6 +919,7 @@ export class MetricsV1Service extends BaseService {
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1MetricsSymbolHistoryGet(metricId: string, symbolId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1MetricData>>;
     public v1MetricsSymbolHistoryGet(metricId: string, symbolId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1MetricData>>>;
@@ -692,21 +932,70 @@ export class MetricsV1Service extends BaseService {
             throw new Error('Required parameter symbolId was null or undefined when calling v1MetricsSymbolHistoryGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>metricId, 'metric_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>symbolId, 'symbol_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeStart, 'time_start');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeEnd, 'time_end');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeFormat, 'time_format');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>periodId, 'period_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>limit, 'limit');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'metric_id',
+            <any>metricId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'symbol_id',
+            <any>symbolId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_start',
+            <any>timeStart,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_end',
+            <any>timeEnd,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_format',
+            <any>timeFormat,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'period_id',
+            <any>periodId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -747,7 +1036,7 @@ export class MetricsV1Service extends BaseService {
         return this.httpClient.request<Array<V1MetricData>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
@@ -767,19 +1056,41 @@ export class MetricsV1Service extends BaseService {
      * @param symbolId Symbol identifier (from the Metadata -&gt; Symbols)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1MetricsSymbolListingGet(metricId?: string, exchangeId?: string, symbolId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1ListingItem>>;
     public v1MetricsSymbolListingGet(metricId?: string, exchangeId?: string, symbolId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1ListingItem>>>;
     public v1MetricsSymbolListingGet(metricId?: string, exchangeId?: string, symbolId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1ListingItem>>>;
     public v1MetricsSymbolListingGet(metricId?: string, exchangeId?: string, symbolId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>metricId, 'metric_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>exchangeId, 'exchange_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>symbolId, 'symbol_id');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'metric_id',
+            <any>metricId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'exchange_id',
+            <any>exchangeId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'symbol_id',
+            <any>symbolId,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -820,7 +1131,7 @@ export class MetricsV1Service extends BaseService {
         return this.httpClient.request<Array<V1ListingItem>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,

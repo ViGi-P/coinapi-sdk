@@ -175,7 +175,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1OptionsExchangeIdCurrentGet(ref suppressDefaultLog, apiResponseLocalVar, exchangeId);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>

@@ -11,10 +11,10 @@
 
 import { Inject, Injectable, Optional }                      from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams,
-         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext 
+         HttpResponse, HttpEvent, HttpContext 
         }       from '@angular/common/http';
-import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
+import { OpenApiHttpParams, QueryParamStyle } from '../query.params';
 
 // @ts-ignore
 import { OptionsOptionExchangeGroup } from '../model/optionsOptionExchangeGroup';
@@ -42,6 +42,7 @@ export class OptionsService extends BaseService {
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1OptionsExchangeIdCurrentGet(exchangeId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<OptionsOptionExchangeGroup>>;
     public v1OptionsExchangeIdCurrentGet(exchangeId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<OptionsOptionExchangeGroup>>>;

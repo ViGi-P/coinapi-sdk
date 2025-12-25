@@ -41,7 +41,7 @@ final String assetId = assetId_example; // String | The asset ID.
 try {
     final response = api.v1AssetsAssetIdGet(assetId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1AssetsAssetIdGet: $e\n');
 }
 ```
@@ -88,7 +88,7 @@ final String filterAssetId = filterAssetId_example; // String | Comma or semicol
 try {
     final response = api.v1AssetsGet(filterAssetId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1AssetsGet: $e\n');
 }
 ```
@@ -135,7 +135,7 @@ final int size = 56; // int | The size of the icons.
 try {
     final response = api.v1AssetsIconsSizeGet(size);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1AssetsIconsSizeGet: $e\n');
 }
 ```
@@ -180,7 +180,7 @@ final String chainId = chainId_example; // String | The chain ID.
 try {
     final response = api.v1ChainsChainIdGet(chainId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1ChainsChainIdGet: $e\n');
 }
 ```
@@ -227,7 +227,7 @@ final String filterChainId = filterChainId_example; // String | Comma or semicol
 try {
     final response = api.v1ChainsGet(filterChainId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1ChainsGet: $e\n');
 }
 ```
@@ -272,7 +272,7 @@ final String exchangeId = exchangeId_example; // String | The ID of the exchange
 try {
     final response = api.v1ExchangesExchangeIdGet(exchangeId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1ExchangesExchangeIdGet: $e\n');
 }
 ```
@@ -319,7 +319,7 @@ final String filterExchangeId = filterExchangeId_example; // String | Comma or s
 try {
     final response = api.v1ExchangesGet(filterExchangeId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1ExchangesGet: $e\n');
 }
 ```
@@ -364,7 +364,7 @@ final int size = 56; // int | The size of the icons.
 try {
     final response = api.v1ExchangesIconsSizeGet(size);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1ExchangesIconsSizeGet: $e\n');
 }
 ```
@@ -413,7 +413,7 @@ final String filterAssetId = filterAssetId_example; // String | The filter for a
 try {
     final response = api.v1SymbolsExchangeIdActiveGet(exchangeId, filterSymbolId, filterAssetId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1SymbolsExchangeIdActiveGet: $e\n');
 }
 ```
@@ -464,7 +464,7 @@ final int limit = 56; // int | Number of records to return per page.
 try {
     final response = api.v1SymbolsExchangeIdHistoryGet(exchangeId, page, limit);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1SymbolsExchangeIdHistoryGet: $e\n');
 }
 ```
@@ -511,7 +511,7 @@ final String exchangeId = exchangeId_example; // String | The ID of the exchange
 try {
     final response = api.v1SymbolsMapExchangeIdGet(exchangeId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->v1SymbolsMapExchangeIdGet: $e\n');
 }
 ```

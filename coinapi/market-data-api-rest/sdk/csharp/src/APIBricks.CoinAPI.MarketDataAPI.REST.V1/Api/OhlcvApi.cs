@@ -371,7 +371,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1OhlcvExchangesExchangeIdHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, exchangeId, periodId, timeStart, timeEnd);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -640,7 +640,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1OhlcvPeriodsGet(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -906,7 +906,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1OhlcvSymbolIdHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, symbolId, periodId, timeStart, timeEnd, limit);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1207,7 +1207,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1OhlcvSymbolIdLatestGet(ref suppressDefaultLog, apiResponseLocalVar, symbolId, periodId, limit);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
