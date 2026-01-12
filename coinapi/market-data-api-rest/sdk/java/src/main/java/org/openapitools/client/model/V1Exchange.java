@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an exchange.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-09T06:04:02.156820755Z[Etc/UTC]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T06:04:03.737766693Z[Etc/UTC]", comments = "Generator version: 7.18.0")
 public class V1Exchange {
   public static final String SERIALIZED_NAME_EXCHANGE_ID = "exchange_id";
   @SerializedName(SERIALIZED_NAME_EXCHANGE_ID)
