@@ -252,9 +252,9 @@ func (a *ExchangeRatesAPIService) V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGe
 	if r.limit != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	} else {
-        var defaultValue int32 = 100
-        parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-        r.limit = &defaultValue
+		var defaultValue int32 = 100
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
+		r.limit = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -408,9 +408,9 @@ func (a *ExchangeRatesAPIService) V1ExchangerateAssetIdBaseGetExecute(r ApiV1Exc
 	if r.invert != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "invert", r.invert, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "invert", defaultValue, "form", "")
-        r.invert = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "invert", defaultValue, "form", "")
+		r.invert = &defaultValue
 	}
 	if r.time != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "time", r.time, "form", "")
