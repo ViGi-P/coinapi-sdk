@@ -96,16 +96,16 @@ func (a *TradesAPIService) V1TradesLatestGetExecute(r ApiV1TradesLatestGetReques
 	if r.includeId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "include_id", r.includeId, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "include_id", defaultValue, "form", "")
-        r.includeId = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "include_id", defaultValue, "form", "")
+		r.includeId = &defaultValue
 	}
 	if r.limit != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	} else {
-        var defaultValue int32 = 100
-        parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-        r.limit = &defaultValue
+		var defaultValue int32 = 100
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
+		r.limit = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -276,16 +276,16 @@ func (a *TradesAPIService) V1TradesSymbolIdHistoryGetExecute(r ApiV1TradesSymbol
 	if r.limit != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	} else {
-        var defaultValue int32 = 100
-        parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-        r.limit = &defaultValue
+		var defaultValue int32 = 100
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
+		r.limit = &defaultValue
 	}
 	if r.includeId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "include_id", r.includeId, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "include_id", defaultValue, "form", "")
-        r.includeId = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "include_id", defaultValue, "form", "")
+		r.includeId = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -421,16 +421,16 @@ func (a *TradesAPIService) V1TradesSymbolIdLatestGetExecute(r ApiV1TradesSymbolI
 	if r.limit != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	} else {
-        var defaultValue int32 = 100
-        parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-        r.limit = &defaultValue
+		var defaultValue int32 = 100
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
+		r.limit = &defaultValue
 	}
 	if r.includeId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "include_id", r.includeId, "form", "")
 	} else {
-        var defaultValue bool = false
-        parameterAddToHeaderOrQuery(localVarQueryParams, "include_id", defaultValue, "form", "")
-        r.includeId = &defaultValue
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "include_id", defaultValue, "form", "")
+		r.includeId = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

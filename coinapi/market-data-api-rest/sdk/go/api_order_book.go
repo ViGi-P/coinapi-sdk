@@ -383,9 +383,9 @@ func (a *OrderBookAPIService) V1OrderbooksSymbolIdHistoryGetExecute(r ApiV1Order
 	if r.limit != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
 	} else {
-        var defaultValue int32 = 100
-        parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-        r.limit = &defaultValue
+		var defaultValue int32 = 100
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
+		r.limit = &defaultValue
 	}
 	if r.limitLevels != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit_levels", r.limitLevels, "form", "")
