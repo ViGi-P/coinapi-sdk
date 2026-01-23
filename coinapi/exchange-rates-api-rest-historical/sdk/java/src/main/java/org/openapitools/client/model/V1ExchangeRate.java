@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an exchange rate.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-22T06:33:42.231528684Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-23T06:30:49.542141562Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class V1ExchangeRate {
   public static final String SERIALIZED_NAME_TIME = "time";
   @SerializedName(SERIALIZED_NAME_TIME)
