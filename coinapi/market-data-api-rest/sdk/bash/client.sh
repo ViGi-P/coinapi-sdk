@@ -167,30 +167,30 @@ operation_parameters_minimum_occurrences["v1MetricsSymbolHistoryGet:::limit"]=0
 operation_parameters_minimum_occurrences["v1MetricsSymbolListingGet:::metric_id"]=0
 operation_parameters_minimum_occurrences["v1MetricsSymbolListingGet:::exchange_id"]=0
 operation_parameters_minimum_occurrences["v1MetricsSymbolListingGet:::symbol_id"]=0
-operation_parameters_minimum_occurrences["v2MetricsAssetHistoryGet:::metric_id"]=1
-operation_parameters_minimum_occurrences["v2MetricsAssetHistoryGet:::asset_id"]=1
-operation_parameters_minimum_occurrences["v2MetricsAssetHistoryGet:::time_start"]=0
-operation_parameters_minimum_occurrences["v2MetricsAssetHistoryGet:::time_end"]=0
-operation_parameters_minimum_occurrences["v2MetricsAssetHistoryGet:::time_format"]=0
-operation_parameters_minimum_occurrences["v2MetricsAssetHistoryGet:::period_id"]=0
-operation_parameters_minimum_occurrences["v2MetricsAssetHistoryGet:::limit"]=0
-operation_parameters_minimum_occurrences["v2MetricsAssetListingGet:::asset_id"]=1
-operation_parameters_minimum_occurrences["v2MetricsChainHistoryGet:::metric_id"]=1
-operation_parameters_minimum_occurrences["v2MetricsChainHistoryGet:::chain_id"]=1
-operation_parameters_minimum_occurrences["v2MetricsChainHistoryGet:::time_start"]=0
-operation_parameters_minimum_occurrences["v2MetricsChainHistoryGet:::time_end"]=0
-operation_parameters_minimum_occurrences["v2MetricsChainHistoryGet:::time_format"]=0
-operation_parameters_minimum_occurrences["v2MetricsChainHistoryGet:::period_id"]=0
-operation_parameters_minimum_occurrences["v2MetricsChainHistoryGet:::limit"]=0
-operation_parameters_minimum_occurrences["v2MetricsChainListingGet:::chain_id"]=1
-operation_parameters_minimum_occurrences["v2MetricsExchangeHistoryGet:::metric_id"]=1
-operation_parameters_minimum_occurrences["v2MetricsExchangeHistoryGet:::exchange_id"]=1
-operation_parameters_minimum_occurrences["v2MetricsExchangeHistoryGet:::time_start"]=0
-operation_parameters_minimum_occurrences["v2MetricsExchangeHistoryGet:::time_end"]=0
-operation_parameters_minimum_occurrences["v2MetricsExchangeHistoryGet:::time_format"]=0
-operation_parameters_minimum_occurrences["v2MetricsExchangeHistoryGet:::period_id"]=0
-operation_parameters_minimum_occurrences["v2MetricsExchangeHistoryGet:::limit"]=0
-operation_parameters_minimum_occurrences["v2MetricsExchangeListingGet:::exchange_id"]=1
+operation_parameters_minimum_occurrences["marketdataListMetricsV2AssetHistory:::metric_id"]=1
+operation_parameters_minimum_occurrences["marketdataListMetricsV2AssetHistory:::asset_id"]=1
+operation_parameters_minimum_occurrences["marketdataListMetricsV2AssetHistory:::time_start"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2AssetHistory:::time_end"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2AssetHistory:::time_format"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2AssetHistory:::period_id"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2AssetHistory:::limit"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2AssetListing:::asset_id"]=1
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ChainHistory:::metric_id"]=1
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ChainHistory:::chain_id"]=1
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ChainHistory:::time_start"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ChainHistory:::time_end"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ChainHistory:::time_format"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ChainHistory:::period_id"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ChainHistory:::limit"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ChainListing:::chain_id"]=1
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ExchangeHistory:::metric_id"]=1
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ExchangeHistory:::exchange_id"]=1
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ExchangeHistory:::time_start"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ExchangeHistory:::time_end"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ExchangeHistory:::time_format"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ExchangeHistory:::period_id"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ExchangeHistory:::limit"]=0
+operation_parameters_minimum_occurrences["marketdataListMetricsV2ExchangeListing:::exchange_id"]=1
 operation_parameters_minimum_occurrences["v1OhlcvExchangesExchangeIdHistoryGet:::exchange_id"]=1
 operation_parameters_minimum_occurrences["v1OhlcvExchangesExchangeIdHistoryGet:::period_id"]=1
 operation_parameters_minimum_occurrences["v1OhlcvExchangesExchangeIdHistoryGet:::time_start"]=1
@@ -320,30 +320,30 @@ operation_parameters_maximum_occurrences["v1MetricsSymbolHistoryGet:::limit"]=0
 operation_parameters_maximum_occurrences["v1MetricsSymbolListingGet:::metric_id"]=0
 operation_parameters_maximum_occurrences["v1MetricsSymbolListingGet:::exchange_id"]=0
 operation_parameters_maximum_occurrences["v1MetricsSymbolListingGet:::symbol_id"]=0
-operation_parameters_maximum_occurrences["v2MetricsAssetHistoryGet:::metric_id"]=0
-operation_parameters_maximum_occurrences["v2MetricsAssetHistoryGet:::asset_id"]=0
-operation_parameters_maximum_occurrences["v2MetricsAssetHistoryGet:::time_start"]=0
-operation_parameters_maximum_occurrences["v2MetricsAssetHistoryGet:::time_end"]=0
-operation_parameters_maximum_occurrences["v2MetricsAssetHistoryGet:::time_format"]=0
-operation_parameters_maximum_occurrences["v2MetricsAssetHistoryGet:::period_id"]=0
-operation_parameters_maximum_occurrences["v2MetricsAssetHistoryGet:::limit"]=0
-operation_parameters_maximum_occurrences["v2MetricsAssetListingGet:::asset_id"]=0
-operation_parameters_maximum_occurrences["v2MetricsChainHistoryGet:::metric_id"]=0
-operation_parameters_maximum_occurrences["v2MetricsChainHistoryGet:::chain_id"]=0
-operation_parameters_maximum_occurrences["v2MetricsChainHistoryGet:::time_start"]=0
-operation_parameters_maximum_occurrences["v2MetricsChainHistoryGet:::time_end"]=0
-operation_parameters_maximum_occurrences["v2MetricsChainHistoryGet:::time_format"]=0
-operation_parameters_maximum_occurrences["v2MetricsChainHistoryGet:::period_id"]=0
-operation_parameters_maximum_occurrences["v2MetricsChainHistoryGet:::limit"]=0
-operation_parameters_maximum_occurrences["v2MetricsChainListingGet:::chain_id"]=0
-operation_parameters_maximum_occurrences["v2MetricsExchangeHistoryGet:::metric_id"]=0
-operation_parameters_maximum_occurrences["v2MetricsExchangeHistoryGet:::exchange_id"]=0
-operation_parameters_maximum_occurrences["v2MetricsExchangeHistoryGet:::time_start"]=0
-operation_parameters_maximum_occurrences["v2MetricsExchangeHistoryGet:::time_end"]=0
-operation_parameters_maximum_occurrences["v2MetricsExchangeHistoryGet:::time_format"]=0
-operation_parameters_maximum_occurrences["v2MetricsExchangeHistoryGet:::period_id"]=0
-operation_parameters_maximum_occurrences["v2MetricsExchangeHistoryGet:::limit"]=0
-operation_parameters_maximum_occurrences["v2MetricsExchangeListingGet:::exchange_id"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2AssetHistory:::metric_id"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2AssetHistory:::asset_id"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2AssetHistory:::time_start"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2AssetHistory:::time_end"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2AssetHistory:::time_format"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2AssetHistory:::period_id"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2AssetHistory:::limit"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2AssetListing:::asset_id"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ChainHistory:::metric_id"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ChainHistory:::chain_id"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ChainHistory:::time_start"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ChainHistory:::time_end"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ChainHistory:::time_format"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ChainHistory:::period_id"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ChainHistory:::limit"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ChainListing:::chain_id"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ExchangeHistory:::metric_id"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ExchangeHistory:::exchange_id"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ExchangeHistory:::time_start"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ExchangeHistory:::time_end"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ExchangeHistory:::time_format"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ExchangeHistory:::period_id"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ExchangeHistory:::limit"]=0
+operation_parameters_maximum_occurrences["marketdataListMetricsV2ExchangeListing:::exchange_id"]=0
 operation_parameters_maximum_occurrences["v1OhlcvExchangesExchangeIdHistoryGet:::exchange_id"]=0
 operation_parameters_maximum_occurrences["v1OhlcvExchangesExchangeIdHistoryGet:::period_id"]=0
 operation_parameters_maximum_occurrences["v1OhlcvExchangesExchangeIdHistoryGet:::time_start"]=0
@@ -470,30 +470,30 @@ operation_parameters_collection_type["v1MetricsSymbolHistoryGet:::limit"]=""
 operation_parameters_collection_type["v1MetricsSymbolListingGet:::metric_id"]=""
 operation_parameters_collection_type["v1MetricsSymbolListingGet:::exchange_id"]=""
 operation_parameters_collection_type["v1MetricsSymbolListingGet:::symbol_id"]=""
-operation_parameters_collection_type["v2MetricsAssetHistoryGet:::metric_id"]=""
-operation_parameters_collection_type["v2MetricsAssetHistoryGet:::asset_id"]=""
-operation_parameters_collection_type["v2MetricsAssetHistoryGet:::time_start"]=""
-operation_parameters_collection_type["v2MetricsAssetHistoryGet:::time_end"]=""
-operation_parameters_collection_type["v2MetricsAssetHistoryGet:::time_format"]=""
-operation_parameters_collection_type["v2MetricsAssetHistoryGet:::period_id"]=""
-operation_parameters_collection_type["v2MetricsAssetHistoryGet:::limit"]=""
-operation_parameters_collection_type["v2MetricsAssetListingGet:::asset_id"]=""
-operation_parameters_collection_type["v2MetricsChainHistoryGet:::metric_id"]=""
-operation_parameters_collection_type["v2MetricsChainHistoryGet:::chain_id"]=""
-operation_parameters_collection_type["v2MetricsChainHistoryGet:::time_start"]=""
-operation_parameters_collection_type["v2MetricsChainHistoryGet:::time_end"]=""
-operation_parameters_collection_type["v2MetricsChainHistoryGet:::time_format"]=""
-operation_parameters_collection_type["v2MetricsChainHistoryGet:::period_id"]=""
-operation_parameters_collection_type["v2MetricsChainHistoryGet:::limit"]=""
-operation_parameters_collection_type["v2MetricsChainListingGet:::chain_id"]=""
-operation_parameters_collection_type["v2MetricsExchangeHistoryGet:::metric_id"]=""
-operation_parameters_collection_type["v2MetricsExchangeHistoryGet:::exchange_id"]=""
-operation_parameters_collection_type["v2MetricsExchangeHistoryGet:::time_start"]=""
-operation_parameters_collection_type["v2MetricsExchangeHistoryGet:::time_end"]=""
-operation_parameters_collection_type["v2MetricsExchangeHistoryGet:::time_format"]=""
-operation_parameters_collection_type["v2MetricsExchangeHistoryGet:::period_id"]=""
-operation_parameters_collection_type["v2MetricsExchangeHistoryGet:::limit"]=""
-operation_parameters_collection_type["v2MetricsExchangeListingGet:::exchange_id"]=""
+operation_parameters_collection_type["marketdataListMetricsV2AssetHistory:::metric_id"]=""
+operation_parameters_collection_type["marketdataListMetricsV2AssetHistory:::asset_id"]=""
+operation_parameters_collection_type["marketdataListMetricsV2AssetHistory:::time_start"]=""
+operation_parameters_collection_type["marketdataListMetricsV2AssetHistory:::time_end"]=""
+operation_parameters_collection_type["marketdataListMetricsV2AssetHistory:::time_format"]=""
+operation_parameters_collection_type["marketdataListMetricsV2AssetHistory:::period_id"]=""
+operation_parameters_collection_type["marketdataListMetricsV2AssetHistory:::limit"]=""
+operation_parameters_collection_type["marketdataListMetricsV2AssetListing:::asset_id"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ChainHistory:::metric_id"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ChainHistory:::chain_id"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ChainHistory:::time_start"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ChainHistory:::time_end"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ChainHistory:::time_format"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ChainHistory:::period_id"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ChainHistory:::limit"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ChainListing:::chain_id"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ExchangeHistory:::metric_id"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ExchangeHistory:::exchange_id"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ExchangeHistory:::time_start"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ExchangeHistory:::time_end"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ExchangeHistory:::time_format"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ExchangeHistory:::period_id"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ExchangeHistory:::limit"]=""
+operation_parameters_collection_type["marketdataListMetricsV2ExchangeListing:::exchange_id"]=""
 operation_parameters_collection_type["v1OhlcvExchangesExchangeIdHistoryGet:::exchange_id"]=""
 operation_parameters_collection_type["v1OhlcvExchangesExchangeIdHistoryGet:::period_id"]=""
 operation_parameters_collection_type["v1OhlcvExchangesExchangeIdHistoryGet:::time_start"]=""
@@ -993,13 +993,13 @@ echo "  $ops" | column -t -s ';'
     echo ""
     echo -e "${BOLD}${WHITE}[metricsV2]${OFF}"
 read -r -d '' ops <<EOF
-  ${CYAN}v2MetricsAssetHistoryGet${OFF};Historical metrics for the asset (AUTH) (AUTH)
-  ${CYAN}v2MetricsAssetListingGet${OFF};Listing of metrics available for specific asset (AUTH) (AUTH)
-  ${CYAN}v2MetricsChainHistoryGet${OFF};Historical metrics for the chain (AUTH) (AUTH)
-  ${CYAN}v2MetricsChainListingGet${OFF};Listing of metrics available for specific chain (AUTH) (AUTH)
-  ${CYAN}v2MetricsExchangeHistoryGet${OFF};Historical metrics for the exchange (AUTH) (AUTH)
-  ${CYAN}v2MetricsExchangeListingGet${OFF};Listing of metrics available for specific exchange (AUTH) (AUTH)
-  ${CYAN}v2MetricsListingGet${OFF};Listing of all supported metrics (AUTH) (AUTH)
+  ${CYAN}marketdataListMetricsV2AssetHistory${OFF};Historical metrics for the asset (AUTH) (AUTH)
+  ${CYAN}marketdataListMetricsV2AssetListing${OFF};Listing of metrics available for specific asset (AUTH) (AUTH)
+  ${CYAN}marketdataListMetricsV2ChainHistory${OFF};Historical metrics for the chain (AUTH) (AUTH)
+  ${CYAN}marketdataListMetricsV2ChainListing${OFF};Listing of metrics available for specific chain (AUTH) (AUTH)
+  ${CYAN}marketdataListMetricsV2ExchangeHistory${OFF};Historical metrics for the exchange (AUTH) (AUTH)
+  ${CYAN}marketdataListMetricsV2ExchangeListing${OFF};Listing of metrics available for specific exchange (AUTH) (AUTH)
+  ${CYAN}marketdataListMetricsV2Listing${OFF};Listing of all supported metrics (AUTH) (AUTH)
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
@@ -1763,12 +1763,12 @@ print_v1MetricsSymbolListingGet_help() {
 }
 ##############################################################################
 #
-# Print help for v2MetricsAssetHistoryGet operation
+# Print help for marketdataListMetricsV2AssetHistory operation
 #
 ##############################################################################
-print_v2MetricsAssetHistoryGet_help() {
+print_marketdataListMetricsV2AssetHistory_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v2MetricsAssetHistoryGet - Historical metrics for the asset${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}marketdataListMetricsV2AssetHistory - Historical metrics for the asset${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Get asset metrics history." | paste -sd' ' - | fold -sw 80
     echo -e ""
@@ -1798,12 +1798,12 @@ print_v2MetricsAssetHistoryGet_help() {
 }
 ##############################################################################
 #
-# Print help for v2MetricsAssetListingGet operation
+# Print help for marketdataListMetricsV2AssetListing operation
 #
 ##############################################################################
-print_v2MetricsAssetListingGet_help() {
+print_marketdataListMetricsV2AssetListing_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v2MetricsAssetListingGet - Listing of metrics available for specific asset${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}marketdataListMetricsV2AssetListing - Listing of metrics available for specific asset${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Get all metrics that are actually available for the specified asset." | paste -sd' ' - | fold -sw 80
     echo -e ""
@@ -1817,12 +1817,12 @@ print_v2MetricsAssetListingGet_help() {
 }
 ##############################################################################
 #
-# Print help for v2MetricsChainHistoryGet operation
+# Print help for marketdataListMetricsV2ChainHistory operation
 #
 ##############################################################################
-print_v2MetricsChainHistoryGet_help() {
+print_marketdataListMetricsV2ChainHistory_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v2MetricsChainHistoryGet - Historical metrics for the chain${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}marketdataListMetricsV2ChainHistory - Historical metrics for the chain${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Get chain metrics history." | paste -sd' ' - | fold -sw 80
     echo -e ""
@@ -1852,12 +1852,12 @@ print_v2MetricsChainHistoryGet_help() {
 }
 ##############################################################################
 #
-# Print help for v2MetricsChainListingGet operation
+# Print help for marketdataListMetricsV2ChainListing operation
 #
 ##############################################################################
-print_v2MetricsChainListingGet_help() {
+print_marketdataListMetricsV2ChainListing_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v2MetricsChainListingGet - Listing of metrics available for specific chain${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}marketdataListMetricsV2ChainListing - Listing of metrics available for specific chain${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Get all metrics that are actually available for the specified blockchain chain." | paste -sd' ' - | fold -sw 80
     echo -e ""
@@ -1871,12 +1871,12 @@ print_v2MetricsChainListingGet_help() {
 }
 ##############################################################################
 #
-# Print help for v2MetricsExchangeHistoryGet operation
+# Print help for marketdataListMetricsV2ExchangeHistory operation
 #
 ##############################################################################
-print_v2MetricsExchangeHistoryGet_help() {
+print_marketdataListMetricsV2ExchangeHistory_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v2MetricsExchangeHistoryGet - Historical metrics for the exchange${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}marketdataListMetricsV2ExchangeHistory - Historical metrics for the exchange${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Get exchange metrics history." | paste -sd' ' - | fold -sw 80
     echo -e ""
@@ -1906,12 +1906,12 @@ print_v2MetricsExchangeHistoryGet_help() {
 }
 ##############################################################################
 #
-# Print help for v2MetricsExchangeListingGet operation
+# Print help for marketdataListMetricsV2ExchangeListing operation
 #
 ##############################################################################
-print_v2MetricsExchangeListingGet_help() {
+print_marketdataListMetricsV2ExchangeListing_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v2MetricsExchangeListingGet - Listing of metrics available for specific exchange${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}marketdataListMetricsV2ExchangeListing - Listing of metrics available for specific exchange${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Get all metrics that are actually available for the specified exchange." | paste -sd' ' - | fold -sw 80
     echo -e ""
@@ -1925,12 +1925,12 @@ print_v2MetricsExchangeListingGet_help() {
 }
 ##############################################################################
 #
-# Print help for v2MetricsListingGet operation
+# Print help for marketdataListMetricsV2Listing operation
 #
 ##############################################################################
-print_v2MetricsListingGet_help() {
+print_marketdataListMetricsV2Listing_help() {
     echo ""
-    echo -e "${BOLD}${WHITE}v2MetricsListingGet - Listing of all supported metrics${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "${BOLD}${WHITE}marketdataListMetricsV2Listing - Listing of all supported metrics${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Get all metrics available in the system." | paste -sd' ' - | fold -sw 80
     echo -e ""
@@ -2132,19 +2132,21 @@ print_v1OrderbooksSymbolIdHistoryGet_help() {
 :::info
 The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.
 :::
-
-:::warning
-The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
-Please use the 'date' parameter instead for querying data for a specific day without filter.
+            
+This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
+Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.
+            
+:::tip
+For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.
 :::" | paste -sd' ' - | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}symbol_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Symbol identifier for requested timeseries (from the Metadata -> Symbols) ${YELLOW}Specify as: symbol_id=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided)${YELLOW} Specify as: date=value${OFF}" \
+    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)${YELLOW} Specify as: date=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}time_start${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Starting time in ISO 8601 (deprecated, use 'date' instead)${YELLOW} Specify as: time_start=value${OFF}" \
+    echo -e "  * ${GREEN}time_start${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)${YELLOW} Specify as: time_start=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}time_end${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Timeseries ending time in ISO 8601 (deprecated, use 'date' instead)${YELLOW} Specify as: time_end=value${OFF}" \
+    echo -e "  * ${GREEN}time_end${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Timeseries ending time in ISO 8601 (optional, supports cross-day queries)${YELLOW} Specify as: time_end=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
@@ -2183,7 +2185,8 @@ print_v1Orderbooks3SymbolIdCurrentGet_help() {
     echo ""
     echo -e "${BOLD}${WHITE}v1Orderbooks3SymbolIdCurrentGet - Current order book by symbol_id${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
-    echo -e "Retrieves the current order book for the specified symbol." | paste -sd' ' - | fold -sw 80
+    echo -e "Retrieves the current L3 order book for the specified symbol.
+L3 order books include individual order IDs for each price level." | paste -sd' ' - | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}symbol_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The symbol ID (from the Metadata -> Symbols) ${YELLOW}Specify as: symbol_id=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
@@ -2264,19 +2267,21 @@ print_v1QuotesSymbolIdHistoryGet_help() {
     echo -e "${BOLD}${WHITE}v1QuotesSymbolIdHistoryGet - Historical data${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Get historical quote updates within requested time range, returned in time ascending order.
-
-:::warning
-The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
-Please use the 'date' parameter instead for querying data for a specific day without filter.
+            
+This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
+Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.
+            
+:::tip
+For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.
 :::" | paste -sd' ' - | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}symbol_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Symbol identifier for requested timeseries (from the Metadata -> Symbols) ${YELLOW}Specify as: symbol_id=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided)${YELLOW} Specify as: date=value${OFF}" \
+    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)${YELLOW} Specify as: date=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}time_start${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Starting time in ISO 8601${YELLOW} Specify as: time_start=value${OFF}" \
+    echo -e "  * ${GREEN}time_start${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)${YELLOW} Specify as: time_start=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}time_end${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Timeseries ending time in ISO 8601${YELLOW} Specify as: time_end=value${OFF}" \
+    echo -e "  * ${GREEN}time_end${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Timeseries ending time in ISO 8601 (optional, supports cross-day queries)${YELLOW} Specify as: time_end=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
@@ -2336,19 +2341,21 @@ print_v1TradesSymbolIdHistoryGet_help() {
     echo -e "${BOLD}${WHITE}v1TradesSymbolIdHistoryGet - Historical data${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "Get history transactions from specific symbol, returned in time ascending order.
-
-:::warning
-The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
-Please use the 'date' parameter instead for querying data for a specific day without filter.
+            
+This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
+Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.
+            
+:::tip
+For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.
 :::" | paste -sd' ' - | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}symbol_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Symbol identifier for requested timeseries (from the Metadata -> Symbols) ${YELLOW}Specify as: symbol_id=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)${YELLOW} Specify as: date=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}time_start${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Starting time in ISO 8601${YELLOW} Specify as: time_start=value${OFF}" \
+    echo -e "  * ${GREEN}time_start${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)${YELLOW} Specify as: time_start=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}time_end${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Timeseries ending time in ISO 8601${YELLOW} Specify as: time_end=value${OFF}" \
+    echo -e "  * ${GREEN}time_end${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Timeseries ending time in ISO 8601 (optional, supports cross-day queries)${YELLOW} Specify as: time_end=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
@@ -3285,10 +3292,10 @@ call_v1MetricsSymbolListingGet() {
 
 ##############################################################################
 #
-# Call v2MetricsAssetHistoryGet operation
+# Call marketdataListMetricsV2AssetHistory operation
 #
 ##############################################################################
-call_v2MetricsAssetHistoryGet() {
+call_marketdataListMetricsV2AssetHistory() {
     # ignore error about 'path_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
     local path_parameter_names=()
@@ -3321,10 +3328,10 @@ call_v2MetricsAssetHistoryGet() {
 
 ##############################################################################
 #
-# Call v2MetricsAssetListingGet operation
+# Call marketdataListMetricsV2AssetListing operation
 #
 ##############################################################################
-call_v2MetricsAssetListingGet() {
+call_marketdataListMetricsV2AssetListing() {
     # ignore error about 'path_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
     local path_parameter_names=()
@@ -3357,10 +3364,10 @@ call_v2MetricsAssetListingGet() {
 
 ##############################################################################
 #
-# Call v2MetricsChainHistoryGet operation
+# Call marketdataListMetricsV2ChainHistory operation
 #
 ##############################################################################
-call_v2MetricsChainHistoryGet() {
+call_marketdataListMetricsV2ChainHistory() {
     # ignore error about 'path_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
     local path_parameter_names=()
@@ -3393,10 +3400,10 @@ call_v2MetricsChainHistoryGet() {
 
 ##############################################################################
 #
-# Call v2MetricsChainListingGet operation
+# Call marketdataListMetricsV2ChainListing operation
 #
 ##############################################################################
-call_v2MetricsChainListingGet() {
+call_marketdataListMetricsV2ChainListing() {
     # ignore error about 'path_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
     local path_parameter_names=()
@@ -3429,10 +3436,10 @@ call_v2MetricsChainListingGet() {
 
 ##############################################################################
 #
-# Call v2MetricsExchangeHistoryGet operation
+# Call marketdataListMetricsV2ExchangeHistory operation
 #
 ##############################################################################
-call_v2MetricsExchangeHistoryGet() {
+call_marketdataListMetricsV2ExchangeHistory() {
     # ignore error about 'path_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
     local path_parameter_names=()
@@ -3465,10 +3472,10 @@ call_v2MetricsExchangeHistoryGet() {
 
 ##############################################################################
 #
-# Call v2MetricsExchangeListingGet operation
+# Call marketdataListMetricsV2ExchangeListing operation
 #
 ##############################################################################
-call_v2MetricsExchangeListingGet() {
+call_marketdataListMetricsV2ExchangeListing() {
     # ignore error about 'path_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
     local path_parameter_names=()
@@ -3501,10 +3508,10 @@ call_v2MetricsExchangeListingGet() {
 
 ##############################################################################
 #
-# Call v2MetricsListingGet operation
+# Call marketdataListMetricsV2Listing operation
 #
 ##############################################################################
-call_v2MetricsListingGet() {
+call_marketdataListMetricsV2Listing() {
     # ignore error about 'path_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
     local path_parameter_names=()
@@ -4355,26 +4362,26 @@ case $key in
     v1MetricsSymbolListingGet)
     operation="v1MetricsSymbolListingGet"
     ;;
-    v2MetricsAssetHistoryGet)
-    operation="v2MetricsAssetHistoryGet"
+    marketdataListMetricsV2AssetHistory)
+    operation="marketdataListMetricsV2AssetHistory"
     ;;
-    v2MetricsAssetListingGet)
-    operation="v2MetricsAssetListingGet"
+    marketdataListMetricsV2AssetListing)
+    operation="marketdataListMetricsV2AssetListing"
     ;;
-    v2MetricsChainHistoryGet)
-    operation="v2MetricsChainHistoryGet"
+    marketdataListMetricsV2ChainHistory)
+    operation="marketdataListMetricsV2ChainHistory"
     ;;
-    v2MetricsChainListingGet)
-    operation="v2MetricsChainListingGet"
+    marketdataListMetricsV2ChainListing)
+    operation="marketdataListMetricsV2ChainListing"
     ;;
-    v2MetricsExchangeHistoryGet)
-    operation="v2MetricsExchangeHistoryGet"
+    marketdataListMetricsV2ExchangeHistory)
+    operation="marketdataListMetricsV2ExchangeHistory"
     ;;
-    v2MetricsExchangeListingGet)
-    operation="v2MetricsExchangeListingGet"
+    marketdataListMetricsV2ExchangeListing)
+    operation="marketdataListMetricsV2ExchangeListing"
     ;;
-    v2MetricsListingGet)
-    operation="v2MetricsListingGet"
+    marketdataListMetricsV2Listing)
+    operation="marketdataListMetricsV2Listing"
     ;;
     v1OhlcvExchangesExchangeIdHistoryGet)
     operation="v1OhlcvExchangesExchangeIdHistoryGet"
@@ -4599,26 +4606,26 @@ case $operation in
     v1MetricsSymbolListingGet)
     call_v1MetricsSymbolListingGet
     ;;
-    v2MetricsAssetHistoryGet)
-    call_v2MetricsAssetHistoryGet
+    marketdataListMetricsV2AssetHistory)
+    call_marketdataListMetricsV2AssetHistory
     ;;
-    v2MetricsAssetListingGet)
-    call_v2MetricsAssetListingGet
+    marketdataListMetricsV2AssetListing)
+    call_marketdataListMetricsV2AssetListing
     ;;
-    v2MetricsChainHistoryGet)
-    call_v2MetricsChainHistoryGet
+    marketdataListMetricsV2ChainHistory)
+    call_marketdataListMetricsV2ChainHistory
     ;;
-    v2MetricsChainListingGet)
-    call_v2MetricsChainListingGet
+    marketdataListMetricsV2ChainListing)
+    call_marketdataListMetricsV2ChainListing
     ;;
-    v2MetricsExchangeHistoryGet)
-    call_v2MetricsExchangeHistoryGet
+    marketdataListMetricsV2ExchangeHistory)
+    call_marketdataListMetricsV2ExchangeHistory
     ;;
-    v2MetricsExchangeListingGet)
-    call_v2MetricsExchangeListingGet
+    marketdataListMetricsV2ExchangeListing)
+    call_marketdataListMetricsV2ExchangeListing
     ;;
-    v2MetricsListingGet)
-    call_v2MetricsListingGet
+    marketdataListMetricsV2Listing)
+    call_marketdataListMetricsV2Listing
     ;;
     v1OhlcvExchangesExchangeIdHistoryGet)
     call_v1OhlcvExchangesExchangeIdHistoryGet

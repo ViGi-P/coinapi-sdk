@@ -56,7 +56,7 @@ bool v1Orderbooks3CurrentGetAsync(char * accessToken,
 
 /*! \brief Current order book by symbol_id. *Synchronous*
  *
- * Retrieves the current order book for the specified symbol.
+ * Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
  * \param symbolId The symbol ID (from the Metadata -> Symbols) *Required*
  * \param limitLevels The maximum number of levels to include in the response.
  * \param handler The callback function to be invoked on completion. *Required*
@@ -70,7 +70,7 @@ bool v1Orderbooks3SymbolIdCurrentGetSync(char * accessToken,
 
 /*! \brief Current order book by symbol_id. *Asynchronous*
  *
- * Retrieves the current order book for the specified symbol.
+ * Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
  * \param symbolId The symbol ID (from the Metadata -> Symbols) *Required*
  * \param limitLevels The maximum number of levels to include in the response.
  * \param handler The callback function to be invoked on completion. *Required*

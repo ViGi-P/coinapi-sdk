@@ -55,7 +55,7 @@ public class OASOrderBookL3Api {
     }
     /**
      * Current order book by symbol_id
-     * Retrieves the current order book for the specified symbol.
+     * Retrieves the current L3 order book for the specified symbol.\nL3 order books include individual order IDs for each price level.
      * @param symbolId The symbol ID (from the Metadata -&gt; Symbols) (required)
      * @param limitLevels The maximum number of levels to include in the response. (optional)
      * @return OASV1OrderBookBase

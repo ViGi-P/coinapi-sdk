@@ -4,19 +4,19 @@ All URIs are relative to *https://rest.coinapi.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2MetricsAssetHistoryGet**](MetricsV2Api.md#v2MetricsAssetHistoryGet) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
-[**v2MetricsAssetListingGet**](MetricsV2Api.md#v2MetricsAssetListingGet) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-[**v2MetricsChainHistoryGet**](MetricsV2Api.md#v2MetricsChainHistoryGet) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
-[**v2MetricsChainListingGet**](MetricsV2Api.md#v2MetricsChainListingGet) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-[**v2MetricsExchangeHistoryGet**](MetricsV2Api.md#v2MetricsExchangeHistoryGet) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
-[**v2MetricsExchangeListingGet**](MetricsV2Api.md#v2MetricsExchangeListingGet) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-[**v2MetricsListingGet**](MetricsV2Api.md#v2MetricsListingGet) | **GET** /v2/metrics/listing | Listing of all supported metrics
+[**marketdataListMetricsV2AssetHistory**](MetricsV2Api.md#marketdataListMetricsV2AssetHistory) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
+[**marketdataListMetricsV2AssetListing**](MetricsV2Api.md#marketdataListMetricsV2AssetListing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+[**marketdataListMetricsV2ChainHistory**](MetricsV2Api.md#marketdataListMetricsV2ChainHistory) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
+[**marketdataListMetricsV2ChainListing**](MetricsV2Api.md#marketdataListMetricsV2ChainListing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+[**marketdataListMetricsV2ExchangeHistory**](MetricsV2Api.md#marketdataListMetricsV2ExchangeHistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
+[**marketdataListMetricsV2ExchangeListing**](MetricsV2Api.md#marketdataListMetricsV2ExchangeListing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+[**marketdataListMetricsV2Listing**](MetricsV2Api.md#marketdataListMetricsV2Listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
 
 
 
-## v2MetricsAssetHistoryGet
+## marketdataListMetricsV2AssetHistory
 
-> [Object] v2MetricsAssetHistoryGet(metricId, assetId, opts)
+> [Object] marketdataListMetricsV2AssetHistory(metricId, assetId, opts)
 
 Historical metrics for the asset
 
@@ -46,7 +46,7 @@ let opts = {
   'periodId': "periodId_example", // String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
   'limit': 100 // Number | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 };
-apiInstance.v2MetricsAssetHistoryGet(metricId, assetId, opts, (error, data, response) => {
+apiInstance.marketdataListMetricsV2AssetHistory(metricId, assetId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -82,9 +82,9 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## v2MetricsAssetListingGet
+## marketdataListMetricsV2AssetListing
 
-> [V1MetricInfo] v2MetricsAssetListingGet(assetId)
+> [V1MetricInfo] marketdataListMetricsV2AssetListing(assetId)
 
 Listing of metrics available for specific asset
 
@@ -106,7 +106,7 @@ JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiMarketDataRestApi.MetricsV2Api();
 let assetId = "assetId_example"; // String | Asset identifier (e.g., USDC, USDT)
-apiInstance.v2MetricsAssetListingGet(assetId, (error, data, response) => {
+apiInstance.marketdataListMetricsV2AssetListing(assetId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -136,9 +136,9 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## v2MetricsChainHistoryGet
+## marketdataListMetricsV2ChainHistory
 
-> [Object] v2MetricsChainHistoryGet(metricId, chainId, opts)
+> [Object] marketdataListMetricsV2ChainHistory(metricId, chainId, opts)
 
 Historical metrics for the chain
 
@@ -168,7 +168,7 @@ let opts = {
   'periodId': "periodId_example", // String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
   'limit': 100 // Number | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 };
-apiInstance.v2MetricsChainHistoryGet(metricId, chainId, opts, (error, data, response) => {
+apiInstance.marketdataListMetricsV2ChainHistory(metricId, chainId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -204,9 +204,9 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## v2MetricsChainListingGet
+## marketdataListMetricsV2ChainListing
 
-> [V1MetricInfo] v2MetricsChainListingGet(chainId)
+> [V1MetricInfo] marketdataListMetricsV2ChainListing(chainId)
 
 Listing of metrics available for specific chain
 
@@ -228,7 +228,7 @@ JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiMarketDataRestApi.MetricsV2Api();
 let chainId = "chainId_example"; // String | Chain identifier (e.g., ETHEREUM, ARBITRUM)
-apiInstance.v2MetricsChainListingGet(chainId, (error, data, response) => {
+apiInstance.marketdataListMetricsV2ChainListing(chainId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -258,9 +258,9 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## v2MetricsExchangeHistoryGet
+## marketdataListMetricsV2ExchangeHistory
 
-> [Object] v2MetricsExchangeHistoryGet(metricId, exchangeId, opts)
+> [Object] marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, opts)
 
 Historical metrics for the exchange
 
@@ -290,7 +290,7 @@ let opts = {
   'periodId': "periodId_example", // String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
   'limit': 100 // Number | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 };
-apiInstance.v2MetricsExchangeHistoryGet(metricId, exchangeId, opts, (error, data, response) => {
+apiInstance.marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -326,9 +326,9 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## v2MetricsExchangeListingGet
+## marketdataListMetricsV2ExchangeListing
 
-> [V1MetricInfo] v2MetricsExchangeListingGet(exchangeId)
+> [V1MetricInfo] marketdataListMetricsV2ExchangeListing(exchangeId)
 
 Listing of metrics available for specific exchange
 
@@ -350,7 +350,7 @@ JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiMarketDataRestApi.MetricsV2Api();
 let exchangeId = "exchangeId_example"; // String | Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
-apiInstance.v2MetricsExchangeListingGet(exchangeId, (error, data, response) => {
+apiInstance.marketdataListMetricsV2ExchangeListing(exchangeId, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -380,9 +380,9 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## v2MetricsListingGet
+## marketdataListMetricsV2Listing
 
-> [V1MetricInfo] v2MetricsListingGet()
+> [V1MetricInfo] marketdataListMetricsV2Listing()
 
 Listing of all supported metrics
 
@@ -403,7 +403,7 @@ let JWT = defaultClient.authentications['JWT'];
 JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CoinApiMarketDataRestApi.MetricsV2Api();
-apiInstance.v2MetricsListingGet((error, data, response) => {
+apiInstance.marketdataListMetricsV2Listing((error, data, response) => {
   if (error) {
     console.error(error);
   } else {

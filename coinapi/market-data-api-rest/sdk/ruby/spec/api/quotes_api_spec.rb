@@ -70,12 +70,12 @@ describe 'QuotesApi' do
 
   # unit tests for v1_quotes_symbol_id_history_get
   # Historical data
-  # Get historical quote updates within requested time range, returned in time ascending order.  :::warning The &#39;time_start&#39; and &#39;time_end&#39; parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the &#39;date&#39; parameter instead for querying data for a specific day without filter. :::
+  # Get historical quote updates within requested time range, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
   # @param symbol_id Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols)
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :date Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided)
-  # @option opts [String] :time_start Starting time in ISO 8601
-  # @option opts [String] :time_end Timeseries ending time in ISO 8601
+  # @option opts [String] :date Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided)
+  # @option opts [String] :time_start Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
+  # @option opts [String] :time_end Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
   # @option opts [Integer] :limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   # @return [Array<V1Quote>]
   describe 'v1_quotes_symbol_id_history_get test' do

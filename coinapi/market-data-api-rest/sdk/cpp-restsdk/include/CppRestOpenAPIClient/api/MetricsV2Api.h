@@ -59,7 +59,7 @@ public:
     /// <param name="timeFormat">If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 0)</param>
-    pplx::task<std::vector<Object>> v2MetricsAssetHistoryGet(
+    pplx::task<std::vector<Object>> marketdataListMetricsV2AssetHistory(
         utility::string_t metricId,
         utility::string_t assetId,
         boost::optional<utility::datetime> timeStart,
@@ -75,7 +75,7 @@ public:
     /// Get all metrics that are actually available for the specified asset.
     /// </remarks>
     /// <param name="assetId">Asset identifier (e.g., USDC, USDT)</param>
-    pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> v2MetricsAssetListingGet(
+    pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> marketdataListMetricsV2AssetListing(
         utility::string_t assetId
     ) const;
     /// <summary>
@@ -91,7 +91,7 @@ public:
     /// <param name="timeFormat">If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 0)</param>
-    pplx::task<std::vector<Object>> v2MetricsChainHistoryGet(
+    pplx::task<std::vector<Object>> marketdataListMetricsV2ChainHistory(
         utility::string_t metricId,
         utility::string_t chainId,
         boost::optional<utility::datetime> timeStart,
@@ -107,7 +107,7 @@ public:
     /// Get all metrics that are actually available for the specified blockchain chain.
     /// </remarks>
     /// <param name="chainId">Chain identifier (e.g., ETHEREUM, ARBITRUM)</param>
-    pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> v2MetricsChainListingGet(
+    pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> marketdataListMetricsV2ChainListing(
         utility::string_t chainId
     ) const;
     /// <summary>
@@ -123,7 +123,7 @@ public:
     /// <param name="timeFormat">If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 0)</param>
-    pplx::task<std::vector<Object>> v2MetricsExchangeHistoryGet(
+    pplx::task<std::vector<Object>> marketdataListMetricsV2ExchangeHistory(
         utility::string_t metricId,
         utility::string_t exchangeId,
         boost::optional<utility::datetime> timeStart,
@@ -139,7 +139,7 @@ public:
     /// Get all metrics that are actually available for the specified exchange.
     /// </remarks>
     /// <param name="exchangeId">Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)</param>
-    pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> v2MetricsExchangeListingGet(
+    pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> marketdataListMetricsV2ExchangeListing(
         utility::string_t exchangeId
     ) const;
     /// <summary>
@@ -148,7 +148,7 @@ public:
     /// <remarks>
     /// Get all metrics available in the system.
     /// </remarks>
-    pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> v2MetricsListingGet(
+    pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> marketdataListMetricsV2Listing(
     ) const;
 
 protected:

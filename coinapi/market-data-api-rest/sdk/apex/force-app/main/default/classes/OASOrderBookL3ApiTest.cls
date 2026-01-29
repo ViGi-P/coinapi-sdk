@@ -48,7 +48,7 @@ private class OASOrderBookL3ApiTest {
     /**
      * Current order book by symbol_id
      *
-     * Retrieves the current order book for the specified symbol.
+     * Retrieves the current L3 order book for the specified symbol.\nL3 order books include individual order IDs for each price level.
      */
     @isTest
     private static void v1Orderbooks3SymbolIdCurrentGetTest() {

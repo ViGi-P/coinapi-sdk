@@ -61,7 +61,7 @@ public:
     /// Current order book by symbol_id
     /// </summary>
     /// <remarks>
-    /// Retrieves the current order book for the specified symbol.
+    /// Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
     /// </remarks>
     /// <param name="symbolId">The symbol ID (from the Metadata -&gt; Symbols)</param>
     /// <param name="limitLevels">The maximum number of levels to include in the response. (optional, default to 0)</param>

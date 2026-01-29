@@ -341,7 +341,7 @@ class OrderBookL3Api:
     ) -> V1OrderBookBase:
         """Current order book by symbol_id
 
-        Retrieves the current order book for the specified symbol.
+        Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
 
         :param symbol_id: The symbol ID (from the Metadata -> Symbols) (required)
         :type symbol_id: str
@@ -412,7 +412,7 @@ class OrderBookL3Api:
     ) -> ApiResponse[V1OrderBookBase]:
         """Current order book by symbol_id
 
-        Retrieves the current order book for the specified symbol.
+        Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
 
         :param symbol_id: The symbol ID (from the Metadata -> Symbols) (required)
         :type symbol_id: str
@@ -483,7 +483,7 @@ class OrderBookL3Api:
     ) -> RESTResponseType:
         """Current order book by symbol_id
 
-        Retrieves the current order book for the specified symbol.
+        Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
 
         :param symbol_id: The symbol ID (from the Metadata -> Symbols) (required)
         :type symbol_id: str

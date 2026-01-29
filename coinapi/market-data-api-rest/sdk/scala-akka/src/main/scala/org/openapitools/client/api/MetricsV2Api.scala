@@ -44,7 +44,7 @@ class MetricsV2Api(baseUrl: String) {
    * @param periodId Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
    * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
    */
-  def v2MetricsAssetHistoryGet(metricId: String, assetId: String, timeStart: Option[OffsetDateTime] = None, timeEnd: Option[OffsetDateTime] = None, timeFormat: Option[String] = None, periodId: Option[String] = None, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[Any]] =
+  def marketdataListMetricsV2AssetHistory(metricId: String, assetId: String, timeStart: Option[OffsetDateTime] = None, timeEnd: Option[OffsetDateTime] = None, timeFormat: Option[String] = None, periodId: Option[String] = None, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[Any]] =
     ApiRequest[Seq[Any]](ApiMethods.GET, baseUrl, "/v2/metrics/asset/history", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("metric_id", metricId)
@@ -71,7 +71,7 @@ class MetricsV2Api(baseUrl: String) {
    * 
    * @param assetId Asset identifier (e.g., USDC, USDT)
    */
-  def v2MetricsAssetListingGet(assetId: String)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[MetricInfo]] =
+  def marketdataListMetricsV2AssetListing(assetId: String)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[MetricInfo]] =
     ApiRequest[Seq[MetricInfo]](ApiMethods.GET, baseUrl, "/v2/metrics/asset/listing", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("asset_id", assetId)
@@ -98,7 +98,7 @@ class MetricsV2Api(baseUrl: String) {
    * @param periodId Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
    * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
    */
-  def v2MetricsChainHistoryGet(metricId: String, chainId: String, timeStart: Option[OffsetDateTime] = None, timeEnd: Option[OffsetDateTime] = None, timeFormat: Option[String] = None, periodId: Option[String] = None, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[Any]] =
+  def marketdataListMetricsV2ChainHistory(metricId: String, chainId: String, timeStart: Option[OffsetDateTime] = None, timeEnd: Option[OffsetDateTime] = None, timeFormat: Option[String] = None, periodId: Option[String] = None, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[Any]] =
     ApiRequest[Seq[Any]](ApiMethods.GET, baseUrl, "/v2/metrics/chain/history", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("metric_id", metricId)
@@ -125,7 +125,7 @@ class MetricsV2Api(baseUrl: String) {
    * 
    * @param chainId Chain identifier (e.g., ETHEREUM, ARBITRUM)
    */
-  def v2MetricsChainListingGet(chainId: String)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[MetricInfo]] =
+  def marketdataListMetricsV2ChainListing(chainId: String)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[MetricInfo]] =
     ApiRequest[Seq[MetricInfo]](ApiMethods.GET, baseUrl, "/v2/metrics/chain/listing", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("chain_id", chainId)
@@ -152,7 +152,7 @@ class MetricsV2Api(baseUrl: String) {
    * @param periodId Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
    * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
    */
-  def v2MetricsExchangeHistoryGet(metricId: String, exchangeId: String, timeStart: Option[OffsetDateTime] = None, timeEnd: Option[OffsetDateTime] = None, timeFormat: Option[String] = None, periodId: Option[String] = None, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[Any]] =
+  def marketdataListMetricsV2ExchangeHistory(metricId: String, exchangeId: String, timeStart: Option[OffsetDateTime] = None, timeEnd: Option[OffsetDateTime] = None, timeFormat: Option[String] = None, periodId: Option[String] = None, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[Any]] =
     ApiRequest[Seq[Any]](ApiMethods.GET, baseUrl, "/v2/metrics/exchange/history", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("metric_id", metricId)
@@ -179,7 +179,7 @@ class MetricsV2Api(baseUrl: String) {
    * 
    * @param exchangeId Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
    */
-  def v2MetricsExchangeListingGet(exchangeId: String)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[MetricInfo]] =
+  def marketdataListMetricsV2ExchangeListing(exchangeId: String)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[MetricInfo]] =
     ApiRequest[Seq[MetricInfo]](ApiMethods.GET, baseUrl, "/v2/metrics/exchange/listing", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("exchange_id", exchangeId)
@@ -196,7 +196,7 @@ class MetricsV2Api(baseUrl: String) {
    *   APIKey (apiKey)
    *   JWT (http)
    */
-  def v2MetricsListingGet()(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[MetricInfo]] =
+  def marketdataListMetricsV2Listing()(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[MetricInfo]] =
     ApiRequest[Seq[MetricInfo]](ApiMethods.GET, baseUrl, "/v2/metrics/listing", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withSuccessResponse[Seq[MetricInfo]](200)

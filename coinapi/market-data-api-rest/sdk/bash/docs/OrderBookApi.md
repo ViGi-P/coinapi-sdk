@@ -91,10 +91,12 @@ Get historical order book snapshots for a specific symbol within time range, ret
 :::info
 The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.
 :::
-
-:::warning
-The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
-Please use the 'date' parameter instead for querying data for a specific day without filter.
+            
+This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
+Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.
+            
+:::tip
+For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.
 :::
 
 ### Example
@@ -109,9 +111,9 @@ Please use the 'date' parameter instead for querying data for a specific day wit
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbolId** | **string** | Symbol identifier for requested timeseries (from the Metadata -> Symbols) | [default to null]
- **date** | **string** | Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided) | [optional] [default to null]
- **timeStart** | **string** | Starting time in ISO 8601 (deprecated, use 'date' instead) | [optional] [default to null]
- **timeEnd** | **string** | Timeseries ending time in ISO 8601 (deprecated, use 'date' instead) | [optional] [default to null]
+ **date** | **string** | Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided) | [optional] [default to null]
+ **timeStart** | **string** | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) | [optional] [default to null]
+ **timeEnd** | **string** | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) | [optional] [default to null]
  **limit** | **integer** | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
  **limitLevels** | **integer** | Maximum amount of levels from each side of the book to include in response (optional) | [optional] [default to null]
 

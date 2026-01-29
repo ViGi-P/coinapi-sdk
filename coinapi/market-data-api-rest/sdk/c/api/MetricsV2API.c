@@ -14,7 +14,7 @@
 // Get asset metrics history.
 //
 list_t*
-MetricsV2API_v2MetricsAssetHistoryGet(apiClient_t *apiClient, char *metric_id, char *asset_id, char time_start, char time_end, char *time_format, char *period_id, int *limit)
+MetricsV2API_marketdataListMetricsV2AssetHistory(apiClient_t *apiClient, char *metric_id, char *asset_id, char time_start, char time_end, char *time_format, char *period_id, int *limit)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -266,7 +266,7 @@ end:
 // Get all metrics that are actually available for the specified asset.
 //
 list_t*
-MetricsV2API_v2MetricsAssetListingGet(apiClient_t *apiClient, char *asset_id)
+MetricsV2API_marketdataListMetricsV2AssetListing(apiClient_t *apiClient, char *asset_id)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -373,7 +373,7 @@ end:
 // Get chain metrics history.
 //
 list_t*
-MetricsV2API_v2MetricsChainHistoryGet(apiClient_t *apiClient, char *metric_id, char *chain_id, char time_start, char time_end, char *time_format, char *period_id, int *limit)
+MetricsV2API_marketdataListMetricsV2ChainHistory(apiClient_t *apiClient, char *metric_id, char *chain_id, char time_start, char time_end, char *time_format, char *period_id, int *limit)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -625,7 +625,7 @@ end:
 // Get all metrics that are actually available for the specified blockchain chain.
 //
 list_t*
-MetricsV2API_v2MetricsChainListingGet(apiClient_t *apiClient, char *chain_id)
+MetricsV2API_marketdataListMetricsV2ChainListing(apiClient_t *apiClient, char *chain_id)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -732,7 +732,7 @@ end:
 // Get exchange metrics history.
 //
 list_t*
-MetricsV2API_v2MetricsExchangeHistoryGet(apiClient_t *apiClient, char *metric_id, char *exchange_id, char time_start, char time_end, char *time_format, char *period_id, int *limit)
+MetricsV2API_marketdataListMetricsV2ExchangeHistory(apiClient_t *apiClient, char *metric_id, char *exchange_id, char time_start, char time_end, char *time_format, char *period_id, int *limit)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -984,7 +984,7 @@ end:
 // Get all metrics that are actually available for the specified exchange.
 //
 list_t*
-MetricsV2API_v2MetricsExchangeListingGet(apiClient_t *apiClient, char *exchange_id)
+MetricsV2API_marketdataListMetricsV2ExchangeListing(apiClient_t *apiClient, char *exchange_id)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -1091,7 +1091,7 @@ end:
 // Get all metrics available in the system.
 //
 list_t*
-MetricsV2API_v2MetricsListingGet(apiClient_t *apiClient)
+MetricsV2API_marketdataListMetricsV2Listing(apiClient_t *apiClient)
 {
     list_t    *localVarQueryParameters = NULL;
     list_t    *localVarHeaderParameters = NULL;

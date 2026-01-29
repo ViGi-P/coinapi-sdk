@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 Historical data
 
-Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::  :::warning The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the 'date' parameter instead for querying data for a specific day without filter. :::
+Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
 
 ### Example
 ```R
@@ -130,9 +130,9 @@ library(openapi)
 #
 # prepare function argument(s)
 var_symbol_id <- "symbol_id_example" # character | Symbol identifier for requested timeseries (from the Metadata -> Symbols)
-var_date <- "date_example" # character | Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided) (Optional)
-var_time_start <- "time_start_example" # character | Starting time in ISO 8601 (deprecated, use 'date' instead) (Optional)
-var_time_end <- "time_end_example" # character | Timeseries ending time in ISO 8601 (deprecated, use 'date' instead) (Optional)
+var_date <- "date_example" # character | Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided) (Optional)
+var_time_start <- "time_start_example" # character | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (Optional)
+var_time_end <- "time_end_example" # character | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (Optional)
 var_limit <- 100 # integer | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (Optional)
 var_limit_levels <- 56 # integer | Maximum amount of levels from each side of the book to include in response (optional) (Optional)
 
@@ -152,9 +152,9 @@ dput(result)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol_id** | **character**| Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols) | 
- **date** | **character**| Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided) | [optional] 
- **time_start** | **character**| Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] 
- **time_end** | **character**| Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional] 
+ **date** | **character**| Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) | [optional] 
+ **time_start** | **character**| Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) | [optional] 
+ **time_end** | **character**| Timeseries ending time in ISO 8601 (optional, supports cross-day queries) | [optional] 
  **limit** | **integer**| Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
  **limit_levels** | **integer**| Maximum amount of levels from each side of the book to include in response (optional) | [optional] 
 

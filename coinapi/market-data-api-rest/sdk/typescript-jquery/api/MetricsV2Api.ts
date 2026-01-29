@@ -57,7 +57,7 @@ export class MetricsV2Api {
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
-    public v2MetricsAssetHistoryGet(metricId: string, assetId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public marketdataListMetricsV2AssetHistory(metricId: string, assetId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<object>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -67,12 +67,12 @@ export class MetricsV2Api {
         let headerParams: any = {};
         // verify required parameter 'metricId' is not null or undefined
         if (metricId === null || metricId === undefined) {
-            throw new Error('Required parameter metricId was null or undefined when calling v2MetricsAssetHistoryGet.');
+            throw new Error('Required parameter metricId was null or undefined when calling marketdataListMetricsV2AssetHistory.');
         }
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
-            throw new Error('Required parameter assetId was null or undefined when calling v2MetricsAssetHistoryGet.');
+            throw new Error('Required parameter assetId was null or undefined when calling marketdataListMetricsV2AssetHistory.');
         }
 
         if (metricId !== null && metricId !== undefined) {
@@ -154,7 +154,7 @@ export class MetricsV2Api {
      * @summary Listing of metrics available for specific asset
      * @param assetId Asset identifier (e.g., USDC, USDT)
      */
-    public v2MetricsAssetListingGet(assetId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public marketdataListMetricsV2AssetListing(assetId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.V1MetricInfo>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -164,7 +164,7 @@ export class MetricsV2Api {
         let headerParams: any = {};
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
-            throw new Error('Required parameter assetId was null or undefined when calling v2MetricsAssetListingGet.');
+            throw new Error('Required parameter assetId was null or undefined when calling marketdataListMetricsV2AssetListing.');
         }
 
         if (assetId !== null && assetId !== undefined) {
@@ -234,7 +234,7 @@ export class MetricsV2Api {
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
-    public v2MetricsChainHistoryGet(metricId: string, chainId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public marketdataListMetricsV2ChainHistory(metricId: string, chainId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<object>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -244,12 +244,12 @@ export class MetricsV2Api {
         let headerParams: any = {};
         // verify required parameter 'metricId' is not null or undefined
         if (metricId === null || metricId === undefined) {
-            throw new Error('Required parameter metricId was null or undefined when calling v2MetricsChainHistoryGet.');
+            throw new Error('Required parameter metricId was null or undefined when calling marketdataListMetricsV2ChainHistory.');
         }
 
         // verify required parameter 'chainId' is not null or undefined
         if (chainId === null || chainId === undefined) {
-            throw new Error('Required parameter chainId was null or undefined when calling v2MetricsChainHistoryGet.');
+            throw new Error('Required parameter chainId was null or undefined when calling marketdataListMetricsV2ChainHistory.');
         }
 
         if (metricId !== null && metricId !== undefined) {
@@ -331,7 +331,7 @@ export class MetricsV2Api {
      * @summary Listing of metrics available for specific chain
      * @param chainId Chain identifier (e.g., ETHEREUM, ARBITRUM)
      */
-    public v2MetricsChainListingGet(chainId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public marketdataListMetricsV2ChainListing(chainId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.V1MetricInfo>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -341,7 +341,7 @@ export class MetricsV2Api {
         let headerParams: any = {};
         // verify required parameter 'chainId' is not null or undefined
         if (chainId === null || chainId === undefined) {
-            throw new Error('Required parameter chainId was null or undefined when calling v2MetricsChainListingGet.');
+            throw new Error('Required parameter chainId was null or undefined when calling marketdataListMetricsV2ChainListing.');
         }
 
         if (chainId !== null && chainId !== undefined) {
@@ -411,7 +411,7 @@ export class MetricsV2Api {
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
-    public v2MetricsExchangeHistoryGet(metricId: string, exchangeId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public marketdataListMetricsV2ExchangeHistory(metricId: string, exchangeId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<object>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -421,12 +421,12 @@ export class MetricsV2Api {
         let headerParams: any = {};
         // verify required parameter 'metricId' is not null or undefined
         if (metricId === null || metricId === undefined) {
-            throw new Error('Required parameter metricId was null or undefined when calling v2MetricsExchangeHistoryGet.');
+            throw new Error('Required parameter metricId was null or undefined when calling marketdataListMetricsV2ExchangeHistory.');
         }
 
         // verify required parameter 'exchangeId' is not null or undefined
         if (exchangeId === null || exchangeId === undefined) {
-            throw new Error('Required parameter exchangeId was null or undefined when calling v2MetricsExchangeHistoryGet.');
+            throw new Error('Required parameter exchangeId was null or undefined when calling marketdataListMetricsV2ExchangeHistory.');
         }
 
         if (metricId !== null && metricId !== undefined) {
@@ -508,7 +508,7 @@ export class MetricsV2Api {
      * @summary Listing of metrics available for specific exchange
      * @param exchangeId Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
      */
-    public v2MetricsExchangeListingGet(exchangeId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public marketdataListMetricsV2ExchangeListing(exchangeId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.V1MetricInfo>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -518,7 +518,7 @@ export class MetricsV2Api {
         let headerParams: any = {};
         // verify required parameter 'exchangeId' is not null or undefined
         if (exchangeId === null || exchangeId === undefined) {
-            throw new Error('Required parameter exchangeId was null or undefined when calling v2MetricsExchangeListingGet.');
+            throw new Error('Required parameter exchangeId was null or undefined when calling marketdataListMetricsV2ExchangeListing.');
         }
 
         if (exchangeId !== null && exchangeId !== undefined) {
@@ -581,7 +581,7 @@ export class MetricsV2Api {
      * Get all metrics available in the system.
      * @summary Listing of all supported metrics
      */
-    public v2MetricsListingGet(extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public marketdataListMetricsV2Listing(extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.V1MetricInfo>;  },
     { response: JQueryXHR; errorThrown: string }
     > {

@@ -48,7 +48,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 SystemCollectionsHashtable[]
 #>
-function Invoke-V2MetricsAssetHistoryGet {
+function Invoke-MarketdataListMetricsV2AssetHistory {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -80,7 +80,7 @@ function Invoke-V2MetricsAssetHistoryGet {
     )
 
     Process {
-        'Calling method: Invoke-V2MetricsAssetHistoryGet' | Write-Debug
+        'Calling method: Invoke-MarketdataListMetricsV2AssetHistory' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -104,12 +104,12 @@ function Invoke-V2MetricsAssetHistoryGet {
         $LocalVarUri = '/v2/metrics/asset/history'
 
         if (!$MetricId) {
-            throw "Error! The required parameter `MetricId` missing when calling v2MetricsAssetHistoryGet."
+            throw "Error! The required parameter `MetricId` missing when calling marketdataListMetricsV2AssetHistory."
         }
         $LocalVarQueryParameters['metric_id'] = $MetricId
 
         if (!$AssetId) {
-            throw "Error! The required parameter `AssetId` missing when calling v2MetricsAssetHistoryGet."
+            throw "Error! The required parameter `AssetId` missing when calling marketdataListMetricsV2AssetHistory."
         }
         $LocalVarQueryParameters['asset_id'] = $AssetId
 
@@ -192,7 +192,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 V1MetricInfo[]
 #>
-function Invoke-V2MetricsAssetListingGet {
+function Invoke-MarketdataListMetricsV2AssetListing {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -206,7 +206,7 @@ function Invoke-V2MetricsAssetListingGet {
     )
 
     Process {
-        'Calling method: Invoke-V2MetricsAssetListingGet' | Write-Debug
+        'Calling method: Invoke-MarketdataListMetricsV2AssetListing' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -230,7 +230,7 @@ function Invoke-V2MetricsAssetListingGet {
         $LocalVarUri = '/v2/metrics/asset/listing'
 
         if (!$AssetId) {
-            throw "Error! The required parameter `AssetId` missing when calling v2MetricsAssetListingGet."
+            throw "Error! The required parameter `AssetId` missing when calling marketdataListMetricsV2AssetListing."
         }
         $LocalVarQueryParameters['asset_id'] = $AssetId
 
@@ -311,7 +311,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 SystemCollectionsHashtable[]
 #>
-function Invoke-V2MetricsChainHistoryGet {
+function Invoke-MarketdataListMetricsV2ChainHistory {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -343,7 +343,7 @@ function Invoke-V2MetricsChainHistoryGet {
     )
 
     Process {
-        'Calling method: Invoke-V2MetricsChainHistoryGet' | Write-Debug
+        'Calling method: Invoke-MarketdataListMetricsV2ChainHistory' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -367,12 +367,12 @@ function Invoke-V2MetricsChainHistoryGet {
         $LocalVarUri = '/v2/metrics/chain/history'
 
         if (!$MetricId) {
-            throw "Error! The required parameter `MetricId` missing when calling v2MetricsChainHistoryGet."
+            throw "Error! The required parameter `MetricId` missing when calling marketdataListMetricsV2ChainHistory."
         }
         $LocalVarQueryParameters['metric_id'] = $MetricId
 
         if (!$ChainId) {
-            throw "Error! The required parameter `ChainId` missing when calling v2MetricsChainHistoryGet."
+            throw "Error! The required parameter `ChainId` missing when calling marketdataListMetricsV2ChainHistory."
         }
         $LocalVarQueryParameters['chain_id'] = $ChainId
 
@@ -455,7 +455,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 V1MetricInfo[]
 #>
-function Invoke-V2MetricsChainListingGet {
+function Invoke-MarketdataListMetricsV2ChainListing {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -469,7 +469,7 @@ function Invoke-V2MetricsChainListingGet {
     )
 
     Process {
-        'Calling method: Invoke-V2MetricsChainListingGet' | Write-Debug
+        'Calling method: Invoke-MarketdataListMetricsV2ChainListing' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -493,7 +493,7 @@ function Invoke-V2MetricsChainListingGet {
         $LocalVarUri = '/v2/metrics/chain/listing'
 
         if (!$ChainId) {
-            throw "Error! The required parameter `ChainId` missing when calling v2MetricsChainListingGet."
+            throw "Error! The required parameter `ChainId` missing when calling marketdataListMetricsV2ChainListing."
         }
         $LocalVarQueryParameters['chain_id'] = $ChainId
 
@@ -574,7 +574,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 SystemCollectionsHashtable[]
 #>
-function Invoke-V2MetricsExchangeHistoryGet {
+function Invoke-MarketdataListMetricsV2ExchangeHistory {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -606,7 +606,7 @@ function Invoke-V2MetricsExchangeHistoryGet {
     )
 
     Process {
-        'Calling method: Invoke-V2MetricsExchangeHistoryGet' | Write-Debug
+        'Calling method: Invoke-MarketdataListMetricsV2ExchangeHistory' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -630,12 +630,12 @@ function Invoke-V2MetricsExchangeHistoryGet {
         $LocalVarUri = '/v2/metrics/exchange/history'
 
         if (!$MetricId) {
-            throw "Error! The required parameter `MetricId` missing when calling v2MetricsExchangeHistoryGet."
+            throw "Error! The required parameter `MetricId` missing when calling marketdataListMetricsV2ExchangeHistory."
         }
         $LocalVarQueryParameters['metric_id'] = $MetricId
 
         if (!$ExchangeId) {
-            throw "Error! The required parameter `ExchangeId` missing when calling v2MetricsExchangeHistoryGet."
+            throw "Error! The required parameter `ExchangeId` missing when calling marketdataListMetricsV2ExchangeHistory."
         }
         $LocalVarQueryParameters['exchange_id'] = $ExchangeId
 
@@ -718,7 +718,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 V1MetricInfo[]
 #>
-function Invoke-V2MetricsExchangeListingGet {
+function Invoke-MarketdataListMetricsV2ExchangeListing {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -732,7 +732,7 @@ function Invoke-V2MetricsExchangeListingGet {
     )
 
     Process {
-        'Calling method: Invoke-V2MetricsExchangeListingGet' | Write-Debug
+        'Calling method: Invoke-MarketdataListMetricsV2ExchangeListing' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -756,7 +756,7 @@ function Invoke-V2MetricsExchangeListingGet {
         $LocalVarUri = '/v2/metrics/exchange/listing'
 
         if (!$ExchangeId) {
-            throw "Error! The required parameter `ExchangeId` missing when calling v2MetricsExchangeListingGet."
+            throw "Error! The required parameter `ExchangeId` missing when calling marketdataListMetricsV2ExchangeListing."
         }
         $LocalVarQueryParameters['exchange_id'] = $ExchangeId
 
@@ -816,7 +816,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 V1MetricInfo[]
 #>
-function Invoke-V2MetricsListingGet {
+function Invoke-MarketdataListMetricsV2Listing {
     [CmdletBinding()]
     Param (
         [String]
@@ -827,7 +827,7 @@ function Invoke-V2MetricsListingGet {
     )
 
     Process {
-        'Calling method: Invoke-V2MetricsListingGet' | Write-Debug
+        'Calling method: Invoke-MarketdataListMetricsV2Listing' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()

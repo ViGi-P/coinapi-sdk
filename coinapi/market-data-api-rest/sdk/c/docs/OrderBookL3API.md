@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 ```c
 // Current order book by symbol_id
 //
-// Retrieves the current order book for the specified symbol.
+// Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
 //
 v1_order_book_base_t* OrderBookL3API_v1Orderbooks3SymbolIdCurrentGet(apiClient_t *apiClient, char *symbol_id, int *limit_levels);
 ```

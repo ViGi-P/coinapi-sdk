@@ -24,7 +24,7 @@ inherit
 feature -- API Access
 
 
-	v2_metrics_asset_history_get (metric_id: STRING_32; asset_id: STRING_32; time_start: DATE_TIME; time_end: DATE_TIME; time_format: STRING_32; period_id: STRING_32; limit: INTEGER_32): detachable LIST [ANY]
+	marketdata_list_metrics_v2_asset_history (metric_id: STRING_32; asset_id: STRING_32; time_start: DATE_TIME; time_end: DATE_TIME; time_format: STRING_32; period_id: STRING_32; limit: INTEGER_32): detachable LIST [ANY]
 			-- Historical metrics for the asset
 			-- Get asset metrics history.
 			-- 
@@ -78,7 +78,7 @@ feature -- API Access
 			end
 		end
 
-	v2_metrics_asset_listing_get (asset_id: STRING_32): detachable LIST [V1_METRIC_INFO]
+	marketdata_list_metrics_v2_asset_listing (asset_id: STRING_32): detachable LIST [V1_METRIC_INFO]
 			-- Listing of metrics available for specific asset
 			-- Get all metrics that are actually available for the specified asset.
 			-- 
@@ -114,7 +114,7 @@ feature -- API Access
 			end
 		end
 
-	v2_metrics_chain_history_get (metric_id: STRING_32; chain_id: STRING_32; time_start: DATE_TIME; time_end: DATE_TIME; time_format: STRING_32; period_id: STRING_32; limit: INTEGER_32): detachable LIST [ANY]
+	marketdata_list_metrics_v2_chain_history (metric_id: STRING_32; chain_id: STRING_32; time_start: DATE_TIME; time_end: DATE_TIME; time_format: STRING_32; period_id: STRING_32; limit: INTEGER_32): detachable LIST [ANY]
 			-- Historical metrics for the chain
 			-- Get chain metrics history.
 			-- 
@@ -168,7 +168,7 @@ feature -- API Access
 			end
 		end
 
-	v2_metrics_chain_listing_get (chain_id: STRING_32): detachable LIST [V1_METRIC_INFO]
+	marketdata_list_metrics_v2_chain_listing (chain_id: STRING_32): detachable LIST [V1_METRIC_INFO]
 			-- Listing of metrics available for specific chain
 			-- Get all metrics that are actually available for the specified blockchain chain.
 			-- 
@@ -204,7 +204,7 @@ feature -- API Access
 			end
 		end
 
-	v2_metrics_exchange_history_get (metric_id: STRING_32; exchange_id: STRING_32; time_start: DATE_TIME; time_end: DATE_TIME; time_format: STRING_32; period_id: STRING_32; limit: INTEGER_32): detachable LIST [ANY]
+	marketdata_list_metrics_v2_exchange_history (metric_id: STRING_32; exchange_id: STRING_32; time_start: DATE_TIME; time_end: DATE_TIME; time_format: STRING_32; period_id: STRING_32; limit: INTEGER_32): detachable LIST [ANY]
 			-- Historical metrics for the exchange
 			-- Get exchange metrics history.
 			-- 
@@ -258,7 +258,7 @@ feature -- API Access
 			end
 		end
 
-	v2_metrics_exchange_listing_get (exchange_id: STRING_32): detachable LIST [V1_METRIC_INFO]
+	marketdata_list_metrics_v2_exchange_listing (exchange_id: STRING_32): detachable LIST [V1_METRIC_INFO]
 			-- Listing of metrics available for specific exchange
 			-- Get all metrics that are actually available for the specified exchange.
 			-- 
@@ -294,7 +294,7 @@ feature -- API Access
 			end
 		end
 
-	v2_metrics_listing_get : detachable LIST [V1_METRIC_INFO]
+	marketdata_list_metrics_v2_listing : detachable LIST [V1_METRIC_INFO]
 			-- Listing of all supported metrics
 			-- Get all metrics available in the system.
 			-- 

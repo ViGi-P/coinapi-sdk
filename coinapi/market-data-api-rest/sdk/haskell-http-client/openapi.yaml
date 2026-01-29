@@ -865,7 +865,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-01-28T06:03:19.8859458Z
+                    time: 2026-01-29T06:03:31.7129757Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -875,7 +875,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-01-28T06:03:19.8859458Z
+                    time: 2026-01-29T06:03:31.7129757Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -885,7 +885,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-01-28T06:03:19.8859458Z
+                    time: 2026-01-29T06:03:31.7129757Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -895,7 +895,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-01-28T06:03:19.8859458Z
+                    time: 2026-01-29T06:03:31.7129757Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -3163,6 +3163,7 @@ paths:
   /v2/metrics/listing:
     get:
       description: Get all metrics available in the system.
+      operationId: marketdata_list_metrics_v2_listing
       responses:
         "200":
           content:
@@ -3245,6 +3246,7 @@ paths:
   /v2/metrics/exchange/listing:
     get:
       description: Get all metrics that are actually available for the specified exchange.
+      operationId: marketdata_list_metrics_v2_exchange_listing
       parameters:
       - description: "Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)"
         explode: true
@@ -3328,6 +3330,7 @@ paths:
   /v2/metrics/exchange/history:
     get:
       description: Get exchange metrics history.
+      operationId: marketdata_list_metrics_v2_exchange_history
       parameters:
       - description: "Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)"
         explode: true
@@ -3528,6 +3531,7 @@ paths:
   /v2/metrics/asset/history:
     get:
       description: Get asset metrics history.
+      operationId: marketdata_list_metrics_v2_asset_history
       parameters:
       - description: "Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)"
         explode: true
@@ -3720,6 +3724,7 @@ paths:
   /v2/metrics/chain/history:
     get:
       description: Get chain metrics history.
+      operationId: marketdata_list_metrics_v2_chain_history
       parameters:
       - description: "Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)"
         explode: true
@@ -3912,6 +3917,7 @@ paths:
   /v2/metrics/asset/listing:
     get:
       description: Get all metrics that are actually available for the specified asset.
+      operationId: marketdata_list_metrics_v2_asset_listing
       parameters:
       - description: "Asset identifier (e.g., USDC, USDT)"
         explode: true
@@ -3988,6 +3994,7 @@ paths:
     get:
       description: Get all metrics that are actually available for the specified blockchain
         chain.
+      operationId: marketdata_list_metrics_v2_chain_listing
       parameters:
       - description: "Chain identifier (e.g., ETHEREUM, ARBITRUM)"
         explode: true
@@ -4305,11 +4312,13 @@ paths:
       description: "Get historical order book snapshots for a specific symbol within\
         \ time range, returned in time ascending order.\n            \n:::info\nThe\
         \ historical order book data via the REST API is currently limited by a number\
-        \ of updates and to the maximum number of 20 levels.\n:::\n\n:::warning\n\
-        The 'time_start' and 'time_end' parameters must be from the same day as this\
-        \ endpoint provides intraday data only for specific day.\nPlease use the 'date'\
-        \ parameter instead for querying data for a specific day without filter.\n\
-        :::"
+        \ of updates and to the maximum number of 20 levels.\n:::\n            \n\
+        This endpoint supports hourly granularity for APITP data with automatic fallback\
+        \ to daily data for older records.\nTimestamps are normalized to hour boundaries,\
+        \ and data is fetched per hour with precise filtering to your exact time range.\n\
+        \            \n:::tip\nFor querying a full day of data, use the 'date' parameter.\
+        \ For specific time ranges (including cross-day or multi-hour queries), use\
+        \ 'time_start' and 'time_end'.\n:::"
       parameters:
       - description: Symbol identifier for requested timeseries (from the Metadata
           -> Symbols)
@@ -4320,8 +4329,8 @@ paths:
         schema:
           type: string
         style: simple
-      - description: "Date in ISO 8601, returned data is for the whole given day (preferred\
-          \ method, required if 'time_start' is not provided)"
+      - description: "Date in ISO 8601, returned data is for the whole given day (required\
+          \ if 'time_start' is not provided)"
         explode: true
         in: query
         name: date
@@ -4329,7 +4338,8 @@ paths:
         schema:
           type: string
         style: form
-      - description: "Starting time in ISO 8601 (deprecated, use 'date' instead)"
+      - description: "Starting time in ISO 8601 (supports hourly precision, e.g.,\
+          \ 2026-01-16T11:00:00Z)"
         explode: true
         in: query
         name: time_start
@@ -4337,7 +4347,8 @@ paths:
         schema:
           type: string
         style: form
-      - description: "Timeseries ending time in ISO 8601 (deprecated, use 'date' instead)"
+      - description: "Timeseries ending time in ISO 8601 (optional, supports cross-day\
+          \ queries)"
         explode: true
         in: query
         name: time_end
@@ -4628,7 +4639,9 @@ paths:
       - Order Book L3
   /v1/orderbooks3/{symbol_id}/current:
     get:
-      description: Retrieves the current order book for the specified symbol.
+      description: |-
+        Retrieves the current L3 order book for the specified symbol.
+        L3 order books include individual order IDs for each price level.
       parameters:
       - description: The symbol ID (from the Metadata -> Symbols)
         explode: false
@@ -4748,13 +4761,14 @@ paths:
       - Order Book L3
   /v1/quotes/{symbol_id}/history:
     get:
-      description: |-
-        Get historical quote updates within requested time range, returned in time ascending order.
-
-        :::warning
-        The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
-        Please use the 'date' parameter instead for querying data for a specific day without filter.
-        :::
+      description: "Get historical quote updates within requested time range, returned\
+        \ in time ascending order.\n            \nThis endpoint supports hourly granularity\
+        \ for APITP data with automatic fallback to daily data for older records.\n\
+        Timestamps are normalized to hour boundaries, and data is fetched per hour\
+        \ with precise filtering to your exact time range.\n            \n:::tip\n\
+        For querying a full day of data, use the 'date' parameter. For specific time\
+        \ ranges (including cross-day or multi-hour queries), use 'time_start' and\
+        \ 'time_end'.\n:::"
       parameters:
       - description: Symbol identifier for requested timeseries (from the Metadata
           -> Symbols)
@@ -4765,8 +4779,8 @@ paths:
         schema:
           type: string
         style: simple
-      - description: "Date in ISO 8601, returned data is for the whole given day (preferred\
-          \ method, required if 'time_start' is not provided)"
+      - description: "Date in ISO 8601, returned data is for the whole given day (required\
+          \ if 'time_start' is not provided)"
         explode: true
         in: query
         name: date
@@ -4774,7 +4788,8 @@ paths:
         schema:
           type: string
         style: form
-      - description: Starting time in ISO 8601
+      - description: "Starting time in ISO 8601 (supports hourly precision, e.g.,\
+          \ 2026-01-16T11:00:00Z)"
         explode: true
         in: query
         name: time_start
@@ -4782,7 +4797,8 @@ paths:
         schema:
           type: string
         style: form
-      - description: Timeseries ending time in ISO 8601
+      - description: "Timeseries ending time in ISO 8601 (optional, supports cross-day\
+          \ queries)"
         explode: true
         in: query
         name: time_end
@@ -6656,13 +6672,14 @@ paths:
       - Ohlcv
   /v1/trades/{symbol_id}/history:
     get:
-      description: |-
-        Get history transactions from specific symbol, returned in time ascending order.
-
-        :::warning
-        The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
-        Please use the 'date' parameter instead for querying data for a specific day without filter.
-        :::
+      description: "Get history transactions from specific symbol, returned in time\
+        \ ascending order.\n            \nThis endpoint supports hourly granularity\
+        \ for APITP data with automatic fallback to daily data for older records.\n\
+        Timestamps are normalized to hour boundaries, and data is fetched per hour\
+        \ with precise filtering to your exact time range.\n            \n:::tip\n\
+        For querying a full day of data, use the 'date' parameter. For specific time\
+        \ ranges (including cross-day or multi-hour queries), use 'time_start' and\
+        \ 'time_end'.\n:::"
       parameters:
       - description: Symbol identifier for requested timeseries (from the Metadata
           -> Symbols)
@@ -6682,7 +6699,8 @@ paths:
         schema:
           type: string
         style: form
-      - description: Starting time in ISO 8601
+      - description: "Starting time in ISO 8601 (supports hourly precision, e.g.,\
+          \ 2026-01-16T11:00:00Z)"
         explode: true
         in: query
         name: time_start
@@ -6690,7 +6708,8 @@ paths:
         schema:
           type: string
         style: form
-      - description: Timeseries ending time in ISO 8601
+      - description: "Timeseries ending time in ISO 8601 (optional, supports cross-day\
+          \ queries)"
         explode: true
         in: query
         name: time_end

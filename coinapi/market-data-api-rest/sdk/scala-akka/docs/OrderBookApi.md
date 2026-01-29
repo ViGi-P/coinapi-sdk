@@ -197,7 +197,7 @@ ApiRequest[[**OrderBookDepth**](OrderBookDepth.md)]
 
 Historical data
 
-Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::  :::warning The &#39;time_start&#39; and &#39;time_end&#39; parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the &#39;date&#39; parameter instead for querying data for a specific day without filter. :::
+Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
 
 ### Example
 
@@ -227,11 +227,11 @@ object Example extends App {
     val apiInstance = OrderBookApi("https://rest.coinapi.io")
     val symbolId: String = symbolId_example // String | Symbol identifier for requested timeseries (from the Metadata -> Symbols)
 
-    val date: String = date_example // String | Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided)
+    val date: String = date_example // String | Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)
 
-    val timeStart: String = timeStart_example // String | Starting time in ISO 8601 (deprecated, use 'date' instead)
+    val timeStart: String = timeStart_example // String | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
 
-    val timeEnd: String = timeEnd_example // String | Timeseries ending time in ISO 8601 (deprecated, use 'date' instead)
+    val timeEnd: String = timeEnd_example // String | Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
 
     val limit: Int = 56 // Int | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
@@ -266,9 +266,9 @@ object Example extends App {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbolId** | **String**| Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols) |
- **date** | **String**| Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided) | [optional]
- **timeStart** | **String**| Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional]
- **timeEnd** | **String**| Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead) | [optional]
+ **date** | **String**| Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) | [optional]
+ **timeStart** | **String**| Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) | [optional]
+ **timeEnd** | **String**| Timeseries ending time in ISO 8601 (optional, supports cross-day queries) | [optional]
  **limit** | **Int**| Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional]
  **limitLevels** | **Int**| Maximum amount of levels from each side of the book to include in response (optional) | [optional]
 

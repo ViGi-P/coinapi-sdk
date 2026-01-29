@@ -41,7 +41,7 @@ class MetricsV2Api {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<JsonObject>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<JsonObject>>> v2MetricsAssetHistoryGet({ 
+  Future<Response<BuiltList<JsonObject>>> marketdataListMetricsV2AssetHistory({ 
     required String metricId,
     required String assetId,
     DateTime? timeStart,
@@ -144,7 +144,7 @@ class MetricsV2Api {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<V1MetricInfo>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1MetricInfo>>> v2MetricsAssetListingGet({ 
+  Future<Response<BuiltList<V1MetricInfo>>> marketdataListMetricsV2AssetListing({ 
     required String assetId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -241,7 +241,7 @@ class MetricsV2Api {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<JsonObject>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<JsonObject>>> v2MetricsChainHistoryGet({ 
+  Future<Response<BuiltList<JsonObject>>> marketdataListMetricsV2ChainHistory({ 
     required String metricId,
     required String chainId,
     DateTime? timeStart,
@@ -344,7 +344,7 @@ class MetricsV2Api {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<V1MetricInfo>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1MetricInfo>>> v2MetricsChainListingGet({ 
+  Future<Response<BuiltList<V1MetricInfo>>> marketdataListMetricsV2ChainListing({ 
     required String chainId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -441,7 +441,7 @@ class MetricsV2Api {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<JsonObject>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<JsonObject>>> v2MetricsExchangeHistoryGet({ 
+  Future<Response<BuiltList<JsonObject>>> marketdataListMetricsV2ExchangeHistory({ 
     required String metricId,
     required String exchangeId,
     DateTime? timeStart,
@@ -544,7 +544,7 @@ class MetricsV2Api {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<V1MetricInfo>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1MetricInfo>>> v2MetricsExchangeListingGet({ 
+  Future<Response<BuiltList<V1MetricInfo>>> marketdataListMetricsV2ExchangeListing({ 
     required String exchangeId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -634,7 +634,7 @@ class MetricsV2Api {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<V1MetricInfo>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<V1MetricInfo>>> v2MetricsListingGet({ 
+  Future<Response<BuiltList<V1MetricInfo>>> marketdataListMetricsV2Listing({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
