@@ -75,25 +75,25 @@ class MetricsV2Api
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'v2MetricsAssetHistoryGet' => [
+        'marketdataListMetricsV2AssetHistory' => [
             'application/json',
         ],
-        'v2MetricsAssetListingGet' => [
+        'marketdataListMetricsV2AssetListing' => [
             'application/json',
         ],
-        'v2MetricsChainHistoryGet' => [
+        'marketdataListMetricsV2ChainHistory' => [
             'application/json',
         ],
-        'v2MetricsChainListingGet' => [
+        'marketdataListMetricsV2ChainListing' => [
             'application/json',
         ],
-        'v2MetricsExchangeHistoryGet' => [
+        'marketdataListMetricsV2ExchangeHistory' => [
             'application/json',
         ],
-        'v2MetricsExchangeListingGet' => [
+        'marketdataListMetricsV2ExchangeListing' => [
             'application/json',
         ],
-        'v2MetricsListingGet' => [
+        'marketdataListMetricsV2Listing' => [
             'application/json',
         ],
     ];
@@ -145,7 +145,7 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsAssetHistoryGet
+     * Operation marketdataListMetricsV2AssetHistory
      *
      * Historical metrics for the asset
      *
@@ -156,20 +156,20 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsAssetHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2AssetHistory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object[]
      */
-    public function v2MetricsAssetHistoryGet($metric_id, $asset_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsAssetHistoryGet'][0])
+    public function marketdataListMetricsV2AssetHistory($metric_id, $asset_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2AssetHistory'][0])
     {
-        list($response) = $this->v2MetricsAssetHistoryGetWithHttpInfo($metric_id, $asset_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
+        list($response) = $this->marketdataListMetricsV2AssetHistoryWithHttpInfo($metric_id, $asset_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
         return $response;
     }
 
     /**
-     * Operation v2MetricsAssetHistoryGetWithHttpInfo
+     * Operation marketdataListMetricsV2AssetHistoryWithHttpInfo
      *
      * Historical metrics for the asset
      *
@@ -180,15 +180,15 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsAssetHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2AssetHistory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v2MetricsAssetHistoryGetWithHttpInfo($metric_id, $asset_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsAssetHistoryGet'][0])
+    public function marketdataListMetricsV2AssetHistoryWithHttpInfo($metric_id, $asset_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2AssetHistory'][0])
     {
-        $request = $this->v2MetricsAssetHistoryGetRequest($metric_id, $asset_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
+        $request = $this->marketdataListMetricsV2AssetHistoryRequest($metric_id, $asset_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -260,7 +260,7 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsAssetHistoryGetAsync
+     * Operation marketdataListMetricsV2AssetHistoryAsync
      *
      * Historical metrics for the asset
      *
@@ -271,14 +271,14 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsAssetHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2AssetHistory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsAssetHistoryGetAsync($metric_id, $asset_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsAssetHistoryGet'][0])
+    public function marketdataListMetricsV2AssetHistoryAsync($metric_id, $asset_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2AssetHistory'][0])
     {
-        return $this->v2MetricsAssetHistoryGetAsyncWithHttpInfo($metric_id, $asset_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType)
+        return $this->marketdataListMetricsV2AssetHistoryAsyncWithHttpInfo($metric_id, $asset_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -287,7 +287,7 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsAssetHistoryGetAsyncWithHttpInfo
+     * Operation marketdataListMetricsV2AssetHistoryAsyncWithHttpInfo
      *
      * Historical metrics for the asset
      *
@@ -298,15 +298,15 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsAssetHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2AssetHistory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsAssetHistoryGetAsyncWithHttpInfo($metric_id, $asset_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsAssetHistoryGet'][0])
+    public function marketdataListMetricsV2AssetHistoryAsyncWithHttpInfo($metric_id, $asset_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2AssetHistory'][0])
     {
         $returnType = 'object[]';
-        $request = $this->v2MetricsAssetHistoryGetRequest($metric_id, $asset_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
+        $request = $this->marketdataListMetricsV2AssetHistoryRequest($metric_id, $asset_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -345,7 +345,7 @@ class MetricsV2Api
     }
 
     /**
-     * Create request for operation 'v2MetricsAssetHistoryGet'
+     * Create request for operation 'marketdataListMetricsV2AssetHistory'
      *
      * @param  string $metric_id Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;) (required)
      * @param  string $asset_id Asset identifier (e.g., &#x60;USDC&#x60;, &#x60;USDT&#x60;) (required)
@@ -354,25 +354,25 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsAssetHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2AssetHistory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v2MetricsAssetHistoryGetRequest($metric_id, $asset_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsAssetHistoryGet'][0])
+    public function marketdataListMetricsV2AssetHistoryRequest($metric_id, $asset_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2AssetHistory'][0])
     {
 
         // verify the required parameter 'metric_id' is set
         if ($metric_id === null || (is_array($metric_id) && count($metric_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $metric_id when calling v2MetricsAssetHistoryGet'
+                'Missing the required parameter $metric_id when calling marketdataListMetricsV2AssetHistory'
             );
         }
 
         // verify the required parameter 'asset_id' is set
         if ($asset_id === null || (is_array($asset_id) && count($asset_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $asset_id when calling v2MetricsAssetHistoryGet'
+                'Missing the required parameter $asset_id when calling marketdataListMetricsV2AssetHistory'
             );
         }
 
@@ -519,38 +519,38 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsAssetListingGet
+     * Operation marketdataListMetricsV2AssetListing
      *
      * Listing of metrics available for specific asset
      *
      * @param  string $asset_id Asset identifier (e.g., USDC, USDT) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsAssetListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2AssetListing'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\V1MetricInfo[]
      */
-    public function v2MetricsAssetListingGet($asset_id, string $contentType = self::contentTypes['v2MetricsAssetListingGet'][0])
+    public function marketdataListMetricsV2AssetListing($asset_id, string $contentType = self::contentTypes['marketdataListMetricsV2AssetListing'][0])
     {
-        list($response) = $this->v2MetricsAssetListingGetWithHttpInfo($asset_id, $contentType);
+        list($response) = $this->marketdataListMetricsV2AssetListingWithHttpInfo($asset_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation v2MetricsAssetListingGetWithHttpInfo
+     * Operation marketdataListMetricsV2AssetListingWithHttpInfo
      *
      * Listing of metrics available for specific asset
      *
      * @param  string $asset_id Asset identifier (e.g., USDC, USDT) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsAssetListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2AssetListing'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\V1MetricInfo[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v2MetricsAssetListingGetWithHttpInfo($asset_id, string $contentType = self::contentTypes['v2MetricsAssetListingGet'][0])
+    public function marketdataListMetricsV2AssetListingWithHttpInfo($asset_id, string $contentType = self::contentTypes['marketdataListMetricsV2AssetListing'][0])
     {
-        $request = $this->v2MetricsAssetListingGetRequest($asset_id, $contentType);
+        $request = $this->marketdataListMetricsV2AssetListingRequest($asset_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -622,19 +622,19 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsAssetListingGetAsync
+     * Operation marketdataListMetricsV2AssetListingAsync
      *
      * Listing of metrics available for specific asset
      *
      * @param  string $asset_id Asset identifier (e.g., USDC, USDT) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsAssetListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2AssetListing'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsAssetListingGetAsync($asset_id, string $contentType = self::contentTypes['v2MetricsAssetListingGet'][0])
+    public function marketdataListMetricsV2AssetListingAsync($asset_id, string $contentType = self::contentTypes['marketdataListMetricsV2AssetListing'][0])
     {
-        return $this->v2MetricsAssetListingGetAsyncWithHttpInfo($asset_id, $contentType)
+        return $this->marketdataListMetricsV2AssetListingAsyncWithHttpInfo($asset_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -643,20 +643,20 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsAssetListingGetAsyncWithHttpInfo
+     * Operation marketdataListMetricsV2AssetListingAsyncWithHttpInfo
      *
      * Listing of metrics available for specific asset
      *
      * @param  string $asset_id Asset identifier (e.g., USDC, USDT) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsAssetListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2AssetListing'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsAssetListingGetAsyncWithHttpInfo($asset_id, string $contentType = self::contentTypes['v2MetricsAssetListingGet'][0])
+    public function marketdataListMetricsV2AssetListingAsyncWithHttpInfo($asset_id, string $contentType = self::contentTypes['marketdataListMetricsV2AssetListing'][0])
     {
         $returnType = '\OpenAPI\Client\Model\V1MetricInfo[]';
-        $request = $this->v2MetricsAssetListingGetRequest($asset_id, $contentType);
+        $request = $this->marketdataListMetricsV2AssetListingRequest($asset_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -695,21 +695,21 @@ class MetricsV2Api
     }
 
     /**
-     * Create request for operation 'v2MetricsAssetListingGet'
+     * Create request for operation 'marketdataListMetricsV2AssetListing'
      *
      * @param  string $asset_id Asset identifier (e.g., USDC, USDT) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsAssetListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2AssetListing'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v2MetricsAssetListingGetRequest($asset_id, string $contentType = self::contentTypes['v2MetricsAssetListingGet'][0])
+    public function marketdataListMetricsV2AssetListingRequest($asset_id, string $contentType = self::contentTypes['marketdataListMetricsV2AssetListing'][0])
     {
 
         // verify the required parameter 'asset_id' is set
         if ($asset_id === null || (is_array($asset_id) && count($asset_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $asset_id when calling v2MetricsAssetListingGet'
+                'Missing the required parameter $asset_id when calling marketdataListMetricsV2AssetListing'
             );
         }
 
@@ -797,7 +797,7 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsChainHistoryGet
+     * Operation marketdataListMetricsV2ChainHistory
      *
      * Historical metrics for the chain
      *
@@ -808,20 +808,20 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsChainHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ChainHistory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object[]
      */
-    public function v2MetricsChainHistoryGet($metric_id, $chain_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsChainHistoryGet'][0])
+    public function marketdataListMetricsV2ChainHistory($metric_id, $chain_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2ChainHistory'][0])
     {
-        list($response) = $this->v2MetricsChainHistoryGetWithHttpInfo($metric_id, $chain_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
+        list($response) = $this->marketdataListMetricsV2ChainHistoryWithHttpInfo($metric_id, $chain_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
         return $response;
     }
 
     /**
-     * Operation v2MetricsChainHistoryGetWithHttpInfo
+     * Operation marketdataListMetricsV2ChainHistoryWithHttpInfo
      *
      * Historical metrics for the chain
      *
@@ -832,15 +832,15 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsChainHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ChainHistory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v2MetricsChainHistoryGetWithHttpInfo($metric_id, $chain_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsChainHistoryGet'][0])
+    public function marketdataListMetricsV2ChainHistoryWithHttpInfo($metric_id, $chain_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2ChainHistory'][0])
     {
-        $request = $this->v2MetricsChainHistoryGetRequest($metric_id, $chain_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
+        $request = $this->marketdataListMetricsV2ChainHistoryRequest($metric_id, $chain_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -912,7 +912,7 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsChainHistoryGetAsync
+     * Operation marketdataListMetricsV2ChainHistoryAsync
      *
      * Historical metrics for the chain
      *
@@ -923,14 +923,14 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsChainHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ChainHistory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsChainHistoryGetAsync($metric_id, $chain_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsChainHistoryGet'][0])
+    public function marketdataListMetricsV2ChainHistoryAsync($metric_id, $chain_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2ChainHistory'][0])
     {
-        return $this->v2MetricsChainHistoryGetAsyncWithHttpInfo($metric_id, $chain_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType)
+        return $this->marketdataListMetricsV2ChainHistoryAsyncWithHttpInfo($metric_id, $chain_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -939,7 +939,7 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsChainHistoryGetAsyncWithHttpInfo
+     * Operation marketdataListMetricsV2ChainHistoryAsyncWithHttpInfo
      *
      * Historical metrics for the chain
      *
@@ -950,15 +950,15 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsChainHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ChainHistory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsChainHistoryGetAsyncWithHttpInfo($metric_id, $chain_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsChainHistoryGet'][0])
+    public function marketdataListMetricsV2ChainHistoryAsyncWithHttpInfo($metric_id, $chain_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2ChainHistory'][0])
     {
         $returnType = 'object[]';
-        $request = $this->v2MetricsChainHistoryGetRequest($metric_id, $chain_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
+        $request = $this->marketdataListMetricsV2ChainHistoryRequest($metric_id, $chain_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -997,7 +997,7 @@ class MetricsV2Api
     }
 
     /**
-     * Create request for operation 'v2MetricsChainHistoryGet'
+     * Create request for operation 'marketdataListMetricsV2ChainHistory'
      *
      * @param  string $metric_id Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;) (required)
      * @param  string $chain_id Chain identifier (e.g., &#x60;Ethereum&#x60;, &#x60;Arbitrum&#x60;) (required)
@@ -1006,25 +1006,25 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsChainHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ChainHistory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v2MetricsChainHistoryGetRequest($metric_id, $chain_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsChainHistoryGet'][0])
+    public function marketdataListMetricsV2ChainHistoryRequest($metric_id, $chain_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2ChainHistory'][0])
     {
 
         // verify the required parameter 'metric_id' is set
         if ($metric_id === null || (is_array($metric_id) && count($metric_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $metric_id when calling v2MetricsChainHistoryGet'
+                'Missing the required parameter $metric_id when calling marketdataListMetricsV2ChainHistory'
             );
         }
 
         // verify the required parameter 'chain_id' is set
         if ($chain_id === null || (is_array($chain_id) && count($chain_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $chain_id when calling v2MetricsChainHistoryGet'
+                'Missing the required parameter $chain_id when calling marketdataListMetricsV2ChainHistory'
             );
         }
 
@@ -1171,38 +1171,38 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsChainListingGet
+     * Operation marketdataListMetricsV2ChainListing
      *
      * Listing of metrics available for specific chain
      *
      * @param  string $chain_id Chain identifier (e.g., ETHEREUM, ARBITRUM) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsChainListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ChainListing'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\V1MetricInfo[]
      */
-    public function v2MetricsChainListingGet($chain_id, string $contentType = self::contentTypes['v2MetricsChainListingGet'][0])
+    public function marketdataListMetricsV2ChainListing($chain_id, string $contentType = self::contentTypes['marketdataListMetricsV2ChainListing'][0])
     {
-        list($response) = $this->v2MetricsChainListingGetWithHttpInfo($chain_id, $contentType);
+        list($response) = $this->marketdataListMetricsV2ChainListingWithHttpInfo($chain_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation v2MetricsChainListingGetWithHttpInfo
+     * Operation marketdataListMetricsV2ChainListingWithHttpInfo
      *
      * Listing of metrics available for specific chain
      *
      * @param  string $chain_id Chain identifier (e.g., ETHEREUM, ARBITRUM) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsChainListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ChainListing'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\V1MetricInfo[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v2MetricsChainListingGetWithHttpInfo($chain_id, string $contentType = self::contentTypes['v2MetricsChainListingGet'][0])
+    public function marketdataListMetricsV2ChainListingWithHttpInfo($chain_id, string $contentType = self::contentTypes['marketdataListMetricsV2ChainListing'][0])
     {
-        $request = $this->v2MetricsChainListingGetRequest($chain_id, $contentType);
+        $request = $this->marketdataListMetricsV2ChainListingRequest($chain_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1274,19 +1274,19 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsChainListingGetAsync
+     * Operation marketdataListMetricsV2ChainListingAsync
      *
      * Listing of metrics available for specific chain
      *
      * @param  string $chain_id Chain identifier (e.g., ETHEREUM, ARBITRUM) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsChainListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ChainListing'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsChainListingGetAsync($chain_id, string $contentType = self::contentTypes['v2MetricsChainListingGet'][0])
+    public function marketdataListMetricsV2ChainListingAsync($chain_id, string $contentType = self::contentTypes['marketdataListMetricsV2ChainListing'][0])
     {
-        return $this->v2MetricsChainListingGetAsyncWithHttpInfo($chain_id, $contentType)
+        return $this->marketdataListMetricsV2ChainListingAsyncWithHttpInfo($chain_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1295,20 +1295,20 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsChainListingGetAsyncWithHttpInfo
+     * Operation marketdataListMetricsV2ChainListingAsyncWithHttpInfo
      *
      * Listing of metrics available for specific chain
      *
      * @param  string $chain_id Chain identifier (e.g., ETHEREUM, ARBITRUM) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsChainListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ChainListing'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsChainListingGetAsyncWithHttpInfo($chain_id, string $contentType = self::contentTypes['v2MetricsChainListingGet'][0])
+    public function marketdataListMetricsV2ChainListingAsyncWithHttpInfo($chain_id, string $contentType = self::contentTypes['marketdataListMetricsV2ChainListing'][0])
     {
         $returnType = '\OpenAPI\Client\Model\V1MetricInfo[]';
-        $request = $this->v2MetricsChainListingGetRequest($chain_id, $contentType);
+        $request = $this->marketdataListMetricsV2ChainListingRequest($chain_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1347,21 +1347,21 @@ class MetricsV2Api
     }
 
     /**
-     * Create request for operation 'v2MetricsChainListingGet'
+     * Create request for operation 'marketdataListMetricsV2ChainListing'
      *
      * @param  string $chain_id Chain identifier (e.g., ETHEREUM, ARBITRUM) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsChainListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ChainListing'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v2MetricsChainListingGetRequest($chain_id, string $contentType = self::contentTypes['v2MetricsChainListingGet'][0])
+    public function marketdataListMetricsV2ChainListingRequest($chain_id, string $contentType = self::contentTypes['marketdataListMetricsV2ChainListing'][0])
     {
 
         // verify the required parameter 'chain_id' is set
         if ($chain_id === null || (is_array($chain_id) && count($chain_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $chain_id when calling v2MetricsChainListingGet'
+                'Missing the required parameter $chain_id when calling marketdataListMetricsV2ChainListing'
             );
         }
 
@@ -1449,7 +1449,7 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsExchangeHistoryGet
+     * Operation marketdataListMetricsV2ExchangeHistory
      *
      * Historical metrics for the exchange
      *
@@ -1460,20 +1460,20 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsExchangeHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ExchangeHistory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object[]
      */
-    public function v2MetricsExchangeHistoryGet($metric_id, $exchange_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsExchangeHistoryGet'][0])
+    public function marketdataListMetricsV2ExchangeHistory($metric_id, $exchange_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2ExchangeHistory'][0])
     {
-        list($response) = $this->v2MetricsExchangeHistoryGetWithHttpInfo($metric_id, $exchange_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
+        list($response) = $this->marketdataListMetricsV2ExchangeHistoryWithHttpInfo($metric_id, $exchange_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
         return $response;
     }
 
     /**
-     * Operation v2MetricsExchangeHistoryGetWithHttpInfo
+     * Operation marketdataListMetricsV2ExchangeHistoryWithHttpInfo
      *
      * Historical metrics for the exchange
      *
@@ -1484,15 +1484,15 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsExchangeHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ExchangeHistory'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v2MetricsExchangeHistoryGetWithHttpInfo($metric_id, $exchange_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsExchangeHistoryGet'][0])
+    public function marketdataListMetricsV2ExchangeHistoryWithHttpInfo($metric_id, $exchange_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2ExchangeHistory'][0])
     {
-        $request = $this->v2MetricsExchangeHistoryGetRequest($metric_id, $exchange_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
+        $request = $this->marketdataListMetricsV2ExchangeHistoryRequest($metric_id, $exchange_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1564,7 +1564,7 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsExchangeHistoryGetAsync
+     * Operation marketdataListMetricsV2ExchangeHistoryAsync
      *
      * Historical metrics for the exchange
      *
@@ -1575,14 +1575,14 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsExchangeHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ExchangeHistory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsExchangeHistoryGetAsync($metric_id, $exchange_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsExchangeHistoryGet'][0])
+    public function marketdataListMetricsV2ExchangeHistoryAsync($metric_id, $exchange_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2ExchangeHistory'][0])
     {
-        return $this->v2MetricsExchangeHistoryGetAsyncWithHttpInfo($metric_id, $exchange_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType)
+        return $this->marketdataListMetricsV2ExchangeHistoryAsyncWithHttpInfo($metric_id, $exchange_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1591,7 +1591,7 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsExchangeHistoryGetAsyncWithHttpInfo
+     * Operation marketdataListMetricsV2ExchangeHistoryAsyncWithHttpInfo
      *
      * Historical metrics for the exchange
      *
@@ -1602,15 +1602,15 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsExchangeHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ExchangeHistory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsExchangeHistoryGetAsyncWithHttpInfo($metric_id, $exchange_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsExchangeHistoryGet'][0])
+    public function marketdataListMetricsV2ExchangeHistoryAsyncWithHttpInfo($metric_id, $exchange_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2ExchangeHistory'][0])
     {
         $returnType = 'object[]';
-        $request = $this->v2MetricsExchangeHistoryGetRequest($metric_id, $exchange_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
+        $request = $this->marketdataListMetricsV2ExchangeHistoryRequest($metric_id, $exchange_id, $time_start, $time_end, $time_format, $period_id, $limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1649,7 +1649,7 @@ class MetricsV2Api
     }
 
     /**
-     * Create request for operation 'v2MetricsExchangeHistoryGet'
+     * Create request for operation 'marketdataListMetricsV2ExchangeHistory'
      *
      * @param  string $metric_id Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;) (required)
      * @param  string $exchange_id Exchange identifier (e.g., &#x60;BINANCE&#x60;, &#x60;UNISWAP-V3-ETHEREUM&#x60;) (required)
@@ -1658,25 +1658,25 @@ class MetricsV2Api
      * @param  string|null $time_format If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec) (optional)
      * @param  string|null $period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsExchangeHistoryGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ExchangeHistory'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v2MetricsExchangeHistoryGetRequest($metric_id, $exchange_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['v2MetricsExchangeHistoryGet'][0])
+    public function marketdataListMetricsV2ExchangeHistoryRequest($metric_id, $exchange_id, $time_start = null, $time_end = null, $time_format = null, $period_id = null, $limit = 100, string $contentType = self::contentTypes['marketdataListMetricsV2ExchangeHistory'][0])
     {
 
         // verify the required parameter 'metric_id' is set
         if ($metric_id === null || (is_array($metric_id) && count($metric_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $metric_id when calling v2MetricsExchangeHistoryGet'
+                'Missing the required parameter $metric_id when calling marketdataListMetricsV2ExchangeHistory'
             );
         }
 
         // verify the required parameter 'exchange_id' is set
         if ($exchange_id === null || (is_array($exchange_id) && count($exchange_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $exchange_id when calling v2MetricsExchangeHistoryGet'
+                'Missing the required parameter $exchange_id when calling marketdataListMetricsV2ExchangeHistory'
             );
         }
 
@@ -1823,38 +1823,38 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsExchangeListingGet
+     * Operation marketdataListMetricsV2ExchangeListing
      *
      * Listing of metrics available for specific exchange
      *
      * @param  string $exchange_id Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsExchangeListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ExchangeListing'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\V1MetricInfo[]
      */
-    public function v2MetricsExchangeListingGet($exchange_id, string $contentType = self::contentTypes['v2MetricsExchangeListingGet'][0])
+    public function marketdataListMetricsV2ExchangeListing($exchange_id, string $contentType = self::contentTypes['marketdataListMetricsV2ExchangeListing'][0])
     {
-        list($response) = $this->v2MetricsExchangeListingGetWithHttpInfo($exchange_id, $contentType);
+        list($response) = $this->marketdataListMetricsV2ExchangeListingWithHttpInfo($exchange_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation v2MetricsExchangeListingGetWithHttpInfo
+     * Operation marketdataListMetricsV2ExchangeListingWithHttpInfo
      *
      * Listing of metrics available for specific exchange
      *
      * @param  string $exchange_id Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsExchangeListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ExchangeListing'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\V1MetricInfo[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v2MetricsExchangeListingGetWithHttpInfo($exchange_id, string $contentType = self::contentTypes['v2MetricsExchangeListingGet'][0])
+    public function marketdataListMetricsV2ExchangeListingWithHttpInfo($exchange_id, string $contentType = self::contentTypes['marketdataListMetricsV2ExchangeListing'][0])
     {
-        $request = $this->v2MetricsExchangeListingGetRequest($exchange_id, $contentType);
+        $request = $this->marketdataListMetricsV2ExchangeListingRequest($exchange_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1926,19 +1926,19 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsExchangeListingGetAsync
+     * Operation marketdataListMetricsV2ExchangeListingAsync
      *
      * Listing of metrics available for specific exchange
      *
      * @param  string $exchange_id Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsExchangeListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ExchangeListing'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsExchangeListingGetAsync($exchange_id, string $contentType = self::contentTypes['v2MetricsExchangeListingGet'][0])
+    public function marketdataListMetricsV2ExchangeListingAsync($exchange_id, string $contentType = self::contentTypes['marketdataListMetricsV2ExchangeListing'][0])
     {
-        return $this->v2MetricsExchangeListingGetAsyncWithHttpInfo($exchange_id, $contentType)
+        return $this->marketdataListMetricsV2ExchangeListingAsyncWithHttpInfo($exchange_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1947,20 +1947,20 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsExchangeListingGetAsyncWithHttpInfo
+     * Operation marketdataListMetricsV2ExchangeListingAsyncWithHttpInfo
      *
      * Listing of metrics available for specific exchange
      *
      * @param  string $exchange_id Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsExchangeListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ExchangeListing'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsExchangeListingGetAsyncWithHttpInfo($exchange_id, string $contentType = self::contentTypes['v2MetricsExchangeListingGet'][0])
+    public function marketdataListMetricsV2ExchangeListingAsyncWithHttpInfo($exchange_id, string $contentType = self::contentTypes['marketdataListMetricsV2ExchangeListing'][0])
     {
         $returnType = '\OpenAPI\Client\Model\V1MetricInfo[]';
-        $request = $this->v2MetricsExchangeListingGetRequest($exchange_id, $contentType);
+        $request = $this->marketdataListMetricsV2ExchangeListingRequest($exchange_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1999,21 +1999,21 @@ class MetricsV2Api
     }
 
     /**
-     * Create request for operation 'v2MetricsExchangeListingGet'
+     * Create request for operation 'marketdataListMetricsV2ExchangeListing'
      *
      * @param  string $exchange_id Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM) (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsExchangeListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2ExchangeListing'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v2MetricsExchangeListingGetRequest($exchange_id, string $contentType = self::contentTypes['v2MetricsExchangeListingGet'][0])
+    public function marketdataListMetricsV2ExchangeListingRequest($exchange_id, string $contentType = self::contentTypes['marketdataListMetricsV2ExchangeListing'][0])
     {
 
         // verify the required parameter 'exchange_id' is set
         if ($exchange_id === null || (is_array($exchange_id) && count($exchange_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $exchange_id when calling v2MetricsExchangeListingGet'
+                'Missing the required parameter $exchange_id when calling marketdataListMetricsV2ExchangeListing'
             );
         }
 
@@ -2101,36 +2101,36 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsListingGet
+     * Operation marketdataListMetricsV2Listing
      *
      * Listing of all supported metrics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2Listing'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\V1MetricInfo[]
      */
-    public function v2MetricsListingGet(string $contentType = self::contentTypes['v2MetricsListingGet'][0])
+    public function marketdataListMetricsV2Listing(string $contentType = self::contentTypes['marketdataListMetricsV2Listing'][0])
     {
-        list($response) = $this->v2MetricsListingGetWithHttpInfo($contentType);
+        list($response) = $this->marketdataListMetricsV2ListingWithHttpInfo($contentType);
         return $response;
     }
 
     /**
-     * Operation v2MetricsListingGetWithHttpInfo
+     * Operation marketdataListMetricsV2ListingWithHttpInfo
      *
      * Listing of all supported metrics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2Listing'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\V1MetricInfo[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v2MetricsListingGetWithHttpInfo(string $contentType = self::contentTypes['v2MetricsListingGet'][0])
+    public function marketdataListMetricsV2ListingWithHttpInfo(string $contentType = self::contentTypes['marketdataListMetricsV2Listing'][0])
     {
-        $request = $this->v2MetricsListingGetRequest($contentType);
+        $request = $this->marketdataListMetricsV2ListingRequest($contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2202,18 +2202,18 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsListingGetAsync
+     * Operation marketdataListMetricsV2ListingAsync
      *
      * Listing of all supported metrics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2Listing'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsListingGetAsync(string $contentType = self::contentTypes['v2MetricsListingGet'][0])
+    public function marketdataListMetricsV2ListingAsync(string $contentType = self::contentTypes['marketdataListMetricsV2Listing'][0])
     {
-        return $this->v2MetricsListingGetAsyncWithHttpInfo($contentType)
+        return $this->marketdataListMetricsV2ListingAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2222,19 +2222,19 @@ class MetricsV2Api
     }
 
     /**
-     * Operation v2MetricsListingGetAsyncWithHttpInfo
+     * Operation marketdataListMetricsV2ListingAsyncWithHttpInfo
      *
      * Listing of all supported metrics
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2Listing'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v2MetricsListingGetAsyncWithHttpInfo(string $contentType = self::contentTypes['v2MetricsListingGet'][0])
+    public function marketdataListMetricsV2ListingAsyncWithHttpInfo(string $contentType = self::contentTypes['marketdataListMetricsV2Listing'][0])
     {
         $returnType = '\OpenAPI\Client\Model\V1MetricInfo[]';
-        $request = $this->v2MetricsListingGetRequest($contentType);
+        $request = $this->marketdataListMetricsV2ListingRequest($contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2273,14 +2273,14 @@ class MetricsV2Api
     }
 
     /**
-     * Create request for operation 'v2MetricsListingGet'
+     * Create request for operation 'marketdataListMetricsV2Listing'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v2MetricsListingGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['marketdataListMetricsV2Listing'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v2MetricsListingGetRequest(string $contentType = self::contentTypes['v2MetricsListingGet'][0])
+    public function marketdataListMetricsV2ListingRequest(string $contentType = self::contentTypes['marketdataListMetricsV2Listing'][0])
     {
 
 

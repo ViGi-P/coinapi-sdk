@@ -35,8 +35,8 @@ export default class MetricsV2Api {
 
 
     /**
-     * Callback function to receive the result of the v2MetricsAssetHistoryGet operation.
-     * @callback module:api/MetricsV2Api~v2MetricsAssetHistoryGetCallback
+     * Callback function to receive the result of the marketdataListMetricsV2AssetHistory operation.
+     * @callback module:api/MetricsV2Api~marketdataListMetricsV2AssetHistoryCallback
      * @param {String} error Error message, if any.
      * @param {Array.<Object>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -53,19 +53,19 @@ export default class MetricsV2Api {
      * @param {String} [timeFormat] If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)
      * @param {String} [periodId] Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
      * @param {Number} [limit = 100)] Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-     * @param {module:api/MetricsV2Api~v2MetricsAssetHistoryGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MetricsV2Api~marketdataListMetricsV2AssetHistoryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
-    v2MetricsAssetHistoryGet(metricId, assetId, opts, callback) {
+    marketdataListMetricsV2AssetHistory(metricId, assetId, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'metricId' is set
       if (metricId === undefined || metricId === null) {
-        throw new Error("Missing the required parameter 'metricId' when calling v2MetricsAssetHistoryGet");
+        throw new Error("Missing the required parameter 'metricId' when calling marketdataListMetricsV2AssetHistory");
       }
       // verify the required parameter 'assetId' is set
       if (assetId === undefined || assetId === null) {
-        throw new Error("Missing the required parameter 'assetId' when calling v2MetricsAssetHistoryGet");
+        throw new Error("Missing the required parameter 'assetId' when calling marketdataListMetricsV2AssetHistory");
       }
 
       let pathParams = {
@@ -96,8 +96,8 @@ export default class MetricsV2Api {
     }
 
     /**
-     * Callback function to receive the result of the v2MetricsAssetListingGet operation.
-     * @callback module:api/MetricsV2Api~v2MetricsAssetListingGetCallback
+     * Callback function to receive the result of the marketdataListMetricsV2AssetListing operation.
+     * @callback module:api/MetricsV2Api~marketdataListMetricsV2AssetListingCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/V1MetricInfo>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -107,14 +107,14 @@ export default class MetricsV2Api {
      * Listing of metrics available for specific asset
      * Get all metrics that are actually available for the specified asset.
      * @param {String} assetId Asset identifier (e.g., USDC, USDT)
-     * @param {module:api/MetricsV2Api~v2MetricsAssetListingGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MetricsV2Api~marketdataListMetricsV2AssetListingCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/V1MetricInfo>}
      */
-    v2MetricsAssetListingGet(assetId, callback) {
+    marketdataListMetricsV2AssetListing(assetId, callback) {
       let postBody = null;
       // verify the required parameter 'assetId' is set
       if (assetId === undefined || assetId === null) {
-        throw new Error("Missing the required parameter 'assetId' when calling v2MetricsAssetListingGet");
+        throw new Error("Missing the required parameter 'assetId' when calling marketdataListMetricsV2AssetListing");
       }
 
       let pathParams = {
@@ -139,8 +139,8 @@ export default class MetricsV2Api {
     }
 
     /**
-     * Callback function to receive the result of the v2MetricsChainHistoryGet operation.
-     * @callback module:api/MetricsV2Api~v2MetricsChainHistoryGetCallback
+     * Callback function to receive the result of the marketdataListMetricsV2ChainHistory operation.
+     * @callback module:api/MetricsV2Api~marketdataListMetricsV2ChainHistoryCallback
      * @param {String} error Error message, if any.
      * @param {Array.<Object>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -157,19 +157,19 @@ export default class MetricsV2Api {
      * @param {String} [timeFormat] If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)
      * @param {String} [periodId] Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
      * @param {Number} [limit = 100)] Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-     * @param {module:api/MetricsV2Api~v2MetricsChainHistoryGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MetricsV2Api~marketdataListMetricsV2ChainHistoryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
-    v2MetricsChainHistoryGet(metricId, chainId, opts, callback) {
+    marketdataListMetricsV2ChainHistory(metricId, chainId, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'metricId' is set
       if (metricId === undefined || metricId === null) {
-        throw new Error("Missing the required parameter 'metricId' when calling v2MetricsChainHistoryGet");
+        throw new Error("Missing the required parameter 'metricId' when calling marketdataListMetricsV2ChainHistory");
       }
       // verify the required parameter 'chainId' is set
       if (chainId === undefined || chainId === null) {
-        throw new Error("Missing the required parameter 'chainId' when calling v2MetricsChainHistoryGet");
+        throw new Error("Missing the required parameter 'chainId' when calling marketdataListMetricsV2ChainHistory");
       }
 
       let pathParams = {
@@ -200,8 +200,8 @@ export default class MetricsV2Api {
     }
 
     /**
-     * Callback function to receive the result of the v2MetricsChainListingGet operation.
-     * @callback module:api/MetricsV2Api~v2MetricsChainListingGetCallback
+     * Callback function to receive the result of the marketdataListMetricsV2ChainListing operation.
+     * @callback module:api/MetricsV2Api~marketdataListMetricsV2ChainListingCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/V1MetricInfo>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -211,14 +211,14 @@ export default class MetricsV2Api {
      * Listing of metrics available for specific chain
      * Get all metrics that are actually available for the specified blockchain chain.
      * @param {String} chainId Chain identifier (e.g., ETHEREUM, ARBITRUM)
-     * @param {module:api/MetricsV2Api~v2MetricsChainListingGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MetricsV2Api~marketdataListMetricsV2ChainListingCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/V1MetricInfo>}
      */
-    v2MetricsChainListingGet(chainId, callback) {
+    marketdataListMetricsV2ChainListing(chainId, callback) {
       let postBody = null;
       // verify the required parameter 'chainId' is set
       if (chainId === undefined || chainId === null) {
-        throw new Error("Missing the required parameter 'chainId' when calling v2MetricsChainListingGet");
+        throw new Error("Missing the required parameter 'chainId' when calling marketdataListMetricsV2ChainListing");
       }
 
       let pathParams = {
@@ -243,8 +243,8 @@ export default class MetricsV2Api {
     }
 
     /**
-     * Callback function to receive the result of the v2MetricsExchangeHistoryGet operation.
-     * @callback module:api/MetricsV2Api~v2MetricsExchangeHistoryGetCallback
+     * Callback function to receive the result of the marketdataListMetricsV2ExchangeHistory operation.
+     * @callback module:api/MetricsV2Api~marketdataListMetricsV2ExchangeHistoryCallback
      * @param {String} error Error message, if any.
      * @param {Array.<Object>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -261,19 +261,19 @@ export default class MetricsV2Api {
      * @param {String} [timeFormat] If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)
      * @param {String} [periodId] Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
      * @param {Number} [limit = 100)] Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-     * @param {module:api/MetricsV2Api~v2MetricsExchangeHistoryGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MetricsV2Api~marketdataListMetricsV2ExchangeHistoryCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<Object>}
      */
-    v2MetricsExchangeHistoryGet(metricId, exchangeId, opts, callback) {
+    marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, opts, callback) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'metricId' is set
       if (metricId === undefined || metricId === null) {
-        throw new Error("Missing the required parameter 'metricId' when calling v2MetricsExchangeHistoryGet");
+        throw new Error("Missing the required parameter 'metricId' when calling marketdataListMetricsV2ExchangeHistory");
       }
       // verify the required parameter 'exchangeId' is set
       if (exchangeId === undefined || exchangeId === null) {
-        throw new Error("Missing the required parameter 'exchangeId' when calling v2MetricsExchangeHistoryGet");
+        throw new Error("Missing the required parameter 'exchangeId' when calling marketdataListMetricsV2ExchangeHistory");
       }
 
       let pathParams = {
@@ -304,8 +304,8 @@ export default class MetricsV2Api {
     }
 
     /**
-     * Callback function to receive the result of the v2MetricsExchangeListingGet operation.
-     * @callback module:api/MetricsV2Api~v2MetricsExchangeListingGetCallback
+     * Callback function to receive the result of the marketdataListMetricsV2ExchangeListing operation.
+     * @callback module:api/MetricsV2Api~marketdataListMetricsV2ExchangeListingCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/V1MetricInfo>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -315,14 +315,14 @@ export default class MetricsV2Api {
      * Listing of metrics available for specific exchange
      * Get all metrics that are actually available for the specified exchange.
      * @param {String} exchangeId Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
-     * @param {module:api/MetricsV2Api~v2MetricsExchangeListingGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MetricsV2Api~marketdataListMetricsV2ExchangeListingCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/V1MetricInfo>}
      */
-    v2MetricsExchangeListingGet(exchangeId, callback) {
+    marketdataListMetricsV2ExchangeListing(exchangeId, callback) {
       let postBody = null;
       // verify the required parameter 'exchangeId' is set
       if (exchangeId === undefined || exchangeId === null) {
-        throw new Error("Missing the required parameter 'exchangeId' when calling v2MetricsExchangeListingGet");
+        throw new Error("Missing the required parameter 'exchangeId' when calling marketdataListMetricsV2ExchangeListing");
       }
 
       let pathParams = {
@@ -347,8 +347,8 @@ export default class MetricsV2Api {
     }
 
     /**
-     * Callback function to receive the result of the v2MetricsListingGet operation.
-     * @callback module:api/MetricsV2Api~v2MetricsListingGetCallback
+     * Callback function to receive the result of the marketdataListMetricsV2Listing operation.
+     * @callback module:api/MetricsV2Api~marketdataListMetricsV2ListingCallback
      * @param {String} error Error message, if any.
      * @param {Array.<module:model/V1MetricInfo>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -357,10 +357,10 @@ export default class MetricsV2Api {
     /**
      * Listing of all supported metrics
      * Get all metrics available in the system.
-     * @param {module:api/MetricsV2Api~v2MetricsListingGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/MetricsV2Api~marketdataListMetricsV2ListingCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/V1MetricInfo>}
      */
-    v2MetricsListingGet(callback) {
+    marketdataListMetricsV2Listing(callback) {
       let postBody = null;
 
       let pathParams = {

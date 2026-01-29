@@ -5,8 +5,8 @@ context("Test MetricsV2Api")
 
 api_instance <- MetricsV2Api$new()
 
-test_that("V2MetricsAssetHistoryGet", {
-  # tests for V2MetricsAssetHistoryGet
+test_that("MarketdataListMetricsV2AssetHistory", {
+  # tests for MarketdataListMetricsV2AssetHistory
   # base path: https://rest.coinapi.io
   # Historical metrics for the asset
   # Get asset metrics history.
@@ -23,8 +23,8 @@ test_that("V2MetricsAssetHistoryGet", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("V2MetricsAssetListingGet", {
-  # tests for V2MetricsAssetListingGet
+test_that("MarketdataListMetricsV2AssetListing", {
+  # tests for MarketdataListMetricsV2AssetListing
   # base path: https://rest.coinapi.io
   # Listing of metrics available for specific asset
   # Get all metrics that are actually available for the specified asset.
@@ -35,8 +35,8 @@ test_that("V2MetricsAssetListingGet", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("V2MetricsChainHistoryGet", {
-  # tests for V2MetricsChainHistoryGet
+test_that("MarketdataListMetricsV2ChainHistory", {
+  # tests for MarketdataListMetricsV2ChainHistory
   # base path: https://rest.coinapi.io
   # Historical metrics for the chain
   # Get chain metrics history.
@@ -53,8 +53,8 @@ test_that("V2MetricsChainHistoryGet", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("V2MetricsChainListingGet", {
-  # tests for V2MetricsChainListingGet
+test_that("MarketdataListMetricsV2ChainListing", {
+  # tests for MarketdataListMetricsV2ChainListing
   # base path: https://rest.coinapi.io
   # Listing of metrics available for specific chain
   # Get all metrics that are actually available for the specified blockchain chain.
@@ -65,8 +65,8 @@ test_that("V2MetricsChainListingGet", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("V2MetricsExchangeHistoryGet", {
-  # tests for V2MetricsExchangeHistoryGet
+test_that("MarketdataListMetricsV2ExchangeHistory", {
+  # tests for MarketdataListMetricsV2ExchangeHistory
   # base path: https://rest.coinapi.io
   # Historical metrics for the exchange
   # Get exchange metrics history.
@@ -83,8 +83,8 @@ test_that("V2MetricsExchangeHistoryGet", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("V2MetricsExchangeListingGet", {
-  # tests for V2MetricsExchangeListingGet
+test_that("MarketdataListMetricsV2ExchangeListing", {
+  # tests for MarketdataListMetricsV2ExchangeListing
   # base path: https://rest.coinapi.io
   # Listing of metrics available for specific exchange
   # Get all metrics that are actually available for the specified exchange.
@@ -95,8 +95,8 @@ test_that("V2MetricsExchangeListingGet", {
   #expect_equal(result, "EXPECTED_RESULT")
 })
 
-test_that("V2MetricsListingGet", {
-  # tests for V2MetricsListingGet
+test_that("MarketdataListMetricsV2Listing", {
+  # tests for MarketdataListMetricsV2Listing
   # base path: https://rest.coinapi.io
   # Listing of all supported metrics
   # Get all metrics available in the system.

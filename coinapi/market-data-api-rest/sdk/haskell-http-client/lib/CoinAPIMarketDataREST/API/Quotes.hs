@@ -165,7 +165,7 @@ instance Produces V1QuotesSymbolIdCurrentGet MimePlainText
 -- 
 -- Historical data
 -- 
--- Get historical quote updates within requested time range, returned in time ascending order.  :::warning The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the 'date' parameter instead for querying data for a specific day without filter. :::
+-- Get historical quote updates within requested time range, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
 -- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
@@ -180,17 +180,17 @@ v1QuotesSymbolIdHistoryGet  _ (SymbolId symbolId) =
 
 data V1QuotesSymbolIdHistoryGet  
 
--- | /Optional Param/ "date" - Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided)
+-- | /Optional Param/ "date" - Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)
 instance HasOptionalParam V1QuotesSymbolIdHistoryGet ParamDate where
   applyOptionalParam req (ParamDate xs) =
     req `addQuery` toQuery ("date", Just xs)
 
--- | /Optional Param/ "time_start" - Starting time in ISO 8601
+-- | /Optional Param/ "time_start" - Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
 instance HasOptionalParam V1QuotesSymbolIdHistoryGet TimeStart where
   applyOptionalParam req (TimeStart xs) =
     req `addQuery` toQuery ("time_start", Just xs)
 
--- | /Optional Param/ "time_end" - Timeseries ending time in ISO 8601
+-- | /Optional Param/ "time_end" - Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
 instance HasOptionalParam V1QuotesSymbolIdHistoryGet TimeEnd where
   applyOptionalParam req (TimeEnd xs) =
     req `addQuery` toQuery ("time_end", Just xs)

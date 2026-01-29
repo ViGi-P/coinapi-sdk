@@ -108,7 +108,7 @@ instance Produces V1TradesLatestGet MimePlainText
 -- 
 -- Historical data
 -- 
--- Get history transactions from specific symbol, returned in time ascending order.  :::warning The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the 'date' parameter instead for querying data for a specific day without filter. :::
+-- Get history transactions from specific symbol, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
 -- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
@@ -128,12 +128,12 @@ instance HasOptionalParam V1TradesSymbolIdHistoryGet ParamDate where
   applyOptionalParam req (ParamDate xs) =
     req `addQuery` toQuery ("date", Just xs)
 
--- | /Optional Param/ "time_start" - Starting time in ISO 8601
+-- | /Optional Param/ "time_start" - Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
 instance HasOptionalParam V1TradesSymbolIdHistoryGet TimeStart where
   applyOptionalParam req (TimeStart xs) =
     req `addQuery` toQuery ("time_start", Just xs)
 
--- | /Optional Param/ "time_end" - Timeseries ending time in ISO 8601
+-- | /Optional Param/ "time_end" - Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
 instance HasOptionalParam V1TradesSymbolIdHistoryGet TimeEnd where
   applyOptionalParam req (TimeEnd xs) =
     req `addQuery` toQuery ("time_end", Just xs)

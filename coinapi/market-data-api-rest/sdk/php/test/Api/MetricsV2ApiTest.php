@@ -73,84 +73,84 @@ class MetricsV2ApiTest extends TestCase
     }
 
     /**
-     * Test case for v2MetricsAssetHistoryGet
+     * Test case for marketdataListMetricsV2AssetHistory
      *
      * Historical metrics for the asset.
      *
      */
-    public function testV2MetricsAssetHistoryGet()
+    public function testMarketdataListMetricsV2AssetHistory()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for v2MetricsAssetListingGet
+     * Test case for marketdataListMetricsV2AssetListing
      *
      * Listing of metrics available for specific asset.
      *
      */
-    public function testV2MetricsAssetListingGet()
+    public function testMarketdataListMetricsV2AssetListing()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for v2MetricsChainHistoryGet
+     * Test case for marketdataListMetricsV2ChainHistory
      *
      * Historical metrics for the chain.
      *
      */
-    public function testV2MetricsChainHistoryGet()
+    public function testMarketdataListMetricsV2ChainHistory()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for v2MetricsChainListingGet
+     * Test case for marketdataListMetricsV2ChainListing
      *
      * Listing of metrics available for specific chain.
      *
      */
-    public function testV2MetricsChainListingGet()
+    public function testMarketdataListMetricsV2ChainListing()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for v2MetricsExchangeHistoryGet
+     * Test case for marketdataListMetricsV2ExchangeHistory
      *
      * Historical metrics for the exchange.
      *
      */
-    public function testV2MetricsExchangeHistoryGet()
+    public function testMarketdataListMetricsV2ExchangeHistory()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for v2MetricsExchangeListingGet
+     * Test case for marketdataListMetricsV2ExchangeListing
      *
      * Listing of metrics available for specific exchange.
      *
      */
-    public function testV2MetricsExchangeListingGet()
+    public function testMarketdataListMetricsV2ExchangeListing()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for v2MetricsListingGet
+     * Test case for marketdataListMetricsV2Listing
      *
      * Listing of all supported metrics.
      *
      */
-    public function testV2MetricsListingGet()
+    public function testMarketdataListMetricsV2Listing()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

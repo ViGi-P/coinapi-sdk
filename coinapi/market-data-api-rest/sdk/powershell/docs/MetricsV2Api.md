@@ -4,18 +4,18 @@ All URIs are relative to *https://rest.coinapi.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Invoke-V2MetricsAssetHistoryGet**](MetricsV2Api.md#Invoke-V2MetricsAssetHistoryGet) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
-[**Invoke-V2MetricsAssetListingGet**](MetricsV2Api.md#Invoke-V2MetricsAssetListingGet) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-[**Invoke-V2MetricsChainHistoryGet**](MetricsV2Api.md#Invoke-V2MetricsChainHistoryGet) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
-[**Invoke-V2MetricsChainListingGet**](MetricsV2Api.md#Invoke-V2MetricsChainListingGet) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-[**Invoke-V2MetricsExchangeHistoryGet**](MetricsV2Api.md#Invoke-V2MetricsExchangeHistoryGet) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
-[**Invoke-V2MetricsExchangeListingGet**](MetricsV2Api.md#Invoke-V2MetricsExchangeListingGet) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-[**Invoke-V2MetricsListingGet**](MetricsV2Api.md#Invoke-V2MetricsListingGet) | **GET** /v2/metrics/listing | Listing of all supported metrics
+[**Invoke-MarketdataListMetricsV2AssetHistory**](MetricsV2Api.md#Invoke-MarketdataListMetricsV2AssetHistory) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
+[**Invoke-MarketdataListMetricsV2AssetListing**](MetricsV2Api.md#Invoke-MarketdataListMetricsV2AssetListing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+[**Invoke-MarketdataListMetricsV2ChainHistory**](MetricsV2Api.md#Invoke-MarketdataListMetricsV2ChainHistory) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
+[**Invoke-MarketdataListMetricsV2ChainListing**](MetricsV2Api.md#Invoke-MarketdataListMetricsV2ChainListing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+[**Invoke-MarketdataListMetricsV2ExchangeHistory**](MetricsV2Api.md#Invoke-MarketdataListMetricsV2ExchangeHistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
+[**Invoke-MarketdataListMetricsV2ExchangeListing**](MetricsV2Api.md#Invoke-MarketdataListMetricsV2ExchangeListing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+[**Invoke-MarketdataListMetricsV2Listing**](MetricsV2Api.md#Invoke-MarketdataListMetricsV2Listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
 
 
-<a id="Invoke-V2MetricsAssetHistoryGet"></a>
-# **Invoke-V2MetricsAssetHistoryGet**
-> SystemCollectionsHashtable[] Invoke-V2MetricsAssetHistoryGet<br>
+<a id="Invoke-MarketdataListMetricsV2AssetHistory"></a>
+# **Invoke-MarketdataListMetricsV2AssetHistory**
+> SystemCollectionsHashtable[] Invoke-MarketdataListMetricsV2AssetHistory<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-MetricId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AssetId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TimeStart] <System.Nullable[System.DateTime]><br>
@@ -48,9 +48,9 @@ $Limit = 56 # Int32 | Amount of items to return (optional, mininum is 1, maximum
 
 # Historical metrics for the asset
 try {
-    $Result = Invoke-V2MetricsAssetHistoryGet -MetricId $MetricId -AssetId $AssetId -TimeStart $TimeStart -TimeEnd $TimeEnd -TimeFormat $TimeFormat -PeriodId $PeriodId -Limit $Limit
+    $Result = Invoke-MarketdataListMetricsV2AssetHistory -MetricId $MetricId -AssetId $AssetId -TimeStart $TimeStart -TimeEnd $TimeEnd -TimeFormat $TimeFormat -PeriodId $PeriodId -Limit $Limit
 } catch {
-    Write-Host ("Exception occurred when calling Invoke-V2MetricsAssetHistoryGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-MarketdataListMetricsV2AssetHistory: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -82,9 +82,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="Invoke-V2MetricsAssetListingGet"></a>
-# **Invoke-V2MetricsAssetListingGet**
-> V1MetricInfo[] Invoke-V2MetricsAssetListingGet<br>
+<a id="Invoke-MarketdataListMetricsV2AssetListing"></a>
+# **Invoke-MarketdataListMetricsV2AssetListing**
+> V1MetricInfo[] Invoke-MarketdataListMetricsV2AssetListing<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AssetId] <String><br>
 
 Listing of metrics available for specific asset
@@ -105,9 +105,9 @@ $AssetId = "MyAssetId" # String | Asset identifier (e.g., USDC, USDT)
 
 # Listing of metrics available for specific asset
 try {
-    $Result = Invoke-V2MetricsAssetListingGet -AssetId $AssetId
+    $Result = Invoke-MarketdataListMetricsV2AssetListing -AssetId $AssetId
 } catch {
-    Write-Host ("Exception occurred when calling Invoke-V2MetricsAssetListingGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-MarketdataListMetricsV2AssetListing: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -133,9 +133,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="Invoke-V2MetricsChainHistoryGet"></a>
-# **Invoke-V2MetricsChainHistoryGet**
-> SystemCollectionsHashtable[] Invoke-V2MetricsChainHistoryGet<br>
+<a id="Invoke-MarketdataListMetricsV2ChainHistory"></a>
+# **Invoke-MarketdataListMetricsV2ChainHistory**
+> SystemCollectionsHashtable[] Invoke-MarketdataListMetricsV2ChainHistory<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-MetricId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ChainId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TimeStart] <System.Nullable[System.DateTime]><br>
@@ -168,9 +168,9 @@ $Limit = 56 # Int32 | Amount of items to return (optional, mininum is 1, maximum
 
 # Historical metrics for the chain
 try {
-    $Result = Invoke-V2MetricsChainHistoryGet -MetricId $MetricId -ChainId $ChainId -TimeStart $TimeStart -TimeEnd $TimeEnd -TimeFormat $TimeFormat -PeriodId $PeriodId -Limit $Limit
+    $Result = Invoke-MarketdataListMetricsV2ChainHistory -MetricId $MetricId -ChainId $ChainId -TimeStart $TimeStart -TimeEnd $TimeEnd -TimeFormat $TimeFormat -PeriodId $PeriodId -Limit $Limit
 } catch {
-    Write-Host ("Exception occurred when calling Invoke-V2MetricsChainHistoryGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-MarketdataListMetricsV2ChainHistory: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -202,9 +202,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="Invoke-V2MetricsChainListingGet"></a>
-# **Invoke-V2MetricsChainListingGet**
-> V1MetricInfo[] Invoke-V2MetricsChainListingGet<br>
+<a id="Invoke-MarketdataListMetricsV2ChainListing"></a>
+# **Invoke-MarketdataListMetricsV2ChainListing**
+> V1MetricInfo[] Invoke-MarketdataListMetricsV2ChainListing<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ChainId] <String><br>
 
 Listing of metrics available for specific chain
@@ -225,9 +225,9 @@ $ChainId = "MyChainId" # String | Chain identifier (e.g., ETHEREUM, ARBITRUM)
 
 # Listing of metrics available for specific chain
 try {
-    $Result = Invoke-V2MetricsChainListingGet -ChainId $ChainId
+    $Result = Invoke-MarketdataListMetricsV2ChainListing -ChainId $ChainId
 } catch {
-    Write-Host ("Exception occurred when calling Invoke-V2MetricsChainListingGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-MarketdataListMetricsV2ChainListing: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -253,9 +253,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="Invoke-V2MetricsExchangeHistoryGet"></a>
-# **Invoke-V2MetricsExchangeHistoryGet**
-> SystemCollectionsHashtable[] Invoke-V2MetricsExchangeHistoryGet<br>
+<a id="Invoke-MarketdataListMetricsV2ExchangeHistory"></a>
+# **Invoke-MarketdataListMetricsV2ExchangeHistory**
+> SystemCollectionsHashtable[] Invoke-MarketdataListMetricsV2ExchangeHistory<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-MetricId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ExchangeId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TimeStart] <System.Nullable[System.DateTime]><br>
@@ -288,9 +288,9 @@ $Limit = 56 # Int32 | Amount of items to return (optional, mininum is 1, maximum
 
 # Historical metrics for the exchange
 try {
-    $Result = Invoke-V2MetricsExchangeHistoryGet -MetricId $MetricId -ExchangeId $ExchangeId -TimeStart $TimeStart -TimeEnd $TimeEnd -TimeFormat $TimeFormat -PeriodId $PeriodId -Limit $Limit
+    $Result = Invoke-MarketdataListMetricsV2ExchangeHistory -MetricId $MetricId -ExchangeId $ExchangeId -TimeStart $TimeStart -TimeEnd $TimeEnd -TimeFormat $TimeFormat -PeriodId $PeriodId -Limit $Limit
 } catch {
-    Write-Host ("Exception occurred when calling Invoke-V2MetricsExchangeHistoryGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-MarketdataListMetricsV2ExchangeHistory: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -322,9 +322,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="Invoke-V2MetricsExchangeListingGet"></a>
-# **Invoke-V2MetricsExchangeListingGet**
-> V1MetricInfo[] Invoke-V2MetricsExchangeListingGet<br>
+<a id="Invoke-MarketdataListMetricsV2ExchangeListing"></a>
+# **Invoke-MarketdataListMetricsV2ExchangeListing**
+> V1MetricInfo[] Invoke-MarketdataListMetricsV2ExchangeListing<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ExchangeId] <String><br>
 
 Listing of metrics available for specific exchange
@@ -345,9 +345,9 @@ $ExchangeId = "MyExchangeId" # String | Exchange identifier (e.g., BINANCE, UNIS
 
 # Listing of metrics available for specific exchange
 try {
-    $Result = Invoke-V2MetricsExchangeListingGet -ExchangeId $ExchangeId
+    $Result = Invoke-MarketdataListMetricsV2ExchangeListing -ExchangeId $ExchangeId
 } catch {
-    Write-Host ("Exception occurred when calling Invoke-V2MetricsExchangeListingGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-MarketdataListMetricsV2ExchangeListing: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -373,9 +373,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a id="Invoke-V2MetricsListingGet"></a>
-# **Invoke-V2MetricsListingGet**
-> V1MetricInfo[] Invoke-V2MetricsListingGet<br>
+<a id="Invoke-MarketdataListMetricsV2Listing"></a>
+# **Invoke-MarketdataListMetricsV2Listing**
+> V1MetricInfo[] Invoke-MarketdataListMetricsV2Listing<br>
 
 Listing of all supported metrics
 
@@ -394,9 +394,9 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 
 # Listing of all supported metrics
 try {
-    $Result = Invoke-V2MetricsListingGet
+    $Result = Invoke-MarketdataListMetricsV2Listing
 } catch {
-    Write-Host ("Exception occurred when calling Invoke-V2MetricsListingGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-MarketdataListMetricsV2Listing: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```

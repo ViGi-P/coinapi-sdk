@@ -15,13 +15,13 @@
 
 
 module Api.Request.MetricsV2 exposing
-    ( v2MetricsAssetHistoryGet
-    , v2MetricsAssetListingGet
-    , v2MetricsChainHistoryGet
-    , v2MetricsChainListingGet
-    , v2MetricsExchangeHistoryGet
-    , v2MetricsExchangeListingGet
-    , v2MetricsListingGet
+    ( marketdataListMetricsV2AssetHistory
+    , marketdataListMetricsV2AssetListing
+    , marketdataListMetricsV2ChainHistory
+    , marketdataListMetricsV2ChainListing
+    , marketdataListMetricsV2ExchangeHistory
+    , marketdataListMetricsV2ExchangeListing
+    , marketdataListMetricsV2Listing
     )
 
 import Api
@@ -38,8 +38,8 @@ import Json.Encode
 Get asset metrics history.
 
 -}
-v2MetricsAssetHistoryGet : String -> String -> Maybe Posix -> Maybe Posix -> Maybe String -> Maybe String -> Maybe Int -> String -> Api.Request (List Object)
-v2MetricsAssetHistoryGet metricId_query assetId_query timeStart_query timeEnd_query timeFormat_query periodId_query limit_query auth_token =
+marketdataListMetricsV2AssetHistory : String -> String -> Maybe Posix -> Maybe Posix -> Maybe String -> Maybe String -> Maybe Int -> String -> Api.Request (List Object)
+marketdataListMetricsV2AssetHistory metricId_query assetId_query timeStart_query timeEnd_query timeFormat_query periodId_query limit_query auth_token =
     Api.request
         "GET"
         "/v2/metrics/asset/history"
@@ -55,8 +55,8 @@ v2MetricsAssetHistoryGet metricId_query assetId_query timeStart_query timeEnd_qu
 Get all metrics that are actually available for the specified asset.
 
 -}
-v2MetricsAssetListingGet : String -> String -> Api.Request (List Api.Data.V1MetricInfo)
-v2MetricsAssetListingGet assetId_query auth_token =
+marketdataListMetricsV2AssetListing : String -> String -> Api.Request (List Api.Data.V1MetricInfo)
+marketdataListMetricsV2AssetListing assetId_query auth_token =
     Api.request
         "GET"
         "/v2/metrics/asset/listing"
@@ -72,8 +72,8 @@ v2MetricsAssetListingGet assetId_query auth_token =
 Get chain metrics history.
 
 -}
-v2MetricsChainHistoryGet : String -> String -> Maybe Posix -> Maybe Posix -> Maybe String -> Maybe String -> Maybe Int -> String -> Api.Request (List Object)
-v2MetricsChainHistoryGet metricId_query chainId_query timeStart_query timeEnd_query timeFormat_query periodId_query limit_query auth_token =
+marketdataListMetricsV2ChainHistory : String -> String -> Maybe Posix -> Maybe Posix -> Maybe String -> Maybe String -> Maybe Int -> String -> Api.Request (List Object)
+marketdataListMetricsV2ChainHistory metricId_query chainId_query timeStart_query timeEnd_query timeFormat_query periodId_query limit_query auth_token =
     Api.request
         "GET"
         "/v2/metrics/chain/history"
@@ -89,8 +89,8 @@ v2MetricsChainHistoryGet metricId_query chainId_query timeStart_query timeEnd_qu
 Get all metrics that are actually available for the specified blockchain chain.
 
 -}
-v2MetricsChainListingGet : String -> String -> Api.Request (List Api.Data.V1MetricInfo)
-v2MetricsChainListingGet chainId_query auth_token =
+marketdataListMetricsV2ChainListing : String -> String -> Api.Request (List Api.Data.V1MetricInfo)
+marketdataListMetricsV2ChainListing chainId_query auth_token =
     Api.request
         "GET"
         "/v2/metrics/chain/listing"
@@ -106,8 +106,8 @@ v2MetricsChainListingGet chainId_query auth_token =
 Get exchange metrics history.
 
 -}
-v2MetricsExchangeHistoryGet : String -> String -> Maybe Posix -> Maybe Posix -> Maybe String -> Maybe String -> Maybe Int -> String -> Api.Request (List Object)
-v2MetricsExchangeHistoryGet metricId_query exchangeId_query timeStart_query timeEnd_query timeFormat_query periodId_query limit_query auth_token =
+marketdataListMetricsV2ExchangeHistory : String -> String -> Maybe Posix -> Maybe Posix -> Maybe String -> Maybe String -> Maybe Int -> String -> Api.Request (List Object)
+marketdataListMetricsV2ExchangeHistory metricId_query exchangeId_query timeStart_query timeEnd_query timeFormat_query periodId_query limit_query auth_token =
     Api.request
         "GET"
         "/v2/metrics/exchange/history"
@@ -123,8 +123,8 @@ v2MetricsExchangeHistoryGet metricId_query exchangeId_query timeStart_query time
 Get all metrics that are actually available for the specified exchange.
 
 -}
-v2MetricsExchangeListingGet : String -> String -> Api.Request (List Api.Data.V1MetricInfo)
-v2MetricsExchangeListingGet exchangeId_query auth_token =
+marketdataListMetricsV2ExchangeListing : String -> String -> Api.Request (List Api.Data.V1MetricInfo)
+marketdataListMetricsV2ExchangeListing exchangeId_query auth_token =
     Api.request
         "GET"
         "/v2/metrics/exchange/listing"
@@ -140,8 +140,8 @@ v2MetricsExchangeListingGet exchangeId_query auth_token =
 Get all metrics available in the system.
 
 -}
-v2MetricsListingGet : String -> Api.Request (List Api.Data.V1MetricInfo)
-v2MetricsListingGet auth_token =
+marketdataListMetricsV2Listing : String -> Api.Request (List Api.Data.V1MetricInfo)
+marketdataListMetricsV2Listing auth_token =
     Api.request
         "GET"
         "/v2/metrics/listing"

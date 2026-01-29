@@ -30,8 +30,8 @@ defmodule CoinAPIMarketDataRESTAPI.Api.MetricsV2 do
   - `{:ok, [%map(){}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v2_metrics_asset_history_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, [map()]} | {:error, Tesla.Env.t}
-  def v2_metrics_asset_history_get(connection, metric_id, asset_id, opts \\ []) do
+  @spec marketdata_list_metrics_v2_asset_history(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, [map()]} | {:error, Tesla.Env.t}
+  def marketdata_list_metrics_v2_asset_history(connection, metric_id, asset_id, opts \\ []) do
     optional_params = %{
       :time_start => :query,
       :time_end => :query,
@@ -73,8 +73,8 @@ defmodule CoinAPIMarketDataRESTAPI.Api.MetricsV2 do
   - `{:ok, [%V1MetricInfo{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v2_metrics_asset_listing_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1MetricInfo.t]} | {:error, Tesla.Env.t}
-  def v2_metrics_asset_listing_get(connection, asset_id, _opts \\ []) do
+  @spec marketdata_list_metrics_v2_asset_listing(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1MetricInfo.t]} | {:error, Tesla.Env.t}
+  def marketdata_list_metrics_v2_asset_listing(connection, asset_id, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -110,8 +110,8 @@ defmodule CoinAPIMarketDataRESTAPI.Api.MetricsV2 do
   - `{:ok, [%map(){}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v2_metrics_chain_history_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, [map()]} | {:error, Tesla.Env.t}
-  def v2_metrics_chain_history_get(connection, metric_id, chain_id, opts \\ []) do
+  @spec marketdata_list_metrics_v2_chain_history(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, [map()]} | {:error, Tesla.Env.t}
+  def marketdata_list_metrics_v2_chain_history(connection, metric_id, chain_id, opts \\ []) do
     optional_params = %{
       :time_start => :query,
       :time_end => :query,
@@ -153,8 +153,8 @@ defmodule CoinAPIMarketDataRESTAPI.Api.MetricsV2 do
   - `{:ok, [%V1MetricInfo{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v2_metrics_chain_listing_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1MetricInfo.t]} | {:error, Tesla.Env.t}
-  def v2_metrics_chain_listing_get(connection, chain_id, _opts \\ []) do
+  @spec marketdata_list_metrics_v2_chain_listing(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1MetricInfo.t]} | {:error, Tesla.Env.t}
+  def marketdata_list_metrics_v2_chain_listing(connection, chain_id, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -190,8 +190,8 @@ defmodule CoinAPIMarketDataRESTAPI.Api.MetricsV2 do
   - `{:ok, [%map(){}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v2_metrics_exchange_history_get(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, [map()]} | {:error, Tesla.Env.t}
-  def v2_metrics_exchange_history_get(connection, metric_id, exchange_id, opts \\ []) do
+  @spec marketdata_list_metrics_v2_exchange_history(Tesla.Env.client, String.t, String.t, keyword()) :: {:ok, nil} | {:ok, [map()]} | {:error, Tesla.Env.t}
+  def marketdata_list_metrics_v2_exchange_history(connection, metric_id, exchange_id, opts \\ []) do
     optional_params = %{
       :time_start => :query,
       :time_end => :query,
@@ -233,8 +233,8 @@ defmodule CoinAPIMarketDataRESTAPI.Api.MetricsV2 do
   - `{:ok, [%V1MetricInfo{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v2_metrics_exchange_listing_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1MetricInfo.t]} | {:error, Tesla.Env.t}
-  def v2_metrics_exchange_listing_get(connection, exchange_id, _opts \\ []) do
+  @spec marketdata_list_metrics_v2_exchange_listing(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1MetricInfo.t]} | {:error, Tesla.Env.t}
+  def marketdata_list_metrics_v2_exchange_listing(connection, exchange_id, _opts \\ []) do
     request =
       %{}
       |> method(:get)
@@ -263,8 +263,8 @@ defmodule CoinAPIMarketDataRESTAPI.Api.MetricsV2 do
   - `{:ok, [%V1MetricInfo{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v2_metrics_listing_get(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1MetricInfo.t]} | {:error, Tesla.Env.t}
-  def v2_metrics_listing_get(connection, _opts \\ []) do
+  @spec marketdata_list_metrics_v2_listing(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1MetricInfo.t]} | {:error, Tesla.Env.t}
+  def marketdata_list_metrics_v2_listing(connection, _opts \\ []) do
     request =
       %{}
       |> method(:get)

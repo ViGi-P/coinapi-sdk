@@ -13,7 +13,7 @@ inherit
 feature -- Test routines
 
 
-    test_v2_metrics_asset_history_get
+    test_marketdata_list_metrics_v2_asset_history
             -- Historical metrics for the asset
             --
             -- Get asset metrics history.
@@ -31,11 +31,11 @@ feature -- Test routines
             -- l_metric_id
             -- l_asset_id
 
-            -- l_response := api.v2_metrics_asset_history_get(l_metric_id, l_asset_id, l_time_start, l_time_end, l_time_format, l_period_id, l_limit)
+            -- l_response := api.marketdata_list_metrics_v2_asset_history(l_metric_id, l_asset_id, l_time_start, l_time_end, l_time_format, l_period_id, l_limit)
             assert ("not_implemented", False)
         end
 
-    test_v2_metrics_asset_listing_get
+    test_marketdata_list_metrics_v2_asset_listing
             -- Listing of metrics available for specific asset
             --
             -- Get all metrics that are actually available for the specified asset.
@@ -46,11 +46,11 @@ feature -- Test routines
             -- TODO: Initialize required params.
             -- l_asset_id
 
-            -- l_response := api.v2_metrics_asset_listing_get(l_asset_id)
+            -- l_response := api.marketdata_list_metrics_v2_asset_listing(l_asset_id)
             assert ("not_implemented", False)
         end
 
-    test_v2_metrics_chain_history_get
+    test_marketdata_list_metrics_v2_chain_history
             -- Historical metrics for the chain
             --
             -- Get chain metrics history.
@@ -68,11 +68,11 @@ feature -- Test routines
             -- l_metric_id
             -- l_chain_id
 
-            -- l_response := api.v2_metrics_chain_history_get(l_metric_id, l_chain_id, l_time_start, l_time_end, l_time_format, l_period_id, l_limit)
+            -- l_response := api.marketdata_list_metrics_v2_chain_history(l_metric_id, l_chain_id, l_time_start, l_time_end, l_time_format, l_period_id, l_limit)
             assert ("not_implemented", False)
         end
 
-    test_v2_metrics_chain_listing_get
+    test_marketdata_list_metrics_v2_chain_listing
             -- Listing of metrics available for specific chain
             --
             -- Get all metrics that are actually available for the specified blockchain chain.
@@ -83,11 +83,11 @@ feature -- Test routines
             -- TODO: Initialize required params.
             -- l_chain_id
 
-            -- l_response := api.v2_metrics_chain_listing_get(l_chain_id)
+            -- l_response := api.marketdata_list_metrics_v2_chain_listing(l_chain_id)
             assert ("not_implemented", False)
         end
 
-    test_v2_metrics_exchange_history_get
+    test_marketdata_list_metrics_v2_exchange_history
             -- Historical metrics for the exchange
             --
             -- Get exchange metrics history.
@@ -105,11 +105,11 @@ feature -- Test routines
             -- l_metric_id
             -- l_exchange_id
 
-            -- l_response := api.v2_metrics_exchange_history_get(l_metric_id, l_exchange_id, l_time_start, l_time_end, l_time_format, l_period_id, l_limit)
+            -- l_response := api.marketdata_list_metrics_v2_exchange_history(l_metric_id, l_exchange_id, l_time_start, l_time_end, l_time_format, l_period_id, l_limit)
             assert ("not_implemented", False)
         end
 
-    test_v2_metrics_exchange_listing_get
+    test_marketdata_list_metrics_v2_exchange_listing
             -- Listing of metrics available for specific exchange
             --
             -- Get all metrics that are actually available for the specified exchange.
@@ -120,11 +120,11 @@ feature -- Test routines
             -- TODO: Initialize required params.
             -- l_exchange_id
 
-            -- l_response := api.v2_metrics_exchange_listing_get(l_exchange_id)
+            -- l_response := api.marketdata_list_metrics_v2_exchange_listing(l_exchange_id)
             assert ("not_implemented", False)
         end
 
-    test_v2_metrics_listing_get
+    test_marketdata_list_metrics_v2_listing
             -- Listing of all supported metrics
             --
             -- Get all metrics available in the system.
@@ -133,7 +133,7 @@ feature -- Test routines
         do
             -- TODO: Initialize required params.
 
-            -- l_response := api.v2_metrics_listing_get
+            -- l_response := api.marketdata_list_metrics_v2_listing
             assert ("not_implemented", False)
         end
 

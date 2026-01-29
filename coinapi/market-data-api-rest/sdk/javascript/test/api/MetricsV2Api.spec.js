@@ -48,70 +48,70 @@
   }
 
   describe('MetricsV2Api', function() {
-    describe('v2MetricsAssetHistoryGet', function() {
-      it('should call v2MetricsAssetHistoryGet successfully', function(done) {
-        //uncomment below and update the code to test v2MetricsAssetHistoryGet
-        //instance.v2MetricsAssetHistoryGet(function(error) {
+    describe('marketdataListMetricsV2AssetHistory', function() {
+      it('should call marketdataListMetricsV2AssetHistory successfully', function(done) {
+        //uncomment below and update the code to test marketdataListMetricsV2AssetHistory
+        //instance.marketdataListMetricsV2AssetHistory(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('v2MetricsAssetListingGet', function() {
-      it('should call v2MetricsAssetListingGet successfully', function(done) {
-        //uncomment below and update the code to test v2MetricsAssetListingGet
-        //instance.v2MetricsAssetListingGet(function(error) {
+    describe('marketdataListMetricsV2AssetListing', function() {
+      it('should call marketdataListMetricsV2AssetListing successfully', function(done) {
+        //uncomment below and update the code to test marketdataListMetricsV2AssetListing
+        //instance.marketdataListMetricsV2AssetListing(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('v2MetricsChainHistoryGet', function() {
-      it('should call v2MetricsChainHistoryGet successfully', function(done) {
-        //uncomment below and update the code to test v2MetricsChainHistoryGet
-        //instance.v2MetricsChainHistoryGet(function(error) {
+    describe('marketdataListMetricsV2ChainHistory', function() {
+      it('should call marketdataListMetricsV2ChainHistory successfully', function(done) {
+        //uncomment below and update the code to test marketdataListMetricsV2ChainHistory
+        //instance.marketdataListMetricsV2ChainHistory(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('v2MetricsChainListingGet', function() {
-      it('should call v2MetricsChainListingGet successfully', function(done) {
-        //uncomment below and update the code to test v2MetricsChainListingGet
-        //instance.v2MetricsChainListingGet(function(error) {
+    describe('marketdataListMetricsV2ChainListing', function() {
+      it('should call marketdataListMetricsV2ChainListing successfully', function(done) {
+        //uncomment below and update the code to test marketdataListMetricsV2ChainListing
+        //instance.marketdataListMetricsV2ChainListing(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('v2MetricsExchangeHistoryGet', function() {
-      it('should call v2MetricsExchangeHistoryGet successfully', function(done) {
-        //uncomment below and update the code to test v2MetricsExchangeHistoryGet
-        //instance.v2MetricsExchangeHistoryGet(function(error) {
+    describe('marketdataListMetricsV2ExchangeHistory', function() {
+      it('should call marketdataListMetricsV2ExchangeHistory successfully', function(done) {
+        //uncomment below and update the code to test marketdataListMetricsV2ExchangeHistory
+        //instance.marketdataListMetricsV2ExchangeHistory(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('v2MetricsExchangeListingGet', function() {
-      it('should call v2MetricsExchangeListingGet successfully', function(done) {
-        //uncomment below and update the code to test v2MetricsExchangeListingGet
-        //instance.v2MetricsExchangeListingGet(function(error) {
+    describe('marketdataListMetricsV2ExchangeListing', function() {
+      it('should call marketdataListMetricsV2ExchangeListing successfully', function(done) {
+        //uncomment below and update the code to test marketdataListMetricsV2ExchangeListing
+        //instance.marketdataListMetricsV2ExchangeListing(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
         done();
       });
     });
-    describe('v2MetricsListingGet', function() {
-      it('should call v2MetricsListingGet successfully', function(done) {
-        //uncomment below and update the code to test v2MetricsListingGet
-        //instance.v2MetricsListingGet(function(error) {
+    describe('marketdataListMetricsV2Listing', function() {
+      it('should call marketdataListMetricsV2Listing successfully', function(done) {
+        //uncomment below and update the code to test marketdataListMetricsV2Listing
+        //instance.marketdataListMetricsV2Listing(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

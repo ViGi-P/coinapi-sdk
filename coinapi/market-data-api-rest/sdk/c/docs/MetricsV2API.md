@@ -4,22 +4,22 @@ All URIs are relative to *https://rest.coinapi.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MetricsV2API_v2MetricsAssetHistoryGet**](MetricsV2API.md#MetricsV2API_v2MetricsAssetHistoryGet) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
-[**MetricsV2API_v2MetricsAssetListingGet**](MetricsV2API.md#MetricsV2API_v2MetricsAssetListingGet) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-[**MetricsV2API_v2MetricsChainHistoryGet**](MetricsV2API.md#MetricsV2API_v2MetricsChainHistoryGet) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
-[**MetricsV2API_v2MetricsChainListingGet**](MetricsV2API.md#MetricsV2API_v2MetricsChainListingGet) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-[**MetricsV2API_v2MetricsExchangeHistoryGet**](MetricsV2API.md#MetricsV2API_v2MetricsExchangeHistoryGet) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
-[**MetricsV2API_v2MetricsExchangeListingGet**](MetricsV2API.md#MetricsV2API_v2MetricsExchangeListingGet) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-[**MetricsV2API_v2MetricsListingGet**](MetricsV2API.md#MetricsV2API_v2MetricsListingGet) | **GET** /v2/metrics/listing | Listing of all supported metrics
+[**MetricsV2API_marketdataListMetricsV2AssetHistory**](MetricsV2API.md#MetricsV2API_marketdataListMetricsV2AssetHistory) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
+[**MetricsV2API_marketdataListMetricsV2AssetListing**](MetricsV2API.md#MetricsV2API_marketdataListMetricsV2AssetListing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+[**MetricsV2API_marketdataListMetricsV2ChainHistory**](MetricsV2API.md#MetricsV2API_marketdataListMetricsV2ChainHistory) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
+[**MetricsV2API_marketdataListMetricsV2ChainListing**](MetricsV2API.md#MetricsV2API_marketdataListMetricsV2ChainListing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+[**MetricsV2API_marketdataListMetricsV2ExchangeHistory**](MetricsV2API.md#MetricsV2API_marketdataListMetricsV2ExchangeHistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
+[**MetricsV2API_marketdataListMetricsV2ExchangeListing**](MetricsV2API.md#MetricsV2API_marketdataListMetricsV2ExchangeListing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+[**MetricsV2API_marketdataListMetricsV2Listing**](MetricsV2API.md#MetricsV2API_marketdataListMetricsV2Listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
 
 
-# **MetricsV2API_v2MetricsAssetHistoryGet**
+# **MetricsV2API_marketdataListMetricsV2AssetHistory**
 ```c
 // Historical metrics for the asset
 //
 // Get asset metrics history.
 //
-list_t* MetricsV2API_v2MetricsAssetHistoryGet(apiClient_t *apiClient, char *metric_id, char *asset_id, char time_start, char time_end, char *time_format, char *period_id, int *limit);
+list_t* MetricsV2API_marketdataListMetricsV2AssetHistory(apiClient_t *apiClient, char *metric_id, char *asset_id, char time_start, char time_end, char *time_format, char *period_id, int *limit);
 ```
 
 ### Parameters
@@ -50,13 +50,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **MetricsV2API_v2MetricsAssetListingGet**
+# **MetricsV2API_marketdataListMetricsV2AssetListing**
 ```c
 // Listing of metrics available for specific asset
 //
 // Get all metrics that are actually available for the specified asset.
 //
-list_t* MetricsV2API_v2MetricsAssetListingGet(apiClient_t *apiClient, char *asset_id);
+list_t* MetricsV2API_marketdataListMetricsV2AssetListing(apiClient_t *apiClient, char *asset_id);
 ```
 
 ### Parameters
@@ -81,13 +81,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **MetricsV2API_v2MetricsChainHistoryGet**
+# **MetricsV2API_marketdataListMetricsV2ChainHistory**
 ```c
 // Historical metrics for the chain
 //
 // Get chain metrics history.
 //
-list_t* MetricsV2API_v2MetricsChainHistoryGet(apiClient_t *apiClient, char *metric_id, char *chain_id, char time_start, char time_end, char *time_format, char *period_id, int *limit);
+list_t* MetricsV2API_marketdataListMetricsV2ChainHistory(apiClient_t *apiClient, char *metric_id, char *chain_id, char time_start, char time_end, char *time_format, char *period_id, int *limit);
 ```
 
 ### Parameters
@@ -118,13 +118,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **MetricsV2API_v2MetricsChainListingGet**
+# **MetricsV2API_marketdataListMetricsV2ChainListing**
 ```c
 // Listing of metrics available for specific chain
 //
 // Get all metrics that are actually available for the specified blockchain chain.
 //
-list_t* MetricsV2API_v2MetricsChainListingGet(apiClient_t *apiClient, char *chain_id);
+list_t* MetricsV2API_marketdataListMetricsV2ChainListing(apiClient_t *apiClient, char *chain_id);
 ```
 
 ### Parameters
@@ -149,13 +149,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **MetricsV2API_v2MetricsExchangeHistoryGet**
+# **MetricsV2API_marketdataListMetricsV2ExchangeHistory**
 ```c
 // Historical metrics for the exchange
 //
 // Get exchange metrics history.
 //
-list_t* MetricsV2API_v2MetricsExchangeHistoryGet(apiClient_t *apiClient, char *metric_id, char *exchange_id, char time_start, char time_end, char *time_format, char *period_id, int *limit);
+list_t* MetricsV2API_marketdataListMetricsV2ExchangeHistory(apiClient_t *apiClient, char *metric_id, char *exchange_id, char time_start, char time_end, char *time_format, char *period_id, int *limit);
 ```
 
 ### Parameters
@@ -186,13 +186,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **MetricsV2API_v2MetricsExchangeListingGet**
+# **MetricsV2API_marketdataListMetricsV2ExchangeListing**
 ```c
 // Listing of metrics available for specific exchange
 //
 // Get all metrics that are actually available for the specified exchange.
 //
-list_t* MetricsV2API_v2MetricsExchangeListingGet(apiClient_t *apiClient, char *exchange_id);
+list_t* MetricsV2API_marketdataListMetricsV2ExchangeListing(apiClient_t *apiClient, char *exchange_id);
 ```
 
 ### Parameters
@@ -217,13 +217,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **MetricsV2API_v2MetricsListingGet**
+# **MetricsV2API_marketdataListMetricsV2Listing**
 ```c
 // Listing of all supported metrics
 //
 // Get all metrics available in the system.
 //
-list_t* MetricsV2API_v2MetricsListingGet(apiClient_t *apiClient);
+list_t* MetricsV2API_marketdataListMetricsV2Listing(apiClient_t *apiClient);
 ```
 
 ### Parameters

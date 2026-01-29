@@ -4,17 +4,17 @@ All URIs are relative to *https://rest.coinapi.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2_metrics_asset_history_get**](MetricsV2Api.md#v2_metrics_asset_history_get) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
-[**v2_metrics_asset_listing_get**](MetricsV2Api.md#v2_metrics_asset_listing_get) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-[**v2_metrics_chain_history_get**](MetricsV2Api.md#v2_metrics_chain_history_get) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
-[**v2_metrics_chain_listing_get**](MetricsV2Api.md#v2_metrics_chain_listing_get) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-[**v2_metrics_exchange_history_get**](MetricsV2Api.md#v2_metrics_exchange_history_get) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
-[**v2_metrics_exchange_listing_get**](MetricsV2Api.md#v2_metrics_exchange_listing_get) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-[**v2_metrics_listing_get**](MetricsV2Api.md#v2_metrics_listing_get) | **GET** /v2/metrics/listing | Listing of all supported metrics
+[**marketdata_list_metrics_v2_asset_history**](MetricsV2Api.md#marketdata_list_metrics_v2_asset_history) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
+[**marketdata_list_metrics_v2_asset_listing**](MetricsV2Api.md#marketdata_list_metrics_v2_asset_listing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+[**marketdata_list_metrics_v2_chain_history**](MetricsV2Api.md#marketdata_list_metrics_v2_chain_history) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
+[**marketdata_list_metrics_v2_chain_listing**](MetricsV2Api.md#marketdata_list_metrics_v2_chain_listing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+[**marketdata_list_metrics_v2_exchange_history**](MetricsV2Api.md#marketdata_list_metrics_v2_exchange_history) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
+[**marketdata_list_metrics_v2_exchange_listing**](MetricsV2Api.md#marketdata_list_metrics_v2_exchange_listing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+[**marketdata_list_metrics_v2_listing**](MetricsV2Api.md#marketdata_list_metrics_v2_listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
 
 
-# **v2_metrics_asset_history_get**
-> List[object] v2_metrics_asset_history_get(metric_id, asset_id, time_start=time_start, time_end=time_end, time_format=time_format, period_id=period_id, limit=limit)
+# **marketdata_list_metrics_v2_asset_history**
+> List[object] marketdata_list_metrics_v2_asset_history(metric_id, asset_id, time_start=time_start, time_end=time_end, time_format=time_format, period_id=period_id, limit=limit)
 
 Historical metrics for the asset
 
@@ -66,11 +66,11 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
 
     try:
         # Historical metrics for the asset
-        api_response = api_instance.v2_metrics_asset_history_get(metric_id, asset_id, time_start=time_start, time_end=time_end, time_format=time_format, period_id=period_id, limit=limit)
-        print("The response of MetricsV2Api->v2_metrics_asset_history_get:\n")
+        api_response = api_instance.marketdata_list_metrics_v2_asset_history(metric_id, asset_id, time_start=time_start, time_end=time_end, time_format=time_format, period_id=period_id, limit=limit)
+        print("The response of MetricsV2Api->marketdata_list_metrics_v2_asset_history:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricsV2Api->v2_metrics_asset_history_get: %s\n" % e)
+        print("Exception when calling MetricsV2Api->marketdata_list_metrics_v2_asset_history: %s\n" % e)
 ```
 
 
@@ -111,8 +111,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2_metrics_asset_listing_get**
-> List[V1MetricInfo] v2_metrics_asset_listing_get(asset_id)
+# **marketdata_list_metrics_v2_asset_listing**
+> List[V1MetricInfo] marketdata_list_metrics_v2_asset_listing(asset_id)
 
 Listing of metrics available for specific asset
 
@@ -159,11 +159,11 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
 
     try:
         # Listing of metrics available for specific asset
-        api_response = api_instance.v2_metrics_asset_listing_get(asset_id)
-        print("The response of MetricsV2Api->v2_metrics_asset_listing_get:\n")
+        api_response = api_instance.marketdata_list_metrics_v2_asset_listing(asset_id)
+        print("The response of MetricsV2Api->marketdata_list_metrics_v2_asset_listing:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricsV2Api->v2_metrics_asset_listing_get: %s\n" % e)
+        print("Exception when calling MetricsV2Api->marketdata_list_metrics_v2_asset_listing: %s\n" % e)
 ```
 
 
@@ -196,8 +196,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2_metrics_chain_history_get**
-> List[object] v2_metrics_chain_history_get(metric_id, chain_id, time_start=time_start, time_end=time_end, time_format=time_format, period_id=period_id, limit=limit)
+# **marketdata_list_metrics_v2_chain_history**
+> List[object] marketdata_list_metrics_v2_chain_history(metric_id, chain_id, time_start=time_start, time_end=time_end, time_format=time_format, period_id=period_id, limit=limit)
 
 Historical metrics for the chain
 
@@ -249,11 +249,11 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
 
     try:
         # Historical metrics for the chain
-        api_response = api_instance.v2_metrics_chain_history_get(metric_id, chain_id, time_start=time_start, time_end=time_end, time_format=time_format, period_id=period_id, limit=limit)
-        print("The response of MetricsV2Api->v2_metrics_chain_history_get:\n")
+        api_response = api_instance.marketdata_list_metrics_v2_chain_history(metric_id, chain_id, time_start=time_start, time_end=time_end, time_format=time_format, period_id=period_id, limit=limit)
+        print("The response of MetricsV2Api->marketdata_list_metrics_v2_chain_history:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricsV2Api->v2_metrics_chain_history_get: %s\n" % e)
+        print("Exception when calling MetricsV2Api->marketdata_list_metrics_v2_chain_history: %s\n" % e)
 ```
 
 
@@ -294,8 +294,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2_metrics_chain_listing_get**
-> List[V1MetricInfo] v2_metrics_chain_listing_get(chain_id)
+# **marketdata_list_metrics_v2_chain_listing**
+> List[V1MetricInfo] marketdata_list_metrics_v2_chain_listing(chain_id)
 
 Listing of metrics available for specific chain
 
@@ -342,11 +342,11 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
 
     try:
         # Listing of metrics available for specific chain
-        api_response = api_instance.v2_metrics_chain_listing_get(chain_id)
-        print("The response of MetricsV2Api->v2_metrics_chain_listing_get:\n")
+        api_response = api_instance.marketdata_list_metrics_v2_chain_listing(chain_id)
+        print("The response of MetricsV2Api->marketdata_list_metrics_v2_chain_listing:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricsV2Api->v2_metrics_chain_listing_get: %s\n" % e)
+        print("Exception when calling MetricsV2Api->marketdata_list_metrics_v2_chain_listing: %s\n" % e)
 ```
 
 
@@ -379,8 +379,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2_metrics_exchange_history_get**
-> List[object] v2_metrics_exchange_history_get(metric_id, exchange_id, time_start=time_start, time_end=time_end, time_format=time_format, period_id=period_id, limit=limit)
+# **marketdata_list_metrics_v2_exchange_history**
+> List[object] marketdata_list_metrics_v2_exchange_history(metric_id, exchange_id, time_start=time_start, time_end=time_end, time_format=time_format, period_id=period_id, limit=limit)
 
 Historical metrics for the exchange
 
@@ -432,11 +432,11 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
 
     try:
         # Historical metrics for the exchange
-        api_response = api_instance.v2_metrics_exchange_history_get(metric_id, exchange_id, time_start=time_start, time_end=time_end, time_format=time_format, period_id=period_id, limit=limit)
-        print("The response of MetricsV2Api->v2_metrics_exchange_history_get:\n")
+        api_response = api_instance.marketdata_list_metrics_v2_exchange_history(metric_id, exchange_id, time_start=time_start, time_end=time_end, time_format=time_format, period_id=period_id, limit=limit)
+        print("The response of MetricsV2Api->marketdata_list_metrics_v2_exchange_history:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricsV2Api->v2_metrics_exchange_history_get: %s\n" % e)
+        print("Exception when calling MetricsV2Api->marketdata_list_metrics_v2_exchange_history: %s\n" % e)
 ```
 
 
@@ -477,8 +477,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2_metrics_exchange_listing_get**
-> List[V1MetricInfo] v2_metrics_exchange_listing_get(exchange_id)
+# **marketdata_list_metrics_v2_exchange_listing**
+> List[V1MetricInfo] marketdata_list_metrics_v2_exchange_listing(exchange_id)
 
 Listing of metrics available for specific exchange
 
@@ -525,11 +525,11 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
 
     try:
         # Listing of metrics available for specific exchange
-        api_response = api_instance.v2_metrics_exchange_listing_get(exchange_id)
-        print("The response of MetricsV2Api->v2_metrics_exchange_listing_get:\n")
+        api_response = api_instance.marketdata_list_metrics_v2_exchange_listing(exchange_id)
+        print("The response of MetricsV2Api->marketdata_list_metrics_v2_exchange_listing:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricsV2Api->v2_metrics_exchange_listing_get: %s\n" % e)
+        print("Exception when calling MetricsV2Api->marketdata_list_metrics_v2_exchange_listing: %s\n" % e)
 ```
 
 
@@ -562,8 +562,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2_metrics_listing_get**
-> List[V1MetricInfo] v2_metrics_listing_get()
+# **marketdata_list_metrics_v2_listing**
+> List[V1MetricInfo] marketdata_list_metrics_v2_listing()
 
 Listing of all supported metrics
 
@@ -609,11 +609,11 @@ with api_bricks_coinapi_market_data_api_rest.ApiClient(configuration) as api_cli
 
     try:
         # Listing of all supported metrics
-        api_response = api_instance.v2_metrics_listing_get()
-        print("The response of MetricsV2Api->v2_metrics_listing_get:\n")
+        api_response = api_instance.marketdata_list_metrics_v2_listing()
+        print("The response of MetricsV2Api->marketdata_list_metrics_v2_listing:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling MetricsV2Api->v2_metrics_listing_get: %s\n" % e)
+        print("Exception when calling MetricsV2Api->marketdata_list_metrics_v2_listing: %s\n" % e)
 ```
 
 

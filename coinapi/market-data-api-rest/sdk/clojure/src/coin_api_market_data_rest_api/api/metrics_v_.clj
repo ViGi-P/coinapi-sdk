@@ -35,6 +35,179 @@
   (:import (java.io File)))
 
 
+(defn-spec marketdata-list-metrics-v2-asset-history-with-http-info any?
+  "Historical metrics for the asset
+  Get asset metrics history."
+  ([metric_id string?, asset_id string?, ] (marketdata-list-metrics-v2-asset-history-with-http-info metric_id asset_id nil))
+  ([metric_id string?, asset_id string?, {:keys [time_start time_end time_format period_id limit]} (s/map-of keyword? any?)]
+   (check-required-params metric_id asset_id)
+   (call-api "/v2/metrics/asset/history" :get
+             {:path-params   {}
+              :header-params {}
+              :query-params  {"metric_id" metric_id "asset_id" asset_id "time_start" time_start "time_end" time_end "time_format" time_format "period_id" period_id "limit" limit }
+              :form-params   {}
+              :content-types []
+              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
+              :auth-names    ["APIKey" "JWT"]})))
+
+(defn-spec marketdata-list-metrics-v2-asset-history (s/coll-of any?)
+  "Historical metrics for the asset
+  Get asset metrics history."
+  ([metric_id string?, asset_id string?, ] (marketdata-list-metrics-v2-asset-history metric_id asset_id nil))
+  ([metric_id string?, asset_id string?, optional-params any?]
+   (let [res (:data (marketdata-list-metrics-v2-asset-history-with-http-info metric_id asset_id optional-params))]
+     (if (:decode-models *api-context*)
+        (st/decode (s/coll-of any?) res st/string-transformer)
+        res))))
+
+
+(defn-spec marketdata-list-metrics-v2-asset-listing-with-http-info any?
+  "Listing of metrics available for specific asset
+  Get all metrics that are actually available for the specified asset."
+  [asset_id string?]
+  (check-required-params asset_id)
+  (call-api "/v2/metrics/asset/listing" :get
+            {:path-params   {}
+             :header-params {}
+             :query-params  {"asset_id" asset_id }
+             :form-params   {}
+             :content-types []
+             :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
+             :auth-names    ["APIKey" "JWT"]}))
+
+(defn-spec marketdata-list-metrics-v2-asset-listing (s/coll-of v1/metric-info-spec)
+  "Listing of metrics available for specific asset
+  Get all metrics that are actually available for the specified asset."
+  [asset_id string?]
+  (let [res (:data (marketdata-list-metrics-v2-asset-listing-with-http-info asset_id))]
+    (if (:decode-models *api-context*)
+       (st/decode (s/coll-of v1/metric-info-spec) res st/string-transformer)
+       res)))
+
+
+(defn-spec marketdata-list-metrics-v2-chain-history-with-http-info any?
+  "Historical metrics for the chain
+  Get chain metrics history."
+  ([metric_id string?, chain_id string?, ] (marketdata-list-metrics-v2-chain-history-with-http-info metric_id chain_id nil))
+  ([metric_id string?, chain_id string?, {:keys [time_start time_end time_format period_id limit]} (s/map-of keyword? any?)]
+   (check-required-params metric_id chain_id)
+   (call-api "/v2/metrics/chain/history" :get
+             {:path-params   {}
+              :header-params {}
+              :query-params  {"metric_id" metric_id "chain_id" chain_id "time_start" time_start "time_end" time_end "time_format" time_format "period_id" period_id "limit" limit }
+              :form-params   {}
+              :content-types []
+              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
+              :auth-names    ["APIKey" "JWT"]})))
+
+(defn-spec marketdata-list-metrics-v2-chain-history (s/coll-of any?)
+  "Historical metrics for the chain
+  Get chain metrics history."
+  ([metric_id string?, chain_id string?, ] (marketdata-list-metrics-v2-chain-history metric_id chain_id nil))
+  ([metric_id string?, chain_id string?, optional-params any?]
+   (let [res (:data (marketdata-list-metrics-v2-chain-history-with-http-info metric_id chain_id optional-params))]
+     (if (:decode-models *api-context*)
+        (st/decode (s/coll-of any?) res st/string-transformer)
+        res))))
+
+
+(defn-spec marketdata-list-metrics-v2-chain-listing-with-http-info any?
+  "Listing of metrics available for specific chain
+  Get all metrics that are actually available for the specified blockchain chain."
+  [chain_id string?]
+  (check-required-params chain_id)
+  (call-api "/v2/metrics/chain/listing" :get
+            {:path-params   {}
+             :header-params {}
+             :query-params  {"chain_id" chain_id }
+             :form-params   {}
+             :content-types []
+             :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
+             :auth-names    ["APIKey" "JWT"]}))
+
+(defn-spec marketdata-list-metrics-v2-chain-listing (s/coll-of v1/metric-info-spec)
+  "Listing of metrics available for specific chain
+  Get all metrics that are actually available for the specified blockchain chain."
+  [chain_id string?]
+  (let [res (:data (marketdata-list-metrics-v2-chain-listing-with-http-info chain_id))]
+    (if (:decode-models *api-context*)
+       (st/decode (s/coll-of v1/metric-info-spec) res st/string-transformer)
+       res)))
+
+
+(defn-spec marketdata-list-metrics-v2-exchange-history-with-http-info any?
+  "Historical metrics for the exchange
+  Get exchange metrics history."
+  ([metric_id string?, exchange_id string?, ] (marketdata-list-metrics-v2-exchange-history-with-http-info metric_id exchange_id nil))
+  ([metric_id string?, exchange_id string?, {:keys [time_start time_end time_format period_id limit]} (s/map-of keyword? any?)]
+   (check-required-params metric_id exchange_id)
+   (call-api "/v2/metrics/exchange/history" :get
+             {:path-params   {}
+              :header-params {}
+              :query-params  {"metric_id" metric_id "exchange_id" exchange_id "time_start" time_start "time_end" time_end "time_format" time_format "period_id" period_id "limit" limit }
+              :form-params   {}
+              :content-types []
+              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
+              :auth-names    ["APIKey" "JWT"]})))
+
+(defn-spec marketdata-list-metrics-v2-exchange-history (s/coll-of any?)
+  "Historical metrics for the exchange
+  Get exchange metrics history."
+  ([metric_id string?, exchange_id string?, ] (marketdata-list-metrics-v2-exchange-history metric_id exchange_id nil))
+  ([metric_id string?, exchange_id string?, optional-params any?]
+   (let [res (:data (marketdata-list-metrics-v2-exchange-history-with-http-info metric_id exchange_id optional-params))]
+     (if (:decode-models *api-context*)
+        (st/decode (s/coll-of any?) res st/string-transformer)
+        res))))
+
+
+(defn-spec marketdata-list-metrics-v2-exchange-listing-with-http-info any?
+  "Listing of metrics available for specific exchange
+  Get all metrics that are actually available for the specified exchange."
+  [exchange_id string?]
+  (check-required-params exchange_id)
+  (call-api "/v2/metrics/exchange/listing" :get
+            {:path-params   {}
+             :header-params {}
+             :query-params  {"exchange_id" exchange_id }
+             :form-params   {}
+             :content-types []
+             :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
+             :auth-names    ["APIKey" "JWT"]}))
+
+(defn-spec marketdata-list-metrics-v2-exchange-listing (s/coll-of v1/metric-info-spec)
+  "Listing of metrics available for specific exchange
+  Get all metrics that are actually available for the specified exchange."
+  [exchange_id string?]
+  (let [res (:data (marketdata-list-metrics-v2-exchange-listing-with-http-info exchange_id))]
+    (if (:decode-models *api-context*)
+       (st/decode (s/coll-of v1/metric-info-spec) res st/string-transformer)
+       res)))
+
+
+(defn-spec marketdata-list-metrics-v2-listing-with-http-info any?
+  "Listing of all supported metrics
+  Get all metrics available in the system."
+  []
+  (call-api "/v2/metrics/listing" :get
+            {:path-params   {}
+             :header-params {}
+             :query-params  {}
+             :form-params   {}
+             :content-types []
+             :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
+             :auth-names    ["APIKey" "JWT"]}))
+
+(defn-spec marketdata-list-metrics-v2-listing (s/coll-of v1/metric-info-spec)
+  "Listing of all supported metrics
+  Get all metrics available in the system."
+  []
+  (let [res (:data (marketdata-list-metrics-v2-listing-with-http-info))]
+    (if (:decode-models *api-context*)
+       (st/decode (s/coll-of v1/metric-info-spec) res st/string-transformer)
+       res)))
+
+
 (defn-spec v1-metrics-asset-current-get-with-http-info any?
   "Current metrics for given asset
   Get current asset metrics."
@@ -286,178 +459,5 @@
      (if (:decode-models *api-context*)
         (st/decode (s/coll-of v1/listing-item-spec) res st/string-transformer)
         res))))
-
-
-(defn-spec v2-metrics-asset-history-get-with-http-info any?
-  "Historical metrics for the asset
-  Get asset metrics history."
-  ([metric_id string?, asset_id string?, ] (v2-metrics-asset-history-get-with-http-info metric_id asset_id nil))
-  ([metric_id string?, asset_id string?, {:keys [time_start time_end time_format period_id limit]} (s/map-of keyword? any?)]
-   (check-required-params metric_id asset_id)
-   (call-api "/v2/metrics/asset/history" :get
-             {:path-params   {}
-              :header-params {}
-              :query-params  {"metric_id" metric_id "asset_id" asset_id "time_start" time_start "time_end" time_end "time_format" time_format "period_id" period_id "limit" limit }
-              :form-params   {}
-              :content-types []
-              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
-              :auth-names    ["APIKey" "JWT"]})))
-
-(defn-spec v2-metrics-asset-history-get (s/coll-of any?)
-  "Historical metrics for the asset
-  Get asset metrics history."
-  ([metric_id string?, asset_id string?, ] (v2-metrics-asset-history-get metric_id asset_id nil))
-  ([metric_id string?, asset_id string?, optional-params any?]
-   (let [res (:data (v2-metrics-asset-history-get-with-http-info metric_id asset_id optional-params))]
-     (if (:decode-models *api-context*)
-        (st/decode (s/coll-of any?) res st/string-transformer)
-        res))))
-
-
-(defn-spec v2-metrics-asset-listing-get-with-http-info any?
-  "Listing of metrics available for specific asset
-  Get all metrics that are actually available for the specified asset."
-  [asset_id string?]
-  (check-required-params asset_id)
-  (call-api "/v2/metrics/asset/listing" :get
-            {:path-params   {}
-             :header-params {}
-             :query-params  {"asset_id" asset_id }
-             :form-params   {}
-             :content-types []
-             :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
-             :auth-names    ["APIKey" "JWT"]}))
-
-(defn-spec v2-metrics-asset-listing-get (s/coll-of v1/metric-info-spec)
-  "Listing of metrics available for specific asset
-  Get all metrics that are actually available for the specified asset."
-  [asset_id string?]
-  (let [res (:data (v2-metrics-asset-listing-get-with-http-info asset_id))]
-    (if (:decode-models *api-context*)
-       (st/decode (s/coll-of v1/metric-info-spec) res st/string-transformer)
-       res)))
-
-
-(defn-spec v2-metrics-chain-history-get-with-http-info any?
-  "Historical metrics for the chain
-  Get chain metrics history."
-  ([metric_id string?, chain_id string?, ] (v2-metrics-chain-history-get-with-http-info metric_id chain_id nil))
-  ([metric_id string?, chain_id string?, {:keys [time_start time_end time_format period_id limit]} (s/map-of keyword? any?)]
-   (check-required-params metric_id chain_id)
-   (call-api "/v2/metrics/chain/history" :get
-             {:path-params   {}
-              :header-params {}
-              :query-params  {"metric_id" metric_id "chain_id" chain_id "time_start" time_start "time_end" time_end "time_format" time_format "period_id" period_id "limit" limit }
-              :form-params   {}
-              :content-types []
-              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
-              :auth-names    ["APIKey" "JWT"]})))
-
-(defn-spec v2-metrics-chain-history-get (s/coll-of any?)
-  "Historical metrics for the chain
-  Get chain metrics history."
-  ([metric_id string?, chain_id string?, ] (v2-metrics-chain-history-get metric_id chain_id nil))
-  ([metric_id string?, chain_id string?, optional-params any?]
-   (let [res (:data (v2-metrics-chain-history-get-with-http-info metric_id chain_id optional-params))]
-     (if (:decode-models *api-context*)
-        (st/decode (s/coll-of any?) res st/string-transformer)
-        res))))
-
-
-(defn-spec v2-metrics-chain-listing-get-with-http-info any?
-  "Listing of metrics available for specific chain
-  Get all metrics that are actually available for the specified blockchain chain."
-  [chain_id string?]
-  (check-required-params chain_id)
-  (call-api "/v2/metrics/chain/listing" :get
-            {:path-params   {}
-             :header-params {}
-             :query-params  {"chain_id" chain_id }
-             :form-params   {}
-             :content-types []
-             :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
-             :auth-names    ["APIKey" "JWT"]}))
-
-(defn-spec v2-metrics-chain-listing-get (s/coll-of v1/metric-info-spec)
-  "Listing of metrics available for specific chain
-  Get all metrics that are actually available for the specified blockchain chain."
-  [chain_id string?]
-  (let [res (:data (v2-metrics-chain-listing-get-with-http-info chain_id))]
-    (if (:decode-models *api-context*)
-       (st/decode (s/coll-of v1/metric-info-spec) res st/string-transformer)
-       res)))
-
-
-(defn-spec v2-metrics-exchange-history-get-with-http-info any?
-  "Historical metrics for the exchange
-  Get exchange metrics history."
-  ([metric_id string?, exchange_id string?, ] (v2-metrics-exchange-history-get-with-http-info metric_id exchange_id nil))
-  ([metric_id string?, exchange_id string?, {:keys [time_start time_end time_format period_id limit]} (s/map-of keyword? any?)]
-   (check-required-params metric_id exchange_id)
-   (call-api "/v2/metrics/exchange/history" :get
-             {:path-params   {}
-              :header-params {}
-              :query-params  {"metric_id" metric_id "exchange_id" exchange_id "time_start" time_start "time_end" time_end "time_format" time_format "period_id" period_id "limit" limit }
-              :form-params   {}
-              :content-types []
-              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
-              :auth-names    ["APIKey" "JWT"]})))
-
-(defn-spec v2-metrics-exchange-history-get (s/coll-of any?)
-  "Historical metrics for the exchange
-  Get exchange metrics history."
-  ([metric_id string?, exchange_id string?, ] (v2-metrics-exchange-history-get metric_id exchange_id nil))
-  ([metric_id string?, exchange_id string?, optional-params any?]
-   (let [res (:data (v2-metrics-exchange-history-get-with-http-info metric_id exchange_id optional-params))]
-     (if (:decode-models *api-context*)
-        (st/decode (s/coll-of any?) res st/string-transformer)
-        res))))
-
-
-(defn-spec v2-metrics-exchange-listing-get-with-http-info any?
-  "Listing of metrics available for specific exchange
-  Get all metrics that are actually available for the specified exchange."
-  [exchange_id string?]
-  (check-required-params exchange_id)
-  (call-api "/v2/metrics/exchange/listing" :get
-            {:path-params   {}
-             :header-params {}
-             :query-params  {"exchange_id" exchange_id }
-             :form-params   {}
-             :content-types []
-             :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
-             :auth-names    ["APIKey" "JWT"]}))
-
-(defn-spec v2-metrics-exchange-listing-get (s/coll-of v1/metric-info-spec)
-  "Listing of metrics available for specific exchange
-  Get all metrics that are actually available for the specified exchange."
-  [exchange_id string?]
-  (let [res (:data (v2-metrics-exchange-listing-get-with-http-info exchange_id))]
-    (if (:decode-models *api-context*)
-       (st/decode (s/coll-of v1/metric-info-spec) res st/string-transformer)
-       res)))
-
-
-(defn-spec v2-metrics-listing-get-with-http-info any?
-  "Listing of all supported metrics
-  Get all metrics available in the system."
-  []
-  (call-api "/v2/metrics/listing" :get
-            {:path-params   {}
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :content-types []
-             :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
-             :auth-names    ["APIKey" "JWT"]}))
-
-(defn-spec v2-metrics-listing-get (s/coll-of v1/metric-info-spec)
-  "Listing of all supported metrics
-  Get all metrics available in the system."
-  []
-  (let [res (:data (v2-metrics-listing-get-with-http-info))]
-    (if (:decode-models *api-context*)
-       (st/decode (s/coll-of v1/metric-info-spec) res st/string-transformer)
-       res)))
 
 

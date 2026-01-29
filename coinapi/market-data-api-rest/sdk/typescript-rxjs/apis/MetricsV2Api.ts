@@ -19,7 +19,7 @@ import type {
     V1MetricInfo,
 } from '../models';
 
-export interface V2MetricsAssetHistoryGetRequest {
+export interface MarketdataListMetricsV2AssetHistoryRequest {
     metricId: string;
     assetId: string;
     timeStart?: string;
@@ -29,11 +29,11 @@ export interface V2MetricsAssetHistoryGetRequest {
     limit?: number;
 }
 
-export interface V2MetricsAssetListingGetRequest {
+export interface MarketdataListMetricsV2AssetListingRequest {
     assetId: string;
 }
 
-export interface V2MetricsChainHistoryGetRequest {
+export interface MarketdataListMetricsV2ChainHistoryRequest {
     metricId: string;
     chainId: string;
     timeStart?: string;
@@ -43,11 +43,11 @@ export interface V2MetricsChainHistoryGetRequest {
     limit?: number;
 }
 
-export interface V2MetricsChainListingGetRequest {
+export interface MarketdataListMetricsV2ChainListingRequest {
     chainId: string;
 }
 
-export interface V2MetricsExchangeHistoryGetRequest {
+export interface MarketdataListMetricsV2ExchangeHistoryRequest {
     metricId: string;
     exchangeId: string;
     timeStart?: string;
@@ -57,7 +57,7 @@ export interface V2MetricsExchangeHistoryGetRequest {
     limit?: number;
 }
 
-export interface V2MetricsExchangeListingGetRequest {
+export interface MarketdataListMetricsV2ExchangeListingRequest {
     exchangeId: string;
 }
 
@@ -70,11 +70,11 @@ export class MetricsV2Api extends BaseAPI {
      * Get asset metrics history.
      * Historical metrics for the asset
      */
-    v2MetricsAssetHistoryGet({ metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit }: V2MetricsAssetHistoryGetRequest): Observable<Array<object>>
-    v2MetricsAssetHistoryGet({ metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit }: V2MetricsAssetHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<object>>>
-    v2MetricsAssetHistoryGet({ metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit }: V2MetricsAssetHistoryGetRequest, opts?: OperationOpts): Observable<Array<object> | AjaxResponse<Array<object>>> {
-        throwIfNullOrUndefined(metricId, 'metricId', 'v2MetricsAssetHistoryGet');
-        throwIfNullOrUndefined(assetId, 'assetId', 'v2MetricsAssetHistoryGet');
+    marketdataListMetricsV2AssetHistory({ metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit }: MarketdataListMetricsV2AssetHistoryRequest): Observable<Array<object>>
+    marketdataListMetricsV2AssetHistory({ metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit }: MarketdataListMetricsV2AssetHistoryRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<object>>>
+    marketdataListMetricsV2AssetHistory({ metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit }: MarketdataListMetricsV2AssetHistoryRequest, opts?: OperationOpts): Observable<Array<object> | AjaxResponse<Array<object>>> {
+        throwIfNullOrUndefined(metricId, 'metricId', 'marketdataListMetricsV2AssetHistory');
+        throwIfNullOrUndefined(assetId, 'assetId', 'marketdataListMetricsV2AssetHistory');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
@@ -103,10 +103,10 @@ export class MetricsV2Api extends BaseAPI {
      * Get all metrics that are actually available for the specified asset.
      * Listing of metrics available for specific asset
      */
-    v2MetricsAssetListingGet({ assetId }: V2MetricsAssetListingGetRequest): Observable<Array<V1MetricInfo>>
-    v2MetricsAssetListingGet({ assetId }: V2MetricsAssetListingGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1MetricInfo>>>
-    v2MetricsAssetListingGet({ assetId }: V2MetricsAssetListingGetRequest, opts?: OperationOpts): Observable<Array<V1MetricInfo> | AjaxResponse<Array<V1MetricInfo>>> {
-        throwIfNullOrUndefined(assetId, 'assetId', 'v2MetricsAssetListingGet');
+    marketdataListMetricsV2AssetListing({ assetId }: MarketdataListMetricsV2AssetListingRequest): Observable<Array<V1MetricInfo>>
+    marketdataListMetricsV2AssetListing({ assetId }: MarketdataListMetricsV2AssetListingRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1MetricInfo>>>
+    marketdataListMetricsV2AssetListing({ assetId }: MarketdataListMetricsV2AssetListingRequest, opts?: OperationOpts): Observable<Array<V1MetricInfo> | AjaxResponse<Array<V1MetricInfo>>> {
+        throwIfNullOrUndefined(assetId, 'assetId', 'marketdataListMetricsV2AssetListing');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
@@ -128,11 +128,11 @@ export class MetricsV2Api extends BaseAPI {
      * Get chain metrics history.
      * Historical metrics for the chain
      */
-    v2MetricsChainHistoryGet({ metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit }: V2MetricsChainHistoryGetRequest): Observable<Array<object>>
-    v2MetricsChainHistoryGet({ metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit }: V2MetricsChainHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<object>>>
-    v2MetricsChainHistoryGet({ metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit }: V2MetricsChainHistoryGetRequest, opts?: OperationOpts): Observable<Array<object> | AjaxResponse<Array<object>>> {
-        throwIfNullOrUndefined(metricId, 'metricId', 'v2MetricsChainHistoryGet');
-        throwIfNullOrUndefined(chainId, 'chainId', 'v2MetricsChainHistoryGet');
+    marketdataListMetricsV2ChainHistory({ metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit }: MarketdataListMetricsV2ChainHistoryRequest): Observable<Array<object>>
+    marketdataListMetricsV2ChainHistory({ metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit }: MarketdataListMetricsV2ChainHistoryRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<object>>>
+    marketdataListMetricsV2ChainHistory({ metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit }: MarketdataListMetricsV2ChainHistoryRequest, opts?: OperationOpts): Observable<Array<object> | AjaxResponse<Array<object>>> {
+        throwIfNullOrUndefined(metricId, 'metricId', 'marketdataListMetricsV2ChainHistory');
+        throwIfNullOrUndefined(chainId, 'chainId', 'marketdataListMetricsV2ChainHistory');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
@@ -161,10 +161,10 @@ export class MetricsV2Api extends BaseAPI {
      * Get all metrics that are actually available for the specified blockchain chain.
      * Listing of metrics available for specific chain
      */
-    v2MetricsChainListingGet({ chainId }: V2MetricsChainListingGetRequest): Observable<Array<V1MetricInfo>>
-    v2MetricsChainListingGet({ chainId }: V2MetricsChainListingGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1MetricInfo>>>
-    v2MetricsChainListingGet({ chainId }: V2MetricsChainListingGetRequest, opts?: OperationOpts): Observable<Array<V1MetricInfo> | AjaxResponse<Array<V1MetricInfo>>> {
-        throwIfNullOrUndefined(chainId, 'chainId', 'v2MetricsChainListingGet');
+    marketdataListMetricsV2ChainListing({ chainId }: MarketdataListMetricsV2ChainListingRequest): Observable<Array<V1MetricInfo>>
+    marketdataListMetricsV2ChainListing({ chainId }: MarketdataListMetricsV2ChainListingRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1MetricInfo>>>
+    marketdataListMetricsV2ChainListing({ chainId }: MarketdataListMetricsV2ChainListingRequest, opts?: OperationOpts): Observable<Array<V1MetricInfo> | AjaxResponse<Array<V1MetricInfo>>> {
+        throwIfNullOrUndefined(chainId, 'chainId', 'marketdataListMetricsV2ChainListing');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
@@ -186,11 +186,11 @@ export class MetricsV2Api extends BaseAPI {
      * Get exchange metrics history.
      * Historical metrics for the exchange
      */
-    v2MetricsExchangeHistoryGet({ metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit }: V2MetricsExchangeHistoryGetRequest): Observable<Array<object>>
-    v2MetricsExchangeHistoryGet({ metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit }: V2MetricsExchangeHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<object>>>
-    v2MetricsExchangeHistoryGet({ metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit }: V2MetricsExchangeHistoryGetRequest, opts?: OperationOpts): Observable<Array<object> | AjaxResponse<Array<object>>> {
-        throwIfNullOrUndefined(metricId, 'metricId', 'v2MetricsExchangeHistoryGet');
-        throwIfNullOrUndefined(exchangeId, 'exchangeId', 'v2MetricsExchangeHistoryGet');
+    marketdataListMetricsV2ExchangeHistory({ metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit }: MarketdataListMetricsV2ExchangeHistoryRequest): Observable<Array<object>>
+    marketdataListMetricsV2ExchangeHistory({ metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit }: MarketdataListMetricsV2ExchangeHistoryRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<object>>>
+    marketdataListMetricsV2ExchangeHistory({ metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit }: MarketdataListMetricsV2ExchangeHistoryRequest, opts?: OperationOpts): Observable<Array<object> | AjaxResponse<Array<object>>> {
+        throwIfNullOrUndefined(metricId, 'metricId', 'marketdataListMetricsV2ExchangeHistory');
+        throwIfNullOrUndefined(exchangeId, 'exchangeId', 'marketdataListMetricsV2ExchangeHistory');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
@@ -219,10 +219,10 @@ export class MetricsV2Api extends BaseAPI {
      * Get all metrics that are actually available for the specified exchange.
      * Listing of metrics available for specific exchange
      */
-    v2MetricsExchangeListingGet({ exchangeId }: V2MetricsExchangeListingGetRequest): Observable<Array<V1MetricInfo>>
-    v2MetricsExchangeListingGet({ exchangeId }: V2MetricsExchangeListingGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1MetricInfo>>>
-    v2MetricsExchangeListingGet({ exchangeId }: V2MetricsExchangeListingGetRequest, opts?: OperationOpts): Observable<Array<V1MetricInfo> | AjaxResponse<Array<V1MetricInfo>>> {
-        throwIfNullOrUndefined(exchangeId, 'exchangeId', 'v2MetricsExchangeListingGet');
+    marketdataListMetricsV2ExchangeListing({ exchangeId }: MarketdataListMetricsV2ExchangeListingRequest): Observable<Array<V1MetricInfo>>
+    marketdataListMetricsV2ExchangeListing({ exchangeId }: MarketdataListMetricsV2ExchangeListingRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1MetricInfo>>>
+    marketdataListMetricsV2ExchangeListing({ exchangeId }: MarketdataListMetricsV2ExchangeListingRequest, opts?: OperationOpts): Observable<Array<V1MetricInfo> | AjaxResponse<Array<V1MetricInfo>>> {
+        throwIfNullOrUndefined(exchangeId, 'exchangeId', 'marketdataListMetricsV2ExchangeListing');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
@@ -244,9 +244,9 @@ export class MetricsV2Api extends BaseAPI {
      * Get all metrics available in the system.
      * Listing of all supported metrics
      */
-    v2MetricsListingGet(): Observable<Array<V1MetricInfo>>
-    v2MetricsListingGet(opts?: OperationOpts): Observable<AjaxResponse<Array<V1MetricInfo>>>
-    v2MetricsListingGet(opts?: OperationOpts): Observable<Array<V1MetricInfo> | AjaxResponse<Array<V1MetricInfo>>> {
+    marketdataListMetricsV2Listing(): Observable<Array<V1MetricInfo>>
+    marketdataListMetricsV2Listing(opts?: OperationOpts): Observable<AjaxResponse<Array<V1MetricInfo>>>
+    marketdataListMetricsV2Listing(opts?: OperationOpts): Observable<Array<V1MetricInfo> | AjaxResponse<Array<V1MetricInfo>>> {
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };

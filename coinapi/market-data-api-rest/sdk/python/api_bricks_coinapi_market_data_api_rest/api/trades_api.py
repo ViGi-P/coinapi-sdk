@@ -346,8 +346,8 @@ class TradesApi:
         self,
         symbol_id: Annotated[StrictStr, Field(description="Symbol identifier for requested timeseries (from the Metadata -> Symbols)")],
         var_date: Annotated[Optional[StrictStr], Field(description="Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)")] = None,
-        time_start: Annotated[Optional[StrictStr], Field(description="Starting time in ISO 8601")] = None,
-        time_end: Annotated[Optional[StrictStr], Field(description="Timeseries ending time in ISO 8601")] = None,
+        time_start: Annotated[Optional[StrictStr], Field(description="Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)")] = None,
+        time_end: Annotated[Optional[StrictStr], Field(description="Timeseries ending time in ISO 8601 (optional, supports cross-day queries)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
         include_id: Annotated[Optional[StrictBool], Field(description="Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers.")] = None,
         _request_timeout: Union[
@@ -365,15 +365,15 @@ class TradesApi:
     ) -> List[V1Trade]:
         """Historical data
 
-        Get history transactions from specific symbol, returned in time ascending order.  :::warning The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the 'date' parameter instead for querying data for a specific day without filter. :::
+        Get history transactions from specific symbol, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
 
         :param symbol_id: Symbol identifier for requested timeseries (from the Metadata -> Symbols) (required)
         :type symbol_id: str
         :param var_date: Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)
         :type var_date: str
-        :param time_start: Starting time in ISO 8601
+        :param time_start: Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
         :type time_start: str
-        :param time_end: Timeseries ending time in ISO 8601
+        :param time_end: Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
         :type time_end: str
         :param limit: Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
@@ -433,8 +433,8 @@ class TradesApi:
         self,
         symbol_id: Annotated[StrictStr, Field(description="Symbol identifier for requested timeseries (from the Metadata -> Symbols)")],
         var_date: Annotated[Optional[StrictStr], Field(description="Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)")] = None,
-        time_start: Annotated[Optional[StrictStr], Field(description="Starting time in ISO 8601")] = None,
-        time_end: Annotated[Optional[StrictStr], Field(description="Timeseries ending time in ISO 8601")] = None,
+        time_start: Annotated[Optional[StrictStr], Field(description="Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)")] = None,
+        time_end: Annotated[Optional[StrictStr], Field(description="Timeseries ending time in ISO 8601 (optional, supports cross-day queries)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
         include_id: Annotated[Optional[StrictBool], Field(description="Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers.")] = None,
         _request_timeout: Union[
@@ -452,15 +452,15 @@ class TradesApi:
     ) -> ApiResponse[List[V1Trade]]:
         """Historical data
 
-        Get history transactions from specific symbol, returned in time ascending order.  :::warning The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the 'date' parameter instead for querying data for a specific day without filter. :::
+        Get history transactions from specific symbol, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
 
         :param symbol_id: Symbol identifier for requested timeseries (from the Metadata -> Symbols) (required)
         :type symbol_id: str
         :param var_date: Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)
         :type var_date: str
-        :param time_start: Starting time in ISO 8601
+        :param time_start: Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
         :type time_start: str
-        :param time_end: Timeseries ending time in ISO 8601
+        :param time_end: Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
         :type time_end: str
         :param limit: Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
@@ -520,8 +520,8 @@ class TradesApi:
         self,
         symbol_id: Annotated[StrictStr, Field(description="Symbol identifier for requested timeseries (from the Metadata -> Symbols)")],
         var_date: Annotated[Optional[StrictStr], Field(description="Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)")] = None,
-        time_start: Annotated[Optional[StrictStr], Field(description="Starting time in ISO 8601")] = None,
-        time_end: Annotated[Optional[StrictStr], Field(description="Timeseries ending time in ISO 8601")] = None,
+        time_start: Annotated[Optional[StrictStr], Field(description="Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)")] = None,
+        time_end: Annotated[Optional[StrictStr], Field(description="Timeseries ending time in ISO 8601 (optional, supports cross-day queries)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
         include_id: Annotated[Optional[StrictBool], Field(description="Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers.")] = None,
         _request_timeout: Union[
@@ -539,15 +539,15 @@ class TradesApi:
     ) -> RESTResponseType:
         """Historical data
 
-        Get history transactions from specific symbol, returned in time ascending order.  :::warning The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the 'date' parameter instead for querying data for a specific day without filter. :::
+        Get history transactions from specific symbol, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
 
         :param symbol_id: Symbol identifier for requested timeseries (from the Metadata -> Symbols) (required)
         :type symbol_id: str
         :param var_date: Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)
         :type var_date: str
-        :param time_start: Starting time in ISO 8601
+        :param time_start: Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
         :type time_start: str
-        :param time_end: Timeseries ending time in ISO 8601
+        :param time_end: Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
         :type time_end: str
         :param limit: Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int

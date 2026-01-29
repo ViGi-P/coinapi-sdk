@@ -4,17 +4,17 @@ All URIs are relative to **
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2MetricsAssetHistoryGet**](MetricsV2Api.md#v2MetricsAssetHistoryGet) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
-[**v2MetricsAssetListingGet**](MetricsV2Api.md#v2MetricsAssetListingGet) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-[**v2MetricsChainHistoryGet**](MetricsV2Api.md#v2MetricsChainHistoryGet) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
-[**v2MetricsChainListingGet**](MetricsV2Api.md#v2MetricsChainListingGet) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-[**v2MetricsExchangeHistoryGet**](MetricsV2Api.md#v2MetricsExchangeHistoryGet) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
-[**v2MetricsExchangeListingGet**](MetricsV2Api.md#v2MetricsExchangeListingGet) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-[**v2MetricsListingGet**](MetricsV2Api.md#v2MetricsListingGet) | **GET** /v2/metrics/listing | Listing of all supported metrics
+[**marketdataListMetricsV2AssetHistory**](MetricsV2Api.md#marketdataListMetricsV2AssetHistory) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
+[**marketdataListMetricsV2AssetListing**](MetricsV2Api.md#marketdataListMetricsV2AssetListing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+[**marketdataListMetricsV2ChainHistory**](MetricsV2Api.md#marketdataListMetricsV2ChainHistory) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
+[**marketdataListMetricsV2ChainListing**](MetricsV2Api.md#marketdataListMetricsV2ChainListing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+[**marketdataListMetricsV2ExchangeHistory**](MetricsV2Api.md#marketdataListMetricsV2ExchangeHistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
+[**marketdataListMetricsV2ExchangeListing**](MetricsV2Api.md#marketdataListMetricsV2ExchangeListing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+[**marketdataListMetricsV2Listing**](MetricsV2Api.md#marketdataListMetricsV2Listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
 
 
 
-## v2MetricsAssetHistoryGet
+## marketdataListMetricsV2AssetHistory
 
 Historical metrics for the asset
 
@@ -23,7 +23,7 @@ Get asset metrics history.
 ### Example
 
 ```bash
- v2MetricsAssetHistoryGet  metric_id=value  asset_id=value  time_start=value  time_end=value  time_format=value  period_id=value  limit=value
+ marketdataListMetricsV2AssetHistory  metric_id=value  asset_id=value  time_start=value  time_end=value  time_format=value  period_id=value  limit=value
 ```
 
 ### Parameters
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## v2MetricsAssetListingGet
+## marketdataListMetricsV2AssetListing
 
 Listing of metrics available for specific asset
 
@@ -64,7 +64,7 @@ Get all metrics that are actually available for the specified asset.
 ### Example
 
 ```bash
- v2MetricsAssetListingGet  asset_id=value
+ marketdataListMetricsV2AssetListing  asset_id=value
 ```
 
 ### Parameters
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## v2MetricsChainHistoryGet
+## marketdataListMetricsV2ChainHistory
 
 Historical metrics for the chain
 
@@ -99,7 +99,7 @@ Get chain metrics history.
 ### Example
 
 ```bash
- v2MetricsChainHistoryGet  metric_id=value  chain_id=value  time_start=value  time_end=value  time_format=value  period_id=value  limit=value
+ marketdataListMetricsV2ChainHistory  metric_id=value  chain_id=value  time_start=value  time_end=value  time_format=value  period_id=value  limit=value
 ```
 
 ### Parameters
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## v2MetricsChainListingGet
+## marketdataListMetricsV2ChainListing
 
 Listing of metrics available for specific chain
 
@@ -140,7 +140,7 @@ Get all metrics that are actually available for the specified blockchain chain.
 ### Example
 
 ```bash
- v2MetricsChainListingGet  chain_id=value
+ marketdataListMetricsV2ChainListing  chain_id=value
 ```
 
 ### Parameters
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## v2MetricsExchangeHistoryGet
+## marketdataListMetricsV2ExchangeHistory
 
 Historical metrics for the exchange
 
@@ -175,7 +175,7 @@ Get exchange metrics history.
 ### Example
 
 ```bash
- v2MetricsExchangeHistoryGet  metric_id=value  exchange_id=value  time_start=value  time_end=value  time_format=value  period_id=value  limit=value
+ marketdataListMetricsV2ExchangeHistory  metric_id=value  exchange_id=value  time_start=value  time_end=value  time_format=value  period_id=value  limit=value
 ```
 
 ### Parameters
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## v2MetricsExchangeListingGet
+## marketdataListMetricsV2ExchangeListing
 
 Listing of metrics available for specific exchange
 
@@ -216,7 +216,7 @@ Get all metrics that are actually available for the specified exchange.
 ### Example
 
 ```bash
- v2MetricsExchangeListingGet  exchange_id=value
+ marketdataListMetricsV2ExchangeListing  exchange_id=value
 ```
 
 ### Parameters
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
-## v2MetricsListingGet
+## marketdataListMetricsV2Listing
 
 Listing of all supported metrics
 
@@ -251,7 +251,7 @@ Get all metrics available in the system.
 ### Example
 
 ```bash
- v2MetricsListingGet
+ marketdataListMetricsV2Listing
 ```
 
 ### Parameters

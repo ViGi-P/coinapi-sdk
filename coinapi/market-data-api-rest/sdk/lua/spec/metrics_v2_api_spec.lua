@@ -15,50 +15,50 @@ Please update as you see appropriate
 ]]
 describe("metrics_v2_api", function()
   local openapiclient_metrics_v2_api = require "openapiclient.api.metrics_v2_api"
-  -- unit tests for v2_metrics_asset_history_get
-  describe("v2_metrics_asset_history_get test", function()
+  -- unit tests for marketdata_list_metrics_v2_asset_history
+  describe("marketdata_list_metrics_v2_asset_history test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for v2_metrics_asset_listing_get
-  describe("v2_metrics_asset_listing_get test", function()
+  -- unit tests for marketdata_list_metrics_v2_asset_listing
+  describe("marketdata_list_metrics_v2_asset_listing test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for v2_metrics_chain_history_get
-  describe("v2_metrics_chain_history_get test", function()
+  -- unit tests for marketdata_list_metrics_v2_chain_history
+  describe("marketdata_list_metrics_v2_chain_history test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for v2_metrics_chain_listing_get
-  describe("v2_metrics_chain_listing_get test", function()
+  -- unit tests for marketdata_list_metrics_v2_chain_listing
+  describe("marketdata_list_metrics_v2_chain_listing test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for v2_metrics_exchange_history_get
-  describe("v2_metrics_exchange_history_get test", function()
+  -- unit tests for marketdata_list_metrics_v2_exchange_history
+  describe("marketdata_list_metrics_v2_exchange_history test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for v2_metrics_exchange_listing_get
-  describe("v2_metrics_exchange_listing_get test", function()
+  -- unit tests for marketdata_list_metrics_v2_exchange_listing
+  describe("marketdata_list_metrics_v2_exchange_listing test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)
   end)
 
-  -- unit tests for v2_metrics_listing_get
-  describe("v2_metrics_listing_get test", function()
+  -- unit tests for marketdata_list_metrics_v2_listing
+  describe("marketdata_list_metrics_v2_listing test", function()
     it("should work", function()
       -- TODO assertion here: http://olivinelabs.com/busted/#asserts
     end)

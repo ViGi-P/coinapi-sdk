@@ -18,7 +18,7 @@ void main() {
 
     // Historical data
     //
-    // Get history transactions from specific symbol, returned in time ascending order.  :::warning The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the 'date' parameter instead for querying data for a specific day without filter. :::
+    // Get history transactions from specific symbol, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
     //
     //Future<BuiltList<V1Trade>> v1TradesSymbolIdHistoryGet(String symbolId, { String date, String timeStart, String timeEnd, int limit, bool includeId }) async
     test('test v1TradesSymbolIdHistoryGet', () async {

@@ -36,7 +36,7 @@ MetricsV2Api::~MetricsV2Api()
 {
 }
 
-pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsAssetHistoryGet(utility::string_t metricId, utility::string_t assetId, boost::optional<utility::datetime> timeStart, boost::optional<utility::datetime> timeEnd, boost::optional<utility::string_t> timeFormat, boost::optional<utility::string_t> periodId, boost::optional<int32_t> limit) const
+pplx::task<std::vector<Object>> MetricsV2Api::marketdataListMetricsV2AssetHistory(utility::string_t metricId, utility::string_t assetId, boost::optional<utility::datetime> timeStart, boost::optional<utility::datetime> timeEnd, boost::optional<utility::string_t> timeFormat, boost::optional<utility::string_t> periodId, boost::optional<int32_t> limit) const
 {
 
 
@@ -73,7 +73,7 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsAssetHistoryGet(utility::
     }
     else
     {
-        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->v2MetricsAssetHistoryGet does not produce any supported media type"));
+        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2AssetHistory does not produce any supported media type"));
     }
 
     localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
@@ -126,7 +126,7 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsAssetHistoryGet(utility::
     }
     else
     {
-        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->v2MetricsAssetHistoryGet does not consume any supported media type"));
+        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2AssetHistory does not consume any supported media type"));
     }
 
     // authentication (APIKey) required
@@ -155,7 +155,7 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsAssetHistoryGet(utility::
         if (localVarResponse.status_code() >= 400)
         {
             throw ApiException(localVarResponse.status_code()
-                , utility::conversions::to_string_t("error calling v2MetricsAssetHistoryGet: ") + localVarResponse.reason_phrase()
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2AssetHistory: ") + localVarResponse.reason_phrase()
                 , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
         }
 
@@ -166,7 +166,7 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsAssetHistoryGet(utility::
             if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
             {
                 throw ApiException(500
-                    , utility::conversions::to_string_t("error calling v2MetricsAssetHistoryGet: unexpected response type: ") + localVarContentType
+                    , utility::conversions::to_string_t("error calling marketdataListMetricsV2AssetHistory: unexpected response type: ") + localVarContentType
                     , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
             }
         }
@@ -194,13 +194,13 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsAssetHistoryGet(utility::
         else
         {
             throw ApiException(500
-                , utility::conversions::to_string_t("error calling v2MetricsAssetHistoryGet: unsupported response type"));
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2AssetHistory: unsupported response type"));
         }
 
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsAssetListingGet(utility::string_t assetId) const
+pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::marketdataListMetricsV2AssetListing(utility::string_t assetId) const
 {
 
 
@@ -237,7 +237,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsA
     }
     else
     {
-        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->v2MetricsAssetListingGet does not produce any supported media type"));
+        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2AssetListing does not produce any supported media type"));
     }
 
     localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
@@ -267,7 +267,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsA
     }
     else
     {
-        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->v2MetricsAssetListingGet does not consume any supported media type"));
+        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2AssetListing does not consume any supported media type"));
     }
 
     // authentication (APIKey) required
@@ -296,7 +296,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsA
         if (localVarResponse.status_code() >= 400)
         {
             throw ApiException(localVarResponse.status_code()
-                , utility::conversions::to_string_t("error calling v2MetricsAssetListingGet: ") + localVarResponse.reason_phrase()
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2AssetListing: ") + localVarResponse.reason_phrase()
                 , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
         }
 
@@ -307,7 +307,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsA
             if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
             {
                 throw ApiException(500
-                    , utility::conversions::to_string_t("error calling v2MetricsAssetListingGet: unexpected response type: ") + localVarContentType
+                    , utility::conversions::to_string_t("error calling marketdataListMetricsV2AssetListing: unexpected response type: ") + localVarContentType
                     , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
             }
         }
@@ -335,13 +335,13 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsA
         else
         {
             throw ApiException(500
-                , utility::conversions::to_string_t("error calling v2MetricsAssetListingGet: unsupported response type"));
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2AssetListing: unsupported response type"));
         }
 
         return localVarResult;
     });
 }
-pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsChainHistoryGet(utility::string_t metricId, utility::string_t chainId, boost::optional<utility::datetime> timeStart, boost::optional<utility::datetime> timeEnd, boost::optional<utility::string_t> timeFormat, boost::optional<utility::string_t> periodId, boost::optional<int32_t> limit) const
+pplx::task<std::vector<Object>> MetricsV2Api::marketdataListMetricsV2ChainHistory(utility::string_t metricId, utility::string_t chainId, boost::optional<utility::datetime> timeStart, boost::optional<utility::datetime> timeEnd, boost::optional<utility::string_t> timeFormat, boost::optional<utility::string_t> periodId, boost::optional<int32_t> limit) const
 {
 
 
@@ -378,7 +378,7 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsChainHistoryGet(utility::
     }
     else
     {
-        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->v2MetricsChainHistoryGet does not produce any supported media type"));
+        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2ChainHistory does not produce any supported media type"));
     }
 
     localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
@@ -431,7 +431,7 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsChainHistoryGet(utility::
     }
     else
     {
-        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->v2MetricsChainHistoryGet does not consume any supported media type"));
+        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2ChainHistory does not consume any supported media type"));
     }
 
     // authentication (APIKey) required
@@ -460,7 +460,7 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsChainHistoryGet(utility::
         if (localVarResponse.status_code() >= 400)
         {
             throw ApiException(localVarResponse.status_code()
-                , utility::conversions::to_string_t("error calling v2MetricsChainHistoryGet: ") + localVarResponse.reason_phrase()
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2ChainHistory: ") + localVarResponse.reason_phrase()
                 , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
         }
 
@@ -471,7 +471,7 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsChainHistoryGet(utility::
             if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
             {
                 throw ApiException(500
-                    , utility::conversions::to_string_t("error calling v2MetricsChainHistoryGet: unexpected response type: ") + localVarContentType
+                    , utility::conversions::to_string_t("error calling marketdataListMetricsV2ChainHistory: unexpected response type: ") + localVarContentType
                     , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
             }
         }
@@ -499,13 +499,13 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsChainHistoryGet(utility::
         else
         {
             throw ApiException(500
-                , utility::conversions::to_string_t("error calling v2MetricsChainHistoryGet: unsupported response type"));
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2ChainHistory: unsupported response type"));
         }
 
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsChainListingGet(utility::string_t chainId) const
+pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::marketdataListMetricsV2ChainListing(utility::string_t chainId) const
 {
 
 
@@ -542,7 +542,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsC
     }
     else
     {
-        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->v2MetricsChainListingGet does not produce any supported media type"));
+        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2ChainListing does not produce any supported media type"));
     }
 
     localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
@@ -572,7 +572,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsC
     }
     else
     {
-        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->v2MetricsChainListingGet does not consume any supported media type"));
+        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2ChainListing does not consume any supported media type"));
     }
 
     // authentication (APIKey) required
@@ -601,7 +601,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsC
         if (localVarResponse.status_code() >= 400)
         {
             throw ApiException(localVarResponse.status_code()
-                , utility::conversions::to_string_t("error calling v2MetricsChainListingGet: ") + localVarResponse.reason_phrase()
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2ChainListing: ") + localVarResponse.reason_phrase()
                 , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
         }
 
@@ -612,7 +612,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsC
             if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
             {
                 throw ApiException(500
-                    , utility::conversions::to_string_t("error calling v2MetricsChainListingGet: unexpected response type: ") + localVarContentType
+                    , utility::conversions::to_string_t("error calling marketdataListMetricsV2ChainListing: unexpected response type: ") + localVarContentType
                     , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
             }
         }
@@ -640,13 +640,13 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsC
         else
         {
             throw ApiException(500
-                , utility::conversions::to_string_t("error calling v2MetricsChainListingGet: unsupported response type"));
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2ChainListing: unsupported response type"));
         }
 
         return localVarResult;
     });
 }
-pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsExchangeHistoryGet(utility::string_t metricId, utility::string_t exchangeId, boost::optional<utility::datetime> timeStart, boost::optional<utility::datetime> timeEnd, boost::optional<utility::string_t> timeFormat, boost::optional<utility::string_t> periodId, boost::optional<int32_t> limit) const
+pplx::task<std::vector<Object>> MetricsV2Api::marketdataListMetricsV2ExchangeHistory(utility::string_t metricId, utility::string_t exchangeId, boost::optional<utility::datetime> timeStart, boost::optional<utility::datetime> timeEnd, boost::optional<utility::string_t> timeFormat, boost::optional<utility::string_t> periodId, boost::optional<int32_t> limit) const
 {
 
 
@@ -683,7 +683,7 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsExchangeHistoryGet(utilit
     }
     else
     {
-        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->v2MetricsExchangeHistoryGet does not produce any supported media type"));
+        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2ExchangeHistory does not produce any supported media type"));
     }
 
     localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
@@ -736,7 +736,7 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsExchangeHistoryGet(utilit
     }
     else
     {
-        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->v2MetricsExchangeHistoryGet does not consume any supported media type"));
+        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2ExchangeHistory does not consume any supported media type"));
     }
 
     // authentication (APIKey) required
@@ -765,7 +765,7 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsExchangeHistoryGet(utilit
         if (localVarResponse.status_code() >= 400)
         {
             throw ApiException(localVarResponse.status_code()
-                , utility::conversions::to_string_t("error calling v2MetricsExchangeHistoryGet: ") + localVarResponse.reason_phrase()
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2ExchangeHistory: ") + localVarResponse.reason_phrase()
                 , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
         }
 
@@ -776,7 +776,7 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsExchangeHistoryGet(utilit
             if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
             {
                 throw ApiException(500
-                    , utility::conversions::to_string_t("error calling v2MetricsExchangeHistoryGet: unexpected response type: ") + localVarContentType
+                    , utility::conversions::to_string_t("error calling marketdataListMetricsV2ExchangeHistory: unexpected response type: ") + localVarContentType
                     , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
             }
         }
@@ -804,13 +804,13 @@ pplx::task<std::vector<Object>> MetricsV2Api::v2MetricsExchangeHistoryGet(utilit
         else
         {
             throw ApiException(500
-                , utility::conversions::to_string_t("error calling v2MetricsExchangeHistoryGet: unsupported response type"));
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2ExchangeHistory: unsupported response type"));
         }
 
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsExchangeListingGet(utility::string_t exchangeId) const
+pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::marketdataListMetricsV2ExchangeListing(utility::string_t exchangeId) const
 {
 
 
@@ -847,7 +847,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsE
     }
     else
     {
-        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->v2MetricsExchangeListingGet does not produce any supported media type"));
+        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2ExchangeListing does not produce any supported media type"));
     }
 
     localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
@@ -877,7 +877,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsE
     }
     else
     {
-        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->v2MetricsExchangeListingGet does not consume any supported media type"));
+        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2ExchangeListing does not consume any supported media type"));
     }
 
     // authentication (APIKey) required
@@ -906,7 +906,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsE
         if (localVarResponse.status_code() >= 400)
         {
             throw ApiException(localVarResponse.status_code()
-                , utility::conversions::to_string_t("error calling v2MetricsExchangeListingGet: ") + localVarResponse.reason_phrase()
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2ExchangeListing: ") + localVarResponse.reason_phrase()
                 , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
         }
 
@@ -917,7 +917,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsE
             if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
             {
                 throw ApiException(500
-                    , utility::conversions::to_string_t("error calling v2MetricsExchangeListingGet: unexpected response type: ") + localVarContentType
+                    , utility::conversions::to_string_t("error calling marketdataListMetricsV2ExchangeListing: unexpected response type: ") + localVarContentType
                     , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
             }
         }
@@ -945,13 +945,13 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsE
         else
         {
             throw ApiException(500
-                , utility::conversions::to_string_t("error calling v2MetricsExchangeListingGet: unsupported response type"));
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2ExchangeListing: unsupported response type"));
         }
 
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsListingGet() const
+pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::marketdataListMetricsV2Listing() const
 {
 
 
@@ -988,7 +988,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsL
     }
     else
     {
-        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->v2MetricsListingGet does not produce any supported media type"));
+        throw ApiException(400, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2Listing does not produce any supported media type"));
     }
 
     localVarHeaderParams[utility::conversions::to_string_t("Accept")] = localVarResponseHttpContentType;
@@ -1015,7 +1015,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsL
     }
     else
     {
-        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->v2MetricsListingGet does not consume any supported media type"));
+        throw ApiException(415, utility::conversions::to_string_t("MetricsV2Api->marketdataListMetricsV2Listing does not consume any supported media type"));
     }
 
     // authentication (APIKey) required
@@ -1044,7 +1044,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsL
         if (localVarResponse.status_code() >= 400)
         {
             throw ApiException(localVarResponse.status_code()
-                , utility::conversions::to_string_t("error calling v2MetricsListingGet: ") + localVarResponse.reason_phrase()
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2Listing: ") + localVarResponse.reason_phrase()
                 , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
         }
 
@@ -1055,7 +1055,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsL
             if( localVarContentType.find(localVarResponseHttpContentType) == std::string::npos )
             {
                 throw ApiException(500
-                    , utility::conversions::to_string_t("error calling v2MetricsListingGet: unexpected response type: ") + localVarContentType
+                    , utility::conversions::to_string_t("error calling marketdataListMetricsV2Listing: unexpected response type: ") + localVarContentType
                     , std::make_shared<std::stringstream>(localVarResponse.extract_utf8string(true).get()));
             }
         }
@@ -1083,7 +1083,7 @@ pplx::task<std::vector<std::shared_ptr<V1_MetricInfo>>> MetricsV2Api::v2MetricsL
         else
         {
             throw ApiException(500
-                , utility::conversions::to_string_t("error calling v2MetricsListingGet: unsupported response type"));
+                , utility::conversions::to_string_t("error calling marketdataListMetricsV2Listing: unsupported response type"));
         }
 
         return localVarResult;

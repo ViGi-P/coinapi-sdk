@@ -43,7 +43,7 @@ class OrderBookL3Api(baseUrl: String) {
       
 
   /**
-   * Retrieves the current order book for the specified symbol.
+   * Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
    * 
    * Expected answers:
    *   code 200 : OrderBookBase (successful operation)

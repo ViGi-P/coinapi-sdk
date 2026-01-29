@@ -289,19 +289,19 @@ type ApiV1OrderbooksSymbolIdHistoryGetRequest struct {
 	limitLevels *int32
 }
 
-// Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided)
+// Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided)
 func (r ApiV1OrderbooksSymbolIdHistoryGetRequest) Date(date string) ApiV1OrderbooksSymbolIdHistoryGetRequest {
 	r.date = &date
 	return r
 }
 
-// Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead)
+// Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
 func (r ApiV1OrderbooksSymbolIdHistoryGetRequest) TimeStart(timeStart string) ApiV1OrderbooksSymbolIdHistoryGetRequest {
 	r.timeStart = &timeStart
 	return r
 }
 
-// Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead)
+// Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
 func (r ApiV1OrderbooksSymbolIdHistoryGetRequest) TimeEnd(timeEnd string) ApiV1OrderbooksSymbolIdHistoryGetRequest {
 	r.timeEnd = &timeEnd
 	return r
@@ -331,10 +331,12 @@ Get historical order book snapshots for a specific symbol within time range, ret
 :::info
 The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.
 :::
-
-:::warning
-The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
-Please use the 'date' parameter instead for querying data for a specific day without filter.
+            
+This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
+Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.
+            
+:::tip
+For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.
 :::
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().

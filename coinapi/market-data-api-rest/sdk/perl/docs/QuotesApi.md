@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 Historical data
 
-Get historical quote updates within requested time range, returned in time ascending order.  :::warning The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the 'date' parameter instead for querying data for a specific day without filter. :::
+Get historical quote updates within requested time range, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
 
 ### Example
 ```perl
@@ -201,9 +201,9 @@ my $api_instance = WWW::OpenAPIClient::QuotesApi->new(
 );
 
 my $symbol_id = "symbol_id_example"; # string | Symbol identifier for requested timeseries (from the Metadata -> Symbols)
-my $date = "date_example"; # string | Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided)
-my $time_start = "time_start_example"; # string | Starting time in ISO 8601
-my $time_end = "time_end_example"; # string | Timeseries ending time in ISO 8601
+my $date = "date_example"; # string | Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)
+my $time_start = "time_start_example"; # string | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
+my $time_end = "time_end_example"; # string | Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
 my $limit = 100; # int | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 eval {
@@ -220,9 +220,9 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol_id** | **string**| Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols) | 
- **date** | **string**| Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided) | [optional] 
- **time_start** | **string**| Starting time in ISO 8601 | [optional] 
- **time_end** | **string**| Timeseries ending time in ISO 8601 | [optional] 
+ **date** | **string**| Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) | [optional] 
+ **time_start** | **string**| Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) | [optional] 
+ **time_end** | **string**| Timeseries ending time in ISO 8601 (optional, supports cross-day queries) | [optional] 
  **limit** | **int**| Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
 
 ### Return type

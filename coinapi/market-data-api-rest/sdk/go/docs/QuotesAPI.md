@@ -236,9 +236,9 @@ import (
 
 func main() {
 	symbolId := "symbolId_example" // string | Symbol identifier for requested timeseries (from the Metadata -> Symbols)
-	date := "date_example" // string | Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided) (optional)
-	timeStart := "timeStart_example" // string | Starting time in ISO 8601 (optional)
-	timeEnd := "timeEnd_example" // string | Timeseries ending time in ISO 8601 (optional)
+	date := "date_example" // string | Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided) (optional)
+	timeStart := "timeStart_example" // string | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
+	timeEnd := "timeEnd_example" // string | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
 	limit := int32(56) // int32 | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
 
 	configuration := openapiclient.NewConfiguration()
@@ -269,9 +269,9 @@ Other parameters are passed through a pointer to a apiV1QuotesSymbolIdHistoryGet
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **date** | **string** | Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided) | 
- **timeStart** | **string** | Starting time in ISO 8601 | 
- **timeEnd** | **string** | Timeseries ending time in ISO 8601 | 
+ **date** | **string** | Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) | 
+ **timeStart** | **string** | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) | 
+ **timeEnd** | **string** | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) | 
  **limit** | **int32** | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [default to 100]
 
 ### Return type

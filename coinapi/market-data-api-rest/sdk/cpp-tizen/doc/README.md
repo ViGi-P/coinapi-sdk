@@ -107,20 +107,20 @@ Method | HTTP request | Description
 ### MetricsV2Manager
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-*v2MetricsAssetHistoryGetSync* | *GET* /v2/metrics/asset/history | Historical metrics for the asset.
-*v2MetricsAssetHistoryGetASync* | *GET* /v2/metrics/asset/history | Historical metrics for the asset.
-*v2MetricsAssetListingGetSync* | *GET* /v2/metrics/asset/listing | Listing of metrics available for specific asset.
-*v2MetricsAssetListingGetASync* | *GET* /v2/metrics/asset/listing | Listing of metrics available for specific asset.
-*v2MetricsChainHistoryGetSync* | *GET* /v2/metrics/chain/history | Historical metrics for the chain.
-*v2MetricsChainHistoryGetASync* | *GET* /v2/metrics/chain/history | Historical metrics for the chain.
-*v2MetricsChainListingGetSync* | *GET* /v2/metrics/chain/listing | Listing of metrics available for specific chain.
-*v2MetricsChainListingGetASync* | *GET* /v2/metrics/chain/listing | Listing of metrics available for specific chain.
-*v2MetricsExchangeHistoryGetSync* | *GET* /v2/metrics/exchange/history | Historical metrics for the exchange.
-*v2MetricsExchangeHistoryGetASync* | *GET* /v2/metrics/exchange/history | Historical metrics for the exchange.
-*v2MetricsExchangeListingGetSync* | *GET* /v2/metrics/exchange/listing | Listing of metrics available for specific exchange.
-*v2MetricsExchangeListingGetASync* | *GET* /v2/metrics/exchange/listing | Listing of metrics available for specific exchange.
-*v2MetricsListingGetSync* | *GET* /v2/metrics/listing | Listing of all supported metrics.
-*v2MetricsListingGetASync* | *GET* /v2/metrics/listing | Listing of all supported metrics.
+*marketdataListMetricsV2AssetHistorySync* | *GET* /v2/metrics/asset/history | Historical metrics for the asset.
+*marketdataListMetricsV2AssetHistoryASync* | *GET* /v2/metrics/asset/history | Historical metrics for the asset.
+*marketdataListMetricsV2AssetListingSync* | *GET* /v2/metrics/asset/listing | Listing of metrics available for specific asset.
+*marketdataListMetricsV2AssetListingASync* | *GET* /v2/metrics/asset/listing | Listing of metrics available for specific asset.
+*marketdataListMetricsV2ChainHistorySync* | *GET* /v2/metrics/chain/history | Historical metrics for the chain.
+*marketdataListMetricsV2ChainHistoryASync* | *GET* /v2/metrics/chain/history | Historical metrics for the chain.
+*marketdataListMetricsV2ChainListingSync* | *GET* /v2/metrics/chain/listing | Listing of metrics available for specific chain.
+*marketdataListMetricsV2ChainListingASync* | *GET* /v2/metrics/chain/listing | Listing of metrics available for specific chain.
+*marketdataListMetricsV2ExchangeHistorySync* | *GET* /v2/metrics/exchange/history | Historical metrics for the exchange.
+*marketdataListMetricsV2ExchangeHistoryASync* | *GET* /v2/metrics/exchange/history | Historical metrics for the exchange.
+*marketdataListMetricsV2ExchangeListingSync* | *GET* /v2/metrics/exchange/listing | Listing of metrics available for specific exchange.
+*marketdataListMetricsV2ExchangeListingASync* | *GET* /v2/metrics/exchange/listing | Listing of metrics available for specific exchange.
+*marketdataListMetricsV2ListingSync* | *GET* /v2/metrics/listing | Listing of all supported metrics.
+*marketdataListMetricsV2ListingASync* | *GET* /v2/metrics/listing | Listing of all supported metrics.
 
 
 ### OhlcvManager

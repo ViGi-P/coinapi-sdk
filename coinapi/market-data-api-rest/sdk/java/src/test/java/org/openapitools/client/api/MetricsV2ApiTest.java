@@ -40,7 +40,7 @@ public class MetricsV2ApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v2MetricsAssetHistoryGetTest() throws ApiException {
+    public void marketdataListMetricsV2AssetHistoryTest() throws ApiException {
         String metricId = null;
         String assetId = null;
         OffsetDateTime timeStart = null;
@@ -48,7 +48,7 @@ public class MetricsV2ApiTest {
         String timeFormat = null;
         String periodId = null;
         Integer limit = null;
-        List<Object> response = api.v2MetricsAssetHistoryGet(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
+        List<Object> response = api.marketdataListMetricsV2AssetHistory(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
         // TODO: test validations
     }
 
@@ -60,9 +60,9 @@ public class MetricsV2ApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v2MetricsAssetListingGetTest() throws ApiException {
+    public void marketdataListMetricsV2AssetListingTest() throws ApiException {
         String assetId = null;
-        List<V1MetricInfo> response = api.v2MetricsAssetListingGet(assetId);
+        List<V1MetricInfo> response = api.marketdataListMetricsV2AssetListing(assetId);
         // TODO: test validations
     }
 
@@ -74,7 +74,7 @@ public class MetricsV2ApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v2MetricsChainHistoryGetTest() throws ApiException {
+    public void marketdataListMetricsV2ChainHistoryTest() throws ApiException {
         String metricId = null;
         String chainId = null;
         OffsetDateTime timeStart = null;
@@ -82,7 +82,7 @@ public class MetricsV2ApiTest {
         String timeFormat = null;
         String periodId = null;
         Integer limit = null;
-        List<Object> response = api.v2MetricsChainHistoryGet(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
+        List<Object> response = api.marketdataListMetricsV2ChainHistory(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
         // TODO: test validations
     }
 
@@ -94,9 +94,9 @@ public class MetricsV2ApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v2MetricsChainListingGetTest() throws ApiException {
+    public void marketdataListMetricsV2ChainListingTest() throws ApiException {
         String chainId = null;
-        List<V1MetricInfo> response = api.v2MetricsChainListingGet(chainId);
+        List<V1MetricInfo> response = api.marketdataListMetricsV2ChainListing(chainId);
         // TODO: test validations
     }
 
@@ -108,7 +108,7 @@ public class MetricsV2ApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v2MetricsExchangeHistoryGetTest() throws ApiException {
+    public void marketdataListMetricsV2ExchangeHistoryTest() throws ApiException {
         String metricId = null;
         String exchangeId = null;
         OffsetDateTime timeStart = null;
@@ -116,7 +116,7 @@ public class MetricsV2ApiTest {
         String timeFormat = null;
         String periodId = null;
         Integer limit = null;
-        List<Object> response = api.v2MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
+        List<Object> response = api.marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
         // TODO: test validations
     }
 
@@ -128,9 +128,9 @@ public class MetricsV2ApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v2MetricsExchangeListingGetTest() throws ApiException {
+    public void marketdataListMetricsV2ExchangeListingTest() throws ApiException {
         String exchangeId = null;
-        List<V1MetricInfo> response = api.v2MetricsExchangeListingGet(exchangeId);
+        List<V1MetricInfo> response = api.marketdataListMetricsV2ExchangeListing(exchangeId);
         // TODO: test validations
     }
 
@@ -142,8 +142,8 @@ public class MetricsV2ApiTest {
      * @throws ApiException if the Api call fails
      */
     @Test
-    public void v2MetricsListingGetTest() throws ApiException {
-        List<V1MetricInfo> response = api.v2MetricsListingGet();
+    public void marketdataListMetricsV2ListingTest() throws ApiException {
+        List<V1MetricInfo> response = api.marketdataListMetricsV2Listing();
         // TODO: test validations
     }
 

@@ -4,26 +4,26 @@ All URIs are relative to *https://rest.coinapi.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2MetricsAssetHistoryGet**](MetricsV2Api.md#v2MetricsAssetHistoryGet) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
-[**v2MetricsAssetHistoryGetWithHttpInfo**](MetricsV2Api.md#v2MetricsAssetHistoryGetWithHttpInfo) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
-[**v2MetricsAssetListingGet**](MetricsV2Api.md#v2MetricsAssetListingGet) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-[**v2MetricsAssetListingGetWithHttpInfo**](MetricsV2Api.md#v2MetricsAssetListingGetWithHttpInfo) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-[**v2MetricsChainHistoryGet**](MetricsV2Api.md#v2MetricsChainHistoryGet) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
-[**v2MetricsChainHistoryGetWithHttpInfo**](MetricsV2Api.md#v2MetricsChainHistoryGetWithHttpInfo) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
-[**v2MetricsChainListingGet**](MetricsV2Api.md#v2MetricsChainListingGet) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-[**v2MetricsChainListingGetWithHttpInfo**](MetricsV2Api.md#v2MetricsChainListingGetWithHttpInfo) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-[**v2MetricsExchangeHistoryGet**](MetricsV2Api.md#v2MetricsExchangeHistoryGet) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
-[**v2MetricsExchangeHistoryGetWithHttpInfo**](MetricsV2Api.md#v2MetricsExchangeHistoryGetWithHttpInfo) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
-[**v2MetricsExchangeListingGet**](MetricsV2Api.md#v2MetricsExchangeListingGet) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-[**v2MetricsExchangeListingGetWithHttpInfo**](MetricsV2Api.md#v2MetricsExchangeListingGetWithHttpInfo) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-[**v2MetricsListingGet**](MetricsV2Api.md#v2MetricsListingGet) | **GET** /v2/metrics/listing | Listing of all supported metrics
-[**v2MetricsListingGetWithHttpInfo**](MetricsV2Api.md#v2MetricsListingGetWithHttpInfo) | **GET** /v2/metrics/listing | Listing of all supported metrics
+[**marketdataListMetricsV2AssetHistory**](MetricsV2Api.md#marketdataListMetricsV2AssetHistory) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
+[**marketdataListMetricsV2AssetHistoryWithHttpInfo**](MetricsV2Api.md#marketdataListMetricsV2AssetHistoryWithHttpInfo) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
+[**marketdataListMetricsV2AssetListing**](MetricsV2Api.md#marketdataListMetricsV2AssetListing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+[**marketdataListMetricsV2AssetListingWithHttpInfo**](MetricsV2Api.md#marketdataListMetricsV2AssetListingWithHttpInfo) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+[**marketdataListMetricsV2ChainHistory**](MetricsV2Api.md#marketdataListMetricsV2ChainHistory) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
+[**marketdataListMetricsV2ChainHistoryWithHttpInfo**](MetricsV2Api.md#marketdataListMetricsV2ChainHistoryWithHttpInfo) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
+[**marketdataListMetricsV2ChainListing**](MetricsV2Api.md#marketdataListMetricsV2ChainListing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+[**marketdataListMetricsV2ChainListingWithHttpInfo**](MetricsV2Api.md#marketdataListMetricsV2ChainListingWithHttpInfo) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+[**marketdataListMetricsV2ExchangeHistory**](MetricsV2Api.md#marketdataListMetricsV2ExchangeHistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
+[**marketdataListMetricsV2ExchangeHistoryWithHttpInfo**](MetricsV2Api.md#marketdataListMetricsV2ExchangeHistoryWithHttpInfo) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
+[**marketdataListMetricsV2ExchangeListing**](MetricsV2Api.md#marketdataListMetricsV2ExchangeListing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+[**marketdataListMetricsV2ExchangeListingWithHttpInfo**](MetricsV2Api.md#marketdataListMetricsV2ExchangeListingWithHttpInfo) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+[**marketdataListMetricsV2Listing**](MetricsV2Api.md#marketdataListMetricsV2Listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
+[**marketdataListMetricsV2ListingWithHttpInfo**](MetricsV2Api.md#marketdataListMetricsV2ListingWithHttpInfo) | **GET** /v2/metrics/listing | Listing of all supported metrics
 
 
 
-## v2MetricsAssetHistoryGet
+## marketdataListMetricsV2AssetHistory
 
-> v2MetricsAssetHistoryGet(v2MetricsAssetHistoryGetRequest): ApiRequest[Seq[Any]]
+> marketdataListMetricsV2AssetHistory(marketdataListMetricsV2AssetHistoryRequest): ApiRequest[Seq[Any]]
 
 Historical metrics for the asset
 
@@ -69,7 +69,7 @@ object Example extends App {
 
     val limit: Int = 56 // Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
     
-    val request = apiInstance.v2MetricsAssetHistoryGet(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
+    val request = apiInstance.marketdataListMetricsV2AssetHistory(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -79,14 +79,14 @@ object Example extends App {
             System.out.println(s"Response body: $content")
         
         case Failure(error @ ApiError(code, message, responseContent, cause, headers)) =>
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsAssetHistoryGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2AssetHistory")
             System.err.println(s"Status code: $code}")
             System.err.println(s"Reason: $responseContent")
             System.err.println(s"Response headers: ${headers.mkString(", ")}")
             error.printStackTrace();
 
         case Failure(exception) => 
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsAssetHistoryGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2AssetHistory")
             exception.printStackTrace();
     }
 }
@@ -127,9 +127,9 @@ ApiRequest[**Seq[Any]**]
 | **500** | Internal server error. |  -  |
 
 
-## v2MetricsAssetListingGet
+## marketdataListMetricsV2AssetListing
 
-> v2MetricsAssetListingGet(v2MetricsAssetListingGetRequest): ApiRequest[Seq[MetricInfo]]
+> marketdataListMetricsV2AssetListing(marketdataListMetricsV2AssetListingRequest): ApiRequest[Seq[MetricInfo]]
 
 Listing of metrics available for specific asset
 
@@ -163,7 +163,7 @@ object Example extends App {
     val apiInstance = MetricsV2Api("https://rest.coinapi.io")
     val assetId: String = assetId_example // String | Asset identifier (e.g., USDC, USDT)
     
-    val request = apiInstance.v2MetricsAssetListingGet(assetId)
+    val request = apiInstance.marketdataListMetricsV2AssetListing(assetId)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -173,14 +173,14 @@ object Example extends App {
             System.out.println(s"Response body: $content")
         
         case Failure(error @ ApiError(code, message, responseContent, cause, headers)) =>
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsAssetListingGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2AssetListing")
             System.err.println(s"Status code: $code}")
             System.err.println(s"Reason: $responseContent")
             System.err.println(s"Response headers: ${headers.mkString(", ")}")
             error.printStackTrace();
 
         case Failure(exception) => 
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsAssetListingGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2AssetListing")
             exception.printStackTrace();
     }
 }
@@ -213,9 +213,9 @@ ApiRequest[[**Seq[MetricInfo]**](MetricInfo.md)]
 | **200** | successful operation |  -  |
 
 
-## v2MetricsChainHistoryGet
+## marketdataListMetricsV2ChainHistory
 
-> v2MetricsChainHistoryGet(v2MetricsChainHistoryGetRequest): ApiRequest[Seq[Any]]
+> marketdataListMetricsV2ChainHistory(marketdataListMetricsV2ChainHistoryRequest): ApiRequest[Seq[Any]]
 
 Historical metrics for the chain
 
@@ -261,7 +261,7 @@ object Example extends App {
 
     val limit: Int = 56 // Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
     
-    val request = apiInstance.v2MetricsChainHistoryGet(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
+    val request = apiInstance.marketdataListMetricsV2ChainHistory(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -271,14 +271,14 @@ object Example extends App {
             System.out.println(s"Response body: $content")
         
         case Failure(error @ ApiError(code, message, responseContent, cause, headers)) =>
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsChainHistoryGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ChainHistory")
             System.err.println(s"Status code: $code}")
             System.err.println(s"Reason: $responseContent")
             System.err.println(s"Response headers: ${headers.mkString(", ")}")
             error.printStackTrace();
 
         case Failure(exception) => 
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsChainHistoryGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ChainHistory")
             exception.printStackTrace();
     }
 }
@@ -319,9 +319,9 @@ ApiRequest[**Seq[Any]**]
 | **500** | Internal server error. |  -  |
 
 
-## v2MetricsChainListingGet
+## marketdataListMetricsV2ChainListing
 
-> v2MetricsChainListingGet(v2MetricsChainListingGetRequest): ApiRequest[Seq[MetricInfo]]
+> marketdataListMetricsV2ChainListing(marketdataListMetricsV2ChainListingRequest): ApiRequest[Seq[MetricInfo]]
 
 Listing of metrics available for specific chain
 
@@ -355,7 +355,7 @@ object Example extends App {
     val apiInstance = MetricsV2Api("https://rest.coinapi.io")
     val chainId: String = chainId_example // String | Chain identifier (e.g., ETHEREUM, ARBITRUM)
     
-    val request = apiInstance.v2MetricsChainListingGet(chainId)
+    val request = apiInstance.marketdataListMetricsV2ChainListing(chainId)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -365,14 +365,14 @@ object Example extends App {
             System.out.println(s"Response body: $content")
         
         case Failure(error @ ApiError(code, message, responseContent, cause, headers)) =>
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsChainListingGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ChainListing")
             System.err.println(s"Status code: $code}")
             System.err.println(s"Reason: $responseContent")
             System.err.println(s"Response headers: ${headers.mkString(", ")}")
             error.printStackTrace();
 
         case Failure(exception) => 
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsChainListingGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ChainListing")
             exception.printStackTrace();
     }
 }
@@ -405,9 +405,9 @@ ApiRequest[[**Seq[MetricInfo]**](MetricInfo.md)]
 | **200** | successful operation |  -  |
 
 
-## v2MetricsExchangeHistoryGet
+## marketdataListMetricsV2ExchangeHistory
 
-> v2MetricsExchangeHistoryGet(v2MetricsExchangeHistoryGetRequest): ApiRequest[Seq[Any]]
+> marketdataListMetricsV2ExchangeHistory(marketdataListMetricsV2ExchangeHistoryRequest): ApiRequest[Seq[Any]]
 
 Historical metrics for the exchange
 
@@ -453,7 +453,7 @@ object Example extends App {
 
     val limit: Int = 56 // Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
     
-    val request = apiInstance.v2MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
+    val request = apiInstance.marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -463,14 +463,14 @@ object Example extends App {
             System.out.println(s"Response body: $content")
         
         case Failure(error @ ApiError(code, message, responseContent, cause, headers)) =>
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsExchangeHistoryGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ExchangeHistory")
             System.err.println(s"Status code: $code}")
             System.err.println(s"Reason: $responseContent")
             System.err.println(s"Response headers: ${headers.mkString(", ")}")
             error.printStackTrace();
 
         case Failure(exception) => 
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsExchangeHistoryGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ExchangeHistory")
             exception.printStackTrace();
     }
 }
@@ -511,9 +511,9 @@ ApiRequest[**Seq[Any]**]
 | **500** | Internal server error. |  -  |
 
 
-## v2MetricsExchangeListingGet
+## marketdataListMetricsV2ExchangeListing
 
-> v2MetricsExchangeListingGet(v2MetricsExchangeListingGetRequest): ApiRequest[Seq[MetricInfo]]
+> marketdataListMetricsV2ExchangeListing(marketdataListMetricsV2ExchangeListingRequest): ApiRequest[Seq[MetricInfo]]
 
 Listing of metrics available for specific exchange
 
@@ -547,7 +547,7 @@ object Example extends App {
     val apiInstance = MetricsV2Api("https://rest.coinapi.io")
     val exchangeId: String = exchangeId_example // String | Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
     
-    val request = apiInstance.v2MetricsExchangeListingGet(exchangeId)
+    val request = apiInstance.marketdataListMetricsV2ExchangeListing(exchangeId)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -557,14 +557,14 @@ object Example extends App {
             System.out.println(s"Response body: $content")
         
         case Failure(error @ ApiError(code, message, responseContent, cause, headers)) =>
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsExchangeListingGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ExchangeListing")
             System.err.println(s"Status code: $code}")
             System.err.println(s"Reason: $responseContent")
             System.err.println(s"Response headers: ${headers.mkString(", ")}")
             error.printStackTrace();
 
         case Failure(exception) => 
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsExchangeListingGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ExchangeListing")
             exception.printStackTrace();
     }
 }
@@ -597,9 +597,9 @@ ApiRequest[[**Seq[MetricInfo]**](MetricInfo.md)]
 | **200** | successful operation |  -  |
 
 
-## v2MetricsListingGet
+## marketdataListMetricsV2Listing
 
-> v2MetricsListingGet(): ApiRequest[Seq[MetricInfo]]
+> marketdataListMetricsV2Listing(): ApiRequest[Seq[MetricInfo]]
 
 Listing of all supported metrics
 
@@ -631,7 +631,7 @@ object Example extends App {
 
     val apiInvoker = ApiInvoker()
     val apiInstance = MetricsV2Api("https://rest.coinapi.io")    
-    val request = apiInstance.v2MetricsListingGet()
+    val request = apiInstance.marketdataListMetricsV2Listing()
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -641,14 +641,14 @@ object Example extends App {
             System.out.println(s"Response body: $content")
         
         case Failure(error @ ApiError(code, message, responseContent, cause, headers)) =>
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsListingGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2Listing")
             System.err.println(s"Status code: $code}")
             System.err.println(s"Reason: $responseContent")
             System.err.println(s"Response headers: ${headers.mkString(", ")}")
             error.printStackTrace();
 
         case Failure(exception) => 
-            System.err.println("Exception when calling MetricsV2Api#v2MetricsListingGet")
+            System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2Listing")
             exception.printStackTrace();
     }
 }

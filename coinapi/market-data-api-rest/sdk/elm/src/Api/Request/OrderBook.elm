@@ -64,7 +64,7 @@ v1OrderbooksSymbolIdDepthCurrentGet symbolId_path limitLevels_query auth_token =
 
 {-| Historical data
 
-Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::  :::warning The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the 'date' parameter instead for querying data for a specific day without filter. :::
+Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
 
 -}
 v1OrderbooksSymbolIdHistoryGet : String -> Maybe String -> Maybe String -> Maybe String -> Maybe Int -> Maybe Int -> String -> Api.Request (List Api.Data.V1OrderBook)
