@@ -105,7 +105,7 @@ export class MetricsV2Api {
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
-    public async marketdataListMetricsV2AssetHistory (metricId: string, assetId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<object>;  }> {
+    public async v2MetricsAssetHistoryGet (metricId: string, assetId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<object>;  }> {
         const localVarPath = this.basePath + '/v2/metrics/asset/history';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -120,12 +120,12 @@ export class MetricsV2Api {
 
         // verify required parameter 'metricId' is not null or undefined
         if (metricId === null || metricId === undefined) {
-            throw new Error('Required parameter metricId was null or undefined when calling marketdataListMetricsV2AssetHistory.');
+            throw new Error('Required parameter metricId was null or undefined when calling v2MetricsAssetHistoryGet.');
         }
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
-            throw new Error('Required parameter assetId was null or undefined when calling marketdataListMetricsV2AssetHistory.');
+            throw new Error('Required parameter assetId was null or undefined when calling v2MetricsAssetHistoryGet.');
         }
 
         if (metricId !== undefined) {
@@ -212,7 +212,7 @@ export class MetricsV2Api {
      * @summary Listing of metrics available for specific asset
      * @param assetId Asset identifier (e.g., USDC, USDT)
      */
-    public async marketdataListMetricsV2AssetListing (assetId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1MetricInfo>;  }> {
+    public async v2MetricsAssetListingGet (assetId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1MetricInfo>;  }> {
         const localVarPath = this.basePath + '/v2/metrics/asset/listing';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -227,7 +227,7 @@ export class MetricsV2Api {
 
         // verify required parameter 'assetId' is not null or undefined
         if (assetId === null || assetId === undefined) {
-            throw new Error('Required parameter assetId was null or undefined when calling marketdataListMetricsV2AssetListing.');
+            throw new Error('Required parameter assetId was null or undefined when calling v2MetricsAssetListingGet.');
         }
 
         if (assetId !== undefined) {
@@ -296,7 +296,7 @@ export class MetricsV2Api {
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
-    public async marketdataListMetricsV2ChainHistory (metricId: string, chainId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<object>;  }> {
+    public async v2MetricsChainHistoryGet (metricId: string, chainId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<object>;  }> {
         const localVarPath = this.basePath + '/v2/metrics/chain/history';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -311,12 +311,12 @@ export class MetricsV2Api {
 
         // verify required parameter 'metricId' is not null or undefined
         if (metricId === null || metricId === undefined) {
-            throw new Error('Required parameter metricId was null or undefined when calling marketdataListMetricsV2ChainHistory.');
+            throw new Error('Required parameter metricId was null or undefined when calling v2MetricsChainHistoryGet.');
         }
 
         // verify required parameter 'chainId' is not null or undefined
         if (chainId === null || chainId === undefined) {
-            throw new Error('Required parameter chainId was null or undefined when calling marketdataListMetricsV2ChainHistory.');
+            throw new Error('Required parameter chainId was null or undefined when calling v2MetricsChainHistoryGet.');
         }
 
         if (metricId !== undefined) {
@@ -403,7 +403,7 @@ export class MetricsV2Api {
      * @summary Listing of metrics available for specific chain
      * @param chainId Chain identifier (e.g., ETHEREUM, ARBITRUM)
      */
-    public async marketdataListMetricsV2ChainListing (chainId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1MetricInfo>;  }> {
+    public async v2MetricsChainListingGet (chainId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1MetricInfo>;  }> {
         const localVarPath = this.basePath + '/v2/metrics/chain/listing';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -418,7 +418,7 @@ export class MetricsV2Api {
 
         // verify required parameter 'chainId' is not null or undefined
         if (chainId === null || chainId === undefined) {
-            throw new Error('Required parameter chainId was null or undefined when calling marketdataListMetricsV2ChainListing.');
+            throw new Error('Required parameter chainId was null or undefined when calling v2MetricsChainListingGet.');
         }
 
         if (chainId !== undefined) {
@@ -487,7 +487,7 @@ export class MetricsV2Api {
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
-    public async marketdataListMetricsV2ExchangeHistory (metricId: string, exchangeId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<object>;  }> {
+    public async v2MetricsExchangeHistoryGet (metricId: string, exchangeId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<object>;  }> {
         const localVarPath = this.basePath + '/v2/metrics/exchange/history';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -502,12 +502,12 @@ export class MetricsV2Api {
 
         // verify required parameter 'metricId' is not null or undefined
         if (metricId === null || metricId === undefined) {
-            throw new Error('Required parameter metricId was null or undefined when calling marketdataListMetricsV2ExchangeHistory.');
+            throw new Error('Required parameter metricId was null or undefined when calling v2MetricsExchangeHistoryGet.');
         }
 
         // verify required parameter 'exchangeId' is not null or undefined
         if (exchangeId === null || exchangeId === undefined) {
-            throw new Error('Required parameter exchangeId was null or undefined when calling marketdataListMetricsV2ExchangeHistory.');
+            throw new Error('Required parameter exchangeId was null or undefined when calling v2MetricsExchangeHistoryGet.');
         }
 
         if (metricId !== undefined) {
@@ -594,7 +594,7 @@ export class MetricsV2Api {
      * @summary Listing of metrics available for specific exchange
      * @param exchangeId Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
      */
-    public async marketdataListMetricsV2ExchangeListing (exchangeId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1MetricInfo>;  }> {
+    public async v2MetricsExchangeListingGet (exchangeId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1MetricInfo>;  }> {
         const localVarPath = this.basePath + '/v2/metrics/exchange/listing';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -609,7 +609,7 @@ export class MetricsV2Api {
 
         // verify required parameter 'exchangeId' is not null or undefined
         if (exchangeId === null || exchangeId === undefined) {
-            throw new Error('Required parameter exchangeId was null or undefined when calling marketdataListMetricsV2ExchangeListing.');
+            throw new Error('Required parameter exchangeId was null or undefined when calling v2MetricsExchangeListingGet.');
         }
 
         if (exchangeId !== undefined) {
@@ -671,7 +671,7 @@ export class MetricsV2Api {
      * Get all metrics available in the system.
      * @summary Listing of all supported metrics
      */
-    public async marketdataListMetricsV2Listing (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1MetricInfo>;  }> {
+    public async v2MetricsListingGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1MetricInfo>;  }> {
         const localVarPath = this.basePath + '/v2/metrics/listing';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);

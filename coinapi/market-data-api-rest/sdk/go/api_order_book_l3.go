@@ -175,8 +175,7 @@ func (r ApiV1Orderbooks3SymbolIdCurrentGetRequest) Execute() (*V1OrderBookBase, 
 /*
 V1Orderbooks3SymbolIdCurrentGet Current order book by symbol_id
 
-Retrieves the current L3 order book for the specified symbol.
-L3 order books include individual order IDs for each price level.
+Retrieves the current order book for the specified symbol.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param symbolId The symbol ID (from the Metadata -> Symbols)

@@ -50,15 +50,15 @@ export class MetricsV2Service extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public marketdataListMetricsV2AssetHistory(metricId: string, assetId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<object>>;
-    public marketdataListMetricsV2AssetHistory(metricId: string, assetId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<object>>>;
-    public marketdataListMetricsV2AssetHistory(metricId: string, assetId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<object>>>;
-    public marketdataListMetricsV2AssetHistory(metricId: string, assetId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v2MetricsAssetHistoryGet(metricId: string, assetId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<object>>;
+    public v2MetricsAssetHistoryGet(metricId: string, assetId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<object>>>;
+    public v2MetricsAssetHistoryGet(metricId: string, assetId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<object>>>;
+    public v2MetricsAssetHistoryGet(metricId: string, assetId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (metricId === null || metricId === undefined) {
-            throw new Error('Required parameter metricId was null or undefined when calling marketdataListMetricsV2AssetHistory.');
+            throw new Error('Required parameter metricId was null or undefined when calling v2MetricsAssetHistoryGet.');
         }
         if (assetId === null || assetId === undefined) {
-            throw new Error('Required parameter assetId was null or undefined when calling marketdataListMetricsV2AssetHistory.');
+            throw new Error('Required parameter assetId was null or undefined when calling v2MetricsAssetHistoryGet.');
         }
 
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
@@ -185,12 +185,12 @@ export class MetricsV2Service extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public marketdataListMetricsV2AssetListing(assetId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1MetricInfo>>;
-    public marketdataListMetricsV2AssetListing(assetId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1MetricInfo>>>;
-    public marketdataListMetricsV2AssetListing(assetId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1MetricInfo>>>;
-    public marketdataListMetricsV2AssetListing(assetId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v2MetricsAssetListingGet(assetId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1MetricInfo>>;
+    public v2MetricsAssetListingGet(assetId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1MetricInfo>>>;
+    public v2MetricsAssetListingGet(assetId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1MetricInfo>>>;
+    public v2MetricsAssetListingGet(assetId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (assetId === null || assetId === undefined) {
-            throw new Error('Required parameter assetId was null or undefined when calling marketdataListMetricsV2AssetListing.');
+            throw new Error('Required parameter assetId was null or undefined when calling v2MetricsAssetListingGet.');
         }
 
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
@@ -269,15 +269,15 @@ export class MetricsV2Service extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public marketdataListMetricsV2ChainHistory(metricId: string, chainId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<object>>;
-    public marketdataListMetricsV2ChainHistory(metricId: string, chainId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<object>>>;
-    public marketdataListMetricsV2ChainHistory(metricId: string, chainId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<object>>>;
-    public marketdataListMetricsV2ChainHistory(metricId: string, chainId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v2MetricsChainHistoryGet(metricId: string, chainId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<object>>;
+    public v2MetricsChainHistoryGet(metricId: string, chainId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<object>>>;
+    public v2MetricsChainHistoryGet(metricId: string, chainId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<object>>>;
+    public v2MetricsChainHistoryGet(metricId: string, chainId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (metricId === null || metricId === undefined) {
-            throw new Error('Required parameter metricId was null or undefined when calling marketdataListMetricsV2ChainHistory.');
+            throw new Error('Required parameter metricId was null or undefined when calling v2MetricsChainHistoryGet.');
         }
         if (chainId === null || chainId === undefined) {
-            throw new Error('Required parameter chainId was null or undefined when calling marketdataListMetricsV2ChainHistory.');
+            throw new Error('Required parameter chainId was null or undefined when calling v2MetricsChainHistoryGet.');
         }
 
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
@@ -404,12 +404,12 @@ export class MetricsV2Service extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public marketdataListMetricsV2ChainListing(chainId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1MetricInfo>>;
-    public marketdataListMetricsV2ChainListing(chainId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1MetricInfo>>>;
-    public marketdataListMetricsV2ChainListing(chainId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1MetricInfo>>>;
-    public marketdataListMetricsV2ChainListing(chainId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v2MetricsChainListingGet(chainId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1MetricInfo>>;
+    public v2MetricsChainListingGet(chainId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1MetricInfo>>>;
+    public v2MetricsChainListingGet(chainId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1MetricInfo>>>;
+    public v2MetricsChainListingGet(chainId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (chainId === null || chainId === undefined) {
-            throw new Error('Required parameter chainId was null or undefined when calling marketdataListMetricsV2ChainListing.');
+            throw new Error('Required parameter chainId was null or undefined when calling v2MetricsChainListingGet.');
         }
 
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
@@ -488,15 +488,15 @@ export class MetricsV2Service extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public marketdataListMetricsV2ExchangeHistory(metricId: string, exchangeId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<object>>;
-    public marketdataListMetricsV2ExchangeHistory(metricId: string, exchangeId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<object>>>;
-    public marketdataListMetricsV2ExchangeHistory(metricId: string, exchangeId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<object>>>;
-    public marketdataListMetricsV2ExchangeHistory(metricId: string, exchangeId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v2MetricsExchangeHistoryGet(metricId: string, exchangeId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<object>>;
+    public v2MetricsExchangeHistoryGet(metricId: string, exchangeId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<object>>>;
+    public v2MetricsExchangeHistoryGet(metricId: string, exchangeId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<object>>>;
+    public v2MetricsExchangeHistoryGet(metricId: string, exchangeId: string, timeStart?: string, timeEnd?: string, timeFormat?: string, periodId?: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (metricId === null || metricId === undefined) {
-            throw new Error('Required parameter metricId was null or undefined when calling marketdataListMetricsV2ExchangeHistory.');
+            throw new Error('Required parameter metricId was null or undefined when calling v2MetricsExchangeHistoryGet.');
         }
         if (exchangeId === null || exchangeId === undefined) {
-            throw new Error('Required parameter exchangeId was null or undefined when calling marketdataListMetricsV2ExchangeHistory.');
+            throw new Error('Required parameter exchangeId was null or undefined when calling v2MetricsExchangeHistoryGet.');
         }
 
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
@@ -623,12 +623,12 @@ export class MetricsV2Service extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public marketdataListMetricsV2ExchangeListing(exchangeId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1MetricInfo>>;
-    public marketdataListMetricsV2ExchangeListing(exchangeId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1MetricInfo>>>;
-    public marketdataListMetricsV2ExchangeListing(exchangeId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1MetricInfo>>>;
-    public marketdataListMetricsV2ExchangeListing(exchangeId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v2MetricsExchangeListingGet(exchangeId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1MetricInfo>>;
+    public v2MetricsExchangeListingGet(exchangeId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1MetricInfo>>>;
+    public v2MetricsExchangeListingGet(exchangeId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1MetricInfo>>>;
+    public v2MetricsExchangeListingGet(exchangeId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (exchangeId === null || exchangeId === undefined) {
-            throw new Error('Required parameter exchangeId was null or undefined when calling marketdataListMetricsV2ExchangeListing.');
+            throw new Error('Required parameter exchangeId was null or undefined when calling v2MetricsExchangeListingGet.');
         }
 
         let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
@@ -700,10 +700,10 @@ export class MetricsV2Service extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public marketdataListMetricsV2Listing(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1MetricInfo>>;
-    public marketdataListMetricsV2Listing(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1MetricInfo>>>;
-    public marketdataListMetricsV2Listing(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1MetricInfo>>>;
-    public marketdataListMetricsV2Listing(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v2MetricsListingGet(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1MetricInfo>>;
+    public v2MetricsListingGet(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1MetricInfo>>>;
+    public v2MetricsListingGet(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1MetricInfo>>>;
+    public v2MetricsListingGet(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
 
         let localVarHeaders = this.defaultHeaders;
 

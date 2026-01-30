@@ -74,7 +74,7 @@ public class MetricsV2Api {
     }
 
     /**
-     * Build call for marketdataListMetricsV2AssetHistory
+     * Build call for v2MetricsAssetHistoryGet
      * @param metricId Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;) (required)
      * @param assetId Asset identifier (e.g., &#x60;USDC&#x60;, &#x60;USDT&#x60;) (required)
      * @param timeStart Starting time in ISO 8601 (optional)
@@ -94,7 +94,7 @@ public class MetricsV2Api {
         <tr><td> 500 </td><td> Internal server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2AssetHistoryCall(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String assetId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2MetricsAssetHistoryGetCall(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String assetId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -170,18 +170,18 @@ public class MetricsV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call marketdataListMetricsV2AssetHistoryValidateBeforeCall(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String assetId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2MetricsAssetHistoryGetValidateBeforeCall(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String assetId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'metricId' is set
         if (metricId == null) {
-            throw new ApiException("Missing the required parameter 'metricId' when calling marketdataListMetricsV2AssetHistory(Async)");
+            throw new ApiException("Missing the required parameter 'metricId' when calling v2MetricsAssetHistoryGet(Async)");
         }
 
         // verify the required parameter 'assetId' is set
         if (assetId == null) {
-            throw new ApiException("Missing the required parameter 'assetId' when calling marketdataListMetricsV2AssetHistory(Async)");
+            throw new ApiException("Missing the required parameter 'assetId' when calling v2MetricsAssetHistoryGet(Async)");
         }
 
-        return marketdataListMetricsV2AssetHistoryCall(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit, _callback);
+        return v2MetricsAssetHistoryGetCall(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit, _callback);
 
     }
 
@@ -206,8 +206,8 @@ public class MetricsV2Api {
         <tr><td> 500 </td><td> Internal server error. </td><td>  -  </td></tr>
      </table>
      */
-    public List<Object> marketdataListMetricsV2AssetHistory(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String assetId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<Object>> localVarResp = marketdataListMetricsV2AssetHistoryWithHttpInfo(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
+    public List<Object> v2MetricsAssetHistoryGet(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String assetId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<List<Object>> localVarResp = v2MetricsAssetHistoryGetWithHttpInfo(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
         return localVarResp.getData();
     }
 
@@ -232,8 +232,8 @@ public class MetricsV2Api {
         <tr><td> 500 </td><td> Internal server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Object>> marketdataListMetricsV2AssetHistoryWithHttpInfo(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String assetId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = marketdataListMetricsV2AssetHistoryValidateBeforeCall(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit, null);
+    public ApiResponse<List<Object>> v2MetricsAssetHistoryGetWithHttpInfo(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String assetId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = v2MetricsAssetHistoryGetValidateBeforeCall(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit, null);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -260,15 +260,15 @@ public class MetricsV2Api {
         <tr><td> 500 </td><td> Internal server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2AssetHistoryAsync(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String assetId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback<List<Object>> _callback) throws ApiException {
+    public okhttp3.Call v2MetricsAssetHistoryGetAsync(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String assetId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback<List<Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = marketdataListMetricsV2AssetHistoryValidateBeforeCall(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit, _callback);
+        okhttp3.Call localVarCall = v2MetricsAssetHistoryGetValidateBeforeCall(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit, _callback);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for marketdataListMetricsV2AssetListing
+     * Build call for v2MetricsAssetListingGet
      * @param assetId Asset identifier (e.g., USDC, USDT) (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -280,7 +280,7 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2AssetListingCall(@javax.annotation.Nonnull String assetId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2MetricsAssetListingGetCall(@javax.annotation.Nonnull String assetId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -332,13 +332,13 @@ public class MetricsV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call marketdataListMetricsV2AssetListingValidateBeforeCall(@javax.annotation.Nonnull String assetId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2MetricsAssetListingGetValidateBeforeCall(@javax.annotation.Nonnull String assetId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'assetId' is set
         if (assetId == null) {
-            throw new ApiException("Missing the required parameter 'assetId' when calling marketdataListMetricsV2AssetListing(Async)");
+            throw new ApiException("Missing the required parameter 'assetId' when calling v2MetricsAssetListingGet(Async)");
         }
 
-        return marketdataListMetricsV2AssetListingCall(assetId, _callback);
+        return v2MetricsAssetListingGetCall(assetId, _callback);
 
     }
 
@@ -355,8 +355,8 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1MetricInfo> marketdataListMetricsV2AssetListing(@javax.annotation.Nonnull String assetId) throws ApiException {
-        ApiResponse<List<V1MetricInfo>> localVarResp = marketdataListMetricsV2AssetListingWithHttpInfo(assetId);
+    public List<V1MetricInfo> v2MetricsAssetListingGet(@javax.annotation.Nonnull String assetId) throws ApiException {
+        ApiResponse<List<V1MetricInfo>> localVarResp = v2MetricsAssetListingGetWithHttpInfo(assetId);
         return localVarResp.getData();
     }
 
@@ -373,8 +373,8 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1MetricInfo>> marketdataListMetricsV2AssetListingWithHttpInfo(@javax.annotation.Nonnull String assetId) throws ApiException {
-        okhttp3.Call localVarCall = marketdataListMetricsV2AssetListingValidateBeforeCall(assetId, null);
+    public ApiResponse<List<V1MetricInfo>> v2MetricsAssetListingGetWithHttpInfo(@javax.annotation.Nonnull String assetId) throws ApiException {
+        okhttp3.Call localVarCall = v2MetricsAssetListingGetValidateBeforeCall(assetId, null);
         Type localVarReturnType = new TypeToken<List<V1MetricInfo>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -393,15 +393,15 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2AssetListingAsync(@javax.annotation.Nonnull String assetId, final ApiCallback<List<V1MetricInfo>> _callback) throws ApiException {
+    public okhttp3.Call v2MetricsAssetListingGetAsync(@javax.annotation.Nonnull String assetId, final ApiCallback<List<V1MetricInfo>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = marketdataListMetricsV2AssetListingValidateBeforeCall(assetId, _callback);
+        okhttp3.Call localVarCall = v2MetricsAssetListingGetValidateBeforeCall(assetId, _callback);
         Type localVarReturnType = new TypeToken<List<V1MetricInfo>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for marketdataListMetricsV2ChainHistory
+     * Build call for v2MetricsChainHistoryGet
      * @param metricId Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;) (required)
      * @param chainId Chain identifier (e.g., &#x60;Ethereum&#x60;, &#x60;Arbitrum&#x60;) (required)
      * @param timeStart Starting time in ISO 8601 (optional)
@@ -421,7 +421,7 @@ public class MetricsV2Api {
         <tr><td> 500 </td><td> Internal server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2ChainHistoryCall(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String chainId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2MetricsChainHistoryGetCall(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String chainId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -497,18 +497,18 @@ public class MetricsV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call marketdataListMetricsV2ChainHistoryValidateBeforeCall(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String chainId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2MetricsChainHistoryGetValidateBeforeCall(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String chainId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'metricId' is set
         if (metricId == null) {
-            throw new ApiException("Missing the required parameter 'metricId' when calling marketdataListMetricsV2ChainHistory(Async)");
+            throw new ApiException("Missing the required parameter 'metricId' when calling v2MetricsChainHistoryGet(Async)");
         }
 
         // verify the required parameter 'chainId' is set
         if (chainId == null) {
-            throw new ApiException("Missing the required parameter 'chainId' when calling marketdataListMetricsV2ChainHistory(Async)");
+            throw new ApiException("Missing the required parameter 'chainId' when calling v2MetricsChainHistoryGet(Async)");
         }
 
-        return marketdataListMetricsV2ChainHistoryCall(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit, _callback);
+        return v2MetricsChainHistoryGetCall(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit, _callback);
 
     }
 
@@ -533,8 +533,8 @@ public class MetricsV2Api {
         <tr><td> 500 </td><td> Internal server error. </td><td>  -  </td></tr>
      </table>
      */
-    public List<Object> marketdataListMetricsV2ChainHistory(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String chainId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<Object>> localVarResp = marketdataListMetricsV2ChainHistoryWithHttpInfo(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
+    public List<Object> v2MetricsChainHistoryGet(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String chainId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<List<Object>> localVarResp = v2MetricsChainHistoryGetWithHttpInfo(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
         return localVarResp.getData();
     }
 
@@ -559,8 +559,8 @@ public class MetricsV2Api {
         <tr><td> 500 </td><td> Internal server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Object>> marketdataListMetricsV2ChainHistoryWithHttpInfo(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String chainId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = marketdataListMetricsV2ChainHistoryValidateBeforeCall(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit, null);
+    public ApiResponse<List<Object>> v2MetricsChainHistoryGetWithHttpInfo(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String chainId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = v2MetricsChainHistoryGetValidateBeforeCall(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit, null);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -587,15 +587,15 @@ public class MetricsV2Api {
         <tr><td> 500 </td><td> Internal server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2ChainHistoryAsync(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String chainId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback<List<Object>> _callback) throws ApiException {
+    public okhttp3.Call v2MetricsChainHistoryGetAsync(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String chainId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback<List<Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = marketdataListMetricsV2ChainHistoryValidateBeforeCall(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit, _callback);
+        okhttp3.Call localVarCall = v2MetricsChainHistoryGetValidateBeforeCall(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit, _callback);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for marketdataListMetricsV2ChainListing
+     * Build call for v2MetricsChainListingGet
      * @param chainId Chain identifier (e.g., ETHEREUM, ARBITRUM) (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -607,7 +607,7 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2ChainListingCall(@javax.annotation.Nonnull String chainId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2MetricsChainListingGetCall(@javax.annotation.Nonnull String chainId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -659,13 +659,13 @@ public class MetricsV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call marketdataListMetricsV2ChainListingValidateBeforeCall(@javax.annotation.Nonnull String chainId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2MetricsChainListingGetValidateBeforeCall(@javax.annotation.Nonnull String chainId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'chainId' is set
         if (chainId == null) {
-            throw new ApiException("Missing the required parameter 'chainId' when calling marketdataListMetricsV2ChainListing(Async)");
+            throw new ApiException("Missing the required parameter 'chainId' when calling v2MetricsChainListingGet(Async)");
         }
 
-        return marketdataListMetricsV2ChainListingCall(chainId, _callback);
+        return v2MetricsChainListingGetCall(chainId, _callback);
 
     }
 
@@ -682,8 +682,8 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1MetricInfo> marketdataListMetricsV2ChainListing(@javax.annotation.Nonnull String chainId) throws ApiException {
-        ApiResponse<List<V1MetricInfo>> localVarResp = marketdataListMetricsV2ChainListingWithHttpInfo(chainId);
+    public List<V1MetricInfo> v2MetricsChainListingGet(@javax.annotation.Nonnull String chainId) throws ApiException {
+        ApiResponse<List<V1MetricInfo>> localVarResp = v2MetricsChainListingGetWithHttpInfo(chainId);
         return localVarResp.getData();
     }
 
@@ -700,8 +700,8 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1MetricInfo>> marketdataListMetricsV2ChainListingWithHttpInfo(@javax.annotation.Nonnull String chainId) throws ApiException {
-        okhttp3.Call localVarCall = marketdataListMetricsV2ChainListingValidateBeforeCall(chainId, null);
+    public ApiResponse<List<V1MetricInfo>> v2MetricsChainListingGetWithHttpInfo(@javax.annotation.Nonnull String chainId) throws ApiException {
+        okhttp3.Call localVarCall = v2MetricsChainListingGetValidateBeforeCall(chainId, null);
         Type localVarReturnType = new TypeToken<List<V1MetricInfo>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -720,15 +720,15 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2ChainListingAsync(@javax.annotation.Nonnull String chainId, final ApiCallback<List<V1MetricInfo>> _callback) throws ApiException {
+    public okhttp3.Call v2MetricsChainListingGetAsync(@javax.annotation.Nonnull String chainId, final ApiCallback<List<V1MetricInfo>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = marketdataListMetricsV2ChainListingValidateBeforeCall(chainId, _callback);
+        okhttp3.Call localVarCall = v2MetricsChainListingGetValidateBeforeCall(chainId, _callback);
         Type localVarReturnType = new TypeToken<List<V1MetricInfo>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for marketdataListMetricsV2ExchangeHistory
+     * Build call for v2MetricsExchangeHistoryGet
      * @param metricId Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;) (required)
      * @param exchangeId Exchange identifier (e.g., &#x60;BINANCE&#x60;, &#x60;UNISWAP-V3-ETHEREUM&#x60;) (required)
      * @param timeStart Starting time in ISO 8601 (optional)
@@ -748,7 +748,7 @@ public class MetricsV2Api {
         <tr><td> 500 </td><td> Internal server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2ExchangeHistoryCall(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2MetricsExchangeHistoryGetCall(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -824,18 +824,18 @@ public class MetricsV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call marketdataListMetricsV2ExchangeHistoryValidateBeforeCall(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2MetricsExchangeHistoryGetValidateBeforeCall(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'metricId' is set
         if (metricId == null) {
-            throw new ApiException("Missing the required parameter 'metricId' when calling marketdataListMetricsV2ExchangeHistory(Async)");
+            throw new ApiException("Missing the required parameter 'metricId' when calling v2MetricsExchangeHistoryGet(Async)");
         }
 
         // verify the required parameter 'exchangeId' is set
         if (exchangeId == null) {
-            throw new ApiException("Missing the required parameter 'exchangeId' when calling marketdataListMetricsV2ExchangeHistory(Async)");
+            throw new ApiException("Missing the required parameter 'exchangeId' when calling v2MetricsExchangeHistoryGet(Async)");
         }
 
-        return marketdataListMetricsV2ExchangeHistoryCall(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit, _callback);
+        return v2MetricsExchangeHistoryGetCall(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit, _callback);
 
     }
 
@@ -860,8 +860,8 @@ public class MetricsV2Api {
         <tr><td> 500 </td><td> Internal server error. </td><td>  -  </td></tr>
      </table>
      */
-    public List<Object> marketdataListMetricsV2ExchangeHistory(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<Object>> localVarResp = marketdataListMetricsV2ExchangeHistoryWithHttpInfo(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
+    public List<Object> v2MetricsExchangeHistoryGet(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<List<Object>> localVarResp = v2MetricsExchangeHistoryGetWithHttpInfo(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
         return localVarResp.getData();
     }
 
@@ -886,8 +886,8 @@ public class MetricsV2Api {
         <tr><td> 500 </td><td> Internal server error. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Object>> marketdataListMetricsV2ExchangeHistoryWithHttpInfo(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = marketdataListMetricsV2ExchangeHistoryValidateBeforeCall(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit, null);
+    public ApiResponse<List<Object>> v2MetricsExchangeHistoryGetWithHttpInfo(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = v2MetricsExchangeHistoryGetValidateBeforeCall(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit, null);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -914,15 +914,15 @@ public class MetricsV2Api {
         <tr><td> 500 </td><td> Internal server error. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2ExchangeHistoryAsync(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback<List<Object>> _callback) throws ApiException {
+    public okhttp3.Call v2MetricsExchangeHistoryGetAsync(@javax.annotation.Nonnull String metricId, @javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable String timeFormat, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback<List<Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = marketdataListMetricsV2ExchangeHistoryValidateBeforeCall(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit, _callback);
+        okhttp3.Call localVarCall = v2MetricsExchangeHistoryGetValidateBeforeCall(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit, _callback);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for marketdataListMetricsV2ExchangeListing
+     * Build call for v2MetricsExchangeListingGet
      * @param exchangeId Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM) (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -934,7 +934,7 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2ExchangeListingCall(@javax.annotation.Nonnull String exchangeId, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2MetricsExchangeListingGetCall(@javax.annotation.Nonnull String exchangeId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -986,13 +986,13 @@ public class MetricsV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call marketdataListMetricsV2ExchangeListingValidateBeforeCall(@javax.annotation.Nonnull String exchangeId, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v2MetricsExchangeListingGetValidateBeforeCall(@javax.annotation.Nonnull String exchangeId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'exchangeId' is set
         if (exchangeId == null) {
-            throw new ApiException("Missing the required parameter 'exchangeId' when calling marketdataListMetricsV2ExchangeListing(Async)");
+            throw new ApiException("Missing the required parameter 'exchangeId' when calling v2MetricsExchangeListingGet(Async)");
         }
 
-        return marketdataListMetricsV2ExchangeListingCall(exchangeId, _callback);
+        return v2MetricsExchangeListingGetCall(exchangeId, _callback);
 
     }
 
@@ -1009,8 +1009,8 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1MetricInfo> marketdataListMetricsV2ExchangeListing(@javax.annotation.Nonnull String exchangeId) throws ApiException {
-        ApiResponse<List<V1MetricInfo>> localVarResp = marketdataListMetricsV2ExchangeListingWithHttpInfo(exchangeId);
+    public List<V1MetricInfo> v2MetricsExchangeListingGet(@javax.annotation.Nonnull String exchangeId) throws ApiException {
+        ApiResponse<List<V1MetricInfo>> localVarResp = v2MetricsExchangeListingGetWithHttpInfo(exchangeId);
         return localVarResp.getData();
     }
 
@@ -1027,8 +1027,8 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1MetricInfo>> marketdataListMetricsV2ExchangeListingWithHttpInfo(@javax.annotation.Nonnull String exchangeId) throws ApiException {
-        okhttp3.Call localVarCall = marketdataListMetricsV2ExchangeListingValidateBeforeCall(exchangeId, null);
+    public ApiResponse<List<V1MetricInfo>> v2MetricsExchangeListingGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId) throws ApiException {
+        okhttp3.Call localVarCall = v2MetricsExchangeListingGetValidateBeforeCall(exchangeId, null);
         Type localVarReturnType = new TypeToken<List<V1MetricInfo>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1047,15 +1047,15 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2ExchangeListingAsync(@javax.annotation.Nonnull String exchangeId, final ApiCallback<List<V1MetricInfo>> _callback) throws ApiException {
+    public okhttp3.Call v2MetricsExchangeListingGetAsync(@javax.annotation.Nonnull String exchangeId, final ApiCallback<List<V1MetricInfo>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = marketdataListMetricsV2ExchangeListingValidateBeforeCall(exchangeId, _callback);
+        okhttp3.Call localVarCall = v2MetricsExchangeListingGetValidateBeforeCall(exchangeId, _callback);
         Type localVarReturnType = new TypeToken<List<V1MetricInfo>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for marketdataListMetricsV2Listing
+     * Build call for v2MetricsListingGet
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1066,7 +1066,7 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2ListingCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v2MetricsListingGetCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1114,8 +1114,8 @@ public class MetricsV2Api {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call marketdataListMetricsV2ListingValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return marketdataListMetricsV2ListingCall(_callback);
+    private okhttp3.Call v2MetricsListingGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return v2MetricsListingGetCall(_callback);
 
     }
 
@@ -1131,8 +1131,8 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1MetricInfo> marketdataListMetricsV2Listing() throws ApiException {
-        ApiResponse<List<V1MetricInfo>> localVarResp = marketdataListMetricsV2ListingWithHttpInfo();
+    public List<V1MetricInfo> v2MetricsListingGet() throws ApiException {
+        ApiResponse<List<V1MetricInfo>> localVarResp = v2MetricsListingGetWithHttpInfo();
         return localVarResp.getData();
     }
 
@@ -1148,8 +1148,8 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1MetricInfo>> marketdataListMetricsV2ListingWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = marketdataListMetricsV2ListingValidateBeforeCall(null);
+    public ApiResponse<List<V1MetricInfo>> v2MetricsListingGetWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = v2MetricsListingGetValidateBeforeCall(null);
         Type localVarReturnType = new TypeToken<List<V1MetricInfo>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1167,9 +1167,9 @@ public class MetricsV2Api {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call marketdataListMetricsV2ListingAsync(final ApiCallback<List<V1MetricInfo>> _callback) throws ApiException {
+    public okhttp3.Call v2MetricsListingGetAsync(final ApiCallback<List<V1MetricInfo>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = marketdataListMetricsV2ListingValidateBeforeCall(_callback);
+        okhttp3.Call localVarCall = v2MetricsListingGetValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<List<V1MetricInfo>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

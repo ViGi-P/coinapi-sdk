@@ -30,70 +30,70 @@ my $api = WWW::OpenAPIClient::MetricsV2Api->new();
 isa_ok($api, 'WWW::OpenAPIClient::MetricsV2Api');
 
 #
-# marketdata_list_metrics_v2_asset_history test
+# v2_metrics_asset_history_get test
 #
 # uncomment below and update the test
-#my $marketdata_list_metrics_v2_asset_history_metric_id = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_asset_history_asset_id = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_asset_history_time_start = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_asset_history_time_end = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_asset_history_time_format = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_asset_history_period_id = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_asset_history_limit = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_asset_history_result = $api->marketdata_list_metrics_v2_asset_history(metric_id => $marketdata_list_metrics_v2_asset_history_metric_id, asset_id => $marketdata_list_metrics_v2_asset_history_asset_id, time_start => $marketdata_list_metrics_v2_asset_history_time_start, time_end => $marketdata_list_metrics_v2_asset_history_time_end, time_format => $marketdata_list_metrics_v2_asset_history_time_format, period_id => $marketdata_list_metrics_v2_asset_history_period_id, limit => $marketdata_list_metrics_v2_asset_history_limit);
+#my $v2_metrics_asset_history_get_metric_id = undef; # replace NULL with a proper value
+#my $v2_metrics_asset_history_get_asset_id = undef; # replace NULL with a proper value
+#my $v2_metrics_asset_history_get_time_start = undef; # replace NULL with a proper value
+#my $v2_metrics_asset_history_get_time_end = undef; # replace NULL with a proper value
+#my $v2_metrics_asset_history_get_time_format = undef; # replace NULL with a proper value
+#my $v2_metrics_asset_history_get_period_id = undef; # replace NULL with a proper value
+#my $v2_metrics_asset_history_get_limit = undef; # replace NULL with a proper value
+#my $v2_metrics_asset_history_get_result = $api->v2_metrics_asset_history_get(metric_id => $v2_metrics_asset_history_get_metric_id, asset_id => $v2_metrics_asset_history_get_asset_id, time_start => $v2_metrics_asset_history_get_time_start, time_end => $v2_metrics_asset_history_get_time_end, time_format => $v2_metrics_asset_history_get_time_format, period_id => $v2_metrics_asset_history_get_period_id, limit => $v2_metrics_asset_history_get_limit);
 
 #
-# marketdata_list_metrics_v2_asset_listing test
+# v2_metrics_asset_listing_get test
 #
 # uncomment below and update the test
-#my $marketdata_list_metrics_v2_asset_listing_asset_id = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_asset_listing_result = $api->marketdata_list_metrics_v2_asset_listing(asset_id => $marketdata_list_metrics_v2_asset_listing_asset_id);
+#my $v2_metrics_asset_listing_get_asset_id = undef; # replace NULL with a proper value
+#my $v2_metrics_asset_listing_get_result = $api->v2_metrics_asset_listing_get(asset_id => $v2_metrics_asset_listing_get_asset_id);
 
 #
-# marketdata_list_metrics_v2_chain_history test
+# v2_metrics_chain_history_get test
 #
 # uncomment below and update the test
-#my $marketdata_list_metrics_v2_chain_history_metric_id = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_chain_history_chain_id = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_chain_history_time_start = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_chain_history_time_end = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_chain_history_time_format = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_chain_history_period_id = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_chain_history_limit = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_chain_history_result = $api->marketdata_list_metrics_v2_chain_history(metric_id => $marketdata_list_metrics_v2_chain_history_metric_id, chain_id => $marketdata_list_metrics_v2_chain_history_chain_id, time_start => $marketdata_list_metrics_v2_chain_history_time_start, time_end => $marketdata_list_metrics_v2_chain_history_time_end, time_format => $marketdata_list_metrics_v2_chain_history_time_format, period_id => $marketdata_list_metrics_v2_chain_history_period_id, limit => $marketdata_list_metrics_v2_chain_history_limit);
+#my $v2_metrics_chain_history_get_metric_id = undef; # replace NULL with a proper value
+#my $v2_metrics_chain_history_get_chain_id = undef; # replace NULL with a proper value
+#my $v2_metrics_chain_history_get_time_start = undef; # replace NULL with a proper value
+#my $v2_metrics_chain_history_get_time_end = undef; # replace NULL with a proper value
+#my $v2_metrics_chain_history_get_time_format = undef; # replace NULL with a proper value
+#my $v2_metrics_chain_history_get_period_id = undef; # replace NULL with a proper value
+#my $v2_metrics_chain_history_get_limit = undef; # replace NULL with a proper value
+#my $v2_metrics_chain_history_get_result = $api->v2_metrics_chain_history_get(metric_id => $v2_metrics_chain_history_get_metric_id, chain_id => $v2_metrics_chain_history_get_chain_id, time_start => $v2_metrics_chain_history_get_time_start, time_end => $v2_metrics_chain_history_get_time_end, time_format => $v2_metrics_chain_history_get_time_format, period_id => $v2_metrics_chain_history_get_period_id, limit => $v2_metrics_chain_history_get_limit);
 
 #
-# marketdata_list_metrics_v2_chain_listing test
+# v2_metrics_chain_listing_get test
 #
 # uncomment below and update the test
-#my $marketdata_list_metrics_v2_chain_listing_chain_id = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_chain_listing_result = $api->marketdata_list_metrics_v2_chain_listing(chain_id => $marketdata_list_metrics_v2_chain_listing_chain_id);
+#my $v2_metrics_chain_listing_get_chain_id = undef; # replace NULL with a proper value
+#my $v2_metrics_chain_listing_get_result = $api->v2_metrics_chain_listing_get(chain_id => $v2_metrics_chain_listing_get_chain_id);
 
 #
-# marketdata_list_metrics_v2_exchange_history test
+# v2_metrics_exchange_history_get test
 #
 # uncomment below and update the test
-#my $marketdata_list_metrics_v2_exchange_history_metric_id = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_exchange_history_exchange_id = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_exchange_history_time_start = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_exchange_history_time_end = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_exchange_history_time_format = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_exchange_history_period_id = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_exchange_history_limit = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_exchange_history_result = $api->marketdata_list_metrics_v2_exchange_history(metric_id => $marketdata_list_metrics_v2_exchange_history_metric_id, exchange_id => $marketdata_list_metrics_v2_exchange_history_exchange_id, time_start => $marketdata_list_metrics_v2_exchange_history_time_start, time_end => $marketdata_list_metrics_v2_exchange_history_time_end, time_format => $marketdata_list_metrics_v2_exchange_history_time_format, period_id => $marketdata_list_metrics_v2_exchange_history_period_id, limit => $marketdata_list_metrics_v2_exchange_history_limit);
+#my $v2_metrics_exchange_history_get_metric_id = undef; # replace NULL with a proper value
+#my $v2_metrics_exchange_history_get_exchange_id = undef; # replace NULL with a proper value
+#my $v2_metrics_exchange_history_get_time_start = undef; # replace NULL with a proper value
+#my $v2_metrics_exchange_history_get_time_end = undef; # replace NULL with a proper value
+#my $v2_metrics_exchange_history_get_time_format = undef; # replace NULL with a proper value
+#my $v2_metrics_exchange_history_get_period_id = undef; # replace NULL with a proper value
+#my $v2_metrics_exchange_history_get_limit = undef; # replace NULL with a proper value
+#my $v2_metrics_exchange_history_get_result = $api->v2_metrics_exchange_history_get(metric_id => $v2_metrics_exchange_history_get_metric_id, exchange_id => $v2_metrics_exchange_history_get_exchange_id, time_start => $v2_metrics_exchange_history_get_time_start, time_end => $v2_metrics_exchange_history_get_time_end, time_format => $v2_metrics_exchange_history_get_time_format, period_id => $v2_metrics_exchange_history_get_period_id, limit => $v2_metrics_exchange_history_get_limit);
 
 #
-# marketdata_list_metrics_v2_exchange_listing test
+# v2_metrics_exchange_listing_get test
 #
 # uncomment below and update the test
-#my $marketdata_list_metrics_v2_exchange_listing_exchange_id = undef; # replace NULL with a proper value
-#my $marketdata_list_metrics_v2_exchange_listing_result = $api->marketdata_list_metrics_v2_exchange_listing(exchange_id => $marketdata_list_metrics_v2_exchange_listing_exchange_id);
+#my $v2_metrics_exchange_listing_get_exchange_id = undef; # replace NULL with a proper value
+#my $v2_metrics_exchange_listing_get_result = $api->v2_metrics_exchange_listing_get(exchange_id => $v2_metrics_exchange_listing_get_exchange_id);
 
 #
-# marketdata_list_metrics_v2_listing test
+# v2_metrics_listing_get test
 #
 # uncomment below and update the test
-#my $marketdata_list_metrics_v2_listing_result = $api->marketdata_list_metrics_v2_listing();
+#my $v2_metrics_listing_get_result = $api->v2_metrics_listing_get();
 
 
 done_testing();

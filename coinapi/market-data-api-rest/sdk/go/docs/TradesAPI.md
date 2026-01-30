@@ -103,8 +103,8 @@ import (
 func main() {
 	symbolId := "symbolId_example" // string | Symbol identifier for requested timeseries (from the Metadata -> Symbols)
 	date := "date_example" // string | Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided) (optional)
-	timeStart := "timeStart_example" // string | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
-	timeEnd := "timeEnd_example" // string | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
+	timeStart := "timeStart_example" // string | Starting time in ISO 8601 (optional)
+	timeEnd := "timeEnd_example" // string | Timeseries ending time in ISO 8601 (optional)
 	limit := int32(56) // int32 | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
 	includeId := true // bool | Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers. (optional) (default to false)
 
@@ -137,8 +137,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **date** | **string** | Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) | 
- **timeStart** | **string** | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) | 
- **timeEnd** | **string** | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) | 
+ **timeStart** | **string** | Starting time in ISO 8601 | 
+ **timeEnd** | **string** | Timeseries ending time in ISO 8601 | 
  **limit** | **int32** | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [default to 100]
  **includeId** | **bool** | Information that additional exchange trade identifier should be included in the &#x60;id_trade&#x60; parameter of the trade if exchange providing identifiers. | [default to false]
 

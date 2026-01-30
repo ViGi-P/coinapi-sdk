@@ -118,12 +118,10 @@ When requesting current data for a specific symbol, output is not encapsulated i
 (defn-spec v1-quotes-symbol-id-history-get-with-http-info any?
   "Historical data
   Get historical quote updates within requested time range, returned in time ascending order.
-            
-This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
-Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.
-            
-:::tip
-For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.
+
+:::warning
+The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
+Please use the 'date' parameter instead for querying data for a specific day without filter.
 :::"
   ([symbol_id string?, ] (v1-quotes-symbol-id-history-get-with-http-info symbol_id nil))
   ([symbol_id string?, {:keys [date time_start time_end limit]} (s/map-of keyword? any?)]
@@ -140,12 +138,10 @@ For querying a full day of data, use the 'date' parameter. For specific time ran
 (defn-spec v1-quotes-symbol-id-history-get (s/coll-of v1/quote-spec)
   "Historical data
   Get historical quote updates within requested time range, returned in time ascending order.
-            
-This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
-Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.
-            
-:::tip
-For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.
+
+:::warning
+The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
+Please use the 'date' parameter instead for querying data for a specific day without filter.
 :::"
   ([symbol_id string?, ] (v1-quotes-symbol-id-history-get symbol_id nil))
   ([symbol_id string?, optional-params any?]

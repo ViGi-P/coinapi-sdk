@@ -3278,14 +3278,14 @@ export const MetricsV2ApiFetchParamCreator = function (configuration?: Configura
          * @summary Historical metrics for the asset
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2AssetHistory(metricId: string, assetId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options: RequestOptions): FetchArgs {
+        v2MetricsAssetHistoryGet(metricId: string, assetId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options: RequestOptions): FetchArgs {
             // verify required parameter 'metricId' is not null or undefined
             if (metricId === null || metricId === undefined) {
-                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling marketdataListMetricsV2AssetHistory.');
+                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling v2MetricsAssetHistoryGet.');
             }
             // verify required parameter 'assetId' is not null or undefined
             if (assetId === null || assetId === undefined) {
-                throw new RequiredError('assetId','Required parameter assetId was null or undefined when calling marketdataListMetricsV2AssetHistory.');
+                throw new RequiredError('assetId','Required parameter assetId was null or undefined when calling v2MetricsAssetHistoryGet.');
             }
             const localVarPath = `/v2/metrics/asset/history`;
             const localVarUrlObj = url.parse(localVarPath, true);
@@ -3346,10 +3346,10 @@ export const MetricsV2ApiFetchParamCreator = function (configuration?: Configura
          * @summary Listing of metrics available for specific asset
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2AssetListing(assetId: string, options: RequestOptions): FetchArgs {
+        v2MetricsAssetListingGet(assetId: string, options: RequestOptions): FetchArgs {
             // verify required parameter 'assetId' is not null or undefined
             if (assetId === null || assetId === undefined) {
-                throw new RequiredError('assetId','Required parameter assetId was null or undefined when calling marketdataListMetricsV2AssetListing.');
+                throw new RequiredError('assetId','Required parameter assetId was null or undefined when calling v2MetricsAssetListingGet.');
             }
             const localVarPath = `/v2/metrics/asset/listing`;
             const localVarUrlObj = url.parse(localVarPath, true);
@@ -3386,14 +3386,14 @@ export const MetricsV2ApiFetchParamCreator = function (configuration?: Configura
          * @summary Historical metrics for the chain
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2ChainHistory(metricId: string, chainId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options: RequestOptions): FetchArgs {
+        v2MetricsChainHistoryGet(metricId: string, chainId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options: RequestOptions): FetchArgs {
             // verify required parameter 'metricId' is not null or undefined
             if (metricId === null || metricId === undefined) {
-                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling marketdataListMetricsV2ChainHistory.');
+                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling v2MetricsChainHistoryGet.');
             }
             // verify required parameter 'chainId' is not null or undefined
             if (chainId === null || chainId === undefined) {
-                throw new RequiredError('chainId','Required parameter chainId was null or undefined when calling marketdataListMetricsV2ChainHistory.');
+                throw new RequiredError('chainId','Required parameter chainId was null or undefined when calling v2MetricsChainHistoryGet.');
             }
             const localVarPath = `/v2/metrics/chain/history`;
             const localVarUrlObj = url.parse(localVarPath, true);
@@ -3454,10 +3454,10 @@ export const MetricsV2ApiFetchParamCreator = function (configuration?: Configura
          * @summary Listing of metrics available for specific chain
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2ChainListing(chainId: string, options: RequestOptions): FetchArgs {
+        v2MetricsChainListingGet(chainId: string, options: RequestOptions): FetchArgs {
             // verify required parameter 'chainId' is not null or undefined
             if (chainId === null || chainId === undefined) {
-                throw new RequiredError('chainId','Required parameter chainId was null or undefined when calling marketdataListMetricsV2ChainListing.');
+                throw new RequiredError('chainId','Required parameter chainId was null or undefined when calling v2MetricsChainListingGet.');
             }
             const localVarPath = `/v2/metrics/chain/listing`;
             const localVarUrlObj = url.parse(localVarPath, true);
@@ -3494,14 +3494,14 @@ export const MetricsV2ApiFetchParamCreator = function (configuration?: Configura
          * @summary Historical metrics for the exchange
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2ExchangeHistory(metricId: string, exchangeId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options: RequestOptions): FetchArgs {
+        v2MetricsExchangeHistoryGet(metricId: string, exchangeId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options: RequestOptions): FetchArgs {
             // verify required parameter 'metricId' is not null or undefined
             if (metricId === null || metricId === undefined) {
-                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling marketdataListMetricsV2ExchangeHistory.');
+                throw new RequiredError('metricId','Required parameter metricId was null or undefined when calling v2MetricsExchangeHistoryGet.');
             }
             // verify required parameter 'exchangeId' is not null or undefined
             if (exchangeId === null || exchangeId === undefined) {
-                throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling marketdataListMetricsV2ExchangeHistory.');
+                throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling v2MetricsExchangeHistoryGet.');
             }
             const localVarPath = `/v2/metrics/exchange/history`;
             const localVarUrlObj = url.parse(localVarPath, true);
@@ -3562,10 +3562,10 @@ export const MetricsV2ApiFetchParamCreator = function (configuration?: Configura
          * @summary Listing of metrics available for specific exchange
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2ExchangeListing(exchangeId: string, options: RequestOptions): FetchArgs {
+        v2MetricsExchangeListingGet(exchangeId: string, options: RequestOptions): FetchArgs {
             // verify required parameter 'exchangeId' is not null or undefined
             if (exchangeId === null || exchangeId === undefined) {
-                throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling marketdataListMetricsV2ExchangeListing.');
+                throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling v2MetricsExchangeListingGet.');
             }
             const localVarPath = `/v2/metrics/exchange/listing`;
             const localVarUrlObj = url.parse(localVarPath, true);
@@ -3602,7 +3602,7 @@ export const MetricsV2ApiFetchParamCreator = function (configuration?: Configura
          * @summary Listing of all supported metrics
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2Listing(options: RequestOptions): FetchArgs {
+        v2MetricsListingGet(options: RequestOptions): FetchArgs {
             const localVarPath = `/v2/metrics/listing`;
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
@@ -3633,19 +3633,19 @@ export const MetricsV2ApiFetchParamCreator = function (configuration?: Configura
 };
 
 export type MetricsV2ApiType = { 
-    marketdataListMetricsV2AssetHistory(metricId: string, assetId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options?: RequestOptions): Promise<Array<Object>>,
+    v2MetricsAssetHistoryGet(metricId: string, assetId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options?: RequestOptions): Promise<Array<Object>>,
 
-    marketdataListMetricsV2AssetListing(assetId: string, options?: RequestOptions): Promise<Array<V1MetricInfo>>,
+    v2MetricsAssetListingGet(assetId: string, options?: RequestOptions): Promise<Array<V1MetricInfo>>,
 
-    marketdataListMetricsV2ChainHistory(metricId: string, chainId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options?: RequestOptions): Promise<Array<Object>>,
+    v2MetricsChainHistoryGet(metricId: string, chainId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options?: RequestOptions): Promise<Array<Object>>,
 
-    marketdataListMetricsV2ChainListing(chainId: string, options?: RequestOptions): Promise<Array<V1MetricInfo>>,
+    v2MetricsChainListingGet(chainId: string, options?: RequestOptions): Promise<Array<V1MetricInfo>>,
 
-    marketdataListMetricsV2ExchangeHistory(metricId: string, exchangeId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options?: RequestOptions): Promise<Array<Object>>,
+    v2MetricsExchangeHistoryGet(metricId: string, exchangeId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options?: RequestOptions): Promise<Array<Object>>,
 
-    marketdataListMetricsV2ExchangeListing(exchangeId: string, options?: RequestOptions): Promise<Array<V1MetricInfo>>,
+    v2MetricsExchangeListingGet(exchangeId: string, options?: RequestOptions): Promise<Array<V1MetricInfo>>,
 
-    marketdataListMetricsV2Listing(options?: RequestOptions): Promise<Array<V1MetricInfo>>,
+    v2MetricsListingGet(options?: RequestOptions): Promise<Array<V1MetricInfo>>,
 }
 
 /**
@@ -3660,8 +3660,8 @@ export const MetricsV2Api = function(configuration?: Configuration, fetch: Fetch
          * @summary Historical metrics for the asset
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2AssetHistory(metricId: string, assetId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options?: RequestOptions = {}): Promise<Array<Object>> {
-            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).marketdataListMetricsV2AssetHistory(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit, options);
+        v2MetricsAssetHistoryGet(metricId: string, assetId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options?: RequestOptions = {}): Promise<Array<Object>> {
+            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).v2MetricsAssetHistoryGet(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -3675,8 +3675,8 @@ export const MetricsV2Api = function(configuration?: Configuration, fetch: Fetch
          * @summary Listing of metrics available for specific asset
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2AssetListing(assetId: string, options?: RequestOptions = {}): Promise<Array<V1MetricInfo>> {
-            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).marketdataListMetricsV2AssetListing(assetId, options);
+        v2MetricsAssetListingGet(assetId: string, options?: RequestOptions = {}): Promise<Array<V1MetricInfo>> {
+            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).v2MetricsAssetListingGet(assetId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -3690,8 +3690,8 @@ export const MetricsV2Api = function(configuration?: Configuration, fetch: Fetch
          * @summary Historical metrics for the chain
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2ChainHistory(metricId: string, chainId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options?: RequestOptions = {}): Promise<Array<Object>> {
-            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).marketdataListMetricsV2ChainHistory(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit, options);
+        v2MetricsChainHistoryGet(metricId: string, chainId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options?: RequestOptions = {}): Promise<Array<Object>> {
+            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).v2MetricsChainHistoryGet(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -3705,8 +3705,8 @@ export const MetricsV2Api = function(configuration?: Configuration, fetch: Fetch
          * @summary Listing of metrics available for specific chain
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2ChainListing(chainId: string, options?: RequestOptions = {}): Promise<Array<V1MetricInfo>> {
-            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).marketdataListMetricsV2ChainListing(chainId, options);
+        v2MetricsChainListingGet(chainId: string, options?: RequestOptions = {}): Promise<Array<V1MetricInfo>> {
+            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).v2MetricsChainListingGet(chainId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -3720,8 +3720,8 @@ export const MetricsV2Api = function(configuration?: Configuration, fetch: Fetch
          * @summary Historical metrics for the exchange
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2ExchangeHistory(metricId: string, exchangeId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options?: RequestOptions = {}): Promise<Array<Object>> {
-            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit, options);
+        v2MetricsExchangeHistoryGet(metricId: string, exchangeId: string, timeStart?: Date, timeEnd?: Date, timeFormat?: string, periodId?: string, limit?: number, options?: RequestOptions = {}): Promise<Array<Object>> {
+            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).v2MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -3735,8 +3735,8 @@ export const MetricsV2Api = function(configuration?: Configuration, fetch: Fetch
          * @summary Listing of metrics available for specific exchange
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2ExchangeListing(exchangeId: string, options?: RequestOptions = {}): Promise<Array<V1MetricInfo>> {
-            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).marketdataListMetricsV2ExchangeListing(exchangeId, options);
+        v2MetricsExchangeListingGet(exchangeId: string, options?: RequestOptions = {}): Promise<Array<V1MetricInfo>> {
+            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).v2MetricsExchangeListingGet(exchangeId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -3750,8 +3750,8 @@ export const MetricsV2Api = function(configuration?: Configuration, fetch: Fetch
          * @summary Listing of all supported metrics
          * @throws {RequiredError}
          */
-        marketdataListMetricsV2Listing(options?: RequestOptions = {}): Promise<Array<V1MetricInfo>> {
-            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).marketdataListMetricsV2Listing(options);
+        v2MetricsListingGet(options?: RequestOptions = {}): Promise<Array<V1MetricInfo>> {
+            const localVarFetchArgs = MetricsV2ApiFetchParamCreator(configuration).v2MetricsListingGet(options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -4218,7 +4218,7 @@ export const OrderBookApiFetchParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the \'date\' parameter. For specific time ranges (including cross-day or multi-hour queries), use \'time_start\' and \'time_end\'. :::
+         * Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::  :::warning The \'time_start\' and \'time_end\' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the \'date\' parameter instead for querying data for a specific day without filter. :::
          * @summary Historical data
          * @throws {RequiredError}
          */
@@ -4323,7 +4323,7 @@ export const OrderBookApi = function(configuration?: Configuration, fetch: Fetch
             });
         },
         /**
-         * Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the \'date\' parameter. For specific time ranges (including cross-day or multi-hour queries), use \'time_start\' and \'time_end\'. :::
+         * Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::  :::warning The \'time_start\' and \'time_end\' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the \'date\' parameter instead for querying data for a specific day without filter. :::
          * @summary Historical data
          * @throws {RequiredError}
          */
@@ -4388,7 +4388,7 @@ export const OrderBookL3ApiFetchParamCreator = function (configuration?: Configu
             };
         },
         /**
-         * Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
+         * Retrieves the current order book for the specified symbol.
          * @summary Current order book by symbol_id
          * @throws {RequiredError}
          */
@@ -4460,7 +4460,7 @@ export const OrderBookL3Api = function(configuration?: Configuration, fetch: Fet
             });
         },
         /**
-         * Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
+         * Retrieves the current order book for the specified symbol.
          * @summary Current order book by symbol_id
          * @throws {RequiredError}
          */
@@ -4598,7 +4598,7 @@ export const QuotesApiFetchParamCreator = function (configuration?: Configuratio
             };
         },
         /**
-         * Get historical quote updates within requested time range, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the \'date\' parameter. For specific time ranges (including cross-day or multi-hour queries), use \'time_start\' and \'time_end\'. :::
+         * Get historical quote updates within requested time range, returned in time ascending order.  :::warning The \'time_start\' and \'time_end\' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the \'date\' parameter instead for querying data for a specific day without filter. :::
          * @summary Historical data
          * @throws {RequiredError}
          */
@@ -4759,7 +4759,7 @@ export const QuotesApi = function(configuration?: Configuration, fetch: FetchAPI
             });
         },
         /**
-         * Get historical quote updates within requested time range, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the \'date\' parameter. For specific time ranges (including cross-day or multi-hour queries), use \'time_start\' and \'time_end\'. :::
+         * Get historical quote updates within requested time range, returned in time ascending order.  :::warning The \'time_start\' and \'time_end\' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the \'date\' parameter instead for querying data for a specific day without filter. :::
          * @summary Historical data
          * @throws {RequiredError}
          */
@@ -4843,7 +4843,7 @@ export const TradesApiFetchParamCreator = function (configuration?: Configuratio
             };
         },
         /**
-         * Get history transactions from specific symbol, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the \'date\' parameter. For specific time ranges (including cross-day or multi-hour queries), use \'time_start\' and \'time_end\'. :::
+         * Get history transactions from specific symbol, returned in time ascending order.  :::warning The \'time_start\' and \'time_end\' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the \'date\' parameter instead for querying data for a specific day without filter. :::
          * @summary Historical data
          * @throws {RequiredError}
          */
@@ -4978,7 +4978,7 @@ export const TradesApi = function(configuration?: Configuration, fetch: FetchAPI
             });
         },
         /**
-         * Get history transactions from specific symbol, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the \'date\' parameter. For specific time ranges (including cross-day or multi-hour queries), use \'time_start\' and \'time_end\'. :::
+         * Get history transactions from specific symbol, returned in time ascending order.  :::warning The \'time_start\' and \'time_end\' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the \'date\' parameter instead for querying data for a specific day without filter. :::
          * @summary Historical data
          * @throws {RequiredError}
          */

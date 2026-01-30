@@ -192,13 +192,13 @@ func (r ApiV1TradesSymbolIdHistoryGetRequest) Date(date string) ApiV1TradesSymbo
 	return r
 }
 
-// Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
+// Starting time in ISO 8601
 func (r ApiV1TradesSymbolIdHistoryGetRequest) TimeStart(timeStart string) ApiV1TradesSymbolIdHistoryGetRequest {
 	r.timeStart = &timeStart
 	return r
 }
 
-// Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
+// Timeseries ending time in ISO 8601
 func (r ApiV1TradesSymbolIdHistoryGetRequest) TimeEnd(timeEnd string) ApiV1TradesSymbolIdHistoryGetRequest {
 	r.timeEnd = &timeEnd
 	return r
@@ -224,12 +224,10 @@ func (r ApiV1TradesSymbolIdHistoryGetRequest) Execute() ([]V1Trade, *http.Respon
 V1TradesSymbolIdHistoryGet Historical data
 
 Get history transactions from specific symbol, returned in time ascending order.
-            
-This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
-Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.
-            
-:::tip
-For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.
+
+:::warning
+The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
+Please use the 'date' parameter instead for querying data for a specific day without filter.
 :::
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().

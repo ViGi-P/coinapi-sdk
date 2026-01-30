@@ -4,19 +4,19 @@ All URIs are relative to *https://rest.coinapi.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**marketdataListMetricsV2AssetHistory**](MetricsV2Api.md#marketdataListMetricsV2AssetHistory) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
-[**marketdataListMetricsV2AssetListing**](MetricsV2Api.md#marketdataListMetricsV2AssetListing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-[**marketdataListMetricsV2ChainHistory**](MetricsV2Api.md#marketdataListMetricsV2ChainHistory) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
-[**marketdataListMetricsV2ChainListing**](MetricsV2Api.md#marketdataListMetricsV2ChainListing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-[**marketdataListMetricsV2ExchangeHistory**](MetricsV2Api.md#marketdataListMetricsV2ExchangeHistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
-[**marketdataListMetricsV2ExchangeListing**](MetricsV2Api.md#marketdataListMetricsV2ExchangeListing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-[**marketdataListMetricsV2Listing**](MetricsV2Api.md#marketdataListMetricsV2Listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
+[**v2MetricsAssetHistoryGet**](MetricsV2Api.md#v2MetricsAssetHistoryGet) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
+[**v2MetricsAssetListingGet**](MetricsV2Api.md#v2MetricsAssetListingGet) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+[**v2MetricsChainHistoryGet**](MetricsV2Api.md#v2MetricsChainHistoryGet) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
+[**v2MetricsChainListingGet**](MetricsV2Api.md#v2MetricsChainListingGet) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+[**v2MetricsExchangeHistoryGet**](MetricsV2Api.md#v2MetricsExchangeHistoryGet) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
+[**v2MetricsExchangeListingGet**](MetricsV2Api.md#v2MetricsExchangeListingGet) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+[**v2MetricsListingGet**](MetricsV2Api.md#v2MetricsListingGet) | **GET** /v2/metrics/listing | Listing of all supported metrics
 
 
 
-## marketdataListMetricsV2AssetHistory
+## v2MetricsAssetHistoryGet
 
-> List&lt;Object&gt; marketdataListMetricsV2AssetHistory(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
+> List&lt;Object&gt; v2MetricsAssetHistoryGet(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
 
 Historical metrics for the asset
 
@@ -37,10 +37,10 @@ String timeFormat = null; // String | If set, returned values will be in unix ti
 String periodId = null; // String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
 Integer limit = 100; // Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 try {
-    List<Object> result = apiInstance.marketdataListMetricsV2AssetHistory(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
+    List<Object> result = apiInstance.v2MetricsAssetHistoryGet(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2AssetHistory");
+    System.err.println("Exception when calling MetricsV2Api#v2MetricsAssetHistoryGet");
     e.printStackTrace();
 }
 ```
@@ -72,9 +72,9 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## marketdataListMetricsV2AssetListing
+## v2MetricsAssetListingGet
 
-> List&lt;V1MetricInfo&gt; marketdataListMetricsV2AssetListing(assetId)
+> List&lt;V1MetricInfo&gt; v2MetricsAssetListingGet(assetId)
 
 Listing of metrics available for specific asset
 
@@ -89,10 +89,10 @@ Get all metrics that are actually available for the specified asset.
 MetricsV2Api apiInstance = new MetricsV2Api();
 String assetId = null; // String | Asset identifier (e.g., USDC, USDT)
 try {
-    List<V1MetricInfo> result = apiInstance.marketdataListMetricsV2AssetListing(assetId);
+    List<V1MetricInfo> result = apiInstance.v2MetricsAssetListingGet(assetId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2AssetListing");
+    System.err.println("Exception when calling MetricsV2Api#v2MetricsAssetListingGet");
     e.printStackTrace();
 }
 ```
@@ -118,9 +118,9 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## marketdataListMetricsV2ChainHistory
+## v2MetricsChainHistoryGet
 
-> List&lt;Object&gt; marketdataListMetricsV2ChainHistory(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
+> List&lt;Object&gt; v2MetricsChainHistoryGet(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
 
 Historical metrics for the chain
 
@@ -141,10 +141,10 @@ String timeFormat = null; // String | If set, returned values will be in unix ti
 String periodId = null; // String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
 Integer limit = 100; // Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 try {
-    List<Object> result = apiInstance.marketdataListMetricsV2ChainHistory(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
+    List<Object> result = apiInstance.v2MetricsChainHistoryGet(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ChainHistory");
+    System.err.println("Exception when calling MetricsV2Api#v2MetricsChainHistoryGet");
     e.printStackTrace();
 }
 ```
@@ -176,9 +176,9 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## marketdataListMetricsV2ChainListing
+## v2MetricsChainListingGet
 
-> List&lt;V1MetricInfo&gt; marketdataListMetricsV2ChainListing(chainId)
+> List&lt;V1MetricInfo&gt; v2MetricsChainListingGet(chainId)
 
 Listing of metrics available for specific chain
 
@@ -193,10 +193,10 @@ Get all metrics that are actually available for the specified blockchain chain.
 MetricsV2Api apiInstance = new MetricsV2Api();
 String chainId = null; // String | Chain identifier (e.g., ETHEREUM, ARBITRUM)
 try {
-    List<V1MetricInfo> result = apiInstance.marketdataListMetricsV2ChainListing(chainId);
+    List<V1MetricInfo> result = apiInstance.v2MetricsChainListingGet(chainId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ChainListing");
+    System.err.println("Exception when calling MetricsV2Api#v2MetricsChainListingGet");
     e.printStackTrace();
 }
 ```
@@ -222,9 +222,9 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## marketdataListMetricsV2ExchangeHistory
+## v2MetricsExchangeHistoryGet
 
-> List&lt;Object&gt; marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
+> List&lt;Object&gt; v2MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
 
 Historical metrics for the exchange
 
@@ -245,10 +245,10 @@ String timeFormat = null; // String | If set, returned values will be in unix ti
 String periodId = null; // String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
 Integer limit = 100; // Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 try {
-    List<Object> result = apiInstance.marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
+    List<Object> result = apiInstance.v2MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ExchangeHistory");
+    System.err.println("Exception when calling MetricsV2Api#v2MetricsExchangeHistoryGet");
     e.printStackTrace();
 }
 ```
@@ -280,9 +280,9 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## marketdataListMetricsV2ExchangeListing
+## v2MetricsExchangeListingGet
 
-> List&lt;V1MetricInfo&gt; marketdataListMetricsV2ExchangeListing(exchangeId)
+> List&lt;V1MetricInfo&gt; v2MetricsExchangeListingGet(exchangeId)
 
 Listing of metrics available for specific exchange
 
@@ -297,10 +297,10 @@ Get all metrics that are actually available for the specified exchange.
 MetricsV2Api apiInstance = new MetricsV2Api();
 String exchangeId = null; // String | Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
 try {
-    List<V1MetricInfo> result = apiInstance.marketdataListMetricsV2ExchangeListing(exchangeId);
+    List<V1MetricInfo> result = apiInstance.v2MetricsExchangeListingGet(exchangeId);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ExchangeListing");
+    System.err.println("Exception when calling MetricsV2Api#v2MetricsExchangeListingGet");
     e.printStackTrace();
 }
 ```
@@ -326,9 +326,9 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## marketdataListMetricsV2Listing
+## v2MetricsListingGet
 
-> List&lt;V1MetricInfo&gt; marketdataListMetricsV2Listing()
+> List&lt;V1MetricInfo&gt; v2MetricsListingGet()
 
 Listing of all supported metrics
 
@@ -342,10 +342,10 @@ Get all metrics available in the system.
 
 MetricsV2Api apiInstance = new MetricsV2Api();
 try {
-    List<V1MetricInfo> result = apiInstance.marketdataListMetricsV2Listing();
+    List<V1MetricInfo> result = apiInstance.v2MetricsListingGet();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2Listing");
+    System.err.println("Exception when calling MetricsV2Api#v2MetricsListingGet");
     e.printStackTrace();
 }
 ```

@@ -7,57 +7,57 @@
 #
 
 Describe -tag 'PSOpenAPITools' -name 'MetricsV2Api' {
-    Context 'Invoke-MarketdataListMetricsV2AssetHistory' {
-        It 'Test Invoke-MarketdataListMetricsV2AssetHistory' {
-            #$TestResult = Invoke-MarketdataListMetricsV2AssetHistory -MetricId "TEST_VALUE" -AssetId "TEST_VALUE" -TimeStart "TEST_VALUE" -TimeEnd "TEST_VALUE" -TimeFormat "TEST_VALUE" -PeriodId "TEST_VALUE" -Limit "TEST_VALUE"
+    Context 'Invoke-V2MetricsAssetHistoryGet' {
+        It 'Test Invoke-V2MetricsAssetHistoryGet' {
+            #$TestResult = Invoke-V2MetricsAssetHistoryGet -MetricId "TEST_VALUE" -AssetId "TEST_VALUE" -TimeStart "TEST_VALUE" -TimeEnd "TEST_VALUE" -TimeFormat "TEST_VALUE" -PeriodId "TEST_VALUE" -Limit "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }
     }
 
-    Context 'Invoke-MarketdataListMetricsV2AssetListing' {
-        It 'Test Invoke-MarketdataListMetricsV2AssetListing' {
-            #$TestResult = Invoke-MarketdataListMetricsV2AssetListing -AssetId "TEST_VALUE"
+    Context 'Invoke-V2MetricsAssetListingGet' {
+        It 'Test Invoke-V2MetricsAssetListingGet' {
+            #$TestResult = Invoke-V2MetricsAssetListingGet -AssetId "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }
     }
 
-    Context 'Invoke-MarketdataListMetricsV2ChainHistory' {
-        It 'Test Invoke-MarketdataListMetricsV2ChainHistory' {
-            #$TestResult = Invoke-MarketdataListMetricsV2ChainHistory -MetricId "TEST_VALUE" -ChainId "TEST_VALUE" -TimeStart "TEST_VALUE" -TimeEnd "TEST_VALUE" -TimeFormat "TEST_VALUE" -PeriodId "TEST_VALUE" -Limit "TEST_VALUE"
+    Context 'Invoke-V2MetricsChainHistoryGet' {
+        It 'Test Invoke-V2MetricsChainHistoryGet' {
+            #$TestResult = Invoke-V2MetricsChainHistoryGet -MetricId "TEST_VALUE" -ChainId "TEST_VALUE" -TimeStart "TEST_VALUE" -TimeEnd "TEST_VALUE" -TimeFormat "TEST_VALUE" -PeriodId "TEST_VALUE" -Limit "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }
     }
 
-    Context 'Invoke-MarketdataListMetricsV2ChainListing' {
-        It 'Test Invoke-MarketdataListMetricsV2ChainListing' {
-            #$TestResult = Invoke-MarketdataListMetricsV2ChainListing -ChainId "TEST_VALUE"
+    Context 'Invoke-V2MetricsChainListingGet' {
+        It 'Test Invoke-V2MetricsChainListingGet' {
+            #$TestResult = Invoke-V2MetricsChainListingGet -ChainId "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }
     }
 
-    Context 'Invoke-MarketdataListMetricsV2ExchangeHistory' {
-        It 'Test Invoke-MarketdataListMetricsV2ExchangeHistory' {
-            #$TestResult = Invoke-MarketdataListMetricsV2ExchangeHistory -MetricId "TEST_VALUE" -ExchangeId "TEST_VALUE" -TimeStart "TEST_VALUE" -TimeEnd "TEST_VALUE" -TimeFormat "TEST_VALUE" -PeriodId "TEST_VALUE" -Limit "TEST_VALUE"
+    Context 'Invoke-V2MetricsExchangeHistoryGet' {
+        It 'Test Invoke-V2MetricsExchangeHistoryGet' {
+            #$TestResult = Invoke-V2MetricsExchangeHistoryGet -MetricId "TEST_VALUE" -ExchangeId "TEST_VALUE" -TimeStart "TEST_VALUE" -TimeEnd "TEST_VALUE" -TimeFormat "TEST_VALUE" -PeriodId "TEST_VALUE" -Limit "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }
     }
 
-    Context 'Invoke-MarketdataListMetricsV2ExchangeListing' {
-        It 'Test Invoke-MarketdataListMetricsV2ExchangeListing' {
-            #$TestResult = Invoke-MarketdataListMetricsV2ExchangeListing -ExchangeId "TEST_VALUE"
+    Context 'Invoke-V2MetricsExchangeListingGet' {
+        It 'Test Invoke-V2MetricsExchangeListingGet' {
+            #$TestResult = Invoke-V2MetricsExchangeListingGet -ExchangeId "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }
     }
 
-    Context 'Invoke-MarketdataListMetricsV2Listing' {
-        It 'Test Invoke-MarketdataListMetricsV2Listing' {
-            #$TestResult = Invoke-MarketdataListMetricsV2Listing
+    Context 'Invoke-V2MetricsListingGet' {
+        It 'Test Invoke-V2MetricsListingGet' {
+            #$TestResult = Invoke-V2MetricsListingGet
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }

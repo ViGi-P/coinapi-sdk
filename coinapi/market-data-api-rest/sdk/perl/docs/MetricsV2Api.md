@@ -9,17 +9,17 @@ All URIs are relative to *https://rest.coinapi.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**marketdata_list_metrics_v2_asset_history**](MetricsV2Api.md#marketdata_list_metrics_v2_asset_history) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
-[**marketdata_list_metrics_v2_asset_listing**](MetricsV2Api.md#marketdata_list_metrics_v2_asset_listing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-[**marketdata_list_metrics_v2_chain_history**](MetricsV2Api.md#marketdata_list_metrics_v2_chain_history) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
-[**marketdata_list_metrics_v2_chain_listing**](MetricsV2Api.md#marketdata_list_metrics_v2_chain_listing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-[**marketdata_list_metrics_v2_exchange_history**](MetricsV2Api.md#marketdata_list_metrics_v2_exchange_history) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
-[**marketdata_list_metrics_v2_exchange_listing**](MetricsV2Api.md#marketdata_list_metrics_v2_exchange_listing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-[**marketdata_list_metrics_v2_listing**](MetricsV2Api.md#marketdata_list_metrics_v2_listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
+[**v2_metrics_asset_history_get**](MetricsV2Api.md#v2_metrics_asset_history_get) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
+[**v2_metrics_asset_listing_get**](MetricsV2Api.md#v2_metrics_asset_listing_get) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+[**v2_metrics_chain_history_get**](MetricsV2Api.md#v2_metrics_chain_history_get) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
+[**v2_metrics_chain_listing_get**](MetricsV2Api.md#v2_metrics_chain_listing_get) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+[**v2_metrics_exchange_history_get**](MetricsV2Api.md#v2_metrics_exchange_history_get) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
+[**v2_metrics_exchange_listing_get**](MetricsV2Api.md#v2_metrics_exchange_listing_get) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+[**v2_metrics_listing_get**](MetricsV2Api.md#v2_metrics_listing_get) | **GET** /v2/metrics/listing | Listing of all supported metrics
 
 
-# **marketdata_list_metrics_v2_asset_history**
-> ARRAY[object] marketdata_list_metrics_v2_asset_history(metric_id => $metric_id, asset_id => $asset_id, time_start => $time_start, time_end => $time_end, time_format => $time_format, period_id => $period_id, limit => $limit)
+# **v2_metrics_asset_history_get**
+> ARRAY[object] v2_metrics_asset_history_get(metric_id => $metric_id, asset_id => $asset_id, time_start => $time_start, time_end => $time_end, time_format => $time_format, period_id => $period_id, limit => $limit)
 
 Historical metrics for the asset
 
@@ -49,11 +49,11 @@ my $period_id = "period_id_example"; # string | Identifier of requested timeseri
 my $limit = 100; # int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 eval {
-    my $result = $api_instance->marketdata_list_metrics_v2_asset_history(metric_id => $metric_id, asset_id => $asset_id, time_start => $time_start, time_end => $time_end, time_format => $time_format, period_id => $period_id, limit => $limit);
+    my $result = $api_instance->v2_metrics_asset_history_get(metric_id => $metric_id, asset_id => $asset_id, time_start => $time_start, time_end => $time_end, time_format => $time_format, period_id => $period_id, limit => $limit);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling MetricsV2Api->marketdata_list_metrics_v2_asset_history: $@\n";
+    warn "Exception when calling MetricsV2Api->v2_metrics_asset_history_get: $@\n";
 }
 ```
 
@@ -84,8 +84,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **marketdata_list_metrics_v2_asset_listing**
-> ARRAY[V1MetricInfo] marketdata_list_metrics_v2_asset_listing(asset_id => $asset_id)
+# **v2_metrics_asset_listing_get**
+> ARRAY[V1MetricInfo] v2_metrics_asset_listing_get(asset_id => $asset_id)
 
 Listing of metrics available for specific asset
 
@@ -109,11 +109,11 @@ my $api_instance = WWW::OpenAPIClient::MetricsV2Api->new(
 my $asset_id = "asset_id_example"; # string | Asset identifier (e.g., USDC, USDT)
 
 eval {
-    my $result = $api_instance->marketdata_list_metrics_v2_asset_listing(asset_id => $asset_id);
+    my $result = $api_instance->v2_metrics_asset_listing_get(asset_id => $asset_id);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling MetricsV2Api->marketdata_list_metrics_v2_asset_listing: $@\n";
+    warn "Exception when calling MetricsV2Api->v2_metrics_asset_listing_get: $@\n";
 }
 ```
 
@@ -138,8 +138,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **marketdata_list_metrics_v2_chain_history**
-> ARRAY[object] marketdata_list_metrics_v2_chain_history(metric_id => $metric_id, chain_id => $chain_id, time_start => $time_start, time_end => $time_end, time_format => $time_format, period_id => $period_id, limit => $limit)
+# **v2_metrics_chain_history_get**
+> ARRAY[object] v2_metrics_chain_history_get(metric_id => $metric_id, chain_id => $chain_id, time_start => $time_start, time_end => $time_end, time_format => $time_format, period_id => $period_id, limit => $limit)
 
 Historical metrics for the chain
 
@@ -169,11 +169,11 @@ my $period_id = "period_id_example"; # string | Identifier of requested timeseri
 my $limit = 100; # int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 eval {
-    my $result = $api_instance->marketdata_list_metrics_v2_chain_history(metric_id => $metric_id, chain_id => $chain_id, time_start => $time_start, time_end => $time_end, time_format => $time_format, period_id => $period_id, limit => $limit);
+    my $result = $api_instance->v2_metrics_chain_history_get(metric_id => $metric_id, chain_id => $chain_id, time_start => $time_start, time_end => $time_end, time_format => $time_format, period_id => $period_id, limit => $limit);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling MetricsV2Api->marketdata_list_metrics_v2_chain_history: $@\n";
+    warn "Exception when calling MetricsV2Api->v2_metrics_chain_history_get: $@\n";
 }
 ```
 
@@ -204,8 +204,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **marketdata_list_metrics_v2_chain_listing**
-> ARRAY[V1MetricInfo] marketdata_list_metrics_v2_chain_listing(chain_id => $chain_id)
+# **v2_metrics_chain_listing_get**
+> ARRAY[V1MetricInfo] v2_metrics_chain_listing_get(chain_id => $chain_id)
 
 Listing of metrics available for specific chain
 
@@ -229,11 +229,11 @@ my $api_instance = WWW::OpenAPIClient::MetricsV2Api->new(
 my $chain_id = "chain_id_example"; # string | Chain identifier (e.g., ETHEREUM, ARBITRUM)
 
 eval {
-    my $result = $api_instance->marketdata_list_metrics_v2_chain_listing(chain_id => $chain_id);
+    my $result = $api_instance->v2_metrics_chain_listing_get(chain_id => $chain_id);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling MetricsV2Api->marketdata_list_metrics_v2_chain_listing: $@\n";
+    warn "Exception when calling MetricsV2Api->v2_metrics_chain_listing_get: $@\n";
 }
 ```
 
@@ -258,8 +258,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **marketdata_list_metrics_v2_exchange_history**
-> ARRAY[object] marketdata_list_metrics_v2_exchange_history(metric_id => $metric_id, exchange_id => $exchange_id, time_start => $time_start, time_end => $time_end, time_format => $time_format, period_id => $period_id, limit => $limit)
+# **v2_metrics_exchange_history_get**
+> ARRAY[object] v2_metrics_exchange_history_get(metric_id => $metric_id, exchange_id => $exchange_id, time_start => $time_start, time_end => $time_end, time_format => $time_format, period_id => $period_id, limit => $limit)
 
 Historical metrics for the exchange
 
@@ -289,11 +289,11 @@ my $period_id = "period_id_example"; # string | Identifier of requested timeseri
 my $limit = 100; # int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 eval {
-    my $result = $api_instance->marketdata_list_metrics_v2_exchange_history(metric_id => $metric_id, exchange_id => $exchange_id, time_start => $time_start, time_end => $time_end, time_format => $time_format, period_id => $period_id, limit => $limit);
+    my $result = $api_instance->v2_metrics_exchange_history_get(metric_id => $metric_id, exchange_id => $exchange_id, time_start => $time_start, time_end => $time_end, time_format => $time_format, period_id => $period_id, limit => $limit);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling MetricsV2Api->marketdata_list_metrics_v2_exchange_history: $@\n";
+    warn "Exception when calling MetricsV2Api->v2_metrics_exchange_history_get: $@\n";
 }
 ```
 
@@ -324,8 +324,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **marketdata_list_metrics_v2_exchange_listing**
-> ARRAY[V1MetricInfo] marketdata_list_metrics_v2_exchange_listing(exchange_id => $exchange_id)
+# **v2_metrics_exchange_listing_get**
+> ARRAY[V1MetricInfo] v2_metrics_exchange_listing_get(exchange_id => $exchange_id)
 
 Listing of metrics available for specific exchange
 
@@ -349,11 +349,11 @@ my $api_instance = WWW::OpenAPIClient::MetricsV2Api->new(
 my $exchange_id = "exchange_id_example"; # string | Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
 
 eval {
-    my $result = $api_instance->marketdata_list_metrics_v2_exchange_listing(exchange_id => $exchange_id);
+    my $result = $api_instance->v2_metrics_exchange_listing_get(exchange_id => $exchange_id);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling MetricsV2Api->marketdata_list_metrics_v2_exchange_listing: $@\n";
+    warn "Exception when calling MetricsV2Api->v2_metrics_exchange_listing_get: $@\n";
 }
 ```
 
@@ -378,8 +378,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **marketdata_list_metrics_v2_listing**
-> ARRAY[V1MetricInfo] marketdata_list_metrics_v2_listing()
+# **v2_metrics_listing_get**
+> ARRAY[V1MetricInfo] v2_metrics_listing_get()
 
 Listing of all supported metrics
 
@@ -402,11 +402,11 @@ my $api_instance = WWW::OpenAPIClient::MetricsV2Api->new(
 
 
 eval {
-    my $result = $api_instance->marketdata_list_metrics_v2_listing();
+    my $result = $api_instance->v2_metrics_listing_get();
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling MetricsV2Api->marketdata_list_metrics_v2_listing: $@\n";
+    warn "Exception when calling MetricsV2Api->v2_metrics_listing_get: $@\n";
 }
 ```
 

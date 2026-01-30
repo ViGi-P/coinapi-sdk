@@ -4,18 +4,18 @@ All URIs are relative to *https://rest.coinapi.io*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**marketdataListMetricsV2AssetHistory**](MetricsV2Api.md#marketdataListMetricsV2AssetHistory) | **GET** /v2/metrics/asset/history | Historical metrics for the asset |
-| [**marketdataListMetricsV2AssetListing**](MetricsV2Api.md#marketdataListMetricsV2AssetListing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset |
-| [**marketdataListMetricsV2ChainHistory**](MetricsV2Api.md#marketdataListMetricsV2ChainHistory) | **GET** /v2/metrics/chain/history | Historical metrics for the chain |
-| [**marketdataListMetricsV2ChainListing**](MetricsV2Api.md#marketdataListMetricsV2ChainListing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain |
-| [**marketdataListMetricsV2ExchangeHistory**](MetricsV2Api.md#marketdataListMetricsV2ExchangeHistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange |
-| [**marketdataListMetricsV2ExchangeListing**](MetricsV2Api.md#marketdataListMetricsV2ExchangeListing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange |
-| [**marketdataListMetricsV2Listing**](MetricsV2Api.md#marketdataListMetricsV2Listing) | **GET** /v2/metrics/listing | Listing of all supported metrics |
+| [**v2MetricsAssetHistoryGet**](MetricsV2Api.md#v2MetricsAssetHistoryGet) | **GET** /v2/metrics/asset/history | Historical metrics for the asset |
+| [**v2MetricsAssetListingGet**](MetricsV2Api.md#v2MetricsAssetListingGet) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset |
+| [**v2MetricsChainHistoryGet**](MetricsV2Api.md#v2MetricsChainHistoryGet) | **GET** /v2/metrics/chain/history | Historical metrics for the chain |
+| [**v2MetricsChainListingGet**](MetricsV2Api.md#v2MetricsChainListingGet) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain |
+| [**v2MetricsExchangeHistoryGet**](MetricsV2Api.md#v2MetricsExchangeHistoryGet) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange |
+| [**v2MetricsExchangeListingGet**](MetricsV2Api.md#v2MetricsExchangeListingGet) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange |
+| [**v2MetricsListingGet**](MetricsV2Api.md#v2MetricsListingGet) | **GET** /v2/metrics/listing | Listing of all supported metrics |
 
 
-<a id="marketdataListMetricsV2AssetHistory"></a>
-# **marketdataListMetricsV2AssetHistory**
-> List&lt;Object&gt; marketdataListMetricsV2AssetHistory(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
+<a id="v2MetricsAssetHistoryGet"></a>
+# **v2MetricsAssetHistoryGet**
+> List&lt;Object&gt; v2MetricsAssetHistoryGet(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
 
 Historical metrics for the asset
 
@@ -55,10 +55,10 @@ public class Example {
     String periodId = "periodId_example"; // String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
     Integer limit = 100; // Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
     try {
-      List<Object> result = apiInstance.marketdataListMetricsV2AssetHistory(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
+      List<Object> result = apiInstance.v2MetricsAssetHistoryGet(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2AssetHistory");
+      System.err.println("Exception when calling MetricsV2Api#v2MetricsAssetHistoryGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -100,9 +100,9 @@ public class Example {
 | **400** | Invalid input, e.g., missing required parameters, invalid asset_id. |  -  |
 | **500** | Internal server error. |  -  |
 
-<a id="marketdataListMetricsV2AssetListing"></a>
-# **marketdataListMetricsV2AssetListing**
-> List&lt;V1MetricInfo&gt; marketdataListMetricsV2AssetListing(assetId)
+<a id="v2MetricsAssetListingGet"></a>
+# **v2MetricsAssetListingGet**
+> List&lt;V1MetricInfo&gt; v2MetricsAssetListingGet(assetId)
 
 Listing of metrics available for specific asset
 
@@ -136,10 +136,10 @@ public class Example {
     MetricsV2Api apiInstance = new MetricsV2Api(defaultClient);
     String assetId = "assetId_example"; // String | Asset identifier (e.g., USDC, USDT)
     try {
-      List<V1MetricInfo> result = apiInstance.marketdataListMetricsV2AssetListing(assetId);
+      List<V1MetricInfo> result = apiInstance.v2MetricsAssetListingGet(assetId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2AssetListing");
+      System.err.println("Exception when calling MetricsV2Api#v2MetricsAssetListingGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -173,9 +173,9 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 
-<a id="marketdataListMetricsV2ChainHistory"></a>
-# **marketdataListMetricsV2ChainHistory**
-> List&lt;Object&gt; marketdataListMetricsV2ChainHistory(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
+<a id="v2MetricsChainHistoryGet"></a>
+# **v2MetricsChainHistoryGet**
+> List&lt;Object&gt; v2MetricsChainHistoryGet(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
 
 Historical metrics for the chain
 
@@ -215,10 +215,10 @@ public class Example {
     String periodId = "periodId_example"; // String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
     Integer limit = 100; // Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
     try {
-      List<Object> result = apiInstance.marketdataListMetricsV2ChainHistory(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
+      List<Object> result = apiInstance.v2MetricsChainHistoryGet(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ChainHistory");
+      System.err.println("Exception when calling MetricsV2Api#v2MetricsChainHistoryGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -260,9 +260,9 @@ public class Example {
 | **400** | Invalid input, e.g., missing required parameters, invalid chain_id. |  -  |
 | **500** | Internal server error. |  -  |
 
-<a id="marketdataListMetricsV2ChainListing"></a>
-# **marketdataListMetricsV2ChainListing**
-> List&lt;V1MetricInfo&gt; marketdataListMetricsV2ChainListing(chainId)
+<a id="v2MetricsChainListingGet"></a>
+# **v2MetricsChainListingGet**
+> List&lt;V1MetricInfo&gt; v2MetricsChainListingGet(chainId)
 
 Listing of metrics available for specific chain
 
@@ -296,10 +296,10 @@ public class Example {
     MetricsV2Api apiInstance = new MetricsV2Api(defaultClient);
     String chainId = "chainId_example"; // String | Chain identifier (e.g., ETHEREUM, ARBITRUM)
     try {
-      List<V1MetricInfo> result = apiInstance.marketdataListMetricsV2ChainListing(chainId);
+      List<V1MetricInfo> result = apiInstance.v2MetricsChainListingGet(chainId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ChainListing");
+      System.err.println("Exception when calling MetricsV2Api#v2MetricsChainListingGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -333,9 +333,9 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 
-<a id="marketdataListMetricsV2ExchangeHistory"></a>
-# **marketdataListMetricsV2ExchangeHistory**
-> List&lt;Object&gt; marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
+<a id="v2MetricsExchangeHistoryGet"></a>
+# **v2MetricsExchangeHistoryGet**
+> List&lt;Object&gt; v2MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
 
 Historical metrics for the exchange
 
@@ -375,10 +375,10 @@ public class Example {
     String periodId = "periodId_example"; // String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
     Integer limit = 100; // Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
     try {
-      List<Object> result = apiInstance.marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
+      List<Object> result = apiInstance.v2MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ExchangeHistory");
+      System.err.println("Exception when calling MetricsV2Api#v2MetricsExchangeHistoryGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -420,9 +420,9 @@ public class Example {
 | **400** | Invalid input, e.g., missing required parameters, invalid exchange_id mapping. |  -  |
 | **500** | Internal server error. |  -  |
 
-<a id="marketdataListMetricsV2ExchangeListing"></a>
-# **marketdataListMetricsV2ExchangeListing**
-> List&lt;V1MetricInfo&gt; marketdataListMetricsV2ExchangeListing(exchangeId)
+<a id="v2MetricsExchangeListingGet"></a>
+# **v2MetricsExchangeListingGet**
+> List&lt;V1MetricInfo&gt; v2MetricsExchangeListingGet(exchangeId)
 
 Listing of metrics available for specific exchange
 
@@ -456,10 +456,10 @@ public class Example {
     MetricsV2Api apiInstance = new MetricsV2Api(defaultClient);
     String exchangeId = "exchangeId_example"; // String | Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
     try {
-      List<V1MetricInfo> result = apiInstance.marketdataListMetricsV2ExchangeListing(exchangeId);
+      List<V1MetricInfo> result = apiInstance.v2MetricsExchangeListingGet(exchangeId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2ExchangeListing");
+      System.err.println("Exception when calling MetricsV2Api#v2MetricsExchangeListingGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -493,9 +493,9 @@ public class Example {
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 
-<a id="marketdataListMetricsV2Listing"></a>
-# **marketdataListMetricsV2Listing**
-> List&lt;V1MetricInfo&gt; marketdataListMetricsV2Listing()
+<a id="v2MetricsListingGet"></a>
+# **v2MetricsListingGet**
+> List&lt;V1MetricInfo&gt; v2MetricsListingGet()
 
 Listing of all supported metrics
 
@@ -528,10 +528,10 @@ public class Example {
 
     MetricsV2Api apiInstance = new MetricsV2Api(defaultClient);
     try {
-      List<V1MetricInfo> result = apiInstance.marketdataListMetricsV2Listing();
+      List<V1MetricInfo> result = apiInstance.v2MetricsListingGet();
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling MetricsV2Api#marketdataListMetricsV2Listing");
+      System.err.println("Exception when calling MetricsV2Api#v2MetricsListingGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());

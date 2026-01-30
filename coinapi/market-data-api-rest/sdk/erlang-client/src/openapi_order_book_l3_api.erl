@@ -27,7 +27,7 @@ v1_orderbooks3_current_get(Ctx, Optional) ->
     openapi_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
 %% @doc Current order book by symbol_id
-%% Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
+%% Retrieves the current order book for the specified symbol.
 -spec v1_orderbooks3_symbol_id_current_get(ctx:ctx(), binary()) -> {ok, openapi_v1_order_book_base:openapi_v1_order_book_base(), openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_orderbooks3_symbol_id_current_get(Ctx, SymbolId) ->
     v1_orderbooks3_symbol_id_current_get(Ctx, SymbolId, #{}).

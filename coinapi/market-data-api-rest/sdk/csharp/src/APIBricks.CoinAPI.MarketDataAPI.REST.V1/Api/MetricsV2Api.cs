@@ -51,8 +51,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2AssetHistoryApiResponse"/>&gt;</returns>
-        Task<IMarketdataListMetricsV2AssetHistoryApiResponse> MarketdataListMetricsV2AssetHistoryAsync(string metricId, string assetId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsAssetHistoryGetApiResponse"/>&gt;</returns>
+        Task<IV2MetricsAssetHistoryGetApiResponse> V2MetricsAssetHistoryGetAsync(string metricId, string assetId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Historical metrics for the asset
@@ -68,8 +68,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2AssetHistoryApiResponse"/>?&gt;</returns>
-        Task<IMarketdataListMetricsV2AssetHistoryApiResponse?> MarketdataListMetricsV2AssetHistoryOrDefaultAsync(string metricId, string assetId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsAssetHistoryGetApiResponse"/>?&gt;</returns>
+        Task<IV2MetricsAssetHistoryGetApiResponse?> V2MetricsAssetHistoryGetOrDefaultAsync(string metricId, string assetId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Listing of metrics available for specific asset
@@ -80,8 +80,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId">Asset identifier (e.g., USDC, USDT)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2AssetListingApiResponse"/>&gt;</returns>
-        Task<IMarketdataListMetricsV2AssetListingApiResponse> MarketdataListMetricsV2AssetListingAsync(string assetId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsAssetListingGetApiResponse"/>&gt;</returns>
+        Task<IV2MetricsAssetListingGetApiResponse> V2MetricsAssetListingGetAsync(string assetId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Listing of metrics available for specific asset
@@ -91,8 +91,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </remarks>
         /// <param name="assetId">Asset identifier (e.g., USDC, USDT)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2AssetListingApiResponse"/>?&gt;</returns>
-        Task<IMarketdataListMetricsV2AssetListingApiResponse?> MarketdataListMetricsV2AssetListingOrDefaultAsync(string assetId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsAssetListingGetApiResponse"/>?&gt;</returns>
+        Task<IV2MetricsAssetListingGetApiResponse?> V2MetricsAssetListingGetOrDefaultAsync(string assetId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Historical metrics for the chain
@@ -109,8 +109,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ChainHistoryApiResponse"/>&gt;</returns>
-        Task<IMarketdataListMetricsV2ChainHistoryApiResponse> MarketdataListMetricsV2ChainHistoryAsync(string metricId, string chainId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsChainHistoryGetApiResponse"/>&gt;</returns>
+        Task<IV2MetricsChainHistoryGetApiResponse> V2MetricsChainHistoryGetAsync(string metricId, string chainId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Historical metrics for the chain
@@ -126,8 +126,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ChainHistoryApiResponse"/>?&gt;</returns>
-        Task<IMarketdataListMetricsV2ChainHistoryApiResponse?> MarketdataListMetricsV2ChainHistoryOrDefaultAsync(string metricId, string chainId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsChainHistoryGetApiResponse"/>?&gt;</returns>
+        Task<IV2MetricsChainHistoryGetApiResponse?> V2MetricsChainHistoryGetOrDefaultAsync(string metricId, string chainId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Listing of metrics available for specific chain
@@ -138,8 +138,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="chainId">Chain identifier (e.g., ETHEREUM, ARBITRUM)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ChainListingApiResponse"/>&gt;</returns>
-        Task<IMarketdataListMetricsV2ChainListingApiResponse> MarketdataListMetricsV2ChainListingAsync(string chainId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsChainListingGetApiResponse"/>&gt;</returns>
+        Task<IV2MetricsChainListingGetApiResponse> V2MetricsChainListingGetAsync(string chainId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Listing of metrics available for specific chain
@@ -149,8 +149,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </remarks>
         /// <param name="chainId">Chain identifier (e.g., ETHEREUM, ARBITRUM)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ChainListingApiResponse"/>?&gt;</returns>
-        Task<IMarketdataListMetricsV2ChainListingApiResponse?> MarketdataListMetricsV2ChainListingOrDefaultAsync(string chainId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsChainListingGetApiResponse"/>?&gt;</returns>
+        Task<IV2MetricsChainListingGetApiResponse?> V2MetricsChainListingGetOrDefaultAsync(string chainId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Historical metrics for the exchange
@@ -167,8 +167,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ExchangeHistoryApiResponse"/>&gt;</returns>
-        Task<IMarketdataListMetricsV2ExchangeHistoryApiResponse> MarketdataListMetricsV2ExchangeHistoryAsync(string metricId, string exchangeId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsExchangeHistoryGetApiResponse"/>&gt;</returns>
+        Task<IV2MetricsExchangeHistoryGetApiResponse> V2MetricsExchangeHistoryGetAsync(string metricId, string exchangeId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Historical metrics for the exchange
@@ -184,8 +184,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ExchangeHistoryApiResponse"/>?&gt;</returns>
-        Task<IMarketdataListMetricsV2ExchangeHistoryApiResponse?> MarketdataListMetricsV2ExchangeHistoryOrDefaultAsync(string metricId, string exchangeId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsExchangeHistoryGetApiResponse"/>?&gt;</returns>
+        Task<IV2MetricsExchangeHistoryGetApiResponse?> V2MetricsExchangeHistoryGetOrDefaultAsync(string metricId, string exchangeId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Listing of metrics available for specific exchange
@@ -196,8 +196,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeId">Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ExchangeListingApiResponse"/>&gt;</returns>
-        Task<IMarketdataListMetricsV2ExchangeListingApiResponse> MarketdataListMetricsV2ExchangeListingAsync(string exchangeId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsExchangeListingGetApiResponse"/>&gt;</returns>
+        Task<IV2MetricsExchangeListingGetApiResponse> V2MetricsExchangeListingGetAsync(string exchangeId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Listing of metrics available for specific exchange
@@ -207,8 +207,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </remarks>
         /// <param name="exchangeId">Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ExchangeListingApiResponse"/>?&gt;</returns>
-        Task<IMarketdataListMetricsV2ExchangeListingApiResponse?> MarketdataListMetricsV2ExchangeListingOrDefaultAsync(string exchangeId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsExchangeListingGetApiResponse"/>?&gt;</returns>
+        Task<IV2MetricsExchangeListingGetApiResponse?> V2MetricsExchangeListingGetOrDefaultAsync(string exchangeId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Listing of all supported metrics
@@ -218,8 +218,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ListingApiResponse"/>&gt;</returns>
-        Task<IMarketdataListMetricsV2ListingApiResponse> MarketdataListMetricsV2ListingAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsListingGetApiResponse"/>&gt;</returns>
+        Task<IV2MetricsListingGetApiResponse> V2MetricsListingGetAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Listing of all supported metrics
@@ -228,14 +228,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// Get all metrics available in the system.
         /// </remarks>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ListingApiResponse"/>?&gt;</returns>
-        Task<IMarketdataListMetricsV2ListingApiResponse?> MarketdataListMetricsV2ListingOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsListingGetApiResponse"/>?&gt;</returns>
+        Task<IV2MetricsListingGetApiResponse?> V2MetricsListingGetOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
-    /// The <see cref="IMarketdataListMetricsV2AssetHistoryApiResponse"/>
+    /// The <see cref="IV2MetricsAssetHistoryGetApiResponse"/>
     /// </summary>
-    public interface IMarketdataListMetricsV2AssetHistoryApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<Object>?>
+    public interface IV2MetricsAssetHistoryGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<Object>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -257,9 +257,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     }
 
     /// <summary>
-    /// The <see cref="IMarketdataListMetricsV2AssetListingApiResponse"/>
+    /// The <see cref="IV2MetricsAssetListingGetApiResponse"/>
     /// </summary>
-    public interface IMarketdataListMetricsV2AssetListingApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1MetricInfo>?>
+    public interface IV2MetricsAssetListingGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1MetricInfo>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -269,45 +269,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     }
 
     /// <summary>
-    /// The <see cref="IMarketdataListMetricsV2ChainHistoryApiResponse"/>
+    /// The <see cref="IV2MetricsChainHistoryGetApiResponse"/>
     /// </summary>
-    public interface IMarketdataListMetricsV2ChainHistoryApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<Object>?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-
-        /// <summary>
-        /// Returns true if the response is 400 BadRequest
-        /// </summary>
-        /// <returns></returns>
-        bool IsBadRequest { get; }
-
-        /// <summary>
-        /// Returns true if the response is 500 InternalServerError
-        /// </summary>
-        /// <returns></returns>
-        bool IsInternalServerError { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IMarketdataListMetricsV2ChainListingApiResponse"/>
-    /// </summary>
-    public interface IMarketdataListMetricsV2ChainListingApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1MetricInfo>?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IMarketdataListMetricsV2ExchangeHistoryApiResponse"/>
-    /// </summary>
-    public interface IMarketdataListMetricsV2ExchangeHistoryApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<Object>?>
+    public interface IV2MetricsChainHistoryGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<Object>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -329,9 +293,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     }
 
     /// <summary>
-    /// The <see cref="IMarketdataListMetricsV2ExchangeListingApiResponse"/>
+    /// The <see cref="IV2MetricsChainListingGetApiResponse"/>
     /// </summary>
-    public interface IMarketdataListMetricsV2ExchangeListingApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1MetricInfo>?>
+    public interface IV2MetricsChainListingGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1MetricInfo>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -341,9 +305,45 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     }
 
     /// <summary>
-    /// The <see cref="IMarketdataListMetricsV2ListingApiResponse"/>
+    /// The <see cref="IV2MetricsExchangeHistoryGetApiResponse"/>
     /// </summary>
-    public interface IMarketdataListMetricsV2ListingApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1MetricInfo>?>
+    public interface IV2MetricsExchangeHistoryGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<Object>?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+
+        /// <summary>
+        /// Returns true if the response is 400 BadRequest
+        /// </summary>
+        /// <returns></returns>
+        bool IsBadRequest { get; }
+
+        /// <summary>
+        /// Returns true if the response is 500 InternalServerError
+        /// </summary>
+        /// <returns></returns>
+        bool IsInternalServerError { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IV2MetricsExchangeListingGetApiResponse"/>
+    /// </summary>
+    public interface IV2MetricsExchangeListingGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1MetricInfo>?>
+    {
+        /// <summary>
+        /// Returns true if the response is 200 Ok
+        /// </summary>
+        /// <returns></returns>
+        bool IsOk { get; }
+    }
+
+    /// <summary>
+    /// The <see cref="IV2MetricsListingGetApiResponse"/>
+    /// </summary>
+    public interface IV2MetricsListingGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1MetricInfo>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -360,141 +360,141 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnMarketdataListMetricsV2AssetHistory;
+        public event EventHandler<ApiResponseEventArgs>? OnV2MetricsAssetHistoryGet;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorMarketdataListMetricsV2AssetHistory;
+        public event EventHandler<ExceptionEventArgs>? OnErrorV2MetricsAssetHistoryGet;
 
-        internal void ExecuteOnMarketdataListMetricsV2AssetHistory(MetricsV2Api.MarketdataListMetricsV2AssetHistoryApiResponse apiResponse)
+        internal void ExecuteOnV2MetricsAssetHistoryGet(MetricsV2Api.V2MetricsAssetHistoryGetApiResponse apiResponse)
         {
-            OnMarketdataListMetricsV2AssetHistory?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnV2MetricsAssetHistoryGet?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorMarketdataListMetricsV2AssetHistory(Exception exception)
+        internal void ExecuteOnErrorV2MetricsAssetHistoryGet(Exception exception)
         {
-            OnErrorMarketdataListMetricsV2AssetHistory?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorV2MetricsAssetHistoryGet?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnMarketdataListMetricsV2AssetListing;
+        public event EventHandler<ApiResponseEventArgs>? OnV2MetricsAssetListingGet;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorMarketdataListMetricsV2AssetListing;
+        public event EventHandler<ExceptionEventArgs>? OnErrorV2MetricsAssetListingGet;
 
-        internal void ExecuteOnMarketdataListMetricsV2AssetListing(MetricsV2Api.MarketdataListMetricsV2AssetListingApiResponse apiResponse)
+        internal void ExecuteOnV2MetricsAssetListingGet(MetricsV2Api.V2MetricsAssetListingGetApiResponse apiResponse)
         {
-            OnMarketdataListMetricsV2AssetListing?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnV2MetricsAssetListingGet?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorMarketdataListMetricsV2AssetListing(Exception exception)
+        internal void ExecuteOnErrorV2MetricsAssetListingGet(Exception exception)
         {
-            OnErrorMarketdataListMetricsV2AssetListing?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorV2MetricsAssetListingGet?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnMarketdataListMetricsV2ChainHistory;
+        public event EventHandler<ApiResponseEventArgs>? OnV2MetricsChainHistoryGet;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorMarketdataListMetricsV2ChainHistory;
+        public event EventHandler<ExceptionEventArgs>? OnErrorV2MetricsChainHistoryGet;
 
-        internal void ExecuteOnMarketdataListMetricsV2ChainHistory(MetricsV2Api.MarketdataListMetricsV2ChainHistoryApiResponse apiResponse)
+        internal void ExecuteOnV2MetricsChainHistoryGet(MetricsV2Api.V2MetricsChainHistoryGetApiResponse apiResponse)
         {
-            OnMarketdataListMetricsV2ChainHistory?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnV2MetricsChainHistoryGet?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorMarketdataListMetricsV2ChainHistory(Exception exception)
+        internal void ExecuteOnErrorV2MetricsChainHistoryGet(Exception exception)
         {
-            OnErrorMarketdataListMetricsV2ChainHistory?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorV2MetricsChainHistoryGet?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnMarketdataListMetricsV2ChainListing;
+        public event EventHandler<ApiResponseEventArgs>? OnV2MetricsChainListingGet;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorMarketdataListMetricsV2ChainListing;
+        public event EventHandler<ExceptionEventArgs>? OnErrorV2MetricsChainListingGet;
 
-        internal void ExecuteOnMarketdataListMetricsV2ChainListing(MetricsV2Api.MarketdataListMetricsV2ChainListingApiResponse apiResponse)
+        internal void ExecuteOnV2MetricsChainListingGet(MetricsV2Api.V2MetricsChainListingGetApiResponse apiResponse)
         {
-            OnMarketdataListMetricsV2ChainListing?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnV2MetricsChainListingGet?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorMarketdataListMetricsV2ChainListing(Exception exception)
+        internal void ExecuteOnErrorV2MetricsChainListingGet(Exception exception)
         {
-            OnErrorMarketdataListMetricsV2ChainListing?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorV2MetricsChainListingGet?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnMarketdataListMetricsV2ExchangeHistory;
+        public event EventHandler<ApiResponseEventArgs>? OnV2MetricsExchangeHistoryGet;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorMarketdataListMetricsV2ExchangeHistory;
+        public event EventHandler<ExceptionEventArgs>? OnErrorV2MetricsExchangeHistoryGet;
 
-        internal void ExecuteOnMarketdataListMetricsV2ExchangeHistory(MetricsV2Api.MarketdataListMetricsV2ExchangeHistoryApiResponse apiResponse)
+        internal void ExecuteOnV2MetricsExchangeHistoryGet(MetricsV2Api.V2MetricsExchangeHistoryGetApiResponse apiResponse)
         {
-            OnMarketdataListMetricsV2ExchangeHistory?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnV2MetricsExchangeHistoryGet?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorMarketdataListMetricsV2ExchangeHistory(Exception exception)
+        internal void ExecuteOnErrorV2MetricsExchangeHistoryGet(Exception exception)
         {
-            OnErrorMarketdataListMetricsV2ExchangeHistory?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorV2MetricsExchangeHistoryGet?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnMarketdataListMetricsV2ExchangeListing;
+        public event EventHandler<ApiResponseEventArgs>? OnV2MetricsExchangeListingGet;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorMarketdataListMetricsV2ExchangeListing;
+        public event EventHandler<ExceptionEventArgs>? OnErrorV2MetricsExchangeListingGet;
 
-        internal void ExecuteOnMarketdataListMetricsV2ExchangeListing(MetricsV2Api.MarketdataListMetricsV2ExchangeListingApiResponse apiResponse)
+        internal void ExecuteOnV2MetricsExchangeListingGet(MetricsV2Api.V2MetricsExchangeListingGetApiResponse apiResponse)
         {
-            OnMarketdataListMetricsV2ExchangeListing?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnV2MetricsExchangeListingGet?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorMarketdataListMetricsV2ExchangeListing(Exception exception)
+        internal void ExecuteOnErrorV2MetricsExchangeListingGet(Exception exception)
         {
-            OnErrorMarketdataListMetricsV2ExchangeListing?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorV2MetricsExchangeListingGet?.Invoke(this, new ExceptionEventArgs(exception));
         }
 
         /// <summary>
         /// The event raised after the server response
         /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnMarketdataListMetricsV2Listing;
+        public event EventHandler<ApiResponseEventArgs>? OnV2MetricsListingGet;
 
         /// <summary>
         /// The event raised after an error querying the server
         /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorMarketdataListMetricsV2Listing;
+        public event EventHandler<ExceptionEventArgs>? OnErrorV2MetricsListingGet;
 
-        internal void ExecuteOnMarketdataListMetricsV2Listing(MetricsV2Api.MarketdataListMetricsV2ListingApiResponse apiResponse)
+        internal void ExecuteOnV2MetricsListingGet(MetricsV2Api.V2MetricsListingGetApiResponse apiResponse)
         {
-            OnMarketdataListMetricsV2Listing?.Invoke(this, new ApiResponseEventArgs(apiResponse));
+            OnV2MetricsListingGet?.Invoke(this, new ApiResponseEventArgs(apiResponse));
         }
 
-        internal void ExecuteOnErrorMarketdataListMetricsV2Listing(Exception exception)
+        internal void ExecuteOnErrorV2MetricsListingGet(Exception exception)
         {
-            OnErrorMarketdataListMetricsV2Listing?.Invoke(this, new ExceptionEventArgs(exception));
+            OnErrorV2MetricsListingGet?.Invoke(this, new ExceptionEventArgs(exception));
         }
     }
 
@@ -552,7 +552,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             BearerTokenProvider = bearerTokenProvider;
         }
 
-        partial void FormatMarketdataListMetricsV2AssetHistory(ref string metricId, ref string assetId, ref Option<DateTime> timeStart, ref Option<DateTime> timeEnd, ref Option<string> timeFormat, ref Option<string> periodId, ref Option<int> limit);
+        partial void FormatV2MetricsAssetHistoryGet(ref string metricId, ref string assetId, ref Option<DateTime> timeStart, ref Option<DateTime> timeEnd, ref Option<string> timeFormat, ref Option<string> periodId, ref Option<int> limit);
 
         /// <summary>
         /// Validates the request parameters
@@ -562,7 +562,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <returns></returns>
-        private void ValidateMarketdataListMetricsV2AssetHistory(string metricId, string assetId, Option<string> timeFormat, Option<string> periodId)
+        private void ValidateV2MetricsAssetHistoryGet(string metricId, string assetId, Option<string> timeFormat, Option<string> periodId)
         {
             if (metricId == null)
                 throw new ArgumentNullException(nameof(metricId));
@@ -588,10 +588,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <param name="limit"></param>
-        private void AfterMarketdataListMetricsV2AssetHistoryDefaultImplementation(IMarketdataListMetricsV2AssetHistoryApiResponse apiResponseLocalVar, string metricId, string assetId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit)
+        private void AfterV2MetricsAssetHistoryGetDefaultImplementation(IV2MetricsAssetHistoryGetApiResponse apiResponseLocalVar, string metricId, string assetId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit)
         {
             bool suppressDefaultLog = false;
-            AfterMarketdataListMetricsV2AssetHistory(ref suppressDefaultLog, apiResponseLocalVar, metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
+            AfterV2MetricsAssetHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -608,7 +608,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <param name="limit"></param>
-        partial void AfterMarketdataListMetricsV2AssetHistory(ref bool suppressDefaultLog, IMarketdataListMetricsV2AssetHistoryApiResponse apiResponseLocalVar, string metricId, string assetId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit);
+        partial void AfterV2MetricsAssetHistoryGet(ref bool suppressDefaultLog, IV2MetricsAssetHistoryGetApiResponse apiResponseLocalVar, string metricId, string assetId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -623,10 +623,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <param name="limit"></param>
-        private void OnErrorMarketdataListMetricsV2AssetHistoryDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string metricId, string assetId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit)
+        private void OnErrorV2MetricsAssetHistoryGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string metricId, string assetId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorMarketdataListMetricsV2AssetHistory(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
+            OnErrorV2MetricsAssetHistoryGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -645,7 +645,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <param name="limit"></param>
-        partial void OnErrorMarketdataListMetricsV2AssetHistory(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string metricId, string assetId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit);
+        partial void OnErrorV2MetricsAssetHistoryGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string metricId, string assetId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit);
 
         /// <summary>
         /// Historical metrics for the asset Get asset metrics history.
@@ -658,12 +658,12 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2AssetHistoryApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2AssetHistoryApiResponse?> MarketdataListMetricsV2AssetHistoryOrDefaultAsync(string metricId, string assetId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsAssetHistoryGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsAssetHistoryGetApiResponse?> V2MetricsAssetHistoryGetOrDefaultAsync(string metricId, string assetId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await MarketdataListMetricsV2AssetHistoryAsync(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit, cancellationToken).ConfigureAwait(false);
+                return await V2MetricsAssetHistoryGetAsync(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -683,16 +683,16 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2AssetHistoryApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2AssetHistoryApiResponse> MarketdataListMetricsV2AssetHistoryAsync(string metricId, string assetId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsAssetHistoryGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsAssetHistoryGetApiResponse> V2MetricsAssetHistoryGetAsync(string metricId, string assetId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateMarketdataListMetricsV2AssetHistory(metricId, assetId, timeFormat, periodId);
+                ValidateV2MetricsAssetHistoryGet(metricId, assetId, timeFormat, periodId);
 
-                FormatMarketdataListMetricsV2AssetHistory(ref metricId, ref assetId, ref timeStart, ref timeEnd, ref timeFormat, ref periodId, ref limit);
+                FormatV2MetricsAssetHistoryGet(ref metricId, ref assetId, ref timeStart, ref timeEnd, ref timeFormat, ref periodId, ref limit);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -756,8 +756,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<MarketdataListMetricsV2AssetHistoryApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<MarketdataListMetricsV2AssetHistoryApiResponse>();
-                        MarketdataListMetricsV2AssetHistoryApiResponse apiResponseLocalVar;
+                        ILogger<V2MetricsAssetHistoryGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V2MetricsAssetHistoryGetApiResponse>();
+                        V2MetricsAssetHistoryGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -768,9 +768,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                             }
                         }
 
-                        AfterMarketdataListMetricsV2AssetHistoryDefaultImplementation(apiResponseLocalVar, metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
+                        AfterV2MetricsAssetHistoryGetDefaultImplementation(apiResponseLocalVar, metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
 
-                        Events.ExecuteOnMarketdataListMetricsV2AssetHistory(apiResponseLocalVar);
+                        Events.ExecuteOnV2MetricsAssetHistoryGet(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -782,24 +782,24 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorMarketdataListMetricsV2AssetHistoryDefaultImplementation(e, "/v2/metrics/asset/history", uriBuilderLocalVar.Path, metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
-                Events.ExecuteOnErrorMarketdataListMetricsV2AssetHistory(e);
+                OnErrorV2MetricsAssetHistoryGetDefaultImplementation(e, "/v2/metrics/asset/history", uriBuilderLocalVar.Path, metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
+                Events.ExecuteOnErrorV2MetricsAssetHistoryGet(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="MarketdataListMetricsV2AssetHistoryApiResponse"/>
+        /// The <see cref="V2MetricsAssetHistoryGetApiResponse"/>
         /// </summary>
-        public partial class MarketdataListMetricsV2AssetHistoryApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IMarketdataListMetricsV2AssetHistoryApiResponse
+        public partial class V2MetricsAssetHistoryGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IV2MetricsAssetHistoryGetApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<MarketdataListMetricsV2AssetHistoryApiResponse> Logger { get; }
+            public ILogger<V2MetricsAssetHistoryGetApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2AssetHistoryApiResponse"/>
+            /// The <see cref="V2MetricsAssetHistoryGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -808,14 +808,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2AssetHistoryApiResponse(ILogger<MarketdataListMetricsV2AssetHistoryApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsAssetHistoryGetApiResponse(ILogger<V2MetricsAssetHistoryGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2AssetHistoryApiResponse"/>
+            /// The <see cref="V2MetricsAssetHistoryGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -824,7 +824,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2AssetHistoryApiResponse(ILogger<MarketdataListMetricsV2AssetHistoryApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsAssetHistoryGetApiResponse(ILogger<V2MetricsAssetHistoryGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -893,14 +893,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatMarketdataListMetricsV2AssetListing(ref string assetId);
+        partial void FormatV2MetricsAssetListingGet(ref string assetId);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="assetId"></param>
         /// <returns></returns>
-        private void ValidateMarketdataListMetricsV2AssetListing(string assetId)
+        private void ValidateV2MetricsAssetListingGet(string assetId)
         {
             if (assetId == null)
                 throw new ArgumentNullException(nameof(assetId));
@@ -911,10 +911,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="assetId"></param>
-        private void AfterMarketdataListMetricsV2AssetListingDefaultImplementation(IMarketdataListMetricsV2AssetListingApiResponse apiResponseLocalVar, string assetId)
+        private void AfterV2MetricsAssetListingGetDefaultImplementation(IV2MetricsAssetListingGetApiResponse apiResponseLocalVar, string assetId)
         {
             bool suppressDefaultLog = false;
-            AfterMarketdataListMetricsV2AssetListing(ref suppressDefaultLog, apiResponseLocalVar, assetId);
+            AfterV2MetricsAssetListingGet(ref suppressDefaultLog, apiResponseLocalVar, assetId);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -925,7 +925,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="assetId"></param>
-        partial void AfterMarketdataListMetricsV2AssetListing(ref bool suppressDefaultLog, IMarketdataListMetricsV2AssetListingApiResponse apiResponseLocalVar, string assetId);
+        partial void AfterV2MetricsAssetListingGet(ref bool suppressDefaultLog, IV2MetricsAssetListingGetApiResponse apiResponseLocalVar, string assetId);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -934,10 +934,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="assetId"></param>
-        private void OnErrorMarketdataListMetricsV2AssetListingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string assetId)
+        private void OnErrorV2MetricsAssetListingGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string assetId)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorMarketdataListMetricsV2AssetListing(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, assetId);
+            OnErrorV2MetricsAssetListingGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, assetId);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -950,19 +950,19 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="assetId"></param>
-        partial void OnErrorMarketdataListMetricsV2AssetListing(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string assetId);
+        partial void OnErrorV2MetricsAssetListingGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string assetId);
 
         /// <summary>
         /// Listing of metrics available for specific asset Get all metrics that are actually available for the specified asset.
         /// </summary>
         /// <param name="assetId">Asset identifier (e.g., USDC, USDT)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2AssetListingApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2AssetListingApiResponse?> MarketdataListMetricsV2AssetListingOrDefaultAsync(string assetId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsAssetListingGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsAssetListingGetApiResponse?> V2MetricsAssetListingGetOrDefaultAsync(string assetId, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await MarketdataListMetricsV2AssetListingAsync(assetId, cancellationToken).ConfigureAwait(false);
+                return await V2MetricsAssetListingGetAsync(assetId, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -976,16 +976,16 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId">Asset identifier (e.g., USDC, USDT)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2AssetListingApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2AssetListingApiResponse> MarketdataListMetricsV2AssetListingAsync(string assetId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsAssetListingGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsAssetListingGetApiResponse> V2MetricsAssetListingGetAsync(string assetId, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateMarketdataListMetricsV2AssetListing(assetId);
+                ValidateV2MetricsAssetListingGet(assetId);
 
-                FormatMarketdataListMetricsV2AssetListing(ref assetId);
+                FormatV2MetricsAssetListingGet(ref assetId);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1033,8 +1033,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<MarketdataListMetricsV2AssetListingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<MarketdataListMetricsV2AssetListingApiResponse>();
-                        MarketdataListMetricsV2AssetListingApiResponse apiResponseLocalVar;
+                        ILogger<V2MetricsAssetListingGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V2MetricsAssetListingGetApiResponse>();
+                        V2MetricsAssetListingGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1045,9 +1045,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                             }
                         }
 
-                        AfterMarketdataListMetricsV2AssetListingDefaultImplementation(apiResponseLocalVar, assetId);
+                        AfterV2MetricsAssetListingGetDefaultImplementation(apiResponseLocalVar, assetId);
 
-                        Events.ExecuteOnMarketdataListMetricsV2AssetListing(apiResponseLocalVar);
+                        Events.ExecuteOnV2MetricsAssetListingGet(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1059,24 +1059,24 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorMarketdataListMetricsV2AssetListingDefaultImplementation(e, "/v2/metrics/asset/listing", uriBuilderLocalVar.Path, assetId);
-                Events.ExecuteOnErrorMarketdataListMetricsV2AssetListing(e);
+                OnErrorV2MetricsAssetListingGetDefaultImplementation(e, "/v2/metrics/asset/listing", uriBuilderLocalVar.Path, assetId);
+                Events.ExecuteOnErrorV2MetricsAssetListingGet(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="MarketdataListMetricsV2AssetListingApiResponse"/>
+        /// The <see cref="V2MetricsAssetListingGetApiResponse"/>
         /// </summary>
-        public partial class MarketdataListMetricsV2AssetListingApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IMarketdataListMetricsV2AssetListingApiResponse
+        public partial class V2MetricsAssetListingGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IV2MetricsAssetListingGetApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<MarketdataListMetricsV2AssetListingApiResponse> Logger { get; }
+            public ILogger<V2MetricsAssetListingGetApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2AssetListingApiResponse"/>
+            /// The <see cref="V2MetricsAssetListingGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1085,14 +1085,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2AssetListingApiResponse(ILogger<MarketdataListMetricsV2AssetListingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsAssetListingGetApiResponse(ILogger<V2MetricsAssetListingGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2AssetListingApiResponse"/>
+            /// The <see cref="V2MetricsAssetListingGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1101,7 +1101,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2AssetListingApiResponse(ILogger<MarketdataListMetricsV2AssetListingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsAssetListingGetApiResponse(ILogger<V2MetricsAssetListingGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1158,7 +1158,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatMarketdataListMetricsV2ChainHistory(ref string metricId, ref string chainId, ref Option<DateTime> timeStart, ref Option<DateTime> timeEnd, ref Option<string> timeFormat, ref Option<string> periodId, ref Option<int> limit);
+        partial void FormatV2MetricsChainHistoryGet(ref string metricId, ref string chainId, ref Option<DateTime> timeStart, ref Option<DateTime> timeEnd, ref Option<string> timeFormat, ref Option<string> periodId, ref Option<int> limit);
 
         /// <summary>
         /// Validates the request parameters
@@ -1168,7 +1168,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <returns></returns>
-        private void ValidateMarketdataListMetricsV2ChainHistory(string metricId, string chainId, Option<string> timeFormat, Option<string> periodId)
+        private void ValidateV2MetricsChainHistoryGet(string metricId, string chainId, Option<string> timeFormat, Option<string> periodId)
         {
             if (metricId == null)
                 throw new ArgumentNullException(nameof(metricId));
@@ -1194,10 +1194,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <param name="limit"></param>
-        private void AfterMarketdataListMetricsV2ChainHistoryDefaultImplementation(IMarketdataListMetricsV2ChainHistoryApiResponse apiResponseLocalVar, string metricId, string chainId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit)
+        private void AfterV2MetricsChainHistoryGetDefaultImplementation(IV2MetricsChainHistoryGetApiResponse apiResponseLocalVar, string metricId, string chainId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit)
         {
             bool suppressDefaultLog = false;
-            AfterMarketdataListMetricsV2ChainHistory(ref suppressDefaultLog, apiResponseLocalVar, metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
+            AfterV2MetricsChainHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1214,7 +1214,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <param name="limit"></param>
-        partial void AfterMarketdataListMetricsV2ChainHistory(ref bool suppressDefaultLog, IMarketdataListMetricsV2ChainHistoryApiResponse apiResponseLocalVar, string metricId, string chainId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit);
+        partial void AfterV2MetricsChainHistoryGet(ref bool suppressDefaultLog, IV2MetricsChainHistoryGetApiResponse apiResponseLocalVar, string metricId, string chainId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1229,10 +1229,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <param name="limit"></param>
-        private void OnErrorMarketdataListMetricsV2ChainHistoryDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string metricId, string chainId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit)
+        private void OnErrorV2MetricsChainHistoryGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string metricId, string chainId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorMarketdataListMetricsV2ChainHistory(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
+            OnErrorV2MetricsChainHistoryGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1251,7 +1251,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <param name="limit"></param>
-        partial void OnErrorMarketdataListMetricsV2ChainHistory(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string metricId, string chainId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit);
+        partial void OnErrorV2MetricsChainHistoryGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string metricId, string chainId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit);
 
         /// <summary>
         /// Historical metrics for the chain Get chain metrics history.
@@ -1264,12 +1264,12 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ChainHistoryApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2ChainHistoryApiResponse?> MarketdataListMetricsV2ChainHistoryOrDefaultAsync(string metricId, string chainId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsChainHistoryGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsChainHistoryGetApiResponse?> V2MetricsChainHistoryGetOrDefaultAsync(string metricId, string chainId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await MarketdataListMetricsV2ChainHistoryAsync(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit, cancellationToken).ConfigureAwait(false);
+                return await V2MetricsChainHistoryGetAsync(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1289,16 +1289,16 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ChainHistoryApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2ChainHistoryApiResponse> MarketdataListMetricsV2ChainHistoryAsync(string metricId, string chainId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsChainHistoryGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsChainHistoryGetApiResponse> V2MetricsChainHistoryGetAsync(string metricId, string chainId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateMarketdataListMetricsV2ChainHistory(metricId, chainId, timeFormat, periodId);
+                ValidateV2MetricsChainHistoryGet(metricId, chainId, timeFormat, periodId);
 
-                FormatMarketdataListMetricsV2ChainHistory(ref metricId, ref chainId, ref timeStart, ref timeEnd, ref timeFormat, ref periodId, ref limit);
+                FormatV2MetricsChainHistoryGet(ref metricId, ref chainId, ref timeStart, ref timeEnd, ref timeFormat, ref periodId, ref limit);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1362,8 +1362,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<MarketdataListMetricsV2ChainHistoryApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<MarketdataListMetricsV2ChainHistoryApiResponse>();
-                        MarketdataListMetricsV2ChainHistoryApiResponse apiResponseLocalVar;
+                        ILogger<V2MetricsChainHistoryGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V2MetricsChainHistoryGetApiResponse>();
+                        V2MetricsChainHistoryGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1374,9 +1374,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                             }
                         }
 
-                        AfterMarketdataListMetricsV2ChainHistoryDefaultImplementation(apiResponseLocalVar, metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
+                        AfterV2MetricsChainHistoryGetDefaultImplementation(apiResponseLocalVar, metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
 
-                        Events.ExecuteOnMarketdataListMetricsV2ChainHistory(apiResponseLocalVar);
+                        Events.ExecuteOnV2MetricsChainHistoryGet(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1388,24 +1388,24 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorMarketdataListMetricsV2ChainHistoryDefaultImplementation(e, "/v2/metrics/chain/history", uriBuilderLocalVar.Path, metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
-                Events.ExecuteOnErrorMarketdataListMetricsV2ChainHistory(e);
+                OnErrorV2MetricsChainHistoryGetDefaultImplementation(e, "/v2/metrics/chain/history", uriBuilderLocalVar.Path, metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
+                Events.ExecuteOnErrorV2MetricsChainHistoryGet(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="MarketdataListMetricsV2ChainHistoryApiResponse"/>
+        /// The <see cref="V2MetricsChainHistoryGetApiResponse"/>
         /// </summary>
-        public partial class MarketdataListMetricsV2ChainHistoryApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IMarketdataListMetricsV2ChainHistoryApiResponse
+        public partial class V2MetricsChainHistoryGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IV2MetricsChainHistoryGetApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<MarketdataListMetricsV2ChainHistoryApiResponse> Logger { get; }
+            public ILogger<V2MetricsChainHistoryGetApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2ChainHistoryApiResponse"/>
+            /// The <see cref="V2MetricsChainHistoryGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1414,14 +1414,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2ChainHistoryApiResponse(ILogger<MarketdataListMetricsV2ChainHistoryApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsChainHistoryGetApiResponse(ILogger<V2MetricsChainHistoryGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2ChainHistoryApiResponse"/>
+            /// The <see cref="V2MetricsChainHistoryGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1430,7 +1430,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2ChainHistoryApiResponse(ILogger<MarketdataListMetricsV2ChainHistoryApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsChainHistoryGetApiResponse(ILogger<V2MetricsChainHistoryGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1499,14 +1499,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatMarketdataListMetricsV2ChainListing(ref string chainId);
+        partial void FormatV2MetricsChainListingGet(ref string chainId);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="chainId"></param>
         /// <returns></returns>
-        private void ValidateMarketdataListMetricsV2ChainListing(string chainId)
+        private void ValidateV2MetricsChainListingGet(string chainId)
         {
             if (chainId == null)
                 throw new ArgumentNullException(nameof(chainId));
@@ -1517,10 +1517,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="chainId"></param>
-        private void AfterMarketdataListMetricsV2ChainListingDefaultImplementation(IMarketdataListMetricsV2ChainListingApiResponse apiResponseLocalVar, string chainId)
+        private void AfterV2MetricsChainListingGetDefaultImplementation(IV2MetricsChainListingGetApiResponse apiResponseLocalVar, string chainId)
         {
             bool suppressDefaultLog = false;
-            AfterMarketdataListMetricsV2ChainListing(ref suppressDefaultLog, apiResponseLocalVar, chainId);
+            AfterV2MetricsChainListingGet(ref suppressDefaultLog, apiResponseLocalVar, chainId);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1531,7 +1531,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="chainId"></param>
-        partial void AfterMarketdataListMetricsV2ChainListing(ref bool suppressDefaultLog, IMarketdataListMetricsV2ChainListingApiResponse apiResponseLocalVar, string chainId);
+        partial void AfterV2MetricsChainListingGet(ref bool suppressDefaultLog, IV2MetricsChainListingGetApiResponse apiResponseLocalVar, string chainId);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1540,10 +1540,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="chainId"></param>
-        private void OnErrorMarketdataListMetricsV2ChainListingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string chainId)
+        private void OnErrorV2MetricsChainListingGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string chainId)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorMarketdataListMetricsV2ChainListing(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, chainId);
+            OnErrorV2MetricsChainListingGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, chainId);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1556,19 +1556,19 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="chainId"></param>
-        partial void OnErrorMarketdataListMetricsV2ChainListing(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string chainId);
+        partial void OnErrorV2MetricsChainListingGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string chainId);
 
         /// <summary>
         /// Listing of metrics available for specific chain Get all metrics that are actually available for the specified blockchain chain.
         /// </summary>
         /// <param name="chainId">Chain identifier (e.g., ETHEREUM, ARBITRUM)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ChainListingApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2ChainListingApiResponse?> MarketdataListMetricsV2ChainListingOrDefaultAsync(string chainId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsChainListingGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsChainListingGetApiResponse?> V2MetricsChainListingGetOrDefaultAsync(string chainId, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await MarketdataListMetricsV2ChainListingAsync(chainId, cancellationToken).ConfigureAwait(false);
+                return await V2MetricsChainListingGetAsync(chainId, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1582,16 +1582,16 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="chainId">Chain identifier (e.g., ETHEREUM, ARBITRUM)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ChainListingApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2ChainListingApiResponse> MarketdataListMetricsV2ChainListingAsync(string chainId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsChainListingGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsChainListingGetApiResponse> V2MetricsChainListingGetAsync(string chainId, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateMarketdataListMetricsV2ChainListing(chainId);
+                ValidateV2MetricsChainListingGet(chainId);
 
-                FormatMarketdataListMetricsV2ChainListing(ref chainId);
+                FormatV2MetricsChainListingGet(ref chainId);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1639,8 +1639,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<MarketdataListMetricsV2ChainListingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<MarketdataListMetricsV2ChainListingApiResponse>();
-                        MarketdataListMetricsV2ChainListingApiResponse apiResponseLocalVar;
+                        ILogger<V2MetricsChainListingGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V2MetricsChainListingGetApiResponse>();
+                        V2MetricsChainListingGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1651,9 +1651,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                             }
                         }
 
-                        AfterMarketdataListMetricsV2ChainListingDefaultImplementation(apiResponseLocalVar, chainId);
+                        AfterV2MetricsChainListingGetDefaultImplementation(apiResponseLocalVar, chainId);
 
-                        Events.ExecuteOnMarketdataListMetricsV2ChainListing(apiResponseLocalVar);
+                        Events.ExecuteOnV2MetricsChainListingGet(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1665,24 +1665,24 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorMarketdataListMetricsV2ChainListingDefaultImplementation(e, "/v2/metrics/chain/listing", uriBuilderLocalVar.Path, chainId);
-                Events.ExecuteOnErrorMarketdataListMetricsV2ChainListing(e);
+                OnErrorV2MetricsChainListingGetDefaultImplementation(e, "/v2/metrics/chain/listing", uriBuilderLocalVar.Path, chainId);
+                Events.ExecuteOnErrorV2MetricsChainListingGet(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="MarketdataListMetricsV2ChainListingApiResponse"/>
+        /// The <see cref="V2MetricsChainListingGetApiResponse"/>
         /// </summary>
-        public partial class MarketdataListMetricsV2ChainListingApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IMarketdataListMetricsV2ChainListingApiResponse
+        public partial class V2MetricsChainListingGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IV2MetricsChainListingGetApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<MarketdataListMetricsV2ChainListingApiResponse> Logger { get; }
+            public ILogger<V2MetricsChainListingGetApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2ChainListingApiResponse"/>
+            /// The <see cref="V2MetricsChainListingGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1691,14 +1691,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2ChainListingApiResponse(ILogger<MarketdataListMetricsV2ChainListingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsChainListingGetApiResponse(ILogger<V2MetricsChainListingGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2ChainListingApiResponse"/>
+            /// The <see cref="V2MetricsChainListingGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -1707,7 +1707,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2ChainListingApiResponse(ILogger<MarketdataListMetricsV2ChainListingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsChainListingGetApiResponse(ILogger<V2MetricsChainListingGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1764,7 +1764,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatMarketdataListMetricsV2ExchangeHistory(ref string metricId, ref string exchangeId, ref Option<DateTime> timeStart, ref Option<DateTime> timeEnd, ref Option<string> timeFormat, ref Option<string> periodId, ref Option<int> limit);
+        partial void FormatV2MetricsExchangeHistoryGet(ref string metricId, ref string exchangeId, ref Option<DateTime> timeStart, ref Option<DateTime> timeEnd, ref Option<string> timeFormat, ref Option<string> periodId, ref Option<int> limit);
 
         /// <summary>
         /// Validates the request parameters
@@ -1774,7 +1774,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <returns></returns>
-        private void ValidateMarketdataListMetricsV2ExchangeHistory(string metricId, string exchangeId, Option<string> timeFormat, Option<string> periodId)
+        private void ValidateV2MetricsExchangeHistoryGet(string metricId, string exchangeId, Option<string> timeFormat, Option<string> periodId)
         {
             if (metricId == null)
                 throw new ArgumentNullException(nameof(metricId));
@@ -1800,10 +1800,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <param name="limit"></param>
-        private void AfterMarketdataListMetricsV2ExchangeHistoryDefaultImplementation(IMarketdataListMetricsV2ExchangeHistoryApiResponse apiResponseLocalVar, string metricId, string exchangeId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit)
+        private void AfterV2MetricsExchangeHistoryGetDefaultImplementation(IV2MetricsExchangeHistoryGetApiResponse apiResponseLocalVar, string metricId, string exchangeId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit)
         {
             bool suppressDefaultLog = false;
-            AfterMarketdataListMetricsV2ExchangeHistory(ref suppressDefaultLog, apiResponseLocalVar, metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
+            AfterV2MetricsExchangeHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -1820,7 +1820,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <param name="limit"></param>
-        partial void AfterMarketdataListMetricsV2ExchangeHistory(ref bool suppressDefaultLog, IMarketdataListMetricsV2ExchangeHistoryApiResponse apiResponseLocalVar, string metricId, string exchangeId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit);
+        partial void AfterV2MetricsExchangeHistoryGet(ref bool suppressDefaultLog, IV2MetricsExchangeHistoryGetApiResponse apiResponseLocalVar, string metricId, string exchangeId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1835,10 +1835,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <param name="limit"></param>
-        private void OnErrorMarketdataListMetricsV2ExchangeHistoryDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string metricId, string exchangeId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit)
+        private void OnErrorV2MetricsExchangeHistoryGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string metricId, string exchangeId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorMarketdataListMetricsV2ExchangeHistory(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
+            OnErrorV2MetricsExchangeHistoryGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -1857,7 +1857,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeFormat"></param>
         /// <param name="periodId"></param>
         /// <param name="limit"></param>
-        partial void OnErrorMarketdataListMetricsV2ExchangeHistory(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string metricId, string exchangeId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit);
+        partial void OnErrorV2MetricsExchangeHistoryGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string metricId, string exchangeId, Option<DateTime> timeStart, Option<DateTime> timeEnd, Option<string> timeFormat, Option<string> periodId, Option<int> limit);
 
         /// <summary>
         /// Historical metrics for the exchange Get exchange metrics history.
@@ -1870,12 +1870,12 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ExchangeHistoryApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2ExchangeHistoryApiResponse?> MarketdataListMetricsV2ExchangeHistoryOrDefaultAsync(string metricId, string exchangeId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsExchangeHistoryGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsExchangeHistoryGetApiResponse?> V2MetricsExchangeHistoryGetOrDefaultAsync(string metricId, string exchangeId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await MarketdataListMetricsV2ExchangeHistoryAsync(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit, cancellationToken).ConfigureAwait(false);
+                return await V2MetricsExchangeHistoryGetAsync(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -1895,16 +1895,16 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60; (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ExchangeHistoryApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2ExchangeHistoryApiResponse> MarketdataListMetricsV2ExchangeHistoryAsync(string metricId, string exchangeId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsExchangeHistoryGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsExchangeHistoryGetApiResponse> V2MetricsExchangeHistoryGetAsync(string metricId, string exchangeId, Option<DateTime> timeStart = default, Option<DateTime> timeEnd = default, Option<string> timeFormat = default, Option<string> periodId = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateMarketdataListMetricsV2ExchangeHistory(metricId, exchangeId, timeFormat, periodId);
+                ValidateV2MetricsExchangeHistoryGet(metricId, exchangeId, timeFormat, periodId);
 
-                FormatMarketdataListMetricsV2ExchangeHistory(ref metricId, ref exchangeId, ref timeStart, ref timeEnd, ref timeFormat, ref periodId, ref limit);
+                FormatV2MetricsExchangeHistoryGet(ref metricId, ref exchangeId, ref timeStart, ref timeEnd, ref timeFormat, ref periodId, ref limit);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -1968,8 +1968,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<MarketdataListMetricsV2ExchangeHistoryApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<MarketdataListMetricsV2ExchangeHistoryApiResponse>();
-                        MarketdataListMetricsV2ExchangeHistoryApiResponse apiResponseLocalVar;
+                        ILogger<V2MetricsExchangeHistoryGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V2MetricsExchangeHistoryGetApiResponse>();
+                        V2MetricsExchangeHistoryGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -1980,9 +1980,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                             }
                         }
 
-                        AfterMarketdataListMetricsV2ExchangeHistoryDefaultImplementation(apiResponseLocalVar, metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
+                        AfterV2MetricsExchangeHistoryGetDefaultImplementation(apiResponseLocalVar, metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
 
-                        Events.ExecuteOnMarketdataListMetricsV2ExchangeHistory(apiResponseLocalVar);
+                        Events.ExecuteOnV2MetricsExchangeHistoryGet(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -1994,24 +1994,24 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorMarketdataListMetricsV2ExchangeHistoryDefaultImplementation(e, "/v2/metrics/exchange/history", uriBuilderLocalVar.Path, metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
-                Events.ExecuteOnErrorMarketdataListMetricsV2ExchangeHistory(e);
+                OnErrorV2MetricsExchangeHistoryGetDefaultImplementation(e, "/v2/metrics/exchange/history", uriBuilderLocalVar.Path, metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
+                Events.ExecuteOnErrorV2MetricsExchangeHistoryGet(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="MarketdataListMetricsV2ExchangeHistoryApiResponse"/>
+        /// The <see cref="V2MetricsExchangeHistoryGetApiResponse"/>
         /// </summary>
-        public partial class MarketdataListMetricsV2ExchangeHistoryApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IMarketdataListMetricsV2ExchangeHistoryApiResponse
+        public partial class V2MetricsExchangeHistoryGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IV2MetricsExchangeHistoryGetApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<MarketdataListMetricsV2ExchangeHistoryApiResponse> Logger { get; }
+            public ILogger<V2MetricsExchangeHistoryGetApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2ExchangeHistoryApiResponse"/>
+            /// The <see cref="V2MetricsExchangeHistoryGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2020,14 +2020,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2ExchangeHistoryApiResponse(ILogger<MarketdataListMetricsV2ExchangeHistoryApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsExchangeHistoryGetApiResponse(ILogger<V2MetricsExchangeHistoryGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2ExchangeHistoryApiResponse"/>
+            /// The <see cref="V2MetricsExchangeHistoryGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2036,7 +2036,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2ExchangeHistoryApiResponse(ILogger<MarketdataListMetricsV2ExchangeHistoryApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsExchangeHistoryGetApiResponse(ILogger<V2MetricsExchangeHistoryGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2105,14 +2105,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatMarketdataListMetricsV2ExchangeListing(ref string exchangeId);
+        partial void FormatV2MetricsExchangeListingGet(ref string exchangeId);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="exchangeId"></param>
         /// <returns></returns>
-        private void ValidateMarketdataListMetricsV2ExchangeListing(string exchangeId)
+        private void ValidateV2MetricsExchangeListingGet(string exchangeId)
         {
             if (exchangeId == null)
                 throw new ArgumentNullException(nameof(exchangeId));
@@ -2123,10 +2123,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="exchangeId"></param>
-        private void AfterMarketdataListMetricsV2ExchangeListingDefaultImplementation(IMarketdataListMetricsV2ExchangeListingApiResponse apiResponseLocalVar, string exchangeId)
+        private void AfterV2MetricsExchangeListingGetDefaultImplementation(IV2MetricsExchangeListingGetApiResponse apiResponseLocalVar, string exchangeId)
         {
             bool suppressDefaultLog = false;
-            AfterMarketdataListMetricsV2ExchangeListing(ref suppressDefaultLog, apiResponseLocalVar, exchangeId);
+            AfterV2MetricsExchangeListingGet(ref suppressDefaultLog, apiResponseLocalVar, exchangeId);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2137,7 +2137,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="exchangeId"></param>
-        partial void AfterMarketdataListMetricsV2ExchangeListing(ref bool suppressDefaultLog, IMarketdataListMetricsV2ExchangeListingApiResponse apiResponseLocalVar, string exchangeId);
+        partial void AfterV2MetricsExchangeListingGet(ref bool suppressDefaultLog, IV2MetricsExchangeListingGetApiResponse apiResponseLocalVar, string exchangeId);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2146,10 +2146,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="exchangeId"></param>
-        private void OnErrorMarketdataListMetricsV2ExchangeListingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId)
+        private void OnErrorV2MetricsExchangeListingGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorMarketdataListMetricsV2ExchangeListing(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, exchangeId);
+            OnErrorV2MetricsExchangeListingGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, exchangeId);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2162,19 +2162,19 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="exchangeId"></param>
-        partial void OnErrorMarketdataListMetricsV2ExchangeListing(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId);
+        partial void OnErrorV2MetricsExchangeListingGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId);
 
         /// <summary>
         /// Listing of metrics available for specific exchange Get all metrics that are actually available for the specified exchange.
         /// </summary>
         /// <param name="exchangeId">Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ExchangeListingApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2ExchangeListingApiResponse?> MarketdataListMetricsV2ExchangeListingOrDefaultAsync(string exchangeId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsExchangeListingGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsExchangeListingGetApiResponse?> V2MetricsExchangeListingGetOrDefaultAsync(string exchangeId, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await MarketdataListMetricsV2ExchangeListingAsync(exchangeId, cancellationToken).ConfigureAwait(false);
+                return await V2MetricsExchangeListingGetAsync(exchangeId, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2188,16 +2188,16 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeId">Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ExchangeListingApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2ExchangeListingApiResponse> MarketdataListMetricsV2ExchangeListingAsync(string exchangeId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsExchangeListingGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsExchangeListingGetApiResponse> V2MetricsExchangeListingGetAsync(string exchangeId, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateMarketdataListMetricsV2ExchangeListing(exchangeId);
+                ValidateV2MetricsExchangeListingGet(exchangeId);
 
-                FormatMarketdataListMetricsV2ExchangeListing(ref exchangeId);
+                FormatV2MetricsExchangeListingGet(ref exchangeId);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -2245,8 +2245,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<MarketdataListMetricsV2ExchangeListingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<MarketdataListMetricsV2ExchangeListingApiResponse>();
-                        MarketdataListMetricsV2ExchangeListingApiResponse apiResponseLocalVar;
+                        ILogger<V2MetricsExchangeListingGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V2MetricsExchangeListingGetApiResponse>();
+                        V2MetricsExchangeListingGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2257,9 +2257,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                             }
                         }
 
-                        AfterMarketdataListMetricsV2ExchangeListingDefaultImplementation(apiResponseLocalVar, exchangeId);
+                        AfterV2MetricsExchangeListingGetDefaultImplementation(apiResponseLocalVar, exchangeId);
 
-                        Events.ExecuteOnMarketdataListMetricsV2ExchangeListing(apiResponseLocalVar);
+                        Events.ExecuteOnV2MetricsExchangeListingGet(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2271,24 +2271,24 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorMarketdataListMetricsV2ExchangeListingDefaultImplementation(e, "/v2/metrics/exchange/listing", uriBuilderLocalVar.Path, exchangeId);
-                Events.ExecuteOnErrorMarketdataListMetricsV2ExchangeListing(e);
+                OnErrorV2MetricsExchangeListingGetDefaultImplementation(e, "/v2/metrics/exchange/listing", uriBuilderLocalVar.Path, exchangeId);
+                Events.ExecuteOnErrorV2MetricsExchangeListingGet(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="MarketdataListMetricsV2ExchangeListingApiResponse"/>
+        /// The <see cref="V2MetricsExchangeListingGetApiResponse"/>
         /// </summary>
-        public partial class MarketdataListMetricsV2ExchangeListingApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IMarketdataListMetricsV2ExchangeListingApiResponse
+        public partial class V2MetricsExchangeListingGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IV2MetricsExchangeListingGetApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<MarketdataListMetricsV2ExchangeListingApiResponse> Logger { get; }
+            public ILogger<V2MetricsExchangeListingGetApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2ExchangeListingApiResponse"/>
+            /// The <see cref="V2MetricsExchangeListingGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2297,14 +2297,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2ExchangeListingApiResponse(ILogger<MarketdataListMetricsV2ExchangeListingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsExchangeListingGetApiResponse(ILogger<V2MetricsExchangeListingGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2ExchangeListingApiResponse"/>
+            /// The <see cref="V2MetricsExchangeListingGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2313,7 +2313,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2ExchangeListingApiResponse(ILogger<MarketdataListMetricsV2ExchangeListingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsExchangeListingGetApiResponse(ILogger<V2MetricsExchangeListingGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2374,10 +2374,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// Processes the server response
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
-        private void AfterMarketdataListMetricsV2ListingDefaultImplementation(IMarketdataListMetricsV2ListingApiResponse apiResponseLocalVar)
+        private void AfterV2MetricsListingGetDefaultImplementation(IV2MetricsListingGetApiResponse apiResponseLocalVar)
         {
             bool suppressDefaultLog = false;
-            AfterMarketdataListMetricsV2Listing(ref suppressDefaultLog, apiResponseLocalVar);
+            AfterV2MetricsListingGet(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -2387,7 +2387,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </summary>
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
-        partial void AfterMarketdataListMetricsV2Listing(ref bool suppressDefaultLog, IMarketdataListMetricsV2ListingApiResponse apiResponseLocalVar);
+        partial void AfterV2MetricsListingGet(ref bool suppressDefaultLog, IV2MetricsListingGetApiResponse apiResponseLocalVar);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2395,10 +2395,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        private void OnErrorMarketdataListMetricsV2ListingDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
+        private void OnErrorV2MetricsListingGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorMarketdataListMetricsV2Listing(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
+            OnErrorV2MetricsListingGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -2410,18 +2410,18 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="exceptionLocalVar"></param>
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
-        partial void OnErrorMarketdataListMetricsV2Listing(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
+        partial void OnErrorV2MetricsListingGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar);
 
         /// <summary>
         /// Listing of all supported metrics Get all metrics available in the system.
         /// </summary>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ListingApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2ListingApiResponse?> MarketdataListMetricsV2ListingOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsListingGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsListingGetApiResponse?> V2MetricsListingGetOrDefaultAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await MarketdataListMetricsV2ListingAsync(cancellationToken).ConfigureAwait(false);
+                return await V2MetricsListingGetAsync(cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -2434,8 +2434,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IMarketdataListMetricsV2ListingApiResponse"/>&gt;</returns>
-        public async Task<IMarketdataListMetricsV2ListingApiResponse> MarketdataListMetricsV2ListingAsync(System.Threading.CancellationToken cancellationToken = default)
+        /// <returns><see cref="Task"/>&lt;<see cref="IV2MetricsListingGetApiResponse"/>&gt;</returns>
+        public async Task<IV2MetricsListingGetApiResponse> V2MetricsListingGetAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -2481,8 +2481,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        ILogger<MarketdataListMetricsV2ListingApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<MarketdataListMetricsV2ListingApiResponse>();
-                        MarketdataListMetricsV2ListingApiResponse apiResponseLocalVar;
+                        ILogger<V2MetricsListingGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V2MetricsListingGetApiResponse>();
+                        V2MetricsListingGetApiResponse apiResponseLocalVar;
 
                         switch ((int)httpResponseMessageLocalVar.StatusCode) {
                             default: {
@@ -2493,9 +2493,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                             }
                         }
 
-                        AfterMarketdataListMetricsV2ListingDefaultImplementation(apiResponseLocalVar);
+                        AfterV2MetricsListingGetDefaultImplementation(apiResponseLocalVar);
 
-                        Events.ExecuteOnMarketdataListMetricsV2Listing(apiResponseLocalVar);
+                        Events.ExecuteOnV2MetricsListingGet(apiResponseLocalVar);
 
                         if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
                             foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
@@ -2507,24 +2507,24 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorMarketdataListMetricsV2ListingDefaultImplementation(e, "/v2/metrics/listing", uriBuilderLocalVar.Path);
-                Events.ExecuteOnErrorMarketdataListMetricsV2Listing(e);
+                OnErrorV2MetricsListingGetDefaultImplementation(e, "/v2/metrics/listing", uriBuilderLocalVar.Path);
+                Events.ExecuteOnErrorV2MetricsListingGet(e);
                 throw;
             }
         }
 
         /// <summary>
-        /// The <see cref="MarketdataListMetricsV2ListingApiResponse"/>
+        /// The <see cref="V2MetricsListingGetApiResponse"/>
         /// </summary>
-        public partial class MarketdataListMetricsV2ListingApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IMarketdataListMetricsV2ListingApiResponse
+        public partial class V2MetricsListingGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.ApiResponse, IV2MetricsListingGetApiResponse
         {
             /// <summary>
             /// The logger
             /// </summary>
-            public ILogger<MarketdataListMetricsV2ListingApiResponse> Logger { get; }
+            public ILogger<V2MetricsListingGetApiResponse> Logger { get; }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2ListingApiResponse"/>
+            /// The <see cref="V2MetricsListingGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2533,14 +2533,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2ListingApiResponse(ILogger<MarketdataListMetricsV2ListingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsListingGetApiResponse(ILogger<V2MetricsListingGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
             /// <summary>
-            /// The <see cref="MarketdataListMetricsV2ListingApiResponse"/>
+            /// The <see cref="V2MetricsListingGetApiResponse"/>
             /// </summary>
             /// <param name="logger"></param>
             /// <param name="httpRequestMessage"></param>
@@ -2549,7 +2549,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public MarketdataListMetricsV2ListingApiResponse(ILogger<MarketdataListMetricsV2ListingApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public V2MetricsListingGetApiResponse(ILogger<V2MetricsListingGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);

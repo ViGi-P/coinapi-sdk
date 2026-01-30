@@ -4,17 +4,17 @@ All URIs are relative to *https://rest.coinapi.io*
 
 Feature | HTTP request | Description
 ------------- | ------------- | -------------
-[**marketdata_list_metrics_v2_asset_history**](METRICSV2_API.md#marketdata_list_metrics_v2_asset_history) | **Get** /v2/metrics/asset/history | Historical metrics for the asset
-[**marketdata_list_metrics_v2_asset_listing**](METRICSV2_API.md#marketdata_list_metrics_v2_asset_listing) | **Get** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-[**marketdata_list_metrics_v2_chain_history**](METRICSV2_API.md#marketdata_list_metrics_v2_chain_history) | **Get** /v2/metrics/chain/history | Historical metrics for the chain
-[**marketdata_list_metrics_v2_chain_listing**](METRICSV2_API.md#marketdata_list_metrics_v2_chain_listing) | **Get** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-[**marketdata_list_metrics_v2_exchange_history**](METRICSV2_API.md#marketdata_list_metrics_v2_exchange_history) | **Get** /v2/metrics/exchange/history | Historical metrics for the exchange
-[**marketdata_list_metrics_v2_exchange_listing**](METRICSV2_API.md#marketdata_list_metrics_v2_exchange_listing) | **Get** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-[**marketdata_list_metrics_v2_listing**](METRICSV2_API.md#marketdata_list_metrics_v2_listing) | **Get** /v2/metrics/listing | Listing of all supported metrics
+[**v2_metrics_asset_history_get**](METRICSV2_API.md#v2_metrics_asset_history_get) | **Get** /v2/metrics/asset/history | Historical metrics for the asset
+[**v2_metrics_asset_listing_get**](METRICSV2_API.md#v2_metrics_asset_listing_get) | **Get** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+[**v2_metrics_chain_history_get**](METRICSV2_API.md#v2_metrics_chain_history_get) | **Get** /v2/metrics/chain/history | Historical metrics for the chain
+[**v2_metrics_chain_listing_get**](METRICSV2_API.md#v2_metrics_chain_listing_get) | **Get** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+[**v2_metrics_exchange_history_get**](METRICSV2_API.md#v2_metrics_exchange_history_get) | **Get** /v2/metrics/exchange/history | Historical metrics for the exchange
+[**v2_metrics_exchange_listing_get**](METRICSV2_API.md#v2_metrics_exchange_listing_get) | **Get** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+[**v2_metrics_listing_get**](METRICSV2_API.md#v2_metrics_listing_get) | **Get** /v2/metrics/listing | Listing of all supported metrics
 
 
-# **marketdata_list_metrics_v2_asset_history**
-> marketdata_list_metrics_v2_asset_history (metric_id: STRING_32 ; asset_id: STRING_32 ; time_start:  detachable DATE_TIME ; time_end:  detachable DATE_TIME ; time_format:  detachable STRING_32 ; period_id:  detachable STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [ANY]
+# **v2_metrics_asset_history_get**
+> v2_metrics_asset_history_get (metric_id: STRING_32 ; asset_id: STRING_32 ; time_start:  detachable DATE_TIME ; time_end:  detachable DATE_TIME ; time_format:  detachable STRING_32 ; period_id:  detachable STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [ANY]
 
 
 Historical metrics for the asset
@@ -49,8 +49,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **marketdata_list_metrics_v2_asset_listing**
-> marketdata_list_metrics_v2_asset_listing (asset_id: STRING_32 ): detachable LIST [V1_METRIC_INFO]
+# **v2_metrics_asset_listing_get**
+> v2_metrics_asset_listing_get (asset_id: STRING_32 ): detachable LIST [V1_METRIC_INFO]
 
 
 Listing of metrics available for specific asset
@@ -79,8 +79,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **marketdata_list_metrics_v2_chain_history**
-> marketdata_list_metrics_v2_chain_history (metric_id: STRING_32 ; chain_id: STRING_32 ; time_start:  detachable DATE_TIME ; time_end:  detachable DATE_TIME ; time_format:  detachable STRING_32 ; period_id:  detachable STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [ANY]
+# **v2_metrics_chain_history_get**
+> v2_metrics_chain_history_get (metric_id: STRING_32 ; chain_id: STRING_32 ; time_start:  detachable DATE_TIME ; time_end:  detachable DATE_TIME ; time_format:  detachable STRING_32 ; period_id:  detachable STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [ANY]
 
 
 Historical metrics for the chain
@@ -115,8 +115,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **marketdata_list_metrics_v2_chain_listing**
-> marketdata_list_metrics_v2_chain_listing (chain_id: STRING_32 ): detachable LIST [V1_METRIC_INFO]
+# **v2_metrics_chain_listing_get**
+> v2_metrics_chain_listing_get (chain_id: STRING_32 ): detachable LIST [V1_METRIC_INFO]
 
 
 Listing of metrics available for specific chain
@@ -145,8 +145,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **marketdata_list_metrics_v2_exchange_history**
-> marketdata_list_metrics_v2_exchange_history (metric_id: STRING_32 ; exchange_id: STRING_32 ; time_start:  detachable DATE_TIME ; time_end:  detachable DATE_TIME ; time_format:  detachable STRING_32 ; period_id:  detachable STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [ANY]
+# **v2_metrics_exchange_history_get**
+> v2_metrics_exchange_history_get (metric_id: STRING_32 ; exchange_id: STRING_32 ; time_start:  detachable DATE_TIME ; time_end:  detachable DATE_TIME ; time_format:  detachable STRING_32 ; period_id:  detachable STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [ANY]
 
 
 Historical metrics for the exchange
@@ -181,8 +181,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **marketdata_list_metrics_v2_exchange_listing**
-> marketdata_list_metrics_v2_exchange_listing (exchange_id: STRING_32 ): detachable LIST [V1_METRIC_INFO]
+# **v2_metrics_exchange_listing_get**
+> v2_metrics_exchange_listing_get (exchange_id: STRING_32 ): detachable LIST [V1_METRIC_INFO]
 
 
 Listing of metrics available for specific exchange
@@ -211,8 +211,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **marketdata_list_metrics_v2_listing**
-> marketdata_list_metrics_v2_listing : detachable LIST [V1_METRIC_INFO]
+# **v2_metrics_listing_get**
+> v2_metrics_listing_get : detachable LIST [V1_METRIC_INFO]
 
 
 Listing of all supported metrics

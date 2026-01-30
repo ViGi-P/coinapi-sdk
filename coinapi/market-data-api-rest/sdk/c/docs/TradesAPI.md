@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 ```c
 // Historical data
 //
-// Get history transactions from specific symbol, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
+// Get history transactions from specific symbol, returned in time ascending order.  :::warning The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the 'date' parameter instead for querying data for a specific day without filter. :::
 //
 list_t* TradesAPI_v1TradesSymbolIdHistoryGet(apiClient_t *apiClient, char *symbol_id, char *date, char *time_start, char *time_end, int *limit, int *include_id);
 ```
@@ -57,8 +57,8 @@ Name | Type | Description  | Notes
 **apiClient** | **apiClient_t \*** | context containing the client configuration |
 **symbol_id** | **char \*** | Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols) | 
 **date** | **char \*** | Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) | [optional] 
-**time_start** | **char \*** | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) | [optional] 
-**time_end** | **char \*** | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) | [optional] 
+**time_start** | **char \*** | Starting time in ISO 8601 | [optional] 
+**time_end** | **char \*** | Timeseries ending time in ISO 8601 | [optional] 
 **limit** | **int \*** | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
 **include_id** | **int \*** | Information that additional exchange trade identifier should be included in the &#x60;id_trade&#x60; parameter of the trade if exchange providing identifiers. | [optional] [default to false]
 

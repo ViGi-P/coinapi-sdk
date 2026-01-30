@@ -26,7 +26,7 @@ void main() {
 
     // Current order book by symbol_id
     //
-    // Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
+    // Retrieves the current order book for the specified symbol.
     //
     //Future<V1OrderBookBase> v1Orderbooks3SymbolIdCurrentGet(String symbolId, { int limitLevels }) async
     test('test v1Orderbooks3SymbolIdCurrentGet', () async {

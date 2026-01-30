@@ -722,9 +722,9 @@ class OrderBookApi
      * Historical data
      *
      * @param  string $symbol_id Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols) (required)
-     * @param  string|null $date Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) (optional)
-     * @param  string|null $time_start Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
-     * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
+     * @param  string|null $date Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided) (optional)
+     * @param  string|null $time_start Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead) (optional)
+     * @param  string|null $time_end Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead) (optional)
      * @param  int|null $limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OrderbooksSymbolIdHistoryGet'] to see the possible values for this operation
@@ -745,9 +745,9 @@ class OrderBookApi
      * Historical data
      *
      * @param  string $symbol_id Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols) (required)
-     * @param  string|null $date Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) (optional)
-     * @param  string|null $time_start Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
-     * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
+     * @param  string|null $date Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided) (optional)
+     * @param  string|null $time_start Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead) (optional)
+     * @param  string|null $time_end Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead) (optional)
      * @param  int|null $limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OrderbooksSymbolIdHistoryGet'] to see the possible values for this operation
@@ -835,9 +835,9 @@ class OrderBookApi
      * Historical data
      *
      * @param  string $symbol_id Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols) (required)
-     * @param  string|null $date Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) (optional)
-     * @param  string|null $time_start Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
-     * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
+     * @param  string|null $date Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided) (optional)
+     * @param  string|null $time_start Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead) (optional)
+     * @param  string|null $time_end Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead) (optional)
      * @param  int|null $limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OrderbooksSymbolIdHistoryGet'] to see the possible values for this operation
@@ -861,9 +861,9 @@ class OrderBookApi
      * Historical data
      *
      * @param  string $symbol_id Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols) (required)
-     * @param  string|null $date Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) (optional)
-     * @param  string|null $time_start Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
-     * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
+     * @param  string|null $date Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided) (optional)
+     * @param  string|null $time_start Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead) (optional)
+     * @param  string|null $time_end Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead) (optional)
      * @param  int|null $limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OrderbooksSymbolIdHistoryGet'] to see the possible values for this operation
@@ -916,9 +916,9 @@ class OrderBookApi
      * Create request for operation 'v1OrderbooksSymbolIdHistoryGet'
      *
      * @param  string $symbol_id Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols) (required)
-     * @param  string|null $date Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) (optional)
-     * @param  string|null $time_start Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
-     * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
+     * @param  string|null $date Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided) (optional)
+     * @param  string|null $time_start Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead) (optional)
+     * @param  string|null $time_end Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead) (optional)
      * @param  int|null $limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OrderbooksSymbolIdHistoryGet'] to see the possible values for this operation

@@ -43,7 +43,7 @@ v1Orderbooks3CurrentGet filterSymbolId_query limitLevels_query auth_token =
 
 {-| Current order book by symbol_id
 
-Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
+Retrieves the current order book for the specified symbol.
 
 -}
 v1Orderbooks3SymbolIdCurrentGet : String -> Maybe Int -> String -> Api.Request Api.Data.V1OrderBookBase

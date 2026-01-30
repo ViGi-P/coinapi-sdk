@@ -72,7 +72,7 @@ export class TradesApi extends BaseAPI {
     };
 
     /**
-     * Get history transactions from specific symbol, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the \'date\' parameter. For specific time ranges (including cross-day or multi-hour queries), use \'time_start\' and \'time_end\'. :::
+     * Get history transactions from specific symbol, returned in time ascending order.  :::warning The \'time_start\' and \'time_end\' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the \'date\' parameter instead for querying data for a specific day without filter. :::
      * Historical data
      */
     v1TradesSymbolIdHistoryGet({ symbolId, date, timeStart, timeEnd, limit, includeId }: V1TradesSymbolIdHistoryGetRequest): Observable<Array<V1Trade>>

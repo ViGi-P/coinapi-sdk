@@ -91,13 +91,13 @@ Category | Method | HTTP request | Description
 *MetricsV1API* | [**MetricsV1API_v1MetricsSymbolCurrentGet**](docs/MetricsV1API.md#MetricsV1API_v1MetricsSymbolCurrentGet) | **GET** /v1/metrics/symbol/current | Current metrics for given symbol
 *MetricsV1API* | [**MetricsV1API_v1MetricsSymbolHistoryGet**](docs/MetricsV1API.md#MetricsV1API_v1MetricsSymbolHistoryGet) | **GET** /v1/metrics/symbol/history | Historical metrics for symbol
 *MetricsV1API* | [**MetricsV1API_v1MetricsSymbolListingGet**](docs/MetricsV1API.md#MetricsV1API_v1MetricsSymbolListingGet) | **GET** /v1/metrics/symbol/listing | Listing of all supported metrics for symbol
-*MetricsV2API* | [**MetricsV2API_marketdataListMetricsV2AssetHistory**](docs/MetricsV2API.md#MetricsV2API_marketdataListMetricsV2AssetHistory) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
-*MetricsV2API* | [**MetricsV2API_marketdataListMetricsV2AssetListing**](docs/MetricsV2API.md#MetricsV2API_marketdataListMetricsV2AssetListing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-*MetricsV2API* | [**MetricsV2API_marketdataListMetricsV2ChainHistory**](docs/MetricsV2API.md#MetricsV2API_marketdataListMetricsV2ChainHistory) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
-*MetricsV2API* | [**MetricsV2API_marketdataListMetricsV2ChainListing**](docs/MetricsV2API.md#MetricsV2API_marketdataListMetricsV2ChainListing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-*MetricsV2API* | [**MetricsV2API_marketdataListMetricsV2ExchangeHistory**](docs/MetricsV2API.md#MetricsV2API_marketdataListMetricsV2ExchangeHistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
-*MetricsV2API* | [**MetricsV2API_marketdataListMetricsV2ExchangeListing**](docs/MetricsV2API.md#MetricsV2API_marketdataListMetricsV2ExchangeListing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-*MetricsV2API* | [**MetricsV2API_marketdataListMetricsV2Listing**](docs/MetricsV2API.md#MetricsV2API_marketdataListMetricsV2Listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
+*MetricsV2API* | [**MetricsV2API_v2MetricsAssetHistoryGet**](docs/MetricsV2API.md#MetricsV2API_v2MetricsAssetHistoryGet) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
+*MetricsV2API* | [**MetricsV2API_v2MetricsAssetListingGet**](docs/MetricsV2API.md#MetricsV2API_v2MetricsAssetListingGet) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+*MetricsV2API* | [**MetricsV2API_v2MetricsChainHistoryGet**](docs/MetricsV2API.md#MetricsV2API_v2MetricsChainHistoryGet) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
+*MetricsV2API* | [**MetricsV2API_v2MetricsChainListingGet**](docs/MetricsV2API.md#MetricsV2API_v2MetricsChainListingGet) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+*MetricsV2API* | [**MetricsV2API_v2MetricsExchangeHistoryGet**](docs/MetricsV2API.md#MetricsV2API_v2MetricsExchangeHistoryGet) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
+*MetricsV2API* | [**MetricsV2API_v2MetricsExchangeListingGet**](docs/MetricsV2API.md#MetricsV2API_v2MetricsExchangeListingGet) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+*MetricsV2API* | [**MetricsV2API_v2MetricsListingGet**](docs/MetricsV2API.md#MetricsV2API_v2MetricsListingGet) | **GET** /v2/metrics/listing | Listing of all supported metrics
 *OhlcvAPI* | [**OhlcvAPI_v1OhlcvExchangesExchangeIdHistoryGet**](docs/OhlcvAPI.md#OhlcvAPI_v1OhlcvExchangesExchangeIdHistoryGet) | **GET** /v1/ohlcv/exchanges/{exchange_id}/history | Historical data by exchange
 *OhlcvAPI* | [**OhlcvAPI_v1OhlcvPeriodsGet**](docs/OhlcvAPI.md#OhlcvAPI_v1OhlcvPeriodsGet) | **GET** /v1/ohlcv/periods | List all periods
 *OhlcvAPI* | [**OhlcvAPI_v1OhlcvSymbolIdHistoryGet**](docs/OhlcvAPI.md#OhlcvAPI_v1OhlcvSymbolIdHistoryGet) | **GET** /v1/ohlcv/{symbol_id}/history | Historical data

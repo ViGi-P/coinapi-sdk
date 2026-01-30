@@ -39,7 +39,7 @@ public:
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2AssetHistorySync(char * accessToken,
+bool v2MetricsAssetHistoryGetSync(char * accessToken,
 	std::string metricId, std::string assetId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData);
@@ -58,7 +58,7 @@ bool marketdataListMetricsV2AssetHistorySync(char * accessToken,
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2AssetHistoryAsync(char * accessToken,
+bool v2MetricsAssetHistoryGetAsync(char * accessToken,
 	std::string metricId, std::string assetId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData);
@@ -72,7 +72,7 @@ bool marketdataListMetricsV2AssetHistoryAsync(char * accessToken,
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2AssetListingSync(char * accessToken,
+bool v2MetricsAssetListingGetSync(char * accessToken,
 	std::string assetId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData);
@@ -85,7 +85,7 @@ bool marketdataListMetricsV2AssetListingSync(char * accessToken,
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2AssetListingAsync(char * accessToken,
+bool v2MetricsAssetListingGetAsync(char * accessToken,
 	std::string assetId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData);
@@ -105,7 +105,7 @@ bool marketdataListMetricsV2AssetListingAsync(char * accessToken,
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2ChainHistorySync(char * accessToken,
+bool v2MetricsChainHistoryGetSync(char * accessToken,
 	std::string metricId, std::string chainId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData);
@@ -124,7 +124,7 @@ bool marketdataListMetricsV2ChainHistorySync(char * accessToken,
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2ChainHistoryAsync(char * accessToken,
+bool v2MetricsChainHistoryGetAsync(char * accessToken,
 	std::string metricId, std::string chainId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData);
@@ -138,7 +138,7 @@ bool marketdataListMetricsV2ChainHistoryAsync(char * accessToken,
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2ChainListingSync(char * accessToken,
+bool v2MetricsChainListingGetSync(char * accessToken,
 	std::string chainId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData);
@@ -151,7 +151,7 @@ bool marketdataListMetricsV2ChainListingSync(char * accessToken,
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2ChainListingAsync(char * accessToken,
+bool v2MetricsChainListingGetAsync(char * accessToken,
 	std::string chainId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData);
@@ -171,7 +171,7 @@ bool marketdataListMetricsV2ChainListingAsync(char * accessToken,
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2ExchangeHistorySync(char * accessToken,
+bool v2MetricsExchangeHistoryGetSync(char * accessToken,
 	std::string metricId, std::string exchangeId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData);
@@ -190,7 +190,7 @@ bool marketdataListMetricsV2ExchangeHistorySync(char * accessToken,
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2ExchangeHistoryAsync(char * accessToken,
+bool v2MetricsExchangeHistoryGetAsync(char * accessToken,
 	std::string metricId, std::string exchangeId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData);
@@ -204,7 +204,7 @@ bool marketdataListMetricsV2ExchangeHistoryAsync(char * accessToken,
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2ExchangeListingSync(char * accessToken,
+bool v2MetricsExchangeListingGetSync(char * accessToken,
 	std::string exchangeId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData);
@@ -217,7 +217,7 @@ bool marketdataListMetricsV2ExchangeListingSync(char * accessToken,
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2ExchangeListingAsync(char * accessToken,
+bool v2MetricsExchangeListingGetAsync(char * accessToken,
 	std::string exchangeId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData);
@@ -230,7 +230,7 @@ bool marketdataListMetricsV2ExchangeListingAsync(char * accessToken,
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2ListingSync(char * accessToken,
+bool v2MetricsListingGetSync(char * accessToken,
 	
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData);
@@ -242,7 +242,7 @@ bool marketdataListMetricsV2ListingSync(char * accessToken,
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
-bool marketdataListMetricsV2ListingAsync(char * accessToken,
+bool v2MetricsListingGetAsync(char * accessToken,
 	
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData);

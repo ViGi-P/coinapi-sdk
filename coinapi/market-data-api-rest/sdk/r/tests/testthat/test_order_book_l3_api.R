@@ -21,7 +21,7 @@ test_that("V1Orderbooks3SymbolIdCurrentGet", {
   # tests for V1Orderbooks3SymbolIdCurrentGet
   # base path: https://rest.coinapi.io
   # Current order book by symbol_id
-  # Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
+  # Retrieves the current order book for the specified symbol.
   # @param symbol_id character The symbol ID (from the Metadata -> Symbols)
   # @param limit_levels integer The maximum number of levels to include in the response. (optional)
   # @return [V1OrderBookBase]

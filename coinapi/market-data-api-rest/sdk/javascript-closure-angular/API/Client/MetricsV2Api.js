@@ -57,7 +57,7 @@ API.Client.MetricsV2Api.$inject = ['$http', '$httpParamSerializer', '$injector']
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.Object>>}
  */
-API.Client.MetricsV2Api.prototype.marketdataListMetricsV2AssetHistory = function(metricId, assetId, opt_timeStart, opt_timeEnd, opt_timeFormat, opt_periodId, opt_limit, opt_extraHttpRequestParams) {
+API.Client.MetricsV2Api.prototype.v2MetricsAssetHistoryGet = function(metricId, assetId, opt_timeStart, opt_timeEnd, opt_timeFormat, opt_periodId, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v2/metrics/asset/history';
 
@@ -68,11 +68,11 @@ API.Client.MetricsV2Api.prototype.marketdataListMetricsV2AssetHistory = function
   var headerParams = angular.extend({}, this.defaultHeaders_);
   // verify required parameter 'metricId' is set
   if (!metricId) {
-    throw new Error('Missing required parameter metricId when calling marketdataListMetricsV2AssetHistory');
+    throw new Error('Missing required parameter metricId when calling v2MetricsAssetHistoryGet');
   }
   // verify required parameter 'assetId' is set
   if (!assetId) {
-    throw new Error('Missing required parameter assetId when calling marketdataListMetricsV2AssetHistory');
+    throw new Error('Missing required parameter assetId when calling v2MetricsAssetHistoryGet');
   }
   if (metricId !== undefined) {
     queryParameters['metric_id'] = metricId;
@@ -125,7 +125,7 @@ API.Client.MetricsV2Api.prototype.marketdataListMetricsV2AssetHistory = function
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.v1.MetricInfo>>}
  */
-API.Client.MetricsV2Api.prototype.marketdataListMetricsV2AssetListing = function(assetId, opt_extraHttpRequestParams) {
+API.Client.MetricsV2Api.prototype.v2MetricsAssetListingGet = function(assetId, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v2/metrics/asset/listing';
 
@@ -136,7 +136,7 @@ API.Client.MetricsV2Api.prototype.marketdataListMetricsV2AssetListing = function
   var headerParams = angular.extend({}, this.defaultHeaders_);
   // verify required parameter 'assetId' is set
   if (!assetId) {
-    throw new Error('Missing required parameter assetId when calling marketdataListMetricsV2AssetListing');
+    throw new Error('Missing required parameter assetId when calling v2MetricsAssetListingGet');
   }
   if (assetId !== undefined) {
     queryParameters['asset_id'] = assetId;
@@ -171,7 +171,7 @@ API.Client.MetricsV2Api.prototype.marketdataListMetricsV2AssetListing = function
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.Object>>}
  */
-API.Client.MetricsV2Api.prototype.marketdataListMetricsV2ChainHistory = function(metricId, chainId, opt_timeStart, opt_timeEnd, opt_timeFormat, opt_periodId, opt_limit, opt_extraHttpRequestParams) {
+API.Client.MetricsV2Api.prototype.v2MetricsChainHistoryGet = function(metricId, chainId, opt_timeStart, opt_timeEnd, opt_timeFormat, opt_periodId, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v2/metrics/chain/history';
 
@@ -182,11 +182,11 @@ API.Client.MetricsV2Api.prototype.marketdataListMetricsV2ChainHistory = function
   var headerParams = angular.extend({}, this.defaultHeaders_);
   // verify required parameter 'metricId' is set
   if (!metricId) {
-    throw new Error('Missing required parameter metricId when calling marketdataListMetricsV2ChainHistory');
+    throw new Error('Missing required parameter metricId when calling v2MetricsChainHistoryGet');
   }
   // verify required parameter 'chainId' is set
   if (!chainId) {
-    throw new Error('Missing required parameter chainId when calling marketdataListMetricsV2ChainHistory');
+    throw new Error('Missing required parameter chainId when calling v2MetricsChainHistoryGet');
   }
   if (metricId !== undefined) {
     queryParameters['metric_id'] = metricId;
@@ -239,7 +239,7 @@ API.Client.MetricsV2Api.prototype.marketdataListMetricsV2ChainHistory = function
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.v1.MetricInfo>>}
  */
-API.Client.MetricsV2Api.prototype.marketdataListMetricsV2ChainListing = function(chainId, opt_extraHttpRequestParams) {
+API.Client.MetricsV2Api.prototype.v2MetricsChainListingGet = function(chainId, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v2/metrics/chain/listing';
 
@@ -250,7 +250,7 @@ API.Client.MetricsV2Api.prototype.marketdataListMetricsV2ChainListing = function
   var headerParams = angular.extend({}, this.defaultHeaders_);
   // verify required parameter 'chainId' is set
   if (!chainId) {
-    throw new Error('Missing required parameter chainId when calling marketdataListMetricsV2ChainListing');
+    throw new Error('Missing required parameter chainId when calling v2MetricsChainListingGet');
   }
   if (chainId !== undefined) {
     queryParameters['chain_id'] = chainId;
@@ -285,7 +285,7 @@ API.Client.MetricsV2Api.prototype.marketdataListMetricsV2ChainListing = function
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.Object>>}
  */
-API.Client.MetricsV2Api.prototype.marketdataListMetricsV2ExchangeHistory = function(metricId, exchangeId, opt_timeStart, opt_timeEnd, opt_timeFormat, opt_periodId, opt_limit, opt_extraHttpRequestParams) {
+API.Client.MetricsV2Api.prototype.v2MetricsExchangeHistoryGet = function(metricId, exchangeId, opt_timeStart, opt_timeEnd, opt_timeFormat, opt_periodId, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v2/metrics/exchange/history';
 
@@ -296,11 +296,11 @@ API.Client.MetricsV2Api.prototype.marketdataListMetricsV2ExchangeHistory = funct
   var headerParams = angular.extend({}, this.defaultHeaders_);
   // verify required parameter 'metricId' is set
   if (!metricId) {
-    throw new Error('Missing required parameter metricId when calling marketdataListMetricsV2ExchangeHistory');
+    throw new Error('Missing required parameter metricId when calling v2MetricsExchangeHistoryGet');
   }
   // verify required parameter 'exchangeId' is set
   if (!exchangeId) {
-    throw new Error('Missing required parameter exchangeId when calling marketdataListMetricsV2ExchangeHistory');
+    throw new Error('Missing required parameter exchangeId when calling v2MetricsExchangeHistoryGet');
   }
   if (metricId !== undefined) {
     queryParameters['metric_id'] = metricId;
@@ -353,7 +353,7 @@ API.Client.MetricsV2Api.prototype.marketdataListMetricsV2ExchangeHistory = funct
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.v1.MetricInfo>>}
  */
-API.Client.MetricsV2Api.prototype.marketdataListMetricsV2ExchangeListing = function(exchangeId, opt_extraHttpRequestParams) {
+API.Client.MetricsV2Api.prototype.v2MetricsExchangeListingGet = function(exchangeId, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v2/metrics/exchange/listing';
 
@@ -364,7 +364,7 @@ API.Client.MetricsV2Api.prototype.marketdataListMetricsV2ExchangeListing = funct
   var headerParams = angular.extend({}, this.defaultHeaders_);
   // verify required parameter 'exchangeId' is set
   if (!exchangeId) {
-    throw new Error('Missing required parameter exchangeId when calling marketdataListMetricsV2ExchangeListing');
+    throw new Error('Missing required parameter exchangeId when calling v2MetricsExchangeListingGet');
   }
   if (exchangeId !== undefined) {
     queryParameters['exchange_id'] = exchangeId;
@@ -392,7 +392,7 @@ API.Client.MetricsV2Api.prototype.marketdataListMetricsV2ExchangeListing = funct
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.v1.MetricInfo>>}
  */
-API.Client.MetricsV2Api.prototype.marketdataListMetricsV2Listing = function(opt_extraHttpRequestParams) {
+API.Client.MetricsV2Api.prototype.v2MetricsListingGet = function(opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v2/metrics/listing';
 

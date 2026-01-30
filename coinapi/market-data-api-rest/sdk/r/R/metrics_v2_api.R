@@ -14,7 +14,7 @@
 #'
 #' @examples
 #' \dontrun{
-#' ####################  MarketdataListMetricsV2AssetHistory  ####################
+#' ####################  V2MetricsAssetHistoryGet  ####################
 #'
 #' library(openapi)
 #' var_metric_id <- "metric_id_example" # character | Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)
@@ -35,12 +35,12 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$MarketdataListMetricsV2AssetHistory(var_metric_id, var_asset_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limitdata_file = "result.txt")
-#' result <- api_instance$MarketdataListMetricsV2AssetHistory(var_metric_id, var_asset_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limit)
+#' # result <- api_instance$V2MetricsAssetHistoryGet(var_metric_id, var_asset_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limitdata_file = "result.txt")
+#' result <- api_instance$V2MetricsAssetHistoryGet(var_metric_id, var_asset_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limit)
 #' dput(result)
 #'
 #'
-#' ####################  MarketdataListMetricsV2AssetListing  ####################
+#' ####################  V2MetricsAssetListingGet  ####################
 #'
 #' library(openapi)
 #' var_asset_id <- "asset_id_example" # character | Asset identifier (e.g., USDC, USDT)
@@ -55,12 +55,12 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$MarketdataListMetricsV2AssetListing(var_asset_iddata_file = "result.txt")
-#' result <- api_instance$MarketdataListMetricsV2AssetListing(var_asset_id)
+#' # result <- api_instance$V2MetricsAssetListingGet(var_asset_iddata_file = "result.txt")
+#' result <- api_instance$V2MetricsAssetListingGet(var_asset_id)
 #' dput(result)
 #'
 #'
-#' ####################  MarketdataListMetricsV2ChainHistory  ####################
+#' ####################  V2MetricsChainHistoryGet  ####################
 #'
 #' library(openapi)
 #' var_metric_id <- "metric_id_example" # character | Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)
@@ -81,12 +81,12 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$MarketdataListMetricsV2ChainHistory(var_metric_id, var_chain_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limitdata_file = "result.txt")
-#' result <- api_instance$MarketdataListMetricsV2ChainHistory(var_metric_id, var_chain_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limit)
+#' # result <- api_instance$V2MetricsChainHistoryGet(var_metric_id, var_chain_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limitdata_file = "result.txt")
+#' result <- api_instance$V2MetricsChainHistoryGet(var_metric_id, var_chain_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limit)
 #' dput(result)
 #'
 #'
-#' ####################  MarketdataListMetricsV2ChainListing  ####################
+#' ####################  V2MetricsChainListingGet  ####################
 #'
 #' library(openapi)
 #' var_chain_id <- "chain_id_example" # character | Chain identifier (e.g., ETHEREUM, ARBITRUM)
@@ -101,12 +101,12 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$MarketdataListMetricsV2ChainListing(var_chain_iddata_file = "result.txt")
-#' result <- api_instance$MarketdataListMetricsV2ChainListing(var_chain_id)
+#' # result <- api_instance$V2MetricsChainListingGet(var_chain_iddata_file = "result.txt")
+#' result <- api_instance$V2MetricsChainListingGet(var_chain_id)
 #' dput(result)
 #'
 #'
-#' ####################  MarketdataListMetricsV2ExchangeHistory  ####################
+#' ####################  V2MetricsExchangeHistoryGet  ####################
 #'
 #' library(openapi)
 #' var_metric_id <- "metric_id_example" # character | Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)
@@ -127,12 +127,12 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$MarketdataListMetricsV2ExchangeHistory(var_metric_id, var_exchange_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limitdata_file = "result.txt")
-#' result <- api_instance$MarketdataListMetricsV2ExchangeHistory(var_metric_id, var_exchange_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limit)
+#' # result <- api_instance$V2MetricsExchangeHistoryGet(var_metric_id, var_exchange_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limitdata_file = "result.txt")
+#' result <- api_instance$V2MetricsExchangeHistoryGet(var_metric_id, var_exchange_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limit)
 #' dput(result)
 #'
 #'
-#' ####################  MarketdataListMetricsV2ExchangeListing  ####################
+#' ####################  V2MetricsExchangeListingGet  ####################
 #'
 #' library(openapi)
 #' var_exchange_id <- "exchange_id_example" # character | Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
@@ -147,12 +147,12 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$MarketdataListMetricsV2ExchangeListing(var_exchange_iddata_file = "result.txt")
-#' result <- api_instance$MarketdataListMetricsV2ExchangeListing(var_exchange_id)
+#' # result <- api_instance$V2MetricsExchangeListingGet(var_exchange_iddata_file = "result.txt")
+#' result <- api_instance$V2MetricsExchangeListingGet(var_exchange_id)
 #' dput(result)
 #'
 #'
-#' ####################  MarketdataListMetricsV2Listing  ####################
+#' ####################  V2MetricsListingGet  ####################
 #'
 #' library(openapi)
 #'
@@ -166,8 +166,8 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$MarketdataListMetricsV2Listing(data_file = "result.txt")
-#' result <- api_instance$MarketdataListMetricsV2Listing()
+#' # result <- api_instance$V2MetricsListingGet(data_file = "result.txt")
+#' result <- api_instance$V2MetricsListingGet()
 #' dput(result)
 #'
 #'
@@ -206,8 +206,8 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return array[object]
-    MarketdataListMetricsV2AssetHistory = function(metric_id, asset_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$MarketdataListMetricsV2AssetHistoryWithHttpInfo(metric_id, asset_id, time_start, time_end, time_format, period_id, limit, data_file = data_file, ...)
+    V2MetricsAssetHistoryGet = function(metric_id, asset_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
+      local_var_response <- self$V2MetricsAssetHistoryGetWithHttpInfo(metric_id, asset_id, time_start, time_end, time_format, period_id, limit, data_file = data_file, ...)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -233,7 +233,7 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return API response (array[object]) with additional information such as HTTP status code, headers
-    MarketdataListMetricsV2AssetHistoryWithHttpInfo = function(metric_id, asset_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
+    V2MetricsAssetHistoryGetWithHttpInfo = function(metric_id, asset_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -252,31 +252,31 @@ MetricsV2Api <- R6::R6Class(
       }
 
       if (!missing(`metric_id`) && is.null(`metric_id`)) {
-        stop("Invalid value for `metric_id` when calling MetricsV2Api$MarketdataListMetricsV2AssetHistory, `metric_id` is not nullable")
+        stop("Invalid value for `metric_id` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `metric_id` is not nullable")
       }
 
       if (!missing(`asset_id`) && is.null(`asset_id`)) {
-        stop("Invalid value for `asset_id` when calling MetricsV2Api$MarketdataListMetricsV2AssetHistory, `asset_id` is not nullable")
+        stop("Invalid value for `asset_id` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `asset_id` is not nullable")
       }
 
       if (!missing(`time_start`) && is.null(`time_start`)) {
-        stop("Invalid value for `time_start` when calling MetricsV2Api$MarketdataListMetricsV2AssetHistory, `time_start` is not nullable")
+        stop("Invalid value for `time_start` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `time_start` is not nullable")
       }
 
       if (!missing(`time_end`) && is.null(`time_end`)) {
-        stop("Invalid value for `time_end` when calling MetricsV2Api$MarketdataListMetricsV2AssetHistory, `time_end` is not nullable")
+        stop("Invalid value for `time_end` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `time_end` is not nullable")
       }
 
       if (!missing(`time_format`) && is.null(`time_format`)) {
-        stop("Invalid value for `time_format` when calling MetricsV2Api$MarketdataListMetricsV2AssetHistory, `time_format` is not nullable")
+        stop("Invalid value for `time_format` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `time_format` is not nullable")
       }
 
       if (!missing(`period_id`) && is.null(`period_id`)) {
-        stop("Invalid value for `period_id` when calling MetricsV2Api$MarketdataListMetricsV2AssetHistory, `period_id` is not nullable")
+        stop("Invalid value for `period_id` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `period_id` is not nullable")
       }
 
       if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling MetricsV2Api$MarketdataListMetricsV2AssetHistory, `limit` is not nullable")
+        stop("Invalid value for `limit` when calling MetricsV2Api$V2MetricsAssetHistoryGet, `limit` is not nullable")
       }
 
       query_params[["metric_id"]] <- `metric_id`
@@ -363,8 +363,8 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return array[V1MetricInfo]
-    MarketdataListMetricsV2AssetListing = function(asset_id, data_file = NULL, ...) {
-      local_var_response <- self$MarketdataListMetricsV2AssetListingWithHttpInfo(asset_id, data_file = data_file, ...)
+    V2MetricsAssetListingGet = function(asset_id, data_file = NULL, ...) {
+      local_var_response <- self$V2MetricsAssetListingGetWithHttpInfo(asset_id, data_file = data_file, ...)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -384,7 +384,7 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return API response (array[V1MetricInfo]) with additional information such as HTTP status code, headers
-    MarketdataListMetricsV2AssetListingWithHttpInfo = function(asset_id, data_file = NULL, ...) {
+    V2MetricsAssetListingGetWithHttpInfo = function(asset_id, data_file = NULL, ...) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -399,7 +399,7 @@ MetricsV2Api <- R6::R6Class(
       }
 
       if (!missing(`asset_id`) && is.null(`asset_id`)) {
-        stop("Invalid value for `asset_id` when calling MetricsV2Api$MarketdataListMetricsV2AssetListing, `asset_id` is not nullable")
+        stop("Invalid value for `asset_id` when calling MetricsV2Api$V2MetricsAssetListingGet, `asset_id` is not nullable")
       }
 
       query_params[["asset_id"]] <- `asset_id`
@@ -480,8 +480,8 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return array[object]
-    MarketdataListMetricsV2ChainHistory = function(metric_id, chain_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$MarketdataListMetricsV2ChainHistoryWithHttpInfo(metric_id, chain_id, time_start, time_end, time_format, period_id, limit, data_file = data_file, ...)
+    V2MetricsChainHistoryGet = function(metric_id, chain_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
+      local_var_response <- self$V2MetricsChainHistoryGetWithHttpInfo(metric_id, chain_id, time_start, time_end, time_format, period_id, limit, data_file = data_file, ...)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -507,7 +507,7 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return API response (array[object]) with additional information such as HTTP status code, headers
-    MarketdataListMetricsV2ChainHistoryWithHttpInfo = function(metric_id, chain_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
+    V2MetricsChainHistoryGetWithHttpInfo = function(metric_id, chain_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -526,31 +526,31 @@ MetricsV2Api <- R6::R6Class(
       }
 
       if (!missing(`metric_id`) && is.null(`metric_id`)) {
-        stop("Invalid value for `metric_id` when calling MetricsV2Api$MarketdataListMetricsV2ChainHistory, `metric_id` is not nullable")
+        stop("Invalid value for `metric_id` when calling MetricsV2Api$V2MetricsChainHistoryGet, `metric_id` is not nullable")
       }
 
       if (!missing(`chain_id`) && is.null(`chain_id`)) {
-        stop("Invalid value for `chain_id` when calling MetricsV2Api$MarketdataListMetricsV2ChainHistory, `chain_id` is not nullable")
+        stop("Invalid value for `chain_id` when calling MetricsV2Api$V2MetricsChainHistoryGet, `chain_id` is not nullable")
       }
 
       if (!missing(`time_start`) && is.null(`time_start`)) {
-        stop("Invalid value for `time_start` when calling MetricsV2Api$MarketdataListMetricsV2ChainHistory, `time_start` is not nullable")
+        stop("Invalid value for `time_start` when calling MetricsV2Api$V2MetricsChainHistoryGet, `time_start` is not nullable")
       }
 
       if (!missing(`time_end`) && is.null(`time_end`)) {
-        stop("Invalid value for `time_end` when calling MetricsV2Api$MarketdataListMetricsV2ChainHistory, `time_end` is not nullable")
+        stop("Invalid value for `time_end` when calling MetricsV2Api$V2MetricsChainHistoryGet, `time_end` is not nullable")
       }
 
       if (!missing(`time_format`) && is.null(`time_format`)) {
-        stop("Invalid value for `time_format` when calling MetricsV2Api$MarketdataListMetricsV2ChainHistory, `time_format` is not nullable")
+        stop("Invalid value for `time_format` when calling MetricsV2Api$V2MetricsChainHistoryGet, `time_format` is not nullable")
       }
 
       if (!missing(`period_id`) && is.null(`period_id`)) {
-        stop("Invalid value for `period_id` when calling MetricsV2Api$MarketdataListMetricsV2ChainHistory, `period_id` is not nullable")
+        stop("Invalid value for `period_id` when calling MetricsV2Api$V2MetricsChainHistoryGet, `period_id` is not nullable")
       }
 
       if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling MetricsV2Api$MarketdataListMetricsV2ChainHistory, `limit` is not nullable")
+        stop("Invalid value for `limit` when calling MetricsV2Api$V2MetricsChainHistoryGet, `limit` is not nullable")
       }
 
       query_params[["metric_id"]] <- `metric_id`
@@ -637,8 +637,8 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return array[V1MetricInfo]
-    MarketdataListMetricsV2ChainListing = function(chain_id, data_file = NULL, ...) {
-      local_var_response <- self$MarketdataListMetricsV2ChainListingWithHttpInfo(chain_id, data_file = data_file, ...)
+    V2MetricsChainListingGet = function(chain_id, data_file = NULL, ...) {
+      local_var_response <- self$V2MetricsChainListingGetWithHttpInfo(chain_id, data_file = data_file, ...)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -658,7 +658,7 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return API response (array[V1MetricInfo]) with additional information such as HTTP status code, headers
-    MarketdataListMetricsV2ChainListingWithHttpInfo = function(chain_id, data_file = NULL, ...) {
+    V2MetricsChainListingGetWithHttpInfo = function(chain_id, data_file = NULL, ...) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -673,7 +673,7 @@ MetricsV2Api <- R6::R6Class(
       }
 
       if (!missing(`chain_id`) && is.null(`chain_id`)) {
-        stop("Invalid value for `chain_id` when calling MetricsV2Api$MarketdataListMetricsV2ChainListing, `chain_id` is not nullable")
+        stop("Invalid value for `chain_id` when calling MetricsV2Api$V2MetricsChainListingGet, `chain_id` is not nullable")
       }
 
       query_params[["chain_id"]] <- `chain_id`
@@ -754,8 +754,8 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return array[object]
-    MarketdataListMetricsV2ExchangeHistory = function(metric_id, exchange_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$MarketdataListMetricsV2ExchangeHistoryWithHttpInfo(metric_id, exchange_id, time_start, time_end, time_format, period_id, limit, data_file = data_file, ...)
+    V2MetricsExchangeHistoryGet = function(metric_id, exchange_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
+      local_var_response <- self$V2MetricsExchangeHistoryGetWithHttpInfo(metric_id, exchange_id, time_start, time_end, time_format, period_id, limit, data_file = data_file, ...)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -781,7 +781,7 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return API response (array[object]) with additional information such as HTTP status code, headers
-    MarketdataListMetricsV2ExchangeHistoryWithHttpInfo = function(metric_id, exchange_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
+    V2MetricsExchangeHistoryGetWithHttpInfo = function(metric_id, exchange_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -800,31 +800,31 @@ MetricsV2Api <- R6::R6Class(
       }
 
       if (!missing(`metric_id`) && is.null(`metric_id`)) {
-        stop("Invalid value for `metric_id` when calling MetricsV2Api$MarketdataListMetricsV2ExchangeHistory, `metric_id` is not nullable")
+        stop("Invalid value for `metric_id` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `metric_id` is not nullable")
       }
 
       if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
-        stop("Invalid value for `exchange_id` when calling MetricsV2Api$MarketdataListMetricsV2ExchangeHistory, `exchange_id` is not nullable")
+        stop("Invalid value for `exchange_id` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `exchange_id` is not nullable")
       }
 
       if (!missing(`time_start`) && is.null(`time_start`)) {
-        stop("Invalid value for `time_start` when calling MetricsV2Api$MarketdataListMetricsV2ExchangeHistory, `time_start` is not nullable")
+        stop("Invalid value for `time_start` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `time_start` is not nullable")
       }
 
       if (!missing(`time_end`) && is.null(`time_end`)) {
-        stop("Invalid value for `time_end` when calling MetricsV2Api$MarketdataListMetricsV2ExchangeHistory, `time_end` is not nullable")
+        stop("Invalid value for `time_end` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `time_end` is not nullable")
       }
 
       if (!missing(`time_format`) && is.null(`time_format`)) {
-        stop("Invalid value for `time_format` when calling MetricsV2Api$MarketdataListMetricsV2ExchangeHistory, `time_format` is not nullable")
+        stop("Invalid value for `time_format` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `time_format` is not nullable")
       }
 
       if (!missing(`period_id`) && is.null(`period_id`)) {
-        stop("Invalid value for `period_id` when calling MetricsV2Api$MarketdataListMetricsV2ExchangeHistory, `period_id` is not nullable")
+        stop("Invalid value for `period_id` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `period_id` is not nullable")
       }
 
       if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling MetricsV2Api$MarketdataListMetricsV2ExchangeHistory, `limit` is not nullable")
+        stop("Invalid value for `limit` when calling MetricsV2Api$V2MetricsExchangeHistoryGet, `limit` is not nullable")
       }
 
       query_params[["metric_id"]] <- `metric_id`
@@ -911,8 +911,8 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return array[V1MetricInfo]
-    MarketdataListMetricsV2ExchangeListing = function(exchange_id, data_file = NULL, ...) {
-      local_var_response <- self$MarketdataListMetricsV2ExchangeListingWithHttpInfo(exchange_id, data_file = data_file, ...)
+    V2MetricsExchangeListingGet = function(exchange_id, data_file = NULL, ...) {
+      local_var_response <- self$V2MetricsExchangeListingGetWithHttpInfo(exchange_id, data_file = data_file, ...)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -932,7 +932,7 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return API response (array[V1MetricInfo]) with additional information such as HTTP status code, headers
-    MarketdataListMetricsV2ExchangeListingWithHttpInfo = function(exchange_id, data_file = NULL, ...) {
+    V2MetricsExchangeListingGetWithHttpInfo = function(exchange_id, data_file = NULL, ...) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -947,7 +947,7 @@ MetricsV2Api <- R6::R6Class(
       }
 
       if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
-        stop("Invalid value for `exchange_id` when calling MetricsV2Api$MarketdataListMetricsV2ExchangeListing, `exchange_id` is not nullable")
+        stop("Invalid value for `exchange_id` when calling MetricsV2Api$V2MetricsExchangeListingGet, `exchange_id` is not nullable")
       }
 
       query_params[["exchange_id"]] <- `exchange_id`
@@ -1021,8 +1021,8 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return array[V1MetricInfo]
-    MarketdataListMetricsV2Listing = function(data_file = NULL, ...) {
-      local_var_response <- self$MarketdataListMetricsV2ListingWithHttpInfo(data_file = data_file, ...)
+    V2MetricsListingGet = function(data_file = NULL, ...) {
+      local_var_response <- self$V2MetricsListingGetWithHttpInfo(data_file = data_file, ...)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1041,7 +1041,7 @@ MetricsV2Api <- R6::R6Class(
     #' @param ... Other optional arguments
     #'
     #' @return API response (array[V1MetricInfo]) with additional information such as HTTP status code, headers
-    MarketdataListMetricsV2ListingWithHttpInfo = function(data_file = NULL, ...) {
+    V2MetricsListingGetWithHttpInfo = function(data_file = NULL, ...) {
       args <- list(...)
       query_params <- list()
       header_params <- c()

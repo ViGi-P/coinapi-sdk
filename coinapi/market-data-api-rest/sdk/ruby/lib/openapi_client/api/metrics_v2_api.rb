@@ -30,8 +30,8 @@ module OpenapiClient
     # @option opts [String] :period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
     # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
     # @return [Array<Object>]
-    def marketdata_list_metrics_v2_asset_history(metric_id, asset_id, opts = {})
-      data, _status_code, _headers = marketdata_list_metrics_v2_asset_history_with_http_info(metric_id, asset_id, opts)
+    def v2_metrics_asset_history_get(metric_id, asset_id, opts = {})
+      data, _status_code, _headers = v2_metrics_asset_history_get_with_http_info(metric_id, asset_id, opts)
       data
     end
 
@@ -46,17 +46,17 @@ module OpenapiClient
     # @option opts [String] :period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
     # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
     # @return [Array<(Array<Object>, Integer, Hash)>] Array<Object> data, response status code and response headers
-    def marketdata_list_metrics_v2_asset_history_with_http_info(metric_id, asset_id, opts = {})
+    def v2_metrics_asset_history_get_with_http_info(metric_id, asset_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MetricsV2Api.marketdata_list_metrics_v2_asset_history ...'
+        @api_client.config.logger.debug 'Calling API: MetricsV2Api.v2_metrics_asset_history_get ...'
       end
       # verify the required parameter 'metric_id' is set
       if @api_client.config.client_side_validation && metric_id.nil?
-        fail ArgumentError, "Missing the required parameter 'metric_id' when calling MetricsV2Api.marketdata_list_metrics_v2_asset_history"
+        fail ArgumentError, "Missing the required parameter 'metric_id' when calling MetricsV2Api.v2_metrics_asset_history_get"
       end
       # verify the required parameter 'asset_id' is set
       if @api_client.config.client_side_validation && asset_id.nil?
-        fail ArgumentError, "Missing the required parameter 'asset_id' when calling MetricsV2Api.marketdata_list_metrics_v2_asset_history"
+        fail ArgumentError, "Missing the required parameter 'asset_id' when calling MetricsV2Api.v2_metrics_asset_history_get"
       end
       # resource path
       local_var_path = '/v2/metrics/asset/history'
@@ -89,7 +89,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
 
       new_options = opts.merge(
-        :operation => :"MetricsV2Api.marketdata_list_metrics_v2_asset_history",
+        :operation => :"MetricsV2Api.v2_metrics_asset_history_get",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -100,7 +100,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MetricsV2Api#marketdata_list_metrics_v2_asset_history\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MetricsV2Api#v2_metrics_asset_history_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -110,8 +110,8 @@ module OpenapiClient
     # @param asset_id [String] Asset identifier (e.g., USDC, USDT)
     # @param [Hash] opts the optional parameters
     # @return [Array<V1MetricInfo>]
-    def marketdata_list_metrics_v2_asset_listing(asset_id, opts = {})
-      data, _status_code, _headers = marketdata_list_metrics_v2_asset_listing_with_http_info(asset_id, opts)
+    def v2_metrics_asset_listing_get(asset_id, opts = {})
+      data, _status_code, _headers = v2_metrics_asset_listing_get_with_http_info(asset_id, opts)
       data
     end
 
@@ -120,13 +120,13 @@ module OpenapiClient
     # @param asset_id [String] Asset identifier (e.g., USDC, USDT)
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<V1MetricInfo>, Integer, Hash)>] Array<V1MetricInfo> data, response status code and response headers
-    def marketdata_list_metrics_v2_asset_listing_with_http_info(asset_id, opts = {})
+    def v2_metrics_asset_listing_get_with_http_info(asset_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MetricsV2Api.marketdata_list_metrics_v2_asset_listing ...'
+        @api_client.config.logger.debug 'Calling API: MetricsV2Api.v2_metrics_asset_listing_get ...'
       end
       # verify the required parameter 'asset_id' is set
       if @api_client.config.client_side_validation && asset_id.nil?
-        fail ArgumentError, "Missing the required parameter 'asset_id' when calling MetricsV2Api.marketdata_list_metrics_v2_asset_listing"
+        fail ArgumentError, "Missing the required parameter 'asset_id' when calling MetricsV2Api.v2_metrics_asset_listing_get"
       end
       # resource path
       local_var_path = '/v2/metrics/asset/listing'
@@ -153,7 +153,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
 
       new_options = opts.merge(
-        :operation => :"MetricsV2Api.marketdata_list_metrics_v2_asset_listing",
+        :operation => :"MetricsV2Api.v2_metrics_asset_listing_get",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -164,7 +164,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MetricsV2Api#marketdata_list_metrics_v2_asset_listing\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MetricsV2Api#v2_metrics_asset_listing_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -180,8 +180,8 @@ module OpenapiClient
     # @option opts [String] :period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
     # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
     # @return [Array<Object>]
-    def marketdata_list_metrics_v2_chain_history(metric_id, chain_id, opts = {})
-      data, _status_code, _headers = marketdata_list_metrics_v2_chain_history_with_http_info(metric_id, chain_id, opts)
+    def v2_metrics_chain_history_get(metric_id, chain_id, opts = {})
+      data, _status_code, _headers = v2_metrics_chain_history_get_with_http_info(metric_id, chain_id, opts)
       data
     end
 
@@ -196,17 +196,17 @@ module OpenapiClient
     # @option opts [String] :period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
     # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
     # @return [Array<(Array<Object>, Integer, Hash)>] Array<Object> data, response status code and response headers
-    def marketdata_list_metrics_v2_chain_history_with_http_info(metric_id, chain_id, opts = {})
+    def v2_metrics_chain_history_get_with_http_info(metric_id, chain_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MetricsV2Api.marketdata_list_metrics_v2_chain_history ...'
+        @api_client.config.logger.debug 'Calling API: MetricsV2Api.v2_metrics_chain_history_get ...'
       end
       # verify the required parameter 'metric_id' is set
       if @api_client.config.client_side_validation && metric_id.nil?
-        fail ArgumentError, "Missing the required parameter 'metric_id' when calling MetricsV2Api.marketdata_list_metrics_v2_chain_history"
+        fail ArgumentError, "Missing the required parameter 'metric_id' when calling MetricsV2Api.v2_metrics_chain_history_get"
       end
       # verify the required parameter 'chain_id' is set
       if @api_client.config.client_side_validation && chain_id.nil?
-        fail ArgumentError, "Missing the required parameter 'chain_id' when calling MetricsV2Api.marketdata_list_metrics_v2_chain_history"
+        fail ArgumentError, "Missing the required parameter 'chain_id' when calling MetricsV2Api.v2_metrics_chain_history_get"
       end
       # resource path
       local_var_path = '/v2/metrics/chain/history'
@@ -239,7 +239,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
 
       new_options = opts.merge(
-        :operation => :"MetricsV2Api.marketdata_list_metrics_v2_chain_history",
+        :operation => :"MetricsV2Api.v2_metrics_chain_history_get",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -250,7 +250,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MetricsV2Api#marketdata_list_metrics_v2_chain_history\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MetricsV2Api#v2_metrics_chain_history_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -260,8 +260,8 @@ module OpenapiClient
     # @param chain_id [String] Chain identifier (e.g., ETHEREUM, ARBITRUM)
     # @param [Hash] opts the optional parameters
     # @return [Array<V1MetricInfo>]
-    def marketdata_list_metrics_v2_chain_listing(chain_id, opts = {})
-      data, _status_code, _headers = marketdata_list_metrics_v2_chain_listing_with_http_info(chain_id, opts)
+    def v2_metrics_chain_listing_get(chain_id, opts = {})
+      data, _status_code, _headers = v2_metrics_chain_listing_get_with_http_info(chain_id, opts)
       data
     end
 
@@ -270,13 +270,13 @@ module OpenapiClient
     # @param chain_id [String] Chain identifier (e.g., ETHEREUM, ARBITRUM)
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<V1MetricInfo>, Integer, Hash)>] Array<V1MetricInfo> data, response status code and response headers
-    def marketdata_list_metrics_v2_chain_listing_with_http_info(chain_id, opts = {})
+    def v2_metrics_chain_listing_get_with_http_info(chain_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MetricsV2Api.marketdata_list_metrics_v2_chain_listing ...'
+        @api_client.config.logger.debug 'Calling API: MetricsV2Api.v2_metrics_chain_listing_get ...'
       end
       # verify the required parameter 'chain_id' is set
       if @api_client.config.client_side_validation && chain_id.nil?
-        fail ArgumentError, "Missing the required parameter 'chain_id' when calling MetricsV2Api.marketdata_list_metrics_v2_chain_listing"
+        fail ArgumentError, "Missing the required parameter 'chain_id' when calling MetricsV2Api.v2_metrics_chain_listing_get"
       end
       # resource path
       local_var_path = '/v2/metrics/chain/listing'
@@ -303,7 +303,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
 
       new_options = opts.merge(
-        :operation => :"MetricsV2Api.marketdata_list_metrics_v2_chain_listing",
+        :operation => :"MetricsV2Api.v2_metrics_chain_listing_get",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -314,7 +314,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MetricsV2Api#marketdata_list_metrics_v2_chain_listing\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MetricsV2Api#v2_metrics_chain_listing_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -330,8 +330,8 @@ module OpenapiClient
     # @option opts [String] :period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
     # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
     # @return [Array<Object>]
-    def marketdata_list_metrics_v2_exchange_history(metric_id, exchange_id, opts = {})
-      data, _status_code, _headers = marketdata_list_metrics_v2_exchange_history_with_http_info(metric_id, exchange_id, opts)
+    def v2_metrics_exchange_history_get(metric_id, exchange_id, opts = {})
+      data, _status_code, _headers = v2_metrics_exchange_history_get_with_http_info(metric_id, exchange_id, opts)
       data
     end
 
@@ -346,17 +346,17 @@ module OpenapiClient
     # @option opts [String] :period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
     # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
     # @return [Array<(Array<Object>, Integer, Hash)>] Array<Object> data, response status code and response headers
-    def marketdata_list_metrics_v2_exchange_history_with_http_info(metric_id, exchange_id, opts = {})
+    def v2_metrics_exchange_history_get_with_http_info(metric_id, exchange_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MetricsV2Api.marketdata_list_metrics_v2_exchange_history ...'
+        @api_client.config.logger.debug 'Calling API: MetricsV2Api.v2_metrics_exchange_history_get ...'
       end
       # verify the required parameter 'metric_id' is set
       if @api_client.config.client_side_validation && metric_id.nil?
-        fail ArgumentError, "Missing the required parameter 'metric_id' when calling MetricsV2Api.marketdata_list_metrics_v2_exchange_history"
+        fail ArgumentError, "Missing the required parameter 'metric_id' when calling MetricsV2Api.v2_metrics_exchange_history_get"
       end
       # verify the required parameter 'exchange_id' is set
       if @api_client.config.client_side_validation && exchange_id.nil?
-        fail ArgumentError, "Missing the required parameter 'exchange_id' when calling MetricsV2Api.marketdata_list_metrics_v2_exchange_history"
+        fail ArgumentError, "Missing the required parameter 'exchange_id' when calling MetricsV2Api.v2_metrics_exchange_history_get"
       end
       # resource path
       local_var_path = '/v2/metrics/exchange/history'
@@ -389,7 +389,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
 
       new_options = opts.merge(
-        :operation => :"MetricsV2Api.marketdata_list_metrics_v2_exchange_history",
+        :operation => :"MetricsV2Api.v2_metrics_exchange_history_get",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -400,7 +400,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MetricsV2Api#marketdata_list_metrics_v2_exchange_history\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MetricsV2Api#v2_metrics_exchange_history_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -410,8 +410,8 @@ module OpenapiClient
     # @param exchange_id [String] Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
     # @param [Hash] opts the optional parameters
     # @return [Array<V1MetricInfo>]
-    def marketdata_list_metrics_v2_exchange_listing(exchange_id, opts = {})
-      data, _status_code, _headers = marketdata_list_metrics_v2_exchange_listing_with_http_info(exchange_id, opts)
+    def v2_metrics_exchange_listing_get(exchange_id, opts = {})
+      data, _status_code, _headers = v2_metrics_exchange_listing_get_with_http_info(exchange_id, opts)
       data
     end
 
@@ -420,13 +420,13 @@ module OpenapiClient
     # @param exchange_id [String] Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<V1MetricInfo>, Integer, Hash)>] Array<V1MetricInfo> data, response status code and response headers
-    def marketdata_list_metrics_v2_exchange_listing_with_http_info(exchange_id, opts = {})
+    def v2_metrics_exchange_listing_get_with_http_info(exchange_id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MetricsV2Api.marketdata_list_metrics_v2_exchange_listing ...'
+        @api_client.config.logger.debug 'Calling API: MetricsV2Api.v2_metrics_exchange_listing_get ...'
       end
       # verify the required parameter 'exchange_id' is set
       if @api_client.config.client_side_validation && exchange_id.nil?
-        fail ArgumentError, "Missing the required parameter 'exchange_id' when calling MetricsV2Api.marketdata_list_metrics_v2_exchange_listing"
+        fail ArgumentError, "Missing the required parameter 'exchange_id' when calling MetricsV2Api.v2_metrics_exchange_listing_get"
       end
       # resource path
       local_var_path = '/v2/metrics/exchange/listing'
@@ -453,7 +453,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
 
       new_options = opts.merge(
-        :operation => :"MetricsV2Api.marketdata_list_metrics_v2_exchange_listing",
+        :operation => :"MetricsV2Api.v2_metrics_exchange_listing_get",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -464,7 +464,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MetricsV2Api#marketdata_list_metrics_v2_exchange_listing\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MetricsV2Api#v2_metrics_exchange_listing_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -473,8 +473,8 @@ module OpenapiClient
     # Get all metrics available in the system.
     # @param [Hash] opts the optional parameters
     # @return [Array<V1MetricInfo>]
-    def marketdata_list_metrics_v2_listing(opts = {})
-      data, _status_code, _headers = marketdata_list_metrics_v2_listing_with_http_info(opts)
+    def v2_metrics_listing_get(opts = {})
+      data, _status_code, _headers = v2_metrics_listing_get_with_http_info(opts)
       data
     end
 
@@ -482,9 +482,9 @@ module OpenapiClient
     # Get all metrics available in the system.
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<V1MetricInfo>, Integer, Hash)>] Array<V1MetricInfo> data, response status code and response headers
-    def marketdata_list_metrics_v2_listing_with_http_info(opts = {})
+    def v2_metrics_listing_get_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: MetricsV2Api.marketdata_list_metrics_v2_listing ...'
+        @api_client.config.logger.debug 'Calling API: MetricsV2Api.v2_metrics_listing_get ...'
       end
       # resource path
       local_var_path = '/v2/metrics/listing'
@@ -510,7 +510,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
 
       new_options = opts.merge(
-        :operation => :"MetricsV2Api.marketdata_list_metrics_v2_listing",
+        :operation => :"MetricsV2Api.v2_metrics_listing_get",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -521,7 +521,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: MetricsV2Api#marketdata_list_metrics_v2_listing\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: MetricsV2Api#v2_metrics_listing_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

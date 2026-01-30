@@ -69,17 +69,17 @@ public class MetricsV2Api {
    * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
    * @return List<Object>
   */
-  public List<Object> marketdataListMetricsV2AssetHistory (String metricId, String assetId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Object> v2MetricsAssetHistoryGet (String metricId, String assetId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'metricId' is set
     if (metricId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'metricId' when calling marketdataListMetricsV2AssetHistory",
-        new ApiException(400, "Missing the required parameter 'metricId' when calling marketdataListMetricsV2AssetHistory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'metricId' when calling v2MetricsAssetHistoryGet",
+        new ApiException(400, "Missing the required parameter 'metricId' when calling v2MetricsAssetHistoryGet"));
     }
     // verify the required parameter 'assetId' is set
     if (assetId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'assetId' when calling marketdataListMetricsV2AssetHistory",
-        new ApiException(400, "Missing the required parameter 'assetId' when calling marketdataListMetricsV2AssetHistory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'assetId' when calling v2MetricsAssetHistoryGet",
+        new ApiException(400, "Missing the required parameter 'assetId' when calling v2MetricsAssetHistoryGet"));
     }
 
     // create path and map variables
@@ -142,18 +142,18 @@ public class MetricsV2Api {
    * Get asset metrics history.
    * @param metricId Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)   * @param assetId Asset identifier (e.g., &#x60;USDC&#x60;, &#x60;USDT&#x60;)   * @param timeStart Starting time in ISO 8601   * @param timeEnd Ending time in ISO 8601   * @param timeFormat If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)   * @param periodId Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;   * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   */
-  public void marketdataListMetricsV2AssetHistory (String metricId, String assetId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
+  public void v2MetricsAssetHistoryGet (String metricId, String assetId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'metricId' is set
     if (metricId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'metricId' when calling marketdataListMetricsV2AssetHistory",
-        new ApiException(400, "Missing the required parameter 'metricId' when calling marketdataListMetricsV2AssetHistory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'metricId' when calling v2MetricsAssetHistoryGet",
+        new ApiException(400, "Missing the required parameter 'metricId' when calling v2MetricsAssetHistoryGet"));
     }
     // verify the required parameter 'assetId' is set
     if (assetId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'assetId' when calling marketdataListMetricsV2AssetHistory",
-        new ApiException(400, "Missing the required parameter 'assetId' when calling marketdataListMetricsV2AssetHistory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'assetId' when calling v2MetricsAssetHistoryGet",
+        new ApiException(400, "Missing the required parameter 'assetId' when calling v2MetricsAssetHistoryGet"));
     }
 
     // create path and map variables
@@ -220,12 +220,12 @@ public class MetricsV2Api {
    * @param assetId Asset identifier (e.g., USDC, USDT)
    * @return List<V1MetricInfo>
   */
-  public List<V1MetricInfo> marketdataListMetricsV2AssetListing (String assetId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<V1MetricInfo> v2MetricsAssetListingGet (String assetId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'assetId' is set
     if (assetId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'assetId' when calling marketdataListMetricsV2AssetListing",
-        new ApiException(400, "Missing the required parameter 'assetId' when calling marketdataListMetricsV2AssetListing"));
+      VolleyError error = new VolleyError("Missing the required parameter 'assetId' when calling v2MetricsAssetListingGet",
+        new ApiException(400, "Missing the required parameter 'assetId' when calling v2MetricsAssetListingGet"));
     }
 
     // create path and map variables
@@ -282,13 +282,13 @@ public class MetricsV2Api {
    * Get all metrics that are actually available for the specified asset.
    * @param assetId Asset identifier (e.g., USDC, USDT)
   */
-  public void marketdataListMetricsV2AssetListing (String assetId, final Response.Listener<List<V1MetricInfo>> responseListener, final Response.ErrorListener errorListener) {
+  public void v2MetricsAssetListingGet (String assetId, final Response.Listener<List<V1MetricInfo>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'assetId' is set
     if (assetId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'assetId' when calling marketdataListMetricsV2AssetListing",
-        new ApiException(400, "Missing the required parameter 'assetId' when calling marketdataListMetricsV2AssetListing"));
+      VolleyError error = new VolleyError("Missing the required parameter 'assetId' when calling v2MetricsAssetListingGet",
+        new ApiException(400, "Missing the required parameter 'assetId' when calling v2MetricsAssetListingGet"));
     }
 
     // create path and map variables
@@ -355,17 +355,17 @@ public class MetricsV2Api {
    * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
    * @return List<Object>
   */
-  public List<Object> marketdataListMetricsV2ChainHistory (String metricId, String chainId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Object> v2MetricsChainHistoryGet (String metricId, String chainId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'metricId' is set
     if (metricId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'metricId' when calling marketdataListMetricsV2ChainHistory",
-        new ApiException(400, "Missing the required parameter 'metricId' when calling marketdataListMetricsV2ChainHistory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'metricId' when calling v2MetricsChainHistoryGet",
+        new ApiException(400, "Missing the required parameter 'metricId' when calling v2MetricsChainHistoryGet"));
     }
     // verify the required parameter 'chainId' is set
     if (chainId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'chainId' when calling marketdataListMetricsV2ChainHistory",
-        new ApiException(400, "Missing the required parameter 'chainId' when calling marketdataListMetricsV2ChainHistory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'chainId' when calling v2MetricsChainHistoryGet",
+        new ApiException(400, "Missing the required parameter 'chainId' when calling v2MetricsChainHistoryGet"));
     }
 
     // create path and map variables
@@ -428,18 +428,18 @@ public class MetricsV2Api {
    * Get chain metrics history.
    * @param metricId Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)   * @param chainId Chain identifier (e.g., &#x60;Ethereum&#x60;, &#x60;Arbitrum&#x60;)   * @param timeStart Starting time in ISO 8601   * @param timeEnd Ending time in ISO 8601   * @param timeFormat If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)   * @param periodId Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;   * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   */
-  public void marketdataListMetricsV2ChainHistory (String metricId, String chainId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
+  public void v2MetricsChainHistoryGet (String metricId, String chainId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'metricId' is set
     if (metricId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'metricId' when calling marketdataListMetricsV2ChainHistory",
-        new ApiException(400, "Missing the required parameter 'metricId' when calling marketdataListMetricsV2ChainHistory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'metricId' when calling v2MetricsChainHistoryGet",
+        new ApiException(400, "Missing the required parameter 'metricId' when calling v2MetricsChainHistoryGet"));
     }
     // verify the required parameter 'chainId' is set
     if (chainId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'chainId' when calling marketdataListMetricsV2ChainHistory",
-        new ApiException(400, "Missing the required parameter 'chainId' when calling marketdataListMetricsV2ChainHistory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'chainId' when calling v2MetricsChainHistoryGet",
+        new ApiException(400, "Missing the required parameter 'chainId' when calling v2MetricsChainHistoryGet"));
     }
 
     // create path and map variables
@@ -506,12 +506,12 @@ public class MetricsV2Api {
    * @param chainId Chain identifier (e.g., ETHEREUM, ARBITRUM)
    * @return List<V1MetricInfo>
   */
-  public List<V1MetricInfo> marketdataListMetricsV2ChainListing (String chainId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<V1MetricInfo> v2MetricsChainListingGet (String chainId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'chainId' is set
     if (chainId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'chainId' when calling marketdataListMetricsV2ChainListing",
-        new ApiException(400, "Missing the required parameter 'chainId' when calling marketdataListMetricsV2ChainListing"));
+      VolleyError error = new VolleyError("Missing the required parameter 'chainId' when calling v2MetricsChainListingGet",
+        new ApiException(400, "Missing the required parameter 'chainId' when calling v2MetricsChainListingGet"));
     }
 
     // create path and map variables
@@ -568,13 +568,13 @@ public class MetricsV2Api {
    * Get all metrics that are actually available for the specified blockchain chain.
    * @param chainId Chain identifier (e.g., ETHEREUM, ARBITRUM)
   */
-  public void marketdataListMetricsV2ChainListing (String chainId, final Response.Listener<List<V1MetricInfo>> responseListener, final Response.ErrorListener errorListener) {
+  public void v2MetricsChainListingGet (String chainId, final Response.Listener<List<V1MetricInfo>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'chainId' is set
     if (chainId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'chainId' when calling marketdataListMetricsV2ChainListing",
-        new ApiException(400, "Missing the required parameter 'chainId' when calling marketdataListMetricsV2ChainListing"));
+      VolleyError error = new VolleyError("Missing the required parameter 'chainId' when calling v2MetricsChainListingGet",
+        new ApiException(400, "Missing the required parameter 'chainId' when calling v2MetricsChainListingGet"));
     }
 
     // create path and map variables
@@ -641,17 +641,17 @@ public class MetricsV2Api {
    * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
    * @return List<Object>
   */
-  public List<Object> marketdataListMetricsV2ExchangeHistory (String metricId, String exchangeId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<Object> v2MetricsExchangeHistoryGet (String metricId, String exchangeId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'metricId' is set
     if (metricId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'metricId' when calling marketdataListMetricsV2ExchangeHistory",
-        new ApiException(400, "Missing the required parameter 'metricId' when calling marketdataListMetricsV2ExchangeHistory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'metricId' when calling v2MetricsExchangeHistoryGet",
+        new ApiException(400, "Missing the required parameter 'metricId' when calling v2MetricsExchangeHistoryGet"));
     }
     // verify the required parameter 'exchangeId' is set
     if (exchangeId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'exchangeId' when calling marketdataListMetricsV2ExchangeHistory",
-        new ApiException(400, "Missing the required parameter 'exchangeId' when calling marketdataListMetricsV2ExchangeHistory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'exchangeId' when calling v2MetricsExchangeHistoryGet",
+        new ApiException(400, "Missing the required parameter 'exchangeId' when calling v2MetricsExchangeHistoryGet"));
     }
 
     // create path and map variables
@@ -714,18 +714,18 @@ public class MetricsV2Api {
    * Get exchange metrics history.
    * @param metricId Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)   * @param exchangeId Exchange identifier (e.g., &#x60;BINANCE&#x60;, &#x60;UNISWAP-V3-ETHEREUM&#x60;)   * @param timeStart Starting time in ISO 8601   * @param timeEnd Ending time in ISO 8601   * @param timeFormat If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)   * @param periodId Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;   * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   */
-  public void marketdataListMetricsV2ExchangeHistory (String metricId, String exchangeId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
+  public void v2MetricsExchangeHistoryGet (String metricId, String exchangeId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit, final Response.Listener<List<Object>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'metricId' is set
     if (metricId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'metricId' when calling marketdataListMetricsV2ExchangeHistory",
-        new ApiException(400, "Missing the required parameter 'metricId' when calling marketdataListMetricsV2ExchangeHistory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'metricId' when calling v2MetricsExchangeHistoryGet",
+        new ApiException(400, "Missing the required parameter 'metricId' when calling v2MetricsExchangeHistoryGet"));
     }
     // verify the required parameter 'exchangeId' is set
     if (exchangeId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'exchangeId' when calling marketdataListMetricsV2ExchangeHistory",
-        new ApiException(400, "Missing the required parameter 'exchangeId' when calling marketdataListMetricsV2ExchangeHistory"));
+      VolleyError error = new VolleyError("Missing the required parameter 'exchangeId' when calling v2MetricsExchangeHistoryGet",
+        new ApiException(400, "Missing the required parameter 'exchangeId' when calling v2MetricsExchangeHistoryGet"));
     }
 
     // create path and map variables
@@ -792,12 +792,12 @@ public class MetricsV2Api {
    * @param exchangeId Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
    * @return List<V1MetricInfo>
   */
-  public List<V1MetricInfo> marketdataListMetricsV2ExchangeListing (String exchangeId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<V1MetricInfo> v2MetricsExchangeListingGet (String exchangeId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'exchangeId' is set
     if (exchangeId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'exchangeId' when calling marketdataListMetricsV2ExchangeListing",
-        new ApiException(400, "Missing the required parameter 'exchangeId' when calling marketdataListMetricsV2ExchangeListing"));
+      VolleyError error = new VolleyError("Missing the required parameter 'exchangeId' when calling v2MetricsExchangeListingGet",
+        new ApiException(400, "Missing the required parameter 'exchangeId' when calling v2MetricsExchangeListingGet"));
     }
 
     // create path and map variables
@@ -854,13 +854,13 @@ public class MetricsV2Api {
    * Get all metrics that are actually available for the specified exchange.
    * @param exchangeId Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
   */
-  public void marketdataListMetricsV2ExchangeListing (String exchangeId, final Response.Listener<List<V1MetricInfo>> responseListener, final Response.ErrorListener errorListener) {
+  public void v2MetricsExchangeListingGet (String exchangeId, final Response.Listener<List<V1MetricInfo>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'exchangeId' is set
     if (exchangeId == null) {
-      VolleyError error = new VolleyError("Missing the required parameter 'exchangeId' when calling marketdataListMetricsV2ExchangeListing",
-        new ApiException(400, "Missing the required parameter 'exchangeId' when calling marketdataListMetricsV2ExchangeListing"));
+      VolleyError error = new VolleyError("Missing the required parameter 'exchangeId' when calling v2MetricsExchangeListingGet",
+        new ApiException(400, "Missing the required parameter 'exchangeId' when calling v2MetricsExchangeListingGet"));
     }
 
     // create path and map variables
@@ -920,7 +920,7 @@ public class MetricsV2Api {
   * Get all metrics available in the system.
    * @return List<V1MetricInfo>
   */
-  public List<V1MetricInfo> marketdataListMetricsV2Listing () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<V1MetricInfo> v2MetricsListingGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -976,7 +976,7 @@ public class MetricsV2Api {
    * Get all metrics available in the system.
 
   */
-  public void marketdataListMetricsV2Listing (final Response.Listener<List<V1MetricInfo>> responseListener, final Response.ErrorListener errorListener) {
+  public void v2MetricsListingGet (final Response.Listener<List<V1MetricInfo>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 

@@ -49,7 +49,7 @@ sub new {
 
 
 #
-# marketdata_list_metrics_v2_asset_history
+# v2_metrics_asset_history_get
 #
 # Historical metrics for the asset
 #
@@ -98,7 +98,7 @@ sub new {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'marketdata_list_metrics_v2_asset_history' } = {
+    __PACKAGE__->method_documentation->{ 'v2_metrics_asset_history_get' } = {
         summary => 'Historical metrics for the asset',
         params => $params,
         returns => 'ARRAY[object]',
@@ -106,17 +106,17 @@ sub new {
 }
 # @return ARRAY[object]
 #
-sub marketdata_list_metrics_v2_asset_history {
+sub v2_metrics_asset_history_get {
     my ($self, %args) = @_;
 
     # verify the required parameter 'metric_id' is set
     unless (exists $args{'metric_id'}) {
-      croak("Missing the required parameter 'metric_id' when calling marketdata_list_metrics_v2_asset_history");
+      croak("Missing the required parameter 'metric_id' when calling v2_metrics_asset_history_get");
     }
 
     # verify the required parameter 'asset_id' is set
     unless (exists $args{'asset_id'}) {
-      croak("Missing the required parameter 'asset_id' when calling marketdata_list_metrics_v2_asset_history");
+      croak("Missing the required parameter 'asset_id' when calling v2_metrics_asset_history_get");
     }
 
     # parse inputs
@@ -185,7 +185,7 @@ sub marketdata_list_metrics_v2_asset_history {
 }
 
 #
-# marketdata_list_metrics_v2_asset_listing
+# v2_metrics_asset_listing_get
 #
 # Listing of metrics available for specific asset
 #
@@ -198,7 +198,7 @@ sub marketdata_list_metrics_v2_asset_history {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'marketdata_list_metrics_v2_asset_listing' } = {
+    __PACKAGE__->method_documentation->{ 'v2_metrics_asset_listing_get' } = {
         summary => 'Listing of metrics available for specific asset',
         params => $params,
         returns => 'ARRAY[V1MetricInfo]',
@@ -206,12 +206,12 @@ sub marketdata_list_metrics_v2_asset_history {
 }
 # @return ARRAY[V1MetricInfo]
 #
-sub marketdata_list_metrics_v2_asset_listing {
+sub v2_metrics_asset_listing_get {
     my ($self, %args) = @_;
 
     # verify the required parameter 'asset_id' is set
     unless (exists $args{'asset_id'}) {
-      croak("Missing the required parameter 'asset_id' when calling marketdata_list_metrics_v2_asset_listing");
+      croak("Missing the required parameter 'asset_id' when calling v2_metrics_asset_listing_get");
     }
 
     # parse inputs
@@ -250,7 +250,7 @@ sub marketdata_list_metrics_v2_asset_listing {
 }
 
 #
-# marketdata_list_metrics_v2_chain_history
+# v2_metrics_chain_history_get
 #
 # Historical metrics for the chain
 #
@@ -299,7 +299,7 @@ sub marketdata_list_metrics_v2_asset_listing {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'marketdata_list_metrics_v2_chain_history' } = {
+    __PACKAGE__->method_documentation->{ 'v2_metrics_chain_history_get' } = {
         summary => 'Historical metrics for the chain',
         params => $params,
         returns => 'ARRAY[object]',
@@ -307,17 +307,17 @@ sub marketdata_list_metrics_v2_asset_listing {
 }
 # @return ARRAY[object]
 #
-sub marketdata_list_metrics_v2_chain_history {
+sub v2_metrics_chain_history_get {
     my ($self, %args) = @_;
 
     # verify the required parameter 'metric_id' is set
     unless (exists $args{'metric_id'}) {
-      croak("Missing the required parameter 'metric_id' when calling marketdata_list_metrics_v2_chain_history");
+      croak("Missing the required parameter 'metric_id' when calling v2_metrics_chain_history_get");
     }
 
     # verify the required parameter 'chain_id' is set
     unless (exists $args{'chain_id'}) {
-      croak("Missing the required parameter 'chain_id' when calling marketdata_list_metrics_v2_chain_history");
+      croak("Missing the required parameter 'chain_id' when calling v2_metrics_chain_history_get");
     }
 
     # parse inputs
@@ -386,7 +386,7 @@ sub marketdata_list_metrics_v2_chain_history {
 }
 
 #
-# marketdata_list_metrics_v2_chain_listing
+# v2_metrics_chain_listing_get
 #
 # Listing of metrics available for specific chain
 #
@@ -399,7 +399,7 @@ sub marketdata_list_metrics_v2_chain_history {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'marketdata_list_metrics_v2_chain_listing' } = {
+    __PACKAGE__->method_documentation->{ 'v2_metrics_chain_listing_get' } = {
         summary => 'Listing of metrics available for specific chain',
         params => $params,
         returns => 'ARRAY[V1MetricInfo]',
@@ -407,12 +407,12 @@ sub marketdata_list_metrics_v2_chain_history {
 }
 # @return ARRAY[V1MetricInfo]
 #
-sub marketdata_list_metrics_v2_chain_listing {
+sub v2_metrics_chain_listing_get {
     my ($self, %args) = @_;
 
     # verify the required parameter 'chain_id' is set
     unless (exists $args{'chain_id'}) {
-      croak("Missing the required parameter 'chain_id' when calling marketdata_list_metrics_v2_chain_listing");
+      croak("Missing the required parameter 'chain_id' when calling v2_metrics_chain_listing_get");
     }
 
     # parse inputs
@@ -451,7 +451,7 @@ sub marketdata_list_metrics_v2_chain_listing {
 }
 
 #
-# marketdata_list_metrics_v2_exchange_history
+# v2_metrics_exchange_history_get
 #
 # Historical metrics for the exchange
 #
@@ -500,7 +500,7 @@ sub marketdata_list_metrics_v2_chain_listing {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'marketdata_list_metrics_v2_exchange_history' } = {
+    __PACKAGE__->method_documentation->{ 'v2_metrics_exchange_history_get' } = {
         summary => 'Historical metrics for the exchange',
         params => $params,
         returns => 'ARRAY[object]',
@@ -508,17 +508,17 @@ sub marketdata_list_metrics_v2_chain_listing {
 }
 # @return ARRAY[object]
 #
-sub marketdata_list_metrics_v2_exchange_history {
+sub v2_metrics_exchange_history_get {
     my ($self, %args) = @_;
 
     # verify the required parameter 'metric_id' is set
     unless (exists $args{'metric_id'}) {
-      croak("Missing the required parameter 'metric_id' when calling marketdata_list_metrics_v2_exchange_history");
+      croak("Missing the required parameter 'metric_id' when calling v2_metrics_exchange_history_get");
     }
 
     # verify the required parameter 'exchange_id' is set
     unless (exists $args{'exchange_id'}) {
-      croak("Missing the required parameter 'exchange_id' when calling marketdata_list_metrics_v2_exchange_history");
+      croak("Missing the required parameter 'exchange_id' when calling v2_metrics_exchange_history_get");
     }
 
     # parse inputs
@@ -587,7 +587,7 @@ sub marketdata_list_metrics_v2_exchange_history {
 }
 
 #
-# marketdata_list_metrics_v2_exchange_listing
+# v2_metrics_exchange_listing_get
 #
 # Listing of metrics available for specific exchange
 #
@@ -600,7 +600,7 @@ sub marketdata_list_metrics_v2_exchange_history {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'marketdata_list_metrics_v2_exchange_listing' } = {
+    __PACKAGE__->method_documentation->{ 'v2_metrics_exchange_listing_get' } = {
         summary => 'Listing of metrics available for specific exchange',
         params => $params,
         returns => 'ARRAY[V1MetricInfo]',
@@ -608,12 +608,12 @@ sub marketdata_list_metrics_v2_exchange_history {
 }
 # @return ARRAY[V1MetricInfo]
 #
-sub marketdata_list_metrics_v2_exchange_listing {
+sub v2_metrics_exchange_listing_get {
     my ($self, %args) = @_;
 
     # verify the required parameter 'exchange_id' is set
     unless (exists $args{'exchange_id'}) {
-      croak("Missing the required parameter 'exchange_id' when calling marketdata_list_metrics_v2_exchange_listing");
+      croak("Missing the required parameter 'exchange_id' when calling v2_metrics_exchange_listing_get");
     }
 
     # parse inputs
@@ -652,14 +652,14 @@ sub marketdata_list_metrics_v2_exchange_listing {
 }
 
 #
-# marketdata_list_metrics_v2_listing
+# v2_metrics_listing_get
 #
 # Listing of all supported metrics
 #
 {
     my $params = {
     };
-    __PACKAGE__->method_documentation->{ 'marketdata_list_metrics_v2_listing' } = {
+    __PACKAGE__->method_documentation->{ 'v2_metrics_listing_get' } = {
         summary => 'Listing of all supported metrics',
         params => $params,
         returns => 'ARRAY[V1MetricInfo]',
@@ -667,7 +667,7 @@ sub marketdata_list_metrics_v2_exchange_listing {
 }
 # @return ARRAY[V1MetricInfo]
 #
-sub marketdata_list_metrics_v2_listing {
+sub v2_metrics_listing_get {
     my ($self, %args) = @_;
 
     # parse inputs

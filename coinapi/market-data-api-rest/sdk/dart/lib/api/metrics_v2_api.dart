@@ -44,7 +44,7 @@ class MetricsV2Api {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> marketdataListMetricsV2AssetHistoryWithHttpInfo(String metricId, String assetId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
+  Future<Response> v2MetricsAssetHistoryGetWithHttpInfo(String metricId, String assetId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v2/metrics/asset/history';
 
@@ -113,8 +113,8 @@ class MetricsV2Api {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<Object>?> marketdataListMetricsV2AssetHistory(String metricId, String assetId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
-    final response = await marketdataListMetricsV2AssetHistoryWithHttpInfo(metricId, assetId,  timeStart: timeStart, timeEnd: timeEnd, timeFormat: timeFormat, periodId: periodId, limit: limit, );
+  Future<List<Object>?> v2MetricsAssetHistoryGet(String metricId, String assetId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
+    final response = await v2MetricsAssetHistoryGetWithHttpInfo(metricId, assetId,  timeStart: timeStart, timeEnd: timeEnd, timeFormat: timeFormat, periodId: periodId, limit: limit, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -141,7 +141,7 @@ class MetricsV2Api {
   ///
   /// * [String] assetId (required):
   ///   Asset identifier (e.g., USDC, USDT)
-  Future<Response> marketdataListMetricsV2AssetListingWithHttpInfo(String assetId,) async {
+  Future<Response> v2MetricsAssetListingGetWithHttpInfo(String assetId,) async {
     // ignore: prefer_const_declarations
     final path = r'/v2/metrics/asset/listing';
 
@@ -176,8 +176,8 @@ class MetricsV2Api {
   ///
   /// * [String] assetId (required):
   ///   Asset identifier (e.g., USDC, USDT)
-  Future<List<V1MetricInfo>?> marketdataListMetricsV2AssetListing(String assetId,) async {
-    final response = await marketdataListMetricsV2AssetListingWithHttpInfo(assetId,);
+  Future<List<V1MetricInfo>?> v2MetricsAssetListingGet(String assetId,) async {
+    final response = await v2MetricsAssetListingGetWithHttpInfo(assetId,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -222,7 +222,7 @@ class MetricsV2Api {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> marketdataListMetricsV2ChainHistoryWithHttpInfo(String metricId, String chainId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
+  Future<Response> v2MetricsChainHistoryGetWithHttpInfo(String metricId, String chainId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v2/metrics/chain/history';
 
@@ -291,8 +291,8 @@ class MetricsV2Api {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<Object>?> marketdataListMetricsV2ChainHistory(String metricId, String chainId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
-    final response = await marketdataListMetricsV2ChainHistoryWithHttpInfo(metricId, chainId,  timeStart: timeStart, timeEnd: timeEnd, timeFormat: timeFormat, periodId: periodId, limit: limit, );
+  Future<List<Object>?> v2MetricsChainHistoryGet(String metricId, String chainId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
+    final response = await v2MetricsChainHistoryGetWithHttpInfo(metricId, chainId,  timeStart: timeStart, timeEnd: timeEnd, timeFormat: timeFormat, periodId: periodId, limit: limit, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -319,7 +319,7 @@ class MetricsV2Api {
   ///
   /// * [String] chainId (required):
   ///   Chain identifier (e.g., ETHEREUM, ARBITRUM)
-  Future<Response> marketdataListMetricsV2ChainListingWithHttpInfo(String chainId,) async {
+  Future<Response> v2MetricsChainListingGetWithHttpInfo(String chainId,) async {
     // ignore: prefer_const_declarations
     final path = r'/v2/metrics/chain/listing';
 
@@ -354,8 +354,8 @@ class MetricsV2Api {
   ///
   /// * [String] chainId (required):
   ///   Chain identifier (e.g., ETHEREUM, ARBITRUM)
-  Future<List<V1MetricInfo>?> marketdataListMetricsV2ChainListing(String chainId,) async {
-    final response = await marketdataListMetricsV2ChainListingWithHttpInfo(chainId,);
+  Future<List<V1MetricInfo>?> v2MetricsChainListingGet(String chainId,) async {
+    final response = await v2MetricsChainListingGetWithHttpInfo(chainId,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -400,7 +400,7 @@ class MetricsV2Api {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> marketdataListMetricsV2ExchangeHistoryWithHttpInfo(String metricId, String exchangeId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
+  Future<Response> v2MetricsExchangeHistoryGetWithHttpInfo(String metricId, String exchangeId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v2/metrics/exchange/history';
 
@@ -469,8 +469,8 @@ class MetricsV2Api {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<Object>?> marketdataListMetricsV2ExchangeHistory(String metricId, String exchangeId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
-    final response = await marketdataListMetricsV2ExchangeHistoryWithHttpInfo(metricId, exchangeId,  timeStart: timeStart, timeEnd: timeEnd, timeFormat: timeFormat, periodId: periodId, limit: limit, );
+  Future<List<Object>?> v2MetricsExchangeHistoryGet(String metricId, String exchangeId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
+    final response = await v2MetricsExchangeHistoryGetWithHttpInfo(metricId, exchangeId,  timeStart: timeStart, timeEnd: timeEnd, timeFormat: timeFormat, periodId: periodId, limit: limit, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -497,7 +497,7 @@ class MetricsV2Api {
   ///
   /// * [String] exchangeId (required):
   ///   Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
-  Future<Response> marketdataListMetricsV2ExchangeListingWithHttpInfo(String exchangeId,) async {
+  Future<Response> v2MetricsExchangeListingGetWithHttpInfo(String exchangeId,) async {
     // ignore: prefer_const_declarations
     final path = r'/v2/metrics/exchange/listing';
 
@@ -532,8 +532,8 @@ class MetricsV2Api {
   ///
   /// * [String] exchangeId (required):
   ///   Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
-  Future<List<V1MetricInfo>?> marketdataListMetricsV2ExchangeListing(String exchangeId,) async {
-    final response = await marketdataListMetricsV2ExchangeListingWithHttpInfo(exchangeId,);
+  Future<List<V1MetricInfo>?> v2MetricsExchangeListingGet(String exchangeId,) async {
+    final response = await v2MetricsExchangeListingGetWithHttpInfo(exchangeId,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -555,7 +555,7 @@ class MetricsV2Api {
   /// Get all metrics available in the system.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> marketdataListMetricsV2ListingWithHttpInfo() async {
+  Future<Response> v2MetricsListingGetWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/v2/metrics/listing';
 
@@ -583,8 +583,8 @@ class MetricsV2Api {
   /// Listing of all supported metrics
   ///
   /// Get all metrics available in the system.
-  Future<List<V1MetricInfo>?> marketdataListMetricsV2Listing() async {
-    final response = await marketdataListMetricsV2ListingWithHttpInfo();
+  Future<List<V1MetricInfo>?> v2MetricsListingGet() async {
+    final response = await v2MetricsListingGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

@@ -132,7 +132,7 @@ open class OrderBookL3Api(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /v1/orderbooks3/{symbol_id}/current
      * Current order book by symbol_id
-     * Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
+     * Retrieves the current order book for the specified symbol.
      * @param symbolId The symbol ID (from the Metadata -&gt; Symbols)
      * @param limitLevels The maximum number of levels to include in the response. (optional)
      * @return V1OrderBookBase
@@ -165,7 +165,7 @@ open class OrderBookL3Api(basePath: kotlin.String = defaultBasePath, client: Cal
     /**
      * GET /v1/orderbooks3/{symbol_id}/current
      * Current order book by symbol_id
-     * Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
+     * Retrieves the current order book for the specified symbol.
      * @param symbolId The symbol ID (from the Metadata -&gt; Symbols)
      * @param limitLevels The maximum number of levels to include in the response. (optional)
      * @return ApiResponse<V1OrderBookBase?>

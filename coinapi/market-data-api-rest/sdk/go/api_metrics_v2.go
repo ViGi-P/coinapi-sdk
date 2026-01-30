@@ -24,7 +24,7 @@ import (
 // MetricsV2APIService MetricsV2API service
 type MetricsV2APIService service
 
-type ApiMarketdataListMetricsV2AssetHistoryRequest struct {
+type ApiV2MetricsAssetHistoryGetRequest struct {
 	ctx context.Context
 	ApiService *MetricsV2APIService
 	metricId *string
@@ -37,61 +37,61 @@ type ApiMarketdataListMetricsV2AssetHistoryRequest struct {
 }
 
 // Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)
-func (r ApiMarketdataListMetricsV2AssetHistoryRequest) MetricId(metricId string) ApiMarketdataListMetricsV2AssetHistoryRequest {
+func (r ApiV2MetricsAssetHistoryGetRequest) MetricId(metricId string) ApiV2MetricsAssetHistoryGetRequest {
 	r.metricId = &metricId
 	return r
 }
 
 // Asset identifier (e.g., &#x60;USDC&#x60;, &#x60;USDT&#x60;)
-func (r ApiMarketdataListMetricsV2AssetHistoryRequest) AssetId(assetId string) ApiMarketdataListMetricsV2AssetHistoryRequest {
+func (r ApiV2MetricsAssetHistoryGetRequest) AssetId(assetId string) ApiV2MetricsAssetHistoryGetRequest {
 	r.assetId = &assetId
 	return r
 }
 
 // Starting time in ISO 8601
-func (r ApiMarketdataListMetricsV2AssetHistoryRequest) TimeStart(timeStart time.Time) ApiMarketdataListMetricsV2AssetHistoryRequest {
+func (r ApiV2MetricsAssetHistoryGetRequest) TimeStart(timeStart time.Time) ApiV2MetricsAssetHistoryGetRequest {
 	r.timeStart = &timeStart
 	return r
 }
 
 // Ending time in ISO 8601
-func (r ApiMarketdataListMetricsV2AssetHistoryRequest) TimeEnd(timeEnd time.Time) ApiMarketdataListMetricsV2AssetHistoryRequest {
+func (r ApiV2MetricsAssetHistoryGetRequest) TimeEnd(timeEnd time.Time) ApiV2MetricsAssetHistoryGetRequest {
 	r.timeEnd = &timeEnd
 	return r
 }
 
 // If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)
-func (r ApiMarketdataListMetricsV2AssetHistoryRequest) TimeFormat(timeFormat string) ApiMarketdataListMetricsV2AssetHistoryRequest {
+func (r ApiV2MetricsAssetHistoryGetRequest) TimeFormat(timeFormat string) ApiV2MetricsAssetHistoryGetRequest {
 	r.timeFormat = &timeFormat
 	return r
 }
 
 // Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
-func (r ApiMarketdataListMetricsV2AssetHistoryRequest) PeriodId(periodId string) ApiMarketdataListMetricsV2AssetHistoryRequest {
+func (r ApiV2MetricsAssetHistoryGetRequest) PeriodId(periodId string) ApiV2MetricsAssetHistoryGetRequest {
 	r.periodId = &periodId
 	return r
 }
 
 // Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-func (r ApiMarketdataListMetricsV2AssetHistoryRequest) Limit(limit int32) ApiMarketdataListMetricsV2AssetHistoryRequest {
+func (r ApiV2MetricsAssetHistoryGetRequest) Limit(limit int32) ApiV2MetricsAssetHistoryGetRequest {
 	r.limit = &limit
 	return r
 }
 
-func (r ApiMarketdataListMetricsV2AssetHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
-	return r.ApiService.MarketdataListMetricsV2AssetHistoryExecute(r)
+func (r ApiV2MetricsAssetHistoryGetRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+	return r.ApiService.V2MetricsAssetHistoryGetExecute(r)
 }
 
 /*
-MarketdataListMetricsV2AssetHistory Historical metrics for the asset
+V2MetricsAssetHistoryGet Historical metrics for the asset
 
 Get asset metrics history.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMarketdataListMetricsV2AssetHistoryRequest
+ @return ApiV2MetricsAssetHistoryGetRequest
 */
-func (a *MetricsV2APIService) MarketdataListMetricsV2AssetHistory(ctx context.Context) ApiMarketdataListMetricsV2AssetHistoryRequest {
-	return ApiMarketdataListMetricsV2AssetHistoryRequest{
+func (a *MetricsV2APIService) V2MetricsAssetHistoryGet(ctx context.Context) ApiV2MetricsAssetHistoryGetRequest {
+	return ApiV2MetricsAssetHistoryGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -99,7 +99,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2AssetHistory(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MetricsV2APIService) MarketdataListMetricsV2AssetHistoryExecute(r ApiMarketdataListMetricsV2AssetHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MetricsV2APIService) V2MetricsAssetHistoryGetExecute(r ApiV2MetricsAssetHistoryGetRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -107,7 +107,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2AssetHistoryExecute(r ApiMa
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.MarketdataListMetricsV2AssetHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.V2MetricsAssetHistoryGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -213,32 +213,32 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2AssetHistoryExecute(r ApiMa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiMarketdataListMetricsV2AssetListingRequest struct {
+type ApiV2MetricsAssetListingGetRequest struct {
 	ctx context.Context
 	ApiService *MetricsV2APIService
 	assetId *string
 }
 
 // Asset identifier (e.g., USDC, USDT)
-func (r ApiMarketdataListMetricsV2AssetListingRequest) AssetId(assetId string) ApiMarketdataListMetricsV2AssetListingRequest {
+func (r ApiV2MetricsAssetListingGetRequest) AssetId(assetId string) ApiV2MetricsAssetListingGetRequest {
 	r.assetId = &assetId
 	return r
 }
 
-func (r ApiMarketdataListMetricsV2AssetListingRequest) Execute() ([]V1MetricInfo, *http.Response, error) {
-	return r.ApiService.MarketdataListMetricsV2AssetListingExecute(r)
+func (r ApiV2MetricsAssetListingGetRequest) Execute() ([]V1MetricInfo, *http.Response, error) {
+	return r.ApiService.V2MetricsAssetListingGetExecute(r)
 }
 
 /*
-MarketdataListMetricsV2AssetListing Listing of metrics available for specific asset
+V2MetricsAssetListingGet Listing of metrics available for specific asset
 
 Get all metrics that are actually available for the specified asset.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMarketdataListMetricsV2AssetListingRequest
+ @return ApiV2MetricsAssetListingGetRequest
 */
-func (a *MetricsV2APIService) MarketdataListMetricsV2AssetListing(ctx context.Context) ApiMarketdataListMetricsV2AssetListingRequest {
-	return ApiMarketdataListMetricsV2AssetListingRequest{
+func (a *MetricsV2APIService) V2MetricsAssetListingGet(ctx context.Context) ApiV2MetricsAssetListingGetRequest {
+	return ApiV2MetricsAssetListingGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -246,7 +246,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2AssetListing(ctx context.Co
 
 // Execute executes the request
 //  @return []V1MetricInfo
-func (a *MetricsV2APIService) MarketdataListMetricsV2AssetListingExecute(r ApiMarketdataListMetricsV2AssetListingRequest) ([]V1MetricInfo, *http.Response, error) {
+func (a *MetricsV2APIService) V2MetricsAssetListingGetExecute(r ApiV2MetricsAssetListingGetRequest) ([]V1MetricInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -254,7 +254,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2AssetListingExecute(r ApiMa
 		localVarReturnValue  []V1MetricInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.MarketdataListMetricsV2AssetListing")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.V2MetricsAssetListingGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -337,7 +337,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2AssetListingExecute(r ApiMa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiMarketdataListMetricsV2ChainHistoryRequest struct {
+type ApiV2MetricsChainHistoryGetRequest struct {
 	ctx context.Context
 	ApiService *MetricsV2APIService
 	metricId *string
@@ -350,61 +350,61 @@ type ApiMarketdataListMetricsV2ChainHistoryRequest struct {
 }
 
 // Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)
-func (r ApiMarketdataListMetricsV2ChainHistoryRequest) MetricId(metricId string) ApiMarketdataListMetricsV2ChainHistoryRequest {
+func (r ApiV2MetricsChainHistoryGetRequest) MetricId(metricId string) ApiV2MetricsChainHistoryGetRequest {
 	r.metricId = &metricId
 	return r
 }
 
 // Chain identifier (e.g., &#x60;Ethereum&#x60;, &#x60;Arbitrum&#x60;)
-func (r ApiMarketdataListMetricsV2ChainHistoryRequest) ChainId(chainId string) ApiMarketdataListMetricsV2ChainHistoryRequest {
+func (r ApiV2MetricsChainHistoryGetRequest) ChainId(chainId string) ApiV2MetricsChainHistoryGetRequest {
 	r.chainId = &chainId
 	return r
 }
 
 // Starting time in ISO 8601
-func (r ApiMarketdataListMetricsV2ChainHistoryRequest) TimeStart(timeStart time.Time) ApiMarketdataListMetricsV2ChainHistoryRequest {
+func (r ApiV2MetricsChainHistoryGetRequest) TimeStart(timeStart time.Time) ApiV2MetricsChainHistoryGetRequest {
 	r.timeStart = &timeStart
 	return r
 }
 
 // Ending time in ISO 8601
-func (r ApiMarketdataListMetricsV2ChainHistoryRequest) TimeEnd(timeEnd time.Time) ApiMarketdataListMetricsV2ChainHistoryRequest {
+func (r ApiV2MetricsChainHistoryGetRequest) TimeEnd(timeEnd time.Time) ApiV2MetricsChainHistoryGetRequest {
 	r.timeEnd = &timeEnd
 	return r
 }
 
 // If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)
-func (r ApiMarketdataListMetricsV2ChainHistoryRequest) TimeFormat(timeFormat string) ApiMarketdataListMetricsV2ChainHistoryRequest {
+func (r ApiV2MetricsChainHistoryGetRequest) TimeFormat(timeFormat string) ApiV2MetricsChainHistoryGetRequest {
 	r.timeFormat = &timeFormat
 	return r
 }
 
 // Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
-func (r ApiMarketdataListMetricsV2ChainHistoryRequest) PeriodId(periodId string) ApiMarketdataListMetricsV2ChainHistoryRequest {
+func (r ApiV2MetricsChainHistoryGetRequest) PeriodId(periodId string) ApiV2MetricsChainHistoryGetRequest {
 	r.periodId = &periodId
 	return r
 }
 
 // Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-func (r ApiMarketdataListMetricsV2ChainHistoryRequest) Limit(limit int32) ApiMarketdataListMetricsV2ChainHistoryRequest {
+func (r ApiV2MetricsChainHistoryGetRequest) Limit(limit int32) ApiV2MetricsChainHistoryGetRequest {
 	r.limit = &limit
 	return r
 }
 
-func (r ApiMarketdataListMetricsV2ChainHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
-	return r.ApiService.MarketdataListMetricsV2ChainHistoryExecute(r)
+func (r ApiV2MetricsChainHistoryGetRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+	return r.ApiService.V2MetricsChainHistoryGetExecute(r)
 }
 
 /*
-MarketdataListMetricsV2ChainHistory Historical metrics for the chain
+V2MetricsChainHistoryGet Historical metrics for the chain
 
 Get chain metrics history.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMarketdataListMetricsV2ChainHistoryRequest
+ @return ApiV2MetricsChainHistoryGetRequest
 */
-func (a *MetricsV2APIService) MarketdataListMetricsV2ChainHistory(ctx context.Context) ApiMarketdataListMetricsV2ChainHistoryRequest {
-	return ApiMarketdataListMetricsV2ChainHistoryRequest{
+func (a *MetricsV2APIService) V2MetricsChainHistoryGet(ctx context.Context) ApiV2MetricsChainHistoryGetRequest {
+	return ApiV2MetricsChainHistoryGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -412,7 +412,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2ChainHistory(ctx context.Co
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MetricsV2APIService) MarketdataListMetricsV2ChainHistoryExecute(r ApiMarketdataListMetricsV2ChainHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MetricsV2APIService) V2MetricsChainHistoryGetExecute(r ApiV2MetricsChainHistoryGetRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -420,7 +420,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2ChainHistoryExecute(r ApiMa
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.MarketdataListMetricsV2ChainHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.V2MetricsChainHistoryGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -526,32 +526,32 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2ChainHistoryExecute(r ApiMa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiMarketdataListMetricsV2ChainListingRequest struct {
+type ApiV2MetricsChainListingGetRequest struct {
 	ctx context.Context
 	ApiService *MetricsV2APIService
 	chainId *string
 }
 
 // Chain identifier (e.g., ETHEREUM, ARBITRUM)
-func (r ApiMarketdataListMetricsV2ChainListingRequest) ChainId(chainId string) ApiMarketdataListMetricsV2ChainListingRequest {
+func (r ApiV2MetricsChainListingGetRequest) ChainId(chainId string) ApiV2MetricsChainListingGetRequest {
 	r.chainId = &chainId
 	return r
 }
 
-func (r ApiMarketdataListMetricsV2ChainListingRequest) Execute() ([]V1MetricInfo, *http.Response, error) {
-	return r.ApiService.MarketdataListMetricsV2ChainListingExecute(r)
+func (r ApiV2MetricsChainListingGetRequest) Execute() ([]V1MetricInfo, *http.Response, error) {
+	return r.ApiService.V2MetricsChainListingGetExecute(r)
 }
 
 /*
-MarketdataListMetricsV2ChainListing Listing of metrics available for specific chain
+V2MetricsChainListingGet Listing of metrics available for specific chain
 
 Get all metrics that are actually available for the specified blockchain chain.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMarketdataListMetricsV2ChainListingRequest
+ @return ApiV2MetricsChainListingGetRequest
 */
-func (a *MetricsV2APIService) MarketdataListMetricsV2ChainListing(ctx context.Context) ApiMarketdataListMetricsV2ChainListingRequest {
-	return ApiMarketdataListMetricsV2ChainListingRequest{
+func (a *MetricsV2APIService) V2MetricsChainListingGet(ctx context.Context) ApiV2MetricsChainListingGetRequest {
+	return ApiV2MetricsChainListingGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -559,7 +559,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2ChainListing(ctx context.Co
 
 // Execute executes the request
 //  @return []V1MetricInfo
-func (a *MetricsV2APIService) MarketdataListMetricsV2ChainListingExecute(r ApiMarketdataListMetricsV2ChainListingRequest) ([]V1MetricInfo, *http.Response, error) {
+func (a *MetricsV2APIService) V2MetricsChainListingGetExecute(r ApiV2MetricsChainListingGetRequest) ([]V1MetricInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -567,7 +567,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2ChainListingExecute(r ApiMa
 		localVarReturnValue  []V1MetricInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.MarketdataListMetricsV2ChainListing")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.V2MetricsChainListingGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -650,7 +650,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2ChainListingExecute(r ApiMa
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiMarketdataListMetricsV2ExchangeHistoryRequest struct {
+type ApiV2MetricsExchangeHistoryGetRequest struct {
 	ctx context.Context
 	ApiService *MetricsV2APIService
 	metricId *string
@@ -663,61 +663,61 @@ type ApiMarketdataListMetricsV2ExchangeHistoryRequest struct {
 }
 
 // Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)
-func (r ApiMarketdataListMetricsV2ExchangeHistoryRequest) MetricId(metricId string) ApiMarketdataListMetricsV2ExchangeHistoryRequest {
+func (r ApiV2MetricsExchangeHistoryGetRequest) MetricId(metricId string) ApiV2MetricsExchangeHistoryGetRequest {
 	r.metricId = &metricId
 	return r
 }
 
 // Exchange identifier (e.g., &#x60;BINANCE&#x60;, &#x60;UNISWAP-V3-ETHEREUM&#x60;)
-func (r ApiMarketdataListMetricsV2ExchangeHistoryRequest) ExchangeId(exchangeId string) ApiMarketdataListMetricsV2ExchangeHistoryRequest {
+func (r ApiV2MetricsExchangeHistoryGetRequest) ExchangeId(exchangeId string) ApiV2MetricsExchangeHistoryGetRequest {
 	r.exchangeId = &exchangeId
 	return r
 }
 
 // Starting time in ISO 8601
-func (r ApiMarketdataListMetricsV2ExchangeHistoryRequest) TimeStart(timeStart time.Time) ApiMarketdataListMetricsV2ExchangeHistoryRequest {
+func (r ApiV2MetricsExchangeHistoryGetRequest) TimeStart(timeStart time.Time) ApiV2MetricsExchangeHistoryGetRequest {
 	r.timeStart = &timeStart
 	return r
 }
 
 // Ending time in ISO 8601
-func (r ApiMarketdataListMetricsV2ExchangeHistoryRequest) TimeEnd(timeEnd time.Time) ApiMarketdataListMetricsV2ExchangeHistoryRequest {
+func (r ApiV2MetricsExchangeHistoryGetRequest) TimeEnd(timeEnd time.Time) ApiV2MetricsExchangeHistoryGetRequest {
 	r.timeEnd = &timeEnd
 	return r
 }
 
 // If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)
-func (r ApiMarketdataListMetricsV2ExchangeHistoryRequest) TimeFormat(timeFormat string) ApiMarketdataListMetricsV2ExchangeHistoryRequest {
+func (r ApiV2MetricsExchangeHistoryGetRequest) TimeFormat(timeFormat string) ApiV2MetricsExchangeHistoryGetRequest {
 	r.timeFormat = &timeFormat
 	return r
 }
 
 // Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
-func (r ApiMarketdataListMetricsV2ExchangeHistoryRequest) PeriodId(periodId string) ApiMarketdataListMetricsV2ExchangeHistoryRequest {
+func (r ApiV2MetricsExchangeHistoryGetRequest) PeriodId(periodId string) ApiV2MetricsExchangeHistoryGetRequest {
 	r.periodId = &periodId
 	return r
 }
 
 // Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-func (r ApiMarketdataListMetricsV2ExchangeHistoryRequest) Limit(limit int32) ApiMarketdataListMetricsV2ExchangeHistoryRequest {
+func (r ApiV2MetricsExchangeHistoryGetRequest) Limit(limit int32) ApiV2MetricsExchangeHistoryGetRequest {
 	r.limit = &limit
 	return r
 }
 
-func (r ApiMarketdataListMetricsV2ExchangeHistoryRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
-	return r.ApiService.MarketdataListMetricsV2ExchangeHistoryExecute(r)
+func (r ApiV2MetricsExchangeHistoryGetRequest) Execute() ([]map[string]interface{}, *http.Response, error) {
+	return r.ApiService.V2MetricsExchangeHistoryGetExecute(r)
 }
 
 /*
-MarketdataListMetricsV2ExchangeHistory Historical metrics for the exchange
+V2MetricsExchangeHistoryGet Historical metrics for the exchange
 
 Get exchange metrics history.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMarketdataListMetricsV2ExchangeHistoryRequest
+ @return ApiV2MetricsExchangeHistoryGetRequest
 */
-func (a *MetricsV2APIService) MarketdataListMetricsV2ExchangeHistory(ctx context.Context) ApiMarketdataListMetricsV2ExchangeHistoryRequest {
-	return ApiMarketdataListMetricsV2ExchangeHistoryRequest{
+func (a *MetricsV2APIService) V2MetricsExchangeHistoryGet(ctx context.Context) ApiV2MetricsExchangeHistoryGetRequest {
+	return ApiV2MetricsExchangeHistoryGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -725,7 +725,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2ExchangeHistory(ctx context
 
 // Execute executes the request
 //  @return []map[string]interface{}
-func (a *MetricsV2APIService) MarketdataListMetricsV2ExchangeHistoryExecute(r ApiMarketdataListMetricsV2ExchangeHistoryRequest) ([]map[string]interface{}, *http.Response, error) {
+func (a *MetricsV2APIService) V2MetricsExchangeHistoryGetExecute(r ApiV2MetricsExchangeHistoryGetRequest) ([]map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -733,7 +733,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2ExchangeHistoryExecute(r Ap
 		localVarReturnValue  []map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.MarketdataListMetricsV2ExchangeHistory")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.V2MetricsExchangeHistoryGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -839,32 +839,32 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2ExchangeHistoryExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiMarketdataListMetricsV2ExchangeListingRequest struct {
+type ApiV2MetricsExchangeListingGetRequest struct {
 	ctx context.Context
 	ApiService *MetricsV2APIService
 	exchangeId *string
 }
 
 // Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
-func (r ApiMarketdataListMetricsV2ExchangeListingRequest) ExchangeId(exchangeId string) ApiMarketdataListMetricsV2ExchangeListingRequest {
+func (r ApiV2MetricsExchangeListingGetRequest) ExchangeId(exchangeId string) ApiV2MetricsExchangeListingGetRequest {
 	r.exchangeId = &exchangeId
 	return r
 }
 
-func (r ApiMarketdataListMetricsV2ExchangeListingRequest) Execute() ([]V1MetricInfo, *http.Response, error) {
-	return r.ApiService.MarketdataListMetricsV2ExchangeListingExecute(r)
+func (r ApiV2MetricsExchangeListingGetRequest) Execute() ([]V1MetricInfo, *http.Response, error) {
+	return r.ApiService.V2MetricsExchangeListingGetExecute(r)
 }
 
 /*
-MarketdataListMetricsV2ExchangeListing Listing of metrics available for specific exchange
+V2MetricsExchangeListingGet Listing of metrics available for specific exchange
 
 Get all metrics that are actually available for the specified exchange.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMarketdataListMetricsV2ExchangeListingRequest
+ @return ApiV2MetricsExchangeListingGetRequest
 */
-func (a *MetricsV2APIService) MarketdataListMetricsV2ExchangeListing(ctx context.Context) ApiMarketdataListMetricsV2ExchangeListingRequest {
-	return ApiMarketdataListMetricsV2ExchangeListingRequest{
+func (a *MetricsV2APIService) V2MetricsExchangeListingGet(ctx context.Context) ApiV2MetricsExchangeListingGetRequest {
+	return ApiV2MetricsExchangeListingGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -872,7 +872,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2ExchangeListing(ctx context
 
 // Execute executes the request
 //  @return []V1MetricInfo
-func (a *MetricsV2APIService) MarketdataListMetricsV2ExchangeListingExecute(r ApiMarketdataListMetricsV2ExchangeListingRequest) ([]V1MetricInfo, *http.Response, error) {
+func (a *MetricsV2APIService) V2MetricsExchangeListingGetExecute(r ApiV2MetricsExchangeListingGetRequest) ([]V1MetricInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -880,7 +880,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2ExchangeListingExecute(r Ap
 		localVarReturnValue  []V1MetricInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.MarketdataListMetricsV2ExchangeListing")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.V2MetricsExchangeListingGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -963,25 +963,25 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2ExchangeListingExecute(r Ap
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiMarketdataListMetricsV2ListingRequest struct {
+type ApiV2MetricsListingGetRequest struct {
 	ctx context.Context
 	ApiService *MetricsV2APIService
 }
 
-func (r ApiMarketdataListMetricsV2ListingRequest) Execute() ([]V1MetricInfo, *http.Response, error) {
-	return r.ApiService.MarketdataListMetricsV2ListingExecute(r)
+func (r ApiV2MetricsListingGetRequest) Execute() ([]V1MetricInfo, *http.Response, error) {
+	return r.ApiService.V2MetricsListingGetExecute(r)
 }
 
 /*
-MarketdataListMetricsV2Listing Listing of all supported metrics
+V2MetricsListingGet Listing of all supported metrics
 
 Get all metrics available in the system.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiMarketdataListMetricsV2ListingRequest
+ @return ApiV2MetricsListingGetRequest
 */
-func (a *MetricsV2APIService) MarketdataListMetricsV2Listing(ctx context.Context) ApiMarketdataListMetricsV2ListingRequest {
-	return ApiMarketdataListMetricsV2ListingRequest{
+func (a *MetricsV2APIService) V2MetricsListingGet(ctx context.Context) ApiV2MetricsListingGetRequest {
+	return ApiV2MetricsListingGetRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -989,7 +989,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2Listing(ctx context.Context
 
 // Execute executes the request
 //  @return []V1MetricInfo
-func (a *MetricsV2APIService) MarketdataListMetricsV2ListingExecute(r ApiMarketdataListMetricsV2ListingRequest) ([]V1MetricInfo, *http.Response, error) {
+func (a *MetricsV2APIService) V2MetricsListingGetExecute(r ApiV2MetricsListingGetRequest) ([]V1MetricInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -997,7 +997,7 @@ func (a *MetricsV2APIService) MarketdataListMetricsV2ListingExecute(r ApiMarketd
 		localVarReturnValue  []V1MetricInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.MarketdataListMetricsV2Listing")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsV2APIService.V2MetricsListingGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

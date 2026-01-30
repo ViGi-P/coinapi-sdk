@@ -45,7 +45,7 @@ local function new_metrics_v2_api(authority, basePath, schemes)
 	}, metrics_v2_api_mt)
 end
 
-function metrics_v2_api:marketdata_list_metrics_v2_asset_history(metric_id, asset_id, time_start, time_end, time_format, period_id, limit)
+function metrics_v2_api:v2_metrics_asset_history_get(metric_id, asset_id, time_start, time_end, time_format, period_id, limit)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
@@ -98,7 +98,7 @@ function metrics_v2_api:marketdata_list_metrics_v2_asset_history(metric_id, asse
 	end
 end
 
-function metrics_v2_api:marketdata_list_metrics_v2_asset_listing(asset_id)
+function metrics_v2_api:v2_metrics_asset_listing_get(asset_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
@@ -151,7 +151,7 @@ function metrics_v2_api:marketdata_list_metrics_v2_asset_listing(asset_id)
 	end
 end
 
-function metrics_v2_api:marketdata_list_metrics_v2_chain_history(metric_id, chain_id, time_start, time_end, time_format, period_id, limit)
+function metrics_v2_api:v2_metrics_chain_history_get(metric_id, chain_id, time_start, time_end, time_format, period_id, limit)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
@@ -204,7 +204,7 @@ function metrics_v2_api:marketdata_list_metrics_v2_chain_history(metric_id, chai
 	end
 end
 
-function metrics_v2_api:marketdata_list_metrics_v2_chain_listing(chain_id)
+function metrics_v2_api:v2_metrics_chain_listing_get(chain_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
@@ -257,7 +257,7 @@ function metrics_v2_api:marketdata_list_metrics_v2_chain_listing(chain_id)
 	end
 end
 
-function metrics_v2_api:marketdata_list_metrics_v2_exchange_history(metric_id, exchange_id, time_start, time_end, time_format, period_id, limit)
+function metrics_v2_api:v2_metrics_exchange_history_get(metric_id, exchange_id, time_start, time_end, time_format, period_id, limit)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
@@ -310,7 +310,7 @@ function metrics_v2_api:marketdata_list_metrics_v2_exchange_history(metric_id, e
 	end
 end
 
-function metrics_v2_api:marketdata_list_metrics_v2_exchange_listing(exchange_id)
+function metrics_v2_api:v2_metrics_exchange_listing_get(exchange_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
@@ -363,7 +363,7 @@ function metrics_v2_api:marketdata_list_metrics_v2_exchange_listing(exchange_id)
 	end
 end
 
-function metrics_v2_api:marketdata_list_metrics_v2_listing()
+function metrics_v2_api:v2_metrics_listing_get()
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;

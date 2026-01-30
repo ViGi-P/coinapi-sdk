@@ -6,7 +6,7 @@ private class OASMetricsV2ApiTest {
      * Get asset metrics history.
      */
     @isTest
-    private static void marketdataListMetricsV2AssetHistoryTest() {
+    private static void v2MetricsAssetHistoryGetTest() {
         HttpResponse res = new HttpResponse();
         res.setStatusCode(200);
         res.setStatus('OK');
@@ -37,7 +37,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<Object>{Object.getExample()};
-        response = (List<Object>) api.marketdataListMetricsV2AssetHistory(params);
+        response = (List<Object>) api.v2MetricsAssetHistoryGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetricsV2Api(client);
@@ -46,7 +46,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<Object>{Object.getExample()};
-        response = (List<Object>) api.marketdataListMetricsV2AssetHistory(params);
+        response = (List<Object>) api.v2MetricsAssetHistoryGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -56,7 +56,7 @@ private class OASMetricsV2ApiTest {
      * Get all metrics that are actually available for the specified asset.
      */
     @isTest
-    private static void marketdataListMetricsV2AssetListingTest() {
+    private static void v2MetricsAssetListingGetTest() {
         HttpResponse res = new HttpResponse();
         res.setStatusCode(200);
         res.setStatus('OK');
@@ -81,7 +81,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<OASV1MetricInfo>{OASV1MetricInfo.getExample()};
-        response = (List<OASV1MetricInfo>) api.marketdataListMetricsV2AssetListing(params);
+        response = (List<OASV1MetricInfo>) api.v2MetricsAssetListingGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetricsV2Api(client);
@@ -90,7 +90,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<OASV1MetricInfo>{OASV1MetricInfo.getExample()};
-        response = (List<OASV1MetricInfo>) api.marketdataListMetricsV2AssetListing(params);
+        response = (List<OASV1MetricInfo>) api.v2MetricsAssetListingGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -100,7 +100,7 @@ private class OASMetricsV2ApiTest {
      * Get chain metrics history.
      */
     @isTest
-    private static void marketdataListMetricsV2ChainHistoryTest() {
+    private static void v2MetricsChainHistoryGetTest() {
         HttpResponse res = new HttpResponse();
         res.setStatusCode(200);
         res.setStatus('OK');
@@ -131,7 +131,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<Object>{Object.getExample()};
-        response = (List<Object>) api.marketdataListMetricsV2ChainHistory(params);
+        response = (List<Object>) api.v2MetricsChainHistoryGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetricsV2Api(client);
@@ -140,7 +140,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<Object>{Object.getExample()};
-        response = (List<Object>) api.marketdataListMetricsV2ChainHistory(params);
+        response = (List<Object>) api.v2MetricsChainHistoryGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -150,7 +150,7 @@ private class OASMetricsV2ApiTest {
      * Get all metrics that are actually available for the specified blockchain chain.
      */
     @isTest
-    private static void marketdataListMetricsV2ChainListingTest() {
+    private static void v2MetricsChainListingGetTest() {
         HttpResponse res = new HttpResponse();
         res.setStatusCode(200);
         res.setStatus('OK');
@@ -175,7 +175,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<OASV1MetricInfo>{OASV1MetricInfo.getExample()};
-        response = (List<OASV1MetricInfo>) api.marketdataListMetricsV2ChainListing(params);
+        response = (List<OASV1MetricInfo>) api.v2MetricsChainListingGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetricsV2Api(client);
@@ -184,7 +184,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<OASV1MetricInfo>{OASV1MetricInfo.getExample()};
-        response = (List<OASV1MetricInfo>) api.marketdataListMetricsV2ChainListing(params);
+        response = (List<OASV1MetricInfo>) api.v2MetricsChainListingGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -194,7 +194,7 @@ private class OASMetricsV2ApiTest {
      * Get exchange metrics history.
      */
     @isTest
-    private static void marketdataListMetricsV2ExchangeHistoryTest() {
+    private static void v2MetricsExchangeHistoryGetTest() {
         HttpResponse res = new HttpResponse();
         res.setStatusCode(200);
         res.setStatus('OK');
@@ -225,7 +225,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<Object>{Object.getExample()};
-        response = (List<Object>) api.marketdataListMetricsV2ExchangeHistory(params);
+        response = (List<Object>) api.v2MetricsExchangeHistoryGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetricsV2Api(client);
@@ -234,7 +234,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<Object>{Object.getExample()};
-        response = (List<Object>) api.marketdataListMetricsV2ExchangeHistory(params);
+        response = (List<Object>) api.v2MetricsExchangeHistoryGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -244,7 +244,7 @@ private class OASMetricsV2ApiTest {
      * Get all metrics that are actually available for the specified exchange.
      */
     @isTest
-    private static void marketdataListMetricsV2ExchangeListingTest() {
+    private static void v2MetricsExchangeListingGetTest() {
         HttpResponse res = new HttpResponse();
         res.setStatusCode(200);
         res.setStatus('OK');
@@ -269,7 +269,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<OASV1MetricInfo>{OASV1MetricInfo.getExample()};
-        response = (List<OASV1MetricInfo>) api.marketdataListMetricsV2ExchangeListing(params);
+        response = (List<OASV1MetricInfo>) api.v2MetricsExchangeListingGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetricsV2Api(client);
@@ -278,7 +278,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<OASV1MetricInfo>{OASV1MetricInfo.getExample()};
-        response = (List<OASV1MetricInfo>) api.marketdataListMetricsV2ExchangeListing(params);
+        response = (List<OASV1MetricInfo>) api.v2MetricsExchangeListingGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -288,7 +288,7 @@ private class OASMetricsV2ApiTest {
      * Get all metrics available in the system.
      */
     @isTest
-    private static void marketdataListMetricsV2ListingTest() {
+    private static void v2MetricsListingGetTest() {
         HttpResponse res = new HttpResponse();
         res.setStatusCode(200);
         res.setStatus('OK');
@@ -309,7 +309,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<OASV1MetricInfo>{OASV1MetricInfo.getExample()};
-        response = (List<OASV1MetricInfo>) api.marketdataListMetricsV2Listing();
+        response = (List<OASV1MetricInfo>) api.v2MetricsListingGet();
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASMetricsV2Api(client);
@@ -318,7 +318,7 @@ private class OASMetricsV2ApiTest {
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
         expectedResponse = new List<OASV1MetricInfo>{OASV1MetricInfo.getExample()};
-        response = (List<OASV1MetricInfo>) api.marketdataListMetricsV2Listing();
+        response = (List<OASV1MetricInfo>) api.v2MetricsListingGet();
         System.assertEquals(expectedResponse, response);
     }
 }

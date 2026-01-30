@@ -26,9 +26,9 @@ class MetricsV2ApiTest : ShouldSpec() {
         // uncomment below to create an instance of MetricsV2Api
         //val apiInstance = MetricsV2Api()
 
-        // to test marketdataListMetricsV2AssetHistory
-        should("test marketdataListMetricsV2AssetHistory") {
-            // uncomment below to test marketdataListMetricsV2AssetHistory
+        // to test v2MetricsAssetHistoryGet
+        should("test v2MetricsAssetHistoryGet") {
+            // uncomment below to test v2MetricsAssetHistoryGet
             //val metricId : kotlin.String = metricId_example // kotlin.String | Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)
             //val assetId : kotlin.String = assetId_example // kotlin.String | Asset identifier (e.g., `USDC`, `USDT`)
             //val timeStart : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Starting time in ISO 8601
@@ -36,21 +36,21 @@ class MetricsV2ApiTest : ShouldSpec() {
             //val timeFormat : kotlin.String = timeFormat_example // kotlin.String | If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)
             //val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
             //val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-            //val result : kotlin.collections.List<kotlin.Any> = apiInstance.marketdataListMetricsV2AssetHistory(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
+            //val result : kotlin.collections.List<kotlin.Any> = apiInstance.v2MetricsAssetHistoryGet(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
             //result shouldBe ("TODO")
         }
 
-        // to test marketdataListMetricsV2AssetListing
-        should("test marketdataListMetricsV2AssetListing") {
-            // uncomment below to test marketdataListMetricsV2AssetListing
+        // to test v2MetricsAssetListingGet
+        should("test v2MetricsAssetListingGet") {
+            // uncomment below to test v2MetricsAssetListingGet
             //val assetId : kotlin.String = assetId_example // kotlin.String | Asset identifier (e.g., USDC, USDT)
-            //val result : kotlin.collections.List<V1MetricInfo> = apiInstance.marketdataListMetricsV2AssetListing(assetId)
+            //val result : kotlin.collections.List<V1MetricInfo> = apiInstance.v2MetricsAssetListingGet(assetId)
             //result shouldBe ("TODO")
         }
 
-        // to test marketdataListMetricsV2ChainHistory
-        should("test marketdataListMetricsV2ChainHistory") {
-            // uncomment below to test marketdataListMetricsV2ChainHistory
+        // to test v2MetricsChainHistoryGet
+        should("test v2MetricsChainHistoryGet") {
+            // uncomment below to test v2MetricsChainHistoryGet
             //val metricId : kotlin.String = metricId_example // kotlin.String | Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)
             //val chainId : kotlin.String = chainId_example // kotlin.String | Chain identifier (e.g., `Ethereum`, `Arbitrum`)
             //val timeStart : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Starting time in ISO 8601
@@ -58,21 +58,21 @@ class MetricsV2ApiTest : ShouldSpec() {
             //val timeFormat : kotlin.String = timeFormat_example // kotlin.String | If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)
             //val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
             //val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-            //val result : kotlin.collections.List<kotlin.Any> = apiInstance.marketdataListMetricsV2ChainHistory(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
+            //val result : kotlin.collections.List<kotlin.Any> = apiInstance.v2MetricsChainHistoryGet(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
             //result shouldBe ("TODO")
         }
 
-        // to test marketdataListMetricsV2ChainListing
-        should("test marketdataListMetricsV2ChainListing") {
-            // uncomment below to test marketdataListMetricsV2ChainListing
+        // to test v2MetricsChainListingGet
+        should("test v2MetricsChainListingGet") {
+            // uncomment below to test v2MetricsChainListingGet
             //val chainId : kotlin.String = chainId_example // kotlin.String | Chain identifier (e.g., ETHEREUM, ARBITRUM)
-            //val result : kotlin.collections.List<V1MetricInfo> = apiInstance.marketdataListMetricsV2ChainListing(chainId)
+            //val result : kotlin.collections.List<V1MetricInfo> = apiInstance.v2MetricsChainListingGet(chainId)
             //result shouldBe ("TODO")
         }
 
-        // to test marketdataListMetricsV2ExchangeHistory
-        should("test marketdataListMetricsV2ExchangeHistory") {
-            // uncomment below to test marketdataListMetricsV2ExchangeHistory
+        // to test v2MetricsExchangeHistoryGet
+        should("test v2MetricsExchangeHistoryGet") {
+            // uncomment below to test v2MetricsExchangeHistoryGet
             //val metricId : kotlin.String = metricId_example // kotlin.String | Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)
             //val exchangeId : kotlin.String = exchangeId_example // kotlin.String | Exchange identifier (e.g., `BINANCE`, `UNISWAP-V3-ETHEREUM`)
             //val timeStart : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Starting time in ISO 8601
@@ -80,22 +80,22 @@ class MetricsV2ApiTest : ShouldSpec() {
             //val timeFormat : kotlin.String = timeFormat_example // kotlin.String | If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)
             //val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
             //val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-            //val result : kotlin.collections.List<kotlin.Any> = apiInstance.marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
+            //val result : kotlin.collections.List<kotlin.Any> = apiInstance.v2MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
             //result shouldBe ("TODO")
         }
 
-        // to test marketdataListMetricsV2ExchangeListing
-        should("test marketdataListMetricsV2ExchangeListing") {
-            // uncomment below to test marketdataListMetricsV2ExchangeListing
+        // to test v2MetricsExchangeListingGet
+        should("test v2MetricsExchangeListingGet") {
+            // uncomment below to test v2MetricsExchangeListingGet
             //val exchangeId : kotlin.String = exchangeId_example // kotlin.String | Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
-            //val result : kotlin.collections.List<V1MetricInfo> = apiInstance.marketdataListMetricsV2ExchangeListing(exchangeId)
+            //val result : kotlin.collections.List<V1MetricInfo> = apiInstance.v2MetricsExchangeListingGet(exchangeId)
             //result shouldBe ("TODO")
         }
 
-        // to test marketdataListMetricsV2Listing
-        should("test marketdataListMetricsV2Listing") {
-            // uncomment below to test marketdataListMetricsV2Listing
-            //val result : kotlin.collections.List<V1MetricInfo> = apiInstance.marketdataListMetricsV2Listing()
+        // to test v2MetricsListingGet
+        should("test v2MetricsListingGet") {
+            // uncomment below to test v2MetricsListingGet
+            //val result : kotlin.collections.List<V1MetricInfo> = apiInstance.v2MetricsListingGet()
             //result shouldBe ("TODO")
         }
 

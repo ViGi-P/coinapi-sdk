@@ -41,8 +41,8 @@
 #' library(openapi)
 #' var_symbol_id <- "symbol_id_example" # character | Symbol identifier for requested timeseries (from the Metadata -> Symbols)
 #' var_date <- "date_example" # character | Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided) (Optional)
-#' var_time_start <- "time_start_example" # character | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (Optional)
-#' var_time_end <- "time_end_example" # character | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (Optional)
+#' var_time_start <- "time_start_example" # character | Starting time in ISO 8601 (Optional)
+#' var_time_end <- "time_end_example" # character | Timeseries ending time in ISO 8601 (Optional)
 #' var_limit <- 100 # integer | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (Optional)
 #' var_include_id <- FALSE # character | Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers. (Optional)
 #'
@@ -232,8 +232,8 @@ TradesApi <- R6::R6Class(
     #'
     #' @param symbol_id Symbol identifier for requested timeseries (from the Metadata -> Symbols)
     #' @param date (optional) Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)
-    #' @param time_start (optional) Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
-    #' @param time_end (optional) Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
+    #' @param time_start (optional) Starting time in ISO 8601
+    #' @param time_end (optional) Timeseries ending time in ISO 8601
     #' @param limit (optional) Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param include_id (optional) Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers. (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result
@@ -258,8 +258,8 @@ TradesApi <- R6::R6Class(
     #'
     #' @param symbol_id Symbol identifier for requested timeseries (from the Metadata -> Symbols)
     #' @param date (optional) Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)
-    #' @param time_start (optional) Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
-    #' @param time_end (optional) Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
+    #' @param time_start (optional) Starting time in ISO 8601
+    #' @param time_end (optional) Timeseries ending time in ISO 8601
     #' @param limit (optional) Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param include_id (optional) Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers. (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result

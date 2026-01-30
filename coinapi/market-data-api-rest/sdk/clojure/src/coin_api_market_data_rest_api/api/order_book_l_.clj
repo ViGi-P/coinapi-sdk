@@ -60,8 +60,7 @@
 
 (defn-spec v1-orderbooks3-symbol-id-current-get-with-http-info any?
   "Current order book by symbol_id
-  Retrieves the current L3 order book for the specified symbol.
-L3 order books include individual order IDs for each price level."
+  Retrieves the current order book for the specified symbol."
   ([symbol_id string?, ] (v1-orderbooks3-symbol-id-current-get-with-http-info symbol_id nil))
   ([symbol_id string?, {:keys [limit_levels]} (s/map-of keyword? any?)]
    (check-required-params symbol_id)
@@ -76,8 +75,7 @@ L3 order books include individual order IDs for each price level."
 
 (defn-spec v1-orderbooks3-symbol-id-current-get v1/order-book-base-spec
   "Current order book by symbol_id
-  Retrieves the current L3 order book for the specified symbol.
-L3 order books include individual order IDs for each price level."
+  Retrieves the current order book for the specified symbol."
   ([symbol_id string?, ] (v1-orderbooks3-symbol-id-current-get symbol_id nil))
   ([symbol_id string?, optional-params any?]
    (let [res (:data (v1-orderbooks3-symbol-id-current-get-with-http-info symbol_id optional-params))]

@@ -4,17 +4,17 @@ All URIs are relative to *https://rest.coinapi.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**MarketdataListMetricsV2AssetHistory**](MetricsV2Api.md#MarketdataListMetricsV2AssetHistory) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
-[**MarketdataListMetricsV2AssetListing**](MetricsV2Api.md#MarketdataListMetricsV2AssetListing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-[**MarketdataListMetricsV2ChainHistory**](MetricsV2Api.md#MarketdataListMetricsV2ChainHistory) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
-[**MarketdataListMetricsV2ChainListing**](MetricsV2Api.md#MarketdataListMetricsV2ChainListing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-[**MarketdataListMetricsV2ExchangeHistory**](MetricsV2Api.md#MarketdataListMetricsV2ExchangeHistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
-[**MarketdataListMetricsV2ExchangeListing**](MetricsV2Api.md#MarketdataListMetricsV2ExchangeListing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-[**MarketdataListMetricsV2Listing**](MetricsV2Api.md#MarketdataListMetricsV2Listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
+[**V2MetricsAssetHistoryGet**](MetricsV2Api.md#V2MetricsAssetHistoryGet) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
+[**V2MetricsAssetListingGet**](MetricsV2Api.md#V2MetricsAssetListingGet) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+[**V2MetricsChainHistoryGet**](MetricsV2Api.md#V2MetricsChainHistoryGet) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
+[**V2MetricsChainListingGet**](MetricsV2Api.md#V2MetricsChainListingGet) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+[**V2MetricsExchangeHistoryGet**](MetricsV2Api.md#V2MetricsExchangeHistoryGet) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
+[**V2MetricsExchangeListingGet**](MetricsV2Api.md#V2MetricsExchangeListingGet) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+[**V2MetricsListingGet**](MetricsV2Api.md#V2MetricsListingGet) | **GET** /v2/metrics/listing | Listing of all supported metrics
 
 
-# **MarketdataListMetricsV2AssetHistory**
-> array[object] MarketdataListMetricsV2AssetHistory(metric_id, asset_id, time_start = var.time_start, time_end = var.time_end, time_format = var.time_format, period_id = var.period_id, limit = 100)
+# **V2MetricsAssetHistoryGet**
+> array[object] V2MetricsAssetHistoryGet(metric_id, asset_id, time_start = var.time_start, time_end = var.time_end, time_format = var.time_format, period_id = var.period_id, limit = 100)
 
 Historical metrics for the asset
 
@@ -41,8 +41,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$MarketdataListMetricsV2AssetHistory(var_metric_id, var_asset_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limitdata_file = "result.txt")
-result <- api_instance$MarketdataListMetricsV2AssetHistory(var_metric_id, var_asset_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limit)
+# result <- api_instance$V2MetricsAssetHistoryGet(var_metric_id, var_asset_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limitdata_file = "result.txt")
+result <- api_instance$V2MetricsAssetHistoryGet(var_metric_id, var_asset_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limit)
 dput(result)
 ```
 
@@ -78,8 +78,8 @@ Name | Type | Description  | Notes
 | **400** | Invalid input, e.g., missing required parameters, invalid asset_id. |  -  |
 | **500** | Internal server error. |  -  |
 
-# **MarketdataListMetricsV2AssetListing**
-> array[V1MetricInfo] MarketdataListMetricsV2AssetListing(asset_id)
+# **V2MetricsAssetListingGet**
+> array[V1MetricInfo] V2MetricsAssetListingGet(asset_id)
 
 Listing of metrics available for specific asset
 
@@ -100,8 +100,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$MarketdataListMetricsV2AssetListing(var_asset_iddata_file = "result.txt")
-result <- api_instance$MarketdataListMetricsV2AssetListing(var_asset_id)
+# result <- api_instance$V2MetricsAssetListingGet(var_asset_iddata_file = "result.txt")
+result <- api_instance$V2MetricsAssetListingGet(var_asset_id)
 dput(result)
 ```
 
@@ -129,8 +129,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 
-# **MarketdataListMetricsV2ChainHistory**
-> array[object] MarketdataListMetricsV2ChainHistory(metric_id, chain_id, time_start = var.time_start, time_end = var.time_end, time_format = var.time_format, period_id = var.period_id, limit = 100)
+# **V2MetricsChainHistoryGet**
+> array[object] V2MetricsChainHistoryGet(metric_id, chain_id, time_start = var.time_start, time_end = var.time_end, time_format = var.time_format, period_id = var.period_id, limit = 100)
 
 Historical metrics for the chain
 
@@ -157,8 +157,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$MarketdataListMetricsV2ChainHistory(var_metric_id, var_chain_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limitdata_file = "result.txt")
-result <- api_instance$MarketdataListMetricsV2ChainHistory(var_metric_id, var_chain_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limit)
+# result <- api_instance$V2MetricsChainHistoryGet(var_metric_id, var_chain_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limitdata_file = "result.txt")
+result <- api_instance$V2MetricsChainHistoryGet(var_metric_id, var_chain_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limit)
 dput(result)
 ```
 
@@ -194,8 +194,8 @@ Name | Type | Description  | Notes
 | **400** | Invalid input, e.g., missing required parameters, invalid chain_id. |  -  |
 | **500** | Internal server error. |  -  |
 
-# **MarketdataListMetricsV2ChainListing**
-> array[V1MetricInfo] MarketdataListMetricsV2ChainListing(chain_id)
+# **V2MetricsChainListingGet**
+> array[V1MetricInfo] V2MetricsChainListingGet(chain_id)
 
 Listing of metrics available for specific chain
 
@@ -216,8 +216,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$MarketdataListMetricsV2ChainListing(var_chain_iddata_file = "result.txt")
-result <- api_instance$MarketdataListMetricsV2ChainListing(var_chain_id)
+# result <- api_instance$V2MetricsChainListingGet(var_chain_iddata_file = "result.txt")
+result <- api_instance$V2MetricsChainListingGet(var_chain_id)
 dput(result)
 ```
 
@@ -245,8 +245,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 
-# **MarketdataListMetricsV2ExchangeHistory**
-> array[object] MarketdataListMetricsV2ExchangeHistory(metric_id, exchange_id, time_start = var.time_start, time_end = var.time_end, time_format = var.time_format, period_id = var.period_id, limit = 100)
+# **V2MetricsExchangeHistoryGet**
+> array[object] V2MetricsExchangeHistoryGet(metric_id, exchange_id, time_start = var.time_start, time_end = var.time_end, time_format = var.time_format, period_id = var.period_id, limit = 100)
 
 Historical metrics for the exchange
 
@@ -273,8 +273,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$MarketdataListMetricsV2ExchangeHistory(var_metric_id, var_exchange_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limitdata_file = "result.txt")
-result <- api_instance$MarketdataListMetricsV2ExchangeHistory(var_metric_id, var_exchange_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limit)
+# result <- api_instance$V2MetricsExchangeHistoryGet(var_metric_id, var_exchange_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limitdata_file = "result.txt")
+result <- api_instance$V2MetricsExchangeHistoryGet(var_metric_id, var_exchange_id, time_start = var_time_start, time_end = var_time_end, time_format = var_time_format, period_id = var_period_id, limit = var_limit)
 dput(result)
 ```
 
@@ -310,8 +310,8 @@ Name | Type | Description  | Notes
 | **400** | Invalid input, e.g., missing required parameters, invalid exchange_id mapping. |  -  |
 | **500** | Internal server error. |  -  |
 
-# **MarketdataListMetricsV2ExchangeListing**
-> array[V1MetricInfo] MarketdataListMetricsV2ExchangeListing(exchange_id)
+# **V2MetricsExchangeListingGet**
+> array[V1MetricInfo] V2MetricsExchangeListingGet(exchange_id)
 
 Listing of metrics available for specific exchange
 
@@ -332,8 +332,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$MarketdataListMetricsV2ExchangeListing(var_exchange_iddata_file = "result.txt")
-result <- api_instance$MarketdataListMetricsV2ExchangeListing(var_exchange_id)
+# result <- api_instance$V2MetricsExchangeListingGet(var_exchange_iddata_file = "result.txt")
+result <- api_instance$V2MetricsExchangeListingGet(var_exchange_id)
 dput(result)
 ```
 
@@ -361,8 +361,8 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 
-# **MarketdataListMetricsV2Listing**
-> array[V1MetricInfo] MarketdataListMetricsV2Listing()
+# **V2MetricsListingGet**
+> array[V1MetricInfo] V2MetricsListingGet()
 
 Listing of all supported metrics
 
@@ -381,8 +381,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$MarketdataListMetricsV2Listing(data_file = "result.txt")
-result <- api_instance$MarketdataListMetricsV2Listing()
+# result <- api_instance$V2MetricsListingGet(data_file = "result.txt")
+result <- api_instance$V2MetricsListingGet()
 dput(result)
 ```
 

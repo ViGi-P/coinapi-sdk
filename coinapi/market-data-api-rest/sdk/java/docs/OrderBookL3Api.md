@@ -87,7 +87,7 @@ public class Example {
 
 Current order book by symbol_id
 
-Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
+Retrieves the current order book for the specified symbol.
 
 ### Example
 ```java

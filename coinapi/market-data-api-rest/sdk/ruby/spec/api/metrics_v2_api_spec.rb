@@ -32,7 +32,7 @@ describe 'MetricsV2Api' do
     end
   end
 
-  # unit tests for marketdata_list_metrics_v2_asset_history
+  # unit tests for v2_metrics_asset_history_get
   # Historical metrics for the asset
   # Get asset metrics history.
   # @param metric_id Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)
@@ -44,25 +44,25 @@ describe 'MetricsV2Api' do
   # @option opts [String] :period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
   # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   # @return [Array<Object>]
-  describe 'marketdata_list_metrics_v2_asset_history test' do
+  describe 'v2_metrics_asset_history_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
   end
 
-  # unit tests for marketdata_list_metrics_v2_asset_listing
+  # unit tests for v2_metrics_asset_listing_get
   # Listing of metrics available for specific asset
   # Get all metrics that are actually available for the specified asset.
   # @param asset_id Asset identifier (e.g., USDC, USDT)
   # @param [Hash] opts the optional parameters
   # @return [Array<V1MetricInfo>]
-  describe 'marketdata_list_metrics_v2_asset_listing test' do
+  describe 'v2_metrics_asset_listing_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
   end
 
-  # unit tests for marketdata_list_metrics_v2_chain_history
+  # unit tests for v2_metrics_chain_history_get
   # Historical metrics for the chain
   # Get chain metrics history.
   # @param metric_id Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)
@@ -74,25 +74,25 @@ describe 'MetricsV2Api' do
   # @option opts [String] :period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
   # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   # @return [Array<Object>]
-  describe 'marketdata_list_metrics_v2_chain_history test' do
+  describe 'v2_metrics_chain_history_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
   end
 
-  # unit tests for marketdata_list_metrics_v2_chain_listing
+  # unit tests for v2_metrics_chain_listing_get
   # Listing of metrics available for specific chain
   # Get all metrics that are actually available for the specified blockchain chain.
   # @param chain_id Chain identifier (e.g., ETHEREUM, ARBITRUM)
   # @param [Hash] opts the optional parameters
   # @return [Array<V1MetricInfo>]
-  describe 'marketdata_list_metrics_v2_chain_listing test' do
+  describe 'v2_metrics_chain_listing_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
   end
 
-  # unit tests for marketdata_list_metrics_v2_exchange_history
+  # unit tests for v2_metrics_exchange_history_get
   # Historical metrics for the exchange
   # Get exchange metrics history.
   # @param metric_id Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)
@@ -104,30 +104,30 @@ describe 'MetricsV2Api' do
   # @option opts [String] :period_id Identifier of requested timeseries period (e.g. &#x60;1MIN&#x60; or &#x60;2MTH&#x60;), default value is &#x60;1MIN&#x60;
   # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   # @return [Array<Object>]
-  describe 'marketdata_list_metrics_v2_exchange_history test' do
+  describe 'v2_metrics_exchange_history_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
   end
 
-  # unit tests for marketdata_list_metrics_v2_exchange_listing
+  # unit tests for v2_metrics_exchange_listing_get
   # Listing of metrics available for specific exchange
   # Get all metrics that are actually available for the specified exchange.
   # @param exchange_id Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
   # @param [Hash] opts the optional parameters
   # @return [Array<V1MetricInfo>]
-  describe 'marketdata_list_metrics_v2_exchange_listing test' do
+  describe 'v2_metrics_exchange_listing_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
   end
 
-  # unit tests for marketdata_list_metrics_v2_listing
+  # unit tests for v2_metrics_listing_get
   # Listing of all supported metrics
   # Get all metrics available in the system.
   # @param [Hash] opts the optional parameters
   # @return [Array<V1MetricInfo>]
-  describe 'marketdata_list_metrics_v2_listing test' do
+  describe 'v2_metrics_listing_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

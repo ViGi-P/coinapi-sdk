@@ -142,10 +142,10 @@ Symbol identifier for requested timeseries (from the Metadata -> Symbols)
 Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)
 
 .PARAMETER TimeStart
-Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
+Starting time in ISO 8601
 
 .PARAMETER TimeEnd
-Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
+Timeseries ending time in ISO 8601
 
 .PARAMETER Limit
 Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)

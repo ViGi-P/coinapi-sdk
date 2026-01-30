@@ -56,9 +56,9 @@ class QuotesApiTest : ShouldSpec() {
         should("test v1QuotesSymbolIdHistoryGet") {
             // uncomment below to test v1QuotesSymbolIdHistoryGet
             //val symbolId : kotlin.String = symbolId_example // kotlin.String | Symbol identifier for requested timeseries (from the Metadata -> Symbols)
-            //val date : kotlin.String = date_example // kotlin.String | Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)
-            //val timeStart : kotlin.String = timeStart_example // kotlin.String | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
-            //val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
+            //val date : kotlin.String = date_example // kotlin.String | Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided)
+            //val timeStart : kotlin.String = timeStart_example // kotlin.String | Starting time in ISO 8601
+            //val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601
             //val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
             //val result : kotlin.collections.List<V1Quote> = apiInstance.v1QuotesSymbolIdHistoryGet(symbolId, date, timeStart, timeEnd, limit)
             //result shouldBe ("TODO")

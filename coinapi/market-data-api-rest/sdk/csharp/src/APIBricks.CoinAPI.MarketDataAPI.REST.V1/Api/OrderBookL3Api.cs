@@ -65,7 +65,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// Current order book by symbol_id
         /// </summary>
         /// <remarks>
-        /// Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
+        /// Retrieves the current order book for the specified symbol.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbolId">The symbol ID (from the Metadata -&gt; Symbols)</param>
@@ -78,7 +78,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// Current order book by symbol_id
         /// </summary>
         /// <remarks>
-        /// Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
+        /// Retrieves the current order book for the specified symbol.
         /// </remarks>
         /// <param name="symbolId">The symbol ID (from the Metadata -&gt; Symbols)</param>
         /// <param name="limitLevels">The maximum number of levels to include in the response. (optional)</param>
@@ -550,7 +550,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         partial void OnErrorV1Orderbooks3SymbolIdCurrentGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string symbolId, Option<int> limitLevels);
 
         /// <summary>
-        /// Current order book by symbol_id Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
+        /// Current order book by symbol_id Retrieves the current order book for the specified symbol.
         /// </summary>
         /// <param name="symbolId">The symbol ID (from the Metadata -&gt; Symbols)</param>
         /// <param name="limitLevels">The maximum number of levels to include in the response. (optional)</param>
@@ -569,7 +569,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         }
 
         /// <summary>
-        /// Current order book by symbol_id Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
+        /// Current order book by symbol_id Retrieves the current order book for the specified symbol.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbolId">The symbol ID (from the Metadata -&gt; Symbols)</param>

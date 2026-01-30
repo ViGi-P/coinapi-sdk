@@ -119,13 +119,13 @@ Class | Method | HTTP request | Description
 *OpenapiClient::MetricsV1Api* | [**v1_metrics_symbol_current_get**](docs/MetricsV1Api.md#v1_metrics_symbol_current_get) | **GET** /v1/metrics/symbol/current | Current metrics for given symbol
 *OpenapiClient::MetricsV1Api* | [**v1_metrics_symbol_history_get**](docs/MetricsV1Api.md#v1_metrics_symbol_history_get) | **GET** /v1/metrics/symbol/history | Historical metrics for symbol
 *OpenapiClient::MetricsV1Api* | [**v1_metrics_symbol_listing_get**](docs/MetricsV1Api.md#v1_metrics_symbol_listing_get) | **GET** /v1/metrics/symbol/listing | Listing of all supported metrics for symbol
-*OpenapiClient::MetricsV2Api* | [**marketdata_list_metrics_v2_asset_history**](docs/MetricsV2Api.md#marketdata_list_metrics_v2_asset_history) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
-*OpenapiClient::MetricsV2Api* | [**marketdata_list_metrics_v2_asset_listing**](docs/MetricsV2Api.md#marketdata_list_metrics_v2_asset_listing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-*OpenapiClient::MetricsV2Api* | [**marketdata_list_metrics_v2_chain_history**](docs/MetricsV2Api.md#marketdata_list_metrics_v2_chain_history) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
-*OpenapiClient::MetricsV2Api* | [**marketdata_list_metrics_v2_chain_listing**](docs/MetricsV2Api.md#marketdata_list_metrics_v2_chain_listing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-*OpenapiClient::MetricsV2Api* | [**marketdata_list_metrics_v2_exchange_history**](docs/MetricsV2Api.md#marketdata_list_metrics_v2_exchange_history) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
-*OpenapiClient::MetricsV2Api* | [**marketdata_list_metrics_v2_exchange_listing**](docs/MetricsV2Api.md#marketdata_list_metrics_v2_exchange_listing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-*OpenapiClient::MetricsV2Api* | [**marketdata_list_metrics_v2_listing**](docs/MetricsV2Api.md#marketdata_list_metrics_v2_listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
+*OpenapiClient::MetricsV2Api* | [**v2_metrics_asset_history_get**](docs/MetricsV2Api.md#v2_metrics_asset_history_get) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
+*OpenapiClient::MetricsV2Api* | [**v2_metrics_asset_listing_get**](docs/MetricsV2Api.md#v2_metrics_asset_listing_get) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+*OpenapiClient::MetricsV2Api* | [**v2_metrics_chain_history_get**](docs/MetricsV2Api.md#v2_metrics_chain_history_get) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
+*OpenapiClient::MetricsV2Api* | [**v2_metrics_chain_listing_get**](docs/MetricsV2Api.md#v2_metrics_chain_listing_get) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+*OpenapiClient::MetricsV2Api* | [**v2_metrics_exchange_history_get**](docs/MetricsV2Api.md#v2_metrics_exchange_history_get) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
+*OpenapiClient::MetricsV2Api* | [**v2_metrics_exchange_listing_get**](docs/MetricsV2Api.md#v2_metrics_exchange_listing_get) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+*OpenapiClient::MetricsV2Api* | [**v2_metrics_listing_get**](docs/MetricsV2Api.md#v2_metrics_listing_get) | **GET** /v2/metrics/listing | Listing of all supported metrics
 *OpenapiClient::OhlcvApi* | [**v1_ohlcv_exchanges_exchange_id_history_get**](docs/OhlcvApi.md#v1_ohlcv_exchanges_exchange_id_history_get) | **GET** /v1/ohlcv/exchanges/{exchange_id}/history | Historical data by exchange
 *OpenapiClient::OhlcvApi* | [**v1_ohlcv_periods_get**](docs/OhlcvApi.md#v1_ohlcv_periods_get) | **GET** /v1/ohlcv/periods | List all periods
 *OpenapiClient::OhlcvApi* | [**v1_ohlcv_symbol_id_history_get**](docs/OhlcvApi.md#v1_ohlcv_symbol_id_history_get) | **GET** /v1/ohlcv/{symbol_id}/history | Historical data

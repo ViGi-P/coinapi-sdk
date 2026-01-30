@@ -1,23 +1,23 @@
 -module(openapi_metrics_v2_api).
 
--export([marketdata_list_metrics_v2_asset_history/3, marketdata_list_metrics_v2_asset_history/4,
-         marketdata_list_metrics_v2_asset_listing/2, marketdata_list_metrics_v2_asset_listing/3,
-         marketdata_list_metrics_v2_chain_history/3, marketdata_list_metrics_v2_chain_history/4,
-         marketdata_list_metrics_v2_chain_listing/2, marketdata_list_metrics_v2_chain_listing/3,
-         marketdata_list_metrics_v2_exchange_history/3, marketdata_list_metrics_v2_exchange_history/4,
-         marketdata_list_metrics_v2_exchange_listing/2, marketdata_list_metrics_v2_exchange_listing/3,
-         marketdata_list_metrics_v2_listing/1, marketdata_list_metrics_v2_listing/2]).
+-export([v2_metrics_asset_history_get/3, v2_metrics_asset_history_get/4,
+         v2_metrics_asset_listing_get/2, v2_metrics_asset_listing_get/3,
+         v2_metrics_chain_history_get/3, v2_metrics_chain_history_get/4,
+         v2_metrics_chain_listing_get/2, v2_metrics_chain_listing_get/3,
+         v2_metrics_exchange_history_get/3, v2_metrics_exchange_history_get/4,
+         v2_metrics_exchange_listing_get/2, v2_metrics_exchange_listing_get/3,
+         v2_metrics_listing_get/1, v2_metrics_listing_get/2]).
 
 -define(BASE_URL, <<"">>).
 
 %% @doc Historical metrics for the asset
 %% Get asset metrics history.
--spec marketdata_list_metrics_v2_asset_history(ctx:ctx(), binary(), binary()) -> {ok, [maps:map()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_asset_history(Ctx, MetricId, AssetId) ->
-    marketdata_list_metrics_v2_asset_history(Ctx, MetricId, AssetId, #{}).
+-spec v2_metrics_asset_history_get(ctx:ctx(), binary(), binary()) -> {ok, [maps:map()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_asset_history_get(Ctx, MetricId, AssetId) ->
+    v2_metrics_asset_history_get(Ctx, MetricId, AssetId, #{}).
 
--spec marketdata_list_metrics_v2_asset_history(ctx:ctx(), binary(), binary(), maps:map()) -> {ok, [maps:map()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_asset_history(Ctx, MetricId, AssetId, Optional) ->
+-spec v2_metrics_asset_history_get(ctx:ctx(), binary(), binary(), maps:map()) -> {ok, [maps:map()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_asset_history_get(Ctx, MetricId, AssetId, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
 
@@ -33,12 +33,12 @@ marketdata_list_metrics_v2_asset_history(Ctx, MetricId, AssetId, Optional) ->
 
 %% @doc Listing of metrics available for specific asset
 %% Get all metrics that are actually available for the specified asset.
--spec marketdata_list_metrics_v2_asset_listing(ctx:ctx(), binary()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_asset_listing(Ctx, AssetId) ->
-    marketdata_list_metrics_v2_asset_listing(Ctx, AssetId, #{}).
+-spec v2_metrics_asset_listing_get(ctx:ctx(), binary()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_asset_listing_get(Ctx, AssetId) ->
+    v2_metrics_asset_listing_get(Ctx, AssetId, #{}).
 
--spec marketdata_list_metrics_v2_asset_listing(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_asset_listing(Ctx, AssetId, Optional) ->
+-spec v2_metrics_asset_listing_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_asset_listing_get(Ctx, AssetId, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
 
@@ -54,12 +54,12 @@ marketdata_list_metrics_v2_asset_listing(Ctx, AssetId, Optional) ->
 
 %% @doc Historical metrics for the chain
 %% Get chain metrics history.
--spec marketdata_list_metrics_v2_chain_history(ctx:ctx(), binary(), binary()) -> {ok, [maps:map()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_chain_history(Ctx, MetricId, ChainId) ->
-    marketdata_list_metrics_v2_chain_history(Ctx, MetricId, ChainId, #{}).
+-spec v2_metrics_chain_history_get(ctx:ctx(), binary(), binary()) -> {ok, [maps:map()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_chain_history_get(Ctx, MetricId, ChainId) ->
+    v2_metrics_chain_history_get(Ctx, MetricId, ChainId, #{}).
 
--spec marketdata_list_metrics_v2_chain_history(ctx:ctx(), binary(), binary(), maps:map()) -> {ok, [maps:map()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_chain_history(Ctx, MetricId, ChainId, Optional) ->
+-spec v2_metrics_chain_history_get(ctx:ctx(), binary(), binary(), maps:map()) -> {ok, [maps:map()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_chain_history_get(Ctx, MetricId, ChainId, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
 
@@ -75,12 +75,12 @@ marketdata_list_metrics_v2_chain_history(Ctx, MetricId, ChainId, Optional) ->
 
 %% @doc Listing of metrics available for specific chain
 %% Get all metrics that are actually available for the specified blockchain chain.
--spec marketdata_list_metrics_v2_chain_listing(ctx:ctx(), binary()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_chain_listing(Ctx, ChainId) ->
-    marketdata_list_metrics_v2_chain_listing(Ctx, ChainId, #{}).
+-spec v2_metrics_chain_listing_get(ctx:ctx(), binary()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_chain_listing_get(Ctx, ChainId) ->
+    v2_metrics_chain_listing_get(Ctx, ChainId, #{}).
 
--spec marketdata_list_metrics_v2_chain_listing(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_chain_listing(Ctx, ChainId, Optional) ->
+-spec v2_metrics_chain_listing_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_chain_listing_get(Ctx, ChainId, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
 
@@ -96,12 +96,12 @@ marketdata_list_metrics_v2_chain_listing(Ctx, ChainId, Optional) ->
 
 %% @doc Historical metrics for the exchange
 %% Get exchange metrics history.
--spec marketdata_list_metrics_v2_exchange_history(ctx:ctx(), binary(), binary()) -> {ok, [maps:map()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_exchange_history(Ctx, MetricId, ExchangeId) ->
-    marketdata_list_metrics_v2_exchange_history(Ctx, MetricId, ExchangeId, #{}).
+-spec v2_metrics_exchange_history_get(ctx:ctx(), binary(), binary()) -> {ok, [maps:map()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_exchange_history_get(Ctx, MetricId, ExchangeId) ->
+    v2_metrics_exchange_history_get(Ctx, MetricId, ExchangeId, #{}).
 
--spec marketdata_list_metrics_v2_exchange_history(ctx:ctx(), binary(), binary(), maps:map()) -> {ok, [maps:map()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_exchange_history(Ctx, MetricId, ExchangeId, Optional) ->
+-spec v2_metrics_exchange_history_get(ctx:ctx(), binary(), binary(), maps:map()) -> {ok, [maps:map()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_exchange_history_get(Ctx, MetricId, ExchangeId, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
 
@@ -117,12 +117,12 @@ marketdata_list_metrics_v2_exchange_history(Ctx, MetricId, ExchangeId, Optional)
 
 %% @doc Listing of metrics available for specific exchange
 %% Get all metrics that are actually available for the specified exchange.
--spec marketdata_list_metrics_v2_exchange_listing(ctx:ctx(), binary()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_exchange_listing(Ctx, ExchangeId) ->
-    marketdata_list_metrics_v2_exchange_listing(Ctx, ExchangeId, #{}).
+-spec v2_metrics_exchange_listing_get(ctx:ctx(), binary()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_exchange_listing_get(Ctx, ExchangeId) ->
+    v2_metrics_exchange_listing_get(Ctx, ExchangeId, #{}).
 
--spec marketdata_list_metrics_v2_exchange_listing(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_exchange_listing(Ctx, ExchangeId, Optional) ->
+-spec v2_metrics_exchange_listing_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_exchange_listing_get(Ctx, ExchangeId, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
 
@@ -138,12 +138,12 @@ marketdata_list_metrics_v2_exchange_listing(Ctx, ExchangeId, Optional) ->
 
 %% @doc Listing of all supported metrics
 %% Get all metrics available in the system.
--spec marketdata_list_metrics_v2_listing(ctx:ctx()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_listing(Ctx) ->
-    marketdata_list_metrics_v2_listing(Ctx, #{}).
+-spec v2_metrics_listing_get(ctx:ctx()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_listing_get(Ctx) ->
+    v2_metrics_listing_get(Ctx, #{}).
 
--spec marketdata_list_metrics_v2_listing(ctx:ctx(), maps:map()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
-marketdata_list_metrics_v2_listing(Ctx, Optional) ->
+-spec v2_metrics_listing_get(ctx:ctx(), maps:map()) -> {ok, [openapi_v1_metric_info:openapi_v1_metric_info()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+v2_metrics_listing_get(Ctx, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
 

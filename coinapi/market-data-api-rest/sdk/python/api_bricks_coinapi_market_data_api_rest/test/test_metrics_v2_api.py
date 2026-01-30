@@ -27,50 +27,50 @@ class TestMetricsV2Api(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_marketdata_list_metrics_v2_asset_history(self) -> None:
-        """Test case for marketdata_list_metrics_v2_asset_history
+    def test_v2_metrics_asset_history_get(self) -> None:
+        """Test case for v2_metrics_asset_history_get
 
         Historical metrics for the asset
         """
         pass
 
-    def test_marketdata_list_metrics_v2_asset_listing(self) -> None:
-        """Test case for marketdata_list_metrics_v2_asset_listing
+    def test_v2_metrics_asset_listing_get(self) -> None:
+        """Test case for v2_metrics_asset_listing_get
 
         Listing of metrics available for specific asset
         """
         pass
 
-    def test_marketdata_list_metrics_v2_chain_history(self) -> None:
-        """Test case for marketdata_list_metrics_v2_chain_history
+    def test_v2_metrics_chain_history_get(self) -> None:
+        """Test case for v2_metrics_chain_history_get
 
         Historical metrics for the chain
         """
         pass
 
-    def test_marketdata_list_metrics_v2_chain_listing(self) -> None:
-        """Test case for marketdata_list_metrics_v2_chain_listing
+    def test_v2_metrics_chain_listing_get(self) -> None:
+        """Test case for v2_metrics_chain_listing_get
 
         Listing of metrics available for specific chain
         """
         pass
 
-    def test_marketdata_list_metrics_v2_exchange_history(self) -> None:
-        """Test case for marketdata_list_metrics_v2_exchange_history
+    def test_v2_metrics_exchange_history_get(self) -> None:
+        """Test case for v2_metrics_exchange_history_get
 
         Historical metrics for the exchange
         """
         pass
 
-    def test_marketdata_list_metrics_v2_exchange_listing(self) -> None:
-        """Test case for marketdata_list_metrics_v2_exchange_listing
+    def test_v2_metrics_exchange_listing_get(self) -> None:
+        """Test case for v2_metrics_exchange_listing_get
 
         Listing of metrics available for specific exchange
         """
         pass
 
-    def test_marketdata_list_metrics_v2_listing(self) -> None:
-        """Test case for marketdata_list_metrics_v2_listing
+    def test_v2_metrics_listing_get(self) -> None:
+        """Test case for v2_metrics_listing_get
 
         Listing of all supported metrics
         """

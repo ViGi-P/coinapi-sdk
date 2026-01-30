@@ -4,18 +4,18 @@ All URIs are relative to *https://rest.coinapi.io*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**marketdataListMetricsV2AssetHistory**](MetricsV2Api.md#marketdataListMetricsV2AssetHistory) | **GET** /v2/metrics/asset/history | Historical metrics for the asset |
-| [**marketdataListMetricsV2AssetListing**](MetricsV2Api.md#marketdataListMetricsV2AssetListing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset |
-| [**marketdataListMetricsV2ChainHistory**](MetricsV2Api.md#marketdataListMetricsV2ChainHistory) | **GET** /v2/metrics/chain/history | Historical metrics for the chain |
-| [**marketdataListMetricsV2ChainListing**](MetricsV2Api.md#marketdataListMetricsV2ChainListing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain |
-| [**marketdataListMetricsV2ExchangeHistory**](MetricsV2Api.md#marketdataListMetricsV2ExchangeHistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange |
-| [**marketdataListMetricsV2ExchangeListing**](MetricsV2Api.md#marketdataListMetricsV2ExchangeListing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange |
-| [**marketdataListMetricsV2Listing**](MetricsV2Api.md#marketdataListMetricsV2Listing) | **GET** /v2/metrics/listing | Listing of all supported metrics |
+| [**v2MetricsAssetHistoryGet**](MetricsV2Api.md#v2MetricsAssetHistoryGet) | **GET** /v2/metrics/asset/history | Historical metrics for the asset |
+| [**v2MetricsAssetListingGet**](MetricsV2Api.md#v2MetricsAssetListingGet) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset |
+| [**v2MetricsChainHistoryGet**](MetricsV2Api.md#v2MetricsChainHistoryGet) | **GET** /v2/metrics/chain/history | Historical metrics for the chain |
+| [**v2MetricsChainListingGet**](MetricsV2Api.md#v2MetricsChainListingGet) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain |
+| [**v2MetricsExchangeHistoryGet**](MetricsV2Api.md#v2MetricsExchangeHistoryGet) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange |
+| [**v2MetricsExchangeListingGet**](MetricsV2Api.md#v2MetricsExchangeListingGet) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange |
+| [**v2MetricsListingGet**](MetricsV2Api.md#v2MetricsListingGet) | **GET** /v2/metrics/listing | Listing of all supported metrics |
 
 
-<a id="marketdataListMetricsV2AssetHistory"></a>
-# **marketdataListMetricsV2AssetHistory**
-> kotlin.collections.List&lt;kotlin.Any&gt; marketdataListMetricsV2AssetHistory(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
+<a id="v2MetricsAssetHistoryGet"></a>
+# **v2MetricsAssetHistoryGet**
+> kotlin.collections.List&lt;kotlin.Any&gt; v2MetricsAssetHistoryGet(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
 
 Historical metrics for the asset
 
@@ -36,13 +36,13 @@ val timeFormat : kotlin.String = timeFormat_example // kotlin.String | If set, r
 val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
 val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 try {
-    val result : kotlin.collections.List<kotlin.Any> = apiInstance.marketdataListMetricsV2AssetHistory(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
+    val result : kotlin.collections.List<kotlin.Any> = apiInstance.v2MetricsAssetHistoryGet(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling MetricsV2Api#marketdataListMetricsV2AssetHistory")
+    println("4xx response calling MetricsV2Api#v2MetricsAssetHistoryGet")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MetricsV2Api#marketdataListMetricsV2AssetHistory")
+    println("5xx response calling MetricsV2Api#v2MetricsAssetHistoryGet")
     e.printStackTrace()
 }
 ```
@@ -76,9 +76,9 @@ Configure JWT:
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json
 
-<a id="marketdataListMetricsV2AssetListing"></a>
-# **marketdataListMetricsV2AssetListing**
-> kotlin.collections.List&lt;V1MetricInfo&gt; marketdataListMetricsV2AssetListing(assetId)
+<a id="v2MetricsAssetListingGet"></a>
+# **v2MetricsAssetListingGet**
+> kotlin.collections.List&lt;V1MetricInfo&gt; v2MetricsAssetListingGet(assetId)
 
 Listing of metrics available for specific asset
 
@@ -93,13 +93,13 @@ Get all metrics that are actually available for the specified asset.
 val apiInstance = MetricsV2Api()
 val assetId : kotlin.String = assetId_example // kotlin.String | Asset identifier (e.g., USDC, USDT)
 try {
-    val result : kotlin.collections.List<V1MetricInfo> = apiInstance.marketdataListMetricsV2AssetListing(assetId)
+    val result : kotlin.collections.List<V1MetricInfo> = apiInstance.v2MetricsAssetListingGet(assetId)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling MetricsV2Api#marketdataListMetricsV2AssetListing")
+    println("4xx response calling MetricsV2Api#v2MetricsAssetListingGet")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MetricsV2Api#marketdataListMetricsV2AssetListing")
+    println("5xx response calling MetricsV2Api#v2MetricsAssetListingGet")
     e.printStackTrace()
 }
 ```
@@ -127,9 +127,9 @@ Configure JWT:
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json
 
-<a id="marketdataListMetricsV2ChainHistory"></a>
-# **marketdataListMetricsV2ChainHistory**
-> kotlin.collections.List&lt;kotlin.Any&gt; marketdataListMetricsV2ChainHistory(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
+<a id="v2MetricsChainHistoryGet"></a>
+# **v2MetricsChainHistoryGet**
+> kotlin.collections.List&lt;kotlin.Any&gt; v2MetricsChainHistoryGet(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
 
 Historical metrics for the chain
 
@@ -150,13 +150,13 @@ val timeFormat : kotlin.String = timeFormat_example // kotlin.String | If set, r
 val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
 val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 try {
-    val result : kotlin.collections.List<kotlin.Any> = apiInstance.marketdataListMetricsV2ChainHistory(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
+    val result : kotlin.collections.List<kotlin.Any> = apiInstance.v2MetricsChainHistoryGet(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling MetricsV2Api#marketdataListMetricsV2ChainHistory")
+    println("4xx response calling MetricsV2Api#v2MetricsChainHistoryGet")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MetricsV2Api#marketdataListMetricsV2ChainHistory")
+    println("5xx response calling MetricsV2Api#v2MetricsChainHistoryGet")
     e.printStackTrace()
 }
 ```
@@ -190,9 +190,9 @@ Configure JWT:
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json
 
-<a id="marketdataListMetricsV2ChainListing"></a>
-# **marketdataListMetricsV2ChainListing**
-> kotlin.collections.List&lt;V1MetricInfo&gt; marketdataListMetricsV2ChainListing(chainId)
+<a id="v2MetricsChainListingGet"></a>
+# **v2MetricsChainListingGet**
+> kotlin.collections.List&lt;V1MetricInfo&gt; v2MetricsChainListingGet(chainId)
 
 Listing of metrics available for specific chain
 
@@ -207,13 +207,13 @@ Get all metrics that are actually available for the specified blockchain chain.
 val apiInstance = MetricsV2Api()
 val chainId : kotlin.String = chainId_example // kotlin.String | Chain identifier (e.g., ETHEREUM, ARBITRUM)
 try {
-    val result : kotlin.collections.List<V1MetricInfo> = apiInstance.marketdataListMetricsV2ChainListing(chainId)
+    val result : kotlin.collections.List<V1MetricInfo> = apiInstance.v2MetricsChainListingGet(chainId)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling MetricsV2Api#marketdataListMetricsV2ChainListing")
+    println("4xx response calling MetricsV2Api#v2MetricsChainListingGet")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MetricsV2Api#marketdataListMetricsV2ChainListing")
+    println("5xx response calling MetricsV2Api#v2MetricsChainListingGet")
     e.printStackTrace()
 }
 ```
@@ -241,9 +241,9 @@ Configure JWT:
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json
 
-<a id="marketdataListMetricsV2ExchangeHistory"></a>
-# **marketdataListMetricsV2ExchangeHistory**
-> kotlin.collections.List&lt;kotlin.Any&gt; marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
+<a id="v2MetricsExchangeHistoryGet"></a>
+# **v2MetricsExchangeHistoryGet**
+> kotlin.collections.List&lt;kotlin.Any&gt; v2MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
 
 Historical metrics for the exchange
 
@@ -264,13 +264,13 @@ val timeFormat : kotlin.String = timeFormat_example // kotlin.String | If set, r
 val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
 val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 try {
-    val result : kotlin.collections.List<kotlin.Any> = apiInstance.marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
+    val result : kotlin.collections.List<kotlin.Any> = apiInstance.v2MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling MetricsV2Api#marketdataListMetricsV2ExchangeHistory")
+    println("4xx response calling MetricsV2Api#v2MetricsExchangeHistoryGet")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MetricsV2Api#marketdataListMetricsV2ExchangeHistory")
+    println("5xx response calling MetricsV2Api#v2MetricsExchangeHistoryGet")
     e.printStackTrace()
 }
 ```
@@ -304,9 +304,9 @@ Configure JWT:
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json
 
-<a id="marketdataListMetricsV2ExchangeListing"></a>
-# **marketdataListMetricsV2ExchangeListing**
-> kotlin.collections.List&lt;V1MetricInfo&gt; marketdataListMetricsV2ExchangeListing(exchangeId)
+<a id="v2MetricsExchangeListingGet"></a>
+# **v2MetricsExchangeListingGet**
+> kotlin.collections.List&lt;V1MetricInfo&gt; v2MetricsExchangeListingGet(exchangeId)
 
 Listing of metrics available for specific exchange
 
@@ -321,13 +321,13 @@ Get all metrics that are actually available for the specified exchange.
 val apiInstance = MetricsV2Api()
 val exchangeId : kotlin.String = exchangeId_example // kotlin.String | Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
 try {
-    val result : kotlin.collections.List<V1MetricInfo> = apiInstance.marketdataListMetricsV2ExchangeListing(exchangeId)
+    val result : kotlin.collections.List<V1MetricInfo> = apiInstance.v2MetricsExchangeListingGet(exchangeId)
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling MetricsV2Api#marketdataListMetricsV2ExchangeListing")
+    println("4xx response calling MetricsV2Api#v2MetricsExchangeListingGet")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MetricsV2Api#marketdataListMetricsV2ExchangeListing")
+    println("5xx response calling MetricsV2Api#v2MetricsExchangeListingGet")
     e.printStackTrace()
 }
 ```
@@ -355,9 +355,9 @@ Configure JWT:
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json
 
-<a id="marketdataListMetricsV2Listing"></a>
-# **marketdataListMetricsV2Listing**
-> kotlin.collections.List&lt;V1MetricInfo&gt; marketdataListMetricsV2Listing()
+<a id="v2MetricsListingGet"></a>
+# **v2MetricsListingGet**
+> kotlin.collections.List&lt;V1MetricInfo&gt; v2MetricsListingGet()
 
 Listing of all supported metrics
 
@@ -371,13 +371,13 @@ Get all metrics available in the system.
 
 val apiInstance = MetricsV2Api()
 try {
-    val result : kotlin.collections.List<V1MetricInfo> = apiInstance.marketdataListMetricsV2Listing()
+    val result : kotlin.collections.List<V1MetricInfo> = apiInstance.v2MetricsListingGet()
     println(result)
 } catch (e: ClientException) {
-    println("4xx response calling MetricsV2Api#marketdataListMetricsV2Listing")
+    println("4xx response calling MetricsV2Api#v2MetricsListingGet")
     e.printStackTrace()
 } catch (e: ServerException) {
-    println("5xx response calling MetricsV2Api#marketdataListMetricsV2Listing")
+    println("5xx response calling MetricsV2Api#v2MetricsListingGet")
     e.printStackTrace()
 }
 ```

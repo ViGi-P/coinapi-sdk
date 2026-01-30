@@ -48,7 +48,7 @@ static gpointer __MetricsV2ManagerthreadFunc(gpointer data)
 }
 
 
-static bool marketdataListMetricsV2AssetHistoryProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
+static bool v2MetricsAssetHistoryGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
 	void(* handler)(std::list<std::string>, Error, void* )
@@ -95,7 +95,7 @@ static bool marketdataListMetricsV2AssetHistoryProcessor(MemoryStruct_s p_chunk,
 			}
 }
 
-static bool marketdataListMetricsV2AssetHistoryHelper(char * accessToken,
+static bool v2MetricsAssetHistoryGetHelper(char * accessToken,
 	std::string metricId, std::string assetId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData, bool isAsync)
@@ -179,7 +179,7 @@ static bool marketdataListMetricsV2AssetHistoryHelper(char * accessToken,
 	if(!isAsync){
 		NetClient::easycurl(MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
 			mBody, headerList, p_chunk, &code, errormsg);
-		bool retval = marketdataListMetricsV2AssetHistoryProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
+		bool retval = v2MetricsAssetHistoryGetProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
 
 		curl_slist_free_all(headerList);
 		if (p_chunk) {
@@ -197,7 +197,7 @@ static bool marketdataListMetricsV2AssetHistoryHelper(char * accessToken,
 		RequestInfo *requestInfo = NULL;
 
 		requestInfo = new(nothrow) RequestInfo (MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
-			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), marketdataListMetricsV2AssetHistoryProcessor);;
+			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), v2MetricsAssetHistoryGetProcessor);;
 		if(requestInfo == NULL)
 			return false;
 
@@ -209,27 +209,27 @@ static bool marketdataListMetricsV2AssetHistoryHelper(char * accessToken,
 
 
 
-bool MetricsV2Manager::marketdataListMetricsV2AssetHistoryAsync(char * accessToken,
+bool MetricsV2Manager::v2MetricsAssetHistoryGetAsync(char * accessToken,
 	std::string metricId, std::string assetId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2AssetHistoryHelper(accessToken,
+	return v2MetricsAssetHistoryGetHelper(accessToken,
 	metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit, 
 	handler, userData, true);
 }
 
-bool MetricsV2Manager::marketdataListMetricsV2AssetHistorySync(char * accessToken,
+bool MetricsV2Manager::v2MetricsAssetHistoryGetSync(char * accessToken,
 	std::string metricId, std::string assetId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2AssetHistoryHelper(accessToken,
+	return v2MetricsAssetHistoryGetHelper(accessToken,
 	metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit, 
 	handler, userData, false);
 }
 
-static bool marketdataListMetricsV2AssetListingProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
+static bool v2MetricsAssetListingGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
@@ -276,7 +276,7 @@ static bool marketdataListMetricsV2AssetListingProcessor(MemoryStruct_s p_chunk,
 			}
 }
 
-static bool marketdataListMetricsV2AssetListingHelper(char * accessToken,
+static bool v2MetricsAssetListingGetHelper(char * accessToken,
 	std::string assetId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData, bool isAsync)
@@ -321,7 +321,7 @@ static bool marketdataListMetricsV2AssetListingHelper(char * accessToken,
 	if(!isAsync){
 		NetClient::easycurl(MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
 			mBody, headerList, p_chunk, &code, errormsg);
-		bool retval = marketdataListMetricsV2AssetListingProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
+		bool retval = v2MetricsAssetListingGetProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
 
 		curl_slist_free_all(headerList);
 		if (p_chunk) {
@@ -339,7 +339,7 @@ static bool marketdataListMetricsV2AssetListingHelper(char * accessToken,
 		RequestInfo *requestInfo = NULL;
 
 		requestInfo = new(nothrow) RequestInfo (MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
-			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), marketdataListMetricsV2AssetListingProcessor);;
+			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), v2MetricsAssetListingGetProcessor);;
 		if(requestInfo == NULL)
 			return false;
 
@@ -351,27 +351,27 @@ static bool marketdataListMetricsV2AssetListingHelper(char * accessToken,
 
 
 
-bool MetricsV2Manager::marketdataListMetricsV2AssetListingAsync(char * accessToken,
+bool MetricsV2Manager::v2MetricsAssetListingGetAsync(char * accessToken,
 	std::string assetId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2AssetListingHelper(accessToken,
+	return v2MetricsAssetListingGetHelper(accessToken,
 	assetId, 
 	handler, userData, true);
 }
 
-bool MetricsV2Manager::marketdataListMetricsV2AssetListingSync(char * accessToken,
+bool MetricsV2Manager::v2MetricsAssetListingGetSync(char * accessToken,
 	std::string assetId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2AssetListingHelper(accessToken,
+	return v2MetricsAssetListingGetHelper(accessToken,
 	assetId, 
 	handler, userData, false);
 }
 
-static bool marketdataListMetricsV2ChainHistoryProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
+static bool v2MetricsChainHistoryGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
 	void(* handler)(std::list<std::string>, Error, void* )
@@ -418,7 +418,7 @@ static bool marketdataListMetricsV2ChainHistoryProcessor(MemoryStruct_s p_chunk,
 			}
 }
 
-static bool marketdataListMetricsV2ChainHistoryHelper(char * accessToken,
+static bool v2MetricsChainHistoryGetHelper(char * accessToken,
 	std::string metricId, std::string chainId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData, bool isAsync)
@@ -502,7 +502,7 @@ static bool marketdataListMetricsV2ChainHistoryHelper(char * accessToken,
 	if(!isAsync){
 		NetClient::easycurl(MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
 			mBody, headerList, p_chunk, &code, errormsg);
-		bool retval = marketdataListMetricsV2ChainHistoryProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
+		bool retval = v2MetricsChainHistoryGetProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
 
 		curl_slist_free_all(headerList);
 		if (p_chunk) {
@@ -520,7 +520,7 @@ static bool marketdataListMetricsV2ChainHistoryHelper(char * accessToken,
 		RequestInfo *requestInfo = NULL;
 
 		requestInfo = new(nothrow) RequestInfo (MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
-			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), marketdataListMetricsV2ChainHistoryProcessor);;
+			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), v2MetricsChainHistoryGetProcessor);;
 		if(requestInfo == NULL)
 			return false;
 
@@ -532,27 +532,27 @@ static bool marketdataListMetricsV2ChainHistoryHelper(char * accessToken,
 
 
 
-bool MetricsV2Manager::marketdataListMetricsV2ChainHistoryAsync(char * accessToken,
+bool MetricsV2Manager::v2MetricsChainHistoryGetAsync(char * accessToken,
 	std::string metricId, std::string chainId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2ChainHistoryHelper(accessToken,
+	return v2MetricsChainHistoryGetHelper(accessToken,
 	metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit, 
 	handler, userData, true);
 }
 
-bool MetricsV2Manager::marketdataListMetricsV2ChainHistorySync(char * accessToken,
+bool MetricsV2Manager::v2MetricsChainHistoryGetSync(char * accessToken,
 	std::string metricId, std::string chainId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2ChainHistoryHelper(accessToken,
+	return v2MetricsChainHistoryGetHelper(accessToken,
 	metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit, 
 	handler, userData, false);
 }
 
-static bool marketdataListMetricsV2ChainListingProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
+static bool v2MetricsChainListingGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
@@ -599,7 +599,7 @@ static bool marketdataListMetricsV2ChainListingProcessor(MemoryStruct_s p_chunk,
 			}
 }
 
-static bool marketdataListMetricsV2ChainListingHelper(char * accessToken,
+static bool v2MetricsChainListingGetHelper(char * accessToken,
 	std::string chainId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData, bool isAsync)
@@ -644,7 +644,7 @@ static bool marketdataListMetricsV2ChainListingHelper(char * accessToken,
 	if(!isAsync){
 		NetClient::easycurl(MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
 			mBody, headerList, p_chunk, &code, errormsg);
-		bool retval = marketdataListMetricsV2ChainListingProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
+		bool retval = v2MetricsChainListingGetProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
 
 		curl_slist_free_all(headerList);
 		if (p_chunk) {
@@ -662,7 +662,7 @@ static bool marketdataListMetricsV2ChainListingHelper(char * accessToken,
 		RequestInfo *requestInfo = NULL;
 
 		requestInfo = new(nothrow) RequestInfo (MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
-			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), marketdataListMetricsV2ChainListingProcessor);;
+			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), v2MetricsChainListingGetProcessor);;
 		if(requestInfo == NULL)
 			return false;
 
@@ -674,27 +674,27 @@ static bool marketdataListMetricsV2ChainListingHelper(char * accessToken,
 
 
 
-bool MetricsV2Manager::marketdataListMetricsV2ChainListingAsync(char * accessToken,
+bool MetricsV2Manager::v2MetricsChainListingGetAsync(char * accessToken,
 	std::string chainId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2ChainListingHelper(accessToken,
+	return v2MetricsChainListingGetHelper(accessToken,
 	chainId, 
 	handler, userData, true);
 }
 
-bool MetricsV2Manager::marketdataListMetricsV2ChainListingSync(char * accessToken,
+bool MetricsV2Manager::v2MetricsChainListingGetSync(char * accessToken,
 	std::string chainId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2ChainListingHelper(accessToken,
+	return v2MetricsChainListingGetHelper(accessToken,
 	chainId, 
 	handler, userData, false);
 }
 
-static bool marketdataListMetricsV2ExchangeHistoryProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
+static bool v2MetricsExchangeHistoryGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
 	void(* handler)(std::list<std::string>, Error, void* )
@@ -741,7 +741,7 @@ static bool marketdataListMetricsV2ExchangeHistoryProcessor(MemoryStruct_s p_chu
 			}
 }
 
-static bool marketdataListMetricsV2ExchangeHistoryHelper(char * accessToken,
+static bool v2MetricsExchangeHistoryGetHelper(char * accessToken,
 	std::string metricId, std::string exchangeId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData, bool isAsync)
@@ -825,7 +825,7 @@ static bool marketdataListMetricsV2ExchangeHistoryHelper(char * accessToken,
 	if(!isAsync){
 		NetClient::easycurl(MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
 			mBody, headerList, p_chunk, &code, errormsg);
-		bool retval = marketdataListMetricsV2ExchangeHistoryProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
+		bool retval = v2MetricsExchangeHistoryGetProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
 
 		curl_slist_free_all(headerList);
 		if (p_chunk) {
@@ -843,7 +843,7 @@ static bool marketdataListMetricsV2ExchangeHistoryHelper(char * accessToken,
 		RequestInfo *requestInfo = NULL;
 
 		requestInfo = new(nothrow) RequestInfo (MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
-			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), marketdataListMetricsV2ExchangeHistoryProcessor);;
+			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), v2MetricsExchangeHistoryGetProcessor);;
 		if(requestInfo == NULL)
 			return false;
 
@@ -855,27 +855,27 @@ static bool marketdataListMetricsV2ExchangeHistoryHelper(char * accessToken,
 
 
 
-bool MetricsV2Manager::marketdataListMetricsV2ExchangeHistoryAsync(char * accessToken,
+bool MetricsV2Manager::v2MetricsExchangeHistoryGetAsync(char * accessToken,
 	std::string metricId, std::string exchangeId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2ExchangeHistoryHelper(accessToken,
+	return v2MetricsExchangeHistoryGetHelper(accessToken,
 	metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit, 
 	handler, userData, true);
 }
 
-bool MetricsV2Manager::marketdataListMetricsV2ExchangeHistorySync(char * accessToken,
+bool MetricsV2Manager::v2MetricsExchangeHistoryGetSync(char * accessToken,
 	std::string metricId, std::string exchangeId, std::string timeStart, std::string timeEnd, std::string timeFormat, std::string periodId, int limit, 
 	void(* handler)(std::list<std::string>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2ExchangeHistoryHelper(accessToken,
+	return v2MetricsExchangeHistoryGetHelper(accessToken,
 	metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit, 
 	handler, userData, false);
 }
 
-static bool marketdataListMetricsV2ExchangeListingProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
+static bool v2MetricsExchangeListingGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
@@ -922,7 +922,7 @@ static bool marketdataListMetricsV2ExchangeListingProcessor(MemoryStruct_s p_chu
 			}
 }
 
-static bool marketdataListMetricsV2ExchangeListingHelper(char * accessToken,
+static bool v2MetricsExchangeListingGetHelper(char * accessToken,
 	std::string exchangeId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData, bool isAsync)
@@ -967,7 +967,7 @@ static bool marketdataListMetricsV2ExchangeListingHelper(char * accessToken,
 	if(!isAsync){
 		NetClient::easycurl(MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
 			mBody, headerList, p_chunk, &code, errormsg);
-		bool retval = marketdataListMetricsV2ExchangeListingProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
+		bool retval = v2MetricsExchangeListingGetProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
 
 		curl_slist_free_all(headerList);
 		if (p_chunk) {
@@ -985,7 +985,7 @@ static bool marketdataListMetricsV2ExchangeListingHelper(char * accessToken,
 		RequestInfo *requestInfo = NULL;
 
 		requestInfo = new(nothrow) RequestInfo (MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
-			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), marketdataListMetricsV2ExchangeListingProcessor);;
+			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), v2MetricsExchangeListingGetProcessor);;
 		if(requestInfo == NULL)
 			return false;
 
@@ -997,27 +997,27 @@ static bool marketdataListMetricsV2ExchangeListingHelper(char * accessToken,
 
 
 
-bool MetricsV2Manager::marketdataListMetricsV2ExchangeListingAsync(char * accessToken,
+bool MetricsV2Manager::v2MetricsExchangeListingGetAsync(char * accessToken,
 	std::string exchangeId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2ExchangeListingHelper(accessToken,
+	return v2MetricsExchangeListingGetHelper(accessToken,
 	exchangeId, 
 	handler, userData, true);
 }
 
-bool MetricsV2Manager::marketdataListMetricsV2ExchangeListingSync(char * accessToken,
+bool MetricsV2Manager::v2MetricsExchangeListingGetSync(char * accessToken,
 	std::string exchangeId, 
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2ExchangeListingHelper(accessToken,
+	return v2MetricsExchangeListingGetHelper(accessToken,
 	exchangeId, 
 	handler, userData, false);
 }
 
-static bool marketdataListMetricsV2ListingProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
+static bool v2MetricsListingGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
@@ -1064,7 +1064,7 @@ static bool marketdataListMetricsV2ListingProcessor(MemoryStruct_s p_chunk, long
 			}
 }
 
-static bool marketdataListMetricsV2ListingHelper(char * accessToken,
+static bool v2MetricsListingGetHelper(char * accessToken,
 	
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData, bool isAsync)
@@ -1105,7 +1105,7 @@ static bool marketdataListMetricsV2ListingHelper(char * accessToken,
 	if(!isAsync){
 		NetClient::easycurl(MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
 			mBody, headerList, p_chunk, &code, errormsg);
-		bool retval = marketdataListMetricsV2ListingProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
+		bool retval = v2MetricsListingGetProcessor(*p_chunk, code, errormsg, userData,reinterpret_cast<void(*)()>(handler));
 
 		curl_slist_free_all(headerList);
 		if (p_chunk) {
@@ -1123,7 +1123,7 @@ static bool marketdataListMetricsV2ListingHelper(char * accessToken,
 		RequestInfo *requestInfo = NULL;
 
 		requestInfo = new(nothrow) RequestInfo (MetricsV2Manager::getBasePath(), url, myhttpmethod, queryParams,
-			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), marketdataListMetricsV2ListingProcessor);;
+			mBody, headerList, p_chunk, &code, errormsg, userData, reinterpret_cast<void(*)()>(handler), v2MetricsListingGetProcessor);;
 		if(requestInfo == NULL)
 			return false;
 
@@ -1135,22 +1135,22 @@ static bool marketdataListMetricsV2ListingHelper(char * accessToken,
 
 
 
-bool MetricsV2Manager::marketdataListMetricsV2ListingAsync(char * accessToken,
+bool MetricsV2Manager::v2MetricsListingGetAsync(char * accessToken,
 	
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2ListingHelper(accessToken,
+	return v2MetricsListingGetHelper(accessToken,
 	
 	handler, userData, true);
 }
 
-bool MetricsV2Manager::marketdataListMetricsV2ListingSync(char * accessToken,
+bool MetricsV2Manager::v2MetricsListingGetSync(char * accessToken,
 	
 	void(* handler)(std::list<V1.MetricInfo>, Error, void* )
 	, void* userData)
 {
-	return marketdataListMetricsV2ListingHelper(accessToken,
+	return v2MetricsListingGetHelper(accessToken,
 	
 	handler, userData, false);
 }

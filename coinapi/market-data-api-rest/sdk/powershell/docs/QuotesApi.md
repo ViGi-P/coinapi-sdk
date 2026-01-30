@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 Historical data
 
-Get historical quote updates within requested time range, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
+Get historical quote updates within requested time range, returned in time ascending order.  :::warning The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the 'date' parameter instead for querying data for a specific day without filter. :::
 
 ### Example
 ```powershell
@@ -189,9 +189,9 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 
 
 $SymbolId = "MySymbolId" # String | Symbol identifier for requested timeseries (from the Metadata -> Symbols)
-$Date = "MyDate" # String | Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided) (optional)
-$TimeStart = "MyTimeStart" # String | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
-$TimeEnd = "MyTimeEnd" # String | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
+$Date = "MyDate" # String | Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided) (optional)
+$TimeStart = "MyTimeStart" # String | Starting time in ISO 8601 (optional)
+$TimeEnd = "MyTimeEnd" # String | Timeseries ending time in ISO 8601 (optional)
 $Limit = 56 # Int32 | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
 
 # Historical data
@@ -208,9 +208,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **SymbolId** | **String**| Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols) | 
- **Date** | **String**| Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) | [optional] 
- **TimeStart** | **String**| Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) | [optional] 
- **TimeEnd** | **String**| Timeseries ending time in ISO 8601 (optional, supports cross-day queries) | [optional] 
+ **Date** | **String**| Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided) | [optional] 
+ **TimeStart** | **String**| Starting time in ISO 8601 | [optional] 
+ **TimeEnd** | **String**| Timeseries ending time in ISO 8601 | [optional] 
  **Limit** | **Int32**| Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
 
 ### Return type

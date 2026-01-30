@@ -58,7 +58,7 @@ import qualified Prelude as P
 
 -- ** MetricsV2
 
--- *** marketdataListMetricsV2AssetHistory
+-- *** v2MetricsAssetHistoryGet
 
 -- | @GET \/v2\/metrics\/asset\/history@
 -- 
@@ -68,55 +68,55 @@ import qualified Prelude as P
 -- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
-marketdataListMetricsV2AssetHistory
+v2MetricsAssetHistoryGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> MetricId -- ^ "metricId" -  Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)
   -> AssetId -- ^ "assetId" -  Asset identifier (e.g., `USDC`, `USDT`)
-  -> CoinAPIMarketDataRESTRequest MarketdataListMetricsV2AssetHistory MimeNoContent [A.Value] accept
-marketdataListMetricsV2AssetHistory  _ (MetricId metricId) (AssetId assetId) =
+  -> CoinAPIMarketDataRESTRequest V2MetricsAssetHistoryGet MimeNoContent [A.Value] accept
+v2MetricsAssetHistoryGet  _ (MetricId metricId) (AssetId assetId) =
   _mkRequest "GET" ["/v2/metrics/asset/history"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
     `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
     `addQuery` toQuery ("metric_id", Just metricId)
     `addQuery` toQuery ("asset_id", Just assetId)
 
-data MarketdataListMetricsV2AssetHistory  
+data V2MetricsAssetHistoryGet  
 
 -- | /Optional Param/ "time_start" - Starting time in ISO 8601
-instance HasOptionalParam MarketdataListMetricsV2AssetHistory TimeStartDateTime where
+instance HasOptionalParam V2MetricsAssetHistoryGet TimeStartDateTime where
   applyOptionalParam req (TimeStartDateTime xs) =
     req `addQuery` toQuery ("time_start", Just xs)
 
 -- | /Optional Param/ "time_end" - Ending time in ISO 8601
-instance HasOptionalParam MarketdataListMetricsV2AssetHistory TimeEndDateTime where
+instance HasOptionalParam V2MetricsAssetHistoryGet TimeEndDateTime where
   applyOptionalParam req (TimeEndDateTime xs) =
     req `addQuery` toQuery ("time_end", Just xs)
 
 -- | /Optional Param/ "time_format" - If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)
-instance HasOptionalParam MarketdataListMetricsV2AssetHistory TimeFormat where
+instance HasOptionalParam V2MetricsAssetHistoryGet TimeFormat where
   applyOptionalParam req (TimeFormat xs) =
     req `addQuery` toQuery ("time_format", Just xs)
 
 -- | /Optional Param/ "period_id" - Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
-instance HasOptionalParam MarketdataListMetricsV2AssetHistory PeriodId where
+instance HasOptionalParam V2MetricsAssetHistoryGet PeriodId where
   applyOptionalParam req (PeriodId xs) =
     req `addQuery` toQuery ("period_id", Just xs)
 
 -- | /Optional Param/ "limit" - Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-instance HasOptionalParam MarketdataListMetricsV2AssetHistory Limit where
+instance HasOptionalParam V2MetricsAssetHistoryGet Limit where
   applyOptionalParam req (Limit xs) =
     req `addQuery` toQuery ("limit", Just xs)
 -- | @application/json@
-instance Produces MarketdataListMetricsV2AssetHistory MimeJSON
+instance Produces V2MetricsAssetHistoryGet MimeJSON
 -- | @application/x-msgpack@
-instance Produces MarketdataListMetricsV2AssetHistory MimeXMsgpack
+instance Produces V2MetricsAssetHistoryGet MimeXMsgpack
 -- | @text/json@
-instance Produces MarketdataListMetricsV2AssetHistory MimeTextJson
+instance Produces V2MetricsAssetHistoryGet MimeTextJson
 -- | @text/plain@
-instance Produces MarketdataListMetricsV2AssetHistory MimePlainText
+instance Produces V2MetricsAssetHistoryGet MimePlainText
 
 
--- *** marketdataListMetricsV2AssetListing
+-- *** v2MetricsAssetListingGet
 
 -- | @GET \/v2\/metrics\/asset\/listing@
 -- 
@@ -126,28 +126,28 @@ instance Produces MarketdataListMetricsV2AssetHistory MimePlainText
 -- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
-marketdataListMetricsV2AssetListing
+v2MetricsAssetListingGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> AssetId -- ^ "assetId" -  Asset identifier (e.g., USDC, USDT)
-  -> CoinAPIMarketDataRESTRequest MarketdataListMetricsV2AssetListing MimeNoContent [V1MetricInfo] accept
-marketdataListMetricsV2AssetListing  _ (AssetId assetId) =
+  -> CoinAPIMarketDataRESTRequest V2MetricsAssetListingGet MimeNoContent [V1MetricInfo] accept
+v2MetricsAssetListingGet  _ (AssetId assetId) =
   _mkRequest "GET" ["/v2/metrics/asset/listing"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
     `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
     `addQuery` toQuery ("asset_id", Just assetId)
 
-data MarketdataListMetricsV2AssetListing  
+data V2MetricsAssetListingGet  
 -- | @application/json@
-instance Produces MarketdataListMetricsV2AssetListing MimeJSON
+instance Produces V2MetricsAssetListingGet MimeJSON
 -- | @application/x-msgpack@
-instance Produces MarketdataListMetricsV2AssetListing MimeXMsgpack
+instance Produces V2MetricsAssetListingGet MimeXMsgpack
 -- | @text/json@
-instance Produces MarketdataListMetricsV2AssetListing MimeTextJson
+instance Produces V2MetricsAssetListingGet MimeTextJson
 -- | @text/plain@
-instance Produces MarketdataListMetricsV2AssetListing MimePlainText
+instance Produces V2MetricsAssetListingGet MimePlainText
 
 
--- *** marketdataListMetricsV2ChainHistory
+-- *** v2MetricsChainHistoryGet
 
 -- | @GET \/v2\/metrics\/chain\/history@
 -- 
@@ -157,55 +157,55 @@ instance Produces MarketdataListMetricsV2AssetListing MimePlainText
 -- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
-marketdataListMetricsV2ChainHistory
+v2MetricsChainHistoryGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> MetricId -- ^ "metricId" -  Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)
   -> ChainId -- ^ "chainId" -  Chain identifier (e.g., `Ethereum`, `Arbitrum`)
-  -> CoinAPIMarketDataRESTRequest MarketdataListMetricsV2ChainHistory MimeNoContent [A.Value] accept
-marketdataListMetricsV2ChainHistory  _ (MetricId metricId) (ChainId chainId) =
+  -> CoinAPIMarketDataRESTRequest V2MetricsChainHistoryGet MimeNoContent [A.Value] accept
+v2MetricsChainHistoryGet  _ (MetricId metricId) (ChainId chainId) =
   _mkRequest "GET" ["/v2/metrics/chain/history"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
     `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
     `addQuery` toQuery ("metric_id", Just metricId)
     `addQuery` toQuery ("chain_id", Just chainId)
 
-data MarketdataListMetricsV2ChainHistory  
+data V2MetricsChainHistoryGet  
 
 -- | /Optional Param/ "time_start" - Starting time in ISO 8601
-instance HasOptionalParam MarketdataListMetricsV2ChainHistory TimeStartDateTime where
+instance HasOptionalParam V2MetricsChainHistoryGet TimeStartDateTime where
   applyOptionalParam req (TimeStartDateTime xs) =
     req `addQuery` toQuery ("time_start", Just xs)
 
 -- | /Optional Param/ "time_end" - Ending time in ISO 8601
-instance HasOptionalParam MarketdataListMetricsV2ChainHistory TimeEndDateTime where
+instance HasOptionalParam V2MetricsChainHistoryGet TimeEndDateTime where
   applyOptionalParam req (TimeEndDateTime xs) =
     req `addQuery` toQuery ("time_end", Just xs)
 
 -- | /Optional Param/ "time_format" - If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)
-instance HasOptionalParam MarketdataListMetricsV2ChainHistory TimeFormat where
+instance HasOptionalParam V2MetricsChainHistoryGet TimeFormat where
   applyOptionalParam req (TimeFormat xs) =
     req `addQuery` toQuery ("time_format", Just xs)
 
 -- | /Optional Param/ "period_id" - Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
-instance HasOptionalParam MarketdataListMetricsV2ChainHistory PeriodId where
+instance HasOptionalParam V2MetricsChainHistoryGet PeriodId where
   applyOptionalParam req (PeriodId xs) =
     req `addQuery` toQuery ("period_id", Just xs)
 
 -- | /Optional Param/ "limit" - Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-instance HasOptionalParam MarketdataListMetricsV2ChainHistory Limit where
+instance HasOptionalParam V2MetricsChainHistoryGet Limit where
   applyOptionalParam req (Limit xs) =
     req `addQuery` toQuery ("limit", Just xs)
 -- | @application/json@
-instance Produces MarketdataListMetricsV2ChainHistory MimeJSON
+instance Produces V2MetricsChainHistoryGet MimeJSON
 -- | @application/x-msgpack@
-instance Produces MarketdataListMetricsV2ChainHistory MimeXMsgpack
+instance Produces V2MetricsChainHistoryGet MimeXMsgpack
 -- | @text/json@
-instance Produces MarketdataListMetricsV2ChainHistory MimeTextJson
+instance Produces V2MetricsChainHistoryGet MimeTextJson
 -- | @text/plain@
-instance Produces MarketdataListMetricsV2ChainHistory MimePlainText
+instance Produces V2MetricsChainHistoryGet MimePlainText
 
 
--- *** marketdataListMetricsV2ChainListing
+-- *** v2MetricsChainListingGet
 
 -- | @GET \/v2\/metrics\/chain\/listing@
 -- 
@@ -215,28 +215,28 @@ instance Produces MarketdataListMetricsV2ChainHistory MimePlainText
 -- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
-marketdataListMetricsV2ChainListing
+v2MetricsChainListingGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> ChainId -- ^ "chainId" -  Chain identifier (e.g., ETHEREUM, ARBITRUM)
-  -> CoinAPIMarketDataRESTRequest MarketdataListMetricsV2ChainListing MimeNoContent [V1MetricInfo] accept
-marketdataListMetricsV2ChainListing  _ (ChainId chainId) =
+  -> CoinAPIMarketDataRESTRequest V2MetricsChainListingGet MimeNoContent [V1MetricInfo] accept
+v2MetricsChainListingGet  _ (ChainId chainId) =
   _mkRequest "GET" ["/v2/metrics/chain/listing"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
     `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
     `addQuery` toQuery ("chain_id", Just chainId)
 
-data MarketdataListMetricsV2ChainListing  
+data V2MetricsChainListingGet  
 -- | @application/json@
-instance Produces MarketdataListMetricsV2ChainListing MimeJSON
+instance Produces V2MetricsChainListingGet MimeJSON
 -- | @application/x-msgpack@
-instance Produces MarketdataListMetricsV2ChainListing MimeXMsgpack
+instance Produces V2MetricsChainListingGet MimeXMsgpack
 -- | @text/json@
-instance Produces MarketdataListMetricsV2ChainListing MimeTextJson
+instance Produces V2MetricsChainListingGet MimeTextJson
 -- | @text/plain@
-instance Produces MarketdataListMetricsV2ChainListing MimePlainText
+instance Produces V2MetricsChainListingGet MimePlainText
 
 
--- *** marketdataListMetricsV2ExchangeHistory
+-- *** v2MetricsExchangeHistoryGet
 
 -- | @GET \/v2\/metrics\/exchange\/history@
 -- 
@@ -246,55 +246,55 @@ instance Produces MarketdataListMetricsV2ChainListing MimePlainText
 -- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
-marketdataListMetricsV2ExchangeHistory
+v2MetricsExchangeHistoryGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> MetricId -- ^ "metricId" -  Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)
   -> ExchangeId -- ^ "exchangeId" -  Exchange identifier (e.g., `BINANCE`, `UNISWAP-V3-ETHEREUM`)
-  -> CoinAPIMarketDataRESTRequest MarketdataListMetricsV2ExchangeHistory MimeNoContent [A.Value] accept
-marketdataListMetricsV2ExchangeHistory  _ (MetricId metricId) (ExchangeId exchangeId) =
+  -> CoinAPIMarketDataRESTRequest V2MetricsExchangeHistoryGet MimeNoContent [A.Value] accept
+v2MetricsExchangeHistoryGet  _ (MetricId metricId) (ExchangeId exchangeId) =
   _mkRequest "GET" ["/v2/metrics/exchange/history"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
     `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
     `addQuery` toQuery ("metric_id", Just metricId)
     `addQuery` toQuery ("exchange_id", Just exchangeId)
 
-data MarketdataListMetricsV2ExchangeHistory  
+data V2MetricsExchangeHistoryGet  
 
 -- | /Optional Param/ "time_start" - Starting time in ISO 8601
-instance HasOptionalParam MarketdataListMetricsV2ExchangeHistory TimeStartDateTime where
+instance HasOptionalParam V2MetricsExchangeHistoryGet TimeStartDateTime where
   applyOptionalParam req (TimeStartDateTime xs) =
     req `addQuery` toQuery ("time_start", Just xs)
 
 -- | /Optional Param/ "time_end" - Ending time in ISO 8601
-instance HasOptionalParam MarketdataListMetricsV2ExchangeHistory TimeEndDateTime where
+instance HasOptionalParam V2MetricsExchangeHistoryGet TimeEndDateTime where
   applyOptionalParam req (TimeEndDateTime xs) =
     req `addQuery` toQuery ("time_end", Just xs)
 
 -- | /Optional Param/ "time_format" - If set, returned values will be in unix timestamp format (valid values: unix_sec, unix_millisec, unix_microsec, unix_nanosec)
-instance HasOptionalParam MarketdataListMetricsV2ExchangeHistory TimeFormat where
+instance HasOptionalParam V2MetricsExchangeHistoryGet TimeFormat where
   applyOptionalParam req (TimeFormat xs) =
     req `addQuery` toQuery ("time_format", Just xs)
 
 -- | /Optional Param/ "period_id" - Identifier of requested timeseries period (e.g. `1MIN` or `2MTH`), default value is `1MIN`
-instance HasOptionalParam MarketdataListMetricsV2ExchangeHistory PeriodId where
+instance HasOptionalParam V2MetricsExchangeHistoryGet PeriodId where
   applyOptionalParam req (PeriodId xs) =
     req `addQuery` toQuery ("period_id", Just xs)
 
 -- | /Optional Param/ "limit" - Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-instance HasOptionalParam MarketdataListMetricsV2ExchangeHistory Limit where
+instance HasOptionalParam V2MetricsExchangeHistoryGet Limit where
   applyOptionalParam req (Limit xs) =
     req `addQuery` toQuery ("limit", Just xs)
 -- | @application/json@
-instance Produces MarketdataListMetricsV2ExchangeHistory MimeJSON
+instance Produces V2MetricsExchangeHistoryGet MimeJSON
 -- | @application/x-msgpack@
-instance Produces MarketdataListMetricsV2ExchangeHistory MimeXMsgpack
+instance Produces V2MetricsExchangeHistoryGet MimeXMsgpack
 -- | @text/json@
-instance Produces MarketdataListMetricsV2ExchangeHistory MimeTextJson
+instance Produces V2MetricsExchangeHistoryGet MimeTextJson
 -- | @text/plain@
-instance Produces MarketdataListMetricsV2ExchangeHistory MimePlainText
+instance Produces V2MetricsExchangeHistoryGet MimePlainText
 
 
--- *** marketdataListMetricsV2ExchangeListing
+-- *** v2MetricsExchangeListingGet
 
 -- | @GET \/v2\/metrics\/exchange\/listing@
 -- 
@@ -304,28 +304,28 @@ instance Produces MarketdataListMetricsV2ExchangeHistory MimePlainText
 -- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
-marketdataListMetricsV2ExchangeListing
+v2MetricsExchangeListingGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> ExchangeId -- ^ "exchangeId" -  Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
-  -> CoinAPIMarketDataRESTRequest MarketdataListMetricsV2ExchangeListing MimeNoContent [V1MetricInfo] accept
-marketdataListMetricsV2ExchangeListing  _ (ExchangeId exchangeId) =
+  -> CoinAPIMarketDataRESTRequest V2MetricsExchangeListingGet MimeNoContent [V1MetricInfo] accept
+v2MetricsExchangeListingGet  _ (ExchangeId exchangeId) =
   _mkRequest "GET" ["/v2/metrics/exchange/listing"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
     `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
     `addQuery` toQuery ("exchange_id", Just exchangeId)
 
-data MarketdataListMetricsV2ExchangeListing  
+data V2MetricsExchangeListingGet  
 -- | @application/json@
-instance Produces MarketdataListMetricsV2ExchangeListing MimeJSON
+instance Produces V2MetricsExchangeListingGet MimeJSON
 -- | @application/x-msgpack@
-instance Produces MarketdataListMetricsV2ExchangeListing MimeXMsgpack
+instance Produces V2MetricsExchangeListingGet MimeXMsgpack
 -- | @text/json@
-instance Produces MarketdataListMetricsV2ExchangeListing MimeTextJson
+instance Produces V2MetricsExchangeListingGet MimeTextJson
 -- | @text/plain@
-instance Produces MarketdataListMetricsV2ExchangeListing MimePlainText
+instance Produces V2MetricsExchangeListingGet MimePlainText
 
 
--- *** marketdataListMetricsV2Listing
+-- *** v2MetricsListingGet
 
 -- | @GET \/v2\/metrics\/listing@
 -- 
@@ -335,21 +335,21 @@ instance Produces MarketdataListMetricsV2ExchangeListing MimePlainText
 -- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
-marketdataListMetricsV2Listing
+v2MetricsListingGet
   :: Accept accept -- ^ request accept ('MimeType')
-  -> CoinAPIMarketDataRESTRequest MarketdataListMetricsV2Listing MimeNoContent [V1MetricInfo] accept
-marketdataListMetricsV2Listing  _ =
+  -> CoinAPIMarketDataRESTRequest V2MetricsListingGet MimeNoContent [V1MetricInfo] accept
+v2MetricsListingGet  _ =
   _mkRequest "GET" ["/v2/metrics/listing"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
     `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
 
-data MarketdataListMetricsV2Listing  
+data V2MetricsListingGet  
 -- | @application/json@
-instance Produces MarketdataListMetricsV2Listing MimeJSON
+instance Produces V2MetricsListingGet MimeJSON
 -- | @application/x-msgpack@
-instance Produces MarketdataListMetricsV2Listing MimeXMsgpack
+instance Produces V2MetricsListingGet MimeXMsgpack
 -- | @text/json@
-instance Produces MarketdataListMetricsV2Listing MimeTextJson
+instance Produces V2MetricsListingGet MimeTextJson
 -- | @text/plain@
-instance Produces MarketdataListMetricsV2Listing MimePlainText
+instance Produces V2MetricsListingGet MimePlainText
 
