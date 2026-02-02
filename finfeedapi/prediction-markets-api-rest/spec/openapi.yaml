@@ -263,6 +263,124 @@ paths:
                 $ref: '#/components/schemas/Activity.MarketActivityBatch'
         '404':
           description: Market not found or no activity
+  '/v1/activity/{exchange_id}/{market_id}/history/trades':
+    get:
+      tags:
+        - MarketActivity
+      summary: Returns historical trades for a market from flat files.
+      description: "Retrieves historical trade data from flat files stored in external storage (S3).\nSupports hourly granularity with automatic fallback to daily files.\nUse either 'date' for full day or 'time_start'/'time_end' for specific time ranges.\n            \n**Important:** Results are filtered by data processing time (time_coinapi) - the time when CoinAPI\nreceived and processed the data from the exchange. Each trade also includes time_exchange showing\nwhen the trade actually occurred on the exchange. Due to API polling delays, time_exchange may be\nearlier than time_coinapi."
+      parameters:
+        - name: exchange_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: market_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: date
+          in: query
+          schema:
+            type: string
+        - name: time_start
+          in: query
+          schema:
+            type: string
+        - name: time_end
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            format: int32
+            default: 100
+      responses:
+        '200':
+          description: Historical trades in ascending time order
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Activity.TradeModel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Activity.TradeModel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Activity.TradeModel'
+            application/x-msgpack:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Activity.TradeModel'
+  '/v1/activity/{exchange_id}/{market_id}/history/quotes':
+    get:
+      tags:
+        - MarketActivity
+      summary: Returns historical quotes for a market from flat files.
+      description: "Retrieves historical quote (bid/ask) data from flat files stored in external storage (S3).\nSupports hourly granularity with automatic fallback to daily files.\nUse either 'date' for full day or 'time_start'/'time_end' for specific time ranges.\n            \n**Important:** Results are filtered by data processing time (time_coinapi) - the time when CoinAPI\nreceived and processed the data from the exchange. Each quote also includes time_exchange showing\nwhen the quote was created on the exchange. Due to API polling delays, time_exchange may be\nearlier than time_coinapi."
+      parameters:
+        - name: exchange_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: market_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: date
+          in: query
+          schema:
+            type: string
+        - name: time_start
+          in: query
+          schema:
+            type: string
+        - name: time_end
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            format: int32
+            default: 100
+      responses:
+        '200':
+          description: Historical quotes in ascending time order
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/QuoteTicks.QuoteTick'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/QuoteTicks.QuoteTick'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/QuoteTicks.QuoteTick'
+            application/x-msgpack:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/QuoteTicks.QuoteTick'
   '/v1/markets/{exchange_id}/history':
     get:
       tags:
@@ -732,7 +850,7 @@ paths:
             type: string
         - name: limit
           in: query
-          description: 'Amount of items to return (maximum is 100000, default value is 100)'
+          description: 'Amount of items to return (mininum is 1, maximum is 100000, default value is 100)'
           schema:
             type: integer
             format: int32
@@ -788,7 +906,7 @@ paths:
             type: string
         - name: limit
           in: query
-          description: 'Amount of items to return (maximum is 100000, default value is 100)'
+          description: 'Amount of items to return (mininum is 1, maximum is 100000, default value is 100)'
           schema:
             type: integer
             format: int32
@@ -893,6 +1011,61 @@ paths:
 }
         '404':
           description: Market or outcome not found
+  '/v1/orderbook/{exchange_id}/{market_id}/history':
+    get:
+      tags:
+        - Orderbooks
+      summary: Returns historical orderbook limit orders for a market from flat files.
+      description: "Retrieves historical limit order data from flat files stored in external storage (S3).\nReturns raw limit order updates (adds, updates, deletes) rather than reconstructed snapshots.\nSupports hourly granularity with automatic fallback to daily files.\nUse either 'date' for full day or 'time_start'/'time_end' for specific time ranges.\n            \n**Important:** Results are filtered by data processing time (time_coinapi) - the time when CoinAPI\nreceived and processed the data from the exchange. Each order also includes time_exchange showing\nwhen the order was created/updated on the exchange. Due to API polling delays, time_exchange may be\nearlier than time_coinapi."
+      parameters:
+        - name: exchange_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: market_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: date
+          in: query
+          schema:
+            type: string
+        - name: time_start
+          in: query
+          schema:
+            type: string
+        - name: time_end
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            format: int32
+            default: 100
+      responses:
+        '200':
+          description: Historical limit order updates in ascending time order
+          content:
+            text/plain:
+              schema:
+                type: array
+                items: { }
+            application/json:
+              schema:
+                type: array
+                items: { }
+            text/json:
+              schema:
+                type: array
+                items: { }
+            application/x-msgpack:
+              schema:
+                type: array
+                items: { }
 components:
   schemas:
     Activity.MarketActivityBatch:
@@ -902,13 +1075,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Activity.TradeModel'
+          description: Collection of trades executed in the market.
           nullable: true
         quotes:
           type: array
           items:
             $ref: '#/components/schemas/QuoteTicks.QuoteTick'
+          description: Collection of quote updates for the market.
           nullable: true
       additionalProperties: false
+      description: Represents a batch of market activity including both trades and quotes.
     Activity.MarketActivityCurrent:
       type: object
       properties:
@@ -917,6 +1093,7 @@ components:
         quote:
           $ref: '#/components/schemas/QuoteTicks.QuoteTick'
       additionalProperties: false
+      description: Represents the current market activity snapshot including the latest trade and quote.
     Activity.TradeModel:
       type: object
       properties:
