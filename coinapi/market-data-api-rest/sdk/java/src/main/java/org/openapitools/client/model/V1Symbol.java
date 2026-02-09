@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a symbol data model.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-06T06:03:57.373400477Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-09T06:03:55.241216772Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class V1Symbol {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
