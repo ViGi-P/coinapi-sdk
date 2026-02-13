@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an item in the exchange rate timeseries.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-12T06:06:02.619631131Z[Etc/UTC]", comments = "Generator version: 7.19.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-02-13T06:06:07.455183181Z[Etc/UTC]", comments = "Generator version: 7.19.0")
 public class V1ExchangeRatesTimeseriesItem {
   public static final String SERIALIZED_NAME_TIME_PERIOD_START = "time_period_start";
   @SerializedName(SERIALIZED_NAME_TIME_PERIOD_START)
