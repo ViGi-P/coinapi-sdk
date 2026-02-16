@@ -6,7 +6,7 @@ This Groovy package, using the [http-builder-ng library](https://http-builder-ng
 
 - API version: v1
 - Package version: v1
-- Build date: 2026-02-13T06:06:30.744310034Z[Etc/UTC]
+- Build date: 2026-02-16T06:04:26.439319287Z[Etc/UTC]
 - Generator version: 7.19.0
 - Build package: org.openapitools.codegen.languages.GroovyClientCodegen
 For more information, please visit [https://www.finfeedapi.com](https://www.finfeedapi.com)
