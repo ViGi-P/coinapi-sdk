@@ -516,7 +516,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-02-16T06:05:05.1110431Z
+                    time: 2026-02-17T06:05:15.6716030Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -526,7 +526,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-02-16T06:05:05.1110431Z
+                    time: 2026-02-17T06:05:15.6716030Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -536,7 +536,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-02-16T06:05:05.1110431Z
+                    time: 2026-02-17T06:05:15.6716030Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
