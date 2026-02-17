@@ -85,10 +85,11 @@ ExchangeRatesApi <- R6::R6Class(
     #' @param asset_id_quote Requested exchange rate quote asset identifier (from the Metadata -> Assets)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return V1ExchangeRate
-    GetSpecificRate = function(asset_id_base, asset_id_quote, data_file = NULL, ...) {
-      local_var_response <- self$GetSpecificRateWithHttpInfo(asset_id_base, asset_id_quote, data_file = data_file, ...)
+    GetSpecificRate = function(asset_id_base, asset_id_quote, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$GetSpecificRateWithHttpInfo(asset_id_base, asset_id_quote, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -107,9 +108,10 @@ ExchangeRatesApi <- R6::R6Class(
     #' @param asset_id_quote Requested exchange rate quote asset identifier (from the Metadata -> Assets)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (V1ExchangeRate) with additional information such as HTTP status code, headers
-    GetSpecificRateWithHttpInfo = function(asset_id_base, asset_id_quote, data_file = NULL, ...) {
+    GetSpecificRateWithHttpInfo = function(asset_id_base, asset_id_quote, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -177,6 +179,10 @@ ExchangeRatesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "V1ExchangeRate"),
@@ -213,10 +219,11 @@ ExchangeRatesApi <- R6::R6Class(
     #' @param invert (optional) True will invert all the rates (optional, if true then rates will be calculated as `rate = 1 / actual_rate` eg. `USD/BTC` as `BTC/USD`) (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return V1ExchangeRates
-    V1ExchangerateAssetIdBaseGet = function(asset_id_base, filter_asset_id = NULL, invert = FALSE, data_file = NULL, ...) {
-      local_var_response <- self$V1ExchangerateAssetIdBaseGetWithHttpInfo(asset_id_base, filter_asset_id, invert, data_file = data_file, ...)
+    V1ExchangerateAssetIdBaseGet = function(asset_id_base, filter_asset_id = NULL, invert = FALSE, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1ExchangerateAssetIdBaseGetWithHttpInfo(asset_id_base, filter_asset_id, invert, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -236,9 +243,10 @@ ExchangeRatesApi <- R6::R6Class(
     #' @param invert (optional) True will invert all the rates (optional, if true then rates will be calculated as `rate = 1 / actual_rate` eg. `USD/BTC` as `BTC/USD`) (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (V1ExchangeRates) with additional information such as HTTP status code, headers
-    V1ExchangerateAssetIdBaseGetWithHttpInfo = function(asset_id_base, filter_asset_id = NULL, invert = FALSE, data_file = NULL, ...) {
+    V1ExchangerateAssetIdBaseGetWithHttpInfo = function(asset_id_base, filter_asset_id = NULL, invert = FALSE, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -305,6 +313,10 @@ ExchangeRatesApi <- R6::R6Class(
         # save response in a file
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
+        }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
         }
 
         deserialized_resp_obj <- tryCatch(

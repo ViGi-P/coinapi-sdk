@@ -13,7 +13,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net;
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
@@ -348,10 +350,10 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
                         "application/x-msgpack"
                     };
 
-                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
 
-                    if (acceptLocalVar != null)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
                     httpRequestMessageLocalVar.Method = HttpMethod.Get;
 
@@ -634,10 +636,10 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api
                         "application/x-msgpack"
                     };
 
-                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
 
-                    if (acceptLocalVar != null)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
                     httpRequestMessageLocalVar.Method = HttpMethod.Get;
 
