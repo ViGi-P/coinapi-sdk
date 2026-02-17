@@ -74,8 +74,8 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Client
 
             List<IHttpClientBuilder> builders = new List<IHttpClientBuilder>();
 
-            builders.Add(_services.AddHttpClient<IExchangeRatesApi, ExchangeRatesApi>(client));
-            builders.Add(_services.AddHttpClient<IMetadataApi, MetadataApi>(client));
+            builders.Add(_services.AddHttpClient<IExchangeRatesApi, ExchangeRatesApi>("APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api.IExchangeRatesApi", client));
+            builders.Add(_services.AddHttpClient<IMetadataApi, MetadataApi>("APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api.IMetadataApi", client));
             
             if (builder != null)
                 foreach (IHttpClientBuilder instance in builders)
