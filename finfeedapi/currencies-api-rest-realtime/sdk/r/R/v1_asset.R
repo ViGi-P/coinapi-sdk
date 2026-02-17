@@ -314,7 +314,7 @@ V1Asset <- R6::R6Class(
       }
       if (!is.null(self$`chain_addresses`)) {
         V1AssetObject[["chain_addresses"]] <-
-          lapply(self$`chain_addresses`, function(x) x$toSimpleType())
+          self$extractSimpleType(self$`chain_addresses`)
       }
       if (!is.null(self$`data_start`)) {
         V1AssetObject[["data_start"]] <-
@@ -325,6 +325,29 @@ V1Asset <- R6::R6Class(
           self$`data_end`
       }
       return(V1AssetObject)
+    },
+
+    extractSimpleType = function(x) {
+      if (R6::is.R6(x)) {
+        return(x$toSimpleType())
+      } else if (!self$hasNestedR6(x)) {
+        return(x)
+      }
+      lapply(x, self$extractSimpleType)
+    },
+
+    hasNestedR6 = function(x) {
+      if (R6::is.R6(x)) {
+        return(TRUE)
+      }
+      if (is.list(x)) {
+        for (item in x) {
+          if (self$hasNestedR6(item)) {
+            return(TRUE)
+          }
+        }
+      }
+      FALSE
     },
 
     #' @description
