@@ -277,10 +277,11 @@ MetricsV1Api <- R6::R6Class(
     #' @param exchange_id (optional) Exchange identifier (from the Metadata -> Exchanges)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1GeneralData]
-    V1MetricsAssetCurrentGet = function(metric_id = NULL, asset_id = NULL, asset_id_external = NULL, exchange_id = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1MetricsAssetCurrentGetWithHttpInfo(metric_id, asset_id, asset_id_external, exchange_id, data_file = data_file, ...)
+    V1MetricsAssetCurrentGet = function(metric_id = NULL, asset_id = NULL, asset_id_external = NULL, exchange_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1MetricsAssetCurrentGetWithHttpInfo(metric_id, asset_id, asset_id_external, exchange_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -301,9 +302,10 @@ MetricsV1Api <- R6::R6Class(
     #' @param exchange_id (optional) Exchange identifier (from the Metadata -> Exchanges)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1GeneralData]) with additional information such as HTTP status code, headers
-    V1MetricsAssetCurrentGetWithHttpInfo = function(metric_id = NULL, asset_id = NULL, asset_id_external = NULL, exchange_id = NULL, data_file = NULL, ...) {
+    V1MetricsAssetCurrentGetWithHttpInfo = function(metric_id = NULL, asset_id = NULL, asset_id_external = NULL, exchange_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -371,6 +373,10 @@ MetricsV1Api <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1GeneralData]"),
@@ -413,10 +419,11 @@ MetricsV1Api <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1MetricData]
-    V1MetricsAssetHistoryGet = function(metric_id, exchange_id, asset_id = NULL, asset_id_external = NULL, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$V1MetricsAssetHistoryGetWithHttpInfo(metric_id, exchange_id, asset_id, asset_id_external, time_start, time_end, time_format, period_id, limit, data_file = data_file, ...)
+    V1MetricsAssetHistoryGet = function(metric_id, exchange_id, asset_id = NULL, asset_id_external = NULL, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1MetricsAssetHistoryGetWithHttpInfo(metric_id, exchange_id, asset_id, asset_id_external, time_start, time_end, time_format, period_id, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -442,9 +449,10 @@ MetricsV1Api <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1MetricData]) with additional information such as HTTP status code, headers
-    V1MetricsAssetHistoryGetWithHttpInfo = function(metric_id, exchange_id, asset_id = NULL, asset_id_external = NULL, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
+    V1MetricsAssetHistoryGetWithHttpInfo = function(metric_id, exchange_id, asset_id = NULL, asset_id_external = NULL, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -550,6 +558,10 @@ MetricsV1Api <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1MetricData]"),
@@ -589,10 +601,11 @@ MetricsV1Api <- R6::R6Class(
     #' @param asset_id_external (optional) The asset external identifier
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1ListingItem]
-    V1MetricsAssetListingGet = function(metric_id = NULL, exchange_id = NULL, chain_id = NULL, network_id = NULL, asset_id = NULL, asset_id_external = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1MetricsAssetListingGetWithHttpInfo(metric_id, exchange_id, chain_id, network_id, asset_id, asset_id_external, data_file = data_file, ...)
+    V1MetricsAssetListingGet = function(metric_id = NULL, exchange_id = NULL, chain_id = NULL, network_id = NULL, asset_id = NULL, asset_id_external = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1MetricsAssetListingGetWithHttpInfo(metric_id, exchange_id, chain_id, network_id, asset_id, asset_id_external, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -615,9 +628,10 @@ MetricsV1Api <- R6::R6Class(
     #' @param asset_id_external (optional) The asset external identifier
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1ListingItem]) with additional information such as HTTP status code, headers
-    V1MetricsAssetListingGetWithHttpInfo = function(metric_id = NULL, exchange_id = NULL, chain_id = NULL, network_id = NULL, asset_id = NULL, asset_id_external = NULL, data_file = NULL, ...) {
+    V1MetricsAssetListingGetWithHttpInfo = function(metric_id = NULL, exchange_id = NULL, chain_id = NULL, network_id = NULL, asset_id = NULL, asset_id_external = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -697,6 +711,10 @@ MetricsV1Api <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1ListingItem]"),
@@ -732,10 +750,11 @@ MetricsV1Api <- R6::R6Class(
     #' @param metric_id (optional) The metric identifier (from the Metrics -> Listing)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1GeneralData]
-    V1MetricsExchangeCurrentGet = function(exchange_id, metric_id = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1MetricsExchangeCurrentGetWithHttpInfo(exchange_id, metric_id, data_file = data_file, ...)
+    V1MetricsExchangeCurrentGet = function(exchange_id, metric_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1MetricsExchangeCurrentGetWithHttpInfo(exchange_id, metric_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -754,9 +773,10 @@ MetricsV1Api <- R6::R6Class(
     #' @param metric_id (optional) The metric identifier (from the Metrics -> Listing)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1GeneralData]) with additional information such as HTTP status code, headers
-    V1MetricsExchangeCurrentGetWithHttpInfo = function(exchange_id, metric_id = NULL, data_file = NULL, ...) {
+    V1MetricsExchangeCurrentGetWithHttpInfo = function(exchange_id, metric_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -816,6 +836,10 @@ MetricsV1Api <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1GeneralData]"),
@@ -856,10 +880,11 @@ MetricsV1Api <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1MetricData]
-    V1MetricsExchangeHistoryGet = function(metric_id, exchange_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$V1MetricsExchangeHistoryGetWithHttpInfo(metric_id, exchange_id, time_start, time_end, time_format, period_id, limit, data_file = data_file, ...)
+    V1MetricsExchangeHistoryGet = function(metric_id, exchange_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1MetricsExchangeHistoryGetWithHttpInfo(metric_id, exchange_id, time_start, time_end, time_format, period_id, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -883,9 +908,10 @@ MetricsV1Api <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1MetricData]) with additional information such as HTTP status code, headers
-    V1MetricsExchangeHistoryGetWithHttpInfo = function(metric_id, exchange_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
+    V1MetricsExchangeHistoryGetWithHttpInfo = function(metric_id, exchange_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -979,6 +1005,10 @@ MetricsV1Api <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1MetricData]"),
@@ -1014,10 +1044,11 @@ MetricsV1Api <- R6::R6Class(
     #' @param metric_id (optional) The metric identifier (from the Metrics -> Listing)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1ListingItem]
-    V1MetricsExchangeListingGet = function(exchange_id, metric_id = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1MetricsExchangeListingGetWithHttpInfo(exchange_id, metric_id, data_file = data_file, ...)
+    V1MetricsExchangeListingGet = function(exchange_id, metric_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1MetricsExchangeListingGetWithHttpInfo(exchange_id, metric_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1036,9 +1067,10 @@ MetricsV1Api <- R6::R6Class(
     #' @param metric_id (optional) The metric identifier (from the Metrics -> Listing)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1ListingItem]) with additional information such as HTTP status code, headers
-    V1MetricsExchangeListingGetWithHttpInfo = function(exchange_id, metric_id = NULL, data_file = NULL, ...) {
+    V1MetricsExchangeListingGetWithHttpInfo = function(exchange_id, metric_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1098,6 +1130,10 @@ MetricsV1Api <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1ListingItem]"),
@@ -1131,10 +1167,11 @@ MetricsV1Api <- R6::R6Class(
     #'
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Metric]
-    V1MetricsListingGet = function(data_file = NULL, ...) {
-      local_var_response <- self$V1MetricsListingGetWithHttpInfo(data_file = data_file, ...)
+    V1MetricsListingGet = function(data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1MetricsListingGetWithHttpInfo(data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1151,9 +1188,10 @@ MetricsV1Api <- R6::R6Class(
     #'
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Metric]) with additional information such as HTTP status code, headers
-    V1MetricsListingGetWithHttpInfo = function(data_file = NULL, ...) {
+    V1MetricsListingGetWithHttpInfo = function(data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1197,6 +1235,10 @@ MetricsV1Api <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Metric]"),
@@ -1233,10 +1275,11 @@ MetricsV1Api <- R6::R6Class(
     #' @param exchange_id (optional) Exchange id (from the Metadata -> Exchanges)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1GeneralData]
-    V1MetricsSymbolCurrentGet = function(metric_id = NULL, symbol_id = NULL, exchange_id = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1MetricsSymbolCurrentGetWithHttpInfo(metric_id, symbol_id, exchange_id, data_file = data_file, ...)
+    V1MetricsSymbolCurrentGet = function(metric_id = NULL, symbol_id = NULL, exchange_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1MetricsSymbolCurrentGetWithHttpInfo(metric_id, symbol_id, exchange_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1256,9 +1299,10 @@ MetricsV1Api <- R6::R6Class(
     #' @param exchange_id (optional) Exchange id (from the Metadata -> Exchanges)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1GeneralData]) with additional information such as HTTP status code, headers
-    V1MetricsSymbolCurrentGetWithHttpInfo = function(metric_id = NULL, symbol_id = NULL, exchange_id = NULL, data_file = NULL, ...) {
+    V1MetricsSymbolCurrentGetWithHttpInfo = function(metric_id = NULL, symbol_id = NULL, exchange_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1320,6 +1364,10 @@ MetricsV1Api <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1GeneralData]"),
@@ -1360,10 +1408,11 @@ MetricsV1Api <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1MetricData]
-    V1MetricsSymbolHistoryGet = function(metric_id, symbol_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$V1MetricsSymbolHistoryGetWithHttpInfo(metric_id, symbol_id, time_start, time_end, time_format, period_id, limit, data_file = data_file, ...)
+    V1MetricsSymbolHistoryGet = function(metric_id, symbol_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1MetricsSymbolHistoryGetWithHttpInfo(metric_id, symbol_id, time_start, time_end, time_format, period_id, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1387,9 +1436,10 @@ MetricsV1Api <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1MetricData]) with additional information such as HTTP status code, headers
-    V1MetricsSymbolHistoryGetWithHttpInfo = function(metric_id, symbol_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ...) {
+    V1MetricsSymbolHistoryGetWithHttpInfo = function(metric_id, symbol_id, time_start = NULL, time_end = NULL, time_format = NULL, period_id = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1483,6 +1533,10 @@ MetricsV1Api <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1MetricData]"),
@@ -1519,10 +1573,11 @@ MetricsV1Api <- R6::R6Class(
     #' @param symbol_id (optional) Symbol identifier (from the Metadata -> Symbols)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1ListingItem]
-    V1MetricsSymbolListingGet = function(metric_id = NULL, exchange_id = NULL, symbol_id = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1MetricsSymbolListingGetWithHttpInfo(metric_id, exchange_id, symbol_id, data_file = data_file, ...)
+    V1MetricsSymbolListingGet = function(metric_id = NULL, exchange_id = NULL, symbol_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1MetricsSymbolListingGetWithHttpInfo(metric_id, exchange_id, symbol_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1542,9 +1597,10 @@ MetricsV1Api <- R6::R6Class(
     #' @param symbol_id (optional) Symbol identifier (from the Metadata -> Symbols)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1ListingItem]) with additional information such as HTTP status code, headers
-    V1MetricsSymbolListingGetWithHttpInfo = function(metric_id = NULL, exchange_id = NULL, symbol_id = NULL, data_file = NULL, ...) {
+    V1MetricsSymbolListingGetWithHttpInfo = function(metric_id = NULL, exchange_id = NULL, symbol_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1605,6 +1661,10 @@ MetricsV1Api <- R6::R6Class(
         # save response in a file
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
+        }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
         }
 
         deserialized_resp_obj <- tryCatch(

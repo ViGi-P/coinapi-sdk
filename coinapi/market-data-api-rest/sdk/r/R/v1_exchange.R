@@ -300,7 +300,7 @@ V1Exchange <- R6::R6Class(
       }
       if (!is.null(self$`icons`)) {
         V1ExchangeObject[["icons"]] <-
-          lapply(self$`icons`, function(x) x$toSimpleType())
+          self$extractSimpleType(self$`icons`)
       }
       if (!is.null(self$`rank`)) {
         V1ExchangeObject[["rank"]] <-
@@ -311,6 +311,29 @@ V1Exchange <- R6::R6Class(
           self$`integration_status`
       }
       return(V1ExchangeObject)
+    },
+
+    extractSimpleType = function(x) {
+      if (R6::is.R6(x)) {
+        return(x$toSimpleType())
+      } else if (!self$hasNestedR6(x)) {
+        return(x)
+      }
+      lapply(x, self$extractSimpleType)
+    },
+
+    hasNestedR6 = function(x) {
+      if (R6::is.R6(x)) {
+        return(TRUE)
+      }
+      if (is.list(x)) {
+        for (item in x) {
+          if (self$hasNestedR6(item)) {
+            return(TRUE)
+          }
+        }
+      }
+      FALSE
     },
 
     #' @description

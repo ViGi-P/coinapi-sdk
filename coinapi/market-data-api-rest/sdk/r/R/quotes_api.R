@@ -147,10 +147,11 @@ QuotesApi <- R6::R6Class(
     #' @param filter_symbol_id (optional) Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1QuoteTrade]
-    V1QuotesCurrentGet = function(filter_symbol_id = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1QuotesCurrentGetWithHttpInfo(filter_symbol_id, data_file = data_file, ...)
+    V1QuotesCurrentGet = function(filter_symbol_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1QuotesCurrentGetWithHttpInfo(filter_symbol_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -168,9 +169,10 @@ QuotesApi <- R6::R6Class(
     #' @param filter_symbol_id (optional) Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1QuoteTrade]) with additional information such as HTTP status code, headers
-    V1QuotesCurrentGetWithHttpInfo = function(filter_symbol_id = NULL, data_file = NULL, ...) {
+    V1QuotesCurrentGetWithHttpInfo = function(filter_symbol_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -220,6 +222,10 @@ QuotesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1QuoteTrade]"),
@@ -255,10 +261,11 @@ QuotesApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Quote]
-    V1QuotesLatestGet = function(filter_symbol_id = NULL, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$V1QuotesLatestGetWithHttpInfo(filter_symbol_id, limit, data_file = data_file, ...)
+    V1QuotesLatestGet = function(filter_symbol_id = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1QuotesLatestGetWithHttpInfo(filter_symbol_id, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -277,9 +284,10 @@ QuotesApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Quote]) with additional information such as HTTP status code, headers
-    V1QuotesLatestGetWithHttpInfo = function(filter_symbol_id = NULL, limit = 100, data_file = NULL, ...) {
+    V1QuotesLatestGetWithHttpInfo = function(filter_symbol_id = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -335,6 +343,10 @@ QuotesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Quote]"),
@@ -369,10 +381,11 @@ QuotesApi <- R6::R6Class(
     #' @param symbol_id The symbol identifier (from the Metadata -> Symbols)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return V1QuoteTrade
-    V1QuotesSymbolIdCurrentGet = function(symbol_id, data_file = NULL, ...) {
-      local_var_response <- self$V1QuotesSymbolIdCurrentGetWithHttpInfo(symbol_id, data_file = data_file, ...)
+    V1QuotesSymbolIdCurrentGet = function(symbol_id, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1QuotesSymbolIdCurrentGetWithHttpInfo(symbol_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -390,9 +403,10 @@ QuotesApi <- R6::R6Class(
     #' @param symbol_id The symbol identifier (from the Metadata -> Symbols)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (V1QuoteTrade) with additional information such as HTTP status code, headers
-    V1QuotesSymbolIdCurrentGetWithHttpInfo = function(symbol_id, data_file = NULL, ...) {
+    V1QuotesSymbolIdCurrentGetWithHttpInfo = function(symbol_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -448,6 +462,10 @@ QuotesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "V1QuoteTrade"),
@@ -486,10 +504,11 @@ QuotesApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Quote]
-    V1QuotesSymbolIdHistoryGet = function(symbol_id, date = NULL, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$V1QuotesSymbolIdHistoryGetWithHttpInfo(symbol_id, date, time_start, time_end, limit, data_file = data_file, ...)
+    V1QuotesSymbolIdHistoryGet = function(symbol_id, date = NULL, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1QuotesSymbolIdHistoryGetWithHttpInfo(symbol_id, date, time_start, time_end, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -511,9 +530,10 @@ QuotesApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Quote]) with additional information such as HTTP status code, headers
-    V1QuotesSymbolIdHistoryGetWithHttpInfo = function(symbol_id, date = NULL, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ...) {
+    V1QuotesSymbolIdHistoryGetWithHttpInfo = function(symbol_id, date = NULL, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -593,6 +613,10 @@ QuotesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Quote]"),
@@ -628,10 +652,11 @@ QuotesApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Quote]
-    V1QuotesSymbolIdLatestGet = function(symbol_id, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$V1QuotesSymbolIdLatestGetWithHttpInfo(symbol_id, limit, data_file = data_file, ...)
+    V1QuotesSymbolIdLatestGet = function(symbol_id, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1QuotesSymbolIdLatestGetWithHttpInfo(symbol_id, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -650,9 +675,10 @@ QuotesApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Quote]) with additional information such as HTTP status code, headers
-    V1QuotesSymbolIdLatestGetWithHttpInfo = function(symbol_id, limit = 100, data_file = NULL, ...) {
+    V1QuotesSymbolIdLatestGetWithHttpInfo = function(symbol_id, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -713,6 +739,10 @@ QuotesApi <- R6::R6Class(
         # save response in a file
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
+        }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
         }
 
         deserialized_resp_obj <- tryCatch(

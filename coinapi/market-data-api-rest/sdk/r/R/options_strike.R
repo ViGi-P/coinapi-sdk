@@ -81,13 +81,36 @@ OptionsStrike <- R6::R6Class(
       }
       if (!is.null(self$`call`)) {
         OptionsStrikeObject[["call"]] <-
-          self$`call`$toSimpleType()
+          self$extractSimpleType(self$`call`)
       }
       if (!is.null(self$`put`)) {
         OptionsStrikeObject[["put"]] <-
-          self$`put`$toSimpleType()
+          self$extractSimpleType(self$`put`)
       }
       return(OptionsStrikeObject)
+    },
+
+    extractSimpleType = function(x) {
+      if (R6::is.R6(x)) {
+        return(x$toSimpleType())
+      } else if (!self$hasNestedR6(x)) {
+        return(x)
+      }
+      lapply(x, self$extractSimpleType)
+    },
+
+    hasNestedR6 = function(x) {
+      if (R6::is.R6(x)) {
+        return(TRUE)
+      }
+      if (is.list(x)) {
+        for (item in x) {
+          if (self$hasNestedR6(item)) {
+            return(TRUE)
+          }
+        }
+      }
+      FALSE
     },
 
     #' @description

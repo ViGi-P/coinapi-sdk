@@ -112,10 +112,11 @@ TradesApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Trade]
-    V1TradesLatestGet = function(filter_symbol_id = NULL, include_id = FALSE, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$V1TradesLatestGetWithHttpInfo(filter_symbol_id, include_id, limit, data_file = data_file, ...)
+    V1TradesLatestGet = function(filter_symbol_id = NULL, include_id = FALSE, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1TradesLatestGetWithHttpInfo(filter_symbol_id, include_id, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -135,9 +136,10 @@ TradesApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Trade]) with additional information such as HTTP status code, headers
-    V1TradesLatestGetWithHttpInfo = function(filter_symbol_id = NULL, include_id = FALSE, limit = 100, data_file = NULL, ...) {
+    V1TradesLatestGetWithHttpInfo = function(filter_symbol_id = NULL, include_id = FALSE, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -199,6 +201,10 @@ TradesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Trade]"),
@@ -238,10 +244,11 @@ TradesApi <- R6::R6Class(
     #' @param include_id (optional) Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers. (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Trade]
-    V1TradesSymbolIdHistoryGet = function(symbol_id, date = NULL, time_start = NULL, time_end = NULL, limit = 100, include_id = FALSE, data_file = NULL, ...) {
-      local_var_response <- self$V1TradesSymbolIdHistoryGetWithHttpInfo(symbol_id, date, time_start, time_end, limit, include_id, data_file = data_file, ...)
+    V1TradesSymbolIdHistoryGet = function(symbol_id, date = NULL, time_start = NULL, time_end = NULL, limit = 100, include_id = FALSE, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1TradesSymbolIdHistoryGetWithHttpInfo(symbol_id, date, time_start, time_end, limit, include_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -264,9 +271,10 @@ TradesApi <- R6::R6Class(
     #' @param include_id (optional) Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers. (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Trade]) with additional information such as HTTP status code, headers
-    V1TradesSymbolIdHistoryGetWithHttpInfo = function(symbol_id, date = NULL, time_start = NULL, time_end = NULL, limit = 100, include_id = FALSE, data_file = NULL, ...) {
+    V1TradesSymbolIdHistoryGetWithHttpInfo = function(symbol_id, date = NULL, time_start = NULL, time_end = NULL, limit = 100, include_id = FALSE, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -352,6 +360,10 @@ TradesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Trade]"),
@@ -388,10 +400,11 @@ TradesApi <- R6::R6Class(
     #' @param include_id (optional) Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers. (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Trade]
-    V1TradesSymbolIdLatestGet = function(symbol_id, limit = 100, include_id = FALSE, data_file = NULL, ...) {
-      local_var_response <- self$V1TradesSymbolIdLatestGetWithHttpInfo(symbol_id, limit, include_id, data_file = data_file, ...)
+    V1TradesSymbolIdLatestGet = function(symbol_id, limit = 100, include_id = FALSE, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1TradesSymbolIdLatestGetWithHttpInfo(symbol_id, limit, include_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -411,9 +424,10 @@ TradesApi <- R6::R6Class(
     #' @param include_id (optional) Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers. (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Trade]) with additional information such as HTTP status code, headers
-    V1TradesSymbolIdLatestGetWithHttpInfo = function(symbol_id, limit = 100, include_id = FALSE, data_file = NULL, ...) {
+    V1TradesSymbolIdLatestGetWithHttpInfo = function(symbol_id, limit = 100, include_id = FALSE, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -480,6 +494,10 @@ TradesApi <- R6::R6Class(
         # save response in a file
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
+        }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
         }
 
         deserialized_resp_obj <- tryCatch(

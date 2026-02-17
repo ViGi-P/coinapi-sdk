@@ -102,16 +102,16 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client
 
             List<IHttpClientBuilder> builders = new List<IHttpClientBuilder>();
 
-            builders.Add(_services.AddHttpClient<IExchangeRatesApi, ExchangeRatesApi>(client));
-            builders.Add(_services.AddHttpClient<IMetadataApi, MetadataApi>(client));
-            builders.Add(_services.AddHttpClient<IMetricsV1Api, MetricsV1Api>(client));
-            builders.Add(_services.AddHttpClient<IMetricsV2Api, MetricsV2Api>(client));
-            builders.Add(_services.AddHttpClient<IOhlcvApi, OhlcvApi>(client));
-            builders.Add(_services.AddHttpClient<IOptionsApi, OptionsApi>(client));
-            builders.Add(_services.AddHttpClient<IOrderBookApi, OrderBookApi>(client));
-            builders.Add(_services.AddHttpClient<IOrderBookL3Api, OrderBookL3Api>(client));
-            builders.Add(_services.AddHttpClient<IQuotesApi, QuotesApi>(client));
-            builders.Add(_services.AddHttpClient<ITradesApi, TradesApi>(client));
+            builders.Add(_services.AddHttpClient<IExchangeRatesApi, ExchangeRatesApi>("APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api.IExchangeRatesApi", client));
+            builders.Add(_services.AddHttpClient<IMetadataApi, MetadataApi>("APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api.IMetadataApi", client));
+            builders.Add(_services.AddHttpClient<IMetricsV1Api, MetricsV1Api>("APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api.IMetricsV1Api", client));
+            builders.Add(_services.AddHttpClient<IMetricsV2Api, MetricsV2Api>("APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api.IMetricsV2Api", client));
+            builders.Add(_services.AddHttpClient<IOhlcvApi, OhlcvApi>("APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api.IOhlcvApi", client));
+            builders.Add(_services.AddHttpClient<IOptionsApi, OptionsApi>("APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api.IOptionsApi", client));
+            builders.Add(_services.AddHttpClient<IOrderBookApi, OrderBookApi>("APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api.IOrderBookApi", client));
+            builders.Add(_services.AddHttpClient<IOrderBookL3Api, OrderBookL3Api>("APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api.IOrderBookL3Api", client));
+            builders.Add(_services.AddHttpClient<IQuotesApi, QuotesApi>("APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api.IQuotesApi", client));
+            builders.Add(_services.AddHttpClient<ITradesApi, TradesApi>("APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api.ITradesApi", client));
             
             if (builder != null)
                 foreach (IHttpClientBuilder instance in builders)

@@ -265,10 +265,11 @@ MetadataApi <- R6::R6Class(
     #' @param asset_id The asset ID.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Asset]
-    V1AssetsAssetIdGet = function(asset_id, data_file = NULL, ...) {
-      local_var_response <- self$V1AssetsAssetIdGetWithHttpInfo(asset_id, data_file = data_file, ...)
+    V1AssetsAssetIdGet = function(asset_id, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1AssetsAssetIdGetWithHttpInfo(asset_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -286,9 +287,10 @@ MetadataApi <- R6::R6Class(
     #' @param asset_id The asset ID.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Asset]) with additional information such as HTTP status code, headers
-    V1AssetsAssetIdGetWithHttpInfo = function(asset_id, data_file = NULL, ...) {
+    V1AssetsAssetIdGetWithHttpInfo = function(asset_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -344,6 +346,10 @@ MetadataApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Asset]"),
@@ -378,10 +384,11 @@ MetadataApi <- R6::R6Class(
     #' @param filter_asset_id (optional) Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Asset]
-    V1AssetsGet = function(filter_asset_id = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1AssetsGetWithHttpInfo(filter_asset_id, data_file = data_file, ...)
+    V1AssetsGet = function(filter_asset_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1AssetsGetWithHttpInfo(filter_asset_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -399,9 +406,10 @@ MetadataApi <- R6::R6Class(
     #' @param filter_asset_id (optional) Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Asset]) with additional information such as HTTP status code, headers
-    V1AssetsGetWithHttpInfo = function(filter_asset_id = NULL, data_file = NULL, ...) {
+    V1AssetsGetWithHttpInfo = function(filter_asset_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -451,6 +459,10 @@ MetadataApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Asset]"),
@@ -485,10 +497,11 @@ MetadataApi <- R6::R6Class(
     #' @param size The size of the icons.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Icon]
-    V1AssetsIconsSizeGet = function(size, data_file = NULL, ...) {
-      local_var_response <- self$V1AssetsIconsSizeGetWithHttpInfo(size, data_file = data_file, ...)
+    V1AssetsIconsSizeGet = function(size, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1AssetsIconsSizeGetWithHttpInfo(size, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -506,9 +519,10 @@ MetadataApi <- R6::R6Class(
     #' @param size The size of the icons.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Icon]) with additional information such as HTTP status code, headers
-    V1AssetsIconsSizeGetWithHttpInfo = function(size, data_file = NULL, ...) {
+    V1AssetsIconsSizeGetWithHttpInfo = function(size, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -564,6 +578,10 @@ MetadataApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Icon]"),
@@ -598,10 +616,11 @@ MetadataApi <- R6::R6Class(
     #' @param chain_id The chain ID.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Chain]
-    V1ChainsChainIdGet = function(chain_id, data_file = NULL, ...) {
-      local_var_response <- self$V1ChainsChainIdGetWithHttpInfo(chain_id, data_file = data_file, ...)
+    V1ChainsChainIdGet = function(chain_id, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1ChainsChainIdGetWithHttpInfo(chain_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -619,9 +638,10 @@ MetadataApi <- R6::R6Class(
     #' @param chain_id The chain ID.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Chain]) with additional information such as HTTP status code, headers
-    V1ChainsChainIdGetWithHttpInfo = function(chain_id, data_file = NULL, ...) {
+    V1ChainsChainIdGetWithHttpInfo = function(chain_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -677,6 +697,10 @@ MetadataApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Chain]"),
@@ -711,10 +735,11 @@ MetadataApi <- R6::R6Class(
     #' @param filter_chain_id (optional) Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. `ETHEREUM;ARBITRUM`).
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Chain]
-    V1ChainsGet = function(filter_chain_id = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1ChainsGetWithHttpInfo(filter_chain_id, data_file = data_file, ...)
+    V1ChainsGet = function(filter_chain_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1ChainsGetWithHttpInfo(filter_chain_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -732,9 +757,10 @@ MetadataApi <- R6::R6Class(
     #' @param filter_chain_id (optional) Comma or semicolon delimited chain identifiers used to filter response. (optional, eg. `ETHEREUM;ARBITRUM`).
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Chain]) with additional information such as HTTP status code, headers
-    V1ChainsGetWithHttpInfo = function(filter_chain_id = NULL, data_file = NULL, ...) {
+    V1ChainsGetWithHttpInfo = function(filter_chain_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -784,6 +810,10 @@ MetadataApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Chain]"),
@@ -818,10 +848,11 @@ MetadataApi <- R6::R6Class(
     #' @param exchange_id The ID of the exchange.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Exchange]
-    V1ExchangesExchangeIdGet = function(exchange_id, data_file = NULL, ...) {
-      local_var_response <- self$V1ExchangesExchangeIdGetWithHttpInfo(exchange_id, data_file = data_file, ...)
+    V1ExchangesExchangeIdGet = function(exchange_id, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1ExchangesExchangeIdGetWithHttpInfo(exchange_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -839,9 +870,10 @@ MetadataApi <- R6::R6Class(
     #' @param exchange_id The ID of the exchange.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Exchange]) with additional information such as HTTP status code, headers
-    V1ExchangesExchangeIdGetWithHttpInfo = function(exchange_id, data_file = NULL, ...) {
+    V1ExchangesExchangeIdGetWithHttpInfo = function(exchange_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -897,6 +929,10 @@ MetadataApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Exchange]"),
@@ -931,10 +967,11 @@ MetadataApi <- R6::R6Class(
     #' @param filter_exchange_id (optional) Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. `BITSTAMP;GEMINI`)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Exchange]
-    V1ExchangesGet = function(filter_exchange_id = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1ExchangesGetWithHttpInfo(filter_exchange_id, data_file = data_file, ...)
+    V1ExchangesGet = function(filter_exchange_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1ExchangesGetWithHttpInfo(filter_exchange_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -952,9 +989,10 @@ MetadataApi <- R6::R6Class(
     #' @param filter_exchange_id (optional) Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. `BITSTAMP;GEMINI`)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Exchange]) with additional information such as HTTP status code, headers
-    V1ExchangesGetWithHttpInfo = function(filter_exchange_id = NULL, data_file = NULL, ...) {
+    V1ExchangesGetWithHttpInfo = function(filter_exchange_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1004,6 +1042,10 @@ MetadataApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Exchange]"),
@@ -1038,10 +1080,11 @@ MetadataApi <- R6::R6Class(
     #' @param size The size of the icons.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Icon]
-    V1ExchangesIconsSizeGet = function(size, data_file = NULL, ...) {
-      local_var_response <- self$V1ExchangesIconsSizeGetWithHttpInfo(size, data_file = data_file, ...)
+    V1ExchangesIconsSizeGet = function(size, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1ExchangesIconsSizeGetWithHttpInfo(size, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1059,9 +1102,10 @@ MetadataApi <- R6::R6Class(
     #' @param size The size of the icons.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Icon]) with additional information such as HTTP status code, headers
-    V1ExchangesIconsSizeGetWithHttpInfo = function(size, data_file = NULL, ...) {
+    V1ExchangesIconsSizeGetWithHttpInfo = function(size, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1117,6 +1161,10 @@ MetadataApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Icon]"),
@@ -1153,10 +1201,11 @@ MetadataApi <- R6::R6Class(
     #' @param filter_asset_id (optional) The filter for asset ID.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Symbol]
-    V1SymbolsExchangeIdActiveGet = function(exchange_id, filter_symbol_id = NULL, filter_asset_id = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1SymbolsExchangeIdActiveGetWithHttpInfo(exchange_id, filter_symbol_id, filter_asset_id, data_file = data_file, ...)
+    V1SymbolsExchangeIdActiveGet = function(exchange_id, filter_symbol_id = NULL, filter_asset_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1SymbolsExchangeIdActiveGetWithHttpInfo(exchange_id, filter_symbol_id, filter_asset_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1176,9 +1225,10 @@ MetadataApi <- R6::R6Class(
     #' @param filter_asset_id (optional) The filter for asset ID.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Symbol]) with additional information such as HTTP status code, headers
-    V1SymbolsExchangeIdActiveGetWithHttpInfo = function(exchange_id, filter_symbol_id = NULL, filter_asset_id = NULL, data_file = NULL, ...) {
+    V1SymbolsExchangeIdActiveGetWithHttpInfo = function(exchange_id, filter_symbol_id = NULL, filter_asset_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1246,6 +1296,10 @@ MetadataApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Symbol]"),
@@ -1282,10 +1336,11 @@ MetadataApi <- R6::R6Class(
     #' @param limit (optional) Number of records to return per page. (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1Symbol]
-    V1SymbolsExchangeIdHistoryGet = function(exchange_id, page = 1, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$V1SymbolsExchangeIdHistoryGetWithHttpInfo(exchange_id, page, limit, data_file = data_file, ...)
+    V1SymbolsExchangeIdHistoryGet = function(exchange_id, page = 1, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1SymbolsExchangeIdHistoryGetWithHttpInfo(exchange_id, page, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1305,9 +1360,10 @@ MetadataApi <- R6::R6Class(
     #' @param limit (optional) Number of records to return per page. (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1Symbol]) with additional information such as HTTP status code, headers
-    V1SymbolsExchangeIdHistoryGetWithHttpInfo = function(exchange_id, page = 1, limit = 100, data_file = NULL, ...) {
+    V1SymbolsExchangeIdHistoryGetWithHttpInfo = function(exchange_id, page = 1, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1375,6 +1431,10 @@ MetadataApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[V1Symbol]"),
@@ -1409,10 +1469,11 @@ MetadataApi <- R6::R6Class(
     #' @param exchange_id The ID of the exchange (from the Metadata -> Exchanges)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1SymbolMapping]
-    V1SymbolsMapExchangeIdGet = function(exchange_id, data_file = NULL, ...) {
-      local_var_response <- self$V1SymbolsMapExchangeIdGetWithHttpInfo(exchange_id, data_file = data_file, ...)
+    V1SymbolsMapExchangeIdGet = function(exchange_id, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1SymbolsMapExchangeIdGetWithHttpInfo(exchange_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1430,9 +1491,10 @@ MetadataApi <- R6::R6Class(
     #' @param exchange_id The ID of the exchange (from the Metadata -> Exchanges)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1SymbolMapping]) with additional information such as HTTP status code, headers
-    V1SymbolsMapExchangeIdGetWithHttpInfo = function(exchange_id, data_file = NULL, ...) {
+    V1SymbolsMapExchangeIdGetWithHttpInfo = function(exchange_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1487,6 +1549,10 @@ MetadataApi <- R6::R6Class(
         # save response in a file
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
+        }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
         }
 
         deserialized_resp_obj <- tryCatch(
