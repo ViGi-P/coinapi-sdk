@@ -134,10 +134,11 @@ OhlcvApi <- R6::R6Class(
     #' @param time_end Timeseries ending time in ISO 8601
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[OHLCVExchangeTimeseriesItem]
-    V1OhlcvExchangeExchangeIdHistoryGet = function(exchange_id, period_id, time_start, time_end, data_file = NULL, ...) {
-      local_var_response <- self$V1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchange_id, period_id, time_start, time_end, data_file = data_file, ...)
+    V1OhlcvExchangeExchangeIdHistoryGet = function(exchange_id, period_id, time_start, time_end, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchange_id, period_id, time_start, time_end, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -158,9 +159,10 @@ OhlcvApi <- R6::R6Class(
     #' @param time_end Timeseries ending time in ISO 8601
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[OHLCVExchangeTimeseriesItem]) with additional information such as HTTP status code, headers
-    V1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo = function(exchange_id, period_id, time_start, time_end, data_file = NULL, ...) {
+    V1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo = function(exchange_id, period_id, time_start, time_end, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -246,6 +248,10 @@ OhlcvApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[OHLCVExchangeTimeseriesItem]"),
@@ -285,10 +291,11 @@ OhlcvApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[OHLCVTimeseriesItem]
-    V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet = function(exchange_id, symbol_id, period_id, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(exchange_id, symbol_id, period_id, time_start, time_end, limit, data_file = data_file, ...)
+    V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet = function(exchange_id, symbol_id, period_id, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(exchange_id, symbol_id, period_id, time_start, time_end, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -311,9 +318,10 @@ OhlcvApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[OHLCVTimeseriesItem]) with additional information such as HTTP status code, headers
-    V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo = function(exchange_id, symbol_id, period_id, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ...) {
+    V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo = function(exchange_id, symbol_id, period_id, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -409,6 +417,10 @@ OhlcvApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[OHLCVTimeseriesItem]"),
@@ -446,10 +458,11 @@ OhlcvApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[OHLCVTimeseriesItem]
-    V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet = function(exchange_id, symbol_id, period_id, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(exchange_id, symbol_id, period_id, limit, data_file = data_file, ...)
+    V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet = function(exchange_id, symbol_id, period_id, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(exchange_id, symbol_id, period_id, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -470,9 +483,10 @@ OhlcvApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[OHLCVTimeseriesItem]) with additional information such as HTTP status code, headers
-    V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo = function(exchange_id, symbol_id, period_id, limit = 100, data_file = NULL, ...) {
+    V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo = function(exchange_id, symbol_id, period_id, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -556,6 +570,10 @@ OhlcvApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[OHLCVTimeseriesItem]"),
@@ -589,10 +607,11 @@ OhlcvApi <- R6::R6Class(
     #'
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[OHLCVTimeseriesPeriod]
-    V1OhlcvPeriodsGet = function(data_file = NULL, ...) {
-      local_var_response <- self$V1OhlcvPeriodsGetWithHttpInfo(data_file = data_file, ...)
+    V1OhlcvPeriodsGet = function(data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1OhlcvPeriodsGetWithHttpInfo(data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -609,9 +628,10 @@ OhlcvApi <- R6::R6Class(
     #'
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[OHLCVTimeseriesPeriod]) with additional information such as HTTP status code, headers
-    V1OhlcvPeriodsGetWithHttpInfo = function(data_file = NULL, ...) {
+    V1OhlcvPeriodsGetWithHttpInfo = function(data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -654,6 +674,10 @@ OhlcvApi <- R6::R6Class(
         # save response in a file
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
+        }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
         }
 
         deserialized_resp_obj <- tryCatch(

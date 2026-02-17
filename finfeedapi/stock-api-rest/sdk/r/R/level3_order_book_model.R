@@ -89,25 +89,48 @@ Level3OrderBookModel <- R6::R6Class(
       Level3OrderBookModelObject <- list()
       if (!is.null(self$`add_order`)) {
         Level3OrderBookModelObject[["add_order"]] <-
-          self$`add_order`$toSimpleType()
+          self$extractSimpleType(self$`add_order`)
       }
       if (!is.null(self$`delete_order`)) {
         Level3OrderBookModelObject[["delete_order"]] <-
-          self$`delete_order`$toSimpleType()
+          self$extractSimpleType(self$`delete_order`)
       }
       if (!is.null(self$`modify_order`)) {
         Level3OrderBookModelObject[["modify_order"]] <-
-          self$`modify_order`$toSimpleType()
+          self$extractSimpleType(self$`modify_order`)
       }
       if (!is.null(self$`executed_order`)) {
         Level3OrderBookModelObject[["executed_order"]] <-
-          self$`executed_order`$toSimpleType()
+          self$extractSimpleType(self$`executed_order`)
       }
       if (!is.null(self$`clear_book`)) {
         Level3OrderBookModelObject[["clear_book"]] <-
-          self$`clear_book`$toSimpleType()
+          self$extractSimpleType(self$`clear_book`)
       }
       return(Level3OrderBookModelObject)
+    },
+
+    extractSimpleType = function(x) {
+      if (R6::is.R6(x)) {
+        return(x$toSimpleType())
+      } else if (!self$hasNestedR6(x)) {
+        return(x)
+      }
+      lapply(x, self$extractSimpleType)
+    },
+
+    hasNestedR6 = function(x) {
+      if (R6::is.R6(x)) {
+        return(TRUE)
+      }
+      if (is.list(x)) {
+        for (item in x) {
+          if (self$hasNestedR6(item)) {
+            return(TRUE)
+          }
+        }
+      }
+      FALSE
     },
 
     #' @description

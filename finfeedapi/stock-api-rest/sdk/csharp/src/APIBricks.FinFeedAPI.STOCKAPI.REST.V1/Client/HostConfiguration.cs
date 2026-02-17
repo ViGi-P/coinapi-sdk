@@ -91,9 +91,9 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client
 
             List<IHttpClientBuilder> builders = new List<IHttpClientBuilder>();
 
-            builders.Add(_services.AddHttpClient<IMetadataApi, MetadataApi>(client));
-            builders.Add(_services.AddHttpClient<INativeIEXApi, NativeIEXApi>(client));
-            builders.Add(_services.AddHttpClient<IOhlcvApi, OhlcvApi>(client));
+            builders.Add(_services.AddHttpClient<IMetadataApi, MetadataApi>("APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api.IMetadataApi", client));
+            builders.Add(_services.AddHttpClient<INativeIEXApi, NativeIEXApi>("APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api.INativeIEXApi", client));
+            builders.Add(_services.AddHttpClient<IOhlcvApi, OhlcvApi>("APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api.IOhlcvApi", client));
             
             if (builder != null)
                 foreach (IHttpClientBuilder instance in builders)

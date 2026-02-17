@@ -167,10 +167,11 @@ NativeIEXApi <- R6::R6Class(
     #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[AdminAdminMessageModel]
-    V1NativeIexAdminMessagesSymbolGet = function(symbol, date, data_file = NULL, ...) {
-      local_var_response <- self$V1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ...)
+    V1NativeIexAdminMessagesSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -189,9 +190,10 @@ NativeIEXApi <- R6::R6Class(
     #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[AdminAdminMessageModel]) with additional information such as HTTP status code, headers
-    V1NativeIexAdminMessagesSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ...) {
+    V1NativeIexAdminMessagesSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -257,6 +259,10 @@ NativeIEXApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[AdminAdminMessageModel]"),
@@ -291,10 +297,11 @@ NativeIEXApi <- R6::R6Class(
     #' @param date Date in format YYYY-MM-DD
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[AdminSystemEventModel]
-    V1NativeIexAdminSystemEventGet = function(date, data_file = NULL, ...) {
-      local_var_response <- self$V1NativeIexAdminSystemEventGetWithHttpInfo(date, data_file = data_file, ...)
+    V1NativeIexAdminSystemEventGet = function(date, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1NativeIexAdminSystemEventGetWithHttpInfo(date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -312,9 +319,10 @@ NativeIEXApi <- R6::R6Class(
     #' @param date Date in format YYYY-MM-DD
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[AdminSystemEventModel]) with additional information such as HTTP status code, headers
-    V1NativeIexAdminSystemEventGetWithHttpInfo = function(date, data_file = NULL, ...) {
+    V1NativeIexAdminSystemEventGetWithHttpInfo = function(date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -368,6 +376,10 @@ NativeIEXApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[AdminSystemEventModel]"),
@@ -403,10 +415,11 @@ NativeIEXApi <- R6::R6Class(
     #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[Level1QuoteUpdateModel]
-    V1NativeIexLevel1QuoteSymbolGet = function(symbol, date, data_file = NULL, ...) {
-      local_var_response <- self$V1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ...)
+    V1NativeIexLevel1QuoteSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -425,9 +438,10 @@ NativeIEXApi <- R6::R6Class(
     #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[Level1QuoteUpdateModel]) with additional information such as HTTP status code, headers
-    V1NativeIexLevel1QuoteSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ...) {
+    V1NativeIexLevel1QuoteSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -493,6 +507,10 @@ NativeIEXApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[Level1QuoteUpdateModel]"),
@@ -528,10 +546,11 @@ NativeIEXApi <- R6::R6Class(
     #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[Level2PriceLevelUpdateModel]
-    V1NativeIexLevel2PriceLevelUpdateSymbolGet = function(symbol, date, data_file = NULL, ...) {
-      local_var_response <- self$V1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ...)
+    V1NativeIexLevel2PriceLevelUpdateSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -550,9 +569,10 @@ NativeIEXApi <- R6::R6Class(
     #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[Level2PriceLevelUpdateModel]) with additional information such as HTTP status code, headers
-    V1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ...) {
+    V1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -618,6 +638,10 @@ NativeIEXApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[Level2PriceLevelUpdateModel]"),
@@ -653,10 +677,11 @@ NativeIEXApi <- R6::R6Class(
     #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[Level3OrderBookModel]
-    V1NativeIexLevel3OrderBookSymbolGet = function(symbol, date, data_file = NULL, ...) {
-      local_var_response <- self$V1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ...)
+    V1NativeIexLevel3OrderBookSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -675,9 +700,10 @@ NativeIEXApi <- R6::R6Class(
     #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[Level3OrderBookModel]) with additional information such as HTTP status code, headers
-    V1NativeIexLevel3OrderBookSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ...) {
+    V1NativeIexLevel3OrderBookSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -743,6 +769,10 @@ NativeIEXApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[Level3OrderBookModel]"),
@@ -778,10 +808,11 @@ NativeIEXApi <- R6::R6Class(
     #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[TradeTradeModel]
-    V1NativeIexTradeSymbolGet = function(symbol, date, data_file = NULL, ...) {
-      local_var_response <- self$V1NativeIexTradeSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ...)
+    V1NativeIexTradeSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1NativeIexTradeSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -800,9 +831,10 @@ NativeIEXApi <- R6::R6Class(
     #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[TradeTradeModel]) with additional information such as HTTP status code, headers
-    V1NativeIexTradeSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ...) {
+    V1NativeIexTradeSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -867,6 +899,10 @@ NativeIEXApi <- R6::R6Class(
         # save response in a file
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
+        }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
         }
 
         deserialized_resp_obj <- tryCatch(

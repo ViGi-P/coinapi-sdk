@@ -21,6 +21,7 @@ using System.Text.RegularExpressions;
 using KellermanSoftware.CompareNetObjects;
 using APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model;
 using System.Runtime.CompilerServices;
+using System.Net.Http.Headers;
 
 [assembly: InternalsVisibleTo("APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test")]
 
@@ -258,6 +259,26 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client
                 return "application/json";
 
             return string.Join(",", accepts);
+        }
+
+        
+
+        /// <summary>
+        /// Select the Accept header's value from the given accepts array:
+        /// if JSON exists in the given array, use it;
+        /// otherwise use all of them.
+        /// </summary>
+        /// <param name="accepts">The accepts array to select from.</param>
+        /// <returns>The Accept header values to use.</returns>
+        public static IEnumerable<MediaTypeWithQualityHeaderValue> SelectHeaderAcceptArray(string[] accepts)
+        {
+            if (accepts.Length == 0)
+                    return [];
+
+            if (accepts.Contains("application/json", StringComparer.OrdinalIgnoreCase))
+                    return [MediaTypeWithQualityHeaderValue.Parse("application/json")];
+
+            return accepts.Select(MediaTypeWithQualityHeaderValue.Parse);
         }
 
         /// <summary>

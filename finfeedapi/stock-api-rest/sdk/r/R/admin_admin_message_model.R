@@ -117,41 +117,64 @@ AdminAdminMessageModel <- R6::R6Class(
       AdminAdminMessageModelObject <- list()
       if (!is.null(self$`trading_status`)) {
         AdminAdminMessageModelObject[["trading_status"]] <-
-          self$`trading_status`$toSimpleType()
+          self$extractSimpleType(self$`trading_status`)
       }
       if (!is.null(self$`official_price`)) {
         AdminAdminMessageModelObject[["official_price"]] <-
-          self$`official_price`$toSimpleType()
+          self$extractSimpleType(self$`official_price`)
       }
       if (!is.null(self$`security_event`)) {
         AdminAdminMessageModelObject[["security_event"]] <-
-          self$`security_event`$toSimpleType()
+          self$extractSimpleType(self$`security_event`)
       }
       if (!is.null(self$`auction_information`)) {
         AdminAdminMessageModelObject[["auction_information"]] <-
-          self$`auction_information`$toSimpleType()
+          self$extractSimpleType(self$`auction_information`)
       }
       if (!is.null(self$`short_sale_price_test`)) {
         AdminAdminMessageModelObject[["short_sale_price_test"]] <-
-          self$`short_sale_price_test`$toSimpleType()
+          self$extractSimpleType(self$`short_sale_price_test`)
       }
       if (!is.null(self$`operational_halt_status`)) {
         AdminAdminMessageModelObject[["operational_halt_status"]] <-
-          self$`operational_halt_status`$toSimpleType()
+          self$extractSimpleType(self$`operational_halt_status`)
       }
       if (!is.null(self$`retail_liquidity_indicator`)) {
         AdminAdminMessageModelObject[["retail_liquidity_indicator"]] <-
-          self$`retail_liquidity_indicator`$toSimpleType()
+          self$extractSimpleType(self$`retail_liquidity_indicator`)
       }
       if (!is.null(self$`system_event`)) {
         AdminAdminMessageModelObject[["system_event"]] <-
-          self$`system_event`$toSimpleType()
+          self$extractSimpleType(self$`system_event`)
       }
       if (!is.null(self$`security_directory`)) {
         AdminAdminMessageModelObject[["security_directory"]] <-
-          self$`security_directory`$toSimpleType()
+          self$extractSimpleType(self$`security_directory`)
       }
       return(AdminAdminMessageModelObject)
+    },
+
+    extractSimpleType = function(x) {
+      if (R6::is.R6(x)) {
+        return(x$toSimpleType())
+      } else if (!self$hasNestedR6(x)) {
+        return(x)
+      }
+      lapply(x, self$extractSimpleType)
+    },
+
+    hasNestedR6 = function(x) {
+      if (R6::is.R6(x)) {
+        return(TRUE)
+      }
+      if (is.list(x)) {
+        for (item in x) {
+          if (self$hasNestedR6(item)) {
+            return(TRUE)
+          }
+        }
+      }
+      FALSE
     },
 
     #' @description
