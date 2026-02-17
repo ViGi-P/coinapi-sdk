@@ -107,13 +107,36 @@ V1OrderBook <- R6::R6Class(
       }
       if (!is.null(self$`asks`)) {
         V1OrderBookObject[["asks"]] <-
-          self$`asks`$toSimpleType()
+          self$extractSimpleType(self$`asks`)
       }
       if (!is.null(self$`bids`)) {
         V1OrderBookObject[["bids"]] <-
-          self$`bids`$toSimpleType()
+          self$extractSimpleType(self$`bids`)
       }
       return(V1OrderBookObject)
+    },
+
+    extractSimpleType = function(x) {
+      if (R6::is.R6(x)) {
+        return(x$toSimpleType())
+      } else if (!self$hasNestedR6(x)) {
+        return(x)
+      }
+      lapply(x, self$extractSimpleType)
+    },
+
+    hasNestedR6 = function(x) {
+      if (R6::is.R6(x)) {
+        return(TRUE)
+      }
+      if (is.list(x)) {
+        for (item in x) {
+          if (self$hasNestedR6(item)) {
+            return(TRUE)
+          }
+        }
+      }
+      FALSE
     },
 
     #' @description

@@ -109,10 +109,11 @@ OrderBookApi <- R6::R6Class(
     #' @param limit_levels (optional) The maximum number of levels to include in the response.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return V1OrderBookBase
-    V1OrderbooksSymbolIdCurrentGet = function(symbol_id, limit_levels = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1OrderbooksSymbolIdCurrentGetWithHttpInfo(symbol_id, limit_levels, data_file = data_file, ...)
+    V1OrderbooksSymbolIdCurrentGet = function(symbol_id, limit_levels = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1OrderbooksSymbolIdCurrentGetWithHttpInfo(symbol_id, limit_levels, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -131,9 +132,10 @@ OrderBookApi <- R6::R6Class(
     #' @param limit_levels (optional) The maximum number of levels to include in the response.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (V1OrderBookBase) with additional information such as HTTP status code, headers
-    V1OrderbooksSymbolIdCurrentGetWithHttpInfo = function(symbol_id, limit_levels = NULL, data_file = NULL, ...) {
+    V1OrderbooksSymbolIdCurrentGetWithHttpInfo = function(symbol_id, limit_levels = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -195,6 +197,10 @@ OrderBookApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "V1OrderBookBase"),
@@ -230,10 +236,11 @@ OrderBookApi <- R6::R6Class(
     #' @param limit_levels (optional) The maximum number of levels to include in the response.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return V1OrderBookDepth
-    V1OrderbooksSymbolIdDepthCurrentGet = function(symbol_id, limit_levels = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1OrderbooksSymbolIdDepthCurrentGetWithHttpInfo(symbol_id, limit_levels, data_file = data_file, ...)
+    V1OrderbooksSymbolIdDepthCurrentGet = function(symbol_id, limit_levels = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1OrderbooksSymbolIdDepthCurrentGetWithHttpInfo(symbol_id, limit_levels, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -252,9 +259,10 @@ OrderBookApi <- R6::R6Class(
     #' @param limit_levels (optional) The maximum number of levels to include in the response.
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (V1OrderBookDepth) with additional information such as HTTP status code, headers
-    V1OrderbooksSymbolIdDepthCurrentGetWithHttpInfo = function(symbol_id, limit_levels = NULL, data_file = NULL, ...) {
+    V1OrderbooksSymbolIdDepthCurrentGetWithHttpInfo = function(symbol_id, limit_levels = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -316,6 +324,10 @@ OrderBookApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "V1OrderBookDepth"),
@@ -355,10 +367,11 @@ OrderBookApi <- R6::R6Class(
     #' @param limit_levels (optional) Maximum amount of levels from each side of the book to include in response (optional)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1OrderBook]
-    V1OrderbooksSymbolIdHistoryGet = function(symbol_id, date = NULL, time_start = NULL, time_end = NULL, limit = 100, limit_levels = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1OrderbooksSymbolIdHistoryGetWithHttpInfo(symbol_id, date, time_start, time_end, limit, limit_levels, data_file = data_file, ...)
+    V1OrderbooksSymbolIdHistoryGet = function(symbol_id, date = NULL, time_start = NULL, time_end = NULL, limit = 100, limit_levels = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1OrderbooksSymbolIdHistoryGetWithHttpInfo(symbol_id, date, time_start, time_end, limit, limit_levels, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -381,9 +394,10 @@ OrderBookApi <- R6::R6Class(
     #' @param limit_levels (optional) Maximum amount of levels from each side of the book to include in response (optional)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1OrderBook]) with additional information such as HTTP status code, headers
-    V1OrderbooksSymbolIdHistoryGetWithHttpInfo = function(symbol_id, date = NULL, time_start = NULL, time_end = NULL, limit = 100, limit_levels = NULL, data_file = NULL, ...) {
+    V1OrderbooksSymbolIdHistoryGetWithHttpInfo = function(symbol_id, date = NULL, time_start = NULL, time_end = NULL, limit = 100, limit_levels = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -468,6 +482,10 @@ OrderBookApi <- R6::R6Class(
         # save response in a file
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
+        }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
         }
 
         deserialized_resp_obj <- tryCatch(
