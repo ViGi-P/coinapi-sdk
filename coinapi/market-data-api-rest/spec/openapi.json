@@ -1062,7 +1062,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-02-20T06:03:20.4814337Z",
+  "time": "2026-02-23T06:03:25.3900748Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -1077,7 +1077,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-02-20T06:03:20.4814337Z",
+  "time": "2026-02-23T06:03:25.3900748Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -1092,7 +1092,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-02-20T06:03:20.4814337Z",
+  "time": "2026-02-23T06:03:25.3900748Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -1107,7 +1107,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-02-20T06:03:20.4814337Z",
+  "time": "2026-02-23T06:03:25.3900748Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -4142,6 +4142,7 @@
         ],
         "summary": "Listing of all supported metrics",
         "description": "Get all metrics available in the system.",
+        "operationId": "marketdata_list_metrics_v2_listing",
         "responses": {
           "200": {
             "description": "successful operation",
@@ -4294,6 +4295,7 @@
         ],
         "summary": "Listing of metrics available for specific exchange",
         "description": "Get all metrics that are actually available for the specified exchange.",
+        "operationId": "marketdata_list_metrics_v2_exchange_listing",
         "parameters": [
           {
             "name": "exchange_id",
@@ -4441,6 +4443,7 @@
         ],
         "summary": "Historical metrics for the exchange",
         "description": "Get exchange metrics history.",
+        "operationId": "marketdata_list_metrics_v2_exchange_history",
         "parameters": [
           {
             "name": "metric_id",
@@ -4695,6 +4698,7 @@
         ],
         "summary": "Historical metrics for the asset",
         "description": "Get asset metrics history.",
+        "operationId": "marketdata_list_metrics_v2_asset_history",
         "parameters": [
           {
             "name": "metric_id",
@@ -4933,6 +4937,7 @@
         ],
         "summary": "Historical metrics for the chain",
         "description": "Get chain metrics history.",
+        "operationId": "marketdata_list_metrics_v2_chain_history",
         "parameters": [
           {
             "name": "metric_id",
@@ -5171,6 +5176,7 @@
         ],
         "summary": "Listing of metrics available for specific asset",
         "description": "Get all metrics that are actually available for the specified asset.",
+        "operationId": "marketdata_list_metrics_v2_asset_listing",
         "parameters": [
           {
             "name": "asset_id",
@@ -5302,6 +5308,7 @@
         ],
         "summary": "Listing of metrics available for specific chain",
         "description": "Get all metrics that are actually available for the specified blockchain chain.",
+        "operationId": "marketdata_list_metrics_v2_chain_listing",
         "parameters": [
           {
             "name": "chain_id",
@@ -5751,7 +5758,7 @@
           "Order Book"
         ],
         "summary": "Historical data",
-        "description": "Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.\n            \n:::info\nThe historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.\n:::\n\n:::warning\nThe 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.\nPlease use the 'date' parameter instead for querying data for a specific day without filter.\n:::",
+        "description": "Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.\n            \n:::info\nThe historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.\n:::\n            \nThis endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.\nTimestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.\n            \n:::tip\nFor querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.\n:::",
         "parameters": [
           {
             "name": "symbol_id",
@@ -5765,7 +5772,7 @@
           {
             "name": "date",
             "in": "query",
-            "description": "Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided)",
+            "description": "Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)",
             "schema": {
               "type": "string"
             }
@@ -5773,7 +5780,7 @@
           {
             "name": "time_start",
             "in": "query",
-            "description": "Starting time in ISO 8601 (deprecated, use 'date' instead)",
+            "description": "Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)",
             "schema": {
               "type": "string"
             }
@@ -5781,7 +5788,7 @@
           {
             "name": "time_end",
             "in": "query",
-            "description": "Timeseries ending time in ISO 8601 (deprecated, use 'date' instead)",
+            "description": "Timeseries ending time in ISO 8601 (optional, supports cross-day queries)",
             "schema": {
               "type": "string"
             }
@@ -6231,7 +6238,7 @@
           "Order Book L3"
         ],
         "summary": "Current order book by symbol_id",
-        "description": "Retrieves the current order book for the specified symbol.",
+        "description": "Retrieves the current L3 order book for the specified symbol.\nL3 order books include individual order IDs for each price level.",
         "parameters": [
           {
             "name": "symbol_id",
@@ -6419,7 +6426,7 @@
           "Quotes"
         ],
         "summary": "Historical data",
-        "description": "Get historical quote updates within requested time range, returned in time ascending order.\n\n:::warning\nThe 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.\nPlease use the 'date' parameter instead for querying data for a specific day without filter.\n:::",
+        "description": "Get historical quote updates within requested time range, returned in time ascending order.\n            \nThis endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.\nTimestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.\n            \n:::tip\nFor querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.\n:::",
         "parameters": [
           {
             "name": "symbol_id",
@@ -6433,7 +6440,7 @@
           {
             "name": "date",
             "in": "query",
-            "description": "Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided)",
+            "description": "Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)",
             "schema": {
               "type": "string"
             }
@@ -6441,7 +6448,7 @@
           {
             "name": "time_start",
             "in": "query",
-            "description": "Starting time in ISO 8601",
+            "description": "Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)",
             "schema": {
               "type": "string"
             }
@@ -6449,7 +6456,7 @@
           {
             "name": "time_end",
             "in": "query",
-            "description": "Timeseries ending time in ISO 8601",
+            "description": "Timeseries ending time in ISO 8601 (optional, supports cross-day queries)",
             "schema": {
               "type": "string"
             }
@@ -8750,7 +8757,7 @@
           "Trades"
         ],
         "summary": "Historical data",
-        "description": "Get history transactions from specific symbol, returned in time ascending order.\n\n:::warning\nThe 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.\nPlease use the 'date' parameter instead for querying data for a specific day without filter.\n:::",
+        "description": "Get history transactions from specific symbol, returned in time ascending order.\n            \nThis endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.\nTimestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.\n            \n:::tip\nFor querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.\n:::",
         "parameters": [
           {
             "name": "symbol_id",
@@ -8772,7 +8779,7 @@
           {
             "name": "time_start",
             "in": "query",
-            "description": "Starting time in ISO 8601",
+            "description": "Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)",
             "schema": {
               "type": "string"
             }
@@ -8780,7 +8787,7 @@
           {
             "name": "time_end",
             "in": "query",
-            "description": "Timeseries ending time in ISO 8601",
+            "description": "Timeseries ending time in ISO 8601 (optional, supports cross-day queries)",
             "schema": {
               "type": "string"
             }
