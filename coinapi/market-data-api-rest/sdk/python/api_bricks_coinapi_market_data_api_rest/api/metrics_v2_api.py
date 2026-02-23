@@ -41,7 +41,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_asset_history_get(
+    def marketdata_list_metrics_v2_asset_history(
         self,
         metric_id: Annotated[StrictStr, Field(description="Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)")],
         asset_id: Annotated[StrictStr, Field(description="Asset identifier (e.g., `USDC`, `USDT`)")],
@@ -103,7 +103,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_asset_history_get_serialize(
+        _param = self._marketdata_list_metrics_v2_asset_history_serialize(
             metric_id=metric_id,
             asset_id=asset_id,
             time_start=time_start,
@@ -134,7 +134,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_asset_history_get_with_http_info(
+    def marketdata_list_metrics_v2_asset_history_with_http_info(
         self,
         metric_id: Annotated[StrictStr, Field(description="Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)")],
         asset_id: Annotated[StrictStr, Field(description="Asset identifier (e.g., `USDC`, `USDT`)")],
@@ -196,7 +196,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_asset_history_get_serialize(
+        _param = self._marketdata_list_metrics_v2_asset_history_serialize(
             metric_id=metric_id,
             asset_id=asset_id,
             time_start=time_start,
@@ -227,7 +227,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_asset_history_get_without_preload_content(
+    def marketdata_list_metrics_v2_asset_history_without_preload_content(
         self,
         metric_id: Annotated[StrictStr, Field(description="Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)")],
         asset_id: Annotated[StrictStr, Field(description="Asset identifier (e.g., `USDC`, `USDT`)")],
@@ -289,7 +289,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_asset_history_get_serialize(
+        _param = self._marketdata_list_metrics_v2_asset_history_serialize(
             metric_id=metric_id,
             asset_id=asset_id,
             time_start=time_start,
@@ -315,7 +315,7 @@ class MetricsV2Api:
         return response_data.response
 
 
-    def _v2_metrics_asset_history_get_serialize(
+    def _marketdata_list_metrics_v2_asset_history_serialize(
         self,
         metric_id,
         asset_id,
@@ -434,7 +434,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_asset_listing_get(
+    def marketdata_list_metrics_v2_asset_listing(
         self,
         asset_id: Annotated[StrictStr, Field(description="Asset identifier (e.g., USDC, USDT)")],
         _request_timeout: Union[
@@ -478,7 +478,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_asset_listing_get_serialize(
+        _param = self._marketdata_list_metrics_v2_asset_listing_serialize(
             asset_id=asset_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -501,7 +501,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_asset_listing_get_with_http_info(
+    def marketdata_list_metrics_v2_asset_listing_with_http_info(
         self,
         asset_id: Annotated[StrictStr, Field(description="Asset identifier (e.g., USDC, USDT)")],
         _request_timeout: Union[
@@ -545,7 +545,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_asset_listing_get_serialize(
+        _param = self._marketdata_list_metrics_v2_asset_listing_serialize(
             asset_id=asset_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -568,7 +568,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_asset_listing_get_without_preload_content(
+    def marketdata_list_metrics_v2_asset_listing_without_preload_content(
         self,
         asset_id: Annotated[StrictStr, Field(description="Asset identifier (e.g., USDC, USDT)")],
         _request_timeout: Union[
@@ -612,7 +612,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_asset_listing_get_serialize(
+        _param = self._marketdata_list_metrics_v2_asset_listing_serialize(
             asset_id=asset_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -630,7 +630,7 @@ class MetricsV2Api:
         return response_data.response
 
 
-    def _v2_metrics_asset_listing_get_serialize(
+    def _marketdata_list_metrics_v2_asset_listing_serialize(
         self,
         asset_id,
         _request_auth,
@@ -701,7 +701,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_chain_history_get(
+    def marketdata_list_metrics_v2_chain_history(
         self,
         metric_id: Annotated[StrictStr, Field(description="Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)")],
         chain_id: Annotated[StrictStr, Field(description="Chain identifier (e.g., `Ethereum`, `Arbitrum`)")],
@@ -763,7 +763,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_chain_history_get_serialize(
+        _param = self._marketdata_list_metrics_v2_chain_history_serialize(
             metric_id=metric_id,
             chain_id=chain_id,
             time_start=time_start,
@@ -794,7 +794,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_chain_history_get_with_http_info(
+    def marketdata_list_metrics_v2_chain_history_with_http_info(
         self,
         metric_id: Annotated[StrictStr, Field(description="Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)")],
         chain_id: Annotated[StrictStr, Field(description="Chain identifier (e.g., `Ethereum`, `Arbitrum`)")],
@@ -856,7 +856,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_chain_history_get_serialize(
+        _param = self._marketdata_list_metrics_v2_chain_history_serialize(
             metric_id=metric_id,
             chain_id=chain_id,
             time_start=time_start,
@@ -887,7 +887,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_chain_history_get_without_preload_content(
+    def marketdata_list_metrics_v2_chain_history_without_preload_content(
         self,
         metric_id: Annotated[StrictStr, Field(description="Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)")],
         chain_id: Annotated[StrictStr, Field(description="Chain identifier (e.g., `Ethereum`, `Arbitrum`)")],
@@ -949,7 +949,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_chain_history_get_serialize(
+        _param = self._marketdata_list_metrics_v2_chain_history_serialize(
             metric_id=metric_id,
             chain_id=chain_id,
             time_start=time_start,
@@ -975,7 +975,7 @@ class MetricsV2Api:
         return response_data.response
 
 
-    def _v2_metrics_chain_history_get_serialize(
+    def _marketdata_list_metrics_v2_chain_history_serialize(
         self,
         metric_id,
         chain_id,
@@ -1094,7 +1094,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_chain_listing_get(
+    def marketdata_list_metrics_v2_chain_listing(
         self,
         chain_id: Annotated[StrictStr, Field(description="Chain identifier (e.g., ETHEREUM, ARBITRUM)")],
         _request_timeout: Union[
@@ -1138,7 +1138,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_chain_listing_get_serialize(
+        _param = self._marketdata_list_metrics_v2_chain_listing_serialize(
             chain_id=chain_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1161,7 +1161,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_chain_listing_get_with_http_info(
+    def marketdata_list_metrics_v2_chain_listing_with_http_info(
         self,
         chain_id: Annotated[StrictStr, Field(description="Chain identifier (e.g., ETHEREUM, ARBITRUM)")],
         _request_timeout: Union[
@@ -1205,7 +1205,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_chain_listing_get_serialize(
+        _param = self._marketdata_list_metrics_v2_chain_listing_serialize(
             chain_id=chain_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1228,7 +1228,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_chain_listing_get_without_preload_content(
+    def marketdata_list_metrics_v2_chain_listing_without_preload_content(
         self,
         chain_id: Annotated[StrictStr, Field(description="Chain identifier (e.g., ETHEREUM, ARBITRUM)")],
         _request_timeout: Union[
@@ -1272,7 +1272,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_chain_listing_get_serialize(
+        _param = self._marketdata_list_metrics_v2_chain_listing_serialize(
             chain_id=chain_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1290,7 +1290,7 @@ class MetricsV2Api:
         return response_data.response
 
 
-    def _v2_metrics_chain_listing_get_serialize(
+    def _marketdata_list_metrics_v2_chain_listing_serialize(
         self,
         chain_id,
         _request_auth,
@@ -1361,7 +1361,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_exchange_history_get(
+    def marketdata_list_metrics_v2_exchange_history(
         self,
         metric_id: Annotated[StrictStr, Field(description="Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)")],
         exchange_id: Annotated[StrictStr, Field(description="Exchange identifier (e.g., `BINANCE`, `UNISWAP-V3-ETHEREUM`)")],
@@ -1423,7 +1423,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_exchange_history_get_serialize(
+        _param = self._marketdata_list_metrics_v2_exchange_history_serialize(
             metric_id=metric_id,
             exchange_id=exchange_id,
             time_start=time_start,
@@ -1454,7 +1454,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_exchange_history_get_with_http_info(
+    def marketdata_list_metrics_v2_exchange_history_with_http_info(
         self,
         metric_id: Annotated[StrictStr, Field(description="Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)")],
         exchange_id: Annotated[StrictStr, Field(description="Exchange identifier (e.g., `BINANCE`, `UNISWAP-V3-ETHEREUM`)")],
@@ -1516,7 +1516,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_exchange_history_get_serialize(
+        _param = self._marketdata_list_metrics_v2_exchange_history_serialize(
             metric_id=metric_id,
             exchange_id=exchange_id,
             time_start=time_start,
@@ -1547,7 +1547,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_exchange_history_get_without_preload_content(
+    def marketdata_list_metrics_v2_exchange_history_without_preload_content(
         self,
         metric_id: Annotated[StrictStr, Field(description="Metric identifier (e.g., `TVL`, `STABLES_BRIDGED_USD`)")],
         exchange_id: Annotated[StrictStr, Field(description="Exchange identifier (e.g., `BINANCE`, `UNISWAP-V3-ETHEREUM`)")],
@@ -1609,7 +1609,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_exchange_history_get_serialize(
+        _param = self._marketdata_list_metrics_v2_exchange_history_serialize(
             metric_id=metric_id,
             exchange_id=exchange_id,
             time_start=time_start,
@@ -1635,7 +1635,7 @@ class MetricsV2Api:
         return response_data.response
 
 
-    def _v2_metrics_exchange_history_get_serialize(
+    def _marketdata_list_metrics_v2_exchange_history_serialize(
         self,
         metric_id,
         exchange_id,
@@ -1754,7 +1754,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_exchange_listing_get(
+    def marketdata_list_metrics_v2_exchange_listing(
         self,
         exchange_id: Annotated[StrictStr, Field(description="Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)")],
         _request_timeout: Union[
@@ -1798,7 +1798,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_exchange_listing_get_serialize(
+        _param = self._marketdata_list_metrics_v2_exchange_listing_serialize(
             exchange_id=exchange_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1821,7 +1821,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_exchange_listing_get_with_http_info(
+    def marketdata_list_metrics_v2_exchange_listing_with_http_info(
         self,
         exchange_id: Annotated[StrictStr, Field(description="Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)")],
         _request_timeout: Union[
@@ -1865,7 +1865,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_exchange_listing_get_serialize(
+        _param = self._marketdata_list_metrics_v2_exchange_listing_serialize(
             exchange_id=exchange_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1888,7 +1888,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_exchange_listing_get_without_preload_content(
+    def marketdata_list_metrics_v2_exchange_listing_without_preload_content(
         self,
         exchange_id: Annotated[StrictStr, Field(description="Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)")],
         _request_timeout: Union[
@@ -1932,7 +1932,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_exchange_listing_get_serialize(
+        _param = self._marketdata_list_metrics_v2_exchange_listing_serialize(
             exchange_id=exchange_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1950,7 +1950,7 @@ class MetricsV2Api:
         return response_data.response
 
 
-    def _v2_metrics_exchange_listing_get_serialize(
+    def _marketdata_list_metrics_v2_exchange_listing_serialize(
         self,
         exchange_id,
         _request_auth,
@@ -2021,7 +2021,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_listing_get(
+    def marketdata_list_metrics_v2_listing(
         self,
         _request_timeout: Union[
             None,
@@ -2062,7 +2062,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_listing_get_serialize(
+        _param = self._marketdata_list_metrics_v2_listing_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2084,7 +2084,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_listing_get_with_http_info(
+    def marketdata_list_metrics_v2_listing_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -2125,7 +2125,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_listing_get_serialize(
+        _param = self._marketdata_list_metrics_v2_listing_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2147,7 +2147,7 @@ class MetricsV2Api:
 
 
     @validate_call
-    def v2_metrics_listing_get_without_preload_content(
+    def marketdata_list_metrics_v2_listing_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -2188,7 +2188,7 @@ class MetricsV2Api:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._v2_metrics_listing_get_serialize(
+        _param = self._marketdata_list_metrics_v2_listing_serialize(
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2205,7 +2205,7 @@ class MetricsV2Api:
         return response_data.response
 
 
-    def _v2_metrics_listing_get_serialize(
+    def _marketdata_list_metrics_v2_listing_serialize(
         self,
         _request_auth,
         _content_type,

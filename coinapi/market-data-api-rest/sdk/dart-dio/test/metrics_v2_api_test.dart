@@ -11,8 +11,8 @@ void main() {
     //
     // Get asset metrics history.
     //
-    //Future<BuiltList<JsonObject>> v2MetricsAssetHistoryGet(String metricId, String assetId, { DateTime timeStart, DateTime timeEnd, String timeFormat, String periodId, int limit }) async
-    test('test v2MetricsAssetHistoryGet', () async {
+    //Future<BuiltList<JsonObject>> marketdataListMetricsV2AssetHistory(String metricId, String assetId, { DateTime timeStart, DateTime timeEnd, String timeFormat, String periodId, int limit }) async
+    test('test marketdataListMetricsV2AssetHistory', () async {
       // TODO
     });
 
@@ -20,8 +20,8 @@ void main() {
     //
     // Get all metrics that are actually available for the specified asset.
     //
-    //Future<BuiltList<V1MetricInfo>> v2MetricsAssetListingGet(String assetId) async
-    test('test v2MetricsAssetListingGet', () async {
+    //Future<BuiltList<V1MetricInfo>> marketdataListMetricsV2AssetListing(String assetId) async
+    test('test marketdataListMetricsV2AssetListing', () async {
       // TODO
     });
 
@@ -29,8 +29,8 @@ void main() {
     //
     // Get chain metrics history.
     //
-    //Future<BuiltList<JsonObject>> v2MetricsChainHistoryGet(String metricId, String chainId, { DateTime timeStart, DateTime timeEnd, String timeFormat, String periodId, int limit }) async
-    test('test v2MetricsChainHistoryGet', () async {
+    //Future<BuiltList<JsonObject>> marketdataListMetricsV2ChainHistory(String metricId, String chainId, { DateTime timeStart, DateTime timeEnd, String timeFormat, String periodId, int limit }) async
+    test('test marketdataListMetricsV2ChainHistory', () async {
       // TODO
     });
 
@@ -38,8 +38,8 @@ void main() {
     //
     // Get all metrics that are actually available for the specified blockchain chain.
     //
-    //Future<BuiltList<V1MetricInfo>> v2MetricsChainListingGet(String chainId) async
-    test('test v2MetricsChainListingGet', () async {
+    //Future<BuiltList<V1MetricInfo>> marketdataListMetricsV2ChainListing(String chainId) async
+    test('test marketdataListMetricsV2ChainListing', () async {
       // TODO
     });
 
@@ -47,8 +47,8 @@ void main() {
     //
     // Get exchange metrics history.
     //
-    //Future<BuiltList<JsonObject>> v2MetricsExchangeHistoryGet(String metricId, String exchangeId, { DateTime timeStart, DateTime timeEnd, String timeFormat, String periodId, int limit }) async
-    test('test v2MetricsExchangeHistoryGet', () async {
+    //Future<BuiltList<JsonObject>> marketdataListMetricsV2ExchangeHistory(String metricId, String exchangeId, { DateTime timeStart, DateTime timeEnd, String timeFormat, String periodId, int limit }) async
+    test('test marketdataListMetricsV2ExchangeHistory', () async {
       // TODO
     });
 
@@ -56,8 +56,8 @@ void main() {
     //
     // Get all metrics that are actually available for the specified exchange.
     //
-    //Future<BuiltList<V1MetricInfo>> v2MetricsExchangeListingGet(String exchangeId) async
-    test('test v2MetricsExchangeListingGet', () async {
+    //Future<BuiltList<V1MetricInfo>> marketdataListMetricsV2ExchangeListing(String exchangeId) async
+    test('test marketdataListMetricsV2ExchangeListing', () async {
       // TODO
     });
 
@@ -65,8 +65,8 @@ void main() {
     //
     // Get all metrics available in the system.
     //
-    //Future<BuiltList<V1MetricInfo>> v2MetricsListingGet() async
-    test('test v2MetricsListingGet', () async {
+    //Future<BuiltList<V1MetricInfo>> marketdataListMetricsV2Listing() async
+    test('test marketdataListMetricsV2Listing', () async {
       // TODO
     });
 

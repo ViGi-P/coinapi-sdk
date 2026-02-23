@@ -111,11 +111,11 @@ bool v1QuotesSymbolIdCurrentGetAsync(char * accessToken,
 
 /*! \brief Historical data. *Synchronous*
  *
- * Get historical quote updates within requested time range, returned in time ascending order.  :::warning The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the 'date' parameter instead for querying data for a specific day without filter. :::
+ * Get historical quote updates within requested time range, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
  * \param symbolId Symbol identifier for requested timeseries (from the Metadata -> Symbols) *Required*
- * \param date Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided)
- * \param timeStart Starting time in ISO 8601
- * \param timeEnd Timeseries ending time in ISO 8601
+ * \param date Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)
+ * \param timeStart Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
+ * \param timeEnd Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
  * \param limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
@@ -128,11 +128,11 @@ bool v1QuotesSymbolIdHistoryGetSync(char * accessToken,
 
 /*! \brief Historical data. *Asynchronous*
  *
- * Get historical quote updates within requested time range, returned in time ascending order.  :::warning The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the 'date' parameter instead for querying data for a specific day without filter. :::
+ * Get historical quote updates within requested time range, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
  * \param symbolId Symbol identifier for requested timeseries (from the Metadata -> Symbols) *Required*
- * \param date Date in ISO 8601, returned data is for the whole given day (preferred method, required if 'time_start' is not provided)
- * \param timeStart Starting time in ISO 8601
- * \param timeEnd Timeseries ending time in ISO 8601
+ * \param date Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)
+ * \param timeStart Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
+ * \param timeEnd Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
  * \param limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*

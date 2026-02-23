@@ -319,13 +319,13 @@ case $state in
             "v1MetricsListingGet[Listing of all supported metrics by CoinAPI]" \
             "v1MetricsSymbolCurrentGet[Current metrics for given symbol]" \
             "v1MetricsSymbolHistoryGet[Historical metrics for symbol]" \
-            "v1MetricsSymbolListingGet[Listing of all supported metrics for symbol]"             "v2MetricsAssetHistoryGet[Historical metrics for the asset]" \
-            "v2MetricsAssetListingGet[Listing of metrics available for specific asset]" \
-            "v2MetricsChainHistoryGet[Historical metrics for the chain]" \
-            "v2MetricsChainListingGet[Listing of metrics available for specific chain]" \
-            "v2MetricsExchangeHistoryGet[Historical metrics for the exchange]" \
-            "v2MetricsExchangeListingGet[Listing of metrics available for specific exchange]" \
-            "v2MetricsListingGet[Listing of all supported metrics]"             "v1OhlcvExchangesExchangeIdHistoryGet[Historical data by exchange]" \
+            "v1MetricsSymbolListingGet[Listing of all supported metrics for symbol]"             "marketdataListMetricsV2AssetHistory[Historical metrics for the asset]" \
+            "marketdataListMetricsV2AssetListing[Listing of metrics available for specific asset]" \
+            "marketdataListMetricsV2ChainHistory[Historical metrics for the chain]" \
+            "marketdataListMetricsV2ChainListing[Listing of metrics available for specific chain]" \
+            "marketdataListMetricsV2ExchangeHistory[Historical metrics for the exchange]" \
+            "marketdataListMetricsV2ExchangeListing[Listing of metrics available for specific exchange]" \
+            "marketdataListMetricsV2Listing[Listing of all supported metrics]"             "v1OhlcvExchangesExchangeIdHistoryGet[Historical data by exchange]" \
             "v1OhlcvPeriodsGet[List all periods]" \
             "v1OhlcvSymbolIdHistoryGet[Historical data]" \
             "v1OhlcvSymbolIdLatestGet[Latest data]"             "v1OptionsExchangeIdCurrentGet[Current data by Exchange]"             "v1OrderbooksSymbolIdCurrentGet[Get current order book]" \
@@ -567,7 +567,7 @@ case $state in
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
-      v2MetricsAssetHistoryGet)
+      marketdataListMetricsV2AssetHistory)
         local -a _op_arguments
         _op_arguments=(
                     "metric_id=:[QUERY] Metric identifier (e.g., &#39;TVL&#39;, &#39;STABLES_BRIDGED_USD&#39;)"
@@ -580,14 +580,14 @@ case $state in
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
-      v2MetricsAssetListingGet)
+      marketdataListMetricsV2AssetListing)
         local -a _op_arguments
         _op_arguments=(
                     "asset_id=:[QUERY] Asset identifier (e.g., USDC, USDT)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
-      v2MetricsChainHistoryGet)
+      marketdataListMetricsV2ChainHistory)
         local -a _op_arguments
         _op_arguments=(
                     "metric_id=:[QUERY] Metric identifier (e.g., &#39;TVL&#39;, &#39;STABLES_BRIDGED_USD&#39;)"
@@ -600,14 +600,14 @@ case $state in
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
-      v2MetricsChainListingGet)
+      marketdataListMetricsV2ChainListing)
         local -a _op_arguments
         _op_arguments=(
                     "chain_id=:[QUERY] Chain identifier (e.g., ETHEREUM, ARBITRUM)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
-      v2MetricsExchangeHistoryGet)
+      marketdataListMetricsV2ExchangeHistory)
         local -a _op_arguments
         _op_arguments=(
                     "metric_id=:[QUERY] Metric identifier (e.g., &#39;TVL&#39;, &#39;STABLES_BRIDGED_USD&#39;)"
@@ -620,14 +620,14 @@ case $state in
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
-      v2MetricsExchangeListingGet)
+      marketdataListMetricsV2ExchangeListing)
         local -a _op_arguments
         _op_arguments=(
                     "exchange_id=:[QUERY] Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
-      v2MetricsListingGet)
+      marketdataListMetricsV2Listing)
         local -a _op_arguments
         _op_arguments=(
                               )
@@ -696,9 +696,9 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
           "symbol_id=:[PATH] Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols)"
-          "date=:[QUERY] Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided)"
-"time_start=:[QUERY] Starting time in ISO 8601 (deprecated, use &#39;date&#39; instead)"
-"time_end=:[QUERY] Timeseries ending time in ISO 8601 (deprecated, use &#39;date&#39; instead)"
+          "date=:[QUERY] Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided)"
+"time_start=:[QUERY] Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)"
+"time_end=:[QUERY] Timeseries ending time in ISO 8601 (optional, supports cross-day queries)"
 "limit=:[QUERY] Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)"
 "limit_levels=:[QUERY] Maximum amount of levels from each side of the book to include in response (optional)"
           )
@@ -746,9 +746,9 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
           "symbol_id=:[PATH] Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols)"
-          "date=:[QUERY] Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided)"
-"time_start=:[QUERY] Starting time in ISO 8601"
-"time_end=:[QUERY] Timeseries ending time in ISO 8601"
+          "date=:[QUERY] Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided)"
+"time_start=:[QUERY] Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)"
+"time_end=:[QUERY] Timeseries ending time in ISO 8601 (optional, supports cross-day queries)"
 "limit=:[QUERY] Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
@@ -776,8 +776,8 @@ case $state in
         _op_arguments=(
           "symbol_id=:[PATH] Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols)"
           "date=:[QUERY] Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided)"
-"time_start=:[QUERY] Starting time in ISO 8601"
-"time_end=:[QUERY] Timeseries ending time in ISO 8601"
+"time_start=:[QUERY] Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)"
+"time_end=:[QUERY] Timeseries ending time in ISO 8601 (optional, supports cross-day queries)"
 "limit=:[QUERY] Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)"
 "include_id=true:[QUERY] Information that additional exchange trade identifier should be included in the &#39;id_trade&#39; parameter of the trade if exchange providing identifiers."
           "include_id=false:[QUERY] Information that additional exchange trade identifier should be included in the &#39;id_trade&#39; parameter of the trade if exchange providing identifiers."

@@ -351,7 +351,7 @@ package .Clients is
 
    --  Historical metrics for the asset
    --  Get asset metrics history.
-   procedure V_2Metrics_Asset_History_Get
+   procedure Marketdata_List_Metrics_V2Asset_History
       (Client : in out Client_Type;
        Metric_Id : in Swagger.UString;
        Asset_Id : in Swagger.UString;
@@ -364,14 +364,14 @@ package .Clients is
 
    --  Listing of metrics available for specific asset
    --  Get all metrics that are actually available for the specified asset.
-   procedure V_2Metrics_Asset_Listing_Get
+   procedure Marketdata_List_Metrics_V2Asset_Listing
       (Client : in out Client_Type;
        Asset_Id : in Swagger.UString;
        Result : out .Models.V1MetricInfo_Type_Vectors.Vector);
 
    --  Historical metrics for the chain
    --  Get chain metrics history.
-   procedure V_2Metrics_Chain_History_Get
+   procedure Marketdata_List_Metrics_V2Chain_History
       (Client : in out Client_Type;
        Metric_Id : in Swagger.UString;
        Chain_Id : in Swagger.UString;
@@ -384,14 +384,14 @@ package .Clients is
 
    --  Listing of metrics available for specific chain
    --  Get all metrics that are actually available for the specified blockchain chain.
-   procedure V_2Metrics_Chain_Listing_Get
+   procedure Marketdata_List_Metrics_V2Chain_Listing
       (Client : in out Client_Type;
        Chain_Id : in Swagger.UString;
        Result : out .Models.V1MetricInfo_Type_Vectors.Vector);
 
    --  Historical metrics for the exchange
    --  Get exchange metrics history.
-   procedure V_2Metrics_Exchange_History_Get
+   procedure Marketdata_List_Metrics_V2Exchange_History
       (Client : in out Client_Type;
        Metric_Id : in Swagger.UString;
        Exchange_Id : in Swagger.UString;
@@ -404,14 +404,14 @@ package .Clients is
 
    --  Listing of metrics available for specific exchange
    --  Get all metrics that are actually available for the specified exchange.
-   procedure V_2Metrics_Exchange_Listing_Get
+   procedure Marketdata_List_Metrics_V2Exchange_Listing
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;
        Result : out .Models.V1MetricInfo_Type_Vectors.Vector);
 
    --  Listing of all supported metrics
    --  Get all metrics available in the system.
-   procedure V_2Metrics_Listing_Get
+   procedure Marketdata_List_Metrics_V2Listing
       (Client : in out Client_Type;
        Result : out .Models.V1MetricInfo_Type_Vectors.Vector);
 
@@ -513,10 +513,12 @@ package .Clients is
    --  :::info
    --  The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.
    --  :::
-   --  
-   --  :::warning
-   --  The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
-   --  Please use the 'date' parameter instead for querying data for a specific day without filter.
+   --              
+   --  This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
+   --  Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.
+   --              
+   --  :::tip
+   --  For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.
    --  :::
    procedure V_1Orderbooks_Symbol_Id_History_Get
       (Client : in out Client_Type;
@@ -536,7 +538,8 @@ package .Clients is
        Result : out .Models.V1OrderBookBase_Type_Vectors.Vector);
 
    --  Current order book by symbol_id
-   --  Retrieves the current order book for the specified symbol.
+   --  Retrieves the current L3 order book for the specified symbol.
+   --  L3 order books include individual order IDs for each price level.
    procedure V_1Orderbooks_3Symbol_Id_Current_Get
       (Client : in out Client_Type;
        Symbol_Id : in Swagger.UString;
@@ -570,10 +573,12 @@ package .Clients is
 
    --  Historical data
    --  Get historical quote updates within requested time range, returned in time ascending order.
-   --  
-   --  :::warning
-   --  The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
-   --  Please use the 'date' parameter instead for querying data for a specific day without filter.
+   --              
+   --  This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
+   --  Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.
+   --              
+   --  :::tip
+   --  For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.
    --  :::
    procedure V_1Quotes_Symbol_Id_History_Get
       (Client : in out Client_Type;
@@ -602,10 +607,12 @@ package .Clients is
 
    --  Historical data
    --  Get history transactions from specific symbol, returned in time ascending order.
-   --  
-   --  :::warning
-   --  The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
-   --  Please use the 'date' parameter instead for querying data for a specific day without filter.
+   --              
+   --  This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
+   --  Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.
+   --              
+   --  :::tip
+   --  For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.
    --  :::
    procedure V_1Trades_Symbol_Id_History_Get
       (Client : in out Client_Type;

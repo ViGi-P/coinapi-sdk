@@ -9,17 +9,17 @@ All URIs are relative to *https://rest.coinapi.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v2MetricsAssetHistoryGet**](MetricsV2Api.md#v2metricsassethistoryget) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
-[**v2MetricsAssetListingGet**](MetricsV2Api.md#v2metricsassetlistingget) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-[**v2MetricsChainHistoryGet**](MetricsV2Api.md#v2metricschainhistoryget) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
-[**v2MetricsChainListingGet**](MetricsV2Api.md#v2metricschainlistingget) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-[**v2MetricsExchangeHistoryGet**](MetricsV2Api.md#v2metricsexchangehistoryget) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
-[**v2MetricsExchangeListingGet**](MetricsV2Api.md#v2metricsexchangelistingget) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-[**v2MetricsListingGet**](MetricsV2Api.md#v2metricslistingget) | **GET** /v2/metrics/listing | Listing of all supported metrics
+[**marketdataListMetricsV2AssetHistory**](MetricsV2Api.md#marketdatalistmetricsv2assethistory) | **GET** /v2/metrics/asset/history | Historical metrics for the asset
+[**marketdataListMetricsV2AssetListing**](MetricsV2Api.md#marketdatalistmetricsv2assetlisting) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+[**marketdataListMetricsV2ChainHistory**](MetricsV2Api.md#marketdatalistmetricsv2chainhistory) | **GET** /v2/metrics/chain/history | Historical metrics for the chain
+[**marketdataListMetricsV2ChainListing**](MetricsV2Api.md#marketdatalistmetricsv2chainlisting) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+[**marketdataListMetricsV2ExchangeHistory**](MetricsV2Api.md#marketdatalistmetricsv2exchangehistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
+[**marketdataListMetricsV2ExchangeListing**](MetricsV2Api.md#marketdatalistmetricsv2exchangelisting) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+[**marketdataListMetricsV2Listing**](MetricsV2Api.md#marketdatalistmetricsv2listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
 
 
-# **v2MetricsAssetHistoryGet**
-> BuiltList<JsonObject> v2MetricsAssetHistoryGet(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
+# **marketdataListMetricsV2AssetHistory**
+> BuiltList<JsonObject> marketdataListMetricsV2AssetHistory(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit)
 
 Historical metrics for the asset
 
@@ -43,10 +43,10 @@ final String periodId = periodId_example; // String | Identifier of requested ti
 final int limit = 56; // int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 try {
-    final response = api.v2MetricsAssetHistoryGet(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
+    final response = api.marketdataListMetricsV2AssetHistory(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling MetricsV2Api->v2MetricsAssetHistoryGet: $e\n');
+    print('Exception when calling MetricsV2Api->marketdataListMetricsV2AssetHistory: $e\n');
 }
 ```
 
@@ -77,8 +77,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2MetricsAssetListingGet**
-> BuiltList<V1MetricInfo> v2MetricsAssetListingGet(assetId)
+# **marketdataListMetricsV2AssetListing**
+> BuiltList<V1MetricInfo> marketdataListMetricsV2AssetListing(assetId)
 
 Listing of metrics available for specific asset
 
@@ -96,10 +96,10 @@ final api = Openapi().getMetricsV2Api();
 final String assetId = assetId_example; // String | Asset identifier (e.g., USDC, USDT)
 
 try {
-    final response = api.v2MetricsAssetListingGet(assetId);
+    final response = api.marketdataListMetricsV2AssetListing(assetId);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling MetricsV2Api->v2MetricsAssetListingGet: $e\n');
+    print('Exception when calling MetricsV2Api->marketdataListMetricsV2AssetListing: $e\n');
 }
 ```
 
@@ -124,8 +124,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2MetricsChainHistoryGet**
-> BuiltList<JsonObject> v2MetricsChainHistoryGet(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
+# **marketdataListMetricsV2ChainHistory**
+> BuiltList<JsonObject> marketdataListMetricsV2ChainHistory(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit)
 
 Historical metrics for the chain
 
@@ -149,10 +149,10 @@ final String periodId = periodId_example; // String | Identifier of requested ti
 final int limit = 56; // int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 try {
-    final response = api.v2MetricsChainHistoryGet(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
+    final response = api.marketdataListMetricsV2ChainHistory(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling MetricsV2Api->v2MetricsChainHistoryGet: $e\n');
+    print('Exception when calling MetricsV2Api->marketdataListMetricsV2ChainHistory: $e\n');
 }
 ```
 
@@ -183,8 +183,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2MetricsChainListingGet**
-> BuiltList<V1MetricInfo> v2MetricsChainListingGet(chainId)
+# **marketdataListMetricsV2ChainListing**
+> BuiltList<V1MetricInfo> marketdataListMetricsV2ChainListing(chainId)
 
 Listing of metrics available for specific chain
 
@@ -202,10 +202,10 @@ final api = Openapi().getMetricsV2Api();
 final String chainId = chainId_example; // String | Chain identifier (e.g., ETHEREUM, ARBITRUM)
 
 try {
-    final response = api.v2MetricsChainListingGet(chainId);
+    final response = api.marketdataListMetricsV2ChainListing(chainId);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling MetricsV2Api->v2MetricsChainListingGet: $e\n');
+    print('Exception when calling MetricsV2Api->marketdataListMetricsV2ChainListing: $e\n');
 }
 ```
 
@@ -230,8 +230,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2MetricsExchangeHistoryGet**
-> BuiltList<JsonObject> v2MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
+# **marketdataListMetricsV2ExchangeHistory**
+> BuiltList<JsonObject> marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit)
 
 Historical metrics for the exchange
 
@@ -255,10 +255,10 @@ final String periodId = periodId_example; // String | Identifier of requested ti
 final int limit = 56; // int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 try {
-    final response = api.v2MetricsExchangeHistoryGet(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
+    final response = api.marketdataListMetricsV2ExchangeHistory(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling MetricsV2Api->v2MetricsExchangeHistoryGet: $e\n');
+    print('Exception when calling MetricsV2Api->marketdataListMetricsV2ExchangeHistory: $e\n');
 }
 ```
 
@@ -289,8 +289,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2MetricsExchangeListingGet**
-> BuiltList<V1MetricInfo> v2MetricsExchangeListingGet(exchangeId)
+# **marketdataListMetricsV2ExchangeListing**
+> BuiltList<V1MetricInfo> marketdataListMetricsV2ExchangeListing(exchangeId)
 
 Listing of metrics available for specific exchange
 
@@ -308,10 +308,10 @@ final api = Openapi().getMetricsV2Api();
 final String exchangeId = exchangeId_example; // String | Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
 
 try {
-    final response = api.v2MetricsExchangeListingGet(exchangeId);
+    final response = api.marketdataListMetricsV2ExchangeListing(exchangeId);
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling MetricsV2Api->v2MetricsExchangeListingGet: $e\n');
+    print('Exception when calling MetricsV2Api->marketdataListMetricsV2ExchangeListing: $e\n');
 }
 ```
 
@@ -336,8 +336,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **v2MetricsListingGet**
-> BuiltList<V1MetricInfo> v2MetricsListingGet()
+# **marketdataListMetricsV2Listing**
+> BuiltList<V1MetricInfo> marketdataListMetricsV2Listing()
 
 Listing of all supported metrics
 
@@ -354,10 +354,10 @@ import 'package:openapi/api.dart';
 final api = Openapi().getMetricsV2Api();
 
 try {
-    final response = api.v2MetricsListingGet();
+    final response = api.marketdataListMetricsV2Listing();
     print(response);
 } on DioException catch (e) {
-    print('Exception when calling MetricsV2Api->v2MetricsListingGet: $e\n');
+    print('Exception when calling MetricsV2Api->marketdataListMetricsV2Listing: $e\n');
 }
 ```
 

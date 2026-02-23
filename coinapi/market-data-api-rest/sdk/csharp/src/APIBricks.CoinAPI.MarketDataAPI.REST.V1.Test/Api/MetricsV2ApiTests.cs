@@ -52,10 +52,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
         }
 
         /// <summary>
-        /// Test V2MetricsAssetHistoryGet
+        /// Test MarketdataListMetricsV2AssetHistory
         /// </summary>
         [Fact (Skip = "not implemented")]
-        public async Task V2MetricsAssetHistoryGetAsyncTest()
+        public async Task MarketdataListMetricsV2AssetHistoryAsyncTest()
         {
             string metricId = default!;
             string assetId = default!;
@@ -64,28 +64,28 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             Client.Option<string> timeFormat = default!;
             Client.Option<string> periodId = default!;
             Client.Option<int> limit = default!;
-            var response = await _instance.V2MetricsAssetHistoryGetAsync(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
+            var response = await _instance.MarketdataListMetricsV2AssetHistoryAsync(metricId, assetId, timeStart, timeEnd, timeFormat, periodId, limit);
             var model = response.Ok();
             Assert.IsType<List<Object>>(model);
         }
 
         /// <summary>
-        /// Test V2MetricsAssetListingGet
+        /// Test MarketdataListMetricsV2AssetListing
         /// </summary>
         [Fact (Skip = "not implemented")]
-        public async Task V2MetricsAssetListingGetAsyncTest()
+        public async Task MarketdataListMetricsV2AssetListingAsyncTest()
         {
             string assetId = default!;
-            var response = await _instance.V2MetricsAssetListingGetAsync(assetId);
+            var response = await _instance.MarketdataListMetricsV2AssetListingAsync(assetId);
             var model = response.Ok();
             Assert.IsType<List<V1MetricInfo>>(model);
         }
 
         /// <summary>
-        /// Test V2MetricsChainHistoryGet
+        /// Test MarketdataListMetricsV2ChainHistory
         /// </summary>
         [Fact (Skip = "not implemented")]
-        public async Task V2MetricsChainHistoryGetAsyncTest()
+        public async Task MarketdataListMetricsV2ChainHistoryAsyncTest()
         {
             string metricId = default!;
             string chainId = default!;
@@ -94,28 +94,28 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             Client.Option<string> timeFormat = default!;
             Client.Option<string> periodId = default!;
             Client.Option<int> limit = default!;
-            var response = await _instance.V2MetricsChainHistoryGetAsync(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
+            var response = await _instance.MarketdataListMetricsV2ChainHistoryAsync(metricId, chainId, timeStart, timeEnd, timeFormat, periodId, limit);
             var model = response.Ok();
             Assert.IsType<List<Object>>(model);
         }
 
         /// <summary>
-        /// Test V2MetricsChainListingGet
+        /// Test MarketdataListMetricsV2ChainListing
         /// </summary>
         [Fact (Skip = "not implemented")]
-        public async Task V2MetricsChainListingGetAsyncTest()
+        public async Task MarketdataListMetricsV2ChainListingAsyncTest()
         {
             string chainId = default!;
-            var response = await _instance.V2MetricsChainListingGetAsync(chainId);
+            var response = await _instance.MarketdataListMetricsV2ChainListingAsync(chainId);
             var model = response.Ok();
             Assert.IsType<List<V1MetricInfo>>(model);
         }
 
         /// <summary>
-        /// Test V2MetricsExchangeHistoryGet
+        /// Test MarketdataListMetricsV2ExchangeHistory
         /// </summary>
         [Fact (Skip = "not implemented")]
-        public async Task V2MetricsExchangeHistoryGetAsyncTest()
+        public async Task MarketdataListMetricsV2ExchangeHistoryAsyncTest()
         {
             string metricId = default!;
             string exchangeId = default!;
@@ -124,30 +124,30 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             Client.Option<string> timeFormat = default!;
             Client.Option<string> periodId = default!;
             Client.Option<int> limit = default!;
-            var response = await _instance.V2MetricsExchangeHistoryGetAsync(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
+            var response = await _instance.MarketdataListMetricsV2ExchangeHistoryAsync(metricId, exchangeId, timeStart, timeEnd, timeFormat, periodId, limit);
             var model = response.Ok();
             Assert.IsType<List<Object>>(model);
         }
 
         /// <summary>
-        /// Test V2MetricsExchangeListingGet
+        /// Test MarketdataListMetricsV2ExchangeListing
         /// </summary>
         [Fact (Skip = "not implemented")]
-        public async Task V2MetricsExchangeListingGetAsyncTest()
+        public async Task MarketdataListMetricsV2ExchangeListingAsyncTest()
         {
             string exchangeId = default!;
-            var response = await _instance.V2MetricsExchangeListingGetAsync(exchangeId);
+            var response = await _instance.MarketdataListMetricsV2ExchangeListingAsync(exchangeId);
             var model = response.Ok();
             Assert.IsType<List<V1MetricInfo>>(model);
         }
 
         /// <summary>
-        /// Test V2MetricsListingGet
+        /// Test MarketdataListMetricsV2Listing
         /// </summary>
         [Fact (Skip = "not implemented")]
-        public async Task V2MetricsListingGetAsyncTest()
+        public async Task MarketdataListMetricsV2ListingAsyncTest()
         {
-            var response = await _instance.V2MetricsListingGetAsync();
+            var response = await _instance.MarketdataListMetricsV2ListingAsync();
             var model = response.Ok();
             Assert.IsType<List<V1MetricInfo>>(model);
         }

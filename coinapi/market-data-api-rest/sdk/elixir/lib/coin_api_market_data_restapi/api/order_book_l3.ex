@@ -47,7 +47,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.OrderBookL3 do
 
   @doc """
   Current order book by symbol_id
-  Retrieves the current order book for the specified symbol.
+  Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
 
   ### Parameters
 

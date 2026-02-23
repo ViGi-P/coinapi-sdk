@@ -4,19 +4,19 @@ All URIs are relative to *https://rest.coinapi.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**V2MetricsAssetHistoryGet**](MetricsV2API.md#V2MetricsAssetHistoryGet) | **Get** /v2/metrics/asset/history | Historical metrics for the asset
-[**V2MetricsAssetListingGet**](MetricsV2API.md#V2MetricsAssetListingGet) | **Get** /v2/metrics/asset/listing | Listing of metrics available for specific asset
-[**V2MetricsChainHistoryGet**](MetricsV2API.md#V2MetricsChainHistoryGet) | **Get** /v2/metrics/chain/history | Historical metrics for the chain
-[**V2MetricsChainListingGet**](MetricsV2API.md#V2MetricsChainListingGet) | **Get** /v2/metrics/chain/listing | Listing of metrics available for specific chain
-[**V2MetricsExchangeHistoryGet**](MetricsV2API.md#V2MetricsExchangeHistoryGet) | **Get** /v2/metrics/exchange/history | Historical metrics for the exchange
-[**V2MetricsExchangeListingGet**](MetricsV2API.md#V2MetricsExchangeListingGet) | **Get** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
-[**V2MetricsListingGet**](MetricsV2API.md#V2MetricsListingGet) | **Get** /v2/metrics/listing | Listing of all supported metrics
+[**MarketdataListMetricsV2AssetHistory**](MetricsV2API.md#MarketdataListMetricsV2AssetHistory) | **Get** /v2/metrics/asset/history | Historical metrics for the asset
+[**MarketdataListMetricsV2AssetListing**](MetricsV2API.md#MarketdataListMetricsV2AssetListing) | **Get** /v2/metrics/asset/listing | Listing of metrics available for specific asset
+[**MarketdataListMetricsV2ChainHistory**](MetricsV2API.md#MarketdataListMetricsV2ChainHistory) | **Get** /v2/metrics/chain/history | Historical metrics for the chain
+[**MarketdataListMetricsV2ChainListing**](MetricsV2API.md#MarketdataListMetricsV2ChainListing) | **Get** /v2/metrics/chain/listing | Listing of metrics available for specific chain
+[**MarketdataListMetricsV2ExchangeHistory**](MetricsV2API.md#MarketdataListMetricsV2ExchangeHistory) | **Get** /v2/metrics/exchange/history | Historical metrics for the exchange
+[**MarketdataListMetricsV2ExchangeListing**](MetricsV2API.md#MarketdataListMetricsV2ExchangeListing) | **Get** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
+[**MarketdataListMetricsV2Listing**](MetricsV2API.md#MarketdataListMetricsV2Listing) | **Get** /v2/metrics/listing | Listing of all supported metrics
 
 
 
-## V2MetricsAssetHistoryGet
+## MarketdataListMetricsV2AssetHistory
 
-> []map[string]interface{} V2MetricsAssetHistoryGet(ctx).MetricId(metricId).AssetId(assetId).TimeStart(timeStart).TimeEnd(timeEnd).TimeFormat(timeFormat).PeriodId(periodId).Limit(limit).Execute()
+> []map[string]interface{} MarketdataListMetricsV2AssetHistory(ctx).MetricId(metricId).AssetId(assetId).TimeStart(timeStart).TimeEnd(timeEnd).TimeFormat(timeFormat).PeriodId(periodId).Limit(limit).Execute()
 
 Historical metrics for the asset
 
@@ -46,13 +46,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricsV2API.V2MetricsAssetHistoryGet(context.Background()).MetricId(metricId).AssetId(assetId).TimeStart(timeStart).TimeEnd(timeEnd).TimeFormat(timeFormat).PeriodId(periodId).Limit(limit).Execute()
+	resp, r, err := apiClient.MetricsV2API.MarketdataListMetricsV2AssetHistory(context.Background()).MetricId(metricId).AssetId(assetId).TimeStart(timeStart).TimeEnd(timeEnd).TimeFormat(timeFormat).PeriodId(periodId).Limit(limit).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.V2MetricsAssetHistoryGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.MarketdataListMetricsV2AssetHistory``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2MetricsAssetHistoryGet`: []map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.V2MetricsAssetHistoryGet`: %v\n", resp)
+	// response from `MarketdataListMetricsV2AssetHistory`: []map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.MarketdataListMetricsV2AssetHistory`: %v\n", resp)
 }
 ```
 
@@ -62,7 +62,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV2MetricsAssetHistoryGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMarketdataListMetricsV2AssetHistoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -93,9 +93,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## V2MetricsAssetListingGet
+## MarketdataListMetricsV2AssetListing
 
-> []V1MetricInfo V2MetricsAssetListingGet(ctx).AssetId(assetId).Execute()
+> []V1MetricInfo MarketdataListMetricsV2AssetListing(ctx).AssetId(assetId).Execute()
 
 Listing of metrics available for specific asset
 
@@ -118,13 +118,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricsV2API.V2MetricsAssetListingGet(context.Background()).AssetId(assetId).Execute()
+	resp, r, err := apiClient.MetricsV2API.MarketdataListMetricsV2AssetListing(context.Background()).AssetId(assetId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.V2MetricsAssetListingGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.MarketdataListMetricsV2AssetListing``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2MetricsAssetListingGet`: []V1MetricInfo
-	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.V2MetricsAssetListingGet`: %v\n", resp)
+	// response from `MarketdataListMetricsV2AssetListing`: []V1MetricInfo
+	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.MarketdataListMetricsV2AssetListing`: %v\n", resp)
 }
 ```
 
@@ -134,7 +134,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV2MetricsAssetListingGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMarketdataListMetricsV2AssetListingRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -159,9 +159,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## V2MetricsChainHistoryGet
+## MarketdataListMetricsV2ChainHistory
 
-> []map[string]interface{} V2MetricsChainHistoryGet(ctx).MetricId(metricId).ChainId(chainId).TimeStart(timeStart).TimeEnd(timeEnd).TimeFormat(timeFormat).PeriodId(periodId).Limit(limit).Execute()
+> []map[string]interface{} MarketdataListMetricsV2ChainHistory(ctx).MetricId(metricId).ChainId(chainId).TimeStart(timeStart).TimeEnd(timeEnd).TimeFormat(timeFormat).PeriodId(periodId).Limit(limit).Execute()
 
 Historical metrics for the chain
 
@@ -191,13 +191,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricsV2API.V2MetricsChainHistoryGet(context.Background()).MetricId(metricId).ChainId(chainId).TimeStart(timeStart).TimeEnd(timeEnd).TimeFormat(timeFormat).PeriodId(periodId).Limit(limit).Execute()
+	resp, r, err := apiClient.MetricsV2API.MarketdataListMetricsV2ChainHistory(context.Background()).MetricId(metricId).ChainId(chainId).TimeStart(timeStart).TimeEnd(timeEnd).TimeFormat(timeFormat).PeriodId(periodId).Limit(limit).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.V2MetricsChainHistoryGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.MarketdataListMetricsV2ChainHistory``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2MetricsChainHistoryGet`: []map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.V2MetricsChainHistoryGet`: %v\n", resp)
+	// response from `MarketdataListMetricsV2ChainHistory`: []map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.MarketdataListMetricsV2ChainHistory`: %v\n", resp)
 }
 ```
 
@@ -207,7 +207,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV2MetricsChainHistoryGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMarketdataListMetricsV2ChainHistoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -238,9 +238,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## V2MetricsChainListingGet
+## MarketdataListMetricsV2ChainListing
 
-> []V1MetricInfo V2MetricsChainListingGet(ctx).ChainId(chainId).Execute()
+> []V1MetricInfo MarketdataListMetricsV2ChainListing(ctx).ChainId(chainId).Execute()
 
 Listing of metrics available for specific chain
 
@@ -263,13 +263,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricsV2API.V2MetricsChainListingGet(context.Background()).ChainId(chainId).Execute()
+	resp, r, err := apiClient.MetricsV2API.MarketdataListMetricsV2ChainListing(context.Background()).ChainId(chainId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.V2MetricsChainListingGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.MarketdataListMetricsV2ChainListing``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2MetricsChainListingGet`: []V1MetricInfo
-	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.V2MetricsChainListingGet`: %v\n", resp)
+	// response from `MarketdataListMetricsV2ChainListing`: []V1MetricInfo
+	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.MarketdataListMetricsV2ChainListing`: %v\n", resp)
 }
 ```
 
@@ -279,7 +279,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV2MetricsChainListingGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMarketdataListMetricsV2ChainListingRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -304,9 +304,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## V2MetricsExchangeHistoryGet
+## MarketdataListMetricsV2ExchangeHistory
 
-> []map[string]interface{} V2MetricsExchangeHistoryGet(ctx).MetricId(metricId).ExchangeId(exchangeId).TimeStart(timeStart).TimeEnd(timeEnd).TimeFormat(timeFormat).PeriodId(periodId).Limit(limit).Execute()
+> []map[string]interface{} MarketdataListMetricsV2ExchangeHistory(ctx).MetricId(metricId).ExchangeId(exchangeId).TimeStart(timeStart).TimeEnd(timeEnd).TimeFormat(timeFormat).PeriodId(periodId).Limit(limit).Execute()
 
 Historical metrics for the exchange
 
@@ -336,13 +336,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricsV2API.V2MetricsExchangeHistoryGet(context.Background()).MetricId(metricId).ExchangeId(exchangeId).TimeStart(timeStart).TimeEnd(timeEnd).TimeFormat(timeFormat).PeriodId(periodId).Limit(limit).Execute()
+	resp, r, err := apiClient.MetricsV2API.MarketdataListMetricsV2ExchangeHistory(context.Background()).MetricId(metricId).ExchangeId(exchangeId).TimeStart(timeStart).TimeEnd(timeEnd).TimeFormat(timeFormat).PeriodId(periodId).Limit(limit).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.V2MetricsExchangeHistoryGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.MarketdataListMetricsV2ExchangeHistory``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2MetricsExchangeHistoryGet`: []map[string]interface{}
-	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.V2MetricsExchangeHistoryGet`: %v\n", resp)
+	// response from `MarketdataListMetricsV2ExchangeHistory`: []map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.MarketdataListMetricsV2ExchangeHistory`: %v\n", resp)
 }
 ```
 
@@ -352,7 +352,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV2MetricsExchangeHistoryGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMarketdataListMetricsV2ExchangeHistoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -383,9 +383,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## V2MetricsExchangeListingGet
+## MarketdataListMetricsV2ExchangeListing
 
-> []V1MetricInfo V2MetricsExchangeListingGet(ctx).ExchangeId(exchangeId).Execute()
+> []V1MetricInfo MarketdataListMetricsV2ExchangeListing(ctx).ExchangeId(exchangeId).Execute()
 
 Listing of metrics available for specific exchange
 
@@ -408,13 +408,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricsV2API.V2MetricsExchangeListingGet(context.Background()).ExchangeId(exchangeId).Execute()
+	resp, r, err := apiClient.MetricsV2API.MarketdataListMetricsV2ExchangeListing(context.Background()).ExchangeId(exchangeId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.V2MetricsExchangeListingGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.MarketdataListMetricsV2ExchangeListing``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2MetricsExchangeListingGet`: []V1MetricInfo
-	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.V2MetricsExchangeListingGet`: %v\n", resp)
+	// response from `MarketdataListMetricsV2ExchangeListing`: []V1MetricInfo
+	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.MarketdataListMetricsV2ExchangeListing`: %v\n", resp)
 }
 ```
 
@@ -424,7 +424,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV2MetricsExchangeListingGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMarketdataListMetricsV2ExchangeListingRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -449,9 +449,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## V2MetricsListingGet
+## MarketdataListMetricsV2Listing
 
-> []V1MetricInfo V2MetricsListingGet(ctx).Execute()
+> []V1MetricInfo MarketdataListMetricsV2Listing(ctx).Execute()
 
 Listing of all supported metrics
 
@@ -473,13 +473,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetricsV2API.V2MetricsListingGet(context.Background()).Execute()
+	resp, r, err := apiClient.MetricsV2API.MarketdataListMetricsV2Listing(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.V2MetricsListingGet``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MetricsV2API.MarketdataListMetricsV2Listing``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V2MetricsListingGet`: []V1MetricInfo
-	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.V2MetricsListingGet`: %v\n", resp)
+	// response from `MarketdataListMetricsV2Listing`: []V1MetricInfo
+	fmt.Fprintf(os.Stdout, "Response from `MetricsV2API.MarketdataListMetricsV2Listing`: %v\n", resp)
 }
 ```
 
@@ -489,7 +489,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiV2MetricsListingGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiMarketdataListMetricsV2ListingRequest struct via the builder pattern
 
 
 ### Return type

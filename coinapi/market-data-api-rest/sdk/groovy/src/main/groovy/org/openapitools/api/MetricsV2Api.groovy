@@ -8,7 +8,7 @@ class MetricsV2Api {
     String versionPath = ""
     ApiUtils apiUtils = new ApiUtils();
 
-    def v2MetricsAssetHistoryGet ( String metricId, String assetId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit, Closure onSuccess, Closure onFailure)  {
+    def marketdataListMetricsV2AssetHistory ( String metricId, String assetId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v2/metrics/asset/history"
 
         // params
@@ -60,7 +60,7 @@ class MetricsV2Api {
 
     }
 
-    def v2MetricsAssetListingGet ( String assetId, Closure onSuccess, Closure onFailure)  {
+    def marketdataListMetricsV2AssetListing ( String assetId, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v2/metrics/asset/listing"
 
         // params
@@ -90,7 +90,7 @@ class MetricsV2Api {
 
     }
 
-    def v2MetricsChainHistoryGet ( String metricId, String chainId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit, Closure onSuccess, Closure onFailure)  {
+    def marketdataListMetricsV2ChainHistory ( String metricId, String chainId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v2/metrics/chain/history"
 
         // params
@@ -142,7 +142,7 @@ class MetricsV2Api {
 
     }
 
-    def v2MetricsChainListingGet ( String chainId, Closure onSuccess, Closure onFailure)  {
+    def marketdataListMetricsV2ChainListing ( String chainId, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v2/metrics/chain/listing"
 
         // params
@@ -172,7 +172,7 @@ class MetricsV2Api {
 
     }
 
-    def v2MetricsExchangeHistoryGet ( String metricId, String exchangeId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit, Closure onSuccess, Closure onFailure)  {
+    def marketdataListMetricsV2ExchangeHistory ( String metricId, String exchangeId, Date timeStart, Date timeEnd, String timeFormat, String periodId, Integer limit, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v2/metrics/exchange/history"
 
         // params
@@ -224,7 +224,7 @@ class MetricsV2Api {
 
     }
 
-    def v2MetricsExchangeListingGet ( String exchangeId, Closure onSuccess, Closure onFailure)  {
+    def marketdataListMetricsV2ExchangeListing ( String exchangeId, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v2/metrics/exchange/listing"
 
         // params
@@ -254,7 +254,7 @@ class MetricsV2Api {
 
     }
 
-    def v2MetricsListingGet ( Closure onSuccess, Closure onFailure)  {
+    def marketdataListMetricsV2Listing ( Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v2/metrics/listing"
 
         // params

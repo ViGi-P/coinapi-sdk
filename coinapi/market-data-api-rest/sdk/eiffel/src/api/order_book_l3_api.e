@@ -65,7 +65,7 @@ feature -- API Access
 
 	v1_orderbooks3_symbol_id_current_get (symbol_id: STRING_32; limit_levels: INTEGER_32): detachable V1_ORDER_BOOK_BASE
 			-- Current order book by symbol_id
-			-- Retrieves the current order book for the specified symbol.
+			-- Retrieves the current L3 order book for the specified symbol. L3 order books include individual order IDs for each price level.
 			-- 
 			-- argument: symbol_id The symbol ID (from the Metadata -&gt; Symbols) (required)
 			-- 

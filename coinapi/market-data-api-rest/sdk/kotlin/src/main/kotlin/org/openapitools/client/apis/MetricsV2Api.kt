@@ -65,8 +65,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v2MetricsAssetHistoryGet(metricId: kotlin.String, assetId: kotlin.String, timeStart: java.time.OffsetDateTime? = null, timeEnd: java.time.OffsetDateTime? = null, timeFormat: kotlin.String? = null, periodId: kotlin.String? = null, limit: kotlin.Int? = 100) : kotlin.collections.List<kotlin.Any> {
-        val localVarResponse = v2MetricsAssetHistoryGetWithHttpInfo(metricId = metricId, assetId = assetId, timeStart = timeStart, timeEnd = timeEnd, timeFormat = timeFormat, periodId = periodId, limit = limit)
+    fun marketdataListMetricsV2AssetHistory(metricId: kotlin.String, assetId: kotlin.String, timeStart: java.time.OffsetDateTime? = null, timeEnd: java.time.OffsetDateTime? = null, timeFormat: kotlin.String? = null, periodId: kotlin.String? = null, limit: kotlin.Int? = 100) : kotlin.collections.List<kotlin.Any> {
+        val localVarResponse = marketdataListMetricsV2AssetHistoryWithHttpInfo(metricId = metricId, assetId = assetId, timeStart = timeStart, timeEnd = timeEnd, timeFormat = timeFormat, periodId = periodId, limit = limit)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<kotlin.Any>
@@ -100,8 +100,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v2MetricsAssetHistoryGetWithHttpInfo(metricId: kotlin.String, assetId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, timeFormat: kotlin.String?, periodId: kotlin.String?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<kotlin.Any>?> {
-        val localVariableConfig = v2MetricsAssetHistoryGetRequestConfig(metricId = metricId, assetId = assetId, timeStart = timeStart, timeEnd = timeEnd, timeFormat = timeFormat, periodId = periodId, limit = limit)
+    fun marketdataListMetricsV2AssetHistoryWithHttpInfo(metricId: kotlin.String, assetId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, timeFormat: kotlin.String?, periodId: kotlin.String?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<kotlin.Any>?> {
+        val localVariableConfig = marketdataListMetricsV2AssetHistoryRequestConfig(metricId = metricId, assetId = assetId, timeStart = timeStart, timeEnd = timeEnd, timeFormat = timeFormat, periodId = periodId, limit = limit)
 
         return request<Unit, kotlin.collections.List<kotlin.Any>>(
             localVariableConfig
@@ -109,7 +109,7 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
-     * To obtain the request config of the operation v2MetricsAssetHistoryGet
+     * To obtain the request config of the operation marketdataListMetricsV2AssetHistory
      *
      * @param metricId Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)
      * @param assetId Asset identifier (e.g., &#x60;USDC&#x60;, &#x60;USDT&#x60;)
@@ -120,7 +120,7 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @return RequestConfig
      */
-    fun v2MetricsAssetHistoryGetRequestConfig(metricId: kotlin.String, assetId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, timeFormat: kotlin.String?, periodId: kotlin.String?, limit: kotlin.Int?) : RequestConfig<Unit> {
+    fun marketdataListMetricsV2AssetHistoryRequestConfig(metricId: kotlin.String, assetId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, timeFormat: kotlin.String?, periodId: kotlin.String?, limit: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -169,8 +169,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v2MetricsAssetListingGet(assetId: kotlin.String) : kotlin.collections.List<V1MetricInfo> {
-        val localVarResponse = v2MetricsAssetListingGetWithHttpInfo(assetId = assetId)
+    fun marketdataListMetricsV2AssetListing(assetId: kotlin.String) : kotlin.collections.List<V1MetricInfo> {
+        val localVarResponse = marketdataListMetricsV2AssetListingWithHttpInfo(assetId = assetId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1MetricInfo>
@@ -198,8 +198,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v2MetricsAssetListingGetWithHttpInfo(assetId: kotlin.String) : ApiResponse<kotlin.collections.List<V1MetricInfo>?> {
-        val localVariableConfig = v2MetricsAssetListingGetRequestConfig(assetId = assetId)
+    fun marketdataListMetricsV2AssetListingWithHttpInfo(assetId: kotlin.String) : ApiResponse<kotlin.collections.List<V1MetricInfo>?> {
+        val localVariableConfig = marketdataListMetricsV2AssetListingRequestConfig(assetId = assetId)
 
         return request<Unit, kotlin.collections.List<V1MetricInfo>>(
             localVariableConfig
@@ -207,12 +207,12 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
-     * To obtain the request config of the operation v2MetricsAssetListingGet
+     * To obtain the request config of the operation marketdataListMetricsV2AssetListing
      *
      * @param assetId Asset identifier (e.g., USDC, USDT)
      * @return RequestConfig
      */
-    fun v2MetricsAssetListingGetRequestConfig(assetId: kotlin.String) : RequestConfig<Unit> {
+    fun marketdataListMetricsV2AssetListingRequestConfig(assetId: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -251,8 +251,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v2MetricsChainHistoryGet(metricId: kotlin.String, chainId: kotlin.String, timeStart: java.time.OffsetDateTime? = null, timeEnd: java.time.OffsetDateTime? = null, timeFormat: kotlin.String? = null, periodId: kotlin.String? = null, limit: kotlin.Int? = 100) : kotlin.collections.List<kotlin.Any> {
-        val localVarResponse = v2MetricsChainHistoryGetWithHttpInfo(metricId = metricId, chainId = chainId, timeStart = timeStart, timeEnd = timeEnd, timeFormat = timeFormat, periodId = periodId, limit = limit)
+    fun marketdataListMetricsV2ChainHistory(metricId: kotlin.String, chainId: kotlin.String, timeStart: java.time.OffsetDateTime? = null, timeEnd: java.time.OffsetDateTime? = null, timeFormat: kotlin.String? = null, periodId: kotlin.String? = null, limit: kotlin.Int? = 100) : kotlin.collections.List<kotlin.Any> {
+        val localVarResponse = marketdataListMetricsV2ChainHistoryWithHttpInfo(metricId = metricId, chainId = chainId, timeStart = timeStart, timeEnd = timeEnd, timeFormat = timeFormat, periodId = periodId, limit = limit)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<kotlin.Any>
@@ -286,8 +286,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v2MetricsChainHistoryGetWithHttpInfo(metricId: kotlin.String, chainId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, timeFormat: kotlin.String?, periodId: kotlin.String?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<kotlin.Any>?> {
-        val localVariableConfig = v2MetricsChainHistoryGetRequestConfig(metricId = metricId, chainId = chainId, timeStart = timeStart, timeEnd = timeEnd, timeFormat = timeFormat, periodId = periodId, limit = limit)
+    fun marketdataListMetricsV2ChainHistoryWithHttpInfo(metricId: kotlin.String, chainId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, timeFormat: kotlin.String?, periodId: kotlin.String?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<kotlin.Any>?> {
+        val localVariableConfig = marketdataListMetricsV2ChainHistoryRequestConfig(metricId = metricId, chainId = chainId, timeStart = timeStart, timeEnd = timeEnd, timeFormat = timeFormat, periodId = periodId, limit = limit)
 
         return request<Unit, kotlin.collections.List<kotlin.Any>>(
             localVariableConfig
@@ -295,7 +295,7 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
-     * To obtain the request config of the operation v2MetricsChainHistoryGet
+     * To obtain the request config of the operation marketdataListMetricsV2ChainHistory
      *
      * @param metricId Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)
      * @param chainId Chain identifier (e.g., &#x60;Ethereum&#x60;, &#x60;Arbitrum&#x60;)
@@ -306,7 +306,7 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @return RequestConfig
      */
-    fun v2MetricsChainHistoryGetRequestConfig(metricId: kotlin.String, chainId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, timeFormat: kotlin.String?, periodId: kotlin.String?, limit: kotlin.Int?) : RequestConfig<Unit> {
+    fun marketdataListMetricsV2ChainHistoryRequestConfig(metricId: kotlin.String, chainId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, timeFormat: kotlin.String?, periodId: kotlin.String?, limit: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -355,8 +355,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v2MetricsChainListingGet(chainId: kotlin.String) : kotlin.collections.List<V1MetricInfo> {
-        val localVarResponse = v2MetricsChainListingGetWithHttpInfo(chainId = chainId)
+    fun marketdataListMetricsV2ChainListing(chainId: kotlin.String) : kotlin.collections.List<V1MetricInfo> {
+        val localVarResponse = marketdataListMetricsV2ChainListingWithHttpInfo(chainId = chainId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1MetricInfo>
@@ -384,8 +384,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v2MetricsChainListingGetWithHttpInfo(chainId: kotlin.String) : ApiResponse<kotlin.collections.List<V1MetricInfo>?> {
-        val localVariableConfig = v2MetricsChainListingGetRequestConfig(chainId = chainId)
+    fun marketdataListMetricsV2ChainListingWithHttpInfo(chainId: kotlin.String) : ApiResponse<kotlin.collections.List<V1MetricInfo>?> {
+        val localVariableConfig = marketdataListMetricsV2ChainListingRequestConfig(chainId = chainId)
 
         return request<Unit, kotlin.collections.List<V1MetricInfo>>(
             localVariableConfig
@@ -393,12 +393,12 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
-     * To obtain the request config of the operation v2MetricsChainListingGet
+     * To obtain the request config of the operation marketdataListMetricsV2ChainListing
      *
      * @param chainId Chain identifier (e.g., ETHEREUM, ARBITRUM)
      * @return RequestConfig
      */
-    fun v2MetricsChainListingGetRequestConfig(chainId: kotlin.String) : RequestConfig<Unit> {
+    fun marketdataListMetricsV2ChainListingRequestConfig(chainId: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -437,8 +437,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v2MetricsExchangeHistoryGet(metricId: kotlin.String, exchangeId: kotlin.String, timeStart: java.time.OffsetDateTime? = null, timeEnd: java.time.OffsetDateTime? = null, timeFormat: kotlin.String? = null, periodId: kotlin.String? = null, limit: kotlin.Int? = 100) : kotlin.collections.List<kotlin.Any> {
-        val localVarResponse = v2MetricsExchangeHistoryGetWithHttpInfo(metricId = metricId, exchangeId = exchangeId, timeStart = timeStart, timeEnd = timeEnd, timeFormat = timeFormat, periodId = periodId, limit = limit)
+    fun marketdataListMetricsV2ExchangeHistory(metricId: kotlin.String, exchangeId: kotlin.String, timeStart: java.time.OffsetDateTime? = null, timeEnd: java.time.OffsetDateTime? = null, timeFormat: kotlin.String? = null, periodId: kotlin.String? = null, limit: kotlin.Int? = 100) : kotlin.collections.List<kotlin.Any> {
+        val localVarResponse = marketdataListMetricsV2ExchangeHistoryWithHttpInfo(metricId = metricId, exchangeId = exchangeId, timeStart = timeStart, timeEnd = timeEnd, timeFormat = timeFormat, periodId = periodId, limit = limit)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<kotlin.Any>
@@ -472,8 +472,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v2MetricsExchangeHistoryGetWithHttpInfo(metricId: kotlin.String, exchangeId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, timeFormat: kotlin.String?, periodId: kotlin.String?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<kotlin.Any>?> {
-        val localVariableConfig = v2MetricsExchangeHistoryGetRequestConfig(metricId = metricId, exchangeId = exchangeId, timeStart = timeStart, timeEnd = timeEnd, timeFormat = timeFormat, periodId = periodId, limit = limit)
+    fun marketdataListMetricsV2ExchangeHistoryWithHttpInfo(metricId: kotlin.String, exchangeId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, timeFormat: kotlin.String?, periodId: kotlin.String?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<kotlin.Any>?> {
+        val localVariableConfig = marketdataListMetricsV2ExchangeHistoryRequestConfig(metricId = metricId, exchangeId = exchangeId, timeStart = timeStart, timeEnd = timeEnd, timeFormat = timeFormat, periodId = periodId, limit = limit)
 
         return request<Unit, kotlin.collections.List<kotlin.Any>>(
             localVariableConfig
@@ -481,7 +481,7 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
-     * To obtain the request config of the operation v2MetricsExchangeHistoryGet
+     * To obtain the request config of the operation marketdataListMetricsV2ExchangeHistory
      *
      * @param metricId Metric identifier (e.g., &#x60;TVL&#x60;, &#x60;STABLES_BRIDGED_USD&#x60;)
      * @param exchangeId Exchange identifier (e.g., &#x60;BINANCE&#x60;, &#x60;UNISWAP-V3-ETHEREUM&#x60;)
@@ -492,7 +492,7 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
      * @return RequestConfig
      */
-    fun v2MetricsExchangeHistoryGetRequestConfig(metricId: kotlin.String, exchangeId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, timeFormat: kotlin.String?, periodId: kotlin.String?, limit: kotlin.Int?) : RequestConfig<Unit> {
+    fun marketdataListMetricsV2ExchangeHistoryRequestConfig(metricId: kotlin.String, exchangeId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, timeFormat: kotlin.String?, periodId: kotlin.String?, limit: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -541,8 +541,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v2MetricsExchangeListingGet(exchangeId: kotlin.String) : kotlin.collections.List<V1MetricInfo> {
-        val localVarResponse = v2MetricsExchangeListingGetWithHttpInfo(exchangeId = exchangeId)
+    fun marketdataListMetricsV2ExchangeListing(exchangeId: kotlin.String) : kotlin.collections.List<V1MetricInfo> {
+        val localVarResponse = marketdataListMetricsV2ExchangeListingWithHttpInfo(exchangeId = exchangeId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1MetricInfo>
@@ -570,8 +570,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v2MetricsExchangeListingGetWithHttpInfo(exchangeId: kotlin.String) : ApiResponse<kotlin.collections.List<V1MetricInfo>?> {
-        val localVariableConfig = v2MetricsExchangeListingGetRequestConfig(exchangeId = exchangeId)
+    fun marketdataListMetricsV2ExchangeListingWithHttpInfo(exchangeId: kotlin.String) : ApiResponse<kotlin.collections.List<V1MetricInfo>?> {
+        val localVariableConfig = marketdataListMetricsV2ExchangeListingRequestConfig(exchangeId = exchangeId)
 
         return request<Unit, kotlin.collections.List<V1MetricInfo>>(
             localVariableConfig
@@ -579,12 +579,12 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
-     * To obtain the request config of the operation v2MetricsExchangeListingGet
+     * To obtain the request config of the operation marketdataListMetricsV2ExchangeListing
      *
      * @param exchangeId Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
      * @return RequestConfig
      */
-    fun v2MetricsExchangeListingGetRequestConfig(exchangeId: kotlin.String) : RequestConfig<Unit> {
+    fun marketdataListMetricsV2ExchangeListingRequestConfig(exchangeId: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -616,8 +616,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v2MetricsListingGet() : kotlin.collections.List<V1MetricInfo> {
-        val localVarResponse = v2MetricsListingGetWithHttpInfo()
+    fun marketdataListMetricsV2Listing() : kotlin.collections.List<V1MetricInfo> {
+        val localVarResponse = marketdataListMetricsV2ListingWithHttpInfo()
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1MetricInfo>
@@ -644,8 +644,8 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v2MetricsListingGetWithHttpInfo() : ApiResponse<kotlin.collections.List<V1MetricInfo>?> {
-        val localVariableConfig = v2MetricsListingGetRequestConfig()
+    fun marketdataListMetricsV2ListingWithHttpInfo() : ApiResponse<kotlin.collections.List<V1MetricInfo>?> {
+        val localVariableConfig = marketdataListMetricsV2ListingRequestConfig()
 
         return request<Unit, kotlin.collections.List<V1MetricInfo>>(
             localVariableConfig
@@ -653,11 +653,11 @@ open class MetricsV2Api(basePath: kotlin.String = defaultBasePath, client: Call.
     }
 
     /**
-     * To obtain the request config of the operation v2MetricsListingGet
+     * To obtain the request config of the operation marketdataListMetricsV2Listing
      *
      * @return RequestConfig
      */
-    fun v2MetricsListingGetRequestConfig() : RequestConfig<Unit> {
+    fun marketdataListMetricsV2ListingRequestConfig() : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

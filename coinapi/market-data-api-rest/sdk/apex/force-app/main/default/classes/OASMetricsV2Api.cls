@@ -38,7 +38,7 @@ public class OASMetricsV2Api {
      * @return List<Object>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<Object> v2MetricsAssetHistoryGet(Map<String, Object> params) {
+    public List<Object> marketdataListMetricsV2AssetHistory(Map<String, Object> params) {
         client.assertNotNull(params.get('metricId'), 'metricId');
         client.assertNotNull(params.get('assetId'), 'assetId');
         List<OAS.Param> query = new List<OAS.Param>();
@@ -72,7 +72,7 @@ public class OASMetricsV2Api {
      * @return List<OASV1MetricInfo>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1MetricInfo> v2MetricsAssetListingGet(Map<String, Object> params) {
+    public List<OASV1MetricInfo> marketdataListMetricsV2AssetListing(Map<String, Object> params) {
         client.assertNotNull(params.get('assetId'), 'assetId');
         List<OAS.Param> query = new List<OAS.Param>();
 
@@ -105,7 +105,7 @@ public class OASMetricsV2Api {
      * @return List<Object>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<Object> v2MetricsChainHistoryGet(Map<String, Object> params) {
+    public List<Object> marketdataListMetricsV2ChainHistory(Map<String, Object> params) {
         client.assertNotNull(params.get('metricId'), 'metricId');
         client.assertNotNull(params.get('chainId'), 'chainId');
         List<OAS.Param> query = new List<OAS.Param>();
@@ -139,7 +139,7 @@ public class OASMetricsV2Api {
      * @return List<OASV1MetricInfo>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1MetricInfo> v2MetricsChainListingGet(Map<String, Object> params) {
+    public List<OASV1MetricInfo> marketdataListMetricsV2ChainListing(Map<String, Object> params) {
         client.assertNotNull(params.get('chainId'), 'chainId');
         List<OAS.Param> query = new List<OAS.Param>();
 
@@ -172,7 +172,7 @@ public class OASMetricsV2Api {
      * @return List<Object>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<Object> v2MetricsExchangeHistoryGet(Map<String, Object> params) {
+    public List<Object> marketdataListMetricsV2ExchangeHistory(Map<String, Object> params) {
         client.assertNotNull(params.get('metricId'), 'metricId');
         client.assertNotNull(params.get('exchangeId'), 'exchangeId');
         List<OAS.Param> query = new List<OAS.Param>();
@@ -206,7 +206,7 @@ public class OASMetricsV2Api {
      * @return List<OASV1MetricInfo>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1MetricInfo> v2MetricsExchangeListingGet(Map<String, Object> params) {
+    public List<OASV1MetricInfo> marketdataListMetricsV2ExchangeListing(Map<String, Object> params) {
         client.assertNotNull(params.get('exchangeId'), 'exchangeId');
         List<OAS.Param> query = new List<OAS.Param>();
 
@@ -232,7 +232,7 @@ public class OASMetricsV2Api {
      * @return List<OASV1MetricInfo>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASV1MetricInfo> v2MetricsListingGet() {
+    public List<OASV1MetricInfo> marketdataListMetricsV2Listing() {
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 

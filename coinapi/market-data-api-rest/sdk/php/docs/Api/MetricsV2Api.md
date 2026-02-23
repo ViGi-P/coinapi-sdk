@@ -6,19 +6,19 @@ All URIs are relative to https://rest.coinapi.io, except if the operation define
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**v2MetricsAssetHistoryGet()**](MetricsV2Api.md#v2MetricsAssetHistoryGet) | **GET** /v2/metrics/asset/history | Historical metrics for the asset |
-| [**v2MetricsAssetListingGet()**](MetricsV2Api.md#v2MetricsAssetListingGet) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset |
-| [**v2MetricsChainHistoryGet()**](MetricsV2Api.md#v2MetricsChainHistoryGet) | **GET** /v2/metrics/chain/history | Historical metrics for the chain |
-| [**v2MetricsChainListingGet()**](MetricsV2Api.md#v2MetricsChainListingGet) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain |
-| [**v2MetricsExchangeHistoryGet()**](MetricsV2Api.md#v2MetricsExchangeHistoryGet) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange |
-| [**v2MetricsExchangeListingGet()**](MetricsV2Api.md#v2MetricsExchangeListingGet) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange |
-| [**v2MetricsListingGet()**](MetricsV2Api.md#v2MetricsListingGet) | **GET** /v2/metrics/listing | Listing of all supported metrics |
+| [**marketdataListMetricsV2AssetHistory()**](MetricsV2Api.md#marketdataListMetricsV2AssetHistory) | **GET** /v2/metrics/asset/history | Historical metrics for the asset |
+| [**marketdataListMetricsV2AssetListing()**](MetricsV2Api.md#marketdataListMetricsV2AssetListing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset |
+| [**marketdataListMetricsV2ChainHistory()**](MetricsV2Api.md#marketdataListMetricsV2ChainHistory) | **GET** /v2/metrics/chain/history | Historical metrics for the chain |
+| [**marketdataListMetricsV2ChainListing()**](MetricsV2Api.md#marketdataListMetricsV2ChainListing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain |
+| [**marketdataListMetricsV2ExchangeHistory()**](MetricsV2Api.md#marketdataListMetricsV2ExchangeHistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange |
+| [**marketdataListMetricsV2ExchangeListing()**](MetricsV2Api.md#marketdataListMetricsV2ExchangeListing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange |
+| [**marketdataListMetricsV2Listing()**](MetricsV2Api.md#marketdataListMetricsV2Listing) | **GET** /v2/metrics/listing | Listing of all supported metrics |
 
 
-## `v2MetricsAssetHistoryGet()`
+## `marketdataListMetricsV2AssetHistory()`
 
 ```php
-v2MetricsAssetHistoryGet($metric_id, $asset_id, $time_start, $time_end, $time_format, $period_id, $limit): object[]
+marketdataListMetricsV2AssetHistory($metric_id, $asset_id, $time_start, $time_end, $time_format, $period_id, $limit): object[]
 ```
 
 Historical metrics for the asset
@@ -56,10 +56,10 @@ $period_id = 'period_id_example'; // string | Identifier of requested timeseries
 $limit = 100; // int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 try {
-    $result = $apiInstance->v2MetricsAssetHistoryGet($metric_id, $asset_id, $time_start, $time_end, $time_format, $period_id, $limit);
+    $result = $apiInstance->marketdataListMetricsV2AssetHistory($metric_id, $asset_id, $time_start, $time_end, $time_format, $period_id, $limit);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MetricsV2Api->v2MetricsAssetHistoryGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MetricsV2Api->marketdataListMetricsV2AssetHistory: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -92,10 +92,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `v2MetricsAssetListingGet()`
+## `marketdataListMetricsV2AssetListing()`
 
 ```php
-v2MetricsAssetListingGet($asset_id): \OpenAPI\Client\Model\V1MetricInfo[]
+marketdataListMetricsV2AssetListing($asset_id): \OpenAPI\Client\Model\V1MetricInfo[]
 ```
 
 Listing of metrics available for specific asset
@@ -127,10 +127,10 @@ $apiInstance = new OpenAPI\Client\Api\MetricsV2Api(
 $asset_id = 'asset_id_example'; // string | Asset identifier (e.g., USDC, USDT)
 
 try {
-    $result = $apiInstance->v2MetricsAssetListingGet($asset_id);
+    $result = $apiInstance->marketdataListMetricsV2AssetListing($asset_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MetricsV2Api->v2MetricsAssetListingGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MetricsV2Api->marketdataListMetricsV2AssetListing: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -157,10 +157,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `v2MetricsChainHistoryGet()`
+## `marketdataListMetricsV2ChainHistory()`
 
 ```php
-v2MetricsChainHistoryGet($metric_id, $chain_id, $time_start, $time_end, $time_format, $period_id, $limit): object[]
+marketdataListMetricsV2ChainHistory($metric_id, $chain_id, $time_start, $time_end, $time_format, $period_id, $limit): object[]
 ```
 
 Historical metrics for the chain
@@ -198,10 +198,10 @@ $period_id = 'period_id_example'; // string | Identifier of requested timeseries
 $limit = 100; // int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 try {
-    $result = $apiInstance->v2MetricsChainHistoryGet($metric_id, $chain_id, $time_start, $time_end, $time_format, $period_id, $limit);
+    $result = $apiInstance->marketdataListMetricsV2ChainHistory($metric_id, $chain_id, $time_start, $time_end, $time_format, $period_id, $limit);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MetricsV2Api->v2MetricsChainHistoryGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MetricsV2Api->marketdataListMetricsV2ChainHistory: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -234,10 +234,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `v2MetricsChainListingGet()`
+## `marketdataListMetricsV2ChainListing()`
 
 ```php
-v2MetricsChainListingGet($chain_id): \OpenAPI\Client\Model\V1MetricInfo[]
+marketdataListMetricsV2ChainListing($chain_id): \OpenAPI\Client\Model\V1MetricInfo[]
 ```
 
 Listing of metrics available for specific chain
@@ -269,10 +269,10 @@ $apiInstance = new OpenAPI\Client\Api\MetricsV2Api(
 $chain_id = 'chain_id_example'; // string | Chain identifier (e.g., ETHEREUM, ARBITRUM)
 
 try {
-    $result = $apiInstance->v2MetricsChainListingGet($chain_id);
+    $result = $apiInstance->marketdataListMetricsV2ChainListing($chain_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MetricsV2Api->v2MetricsChainListingGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MetricsV2Api->marketdataListMetricsV2ChainListing: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -299,10 +299,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `v2MetricsExchangeHistoryGet()`
+## `marketdataListMetricsV2ExchangeHistory()`
 
 ```php
-v2MetricsExchangeHistoryGet($metric_id, $exchange_id, $time_start, $time_end, $time_format, $period_id, $limit): object[]
+marketdataListMetricsV2ExchangeHistory($metric_id, $exchange_id, $time_start, $time_end, $time_format, $period_id, $limit): object[]
 ```
 
 Historical metrics for the exchange
@@ -340,10 +340,10 @@ $period_id = 'period_id_example'; // string | Identifier of requested timeseries
 $limit = 100; // int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 try {
-    $result = $apiInstance->v2MetricsExchangeHistoryGet($metric_id, $exchange_id, $time_start, $time_end, $time_format, $period_id, $limit);
+    $result = $apiInstance->marketdataListMetricsV2ExchangeHistory($metric_id, $exchange_id, $time_start, $time_end, $time_format, $period_id, $limit);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MetricsV2Api->v2MetricsExchangeHistoryGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MetricsV2Api->marketdataListMetricsV2ExchangeHistory: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -376,10 +376,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `v2MetricsExchangeListingGet()`
+## `marketdataListMetricsV2ExchangeListing()`
 
 ```php
-v2MetricsExchangeListingGet($exchange_id): \OpenAPI\Client\Model\V1MetricInfo[]
+marketdataListMetricsV2ExchangeListing($exchange_id): \OpenAPI\Client\Model\V1MetricInfo[]
 ```
 
 Listing of metrics available for specific exchange
@@ -411,10 +411,10 @@ $apiInstance = new OpenAPI\Client\Api\MetricsV2Api(
 $exchange_id = 'exchange_id_example'; // string | Exchange identifier (e.g., BINANCE, UNISWAP-V3-ETHEREUM)
 
 try {
-    $result = $apiInstance->v2MetricsExchangeListingGet($exchange_id);
+    $result = $apiInstance->marketdataListMetricsV2ExchangeListing($exchange_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MetricsV2Api->v2MetricsExchangeListingGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MetricsV2Api->marketdataListMetricsV2ExchangeListing: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -441,10 +441,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `v2MetricsListingGet()`
+## `marketdataListMetricsV2Listing()`
 
 ```php
-v2MetricsListingGet(): \OpenAPI\Client\Model\V1MetricInfo[]
+marketdataListMetricsV2Listing(): \OpenAPI\Client\Model\V1MetricInfo[]
 ```
 
 Listing of all supported metrics
@@ -475,10 +475,10 @@ $apiInstance = new OpenAPI\Client\Api\MetricsV2Api(
 );
 
 try {
-    $result = $apiInstance->v2MetricsListingGet();
+    $result = $apiInstance->marketdataListMetricsV2Listing();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MetricsV2Api->v2MetricsListingGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MetricsV2Api->marketdataListMetricsV2Listing: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

@@ -92,7 +92,7 @@ public class Example {
 
 Historical data
 
-Get history transactions from specific symbol, returned in time ascending order.  :::warning The &#39;time_start&#39; and &#39;time_end&#39; parameters must be from the same day as this endpoint provides intraday data only for specific day. Please use the &#39;date&#39; parameter instead for querying data for a specific day without filter. :::
+Get history transactions from specific symbol, returned in time ascending order.              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
 
 ### Example
 ```java
@@ -122,8 +122,8 @@ public class Example {
     TradesApi apiInstance = new TradesApi(defaultClient);
     String symbolId = "symbolId_example"; // String | Symbol identifier for requested timeseries (from the Metadata -> Symbols)
     String date = "date_example"; // String | Date in ISO 8601, returned data is for the whole given day (required if 'time_start' is not provided)
-    String timeStart = "timeStart_example"; // String | Starting time in ISO 8601
-    String timeEnd = "timeEnd_example"; // String | Timeseries ending time in ISO 8601
+    String timeStart = "timeStart_example"; // String | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
+    String timeEnd = "timeEnd_example"; // String | Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
     Integer limit = 100; // Integer | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
     Boolean includeId = false; // Boolean | Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers.
     try {
@@ -146,8 +146,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **symbolId** | **String**| Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols) | |
 | **date** | **String**| Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) | [optional] |
-| **timeStart** | **String**| Starting time in ISO 8601 | [optional] |
-| **timeEnd** | **String**| Timeseries ending time in ISO 8601 | [optional] |
+| **timeStart** | **String**| Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) | [optional] |
+| **timeEnd** | **String**| Timeseries ending time in ISO 8601 (optional, supports cross-day queries) | [optional] |
 | **limit** | **Integer**| Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
 | **includeId** | **Boolean**| Information that additional exchange trade identifier should be included in the &#x60;id_trade&#x60; parameter of the trade if exchange providing identifiers. | [optional] [default to false] |
 

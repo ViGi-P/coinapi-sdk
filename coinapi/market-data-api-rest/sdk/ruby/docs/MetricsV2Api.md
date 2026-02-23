@@ -4,18 +4,18 @@ All URIs are relative to *https://rest.coinapi.io*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
-| [**v2_metrics_asset_history_get**](MetricsV2Api.md#v2_metrics_asset_history_get) | **GET** /v2/metrics/asset/history | Historical metrics for the asset |
-| [**v2_metrics_asset_listing_get**](MetricsV2Api.md#v2_metrics_asset_listing_get) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset |
-| [**v2_metrics_chain_history_get**](MetricsV2Api.md#v2_metrics_chain_history_get) | **GET** /v2/metrics/chain/history | Historical metrics for the chain |
-| [**v2_metrics_chain_listing_get**](MetricsV2Api.md#v2_metrics_chain_listing_get) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain |
-| [**v2_metrics_exchange_history_get**](MetricsV2Api.md#v2_metrics_exchange_history_get) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange |
-| [**v2_metrics_exchange_listing_get**](MetricsV2Api.md#v2_metrics_exchange_listing_get) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange |
-| [**v2_metrics_listing_get**](MetricsV2Api.md#v2_metrics_listing_get) | **GET** /v2/metrics/listing | Listing of all supported metrics |
+| [**marketdata_list_metrics_v2_asset_history**](MetricsV2Api.md#marketdata_list_metrics_v2_asset_history) | **GET** /v2/metrics/asset/history | Historical metrics for the asset |
+| [**marketdata_list_metrics_v2_asset_listing**](MetricsV2Api.md#marketdata_list_metrics_v2_asset_listing) | **GET** /v2/metrics/asset/listing | Listing of metrics available for specific asset |
+| [**marketdata_list_metrics_v2_chain_history**](MetricsV2Api.md#marketdata_list_metrics_v2_chain_history) | **GET** /v2/metrics/chain/history | Historical metrics for the chain |
+| [**marketdata_list_metrics_v2_chain_listing**](MetricsV2Api.md#marketdata_list_metrics_v2_chain_listing) | **GET** /v2/metrics/chain/listing | Listing of metrics available for specific chain |
+| [**marketdata_list_metrics_v2_exchange_history**](MetricsV2Api.md#marketdata_list_metrics_v2_exchange_history) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange |
+| [**marketdata_list_metrics_v2_exchange_listing**](MetricsV2Api.md#marketdata_list_metrics_v2_exchange_listing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange |
+| [**marketdata_list_metrics_v2_listing**](MetricsV2Api.md#marketdata_list_metrics_v2_listing) | **GET** /v2/metrics/listing | Listing of all supported metrics |
 
 
-## v2_metrics_asset_history_get
+## marketdata_list_metrics_v2_asset_history
 
-> Array&lt;Object&gt; v2_metrics_asset_history_get(metric_id, asset_id, opts)
+> Array&lt;Object&gt; marketdata_list_metrics_v2_asset_history(metric_id, asset_id, opts)
 
 Historical metrics for the asset
 
@@ -50,28 +50,28 @@ opts = {
 
 begin
   # Historical metrics for the asset
-  result = api_instance.v2_metrics_asset_history_get(metric_id, asset_id, opts)
+  result = api_instance.marketdata_list_metrics_v2_asset_history(metric_id, asset_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_asset_history_get: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_asset_history: #{e}"
 end
 ```
 
-#### Using the v2_metrics_asset_history_get_with_http_info variant
+#### Using the marketdata_list_metrics_v2_asset_history_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Array&lt;Object&gt;, Integer, Hash)> v2_metrics_asset_history_get_with_http_info(metric_id, asset_id, opts)
+> <Array(Array&lt;Object&gt;, Integer, Hash)> marketdata_list_metrics_v2_asset_history_with_http_info(metric_id, asset_id, opts)
 
 ```ruby
 begin
   # Historical metrics for the asset
-  data, status_code, headers = api_instance.v2_metrics_asset_history_get_with_http_info(metric_id, asset_id, opts)
+  data, status_code, headers = api_instance.marketdata_list_metrics_v2_asset_history_with_http_info(metric_id, asset_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Array&lt;Object&gt;
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_asset_history_get_with_http_info: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_asset_history_with_http_info: #{e}"
 end
 ```
 
@@ -101,9 +101,9 @@ end
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## v2_metrics_asset_listing_get
+## marketdata_list_metrics_v2_asset_listing
 
-> <Array<V1MetricInfo>> v2_metrics_asset_listing_get(asset_id)
+> <Array<V1MetricInfo>> marketdata_list_metrics_v2_asset_listing(asset_id)
 
 Listing of metrics available for specific asset
 
@@ -130,28 +130,28 @@ asset_id = 'asset_id_example' # String | Asset identifier (e.g., USDC, USDT)
 
 begin
   # Listing of metrics available for specific asset
-  result = api_instance.v2_metrics_asset_listing_get(asset_id)
+  result = api_instance.marketdata_list_metrics_v2_asset_listing(asset_id)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_asset_listing_get: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_asset_listing: #{e}"
 end
 ```
 
-#### Using the v2_metrics_asset_listing_get_with_http_info variant
+#### Using the marketdata_list_metrics_v2_asset_listing_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1MetricInfo>>, Integer, Hash)> v2_metrics_asset_listing_get_with_http_info(asset_id)
+> <Array(<Array<V1MetricInfo>>, Integer, Hash)> marketdata_list_metrics_v2_asset_listing_with_http_info(asset_id)
 
 ```ruby
 begin
   # Listing of metrics available for specific asset
-  data, status_code, headers = api_instance.v2_metrics_asset_listing_get_with_http_info(asset_id)
+  data, status_code, headers = api_instance.marketdata_list_metrics_v2_asset_listing_with_http_info(asset_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<V1MetricInfo>>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_asset_listing_get_with_http_info: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_asset_listing_with_http_info: #{e}"
 end
 ```
 
@@ -175,9 +175,9 @@ end
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## v2_metrics_chain_history_get
+## marketdata_list_metrics_v2_chain_history
 
-> Array&lt;Object&gt; v2_metrics_chain_history_get(metric_id, chain_id, opts)
+> Array&lt;Object&gt; marketdata_list_metrics_v2_chain_history(metric_id, chain_id, opts)
 
 Historical metrics for the chain
 
@@ -212,28 +212,28 @@ opts = {
 
 begin
   # Historical metrics for the chain
-  result = api_instance.v2_metrics_chain_history_get(metric_id, chain_id, opts)
+  result = api_instance.marketdata_list_metrics_v2_chain_history(metric_id, chain_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_chain_history_get: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_chain_history: #{e}"
 end
 ```
 
-#### Using the v2_metrics_chain_history_get_with_http_info variant
+#### Using the marketdata_list_metrics_v2_chain_history_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Array&lt;Object&gt;, Integer, Hash)> v2_metrics_chain_history_get_with_http_info(metric_id, chain_id, opts)
+> <Array(Array&lt;Object&gt;, Integer, Hash)> marketdata_list_metrics_v2_chain_history_with_http_info(metric_id, chain_id, opts)
 
 ```ruby
 begin
   # Historical metrics for the chain
-  data, status_code, headers = api_instance.v2_metrics_chain_history_get_with_http_info(metric_id, chain_id, opts)
+  data, status_code, headers = api_instance.marketdata_list_metrics_v2_chain_history_with_http_info(metric_id, chain_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Array&lt;Object&gt;
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_chain_history_get_with_http_info: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_chain_history_with_http_info: #{e}"
 end
 ```
 
@@ -263,9 +263,9 @@ end
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## v2_metrics_chain_listing_get
+## marketdata_list_metrics_v2_chain_listing
 
-> <Array<V1MetricInfo>> v2_metrics_chain_listing_get(chain_id)
+> <Array<V1MetricInfo>> marketdata_list_metrics_v2_chain_listing(chain_id)
 
 Listing of metrics available for specific chain
 
@@ -292,28 +292,28 @@ chain_id = 'chain_id_example' # String | Chain identifier (e.g., ETHEREUM, ARBIT
 
 begin
   # Listing of metrics available for specific chain
-  result = api_instance.v2_metrics_chain_listing_get(chain_id)
+  result = api_instance.marketdata_list_metrics_v2_chain_listing(chain_id)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_chain_listing_get: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_chain_listing: #{e}"
 end
 ```
 
-#### Using the v2_metrics_chain_listing_get_with_http_info variant
+#### Using the marketdata_list_metrics_v2_chain_listing_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1MetricInfo>>, Integer, Hash)> v2_metrics_chain_listing_get_with_http_info(chain_id)
+> <Array(<Array<V1MetricInfo>>, Integer, Hash)> marketdata_list_metrics_v2_chain_listing_with_http_info(chain_id)
 
 ```ruby
 begin
   # Listing of metrics available for specific chain
-  data, status_code, headers = api_instance.v2_metrics_chain_listing_get_with_http_info(chain_id)
+  data, status_code, headers = api_instance.marketdata_list_metrics_v2_chain_listing_with_http_info(chain_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<V1MetricInfo>>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_chain_listing_get_with_http_info: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_chain_listing_with_http_info: #{e}"
 end
 ```
 
@@ -337,9 +337,9 @@ end
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## v2_metrics_exchange_history_get
+## marketdata_list_metrics_v2_exchange_history
 
-> Array&lt;Object&gt; v2_metrics_exchange_history_get(metric_id, exchange_id, opts)
+> Array&lt;Object&gt; marketdata_list_metrics_v2_exchange_history(metric_id, exchange_id, opts)
 
 Historical metrics for the exchange
 
@@ -374,28 +374,28 @@ opts = {
 
 begin
   # Historical metrics for the exchange
-  result = api_instance.v2_metrics_exchange_history_get(metric_id, exchange_id, opts)
+  result = api_instance.marketdata_list_metrics_v2_exchange_history(metric_id, exchange_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_exchange_history_get: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_exchange_history: #{e}"
 end
 ```
 
-#### Using the v2_metrics_exchange_history_get_with_http_info variant
+#### Using the marketdata_list_metrics_v2_exchange_history_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(Array&lt;Object&gt;, Integer, Hash)> v2_metrics_exchange_history_get_with_http_info(metric_id, exchange_id, opts)
+> <Array(Array&lt;Object&gt;, Integer, Hash)> marketdata_list_metrics_v2_exchange_history_with_http_info(metric_id, exchange_id, opts)
 
 ```ruby
 begin
   # Historical metrics for the exchange
-  data, status_code, headers = api_instance.v2_metrics_exchange_history_get_with_http_info(metric_id, exchange_id, opts)
+  data, status_code, headers = api_instance.marketdata_list_metrics_v2_exchange_history_with_http_info(metric_id, exchange_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => Array&lt;Object&gt;
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_exchange_history_get_with_http_info: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_exchange_history_with_http_info: #{e}"
 end
 ```
 
@@ -425,9 +425,9 @@ end
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## v2_metrics_exchange_listing_get
+## marketdata_list_metrics_v2_exchange_listing
 
-> <Array<V1MetricInfo>> v2_metrics_exchange_listing_get(exchange_id)
+> <Array<V1MetricInfo>> marketdata_list_metrics_v2_exchange_listing(exchange_id)
 
 Listing of metrics available for specific exchange
 
@@ -454,28 +454,28 @@ exchange_id = 'exchange_id_example' # String | Exchange identifier (e.g., BINANC
 
 begin
   # Listing of metrics available for specific exchange
-  result = api_instance.v2_metrics_exchange_listing_get(exchange_id)
+  result = api_instance.marketdata_list_metrics_v2_exchange_listing(exchange_id)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_exchange_listing_get: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_exchange_listing: #{e}"
 end
 ```
 
-#### Using the v2_metrics_exchange_listing_get_with_http_info variant
+#### Using the marketdata_list_metrics_v2_exchange_listing_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1MetricInfo>>, Integer, Hash)> v2_metrics_exchange_listing_get_with_http_info(exchange_id)
+> <Array(<Array<V1MetricInfo>>, Integer, Hash)> marketdata_list_metrics_v2_exchange_listing_with_http_info(exchange_id)
 
 ```ruby
 begin
   # Listing of metrics available for specific exchange
-  data, status_code, headers = api_instance.v2_metrics_exchange_listing_get_with_http_info(exchange_id)
+  data, status_code, headers = api_instance.marketdata_list_metrics_v2_exchange_listing_with_http_info(exchange_id)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<V1MetricInfo>>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_exchange_listing_get_with_http_info: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_exchange_listing_with_http_info: #{e}"
 end
 ```
 
@@ -499,9 +499,9 @@ end
 - **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
-## v2_metrics_listing_get
+## marketdata_list_metrics_v2_listing
 
-> <Array<V1MetricInfo>> v2_metrics_listing_get
+> <Array<V1MetricInfo>> marketdata_list_metrics_v2_listing
 
 Listing of all supported metrics
 
@@ -527,28 +527,28 @@ api_instance = OpenapiClient::MetricsV2Api.new
 
 begin
   # Listing of all supported metrics
-  result = api_instance.v2_metrics_listing_get
+  result = api_instance.marketdata_list_metrics_v2_listing
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_listing_get: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_listing: #{e}"
 end
 ```
 
-#### Using the v2_metrics_listing_get_with_http_info variant
+#### Using the marketdata_list_metrics_v2_listing_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<V1MetricInfo>>, Integer, Hash)> v2_metrics_listing_get_with_http_info
+> <Array(<Array<V1MetricInfo>>, Integer, Hash)> marketdata_list_metrics_v2_listing_with_http_info
 
 ```ruby
 begin
   # Listing of all supported metrics
-  data, status_code, headers = api_instance.v2_metrics_listing_get_with_http_info
+  data, status_code, headers = api_instance.marketdata_list_metrics_v2_listing_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<V1MetricInfo>>
 rescue OpenapiClient::ApiError => e
-  puts "Error when calling MetricsV2Api->v2_metrics_listing_get_with_http_info: #{e}"
+  puts "Error when calling MetricsV2Api->marketdata_list_metrics_v2_listing_with_http_info: #{e}"
 end
 ```
 

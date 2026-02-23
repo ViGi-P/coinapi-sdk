@@ -413,19 +413,19 @@ type ApiV1QuotesSymbolIdHistoryGetRequest struct {
 	limit *int32
 }
 
-// Date in ISO 8601, returned data is for the whole given day (preferred method, required if &#39;time_start&#39; is not provided)
+// Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided)
 func (r ApiV1QuotesSymbolIdHistoryGetRequest) Date(date string) ApiV1QuotesSymbolIdHistoryGetRequest {
 	r.date = &date
 	return r
 }
 
-// Starting time in ISO 8601
+// Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
 func (r ApiV1QuotesSymbolIdHistoryGetRequest) TimeStart(timeStart string) ApiV1QuotesSymbolIdHistoryGetRequest {
 	r.timeStart = &timeStart
 	return r
 }
 
-// Timeseries ending time in ISO 8601
+// Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
 func (r ApiV1QuotesSymbolIdHistoryGetRequest) TimeEnd(timeEnd string) ApiV1QuotesSymbolIdHistoryGetRequest {
 	r.timeEnd = &timeEnd
 	return r
@@ -445,10 +445,12 @@ func (r ApiV1QuotesSymbolIdHistoryGetRequest) Execute() ([]V1Quote, *http.Respon
 V1QuotesSymbolIdHistoryGet Historical data
 
 Get historical quote updates within requested time range, returned in time ascending order.
-
-:::warning
-The 'time_start' and 'time_end' parameters must be from the same day as this endpoint provides intraday data only for specific day.
-Please use the 'date' parameter instead for querying data for a specific day without filter.
+            
+This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
+Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.
+            
+:::tip
+For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'.
 :::
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
