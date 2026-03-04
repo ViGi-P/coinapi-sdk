@@ -57,7 +57,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for IEX admin information, combining all symbol-based admin message types
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-03T06:05:40.568354310Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-04T06:05:45.192800583Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class AdminAdminMessageModel {
   public static final String SERIALIZED_NAME_TRADING_STATUS = "trading_status";
   @SerializedName(SERIALIZED_NAME_TRADING_STATUS)
