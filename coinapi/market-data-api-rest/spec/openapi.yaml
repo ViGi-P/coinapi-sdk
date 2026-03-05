@@ -893,7 +893,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-03-04T06:03:34.8095277Z",
+  "time": "2026-03-05T06:03:27.2177846Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -904,7 +904,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-03-04T06:03:34.8095277Z",
+  "time": "2026-03-05T06:03:27.2177846Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -915,7 +915,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-03-04T06:03:34.8095277Z",
+  "time": "2026-03-05T06:03:27.2177846Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -926,7 +926,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-03-04T06:03:34.8095277Z",
+  "time": "2026-03-05T06:03:27.2177846Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -1971,7 +1971,7 @@ paths:
       tags:
         - MetricsV1
       summary: Listing of all supported exchange metrics
-      description: Get data metrics for exchange.
+      description: "Get data metrics for exchange. Returns both exchange-level and symbol-level metrics.\nFor exchange-level metrics, the `symbol_id` field will be null.\nFor symbol-level metrics, the `symbol_id` field contains the CoinAPI symbol identifier."
       parameters:
         - name: metric_id
           in: query
@@ -2451,7 +2451,7 @@ paths:
       tags:
         - MetricsV1
       summary: Listing of all supported metrics for symbol
-      description: Get data metrics for symbol.
+      description: "Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated).\nThe `symbol_id` field is always populated with the CoinAPI symbol identifier."
       parameters:
         - name: metric_id
           in: query
@@ -8096,11 +8096,11 @@ components:
           nullable: true
         symbol_id:
           type: string
-          description: Gets or sets the symbol ID.
+          description: The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
           nullable: true
         symbol_id_external:
           type: string
-          description: Gets or sets the symbol ID from the exchange.
+          description: The exchange-native symbol identifier. Null for exchange-level metrics.
           nullable: true
         exchange_id:
           type: string
