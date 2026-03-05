@@ -7,7 +7,6 @@ composer.json
 docs/Api/IndexesApi.md
 docs/Api/MetadataApi.md
 docs/Api/PeriodsApi.md
-docs/Model/IndexesIndexDefinitionInputData.md
 docs/Model/IndexesIndexDefinitionSnapshotEntry.md
 docs/Model/IndexesIndexIdentifier.md
 docs/Model/IndexesIndexMultiAssetWeight.md
@@ -24,7 +23,6 @@ lib/ApiException.php
 lib/Configuration.php
 lib/FormDataProcessor.php
 lib/HeaderSelector.php
-lib/Model/IndexesIndexDefinitionInputData.php
 lib/Model/IndexesIndexDefinitionSnapshotEntry.php
 lib/Model/IndexesIndexIdentifier.php
 lib/Model/IndexesIndexMultiAssetWeight.php
@@ -39,7 +37,6 @@ phpunit.xml.dist
 test/Api/IndexesApiTest.php
 test/Api/MetadataApiTest.php
 test/Api/PeriodsApiTest.php
-test/Model/IndexesIndexDefinitionInputDataTest.php
 test/Model/IndexesIndexDefinitionSnapshotEntryTest.php
 test/Model/IndexesIndexIdentifierTest.php
 test/Model/IndexesIndexMultiAssetWeightTest.php

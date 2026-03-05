@@ -4,7 +4,6 @@
 .travis.yml
 README.md
 docs/IndexesApi.md
-docs/IndexesIndexDefinitionInputData.md
 docs/IndexesIndexDefinitionSnapshotEntry.md
 docs/IndexesIndexIdentifier.md
 docs/IndexesIndexMultiAssetWeight.md
@@ -23,7 +22,6 @@ src/api/IndexesApi.js
 src/api/MetadataApi.js
 src/api/PeriodsApi.js
 src/index.js
-src/model/IndexesIndexDefinitionInputData.js
 src/model/IndexesIndexDefinitionSnapshotEntry.js
 src/model/IndexesIndexIdentifier.js
 src/model/IndexesIndexMultiAssetWeight.js
@@ -35,7 +33,6 @@ src/model/MetadataTimeseriesPeriod.js
 test/api/IndexesApi.spec.js
 test/api/MetadataApi.spec.js
 test/api/PeriodsApi.spec.js
-test/model/IndexesIndexDefinitionInputData.spec.js
 test/model/IndexesIndexDefinitionSnapshotEntry.spec.js
 test/model/IndexesIndexIdentifier.spec.js
 test/model/IndexesIndexMultiAssetWeight.spec.js

@@ -6,7 +6,6 @@ api/indexesApi.ts
 api/metadataApi.ts
 api/periodsApi.ts
 git_push.sh
-model/indexesIndexDefinitionInputData.ts
 model/indexesIndexDefinitionSnapshotEntry.ts
 model/indexesIndexIdentifier.ts
 model/indexesIndexMultiAssetWeight.ts

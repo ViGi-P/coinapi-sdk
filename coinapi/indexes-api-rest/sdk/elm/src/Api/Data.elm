@@ -15,8 +15,7 @@
 
 
 module Api.Data exposing
-    ( IndexesIndexDefinitionInputData
-    , IndexesIndexDefinitionSnapshotEntry
+    ( IndexesIndexDefinitionSnapshotEntry
     , IndexesIndexIdentifier
     , IndexesIndexMultiAssetWeight
     , IndexesIndexTimeseriesItem
@@ -24,7 +23,6 @@ module Api.Data exposing
     , IndexesIndexValueComponent
     , MetadataExchange
     , MetadataTimeseriesPeriod
-    , encodeIndexesIndexDefinitionInputData
     , encodeIndexesIndexDefinitionSnapshotEntry
     , encodeIndexesIndexIdentifier
     , encodeIndexesIndexMultiAssetWeight
@@ -33,7 +31,6 @@ module Api.Data exposing
     , encodeIndexesIndexValueComponent
     , encodeMetadataExchange
     , encodeMetadataTimeseriesPeriod
-    , indexesIndexDefinitionInputDataDecoder
     , indexesIndexDefinitionSnapshotEntryDecoder
     , indexesIndexIdentifierDecoder
     , indexesIndexMultiAssetWeightDecoder
@@ -52,19 +49,6 @@ import Json.Encode
 
 
 -- MODEL
-
-
-type alias IndexesIndexDefinitionInputData =
-    { exchangeId : Maybe String
-    , exchangeSymbolId : Maybe String
-    , baseAssetId : Maybe String
-    , quoteAssetId : Maybe String
-    , beginDate : Maybe Posix
-    , endDate : Maybe Posix
-    , status : Maybe String
-    , statusInfo : Maybe String
-    , lastModificationTime : Maybe Posix
-    }
 
 
 type alias IndexesIndexDefinitionSnapshotEntry =
@@ -138,34 +122,6 @@ type alias MetadataTimeseriesPeriod =
 
 
 -- ENCODER
-
-
-encodeIndexesIndexDefinitionInputData : IndexesIndexDefinitionInputData -> Json.Encode.Value
-encodeIndexesIndexDefinitionInputData =
-    encodeObject << encodeIndexesIndexDefinitionInputDataPairs
-
-
-encodeIndexesIndexDefinitionInputDataWithTag : ( String, String ) -> IndexesIndexDefinitionInputData -> Json.Encode.Value
-encodeIndexesIndexDefinitionInputDataWithTag (tagField, tag) model =
-    encodeObject (encodeIndexesIndexDefinitionInputDataPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeIndexesIndexDefinitionInputDataPairs : IndexesIndexDefinitionInputData -> List EncodedField
-encodeIndexesIndexDefinitionInputDataPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "exchangeId" Json.Encode.string model.exchangeId
-            , maybeEncodeNullable "exchangeSymbolId" Json.Encode.string model.exchangeSymbolId
-            , maybeEncodeNullable "baseAssetId" Json.Encode.string model.baseAssetId
-            , maybeEncodeNullable "quoteAssetId" Json.Encode.string model.quoteAssetId
-            , maybeEncodeNullable "beginDate" Api.Time.encodeDateTime model.beginDate
-            , maybeEncodeNullable "endDate" Api.Time.encodeDateTime model.endDate
-            , maybeEncodeNullable "status" Json.Encode.string model.status
-            , maybeEncodeNullable "statusInfo" Json.Encode.string model.statusInfo
-            , maybeEncode "lastModificationTime" Api.Time.encodeDateTime model.lastModificationTime
-            ]
-    in
-    pairs
 
 
 encodeIndexesIndexDefinitionSnapshotEntry : IndexesIndexDefinitionSnapshotEntry -> Json.Encode.Value
@@ -351,20 +307,6 @@ encodeMetadataTimeseriesPeriodPairs model =
 
 
 -- DECODER
-
-
-indexesIndexDefinitionInputDataDecoder : Json.Decode.Decoder IndexesIndexDefinitionInputData
-indexesIndexDefinitionInputDataDecoder =
-    Json.Decode.succeed IndexesIndexDefinitionInputData
-        |> maybeDecodeNullable "exchangeId" Json.Decode.string Nothing
-        |> maybeDecodeNullable "exchangeSymbolId" Json.Decode.string Nothing
-        |> maybeDecodeNullable "baseAssetId" Json.Decode.string Nothing
-        |> maybeDecodeNullable "quoteAssetId" Json.Decode.string Nothing
-        |> maybeDecodeNullable "beginDate" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "endDate" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "status" Json.Decode.string Nothing
-        |> maybeDecodeNullable "statusInfo" Json.Decode.string Nothing
-        |> maybeDecode "lastModificationTime" Api.Time.dateTimeDecoder Nothing
 
 
 indexesIndexDefinitionSnapshotEntryDecoder : Json.Decode.Decoder IndexesIndexDefinitionSnapshotEntry

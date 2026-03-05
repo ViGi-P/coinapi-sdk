@@ -46,13 +46,9 @@ OASIndexesApi api = new OASIndexesApi();
 OASClient client = api.getClient();
 
 
-Map<String, Object> params = new Map<String, Object>{
-    'indexDefinitionId' => 'null'
-};
-
 try {
     // cross your fingers
-    List<OASIndexesIndexDefinitionInputData> result = api.v1IndexdefInputDataIndexDefinitionIdAllGet(params);
+    List<OASIndexesIndexMultiAssetWeight> result = api.v1IndexdefMultiassetGet();
     System.debug(result);
 } catch (OAS.ApiException e) {
     // ...handle your exceptions
@@ -65,8 +61,6 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OASIndexesApi* | [**v1IndexdefInputDataIndexDefinitionIdAllGet**](OASIndexesApi.md#v1IndexdefInputDataIndexDefinitionIdAllGet) | **GET** /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition
-*OASIndexesApi* | [**v1IndexdefInputDataIndexDefinitionIdGet**](OASIndexesApi.md#v1IndexdefInputDataIndexDefinitionIdGet) | **GET** /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time
 *OASIndexesApi* | [**v1IndexdefMultiassetGet**](OASIndexesApi.md#v1IndexdefMultiassetGet) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
 *OASIndexesApi* | [**v1IndexdefMultiassetIndexIdGet**](OASIndexesApi.md#v1IndexdefMultiassetIndexIdGet) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
 *OASIndexesApi* | [**v1IndexesGet**](OASIndexesApi.md#v1IndexesGet) | **GET** /v1/indexes | List indexes
@@ -82,7 +76,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [OASIndexesIndexDefinitionInputData](OASIndexesIndexDefinitionInputData.md)
  - [OASIndexesIndexDefinitionSnapshotEnt](OASIndexesIndexDefinitionSnapshotEnt.md)
  - [OASIndexesIndexIdentifier](OASIndexesIndexIdentifier.md)
  - [OASIndexesIndexMultiAssetWeight](OASIndexesIndexMultiAssetWeight.md)

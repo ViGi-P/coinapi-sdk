@@ -48,26 +48,6 @@
   }
 
   describe('IndexesApi', function() {
-    describe('v1IndexdefInputDataIndexDefinitionIdAllGet', function() {
-      it('should call v1IndexdefInputDataIndexDefinitionIdAllGet successfully', function(done) {
-        //uncomment below and update the code to test v1IndexdefInputDataIndexDefinitionIdAllGet
-        //instance.v1IndexdefInputDataIndexDefinitionIdAllGet(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
-    describe('v1IndexdefInputDataIndexDefinitionIdGet', function() {
-      it('should call v1IndexdefInputDataIndexDefinitionIdGet successfully', function(done) {
-        //uncomment below and update the code to test v1IndexdefInputDataIndexDefinitionIdGet
-        //instance.v1IndexdefInputDataIndexDefinitionIdGet(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('v1IndexdefMultiassetGet', function() {
       it('should call v1IndexdefMultiassetGet successfully', function(done) {
         //uncomment below and update the code to test v1IndexdefMultiassetGet

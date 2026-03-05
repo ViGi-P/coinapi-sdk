@@ -3,7 +3,6 @@ Build.ps1
 README.md
 appveyor.yml
 docs/IndexesApi.md
-docs/IndexesIndexDefinitionInputData.md
 docs/IndexesIndexDefinitionSnapshotEntry.md
 docs/IndexesIndexIdentifier.md
 docs/IndexesIndexMultiAssetWeight.md
@@ -18,7 +17,6 @@ src/PSOpenAPITools/Api/IndexesApi.ps1
 src/PSOpenAPITools/Api/MetadataApi.ps1
 src/PSOpenAPITools/Api/PeriodsApi.ps1
 src/PSOpenAPITools/Client/Configuration.ps1
-src/PSOpenAPITools/Model/IndexesIndexDefinitionInputData.ps1
 src/PSOpenAPITools/Model/IndexesIndexDefinitionSnapshotEntry.ps1
 src/PSOpenAPITools/Model/IndexesIndexIdentifier.ps1
 src/PSOpenAPITools/Model/IndexesIndexMultiAssetWeight.ps1
@@ -37,7 +35,6 @@ src/PSOpenAPITools/en-US/about_PSOpenAPITools.help.txt
 tests/Api/IndexesApi.Tests.ps1
 tests/Api/MetadataApi.Tests.ps1
 tests/Api/PeriodsApi.Tests.ps1
-tests/Model/IndexesIndexDefinitionInputData.Tests.ps1
 tests/Model/IndexesIndexDefinitionSnapshotEntry.Tests.ps1
 tests/Model/IndexesIndexIdentifier.Tests.ps1
 tests/Model/IndexesIndexMultiAssetWeight.Tests.ps1

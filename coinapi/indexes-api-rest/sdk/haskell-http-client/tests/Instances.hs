@@ -113,22 +113,6 @@ arbitraryReducedMaybeValue n = do
 
 -- * Models
 
-instance Arbitrary IndexesIndexDefinitionInputData where
-  arbitrary = sized genIndexesIndexDefinitionInputData
-
-genIndexesIndexDefinitionInputData :: Int -> Gen IndexesIndexDefinitionInputData
-genIndexesIndexDefinitionInputData n =
-  IndexesIndexDefinitionInputData
-    <$> arbitraryReducedMaybe n -- indexesIndexDefinitionInputDataExchangeId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- indexesIndexDefinitionInputDataExchangeSymbolId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- indexesIndexDefinitionInputDataBaseAssetId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- indexesIndexDefinitionInputDataQuoteAssetId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- indexesIndexDefinitionInputDataBeginDate :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- indexesIndexDefinitionInputDataEndDate :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- indexesIndexDefinitionInputDataStatus :: Maybe Text
-    <*> arbitraryReducedMaybe n -- indexesIndexDefinitionInputDataStatusInfo :: Maybe Text
-    <*> arbitraryReducedMaybe n -- indexesIndexDefinitionInputDataLastModificationTime :: Maybe DateTime
-  
 instance Arbitrary IndexesIndexDefinitionSnapshotEntry where
   arbitrary = sized genIndexesIndexDefinitionSnapshotEntry
 

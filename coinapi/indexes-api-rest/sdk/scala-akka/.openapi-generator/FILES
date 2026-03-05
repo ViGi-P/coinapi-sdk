@@ -2,7 +2,6 @@
 README.md
 build.sbt
 docs/IndexesApi.md
-docs/IndexesIndexDefinitionInputData.md
 docs/IndexesIndexDefinitionSnapshotEntry.md
 docs/IndexesIndexIdentifier.md
 docs/IndexesIndexMultiAssetWeight.md
@@ -26,7 +25,6 @@ src/main/scala/org/openapitools/client/core/ApiSettings.scala
 src/main/scala/org/openapitools/client/core/Serializers.scala
 src/main/scala/org/openapitools/client/core/requests.scala
 src/main/scala/org/openapitools/client/model/Exchange.scala
-src/main/scala/org/openapitools/client/model/IndexDefinitionInputData.scala
 src/main/scala/org/openapitools/client/model/IndexDefinitionSnapshotEntry.scala
 src/main/scala/org/openapitools/client/model/IndexIdentifier.scala
 src/main/scala/org/openapitools/client/model/IndexMultiAssetWeight.scala

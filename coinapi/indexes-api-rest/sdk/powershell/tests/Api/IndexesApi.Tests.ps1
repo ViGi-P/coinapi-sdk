@@ -7,22 +7,6 @@
 #
 
 Describe -tag 'PSOpenAPITools' -name 'IndexesApi' {
-    Context 'Invoke-V1IndexdefInputDataIndexDefinitionIdAllGet' {
-        It 'Test Invoke-V1IndexdefInputDataIndexDefinitionIdAllGet' {
-            #$TestResult = Invoke-V1IndexdefInputDataIndexDefinitionIdAllGet -IndexDefinitionId "TEST_VALUE"
-            #$TestResult | Should -BeOfType TODO
-            #$TestResult.property | Should -Be 0
-        }
-    }
-
-    Context 'Invoke-V1IndexdefInputDataIndexDefinitionIdGet' {
-        It 'Test Invoke-V1IndexdefInputDataIndexDefinitionIdGet' {
-            #$TestResult = Invoke-V1IndexdefInputDataIndexDefinitionIdGet -IndexDefinitionId "TEST_VALUE" -Time "TEST_VALUE" -EnabledOnly "TEST_VALUE" -PendingOnly "TEST_VALUE" -FilterAssetId "TEST_VALUE" -WithStatusInfo "TEST_VALUE"
-            #$TestResult | Should -BeOfType TODO
-            #$TestResult.property | Should -Be 0
-        }
-    }
-
     Context 'Invoke-V1IndexdefMultiassetGet' {
         It 'Test Invoke-V1IndexdefMultiassetGet' {
             #$TestResult = Invoke-V1IndexdefMultiassetGet

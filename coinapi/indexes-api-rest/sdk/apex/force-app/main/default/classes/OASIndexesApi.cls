@@ -26,69 +26,6 @@ public class OASIndexesApi {
     }
 
     /**
-     * Returns all data inputs for a specific index definition
-     * 
-     * @param indexDefinitionId  (required)
-     * @return List<OASIndexesIndexDefinitionInputData>
-     * @throws OAS.ApiException if fails to make API call
-     */
-    public List<OASIndexesIndexDefinitionInputData> v1IndexdefInputDataIndexDefinitionIdAllGet(Map<String, Object> params) {
-        client.assertNotNull(params.get('indexDefinitionId'), 'indexDefinitionId');
-        List<OAS.Param> query = new List<OAS.Param>();
-        List<OAS.Param> form = new List<OAS.Param>();
-
-        return (List<OASIndexesIndexDefinitionInputData>) client.invoke(
-            'GET', '/v1/indexdef/input-data/{index_definition_id}/all', '',
-            query, form,
-            new Map<String, Object>{
-                'index_definition_id' => (String) params.get('indexDefinitionId')
-            },
-            new Map<String, Object>(),
-            new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
-            new List<String>(),
-            new List<String> { 'APIKey', 'JWT' },
-            List<OASIndexesIndexDefinitionInputData>.class
-        );
-    }
-    /**
-     * Returns data inputs for certain index definition and time
-     * 
-     * @param indexDefinitionId  (required)
-     * @param r_time  (optional)
-     * @param enabledOnly  (optional, default to false)
-     * @param pendingOnly  (optional, default to false)
-     * @param filterAssetId  (optional)
-     * @param withStatusInfo  (optional, default to false)
-     * @return List<OASIndexesIndexDefinitionSnapshotEnt>
-     * @throws OAS.ApiException if fails to make API call
-     */
-    public List<OASIndexesIndexDefinitionSnapshotEnt> v1IndexdefInputDataIndexDefinitionIdGet(Map<String, Object> params) {
-        client.assertNotNull(params.get('indexDefinitionId'), 'indexDefinitionId');
-        List<OAS.Param> query = new List<OAS.Param>();
-
-        // cast query params to verify their expected type
-        query.addAll(client.makeParam('time', (Datetime) params.get('r_time')));
-        query.addAll(client.makeParam('enabled_only', (Boolean) params.get('enabledOnly')));
-        query.addAll(client.makeParam('pending_only', (Boolean) params.get('pendingOnly')));
-        query.addAll(client.makeParam('filter_asset_id', (String) params.get('filterAssetId')));
-        query.addAll(client.makeParam('with_status_info', (Boolean) params.get('withStatusInfo')));
-
-        List<OAS.Param> form = new List<OAS.Param>();
-
-        return (List<OASIndexesIndexDefinitionSnapshotEnt>) client.invoke(
-            'GET', '/v1/indexdef/input-data/{index_definition_id}', '',
-            query, form,
-            new Map<String, Object>{
-                'index_definition_id' => (String) params.get('indexDefinitionId')
-            },
-            new Map<String, Object>(),
-            new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
-            new List<String>(),
-            new List<String> { 'APIKey', 'JWT' },
-            List<OASIndexesIndexDefinitionSnapshotEnt>.class
-        );
-    }
-    /**
      * Get all multi-asset weights
      * 
      * @return List<OASIndexesIndexMultiAssetWeight>

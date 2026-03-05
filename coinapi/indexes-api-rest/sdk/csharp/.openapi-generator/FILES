@@ -7,7 +7,6 @@ appveyor.yml
 docs/apis/IndexesApi.md
 docs/apis/MetadataApi.md
 docs/apis/PeriodsApi.md
-docs/models/IndexesIndexDefinitionInputData.md
 docs/models/IndexesIndexDefinitionSnapshotEntry.md
 docs/models/IndexesIndexIdentifier.md
 docs/models/IndexesIndexMultiAssetWeight.md
@@ -24,7 +23,6 @@ src/APIBricks.CoinAPI.IndexesAPI.REST.V1.Test/Api/DependencyInjectionTests.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1.Test/Api/IndexesApiTests.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1.Test/Api/MetadataApiTests.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1.Test/Api/PeriodsApiTests.cs
-src/APIBricks.CoinAPI.IndexesAPI.REST.V1.Test/Model/IndexesIndexDefinitionInputDataTests.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1.Test/Model/IndexesIndexDefinitionSnapshotEntryTests.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1.Test/Model/IndexesIndexIdentifierTests.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1.Test/Model/IndexesIndexMultiAssetWeightTests.cs
@@ -62,7 +60,6 @@ src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Client/TokenProvider`1.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Extensions/IHostBuilderExtensions.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Extensions/IHttpClientBuilderExtensions.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Extensions/IServiceCollectionExtensions.cs
-src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Model/IndexesIndexDefinitionInputData.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Model/IndexesIndexDefinitionSnapshotEntry.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Model/IndexesIndexIdentifier.cs
 src/APIBricks.CoinAPI.IndexesAPI.REST.V1/Model/IndexesIndexMultiAssetWeight.cs

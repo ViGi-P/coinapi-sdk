@@ -14,7 +14,6 @@ export 'package:openapi/src/api/indexes_api.dart';
 export 'package:openapi/src/api/metadata_api.dart';
 export 'package:openapi/src/api/periods_api.dart';
 
-export 'package:openapi/src/model/indexes_index_definition_input_data.dart';
 export 'package:openapi/src/model/indexes_index_definition_snapshot_entry.dart';
 export 'package:openapi/src/model/indexes_index_identifier.dart';
 export 'package:openapi/src/model/indexes_index_multi_asset_weight.dart';

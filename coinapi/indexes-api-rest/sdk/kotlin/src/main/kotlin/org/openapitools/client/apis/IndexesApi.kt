@@ -19,7 +19,6 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import org.openapitools.client.models.IndexesIndexDefinitionInputData
 import org.openapitools.client.models.IndexesIndexDefinitionSnapshotEntry
 import org.openapitools.client.models.IndexesIndexIdentifier
 import org.openapitools.client.models.IndexesIndexMultiAssetWeight
@@ -42,190 +41,12 @@ import org.openapitools.client.infrastructure.ResponseType
 import org.openapitools.client.infrastructure.Success
 import org.openapitools.client.infrastructure.toMultiValue
 
-class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
+open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = ApiClient.defaultClient) : ApiClient(basePath, client) {
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
             System.getProperties().getProperty(ApiClient.baseUrlKey, "https://rest-api.indexes.coinapi.io")
         }
-    }
-
-    /**
-     * GET /v1/indexdef/input-data/{index_definition_id}/all
-     * Returns all data inputs for a specific index definition
-     * 
-     * @param indexDefinitionId 
-     * @return kotlin.collections.List<IndexesIndexDefinitionInputData>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId: kotlin.String) : kotlin.collections.List<IndexesIndexDefinitionInputData> {
-        val localVarResponse = v1IndexdefInputDataIndexDefinitionIdAllGetWithHttpInfo(indexDefinitionId = indexDefinitionId)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IndexesIndexDefinitionInputData>
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /v1/indexdef/input-data/{index_definition_id}/all
-     * Returns all data inputs for a specific index definition
-     * 
-     * @param indexDefinitionId 
-     * @return ApiResponse<kotlin.collections.List<IndexesIndexDefinitionInputData>?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun v1IndexdefInputDataIndexDefinitionIdAllGetWithHttpInfo(indexDefinitionId: kotlin.String) : ApiResponse<kotlin.collections.List<IndexesIndexDefinitionInputData>?> {
-        val localVariableConfig = v1IndexdefInputDataIndexDefinitionIdAllGetRequestConfig(indexDefinitionId = indexDefinitionId)
-
-        return request<Unit, kotlin.collections.List<IndexesIndexDefinitionInputData>>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IndexdefInputDataIndexDefinitionIdAllGet
-     *
-     * @param indexDefinitionId 
-     * @return RequestConfig
-     */
-    fun v1IndexdefInputDataIndexDefinitionIdAllGetRequestConfig(indexDefinitionId: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "text/plain, application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/v1/indexdef/input-data/{index_definition_id}/all".replace("{"+"index_definition_id"+"}", encodeURIComponent(indexDefinitionId.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /v1/indexdef/input-data/{index_definition_id}
-     * Returns data inputs for certain index definition and time
-     * 
-     * @param indexDefinitionId 
-     * @param time  (optional)
-     * @param enabledOnly  (optional, default to false)
-     * @param pendingOnly  (optional, default to false)
-     * @param filterAssetId  (optional)
-     * @param withStatusInfo  (optional, default to false)
-     * @return kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId: kotlin.String, time: java.time.OffsetDateTime? = null, enabledOnly: kotlin.Boolean? = false, pendingOnly: kotlin.Boolean? = false, filterAssetId: kotlin.String? = null, withStatusInfo: kotlin.Boolean? = false) : kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry> {
-        val localVarResponse = v1IndexdefInputDataIndexDefinitionIdGetWithHttpInfo(indexDefinitionId = indexDefinitionId, time = time, enabledOnly = enabledOnly, pendingOnly = pendingOnly, filterAssetId = filterAssetId, withStatusInfo = withStatusInfo)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /v1/indexdef/input-data/{index_definition_id}
-     * Returns data inputs for certain index definition and time
-     * 
-     * @param indexDefinitionId 
-     * @param time  (optional)
-     * @param enabledOnly  (optional, default to false)
-     * @param pendingOnly  (optional, default to false)
-     * @param filterAssetId  (optional)
-     * @param withStatusInfo  (optional, default to false)
-     * @return ApiResponse<kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun v1IndexdefInputDataIndexDefinitionIdGetWithHttpInfo(indexDefinitionId: kotlin.String, time: java.time.OffsetDateTime?, enabledOnly: kotlin.Boolean?, pendingOnly: kotlin.Boolean?, filterAssetId: kotlin.String?, withStatusInfo: kotlin.Boolean?) : ApiResponse<kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>?> {
-        val localVariableConfig = v1IndexdefInputDataIndexDefinitionIdGetRequestConfig(indexDefinitionId = indexDefinitionId, time = time, enabledOnly = enabledOnly, pendingOnly = pendingOnly, filterAssetId = filterAssetId, withStatusInfo = withStatusInfo)
-
-        return request<Unit, kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IndexdefInputDataIndexDefinitionIdGet
-     *
-     * @param indexDefinitionId 
-     * @param time  (optional)
-     * @param enabledOnly  (optional, default to false)
-     * @param pendingOnly  (optional, default to false)
-     * @param filterAssetId  (optional)
-     * @param withStatusInfo  (optional, default to false)
-     * @return RequestConfig
-     */
-    fun v1IndexdefInputDataIndexDefinitionIdGetRequestConfig(indexDefinitionId: kotlin.String, time: java.time.OffsetDateTime?, enabledOnly: kotlin.Boolean?, pendingOnly: kotlin.Boolean?, filterAssetId: kotlin.String?, withStatusInfo: kotlin.Boolean?) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
-            .apply {
-                if (time != null) {
-                    put("time", listOf(parseDateToQueryString(time)))
-                }
-                if (enabledOnly != null) {
-                    put("enabled_only", listOf(enabledOnly.toString()))
-                }
-                if (pendingOnly != null) {
-                    put("pending_only", listOf(pendingOnly.toString()))
-                }
-                if (filterAssetId != null) {
-                    put("filter_asset_id", listOf(filterAssetId.toString()))
-                }
-                if (withStatusInfo != null) {
-                    put("with_status_info", listOf(withStatusInfo.toString()))
-                }
-            }
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "text/plain, application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/v1/indexdef/input-data/{index_definition_id}".replace("{"+"index_definition_id"+"}", encodeURIComponent(indexDefinitionId.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
     }
 
     /**

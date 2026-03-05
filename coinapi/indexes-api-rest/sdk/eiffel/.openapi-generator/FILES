@@ -3,7 +3,6 @@
 README.md
 api_client.ecf
 docs/INDEXES_API.md
-docs/INDEXES_INDEX_DEFINITION_INPUT_DATA.md
 docs/INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY.md
 docs/INDEXES_INDEX_IDENTIFIER.md
 docs/INDEXES_INDEX_MULTI_ASSET_WEIGHT.md
@@ -18,7 +17,6 @@ src/api/indexes_api.e
 src/api/metadata_api.e
 src/api/periods_api.e
 src/api_client.e
-src/domain/indexes_index_definition_input_data.e
 src/domain/indexes_index_definition_snapshot_entry.e
 src/domain/indexes_index_identifier.e
 src/domain/indexes_index_multi_asset_weight.e

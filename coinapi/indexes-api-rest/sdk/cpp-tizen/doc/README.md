@@ -42,10 +42,6 @@ All URIs are relative to https://rest-api.indexes.coinapi.iohttps://rest-api.ind
 ### IndexesManager
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-*v1IndexdefInputDataIndexDefinitionIdAllGetSync* | *GET* /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition.
-*v1IndexdefInputDataIndexDefinitionIdAllGetASync* | *GET* /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition.
-*v1IndexdefInputDataIndexDefinitionIdGetSync* | *GET* /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time.
-*v1IndexdefInputDataIndexDefinitionIdGetASync* | *GET* /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time.
 *v1IndexdefMultiassetGetSync* | *GET* /v1/indexdef/multiasset | Get all multi-asset weights.
 *v1IndexdefMultiassetGetASync* | *GET* /v1/indexdef/multiasset | Get all multi-asset weights.
 *v1IndexdefMultiassetIndexIdGetSync* | *GET* /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index.
@@ -83,7 +79,6 @@ Method | HTTP request | Description
 ## What are the Model files for the data structures/objects?
 Class | Description
 ------------- | -------------
- *Indexes.IndexDefinitionInputData* | 
  *Indexes.IndexDefinitionSnapshotEntry* | 
  *Indexes.IndexIdentifier* | Represents an index id
  *Indexes.IndexMultiAssetWeight* | 

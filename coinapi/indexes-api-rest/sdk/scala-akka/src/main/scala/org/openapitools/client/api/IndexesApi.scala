@@ -11,7 +11,6 @@
  */
 package org.openapitools.client.api
 
-import org.openapitools.client.model.IndexDefinitionInputData
 import org.openapitools.client.model.IndexDefinitionSnapshotEntry
 import org.openapitools.client.model.IndexIdentifier
 import org.openapitools.client.model.IndexMultiAssetWeight
@@ -28,50 +27,6 @@ object IndexesApi {
 }
 
 class IndexesApi(baseUrl: String) {
-
-  /**
-   * Expected answers:
-   *   code 200 : Seq[IndexDefinitionInputData] (successful operation)
-   * 
-   * Available security schemes:
-   *   APIKey (apiKey)
-   *   JWT (http)
-   * 
-   * @param indexDefinitionId 
-   */
-  def v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId: String)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[IndexDefinitionInputData]] =
-    ApiRequest[Seq[IndexDefinitionInputData]](ApiMethods.GET, baseUrl, "/v1/indexdef/input-data/{index_definition_id}/all", "application/json")
-      .withApiKey(apiKey, "Authorization", HEADER)
-      .withCredentials(bearerToken).withPathParam("index_definition_id", indexDefinitionId)
-      .withSuccessResponse[Seq[IndexDefinitionInputData]](200)
-      
-
-  /**
-   * Expected answers:
-   *   code 200 : Seq[IndexDefinitionSnapshotEntry] (successful operation)
-   * 
-   * Available security schemes:
-   *   APIKey (apiKey)
-   *   JWT (http)
-   * 
-   * @param indexDefinitionId 
-   * @param time 
-   * @param enabledOnly 
-   * @param pendingOnly 
-   * @param filterAssetId 
-   * @param withStatusInfo 
-   */
-  def v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId: String, time: Option[OffsetDateTime] = None, enabledOnly: Option[Boolean] = None, pendingOnly: Option[Boolean] = None, filterAssetId: Option[String] = None, withStatusInfo: Option[Boolean] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[IndexDefinitionSnapshotEntry]] =
-    ApiRequest[Seq[IndexDefinitionSnapshotEntry]](ApiMethods.GET, baseUrl, "/v1/indexdef/input-data/{index_definition_id}", "application/json")
-      .withApiKey(apiKey, "Authorization", HEADER)
-      .withCredentials(bearerToken).withQueryParam("time", time)
-      .withQueryParam("enabled_only", enabledOnly)
-      .withQueryParam("pending_only", pendingOnly)
-      .withQueryParam("filter_asset_id", filterAssetId)
-      .withQueryParam("with_status_info", withStatusInfo)
-      .withPathParam("index_definition_id", indexDefinitionId)
-      .withSuccessResponse[Seq[IndexDefinitionSnapshotEntry]](200)
-      
 
   /**
    * Expected answers:

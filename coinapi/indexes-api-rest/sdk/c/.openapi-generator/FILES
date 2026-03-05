@@ -12,7 +12,6 @@ api/PeriodsAPI.h
 docs/IndexesAPI.md
 docs/MetadataAPI.md
 docs/PeriodsAPI.md
-docs/indexes_index_definition_input_data.md
 docs/indexes_index_definition_snapshot_entry.md
 docs/indexes_index_identifier.md
 docs/indexes_index_multi_asset_weight.md
@@ -30,8 +29,6 @@ include/keyValuePair.h
 include/list.h
 libcurl.licence
 model/any_type.h
-model/indexes_index_definition_input_data.c
-model/indexes_index_definition_input_data.h
 model/indexes_index_definition_snapshot_entry.c
 model/indexes_index_definition_snapshot_entry.h
 model/indexes_index_identifier.c
@@ -55,7 +52,6 @@ src/apiKey.c
 src/binary.c
 src/list.c
 uncrustify-rules.cfg
-unit-test/test_indexes_index_definition_input_data.c
 unit-test/test_indexes_index_definition_snapshot_entry.c
 unit-test/test_indexes_index_identifier.c
 unit-test/test_indexes_index_multi_asset_weight.c

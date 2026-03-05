@@ -31,7 +31,6 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
-    "IndexesIndexDefinitionInputData",
     "IndexesIndexDefinitionSnapshotEntry",
     "IndexesIndexIdentifier",
     "IndexesIndexMultiAssetWeight",
@@ -59,7 +58,6 @@ from api_bricks_coinapi_indexes_api_rest.exceptions import ApiAttributeError as 
 from api_bricks_coinapi_indexes_api_rest.exceptions import ApiException as ApiException
 
 # import models into sdk package
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_definition_input_data import IndexesIndexDefinitionInputData as IndexesIndexDefinitionInputData
 from api_bricks_coinapi_indexes_api_rest.models.indexes_index_definition_snapshot_entry import IndexesIndexDefinitionSnapshotEntry as IndexesIndexDefinitionSnapshotEntry
 from api_bricks_coinapi_indexes_api_rest.models.indexes_index_identifier import IndexesIndexIdentifier as IndexesIndexIdentifier
 from api_bricks_coinapi_indexes_api_rest.models.indexes_index_multi_asset_weight import IndexesIndexMultiAssetWeight as IndexesIndexMultiAssetWeight
@@ -68,3 +66,4 @@ from api_bricks_coinapi_indexes_api_rest.models.indexes_index_value import Index
 from api_bricks_coinapi_indexes_api_rest.models.indexes_index_value_component import IndexesIndexValueComponent as IndexesIndexValueComponent
 from api_bricks_coinapi_indexes_api_rest.models.metadata_exchange import MetadataExchange as MetadataExchange
 from api_bricks_coinapi_indexes_api_rest.models.metadata_timeseries_period import MetadataTimeseriesPeriod as MetadataTimeseriesPeriod
+

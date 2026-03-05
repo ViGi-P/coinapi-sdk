@@ -5,33 +5,6 @@ context("Test IndexesApi")
 
 api_instance <- IndexesApi$new()
 
-test_that("V1IndexdefInputDataIndexDefinitionIdAllGet", {
-  # tests for V1IndexdefInputDataIndexDefinitionIdAllGet
-  # base path: https://rest-api.indexes.coinapi.io
-  # Returns all data inputs for a specific index definition
-  # @param index_definition_id character 
-  # @return [array[IndexesIndexDefinitionInputData]]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("V1IndexdefInputDataIndexDefinitionIdGet", {
-  # tests for V1IndexdefInputDataIndexDefinitionIdGet
-  # base path: https://rest-api.indexes.coinapi.io
-  # Returns data inputs for certain index definition and time
-  # @param index_definition_id character 
-  # @param time character  (optional)
-  # @param enabled_only character  (optional)
-  # @param pending_only character  (optional)
-  # @param filter_asset_id character  (optional)
-  # @param with_status_info character  (optional)
-  # @return [array[IndexesIndexDefinitionSnapshotEntry]]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
 test_that("V1IndexdefMultiassetGet", {
   # tests for V1IndexdefMultiassetGet
   # base path: https://rest-api.indexes.coinapi.io

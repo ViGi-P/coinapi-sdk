@@ -27,20 +27,6 @@ class TestIndexesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_v1_indexdef_input_data_index_definition_id_all_get(self) -> None:
-        """Test case for v1_indexdef_input_data_index_definition_id_all_get
-
-        Returns all data inputs for a specific index definition
-        """
-        pass
-
-    def test_v1_indexdef_input_data_index_definition_id_get(self) -> None:
-        """Test case for v1_indexdef_input_data_index_definition_id_get
-
-        Returns data inputs for certain index definition and time
-        """
-        pass
-
     def test_v1_indexdef_multiasset_get(self) -> None:
         """Test case for v1_indexdef_multiasset_get
 

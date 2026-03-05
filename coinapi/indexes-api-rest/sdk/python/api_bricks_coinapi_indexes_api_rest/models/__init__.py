@@ -13,9 +13,7 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
 # import models into model package
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_definition_input_data import IndexesIndexDefinitionInputData
 from api_bricks_coinapi_indexes_api_rest.models.indexes_index_definition_snapshot_entry import IndexesIndexDefinitionSnapshotEntry
 from api_bricks_coinapi_indexes_api_rest.models.indexes_index_identifier import IndexesIndexIdentifier
 from api_bricks_coinapi_indexes_api_rest.models.indexes_index_multi_asset_weight import IndexesIndexMultiAssetWeight
@@ -24,3 +22,4 @@ from api_bricks_coinapi_indexes_api_rest.models.indexes_index_value import Index
 from api_bricks_coinapi_indexes_api_rest.models.indexes_index_value_component import IndexesIndexValueComponent
 from api_bricks_coinapi_indexes_api_rest.models.metadata_exchange import MetadataExchange
 from api_bricks_coinapi_indexes_api_rest.models.metadata_timeseries_period import MetadataTimeseriesPeriod
+

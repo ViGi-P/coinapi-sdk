@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * IndexesIndexMultiAssetWeight
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-09-15T15:13:56.294402787Z[Etc/UTC]", comments = "Generator version: 7.14.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-05T06:05:53.938964141Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class IndexesIndexMultiAssetWeight {
   public static final String SERIALIZED_NAME_INDEX_ID = "indexId";
   @SerializedName(SERIALIZED_NAME_INDEX_ID)
@@ -200,7 +200,7 @@ public class IndexesIndexMultiAssetWeight {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!IndexesIndexMultiAssetWeight.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in IndexesIndexMultiAssetWeight is not found in the empty JSON string", IndexesIndexMultiAssetWeight.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in IndexesIndexMultiAssetWeight is not found in the empty JSON string", IndexesIndexMultiAssetWeight.openapiRequiredFields.toString()));
         }
       }
 
@@ -208,15 +208,15 @@ public class IndexesIndexMultiAssetWeight {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!IndexesIndexMultiAssetWeight.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `IndexesIndexMultiAssetWeight` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `IndexesIndexMultiAssetWeight` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("indexId") != null && !jsonObj.get("indexId").isJsonNull()) && !jsonObj.get("indexId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `indexId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("indexId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `indexId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("indexId").toString()));
       }
       if ((jsonObj.get("assetId") != null && !jsonObj.get("assetId").isJsonNull()) && !jsonObj.get("assetId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `assetId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetId").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `assetId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetId").toString()));
       }
   }
 

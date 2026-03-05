@@ -6,7 +6,6 @@ api/api.ts
 configuration.ts
 git_push.sh
 index.ts
-model/IndexesIndexDefinitionInputData.ts
 model/IndexesIndexDefinitionSnapshotEntry.ts
 model/IndexesIndexIdentifier.ts
 model/IndexesIndexMultiAssetWeight.ts

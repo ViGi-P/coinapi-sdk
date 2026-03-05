@@ -11,13 +11,11 @@
 
 import { Inject, Injectable, Optional }                      from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams,
-         HttpResponse, HttpEvent, HttpParameterCodec, HttpContext 
+         HttpResponse, HttpEvent, HttpContext 
         }       from '@angular/common/http';
-import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
+import { OpenApiHttpParams, QueryParamStyle } from '../query.params';
 
-// @ts-ignore
-import { IndexesIndexDefinitionInputData } from '../model/indexesIndexDefinitionInputData';
 // @ts-ignore
 import { IndexesIndexDefinitionSnapshotEntry } from '../model/indexesIndexDefinitionSnapshotEntry';
 // @ts-ignore
@@ -46,153 +44,11 @@ export class IndexesService extends BaseService {
     }
 
     /**
-     * Returns all data inputs for a specific index definition
-     * @param indexDefinitionId 
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<IndexesIndexDefinitionInputData>>;
-    public v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IndexesIndexDefinitionInputData>>>;
-    public v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IndexesIndexDefinitionInputData>>>;
-    public v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        if (indexDefinitionId === null || indexDefinitionId === undefined) {
-            throw new Error('Required parameter indexDefinitionId was null or undefined when calling v1IndexdefInputDataIndexDefinitionIdAllGet.');
-        }
-
-        let localVarHeaders = this.defaultHeaders;
-
-        // authentication (APIKey) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('APIKey', 'Authorization', localVarHeaders);
-
-        // authentication (JWT) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders, 'Bearer ');
-
-        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            'text/plain',
-            'application/json',
-            'text/json',
-            'application/x-msgpack'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
-
-        const localVarTransferCache: boolean = options?.transferCache ?? true;
-
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/v1/indexdef/input-data/${this.configuration.encodeParam({name: "indexDefinitionId", value: indexDefinitionId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/all`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<IndexesIndexDefinitionInputData>>('get', `${basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                responseType: <any>responseType_,
-                ...(withCredentials ? { withCredentials } : {}),
-                headers: localVarHeaders,
-                observe: observe,
-                transferCache: localVarTransferCache,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
-     * Returns data inputs for certain index definition and time
-     * @param indexDefinitionId 
-     * @param time 
-     * @param enabledOnly 
-     * @param pendingOnly 
-     * @param filterAssetId 
-     * @param withStatusInfo 
-     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
-     * @param reportProgress flag to report request and response progress.
-     */
-    public v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId: string, time?: string, enabledOnly?: boolean, pendingOnly?: boolean, filterAssetId?: string, withStatusInfo?: boolean, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<IndexesIndexDefinitionSnapshotEntry>>;
-    public v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId: string, time?: string, enabledOnly?: boolean, pendingOnly?: boolean, filterAssetId?: string, withStatusInfo?: boolean, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IndexesIndexDefinitionSnapshotEntry>>>;
-    public v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId: string, time?: string, enabledOnly?: boolean, pendingOnly?: boolean, filterAssetId?: string, withStatusInfo?: boolean, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IndexesIndexDefinitionSnapshotEntry>>>;
-    public v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId: string, time?: string, enabledOnly?: boolean, pendingOnly?: boolean, filterAssetId?: string, withStatusInfo?: boolean, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
-        if (indexDefinitionId === null || indexDefinitionId === undefined) {
-            throw new Error('Required parameter indexDefinitionId was null or undefined when calling v1IndexdefInputDataIndexDefinitionIdGet.');
-        }
-
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>time, 'time');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>enabledOnly, 'enabled_only');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>pendingOnly, 'pending_only');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>filterAssetId, 'filter_asset_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>withStatusInfo, 'with_status_info');
-
-        let localVarHeaders = this.defaultHeaders;
-
-        // authentication (APIKey) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('APIKey', 'Authorization', localVarHeaders);
-
-        // authentication (JWT) required
-        localVarHeaders = this.configuration.addCredentialToHeaders('JWT', 'Authorization', localVarHeaders, 'Bearer ');
-
-        const localVarHttpHeaderAcceptSelected: string | undefined = options?.httpHeaderAccept ?? this.configuration.selectHeaderAccept([
-            'text/plain',
-            'application/json',
-            'text/json',
-            'application/x-msgpack'
-        ]);
-        if (localVarHttpHeaderAcceptSelected !== undefined) {
-            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
-        }
-
-        const localVarHttpContext: HttpContext = options?.context ?? new HttpContext();
-
-        const localVarTransferCache: boolean = options?.transferCache ?? true;
-
-
-        let responseType_: 'text' | 'json' | 'blob' = 'json';
-        if (localVarHttpHeaderAcceptSelected) {
-            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
-                responseType_ = 'text';
-            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
-                responseType_ = 'json';
-            } else {
-                responseType_ = 'blob';
-            }
-        }
-
-        let localVarPath = `/v1/indexdef/input-data/${this.configuration.encodeParam({name: "indexDefinitionId", value: indexDefinitionId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
-        const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<IndexesIndexDefinitionSnapshotEntry>>('get', `${basePath}${localVarPath}`,
-            {
-                context: localVarHttpContext,
-                params: localVarQueryParameters,
-                responseType: <any>responseType_,
-                ...(withCredentials ? { withCredentials } : {}),
-                headers: localVarHeaders,
-                observe: observe,
-                transferCache: localVarTransferCache,
-                reportProgress: reportProgress
-            }
-        );
-    }
-
-    /**
      * Get all multi-asset weights
+     * @endpoint get /v1/indexdef/multiasset
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1IndexdefMultiassetGet(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<IndexesIndexMultiAssetWeight>>;
     public v1IndexdefMultiassetGet(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IndexesIndexMultiAssetWeight>>>;
@@ -242,7 +98,7 @@ export class IndexesService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -250,9 +106,11 @@ export class IndexesService extends BaseService {
 
     /**
      * Get multi-asset weights for specific index
+     * @endpoint get /v1/indexdef/multiasset/{index_id}
      * @param indexId 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1IndexdefMultiassetIndexIdGet(indexId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<IndexesIndexMultiAssetWeight>>;
     public v1IndexdefMultiassetIndexIdGet(indexId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IndexesIndexMultiAssetWeight>>>;
@@ -305,7 +163,7 @@ export class IndexesService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -313,8 +171,10 @@ export class IndexesService extends BaseService {
 
     /**
      * List indexes
+     * @endpoint get /v1/indexes
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1IndexesGet(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<IndexesIndexIdentifier>>;
     public v1IndexesGet(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IndexesIndexIdentifier>>>;
@@ -364,7 +224,7 @@ export class IndexesService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -372,9 +232,11 @@ export class IndexesService extends BaseService {
 
     /**
      * Current Index Values for index definition
+     * @endpoint get /v1/indexes/{index_definition_id}/currentSnapshot
      * @param indexDefinitionId 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<IndexesIndexDefinitionSnapshotEntry>>;
     public v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IndexesIndexDefinitionSnapshotEntry>>>;
@@ -427,7 +289,7 @@ export class IndexesService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -435,10 +297,12 @@ export class IndexesService extends BaseService {
 
     /**
      * Historical Index Values for index definition
+     * @endpoint get /v1/indexes/{index_definition_id}/historySnapshot
      * @param indexDefinitionId 
      * @param time 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId: string, time?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<IndexesIndexDefinitionSnapshotEntry>>;
     public v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId: string, time?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IndexesIndexDefinitionSnapshotEntry>>>;
@@ -448,9 +312,16 @@ export class IndexesService extends BaseService {
             throw new Error('Required parameter indexDefinitionId was null or undefined when calling v1IndexesIndexDefinitionIdHistorySnapshotGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>time, 'time');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time',
+            <any>time,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -491,12 +362,12 @@ export class IndexesService extends BaseService {
         return this.httpClient.request<Array<IndexesIndexDefinitionSnapshotEntry>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -504,9 +375,11 @@ export class IndexesService extends BaseService {
 
     /**
      * Current Index Value
+     * @endpoint get /v1/indexes/{index_id}/current
      * @param indexId 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1IndexesIndexIdCurrentGet(indexId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<IndexesIndexValue>;
     public v1IndexesIndexIdCurrentGet(indexId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<IndexesIndexValue>>;
@@ -559,7 +432,7 @@ export class IndexesService extends BaseService {
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -567,12 +440,14 @@ export class IndexesService extends BaseService {
 
     /**
      * Historical Index Value w/Composition
+     * @endpoint get /v1/indexes/{index_id}/history
      * @param indexId 
      * @param timeStart 
      * @param timeEnd 
      * @param limit 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1IndexesIndexIdHistoryGet(indexId: string, timeStart?: string, timeEnd?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<IndexesIndexValue>>;
     public v1IndexesIndexIdHistoryGet(indexId: string, timeStart?: string, timeEnd?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IndexesIndexValue>>>;
@@ -582,13 +457,34 @@ export class IndexesService extends BaseService {
             throw new Error('Required parameter indexId was null or undefined when calling v1IndexesIndexIdHistoryGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeStart, 'time_start');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeEnd, 'time_end');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>limit, 'limit');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_start',
+            <any>timeStart,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_end',
+            <any>timeEnd,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -629,12 +525,12 @@ export class IndexesService extends BaseService {
         return this.httpClient.request<Array<IndexesIndexValue>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );
@@ -642,6 +538,7 @@ export class IndexesService extends BaseService {
 
     /**
      * Timeseries Index Value
+     * @endpoint get /v1/indexes/{index_id}/timeseries
      * @param indexId 
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
      * @param timeStart Timeseries starting time in ISO 8601
@@ -649,6 +546,7 @@ export class IndexesService extends BaseService {
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
+     * @param options additional options
      */
     public v1IndexesIndexIdTimeseriesGet(indexId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<IndexesIndexTimeseriesItem>>;
     public v1IndexesIndexIdTimeseriesGet(indexId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IndexesIndexTimeseriesItem>>>;
@@ -667,15 +565,43 @@ export class IndexesService extends BaseService {
             throw new Error('Required parameter timeEnd was null or undefined when calling v1IndexesIndexIdTimeseriesGet.');
         }
 
-        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>periodId, 'period_id');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeStart, 'time_start');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>timeEnd, 'time_end');
-        localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-          <any>limit, 'limit');
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'period_id',
+            <any>periodId,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_start',
+            <any>timeStart,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'time_end',
+            <any>timeEnd,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -716,12 +642,12 @@ export class IndexesService extends BaseService {
         return this.httpClient.request<Array<IndexesIndexTimeseriesItem>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
-                params: localVarQueryParameters,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,
                 observe: observe,
-                transferCache: localVarTransferCache,
+                ...(localVarTransferCache !== undefined ? { transferCache: localVarTransferCache } : {}),
                 reportProgress: reportProgress
             }
         );

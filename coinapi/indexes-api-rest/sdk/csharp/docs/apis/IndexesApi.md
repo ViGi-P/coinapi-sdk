@@ -4,8 +4,6 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**V1IndexdefInputDataIndexDefinitionIdAllGet**](IndexesApi.md#v1indexdefinputdataindexdefinitionidallget) | **GET** /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition |
-| [**V1IndexdefInputDataIndexDefinitionIdGet**](IndexesApi.md#v1indexdefinputdataindexdefinitionidget) | **GET** /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time |
 | [**V1IndexdefMultiassetGet**](IndexesApi.md#v1indexdefmultiassetget) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights |
 | [**V1IndexdefMultiassetIndexIdGet**](IndexesApi.md#v1indexdefmultiassetindexidget) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index |
 | [**V1IndexesGet**](IndexesApi.md#v1indexesget) | **GET** /v1/indexes | List indexes |
@@ -14,79 +12,6 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 | [**V1IndexesIndexIdCurrentGet**](IndexesApi.md#v1indexesindexidcurrentget) | **GET** /v1/indexes/{index_id}/current | Current Index Value |
 | [**V1IndexesIndexIdHistoryGet**](IndexesApi.md#v1indexesindexidhistoryget) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition |
 | [**V1IndexesIndexIdTimeseriesGet**](IndexesApi.md#v1indexesindexidtimeseriesget) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value |
-
-<a id="v1indexdefinputdataindexdefinitionidallget"></a>
-# **V1IndexdefInputDataIndexDefinitionIdAllGet**
-> List&lt;IndexesIndexDefinitionInputData&gt; V1IndexdefInputDataIndexDefinitionIdAllGet (string indexDefinitionId)
-
-Returns all data inputs for a specific index definition
-
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **indexDefinitionId** | **string** |  |  |
-
-### Return type
-
-[**List&lt;IndexesIndexDefinitionInputData&gt;**](IndexesIndexDefinitionInputData.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-<a id="v1indexdefinputdataindexdefinitionidget"></a>
-# **V1IndexdefInputDataIndexDefinitionIdGet**
-> List&lt;IndexesIndexDefinitionSnapshotEntry&gt; V1IndexdefInputDataIndexDefinitionIdGet (string indexDefinitionId, DateTime time = null, bool enabledOnly = null, bool pendingOnly = null, string filterAssetId = null, bool withStatusInfo = null)
-
-Returns data inputs for certain index definition and time
-
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **indexDefinitionId** | **string** |  |  |
-| **time** | **DateTime** |  | [optional]  |
-| **enabledOnly** | **bool** |  | [optional] [default to false] |
-| **pendingOnly** | **bool** |  | [optional] [default to false] |
-| **filterAssetId** | **string** |  | [optional]  |
-| **withStatusInfo** | **bool** |  | [optional] [default to false] |
-
-### Return type
-
-[**List&lt;IndexesIndexDefinitionSnapshotEntry&gt;**](IndexesIndexDefinitionSnapshotEntry.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | successful operation |  -  |
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 <a id="v1indexdefmultiassetget"></a>
 # **V1IndexdefMultiassetGet**

@@ -4,8 +4,6 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1IndexdefInputDataIndexDefinitionIdAllGet**](IndexesApi.md#v1IndexdefInputDataIndexDefinitionIdAllGet) | **GET** /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition
-[**v1IndexdefInputDataIndexDefinitionIdGet**](IndexesApi.md#v1IndexdefInputDataIndexDefinitionIdGet) | **GET** /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time
 [**v1IndexdefMultiassetGet**](IndexesApi.md#v1IndexdefMultiassetGet) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
 [**v1IndexdefMultiassetIndexIdGet**](IndexesApi.md#v1IndexdefMultiassetIndexIdGet) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
 [**v1IndexesGet**](IndexesApi.md#v1IndexesGet) | **GET** /v1/indexes | List indexes
@@ -15,104 +13,6 @@ Method | HTTP request | Description
 [**v1IndexesIndexIdHistoryGet**](IndexesApi.md#v1IndexesIndexIdHistoryGet) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 [**v1IndexesIndexIdTimeseriesGet**](IndexesApi.md#v1IndexesIndexIdTimeseriesGet) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
 
-
-
-## v1IndexdefInputDataIndexDefinitionIdAllGet
-
-> List&lt;IndexesIndexDefinitionInputData&gt; v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId)
-
-Returns all data inputs for a specific index definition
-
-### Example
-
-```java
-// Import classes:
-//import org.openapitools.client.api.IndexesApi;
-
-IndexesApi apiInstance = new IndexesApi();
-String indexDefinitionId = null; // String | 
-try {
-    List<IndexesIndexDefinitionInputData> result = apiInstance.v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IndexesApi#v1IndexdefInputDataIndexDefinitionIdAllGet");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexDefinitionId** | **String**|  | [default to null]
-
-### Return type
-
-[**List&lt;IndexesIndexDefinitionInputData&gt;**](IndexesIndexDefinitionInputData.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-
-## v1IndexdefInputDataIndexDefinitionIdGet
-
-> List&lt;IndexesIndexDefinitionSnapshotEntry&gt; v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo)
-
-Returns data inputs for certain index definition and time
-
-### Example
-
-```java
-// Import classes:
-//import org.openapitools.client.api.IndexesApi;
-
-IndexesApi apiInstance = new IndexesApi();
-String indexDefinitionId = null; // String | 
-Date time = null; // Date | 
-Boolean enabledOnly = false; // Boolean | 
-Boolean pendingOnly = false; // Boolean | 
-String filterAssetId = null; // String | 
-Boolean withStatusInfo = false; // Boolean | 
-try {
-    List<IndexesIndexDefinitionSnapshotEntry> result = apiInstance.v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IndexesApi#v1IndexdefInputDataIndexDefinitionIdGet");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexDefinitionId** | **String**|  | [default to null]
- **time** | **Date**|  | [optional] [default to null]
- **enabledOnly** | **Boolean**|  | [optional] [default to false]
- **pendingOnly** | **Boolean**|  | [optional] [default to false]
- **filterAssetId** | **String**|  | [optional] [default to null]
- **withStatusInfo** | **Boolean**|  | [optional] [default to false]
-
-### Return type
-
-[**List&lt;IndexesIndexDefinitionSnapshotEntry&gt;**](IndexesIndexDefinitionSnapshotEntry.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
 ## v1IndexdefMultiassetGet

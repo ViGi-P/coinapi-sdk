@@ -3,7 +3,6 @@ README.md
 rebar.config
 src/openapi.app.src
 src/openapi_indexes_api.erl
-src/openapi_indexes_index_definition_input_data.erl
 src/openapi_indexes_index_definition_snapshot_entry.erl
 src/openapi_indexes_index_identifier.erl
 src/openapi_indexes_index_multi_asset_weight.erl

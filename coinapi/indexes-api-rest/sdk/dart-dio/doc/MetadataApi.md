@@ -32,7 +32,7 @@ final String exchangeId = exchangeId_example; // String | The ID of the exchange
 try {
     final response = api.apiMetadataExchangesExchangeIdGet(exchangeId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->apiMetadataExchangesExchangeIdGet: $e\n');
 }
 ```
@@ -79,7 +79,7 @@ final String filterExchangeId = filterExchangeId_example; // String | Comma or s
 try {
     final response = api.apiMetadataExchangesGet(filterExchangeId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MetadataApi->apiMetadataExchangesGet: $e\n');
 }
 ```
