@@ -103,8 +103,6 @@ All URIs are relative to **
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*IndexesApi* | [**v1IndexdefInputDataIndexDefinitionIdAllGet**](docs/IndexesApi.md#v1indexdefinputdataindexdefinitionidallget) | **GET** /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition
-*IndexesApi* | [**v1IndexdefInputDataIndexDefinitionIdGet**](docs/IndexesApi.md#v1indexdefinputdataindexdefinitionidget) | **GET** /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time
 *IndexesApi* | [**v1IndexdefMultiassetGet**](docs/IndexesApi.md#v1indexdefmultiassetget) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
 *IndexesApi* | [**v1IndexdefMultiassetIndexIdGet**](docs/IndexesApi.md#v1indexdefmultiassetindexidget) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
 *IndexesApi* | [**v1IndexesGet**](docs/IndexesApi.md#v1indexesget) | **GET** /v1/indexes | List indexes
@@ -120,7 +118,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [IndexesIndexDefinitionInputData](docs/IndexesIndexDefinitionInputData.md)
  - [IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
  - [IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
  - [IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)

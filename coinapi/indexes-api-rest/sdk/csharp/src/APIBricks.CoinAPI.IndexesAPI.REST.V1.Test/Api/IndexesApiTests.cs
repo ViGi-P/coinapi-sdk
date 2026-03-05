@@ -52,35 +52,6 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
         }
 
         /// <summary>
-        /// Test V1IndexdefInputDataIndexDefinitionIdAllGet
-        /// </summary>
-        [Fact (Skip = "not implemented")]
-        public async Task V1IndexdefInputDataIndexDefinitionIdAllGetAsyncTest()
-        {
-            string indexDefinitionId = default!;
-            var response = await _instance.V1IndexdefInputDataIndexDefinitionIdAllGetAsync(indexDefinitionId);
-            var model = response.Ok();
-            Assert.IsType<List<IndexesIndexDefinitionInputData>>(model);
-        }
-
-        /// <summary>
-        /// Test V1IndexdefInputDataIndexDefinitionIdGet
-        /// </summary>
-        [Fact (Skip = "not implemented")]
-        public async Task V1IndexdefInputDataIndexDefinitionIdGetAsyncTest()
-        {
-            string indexDefinitionId = default!;
-            Client.Option<DateTime> time = default!;
-            Client.Option<bool> enabledOnly = default!;
-            Client.Option<bool> pendingOnly = default!;
-            Client.Option<string> filterAssetId = default!;
-            Client.Option<bool> withStatusInfo = default!;
-            var response = await _instance.V1IndexdefInputDataIndexDefinitionIdGetAsync(indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo);
-            var model = response.Ok();
-            Assert.IsType<List<IndexesIndexDefinitionSnapshotEntry>>(model);
-        }
-
-        /// <summary>
         /// Test V1IndexdefMultiassetGet
         /// </summary>
         [Fact (Skip = "not implemented")]

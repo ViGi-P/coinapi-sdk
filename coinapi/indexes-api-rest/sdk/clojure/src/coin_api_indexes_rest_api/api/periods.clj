@@ -7,7 +7,6 @@
             [coin-api-indexes-rest-api.specs.metadata/exchange :refer :all]
             [coin-api-indexes-rest-api.specs.indexes/index-multi-asset-weight :refer :all]
             [coin-api-indexes-rest-api.specs.indexes/index-value-component :refer :all]
-            [coin-api-indexes-rest-api.specs.indexes/index-definition-input-data :refer :all]
             [coin-api-indexes-rest-api.specs.indexes/index-timeseries-item :refer :all]
             [coin-api-indexes-rest-api.specs.indexes/index-identifier :refer :all]
             [coin-api-indexes-rest-api.specs.indexes/index-value :refer :all]

@@ -73,67 +73,6 @@ export class RequiredError extends Error {
  * 
  * @export
  */
-export type IndexesIndexDefinitionInputData = {
-    /**
-     * 
-     * @type {string}
-     * @memberof IndexesIndexDefinitionInputData
-     */
-    exchangeId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof IndexesIndexDefinitionInputData
-     */
-    exchangeSymbolId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof IndexesIndexDefinitionInputData
-     */
-    baseAssetId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof IndexesIndexDefinitionInputData
-     */
-    quoteAssetId?: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof IndexesIndexDefinitionInputData
-     */
-    beginDate?: Date;
-    /**
-     * 
-     * @type {Date}
-     * @memberof IndexesIndexDefinitionInputData
-     */
-    endDate?: Date;
-    /**
-     * 
-     * @type {string}
-     * @memberof IndexesIndexDefinitionInputData
-     */
-    status?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof IndexesIndexDefinitionInputData
-     */
-    statusInfo?: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof IndexesIndexDefinitionInputData
-     */
-    lastModificationTime?: Date;
-}
-
-/**
- * 
- * @export
- */
 export type IndexesIndexDefinitionSnapshotEntry = {
     /**
      * 
@@ -374,100 +313,6 @@ export type MetadataTimeseriesPeriod = {
  */
 export const IndexesApiFetchParamCreator = function (configuration?: Configuration) {
     return {
-        /**
-         * 
-         * @summary Returns all data inputs for a specific index definition
-         * @throws {RequiredError}
-         */
-        v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId: string, options: RequestOptions): FetchArgs {
-            // verify required parameter 'indexDefinitionId' is not null or undefined
-            if (indexDefinitionId === null || indexDefinitionId === undefined) {
-                throw new RequiredError('indexDefinitionId','Required parameter indexDefinitionId was null or undefined when calling v1IndexdefInputDataIndexDefinitionIdAllGet.');
-            }
-            const localVarPath = `/v1/indexdef/input-data/{index_definition_id}/all`
-                .replace(`{${"index_definition_id"}}`, encodeURIComponent(String(indexDefinitionId)));
-            const localVarUrlObj = url.parse(localVarPath, true);
-            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
-            const localVarHeaderParameter = {};
-            const localVarQueryParameter = {};
-
-            // authentication APIKey required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
-
-            // authentication JWT required
-
-            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            localVarUrlObj.search = null;
-            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-
-            return {
-                url: url.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Returns data inputs for certain index definition and time
-         * @throws {RequiredError}
-         */
-        v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId: string, time?: Date, enabledOnly?: boolean, pendingOnly?: boolean, filterAssetId?: string, withStatusInfo?: boolean, options: RequestOptions): FetchArgs {
-            // verify required parameter 'indexDefinitionId' is not null or undefined
-            if (indexDefinitionId === null || indexDefinitionId === undefined) {
-                throw new RequiredError('indexDefinitionId','Required parameter indexDefinitionId was null or undefined when calling v1IndexdefInputDataIndexDefinitionIdGet.');
-            }
-            const localVarPath = `/v1/indexdef/input-data/{index_definition_id}`
-                .replace(`{${"index_definition_id"}}`, encodeURIComponent(String(indexDefinitionId)));
-            const localVarUrlObj = url.parse(localVarPath, true);
-            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
-            const localVarHeaderParameter = {};
-            const localVarQueryParameter = {};
-
-            // authentication APIKey required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
-
-            // authentication JWT required
-
-            if (time !== undefined) {
-                localVarQueryParameter['time'] = ((time:any):Date).toISOString();
-            }
-
-            if (enabledOnly !== undefined) {
-                localVarQueryParameter['enabled_only'] = ((enabledOnly:any):string);
-            }
-
-            if (pendingOnly !== undefined) {
-                localVarQueryParameter['pending_only'] = ((pendingOnly:any):string);
-            }
-
-            if (filterAssetId !== undefined) {
-                localVarQueryParameter['filter_asset_id'] = ((filterAssetId:any):string);
-            }
-
-            if (withStatusInfo !== undefined) {
-                localVarQueryParameter['with_status_info'] = ((withStatusInfo:any):string);
-            }
-
-            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            localVarUrlObj.search = null;
-            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-
-            return {
-                url: url.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
         /**
          * 
          * @summary Get all multi-asset weights
@@ -802,10 +647,6 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
 };
 
 export type IndexesApiType = { 
-    v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId: string, options?: RequestOptions): Promise<Array<IndexesIndexDefinitionInputData>>,
-
-    v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId: string, time?: Date, enabledOnly?: boolean, pendingOnly?: boolean, filterAssetId?: string, withStatusInfo?: boolean, options?: RequestOptions): Promise<Array<IndexesIndexDefinitionSnapshotEntry>>,
-
     v1IndexdefMultiassetGet(options?: RequestOptions): Promise<Array<IndexesIndexMultiAssetWeight>>,
 
     v1IndexdefMultiassetIndexIdGet(indexId: string, options?: RequestOptions): Promise<Array<IndexesIndexMultiAssetWeight>>,
@@ -830,36 +671,6 @@ export type IndexesApiType = {
 export const IndexesApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): IndexesApiType {
     const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
     return {
-        /**
-         * 
-         * @summary Returns all data inputs for a specific index definition
-         * @throws {RequiredError}
-         */
-        v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId: string, options?: RequestOptions = {}): Promise<Array<IndexesIndexDefinitionInputData>> {
-            const localVarFetchArgs = IndexesApiFetchParamCreator(configuration).v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId, options);
-            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
-                if (response.status >= 200 && response.status < 300) {
-                    return response.json();
-                } else {
-                    throw response;
-                }
-            });
-        },
-        /**
-         * 
-         * @summary Returns data inputs for certain index definition and time
-         * @throws {RequiredError}
-         */
-        v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId: string, time?: Date, enabledOnly?: boolean, pendingOnly?: boolean, filterAssetId?: string, withStatusInfo?: boolean, options?: RequestOptions = {}): Promise<Array<IndexesIndexDefinitionSnapshotEntry>> {
-            const localVarFetchArgs = IndexesApiFetchParamCreator(configuration).v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo, options);
-            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
-                if (response.status >= 200 && response.status < 300) {
-                    return response.json();
-                } else {
-                    throw response;
-                }
-            });
-        },
         /**
          * 
          * @summary Get all multi-asset weights

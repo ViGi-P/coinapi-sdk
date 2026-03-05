@@ -14,7 +14,6 @@
 package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
-import org.openapitools.client.model.IndexesIndexDefinitionInputData;
 import org.openapitools.client.model.IndexesIndexDefinitionSnapshotEntry;
 import org.openapitools.client.model.IndexesIndexIdentifier;
 import org.openapitools.client.model.IndexesIndexMultiAssetWeight;
@@ -36,35 +35,6 @@ import java.util.Map;
 public class IndexesApiTest {
 
     private final IndexesApi api = new IndexesApi();
-
-    /**
-     * Returns all data inputs for a specific index definition
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void v1IndexdefInputDataIndexDefinitionIdAllGetTest() throws ApiException {
-        String indexDefinitionId = null;
-        List<IndexesIndexDefinitionInputData> response = api.v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId);
-        // TODO: test validations
-    }
-
-    /**
-     * Returns data inputs for certain index definition and time
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void v1IndexdefInputDataIndexDefinitionIdGetTest() throws ApiException {
-        String indexDefinitionId = null;
-        OffsetDateTime time = null;
-        Boolean enabledOnly = null;
-        Boolean pendingOnly = null;
-        String filterAssetId = null;
-        Boolean withStatusInfo = null;
-        List<IndexesIndexDefinitionSnapshotEntry> response = api.v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo);
-        // TODO: test validations
-    }
 
     /**
      * Get all multi-asset weights

@@ -13,7 +13,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net;
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
@@ -35,62 +37,6 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
         /// The class containing the events
         /// </summary>
         IndexesApiEvents Events { get; }
-
-        /// <summary>
-        /// Returns all data inputs for a specific index definition
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="indexDefinitionId"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse"/>&gt;</returns>
-        Task<IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse> V1IndexdefInputDataIndexDefinitionIdAllGetAsync(string indexDefinitionId, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Returns all data inputs for a specific index definition
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <param name="indexDefinitionId"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse"/>?&gt;</returns>
-        Task<IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse?> V1IndexdefInputDataIndexDefinitionIdAllGetOrDefaultAsync(string indexDefinitionId, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Returns data inputs for certain index definition and time
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="indexDefinitionId"></param>
-        /// <param name="time"> (optional)</param>
-        /// <param name="enabledOnly"> (optional, default to false)</param>
-        /// <param name="pendingOnly"> (optional, default to false)</param>
-        /// <param name="filterAssetId"> (optional)</param>
-        /// <param name="withStatusInfo"> (optional, default to false)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1IndexdefInputDataIndexDefinitionIdGetApiResponse"/>&gt;</returns>
-        Task<IV1IndexdefInputDataIndexDefinitionIdGetApiResponse> V1IndexdefInputDataIndexDefinitionIdGetAsync(string indexDefinitionId, Option<DateTime> time = default, Option<bool> enabledOnly = default, Option<bool> pendingOnly = default, Option<string> filterAssetId = default, Option<bool> withStatusInfo = default, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Returns data inputs for certain index definition and time
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <param name="indexDefinitionId"></param>
-        /// <param name="time"> (optional)</param>
-        /// <param name="enabledOnly"> (optional, default to false)</param>
-        /// <param name="pendingOnly"> (optional, default to false)</param>
-        /// <param name="filterAssetId"> (optional)</param>
-        /// <param name="withStatusInfo"> (optional, default to false)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1IndexdefInputDataIndexDefinitionIdGetApiResponse"/>?&gt;</returns>
-        Task<IV1IndexdefInputDataIndexDefinitionIdGetApiResponse?> V1IndexdefInputDataIndexDefinitionIdGetOrDefaultAsync(string indexDefinitionId, Option<DateTime> time = default, Option<bool> enabledOnly = default, Option<bool> pendingOnly = default, Option<string> filterAssetId = default, Option<bool> withStatusInfo = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all multi-asset weights
@@ -290,30 +236,6 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
     }
 
     /// <summary>
-    /// The <see cref="IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse"/>
-    /// </summary>
-    public interface IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<IndexesIndexDefinitionInputData>?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-    }
-
-    /// <summary>
-    /// The <see cref="IV1IndexdefInputDataIndexDefinitionIdGetApiResponse"/>
-    /// </summary>
-    public interface IV1IndexdefInputDataIndexDefinitionIdGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<IndexesIndexDefinitionSnapshotEntry>?>
-    {
-        /// <summary>
-        /// Returns true if the response is 200 Ok
-        /// </summary>
-        /// <returns></returns>
-        bool IsOk { get; }
-    }
-
-    /// <summary>
     /// The <see cref="IV1IndexdefMultiassetGetApiResponse"/>
     /// </summary>
     public interface IV1IndexdefMultiassetGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<IndexesIndexMultiAssetWeight>?>
@@ -414,46 +336,6 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
     /// </summary>
     public class IndexesApiEvents
     {
-        /// <summary>
-        /// The event raised after the server response
-        /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnV1IndexdefInputDataIndexDefinitionIdAllGet;
-
-        /// <summary>
-        /// The event raised after an error querying the server
-        /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorV1IndexdefInputDataIndexDefinitionIdAllGet;
-
-        internal void ExecuteOnV1IndexdefInputDataIndexDefinitionIdAllGet(IndexesApi.V1IndexdefInputDataIndexDefinitionIdAllGetApiResponse apiResponse)
-        {
-            OnV1IndexdefInputDataIndexDefinitionIdAllGet?.Invoke(this, new ApiResponseEventArgs(apiResponse));
-        }
-
-        internal void ExecuteOnErrorV1IndexdefInputDataIndexDefinitionIdAllGet(Exception exception)
-        {
-            OnErrorV1IndexdefInputDataIndexDefinitionIdAllGet?.Invoke(this, new ExceptionEventArgs(exception));
-        }
-
-        /// <summary>
-        /// The event raised after the server response
-        /// </summary>
-        public event EventHandler<ApiResponseEventArgs>? OnV1IndexdefInputDataIndexDefinitionIdGet;
-
-        /// <summary>
-        /// The event raised after an error querying the server
-        /// </summary>
-        public event EventHandler<ExceptionEventArgs>? OnErrorV1IndexdefInputDataIndexDefinitionIdGet;
-
-        internal void ExecuteOnV1IndexdefInputDataIndexDefinitionIdGet(IndexesApi.V1IndexdefInputDataIndexDefinitionIdGetApiResponse apiResponse)
-        {
-            OnV1IndexdefInputDataIndexDefinitionIdGet?.Invoke(this, new ApiResponseEventArgs(apiResponse));
-        }
-
-        internal void ExecuteOnErrorV1IndexdefInputDataIndexDefinitionIdGet(Exception exception)
-        {
-            OnErrorV1IndexdefInputDataIndexDefinitionIdGet?.Invoke(this, new ExceptionEventArgs(exception));
-        }
-
         /// <summary>
         /// The event raised after the server response
         /// </summary>
@@ -669,535 +551,6 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             BearerTokenProvider = bearerTokenProvider;
         }
 
-        partial void FormatV1IndexdefInputDataIndexDefinitionIdAllGet(ref string indexDefinitionId);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="indexDefinitionId"></param>
-        /// <returns></returns>
-        private void ValidateV1IndexdefInputDataIndexDefinitionIdAllGet(string indexDefinitionId)
-        {
-            if (indexDefinitionId == null)
-                throw new ArgumentNullException(nameof(indexDefinitionId));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="indexDefinitionId"></param>
-        private void AfterV1IndexdefInputDataIndexDefinitionIdAllGetDefaultImplementation(IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse apiResponseLocalVar, string indexDefinitionId)
-        {
-            bool suppressDefaultLog = false;
-            AfterV1IndexdefInputDataIndexDefinitionIdAllGet(ref suppressDefaultLog, apiResponseLocalVar, indexDefinitionId);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="indexDefinitionId"></param>
-        partial void AfterV1IndexdefInputDataIndexDefinitionIdAllGet(ref bool suppressDefaultLog, IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse apiResponseLocalVar, string indexDefinitionId);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="indexDefinitionId"></param>
-        private void OnErrorV1IndexdefInputDataIndexDefinitionIdAllGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string indexDefinitionId)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorV1IndexdefInputDataIndexDefinitionIdAllGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, indexDefinitionId);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="indexDefinitionId"></param>
-        partial void OnErrorV1IndexdefInputDataIndexDefinitionIdAllGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string indexDefinitionId);
-
-        /// <summary>
-        /// Returns all data inputs for a specific index definition 
-        /// </summary>
-        /// <param name="indexDefinitionId"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse"/>&gt;</returns>
-        public async Task<IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse?> V1IndexdefInputDataIndexDefinitionIdAllGetOrDefaultAsync(string indexDefinitionId, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await V1IndexdefInputDataIndexDefinitionIdAllGetAsync(indexDefinitionId, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Returns all data inputs for a specific index definition 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="indexDefinitionId"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse"/>&gt;</returns>
-        public async Task<IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse> V1IndexdefInputDataIndexDefinitionIdAllGetAsync(string indexDefinitionId, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateV1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId);
-
-                FormatV1IndexdefInputDataIndexDefinitionIdAllGet(ref indexDefinitionId);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/v1/indexdef/input-data/{index_definition_id}/all"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/indexdef/input-data/{index_definition_id}/all");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bindex_definition_id%7D", Uri.EscapeDataString(indexDefinitionId.ToString()));
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar1 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar1);
-                    apiKeyTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    BearerToken bearerTokenLocalVar2 = (BearerToken) await BearerTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(bearerTokenLocalVar2);
-
-                    bearerTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "text/plain",
-                        "application/json",
-                        "text/json",
-                        "application/x-msgpack"
-                    };
-
-                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
-
-                    if (acceptLocalVar != null)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        ILogger<V1IndexdefInputDataIndexDefinitionIdAllGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1IndexdefInputDataIndexDefinitionIdAllGetApiResponse>();
-
-                        V1IndexdefInputDataIndexDefinitionIdAllGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexdef/input-data/{index_definition_id}/all", requestedAtLocalVar, _jsonSerializerOptions);
-
-                        AfterV1IndexdefInputDataIndexDefinitionIdAllGetDefaultImplementation(apiResponseLocalVar, indexDefinitionId);
-
-                        Events.ExecuteOnV1IndexdefInputDataIndexDefinitionIdAllGet(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorV1IndexdefInputDataIndexDefinitionIdAllGetDefaultImplementation(e, "/v1/indexdef/input-data/{index_definition_id}/all", uriBuilderLocalVar.Path, indexDefinitionId);
-                Events.ExecuteOnErrorV1IndexdefInputDataIndexDefinitionIdAllGet(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="V1IndexdefInputDataIndexDefinitionIdAllGetApiResponse"/>
-        /// </summary>
-        public partial class V1IndexdefInputDataIndexDefinitionIdAllGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.ApiResponse, IV1IndexdefInputDataIndexDefinitionIdAllGetApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<V1IndexdefInputDataIndexDefinitionIdAllGetApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="V1IndexdefInputDataIndexDefinitionIdAllGetApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public V1IndexdefInputDataIndexDefinitionIdAllGetApiResponse(ILogger<V1IndexdefInputDataIndexDefinitionIdAllGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public List<IndexesIndexDefinitionInputData>? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<IndexesIndexDefinitionInputData>>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<IndexesIndexDefinitionInputData>? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
-        partial void FormatV1IndexdefInputDataIndexDefinitionIdGet(ref string indexDefinitionId, ref Option<DateTime> time, ref Option<bool> enabledOnly, ref Option<bool> pendingOnly, ref Option<string> filterAssetId, ref Option<bool> withStatusInfo);
-
-        /// <summary>
-        /// Validates the request parameters
-        /// </summary>
-        /// <param name="indexDefinitionId"></param>
-        /// <param name="filterAssetId"></param>
-        /// <returns></returns>
-        private void ValidateV1IndexdefInputDataIndexDefinitionIdGet(string indexDefinitionId, Option<string> filterAssetId)
-        {
-            if (indexDefinitionId == null)
-                throw new ArgumentNullException(nameof(indexDefinitionId));
-
-            if (filterAssetId.IsSet && filterAssetId.Value == null)
-                throw new ArgumentNullException(nameof(filterAssetId));
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="indexDefinitionId"></param>
-        /// <param name="time"></param>
-        /// <param name="enabledOnly"></param>
-        /// <param name="pendingOnly"></param>
-        /// <param name="filterAssetId"></param>
-        /// <param name="withStatusInfo"></param>
-        private void AfterV1IndexdefInputDataIndexDefinitionIdGetDefaultImplementation(IV1IndexdefInputDataIndexDefinitionIdGetApiResponse apiResponseLocalVar, string indexDefinitionId, Option<DateTime> time, Option<bool> enabledOnly, Option<bool> pendingOnly, Option<string> filterAssetId, Option<bool> withStatusInfo)
-        {
-            bool suppressDefaultLog = false;
-            AfterV1IndexdefInputDataIndexDefinitionIdGet(ref suppressDefaultLog, apiResponseLocalVar, indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo);
-            if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
-        }
-
-        /// <summary>
-        /// Processes the server response
-        /// </summary>
-        /// <param name="suppressDefaultLog"></param>
-        /// <param name="apiResponseLocalVar"></param>
-        /// <param name="indexDefinitionId"></param>
-        /// <param name="time"></param>
-        /// <param name="enabledOnly"></param>
-        /// <param name="pendingOnly"></param>
-        /// <param name="filterAssetId"></param>
-        /// <param name="withStatusInfo"></param>
-        partial void AfterV1IndexdefInputDataIndexDefinitionIdGet(ref bool suppressDefaultLog, IV1IndexdefInputDataIndexDefinitionIdGetApiResponse apiResponseLocalVar, string indexDefinitionId, Option<DateTime> time, Option<bool> enabledOnly, Option<bool> pendingOnly, Option<string> filterAssetId, Option<bool> withStatusInfo);
-
-        /// <summary>
-        /// Logs exceptions that occur while retrieving the server response
-        /// </summary>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="indexDefinitionId"></param>
-        /// <param name="time"></param>
-        /// <param name="enabledOnly"></param>
-        /// <param name="pendingOnly"></param>
-        /// <param name="filterAssetId"></param>
-        /// <param name="withStatusInfo"></param>
-        private void OnErrorV1IndexdefInputDataIndexDefinitionIdGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string indexDefinitionId, Option<DateTime> time, Option<bool> enabledOnly, Option<bool> pendingOnly, Option<string> filterAssetId, Option<bool> withStatusInfo)
-        {
-            bool suppressDefaultLogLocalVar = false;
-            OnErrorV1IndexdefInputDataIndexDefinitionIdGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo);
-            if (!suppressDefaultLogLocalVar)
-                Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
-        }
-
-        /// <summary>
-        /// A partial method that gives developers a way to provide customized exception handling
-        /// </summary>
-        /// <param name="suppressDefaultLogLocalVar"></param>
-        /// <param name="exceptionLocalVar"></param>
-        /// <param name="pathFormatLocalVar"></param>
-        /// <param name="pathLocalVar"></param>
-        /// <param name="indexDefinitionId"></param>
-        /// <param name="time"></param>
-        /// <param name="enabledOnly"></param>
-        /// <param name="pendingOnly"></param>
-        /// <param name="filterAssetId"></param>
-        /// <param name="withStatusInfo"></param>
-        partial void OnErrorV1IndexdefInputDataIndexDefinitionIdGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string indexDefinitionId, Option<DateTime> time, Option<bool> enabledOnly, Option<bool> pendingOnly, Option<string> filterAssetId, Option<bool> withStatusInfo);
-
-        /// <summary>
-        /// Returns data inputs for certain index definition and time 
-        /// </summary>
-        /// <param name="indexDefinitionId"></param>
-        /// <param name="time"> (optional)</param>
-        /// <param name="enabledOnly"> (optional, default to false)</param>
-        /// <param name="pendingOnly"> (optional, default to false)</param>
-        /// <param name="filterAssetId"> (optional)</param>
-        /// <param name="withStatusInfo"> (optional, default to false)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1IndexdefInputDataIndexDefinitionIdGetApiResponse"/>&gt;</returns>
-        public async Task<IV1IndexdefInputDataIndexDefinitionIdGetApiResponse?> V1IndexdefInputDataIndexDefinitionIdGetOrDefaultAsync(string indexDefinitionId, Option<DateTime> time = default, Option<bool> enabledOnly = default, Option<bool> pendingOnly = default, Option<string> filterAssetId = default, Option<bool> withStatusInfo = default, System.Threading.CancellationToken cancellationToken = default)
-        {
-            try
-            {
-                return await V1IndexdefInputDataIndexDefinitionIdGetAsync(indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo, cancellationToken).ConfigureAwait(false);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Returns data inputs for certain index definition and time 
-        /// </summary>
-        /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="indexDefinitionId"></param>
-        /// <param name="time"> (optional)</param>
-        /// <param name="enabledOnly"> (optional, default to false)</param>
-        /// <param name="pendingOnly"> (optional, default to false)</param>
-        /// <param name="filterAssetId"> (optional)</param>
-        /// <param name="withStatusInfo"> (optional, default to false)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns><see cref="Task"/>&lt;<see cref="IV1IndexdefInputDataIndexDefinitionIdGetApiResponse"/>&gt;</returns>
-        public async Task<IV1IndexdefInputDataIndexDefinitionIdGetApiResponse> V1IndexdefInputDataIndexDefinitionIdGetAsync(string indexDefinitionId, Option<DateTime> time = default, Option<bool> enabledOnly = default, Option<bool> pendingOnly = default, Option<string> filterAssetId = default, Option<bool> withStatusInfo = default, System.Threading.CancellationToken cancellationToken = default)
-        {
-            UriBuilder uriBuilderLocalVar = new UriBuilder();
-
-            try
-            {
-                ValidateV1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId, filterAssetId);
-
-                FormatV1IndexdefInputDataIndexDefinitionIdGet(ref indexDefinitionId, ref time, ref enabledOnly, ref pendingOnly, ref filterAssetId, ref withStatusInfo);
-
-                using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
-                {
-                    uriBuilderLocalVar.Host = HttpClient.BaseAddress!.Host;
-                    uriBuilderLocalVar.Port = HttpClient.BaseAddress.Port;
-                    uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
-                    uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
-                        ? "/v1/indexdef/input-data/{index_definition_id}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/indexdef/input-data/{index_definition_id}");
-                    uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bindex_definition_id%7D", Uri.EscapeDataString(indexDefinitionId.ToString()));
-
-                    System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
-
-                    if (time.IsSet)
-                        parseQueryStringLocalVar["time"] = ClientUtils.ParameterToString(time.Value);
-
-                    if (enabledOnly.IsSet)
-                        parseQueryStringLocalVar["enabled_only"] = ClientUtils.ParameterToString(enabledOnly.Value);
-
-                    if (pendingOnly.IsSet)
-                        parseQueryStringLocalVar["pending_only"] = ClientUtils.ParameterToString(pendingOnly.Value);
-
-                    if (filterAssetId.IsSet)
-                        parseQueryStringLocalVar["filter_asset_id"] = ClientUtils.ParameterToString(filterAssetId.Value);
-
-                    if (withStatusInfo.IsSet)
-                        parseQueryStringLocalVar["with_status_info"] = ClientUtils.ParameterToString(withStatusInfo.Value);
-
-                    uriBuilderLocalVar.Query = parseQueryStringLocalVar.ToString();
-
-                    List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
-                    ApiKeyToken apiKeyTokenLocalVar1 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
-                    tokenBaseLocalVars.Add(apiKeyTokenLocalVar1);
-                    apiKeyTokenLocalVar1.UseInHeader(httpRequestMessageLocalVar);
-
-                    httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    BearerToken bearerTokenLocalVar2 = (BearerToken) await BearerTokenProvider.GetAsync(cancellation: cancellationToken).ConfigureAwait(false);
-
-                    tokenBaseLocalVars.Add(bearerTokenLocalVar2);
-
-                    bearerTokenLocalVar2.UseInHeader(httpRequestMessageLocalVar, "");
-
-                    string[] acceptLocalVars = new string[] {
-                        "text/plain",
-                        "application/json",
-                        "text/json",
-                        "application/x-msgpack"
-                    };
-
-                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
-
-                    if (acceptLocalVar != null)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
-
-                    httpRequestMessageLocalVar.Method = HttpMethod.Get;
-
-                    DateTime requestedAtLocalVar = DateTime.UtcNow;
-
-                    using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
-                    {
-                        string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                        ILogger<V1IndexdefInputDataIndexDefinitionIdGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1IndexdefInputDataIndexDefinitionIdGetApiResponse>();
-
-                        V1IndexdefInputDataIndexDefinitionIdGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexdef/input-data/{index_definition_id}", requestedAtLocalVar, _jsonSerializerOptions);
-
-                        AfterV1IndexdefInputDataIndexDefinitionIdGetDefaultImplementation(apiResponseLocalVar, indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo);
-
-                        Events.ExecuteOnV1IndexdefInputDataIndexDefinitionIdGet(apiResponseLocalVar);
-
-                        if (apiResponseLocalVar.StatusCode == (HttpStatusCode) 429)
-                            foreach(TokenBase tokenBaseLocalVar in tokenBaseLocalVars)
-                                tokenBaseLocalVar.BeginRateLimit();
-
-                        return apiResponseLocalVar;
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                OnErrorV1IndexdefInputDataIndexDefinitionIdGetDefaultImplementation(e, "/v1/indexdef/input-data/{index_definition_id}", uriBuilderLocalVar.Path, indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo);
-                Events.ExecuteOnErrorV1IndexdefInputDataIndexDefinitionIdGet(e);
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// The <see cref="V1IndexdefInputDataIndexDefinitionIdGetApiResponse"/>
-        /// </summary>
-        public partial class V1IndexdefInputDataIndexDefinitionIdGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.ApiResponse, IV1IndexdefInputDataIndexDefinitionIdGetApiResponse
-        {
-            /// <summary>
-            /// The logger
-            /// </summary>
-            public ILogger<V1IndexdefInputDataIndexDefinitionIdGetApiResponse> Logger { get; }
-
-            /// <summary>
-            /// The <see cref="V1IndexdefInputDataIndexDefinitionIdGetApiResponse"/>
-            /// </summary>
-            /// <param name="logger"></param>
-            /// <param name="httpRequestMessage"></param>
-            /// <param name="httpResponseMessage"></param>
-            /// <param name="rawContent"></param>
-            /// <param name="path"></param>
-            /// <param name="requestedAt"></param>
-            /// <param name="jsonSerializerOptions"></param>
-            public V1IndexdefInputDataIndexDefinitionIdGetApiResponse(ILogger<V1IndexdefInputDataIndexDefinitionIdGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
-            {
-                Logger = logger;
-                OnCreated(httpRequestMessage, httpResponseMessage);
-            }
-
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public bool IsOk => 200 == (int)StatusCode;
-
-            /// <summary>
-            /// Deserializes the response if the response is 200 Ok
-            /// </summary>
-            /// <returns></returns>
-            public List<IndexesIndexDefinitionSnapshotEntry>? Ok()
-            {
-                // This logic may be modified with the AsModel.mustache template
-                return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<IndexesIndexDefinitionSnapshotEntry>>(RawContent, _jsonSerializerOptions)
-                    : null;
-            }
-
-            /// <summary>
-            /// Returns true if the response is 200 Ok and the deserialized response is not null
-            /// </summary>
-            /// <param name="result"></param>
-            /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<IndexesIndexDefinitionSnapshotEntry>? result)
-            {
-                result = null;
-
-                try
-                {
-                    result = Ok();
-                } catch (Exception e)
-                {
-                    OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
-                }
-
-                return result != null;
-            }
-
-            private void OnDeserializationErrorDefaultImplementation(Exception exception, HttpStatusCode httpStatusCode)
-            {
-                bool suppressDefaultLog = false;
-                OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
-                if (!suppressDefaultLog)
-                    Logger.LogError(exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
-            }
-
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
-        }
-
         /// <summary>
         /// Processes the server response
         /// </summary>
@@ -1207,7 +560,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1IndexdefMultiassetGet(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1298,10 +651,10 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                         "application/x-msgpack"
                     };
 
-                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
 
-                    if (acceptLocalVar != null)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
                     httpRequestMessageLocalVar.Method = HttpMethod.Get;
 
@@ -1309,11 +662,17 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
                         ILogger<V1IndexdefMultiassetGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1IndexdefMultiassetGetApiResponse>();
+                        V1IndexdefMultiassetGetApiResponse apiResponseLocalVar;
 
-                        V1IndexdefMultiassetGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexdef/multiasset", requestedAtLocalVar, _jsonSerializerOptions);
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexdef/multiasset", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
 
                         AfterV1IndexdefMultiassetGetDefaultImplementation(apiResponseLocalVar);
 
@@ -1356,6 +715,22 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
             public V1IndexdefMultiassetGetApiResponse(ILogger<V1IndexdefMultiassetGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="V1IndexdefMultiassetGetApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public V1IndexdefMultiassetGetApiResponse(ILogger<V1IndexdefMultiassetGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1435,7 +810,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1IndexdefMultiassetIndexIdGet(ref suppressDefaultLog, apiResponseLocalVar, indexId);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1536,10 +911,10 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                         "application/x-msgpack"
                     };
 
-                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
 
-                    if (acceptLocalVar != null)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
                     httpRequestMessageLocalVar.Method = HttpMethod.Get;
 
@@ -1547,11 +922,17 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
                         ILogger<V1IndexdefMultiassetIndexIdGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1IndexdefMultiassetIndexIdGetApiResponse>();
+                        V1IndexdefMultiassetIndexIdGetApiResponse apiResponseLocalVar;
 
-                        V1IndexdefMultiassetIndexIdGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexdef/multiasset/{index_id}", requestedAtLocalVar, _jsonSerializerOptions);
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexdef/multiasset/{index_id}", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
 
                         AfterV1IndexdefMultiassetIndexIdGetDefaultImplementation(apiResponseLocalVar, indexId);
 
@@ -1594,6 +975,22 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
             public V1IndexdefMultiassetIndexIdGetApiResponse(ILogger<V1IndexdefMultiassetIndexIdGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="V1IndexdefMultiassetIndexIdGetApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public V1IndexdefMultiassetIndexIdGetApiResponse(ILogger<V1IndexdefMultiassetIndexIdGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1659,7 +1056,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1IndexesGet(ref suppressDefaultLog, apiResponseLocalVar);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1750,10 +1147,10 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                         "application/x-msgpack"
                     };
 
-                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
 
-                    if (acceptLocalVar != null)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
                     httpRequestMessageLocalVar.Method = HttpMethod.Get;
 
@@ -1761,11 +1158,17 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
                         ILogger<V1IndexesGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1IndexesGetApiResponse>();
+                        V1IndexesGetApiResponse apiResponseLocalVar;
 
-                        V1IndexesGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexes", requestedAtLocalVar, _jsonSerializerOptions);
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexes", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
 
                         AfterV1IndexesGetDefaultImplementation(apiResponseLocalVar);
 
@@ -1808,6 +1211,22 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
             public V1IndexesGetApiResponse(ILogger<V1IndexesGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="V1IndexesGetApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public V1IndexesGetApiResponse(ILogger<V1IndexesGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -1887,7 +1306,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1IndexesIndexDefinitionIdCurrentSnapshotGet(ref suppressDefaultLog, apiResponseLocalVar, indexDefinitionId);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -1988,10 +1407,10 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                         "application/x-msgpack"
                     };
 
-                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
 
-                    if (acceptLocalVar != null)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
                     httpRequestMessageLocalVar.Method = HttpMethod.Get;
 
@@ -1999,11 +1418,17 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
                         ILogger<V1IndexesIndexDefinitionIdCurrentSnapshotGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1IndexesIndexDefinitionIdCurrentSnapshotGetApiResponse>();
+                        V1IndexesIndexDefinitionIdCurrentSnapshotGetApiResponse apiResponseLocalVar;
 
-                        V1IndexesIndexDefinitionIdCurrentSnapshotGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexes/{index_definition_id}/currentSnapshot", requestedAtLocalVar, _jsonSerializerOptions);
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexes/{index_definition_id}/currentSnapshot", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
 
                         AfterV1IndexesIndexDefinitionIdCurrentSnapshotGetDefaultImplementation(apiResponseLocalVar, indexDefinitionId);
 
@@ -2046,6 +1471,22 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
             public V1IndexesIndexDefinitionIdCurrentSnapshotGetApiResponse(ILogger<V1IndexesIndexDefinitionIdCurrentSnapshotGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="V1IndexesIndexDefinitionIdCurrentSnapshotGetApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public V1IndexesIndexDefinitionIdCurrentSnapshotGetApiResponse(ILogger<V1IndexesIndexDefinitionIdCurrentSnapshotGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2126,7 +1567,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1IndexesIndexDefinitionIdHistorySnapshotGet(ref suppressDefaultLog, apiResponseLocalVar, indexDefinitionId, time);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -2239,10 +1680,10 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                         "application/x-msgpack"
                     };
 
-                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
 
-                    if (acceptLocalVar != null)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
                     httpRequestMessageLocalVar.Method = HttpMethod.Get;
 
@@ -2250,11 +1691,17 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
                         ILogger<V1IndexesIndexDefinitionIdHistorySnapshotGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1IndexesIndexDefinitionIdHistorySnapshotGetApiResponse>();
+                        V1IndexesIndexDefinitionIdHistorySnapshotGetApiResponse apiResponseLocalVar;
 
-                        V1IndexesIndexDefinitionIdHistorySnapshotGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexes/{index_definition_id}/historySnapshot", requestedAtLocalVar, _jsonSerializerOptions);
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexes/{index_definition_id}/historySnapshot", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
 
                         AfterV1IndexesIndexDefinitionIdHistorySnapshotGetDefaultImplementation(apiResponseLocalVar, indexDefinitionId, time);
 
@@ -2297,6 +1744,22 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
             public V1IndexesIndexDefinitionIdHistorySnapshotGetApiResponse(ILogger<V1IndexesIndexDefinitionIdHistorySnapshotGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="V1IndexesIndexDefinitionIdHistorySnapshotGetApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public V1IndexesIndexDefinitionIdHistorySnapshotGetApiResponse(ILogger<V1IndexesIndexDefinitionIdHistorySnapshotGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2376,7 +1839,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1IndexesIndexIdCurrentGet(ref suppressDefaultLog, apiResponseLocalVar, indexId);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -2477,10 +1940,10 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                         "application/x-msgpack"
                     };
 
-                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
 
-                    if (acceptLocalVar != null)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
                     httpRequestMessageLocalVar.Method = HttpMethod.Get;
 
@@ -2488,11 +1951,17 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
                         ILogger<V1IndexesIndexIdCurrentGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1IndexesIndexIdCurrentGetApiResponse>();
+                        V1IndexesIndexIdCurrentGetApiResponse apiResponseLocalVar;
 
-                        V1IndexesIndexIdCurrentGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexes/{index_id}/current", requestedAtLocalVar, _jsonSerializerOptions);
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexes/{index_id}/current", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
 
                         AfterV1IndexesIndexIdCurrentGetDefaultImplementation(apiResponseLocalVar, indexId);
 
@@ -2535,6 +2004,22 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
             public V1IndexesIndexIdCurrentGetApiResponse(ILogger<V1IndexesIndexIdCurrentGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="V1IndexesIndexIdCurrentGetApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public V1IndexesIndexIdCurrentGetApiResponse(ILogger<V1IndexesIndexIdCurrentGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2617,7 +2102,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1IndexesIndexIdHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, indexId, timeStart, timeEnd, limit);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -2746,10 +2231,10 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                         "application/x-msgpack"
                     };
 
-                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
 
-                    if (acceptLocalVar != null)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
                     httpRequestMessageLocalVar.Method = HttpMethod.Get;
 
@@ -2757,11 +2242,17 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
                         ILogger<V1IndexesIndexIdHistoryGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1IndexesIndexIdHistoryGetApiResponse>();
+                        V1IndexesIndexIdHistoryGetApiResponse apiResponseLocalVar;
 
-                        V1IndexesIndexIdHistoryGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexes/{index_id}/history", requestedAtLocalVar, _jsonSerializerOptions);
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexes/{index_id}/history", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
 
                         AfterV1IndexesIndexIdHistoryGetDefaultImplementation(apiResponseLocalVar, indexId, timeStart, timeEnd, limit);
 
@@ -2804,6 +2295,22 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
             public V1IndexesIndexIdHistoryGetApiResponse(ILogger<V1IndexesIndexIdHistoryGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="V1IndexesIndexIdHistoryGetApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public V1IndexesIndexIdHistoryGetApiResponse(ILogger<V1IndexesIndexIdHistoryGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -2899,7 +2406,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             bool suppressDefaultLog = false;
             AfterV1IndexesIndexIdTimeseriesGet(ref suppressDefaultLog, apiResponseLocalVar, indexId, periodId, timeStart, timeEnd, limit);
             if (!suppressDefaultLog)
-                Logger.LogInformation("{0,-9} | {1} | {3}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
+                Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
 
         /// <summary>
@@ -3031,10 +2538,10 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
                         "application/x-msgpack"
                     };
 
-                    string? acceptLocalVar = ClientUtils.SelectHeaderAccept(acceptLocalVars);
+                    IEnumerable<MediaTypeWithQualityHeaderValue> acceptHeaderValuesLocalVar = ClientUtils.SelectHeaderAcceptArray(acceptLocalVars);
 
-                    if (acceptLocalVar != null)
-                        httpRequestMessageLocalVar.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(acceptLocalVar));
+                    foreach (var acceptLocalVar in acceptHeaderValuesLocalVar)
+                        httpRequestMessageLocalVar.Headers.Accept.Add(acceptLocalVar);
 
                     httpRequestMessageLocalVar.Method = HttpMethod.Get;
 
@@ -3042,11 +2549,17 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
 
                     using (HttpResponseMessage httpResponseMessageLocalVar = await HttpClient.SendAsync(httpRequestMessageLocalVar, cancellationToken).ConfigureAwait(false))
                     {
-                        string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
                         ILogger<V1IndexesIndexIdTimeseriesGetApiResponse> apiResponseLoggerLocalVar = LoggerFactory.CreateLogger<V1IndexesIndexIdTimeseriesGetApiResponse>();
+                        V1IndexesIndexIdTimeseriesGetApiResponse apiResponseLocalVar;
 
-                        V1IndexesIndexIdTimeseriesGetApiResponse apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexes/{index_id}/timeseries", requestedAtLocalVar, _jsonSerializerOptions);
+                        switch ((int)httpResponseMessageLocalVar.StatusCode) {
+                            default: {
+                                string responseContentLocalVar = await httpResponseMessageLocalVar.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                                apiResponseLocalVar = new(apiResponseLoggerLocalVar, httpRequestMessageLocalVar, httpResponseMessageLocalVar, responseContentLocalVar, "/v1/indexes/{index_id}/timeseries", requestedAtLocalVar, _jsonSerializerOptions);
+
+                                break;
+                            }
+                        }
 
                         AfterV1IndexesIndexIdTimeseriesGetDefaultImplementation(apiResponseLocalVar, indexId, periodId, timeStart, timeEnd, limit);
 
@@ -3089,6 +2602,22 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
             public V1IndexesIndexIdTimeseriesGetApiResponse(ILogger<V1IndexesIndexIdTimeseriesGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            {
+                Logger = logger;
+                OnCreated(httpRequestMessage, httpResponseMessage);
+            }
+
+            /// <summary>
+            /// The <see cref="V1IndexesIndexIdTimeseriesGetApiResponse"/>
+            /// </summary>
+            /// <param name="logger"></param>
+            /// <param name="httpRequestMessage"></param>
+            /// <param name="httpResponseMessage"></param>
+            /// <param name="contentStream"></param>
+            /// <param name="path"></param>
+            /// <param name="requestedAt"></param>
+            /// <param name="jsonSerializerOptions"></param>
+            public V1IndexesIndexIdTimeseriesGetApiResponse(ILogger<V1IndexesIndexIdTimeseriesGetApiResponse> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);

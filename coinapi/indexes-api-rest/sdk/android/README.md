@@ -64,12 +64,11 @@ public class IndexesApiExample {
 
     public static void main(String[] args) {
         IndexesApi apiInstance = new IndexesApi();
-        String indexDefinitionId = null; // String | 
         try {
-            List<IndexesIndexDefinitionInputData> result = apiInstance.v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId);
+            List<IndexesIndexMultiAssetWeight> result = apiInstance.v1IndexdefMultiassetGet();
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling IndexesApi#v1IndexdefInputDataIndexDefinitionIdAllGet");
+            System.err.println("Exception when calling IndexesApi#v1IndexdefMultiassetGet");
             e.printStackTrace();
         }
     }
@@ -83,8 +82,6 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*IndexesApi* | [**v1IndexdefInputDataIndexDefinitionIdAllGet**](docs/IndexesApi.md#v1IndexdefInputDataIndexDefinitionIdAllGet) | **GET** /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition
-*IndexesApi* | [**v1IndexdefInputDataIndexDefinitionIdGet**](docs/IndexesApi.md#v1IndexdefInputDataIndexDefinitionIdGet) | **GET** /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time
 *IndexesApi* | [**v1IndexdefMultiassetGet**](docs/IndexesApi.md#v1IndexdefMultiassetGet) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
 *IndexesApi* | [**v1IndexdefMultiassetIndexIdGet**](docs/IndexesApi.md#v1IndexdefMultiassetIndexIdGet) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
 *IndexesApi* | [**v1IndexesGet**](docs/IndexesApi.md#v1IndexesGet) | **GET** /v1/indexes | List indexes
@@ -100,7 +97,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [IndexesIndexDefinitionInputData](docs/IndexesIndexDefinitionInputData.md)
  - [IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
  - [IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
  - [IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)

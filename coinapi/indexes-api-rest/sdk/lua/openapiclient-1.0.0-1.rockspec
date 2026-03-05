@@ -26,7 +26,6 @@ build = {
 		["openapiclient.api.indexes_api"] = "openapiclient/api/indexes_api.lua";
 		["openapiclient.api.metadata_api"] = "openapiclient/api/metadata_api.lua";
 		["openapiclient.api.periods_api"] = "openapiclient/api/periods_api.lua";
-		["openapiclient.model.indexes_index_definition_input_data"] = "openapiclient/model/indexes_index_definition_input_data.lua";
 		["openapiclient.model.indexes_index_definition_snapshot_entry"] = "openapiclient/model/indexes_index_definition_snapshot_entry.lua";
 		["openapiclient.model.indexes_index_identifier"] = "openapiclient/model/indexes_index_identifier.lua";
 		["openapiclient.model.indexes_index_multi_asset_weight"] = "openapiclient/model/indexes_index_multi_asset_weight.lua";

@@ -1,6 +1,5 @@
 .openapi-generator-ignore
 API/Client/IndexesApi.js
-API/Client/IndexesIndexDefinitionInputData.js
 API/Client/IndexesIndexDefinitionSnapshotEntry.js
 API/Client/IndexesIndexIdentifier.js
 API/Client/IndexesIndexMultiAssetWeight.js

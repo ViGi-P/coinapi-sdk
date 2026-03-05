@@ -8,7 +8,6 @@ Gemfile
 README.md
 Rakefile
 docs/IndexesApi.md
-docs/IndexesIndexDefinitionInputData.md
 docs/IndexesIndexDefinitionSnapshotEntry.md
 docs/IndexesIndexIdentifier.md
 docs/IndexesIndexMultiAssetWeight.md
@@ -26,8 +25,8 @@ lib/openapi_client/api/metadata_api.rb
 lib/openapi_client/api/periods_api.rb
 lib/openapi_client/api_client.rb
 lib/openapi_client/api_error.rb
+lib/openapi_client/api_model_base.rb
 lib/openapi_client/configuration.rb
-lib/openapi_client/models/indexes_index_definition_input_data.rb
 lib/openapi_client/models/indexes_index_definition_snapshot_entry.rb
 lib/openapi_client/models/indexes_index_identifier.rb
 lib/openapi_client/models/indexes_index_multi_asset_weight.rb
@@ -41,7 +40,6 @@ openapi_client.gemspec
 spec/api/indexes_api_spec.rb
 spec/api/metadata_api_spec.rb
 spec/api/periods_api_spec.rb
-spec/models/indexes_index_definition_input_data_spec.rb
 spec/models/indexes_index_definition_snapshot_entry_spec.rb
 spec/models/indexes_index_identifier_spec.rb
 spec/models/indexes_index_multi_asset_weight_spec.rb

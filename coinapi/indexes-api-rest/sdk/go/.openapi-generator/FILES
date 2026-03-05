@@ -9,7 +9,6 @@ api_periods.go
 client.go
 configuration.go
 docs/IndexesAPI.md
-docs/IndexesIndexDefinitionInputData.md
 docs/IndexesIndexDefinitionSnapshotEntry.md
 docs/IndexesIndexIdentifier.md
 docs/IndexesIndexMultiAssetWeight.md
@@ -23,7 +22,6 @@ docs/PeriodsAPI.md
 git_push.sh
 go.mod
 go.sum
-model_indexes_index_definition_input_data.go
 model_indexes_index_definition_snapshot_entry.go
 model_indexes_index_identifier.go
 model_indexes_index_multi_asset_weight.go

@@ -1,5 +1,7 @@
 # OpenAPI\Client\PeriodsApi
 
+&lt;span data-status-page&#x3D;\&quot;28926\&quot;&gt;&lt;/span&gt;
+
 All URIs are relative to https://rest-api.indexes.coinapi.io, except if the operation defines another base path.
 
 | Method | HTTP request | Description |

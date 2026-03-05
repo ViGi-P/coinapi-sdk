@@ -15,20 +15,6 @@ Please update as you see appropriate
 ]]
 describe("indexes_api", function()
   local openapiclient_indexes_api = require "openapiclient.api.indexes_api"
-  -- unit tests for v1_indexdef_input_data_index_definition_id_all_get
-  describe("v1_indexdef_input_data_index_definition_id_all_get test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
-  -- unit tests for v1_indexdef_input_data_index_definition_id_get
-  describe("v1_indexdef_input_data_index_definition_id_get test", function()
-    it("should work", function()
-      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
-    end)
-  end)
-
   -- unit tests for v1_indexdef_multiasset_get
   describe("v1_indexdef_multiasset_get test", function()
     it("should work", function()

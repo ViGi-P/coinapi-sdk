@@ -10,7 +10,7 @@
 # !
 # ! Based on: https://github.com/Valodim/zsh-curl-completion/blob/master/_curl
 # !
-# ! Generator version: 7.14.0
+# ! Generator version: 7.20.0
 # !
 # !
 # ! Installation:
@@ -297,8 +297,6 @@ case $state in
   ops)
     # Operations
     _values "Operations" \
-            "v1IndexdefInputDataIndexDefinitionIdAllGet[Returns all data inputs for a specific index definition]" \
-            "v1IndexdefInputDataIndexDefinitionIdGet[Returns data inputs for certain index definition and time]" \
             "v1IndexdefMultiassetGet[Get all multi-asset weights]" \
             "v1IndexdefMultiassetIndexIdGet[Get multi-asset weights for specific index]" \
             "v1IndexesGet[List indexes]" \
@@ -315,28 +313,6 @@ case $state in
     ;;
   args)
     case $line[1] in
-      v1IndexdefInputDataIndexDefinitionIdAllGet)
-        local -a _op_arguments
-        _op_arguments=(
-          "index_definition_id=:[PATH] "
-                    )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      v1IndexdefInputDataIndexDefinitionIdGet)
-        local -a _op_arguments
-        _op_arguments=(
-          "index_definition_id=:[PATH] "
-          "time=:[QUERY] "
-"enabled_only=true:[QUERY] "
-          "enabled_only=false:[QUERY] "
-"pending_only=true:[QUERY] "
-          "pending_only=false:[QUERY] "
-"filter_asset_id=:[QUERY] "
-"with_status_info=true:[QUERY] "
-          "with_status_info=false:[QUERY] "
-          )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
       v1IndexdefMultiassetGet)
         local -a _op_arguments
         _op_arguments=(

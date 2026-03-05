@@ -68,14 +68,8 @@ import qualified Prelude as P
 -- * Parameter newtypes
 
 
--- ** EnabledOnly
-newtype EnabledOnly = EnabledOnly { unEnabledOnly :: Bool } deriving (P.Eq, P.Show)
-
 -- ** ExchangeId
 newtype ExchangeId = ExchangeId { unExchangeId :: Text } deriving (P.Eq, P.Show)
-
--- ** FilterAssetId
-newtype FilterAssetId = FilterAssetId { unFilterAssetId :: Text } deriving (P.Eq, P.Show)
 
 -- ** FilterExchangeId
 newtype FilterExchangeId = FilterExchangeId { unFilterExchangeId :: Text } deriving (P.Eq, P.Show)
@@ -88,9 +82,6 @@ newtype IndexId = IndexId { unIndexId :: Text } deriving (P.Eq, P.Show)
 
 -- ** Limit
 newtype Limit = Limit { unLimit :: Int } deriving (P.Eq, P.Show)
-
--- ** PendingOnly
-newtype PendingOnly = PendingOnly { unPendingOnly :: Bool } deriving (P.Eq, P.Show)
 
 -- ** PeriodId
 newtype PeriodId = PeriodId { unPeriodId :: Text } deriving (P.Eq, P.Show)
@@ -110,71 +101,8 @@ newtype TimeStart = TimeStart { unTimeStart :: DateTime } deriving (P.Eq, P.Show
 -- ** TimeStartText
 newtype TimeStartText = TimeStartText { unTimeStartText :: Text } deriving (P.Eq, P.Show)
 
--- ** WithStatusInfo
-newtype WithStatusInfo = WithStatusInfo { unWithStatusInfo :: Bool } deriving (P.Eq, P.Show)
-
 -- * Models
 
-
--- ** IndexesIndexDefinitionInputData
--- | IndexesIndexDefinitionInputData
-data IndexesIndexDefinitionInputData = IndexesIndexDefinitionInputData
-  { indexesIndexDefinitionInputDataExchangeId :: !(Maybe Text) -- ^ "exchangeId"
-  , indexesIndexDefinitionInputDataExchangeSymbolId :: !(Maybe Text) -- ^ "exchangeSymbolId"
-  , indexesIndexDefinitionInputDataBaseAssetId :: !(Maybe Text) -- ^ "baseAssetId"
-  , indexesIndexDefinitionInputDataQuoteAssetId :: !(Maybe Text) -- ^ "quoteAssetId"
-  , indexesIndexDefinitionInputDataBeginDate :: !(Maybe DateTime) -- ^ "beginDate"
-  , indexesIndexDefinitionInputDataEndDate :: !(Maybe DateTime) -- ^ "endDate"
-  , indexesIndexDefinitionInputDataStatus :: !(Maybe Text) -- ^ "status"
-  , indexesIndexDefinitionInputDataStatusInfo :: !(Maybe Text) -- ^ "statusInfo"
-  , indexesIndexDefinitionInputDataLastModificationTime :: !(Maybe DateTime) -- ^ "lastModificationTime"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON IndexesIndexDefinitionInputData
-instance A.FromJSON IndexesIndexDefinitionInputData where
-  parseJSON = A.withObject "IndexesIndexDefinitionInputData" $ \o ->
-    IndexesIndexDefinitionInputData
-      <$> (o .:? "exchangeId")
-      <*> (o .:? "exchangeSymbolId")
-      <*> (o .:? "baseAssetId")
-      <*> (o .:? "quoteAssetId")
-      <*> (o .:? "beginDate")
-      <*> (o .:? "endDate")
-      <*> (o .:? "status")
-      <*> (o .:? "statusInfo")
-      <*> (o .:? "lastModificationTime")
-
--- | ToJSON IndexesIndexDefinitionInputData
-instance A.ToJSON IndexesIndexDefinitionInputData where
-  toJSON IndexesIndexDefinitionInputData {..} =
-   _omitNulls
-      [ "exchangeId" .= indexesIndexDefinitionInputDataExchangeId
-      , "exchangeSymbolId" .= indexesIndexDefinitionInputDataExchangeSymbolId
-      , "baseAssetId" .= indexesIndexDefinitionInputDataBaseAssetId
-      , "quoteAssetId" .= indexesIndexDefinitionInputDataQuoteAssetId
-      , "beginDate" .= indexesIndexDefinitionInputDataBeginDate
-      , "endDate" .= indexesIndexDefinitionInputDataEndDate
-      , "status" .= indexesIndexDefinitionInputDataStatus
-      , "statusInfo" .= indexesIndexDefinitionInputDataStatusInfo
-      , "lastModificationTime" .= indexesIndexDefinitionInputDataLastModificationTime
-      ]
-
-
--- | Construct a value of type 'IndexesIndexDefinitionInputData' (by applying it's required fields, if any)
-mkIndexesIndexDefinitionInputData
-  :: IndexesIndexDefinitionInputData
-mkIndexesIndexDefinitionInputData =
-  IndexesIndexDefinitionInputData
-  { indexesIndexDefinitionInputDataExchangeId = Nothing
-  , indexesIndexDefinitionInputDataExchangeSymbolId = Nothing
-  , indexesIndexDefinitionInputDataBaseAssetId = Nothing
-  , indexesIndexDefinitionInputDataQuoteAssetId = Nothing
-  , indexesIndexDefinitionInputDataBeginDate = Nothing
-  , indexesIndexDefinitionInputDataEndDate = Nothing
-  , indexesIndexDefinitionInputDataStatus = Nothing
-  , indexesIndexDefinitionInputDataStatusInfo = Nothing
-  , indexesIndexDefinitionInputDataLastModificationTime = Nothing
-  }
 
 -- ** IndexesIndexDefinitionSnapshotEntry
 -- | IndexesIndexDefinitionSnapshotEntry

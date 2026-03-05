@@ -1,7 +1,6 @@
 .openapi-generator-ignore
 README.md
 rebar.config
-src/model/openapi_indexes_index_definition_input_data.erl
 src/model/openapi_indexes_index_definition_snapshot_entry.erl
 src/model/openapi_indexes_index_identifier.erl
 src/model/openapi_indexes_index_multi_asset_weight.erl

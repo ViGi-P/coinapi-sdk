@@ -48,7 +48,6 @@ set(SRCS
     src/binary.c
     external/cJSON.c
     model/object.c
-    model/indexes_index_definition_input_data.c
     model/indexes_index_definition_snapshot_entry.c
     model/indexes_index_identifier.c
     model/indexes_index_multi_asset_weight.c
@@ -71,7 +70,6 @@ set(HDRS
     external/cJSON.h
     model/object.h
     model/any_type.h
-    model/indexes_index_definition_input_data.h
     model/indexes_index_definition_snapshot_entry.h
     model/indexes_index_identifier.h
     model/indexes_index_multi_asset_weight.h
@@ -91,7 +89,11 @@ include(PreTarget.cmake OPTIONAL)
 set(PROJECT_VERSION_STRING "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}")
 
 # Add library with project file with project name as library name
-add_library(${pkgName} ${SRCS} ${HDRS})
+if(NOT BUILD_STATIC_LIBS)
+  add_library(${pkgName} ${SRCS} ${HDRS})
+else()
+  add_library(${pkgName} STATIC ${SRCS} ${HDRS})
+endif()
 # Link dependent libraries
 if(NOT CMAKE_VERSION VERSION_LESS 3.4)
     target_link_libraries(${pkgName} PRIVATE OpenSSL::SSL OpenSSL::Crypto)

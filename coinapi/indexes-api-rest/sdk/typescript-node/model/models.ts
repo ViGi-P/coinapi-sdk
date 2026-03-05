@@ -1,6 +1,5 @@
 import localVarRequest from 'request';
 
-export * from './indexesIndexDefinitionInputData';
 export * from './indexesIndexDefinitionSnapshotEntry';
 export * from './indexesIndexIdentifier';
 export * from './indexesIndexMultiAssetWeight';
@@ -23,7 +22,6 @@ export interface RequestDetailedFile {
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
-import { IndexesIndexDefinitionInputData } from './indexesIndexDefinitionInputData';
 import { IndexesIndexDefinitionSnapshotEntry } from './indexesIndexDefinitionSnapshotEntry';
 import { IndexesIndexIdentifier } from './indexesIndexIdentifier';
 import { IndexesIndexMultiAssetWeight } from './indexesIndexMultiAssetWeight';
@@ -49,7 +47,6 @@ let enumsMap: {[index: string]: any} = {
 }
 
 let typeMap: {[index: string]: any} = {
-    "IndexesIndexDefinitionInputData": IndexesIndexDefinitionInputData,
     "IndexesIndexDefinitionSnapshotEntry": IndexesIndexDefinitionSnapshotEntry,
     "IndexesIndexIdentifier": IndexesIndexIdentifier,
     "IndexesIndexMultiAssetWeight": IndexesIndexMultiAssetWeight,

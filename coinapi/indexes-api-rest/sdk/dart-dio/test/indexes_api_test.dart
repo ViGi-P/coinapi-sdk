@@ -7,20 +7,6 @@ void main() {
   final instance = Openapi().getIndexesApi();
 
   group(IndexesApi, () {
-    // Returns all data inputs for a specific index definition
-    //
-    //Future<BuiltList<IndexesIndexDefinitionInputData>> v1IndexdefInputDataIndexDefinitionIdAllGet(String indexDefinitionId) async
-    test('test v1IndexdefInputDataIndexDefinitionIdAllGet', () async {
-      // TODO
-    });
-
-    // Returns data inputs for certain index definition and time
-    //
-    //Future<BuiltList<IndexesIndexDefinitionSnapshotEntry>> v1IndexdefInputDataIndexDefinitionIdGet(String indexDefinitionId, { DateTime time, bool enabledOnly, bool pendingOnly, String filterAssetId, bool withStatusInfo }) async
-    test('test v1IndexdefInputDataIndexDefinitionIdGet', () async {
-      // TODO
-    });
-
     // Get all multi-asset weights
     //
     //Future<BuiltList<IndexesIndexMultiAssetWeight>> v1IndexdefMultiassetGet() async

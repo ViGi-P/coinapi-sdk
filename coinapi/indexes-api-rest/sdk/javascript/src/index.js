@@ -13,7 +13,6 @@
 
 
 import ApiClient from './ApiClient';
-import IndexesIndexDefinitionInputData from './model/IndexesIndexDefinitionInputData';
 import IndexesIndexDefinitionSnapshotEntry from './model/IndexesIndexDefinitionSnapshotEntry';
 import IndexesIndexIdentifier from './model/IndexesIndexIdentifier';
 import IndexesIndexMultiAssetWeight from './model/IndexesIndexMultiAssetWeight';
@@ -64,12 +63,6 @@ export {
      * @property {module:ApiClient}
      */
     ApiClient,
-
-    /**
-     * The IndexesIndexDefinitionInputData model constructor.
-     * @property {module:model/IndexesIndexDefinitionInputData}
-     */
-    IndexesIndexDefinitionInputData,
 
     /**
      * The IndexesIndexDefinitionSnapshotEntry model constructor.

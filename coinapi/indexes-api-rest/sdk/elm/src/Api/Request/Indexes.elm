@@ -15,9 +15,7 @@
 
 
 module Api.Request.Indexes exposing
-    ( v1IndexdefInputDataIndexDefinitionIdAllGet
-    , v1IndexdefInputDataIndexDefinitionIdGet
-    , v1IndexdefMultiassetGet
+    ( v1IndexdefMultiassetGet
     , v1IndexdefMultiassetIndexIdGet
     , v1IndexesGet
     , v1IndexesIndexDefinitionIdCurrentSnapshotGet
@@ -35,34 +33,6 @@ import Http
 import Json.Decode
 import Json.Encode
 
-
-{-| Returns all data inputs for a specific index definition
--}
-v1IndexdefInputDataIndexDefinitionIdAllGet : String -> String -> Api.Request (List Api.Data.IndexesIndexDefinitionInputData)
-v1IndexdefInputDataIndexDefinitionIdAllGet indexDefinitionId_path auth_token =
-    Api.request
-        "GET"
-        "/v1/indexdef/input-data/{index_definition_id}/all"
-        [ ( "index_definition_id", identity indexDefinitionId_path ) ]
-        []
-        []
-        Nothing
-        (Json.Decode.list Api.Data.indexesIndexDefinitionInputDataDecoder)
-        |> Api.withBearerToken auth_token
-
-{-| Returns data inputs for certain index definition and time
--}
-v1IndexdefInputDataIndexDefinitionIdGet : String -> Maybe Posix -> Maybe Bool -> Maybe Bool -> Maybe String -> Maybe Bool -> String -> Api.Request (List Api.Data.IndexesIndexDefinitionSnapshotEntry)
-v1IndexdefInputDataIndexDefinitionIdGet indexDefinitionId_path time_query enabledOnly_query pendingOnly_query filterAssetId_query withStatusInfo_query auth_token =
-    Api.request
-        "GET"
-        "/v1/indexdef/input-data/{index_definition_id}"
-        [ ( "index_definition_id", identity indexDefinitionId_path ) ]
-        [ ( "time", Maybe.map Api.Time.dateTimeToString time_query ), ( "enabled_only", Maybe.map (\val -> if val then "true" else "false") enabledOnly_query ), ( "pending_only", Maybe.map (\val -> if val then "true" else "false") pendingOnly_query ), ( "filter_asset_id", Maybe.map identity filterAssetId_query ), ( "with_status_info", Maybe.map (\val -> if val then "true" else "false") withStatusInfo_query ) ]
-        []
-        Nothing
-        (Json.Decode.list Api.Data.indexesIndexDefinitionSnapshotEntryDecoder)
-        |> Api.withBearerToken auth_token
 
 {-| Get all multi-asset weights
 -}

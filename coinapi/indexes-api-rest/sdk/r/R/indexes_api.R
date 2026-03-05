@@ -14,51 +14,6 @@
 #'
 #' @examples
 #' \dontrun{
-#' ####################  V1IndexdefInputDataIndexDefinitionIdAllGet  ####################
-#'
-#' library(openapi)
-#' var_index_definition_id <- "index_definition_id_example" # character | 
-#'
-#' #Returns all data inputs for a specific index definition
-#' api_instance <- IndexesApi$new()
-#'
-#' # Configure API key authorization: APIKey
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-#'
-#' # Configure HTTP bearer authorization: JWT
-#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
-#'
-#' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1IndexdefInputDataIndexDefinitionIdAllGet(var_index_definition_iddata_file = "result.txt")
-#' result <- api_instance$V1IndexdefInputDataIndexDefinitionIdAllGet(var_index_definition_id)
-#' dput(result)
-#'
-#'
-#' ####################  V1IndexdefInputDataIndexDefinitionIdGet  ####################
-#'
-#' library(openapi)
-#' var_index_definition_id <- "index_definition_id_example" # character | 
-#' var_time <- "time_example" # character |  (Optional)
-#' var_enabled_only <- FALSE # character |  (Optional)
-#' var_pending_only <- FALSE # character |  (Optional)
-#' var_filter_asset_id <- "filter_asset_id_example" # character |  (Optional)
-#' var_with_status_info <- FALSE # character |  (Optional)
-#'
-#' #Returns data inputs for certain index definition and time
-#' api_instance <- IndexesApi$new()
-#'
-#' # Configure API key authorization: APIKey
-#' api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
-#'
-#' # Configure HTTP bearer authorization: JWT
-#' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
-#'
-#' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1IndexdefInputDataIndexDefinitionIdGet(var_index_definition_id, time = var_time, enabled_only = var_enabled_only, pending_only = var_pending_only, filter_asset_id = var_filter_asset_id, with_status_info = var_with_status_infodata_file = "result.txt")
-#' result <- api_instance$V1IndexdefInputDataIndexDefinitionIdGet(var_index_definition_id, time = var_time, enabled_only = var_enabled_only, pending_only = var_pending_only, filter_asset_id = var_filter_asset_id, with_status_info = var_with_status_info)
-#' dput(result)
-#'
-#'
 #' ####################  V1IndexdefMultiassetGet  ####################
 #'
 #' library(openapi)
@@ -247,251 +202,15 @@ IndexesApi <- R6::R6Class(
     },
 
     #' @description
-    #' Returns all data inputs for a specific index definition
-    #'
-    #' @param index_definition_id 
-    #' @param data_file (optional) name of the data file to save the result
-    #' @param ... Other optional arguments
-    #'
-    #' @return array[IndexesIndexDefinitionInputData]
-    V1IndexdefInputDataIndexDefinitionIdAllGet = function(index_definition_id, data_file = NULL, ...) {
-      local_var_response <- self$V1IndexdefInputDataIndexDefinitionIdAllGetWithHttpInfo(index_definition_id, data_file = data_file, ...)
-      if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
-        return(local_var_response$content)
-      } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
-        return(local_var_response)
-      } else if (local_var_response$status_code >= 400 && local_var_response$status_code <= 499) {
-        return(local_var_response)
-      } else if (local_var_response$status_code >= 500 && local_var_response$status_code <= 599) {
-        return(local_var_response)
-      }
-    },
-
-    #' @description
-    #' Returns all data inputs for a specific index definition
-    #'
-    #' @param index_definition_id 
-    #' @param data_file (optional) name of the data file to save the result
-    #' @param ... Other optional arguments
-    #'
-    #' @return API response (array[IndexesIndexDefinitionInputData]) with additional information such as HTTP status code, headers
-    V1IndexdefInputDataIndexDefinitionIdAllGetWithHttpInfo = function(index_definition_id, data_file = NULL, ...) {
-      args <- list(...)
-      query_params <- list()
-      header_params <- c()
-      form_params <- list()
-      file_params <- list()
-      local_var_body <- NULL
-      oauth_scopes <- NULL
-      is_oauth <- FALSE
-
-      if (missing(`index_definition_id`)) {
-        stop("Missing required parameter `index_definition_id`.")
-      }
-
-
-      local_var_url_path <- "/v1/indexdef/input-data/{index_definition_id}/all"
-      if (!missing(`index_definition_id`)) {
-        local_var_url_path <- gsub("\\{index_definition_id\\}", URLencode(as.character(`index_definition_id`), reserved = TRUE), local_var_url_path)
-      }
-
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
-      }
-      # Bearer token
-      if (!is.null(self$api_client$bearer_token)) {
-        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
-      }
-
-      # The Accept request HTTP header
-      local_var_accepts <- list("text/plain", "application/json", "text/json", "application/x-msgpack")
-
-      # The Content-Type representation header
-      local_var_content_types <- list()
-
-      local_var_resp <- self$api_client$CallApi(url = paste0(self$api_client$base_path, local_var_url_path),
-                                 method = "GET",
-                                 query_params = query_params,
-                                 header_params = header_params,
-                                 form_params = form_params,
-                                 file_params = file_params,
-                                 accepts = local_var_accepts,
-                                 content_types = local_var_content_types,
-                                 body = local_var_body,
-                                 is_oauth = is_oauth,
-                                 oauth_scopes = oauth_scopes,
-                                 ...)
-
-      if (local_var_resp$status_code >= 200 && local_var_resp$status_code <= 299) {
-        # save response in a file
-        if (!is.null(data_file)) {
-          self$api_client$WriteFile(local_var_resp, data_file)
-        }
-
-        deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexDefinitionInputData]"),
-          error = function(e) {
-            stop("Failed to deserialize response")
-          }
-        )
-        local_var_resp$content <- deserialized_resp_obj
-        return(local_var_resp)
-      } 
-      
-      local_var_error_msg <- local_var_resp$response_as_text()      
-      if (local_var_resp$status_code >= 300 && local_var_resp$status_code <= 399) {
-        ApiResponse$new(paste("Server returned ", local_var_resp$status_code, " response status code."), local_var_resp)
-      } else if (local_var_resp$status_code >= 400 && local_var_resp$status_code <= 499) {
-        ApiResponse$new("API client error", local_var_resp)
-      } else if (local_var_resp$status_code >= 500 && local_var_resp$status_code <= 599) {
-        if (is.null(local_var_resp$response) || local_var_resp$response == "") {
-          local_var_resp$response <- "API server error"
-        }
-        return(local_var_resp)
-      }
-    },
-
-    #' @description
-    #' Returns data inputs for certain index definition and time
-    #'
-    #' @param index_definition_id 
-    #' @param time (optional) No description
-    #' @param enabled_only (optional) No description (default value: FALSE)
-    #' @param pending_only (optional) No description (default value: FALSE)
-    #' @param filter_asset_id (optional) No description
-    #' @param with_status_info (optional) No description (default value: FALSE)
-    #' @param data_file (optional) name of the data file to save the result
-    #' @param ... Other optional arguments
-    #'
-    #' @return array[IndexesIndexDefinitionSnapshotEntry]
-    V1IndexdefInputDataIndexDefinitionIdGet = function(index_definition_id, time = NULL, enabled_only = FALSE, pending_only = FALSE, filter_asset_id = NULL, with_status_info = FALSE, data_file = NULL, ...) {
-      local_var_response <- self$V1IndexdefInputDataIndexDefinitionIdGetWithHttpInfo(index_definition_id, time, enabled_only, pending_only, filter_asset_id, with_status_info, data_file = data_file, ...)
-      if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
-        return(local_var_response$content)
-      } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
-        return(local_var_response)
-      } else if (local_var_response$status_code >= 400 && local_var_response$status_code <= 499) {
-        return(local_var_response)
-      } else if (local_var_response$status_code >= 500 && local_var_response$status_code <= 599) {
-        return(local_var_response)
-      }
-    },
-
-    #' @description
-    #' Returns data inputs for certain index definition and time
-    #'
-    #' @param index_definition_id 
-    #' @param time (optional) No description
-    #' @param enabled_only (optional) No description (default value: FALSE)
-    #' @param pending_only (optional) No description (default value: FALSE)
-    #' @param filter_asset_id (optional) No description
-    #' @param with_status_info (optional) No description (default value: FALSE)
-    #' @param data_file (optional) name of the data file to save the result
-    #' @param ... Other optional arguments
-    #'
-    #' @return API response (array[IndexesIndexDefinitionSnapshotEntry]) with additional information such as HTTP status code, headers
-    V1IndexdefInputDataIndexDefinitionIdGetWithHttpInfo = function(index_definition_id, time = NULL, enabled_only = FALSE, pending_only = FALSE, filter_asset_id = NULL, with_status_info = FALSE, data_file = NULL, ...) {
-      args <- list(...)
-      query_params <- list()
-      header_params <- c()
-      form_params <- list()
-      file_params <- list()
-      local_var_body <- NULL
-      oauth_scopes <- NULL
-      is_oauth <- FALSE
-
-      if (missing(`index_definition_id`)) {
-        stop("Missing required parameter `index_definition_id`.")
-      }
-
-
-
-
-
-
-
-      query_params[["time"]] <- `time`
-
-      query_params[["enabled_only"]] <- `enabled_only`
-
-      query_params[["pending_only"]] <- `pending_only`
-
-      query_params[["filter_asset_id"]] <- `filter_asset_id`
-
-      query_params[["with_status_info"]] <- `with_status_info`
-
-      local_var_url_path <- "/v1/indexdef/input-data/{index_definition_id}"
-      if (!missing(`index_definition_id`)) {
-        local_var_url_path <- gsub("\\{index_definition_id\\}", URLencode(as.character(`index_definition_id`), reserved = TRUE), local_var_url_path)
-      }
-
-      # API key authentication
-      if ("Authorization" %in% names(self$api_client$api_keys) && nchar(self$api_client$api_keys["Authorization"]) > 0) {
-        header_params["Authorization"] <- paste(unlist(self$api_client$api_keys["Authorization"]), collapse = "")
-      }
-      # Bearer token
-      if (!is.null(self$api_client$bearer_token)) {
-        header_params["Authorization"] <- paste("Bearer", self$api_client$bearer_token, sep = " ")
-      }
-
-      # The Accept request HTTP header
-      local_var_accepts <- list("text/plain", "application/json", "text/json", "application/x-msgpack")
-
-      # The Content-Type representation header
-      local_var_content_types <- list()
-
-      local_var_resp <- self$api_client$CallApi(url = paste0(self$api_client$base_path, local_var_url_path),
-                                 method = "GET",
-                                 query_params = query_params,
-                                 header_params = header_params,
-                                 form_params = form_params,
-                                 file_params = file_params,
-                                 accepts = local_var_accepts,
-                                 content_types = local_var_content_types,
-                                 body = local_var_body,
-                                 is_oauth = is_oauth,
-                                 oauth_scopes = oauth_scopes,
-                                 ...)
-
-      if (local_var_resp$status_code >= 200 && local_var_resp$status_code <= 299) {
-        # save response in a file
-        if (!is.null(data_file)) {
-          self$api_client$WriteFile(local_var_resp, data_file)
-        }
-
-        deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexDefinitionSnapshotEntry]"),
-          error = function(e) {
-            stop("Failed to deserialize response")
-          }
-        )
-        local_var_resp$content <- deserialized_resp_obj
-        return(local_var_resp)
-      } 
-      
-      local_var_error_msg <- local_var_resp$response_as_text()      
-      if (local_var_resp$status_code >= 300 && local_var_resp$status_code <= 399) {
-        ApiResponse$new(paste("Server returned ", local_var_resp$status_code, " response status code."), local_var_resp)
-      } else if (local_var_resp$status_code >= 400 && local_var_resp$status_code <= 499) {
-        ApiResponse$new("API client error", local_var_resp)
-      } else if (local_var_resp$status_code >= 500 && local_var_resp$status_code <= 599) {
-        if (is.null(local_var_resp$response) || local_var_resp$response == "") {
-          local_var_resp$response <- "API server error"
-        }
-        return(local_var_resp)
-      }
-    },
-
-    #' @description
     #' Get all multi-asset weights
     #'
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[IndexesIndexMultiAssetWeight]
-    V1IndexdefMultiassetGet = function(data_file = NULL, ...) {
-      local_var_response <- self$V1IndexdefMultiassetGetWithHttpInfo(data_file = data_file, ...)
+    V1IndexdefMultiassetGet = function(data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1IndexdefMultiassetGetWithHttpInfo(data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -508,9 +227,10 @@ IndexesApi <- R6::R6Class(
     #'
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[IndexesIndexMultiAssetWeight]) with additional information such as HTTP status code, headers
-    V1IndexdefMultiassetGetWithHttpInfo = function(data_file = NULL, ...) {
+    V1IndexdefMultiassetGetWithHttpInfo = function(data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -554,6 +274,10 @@ IndexesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexMultiAssetWeight]"),
@@ -567,11 +291,15 @@ IndexesApi <- R6::R6Class(
       
       local_var_error_msg <- local_var_resp$response_as_text()      
       if (local_var_resp$status_code >= 300 && local_var_resp$status_code <= 399) {
-        ApiResponse$new(paste("Server returned ", local_var_resp$status_code, " response status code."), local_var_resp)
+        ApiResponse$new(content = paste("Server returned ", local_var_resp$status_code, " response status code."),
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 400 && local_var_resp$status_code <= 499) {
-        ApiResponse$new("API client error", local_var_resp)
+        ApiResponse$new(content = "API client error",
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 500 && local_var_resp$status_code <= 599) {
-        if (is.null(local_var_resp$response) || local_var_resp$response == "") {
+        if (is.null(local_var_resp$response) || all(local_var_resp$response == "")) {
           local_var_resp$response <- "API server error"
         }
         return(local_var_resp)
@@ -584,10 +312,11 @@ IndexesApi <- R6::R6Class(
     #' @param index_id 
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[IndexesIndexMultiAssetWeight]
-    V1IndexdefMultiassetIndexIdGet = function(index_id, data_file = NULL, ...) {
-      local_var_response <- self$V1IndexdefMultiassetIndexIdGetWithHttpInfo(index_id, data_file = data_file, ...)
+    V1IndexdefMultiassetIndexIdGet = function(index_id, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1IndexdefMultiassetIndexIdGetWithHttpInfo(index_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -605,9 +334,10 @@ IndexesApi <- R6::R6Class(
     #' @param index_id 
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[IndexesIndexMultiAssetWeight]) with additional information such as HTTP status code, headers
-    V1IndexdefMultiassetIndexIdGetWithHttpInfo = function(index_id, data_file = NULL, ...) {
+    V1IndexdefMultiassetIndexIdGetWithHttpInfo = function(index_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -621,6 +351,9 @@ IndexesApi <- R6::R6Class(
         stop("Missing required parameter `index_id`.")
       }
 
+      if (!missing(`index_id`) && is.null(`index_id`)) {
+        stop("Invalid value for `index_id` when calling IndexesApi$V1IndexdefMultiassetIndexIdGet, `index_id` is not nullable")
+      }
 
       local_var_url_path <- "/v1/indexdef/multiasset/{index_id}"
       if (!missing(`index_id`)) {
@@ -660,6 +393,10 @@ IndexesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexMultiAssetWeight]"),
@@ -673,11 +410,15 @@ IndexesApi <- R6::R6Class(
       
       local_var_error_msg <- local_var_resp$response_as_text()      
       if (local_var_resp$status_code >= 300 && local_var_resp$status_code <= 399) {
-        ApiResponse$new(paste("Server returned ", local_var_resp$status_code, " response status code."), local_var_resp)
+        ApiResponse$new(content = paste("Server returned ", local_var_resp$status_code, " response status code."),
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 400 && local_var_resp$status_code <= 499) {
-        ApiResponse$new("API client error", local_var_resp)
+        ApiResponse$new(content = "API client error",
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 500 && local_var_resp$status_code <= 599) {
-        if (is.null(local_var_resp$response) || local_var_resp$response == "") {
+        if (is.null(local_var_resp$response) || all(local_var_resp$response == "")) {
           local_var_resp$response <- "API server error"
         }
         return(local_var_resp)
@@ -689,10 +430,11 @@ IndexesApi <- R6::R6Class(
     #'
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[IndexesIndexIdentifier]
-    V1IndexesGet = function(data_file = NULL, ...) {
-      local_var_response <- self$V1IndexesGetWithHttpInfo(data_file = data_file, ...)
+    V1IndexesGet = function(data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1IndexesGetWithHttpInfo(data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -709,9 +451,10 @@ IndexesApi <- R6::R6Class(
     #'
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[IndexesIndexIdentifier]) with additional information such as HTTP status code, headers
-    V1IndexesGetWithHttpInfo = function(data_file = NULL, ...) {
+    V1IndexesGetWithHttpInfo = function(data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -755,6 +498,10 @@ IndexesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexIdentifier]"),
@@ -768,11 +515,15 @@ IndexesApi <- R6::R6Class(
       
       local_var_error_msg <- local_var_resp$response_as_text()      
       if (local_var_resp$status_code >= 300 && local_var_resp$status_code <= 399) {
-        ApiResponse$new(paste("Server returned ", local_var_resp$status_code, " response status code."), local_var_resp)
+        ApiResponse$new(content = paste("Server returned ", local_var_resp$status_code, " response status code."),
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 400 && local_var_resp$status_code <= 499) {
-        ApiResponse$new("API client error", local_var_resp)
+        ApiResponse$new(content = "API client error",
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 500 && local_var_resp$status_code <= 599) {
-        if (is.null(local_var_resp$response) || local_var_resp$response == "") {
+        if (is.null(local_var_resp$response) || all(local_var_resp$response == "")) {
           local_var_resp$response <- "API server error"
         }
         return(local_var_resp)
@@ -785,10 +536,11 @@ IndexesApi <- R6::R6Class(
     #' @param index_definition_id 
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[IndexesIndexDefinitionSnapshotEntry]
-    V1IndexesIndexDefinitionIdCurrentSnapshotGet = function(index_definition_id, data_file = NULL, ...) {
-      local_var_response <- self$V1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(index_definition_id, data_file = data_file, ...)
+    V1IndexesIndexDefinitionIdCurrentSnapshotGet = function(index_definition_id, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(index_definition_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -806,9 +558,10 @@ IndexesApi <- R6::R6Class(
     #' @param index_definition_id 
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[IndexesIndexDefinitionSnapshotEntry]) with additional information such as HTTP status code, headers
-    V1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo = function(index_definition_id, data_file = NULL, ...) {
+    V1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo = function(index_definition_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -822,6 +575,9 @@ IndexesApi <- R6::R6Class(
         stop("Missing required parameter `index_definition_id`.")
       }
 
+      if (!missing(`index_definition_id`) && is.null(`index_definition_id`)) {
+        stop("Invalid value for `index_definition_id` when calling IndexesApi$V1IndexesIndexDefinitionIdCurrentSnapshotGet, `index_definition_id` is not nullable")
+      }
 
       local_var_url_path <- "/v1/indexes/{index_definition_id}/currentSnapshot"
       if (!missing(`index_definition_id`)) {
@@ -861,6 +617,10 @@ IndexesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexDefinitionSnapshotEntry]"),
@@ -874,11 +634,15 @@ IndexesApi <- R6::R6Class(
       
       local_var_error_msg <- local_var_resp$response_as_text()      
       if (local_var_resp$status_code >= 300 && local_var_resp$status_code <= 399) {
-        ApiResponse$new(paste("Server returned ", local_var_resp$status_code, " response status code."), local_var_resp)
+        ApiResponse$new(content = paste("Server returned ", local_var_resp$status_code, " response status code."),
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 400 && local_var_resp$status_code <= 499) {
-        ApiResponse$new("API client error", local_var_resp)
+        ApiResponse$new(content = "API client error",
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 500 && local_var_resp$status_code <= 599) {
-        if (is.null(local_var_resp$response) || local_var_resp$response == "") {
+        if (is.null(local_var_resp$response) || all(local_var_resp$response == "")) {
           local_var_resp$response <- "API server error"
         }
         return(local_var_resp)
@@ -892,10 +656,11 @@ IndexesApi <- R6::R6Class(
     #' @param time (optional) No description
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[IndexesIndexDefinitionSnapshotEntry]
-    V1IndexesIndexDefinitionIdHistorySnapshotGet = function(index_definition_id, time = NULL, data_file = NULL, ...) {
-      local_var_response <- self$V1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(index_definition_id, time, data_file = data_file, ...)
+    V1IndexesIndexDefinitionIdHistorySnapshotGet = function(index_definition_id, time = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(index_definition_id, time, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -914,9 +679,10 @@ IndexesApi <- R6::R6Class(
     #' @param time (optional) No description
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[IndexesIndexDefinitionSnapshotEntry]) with additional information such as HTTP status code, headers
-    V1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo = function(index_definition_id, time = NULL, data_file = NULL, ...) {
+    V1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo = function(index_definition_id, time = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -930,7 +696,13 @@ IndexesApi <- R6::R6Class(
         stop("Missing required parameter `index_definition_id`.")
       }
 
+      if (!missing(`index_definition_id`) && is.null(`index_definition_id`)) {
+        stop("Invalid value for `index_definition_id` when calling IndexesApi$V1IndexesIndexDefinitionIdHistorySnapshotGet, `index_definition_id` is not nullable")
+      }
 
+      if (!missing(`time`) && is.null(`time`)) {
+        stop("Invalid value for `time` when calling IndexesApi$V1IndexesIndexDefinitionIdHistorySnapshotGet, `time` is not nullable")
+      }
 
       query_params[["time"]] <- `time`
 
@@ -972,6 +744,10 @@ IndexesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexDefinitionSnapshotEntry]"),
@@ -985,11 +761,15 @@ IndexesApi <- R6::R6Class(
       
       local_var_error_msg <- local_var_resp$response_as_text()      
       if (local_var_resp$status_code >= 300 && local_var_resp$status_code <= 399) {
-        ApiResponse$new(paste("Server returned ", local_var_resp$status_code, " response status code."), local_var_resp)
+        ApiResponse$new(content = paste("Server returned ", local_var_resp$status_code, " response status code."),
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 400 && local_var_resp$status_code <= 499) {
-        ApiResponse$new("API client error", local_var_resp)
+        ApiResponse$new(content = "API client error",
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 500 && local_var_resp$status_code <= 599) {
-        if (is.null(local_var_resp$response) || local_var_resp$response == "") {
+        if (is.null(local_var_resp$response) || all(local_var_resp$response == "")) {
           local_var_resp$response <- "API server error"
         }
         return(local_var_resp)
@@ -1002,10 +782,11 @@ IndexesApi <- R6::R6Class(
     #' @param index_id 
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return IndexesIndexValue
-    V1IndexesIndexIdCurrentGet = function(index_id, data_file = NULL, ...) {
-      local_var_response <- self$V1IndexesIndexIdCurrentGetWithHttpInfo(index_id, data_file = data_file, ...)
+    V1IndexesIndexIdCurrentGet = function(index_id, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1IndexesIndexIdCurrentGetWithHttpInfo(index_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1023,9 +804,10 @@ IndexesApi <- R6::R6Class(
     #' @param index_id 
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (IndexesIndexValue) with additional information such as HTTP status code, headers
-    V1IndexesIndexIdCurrentGetWithHttpInfo = function(index_id, data_file = NULL, ...) {
+    V1IndexesIndexIdCurrentGetWithHttpInfo = function(index_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1039,6 +821,9 @@ IndexesApi <- R6::R6Class(
         stop("Missing required parameter `index_id`.")
       }
 
+      if (!missing(`index_id`) && is.null(`index_id`)) {
+        stop("Invalid value for `index_id` when calling IndexesApi$V1IndexesIndexIdCurrentGet, `index_id` is not nullable")
+      }
 
       local_var_url_path <- "/v1/indexes/{index_id}/current"
       if (!missing(`index_id`)) {
@@ -1078,6 +863,10 @@ IndexesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "IndexesIndexValue"),
@@ -1091,11 +880,15 @@ IndexesApi <- R6::R6Class(
       
       local_var_error_msg <- local_var_resp$response_as_text()      
       if (local_var_resp$status_code >= 300 && local_var_resp$status_code <= 399) {
-        ApiResponse$new(paste("Server returned ", local_var_resp$status_code, " response status code."), local_var_resp)
+        ApiResponse$new(content = paste("Server returned ", local_var_resp$status_code, " response status code."),
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 400 && local_var_resp$status_code <= 499) {
-        ApiResponse$new("API client error", local_var_resp)
+        ApiResponse$new(content = "API client error",
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 500 && local_var_resp$status_code <= 599) {
-        if (is.null(local_var_resp$response) || local_var_resp$response == "") {
+        if (is.null(local_var_resp$response) || all(local_var_resp$response == "")) {
           local_var_resp$response <- "API server error"
         }
         return(local_var_resp)
@@ -1111,10 +904,11 @@ IndexesApi <- R6::R6Class(
     #' @param limit (optional) No description (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[IndexesIndexValue]
-    V1IndexesIndexIdHistoryGet = function(index_id, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$V1IndexesIndexIdHistoryGetWithHttpInfo(index_id, time_start, time_end, limit, data_file = data_file, ...)
+    V1IndexesIndexIdHistoryGet = function(index_id, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1IndexesIndexIdHistoryGetWithHttpInfo(index_id, time_start, time_end, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1135,9 +929,10 @@ IndexesApi <- R6::R6Class(
     #' @param limit (optional) No description (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[IndexesIndexValue]) with additional information such as HTTP status code, headers
-    V1IndexesIndexIdHistoryGetWithHttpInfo = function(index_id, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ...) {
+    V1IndexesIndexIdHistoryGetWithHttpInfo = function(index_id, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1151,9 +946,21 @@ IndexesApi <- R6::R6Class(
         stop("Missing required parameter `index_id`.")
       }
 
+      if (!missing(`index_id`) && is.null(`index_id`)) {
+        stop("Invalid value for `index_id` when calling IndexesApi$V1IndexesIndexIdHistoryGet, `index_id` is not nullable")
+      }
 
+      if (!missing(`time_start`) && is.null(`time_start`)) {
+        stop("Invalid value for `time_start` when calling IndexesApi$V1IndexesIndexIdHistoryGet, `time_start` is not nullable")
+      }
 
+      if (!missing(`time_end`) && is.null(`time_end`)) {
+        stop("Invalid value for `time_end` when calling IndexesApi$V1IndexesIndexIdHistoryGet, `time_end` is not nullable")
+      }
 
+      if (!missing(`limit`) && is.null(`limit`)) {
+        stop("Invalid value for `limit` when calling IndexesApi$V1IndexesIndexIdHistoryGet, `limit` is not nullable")
+      }
 
       query_params[["time_start"]] <- `time_start`
 
@@ -1199,6 +1006,10 @@ IndexesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexValue]"),
@@ -1212,11 +1023,15 @@ IndexesApi <- R6::R6Class(
       
       local_var_error_msg <- local_var_resp$response_as_text()      
       if (local_var_resp$status_code >= 300 && local_var_resp$status_code <= 399) {
-        ApiResponse$new(paste("Server returned ", local_var_resp$status_code, " response status code."), local_var_resp)
+        ApiResponse$new(content = paste("Server returned ", local_var_resp$status_code, " response status code."),
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 400 && local_var_resp$status_code <= 499) {
-        ApiResponse$new("API client error", local_var_resp)
+        ApiResponse$new(content = "API client error",
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 500 && local_var_resp$status_code <= 599) {
-        if (is.null(local_var_resp$response) || local_var_resp$response == "") {
+        if (is.null(local_var_resp$response) || all(local_var_resp$response == "")) {
           local_var_resp$response <- "API server error"
         }
         return(local_var_resp)
@@ -1233,10 +1048,11 @@ IndexesApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[IndexesIndexTimeseriesItem]
-    V1IndexesIndexIdTimeseriesGet = function(index_id, period_id, time_start, time_end, limit = 100, data_file = NULL, ...) {
-      local_var_response <- self$V1IndexesIndexIdTimeseriesGetWithHttpInfo(index_id, period_id, time_start, time_end, limit, data_file = data_file, ...)
+    V1IndexesIndexIdTimeseriesGet = function(index_id, period_id, time_start, time_end, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1IndexesIndexIdTimeseriesGetWithHttpInfo(index_id, period_id, time_start, time_end, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -1258,9 +1074,10 @@ IndexesApi <- R6::R6Class(
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
+    #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[IndexesIndexTimeseriesItem]) with additional information such as HTTP status code, headers
-    V1IndexesIndexIdTimeseriesGetWithHttpInfo = function(index_id, period_id, time_start, time_end, limit = 100, data_file = NULL, ...) {
+    V1IndexesIndexIdTimeseriesGetWithHttpInfo = function(index_id, period_id, time_start, time_end, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -1286,10 +1103,25 @@ IndexesApi <- R6::R6Class(
         stop("Missing required parameter `time_end`.")
       }
 
+      if (!missing(`index_id`) && is.null(`index_id`)) {
+        stop("Invalid value for `index_id` when calling IndexesApi$V1IndexesIndexIdTimeseriesGet, `index_id` is not nullable")
+      }
 
+      if (!missing(`period_id`) && is.null(`period_id`)) {
+        stop("Invalid value for `period_id` when calling IndexesApi$V1IndexesIndexIdTimeseriesGet, `period_id` is not nullable")
+      }
 
+      if (!missing(`time_start`) && is.null(`time_start`)) {
+        stop("Invalid value for `time_start` when calling IndexesApi$V1IndexesIndexIdTimeseriesGet, `time_start` is not nullable")
+      }
 
+      if (!missing(`time_end`) && is.null(`time_end`)) {
+        stop("Invalid value for `time_end` when calling IndexesApi$V1IndexesIndexIdTimeseriesGet, `time_end` is not nullable")
+      }
 
+      if (!missing(`limit`) && is.null(`limit`)) {
+        stop("Invalid value for `limit` when calling IndexesApi$V1IndexesIndexIdTimeseriesGet, `limit` is not nullable")
+      }
 
       query_params[["period_id"]] <- `period_id`
 
@@ -1337,6 +1169,10 @@ IndexesApi <- R6::R6Class(
         if (!is.null(data_file)) {
           self$api_client$WriteFile(local_var_resp, data_file)
         }
+        if (!.parse) {
+          local_var_resp$content <- local_var_resp$response_as_text()
+          return(local_var_resp)
+        }
 
         deserialized_resp_obj <- tryCatch(
           self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexTimeseriesItem]"),
@@ -1350,11 +1186,15 @@ IndexesApi <- R6::R6Class(
       
       local_var_error_msg <- local_var_resp$response_as_text()      
       if (local_var_resp$status_code >= 300 && local_var_resp$status_code <= 399) {
-        ApiResponse$new(paste("Server returned ", local_var_resp$status_code, " response status code."), local_var_resp)
+        ApiResponse$new(content = paste("Server returned ", local_var_resp$status_code, " response status code."),
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 400 && local_var_resp$status_code <= 499) {
-        ApiResponse$new("API client error", local_var_resp)
+        ApiResponse$new(content = "API client error",
+                        response = local_var_resp,
+                        status_code = local_var_resp$status_code)
       } else if (local_var_resp$status_code >= 500 && local_var_resp$status_code <= 599) {
-        if (is.null(local_var_resp$response) || local_var_resp$response == "") {
+        if (is.null(local_var_resp$response) || all(local_var_resp$response == "")) {
           local_var_resp$response <- "API server error"
         }
         return(local_var_resp)

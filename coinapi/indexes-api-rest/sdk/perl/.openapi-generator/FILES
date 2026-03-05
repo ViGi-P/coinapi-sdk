@@ -5,7 +5,6 @@ README.md
 bin/autodoc
 cpanfile
 docs/IndexesApi.md
-docs/IndexesIndexDefinitionInputData.md
 docs/IndexesIndexDefinitionSnapshotEntry.md
 docs/IndexesIndexIdentifier.md
 docs/IndexesIndexMultiAssetWeight.md
@@ -22,7 +21,6 @@ lib/WWW/OpenAPIClient/ApiFactory.pm
 lib/WWW/OpenAPIClient/Configuration.pm
 lib/WWW/OpenAPIClient/IndexesApi.pm
 lib/WWW/OpenAPIClient/MetadataApi.pm
-lib/WWW/OpenAPIClient/Object/IndexesIndexDefinitionInputData.pm
 lib/WWW/OpenAPIClient/Object/IndexesIndexDefinitionSnapshotEntry.pm
 lib/WWW/OpenAPIClient/Object/IndexesIndexIdentifier.pm
 lib/WWW/OpenAPIClient/Object/IndexesIndexMultiAssetWeight.pm
@@ -35,7 +33,6 @@ lib/WWW/OpenAPIClient/PeriodsApi.pm
 lib/WWW/OpenAPIClient/Role.pm
 lib/WWW/OpenAPIClient/Role/AutoDoc.pm
 t/IndexesApiTest.t
-t/IndexesIndexDefinitionInputDataTest.t
 t/IndexesIndexDefinitionSnapshotEntryTest.t
 t/IndexesIndexIdentifierTest.t
 t/IndexesIndexMultiAssetWeightTest.t

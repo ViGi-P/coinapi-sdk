@@ -32,7 +32,6 @@ part 'api/indexes_api.dart';
 part 'api/metadata_api.dart';
 part 'api/periods_api.dart';
 
-part 'model/indexes_index_definition_input_data.dart';
 part 'model/indexes_index_definition_snapshot_entry.dart';
 part 'model/indexes_index_identifier.dart';
 part 'model/indexes_index_multi_asset_weight.dart';

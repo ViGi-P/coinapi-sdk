@@ -2,7 +2,6 @@
 README.md
 build.gradle
 docs/IndexesApi.md
-docs/IndexesIndexDefinitionInputData.md
 docs/IndexesIndexDefinitionSnapshotEntry.md
 docs/IndexesIndexIdentifier.md
 docs/IndexesIndexMultiAssetWeight.md
@@ -38,7 +37,6 @@ src/main/kotlin/org/openapitools/client/infrastructure/ResponseExtensions.kt
 src/main/kotlin/org/openapitools/client/infrastructure/Serializer.kt
 src/main/kotlin/org/openapitools/client/infrastructure/URIAdapter.kt
 src/main/kotlin/org/openapitools/client/infrastructure/UUIDAdapter.kt
-src/main/kotlin/org/openapitools/client/models/IndexesIndexDefinitionInputData.kt
 src/main/kotlin/org/openapitools/client/models/IndexesIndexDefinitionSnapshotEntry.kt
 src/main/kotlin/org/openapitools/client/models/IndexesIndexIdentifier.kt
 src/main/kotlin/org/openapitools/client/models/IndexesIndexMultiAssetWeight.kt
@@ -50,7 +48,6 @@ src/main/kotlin/org/openapitools/client/models/MetadataTimeseriesPeriod.kt
 src/test/kotlin/org/openapitools/client/apis/IndexesApiTest.kt
 src/test/kotlin/org/openapitools/client/apis/MetadataApiTest.kt
 src/test/kotlin/org/openapitools/client/apis/PeriodsApiTest.kt
-src/test/kotlin/org/openapitools/client/models/IndexesIndexDefinitionInputDataTest.kt
 src/test/kotlin/org/openapitools/client/models/IndexesIndexDefinitionSnapshotEntryTest.kt
 src/test/kotlin/org/openapitools/client/models/IndexesIndexIdentifierTest.kt
 src/test/kotlin/org/openapitools/client/models/IndexesIndexMultiAssetWeightTest.kt

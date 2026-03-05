@@ -9,7 +9,6 @@ lib/coin_api_indexes_restapi/api/metadata.ex
 lib/coin_api_indexes_restapi/api/periods.ex
 lib/coin_api_indexes_restapi/connection.ex
 lib/coin_api_indexes_restapi/deserializer.ex
-lib/coin_api_indexes_restapi/model/indexes_index_definition_input_data.ex
 lib/coin_api_indexes_restapi/model/indexes_index_definition_snapshot_entry.ex
 lib/coin_api_indexes_restapi/model/indexes_index_identifier.ex
 lib/coin_api_indexes_restapi/model/indexes_index_multi_asset_weight.ex

@@ -13,7 +13,6 @@
 
 
 import ApiClient from "../ApiClient";
-import IndexesIndexDefinitionInputData from '../model/IndexesIndexDefinitionInputData';
 import IndexesIndexDefinitionSnapshotEntry from '../model/IndexesIndexDefinitionSnapshotEntry';
 import IndexesIndexIdentifier from '../model/IndexesIndexIdentifier';
 import IndexesIndexMultiAssetWeight from '../model/IndexesIndexMultiAssetWeight';
@@ -38,102 +37,6 @@ export default class IndexesApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-
-    /**
-     * Callback function to receive the result of the v1IndexdefInputDataIndexDefinitionIdAllGet operation.
-     * @callback module:api/IndexesApi~v1IndexdefInputDataIndexDefinitionIdAllGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IndexesIndexDefinitionInputData>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Returns all data inputs for a specific index definition
-     * @param {String} indexDefinitionId 
-     * @param {module:api/IndexesApi~v1IndexdefInputDataIndexDefinitionIdAllGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/IndexesIndexDefinitionInputData>}
-     */
-    v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId, callback) {
-      let postBody = null;
-      // verify the required parameter 'indexDefinitionId' is set
-      if (indexDefinitionId === undefined || indexDefinitionId === null) {
-        throw new Error("Missing the required parameter 'indexDefinitionId' when calling v1IndexdefInputDataIndexDefinitionIdAllGet");
-      }
-
-      let pathParams = {
-        'index_definition_id': indexDefinitionId
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['APIKey', 'JWT'];
-      let contentTypes = [];
-      let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [IndexesIndexDefinitionInputData];
-      return this.apiClient.callApi(
-        '/v1/indexdef/input-data/{index_definition_id}/all', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the v1IndexdefInputDataIndexDefinitionIdGet operation.
-     * @callback module:api/IndexesApi~v1IndexdefInputDataIndexDefinitionIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IndexesIndexDefinitionSnapshotEntry>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Returns data inputs for certain index definition and time
-     * @param {String} indexDefinitionId 
-     * @param {Object} opts Optional parameters
-     * @param {Date} [time] 
-     * @param {Boolean} [enabledOnly = false)] 
-     * @param {Boolean} [pendingOnly = false)] 
-     * @param {String} [filterAssetId] 
-     * @param {Boolean} [withStatusInfo = false)] 
-     * @param {module:api/IndexesApi~v1IndexdefInputDataIndexDefinitionIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/IndexesIndexDefinitionSnapshotEntry>}
-     */
-    v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'indexDefinitionId' is set
-      if (indexDefinitionId === undefined || indexDefinitionId === null) {
-        throw new Error("Missing the required parameter 'indexDefinitionId' when calling v1IndexdefInputDataIndexDefinitionIdGet");
-      }
-
-      let pathParams = {
-        'index_definition_id': indexDefinitionId
-      };
-      let queryParams = {
-        'time': opts['time'],
-        'enabled_only': opts['enabledOnly'],
-        'pending_only': opts['pendingOnly'],
-        'filter_asset_id': opts['filterAssetId'],
-        'with_status_info': opts['withStatusInfo']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['APIKey', 'JWT'];
-      let contentTypes = [];
-      let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [IndexesIndexDefinitionSnapshotEntry];
-      return this.apiClient.callApi(
-        '/v1/indexdef/input-data/{index_definition_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
 
     /**
      * Callback function to receive the result of the v1IndexdefMultiassetGet operation.

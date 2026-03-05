@@ -5,7 +5,6 @@
 #include <cstring>
 #include <list>
 #include <glib.h>
-#include "Indexes.IndexDefinitionInputData.h"
 #include "Indexes.IndexDefinitionSnapshotEntry.h"
 #include "Indexes.IndexIdentifier.h"
 #include "Indexes.IndexMultiAssetWeight.h"
@@ -29,70 +28,6 @@ class IndexesManager {
 public:
 	IndexesManager();
 	virtual ~IndexesManager();
-
-/*! \brief Returns all data inputs for a specific index definition. *Synchronous*
- *
- * 
- * \param indexDefinitionId  *Required*
- * \param handler The callback function to be invoked on completion. *Required*
- * \param accessToken The Authorization token. *Required*
- * \param userData The user data to be passed to the callback function.
- */
-bool v1IndexdefInputDataIndexDefinitionIdAllGetSync(char * accessToken,
-	std::string indexDefinitionId, 
-	void(* handler)(std::list<Indexes.IndexDefinitionInputData>, Error, void* )
-	, void* userData);
-
-/*! \brief Returns all data inputs for a specific index definition. *Asynchronous*
- *
- * 
- * \param indexDefinitionId  *Required*
- * \param handler The callback function to be invoked on completion. *Required*
- * \param accessToken The Authorization token. *Required*
- * \param userData The user data to be passed to the callback function.
- */
-bool v1IndexdefInputDataIndexDefinitionIdAllGetAsync(char * accessToken,
-	std::string indexDefinitionId, 
-	void(* handler)(std::list<Indexes.IndexDefinitionInputData>, Error, void* )
-	, void* userData);
-
-
-/*! \brief Returns data inputs for certain index definition and time. *Synchronous*
- *
- * 
- * \param indexDefinitionId  *Required*
- * \param time 
- * \param enabledOnly 
- * \param pendingOnly 
- * \param filterAssetId 
- * \param withStatusInfo 
- * \param handler The callback function to be invoked on completion. *Required*
- * \param accessToken The Authorization token. *Required*
- * \param userData The user data to be passed to the callback function.
- */
-bool v1IndexdefInputDataIndexDefinitionIdGetSync(char * accessToken,
-	std::string indexDefinitionId, std::string time, bool enabledOnly, bool pendingOnly, std::string filterAssetId, bool withStatusInfo, 
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
-	, void* userData);
-
-/*! \brief Returns data inputs for certain index definition and time. *Asynchronous*
- *
- * 
- * \param indexDefinitionId  *Required*
- * \param time 
- * \param enabledOnly 
- * \param pendingOnly 
- * \param filterAssetId 
- * \param withStatusInfo 
- * \param handler The callback function to be invoked on completion. *Required*
- * \param accessToken The Authorization token. *Required*
- * \param userData The user data to be passed to the callback function.
- */
-bool v1IndexdefInputDataIndexDefinitionIdGetAsync(char * accessToken,
-	std::string indexDefinitionId, std::string time, bool enabledOnly, bool pendingOnly, std::string filterAssetId, bool withStatusInfo, 
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
-	, void* userData);
-
 
 /*! \brief Get all multi-asset weights. *Synchronous*
  *

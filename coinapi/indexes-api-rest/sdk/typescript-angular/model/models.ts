@@ -1,4 +1,3 @@
-export * from './indexesIndexDefinitionInputData';
 export * from './indexesIndexDefinitionSnapshotEntry';
 export * from './indexesIndexIdentifier';
 export * from './indexesIndexMultiAssetWeight';

@@ -19,7 +19,6 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import org.openapitools.client.apis.IndexesApi
-import org.openapitools.client.models.IndexesIndexDefinitionInputData
 import org.openapitools.client.models.IndexesIndexDefinitionSnapshotEntry
 import org.openapitools.client.models.IndexesIndexIdentifier
 import org.openapitools.client.models.IndexesIndexMultiAssetWeight
@@ -30,27 +29,6 @@ class IndexesApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of IndexesApi
         //val apiInstance = IndexesApi()
-
-        // to test v1IndexdefInputDataIndexDefinitionIdAllGet
-        should("test v1IndexdefInputDataIndexDefinitionIdAllGet") {
-            // uncomment below to test v1IndexdefInputDataIndexDefinitionIdAllGet
-            //val indexDefinitionId : kotlin.String = indexDefinitionId_example // kotlin.String | 
-            //val result : kotlin.collections.List<IndexesIndexDefinitionInputData> = apiInstance.v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId)
-            //result shouldBe ("TODO")
-        }
-
-        // to test v1IndexdefInputDataIndexDefinitionIdGet
-        should("test v1IndexdefInputDataIndexDefinitionIdGet") {
-            // uncomment below to test v1IndexdefInputDataIndexDefinitionIdGet
-            //val indexDefinitionId : kotlin.String = indexDefinitionId_example // kotlin.String | 
-            //val time : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | 
-            //val enabledOnly : kotlin.Boolean = true // kotlin.Boolean | 
-            //val pendingOnly : kotlin.Boolean = true // kotlin.Boolean | 
-            //val filterAssetId : kotlin.String = filterAssetId_example // kotlin.String | 
-            //val withStatusInfo : kotlin.Boolean = true // kotlin.Boolean | 
-            //val result : kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry> = apiInstance.v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo)
-            //result shouldBe ("TODO")
-        }
 
         // to test v1IndexdefMultiassetGet
         should("test v1IndexdefMultiassetGet") {

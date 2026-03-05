@@ -30,25 +30,6 @@ my $api = WWW::OpenAPIClient::IndexesApi->new();
 isa_ok($api, 'WWW::OpenAPIClient::IndexesApi');
 
 #
-# v1_indexdef_input_data_index_definition_id_all_get test
-#
-# uncomment below and update the test
-#my $v1_indexdef_input_data_index_definition_id_all_get_index_definition_id = undef; # replace NULL with a proper value
-#my $v1_indexdef_input_data_index_definition_id_all_get_result = $api->v1_indexdef_input_data_index_definition_id_all_get(index_definition_id => $v1_indexdef_input_data_index_definition_id_all_get_index_definition_id);
-
-#
-# v1_indexdef_input_data_index_definition_id_get test
-#
-# uncomment below and update the test
-#my $v1_indexdef_input_data_index_definition_id_get_index_definition_id = undef; # replace NULL with a proper value
-#my $v1_indexdef_input_data_index_definition_id_get_time = undef; # replace NULL with a proper value
-#my $v1_indexdef_input_data_index_definition_id_get_enabled_only = undef; # replace NULL with a proper value
-#my $v1_indexdef_input_data_index_definition_id_get_pending_only = undef; # replace NULL with a proper value
-#my $v1_indexdef_input_data_index_definition_id_get_filter_asset_id = undef; # replace NULL with a proper value
-#my $v1_indexdef_input_data_index_definition_id_get_with_status_info = undef; # replace NULL with a proper value
-#my $v1_indexdef_input_data_index_definition_id_get_result = $api->v1_indexdef_input_data_index_definition_id_get(index_definition_id => $v1_indexdef_input_data_index_definition_id_get_index_definition_id, time => $v1_indexdef_input_data_index_definition_id_get_time, enabled_only => $v1_indexdef_input_data_index_definition_id_get_enabled_only, pending_only => $v1_indexdef_input_data_index_definition_id_get_pending_only, filter_asset_id => $v1_indexdef_input_data_index_definition_id_get_filter_asset_id, with_status_info => $v1_indexdef_input_data_index_definition_id_get_with_status_info);
-
-#
 # v1_indexdef_multiasset_get test
 #
 # uncomment below and update the test

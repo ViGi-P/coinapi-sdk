@@ -32,7 +32,7 @@ final api = Openapi().getPeriodsApi();
 try {
     final response = api.v1MetadataPeriodsGet();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling PeriodsApi->v1MetadataPeriodsGet: $e\n');
 }
 ```

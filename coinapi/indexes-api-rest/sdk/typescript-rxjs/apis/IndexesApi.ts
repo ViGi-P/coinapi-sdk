@@ -16,26 +16,12 @@ import type { AjaxResponse } from 'rxjs/ajax';
 import { BaseAPI, throwIfNullOrUndefined, encodeURI } from '../runtime';
 import type { OperationOpts, HttpHeaders, HttpQuery } from '../runtime';
 import type {
-    IndexesIndexDefinitionInputData,
     IndexesIndexDefinitionSnapshotEntry,
     IndexesIndexIdentifier,
     IndexesIndexMultiAssetWeight,
     IndexesIndexTimeseriesItem,
     IndexesIndexValue,
 } from '../models';
-
-export interface V1IndexdefInputDataIndexDefinitionIdAllGetRequest {
-    indexDefinitionId: string;
-}
-
-export interface V1IndexdefInputDataIndexDefinitionIdGetRequest {
-    indexDefinitionId: string;
-    time?: string;
-    enabledOnly?: boolean;
-    pendingOnly?: boolean;
-    filterAssetId?: string;
-    withStatusInfo?: boolean;
-}
 
 export interface V1IndexdefMultiassetIndexIdGetRequest {
     indexId: string;
@@ -73,53 +59,6 @@ export interface V1IndexesIndexIdTimeseriesGetRequest {
  * no description
  */
 export class IndexesApi extends BaseAPI {
-
-    /**
-     * Returns all data inputs for a specific index definition
-     */
-    v1IndexdefInputDataIndexDefinitionIdAllGet({ indexDefinitionId }: V1IndexdefInputDataIndexDefinitionIdAllGetRequest): Observable<Array<IndexesIndexDefinitionInputData>>
-    v1IndexdefInputDataIndexDefinitionIdAllGet({ indexDefinitionId }: V1IndexdefInputDataIndexDefinitionIdAllGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IndexesIndexDefinitionInputData>>>
-    v1IndexdefInputDataIndexDefinitionIdAllGet({ indexDefinitionId }: V1IndexdefInputDataIndexDefinitionIdAllGetRequest, opts?: OperationOpts): Observable<Array<IndexesIndexDefinitionInputData> | AjaxResponse<Array<IndexesIndexDefinitionInputData>>> {
-        throwIfNullOrUndefined(indexDefinitionId, 'indexDefinitionId', 'v1IndexdefInputDataIndexDefinitionIdAllGet');
-
-        const headers: HttpHeaders = {
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-        };
-
-        return this.request<Array<IndexesIndexDefinitionInputData>>({
-            url: '/v1/indexdef/input-data/{index_definition_id}/all'.replace('{index_definition_id}', encodeURI(indexDefinitionId)),
-            method: 'GET',
-            headers,
-        }, opts?.responseOpts);
-    };
-
-    /**
-     * Returns data inputs for certain index definition and time
-     */
-    v1IndexdefInputDataIndexDefinitionIdGet({ indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo }: V1IndexdefInputDataIndexDefinitionIdGetRequest): Observable<Array<IndexesIndexDefinitionSnapshotEntry>>
-    v1IndexdefInputDataIndexDefinitionIdGet({ indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo }: V1IndexdefInputDataIndexDefinitionIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IndexesIndexDefinitionSnapshotEntry>>>
-    v1IndexdefInputDataIndexDefinitionIdGet({ indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo }: V1IndexdefInputDataIndexDefinitionIdGetRequest, opts?: OperationOpts): Observable<Array<IndexesIndexDefinitionSnapshotEntry> | AjaxResponse<Array<IndexesIndexDefinitionSnapshotEntry>>> {
-        throwIfNullOrUndefined(indexDefinitionId, 'indexDefinitionId', 'v1IndexdefInputDataIndexDefinitionIdGet');
-
-        const headers: HttpHeaders = {
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-        };
-
-        const query: HttpQuery = {};
-
-        if (time != null) { query['time'] = (time as any).toISOString(); }
-        if (enabledOnly != null) { query['enabled_only'] = enabledOnly; }
-        if (pendingOnly != null) { query['pending_only'] = pendingOnly; }
-        if (filterAssetId != null) { query['filter_asset_id'] = filterAssetId; }
-        if (withStatusInfo != null) { query['with_status_info'] = withStatusInfo; }
-
-        return this.request<Array<IndexesIndexDefinitionSnapshotEntry>>({
-            url: '/v1/indexdef/input-data/{index_definition_id}'.replace('{index_definition_id}', encodeURI(indexDefinitionId)),
-            method: 'GET',
-            headers,
-            query,
-        }, opts?.responseOpts);
-    };
 
     /**
      * Get all multi-asset weights
