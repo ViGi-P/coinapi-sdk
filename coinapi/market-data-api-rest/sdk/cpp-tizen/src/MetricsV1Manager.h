@@ -211,7 +211,7 @@ bool v1MetricsExchangeHistoryGetAsync(char * accessToken,
 
 /*! \brief Listing of all supported exchange metrics. *Synchronous*
  *
- * Get data metrics for exchange.
+ * Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the `symbol_id` field will be null. For symbol-level metrics, the `symbol_id` field contains the CoinAPI symbol identifier.
  * \param exchangeId The exchange identifier (from the Metadata -> Exchanges) *Required*
  * \param metricId The metric identifier (from the Metrics -> Listing)
  * \param handler The callback function to be invoked on completion. *Required*
@@ -225,7 +225,7 @@ bool v1MetricsExchangeListingGetSync(char * accessToken,
 
 /*! \brief Listing of all supported exchange metrics. *Asynchronous*
  *
- * Get data metrics for exchange.
+ * Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the `symbol_id` field will be null. For symbol-level metrics, the `symbol_id` field contains the CoinAPI symbol identifier.
  * \param exchangeId The exchange identifier (from the Metadata -> Exchanges) *Required*
  * \param metricId The metric identifier (from the Metrics -> Listing)
  * \param handler The callback function to be invoked on completion. *Required*
@@ -335,7 +335,7 @@ bool v1MetricsSymbolHistoryGetAsync(char * accessToken,
 
 /*! \brief Listing of all supported metrics for symbol. *Synchronous*
  *
- * Get data metrics for symbol.
+ * Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The `symbol_id` field is always populated with the CoinAPI symbol identifier.
  * \param metricId Metric identifier (from the Metrics -> Listing)
  * \param exchangeId Exchange identifier (from the Metadata -> Exchanges)
  * \param symbolId Symbol identifier (from the Metadata -> Symbols)
@@ -350,7 +350,7 @@ bool v1MetricsSymbolListingGetSync(char * accessToken,
 
 /*! \brief Listing of all supported metrics for symbol. *Asynchronous*
  *
- * Get data metrics for symbol.
+ * Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The `symbol_id` field is always populated with the CoinAPI symbol identifier.
  * \param metricId Metric identifier (from the Metrics -> Listing)
  * \param exchangeId Exchange identifier (from the Metadata -> Exchanges)
  * \param symbolId Symbol identifier (from the Metadata -> Symbols)

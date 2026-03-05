@@ -130,13 +130,13 @@ class V1ListingItem {
 V1ListingItem.prototype['metric_id'] = undefined;
 
 /**
- * Gets or sets the symbol ID.
+ * The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
  * @member {String} symbol_id
  */
 V1ListingItem.prototype['symbol_id'] = undefined;
 
 /**
- * Gets or sets the symbol ID from the exchange.
+ * The exchange-native symbol identifier. Null for exchange-level metrics.
  * @member {String} symbol_id_external
  */
 V1ListingItem.prototype['symbol_id_external'] = undefined;

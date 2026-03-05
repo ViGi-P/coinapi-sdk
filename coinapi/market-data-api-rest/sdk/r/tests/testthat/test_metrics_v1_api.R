@@ -92,7 +92,7 @@ test_that("V1MetricsExchangeListingGet", {
   # tests for V1MetricsExchangeListingGet
   # base path: https://rest.coinapi.io
   # Listing of all supported exchange metrics
-  # Get data metrics for exchange.
+  # Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the &#x60;symbol_id&#x60; field will be null. For symbol-level metrics, the &#x60;symbol_id&#x60; field contains the CoinAPI symbol identifier.
   # @param exchange_id character The exchange identifier (from the Metadata -> Exchanges)
   # @param metric_id character The metric identifier (from the Metrics -> Listing) (optional)
   # @return [array[V1ListingItem]]
@@ -148,7 +148,7 @@ test_that("V1MetricsSymbolListingGet", {
   # tests for V1MetricsSymbolListingGet
   # base path: https://rest.coinapi.io
   # Listing of all supported metrics for symbol
-  # Get data metrics for symbol.
+  # Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The &#x60;symbol_id&#x60; field is always populated with the CoinAPI symbol identifier.
   # @param metric_id character Metric identifier (from the Metrics -> Listing) (optional)
   # @param exchange_id character Exchange identifier (from the Metadata -> Exchanges) (optional)
   # @param symbol_id character Symbol identifier (from the Metadata -> Symbols) (optional)

@@ -15,7 +15,7 @@ test_that("metric_id", {
 
 test_that("symbol_id", {
   # tests for the property `symbol_id` (character)
-  # Gets or sets the symbol ID.
+  # The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`symbol_id`, "EXPECTED_RESULT")
@@ -23,7 +23,7 @@ test_that("symbol_id", {
 
 test_that("symbol_id_external", {
   # tests for the property `symbol_id_external` (character)
-  # Gets or sets the symbol ID from the exchange.
+  # The exchange-native symbol identifier. Null for exchange-level metrics.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`symbol_id_external`, "EXPECTED_RESULT")

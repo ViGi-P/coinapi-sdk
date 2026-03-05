@@ -1656,7 +1656,9 @@ print_v1MetricsExchangeListingGet_help() {
     echo ""
     echo -e "${BOLD}${WHITE}v1MetricsExchangeListingGet - Listing of all supported exchange metrics${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
-    echo -e "Get data metrics for exchange." | paste -sd' ' - | fold -sw 80
+    echo -e "Get data metrics for exchange. Returns both exchange-level and symbol-level metrics.
+For exchange-level metrics, the 'symbol_id' field will be null.
+For symbol-level metrics, the 'symbol_id' field contains the CoinAPI symbol identifier." | paste -sd' ' - | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The exchange identifier (from the Metadata -> Exchanges)${YELLOW} Specify as: exchange_id=value${OFF}" \
@@ -1747,7 +1749,8 @@ print_v1MetricsSymbolListingGet_help() {
     echo ""
     echo -e "${BOLD}${WHITE}v1MetricsSymbolListingGet - Listing of all supported metrics for symbol${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
-    echo -e "Get data metrics for symbol." | paste -sd' ' - | fold -sw 80
+    echo -e "Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated).
+The 'symbol_id' field is always populated with the CoinAPI symbol identifier." | paste -sd' ' - | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}metric_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Metric identifier (from the Metrics -> Listing)${YELLOW} Specify as: metric_id=value${OFF}" \

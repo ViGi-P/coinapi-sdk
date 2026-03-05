@@ -16,9 +16,9 @@ import org.openapitools.client.core.ApiModel
 case class ListingItem (
   /* Gets or sets the metric ID. */
   metricId: Option[String] = None,
-  /* Gets or sets the symbol ID. */
+  /* The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol. */
   symbolId: Option[String] = None,
-  /* Gets or sets the symbol ID from the exchange. */
+  /* The exchange-native symbol identifier. Null for exchange-level metrics. */
   symbolIdExternal: Option[String] = None,
   /* Gets or sets the exchange ID. */
   exchangeId: Option[String] = None,

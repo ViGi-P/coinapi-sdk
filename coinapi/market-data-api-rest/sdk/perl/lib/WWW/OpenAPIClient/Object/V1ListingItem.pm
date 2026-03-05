@@ -229,14 +229,14 @@ __PACKAGE__->method_documentation({
     'symbol_id' => {
         datatype => 'string',
         base_name => 'symbol_id',
-        description => 'Gets or sets the symbol ID.',
+        description => 'The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.',
         format => '',
         read_only => '',
             },
     'symbol_id_external' => {
         datatype => 'string',
         base_name => 'symbol_id_external',
-        description => 'Gets or sets the symbol ID from the exchange.',
+        description => 'The exchange-native symbol identifier. Null for exchange-level metrics.',
         format => '',
         read_only => '',
             },

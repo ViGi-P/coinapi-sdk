@@ -50,9 +50,9 @@ public class V1ListingItem {
   }
 
   /**
-   * Gets or sets the symbol ID.
+   * The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
    **/
-  @ApiModelProperty(value = "Gets or sets the symbol ID.")
+  @ApiModelProperty(value = "The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.")
   public String getSymbolId() {
     return symbolId;
   }
@@ -61,9 +61,9 @@ public class V1ListingItem {
   }
 
   /**
-   * Gets or sets the symbol ID from the exchange.
+   * The exchange-native symbol identifier. Null for exchange-level metrics.
    **/
-  @ApiModelProperty(value = "Gets or sets the symbol ID from the exchange.")
+  @ApiModelProperty(value = "The exchange-native symbol identifier. Null for exchange-level metrics.")
   public String getSymbolIdExternal() {
     return symbolIdExternal;
   }

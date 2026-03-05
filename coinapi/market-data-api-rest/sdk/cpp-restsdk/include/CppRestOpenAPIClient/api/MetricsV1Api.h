@@ -148,7 +148,7 @@ public:
     /// Listing of all supported exchange metrics
     /// </summary>
     /// <remarks>
-    /// Get data metrics for exchange.
+    /// Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the &#x60;symbol_id&#x60; field will be null. For symbol-level metrics, the &#x60;symbol_id&#x60; field contains the CoinAPI symbol identifier.
     /// </remarks>
     /// <param name="exchangeId">The exchange identifier (from the Metadata -&gt; Exchanges)</param>
     /// <param name="metricId">The metric identifier (from the Metrics -&gt; Listing) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
@@ -204,7 +204,7 @@ public:
     /// Listing of all supported metrics for symbol
     /// </summary>
     /// <remarks>
-    /// Get data metrics for symbol.
+    /// Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The &#x60;symbol_id&#x60; field is always populated with the CoinAPI symbol identifier.
     /// </remarks>
     /// <param name="metricId">Metric identifier (from the Metrics -&gt; Listing) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="exchangeId">Exchange identifier (from the Metadata -&gt; Exchanges) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>

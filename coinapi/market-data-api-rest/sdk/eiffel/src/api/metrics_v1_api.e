@@ -275,7 +275,7 @@ feature -- API Access
 
 	v1_metrics_exchange_listing_get (exchange_id: STRING_32; metric_id: STRING_32): detachable LIST [V1_LISTING_ITEM]
 			-- Listing of all supported exchange metrics
-			-- Get data metrics for exchange.
+			-- Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the &#x60;symbol_id&#x60; field will be null. For symbol-level metrics, the &#x60;symbol_id&#x60; field contains the CoinAPI symbol identifier.
 			-- 
 			-- argument: exchange_id The exchange identifier (from the Metadata -&gt; Exchanges) (required)
 			-- 
@@ -443,7 +443,7 @@ feature -- API Access
 
 	v1_metrics_symbol_listing_get (metric_id: STRING_32; exchange_id: STRING_32; symbol_id: STRING_32): detachable LIST [V1_LISTING_ITEM]
 			-- Listing of all supported metrics for symbol
-			-- Get data metrics for symbol.
+			-- Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The &#x60;symbol_id&#x60; field is always populated with the CoinAPI symbol identifier.
 			-- 
 			-- argument: metric_id Metric identifier (from the Metrics -&gt; Listing) (optional, default to null)
 			-- 

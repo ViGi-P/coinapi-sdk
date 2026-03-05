@@ -36,8 +36,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// Initializes a new instance of the <see cref="V1ListingItem" /> class.
         /// </summary>
         /// <param name="metricId">Gets or sets the metric ID.</param>
-        /// <param name="symbolId">Gets or sets the symbol ID.</param>
-        /// <param name="symbolIdExternal">Gets or sets the symbol ID from the exchange.</param>
+        /// <param name="symbolId">The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.</param>
+        /// <param name="symbolIdExternal">The exchange-native symbol identifier. Null for exchange-level metrics.</param>
         /// <param name="exchangeId">Gets or sets the exchange ID.</param>
         /// <param name="assetId">Gets or sets the asset ID.</param>
         /// <param name="assetIdExternal">Gets or sets the asset ID from the exchange.</param>
@@ -81,9 +81,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> SymbolIdOption { get; private set; }
 
         /// <summary>
-        /// Gets or sets the symbol ID.
+        /// The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
         /// </summary>
-        /// <value>Gets or sets the symbol ID.</value>
+        /// <value>The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.</value>
         [JsonPropertyName("symbol_id")]
         public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
 
@@ -95,9 +95,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> SymbolIdExternalOption { get; private set; }
 
         /// <summary>
-        /// Gets or sets the symbol ID from the exchange.
+        /// The exchange-native symbol identifier. Null for exchange-level metrics.
         /// </summary>
-        /// <value>Gets or sets the symbol ID from the exchange.</value>
+        /// <value>The exchange-native symbol identifier. Null for exchange-level metrics.</value>
         [JsonPropertyName("symbol_id_external")]
         public string? SymbolIdExternal { get { return this.SymbolIdExternalOption; } set { this.SymbolIdExternalOption = new(value); } }
 

@@ -22,9 +22,9 @@ feature --Access
     metric_id: detachable STRING_32
       -- Gets or sets the metric ID.
     symbol_id: detachable STRING_32
-      -- Gets or sets the symbol ID.
+      -- The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
     symbol_id_external: detachable STRING_32
-      -- Gets or sets the symbol ID from the exchange.
+      -- The exchange-native symbol identifier. Null for exchange-level metrics.
     exchange_id: detachable STRING_32
       -- Gets or sets the exchange ID.
     asset_id: detachable STRING_32

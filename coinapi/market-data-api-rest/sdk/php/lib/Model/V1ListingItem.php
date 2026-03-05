@@ -387,7 +387,7 @@ class V1ListingItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets symbol_id
      *
-     * @param string|null $symbol_id Gets or sets the symbol ID.
+     * @param string|null $symbol_id The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class V1ListingItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets symbol_id_external
      *
-     * @param string|null $symbol_id_external Gets or sets the symbol ID from the exchange.
+     * @param string|null $symbol_id_external The exchange-native symbol identifier. Null for exchange-level metrics.
      *
      * @return self
      */

@@ -246,7 +246,7 @@ private class OASMetricsV1ApiTest {
     /**
      * Listing of all supported exchange metrics
      *
-     * Get data metrics for exchange.
+     * Get data metrics for exchange. Returns both exchange-level and symbol-level metrics.\nFor exchange-level metrics, the &#x60;symbol_id&#x60; field will be null.\nFor symbol-level metrics, the &#x60;symbol_id&#x60; field contains the CoinAPI symbol identifier.
      */
     @isTest
     private static void v1MetricsExchangeListingGetTest() {
@@ -427,7 +427,7 @@ private class OASMetricsV1ApiTest {
     /**
      * Listing of all supported metrics for symbol
      *
-     * Get data metrics for symbol.
+     * Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated).\nThe &#x60;symbol_id&#x60; field is always populated with the CoinAPI symbol identifier.
      */
     @isTest
     private static void v1MetricsSymbolListingGetTest() {

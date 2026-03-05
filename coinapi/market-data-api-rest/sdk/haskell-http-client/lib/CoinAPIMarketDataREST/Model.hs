@@ -911,8 +911,8 @@ mkV1LastTrade =
 -- Represents a listing item.
 data V1ListingItem = V1ListingItem
   { v1ListingItemMetricId :: !(Maybe Text) -- ^ "metric_id" - Gets or sets the metric ID.
-  , v1ListingItemSymbolId :: !(Maybe Text) -- ^ "symbol_id" - Gets or sets the symbol ID.
-  , v1ListingItemSymbolIdExternal :: !(Maybe Text) -- ^ "symbol_id_external" - Gets or sets the symbol ID from the exchange.
+  , v1ListingItemSymbolId :: !(Maybe Text) -- ^ "symbol_id" - The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+  , v1ListingItemSymbolIdExternal :: !(Maybe Text) -- ^ "symbol_id_external" - The exchange-native symbol identifier. Null for exchange-level metrics.
   , v1ListingItemExchangeId :: !(Maybe Text) -- ^ "exchange_id" - Gets or sets the exchange ID.
   , v1ListingItemAssetId :: !(Maybe Text) -- ^ "asset_id" - Gets or sets the asset ID.
   , v1ListingItemAssetIdExternal :: !(Maybe Text) -- ^ "asset_id_external" - Gets or sets the asset ID from the exchange.

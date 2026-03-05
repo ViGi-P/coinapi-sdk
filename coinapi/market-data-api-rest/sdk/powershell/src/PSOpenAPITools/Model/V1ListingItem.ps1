@@ -18,9 +18,9 @@ Represents a listing item.
 .PARAMETER MetricId
 Gets or sets the metric ID.
 .PARAMETER SymbolId
-Gets or sets the symbol ID.
+The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
 .PARAMETER SymbolIdExternal
-Gets or sets the symbol ID from the exchange.
+The exchange-native symbol identifier. Null for exchange-level metrics.
 .PARAMETER ExchangeId
 Gets or sets the exchange ID.
 .PARAMETER AssetId

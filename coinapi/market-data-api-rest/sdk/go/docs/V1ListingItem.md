@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MetricId** | Pointer to **NullableString** | Gets or sets the metric ID. | [optional] 
-**SymbolId** | Pointer to **NullableString** | Gets or sets the symbol ID. | [optional] 
-**SymbolIdExternal** | Pointer to **NullableString** | Gets or sets the symbol ID from the exchange. | [optional] 
+**SymbolId** | Pointer to **NullableString** | The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol. | [optional] 
+**SymbolIdExternal** | Pointer to **NullableString** | The exchange-native symbol identifier. Null for exchange-level metrics. | [optional] 
 **ExchangeId** | Pointer to **NullableString** | Gets or sets the exchange ID. | [optional] 
 **AssetId** | Pointer to **NullableString** | Gets or sets the asset ID. | [optional] 
 **AssetIdExternal** | Pointer to **NullableString** | Gets or sets the asset ID from the exchange. | [optional] 

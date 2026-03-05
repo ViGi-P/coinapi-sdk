@@ -52,18 +52,18 @@ public:
 	/*! \brief Set Gets or sets the metric ID.
 	 */
 	void setMetricId(std::string  metric_id);
-	/*! \brief Get Gets or sets the symbol ID.
+	/*! \brief Get The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
 	 */
 	std::string getSymbolId();
 
-	/*! \brief Set Gets or sets the symbol ID.
+	/*! \brief Set The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
 	 */
 	void setSymbolId(std::string  symbol_id);
-	/*! \brief Get Gets or sets the symbol ID from the exchange.
+	/*! \brief Get The exchange-native symbol identifier. Null for exchange-level metrics.
 	 */
 	std::string getSymbolIdExternal();
 
-	/*! \brief Set Gets or sets the symbol ID from the exchange.
+	/*! \brief Set The exchange-native symbol identifier. Null for exchange-level metrics.
 	 */
 	void setSymbolIdExternal(std::string  symbol_id_external);
 	/*! \brief Get Gets or sets the exchange ID.

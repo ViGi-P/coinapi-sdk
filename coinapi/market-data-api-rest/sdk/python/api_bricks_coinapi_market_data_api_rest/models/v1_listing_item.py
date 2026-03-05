@@ -28,8 +28,8 @@ class V1ListingItem(BaseModel):
     Represents a listing item.
     """ # noqa: E501
     metric_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the metric ID.")
-    symbol_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the symbol ID.")
-    symbol_id_external: Optional[StrictStr] = Field(default=None, description="Gets or sets the symbol ID from the exchange.")
+    symbol_id: Optional[StrictStr] = Field(default=None, description="The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.")
+    symbol_id_external: Optional[StrictStr] = Field(default=None, description="The exchange-native symbol identifier. Null for exchange-level metrics.")
     exchange_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the exchange ID.")
     asset_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the asset ID.")
     asset_id_external: Optional[StrictStr] = Field(default=None, description="Gets or sets the asset ID from the exchange.")
