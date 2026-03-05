@@ -119,7 +119,7 @@ v1_metrics_exchange_history_get(Ctx, MetricId, ExchangeId, Optional) ->
     openapi_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
 %% @doc Listing of all supported exchange metrics
-%% Get data metrics for exchange.
+%% Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the `symbol_id` field will be null. For symbol-level metrics, the `symbol_id` field contains the CoinAPI symbol identifier.
 -spec v1_metrics_exchange_listing_get(ctx:ctx(), binary()) -> {ok, [openapi_v1_listing_item:openapi_v1_listing_item()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_metrics_exchange_listing_get(Ctx, ExchangeId) ->
     v1_metrics_exchange_listing_get(Ctx, ExchangeId, #{}).
@@ -203,7 +203,7 @@ v1_metrics_symbol_history_get(Ctx, MetricId, SymbolId, Optional) ->
     openapi_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
 %% @doc Listing of all supported metrics for symbol
-%% Get data metrics for symbol.
+%% Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The `symbol_id` field is always populated with the CoinAPI symbol identifier.
 -spec v1_metrics_symbol_listing_get(ctx:ctx()) -> {ok, [openapi_v1_listing_item:openapi_v1_listing_item()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_metrics_symbol_listing_get(Ctx) ->
     v1_metrics_symbol_listing_get(Ctx, #{}).

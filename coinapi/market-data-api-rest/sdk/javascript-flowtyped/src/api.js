@@ -785,13 +785,13 @@ export type V1ListingItem = {
      */
     metric_id?: string;
     /**
-     * Gets or sets the symbol ID.
+     * The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
      * @type {string}
      * @memberof V1ListingItem
      */
     symbol_id?: string;
     /**
-     * Gets or sets the symbol ID from the exchange.
+     * The exchange-native symbol identifier. Null for exchange-level metrics.
      * @type {string}
      * @memberof V1ListingItem
      */
@@ -2850,7 +2850,7 @@ export const MetricsV1ApiFetchParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Get data metrics for exchange.
+         * Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the `symbol_id` field will be null. For symbol-level metrics, the `symbol_id` field contains the CoinAPI symbol identifier.
          * @summary Listing of all supported exchange metrics
          * @throws {RequiredError}
          */
@@ -3038,7 +3038,7 @@ export const MetricsV1ApiFetchParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Get data metrics for symbol.
+         * Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The `symbol_id` field is always populated with the CoinAPI symbol identifier.
          * @summary Listing of all supported metrics for symbol
          * @throws {RequiredError}
          */
@@ -3189,7 +3189,7 @@ export const MetricsV1Api = function(configuration?: Configuration, fetch: Fetch
             });
         },
         /**
-         * Get data metrics for exchange.
+         * Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the `symbol_id` field will be null. For symbol-level metrics, the `symbol_id` field contains the CoinAPI symbol identifier.
          * @summary Listing of all supported exchange metrics
          * @throws {RequiredError}
          */
@@ -3249,7 +3249,7 @@ export const MetricsV1Api = function(configuration?: Configuration, fetch: Fetch
             });
         },
         /**
-         * Get data metrics for symbol.
+         * Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The `symbol_id` field is always populated with the CoinAPI symbol identifier.
          * @summary Listing of all supported metrics for symbol
          * @throws {RequiredError}
          */

@@ -12,8 +12,8 @@ part 'v1_listing_item.g.dart';
 ///
 /// Properties:
 /// * [metricId] - Gets or sets the metric ID.
-/// * [symbolId] - Gets or sets the symbol ID.
-/// * [symbolIdExternal] - Gets or sets the symbol ID from the exchange.
+/// * [symbolId] - The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+/// * [symbolIdExternal] - The exchange-native symbol identifier. Null for exchange-level metrics.
 /// * [exchangeId] - Gets or sets the exchange ID.
 /// * [assetId] - Gets or sets the asset ID.
 /// * [assetIdExternal] - Gets or sets the asset ID from the exchange.
@@ -25,11 +25,11 @@ abstract class V1ListingItem implements Built<V1ListingItem, V1ListingItemBuilde
   @BuiltValueField(wireName: r'metric_id')
   String? get metricId;
 
-  /// Gets or sets the symbol ID.
+  /// The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
   @BuiltValueField(wireName: r'symbol_id')
   String? get symbolId;
 
-  /// Gets or sets the symbol ID from the exchange.
+  /// The exchange-native symbol identifier. Null for exchange-level metrics.
   @BuiltValueField(wireName: r'symbol_id_external')
   String? get symbolIdExternal;
 

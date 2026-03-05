@@ -26,10 +26,10 @@ class V1ListingItem {
   /// Gets or sets the metric ID.
   String? metricId;
 
-  /// Gets or sets the symbol ID.
+  /// The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
   String? symbolId;
 
-  /// Gets or sets the symbol ID from the exchange.
+  /// The exchange-native symbol identifier. Null for exchange-level metrics.
   String? symbolIdExternal;
 
   /// Gets or sets the exchange ID.

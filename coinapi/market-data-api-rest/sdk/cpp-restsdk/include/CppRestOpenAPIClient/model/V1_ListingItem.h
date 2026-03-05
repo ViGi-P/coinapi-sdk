@@ -67,7 +67,7 @@ public:
     void setMetricId(const utility::string_t& value);
 
     /// <summary>
-    /// Gets or sets the symbol ID.
+    /// The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
     /// </summary>
     utility::string_t getSymbolId() const;
     bool symbolIdIsSet() const;
@@ -75,7 +75,7 @@ public:
     void setSymbolId(const utility::string_t& value);
 
     /// <summary>
-    /// Gets or sets the symbol ID from the exchange.
+    /// The exchange-native symbol identifier. Null for exchange-level metrics.
     /// </summary>
     utility::string_t getSymbolIdExternal() const;
     bool symbolIdExternalIsSet() const;

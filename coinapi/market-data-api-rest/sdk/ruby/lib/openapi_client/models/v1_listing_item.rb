@@ -19,10 +19,10 @@ module OpenapiClient
     # Gets or sets the metric ID.
     attr_accessor :metric_id
 
-    # Gets or sets the symbol ID.
+    # The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
     attr_accessor :symbol_id
 
-    # Gets or sets the symbol ID from the exchange.
+    # The exchange-native symbol identifier. Null for exchange-level metrics.
     attr_accessor :symbol_id_external
 
     # Gets or sets the exchange ID.

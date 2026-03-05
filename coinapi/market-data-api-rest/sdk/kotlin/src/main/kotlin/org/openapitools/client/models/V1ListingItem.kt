@@ -23,8 +23,8 @@ import com.squareup.moshi.JsonClass
  * Represents a listing item.
  *
  * @param metricId Gets or sets the metric ID.
- * @param symbolId Gets or sets the symbol ID.
- * @param symbolIdExternal Gets or sets the symbol ID from the exchange.
+ * @param symbolId The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+ * @param symbolIdExternal The exchange-native symbol identifier. Null for exchange-level metrics.
  * @param exchangeId Gets or sets the exchange ID.
  * @param assetId Gets or sets the asset ID.
  * @param assetIdExternal Gets or sets the asset ID from the exchange.
@@ -39,11 +39,11 @@ data class V1ListingItem (
     @Json(name = "metric_id")
     val metricId: kotlin.String? = null,
 
-    /* Gets or sets the symbol ID. */
+    /* The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol. */
     @Json(name = "symbol_id")
     val symbolId: kotlin.String? = null,
 
-    /* Gets or sets the symbol ID from the exchange. */
+    /* The exchange-native symbol identifier. Null for exchange-level metrics. */
     @Json(name = "symbol_id_external")
     val symbolIdExternal: kotlin.String? = null,
 

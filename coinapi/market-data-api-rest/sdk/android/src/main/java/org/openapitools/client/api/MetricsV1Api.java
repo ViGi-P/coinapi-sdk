@@ -776,7 +776,7 @@ public class MetricsV1Api {
   }
   /**
   * Listing of all supported exchange metrics
-  * Get data metrics for exchange.
+  * Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the &#x60;symbol_id&#x60; field will be null. For symbol-level metrics, the &#x60;symbol_id&#x60; field contains the CoinAPI symbol identifier.
    * @param exchangeId The exchange identifier (from the Metadata -&gt; Exchanges)
    * @param metricId The metric identifier (from the Metrics -&gt; Listing)
    * @return List<V1ListingItem>
@@ -841,7 +841,7 @@ public class MetricsV1Api {
 
       /**
    * Listing of all supported exchange metrics
-   * Get data metrics for exchange.
+   * Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the &#x60;symbol_id&#x60; field will be null. For symbol-level metrics, the &#x60;symbol_id&#x60; field contains the CoinAPI symbol identifier.
    * @param exchangeId The exchange identifier (from the Metadata -&gt; Exchanges)   * @param metricId The metric identifier (from the Metrics -&gt; Listing)
   */
   public void v1MetricsExchangeListingGet (String exchangeId, String metricId, final Response.Listener<List<V1ListingItem>> responseListener, final Response.ErrorListener errorListener) {
@@ -1306,7 +1306,7 @@ public class MetricsV1Api {
   }
   /**
   * Listing of all supported metrics for symbol
-  * Get data metrics for symbol.
+  * Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The &#x60;symbol_id&#x60; field is always populated with the CoinAPI symbol identifier.
    * @param metricId Metric identifier (from the Metrics -&gt; Listing)
    * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
    * @param symbolId Symbol identifier (from the Metadata -&gt; Symbols)
@@ -1368,7 +1368,7 @@ public class MetricsV1Api {
 
       /**
    * Listing of all supported metrics for symbol
-   * Get data metrics for symbol.
+   * Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The &#x60;symbol_id&#x60; field is always populated with the CoinAPI symbol identifier.
    * @param metricId Metric identifier (from the Metrics -&gt; Listing)   * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)   * @param symbolId Symbol identifier (from the Metadata -&gt; Symbols)
   */
   public void v1MetricsSymbolListingGet (String metricId, String exchangeId, String symbolId, final Response.Listener<List<V1ListingItem>> responseListener, final Response.ErrorListener errorListener) {

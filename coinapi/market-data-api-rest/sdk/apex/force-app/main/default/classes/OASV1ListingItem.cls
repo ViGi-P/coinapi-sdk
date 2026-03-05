@@ -21,13 +21,13 @@ public class OASV1ListingItem implements OAS.MappedProperties {
     public String metricId { get; set; }
 
     /**
-     * Gets or sets the symbol ID.
+     * The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
      * @return symbolId
      */
     public String symbolId { get; set; }
 
     /**
-     * Gets or sets the symbol ID from the exchange.
+     * The exchange-native symbol identifier. Null for exchange-level metrics.
      * @return symbolIdExternal
      */
     public String symbolIdExternal { get; set; }

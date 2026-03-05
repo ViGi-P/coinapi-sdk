@@ -22,13 +22,13 @@ void main() {
       // TODO
     });
 
-    // Gets or sets the symbol ID.
+    // The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
     // String symbolId
     test('to test the property `symbolId`', () async {
       // TODO
     });
 
-    // Gets or sets the symbol ID from the exchange.
+    // The exchange-native symbol identifier. Null for exchange-level metrics.
     // String symbolIdExternal
     test('to test the property `symbolIdExternal`', () async {
       // TODO

@@ -7,8 +7,8 @@ Represents a listing item.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **metric_id** | **str** | Gets or sets the metric ID. | [optional] 
-**symbol_id** | **str** | Gets or sets the symbol ID. | [optional] 
-**symbol_id_external** | **str** | Gets or sets the symbol ID from the exchange. | [optional] 
+**symbol_id** | **str** | The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol. | [optional] 
+**symbol_id_external** | **str** | The exchange-native symbol identifier. Null for exchange-level metrics. | [optional] 
 **exchange_id** | **str** | Gets or sets the exchange ID. | [optional] 
 **asset_id** | **str** | Gets or sets the asset ID. | [optional] 
 **asset_id_external** | **str** | Gets or sets the asset ID from the exchange. | [optional] 

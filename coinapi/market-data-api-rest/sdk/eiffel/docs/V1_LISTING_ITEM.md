@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **metric_id** | [**STRING_32**](STRING_32.md) | Gets or sets the metric ID. | [optional] [default to null]
-**symbol_id** | [**STRING_32**](STRING_32.md) | Gets or sets the symbol ID. | [optional] [default to null]
-**symbol_id_external** | [**STRING_32**](STRING_32.md) | Gets or sets the symbol ID from the exchange. | [optional] [default to null]
+**symbol_id** | [**STRING_32**](STRING_32.md) | The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol. | [optional] [default to null]
+**symbol_id_external** | [**STRING_32**](STRING_32.md) | The exchange-native symbol identifier. Null for exchange-level metrics. | [optional] [default to null]
 **exchange_id** | [**STRING_32**](STRING_32.md) | Gets or sets the exchange ID. | [optional] [default to null]
 **asset_id** | [**STRING_32**](STRING_32.md) | Gets or sets the asset ID. | [optional] [default to null]
 **asset_id_external** | [**STRING_32**](STRING_32.md) | Gets or sets the asset ID from the exchange. | [optional] [default to null]

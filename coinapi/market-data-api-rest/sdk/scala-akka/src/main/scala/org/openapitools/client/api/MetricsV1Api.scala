@@ -169,7 +169,7 @@ class MetricsV1Api(baseUrl: String) {
       
 
   /**
-   * Get data metrics for exchange.
+   * Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the `symbol_id` field will be null. For symbol-level metrics, the `symbol_id` field contains the CoinAPI symbol identifier.
    * 
    * Expected answers:
    *   code 200 : Seq[ListingItem] (successful operation)
@@ -260,7 +260,7 @@ class MetricsV1Api(baseUrl: String) {
       
 
   /**
-   * Get data metrics for symbol.
+   * Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The `symbol_id` field is always populated with the CoinAPI symbol identifier.
    * 
    * Expected answers:
    *   code 200 : Seq[ListingItem] (successful operation)

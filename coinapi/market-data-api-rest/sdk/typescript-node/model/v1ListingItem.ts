@@ -21,11 +21,11 @@ export class V1ListingItem {
     */
     'metricId'?: string | null;
     /**
-    * Gets or sets the symbol ID.
+    * The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
     */
     'symbolId'?: string | null;
     /**
-    * Gets or sets the symbol ID from the exchange.
+    * The exchange-native symbol identifier. Null for exchange-level metrics.
     */
     'symbolIdExternal'?: string | null;
     /**

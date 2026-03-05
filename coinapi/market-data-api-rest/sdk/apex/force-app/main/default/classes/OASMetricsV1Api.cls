@@ -208,7 +208,7 @@ public class OASMetricsV1Api {
     }
     /**
      * Listing of all supported exchange metrics
-     * Get data metrics for exchange.
+     * Get data metrics for exchange. Returns both exchange-level and symbol-level metrics.\nFor exchange-level metrics, the &#x60;symbol_id&#x60; field will be null.\nFor symbol-level metrics, the &#x60;symbol_id&#x60; field contains the CoinAPI symbol identifier.
      * @param exchangeId The exchange identifier (from the Metadata -&gt; Exchanges) (required)
      * @param metricId The metric identifier (from the Metrics -&gt; Listing) (optional)
      * @return List<OASV1ListingItem>
@@ -328,7 +328,7 @@ public class OASMetricsV1Api {
     }
     /**
      * Listing of all supported metrics for symbol
-     * Get data metrics for symbol.
+     * Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated).\nThe &#x60;symbol_id&#x60; field is always populated with the CoinAPI symbol identifier.
      * @param metricId Metric identifier (from the Metrics -&gt; Listing) (optional)
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges) (optional)
      * @param symbolId Symbol identifier (from the Metadata -&gt; Symbols) (optional)

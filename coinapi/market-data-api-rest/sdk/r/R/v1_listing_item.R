@@ -8,8 +8,8 @@
 #' @description V1ListingItem Class
 #' @format An \code{R6Class} generator object
 #' @field metric_id Gets or sets the metric ID. character [optional]
-#' @field symbol_id Gets or sets the symbol ID. character [optional]
-#' @field symbol_id_external Gets or sets the symbol ID from the exchange. character [optional]
+#' @field symbol_id The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol. character [optional]
+#' @field symbol_id_external The exchange-native symbol identifier. Null for exchange-level metrics. character [optional]
 #' @field exchange_id Gets or sets the exchange ID. character [optional]
 #' @field asset_id Gets or sets the asset ID. character [optional]
 #' @field asset_id_external Gets or sets the asset ID from the exchange. character [optional]
@@ -34,8 +34,8 @@ V1ListingItem <- R6::R6Class(
     #' Initialize a new V1ListingItem class.
     #'
     #' @param metric_id Gets or sets the metric ID.
-    #' @param symbol_id Gets or sets the symbol ID.
-    #' @param symbol_id_external Gets or sets the symbol ID from the exchange.
+    #' @param symbol_id The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+    #' @param symbol_id_external The exchange-native symbol identifier. Null for exchange-level metrics.
     #' @param exchange_id Gets or sets the exchange ID.
     #' @param asset_id Gets or sets the asset ID.
     #' @param asset_id_external Gets or sets the asset ID from the exchange.

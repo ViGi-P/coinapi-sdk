@@ -22,9 +22,9 @@ var _ MappedNullable = &V1ListingItem{}
 type V1ListingItem struct {
 	// Gets or sets the metric ID.
 	MetricId NullableString `json:"metric_id,omitempty"`
-	// Gets or sets the symbol ID.
+	// The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
 	SymbolId NullableString `json:"symbol_id,omitempty"`
-	// Gets or sets the symbol ID from the exchange.
+	// The exchange-native symbol identifier. Null for exchange-level metrics.
 	SymbolIdExternal NullableString `json:"symbol_id_external,omitempty"`
 	// Gets or sets the exchange ID.
 	ExchangeId NullableString `json:"exchange_id,omitempty"`

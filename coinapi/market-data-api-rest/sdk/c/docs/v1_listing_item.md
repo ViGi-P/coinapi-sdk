@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **metric_id** | **char \*** | Gets or sets the metric ID. | [optional] 
-**symbol_id** | **char \*** | Gets or sets the symbol ID. | [optional] 
-**symbol_id_external** | **char \*** | Gets or sets the symbol ID from the exchange. | [optional] 
+**symbol_id** | **char \*** | The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol. | [optional] 
+**symbol_id_external** | **char \*** | The exchange-native symbol identifier. Null for exchange-level metrics. | [optional] 
 **exchange_id** | **char \*** | Gets or sets the exchange ID. | [optional] 
 **asset_id** | **char \*** | Gets or sets the asset ID. | [optional] 
 **asset_id_external** | **char \*** | Gets or sets the asset ID from the exchange. | [optional] 

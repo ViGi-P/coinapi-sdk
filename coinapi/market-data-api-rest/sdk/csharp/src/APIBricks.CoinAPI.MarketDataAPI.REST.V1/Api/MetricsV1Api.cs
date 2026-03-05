@@ -203,7 +203,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// Listing of all supported exchange metrics
         /// </summary>
         /// <remarks>
-        /// Get data metrics for exchange.
+        /// Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the &#x60;symbol_id&#x60; field will be null. For symbol-level metrics, the &#x60;symbol_id&#x60; field contains the CoinAPI symbol identifier.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeId">The exchange identifier (from the Metadata -&gt; Exchanges)</param>
@@ -216,7 +216,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// Listing of all supported exchange metrics
         /// </summary>
         /// <remarks>
-        /// Get data metrics for exchange.
+        /// Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the &#x60;symbol_id&#x60; field will be null. For symbol-level metrics, the &#x60;symbol_id&#x60; field contains the CoinAPI symbol identifier.
         /// </remarks>
         /// <param name="exchangeId">The exchange identifier (from the Metadata -&gt; Exchanges)</param>
         /// <param name="metricId">The metric identifier (from the Metrics -&gt; Listing) (optional)</param>
@@ -311,7 +311,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// Listing of all supported metrics for symbol
         /// </summary>
         /// <remarks>
-        /// Get data metrics for symbol.
+        /// Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The &#x60;symbol_id&#x60; field is always populated with the CoinAPI symbol identifier.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="metricId">Metric identifier (from the Metrics -&gt; Listing) (optional)</param>
@@ -325,7 +325,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// Listing of all supported metrics for symbol
         /// </summary>
         /// <remarks>
-        /// Get data metrics for symbol.
+        /// Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The &#x60;symbol_id&#x60; field is always populated with the CoinAPI symbol identifier.
         /// </remarks>
         /// <param name="metricId">Metric identifier (from the Metrics -&gt; Listing) (optional)</param>
         /// <param name="exchangeId">Exchange identifier (from the Metadata -&gt; Exchanges) (optional)</param>
@@ -2381,7 +2381,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         partial void OnErrorV1MetricsExchangeListingGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, Option<string> metricId);
 
         /// <summary>
-        /// Listing of all supported exchange metrics Get data metrics for exchange.
+        /// Listing of all supported exchange metrics Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the &#x60;symbol_id&#x60; field will be null. For symbol-level metrics, the &#x60;symbol_id&#x60; field contains the CoinAPI symbol identifier.
         /// </summary>
         /// <param name="exchangeId">The exchange identifier (from the Metadata -&gt; Exchanges)</param>
         /// <param name="metricId">The metric identifier (from the Metrics -&gt; Listing) (optional)</param>
@@ -2400,7 +2400,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         }
 
         /// <summary>
-        /// Listing of all supported exchange metrics Get data metrics for exchange.
+        /// Listing of all supported exchange metrics Get data metrics for exchange. Returns both exchange-level and symbol-level metrics. For exchange-level metrics, the &#x60;symbol_id&#x60; field will be null. For symbol-level metrics, the &#x60;symbol_id&#x60; field contains the CoinAPI symbol identifier.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeId">The exchange identifier (from the Metadata -&gt; Exchanges)</param>
@@ -3524,7 +3524,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         partial void OnErrorV1MetricsSymbolListingGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> metricId, Option<string> exchangeId, Option<string> symbolId);
 
         /// <summary>
-        /// Listing of all supported metrics for symbol Get data metrics for symbol.
+        /// Listing of all supported metrics for symbol Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The &#x60;symbol_id&#x60; field is always populated with the CoinAPI symbol identifier.
         /// </summary>
         /// <param name="metricId">Metric identifier (from the Metrics -&gt; Listing) (optional)</param>
         /// <param name="exchangeId">Exchange identifier (from the Metadata -&gt; Exchanges) (optional)</param>
@@ -3544,7 +3544,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         }
 
         /// <summary>
-        /// Listing of all supported metrics for symbol Get data metrics for symbol.
+        /// Listing of all supported metrics for symbol Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated). The &#x60;symbol_id&#x60; field is always populated with the CoinAPI symbol identifier.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="metricId">Metric identifier (from the Metrics -&gt; Listing) (optional)</param>

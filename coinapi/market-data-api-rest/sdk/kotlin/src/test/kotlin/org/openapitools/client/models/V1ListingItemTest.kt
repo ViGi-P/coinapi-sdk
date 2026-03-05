@@ -31,13 +31,13 @@ class V1ListingItemTest : ShouldSpec() {
             //modelInstance.metricId shouldBe ("TODO")
         }
 
-        // to test the property `symbolId` - Gets or sets the symbol ID.
+        // to test the property `symbolId` - The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
         should("test symbolId") {
             // uncomment below to test the property
             //modelInstance.symbolId shouldBe ("TODO")
         }
 
-        // to test the property `symbolIdExternal` - Gets or sets the symbol ID from the exchange.
+        // to test the property `symbolIdExternal` - The exchange-native symbol identifier. Null for exchange-level metrics.
         should("test symbolIdExternal") {
             // uncomment below to test the property
             //modelInstance.symbolIdExternal shouldBe ("TODO")
