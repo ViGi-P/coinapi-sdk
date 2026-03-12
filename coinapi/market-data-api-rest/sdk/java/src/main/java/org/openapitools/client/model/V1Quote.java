@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a quote data model.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T06:04:02.805642407Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-12T06:04:07.184125586Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class V1Quote {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
