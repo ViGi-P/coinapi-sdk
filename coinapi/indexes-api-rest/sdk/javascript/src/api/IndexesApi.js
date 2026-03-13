@@ -13,11 +13,11 @@
 
 
 import ApiClient from "../ApiClient";
-import IndexesIndexDefinitionSnapshotEntry from '../model/IndexesIndexDefinitionSnapshotEntry';
-import IndexesIndexIdentifier from '../model/IndexesIndexIdentifier';
-import IndexesIndexMultiAssetWeight from '../model/IndexesIndexMultiAssetWeight';
-import IndexesIndexTimeseriesItem from '../model/IndexesIndexTimeseriesItem';
-import IndexesIndexValue from '../model/IndexesIndexValue';
+import ModelsIndexDefinitionSnapshotEntry from '../model/ModelsIndexDefinitionSnapshotEntry';
+import ModelsIndexIdentifier from '../model/ModelsIndexIdentifier';
+import ModelsIndexMultiAssetWeight from '../model/ModelsIndexMultiAssetWeight';
+import ModelsIndexTimeseriesItem from '../model/ModelsIndexTimeseriesItem';
+import ModelsIndexValue from '../model/ModelsIndexValue';
 
 /**
 * Indexes service.
@@ -42,14 +42,14 @@ export default class IndexesApi {
      * Callback function to receive the result of the v1IndexdefMultiassetGet operation.
      * @callback module:api/IndexesApi~v1IndexdefMultiassetGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IndexesIndexMultiAssetWeight>} data The data returned by the service call.
+     * @param {Array.<module:model/ModelsIndexMultiAssetWeight>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * Get all multi-asset weights
      * @param {module:api/IndexesApi~v1IndexdefMultiassetGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/IndexesIndexMultiAssetWeight>}
+     * data is of type: {@link Array.<module:model/ModelsIndexMultiAssetWeight>}
      */
     v1IndexdefMultiassetGet(callback) {
       let postBody = null;
@@ -66,7 +66,7 @@ export default class IndexesApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [IndexesIndexMultiAssetWeight];
+      let returnType = [ModelsIndexMultiAssetWeight];
       return this.apiClient.callApi(
         '/v1/indexdef/multiasset', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -78,7 +78,7 @@ export default class IndexesApi {
      * Callback function to receive the result of the v1IndexdefMultiassetIndexIdGet operation.
      * @callback module:api/IndexesApi~v1IndexdefMultiassetIndexIdGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IndexesIndexMultiAssetWeight>} data The data returned by the service call.
+     * @param {Array.<module:model/ModelsIndexMultiAssetWeight>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -86,7 +86,7 @@ export default class IndexesApi {
      * Get multi-asset weights for specific index
      * @param {String} indexId 
      * @param {module:api/IndexesApi~v1IndexdefMultiassetIndexIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/IndexesIndexMultiAssetWeight>}
+     * data is of type: {@link Array.<module:model/ModelsIndexMultiAssetWeight>}
      */
     v1IndexdefMultiassetIndexIdGet(indexId, callback) {
       let postBody = null;
@@ -108,7 +108,7 @@ export default class IndexesApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [IndexesIndexMultiAssetWeight];
+      let returnType = [ModelsIndexMultiAssetWeight];
       return this.apiClient.callApi(
         '/v1/indexdef/multiasset/{index_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -120,14 +120,14 @@ export default class IndexesApi {
      * Callback function to receive the result of the v1IndexesGet operation.
      * @callback module:api/IndexesApi~v1IndexesGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IndexesIndexIdentifier>} data The data returned by the service call.
+     * @param {Array.<module:model/ModelsIndexIdentifier>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * List indexes
      * @param {module:api/IndexesApi~v1IndexesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/IndexesIndexIdentifier>}
+     * data is of type: {@link Array.<module:model/ModelsIndexIdentifier>}
      */
     v1IndexesGet(callback) {
       let postBody = null;
@@ -144,7 +144,7 @@ export default class IndexesApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [IndexesIndexIdentifier];
+      let returnType = [ModelsIndexIdentifier];
       return this.apiClient.callApi(
         '/v1/indexes', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -156,7 +156,7 @@ export default class IndexesApi {
      * Callback function to receive the result of the v1IndexesIndexDefinitionIdCurrentSnapshotGet operation.
      * @callback module:api/IndexesApi~v1IndexesIndexDefinitionIdCurrentSnapshotGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IndexesIndexDefinitionSnapshotEntry>} data The data returned by the service call.
+     * @param {Array.<module:model/ModelsIndexDefinitionSnapshotEntry>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -164,7 +164,7 @@ export default class IndexesApi {
      * Current Index Values for index definition
      * @param {String} indexDefinitionId 
      * @param {module:api/IndexesApi~v1IndexesIndexDefinitionIdCurrentSnapshotGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/IndexesIndexDefinitionSnapshotEntry>}
+     * data is of type: {@link Array.<module:model/ModelsIndexDefinitionSnapshotEntry>}
      */
     v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId, callback) {
       let postBody = null;
@@ -186,7 +186,7 @@ export default class IndexesApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [IndexesIndexDefinitionSnapshotEntry];
+      let returnType = [ModelsIndexDefinitionSnapshotEntry];
       return this.apiClient.callApi(
         '/v1/indexes/{index_definition_id}/currentSnapshot', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -198,7 +198,7 @@ export default class IndexesApi {
      * Callback function to receive the result of the v1IndexesIndexDefinitionIdHistorySnapshotGet operation.
      * @callback module:api/IndexesApi~v1IndexesIndexDefinitionIdHistorySnapshotGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IndexesIndexDefinitionSnapshotEntry>} data The data returned by the service call.
+     * @param {Array.<module:model/ModelsIndexDefinitionSnapshotEntry>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -208,7 +208,7 @@ export default class IndexesApi {
      * @param {Object} opts Optional parameters
      * @param {Date} [time] 
      * @param {module:api/IndexesApi~v1IndexesIndexDefinitionIdHistorySnapshotGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/IndexesIndexDefinitionSnapshotEntry>}
+     * data is of type: {@link Array.<module:model/ModelsIndexDefinitionSnapshotEntry>}
      */
     v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, opts, callback) {
       opts = opts || {};
@@ -232,7 +232,7 @@ export default class IndexesApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [IndexesIndexDefinitionSnapshotEntry];
+      let returnType = [ModelsIndexDefinitionSnapshotEntry];
       return this.apiClient.callApi(
         '/v1/indexes/{index_definition_id}/historySnapshot', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -244,7 +244,7 @@ export default class IndexesApi {
      * Callback function to receive the result of the v1IndexesIndexIdCurrentGet operation.
      * @callback module:api/IndexesApi~v1IndexesIndexIdCurrentGetCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/IndexesIndexValue} data The data returned by the service call.
+     * @param {module:model/ModelsIndexValue} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -252,7 +252,7 @@ export default class IndexesApi {
      * Current Index Value
      * @param {String} indexId 
      * @param {module:api/IndexesApi~v1IndexesIndexIdCurrentGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/IndexesIndexValue}
+     * data is of type: {@link module:model/ModelsIndexValue}
      */
     v1IndexesIndexIdCurrentGet(indexId, callback) {
       let postBody = null;
@@ -274,7 +274,7 @@ export default class IndexesApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = IndexesIndexValue;
+      let returnType = ModelsIndexValue;
       return this.apiClient.callApi(
         '/v1/indexes/{index_id}/current', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -286,7 +286,7 @@ export default class IndexesApi {
      * Callback function to receive the result of the v1IndexesIndexIdHistoryGet operation.
      * @callback module:api/IndexesApi~v1IndexesIndexIdHistoryGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IndexesIndexValue>} data The data returned by the service call.
+     * @param {Array.<module:model/ModelsIndexValue>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -298,7 +298,7 @@ export default class IndexesApi {
      * @param {Date} [timeEnd] 
      * @param {Number} [limit = 100)] 
      * @param {module:api/IndexesApi~v1IndexesIndexIdHistoryGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/IndexesIndexValue>}
+     * data is of type: {@link Array.<module:model/ModelsIndexValue>}
      */
     v1IndexesIndexIdHistoryGet(indexId, opts, callback) {
       opts = opts || {};
@@ -324,7 +324,7 @@ export default class IndexesApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [IndexesIndexValue];
+      let returnType = [ModelsIndexValue];
       return this.apiClient.callApi(
         '/v1/indexes/{index_id}/history', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -336,7 +336,7 @@ export default class IndexesApi {
      * Callback function to receive the result of the v1IndexesIndexIdTimeseriesGet operation.
      * @callback module:api/IndexesApi~v1IndexesIndexIdTimeseriesGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/IndexesIndexTimeseriesItem>} data The data returned by the service call.
+     * @param {Array.<module:model/ModelsIndexTimeseriesItem>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -349,7 +349,7 @@ export default class IndexesApi {
      * @param {Object} opts Optional parameters
      * @param {Number} [limit = 100)] Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param {module:api/IndexesApi~v1IndexesIndexIdTimeseriesGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/IndexesIndexTimeseriesItem>}
+     * data is of type: {@link Array.<module:model/ModelsIndexTimeseriesItem>}
      */
     v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, opts, callback) {
       opts = opts || {};
@@ -388,7 +388,7 @@ export default class IndexesApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [IndexesIndexTimeseriesItem];
+      let returnType = [ModelsIndexTimeseriesItem];
       return this.apiClient.callApi(
         '/v1/indexes/{index_id}/timeseries', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

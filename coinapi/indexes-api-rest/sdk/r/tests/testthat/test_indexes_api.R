@@ -9,7 +9,7 @@ test_that("V1IndexdefMultiassetGet", {
   # tests for V1IndexdefMultiassetGet
   # base path: https://rest-api.indexes.coinapi.io
   # Get all multi-asset weights
-  # @return [array[IndexesIndexMultiAssetWeight]]
+  # @return [array[ModelsIndexMultiAssetWeight]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -20,7 +20,7 @@ test_that("V1IndexdefMultiassetIndexIdGet", {
   # base path: https://rest-api.indexes.coinapi.io
   # Get multi-asset weights for specific index
   # @param index_id character 
-  # @return [array[IndexesIndexMultiAssetWeight]]
+  # @return [array[ModelsIndexMultiAssetWeight]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -30,7 +30,7 @@ test_that("V1IndexesGet", {
   # tests for V1IndexesGet
   # base path: https://rest-api.indexes.coinapi.io
   # List indexes
-  # @return [array[IndexesIndexIdentifier]]
+  # @return [array[ModelsIndexIdentifier]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -41,7 +41,7 @@ test_that("V1IndexesIndexDefinitionIdCurrentSnapshotGet", {
   # base path: https://rest-api.indexes.coinapi.io
   # Current Index Values for index definition
   # @param index_definition_id character 
-  # @return [array[IndexesIndexDefinitionSnapshotEntry]]
+  # @return [array[ModelsIndexDefinitionSnapshotEntry]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -53,7 +53,7 @@ test_that("V1IndexesIndexDefinitionIdHistorySnapshotGet", {
   # Historical Index Values for index definition
   # @param index_definition_id character 
   # @param time character  (optional)
-  # @return [array[IndexesIndexDefinitionSnapshotEntry]]
+  # @return [array[ModelsIndexDefinitionSnapshotEntry]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -64,7 +64,7 @@ test_that("V1IndexesIndexIdCurrentGet", {
   # base path: https://rest-api.indexes.coinapi.io
   # Current Index Value
   # @param index_id character 
-  # @return [IndexesIndexValue]
+  # @return [ModelsIndexValue]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -78,7 +78,7 @@ test_that("V1IndexesIndexIdHistoryGet", {
   # @param time_start character  (optional)
   # @param time_end character  (optional)
   # @param limit integer  (optional)
-  # @return [array[IndexesIndexValue]]
+  # @return [array[ModelsIndexValue]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -93,7 +93,7 @@ test_that("V1IndexesIndexIdTimeseriesGet", {
   # @param time_start character Timeseries starting time in ISO 8601
   # @param time_end character Timeseries ending time in ISO 8601
   # @param limit integer Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional)
-  # @return [array[IndexesIndexTimeseriesItem]]
+  # @return [array[ModelsIndexTimeseriesItem]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")

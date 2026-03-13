@@ -51,7 +51,7 @@ export class IndexesApi {
      * @summary Get all multi-asset weights
      */
     public v1IndexdefMultiassetGet(extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.IndexesIndexMultiAssetWeight>;  },
+    { response: JQueryXHR; body: Array<models.ModelsIndexMultiAssetWeight>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/indexdef/multiasset';
@@ -99,11 +99,11 @@ export class IndexesApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.IndexesIndexMultiAssetWeight>;  },
+            { response: JQueryXHR; body: Array<models.ModelsIndexMultiAssetWeight>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.IndexesIndexMultiAssetWeight>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.ModelsIndexMultiAssetWeight>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -117,7 +117,7 @@ export class IndexesApi {
      * @param indexId 
      */
     public v1IndexdefMultiassetIndexIdGet(indexId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.IndexesIndexMultiAssetWeight>;  },
+    { response: JQueryXHR; body: Array<models.ModelsIndexMultiAssetWeight>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/indexdef/multiasset/{index_id}'.replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
@@ -170,11 +170,11 @@ export class IndexesApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.IndexesIndexMultiAssetWeight>;  },
+            { response: JQueryXHR; body: Array<models.ModelsIndexMultiAssetWeight>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.IndexesIndexMultiAssetWeight>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.ModelsIndexMultiAssetWeight>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -187,7 +187,7 @@ export class IndexesApi {
      * @summary List indexes
      */
     public v1IndexesGet(extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.IndexesIndexIdentifier>;  },
+    { response: JQueryXHR; body: Array<models.ModelsIndexIdentifier>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/indexes';
@@ -235,11 +235,11 @@ export class IndexesApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.IndexesIndexIdentifier>;  },
+            { response: JQueryXHR; body: Array<models.ModelsIndexIdentifier>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.IndexesIndexIdentifier>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.ModelsIndexIdentifier>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -253,7 +253,7 @@ export class IndexesApi {
      * @param indexDefinitionId 
      */
     public v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.IndexesIndexDefinitionSnapshotEntry>;  },
+    { response: JQueryXHR; body: Array<models.ModelsIndexDefinitionSnapshotEntry>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/indexes/{index_definition_id}/currentSnapshot'.replace('{' + 'index_definition_id' + '}', encodeURIComponent(String(indexDefinitionId)));
@@ -306,11 +306,11 @@ export class IndexesApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.IndexesIndexDefinitionSnapshotEntry>;  },
+            { response: JQueryXHR; body: Array<models.ModelsIndexDefinitionSnapshotEntry>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.IndexesIndexDefinitionSnapshotEntry>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.ModelsIndexDefinitionSnapshotEntry>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -325,7 +325,7 @@ export class IndexesApi {
      * @param time 
      */
     public v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId: string, time?: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.IndexesIndexDefinitionSnapshotEntry>;  },
+    { response: JQueryXHR; body: Array<models.ModelsIndexDefinitionSnapshotEntry>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/indexes/{index_definition_id}/historySnapshot'.replace('{' + 'index_definition_id' + '}', encodeURIComponent(String(indexDefinitionId)));
@@ -381,11 +381,11 @@ export class IndexesApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.IndexesIndexDefinitionSnapshotEntry>;  },
+            { response: JQueryXHR; body: Array<models.ModelsIndexDefinitionSnapshotEntry>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.IndexesIndexDefinitionSnapshotEntry>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.ModelsIndexDefinitionSnapshotEntry>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -399,7 +399,7 @@ export class IndexesApi {
      * @param indexId 
      */
     public v1IndexesIndexIdCurrentGet(indexId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: models.IndexesIndexValue;  },
+    { response: JQueryXHR; body: models.ModelsIndexValue;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/indexes/{index_id}/current'.replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
@@ -452,11 +452,11 @@ export class IndexesApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: models.IndexesIndexValue;  },
+            { response: JQueryXHR; body: models.ModelsIndexValue;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: models.IndexesIndexValue, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: models.ModelsIndexValue, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -473,7 +473,7 @@ export class IndexesApi {
      * @param limit 
      */
     public v1IndexesIndexIdHistoryGet(indexId: string, timeStart?: string, timeEnd?: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.IndexesIndexValue>;  },
+    { response: JQueryXHR; body: Array<models.ModelsIndexValue>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/indexes/{index_id}/history'.replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
@@ -535,11 +535,11 @@ export class IndexesApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.IndexesIndexValue>;  },
+            { response: JQueryXHR; body: Array<models.ModelsIndexValue>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.IndexesIndexValue>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.ModelsIndexValue>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -557,7 +557,7 @@ export class IndexesApi {
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
     public v1IndexesIndexIdTimeseriesGet(indexId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.IndexesIndexTimeseriesItem>;  },
+    { response: JQueryXHR; body: Array<models.ModelsIndexTimeseriesItem>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/indexes/{index_id}/timeseries'.replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
@@ -637,11 +637,11 @@ export class IndexesApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.IndexesIndexTimeseriesItem>;  },
+            { response: JQueryXHR; body: Array<models.ModelsIndexTimeseriesItem>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.IndexesIndexTimeseriesItem>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.ModelsIndexTimeseriesItem>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})

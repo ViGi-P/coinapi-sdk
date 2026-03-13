@@ -28,7 +28,7 @@ package body .Clients is
    --  Get all multi_asset weights
    procedure V_1Indexdef_Multiasset_Get
       (Client : in out Client_Type;
-       Result : out .Models.IndexesIndexMultiAssetWeight_Type_Vectors.Vector) is
+       Result : out .Models.ModelsIndexMultiAssetWeight_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -44,7 +44,7 @@ package body .Clients is
    procedure V_1Indexdef_Multiasset_Index_Id_Get
       (Client : in out Client_Type;
        Index_Id : in Swagger.UString;
-       Result : out .Models.IndexesIndexMultiAssetWeight_Type_Vectors.Vector) is
+       Result : out .Models.ModelsIndexMultiAssetWeight_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -60,7 +60,7 @@ package body .Clients is
    --  List indexes
    procedure V_1Indexes_Get
       (Client : in out Client_Type;
-       Result : out .Models.IndexesIndexIdentifier_Type_Vectors.Vector) is
+       Result : out .Models.ModelsIndexIdentifier_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -76,7 +76,7 @@ package body .Clients is
    procedure V_1Indexes_Index_Definition_Id_Current_Snapshot_Get
       (Client : in out Client_Type;
        Index_Definition_Id : in Swagger.UString;
-       Result : out .Models.IndexesIndexDefinitionSnapshotEntry_Type_Vectors.Vector) is
+       Result : out .Models.ModelsIndexDefinitionSnapshotEntry_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -94,7 +94,7 @@ package body .Clients is
       (Client : in out Client_Type;
        Index_Definition_Id : in Swagger.UString;
        Time : in Swagger.Nullable_Date;
-       Result : out .Models.IndexesIndexDefinitionSnapshotEntry_Type_Vectors.Vector) is
+       Result : out .Models.ModelsIndexDefinitionSnapshotEntry_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -113,7 +113,7 @@ package body .Clients is
    procedure V_1Indexes_Index_Id_Current_Get
       (Client : in out Client_Type;
        Index_Id : in Swagger.UString;
-       Result : out .Models.IndexesIndexValue_Type) is
+       Result : out .Models.ModelsIndexValue_Type) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -133,7 +133,7 @@ package body .Clients is
        Time_Start : in Swagger.Nullable_Date;
        Time_End : in Swagger.Nullable_Date;
        Limit : in Swagger.Nullable_Integer;
-       Result : out .Models.IndexesIndexValue_Type_Vectors.Vector) is
+       Result : out .Models.ModelsIndexValue_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin
@@ -159,7 +159,7 @@ package body .Clients is
        Time_Start : in Swagger.UString;
        Time_End : in Swagger.UString;
        Limit : in Swagger.Nullable_Integer;
-       Result : out .Models.IndexesIndexTimeseriesItem_Type_Vectors.Vector) is
+       Result : out .Models.ModelsIndexTimeseriesItem_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin

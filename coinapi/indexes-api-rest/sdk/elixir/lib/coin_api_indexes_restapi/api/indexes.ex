@@ -19,10 +19,10 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
 
   ### Returns
 
-  - `{:ok, [%IndexesIndexMultiAssetWeight{}, ...]}` on success
+  - `{:ok, [%ModelsIndexMultiAssetWeight{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_indexdef_multiasset_get(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.IndexesIndexMultiAssetWeight.t]} | {:error, Tesla.Env.t}
+  @spec v1_indexdef_multiasset_get(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.ModelsIndexMultiAssetWeight.t]} | {:error, Tesla.Env.t}
   def v1_indexdef_multiasset_get(connection, _opts \\ []) do
     request =
       %{}
@@ -33,7 +33,7 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIIndexesRESTAPI.Model.IndexesIndexMultiAssetWeight}
+      {200, CoinAPIIndexesRESTAPI.Model.ModelsIndexMultiAssetWeight}
     ])
   end
 
@@ -48,10 +48,10 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
 
   ### Returns
 
-  - `{:ok, [%IndexesIndexMultiAssetWeight{}, ...]}` on success
+  - `{:ok, [%ModelsIndexMultiAssetWeight{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_indexdef_multiasset_index_id_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.IndexesIndexMultiAssetWeight.t]} | {:error, Tesla.Env.t}
+  @spec v1_indexdef_multiasset_index_id_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.ModelsIndexMultiAssetWeight.t]} | {:error, Tesla.Env.t}
   def v1_indexdef_multiasset_index_id_get(connection, index_id, _opts \\ []) do
     request =
       %{}
@@ -62,7 +62,7 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIIndexesRESTAPI.Model.IndexesIndexMultiAssetWeight}
+      {200, CoinAPIIndexesRESTAPI.Model.ModelsIndexMultiAssetWeight}
     ])
   end
 
@@ -76,10 +76,10 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
 
   ### Returns
 
-  - `{:ok, [%IndexesIndexIdentifier{}, ...]}` on success
+  - `{:ok, [%ModelsIndexIdentifier{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_indexes_get(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.IndexesIndexIdentifier.t]} | {:error, Tesla.Env.t}
+  @spec v1_indexes_get(Tesla.Env.client, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.ModelsIndexIdentifier.t]} | {:error, Tesla.Env.t}
   def v1_indexes_get(connection, _opts \\ []) do
     request =
       %{}
@@ -90,7 +90,7 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIIndexesRESTAPI.Model.IndexesIndexIdentifier}
+      {200, CoinAPIIndexesRESTAPI.Model.ModelsIndexIdentifier}
     ])
   end
 
@@ -105,10 +105,10 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
 
   ### Returns
 
-  - `{:ok, [%IndexesIndexDefinitionSnapshotEntry{}, ...]}` on success
+  - `{:ok, [%ModelsIndexDefinitionSnapshotEntry{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_indexes_index_definition_id_current_snapshot_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.IndexesIndexDefinitionSnapshotEntry.t]} | {:error, Tesla.Env.t}
+  @spec v1_indexes_index_definition_id_current_snapshot_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.ModelsIndexDefinitionSnapshotEntry.t]} | {:error, Tesla.Env.t}
   def v1_indexes_index_definition_id_current_snapshot_get(connection, index_definition_id, _opts \\ []) do
     request =
       %{}
@@ -119,7 +119,7 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIIndexesRESTAPI.Model.IndexesIndexDefinitionSnapshotEntry}
+      {200, CoinAPIIndexesRESTAPI.Model.ModelsIndexDefinitionSnapshotEntry}
     ])
   end
 
@@ -135,10 +135,10 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
 
   ### Returns
 
-  - `{:ok, [%IndexesIndexDefinitionSnapshotEntry{}, ...]}` on success
+  - `{:ok, [%ModelsIndexDefinitionSnapshotEntry{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_indexes_index_definition_id_history_snapshot_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.IndexesIndexDefinitionSnapshotEntry.t]} | {:error, Tesla.Env.t}
+  @spec v1_indexes_index_definition_id_history_snapshot_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.ModelsIndexDefinitionSnapshotEntry.t]} | {:error, Tesla.Env.t}
   def v1_indexes_index_definition_id_history_snapshot_get(connection, index_definition_id, opts \\ []) do
     optional_params = %{
       :time => :query
@@ -154,7 +154,7 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIIndexesRESTAPI.Model.IndexesIndexDefinitionSnapshotEntry}
+      {200, CoinAPIIndexesRESTAPI.Model.ModelsIndexDefinitionSnapshotEntry}
     ])
   end
 
@@ -169,10 +169,10 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
 
   ### Returns
 
-  - `{:ok, CoinAPIIndexesRESTAPI.Model.IndexesIndexValue.t}` on success
+  - `{:ok, CoinAPIIndexesRESTAPI.Model.ModelsIndexValue.t}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_indexes_index_id_current_get(Tesla.Env.client, String.t, keyword()) :: {:ok, CoinAPIIndexesRESTAPI.Model.IndexesIndexValue.t} | {:error, Tesla.Env.t}
+  @spec v1_indexes_index_id_current_get(Tesla.Env.client, String.t, keyword()) :: {:ok, CoinAPIIndexesRESTAPI.Model.ModelsIndexValue.t} | {:error, Tesla.Env.t}
   def v1_indexes_index_id_current_get(connection, index_id, _opts \\ []) do
     request =
       %{}
@@ -183,7 +183,7 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIIndexesRESTAPI.Model.IndexesIndexValue}
+      {200, CoinAPIIndexesRESTAPI.Model.ModelsIndexValue}
     ])
   end
 
@@ -201,10 +201,10 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
 
   ### Returns
 
-  - `{:ok, [%IndexesIndexValue{}, ...]}` on success
+  - `{:ok, [%ModelsIndexValue{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_indexes_index_id_history_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.IndexesIndexValue.t]} | {:error, Tesla.Env.t}
+  @spec v1_indexes_index_id_history_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.ModelsIndexValue.t]} | {:error, Tesla.Env.t}
   def v1_indexes_index_id_history_get(connection, index_id, opts \\ []) do
     optional_params = %{
       :time_start => :query,
@@ -222,7 +222,7 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIIndexesRESTAPI.Model.IndexesIndexValue}
+      {200, CoinAPIIndexesRESTAPI.Model.ModelsIndexValue}
     ])
   end
 
@@ -241,10 +241,10 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
 
   ### Returns
 
-  - `{:ok, [%IndexesIndexTimeseriesItem{}, ...]}` on success
+  - `{:ok, [%ModelsIndexTimeseriesItem{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_indexes_index_id_timeseries_get(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.IndexesIndexTimeseriesItem.t]} | {:error, Tesla.Env.t}
+  @spec v1_indexes_index_id_timeseries_get(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, [CoinAPIIndexesRESTAPI.Model.ModelsIndexTimeseriesItem.t]} | {:error, Tesla.Env.t}
   def v1_indexes_index_id_timeseries_get(connection, index_id, period_id, time_start, time_end, opts \\ []) do
     optional_params = %{
       :limit => :query
@@ -263,7 +263,7 @@ defmodule CoinAPIIndexesRESTAPI.Api.Indexes do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIIndexesRESTAPI.Model.IndexesIndexTimeseriesItem}
+      {200, CoinAPIIndexesRESTAPI.Model.ModelsIndexTimeseriesItem}
     ])
   end
 end

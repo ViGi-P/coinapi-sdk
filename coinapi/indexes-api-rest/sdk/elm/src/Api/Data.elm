@@ -15,30 +15,30 @@
 
 
 module Api.Data exposing
-    ( IndexesIndexDefinitionSnapshotEntry
-    , IndexesIndexIdentifier
-    , IndexesIndexMultiAssetWeight
-    , IndexesIndexTimeseriesItem
-    , IndexesIndexValue
-    , IndexesIndexValueComponent
-    , MetadataExchange
+    ( MetadataExchange
     , MetadataTimeseriesPeriod
-    , encodeIndexesIndexDefinitionSnapshotEntry
-    , encodeIndexesIndexIdentifier
-    , encodeIndexesIndexMultiAssetWeight
-    , encodeIndexesIndexTimeseriesItem
-    , encodeIndexesIndexValue
-    , encodeIndexesIndexValueComponent
+    , ModelsIndexDefinitionSnapshotEntry
+    , ModelsIndexIdentifier
+    , ModelsIndexMultiAssetWeight
+    , ModelsIndexTimeseriesItem
+    , ModelsIndexValue
+    , ModelsIndexValueComponent
     , encodeMetadataExchange
     , encodeMetadataTimeseriesPeriod
-    , indexesIndexDefinitionSnapshotEntryDecoder
-    , indexesIndexIdentifierDecoder
-    , indexesIndexMultiAssetWeightDecoder
-    , indexesIndexTimeseriesItemDecoder
-    , indexesIndexValueDecoder
-    , indexesIndexValueComponentDecoder
+    , encodeModelsIndexDefinitionSnapshotEntry
+    , encodeModelsIndexIdentifier
+    , encodeModelsIndexMultiAssetWeight
+    , encodeModelsIndexTimeseriesItem
+    , encodeModelsIndexValue
+    , encodeModelsIndexValueComponent
     , metadataExchangeDecoder
     , metadataTimeseriesPeriodDecoder
+    , modelsIndexDefinitionSnapshotEntryDecoder
+    , modelsIndexIdentifierDecoder
+    , modelsIndexMultiAssetWeightDecoder
+    , modelsIndexTimeseriesItemDecoder
+    , modelsIndexValueDecoder
+    , modelsIndexValueComponentDecoder
     )
 
 import Api
@@ -49,55 +49,6 @@ import Json.Encode
 
 
 -- MODEL
-
-
-type alias IndexesIndexDefinitionSnapshotEntry =
-    { indexId : Maybe String
-    , timestamp : Maybe Posix
-    , value : Maybe Float
-    }
-
-
-{-| Represents an index id
--}
-type alias IndexesIndexIdentifier =
-    { id : Maybe String
-    }
-
-
-type alias IndexesIndexMultiAssetWeight =
-    { indexId : Maybe String
-    , assetId : Maybe String
-    , weight : Maybe Float
-    }
-
-
-{-| Represents a timeseries item with value information.
--}
-type alias IndexesIndexTimeseriesItem =
-    { timePeriodStart : Maybe Posix
-    , timePeriodEnd : Maybe Posix
-    , timeOpen : Maybe Posix
-    , timeClose : Maybe Posix
-    , valueOpen : Maybe Float
-    , valueHigh : Maybe Float
-    , valueLow : Maybe Float
-    , valueClose : Maybe Float
-    , valueCount : Maybe Int
-    }
-
-
-type alias IndexesIndexValue =
-    { timestamp : Maybe Posix
-    , value : Maybe Float
-    , composition : Maybe ( List IndexesIndexValueComponent )
-    }
-
-
-type alias IndexesIndexValueComponent =
-    { componentId : Maybe String
-    , componentValue : Maybe Float
-    }
 
 
 {-| Represents an exchange.
@@ -121,142 +72,56 @@ type alias MetadataTimeseriesPeriod =
     }
 
 
+type alias ModelsIndexDefinitionSnapshotEntry =
+    { indexId : Maybe String
+    , timestamp : Maybe Posix
+    , value : Maybe Float
+    }
+
+
+{-| Represents an index id
+-}
+type alias ModelsIndexIdentifier =
+    { id : Maybe String
+    }
+
+
+type alias ModelsIndexMultiAssetWeight =
+    { indexId : Maybe String
+    , assetId : Maybe String
+    , weight : Maybe Float
+    }
+
+
+{-| Represents a timeseries item with value information.
+-}
+type alias ModelsIndexTimeseriesItem =
+    { timePeriodStart : Maybe Posix
+    , timePeriodEnd : Maybe Posix
+    , timeOpen : Maybe Posix
+    , timeClose : Maybe Posix
+    , valueOpen : Maybe Float
+    , valueHigh : Maybe Float
+    , valueLow : Maybe Float
+    , valueClose : Maybe Float
+    , valueCount : Maybe Int
+    }
+
+
+type alias ModelsIndexValue =
+    { timestamp : Maybe Posix
+    , value : Maybe Float
+    , composition : Maybe ( List ModelsIndexValueComponent )
+    }
+
+
+type alias ModelsIndexValueComponent =
+    { componentId : Maybe String
+    , componentValue : Maybe Float
+    }
+
+
 -- ENCODER
-
-
-encodeIndexesIndexDefinitionSnapshotEntry : IndexesIndexDefinitionSnapshotEntry -> Json.Encode.Value
-encodeIndexesIndexDefinitionSnapshotEntry =
-    encodeObject << encodeIndexesIndexDefinitionSnapshotEntryPairs
-
-
-encodeIndexesIndexDefinitionSnapshotEntryWithTag : ( String, String ) -> IndexesIndexDefinitionSnapshotEntry -> Json.Encode.Value
-encodeIndexesIndexDefinitionSnapshotEntryWithTag (tagField, tag) model =
-    encodeObject (encodeIndexesIndexDefinitionSnapshotEntryPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeIndexesIndexDefinitionSnapshotEntryPairs : IndexesIndexDefinitionSnapshotEntry -> List EncodedField
-encodeIndexesIndexDefinitionSnapshotEntryPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "index_id" Json.Encode.string model.indexId
-            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
-            , maybeEncode "value" Json.Encode.float model.value
-            ]
-    in
-    pairs
-
-
-encodeIndexesIndexIdentifier : IndexesIndexIdentifier -> Json.Encode.Value
-encodeIndexesIndexIdentifier =
-    encodeObject << encodeIndexesIndexIdentifierPairs
-
-
-encodeIndexesIndexIdentifierWithTag : ( String, String ) -> IndexesIndexIdentifier -> Json.Encode.Value
-encodeIndexesIndexIdentifierWithTag (tagField, tag) model =
-    encodeObject (encodeIndexesIndexIdentifierPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeIndexesIndexIdentifierPairs : IndexesIndexIdentifier -> List EncodedField
-encodeIndexesIndexIdentifierPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "id" Json.Encode.string model.id
-            ]
-    in
-    pairs
-
-
-encodeIndexesIndexMultiAssetWeight : IndexesIndexMultiAssetWeight -> Json.Encode.Value
-encodeIndexesIndexMultiAssetWeight =
-    encodeObject << encodeIndexesIndexMultiAssetWeightPairs
-
-
-encodeIndexesIndexMultiAssetWeightWithTag : ( String, String ) -> IndexesIndexMultiAssetWeight -> Json.Encode.Value
-encodeIndexesIndexMultiAssetWeightWithTag (tagField, tag) model =
-    encodeObject (encodeIndexesIndexMultiAssetWeightPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeIndexesIndexMultiAssetWeightPairs : IndexesIndexMultiAssetWeight -> List EncodedField
-encodeIndexesIndexMultiAssetWeightPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "indexId" Json.Encode.string model.indexId
-            , maybeEncodeNullable "assetId" Json.Encode.string model.assetId
-            , maybeEncode "weight" Json.Encode.float model.weight
-            ]
-    in
-    pairs
-
-
-encodeIndexesIndexTimeseriesItem : IndexesIndexTimeseriesItem -> Json.Encode.Value
-encodeIndexesIndexTimeseriesItem =
-    encodeObject << encodeIndexesIndexTimeseriesItemPairs
-
-
-encodeIndexesIndexTimeseriesItemWithTag : ( String, String ) -> IndexesIndexTimeseriesItem -> Json.Encode.Value
-encodeIndexesIndexTimeseriesItemWithTag (tagField, tag) model =
-    encodeObject (encodeIndexesIndexTimeseriesItemPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeIndexesIndexTimeseriesItemPairs : IndexesIndexTimeseriesItem -> List EncodedField
-encodeIndexesIndexTimeseriesItemPairs model =
-    let
-        pairs =
-            [ maybeEncode "time_period_start" Api.Time.encodeDateTime model.timePeriodStart
-            , maybeEncode "time_period_end" Api.Time.encodeDateTime model.timePeriodEnd
-            , maybeEncodeNullable "time_open" Api.Time.encodeDateTime model.timeOpen
-            , maybeEncodeNullable "time_close" Api.Time.encodeDateTime model.timeClose
-            , maybeEncodeNullable "value_open" Json.Encode.float model.valueOpen
-            , maybeEncodeNullable "value_high" Json.Encode.float model.valueHigh
-            , maybeEncodeNullable "value_low" Json.Encode.float model.valueLow
-            , maybeEncodeNullable "value_close" Json.Encode.float model.valueClose
-            , maybeEncode "value_count" Json.Encode.int model.valueCount
-            ]
-    in
-    pairs
-
-
-encodeIndexesIndexValue : IndexesIndexValue -> Json.Encode.Value
-encodeIndexesIndexValue =
-    encodeObject << encodeIndexesIndexValuePairs
-
-
-encodeIndexesIndexValueWithTag : ( String, String ) -> IndexesIndexValue -> Json.Encode.Value
-encodeIndexesIndexValueWithTag (tagField, tag) model =
-    encodeObject (encodeIndexesIndexValuePairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeIndexesIndexValuePairs : IndexesIndexValue -> List EncodedField
-encodeIndexesIndexValuePairs model =
-    let
-        pairs =
-            [ maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
-            , maybeEncode "value" Json.Encode.float model.value
-            , maybeEncodeNullable "composition" (Json.Encode.list encodeIndexesIndexValueComponent) model.composition
-            ]
-    in
-    pairs
-
-
-encodeIndexesIndexValueComponent : IndexesIndexValueComponent -> Json.Encode.Value
-encodeIndexesIndexValueComponent =
-    encodeObject << encodeIndexesIndexValueComponentPairs
-
-
-encodeIndexesIndexValueComponentWithTag : ( String, String ) -> IndexesIndexValueComponent -> Json.Encode.Value
-encodeIndexesIndexValueComponentWithTag (tagField, tag) model =
-    encodeObject (encodeIndexesIndexValueComponentPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeIndexesIndexValueComponentPairs : IndexesIndexValueComponent -> List EncodedField
-encodeIndexesIndexValueComponentPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "component_id" Json.Encode.string model.componentId
-            , maybeEncode "component_value" Json.Encode.float model.componentValue
-            ]
-    in
-    pairs
 
 
 encodeMetadataExchange : MetadataExchange -> Json.Encode.Value
@@ -306,58 +171,142 @@ encodeMetadataTimeseriesPeriodPairs model =
     pairs
 
 
+encodeModelsIndexDefinitionSnapshotEntry : ModelsIndexDefinitionSnapshotEntry -> Json.Encode.Value
+encodeModelsIndexDefinitionSnapshotEntry =
+    encodeObject << encodeModelsIndexDefinitionSnapshotEntryPairs
+
+
+encodeModelsIndexDefinitionSnapshotEntryWithTag : ( String, String ) -> ModelsIndexDefinitionSnapshotEntry -> Json.Encode.Value
+encodeModelsIndexDefinitionSnapshotEntryWithTag (tagField, tag) model =
+    encodeObject (encodeModelsIndexDefinitionSnapshotEntryPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsIndexDefinitionSnapshotEntryPairs : ModelsIndexDefinitionSnapshotEntry -> List EncodedField
+encodeModelsIndexDefinitionSnapshotEntryPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "index_id" Json.Encode.string model.indexId
+            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
+            , maybeEncode "value" Json.Encode.float model.value
+            ]
+    in
+    pairs
+
+
+encodeModelsIndexIdentifier : ModelsIndexIdentifier -> Json.Encode.Value
+encodeModelsIndexIdentifier =
+    encodeObject << encodeModelsIndexIdentifierPairs
+
+
+encodeModelsIndexIdentifierWithTag : ( String, String ) -> ModelsIndexIdentifier -> Json.Encode.Value
+encodeModelsIndexIdentifierWithTag (tagField, tag) model =
+    encodeObject (encodeModelsIndexIdentifierPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsIndexIdentifierPairs : ModelsIndexIdentifier -> List EncodedField
+encodeModelsIndexIdentifierPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "id" Json.Encode.string model.id
+            ]
+    in
+    pairs
+
+
+encodeModelsIndexMultiAssetWeight : ModelsIndexMultiAssetWeight -> Json.Encode.Value
+encodeModelsIndexMultiAssetWeight =
+    encodeObject << encodeModelsIndexMultiAssetWeightPairs
+
+
+encodeModelsIndexMultiAssetWeightWithTag : ( String, String ) -> ModelsIndexMultiAssetWeight -> Json.Encode.Value
+encodeModelsIndexMultiAssetWeightWithTag (tagField, tag) model =
+    encodeObject (encodeModelsIndexMultiAssetWeightPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsIndexMultiAssetWeightPairs : ModelsIndexMultiAssetWeight -> List EncodedField
+encodeModelsIndexMultiAssetWeightPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "indexId" Json.Encode.string model.indexId
+            , maybeEncodeNullable "assetId" Json.Encode.string model.assetId
+            , maybeEncode "weight" Json.Encode.float model.weight
+            ]
+    in
+    pairs
+
+
+encodeModelsIndexTimeseriesItem : ModelsIndexTimeseriesItem -> Json.Encode.Value
+encodeModelsIndexTimeseriesItem =
+    encodeObject << encodeModelsIndexTimeseriesItemPairs
+
+
+encodeModelsIndexTimeseriesItemWithTag : ( String, String ) -> ModelsIndexTimeseriesItem -> Json.Encode.Value
+encodeModelsIndexTimeseriesItemWithTag (tagField, tag) model =
+    encodeObject (encodeModelsIndexTimeseriesItemPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsIndexTimeseriesItemPairs : ModelsIndexTimeseriesItem -> List EncodedField
+encodeModelsIndexTimeseriesItemPairs model =
+    let
+        pairs =
+            [ maybeEncode "time_period_start" Api.Time.encodeDateTime model.timePeriodStart
+            , maybeEncode "time_period_end" Api.Time.encodeDateTime model.timePeriodEnd
+            , maybeEncodeNullable "time_open" Api.Time.encodeDateTime model.timeOpen
+            , maybeEncodeNullable "time_close" Api.Time.encodeDateTime model.timeClose
+            , maybeEncodeNullable "value_open" Json.Encode.float model.valueOpen
+            , maybeEncodeNullable "value_high" Json.Encode.float model.valueHigh
+            , maybeEncodeNullable "value_low" Json.Encode.float model.valueLow
+            , maybeEncodeNullable "value_close" Json.Encode.float model.valueClose
+            , maybeEncode "value_count" Json.Encode.int model.valueCount
+            ]
+    in
+    pairs
+
+
+encodeModelsIndexValue : ModelsIndexValue -> Json.Encode.Value
+encodeModelsIndexValue =
+    encodeObject << encodeModelsIndexValuePairs
+
+
+encodeModelsIndexValueWithTag : ( String, String ) -> ModelsIndexValue -> Json.Encode.Value
+encodeModelsIndexValueWithTag (tagField, tag) model =
+    encodeObject (encodeModelsIndexValuePairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsIndexValuePairs : ModelsIndexValue -> List EncodedField
+encodeModelsIndexValuePairs model =
+    let
+        pairs =
+            [ maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
+            , maybeEncode "value" Json.Encode.float model.value
+            , maybeEncodeNullable "composition" (Json.Encode.list encodeModelsIndexValueComponent) model.composition
+            ]
+    in
+    pairs
+
+
+encodeModelsIndexValueComponent : ModelsIndexValueComponent -> Json.Encode.Value
+encodeModelsIndexValueComponent =
+    encodeObject << encodeModelsIndexValueComponentPairs
+
+
+encodeModelsIndexValueComponentWithTag : ( String, String ) -> ModelsIndexValueComponent -> Json.Encode.Value
+encodeModelsIndexValueComponentWithTag (tagField, tag) model =
+    encodeObject (encodeModelsIndexValueComponentPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsIndexValueComponentPairs : ModelsIndexValueComponent -> List EncodedField
+encodeModelsIndexValueComponentPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "component_id" Json.Encode.string model.componentId
+            , maybeEncode "component_value" Json.Encode.float model.componentValue
+            ]
+    in
+    pairs
+
+
 -- DECODER
-
-
-indexesIndexDefinitionSnapshotEntryDecoder : Json.Decode.Decoder IndexesIndexDefinitionSnapshotEntry
-indexesIndexDefinitionSnapshotEntryDecoder =
-    Json.Decode.succeed IndexesIndexDefinitionSnapshotEntry
-        |> maybeDecodeNullable "index_id" Json.Decode.string Nothing
-        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "value" Json.Decode.float Nothing
-
-
-indexesIndexIdentifierDecoder : Json.Decode.Decoder IndexesIndexIdentifier
-indexesIndexIdentifierDecoder =
-    Json.Decode.succeed IndexesIndexIdentifier
-        |> maybeDecodeNullable "id" Json.Decode.string Nothing
-
-
-indexesIndexMultiAssetWeightDecoder : Json.Decode.Decoder IndexesIndexMultiAssetWeight
-indexesIndexMultiAssetWeightDecoder =
-    Json.Decode.succeed IndexesIndexMultiAssetWeight
-        |> maybeDecodeNullable "indexId" Json.Decode.string Nothing
-        |> maybeDecodeNullable "assetId" Json.Decode.string Nothing
-        |> maybeDecode "weight" Json.Decode.float Nothing
-
-
-indexesIndexTimeseriesItemDecoder : Json.Decode.Decoder IndexesIndexTimeseriesItem
-indexesIndexTimeseriesItemDecoder =
-    Json.Decode.succeed IndexesIndexTimeseriesItem
-        |> maybeDecode "time_period_start" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "time_period_end" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "time_open" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "time_close" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "value_open" Json.Decode.float Nothing
-        |> maybeDecodeNullable "value_high" Json.Decode.float Nothing
-        |> maybeDecodeNullable "value_low" Json.Decode.float Nothing
-        |> maybeDecodeNullable "value_close" Json.Decode.float Nothing
-        |> maybeDecode "value_count" Json.Decode.int Nothing
-
-
-indexesIndexValueDecoder : Json.Decode.Decoder IndexesIndexValue
-indexesIndexValueDecoder =
-    Json.Decode.succeed IndexesIndexValue
-        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "value" Json.Decode.float Nothing
-        |> maybeDecodeNullable "composition" (Json.Decode.list indexesIndexValueComponentDecoder) Nothing
-
-
-indexesIndexValueComponentDecoder : Json.Decode.Decoder IndexesIndexValueComponent
-indexesIndexValueComponentDecoder =
-    Json.Decode.succeed IndexesIndexValueComponent
-        |> maybeDecodeNullable "component_id" Json.Decode.string Nothing
-        |> maybeDecode "component_value" Json.Decode.float Nothing
 
 
 metadataExchangeDecoder : Json.Decode.Decoder MetadataExchange
@@ -377,6 +326,57 @@ metadataTimeseriesPeriodDecoder =
         |> maybeDecodeNullable "unit_count" Json.Decode.int Nothing
         |> maybeDecodeNullable "unit_name" Json.Decode.string Nothing
         |> maybeDecodeNullable "display_name" Json.Decode.string Nothing
+
+
+modelsIndexDefinitionSnapshotEntryDecoder : Json.Decode.Decoder ModelsIndexDefinitionSnapshotEntry
+modelsIndexDefinitionSnapshotEntryDecoder =
+    Json.Decode.succeed ModelsIndexDefinitionSnapshotEntry
+        |> maybeDecodeNullable "index_id" Json.Decode.string Nothing
+        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "value" Json.Decode.float Nothing
+
+
+modelsIndexIdentifierDecoder : Json.Decode.Decoder ModelsIndexIdentifier
+modelsIndexIdentifierDecoder =
+    Json.Decode.succeed ModelsIndexIdentifier
+        |> maybeDecodeNullable "id" Json.Decode.string Nothing
+
+
+modelsIndexMultiAssetWeightDecoder : Json.Decode.Decoder ModelsIndexMultiAssetWeight
+modelsIndexMultiAssetWeightDecoder =
+    Json.Decode.succeed ModelsIndexMultiAssetWeight
+        |> maybeDecodeNullable "indexId" Json.Decode.string Nothing
+        |> maybeDecodeNullable "assetId" Json.Decode.string Nothing
+        |> maybeDecode "weight" Json.Decode.float Nothing
+
+
+modelsIndexTimeseriesItemDecoder : Json.Decode.Decoder ModelsIndexTimeseriesItem
+modelsIndexTimeseriesItemDecoder =
+    Json.Decode.succeed ModelsIndexTimeseriesItem
+        |> maybeDecode "time_period_start" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "time_period_end" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "time_open" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "time_close" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "value_open" Json.Decode.float Nothing
+        |> maybeDecodeNullable "value_high" Json.Decode.float Nothing
+        |> maybeDecodeNullable "value_low" Json.Decode.float Nothing
+        |> maybeDecodeNullable "value_close" Json.Decode.float Nothing
+        |> maybeDecode "value_count" Json.Decode.int Nothing
+
+
+modelsIndexValueDecoder : Json.Decode.Decoder ModelsIndexValue
+modelsIndexValueDecoder =
+    Json.Decode.succeed ModelsIndexValue
+        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "value" Json.Decode.float Nothing
+        |> maybeDecodeNullable "composition" (Json.Decode.list modelsIndexValueComponentDecoder) Nothing
+
+
+modelsIndexValueComponentDecoder : Json.Decode.Decoder ModelsIndexValueComponent
+modelsIndexValueComponentDecoder =
+    Json.Decode.succeed ModelsIndexValueComponent
+        |> maybeDecodeNullable "component_id" Json.Decode.string Nothing
+        |> maybeDecode "component_value" Json.Decode.float Nothing
 
 
 

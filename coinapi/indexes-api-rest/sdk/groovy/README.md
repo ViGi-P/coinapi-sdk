@@ -6,7 +6,7 @@ This Groovy package, using the [http-builder-ng library](https://http-builder-ng
 
 - API version: v1
 - Package version: v1
-- Build date: 2026-03-05T06:05:53.917076133Z[Etc/UTC]
+- Build date: 2026-03-13T06:06:23.150445875Z[Etc/UTC]
 - Generator version: 7.20.0
 - Build package: org.openapitools.codegen.languages.GroovyClientCodegen
 For more information, please visit [https://www.coinapi.io](https://www.coinapi.io)
@@ -39,7 +39,7 @@ def apiInstance = new IndexesApi()
 apiInstance.v1IndexdefMultiassetGet()
     {
     // on success
-    def result = (List&lt;IndexesIndexMultiAssetWeight&gt;)it
+    def result = (List&lt;ModelsIndexMultiAssetWeight&gt;)it
     println result
     
 }

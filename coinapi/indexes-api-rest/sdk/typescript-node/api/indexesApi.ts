@@ -15,11 +15,11 @@ import localVarRequest from 'request';
 import http from 'http';
 
 /* tslint:disable:no-unused-locals */
-import { IndexesIndexDefinitionSnapshotEntry } from '../model/indexesIndexDefinitionSnapshotEntry';
-import { IndexesIndexIdentifier } from '../model/indexesIndexIdentifier';
-import { IndexesIndexMultiAssetWeight } from '../model/indexesIndexMultiAssetWeight';
-import { IndexesIndexTimeseriesItem } from '../model/indexesIndexTimeseriesItem';
-import { IndexesIndexValue } from '../model/indexesIndexValue';
+import { ModelsIndexDefinitionSnapshotEntry } from '../model/modelsIndexDefinitionSnapshotEntry';
+import { ModelsIndexIdentifier } from '../model/modelsIndexIdentifier';
+import { ModelsIndexMultiAssetWeight } from '../model/modelsIndexMultiAssetWeight';
+import { ModelsIndexTimeseriesItem } from '../model/modelsIndexTimeseriesItem';
+import { ModelsIndexValue } from '../model/modelsIndexValue';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
 import { HttpBasicAuth, HttpBearerAuth, ApiKeyAuth, OAuth } from '../model/models';
@@ -102,7 +102,7 @@ export class IndexesApi {
      * 
      * @summary Get all multi-asset weights
      */
-    public async v1IndexdefMultiassetGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexMultiAssetWeight>;  }> {
+    public async v1IndexdefMultiassetGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexMultiAssetWeight>;  }> {
         const localVarPath = this.basePath + '/v1/indexdef/multiasset';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -150,13 +150,13 @@ export class IndexesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexMultiAssetWeight>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexMultiAssetWeight>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<IndexesIndexMultiAssetWeight>");
+                            body = ObjectSerializer.deserialize(body, "Array<ModelsIndexMultiAssetWeight>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -171,7 +171,7 @@ export class IndexesApi {
      * @summary Get multi-asset weights for specific index
      * @param indexId 
      */
-    public async v1IndexdefMultiassetIndexIdGet (indexId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexMultiAssetWeight>;  }> {
+    public async v1IndexdefMultiassetIndexIdGet (indexId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexMultiAssetWeight>;  }> {
         const localVarPath = this.basePath + '/v1/indexdef/multiasset/{index_id}'
             .replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
         let localVarQueryParameters: any = {};
@@ -225,13 +225,13 @@ export class IndexesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexMultiAssetWeight>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexMultiAssetWeight>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<IndexesIndexMultiAssetWeight>");
+                            body = ObjectSerializer.deserialize(body, "Array<ModelsIndexMultiAssetWeight>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -245,7 +245,7 @@ export class IndexesApi {
      * 
      * @summary List indexes
      */
-    public async v1IndexesGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexIdentifier>;  }> {
+    public async v1IndexesGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexIdentifier>;  }> {
         const localVarPath = this.basePath + '/v1/indexes';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -293,13 +293,13 @@ export class IndexesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexIdentifier>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexIdentifier>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<IndexesIndexIdentifier>");
+                            body = ObjectSerializer.deserialize(body, "Array<ModelsIndexIdentifier>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -314,7 +314,7 @@ export class IndexesApi {
      * @summary Current Index Values for index definition
      * @param indexDefinitionId 
      */
-    public async v1IndexesIndexDefinitionIdCurrentSnapshotGet (indexDefinitionId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexDefinitionSnapshotEntry>;  }> {
+    public async v1IndexesIndexDefinitionIdCurrentSnapshotGet (indexDefinitionId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexDefinitionSnapshotEntry>;  }> {
         const localVarPath = this.basePath + '/v1/indexes/{index_definition_id}/currentSnapshot'
             .replace('{' + 'index_definition_id' + '}', encodeURIComponent(String(indexDefinitionId)));
         let localVarQueryParameters: any = {};
@@ -368,13 +368,13 @@ export class IndexesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexDefinitionSnapshotEntry>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexDefinitionSnapshotEntry>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<IndexesIndexDefinitionSnapshotEntry>");
+                            body = ObjectSerializer.deserialize(body, "Array<ModelsIndexDefinitionSnapshotEntry>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -390,7 +390,7 @@ export class IndexesApi {
      * @param indexDefinitionId 
      * @param time 
      */
-    public async v1IndexesIndexDefinitionIdHistorySnapshotGet (indexDefinitionId: string, time?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexDefinitionSnapshotEntry>;  }> {
+    public async v1IndexesIndexDefinitionIdHistorySnapshotGet (indexDefinitionId: string, time?: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexDefinitionSnapshotEntry>;  }> {
         const localVarPath = this.basePath + '/v1/indexes/{index_definition_id}/historySnapshot'
             .replace('{' + 'index_definition_id' + '}', encodeURIComponent(String(indexDefinitionId)));
         let localVarQueryParameters: any = {};
@@ -448,13 +448,13 @@ export class IndexesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexDefinitionSnapshotEntry>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexDefinitionSnapshotEntry>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<IndexesIndexDefinitionSnapshotEntry>");
+                            body = ObjectSerializer.deserialize(body, "Array<ModelsIndexDefinitionSnapshotEntry>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -469,7 +469,7 @@ export class IndexesApi {
      * @summary Current Index Value
      * @param indexId 
      */
-    public async v1IndexesIndexIdCurrentGet (indexId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: IndexesIndexValue;  }> {
+    public async v1IndexesIndexIdCurrentGet (indexId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ModelsIndexValue;  }> {
         const localVarPath = this.basePath + '/v1/indexes/{index_id}/current'
             .replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
         let localVarQueryParameters: any = {};
@@ -523,13 +523,13 @@ export class IndexesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: IndexesIndexValue;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: ModelsIndexValue;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "IndexesIndexValue");
+                            body = ObjectSerializer.deserialize(body, "ModelsIndexValue");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -547,7 +547,7 @@ export class IndexesApi {
      * @param timeEnd 
      * @param limit 
      */
-    public async v1IndexesIndexIdHistoryGet (indexId: string, timeStart?: Date, timeEnd?: Date, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexValue>;  }> {
+    public async v1IndexesIndexIdHistoryGet (indexId: string, timeStart?: Date, timeEnd?: Date, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexValue>;  }> {
         const localVarPath = this.basePath + '/v1/indexes/{index_id}/history'
             .replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
         let localVarQueryParameters: any = {};
@@ -613,13 +613,13 @@ export class IndexesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexValue>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexValue>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<IndexesIndexValue>");
+                            body = ObjectSerializer.deserialize(body, "Array<ModelsIndexValue>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -638,7 +638,7 @@ export class IndexesApi {
      * @param timeEnd Timeseries ending time in ISO 8601
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
-    public async v1IndexesIndexIdTimeseriesGet (indexId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexTimeseriesItem>;  }> {
+    public async v1IndexesIndexIdTimeseriesGet (indexId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexTimeseriesItem>;  }> {
         const localVarPath = this.basePath + '/v1/indexes/{index_id}/timeseries'
             .replace('{' + 'index_id' + '}', encodeURIComponent(String(indexId)));
         let localVarQueryParameters: any = {};
@@ -723,13 +723,13 @@ export class IndexesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<IndexesIndexTimeseriesItem>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<ModelsIndexTimeseriesItem>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<IndexesIndexTimeseriesItem>");
+                            body = ObjectSerializer.deserialize(body, "Array<ModelsIndexTimeseriesItem>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));

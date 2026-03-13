@@ -10,11 +10,11 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/indexes_index_definition_snapshot_entry.dart';
-import 'package:openapi/src/model/indexes_index_identifier.dart';
-import 'package:openapi/src/model/indexes_index_multi_asset_weight.dart';
-import 'package:openapi/src/model/indexes_index_timeseries_item.dart';
-import 'package:openapi/src/model/indexes_index_value.dart';
+import 'package:openapi/src/model/models_index_definition_snapshot_entry.dart';
+import 'package:openapi/src/model/models_index_identifier.dart';
+import 'package:openapi/src/model/models_index_multi_asset_weight.dart';
+import 'package:openapi/src/model/models_index_timeseries_item.dart';
+import 'package:openapi/src/model/models_index_value.dart';
 
 class IndexesApi {
 
@@ -35,9 +35,9 @@ class IndexesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<IndexesIndexMultiAssetWeight>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<ModelsIndexMultiAssetWeight>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<IndexesIndexMultiAssetWeight>>> v1IndexdefMultiassetGet({ 
+  Future<Response<BuiltList<ModelsIndexMultiAssetWeight>>> v1IndexdefMultiassetGet({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -77,14 +77,14 @@ class IndexesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<IndexesIndexMultiAssetWeight>? _responseData;
+    BuiltList<ModelsIndexMultiAssetWeight>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(IndexesIndexMultiAssetWeight)]),
-      ) as BuiltList<IndexesIndexMultiAssetWeight>;
+        specifiedType: const FullType(BuiltList, [FullType(ModelsIndexMultiAssetWeight)]),
+      ) as BuiltList<ModelsIndexMultiAssetWeight>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -96,7 +96,7 @@ class IndexesApi {
       );
     }
 
-    return Response<BuiltList<IndexesIndexMultiAssetWeight>>(
+    return Response<BuiltList<ModelsIndexMultiAssetWeight>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -120,9 +120,9 @@ class IndexesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<IndexesIndexMultiAssetWeight>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<ModelsIndexMultiAssetWeight>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<IndexesIndexMultiAssetWeight>>> v1IndexdefMultiassetIndexIdGet({ 
+  Future<Response<BuiltList<ModelsIndexMultiAssetWeight>>> v1IndexdefMultiassetIndexIdGet({ 
     required String indexId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -163,14 +163,14 @@ class IndexesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<IndexesIndexMultiAssetWeight>? _responseData;
+    BuiltList<ModelsIndexMultiAssetWeight>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(IndexesIndexMultiAssetWeight)]),
-      ) as BuiltList<IndexesIndexMultiAssetWeight>;
+        specifiedType: const FullType(BuiltList, [FullType(ModelsIndexMultiAssetWeight)]),
+      ) as BuiltList<ModelsIndexMultiAssetWeight>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -182,7 +182,7 @@ class IndexesApi {
       );
     }
 
-    return Response<BuiltList<IndexesIndexMultiAssetWeight>>(
+    return Response<BuiltList<ModelsIndexMultiAssetWeight>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -205,9 +205,9 @@ class IndexesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<IndexesIndexIdentifier>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<ModelsIndexIdentifier>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<IndexesIndexIdentifier>>> v1IndexesGet({ 
+  Future<Response<BuiltList<ModelsIndexIdentifier>>> v1IndexesGet({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -247,14 +247,14 @@ class IndexesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<IndexesIndexIdentifier>? _responseData;
+    BuiltList<ModelsIndexIdentifier>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(IndexesIndexIdentifier)]),
-      ) as BuiltList<IndexesIndexIdentifier>;
+        specifiedType: const FullType(BuiltList, [FullType(ModelsIndexIdentifier)]),
+      ) as BuiltList<ModelsIndexIdentifier>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -266,7 +266,7 @@ class IndexesApi {
       );
     }
 
-    return Response<BuiltList<IndexesIndexIdentifier>>(
+    return Response<BuiltList<ModelsIndexIdentifier>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -290,9 +290,9 @@ class IndexesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<IndexesIndexDefinitionSnapshotEntry>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<ModelsIndexDefinitionSnapshotEntry>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<IndexesIndexDefinitionSnapshotEntry>>> v1IndexesIndexDefinitionIdCurrentSnapshotGet({ 
+  Future<Response<BuiltList<ModelsIndexDefinitionSnapshotEntry>>> v1IndexesIndexDefinitionIdCurrentSnapshotGet({ 
     required String indexDefinitionId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -333,14 +333,14 @@ class IndexesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<IndexesIndexDefinitionSnapshotEntry>? _responseData;
+    BuiltList<ModelsIndexDefinitionSnapshotEntry>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(IndexesIndexDefinitionSnapshotEntry)]),
-      ) as BuiltList<IndexesIndexDefinitionSnapshotEntry>;
+        specifiedType: const FullType(BuiltList, [FullType(ModelsIndexDefinitionSnapshotEntry)]),
+      ) as BuiltList<ModelsIndexDefinitionSnapshotEntry>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -352,7 +352,7 @@ class IndexesApi {
       );
     }
 
-    return Response<BuiltList<IndexesIndexDefinitionSnapshotEntry>>(
+    return Response<BuiltList<ModelsIndexDefinitionSnapshotEntry>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -377,9 +377,9 @@ class IndexesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<IndexesIndexDefinitionSnapshotEntry>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<ModelsIndexDefinitionSnapshotEntry>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<IndexesIndexDefinitionSnapshotEntry>>> v1IndexesIndexDefinitionIdHistorySnapshotGet({ 
+  Future<Response<BuiltList<ModelsIndexDefinitionSnapshotEntry>>> v1IndexesIndexDefinitionIdHistorySnapshotGet({ 
     required String indexDefinitionId,
     DateTime? time,
     CancelToken? cancelToken,
@@ -426,14 +426,14 @@ class IndexesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<IndexesIndexDefinitionSnapshotEntry>? _responseData;
+    BuiltList<ModelsIndexDefinitionSnapshotEntry>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(IndexesIndexDefinitionSnapshotEntry)]),
-      ) as BuiltList<IndexesIndexDefinitionSnapshotEntry>;
+        specifiedType: const FullType(BuiltList, [FullType(ModelsIndexDefinitionSnapshotEntry)]),
+      ) as BuiltList<ModelsIndexDefinitionSnapshotEntry>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -445,7 +445,7 @@ class IndexesApi {
       );
     }
 
-    return Response<BuiltList<IndexesIndexDefinitionSnapshotEntry>>(
+    return Response<BuiltList<ModelsIndexDefinitionSnapshotEntry>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -469,9 +469,9 @@ class IndexesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [IndexesIndexValue] as data
+  /// Returns a [Future] containing a [Response] with a [ModelsIndexValue] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<IndexesIndexValue>> v1IndexesIndexIdCurrentGet({ 
+  Future<Response<ModelsIndexValue>> v1IndexesIndexIdCurrentGet({ 
     required String indexId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -512,14 +512,14 @@ class IndexesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    IndexesIndexValue? _responseData;
+    ModelsIndexValue? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(IndexesIndexValue),
-      ) as IndexesIndexValue;
+        specifiedType: const FullType(ModelsIndexValue),
+      ) as ModelsIndexValue;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -531,7 +531,7 @@ class IndexesApi {
       );
     }
 
-    return Response<IndexesIndexValue>(
+    return Response<ModelsIndexValue>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -558,9 +558,9 @@ class IndexesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<IndexesIndexValue>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<ModelsIndexValue>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<IndexesIndexValue>>> v1IndexesIndexIdHistoryGet({ 
+  Future<Response<BuiltList<ModelsIndexValue>>> v1IndexesIndexIdHistoryGet({ 
     required String indexId,
     DateTime? timeStart,
     DateTime? timeEnd,
@@ -611,14 +611,14 @@ class IndexesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<IndexesIndexValue>? _responseData;
+    BuiltList<ModelsIndexValue>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(IndexesIndexValue)]),
-      ) as BuiltList<IndexesIndexValue>;
+        specifiedType: const FullType(BuiltList, [FullType(ModelsIndexValue)]),
+      ) as BuiltList<ModelsIndexValue>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -630,7 +630,7 @@ class IndexesApi {
       );
     }
 
-    return Response<BuiltList<IndexesIndexValue>>(
+    return Response<BuiltList<ModelsIndexValue>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -658,9 +658,9 @@ class IndexesApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<IndexesIndexTimeseriesItem>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<ModelsIndexTimeseriesItem>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<IndexesIndexTimeseriesItem>>> v1IndexesIndexIdTimeseriesGet({ 
+  Future<Response<BuiltList<ModelsIndexTimeseriesItem>>> v1IndexesIndexIdTimeseriesGet({ 
     required String indexId,
     required String periodId,
     required String timeStart,
@@ -713,14 +713,14 @@ class IndexesApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<IndexesIndexTimeseriesItem>? _responseData;
+    BuiltList<ModelsIndexTimeseriesItem>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(IndexesIndexTimeseriesItem)]),
-      ) as BuiltList<IndexesIndexTimeseriesItem>;
+        specifiedType: const FullType(BuiltList, [FullType(ModelsIndexTimeseriesItem)]),
+      ) as BuiltList<ModelsIndexTimeseriesItem>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -732,7 +732,7 @@ class IndexesApi {
       );
     }
 
-    return Response<BuiltList<IndexesIndexTimeseriesItem>>(
+    return Response<BuiltList<ModelsIndexTimeseriesItem>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

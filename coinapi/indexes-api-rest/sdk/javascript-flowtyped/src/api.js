@@ -70,174 +70,6 @@ export class RequiredError extends Error {
 }
 
 /**
- * 
- * @export
- */
-export type IndexesIndexDefinitionSnapshotEntry = {
-    /**
-     * 
-     * @type {string}
-     * @memberof IndexesIndexDefinitionSnapshotEntry
-     */
-    index_id?: string;
-    /**
-     * 
-     * @type {Date}
-     * @memberof IndexesIndexDefinitionSnapshotEntry
-     */
-    timestamp?: Date;
-    /**
-     * 
-     * @type {number}
-     * @memberof IndexesIndexDefinitionSnapshotEntry
-     */
-    value?: number;
-}
-
-/**
- * Represents an index id
- * @export
- */
-export type IndexesIndexIdentifier = {
-    /**
-     * Index ID
-     * @type {string}
-     * @memberof IndexesIndexIdentifier
-     */
-    id?: string;
-}
-
-/**
- * 
- * @export
- */
-export type IndexesIndexMultiAssetWeight = {
-    /**
-     * 
-     * @type {string}
-     * @memberof IndexesIndexMultiAssetWeight
-     */
-    indexId?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof IndexesIndexMultiAssetWeight
-     */
-    assetId?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof IndexesIndexMultiAssetWeight
-     */
-    weight?: number;
-}
-
-/**
- * Represents a timeseries item with value information.
- * @export
- */
-export type IndexesIndexTimeseriesItem = {
-    /**
-     * Gets or sets the start time of the time period.
-     * @type {Date}
-     * @memberof IndexesIndexTimeseriesItem
-     */
-    time_period_start?: Date;
-    /**
-     * Gets or sets the end time of the time period.
-     * @type {Date}
-     * @memberof IndexesIndexTimeseriesItem
-     */
-    time_period_end?: Date;
-    /**
-     * Gets or sets the time when the value opened.
-     * @type {Date}
-     * @memberof IndexesIndexTimeseriesItem
-     */
-    time_open?: Date;
-    /**
-     * Gets or sets the time when the value closed.
-     * @type {Date}
-     * @memberof IndexesIndexTimeseriesItem
-     */
-    time_close?: Date;
-    /**
-     * Gets or sets the opening value.
-     * @type {number}
-     * @memberof IndexesIndexTimeseriesItem
-     */
-    value_open?: number;
-    /**
-     * Gets or sets the highest value during the time period.
-     * @type {number}
-     * @memberof IndexesIndexTimeseriesItem
-     */
-    value_high?: number;
-    /**
-     * Gets or sets the lowest value during the time period.
-     * @type {number}
-     * @memberof IndexesIndexTimeseriesItem
-     */
-    value_low?: number;
-    /**
-     * Gets or sets the closing value.
-     * @type {number}
-     * @memberof IndexesIndexTimeseriesItem
-     */
-    value_close?: number;
-    /**
-     * Gets or sets the number of values during the time period.
-     * @type {number}
-     * @memberof IndexesIndexTimeseriesItem
-     */
-    value_count?: number;
-}
-
-/**
- * 
- * @export
- */
-export type IndexesIndexValue = {
-    /**
-     * 
-     * @type {Date}
-     * @memberof IndexesIndexValue
-     */
-    timestamp?: Date;
-    /**
-     * 
-     * @type {number}
-     * @memberof IndexesIndexValue
-     */
-    value?: number;
-    /**
-     * 
-     * @type {Array<IndexesIndexValueComponent>}
-     * @memberof IndexesIndexValue
-     */
-    composition?: Array<IndexesIndexValueComponent>;
-}
-
-/**
- * 
- * @export
- */
-export type IndexesIndexValueComponent = {
-    /**
-     * 
-     * @type {string}
-     * @memberof IndexesIndexValueComponent
-     */
-    component_id?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof IndexesIndexValueComponent
-     */
-    component_value?: number;
-}
-
-/**
  * Represents an exchange.
  * @export
  */
@@ -303,6 +135,174 @@ export type MetadataTimeseriesPeriod = {
      * @memberof MetadataTimeseriesPeriod
      */
     display_name?: string;
+}
+
+/**
+ * 
+ * @export
+ */
+export type ModelsIndexDefinitionSnapshotEntry = {
+    /**
+     * 
+     * @type {string}
+     * @memberof ModelsIndexDefinitionSnapshotEntry
+     */
+    index_id?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ModelsIndexDefinitionSnapshotEntry
+     */
+    timestamp?: Date;
+    /**
+     * 
+     * @type {number}
+     * @memberof ModelsIndexDefinitionSnapshotEntry
+     */
+    value?: number;
+}
+
+/**
+ * Represents an index id
+ * @export
+ */
+export type ModelsIndexIdentifier = {
+    /**
+     * Index ID
+     * @type {string}
+     * @memberof ModelsIndexIdentifier
+     */
+    id?: string;
+}
+
+/**
+ * 
+ * @export
+ */
+export type ModelsIndexMultiAssetWeight = {
+    /**
+     * 
+     * @type {string}
+     * @memberof ModelsIndexMultiAssetWeight
+     */
+    indexId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ModelsIndexMultiAssetWeight
+     */
+    assetId?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ModelsIndexMultiAssetWeight
+     */
+    weight?: number;
+}
+
+/**
+ * Represents a timeseries item with value information.
+ * @export
+ */
+export type ModelsIndexTimeseriesItem = {
+    /**
+     * Gets or sets the start time of the time period.
+     * @type {Date}
+     * @memberof ModelsIndexTimeseriesItem
+     */
+    time_period_start?: Date;
+    /**
+     * Gets or sets the end time of the time period.
+     * @type {Date}
+     * @memberof ModelsIndexTimeseriesItem
+     */
+    time_period_end?: Date;
+    /**
+     * Gets or sets the time when the value opened.
+     * @type {Date}
+     * @memberof ModelsIndexTimeseriesItem
+     */
+    time_open?: Date;
+    /**
+     * Gets or sets the time when the value closed.
+     * @type {Date}
+     * @memberof ModelsIndexTimeseriesItem
+     */
+    time_close?: Date;
+    /**
+     * Gets or sets the opening value.
+     * @type {number}
+     * @memberof ModelsIndexTimeseriesItem
+     */
+    value_open?: number;
+    /**
+     * Gets or sets the highest value during the time period.
+     * @type {number}
+     * @memberof ModelsIndexTimeseriesItem
+     */
+    value_high?: number;
+    /**
+     * Gets or sets the lowest value during the time period.
+     * @type {number}
+     * @memberof ModelsIndexTimeseriesItem
+     */
+    value_low?: number;
+    /**
+     * Gets or sets the closing value.
+     * @type {number}
+     * @memberof ModelsIndexTimeseriesItem
+     */
+    value_close?: number;
+    /**
+     * Gets or sets the number of values during the time period.
+     * @type {number}
+     * @memberof ModelsIndexTimeseriesItem
+     */
+    value_count?: number;
+}
+
+/**
+ * 
+ * @export
+ */
+export type ModelsIndexValue = {
+    /**
+     * 
+     * @type {Date}
+     * @memberof ModelsIndexValue
+     */
+    timestamp?: Date;
+    /**
+     * 
+     * @type {number}
+     * @memberof ModelsIndexValue
+     */
+    value?: number;
+    /**
+     * 
+     * @type {Array<ModelsIndexValueComponent>}
+     * @memberof ModelsIndexValue
+     */
+    composition?: Array<ModelsIndexValueComponent>;
+}
+
+/**
+ * 
+ * @export
+ */
+export type ModelsIndexValueComponent = {
+    /**
+     * 
+     * @type {string}
+     * @memberof ModelsIndexValueComponent
+     */
+    component_id?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof ModelsIndexValueComponent
+     */
+    component_value?: number;
 }
 
 
@@ -647,21 +647,21 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
 };
 
 export type IndexesApiType = { 
-    v1IndexdefMultiassetGet(options?: RequestOptions): Promise<Array<IndexesIndexMultiAssetWeight>>,
+    v1IndexdefMultiassetGet(options?: RequestOptions): Promise<Array<ModelsIndexMultiAssetWeight>>,
 
-    v1IndexdefMultiassetIndexIdGet(indexId: string, options?: RequestOptions): Promise<Array<IndexesIndexMultiAssetWeight>>,
+    v1IndexdefMultiassetIndexIdGet(indexId: string, options?: RequestOptions): Promise<Array<ModelsIndexMultiAssetWeight>>,
 
-    v1IndexesGet(options?: RequestOptions): Promise<Array<IndexesIndexIdentifier>>,
+    v1IndexesGet(options?: RequestOptions): Promise<Array<ModelsIndexIdentifier>>,
 
-    v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId: string, options?: RequestOptions): Promise<Array<IndexesIndexDefinitionSnapshotEntry>>,
+    v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId: string, options?: RequestOptions): Promise<Array<ModelsIndexDefinitionSnapshotEntry>>,
 
-    v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId: string, time?: Date, options?: RequestOptions): Promise<Array<IndexesIndexDefinitionSnapshotEntry>>,
+    v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId: string, time?: Date, options?: RequestOptions): Promise<Array<ModelsIndexDefinitionSnapshotEntry>>,
 
-    v1IndexesIndexIdCurrentGet(indexId: string, options?: RequestOptions): Promise<IndexesIndexValue>,
+    v1IndexesIndexIdCurrentGet(indexId: string, options?: RequestOptions): Promise<ModelsIndexValue>,
 
-    v1IndexesIndexIdHistoryGet(indexId: string, timeStart?: Date, timeEnd?: Date, limit?: number, options?: RequestOptions): Promise<Array<IndexesIndexValue>>,
+    v1IndexesIndexIdHistoryGet(indexId: string, timeStart?: Date, timeEnd?: Date, limit?: number, options?: RequestOptions): Promise<Array<ModelsIndexValue>>,
 
-    v1IndexesIndexIdTimeseriesGet(indexId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, options?: RequestOptions): Promise<Array<IndexesIndexTimeseriesItem>>,
+    v1IndexesIndexIdTimeseriesGet(indexId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, options?: RequestOptions): Promise<Array<ModelsIndexTimeseriesItem>>,
 }
 
 /**
@@ -676,7 +676,7 @@ export const IndexesApi = function(configuration?: Configuration, fetch: FetchAP
          * @summary Get all multi-asset weights
          * @throws {RequiredError}
          */
-        v1IndexdefMultiassetGet(options?: RequestOptions = {}): Promise<Array<IndexesIndexMultiAssetWeight>> {
+        v1IndexdefMultiassetGet(options?: RequestOptions = {}): Promise<Array<ModelsIndexMultiAssetWeight>> {
             const localVarFetchArgs = IndexesApiFetchParamCreator(configuration).v1IndexdefMultiassetGet(options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -691,7 +691,7 @@ export const IndexesApi = function(configuration?: Configuration, fetch: FetchAP
          * @summary Get multi-asset weights for specific index
          * @throws {RequiredError}
          */
-        v1IndexdefMultiassetIndexIdGet(indexId: string, options?: RequestOptions = {}): Promise<Array<IndexesIndexMultiAssetWeight>> {
+        v1IndexdefMultiassetIndexIdGet(indexId: string, options?: RequestOptions = {}): Promise<Array<ModelsIndexMultiAssetWeight>> {
             const localVarFetchArgs = IndexesApiFetchParamCreator(configuration).v1IndexdefMultiassetIndexIdGet(indexId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -706,7 +706,7 @@ export const IndexesApi = function(configuration?: Configuration, fetch: FetchAP
          * @summary List indexes
          * @throws {RequiredError}
          */
-        v1IndexesGet(options?: RequestOptions = {}): Promise<Array<IndexesIndexIdentifier>> {
+        v1IndexesGet(options?: RequestOptions = {}): Promise<Array<ModelsIndexIdentifier>> {
             const localVarFetchArgs = IndexesApiFetchParamCreator(configuration).v1IndexesGet(options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -721,7 +721,7 @@ export const IndexesApi = function(configuration?: Configuration, fetch: FetchAP
          * @summary Current Index Values for index definition
          * @throws {RequiredError}
          */
-        v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId: string, options?: RequestOptions = {}): Promise<Array<IndexesIndexDefinitionSnapshotEntry>> {
+        v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId: string, options?: RequestOptions = {}): Promise<Array<ModelsIndexDefinitionSnapshotEntry>> {
             const localVarFetchArgs = IndexesApiFetchParamCreator(configuration).v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -736,7 +736,7 @@ export const IndexesApi = function(configuration?: Configuration, fetch: FetchAP
          * @summary Historical Index Values for index definition
          * @throws {RequiredError}
          */
-        v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId: string, time?: Date, options?: RequestOptions = {}): Promise<Array<IndexesIndexDefinitionSnapshotEntry>> {
+        v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId: string, time?: Date, options?: RequestOptions = {}): Promise<Array<ModelsIndexDefinitionSnapshotEntry>> {
             const localVarFetchArgs = IndexesApiFetchParamCreator(configuration).v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -751,7 +751,7 @@ export const IndexesApi = function(configuration?: Configuration, fetch: FetchAP
          * @summary Current Index Value
          * @throws {RequiredError}
          */
-        v1IndexesIndexIdCurrentGet(indexId: string, options?: RequestOptions = {}): Promise<IndexesIndexValue> {
+        v1IndexesIndexIdCurrentGet(indexId: string, options?: RequestOptions = {}): Promise<ModelsIndexValue> {
             const localVarFetchArgs = IndexesApiFetchParamCreator(configuration).v1IndexesIndexIdCurrentGet(indexId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -766,7 +766,7 @@ export const IndexesApi = function(configuration?: Configuration, fetch: FetchAP
          * @summary Historical Index Value w/Composition
          * @throws {RequiredError}
          */
-        v1IndexesIndexIdHistoryGet(indexId: string, timeStart?: Date, timeEnd?: Date, limit?: number, options?: RequestOptions = {}): Promise<Array<IndexesIndexValue>> {
+        v1IndexesIndexIdHistoryGet(indexId: string, timeStart?: Date, timeEnd?: Date, limit?: number, options?: RequestOptions = {}): Promise<Array<ModelsIndexValue>> {
             const localVarFetchArgs = IndexesApiFetchParamCreator(configuration).v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -781,7 +781,7 @@ export const IndexesApi = function(configuration?: Configuration, fetch: FetchAP
          * @summary Timeseries Index Value
          * @throws {RequiredError}
          */
-        v1IndexesIndexIdTimeseriesGet(indexId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, options?: RequestOptions = {}): Promise<Array<IndexesIndexTimeseriesItem>> {
+        v1IndexesIndexIdTimeseriesGet(indexId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, options?: RequestOptions = {}): Promise<Array<ModelsIndexTimeseriesItem>> {
             const localVarFetchArgs = IndexesApiFetchParamCreator(configuration).v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {

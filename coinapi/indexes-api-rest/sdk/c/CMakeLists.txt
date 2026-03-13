@@ -48,14 +48,14 @@ set(SRCS
     src/binary.c
     external/cJSON.c
     model/object.c
-    model/indexes_index_definition_snapshot_entry.c
-    model/indexes_index_identifier.c
-    model/indexes_index_multi_asset_weight.c
-    model/indexes_index_timeseries_item.c
-    model/indexes_index_value.c
-    model/indexes_index_value_component.c
     model/metadata_exchange.c
     model/metadata_timeseries_period.c
+    model/models_index_definition_snapshot_entry.c
+    model/models_index_identifier.c
+    model/models_index_multi_asset_weight.c
+    model/models_index_timeseries_item.c
+    model/models_index_value.c
+    model/models_index_value_component.c
     api/IndexesAPI.c
     api/MetadataAPI.c
     api/PeriodsAPI.c
@@ -70,14 +70,14 @@ set(HDRS
     external/cJSON.h
     model/object.h
     model/any_type.h
-    model/indexes_index_definition_snapshot_entry.h
-    model/indexes_index_identifier.h
-    model/indexes_index_multi_asset_weight.h
-    model/indexes_index_timeseries_item.h
-    model/indexes_index_value.h
-    model/indexes_index_value_component.h
     model/metadata_exchange.h
     model/metadata_timeseries_period.h
+    model/models_index_definition_snapshot_entry.h
+    model/models_index_identifier.h
+    model/models_index_multi_asset_weight.h
+    model/models_index_timeseries_item.h
+    model/models_index_value.h
+    model/models_index_value_component.h
     api/IndexesAPI.h
     api/MetadataAPI.h
     api/PeriodsAPI.h

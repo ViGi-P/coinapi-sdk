@@ -5,12 +5,12 @@
             [orchestra.core :refer [defn-spec]]
             [coin-api-indexes-rest-api.specs.metadata/timeseries-period :refer :all]
             [coin-api-indexes-rest-api.specs.metadata/exchange :refer :all]
-            [coin-api-indexes-rest-api.specs.indexes/index-multi-asset-weight :refer :all]
-            [coin-api-indexes-rest-api.specs.indexes/index-value-component :refer :all]
-            [coin-api-indexes-rest-api.specs.indexes/index-timeseries-item :refer :all]
-            [coin-api-indexes-rest-api.specs.indexes/index-identifier :refer :all]
-            [coin-api-indexes-rest-api.specs.indexes/index-value :refer :all]
-            [coin-api-indexes-rest-api.specs.indexes/index-definition-snapshot-entry :refer :all]
+            [coin-api-indexes-rest-api.specs.models/index-value-component :refer :all]
+            [coin-api-indexes-rest-api.specs.models/index-timeseries-item :refer :all]
+            [coin-api-indexes-rest-api.specs.models/index-identifier :refer :all]
+            [coin-api-indexes-rest-api.specs.models/index-definition-snapshot-entry :refer :all]
+            [coin-api-indexes-rest-api.specs.models/index-value :refer :all]
+            [coin-api-indexes-rest-api.specs.models/index-multi-asset-weight :refer :all]
             )
   (:import (java.io File)))
 

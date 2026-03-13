@@ -94,14 +94,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
- - [IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
- - [IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)
- - [IndexesIndexTimeseriesItem](docs/IndexesIndexTimeseriesItem.md)
- - [IndexesIndexValue](docs/IndexesIndexValue.md)
- - [IndexesIndexValueComponent](docs/IndexesIndexValueComponent.md)
  - [MetadataExchange](docs/MetadataExchange.md)
  - [MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
+ - [ModelsIndexDefinitionSnapshotEntry](docs/ModelsIndexDefinitionSnapshotEntry.md)
+ - [ModelsIndexIdentifier](docs/ModelsIndexIdentifier.md)
+ - [ModelsIndexMultiAssetWeight](docs/ModelsIndexMultiAssetWeight.md)
+ - [ModelsIndexTimeseriesItem](docs/ModelsIndexTimeseriesItem.md)
+ - [ModelsIndexValue](docs/ModelsIndexValue.md)
+ - [ModelsIndexValueComponent](docs/ModelsIndexValueComponent.md)
 
 
 ## Documentation For Authorization

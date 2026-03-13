@@ -1,11 +1,11 @@
 package org.openapitools.api;
 
 import org.openapitools.api.ApiUtils
-import org.openapitools.model.IndexesIndexDefinitionSnapshotEntry
-import org.openapitools.model.IndexesIndexIdentifier
-import org.openapitools.model.IndexesIndexMultiAssetWeight
-import org.openapitools.model.IndexesIndexTimeseriesItem
-import org.openapitools.model.IndexesIndexValue
+import org.openapitools.model.ModelsIndexDefinitionSnapshotEntry
+import org.openapitools.model.ModelsIndexIdentifier
+import org.openapitools.model.ModelsIndexMultiAssetWeight
+import org.openapitools.model.ModelsIndexTimeseriesItem
+import org.openapitools.model.ModelsIndexValue
 
 class IndexesApi {
     String basePath = "https://rest-api.indexes.coinapi.io"
@@ -31,7 +31,7 @@ class IndexesApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    IndexesIndexMultiAssetWeight.class )
+                    ModelsIndexMultiAssetWeight.class )
 
     }
 
@@ -58,7 +58,7 @@ class IndexesApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    IndexesIndexMultiAssetWeight.class )
+                    ModelsIndexMultiAssetWeight.class )
 
     }
 
@@ -81,7 +81,7 @@ class IndexesApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    IndexesIndexIdentifier.class )
+                    ModelsIndexIdentifier.class )
 
     }
 
@@ -108,7 +108,7 @@ class IndexesApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    IndexesIndexDefinitionSnapshotEntry.class )
+                    ModelsIndexDefinitionSnapshotEntry.class )
 
     }
 
@@ -138,7 +138,7 @@ class IndexesApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    IndexesIndexDefinitionSnapshotEntry.class )
+                    ModelsIndexDefinitionSnapshotEntry.class )
 
     }
 
@@ -165,7 +165,7 @@ class IndexesApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "",
-                    IndexesIndexValue.class )
+                    ModelsIndexValue.class )
 
     }
 
@@ -201,7 +201,7 @@ class IndexesApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    IndexesIndexValue.class )
+                    ModelsIndexValue.class )
 
     }
 
@@ -252,7 +252,7 @@ class IndexesApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    IndexesIndexTimeseriesItem.class )
+                    ModelsIndexTimeseriesItem.class )
 
     }
 

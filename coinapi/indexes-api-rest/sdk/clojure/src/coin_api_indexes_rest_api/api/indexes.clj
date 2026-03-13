@@ -5,12 +5,12 @@
             [orchestra.core :refer [defn-spec]]
             [coin-api-indexes-rest-api.specs.metadata/timeseries-period :refer :all]
             [coin-api-indexes-rest-api.specs.metadata/exchange :refer :all]
-            [coin-api-indexes-rest-api.specs.indexes/index-multi-asset-weight :refer :all]
-            [coin-api-indexes-rest-api.specs.indexes/index-value-component :refer :all]
-            [coin-api-indexes-rest-api.specs.indexes/index-timeseries-item :refer :all]
-            [coin-api-indexes-rest-api.specs.indexes/index-identifier :refer :all]
-            [coin-api-indexes-rest-api.specs.indexes/index-value :refer :all]
-            [coin-api-indexes-rest-api.specs.indexes/index-definition-snapshot-entry :refer :all]
+            [coin-api-indexes-rest-api.specs.models/index-value-component :refer :all]
+            [coin-api-indexes-rest-api.specs.models/index-timeseries-item :refer :all]
+            [coin-api-indexes-rest-api.specs.models/index-identifier :refer :all]
+            [coin-api-indexes-rest-api.specs.models/index-definition-snapshot-entry :refer :all]
+            [coin-api-indexes-rest-api.specs.models/index-value :refer :all]
+            [coin-api-indexes-rest-api.specs.models/index-multi-asset-weight :refer :all]
             )
   (:import (java.io File)))
 
@@ -27,12 +27,12 @@
              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
              :auth-names    ["APIKey" "JWT"]}))
 
-(defn-spec v1-indexdef-multiasset-get (s/coll-of indexes/index-multi-asset-weight-spec)
+(defn-spec v1-indexdef-multiasset-get (s/coll-of models/index-multi-asset-weight-spec)
   "Get all multi-asset weights"
   []
   (let [res (:data (v1-indexdef-multiasset-get-with-http-info))]
     (if (:decode-models *api-context*)
-       (st/decode (s/coll-of indexes/index-multi-asset-weight-spec) res st/string-transformer)
+       (st/decode (s/coll-of models/index-multi-asset-weight-spec) res st/string-transformer)
        res)))
 
 
@@ -49,12 +49,12 @@
              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
              :auth-names    ["APIKey" "JWT"]}))
 
-(defn-spec v1-indexdef-multiasset-index-id-get (s/coll-of indexes/index-multi-asset-weight-spec)
+(defn-spec v1-indexdef-multiasset-index-id-get (s/coll-of models/index-multi-asset-weight-spec)
   "Get multi-asset weights for specific index"
   [index_id string?]
   (let [res (:data (v1-indexdef-multiasset-index-id-get-with-http-info index_id))]
     (if (:decode-models *api-context*)
-       (st/decode (s/coll-of indexes/index-multi-asset-weight-spec) res st/string-transformer)
+       (st/decode (s/coll-of models/index-multi-asset-weight-spec) res st/string-transformer)
        res)))
 
 
@@ -70,12 +70,12 @@
              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
              :auth-names    ["APIKey" "JWT"]}))
 
-(defn-spec v1-indexes-get (s/coll-of indexes/index-identifier-spec)
+(defn-spec v1-indexes-get (s/coll-of models/index-identifier-spec)
   "List indexes"
   []
   (let [res (:data (v1-indexes-get-with-http-info))]
     (if (:decode-models *api-context*)
-       (st/decode (s/coll-of indexes/index-identifier-spec) res st/string-transformer)
+       (st/decode (s/coll-of models/index-identifier-spec) res st/string-transformer)
        res)))
 
 
@@ -92,12 +92,12 @@
              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
              :auth-names    ["APIKey" "JWT"]}))
 
-(defn-spec v1-indexes-index-definition-id-current-snapshot-get (s/coll-of indexes/index-definition-snapshot-entry-spec)
+(defn-spec v1-indexes-index-definition-id-current-snapshot-get (s/coll-of models/index-definition-snapshot-entry-spec)
   "Current Index Values for index definition"
   [index_definition_id string?]
   (let [res (:data (v1-indexes-index-definition-id-current-snapshot-get-with-http-info index_definition_id))]
     (if (:decode-models *api-context*)
-       (st/decode (s/coll-of indexes/index-definition-snapshot-entry-spec) res st/string-transformer)
+       (st/decode (s/coll-of models/index-definition-snapshot-entry-spec) res st/string-transformer)
        res)))
 
 
@@ -115,13 +115,13 @@
               :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
               :auth-names    ["APIKey" "JWT"]})))
 
-(defn-spec v1-indexes-index-definition-id-history-snapshot-get (s/coll-of indexes/index-definition-snapshot-entry-spec)
+(defn-spec v1-indexes-index-definition-id-history-snapshot-get (s/coll-of models/index-definition-snapshot-entry-spec)
   "Historical Index Values for index definition"
   ([index_definition_id string?, ] (v1-indexes-index-definition-id-history-snapshot-get index_definition_id nil))
   ([index_definition_id string?, optional-params any?]
    (let [res (:data (v1-indexes-index-definition-id-history-snapshot-get-with-http-info index_definition_id optional-params))]
      (if (:decode-models *api-context*)
-        (st/decode (s/coll-of indexes/index-definition-snapshot-entry-spec) res st/string-transformer)
+        (st/decode (s/coll-of models/index-definition-snapshot-entry-spec) res st/string-transformer)
         res))))
 
 
@@ -138,12 +138,12 @@
              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
              :auth-names    ["APIKey" "JWT"]}))
 
-(defn-spec v1-indexes-index-id-current-get indexes/index-value-spec
+(defn-spec v1-indexes-index-id-current-get models/index-value-spec
   "Current Index Value"
   [index_id string?]
   (let [res (:data (v1-indexes-index-id-current-get-with-http-info index_id))]
     (if (:decode-models *api-context*)
-       (st/decode indexes/index-value-spec res st/string-transformer)
+       (st/decode models/index-value-spec res st/string-transformer)
        res)))
 
 
@@ -161,13 +161,13 @@
               :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
               :auth-names    ["APIKey" "JWT"]})))
 
-(defn-spec v1-indexes-index-id-history-get (s/coll-of indexes/index-value-spec)
+(defn-spec v1-indexes-index-id-history-get (s/coll-of models/index-value-spec)
   "Historical Index Value w/Composition"
   ([index_id string?, ] (v1-indexes-index-id-history-get index_id nil))
   ([index_id string?, optional-params any?]
    (let [res (:data (v1-indexes-index-id-history-get-with-http-info index_id optional-params))]
      (if (:decode-models *api-context*)
-        (st/decode (s/coll-of indexes/index-value-spec) res st/string-transformer)
+        (st/decode (s/coll-of models/index-value-spec) res st/string-transformer)
         res))))
 
 
@@ -185,13 +185,13 @@
               :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
               :auth-names    ["APIKey" "JWT"]})))
 
-(defn-spec v1-indexes-index-id-timeseries-get (s/coll-of indexes/index-timeseries-item-spec)
+(defn-spec v1-indexes-index-id-timeseries-get (s/coll-of models/index-timeseries-item-spec)
   "Timeseries Index Value"
   ([index_id string?, period_id string?, time_start string?, time_end string?, ] (v1-indexes-index-id-timeseries-get index_id period_id time_start time_end nil))
   ([index_id string?, period_id string?, time_start string?, time_end string?, optional-params any?]
    (let [res (:data (v1-indexes-index-id-timeseries-get-with-http-info index_id period_id time_start time_end optional-params))]
      (if (:decode-models *api-context*)
-        (st/decode (s/coll-of indexes/index-timeseries-item-spec) res st/string-transformer)
+        (st/decode (s/coll-of models/index-timeseries-item-spec) res st/string-transformer)
         res))))
 
 

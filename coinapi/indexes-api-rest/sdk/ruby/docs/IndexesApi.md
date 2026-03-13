@@ -16,7 +16,7 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 ## v1_indexdef_multiasset_get
 
-> <Array<IndexesIndexMultiAssetWeight>> v1_indexdef_multiasset_get
+> <Array<ModelsIndexMultiAssetWeight>> v1_indexdef_multiasset_get
 
 Get all multi-asset weights
 
@@ -51,7 +51,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<IndexesIndexMultiAssetWeight>>, Integer, Hash)> v1_indexdef_multiasset_get_with_http_info
+> <Array(<Array<ModelsIndexMultiAssetWeight>>, Integer, Hash)> v1_indexdef_multiasset_get_with_http_info
 
 ```ruby
 begin
@@ -59,7 +59,7 @@ begin
   data, status_code, headers = api_instance.v1_indexdef_multiasset_get_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<IndexesIndexMultiAssetWeight>>
+  p data # => <Array<ModelsIndexMultiAssetWeight>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling IndexesApi->v1_indexdef_multiasset_get_with_http_info: #{e}"
 end
@@ -71,7 +71,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Array&lt;IndexesIndexMultiAssetWeight&gt;**](IndexesIndexMultiAssetWeight.md)
+[**Array&lt;ModelsIndexMultiAssetWeight&gt;**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ This endpoint does not need any parameter.
 
 ## v1_indexdef_multiasset_index_id_get
 
-> <Array<IndexesIndexMultiAssetWeight>> v1_indexdef_multiasset_index_id_get(index_id)
+> <Array<ModelsIndexMultiAssetWeight>> v1_indexdef_multiasset_index_id_get(index_id)
 
 Get multi-asset weights for specific index
 
@@ -121,7 +121,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<IndexesIndexMultiAssetWeight>>, Integer, Hash)> v1_indexdef_multiasset_index_id_get_with_http_info(index_id)
+> <Array(<Array<ModelsIndexMultiAssetWeight>>, Integer, Hash)> v1_indexdef_multiasset_index_id_get_with_http_info(index_id)
 
 ```ruby
 begin
@@ -129,7 +129,7 @@ begin
   data, status_code, headers = api_instance.v1_indexdef_multiasset_index_id_get_with_http_info(index_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<IndexesIndexMultiAssetWeight>>
+  p data # => <Array<ModelsIndexMultiAssetWeight>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling IndexesApi->v1_indexdef_multiasset_index_id_get_with_http_info: #{e}"
 end
@@ -143,7 +143,7 @@ end
 
 ### Return type
 
-[**Array&lt;IndexesIndexMultiAssetWeight&gt;**](IndexesIndexMultiAssetWeight.md)
+[**Array&lt;ModelsIndexMultiAssetWeight&gt;**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ end
 
 ## v1_indexes_get
 
-> <Array<IndexesIndexIdentifier>> v1_indexes_get
+> <Array<ModelsIndexIdentifier>> v1_indexes_get
 
 List indexes
 
@@ -192,7 +192,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<IndexesIndexIdentifier>>, Integer, Hash)> v1_indexes_get_with_http_info
+> <Array(<Array<ModelsIndexIdentifier>>, Integer, Hash)> v1_indexes_get_with_http_info
 
 ```ruby
 begin
@@ -200,7 +200,7 @@ begin
   data, status_code, headers = api_instance.v1_indexes_get_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<IndexesIndexIdentifier>>
+  p data # => <Array<ModelsIndexIdentifier>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling IndexesApi->v1_indexes_get_with_http_info: #{e}"
 end
@@ -212,7 +212,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Array&lt;IndexesIndexIdentifier&gt;**](IndexesIndexIdentifier.md)
+[**Array&lt;ModelsIndexIdentifier&gt;**](ModelsIndexIdentifier.md)
 
 ### Authorization
 
@@ -226,7 +226,7 @@ This endpoint does not need any parameter.
 
 ## v1_indexes_index_definition_id_current_snapshot_get
 
-> <Array<IndexesIndexDefinitionSnapshotEntry>> v1_indexes_index_definition_id_current_snapshot_get(index_definition_id)
+> <Array<ModelsIndexDefinitionSnapshotEntry>> v1_indexes_index_definition_id_current_snapshot_get(index_definition_id)
 
 Current Index Values for index definition
 
@@ -262,7 +262,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<IndexesIndexDefinitionSnapshotEntry>>, Integer, Hash)> v1_indexes_index_definition_id_current_snapshot_get_with_http_info(index_definition_id)
+> <Array(<Array<ModelsIndexDefinitionSnapshotEntry>>, Integer, Hash)> v1_indexes_index_definition_id_current_snapshot_get_with_http_info(index_definition_id)
 
 ```ruby
 begin
@@ -270,7 +270,7 @@ begin
   data, status_code, headers = api_instance.v1_indexes_index_definition_id_current_snapshot_get_with_http_info(index_definition_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<IndexesIndexDefinitionSnapshotEntry>>
+  p data # => <Array<ModelsIndexDefinitionSnapshotEntry>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling IndexesApi->v1_indexes_index_definition_id_current_snapshot_get_with_http_info: #{e}"
 end
@@ -284,7 +284,7 @@ end
 
 ### Return type
 
-[**Array&lt;IndexesIndexDefinitionSnapshotEntry&gt;**](IndexesIndexDefinitionSnapshotEntry.md)
+[**Array&lt;ModelsIndexDefinitionSnapshotEntry&gt;**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -298,7 +298,7 @@ end
 
 ## v1_indexes_index_definition_id_history_snapshot_get
 
-> <Array<IndexesIndexDefinitionSnapshotEntry>> v1_indexes_index_definition_id_history_snapshot_get(index_definition_id, opts)
+> <Array<ModelsIndexDefinitionSnapshotEntry>> v1_indexes_index_definition_id_history_snapshot_get(index_definition_id, opts)
 
 Historical Index Values for index definition
 
@@ -337,7 +337,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<IndexesIndexDefinitionSnapshotEntry>>, Integer, Hash)> v1_indexes_index_definition_id_history_snapshot_get_with_http_info(index_definition_id, opts)
+> <Array(<Array<ModelsIndexDefinitionSnapshotEntry>>, Integer, Hash)> v1_indexes_index_definition_id_history_snapshot_get_with_http_info(index_definition_id, opts)
 
 ```ruby
 begin
@@ -345,7 +345,7 @@ begin
   data, status_code, headers = api_instance.v1_indexes_index_definition_id_history_snapshot_get_with_http_info(index_definition_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<IndexesIndexDefinitionSnapshotEntry>>
+  p data # => <Array<ModelsIndexDefinitionSnapshotEntry>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling IndexesApi->v1_indexes_index_definition_id_history_snapshot_get_with_http_info: #{e}"
 end
@@ -360,7 +360,7 @@ end
 
 ### Return type
 
-[**Array&lt;IndexesIndexDefinitionSnapshotEntry&gt;**](IndexesIndexDefinitionSnapshotEntry.md)
+[**Array&lt;ModelsIndexDefinitionSnapshotEntry&gt;**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -374,7 +374,7 @@ end
 
 ## v1_indexes_index_id_current_get
 
-> <IndexesIndexValue> v1_indexes_index_id_current_get(index_id)
+> <ModelsIndexValue> v1_indexes_index_id_current_get(index_id)
 
 Current Index Value
 
@@ -410,7 +410,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<IndexesIndexValue>, Integer, Hash)> v1_indexes_index_id_current_get_with_http_info(index_id)
+> <Array(<ModelsIndexValue>, Integer, Hash)> v1_indexes_index_id_current_get_with_http_info(index_id)
 
 ```ruby
 begin
@@ -418,7 +418,7 @@ begin
   data, status_code, headers = api_instance.v1_indexes_index_id_current_get_with_http_info(index_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <IndexesIndexValue>
+  p data # => <ModelsIndexValue>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling IndexesApi->v1_indexes_index_id_current_get_with_http_info: #{e}"
 end
@@ -432,7 +432,7 @@ end
 
 ### Return type
 
-[**IndexesIndexValue**](IndexesIndexValue.md)
+[**ModelsIndexValue**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -446,7 +446,7 @@ end
 
 ## v1_indexes_index_id_history_get
 
-> <Array<IndexesIndexValue>> v1_indexes_index_id_history_get(index_id, opts)
+> <Array<ModelsIndexValue>> v1_indexes_index_id_history_get(index_id, opts)
 
 Historical Index Value w/Composition
 
@@ -487,7 +487,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<IndexesIndexValue>>, Integer, Hash)> v1_indexes_index_id_history_get_with_http_info(index_id, opts)
+> <Array(<Array<ModelsIndexValue>>, Integer, Hash)> v1_indexes_index_id_history_get_with_http_info(index_id, opts)
 
 ```ruby
 begin
@@ -495,7 +495,7 @@ begin
   data, status_code, headers = api_instance.v1_indexes_index_id_history_get_with_http_info(index_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<IndexesIndexValue>>
+  p data # => <Array<ModelsIndexValue>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling IndexesApi->v1_indexes_index_id_history_get_with_http_info: #{e}"
 end
@@ -512,7 +512,7 @@ end
 
 ### Return type
 
-[**Array&lt;IndexesIndexValue&gt;**](IndexesIndexValue.md)
+[**Array&lt;ModelsIndexValue&gt;**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -526,7 +526,7 @@ end
 
 ## v1_indexes_index_id_timeseries_get
 
-> <Array<IndexesIndexTimeseriesItem>> v1_indexes_index_id_timeseries_get(index_id, period_id, time_start, time_end, opts)
+> <Array<ModelsIndexTimeseriesItem>> v1_indexes_index_id_timeseries_get(index_id, period_id, time_start, time_end, opts)
 
 Timeseries Index Value
 
@@ -568,7 +568,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<IndexesIndexTimeseriesItem>>, Integer, Hash)> v1_indexes_index_id_timeseries_get_with_http_info(index_id, period_id, time_start, time_end, opts)
+> <Array(<Array<ModelsIndexTimeseriesItem>>, Integer, Hash)> v1_indexes_index_id_timeseries_get_with_http_info(index_id, period_id, time_start, time_end, opts)
 
 ```ruby
 begin
@@ -576,7 +576,7 @@ begin
   data, status_code, headers = api_instance.v1_indexes_index_id_timeseries_get_with_http_info(index_id, period_id, time_start, time_end, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<IndexesIndexTimeseriesItem>>
+  p data # => <Array<ModelsIndexTimeseriesItem>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling IndexesApi->v1_indexes_index_id_timeseries_get_with_http_info: #{e}"
 end
@@ -594,7 +594,7 @@ end
 
 ### Return type
 
-[**Array&lt;IndexesIndexTimeseriesItem&gt;**](IndexesIndexTimeseriesItem.md)
+[**Array&lt;ModelsIndexTimeseriesItem&gt;**](ModelsIndexTimeseriesItem.md)
 
 ### Authorization
 

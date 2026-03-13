@@ -81,14 +81,14 @@ Category | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [indexes_index_definition_snapshot_entry_t](docs/indexes_index_definition_snapshot_entry.md)
- - [indexes_index_identifier_t](docs/indexes_index_identifier.md)
- - [indexes_index_multi_asset_weight_t](docs/indexes_index_multi_asset_weight.md)
- - [indexes_index_timeseries_item_t](docs/indexes_index_timeseries_item.md)
- - [indexes_index_value_t](docs/indexes_index_value.md)
- - [indexes_index_value_component_t](docs/indexes_index_value_component.md)
  - [metadata_exchange_t](docs/metadata_exchange.md)
  - [metadata_timeseries_period_t](docs/metadata_timeseries_period.md)
+ - [models_index_definition_snapshot_entry_t](docs/models_index_definition_snapshot_entry.md)
+ - [models_index_identifier_t](docs/models_index_identifier.md)
+ - [models_index_multi_asset_weight_t](docs/models_index_multi_asset_weight.md)
+ - [models_index_timeseries_item_t](docs/models_index_timeseries_item.md)
+ - [models_index_value_t](docs/models_index_value.md)
+ - [models_index_value_component_t](docs/models_index_value_component.md)
 
 
 ## Documentation for Authorization

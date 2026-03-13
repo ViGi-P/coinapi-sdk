@@ -36,7 +36,7 @@ IndexesApi::~IndexesApi()
 {
 }
 
-pplx::task<std::vector<std::shared_ptr<Indexes_IndexMultiAssetWeight>>> IndexesApi::v1IndexdefMultiassetGet() const
+pplx::task<std::vector<std::shared_ptr<Models_IndexMultiAssetWeight>>> IndexesApi::v1IndexdefMultiassetGet() const
 {
 
 
@@ -149,14 +149,14 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexMultiAssetWeight>>> IndexesA
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<Indexes_IndexMultiAssetWeight>> localVarResult;
+        std::vector<std::shared_ptr<Models_IndexMultiAssetWeight>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<Indexes_IndexMultiAssetWeight> localVarItemObj;
+                std::shared_ptr<Models_IndexMultiAssetWeight> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -174,7 +174,7 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexMultiAssetWeight>>> IndexesA
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<Indexes_IndexMultiAssetWeight>>> IndexesApi::v1IndexdefMultiassetIndexIdGet(utility::string_t indexId) const
+pplx::task<std::vector<std::shared_ptr<Models_IndexMultiAssetWeight>>> IndexesApi::v1IndexdefMultiassetIndexIdGet(utility::string_t indexId) const
 {
 
 
@@ -288,14 +288,14 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexMultiAssetWeight>>> IndexesA
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<Indexes_IndexMultiAssetWeight>> localVarResult;
+        std::vector<std::shared_ptr<Models_IndexMultiAssetWeight>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<Indexes_IndexMultiAssetWeight> localVarItemObj;
+                std::shared_ptr<Models_IndexMultiAssetWeight> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -313,7 +313,7 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexMultiAssetWeight>>> IndexesA
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<Indexes_IndexIdentifier>>> IndexesApi::v1IndexesGet() const
+pplx::task<std::vector<std::shared_ptr<Models_IndexIdentifier>>> IndexesApi::v1IndexesGet() const
 {
 
 
@@ -426,14 +426,14 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexIdentifier>>> IndexesApi::v1
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<Indexes_IndexIdentifier>> localVarResult;
+        std::vector<std::shared_ptr<Models_IndexIdentifier>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<Indexes_IndexIdentifier> localVarItemObj;
+                std::shared_ptr<Models_IndexIdentifier> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -451,7 +451,7 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexIdentifier>>> IndexesApi::v1
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry>>> IndexesApi::v1IndexesIndexDefinitionIdCurrentSnapshotGet(utility::string_t indexDefinitionId) const
+pplx::task<std::vector<std::shared_ptr<Models_IndexDefinitionSnapshotEntry>>> IndexesApi::v1IndexesIndexDefinitionIdCurrentSnapshotGet(utility::string_t indexDefinitionId) const
 {
 
 
@@ -565,14 +565,14 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry>>> I
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry>> localVarResult;
+        std::vector<std::shared_ptr<Models_IndexDefinitionSnapshotEntry>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry> localVarItemObj;
+                std::shared_ptr<Models_IndexDefinitionSnapshotEntry> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -590,7 +590,7 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry>>> I
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry>>> IndexesApi::v1IndexesIndexDefinitionIdHistorySnapshotGet(utility::string_t indexDefinitionId, boost::optional<utility::datetime> time) const
+pplx::task<std::vector<std::shared_ptr<Models_IndexDefinitionSnapshotEntry>>> IndexesApi::v1IndexesIndexDefinitionIdHistorySnapshotGet(utility::string_t indexDefinitionId, boost::optional<utility::datetime> time) const
 {
 
 
@@ -708,14 +708,14 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry>>> I
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry>> localVarResult;
+        std::vector<std::shared_ptr<Models_IndexDefinitionSnapshotEntry>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry> localVarItemObj;
+                std::shared_ptr<Models_IndexDefinitionSnapshotEntry> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -733,7 +733,7 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry>>> I
         return localVarResult;
     });
 }
-pplx::task<std::shared_ptr<Indexes_IndexValue>> IndexesApi::v1IndexesIndexIdCurrentGet(utility::string_t indexId) const
+pplx::task<std::shared_ptr<Models_IndexValue>> IndexesApi::v1IndexesIndexIdCurrentGet(utility::string_t indexId) const
 {
 
 
@@ -847,7 +847,7 @@ pplx::task<std::shared_ptr<Indexes_IndexValue>> IndexesApi::v1IndexesIndexIdCurr
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::shared_ptr<Indexes_IndexValue> localVarResult(new Indexes_IndexValue());
+        std::shared_ptr<Models_IndexValue> localVarResult(new Models_IndexValue());
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
@@ -868,7 +868,7 @@ pplx::task<std::shared_ptr<Indexes_IndexValue>> IndexesApi::v1IndexesIndexIdCurr
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<Indexes_IndexValue>>> IndexesApi::v1IndexesIndexIdHistoryGet(utility::string_t indexId, boost::optional<utility::datetime> timeStart, boost::optional<utility::datetime> timeEnd, boost::optional<int32_t> limit) const
+pplx::task<std::vector<std::shared_ptr<Models_IndexValue>>> IndexesApi::v1IndexesIndexIdHistoryGet(utility::string_t indexId, boost::optional<utility::datetime> timeStart, boost::optional<utility::datetime> timeEnd, boost::optional<int32_t> limit) const
 {
 
 
@@ -994,14 +994,14 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexValue>>> IndexesApi::v1Index
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<Indexes_IndexValue>> localVarResult;
+        std::vector<std::shared_ptr<Models_IndexValue>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<Indexes_IndexValue> localVarItemObj;
+                std::shared_ptr<Models_IndexValue> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }
@@ -1019,7 +1019,7 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexValue>>> IndexesApi::v1Index
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<Indexes_IndexTimeseriesItem>>> IndexesApi::v1IndexesIndexIdTimeseriesGet(utility::string_t indexId, utility::string_t periodId, utility::string_t timeStart, utility::string_t timeEnd, boost::optional<int32_t> limit) const
+pplx::task<std::vector<std::shared_ptr<Models_IndexTimeseriesItem>>> IndexesApi::v1IndexesIndexIdTimeseriesGet(utility::string_t indexId, utility::string_t periodId, utility::string_t timeStart, utility::string_t timeEnd, boost::optional<int32_t> limit) const
 {
 
 
@@ -1146,14 +1146,14 @@ pplx::task<std::vector<std::shared_ptr<Indexes_IndexTimeseriesItem>>> IndexesApi
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<Indexes_IndexTimeseriesItem>> localVarResult;
+        std::vector<std::shared_ptr<Models_IndexTimeseriesItem>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<Indexes_IndexTimeseriesItem> localVarItemObj;
+                std::shared_ptr<Models_IndexTimeseriesItem> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }

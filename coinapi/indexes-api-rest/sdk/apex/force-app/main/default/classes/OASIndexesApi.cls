@@ -28,14 +28,14 @@ public class OASIndexesApi {
     /**
      * Get all multi-asset weights
      * 
-     * @return List<OASIndexesIndexMultiAssetWeight>
+     * @return List<OASModelsIndexMultiAssetWeight>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASIndexesIndexMultiAssetWeight> v1IndexdefMultiassetGet() {
+    public List<OASModelsIndexMultiAssetWeight> v1IndexdefMultiassetGet() {
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASIndexesIndexMultiAssetWeight>) client.invoke(
+        return (List<OASModelsIndexMultiAssetWeight>) client.invoke(
             'GET', '/v1/indexdef/multiasset', '',
             query, form,
             new Map<String, Object>(),
@@ -43,22 +43,22 @@ public class OASIndexesApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASIndexesIndexMultiAssetWeight>.class
+            List<OASModelsIndexMultiAssetWeight>.class
         );
     }
     /**
      * Get multi-asset weights for specific index
      * 
      * @param indexId  (required)
-     * @return List<OASIndexesIndexMultiAssetWeight>
+     * @return List<OASModelsIndexMultiAssetWeight>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASIndexesIndexMultiAssetWeight> v1IndexdefMultiassetIndexIdGet(Map<String, Object> params) {
+    public List<OASModelsIndexMultiAssetWeight> v1IndexdefMultiassetIndexIdGet(Map<String, Object> params) {
         client.assertNotNull(params.get('indexId'), 'indexId');
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASIndexesIndexMultiAssetWeight>) client.invoke(
+        return (List<OASModelsIndexMultiAssetWeight>) client.invoke(
             'GET', '/v1/indexdef/multiasset/{index_id}', '',
             query, form,
             new Map<String, Object>{
@@ -68,20 +68,20 @@ public class OASIndexesApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASIndexesIndexMultiAssetWeight>.class
+            List<OASModelsIndexMultiAssetWeight>.class
         );
     }
     /**
      * List indexes
      * 
-     * @return List<OASIndexesIndexIdentifier>
+     * @return List<OASModelsIndexIdentifier>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASIndexesIndexIdentifier> v1IndexesGet() {
+    public List<OASModelsIndexIdentifier> v1IndexesGet() {
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASIndexesIndexIdentifier>) client.invoke(
+        return (List<OASModelsIndexIdentifier>) client.invoke(
             'GET', '/v1/indexes', '',
             query, form,
             new Map<String, Object>(),
@@ -89,22 +89,22 @@ public class OASIndexesApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASIndexesIndexIdentifier>.class
+            List<OASModelsIndexIdentifier>.class
         );
     }
     /**
      * Current Index Values for index definition
      * 
      * @param indexDefinitionId  (required)
-     * @return List<OASIndexesIndexDefinitionSnapshotEnt>
+     * @return List<OASModelsIndexDefinitionSnapshotEntr>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASIndexesIndexDefinitionSnapshotEnt> v1IndexesIndexDefinitionIdCurrentSnapshotGet(Map<String, Object> params) {
+    public List<OASModelsIndexDefinitionSnapshotEntr> v1IndexesIndexDefinitionIdCurrentSnapshotGet(Map<String, Object> params) {
         client.assertNotNull(params.get('indexDefinitionId'), 'indexDefinitionId');
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASIndexesIndexDefinitionSnapshotEnt>) client.invoke(
+        return (List<OASModelsIndexDefinitionSnapshotEntr>) client.invoke(
             'GET', '/v1/indexes/{index_definition_id}/currentSnapshot', '',
             query, form,
             new Map<String, Object>{
@@ -114,7 +114,7 @@ public class OASIndexesApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASIndexesIndexDefinitionSnapshotEnt>.class
+            List<OASModelsIndexDefinitionSnapshotEntr>.class
         );
     }
     /**
@@ -122,10 +122,10 @@ public class OASIndexesApi {
      * 
      * @param indexDefinitionId  (required)
      * @param r_time  (optional)
-     * @return List<OASIndexesIndexDefinitionSnapshotEnt>
+     * @return List<OASModelsIndexDefinitionSnapshotEntr>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASIndexesIndexDefinitionSnapshotEnt> v1IndexesIndexDefinitionIdHistorySnapshotGet(Map<String, Object> params) {
+    public List<OASModelsIndexDefinitionSnapshotEntr> v1IndexesIndexDefinitionIdHistorySnapshotGet(Map<String, Object> params) {
         client.assertNotNull(params.get('indexDefinitionId'), 'indexDefinitionId');
         List<OAS.Param> query = new List<OAS.Param>();
 
@@ -134,7 +134,7 @@ public class OASIndexesApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASIndexesIndexDefinitionSnapshotEnt>) client.invoke(
+        return (List<OASModelsIndexDefinitionSnapshotEntr>) client.invoke(
             'GET', '/v1/indexes/{index_definition_id}/historySnapshot', '',
             query, form,
             new Map<String, Object>{
@@ -144,22 +144,22 @@ public class OASIndexesApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASIndexesIndexDefinitionSnapshotEnt>.class
+            List<OASModelsIndexDefinitionSnapshotEntr>.class
         );
     }
     /**
      * Current Index Value
      * 
      * @param indexId  (required)
-     * @return OASIndexesIndexValue
+     * @return OASModelsIndexValue
      * @throws OAS.ApiException if fails to make API call
      */
-    public OASIndexesIndexValue v1IndexesIndexIdCurrentGet(Map<String, Object> params) {
+    public OASModelsIndexValue v1IndexesIndexIdCurrentGet(Map<String, Object> params) {
         client.assertNotNull(params.get('indexId'), 'indexId');
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (OASIndexesIndexValue) client.invoke(
+        return (OASModelsIndexValue) client.invoke(
             'GET', '/v1/indexes/{index_id}/current', '',
             query, form,
             new Map<String, Object>{
@@ -169,7 +169,7 @@ public class OASIndexesApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            OASIndexesIndexValue.class
+            OASModelsIndexValue.class
         );
     }
     /**
@@ -179,10 +179,10 @@ public class OASIndexesApi {
      * @param timeStart  (optional)
      * @param timeEnd  (optional)
      * @param r_limit  (optional, default to 100)
-     * @return List<OASIndexesIndexValue>
+     * @return List<OASModelsIndexValue>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASIndexesIndexValue> v1IndexesIndexIdHistoryGet(Map<String, Object> params) {
+    public List<OASModelsIndexValue> v1IndexesIndexIdHistoryGet(Map<String, Object> params) {
         client.assertNotNull(params.get('indexId'), 'indexId');
         List<OAS.Param> query = new List<OAS.Param>();
 
@@ -193,7 +193,7 @@ public class OASIndexesApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASIndexesIndexValue>) client.invoke(
+        return (List<OASModelsIndexValue>) client.invoke(
             'GET', '/v1/indexes/{index_id}/history', '',
             query, form,
             new Map<String, Object>{
@@ -203,7 +203,7 @@ public class OASIndexesApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASIndexesIndexValue>.class
+            List<OASModelsIndexValue>.class
         );
     }
     /**
@@ -214,10 +214,10 @@ public class OASIndexesApi {
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
      * @param r_limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return List<OASIndexesIndexTimeseriesItem>
+     * @return List<OASModelsIndexTimeseriesItem>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASIndexesIndexTimeseriesItem> v1IndexesIndexIdTimeseriesGet(Map<String, Object> params) {
+    public List<OASModelsIndexTimeseriesItem> v1IndexesIndexIdTimeseriesGet(Map<String, Object> params) {
         client.assertNotNull(params.get('indexId'), 'indexId');
         client.assertNotNull(params.get('periodId'), 'periodId');
         client.assertNotNull(params.get('timeStart'), 'timeStart');
@@ -232,7 +232,7 @@ public class OASIndexesApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASIndexesIndexTimeseriesItem>) client.invoke(
+        return (List<OASModelsIndexTimeseriesItem>) client.invoke(
             'GET', '/v1/indexes/{index_id}/timeseries', '',
             query, form,
             new Map<String, Object>{
@@ -242,7 +242,7 @@ public class OASIndexesApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASIndexesIndexTimeseriesItem>.class
+            List<OASModelsIndexTimeseriesItem>.class
         );
     }
 }

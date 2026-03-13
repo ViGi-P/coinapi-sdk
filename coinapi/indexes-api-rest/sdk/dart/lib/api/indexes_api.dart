@@ -45,7 +45,7 @@ class IndexesApi {
   }
 
   /// Get all multi-asset weights
-  Future<List<IndexesIndexMultiAssetWeight>?> v1IndexdefMultiassetGet() async {
+  Future<List<ModelsIndexMultiAssetWeight>?> v1IndexdefMultiassetGet() async {
     final response = await v1IndexdefMultiassetGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -55,8 +55,8 @@ class IndexesApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<IndexesIndexMultiAssetWeight>') as List)
-        .cast<IndexesIndexMultiAssetWeight>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<ModelsIndexMultiAssetWeight>') as List)
+        .cast<ModelsIndexMultiAssetWeight>()
         .toList(growable: false);
 
     }
@@ -101,7 +101,7 @@ class IndexesApi {
   /// Parameters:
   ///
   /// * [String] indexId (required):
-  Future<List<IndexesIndexMultiAssetWeight>?> v1IndexdefMultiassetIndexIdGet(String indexId,) async {
+  Future<List<ModelsIndexMultiAssetWeight>?> v1IndexdefMultiassetIndexIdGet(String indexId,) async {
     final response = await v1IndexdefMultiassetIndexIdGetWithHttpInfo(indexId,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -111,8 +111,8 @@ class IndexesApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<IndexesIndexMultiAssetWeight>') as List)
-        .cast<IndexesIndexMultiAssetWeight>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<ModelsIndexMultiAssetWeight>') as List)
+        .cast<ModelsIndexMultiAssetWeight>()
         .toList(growable: false);
 
     }
@@ -148,7 +148,7 @@ class IndexesApi {
   }
 
   /// List indexes
-  Future<List<IndexesIndexIdentifier>?> v1IndexesGet() async {
+  Future<List<ModelsIndexIdentifier>?> v1IndexesGet() async {
     final response = await v1IndexesGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -158,8 +158,8 @@ class IndexesApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<IndexesIndexIdentifier>') as List)
-        .cast<IndexesIndexIdentifier>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<ModelsIndexIdentifier>') as List)
+        .cast<ModelsIndexIdentifier>()
         .toList(growable: false);
 
     }
@@ -204,7 +204,7 @@ class IndexesApi {
   /// Parameters:
   ///
   /// * [String] indexDefinitionId (required):
-  Future<List<IndexesIndexDefinitionSnapshotEntry>?> v1IndexesIndexDefinitionIdCurrentSnapshotGet(String indexDefinitionId,) async {
+  Future<List<ModelsIndexDefinitionSnapshotEntry>?> v1IndexesIndexDefinitionIdCurrentSnapshotGet(String indexDefinitionId,) async {
     final response = await v1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(indexDefinitionId,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -214,8 +214,8 @@ class IndexesApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<IndexesIndexDefinitionSnapshotEntry>') as List)
-        .cast<IndexesIndexDefinitionSnapshotEntry>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<ModelsIndexDefinitionSnapshotEntry>') as List)
+        .cast<ModelsIndexDefinitionSnapshotEntry>()
         .toList(growable: false);
 
     }
@@ -268,7 +268,7 @@ class IndexesApi {
   /// * [String] indexDefinitionId (required):
   ///
   /// * [DateTime] time:
-  Future<List<IndexesIndexDefinitionSnapshotEntry>?> v1IndexesIndexDefinitionIdHistorySnapshotGet(String indexDefinitionId, { DateTime? time, }) async {
+  Future<List<ModelsIndexDefinitionSnapshotEntry>?> v1IndexesIndexDefinitionIdHistorySnapshotGet(String indexDefinitionId, { DateTime? time, }) async {
     final response = await v1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(indexDefinitionId,  time: time, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -278,8 +278,8 @@ class IndexesApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<IndexesIndexDefinitionSnapshotEntry>') as List)
-        .cast<IndexesIndexDefinitionSnapshotEntry>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<ModelsIndexDefinitionSnapshotEntry>') as List)
+        .cast<ModelsIndexDefinitionSnapshotEntry>()
         .toList(growable: false);
 
     }
@@ -324,7 +324,7 @@ class IndexesApi {
   /// Parameters:
   ///
   /// * [String] indexId (required):
-  Future<IndexesIndexValue?> v1IndexesIndexIdCurrentGet(String indexId,) async {
+  Future<ModelsIndexValue?> v1IndexesIndexIdCurrentGet(String indexId,) async {
     final response = await v1IndexesIndexIdCurrentGetWithHttpInfo(indexId,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -333,7 +333,7 @@ class IndexesApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'IndexesIndexValue',) as IndexesIndexValue;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ModelsIndexValue',) as ModelsIndexValue;
     
     }
     return null;
@@ -399,7 +399,7 @@ class IndexesApi {
   /// * [DateTime] timeEnd:
   ///
   /// * [int] limit:
-  Future<List<IndexesIndexValue>?> v1IndexesIndexIdHistoryGet(String indexId, { DateTime? timeStart, DateTime? timeEnd, int? limit, }) async {
+  Future<List<ModelsIndexValue>?> v1IndexesIndexIdHistoryGet(String indexId, { DateTime? timeStart, DateTime? timeEnd, int? limit, }) async {
     final response = await v1IndexesIndexIdHistoryGetWithHttpInfo(indexId,  timeStart: timeStart, timeEnd: timeEnd, limit: limit, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -409,8 +409,8 @@ class IndexesApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<IndexesIndexValue>') as List)
-        .cast<IndexesIndexValue>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<ModelsIndexValue>') as List)
+        .cast<ModelsIndexValue>()
         .toList(growable: false);
 
     }
@@ -488,7 +488,7 @@ class IndexesApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<IndexesIndexTimeseriesItem>?> v1IndexesIndexIdTimeseriesGet(String indexId, String periodId, String timeStart, String timeEnd, { int? limit, }) async {
+  Future<List<ModelsIndexTimeseriesItem>?> v1IndexesIndexIdTimeseriesGet(String indexId, String periodId, String timeStart, String timeEnd, { int? limit, }) async {
     final response = await v1IndexesIndexIdTimeseriesGetWithHttpInfo(indexId, periodId, timeStart, timeEnd,  limit: limit, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -498,8 +498,8 @@ class IndexesApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<IndexesIndexTimeseriesItem>') as List)
-        .cast<IndexesIndexTimeseriesItem>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<ModelsIndexTimeseriesItem>') as List)
+        .cast<ModelsIndexTimeseriesItem>()
         .toList(growable: false);
 
     }

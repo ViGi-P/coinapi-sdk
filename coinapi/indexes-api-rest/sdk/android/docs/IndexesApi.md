@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## v1IndexdefMultiassetGet
 
-> List&lt;IndexesIndexMultiAssetWeight&gt; v1IndexdefMultiassetGet()
+> List&lt;ModelsIndexMultiAssetWeight&gt; v1IndexdefMultiassetGet()
 
 Get all multi-asset weights
 
@@ -29,7 +29,7 @@ Get all multi-asset weights
 
 IndexesApi apiInstance = new IndexesApi();
 try {
-    List<IndexesIndexMultiAssetWeight> result = apiInstance.v1IndexdefMultiassetGet();
+    List<ModelsIndexMultiAssetWeight> result = apiInstance.v1IndexdefMultiassetGet();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IndexesApi#v1IndexdefMultiassetGet");
@@ -43,7 +43,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;IndexesIndexMultiAssetWeight&gt;**](IndexesIndexMultiAssetWeight.md)
+[**List&lt;ModelsIndexMultiAssetWeight&gt;**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ This endpoint does not need any parameter.
 
 ## v1IndexdefMultiassetIndexIdGet
 
-> List&lt;IndexesIndexMultiAssetWeight&gt; v1IndexdefMultiassetIndexIdGet(indexId)
+> List&lt;ModelsIndexMultiAssetWeight&gt; v1IndexdefMultiassetIndexIdGet(indexId)
 
 Get multi-asset weights for specific index
 
@@ -70,7 +70,7 @@ Get multi-asset weights for specific index
 IndexesApi apiInstance = new IndexesApi();
 String indexId = null; // String | 
 try {
-    List<IndexesIndexMultiAssetWeight> result = apiInstance.v1IndexdefMultiassetIndexIdGet(indexId);
+    List<ModelsIndexMultiAssetWeight> result = apiInstance.v1IndexdefMultiassetIndexIdGet(indexId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IndexesApi#v1IndexdefMultiassetIndexIdGet");
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;IndexesIndexMultiAssetWeight&gt;**](IndexesIndexMultiAssetWeight.md)
+[**List&lt;ModelsIndexMultiAssetWeight&gt;**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ## v1IndexesGet
 
-> List&lt;IndexesIndexIdentifier&gt; v1IndexesGet()
+> List&lt;ModelsIndexIdentifier&gt; v1IndexesGet()
 
 List indexes
 
@@ -113,7 +113,7 @@ List indexes
 
 IndexesApi apiInstance = new IndexesApi();
 try {
-    List<IndexesIndexIdentifier> result = apiInstance.v1IndexesGet();
+    List<ModelsIndexIdentifier> result = apiInstance.v1IndexesGet();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IndexesApi#v1IndexesGet");
@@ -127,7 +127,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;IndexesIndexIdentifier&gt;**](IndexesIndexIdentifier.md)
+[**List&lt;ModelsIndexIdentifier&gt;**](ModelsIndexIdentifier.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ This endpoint does not need any parameter.
 
 ## v1IndexesIndexDefinitionIdCurrentSnapshotGet
 
-> List&lt;IndexesIndexDefinitionSnapshotEntry&gt; v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId)
+> List&lt;ModelsIndexDefinitionSnapshotEntry&gt; v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId)
 
 Current Index Values for index definition
 
@@ -154,7 +154,7 @@ Current Index Values for index definition
 IndexesApi apiInstance = new IndexesApi();
 String indexDefinitionId = null; // String | 
 try {
-    List<IndexesIndexDefinitionSnapshotEntry> result = apiInstance.v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId);
+    List<ModelsIndexDefinitionSnapshotEntry> result = apiInstance.v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IndexesApi#v1IndexesIndexDefinitionIdCurrentSnapshotGet");
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;IndexesIndexDefinitionSnapshotEntry&gt;**](IndexesIndexDefinitionSnapshotEntry.md)
+[**List&lt;ModelsIndexDefinitionSnapshotEntry&gt;**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ## v1IndexesIndexDefinitionIdHistorySnapshotGet
 
-> List&lt;IndexesIndexDefinitionSnapshotEntry&gt; v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time)
+> List&lt;ModelsIndexDefinitionSnapshotEntry&gt; v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time)
 
 Historical Index Values for index definition
 
@@ -199,7 +199,7 @@ IndexesApi apiInstance = new IndexesApi();
 String indexDefinitionId = null; // String | 
 Date time = null; // Date | 
 try {
-    List<IndexesIndexDefinitionSnapshotEntry> result = apiInstance.v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time);
+    List<ModelsIndexDefinitionSnapshotEntry> result = apiInstance.v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IndexesApi#v1IndexesIndexDefinitionIdHistorySnapshotGet");
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;IndexesIndexDefinitionSnapshotEntry&gt;**](IndexesIndexDefinitionSnapshotEntry.md)
+[**List&lt;ModelsIndexDefinitionSnapshotEntry&gt;**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 ## v1IndexesIndexIdCurrentGet
 
-> IndexesIndexValue v1IndexesIndexIdCurrentGet(indexId)
+> ModelsIndexValue v1IndexesIndexIdCurrentGet(indexId)
 
 Current Index Value
 
@@ -244,7 +244,7 @@ Current Index Value
 IndexesApi apiInstance = new IndexesApi();
 String indexId = null; // String | 
 try {
-    IndexesIndexValue result = apiInstance.v1IndexesIndexIdCurrentGet(indexId);
+    ModelsIndexValue result = apiInstance.v1IndexesIndexIdCurrentGet(indexId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IndexesApi#v1IndexesIndexIdCurrentGet");
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexValue**](IndexesIndexValue.md)
+[**ModelsIndexValue**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ## v1IndexesIndexIdHistoryGet
 
-> List&lt;IndexesIndexValue&gt; v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit)
+> List&lt;ModelsIndexValue&gt; v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit)
 
 Historical Index Value w/Composition
 
@@ -291,7 +291,7 @@ Date timeStart = null; // Date |
 Date timeEnd = null; // Date | 
 Integer limit = 100; // Integer | 
 try {
-    List<IndexesIndexValue> result = apiInstance.v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit);
+    List<ModelsIndexValue> result = apiInstance.v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IndexesApi#v1IndexesIndexIdHistoryGet");
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;IndexesIndexValue&gt;**](IndexesIndexValue.md)
+[**List&lt;ModelsIndexValue&gt;**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ## v1IndexesIndexIdTimeseriesGet
 
-> List&lt;IndexesIndexTimeseriesItem&gt; v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit)
+> List&lt;ModelsIndexTimeseriesItem&gt; v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit)
 
 Timeseries Index Value
 
@@ -342,7 +342,7 @@ String timeStart = null; // String | Timeseries starting time in ISO 8601
 String timeEnd = null; // String | Timeseries ending time in ISO 8601
 Integer limit = 100; // Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 try {
-    List<IndexesIndexTimeseriesItem> result = apiInstance.v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit);
+    List<ModelsIndexTimeseriesItem> result = apiInstance.v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IndexesApi#v1IndexesIndexIdTimeseriesGet");
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;IndexesIndexTimeseriesItem&gt;**](IndexesIndexTimeseriesItem.md)
+[**List&lt;ModelsIndexTimeseriesItem&gt;**](ModelsIndexTimeseriesItem.md)
 
 ### Authorization
 

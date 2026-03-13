@@ -475,7 +475,7 @@ end:
 
 // Current Index Value
 //
-indexes_index_value_t*
+models_index_value_t*
 IndexesAPI_v1IndexesIndexIdCurrentGet(apiClient_t *apiClient, char *index_id)
 {
     list_t    *localVarQueryParameters = NULL;
@@ -527,10 +527,10 @@ IndexesAPI_v1IndexesIndexIdCurrentGet(apiClient_t *apiClient, char *index_id)
     //    printf("%s\n","successful operation");
     //}
     //nonprimitive not container
-    indexes_index_value_t *elementToReturn = NULL;
+    models_index_value_t *elementToReturn = NULL;
     if(apiClient->response_code >= 200 && apiClient->response_code < 300) {
         cJSON *IndexesAPIlocalVarJSON = cJSON_Parse(apiClient->dataReceived);
-        elementToReturn = indexes_index_value_parseFromJSON(IndexesAPIlocalVarJSON);
+        elementToReturn = models_index_value_parseFromJSON(IndexesAPIlocalVarJSON);
         cJSON_Delete(IndexesAPIlocalVarJSON);
         if(elementToReturn == NULL) {
             // return 0;

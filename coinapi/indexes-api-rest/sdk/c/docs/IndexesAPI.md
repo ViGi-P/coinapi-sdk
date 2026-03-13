@@ -28,7 +28,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](indexes_index_multi_asset_weight.md) *
+[list_t](models_index_multi_asset_weight.md) *
 
 
 ### Authorization
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](indexes_index_multi_asset_weight.md) *
+[list_t](models_index_multi_asset_weight.md) *
 
 
 ### Authorization
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](indexes_index_identifier.md) *
+[list_t](models_index_identifier.md) *
 
 
 ### Authorization
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](indexes_index_definition_snapshot_entry.md) *
+[list_t](models_index_definition_snapshot_entry.md) *
 
 
 ### Authorization
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](indexes_index_definition_snapshot_entry.md) *
+[list_t](models_index_definition_snapshot_entry.md) *
 
 
 ### Authorization
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 ```c
 // Current Index Value
 //
-indexes_index_value_t* IndexesAPI_v1IndexesIndexIdCurrentGet(apiClient_t *apiClient, char *index_id);
+models_index_value_t* IndexesAPI_v1IndexesIndexIdCurrentGet(apiClient_t *apiClient, char *index_id);
 ```
 
 ### Parameters
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[indexes_index_value_t](indexes_index_value.md) *
+[models_index_value_t](models_index_value.md) *
 
 
 ### Authorization
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](indexes_index_value.md) *
+[list_t](models_index_value.md) *
 
 
 ### Authorization
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](indexes_index_timeseries_item.md) *
+[list_t](models_index_timeseries_item.md) *
 
 
 ### Authorization

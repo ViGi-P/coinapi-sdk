@@ -15,144 +15,6 @@ package .Models is
 
 
 
-   type IndexesIndexDefinitionSnapshotEntry_Type is
-     record
-       Index_Id : Swagger.Nullable_UString;
-       Timestamp : Swagger.Nullable_Date;
-       Value : Swagger.Number;
-     end record;
-
-
-   package IndexesIndexDefinitionSnapshotEntry_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.IndexesIndexDefinitionSnapshotEntry_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.IndexesIndexDefinitionSnapshotEntry_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in IndexesIndexDefinitionSnapshotEntry_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.IndexesIndexDefinitionSnapshotEntry_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out IndexesIndexDefinitionSnapshotEntry_Type_Vectors.Vector);
-
-
-
-   type IndexesIndexIdentifier_Type is
-     record
-       Id : Swagger.Nullable_UString;
-     end record;
-
-
-   package IndexesIndexIdentifier_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.IndexesIndexIdentifier_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.IndexesIndexIdentifier_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in IndexesIndexIdentifier_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.IndexesIndexIdentifier_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out IndexesIndexIdentifier_Type_Vectors.Vector);
-
-
-
-   type IndexesIndexMultiAssetWeight_Type is
-     record
-       Index_Id : Swagger.Nullable_UString;
-       Asset_Id : Swagger.Nullable_UString;
-       Weight : Swagger.Number;
-     end record;
-
-
-   package IndexesIndexMultiAssetWeight_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.IndexesIndexMultiAssetWeight_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.IndexesIndexMultiAssetWeight_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in IndexesIndexMultiAssetWeight_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.IndexesIndexMultiAssetWeight_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out IndexesIndexMultiAssetWeight_Type_Vectors.Vector);
-
-
-
-   type IndexesIndexTimeseriesItem_Type is
-     record
-       Time_Period_Start : Swagger.Nullable_Date;
-       Time_Period_End : Swagger.Nullable_Date;
-       Time_Open : Swagger.Nullable_Date;
-       Time_Close : Swagger.Nullable_Date;
-       Value_Open : Swagger.Number;
-       Value_High : Swagger.Number;
-       Value_Low : Swagger.Number;
-       Value_Close : Swagger.Number;
-       Value_Count : Swagger.Nullable_Long;
-     end record;
-
-
-   package IndexesIndexTimeseriesItem_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.IndexesIndexTimeseriesItem_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.IndexesIndexTimeseriesItem_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in IndexesIndexTimeseriesItem_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.IndexesIndexTimeseriesItem_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out IndexesIndexTimeseriesItem_Type_Vectors.Vector);
-
-
-
-   type IndexesIndexValueComponent_Type is
-     record
-       Component_Id : Swagger.Nullable_UString;
-       Component_Value : Swagger.Number;
-     end record;
-
-
-   package IndexesIndexValueComponent_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.IndexesIndexValueComponent_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.IndexesIndexValueComponent_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in IndexesIndexValueComponent_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.IndexesIndexValueComponent_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out IndexesIndexValueComponent_Type_Vectors.Vector);
-
-
-
    type MetadataExchange_Type is
      record
        Exchange_Id : Swagger.Nullable_UString;
@@ -210,30 +72,168 @@ package .Models is
 
 
 
-   type IndexesIndexValue_Type is
+   type ModelsIndexDefinitionSnapshotEntry_Type is
      record
+       Index_Id : Swagger.Nullable_UString;
        Timestamp : Swagger.Nullable_Date;
        Value : Swagger.Number;
-       Composition : .Models.IndexesIndexValueComponent_Type_Vectors.Vector;
      end record;
 
 
-   package IndexesIndexValue_Type_Vectors is
+   package ModelsIndexDefinitionSnapshotEntry_Type_Vectors is
       new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.IndexesIndexValue_Type);
+                                  Element_Type => .Models.ModelsIndexDefinitionSnapshotEntry_Type);
 
    procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
                         Name  : in String;
-                        Value : in .Models.IndexesIndexValue_Type);
+                        Value : in .Models.ModelsIndexDefinitionSnapshotEntry_Type);
    procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
                         Name  : in String;
-                        Value : in IndexesIndexValue_Type_Vectors.Vector);
+                        Value : in ModelsIndexDefinitionSnapshotEntry_Type_Vectors.Vector);
    procedure Deserialize (From  : in Swagger.Value_Type;
                           Name  : in String;
-                          Value : out .Models.IndexesIndexValue_Type);
+                          Value : out .Models.ModelsIndexDefinitionSnapshotEntry_Type);
    procedure Deserialize (From  : in Swagger.Value_Type;
                           Name  : in String;
-                          Value : in out IndexesIndexValue_Type_Vectors.Vector);
+                          Value : in out ModelsIndexDefinitionSnapshotEntry_Type_Vectors.Vector);
+
+
+
+   type ModelsIndexIdentifier_Type is
+     record
+       Id : Swagger.Nullable_UString;
+     end record;
+
+
+   package ModelsIndexIdentifier_Type_Vectors is
+      new Ada.Containers.Vectors (Index_Type   => Positive,
+                                  Element_Type => .Models.ModelsIndexIdentifier_Type);
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.ModelsIndexIdentifier_Type);
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in ModelsIndexIdentifier_Type_Vectors.Vector);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.ModelsIndexIdentifier_Type);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out ModelsIndexIdentifier_Type_Vectors.Vector);
+
+
+
+   type ModelsIndexMultiAssetWeight_Type is
+     record
+       Index_Id : Swagger.Nullable_UString;
+       Asset_Id : Swagger.Nullable_UString;
+       Weight : Swagger.Number;
+     end record;
+
+
+   package ModelsIndexMultiAssetWeight_Type_Vectors is
+      new Ada.Containers.Vectors (Index_Type   => Positive,
+                                  Element_Type => .Models.ModelsIndexMultiAssetWeight_Type);
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.ModelsIndexMultiAssetWeight_Type);
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in ModelsIndexMultiAssetWeight_Type_Vectors.Vector);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.ModelsIndexMultiAssetWeight_Type);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out ModelsIndexMultiAssetWeight_Type_Vectors.Vector);
+
+
+
+   type ModelsIndexTimeseriesItem_Type is
+     record
+       Time_Period_Start : Swagger.Nullable_Date;
+       Time_Period_End : Swagger.Nullable_Date;
+       Time_Open : Swagger.Nullable_Date;
+       Time_Close : Swagger.Nullable_Date;
+       Value_Open : Swagger.Number;
+       Value_High : Swagger.Number;
+       Value_Low : Swagger.Number;
+       Value_Close : Swagger.Number;
+       Value_Count : Swagger.Nullable_Long;
+     end record;
+
+
+   package ModelsIndexTimeseriesItem_Type_Vectors is
+      new Ada.Containers.Vectors (Index_Type   => Positive,
+                                  Element_Type => .Models.ModelsIndexTimeseriesItem_Type);
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.ModelsIndexTimeseriesItem_Type);
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in ModelsIndexTimeseriesItem_Type_Vectors.Vector);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.ModelsIndexTimeseriesItem_Type);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out ModelsIndexTimeseriesItem_Type_Vectors.Vector);
+
+
+
+   type ModelsIndexValueComponent_Type is
+     record
+       Component_Id : Swagger.Nullable_UString;
+       Component_Value : Swagger.Number;
+     end record;
+
+
+   package ModelsIndexValueComponent_Type_Vectors is
+      new Ada.Containers.Vectors (Index_Type   => Positive,
+                                  Element_Type => .Models.ModelsIndexValueComponent_Type);
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.ModelsIndexValueComponent_Type);
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in ModelsIndexValueComponent_Type_Vectors.Vector);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.ModelsIndexValueComponent_Type);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out ModelsIndexValueComponent_Type_Vectors.Vector);
+
+
+
+   type ModelsIndexValue_Type is
+     record
+       Timestamp : Swagger.Nullable_Date;
+       Value : Swagger.Number;
+       Composition : .Models.ModelsIndexValueComponent_Type_Vectors.Vector;
+     end record;
+
+
+   package ModelsIndexValue_Type_Vectors is
+      new Ada.Containers.Vectors (Index_Type   => Positive,
+                                  Element_Type => .Models.ModelsIndexValue_Type);
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.ModelsIndexValue_Type);
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in ModelsIndexValue_Type_Vectors.Vector);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.ModelsIndexValue_Type);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out ModelsIndexValue_Type_Vectors.Vector);
 
 
 end .Models;

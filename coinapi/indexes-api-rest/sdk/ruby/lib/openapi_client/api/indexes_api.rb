@@ -21,7 +21,7 @@ module OpenapiClient
     end
     # Get all multi-asset weights
     # @param [Hash] opts the optional parameters
-    # @return [Array<IndexesIndexMultiAssetWeight>]
+    # @return [Array<ModelsIndexMultiAssetWeight>]
     def v1_indexdef_multiasset_get(opts = {})
       data, _status_code, _headers = v1_indexdef_multiasset_get_with_http_info(opts)
       data
@@ -29,7 +29,7 @@ module OpenapiClient
 
     # Get all multi-asset weights
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<IndexesIndexMultiAssetWeight>, Integer, Hash)>] Array<IndexesIndexMultiAssetWeight> data, response status code and response headers
+    # @return [Array<(Array<ModelsIndexMultiAssetWeight>, Integer, Hash)>] Array<ModelsIndexMultiAssetWeight> data, response status code and response headers
     def v1_indexdef_multiasset_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IndexesApi.v1_indexdef_multiasset_get ...'
@@ -52,7 +52,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<IndexesIndexMultiAssetWeight>'
+      return_type = opts[:debug_return_type] || 'Array<ModelsIndexMultiAssetWeight>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -77,7 +77,7 @@ module OpenapiClient
     # Get multi-asset weights for specific index
     # @param index_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<IndexesIndexMultiAssetWeight>]
+    # @return [Array<ModelsIndexMultiAssetWeight>]
     def v1_indexdef_multiasset_index_id_get(index_id, opts = {})
       data, _status_code, _headers = v1_indexdef_multiasset_index_id_get_with_http_info(index_id, opts)
       data
@@ -86,7 +86,7 @@ module OpenapiClient
     # Get multi-asset weights for specific index
     # @param index_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<IndexesIndexMultiAssetWeight>, Integer, Hash)>] Array<IndexesIndexMultiAssetWeight> data, response status code and response headers
+    # @return [Array<(Array<ModelsIndexMultiAssetWeight>, Integer, Hash)>] Array<ModelsIndexMultiAssetWeight> data, response status code and response headers
     def v1_indexdef_multiasset_index_id_get_with_http_info(index_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IndexesApi.v1_indexdef_multiasset_index_id_get ...'
@@ -113,7 +113,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<IndexesIndexMultiAssetWeight>'
+      return_type = opts[:debug_return_type] || 'Array<ModelsIndexMultiAssetWeight>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -137,7 +137,7 @@ module OpenapiClient
 
     # List indexes
     # @param [Hash] opts the optional parameters
-    # @return [Array<IndexesIndexIdentifier>]
+    # @return [Array<ModelsIndexIdentifier>]
     def v1_indexes_get(opts = {})
       data, _status_code, _headers = v1_indexes_get_with_http_info(opts)
       data
@@ -145,7 +145,7 @@ module OpenapiClient
 
     # List indexes
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<IndexesIndexIdentifier>, Integer, Hash)>] Array<IndexesIndexIdentifier> data, response status code and response headers
+    # @return [Array<(Array<ModelsIndexIdentifier>, Integer, Hash)>] Array<ModelsIndexIdentifier> data, response status code and response headers
     def v1_indexes_get_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IndexesApi.v1_indexes_get ...'
@@ -168,7 +168,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<IndexesIndexIdentifier>'
+      return_type = opts[:debug_return_type] || 'Array<ModelsIndexIdentifier>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -193,7 +193,7 @@ module OpenapiClient
     # Current Index Values for index definition
     # @param index_definition_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<IndexesIndexDefinitionSnapshotEntry>]
+    # @return [Array<ModelsIndexDefinitionSnapshotEntry>]
     def v1_indexes_index_definition_id_current_snapshot_get(index_definition_id, opts = {})
       data, _status_code, _headers = v1_indexes_index_definition_id_current_snapshot_get_with_http_info(index_definition_id, opts)
       data
@@ -202,7 +202,7 @@ module OpenapiClient
     # Current Index Values for index definition
     # @param index_definition_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<IndexesIndexDefinitionSnapshotEntry>, Integer, Hash)>] Array<IndexesIndexDefinitionSnapshotEntry> data, response status code and response headers
+    # @return [Array<(Array<ModelsIndexDefinitionSnapshotEntry>, Integer, Hash)>] Array<ModelsIndexDefinitionSnapshotEntry> data, response status code and response headers
     def v1_indexes_index_definition_id_current_snapshot_get_with_http_info(index_definition_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IndexesApi.v1_indexes_index_definition_id_current_snapshot_get ...'
@@ -229,7 +229,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<IndexesIndexDefinitionSnapshotEntry>'
+      return_type = opts[:debug_return_type] || 'Array<ModelsIndexDefinitionSnapshotEntry>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -255,7 +255,7 @@ module OpenapiClient
     # @param index_definition_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [Time] :time 
-    # @return [Array<IndexesIndexDefinitionSnapshotEntry>]
+    # @return [Array<ModelsIndexDefinitionSnapshotEntry>]
     def v1_indexes_index_definition_id_history_snapshot_get(index_definition_id, opts = {})
       data, _status_code, _headers = v1_indexes_index_definition_id_history_snapshot_get_with_http_info(index_definition_id, opts)
       data
@@ -265,7 +265,7 @@ module OpenapiClient
     # @param index_definition_id [String] 
     # @param [Hash] opts the optional parameters
     # @option opts [Time] :time 
-    # @return [Array<(Array<IndexesIndexDefinitionSnapshotEntry>, Integer, Hash)>] Array<IndexesIndexDefinitionSnapshotEntry> data, response status code and response headers
+    # @return [Array<(Array<ModelsIndexDefinitionSnapshotEntry>, Integer, Hash)>] Array<ModelsIndexDefinitionSnapshotEntry> data, response status code and response headers
     def v1_indexes_index_definition_id_history_snapshot_get_with_http_info(index_definition_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IndexesApi.v1_indexes_index_definition_id_history_snapshot_get ...'
@@ -293,7 +293,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<IndexesIndexDefinitionSnapshotEntry>'
+      return_type = opts[:debug_return_type] || 'Array<ModelsIndexDefinitionSnapshotEntry>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -318,7 +318,7 @@ module OpenapiClient
     # Current Index Value
     # @param index_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [IndexesIndexValue]
+    # @return [ModelsIndexValue]
     def v1_indexes_index_id_current_get(index_id, opts = {})
       data, _status_code, _headers = v1_indexes_index_id_current_get_with_http_info(index_id, opts)
       data
@@ -327,7 +327,7 @@ module OpenapiClient
     # Current Index Value
     # @param index_id [String] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(IndexesIndexValue, Integer, Hash)>] IndexesIndexValue data, response status code and response headers
+    # @return [Array<(ModelsIndexValue, Integer, Hash)>] ModelsIndexValue data, response status code and response headers
     def v1_indexes_index_id_current_get_with_http_info(index_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IndexesApi.v1_indexes_index_id_current_get ...'
@@ -354,7 +354,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'IndexesIndexValue'
+      return_type = opts[:debug_return_type] || 'ModelsIndexValue'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -382,7 +382,7 @@ module OpenapiClient
     # @option opts [Time] :time_start 
     # @option opts [Time] :time_end 
     # @option opts [Integer] :limit  (default to 100)
-    # @return [Array<IndexesIndexValue>]
+    # @return [Array<ModelsIndexValue>]
     def v1_indexes_index_id_history_get(index_id, opts = {})
       data, _status_code, _headers = v1_indexes_index_id_history_get_with_http_info(index_id, opts)
       data
@@ -394,7 +394,7 @@ module OpenapiClient
     # @option opts [Time] :time_start 
     # @option opts [Time] :time_end 
     # @option opts [Integer] :limit  (default to 100)
-    # @return [Array<(Array<IndexesIndexValue>, Integer, Hash)>] Array<IndexesIndexValue> data, response status code and response headers
+    # @return [Array<(Array<ModelsIndexValue>, Integer, Hash)>] Array<ModelsIndexValue> data, response status code and response headers
     def v1_indexes_index_id_history_get_with_http_info(index_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IndexesApi.v1_indexes_index_id_history_get ...'
@@ -424,7 +424,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<IndexesIndexValue>'
+      return_type = opts[:debug_return_type] || 'Array<ModelsIndexValue>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
@@ -453,7 +453,7 @@ module OpenapiClient
     # @param time_end [String] Timeseries ending time in ISO 8601
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
-    # @return [Array<IndexesIndexTimeseriesItem>]
+    # @return [Array<ModelsIndexTimeseriesItem>]
     def v1_indexes_index_id_timeseries_get(index_id, period_id, time_start, time_end, opts = {})
       data, _status_code, _headers = v1_indexes_index_id_timeseries_get_with_http_info(index_id, period_id, time_start, time_end, opts)
       data
@@ -466,7 +466,7 @@ module OpenapiClient
     # @param time_end [String] Timeseries ending time in ISO 8601
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
-    # @return [Array<(Array<IndexesIndexTimeseriesItem>, Integer, Hash)>] Array<IndexesIndexTimeseriesItem> data, response status code and response headers
+    # @return [Array<(Array<ModelsIndexTimeseriesItem>, Integer, Hash)>] Array<ModelsIndexTimeseriesItem> data, response status code and response headers
     def v1_indexes_index_id_timeseries_get_with_http_info(index_id, period_id, time_start, time_end, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: IndexesApi.v1_indexes_index_id_timeseries_get ...'
@@ -509,7 +509,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<IndexesIndexTimeseriesItem>'
+      return_type = opts[:debug_return_type] || 'Array<ModelsIndexTimeseriesItem>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']

@@ -5,11 +5,11 @@
 #include "../external/cJSON.h"
 #include "../include/keyValuePair.h"
 #include "../include/binary.h"
-#include "../model/indexes_index_definition_snapshot_entry.h"
-#include "../model/indexes_index_identifier.h"
-#include "../model/indexes_index_multi_asset_weight.h"
-#include "../model/indexes_index_timeseries_item.h"
-#include "../model/indexes_index_value.h"
+#include "../model/models_index_definition_snapshot_entry.h"
+#include "../model/models_index_identifier.h"
+#include "../model/models_index_multi_asset_weight.h"
+#include "../model/models_index_timeseries_item.h"
+#include "../model/models_index_value.h"
 
 
 // Get all multi-asset weights
@@ -44,7 +44,7 @@ IndexesAPI_v1IndexesIndexDefinitionIdHistorySnapshotGet(apiClient_t *apiClient, 
 
 // Current Index Value
 //
-indexes_index_value_t*
+models_index_value_t*
 IndexesAPI_v1IndexesIndexIdCurrentGet(apiClient_t *apiClient, char *index_id);
 
 

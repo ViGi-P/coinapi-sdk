@@ -51,13 +51,13 @@ static gpointer __IndexesManagerthreadFunc(gpointer data)
 static bool v1IndexdefMultiassetGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<Models.IndexMultiAssetWeight>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Indexes.IndexMultiAssetWeight> out;
+	std::list<Models.IndexMultiAssetWeight> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -71,7 +71,7 @@ static bool v1IndexdefMultiassetGetProcessor(MemoryStruct_s p_chunk, long code, 
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Indexes.IndexMultiAssetWeight singlemodel;
+			Models.IndexMultiAssetWeight singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -97,7 +97,7 @@ static bool v1IndexdefMultiassetGetProcessor(MemoryStruct_s p_chunk, long code, 
 
 static bool v1IndexdefMultiassetGetHelper(char * accessToken,
 	
-	void(* handler)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )
+	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -168,7 +168,7 @@ static bool v1IndexdefMultiassetGetHelper(char * accessToken,
 
 bool IndexesManager::v1IndexdefMultiassetGetAsync(char * accessToken,
 	
-	void(* handler)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )
+	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
 	, void* userData)
 {
 	return v1IndexdefMultiassetGetHelper(accessToken,
@@ -178,7 +178,7 @@ bool IndexesManager::v1IndexdefMultiassetGetAsync(char * accessToken,
 
 bool IndexesManager::v1IndexdefMultiassetGetSync(char * accessToken,
 	
-	void(* handler)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )
+	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
 	, void* userData)
 {
 	return v1IndexdefMultiassetGetHelper(accessToken,
@@ -189,13 +189,13 @@ bool IndexesManager::v1IndexdefMultiassetGetSync(char * accessToken,
 static bool v1IndexdefMultiassetIndexIdGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<Models.IndexMultiAssetWeight>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Indexes.IndexMultiAssetWeight> out;
+	std::list<Models.IndexMultiAssetWeight> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -209,7 +209,7 @@ static bool v1IndexdefMultiassetIndexIdGetProcessor(MemoryStruct_s p_chunk, long
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Indexes.IndexMultiAssetWeight singlemodel;
+			Models.IndexMultiAssetWeight singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -235,7 +235,7 @@ static bool v1IndexdefMultiassetIndexIdGetProcessor(MemoryStruct_s p_chunk, long
 
 static bool v1IndexdefMultiassetIndexIdGetHelper(char * accessToken,
 	std::string indexId, 
-	void(* handler)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )
+	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -312,7 +312,7 @@ static bool v1IndexdefMultiassetIndexIdGetHelper(char * accessToken,
 
 bool IndexesManager::v1IndexdefMultiassetIndexIdGetAsync(char * accessToken,
 	std::string indexId, 
-	void(* handler)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )
+	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
 	, void* userData)
 {
 	return v1IndexdefMultiassetIndexIdGetHelper(accessToken,
@@ -322,7 +322,7 @@ bool IndexesManager::v1IndexdefMultiassetIndexIdGetAsync(char * accessToken,
 
 bool IndexesManager::v1IndexdefMultiassetIndexIdGetSync(char * accessToken,
 	std::string indexId, 
-	void(* handler)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )
+	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
 	, void* userData)
 {
 	return v1IndexdefMultiassetIndexIdGetHelper(accessToken,
@@ -333,13 +333,13 @@ bool IndexesManager::v1IndexdefMultiassetIndexIdGetSync(char * accessToken,
 static bool v1IndexesGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Indexes.IndexIdentifier>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Indexes.IndexIdentifier>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<Models.IndexIdentifier>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<Models.IndexIdentifier>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Indexes.IndexIdentifier> out;
+	std::list<Models.IndexIdentifier> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -353,7 +353,7 @@ static bool v1IndexesGetProcessor(MemoryStruct_s p_chunk, long code, char* error
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Indexes.IndexIdentifier singlemodel;
+			Models.IndexIdentifier singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -379,7 +379,7 @@ static bool v1IndexesGetProcessor(MemoryStruct_s p_chunk, long code, char* error
 
 static bool v1IndexesGetHelper(char * accessToken,
 	
-	void(* handler)(std::list<Indexes.IndexIdentifier>, Error, void* )
+	void(* handler)(std::list<Models.IndexIdentifier>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -450,7 +450,7 @@ static bool v1IndexesGetHelper(char * accessToken,
 
 bool IndexesManager::v1IndexesGetAsync(char * accessToken,
 	
-	void(* handler)(std::list<Indexes.IndexIdentifier>, Error, void* )
+	void(* handler)(std::list<Models.IndexIdentifier>, Error, void* )
 	, void* userData)
 {
 	return v1IndexesGetHelper(accessToken,
@@ -460,7 +460,7 @@ bool IndexesManager::v1IndexesGetAsync(char * accessToken,
 
 bool IndexesManager::v1IndexesGetSync(char * accessToken,
 	
-	void(* handler)(std::list<Indexes.IndexIdentifier>, Error, void* )
+	void(* handler)(std::list<Models.IndexIdentifier>, Error, void* )
 	, void* userData)
 {
 	return v1IndexesGetHelper(accessToken,
@@ -471,13 +471,13 @@ bool IndexesManager::v1IndexesGetSync(char * accessToken,
 static bool v1IndexesIndexDefinitionIdCurrentSnapshotGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Indexes.IndexDefinitionSnapshotEntry> out;
+	std::list<Models.IndexDefinitionSnapshotEntry> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -491,7 +491,7 @@ static bool v1IndexesIndexDefinitionIdCurrentSnapshotGetProcessor(MemoryStruct_s
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Indexes.IndexDefinitionSnapshotEntry singlemodel;
+			Models.IndexDefinitionSnapshotEntry singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -517,7 +517,7 @@ static bool v1IndexesIndexDefinitionIdCurrentSnapshotGetProcessor(MemoryStruct_s
 
 static bool v1IndexesIndexDefinitionIdCurrentSnapshotGetHelper(char * accessToken,
 	std::string indexDefinitionId, 
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
+	void(* handler)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -594,7 +594,7 @@ static bool v1IndexesIndexDefinitionIdCurrentSnapshotGetHelper(char * accessToke
 
 bool IndexesManager::v1IndexesIndexDefinitionIdCurrentSnapshotGetAsync(char * accessToken,
 	std::string indexDefinitionId, 
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
+	void(* handler)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )
 	, void* userData)
 {
 	return v1IndexesIndexDefinitionIdCurrentSnapshotGetHelper(accessToken,
@@ -604,7 +604,7 @@ bool IndexesManager::v1IndexesIndexDefinitionIdCurrentSnapshotGetAsync(char * ac
 
 bool IndexesManager::v1IndexesIndexDefinitionIdCurrentSnapshotGetSync(char * accessToken,
 	std::string indexDefinitionId, 
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
+	void(* handler)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )
 	, void* userData)
 {
 	return v1IndexesIndexDefinitionIdCurrentSnapshotGetHelper(accessToken,
@@ -615,13 +615,13 @@ bool IndexesManager::v1IndexesIndexDefinitionIdCurrentSnapshotGetSync(char * acc
 static bool v1IndexesIndexDefinitionIdHistorySnapshotGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Indexes.IndexDefinitionSnapshotEntry> out;
+	std::list<Models.IndexDefinitionSnapshotEntry> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -635,7 +635,7 @@ static bool v1IndexesIndexDefinitionIdHistorySnapshotGetProcessor(MemoryStruct_s
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Indexes.IndexDefinitionSnapshotEntry singlemodel;
+			Models.IndexDefinitionSnapshotEntry singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -661,7 +661,7 @@ static bool v1IndexesIndexDefinitionIdHistorySnapshotGetProcessor(MemoryStruct_s
 
 static bool v1IndexesIndexDefinitionIdHistorySnapshotGetHelper(char * accessToken,
 	std::string indexDefinitionId, std::string time, 
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
+	void(* handler)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -745,7 +745,7 @@ static bool v1IndexesIndexDefinitionIdHistorySnapshotGetHelper(char * accessToke
 
 bool IndexesManager::v1IndexesIndexDefinitionIdHistorySnapshotGetAsync(char * accessToken,
 	std::string indexDefinitionId, std::string time, 
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
+	void(* handler)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )
 	, void* userData)
 {
 	return v1IndexesIndexDefinitionIdHistorySnapshotGetHelper(accessToken,
@@ -755,7 +755,7 @@ bool IndexesManager::v1IndexesIndexDefinitionIdHistorySnapshotGetAsync(char * ac
 
 bool IndexesManager::v1IndexesIndexDefinitionIdHistorySnapshotGetSync(char * accessToken,
 	std::string indexDefinitionId, std::string time, 
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
+	void(* handler)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )
 	, void* userData)
 {
 	return v1IndexesIndexDefinitionIdHistorySnapshotGetHelper(accessToken,
@@ -766,14 +766,14 @@ bool IndexesManager::v1IndexesIndexDefinitionIdHistorySnapshotGetSync(char * acc
 static bool v1IndexesIndexIdCurrentGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(Indexes.IndexValue, Error, void* )
-	= reinterpret_cast<void(*)(Indexes.IndexValue, Error, void* )> (voidHandler);
+	void(* handler)(Models.IndexValue, Error, void* )
+	= reinterpret_cast<void(*)(Models.IndexValue, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
 	
-	Indexes.IndexValue out;
+	Models.IndexValue out;
 
 	if (code >= 200 && code < 300) {
 		Error error(code, string("No Error"));
@@ -781,12 +781,12 @@ static bool v1IndexesIndexIdCurrentGetProcessor(MemoryStruct_s p_chunk, long cod
 
 
 
-		if (isprimitive("Indexes.IndexValue")) {
+		if (isprimitive("Models.IndexValue")) {
 			pJson = json_from_string(data, NULL);
-			jsonToValue(&out, pJson, "Indexes.IndexValue", "Indexes.IndexValue");
+			jsonToValue(&out, pJson, "Models.IndexValue", "Models.IndexValue");
 			json_node_free(pJson);
 
-			if ("Indexes.IndexValue" == "std::string") {
+			if ("Models.IndexValue" == "std::string") {
 				string* val = (std::string*)(&out);
 				if (val->empty() && p_chunk.size>4) {
 					*val = string(p_chunk.memory, p_chunk.size);
@@ -820,7 +820,7 @@ static bool v1IndexesIndexIdCurrentGetProcessor(MemoryStruct_s p_chunk, long cod
 
 static bool v1IndexesIndexIdCurrentGetHelper(char * accessToken,
 	std::string indexId, 
-	void(* handler)(Indexes.IndexValue, Error, void* )
+	void(* handler)(Models.IndexValue, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -897,7 +897,7 @@ static bool v1IndexesIndexIdCurrentGetHelper(char * accessToken,
 
 bool IndexesManager::v1IndexesIndexIdCurrentGetAsync(char * accessToken,
 	std::string indexId, 
-	void(* handler)(Indexes.IndexValue, Error, void* )
+	void(* handler)(Models.IndexValue, Error, void* )
 	, void* userData)
 {
 	return v1IndexesIndexIdCurrentGetHelper(accessToken,
@@ -907,7 +907,7 @@ bool IndexesManager::v1IndexesIndexIdCurrentGetAsync(char * accessToken,
 
 bool IndexesManager::v1IndexesIndexIdCurrentGetSync(char * accessToken,
 	std::string indexId, 
-	void(* handler)(Indexes.IndexValue, Error, void* )
+	void(* handler)(Models.IndexValue, Error, void* )
 	, void* userData)
 {
 	return v1IndexesIndexIdCurrentGetHelper(accessToken,
@@ -918,13 +918,13 @@ bool IndexesManager::v1IndexesIndexIdCurrentGetSync(char * accessToken,
 static bool v1IndexesIndexIdHistoryGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Indexes.IndexValue>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Indexes.IndexValue>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<Models.IndexValue>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<Models.IndexValue>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Indexes.IndexValue> out;
+	std::list<Models.IndexValue> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -938,7 +938,7 @@ static bool v1IndexesIndexIdHistoryGetProcessor(MemoryStruct_s p_chunk, long cod
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Indexes.IndexValue singlemodel;
+			Models.IndexValue singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -964,7 +964,7 @@ static bool v1IndexesIndexIdHistoryGetProcessor(MemoryStruct_s p_chunk, long cod
 
 static bool v1IndexesIndexIdHistoryGetHelper(char * accessToken,
 	std::string indexId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<Indexes.IndexValue>, Error, void* )
+	void(* handler)(std::list<Models.IndexValue>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -1062,7 +1062,7 @@ static bool v1IndexesIndexIdHistoryGetHelper(char * accessToken,
 
 bool IndexesManager::v1IndexesIndexIdHistoryGetAsync(char * accessToken,
 	std::string indexId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<Indexes.IndexValue>, Error, void* )
+	void(* handler)(std::list<Models.IndexValue>, Error, void* )
 	, void* userData)
 {
 	return v1IndexesIndexIdHistoryGetHelper(accessToken,
@@ -1072,7 +1072,7 @@ bool IndexesManager::v1IndexesIndexIdHistoryGetAsync(char * accessToken,
 
 bool IndexesManager::v1IndexesIndexIdHistoryGetSync(char * accessToken,
 	std::string indexId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<Indexes.IndexValue>, Error, void* )
+	void(* handler)(std::list<Models.IndexValue>, Error, void* )
 	, void* userData)
 {
 	return v1IndexesIndexIdHistoryGetHelper(accessToken,
@@ -1083,13 +1083,13 @@ bool IndexesManager::v1IndexesIndexIdHistoryGetSync(char * accessToken,
 static bool v1IndexesIndexIdTimeseriesGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Indexes.IndexTimeseriesItem>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Indexes.IndexTimeseriesItem>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<Models.IndexTimeseriesItem>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<Models.IndexTimeseriesItem>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Indexes.IndexTimeseriesItem> out;
+	std::list<Models.IndexTimeseriesItem> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -1103,7 +1103,7 @@ static bool v1IndexesIndexIdTimeseriesGetProcessor(MemoryStruct_s p_chunk, long 
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Indexes.IndexTimeseriesItem singlemodel;
+			Models.IndexTimeseriesItem singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -1129,7 +1129,7 @@ static bool v1IndexesIndexIdTimeseriesGetProcessor(MemoryStruct_s p_chunk, long 
 
 static bool v1IndexesIndexIdTimeseriesGetHelper(char * accessToken,
 	std::string indexId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<Indexes.IndexTimeseriesItem>, Error, void* )
+	void(* handler)(std::list<Models.IndexTimeseriesItem>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -1225,7 +1225,7 @@ static bool v1IndexesIndexIdTimeseriesGetHelper(char * accessToken,
 
 bool IndexesManager::v1IndexesIndexIdTimeseriesGetAsync(char * accessToken,
 	std::string indexId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<Indexes.IndexTimeseriesItem>, Error, void* )
+	void(* handler)(std::list<Models.IndexTimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1IndexesIndexIdTimeseriesGetHelper(accessToken,
@@ -1235,7 +1235,7 @@ bool IndexesManager::v1IndexesIndexIdTimeseriesGetAsync(char * accessToken,
 
 bool IndexesManager::v1IndexesIndexIdTimeseriesGetSync(char * accessToken,
 	std::string indexId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<Indexes.IndexTimeseriesItem>, Error, void* )
+	void(* handler)(std::list<Models.IndexTimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1IndexesIndexIdTimeseriesGetHelper(accessToken,

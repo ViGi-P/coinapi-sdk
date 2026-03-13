@@ -20,11 +20,11 @@ from datetime import datetime
 from pydantic import Field, StrictInt, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_definition_snapshot_entry import IndexesIndexDefinitionSnapshotEntry
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_identifier import IndexesIndexIdentifier
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_multi_asset_weight import IndexesIndexMultiAssetWeight
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_timeseries_item import IndexesIndexTimeseriesItem
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_value import IndexesIndexValue
+from api_bricks_coinapi_indexes_api_rest.models.models_index_definition_snapshot_entry import ModelsIndexDefinitionSnapshotEntry
+from api_bricks_coinapi_indexes_api_rest.models.models_index_identifier import ModelsIndexIdentifier
+from api_bricks_coinapi_indexes_api_rest.models.models_index_multi_asset_weight import ModelsIndexMultiAssetWeight
+from api_bricks_coinapi_indexes_api_rest.models.models_index_timeseries_item import ModelsIndexTimeseriesItem
+from api_bricks_coinapi_indexes_api_rest.models.models_index_value import ModelsIndexValue
 
 from api_bricks_coinapi_indexes_api_rest.api_client import ApiClient, RequestSerialized
 from api_bricks_coinapi_indexes_api_rest.api_response import ApiResponse
@@ -59,7 +59,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IndexesIndexMultiAssetWeight]:
+    ) -> List[ModelsIndexMultiAssetWeight]:
         """Get all multi-asset weights
 
 
@@ -93,7 +93,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexMultiAssetWeight]",
+            '200': "List[ModelsIndexMultiAssetWeight]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -121,7 +121,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IndexesIndexMultiAssetWeight]]:
+    ) -> ApiResponse[List[ModelsIndexMultiAssetWeight]]:
         """Get all multi-asset weights
 
 
@@ -155,7 +155,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexMultiAssetWeight]",
+            '200': "List[ModelsIndexMultiAssetWeight]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -217,7 +217,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexMultiAssetWeight]",
+            '200': "List[ModelsIndexMultiAssetWeight]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -307,7 +307,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IndexesIndexMultiAssetWeight]:
+    ) -> List[ModelsIndexMultiAssetWeight]:
         """Get multi-asset weights for specific index
 
 
@@ -344,7 +344,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexMultiAssetWeight]",
+            '200': "List[ModelsIndexMultiAssetWeight]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -373,7 +373,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IndexesIndexMultiAssetWeight]]:
+    ) -> ApiResponse[List[ModelsIndexMultiAssetWeight]]:
         """Get multi-asset weights for specific index
 
 
@@ -410,7 +410,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexMultiAssetWeight]",
+            '200': "List[ModelsIndexMultiAssetWeight]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -476,7 +476,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexMultiAssetWeight]",
+            '200': "List[ModelsIndexMultiAssetWeight]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -568,7 +568,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IndexesIndexIdentifier]:
+    ) -> List[ModelsIndexIdentifier]:
         """List indexes
 
 
@@ -602,7 +602,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexIdentifier]",
+            '200': "List[ModelsIndexIdentifier]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -630,7 +630,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IndexesIndexIdentifier]]:
+    ) -> ApiResponse[List[ModelsIndexIdentifier]]:
         """List indexes
 
 
@@ -664,7 +664,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexIdentifier]",
+            '200': "List[ModelsIndexIdentifier]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -726,7 +726,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexIdentifier]",
+            '200': "List[ModelsIndexIdentifier]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -816,7 +816,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IndexesIndexDefinitionSnapshotEntry]:
+    ) -> List[ModelsIndexDefinitionSnapshotEntry]:
         """Current Index Values for index definition
 
 
@@ -853,7 +853,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexDefinitionSnapshotEntry]",
+            '200': "List[ModelsIndexDefinitionSnapshotEntry]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -882,7 +882,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IndexesIndexDefinitionSnapshotEntry]]:
+    ) -> ApiResponse[List[ModelsIndexDefinitionSnapshotEntry]]:
         """Current Index Values for index definition
 
 
@@ -919,7 +919,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexDefinitionSnapshotEntry]",
+            '200': "List[ModelsIndexDefinitionSnapshotEntry]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -985,7 +985,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexDefinitionSnapshotEntry]",
+            '200': "List[ModelsIndexDefinitionSnapshotEntry]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1079,7 +1079,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IndexesIndexDefinitionSnapshotEntry]:
+    ) -> List[ModelsIndexDefinitionSnapshotEntry]:
         """Historical Index Values for index definition
 
 
@@ -1119,7 +1119,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexDefinitionSnapshotEntry]",
+            '200': "List[ModelsIndexDefinitionSnapshotEntry]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1149,7 +1149,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IndexesIndexDefinitionSnapshotEntry]]:
+    ) -> ApiResponse[List[ModelsIndexDefinitionSnapshotEntry]]:
         """Historical Index Values for index definition
 
 
@@ -1189,7 +1189,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexDefinitionSnapshotEntry]",
+            '200': "List[ModelsIndexDefinitionSnapshotEntry]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1259,7 +1259,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexDefinitionSnapshotEntry]",
+            '200': "List[ModelsIndexDefinitionSnapshotEntry]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1366,7 +1366,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> IndexesIndexValue:
+    ) -> ModelsIndexValue:
         """Current Index Value
 
 
@@ -1403,7 +1403,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IndexesIndexValue",
+            '200': "ModelsIndexValue",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1432,7 +1432,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[IndexesIndexValue]:
+    ) -> ApiResponse[ModelsIndexValue]:
         """Current Index Value
 
 
@@ -1469,7 +1469,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IndexesIndexValue",
+            '200': "ModelsIndexValue",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1535,7 +1535,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "IndexesIndexValue",
+            '200': "ModelsIndexValue",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1631,7 +1631,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IndexesIndexValue]:
+    ) -> List[ModelsIndexValue]:
         """Historical Index Value w/Composition
 
 
@@ -1677,7 +1677,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexValue]",
+            '200': "List[ModelsIndexValue]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1709,7 +1709,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IndexesIndexValue]]:
+    ) -> ApiResponse[List[ModelsIndexValue]]:
         """Historical Index Value w/Composition
 
 
@@ -1755,7 +1755,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexValue]",
+            '200': "List[ModelsIndexValue]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1833,7 +1833,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexValue]",
+            '200': "List[ModelsIndexValue]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1963,7 +1963,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[IndexesIndexTimeseriesItem]:
+    ) -> List[ModelsIndexTimeseriesItem]:
         """Timeseries Index Value
 
 
@@ -2012,7 +2012,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexTimeseriesItem]",
+            '200': "List[ModelsIndexTimeseriesItem]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2045,7 +2045,7 @@ class IndexesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[IndexesIndexTimeseriesItem]]:
+    ) -> ApiResponse[List[ModelsIndexTimeseriesItem]]:
         """Timeseries Index Value
 
 
@@ -2094,7 +2094,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexTimeseriesItem]",
+            '200': "List[ModelsIndexTimeseriesItem]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -2176,7 +2176,7 @@ class IndexesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[IndexesIndexTimeseriesItem]",
+            '200': "List[ModelsIndexTimeseriesItem]",
         }
         response_data = self.api_client.call_api(
             *_param,

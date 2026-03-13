@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a id="Invoke-V1IndexdefMultiassetGet"></a>
 # **Invoke-V1IndexdefMultiassetGet**
-> IndexesIndexMultiAssetWeight[] Invoke-V1IndexdefMultiassetGet<br>
+> ModelsIndexMultiAssetWeight[] Invoke-V1IndexdefMultiassetGet<br>
 
 Get all multi-asset weights
 
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**IndexesIndexMultiAssetWeight[]**](IndexesIndexMultiAssetWeight.md) (PSCustomObject)
+[**ModelsIndexMultiAssetWeight[]**](ModelsIndexMultiAssetWeight.md) (PSCustomObject)
 
 ### Authorization
 
@@ -60,7 +60,7 @@ This endpoint does not need any parameter.
 
 <a id="Invoke-V1IndexdefMultiassetIndexIdGet"></a>
 # **Invoke-V1IndexdefMultiassetIndexIdGet**
-> IndexesIndexMultiAssetWeight[] Invoke-V1IndexdefMultiassetIndexIdGet<br>
+> ModelsIndexMultiAssetWeight[] Invoke-V1IndexdefMultiassetIndexIdGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-IndexId] <String><br>
 
 Get multi-asset weights for specific index
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexMultiAssetWeight[]**](IndexesIndexMultiAssetWeight.md) (PSCustomObject)
+[**ModelsIndexMultiAssetWeight[]**](ModelsIndexMultiAssetWeight.md) (PSCustomObject)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1IndexesGet"></a>
 # **Invoke-V1IndexesGet**
-> IndexesIndexIdentifier[] Invoke-V1IndexesGet<br>
+> ModelsIndexIdentifier[] Invoke-V1IndexesGet<br>
 
 List indexes
 
@@ -138,7 +138,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**IndexesIndexIdentifier[]**](IndexesIndexIdentifier.md) (PSCustomObject)
+[**ModelsIndexIdentifier[]**](ModelsIndexIdentifier.md) (PSCustomObject)
 
 ### Authorization
 
@@ -153,7 +153,7 @@ This endpoint does not need any parameter.
 
 <a id="Invoke-V1IndexesIndexDefinitionIdCurrentSnapshotGet"></a>
 # **Invoke-V1IndexesIndexDefinitionIdCurrentSnapshotGet**
-> IndexesIndexDefinitionSnapshotEntry[] Invoke-V1IndexesIndexDefinitionIdCurrentSnapshotGet<br>
+> ModelsIndexDefinitionSnapshotEntry[] Invoke-V1IndexesIndexDefinitionIdCurrentSnapshotGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-IndexDefinitionId] <String><br>
 
 Current Index Values for index definition
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexDefinitionSnapshotEntry[]**](IndexesIndexDefinitionSnapshotEntry.md) (PSCustomObject)
+[**ModelsIndexDefinitionSnapshotEntry[]**](ModelsIndexDefinitionSnapshotEntry.md) (PSCustomObject)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1IndexesIndexDefinitionIdHistorySnapshotGet"></a>
 # **Invoke-V1IndexesIndexDefinitionIdHistorySnapshotGet**
-> IndexesIndexDefinitionSnapshotEntry[] Invoke-V1IndexesIndexDefinitionIdHistorySnapshotGet<br>
+> ModelsIndexDefinitionSnapshotEntry[] Invoke-V1IndexesIndexDefinitionIdHistorySnapshotGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-IndexDefinitionId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Time] <System.Nullable[System.DateTime]><br>
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexDefinitionSnapshotEntry[]**](IndexesIndexDefinitionSnapshotEntry.md) (PSCustomObject)
+[**ModelsIndexDefinitionSnapshotEntry[]**](ModelsIndexDefinitionSnapshotEntry.md) (PSCustomObject)
 
 ### Authorization
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1IndexesIndexIdCurrentGet"></a>
 # **Invoke-V1IndexesIndexIdCurrentGet**
-> IndexesIndexValue Invoke-V1IndexesIndexIdCurrentGet<br>
+> ModelsIndexValue Invoke-V1IndexesIndexIdCurrentGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-IndexId] <String><br>
 
 Current Index Value
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexValue**](IndexesIndexValue.md) (PSCustomObject)
+[**ModelsIndexValue**](ModelsIndexValue.md) (PSCustomObject)
 
 ### Authorization
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1IndexesIndexIdHistoryGet"></a>
 # **Invoke-V1IndexesIndexIdHistoryGet**
-> IndexesIndexValue[] Invoke-V1IndexesIndexIdHistoryGet<br>
+> ModelsIndexValue[] Invoke-V1IndexesIndexIdHistoryGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-IndexId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TimeStart] <System.Nullable[System.DateTime]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TimeEnd] <System.Nullable[System.DateTime]><br>
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexValue[]**](IndexesIndexValue.md) (PSCustomObject)
+[**ModelsIndexValue[]**](ModelsIndexValue.md) (PSCustomObject)
 
 ### Authorization
 
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1IndexesIndexIdTimeseriesGet"></a>
 # **Invoke-V1IndexesIndexIdTimeseriesGet**
-> IndexesIndexTimeseriesItem[] Invoke-V1IndexesIndexIdTimeseriesGet<br>
+> ModelsIndexTimeseriesItem[] Invoke-V1IndexesIndexIdTimeseriesGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-IndexId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-PeriodId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TimeStart] <String><br>
@@ -407,7 +407,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexTimeseriesItem[]**](IndexesIndexTimeseriesItem.md) (PSCustomObject)
+[**ModelsIndexTimeseriesItem[]**](ModelsIndexTimeseriesItem.md) (PSCustomObject)
 
 ### Authorization
 

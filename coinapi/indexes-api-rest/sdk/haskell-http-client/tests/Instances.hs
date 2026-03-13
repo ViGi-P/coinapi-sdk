@@ -113,69 +113,6 @@ arbitraryReducedMaybeValue n = do
 
 -- * Models
 
-instance Arbitrary IndexesIndexDefinitionSnapshotEntry where
-  arbitrary = sized genIndexesIndexDefinitionSnapshotEntry
-
-genIndexesIndexDefinitionSnapshotEntry :: Int -> Gen IndexesIndexDefinitionSnapshotEntry
-genIndexesIndexDefinitionSnapshotEntry n =
-  IndexesIndexDefinitionSnapshotEntry
-    <$> arbitraryReducedMaybe n -- indexesIndexDefinitionSnapshotEntryIndexId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- indexesIndexDefinitionSnapshotEntryTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- indexesIndexDefinitionSnapshotEntryValue :: Maybe Double
-  
-instance Arbitrary IndexesIndexIdentifier where
-  arbitrary = sized genIndexesIndexIdentifier
-
-genIndexesIndexIdentifier :: Int -> Gen IndexesIndexIdentifier
-genIndexesIndexIdentifier n =
-  IndexesIndexIdentifier
-    <$> arbitraryReducedMaybe n -- indexesIndexIdentifierId :: Maybe Text
-  
-instance Arbitrary IndexesIndexMultiAssetWeight where
-  arbitrary = sized genIndexesIndexMultiAssetWeight
-
-genIndexesIndexMultiAssetWeight :: Int -> Gen IndexesIndexMultiAssetWeight
-genIndexesIndexMultiAssetWeight n =
-  IndexesIndexMultiAssetWeight
-    <$> arbitraryReducedMaybe n -- indexesIndexMultiAssetWeightIndexId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- indexesIndexMultiAssetWeightAssetId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- indexesIndexMultiAssetWeightWeight :: Maybe Double
-  
-instance Arbitrary IndexesIndexTimeseriesItem where
-  arbitrary = sized genIndexesIndexTimeseriesItem
-
-genIndexesIndexTimeseriesItem :: Int -> Gen IndexesIndexTimeseriesItem
-genIndexesIndexTimeseriesItem n =
-  IndexesIndexTimeseriesItem
-    <$> arbitraryReducedMaybe n -- indexesIndexTimeseriesItemTimePeriodStart :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- indexesIndexTimeseriesItemTimePeriodEnd :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- indexesIndexTimeseriesItemTimeOpen :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- indexesIndexTimeseriesItemTimeClose :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- indexesIndexTimeseriesItemValueOpen :: Maybe Double
-    <*> arbitraryReducedMaybe n -- indexesIndexTimeseriesItemValueHigh :: Maybe Double
-    <*> arbitraryReducedMaybe n -- indexesIndexTimeseriesItemValueLow :: Maybe Double
-    <*> arbitraryReducedMaybe n -- indexesIndexTimeseriesItemValueClose :: Maybe Double
-    <*> arbitraryReducedMaybe n -- indexesIndexTimeseriesItemValueCount :: Maybe Integer
-  
-instance Arbitrary IndexesIndexValue where
-  arbitrary = sized genIndexesIndexValue
-
-genIndexesIndexValue :: Int -> Gen IndexesIndexValue
-genIndexesIndexValue n =
-  IndexesIndexValue
-    <$> arbitraryReducedMaybe n -- indexesIndexValueTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- indexesIndexValueValue :: Maybe Double
-    <*> arbitraryReducedMaybe n -- indexesIndexValueComposition :: Maybe [IndexesIndexValueComponent]
-  
-instance Arbitrary IndexesIndexValueComponent where
-  arbitrary = sized genIndexesIndexValueComponent
-
-genIndexesIndexValueComponent :: Int -> Gen IndexesIndexValueComponent
-genIndexesIndexValueComponent n =
-  IndexesIndexValueComponent
-    <$> arbitraryReducedMaybe n -- indexesIndexValueComponentComponentId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- indexesIndexValueComponentComponentValue :: Maybe Double
-  
 instance Arbitrary MetadataExchange where
   arbitrary = sized genMetadataExchange
 
@@ -198,6 +135,69 @@ genMetadataTimeseriesPeriod n =
     <*> arbitraryReducedMaybe n -- metadataTimeseriesPeriodUnitCount :: Maybe Int
     <*> arbitraryReducedMaybe n -- metadataTimeseriesPeriodUnitName :: Maybe Text
     <*> arbitraryReducedMaybe n -- metadataTimeseriesPeriodDisplayName :: Maybe Text
+  
+instance Arbitrary ModelsIndexDefinitionSnapshotEntry where
+  arbitrary = sized genModelsIndexDefinitionSnapshotEntry
+
+genModelsIndexDefinitionSnapshotEntry :: Int -> Gen ModelsIndexDefinitionSnapshotEntry
+genModelsIndexDefinitionSnapshotEntry n =
+  ModelsIndexDefinitionSnapshotEntry
+    <$> arbitraryReducedMaybe n -- modelsIndexDefinitionSnapshotEntryIndexId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsIndexDefinitionSnapshotEntryTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsIndexDefinitionSnapshotEntryValue :: Maybe Double
+  
+instance Arbitrary ModelsIndexIdentifier where
+  arbitrary = sized genModelsIndexIdentifier
+
+genModelsIndexIdentifier :: Int -> Gen ModelsIndexIdentifier
+genModelsIndexIdentifier n =
+  ModelsIndexIdentifier
+    <$> arbitraryReducedMaybe n -- modelsIndexIdentifierId :: Maybe Text
+  
+instance Arbitrary ModelsIndexMultiAssetWeight where
+  arbitrary = sized genModelsIndexMultiAssetWeight
+
+genModelsIndexMultiAssetWeight :: Int -> Gen ModelsIndexMultiAssetWeight
+genModelsIndexMultiAssetWeight n =
+  ModelsIndexMultiAssetWeight
+    <$> arbitraryReducedMaybe n -- modelsIndexMultiAssetWeightIndexId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsIndexMultiAssetWeightAssetId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsIndexMultiAssetWeightWeight :: Maybe Double
+  
+instance Arbitrary ModelsIndexTimeseriesItem where
+  arbitrary = sized genModelsIndexTimeseriesItem
+
+genModelsIndexTimeseriesItem :: Int -> Gen ModelsIndexTimeseriesItem
+genModelsIndexTimeseriesItem n =
+  ModelsIndexTimeseriesItem
+    <$> arbitraryReducedMaybe n -- modelsIndexTimeseriesItemTimePeriodStart :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsIndexTimeseriesItemTimePeriodEnd :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsIndexTimeseriesItemTimeOpen :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsIndexTimeseriesItemTimeClose :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsIndexTimeseriesItemValueOpen :: Maybe Double
+    <*> arbitraryReducedMaybe n -- modelsIndexTimeseriesItemValueHigh :: Maybe Double
+    <*> arbitraryReducedMaybe n -- modelsIndexTimeseriesItemValueLow :: Maybe Double
+    <*> arbitraryReducedMaybe n -- modelsIndexTimeseriesItemValueClose :: Maybe Double
+    <*> arbitraryReducedMaybe n -- modelsIndexTimeseriesItemValueCount :: Maybe Integer
+  
+instance Arbitrary ModelsIndexValue where
+  arbitrary = sized genModelsIndexValue
+
+genModelsIndexValue :: Int -> Gen ModelsIndexValue
+genModelsIndexValue n =
+  ModelsIndexValue
+    <$> arbitraryReducedMaybe n -- modelsIndexValueTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsIndexValueValue :: Maybe Double
+    <*> arbitraryReducedMaybe n -- modelsIndexValueComposition :: Maybe [ModelsIndexValueComponent]
+  
+instance Arbitrary ModelsIndexValueComponent where
+  arbitrary = sized genModelsIndexValueComponent
+
+genModelsIndexValueComponent :: Int -> Gen ModelsIndexValueComponent
+genModelsIndexValueComponent n =
+  ModelsIndexValueComponent
+    <$> arbitraryReducedMaybe n -- modelsIndexValueComponentComponentId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsIndexValueComponentComponentValue :: Maybe Double
   
 
 

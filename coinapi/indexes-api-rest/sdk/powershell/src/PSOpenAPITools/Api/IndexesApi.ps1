@@ -25,7 +25,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-IndexesIndexMultiAssetWeight[]
+ModelsIndexMultiAssetWeight[]
 #>
 function Invoke-V1IndexdefMultiassetGet {
     [CmdletBinding()]
@@ -85,7 +85,7 @@ function Invoke-V1IndexdefMultiassetGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "IndexesIndexMultiAssetWeight[]" `
+                                -ReturnType "ModelsIndexMultiAssetWeight[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -118,7 +118,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-IndexesIndexMultiAssetWeight[]
+ModelsIndexMultiAssetWeight[]
 #>
 function Invoke-V1IndexdefMultiassetIndexIdGet {
     [CmdletBinding()]
@@ -185,7 +185,7 @@ function Invoke-V1IndexdefMultiassetIndexIdGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "IndexesIndexMultiAssetWeight[]" `
+                                -ReturnType "ModelsIndexMultiAssetWeight[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -215,7 +215,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-IndexesIndexIdentifier[]
+ModelsIndexIdentifier[]
 #>
 function Invoke-V1IndexesGet {
     [CmdletBinding()]
@@ -275,7 +275,7 @@ function Invoke-V1IndexesGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "IndexesIndexIdentifier[]" `
+                                -ReturnType "ModelsIndexIdentifier[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -308,7 +308,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-IndexesIndexDefinitionSnapshotEntry[]
+ModelsIndexDefinitionSnapshotEntry[]
 #>
 function Invoke-V1IndexesIndexDefinitionIdCurrentSnapshotGet {
     [CmdletBinding()]
@@ -375,7 +375,7 @@ function Invoke-V1IndexesIndexDefinitionIdCurrentSnapshotGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "IndexesIndexDefinitionSnapshotEntry[]" `
+                                -ReturnType "ModelsIndexDefinitionSnapshotEntry[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -411,7 +411,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-IndexesIndexDefinitionSnapshotEntry[]
+ModelsIndexDefinitionSnapshotEntry[]
 #>
 function Invoke-V1IndexesIndexDefinitionIdHistorySnapshotGet {
     [CmdletBinding()]
@@ -485,7 +485,7 @@ function Invoke-V1IndexesIndexDefinitionIdHistorySnapshotGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "IndexesIndexDefinitionSnapshotEntry[]" `
+                                -ReturnType "ModelsIndexDefinitionSnapshotEntry[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -518,7 +518,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-IndexesIndexValue
+ModelsIndexValue
 #>
 function Invoke-V1IndexesIndexIdCurrentGet {
     [CmdletBinding()]
@@ -585,7 +585,7 @@ function Invoke-V1IndexesIndexIdCurrentGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "IndexesIndexValue" `
+                                -ReturnType "ModelsIndexValue" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -627,7 +627,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-IndexesIndexValue[]
+ModelsIndexValue[]
 #>
 function Invoke-V1IndexesIndexIdHistoryGet {
     [CmdletBinding()]
@@ -715,7 +715,7 @@ function Invoke-V1IndexesIndexIdHistoryGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "IndexesIndexValue[]" `
+                                -ReturnType "ModelsIndexValue[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -760,7 +760,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-IndexesIndexTimeseriesItem[]
+ModelsIndexTimeseriesItem[]
 #>
 function Invoke-V1IndexesIndexIdTimeseriesGet {
     [CmdletBinding()]
@@ -858,7 +858,7 @@ function Invoke-V1IndexesIndexIdTimeseriesGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "IndexesIndexTimeseriesItem[]" `
+                                -ReturnType "ModelsIndexTimeseriesItem[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {

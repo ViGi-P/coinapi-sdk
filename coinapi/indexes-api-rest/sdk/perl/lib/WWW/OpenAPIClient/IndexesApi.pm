@@ -59,10 +59,10 @@ sub new {
     __PACKAGE__->method_documentation->{ 'v1_indexdef_multiasset_get' } = {
         summary => 'Get all multi-asset weights',
         params => $params,
-        returns => 'ARRAY[IndexesIndexMultiAssetWeight]',
+        returns => 'ARRAY[ModelsIndexMultiAssetWeight]',
         };
 }
-# @return ARRAY[IndexesIndexMultiAssetWeight]
+# @return ARRAY[ModelsIndexMultiAssetWeight]
 #
 sub v1_indexdef_multiasset_get {
     my ($self, %args) = @_;
@@ -93,7 +93,7 @@ sub v1_indexdef_multiasset_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[IndexesIndexMultiAssetWeight]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[ModelsIndexMultiAssetWeight]', $response);
     return $_response_object;
 }
 
@@ -114,10 +114,10 @@ sub v1_indexdef_multiasset_get {
     __PACKAGE__->method_documentation->{ 'v1_indexdef_multiasset_index_id_get' } = {
         summary => 'Get multi-asset weights for specific index',
         params => $params,
-        returns => 'ARRAY[IndexesIndexMultiAssetWeight]',
+        returns => 'ARRAY[ModelsIndexMultiAssetWeight]',
         };
 }
-# @return ARRAY[IndexesIndexMultiAssetWeight]
+# @return ARRAY[ModelsIndexMultiAssetWeight]
 #
 sub v1_indexdef_multiasset_index_id_get {
     my ($self, %args) = @_;
@@ -160,7 +160,7 @@ sub v1_indexdef_multiasset_index_id_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[IndexesIndexMultiAssetWeight]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[ModelsIndexMultiAssetWeight]', $response);
     return $_response_object;
 }
 
@@ -175,10 +175,10 @@ sub v1_indexdef_multiasset_index_id_get {
     __PACKAGE__->method_documentation->{ 'v1_indexes_get' } = {
         summary => 'List indexes',
         params => $params,
-        returns => 'ARRAY[IndexesIndexIdentifier]',
+        returns => 'ARRAY[ModelsIndexIdentifier]',
         };
 }
-# @return ARRAY[IndexesIndexIdentifier]
+# @return ARRAY[ModelsIndexIdentifier]
 #
 sub v1_indexes_get {
     my ($self, %args) = @_;
@@ -209,7 +209,7 @@ sub v1_indexes_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[IndexesIndexIdentifier]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[ModelsIndexIdentifier]', $response);
     return $_response_object;
 }
 
@@ -230,10 +230,10 @@ sub v1_indexes_get {
     __PACKAGE__->method_documentation->{ 'v1_indexes_index_definition_id_current_snapshot_get' } = {
         summary => 'Current Index Values for index definition',
         params => $params,
-        returns => 'ARRAY[IndexesIndexDefinitionSnapshotEntry]',
+        returns => 'ARRAY[ModelsIndexDefinitionSnapshotEntry]',
         };
 }
-# @return ARRAY[IndexesIndexDefinitionSnapshotEntry]
+# @return ARRAY[ModelsIndexDefinitionSnapshotEntry]
 #
 sub v1_indexes_index_definition_id_current_snapshot_get {
     my ($self, %args) = @_;
@@ -276,7 +276,7 @@ sub v1_indexes_index_definition_id_current_snapshot_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[IndexesIndexDefinitionSnapshotEntry]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[ModelsIndexDefinitionSnapshotEntry]', $response);
     return $_response_object;
 }
 
@@ -303,10 +303,10 @@ sub v1_indexes_index_definition_id_current_snapshot_get {
     __PACKAGE__->method_documentation->{ 'v1_indexes_index_definition_id_history_snapshot_get' } = {
         summary => 'Historical Index Values for index definition',
         params => $params,
-        returns => 'ARRAY[IndexesIndexDefinitionSnapshotEntry]',
+        returns => 'ARRAY[ModelsIndexDefinitionSnapshotEntry]',
         };
 }
-# @return ARRAY[IndexesIndexDefinitionSnapshotEntry]
+# @return ARRAY[ModelsIndexDefinitionSnapshotEntry]
 #
 sub v1_indexes_index_definition_id_history_snapshot_get {
     my ($self, %args) = @_;
@@ -354,7 +354,7 @@ sub v1_indexes_index_definition_id_history_snapshot_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[IndexesIndexDefinitionSnapshotEntry]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[ModelsIndexDefinitionSnapshotEntry]', $response);
     return $_response_object;
 }
 
@@ -375,10 +375,10 @@ sub v1_indexes_index_definition_id_history_snapshot_get {
     __PACKAGE__->method_documentation->{ 'v1_indexes_index_id_current_get' } = {
         summary => 'Current Index Value',
         params => $params,
-        returns => 'IndexesIndexValue',
+        returns => 'ModelsIndexValue',
         };
 }
-# @return IndexesIndexValue
+# @return ModelsIndexValue
 #
 sub v1_indexes_index_id_current_get {
     my ($self, %args) = @_;
@@ -421,7 +421,7 @@ sub v1_indexes_index_id_current_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('IndexesIndexValue', $response);
+    my $_response_object = $self->{api_client}->deserialize('ModelsIndexValue', $response);
     return $_response_object;
 }
 
@@ -460,10 +460,10 @@ sub v1_indexes_index_id_current_get {
     __PACKAGE__->method_documentation->{ 'v1_indexes_index_id_history_get' } = {
         summary => 'Historical Index Value w/Composition',
         params => $params,
-        returns => 'ARRAY[IndexesIndexValue]',
+        returns => 'ARRAY[ModelsIndexValue]',
         };
 }
-# @return ARRAY[IndexesIndexValue]
+# @return ARRAY[ModelsIndexValue]
 #
 sub v1_indexes_index_id_history_get {
     my ($self, %args) = @_;
@@ -521,7 +521,7 @@ sub v1_indexes_index_id_history_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[IndexesIndexValue]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[ModelsIndexValue]', $response);
     return $_response_object;
 }
 
@@ -566,10 +566,10 @@ sub v1_indexes_index_id_history_get {
     __PACKAGE__->method_documentation->{ 'v1_indexes_index_id_timeseries_get' } = {
         summary => 'Timeseries Index Value',
         params => $params,
-        returns => 'ARRAY[IndexesIndexTimeseriesItem]',
+        returns => 'ARRAY[ModelsIndexTimeseriesItem]',
         };
 }
-# @return ARRAY[IndexesIndexTimeseriesItem]
+# @return ARRAY[ModelsIndexTimeseriesItem]
 #
 sub v1_indexes_index_id_timeseries_get {
     my ($self, %args) = @_;
@@ -647,7 +647,7 @@ sub v1_indexes_index_id_timeseries_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[IndexesIndexTimeseriesItem]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[ModelsIndexTimeseriesItem]', $response);
     return $_response_object;
 }
 

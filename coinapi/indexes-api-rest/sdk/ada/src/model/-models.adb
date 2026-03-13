@@ -17,255 +17,6 @@ package body .Models is
 
    procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
                         Name  : in String;
-                        Value : in .Models.IndexesIndexDefinitionSnapshotEntry_Type) is
-   begin
-      Into.Start_Entity (Name);
-      Into.Write_Entity ("index_id", Value.Index_Id);
-      if not Value.Timestamp.Is_Null then
-         Into.Write_Entity ("timestamp", Value.Timestamp);
-      end if;
-      Serialize (Into, "value", Value.Value);
-      Into.End_Entity (Name);
-   end Serialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in IndexesIndexDefinitionSnapshotEntry_Type_Vectors.Vector) is
-   begin
-      Into.Start_Array (Name);
-      for Item of Value loop
-         Serialize (Into, "", Item);
-      end loop;
-      Into.End_Array (Name);
-   end Serialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.IndexesIndexDefinitionSnapshotEntry_Type) is
-      Object : Swagger.Value_Type;
-   begin
-      Swagger.Streams.Deserialize (From, Name, Object);
-      Swagger.Streams.Deserialize (Object, "index_id", Value.Index_Id);
-      Swagger.Streams.Deserialize (Object, "timestamp", Value.Timestamp);
-      Swagger.Streams.Deserialize (Object, "value", Value.Value);
-   end Deserialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out IndexesIndexDefinitionSnapshotEntry_Type_Vectors.Vector) is
-      List : Swagger.Value_Array_Type;
-      Item : .Models.IndexesIndexDefinitionSnapshotEntry_Type;
-   begin
-      Value.Clear;
-      Swagger.Streams.Deserialize (From, Name, List);
-      for Data of List loop
-         Deserialize (Data, "", Item);
-         Value.Append (Item);
-      end loop;
-   end Deserialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.IndexesIndexIdentifier_Type) is
-   begin
-      Into.Start_Entity (Name);
-      Into.Write_Entity ("id", Value.Id);
-      Into.End_Entity (Name);
-   end Serialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in IndexesIndexIdentifier_Type_Vectors.Vector) is
-   begin
-      Into.Start_Array (Name);
-      for Item of Value loop
-         Serialize (Into, "", Item);
-      end loop;
-      Into.End_Array (Name);
-   end Serialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.IndexesIndexIdentifier_Type) is
-      Object : Swagger.Value_Type;
-   begin
-      Swagger.Streams.Deserialize (From, Name, Object);
-      Swagger.Streams.Deserialize (Object, "id", Value.Id);
-   end Deserialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out IndexesIndexIdentifier_Type_Vectors.Vector) is
-      List : Swagger.Value_Array_Type;
-      Item : .Models.IndexesIndexIdentifier_Type;
-   begin
-      Value.Clear;
-      Swagger.Streams.Deserialize (From, Name, List);
-      for Data of List loop
-         Deserialize (Data, "", Item);
-         Value.Append (Item);
-      end loop;
-   end Deserialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.IndexesIndexMultiAssetWeight_Type) is
-   begin
-      Into.Start_Entity (Name);
-      Into.Write_Entity ("indexId", Value.Index_Id);
-      Into.Write_Entity ("assetId", Value.Asset_Id);
-      Serialize (Into, "weight", Value.Weight);
-      Into.End_Entity (Name);
-   end Serialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in IndexesIndexMultiAssetWeight_Type_Vectors.Vector) is
-   begin
-      Into.Start_Array (Name);
-      for Item of Value loop
-         Serialize (Into, "", Item);
-      end loop;
-      Into.End_Array (Name);
-   end Serialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.IndexesIndexMultiAssetWeight_Type) is
-      Object : Swagger.Value_Type;
-   begin
-      Swagger.Streams.Deserialize (From, Name, Object);
-      Swagger.Streams.Deserialize (Object, "indexId", Value.Index_Id);
-      Swagger.Streams.Deserialize (Object, "assetId", Value.Asset_Id);
-      Swagger.Streams.Deserialize (Object, "weight", Value.Weight);
-   end Deserialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out IndexesIndexMultiAssetWeight_Type_Vectors.Vector) is
-      List : Swagger.Value_Array_Type;
-      Item : .Models.IndexesIndexMultiAssetWeight_Type;
-   begin
-      Value.Clear;
-      Swagger.Streams.Deserialize (From, Name, List);
-      for Data of List loop
-         Deserialize (Data, "", Item);
-         Value.Append (Item);
-      end loop;
-   end Deserialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.IndexesIndexTimeseriesItem_Type) is
-   begin
-      Into.Start_Entity (Name);
-      if not Value.Time_Period_Start.Is_Null then
-         Into.Write_Entity ("time_period_start", Value.Time_Period_Start);
-      end if;
-      if not Value.Time_Period_End.Is_Null then
-         Into.Write_Entity ("time_period_end", Value.Time_Period_End);
-      end if;
-      Into.Write_Entity ("time_open", Value.Time_Open);
-      Into.Write_Entity ("time_close", Value.Time_Close);
-      Serialize (Into, "value_open", Value.Value_Open);
-      Serialize (Into, "value_high", Value.Value_High);
-      Serialize (Into, "value_low", Value.Value_Low);
-      Serialize (Into, "value_close", Value.Value_Close);
-      if not Value.Value_Count.Is_Null then
-         Into.Write_Entity ("value_count", Value.Value_Count);
-      end if;
-      Into.End_Entity (Name);
-   end Serialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in IndexesIndexTimeseriesItem_Type_Vectors.Vector) is
-   begin
-      Into.Start_Array (Name);
-      for Item of Value loop
-         Serialize (Into, "", Item);
-      end loop;
-      Into.End_Array (Name);
-   end Serialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.IndexesIndexTimeseriesItem_Type) is
-      Object : Swagger.Value_Type;
-   begin
-      Swagger.Streams.Deserialize (From, Name, Object);
-      Swagger.Streams.Deserialize (Object, "time_period_start", Value.Time_Period_Start);
-      Swagger.Streams.Deserialize (Object, "time_period_end", Value.Time_Period_End);
-      Swagger.Streams.Deserialize (Object, "time_open", Value.Time_Open);
-      Swagger.Streams.Deserialize (Object, "time_close", Value.Time_Close);
-      Swagger.Streams.Deserialize (Object, "value_open", Value.Value_Open);
-      Swagger.Streams.Deserialize (Object, "value_high", Value.Value_High);
-      Swagger.Streams.Deserialize (Object, "value_low", Value.Value_Low);
-      Swagger.Streams.Deserialize (Object, "value_close", Value.Value_Close);
-      Swagger.Streams.Deserialize (Object, "value_count", Value.Value_Count);
-   end Deserialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out IndexesIndexTimeseriesItem_Type_Vectors.Vector) is
-      List : Swagger.Value_Array_Type;
-      Item : .Models.IndexesIndexTimeseriesItem_Type;
-   begin
-      Value.Clear;
-      Swagger.Streams.Deserialize (From, Name, List);
-      for Data of List loop
-         Deserialize (Data, "", Item);
-         Value.Append (Item);
-      end loop;
-   end Deserialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.IndexesIndexValueComponent_Type) is
-   begin
-      Into.Start_Entity (Name);
-      Into.Write_Entity ("component_id", Value.Component_Id);
-      Serialize (Into, "component_value", Value.Component_Value);
-      Into.End_Entity (Name);
-   end Serialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in IndexesIndexValueComponent_Type_Vectors.Vector) is
-   begin
-      Into.Start_Array (Name);
-      for Item of Value loop
-         Serialize (Into, "", Item);
-      end loop;
-      Into.End_Array (Name);
-   end Serialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.IndexesIndexValueComponent_Type) is
-      Object : Swagger.Value_Type;
-   begin
-      Swagger.Streams.Deserialize (From, Name, Object);
-      Swagger.Streams.Deserialize (Object, "component_id", Value.Component_Id);
-      Swagger.Streams.Deserialize (Object, "component_value", Value.Component_Value);
-   end Deserialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out IndexesIndexValueComponent_Type_Vectors.Vector) is
-      List : Swagger.Value_Array_Type;
-      Item : .Models.IndexesIndexValueComponent_Type;
-   begin
-      Value.Clear;
-      Swagger.Streams.Deserialize (From, Name, List);
-      for Data of List loop
-         Deserialize (Data, "", Item);
-         Value.Append (Item);
-      end loop;
-   end Deserialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
                         Value : in .Models.MetadataExchange_Type) is
    begin
       Into.Start_Entity (Name);
@@ -370,7 +121,256 @@ package body .Models is
 
    procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
                         Name  : in String;
-                        Value : in .Models.IndexesIndexValue_Type) is
+                        Value : in .Models.ModelsIndexDefinitionSnapshotEntry_Type) is
+   begin
+      Into.Start_Entity (Name);
+      Into.Write_Entity ("index_id", Value.Index_Id);
+      if not Value.Timestamp.Is_Null then
+         Into.Write_Entity ("timestamp", Value.Timestamp);
+      end if;
+      Serialize (Into, "value", Value.Value);
+      Into.End_Entity (Name);
+   end Serialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in ModelsIndexDefinitionSnapshotEntry_Type_Vectors.Vector) is
+   begin
+      Into.Start_Array (Name);
+      for Item of Value loop
+         Serialize (Into, "", Item);
+      end loop;
+      Into.End_Array (Name);
+   end Serialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.ModelsIndexDefinitionSnapshotEntry_Type) is
+      Object : Swagger.Value_Type;
+   begin
+      Swagger.Streams.Deserialize (From, Name, Object);
+      Swagger.Streams.Deserialize (Object, "index_id", Value.Index_Id);
+      Swagger.Streams.Deserialize (Object, "timestamp", Value.Timestamp);
+      Swagger.Streams.Deserialize (Object, "value", Value.Value);
+   end Deserialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out ModelsIndexDefinitionSnapshotEntry_Type_Vectors.Vector) is
+      List : Swagger.Value_Array_Type;
+      Item : .Models.ModelsIndexDefinitionSnapshotEntry_Type;
+   begin
+      Value.Clear;
+      Swagger.Streams.Deserialize (From, Name, List);
+      for Data of List loop
+         Deserialize (Data, "", Item);
+         Value.Append (Item);
+      end loop;
+   end Deserialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.ModelsIndexIdentifier_Type) is
+   begin
+      Into.Start_Entity (Name);
+      Into.Write_Entity ("id", Value.Id);
+      Into.End_Entity (Name);
+   end Serialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in ModelsIndexIdentifier_Type_Vectors.Vector) is
+   begin
+      Into.Start_Array (Name);
+      for Item of Value loop
+         Serialize (Into, "", Item);
+      end loop;
+      Into.End_Array (Name);
+   end Serialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.ModelsIndexIdentifier_Type) is
+      Object : Swagger.Value_Type;
+   begin
+      Swagger.Streams.Deserialize (From, Name, Object);
+      Swagger.Streams.Deserialize (Object, "id", Value.Id);
+   end Deserialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out ModelsIndexIdentifier_Type_Vectors.Vector) is
+      List : Swagger.Value_Array_Type;
+      Item : .Models.ModelsIndexIdentifier_Type;
+   begin
+      Value.Clear;
+      Swagger.Streams.Deserialize (From, Name, List);
+      for Data of List loop
+         Deserialize (Data, "", Item);
+         Value.Append (Item);
+      end loop;
+   end Deserialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.ModelsIndexMultiAssetWeight_Type) is
+   begin
+      Into.Start_Entity (Name);
+      Into.Write_Entity ("indexId", Value.Index_Id);
+      Into.Write_Entity ("assetId", Value.Asset_Id);
+      Serialize (Into, "weight", Value.Weight);
+      Into.End_Entity (Name);
+   end Serialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in ModelsIndexMultiAssetWeight_Type_Vectors.Vector) is
+   begin
+      Into.Start_Array (Name);
+      for Item of Value loop
+         Serialize (Into, "", Item);
+      end loop;
+      Into.End_Array (Name);
+   end Serialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.ModelsIndexMultiAssetWeight_Type) is
+      Object : Swagger.Value_Type;
+   begin
+      Swagger.Streams.Deserialize (From, Name, Object);
+      Swagger.Streams.Deserialize (Object, "indexId", Value.Index_Id);
+      Swagger.Streams.Deserialize (Object, "assetId", Value.Asset_Id);
+      Swagger.Streams.Deserialize (Object, "weight", Value.Weight);
+   end Deserialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out ModelsIndexMultiAssetWeight_Type_Vectors.Vector) is
+      List : Swagger.Value_Array_Type;
+      Item : .Models.ModelsIndexMultiAssetWeight_Type;
+   begin
+      Value.Clear;
+      Swagger.Streams.Deserialize (From, Name, List);
+      for Data of List loop
+         Deserialize (Data, "", Item);
+         Value.Append (Item);
+      end loop;
+   end Deserialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.ModelsIndexTimeseriesItem_Type) is
+   begin
+      Into.Start_Entity (Name);
+      if not Value.Time_Period_Start.Is_Null then
+         Into.Write_Entity ("time_period_start", Value.Time_Period_Start);
+      end if;
+      if not Value.Time_Period_End.Is_Null then
+         Into.Write_Entity ("time_period_end", Value.Time_Period_End);
+      end if;
+      Into.Write_Entity ("time_open", Value.Time_Open);
+      Into.Write_Entity ("time_close", Value.Time_Close);
+      Serialize (Into, "value_open", Value.Value_Open);
+      Serialize (Into, "value_high", Value.Value_High);
+      Serialize (Into, "value_low", Value.Value_Low);
+      Serialize (Into, "value_close", Value.Value_Close);
+      if not Value.Value_Count.Is_Null then
+         Into.Write_Entity ("value_count", Value.Value_Count);
+      end if;
+      Into.End_Entity (Name);
+   end Serialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in ModelsIndexTimeseriesItem_Type_Vectors.Vector) is
+   begin
+      Into.Start_Array (Name);
+      for Item of Value loop
+         Serialize (Into, "", Item);
+      end loop;
+      Into.End_Array (Name);
+   end Serialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.ModelsIndexTimeseriesItem_Type) is
+      Object : Swagger.Value_Type;
+   begin
+      Swagger.Streams.Deserialize (From, Name, Object);
+      Swagger.Streams.Deserialize (Object, "time_period_start", Value.Time_Period_Start);
+      Swagger.Streams.Deserialize (Object, "time_period_end", Value.Time_Period_End);
+      Swagger.Streams.Deserialize (Object, "time_open", Value.Time_Open);
+      Swagger.Streams.Deserialize (Object, "time_close", Value.Time_Close);
+      Swagger.Streams.Deserialize (Object, "value_open", Value.Value_Open);
+      Swagger.Streams.Deserialize (Object, "value_high", Value.Value_High);
+      Swagger.Streams.Deserialize (Object, "value_low", Value.Value_Low);
+      Swagger.Streams.Deserialize (Object, "value_close", Value.Value_Close);
+      Swagger.Streams.Deserialize (Object, "value_count", Value.Value_Count);
+   end Deserialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out ModelsIndexTimeseriesItem_Type_Vectors.Vector) is
+      List : Swagger.Value_Array_Type;
+      Item : .Models.ModelsIndexTimeseriesItem_Type;
+   begin
+      Value.Clear;
+      Swagger.Streams.Deserialize (From, Name, List);
+      for Data of List loop
+         Deserialize (Data, "", Item);
+         Value.Append (Item);
+      end loop;
+   end Deserialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.ModelsIndexValueComponent_Type) is
+   begin
+      Into.Start_Entity (Name);
+      Into.Write_Entity ("component_id", Value.Component_Id);
+      Serialize (Into, "component_value", Value.Component_Value);
+      Into.End_Entity (Name);
+   end Serialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in ModelsIndexValueComponent_Type_Vectors.Vector) is
+   begin
+      Into.Start_Array (Name);
+      for Item of Value loop
+         Serialize (Into, "", Item);
+      end loop;
+      Into.End_Array (Name);
+   end Serialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.ModelsIndexValueComponent_Type) is
+      Object : Swagger.Value_Type;
+   begin
+      Swagger.Streams.Deserialize (From, Name, Object);
+      Swagger.Streams.Deserialize (Object, "component_id", Value.Component_Id);
+      Swagger.Streams.Deserialize (Object, "component_value", Value.Component_Value);
+   end Deserialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out ModelsIndexValueComponent_Type_Vectors.Vector) is
+      List : Swagger.Value_Array_Type;
+      Item : .Models.ModelsIndexValueComponent_Type;
+   begin
+      Value.Clear;
+      Swagger.Streams.Deserialize (From, Name, List);
+      for Data of List loop
+         Deserialize (Data, "", Item);
+         Value.Append (Item);
+      end loop;
+   end Deserialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.ModelsIndexValue_Type) is
    begin
       Into.Start_Entity (Name);
       if not Value.Timestamp.Is_Null then
@@ -383,7 +383,7 @@ package body .Models is
 
    procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
                         Name  : in String;
-                        Value : in IndexesIndexValue_Type_Vectors.Vector) is
+                        Value : in ModelsIndexValue_Type_Vectors.Vector) is
    begin
       Into.Start_Array (Name);
       for Item of Value loop
@@ -394,7 +394,7 @@ package body .Models is
 
    procedure Deserialize (From  : in Swagger.Value_Type;
                           Name  : in String;
-                          Value : out .Models.IndexesIndexValue_Type) is
+                          Value : out .Models.ModelsIndexValue_Type) is
       Object : Swagger.Value_Type;
    begin
       Swagger.Streams.Deserialize (From, Name, Object);
@@ -405,9 +405,9 @@ package body .Models is
 
    procedure Deserialize (From  : in Swagger.Value_Type;
                           Name  : in String;
-                          Value : in out IndexesIndexValue_Type_Vectors.Vector) is
+                          Value : in out ModelsIndexValue_Type_Vectors.Vector) is
       List : Swagger.Value_Array_Type;
-      Item : .Models.IndexesIndexValue_Type;
+      Item : .Models.ModelsIndexValue_Type;
    begin
       Value.Clear;
       Swagger.Streams.Deserialize (From, Name, List);

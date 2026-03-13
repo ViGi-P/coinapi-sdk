@@ -35,7 +35,7 @@ describe 'IndexesApi' do
   # unit tests for v1_indexdef_multiasset_get
   # Get all multi-asset weights
   # @param [Hash] opts the optional parameters
-  # @return [Array<IndexesIndexMultiAssetWeight>]
+  # @return [Array<ModelsIndexMultiAssetWeight>]
   describe 'v1_indexdef_multiasset_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -46,7 +46,7 @@ describe 'IndexesApi' do
   # Get multi-asset weights for specific index
   # @param index_id 
   # @param [Hash] opts the optional parameters
-  # @return [Array<IndexesIndexMultiAssetWeight>]
+  # @return [Array<ModelsIndexMultiAssetWeight>]
   describe 'v1_indexdef_multiasset_index_id_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -56,7 +56,7 @@ describe 'IndexesApi' do
   # unit tests for v1_indexes_get
   # List indexes
   # @param [Hash] opts the optional parameters
-  # @return [Array<IndexesIndexIdentifier>]
+  # @return [Array<ModelsIndexIdentifier>]
   describe 'v1_indexes_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -67,7 +67,7 @@ describe 'IndexesApi' do
   # Current Index Values for index definition
   # @param index_definition_id 
   # @param [Hash] opts the optional parameters
-  # @return [Array<IndexesIndexDefinitionSnapshotEntry>]
+  # @return [Array<ModelsIndexDefinitionSnapshotEntry>]
   describe 'v1_indexes_index_definition_id_current_snapshot_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -79,7 +79,7 @@ describe 'IndexesApi' do
   # @param index_definition_id 
   # @param [Hash] opts the optional parameters
   # @option opts [Time] :time 
-  # @return [Array<IndexesIndexDefinitionSnapshotEntry>]
+  # @return [Array<ModelsIndexDefinitionSnapshotEntry>]
   describe 'v1_indexes_index_definition_id_history_snapshot_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -90,7 +90,7 @@ describe 'IndexesApi' do
   # Current Index Value
   # @param index_id 
   # @param [Hash] opts the optional parameters
-  # @return [IndexesIndexValue]
+  # @return [ModelsIndexValue]
   describe 'v1_indexes_index_id_current_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -104,7 +104,7 @@ describe 'IndexesApi' do
   # @option opts [Time] :time_start 
   # @option opts [Time] :time_end 
   # @option opts [Integer] :limit 
-  # @return [Array<IndexesIndexValue>]
+  # @return [Array<ModelsIndexValue>]
   describe 'v1_indexes_index_id_history_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -119,7 +119,7 @@ describe 'IndexesApi' do
   # @param time_end Timeseries ending time in ISO 8601
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  # @return [Array<IndexesIndexTimeseriesItem>]
+  # @return [Array<ModelsIndexTimeseriesItem>]
   describe 'v1_indexes_index_id_timeseries_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

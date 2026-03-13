@@ -16,7 +16,7 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 <a id="v1IndexdefMultiassetGet"></a>
 # **v1IndexdefMultiassetGet**
-> kotlin.collections.List&lt;IndexesIndexMultiAssetWeight&gt; v1IndexdefMultiassetGet()
+> kotlin.collections.List&lt;ModelsIndexMultiAssetWeight&gt; v1IndexdefMultiassetGet()
 
 Get all multi-asset weights
 
@@ -28,7 +28,7 @@ Get all multi-asset weights
 
 val apiInstance = IndexesApi()
 try {
-    val result : kotlin.collections.List<IndexesIndexMultiAssetWeight> = apiInstance.v1IndexdefMultiassetGet()
+    val result : kotlin.collections.List<ModelsIndexMultiAssetWeight> = apiInstance.v1IndexdefMultiassetGet()
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling IndexesApi#v1IndexdefMultiassetGet")
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**kotlin.collections.List&lt;IndexesIndexMultiAssetWeight&gt;**](IndexesIndexMultiAssetWeight.md)
+[**kotlin.collections.List&lt;ModelsIndexMultiAssetWeight&gt;**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ Configure JWT:
 
 <a id="v1IndexdefMultiassetIndexIdGet"></a>
 # **v1IndexdefMultiassetIndexIdGet**
-> kotlin.collections.List&lt;IndexesIndexMultiAssetWeight&gt; v1IndexdefMultiassetIndexIdGet(indexId)
+> kotlin.collections.List&lt;ModelsIndexMultiAssetWeight&gt; v1IndexdefMultiassetIndexIdGet(indexId)
 
 Get multi-asset weights for specific index
 
@@ -75,7 +75,7 @@ Get multi-asset weights for specific index
 val apiInstance = IndexesApi()
 val indexId : kotlin.String = indexId_example // kotlin.String | 
 try {
-    val result : kotlin.collections.List<IndexesIndexMultiAssetWeight> = apiInstance.v1IndexdefMultiassetIndexIdGet(indexId)
+    val result : kotlin.collections.List<ModelsIndexMultiAssetWeight> = apiInstance.v1IndexdefMultiassetIndexIdGet(indexId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling IndexesApi#v1IndexdefMultiassetIndexIdGet")
@@ -93,7 +93,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;IndexesIndexMultiAssetWeight&gt;**](IndexesIndexMultiAssetWeight.md)
+[**kotlin.collections.List&lt;ModelsIndexMultiAssetWeight&gt;**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ Configure JWT:
 
 <a id="v1IndexesGet"></a>
 # **v1IndexesGet**
-> kotlin.collections.List&lt;IndexesIndexIdentifier&gt; v1IndexesGet()
+> kotlin.collections.List&lt;ModelsIndexIdentifier&gt; v1IndexesGet()
 
 List indexes
 
@@ -123,7 +123,7 @@ List indexes
 
 val apiInstance = IndexesApi()
 try {
-    val result : kotlin.collections.List<IndexesIndexIdentifier> = apiInstance.v1IndexesGet()
+    val result : kotlin.collections.List<ModelsIndexIdentifier> = apiInstance.v1IndexesGet()
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling IndexesApi#v1IndexesGet")
@@ -139,7 +139,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**kotlin.collections.List&lt;IndexesIndexIdentifier&gt;**](IndexesIndexIdentifier.md)
+[**kotlin.collections.List&lt;ModelsIndexIdentifier&gt;**](ModelsIndexIdentifier.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ Configure JWT:
 
 <a id="v1IndexesIndexDefinitionIdCurrentSnapshotGet"></a>
 # **v1IndexesIndexDefinitionIdCurrentSnapshotGet**
-> kotlin.collections.List&lt;IndexesIndexDefinitionSnapshotEntry&gt; v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId)
+> kotlin.collections.List&lt;ModelsIndexDefinitionSnapshotEntry&gt; v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId)
 
 Current Index Values for index definition
 
@@ -170,7 +170,7 @@ Current Index Values for index definition
 val apiInstance = IndexesApi()
 val indexDefinitionId : kotlin.String = indexDefinitionId_example // kotlin.String | 
 try {
-    val result : kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry> = apiInstance.v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId)
+    val result : kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry> = apiInstance.v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling IndexesApi#v1IndexesIndexDefinitionIdCurrentSnapshotGet")
@@ -188,7 +188,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;IndexesIndexDefinitionSnapshotEntry&gt;**](IndexesIndexDefinitionSnapshotEntry.md)
+[**kotlin.collections.List&lt;ModelsIndexDefinitionSnapshotEntry&gt;**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ Configure JWT:
 
 <a id="v1IndexesIndexDefinitionIdHistorySnapshotGet"></a>
 # **v1IndexesIndexDefinitionIdHistorySnapshotGet**
-> kotlin.collections.List&lt;IndexesIndexDefinitionSnapshotEntry&gt; v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time)
+> kotlin.collections.List&lt;ModelsIndexDefinitionSnapshotEntry&gt; v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time)
 
 Historical Index Values for index definition
 
@@ -220,7 +220,7 @@ val apiInstance = IndexesApi()
 val indexDefinitionId : kotlin.String = indexDefinitionId_example // kotlin.String | 
 val time : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | 
 try {
-    val result : kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry> = apiInstance.v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time)
+    val result : kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry> = apiInstance.v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling IndexesApi#v1IndexesIndexDefinitionIdHistorySnapshotGet")
@@ -239,7 +239,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;IndexesIndexDefinitionSnapshotEntry&gt;**](IndexesIndexDefinitionSnapshotEntry.md)
+[**kotlin.collections.List&lt;ModelsIndexDefinitionSnapshotEntry&gt;**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ Configure JWT:
 
 <a id="v1IndexesIndexIdCurrentGet"></a>
 # **v1IndexesIndexIdCurrentGet**
-> IndexesIndexValue v1IndexesIndexIdCurrentGet(indexId)
+> ModelsIndexValue v1IndexesIndexIdCurrentGet(indexId)
 
 Current Index Value
 
@@ -270,7 +270,7 @@ Current Index Value
 val apiInstance = IndexesApi()
 val indexId : kotlin.String = indexId_example // kotlin.String | 
 try {
-    val result : IndexesIndexValue = apiInstance.v1IndexesIndexIdCurrentGet(indexId)
+    val result : ModelsIndexValue = apiInstance.v1IndexesIndexIdCurrentGet(indexId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling IndexesApi#v1IndexesIndexIdCurrentGet")
@@ -288,7 +288,7 @@ try {
 
 ### Return type
 
-[**IndexesIndexValue**](IndexesIndexValue.md)
+[**ModelsIndexValue**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -306,7 +306,7 @@ Configure JWT:
 
 <a id="v1IndexesIndexIdHistoryGet"></a>
 # **v1IndexesIndexIdHistoryGet**
-> kotlin.collections.List&lt;IndexesIndexValue&gt; v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit)
+> kotlin.collections.List&lt;ModelsIndexValue&gt; v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit)
 
 Historical Index Value w/Composition
 
@@ -322,7 +322,7 @@ val timeStart : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.tim
 val timeEnd : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | 
 val limit : kotlin.Int = 56 // kotlin.Int | 
 try {
-    val result : kotlin.collections.List<IndexesIndexValue> = apiInstance.v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit)
+    val result : kotlin.collections.List<ModelsIndexValue> = apiInstance.v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling IndexesApi#v1IndexesIndexIdHistoryGet")
@@ -343,7 +343,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;IndexesIndexValue&gt;**](IndexesIndexValue.md)
+[**kotlin.collections.List&lt;ModelsIndexValue&gt;**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -361,7 +361,7 @@ Configure JWT:
 
 <a id="v1IndexesIndexIdTimeseriesGet"></a>
 # **v1IndexesIndexIdTimeseriesGet**
-> kotlin.collections.List&lt;IndexesIndexTimeseriesItem&gt; v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit)
+> kotlin.collections.List&lt;ModelsIndexTimeseriesItem&gt; v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit)
 
 Timeseries Index Value
 
@@ -378,7 +378,7 @@ val timeStart : kotlin.String = timeStart_example // kotlin.String | Timeseries 
 val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601
 val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 try {
-    val result : kotlin.collections.List<IndexesIndexTimeseriesItem> = apiInstance.v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit)
+    val result : kotlin.collections.List<ModelsIndexTimeseriesItem> = apiInstance.v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling IndexesApi#v1IndexesIndexIdTimeseriesGet")
@@ -400,7 +400,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;IndexesIndexTimeseriesItem&gt;**](IndexesIndexTimeseriesItem.md)
+[**kotlin.collections.List&lt;ModelsIndexTimeseriesItem&gt;**](ModelsIndexTimeseriesItem.md)
 
 ### Authorization
 

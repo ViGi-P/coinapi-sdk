@@ -13,14 +13,14 @@ export(ApiClient)
 export(ApiResponse)
 
 # Models
-export(IndexesIndexDefinitionSnapshotEntry)
-export(IndexesIndexIdentifier)
-export(IndexesIndexMultiAssetWeight)
-export(IndexesIndexTimeseriesItem)
-export(IndexesIndexValue)
-export(IndexesIndexValueComponent)
 export(MetadataExchange)
 export(MetadataTimeseriesPeriod)
+export(ModelsIndexDefinitionSnapshotEntry)
+export(ModelsIndexIdentifier)
+export(ModelsIndexMultiAssetWeight)
+export(ModelsIndexTimeseriesItem)
+export(ModelsIndexValue)
+export(ModelsIndexValueComponent)
 
 # APIs
 export(IndexesApi)

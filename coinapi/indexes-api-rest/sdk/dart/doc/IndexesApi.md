@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **v1IndexdefMultiassetGet**
-> List<IndexesIndexMultiAssetWeight> v1IndexdefMultiassetGet()
+> List<ModelsIndexMultiAssetWeight> v1IndexdefMultiassetGet()
 
 Get all multi-asset weights
 
@@ -53,7 +53,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<IndexesIndexMultiAssetWeight>**](IndexesIndexMultiAssetWeight.md)
+[**List<ModelsIndexMultiAssetWeight>**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1IndexdefMultiassetIndexIdGet**
-> List<IndexesIndexMultiAssetWeight> v1IndexdefMultiassetIndexIdGet(indexId)
+> List<ModelsIndexMultiAssetWeight> v1IndexdefMultiassetIndexIdGet(indexId)
 
 Get multi-asset weights for specific index
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<IndexesIndexMultiAssetWeight>**](IndexesIndexMultiAssetWeight.md)
+[**List<ModelsIndexMultiAssetWeight>**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1IndexesGet**
-> List<IndexesIndexIdentifier> v1IndexesGet()
+> List<ModelsIndexIdentifier> v1IndexesGet()
 
 List indexes
 
@@ -151,7 +151,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<IndexesIndexIdentifier>**](IndexesIndexIdentifier.md)
+[**List<ModelsIndexIdentifier>**](ModelsIndexIdentifier.md)
 
 ### Authorization
 
@@ -165,7 +165,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1IndexesIndexDefinitionIdCurrentSnapshotGet**
-> List<IndexesIndexDefinitionSnapshotEntry> v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId)
+> List<ModelsIndexDefinitionSnapshotEntry> v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId)
 
 Current Index Values for index definition
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<IndexesIndexDefinitionSnapshotEntry>**](IndexesIndexDefinitionSnapshotEntry.md)
+[**List<ModelsIndexDefinitionSnapshotEntry>**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1IndexesIndexDefinitionIdHistorySnapshotGet**
-> List<IndexesIndexDefinitionSnapshotEntry> v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time)
+> List<ModelsIndexDefinitionSnapshotEntry> v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time)
 
 Historical Index Values for index definition
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<IndexesIndexDefinitionSnapshotEntry>**](IndexesIndexDefinitionSnapshotEntry.md)
+[**List<ModelsIndexDefinitionSnapshotEntry>**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1IndexesIndexIdCurrentGet**
-> IndexesIndexValue v1IndexesIndexIdCurrentGet(indexId)
+> ModelsIndexValue v1IndexesIndexIdCurrentGet(indexId)
 
 Current Index Value
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexValue**](IndexesIndexValue.md)
+[**ModelsIndexValue**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1IndexesIndexIdHistoryGet**
-> List<IndexesIndexValue> v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit)
+> List<ModelsIndexValue> v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit)
 
 Historical Index Value w/Composition
 
@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<IndexesIndexValue>**](IndexesIndexValue.md)
+[**List<ModelsIndexValue>**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -377,7 +377,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1IndexesIndexIdTimeseriesGet**
-> List<IndexesIndexTimeseriesItem> v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit)
+> List<ModelsIndexTimeseriesItem> v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit)
 
 Timeseries Index Value
 
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<IndexesIndexTimeseriesItem>**](IndexesIndexTimeseriesItem.md)
+[**List<ModelsIndexTimeseriesItem>**](ModelsIndexTimeseriesItem.md)
 
 ### Authorization
 

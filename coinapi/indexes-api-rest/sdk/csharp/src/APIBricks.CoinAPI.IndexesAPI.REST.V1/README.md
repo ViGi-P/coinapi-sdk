@@ -11,7 +11,7 @@ outputDir: out
 
 # https://openapi-generator.tech/docs/generators/csharp
 additionalProperties:
-  packageGuid: '{8577D567-84E1-4069-8A4F-A2DF97719E18}'
+  packageGuid: '{4EEE67B7-1AFD-4E86-A009-284B58DB5843}'
 
 # https://openapi-generator.tech/docs/integrations/#github-integration
 # gitHost:
@@ -56,7 +56,7 @@ namespace YourProject
             var host = CreateHostBuilder(args).Build();
             var api = host.Services.GetRequiredService<IIndexesApi>();
             IV1IndexdefMultiassetGetApiResponse apiResponse = await api.V1IndexdefMultiassetGetAsync("todo");
-            List<IndexesIndexMultiAssetWeight>? model = apiResponse.Ok();
+            List<ModelsIndexMultiAssetWeight>? model = apiResponse.Ok();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) => Host.CreateDefaultBuilder(args)

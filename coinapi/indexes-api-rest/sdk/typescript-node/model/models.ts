@@ -1,13 +1,13 @@
 import localVarRequest from 'request';
 
-export * from './indexesIndexDefinitionSnapshotEntry';
-export * from './indexesIndexIdentifier';
-export * from './indexesIndexMultiAssetWeight';
-export * from './indexesIndexTimeseriesItem';
-export * from './indexesIndexValue';
-export * from './indexesIndexValueComponent';
 export * from './metadataExchange';
 export * from './metadataTimeseriesPeriod';
+export * from './modelsIndexDefinitionSnapshotEntry';
+export * from './modelsIndexIdentifier';
+export * from './modelsIndexMultiAssetWeight';
+export * from './modelsIndexTimeseriesItem';
+export * from './modelsIndexValue';
+export * from './modelsIndexValueComponent';
 
 import * as fs from 'fs';
 
@@ -22,14 +22,14 @@ export interface RequestDetailedFile {
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
-import { IndexesIndexDefinitionSnapshotEntry } from './indexesIndexDefinitionSnapshotEntry';
-import { IndexesIndexIdentifier } from './indexesIndexIdentifier';
-import { IndexesIndexMultiAssetWeight } from './indexesIndexMultiAssetWeight';
-import { IndexesIndexTimeseriesItem } from './indexesIndexTimeseriesItem';
-import { IndexesIndexValue } from './indexesIndexValue';
-import { IndexesIndexValueComponent } from './indexesIndexValueComponent';
 import { MetadataExchange } from './metadataExchange';
 import { MetadataTimeseriesPeriod } from './metadataTimeseriesPeriod';
+import { ModelsIndexDefinitionSnapshotEntry } from './modelsIndexDefinitionSnapshotEntry';
+import { ModelsIndexIdentifier } from './modelsIndexIdentifier';
+import { ModelsIndexMultiAssetWeight } from './modelsIndexMultiAssetWeight';
+import { ModelsIndexTimeseriesItem } from './modelsIndexTimeseriesItem';
+import { ModelsIndexValue } from './modelsIndexValue';
+import { ModelsIndexValueComponent } from './modelsIndexValueComponent';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -47,14 +47,14 @@ let enumsMap: {[index: string]: any} = {
 }
 
 let typeMap: {[index: string]: any} = {
-    "IndexesIndexDefinitionSnapshotEntry": IndexesIndexDefinitionSnapshotEntry,
-    "IndexesIndexIdentifier": IndexesIndexIdentifier,
-    "IndexesIndexMultiAssetWeight": IndexesIndexMultiAssetWeight,
-    "IndexesIndexTimeseriesItem": IndexesIndexTimeseriesItem,
-    "IndexesIndexValue": IndexesIndexValue,
-    "IndexesIndexValueComponent": IndexesIndexValueComponent,
     "MetadataExchange": MetadataExchange,
     "MetadataTimeseriesPeriod": MetadataTimeseriesPeriod,
+    "ModelsIndexDefinitionSnapshotEntry": ModelsIndexDefinitionSnapshotEntry,
+    "ModelsIndexIdentifier": ModelsIndexIdentifier,
+    "ModelsIndexMultiAssetWeight": ModelsIndexMultiAssetWeight,
+    "ModelsIndexTimeseriesItem": ModelsIndexTimeseriesItem,
+    "ModelsIndexValue": ModelsIndexValue,
+    "ModelsIndexValueComponent": ModelsIndexValueComponent,
 }
 
 // Check if a string starts with another string without using es6 features

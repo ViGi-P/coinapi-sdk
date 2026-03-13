@@ -238,7 +238,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1IndexdefMultiassetGetApiResponse"/>
     /// </summary>
-    public interface IV1IndexdefMultiassetGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<IndexesIndexMultiAssetWeight>?>
+    public interface IV1IndexdefMultiassetGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<ModelsIndexMultiAssetWeight>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -250,7 +250,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1IndexdefMultiassetIndexIdGetApiResponse"/>
     /// </summary>
-    public interface IV1IndexdefMultiassetIndexIdGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<IndexesIndexMultiAssetWeight>?>
+    public interface IV1IndexdefMultiassetIndexIdGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<ModelsIndexMultiAssetWeight>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -262,7 +262,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1IndexesGetApiResponse"/>
     /// </summary>
-    public interface IV1IndexesGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<IndexesIndexIdentifier>?>
+    public interface IV1IndexesGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<ModelsIndexIdentifier>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -274,7 +274,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1IndexesIndexDefinitionIdCurrentSnapshotGetApiResponse"/>
     /// </summary>
-    public interface IV1IndexesIndexDefinitionIdCurrentSnapshotGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<IndexesIndexDefinitionSnapshotEntry>?>
+    public interface IV1IndexesIndexDefinitionIdCurrentSnapshotGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<ModelsIndexDefinitionSnapshotEntry>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -286,7 +286,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1IndexesIndexDefinitionIdHistorySnapshotGetApiResponse"/>
     /// </summary>
-    public interface IV1IndexesIndexDefinitionIdHistorySnapshotGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<IndexesIndexDefinitionSnapshotEntry>?>
+    public interface IV1IndexesIndexDefinitionIdHistorySnapshotGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<ModelsIndexDefinitionSnapshotEntry>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -298,7 +298,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1IndexesIndexIdCurrentGetApiResponse"/>
     /// </summary>
-    public interface IV1IndexesIndexIdCurrentGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<APIBricks.CoinAPI.IndexesAPI.REST.V1.Model.IndexesIndexValue?>
+    public interface IV1IndexesIndexIdCurrentGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<APIBricks.CoinAPI.IndexesAPI.REST.V1.Model.ModelsIndexValue?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -310,7 +310,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1IndexesIndexIdHistoryGetApiResponse"/>
     /// </summary>
-    public interface IV1IndexesIndexIdHistoryGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<IndexesIndexValue>?>
+    public interface IV1IndexesIndexIdHistoryGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<ModelsIndexValue>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -322,7 +322,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1IndexesIndexIdTimeseriesGetApiResponse"/>
     /// </summary>
-    public interface IV1IndexesIndexIdTimeseriesGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<IndexesIndexTimeseriesItem>?>
+    public interface IV1IndexesIndexIdTimeseriesGetApiResponse : APIBricks.CoinAPI.IndexesAPI.REST.V1.Client.IApiResponse, IOk<List<ModelsIndexTimeseriesItem>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -748,11 +748,11 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<IndexesIndexMultiAssetWeight>? Ok()
+            public List<ModelsIndexMultiAssetWeight>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<IndexesIndexMultiAssetWeight>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<ModelsIndexMultiAssetWeight>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -761,7 +761,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<IndexesIndexMultiAssetWeight>? result)
+            public bool TryOk([NotNullWhen(true)]out List<ModelsIndexMultiAssetWeight>? result)
             {
                 result = null;
 
@@ -1008,11 +1008,11 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<IndexesIndexMultiAssetWeight>? Ok()
+            public List<ModelsIndexMultiAssetWeight>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<IndexesIndexMultiAssetWeight>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<ModelsIndexMultiAssetWeight>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1021,7 +1021,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<IndexesIndexMultiAssetWeight>? result)
+            public bool TryOk([NotNullWhen(true)]out List<ModelsIndexMultiAssetWeight>? result)
             {
                 result = null;
 
@@ -1244,11 +1244,11 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<IndexesIndexIdentifier>? Ok()
+            public List<ModelsIndexIdentifier>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<IndexesIndexIdentifier>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<ModelsIndexIdentifier>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1257,7 +1257,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<IndexesIndexIdentifier>? result)
+            public bool TryOk([NotNullWhen(true)]out List<ModelsIndexIdentifier>? result)
             {
                 result = null;
 
@@ -1504,11 +1504,11 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<IndexesIndexDefinitionSnapshotEntry>? Ok()
+            public List<ModelsIndexDefinitionSnapshotEntry>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<IndexesIndexDefinitionSnapshotEntry>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<ModelsIndexDefinitionSnapshotEntry>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1517,7 +1517,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<IndexesIndexDefinitionSnapshotEntry>? result)
+            public bool TryOk([NotNullWhen(true)]out List<ModelsIndexDefinitionSnapshotEntry>? result)
             {
                 result = null;
 
@@ -1777,11 +1777,11 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<IndexesIndexDefinitionSnapshotEntry>? Ok()
+            public List<ModelsIndexDefinitionSnapshotEntry>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<IndexesIndexDefinitionSnapshotEntry>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<ModelsIndexDefinitionSnapshotEntry>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1790,7 +1790,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<IndexesIndexDefinitionSnapshotEntry>? result)
+            public bool TryOk([NotNullWhen(true)]out List<ModelsIndexDefinitionSnapshotEntry>? result)
             {
                 result = null;
 
@@ -2037,11 +2037,11 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public APIBricks.CoinAPI.IndexesAPI.REST.V1.Model.IndexesIndexValue? Ok()
+            public APIBricks.CoinAPI.IndexesAPI.REST.V1.Model.ModelsIndexValue? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<APIBricks.CoinAPI.IndexesAPI.REST.V1.Model.IndexesIndexValue>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<APIBricks.CoinAPI.IndexesAPI.REST.V1.Model.ModelsIndexValue>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2050,7 +2050,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out APIBricks.CoinAPI.IndexesAPI.REST.V1.Model.IndexesIndexValue? result)
+            public bool TryOk([NotNullWhen(true)]out APIBricks.CoinAPI.IndexesAPI.REST.V1.Model.ModelsIndexValue? result)
             {
                 result = null;
 
@@ -2328,11 +2328,11 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<IndexesIndexValue>? Ok()
+            public List<ModelsIndexValue>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<IndexesIndexValue>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<ModelsIndexValue>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2341,7 +2341,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<IndexesIndexValue>? result)
+            public bool TryOk([NotNullWhen(true)]out List<ModelsIndexValue>? result)
             {
                 result = null;
 
@@ -2635,11 +2635,11 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<IndexesIndexTimeseriesItem>? Ok()
+            public List<ModelsIndexTimeseriesItem>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<IndexesIndexTimeseriesItem>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<ModelsIndexTimeseriesItem>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2648,7 +2648,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<IndexesIndexTimeseriesItem>? result)
+            public bool TryOk([NotNullWhen(true)]out List<ModelsIndexTimeseriesItem>? result)
             {
                 result = null;
 

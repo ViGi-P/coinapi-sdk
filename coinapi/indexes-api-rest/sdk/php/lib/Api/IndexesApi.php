@@ -156,7 +156,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]
+     * @return \OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]
      */
     public function v1IndexdefMultiassetGet(string $contentType = self::contentTypes['v1IndexdefMultiassetGet'][0])
     {
@@ -173,7 +173,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1IndexdefMultiassetGetWithHttpInfo(string $contentType = self::contentTypes['v1IndexdefMultiassetGet'][0])
     {
@@ -205,7 +205,7 @@ class IndexesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]',
+                        '\OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]',
                         $request,
                         $response,
                     );
@@ -227,7 +227,7 @@ class IndexesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]',
+                '\OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]',
                 $request,
                 $response,
             );
@@ -236,7 +236,7 @@ class IndexesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]',
+                        '\OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -280,7 +280,7 @@ class IndexesApi
      */
     public function v1IndexdefMultiassetGetAsyncWithHttpInfo(string $contentType = self::contentTypes['v1IndexdefMultiassetGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]';
+        $returnType = '\OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]';
         $request = $this->v1IndexdefMultiassetGetRequest($contentType);
 
         return $this->client
@@ -414,7 +414,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]
+     * @return \OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]
      */
     public function v1IndexdefMultiassetIndexIdGet($index_id, string $contentType = self::contentTypes['v1IndexdefMultiassetIndexIdGet'][0])
     {
@@ -432,7 +432,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1IndexdefMultiassetIndexIdGetWithHttpInfo($index_id, string $contentType = self::contentTypes['v1IndexdefMultiassetIndexIdGet'][0])
     {
@@ -464,7 +464,7 @@ class IndexesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]',
+                        '\OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]',
                         $request,
                         $response,
                     );
@@ -486,7 +486,7 @@ class IndexesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]',
+                '\OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]',
                 $request,
                 $response,
             );
@@ -495,7 +495,7 @@ class IndexesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]',
+                        '\OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -541,7 +541,7 @@ class IndexesApi
      */
     public function v1IndexdefMultiassetIndexIdGetAsyncWithHttpInfo($index_id, string $contentType = self::contentTypes['v1IndexdefMultiassetIndexIdGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]';
+        $returnType = '\OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]';
         $request = $this->v1IndexdefMultiassetIndexIdGetRequest($index_id, $contentType);
 
         return $this->client
@@ -690,7 +690,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\IndexesIndexIdentifier[]
+     * @return \OpenAPI\Client\Model\ModelsIndexIdentifier[]
      */
     public function v1IndexesGet(string $contentType = self::contentTypes['v1IndexesGet'][0])
     {
@@ -707,7 +707,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\IndexesIndexIdentifier[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelsIndexIdentifier[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1IndexesGetWithHttpInfo(string $contentType = self::contentTypes['v1IndexesGet'][0])
     {
@@ -739,7 +739,7 @@ class IndexesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\IndexesIndexIdentifier[]',
+                        '\OpenAPI\Client\Model\ModelsIndexIdentifier[]',
                         $request,
                         $response,
                     );
@@ -761,7 +761,7 @@ class IndexesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\IndexesIndexIdentifier[]',
+                '\OpenAPI\Client\Model\ModelsIndexIdentifier[]',
                 $request,
                 $response,
             );
@@ -770,7 +770,7 @@ class IndexesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\IndexesIndexIdentifier[]',
+                        '\OpenAPI\Client\Model\ModelsIndexIdentifier[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -814,7 +814,7 @@ class IndexesApi
      */
     public function v1IndexesGetAsyncWithHttpInfo(string $contentType = self::contentTypes['v1IndexesGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\IndexesIndexIdentifier[]';
+        $returnType = '\OpenAPI\Client\Model\ModelsIndexIdentifier[]';
         $request = $this->v1IndexesGetRequest($contentType);
 
         return $this->client
@@ -948,7 +948,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]
+     * @return \OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]
      */
     public function v1IndexesIndexDefinitionIdCurrentSnapshotGet($index_definition_id, string $contentType = self::contentTypes['v1IndexesIndexDefinitionIdCurrentSnapshotGet'][0])
     {
@@ -966,7 +966,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo($index_definition_id, string $contentType = self::contentTypes['v1IndexesIndexDefinitionIdCurrentSnapshotGet'][0])
     {
@@ -998,7 +998,7 @@ class IndexesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]',
+                        '\OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]',
                         $request,
                         $response,
                     );
@@ -1020,7 +1020,7 @@ class IndexesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]',
+                '\OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]',
                 $request,
                 $response,
             );
@@ -1029,7 +1029,7 @@ class IndexesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]',
+                        '\OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1075,7 +1075,7 @@ class IndexesApi
      */
     public function v1IndexesIndexDefinitionIdCurrentSnapshotGetAsyncWithHttpInfo($index_definition_id, string $contentType = self::contentTypes['v1IndexesIndexDefinitionIdCurrentSnapshotGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]';
+        $returnType = '\OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]';
         $request = $this->v1IndexesIndexDefinitionIdCurrentSnapshotGetRequest($index_definition_id, $contentType);
 
         return $this->client
@@ -1226,7 +1226,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]
+     * @return \OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]
      */
     public function v1IndexesIndexDefinitionIdHistorySnapshotGet($index_definition_id, $time = null, string $contentType = self::contentTypes['v1IndexesIndexDefinitionIdHistorySnapshotGet'][0])
     {
@@ -1245,7 +1245,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo($index_definition_id, $time = null, string $contentType = self::contentTypes['v1IndexesIndexDefinitionIdHistorySnapshotGet'][0])
     {
@@ -1277,7 +1277,7 @@ class IndexesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]',
+                        '\OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]',
                         $request,
                         $response,
                     );
@@ -1299,7 +1299,7 @@ class IndexesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]',
+                '\OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]',
                 $request,
                 $response,
             );
@@ -1308,7 +1308,7 @@ class IndexesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]',
+                        '\OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1356,7 +1356,7 @@ class IndexesApi
      */
     public function v1IndexesIndexDefinitionIdHistorySnapshotGetAsyncWithHttpInfo($index_definition_id, $time = null, string $contentType = self::contentTypes['v1IndexesIndexDefinitionIdHistorySnapshotGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]';
+        $returnType = '\OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]';
         $request = $this->v1IndexesIndexDefinitionIdHistorySnapshotGetRequest($index_definition_id, $time, $contentType);
 
         return $this->client
@@ -1517,7 +1517,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\IndexesIndexValue
+     * @return \OpenAPI\Client\Model\ModelsIndexValue
      */
     public function v1IndexesIndexIdCurrentGet($index_id, string $contentType = self::contentTypes['v1IndexesIndexIdCurrentGet'][0])
     {
@@ -1535,7 +1535,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\IndexesIndexValue, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelsIndexValue, HTTP status code, HTTP response headers (array of strings)
      */
     public function v1IndexesIndexIdCurrentGetWithHttpInfo($index_id, string $contentType = self::contentTypes['v1IndexesIndexIdCurrentGet'][0])
     {
@@ -1567,7 +1567,7 @@ class IndexesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\IndexesIndexValue',
+                        '\OpenAPI\Client\Model\ModelsIndexValue',
                         $request,
                         $response,
                     );
@@ -1589,7 +1589,7 @@ class IndexesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\IndexesIndexValue',
+                '\OpenAPI\Client\Model\ModelsIndexValue',
                 $request,
                 $response,
             );
@@ -1598,7 +1598,7 @@ class IndexesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\IndexesIndexValue',
+                        '\OpenAPI\Client\Model\ModelsIndexValue',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1644,7 +1644,7 @@ class IndexesApi
      */
     public function v1IndexesIndexIdCurrentGetAsyncWithHttpInfo($index_id, string $contentType = self::contentTypes['v1IndexesIndexIdCurrentGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\IndexesIndexValue';
+        $returnType = '\OpenAPI\Client\Model\ModelsIndexValue';
         $request = $this->v1IndexesIndexIdCurrentGetRequest($index_id, $contentType);
 
         return $this->client
@@ -1797,7 +1797,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\IndexesIndexValue[]
+     * @return \OpenAPI\Client\Model\ModelsIndexValue[]
      */
     public function v1IndexesIndexIdHistoryGet($index_id, $time_start = null, $time_end = null, $limit = 100, string $contentType = self::contentTypes['v1IndexesIndexIdHistoryGet'][0])
     {
@@ -1818,7 +1818,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\IndexesIndexValue[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelsIndexValue[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1IndexesIndexIdHistoryGetWithHttpInfo($index_id, $time_start = null, $time_end = null, $limit = 100, string $contentType = self::contentTypes['v1IndexesIndexIdHistoryGet'][0])
     {
@@ -1850,7 +1850,7 @@ class IndexesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\IndexesIndexValue[]',
+                        '\OpenAPI\Client\Model\ModelsIndexValue[]',
                         $request,
                         $response,
                     );
@@ -1872,7 +1872,7 @@ class IndexesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\IndexesIndexValue[]',
+                '\OpenAPI\Client\Model\ModelsIndexValue[]',
                 $request,
                 $response,
             );
@@ -1881,7 +1881,7 @@ class IndexesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\IndexesIndexValue[]',
+                        '\OpenAPI\Client\Model\ModelsIndexValue[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1933,7 +1933,7 @@ class IndexesApi
      */
     public function v1IndexesIndexIdHistoryGetAsyncWithHttpInfo($index_id, $time_start = null, $time_end = null, $limit = 100, string $contentType = self::contentTypes['v1IndexesIndexIdHistoryGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\IndexesIndexValue[]';
+        $returnType = '\OpenAPI\Client\Model\ModelsIndexValue[]';
         $request = $this->v1IndexesIndexIdHistoryGetRequest($index_id, $time_start, $time_end, $limit, $contentType);
 
         return $this->client
@@ -2120,7 +2120,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\IndexesIndexTimeseriesItem[]
+     * @return \OpenAPI\Client\Model\ModelsIndexTimeseriesItem[]
      */
     public function v1IndexesIndexIdTimeseriesGet($index_id, $period_id, $time_start, $time_end, $limit = 100, string $contentType = self::contentTypes['v1IndexesIndexIdTimeseriesGet'][0])
     {
@@ -2142,7 +2142,7 @@ class IndexesApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\IndexesIndexTimeseriesItem[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\ModelsIndexTimeseriesItem[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1IndexesIndexIdTimeseriesGetWithHttpInfo($index_id, $period_id, $time_start, $time_end, $limit = 100, string $contentType = self::contentTypes['v1IndexesIndexIdTimeseriesGet'][0])
     {
@@ -2174,7 +2174,7 @@ class IndexesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\IndexesIndexTimeseriesItem[]',
+                        '\OpenAPI\Client\Model\ModelsIndexTimeseriesItem[]',
                         $request,
                         $response,
                     );
@@ -2196,7 +2196,7 @@ class IndexesApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\IndexesIndexTimeseriesItem[]',
+                '\OpenAPI\Client\Model\ModelsIndexTimeseriesItem[]',
                 $request,
                 $response,
             );
@@ -2205,7 +2205,7 @@ class IndexesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\IndexesIndexTimeseriesItem[]',
+                        '\OpenAPI\Client\Model\ModelsIndexTimeseriesItem[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2259,7 +2259,7 @@ class IndexesApi
      */
     public function v1IndexesIndexIdTimeseriesGetAsyncWithHttpInfo($index_id, $period_id, $time_start, $time_end, $limit = 100, string $contentType = self::contentTypes['v1IndexesIndexIdTimeseriesGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\IndexesIndexTimeseriesItem[]';
+        $returnType = '\OpenAPI\Client\Model\ModelsIndexTimeseriesItem[]';
         $request = $this->v1IndexesIndexIdTimeseriesGetRequest($index_id, $period_id, $time_start, $time_end, $limit, $contentType);
 
         return $this->client

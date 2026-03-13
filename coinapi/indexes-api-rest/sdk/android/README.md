@@ -65,7 +65,7 @@ public class IndexesApiExample {
     public static void main(String[] args) {
         IndexesApi apiInstance = new IndexesApi();
         try {
-            List<IndexesIndexMultiAssetWeight> result = apiInstance.v1IndexdefMultiassetGet();
+            List<ModelsIndexMultiAssetWeight> result = apiInstance.v1IndexdefMultiassetGet();
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling IndexesApi#v1IndexdefMultiassetGet");
@@ -97,14 +97,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
- - [IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
- - [IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)
- - [IndexesIndexTimeseriesItem](docs/IndexesIndexTimeseriesItem.md)
- - [IndexesIndexValue](docs/IndexesIndexValue.md)
- - [IndexesIndexValueComponent](docs/IndexesIndexValueComponent.md)
  - [MetadataExchange](docs/MetadataExchange.md)
  - [MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
+ - [ModelsIndexDefinitionSnapshotEntry](docs/ModelsIndexDefinitionSnapshotEntry.md)
+ - [ModelsIndexIdentifier](docs/ModelsIndexIdentifier.md)
+ - [ModelsIndexMultiAssetWeight](docs/ModelsIndexMultiAssetWeight.md)
+ - [ModelsIndexTimeseriesItem](docs/ModelsIndexTimeseriesItem.md)
+ - [ModelsIndexValue](docs/ModelsIndexValue.md)
+ - [ModelsIndexValueComponent](docs/ModelsIndexValueComponent.md)
 
 
 ## Documentation for Authorization

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## v1IndexdefMultiassetGet
 
-> [IndexesIndexMultiAssetWeight] v1IndexdefMultiassetGet()
+> [ModelsIndexMultiAssetWeight] v1IndexdefMultiassetGet()
 
 Get all multi-asset weights
 
@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[IndexesIndexMultiAssetWeight]**](IndexesIndexMultiAssetWeight.md)
+[**[ModelsIndexMultiAssetWeight]**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ This endpoint does not need any parameter.
 
 ## v1IndexdefMultiassetIndexIdGet
 
-> [IndexesIndexMultiAssetWeight] v1IndexdefMultiassetIndexIdGet(indexId)
+> [ModelsIndexMultiAssetWeight] v1IndexdefMultiassetIndexIdGet(indexId)
 
 Get multi-asset weights for specific index
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[IndexesIndexMultiAssetWeight]**](IndexesIndexMultiAssetWeight.md)
+[**[ModelsIndexMultiAssetWeight]**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ## v1IndexesGet
 
-> [IndexesIndexIdentifier] v1IndexesGet()
+> [ModelsIndexIdentifier] v1IndexesGet()
 
 List indexes
 
@@ -151,7 +151,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[IndexesIndexIdentifier]**](IndexesIndexIdentifier.md)
+[**[ModelsIndexIdentifier]**](ModelsIndexIdentifier.md)
 
 ### Authorization
 
@@ -165,7 +165,7 @@ This endpoint does not need any parameter.
 
 ## v1IndexesIndexDefinitionIdCurrentSnapshotGet
 
-> [IndexesIndexDefinitionSnapshotEntry] v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId)
+> [ModelsIndexDefinitionSnapshotEntry] v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId)
 
 Current Index Values for index definition
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[IndexesIndexDefinitionSnapshotEntry]**](IndexesIndexDefinitionSnapshotEntry.md)
+[**[ModelsIndexDefinitionSnapshotEntry]**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ## v1IndexesIndexDefinitionIdHistorySnapshotGet
 
-> [IndexesIndexDefinitionSnapshotEntry] v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, opts)
+> [ModelsIndexDefinitionSnapshotEntry] v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, opts)
 
 Historical Index Values for index definition
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[IndexesIndexDefinitionSnapshotEntry]**](IndexesIndexDefinitionSnapshotEntry.md)
+[**[ModelsIndexDefinitionSnapshotEntry]**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ## v1IndexesIndexIdCurrentGet
 
-> IndexesIndexValue v1IndexesIndexIdCurrentGet(indexId)
+> ModelsIndexValue v1IndexesIndexIdCurrentGet(indexId)
 
 Current Index Value
 
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexValue**](IndexesIndexValue.md)
+[**ModelsIndexValue**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -325,7 +325,7 @@ Name | Type | Description  | Notes
 
 ## v1IndexesIndexIdHistoryGet
 
-> [IndexesIndexValue] v1IndexesIndexIdHistoryGet(indexId, opts)
+> [ModelsIndexValue] v1IndexesIndexIdHistoryGet(indexId, opts)
 
 Historical Index Value w/Composition
 
@@ -371,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[IndexesIndexValue]**](IndexesIndexValue.md)
+[**[ModelsIndexValue]**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ## v1IndexesIndexIdTimeseriesGet
 
-> [IndexesIndexTimeseriesItem] v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, opts)
+> [ModelsIndexTimeseriesItem] v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, opts)
 
 Timeseries Index Value
 
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[IndexesIndexTimeseriesItem]**](IndexesIndexTimeseriesItem.md)
+[**[ModelsIndexTimeseriesItem]**](ModelsIndexTimeseriesItem.md)
 
 ### Authorization
 

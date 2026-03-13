@@ -208,7 +208,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[IndexesIndexMultiAssetWeight]
+    #' @return array[ModelsIndexMultiAssetWeight]
     V1IndexdefMultiassetGet = function(data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1IndexdefMultiassetGetWithHttpInfo(data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -229,7 +229,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[IndexesIndexMultiAssetWeight]) with additional information such as HTTP status code, headers
+    #' @return API response (array[ModelsIndexMultiAssetWeight]) with additional information such as HTTP status code, headers
     V1IndexdefMultiassetGetWithHttpInfo = function(data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -280,7 +280,7 @@ IndexesApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexMultiAssetWeight]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[ModelsIndexMultiAssetWeight]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -314,7 +314,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[IndexesIndexMultiAssetWeight]
+    #' @return array[ModelsIndexMultiAssetWeight]
     V1IndexdefMultiassetIndexIdGet = function(index_id, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1IndexdefMultiassetIndexIdGetWithHttpInfo(index_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -336,7 +336,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[IndexesIndexMultiAssetWeight]) with additional information such as HTTP status code, headers
+    #' @return API response (array[ModelsIndexMultiAssetWeight]) with additional information such as HTTP status code, headers
     V1IndexdefMultiassetIndexIdGetWithHttpInfo = function(index_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -399,7 +399,7 @@ IndexesApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexMultiAssetWeight]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[ModelsIndexMultiAssetWeight]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -432,7 +432,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[IndexesIndexIdentifier]
+    #' @return array[ModelsIndexIdentifier]
     V1IndexesGet = function(data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1IndexesGetWithHttpInfo(data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -453,7 +453,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[IndexesIndexIdentifier]) with additional information such as HTTP status code, headers
+    #' @return API response (array[ModelsIndexIdentifier]) with additional information such as HTTP status code, headers
     V1IndexesGetWithHttpInfo = function(data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -504,7 +504,7 @@ IndexesApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexIdentifier]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[ModelsIndexIdentifier]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -538,7 +538,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[IndexesIndexDefinitionSnapshotEntry]
+    #' @return array[ModelsIndexDefinitionSnapshotEntry]
     V1IndexesIndexDefinitionIdCurrentSnapshotGet = function(index_definition_id, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(index_definition_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -560,7 +560,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[IndexesIndexDefinitionSnapshotEntry]) with additional information such as HTTP status code, headers
+    #' @return API response (array[ModelsIndexDefinitionSnapshotEntry]) with additional information such as HTTP status code, headers
     V1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo = function(index_definition_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -623,7 +623,7 @@ IndexesApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexDefinitionSnapshotEntry]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[ModelsIndexDefinitionSnapshotEntry]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -658,7 +658,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[IndexesIndexDefinitionSnapshotEntry]
+    #' @return array[ModelsIndexDefinitionSnapshotEntry]
     V1IndexesIndexDefinitionIdHistorySnapshotGet = function(index_definition_id, time = NULL, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(index_definition_id, time, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -681,7 +681,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[IndexesIndexDefinitionSnapshotEntry]) with additional information such as HTTP status code, headers
+    #' @return API response (array[ModelsIndexDefinitionSnapshotEntry]) with additional information such as HTTP status code, headers
     V1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo = function(index_definition_id, time = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -750,7 +750,7 @@ IndexesApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexDefinitionSnapshotEntry]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[ModelsIndexDefinitionSnapshotEntry]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -784,7 +784,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return IndexesIndexValue
+    #' @return ModelsIndexValue
     V1IndexesIndexIdCurrentGet = function(index_id, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1IndexesIndexIdCurrentGetWithHttpInfo(index_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -806,7 +806,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (IndexesIndexValue) with additional information such as HTTP status code, headers
+    #' @return API response (ModelsIndexValue) with additional information such as HTTP status code, headers
     V1IndexesIndexIdCurrentGetWithHttpInfo = function(index_id, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -869,7 +869,7 @@ IndexesApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "IndexesIndexValue"),
+          self$api_client$DeserializeResponse(local_var_resp, "ModelsIndexValue"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -906,7 +906,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[IndexesIndexValue]
+    #' @return array[ModelsIndexValue]
     V1IndexesIndexIdHistoryGet = function(index_id, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1IndexesIndexIdHistoryGetWithHttpInfo(index_id, time_start, time_end, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -931,7 +931,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[IndexesIndexValue]) with additional information such as HTTP status code, headers
+    #' @return API response (array[ModelsIndexValue]) with additional information such as HTTP status code, headers
     V1IndexesIndexIdHistoryGetWithHttpInfo = function(index_id, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -1012,7 +1012,7 @@ IndexesApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexValue]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[ModelsIndexValue]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -1050,7 +1050,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[IndexesIndexTimeseriesItem]
+    #' @return array[ModelsIndexTimeseriesItem]
     V1IndexesIndexIdTimeseriesGet = function(index_id, period_id, time_start, time_end, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1IndexesIndexIdTimeseriesGetWithHttpInfo(index_id, period_id, time_start, time_end, limit, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -1076,7 +1076,7 @@ IndexesApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[IndexesIndexTimeseriesItem]) with additional information such as HTTP status code, headers
+    #' @return API response (array[ModelsIndexTimeseriesItem]) with additional information such as HTTP status code, headers
     V1IndexesIndexIdTimeseriesGetWithHttpInfo = function(index_id, period_id, time_start, time_end, limit = 100, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -1175,7 +1175,7 @@ IndexesApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[IndexesIndexTimeseriesItem]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[ModelsIndexTimeseriesItem]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }

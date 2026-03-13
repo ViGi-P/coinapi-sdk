@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **v1_indexdef_multiasset_get**
-> ARRAY[IndexesIndexMultiAssetWeight] v1_indexdef_multiasset_get()
+> ARRAY[ModelsIndexMultiAssetWeight] v1_indexdef_multiasset_get()
 
 Get all multi-asset weights
 
@@ -54,7 +54,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ARRAY[IndexesIndexMultiAssetWeight]**](IndexesIndexMultiAssetWeight.md)
+[**ARRAY[ModelsIndexMultiAssetWeight]**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexdef_multiasset_index_id_get**
-> ARRAY[IndexesIndexMultiAssetWeight] v1_indexdef_multiasset_index_id_get(index_id => $index_id)
+> ARRAY[ModelsIndexMultiAssetWeight] v1_indexdef_multiasset_index_id_get(index_id => $index_id)
 
 Get multi-asset weights for specific index
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[IndexesIndexMultiAssetWeight]**](IndexesIndexMultiAssetWeight.md)
+[**ARRAY[ModelsIndexMultiAssetWeight]**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_get**
-> ARRAY[IndexesIndexIdentifier] v1_indexes_get()
+> ARRAY[ModelsIndexIdentifier] v1_indexes_get()
 
 List indexes
 
@@ -154,7 +154,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ARRAY[IndexesIndexIdentifier]**](IndexesIndexIdentifier.md)
+[**ARRAY[ModelsIndexIdentifier]**](ModelsIndexIdentifier.md)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_definition_id_current_snapshot_get**
-> ARRAY[IndexesIndexDefinitionSnapshotEntry] v1_indexes_index_definition_id_current_snapshot_get(index_definition_id => $index_definition_id)
+> ARRAY[ModelsIndexDefinitionSnapshotEntry] v1_indexes_index_definition_id_current_snapshot_get(index_definition_id => $index_definition_id)
 
 Current Index Values for index definition
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[IndexesIndexDefinitionSnapshotEntry]**](IndexesIndexDefinitionSnapshotEntry.md)
+[**ARRAY[ModelsIndexDefinitionSnapshotEntry]**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_definition_id_history_snapshot_get**
-> ARRAY[IndexesIndexDefinitionSnapshotEntry] v1_indexes_index_definition_id_history_snapshot_get(index_definition_id => $index_definition_id, time => $time)
+> ARRAY[ModelsIndexDefinitionSnapshotEntry] v1_indexes_index_definition_id_history_snapshot_get(index_definition_id => $index_definition_id, time => $time)
 
 Historical Index Values for index definition
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[IndexesIndexDefinitionSnapshotEntry]**](IndexesIndexDefinitionSnapshotEntry.md)
+[**ARRAY[ModelsIndexDefinitionSnapshotEntry]**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_id_current_get**
-> IndexesIndexValue v1_indexes_index_id_current_get(index_id => $index_id)
+> ModelsIndexValue v1_indexes_index_id_current_get(index_id => $index_id)
 
 Current Index Value
 
@@ -312,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexValue**](IndexesIndexValue.md)
+[**ModelsIndexValue**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_id_history_get**
-> ARRAY[IndexesIndexValue] v1_indexes_index_id_history_get(index_id => $index_id, time_start => $time_start, time_end => $time_end, limit => $limit)
+> ARRAY[ModelsIndexValue] v1_indexes_index_id_history_get(index_id => $index_id, time_start => $time_start, time_end => $time_end, limit => $limit)
 
 Historical Index Value w/Composition
 
@@ -370,7 +370,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[IndexesIndexValue]**](IndexesIndexValue.md)
+[**ARRAY[ModelsIndexValue]**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_id_timeseries_get**
-> ARRAY[IndexesIndexTimeseriesItem] v1_indexes_index_id_timeseries_get(index_id => $index_id, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit)
+> ARRAY[ModelsIndexTimeseriesItem] v1_indexes_index_id_timeseries_get(index_id => $index_id, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit)
 
 Timeseries Index Value
 
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[IndexesIndexTimeseriesItem]**](IndexesIndexTimeseriesItem.md)
+[**ARRAY[ModelsIndexTimeseriesItem]**](ModelsIndexTimeseriesItem.md)
 
 ### Authorization
 

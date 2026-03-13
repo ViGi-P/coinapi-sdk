@@ -62,14 +62,14 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 <a id="documentation-for-models"></a>
 ## Documentation for Models
 
- - [org.openapitools.client.models.IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
- - [org.openapitools.client.models.IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
- - [org.openapitools.client.models.IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)
- - [org.openapitools.client.models.IndexesIndexTimeseriesItem](docs/IndexesIndexTimeseriesItem.md)
- - [org.openapitools.client.models.IndexesIndexValue](docs/IndexesIndexValue.md)
- - [org.openapitools.client.models.IndexesIndexValueComponent](docs/IndexesIndexValueComponent.md)
  - [org.openapitools.client.models.MetadataExchange](docs/MetadataExchange.md)
  - [org.openapitools.client.models.MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
+ - [org.openapitools.client.models.ModelsIndexDefinitionSnapshotEntry](docs/ModelsIndexDefinitionSnapshotEntry.md)
+ - [org.openapitools.client.models.ModelsIndexIdentifier](docs/ModelsIndexIdentifier.md)
+ - [org.openapitools.client.models.ModelsIndexMultiAssetWeight](docs/ModelsIndexMultiAssetWeight.md)
+ - [org.openapitools.client.models.ModelsIndexTimeseriesItem](docs/ModelsIndexTimeseriesItem.md)
+ - [org.openapitools.client.models.ModelsIndexValue](docs/ModelsIndexValue.md)
+ - [org.openapitools.client.models.ModelsIndexValueComponent](docs/ModelsIndexValueComponent.md)
 
 
 <a id="documentation-for-authorization"></a>

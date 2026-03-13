@@ -24,12 +24,12 @@ inherit
 feature -- API Access
 
 
-	v1_indexdef_multiasset_get : detachable LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT]
+	v1_indexdef_multiasset_get : detachable LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT]
 			-- Get all multi-asset weights
 			-- 
 			-- 
 			-- 
-			-- Result LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT]
+			-- Result LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT]
 		require
 		local
   			l_path: STRING
@@ -50,21 +50,21 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT] } l_response.data ({ LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT] }) as l_data then
+			elseif attached { LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT] } l_response.data ({ LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_indexdef_multiasset_index_id_get (index_id: STRING_32): detachable LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT]
+	v1_indexdef_multiasset_index_id_get (index_id: STRING_32): detachable LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT]
 			-- Get multi-asset weights for specific index
 			-- 
 			-- 
 			-- argument: index_id  (required)
 			-- 
 			-- 
-			-- Result LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT]
+			-- Result LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT]
 		require
 		local
   			l_path: STRING
@@ -86,19 +86,19 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT] } l_response.data ({ LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT] }) as l_data then
+			elseif attached { LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT] } l_response.data ({ LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_indexes_get : detachable LIST [INDEXES_INDEX_IDENTIFIER]
+	v1_indexes_get : detachable LIST [MODELS_INDEX_IDENTIFIER]
 			-- List indexes
 			-- 
 			-- 
 			-- 
-			-- Result LIST [INDEXES_INDEX_IDENTIFIER]
+			-- Result LIST [MODELS_INDEX_IDENTIFIER]
 		require
 		local
   			l_path: STRING
@@ -119,21 +119,21 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [INDEXES_INDEX_IDENTIFIER] } l_response.data ({ LIST [INDEXES_INDEX_IDENTIFIER] }) as l_data then
+			elseif attached { LIST [MODELS_INDEX_IDENTIFIER] } l_response.data ({ LIST [MODELS_INDEX_IDENTIFIER] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_indexes_index_definition_id_current_snapshot_get (index_definition_id: STRING_32): detachable LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY]
+	v1_indexes_index_definition_id_current_snapshot_get (index_definition_id: STRING_32): detachable LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY]
 			-- Current Index Values for index definition
 			-- 
 			-- 
 			-- argument: index_definition_id  (required)
 			-- 
 			-- 
-			-- Result LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY]
+			-- Result LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY]
 		require
 		local
   			l_path: STRING
@@ -155,14 +155,14 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY] } l_response.data ({ LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY] }) as l_data then
+			elseif attached { LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY] } l_response.data ({ LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_indexes_index_definition_id_history_snapshot_get (index_definition_id: STRING_32; time: DATE_TIME): detachable LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY]
+	v1_indexes_index_definition_id_history_snapshot_get (index_definition_id: STRING_32; time: DATE_TIME): detachable LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY]
 			-- Historical Index Values for index definition
 			-- 
 			-- 
@@ -171,7 +171,7 @@ feature -- API Access
 			-- argument: time  (optional, default to null)
 			-- 
 			-- 
-			-- Result LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY]
+			-- Result LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY]
 		require
 		local
   			l_path: STRING
@@ -194,21 +194,21 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY] } l_response.data ({ LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY] }) as l_data then
+			elseif attached { LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY] } l_response.data ({ LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_indexes_index_id_current_get (index_id: STRING_32): detachable INDEXES_INDEX_VALUE
+	v1_indexes_index_id_current_get (index_id: STRING_32): detachable MODELS_INDEX_VALUE
 			-- Current Index Value
 			-- 
 			-- 
 			-- argument: index_id  (required)
 			-- 
 			-- 
-			-- Result INDEXES_INDEX_VALUE
+			-- Result MODELS_INDEX_VALUE
 		require
 		local
   			l_path: STRING
@@ -230,14 +230,14 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { INDEXES_INDEX_VALUE } l_response.data ({ INDEXES_INDEX_VALUE }) as l_data then
+			elseif attached { MODELS_INDEX_VALUE } l_response.data ({ MODELS_INDEX_VALUE }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_indexes_index_id_history_get (index_id: STRING_32; time_start: DATE_TIME; time_end: DATE_TIME; limit: INTEGER_32): detachable LIST [INDEXES_INDEX_VALUE]
+	v1_indexes_index_id_history_get (index_id: STRING_32; time_start: DATE_TIME; time_end: DATE_TIME; limit: INTEGER_32): detachable LIST [MODELS_INDEX_VALUE]
 			-- Historical Index Value w/Composition
 			-- 
 			-- 
@@ -250,7 +250,7 @@ feature -- API Access
 			-- argument: limit  (optional, default to 100)
 			-- 
 			-- 
-			-- Result LIST [INDEXES_INDEX_VALUE]
+			-- Result LIST [MODELS_INDEX_VALUE]
 		require
 		local
   			l_path: STRING
@@ -275,14 +275,14 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [INDEXES_INDEX_VALUE] } l_response.data ({ LIST [INDEXES_INDEX_VALUE] }) as l_data then
+			elseif attached { LIST [MODELS_INDEX_VALUE] } l_response.data ({ LIST [MODELS_INDEX_VALUE] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_indexes_index_id_timeseries_get (index_id: STRING_32; period_id: STRING_32; time_start: STRING_32; time_end: STRING_32; limit: INTEGER_32): detachable LIST [INDEXES_INDEX_TIMESERIES_ITEM]
+	v1_indexes_index_id_timeseries_get (index_id: STRING_32; period_id: STRING_32; time_start: STRING_32; time_end: STRING_32; limit: INTEGER_32): detachable LIST [MODELS_INDEX_TIMESERIES_ITEM]
 			-- Timeseries Index Value
 			-- 
 			-- 
@@ -297,7 +297,7 @@ feature -- API Access
 			-- argument: limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
 			-- 
 			-- 
-			-- Result LIST [INDEXES_INDEX_TIMESERIES_ITEM]
+			-- Result LIST [MODELS_INDEX_TIMESERIES_ITEM]
 		require
 		local
   			l_path: STRING
@@ -323,7 +323,7 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [INDEXES_INDEX_TIMESERIES_ITEM] } l_response.data ({ LIST [INDEXES_INDEX_TIMESERIES_ITEM] }) as l_data then
+			elseif attached { LIST [MODELS_INDEX_TIMESERIES_ITEM] } l_response.data ({ LIST [MODELS_INDEX_TIMESERIES_ITEM] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")

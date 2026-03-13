@@ -36,7 +36,7 @@ import Json.Encode
 
 {-| Get all multi-asset weights
 -}
-v1IndexdefMultiassetGet : String -> Api.Request (List Api.Data.IndexesIndexMultiAssetWeight)
+v1IndexdefMultiassetGet : String -> Api.Request (List Api.Data.ModelsIndexMultiAssetWeight)
 v1IndexdefMultiassetGet auth_token =
     Api.request
         "GET"
@@ -45,12 +45,12 @@ v1IndexdefMultiassetGet auth_token =
         []
         []
         Nothing
-        (Json.Decode.list Api.Data.indexesIndexMultiAssetWeightDecoder)
+        (Json.Decode.list Api.Data.modelsIndexMultiAssetWeightDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Get multi-asset weights for specific index
 -}
-v1IndexdefMultiassetIndexIdGet : String -> String -> Api.Request (List Api.Data.IndexesIndexMultiAssetWeight)
+v1IndexdefMultiassetIndexIdGet : String -> String -> Api.Request (List Api.Data.ModelsIndexMultiAssetWeight)
 v1IndexdefMultiassetIndexIdGet indexId_path auth_token =
     Api.request
         "GET"
@@ -59,12 +59,12 @@ v1IndexdefMultiassetIndexIdGet indexId_path auth_token =
         []
         []
         Nothing
-        (Json.Decode.list Api.Data.indexesIndexMultiAssetWeightDecoder)
+        (Json.Decode.list Api.Data.modelsIndexMultiAssetWeightDecoder)
         |> Api.withBearerToken auth_token
 
 {-| List indexes
 -}
-v1IndexesGet : String -> Api.Request (List Api.Data.IndexesIndexIdentifier)
+v1IndexesGet : String -> Api.Request (List Api.Data.ModelsIndexIdentifier)
 v1IndexesGet auth_token =
     Api.request
         "GET"
@@ -73,12 +73,12 @@ v1IndexesGet auth_token =
         []
         []
         Nothing
-        (Json.Decode.list Api.Data.indexesIndexIdentifierDecoder)
+        (Json.Decode.list Api.Data.modelsIndexIdentifierDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Current Index Values for index definition
 -}
-v1IndexesIndexDefinitionIdCurrentSnapshotGet : String -> String -> Api.Request (List Api.Data.IndexesIndexDefinitionSnapshotEntry)
+v1IndexesIndexDefinitionIdCurrentSnapshotGet : String -> String -> Api.Request (List Api.Data.ModelsIndexDefinitionSnapshotEntry)
 v1IndexesIndexDefinitionIdCurrentSnapshotGet indexDefinitionId_path auth_token =
     Api.request
         "GET"
@@ -87,12 +87,12 @@ v1IndexesIndexDefinitionIdCurrentSnapshotGet indexDefinitionId_path auth_token =
         []
         []
         Nothing
-        (Json.Decode.list Api.Data.indexesIndexDefinitionSnapshotEntryDecoder)
+        (Json.Decode.list Api.Data.modelsIndexDefinitionSnapshotEntryDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Historical Index Values for index definition
 -}
-v1IndexesIndexDefinitionIdHistorySnapshotGet : String -> Maybe Posix -> String -> Api.Request (List Api.Data.IndexesIndexDefinitionSnapshotEntry)
+v1IndexesIndexDefinitionIdHistorySnapshotGet : String -> Maybe Posix -> String -> Api.Request (List Api.Data.ModelsIndexDefinitionSnapshotEntry)
 v1IndexesIndexDefinitionIdHistorySnapshotGet indexDefinitionId_path time_query auth_token =
     Api.request
         "GET"
@@ -101,12 +101,12 @@ v1IndexesIndexDefinitionIdHistorySnapshotGet indexDefinitionId_path time_query a
         [ ( "time", Maybe.map Api.Time.dateTimeToString time_query ) ]
         []
         Nothing
-        (Json.Decode.list Api.Data.indexesIndexDefinitionSnapshotEntryDecoder)
+        (Json.Decode.list Api.Data.modelsIndexDefinitionSnapshotEntryDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Current Index Value
 -}
-v1IndexesIndexIdCurrentGet : String -> String -> Api.Request Api.Data.IndexesIndexValue
+v1IndexesIndexIdCurrentGet : String -> String -> Api.Request Api.Data.ModelsIndexValue
 v1IndexesIndexIdCurrentGet indexId_path auth_token =
     Api.request
         "GET"
@@ -115,12 +115,12 @@ v1IndexesIndexIdCurrentGet indexId_path auth_token =
         []
         []
         Nothing
-        Api.Data.indexesIndexValueDecoder
+        Api.Data.modelsIndexValueDecoder
         |> Api.withBearerToken auth_token
 
 {-| Historical Index Value w/Composition
 -}
-v1IndexesIndexIdHistoryGet : String -> Maybe Posix -> Maybe Posix -> Maybe Int -> String -> Api.Request (List Api.Data.IndexesIndexValue)
+v1IndexesIndexIdHistoryGet : String -> Maybe Posix -> Maybe Posix -> Maybe Int -> String -> Api.Request (List Api.Data.ModelsIndexValue)
 v1IndexesIndexIdHistoryGet indexId_path timeStart_query timeEnd_query limit_query auth_token =
     Api.request
         "GET"
@@ -129,12 +129,12 @@ v1IndexesIndexIdHistoryGet indexId_path timeStart_query timeEnd_query limit_quer
         [ ( "time_start", Maybe.map Api.Time.dateTimeToString timeStart_query ), ( "time_end", Maybe.map Api.Time.dateTimeToString timeEnd_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
-        (Json.Decode.list Api.Data.indexesIndexValueDecoder)
+        (Json.Decode.list Api.Data.modelsIndexValueDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Timeseries Index Value
 -}
-v1IndexesIndexIdTimeseriesGet : String -> String -> String -> String -> Maybe Int -> String -> Api.Request (List Api.Data.IndexesIndexTimeseriesItem)
+v1IndexesIndexIdTimeseriesGet : String -> String -> String -> String -> Maybe Int -> String -> Api.Request (List Api.Data.ModelsIndexTimeseriesItem)
 v1IndexesIndexIdTimeseriesGet indexId_path periodId_query timeStart_query timeEnd_query limit_query auth_token =
     Api.request
         "GET"
@@ -143,5 +143,5 @@ v1IndexesIndexIdTimeseriesGet indexId_path periodId_query timeStart_query timeEn
         [ ( "period_id", Just <| identity periodId_query ), ( "time_start", Just <| identity timeStart_query ), ( "time_end", Just <| identity timeEnd_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
-        (Json.Decode.list Api.Data.indexesIndexTimeseriesItemDecoder)
+        (Json.Decode.list Api.Data.modelsIndexTimeseriesItemDecoder)
         |> Api.withBearerToken auth_token

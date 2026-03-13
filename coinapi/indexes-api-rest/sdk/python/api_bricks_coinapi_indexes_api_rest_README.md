@@ -94,14 +94,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [IndexesIndexDefinitionSnapshotEntry](api_bricks_coinapi_indexes_api_rest/docs/IndexesIndexDefinitionSnapshotEntry.md)
- - [IndexesIndexIdentifier](api_bricks_coinapi_indexes_api_rest/docs/IndexesIndexIdentifier.md)
- - [IndexesIndexMultiAssetWeight](api_bricks_coinapi_indexes_api_rest/docs/IndexesIndexMultiAssetWeight.md)
- - [IndexesIndexTimeseriesItem](api_bricks_coinapi_indexes_api_rest/docs/IndexesIndexTimeseriesItem.md)
- - [IndexesIndexValue](api_bricks_coinapi_indexes_api_rest/docs/IndexesIndexValue.md)
- - [IndexesIndexValueComponent](api_bricks_coinapi_indexes_api_rest/docs/IndexesIndexValueComponent.md)
  - [MetadataExchange](api_bricks_coinapi_indexes_api_rest/docs/MetadataExchange.md)
  - [MetadataTimeseriesPeriod](api_bricks_coinapi_indexes_api_rest/docs/MetadataTimeseriesPeriod.md)
+ - [ModelsIndexDefinitionSnapshotEntry](api_bricks_coinapi_indexes_api_rest/docs/ModelsIndexDefinitionSnapshotEntry.md)
+ - [ModelsIndexIdentifier](api_bricks_coinapi_indexes_api_rest/docs/ModelsIndexIdentifier.md)
+ - [ModelsIndexMultiAssetWeight](api_bricks_coinapi_indexes_api_rest/docs/ModelsIndexMultiAssetWeight.md)
+ - [ModelsIndexTimeseriesItem](api_bricks_coinapi_indexes_api_rest/docs/ModelsIndexTimeseriesItem.md)
+ - [ModelsIndexValue](api_bricks_coinapi_indexes_api_rest/docs/ModelsIndexValue.md)
+ - [ModelsIndexValueComponent](api_bricks_coinapi_indexes_api_rest/docs/ModelsIndexValueComponent.md)
 
 
 <a id="documentation-for-authorization"></a>

@@ -5,11 +5,11 @@
 #include <cstring>
 #include <list>
 #include <glib.h>
-#include "Indexes.IndexDefinitionSnapshotEntry.h"
-#include "Indexes.IndexIdentifier.h"
-#include "Indexes.IndexMultiAssetWeight.h"
-#include "Indexes.IndexTimeseriesItem.h"
-#include "Indexes.IndexValue.h"
+#include "Models.IndexDefinitionSnapshotEntry.h"
+#include "Models.IndexIdentifier.h"
+#include "Models.IndexMultiAssetWeight.h"
+#include "Models.IndexTimeseriesItem.h"
+#include "Models.IndexValue.h"
 #include <list>
 #include "Error.h"
 
@@ -38,7 +38,7 @@ public:
  */
 bool v1IndexdefMultiassetGetSync(char * accessToken,
 	
-	void(* handler)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )
+	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
 	, void* userData);
 
 /*! \brief Get all multi-asset weights. *Asynchronous*
@@ -50,7 +50,7 @@ bool v1IndexdefMultiassetGetSync(char * accessToken,
  */
 bool v1IndexdefMultiassetGetAsync(char * accessToken,
 	
-	void(* handler)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )
+	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
 	, void* userData);
 
 
@@ -64,7 +64,7 @@ bool v1IndexdefMultiassetGetAsync(char * accessToken,
  */
 bool v1IndexdefMultiassetIndexIdGetSync(char * accessToken,
 	std::string indexId, 
-	void(* handler)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )
+	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
 	, void* userData);
 
 /*! \brief Get multi-asset weights for specific index. *Asynchronous*
@@ -77,7 +77,7 @@ bool v1IndexdefMultiassetIndexIdGetSync(char * accessToken,
  */
 bool v1IndexdefMultiassetIndexIdGetAsync(char * accessToken,
 	std::string indexId, 
-	void(* handler)(std::list<Indexes.IndexMultiAssetWeight>, Error, void* )
+	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
 	, void* userData);
 
 
@@ -90,7 +90,7 @@ bool v1IndexdefMultiassetIndexIdGetAsync(char * accessToken,
  */
 bool v1IndexesGetSync(char * accessToken,
 	
-	void(* handler)(std::list<Indexes.IndexIdentifier>, Error, void* )
+	void(* handler)(std::list<Models.IndexIdentifier>, Error, void* )
 	, void* userData);
 
 /*! \brief List indexes. *Asynchronous*
@@ -102,7 +102,7 @@ bool v1IndexesGetSync(char * accessToken,
  */
 bool v1IndexesGetAsync(char * accessToken,
 	
-	void(* handler)(std::list<Indexes.IndexIdentifier>, Error, void* )
+	void(* handler)(std::list<Models.IndexIdentifier>, Error, void* )
 	, void* userData);
 
 
@@ -116,7 +116,7 @@ bool v1IndexesGetAsync(char * accessToken,
  */
 bool v1IndexesIndexDefinitionIdCurrentSnapshotGetSync(char * accessToken,
 	std::string indexDefinitionId, 
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
+	void(* handler)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )
 	, void* userData);
 
 /*! \brief Current Index Values for index definition. *Asynchronous*
@@ -129,7 +129,7 @@ bool v1IndexesIndexDefinitionIdCurrentSnapshotGetSync(char * accessToken,
  */
 bool v1IndexesIndexDefinitionIdCurrentSnapshotGetAsync(char * accessToken,
 	std::string indexDefinitionId, 
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
+	void(* handler)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )
 	, void* userData);
 
 
@@ -144,7 +144,7 @@ bool v1IndexesIndexDefinitionIdCurrentSnapshotGetAsync(char * accessToken,
  */
 bool v1IndexesIndexDefinitionIdHistorySnapshotGetSync(char * accessToken,
 	std::string indexDefinitionId, std::string time, 
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
+	void(* handler)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )
 	, void* userData);
 
 /*! \brief Historical Index Values for index definition. *Asynchronous*
@@ -158,7 +158,7 @@ bool v1IndexesIndexDefinitionIdHistorySnapshotGetSync(char * accessToken,
  */
 bool v1IndexesIndexDefinitionIdHistorySnapshotGetAsync(char * accessToken,
 	std::string indexDefinitionId, std::string time, 
-	void(* handler)(std::list<Indexes.IndexDefinitionSnapshotEntry>, Error, void* )
+	void(* handler)(std::list<Models.IndexDefinitionSnapshotEntry>, Error, void* )
 	, void* userData);
 
 
@@ -172,7 +172,7 @@ bool v1IndexesIndexDefinitionIdHistorySnapshotGetAsync(char * accessToken,
  */
 bool v1IndexesIndexIdCurrentGetSync(char * accessToken,
 	std::string indexId, 
-	void(* handler)(Indexes.IndexValue, Error, void* )
+	void(* handler)(Models.IndexValue, Error, void* )
 	, void* userData);
 
 /*! \brief Current Index Value. *Asynchronous*
@@ -185,7 +185,7 @@ bool v1IndexesIndexIdCurrentGetSync(char * accessToken,
  */
 bool v1IndexesIndexIdCurrentGetAsync(char * accessToken,
 	std::string indexId, 
-	void(* handler)(Indexes.IndexValue, Error, void* )
+	void(* handler)(Models.IndexValue, Error, void* )
 	, void* userData);
 
 
@@ -202,7 +202,7 @@ bool v1IndexesIndexIdCurrentGetAsync(char * accessToken,
  */
 bool v1IndexesIndexIdHistoryGetSync(char * accessToken,
 	std::string indexId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<Indexes.IndexValue>, Error, void* )
+	void(* handler)(std::list<Models.IndexValue>, Error, void* )
 	, void* userData);
 
 /*! \brief Historical Index Value w/Composition. *Asynchronous*
@@ -218,7 +218,7 @@ bool v1IndexesIndexIdHistoryGetSync(char * accessToken,
  */
 bool v1IndexesIndexIdHistoryGetAsync(char * accessToken,
 	std::string indexId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<Indexes.IndexValue>, Error, void* )
+	void(* handler)(std::list<Models.IndexValue>, Error, void* )
 	, void* userData);
 
 
@@ -236,7 +236,7 @@ bool v1IndexesIndexIdHistoryGetAsync(char * accessToken,
  */
 bool v1IndexesIndexIdTimeseriesGetSync(char * accessToken,
 	std::string indexId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<Indexes.IndexTimeseriesItem>, Error, void* )
+	void(* handler)(std::list<Models.IndexTimeseriesItem>, Error, void* )
 	, void* userData);
 
 /*! \brief Timeseries Index Value. *Asynchronous*
@@ -253,7 +253,7 @@ bool v1IndexesIndexIdTimeseriesGetSync(char * accessToken,
  */
 bool v1IndexesIndexIdTimeseriesGetAsync(char * accessToken,
 	std::string indexId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<Indexes.IndexTimeseriesItem>, Error, void* )
+	void(* handler)(std::list<Models.IndexTimeseriesItem>, Error, void* )
 	, void* userData);
 
 

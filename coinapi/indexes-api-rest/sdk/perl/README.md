@@ -240,14 +240,14 @@ use WWW::OpenAPIClient::PeriodsApi;
 
 To load the models:
 ```perl
-use WWW::OpenAPIClient::Object::IndexesIndexDefinitionSnapshotEntry;
-use WWW::OpenAPIClient::Object::IndexesIndexIdentifier;
-use WWW::OpenAPIClient::Object::IndexesIndexMultiAssetWeight;
-use WWW::OpenAPIClient::Object::IndexesIndexTimeseriesItem;
-use WWW::OpenAPIClient::Object::IndexesIndexValue;
-use WWW::OpenAPIClient::Object::IndexesIndexValueComponent;
 use WWW::OpenAPIClient::Object::MetadataExchange;
 use WWW::OpenAPIClient::Object::MetadataTimeseriesPeriod;
+use WWW::OpenAPIClient::Object::ModelsIndexDefinitionSnapshotEntry;
+use WWW::OpenAPIClient::Object::ModelsIndexIdentifier;
+use WWW::OpenAPIClient::Object::ModelsIndexMultiAssetWeight;
+use WWW::OpenAPIClient::Object::ModelsIndexTimeseriesItem;
+use WWW::OpenAPIClient::Object::ModelsIndexValue;
+use WWW::OpenAPIClient::Object::ModelsIndexValueComponent;
 
 ````
 
@@ -264,14 +264,14 @@ use WWW::OpenAPIClient::MetadataApi;
 use WWW::OpenAPIClient::PeriodsApi;
 
 # load the models
-use WWW::OpenAPIClient::Object::IndexesIndexDefinitionSnapshotEntry;
-use WWW::OpenAPIClient::Object::IndexesIndexIdentifier;
-use WWW::OpenAPIClient::Object::IndexesIndexMultiAssetWeight;
-use WWW::OpenAPIClient::Object::IndexesIndexTimeseriesItem;
-use WWW::OpenAPIClient::Object::IndexesIndexValue;
-use WWW::OpenAPIClient::Object::IndexesIndexValueComponent;
 use WWW::OpenAPIClient::Object::MetadataExchange;
 use WWW::OpenAPIClient::Object::MetadataTimeseriesPeriod;
+use WWW::OpenAPIClient::Object::ModelsIndexDefinitionSnapshotEntry;
+use WWW::OpenAPIClient::Object::ModelsIndexIdentifier;
+use WWW::OpenAPIClient::Object::ModelsIndexMultiAssetWeight;
+use WWW::OpenAPIClient::Object::ModelsIndexTimeseriesItem;
+use WWW::OpenAPIClient::Object::ModelsIndexValue;
+use WWW::OpenAPIClient::Object::ModelsIndexValueComponent;
 
 # for displaying the API response data
 use Data::Dumper;
@@ -315,14 +315,14 @@ Class | Method | HTTP request | Description
 
 
 # DOCUMENTATION FOR MODELS
- - [WWW::OpenAPIClient::Object::IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
- - [WWW::OpenAPIClient::Object::IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
- - [WWW::OpenAPIClient::Object::IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)
- - [WWW::OpenAPIClient::Object::IndexesIndexTimeseriesItem](docs/IndexesIndexTimeseriesItem.md)
- - [WWW::OpenAPIClient::Object::IndexesIndexValue](docs/IndexesIndexValue.md)
- - [WWW::OpenAPIClient::Object::IndexesIndexValueComponent](docs/IndexesIndexValueComponent.md)
  - [WWW::OpenAPIClient::Object::MetadataExchange](docs/MetadataExchange.md)
  - [WWW::OpenAPIClient::Object::MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
+ - [WWW::OpenAPIClient::Object::ModelsIndexDefinitionSnapshotEntry](docs/ModelsIndexDefinitionSnapshotEntry.md)
+ - [WWW::OpenAPIClient::Object::ModelsIndexIdentifier](docs/ModelsIndexIdentifier.md)
+ - [WWW::OpenAPIClient::Object::ModelsIndexMultiAssetWeight](docs/ModelsIndexMultiAssetWeight.md)
+ - [WWW::OpenAPIClient::Object::ModelsIndexTimeseriesItem](docs/ModelsIndexTimeseriesItem.md)
+ - [WWW::OpenAPIClient::Object::ModelsIndexValue](docs/ModelsIndexValue.md)
+ - [WWW::OpenAPIClient::Object::ModelsIndexValueComponent](docs/ModelsIndexValueComponent.md)
 
 
 # DOCUMENTATION FOR AUTHORIZATION

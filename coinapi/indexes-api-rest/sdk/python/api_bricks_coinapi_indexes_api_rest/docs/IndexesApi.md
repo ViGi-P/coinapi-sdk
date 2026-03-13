@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **v1_indexdef_multiasset_get**
-> List[IndexesIndexMultiAssetWeight] v1_indexdef_multiasset_get()
+> List[ModelsIndexMultiAssetWeight] v1_indexdef_multiasset_get()
 
 Get all multi-asset weights
 
@@ -26,7 +26,7 @@ Get all multi-asset weights
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_multi_asset_weight import IndexesIndexMultiAssetWeight
+from api_bricks_coinapi_indexes_api_rest.models.models_index_multi_asset_weight import ModelsIndexMultiAssetWeight
 from api_bricks_coinapi_indexes_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -74,7 +74,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[IndexesIndexMultiAssetWeight]**](IndexesIndexMultiAssetWeight.md)
+[**List[ModelsIndexMultiAssetWeight]**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -94,7 +94,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexdef_multiasset_index_id_get**
-> List[IndexesIndexMultiAssetWeight] v1_indexdef_multiasset_index_id_get(index_id)
+> List[ModelsIndexMultiAssetWeight] v1_indexdef_multiasset_index_id_get(index_id)
 
 Get multi-asset weights for specific index
 
@@ -105,7 +105,7 @@ Get multi-asset weights for specific index
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_multi_asset_weight import IndexesIndexMultiAssetWeight
+from api_bricks_coinapi_indexes_api_rest.models.models_index_multi_asset_weight import ModelsIndexMultiAssetWeight
 from api_bricks_coinapi_indexes_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IndexesIndexMultiAssetWeight]**](IndexesIndexMultiAssetWeight.md)
+[**List[ModelsIndexMultiAssetWeight]**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_get**
-> List[IndexesIndexIdentifier] v1_indexes_get()
+> List[ModelsIndexIdentifier] v1_indexes_get()
 
 List indexes
 
@@ -188,7 +188,7 @@ List indexes
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_identifier import IndexesIndexIdentifier
+from api_bricks_coinapi_indexes_api_rest.models.models_index_identifier import ModelsIndexIdentifier
 from api_bricks_coinapi_indexes_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -236,7 +236,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[IndexesIndexIdentifier]**](IndexesIndexIdentifier.md)
+[**List[ModelsIndexIdentifier]**](ModelsIndexIdentifier.md)
 
 ### Authorization
 
@@ -256,7 +256,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_definition_id_current_snapshot_get**
-> List[IndexesIndexDefinitionSnapshotEntry] v1_indexes_index_definition_id_current_snapshot_get(index_definition_id)
+> List[ModelsIndexDefinitionSnapshotEntry] v1_indexes_index_definition_id_current_snapshot_get(index_definition_id)
 
 Current Index Values for index definition
 
@@ -267,7 +267,7 @@ Current Index Values for index definition
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_definition_snapshot_entry import IndexesIndexDefinitionSnapshotEntry
+from api_bricks_coinapi_indexes_api_rest.models.models_index_definition_snapshot_entry import ModelsIndexDefinitionSnapshotEntry
 from api_bricks_coinapi_indexes_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IndexesIndexDefinitionSnapshotEntry]**](IndexesIndexDefinitionSnapshotEntry.md)
+[**List[ModelsIndexDefinitionSnapshotEntry]**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_definition_id_history_snapshot_get**
-> List[IndexesIndexDefinitionSnapshotEntry] v1_indexes_index_definition_id_history_snapshot_get(index_definition_id, time=time)
+> List[ModelsIndexDefinitionSnapshotEntry] v1_indexes_index_definition_id_history_snapshot_get(index_definition_id, time=time)
 
 Historical Index Values for index definition
 
@@ -350,7 +350,7 @@ Historical Index Values for index definition
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_definition_snapshot_entry import IndexesIndexDefinitionSnapshotEntry
+from api_bricks_coinapi_indexes_api_rest.models.models_index_definition_snapshot_entry import ModelsIndexDefinitionSnapshotEntry
 from api_bricks_coinapi_indexes_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IndexesIndexDefinitionSnapshotEntry]**](IndexesIndexDefinitionSnapshotEntry.md)
+[**List[ModelsIndexDefinitionSnapshotEntry]**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_id_current_get**
-> IndexesIndexValue v1_indexes_index_id_current_get(index_id)
+> ModelsIndexValue v1_indexes_index_id_current_get(index_id)
 
 Current Index Value
 
@@ -435,7 +435,7 @@ Current Index Value
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_value import IndexesIndexValue
+from api_bricks_coinapi_indexes_api_rest.models.models_index_value import ModelsIndexValue
 from api_bricks_coinapi_indexes_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexValue**](IndexesIndexValue.md)
+[**ModelsIndexValue**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_id_history_get**
-> List[IndexesIndexValue] v1_indexes_index_id_history_get(index_id, time_start=time_start, time_end=time_end, limit=limit)
+> List[ModelsIndexValue] v1_indexes_index_id_history_get(index_id, time_start=time_start, time_end=time_end, limit=limit)
 
 Historical Index Value w/Composition
 
@@ -518,7 +518,7 @@ Historical Index Value w/Composition
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_value import IndexesIndexValue
+from api_bricks_coinapi_indexes_api_rest.models.models_index_value import ModelsIndexValue
 from api_bricks_coinapi_indexes_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -576,7 +576,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IndexesIndexValue]**](IndexesIndexValue.md)
+[**List[ModelsIndexValue]**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -596,7 +596,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_id_timeseries_get**
-> List[IndexesIndexTimeseriesItem] v1_indexes_index_id_timeseries_get(index_id, period_id, time_start, time_end, limit=limit)
+> List[ModelsIndexTimeseriesItem] v1_indexes_index_id_timeseries_get(index_id, period_id, time_start, time_end, limit=limit)
 
 Timeseries Index Value
 
@@ -607,7 +607,7 @@ Timeseries Index Value
 
 ```python
 import api_bricks_coinapi_indexes_api_rest
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_timeseries_item import IndexesIndexTimeseriesItem
+from api_bricks_coinapi_indexes_api_rest.models.models_index_timeseries_item import ModelsIndexTimeseriesItem
 from api_bricks_coinapi_indexes_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -667,7 +667,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[IndexesIndexTimeseriesItem]**](IndexesIndexTimeseriesItem.md)
+[**List[ModelsIndexTimeseriesItem]**](ModelsIndexTimeseriesItem.md)
 
 ### Authorization
 

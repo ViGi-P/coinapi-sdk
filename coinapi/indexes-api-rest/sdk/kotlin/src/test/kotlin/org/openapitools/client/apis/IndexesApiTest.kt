@@ -19,11 +19,11 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import org.openapitools.client.apis.IndexesApi
-import org.openapitools.client.models.IndexesIndexDefinitionSnapshotEntry
-import org.openapitools.client.models.IndexesIndexIdentifier
-import org.openapitools.client.models.IndexesIndexMultiAssetWeight
-import org.openapitools.client.models.IndexesIndexTimeseriesItem
-import org.openapitools.client.models.IndexesIndexValue
+import org.openapitools.client.models.ModelsIndexDefinitionSnapshotEntry
+import org.openapitools.client.models.ModelsIndexIdentifier
+import org.openapitools.client.models.ModelsIndexMultiAssetWeight
+import org.openapitools.client.models.ModelsIndexTimeseriesItem
+import org.openapitools.client.models.ModelsIndexValue
 
 class IndexesApiTest : ShouldSpec() {
     init {
@@ -33,7 +33,7 @@ class IndexesApiTest : ShouldSpec() {
         // to test v1IndexdefMultiassetGet
         should("test v1IndexdefMultiassetGet") {
             // uncomment below to test v1IndexdefMultiassetGet
-            //val result : kotlin.collections.List<IndexesIndexMultiAssetWeight> = apiInstance.v1IndexdefMultiassetGet()
+            //val result : kotlin.collections.List<ModelsIndexMultiAssetWeight> = apiInstance.v1IndexdefMultiassetGet()
             //result shouldBe ("TODO")
         }
 
@@ -41,14 +41,14 @@ class IndexesApiTest : ShouldSpec() {
         should("test v1IndexdefMultiassetIndexIdGet") {
             // uncomment below to test v1IndexdefMultiassetIndexIdGet
             //val indexId : kotlin.String = indexId_example // kotlin.String | 
-            //val result : kotlin.collections.List<IndexesIndexMultiAssetWeight> = apiInstance.v1IndexdefMultiassetIndexIdGet(indexId)
+            //val result : kotlin.collections.List<ModelsIndexMultiAssetWeight> = apiInstance.v1IndexdefMultiassetIndexIdGet(indexId)
             //result shouldBe ("TODO")
         }
 
         // to test v1IndexesGet
         should("test v1IndexesGet") {
             // uncomment below to test v1IndexesGet
-            //val result : kotlin.collections.List<IndexesIndexIdentifier> = apiInstance.v1IndexesGet()
+            //val result : kotlin.collections.List<ModelsIndexIdentifier> = apiInstance.v1IndexesGet()
             //result shouldBe ("TODO")
         }
 
@@ -56,7 +56,7 @@ class IndexesApiTest : ShouldSpec() {
         should("test v1IndexesIndexDefinitionIdCurrentSnapshotGet") {
             // uncomment below to test v1IndexesIndexDefinitionIdCurrentSnapshotGet
             //val indexDefinitionId : kotlin.String = indexDefinitionId_example // kotlin.String | 
-            //val result : kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry> = apiInstance.v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId)
+            //val result : kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry> = apiInstance.v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId)
             //result shouldBe ("TODO")
         }
 
@@ -65,7 +65,7 @@ class IndexesApiTest : ShouldSpec() {
             // uncomment below to test v1IndexesIndexDefinitionIdHistorySnapshotGet
             //val indexDefinitionId : kotlin.String = indexDefinitionId_example // kotlin.String | 
             //val time : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | 
-            //val result : kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry> = apiInstance.v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time)
+            //val result : kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry> = apiInstance.v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time)
             //result shouldBe ("TODO")
         }
 
@@ -73,7 +73,7 @@ class IndexesApiTest : ShouldSpec() {
         should("test v1IndexesIndexIdCurrentGet") {
             // uncomment below to test v1IndexesIndexIdCurrentGet
             //val indexId : kotlin.String = indexId_example // kotlin.String | 
-            //val result : IndexesIndexValue = apiInstance.v1IndexesIndexIdCurrentGet(indexId)
+            //val result : ModelsIndexValue = apiInstance.v1IndexesIndexIdCurrentGet(indexId)
             //result shouldBe ("TODO")
         }
 
@@ -84,7 +84,7 @@ class IndexesApiTest : ShouldSpec() {
             //val timeStart : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | 
             //val timeEnd : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | 
             //val limit : kotlin.Int = 56 // kotlin.Int | 
-            //val result : kotlin.collections.List<IndexesIndexValue> = apiInstance.v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit)
+            //val result : kotlin.collections.List<ModelsIndexValue> = apiInstance.v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit)
             //result shouldBe ("TODO")
         }
 
@@ -96,7 +96,7 @@ class IndexesApiTest : ShouldSpec() {
             //val timeStart : kotlin.String = timeStart_example // kotlin.String | Timeseries starting time in ISO 8601
             //val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601
             //val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-            //val result : kotlin.collections.List<IndexesIndexTimeseriesItem> = apiInstance.v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit)
+            //val result : kotlin.collections.List<ModelsIndexTimeseriesItem> = apiInstance.v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit)
             //result shouldBe ("TODO")
         }
 

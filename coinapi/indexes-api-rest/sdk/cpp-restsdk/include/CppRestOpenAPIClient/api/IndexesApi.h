@@ -23,11 +23,11 @@
 
 #include "CppRestOpenAPIClient/ApiClient.h"
 
-#include "CppRestOpenAPIClient/model/Indexes_IndexDefinitionSnapshotEntry.h"
-#include "CppRestOpenAPIClient/model/Indexes_IndexIdentifier.h"
-#include "CppRestOpenAPIClient/model/Indexes_IndexMultiAssetWeight.h"
-#include "CppRestOpenAPIClient/model/Indexes_IndexTimeseriesItem.h"
-#include "CppRestOpenAPIClient/model/Indexes_IndexValue.h"
+#include "CppRestOpenAPIClient/model/Models_IndexDefinitionSnapshotEntry.h"
+#include "CppRestOpenAPIClient/model/Models_IndexIdentifier.h"
+#include "CppRestOpenAPIClient/model/Models_IndexMultiAssetWeight.h"
+#include "CppRestOpenAPIClient/model/Models_IndexTimeseriesItem.h"
+#include "CppRestOpenAPIClient/model/Models_IndexValue.h"
 #include <vector>
 #include <cpprest/details/basic_types.h>
 #include <boost/optional.hpp>
@@ -55,7 +55,7 @@ public:
     /// <remarks>
     /// 
     /// </remarks>
-    pplx::task<std::vector<std::shared_ptr<Indexes_IndexMultiAssetWeight>>> v1IndexdefMultiassetGet(
+    pplx::task<std::vector<std::shared_ptr<Models_IndexMultiAssetWeight>>> v1IndexdefMultiassetGet(
     ) const;
     /// <summary>
     /// Get multi-asset weights for specific index
@@ -64,7 +64,7 @@ public:
     /// 
     /// </remarks>
     /// <param name="indexId"></param>
-    pplx::task<std::vector<std::shared_ptr<Indexes_IndexMultiAssetWeight>>> v1IndexdefMultiassetIndexIdGet(
+    pplx::task<std::vector<std::shared_ptr<Models_IndexMultiAssetWeight>>> v1IndexdefMultiassetIndexIdGet(
         utility::string_t indexId
     ) const;
     /// <summary>
@@ -73,7 +73,7 @@ public:
     /// <remarks>
     /// 
     /// </remarks>
-    pplx::task<std::vector<std::shared_ptr<Indexes_IndexIdentifier>>> v1IndexesGet(
+    pplx::task<std::vector<std::shared_ptr<Models_IndexIdentifier>>> v1IndexesGet(
     ) const;
     /// <summary>
     /// Current Index Values for index definition
@@ -82,7 +82,7 @@ public:
     /// 
     /// </remarks>
     /// <param name="indexDefinitionId"></param>
-    pplx::task<std::vector<std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry>>> v1IndexesIndexDefinitionIdCurrentSnapshotGet(
+    pplx::task<std::vector<std::shared_ptr<Models_IndexDefinitionSnapshotEntry>>> v1IndexesIndexDefinitionIdCurrentSnapshotGet(
         utility::string_t indexDefinitionId
     ) const;
     /// <summary>
@@ -93,7 +93,7 @@ public:
     /// </remarks>
     /// <param name="indexDefinitionId"></param>
     /// <param name="time"> (optional, default to utility::datetime())</param>
-    pplx::task<std::vector<std::shared_ptr<Indexes_IndexDefinitionSnapshotEntry>>> v1IndexesIndexDefinitionIdHistorySnapshotGet(
+    pplx::task<std::vector<std::shared_ptr<Models_IndexDefinitionSnapshotEntry>>> v1IndexesIndexDefinitionIdHistorySnapshotGet(
         utility::string_t indexDefinitionId,
         boost::optional<utility::datetime> time
     ) const;
@@ -104,7 +104,7 @@ public:
     /// 
     /// </remarks>
     /// <param name="indexId"></param>
-    pplx::task<std::shared_ptr<Indexes_IndexValue>> v1IndexesIndexIdCurrentGet(
+    pplx::task<std::shared_ptr<Models_IndexValue>> v1IndexesIndexIdCurrentGet(
         utility::string_t indexId
     ) const;
     /// <summary>
@@ -117,7 +117,7 @@ public:
     /// <param name="timeStart"> (optional, default to utility::datetime())</param>
     /// <param name="timeEnd"> (optional, default to utility::datetime())</param>
     /// <param name="limit"> (optional, default to 0)</param>
-    pplx::task<std::vector<std::shared_ptr<Indexes_IndexValue>>> v1IndexesIndexIdHistoryGet(
+    pplx::task<std::vector<std::shared_ptr<Models_IndexValue>>> v1IndexesIndexIdHistoryGet(
         utility::string_t indexId,
         boost::optional<utility::datetime> timeStart,
         boost::optional<utility::datetime> timeEnd,
@@ -134,7 +134,7 @@ public:
     /// <param name="timeStart">Timeseries starting time in ISO 8601</param>
     /// <param name="timeEnd">Timeseries ending time in ISO 8601</param>
     /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 0)</param>
-    pplx::task<std::vector<std::shared_ptr<Indexes_IndexTimeseriesItem>>> v1IndexesIndexIdTimeseriesGet(
+    pplx::task<std::vector<std::shared_ptr<Models_IndexTimeseriesItem>>> v1IndexesIndexIdTimeseriesGet(
         utility::string_t indexId,
         utility::string_t periodId,
         utility::string_t timeStart,

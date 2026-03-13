@@ -13,11 +13,11 @@
 
 %% @doc Get all multi-asset weights
 %% 
--spec v1_indexdef_multiasset_get(ctx:ctx()) -> {ok, [openapi_indexes_index_multi_asset_weight:openapi_indexes_index_multi_asset_weight()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexdef_multiasset_get(ctx:ctx()) -> {ok, [openapi_models_index_multi_asset_weight:openapi_models_index_multi_asset_weight()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexdef_multiasset_get(Ctx) ->
     v1_indexdef_multiasset_get(Ctx, #{}).
 
--spec v1_indexdef_multiasset_get(ctx:ctx(), maps:map()) -> {ok, [openapi_indexes_index_multi_asset_weight:openapi_indexes_index_multi_asset_weight()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexdef_multiasset_get(ctx:ctx(), maps:map()) -> {ok, [openapi_models_index_multi_asset_weight:openapi_models_index_multi_asset_weight()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexdef_multiasset_get(Ctx, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
@@ -34,11 +34,11 @@ v1_indexdef_multiasset_get(Ctx, Optional) ->
 
 %% @doc Get multi-asset weights for specific index
 %% 
--spec v1_indexdef_multiasset_index_id_get(ctx:ctx(), binary()) -> {ok, [openapi_indexes_index_multi_asset_weight:openapi_indexes_index_multi_asset_weight()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexdef_multiasset_index_id_get(ctx:ctx(), binary()) -> {ok, [openapi_models_index_multi_asset_weight:openapi_models_index_multi_asset_weight()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexdef_multiasset_index_id_get(Ctx, IndexId) ->
     v1_indexdef_multiasset_index_id_get(Ctx, IndexId, #{}).
 
--spec v1_indexdef_multiasset_index_id_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_indexes_index_multi_asset_weight:openapi_indexes_index_multi_asset_weight()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexdef_multiasset_index_id_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_models_index_multi_asset_weight:openapi_models_index_multi_asset_weight()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexdef_multiasset_index_id_get(Ctx, IndexId, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
@@ -55,11 +55,11 @@ v1_indexdef_multiasset_index_id_get(Ctx, IndexId, Optional) ->
 
 %% @doc List indexes
 %% 
--spec v1_indexes_get(ctx:ctx()) -> {ok, [openapi_indexes_index_identifier:openapi_indexes_index_identifier()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexes_get(ctx:ctx()) -> {ok, [openapi_models_index_identifier:openapi_models_index_identifier()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexes_get(Ctx) ->
     v1_indexes_get(Ctx, #{}).
 
--spec v1_indexes_get(ctx:ctx(), maps:map()) -> {ok, [openapi_indexes_index_identifier:openapi_indexes_index_identifier()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexes_get(ctx:ctx(), maps:map()) -> {ok, [openapi_models_index_identifier:openapi_models_index_identifier()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexes_get(Ctx, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
@@ -76,11 +76,11 @@ v1_indexes_get(Ctx, Optional) ->
 
 %% @doc Current Index Values for index definition
 %% 
--spec v1_indexes_index_definition_id_current_snapshot_get(ctx:ctx(), binary()) -> {ok, [openapi_indexes_index_definition_snapshot_entry:openapi_indexes_index_definition_snapshot_entry()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexes_index_definition_id_current_snapshot_get(ctx:ctx(), binary()) -> {ok, [openapi_models_index_definition_snapshot_entry:openapi_models_index_definition_snapshot_entry()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexes_index_definition_id_current_snapshot_get(Ctx, IndexDefinitionId) ->
     v1_indexes_index_definition_id_current_snapshot_get(Ctx, IndexDefinitionId, #{}).
 
--spec v1_indexes_index_definition_id_current_snapshot_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_indexes_index_definition_snapshot_entry:openapi_indexes_index_definition_snapshot_entry()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexes_index_definition_id_current_snapshot_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_models_index_definition_snapshot_entry:openapi_models_index_definition_snapshot_entry()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexes_index_definition_id_current_snapshot_get(Ctx, IndexDefinitionId, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
@@ -97,11 +97,11 @@ v1_indexes_index_definition_id_current_snapshot_get(Ctx, IndexDefinitionId, Opti
 
 %% @doc Historical Index Values for index definition
 %% 
--spec v1_indexes_index_definition_id_history_snapshot_get(ctx:ctx(), binary()) -> {ok, [openapi_indexes_index_definition_snapshot_entry:openapi_indexes_index_definition_snapshot_entry()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexes_index_definition_id_history_snapshot_get(ctx:ctx(), binary()) -> {ok, [openapi_models_index_definition_snapshot_entry:openapi_models_index_definition_snapshot_entry()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexes_index_definition_id_history_snapshot_get(Ctx, IndexDefinitionId) ->
     v1_indexes_index_definition_id_history_snapshot_get(Ctx, IndexDefinitionId, #{}).
 
--spec v1_indexes_index_definition_id_history_snapshot_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_indexes_index_definition_snapshot_entry:openapi_indexes_index_definition_snapshot_entry()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexes_index_definition_id_history_snapshot_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_models_index_definition_snapshot_entry:openapi_models_index_definition_snapshot_entry()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexes_index_definition_id_history_snapshot_get(Ctx, IndexDefinitionId, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
@@ -118,11 +118,11 @@ v1_indexes_index_definition_id_history_snapshot_get(Ctx, IndexDefinitionId, Opti
 
 %% @doc Current Index Value
 %% 
--spec v1_indexes_index_id_current_get(ctx:ctx(), binary()) -> {ok, openapi_indexes_index_value:openapi_indexes_index_value(), openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexes_index_id_current_get(ctx:ctx(), binary()) -> {ok, openapi_models_index_value:openapi_models_index_value(), openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexes_index_id_current_get(Ctx, IndexId) ->
     v1_indexes_index_id_current_get(Ctx, IndexId, #{}).
 
--spec v1_indexes_index_id_current_get(ctx:ctx(), binary(), maps:map()) -> {ok, openapi_indexes_index_value:openapi_indexes_index_value(), openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexes_index_id_current_get(ctx:ctx(), binary(), maps:map()) -> {ok, openapi_models_index_value:openapi_models_index_value(), openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexes_index_id_current_get(Ctx, IndexId, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
@@ -139,11 +139,11 @@ v1_indexes_index_id_current_get(Ctx, IndexId, Optional) ->
 
 %% @doc Historical Index Value w/Composition
 %% 
--spec v1_indexes_index_id_history_get(ctx:ctx(), binary()) -> {ok, [openapi_indexes_index_value:openapi_indexes_index_value()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexes_index_id_history_get(ctx:ctx(), binary()) -> {ok, [openapi_models_index_value:openapi_models_index_value()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexes_index_id_history_get(Ctx, IndexId) ->
     v1_indexes_index_id_history_get(Ctx, IndexId, #{}).
 
--spec v1_indexes_index_id_history_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_indexes_index_value:openapi_indexes_index_value()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexes_index_id_history_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_models_index_value:openapi_models_index_value()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexes_index_id_history_get(Ctx, IndexId, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
@@ -160,11 +160,11 @@ v1_indexes_index_id_history_get(Ctx, IndexId, Optional) ->
 
 %% @doc Timeseries Index Value
 %% 
--spec v1_indexes_index_id_timeseries_get(ctx:ctx(), binary(), binary(), binary(), binary()) -> {ok, [openapi_indexes_index_timeseries_item:openapi_indexes_index_timeseries_item()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexes_index_id_timeseries_get(ctx:ctx(), binary(), binary(), binary(), binary()) -> {ok, [openapi_models_index_timeseries_item:openapi_models_index_timeseries_item()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexes_index_id_timeseries_get(Ctx, IndexId, PeriodId, TimeStart, TimeEnd) ->
     v1_indexes_index_id_timeseries_get(Ctx, IndexId, PeriodId, TimeStart, TimeEnd, #{}).
 
--spec v1_indexes_index_id_timeseries_get(ctx:ctx(), binary(), binary(), binary(), binary(), maps:map()) -> {ok, [openapi_indexes_index_timeseries_item:openapi_indexes_index_timeseries_item()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_indexes_index_id_timeseries_get(ctx:ctx(), binary(), binary(), binary(), binary(), maps:map()) -> {ok, [openapi_models_index_timeseries_item:openapi_models_index_timeseries_item()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_indexes_index_id_timeseries_get(Ctx, IndexId, PeriodId, TimeStart, TimeEnd, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),

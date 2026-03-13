@@ -18,7 +18,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT]
+            l_response: LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT]
         do
             -- TODO: Initialize required params.
 
@@ -31,7 +31,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT]
+            l_response: LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT]
             l_index_id: STRING_32
         do
             -- TODO: Initialize required params.
@@ -46,7 +46,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: LIST [INDEXES_INDEX_IDENTIFIER]
+            l_response: LIST [MODELS_INDEX_IDENTIFIER]
         do
             -- TODO: Initialize required params.
 
@@ -59,7 +59,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY]
+            l_response: LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY]
             l_index_definition_id: STRING_32
         do
             -- TODO: Initialize required params.
@@ -74,7 +74,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY]
+            l_response: LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY]
             l_index_definition_id: STRING_32
             l_time: DATE_TIME
         do
@@ -90,7 +90,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: INDEXES_INDEX_VALUE
+            l_response: MODELS_INDEX_VALUE
             l_index_id: STRING_32
         do
             -- TODO: Initialize required params.
@@ -105,7 +105,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: LIST [INDEXES_INDEX_VALUE]
+            l_response: LIST [MODELS_INDEX_VALUE]
             l_index_id: STRING_32
             l_time_start: DATE_TIME
             l_time_end: DATE_TIME
@@ -123,7 +123,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: LIST [INDEXES_INDEX_TIMESERIES_ITEM]
+            l_response: LIST [MODELS_INDEX_TIMESERIES_ITEM]
             l_index_id: STRING_32
             l_period_id: STRING_32
             l_time_start: STRING_32

@@ -15,7 +15,7 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 <a id="v1indexdefmultiassetget"></a>
 # **V1IndexdefMultiassetGet**
-> List&lt;IndexesIndexMultiAssetWeight&gt; V1IndexdefMultiassetGet ()
+> List&lt;ModelsIndexMultiAssetWeight&gt; V1IndexdefMultiassetGet ()
 
 Get all multi-asset weights
 
@@ -24,7 +24,7 @@ Get all multi-asset weights
 This endpoint does not need any parameter.
 ### Return type
 
-[**List&lt;IndexesIndexMultiAssetWeight&gt;**](IndexesIndexMultiAssetWeight.md)
+[**List&lt;ModelsIndexMultiAssetWeight&gt;**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 <a id="v1indexdefmultiassetindexidget"></a>
 # **V1IndexdefMultiassetIndexIdGet**
-> List&lt;IndexesIndexMultiAssetWeight&gt; V1IndexdefMultiassetIndexIdGet (string indexId)
+> List&lt;ModelsIndexMultiAssetWeight&gt; V1IndexdefMultiassetIndexIdGet (string indexId)
 
 Get multi-asset weights for specific index
 
@@ -58,7 +58,7 @@ Get multi-asset weights for specific index
 
 ### Return type
 
-[**List&lt;IndexesIndexMultiAssetWeight&gt;**](IndexesIndexMultiAssetWeight.md)
+[**List&lt;ModelsIndexMultiAssetWeight&gt;**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Get multi-asset weights for specific index
 
 <a id="v1indexesget"></a>
 # **V1IndexesGet**
-> List&lt;IndexesIndexIdentifier&gt; V1IndexesGet ()
+> List&lt;ModelsIndexIdentifier&gt; V1IndexesGet ()
 
 List indexes
 
@@ -88,7 +88,7 @@ List indexes
 This endpoint does not need any parameter.
 ### Return type
 
-[**List&lt;IndexesIndexIdentifier&gt;**](IndexesIndexIdentifier.md)
+[**List&lt;ModelsIndexIdentifier&gt;**](ModelsIndexIdentifier.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ This endpoint does not need any parameter.
 
 <a id="v1indexesindexdefinitionidcurrentsnapshotget"></a>
 # **V1IndexesIndexDefinitionIdCurrentSnapshotGet**
-> List&lt;IndexesIndexDefinitionSnapshotEntry&gt; V1IndexesIndexDefinitionIdCurrentSnapshotGet (string indexDefinitionId)
+> List&lt;ModelsIndexDefinitionSnapshotEntry&gt; V1IndexesIndexDefinitionIdCurrentSnapshotGet (string indexDefinitionId)
 
 Current Index Values for index definition
 
@@ -122,7 +122,7 @@ Current Index Values for index definition
 
 ### Return type
 
-[**List&lt;IndexesIndexDefinitionSnapshotEntry&gt;**](IndexesIndexDefinitionSnapshotEntry.md)
+[**List&lt;ModelsIndexDefinitionSnapshotEntry&gt;**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Current Index Values for index definition
 
 <a id="v1indexesindexdefinitionidhistorysnapshotget"></a>
 # **V1IndexesIndexDefinitionIdHistorySnapshotGet**
-> List&lt;IndexesIndexDefinitionSnapshotEntry&gt; V1IndexesIndexDefinitionIdHistorySnapshotGet (string indexDefinitionId, DateTime time = null)
+> List&lt;ModelsIndexDefinitionSnapshotEntry&gt; V1IndexesIndexDefinitionIdHistorySnapshotGet (string indexDefinitionId, DateTime time = null)
 
 Historical Index Values for index definition
 
@@ -157,7 +157,7 @@ Historical Index Values for index definition
 
 ### Return type
 
-[**List&lt;IndexesIndexDefinitionSnapshotEntry&gt;**](IndexesIndexDefinitionSnapshotEntry.md)
+[**List&lt;ModelsIndexDefinitionSnapshotEntry&gt;**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -178,7 +178,7 @@ Historical Index Values for index definition
 
 <a id="v1indexesindexidcurrentget"></a>
 # **V1IndexesIndexIdCurrentGet**
-> IndexesIndexValue V1IndexesIndexIdCurrentGet (string indexId)
+> ModelsIndexValue V1IndexesIndexIdCurrentGet (string indexId)
 
 Current Index Value
 
@@ -191,7 +191,7 @@ Current Index Value
 
 ### Return type
 
-[**IndexesIndexValue**](IndexesIndexValue.md)
+[**ModelsIndexValue**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Current Index Value
 
 <a id="v1indexesindexidhistoryget"></a>
 # **V1IndexesIndexIdHistoryGet**
-> List&lt;IndexesIndexValue&gt; V1IndexesIndexIdHistoryGet (string indexId, DateTime timeStart = null, DateTime timeEnd = null, int limit = null)
+> List&lt;ModelsIndexValue&gt; V1IndexesIndexIdHistoryGet (string indexId, DateTime timeStart = null, DateTime timeEnd = null, int limit = null)
 
 Historical Index Value w/Composition
 
@@ -228,7 +228,7 @@ Historical Index Value w/Composition
 
 ### Return type
 
-[**List&lt;IndexesIndexValue&gt;**](IndexesIndexValue.md)
+[**List&lt;ModelsIndexValue&gt;**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -249,7 +249,7 @@ Historical Index Value w/Composition
 
 <a id="v1indexesindexidtimeseriesget"></a>
 # **V1IndexesIndexIdTimeseriesGet**
-> List&lt;IndexesIndexTimeseriesItem&gt; V1IndexesIndexIdTimeseriesGet (string indexId, string periodId, string timeStart, string timeEnd, int limit = null)
+> List&lt;ModelsIndexTimeseriesItem&gt; V1IndexesIndexIdTimeseriesGet (string indexId, string periodId, string timeStart, string timeEnd, int limit = null)
 
 Timeseries Index Value
 
@@ -266,7 +266,7 @@ Timeseries Index Value
 
 ### Return type
 
-[**List&lt;IndexesIndexTimeseriesItem&gt;**](IndexesIndexTimeseriesItem.md)
+[**List&lt;ModelsIndexTimeseriesItem&gt;**](ModelsIndexTimeseriesItem.md)
 
 ### Authorization
 

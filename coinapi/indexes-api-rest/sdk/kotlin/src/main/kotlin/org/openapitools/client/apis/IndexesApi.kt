@@ -19,11 +19,11 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import org.openapitools.client.models.IndexesIndexDefinitionSnapshotEntry
-import org.openapitools.client.models.IndexesIndexIdentifier
-import org.openapitools.client.models.IndexesIndexMultiAssetWeight
-import org.openapitools.client.models.IndexesIndexTimeseriesItem
-import org.openapitools.client.models.IndexesIndexValue
+import org.openapitools.client.models.ModelsIndexDefinitionSnapshotEntry
+import org.openapitools.client.models.ModelsIndexIdentifier
+import org.openapitools.client.models.ModelsIndexMultiAssetWeight
+import org.openapitools.client.models.ModelsIndexTimeseriesItem
+import org.openapitools.client.models.ModelsIndexValue
 
 import com.squareup.moshi.Json
 
@@ -53,7 +53,7 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * GET /v1/indexdef/multiasset
      * Get all multi-asset weights
      * 
-     * @return kotlin.collections.List<IndexesIndexMultiAssetWeight>
+     * @return kotlin.collections.List<ModelsIndexMultiAssetWeight>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -62,11 +62,11 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1IndexdefMultiassetGet() : kotlin.collections.List<IndexesIndexMultiAssetWeight> {
+    fun v1IndexdefMultiassetGet() : kotlin.collections.List<ModelsIndexMultiAssetWeight> {
         val localVarResponse = v1IndexdefMultiassetGetWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IndexesIndexMultiAssetWeight>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ModelsIndexMultiAssetWeight>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -84,16 +84,16 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * GET /v1/indexdef/multiasset
      * Get all multi-asset weights
      * 
-     * @return ApiResponse<kotlin.collections.List<IndexesIndexMultiAssetWeight>?>
+     * @return ApiResponse<kotlin.collections.List<ModelsIndexMultiAssetWeight>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1IndexdefMultiassetGetWithHttpInfo() : ApiResponse<kotlin.collections.List<IndexesIndexMultiAssetWeight>?> {
+    fun v1IndexdefMultiassetGetWithHttpInfo() : ApiResponse<kotlin.collections.List<ModelsIndexMultiAssetWeight>?> {
         val localVariableConfig = v1IndexdefMultiassetGetRequestConfig()
 
-        return request<Unit, kotlin.collections.List<IndexesIndexMultiAssetWeight>>(
+        return request<Unit, kotlin.collections.List<ModelsIndexMultiAssetWeight>>(
             localVariableConfig
         )
     }
@@ -124,7 +124,7 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * Get multi-asset weights for specific index
      * 
      * @param indexId 
-     * @return kotlin.collections.List<IndexesIndexMultiAssetWeight>
+     * @return kotlin.collections.List<ModelsIndexMultiAssetWeight>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -133,11 +133,11 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1IndexdefMultiassetIndexIdGet(indexId: kotlin.String) : kotlin.collections.List<IndexesIndexMultiAssetWeight> {
+    fun v1IndexdefMultiassetIndexIdGet(indexId: kotlin.String) : kotlin.collections.List<ModelsIndexMultiAssetWeight> {
         val localVarResponse = v1IndexdefMultiassetIndexIdGetWithHttpInfo(indexId = indexId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IndexesIndexMultiAssetWeight>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ModelsIndexMultiAssetWeight>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -156,16 +156,16 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * Get multi-asset weights for specific index
      * 
      * @param indexId 
-     * @return ApiResponse<kotlin.collections.List<IndexesIndexMultiAssetWeight>?>
+     * @return ApiResponse<kotlin.collections.List<ModelsIndexMultiAssetWeight>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1IndexdefMultiassetIndexIdGetWithHttpInfo(indexId: kotlin.String) : ApiResponse<kotlin.collections.List<IndexesIndexMultiAssetWeight>?> {
+    fun v1IndexdefMultiassetIndexIdGetWithHttpInfo(indexId: kotlin.String) : ApiResponse<kotlin.collections.List<ModelsIndexMultiAssetWeight>?> {
         val localVariableConfig = v1IndexdefMultiassetIndexIdGetRequestConfig(indexId = indexId)
 
-        return request<Unit, kotlin.collections.List<IndexesIndexMultiAssetWeight>>(
+        return request<Unit, kotlin.collections.List<ModelsIndexMultiAssetWeight>>(
             localVariableConfig
         )
     }
@@ -196,7 +196,7 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * GET /v1/indexes
      * List indexes
      * 
-     * @return kotlin.collections.List<IndexesIndexIdentifier>
+     * @return kotlin.collections.List<ModelsIndexIdentifier>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -205,11 +205,11 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1IndexesGet() : kotlin.collections.List<IndexesIndexIdentifier> {
+    fun v1IndexesGet() : kotlin.collections.List<ModelsIndexIdentifier> {
         val localVarResponse = v1IndexesGetWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IndexesIndexIdentifier>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ModelsIndexIdentifier>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -227,16 +227,16 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * GET /v1/indexes
      * List indexes
      * 
-     * @return ApiResponse<kotlin.collections.List<IndexesIndexIdentifier>?>
+     * @return ApiResponse<kotlin.collections.List<ModelsIndexIdentifier>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1IndexesGetWithHttpInfo() : ApiResponse<kotlin.collections.List<IndexesIndexIdentifier>?> {
+    fun v1IndexesGetWithHttpInfo() : ApiResponse<kotlin.collections.List<ModelsIndexIdentifier>?> {
         val localVariableConfig = v1IndexesGetRequestConfig()
 
-        return request<Unit, kotlin.collections.List<IndexesIndexIdentifier>>(
+        return request<Unit, kotlin.collections.List<ModelsIndexIdentifier>>(
             localVariableConfig
         )
     }
@@ -267,7 +267,7 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * Current Index Values for index definition
      * 
      * @param indexDefinitionId 
-     * @return kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>
+     * @return kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -276,11 +276,11 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId: kotlin.String) : kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry> {
+    fun v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId: kotlin.String) : kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry> {
         val localVarResponse = v1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(indexDefinitionId = indexDefinitionId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -299,16 +299,16 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * Current Index Values for index definition
      * 
      * @param indexDefinitionId 
-     * @return ApiResponse<kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>?>
+     * @return ApiResponse<kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(indexDefinitionId: kotlin.String) : ApiResponse<kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>?> {
+    fun v1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(indexDefinitionId: kotlin.String) : ApiResponse<kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry>?> {
         val localVariableConfig = v1IndexesIndexDefinitionIdCurrentSnapshotGetRequestConfig(indexDefinitionId = indexDefinitionId)
 
-        return request<Unit, kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>>(
+        return request<Unit, kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry>>(
             localVariableConfig
         )
     }
@@ -341,7 +341,7 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * 
      * @param indexDefinitionId 
      * @param time  (optional)
-     * @return kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>
+     * @return kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -350,11 +350,11 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId: kotlin.String, time: java.time.OffsetDateTime? = null) : kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry> {
+    fun v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId: kotlin.String, time: java.time.OffsetDateTime? = null) : kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry> {
         val localVarResponse = v1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(indexDefinitionId = indexDefinitionId, time = time)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -374,16 +374,16 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * 
      * @param indexDefinitionId 
      * @param time  (optional)
-     * @return ApiResponse<kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>?>
+     * @return ApiResponse<kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(indexDefinitionId: kotlin.String, time: java.time.OffsetDateTime?) : ApiResponse<kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>?> {
+    fun v1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(indexDefinitionId: kotlin.String, time: java.time.OffsetDateTime?) : ApiResponse<kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry>?> {
         val localVariableConfig = v1IndexesIndexDefinitionIdHistorySnapshotGetRequestConfig(indexDefinitionId = indexDefinitionId, time = time)
 
-        return request<Unit, kotlin.collections.List<IndexesIndexDefinitionSnapshotEntry>>(
+        return request<Unit, kotlin.collections.List<ModelsIndexDefinitionSnapshotEntry>>(
             localVariableConfig
         )
     }
@@ -421,7 +421,7 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * Current Index Value
      * 
      * @param indexId 
-     * @return IndexesIndexValue
+     * @return ModelsIndexValue
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -430,11 +430,11 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1IndexesIndexIdCurrentGet(indexId: kotlin.String) : IndexesIndexValue {
+    fun v1IndexesIndexIdCurrentGet(indexId: kotlin.String) : ModelsIndexValue {
         val localVarResponse = v1IndexesIndexIdCurrentGetWithHttpInfo(indexId = indexId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as IndexesIndexValue
+            ResponseType.Success -> (localVarResponse as Success<*>).data as ModelsIndexValue
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -453,16 +453,16 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * Current Index Value
      * 
      * @param indexId 
-     * @return ApiResponse<IndexesIndexValue?>
+     * @return ApiResponse<ModelsIndexValue?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1IndexesIndexIdCurrentGetWithHttpInfo(indexId: kotlin.String) : ApiResponse<IndexesIndexValue?> {
+    fun v1IndexesIndexIdCurrentGetWithHttpInfo(indexId: kotlin.String) : ApiResponse<ModelsIndexValue?> {
         val localVariableConfig = v1IndexesIndexIdCurrentGetRequestConfig(indexId = indexId)
 
-        return request<Unit, IndexesIndexValue>(
+        return request<Unit, ModelsIndexValue>(
             localVariableConfig
         )
     }
@@ -497,7 +497,7 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * @param timeStart  (optional)
      * @param timeEnd  (optional)
      * @param limit  (optional, default to 100)
-     * @return kotlin.collections.List<IndexesIndexValue>
+     * @return kotlin.collections.List<ModelsIndexValue>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -506,11 +506,11 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1IndexesIndexIdHistoryGet(indexId: kotlin.String, timeStart: java.time.OffsetDateTime? = null, timeEnd: java.time.OffsetDateTime? = null, limit: kotlin.Int? = 100) : kotlin.collections.List<IndexesIndexValue> {
+    fun v1IndexesIndexIdHistoryGet(indexId: kotlin.String, timeStart: java.time.OffsetDateTime? = null, timeEnd: java.time.OffsetDateTime? = null, limit: kotlin.Int? = 100) : kotlin.collections.List<ModelsIndexValue> {
         val localVarResponse = v1IndexesIndexIdHistoryGetWithHttpInfo(indexId = indexId, timeStart = timeStart, timeEnd = timeEnd, limit = limit)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IndexesIndexValue>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ModelsIndexValue>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -532,16 +532,16 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * @param timeStart  (optional)
      * @param timeEnd  (optional)
      * @param limit  (optional, default to 100)
-     * @return ApiResponse<kotlin.collections.List<IndexesIndexValue>?>
+     * @return ApiResponse<kotlin.collections.List<ModelsIndexValue>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1IndexesIndexIdHistoryGetWithHttpInfo(indexId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<IndexesIndexValue>?> {
+    fun v1IndexesIndexIdHistoryGetWithHttpInfo(indexId: kotlin.String, timeStart: java.time.OffsetDateTime?, timeEnd: java.time.OffsetDateTime?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<ModelsIndexValue>?> {
         val localVariableConfig = v1IndexesIndexIdHistoryGetRequestConfig(indexId = indexId, timeStart = timeStart, timeEnd = timeEnd, limit = limit)
 
-        return request<Unit, kotlin.collections.List<IndexesIndexValue>>(
+        return request<Unit, kotlin.collections.List<ModelsIndexValue>>(
             localVariableConfig
         )
     }
@@ -591,7 +591,7 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * @param timeStart Timeseries starting time in ISO 8601
      * @param timeEnd Timeseries ending time in ISO 8601
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return kotlin.collections.List<IndexesIndexTimeseriesItem>
+     * @return kotlin.collections.List<ModelsIndexTimeseriesItem>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -600,11 +600,11 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1IndexesIndexIdTimeseriesGet(indexId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String, limit: kotlin.Int? = 100) : kotlin.collections.List<IndexesIndexTimeseriesItem> {
+    fun v1IndexesIndexIdTimeseriesGet(indexId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String, limit: kotlin.Int? = 100) : kotlin.collections.List<ModelsIndexTimeseriesItem> {
         val localVarResponse = v1IndexesIndexIdTimeseriesGetWithHttpInfo(indexId = indexId, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd, limit = limit)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IndexesIndexTimeseriesItem>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ModelsIndexTimeseriesItem>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -627,16 +627,16 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * @param timeStart Timeseries starting time in ISO 8601
      * @param timeEnd Timeseries ending time in ISO 8601
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return ApiResponse<kotlin.collections.List<IndexesIndexTimeseriesItem>?>
+     * @return ApiResponse<kotlin.collections.List<ModelsIndexTimeseriesItem>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1IndexesIndexIdTimeseriesGetWithHttpInfo(indexId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<IndexesIndexTimeseriesItem>?> {
+    fun v1IndexesIndexIdTimeseriesGetWithHttpInfo(indexId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<ModelsIndexTimeseriesItem>?> {
         val localVariableConfig = v1IndexesIndexIdTimeseriesGetRequestConfig(indexId = indexId, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd, limit = limit)
 
-        return request<Unit, kotlin.collections.List<IndexesIndexTimeseriesItem>>(
+        return request<Unit, kotlin.collections.List<ModelsIndexTimeseriesItem>>(
             localVariableConfig
         )
     }

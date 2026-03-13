@@ -5,11 +5,11 @@ src/main/groovy/org/openapitools/api/ApiUtils.groovy
 src/main/groovy/org/openapitools/api/IndexesApi.groovy
 src/main/groovy/org/openapitools/api/MetadataApi.groovy
 src/main/groovy/org/openapitools/api/PeriodsApi.groovy
-src/main/groovy/org/openapitools/model/IndexesIndexDefinitionSnapshotEntry.groovy
-src/main/groovy/org/openapitools/model/IndexesIndexIdentifier.groovy
-src/main/groovy/org/openapitools/model/IndexesIndexMultiAssetWeight.groovy
-src/main/groovy/org/openapitools/model/IndexesIndexTimeseriesItem.groovy
-src/main/groovy/org/openapitools/model/IndexesIndexValue.groovy
-src/main/groovy/org/openapitools/model/IndexesIndexValueComponent.groovy
 src/main/groovy/org/openapitools/model/MetadataExchange.groovy
 src/main/groovy/org/openapitools/model/MetadataTimeseriesPeriod.groovy
+src/main/groovy/org/openapitools/model/ModelsIndexDefinitionSnapshotEntry.groovy
+src/main/groovy/org/openapitools/model/ModelsIndexIdentifier.groovy
+src/main/groovy/org/openapitools/model/ModelsIndexMultiAssetWeight.groovy
+src/main/groovy/org/openapitools/model/ModelsIndexTimeseriesItem.groovy
+src/main/groovy/org/openapitools/model/ModelsIndexValue.groovy
+src/main/groovy/org/openapitools/model/ModelsIndexValueComponent.groovy

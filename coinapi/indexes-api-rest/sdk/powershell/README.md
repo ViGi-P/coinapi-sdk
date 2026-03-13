@@ -68,14 +68,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [PSOpenAPITools\Model.IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
- - [PSOpenAPITools\Model.IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
- - [PSOpenAPITools\Model.IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)
- - [PSOpenAPITools\Model.IndexesIndexTimeseriesItem](docs/IndexesIndexTimeseriesItem.md)
- - [PSOpenAPITools\Model.IndexesIndexValue](docs/IndexesIndexValue.md)
- - [PSOpenAPITools\Model.IndexesIndexValueComponent](docs/IndexesIndexValueComponent.md)
  - [PSOpenAPITools\Model.MetadataExchange](docs/MetadataExchange.md)
  - [PSOpenAPITools\Model.MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
+ - [PSOpenAPITools\Model.ModelsIndexDefinitionSnapshotEntry](docs/ModelsIndexDefinitionSnapshotEntry.md)
+ - [PSOpenAPITools\Model.ModelsIndexIdentifier](docs/ModelsIndexIdentifier.md)
+ - [PSOpenAPITools\Model.ModelsIndexMultiAssetWeight](docs/ModelsIndexMultiAssetWeight.md)
+ - [PSOpenAPITools\Model.ModelsIndexTimeseriesItem](docs/ModelsIndexTimeseriesItem.md)
+ - [PSOpenAPITools\Model.ModelsIndexValue](docs/ModelsIndexValue.md)
+ - [PSOpenAPITools\Model.ModelsIndexValueComponent](docs/ModelsIndexValueComponent.md)
 
 
 <a id="documentation-for-authorization"></a>

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## V1IndexdefMultiassetGet
 
-> []IndexesIndexMultiAssetWeight V1IndexdefMultiassetGet(ctx).Execute()
+> []ModelsIndexMultiAssetWeight V1IndexdefMultiassetGet(ctx).Execute()
 
 Get all multi-asset weights
 
@@ -42,7 +42,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexesAPI.V1IndexdefMultiassetGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1IndexdefMultiassetGet`: []IndexesIndexMultiAssetWeight
+	// response from `V1IndexdefMultiassetGet`: []ModelsIndexMultiAssetWeight
 	fmt.Fprintf(os.Stdout, "Response from `IndexesAPI.V1IndexdefMultiassetGet`: %v\n", resp)
 }
 ```
@@ -58,7 +58,7 @@ Other parameters are passed through a pointer to a apiV1IndexdefMultiassetGetReq
 
 ### Return type
 
-[**[]IndexesIndexMultiAssetWeight**](IndexesIndexMultiAssetWeight.md)
+[**[]ModelsIndexMultiAssetWeight**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Other parameters are passed through a pointer to a apiV1IndexdefMultiassetGetReq
 
 ## V1IndexdefMultiassetIndexIdGet
 
-> []IndexesIndexMultiAssetWeight V1IndexdefMultiassetIndexIdGet(ctx, indexId).Execute()
+> []ModelsIndexMultiAssetWeight V1IndexdefMultiassetIndexIdGet(ctx, indexId).Execute()
 
 Get multi-asset weights for specific index
 
@@ -102,7 +102,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexesAPI.V1IndexdefMultiassetIndexIdGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1IndexdefMultiassetIndexIdGet`: []IndexesIndexMultiAssetWeight
+	// response from `V1IndexdefMultiassetIndexIdGet`: []ModelsIndexMultiAssetWeight
 	fmt.Fprintf(os.Stdout, "Response from `IndexesAPI.V1IndexdefMultiassetIndexIdGet`: %v\n", resp)
 }
 ```
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]IndexesIndexMultiAssetWeight**](IndexesIndexMultiAssetWeight.md)
+[**[]ModelsIndexMultiAssetWeight**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ## V1IndexesGet
 
-> []IndexesIndexIdentifier V1IndexesGet(ctx).Execute()
+> []ModelsIndexIdentifier V1IndexesGet(ctx).Execute()
 
 List indexes
 
@@ -169,7 +169,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexesAPI.V1IndexesGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1IndexesGet`: []IndexesIndexIdentifier
+	// response from `V1IndexesGet`: []ModelsIndexIdentifier
 	fmt.Fprintf(os.Stdout, "Response from `IndexesAPI.V1IndexesGet`: %v\n", resp)
 }
 ```
@@ -185,7 +185,7 @@ Other parameters are passed through a pointer to a apiV1IndexesGetRequest struct
 
 ### Return type
 
-[**[]IndexesIndexIdentifier**](IndexesIndexIdentifier.md)
+[**[]ModelsIndexIdentifier**](ModelsIndexIdentifier.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ Other parameters are passed through a pointer to a apiV1IndexesGetRequest struct
 
 ## V1IndexesIndexDefinitionIdCurrentSnapshotGet
 
-> []IndexesIndexDefinitionSnapshotEntry V1IndexesIndexDefinitionIdCurrentSnapshotGet(ctx, indexDefinitionId).Execute()
+> []ModelsIndexDefinitionSnapshotEntry V1IndexesIndexDefinitionIdCurrentSnapshotGet(ctx, indexDefinitionId).Execute()
 
 Current Index Values for index definition
 
@@ -229,7 +229,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexesAPI.V1IndexesIndexDefinitionIdCurrentSnapshotGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1IndexesIndexDefinitionIdCurrentSnapshotGet`: []IndexesIndexDefinitionSnapshotEntry
+	// response from `V1IndexesIndexDefinitionIdCurrentSnapshotGet`: []ModelsIndexDefinitionSnapshotEntry
 	fmt.Fprintf(os.Stdout, "Response from `IndexesAPI.V1IndexesIndexDefinitionIdCurrentSnapshotGet`: %v\n", resp)
 }
 ```
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]IndexesIndexDefinitionSnapshotEntry**](IndexesIndexDefinitionSnapshotEntry.md)
+[**[]ModelsIndexDefinitionSnapshotEntry**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 ## V1IndexesIndexDefinitionIdHistorySnapshotGet
 
-> []IndexesIndexDefinitionSnapshotEntry V1IndexesIndexDefinitionIdHistorySnapshotGet(ctx, indexDefinitionId).Time(time).Execute()
+> []ModelsIndexDefinitionSnapshotEntry V1IndexesIndexDefinitionIdHistorySnapshotGet(ctx, indexDefinitionId).Time(time).Execute()
 
 Historical Index Values for index definition
 
@@ -299,7 +299,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexesAPI.V1IndexesIndexDefinitionIdHistorySnapshotGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1IndexesIndexDefinitionIdHistorySnapshotGet`: []IndexesIndexDefinitionSnapshotEntry
+	// response from `V1IndexesIndexDefinitionIdHistorySnapshotGet`: []ModelsIndexDefinitionSnapshotEntry
 	fmt.Fprintf(os.Stdout, "Response from `IndexesAPI.V1IndexesIndexDefinitionIdHistorySnapshotGet`: %v\n", resp)
 }
 ```
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]IndexesIndexDefinitionSnapshotEntry**](IndexesIndexDefinitionSnapshotEntry.md)
+[**[]ModelsIndexDefinitionSnapshotEntry**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 ## V1IndexesIndexIdCurrentGet
 
-> IndexesIndexValue V1IndexesIndexIdCurrentGet(ctx, indexId).Execute()
+> ModelsIndexValue V1IndexesIndexIdCurrentGet(ctx, indexId).Execute()
 
 Current Index Value
 
@@ -368,7 +368,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexesAPI.V1IndexesIndexIdCurrentGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1IndexesIndexIdCurrentGet`: IndexesIndexValue
+	// response from `V1IndexesIndexIdCurrentGet`: ModelsIndexValue
 	fmt.Fprintf(os.Stdout, "Response from `IndexesAPI.V1IndexesIndexIdCurrentGet`: %v\n", resp)
 }
 ```
@@ -392,7 +392,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexValue**](IndexesIndexValue.md)
+[**ModelsIndexValue**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ## V1IndexesIndexIdHistoryGet
 
-> []IndexesIndexValue V1IndexesIndexIdHistoryGet(ctx, indexId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).Execute()
+> []ModelsIndexValue V1IndexesIndexIdHistoryGet(ctx, indexId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).Execute()
 
 Historical Index Value w/Composition
 
@@ -440,7 +440,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexesAPI.V1IndexesIndexIdHistoryGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1IndexesIndexIdHistoryGet`: []IndexesIndexValue
+	// response from `V1IndexesIndexIdHistoryGet`: []ModelsIndexValue
 	fmt.Fprintf(os.Stdout, "Response from `IndexesAPI.V1IndexesIndexIdHistoryGet`: %v\n", resp)
 }
 ```
@@ -467,7 +467,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]IndexesIndexValue**](IndexesIndexValue.md)
+[**[]ModelsIndexValue**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -485,7 +485,7 @@ Name | Type | Description  | Notes
 
 ## V1IndexesIndexIdTimeseriesGet
 
-> []IndexesIndexTimeseriesItem V1IndexesIndexIdTimeseriesGet(ctx, indexId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).Execute()
+> []ModelsIndexTimeseriesItem V1IndexesIndexIdTimeseriesGet(ctx, indexId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).Execute()
 
 Timeseries Index Value
 
@@ -515,7 +515,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexesAPI.V1IndexesIndexIdTimeseriesGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1IndexesIndexIdTimeseriesGet`: []IndexesIndexTimeseriesItem
+	// response from `V1IndexesIndexIdTimeseriesGet`: []ModelsIndexTimeseriesItem
 	fmt.Fprintf(os.Stdout, "Response from `IndexesAPI.V1IndexesIndexIdTimeseriesGet`: %v\n", resp)
 }
 ```
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]IndexesIndexTimeseriesItem**](IndexesIndexTimeseriesItem.md)
+[**[]ModelsIndexTimeseriesItem**](ModelsIndexTimeseriesItem.md)
 
 ### Authorization
 

@@ -15,7 +15,7 @@ Feature | HTTP request | Description
 
 
 # **v1_indexdef_multiasset_get**
-> v1_indexdef_multiasset_get : detachable LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT]
+> v1_indexdef_multiasset_get : detachable LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT]
 
 
 Get all multi-asset weights
@@ -26,7 +26,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT]**](Indexes.IndexMultiAssetWeight.md)
+[**LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT]**](Models.IndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexdef_multiasset_index_id_get**
-> v1_indexdef_multiasset_index_id_get (index_id: STRING_32 ): detachable LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT]
+> v1_indexdef_multiasset_index_id_get (index_id: STRING_32 ): detachable LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT]
 
 
 Get multi-asset weights for specific index
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [INDEXES_INDEX_MULTI_ASSET_WEIGHT]**](Indexes.IndexMultiAssetWeight.md)
+[**LIST [MODELS_INDEX_MULTI_ASSET_WEIGHT]**](Models.IndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_get**
-> v1_indexes_get : detachable LIST [INDEXES_INDEX_IDENTIFIER]
+> v1_indexes_get : detachable LIST [MODELS_INDEX_IDENTIFIER]
 
 
 List indexes
@@ -79,7 +79,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**LIST [INDEXES_INDEX_IDENTIFIER]**](Indexes.IndexIdentifier.md)
+[**LIST [MODELS_INDEX_IDENTIFIER]**](Models.IndexIdentifier.md)
 
 ### Authorization
 
@@ -93,7 +93,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_definition_id_current_snapshot_get**
-> v1_indexes_index_definition_id_current_snapshot_get (index_definition_id: STRING_32 ): detachable LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY]
+> v1_indexes_index_definition_id_current_snapshot_get (index_definition_id: STRING_32 ): detachable LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY]
 
 
 Current Index Values for index definition
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY]**](Indexes.IndexDefinitionSnapshotEntry.md)
+[**LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY]**](Models.IndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_definition_id_history_snapshot_get**
-> v1_indexes_index_definition_id_history_snapshot_get (index_definition_id: STRING_32 ; time:  detachable DATE_TIME ): detachable LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY]
+> v1_indexes_index_definition_id_history_snapshot_get (index_definition_id: STRING_32 ; time:  detachable DATE_TIME ): detachable LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY]
 
 
 Historical Index Values for index definition
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [INDEXES_INDEX_DEFINITION_SNAPSHOT_ENTRY]**](Indexes.IndexDefinitionSnapshotEntry.md)
+[**LIST [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY]**](Models.IndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_id_current_get**
-> v1_indexes_index_id_current_get (index_id: STRING_32 ): detachable INDEXES_INDEX_VALUE
+> v1_indexes_index_id_current_get (index_id: STRING_32 ): detachable MODELS_INDEX_VALUE
 
 
 Current Index Value
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**INDEXES_INDEX_VALUE**](Indexes.IndexValue.md)
+[**MODELS_INDEX_VALUE**](Models.IndexValue.md)
 
 ### Authorization
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_id_history_get**
-> v1_indexes_index_id_history_get (index_id: STRING_32 ; time_start:  detachable DATE_TIME ; time_end:  detachable DATE_TIME ; limit:  detachable INTEGER_32 ): detachable LIST [INDEXES_INDEX_VALUE]
+> v1_indexes_index_id_history_get (index_id: STRING_32 ; time_start:  detachable DATE_TIME ; time_end:  detachable DATE_TIME ; limit:  detachable INTEGER_32 ): detachable LIST [MODELS_INDEX_VALUE]
 
 
 Historical Index Value w/Composition
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [INDEXES_INDEX_VALUE]**](Indexes.IndexValue.md)
+[**LIST [MODELS_INDEX_VALUE]**](Models.IndexValue.md)
 
 ### Authorization
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_indexes_index_id_timeseries_get**
-> v1_indexes_index_id_timeseries_get (index_id: STRING_32 ; period_id: STRING_32 ; time_start: STRING_32 ; time_end: STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [INDEXES_INDEX_TIMESERIES_ITEM]
+> v1_indexes_index_id_timeseries_get (index_id: STRING_32 ; period_id: STRING_32 ; time_start: STRING_32 ; time_end: STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [MODELS_INDEX_TIMESERIES_ITEM]
 
 
 Timeseries Index Value
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [INDEXES_INDEX_TIMESERIES_ITEM]**](Indexes.IndexTimeseriesItem.md)
+[**LIST [MODELS_INDEX_TIMESERIES_ITEM]**](Models.IndexTimeseriesItem.md)
 
 ### Authorization
 

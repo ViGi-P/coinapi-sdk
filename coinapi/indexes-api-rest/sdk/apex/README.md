@@ -48,7 +48,7 @@ OASClient client = api.getClient();
 
 try {
     // cross your fingers
-    List<OASIndexesIndexMultiAssetWeight> result = api.v1IndexdefMultiassetGet();
+    List<OASModelsIndexMultiAssetWeight> result = api.v1IndexdefMultiassetGet();
     System.debug(result);
 } catch (OAS.ApiException e) {
     // ...handle your exceptions
@@ -76,14 +76,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [OASIndexesIndexDefinitionSnapshotEnt](OASIndexesIndexDefinitionSnapshotEnt.md)
- - [OASIndexesIndexIdentifier](OASIndexesIndexIdentifier.md)
- - [OASIndexesIndexMultiAssetWeight](OASIndexesIndexMultiAssetWeight.md)
- - [OASIndexesIndexTimeseriesItem](OASIndexesIndexTimeseriesItem.md)
- - [OASIndexesIndexValue](OASIndexesIndexValue.md)
- - [OASIndexesIndexValueComponent](OASIndexesIndexValueComponent.md)
  - [OASMetadataExchange](OASMetadataExchange.md)
  - [OASMetadataTimeseriesPeriod](OASMetadataTimeseriesPeriod.md)
+ - [OASModelsIndexDefinitionSnapshotEntr](OASModelsIndexDefinitionSnapshotEntr.md)
+ - [OASModelsIndexIdentifier](OASModelsIndexIdentifier.md)
+ - [OASModelsIndexMultiAssetWeight](OASModelsIndexMultiAssetWeight.md)
+ - [OASModelsIndexTimeseriesItem](OASModelsIndexTimeseriesItem.md)
+ - [OASModelsIndexValue](OASModelsIndexValue.md)
+ - [OASModelsIndexValueComponent](OASModelsIndexValueComponent.md)
 
 
 ## Documentation for Authorization

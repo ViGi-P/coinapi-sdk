@@ -31,14 +31,14 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
-    "IndexesIndexDefinitionSnapshotEntry",
-    "IndexesIndexIdentifier",
-    "IndexesIndexMultiAssetWeight",
-    "IndexesIndexTimeseriesItem",
-    "IndexesIndexValue",
-    "IndexesIndexValueComponent",
     "MetadataExchange",
     "MetadataTimeseriesPeriod",
+    "ModelsIndexDefinitionSnapshotEntry",
+    "ModelsIndexIdentifier",
+    "ModelsIndexMultiAssetWeight",
+    "ModelsIndexTimeseriesItem",
+    "ModelsIndexValue",
+    "ModelsIndexValueComponent",
 ]
 
 # import apis into sdk package
@@ -58,12 +58,12 @@ from api_bricks_coinapi_indexes_api_rest.exceptions import ApiAttributeError as 
 from api_bricks_coinapi_indexes_api_rest.exceptions import ApiException as ApiException
 
 # import models into sdk package
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_definition_snapshot_entry import IndexesIndexDefinitionSnapshotEntry as IndexesIndexDefinitionSnapshotEntry
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_identifier import IndexesIndexIdentifier as IndexesIndexIdentifier
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_multi_asset_weight import IndexesIndexMultiAssetWeight as IndexesIndexMultiAssetWeight
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_timeseries_item import IndexesIndexTimeseriesItem as IndexesIndexTimeseriesItem
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_value import IndexesIndexValue as IndexesIndexValue
-from api_bricks_coinapi_indexes_api_rest.models.indexes_index_value_component import IndexesIndexValueComponent as IndexesIndexValueComponent
 from api_bricks_coinapi_indexes_api_rest.models.metadata_exchange import MetadataExchange as MetadataExchange
 from api_bricks_coinapi_indexes_api_rest.models.metadata_timeseries_period import MetadataTimeseriesPeriod as MetadataTimeseriesPeriod
+from api_bricks_coinapi_indexes_api_rest.models.models_index_definition_snapshot_entry import ModelsIndexDefinitionSnapshotEntry as ModelsIndexDefinitionSnapshotEntry
+from api_bricks_coinapi_indexes_api_rest.models.models_index_identifier import ModelsIndexIdentifier as ModelsIndexIdentifier
+from api_bricks_coinapi_indexes_api_rest.models.models_index_multi_asset_weight import ModelsIndexMultiAssetWeight as ModelsIndexMultiAssetWeight
+from api_bricks_coinapi_indexes_api_rest.models.models_index_timeseries_item import ModelsIndexTimeseriesItem as ModelsIndexTimeseriesItem
+from api_bricks_coinapi_indexes_api_rest.models.models_index_value import ModelsIndexValue as ModelsIndexValue
+from api_bricks_coinapi_indexes_api_rest.models.models_index_value_component import ModelsIndexValueComponent as ModelsIndexValueComponent
 

@@ -14,11 +14,11 @@
 package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
-import org.openapitools.client.model.IndexesIndexDefinitionSnapshotEntry;
-import org.openapitools.client.model.IndexesIndexIdentifier;
-import org.openapitools.client.model.IndexesIndexMultiAssetWeight;
-import org.openapitools.client.model.IndexesIndexTimeseriesItem;
-import org.openapitools.client.model.IndexesIndexValue;
+import org.openapitools.client.model.ModelsIndexDefinitionSnapshotEntry;
+import org.openapitools.client.model.ModelsIndexIdentifier;
+import org.openapitools.client.model.ModelsIndexMultiAssetWeight;
+import org.openapitools.client.model.ModelsIndexTimeseriesItem;
+import org.openapitools.client.model.ModelsIndexValue;
 import java.time.OffsetDateTime;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -43,7 +43,7 @@ public class IndexesApiTest {
      */
     @Test
     public void v1IndexdefMultiassetGetTest() throws ApiException {
-        List<IndexesIndexMultiAssetWeight> response = api.v1IndexdefMultiassetGet();
+        List<ModelsIndexMultiAssetWeight> response = api.v1IndexdefMultiassetGet();
         // TODO: test validations
     }
 
@@ -55,7 +55,7 @@ public class IndexesApiTest {
     @Test
     public void v1IndexdefMultiassetIndexIdGetTest() throws ApiException {
         String indexId = null;
-        List<IndexesIndexMultiAssetWeight> response = api.v1IndexdefMultiassetIndexIdGet(indexId);
+        List<ModelsIndexMultiAssetWeight> response = api.v1IndexdefMultiassetIndexIdGet(indexId);
         // TODO: test validations
     }
 
@@ -66,7 +66,7 @@ public class IndexesApiTest {
      */
     @Test
     public void v1IndexesGetTest() throws ApiException {
-        List<IndexesIndexIdentifier> response = api.v1IndexesGet();
+        List<ModelsIndexIdentifier> response = api.v1IndexesGet();
         // TODO: test validations
     }
 
@@ -78,7 +78,7 @@ public class IndexesApiTest {
     @Test
     public void v1IndexesIndexDefinitionIdCurrentSnapshotGetTest() throws ApiException {
         String indexDefinitionId = null;
-        List<IndexesIndexDefinitionSnapshotEntry> response = api.v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId);
+        List<ModelsIndexDefinitionSnapshotEntry> response = api.v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId);
         // TODO: test validations
     }
 
@@ -91,7 +91,7 @@ public class IndexesApiTest {
     public void v1IndexesIndexDefinitionIdHistorySnapshotGetTest() throws ApiException {
         String indexDefinitionId = null;
         OffsetDateTime time = null;
-        List<IndexesIndexDefinitionSnapshotEntry> response = api.v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time);
+        List<ModelsIndexDefinitionSnapshotEntry> response = api.v1IndexesIndexDefinitionIdHistorySnapshotGet(indexDefinitionId, time);
         // TODO: test validations
     }
 
@@ -103,7 +103,7 @@ public class IndexesApiTest {
     @Test
     public void v1IndexesIndexIdCurrentGetTest() throws ApiException {
         String indexId = null;
-        IndexesIndexValue response = api.v1IndexesIndexIdCurrentGet(indexId);
+        ModelsIndexValue response = api.v1IndexesIndexIdCurrentGet(indexId);
         // TODO: test validations
     }
 
@@ -118,7 +118,7 @@ public class IndexesApiTest {
         OffsetDateTime timeStart = null;
         OffsetDateTime timeEnd = null;
         Integer limit = null;
-        List<IndexesIndexValue> response = api.v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit);
+        List<ModelsIndexValue> response = api.v1IndexesIndexIdHistoryGet(indexId, timeStart, timeEnd, limit);
         // TODO: test validations
     }
 
@@ -134,7 +134,7 @@ public class IndexesApiTest {
         String timeStart = null;
         String timeEnd = null;
         Integer limit = null;
-        List<IndexesIndexTimeseriesItem> response = api.v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit);
+        List<ModelsIndexTimeseriesItem> response = api.v1IndexesIndexIdTimeseriesGet(indexId, periodId, timeStart, timeEnd, limit);
         // TODO: test validations
     }
 

@@ -104,236 +104,6 @@ newtype TimeStartText = TimeStartText { unTimeStartText :: Text } deriving (P.Eq
 -- * Models
 
 
--- ** IndexesIndexDefinitionSnapshotEntry
--- | IndexesIndexDefinitionSnapshotEntry
-data IndexesIndexDefinitionSnapshotEntry = IndexesIndexDefinitionSnapshotEntry
-  { indexesIndexDefinitionSnapshotEntryIndexId :: !(Maybe Text) -- ^ "index_id"
-  , indexesIndexDefinitionSnapshotEntryTimestamp :: !(Maybe DateTime) -- ^ "timestamp"
-  , indexesIndexDefinitionSnapshotEntryValue :: !(Maybe Double) -- ^ "value"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON IndexesIndexDefinitionSnapshotEntry
-instance A.FromJSON IndexesIndexDefinitionSnapshotEntry where
-  parseJSON = A.withObject "IndexesIndexDefinitionSnapshotEntry" $ \o ->
-    IndexesIndexDefinitionSnapshotEntry
-      <$> (o .:? "index_id")
-      <*> (o .:? "timestamp")
-      <*> (o .:? "value")
-
--- | ToJSON IndexesIndexDefinitionSnapshotEntry
-instance A.ToJSON IndexesIndexDefinitionSnapshotEntry where
-  toJSON IndexesIndexDefinitionSnapshotEntry {..} =
-   _omitNulls
-      [ "index_id" .= indexesIndexDefinitionSnapshotEntryIndexId
-      , "timestamp" .= indexesIndexDefinitionSnapshotEntryTimestamp
-      , "value" .= indexesIndexDefinitionSnapshotEntryValue
-      ]
-
-
--- | Construct a value of type 'IndexesIndexDefinitionSnapshotEntry' (by applying it's required fields, if any)
-mkIndexesIndexDefinitionSnapshotEntry
-  :: IndexesIndexDefinitionSnapshotEntry
-mkIndexesIndexDefinitionSnapshotEntry =
-  IndexesIndexDefinitionSnapshotEntry
-  { indexesIndexDefinitionSnapshotEntryIndexId = Nothing
-  , indexesIndexDefinitionSnapshotEntryTimestamp = Nothing
-  , indexesIndexDefinitionSnapshotEntryValue = Nothing
-  }
-
--- ** IndexesIndexIdentifier
--- | IndexesIndexIdentifier
--- Represents an index id
-data IndexesIndexIdentifier = IndexesIndexIdentifier
-  { indexesIndexIdentifierId :: !(Maybe Text) -- ^ "id" - Index ID
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON IndexesIndexIdentifier
-instance A.FromJSON IndexesIndexIdentifier where
-  parseJSON = A.withObject "IndexesIndexIdentifier" $ \o ->
-    IndexesIndexIdentifier
-      <$> (o .:? "id")
-
--- | ToJSON IndexesIndexIdentifier
-instance A.ToJSON IndexesIndexIdentifier where
-  toJSON IndexesIndexIdentifier {..} =
-   _omitNulls
-      [ "id" .= indexesIndexIdentifierId
-      ]
-
-
--- | Construct a value of type 'IndexesIndexIdentifier' (by applying it's required fields, if any)
-mkIndexesIndexIdentifier
-  :: IndexesIndexIdentifier
-mkIndexesIndexIdentifier =
-  IndexesIndexIdentifier
-  { indexesIndexIdentifierId = Nothing
-  }
-
--- ** IndexesIndexMultiAssetWeight
--- | IndexesIndexMultiAssetWeight
-data IndexesIndexMultiAssetWeight = IndexesIndexMultiAssetWeight
-  { indexesIndexMultiAssetWeightIndexId :: !(Maybe Text) -- ^ "indexId"
-  , indexesIndexMultiAssetWeightAssetId :: !(Maybe Text) -- ^ "assetId"
-  , indexesIndexMultiAssetWeightWeight :: !(Maybe Double) -- ^ "weight"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON IndexesIndexMultiAssetWeight
-instance A.FromJSON IndexesIndexMultiAssetWeight where
-  parseJSON = A.withObject "IndexesIndexMultiAssetWeight" $ \o ->
-    IndexesIndexMultiAssetWeight
-      <$> (o .:? "indexId")
-      <*> (o .:? "assetId")
-      <*> (o .:? "weight")
-
--- | ToJSON IndexesIndexMultiAssetWeight
-instance A.ToJSON IndexesIndexMultiAssetWeight where
-  toJSON IndexesIndexMultiAssetWeight {..} =
-   _omitNulls
-      [ "indexId" .= indexesIndexMultiAssetWeightIndexId
-      , "assetId" .= indexesIndexMultiAssetWeightAssetId
-      , "weight" .= indexesIndexMultiAssetWeightWeight
-      ]
-
-
--- | Construct a value of type 'IndexesIndexMultiAssetWeight' (by applying it's required fields, if any)
-mkIndexesIndexMultiAssetWeight
-  :: IndexesIndexMultiAssetWeight
-mkIndexesIndexMultiAssetWeight =
-  IndexesIndexMultiAssetWeight
-  { indexesIndexMultiAssetWeightIndexId = Nothing
-  , indexesIndexMultiAssetWeightAssetId = Nothing
-  , indexesIndexMultiAssetWeightWeight = Nothing
-  }
-
--- ** IndexesIndexTimeseriesItem
--- | IndexesIndexTimeseriesItem
--- Represents a timeseries item with value information.
-data IndexesIndexTimeseriesItem = IndexesIndexTimeseriesItem
-  { indexesIndexTimeseriesItemTimePeriodStart :: !(Maybe DateTime) -- ^ "time_period_start" - Gets or sets the start time of the time period.
-  , indexesIndexTimeseriesItemTimePeriodEnd :: !(Maybe DateTime) -- ^ "time_period_end" - Gets or sets the end time of the time period.
-  , indexesIndexTimeseriesItemTimeOpen :: !(Maybe DateTime) -- ^ "time_open" - Gets or sets the time when the value opened.
-  , indexesIndexTimeseriesItemTimeClose :: !(Maybe DateTime) -- ^ "time_close" - Gets or sets the time when the value closed.
-  , indexesIndexTimeseriesItemValueOpen :: !(Maybe Double) -- ^ "value_open" - Gets or sets the opening value.
-  , indexesIndexTimeseriesItemValueHigh :: !(Maybe Double) -- ^ "value_high" - Gets or sets the highest value during the time period.
-  , indexesIndexTimeseriesItemValueLow :: !(Maybe Double) -- ^ "value_low" - Gets or sets the lowest value during the time period.
-  , indexesIndexTimeseriesItemValueClose :: !(Maybe Double) -- ^ "value_close" - Gets or sets the closing value.
-  , indexesIndexTimeseriesItemValueCount :: !(Maybe Integer) -- ^ "value_count" - Gets or sets the number of values during the time period.
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON IndexesIndexTimeseriesItem
-instance A.FromJSON IndexesIndexTimeseriesItem where
-  parseJSON = A.withObject "IndexesIndexTimeseriesItem" $ \o ->
-    IndexesIndexTimeseriesItem
-      <$> (o .:? "time_period_start")
-      <*> (o .:? "time_period_end")
-      <*> (o .:? "time_open")
-      <*> (o .:? "time_close")
-      <*> (o .:? "value_open")
-      <*> (o .:? "value_high")
-      <*> (o .:? "value_low")
-      <*> (o .:? "value_close")
-      <*> (o .:? "value_count")
-
--- | ToJSON IndexesIndexTimeseriesItem
-instance A.ToJSON IndexesIndexTimeseriesItem where
-  toJSON IndexesIndexTimeseriesItem {..} =
-   _omitNulls
-      [ "time_period_start" .= indexesIndexTimeseriesItemTimePeriodStart
-      , "time_period_end" .= indexesIndexTimeseriesItemTimePeriodEnd
-      , "time_open" .= indexesIndexTimeseriesItemTimeOpen
-      , "time_close" .= indexesIndexTimeseriesItemTimeClose
-      , "value_open" .= indexesIndexTimeseriesItemValueOpen
-      , "value_high" .= indexesIndexTimeseriesItemValueHigh
-      , "value_low" .= indexesIndexTimeseriesItemValueLow
-      , "value_close" .= indexesIndexTimeseriesItemValueClose
-      , "value_count" .= indexesIndexTimeseriesItemValueCount
-      ]
-
-
--- | Construct a value of type 'IndexesIndexTimeseriesItem' (by applying it's required fields, if any)
-mkIndexesIndexTimeseriesItem
-  :: IndexesIndexTimeseriesItem
-mkIndexesIndexTimeseriesItem =
-  IndexesIndexTimeseriesItem
-  { indexesIndexTimeseriesItemTimePeriodStart = Nothing
-  , indexesIndexTimeseriesItemTimePeriodEnd = Nothing
-  , indexesIndexTimeseriesItemTimeOpen = Nothing
-  , indexesIndexTimeseriesItemTimeClose = Nothing
-  , indexesIndexTimeseriesItemValueOpen = Nothing
-  , indexesIndexTimeseriesItemValueHigh = Nothing
-  , indexesIndexTimeseriesItemValueLow = Nothing
-  , indexesIndexTimeseriesItemValueClose = Nothing
-  , indexesIndexTimeseriesItemValueCount = Nothing
-  }
-
--- ** IndexesIndexValue
--- | IndexesIndexValue
-data IndexesIndexValue = IndexesIndexValue
-  { indexesIndexValueTimestamp :: !(Maybe DateTime) -- ^ "timestamp"
-  , indexesIndexValueValue :: !(Maybe Double) -- ^ "value"
-  , indexesIndexValueComposition :: !(Maybe [IndexesIndexValueComponent]) -- ^ "composition"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON IndexesIndexValue
-instance A.FromJSON IndexesIndexValue where
-  parseJSON = A.withObject "IndexesIndexValue" $ \o ->
-    IndexesIndexValue
-      <$> (o .:? "timestamp")
-      <*> (o .:? "value")
-      <*> (o .:? "composition")
-
--- | ToJSON IndexesIndexValue
-instance A.ToJSON IndexesIndexValue where
-  toJSON IndexesIndexValue {..} =
-   _omitNulls
-      [ "timestamp" .= indexesIndexValueTimestamp
-      , "value" .= indexesIndexValueValue
-      , "composition" .= indexesIndexValueComposition
-      ]
-
-
--- | Construct a value of type 'IndexesIndexValue' (by applying it's required fields, if any)
-mkIndexesIndexValue
-  :: IndexesIndexValue
-mkIndexesIndexValue =
-  IndexesIndexValue
-  { indexesIndexValueTimestamp = Nothing
-  , indexesIndexValueValue = Nothing
-  , indexesIndexValueComposition = Nothing
-  }
-
--- ** IndexesIndexValueComponent
--- | IndexesIndexValueComponent
-data IndexesIndexValueComponent = IndexesIndexValueComponent
-  { indexesIndexValueComponentComponentId :: !(Maybe Text) -- ^ "component_id"
-  , indexesIndexValueComponentComponentValue :: !(Maybe Double) -- ^ "component_value"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON IndexesIndexValueComponent
-instance A.FromJSON IndexesIndexValueComponent where
-  parseJSON = A.withObject "IndexesIndexValueComponent" $ \o ->
-    IndexesIndexValueComponent
-      <$> (o .:? "component_id")
-      <*> (o .:? "component_value")
-
--- | ToJSON IndexesIndexValueComponent
-instance A.ToJSON IndexesIndexValueComponent where
-  toJSON IndexesIndexValueComponent {..} =
-   _omitNulls
-      [ "component_id" .= indexesIndexValueComponentComponentId
-      , "component_value" .= indexesIndexValueComponentComponentValue
-      ]
-
-
--- | Construct a value of type 'IndexesIndexValueComponent' (by applying it's required fields, if any)
-mkIndexesIndexValueComponent
-  :: IndexesIndexValueComponent
-mkIndexesIndexValueComponent =
-  IndexesIndexValueComponent
-  { indexesIndexValueComponentComponentId = Nothing
-  , indexesIndexValueComponentComponentValue = Nothing
-  }
-
 -- ** MetadataExchange
 -- | MetadataExchange
 -- Represents an exchange.
@@ -418,6 +188,236 @@ mkMetadataTimeseriesPeriod =
   , metadataTimeseriesPeriodUnitCount = Nothing
   , metadataTimeseriesPeriodUnitName = Nothing
   , metadataTimeseriesPeriodDisplayName = Nothing
+  }
+
+-- ** ModelsIndexDefinitionSnapshotEntry
+-- | ModelsIndexDefinitionSnapshotEntry
+data ModelsIndexDefinitionSnapshotEntry = ModelsIndexDefinitionSnapshotEntry
+  { modelsIndexDefinitionSnapshotEntryIndexId :: !(Maybe Text) -- ^ "index_id"
+  , modelsIndexDefinitionSnapshotEntryTimestamp :: !(Maybe DateTime) -- ^ "timestamp"
+  , modelsIndexDefinitionSnapshotEntryValue :: !(Maybe Double) -- ^ "value"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsIndexDefinitionSnapshotEntry
+instance A.FromJSON ModelsIndexDefinitionSnapshotEntry where
+  parseJSON = A.withObject "ModelsIndexDefinitionSnapshotEntry" $ \o ->
+    ModelsIndexDefinitionSnapshotEntry
+      <$> (o .:? "index_id")
+      <*> (o .:? "timestamp")
+      <*> (o .:? "value")
+
+-- | ToJSON ModelsIndexDefinitionSnapshotEntry
+instance A.ToJSON ModelsIndexDefinitionSnapshotEntry where
+  toJSON ModelsIndexDefinitionSnapshotEntry {..} =
+   _omitNulls
+      [ "index_id" .= modelsIndexDefinitionSnapshotEntryIndexId
+      , "timestamp" .= modelsIndexDefinitionSnapshotEntryTimestamp
+      , "value" .= modelsIndexDefinitionSnapshotEntryValue
+      ]
+
+
+-- | Construct a value of type 'ModelsIndexDefinitionSnapshotEntry' (by applying it's required fields, if any)
+mkModelsIndexDefinitionSnapshotEntry
+  :: ModelsIndexDefinitionSnapshotEntry
+mkModelsIndexDefinitionSnapshotEntry =
+  ModelsIndexDefinitionSnapshotEntry
+  { modelsIndexDefinitionSnapshotEntryIndexId = Nothing
+  , modelsIndexDefinitionSnapshotEntryTimestamp = Nothing
+  , modelsIndexDefinitionSnapshotEntryValue = Nothing
+  }
+
+-- ** ModelsIndexIdentifier
+-- | ModelsIndexIdentifier
+-- Represents an index id
+data ModelsIndexIdentifier = ModelsIndexIdentifier
+  { modelsIndexIdentifierId :: !(Maybe Text) -- ^ "id" - Index ID
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsIndexIdentifier
+instance A.FromJSON ModelsIndexIdentifier where
+  parseJSON = A.withObject "ModelsIndexIdentifier" $ \o ->
+    ModelsIndexIdentifier
+      <$> (o .:? "id")
+
+-- | ToJSON ModelsIndexIdentifier
+instance A.ToJSON ModelsIndexIdentifier where
+  toJSON ModelsIndexIdentifier {..} =
+   _omitNulls
+      [ "id" .= modelsIndexIdentifierId
+      ]
+
+
+-- | Construct a value of type 'ModelsIndexIdentifier' (by applying it's required fields, if any)
+mkModelsIndexIdentifier
+  :: ModelsIndexIdentifier
+mkModelsIndexIdentifier =
+  ModelsIndexIdentifier
+  { modelsIndexIdentifierId = Nothing
+  }
+
+-- ** ModelsIndexMultiAssetWeight
+-- | ModelsIndexMultiAssetWeight
+data ModelsIndexMultiAssetWeight = ModelsIndexMultiAssetWeight
+  { modelsIndexMultiAssetWeightIndexId :: !(Maybe Text) -- ^ "indexId"
+  , modelsIndexMultiAssetWeightAssetId :: !(Maybe Text) -- ^ "assetId"
+  , modelsIndexMultiAssetWeightWeight :: !(Maybe Double) -- ^ "weight"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsIndexMultiAssetWeight
+instance A.FromJSON ModelsIndexMultiAssetWeight where
+  parseJSON = A.withObject "ModelsIndexMultiAssetWeight" $ \o ->
+    ModelsIndexMultiAssetWeight
+      <$> (o .:? "indexId")
+      <*> (o .:? "assetId")
+      <*> (o .:? "weight")
+
+-- | ToJSON ModelsIndexMultiAssetWeight
+instance A.ToJSON ModelsIndexMultiAssetWeight where
+  toJSON ModelsIndexMultiAssetWeight {..} =
+   _omitNulls
+      [ "indexId" .= modelsIndexMultiAssetWeightIndexId
+      , "assetId" .= modelsIndexMultiAssetWeightAssetId
+      , "weight" .= modelsIndexMultiAssetWeightWeight
+      ]
+
+
+-- | Construct a value of type 'ModelsIndexMultiAssetWeight' (by applying it's required fields, if any)
+mkModelsIndexMultiAssetWeight
+  :: ModelsIndexMultiAssetWeight
+mkModelsIndexMultiAssetWeight =
+  ModelsIndexMultiAssetWeight
+  { modelsIndexMultiAssetWeightIndexId = Nothing
+  , modelsIndexMultiAssetWeightAssetId = Nothing
+  , modelsIndexMultiAssetWeightWeight = Nothing
+  }
+
+-- ** ModelsIndexTimeseriesItem
+-- | ModelsIndexTimeseriesItem
+-- Represents a timeseries item with value information.
+data ModelsIndexTimeseriesItem = ModelsIndexTimeseriesItem
+  { modelsIndexTimeseriesItemTimePeriodStart :: !(Maybe DateTime) -- ^ "time_period_start" - Gets or sets the start time of the time period.
+  , modelsIndexTimeseriesItemTimePeriodEnd :: !(Maybe DateTime) -- ^ "time_period_end" - Gets or sets the end time of the time period.
+  , modelsIndexTimeseriesItemTimeOpen :: !(Maybe DateTime) -- ^ "time_open" - Gets or sets the time when the value opened.
+  , modelsIndexTimeseriesItemTimeClose :: !(Maybe DateTime) -- ^ "time_close" - Gets or sets the time when the value closed.
+  , modelsIndexTimeseriesItemValueOpen :: !(Maybe Double) -- ^ "value_open" - Gets or sets the opening value.
+  , modelsIndexTimeseriesItemValueHigh :: !(Maybe Double) -- ^ "value_high" - Gets or sets the highest value during the time period.
+  , modelsIndexTimeseriesItemValueLow :: !(Maybe Double) -- ^ "value_low" - Gets or sets the lowest value during the time period.
+  , modelsIndexTimeseriesItemValueClose :: !(Maybe Double) -- ^ "value_close" - Gets or sets the closing value.
+  , modelsIndexTimeseriesItemValueCount :: !(Maybe Integer) -- ^ "value_count" - Gets or sets the number of values during the time period.
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsIndexTimeseriesItem
+instance A.FromJSON ModelsIndexTimeseriesItem where
+  parseJSON = A.withObject "ModelsIndexTimeseriesItem" $ \o ->
+    ModelsIndexTimeseriesItem
+      <$> (o .:? "time_period_start")
+      <*> (o .:? "time_period_end")
+      <*> (o .:? "time_open")
+      <*> (o .:? "time_close")
+      <*> (o .:? "value_open")
+      <*> (o .:? "value_high")
+      <*> (o .:? "value_low")
+      <*> (o .:? "value_close")
+      <*> (o .:? "value_count")
+
+-- | ToJSON ModelsIndexTimeseriesItem
+instance A.ToJSON ModelsIndexTimeseriesItem where
+  toJSON ModelsIndexTimeseriesItem {..} =
+   _omitNulls
+      [ "time_period_start" .= modelsIndexTimeseriesItemTimePeriodStart
+      , "time_period_end" .= modelsIndexTimeseriesItemTimePeriodEnd
+      , "time_open" .= modelsIndexTimeseriesItemTimeOpen
+      , "time_close" .= modelsIndexTimeseriesItemTimeClose
+      , "value_open" .= modelsIndexTimeseriesItemValueOpen
+      , "value_high" .= modelsIndexTimeseriesItemValueHigh
+      , "value_low" .= modelsIndexTimeseriesItemValueLow
+      , "value_close" .= modelsIndexTimeseriesItemValueClose
+      , "value_count" .= modelsIndexTimeseriesItemValueCount
+      ]
+
+
+-- | Construct a value of type 'ModelsIndexTimeseriesItem' (by applying it's required fields, if any)
+mkModelsIndexTimeseriesItem
+  :: ModelsIndexTimeseriesItem
+mkModelsIndexTimeseriesItem =
+  ModelsIndexTimeseriesItem
+  { modelsIndexTimeseriesItemTimePeriodStart = Nothing
+  , modelsIndexTimeseriesItemTimePeriodEnd = Nothing
+  , modelsIndexTimeseriesItemTimeOpen = Nothing
+  , modelsIndexTimeseriesItemTimeClose = Nothing
+  , modelsIndexTimeseriesItemValueOpen = Nothing
+  , modelsIndexTimeseriesItemValueHigh = Nothing
+  , modelsIndexTimeseriesItemValueLow = Nothing
+  , modelsIndexTimeseriesItemValueClose = Nothing
+  , modelsIndexTimeseriesItemValueCount = Nothing
+  }
+
+-- ** ModelsIndexValue
+-- | ModelsIndexValue
+data ModelsIndexValue = ModelsIndexValue
+  { modelsIndexValueTimestamp :: !(Maybe DateTime) -- ^ "timestamp"
+  , modelsIndexValueValue :: !(Maybe Double) -- ^ "value"
+  , modelsIndexValueComposition :: !(Maybe [ModelsIndexValueComponent]) -- ^ "composition"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsIndexValue
+instance A.FromJSON ModelsIndexValue where
+  parseJSON = A.withObject "ModelsIndexValue" $ \o ->
+    ModelsIndexValue
+      <$> (o .:? "timestamp")
+      <*> (o .:? "value")
+      <*> (o .:? "composition")
+
+-- | ToJSON ModelsIndexValue
+instance A.ToJSON ModelsIndexValue where
+  toJSON ModelsIndexValue {..} =
+   _omitNulls
+      [ "timestamp" .= modelsIndexValueTimestamp
+      , "value" .= modelsIndexValueValue
+      , "composition" .= modelsIndexValueComposition
+      ]
+
+
+-- | Construct a value of type 'ModelsIndexValue' (by applying it's required fields, if any)
+mkModelsIndexValue
+  :: ModelsIndexValue
+mkModelsIndexValue =
+  ModelsIndexValue
+  { modelsIndexValueTimestamp = Nothing
+  , modelsIndexValueValue = Nothing
+  , modelsIndexValueComposition = Nothing
+  }
+
+-- ** ModelsIndexValueComponent
+-- | ModelsIndexValueComponent
+data ModelsIndexValueComponent = ModelsIndexValueComponent
+  { modelsIndexValueComponentComponentId :: !(Maybe Text) -- ^ "component_id"
+  , modelsIndexValueComponentComponentValue :: !(Maybe Double) -- ^ "component_value"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsIndexValueComponent
+instance A.FromJSON ModelsIndexValueComponent where
+  parseJSON = A.withObject "ModelsIndexValueComponent" $ \o ->
+    ModelsIndexValueComponent
+      <$> (o .:? "component_id")
+      <*> (o .:? "component_value")
+
+-- | ToJSON ModelsIndexValueComponent
+instance A.ToJSON ModelsIndexValueComponent where
+  toJSON ModelsIndexValueComponent {..} =
+   _omitNulls
+      [ "component_id" .= modelsIndexValueComponentComponentId
+      , "component_value" .= modelsIndexValueComponentComponentValue
+      ]
+
+
+-- | Construct a value of type 'ModelsIndexValueComponent' (by applying it's required fields, if any)
+mkModelsIndexValueComponent
+  :: ModelsIndexValueComponent
+mkModelsIndexValueComponent =
+  ModelsIndexValueComponent
+  { modelsIndexValueComponentComponentId = Nothing
+  , modelsIndexValueComponentComponentValue = Nothing
   }
 
 

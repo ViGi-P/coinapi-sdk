@@ -37,135 +37,6 @@ import CoinAPIIndexesREST.Model
 import CoinAPIIndexesREST.Core
 
 
--- * IndexesIndexDefinitionSnapshotEntry
-
--- | 'indexesIndexDefinitionSnapshotEntryIndexId' Lens
-indexesIndexDefinitionSnapshotEntryIndexIdL :: Lens_' IndexesIndexDefinitionSnapshotEntry (Maybe Text)
-indexesIndexDefinitionSnapshotEntryIndexIdL f IndexesIndexDefinitionSnapshotEntry{..} = (\indexesIndexDefinitionSnapshotEntryIndexId -> IndexesIndexDefinitionSnapshotEntry { indexesIndexDefinitionSnapshotEntryIndexId, ..} ) <$> f indexesIndexDefinitionSnapshotEntryIndexId
-{-# INLINE indexesIndexDefinitionSnapshotEntryIndexIdL #-}
-
--- | 'indexesIndexDefinitionSnapshotEntryTimestamp' Lens
-indexesIndexDefinitionSnapshotEntryTimestampL :: Lens_' IndexesIndexDefinitionSnapshotEntry (Maybe DateTime)
-indexesIndexDefinitionSnapshotEntryTimestampL f IndexesIndexDefinitionSnapshotEntry{..} = (\indexesIndexDefinitionSnapshotEntryTimestamp -> IndexesIndexDefinitionSnapshotEntry { indexesIndexDefinitionSnapshotEntryTimestamp, ..} ) <$> f indexesIndexDefinitionSnapshotEntryTimestamp
-{-# INLINE indexesIndexDefinitionSnapshotEntryTimestampL #-}
-
--- | 'indexesIndexDefinitionSnapshotEntryValue' Lens
-indexesIndexDefinitionSnapshotEntryValueL :: Lens_' IndexesIndexDefinitionSnapshotEntry (Maybe Double)
-indexesIndexDefinitionSnapshotEntryValueL f IndexesIndexDefinitionSnapshotEntry{..} = (\indexesIndexDefinitionSnapshotEntryValue -> IndexesIndexDefinitionSnapshotEntry { indexesIndexDefinitionSnapshotEntryValue, ..} ) <$> f indexesIndexDefinitionSnapshotEntryValue
-{-# INLINE indexesIndexDefinitionSnapshotEntryValueL #-}
-
-
-
--- * IndexesIndexIdentifier
-
--- | 'indexesIndexIdentifierId' Lens
-indexesIndexIdentifierIdL :: Lens_' IndexesIndexIdentifier (Maybe Text)
-indexesIndexIdentifierIdL f IndexesIndexIdentifier{..} = (\indexesIndexIdentifierId -> IndexesIndexIdentifier { indexesIndexIdentifierId, ..} ) <$> f indexesIndexIdentifierId
-{-# INLINE indexesIndexIdentifierIdL #-}
-
-
-
--- * IndexesIndexMultiAssetWeight
-
--- | 'indexesIndexMultiAssetWeightIndexId' Lens
-indexesIndexMultiAssetWeightIndexIdL :: Lens_' IndexesIndexMultiAssetWeight (Maybe Text)
-indexesIndexMultiAssetWeightIndexIdL f IndexesIndexMultiAssetWeight{..} = (\indexesIndexMultiAssetWeightIndexId -> IndexesIndexMultiAssetWeight { indexesIndexMultiAssetWeightIndexId, ..} ) <$> f indexesIndexMultiAssetWeightIndexId
-{-# INLINE indexesIndexMultiAssetWeightIndexIdL #-}
-
--- | 'indexesIndexMultiAssetWeightAssetId' Lens
-indexesIndexMultiAssetWeightAssetIdL :: Lens_' IndexesIndexMultiAssetWeight (Maybe Text)
-indexesIndexMultiAssetWeightAssetIdL f IndexesIndexMultiAssetWeight{..} = (\indexesIndexMultiAssetWeightAssetId -> IndexesIndexMultiAssetWeight { indexesIndexMultiAssetWeightAssetId, ..} ) <$> f indexesIndexMultiAssetWeightAssetId
-{-# INLINE indexesIndexMultiAssetWeightAssetIdL #-}
-
--- | 'indexesIndexMultiAssetWeightWeight' Lens
-indexesIndexMultiAssetWeightWeightL :: Lens_' IndexesIndexMultiAssetWeight (Maybe Double)
-indexesIndexMultiAssetWeightWeightL f IndexesIndexMultiAssetWeight{..} = (\indexesIndexMultiAssetWeightWeight -> IndexesIndexMultiAssetWeight { indexesIndexMultiAssetWeightWeight, ..} ) <$> f indexesIndexMultiAssetWeightWeight
-{-# INLINE indexesIndexMultiAssetWeightWeightL #-}
-
-
-
--- * IndexesIndexTimeseriesItem
-
--- | 'indexesIndexTimeseriesItemTimePeriodStart' Lens
-indexesIndexTimeseriesItemTimePeriodStartL :: Lens_' IndexesIndexTimeseriesItem (Maybe DateTime)
-indexesIndexTimeseriesItemTimePeriodStartL f IndexesIndexTimeseriesItem{..} = (\indexesIndexTimeseriesItemTimePeriodStart -> IndexesIndexTimeseriesItem { indexesIndexTimeseriesItemTimePeriodStart, ..} ) <$> f indexesIndexTimeseriesItemTimePeriodStart
-{-# INLINE indexesIndexTimeseriesItemTimePeriodStartL #-}
-
--- | 'indexesIndexTimeseriesItemTimePeriodEnd' Lens
-indexesIndexTimeseriesItemTimePeriodEndL :: Lens_' IndexesIndexTimeseriesItem (Maybe DateTime)
-indexesIndexTimeseriesItemTimePeriodEndL f IndexesIndexTimeseriesItem{..} = (\indexesIndexTimeseriesItemTimePeriodEnd -> IndexesIndexTimeseriesItem { indexesIndexTimeseriesItemTimePeriodEnd, ..} ) <$> f indexesIndexTimeseriesItemTimePeriodEnd
-{-# INLINE indexesIndexTimeseriesItemTimePeriodEndL #-}
-
--- | 'indexesIndexTimeseriesItemTimeOpen' Lens
-indexesIndexTimeseriesItemTimeOpenL :: Lens_' IndexesIndexTimeseriesItem (Maybe DateTime)
-indexesIndexTimeseriesItemTimeOpenL f IndexesIndexTimeseriesItem{..} = (\indexesIndexTimeseriesItemTimeOpen -> IndexesIndexTimeseriesItem { indexesIndexTimeseriesItemTimeOpen, ..} ) <$> f indexesIndexTimeseriesItemTimeOpen
-{-# INLINE indexesIndexTimeseriesItemTimeOpenL #-}
-
--- | 'indexesIndexTimeseriesItemTimeClose' Lens
-indexesIndexTimeseriesItemTimeCloseL :: Lens_' IndexesIndexTimeseriesItem (Maybe DateTime)
-indexesIndexTimeseriesItemTimeCloseL f IndexesIndexTimeseriesItem{..} = (\indexesIndexTimeseriesItemTimeClose -> IndexesIndexTimeseriesItem { indexesIndexTimeseriesItemTimeClose, ..} ) <$> f indexesIndexTimeseriesItemTimeClose
-{-# INLINE indexesIndexTimeseriesItemTimeCloseL #-}
-
--- | 'indexesIndexTimeseriesItemValueOpen' Lens
-indexesIndexTimeseriesItemValueOpenL :: Lens_' IndexesIndexTimeseriesItem (Maybe Double)
-indexesIndexTimeseriesItemValueOpenL f IndexesIndexTimeseriesItem{..} = (\indexesIndexTimeseriesItemValueOpen -> IndexesIndexTimeseriesItem { indexesIndexTimeseriesItemValueOpen, ..} ) <$> f indexesIndexTimeseriesItemValueOpen
-{-# INLINE indexesIndexTimeseriesItemValueOpenL #-}
-
--- | 'indexesIndexTimeseriesItemValueHigh' Lens
-indexesIndexTimeseriesItemValueHighL :: Lens_' IndexesIndexTimeseriesItem (Maybe Double)
-indexesIndexTimeseriesItemValueHighL f IndexesIndexTimeseriesItem{..} = (\indexesIndexTimeseriesItemValueHigh -> IndexesIndexTimeseriesItem { indexesIndexTimeseriesItemValueHigh, ..} ) <$> f indexesIndexTimeseriesItemValueHigh
-{-# INLINE indexesIndexTimeseriesItemValueHighL #-}
-
--- | 'indexesIndexTimeseriesItemValueLow' Lens
-indexesIndexTimeseriesItemValueLowL :: Lens_' IndexesIndexTimeseriesItem (Maybe Double)
-indexesIndexTimeseriesItemValueLowL f IndexesIndexTimeseriesItem{..} = (\indexesIndexTimeseriesItemValueLow -> IndexesIndexTimeseriesItem { indexesIndexTimeseriesItemValueLow, ..} ) <$> f indexesIndexTimeseriesItemValueLow
-{-# INLINE indexesIndexTimeseriesItemValueLowL #-}
-
--- | 'indexesIndexTimeseriesItemValueClose' Lens
-indexesIndexTimeseriesItemValueCloseL :: Lens_' IndexesIndexTimeseriesItem (Maybe Double)
-indexesIndexTimeseriesItemValueCloseL f IndexesIndexTimeseriesItem{..} = (\indexesIndexTimeseriesItemValueClose -> IndexesIndexTimeseriesItem { indexesIndexTimeseriesItemValueClose, ..} ) <$> f indexesIndexTimeseriesItemValueClose
-{-# INLINE indexesIndexTimeseriesItemValueCloseL #-}
-
--- | 'indexesIndexTimeseriesItemValueCount' Lens
-indexesIndexTimeseriesItemValueCountL :: Lens_' IndexesIndexTimeseriesItem (Maybe Integer)
-indexesIndexTimeseriesItemValueCountL f IndexesIndexTimeseriesItem{..} = (\indexesIndexTimeseriesItemValueCount -> IndexesIndexTimeseriesItem { indexesIndexTimeseriesItemValueCount, ..} ) <$> f indexesIndexTimeseriesItemValueCount
-{-# INLINE indexesIndexTimeseriesItemValueCountL #-}
-
-
-
--- * IndexesIndexValue
-
--- | 'indexesIndexValueTimestamp' Lens
-indexesIndexValueTimestampL :: Lens_' IndexesIndexValue (Maybe DateTime)
-indexesIndexValueTimestampL f IndexesIndexValue{..} = (\indexesIndexValueTimestamp -> IndexesIndexValue { indexesIndexValueTimestamp, ..} ) <$> f indexesIndexValueTimestamp
-{-# INLINE indexesIndexValueTimestampL #-}
-
--- | 'indexesIndexValueValue' Lens
-indexesIndexValueValueL :: Lens_' IndexesIndexValue (Maybe Double)
-indexesIndexValueValueL f IndexesIndexValue{..} = (\indexesIndexValueValue -> IndexesIndexValue { indexesIndexValueValue, ..} ) <$> f indexesIndexValueValue
-{-# INLINE indexesIndexValueValueL #-}
-
--- | 'indexesIndexValueComposition' Lens
-indexesIndexValueCompositionL :: Lens_' IndexesIndexValue (Maybe [IndexesIndexValueComponent])
-indexesIndexValueCompositionL f IndexesIndexValue{..} = (\indexesIndexValueComposition -> IndexesIndexValue { indexesIndexValueComposition, ..} ) <$> f indexesIndexValueComposition
-{-# INLINE indexesIndexValueCompositionL #-}
-
-
-
--- * IndexesIndexValueComponent
-
--- | 'indexesIndexValueComponentComponentId' Lens
-indexesIndexValueComponentComponentIdL :: Lens_' IndexesIndexValueComponent (Maybe Text)
-indexesIndexValueComponentComponentIdL f IndexesIndexValueComponent{..} = (\indexesIndexValueComponentComponentId -> IndexesIndexValueComponent { indexesIndexValueComponentComponentId, ..} ) <$> f indexesIndexValueComponentComponentId
-{-# INLINE indexesIndexValueComponentComponentIdL #-}
-
--- | 'indexesIndexValueComponentComponentValue' Lens
-indexesIndexValueComponentComponentValueL :: Lens_' IndexesIndexValueComponent (Maybe Double)
-indexesIndexValueComponentComponentValueL f IndexesIndexValueComponent{..} = (\indexesIndexValueComponentComponentValue -> IndexesIndexValueComponent { indexesIndexValueComponentComponentValue, ..} ) <$> f indexesIndexValueComponentComponentValue
-{-# INLINE indexesIndexValueComponentComponentValueL #-}
-
-
-
 -- * MetadataExchange
 
 -- | 'metadataExchangeExchangeId' Lens
@@ -216,5 +87,134 @@ metadataTimeseriesPeriodUnitNameL f MetadataTimeseriesPeriod{..} = (\metadataTim
 metadataTimeseriesPeriodDisplayNameL :: Lens_' MetadataTimeseriesPeriod (Maybe Text)
 metadataTimeseriesPeriodDisplayNameL f MetadataTimeseriesPeriod{..} = (\metadataTimeseriesPeriodDisplayName -> MetadataTimeseriesPeriod { metadataTimeseriesPeriodDisplayName, ..} ) <$> f metadataTimeseriesPeriodDisplayName
 {-# INLINE metadataTimeseriesPeriodDisplayNameL #-}
+
+
+
+-- * ModelsIndexDefinitionSnapshotEntry
+
+-- | 'modelsIndexDefinitionSnapshotEntryIndexId' Lens
+modelsIndexDefinitionSnapshotEntryIndexIdL :: Lens_' ModelsIndexDefinitionSnapshotEntry (Maybe Text)
+modelsIndexDefinitionSnapshotEntryIndexIdL f ModelsIndexDefinitionSnapshotEntry{..} = (\modelsIndexDefinitionSnapshotEntryIndexId -> ModelsIndexDefinitionSnapshotEntry { modelsIndexDefinitionSnapshotEntryIndexId, ..} ) <$> f modelsIndexDefinitionSnapshotEntryIndexId
+{-# INLINE modelsIndexDefinitionSnapshotEntryIndexIdL #-}
+
+-- | 'modelsIndexDefinitionSnapshotEntryTimestamp' Lens
+modelsIndexDefinitionSnapshotEntryTimestampL :: Lens_' ModelsIndexDefinitionSnapshotEntry (Maybe DateTime)
+modelsIndexDefinitionSnapshotEntryTimestampL f ModelsIndexDefinitionSnapshotEntry{..} = (\modelsIndexDefinitionSnapshotEntryTimestamp -> ModelsIndexDefinitionSnapshotEntry { modelsIndexDefinitionSnapshotEntryTimestamp, ..} ) <$> f modelsIndexDefinitionSnapshotEntryTimestamp
+{-# INLINE modelsIndexDefinitionSnapshotEntryTimestampL #-}
+
+-- | 'modelsIndexDefinitionSnapshotEntryValue' Lens
+modelsIndexDefinitionSnapshotEntryValueL :: Lens_' ModelsIndexDefinitionSnapshotEntry (Maybe Double)
+modelsIndexDefinitionSnapshotEntryValueL f ModelsIndexDefinitionSnapshotEntry{..} = (\modelsIndexDefinitionSnapshotEntryValue -> ModelsIndexDefinitionSnapshotEntry { modelsIndexDefinitionSnapshotEntryValue, ..} ) <$> f modelsIndexDefinitionSnapshotEntryValue
+{-# INLINE modelsIndexDefinitionSnapshotEntryValueL #-}
+
+
+
+-- * ModelsIndexIdentifier
+
+-- | 'modelsIndexIdentifierId' Lens
+modelsIndexIdentifierIdL :: Lens_' ModelsIndexIdentifier (Maybe Text)
+modelsIndexIdentifierIdL f ModelsIndexIdentifier{..} = (\modelsIndexIdentifierId -> ModelsIndexIdentifier { modelsIndexIdentifierId, ..} ) <$> f modelsIndexIdentifierId
+{-# INLINE modelsIndexIdentifierIdL #-}
+
+
+
+-- * ModelsIndexMultiAssetWeight
+
+-- | 'modelsIndexMultiAssetWeightIndexId' Lens
+modelsIndexMultiAssetWeightIndexIdL :: Lens_' ModelsIndexMultiAssetWeight (Maybe Text)
+modelsIndexMultiAssetWeightIndexIdL f ModelsIndexMultiAssetWeight{..} = (\modelsIndexMultiAssetWeightIndexId -> ModelsIndexMultiAssetWeight { modelsIndexMultiAssetWeightIndexId, ..} ) <$> f modelsIndexMultiAssetWeightIndexId
+{-# INLINE modelsIndexMultiAssetWeightIndexIdL #-}
+
+-- | 'modelsIndexMultiAssetWeightAssetId' Lens
+modelsIndexMultiAssetWeightAssetIdL :: Lens_' ModelsIndexMultiAssetWeight (Maybe Text)
+modelsIndexMultiAssetWeightAssetIdL f ModelsIndexMultiAssetWeight{..} = (\modelsIndexMultiAssetWeightAssetId -> ModelsIndexMultiAssetWeight { modelsIndexMultiAssetWeightAssetId, ..} ) <$> f modelsIndexMultiAssetWeightAssetId
+{-# INLINE modelsIndexMultiAssetWeightAssetIdL #-}
+
+-- | 'modelsIndexMultiAssetWeightWeight' Lens
+modelsIndexMultiAssetWeightWeightL :: Lens_' ModelsIndexMultiAssetWeight (Maybe Double)
+modelsIndexMultiAssetWeightWeightL f ModelsIndexMultiAssetWeight{..} = (\modelsIndexMultiAssetWeightWeight -> ModelsIndexMultiAssetWeight { modelsIndexMultiAssetWeightWeight, ..} ) <$> f modelsIndexMultiAssetWeightWeight
+{-# INLINE modelsIndexMultiAssetWeightWeightL #-}
+
+
+
+-- * ModelsIndexTimeseriesItem
+
+-- | 'modelsIndexTimeseriesItemTimePeriodStart' Lens
+modelsIndexTimeseriesItemTimePeriodStartL :: Lens_' ModelsIndexTimeseriesItem (Maybe DateTime)
+modelsIndexTimeseriesItemTimePeriodStartL f ModelsIndexTimeseriesItem{..} = (\modelsIndexTimeseriesItemTimePeriodStart -> ModelsIndexTimeseriesItem { modelsIndexTimeseriesItemTimePeriodStart, ..} ) <$> f modelsIndexTimeseriesItemTimePeriodStart
+{-# INLINE modelsIndexTimeseriesItemTimePeriodStartL #-}
+
+-- | 'modelsIndexTimeseriesItemTimePeriodEnd' Lens
+modelsIndexTimeseriesItemTimePeriodEndL :: Lens_' ModelsIndexTimeseriesItem (Maybe DateTime)
+modelsIndexTimeseriesItemTimePeriodEndL f ModelsIndexTimeseriesItem{..} = (\modelsIndexTimeseriesItemTimePeriodEnd -> ModelsIndexTimeseriesItem { modelsIndexTimeseriesItemTimePeriodEnd, ..} ) <$> f modelsIndexTimeseriesItemTimePeriodEnd
+{-# INLINE modelsIndexTimeseriesItemTimePeriodEndL #-}
+
+-- | 'modelsIndexTimeseriesItemTimeOpen' Lens
+modelsIndexTimeseriesItemTimeOpenL :: Lens_' ModelsIndexTimeseriesItem (Maybe DateTime)
+modelsIndexTimeseriesItemTimeOpenL f ModelsIndexTimeseriesItem{..} = (\modelsIndexTimeseriesItemTimeOpen -> ModelsIndexTimeseriesItem { modelsIndexTimeseriesItemTimeOpen, ..} ) <$> f modelsIndexTimeseriesItemTimeOpen
+{-# INLINE modelsIndexTimeseriesItemTimeOpenL #-}
+
+-- | 'modelsIndexTimeseriesItemTimeClose' Lens
+modelsIndexTimeseriesItemTimeCloseL :: Lens_' ModelsIndexTimeseriesItem (Maybe DateTime)
+modelsIndexTimeseriesItemTimeCloseL f ModelsIndexTimeseriesItem{..} = (\modelsIndexTimeseriesItemTimeClose -> ModelsIndexTimeseriesItem { modelsIndexTimeseriesItemTimeClose, ..} ) <$> f modelsIndexTimeseriesItemTimeClose
+{-# INLINE modelsIndexTimeseriesItemTimeCloseL #-}
+
+-- | 'modelsIndexTimeseriesItemValueOpen' Lens
+modelsIndexTimeseriesItemValueOpenL :: Lens_' ModelsIndexTimeseriesItem (Maybe Double)
+modelsIndexTimeseriesItemValueOpenL f ModelsIndexTimeseriesItem{..} = (\modelsIndexTimeseriesItemValueOpen -> ModelsIndexTimeseriesItem { modelsIndexTimeseriesItemValueOpen, ..} ) <$> f modelsIndexTimeseriesItemValueOpen
+{-# INLINE modelsIndexTimeseriesItemValueOpenL #-}
+
+-- | 'modelsIndexTimeseriesItemValueHigh' Lens
+modelsIndexTimeseriesItemValueHighL :: Lens_' ModelsIndexTimeseriesItem (Maybe Double)
+modelsIndexTimeseriesItemValueHighL f ModelsIndexTimeseriesItem{..} = (\modelsIndexTimeseriesItemValueHigh -> ModelsIndexTimeseriesItem { modelsIndexTimeseriesItemValueHigh, ..} ) <$> f modelsIndexTimeseriesItemValueHigh
+{-# INLINE modelsIndexTimeseriesItemValueHighL #-}
+
+-- | 'modelsIndexTimeseriesItemValueLow' Lens
+modelsIndexTimeseriesItemValueLowL :: Lens_' ModelsIndexTimeseriesItem (Maybe Double)
+modelsIndexTimeseriesItemValueLowL f ModelsIndexTimeseriesItem{..} = (\modelsIndexTimeseriesItemValueLow -> ModelsIndexTimeseriesItem { modelsIndexTimeseriesItemValueLow, ..} ) <$> f modelsIndexTimeseriesItemValueLow
+{-# INLINE modelsIndexTimeseriesItemValueLowL #-}
+
+-- | 'modelsIndexTimeseriesItemValueClose' Lens
+modelsIndexTimeseriesItemValueCloseL :: Lens_' ModelsIndexTimeseriesItem (Maybe Double)
+modelsIndexTimeseriesItemValueCloseL f ModelsIndexTimeseriesItem{..} = (\modelsIndexTimeseriesItemValueClose -> ModelsIndexTimeseriesItem { modelsIndexTimeseriesItemValueClose, ..} ) <$> f modelsIndexTimeseriesItemValueClose
+{-# INLINE modelsIndexTimeseriesItemValueCloseL #-}
+
+-- | 'modelsIndexTimeseriesItemValueCount' Lens
+modelsIndexTimeseriesItemValueCountL :: Lens_' ModelsIndexTimeseriesItem (Maybe Integer)
+modelsIndexTimeseriesItemValueCountL f ModelsIndexTimeseriesItem{..} = (\modelsIndexTimeseriesItemValueCount -> ModelsIndexTimeseriesItem { modelsIndexTimeseriesItemValueCount, ..} ) <$> f modelsIndexTimeseriesItemValueCount
+{-# INLINE modelsIndexTimeseriesItemValueCountL #-}
+
+
+
+-- * ModelsIndexValue
+
+-- | 'modelsIndexValueTimestamp' Lens
+modelsIndexValueTimestampL :: Lens_' ModelsIndexValue (Maybe DateTime)
+modelsIndexValueTimestampL f ModelsIndexValue{..} = (\modelsIndexValueTimestamp -> ModelsIndexValue { modelsIndexValueTimestamp, ..} ) <$> f modelsIndexValueTimestamp
+{-# INLINE modelsIndexValueTimestampL #-}
+
+-- | 'modelsIndexValueValue' Lens
+modelsIndexValueValueL :: Lens_' ModelsIndexValue (Maybe Double)
+modelsIndexValueValueL f ModelsIndexValue{..} = (\modelsIndexValueValue -> ModelsIndexValue { modelsIndexValueValue, ..} ) <$> f modelsIndexValueValue
+{-# INLINE modelsIndexValueValueL #-}
+
+-- | 'modelsIndexValueComposition' Lens
+modelsIndexValueCompositionL :: Lens_' ModelsIndexValue (Maybe [ModelsIndexValueComponent])
+modelsIndexValueCompositionL f ModelsIndexValue{..} = (\modelsIndexValueComposition -> ModelsIndexValue { modelsIndexValueComposition, ..} ) <$> f modelsIndexValueComposition
+{-# INLINE modelsIndexValueCompositionL #-}
+
+
+
+-- * ModelsIndexValueComponent
+
+-- | 'modelsIndexValueComponentComponentId' Lens
+modelsIndexValueComponentComponentIdL :: Lens_' ModelsIndexValueComponent (Maybe Text)
+modelsIndexValueComponentComponentIdL f ModelsIndexValueComponent{..} = (\modelsIndexValueComponentComponentId -> ModelsIndexValueComponent { modelsIndexValueComponentComponentId, ..} ) <$> f modelsIndexValueComponentComponentId
+{-# INLINE modelsIndexValueComponentComponentIdL #-}
+
+-- | 'modelsIndexValueComponentComponentValue' Lens
+modelsIndexValueComponentComponentValueL :: Lens_' ModelsIndexValueComponent (Maybe Double)
+modelsIndexValueComponentComponentValueL f ModelsIndexValueComponent{..} = (\modelsIndexValueComponentComponentValue -> ModelsIndexValueComponent { modelsIndexValueComponentComponentValue, ..} ) <$> f modelsIndexValueComponentComponentValue
+{-# INLINE modelsIndexValueComponentComponentValueL #-}
 
 

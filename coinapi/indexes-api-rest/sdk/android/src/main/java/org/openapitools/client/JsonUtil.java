@@ -57,30 +57,6 @@ public class JsonUtil {
   public static Type getListTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
-    if ("IndexesIndexDefinitionSnapshotEntry".equalsIgnoreCase(className)) {
-      return new TypeToken<List<IndexesIndexDefinitionSnapshotEntry>>(){}.getType();
-    }
-    
-    if ("IndexesIndexIdentifier".equalsIgnoreCase(className)) {
-      return new TypeToken<List<IndexesIndexIdentifier>>(){}.getType();
-    }
-    
-    if ("IndexesIndexMultiAssetWeight".equalsIgnoreCase(className)) {
-      return new TypeToken<List<IndexesIndexMultiAssetWeight>>(){}.getType();
-    }
-    
-    if ("IndexesIndexTimeseriesItem".equalsIgnoreCase(className)) {
-      return new TypeToken<List<IndexesIndexTimeseriesItem>>(){}.getType();
-    }
-    
-    if ("IndexesIndexValue".equalsIgnoreCase(className)) {
-      return new TypeToken<List<IndexesIndexValue>>(){}.getType();
-    }
-    
-    if ("IndexesIndexValueComponent".equalsIgnoreCase(className)) {
-      return new TypeToken<List<IndexesIndexValueComponent>>(){}.getType();
-    }
-    
     if ("MetadataExchange".equalsIgnoreCase(className)) {
       return new TypeToken<List<MetadataExchange>>(){}.getType();
     }
@@ -89,35 +65,35 @@ public class JsonUtil {
       return new TypeToken<List<MetadataTimeseriesPeriod>>(){}.getType();
     }
     
+    if ("ModelsIndexDefinitionSnapshotEntry".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsIndexDefinitionSnapshotEntry>>(){}.getType();
+    }
+    
+    if ("ModelsIndexIdentifier".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsIndexIdentifier>>(){}.getType();
+    }
+    
+    if ("ModelsIndexMultiAssetWeight".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsIndexMultiAssetWeight>>(){}.getType();
+    }
+    
+    if ("ModelsIndexTimeseriesItem".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsIndexTimeseriesItem>>(){}.getType();
+    }
+    
+    if ("ModelsIndexValue".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsIndexValue>>(){}.getType();
+    }
+    
+    if ("ModelsIndexValueComponent".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsIndexValueComponent>>(){}.getType();
+    }
+    
     return new TypeToken<List<Object>>(){}.getType();
   }
 
   public static Type getTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
-    
-    if ("IndexesIndexDefinitionSnapshotEntry".equalsIgnoreCase(className)) {
-      return new TypeToken<IndexesIndexDefinitionSnapshotEntry>(){}.getType();
-    }
-    
-    if ("IndexesIndexIdentifier".equalsIgnoreCase(className)) {
-      return new TypeToken<IndexesIndexIdentifier>(){}.getType();
-    }
-    
-    if ("IndexesIndexMultiAssetWeight".equalsIgnoreCase(className)) {
-      return new TypeToken<IndexesIndexMultiAssetWeight>(){}.getType();
-    }
-    
-    if ("IndexesIndexTimeseriesItem".equalsIgnoreCase(className)) {
-      return new TypeToken<IndexesIndexTimeseriesItem>(){}.getType();
-    }
-    
-    if ("IndexesIndexValue".equalsIgnoreCase(className)) {
-      return new TypeToken<IndexesIndexValue>(){}.getType();
-    }
-    
-    if ("IndexesIndexValueComponent".equalsIgnoreCase(className)) {
-      return new TypeToken<IndexesIndexValueComponent>(){}.getType();
-    }
     
     if ("MetadataExchange".equalsIgnoreCase(className)) {
       return new TypeToken<MetadataExchange>(){}.getType();
@@ -125,6 +101,30 @@ public class JsonUtil {
     
     if ("MetadataTimeseriesPeriod".equalsIgnoreCase(className)) {
       return new TypeToken<MetadataTimeseriesPeriod>(){}.getType();
+    }
+    
+    if ("ModelsIndexDefinitionSnapshotEntry".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsIndexDefinitionSnapshotEntry>(){}.getType();
+    }
+    
+    if ("ModelsIndexIdentifier".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsIndexIdentifier>(){}.getType();
+    }
+    
+    if ("ModelsIndexMultiAssetWeight".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsIndexMultiAssetWeight>(){}.getType();
+    }
+    
+    if ("ModelsIndexTimeseriesItem".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsIndexTimeseriesItem>(){}.getType();
+    }
+    
+    if ("ModelsIndexValue".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsIndexValue>(){}.getType();
+    }
+    
+    if ("ModelsIndexValueComponent".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsIndexValueComponent>(){}.getType();
     }
     
     return new TypeToken<Object>(){}.getType();

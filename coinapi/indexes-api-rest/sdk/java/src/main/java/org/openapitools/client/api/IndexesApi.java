@@ -27,11 +27,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.IndexesIndexDefinitionSnapshotEntry;
-import org.openapitools.client.model.IndexesIndexIdentifier;
-import org.openapitools.client.model.IndexesIndexMultiAssetWeight;
-import org.openapitools.client.model.IndexesIndexTimeseriesItem;
-import org.openapitools.client.model.IndexesIndexValue;
+import org.openapitools.client.model.ModelsIndexDefinitionSnapshotEntry;
+import org.openapitools.client.model.ModelsIndexIdentifier;
+import org.openapitools.client.model.ModelsIndexMultiAssetWeight;
+import org.openapitools.client.model.ModelsIndexTimeseriesItem;
+import org.openapitools.client.model.ModelsIndexValue;
 import java.time.OffsetDateTime;
 
 import java.lang.reflect.Type;
@@ -145,7 +145,7 @@ public class IndexesApi {
     /**
      * Get all multi-asset weights
      * 
-     * @return List&lt;IndexesIndexMultiAssetWeight&gt;
+     * @return List&lt;ModelsIndexMultiAssetWeight&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -154,15 +154,15 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<IndexesIndexMultiAssetWeight> v1IndexdefMultiassetGet() throws ApiException {
-        ApiResponse<List<IndexesIndexMultiAssetWeight>> localVarResp = v1IndexdefMultiassetGetWithHttpInfo();
+    public List<ModelsIndexMultiAssetWeight> v1IndexdefMultiassetGet() throws ApiException {
+        ApiResponse<List<ModelsIndexMultiAssetWeight>> localVarResp = v1IndexdefMultiassetGetWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * Get all multi-asset weights
      * 
-     * @return ApiResponse&lt;List&lt;IndexesIndexMultiAssetWeight&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ModelsIndexMultiAssetWeight&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -171,9 +171,9 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<IndexesIndexMultiAssetWeight>> v1IndexdefMultiassetGetWithHttpInfo() throws ApiException {
+    public ApiResponse<List<ModelsIndexMultiAssetWeight>> v1IndexdefMultiassetGetWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = v1IndexdefMultiassetGetValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexMultiAssetWeight>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexMultiAssetWeight>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -190,10 +190,10 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1IndexdefMultiassetGetAsync(final ApiCallback<List<IndexesIndexMultiAssetWeight>> _callback) throws ApiException {
+    public okhttp3.Call v1IndexdefMultiassetGetAsync(final ApiCallback<List<ModelsIndexMultiAssetWeight>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1IndexdefMultiassetGetValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexMultiAssetWeight>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexMultiAssetWeight>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -273,7 +273,7 @@ public class IndexesApi {
      * Get multi-asset weights for specific index
      * 
      * @param indexId  (required)
-     * @return List&lt;IndexesIndexMultiAssetWeight&gt;
+     * @return List&lt;ModelsIndexMultiAssetWeight&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -282,8 +282,8 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<IndexesIndexMultiAssetWeight> v1IndexdefMultiassetIndexIdGet(@javax.annotation.Nonnull String indexId) throws ApiException {
-        ApiResponse<List<IndexesIndexMultiAssetWeight>> localVarResp = v1IndexdefMultiassetIndexIdGetWithHttpInfo(indexId);
+    public List<ModelsIndexMultiAssetWeight> v1IndexdefMultiassetIndexIdGet(@javax.annotation.Nonnull String indexId) throws ApiException {
+        ApiResponse<List<ModelsIndexMultiAssetWeight>> localVarResp = v1IndexdefMultiassetIndexIdGetWithHttpInfo(indexId);
         return localVarResp.getData();
     }
 
@@ -291,7 +291,7 @@ public class IndexesApi {
      * Get multi-asset weights for specific index
      * 
      * @param indexId  (required)
-     * @return ApiResponse&lt;List&lt;IndexesIndexMultiAssetWeight&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ModelsIndexMultiAssetWeight&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -300,9 +300,9 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<IndexesIndexMultiAssetWeight>> v1IndexdefMultiassetIndexIdGetWithHttpInfo(@javax.annotation.Nonnull String indexId) throws ApiException {
+    public ApiResponse<List<ModelsIndexMultiAssetWeight>> v1IndexdefMultiassetIndexIdGetWithHttpInfo(@javax.annotation.Nonnull String indexId) throws ApiException {
         okhttp3.Call localVarCall = v1IndexdefMultiassetIndexIdGetValidateBeforeCall(indexId, null);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexMultiAssetWeight>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexMultiAssetWeight>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -320,10 +320,10 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1IndexdefMultiassetIndexIdGetAsync(@javax.annotation.Nonnull String indexId, final ApiCallback<List<IndexesIndexMultiAssetWeight>> _callback) throws ApiException {
+    public okhttp3.Call v1IndexdefMultiassetIndexIdGetAsync(@javax.annotation.Nonnull String indexId, final ApiCallback<List<ModelsIndexMultiAssetWeight>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1IndexdefMultiassetIndexIdGetValidateBeforeCall(indexId, _callback);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexMultiAssetWeight>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexMultiAssetWeight>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -395,7 +395,7 @@ public class IndexesApi {
     /**
      * List indexes
      * 
-     * @return List&lt;IndexesIndexIdentifier&gt;
+     * @return List&lt;ModelsIndexIdentifier&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -404,15 +404,15 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<IndexesIndexIdentifier> v1IndexesGet() throws ApiException {
-        ApiResponse<List<IndexesIndexIdentifier>> localVarResp = v1IndexesGetWithHttpInfo();
+    public List<ModelsIndexIdentifier> v1IndexesGet() throws ApiException {
+        ApiResponse<List<ModelsIndexIdentifier>> localVarResp = v1IndexesGetWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * List indexes
      * 
-     * @return ApiResponse&lt;List&lt;IndexesIndexIdentifier&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ModelsIndexIdentifier&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -421,9 +421,9 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<IndexesIndexIdentifier>> v1IndexesGetWithHttpInfo() throws ApiException {
+    public ApiResponse<List<ModelsIndexIdentifier>> v1IndexesGetWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = v1IndexesGetValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexIdentifier>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexIdentifier>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -440,10 +440,10 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1IndexesGetAsync(final ApiCallback<List<IndexesIndexIdentifier>> _callback) throws ApiException {
+    public okhttp3.Call v1IndexesGetAsync(final ApiCallback<List<ModelsIndexIdentifier>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1IndexesGetValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexIdentifier>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexIdentifier>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -523,7 +523,7 @@ public class IndexesApi {
      * Current Index Values for index definition
      * 
      * @param indexDefinitionId  (required)
-     * @return List&lt;IndexesIndexDefinitionSnapshotEntry&gt;
+     * @return List&lt;ModelsIndexDefinitionSnapshotEntry&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -532,8 +532,8 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<IndexesIndexDefinitionSnapshotEntry> v1IndexesIndexDefinitionIdCurrentSnapshotGet(@javax.annotation.Nonnull String indexDefinitionId) throws ApiException {
-        ApiResponse<List<IndexesIndexDefinitionSnapshotEntry>> localVarResp = v1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(indexDefinitionId);
+    public List<ModelsIndexDefinitionSnapshotEntry> v1IndexesIndexDefinitionIdCurrentSnapshotGet(@javax.annotation.Nonnull String indexDefinitionId) throws ApiException {
+        ApiResponse<List<ModelsIndexDefinitionSnapshotEntry>> localVarResp = v1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(indexDefinitionId);
         return localVarResp.getData();
     }
 
@@ -541,7 +541,7 @@ public class IndexesApi {
      * Current Index Values for index definition
      * 
      * @param indexDefinitionId  (required)
-     * @return ApiResponse&lt;List&lt;IndexesIndexDefinitionSnapshotEntry&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ModelsIndexDefinitionSnapshotEntry&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -550,9 +550,9 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<IndexesIndexDefinitionSnapshotEntry>> v1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(@javax.annotation.Nonnull String indexDefinitionId) throws ApiException {
+    public ApiResponse<List<ModelsIndexDefinitionSnapshotEntry>> v1IndexesIndexDefinitionIdCurrentSnapshotGetWithHttpInfo(@javax.annotation.Nonnull String indexDefinitionId) throws ApiException {
         okhttp3.Call localVarCall = v1IndexesIndexDefinitionIdCurrentSnapshotGetValidateBeforeCall(indexDefinitionId, null);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexDefinitionSnapshotEntry>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexDefinitionSnapshotEntry>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -570,10 +570,10 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1IndexesIndexDefinitionIdCurrentSnapshotGetAsync(@javax.annotation.Nonnull String indexDefinitionId, final ApiCallback<List<IndexesIndexDefinitionSnapshotEntry>> _callback) throws ApiException {
+    public okhttp3.Call v1IndexesIndexDefinitionIdCurrentSnapshotGetAsync(@javax.annotation.Nonnull String indexDefinitionId, final ApiCallback<List<ModelsIndexDefinitionSnapshotEntry>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1IndexesIndexDefinitionIdCurrentSnapshotGetValidateBeforeCall(indexDefinitionId, _callback);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexDefinitionSnapshotEntry>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexDefinitionSnapshotEntry>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -659,7 +659,7 @@ public class IndexesApi {
      * 
      * @param indexDefinitionId  (required)
      * @param time  (optional)
-     * @return List&lt;IndexesIndexDefinitionSnapshotEntry&gt;
+     * @return List&lt;ModelsIndexDefinitionSnapshotEntry&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -668,8 +668,8 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<IndexesIndexDefinitionSnapshotEntry> v1IndexesIndexDefinitionIdHistorySnapshotGet(@javax.annotation.Nonnull String indexDefinitionId, @javax.annotation.Nullable OffsetDateTime time) throws ApiException {
-        ApiResponse<List<IndexesIndexDefinitionSnapshotEntry>> localVarResp = v1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(indexDefinitionId, time);
+    public List<ModelsIndexDefinitionSnapshotEntry> v1IndexesIndexDefinitionIdHistorySnapshotGet(@javax.annotation.Nonnull String indexDefinitionId, @javax.annotation.Nullable OffsetDateTime time) throws ApiException {
+        ApiResponse<List<ModelsIndexDefinitionSnapshotEntry>> localVarResp = v1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(indexDefinitionId, time);
         return localVarResp.getData();
     }
 
@@ -678,7 +678,7 @@ public class IndexesApi {
      * 
      * @param indexDefinitionId  (required)
      * @param time  (optional)
-     * @return ApiResponse&lt;List&lt;IndexesIndexDefinitionSnapshotEntry&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ModelsIndexDefinitionSnapshotEntry&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -687,9 +687,9 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<IndexesIndexDefinitionSnapshotEntry>> v1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(@javax.annotation.Nonnull String indexDefinitionId, @javax.annotation.Nullable OffsetDateTime time) throws ApiException {
+    public ApiResponse<List<ModelsIndexDefinitionSnapshotEntry>> v1IndexesIndexDefinitionIdHistorySnapshotGetWithHttpInfo(@javax.annotation.Nonnull String indexDefinitionId, @javax.annotation.Nullable OffsetDateTime time) throws ApiException {
         okhttp3.Call localVarCall = v1IndexesIndexDefinitionIdHistorySnapshotGetValidateBeforeCall(indexDefinitionId, time, null);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexDefinitionSnapshotEntry>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexDefinitionSnapshotEntry>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -708,10 +708,10 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1IndexesIndexDefinitionIdHistorySnapshotGetAsync(@javax.annotation.Nonnull String indexDefinitionId, @javax.annotation.Nullable OffsetDateTime time, final ApiCallback<List<IndexesIndexDefinitionSnapshotEntry>> _callback) throws ApiException {
+    public okhttp3.Call v1IndexesIndexDefinitionIdHistorySnapshotGetAsync(@javax.annotation.Nonnull String indexDefinitionId, @javax.annotation.Nullable OffsetDateTime time, final ApiCallback<List<ModelsIndexDefinitionSnapshotEntry>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1IndexesIndexDefinitionIdHistorySnapshotGetValidateBeforeCall(indexDefinitionId, time, _callback);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexDefinitionSnapshotEntry>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexDefinitionSnapshotEntry>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -791,7 +791,7 @@ public class IndexesApi {
      * Current Index Value
      * 
      * @param indexId  (required)
-     * @return IndexesIndexValue
+     * @return ModelsIndexValue
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -800,8 +800,8 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public IndexesIndexValue v1IndexesIndexIdCurrentGet(@javax.annotation.Nonnull String indexId) throws ApiException {
-        ApiResponse<IndexesIndexValue> localVarResp = v1IndexesIndexIdCurrentGetWithHttpInfo(indexId);
+    public ModelsIndexValue v1IndexesIndexIdCurrentGet(@javax.annotation.Nonnull String indexId) throws ApiException {
+        ApiResponse<ModelsIndexValue> localVarResp = v1IndexesIndexIdCurrentGetWithHttpInfo(indexId);
         return localVarResp.getData();
     }
 
@@ -809,7 +809,7 @@ public class IndexesApi {
      * Current Index Value
      * 
      * @param indexId  (required)
-     * @return ApiResponse&lt;IndexesIndexValue&gt;
+     * @return ApiResponse&lt;ModelsIndexValue&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -818,9 +818,9 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<IndexesIndexValue> v1IndexesIndexIdCurrentGetWithHttpInfo(@javax.annotation.Nonnull String indexId) throws ApiException {
+    public ApiResponse<ModelsIndexValue> v1IndexesIndexIdCurrentGetWithHttpInfo(@javax.annotation.Nonnull String indexId) throws ApiException {
         okhttp3.Call localVarCall = v1IndexesIndexIdCurrentGetValidateBeforeCall(indexId, null);
-        Type localVarReturnType = new TypeToken<IndexesIndexValue>(){}.getType();
+        Type localVarReturnType = new TypeToken<ModelsIndexValue>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -838,10 +838,10 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1IndexesIndexIdCurrentGetAsync(@javax.annotation.Nonnull String indexId, final ApiCallback<IndexesIndexValue> _callback) throws ApiException {
+    public okhttp3.Call v1IndexesIndexIdCurrentGetAsync(@javax.annotation.Nonnull String indexId, final ApiCallback<ModelsIndexValue> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1IndexesIndexIdCurrentGetValidateBeforeCall(indexId, _callback);
-        Type localVarReturnType = new TypeToken<IndexesIndexValue>(){}.getType();
+        Type localVarReturnType = new TypeToken<ModelsIndexValue>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -939,7 +939,7 @@ public class IndexesApi {
      * @param timeStart  (optional)
      * @param timeEnd  (optional)
      * @param limit  (optional, default to 100)
-     * @return List&lt;IndexesIndexValue&gt;
+     * @return List&lt;ModelsIndexValue&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -948,8 +948,8 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<IndexesIndexValue> v1IndexesIndexIdHistoryGet(@javax.annotation.Nonnull String indexId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<IndexesIndexValue>> localVarResp = v1IndexesIndexIdHistoryGetWithHttpInfo(indexId, timeStart, timeEnd, limit);
+    public List<ModelsIndexValue> v1IndexesIndexIdHistoryGet(@javax.annotation.Nonnull String indexId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<List<ModelsIndexValue>> localVarResp = v1IndexesIndexIdHistoryGetWithHttpInfo(indexId, timeStart, timeEnd, limit);
         return localVarResp.getData();
     }
 
@@ -960,7 +960,7 @@ public class IndexesApi {
      * @param timeStart  (optional)
      * @param timeEnd  (optional)
      * @param limit  (optional, default to 100)
-     * @return ApiResponse&lt;List&lt;IndexesIndexValue&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ModelsIndexValue&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -969,9 +969,9 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<IndexesIndexValue>> v1IndexesIndexIdHistoryGetWithHttpInfo(@javax.annotation.Nonnull String indexId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
+    public ApiResponse<List<ModelsIndexValue>> v1IndexesIndexIdHistoryGetWithHttpInfo(@javax.annotation.Nonnull String indexId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = v1IndexesIndexIdHistoryGetValidateBeforeCall(indexId, timeStart, timeEnd, limit, null);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexValue>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexValue>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -992,10 +992,10 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1IndexesIndexIdHistoryGetAsync(@javax.annotation.Nonnull String indexId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback<List<IndexesIndexValue>> _callback) throws ApiException {
+    public okhttp3.Call v1IndexesIndexIdHistoryGetAsync(@javax.annotation.Nonnull String indexId, @javax.annotation.Nullable OffsetDateTime timeStart, @javax.annotation.Nullable OffsetDateTime timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback<List<ModelsIndexValue>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1IndexesIndexIdHistoryGetValidateBeforeCall(indexId, timeStart, timeEnd, limit, _callback);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexValue>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexValue>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1114,7 +1114,7 @@ public class IndexesApi {
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return List&lt;IndexesIndexTimeseriesItem&gt;
+     * @return List&lt;ModelsIndexTimeseriesItem&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1123,8 +1123,8 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<IndexesIndexTimeseriesItem> v1IndexesIndexIdTimeseriesGet(@javax.annotation.Nonnull String indexId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<IndexesIndexTimeseriesItem>> localVarResp = v1IndexesIndexIdTimeseriesGetWithHttpInfo(indexId, periodId, timeStart, timeEnd, limit);
+    public List<ModelsIndexTimeseriesItem> v1IndexesIndexIdTimeseriesGet(@javax.annotation.Nonnull String indexId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<List<ModelsIndexTimeseriesItem>> localVarResp = v1IndexesIndexIdTimeseriesGetWithHttpInfo(indexId, periodId, timeStart, timeEnd, limit);
         return localVarResp.getData();
     }
 
@@ -1136,7 +1136,7 @@ public class IndexesApi {
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return ApiResponse&lt;List&lt;IndexesIndexTimeseriesItem&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ModelsIndexTimeseriesItem&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1145,9 +1145,9 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<IndexesIndexTimeseriesItem>> v1IndexesIndexIdTimeseriesGetWithHttpInfo(@javax.annotation.Nonnull String indexId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
+    public ApiResponse<List<ModelsIndexTimeseriesItem>> v1IndexesIndexIdTimeseriesGetWithHttpInfo(@javax.annotation.Nonnull String indexId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = v1IndexesIndexIdTimeseriesGetValidateBeforeCall(indexId, periodId, timeStart, timeEnd, limit, null);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexTimeseriesItem>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexTimeseriesItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1169,10 +1169,10 @@ public class IndexesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1IndexesIndexIdTimeseriesGetAsync(@javax.annotation.Nonnull String indexId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback<List<IndexesIndexTimeseriesItem>> _callback) throws ApiException {
+    public okhttp3.Call v1IndexesIndexIdTimeseriesGetAsync(@javax.annotation.Nonnull String indexId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback<List<ModelsIndexTimeseriesItem>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1IndexesIndexIdTimeseriesGetValidateBeforeCall(indexId, periodId, timeStart, timeEnd, limit, _callback);
-        Type localVarReturnType = new TypeToken<List<IndexesIndexTimeseriesItem>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsIndexTimeseriesItem>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

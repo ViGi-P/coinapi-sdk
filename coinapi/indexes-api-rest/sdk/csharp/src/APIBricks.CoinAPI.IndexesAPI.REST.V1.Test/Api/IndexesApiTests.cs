@@ -59,7 +59,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
         {
             var response = await _instance.V1IndexdefMultiassetGetAsync();
             var model = response.Ok();
-            Assert.IsType<List<IndexesIndexMultiAssetWeight>>(model);
+            Assert.IsType<List<ModelsIndexMultiAssetWeight>>(model);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
             string indexId = default!;
             var response = await _instance.V1IndexdefMultiassetIndexIdGetAsync(indexId);
             var model = response.Ok();
-            Assert.IsType<List<IndexesIndexMultiAssetWeight>>(model);
+            Assert.IsType<List<ModelsIndexMultiAssetWeight>>(model);
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
         {
             var response = await _instance.V1IndexesGetAsync();
             var model = response.Ok();
-            Assert.IsType<List<IndexesIndexIdentifier>>(model);
+            Assert.IsType<List<ModelsIndexIdentifier>>(model);
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
             string indexDefinitionId = default!;
             var response = await _instance.V1IndexesIndexDefinitionIdCurrentSnapshotGetAsync(indexDefinitionId);
             var model = response.Ok();
-            Assert.IsType<List<IndexesIndexDefinitionSnapshotEntry>>(model);
+            Assert.IsType<List<ModelsIndexDefinitionSnapshotEntry>>(model);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
             Client.Option<DateTime> time = default!;
             var response = await _instance.V1IndexesIndexDefinitionIdHistorySnapshotGetAsync(indexDefinitionId, time);
             var model = response.Ok();
-            Assert.IsType<List<IndexesIndexDefinitionSnapshotEntry>>(model);
+            Assert.IsType<List<ModelsIndexDefinitionSnapshotEntry>>(model);
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
             string indexId = default!;
             var response = await _instance.V1IndexesIndexIdCurrentGetAsync(indexId);
             var model = response.Ok();
-            Assert.IsType<IndexesIndexValue>(model);
+            Assert.IsType<ModelsIndexValue>(model);
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
             Client.Option<int> limit = default!;
             var response = await _instance.V1IndexesIndexIdHistoryGetAsync(indexId, timeStart, timeEnd, limit);
             var model = response.Ok();
-            Assert.IsType<List<IndexesIndexValue>>(model);
+            Assert.IsType<List<ModelsIndexValue>>(model);
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
             Client.Option<int> limit = default!;
             var response = await _instance.V1IndexesIndexIdTimeseriesGetAsync(indexId, periodId, timeStart, timeEnd, limit);
             var model = response.Ok();
-            Assert.IsType<List<IndexesIndexTimeseriesItem>>(model);
+            Assert.IsType<List<ModelsIndexTimeseriesItem>>(model);
         }
     }
 }

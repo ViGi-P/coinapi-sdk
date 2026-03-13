@@ -19,7 +19,7 @@ All URIs are relative to https://rest-api.indexes.coinapi.io, except if the oper
 ## `v1IndexdefMultiassetGet()`
 
 ```php
-v1IndexdefMultiassetGet(): \OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]
+v1IndexdefMultiassetGet(): \OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]
 ```
 
 Get all multi-asset weights
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]**](../Model/IndexesIndexMultiAssetWeight.md)
+[**\OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]**](../Model/ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ This endpoint does not need any parameter.
 ## `v1IndexdefMultiassetIndexIdGet()`
 
 ```php
-v1IndexdefMultiassetIndexIdGet($index_id): \OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]
+v1IndexdefMultiassetIndexIdGet($index_id): \OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]
 ```
 
 Get multi-asset weights for specific index
@@ -124,7 +124,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\IndexesIndexMultiAssetWeight[]**](../Model/IndexesIndexMultiAssetWeight.md)
+[**\OpenAPI\Client\Model\ModelsIndexMultiAssetWeight[]**](../Model/ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ try {
 ## `v1IndexesGet()`
 
 ```php
-v1IndexesGet(): \OpenAPI\Client\Model\IndexesIndexIdentifier[]
+v1IndexesGet(): \OpenAPI\Client\Model\ModelsIndexIdentifier[]
 ```
 
 List indexes
@@ -184,7 +184,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\IndexesIndexIdentifier[]**](../Model/IndexesIndexIdentifier.md)
+[**\OpenAPI\Client\Model\ModelsIndexIdentifier[]**](../Model/ModelsIndexIdentifier.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ This endpoint does not need any parameter.
 ## `v1IndexesIndexDefinitionIdCurrentSnapshotGet()`
 
 ```php
-v1IndexesIndexDefinitionIdCurrentSnapshotGet($index_definition_id): \OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]
+v1IndexesIndexDefinitionIdCurrentSnapshotGet($index_definition_id): \OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]
 ```
 
 Current Index Values for index definition
@@ -247,7 +247,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]**](../Model/IndexesIndexDefinitionSnapshotEntry.md)
+[**\OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]**](../Model/ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -265,7 +265,7 @@ try {
 ## `v1IndexesIndexDefinitionIdHistorySnapshotGet()`
 
 ```php
-v1IndexesIndexDefinitionIdHistorySnapshotGet($index_definition_id, $time): \OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]
+v1IndexesIndexDefinitionIdHistorySnapshotGet($index_definition_id, $time): \OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]
 ```
 
 Historical Index Values for index definition
@@ -312,7 +312,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\IndexesIndexDefinitionSnapshotEntry[]**](../Model/IndexesIndexDefinitionSnapshotEntry.md)
+[**\OpenAPI\Client\Model\ModelsIndexDefinitionSnapshotEntry[]**](../Model/ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -330,7 +330,7 @@ try {
 ## `v1IndexesIndexIdCurrentGet()`
 
 ```php
-v1IndexesIndexIdCurrentGet($index_id): \OpenAPI\Client\Model\IndexesIndexValue
+v1IndexesIndexIdCurrentGet($index_id): \OpenAPI\Client\Model\ModelsIndexValue
 ```
 
 Current Index Value
@@ -375,7 +375,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\IndexesIndexValue**](../Model/IndexesIndexValue.md)
+[**\OpenAPI\Client\Model\ModelsIndexValue**](../Model/ModelsIndexValue.md)
 
 ### Authorization
 
@@ -393,7 +393,7 @@ try {
 ## `v1IndexesIndexIdHistoryGet()`
 
 ```php
-v1IndexesIndexIdHistoryGet($index_id, $time_start, $time_end, $limit): \OpenAPI\Client\Model\IndexesIndexValue[]
+v1IndexesIndexIdHistoryGet($index_id, $time_start, $time_end, $limit): \OpenAPI\Client\Model\ModelsIndexValue[]
 ```
 
 Historical Index Value w/Composition
@@ -444,7 +444,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\IndexesIndexValue[]**](../Model/IndexesIndexValue.md)
+[**\OpenAPI\Client\Model\ModelsIndexValue[]**](../Model/ModelsIndexValue.md)
 
 ### Authorization
 
@@ -462,7 +462,7 @@ try {
 ## `v1IndexesIndexIdTimeseriesGet()`
 
 ```php
-v1IndexesIndexIdTimeseriesGet($index_id, $period_id, $time_start, $time_end, $limit): \OpenAPI\Client\Model\IndexesIndexTimeseriesItem[]
+v1IndexesIndexIdTimeseriesGet($index_id, $period_id, $time_start, $time_end, $limit): \OpenAPI\Client\Model\ModelsIndexTimeseriesItem[]
 ```
 
 Timeseries Index Value
@@ -515,7 +515,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\IndexesIndexTimeseriesItem[]**](../Model/IndexesIndexTimeseriesItem.md)
+[**\OpenAPI\Client\Model\ModelsIndexTimeseriesItem[]**](../Model/ModelsIndexTimeseriesItem.md)
 
 ### Authorization
 

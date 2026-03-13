@@ -79,12 +79,12 @@ Method | HTTP request | Description
 ## What are the Model files for the data structures/objects?
 Class | Description
 ------------- | -------------
- *Indexes.IndexDefinitionSnapshotEntry* | 
- *Indexes.IndexIdentifier* | Represents an index id
- *Indexes.IndexMultiAssetWeight* | 
- *Indexes.IndexTimeseriesItem* | Represents a timeseries item with value information.
- *Indexes.IndexValue* | 
- *Indexes.IndexValueComponent* | 
  *Metadata.Exchange* | Represents an exchange.
  *Metadata.TimeseriesPeriod* | Represents a timeseries period used in exchange rate data.
+ *Models.IndexDefinitionSnapshotEntry* | 
+ *Models.IndexIdentifier* | Represents an index id
+ *Models.IndexMultiAssetWeight* | 
+ *Models.IndexTimeseriesItem* | Represents a timeseries item with value information.
+ *Models.IndexValue* | 
+ *Models.IndexValueComponent* | 
 

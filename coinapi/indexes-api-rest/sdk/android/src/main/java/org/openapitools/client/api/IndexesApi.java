@@ -24,12 +24,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import java.util.Date;
-import org.openapitools.client.model.IndexesIndexDefinitionSnapshotEntry;
-import org.openapitools.client.model.IndexesIndexIdentifier;
-import org.openapitools.client.model.IndexesIndexMultiAssetWeight;
-import org.openapitools.client.model.IndexesIndexTimeseriesItem;
-import org.openapitools.client.model.IndexesIndexValue;
 import java.util.*;
+import org.openapitools.client.model.ModelsIndexDefinitionSnapshotEntry;
+import org.openapitools.client.model.ModelsIndexIdentifier;
+import org.openapitools.client.model.ModelsIndexMultiAssetWeight;
+import org.openapitools.client.model.ModelsIndexTimeseriesItem;
+import org.openapitools.client.model.ModelsIndexValue;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -64,9 +64,9 @@ public class IndexesApi {
   /**
   * Get all multi-asset weights
   * 
-   * @return List<IndexesIndexMultiAssetWeight>
+   * @return List<ModelsIndexMultiAssetWeight>
   */
-  public List<IndexesIndexMultiAssetWeight> v1IndexdefMultiassetGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ModelsIndexMultiAssetWeight> v1IndexdefMultiassetGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -96,7 +96,7 @@ public class IndexesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<IndexesIndexMultiAssetWeight>) ApiInvoker.deserialize(localVarResponse, "array", IndexesIndexMultiAssetWeight.class);
+         return (List<ModelsIndexMultiAssetWeight>) ApiInvoker.deserialize(localVarResponse, "array", ModelsIndexMultiAssetWeight.class);
       } else {
          return null;
       }
@@ -122,7 +122,7 @@ public class IndexesApi {
    * 
 
   */
-  public void v1IndexdefMultiassetGet (final Response.Listener<List<IndexesIndexMultiAssetWeight>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1IndexdefMultiassetGet (final Response.Listener<List<ModelsIndexMultiAssetWeight>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -162,7 +162,7 @@ public class IndexesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<IndexesIndexMultiAssetWeight>) ApiInvoker.deserialize(localVarResponse,  "array", IndexesIndexMultiAssetWeight.class));
+              responseListener.onResponse((List<ModelsIndexMultiAssetWeight>) ApiInvoker.deserialize(localVarResponse,  "array", ModelsIndexMultiAssetWeight.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -181,9 +181,9 @@ public class IndexesApi {
   * Get multi-asset weights for specific index
   * 
    * @param indexId 
-   * @return List<IndexesIndexMultiAssetWeight>
+   * @return List<ModelsIndexMultiAssetWeight>
   */
-  public List<IndexesIndexMultiAssetWeight> v1IndexdefMultiassetIndexIdGet (String indexId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ModelsIndexMultiAssetWeight> v1IndexdefMultiassetIndexIdGet (String indexId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'indexId' is set
     if (indexId == null) {
@@ -218,7 +218,7 @@ public class IndexesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<IndexesIndexMultiAssetWeight>) ApiInvoker.deserialize(localVarResponse, "array", IndexesIndexMultiAssetWeight.class);
+         return (List<ModelsIndexMultiAssetWeight>) ApiInvoker.deserialize(localVarResponse, "array", ModelsIndexMultiAssetWeight.class);
       } else {
          return null;
       }
@@ -244,7 +244,7 @@ public class IndexesApi {
    * 
    * @param indexId 
   */
-  public void v1IndexdefMultiassetIndexIdGet (String indexId, final Response.Listener<List<IndexesIndexMultiAssetWeight>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1IndexdefMultiassetIndexIdGet (String indexId, final Response.Listener<List<ModelsIndexMultiAssetWeight>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'indexId' is set
@@ -289,7 +289,7 @@ public class IndexesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<IndexesIndexMultiAssetWeight>) ApiInvoker.deserialize(localVarResponse,  "array", IndexesIndexMultiAssetWeight.class));
+              responseListener.onResponse((List<ModelsIndexMultiAssetWeight>) ApiInvoker.deserialize(localVarResponse,  "array", ModelsIndexMultiAssetWeight.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -307,9 +307,9 @@ public class IndexesApi {
   /**
   * List indexes
   * 
-   * @return List<IndexesIndexIdentifier>
+   * @return List<ModelsIndexIdentifier>
   */
-  public List<IndexesIndexIdentifier> v1IndexesGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ModelsIndexIdentifier> v1IndexesGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -339,7 +339,7 @@ public class IndexesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<IndexesIndexIdentifier>) ApiInvoker.deserialize(localVarResponse, "array", IndexesIndexIdentifier.class);
+         return (List<ModelsIndexIdentifier>) ApiInvoker.deserialize(localVarResponse, "array", ModelsIndexIdentifier.class);
       } else {
          return null;
       }
@@ -365,7 +365,7 @@ public class IndexesApi {
    * 
 
   */
-  public void v1IndexesGet (final Response.Listener<List<IndexesIndexIdentifier>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1IndexesGet (final Response.Listener<List<ModelsIndexIdentifier>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -405,7 +405,7 @@ public class IndexesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<IndexesIndexIdentifier>) ApiInvoker.deserialize(localVarResponse,  "array", IndexesIndexIdentifier.class));
+              responseListener.onResponse((List<ModelsIndexIdentifier>) ApiInvoker.deserialize(localVarResponse,  "array", ModelsIndexIdentifier.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -424,9 +424,9 @@ public class IndexesApi {
   * Current Index Values for index definition
   * 
    * @param indexDefinitionId 
-   * @return List<IndexesIndexDefinitionSnapshotEntry>
+   * @return List<ModelsIndexDefinitionSnapshotEntry>
   */
-  public List<IndexesIndexDefinitionSnapshotEntry> v1IndexesIndexDefinitionIdCurrentSnapshotGet (String indexDefinitionId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ModelsIndexDefinitionSnapshotEntry> v1IndexesIndexDefinitionIdCurrentSnapshotGet (String indexDefinitionId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'indexDefinitionId' is set
     if (indexDefinitionId == null) {
@@ -461,7 +461,7 @@ public class IndexesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<IndexesIndexDefinitionSnapshotEntry>) ApiInvoker.deserialize(localVarResponse, "array", IndexesIndexDefinitionSnapshotEntry.class);
+         return (List<ModelsIndexDefinitionSnapshotEntry>) ApiInvoker.deserialize(localVarResponse, "array", ModelsIndexDefinitionSnapshotEntry.class);
       } else {
          return null;
       }
@@ -487,7 +487,7 @@ public class IndexesApi {
    * 
    * @param indexDefinitionId 
   */
-  public void v1IndexesIndexDefinitionIdCurrentSnapshotGet (String indexDefinitionId, final Response.Listener<List<IndexesIndexDefinitionSnapshotEntry>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1IndexesIndexDefinitionIdCurrentSnapshotGet (String indexDefinitionId, final Response.Listener<List<ModelsIndexDefinitionSnapshotEntry>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'indexDefinitionId' is set
@@ -532,7 +532,7 @@ public class IndexesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<IndexesIndexDefinitionSnapshotEntry>) ApiInvoker.deserialize(localVarResponse,  "array", IndexesIndexDefinitionSnapshotEntry.class));
+              responseListener.onResponse((List<ModelsIndexDefinitionSnapshotEntry>) ApiInvoker.deserialize(localVarResponse,  "array", ModelsIndexDefinitionSnapshotEntry.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -552,9 +552,9 @@ public class IndexesApi {
   * 
    * @param indexDefinitionId 
    * @param time 
-   * @return List<IndexesIndexDefinitionSnapshotEntry>
+   * @return List<ModelsIndexDefinitionSnapshotEntry>
   */
-  public List<IndexesIndexDefinitionSnapshotEntry> v1IndexesIndexDefinitionIdHistorySnapshotGet (String indexDefinitionId, Date time) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ModelsIndexDefinitionSnapshotEntry> v1IndexesIndexDefinitionIdHistorySnapshotGet (String indexDefinitionId, Date time) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'indexDefinitionId' is set
     if (indexDefinitionId == null) {
@@ -590,7 +590,7 @@ public class IndexesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<IndexesIndexDefinitionSnapshotEntry>) ApiInvoker.deserialize(localVarResponse, "array", IndexesIndexDefinitionSnapshotEntry.class);
+         return (List<ModelsIndexDefinitionSnapshotEntry>) ApiInvoker.deserialize(localVarResponse, "array", ModelsIndexDefinitionSnapshotEntry.class);
       } else {
          return null;
       }
@@ -616,7 +616,7 @@ public class IndexesApi {
    * 
    * @param indexDefinitionId    * @param time 
   */
-  public void v1IndexesIndexDefinitionIdHistorySnapshotGet (String indexDefinitionId, Date time, final Response.Listener<List<IndexesIndexDefinitionSnapshotEntry>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1IndexesIndexDefinitionIdHistorySnapshotGet (String indexDefinitionId, Date time, final Response.Listener<List<ModelsIndexDefinitionSnapshotEntry>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'indexDefinitionId' is set
@@ -662,7 +662,7 @@ public class IndexesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<IndexesIndexDefinitionSnapshotEntry>) ApiInvoker.deserialize(localVarResponse,  "array", IndexesIndexDefinitionSnapshotEntry.class));
+              responseListener.onResponse((List<ModelsIndexDefinitionSnapshotEntry>) ApiInvoker.deserialize(localVarResponse,  "array", ModelsIndexDefinitionSnapshotEntry.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -681,9 +681,9 @@ public class IndexesApi {
   * Current Index Value
   * 
    * @param indexId 
-   * @return IndexesIndexValue
+   * @return ModelsIndexValue
   */
-  public IndexesIndexValue v1IndexesIndexIdCurrentGet (String indexId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public ModelsIndexValue v1IndexesIndexIdCurrentGet (String indexId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'indexId' is set
     if (indexId == null) {
@@ -718,7 +718,7 @@ public class IndexesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (IndexesIndexValue) ApiInvoker.deserialize(localVarResponse, "", IndexesIndexValue.class);
+         return (ModelsIndexValue) ApiInvoker.deserialize(localVarResponse, "", ModelsIndexValue.class);
       } else {
          return null;
       }
@@ -744,7 +744,7 @@ public class IndexesApi {
    * 
    * @param indexId 
   */
-  public void v1IndexesIndexIdCurrentGet (String indexId, final Response.Listener<IndexesIndexValue> responseListener, final Response.ErrorListener errorListener) {
+  public void v1IndexesIndexIdCurrentGet (String indexId, final Response.Listener<ModelsIndexValue> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'indexId' is set
@@ -789,7 +789,7 @@ public class IndexesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((IndexesIndexValue) ApiInvoker.deserialize(localVarResponse,  "", IndexesIndexValue.class));
+              responseListener.onResponse((ModelsIndexValue) ApiInvoker.deserialize(localVarResponse,  "", ModelsIndexValue.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -811,9 +811,9 @@ public class IndexesApi {
    * @param timeStart 
    * @param timeEnd 
    * @param limit 
-   * @return List<IndexesIndexValue>
+   * @return List<ModelsIndexValue>
   */
-  public List<IndexesIndexValue> v1IndexesIndexIdHistoryGet (String indexId, Date timeStart, Date timeEnd, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ModelsIndexValue> v1IndexesIndexIdHistoryGet (String indexId, Date timeStart, Date timeEnd, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'indexId' is set
     if (indexId == null) {
@@ -851,7 +851,7 @@ public class IndexesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<IndexesIndexValue>) ApiInvoker.deserialize(localVarResponse, "array", IndexesIndexValue.class);
+         return (List<ModelsIndexValue>) ApiInvoker.deserialize(localVarResponse, "array", ModelsIndexValue.class);
       } else {
          return null;
       }
@@ -877,7 +877,7 @@ public class IndexesApi {
    * 
    * @param indexId    * @param timeStart    * @param timeEnd    * @param limit 
   */
-  public void v1IndexesIndexIdHistoryGet (String indexId, Date timeStart, Date timeEnd, Integer limit, final Response.Listener<List<IndexesIndexValue>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1IndexesIndexIdHistoryGet (String indexId, Date timeStart, Date timeEnd, Integer limit, final Response.Listener<List<ModelsIndexValue>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'indexId' is set
@@ -925,7 +925,7 @@ public class IndexesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<IndexesIndexValue>) ApiInvoker.deserialize(localVarResponse,  "array", IndexesIndexValue.class));
+              responseListener.onResponse((List<ModelsIndexValue>) ApiInvoker.deserialize(localVarResponse,  "array", ModelsIndexValue.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -948,9 +948,9 @@ public class IndexesApi {
    * @param timeStart Timeseries starting time in ISO 8601
    * @param timeEnd Timeseries ending time in ISO 8601
    * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-   * @return List<IndexesIndexTimeseriesItem>
+   * @return List<ModelsIndexTimeseriesItem>
   */
-  public List<IndexesIndexTimeseriesItem> v1IndexesIndexIdTimeseriesGet (String indexId, String periodId, String timeStart, String timeEnd, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ModelsIndexTimeseriesItem> v1IndexesIndexIdTimeseriesGet (String indexId, String periodId, String timeStart, String timeEnd, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'indexId' is set
     if (indexId == null) {
@@ -1004,7 +1004,7 @@ public class IndexesApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<IndexesIndexTimeseriesItem>) ApiInvoker.deserialize(localVarResponse, "array", IndexesIndexTimeseriesItem.class);
+         return (List<ModelsIndexTimeseriesItem>) ApiInvoker.deserialize(localVarResponse, "array", ModelsIndexTimeseriesItem.class);
       } else {
          return null;
       }
@@ -1030,7 +1030,7 @@ public class IndexesApi {
    * 
    * @param indexId    * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)   * @param timeStart Timeseries starting time in ISO 8601   * @param timeEnd Timeseries ending time in ISO 8601   * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   */
-  public void v1IndexesIndexIdTimeseriesGet (String indexId, String periodId, String timeStart, String timeEnd, Integer limit, final Response.Listener<List<IndexesIndexTimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1IndexesIndexIdTimeseriesGet (String indexId, String periodId, String timeStart, String timeEnd, Integer limit, final Response.Listener<List<ModelsIndexTimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'indexId' is set
@@ -1094,7 +1094,7 @@ public class IndexesApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<IndexesIndexTimeseriesItem>) ApiInvoker.deserialize(localVarResponse,  "array", IndexesIndexTimeseriesItem.class));
+              responseListener.onResponse((List<ModelsIndexTimeseriesItem>) ApiInvoker.deserialize(localVarResponse,  "array", ModelsIndexTimeseriesItem.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

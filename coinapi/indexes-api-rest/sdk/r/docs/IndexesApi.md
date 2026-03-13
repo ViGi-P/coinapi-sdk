@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **V1IndexdefMultiassetGet**
-> array[IndexesIndexMultiAssetWeight] V1IndexdefMultiassetGet()
+> array[ModelsIndexMultiAssetWeight] V1IndexdefMultiassetGet()
 
 Get all multi-asset weights
 
@@ -42,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**array[IndexesIndexMultiAssetWeight]**](Indexes.IndexMultiAssetWeight.md)
+[**array[ModelsIndexMultiAssetWeight]**](Models.IndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 | **200** | successful operation |  -  |
 
 # **V1IndexdefMultiassetIndexIdGet**
-> array[IndexesIndexMultiAssetWeight] V1IndexdefMultiassetIndexIdGet(index_id)
+> array[ModelsIndexMultiAssetWeight] V1IndexdefMultiassetIndexIdGet(index_id)
 
 Get multi-asset weights for specific index
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[IndexesIndexMultiAssetWeight]**](Indexes.IndexMultiAssetWeight.md)
+[**array[ModelsIndexMultiAssetWeight]**](Models.IndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1IndexesGet**
-> array[IndexesIndexIdentifier] V1IndexesGet()
+> array[ModelsIndexIdentifier] V1IndexesGet()
 
 List indexes
 
@@ -135,7 +135,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**array[IndexesIndexIdentifier]**](Indexes.IndexIdentifier.md)
+[**array[ModelsIndexIdentifier]**](Models.IndexIdentifier.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ This endpoint does not need any parameter.
 | **200** | successful operation |  -  |
 
 # **V1IndexesIndexDefinitionIdCurrentSnapshotGet**
-> array[IndexesIndexDefinitionSnapshotEntry] V1IndexesIndexDefinitionIdCurrentSnapshotGet(index_definition_id)
+> array[ModelsIndexDefinitionSnapshotEntry] V1IndexesIndexDefinitionIdCurrentSnapshotGet(index_definition_id)
 
 Current Index Values for index definition
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[IndexesIndexDefinitionSnapshotEntry]**](Indexes.IndexDefinitionSnapshotEntry.md)
+[**array[ModelsIndexDefinitionSnapshotEntry]**](Models.IndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1IndexesIndexDefinitionIdHistorySnapshotGet**
-> array[IndexesIndexDefinitionSnapshotEntry] V1IndexesIndexDefinitionIdHistorySnapshotGet(index_definition_id, time = var.time)
+> array[ModelsIndexDefinitionSnapshotEntry] V1IndexesIndexDefinitionIdHistorySnapshotGet(index_definition_id, time = var.time)
 
 Historical Index Values for index definition
 
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[IndexesIndexDefinitionSnapshotEntry]**](Indexes.IndexDefinitionSnapshotEntry.md)
+[**array[ModelsIndexDefinitionSnapshotEntry]**](Models.IndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1IndexesIndexIdCurrentGet**
-> IndexesIndexValue V1IndexesIndexIdCurrentGet(index_id)
+> ModelsIndexValue V1IndexesIndexIdCurrentGet(index_id)
 
 Current Index Value
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexValue**](Indexes.IndexValue.md)
+[**ModelsIndexValue**](Models.IndexValue.md)
 
 ### Authorization
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1IndexesIndexIdHistoryGet**
-> array[IndexesIndexValue] V1IndexesIndexIdHistoryGet(index_id, time_start = var.time_start, time_end = var.time_end, limit = 100)
+> array[ModelsIndexValue] V1IndexesIndexIdHistoryGet(index_id, time_start = var.time_start, time_end = var.time_end, limit = 100)
 
 Historical Index Value w/Composition
 
@@ -339,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[IndexesIndexValue]**](Indexes.IndexValue.md)
+[**array[ModelsIndexValue]**](Models.IndexValue.md)
 
 ### Authorization
 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1IndexesIndexIdTimeseriesGet**
-> array[IndexesIndexTimeseriesItem] V1IndexesIndexIdTimeseriesGet(index_id, period_id, time_start, time_end, limit = 100)
+> array[ModelsIndexTimeseriesItem] V1IndexesIndexIdTimeseriesGet(index_id, period_id, time_start, time_end, limit = 100)
 
 Timeseries Index Value
 
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[IndexesIndexTimeseriesItem]**](Indexes.IndexTimeseriesItem.md)
+[**array[ModelsIndexTimeseriesItem]**](Models.IndexTimeseriesItem.md)
 
 ### Authorization
 

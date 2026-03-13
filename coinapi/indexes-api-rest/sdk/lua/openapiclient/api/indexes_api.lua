@@ -16,11 +16,11 @@ local dkjson = require "dkjson"
 local basexx = require "basexx"
 
 -- model import
-local openapiclient_indexes_index_definition_snapshot_entry = require "openapiclient.model.indexes_index_definition_snapshot_entry"
-local openapiclient_indexes_index_identifier = require "openapiclient.model.indexes_index_identifier"
-local openapiclient_indexes_index_multi_asset_weight = require "openapiclient.model.indexes_index_multi_asset_weight"
-local openapiclient_indexes_index_timeseries_item = require "openapiclient.model.indexes_index_timeseries_item"
-local openapiclient_indexes_index_value = require "openapiclient.model.indexes_index_value"
+local openapiclient_models_index_definition_snapshot_entry = require "openapiclient.model.models_index_definition_snapshot_entry"
+local openapiclient_models_index_identifier = require "openapiclient.model.models_index_identifier"
+local openapiclient_models_index_multi_asset_weight = require "openapiclient.model.models_index_multi_asset_weight"
+local openapiclient_models_index_timeseries_item = require "openapiclient.model.models_index_timeseries_item"
+local openapiclient_models_index_value = require "openapiclient.model.models_index_value"
 
 local indexes_api = {}
 local indexes_api_mt = {
@@ -87,7 +87,7 @@ function indexes_api:v1_indexdef_multiasset_get()
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_indexes_index_multi_asset_weight.cast(ob)
+			openapiclient_models_index_multi_asset_weight.cast(ob)
 		end
 		return result, headers
 	else
@@ -140,7 +140,7 @@ function indexes_api:v1_indexdef_multiasset_index_id_get(index_id)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_indexes_index_multi_asset_weight.cast(ob)
+			openapiclient_models_index_multi_asset_weight.cast(ob)
 		end
 		return result, headers
 	else
@@ -193,7 +193,7 @@ function indexes_api:v1_indexes_get()
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_indexes_index_identifier.cast(ob)
+			openapiclient_models_index_identifier.cast(ob)
 		end
 		return result, headers
 	else
@@ -246,7 +246,7 @@ function indexes_api:v1_indexes_index_definition_id_current_snapshot_get(index_d
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_indexes_index_definition_snapshot_entry.cast(ob)
+			openapiclient_models_index_definition_snapshot_entry.cast(ob)
 		end
 		return result, headers
 	else
@@ -299,7 +299,7 @@ function indexes_api:v1_indexes_index_definition_id_history_snapshot_get(index_d
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_indexes_index_definition_snapshot_entry.cast(ob)
+			openapiclient_models_index_definition_snapshot_entry.cast(ob)
 		end
 		return result, headers
 	else
@@ -351,7 +351,7 @@ function indexes_api:v1_indexes_index_id_current_get(index_id)
 		if result == nil then
 			return nil, err3
 		end
-		return openapiclient_indexes_index_value.cast(result), headers
+		return openapiclient_models_index_value.cast(result), headers
 	else
 		local body, err, errno2 = stream:get_body_as_string()
 		if not body then
@@ -402,7 +402,7 @@ function indexes_api:v1_indexes_index_id_history_get(index_id, time_start, time_
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_indexes_index_value.cast(ob)
+			openapiclient_models_index_value.cast(ob)
 		end
 		return result, headers
 	else
@@ -455,7 +455,7 @@ function indexes_api:v1_indexes_index_id_timeseries_get(index_id, period_id, tim
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_indexes_index_timeseries_item.cast(ob)
+			openapiclient_models_index_timeseries_item.cast(ob)
 		end
 		return result, headers
 	else

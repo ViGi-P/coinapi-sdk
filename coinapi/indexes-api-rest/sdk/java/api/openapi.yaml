@@ -202,7 +202,7 @@ paths:
                   - id: IDX_REFRATE_VWAP_ADA
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexIdentifier"
+                  $ref: "#/components/schemas/Models.IndexIdentifier"
                 type: array
             application/json:
               examples:
@@ -215,7 +215,7 @@ paths:
                   - id: IDX_REFRATE_VWAP_ADA
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexIdentifier"
+                  $ref: "#/components/schemas/Models.IndexIdentifier"
                 type: array
             text/json:
               examples:
@@ -228,7 +228,7 @@ paths:
                   - id: IDX_REFRATE_VWAP_ADA
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexIdentifier"
+                  $ref: "#/components/schemas/Models.IndexIdentifier"
                 type: array
             application/x-msgpack:
               examples:
@@ -241,7 +241,7 @@ paths:
                   - id: IDX_REFRATE_VWAP_ADA
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexIdentifier"
+                  $ref: "#/components/schemas/Models.IndexIdentifier"
                 type: array
           description: successful operation
       summary: List indexes
@@ -272,7 +272,7 @@ paths:
                     timestamp: 2024-09-01T09:00:00
                     value: 56787.5997300339
               schema:
-                $ref: "#/components/schemas/Indexes.IndexValue"
+                $ref: "#/components/schemas/Models.IndexValue"
             application/json:
               examples:
                 Example response:
@@ -280,7 +280,7 @@ paths:
                     timestamp: 2024-09-01T09:00:00
                     value: 56787.5997300339
               schema:
-                $ref: "#/components/schemas/Indexes.IndexValue"
+                $ref: "#/components/schemas/Models.IndexValue"
             text/json:
               examples:
                 Example response:
@@ -288,7 +288,7 @@ paths:
                     timestamp: 2024-09-01T09:00:00
                     value: 56787.5997300339
               schema:
-                $ref: "#/components/schemas/Indexes.IndexValue"
+                $ref: "#/components/schemas/Models.IndexValue"
             application/x-msgpack:
               examples:
                 Example response:
@@ -296,7 +296,7 @@ paths:
                     timestamp: 2024-09-01T09:00:00
                     value: 56787.5997300339
               schema:
-                $ref: "#/components/schemas/Indexes.IndexValue"
+                $ref: "#/components/schemas/Models.IndexValue"
           description: successful operation
       summary: Current Index Value
       tags:
@@ -322,22 +322,22 @@ paths:
             text/plain:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                  $ref: "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                 type: array
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                  $ref: "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                 type: array
             text/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                  $ref: "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                 type: array
             application/x-msgpack:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                  $ref: "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                 type: array
           description: successful operation
       summary: Current Index Values for index definition
@@ -401,7 +401,7 @@ paths:
                     composition: []
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexValue"
+                  $ref: "#/components/schemas/Models.IndexValue"
                 type: array
             application/json:
               examples:
@@ -418,7 +418,7 @@ paths:
                     composition: []
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexValue"
+                  $ref: "#/components/schemas/Models.IndexValue"
                 type: array
             text/json:
               examples:
@@ -435,7 +435,7 @@ paths:
                     composition: []
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexValue"
+                  $ref: "#/components/schemas/Models.IndexValue"
                 type: array
             application/x-msgpack:
               examples:
@@ -452,7 +452,7 @@ paths:
                     composition: []
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexValue"
+                  $ref: "#/components/schemas/Models.IndexValue"
                 type: array
           description: successful operation
       summary: Historical Index Value w/Composition
@@ -487,22 +487,22 @@ paths:
             text/plain:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                  $ref: "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                 type: array
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                  $ref: "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                 type: array
             text/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                  $ref: "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                 type: array
             application/x-msgpack:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                  $ref: "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                 type: array
           description: successful operation
       summary: Historical Index Values for index definition
@@ -596,7 +596,7 @@ paths:
                     value_count: 0
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexTimeseriesItem"
+                  $ref: "#/components/schemas/Models.IndexTimeseriesItem"
                 type: array
             application/json:
               examples:
@@ -631,7 +631,7 @@ paths:
                     value_count: 0
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexTimeseriesItem"
+                  $ref: "#/components/schemas/Models.IndexTimeseriesItem"
                 type: array
             text/json:
               examples:
@@ -666,7 +666,7 @@ paths:
                     value_count: 0
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexTimeseriesItem"
+                  $ref: "#/components/schemas/Models.IndexTimeseriesItem"
                 type: array
             application/x-msgpack:
               examples:
@@ -701,7 +701,7 @@ paths:
                     value_count: 0
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexTimeseriesItem"
+                  $ref: "#/components/schemas/Models.IndexTimeseriesItem"
                 type: array
           description: successful operation
       summary: Timeseries Index Value
@@ -720,22 +720,22 @@ paths:
             text/plain:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                  $ref: "#/components/schemas/Models.IndexMultiAssetWeight"
                 type: array
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                  $ref: "#/components/schemas/Models.IndexMultiAssetWeight"
                 type: array
             text/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                  $ref: "#/components/schemas/Models.IndexMultiAssetWeight"
                 type: array
             application/x-msgpack:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                  $ref: "#/components/schemas/Models.IndexMultiAssetWeight"
                 type: array
           description: successful operation
       summary: Get all multi-asset weights
@@ -762,22 +762,22 @@ paths:
             text/plain:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                  $ref: "#/components/schemas/Models.IndexMultiAssetWeight"
                 type: array
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                  $ref: "#/components/schemas/Models.IndexMultiAssetWeight"
                 type: array
             text/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                  $ref: "#/components/schemas/Models.IndexMultiAssetWeight"
                 type: array
             application/x-msgpack:
               schema:
                 items:
-                  $ref: "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                  $ref: "#/components/schemas/Models.IndexMultiAssetWeight"
                 type: array
           description: successful operation
       summary: Get multi-asset weights for specific index
@@ -916,144 +916,6 @@ paths:
       - text/plain
 components:
   schemas:
-    Indexes.IndexDefinitionSnapshotEntry:
-      additionalProperties: false
-      example:
-        index_id: index_id
-        value: 0.8008281904610115
-        timestamp: 2000-01-23T04:56:07.000+00:00
-      properties:
-        index_id:
-          nullable: true
-          type: string
-        timestamp:
-          format: date-time
-          type: string
-        value:
-          format: double
-          type: number
-      type: object
-    Indexes.IndexIdentifier:
-      additionalProperties: false
-      description: Represents an index id
-      example:
-        id: id
-      properties:
-        id:
-          description: Index ID
-          nullable: true
-          type: string
-      type: object
-    Indexes.IndexMultiAssetWeight:
-      additionalProperties: false
-      example:
-        assetId: assetId
-        indexId: indexId
-        weight: 0.8008281904610115
-      properties:
-        indexId:
-          nullable: true
-          type: string
-        assetId:
-          nullable: true
-          type: string
-        weight:
-          format: double
-          type: number
-      type: object
-    Indexes.IndexTimeseriesItem:
-      additionalProperties: false
-      description: Represents a timeseries item with value information.
-      example:
-        time_period_end: 2000-01-23T04:56:07.000+00:00
-        value_open: 0.8008281904610115
-        time_open: 2000-01-23T04:56:07.000+00:00
-        value_close: 5.962133916683182
-        value_high: 6.027456183070403
-        time_close: 2000-01-23T04:56:07.000+00:00
-        value_low: 1.4658129805029452
-        time_period_start: 2000-01-23T04:56:07.000+00:00
-        value_count: 5
-      properties:
-        time_period_start:
-          description: Gets or sets the start time of the time period.
-          format: date-time
-          type: string
-        time_period_end:
-          description: Gets or sets the end time of the time period.
-          format: date-time
-          type: string
-        time_open:
-          description: Gets or sets the time when the value opened.
-          format: date-time
-          nullable: true
-          type: string
-        time_close:
-          description: Gets or sets the time when the value closed.
-          format: date-time
-          nullable: true
-          type: string
-        value_open:
-          description: Gets or sets the opening value.
-          format: double
-          nullable: true
-          type: number
-        value_high:
-          description: Gets or sets the highest value during the time period.
-          format: double
-          nullable: true
-          type: number
-        value_low:
-          description: Gets or sets the lowest value during the time period.
-          format: double
-          nullable: true
-          type: number
-        value_close:
-          description: Gets or sets the closing value.
-          format: double
-          nullable: true
-          type: number
-        value_count:
-          description: Gets or sets the number of values during the time period.
-          format: int64
-          type: integer
-      type: object
-    Indexes.IndexValue:
-      additionalProperties: false
-      example:
-        composition:
-        - component_id: component_id
-          component_value: 6.027456183070403
-        - component_id: component_id
-          component_value: 6.027456183070403
-        value: 0.8008281904610115
-        timestamp: 2000-01-23T04:56:07.000+00:00
-      properties:
-        timestamp:
-          format: date-time
-          type: string
-        value:
-          format: double
-          type: number
-        composition:
-          items:
-            $ref: "#/components/schemas/Indexes.IndexValueComponent"
-          nullable: true
-          type: array
-      type: object
-    Indexes.IndexValueComponent:
-      additionalProperties: false
-      example:
-        component_id: component_id
-        component_value: 6.027456183070403
-      properties:
-        component_id:
-          nullable: true
-          type: string
-        component_value:
-          format: double
-          type: number
-      type: object
     Metadata.Exchange:
       additionalProperties: false
       description: Represents an exchange.
@@ -1111,6 +973,144 @@ components:
           description: Gets or sets the display name of the timeseries period.
           nullable: true
           type: string
+      type: object
+    Models.IndexDefinitionSnapshotEntry:
+      additionalProperties: false
+      example:
+        index_id: index_id
+        value: 0.8008281904610115
+        timestamp: 2000-01-23T04:56:07.000+00:00
+      properties:
+        index_id:
+          nullable: true
+          type: string
+        timestamp:
+          format: date-time
+          type: string
+        value:
+          format: double
+          type: number
+      type: object
+    Models.IndexIdentifier:
+      additionalProperties: false
+      description: Represents an index id
+      example:
+        id: id
+      properties:
+        id:
+          description: Index ID
+          nullable: true
+          type: string
+      type: object
+    Models.IndexMultiAssetWeight:
+      additionalProperties: false
+      example:
+        assetId: assetId
+        indexId: indexId
+        weight: 0.8008281904610115
+      properties:
+        indexId:
+          nullable: true
+          type: string
+        assetId:
+          nullable: true
+          type: string
+        weight:
+          format: double
+          type: number
+      type: object
+    Models.IndexTimeseriesItem:
+      additionalProperties: false
+      description: Represents a timeseries item with value information.
+      example:
+        time_period_end: 2000-01-23T04:56:07.000+00:00
+        value_open: 0.8008281904610115
+        time_open: 2000-01-23T04:56:07.000+00:00
+        value_close: 5.962133916683182
+        value_high: 6.027456183070403
+        time_close: 2000-01-23T04:56:07.000+00:00
+        value_low: 1.4658129805029452
+        time_period_start: 2000-01-23T04:56:07.000+00:00
+        value_count: 5
+      properties:
+        time_period_start:
+          description: Gets or sets the start time of the time period.
+          format: date-time
+          type: string
+        time_period_end:
+          description: Gets or sets the end time of the time period.
+          format: date-time
+          type: string
+        time_open:
+          description: Gets or sets the time when the value opened.
+          format: date-time
+          nullable: true
+          type: string
+        time_close:
+          description: Gets or sets the time when the value closed.
+          format: date-time
+          nullable: true
+          type: string
+        value_open:
+          description: Gets or sets the opening value.
+          format: double
+          nullable: true
+          type: number
+        value_high:
+          description: Gets or sets the highest value during the time period.
+          format: double
+          nullable: true
+          type: number
+        value_low:
+          description: Gets or sets the lowest value during the time period.
+          format: double
+          nullable: true
+          type: number
+        value_close:
+          description: Gets or sets the closing value.
+          format: double
+          nullable: true
+          type: number
+        value_count:
+          description: Gets or sets the number of values during the time period.
+          format: int64
+          type: integer
+      type: object
+    Models.IndexValue:
+      additionalProperties: false
+      example:
+        composition:
+        - component_id: component_id
+          component_value: 6.027456183070403
+        - component_id: component_id
+          component_value: 6.027456183070403
+        value: 0.8008281904610115
+        timestamp: 2000-01-23T04:56:07.000+00:00
+      properties:
+        timestamp:
+          format: date-time
+          type: string
+        value:
+          format: double
+          type: number
+        composition:
+          items:
+            $ref: "#/components/schemas/Models.IndexValueComponent"
+          nullable: true
+          type: array
+      type: object
+    Models.IndexValueComponent:
+      additionalProperties: false
+      example:
+        component_id: component_id
+        component_value: 6.027456183070403
+      properties:
+        component_id:
+          nullable: true
+          type: string
+        component_value:
+          format: double
+          type: number
       type: object
   securitySchemes:
     APIKey:

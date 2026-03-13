@@ -15,11 +15,11 @@
 
 goog.provide('API.Client.IndexesApi');
 
-goog.require('API.Client.Indexes.IndexDefinitionSnapshotEntry');
-goog.require('API.Client.Indexes.IndexIdentifier');
-goog.require('API.Client.Indexes.IndexMultiAssetWeight');
-goog.require('API.Client.Indexes.IndexTimeseriesItem');
-goog.require('API.Client.Indexes.IndexValue');
+goog.require('API.Client.Models.IndexDefinitionSnapshotEntry');
+goog.require('API.Client.Models.IndexIdentifier');
+goog.require('API.Client.Models.IndexMultiAssetWeight');
+goog.require('API.Client.Models.IndexTimeseriesItem');
+goog.require('API.Client.Models.IndexValue');
 
 /**
  * @constructor
@@ -52,7 +52,7 @@ API.Client.IndexesApi.$inject = ['$http', '$httpParamSerializer', '$injector'];
  * Get all multi-asset weights
  * 
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.Indexes.IndexMultiAssetWeight>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.Models.IndexMultiAssetWeight>>}
  */
 API.Client.IndexesApi.prototype.v1IndexdefMultiassetGet = function(opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -84,7 +84,7 @@ API.Client.IndexesApi.prototype.v1IndexdefMultiassetGet = function(opt_extraHttp
  * 
  * @param {!string} indexId 
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.Indexes.IndexMultiAssetWeight>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.Models.IndexMultiAssetWeight>>}
  */
 API.Client.IndexesApi.prototype.v1IndexdefMultiassetIndexIdGet = function(indexId, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -120,7 +120,7 @@ API.Client.IndexesApi.prototype.v1IndexdefMultiassetIndexIdGet = function(indexI
  * List indexes
  * 
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.Indexes.IndexIdentifier>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.Models.IndexIdentifier>>}
  */
 API.Client.IndexesApi.prototype.v1IndexesGet = function(opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -152,7 +152,7 @@ API.Client.IndexesApi.prototype.v1IndexesGet = function(opt_extraHttpRequestPara
  * 
  * @param {!string} indexDefinitionId 
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.Indexes.IndexDefinitionSnapshotEntry>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.Models.IndexDefinitionSnapshotEntry>>}
  */
 API.Client.IndexesApi.prototype.v1IndexesIndexDefinitionIdCurrentSnapshotGet = function(indexDefinitionId, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -190,7 +190,7 @@ API.Client.IndexesApi.prototype.v1IndexesIndexDefinitionIdCurrentSnapshotGet = f
  * @param {!string} indexDefinitionId 
  * @param {!Date=} opt_time 
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.Indexes.IndexDefinitionSnapshotEntry>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.Models.IndexDefinitionSnapshotEntry>>}
  */
 API.Client.IndexesApi.prototype.v1IndexesIndexDefinitionIdHistorySnapshotGet = function(indexDefinitionId, opt_time, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -231,7 +231,7 @@ API.Client.IndexesApi.prototype.v1IndexesIndexDefinitionIdHistorySnapshotGet = f
  * 
  * @param {!string} indexId 
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!API.Client.Indexes.IndexValue>}
+ * @return {!angular.$q.Promise<!API.Client.Models.IndexValue>}
  */
 API.Client.IndexesApi.prototype.v1IndexesIndexIdCurrentGet = function(indexId, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -271,7 +271,7 @@ API.Client.IndexesApi.prototype.v1IndexesIndexIdCurrentGet = function(indexId, o
  * @param {!Date=} opt_timeEnd 
  * @param {!number=} opt_limit 
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.Indexes.IndexValue>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.Models.IndexValue>>}
  */
 API.Client.IndexesApi.prototype.v1IndexesIndexIdHistoryGet = function(indexId, opt_timeStart, opt_timeEnd, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
@@ -324,7 +324,7 @@ API.Client.IndexesApi.prototype.v1IndexesIndexIdHistoryGet = function(indexId, o
  * @param {!string} timeEnd Timeseries ending time in ISO 8601
  * @param {!number=} opt_limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
- * @return {!angular.$q.Promise<!Array<!API.Client.Indexes.IndexTimeseriesItem>>}
+ * @return {!angular.$q.Promise<!Array<!API.Client.Models.IndexTimeseriesItem>>}
  */
 API.Client.IndexesApi.prototype.v1IndexesIndexIdTimeseriesGet = function(indexId, periodId, timeStart, timeEnd, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */

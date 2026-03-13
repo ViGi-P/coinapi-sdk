@@ -104,14 +104,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [OpenapiClient::IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
- - [OpenapiClient::IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
- - [OpenapiClient::IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)
- - [OpenapiClient::IndexesIndexTimeseriesItem](docs/IndexesIndexTimeseriesItem.md)
- - [OpenapiClient::IndexesIndexValue](docs/IndexesIndexValue.md)
- - [OpenapiClient::IndexesIndexValueComponent](docs/IndexesIndexValueComponent.md)
  - [OpenapiClient::MetadataExchange](docs/MetadataExchange.md)
  - [OpenapiClient::MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
+ - [OpenapiClient::ModelsIndexDefinitionSnapshotEntry](docs/ModelsIndexDefinitionSnapshotEntry.md)
+ - [OpenapiClient::ModelsIndexIdentifier](docs/ModelsIndexIdentifier.md)
+ - [OpenapiClient::ModelsIndexMultiAssetWeight](docs/ModelsIndexMultiAssetWeight.md)
+ - [OpenapiClient::ModelsIndexTimeseriesItem](docs/ModelsIndexTimeseriesItem.md)
+ - [OpenapiClient::ModelsIndexValue](docs/ModelsIndexValue.md)
+ - [OpenapiClient::ModelsIndexValueComponent](docs/ModelsIndexValueComponent.md)
 
 
 ## Documentation for Authorization

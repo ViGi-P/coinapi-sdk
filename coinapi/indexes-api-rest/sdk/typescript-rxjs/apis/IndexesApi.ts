@@ -16,11 +16,11 @@ import type { AjaxResponse } from 'rxjs/ajax';
 import { BaseAPI, throwIfNullOrUndefined, encodeURI } from '../runtime';
 import type { OperationOpts, HttpHeaders, HttpQuery } from '../runtime';
 import type {
-    IndexesIndexDefinitionSnapshotEntry,
-    IndexesIndexIdentifier,
-    IndexesIndexMultiAssetWeight,
-    IndexesIndexTimeseriesItem,
-    IndexesIndexValue,
+    ModelsIndexDefinitionSnapshotEntry,
+    ModelsIndexIdentifier,
+    ModelsIndexMultiAssetWeight,
+    ModelsIndexTimeseriesItem,
+    ModelsIndexValue,
 } from '../models';
 
 export interface V1IndexdefMultiassetIndexIdGetRequest {
@@ -63,14 +63,14 @@ export class IndexesApi extends BaseAPI {
     /**
      * Get all multi-asset weights
      */
-    v1IndexdefMultiassetGet(): Observable<Array<IndexesIndexMultiAssetWeight>>
-    v1IndexdefMultiassetGet(opts?: OperationOpts): Observable<AjaxResponse<Array<IndexesIndexMultiAssetWeight>>>
-    v1IndexdefMultiassetGet(opts?: OperationOpts): Observable<Array<IndexesIndexMultiAssetWeight> | AjaxResponse<Array<IndexesIndexMultiAssetWeight>>> {
+    v1IndexdefMultiassetGet(): Observable<Array<ModelsIndexMultiAssetWeight>>
+    v1IndexdefMultiassetGet(opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsIndexMultiAssetWeight>>>
+    v1IndexdefMultiassetGet(opts?: OperationOpts): Observable<Array<ModelsIndexMultiAssetWeight> | AjaxResponse<Array<ModelsIndexMultiAssetWeight>>> {
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };
 
-        return this.request<Array<IndexesIndexMultiAssetWeight>>({
+        return this.request<Array<ModelsIndexMultiAssetWeight>>({
             url: '/v1/indexdef/multiasset',
             method: 'GET',
             headers,
@@ -80,16 +80,16 @@ export class IndexesApi extends BaseAPI {
     /**
      * Get multi-asset weights for specific index
      */
-    v1IndexdefMultiassetIndexIdGet({ indexId }: V1IndexdefMultiassetIndexIdGetRequest): Observable<Array<IndexesIndexMultiAssetWeight>>
-    v1IndexdefMultiassetIndexIdGet({ indexId }: V1IndexdefMultiassetIndexIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IndexesIndexMultiAssetWeight>>>
-    v1IndexdefMultiassetIndexIdGet({ indexId }: V1IndexdefMultiassetIndexIdGetRequest, opts?: OperationOpts): Observable<Array<IndexesIndexMultiAssetWeight> | AjaxResponse<Array<IndexesIndexMultiAssetWeight>>> {
+    v1IndexdefMultiassetIndexIdGet({ indexId }: V1IndexdefMultiassetIndexIdGetRequest): Observable<Array<ModelsIndexMultiAssetWeight>>
+    v1IndexdefMultiassetIndexIdGet({ indexId }: V1IndexdefMultiassetIndexIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsIndexMultiAssetWeight>>>
+    v1IndexdefMultiassetIndexIdGet({ indexId }: V1IndexdefMultiassetIndexIdGetRequest, opts?: OperationOpts): Observable<Array<ModelsIndexMultiAssetWeight> | AjaxResponse<Array<ModelsIndexMultiAssetWeight>>> {
         throwIfNullOrUndefined(indexId, 'indexId', 'v1IndexdefMultiassetIndexIdGet');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };
 
-        return this.request<Array<IndexesIndexMultiAssetWeight>>({
+        return this.request<Array<ModelsIndexMultiAssetWeight>>({
             url: '/v1/indexdef/multiasset/{index_id}'.replace('{index_id}', encodeURI(indexId)),
             method: 'GET',
             headers,
@@ -99,14 +99,14 @@ export class IndexesApi extends BaseAPI {
     /**
      * List indexes
      */
-    v1IndexesGet(): Observable<Array<IndexesIndexIdentifier>>
-    v1IndexesGet(opts?: OperationOpts): Observable<AjaxResponse<Array<IndexesIndexIdentifier>>>
-    v1IndexesGet(opts?: OperationOpts): Observable<Array<IndexesIndexIdentifier> | AjaxResponse<Array<IndexesIndexIdentifier>>> {
+    v1IndexesGet(): Observable<Array<ModelsIndexIdentifier>>
+    v1IndexesGet(opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsIndexIdentifier>>>
+    v1IndexesGet(opts?: OperationOpts): Observable<Array<ModelsIndexIdentifier> | AjaxResponse<Array<ModelsIndexIdentifier>>> {
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };
 
-        return this.request<Array<IndexesIndexIdentifier>>({
+        return this.request<Array<ModelsIndexIdentifier>>({
             url: '/v1/indexes',
             method: 'GET',
             headers,
@@ -116,16 +116,16 @@ export class IndexesApi extends BaseAPI {
     /**
      * Current Index Values for index definition
      */
-    v1IndexesIndexDefinitionIdCurrentSnapshotGet({ indexDefinitionId }: V1IndexesIndexDefinitionIdCurrentSnapshotGetRequest): Observable<Array<IndexesIndexDefinitionSnapshotEntry>>
-    v1IndexesIndexDefinitionIdCurrentSnapshotGet({ indexDefinitionId }: V1IndexesIndexDefinitionIdCurrentSnapshotGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IndexesIndexDefinitionSnapshotEntry>>>
-    v1IndexesIndexDefinitionIdCurrentSnapshotGet({ indexDefinitionId }: V1IndexesIndexDefinitionIdCurrentSnapshotGetRequest, opts?: OperationOpts): Observable<Array<IndexesIndexDefinitionSnapshotEntry> | AjaxResponse<Array<IndexesIndexDefinitionSnapshotEntry>>> {
+    v1IndexesIndexDefinitionIdCurrentSnapshotGet({ indexDefinitionId }: V1IndexesIndexDefinitionIdCurrentSnapshotGetRequest): Observable<Array<ModelsIndexDefinitionSnapshotEntry>>
+    v1IndexesIndexDefinitionIdCurrentSnapshotGet({ indexDefinitionId }: V1IndexesIndexDefinitionIdCurrentSnapshotGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsIndexDefinitionSnapshotEntry>>>
+    v1IndexesIndexDefinitionIdCurrentSnapshotGet({ indexDefinitionId }: V1IndexesIndexDefinitionIdCurrentSnapshotGetRequest, opts?: OperationOpts): Observable<Array<ModelsIndexDefinitionSnapshotEntry> | AjaxResponse<Array<ModelsIndexDefinitionSnapshotEntry>>> {
         throwIfNullOrUndefined(indexDefinitionId, 'indexDefinitionId', 'v1IndexesIndexDefinitionIdCurrentSnapshotGet');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };
 
-        return this.request<Array<IndexesIndexDefinitionSnapshotEntry>>({
+        return this.request<Array<ModelsIndexDefinitionSnapshotEntry>>({
             url: '/v1/indexes/{index_definition_id}/currentSnapshot'.replace('{index_definition_id}', encodeURI(indexDefinitionId)),
             method: 'GET',
             headers,
@@ -135,9 +135,9 @@ export class IndexesApi extends BaseAPI {
     /**
      * Historical Index Values for index definition
      */
-    v1IndexesIndexDefinitionIdHistorySnapshotGet({ indexDefinitionId, time }: V1IndexesIndexDefinitionIdHistorySnapshotGetRequest): Observable<Array<IndexesIndexDefinitionSnapshotEntry>>
-    v1IndexesIndexDefinitionIdHistorySnapshotGet({ indexDefinitionId, time }: V1IndexesIndexDefinitionIdHistorySnapshotGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IndexesIndexDefinitionSnapshotEntry>>>
-    v1IndexesIndexDefinitionIdHistorySnapshotGet({ indexDefinitionId, time }: V1IndexesIndexDefinitionIdHistorySnapshotGetRequest, opts?: OperationOpts): Observable<Array<IndexesIndexDefinitionSnapshotEntry> | AjaxResponse<Array<IndexesIndexDefinitionSnapshotEntry>>> {
+    v1IndexesIndexDefinitionIdHistorySnapshotGet({ indexDefinitionId, time }: V1IndexesIndexDefinitionIdHistorySnapshotGetRequest): Observable<Array<ModelsIndexDefinitionSnapshotEntry>>
+    v1IndexesIndexDefinitionIdHistorySnapshotGet({ indexDefinitionId, time }: V1IndexesIndexDefinitionIdHistorySnapshotGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsIndexDefinitionSnapshotEntry>>>
+    v1IndexesIndexDefinitionIdHistorySnapshotGet({ indexDefinitionId, time }: V1IndexesIndexDefinitionIdHistorySnapshotGetRequest, opts?: OperationOpts): Observable<Array<ModelsIndexDefinitionSnapshotEntry> | AjaxResponse<Array<ModelsIndexDefinitionSnapshotEntry>>> {
         throwIfNullOrUndefined(indexDefinitionId, 'indexDefinitionId', 'v1IndexesIndexDefinitionIdHistorySnapshotGet');
 
         const headers: HttpHeaders = {
@@ -148,7 +148,7 @@ export class IndexesApi extends BaseAPI {
 
         if (time != null) { query['time'] = (time as any).toISOString(); }
 
-        return this.request<Array<IndexesIndexDefinitionSnapshotEntry>>({
+        return this.request<Array<ModelsIndexDefinitionSnapshotEntry>>({
             url: '/v1/indexes/{index_definition_id}/historySnapshot'.replace('{index_definition_id}', encodeURI(indexDefinitionId)),
             method: 'GET',
             headers,
@@ -159,16 +159,16 @@ export class IndexesApi extends BaseAPI {
     /**
      * Current Index Value
      */
-    v1IndexesIndexIdCurrentGet({ indexId }: V1IndexesIndexIdCurrentGetRequest): Observable<IndexesIndexValue>
-    v1IndexesIndexIdCurrentGet({ indexId }: V1IndexesIndexIdCurrentGetRequest, opts?: OperationOpts): Observable<AjaxResponse<IndexesIndexValue>>
-    v1IndexesIndexIdCurrentGet({ indexId }: V1IndexesIndexIdCurrentGetRequest, opts?: OperationOpts): Observable<IndexesIndexValue | AjaxResponse<IndexesIndexValue>> {
+    v1IndexesIndexIdCurrentGet({ indexId }: V1IndexesIndexIdCurrentGetRequest): Observable<ModelsIndexValue>
+    v1IndexesIndexIdCurrentGet({ indexId }: V1IndexesIndexIdCurrentGetRequest, opts?: OperationOpts): Observable<AjaxResponse<ModelsIndexValue>>
+    v1IndexesIndexIdCurrentGet({ indexId }: V1IndexesIndexIdCurrentGetRequest, opts?: OperationOpts): Observable<ModelsIndexValue | AjaxResponse<ModelsIndexValue>> {
         throwIfNullOrUndefined(indexId, 'indexId', 'v1IndexesIndexIdCurrentGet');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };
 
-        return this.request<IndexesIndexValue>({
+        return this.request<ModelsIndexValue>({
             url: '/v1/indexes/{index_id}/current'.replace('{index_id}', encodeURI(indexId)),
             method: 'GET',
             headers,
@@ -178,9 +178,9 @@ export class IndexesApi extends BaseAPI {
     /**
      * Historical Index Value w/Composition
      */
-    v1IndexesIndexIdHistoryGet({ indexId, timeStart, timeEnd, limit }: V1IndexesIndexIdHistoryGetRequest): Observable<Array<IndexesIndexValue>>
-    v1IndexesIndexIdHistoryGet({ indexId, timeStart, timeEnd, limit }: V1IndexesIndexIdHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IndexesIndexValue>>>
-    v1IndexesIndexIdHistoryGet({ indexId, timeStart, timeEnd, limit }: V1IndexesIndexIdHistoryGetRequest, opts?: OperationOpts): Observable<Array<IndexesIndexValue> | AjaxResponse<Array<IndexesIndexValue>>> {
+    v1IndexesIndexIdHistoryGet({ indexId, timeStart, timeEnd, limit }: V1IndexesIndexIdHistoryGetRequest): Observable<Array<ModelsIndexValue>>
+    v1IndexesIndexIdHistoryGet({ indexId, timeStart, timeEnd, limit }: V1IndexesIndexIdHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsIndexValue>>>
+    v1IndexesIndexIdHistoryGet({ indexId, timeStart, timeEnd, limit }: V1IndexesIndexIdHistoryGetRequest, opts?: OperationOpts): Observable<Array<ModelsIndexValue> | AjaxResponse<Array<ModelsIndexValue>>> {
         throwIfNullOrUndefined(indexId, 'indexId', 'v1IndexesIndexIdHistoryGet');
 
         const headers: HttpHeaders = {
@@ -193,7 +193,7 @@ export class IndexesApi extends BaseAPI {
         if (timeEnd != null) { query['time_end'] = (timeEnd as any).toISOString(); }
         if (limit != null) { query['limit'] = limit; }
 
-        return this.request<Array<IndexesIndexValue>>({
+        return this.request<Array<ModelsIndexValue>>({
             url: '/v1/indexes/{index_id}/history'.replace('{index_id}', encodeURI(indexId)),
             method: 'GET',
             headers,
@@ -204,9 +204,9 @@ export class IndexesApi extends BaseAPI {
     /**
      * Timeseries Index Value
      */
-    v1IndexesIndexIdTimeseriesGet({ indexId, periodId, timeStart, timeEnd, limit }: V1IndexesIndexIdTimeseriesGetRequest): Observable<Array<IndexesIndexTimeseriesItem>>
-    v1IndexesIndexIdTimeseriesGet({ indexId, periodId, timeStart, timeEnd, limit }: V1IndexesIndexIdTimeseriesGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IndexesIndexTimeseriesItem>>>
-    v1IndexesIndexIdTimeseriesGet({ indexId, periodId, timeStart, timeEnd, limit }: V1IndexesIndexIdTimeseriesGetRequest, opts?: OperationOpts): Observable<Array<IndexesIndexTimeseriesItem> | AjaxResponse<Array<IndexesIndexTimeseriesItem>>> {
+    v1IndexesIndexIdTimeseriesGet({ indexId, periodId, timeStart, timeEnd, limit }: V1IndexesIndexIdTimeseriesGetRequest): Observable<Array<ModelsIndexTimeseriesItem>>
+    v1IndexesIndexIdTimeseriesGet({ indexId, periodId, timeStart, timeEnd, limit }: V1IndexesIndexIdTimeseriesGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsIndexTimeseriesItem>>>
+    v1IndexesIndexIdTimeseriesGet({ indexId, periodId, timeStart, timeEnd, limit }: V1IndexesIndexIdTimeseriesGetRequest, opts?: OperationOpts): Observable<Array<ModelsIndexTimeseriesItem> | AjaxResponse<Array<ModelsIndexTimeseriesItem>>> {
         throwIfNullOrUndefined(indexId, 'indexId', 'v1IndexesIndexIdTimeseriesGet');
         throwIfNullOrUndefined(periodId, 'periodId', 'v1IndexesIndexIdTimeseriesGet');
         throwIfNullOrUndefined(timeStart, 'timeStart', 'v1IndexesIndexIdTimeseriesGet');
@@ -224,7 +224,7 @@ export class IndexesApi extends BaseAPI {
 
         if (limit != null) { query['limit'] = limit; }
 
-        return this.request<Array<IndexesIndexTimeseriesItem>>({
+        return this.request<Array<ModelsIndexTimeseriesItem>>({
             url: '/v1/indexes/{index_id}/timeseries'.replace('{index_id}', encodeURI(indexId)),
             method: 'GET',
             headers,

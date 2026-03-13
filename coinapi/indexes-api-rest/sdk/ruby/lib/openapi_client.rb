@@ -18,14 +18,14 @@ require 'openapi_client/version'
 require 'openapi_client/configuration'
 
 # Models
-require 'openapi_client/models/indexes_index_definition_snapshot_entry'
-require 'openapi_client/models/indexes_index_identifier'
-require 'openapi_client/models/indexes_index_multi_asset_weight'
-require 'openapi_client/models/indexes_index_timeseries_item'
-require 'openapi_client/models/indexes_index_value'
-require 'openapi_client/models/indexes_index_value_component'
 require 'openapi_client/models/metadata_exchange'
 require 'openapi_client/models/metadata_timeseries_period'
+require 'openapi_client/models/models_index_definition_snapshot_entry'
+require 'openapi_client/models/models_index_identifier'
+require 'openapi_client/models/models_index_multi_asset_weight'
+require 'openapi_client/models/models_index_timeseries_item'
+require 'openapi_client/models/models_index_value'
+require 'openapi_client/models/models_index_value_component'
 
 # APIs
 require 'openapi_client/api/indexes_api'

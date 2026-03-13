@@ -31,7 +31,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**array[IndexesIndexMultiAssetWeight]**](IndexesIndexMultiAssetWeight.md)
+[**array[ModelsIndexMultiAssetWeight]**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[IndexesIndexMultiAssetWeight]**](IndexesIndexMultiAssetWeight.md)
+[**array[ModelsIndexMultiAssetWeight]**](ModelsIndexMultiAssetWeight.md)
 
 ### Authorization
 
@@ -94,7 +94,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**array[IndexesIndexIdentifier]**](IndexesIndexIdentifier.md)
+[**array[ModelsIndexIdentifier]**](ModelsIndexIdentifier.md)
 
 ### Authorization
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[IndexesIndexDefinitionSnapshotEntry]**](IndexesIndexDefinitionSnapshotEntry.md)
+[**array[ModelsIndexDefinitionSnapshotEntry]**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[IndexesIndexDefinitionSnapshotEntry]**](IndexesIndexDefinitionSnapshotEntry.md)
+[**array[ModelsIndexDefinitionSnapshotEntry]**](ModelsIndexDefinitionSnapshotEntry.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IndexesIndexValue**](IndexesIndexValue.md)
+[**ModelsIndexValue**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[IndexesIndexValue]**](IndexesIndexValue.md)
+[**array[ModelsIndexValue]**](ModelsIndexValue.md)
 
 ### Authorization
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[IndexesIndexTimeseriesItem]**](IndexesIndexTimeseriesItem.md)
+[**array[ModelsIndexTimeseriesItem]**](ModelsIndexTimeseriesItem.md)
 
 ### Authorization
 

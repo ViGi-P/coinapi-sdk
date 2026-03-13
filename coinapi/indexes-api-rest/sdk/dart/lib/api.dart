@@ -32,14 +32,14 @@ part 'api/indexes_api.dart';
 part 'api/metadata_api.dart';
 part 'api/periods_api.dart';
 
-part 'model/indexes_index_definition_snapshot_entry.dart';
-part 'model/indexes_index_identifier.dart';
-part 'model/indexes_index_multi_asset_weight.dart';
-part 'model/indexes_index_timeseries_item.dart';
-part 'model/indexes_index_value.dart';
-part 'model/indexes_index_value_component.dart';
 part 'model/metadata_exchange.dart';
 part 'model/metadata_timeseries_period.dart';
+part 'model/models_index_definition_snapshot_entry.dart';
+part 'model/models_index_identifier.dart';
+part 'model/models_index_multi_asset_weight.dart';
+part 'model/models_index_timeseries_item.dart';
+part 'model/models_index_value.dart';
+part 'model/models_index_value_component.dart';
 
 
 /// An [ApiClient] instance that uses the default values obtained from

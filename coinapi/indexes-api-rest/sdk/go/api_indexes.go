@@ -30,7 +30,7 @@ type ApiV1IndexdefMultiassetGetRequest struct {
 	ApiService *IndexesAPIService
 }
 
-func (r ApiV1IndexdefMultiassetGetRequest) Execute() ([]IndexesIndexMultiAssetWeight, *http.Response, error) {
+func (r ApiV1IndexdefMultiassetGetRequest) Execute() ([]ModelsIndexMultiAssetWeight, *http.Response, error) {
 	return r.ApiService.V1IndexdefMultiassetGetExecute(r)
 }
 
@@ -48,13 +48,13 @@ func (a *IndexesAPIService) V1IndexdefMultiassetGet(ctx context.Context) ApiV1In
 }
 
 // Execute executes the request
-//  @return []IndexesIndexMultiAssetWeight
-func (a *IndexesAPIService) V1IndexdefMultiassetGetExecute(r ApiV1IndexdefMultiassetGetRequest) ([]IndexesIndexMultiAssetWeight, *http.Response, error) {
+//  @return []ModelsIndexMultiAssetWeight
+func (a *IndexesAPIService) V1IndexdefMultiassetGetExecute(r ApiV1IndexdefMultiassetGetRequest) ([]ModelsIndexMultiAssetWeight, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []IndexesIndexMultiAssetWeight
+		localVarReturnValue  []ModelsIndexMultiAssetWeight
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexesAPIService.V1IndexdefMultiassetGet")
@@ -142,7 +142,7 @@ type ApiV1IndexdefMultiassetIndexIdGetRequest struct {
 	indexId string
 }
 
-func (r ApiV1IndexdefMultiassetIndexIdGetRequest) Execute() ([]IndexesIndexMultiAssetWeight, *http.Response, error) {
+func (r ApiV1IndexdefMultiassetIndexIdGetRequest) Execute() ([]ModelsIndexMultiAssetWeight, *http.Response, error) {
 	return r.ApiService.V1IndexdefMultiassetIndexIdGetExecute(r)
 }
 
@@ -162,13 +162,13 @@ func (a *IndexesAPIService) V1IndexdefMultiassetIndexIdGet(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return []IndexesIndexMultiAssetWeight
-func (a *IndexesAPIService) V1IndexdefMultiassetIndexIdGetExecute(r ApiV1IndexdefMultiassetIndexIdGetRequest) ([]IndexesIndexMultiAssetWeight, *http.Response, error) {
+//  @return []ModelsIndexMultiAssetWeight
+func (a *IndexesAPIService) V1IndexdefMultiassetIndexIdGetExecute(r ApiV1IndexdefMultiassetIndexIdGetRequest) ([]ModelsIndexMultiAssetWeight, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []IndexesIndexMultiAssetWeight
+		localVarReturnValue  []ModelsIndexMultiAssetWeight
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexesAPIService.V1IndexdefMultiassetIndexIdGet")
@@ -256,7 +256,7 @@ type ApiV1IndexesGetRequest struct {
 	ApiService *IndexesAPIService
 }
 
-func (r ApiV1IndexesGetRequest) Execute() ([]IndexesIndexIdentifier, *http.Response, error) {
+func (r ApiV1IndexesGetRequest) Execute() ([]ModelsIndexIdentifier, *http.Response, error) {
 	return r.ApiService.V1IndexesGetExecute(r)
 }
 
@@ -274,13 +274,13 @@ func (a *IndexesAPIService) V1IndexesGet(ctx context.Context) ApiV1IndexesGetReq
 }
 
 // Execute executes the request
-//  @return []IndexesIndexIdentifier
-func (a *IndexesAPIService) V1IndexesGetExecute(r ApiV1IndexesGetRequest) ([]IndexesIndexIdentifier, *http.Response, error) {
+//  @return []ModelsIndexIdentifier
+func (a *IndexesAPIService) V1IndexesGetExecute(r ApiV1IndexesGetRequest) ([]ModelsIndexIdentifier, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []IndexesIndexIdentifier
+		localVarReturnValue  []ModelsIndexIdentifier
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexesAPIService.V1IndexesGet")
@@ -368,7 +368,7 @@ type ApiV1IndexesIndexDefinitionIdCurrentSnapshotGetRequest struct {
 	indexDefinitionId string
 }
 
-func (r ApiV1IndexesIndexDefinitionIdCurrentSnapshotGetRequest) Execute() ([]IndexesIndexDefinitionSnapshotEntry, *http.Response, error) {
+func (r ApiV1IndexesIndexDefinitionIdCurrentSnapshotGetRequest) Execute() ([]ModelsIndexDefinitionSnapshotEntry, *http.Response, error) {
 	return r.ApiService.V1IndexesIndexDefinitionIdCurrentSnapshotGetExecute(r)
 }
 
@@ -388,13 +388,13 @@ func (a *IndexesAPIService) V1IndexesIndexDefinitionIdCurrentSnapshotGet(ctx con
 }
 
 // Execute executes the request
-//  @return []IndexesIndexDefinitionSnapshotEntry
-func (a *IndexesAPIService) V1IndexesIndexDefinitionIdCurrentSnapshotGetExecute(r ApiV1IndexesIndexDefinitionIdCurrentSnapshotGetRequest) ([]IndexesIndexDefinitionSnapshotEntry, *http.Response, error) {
+//  @return []ModelsIndexDefinitionSnapshotEntry
+func (a *IndexesAPIService) V1IndexesIndexDefinitionIdCurrentSnapshotGetExecute(r ApiV1IndexesIndexDefinitionIdCurrentSnapshotGetRequest) ([]ModelsIndexDefinitionSnapshotEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []IndexesIndexDefinitionSnapshotEntry
+		localVarReturnValue  []ModelsIndexDefinitionSnapshotEntry
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexesAPIService.V1IndexesIndexDefinitionIdCurrentSnapshotGet")
@@ -489,7 +489,7 @@ func (r ApiV1IndexesIndexDefinitionIdHistorySnapshotGetRequest) Time(time time.T
 	return r
 }
 
-func (r ApiV1IndexesIndexDefinitionIdHistorySnapshotGetRequest) Execute() ([]IndexesIndexDefinitionSnapshotEntry, *http.Response, error) {
+func (r ApiV1IndexesIndexDefinitionIdHistorySnapshotGetRequest) Execute() ([]ModelsIndexDefinitionSnapshotEntry, *http.Response, error) {
 	return r.ApiService.V1IndexesIndexDefinitionIdHistorySnapshotGetExecute(r)
 }
 
@@ -509,13 +509,13 @@ func (a *IndexesAPIService) V1IndexesIndexDefinitionIdHistorySnapshotGet(ctx con
 }
 
 // Execute executes the request
-//  @return []IndexesIndexDefinitionSnapshotEntry
-func (a *IndexesAPIService) V1IndexesIndexDefinitionIdHistorySnapshotGetExecute(r ApiV1IndexesIndexDefinitionIdHistorySnapshotGetRequest) ([]IndexesIndexDefinitionSnapshotEntry, *http.Response, error) {
+//  @return []ModelsIndexDefinitionSnapshotEntry
+func (a *IndexesAPIService) V1IndexesIndexDefinitionIdHistorySnapshotGetExecute(r ApiV1IndexesIndexDefinitionIdHistorySnapshotGetRequest) ([]ModelsIndexDefinitionSnapshotEntry, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []IndexesIndexDefinitionSnapshotEntry
+		localVarReturnValue  []ModelsIndexDefinitionSnapshotEntry
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexesAPIService.V1IndexesIndexDefinitionIdHistorySnapshotGet")
@@ -607,7 +607,7 @@ type ApiV1IndexesIndexIdCurrentGetRequest struct {
 	indexId string
 }
 
-func (r ApiV1IndexesIndexIdCurrentGetRequest) Execute() (*IndexesIndexValue, *http.Response, error) {
+func (r ApiV1IndexesIndexIdCurrentGetRequest) Execute() (*ModelsIndexValue, *http.Response, error) {
 	return r.ApiService.V1IndexesIndexIdCurrentGetExecute(r)
 }
 
@@ -627,13 +627,13 @@ func (a *IndexesAPIService) V1IndexesIndexIdCurrentGet(ctx context.Context, inde
 }
 
 // Execute executes the request
-//  @return IndexesIndexValue
-func (a *IndexesAPIService) V1IndexesIndexIdCurrentGetExecute(r ApiV1IndexesIndexIdCurrentGetRequest) (*IndexesIndexValue, *http.Response, error) {
+//  @return ModelsIndexValue
+func (a *IndexesAPIService) V1IndexesIndexIdCurrentGetExecute(r ApiV1IndexesIndexIdCurrentGetRequest) (*ModelsIndexValue, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *IndexesIndexValue
+		localVarReturnValue  *ModelsIndexValue
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexesAPIService.V1IndexesIndexIdCurrentGet")
@@ -740,7 +740,7 @@ func (r ApiV1IndexesIndexIdHistoryGetRequest) Limit(limit int32) ApiV1IndexesInd
 	return r
 }
 
-func (r ApiV1IndexesIndexIdHistoryGetRequest) Execute() ([]IndexesIndexValue, *http.Response, error) {
+func (r ApiV1IndexesIndexIdHistoryGetRequest) Execute() ([]ModelsIndexValue, *http.Response, error) {
 	return r.ApiService.V1IndexesIndexIdHistoryGetExecute(r)
 }
 
@@ -760,13 +760,13 @@ func (a *IndexesAPIService) V1IndexesIndexIdHistoryGet(ctx context.Context, inde
 }
 
 // Execute executes the request
-//  @return []IndexesIndexValue
-func (a *IndexesAPIService) V1IndexesIndexIdHistoryGetExecute(r ApiV1IndexesIndexIdHistoryGetRequest) ([]IndexesIndexValue, *http.Response, error) {
+//  @return []ModelsIndexValue
+func (a *IndexesAPIService) V1IndexesIndexIdHistoryGetExecute(r ApiV1IndexesIndexIdHistoryGetRequest) ([]ModelsIndexValue, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []IndexesIndexValue
+		localVarReturnValue  []ModelsIndexValue
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexesAPIService.V1IndexesIndexIdHistoryGet")
@@ -896,7 +896,7 @@ func (r ApiV1IndexesIndexIdTimeseriesGetRequest) Limit(limit int32) ApiV1Indexes
 	return r
 }
 
-func (r ApiV1IndexesIndexIdTimeseriesGetRequest) Execute() ([]IndexesIndexTimeseriesItem, *http.Response, error) {
+func (r ApiV1IndexesIndexIdTimeseriesGetRequest) Execute() ([]ModelsIndexTimeseriesItem, *http.Response, error) {
 	return r.ApiService.V1IndexesIndexIdTimeseriesGetExecute(r)
 }
 
@@ -916,13 +916,13 @@ func (a *IndexesAPIService) V1IndexesIndexIdTimeseriesGet(ctx context.Context, i
 }
 
 // Execute executes the request
-//  @return []IndexesIndexTimeseriesItem
-func (a *IndexesAPIService) V1IndexesIndexIdTimeseriesGetExecute(r ApiV1IndexesIndexIdTimeseriesGetRequest) ([]IndexesIndexTimeseriesItem, *http.Response, error) {
+//  @return []ModelsIndexTimeseriesItem
+func (a *IndexesAPIService) V1IndexesIndexIdTimeseriesGetExecute(r ApiV1IndexesIndexIdTimeseriesGetRequest) ([]ModelsIndexTimeseriesItem, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []IndexesIndexTimeseriesItem
+		localVarReturnValue  []ModelsIndexTimeseriesItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexesAPIService.V1IndexesIndexIdTimeseriesGet")

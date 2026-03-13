@@ -145,14 +145,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [CoinApiIndexesRestApi.IndexesIndexDefinitionSnapshotEntry](docs/IndexesIndexDefinitionSnapshotEntry.md)
- - [CoinApiIndexesRestApi.IndexesIndexIdentifier](docs/IndexesIndexIdentifier.md)
- - [CoinApiIndexesRestApi.IndexesIndexMultiAssetWeight](docs/IndexesIndexMultiAssetWeight.md)
- - [CoinApiIndexesRestApi.IndexesIndexTimeseriesItem](docs/IndexesIndexTimeseriesItem.md)
- - [CoinApiIndexesRestApi.IndexesIndexValue](docs/IndexesIndexValue.md)
- - [CoinApiIndexesRestApi.IndexesIndexValueComponent](docs/IndexesIndexValueComponent.md)
  - [CoinApiIndexesRestApi.MetadataExchange](docs/MetadataExchange.md)
  - [CoinApiIndexesRestApi.MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
+ - [CoinApiIndexesRestApi.ModelsIndexDefinitionSnapshotEntry](docs/ModelsIndexDefinitionSnapshotEntry.md)
+ - [CoinApiIndexesRestApi.ModelsIndexIdentifier](docs/ModelsIndexIdentifier.md)
+ - [CoinApiIndexesRestApi.ModelsIndexMultiAssetWeight](docs/ModelsIndexMultiAssetWeight.md)
+ - [CoinApiIndexesRestApi.ModelsIndexTimeseriesItem](docs/ModelsIndexTimeseriesItem.md)
+ - [CoinApiIndexesRestApi.ModelsIndexValue](docs/ModelsIndexValue.md)
+ - [CoinApiIndexesRestApi.ModelsIndexValueComponent](docs/ModelsIndexValueComponent.md)
 
 
 ## Documentation for Authorization

@@ -68,7 +68,7 @@ import qualified Prelude as P
 -- 
 v1IndexdefMultiassetGet
   :: Accept accept -- ^ request accept ('MimeType')
-  -> CoinAPIIndexesRESTRequest V1IndexdefMultiassetGet MimeNoContent [IndexesIndexMultiAssetWeight] accept
+  -> CoinAPIIndexesRESTRequest V1IndexdefMultiassetGet MimeNoContent [ModelsIndexMultiAssetWeight] accept
 v1IndexdefMultiassetGet  _ =
   _mkRequest "GET" ["/v1/indexdef/multiasset"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -96,7 +96,7 @@ instance Produces V1IndexdefMultiassetGet MimePlainText
 v1IndexdefMultiassetIndexIdGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> IndexId -- ^ "indexId"
-  -> CoinAPIIndexesRESTRequest V1IndexdefMultiassetIndexIdGet MimeNoContent [IndexesIndexMultiAssetWeight] accept
+  -> CoinAPIIndexesRESTRequest V1IndexdefMultiassetIndexIdGet MimeNoContent [ModelsIndexMultiAssetWeight] accept
 v1IndexdefMultiassetIndexIdGet  _ (IndexId indexId) =
   _mkRequest "GET" ["/v1/indexdef/multiasset/",toPath indexId]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -123,7 +123,7 @@ instance Produces V1IndexdefMultiassetIndexIdGet MimePlainText
 -- 
 v1IndexesGet
   :: Accept accept -- ^ request accept ('MimeType')
-  -> CoinAPIIndexesRESTRequest V1IndexesGet MimeNoContent [IndexesIndexIdentifier] accept
+  -> CoinAPIIndexesRESTRequest V1IndexesGet MimeNoContent [ModelsIndexIdentifier] accept
 v1IndexesGet  _ =
   _mkRequest "GET" ["/v1/indexes"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -151,7 +151,7 @@ instance Produces V1IndexesGet MimePlainText
 v1IndexesIndexDefinitionIdCurrentSnapshotGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> IndexDefinitionId -- ^ "indexDefinitionId"
-  -> CoinAPIIndexesRESTRequest V1IndexesIndexDefinitionIdCurrentSnapshotGet MimeNoContent [IndexesIndexDefinitionSnapshotEntry] accept
+  -> CoinAPIIndexesRESTRequest V1IndexesIndexDefinitionIdCurrentSnapshotGet MimeNoContent [ModelsIndexDefinitionSnapshotEntry] accept
 v1IndexesIndexDefinitionIdCurrentSnapshotGet  _ (IndexDefinitionId indexDefinitionId) =
   _mkRequest "GET" ["/v1/indexes/",toPath indexDefinitionId,"/currentSnapshot"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -179,7 +179,7 @@ instance Produces V1IndexesIndexDefinitionIdCurrentSnapshotGet MimePlainText
 v1IndexesIndexDefinitionIdHistorySnapshotGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> IndexDefinitionId -- ^ "indexDefinitionId"
-  -> CoinAPIIndexesRESTRequest V1IndexesIndexDefinitionIdHistorySnapshotGet MimeNoContent [IndexesIndexDefinitionSnapshotEntry] accept
+  -> CoinAPIIndexesRESTRequest V1IndexesIndexDefinitionIdHistorySnapshotGet MimeNoContent [ModelsIndexDefinitionSnapshotEntry] accept
 v1IndexesIndexDefinitionIdHistorySnapshotGet  _ (IndexDefinitionId indexDefinitionId) =
   _mkRequest "GET" ["/v1/indexes/",toPath indexDefinitionId,"/historySnapshot"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -210,7 +210,7 @@ instance Produces V1IndexesIndexDefinitionIdHistorySnapshotGet MimePlainText
 v1IndexesIndexIdCurrentGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> IndexId -- ^ "indexId"
-  -> CoinAPIIndexesRESTRequest V1IndexesIndexIdCurrentGet MimeNoContent IndexesIndexValue accept
+  -> CoinAPIIndexesRESTRequest V1IndexesIndexIdCurrentGet MimeNoContent ModelsIndexValue accept
 v1IndexesIndexIdCurrentGet  _ (IndexId indexId) =
   _mkRequest "GET" ["/v1/indexes/",toPath indexId,"/current"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -238,7 +238,7 @@ instance Produces V1IndexesIndexIdCurrentGet MimePlainText
 v1IndexesIndexIdHistoryGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> IndexId -- ^ "indexId"
-  -> CoinAPIIndexesRESTRequest V1IndexesIndexIdHistoryGet MimeNoContent [IndexesIndexValue] accept
+  -> CoinAPIIndexesRESTRequest V1IndexesIndexIdHistoryGet MimeNoContent [ModelsIndexValue] accept
 v1IndexesIndexIdHistoryGet  _ (IndexId indexId) =
   _mkRequest "GET" ["/v1/indexes/",toPath indexId,"/history"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -278,7 +278,7 @@ v1IndexesIndexIdTimeseriesGet
   -> PeriodId -- ^ "periodId" -  Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
   -> TimeStartText -- ^ "timeStart" -  Timeseries starting time in ISO 8601
   -> TimeEndText -- ^ "timeEnd" -  Timeseries ending time in ISO 8601
-  -> CoinAPIIndexesRESTRequest V1IndexesIndexIdTimeseriesGet MimeNoContent [IndexesIndexTimeseriesItem] accept
+  -> CoinAPIIndexesRESTRequest V1IndexesIndexIdTimeseriesGet MimeNoContent [ModelsIndexTimeseriesItem] accept
 v1IndexesIndexIdTimeseriesGet  _ (IndexId indexId) (PeriodId periodId) (TimeStartText timeStart) (TimeEndText timeEnd) =
   _mkRequest "GET" ["/v1/indexes/",toPath indexId,"/timeseries"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)

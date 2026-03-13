@@ -18,37 +18,37 @@ package .Clients is
    --  Get all multi_asset weights
    procedure V_1Indexdef_Multiasset_Get
       (Client : in out Client_Type;
-       Result : out .Models.IndexesIndexMultiAssetWeight_Type_Vectors.Vector);
+       Result : out .Models.ModelsIndexMultiAssetWeight_Type_Vectors.Vector);
 
    --  Get multi_asset weights for specific index
    procedure V_1Indexdef_Multiasset_Index_Id_Get
       (Client : in out Client_Type;
        Index_Id : in Swagger.UString;
-       Result : out .Models.IndexesIndexMultiAssetWeight_Type_Vectors.Vector);
+       Result : out .Models.ModelsIndexMultiAssetWeight_Type_Vectors.Vector);
 
    --  List indexes
    procedure V_1Indexes_Get
       (Client : in out Client_Type;
-       Result : out .Models.IndexesIndexIdentifier_Type_Vectors.Vector);
+       Result : out .Models.ModelsIndexIdentifier_Type_Vectors.Vector);
 
    --  Current Index Values for index definition
    procedure V_1Indexes_Index_Definition_Id_Current_Snapshot_Get
       (Client : in out Client_Type;
        Index_Definition_Id : in Swagger.UString;
-       Result : out .Models.IndexesIndexDefinitionSnapshotEntry_Type_Vectors.Vector);
+       Result : out .Models.ModelsIndexDefinitionSnapshotEntry_Type_Vectors.Vector);
 
    --  Historical Index Values for index definition
    procedure V_1Indexes_Index_Definition_Id_History_Snapshot_Get
       (Client : in out Client_Type;
        Index_Definition_Id : in Swagger.UString;
        Time : in Swagger.Nullable_Date;
-       Result : out .Models.IndexesIndexDefinitionSnapshotEntry_Type_Vectors.Vector);
+       Result : out .Models.ModelsIndexDefinitionSnapshotEntry_Type_Vectors.Vector);
 
    --  Current Index Value
    procedure V_1Indexes_Index_Id_Current_Get
       (Client : in out Client_Type;
        Index_Id : in Swagger.UString;
-       Result : out .Models.IndexesIndexValue_Type);
+       Result : out .Models.ModelsIndexValue_Type);
 
    --  Historical Index Value w/Composition
    procedure V_1Indexes_Index_Id_History_Get
@@ -57,7 +57,7 @@ package .Clients is
        Time_Start : in Swagger.Nullable_Date;
        Time_End : in Swagger.Nullable_Date;
        Limit : in Swagger.Nullable_Integer;
-       Result : out .Models.IndexesIndexValue_Type_Vectors.Vector);
+       Result : out .Models.ModelsIndexValue_Type_Vectors.Vector);
 
    --  Timeseries Index Value
    procedure V_1Indexes_Index_Id_Timeseries_Get
@@ -67,7 +67,7 @@ package .Clients is
        Time_Start : in Swagger.UString;
        Time_End : in Swagger.UString;
        Limit : in Swagger.Nullable_Integer;
-       Result : out .Models.IndexesIndexTimeseriesItem_Type_Vectors.Vector);
+       Result : out .Models.ModelsIndexTimeseriesItem_Type_Vectors.Vector);
 
    --  List all exchanges by exchange_id
    procedure Api_Metadata_Exchanges_Exchange_Id_Get

@@ -14,8 +14,8 @@ private class OASIndexesApiTest {
 
         OASClient client;
         OASIndexesApi api;
-        List<OASIndexesIndexMultiAssetWeight> response;
-        List<OASIndexesIndexMultiAssetWeight> expectedResponse;
+        List<OASModelsIndexMultiAssetWeight> response;
+        List<OASModelsIndexMultiAssetWeight> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -23,20 +23,20 @@ private class OASIndexesApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASIndexesIndexMultiAssetWeight>{OASIndexesIndexMultiAssetWeight.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexMultiAssetWeight>{OASModelsIndexMultiAssetWeight.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexMultiAssetWeight>{OASIndexesIndexMultiAssetWeight.getExample()};
-        response = (List<OASIndexesIndexMultiAssetWeight>) api.v1IndexdefMultiassetGet();
+        expectedResponse = new List<OASModelsIndexMultiAssetWeight>{OASModelsIndexMultiAssetWeight.getExample()};
+        response = (List<OASModelsIndexMultiAssetWeight>) api.v1IndexdefMultiassetGet();
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
 
-        js = JSON.serialize(new List<OASIndexesIndexMultiAssetWeight>{OASIndexesIndexMultiAssetWeight.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexMultiAssetWeight>{OASModelsIndexMultiAssetWeight.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexMultiAssetWeight>{OASIndexesIndexMultiAssetWeight.getExample()};
-        response = (List<OASIndexesIndexMultiAssetWeight>) api.v1IndexdefMultiassetGet();
+        expectedResponse = new List<OASModelsIndexMultiAssetWeight>{OASModelsIndexMultiAssetWeight.getExample()};
+        response = (List<OASModelsIndexMultiAssetWeight>) api.v1IndexdefMultiassetGet();
         System.assertEquals(expectedResponse, response);
     }
 
@@ -58,8 +58,8 @@ private class OASIndexesApiTest {
 
         OASClient client;
         OASIndexesApi api;
-        List<OASIndexesIndexMultiAssetWeight> response;
-        List<OASIndexesIndexMultiAssetWeight> expectedResponse;
+        List<OASModelsIndexMultiAssetWeight> response;
+        List<OASModelsIndexMultiAssetWeight> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -67,20 +67,20 @@ private class OASIndexesApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASIndexesIndexMultiAssetWeight>{OASIndexesIndexMultiAssetWeight.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexMultiAssetWeight>{OASModelsIndexMultiAssetWeight.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexMultiAssetWeight>{OASIndexesIndexMultiAssetWeight.getExample()};
-        response = (List<OASIndexesIndexMultiAssetWeight>) api.v1IndexdefMultiassetIndexIdGet(params);
+        expectedResponse = new List<OASModelsIndexMultiAssetWeight>{OASModelsIndexMultiAssetWeight.getExample()};
+        response = (List<OASModelsIndexMultiAssetWeight>) api.v1IndexdefMultiassetIndexIdGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
 
-        js = JSON.serialize(new List<OASIndexesIndexMultiAssetWeight>{OASIndexesIndexMultiAssetWeight.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexMultiAssetWeight>{OASModelsIndexMultiAssetWeight.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexMultiAssetWeight>{OASIndexesIndexMultiAssetWeight.getExample()};
-        response = (List<OASIndexesIndexMultiAssetWeight>) api.v1IndexdefMultiassetIndexIdGet(params);
+        expectedResponse = new List<OASModelsIndexMultiAssetWeight>{OASModelsIndexMultiAssetWeight.getExample()};
+        response = (List<OASModelsIndexMultiAssetWeight>) api.v1IndexdefMultiassetIndexIdGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -98,8 +98,8 @@ private class OASIndexesApiTest {
 
         OASClient client;
         OASIndexesApi api;
-        List<OASIndexesIndexIdentifier> response;
-        List<OASIndexesIndexIdentifier> expectedResponse;
+        List<OASModelsIndexIdentifier> response;
+        List<OASModelsIndexIdentifier> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -107,20 +107,20 @@ private class OASIndexesApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASIndexesIndexIdentifier>{OASIndexesIndexIdentifier.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexIdentifier>{OASModelsIndexIdentifier.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexIdentifier>{OASIndexesIndexIdentifier.getExample()};
-        response = (List<OASIndexesIndexIdentifier>) api.v1IndexesGet();
+        expectedResponse = new List<OASModelsIndexIdentifier>{OASModelsIndexIdentifier.getExample()};
+        response = (List<OASModelsIndexIdentifier>) api.v1IndexesGet();
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
 
-        js = JSON.serialize(new List<OASIndexesIndexIdentifier>{OASIndexesIndexIdentifier.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexIdentifier>{OASModelsIndexIdentifier.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexIdentifier>{OASIndexesIndexIdentifier.getExample()};
-        response = (List<OASIndexesIndexIdentifier>) api.v1IndexesGet();
+        expectedResponse = new List<OASModelsIndexIdentifier>{OASModelsIndexIdentifier.getExample()};
+        response = (List<OASModelsIndexIdentifier>) api.v1IndexesGet();
         System.assertEquals(expectedResponse, response);
     }
 
@@ -142,8 +142,8 @@ private class OASIndexesApiTest {
 
         OASClient client;
         OASIndexesApi api;
-        List<OASIndexesIndexDefinitionSnapshotEnt> response;
-        List<OASIndexesIndexDefinitionSnapshotEnt> expectedResponse;
+        List<OASModelsIndexDefinitionSnapshotEntr> response;
+        List<OASModelsIndexDefinitionSnapshotEntr> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -151,20 +151,20 @@ private class OASIndexesApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASIndexesIndexDefinitionSnapshotEnt>{OASIndexesIndexDefinitionSnapshotEnt.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexDefinitionSnapshotEntr>{OASModelsIndexDefinitionSnapshotEntr.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexDefinitionSnapshotEnt>{OASIndexesIndexDefinitionSnapshotEnt.getExample()};
-        response = (List<OASIndexesIndexDefinitionSnapshotEnt>) api.v1IndexesIndexDefinitionIdCurrentSnapshotGet(params);
+        expectedResponse = new List<OASModelsIndexDefinitionSnapshotEntr>{OASModelsIndexDefinitionSnapshotEntr.getExample()};
+        response = (List<OASModelsIndexDefinitionSnapshotEntr>) api.v1IndexesIndexDefinitionIdCurrentSnapshotGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
 
-        js = JSON.serialize(new List<OASIndexesIndexDefinitionSnapshotEnt>{OASIndexesIndexDefinitionSnapshotEnt.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexDefinitionSnapshotEntr>{OASModelsIndexDefinitionSnapshotEntr.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexDefinitionSnapshotEnt>{OASIndexesIndexDefinitionSnapshotEnt.getExample()};
-        response = (List<OASIndexesIndexDefinitionSnapshotEnt>) api.v1IndexesIndexDefinitionIdCurrentSnapshotGet(params);
+        expectedResponse = new List<OASModelsIndexDefinitionSnapshotEntr>{OASModelsIndexDefinitionSnapshotEntr.getExample()};
+        response = (List<OASModelsIndexDefinitionSnapshotEntr>) api.v1IndexesIndexDefinitionIdCurrentSnapshotGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -187,8 +187,8 @@ private class OASIndexesApiTest {
 
         OASClient client;
         OASIndexesApi api;
-        List<OASIndexesIndexDefinitionSnapshotEnt> response;
-        List<OASIndexesIndexDefinitionSnapshotEnt> expectedResponse;
+        List<OASModelsIndexDefinitionSnapshotEntr> response;
+        List<OASModelsIndexDefinitionSnapshotEntr> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -196,20 +196,20 @@ private class OASIndexesApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASIndexesIndexDefinitionSnapshotEnt>{OASIndexesIndexDefinitionSnapshotEnt.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexDefinitionSnapshotEntr>{OASModelsIndexDefinitionSnapshotEntr.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexDefinitionSnapshotEnt>{OASIndexesIndexDefinitionSnapshotEnt.getExample()};
-        response = (List<OASIndexesIndexDefinitionSnapshotEnt>) api.v1IndexesIndexDefinitionIdHistorySnapshotGet(params);
+        expectedResponse = new List<OASModelsIndexDefinitionSnapshotEntr>{OASModelsIndexDefinitionSnapshotEntr.getExample()};
+        response = (List<OASModelsIndexDefinitionSnapshotEntr>) api.v1IndexesIndexDefinitionIdHistorySnapshotGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
 
-        js = JSON.serialize(new List<OASIndexesIndexDefinitionSnapshotEnt>{OASIndexesIndexDefinitionSnapshotEnt.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexDefinitionSnapshotEntr>{OASModelsIndexDefinitionSnapshotEntr.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexDefinitionSnapshotEnt>{OASIndexesIndexDefinitionSnapshotEnt.getExample()};
-        response = (List<OASIndexesIndexDefinitionSnapshotEnt>) api.v1IndexesIndexDefinitionIdHistorySnapshotGet(params);
+        expectedResponse = new List<OASModelsIndexDefinitionSnapshotEntr>{OASModelsIndexDefinitionSnapshotEntr.getExample()};
+        response = (List<OASModelsIndexDefinitionSnapshotEntr>) api.v1IndexesIndexDefinitionIdHistorySnapshotGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -231,8 +231,8 @@ private class OASIndexesApiTest {
 
         OASClient client;
         OASIndexesApi api;
-        OASIndexesIndexValue response;
-        OASIndexesIndexValue expectedResponse;
+        OASModelsIndexValue response;
+        OASModelsIndexValue expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -240,68 +240,68 @@ private class OASIndexesApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(OASIndexesIndexValue.getExample());
+        js = JSON.serialize(OASModelsIndexValue.getExample());
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = OASIndexesIndexValue.getExample();
-        response = (OASIndexesIndexValue) api.v1IndexesIndexIdCurrentGet(params);
+        expectedResponse = OASModelsIndexValue.getExample();
+        response = (OASModelsIndexValue) api.v1IndexesIndexIdCurrentGet(params);
         System.assertEquals(expectedResponse, response);
 
 
-        js = JSON.serialize(OASIndexesIndexValue.getExample());
+        js = JSON.serialize(OASModelsIndexValue.getExample());
         res.setHeader('Content-Type', 'application/x-msgpack');
         res.setBody(js);
-        expectedResponse = OASIndexesIndexValue.getExample();
-        response = (OASIndexesIndexValue) api.v1IndexesIndexIdCurrentGet(params);
+        expectedResponse = OASModelsIndexValue.getExample();
+        response = (OASModelsIndexValue) api.v1IndexesIndexIdCurrentGet(params);
         System.assertEquals(expectedResponse, response);
 
 
-        js = JSON.serialize(OASIndexesIndexValue.getExample());
+        js = JSON.serialize(OASModelsIndexValue.getExample());
         res.setHeader('Content-Type', 'text/json');
         res.setBody(js);
-        expectedResponse = OASIndexesIndexValue.getExample();
-        response = (OASIndexesIndexValue) api.v1IndexesIndexIdCurrentGet(params);
+        expectedResponse = OASModelsIndexValue.getExample();
+        response = (OASModelsIndexValue) api.v1IndexesIndexIdCurrentGet(params);
         System.assertEquals(expectedResponse, response);
 
 
-        js = JSON.serialize(OASIndexesIndexValue.getExample());
+        js = JSON.serialize(OASModelsIndexValue.getExample());
         res.setHeader('Content-Type', 'text/plain');
         res.setBody(js);
-        expectedResponse = OASIndexesIndexValue.getExample();
-        response = (OASIndexesIndexValue) api.v1IndexesIndexIdCurrentGet(params);
+        expectedResponse = OASModelsIndexValue.getExample();
+        response = (OASModelsIndexValue) api.v1IndexesIndexIdCurrentGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
 
-        js = JSON.serialize(OASIndexesIndexValue.getExample());
+        js = JSON.serialize(OASModelsIndexValue.getExample());
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = OASIndexesIndexValue.getExample();
-        response = (OASIndexesIndexValue) api.v1IndexesIndexIdCurrentGet(params);
+        expectedResponse = OASModelsIndexValue.getExample();
+        response = (OASModelsIndexValue) api.v1IndexesIndexIdCurrentGet(params);
         System.assertEquals(expectedResponse, response);
 
 
-        js = JSON.serialize(OASIndexesIndexValue.getExample());
+        js = JSON.serialize(OASModelsIndexValue.getExample());
         res.setHeader('Content-Type', 'application/x-msgpack');
         res.setBody(js);
-        expectedResponse = OASIndexesIndexValue.getExample();
-        response = (OASIndexesIndexValue) api.v1IndexesIndexIdCurrentGet(params);
+        expectedResponse = OASModelsIndexValue.getExample();
+        response = (OASModelsIndexValue) api.v1IndexesIndexIdCurrentGet(params);
         System.assertEquals(expectedResponse, response);
 
 
-        js = JSON.serialize(OASIndexesIndexValue.getExample());
+        js = JSON.serialize(OASModelsIndexValue.getExample());
         res.setHeader('Content-Type', 'text/json');
         res.setBody(js);
-        expectedResponse = OASIndexesIndexValue.getExample();
-        response = (OASIndexesIndexValue) api.v1IndexesIndexIdCurrentGet(params);
+        expectedResponse = OASModelsIndexValue.getExample();
+        response = (OASModelsIndexValue) api.v1IndexesIndexIdCurrentGet(params);
         System.assertEquals(expectedResponse, response);
 
 
-        js = JSON.serialize(OASIndexesIndexValue.getExample());
+        js = JSON.serialize(OASModelsIndexValue.getExample());
         res.setHeader('Content-Type', 'text/plain');
         res.setBody(js);
-        expectedResponse = OASIndexesIndexValue.getExample();
-        response = (OASIndexesIndexValue) api.v1IndexesIndexIdCurrentGet(params);
+        expectedResponse = OASModelsIndexValue.getExample();
+        response = (OASModelsIndexValue) api.v1IndexesIndexIdCurrentGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -326,8 +326,8 @@ private class OASIndexesApiTest {
 
         OASClient client;
         OASIndexesApi api;
-        List<OASIndexesIndexValue> response;
-        List<OASIndexesIndexValue> expectedResponse;
+        List<OASModelsIndexValue> response;
+        List<OASModelsIndexValue> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -335,20 +335,20 @@ private class OASIndexesApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASIndexesIndexValue>{OASIndexesIndexValue.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexValue>{OASModelsIndexValue.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexValue>{OASIndexesIndexValue.getExample()};
-        response = (List<OASIndexesIndexValue>) api.v1IndexesIndexIdHistoryGet(params);
+        expectedResponse = new List<OASModelsIndexValue>{OASModelsIndexValue.getExample()};
+        response = (List<OASModelsIndexValue>) api.v1IndexesIndexIdHistoryGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
 
-        js = JSON.serialize(new List<OASIndexesIndexValue>{OASIndexesIndexValue.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexValue>{OASModelsIndexValue.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexValue>{OASIndexesIndexValue.getExample()};
-        response = (List<OASIndexesIndexValue>) api.v1IndexesIndexIdHistoryGet(params);
+        expectedResponse = new List<OASModelsIndexValue>{OASModelsIndexValue.getExample()};
+        response = (List<OASModelsIndexValue>) api.v1IndexesIndexIdHistoryGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -374,8 +374,8 @@ private class OASIndexesApiTest {
 
         OASClient client;
         OASIndexesApi api;
-        List<OASIndexesIndexTimeseriesItem> response;
-        List<OASIndexesIndexTimeseriesItem> expectedResponse;
+        List<OASModelsIndexTimeseriesItem> response;
+        List<OASModelsIndexTimeseriesItem> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -383,20 +383,20 @@ private class OASIndexesApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASIndexesIndexTimeseriesItem>{OASIndexesIndexTimeseriesItem.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexTimeseriesItem>{OASModelsIndexTimeseriesItem.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexTimeseriesItem>{OASIndexesIndexTimeseriesItem.getExample()};
-        response = (List<OASIndexesIndexTimeseriesItem>) api.v1IndexesIndexIdTimeseriesGet(params);
+        expectedResponse = new List<OASModelsIndexTimeseriesItem>{OASModelsIndexTimeseriesItem.getExample()};
+        response = (List<OASModelsIndexTimeseriesItem>) api.v1IndexesIndexIdTimeseriesGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASIndexesApi(client);
 
-        js = JSON.serialize(new List<OASIndexesIndexTimeseriesItem>{OASIndexesIndexTimeseriesItem.getExample()});
+        js = JSON.serialize(new List<OASModelsIndexTimeseriesItem>{OASModelsIndexTimeseriesItem.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASIndexesIndexTimeseriesItem>{OASIndexesIndexTimeseriesItem.getExample()};
-        response = (List<OASIndexesIndexTimeseriesItem>) api.v1IndexesIndexIdTimeseriesGet(params);
+        expectedResponse = new List<OASModelsIndexTimeseriesItem>{OASModelsIndexTimeseriesItem.getExample()};
+        response = (List<OASModelsIndexTimeseriesItem>) api.v1IndexesIndexIdTimeseriesGet(params);
         System.assertEquals(expectedResponse, response);
     }
 }
