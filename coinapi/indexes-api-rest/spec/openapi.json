@@ -277,7 +277,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexIdentifier"
+                    "$ref": "#/components/schemas/Models.IndexIdentifier"
                   }
                 },
                 "examples": {
@@ -306,7 +306,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexIdentifier"
+                    "$ref": "#/components/schemas/Models.IndexIdentifier"
                   }
                 },
                 "examples": {
@@ -335,7 +335,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexIdentifier"
+                    "$ref": "#/components/schemas/Models.IndexIdentifier"
                   }
                 },
                 "examples": {
@@ -364,7 +364,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexIdentifier"
+                    "$ref": "#/components/schemas/Models.IndexIdentifier"
                   }
                 },
                 "examples": {
@@ -416,7 +416,7 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Indexes.IndexValue"
+                  "$ref": "#/components/schemas/Models.IndexValue"
                 },
                 "examples": {
                   "Example response": {
@@ -429,7 +429,7 @@
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Indexes.IndexValue"
+                  "$ref": "#/components/schemas/Models.IndexValue"
                 },
                 "examples": {
                   "Example response": {
@@ -442,7 +442,7 @@
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Indexes.IndexValue"
+                  "$ref": "#/components/schemas/Models.IndexValue"
                 },
                 "examples": {
                   "Example response": {
@@ -455,7 +455,7 @@
               },
               "application/x-msgpack": {
                 "schema": {
-                  "$ref": "#/components/schemas/Indexes.IndexValue"
+                  "$ref": "#/components/schemas/Models.IndexValue"
                 },
                 "examples": {
                   "Example response": {
@@ -495,7 +495,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                    "$ref": "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                   }
                 }
               },
@@ -503,7 +503,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                    "$ref": "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                   }
                 }
               },
@@ -511,7 +511,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                    "$ref": "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                   }
                 }
               },
@@ -519,7 +519,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                    "$ref": "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                   }
                 }
               }
@@ -577,7 +577,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexValue"
+                    "$ref": "#/components/schemas/Models.IndexValue"
                   }
                 },
                 "examples": {
@@ -606,7 +606,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexValue"
+                    "$ref": "#/components/schemas/Models.IndexValue"
                   }
                 },
                 "examples": {
@@ -635,7 +635,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexValue"
+                    "$ref": "#/components/schemas/Models.IndexValue"
                   }
                 },
                 "examples": {
@@ -664,7 +664,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexValue"
+                    "$ref": "#/components/schemas/Models.IndexValue"
                   }
                 },
                 "examples": {
@@ -726,7 +726,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                    "$ref": "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                   }
                 }
               },
@@ -734,7 +734,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                    "$ref": "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                   }
                 }
               },
@@ -742,7 +742,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                    "$ref": "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                   }
                 }
               },
@@ -750,7 +750,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexDefinitionSnapshotEntry"
+                    "$ref": "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
                   }
                 }
               }
@@ -821,7 +821,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexTimeseriesItem"
+                    "$ref": "#/components/schemas/Models.IndexTimeseriesItem"
                   }
                 },
                 "examples": {
@@ -868,7 +868,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexTimeseriesItem"
+                    "$ref": "#/components/schemas/Models.IndexTimeseriesItem"
                   }
                 },
                 "examples": {
@@ -915,7 +915,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexTimeseriesItem"
+                    "$ref": "#/components/schemas/Models.IndexTimeseriesItem"
                   }
                 },
                 "examples": {
@@ -962,7 +962,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexTimeseriesItem"
+                    "$ref": "#/components/schemas/Models.IndexTimeseriesItem"
                   }
                 },
                 "examples": {
@@ -1024,7 +1024,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                    "$ref": "#/components/schemas/Models.IndexMultiAssetWeight"
                   }
                 }
               },
@@ -1032,7 +1032,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                    "$ref": "#/components/schemas/Models.IndexMultiAssetWeight"
                   }
                 }
               },
@@ -1040,7 +1040,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                    "$ref": "#/components/schemas/Models.IndexMultiAssetWeight"
                   }
                 }
               },
@@ -1048,7 +1048,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                    "$ref": "#/components/schemas/Models.IndexMultiAssetWeight"
                   }
                 }
               }
@@ -1081,7 +1081,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                    "$ref": "#/components/schemas/Models.IndexMultiAssetWeight"
                   }
                 }
               },
@@ -1089,7 +1089,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                    "$ref": "#/components/schemas/Models.IndexMultiAssetWeight"
                   }
                 }
               },
@@ -1097,7 +1097,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                    "$ref": "#/components/schemas/Models.IndexMultiAssetWeight"
                   }
                 }
               },
@@ -1105,7 +1105,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Indexes.IndexMultiAssetWeight"
+                    "$ref": "#/components/schemas/Models.IndexMultiAssetWeight"
                   }
                 }
               }
@@ -1285,147 +1285,6 @@
   },
   "components": {
     "schemas": {
-      "Indexes.IndexDefinitionSnapshotEntry": {
-        "type": "object",
-        "properties": {
-          "index_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "value": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Indexes.IndexIdentifier": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Index ID",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents an index id"
-      },
-      "Indexes.IndexMultiAssetWeight": {
-        "type": "object",
-        "properties": {
-          "indexId": {
-            "type": "string",
-            "nullable": true
-          },
-          "assetId": {
-            "type": "string",
-            "nullable": true
-          },
-          "weight": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Indexes.IndexTimeseriesItem": {
-        "type": "object",
-        "properties": {
-          "time_period_start": {
-            "type": "string",
-            "description": "Gets or sets the start time of the time period.",
-            "format": "date-time"
-          },
-          "time_period_end": {
-            "type": "string",
-            "description": "Gets or sets the end time of the time period.",
-            "format": "date-time"
-          },
-          "time_open": {
-            "type": "string",
-            "description": "Gets or sets the time when the value opened.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "time_close": {
-            "type": "string",
-            "description": "Gets or sets the time when the value closed.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "value_open": {
-            "type": "number",
-            "description": "Gets or sets the opening value.",
-            "format": "double",
-            "nullable": true
-          },
-          "value_high": {
-            "type": "number",
-            "description": "Gets or sets the highest value during the time period.",
-            "format": "double",
-            "nullable": true
-          },
-          "value_low": {
-            "type": "number",
-            "description": "Gets or sets the lowest value during the time period.",
-            "format": "double",
-            "nullable": true
-          },
-          "value_close": {
-            "type": "number",
-            "description": "Gets or sets the closing value.",
-            "format": "double",
-            "nullable": true
-          },
-          "value_count": {
-            "type": "integer",
-            "description": "Gets or sets the number of values during the time period.",
-            "format": "int64"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a timeseries item with value information."
-      },
-      "Indexes.IndexValue": {
-        "type": "object",
-        "properties": {
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "value": {
-            "type": "number",
-            "format": "double"
-          },
-          "composition": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Indexes.IndexValueComponent"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Indexes.IndexValueComponent": {
-        "type": "object",
-        "properties": {
-          "component_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "component_value": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
       "Metadata.Exchange": {
         "type": "object",
         "properties": {
@@ -1485,6 +1344,147 @@
         },
         "additionalProperties": false,
         "description": "Represents a timeseries period used in exchange rate data."
+      },
+      "Models.IndexDefinitionSnapshotEntry": {
+        "type": "object",
+        "properties": {
+          "index_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "value": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Models.IndexIdentifier": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Index ID",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents an index id"
+      },
+      "Models.IndexMultiAssetWeight": {
+        "type": "object",
+        "properties": {
+          "indexId": {
+            "type": "string",
+            "nullable": true
+          },
+          "assetId": {
+            "type": "string",
+            "nullable": true
+          },
+          "weight": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Models.IndexTimeseriesItem": {
+        "type": "object",
+        "properties": {
+          "time_period_start": {
+            "type": "string",
+            "description": "Gets or sets the start time of the time period.",
+            "format": "date-time"
+          },
+          "time_period_end": {
+            "type": "string",
+            "description": "Gets or sets the end time of the time period.",
+            "format": "date-time"
+          },
+          "time_open": {
+            "type": "string",
+            "description": "Gets or sets the time when the value opened.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "time_close": {
+            "type": "string",
+            "description": "Gets or sets the time when the value closed.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "value_open": {
+            "type": "number",
+            "description": "Gets or sets the opening value.",
+            "format": "double",
+            "nullable": true
+          },
+          "value_high": {
+            "type": "number",
+            "description": "Gets or sets the highest value during the time period.",
+            "format": "double",
+            "nullable": true
+          },
+          "value_low": {
+            "type": "number",
+            "description": "Gets or sets the lowest value during the time period.",
+            "format": "double",
+            "nullable": true
+          },
+          "value_close": {
+            "type": "number",
+            "description": "Gets or sets the closing value.",
+            "format": "double",
+            "nullable": true
+          },
+          "value_count": {
+            "type": "integer",
+            "description": "Gets or sets the number of values during the time period.",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a timeseries item with value information."
+      },
+      "Models.IndexValue": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "value": {
+            "type": "number",
+            "format": "double"
+          },
+          "composition": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Models.IndexValueComponent"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Models.IndexValueComponent": {
+        "type": "object",
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "component_value": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
       }
     },
     "securitySchemes": {
