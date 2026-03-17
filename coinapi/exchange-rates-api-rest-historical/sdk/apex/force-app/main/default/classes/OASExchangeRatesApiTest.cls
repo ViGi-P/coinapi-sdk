@@ -71,7 +71,8 @@ private class OASExchangeRatesApiTest {
             'periodId' => 'null',
             'timeStart' => 'null',
             'timeEnd' => 'null',
-            'r_limit' => ''
+            'r_limit' => '',
+            'extendedGapFilling' => ''
         };
 
         OASClient client;

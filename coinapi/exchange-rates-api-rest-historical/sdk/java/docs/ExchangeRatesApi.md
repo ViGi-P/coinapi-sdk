@@ -85,7 +85,7 @@ public class Example {
 
 <a id="v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet"></a>
 # **v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet**
-> List&lt;V1ExchangeRatesTimeseriesItem&gt; v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit)
+> List&lt;V1ExchangeRatesTimeseriesItem&gt; v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling)
 
 Timeseries data
 
@@ -119,8 +119,9 @@ public class Example {
     String timeStart = "timeStart_example"; // String | Timeseries starting time in ISO 8601 (required)
     String timeEnd = "timeEnd_example"; // String | Timeseries ending time in ISO 8601 (required)
     Integer limit = 100; // Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+    Boolean extendedGapFilling = false; // Boolean | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
     try {
-      List<V1ExchangeRatesTimeseriesItem> result = apiInstance.v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit);
+      List<V1ExchangeRatesTimeseriesItem> result = apiInstance.v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ExchangeRatesApi#v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet");
@@ -143,6 +144,7 @@ public class Example {
 | **timeStart** | **String**| Timeseries starting time in ISO 8601 (required) | [optional] |
 | **timeEnd** | **String**| Timeseries ending time in ISO 8601 (required) | [optional] |
 | **limit** | **Integer**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
+| **extendedGapFilling** | **Boolean**| If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [optional] [default to false] |
 
 ### Return type
 

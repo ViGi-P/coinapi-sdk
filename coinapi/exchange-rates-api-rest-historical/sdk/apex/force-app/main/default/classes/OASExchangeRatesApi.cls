@@ -67,6 +67,7 @@ public class OASExchangeRatesApi {
      * @param timeStart Timeseries starting time in ISO 8601 (required) (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (required) (optional)
      * @param r_limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+     * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
      * @return List<OASV1ExchangeRatesTimeseriesItem>
      * @throws OAS.ApiException if fails to make API call
      */
@@ -80,6 +81,7 @@ public class OASExchangeRatesApi {
         query.addAll(client.makeParam('time_start', (String) params.get('timeStart')));
         query.addAll(client.makeParam('time_end', (String) params.get('timeEnd')));
         query.addAll(client.makeParam('limit', (Integer) params.get('r_limit')));
+        query.addAll(client.makeParam('extended_gap_filling', (Boolean) params.get('extendedGapFilling')));
 
         List<OAS.Param> form = new List<OAS.Param>();
 

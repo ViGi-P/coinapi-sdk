@@ -209,9 +209,10 @@ public class ExchangeRatesApi {
    * @param timeStart Timeseries starting time in ISO 8601 (required)
    * @param timeEnd Timeseries ending time in ISO 8601 (required)
    * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+   * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
    * @return List<V1ExchangeRatesTimeseriesItem>
   */
-  public List<V1ExchangeRatesTimeseriesItem> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet (String assetIdBase, String assetIdQuote, String periodId, String timeStart, String timeEnd, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<V1ExchangeRatesTimeseriesItem> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet (String assetIdBase, String assetIdQuote, String periodId, String timeStart, String timeEnd, Integer limit, Boolean extendedGapFilling) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'assetIdBase' is set
     if (assetIdBase == null) {
@@ -237,6 +238,7 @@ public class ExchangeRatesApi {
     queryParams.addAll(ApiInvoker.parameterToPairs("", "time_start", timeStart));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "time_end", timeEnd));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "extended_gap_filling", extendedGapFilling));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -279,9 +281,9 @@ public class ExchangeRatesApi {
       /**
    * Timeseries data
    * Get the historical exchange rates between two assets in the form of the timeseries.
-   * @param assetIdBase Requested exchange rates base asset identifier (from the Metadata -&gt; Assets)   * @param assetIdQuote Requested exchange rates base asset identifier (from the Metadata -&gt; Assets)   * @param periodId Identifier of requested timeseries period (required, e.g. &#x60;5SEC&#x60; or &#x60;1HRS&#x60;)   * @param timeStart Timeseries starting time in ISO 8601 (required)   * @param timeEnd Timeseries ending time in ISO 8601 (required)   * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+   * @param assetIdBase Requested exchange rates base asset identifier (from the Metadata -&gt; Assets)   * @param assetIdQuote Requested exchange rates base asset identifier (from the Metadata -&gt; Assets)   * @param periodId Identifier of requested timeseries period (required, e.g. &#x60;5SEC&#x60; or &#x60;1HRS&#x60;)   * @param timeStart Timeseries starting time in ISO 8601 (required)   * @param timeEnd Timeseries ending time in ISO 8601 (required)   * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)   * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
   */
-  public void v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet (String assetIdBase, String assetIdQuote, String periodId, String timeStart, String timeEnd, Integer limit, final Response.Listener<List<V1ExchangeRatesTimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet (String assetIdBase, String assetIdQuote, String periodId, String timeStart, String timeEnd, Integer limit, Boolean extendedGapFilling, final Response.Listener<List<V1ExchangeRatesTimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'assetIdBase' is set
@@ -309,6 +311,7 @@ public class ExchangeRatesApi {
     queryParams.addAll(ApiInvoker.parameterToPairs("", "time_start", timeStart));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "time_end", timeEnd));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "extended_gap_filling", extendedGapFilling));
 
 
     String[] contentTypes = {

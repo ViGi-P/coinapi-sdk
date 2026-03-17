@@ -66,7 +66,7 @@ feature -- API Access
 			end
 		end
 
-	v1_exchangerate_asset_id_base_asset_id_quote_history_get (asset_id_base: STRING_32; asset_id_quote: STRING_32; period_id: STRING_32; time_start: STRING_32; time_end: STRING_32; limit: INTEGER_32): detachable LIST [V1_EXCHANGE_RATES_TIMESERIES_ITEM]
+	v1_exchangerate_asset_id_base_asset_id_quote_history_get (asset_id_base: STRING_32; asset_id_quote: STRING_32; period_id: STRING_32; time_start: STRING_32; time_end: STRING_32; limit: INTEGER_32; extended_gap_filling: BOOLEAN): detachable LIST [V1_EXCHANGE_RATES_TIMESERIES_ITEM]
 			-- Timeseries data
 			-- Get the historical exchange rates between two assets in the form of the timeseries.
 			-- 
@@ -81,6 +81,8 @@ feature -- API Access
 			-- argument: time_end Timeseries ending time in ISO 8601 (required) (optional, default to null)
 			-- 
 			-- argument: limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+			-- 
+			-- argument: extended_gap_filling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
 			-- 
 			-- 
 			-- Result LIST [V1_EXCHANGE_RATES_TIMESERIES_ITEM]
@@ -100,6 +102,7 @@ feature -- API Access
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "time_start", time_start));
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "time_end", time_end));
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "limit", limit));
+			l_request.fill_query_params(api_client.parameter_to_tuple("", "extended_gap_filling", extended_gap_filling));
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"text/plain", "application/json", "text/json">>)  as l_accept then

@@ -130,14 +130,15 @@ export class ExchangeRatesService extends BaseService {
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+     * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1ExchangeRatesTimeseriesItem>>;
-    public v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1ExchangeRatesTimeseriesItem>>>;
-    public v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1ExchangeRatesTimeseriesItem>>>;
-    public v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, extendedGapFilling?: boolean, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1ExchangeRatesTimeseriesItem>>;
+    public v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, extendedGapFilling?: boolean, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1ExchangeRatesTimeseriesItem>>>;
+    public v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, extendedGapFilling?: boolean, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1ExchangeRatesTimeseriesItem>>>;
+    public v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, extendedGapFilling?: boolean, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (assetIdBase === null || assetIdBase === undefined) {
             throw new Error('Required parameter assetIdBase was null or undefined when calling v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet.');
         }
@@ -178,6 +179,15 @@ export class ExchangeRatesService extends BaseService {
             localVarQueryParameters,
             'limit',
             <any>limit,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'extended_gap_filling',
+            <any>extendedGapFilling,
             QueryParamStyle.Form,
             true,
         );

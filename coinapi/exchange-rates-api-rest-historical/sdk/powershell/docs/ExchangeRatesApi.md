@@ -75,6 +75,7 @@ Name | Type | Description  | Notes
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TimeStart] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TimeEnd] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Limit] <System.Nullable[Int32]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ExtendedGapFilling] <System.Nullable[Boolean]><br>
 
 Timeseries data
 
@@ -95,10 +96,11 @@ $PeriodId = "MyPeriodId" # String | Identifier of requested timeseries period (r
 $TimeStart = "MyTimeStart" # String | Timeseries starting time in ISO 8601 (required) (optional)
 $TimeEnd = "MyTimeEnd" # String | Timeseries ending time in ISO 8601 (required) (optional)
 $Limit = 56 # Int32 | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
+$ExtendedGapFilling = $true # Boolean | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional) (default to $false)
 
 # Timeseries data
 try {
-    $Result = Invoke-V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet -AssetIdBase $AssetIdBase -AssetIdQuote $AssetIdQuote -PeriodId $PeriodId -TimeStart $TimeStart -TimeEnd $TimeEnd -Limit $Limit
+    $Result = Invoke-V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet -AssetIdBase $AssetIdBase -AssetIdQuote $AssetIdQuote -PeriodId $PeriodId -TimeStart $TimeStart -TimeEnd $TimeEnd -Limit $Limit -ExtendedGapFilling $ExtendedGapFilling
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -115,6 +117,7 @@ Name | Type | Description  | Notes
  **TimeStart** | **String**| Timeseries starting time in ISO 8601 (required) | [optional] 
  **TimeEnd** | **String**| Timeseries ending time in ISO 8601 (required) | [optional] 
  **Limit** | **Int32**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
+ **ExtendedGapFilling** | **Boolean**| If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [optional] [default to $false]
 
 ### Return type
 

@@ -155,6 +155,7 @@ sub get_specific_rate {
 # @param string $time_start Timeseries starting time in ISO 8601 (required) (optional)
 # @param string $time_end Timeseries ending time in ISO 8601 (required) (optional)
 # @param int $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+# @param boolean $extended_gap_filling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
 {
     my $params = {
     'asset_id_base' => {
@@ -185,6 +186,11 @@ sub get_specific_rate {
     'limit' => {
         data_type => 'int',
         description => 'Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)',
+        required => '0',
+    },
+    'extended_gap_filling' => {
+        data_type => 'boolean',
+        description => 'If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)',
         required => '0',
     },
     };
@@ -242,6 +248,11 @@ sub v1_exchangerate_asset_id_base_asset_id_quote_history_get {
     # query params
     if ( exists $args{'limit'}) {
         $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
+    }
+
+    # query params
+    if ( exists $args{'extended_gap_filling'}) {
+        $query_params->{'extended_gap_filling'} = $self->{api_client}->to_query_value($args{'extended_gap_filling'});
     }
 
     # path params

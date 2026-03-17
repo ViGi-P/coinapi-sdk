@@ -148,6 +148,9 @@ Timeseries ending time in ISO 8601 (required)
 .PARAMETER Limit
 Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
+.PARAMETER ExtendedGapFilling
+If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
+
 .PARAMETER ReturnType
 
 Select the return type (optional): text/plain, application/json, text/json
@@ -181,6 +184,9 @@ function Invoke-V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet {
         [Parameter(Position = 5, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [System.Nullable[Int32]]
         ${Limit},
+        [Parameter(Position = 6, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [System.Nullable[Boolean]]
+        ${ExtendedGapFilling},
         [String]
         [ValidateSet("text/plain", "application/json", "text/json")]
         $ReturnType,
@@ -234,6 +240,10 @@ function Invoke-V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet {
 
         if ($Limit) {
             $LocalVarQueryParameters['limit'] = $Limit
+        }
+
+        if ($ExtendedGapFilling) {
+            $LocalVarQueryParameters['extended_gap_filling'] = $ExtendedGapFilling
         }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["X-CoinAPI-Key"]) {

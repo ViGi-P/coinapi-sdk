@@ -45,7 +45,7 @@ class ExchangeRatesApi {
 
     }
 
-    def v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet ( String assetIdBase, String assetIdQuote, String periodId, String timeStart, String timeEnd, Integer limit, Closure onSuccess, Closure onFailure)  {
+    def v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet ( String assetIdBase, String assetIdQuote, String periodId, String timeStart, String timeEnd, Integer limit, Boolean extendedGapFilling, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/exchangerate/${asset_id_base}/${asset_id_quote}/history"
 
         // params
@@ -75,6 +75,9 @@ class ExchangeRatesApi {
         }
         if (limit != null) {
             queryParams.put("limit", limit)
+        }
+        if (extendedGapFilling != null) {
+            queryParams.put("extended_gap_filling", extendedGapFilling)
         }
 
 

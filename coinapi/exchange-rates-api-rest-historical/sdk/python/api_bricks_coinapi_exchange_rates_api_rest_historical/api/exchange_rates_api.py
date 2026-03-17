@@ -346,6 +346,7 @@ class ExchangeRatesApi:
         time_start: Annotated[Optional[StrictStr], Field(description="Timeseries starting time in ISO 8601 (required)")] = None,
         time_end: Annotated[Optional[StrictStr], Field(description="Timeseries ending time in ISO 8601 (required)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
+        extended_gap_filling: Annotated[Optional[StrictBool], Field(description="If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -375,6 +376,8 @@ class ExchangeRatesApi:
         :type time_end: str
         :param limit: Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
+        :param extended_gap_filling: If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
+        :type extended_gap_filling: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -404,6 +407,7 @@ class ExchangeRatesApi:
             time_start=time_start,
             time_end=time_end,
             limit=limit,
+            extended_gap_filling=extended_gap_filling,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -433,6 +437,7 @@ class ExchangeRatesApi:
         time_start: Annotated[Optional[StrictStr], Field(description="Timeseries starting time in ISO 8601 (required)")] = None,
         time_end: Annotated[Optional[StrictStr], Field(description="Timeseries ending time in ISO 8601 (required)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
+        extended_gap_filling: Annotated[Optional[StrictBool], Field(description="If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -462,6 +467,8 @@ class ExchangeRatesApi:
         :type time_end: str
         :param limit: Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
+        :param extended_gap_filling: If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
+        :type extended_gap_filling: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -491,6 +498,7 @@ class ExchangeRatesApi:
             time_start=time_start,
             time_end=time_end,
             limit=limit,
+            extended_gap_filling=extended_gap_filling,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -520,6 +528,7 @@ class ExchangeRatesApi:
         time_start: Annotated[Optional[StrictStr], Field(description="Timeseries starting time in ISO 8601 (required)")] = None,
         time_end: Annotated[Optional[StrictStr], Field(description="Timeseries ending time in ISO 8601 (required)")] = None,
         limit: Annotated[Optional[StrictInt], Field(description="Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)")] = None,
+        extended_gap_filling: Annotated[Optional[StrictBool], Field(description="If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -549,6 +558,8 @@ class ExchangeRatesApi:
         :type time_end: str
         :param limit: Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
         :type limit: int
+        :param extended_gap_filling: If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
+        :type extended_gap_filling: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -578,6 +589,7 @@ class ExchangeRatesApi:
             time_start=time_start,
             time_end=time_end,
             limit=limit,
+            extended_gap_filling=extended_gap_filling,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -602,6 +614,7 @@ class ExchangeRatesApi:
         time_start,
         time_end,
         limit,
+        extended_gap_filling,
         _request_auth,
         _content_type,
         _headers,
@@ -643,6 +656,10 @@ class ExchangeRatesApi:
         if limit is not None:
             
             _query_params.append(('limit', limit))
+            
+        if extended_gap_filling is not None:
+            
+            _query_params.append(('extended_gap_filling', extended_gap_filling))
             
         # process the header parameters
         # process the form parameters

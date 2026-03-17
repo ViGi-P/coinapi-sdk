@@ -56,6 +56,7 @@ describe 'ExchangeRatesApi' do
   # @option opts [String] :time_start Timeseries starting time in ISO 8601 (required)
   # @option opts [String] :time_end Timeseries ending time in ISO 8601 (required)
   # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+  # @option opts [Boolean] :extended_gap_filling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
   # @return [Array<V1ExchangeRatesTimeseriesItem>]
   describe 'v1_exchangerate_asset_id_base_asset_id_quote_history_get test' do
     it 'should work' do
