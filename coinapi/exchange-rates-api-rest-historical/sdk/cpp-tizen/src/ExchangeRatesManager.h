@@ -68,12 +68,13 @@ bool get specific rateAsync(char * accessToken,
  * \param timeStart Timeseries starting time in ISO 8601 (required)
  * \param timeEnd Timeseries ending time in ISO 8601 (required)
  * \param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+ * \param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetSync(char * accessToken,
-	std::string assetIdBase, std::string assetIdQuote, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
+	std::string assetIdBase, std::string assetIdQuote, std::string periodId, std::string timeStart, std::string timeEnd, int limit, bool extendedGapFilling, 
 	void(* handler)(std::list<V1.ExchangeRatesTimeseriesItem>, Error, void* )
 	, void* userData);
 
@@ -86,12 +87,13 @@ bool v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetSync(char * accessToken,
  * \param timeStart Timeseries starting time in ISO 8601 (required)
  * \param timeEnd Timeseries ending time in ISO 8601 (required)
  * \param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+ * \param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync(char * accessToken,
-	std::string assetIdBase, std::string assetIdQuote, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
+	std::string assetIdBase, std::string assetIdQuote, std::string periodId, std::string timeStart, std::string timeEnd, int limit, bool extendedGapFilling, 
 	void(* handler)(std::list<V1.ExchangeRatesTimeseriesItem>, Error, void* )
 	, void* userData);
 

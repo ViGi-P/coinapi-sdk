@@ -100,6 +100,7 @@ module OpenapiClient
     # @option opts [String] :time_start Timeseries starting time in ISO 8601 (required)
     # @option opts [String] :time_end Timeseries ending time in ISO 8601 (required)
     # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
+    # @option opts [Boolean] :extended_gap_filling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (default to false)
     # @return [Array<V1ExchangeRatesTimeseriesItem>]
     def v1_exchangerate_asset_id_base_asset_id_quote_history_get(asset_id_base, asset_id_quote, opts = {})
       data, _status_code, _headers = v1_exchangerate_asset_id_base_asset_id_quote_history_get_with_http_info(asset_id_base, asset_id_quote, opts)
@@ -115,6 +116,7 @@ module OpenapiClient
     # @option opts [String] :time_start Timeseries starting time in ISO 8601 (required)
     # @option opts [String] :time_end Timeseries ending time in ISO 8601 (required)
     # @option opts [Integer] :limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default to 100)
+    # @option opts [Boolean] :extended_gap_filling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (default to false)
     # @return [Array<(Array<V1ExchangeRatesTimeseriesItem>, Integer, Hash)>] Array<V1ExchangeRatesTimeseriesItem> data, response status code and response headers
     def v1_exchangerate_asset_id_base_asset_id_quote_history_get_with_http_info(asset_id_base, asset_id_quote, opts = {})
       if @api_client.config.debugging
@@ -137,6 +139,7 @@ module OpenapiClient
       query_params[:'time_start'] = opts[:'time_start'] if !opts[:'time_start'].nil?
       query_params[:'time_end'] = opts[:'time_end'] if !opts[:'time_end'].nil?
       query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'extended_gap_filling'] = opts[:'extended_gap_filling'] if !opts[:'extended_gap_filling'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

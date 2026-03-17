@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_exchangerate_asset_id_base_asset_id_quote_history_get**
-> List[V1ExchangeRatesTimeseriesItem] v1_exchangerate_asset_id_base_asset_id_quote_history_get(asset_id_base, asset_id_quote, period_id=period_id, time_start=time_start, time_end=time_end, limit=limit)
+> List[V1ExchangeRatesTimeseriesItem] v1_exchangerate_asset_id_base_asset_id_quote_history_get(asset_id_base, asset_id_quote, period_id=period_id, time_start=time_start, time_end=time_end, limit=limit, extended_gap_filling=extended_gap_filling)
 
 Timeseries data
 
@@ -141,10 +141,11 @@ with api_bricks_coinapi_exchange_rates_api_rest_historical.ApiClient(configurati
     time_start = 'time_start_example' # str | Timeseries starting time in ISO 8601 (required) (optional)
     time_end = 'time_end_example' # str | Timeseries ending time in ISO 8601 (required) (optional)
     limit = 100 # int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
+    extended_gap_filling = False # bool | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional) (default to False)
 
     try:
         # Timeseries data
-        api_response = api_instance.v1_exchangerate_asset_id_base_asset_id_quote_history_get(asset_id_base, asset_id_quote, period_id=period_id, time_start=time_start, time_end=time_end, limit=limit)
+        api_response = api_instance.v1_exchangerate_asset_id_base_asset_id_quote_history_get(asset_id_base, asset_id_quote, period_id=period_id, time_start=time_start, time_end=time_end, limit=limit, extended_gap_filling=extended_gap_filling)
         print("The response of ExchangeRatesApi->v1_exchangerate_asset_id_base_asset_id_quote_history_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -164,6 +165,7 @@ Name | Type | Description  | Notes
  **time_start** | **str**| Timeseries starting time in ISO 8601 (required) | [optional] 
  **time_end** | **str**| Timeseries ending time in ISO 8601 (required) | [optional] 
  **limit** | **int**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
+ **extended_gap_filling** | **bool**| If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [optional] [default to False]
 
 ### Return type
 

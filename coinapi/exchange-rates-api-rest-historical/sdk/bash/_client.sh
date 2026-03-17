@@ -328,6 +328,8 @@ case $state in
 "time_start=:[QUERY] Timeseries starting time in ISO 8601 (required)"
 "time_end=:[QUERY] Timeseries ending time in ISO 8601 (required)"
 "limit=:[QUERY] Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)"
+"extended_gap_filling=true:[QUERY] If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)"
+          "extended_gap_filling=false:[QUERY] If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

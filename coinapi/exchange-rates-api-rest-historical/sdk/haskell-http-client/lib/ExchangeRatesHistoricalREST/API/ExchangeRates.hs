@@ -131,6 +131,11 @@ instance HasOptionalParam V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet TimeEn
 instance HasOptionalParam V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet Limit where
   applyOptionalParam req (Limit xs) =
     req `addQuery` toQuery ("limit", Just xs)
+
+-- | /Optional Param/ "extended_gap_filling" - If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
+instance HasOptionalParam V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet ExtendedGapFilling where
+  applyOptionalParam req (ExtendedGapFilling xs) =
+    req `addQuery` toQuery ("extended_gap_filling", Just xs)
 -- | @application/json@
 instance Produces V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet MimeJSON
 -- | @text/json@

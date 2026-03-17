@@ -35,6 +35,7 @@ export interface V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest {
     timeStart?: string;
     timeEnd?: string;
     limit?: number;
+    extendedGapFilling?: boolean;
 }
 
 export interface V1ExchangerateAssetIdBaseGetRequest {
@@ -79,9 +80,9 @@ export class ExchangeRatesApi extends BaseAPI {
      * Get the historical exchange rates between two assets in the form of the timeseries.
      * Timeseries data
      */
-    v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet({ assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit }: V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest): Observable<Array<V1ExchangeRatesTimeseriesItem>>
-    v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet({ assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit }: V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1ExchangeRatesTimeseriesItem>>>
-    v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet({ assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit }: V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest, opts?: OperationOpts): Observable<Array<V1ExchangeRatesTimeseriesItem> | AjaxResponse<Array<V1ExchangeRatesTimeseriesItem>>> {
+    v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet({ assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling }: V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest): Observable<Array<V1ExchangeRatesTimeseriesItem>>
+    v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet({ assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling }: V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1ExchangeRatesTimeseriesItem>>>
+    v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet({ assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling }: V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest, opts?: OperationOpts): Observable<Array<V1ExchangeRatesTimeseriesItem> | AjaxResponse<Array<V1ExchangeRatesTimeseriesItem>>> {
         throwIfNullOrUndefined(assetIdBase, 'assetIdBase', 'v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet');
         throwIfNullOrUndefined(assetIdQuote, 'assetIdQuote', 'v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet');
 
@@ -95,6 +96,7 @@ export class ExchangeRatesApi extends BaseAPI {
         if (timeStart != null) { query['time_start'] = timeStart; }
         if (timeEnd != null) { query['time_end'] = timeEnd; }
         if (limit != null) { query['limit'] = limit; }
+        if (extendedGapFilling != null) { query['extended_gap_filling'] = extendedGapFilling; }
 
         return this.request<Array<V1ExchangeRatesTimeseriesItem>>({
             url: '/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history'.replace('{asset_id_base}', encodeURI(assetIdBase)).replace('{asset_id_quote}', encodeURI(assetIdQuote)),

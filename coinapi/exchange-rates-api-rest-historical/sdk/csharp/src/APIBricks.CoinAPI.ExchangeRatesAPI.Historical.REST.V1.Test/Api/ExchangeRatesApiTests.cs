@@ -77,7 +77,8 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Test.Api
             Client.Option<string> timeStart = default!;
             Client.Option<string> timeEnd = default!;
             Client.Option<int> limit = default!;
-            var response = await _instance.V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit);
+            Client.Option<bool> extendedGapFilling = default!;
+            var response = await _instance.V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling);
             var model = response.Ok();
             Assert.IsType<List<V1ExchangeRatesTimeseriesItem>>(model);
         }

@@ -482,7 +482,7 @@ export const ExchangeRatesApiFetchParamCreator = function (configuration?: Confi
          * @summary Timeseries data
          * @throws {RequiredError}
          */
-        v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, options: RequestOptions): FetchArgs {
+        v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, extendedGapFilling?: boolean, options: RequestOptions): FetchArgs {
             // verify required parameter 'assetIdBase' is not null or undefined
             if (assetIdBase === null || assetIdBase === undefined) {
                 throw new RequiredError('assetIdBase','Required parameter assetIdBase was null or undefined when calling v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet.');
@@ -521,6 +521,10 @@ export const ExchangeRatesApiFetchParamCreator = function (configuration?: Confi
 
             if (limit !== undefined) {
                 localVarQueryParameter['limit'] = ((limit:any):string);
+            }
+
+            if (extendedGapFilling !== undefined) {
+                localVarQueryParameter['extended_gap_filling'] = ((extendedGapFilling:any):string);
             }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
@@ -616,7 +620,7 @@ export const ExchangeRatesApiFetchParamCreator = function (configuration?: Confi
 export type ExchangeRatesApiType = { 
     getSpecificRate(assetIdBase: string, assetIdQuote: string, time?: string, options?: RequestOptions): Promise<V1ExchangeRate>,
 
-    v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, options?: RequestOptions): Promise<Array<V1ExchangeRatesTimeseriesItem>>,
+    v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, extendedGapFilling?: boolean, options?: RequestOptions): Promise<Array<V1ExchangeRatesTimeseriesItem>>,
 
     v1ExchangerateAssetIdBaseGet(assetIdBase: string, filterAssetId?: string, invert?: boolean, time?: string, options?: RequestOptions): Promise<V1ExchangeRates>,
 
@@ -650,8 +654,8 @@ export const ExchangeRatesApi = function(configuration?: Configuration, fetch: F
          * @summary Timeseries data
          * @throws {RequiredError}
          */
-        v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, options?: RequestOptions = {}): Promise<Array<V1ExchangeRatesTimeseriesItem>> {
-            const localVarFetchArgs = ExchangeRatesApiFetchParamCreator(configuration).v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, options);
+        v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, extendedGapFilling?: boolean, options?: RequestOptions = {}): Promise<Array<V1ExchangeRatesTimeseriesItem>> {
+            const localVarFetchArgs = ExchangeRatesApiFetchParamCreator(configuration).v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();

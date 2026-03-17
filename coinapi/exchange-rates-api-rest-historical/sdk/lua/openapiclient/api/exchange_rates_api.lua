@@ -97,13 +97,13 @@ function exchange_rates_api:get_specific_rate(asset_id_base, asset_id_quote, tim
 	end
 end
 
-function exchange_rates_api:v1_exchangerate_asset_id_base_asset_id_quote_history_get(asset_id_base, asset_id_quote, period_id, time_start, time_end, limit)
+function exchange_rates_api:v1_exchangerate_asset_id_base_asset_id_quote_history_get(asset_id_base, asset_id_quote, period_id, time_start, time_end, limit, extended_gap_filling)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/v1/exchangerate/%s/%s/history?period_id=%s&time_start=%s&time_end=%s&limit=%s",
-			self.basePath, asset_id_base, asset_id_quote, http_util.encodeURIComponent(period_id), http_util.encodeURIComponent(time_start), http_util.encodeURIComponent(time_end), http_util.encodeURIComponent(limit));
+		path = string.format("%s/v1/exchangerate/%s/%s/history?period_id=%s&time_start=%s&time_end=%s&limit=%s&extended_gap_filling=%s",
+			self.basePath, asset_id_base, asset_id_quote, http_util.encodeURIComponent(period_id), http_util.encodeURIComponent(time_start), http_util.encodeURIComponent(time_end), http_util.encodeURIComponent(limit), http_util.encodeURIComponent(extended_gap_filling));
 	})
 
 	-- set HTTP verb

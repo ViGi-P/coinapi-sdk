@@ -58,6 +58,7 @@ package body .Clients is
        Time_Start : in Swagger.Nullable_UString;
        Time_End : in Swagger.Nullable_UString;
        Limit : in Swagger.Nullable_Integer;
+       Extended_Gap_Filling : in Swagger.Nullable_Boolean;
        Result : out .Models.V1ExchangeRatesTimeseriesItem_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -69,6 +70,7 @@ package body .Clients is
       URI.Add_Param ("time_start", Time_Start);
       URI.Add_Param ("time_end", Time_End);
       URI.Add_Param ("limit", Limit);
+      URI.Add_Param ("extended_gap_filling", Extended_Gap_Filling);
       URI.Set_Path ("/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history");
       URI.Set_Path_Param ("asset_id_base", Asset_Id_Base);
       URI.Set_Path_Param ("asset_id_quote", Asset_Id_Quote);

@@ -142,6 +142,7 @@ open class ExchangeRatesApi(basePath: kotlin.String = defaultBasePath, client: C
      * @param timeStart Timeseries starting time in ISO 8601 (required) (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (required) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+     * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
      * @return kotlin.collections.List<V1ExchangeRatesTimeseriesItem>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -151,8 +152,8 @@ open class ExchangeRatesApi(basePath: kotlin.String = defaultBasePath, client: C
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: kotlin.String, assetIdQuote: kotlin.String, periodId: kotlin.String? = null, timeStart: kotlin.String? = null, timeEnd: kotlin.String? = null, limit: kotlin.Int? = 100) : kotlin.collections.List<V1ExchangeRatesTimeseriesItem> {
-        val localVarResponse = v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(assetIdBase = assetIdBase, assetIdQuote = assetIdQuote, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd, limit = limit)
+    fun v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: kotlin.String, assetIdQuote: kotlin.String, periodId: kotlin.String? = null, timeStart: kotlin.String? = null, timeEnd: kotlin.String? = null, limit: kotlin.Int? = 100, extendedGapFilling: kotlin.Boolean? = false) : kotlin.collections.List<V1ExchangeRatesTimeseriesItem> {
+        val localVarResponse = v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(assetIdBase = assetIdBase, assetIdQuote = assetIdQuote, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd, limit = limit, extendedGapFilling = extendedGapFilling)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1ExchangeRatesTimeseriesItem>
@@ -179,14 +180,15 @@ open class ExchangeRatesApi(basePath: kotlin.String = defaultBasePath, client: C
      * @param timeStart Timeseries starting time in ISO 8601 (required) (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (required) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+     * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
      * @return ApiResponse<kotlin.collections.List<V1ExchangeRatesTimeseriesItem>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(assetIdBase: kotlin.String, assetIdQuote: kotlin.String, periodId: kotlin.String?, timeStart: kotlin.String?, timeEnd: kotlin.String?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<V1ExchangeRatesTimeseriesItem>?> {
-        val localVariableConfig = v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequestConfig(assetIdBase = assetIdBase, assetIdQuote = assetIdQuote, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd, limit = limit)
+    fun v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(assetIdBase: kotlin.String, assetIdQuote: kotlin.String, periodId: kotlin.String?, timeStart: kotlin.String?, timeEnd: kotlin.String?, limit: kotlin.Int?, extendedGapFilling: kotlin.Boolean?) : ApiResponse<kotlin.collections.List<V1ExchangeRatesTimeseriesItem>?> {
+        val localVariableConfig = v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequestConfig(assetIdBase = assetIdBase, assetIdQuote = assetIdQuote, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd, limit = limit, extendedGapFilling = extendedGapFilling)
 
         return request<Unit, kotlin.collections.List<V1ExchangeRatesTimeseriesItem>>(
             localVariableConfig
@@ -202,9 +204,10 @@ open class ExchangeRatesApi(basePath: kotlin.String = defaultBasePath, client: C
      * @param timeStart Timeseries starting time in ISO 8601 (required) (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (required) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+     * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
      * @return RequestConfig
      */
-    fun v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequestConfig(assetIdBase: kotlin.String, assetIdQuote: kotlin.String, periodId: kotlin.String?, timeStart: kotlin.String?, timeEnd: kotlin.String?, limit: kotlin.Int?) : RequestConfig<Unit> {
+    fun v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequestConfig(assetIdBase: kotlin.String, assetIdQuote: kotlin.String, periodId: kotlin.String?, timeStart: kotlin.String?, timeEnd: kotlin.String?, limit: kotlin.Int?, extendedGapFilling: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -219,6 +222,9 @@ open class ExchangeRatesApi(basePath: kotlin.String = defaultBasePath, client: C
                 }
                 if (limit != null) {
                     put("limit", listOf(limit.toString()))
+                }
+                if (extendedGapFilling != null) {
+                    put("extended_gap_filling", listOf(extendedGapFilling.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

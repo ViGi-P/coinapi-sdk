@@ -17,7 +17,7 @@ Describe -tag 'PSOpenAPITools' -name 'ExchangeRatesApi' {
 
     Context 'Invoke-V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet' {
         It 'Test Invoke-V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet' {
-            #$TestResult = Invoke-V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet -AssetIdBase "TEST_VALUE" -AssetIdQuote "TEST_VALUE" -PeriodId "TEST_VALUE" -TimeStart "TEST_VALUE" -TimeEnd "TEST_VALUE" -Limit "TEST_VALUE"
+            #$TestResult = Invoke-V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet -AssetIdBase "TEST_VALUE" -AssetIdQuote "TEST_VALUE" -PeriodId "TEST_VALUE" -TimeStart "TEST_VALUE" -TimeEnd "TEST_VALUE" -Limit "TEST_VALUE" -ExtendedGapFilling "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }

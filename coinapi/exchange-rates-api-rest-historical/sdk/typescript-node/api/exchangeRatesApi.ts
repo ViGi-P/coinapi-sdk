@@ -185,8 +185,9 @@ export class ExchangeRatesApi {
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+     * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
      */
-    public async v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet (assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1ExchangeRatesTimeseriesItem>;  }> {
+    public async v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet (assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, extendedGapFilling?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1ExchangeRatesTimeseriesItem>;  }> {
         const localVarPath = this.basePath + '/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history'
             .replace('{' + 'asset_id_base' + '}', encodeURIComponent(String(assetIdBase)))
             .replace('{' + 'asset_id_quote' + '}', encodeURIComponent(String(assetIdQuote)));
@@ -225,6 +226,10 @@ export class ExchangeRatesApi {
 
         if (limit !== undefined) {
             localVarQueryParameters['limit'] = ObjectSerializer.serialize(limit, "number");
+        }
+
+        if (extendedGapFilling !== undefined) {
+            localVarQueryParameters['extended_gap_filling'] = ObjectSerializer.serialize(extendedGapFilling, "boolean");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);

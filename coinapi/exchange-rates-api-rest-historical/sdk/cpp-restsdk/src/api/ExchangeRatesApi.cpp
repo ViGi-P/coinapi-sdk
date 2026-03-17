@@ -174,7 +174,7 @@ pplx::task<std::shared_ptr<V1_ExchangeRate>> ExchangeRatesApi::get_specific_rate
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<V1_ExchangeRatesTimeseriesItem>>> ExchangeRatesApi::v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(utility::string_t assetIdBase, utility::string_t assetIdQuote, boost::optional<utility::string_t> periodId, boost::optional<utility::string_t> timeStart, boost::optional<utility::string_t> timeEnd, boost::optional<int32_t> limit) const
+pplx::task<std::vector<std::shared_ptr<V1_ExchangeRatesTimeseriesItem>>> ExchangeRatesApi::v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(utility::string_t assetIdBase, utility::string_t assetIdQuote, boost::optional<utility::string_t> periodId, boost::optional<utility::string_t> timeStart, boost::optional<utility::string_t> timeEnd, boost::optional<int32_t> limit, boost::optional<bool> extendedGapFilling) const
 {
 
 
@@ -234,6 +234,10 @@ pplx::task<std::vector<std::shared_ptr<V1_ExchangeRatesTimeseriesItem>>> Exchang
     if (limit)
     {
         localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
+    }
+    if (extendedGapFilling)
+    {
+        localVarQueryParams[utility::conversions::to_string_t("extended_gap_filling")] = ApiClient::parameterToString(*extendedGapFilling);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

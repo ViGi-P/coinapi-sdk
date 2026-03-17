@@ -38,6 +38,7 @@ package .Clients is
        Time_Start : in Swagger.Nullable_UString;
        Time_End : in Swagger.Nullable_UString;
        Limit : in Swagger.Nullable_Integer;
+       Extended_Gap_Filling : in Swagger.Nullable_Boolean;
        Result : out .Models.V1ExchangeRatesTimeseriesItem_Type_Vectors.Vector);
 
    --  Get all current rates

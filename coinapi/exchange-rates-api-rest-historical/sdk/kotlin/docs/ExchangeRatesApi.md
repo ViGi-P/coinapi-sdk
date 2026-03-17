@@ -65,7 +65,7 @@ Configure APIKey:
 
 <a id="v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet"></a>
 # **v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet**
-> kotlin.collections.List&lt;V1ExchangeRatesTimeseriesItem&gt; v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit)
+> kotlin.collections.List&lt;V1ExchangeRatesTimeseriesItem&gt; v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling)
 
 Timeseries data
 
@@ -84,8 +84,9 @@ val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of
 val timeStart : kotlin.String = timeStart_example // kotlin.String | Timeseries starting time in ISO 8601 (required)
 val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601 (required)
 val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+val extendedGapFilling : kotlin.Boolean = true // kotlin.Boolean | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
 try {
-    val result : kotlin.collections.List<V1ExchangeRatesTimeseriesItem> = apiInstance.v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit)
+    val result : kotlin.collections.List<V1ExchangeRatesTimeseriesItem> = apiInstance.v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ExchangeRatesApi#v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet")
@@ -102,9 +103,10 @@ try {
 | **periodId** | **kotlin.String**| Identifier of requested timeseries period (required, e.g. &#x60;5SEC&#x60; or &#x60;1HRS&#x60;) | [optional] |
 | **timeStart** | **kotlin.String**| Timeseries starting time in ISO 8601 (required) | [optional] |
 | **timeEnd** | **kotlin.String**| Timeseries ending time in ISO 8601 (required) | [optional] |
+| **limit** | **kotlin.Int**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **limit** | **kotlin.Int**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
+| **extendedGapFilling** | **kotlin.Boolean**| If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [optional] [default to false] |
 
 ### Return type
 

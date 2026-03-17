@@ -53,12 +53,12 @@ If you are using an exchange rate for mission-critical operations, then for best
   "Timeseries data
   Get the historical exchange rates between two assets in the form of the timeseries."
   ([asset_id_base string?, asset_id_quote string?, ] (v1-exchangerate-asset-id-base-asset-id-quote-history-get-with-http-info asset_id_base asset_id_quote nil))
-  ([asset_id_base string?, asset_id_quote string?, {:keys [period_id time_start time_end limit]} (s/map-of keyword? any?)]
+  ([asset_id_base string?, asset_id_quote string?, {:keys [period_id time_start time_end limit extended_gap_filling]} (s/map-of keyword? any?)]
    (check-required-params asset_id_base asset_id_quote)
    (call-api "/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history" :get
              {:path-params   {"asset_id_base" asset_id_base "asset_id_quote" asset_id_quote }
               :header-params {}
-              :query-params  {"period_id" period_id "time_start" time_start "time_end" time_end "limit" limit }
+              :query-params  {"period_id" period_id "time_start" time_start "time_end" time_end "limit" limit "extended_gap_filling" extended_gap_filling }
               :form-params   {}
               :content-types []
               :accepts       ["text/plain" "application/json" "text/json"]

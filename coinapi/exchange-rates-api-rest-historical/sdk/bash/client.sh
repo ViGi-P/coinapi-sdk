@@ -105,6 +105,7 @@ operation_parameters_minimum_occurrences["v1ExchangerateAssetIdBaseAssetIdQuoteH
 operation_parameters_minimum_occurrences["v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet:::time_start"]=0
 operation_parameters_minimum_occurrences["v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet:::time_end"]=0
 operation_parameters_minimum_occurrences["v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet:::limit"]=0
+operation_parameters_minimum_occurrences["v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet:::extended_gap_filling"]=0
 operation_parameters_minimum_occurrences["v1ExchangerateAssetIdBaseGet:::asset_id_base"]=1
 operation_parameters_minimum_occurrences["v1ExchangerateAssetIdBaseGet:::filter_asset_id"]=0
 operation_parameters_minimum_occurrences["v1ExchangerateAssetIdBaseGet:::invert"]=0
@@ -129,6 +130,7 @@ operation_parameters_maximum_occurrences["v1ExchangerateAssetIdBaseAssetIdQuoteH
 operation_parameters_maximum_occurrences["v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet:::time_start"]=0
 operation_parameters_maximum_occurrences["v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet:::time_end"]=0
 operation_parameters_maximum_occurrences["v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet:::limit"]=0
+operation_parameters_maximum_occurrences["v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet:::extended_gap_filling"]=0
 operation_parameters_maximum_occurrences["v1ExchangerateAssetIdBaseGet:::asset_id_base"]=0
 operation_parameters_maximum_occurrences["v1ExchangerateAssetIdBaseGet:::filter_asset_id"]=0
 operation_parameters_maximum_occurrences["v1ExchangerateAssetIdBaseGet:::invert"]=0
@@ -150,6 +152,7 @@ operation_parameters_collection_type["v1ExchangerateAssetIdBaseAssetIdQuoteHisto
 operation_parameters_collection_type["v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet:::time_start"]=""
 operation_parameters_collection_type["v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet:::time_end"]=""
 operation_parameters_collection_type["v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet:::limit"]=""
+operation_parameters_collection_type["v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet:::extended_gap_filling"]=""
 operation_parameters_collection_type["v1ExchangerateAssetIdBaseGet:::asset_id_base"]=""
 operation_parameters_collection_type["v1ExchangerateAssetIdBaseGet:::filter_asset_id"]=""
 operation_parameters_collection_type["v1ExchangerateAssetIdBaseGet:::invert"]=""
@@ -678,6 +681,8 @@ print_v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet_help() {
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}extended_gap_filling${OFF} ${BLUE}[boolean]${OFF} ${CYAN}(default: false)${OFF} - If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)${YELLOW} Specify as: extended_gap_filling=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -850,7 +855,7 @@ call_v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet() {
     local path_parameter_names=(asset_id_base asset_id_quote)
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(period_id time_start time_end limit  )
+    local query_parameter_names=(period_id time_start time_end limit extended_gap_filling  )
     local path
 
     if ! path=$(build_request_path "/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history" path_parameter_names query_parameter_names); then
