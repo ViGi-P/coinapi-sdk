@@ -230,6 +230,7 @@ public class ExchangeRatesApi {
      * @param timeStart Timeseries starting time in ISO 8601 (required) (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (required) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+     * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -240,7 +241,7 @@ public class ExchangeRatesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetCall(@javax.annotation.Nonnull String assetIdBase, @javax.annotation.Nonnull String assetIdQuote, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetCall(@javax.annotation.Nonnull String assetIdBase, @javax.annotation.Nonnull String assetIdQuote, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean extendedGapFilling, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -283,6 +284,10 @@ public class ExchangeRatesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
         }
 
+        if (extendedGapFilling != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("extended_gap_filling", extendedGapFilling));
+        }
+
         final String[] localVarAccepts = {
             "text/plain",
             "application/json",
@@ -305,7 +310,7 @@ public class ExchangeRatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetValidateBeforeCall(@javax.annotation.Nonnull String assetIdBase, @javax.annotation.Nonnull String assetIdQuote, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetValidateBeforeCall(@javax.annotation.Nonnull String assetIdBase, @javax.annotation.Nonnull String assetIdQuote, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean extendedGapFilling, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'assetIdBase' is set
         if (assetIdBase == null) {
             throw new ApiException("Missing the required parameter 'assetIdBase' when calling v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(Async)");
@@ -316,7 +321,7 @@ public class ExchangeRatesApi {
             throw new ApiException("Missing the required parameter 'assetIdQuote' when calling v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(Async)");
         }
 
-        return v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetCall(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, _callback);
+        return v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetCall(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling, _callback);
 
     }
 
@@ -329,6 +334,7 @@ public class ExchangeRatesApi {
      * @param timeStart Timeseries starting time in ISO 8601 (required) (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (required) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+     * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
      * @return List&lt;V1ExchangeRatesTimeseriesItem&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -338,8 +344,8 @@ public class ExchangeRatesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<V1ExchangeRatesTimeseriesItem> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(@javax.annotation.Nonnull String assetIdBase, @javax.annotation.Nonnull String assetIdQuote, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<V1ExchangeRatesTimeseriesItem>> localVarResp = v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit);
+    public List<V1ExchangeRatesTimeseriesItem> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(@javax.annotation.Nonnull String assetIdBase, @javax.annotation.Nonnull String assetIdQuote, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean extendedGapFilling) throws ApiException {
+        ApiResponse<List<V1ExchangeRatesTimeseriesItem>> localVarResp = v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling);
         return localVarResp.getData();
     }
 
@@ -352,6 +358,7 @@ public class ExchangeRatesApi {
      * @param timeStart Timeseries starting time in ISO 8601 (required) (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (required) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+     * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
      * @return ApiResponse&lt;List&lt;V1ExchangeRatesTimeseriesItem&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -361,8 +368,8 @@ public class ExchangeRatesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<V1ExchangeRatesTimeseriesItem>> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(@javax.annotation.Nonnull String assetIdBase, @javax.annotation.Nonnull String assetIdQuote, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetValidateBeforeCall(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, null);
+    public ApiResponse<List<V1ExchangeRatesTimeseriesItem>> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(@javax.annotation.Nonnull String assetIdBase, @javax.annotation.Nonnull String assetIdQuote, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean extendedGapFilling) throws ApiException {
+        okhttp3.Call localVarCall = v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetValidateBeforeCall(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling, null);
         Type localVarReturnType = new TypeToken<List<V1ExchangeRatesTimeseriesItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -376,6 +383,7 @@ public class ExchangeRatesApi {
      * @param timeStart Timeseries starting time in ISO 8601 (required) (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (required) (optional)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+     * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -386,9 +394,9 @@ public class ExchangeRatesApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync(@javax.annotation.Nonnull String assetIdBase, @javax.annotation.Nonnull String assetIdQuote, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback<List<V1ExchangeRatesTimeseriesItem>> _callback) throws ApiException {
+    public okhttp3.Call v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync(@javax.annotation.Nonnull String assetIdBase, @javax.annotation.Nonnull String assetIdQuote, @javax.annotation.Nullable String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Boolean extendedGapFilling, final ApiCallback<List<V1ExchangeRatesTimeseriesItem>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetValidateBeforeCall(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, _callback);
+        okhttp3.Call localVarCall = v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetValidateBeforeCall(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling, _callback);
         Type localVarReturnType = new TypeToken<List<V1ExchangeRatesTimeseriesItem>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

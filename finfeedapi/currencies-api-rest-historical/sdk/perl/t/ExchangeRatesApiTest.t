@@ -48,7 +48,8 @@ isa_ok($api, 'WWW::OpenAPIClient::ExchangeRatesApi');
 #my $v1_exchangerate_asset_id_base_asset_id_quote_history_get_time_start = undef; # replace NULL with a proper value
 #my $v1_exchangerate_asset_id_base_asset_id_quote_history_get_time_end = undef; # replace NULL with a proper value
 #my $v1_exchangerate_asset_id_base_asset_id_quote_history_get_limit = undef; # replace NULL with a proper value
-#my $v1_exchangerate_asset_id_base_asset_id_quote_history_get_result = $api->v1_exchangerate_asset_id_base_asset_id_quote_history_get(asset_id_base => $v1_exchangerate_asset_id_base_asset_id_quote_history_get_asset_id_base, asset_id_quote => $v1_exchangerate_asset_id_base_asset_id_quote_history_get_asset_id_quote, period_id => $v1_exchangerate_asset_id_base_asset_id_quote_history_get_period_id, time_start => $v1_exchangerate_asset_id_base_asset_id_quote_history_get_time_start, time_end => $v1_exchangerate_asset_id_base_asset_id_quote_history_get_time_end, limit => $v1_exchangerate_asset_id_base_asset_id_quote_history_get_limit);
+#my $v1_exchangerate_asset_id_base_asset_id_quote_history_get_extended_gap_filling = undef; # replace NULL with a proper value
+#my $v1_exchangerate_asset_id_base_asset_id_quote_history_get_result = $api->v1_exchangerate_asset_id_base_asset_id_quote_history_get(asset_id_base => $v1_exchangerate_asset_id_base_asset_id_quote_history_get_asset_id_base, asset_id_quote => $v1_exchangerate_asset_id_base_asset_id_quote_history_get_asset_id_quote, period_id => $v1_exchangerate_asset_id_base_asset_id_quote_history_get_period_id, time_start => $v1_exchangerate_asset_id_base_asset_id_quote_history_get_time_start, time_end => $v1_exchangerate_asset_id_base_asset_id_quote_history_get_time_end, limit => $v1_exchangerate_asset_id_base_asset_id_quote_history_get_limit, extended_gap_filling => $v1_exchangerate_asset_id_base_asset_id_quote_history_get_extended_gap_filling);
 
 #
 # v1_exchangerate_asset_id_base_get test

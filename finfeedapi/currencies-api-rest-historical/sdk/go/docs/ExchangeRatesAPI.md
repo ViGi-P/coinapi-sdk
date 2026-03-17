@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet
 
-> []V1ExchangeRatesTimeseriesItem V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ctx, assetIdBase, assetIdQuote).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).Execute()
+> []V1ExchangeRatesTimeseriesItem V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ctx, assetIdBase, assetIdQuote).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).ExtendedGapFilling(extendedGapFilling).Execute()
 
 Timeseries data
 
@@ -113,10 +113,11 @@ func main() {
 	timeStart := "timeStart_example" // string | Timeseries starting time in ISO 8601 (required) (optional)
 	timeEnd := "timeEnd_example" // string | Timeseries ending time in ISO 8601 (required) (optional)
 	limit := int32(56) // int32 | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
+	extendedGapFilling := true // bool | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional) (default to false)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExchangeRatesAPI.V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(context.Background(), assetIdBase, assetIdQuote).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).Execute()
+	resp, r, err := apiClient.ExchangeRatesAPI.V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(context.Background(), assetIdBase, assetIdQuote).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).ExtendedGapFilling(extendedGapFilling).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExchangeRatesAPI.V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -148,6 +149,7 @@ Name | Type | Description  | Notes
  **timeStart** | **string** | Timeseries starting time in ISO 8601 (required) | 
  **timeEnd** | **string** | Timeseries ending time in ISO 8601 (required) | 
  **limit** | **int32** | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [default to 100]
+ **extendedGapFilling** | **bool** | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [default to false]
 
 ### Return type
 

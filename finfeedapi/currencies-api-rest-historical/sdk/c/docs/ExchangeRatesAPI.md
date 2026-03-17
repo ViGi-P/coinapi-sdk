@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 //
 // Get the historical exchange rates between two assets in the form of the timeseries.
 //
-list_t* ExchangeRatesAPI_v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(apiClient_t *apiClient, char *asset_id_base, char *asset_id_quote, char *period_id, char *time_start, char *time_end, int *limit);
+list_t* ExchangeRatesAPI_v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(apiClient_t *apiClient, char *asset_id_base, char *asset_id_quote, char *period_id, char *time_start, char *time_end, int *limit, int *extended_gap_filling);
 ```
 
 ### Parameters
@@ -62,6 +62,7 @@ Name | Type | Description  | Notes
 **time_start** | **char \*** | Timeseries starting time in ISO 8601 (required) | [optional] 
 **time_end** | **char \*** | Timeseries ending time in ISO 8601 (required) | [optional] 
 **limit** | **int \*** | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
+**extended_gap_filling** | **int \*** | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [optional] [default to false]
 
 ### Return type
 

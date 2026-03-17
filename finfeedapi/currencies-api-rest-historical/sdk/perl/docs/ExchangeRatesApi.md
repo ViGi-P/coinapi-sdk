@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_exchangerate_asset_id_base_asset_id_quote_history_get**
-> ARRAY[V1ExchangeRatesTimeseriesItem] v1_exchangerate_asset_id_base_asset_id_quote_history_get(asset_id_base => $asset_id_base, asset_id_quote => $asset_id_quote, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit)
+> ARRAY[V1ExchangeRatesTimeseriesItem] v1_exchangerate_asset_id_base_asset_id_quote_history_get(asset_id_base => $asset_id_base, asset_id_quote => $asset_id_quote, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit, extended_gap_filling => $extended_gap_filling)
 
 Timeseries data
 
@@ -95,9 +95,10 @@ my $period_id = "period_id_example"; # string | Identifier of requested timeseri
 my $time_start = "time_start_example"; # string | Timeseries starting time in ISO 8601 (required)
 my $time_end = "time_end_example"; # string | Timeseries ending time in ISO 8601 (required)
 my $limit = 100; # int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+my $extended_gap_filling = false; # boolean | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
 
 eval {
-    my $result = $api_instance->v1_exchangerate_asset_id_base_asset_id_quote_history_get(asset_id_base => $asset_id_base, asset_id_quote => $asset_id_quote, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit);
+    my $result = $api_instance->v1_exchangerate_asset_id_base_asset_id_quote_history_get(asset_id_base => $asset_id_base, asset_id_quote => $asset_id_quote, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit, extended_gap_filling => $extended_gap_filling);
     print Dumper($result);
 };
 if ($@) {
@@ -115,6 +116,7 @@ Name | Type | Description  | Notes
  **time_start** | **string**| Timeseries starting time in ISO 8601 (required) | [optional] 
  **time_end** | **string**| Timeseries ending time in ISO 8601 (required) | [optional] 
  **limit** | **int**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
+ **extended_gap_filling** | **boolean**| If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [optional] [default to false]
 
 ### Return type
 

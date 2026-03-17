@@ -78,9 +78,10 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api
         /// <param name="timeStart">Timeseries starting time in ISO 8601 (required) (optional)</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601 (required) (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
+        /// <param name="extendedGapFilling">If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse"/>&gt;</returns>
-        Task<IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse> V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync(string assetIdBase, string assetIdQuote, Option<string> periodId = default, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse> V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync(string assetIdBase, string assetIdQuote, Option<string> periodId = default, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, Option<bool> extendedGapFilling = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Timeseries data
@@ -94,9 +95,10 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api
         /// <param name="timeStart">Timeseries starting time in ISO 8601 (required) (optional)</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601 (required) (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
+        /// <param name="extendedGapFilling">If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse"/>?&gt;</returns>
-        Task<IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse?> V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetOrDefaultAsync(string assetIdBase, string assetIdQuote, Option<string> periodId = default, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse?> V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetOrDefaultAsync(string assetIdBase, string assetIdQuote, Option<string> periodId = default, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, Option<bool> extendedGapFilling = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all current rates
@@ -611,7 +613,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref string assetIdBase, ref string assetIdQuote, ref Option<string> periodId, ref Option<string> timeStart, ref Option<string> timeEnd, ref Option<int> limit);
+        partial void FormatV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref string assetIdBase, ref string assetIdQuote, ref Option<string> periodId, ref Option<string> timeStart, ref Option<string> timeEnd, ref Option<int> limit, ref Option<bool> extendedGapFilling);
 
         /// <summary>
         /// Validates the request parameters
@@ -650,10 +652,11 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api
         /// <param name="timeStart"></param>
         /// <param name="timeEnd"></param>
         /// <param name="limit"></param>
-        private void AfterV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetDefaultImplementation(IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse apiResponseLocalVar, string assetIdBase, string assetIdQuote, Option<string> periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit)
+        /// <param name="extendedGapFilling"></param>
+        private void AfterV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetDefaultImplementation(IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse apiResponseLocalVar, string assetIdBase, string assetIdQuote, Option<string> periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit, Option<bool> extendedGapFilling)
         {
             bool suppressDefaultLog = false;
-            AfterV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit);
+            AfterV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -669,7 +672,8 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api
         /// <param name="timeStart"></param>
         /// <param name="timeEnd"></param>
         /// <param name="limit"></param>
-        partial void AfterV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref bool suppressDefaultLog, IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse apiResponseLocalVar, string assetIdBase, string assetIdQuote, Option<string> periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit);
+        /// <param name="extendedGapFilling"></param>
+        partial void AfterV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref bool suppressDefaultLog, IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse apiResponseLocalVar, string assetIdBase, string assetIdQuote, Option<string> periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit, Option<bool> extendedGapFilling);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -683,10 +687,11 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api
         /// <param name="timeStart"></param>
         /// <param name="timeEnd"></param>
         /// <param name="limit"></param>
-        private void OnErrorV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string assetIdBase, string assetIdQuote, Option<string> periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit)
+        /// <param name="extendedGapFilling"></param>
+        private void OnErrorV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string assetIdBase, string assetIdQuote, Option<string> periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit, Option<bool> extendedGapFilling)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit);
+            OnErrorV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -704,7 +709,8 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api
         /// <param name="timeStart"></param>
         /// <param name="timeEnd"></param>
         /// <param name="limit"></param>
-        partial void OnErrorV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string assetIdBase, string assetIdQuote, Option<string> periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit);
+        /// <param name="extendedGapFilling"></param>
+        partial void OnErrorV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string assetIdBase, string assetIdQuote, Option<string> periodId, Option<string> timeStart, Option<string> timeEnd, Option<int> limit, Option<bool> extendedGapFilling);
 
         /// <summary>
         /// Timeseries data Get the historical exchange rates between two assets in the form of the timeseries.
@@ -715,13 +721,14 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api
         /// <param name="timeStart">Timeseries starting time in ISO 8601 (required) (optional)</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601 (required) (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
+        /// <param name="extendedGapFilling">If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse"/>&gt;</returns>
-        public async Task<IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse?> V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetOrDefaultAsync(string assetIdBase, string assetIdQuote, Option<string> periodId = default, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse?> V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetOrDefaultAsync(string assetIdBase, string assetIdQuote, Option<string> periodId = default, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, Option<bool> extendedGapFilling = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, cancellationToken).ConfigureAwait(false);
+                return await V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -739,9 +746,10 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api
         /// <param name="timeStart">Timeseries starting time in ISO 8601 (required) (optional)</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601 (required) (optional)</param>
         /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
+        /// <param name="extendedGapFilling">If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse"/>&gt;</returns>
-        public async Task<IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse> V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync(string assetIdBase, string assetIdQuote, Option<string> periodId = default, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetApiResponse> V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync(string assetIdBase, string assetIdQuote, Option<string> periodId = default, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, Option<bool> extendedGapFilling = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -749,7 +757,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api
             {
                 ValidateV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd);
 
-                FormatV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref assetIdBase, ref assetIdQuote, ref periodId, ref timeStart, ref timeEnd, ref limit);
+                FormatV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(ref assetIdBase, ref assetIdQuote, ref periodId, ref timeStart, ref timeEnd, ref limit, ref extendedGapFilling);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -775,6 +783,9 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api
 
                     if (limit.IsSet)
                         parseQueryStringLocalVar["limit"] = ClientUtils.ParameterToString(limit.Value);
+
+                    if (extendedGapFilling.IsSet)
+                        parseQueryStringLocalVar["extended_gap_filling"] = ClientUtils.ParameterToString(extendedGapFilling.Value);
 
                     uriBuilderLocalVar.Query = parseQueryStringLocalVar.ToString();
 
@@ -814,7 +825,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api
                             }
                         }
 
-                        AfterV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetDefaultImplementation(apiResponseLocalVar, assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit);
+                        AfterV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetDefaultImplementation(apiResponseLocalVar, assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling);
 
                         Events.ExecuteOnV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(apiResponseLocalVar);
 
@@ -828,7 +839,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Api
             }
             catch(Exception e)
             {
-                OnErrorV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetDefaultImplementation(e, "/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history", uriBuilderLocalVar.Path, assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit);
+                OnErrorV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetDefaultImplementation(e, "/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history", uriBuilderLocalVar.Path, assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling);
                 Events.ExecuteOnErrorV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(e);
                 throw;
             }

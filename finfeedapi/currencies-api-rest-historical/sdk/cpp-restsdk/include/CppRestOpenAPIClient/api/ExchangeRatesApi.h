@@ -74,13 +74,15 @@ public:
     /// <param name="timeStart">Timeseries starting time in ISO 8601 (required) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="timeEnd">Timeseries ending time in ISO 8601 (required) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     /// <param name="limit">Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 0)</param>
+    /// <param name="extendedGapFilling">If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)</param>
     pplx::task<std::vector<std::shared_ptr<V1_ExchangeRatesTimeseriesItem>>> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(
         utility::string_t assetIdBase,
         utility::string_t assetIdQuote,
         boost::optional<utility::string_t> periodId,
         boost::optional<utility::string_t> timeStart,
         boost::optional<utility::string_t> timeEnd,
-        boost::optional<int32_t> limit
+        boost::optional<int32_t> limit,
+        boost::optional<bool> extendedGapFilling
     ) const;
     /// <summary>
     /// Get all current rates

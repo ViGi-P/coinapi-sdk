@@ -168,6 +168,7 @@ type ApiV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest struct {
 	timeStart *string
 	timeEnd *string
 	limit *int32
+	extendedGapFilling *bool
 }
 
 // Identifier of requested timeseries period (required, e.g. &#x60;5SEC&#x60; or &#x60;1HRS&#x60;)
@@ -191,6 +192,12 @@ func (r ApiV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest) TimeEnd(timeE
 // Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 func (r ApiV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest) Limit(limit int32) ApiV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest {
 	r.limit = &limit
+	return r
+}
+
+// If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
+func (r ApiV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest) ExtendedGapFilling(extendedGapFilling bool) ApiV1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest {
+	r.extendedGapFilling = &extendedGapFilling
 	return r
 }
 
@@ -255,6 +262,13 @@ func (a *ExchangeRatesAPIService) V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGe
 		var defaultValue int32 = 100
 		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
 		r.limit = &defaultValue
+	}
+	if r.extendedGapFilling != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "extended_gap_filling", r.extendedGapFilling, "form", "")
+	} else {
+		var defaultValue bool = false
+		parameterAddToHeaderOrQuery(localVarQueryParams, "extended_gap_filling", defaultValue, "form", "")
+		r.extendedGapFilling = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

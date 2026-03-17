@@ -117,7 +117,10 @@ class ExchangeRatesApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(String assetIdBase, String assetIdQuote, { String? periodId, String? timeStart, String? timeEnd, int? limit, }) async {
+  ///
+  /// * [bool] extendedGapFilling:
+  ///   If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
+  Future<Response> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(String assetIdBase, String assetIdQuote, { String? periodId, String? timeStart, String? timeEnd, int? limit, bool? extendedGapFilling, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history'
       .replaceAll('{asset_id_base}', assetIdBase)
@@ -141,6 +144,9 @@ class ExchangeRatesApi {
     }
     if (limit != null) {
       queryParams.addAll(_queryParams('', 'limit', limit));
+    }
+    if (extendedGapFilling != null) {
+      queryParams.addAll(_queryParams('', 'extended_gap_filling', extendedGapFilling));
     }
 
     const contentTypes = <String>[];
@@ -180,8 +186,11 @@ class ExchangeRatesApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<V1ExchangeRatesTimeseriesItem>?> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(String assetIdBase, String assetIdQuote, { String? periodId, String? timeStart, String? timeEnd, int? limit, }) async {
-    final response = await v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(assetIdBase, assetIdQuote,  periodId: periodId, timeStart: timeStart, timeEnd: timeEnd, limit: limit, );
+  ///
+  /// * [bool] extendedGapFilling:
+  ///   If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
+  Future<List<V1ExchangeRatesTimeseriesItem>?> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(String assetIdBase, String assetIdQuote, { String? periodId, String? timeStart, String? timeEnd, int? limit, bool? extendedGapFilling, }) async {
+    final response = await v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(assetIdBase, assetIdQuote,  periodId: periodId, timeStart: timeStart, timeEnd: timeEnd, limit: limit, extendedGapFilling: extendedGapFilling, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

@@ -24,7 +24,7 @@ ExchangeRatesAPI_getSpecificRate(apiClient_t *apiClient, char *asset_id_base, ch
 // Get the historical exchange rates between two assets in the form of the timeseries.
 //
 list_t*
-ExchangeRatesAPI_v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(apiClient_t *apiClient, char *asset_id_base, char *asset_id_quote, char *period_id, char *time_start, char *time_end, int *limit);
+ExchangeRatesAPI_v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(apiClient_t *apiClient, char *asset_id_base, char *asset_id_quote, char *period_id, char *time_start, char *time_end, int *limit, int *extended_gap_filling);
 
 
 // Get all current rates

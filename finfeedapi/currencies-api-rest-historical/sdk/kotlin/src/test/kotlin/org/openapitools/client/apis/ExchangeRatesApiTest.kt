@@ -48,7 +48,8 @@ class ExchangeRatesApiTest : ShouldSpec() {
             //val timeStart : kotlin.String = timeStart_example // kotlin.String | Timeseries starting time in ISO 8601 (required)
             //val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601 (required)
             //val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-            //val result : kotlin.collections.List<V1ExchangeRatesTimeseriesItem> = apiInstance.v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit)
+            //val extendedGapFilling : kotlin.Boolean = true // kotlin.Boolean | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
+            //val result : kotlin.collections.List<V1ExchangeRatesTimeseriesItem> = apiInstance.v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling)
             //result shouldBe ("TODO")
         }
 

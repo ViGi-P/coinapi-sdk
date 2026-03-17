@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_exchangerate_asset_id_base_asset_id_quote_history_get**
-> v1_exchangerate_asset_id_base_asset_id_quote_history_get (asset_id_base: STRING_32 ; asset_id_quote: STRING_32 ; period_id:  detachable STRING_32 ; time_start:  detachable STRING_32 ; time_end:  detachable STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [V1_EXCHANGE_RATES_TIMESERIES_ITEM]
+> v1_exchangerate_asset_id_base_asset_id_quote_history_get (asset_id_base: STRING_32 ; asset_id_quote: STRING_32 ; period_id:  detachable STRING_32 ; time_start:  detachable STRING_32 ; time_end:  detachable STRING_32 ; limit:  detachable INTEGER_32 ; extended_gap_filling:  detachable BOOLEAN ): detachable LIST [V1_EXCHANGE_RATES_TIMESERIES_ITEM]
 
 
 Timeseries data
@@ -61,6 +61,7 @@ Name | Type | Description  | Notes
  **time_start** | **STRING_32**| Timeseries starting time in ISO 8601 (required) | [optional] [default to null]
  **time_end** | **STRING_32**| Timeseries ending time in ISO 8601 (required) | [optional] [default to null]
  **limit** | **INTEGER_32**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
+ **extended_gap_filling** | **BOOLEAN**| If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [optional] [default to false]
 
 ### Return type
 

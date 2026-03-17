@@ -51,13 +51,13 @@ getSpecificRate assetIdBase_path assetIdQuote_path time_query =
 Get the historical exchange rates between two assets in the form of the timeseries.
 
 -}
-v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet : String -> String -> Maybe String -> Maybe String -> Maybe String -> Maybe Int -> Api.Request (List Api.Data.V1ExchangeRatesTimeseriesItem)
-v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet assetIdBase_path assetIdQuote_path periodId_query timeStart_query timeEnd_query limit_query =
+v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet : String -> String -> Maybe String -> Maybe String -> Maybe String -> Maybe Int -> Maybe Bool -> Api.Request (List Api.Data.V1ExchangeRatesTimeseriesItem)
+v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet assetIdBase_path assetIdQuote_path periodId_query timeStart_query timeEnd_query limit_query extendedGapFilling_query =
     Api.request
         "GET"
         "/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history"
         [ ( "asset_id_base", identity assetIdBase_path ), ( "asset_id_quote", identity assetIdQuote_path ) ]
-        [ ( "period_id", Maybe.map identity periodId_query ), ( "time_start", Maybe.map identity timeStart_query ), ( "time_end", Maybe.map identity timeEnd_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
+        [ ( "period_id", Maybe.map identity periodId_query ), ( "time_start", Maybe.map identity timeStart_query ), ( "time_end", Maybe.map identity timeEnd_query ), ( "limit", Maybe.map String.fromInt limit_query ), ( "extended_gap_filling", Maybe.map (\val -> if val then "true" else "false") extendedGapFilling_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.v1ExchangeRatesTimeseriesItemDecoder)

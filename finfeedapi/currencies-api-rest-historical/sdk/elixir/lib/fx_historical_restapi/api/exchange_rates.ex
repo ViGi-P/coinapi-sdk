@@ -60,6 +60,7 @@ defmodule FXHistoricalRESTAPI.Api.ExchangeRates do
     - `:time_start` (String.t): Timeseries starting time in ISO 8601 (required)
     - `:time_end` (String.t): Timeseries ending time in ISO 8601 (required)
     - `:limit` (integer()): Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+    - `:extended_gap_filling` (boolean()): If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
 
   ### Returns
 
@@ -72,7 +73,8 @@ defmodule FXHistoricalRESTAPI.Api.ExchangeRates do
       :period_id => :query,
       :time_start => :query,
       :time_end => :query,
-      :limit => :query
+      :limit => :query,
+      :extended_gap_filling => :query
     }
 
     request =

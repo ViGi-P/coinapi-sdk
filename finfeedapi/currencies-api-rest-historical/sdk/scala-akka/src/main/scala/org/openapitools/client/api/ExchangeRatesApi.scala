@@ -63,14 +63,16 @@ class ExchangeRatesApi(baseUrl: String) {
    * @param timeStart Timeseries starting time in ISO 8601 (required)
    * @param timeEnd Timeseries ending time in ISO 8601 (required)
    * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+   * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
    */
-  def v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: String, assetIdQuote: String, periodId: Option[String] = None, timeStart: Option[String] = None, timeEnd: Option[String] = None, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue): ApiRequest[Seq[ExchangeRatesTimeseriesItem]] =
+  def v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: String, assetIdQuote: String, periodId: Option[String] = None, timeStart: Option[String] = None, timeEnd: Option[String] = None, limit: Option[Int] = None, extendedGapFilling: Option[Boolean] = None)(implicit apiKey: ApiKeyValue): ApiRequest[Seq[ExchangeRatesTimeseriesItem]] =
     ApiRequest[Seq[ExchangeRatesTimeseriesItem]](ApiMethods.GET, baseUrl, "/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history", "application/json")
       .withApiKey(apiKey, "X-CoinAPI-Key", HEADER)
       .withQueryParam("period_id", periodId)
       .withQueryParam("time_start", timeStart)
       .withQueryParam("time_end", timeEnd)
       .withQueryParam("limit", limit)
+      .withQueryParam("extended_gap_filling", extendedGapFilling)
       .withPathParam("asset_id_base", assetIdBase)
       .withPathParam("asset_id_quote", assetIdQuote)
       .withSuccessResponse[Seq[ExchangeRatesTimeseriesItem]](200)
