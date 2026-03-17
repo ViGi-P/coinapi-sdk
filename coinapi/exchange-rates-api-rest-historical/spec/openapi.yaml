@@ -544,7 +544,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-03-16T06:04:26.1291892Z",
+  "time": "2026-03-17T06:04:54.6103346Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -555,7 +555,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-03-16T06:04:26.1291892Z",
+  "time": "2026-03-17T06:04:54.6103346Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -566,7 +566,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-03-16T06:04:26.1291892Z",
+  "time": "2026-03-17T06:04:54.6103346Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -844,6 +844,12 @@ paths:
             type: integer
             format: int32
             default: 100
+        - name: extended_gap_filling
+          in: query
+          description: 'If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)'
+          schema:
+            type: boolean
+            default: false
       responses:
         '200':
           description: successful operation
