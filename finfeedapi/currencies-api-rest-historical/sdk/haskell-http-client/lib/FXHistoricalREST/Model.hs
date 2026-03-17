@@ -77,6 +77,9 @@ newtype AssetIdBase = AssetIdBase { unAssetIdBase :: Text } deriving (P.Eq, P.Sh
 -- ** AssetIdQuote
 newtype AssetIdQuote = AssetIdQuote { unAssetIdQuote :: Text } deriving (P.Eq, P.Show)
 
+-- ** ExtendedGapFilling
+newtype ExtendedGapFilling = ExtendedGapFilling { unExtendedGapFilling :: Bool } deriving (P.Eq, P.Show)
+
 -- ** FilterAssetId
 newtype FilterAssetId = FilterAssetId { unFilterAssetId :: Text } deriving (P.Eq, P.Show)
 

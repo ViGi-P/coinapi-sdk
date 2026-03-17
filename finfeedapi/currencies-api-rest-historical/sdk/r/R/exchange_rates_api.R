@@ -42,6 +42,7 @@
 #' var_time_start <- "time_start_example" # character | Timeseries starting time in ISO 8601 (required) (Optional)
 #' var_time_end <- "time_end_example" # character | Timeseries ending time in ISO 8601 (required) (Optional)
 #' var_limit <- 100 # integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (Optional)
+#' var_extended_gap_filling <- FALSE # character | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (Optional)
 #'
 #' #Timeseries data
 #' api_instance <- ExchangeRatesApi$new()
@@ -50,8 +51,8 @@
 #' api_instance$api_client$api_keys["X-CoinAPI-Key"] <- Sys.getenv("API_KEY")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(var_asset_id_base, var_asset_id_quote, period_id = var_period_id, time_start = var_time_start, time_end = var_time_end, limit = var_limitdata_file = "result.txt")
-#' result <- api_instance$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(var_asset_id_base, var_asset_id_quote, period_id = var_period_id, time_start = var_time_start, time_end = var_time_end, limit = var_limit)
+#' # result <- api_instance$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(var_asset_id_base, var_asset_id_quote, period_id = var_period_id, time_start = var_time_start, time_end = var_time_end, limit = var_limit, extended_gap_filling = var_extended_gap_fillingdata_file = "result.txt")
+#' result <- api_instance$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(var_asset_id_base, var_asset_id_quote, period_id = var_period_id, time_start = var_time_start, time_end = var_time_end, limit = var_limit, extended_gap_filling = var_extended_gap_filling)
 #' dput(result)
 #'
 #'
@@ -258,13 +259,14 @@ ExchangeRatesApi <- R6::R6Class(
     #' @param time_start (optional) Timeseries starting time in ISO 8601 (required)
     #' @param time_end (optional) Timeseries ending time in ISO 8601 (required)
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
+    #' @param extended_gap_filling (optional) If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[V1ExchangeRatesTimeseriesItem]
-    V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet = function(asset_id_base, asset_id_quote, period_id = NULL, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
-      local_var_response <- self$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(asset_id_base, asset_id_quote, period_id, time_start, time_end, limit, data_file = data_file, ..., .parse = .parse)
+    V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet = function(asset_id_base, asset_id_quote, period_id = NULL, time_start = NULL, time_end = NULL, limit = 100, extended_gap_filling = FALSE, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(asset_id_base, asset_id_quote, period_id, time_start, time_end, limit, extended_gap_filling, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -285,12 +287,13 @@ ExchangeRatesApi <- R6::R6Class(
     #' @param time_start (optional) Timeseries starting time in ISO 8601 (required)
     #' @param time_end (optional) Timeseries ending time in ISO 8601 (required)
     #' @param limit (optional) Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
+    #' @param extended_gap_filling (optional) If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (default value: FALSE)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[V1ExchangeRatesTimeseriesItem]) with additional information such as HTTP status code, headers
-    V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo = function(asset_id_base, asset_id_quote, period_id = NULL, time_start = NULL, time_end = NULL, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+    V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo = function(asset_id_base, asset_id_quote, period_id = NULL, time_start = NULL, time_end = NULL, limit = 100, extended_gap_filling = FALSE, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -332,6 +335,10 @@ ExchangeRatesApi <- R6::R6Class(
         stop("Invalid value for `limit` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet, `limit` is not nullable")
       }
 
+      if (!missing(`extended_gap_filling`) && is.null(`extended_gap_filling`)) {
+        stop("Invalid value for `extended_gap_filling` when calling ExchangeRatesApi$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet, `extended_gap_filling` is not nullable")
+      }
+
       query_params[["period_id"]] <- `period_id`
 
       query_params[["time_start"]] <- `time_start`
@@ -339,6 +346,8 @@ ExchangeRatesApi <- R6::R6Class(
       query_params[["time_end"]] <- `time_end`
 
       query_params[["limit"]] <- `limit`
+
+      query_params[["extended_gap_filling"]] <- `extended_gap_filling`
 
       local_var_url_path <- "/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history"
       if (!missing(`asset_id_base`)) {

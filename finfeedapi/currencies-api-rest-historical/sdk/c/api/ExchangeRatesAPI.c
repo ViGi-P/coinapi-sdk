@@ -136,7 +136,7 @@ end:
 // Get the historical exchange rates between two assets in the form of the timeseries.
 //
 list_t*
-ExchangeRatesAPI_v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(apiClient_t *apiClient, char *asset_id_base, char *asset_id_quote, char *period_id, char *time_start, char *time_end, int *limit)
+ExchangeRatesAPI_v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(apiClient_t *apiClient, char *asset_id_base, char *asset_id_quote, char *period_id, char *time_start, char *time_end, int *limit, int *extended_gap_filling)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -227,6 +227,19 @@ ExchangeRatesAPI_v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(apiClient_t *ap
         snprintf(valueQuery_limit, MAX_NUMBER_LENGTH, "%d", *limit);
         keyPairQuery_limit = keyValuePair_create(keyQuery_limit, valueQuery_limit);
         list_addElement(localVarQueryParameters,keyPairQuery_limit);
+    }
+
+    // query parameters
+    char *keyQuery_extended_gap_filling = NULL;
+    char * valueQuery_extended_gap_filling = NULL;
+    keyValuePair_t *keyPairQuery_extended_gap_filling = 0;
+    if (extended_gap_filling)
+    {
+        keyQuery_extended_gap_filling = strdup("extended_gap_filling");
+        valueQuery_extended_gap_filling = calloc(1,MAX_NUMBER_LENGTH);
+        snprintf(valueQuery_extended_gap_filling, MAX_NUMBER_LENGTH, "%d", *extended_gap_filling);
+        keyPairQuery_extended_gap_filling = keyValuePair_create(keyQuery_extended_gap_filling, valueQuery_extended_gap_filling);
+        list_addElement(localVarQueryParameters,keyPairQuery_extended_gap_filling);
     }
     list_addElement(localVarHeaderType,"text/plain"); //produces
     list_addElement(localVarHeaderType,"application/json"); //produces
@@ -328,6 +341,18 @@ ExchangeRatesAPI_v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(apiClient_t *ap
     if(keyPairQuery_limit){
         keyValuePair_free(keyPairQuery_limit);
         keyPairQuery_limit = NULL;
+    }
+    if(keyQuery_extended_gap_filling){
+        free(keyQuery_extended_gap_filling);
+        keyQuery_extended_gap_filling = NULL;
+    }
+    if(valueQuery_extended_gap_filling){
+        free(valueQuery_extended_gap_filling);
+        valueQuery_extended_gap_filling = NULL;
+    }
+    if(keyPairQuery_extended_gap_filling){
+        keyValuePair_free(keyPairQuery_extended_gap_filling);
+        keyPairQuery_extended_gap_filling = NULL;
     }
     return elementToReturn;
 end:

@@ -104,10 +104,11 @@ API.Client.ExchangeRatesApi.prototype.getSpecificRate = function(assetIdBase, as
  * @param {!string=} opt_timeStart Timeseries starting time in ISO 8601 (required)
  * @param {!string=} opt_timeEnd Timeseries ending time in ISO 8601 (required)
  * @param {!number=} opt_limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+ * @param {!boolean=} opt_extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.v1.ExchangeRatesTimeseriesItem>>}
  */
-API.Client.ExchangeRatesApi.prototype.v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet = function(assetIdBase, assetIdQuote, opt_periodId, opt_timeStart, opt_timeEnd, opt_limit, opt_extraHttpRequestParams) {
+API.Client.ExchangeRatesApi.prototype.v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet = function(assetIdBase, assetIdQuote, opt_periodId, opt_timeStart, opt_timeEnd, opt_limit, opt_extendedGapFilling, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history'
       .replace('{' + 'asset_id_base' + '}', String(assetIdBase))
@@ -140,6 +141,10 @@ API.Client.ExchangeRatesApi.prototype.v1ExchangerateAssetIdBaseAssetIdQuoteHisto
 
   if (opt_limit !== undefined) {
     queryParameters['limit'] = opt_limit;
+  }
+
+  if (opt_extendedGapFilling !== undefined) {
+    queryParameters['extended_gap_filling'] = opt_extendedGapFilling;
   }
 
   /** @type {!Object} */

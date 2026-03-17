@@ -454,15 +454,16 @@ class ExchangeRatesApi
      * @param  string|null $time_start Timeseries starting time in ISO 8601 (required) (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (required) (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+     * @param  bool|null $extended_gap_filling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\V1ExchangeRatesTimeseriesItem[]
      */
-    public function v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet($asset_id_base, $asset_id_quote, $period_id = null, $time_start = null, $time_end = null, $limit = 100, string $contentType = self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'][0])
+    public function v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet($asset_id_base, $asset_id_quote, $period_id = null, $time_start = null, $time_end = null, $limit = 100, $extended_gap_filling = false, string $contentType = self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'][0])
     {
-        list($response) = $this->v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo($asset_id_base, $asset_id_quote, $period_id, $time_start, $time_end, $limit, $contentType);
+        list($response) = $this->v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo($asset_id_base, $asset_id_quote, $period_id, $time_start, $time_end, $limit, $extended_gap_filling, $contentType);
         return $response;
     }
 
@@ -477,15 +478,16 @@ class ExchangeRatesApi
      * @param  string|null $time_start Timeseries starting time in ISO 8601 (required) (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (required) (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+     * @param  bool|null $extended_gap_filling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\V1ExchangeRatesTimeseriesItem[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo($asset_id_base, $asset_id_quote, $period_id = null, $time_start = null, $time_end = null, $limit = 100, string $contentType = self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'][0])
+    public function v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo($asset_id_base, $asset_id_quote, $period_id = null, $time_start = null, $time_end = null, $limit = 100, $extended_gap_filling = false, string $contentType = self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'][0])
     {
-        $request = $this->v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest($asset_id_base, $asset_id_quote, $period_id, $time_start, $time_end, $limit, $contentType);
+        $request = $this->v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest($asset_id_base, $asset_id_quote, $period_id, $time_start, $time_end, $limit, $extended_gap_filling, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -567,14 +569,15 @@ class ExchangeRatesApi
      * @param  string|null $time_start Timeseries starting time in ISO 8601 (required) (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (required) (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+     * @param  bool|null $extended_gap_filling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync($asset_id_base, $asset_id_quote, $period_id = null, $time_start = null, $time_end = null, $limit = 100, string $contentType = self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'][0])
+    public function v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync($asset_id_base, $asset_id_quote, $period_id = null, $time_start = null, $time_end = null, $limit = 100, $extended_gap_filling = false, string $contentType = self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'][0])
     {
-        return $this->v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsyncWithHttpInfo($asset_id_base, $asset_id_quote, $period_id, $time_start, $time_end, $limit, $contentType)
+        return $this->v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsyncWithHttpInfo($asset_id_base, $asset_id_quote, $period_id, $time_start, $time_end, $limit, $extended_gap_filling, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -593,15 +596,16 @@ class ExchangeRatesApi
      * @param  string|null $time_start Timeseries starting time in ISO 8601 (required) (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (required) (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+     * @param  bool|null $extended_gap_filling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsyncWithHttpInfo($asset_id_base, $asset_id_quote, $period_id = null, $time_start = null, $time_end = null, $limit = 100, string $contentType = self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'][0])
+    public function v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsyncWithHttpInfo($asset_id_base, $asset_id_quote, $period_id = null, $time_start = null, $time_end = null, $limit = 100, $extended_gap_filling = false, string $contentType = self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'][0])
     {
         $returnType = '\OpenAPI\Client\Model\V1ExchangeRatesTimeseriesItem[]';
-        $request = $this->v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest($asset_id_base, $asset_id_quote, $period_id, $time_start, $time_end, $limit, $contentType);
+        $request = $this->v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest($asset_id_base, $asset_id_quote, $period_id, $time_start, $time_end, $limit, $extended_gap_filling, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -648,12 +652,13 @@ class ExchangeRatesApi
      * @param  string|null $time_start Timeseries starting time in ISO 8601 (required) (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (required) (optional)
      * @param  int|null $limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
+     * @param  bool|null $extended_gap_filling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest($asset_id_base, $asset_id_quote, $period_id = null, $time_start = null, $time_end = null, $limit = 100, string $contentType = self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'][0])
+    public function v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetRequest($asset_id_base, $asset_id_quote, $period_id = null, $time_start = null, $time_end = null, $limit = 100, $extended_gap_filling = false, string $contentType = self::contentTypes['v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'][0])
     {
 
         // verify the required parameter 'asset_id_base' is set
@@ -669,6 +674,7 @@ class ExchangeRatesApi
                 'Missing the required parameter $asset_id_quote when calling v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet'
             );
         }
+
 
 
 
@@ -714,6 +720,15 @@ class ExchangeRatesApi
             $limit,
             'limit', // param base name
             'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $extended_gap_filling,
+            'extended_gap_filling', // param base name
+            'boolean', // openApiType
             'form', // style
             true, // explode
             false // required

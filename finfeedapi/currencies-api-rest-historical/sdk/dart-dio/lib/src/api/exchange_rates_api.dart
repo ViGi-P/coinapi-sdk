@@ -124,6 +124,7 @@ class ExchangeRatesApi {
   /// * [timeStart] - Timeseries starting time in ISO 8601 (required)
   /// * [timeEnd] - Timeseries ending time in ISO 8601 (required)
   /// * [limit] - Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+  /// * [extendedGapFilling] - If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -140,6 +141,7 @@ class ExchangeRatesApi {
     String? timeStart,
     String? timeEnd,
     int? limit = 100,
+    bool? extendedGapFilling = false,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -172,6 +174,7 @@ class ExchangeRatesApi {
       if (timeStart != null) r'time_start': encodeQueryParameter(_serializers, timeStart, const FullType(String)),
       if (timeEnd != null) r'time_end': encodeQueryParameter(_serializers, timeEnd, const FullType(String)),
       if (limit != null) r'limit': encodeQueryParameter(_serializers, limit, const FullType(int)),
+      if (extendedGapFilling != null) r'extended_gap_filling': encodeQueryParameter(_serializers, extendedGapFilling, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(

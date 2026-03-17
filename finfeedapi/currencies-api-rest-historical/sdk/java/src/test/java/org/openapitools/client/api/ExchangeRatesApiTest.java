@@ -65,7 +65,8 @@ public class ExchangeRatesApiTest {
         String timeStart = null;
         String timeEnd = null;
         Integer limit = null;
-        List<V1ExchangeRatesTimeseriesItem> response = api.v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit);
+        Boolean extendedGapFilling = null;
+        List<V1ExchangeRatesTimeseriesItem> response = api.v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling);
         // TODO: test validations
     }
 

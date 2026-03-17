@@ -43,12 +43,13 @@ feature -- Test routines
             l_time_start: STRING_32
             l_time_end: STRING_32
             l_limit: INTEGER_32
+            l_extended_gap_filling: BOOLEAN
         do
             -- TODO: Initialize required params.
             -- l_asset_id_base
             -- l_asset_id_quote
 
-            -- l_response := api.v1_exchangerate_asset_id_base_asset_id_quote_history_get(l_asset_id_base, l_asset_id_quote, l_period_id, l_time_start, l_time_end, l_limit)
+            -- l_response := api.v1_exchangerate_asset_id_base_asset_id_quote_history_get(l_asset_id_base, l_asset_id_quote, l_period_id, l_time_start, l_time_end, l_limit, l_extended_gap_filling)
             assert ("not_implemented", False)
         end
 

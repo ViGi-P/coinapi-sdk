@@ -146,8 +146,10 @@ object Example extends App {
     val timeEnd: String = timeEnd_example // String | Timeseries ending time in ISO 8601 (required)
 
     val limit: Int = 56 // Int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+
+    val extendedGapFilling: Boolean = true // Boolean | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
     
-    val request = apiInstance.v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit)
+    val request = apiInstance.v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -181,6 +183,7 @@ Name | Type | Description  | Notes
  **timeStart** | **String**| Timeseries starting time in ISO 8601 (required) | [optional]
  **timeEnd** | **String**| Timeseries ending time in ISO 8601 (required) | [optional]
  **limit** | **Int**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional]
+ **extendedGapFilling** | **Boolean**| If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [optional]
 
 ### Return type
 

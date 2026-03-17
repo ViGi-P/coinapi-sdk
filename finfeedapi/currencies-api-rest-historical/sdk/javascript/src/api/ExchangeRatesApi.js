@@ -108,6 +108,7 @@ export default class ExchangeRatesApi {
      * @param {String} [timeStart] Timeseries starting time in ISO 8601 (required)
      * @param {String} [timeEnd] Timeseries ending time in ISO 8601 (required)
      * @param {Number} [limit = 100)] Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+     * @param {Boolean} [extendedGapFilling = false)] If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
      * @param {module:api/ExchangeRatesApi~v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/V1ExchangeRatesTimeseriesItem>}
      */
@@ -131,7 +132,8 @@ export default class ExchangeRatesApi {
         'period_id': opts['periodId'],
         'time_start': opts['timeStart'],
         'time_end': opts['timeEnd'],
-        'limit': opts['limit']
+        'limit': opts['limit'],
+        'extended_gap_filling': opts['extendedGapFilling']
       };
       let headerParams = {
       };

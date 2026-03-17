@@ -30,6 +30,7 @@ test_that("V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet", {
   # @param time_start character Timeseries starting time in ISO 8601 (required) (optional)
   # @param time_end character Timeseries ending time in ISO 8601 (required) (optional)
   # @param limit integer Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional)
+  # @param extended_gap_filling character If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (optional)
   # @return [array[V1ExchangeRatesTimeseriesItem]]
 
   # uncomment below to test the operation

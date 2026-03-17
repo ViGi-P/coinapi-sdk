@@ -115,7 +115,8 @@ opts = {
   period_id: 'period_id_example', # String | Identifier of requested timeseries period (required, e.g. `5SEC` or `1HRS`)
   time_start: 'time_start_example', # String | Timeseries starting time in ISO 8601 (required)
   time_end: 'time_end_example', # String | Timeseries ending time in ISO 8601 (required)
-  limit: 56 # Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+  limit: 56, # Integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+  extended_gap_filling: true # Boolean | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
 }
 
 begin
@@ -155,6 +156,7 @@ end
 | **time_start** | **String** | Timeseries starting time in ISO 8601 (required) | [optional] |
 | **time_end** | **String** | Timeseries ending time in ISO 8601 (required) | [optional] |
 | **limit** | **Integer** | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional][default to 100] |
+| **extended_gap_filling** | **Boolean** | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [optional][default to false] |
 
 ### Return type
 

@@ -134,8 +134,9 @@ export class ExchangeRatesApi {
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
      * @param limit Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+     * @param extendedGapFilling If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
      */
-    public v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, extendedGapFilling?: boolean, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.V1ExchangeRatesTimeseriesItem>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -164,6 +165,9 @@ export class ExchangeRatesApi {
         }
         if (limit !== null && limit !== undefined) {
             queryParameters['limit'] = <string><any>limit;
+        }
+        if (extendedGapFilling !== null && extendedGapFilling !== undefined) {
+            queryParameters['extended_gap_filling'] = <string><any>extendedGapFilling;
         }
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);

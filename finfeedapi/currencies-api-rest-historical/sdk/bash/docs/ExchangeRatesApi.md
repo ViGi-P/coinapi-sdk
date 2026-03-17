@@ -61,7 +61,7 @@ Get the historical exchange rates between two assets in the form of the timeseri
 ### Example
 
 ```bash
- v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet asset_id_base=value asset_id_quote=value  period_id=value  time_start=value  time_end=value  limit=value
+ v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet asset_id_base=value asset_id_quote=value  period_id=value  time_start=value  time_end=value  limit=value  extended_gap_filling=value
 ```
 
 ### Parameters
@@ -75,6 +75,7 @@ Name | Type | Description  | Notes
  **timeStart** | **string** | Timeseries starting time in ISO 8601 (required) | [optional] [default to null]
  **timeEnd** | **string** | Timeseries ending time in ISO 8601 (required) | [optional] [default to null]
  **limit** | **integer** | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
+ **extendedGapFilling** | **boolean** | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [optional] [default to false]
 
 ### Return type
 

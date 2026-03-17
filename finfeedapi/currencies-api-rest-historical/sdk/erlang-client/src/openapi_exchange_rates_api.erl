@@ -41,7 +41,7 @@ v1_exchangerate_asset_id_base_asset_id_quote_history_get(Ctx, AssetIdBase, Asset
 
     Method = get,
     Path = [?BASE_URL, "/v1/exchangerate/", AssetIdBase, "/", AssetIdQuote, "/history"],
-    QS = lists:flatten([])++openapi_utils:optional_params(['period_id', 'time_start', 'time_end', 'limit'], _OptionalParams),
+    QS = lists:flatten([])++openapi_utils:optional_params(['period_id', 'time_start', 'time_end', 'limit', 'extended_gap_filling'], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),

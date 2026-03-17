@@ -81,7 +81,7 @@ try {
 ## `v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet()`
 
 ```php
-v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet($asset_id_base, $asset_id_quote, $period_id, $time_start, $time_end, $limit): \OpenAPI\Client\Model\V1ExchangeRatesTimeseriesItem[]
+v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet($asset_id_base, $asset_id_quote, $period_id, $time_start, $time_end, $limit, $extended_gap_filling): \OpenAPI\Client\Model\V1ExchangeRatesTimeseriesItem[]
 ```
 
 Timeseries data
@@ -113,9 +113,10 @@ $period_id = 'period_id_example'; // string | Identifier of requested timeseries
 $time_start = 'time_start_example'; // string | Timeseries starting time in ISO 8601 (required)
 $time_end = 'time_end_example'; // string | Timeseries ending time in ISO 8601 (required)
 $limit = 100; // int | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
+$extended_gap_filling = false; // bool | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
 
 try {
-    $result = $apiInstance->v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet($asset_id_base, $asset_id_quote, $period_id, $time_start, $time_end, $limit);
+    $result = $apiInstance->v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet($asset_id_base, $asset_id_quote, $period_id, $time_start, $time_end, $limit, $extended_gap_filling);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExchangeRatesApi->v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet: ', $e->getMessage(), PHP_EOL;
@@ -132,6 +133,7 @@ try {
 | **time_start** | **string**| Timeseries starting time in ISO 8601 (required) | [optional] |
 | **time_end** | **string**| Timeseries ending time in ISO 8601 (required) | [optional] |
 | **limit** | **int**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
+| **extended_gap_filling** | **bool**| If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [optional] [default to false] |
 
 ### Return type
 

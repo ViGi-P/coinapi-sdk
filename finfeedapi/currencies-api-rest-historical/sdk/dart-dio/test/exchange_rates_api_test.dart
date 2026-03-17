@@ -20,7 +20,7 @@ void main() {
     //
     // Get the historical exchange rates between two assets in the form of the timeseries.
     //
-    //Future<BuiltList<V1ExchangeRatesTimeseriesItem>> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(String assetIdBase, String assetIdQuote, { String periodId, String timeStart, String timeEnd, int limit }) async
+    //Future<BuiltList<V1ExchangeRatesTimeseriesItem>> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(String assetIdBase, String assetIdQuote, { String periodId, String timeStart, String timeEnd, int limit, bool extendedGapFilling }) async
     test('test v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet', () async {
       // TODO
     });

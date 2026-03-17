@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet**
-> array[V1ExchangeRatesTimeseriesItem] V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(asset_id_base, asset_id_quote, period_id = var.period_id, time_start = var.time_start, time_end = var.time_end, limit = 100)
+> array[V1ExchangeRatesTimeseriesItem] V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(asset_id_base, asset_id_quote, period_id = var.period_id, time_start = var.time_start, time_end = var.time_end, limit = 100, extended_gap_filling = FALSE)
 
 Timeseries data
 
@@ -83,13 +83,14 @@ var_period_id <- "period_id_example" # character | Identifier of requested times
 var_time_start <- "time_start_example" # character | Timeseries starting time in ISO 8601 (required) (Optional)
 var_time_end <- "time_end_example" # character | Timeseries ending time in ISO 8601 (required) (Optional)
 var_limit <- 100 # integer | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (Optional)
+var_extended_gap_filling <- FALSE # character | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) (Optional)
 
 api_instance <- ExchangeRatesApi$new()
 # Configure API key authorization: APIKey
 api_instance$api_client$api_keys["X-CoinAPI-Key"] <- Sys.getenv("API_KEY")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(var_asset_id_base, var_asset_id_quote, period_id = var_period_id, time_start = var_time_start, time_end = var_time_end, limit = var_limitdata_file = "result.txt")
-result <- api_instance$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(var_asset_id_base, var_asset_id_quote, period_id = var_period_id, time_start = var_time_start, time_end = var_time_end, limit = var_limit)
+# result <- api_instance$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(var_asset_id_base, var_asset_id_quote, period_id = var_period_id, time_start = var_time_start, time_end = var_time_end, limit = var_limit, extended_gap_filling = var_extended_gap_fillingdata_file = "result.txt")
+result <- api_instance$V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(var_asset_id_base, var_asset_id_quote, period_id = var_period_id, time_start = var_time_start, time_end = var_time_end, limit = var_limit, extended_gap_filling = var_extended_gap_filling)
 dput(result)
 ```
 
@@ -103,6 +104,7 @@ Name | Type | Description  | Notes
  **time_start** | **character**| Timeseries starting time in ISO 8601 (required) | [optional] 
  **time_end** | **character**| Timeseries ending time in ISO 8601 (required) | [optional] 
  **limit** | **integer**| Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
+ **extended_gap_filling** | **character**| If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [optional] [default to FALSE]
 
 ### Return type
 

@@ -49,7 +49,7 @@ Retrieves the exchange rate for a specific base and quote asset at a given time 
 
 <a id="v1exchangerateassetidbaseassetidquotehistoryget"></a>
 # **V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet**
-> List&lt;V1ExchangeRatesTimeseriesItem&gt; V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet (string assetIdBase, string assetIdQuote, string periodId = null, string timeStart = null, string timeEnd = null, int limit = null)
+> List&lt;V1ExchangeRatesTimeseriesItem&gt; V1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet (string assetIdBase, string assetIdQuote, string periodId = null, string timeStart = null, string timeEnd = null, int limit = null, bool extendedGapFilling = null)
 
 Timeseries data
 
@@ -66,6 +66,7 @@ Get the historical exchange rates between two assets in the form of the timeseri
 | **timeStart** | **string** | Timeseries starting time in ISO 8601 (required) | [optional]  |
 | **timeEnd** | **string** | Timeseries ending time in ISO 8601 (required) | [optional]  |
 | **limit** | **int** | Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100] |
+| **extendedGapFilling** | **bool** | If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false) | [optional] [default to false] |
 
 ### Return type
 

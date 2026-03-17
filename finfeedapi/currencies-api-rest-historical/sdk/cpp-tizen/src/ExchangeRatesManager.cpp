@@ -261,7 +261,7 @@ static bool v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetProcessor(MemoryStruc
 }
 
 static bool v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetHelper(char * accessToken,
-	std::string assetIdBase, std::string assetIdQuote, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
+	std::string assetIdBase, std::string assetIdQuote, std::string periodId, std::string timeStart, std::string timeEnd, int limit, bool extendedGapFilling, 
 	void(* handler)(std::list<V1.ExchangeRatesTimeseriesItem>, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -304,6 +304,13 @@ static bool v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetHelper(char * accessT
 	queryParams.insert(pair<string, string>("limit", itemAtq));
 	if( itemAtq.empty()==true){
 		queryParams.erase("limit");
+	}
+
+
+	itemAtq = stringify(&extendedGapFilling, "bool");
+	queryParams.insert(pair<string, string>("extended_gap_filling", itemAtq));
+	if( itemAtq.empty()==true){
+		queryParams.erase("extended_gap_filling");
 	}
 
 	string mBody = "";
@@ -372,22 +379,22 @@ static bool v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetHelper(char * accessT
 
 
 bool ExchangeRatesManager::v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetAsync(char * accessToken,
-	std::string assetIdBase, std::string assetIdQuote, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
+	std::string assetIdBase, std::string assetIdQuote, std::string periodId, std::string timeStart, std::string timeEnd, int limit, bool extendedGapFilling, 
 	void(* handler)(std::list<V1.ExchangeRatesTimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetHelper(accessToken,
-	assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, 
+	assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling, 
 	handler, userData, true);
 }
 
 bool ExchangeRatesManager::v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetSync(char * accessToken,
-	std::string assetIdBase, std::string assetIdQuote, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
+	std::string assetIdBase, std::string assetIdQuote, std::string periodId, std::string timeStart, std::string timeEnd, int limit, bool extendedGapFilling, 
 	void(* handler)(std::list<V1.ExchangeRatesTimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetHelper(accessToken,
-	assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, 
+	assetIdBase, assetIdQuote, periodId, timeStart, timeEnd, limit, extendedGapFilling, 
 	handler, userData, false);
 }
 
