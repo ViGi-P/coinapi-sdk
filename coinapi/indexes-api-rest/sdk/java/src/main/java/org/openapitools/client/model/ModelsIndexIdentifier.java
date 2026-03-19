@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an index id
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-13T06:06:23.219075931Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-19T06:04:27.221016470Z[Etc/UTC]", comments = "Generator version: 7.20.0")
 public class ModelsIndexIdentifier {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

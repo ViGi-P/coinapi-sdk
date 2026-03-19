@@ -8,12 +8,6 @@ src/Helpers.cpp
 src/Helpers.h
 src/IndexesManager.cpp
 src/IndexesManager.h
-src/MetadataExchange.cpp
-src/MetadataExchange.h
-src/MetadataManager.cpp
-src/MetadataManager.h
-src/MetadataTimeseriesPeriod.cpp
-src/MetadataTimeseriesPeriod.h
 src/ModelsIndexDefinitionSnapshotEntry.cpp
 src/ModelsIndexDefinitionSnapshotEntry.h
 src/ModelsIndexIdentifier.cpp
@@ -29,6 +23,4 @@ src/ModelsIndexValueComponent.h
 src/NetClient.cpp
 src/NetClient.h
 src/Object.h
-src/PeriodsManager.cpp
-src/PeriodsManager.h
 src/RequestInfo.h

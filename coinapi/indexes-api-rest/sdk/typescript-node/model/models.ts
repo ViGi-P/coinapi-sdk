@@ -1,7 +1,5 @@
 import localVarRequest from 'request';
 
-export * from './metadataExchange';
-export * from './metadataTimeseriesPeriod';
 export * from './modelsIndexDefinitionSnapshotEntry';
 export * from './modelsIndexIdentifier';
 export * from './modelsIndexMultiAssetWeight';
@@ -22,8 +20,6 @@ export interface RequestDetailedFile {
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
-import { MetadataExchange } from './metadataExchange';
-import { MetadataTimeseriesPeriod } from './metadataTimeseriesPeriod';
 import { ModelsIndexDefinitionSnapshotEntry } from './modelsIndexDefinitionSnapshotEntry';
 import { ModelsIndexIdentifier } from './modelsIndexIdentifier';
 import { ModelsIndexMultiAssetWeight } from './modelsIndexMultiAssetWeight';
@@ -47,8 +43,6 @@ let enumsMap: {[index: string]: any} = {
 }
 
 let typeMap: {[index: string]: any} = {
-    "MetadataExchange": MetadataExchange,
-    "MetadataTimeseriesPeriod": MetadataTimeseriesPeriod,
     "ModelsIndexDefinitionSnapshotEntry": ModelsIndexDefinitionSnapshotEntry,
     "ModelsIndexIdentifier": ModelsIndexIdentifier,
     "ModelsIndexMultiAssetWeight": ModelsIndexMultiAssetWeight,

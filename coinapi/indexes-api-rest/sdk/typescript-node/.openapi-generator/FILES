@@ -3,11 +3,7 @@
 api.ts
 api/apis.ts
 api/indexesApi.ts
-api/metadataApi.ts
-api/periodsApi.ts
 git_push.sh
-model/metadataExchange.ts
-model/metadataTimeseriesPeriod.ts
 model/models.ts
 model/modelsIndexDefinitionSnapshotEntry.ts
 model/modelsIndexIdentifier.ts

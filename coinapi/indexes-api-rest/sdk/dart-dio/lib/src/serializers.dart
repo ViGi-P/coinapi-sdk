@@ -14,8 +14,6 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:openapi/src/date_serializer.dart';
 import 'package:openapi/src/model/date.dart';
 
-import 'package:openapi/src/model/metadata_exchange.dart';
-import 'package:openapi/src/model/metadata_timeseries_period.dart';
 import 'package:openapi/src/model/models_index_definition_snapshot_entry.dart';
 import 'package:openapi/src/model/models_index_identifier.dart';
 import 'package:openapi/src/model/models_index_multi_asset_weight.dart';
@@ -26,8 +24,6 @@ import 'package:openapi/src/model/models_index_value_component.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
-  MetadataExchange,
-  MetadataTimeseriesPeriod,
   ModelsIndexDefinitionSnapshotEntry,
   ModelsIndexIdentifier,
   ModelsIndexMultiAssetWeight,
@@ -51,14 +47,6 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ModelsIndexMultiAssetWeight)]),
         () => ListBuilder<ModelsIndexMultiAssetWeight>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MetadataTimeseriesPeriod)]),
-        () => ListBuilder<MetadataTimeseriesPeriod>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MetadataExchange)]),
-        () => ListBuilder<MetadataExchange>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(ModelsIndexDefinitionSnapshotEntry)]),

@@ -67,8 +67,6 @@ library
       CoinAPIIndexesREST
       CoinAPIIndexesREST.API
       CoinAPIIndexesREST.API.Indexes
-      CoinAPIIndexesREST.API.Metadata
-      CoinAPIIndexesREST.API.Periods
       CoinAPIIndexesREST.Client
       CoinAPIIndexesREST.Core
       CoinAPIIndexesREST.Logging

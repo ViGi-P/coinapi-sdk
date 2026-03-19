@@ -31,15 +31,10 @@ Class | Method | HTTP request | Description
 *INDEXES_API* | [**v1_indexes_index_id_current_get**](docs/INDEXES_API.md#v1_indexes_index_id_current_get) | **Get** /v1/indexes/{index_id}/current | Current Index Value
 *INDEXES_API* | [**v1_indexes_index_id_history_get**](docs/INDEXES_API.md#v1_indexes_index_id_history_get) | **Get** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 *INDEXES_API* | [**v1_indexes_index_id_timeseries_get**](docs/INDEXES_API.md#v1_indexes_index_id_timeseries_get) | **Get** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
-*METADATA_API* | [**api_metadata_exchanges_exchange_id_get**](docs/METADATA_API.md#api_metadata_exchanges_exchange_id_get) | **Get** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
-*METADATA_API* | [**api_metadata_exchanges_get**](docs/METADATA_API.md#api_metadata_exchanges_get) | **Get** /api/metadata/exchanges | List all exchanges
-*PERIODS_API* | [**v1_metadata_periods_get**](docs/PERIODS_API.md#v1_metadata_periods_get) | **Get** /v1/metadata/periods | List all periods
 
 
 ## Documentation For Models
 
- - [METADATA_EXCHANGE](docs/METADATA_EXCHANGE.md)
- - [METADATA_TIMESERIES_PERIOD](docs/METADATA_TIMESERIES_PERIOD.md)
  - [MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY](docs/MODELS_INDEX_DEFINITION_SNAPSHOT_ENTRY.md)
  - [MODELS_INDEX_IDENTIFIER](docs/MODELS_INDEX_IDENTIFIER.md)
  - [MODELS_INDEX_MULTI_ASSET_WEIGHT](docs/MODELS_INDEX_MULTI_ASSET_WEIGHT.md)

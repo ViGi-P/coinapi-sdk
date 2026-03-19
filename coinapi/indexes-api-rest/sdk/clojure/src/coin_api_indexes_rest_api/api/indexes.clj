@@ -3,8 +3,6 @@
             [clojure.spec.alpha :as s]
             [spec-tools.core :as st]
             [orchestra.core :refer [defn-spec]]
-            [coin-api-indexes-rest-api.specs.metadata/timeseries-period :refer :all]
-            [coin-api-indexes-rest-api.specs.metadata/exchange :refer :all]
             [coin-api-indexes-rest-api.specs.models/index-value-component :refer :all]
             [coin-api-indexes-rest-api.specs.models/index-timeseries-item :refer :all]
             [coin-api-indexes-rest-api.specs.models/index-identifier :refer :all]

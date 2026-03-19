@@ -304,8 +304,7 @@ case $state in
             "v1IndexesIndexDefinitionIdHistorySnapshotGet[Historical Index Values for index definition]" \
             "v1IndexesIndexIdCurrentGet[Current Index Value]" \
             "v1IndexesIndexIdHistoryGet[Historical Index Value w/Composition]" \
-            "v1IndexesIndexIdTimeseriesGet[Timeseries Index Value]"             "apiMetadataExchangesExchangeIdGet[List all exchanges by exchange_id]" \
-            "apiMetadataExchangesGet[List all exchanges]"             "v1MetadataPeriodsGet[List all periods]" \
+            "v1IndexesIndexIdTimeseriesGet[Timeseries Index Value]" \
 
     _arguments "(--help)--help[Print information about operation]"
 
@@ -373,26 +372,6 @@ case $state in
 "time_end=:[QUERY] Timeseries ending time in ISO 8601"
 "limit=:[QUERY] Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)"
           )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      apiMetadataExchangesExchangeIdGet)
-        local -a _op_arguments
-        _op_arguments=(
-          "exchange_id=:[PATH] The ID of the exchange."
-                    )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      apiMetadataExchangesGet)
-        local -a _op_arguments
-        _op_arguments=(
-                    "filter_exchange_id=:[QUERY] Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. &#39;BITSTAMP;GEMINI&#39;)"
-          )
-        _describe -t actions 'operations' _op_arguments -S '' && ret=0
-        ;;
-      v1MetadataPeriodsGet)
-        local -a _op_arguments
-        _op_arguments=(
-                              )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
     esac

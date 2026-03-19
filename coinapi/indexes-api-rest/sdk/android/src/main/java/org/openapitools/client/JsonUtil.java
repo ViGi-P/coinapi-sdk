@@ -57,14 +57,6 @@ public class JsonUtil {
   public static Type getListTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
-    if ("MetadataExchange".equalsIgnoreCase(className)) {
-      return new TypeToken<List<MetadataExchange>>(){}.getType();
-    }
-    
-    if ("MetadataTimeseriesPeriod".equalsIgnoreCase(className)) {
-      return new TypeToken<List<MetadataTimeseriesPeriod>>(){}.getType();
-    }
-    
     if ("ModelsIndexDefinitionSnapshotEntry".equalsIgnoreCase(className)) {
       return new TypeToken<List<ModelsIndexDefinitionSnapshotEntry>>(){}.getType();
     }
@@ -94,14 +86,6 @@ public class JsonUtil {
 
   public static Type getTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
-    
-    if ("MetadataExchange".equalsIgnoreCase(className)) {
-      return new TypeToken<MetadataExchange>(){}.getType();
-    }
-    
-    if ("MetadataTimeseriesPeriod".equalsIgnoreCase(className)) {
-      return new TypeToken<MetadataTimeseriesPeriod>(){}.getType();
-    }
     
     if ("ModelsIndexDefinitionSnapshotEntry".equalsIgnoreCase(className)) {
       return new TypeToken<ModelsIndexDefinitionSnapshotEntry>(){}.getType();

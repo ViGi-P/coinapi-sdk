@@ -60,27 +60,9 @@ Method | HTTP request | Description
 *v1IndexesIndexIdTimeseriesGetASync* | *GET* /v1/indexes/{index_id}/timeseries | Timeseries Index Value.
 
 
-### MetadataManager
-Method | HTTP request | Description
-------------- | ------------- | -------------
-*apiMetadataExchangesExchangeIdGetSync* | *GET* /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id.
-*apiMetadataExchangesExchangeIdGetASync* | *GET* /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id.
-*apiMetadataExchangesGetSync* | *GET* /api/metadata/exchanges | List all exchanges.
-*apiMetadataExchangesGetASync* | *GET* /api/metadata/exchanges | List all exchanges.
-
-
-### PeriodsManager
-Method | HTTP request | Description
-------------- | ------------- | -------------
-*v1MetadataPeriodsGetSync* | *GET* /v1/metadata/periods | List all periods.
-*v1MetadataPeriodsGetASync* | *GET* /v1/metadata/periods | List all periods.
-
-
 ## What are the Model files for the data structures/objects?
 Class | Description
 ------------- | -------------
- *Metadata.Exchange* | Represents an exchange.
- *Metadata.TimeseriesPeriod* | Represents a timeseries period used in exchange rate data.
  *Models.IndexDefinitionSnapshotEntry* | 
  *Models.IndexIdentifier* | Represents an index id
  *Models.IndexMultiAssetWeight* | 

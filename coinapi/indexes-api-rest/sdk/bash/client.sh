@@ -110,8 +110,6 @@ operation_parameters_minimum_occurrences["v1IndexesIndexIdTimeseriesGet:::period
 operation_parameters_minimum_occurrences["v1IndexesIndexIdTimeseriesGet:::time_start"]=1
 operation_parameters_minimum_occurrences["v1IndexesIndexIdTimeseriesGet:::time_end"]=1
 operation_parameters_minimum_occurrences["v1IndexesIndexIdTimeseriesGet:::limit"]=0
-operation_parameters_minimum_occurrences["apiMetadataExchangesExchangeIdGet:::exchange_id"]=1
-operation_parameters_minimum_occurrences["apiMetadataExchangesGet:::filter_exchange_id"]=0
 
 ##
 # This array stores the maximum number of allowed occurrences for parameter
@@ -134,8 +132,6 @@ operation_parameters_maximum_occurrences["v1IndexesIndexIdTimeseriesGet:::period
 operation_parameters_maximum_occurrences["v1IndexesIndexIdTimeseriesGet:::time_start"]=0
 operation_parameters_maximum_occurrences["v1IndexesIndexIdTimeseriesGet:::time_end"]=0
 operation_parameters_maximum_occurrences["v1IndexesIndexIdTimeseriesGet:::limit"]=0
-operation_parameters_maximum_occurrences["apiMetadataExchangesExchangeIdGet:::exchange_id"]=0
-operation_parameters_maximum_occurrences["apiMetadataExchangesGet:::filter_exchange_id"]=0
 
 ##
 # The type of collection for specifying multiple values for parameter:
@@ -155,8 +151,6 @@ operation_parameters_collection_type["v1IndexesIndexIdTimeseriesGet:::period_id"
 operation_parameters_collection_type["v1IndexesIndexIdTimeseriesGet:::time_start"]=""
 operation_parameters_collection_type["v1IndexesIndexIdTimeseriesGet:::time_end"]=""
 operation_parameters_collection_type["v1IndexesIndexIdTimeseriesGet:::limit"]=""
-operation_parameters_collection_type["apiMetadataExchangesExchangeIdGet:::exchange_id"]=""
-operation_parameters_collection_type["apiMetadataExchangesGet:::filter_exchange_id"]=""
 
 
 ##
@@ -577,19 +571,6 @@ read -r -d '' ops <<EOF
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
-    echo -e "${BOLD}${WHITE}[metadata]${OFF}"
-read -r -d '' ops <<EOF
-  ${CYAN}apiMetadataExchangesExchangeIdGet${OFF};List all exchanges by exchange_id (AUTH) (AUTH)
-  ${CYAN}apiMetadataExchangesGet${OFF};List all exchanges (AUTH) (AUTH)
-EOF
-echo "  $ops" | column -t -s ';'
-    echo ""
-    echo -e "${BOLD}${WHITE}[periods]${OFF}"
-read -r -d '' ops <<EOF
-  ${CYAN}v1MetadataPeriodsGet${OFF};List all periods (AUTH) (AUTH)
-EOF
-echo "  $ops" | column -t -s ';'
-    echo ""
     echo -e "${BOLD}${WHITE}Options${OFF}"
     echo -e "  -h,--help\\t\\t\\t\\tPrint this help"
     echo -e "  -V,--version\\t\\t\\t\\tPrint API version"
@@ -775,76 +756,6 @@ print_v1IndexesIndexIdTimeseriesGet_help() {
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' - | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
-# Print help for apiMetadataExchangesExchangeIdGet operation
-#
-##############################################################################
-print_apiMetadataExchangesExchangeIdGet_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}apiMetadataExchangesExchangeIdGet - List all exchanges by exchange_id${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The ID of the exchange. ${YELLOW}Specify as: exchange_id=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' - | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
-# Print help for apiMetadataExchangesGet operation
-#
-##############################################################################
-print_apiMetadataExchangesGet_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}apiMetadataExchangesGet - List all exchanges${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Get a detailed list of exchanges provided by the system.
-            
-:::info
-Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source.
-:::" | paste -sd' ' - | fold -sw 80
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}filter_exchange_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Comma or semicolon delimited exchange identifiers used to filter response. (optional, eg. 'BITSTAMP;GEMINI')${YELLOW} Specify as: filter_exchange_id=value${OFF}" \
-        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' - | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
-# Print help for v1MetadataPeriodsGet operation
-#
-##############################################################################
-print_v1MetadataPeriodsGet_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}v1MetadataPeriodsGet - List all periods${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Get full list of supported time periods
-            
-### Available periods
-            
-Time unit | Period identifiers
---------- | -----------
-Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC
-Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN
-Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS
-Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY
-Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH
-Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS
-            
-:::tip
-You can assume that we will not remove any periods from this response, however, we may add new ones.
-:::" | paste -sd' ' - | fold -sw 80
-    echo -e ""
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -1140,114 +1051,6 @@ call_v1IndexesIndexIdTimeseriesGet() {
     fi
 }
 
-##############################################################################
-#
-# Call apiMetadataExchangesExchangeIdGet operation
-#
-##############################################################################
-call_apiMetadataExchangesExchangeIdGet() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=(exchange_id)
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(    )
-    local path
-
-    if ! path=$(build_request_path "/api/metadata/exchanges/{exchange_id}" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
-# Call apiMetadataExchangesGet operation
-#
-##############################################################################
-call_apiMetadataExchangesGet() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(filter_exchange_id    )
-    local path
-
-    if ! path=$(build_request_path "/api/metadata/exchanges" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
-# Call v1MetadataPeriodsGet operation
-#
-##############################################################################
-call_v1MetadataPeriodsGet() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(    )
-    local path
-
-    if ! path=$(build_request_path "/v1/metadata/periods" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
 
 
 ##############################################################################
@@ -1369,15 +1172,6 @@ case $key in
     v1IndexesIndexIdTimeseriesGet)
     operation="v1IndexesIndexIdTimeseriesGet"
     ;;
-    apiMetadataExchangesExchangeIdGet)
-    operation="apiMetadataExchangesExchangeIdGet"
-    ;;
-    apiMetadataExchangesGet)
-    operation="apiMetadataExchangesGet"
-    ;;
-    v1MetadataPeriodsGet)
-    operation="v1MetadataPeriodsGet"
-    ;;
     *==*)
     # Parse body arguments and convert them into top level
     # JSON properties passed in the body content as strings
@@ -1495,15 +1289,6 @@ case $operation in
     ;;
     v1IndexesIndexIdTimeseriesGet)
     call_v1IndexesIndexIdTimeseriesGet
-    ;;
-    apiMetadataExchangesExchangeIdGet)
-    call_apiMetadataExchangesExchangeIdGet
-    ;;
-    apiMetadataExchangesGet)
-    call_apiMetadataExchangesGet
-    ;;
-    v1MetadataPeriodsGet)
-    call_v1MetadataPeriodsGet
     ;;
     *)
     ERROR_MSG="ERROR: Unknown operation: $operation"

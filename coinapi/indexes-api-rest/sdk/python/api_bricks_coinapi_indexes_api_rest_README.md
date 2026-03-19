@@ -87,15 +87,10 @@ Class | Method | HTTP request | Description
 *IndexesApi* | [**v1_indexes_index_id_current_get**](api_bricks_coinapi_indexes_api_rest/docs/IndexesApi.md#v1_indexes_index_id_current_get) | **GET** /v1/indexes/{index_id}/current | Current Index Value
 *IndexesApi* | [**v1_indexes_index_id_history_get**](api_bricks_coinapi_indexes_api_rest/docs/IndexesApi.md#v1_indexes_index_id_history_get) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 *IndexesApi* | [**v1_indexes_index_id_timeseries_get**](api_bricks_coinapi_indexes_api_rest/docs/IndexesApi.md#v1_indexes_index_id_timeseries_get) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
-*MetadataApi* | [**api_metadata_exchanges_exchange_id_get**](api_bricks_coinapi_indexes_api_rest/docs/MetadataApi.md#api_metadata_exchanges_exchange_id_get) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
-*MetadataApi* | [**api_metadata_exchanges_get**](api_bricks_coinapi_indexes_api_rest/docs/MetadataApi.md#api_metadata_exchanges_get) | **GET** /api/metadata/exchanges | List all exchanges
-*PeriodsApi* | [**v1_metadata_periods_get**](api_bricks_coinapi_indexes_api_rest/docs/PeriodsApi.md#v1_metadata_periods_get) | **GET** /v1/metadata/periods | List all periods
 
 
 ## Documentation For Models
 
- - [MetadataExchange](api_bricks_coinapi_indexes_api_rest/docs/MetadataExchange.md)
- - [MetadataTimeseriesPeriod](api_bricks_coinapi_indexes_api_rest/docs/MetadataTimeseriesPeriod.md)
  - [ModelsIndexDefinitionSnapshotEntry](api_bricks_coinapi_indexes_api_rest/docs/ModelsIndexDefinitionSnapshotEntry.md)
  - [ModelsIndexIdentifier](api_bricks_coinapi_indexes_api_rest/docs/ModelsIndexIdentifier.md)
  - [ModelsIndexMultiAssetWeight](api_bricks_coinapi_indexes_api_rest/docs/ModelsIndexMultiAssetWeight.md)

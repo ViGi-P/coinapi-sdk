@@ -3,10 +3,6 @@
 git_push.sh
 openapiclient-1.0.0-1.rockspec
 openapiclient/api/indexes_api.lua
-openapiclient/api/metadata_api.lua
-openapiclient/api/periods_api.lua
-openapiclient/model/metadata_exchange.lua
-openapiclient/model/metadata_timeseries_period.lua
 openapiclient/model/models_index_definition_snapshot_entry.lua
 openapiclient/model/models_index_identifier.lua
 openapiclient/model/models_index_multi_asset_weight.lua
@@ -14,13 +10,9 @@ openapiclient/model/models_index_timeseries_item.lua
 openapiclient/model/models_index_value.lua
 openapiclient/model/models_index_value_component.lua
 spec/indexes_api_spec.lua
-spec/metadata_api_spec.lua
-spec/metadata_exchange_spec.lua
-spec/metadata_timeseries_period_spec.lua
 spec/models_index_definition_snapshot_entry_spec.lua
 spec/models_index_identifier_spec.lua
 spec/models_index_multi_asset_weight_spec.lua
 spec/models_index_timeseries_item_spec.lua
 spec/models_index_value_component_spec.lua
 spec/models_index_value_spec.lua
-spec/periods_api_spec.lua

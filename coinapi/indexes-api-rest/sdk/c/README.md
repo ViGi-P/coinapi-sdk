@@ -74,15 +74,10 @@ Category | Method | HTTP request | Description
 *IndexesAPI* | [**IndexesAPI_v1IndexesIndexIdCurrentGet**](docs/IndexesAPI.md#IndexesAPI_v1IndexesIndexIdCurrentGet) | **GET** /v1/indexes/{index_id}/current | Current Index Value
 *IndexesAPI* | [**IndexesAPI_v1IndexesIndexIdHistoryGet**](docs/IndexesAPI.md#IndexesAPI_v1IndexesIndexIdHistoryGet) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 *IndexesAPI* | [**IndexesAPI_v1IndexesIndexIdTimeseriesGet**](docs/IndexesAPI.md#IndexesAPI_v1IndexesIndexIdTimeseriesGet) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
-*MetadataAPI* | [**MetadataAPI_apiMetadataExchangesExchangeIdGet**](docs/MetadataAPI.md#MetadataAPI_apiMetadataExchangesExchangeIdGet) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
-*MetadataAPI* | [**MetadataAPI_apiMetadataExchangesGet**](docs/MetadataAPI.md#MetadataAPI_apiMetadataExchangesGet) | **GET** /api/metadata/exchanges | List all exchanges
-*PeriodsAPI* | [**PeriodsAPI_v1MetadataPeriodsGet**](docs/PeriodsAPI.md#PeriodsAPI_v1MetadataPeriodsGet) | **GET** /v1/metadata/periods | List all periods
 
 
 ## Documentation for Models
 
- - [metadata_exchange_t](docs/metadata_exchange.md)
- - [metadata_timeseries_period_t](docs/metadata_timeseries_period.md)
  - [models_index_definition_snapshot_entry_t](docs/models_index_definition_snapshot_entry.md)
  - [models_index_identifier_t](docs/models_index_identifier.md)
  - [models_index_multi_asset_weight_t](docs/models_index_multi_asset_weight.md)

@@ -15,24 +15,18 @@
 
 
 module Api.Data exposing
-    ( MetadataExchange
-    , MetadataTimeseriesPeriod
-    , ModelsIndexDefinitionSnapshotEntry
+    ( ModelsIndexDefinitionSnapshotEntry
     , ModelsIndexIdentifier
     , ModelsIndexMultiAssetWeight
     , ModelsIndexTimeseriesItem
     , ModelsIndexValue
     , ModelsIndexValueComponent
-    , encodeMetadataExchange
-    , encodeMetadataTimeseriesPeriod
     , encodeModelsIndexDefinitionSnapshotEntry
     , encodeModelsIndexIdentifier
     , encodeModelsIndexMultiAssetWeight
     , encodeModelsIndexTimeseriesItem
     , encodeModelsIndexValue
     , encodeModelsIndexValueComponent
-    , metadataExchangeDecoder
-    , metadataTimeseriesPeriodDecoder
     , modelsIndexDefinitionSnapshotEntryDecoder
     , modelsIndexIdentifierDecoder
     , modelsIndexMultiAssetWeightDecoder
@@ -49,27 +43,6 @@ import Json.Encode
 
 
 -- MODEL
-
-
-{-| Represents an exchange.
--}
-type alias MetadataExchange =
-    { exchangeId : Maybe String
-    , website : Maybe String
-    , name : Maybe String
-    }
-
-
-{-| Represents a timeseries period used in exchange rate data.
--}
-type alias MetadataTimeseriesPeriod =
-    { periodId : Maybe String
-    , lengthSeconds : Maybe Int
-    , lengthMonths : Maybe Int
-    , unitCount : Maybe Int
-    , unitName : Maybe String
-    , displayName : Maybe String
-    }
 
 
 type alias ModelsIndexDefinitionSnapshotEntry =
@@ -122,53 +95,6 @@ type alias ModelsIndexValueComponent =
 
 
 -- ENCODER
-
-
-encodeMetadataExchange : MetadataExchange -> Json.Encode.Value
-encodeMetadataExchange =
-    encodeObject << encodeMetadataExchangePairs
-
-
-encodeMetadataExchangeWithTag : ( String, String ) -> MetadataExchange -> Json.Encode.Value
-encodeMetadataExchangeWithTag (tagField, tag) model =
-    encodeObject (encodeMetadataExchangePairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeMetadataExchangePairs : MetadataExchange -> List EncodedField
-encodeMetadataExchangePairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "exchange_id" Json.Encode.string model.exchangeId
-            , maybeEncodeNullable "website" Json.Encode.string model.website
-            , maybeEncodeNullable "name" Json.Encode.string model.name
-            ]
-    in
-    pairs
-
-
-encodeMetadataTimeseriesPeriod : MetadataTimeseriesPeriod -> Json.Encode.Value
-encodeMetadataTimeseriesPeriod =
-    encodeObject << encodeMetadataTimeseriesPeriodPairs
-
-
-encodeMetadataTimeseriesPeriodWithTag : ( String, String ) -> MetadataTimeseriesPeriod -> Json.Encode.Value
-encodeMetadataTimeseriesPeriodWithTag (tagField, tag) model =
-    encodeObject (encodeMetadataTimeseriesPeriodPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeMetadataTimeseriesPeriodPairs : MetadataTimeseriesPeriod -> List EncodedField
-encodeMetadataTimeseriesPeriodPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "period_id" Json.Encode.string model.periodId
-            , maybeEncode "length_seconds" Json.Encode.int model.lengthSeconds
-            , maybeEncode "length_months" Json.Encode.int model.lengthMonths
-            , maybeEncodeNullable "unit_count" Json.Encode.int model.unitCount
-            , maybeEncodeNullable "unit_name" Json.Encode.string model.unitName
-            , maybeEncodeNullable "display_name" Json.Encode.string model.displayName
-            ]
-    in
-    pairs
 
 
 encodeModelsIndexDefinitionSnapshotEntry : ModelsIndexDefinitionSnapshotEntry -> Json.Encode.Value
@@ -307,25 +233,6 @@ encodeModelsIndexValueComponentPairs model =
 
 
 -- DECODER
-
-
-metadataExchangeDecoder : Json.Decode.Decoder MetadataExchange
-metadataExchangeDecoder =
-    Json.Decode.succeed MetadataExchange
-        |> maybeDecodeNullable "exchange_id" Json.Decode.string Nothing
-        |> maybeDecodeNullable "website" Json.Decode.string Nothing
-        |> maybeDecodeNullable "name" Json.Decode.string Nothing
-
-
-metadataTimeseriesPeriodDecoder : Json.Decode.Decoder MetadataTimeseriesPeriod
-metadataTimeseriesPeriodDecoder =
-    Json.Decode.succeed MetadataTimeseriesPeriod
-        |> maybeDecodeNullable "period_id" Json.Decode.string Nothing
-        |> maybeDecode "length_seconds" Json.Decode.int Nothing
-        |> maybeDecode "length_months" Json.Decode.int Nothing
-        |> maybeDecodeNullable "unit_count" Json.Decode.int Nothing
-        |> maybeDecodeNullable "unit_name" Json.Decode.string Nothing
-        |> maybeDecodeNullable "display_name" Json.Decode.string Nothing
 
 
 modelsIndexDefinitionSnapshotEntryDecoder : Json.Decode.Decoder ModelsIndexDefinitionSnapshotEntry

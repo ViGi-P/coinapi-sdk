@@ -69,15 +69,10 @@ Class | Method | HTTP request | Description
 *OASIndexesApi* | [**v1IndexesIndexIdCurrentGet**](OASIndexesApi.md#v1IndexesIndexIdCurrentGet) | **GET** /v1/indexes/{index_id}/current | Current Index Value
 *OASIndexesApi* | [**v1IndexesIndexIdHistoryGet**](OASIndexesApi.md#v1IndexesIndexIdHistoryGet) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 *OASIndexesApi* | [**v1IndexesIndexIdTimeseriesGet**](OASIndexesApi.md#v1IndexesIndexIdTimeseriesGet) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
-*OASMetadataApi* | [**apiMetadataExchangesExchangeIdGet**](OASMetadataApi.md#apiMetadataExchangesExchangeIdGet) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
-*OASMetadataApi* | [**apiMetadataExchangesGet**](OASMetadataApi.md#apiMetadataExchangesGet) | **GET** /api/metadata/exchanges | List all exchanges
-*OASPeriodsApi* | [**v1MetadataPeriodsGet**](OASPeriodsApi.md#v1MetadataPeriodsGet) | **GET** /v1/metadata/periods | List all periods
 
 
 ## Documentation for Models
 
- - [OASMetadataExchange](OASMetadataExchange.md)
- - [OASMetadataTimeseriesPeriod](OASMetadataTimeseriesPeriod.md)
  - [OASModelsIndexDefinitionSnapshotEntr](OASModelsIndexDefinitionSnapshotEntr.md)
  - [OASModelsIndexIdentifier](OASModelsIndexIdentifier.md)
  - [OASModelsIndexMultiAssetWeight](OASModelsIndexMultiAssetWeight.md)

@@ -138,15 +138,10 @@ Class | Method | HTTP request | Description
 *CoinApiIndexesRestApi.IndexesApi* | [**v1IndexesIndexIdCurrentGet**](docs/IndexesApi.md#v1IndexesIndexIdCurrentGet) | **GET** /v1/indexes/{index_id}/current | Current Index Value
 *CoinApiIndexesRestApi.IndexesApi* | [**v1IndexesIndexIdHistoryGet**](docs/IndexesApi.md#v1IndexesIndexIdHistoryGet) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 *CoinApiIndexesRestApi.IndexesApi* | [**v1IndexesIndexIdTimeseriesGet**](docs/IndexesApi.md#v1IndexesIndexIdTimeseriesGet) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
-*CoinApiIndexesRestApi.MetadataApi* | [**apiMetadataExchangesExchangeIdGet**](docs/MetadataApi.md#apiMetadataExchangesExchangeIdGet) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
-*CoinApiIndexesRestApi.MetadataApi* | [**apiMetadataExchangesGet**](docs/MetadataApi.md#apiMetadataExchangesGet) | **GET** /api/metadata/exchanges | List all exchanges
-*CoinApiIndexesRestApi.PeriodsApi* | [**v1MetadataPeriodsGet**](docs/PeriodsApi.md#v1MetadataPeriodsGet) | **GET** /v1/metadata/periods | List all periods
 
 
 ## Documentation for Models
 
- - [CoinApiIndexesRestApi.MetadataExchange](docs/MetadataExchange.md)
- - [CoinApiIndexesRestApi.MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
  - [CoinApiIndexesRestApi.ModelsIndexDefinitionSnapshotEntry](docs/ModelsIndexDefinitionSnapshotEntry.md)
  - [CoinApiIndexesRestApi.ModelsIndexIdentifier](docs/ModelsIndexIdentifier.md)
  - [CoinApiIndexesRestApi.ModelsIndexMultiAssetWeight](docs/ModelsIndexMultiAssetWeight.md)

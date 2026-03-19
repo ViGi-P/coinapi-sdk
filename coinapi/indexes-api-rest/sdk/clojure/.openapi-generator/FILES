@@ -3,11 +3,7 @@
 git_push.sh
 project.clj
 src/coin_api_indexes_rest_api/api/indexes.clj
-src/coin_api_indexes_rest_api/api/metadata.clj
-src/coin_api_indexes_rest_api/api/periods.clj
 src/coin_api_indexes_rest_api/core.clj
-src/coin_api_indexes_rest_api/specs/metadata/exchange.clj
-src/coin_api_indexes_rest_api/specs/metadata/timeseries_period.clj
 src/coin_api_indexes_rest_api/specs/models/index_definition_snapshot_entry.clj
 src/coin_api_indexes_rest_api/specs/models/index_identifier.clj
 src/coin_api_indexes_rest_api/specs/models/index_multi_asset_weight.clj

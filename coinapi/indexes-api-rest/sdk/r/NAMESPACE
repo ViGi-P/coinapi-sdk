@@ -13,8 +13,6 @@ export(ApiClient)
 export(ApiResponse)
 
 # Models
-export(MetadataExchange)
-export(MetadataTimeseriesPeriod)
 export(ModelsIndexDefinitionSnapshotEntry)
 export(ModelsIndexIdentifier)
 export(ModelsIndexMultiAssetWeight)
@@ -24,5 +22,3 @@ export(ModelsIndexValueComponent)
 
 # APIs
 export(IndexesApi)
-export(MetadataApi)
-export(PeriodsApi)

@@ -97,15 +97,10 @@ Class | Method | HTTP request | Description
 *OpenapiClient::IndexesApi* | [**v1_indexes_index_id_current_get**](docs/IndexesApi.md#v1_indexes_index_id_current_get) | **GET** /v1/indexes/{index_id}/current | Current Index Value
 *OpenapiClient::IndexesApi* | [**v1_indexes_index_id_history_get**](docs/IndexesApi.md#v1_indexes_index_id_history_get) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 *OpenapiClient::IndexesApi* | [**v1_indexes_index_id_timeseries_get**](docs/IndexesApi.md#v1_indexes_index_id_timeseries_get) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
-*OpenapiClient::MetadataApi* | [**api_metadata_exchanges_exchange_id_get**](docs/MetadataApi.md#api_metadata_exchanges_exchange_id_get) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
-*OpenapiClient::MetadataApi* | [**api_metadata_exchanges_get**](docs/MetadataApi.md#api_metadata_exchanges_get) | **GET** /api/metadata/exchanges | List all exchanges
-*OpenapiClient::PeriodsApi* | [**v1_metadata_periods_get**](docs/PeriodsApi.md#v1_metadata_periods_get) | **GET** /v1/metadata/periods | List all periods
 
 
 ## Documentation for Models
 
- - [OpenapiClient::MetadataExchange](docs/MetadataExchange.md)
- - [OpenapiClient::MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
  - [OpenapiClient::ModelsIndexDefinitionSnapshotEntry](docs/ModelsIndexDefinitionSnapshotEntry.md)
  - [OpenapiClient::ModelsIndexIdentifier](docs/ModelsIndexIdentifier.md)
  - [OpenapiClient::ModelsIndexMultiAssetWeight](docs/ModelsIndexMultiAssetWeight.md)

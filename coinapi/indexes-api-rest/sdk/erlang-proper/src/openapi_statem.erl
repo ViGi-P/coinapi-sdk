@@ -58,12 +58,82 @@ cleanup() -> ok.
 initial_state() -> #{}.
 
 %%==============================================================================
-%% v1_metadata_periods_get
+%% v1_indexdef_multiasset_get
 %%==============================================================================
 
-v1_metadata_periods_get() ->
-  openapi_api:v1_metadata_periods_get().
+v1_indexdef_multiasset_get() ->
+  openapi_api:v1_indexdef_multiasset_get().
 
-v1_metadata_periods_get_args(_S) ->
+v1_indexdef_multiasset_get_args(_S) ->
   [].
+
+%%==============================================================================
+%% v1_indexdef_multiasset_index_id_get
+%%==============================================================================
+
+v1_indexdef_multiasset_index_id_get(IndexId) ->
+  openapi_api:v1_indexdef_multiasset_index_id_get(IndexId).
+
+v1_indexdef_multiasset_index_id_get_args(_S) ->
+  [binary()].
+
+%%==============================================================================
+%% v1_indexes_get
+%%==============================================================================
+
+v1_indexes_get() ->
+  openapi_api:v1_indexes_get().
+
+v1_indexes_get_args(_S) ->
+  [].
+
+%%==============================================================================
+%% v1_indexes_index_definition_id_current_snapshot_get
+%%==============================================================================
+
+v1_indexes_index_definition_id_current_snapshot_get(IndexDefinitionId) ->
+  openapi_api:v1_indexes_index_definition_id_current_snapshot_get(IndexDefinitionId).
+
+v1_indexes_index_definition_id_current_snapshot_get_args(_S) ->
+  [binary()].
+
+%%==============================================================================
+%% v1_indexes_index_definition_id_history_snapshot_get
+%%==============================================================================
+
+v1_indexes_index_definition_id_history_snapshot_get(IndexDefinitionId) ->
+  openapi_api:v1_indexes_index_definition_id_history_snapshot_get(IndexDefinitionId).
+
+v1_indexes_index_definition_id_history_snapshot_get_args(_S) ->
+  [binary()].
+
+%%==============================================================================
+%% v1_indexes_index_id_current_get
+%%==============================================================================
+
+v1_indexes_index_id_current_get(IndexId) ->
+  openapi_api:v1_indexes_index_id_current_get(IndexId).
+
+v1_indexes_index_id_current_get_args(_S) ->
+  [binary()].
+
+%%==============================================================================
+%% v1_indexes_index_id_history_get
+%%==============================================================================
+
+v1_indexes_index_id_history_get(IndexId) ->
+  openapi_api:v1_indexes_index_id_history_get(IndexId).
+
+v1_indexes_index_id_history_get_args(_S) ->
+  [binary()].
+
+%%==============================================================================
+%% v1_indexes_index_id_timeseries_get
+%%==============================================================================
+
+v1_indexes_index_id_timeseries_get(IndexId, PeriodId, TimeStart, TimeEnd) ->
+  openapi_api:v1_indexes_index_id_timeseries_get(IndexId, PeriodId, TimeStart, TimeEnd).
+
+v1_indexes_index_id_timeseries_get_args(_S) ->
+  [binary(), binary(), binary(), binary()].
 

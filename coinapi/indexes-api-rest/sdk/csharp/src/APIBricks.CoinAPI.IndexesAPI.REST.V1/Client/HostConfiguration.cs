@@ -44,8 +44,6 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Client
             _jsonOptions.Converters.Add(new DateTimeNullableJsonConverter());
             _jsonOptions.Converters.Add(new DateOnlyJsonConverter());
             _jsonOptions.Converters.Add(new DateOnlyNullableJsonConverter());
-            _jsonOptions.Converters.Add(new MetadataExchangeJsonConverter());
-            _jsonOptions.Converters.Add(new MetadataTimeseriesPeriodJsonConverter());
             _jsonOptions.Converters.Add(new ModelsIndexDefinitionSnapshotEntryJsonConverter());
             _jsonOptions.Converters.Add(new ModelsIndexIdentifierJsonConverter());
             _jsonOptions.Converters.Add(new ModelsIndexMultiAssetWeightJsonConverter());
@@ -56,8 +54,6 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Client
             _services.AddSingleton(jsonSerializerOptionsProvider);
             _services.AddSingleton<IApiFactory, ApiFactory>();
             _services.AddSingleton<IndexesApiEvents>();
-            _services.AddSingleton<MetadataApiEvents>();
-            _services.AddSingleton<PeriodsApiEvents>();
         }
 
         /// <summary>
@@ -76,8 +72,6 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Client
             List<IHttpClientBuilder> builders = new List<IHttpClientBuilder>();
 
             builders.Add(_services.AddHttpClient<IIndexesApi, IndexesApi>("APIBricks.CoinAPI.IndexesAPI.REST.V1.Api.IIndexesApi", client));
-            builders.Add(_services.AddHttpClient<IMetadataApi, MetadataApi>("APIBricks.CoinAPI.IndexesAPI.REST.V1.Api.IMetadataApi", client));
-            builders.Add(_services.AddHttpClient<IPeriodsApi, PeriodsApi>("APIBricks.CoinAPI.IndexesAPI.REST.V1.Api.IPeriodsApi", client));
             
             if (builder != null)
                 foreach (IHttpClientBuilder instance in builders)

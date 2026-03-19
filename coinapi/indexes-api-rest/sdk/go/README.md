@@ -87,15 +87,10 @@ Class | Method | HTTP request | Description
 *IndexesAPI* | [**V1IndexesIndexIdCurrentGet**](docs/IndexesAPI.md#v1indexesindexidcurrentget) | **Get** /v1/indexes/{index_id}/current | Current Index Value
 *IndexesAPI* | [**V1IndexesIndexIdHistoryGet**](docs/IndexesAPI.md#v1indexesindexidhistoryget) | **Get** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 *IndexesAPI* | [**V1IndexesIndexIdTimeseriesGet**](docs/IndexesAPI.md#v1indexesindexidtimeseriesget) | **Get** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
-*MetadataAPI* | [**ApiMetadataExchangesExchangeIdGet**](docs/MetadataAPI.md#apimetadataexchangesexchangeidget) | **Get** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
-*MetadataAPI* | [**ApiMetadataExchangesGet**](docs/MetadataAPI.md#apimetadataexchangesget) | **Get** /api/metadata/exchanges | List all exchanges
-*PeriodsAPI* | [**V1MetadataPeriodsGet**](docs/PeriodsAPI.md#v1metadataperiodsget) | **Get** /v1/metadata/periods | List all periods
 
 
 ## Documentation For Models
 
- - [MetadataExchange](docs/MetadataExchange.md)
- - [MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
  - [ModelsIndexDefinitionSnapshotEntry](docs/ModelsIndexDefinitionSnapshotEntry.md)
  - [ModelsIndexIdentifier](docs/ModelsIndexIdentifier.md)
  - [ModelsIndexMultiAssetWeight](docs/ModelsIndexMultiAssetWeight.md)

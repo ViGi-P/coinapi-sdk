@@ -113,29 +113,6 @@ arbitraryReducedMaybeValue n = do
 
 -- * Models
 
-instance Arbitrary MetadataExchange where
-  arbitrary = sized genMetadataExchange
-
-genMetadataExchange :: Int -> Gen MetadataExchange
-genMetadataExchange n =
-  MetadataExchange
-    <$> arbitraryReducedMaybe n -- metadataExchangeExchangeId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- metadataExchangeWebsite :: Maybe Text
-    <*> arbitraryReducedMaybe n -- metadataExchangeName :: Maybe Text
-  
-instance Arbitrary MetadataTimeseriesPeriod where
-  arbitrary = sized genMetadataTimeseriesPeriod
-
-genMetadataTimeseriesPeriod :: Int -> Gen MetadataTimeseriesPeriod
-genMetadataTimeseriesPeriod n =
-  MetadataTimeseriesPeriod
-    <$> arbitraryReducedMaybe n -- metadataTimeseriesPeriodPeriodId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- metadataTimeseriesPeriodLengthSeconds :: Maybe Int
-    <*> arbitraryReducedMaybe n -- metadataTimeseriesPeriodLengthMonths :: Maybe Int
-    <*> arbitraryReducedMaybe n -- metadataTimeseriesPeriodUnitCount :: Maybe Int
-    <*> arbitraryReducedMaybe n -- metadataTimeseriesPeriodUnitName :: Maybe Text
-    <*> arbitraryReducedMaybe n -- metadataTimeseriesPeriodDisplayName :: Maybe Text
-  
 instance Arbitrary ModelsIndexDefinitionSnapshotEntry where
   arbitrary = sized genModelsIndexDefinitionSnapshotEntry
 

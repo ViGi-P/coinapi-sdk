@@ -13,8 +13,6 @@
 
 
 import ApiClient from './ApiClient';
-import MetadataExchange from './model/MetadataExchange';
-import MetadataTimeseriesPeriod from './model/MetadataTimeseriesPeriod';
 import ModelsIndexDefinitionSnapshotEntry from './model/ModelsIndexDefinitionSnapshotEntry';
 import ModelsIndexIdentifier from './model/ModelsIndexIdentifier';
 import ModelsIndexMultiAssetWeight from './model/ModelsIndexMultiAssetWeight';
@@ -22,8 +20,6 @@ import ModelsIndexTimeseriesItem from './model/ModelsIndexTimeseriesItem';
 import ModelsIndexValue from './model/ModelsIndexValue';
 import ModelsIndexValueComponent from './model/ModelsIndexValueComponent';
 import IndexesApi from './api/IndexesApi';
-import MetadataApi from './api/MetadataApi';
-import PeriodsApi from './api/PeriodsApi';
 
 
 /**
@@ -65,18 +61,6 @@ export {
     ApiClient,
 
     /**
-     * The MetadataExchange model constructor.
-     * @property {module:model/MetadataExchange}
-     */
-    MetadataExchange,
-
-    /**
-     * The MetadataTimeseriesPeriod model constructor.
-     * @property {module:model/MetadataTimeseriesPeriod}
-     */
-    MetadataTimeseriesPeriod,
-
-    /**
      * The ModelsIndexDefinitionSnapshotEntry model constructor.
      * @property {module:model/ModelsIndexDefinitionSnapshotEntry}
      */
@@ -116,17 +100,5 @@ export {
     * The IndexesApi service constructor.
     * @property {module:api/IndexesApi}
     */
-    IndexesApi,
-
-    /**
-    * The MetadataApi service constructor.
-    * @property {module:api/MetadataApi}
-    */
-    MetadataApi,
-
-    /**
-    * The PeriodsApi service constructor.
-    * @property {module:api/PeriodsApi}
-    */
-    PeriodsApi
+    IndexesApi
 };

@@ -61,15 +61,10 @@ Class | Method | HTTP request | Description
 *IndexesApi* | [**Invoke-V1IndexesIndexIdCurrentGet**](docs/IndexesApi.md#Invoke-V1IndexesIndexIdCurrentGet) | **GET** /v1/indexes/{index_id}/current | Current Index Value
 *IndexesApi* | [**Invoke-V1IndexesIndexIdHistoryGet**](docs/IndexesApi.md#Invoke-V1IndexesIndexIdHistoryGet) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 *IndexesApi* | [**Invoke-V1IndexesIndexIdTimeseriesGet**](docs/IndexesApi.md#Invoke-V1IndexesIndexIdTimeseriesGet) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
-*MetadataApi* | [**Invoke-ApiMetadataExchangesExchangeIdGet**](docs/MetadataApi.md#Invoke-ApiMetadataExchangesExchangeIdGet) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
-*MetadataApi* | [**Invoke-ApiMetadataExchangesGet**](docs/MetadataApi.md#Invoke-ApiMetadataExchangesGet) | **GET** /api/metadata/exchanges | List all exchanges
-*PeriodsApi* | [**Invoke-V1MetadataPeriodsGet**](docs/PeriodsApi.md#Invoke-V1MetadataPeriodsGet) | **GET** /v1/metadata/periods | List all periods
 
 
 ## Documentation for Models
 
- - [PSOpenAPITools\Model.MetadataExchange](docs/MetadataExchange.md)
- - [PSOpenAPITools\Model.MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
  - [PSOpenAPITools\Model.ModelsIndexDefinitionSnapshotEntry](docs/ModelsIndexDefinitionSnapshotEntry.md)
  - [PSOpenAPITools\Model.ModelsIndexIdentifier](docs/ModelsIndexIdentifier.md)
  - [PSOpenAPITools\Model.ModelsIndexMultiAssetWeight](docs/ModelsIndexMultiAssetWeight.md)

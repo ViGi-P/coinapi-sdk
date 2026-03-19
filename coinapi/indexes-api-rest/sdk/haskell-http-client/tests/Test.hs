@@ -20,8 +20,6 @@ main =
   hspec $ modifyMaxSize (const 10) $ do
     describe "JSON instances" $ do
       pure ()
-      propMimeEq MimeJSON (Proxy :: Proxy MetadataExchange)
-      propMimeEq MimeJSON (Proxy :: Proxy MetadataTimeseriesPeriod)
       propMimeEq MimeJSON (Proxy :: Proxy ModelsIndexDefinitionSnapshotEntry)
       propMimeEq MimeJSON (Proxy :: Proxy ModelsIndexIdentifier)
       propMimeEq MimeJSON (Proxy :: Proxy ModelsIndexMultiAssetWeight)

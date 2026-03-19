@@ -15,10 +15,6 @@ include/CppRestOpenAPIClient/ModelBase.h
 include/CppRestOpenAPIClient/MultipartFormData.h
 include/CppRestOpenAPIClient/Object.h
 include/CppRestOpenAPIClient/api/IndexesApi.h
-include/CppRestOpenAPIClient/api/MetadataApi.h
-include/CppRestOpenAPIClient/api/PeriodsApi.h
-include/CppRestOpenAPIClient/model/Metadata_Exchange.h
-include/CppRestOpenAPIClient/model/Metadata_TimeseriesPeriod.h
 include/CppRestOpenAPIClient/model/Models_IndexDefinitionSnapshotEntry.h
 include/CppRestOpenAPIClient/model/Models_IndexIdentifier.h
 include/CppRestOpenAPIClient/model/Models_IndexMultiAssetWeight.h
@@ -35,10 +31,6 @@ src/ModelBase.cpp
 src/MultipartFormData.cpp
 src/Object.cpp
 src/api/IndexesApi.cpp
-src/api/MetadataApi.cpp
-src/api/PeriodsApi.cpp
-src/model/Metadata_Exchange.cpp
-src/model/Metadata_TimeseriesPeriod.cpp
 src/model/Models_IndexDefinitionSnapshotEntry.cpp
 src/model/Models_IndexIdentifier.cpp
 src/model/Models_IndexMultiAssetWeight.cpp

@@ -5,12 +5,8 @@ README.md
 config/config.exs
 config/runtime.exs
 lib/coin_api_indexes_restapi/api/indexes.ex
-lib/coin_api_indexes_restapi/api/metadata.ex
-lib/coin_api_indexes_restapi/api/periods.ex
 lib/coin_api_indexes_restapi/connection.ex
 lib/coin_api_indexes_restapi/deserializer.ex
-lib/coin_api_indexes_restapi/model/metadata_exchange.ex
-lib/coin_api_indexes_restapi/model/metadata_timeseries_period.ex
 lib/coin_api_indexes_restapi/model/models_index_definition_snapshot_entry.ex
 lib/coin_api_indexes_restapi/model/models_index_identifier.ex
 lib/coin_api_indexes_restapi/model/models_index_multi_asset_weight.ex

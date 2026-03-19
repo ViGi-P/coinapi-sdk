@@ -126,21 +126,16 @@ Class | Method | HTTP request | Description
 *IndexesApi* | [**v1IndexesIndexIdCurrentGet**](docs/IndexesApi.md#v1IndexesIndexIdCurrentGet) | **GET** /v1/indexes/{index_id}/current | Current Index Value
 *IndexesApi* | [**v1IndexesIndexIdHistoryGet**](docs/IndexesApi.md#v1IndexesIndexIdHistoryGet) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 *IndexesApi* | [**v1IndexesIndexIdTimeseriesGet**](docs/IndexesApi.md#v1IndexesIndexIdTimeseriesGet) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
-*MetadataApi* | [**apiMetadataExchangesExchangeIdGet**](docs/MetadataApi.md#apiMetadataExchangesExchangeIdGet) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
-*MetadataApi* | [**apiMetadataExchangesGet**](docs/MetadataApi.md#apiMetadataExchangesGet) | **GET** /api/metadata/exchanges | List all exchanges
-*PeriodsApi* | [**v1MetadataPeriodsGet**](docs/PeriodsApi.md#v1MetadataPeriodsGet) | **GET** /v1/metadata/periods | List all periods
 
 
 ## Documentation for Models
 
- - [Exchange](docs/Exchange.md)
  - [IndexDefinitionSnapshotEntry](docs/IndexDefinitionSnapshotEntry.md)
  - [IndexIdentifier](docs/IndexIdentifier.md)
  - [IndexMultiAssetWeight](docs/IndexMultiAssetWeight.md)
  - [IndexTimeseriesItem](docs/IndexTimeseriesItem.md)
  - [IndexValue](docs/IndexValue.md)
  - [IndexValueComponent](docs/IndexValueComponent.md)
- - [TimeseriesPeriod](docs/TimeseriesPeriod.md)
 
 
 <a id="documentation-for-authorization"></a>

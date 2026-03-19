@@ -29,11 +29,7 @@ part 'auth/http_basic_auth.dart';
 part 'auth/http_bearer_auth.dart';
 
 part 'api/indexes_api.dart';
-part 'api/metadata_api.dart';
-part 'api/periods_api.dart';
 
-part 'model/metadata_exchange.dart';
-part 'model/metadata_timeseries_period.dart';
 part 'model/models_index_definition_snapshot_entry.dart';
 part 'model/models_index_identifier.dart';
 part 'model/models_index_multi_asset_weight.dart';

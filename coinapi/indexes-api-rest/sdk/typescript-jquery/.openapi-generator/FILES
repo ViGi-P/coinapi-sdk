@@ -1,13 +1,9 @@
 .openapi-generator-ignore
 api/IndexesApi.ts
-api/MetadataApi.ts
-api/PeriodsApi.ts
 api/api.ts
 configuration.ts
 git_push.sh
 index.ts
-model/MetadataExchange.ts
-model/MetadataTimeseriesPeriod.ts
 model/ModelsIndexDefinitionSnapshotEntry.ts
 model/ModelsIndexIdentifier.ts
 model/ModelsIndexMultiAssetWeight.ts

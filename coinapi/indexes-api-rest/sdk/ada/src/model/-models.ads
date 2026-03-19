@@ -15,63 +15,6 @@ package .Models is
 
 
 
-   type MetadataExchange_Type is
-     record
-       Exchange_Id : Swagger.Nullable_UString;
-       Website : Swagger.Nullable_UString;
-       Name : Swagger.Nullable_UString;
-     end record;
-
-
-   package MetadataExchange_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.MetadataExchange_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.MetadataExchange_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in MetadataExchange_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.MetadataExchange_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out MetadataExchange_Type_Vectors.Vector);
-
-
-
-   type MetadataTimeseriesPeriod_Type is
-     record
-       Period_Id : Swagger.Nullable_UString;
-       Length_Seconds : Swagger.Nullable_Integer;
-       Length_Months : Swagger.Nullable_Integer;
-       Unit_Count : Swagger.Nullable_Integer;
-       Unit_Name : Swagger.Nullable_UString;
-       Display_Name : Swagger.Nullable_UString;
-     end record;
-
-
-   package MetadataTimeseriesPeriod_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.MetadataTimeseriesPeriod_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.MetadataTimeseriesPeriod_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in MetadataTimeseriesPeriod_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.MetadataTimeseriesPeriod_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out MetadataTimeseriesPeriod_Type_Vectors.Vector);
-
-
-
    type ModelsIndexDefinitionSnapshotEntry_Type is
      record
        Index_Id : Swagger.Nullable_UString;

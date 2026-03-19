@@ -233,15 +233,11 @@ cpanm --quiet --no-interactive Class::Accessor Test::Exception Test::More Log::A
 To load the API packages:
 ```perl
 use WWW::OpenAPIClient::IndexesApi;
-use WWW::OpenAPIClient::MetadataApi;
-use WWW::OpenAPIClient::PeriodsApi;
 
 ```
 
 To load the models:
 ```perl
-use WWW::OpenAPIClient::Object::MetadataExchange;
-use WWW::OpenAPIClient::Object::MetadataTimeseriesPeriod;
 use WWW::OpenAPIClient::Object::ModelsIndexDefinitionSnapshotEntry;
 use WWW::OpenAPIClient::Object::ModelsIndexIdentifier;
 use WWW::OpenAPIClient::Object::ModelsIndexMultiAssetWeight;
@@ -260,12 +256,8 @@ use strict;
 use warnings;
 # load the API package
 use WWW::OpenAPIClient::IndexesApi;
-use WWW::OpenAPIClient::MetadataApi;
-use WWW::OpenAPIClient::PeriodsApi;
 
 # load the models
-use WWW::OpenAPIClient::Object::MetadataExchange;
-use WWW::OpenAPIClient::Object::MetadataTimeseriesPeriod;
 use WWW::OpenAPIClient::Object::ModelsIndexDefinitionSnapshotEntry;
 use WWW::OpenAPIClient::Object::ModelsIndexIdentifier;
 use WWW::OpenAPIClient::Object::ModelsIndexMultiAssetWeight;
@@ -309,14 +301,9 @@ Class | Method | HTTP request | Description
 *IndexesApi* | [**v1_indexes_index_id_current_get**](docs/IndexesApi.md#v1_indexes_index_id_current_get) | **GET** /v1/indexes/{index_id}/current | Current Index Value
 *IndexesApi* | [**v1_indexes_index_id_history_get**](docs/IndexesApi.md#v1_indexes_index_id_history_get) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 *IndexesApi* | [**v1_indexes_index_id_timeseries_get**](docs/IndexesApi.md#v1_indexes_index_id_timeseries_get) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
-*MetadataApi* | [**api_metadata_exchanges_exchange_id_get**](docs/MetadataApi.md#api_metadata_exchanges_exchange_id_get) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
-*MetadataApi* | [**api_metadata_exchanges_get**](docs/MetadataApi.md#api_metadata_exchanges_get) | **GET** /api/metadata/exchanges | List all exchanges
-*PeriodsApi* | [**v1_metadata_periods_get**](docs/PeriodsApi.md#v1_metadata_periods_get) | **GET** /v1/metadata/periods | List all periods
 
 
 # DOCUMENTATION FOR MODELS
- - [WWW::OpenAPIClient::Object::MetadataExchange](docs/MetadataExchange.md)
- - [WWW::OpenAPIClient::Object::MetadataTimeseriesPeriod](docs/MetadataTimeseriesPeriod.md)
  - [WWW::OpenAPIClient::Object::ModelsIndexDefinitionSnapshotEntry](docs/ModelsIndexDefinitionSnapshotEntry.md)
  - [WWW::OpenAPIClient::Object::ModelsIndexIdentifier](docs/ModelsIndexIdentifier.md)
  - [WWW::OpenAPIClient::Object::ModelsIndexMultiAssetWeight](docs/ModelsIndexMultiAssetWeight.md)

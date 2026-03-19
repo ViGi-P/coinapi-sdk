@@ -1,5 +1,3 @@
-export * from './MetadataExchange';
-export * from './MetadataTimeseriesPeriod';
 export * from './ModelsIndexDefinitionSnapshotEntry';
 export * from './ModelsIndexIdentifier';
 export * from './ModelsIndexMultiAssetWeight';

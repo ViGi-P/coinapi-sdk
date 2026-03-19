@@ -5,10 +5,6 @@
 README.md
 composer.json
 docs/Api/IndexesApi.md
-docs/Api/MetadataApi.md
-docs/Api/PeriodsApi.md
-docs/Model/MetadataExchange.md
-docs/Model/MetadataTimeseriesPeriod.md
 docs/Model/ModelsIndexDefinitionSnapshotEntry.md
 docs/Model/ModelsIndexIdentifier.md
 docs/Model/ModelsIndexMultiAssetWeight.md
@@ -17,14 +13,10 @@ docs/Model/ModelsIndexValue.md
 docs/Model/ModelsIndexValueComponent.md
 git_push.sh
 lib/Api/IndexesApi.php
-lib/Api/MetadataApi.php
-lib/Api/PeriodsApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/FormDataProcessor.php
 lib/HeaderSelector.php
-lib/Model/MetadataExchange.php
-lib/Model/MetadataTimeseriesPeriod.php
 lib/Model/ModelInterface.php
 lib/Model/ModelsIndexDefinitionSnapshotEntry.php
 lib/Model/ModelsIndexIdentifier.php
@@ -35,10 +27,6 @@ lib/Model/ModelsIndexValueComponent.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/IndexesApiTest.php
-test/Api/MetadataApiTest.php
-test/Api/PeriodsApiTest.php
-test/Model/MetadataExchangeTest.php
-test/Model/MetadataTimeseriesPeriodTest.php
 test/Model/ModelsIndexDefinitionSnapshotEntryTest.php
 test/Model/ModelsIndexIdentifierTest.php
 test/Model/ModelsIndexMultiAssetWeightTest.php

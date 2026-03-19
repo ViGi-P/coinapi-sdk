@@ -5,14 +5,10 @@ api.base.service.ts
 api.module.ts
 api/api.ts
 api/indexes.service.ts
-api/metadata.service.ts
-api/periods.service.ts
 configuration.ts
 encoder.ts
 git_push.sh
 index.ts
-model/metadataExchange.ts
-model/metadataTimeseriesPeriod.ts
 model/models.ts
 model/modelsIndexDefinitionSnapshotEntry.ts
 model/modelsIndexIdentifier.ts

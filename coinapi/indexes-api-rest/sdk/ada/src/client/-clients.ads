@@ -69,42 +69,4 @@ package .Clients is
        Limit : in Swagger.Nullable_Integer;
        Result : out .Models.ModelsIndexTimeseriesItem_Type_Vectors.Vector);
 
-   --  List all exchanges by exchange_id
-   procedure Api_Metadata_Exchanges_Exchange_Id_Get
-      (Client : in out Client_Type;
-       Exchange_Id : in Swagger.UString;
-       Result : out .Models.MetadataExchange_Type_Vectors.Vector);
-
-   --  List all exchanges
-   --  Get a detailed list of exchanges provided by the system.
-   --              
-   --  :::info
-   --  Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source.
-   --  :::
-   procedure Api_Metadata_Exchanges_Get
-      (Client : in out Client_Type;
-       Filter_Exchange_Id : in Swagger.Nullable_UString;
-       Result : out .Models.MetadataExchange_Type_Vectors.Vector);
-
-   --  List all periods
-   --  Get full list of supported time periods
-   --              
-   --  ### Available periods
-   --              
-   --  Time unit | Period identifiers
-   --  --------- | -----------
-   --  Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC
-   --  Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN
-   --  Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS
-   --  Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY
-   --  Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH
-   --  Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS
-   --              
-   --  :::tip
-   --  You can assume that we will not remove any periods from this response, however, we may add new ones.
-   --  :::
-   procedure V_1Metadata_Periods_Get
-      (Client : in out Client_Type;
-       Result : out .Models.MetadataTimeseriesPeriod_Type_Vectors.Vector);
-
 end .Clients;

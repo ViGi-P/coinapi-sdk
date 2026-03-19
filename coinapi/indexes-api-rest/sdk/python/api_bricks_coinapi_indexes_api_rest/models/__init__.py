@@ -14,8 +14,6 @@
 """  # noqa: E501
 
 # import models into model package
-from api_bricks_coinapi_indexes_api_rest.models.metadata_exchange import MetadataExchange
-from api_bricks_coinapi_indexes_api_rest.models.metadata_timeseries_period import MetadataTimeseriesPeriod
 from api_bricks_coinapi_indexes_api_rest.models.models_index_definition_snapshot_entry import ModelsIndexDefinitionSnapshotEntry
 from api_bricks_coinapi_indexes_api_rest.models.models_index_identifier import ModelsIndexIdentifier
 from api_bricks_coinapi_indexes_api_rest.models.models_index_multi_asset_weight import ModelsIndexMultiAssetWeight
