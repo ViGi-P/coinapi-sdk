@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIBricks.FinFeedAPI.STOCKAPI.REST.V1", "src\APIBricks.FinFeedAPI.STOCKAPI.REST.V1\APIBricks.FinFeedAPI.STOCKAPI.REST.V1.csproj", "{D230AB48-9E03-47E0-B983-4FF44E20FA9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIBricks.FinFeedAPI.STOCKAPI.REST.V1", "src\APIBricks.FinFeedAPI.STOCKAPI.REST.V1\APIBricks.FinFeedAPI.STOCKAPI.REST.V1.csproj", "{EB5403E6-5AD9-4E9E-91B1-426A5E9D64EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test", "src\APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test\APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D230AB48-9E03-47E0-B983-4FF44E20FA9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D230AB48-9E03-47E0-B983-4FF44E20FA9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D230AB48-9E03-47E0-B983-4FF44E20FA9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D230AB48-9E03-47E0-B983-4FF44E20FA9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB5403E6-5AD9-4E9E-91B1-426A5E9D64EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB5403E6-5AD9-4E9E-91B1-426A5E9D64EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB5403E6-5AD9-4E9E-91B1-426A5E9D64EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB5403E6-5AD9-4E9E-91B1-426A5E9D64EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
