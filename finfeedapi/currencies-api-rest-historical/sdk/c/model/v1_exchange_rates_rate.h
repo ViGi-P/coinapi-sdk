@@ -21,7 +21,7 @@ typedef struct v1_exchange_rates_rate_t v1_exchange_rates_rate_t;
 typedef struct v1_exchange_rates_rate_t {
     char *time; //date time
     char *asset_id_quote; // string
-    double rate; //numeric
+    double *rate; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } v1_exchange_rates_rate_t;
@@ -29,7 +29,7 @@ typedef struct v1_exchange_rates_rate_t {
 __attribute__((deprecated)) v1_exchange_rates_rate_t *v1_exchange_rates_rate_create(
     char *time,
     char *asset_id_quote,
-    double rate
+    double *rate
 );
 
 void v1_exchange_rates_rate_free(v1_exchange_rates_rate_t *v1_exchange_rates_rate);

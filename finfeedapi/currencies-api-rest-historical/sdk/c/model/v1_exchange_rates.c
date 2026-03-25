@@ -13,10 +13,10 @@ static v1_exchange_rates_t *v1_exchange_rates_create_internal(
     if (!v1_exchange_rates_local_var) {
         return NULL;
     }
+    memset(v1_exchange_rates_local_var, 0, sizeof(v1_exchange_rates_t));
+    v1_exchange_rates_local_var->_library_owned = 1;
     v1_exchange_rates_local_var->asset_id_base = asset_id_base;
     v1_exchange_rates_local_var->rates = rates;
-
-    v1_exchange_rates_local_var->_library_owned = 1;
     return v1_exchange_rates_local_var;
 }
 
@@ -24,10 +24,13 @@ __attribute__((deprecated)) v1_exchange_rates_t *v1_exchange_rates_create(
     char *asset_id_base,
     list_t *rates
     ) {
-    return v1_exchange_rates_create_internal (
+    v1_exchange_rates_t *result = v1_exchange_rates_create_internal (
         asset_id_base,
         rates
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void v1_exchange_rates_free(v1_exchange_rates_t *v1_exchange_rates) {
@@ -95,6 +98,8 @@ v1_exchange_rates_t *v1_exchange_rates_parseFromJSON(cJSON *v1_exchange_ratesJSO
 
     v1_exchange_rates_t *v1_exchange_rates_local_var = NULL;
 
+    char *asset_id_base_local_str = NULL;
+
     // define the local list for v1_exchange_rates->rates
     list_t *ratesList = NULL;
 
@@ -135,13 +140,23 @@ v1_exchange_rates_t *v1_exchange_rates_parseFromJSON(cJSON *v1_exchange_ratesJSO
     }
 
 
+    if (asset_id_base && !cJSON_IsNull(asset_id_base)) asset_id_base_local_str = strdup(asset_id_base->valuestring);
+
     v1_exchange_rates_local_var = v1_exchange_rates_create_internal (
-        asset_id_base && !cJSON_IsNull(asset_id_base) ? strdup(asset_id_base->valuestring) : NULL,
+        asset_id_base_local_str,
         rates ? ratesList : NULL
         );
 
+    if (!v1_exchange_rates_local_var) {
+        goto end;
+    }
+
     return v1_exchange_rates_local_var;
 end:
+    if (asset_id_base_local_str) {
+        free(asset_id_base_local_str);
+        asset_id_base_local_str = NULL;
+    }
     if (ratesList) {
         listEntry_t *listEntry = NULL;
         list_ForEach(listEntry, ratesList) {

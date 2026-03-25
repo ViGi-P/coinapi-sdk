@@ -46,6 +46,7 @@ src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical/Client/DateOnlyNullabl
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical/Client/DateTimeJsonConverter.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical/Client/DateTimeNullableJsonConverter.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical/Client/ExceptionEventArgs.cs
+src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical/Client/FileParameter.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical/Client/HostConfiguration.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical/Client/JsonSerializerOptionsProvider.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical/Client/Option.cs
