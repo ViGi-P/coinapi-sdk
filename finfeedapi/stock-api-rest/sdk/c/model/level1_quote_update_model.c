@@ -7,19 +7,21 @@
 
 static level1_quote_update_model_t *level1_quote_update_model_create_internal(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int is_symbol_available,
-    int is_pre_post_market_session,
-    int ask_size,
-    double ask_price,
-    double bid_price,
-    int bid_size
+    int *is_symbol_available,
+    int *is_pre_post_market_session,
+    int *ask_size,
+    double *ask_price,
+    double *bid_price,
+    int *bid_size
     ) {
     level1_quote_update_model_t *level1_quote_update_model_local_var = malloc(sizeof(level1_quote_update_model_t));
     if (!level1_quote_update_model_local_var) {
         return NULL;
     }
+    memset(level1_quote_update_model_local_var, 0, sizeof(level1_quote_update_model_t));
+    level1_quote_update_model_local_var->_library_owned = 1;
     level1_quote_update_model_local_var->symbol = symbol;
     level1_quote_update_model_local_var->timestamp_nanos = timestamp_nanos;
     level1_quote_update_model_local_var->timestamp = timestamp;
@@ -29,33 +31,76 @@ static level1_quote_update_model_t *level1_quote_update_model_create_internal(
     level1_quote_update_model_local_var->ask_price = ask_price;
     level1_quote_update_model_local_var->bid_price = bid_price;
     level1_quote_update_model_local_var->bid_size = bid_size;
-
-    level1_quote_update_model_local_var->_library_owned = 1;
     return level1_quote_update_model_local_var;
 }
 
 __attribute__((deprecated)) level1_quote_update_model_t *level1_quote_update_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int is_symbol_available,
-    int is_pre_post_market_session,
-    int ask_size,
-    double ask_price,
-    double bid_price,
-    int bid_size
+    int *is_symbol_available,
+    int *is_pre_post_market_session,
+    int *ask_size,
+    double *ask_price,
+    double *bid_price,
+    int *bid_size
     ) {
-    return level1_quote_update_model_create_internal (
+    long *timestamp_nanos_copy = NULL;
+    if (timestamp_nanos) {
+        timestamp_nanos_copy = malloc(sizeof(long));
+        if (timestamp_nanos_copy) *timestamp_nanos_copy = *timestamp_nanos;
+    }
+    int *is_symbol_available_copy = NULL;
+    if (is_symbol_available) {
+        is_symbol_available_copy = malloc(sizeof(int));
+        if (is_symbol_available_copy) *is_symbol_available_copy = *is_symbol_available;
+    }
+    int *is_pre_post_market_session_copy = NULL;
+    if (is_pre_post_market_session) {
+        is_pre_post_market_session_copy = malloc(sizeof(int));
+        if (is_pre_post_market_session_copy) *is_pre_post_market_session_copy = *is_pre_post_market_session;
+    }
+    int *ask_size_copy = NULL;
+    if (ask_size) {
+        ask_size_copy = malloc(sizeof(int));
+        if (ask_size_copy) *ask_size_copy = *ask_size;
+    }
+    double *ask_price_copy = NULL;
+    if (ask_price) {
+        ask_price_copy = malloc(sizeof(double));
+        if (ask_price_copy) *ask_price_copy = *ask_price;
+    }
+    double *bid_price_copy = NULL;
+    if (bid_price) {
+        bid_price_copy = malloc(sizeof(double));
+        if (bid_price_copy) *bid_price_copy = *bid_price;
+    }
+    int *bid_size_copy = NULL;
+    if (bid_size) {
+        bid_size_copy = malloc(sizeof(int));
+        if (bid_size_copy) *bid_size_copy = *bid_size;
+    }
+    level1_quote_update_model_t *result = level1_quote_update_model_create_internal (
         symbol,
-        timestamp_nanos,
+        timestamp_nanos_copy,
         timestamp,
-        is_symbol_available,
-        is_pre_post_market_session,
-        ask_size,
-        ask_price,
-        bid_price,
-        bid_size
+        is_symbol_available_copy,
+        is_pre_post_market_session_copy,
+        ask_size_copy,
+        ask_price_copy,
+        bid_price_copy,
+        bid_size_copy
         );
+    if (!result) {
+        free(timestamp_nanos_copy);
+        free(is_symbol_available_copy);
+        free(is_pre_post_market_session_copy);
+        free(ask_size_copy);
+        free(ask_price_copy);
+        free(bid_price_copy);
+        free(bid_size_copy);
+    }
+    return result;
 }
 
 void level1_quote_update_model_free(level1_quote_update_model_t *level1_quote_update_model) {
@@ -71,9 +116,37 @@ void level1_quote_update_model_free(level1_quote_update_model_t *level1_quote_up
         free(level1_quote_update_model->symbol);
         level1_quote_update_model->symbol = NULL;
     }
+    if (level1_quote_update_model->timestamp_nanos) {
+        free(level1_quote_update_model->timestamp_nanos);
+        level1_quote_update_model->timestamp_nanos = NULL;
+    }
     if (level1_quote_update_model->timestamp) {
         free(level1_quote_update_model->timestamp);
         level1_quote_update_model->timestamp = NULL;
+    }
+    if (level1_quote_update_model->is_symbol_available) {
+        free(level1_quote_update_model->is_symbol_available);
+        level1_quote_update_model->is_symbol_available = NULL;
+    }
+    if (level1_quote_update_model->is_pre_post_market_session) {
+        free(level1_quote_update_model->is_pre_post_market_session);
+        level1_quote_update_model->is_pre_post_market_session = NULL;
+    }
+    if (level1_quote_update_model->ask_size) {
+        free(level1_quote_update_model->ask_size);
+        level1_quote_update_model->ask_size = NULL;
+    }
+    if (level1_quote_update_model->ask_price) {
+        free(level1_quote_update_model->ask_price);
+        level1_quote_update_model->ask_price = NULL;
+    }
+    if (level1_quote_update_model->bid_price) {
+        free(level1_quote_update_model->bid_price);
+        level1_quote_update_model->bid_price = NULL;
+    }
+    if (level1_quote_update_model->bid_size) {
+        free(level1_quote_update_model->bid_size);
+        level1_quote_update_model->bid_size = NULL;
     }
     free(level1_quote_update_model);
 }
@@ -91,7 +164,7 @@ cJSON *level1_quote_update_model_convertToJSON(level1_quote_update_model_t *leve
 
     // level1_quote_update_model->timestamp_nanos
     if(level1_quote_update_model->timestamp_nanos) {
-    if(cJSON_AddNumberToObject(item, "timestamp_nanos", level1_quote_update_model->timestamp_nanos) == NULL) {
+    if(cJSON_AddNumberToObject(item, "timestamp_nanos", *level1_quote_update_model->timestamp_nanos) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -107,7 +180,7 @@ cJSON *level1_quote_update_model_convertToJSON(level1_quote_update_model_t *leve
 
     // level1_quote_update_model->is_symbol_available
     if(level1_quote_update_model->is_symbol_available) {
-    if(cJSON_AddBoolToObject(item, "is_symbol_available", level1_quote_update_model->is_symbol_available) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_symbol_available", *level1_quote_update_model->is_symbol_available) == NULL) {
     goto fail; //Bool
     }
     }
@@ -115,7 +188,7 @@ cJSON *level1_quote_update_model_convertToJSON(level1_quote_update_model_t *leve
 
     // level1_quote_update_model->is_pre_post_market_session
     if(level1_quote_update_model->is_pre_post_market_session) {
-    if(cJSON_AddBoolToObject(item, "is_pre_post_market_session", level1_quote_update_model->is_pre_post_market_session) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_pre_post_market_session", *level1_quote_update_model->is_pre_post_market_session) == NULL) {
     goto fail; //Bool
     }
     }
@@ -123,7 +196,7 @@ cJSON *level1_quote_update_model_convertToJSON(level1_quote_update_model_t *leve
 
     // level1_quote_update_model->ask_size
     if(level1_quote_update_model->ask_size) {
-    if(cJSON_AddNumberToObject(item, "ask_size", level1_quote_update_model->ask_size) == NULL) {
+    if(cJSON_AddNumberToObject(item, "ask_size", *level1_quote_update_model->ask_size) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -131,7 +204,7 @@ cJSON *level1_quote_update_model_convertToJSON(level1_quote_update_model_t *leve
 
     // level1_quote_update_model->ask_price
     if(level1_quote_update_model->ask_price) {
-    if(cJSON_AddNumberToObject(item, "ask_price", level1_quote_update_model->ask_price) == NULL) {
+    if(cJSON_AddNumberToObject(item, "ask_price", *level1_quote_update_model->ask_price) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -139,7 +212,7 @@ cJSON *level1_quote_update_model_convertToJSON(level1_quote_update_model_t *leve
 
     // level1_quote_update_model->bid_price
     if(level1_quote_update_model->bid_price) {
-    if(cJSON_AddNumberToObject(item, "bid_price", level1_quote_update_model->bid_price) == NULL) {
+    if(cJSON_AddNumberToObject(item, "bid_price", *level1_quote_update_model->bid_price) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -147,7 +220,7 @@ cJSON *level1_quote_update_model_convertToJSON(level1_quote_update_model_t *leve
 
     // level1_quote_update_model->bid_size
     if(level1_quote_update_model->bid_size) {
-    if(cJSON_AddNumberToObject(item, "bid_size", level1_quote_update_model->bid_size) == NULL) {
+    if(cJSON_AddNumberToObject(item, "bid_size", *level1_quote_update_model->bid_size) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -163,6 +236,31 @@ fail:
 level1_quote_update_model_t *level1_quote_update_model_parseFromJSON(cJSON *level1_quote_update_modelJSON){
 
     level1_quote_update_model_t *level1_quote_update_model_local_var = NULL;
+
+    char *symbol_local_str = NULL;
+
+    // define the local variable for level1_quote_update_model->timestamp_nanos
+    long *timestamp_nanos_local_var = NULL;
+
+    char *timestamp_local_str = NULL;
+
+    // define the local variable for level1_quote_update_model->is_symbol_available
+    int *is_symbol_available_local_var = NULL;
+
+    // define the local variable for level1_quote_update_model->is_pre_post_market_session
+    int *is_pre_post_market_session_local_var = NULL;
+
+    // define the local variable for level1_quote_update_model->ask_size
+    int *ask_size_local_var = NULL;
+
+    // define the local variable for level1_quote_update_model->ask_price
+    double *ask_price_local_var = NULL;
+
+    // define the local variable for level1_quote_update_model->bid_price
+    double *bid_price_local_var = NULL;
+
+    // define the local variable for level1_quote_update_model->bid_size
+    int *bid_size_local_var = NULL;
 
     // level1_quote_update_model->symbol
     cJSON *symbol = cJSON_GetObjectItemCaseSensitive(level1_quote_update_modelJSON, "symbol");
@@ -186,6 +284,12 @@ level1_quote_update_model_t *level1_quote_update_model_parseFromJSON(cJSON *leve
     {
     goto end; //Numeric
     }
+    timestamp_nanos_local_var = malloc(sizeof(long));
+    if(!timestamp_nanos_local_var)
+    {
+        goto end;
+    }
+    *timestamp_nanos_local_var = timestamp_nanos->valuedouble;
     }
 
     // level1_quote_update_model->timestamp
@@ -210,6 +314,12 @@ level1_quote_update_model_t *level1_quote_update_model_parseFromJSON(cJSON *leve
     {
     goto end; //Bool
     }
+    is_symbol_available_local_var = malloc(sizeof(int));
+    if(!is_symbol_available_local_var)
+    {
+        goto end;
+    }
+    *is_symbol_available_local_var = is_symbol_available->valueint;
     }
 
     // level1_quote_update_model->is_pre_post_market_session
@@ -222,6 +332,12 @@ level1_quote_update_model_t *level1_quote_update_model_parseFromJSON(cJSON *leve
     {
     goto end; //Bool
     }
+    is_pre_post_market_session_local_var = malloc(sizeof(int));
+    if(!is_pre_post_market_session_local_var)
+    {
+        goto end;
+    }
+    *is_pre_post_market_session_local_var = is_pre_post_market_session->valueint;
     }
 
     // level1_quote_update_model->ask_size
@@ -234,6 +350,12 @@ level1_quote_update_model_t *level1_quote_update_model_parseFromJSON(cJSON *leve
     {
     goto end; //Numeric
     }
+    ask_size_local_var = malloc(sizeof(int));
+    if(!ask_size_local_var)
+    {
+        goto end;
+    }
+    *ask_size_local_var = ask_size->valuedouble;
     }
 
     // level1_quote_update_model->ask_price
@@ -246,6 +368,12 @@ level1_quote_update_model_t *level1_quote_update_model_parseFromJSON(cJSON *leve
     {
     goto end; //Numeric
     }
+    ask_price_local_var = malloc(sizeof(double));
+    if(!ask_price_local_var)
+    {
+        goto end;
+    }
+    *ask_price_local_var = ask_price->valuedouble;
     }
 
     // level1_quote_update_model->bid_price
@@ -258,6 +386,12 @@ level1_quote_update_model_t *level1_quote_update_model_parseFromJSON(cJSON *leve
     {
     goto end; //Numeric
     }
+    bid_price_local_var = malloc(sizeof(double));
+    if(!bid_price_local_var)
+    {
+        goto end;
+    }
+    *bid_price_local_var = bid_price->valuedouble;
     }
 
     // level1_quote_update_model->bid_size
@@ -270,23 +404,72 @@ level1_quote_update_model_t *level1_quote_update_model_parseFromJSON(cJSON *leve
     {
     goto end; //Numeric
     }
+    bid_size_local_var = malloc(sizeof(int));
+    if(!bid_size_local_var)
+    {
+        goto end;
+    }
+    *bid_size_local_var = bid_size->valuedouble;
     }
 
 
+    if (symbol && !cJSON_IsNull(symbol)) symbol_local_str = strdup(symbol->valuestring);
+    if (timestamp && !cJSON_IsNull(timestamp)) timestamp_local_str = strdup(timestamp->valuestring);
+
     level1_quote_update_model_local_var = level1_quote_update_model_create_internal (
-        symbol && !cJSON_IsNull(symbol) ? strdup(symbol->valuestring) : NULL,
-        timestamp_nanos ? timestamp_nanos->valuedouble : 0,
-        timestamp && !cJSON_IsNull(timestamp) ? strdup(timestamp->valuestring) : NULL,
-        is_symbol_available ? is_symbol_available->valueint : 0,
-        is_pre_post_market_session ? is_pre_post_market_session->valueint : 0,
-        ask_size ? ask_size->valuedouble : 0,
-        ask_price ? ask_price->valuedouble : 0,
-        bid_price ? bid_price->valuedouble : 0,
-        bid_size ? bid_size->valuedouble : 0
+        symbol_local_str,
+        timestamp_nanos_local_var,
+        timestamp_local_str,
+        is_symbol_available_local_var,
+        is_pre_post_market_session_local_var,
+        ask_size_local_var,
+        ask_price_local_var,
+        bid_price_local_var,
+        bid_size_local_var
         );
+
+    if (!level1_quote_update_model_local_var) {
+        goto end;
+    }
 
     return level1_quote_update_model_local_var;
 end:
+    if (symbol_local_str) {
+        free(symbol_local_str);
+        symbol_local_str = NULL;
+    }
+    if (timestamp_nanos_local_var) {
+        free(timestamp_nanos_local_var);
+        timestamp_nanos_local_var = NULL;
+    }
+    if (timestamp_local_str) {
+        free(timestamp_local_str);
+        timestamp_local_str = NULL;
+    }
+    if (is_symbol_available_local_var) {
+        free(is_symbol_available_local_var);
+        is_symbol_available_local_var = NULL;
+    }
+    if (is_pre_post_market_session_local_var) {
+        free(is_pre_post_market_session_local_var);
+        is_pre_post_market_session_local_var = NULL;
+    }
+    if (ask_size_local_var) {
+        free(ask_size_local_var);
+        ask_size_local_var = NULL;
+    }
+    if (ask_price_local_var) {
+        free(ask_price_local_var);
+        ask_price_local_var = NULL;
+    }
+    if (bid_price_local_var) {
+        free(bid_price_local_var);
+        bid_price_local_var = NULL;
+    }
+    if (bid_size_local_var) {
+        free(bid_size_local_var);
+        bid_size_local_var = NULL;
+    }
     return NULL;
 
 }

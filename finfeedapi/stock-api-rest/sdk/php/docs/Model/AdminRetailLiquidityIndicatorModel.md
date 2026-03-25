@@ -1,4 +1,4 @@
-# # AdminRetailLiquidityIndicatorModel
+# AdminRetailLiquidityIndicatorModel
 
 ## Properties
 

@@ -20,28 +20,28 @@ typedef struct admin_official_price_model_t admin_official_price_model_t;
 
 typedef struct admin_official_price_model_t {
     char *symbol; // string
-    long timestamp_nanos; //numeric
+    long *timestamp_nanos; //numeric
     char *timestamp; //date time
-    int price_type; //numeric
+    int *price_type; //numeric
     char *price_type_code; // string
     char *price_type_text; // string
-    int is_price_type_opening; //boolean
-    int is_price_type_closing; //boolean
-    double official_price; //numeric
+    int *is_price_type_opening; //boolean
+    int *is_price_type_closing; //boolean
+    double *official_price; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } admin_official_price_model_t;
 
 __attribute__((deprecated)) admin_official_price_model_t *admin_official_price_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int price_type,
+    int *price_type,
     char *price_type_code,
     char *price_type_text,
-    int is_price_type_opening,
-    int is_price_type_closing,
-    double official_price
+    int *is_price_type_opening,
+    int *is_price_type_closing,
+    double *official_price
 );
 
 void admin_official_price_model_free(admin_official_price_model_t *admin_official_price_model);

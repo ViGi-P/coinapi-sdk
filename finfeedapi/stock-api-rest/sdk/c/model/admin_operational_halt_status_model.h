@@ -20,26 +20,26 @@ typedef struct admin_operational_halt_status_model_t admin_operational_halt_stat
 
 typedef struct admin_operational_halt_status_model_t {
     char *symbol; // string
-    long timestamp_nanos; //numeric
+    long *timestamp_nanos; //numeric
     char *timestamp; //date time
-    int operational_halt_status; //numeric
+    int *operational_halt_status; //numeric
     char *operational_halt_status_code; // string
     char *operational_halt_status_text; // string
-    int is_operationally_halted; //boolean
-    int is_not_operationally_halted; //boolean
+    int *is_operationally_halted; //boolean
+    int *is_not_operationally_halted; //boolean
 
     int _library_owned; // Is the library responsible for freeing this object?
 } admin_operational_halt_status_model_t;
 
 __attribute__((deprecated)) admin_operational_halt_status_model_t *admin_operational_halt_status_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int operational_halt_status,
+    int *operational_halt_status,
     char *operational_halt_status_code,
     char *operational_halt_status_text,
-    int is_operationally_halted,
-    int is_not_operationally_halted
+    int *is_operationally_halted,
+    int *is_not_operationally_halted
 );
 
 void admin_operational_halt_status_model_free(admin_operational_halt_status_model_t *admin_operational_halt_status_model);

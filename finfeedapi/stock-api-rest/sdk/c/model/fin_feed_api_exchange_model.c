@@ -30,6 +30,8 @@ static fin_feed_api_exchange_model_t *fin_feed_api_exchange_model_create_interna
     if (!fin_feed_api_exchange_model_local_var) {
         return NULL;
     }
+    memset(fin_feed_api_exchange_model_local_var, 0, sizeof(fin_feed_api_exchange_model_t));
+    fin_feed_api_exchange_model_local_var->_library_owned = 1;
     fin_feed_api_exchange_model_local_var->exchange_id = exchange_id;
     fin_feed_api_exchange_model_local_var->last_datapoint_date = last_datapoint_date;
     fin_feed_api_exchange_model_local_var->mic = mic;
@@ -49,8 +51,6 @@ static fin_feed_api_exchange_model_t *fin_feed_api_exchange_model_create_interna
     fin_feed_api_exchange_model_local_var->last_validation_date = last_validation_date;
     fin_feed_api_exchange_model_local_var->expiry_date = expiry_date;
     fin_feed_api_exchange_model_local_var->comments = comments;
-
-    fin_feed_api_exchange_model_local_var->_library_owned = 1;
     return fin_feed_api_exchange_model_local_var;
 }
 
@@ -75,7 +75,7 @@ __attribute__((deprecated)) fin_feed_api_exchange_model_t *fin_feed_api_exchange
     char *expiry_date,
     char *comments
     ) {
-    return fin_feed_api_exchange_model_create_internal (
+    fin_feed_api_exchange_model_t *result = fin_feed_api_exchange_model_create_internal (
         exchange_id,
         last_datapoint_date,
         mic,
@@ -96,6 +96,9 @@ __attribute__((deprecated)) fin_feed_api_exchange_model_t *fin_feed_api_exchange
         expiry_date,
         comments
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void fin_feed_api_exchange_model_free(fin_feed_api_exchange_model_t *fin_feed_api_exchange_model) {
@@ -352,6 +355,44 @@ fin_feed_api_exchange_model_t *fin_feed_api_exchange_model_parseFromJSON(cJSON *
 
     fin_feed_api_exchange_model_t *fin_feed_api_exchange_model_local_var = NULL;
 
+    char *exchange_id_local_str = NULL;
+
+    char *last_datapoint_date_local_str = NULL;
+
+    char *mic_local_str = NULL;
+
+    char *operating_mic_local_str = NULL;
+
+    char *oprt_sgmt_local_str = NULL;
+
+    char *market_name_institution_description_local_str = NULL;
+
+    char *legal_entity_name_local_str = NULL;
+
+    char *lei_local_str = NULL;
+
+    char *market_category_code_local_str = NULL;
+
+    char *acronym_local_str = NULL;
+
+    char *iso_country_code_local_str = NULL;
+
+    char *city_local_str = NULL;
+
+    char *website_local_str = NULL;
+
+    char *status_local_str = NULL;
+
+    char *creation_date_local_str = NULL;
+
+    char *last_update_date_local_str = NULL;
+
+    char *last_validation_date_local_str = NULL;
+
+    char *expiry_date_local_str = NULL;
+
+    char *comments_local_str = NULL;
+
     // fin_feed_api_exchange_model->exchange_id
     cJSON *exchange_id = cJSON_GetObjectItemCaseSensitive(fin_feed_api_exchange_modelJSON, "exchange_id");
     if (cJSON_IsNull(exchange_id)) {
@@ -581,30 +622,130 @@ fin_feed_api_exchange_model_t *fin_feed_api_exchange_model_parseFromJSON(cJSON *
     }
 
 
+    if (exchange_id && !cJSON_IsNull(exchange_id)) exchange_id_local_str = strdup(exchange_id->valuestring);
+    if (last_datapoint_date && !cJSON_IsNull(last_datapoint_date)) last_datapoint_date_local_str = strdup(last_datapoint_date->valuestring);
+    if (mic && !cJSON_IsNull(mic)) mic_local_str = strdup(mic->valuestring);
+    if (operating_mic && !cJSON_IsNull(operating_mic)) operating_mic_local_str = strdup(operating_mic->valuestring);
+    if (oprt_sgmt && !cJSON_IsNull(oprt_sgmt)) oprt_sgmt_local_str = strdup(oprt_sgmt->valuestring);
+    if (market_name_institution_description && !cJSON_IsNull(market_name_institution_description)) market_name_institution_description_local_str = strdup(market_name_institution_description->valuestring);
+    if (legal_entity_name && !cJSON_IsNull(legal_entity_name)) legal_entity_name_local_str = strdup(legal_entity_name->valuestring);
+    if (lei && !cJSON_IsNull(lei)) lei_local_str = strdup(lei->valuestring);
+    if (market_category_code && !cJSON_IsNull(market_category_code)) market_category_code_local_str = strdup(market_category_code->valuestring);
+    if (acronym && !cJSON_IsNull(acronym)) acronym_local_str = strdup(acronym->valuestring);
+    if (iso_country_code && !cJSON_IsNull(iso_country_code)) iso_country_code_local_str = strdup(iso_country_code->valuestring);
+    if (city && !cJSON_IsNull(city)) city_local_str = strdup(city->valuestring);
+    if (website && !cJSON_IsNull(website)) website_local_str = strdup(website->valuestring);
+    if (status && !cJSON_IsNull(status)) status_local_str = strdup(status->valuestring);
+    if (creation_date && !cJSON_IsNull(creation_date)) creation_date_local_str = strdup(creation_date->valuestring);
+    if (last_update_date && !cJSON_IsNull(last_update_date)) last_update_date_local_str = strdup(last_update_date->valuestring);
+    if (last_validation_date && !cJSON_IsNull(last_validation_date)) last_validation_date_local_str = strdup(last_validation_date->valuestring);
+    if (expiry_date && !cJSON_IsNull(expiry_date)) expiry_date_local_str = strdup(expiry_date->valuestring);
+    if (comments && !cJSON_IsNull(comments)) comments_local_str = strdup(comments->valuestring);
+
     fin_feed_api_exchange_model_local_var = fin_feed_api_exchange_model_create_internal (
-        exchange_id && !cJSON_IsNull(exchange_id) ? strdup(exchange_id->valuestring) : NULL,
-        last_datapoint_date && !cJSON_IsNull(last_datapoint_date) ? strdup(last_datapoint_date->valuestring) : NULL,
-        mic && !cJSON_IsNull(mic) ? strdup(mic->valuestring) : NULL,
-        operating_mic && !cJSON_IsNull(operating_mic) ? strdup(operating_mic->valuestring) : NULL,
-        oprt_sgmt && !cJSON_IsNull(oprt_sgmt) ? strdup(oprt_sgmt->valuestring) : NULL,
-        market_name_institution_description && !cJSON_IsNull(market_name_institution_description) ? strdup(market_name_institution_description->valuestring) : NULL,
-        legal_entity_name && !cJSON_IsNull(legal_entity_name) ? strdup(legal_entity_name->valuestring) : NULL,
-        lei && !cJSON_IsNull(lei) ? strdup(lei->valuestring) : NULL,
-        market_category_code && !cJSON_IsNull(market_category_code) ? strdup(market_category_code->valuestring) : NULL,
-        acronym && !cJSON_IsNull(acronym) ? strdup(acronym->valuestring) : NULL,
-        iso_country_code && !cJSON_IsNull(iso_country_code) ? strdup(iso_country_code->valuestring) : NULL,
-        city && !cJSON_IsNull(city) ? strdup(city->valuestring) : NULL,
-        website && !cJSON_IsNull(website) ? strdup(website->valuestring) : NULL,
-        status && !cJSON_IsNull(status) ? strdup(status->valuestring) : NULL,
-        creation_date && !cJSON_IsNull(creation_date) ? strdup(creation_date->valuestring) : NULL,
-        last_update_date && !cJSON_IsNull(last_update_date) ? strdup(last_update_date->valuestring) : NULL,
-        last_validation_date && !cJSON_IsNull(last_validation_date) ? strdup(last_validation_date->valuestring) : NULL,
-        expiry_date && !cJSON_IsNull(expiry_date) ? strdup(expiry_date->valuestring) : NULL,
-        comments && !cJSON_IsNull(comments) ? strdup(comments->valuestring) : NULL
+        exchange_id_local_str,
+        last_datapoint_date_local_str,
+        mic_local_str,
+        operating_mic_local_str,
+        oprt_sgmt_local_str,
+        market_name_institution_description_local_str,
+        legal_entity_name_local_str,
+        lei_local_str,
+        market_category_code_local_str,
+        acronym_local_str,
+        iso_country_code_local_str,
+        city_local_str,
+        website_local_str,
+        status_local_str,
+        creation_date_local_str,
+        last_update_date_local_str,
+        last_validation_date_local_str,
+        expiry_date_local_str,
+        comments_local_str
         );
+
+    if (!fin_feed_api_exchange_model_local_var) {
+        goto end;
+    }
 
     return fin_feed_api_exchange_model_local_var;
 end:
+    if (exchange_id_local_str) {
+        free(exchange_id_local_str);
+        exchange_id_local_str = NULL;
+    }
+    if (last_datapoint_date_local_str) {
+        free(last_datapoint_date_local_str);
+        last_datapoint_date_local_str = NULL;
+    }
+    if (mic_local_str) {
+        free(mic_local_str);
+        mic_local_str = NULL;
+    }
+    if (operating_mic_local_str) {
+        free(operating_mic_local_str);
+        operating_mic_local_str = NULL;
+    }
+    if (oprt_sgmt_local_str) {
+        free(oprt_sgmt_local_str);
+        oprt_sgmt_local_str = NULL;
+    }
+    if (market_name_institution_description_local_str) {
+        free(market_name_institution_description_local_str);
+        market_name_institution_description_local_str = NULL;
+    }
+    if (legal_entity_name_local_str) {
+        free(legal_entity_name_local_str);
+        legal_entity_name_local_str = NULL;
+    }
+    if (lei_local_str) {
+        free(lei_local_str);
+        lei_local_str = NULL;
+    }
+    if (market_category_code_local_str) {
+        free(market_category_code_local_str);
+        market_category_code_local_str = NULL;
+    }
+    if (acronym_local_str) {
+        free(acronym_local_str);
+        acronym_local_str = NULL;
+    }
+    if (iso_country_code_local_str) {
+        free(iso_country_code_local_str);
+        iso_country_code_local_str = NULL;
+    }
+    if (city_local_str) {
+        free(city_local_str);
+        city_local_str = NULL;
+    }
+    if (website_local_str) {
+        free(website_local_str);
+        website_local_str = NULL;
+    }
+    if (status_local_str) {
+        free(status_local_str);
+        status_local_str = NULL;
+    }
+    if (creation_date_local_str) {
+        free(creation_date_local_str);
+        creation_date_local_str = NULL;
+    }
+    if (last_update_date_local_str) {
+        free(last_update_date_local_str);
+        last_update_date_local_str = NULL;
+    }
+    if (last_validation_date_local_str) {
+        free(last_validation_date_local_str);
+        last_validation_date_local_str = NULL;
+    }
+    if (expiry_date_local_str) {
+        free(expiry_date_local_str);
+        expiry_date_local_str = NULL;
+    }
+    if (comments_local_str) {
+        free(comments_local_str);
+        comments_local_str = NULL;
+    }
     return NULL;
 
 }

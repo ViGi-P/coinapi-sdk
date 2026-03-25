@@ -20,26 +20,26 @@ typedef struct admin_security_event_model_t admin_security_event_model_t;
 
 typedef struct admin_security_event_model_t {
     char *symbol; // string
-    long timestamp_nanos; //numeric
+    long *timestamp_nanos; //numeric
     char *timestamp; //date time
-    int security_event; //numeric
+    int *security_event; //numeric
     char *security_event_code; // string
     char *security_event_text; // string
-    int is_opening_process_complete; //boolean
-    int is_closing_process_complete; //boolean
+    int *is_opening_process_complete; //boolean
+    int *is_closing_process_complete; //boolean
 
     int _library_owned; // Is the library responsible for freeing this object?
 } admin_security_event_model_t;
 
 __attribute__((deprecated)) admin_security_event_model_t *admin_security_event_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int security_event,
+    int *security_event,
     char *security_event_code,
     char *security_event_text,
-    int is_opening_process_complete,
-    int is_closing_process_complete
+    int *is_opening_process_complete,
+    int *is_closing_process_complete
 );
 
 void admin_security_event_model_free(admin_security_event_model_t *admin_security_event_model);

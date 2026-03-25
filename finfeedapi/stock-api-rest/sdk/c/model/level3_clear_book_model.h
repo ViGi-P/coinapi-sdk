@@ -20,7 +20,7 @@ typedef struct level3_clear_book_model_t level3_clear_book_model_t;
 
 typedef struct level3_clear_book_model_t {
     char *symbol; // string
-    long timestamp_nanos; //numeric
+    long *timestamp_nanos; //numeric
     char *timestamp; //date time
 
     int _library_owned; // Is the library responsible for freeing this object?
@@ -28,7 +28,7 @@ typedef struct level3_clear_book_model_t {
 
 __attribute__((deprecated)) level3_clear_book_model_t *level3_clear_book_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp
 );
 

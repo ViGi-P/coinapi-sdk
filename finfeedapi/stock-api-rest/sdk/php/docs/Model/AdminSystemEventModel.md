@@ -1,4 +1,4 @@
-# # AdminSystemEventModel
+# AdminSystemEventModel
 
 ## Properties
 

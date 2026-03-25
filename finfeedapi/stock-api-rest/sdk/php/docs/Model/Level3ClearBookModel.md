@@ -1,4 +1,4 @@
-# # Level3ClearBookModel
+# Level3ClearBookModel
 
 ## Properties
 

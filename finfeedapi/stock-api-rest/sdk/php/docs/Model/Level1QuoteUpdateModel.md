@@ -1,4 +1,4 @@
-# # Level1QuoteUpdateModel
+# Level1QuoteUpdateModel
 
 ## Properties
 

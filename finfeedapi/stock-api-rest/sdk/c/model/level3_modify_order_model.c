@@ -7,17 +7,19 @@
 
 static level3_modify_order_model_t *level3_modify_order_model_create_internal(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    long order_id_reference,
-    int is_priority_reset,
-    int size,
-    double price
+    long *order_id_reference,
+    int *is_priority_reset,
+    int *size,
+    double *price
     ) {
     level3_modify_order_model_t *level3_modify_order_model_local_var = malloc(sizeof(level3_modify_order_model_t));
     if (!level3_modify_order_model_local_var) {
         return NULL;
     }
+    memset(level3_modify_order_model_local_var, 0, sizeof(level3_modify_order_model_t));
+    level3_modify_order_model_local_var->_library_owned = 1;
     level3_modify_order_model_local_var->symbol = symbol;
     level3_modify_order_model_local_var->timestamp_nanos = timestamp_nanos;
     level3_modify_order_model_local_var->timestamp = timestamp;
@@ -25,29 +27,60 @@ static level3_modify_order_model_t *level3_modify_order_model_create_internal(
     level3_modify_order_model_local_var->is_priority_reset = is_priority_reset;
     level3_modify_order_model_local_var->size = size;
     level3_modify_order_model_local_var->price = price;
-
-    level3_modify_order_model_local_var->_library_owned = 1;
     return level3_modify_order_model_local_var;
 }
 
 __attribute__((deprecated)) level3_modify_order_model_t *level3_modify_order_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    long order_id_reference,
-    int is_priority_reset,
-    int size,
-    double price
+    long *order_id_reference,
+    int *is_priority_reset,
+    int *size,
+    double *price
     ) {
-    return level3_modify_order_model_create_internal (
+    long *timestamp_nanos_copy = NULL;
+    if (timestamp_nanos) {
+        timestamp_nanos_copy = malloc(sizeof(long));
+        if (timestamp_nanos_copy) *timestamp_nanos_copy = *timestamp_nanos;
+    }
+    long *order_id_reference_copy = NULL;
+    if (order_id_reference) {
+        order_id_reference_copy = malloc(sizeof(long));
+        if (order_id_reference_copy) *order_id_reference_copy = *order_id_reference;
+    }
+    int *is_priority_reset_copy = NULL;
+    if (is_priority_reset) {
+        is_priority_reset_copy = malloc(sizeof(int));
+        if (is_priority_reset_copy) *is_priority_reset_copy = *is_priority_reset;
+    }
+    int *size_copy = NULL;
+    if (size) {
+        size_copy = malloc(sizeof(int));
+        if (size_copy) *size_copy = *size;
+    }
+    double *price_copy = NULL;
+    if (price) {
+        price_copy = malloc(sizeof(double));
+        if (price_copy) *price_copy = *price;
+    }
+    level3_modify_order_model_t *result = level3_modify_order_model_create_internal (
         symbol,
-        timestamp_nanos,
+        timestamp_nanos_copy,
         timestamp,
-        order_id_reference,
-        is_priority_reset,
-        size,
-        price
+        order_id_reference_copy,
+        is_priority_reset_copy,
+        size_copy,
+        price_copy
         );
+    if (!result) {
+        free(timestamp_nanos_copy);
+        free(order_id_reference_copy);
+        free(is_priority_reset_copy);
+        free(size_copy);
+        free(price_copy);
+    }
+    return result;
 }
 
 void level3_modify_order_model_free(level3_modify_order_model_t *level3_modify_order_model) {
@@ -63,9 +96,29 @@ void level3_modify_order_model_free(level3_modify_order_model_t *level3_modify_o
         free(level3_modify_order_model->symbol);
         level3_modify_order_model->symbol = NULL;
     }
+    if (level3_modify_order_model->timestamp_nanos) {
+        free(level3_modify_order_model->timestamp_nanos);
+        level3_modify_order_model->timestamp_nanos = NULL;
+    }
     if (level3_modify_order_model->timestamp) {
         free(level3_modify_order_model->timestamp);
         level3_modify_order_model->timestamp = NULL;
+    }
+    if (level3_modify_order_model->order_id_reference) {
+        free(level3_modify_order_model->order_id_reference);
+        level3_modify_order_model->order_id_reference = NULL;
+    }
+    if (level3_modify_order_model->is_priority_reset) {
+        free(level3_modify_order_model->is_priority_reset);
+        level3_modify_order_model->is_priority_reset = NULL;
+    }
+    if (level3_modify_order_model->size) {
+        free(level3_modify_order_model->size);
+        level3_modify_order_model->size = NULL;
+    }
+    if (level3_modify_order_model->price) {
+        free(level3_modify_order_model->price);
+        level3_modify_order_model->price = NULL;
     }
     free(level3_modify_order_model);
 }
@@ -83,7 +136,7 @@ cJSON *level3_modify_order_model_convertToJSON(level3_modify_order_model_t *leve
 
     // level3_modify_order_model->timestamp_nanos
     if(level3_modify_order_model->timestamp_nanos) {
-    if(cJSON_AddNumberToObject(item, "timestamp_nanos", level3_modify_order_model->timestamp_nanos) == NULL) {
+    if(cJSON_AddNumberToObject(item, "timestamp_nanos", *level3_modify_order_model->timestamp_nanos) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -99,7 +152,7 @@ cJSON *level3_modify_order_model_convertToJSON(level3_modify_order_model_t *leve
 
     // level3_modify_order_model->order_id_reference
     if(level3_modify_order_model->order_id_reference) {
-    if(cJSON_AddNumberToObject(item, "order_id_reference", level3_modify_order_model->order_id_reference) == NULL) {
+    if(cJSON_AddNumberToObject(item, "order_id_reference", *level3_modify_order_model->order_id_reference) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -107,7 +160,7 @@ cJSON *level3_modify_order_model_convertToJSON(level3_modify_order_model_t *leve
 
     // level3_modify_order_model->is_priority_reset
     if(level3_modify_order_model->is_priority_reset) {
-    if(cJSON_AddBoolToObject(item, "is_priority_reset", level3_modify_order_model->is_priority_reset) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_priority_reset", *level3_modify_order_model->is_priority_reset) == NULL) {
     goto fail; //Bool
     }
     }
@@ -115,7 +168,7 @@ cJSON *level3_modify_order_model_convertToJSON(level3_modify_order_model_t *leve
 
     // level3_modify_order_model->size
     if(level3_modify_order_model->size) {
-    if(cJSON_AddNumberToObject(item, "size", level3_modify_order_model->size) == NULL) {
+    if(cJSON_AddNumberToObject(item, "size", *level3_modify_order_model->size) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -123,7 +176,7 @@ cJSON *level3_modify_order_model_convertToJSON(level3_modify_order_model_t *leve
 
     // level3_modify_order_model->price
     if(level3_modify_order_model->price) {
-    if(cJSON_AddNumberToObject(item, "price", level3_modify_order_model->price) == NULL) {
+    if(cJSON_AddNumberToObject(item, "price", *level3_modify_order_model->price) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -139,6 +192,25 @@ fail:
 level3_modify_order_model_t *level3_modify_order_model_parseFromJSON(cJSON *level3_modify_order_modelJSON){
 
     level3_modify_order_model_t *level3_modify_order_model_local_var = NULL;
+
+    char *symbol_local_str = NULL;
+
+    // define the local variable for level3_modify_order_model->timestamp_nanos
+    long *timestamp_nanos_local_var = NULL;
+
+    char *timestamp_local_str = NULL;
+
+    // define the local variable for level3_modify_order_model->order_id_reference
+    long *order_id_reference_local_var = NULL;
+
+    // define the local variable for level3_modify_order_model->is_priority_reset
+    int *is_priority_reset_local_var = NULL;
+
+    // define the local variable for level3_modify_order_model->size
+    int *size_local_var = NULL;
+
+    // define the local variable for level3_modify_order_model->price
+    double *price_local_var = NULL;
 
     // level3_modify_order_model->symbol
     cJSON *symbol = cJSON_GetObjectItemCaseSensitive(level3_modify_order_modelJSON, "symbol");
@@ -162,6 +234,12 @@ level3_modify_order_model_t *level3_modify_order_model_parseFromJSON(cJSON *leve
     {
     goto end; //Numeric
     }
+    timestamp_nanos_local_var = malloc(sizeof(long));
+    if(!timestamp_nanos_local_var)
+    {
+        goto end;
+    }
+    *timestamp_nanos_local_var = timestamp_nanos->valuedouble;
     }
 
     // level3_modify_order_model->timestamp
@@ -186,6 +264,12 @@ level3_modify_order_model_t *level3_modify_order_model_parseFromJSON(cJSON *leve
     {
     goto end; //Numeric
     }
+    order_id_reference_local_var = malloc(sizeof(long));
+    if(!order_id_reference_local_var)
+    {
+        goto end;
+    }
+    *order_id_reference_local_var = order_id_reference->valuedouble;
     }
 
     // level3_modify_order_model->is_priority_reset
@@ -198,6 +282,12 @@ level3_modify_order_model_t *level3_modify_order_model_parseFromJSON(cJSON *leve
     {
     goto end; //Bool
     }
+    is_priority_reset_local_var = malloc(sizeof(int));
+    if(!is_priority_reset_local_var)
+    {
+        goto end;
+    }
+    *is_priority_reset_local_var = is_priority_reset->valueint;
     }
 
     // level3_modify_order_model->size
@@ -210,6 +300,12 @@ level3_modify_order_model_t *level3_modify_order_model_parseFromJSON(cJSON *leve
     {
     goto end; //Numeric
     }
+    size_local_var = malloc(sizeof(int));
+    if(!size_local_var)
+    {
+        goto end;
+    }
+    *size_local_var = size->valuedouble;
     }
 
     // level3_modify_order_model->price
@@ -222,21 +318,62 @@ level3_modify_order_model_t *level3_modify_order_model_parseFromJSON(cJSON *leve
     {
     goto end; //Numeric
     }
+    price_local_var = malloc(sizeof(double));
+    if(!price_local_var)
+    {
+        goto end;
+    }
+    *price_local_var = price->valuedouble;
     }
 
 
+    if (symbol && !cJSON_IsNull(symbol)) symbol_local_str = strdup(symbol->valuestring);
+    if (timestamp && !cJSON_IsNull(timestamp)) timestamp_local_str = strdup(timestamp->valuestring);
+
     level3_modify_order_model_local_var = level3_modify_order_model_create_internal (
-        symbol && !cJSON_IsNull(symbol) ? strdup(symbol->valuestring) : NULL,
-        timestamp_nanos ? timestamp_nanos->valuedouble : 0,
-        timestamp && !cJSON_IsNull(timestamp) ? strdup(timestamp->valuestring) : NULL,
-        order_id_reference ? order_id_reference->valuedouble : 0,
-        is_priority_reset ? is_priority_reset->valueint : 0,
-        size ? size->valuedouble : 0,
-        price ? price->valuedouble : 0
+        symbol_local_str,
+        timestamp_nanos_local_var,
+        timestamp_local_str,
+        order_id_reference_local_var,
+        is_priority_reset_local_var,
+        size_local_var,
+        price_local_var
         );
+
+    if (!level3_modify_order_model_local_var) {
+        goto end;
+    }
 
     return level3_modify_order_model_local_var;
 end:
+    if (symbol_local_str) {
+        free(symbol_local_str);
+        symbol_local_str = NULL;
+    }
+    if (timestamp_nanos_local_var) {
+        free(timestamp_nanos_local_var);
+        timestamp_nanos_local_var = NULL;
+    }
+    if (timestamp_local_str) {
+        free(timestamp_local_str);
+        timestamp_local_str = NULL;
+    }
+    if (order_id_reference_local_var) {
+        free(order_id_reference_local_var);
+        order_id_reference_local_var = NULL;
+    }
+    if (is_priority_reset_local_var) {
+        free(is_priority_reset_local_var);
+        is_priority_reset_local_var = NULL;
+    }
+    if (size_local_var) {
+        free(size_local_var);
+        size_local_var = NULL;
+    }
+    if (price_local_var) {
+        free(price_local_var);
+        price_local_var = NULL;
+    }
     return NULL;
 
 }

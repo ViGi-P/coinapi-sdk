@@ -20,24 +20,24 @@ typedef struct level3_modify_order_model_t level3_modify_order_model_t;
 
 typedef struct level3_modify_order_model_t {
     char *symbol; // string
-    long timestamp_nanos; //numeric
+    long *timestamp_nanos; //numeric
     char *timestamp; //date time
-    long order_id_reference; //numeric
-    int is_priority_reset; //boolean
-    int size; //numeric
-    double price; //numeric
+    long *order_id_reference; //numeric
+    int *is_priority_reset; //boolean
+    int *size; //numeric
+    double *price; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } level3_modify_order_model_t;
 
 __attribute__((deprecated)) level3_modify_order_model_t *level3_modify_order_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    long order_id_reference,
-    int is_priority_reset,
-    int size,
-    double price
+    long *order_id_reference,
+    int *is_priority_reset,
+    int *size,
+    double *price
 );
 
 void level3_modify_order_model_free(level3_modify_order_model_t *level3_modify_order_model);

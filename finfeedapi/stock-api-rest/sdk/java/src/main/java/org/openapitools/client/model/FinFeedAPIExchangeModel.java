@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * FinFeedAPIExchangeModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-24T06:04:37.486403114Z[Etc/UTC]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-25T06:04:53.654860775Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class FinFeedAPIExchangeModel {
   public static final String SERIALIZED_NAME_EXCHANGE_ID = "exchange_id";
   @SerializedName(SERIALIZED_NAME_EXCHANGE_ID)
@@ -636,10 +636,7 @@ public class FinFeedAPIExchangeModel {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 

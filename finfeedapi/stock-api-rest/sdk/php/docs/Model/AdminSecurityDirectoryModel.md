@@ -1,4 +1,4 @@
-# # AdminSecurityDirectoryModel
+# AdminSecurityDirectoryModel
 
 ## Properties
 

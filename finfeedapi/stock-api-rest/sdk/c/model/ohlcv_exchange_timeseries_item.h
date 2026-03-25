@@ -23,12 +23,12 @@ typedef struct ohlcv_exchange_timeseries_item_t {
     char *time_period_end; //date time
     char *time_open; //date time
     char *time_close; //date time
-    double price_open; //numeric
-    double price_high; //numeric
-    double price_low; //numeric
-    double price_close; //numeric
-    double volume_traded; //numeric
-    long trades_count; //numeric
+    double *price_open; //numeric
+    double *price_high; //numeric
+    double *price_low; //numeric
+    double *price_close; //numeric
+    double *volume_traded; //numeric
+    long *trades_count; //numeric
     char *symbol_id_exchange; // string
 
     int _library_owned; // Is the library responsible for freeing this object?
@@ -39,12 +39,12 @@ __attribute__((deprecated)) ohlcv_exchange_timeseries_item_t *ohlcv_exchange_tim
     char *time_period_end,
     char *time_open,
     char *time_close,
-    double price_open,
-    double price_high,
-    double price_low,
-    double price_close,
-    double volume_traded,
-    long trades_count,
+    double *price_open,
+    double *price_high,
+    double *price_low,
+    double *price_close,
+    double *volume_traded,
+    long *trades_count,
     char *symbol_id_exchange
 );
 

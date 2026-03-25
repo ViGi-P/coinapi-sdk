@@ -7,20 +7,22 @@
 
 static admin_retail_liquidity_indicator_model_t *admin_retail_liquidity_indicator_model_create_internal(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int retail_liquidity_indicator,
+    int *retail_liquidity_indicator,
     char *retail_liquidity_indicator_code,
     char *retail_liquidity_indicator_text,
-    int is_retail_indicator_not_applicable,
-    int is_retail_indicator_buy_interest,
-    int is_retail_indicator_sell_interest,
-    int is_retail_indicator_buy_and_sell_interest
+    int *is_retail_indicator_not_applicable,
+    int *is_retail_indicator_buy_interest,
+    int *is_retail_indicator_sell_interest,
+    int *is_retail_indicator_buy_and_sell_interest
     ) {
     admin_retail_liquidity_indicator_model_t *admin_retail_liquidity_indicator_model_local_var = malloc(sizeof(admin_retail_liquidity_indicator_model_t));
     if (!admin_retail_liquidity_indicator_model_local_var) {
         return NULL;
     }
+    memset(admin_retail_liquidity_indicator_model_local_var, 0, sizeof(admin_retail_liquidity_indicator_model_t));
+    admin_retail_liquidity_indicator_model_local_var->_library_owned = 1;
     admin_retail_liquidity_indicator_model_local_var->symbol = symbol;
     admin_retail_liquidity_indicator_model_local_var->timestamp_nanos = timestamp_nanos;
     admin_retail_liquidity_indicator_model_local_var->timestamp = timestamp;
@@ -31,35 +33,72 @@ static admin_retail_liquidity_indicator_model_t *admin_retail_liquidity_indicato
     admin_retail_liquidity_indicator_model_local_var->is_retail_indicator_buy_interest = is_retail_indicator_buy_interest;
     admin_retail_liquidity_indicator_model_local_var->is_retail_indicator_sell_interest = is_retail_indicator_sell_interest;
     admin_retail_liquidity_indicator_model_local_var->is_retail_indicator_buy_and_sell_interest = is_retail_indicator_buy_and_sell_interest;
-
-    admin_retail_liquidity_indicator_model_local_var->_library_owned = 1;
     return admin_retail_liquidity_indicator_model_local_var;
 }
 
 __attribute__((deprecated)) admin_retail_liquidity_indicator_model_t *admin_retail_liquidity_indicator_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int retail_liquidity_indicator,
+    int *retail_liquidity_indicator,
     char *retail_liquidity_indicator_code,
     char *retail_liquidity_indicator_text,
-    int is_retail_indicator_not_applicable,
-    int is_retail_indicator_buy_interest,
-    int is_retail_indicator_sell_interest,
-    int is_retail_indicator_buy_and_sell_interest
+    int *is_retail_indicator_not_applicable,
+    int *is_retail_indicator_buy_interest,
+    int *is_retail_indicator_sell_interest,
+    int *is_retail_indicator_buy_and_sell_interest
     ) {
-    return admin_retail_liquidity_indicator_model_create_internal (
+    long *timestamp_nanos_copy = NULL;
+    if (timestamp_nanos) {
+        timestamp_nanos_copy = malloc(sizeof(long));
+        if (timestamp_nanos_copy) *timestamp_nanos_copy = *timestamp_nanos;
+    }
+    int *retail_liquidity_indicator_copy = NULL;
+    if (retail_liquidity_indicator) {
+        retail_liquidity_indicator_copy = malloc(sizeof(int));
+        if (retail_liquidity_indicator_copy) *retail_liquidity_indicator_copy = *retail_liquidity_indicator;
+    }
+    int *is_retail_indicator_not_applicable_copy = NULL;
+    if (is_retail_indicator_not_applicable) {
+        is_retail_indicator_not_applicable_copy = malloc(sizeof(int));
+        if (is_retail_indicator_not_applicable_copy) *is_retail_indicator_not_applicable_copy = *is_retail_indicator_not_applicable;
+    }
+    int *is_retail_indicator_buy_interest_copy = NULL;
+    if (is_retail_indicator_buy_interest) {
+        is_retail_indicator_buy_interest_copy = malloc(sizeof(int));
+        if (is_retail_indicator_buy_interest_copy) *is_retail_indicator_buy_interest_copy = *is_retail_indicator_buy_interest;
+    }
+    int *is_retail_indicator_sell_interest_copy = NULL;
+    if (is_retail_indicator_sell_interest) {
+        is_retail_indicator_sell_interest_copy = malloc(sizeof(int));
+        if (is_retail_indicator_sell_interest_copy) *is_retail_indicator_sell_interest_copy = *is_retail_indicator_sell_interest;
+    }
+    int *is_retail_indicator_buy_and_sell_interest_copy = NULL;
+    if (is_retail_indicator_buy_and_sell_interest) {
+        is_retail_indicator_buy_and_sell_interest_copy = malloc(sizeof(int));
+        if (is_retail_indicator_buy_and_sell_interest_copy) *is_retail_indicator_buy_and_sell_interest_copy = *is_retail_indicator_buy_and_sell_interest;
+    }
+    admin_retail_liquidity_indicator_model_t *result = admin_retail_liquidity_indicator_model_create_internal (
         symbol,
-        timestamp_nanos,
+        timestamp_nanos_copy,
         timestamp,
-        retail_liquidity_indicator,
+        retail_liquidity_indicator_copy,
         retail_liquidity_indicator_code,
         retail_liquidity_indicator_text,
-        is_retail_indicator_not_applicable,
-        is_retail_indicator_buy_interest,
-        is_retail_indicator_sell_interest,
-        is_retail_indicator_buy_and_sell_interest
+        is_retail_indicator_not_applicable_copy,
+        is_retail_indicator_buy_interest_copy,
+        is_retail_indicator_sell_interest_copy,
+        is_retail_indicator_buy_and_sell_interest_copy
         );
+    if (!result) {
+        free(timestamp_nanos_copy);
+        free(retail_liquidity_indicator_copy);
+        free(is_retail_indicator_not_applicable_copy);
+        free(is_retail_indicator_buy_interest_copy);
+        free(is_retail_indicator_sell_interest_copy);
+        free(is_retail_indicator_buy_and_sell_interest_copy);
+    }
+    return result;
 }
 
 void admin_retail_liquidity_indicator_model_free(admin_retail_liquidity_indicator_model_t *admin_retail_liquidity_indicator_model) {
@@ -75,9 +114,17 @@ void admin_retail_liquidity_indicator_model_free(admin_retail_liquidity_indicato
         free(admin_retail_liquidity_indicator_model->symbol);
         admin_retail_liquidity_indicator_model->symbol = NULL;
     }
+    if (admin_retail_liquidity_indicator_model->timestamp_nanos) {
+        free(admin_retail_liquidity_indicator_model->timestamp_nanos);
+        admin_retail_liquidity_indicator_model->timestamp_nanos = NULL;
+    }
     if (admin_retail_liquidity_indicator_model->timestamp) {
         free(admin_retail_liquidity_indicator_model->timestamp);
         admin_retail_liquidity_indicator_model->timestamp = NULL;
+    }
+    if (admin_retail_liquidity_indicator_model->retail_liquidity_indicator) {
+        free(admin_retail_liquidity_indicator_model->retail_liquidity_indicator);
+        admin_retail_liquidity_indicator_model->retail_liquidity_indicator = NULL;
     }
     if (admin_retail_liquidity_indicator_model->retail_liquidity_indicator_code) {
         free(admin_retail_liquidity_indicator_model->retail_liquidity_indicator_code);
@@ -86,6 +133,22 @@ void admin_retail_liquidity_indicator_model_free(admin_retail_liquidity_indicato
     if (admin_retail_liquidity_indicator_model->retail_liquidity_indicator_text) {
         free(admin_retail_liquidity_indicator_model->retail_liquidity_indicator_text);
         admin_retail_liquidity_indicator_model->retail_liquidity_indicator_text = NULL;
+    }
+    if (admin_retail_liquidity_indicator_model->is_retail_indicator_not_applicable) {
+        free(admin_retail_liquidity_indicator_model->is_retail_indicator_not_applicable);
+        admin_retail_liquidity_indicator_model->is_retail_indicator_not_applicable = NULL;
+    }
+    if (admin_retail_liquidity_indicator_model->is_retail_indicator_buy_interest) {
+        free(admin_retail_liquidity_indicator_model->is_retail_indicator_buy_interest);
+        admin_retail_liquidity_indicator_model->is_retail_indicator_buy_interest = NULL;
+    }
+    if (admin_retail_liquidity_indicator_model->is_retail_indicator_sell_interest) {
+        free(admin_retail_liquidity_indicator_model->is_retail_indicator_sell_interest);
+        admin_retail_liquidity_indicator_model->is_retail_indicator_sell_interest = NULL;
+    }
+    if (admin_retail_liquidity_indicator_model->is_retail_indicator_buy_and_sell_interest) {
+        free(admin_retail_liquidity_indicator_model->is_retail_indicator_buy_and_sell_interest);
+        admin_retail_liquidity_indicator_model->is_retail_indicator_buy_and_sell_interest = NULL;
     }
     free(admin_retail_liquidity_indicator_model);
 }
@@ -103,7 +166,7 @@ cJSON *admin_retail_liquidity_indicator_model_convertToJSON(admin_retail_liquidi
 
     // admin_retail_liquidity_indicator_model->timestamp_nanos
     if(admin_retail_liquidity_indicator_model->timestamp_nanos) {
-    if(cJSON_AddNumberToObject(item, "timestamp_nanos", admin_retail_liquidity_indicator_model->timestamp_nanos) == NULL) {
+    if(cJSON_AddNumberToObject(item, "timestamp_nanos", *admin_retail_liquidity_indicator_model->timestamp_nanos) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -119,7 +182,7 @@ cJSON *admin_retail_liquidity_indicator_model_convertToJSON(admin_retail_liquidi
 
     // admin_retail_liquidity_indicator_model->retail_liquidity_indicator
     if(admin_retail_liquidity_indicator_model->retail_liquidity_indicator) {
-    if(cJSON_AddNumberToObject(item, "retail_liquidity_indicator", admin_retail_liquidity_indicator_model->retail_liquidity_indicator) == NULL) {
+    if(cJSON_AddNumberToObject(item, "retail_liquidity_indicator", *admin_retail_liquidity_indicator_model->retail_liquidity_indicator) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -143,7 +206,7 @@ cJSON *admin_retail_liquidity_indicator_model_convertToJSON(admin_retail_liquidi
 
     // admin_retail_liquidity_indicator_model->is_retail_indicator_not_applicable
     if(admin_retail_liquidity_indicator_model->is_retail_indicator_not_applicable) {
-    if(cJSON_AddBoolToObject(item, "is_retail_indicator_not_applicable", admin_retail_liquidity_indicator_model->is_retail_indicator_not_applicable) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_retail_indicator_not_applicable", *admin_retail_liquidity_indicator_model->is_retail_indicator_not_applicable) == NULL) {
     goto fail; //Bool
     }
     }
@@ -151,7 +214,7 @@ cJSON *admin_retail_liquidity_indicator_model_convertToJSON(admin_retail_liquidi
 
     // admin_retail_liquidity_indicator_model->is_retail_indicator_buy_interest
     if(admin_retail_liquidity_indicator_model->is_retail_indicator_buy_interest) {
-    if(cJSON_AddBoolToObject(item, "is_retail_indicator_buy_interest", admin_retail_liquidity_indicator_model->is_retail_indicator_buy_interest) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_retail_indicator_buy_interest", *admin_retail_liquidity_indicator_model->is_retail_indicator_buy_interest) == NULL) {
     goto fail; //Bool
     }
     }
@@ -159,7 +222,7 @@ cJSON *admin_retail_liquidity_indicator_model_convertToJSON(admin_retail_liquidi
 
     // admin_retail_liquidity_indicator_model->is_retail_indicator_sell_interest
     if(admin_retail_liquidity_indicator_model->is_retail_indicator_sell_interest) {
-    if(cJSON_AddBoolToObject(item, "is_retail_indicator_sell_interest", admin_retail_liquidity_indicator_model->is_retail_indicator_sell_interest) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_retail_indicator_sell_interest", *admin_retail_liquidity_indicator_model->is_retail_indicator_sell_interest) == NULL) {
     goto fail; //Bool
     }
     }
@@ -167,7 +230,7 @@ cJSON *admin_retail_liquidity_indicator_model_convertToJSON(admin_retail_liquidi
 
     // admin_retail_liquidity_indicator_model->is_retail_indicator_buy_and_sell_interest
     if(admin_retail_liquidity_indicator_model->is_retail_indicator_buy_and_sell_interest) {
-    if(cJSON_AddBoolToObject(item, "is_retail_indicator_buy_and_sell_interest", admin_retail_liquidity_indicator_model->is_retail_indicator_buy_and_sell_interest) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_retail_indicator_buy_and_sell_interest", *admin_retail_liquidity_indicator_model->is_retail_indicator_buy_and_sell_interest) == NULL) {
     goto fail; //Bool
     }
     }
@@ -183,6 +246,32 @@ fail:
 admin_retail_liquidity_indicator_model_t *admin_retail_liquidity_indicator_model_parseFromJSON(cJSON *admin_retail_liquidity_indicator_modelJSON){
 
     admin_retail_liquidity_indicator_model_t *admin_retail_liquidity_indicator_model_local_var = NULL;
+
+    char *symbol_local_str = NULL;
+
+    // define the local variable for admin_retail_liquidity_indicator_model->timestamp_nanos
+    long *timestamp_nanos_local_var = NULL;
+
+    char *timestamp_local_str = NULL;
+
+    // define the local variable for admin_retail_liquidity_indicator_model->retail_liquidity_indicator
+    int *retail_liquidity_indicator_local_var = NULL;
+
+    char *retail_liquidity_indicator_code_local_str = NULL;
+
+    char *retail_liquidity_indicator_text_local_str = NULL;
+
+    // define the local variable for admin_retail_liquidity_indicator_model->is_retail_indicator_not_applicable
+    int *is_retail_indicator_not_applicable_local_var = NULL;
+
+    // define the local variable for admin_retail_liquidity_indicator_model->is_retail_indicator_buy_interest
+    int *is_retail_indicator_buy_interest_local_var = NULL;
+
+    // define the local variable for admin_retail_liquidity_indicator_model->is_retail_indicator_sell_interest
+    int *is_retail_indicator_sell_interest_local_var = NULL;
+
+    // define the local variable for admin_retail_liquidity_indicator_model->is_retail_indicator_buy_and_sell_interest
+    int *is_retail_indicator_buy_and_sell_interest_local_var = NULL;
 
     // admin_retail_liquidity_indicator_model->symbol
     cJSON *symbol = cJSON_GetObjectItemCaseSensitive(admin_retail_liquidity_indicator_modelJSON, "symbol");
@@ -206,6 +295,12 @@ admin_retail_liquidity_indicator_model_t *admin_retail_liquidity_indicator_model
     {
     goto end; //Numeric
     }
+    timestamp_nanos_local_var = malloc(sizeof(long));
+    if(!timestamp_nanos_local_var)
+    {
+        goto end;
+    }
+    *timestamp_nanos_local_var = timestamp_nanos->valuedouble;
     }
 
     // admin_retail_liquidity_indicator_model->timestamp
@@ -230,6 +325,12 @@ admin_retail_liquidity_indicator_model_t *admin_retail_liquidity_indicator_model
     {
     goto end; //Numeric
     }
+    retail_liquidity_indicator_local_var = malloc(sizeof(int));
+    if(!retail_liquidity_indicator_local_var)
+    {
+        goto end;
+    }
+    *retail_liquidity_indicator_local_var = retail_liquidity_indicator->valuedouble;
     }
 
     // admin_retail_liquidity_indicator_model->retail_liquidity_indicator_code
@@ -266,6 +367,12 @@ admin_retail_liquidity_indicator_model_t *admin_retail_liquidity_indicator_model
     {
     goto end; //Bool
     }
+    is_retail_indicator_not_applicable_local_var = malloc(sizeof(int));
+    if(!is_retail_indicator_not_applicable_local_var)
+    {
+        goto end;
+    }
+    *is_retail_indicator_not_applicable_local_var = is_retail_indicator_not_applicable->valueint;
     }
 
     // admin_retail_liquidity_indicator_model->is_retail_indicator_buy_interest
@@ -278,6 +385,12 @@ admin_retail_liquidity_indicator_model_t *admin_retail_liquidity_indicator_model
     {
     goto end; //Bool
     }
+    is_retail_indicator_buy_interest_local_var = malloc(sizeof(int));
+    if(!is_retail_indicator_buy_interest_local_var)
+    {
+        goto end;
+    }
+    *is_retail_indicator_buy_interest_local_var = is_retail_indicator_buy_interest->valueint;
     }
 
     // admin_retail_liquidity_indicator_model->is_retail_indicator_sell_interest
@@ -290,6 +403,12 @@ admin_retail_liquidity_indicator_model_t *admin_retail_liquidity_indicator_model
     {
     goto end; //Bool
     }
+    is_retail_indicator_sell_interest_local_var = malloc(sizeof(int));
+    if(!is_retail_indicator_sell_interest_local_var)
+    {
+        goto end;
+    }
+    *is_retail_indicator_sell_interest_local_var = is_retail_indicator_sell_interest->valueint;
     }
 
     // admin_retail_liquidity_indicator_model->is_retail_indicator_buy_and_sell_interest
@@ -302,24 +421,79 @@ admin_retail_liquidity_indicator_model_t *admin_retail_liquidity_indicator_model
     {
     goto end; //Bool
     }
+    is_retail_indicator_buy_and_sell_interest_local_var = malloc(sizeof(int));
+    if(!is_retail_indicator_buy_and_sell_interest_local_var)
+    {
+        goto end;
+    }
+    *is_retail_indicator_buy_and_sell_interest_local_var = is_retail_indicator_buy_and_sell_interest->valueint;
     }
 
 
+    if (symbol && !cJSON_IsNull(symbol)) symbol_local_str = strdup(symbol->valuestring);
+    if (timestamp && !cJSON_IsNull(timestamp)) timestamp_local_str = strdup(timestamp->valuestring);
+    if (retail_liquidity_indicator_code && !cJSON_IsNull(retail_liquidity_indicator_code)) retail_liquidity_indicator_code_local_str = strdup(retail_liquidity_indicator_code->valuestring);
+    if (retail_liquidity_indicator_text && !cJSON_IsNull(retail_liquidity_indicator_text)) retail_liquidity_indicator_text_local_str = strdup(retail_liquidity_indicator_text->valuestring);
+
     admin_retail_liquidity_indicator_model_local_var = admin_retail_liquidity_indicator_model_create_internal (
-        symbol && !cJSON_IsNull(symbol) ? strdup(symbol->valuestring) : NULL,
-        timestamp_nanos ? timestamp_nanos->valuedouble : 0,
-        timestamp && !cJSON_IsNull(timestamp) ? strdup(timestamp->valuestring) : NULL,
-        retail_liquidity_indicator ? retail_liquidity_indicator->valuedouble : 0,
-        retail_liquidity_indicator_code && !cJSON_IsNull(retail_liquidity_indicator_code) ? strdup(retail_liquidity_indicator_code->valuestring) : NULL,
-        retail_liquidity_indicator_text && !cJSON_IsNull(retail_liquidity_indicator_text) ? strdup(retail_liquidity_indicator_text->valuestring) : NULL,
-        is_retail_indicator_not_applicable ? is_retail_indicator_not_applicable->valueint : 0,
-        is_retail_indicator_buy_interest ? is_retail_indicator_buy_interest->valueint : 0,
-        is_retail_indicator_sell_interest ? is_retail_indicator_sell_interest->valueint : 0,
-        is_retail_indicator_buy_and_sell_interest ? is_retail_indicator_buy_and_sell_interest->valueint : 0
+        symbol_local_str,
+        timestamp_nanos_local_var,
+        timestamp_local_str,
+        retail_liquidity_indicator_local_var,
+        retail_liquidity_indicator_code_local_str,
+        retail_liquidity_indicator_text_local_str,
+        is_retail_indicator_not_applicable_local_var,
+        is_retail_indicator_buy_interest_local_var,
+        is_retail_indicator_sell_interest_local_var,
+        is_retail_indicator_buy_and_sell_interest_local_var
         );
+
+    if (!admin_retail_liquidity_indicator_model_local_var) {
+        goto end;
+    }
 
     return admin_retail_liquidity_indicator_model_local_var;
 end:
+    if (symbol_local_str) {
+        free(symbol_local_str);
+        symbol_local_str = NULL;
+    }
+    if (timestamp_nanos_local_var) {
+        free(timestamp_nanos_local_var);
+        timestamp_nanos_local_var = NULL;
+    }
+    if (timestamp_local_str) {
+        free(timestamp_local_str);
+        timestamp_local_str = NULL;
+    }
+    if (retail_liquidity_indicator_local_var) {
+        free(retail_liquidity_indicator_local_var);
+        retail_liquidity_indicator_local_var = NULL;
+    }
+    if (retail_liquidity_indicator_code_local_str) {
+        free(retail_liquidity_indicator_code_local_str);
+        retail_liquidity_indicator_code_local_str = NULL;
+    }
+    if (retail_liquidity_indicator_text_local_str) {
+        free(retail_liquidity_indicator_text_local_str);
+        retail_liquidity_indicator_text_local_str = NULL;
+    }
+    if (is_retail_indicator_not_applicable_local_var) {
+        free(is_retail_indicator_not_applicable_local_var);
+        is_retail_indicator_not_applicable_local_var = NULL;
+    }
+    if (is_retail_indicator_buy_interest_local_var) {
+        free(is_retail_indicator_buy_interest_local_var);
+        is_retail_indicator_buy_interest_local_var = NULL;
+    }
+    if (is_retail_indicator_sell_interest_local_var) {
+        free(is_retail_indicator_sell_interest_local_var);
+        is_retail_indicator_sell_interest_local_var = NULL;
+    }
+    if (is_retail_indicator_buy_and_sell_interest_local_var) {
+        free(is_retail_indicator_buy_and_sell_interest_local_var);
+        is_retail_indicator_buy_and_sell_interest_local_var = NULL;
+    }
     return NULL;
 
 }

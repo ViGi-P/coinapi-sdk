@@ -16,13 +16,13 @@ static level3_order_book_model_t *level3_order_book_model_create_internal(
     if (!level3_order_book_model_local_var) {
         return NULL;
     }
+    memset(level3_order_book_model_local_var, 0, sizeof(level3_order_book_model_t));
+    level3_order_book_model_local_var->_library_owned = 1;
     level3_order_book_model_local_var->add_order = add_order;
     level3_order_book_model_local_var->delete_order = delete_order;
     level3_order_book_model_local_var->modify_order = modify_order;
     level3_order_book_model_local_var->executed_order = executed_order;
     level3_order_book_model_local_var->clear_book = clear_book;
-
-    level3_order_book_model_local_var->_library_owned = 1;
     return level3_order_book_model_local_var;
 }
 
@@ -33,13 +33,16 @@ __attribute__((deprecated)) level3_order_book_model_t *level3_order_book_model_c
     level3_executed_order_model_t *executed_order,
     level3_clear_book_model_t *clear_book
     ) {
-    return level3_order_book_model_create_internal (
+    level3_order_book_model_t *result = level3_order_book_model_create_internal (
         add_order,
         delete_order,
         modify_order,
         executed_order,
         clear_book
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void level3_order_book_model_free(level3_order_book_model_t *level3_order_book_model) {
@@ -214,6 +217,7 @@ level3_order_book_model_t *level3_order_book_model_parseFromJSON(cJSON *level3_o
     }
 
 
+
     level3_order_book_model_local_var = level3_order_book_model_create_internal (
         add_order ? add_order_local_nonprim : NULL,
         delete_order ? delete_order_local_nonprim : NULL,
@@ -221,6 +225,10 @@ level3_order_book_model_t *level3_order_book_model_parseFromJSON(cJSON *level3_o
         executed_order ? executed_order_local_nonprim : NULL,
         clear_book ? clear_book_local_nonprim : NULL
         );
+
+    if (!level3_order_book_model_local_var) {
+        goto end;
+    }
 
     return level3_order_book_model_local_var;
 end:

@@ -1,4 +1,4 @@
-# # FinFeedAPISymbolModel
+# FinFeedAPISymbolModel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # AdminOperationalHaltStatusModel
+# AdminOperationalHaltStatusModel
 
 ## Properties
 

@@ -23,6 +23,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, Stri
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdminSecurityDirectoryModel(BaseModel):
     """
@@ -43,7 +44,8 @@ class AdminSecurityDirectoryModel(BaseModel):
     __properties: ClassVar[List[str]] = ["symbol", "timestamp_nanos", "timestamp", "flags", "round_lot_size", "adjusted_poc_price", "luld_tier", "luld_tier_code", "luld_tier_text", "is_luld_tier_not_applicable", "is_luld_tier1", "is_luld_tier2"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -55,8 +57,7 @@ class AdminSecurityDirectoryModel(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
