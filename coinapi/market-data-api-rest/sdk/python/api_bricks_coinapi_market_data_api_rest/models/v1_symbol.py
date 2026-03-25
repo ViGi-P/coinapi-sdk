@@ -23,6 +23,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, Stri
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V1Symbol(BaseModel):
     """
@@ -77,7 +78,8 @@ class V1Symbol(BaseModel):
     __properties: ClassVar[List[str]] = ["symbol_id", "exchange_id", "symbol_type", "asset_id_base", "asset_id_quote", "asset_id_unit", "future_contract_unit", "future_contract_unit_asset", "future_delivery_time", "option_type_is_call", "option_strike_price", "option_contract_unit", "option_exercise_style", "option_expiration_time", "contract_delivery_time", "contract_unit", "contract_unit_asset", "contract_id", "contract_display_name", "contract_display_description", "data_start", "data_end", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "index_id", "index_display_name", "index_display_description", "volume_1hrs", "volume_1hrs_usd", "volume_1day", "volume_1day_usd", "volume_1mth", "volume_1mth_usd", "price", "symbol_id_exchange", "asset_id_base_exchange", "asset_id_quote_exchange", "price_precision", "size_precision", "raw_kvp", "volume_to_usd", "symbol_id_int"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -89,8 +91,7 @@ class V1Symbol(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

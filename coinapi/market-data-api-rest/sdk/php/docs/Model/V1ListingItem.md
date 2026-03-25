@@ -1,4 +1,4 @@
-# # V1ListingItem
+# V1ListingItem
 
 ## Properties
 

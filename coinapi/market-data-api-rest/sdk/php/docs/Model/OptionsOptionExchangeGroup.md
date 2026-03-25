@@ -1,4 +1,4 @@
-# # OptionsOptionExchangeGroup
+# OptionsOptionExchangeGroup
 
 ## Properties
 

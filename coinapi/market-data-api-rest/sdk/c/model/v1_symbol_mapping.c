@@ -8,18 +8,20 @@
 static v1_symbol_mapping_t *v1_symbol_mapping_create_internal(
     char *symbol_id,
     char *symbol_id_exchange,
-    int coinapi_datainfo_id,
+    int *coinapi_datainfo_id,
     char *asset_id_base_exchange,
     char *asset_id_quote_exchange,
     char *asset_id_base,
     char *asset_id_quote,
-    double price_precision,
-    double size_precision
+    double *price_precision,
+    double *size_precision
     ) {
     v1_symbol_mapping_t *v1_symbol_mapping_local_var = malloc(sizeof(v1_symbol_mapping_t));
     if (!v1_symbol_mapping_local_var) {
         return NULL;
     }
+    memset(v1_symbol_mapping_local_var, 0, sizeof(v1_symbol_mapping_t));
+    v1_symbol_mapping_local_var->_library_owned = 1;
     v1_symbol_mapping_local_var->symbol_id = symbol_id;
     v1_symbol_mapping_local_var->symbol_id_exchange = symbol_id_exchange;
     v1_symbol_mapping_local_var->coinapi_datainfo_id = coinapi_datainfo_id;
@@ -29,33 +31,52 @@ static v1_symbol_mapping_t *v1_symbol_mapping_create_internal(
     v1_symbol_mapping_local_var->asset_id_quote = asset_id_quote;
     v1_symbol_mapping_local_var->price_precision = price_precision;
     v1_symbol_mapping_local_var->size_precision = size_precision;
-
-    v1_symbol_mapping_local_var->_library_owned = 1;
     return v1_symbol_mapping_local_var;
 }
 
 __attribute__((deprecated)) v1_symbol_mapping_t *v1_symbol_mapping_create(
     char *symbol_id,
     char *symbol_id_exchange,
-    int coinapi_datainfo_id,
+    int *coinapi_datainfo_id,
     char *asset_id_base_exchange,
     char *asset_id_quote_exchange,
     char *asset_id_base,
     char *asset_id_quote,
-    double price_precision,
-    double size_precision
+    double *price_precision,
+    double *size_precision
     ) {
-    return v1_symbol_mapping_create_internal (
+    int *coinapi_datainfo_id_copy = NULL;
+    if (coinapi_datainfo_id) {
+        coinapi_datainfo_id_copy = malloc(sizeof(int));
+        if (coinapi_datainfo_id_copy) *coinapi_datainfo_id_copy = *coinapi_datainfo_id;
+    }
+    double *price_precision_copy = NULL;
+    if (price_precision) {
+        price_precision_copy = malloc(sizeof(double));
+        if (price_precision_copy) *price_precision_copy = *price_precision;
+    }
+    double *size_precision_copy = NULL;
+    if (size_precision) {
+        size_precision_copy = malloc(sizeof(double));
+        if (size_precision_copy) *size_precision_copy = *size_precision;
+    }
+    v1_symbol_mapping_t *result = v1_symbol_mapping_create_internal (
         symbol_id,
         symbol_id_exchange,
-        coinapi_datainfo_id,
+        coinapi_datainfo_id_copy,
         asset_id_base_exchange,
         asset_id_quote_exchange,
         asset_id_base,
         asset_id_quote,
-        price_precision,
-        size_precision
+        price_precision_copy,
+        size_precision_copy
         );
+    if (!result) {
+        free(coinapi_datainfo_id_copy);
+        free(price_precision_copy);
+        free(size_precision_copy);
+    }
+    return result;
 }
 
 void v1_symbol_mapping_free(v1_symbol_mapping_t *v1_symbol_mapping) {
@@ -75,6 +96,10 @@ void v1_symbol_mapping_free(v1_symbol_mapping_t *v1_symbol_mapping) {
         free(v1_symbol_mapping->symbol_id_exchange);
         v1_symbol_mapping->symbol_id_exchange = NULL;
     }
+    if (v1_symbol_mapping->coinapi_datainfo_id) {
+        free(v1_symbol_mapping->coinapi_datainfo_id);
+        v1_symbol_mapping->coinapi_datainfo_id = NULL;
+    }
     if (v1_symbol_mapping->asset_id_base_exchange) {
         free(v1_symbol_mapping->asset_id_base_exchange);
         v1_symbol_mapping->asset_id_base_exchange = NULL;
@@ -90,6 +115,14 @@ void v1_symbol_mapping_free(v1_symbol_mapping_t *v1_symbol_mapping) {
     if (v1_symbol_mapping->asset_id_quote) {
         free(v1_symbol_mapping->asset_id_quote);
         v1_symbol_mapping->asset_id_quote = NULL;
+    }
+    if (v1_symbol_mapping->price_precision) {
+        free(v1_symbol_mapping->price_precision);
+        v1_symbol_mapping->price_precision = NULL;
+    }
+    if (v1_symbol_mapping->size_precision) {
+        free(v1_symbol_mapping->size_precision);
+        v1_symbol_mapping->size_precision = NULL;
     }
     free(v1_symbol_mapping);
 }
@@ -115,7 +148,7 @@ cJSON *v1_symbol_mapping_convertToJSON(v1_symbol_mapping_t *v1_symbol_mapping) {
 
     // v1_symbol_mapping->coinapi_datainfo_id
     if(v1_symbol_mapping->coinapi_datainfo_id) {
-    if(cJSON_AddNumberToObject(item, "coinapi_datainfo_id", v1_symbol_mapping->coinapi_datainfo_id) == NULL) {
+    if(cJSON_AddNumberToObject(item, "coinapi_datainfo_id", *v1_symbol_mapping->coinapi_datainfo_id) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -155,7 +188,7 @@ cJSON *v1_symbol_mapping_convertToJSON(v1_symbol_mapping_t *v1_symbol_mapping) {
 
     // v1_symbol_mapping->price_precision
     if(v1_symbol_mapping->price_precision) {
-    if(cJSON_AddNumberToObject(item, "price_precision", v1_symbol_mapping->price_precision) == NULL) {
+    if(cJSON_AddNumberToObject(item, "price_precision", *v1_symbol_mapping->price_precision) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -163,7 +196,7 @@ cJSON *v1_symbol_mapping_convertToJSON(v1_symbol_mapping_t *v1_symbol_mapping) {
 
     // v1_symbol_mapping->size_precision
     if(v1_symbol_mapping->size_precision) {
-    if(cJSON_AddNumberToObject(item, "size_precision", v1_symbol_mapping->size_precision) == NULL) {
+    if(cJSON_AddNumberToObject(item, "size_precision", *v1_symbol_mapping->size_precision) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -179,6 +212,27 @@ fail:
 v1_symbol_mapping_t *v1_symbol_mapping_parseFromJSON(cJSON *v1_symbol_mappingJSON){
 
     v1_symbol_mapping_t *v1_symbol_mapping_local_var = NULL;
+
+    char *symbol_id_local_str = NULL;
+
+    char *symbol_id_exchange_local_str = NULL;
+
+    // define the local variable for v1_symbol_mapping->coinapi_datainfo_id
+    int *coinapi_datainfo_id_local_var = NULL;
+
+    char *asset_id_base_exchange_local_str = NULL;
+
+    char *asset_id_quote_exchange_local_str = NULL;
+
+    char *asset_id_base_local_str = NULL;
+
+    char *asset_id_quote_local_str = NULL;
+
+    // define the local variable for v1_symbol_mapping->price_precision
+    double *price_precision_local_var = NULL;
+
+    // define the local variable for v1_symbol_mapping->size_precision
+    double *size_precision_local_var = NULL;
 
     // v1_symbol_mapping->symbol_id
     cJSON *symbol_id = cJSON_GetObjectItemCaseSensitive(v1_symbol_mappingJSON, "symbol_id");
@@ -214,6 +268,12 @@ v1_symbol_mapping_t *v1_symbol_mapping_parseFromJSON(cJSON *v1_symbol_mappingJSO
     {
     goto end; //Numeric
     }
+    coinapi_datainfo_id_local_var = malloc(sizeof(int));
+    if(!coinapi_datainfo_id_local_var)
+    {
+        goto end;
+    }
+    *coinapi_datainfo_id_local_var = coinapi_datainfo_id->valuedouble;
     }
 
     // v1_symbol_mapping->asset_id_base_exchange
@@ -274,6 +334,12 @@ v1_symbol_mapping_t *v1_symbol_mapping_parseFromJSON(cJSON *v1_symbol_mappingJSO
     {
     goto end; //Numeric
     }
+    price_precision_local_var = malloc(sizeof(double));
+    if(!price_precision_local_var)
+    {
+        goto end;
+    }
+    *price_precision_local_var = price_precision->valuedouble;
     }
 
     // v1_symbol_mapping->size_precision
@@ -286,23 +352,76 @@ v1_symbol_mapping_t *v1_symbol_mapping_parseFromJSON(cJSON *v1_symbol_mappingJSO
     {
     goto end; //Numeric
     }
+    size_precision_local_var = malloc(sizeof(double));
+    if(!size_precision_local_var)
+    {
+        goto end;
+    }
+    *size_precision_local_var = size_precision->valuedouble;
     }
 
 
+    if (symbol_id && !cJSON_IsNull(symbol_id)) symbol_id_local_str = strdup(symbol_id->valuestring);
+    if (symbol_id_exchange && !cJSON_IsNull(symbol_id_exchange)) symbol_id_exchange_local_str = strdup(symbol_id_exchange->valuestring);
+    if (asset_id_base_exchange && !cJSON_IsNull(asset_id_base_exchange)) asset_id_base_exchange_local_str = strdup(asset_id_base_exchange->valuestring);
+    if (asset_id_quote_exchange && !cJSON_IsNull(asset_id_quote_exchange)) asset_id_quote_exchange_local_str = strdup(asset_id_quote_exchange->valuestring);
+    if (asset_id_base && !cJSON_IsNull(asset_id_base)) asset_id_base_local_str = strdup(asset_id_base->valuestring);
+    if (asset_id_quote && !cJSON_IsNull(asset_id_quote)) asset_id_quote_local_str = strdup(asset_id_quote->valuestring);
+
     v1_symbol_mapping_local_var = v1_symbol_mapping_create_internal (
-        symbol_id && !cJSON_IsNull(symbol_id) ? strdup(symbol_id->valuestring) : NULL,
-        symbol_id_exchange && !cJSON_IsNull(symbol_id_exchange) ? strdup(symbol_id_exchange->valuestring) : NULL,
-        coinapi_datainfo_id ? coinapi_datainfo_id->valuedouble : 0,
-        asset_id_base_exchange && !cJSON_IsNull(asset_id_base_exchange) ? strdup(asset_id_base_exchange->valuestring) : NULL,
-        asset_id_quote_exchange && !cJSON_IsNull(asset_id_quote_exchange) ? strdup(asset_id_quote_exchange->valuestring) : NULL,
-        asset_id_base && !cJSON_IsNull(asset_id_base) ? strdup(asset_id_base->valuestring) : NULL,
-        asset_id_quote && !cJSON_IsNull(asset_id_quote) ? strdup(asset_id_quote->valuestring) : NULL,
-        price_precision ? price_precision->valuedouble : 0,
-        size_precision ? size_precision->valuedouble : 0
+        symbol_id_local_str,
+        symbol_id_exchange_local_str,
+        coinapi_datainfo_id_local_var,
+        asset_id_base_exchange_local_str,
+        asset_id_quote_exchange_local_str,
+        asset_id_base_local_str,
+        asset_id_quote_local_str,
+        price_precision_local_var,
+        size_precision_local_var
         );
+
+    if (!v1_symbol_mapping_local_var) {
+        goto end;
+    }
 
     return v1_symbol_mapping_local_var;
 end:
+    if (symbol_id_local_str) {
+        free(symbol_id_local_str);
+        symbol_id_local_str = NULL;
+    }
+    if (symbol_id_exchange_local_str) {
+        free(symbol_id_exchange_local_str);
+        symbol_id_exchange_local_str = NULL;
+    }
+    if (coinapi_datainfo_id_local_var) {
+        free(coinapi_datainfo_id_local_var);
+        coinapi_datainfo_id_local_var = NULL;
+    }
+    if (asset_id_base_exchange_local_str) {
+        free(asset_id_base_exchange_local_str);
+        asset_id_base_exchange_local_str = NULL;
+    }
+    if (asset_id_quote_exchange_local_str) {
+        free(asset_id_quote_exchange_local_str);
+        asset_id_quote_exchange_local_str = NULL;
+    }
+    if (asset_id_base_local_str) {
+        free(asset_id_base_local_str);
+        asset_id_base_local_str = NULL;
+    }
+    if (asset_id_quote_local_str) {
+        free(asset_id_quote_local_str);
+        asset_id_quote_local_str = NULL;
+    }
+    if (price_precision_local_var) {
+        free(price_precision_local_var);
+        price_precision_local_var = NULL;
+    }
+    if (size_precision_local_var) {
+        free(size_precision_local_var);
+        size_precision_local_var = NULL;
+    }
     return NULL;
 
 }

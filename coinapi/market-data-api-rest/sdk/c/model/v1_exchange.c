@@ -17,20 +17,22 @@ static v1_exchange_t *v1_exchange_create_internal(
     char *data_orderbook_end,
     char *data_trade_start,
     char *data_trade_end,
-    long data_trade_count,
-    long data_symbols_count,
-    double volume_1hrs_usd,
-    double volume_1day_usd,
-    double volume_1mth_usd,
+    long *data_trade_count,
+    long *data_symbols_count,
+    double *volume_1hrs_usd,
+    double *volume_1day_usd,
+    double *volume_1mth_usd,
     list_t *metric_id,
     list_t *icons,
-    double rank,
+    double *rank,
     char *integration_status
     ) {
     v1_exchange_t *v1_exchange_local_var = malloc(sizeof(v1_exchange_t));
     if (!v1_exchange_local_var) {
         return NULL;
     }
+    memset(v1_exchange_local_var, 0, sizeof(v1_exchange_t));
+    v1_exchange_local_var->_library_owned = 1;
     v1_exchange_local_var->exchange_id = exchange_id;
     v1_exchange_local_var->website = website;
     v1_exchange_local_var->name = name;
@@ -51,8 +53,6 @@ static v1_exchange_t *v1_exchange_create_internal(
     v1_exchange_local_var->icons = icons;
     v1_exchange_local_var->rank = rank;
     v1_exchange_local_var->integration_status = integration_status;
-
-    v1_exchange_local_var->_library_owned = 1;
     return v1_exchange_local_var;
 }
 
@@ -68,17 +68,47 @@ __attribute__((deprecated)) v1_exchange_t *v1_exchange_create(
     char *data_orderbook_end,
     char *data_trade_start,
     char *data_trade_end,
-    long data_trade_count,
-    long data_symbols_count,
-    double volume_1hrs_usd,
-    double volume_1day_usd,
-    double volume_1mth_usd,
+    long *data_trade_count,
+    long *data_symbols_count,
+    double *volume_1hrs_usd,
+    double *volume_1day_usd,
+    double *volume_1mth_usd,
     list_t *metric_id,
     list_t *icons,
-    double rank,
+    double *rank,
     char *integration_status
     ) {
-    return v1_exchange_create_internal (
+    long *data_trade_count_copy = NULL;
+    if (data_trade_count) {
+        data_trade_count_copy = malloc(sizeof(long));
+        if (data_trade_count_copy) *data_trade_count_copy = *data_trade_count;
+    }
+    long *data_symbols_count_copy = NULL;
+    if (data_symbols_count) {
+        data_symbols_count_copy = malloc(sizeof(long));
+        if (data_symbols_count_copy) *data_symbols_count_copy = *data_symbols_count;
+    }
+    double *volume_1hrs_usd_copy = NULL;
+    if (volume_1hrs_usd) {
+        volume_1hrs_usd_copy = malloc(sizeof(double));
+        if (volume_1hrs_usd_copy) *volume_1hrs_usd_copy = *volume_1hrs_usd;
+    }
+    double *volume_1day_usd_copy = NULL;
+    if (volume_1day_usd) {
+        volume_1day_usd_copy = malloc(sizeof(double));
+        if (volume_1day_usd_copy) *volume_1day_usd_copy = *volume_1day_usd;
+    }
+    double *volume_1mth_usd_copy = NULL;
+    if (volume_1mth_usd) {
+        volume_1mth_usd_copy = malloc(sizeof(double));
+        if (volume_1mth_usd_copy) *volume_1mth_usd_copy = *volume_1mth_usd;
+    }
+    double *rank_copy = NULL;
+    if (rank) {
+        rank_copy = malloc(sizeof(double));
+        if (rank_copy) *rank_copy = *rank;
+    }
+    v1_exchange_t *result = v1_exchange_create_internal (
         exchange_id,
         website,
         name,
@@ -90,16 +120,25 @@ __attribute__((deprecated)) v1_exchange_t *v1_exchange_create(
         data_orderbook_end,
         data_trade_start,
         data_trade_end,
-        data_trade_count,
-        data_symbols_count,
-        volume_1hrs_usd,
-        volume_1day_usd,
-        volume_1mth_usd,
+        data_trade_count_copy,
+        data_symbols_count_copy,
+        volume_1hrs_usd_copy,
+        volume_1day_usd_copy,
+        volume_1mth_usd_copy,
         metric_id,
         icons,
-        rank,
+        rank_copy,
         integration_status
         );
+    if (!result) {
+        free(data_trade_count_copy);
+        free(data_symbols_count_copy);
+        free(volume_1hrs_usd_copy);
+        free(volume_1day_usd_copy);
+        free(volume_1mth_usd_copy);
+        free(rank_copy);
+    }
+    return result;
 }
 
 void v1_exchange_free(v1_exchange_t *v1_exchange) {
@@ -155,6 +194,26 @@ void v1_exchange_free(v1_exchange_t *v1_exchange) {
         free(v1_exchange->data_trade_end);
         v1_exchange->data_trade_end = NULL;
     }
+    if (v1_exchange->data_trade_count) {
+        free(v1_exchange->data_trade_count);
+        v1_exchange->data_trade_count = NULL;
+    }
+    if (v1_exchange->data_symbols_count) {
+        free(v1_exchange->data_symbols_count);
+        v1_exchange->data_symbols_count = NULL;
+    }
+    if (v1_exchange->volume_1hrs_usd) {
+        free(v1_exchange->volume_1hrs_usd);
+        v1_exchange->volume_1hrs_usd = NULL;
+    }
+    if (v1_exchange->volume_1day_usd) {
+        free(v1_exchange->volume_1day_usd);
+        v1_exchange->volume_1day_usd = NULL;
+    }
+    if (v1_exchange->volume_1mth_usd) {
+        free(v1_exchange->volume_1mth_usd);
+        v1_exchange->volume_1mth_usd = NULL;
+    }
     if (v1_exchange->metric_id) {
         list_ForEach(listEntry, v1_exchange->metric_id) {
             free(listEntry->data);
@@ -168,6 +227,10 @@ void v1_exchange_free(v1_exchange_t *v1_exchange) {
         }
         list_freeList(v1_exchange->icons);
         v1_exchange->icons = NULL;
+    }
+    if (v1_exchange->rank) {
+        free(v1_exchange->rank);
+        v1_exchange->rank = NULL;
     }
     if (v1_exchange->integration_status) {
         free(v1_exchange->integration_status);
@@ -269,7 +332,7 @@ cJSON *v1_exchange_convertToJSON(v1_exchange_t *v1_exchange) {
 
     // v1_exchange->data_trade_count
     if(v1_exchange->data_trade_count) {
-    if(cJSON_AddNumberToObject(item, "data_trade_count", v1_exchange->data_trade_count) == NULL) {
+    if(cJSON_AddNumberToObject(item, "data_trade_count", *v1_exchange->data_trade_count) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -277,7 +340,7 @@ cJSON *v1_exchange_convertToJSON(v1_exchange_t *v1_exchange) {
 
     // v1_exchange->data_symbols_count
     if(v1_exchange->data_symbols_count) {
-    if(cJSON_AddNumberToObject(item, "data_symbols_count", v1_exchange->data_symbols_count) == NULL) {
+    if(cJSON_AddNumberToObject(item, "data_symbols_count", *v1_exchange->data_symbols_count) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -285,7 +348,7 @@ cJSON *v1_exchange_convertToJSON(v1_exchange_t *v1_exchange) {
 
     // v1_exchange->volume_1hrs_usd
     if(v1_exchange->volume_1hrs_usd) {
-    if(cJSON_AddNumberToObject(item, "volume_1hrs_usd", v1_exchange->volume_1hrs_usd) == NULL) {
+    if(cJSON_AddNumberToObject(item, "volume_1hrs_usd", *v1_exchange->volume_1hrs_usd) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -293,7 +356,7 @@ cJSON *v1_exchange_convertToJSON(v1_exchange_t *v1_exchange) {
 
     // v1_exchange->volume_1day_usd
     if(v1_exchange->volume_1day_usd) {
-    if(cJSON_AddNumberToObject(item, "volume_1day_usd", v1_exchange->volume_1day_usd) == NULL) {
+    if(cJSON_AddNumberToObject(item, "volume_1day_usd", *v1_exchange->volume_1day_usd) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -301,7 +364,7 @@ cJSON *v1_exchange_convertToJSON(v1_exchange_t *v1_exchange) {
 
     // v1_exchange->volume_1mth_usd
     if(v1_exchange->volume_1mth_usd) {
-    if(cJSON_AddNumberToObject(item, "volume_1mth_usd", v1_exchange->volume_1mth_usd) == NULL) {
+    if(cJSON_AddNumberToObject(item, "volume_1mth_usd", *v1_exchange->volume_1mth_usd) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -346,7 +409,7 @@ cJSON *v1_exchange_convertToJSON(v1_exchange_t *v1_exchange) {
 
     // v1_exchange->rank
     if(v1_exchange->rank) {
-    if(cJSON_AddNumberToObject(item, "rank", v1_exchange->rank) == NULL) {
+    if(cJSON_AddNumberToObject(item, "rank", *v1_exchange->rank) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -371,11 +434,53 @@ v1_exchange_t *v1_exchange_parseFromJSON(cJSON *v1_exchangeJSON){
 
     v1_exchange_t *v1_exchange_local_var = NULL;
 
+    char *exchange_id_local_str = NULL;
+
+    char *website_local_str = NULL;
+
+    char *name_local_str = NULL;
+
+    char *data_start_local_str = NULL;
+
+    char *data_end_local_str = NULL;
+
+    char *data_quote_start_local_str = NULL;
+
+    char *data_quote_end_local_str = NULL;
+
+    char *data_orderbook_start_local_str = NULL;
+
+    char *data_orderbook_end_local_str = NULL;
+
+    char *data_trade_start_local_str = NULL;
+
+    char *data_trade_end_local_str = NULL;
+
+    // define the local variable for v1_exchange->data_trade_count
+    long *data_trade_count_local_var = NULL;
+
+    // define the local variable for v1_exchange->data_symbols_count
+    long *data_symbols_count_local_var = NULL;
+
+    // define the local variable for v1_exchange->volume_1hrs_usd
+    double *volume_1hrs_usd_local_var = NULL;
+
+    // define the local variable for v1_exchange->volume_1day_usd
+    double *volume_1day_usd_local_var = NULL;
+
+    // define the local variable for v1_exchange->volume_1mth_usd
+    double *volume_1mth_usd_local_var = NULL;
+
     // define the local list for v1_exchange->metric_id
     list_t *metric_idList = NULL;
 
     // define the local list for v1_exchange->icons
     list_t *iconsList = NULL;
+
+    // define the local variable for v1_exchange->rank
+    double *rank_local_var = NULL;
+
+    char *integration_status_local_str = NULL;
 
     // v1_exchange->exchange_id
     cJSON *exchange_id = cJSON_GetObjectItemCaseSensitive(v1_exchangeJSON, "exchange_id");
@@ -519,6 +624,12 @@ v1_exchange_t *v1_exchange_parseFromJSON(cJSON *v1_exchangeJSON){
     {
     goto end; //Numeric
     }
+    data_trade_count_local_var = malloc(sizeof(long));
+    if(!data_trade_count_local_var)
+    {
+        goto end;
+    }
+    *data_trade_count_local_var = data_trade_count->valuedouble;
     }
 
     // v1_exchange->data_symbols_count
@@ -531,6 +642,12 @@ v1_exchange_t *v1_exchange_parseFromJSON(cJSON *v1_exchangeJSON){
     {
     goto end; //Numeric
     }
+    data_symbols_count_local_var = malloc(sizeof(long));
+    if(!data_symbols_count_local_var)
+    {
+        goto end;
+    }
+    *data_symbols_count_local_var = data_symbols_count->valuedouble;
     }
 
     // v1_exchange->volume_1hrs_usd
@@ -543,6 +660,12 @@ v1_exchange_t *v1_exchange_parseFromJSON(cJSON *v1_exchangeJSON){
     {
     goto end; //Numeric
     }
+    volume_1hrs_usd_local_var = malloc(sizeof(double));
+    if(!volume_1hrs_usd_local_var)
+    {
+        goto end;
+    }
+    *volume_1hrs_usd_local_var = volume_1hrs_usd->valuedouble;
     }
 
     // v1_exchange->volume_1day_usd
@@ -555,6 +678,12 @@ v1_exchange_t *v1_exchange_parseFromJSON(cJSON *v1_exchangeJSON){
     {
     goto end; //Numeric
     }
+    volume_1day_usd_local_var = malloc(sizeof(double));
+    if(!volume_1day_usd_local_var)
+    {
+        goto end;
+    }
+    *volume_1day_usd_local_var = volume_1day_usd->valuedouble;
     }
 
     // v1_exchange->volume_1mth_usd
@@ -567,6 +696,12 @@ v1_exchange_t *v1_exchange_parseFromJSON(cJSON *v1_exchangeJSON){
     {
     goto end; //Numeric
     }
+    volume_1mth_usd_local_var = malloc(sizeof(double));
+    if(!volume_1mth_usd_local_var)
+    {
+        goto end;
+    }
+    *volume_1mth_usd_local_var = volume_1mth_usd->valuedouble;
     }
 
     // v1_exchange->metric_id
@@ -625,6 +760,12 @@ v1_exchange_t *v1_exchange_parseFromJSON(cJSON *v1_exchangeJSON){
     {
     goto end; //Numeric
     }
+    rank_local_var = malloc(sizeof(double));
+    if(!rank_local_var)
+    {
+        goto end;
+    }
+    *rank_local_var = rank->valuedouble;
     }
 
     // v1_exchange->integration_status
@@ -640,31 +781,112 @@ v1_exchange_t *v1_exchange_parseFromJSON(cJSON *v1_exchangeJSON){
     }
 
 
+    if (exchange_id && !cJSON_IsNull(exchange_id)) exchange_id_local_str = strdup(exchange_id->valuestring);
+    if (website && !cJSON_IsNull(website)) website_local_str = strdup(website->valuestring);
+    if (name && !cJSON_IsNull(name)) name_local_str = strdup(name->valuestring);
+    if (data_start && !cJSON_IsNull(data_start)) data_start_local_str = strdup(data_start->valuestring);
+    if (data_end && !cJSON_IsNull(data_end)) data_end_local_str = strdup(data_end->valuestring);
+    if (data_quote_start && !cJSON_IsNull(data_quote_start)) data_quote_start_local_str = strdup(data_quote_start->valuestring);
+    if (data_quote_end && !cJSON_IsNull(data_quote_end)) data_quote_end_local_str = strdup(data_quote_end->valuestring);
+    if (data_orderbook_start && !cJSON_IsNull(data_orderbook_start)) data_orderbook_start_local_str = strdup(data_orderbook_start->valuestring);
+    if (data_orderbook_end && !cJSON_IsNull(data_orderbook_end)) data_orderbook_end_local_str = strdup(data_orderbook_end->valuestring);
+    if (data_trade_start && !cJSON_IsNull(data_trade_start)) data_trade_start_local_str = strdup(data_trade_start->valuestring);
+    if (data_trade_end && !cJSON_IsNull(data_trade_end)) data_trade_end_local_str = strdup(data_trade_end->valuestring);
+    if (integration_status && !cJSON_IsNull(integration_status)) integration_status_local_str = strdup(integration_status->valuestring);
+
     v1_exchange_local_var = v1_exchange_create_internal (
-        exchange_id && !cJSON_IsNull(exchange_id) ? strdup(exchange_id->valuestring) : NULL,
-        website && !cJSON_IsNull(website) ? strdup(website->valuestring) : NULL,
-        name && !cJSON_IsNull(name) ? strdup(name->valuestring) : NULL,
-        data_start && !cJSON_IsNull(data_start) ? strdup(data_start->valuestring) : NULL,
-        data_end && !cJSON_IsNull(data_end) ? strdup(data_end->valuestring) : NULL,
-        data_quote_start && !cJSON_IsNull(data_quote_start) ? strdup(data_quote_start->valuestring) : NULL,
-        data_quote_end && !cJSON_IsNull(data_quote_end) ? strdup(data_quote_end->valuestring) : NULL,
-        data_orderbook_start && !cJSON_IsNull(data_orderbook_start) ? strdup(data_orderbook_start->valuestring) : NULL,
-        data_orderbook_end && !cJSON_IsNull(data_orderbook_end) ? strdup(data_orderbook_end->valuestring) : NULL,
-        data_trade_start && !cJSON_IsNull(data_trade_start) ? strdup(data_trade_start->valuestring) : NULL,
-        data_trade_end && !cJSON_IsNull(data_trade_end) ? strdup(data_trade_end->valuestring) : NULL,
-        data_trade_count ? data_trade_count->valuedouble : 0,
-        data_symbols_count ? data_symbols_count->valuedouble : 0,
-        volume_1hrs_usd ? volume_1hrs_usd->valuedouble : 0,
-        volume_1day_usd ? volume_1day_usd->valuedouble : 0,
-        volume_1mth_usd ? volume_1mth_usd->valuedouble : 0,
+        exchange_id_local_str,
+        website_local_str,
+        name_local_str,
+        data_start_local_str,
+        data_end_local_str,
+        data_quote_start_local_str,
+        data_quote_end_local_str,
+        data_orderbook_start_local_str,
+        data_orderbook_end_local_str,
+        data_trade_start_local_str,
+        data_trade_end_local_str,
+        data_trade_count_local_var,
+        data_symbols_count_local_var,
+        volume_1hrs_usd_local_var,
+        volume_1day_usd_local_var,
+        volume_1mth_usd_local_var,
         metric_id ? metric_idList : NULL,
         icons ? iconsList : NULL,
-        rank ? rank->valuedouble : 0,
-        integration_status && !cJSON_IsNull(integration_status) ? strdup(integration_status->valuestring) : NULL
+        rank_local_var,
+        integration_status_local_str
         );
+
+    if (!v1_exchange_local_var) {
+        goto end;
+    }
 
     return v1_exchange_local_var;
 end:
+    if (exchange_id_local_str) {
+        free(exchange_id_local_str);
+        exchange_id_local_str = NULL;
+    }
+    if (website_local_str) {
+        free(website_local_str);
+        website_local_str = NULL;
+    }
+    if (name_local_str) {
+        free(name_local_str);
+        name_local_str = NULL;
+    }
+    if (data_start_local_str) {
+        free(data_start_local_str);
+        data_start_local_str = NULL;
+    }
+    if (data_end_local_str) {
+        free(data_end_local_str);
+        data_end_local_str = NULL;
+    }
+    if (data_quote_start_local_str) {
+        free(data_quote_start_local_str);
+        data_quote_start_local_str = NULL;
+    }
+    if (data_quote_end_local_str) {
+        free(data_quote_end_local_str);
+        data_quote_end_local_str = NULL;
+    }
+    if (data_orderbook_start_local_str) {
+        free(data_orderbook_start_local_str);
+        data_orderbook_start_local_str = NULL;
+    }
+    if (data_orderbook_end_local_str) {
+        free(data_orderbook_end_local_str);
+        data_orderbook_end_local_str = NULL;
+    }
+    if (data_trade_start_local_str) {
+        free(data_trade_start_local_str);
+        data_trade_start_local_str = NULL;
+    }
+    if (data_trade_end_local_str) {
+        free(data_trade_end_local_str);
+        data_trade_end_local_str = NULL;
+    }
+    if (data_trade_count_local_var) {
+        free(data_trade_count_local_var);
+        data_trade_count_local_var = NULL;
+    }
+    if (data_symbols_count_local_var) {
+        free(data_symbols_count_local_var);
+        data_symbols_count_local_var = NULL;
+    }
+    if (volume_1hrs_usd_local_var) {
+        free(volume_1hrs_usd_local_var);
+        volume_1hrs_usd_local_var = NULL;
+    }
+    if (volume_1day_usd_local_var) {
+        free(volume_1day_usd_local_var);
+        volume_1day_usd_local_var = NULL;
+    }
+    if (volume_1mth_usd_local_var) {
+        free(volume_1mth_usd_local_var);
+        volume_1mth_usd_local_var = NULL;
+    }
     if (metric_idList) {
         listEntry_t *listEntry = NULL;
         list_ForEach(listEntry, metric_idList) {
@@ -682,6 +904,14 @@ end:
         }
         list_freeList(iconsList);
         iconsList = NULL;
+    }
+    if (rank_local_var) {
+        free(rank_local_var);
+        rank_local_var = NULL;
+    }
+    if (integration_status_local_str) {
+        free(integration_status_local_str);
+        integration_status_local_str = NULL;
     }
     return NULL;
 

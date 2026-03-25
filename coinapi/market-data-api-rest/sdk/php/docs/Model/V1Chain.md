@@ -1,4 +1,4 @@
-# # V1Chain
+# V1Chain
 
 ## Properties
 

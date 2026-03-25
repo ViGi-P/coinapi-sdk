@@ -22,7 +22,7 @@ typedef struct options_option_exchange_group_t options_option_exchange_group_t;
 typedef struct options_option_exchange_group_t {
     char *asset_id_base; // string
     char *asset_id_quote; // string
-    double underlying_price; //numeric
+    double *underlying_price; //numeric
     char *time_expiration; //date time
     list_t *strikes; //nonprimitive container
 
@@ -32,7 +32,7 @@ typedef struct options_option_exchange_group_t {
 __attribute__((deprecated)) options_option_exchange_group_t *options_option_exchange_group_create(
     char *asset_id_base,
     char *asset_id_quote,
-    double underlying_price,
+    double *underlying_price,
     char *time_expiration,
     list_t *strikes
 );

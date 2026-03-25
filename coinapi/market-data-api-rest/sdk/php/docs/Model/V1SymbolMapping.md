@@ -1,4 +1,4 @@
-# # V1SymbolMapping
+# V1SymbolMapping
 
 ## Properties
 

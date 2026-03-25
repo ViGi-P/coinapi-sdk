@@ -16,13 +16,13 @@ static v1_order_book_t *v1_order_book_create_internal(
     if (!v1_order_book_local_var) {
         return NULL;
     }
+    memset(v1_order_book_local_var, 0, sizeof(v1_order_book_t));
+    v1_order_book_local_var->_library_owned = 1;
     v1_order_book_local_var->symbol_id = symbol_id;
     v1_order_book_local_var->time_exchange = time_exchange;
     v1_order_book_local_var->time_coinapi = time_coinapi;
     v1_order_book_local_var->asks = asks;
     v1_order_book_local_var->bids = bids;
-
-    v1_order_book_local_var->_library_owned = 1;
     return v1_order_book_local_var;
 }
 
@@ -33,13 +33,16 @@ __attribute__((deprecated)) v1_order_book_t *v1_order_book_create(
     any_type_t *asks,
     any_type_t *bids
     ) {
-    return v1_order_book_create_internal (
+    v1_order_book_t *result = v1_order_book_create_internal (
         symbol_id,
         time_exchange,
         time_coinapi,
         asks,
         bids
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void v1_order_book_free(v1_order_book_t *v1_order_book) {
@@ -138,6 +141,12 @@ v1_order_book_t *v1_order_book_parseFromJSON(cJSON *v1_order_bookJSON){
 
     v1_order_book_t *v1_order_book_local_var = NULL;
 
+    char *symbol_id_local_str = NULL;
+
+    char *time_exchange_local_str = NULL;
+
+    char *time_coinapi_local_str = NULL;
+
     // define the local variable for v1_order_book->asks
     _t *asks_local_nonprim = NULL;
 
@@ -199,16 +208,36 @@ v1_order_book_t *v1_order_book_parseFromJSON(cJSON *v1_order_bookJSON){
     }
 
 
+    if (symbol_id && !cJSON_IsNull(symbol_id)) symbol_id_local_str = strdup(symbol_id->valuestring);
+    if (time_exchange && !cJSON_IsNull(time_exchange)) time_exchange_local_str = strdup(time_exchange->valuestring);
+    if (time_coinapi && !cJSON_IsNull(time_coinapi)) time_coinapi_local_str = strdup(time_coinapi->valuestring);
+
     v1_order_book_local_var = v1_order_book_create_internal (
-        symbol_id && !cJSON_IsNull(symbol_id) ? strdup(symbol_id->valuestring) : NULL,
-        time_exchange && !cJSON_IsNull(time_exchange) ? strdup(time_exchange->valuestring) : NULL,
-        time_coinapi && !cJSON_IsNull(time_coinapi) ? strdup(time_coinapi->valuestring) : NULL,
+        symbol_id_local_str,
+        time_exchange_local_str,
+        time_coinapi_local_str,
         asks ? asks_local_nonprim : NULL,
         bids ? bids_local_nonprim : NULL
         );
 
+    if (!v1_order_book_local_var) {
+        goto end;
+    }
+
     return v1_order_book_local_var;
 end:
+    if (symbol_id_local_str) {
+        free(symbol_id_local_str);
+        symbol_id_local_str = NULL;
+    }
+    if (time_exchange_local_str) {
+        free(time_exchange_local_str);
+        time_exchange_local_str = NULL;
+    }
+    if (time_coinapi_local_str) {
+        free(time_coinapi_local_str);
+        time_coinapi_local_str = NULL;
+    }
     if (asks_local_nonprim) {
         _free(asks_local_nonprim);
         asks_local_nonprim = NULL;

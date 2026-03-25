@@ -1,4 +1,4 @@
-# # V1OrderBookBase
+# V1OrderBookBase
 
 ## Properties
 

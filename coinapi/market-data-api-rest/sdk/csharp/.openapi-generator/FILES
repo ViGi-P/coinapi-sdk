@@ -111,6 +111,7 @@ src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Client/DateOnlyNullableJsonConverter
 src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Client/DateTimeJsonConverter.cs
 src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Client/DateTimeNullableJsonConverter.cs
 src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Client/ExceptionEventArgs.cs
+src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Client/FileParameter.cs
 src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Client/HostConfiguration.cs
 src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Client/JsonSerializerOptionsProvider.cs
 src/APIBricks.CoinAPI.MarketDataAPI.REST.V1/Client/Option.cs

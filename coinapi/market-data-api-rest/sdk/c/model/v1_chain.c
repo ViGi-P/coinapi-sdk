@@ -13,10 +13,10 @@ static v1_chain_t *v1_chain_create_internal(
     if (!v1_chain_local_var) {
         return NULL;
     }
+    memset(v1_chain_local_var, 0, sizeof(v1_chain_t));
+    v1_chain_local_var->_library_owned = 1;
     v1_chain_local_var->chain_id = chain_id;
     v1_chain_local_var->name = name;
-
-    v1_chain_local_var->_library_owned = 1;
     return v1_chain_local_var;
 }
 
@@ -24,10 +24,13 @@ __attribute__((deprecated)) v1_chain_t *v1_chain_create(
     char *chain_id,
     char *name
     ) {
-    return v1_chain_create_internal (
+    v1_chain_t *result = v1_chain_create_internal (
         chain_id,
         name
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void v1_chain_free(v1_chain_t *v1_chain) {
@@ -80,6 +83,10 @@ v1_chain_t *v1_chain_parseFromJSON(cJSON *v1_chainJSON){
 
     v1_chain_t *v1_chain_local_var = NULL;
 
+    char *chain_id_local_str = NULL;
+
+    char *name_local_str = NULL;
+
     // v1_chain->chain_id
     cJSON *chain_id = cJSON_GetObjectItemCaseSensitive(v1_chainJSON, "chain_id");
     if (cJSON_IsNull(chain_id)) {
@@ -105,13 +112,28 @@ v1_chain_t *v1_chain_parseFromJSON(cJSON *v1_chainJSON){
     }
 
 
+    if (chain_id && !cJSON_IsNull(chain_id)) chain_id_local_str = strdup(chain_id->valuestring);
+    if (name && !cJSON_IsNull(name)) name_local_str = strdup(name->valuestring);
+
     v1_chain_local_var = v1_chain_create_internal (
-        chain_id && !cJSON_IsNull(chain_id) ? strdup(chain_id->valuestring) : NULL,
-        name && !cJSON_IsNull(name) ? strdup(name->valuestring) : NULL
+        chain_id_local_str,
+        name_local_str
         );
+
+    if (!v1_chain_local_var) {
+        goto end;
+    }
 
     return v1_chain_local_var;
 end:
+    if (chain_id_local_str) {
+        free(chain_id_local_str);
+        chain_id_local_str = NULL;
+    }
+    if (name_local_str) {
+        free(name_local_str);
+        name_local_str = NULL;
+    }
     return NULL;
 
 }

@@ -1,4 +1,4 @@
-# # V1OrderBook
+# V1OrderBook
 
 ## Properties
 

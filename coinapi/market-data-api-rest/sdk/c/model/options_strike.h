@@ -20,7 +20,7 @@ typedef struct options_strike_t options_strike_t;
 
 
 typedef struct options_strike_t {
-    double strike_price; //numeric
+    double *strike_price; //numeric
     struct v1_quote_trade_t *call; //model
     struct v1_quote_trade_t *put; //model
 
@@ -28,7 +28,7 @@ typedef struct options_strike_t {
 } options_strike_t;
 
 __attribute__((deprecated)) options_strike_t *options_strike_create(
-    double strike_price,
+    double *strike_price,
     v1_quote_trade_t *call,
     v1_quote_trade_t *put
 );

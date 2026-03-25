@@ -6,7 +6,7 @@
 
 
 static options_strike_t *options_strike_create_internal(
-    double strike_price,
+    double *strike_price,
     v1_quote_trade_t *call,
     v1_quote_trade_t *put
     ) {
@@ -14,24 +14,33 @@ static options_strike_t *options_strike_create_internal(
     if (!options_strike_local_var) {
         return NULL;
     }
+    memset(options_strike_local_var, 0, sizeof(options_strike_t));
+    options_strike_local_var->_library_owned = 1;
     options_strike_local_var->strike_price = strike_price;
     options_strike_local_var->call = call;
     options_strike_local_var->put = put;
-
-    options_strike_local_var->_library_owned = 1;
     return options_strike_local_var;
 }
 
 __attribute__((deprecated)) options_strike_t *options_strike_create(
-    double strike_price,
+    double *strike_price,
     v1_quote_trade_t *call,
     v1_quote_trade_t *put
     ) {
-    return options_strike_create_internal (
-        strike_price,
+    double *strike_price_copy = NULL;
+    if (strike_price) {
+        strike_price_copy = malloc(sizeof(double));
+        if (strike_price_copy) *strike_price_copy = *strike_price;
+    }
+    options_strike_t *result = options_strike_create_internal (
+        strike_price_copy,
         call,
         put
         );
+    if (!result) {
+        free(strike_price_copy);
+    }
+    return result;
 }
 
 void options_strike_free(options_strike_t *options_strike) {
@@ -43,6 +52,10 @@ void options_strike_free(options_strike_t *options_strike) {
         return ;
     }
     listEntry_t *listEntry;
+    if (options_strike->strike_price) {
+        free(options_strike->strike_price);
+        options_strike->strike_price = NULL;
+    }
     if (options_strike->call) {
         v1_quote_trade_free(options_strike->call);
         options_strike->call = NULL;
@@ -59,7 +72,7 @@ cJSON *options_strike_convertToJSON(options_strike_t *options_strike) {
 
     // options_strike->strike_price
     if(options_strike->strike_price) {
-    if(cJSON_AddNumberToObject(item, "strike_price", options_strike->strike_price) == NULL) {
+    if(cJSON_AddNumberToObject(item, "strike_price", *options_strike->strike_price) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -102,6 +115,9 @@ options_strike_t *options_strike_parseFromJSON(cJSON *options_strikeJSON){
 
     options_strike_t *options_strike_local_var = NULL;
 
+    // define the local variable for options_strike->strike_price
+    double *strike_price_local_var = NULL;
+
     // define the local variable for options_strike->call
     v1_quote_trade_t *call_local_nonprim = NULL;
 
@@ -118,6 +134,12 @@ options_strike_t *options_strike_parseFromJSON(cJSON *options_strikeJSON){
     {
     goto end; //Numeric
     }
+    strike_price_local_var = malloc(sizeof(double));
+    if(!strike_price_local_var)
+    {
+        goto end;
+    }
+    *strike_price_local_var = strike_price->valuedouble;
     }
 
     // options_strike->call
@@ -139,14 +161,23 @@ options_strike_t *options_strike_parseFromJSON(cJSON *options_strikeJSON){
     }
 
 
+
     options_strike_local_var = options_strike_create_internal (
-        strike_price ? strike_price->valuedouble : 0,
+        strike_price_local_var,
         call ? call_local_nonprim : NULL,
         put ? put_local_nonprim : NULL
         );
 
+    if (!options_strike_local_var) {
+        goto end;
+    }
+
     return options_strike_local_var;
 end:
+    if (strike_price_local_var) {
+        free(strike_price_local_var);
+        strike_price_local_var = NULL;
+    }
     if (call_local_nonprim) {
         v1_quote_trade_free(call_local_nonprim);
         call_local_nonprim = NULL;

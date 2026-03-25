@@ -22,10 +22,10 @@ typedef struct v1_order_book_depth_t {
     char *symbol_id; // string
     char *time_exchange; //date time
     char *time_coinapi; //date time
-    long ask_levels; //numeric
-    long bid_levels; //numeric
-    double ask_depth; //numeric
-    double bid_depth; //numeric
+    long *ask_levels; //numeric
+    long *bid_levels; //numeric
+    double *ask_depth; //numeric
+    double *bid_depth; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } v1_order_book_depth_t;
@@ -34,10 +34,10 @@ __attribute__((deprecated)) v1_order_book_depth_t *v1_order_book_depth_create(
     char *symbol_id,
     char *time_exchange,
     char *time_coinapi,
-    long ask_levels,
-    long bid_levels,
-    double ask_depth,
-    double bid_depth
+    long *ask_levels,
+    long *bid_levels,
+    double *ask_depth,
+    double *bid_depth
 );
 
 void v1_order_book_depth_free(v1_order_book_depth_t *v1_order_book_depth);

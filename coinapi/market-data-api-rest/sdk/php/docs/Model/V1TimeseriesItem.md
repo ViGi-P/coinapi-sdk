@@ -1,4 +1,4 @@
-# # V1TimeseriesItem
+# V1TimeseriesItem
 
 ## Properties
 
