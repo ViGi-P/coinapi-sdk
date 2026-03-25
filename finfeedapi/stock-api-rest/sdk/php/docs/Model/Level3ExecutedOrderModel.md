@@ -1,4 +1,4 @@
-# # Level3ExecutedOrderModel
+# Level3ExecutedOrderModel
 
 ## Properties
 

@@ -23,6 +23,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdminTradingStatusModel(BaseModel):
     """
@@ -49,7 +50,8 @@ class AdminTradingStatusModel(BaseModel):
     __properties: ClassVar[List[str]] = ["symbol", "timestamp_nanos", "timestamp", "is_trading_live", "is_trading_halted", "is_trading_in_order_acceptance_period", "is_trading_paused", "is_reason_halt_news_pending", "is_reason_ipo_not_yet_trading", "is_reason_ipo_deferred", "is_reason_halt_news_dissemination", "is_reason_ipo_order_acceptance_period", "is_reason_ipo_pre_launch_period", "is_reason_market_wide_circuit_breaker_level1", "is_reason_market_wide_circuit_breaker_level2", "is_reason_market_wide_circuit_breaker_level3", "is_reason_not_applicable", "is_reason_not_available"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -61,8 +63,7 @@ class AdminTradingStatusModel(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

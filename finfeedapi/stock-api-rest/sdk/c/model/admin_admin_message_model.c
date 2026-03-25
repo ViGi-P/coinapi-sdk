@@ -20,6 +20,8 @@ static admin_admin_message_model_t *admin_admin_message_model_create_internal(
     if (!admin_admin_message_model_local_var) {
         return NULL;
     }
+    memset(admin_admin_message_model_local_var, 0, sizeof(admin_admin_message_model_t));
+    admin_admin_message_model_local_var->_library_owned = 1;
     admin_admin_message_model_local_var->trading_status = trading_status;
     admin_admin_message_model_local_var->official_price = official_price;
     admin_admin_message_model_local_var->security_event = security_event;
@@ -29,8 +31,6 @@ static admin_admin_message_model_t *admin_admin_message_model_create_internal(
     admin_admin_message_model_local_var->retail_liquidity_indicator = retail_liquidity_indicator;
     admin_admin_message_model_local_var->system_event = system_event;
     admin_admin_message_model_local_var->security_directory = security_directory;
-
-    admin_admin_message_model_local_var->_library_owned = 1;
     return admin_admin_message_model_local_var;
 }
 
@@ -45,7 +45,7 @@ __attribute__((deprecated)) admin_admin_message_model_t *admin_admin_message_mod
     admin_system_event_model_t *system_event,
     admin_security_directory_model_t *security_directory
     ) {
-    return admin_admin_message_model_create_internal (
+    admin_admin_message_model_t *result = admin_admin_message_model_create_internal (
         trading_status,
         official_price,
         security_event,
@@ -56,6 +56,9 @@ __attribute__((deprecated)) admin_admin_message_model_t *admin_admin_message_mod
         system_event,
         security_directory
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void admin_admin_message_model_free(admin_admin_message_model_t *admin_admin_message_model) {
@@ -346,6 +349,7 @@ admin_admin_message_model_t *admin_admin_message_model_parseFromJSON(cJSON *admi
     }
 
 
+
     admin_admin_message_model_local_var = admin_admin_message_model_create_internal (
         trading_status ? trading_status_local_nonprim : NULL,
         official_price ? official_price_local_nonprim : NULL,
@@ -357,6 +361,10 @@ admin_admin_message_model_t *admin_admin_message_model_parseFromJSON(cJSON *admi
         system_event ? system_event_local_nonprim : NULL,
         security_directory ? security_directory_local_nonprim : NULL
         );
+
+    if (!admin_admin_message_model_local_var) {
+        goto end;
+    }
 
     return admin_admin_message_model_local_var;
 end:

@@ -1,4 +1,4 @@
-# # Level3OrderBookModel
+# Level3OrderBookModel
 
 ## Properties
 

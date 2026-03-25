@@ -7,31 +7,40 @@
 
 static level3_clear_book_model_t *level3_clear_book_model_create_internal(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp
     ) {
     level3_clear_book_model_t *level3_clear_book_model_local_var = malloc(sizeof(level3_clear_book_model_t));
     if (!level3_clear_book_model_local_var) {
         return NULL;
     }
+    memset(level3_clear_book_model_local_var, 0, sizeof(level3_clear_book_model_t));
+    level3_clear_book_model_local_var->_library_owned = 1;
     level3_clear_book_model_local_var->symbol = symbol;
     level3_clear_book_model_local_var->timestamp_nanos = timestamp_nanos;
     level3_clear_book_model_local_var->timestamp = timestamp;
-
-    level3_clear_book_model_local_var->_library_owned = 1;
     return level3_clear_book_model_local_var;
 }
 
 __attribute__((deprecated)) level3_clear_book_model_t *level3_clear_book_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp
     ) {
-    return level3_clear_book_model_create_internal (
+    long *timestamp_nanos_copy = NULL;
+    if (timestamp_nanos) {
+        timestamp_nanos_copy = malloc(sizeof(long));
+        if (timestamp_nanos_copy) *timestamp_nanos_copy = *timestamp_nanos;
+    }
+    level3_clear_book_model_t *result = level3_clear_book_model_create_internal (
         symbol,
-        timestamp_nanos,
+        timestamp_nanos_copy,
         timestamp
         );
+    if (!result) {
+        free(timestamp_nanos_copy);
+    }
+    return result;
 }
 
 void level3_clear_book_model_free(level3_clear_book_model_t *level3_clear_book_model) {
@@ -46,6 +55,10 @@ void level3_clear_book_model_free(level3_clear_book_model_t *level3_clear_book_m
     if (level3_clear_book_model->symbol) {
         free(level3_clear_book_model->symbol);
         level3_clear_book_model->symbol = NULL;
+    }
+    if (level3_clear_book_model->timestamp_nanos) {
+        free(level3_clear_book_model->timestamp_nanos);
+        level3_clear_book_model->timestamp_nanos = NULL;
     }
     if (level3_clear_book_model->timestamp) {
         free(level3_clear_book_model->timestamp);
@@ -67,7 +80,7 @@ cJSON *level3_clear_book_model_convertToJSON(level3_clear_book_model_t *level3_c
 
     // level3_clear_book_model->timestamp_nanos
     if(level3_clear_book_model->timestamp_nanos) {
-    if(cJSON_AddNumberToObject(item, "timestamp_nanos", level3_clear_book_model->timestamp_nanos) == NULL) {
+    if(cJSON_AddNumberToObject(item, "timestamp_nanos", *level3_clear_book_model->timestamp_nanos) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -92,6 +105,13 @@ level3_clear_book_model_t *level3_clear_book_model_parseFromJSON(cJSON *level3_c
 
     level3_clear_book_model_t *level3_clear_book_model_local_var = NULL;
 
+    char *symbol_local_str = NULL;
+
+    // define the local variable for level3_clear_book_model->timestamp_nanos
+    long *timestamp_nanos_local_var = NULL;
+
+    char *timestamp_local_str = NULL;
+
     // level3_clear_book_model->symbol
     cJSON *symbol = cJSON_GetObjectItemCaseSensitive(level3_clear_book_modelJSON, "symbol");
     if (cJSON_IsNull(symbol)) {
@@ -114,6 +134,12 @@ level3_clear_book_model_t *level3_clear_book_model_parseFromJSON(cJSON *level3_c
     {
     goto end; //Numeric
     }
+    timestamp_nanos_local_var = malloc(sizeof(long));
+    if(!timestamp_nanos_local_var)
+    {
+        goto end;
+    }
+    *timestamp_nanos_local_var = timestamp_nanos->valuedouble;
     }
 
     // level3_clear_book_model->timestamp
@@ -129,14 +155,33 @@ level3_clear_book_model_t *level3_clear_book_model_parseFromJSON(cJSON *level3_c
     }
 
 
+    if (symbol && !cJSON_IsNull(symbol)) symbol_local_str = strdup(symbol->valuestring);
+    if (timestamp && !cJSON_IsNull(timestamp)) timestamp_local_str = strdup(timestamp->valuestring);
+
     level3_clear_book_model_local_var = level3_clear_book_model_create_internal (
-        symbol && !cJSON_IsNull(symbol) ? strdup(symbol->valuestring) : NULL,
-        timestamp_nanos ? timestamp_nanos->valuedouble : 0,
-        timestamp && !cJSON_IsNull(timestamp) ? strdup(timestamp->valuestring) : NULL
+        symbol_local_str,
+        timestamp_nanos_local_var,
+        timestamp_local_str
         );
+
+    if (!level3_clear_book_model_local_var) {
+        goto end;
+    }
 
     return level3_clear_book_model_local_var;
 end:
+    if (symbol_local_str) {
+        free(symbol_local_str);
+        symbol_local_str = NULL;
+    }
+    if (timestamp_nanos_local_var) {
+        free(timestamp_nanos_local_var);
+        timestamp_nanos_local_var = NULL;
+    }
+    if (timestamp_local_str) {
+        free(timestamp_local_str);
+        timestamp_local_str = NULL;
+    }
     return NULL;
 
 }

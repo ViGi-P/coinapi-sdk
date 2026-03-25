@@ -1,4 +1,4 @@
-# # OHLCVExchangeTimeseriesItem
+# OHLCVExchangeTimeseriesItem
 
 ## Properties
 

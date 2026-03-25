@@ -23,6 +23,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, Stri
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdminAuctionInformationModel(BaseModel):
     """
@@ -59,7 +60,8 @@ class AdminAuctionInformationModel(BaseModel):
     __properties: ClassVar[List[str]] = ["symbol", "timestamp_nanos", "timestamp", "auction_type", "auction_type_code", "auction_type_text", "is_auction_type_opening", "is_auction_type_closing", "is_auction_type_ipo", "is_auction_type_halt", "is_auction_type_volatility", "paired_shares", "reference_price", "indicative_clearing_price", "imbalance_shares", "imbalance_side", "imbalance_side_code", "imbalance_side_text", "is_imbalance_side_buy", "is_imbalance_side_sell", "is_imbalance_side_none", "extension_number", "scheduled_auction_time_seconds", "scheduled_auction_time", "auction_book_clearing_price", "collar_reference_price", "lower_auction_collar", "upper_auction_collar"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -71,8 +73,7 @@ class AdminAuctionInformationModel(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

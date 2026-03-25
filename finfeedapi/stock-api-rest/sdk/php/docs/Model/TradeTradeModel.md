@@ -1,4 +1,4 @@
-# # TradeTradeModel
+# TradeTradeModel
 
 ## Properties
 

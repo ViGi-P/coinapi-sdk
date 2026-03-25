@@ -7,26 +7,28 @@
 
 static admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_model_create_internal(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int short_sale_price_test_status,
+    int *short_sale_price_test_status,
     char *short_sale_price_test_status_code,
     char *short_sale_price_test_status_text,
-    int is_short_sale_price_test_not_in_effect,
-    int is_short_sale_price_test_in_effect,
-    int detail,
+    int *is_short_sale_price_test_not_in_effect,
+    int *is_short_sale_price_test_in_effect,
+    int *detail,
     char *detail_code,
     char *detail_text,
-    int is_detail_no_price_test,
-    int is_detail_activated,
-    int is_detail_continued,
-    int is_detail_deactivated,
-    int is_detail_not_available
+    int *is_detail_no_price_test,
+    int *is_detail_activated,
+    int *is_detail_continued,
+    int *is_detail_deactivated,
+    int *is_detail_not_available
     ) {
     admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_model_local_var = malloc(sizeof(admin_short_sale_price_test_status_model_t));
     if (!admin_short_sale_price_test_status_model_local_var) {
         return NULL;
     }
+    memset(admin_short_sale_price_test_status_model_local_var, 0, sizeof(admin_short_sale_price_test_status_model_t));
+    admin_short_sale_price_test_status_model_local_var->_library_owned = 1;
     admin_short_sale_price_test_status_model_local_var->symbol = symbol;
     admin_short_sale_price_test_status_model_local_var->timestamp_nanos = timestamp_nanos;
     admin_short_sale_price_test_status_model_local_var->timestamp = timestamp;
@@ -43,47 +45,108 @@ static admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_s
     admin_short_sale_price_test_status_model_local_var->is_detail_continued = is_detail_continued;
     admin_short_sale_price_test_status_model_local_var->is_detail_deactivated = is_detail_deactivated;
     admin_short_sale_price_test_status_model_local_var->is_detail_not_available = is_detail_not_available;
-
-    admin_short_sale_price_test_status_model_local_var->_library_owned = 1;
     return admin_short_sale_price_test_status_model_local_var;
 }
 
 __attribute__((deprecated)) admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int short_sale_price_test_status,
+    int *short_sale_price_test_status,
     char *short_sale_price_test_status_code,
     char *short_sale_price_test_status_text,
-    int is_short_sale_price_test_not_in_effect,
-    int is_short_sale_price_test_in_effect,
-    int detail,
+    int *is_short_sale_price_test_not_in_effect,
+    int *is_short_sale_price_test_in_effect,
+    int *detail,
     char *detail_code,
     char *detail_text,
-    int is_detail_no_price_test,
-    int is_detail_activated,
-    int is_detail_continued,
-    int is_detail_deactivated,
-    int is_detail_not_available
+    int *is_detail_no_price_test,
+    int *is_detail_activated,
+    int *is_detail_continued,
+    int *is_detail_deactivated,
+    int *is_detail_not_available
     ) {
-    return admin_short_sale_price_test_status_model_create_internal (
+    long *timestamp_nanos_copy = NULL;
+    if (timestamp_nanos) {
+        timestamp_nanos_copy = malloc(sizeof(long));
+        if (timestamp_nanos_copy) *timestamp_nanos_copy = *timestamp_nanos;
+    }
+    int *short_sale_price_test_status_copy = NULL;
+    if (short_sale_price_test_status) {
+        short_sale_price_test_status_copy = malloc(sizeof(int));
+        if (short_sale_price_test_status_copy) *short_sale_price_test_status_copy = *short_sale_price_test_status;
+    }
+    int *is_short_sale_price_test_not_in_effect_copy = NULL;
+    if (is_short_sale_price_test_not_in_effect) {
+        is_short_sale_price_test_not_in_effect_copy = malloc(sizeof(int));
+        if (is_short_sale_price_test_not_in_effect_copy) *is_short_sale_price_test_not_in_effect_copy = *is_short_sale_price_test_not_in_effect;
+    }
+    int *is_short_sale_price_test_in_effect_copy = NULL;
+    if (is_short_sale_price_test_in_effect) {
+        is_short_sale_price_test_in_effect_copy = malloc(sizeof(int));
+        if (is_short_sale_price_test_in_effect_copy) *is_short_sale_price_test_in_effect_copy = *is_short_sale_price_test_in_effect;
+    }
+    int *detail_copy = NULL;
+    if (detail) {
+        detail_copy = malloc(sizeof(int));
+        if (detail_copy) *detail_copy = *detail;
+    }
+    int *is_detail_no_price_test_copy = NULL;
+    if (is_detail_no_price_test) {
+        is_detail_no_price_test_copy = malloc(sizeof(int));
+        if (is_detail_no_price_test_copy) *is_detail_no_price_test_copy = *is_detail_no_price_test;
+    }
+    int *is_detail_activated_copy = NULL;
+    if (is_detail_activated) {
+        is_detail_activated_copy = malloc(sizeof(int));
+        if (is_detail_activated_copy) *is_detail_activated_copy = *is_detail_activated;
+    }
+    int *is_detail_continued_copy = NULL;
+    if (is_detail_continued) {
+        is_detail_continued_copy = malloc(sizeof(int));
+        if (is_detail_continued_copy) *is_detail_continued_copy = *is_detail_continued;
+    }
+    int *is_detail_deactivated_copy = NULL;
+    if (is_detail_deactivated) {
+        is_detail_deactivated_copy = malloc(sizeof(int));
+        if (is_detail_deactivated_copy) *is_detail_deactivated_copy = *is_detail_deactivated;
+    }
+    int *is_detail_not_available_copy = NULL;
+    if (is_detail_not_available) {
+        is_detail_not_available_copy = malloc(sizeof(int));
+        if (is_detail_not_available_copy) *is_detail_not_available_copy = *is_detail_not_available;
+    }
+    admin_short_sale_price_test_status_model_t *result = admin_short_sale_price_test_status_model_create_internal (
         symbol,
-        timestamp_nanos,
+        timestamp_nanos_copy,
         timestamp,
-        short_sale_price_test_status,
+        short_sale_price_test_status_copy,
         short_sale_price_test_status_code,
         short_sale_price_test_status_text,
-        is_short_sale_price_test_not_in_effect,
-        is_short_sale_price_test_in_effect,
-        detail,
+        is_short_sale_price_test_not_in_effect_copy,
+        is_short_sale_price_test_in_effect_copy,
+        detail_copy,
         detail_code,
         detail_text,
-        is_detail_no_price_test,
-        is_detail_activated,
-        is_detail_continued,
-        is_detail_deactivated,
-        is_detail_not_available
+        is_detail_no_price_test_copy,
+        is_detail_activated_copy,
+        is_detail_continued_copy,
+        is_detail_deactivated_copy,
+        is_detail_not_available_copy
         );
+    if (!result) {
+        free(timestamp_nanos_copy);
+        free(short_sale_price_test_status_copy);
+        free(is_short_sale_price_test_not_in_effect_copy);
+        free(is_short_sale_price_test_in_effect_copy);
+        free(detail_copy);
+        free(is_detail_no_price_test_copy);
+        free(is_detail_activated_copy);
+        free(is_detail_continued_copy);
+        free(is_detail_deactivated_copy);
+        free(is_detail_not_available_copy);
+    }
+    return result;
 }
 
 void admin_short_sale_price_test_status_model_free(admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_model) {
@@ -99,9 +162,17 @@ void admin_short_sale_price_test_status_model_free(admin_short_sale_price_test_s
         free(admin_short_sale_price_test_status_model->symbol);
         admin_short_sale_price_test_status_model->symbol = NULL;
     }
+    if (admin_short_sale_price_test_status_model->timestamp_nanos) {
+        free(admin_short_sale_price_test_status_model->timestamp_nanos);
+        admin_short_sale_price_test_status_model->timestamp_nanos = NULL;
+    }
     if (admin_short_sale_price_test_status_model->timestamp) {
         free(admin_short_sale_price_test_status_model->timestamp);
         admin_short_sale_price_test_status_model->timestamp = NULL;
+    }
+    if (admin_short_sale_price_test_status_model->short_sale_price_test_status) {
+        free(admin_short_sale_price_test_status_model->short_sale_price_test_status);
+        admin_short_sale_price_test_status_model->short_sale_price_test_status = NULL;
     }
     if (admin_short_sale_price_test_status_model->short_sale_price_test_status_code) {
         free(admin_short_sale_price_test_status_model->short_sale_price_test_status_code);
@@ -111,6 +182,18 @@ void admin_short_sale_price_test_status_model_free(admin_short_sale_price_test_s
         free(admin_short_sale_price_test_status_model->short_sale_price_test_status_text);
         admin_short_sale_price_test_status_model->short_sale_price_test_status_text = NULL;
     }
+    if (admin_short_sale_price_test_status_model->is_short_sale_price_test_not_in_effect) {
+        free(admin_short_sale_price_test_status_model->is_short_sale_price_test_not_in_effect);
+        admin_short_sale_price_test_status_model->is_short_sale_price_test_not_in_effect = NULL;
+    }
+    if (admin_short_sale_price_test_status_model->is_short_sale_price_test_in_effect) {
+        free(admin_short_sale_price_test_status_model->is_short_sale_price_test_in_effect);
+        admin_short_sale_price_test_status_model->is_short_sale_price_test_in_effect = NULL;
+    }
+    if (admin_short_sale_price_test_status_model->detail) {
+        free(admin_short_sale_price_test_status_model->detail);
+        admin_short_sale_price_test_status_model->detail = NULL;
+    }
     if (admin_short_sale_price_test_status_model->detail_code) {
         free(admin_short_sale_price_test_status_model->detail_code);
         admin_short_sale_price_test_status_model->detail_code = NULL;
@@ -118,6 +201,26 @@ void admin_short_sale_price_test_status_model_free(admin_short_sale_price_test_s
     if (admin_short_sale_price_test_status_model->detail_text) {
         free(admin_short_sale_price_test_status_model->detail_text);
         admin_short_sale_price_test_status_model->detail_text = NULL;
+    }
+    if (admin_short_sale_price_test_status_model->is_detail_no_price_test) {
+        free(admin_short_sale_price_test_status_model->is_detail_no_price_test);
+        admin_short_sale_price_test_status_model->is_detail_no_price_test = NULL;
+    }
+    if (admin_short_sale_price_test_status_model->is_detail_activated) {
+        free(admin_short_sale_price_test_status_model->is_detail_activated);
+        admin_short_sale_price_test_status_model->is_detail_activated = NULL;
+    }
+    if (admin_short_sale_price_test_status_model->is_detail_continued) {
+        free(admin_short_sale_price_test_status_model->is_detail_continued);
+        admin_short_sale_price_test_status_model->is_detail_continued = NULL;
+    }
+    if (admin_short_sale_price_test_status_model->is_detail_deactivated) {
+        free(admin_short_sale_price_test_status_model->is_detail_deactivated);
+        admin_short_sale_price_test_status_model->is_detail_deactivated = NULL;
+    }
+    if (admin_short_sale_price_test_status_model->is_detail_not_available) {
+        free(admin_short_sale_price_test_status_model->is_detail_not_available);
+        admin_short_sale_price_test_status_model->is_detail_not_available = NULL;
     }
     free(admin_short_sale_price_test_status_model);
 }
@@ -135,7 +238,7 @@ cJSON *admin_short_sale_price_test_status_model_convertToJSON(admin_short_sale_p
 
     // admin_short_sale_price_test_status_model->timestamp_nanos
     if(admin_short_sale_price_test_status_model->timestamp_nanos) {
-    if(cJSON_AddNumberToObject(item, "timestamp_nanos", admin_short_sale_price_test_status_model->timestamp_nanos) == NULL) {
+    if(cJSON_AddNumberToObject(item, "timestamp_nanos", *admin_short_sale_price_test_status_model->timestamp_nanos) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -151,7 +254,7 @@ cJSON *admin_short_sale_price_test_status_model_convertToJSON(admin_short_sale_p
 
     // admin_short_sale_price_test_status_model->short_sale_price_test_status
     if(admin_short_sale_price_test_status_model->short_sale_price_test_status) {
-    if(cJSON_AddNumberToObject(item, "short_sale_price_test_status", admin_short_sale_price_test_status_model->short_sale_price_test_status) == NULL) {
+    if(cJSON_AddNumberToObject(item, "short_sale_price_test_status", *admin_short_sale_price_test_status_model->short_sale_price_test_status) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -175,7 +278,7 @@ cJSON *admin_short_sale_price_test_status_model_convertToJSON(admin_short_sale_p
 
     // admin_short_sale_price_test_status_model->is_short_sale_price_test_not_in_effect
     if(admin_short_sale_price_test_status_model->is_short_sale_price_test_not_in_effect) {
-    if(cJSON_AddBoolToObject(item, "is_short_sale_price_test_not_in_effect", admin_short_sale_price_test_status_model->is_short_sale_price_test_not_in_effect) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_short_sale_price_test_not_in_effect", *admin_short_sale_price_test_status_model->is_short_sale_price_test_not_in_effect) == NULL) {
     goto fail; //Bool
     }
     }
@@ -183,7 +286,7 @@ cJSON *admin_short_sale_price_test_status_model_convertToJSON(admin_short_sale_p
 
     // admin_short_sale_price_test_status_model->is_short_sale_price_test_in_effect
     if(admin_short_sale_price_test_status_model->is_short_sale_price_test_in_effect) {
-    if(cJSON_AddBoolToObject(item, "is_short_sale_price_test_in_effect", admin_short_sale_price_test_status_model->is_short_sale_price_test_in_effect) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_short_sale_price_test_in_effect", *admin_short_sale_price_test_status_model->is_short_sale_price_test_in_effect) == NULL) {
     goto fail; //Bool
     }
     }
@@ -191,7 +294,7 @@ cJSON *admin_short_sale_price_test_status_model_convertToJSON(admin_short_sale_p
 
     // admin_short_sale_price_test_status_model->detail
     if(admin_short_sale_price_test_status_model->detail) {
-    if(cJSON_AddNumberToObject(item, "detail", admin_short_sale_price_test_status_model->detail) == NULL) {
+    if(cJSON_AddNumberToObject(item, "detail", *admin_short_sale_price_test_status_model->detail) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -215,7 +318,7 @@ cJSON *admin_short_sale_price_test_status_model_convertToJSON(admin_short_sale_p
 
     // admin_short_sale_price_test_status_model->is_detail_no_price_test
     if(admin_short_sale_price_test_status_model->is_detail_no_price_test) {
-    if(cJSON_AddBoolToObject(item, "is_detail_no_price_test", admin_short_sale_price_test_status_model->is_detail_no_price_test) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_detail_no_price_test", *admin_short_sale_price_test_status_model->is_detail_no_price_test) == NULL) {
     goto fail; //Bool
     }
     }
@@ -223,7 +326,7 @@ cJSON *admin_short_sale_price_test_status_model_convertToJSON(admin_short_sale_p
 
     // admin_short_sale_price_test_status_model->is_detail_activated
     if(admin_short_sale_price_test_status_model->is_detail_activated) {
-    if(cJSON_AddBoolToObject(item, "is_detail_activated", admin_short_sale_price_test_status_model->is_detail_activated) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_detail_activated", *admin_short_sale_price_test_status_model->is_detail_activated) == NULL) {
     goto fail; //Bool
     }
     }
@@ -231,7 +334,7 @@ cJSON *admin_short_sale_price_test_status_model_convertToJSON(admin_short_sale_p
 
     // admin_short_sale_price_test_status_model->is_detail_continued
     if(admin_short_sale_price_test_status_model->is_detail_continued) {
-    if(cJSON_AddBoolToObject(item, "is_detail_continued", admin_short_sale_price_test_status_model->is_detail_continued) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_detail_continued", *admin_short_sale_price_test_status_model->is_detail_continued) == NULL) {
     goto fail; //Bool
     }
     }
@@ -239,7 +342,7 @@ cJSON *admin_short_sale_price_test_status_model_convertToJSON(admin_short_sale_p
 
     // admin_short_sale_price_test_status_model->is_detail_deactivated
     if(admin_short_sale_price_test_status_model->is_detail_deactivated) {
-    if(cJSON_AddBoolToObject(item, "is_detail_deactivated", admin_short_sale_price_test_status_model->is_detail_deactivated) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_detail_deactivated", *admin_short_sale_price_test_status_model->is_detail_deactivated) == NULL) {
     goto fail; //Bool
     }
     }
@@ -247,7 +350,7 @@ cJSON *admin_short_sale_price_test_status_model_convertToJSON(admin_short_sale_p
 
     // admin_short_sale_price_test_status_model->is_detail_not_available
     if(admin_short_sale_price_test_status_model->is_detail_not_available) {
-    if(cJSON_AddBoolToObject(item, "is_detail_not_available", admin_short_sale_price_test_status_model->is_detail_not_available) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_detail_not_available", *admin_short_sale_price_test_status_model->is_detail_not_available) == NULL) {
     goto fail; //Bool
     }
     }
@@ -263,6 +366,48 @@ fail:
 admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_model_parseFromJSON(cJSON *admin_short_sale_price_test_status_modelJSON){
 
     admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_model_local_var = NULL;
+
+    char *symbol_local_str = NULL;
+
+    // define the local variable for admin_short_sale_price_test_status_model->timestamp_nanos
+    long *timestamp_nanos_local_var = NULL;
+
+    char *timestamp_local_str = NULL;
+
+    // define the local variable for admin_short_sale_price_test_status_model->short_sale_price_test_status
+    int *short_sale_price_test_status_local_var = NULL;
+
+    char *short_sale_price_test_status_code_local_str = NULL;
+
+    char *short_sale_price_test_status_text_local_str = NULL;
+
+    // define the local variable for admin_short_sale_price_test_status_model->is_short_sale_price_test_not_in_effect
+    int *is_short_sale_price_test_not_in_effect_local_var = NULL;
+
+    // define the local variable for admin_short_sale_price_test_status_model->is_short_sale_price_test_in_effect
+    int *is_short_sale_price_test_in_effect_local_var = NULL;
+
+    // define the local variable for admin_short_sale_price_test_status_model->detail
+    int *detail_local_var = NULL;
+
+    char *detail_code_local_str = NULL;
+
+    char *detail_text_local_str = NULL;
+
+    // define the local variable for admin_short_sale_price_test_status_model->is_detail_no_price_test
+    int *is_detail_no_price_test_local_var = NULL;
+
+    // define the local variable for admin_short_sale_price_test_status_model->is_detail_activated
+    int *is_detail_activated_local_var = NULL;
+
+    // define the local variable for admin_short_sale_price_test_status_model->is_detail_continued
+    int *is_detail_continued_local_var = NULL;
+
+    // define the local variable for admin_short_sale_price_test_status_model->is_detail_deactivated
+    int *is_detail_deactivated_local_var = NULL;
+
+    // define the local variable for admin_short_sale_price_test_status_model->is_detail_not_available
+    int *is_detail_not_available_local_var = NULL;
 
     // admin_short_sale_price_test_status_model->symbol
     cJSON *symbol = cJSON_GetObjectItemCaseSensitive(admin_short_sale_price_test_status_modelJSON, "symbol");
@@ -286,6 +431,12 @@ admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_m
     {
     goto end; //Numeric
     }
+    timestamp_nanos_local_var = malloc(sizeof(long));
+    if(!timestamp_nanos_local_var)
+    {
+        goto end;
+    }
+    *timestamp_nanos_local_var = timestamp_nanos->valuedouble;
     }
 
     // admin_short_sale_price_test_status_model->timestamp
@@ -310,6 +461,12 @@ admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_m
     {
     goto end; //Numeric
     }
+    short_sale_price_test_status_local_var = malloc(sizeof(int));
+    if(!short_sale_price_test_status_local_var)
+    {
+        goto end;
+    }
+    *short_sale_price_test_status_local_var = short_sale_price_test_status->valuedouble;
     }
 
     // admin_short_sale_price_test_status_model->short_sale_price_test_status_code
@@ -346,6 +503,12 @@ admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_m
     {
     goto end; //Bool
     }
+    is_short_sale_price_test_not_in_effect_local_var = malloc(sizeof(int));
+    if(!is_short_sale_price_test_not_in_effect_local_var)
+    {
+        goto end;
+    }
+    *is_short_sale_price_test_not_in_effect_local_var = is_short_sale_price_test_not_in_effect->valueint;
     }
 
     // admin_short_sale_price_test_status_model->is_short_sale_price_test_in_effect
@@ -358,6 +521,12 @@ admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_m
     {
     goto end; //Bool
     }
+    is_short_sale_price_test_in_effect_local_var = malloc(sizeof(int));
+    if(!is_short_sale_price_test_in_effect_local_var)
+    {
+        goto end;
+    }
+    *is_short_sale_price_test_in_effect_local_var = is_short_sale_price_test_in_effect->valueint;
     }
 
     // admin_short_sale_price_test_status_model->detail
@@ -370,6 +539,12 @@ admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_m
     {
     goto end; //Numeric
     }
+    detail_local_var = malloc(sizeof(int));
+    if(!detail_local_var)
+    {
+        goto end;
+    }
+    *detail_local_var = detail->valuedouble;
     }
 
     // admin_short_sale_price_test_status_model->detail_code
@@ -406,6 +581,12 @@ admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_m
     {
     goto end; //Bool
     }
+    is_detail_no_price_test_local_var = malloc(sizeof(int));
+    if(!is_detail_no_price_test_local_var)
+    {
+        goto end;
+    }
+    *is_detail_no_price_test_local_var = is_detail_no_price_test->valueint;
     }
 
     // admin_short_sale_price_test_status_model->is_detail_activated
@@ -418,6 +599,12 @@ admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_m
     {
     goto end; //Bool
     }
+    is_detail_activated_local_var = malloc(sizeof(int));
+    if(!is_detail_activated_local_var)
+    {
+        goto end;
+    }
+    *is_detail_activated_local_var = is_detail_activated->valueint;
     }
 
     // admin_short_sale_price_test_status_model->is_detail_continued
@@ -430,6 +617,12 @@ admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_m
     {
     goto end; //Bool
     }
+    is_detail_continued_local_var = malloc(sizeof(int));
+    if(!is_detail_continued_local_var)
+    {
+        goto end;
+    }
+    *is_detail_continued_local_var = is_detail_continued->valueint;
     }
 
     // admin_short_sale_price_test_status_model->is_detail_deactivated
@@ -442,6 +635,12 @@ admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_m
     {
     goto end; //Bool
     }
+    is_detail_deactivated_local_var = malloc(sizeof(int));
+    if(!is_detail_deactivated_local_var)
+    {
+        goto end;
+    }
+    *is_detail_deactivated_local_var = is_detail_deactivated->valueint;
     }
 
     // admin_short_sale_price_test_status_model->is_detail_not_available
@@ -454,30 +653,111 @@ admin_short_sale_price_test_status_model_t *admin_short_sale_price_test_status_m
     {
     goto end; //Bool
     }
+    is_detail_not_available_local_var = malloc(sizeof(int));
+    if(!is_detail_not_available_local_var)
+    {
+        goto end;
+    }
+    *is_detail_not_available_local_var = is_detail_not_available->valueint;
     }
 
 
+    if (symbol && !cJSON_IsNull(symbol)) symbol_local_str = strdup(symbol->valuestring);
+    if (timestamp && !cJSON_IsNull(timestamp)) timestamp_local_str = strdup(timestamp->valuestring);
+    if (short_sale_price_test_status_code && !cJSON_IsNull(short_sale_price_test_status_code)) short_sale_price_test_status_code_local_str = strdup(short_sale_price_test_status_code->valuestring);
+    if (short_sale_price_test_status_text && !cJSON_IsNull(short_sale_price_test_status_text)) short_sale_price_test_status_text_local_str = strdup(short_sale_price_test_status_text->valuestring);
+    if (detail_code && !cJSON_IsNull(detail_code)) detail_code_local_str = strdup(detail_code->valuestring);
+    if (detail_text && !cJSON_IsNull(detail_text)) detail_text_local_str = strdup(detail_text->valuestring);
+
     admin_short_sale_price_test_status_model_local_var = admin_short_sale_price_test_status_model_create_internal (
-        symbol && !cJSON_IsNull(symbol) ? strdup(symbol->valuestring) : NULL,
-        timestamp_nanos ? timestamp_nanos->valuedouble : 0,
-        timestamp && !cJSON_IsNull(timestamp) ? strdup(timestamp->valuestring) : NULL,
-        short_sale_price_test_status ? short_sale_price_test_status->valuedouble : 0,
-        short_sale_price_test_status_code && !cJSON_IsNull(short_sale_price_test_status_code) ? strdup(short_sale_price_test_status_code->valuestring) : NULL,
-        short_sale_price_test_status_text && !cJSON_IsNull(short_sale_price_test_status_text) ? strdup(short_sale_price_test_status_text->valuestring) : NULL,
-        is_short_sale_price_test_not_in_effect ? is_short_sale_price_test_not_in_effect->valueint : 0,
-        is_short_sale_price_test_in_effect ? is_short_sale_price_test_in_effect->valueint : 0,
-        detail ? detail->valuedouble : 0,
-        detail_code && !cJSON_IsNull(detail_code) ? strdup(detail_code->valuestring) : NULL,
-        detail_text && !cJSON_IsNull(detail_text) ? strdup(detail_text->valuestring) : NULL,
-        is_detail_no_price_test ? is_detail_no_price_test->valueint : 0,
-        is_detail_activated ? is_detail_activated->valueint : 0,
-        is_detail_continued ? is_detail_continued->valueint : 0,
-        is_detail_deactivated ? is_detail_deactivated->valueint : 0,
-        is_detail_not_available ? is_detail_not_available->valueint : 0
+        symbol_local_str,
+        timestamp_nanos_local_var,
+        timestamp_local_str,
+        short_sale_price_test_status_local_var,
+        short_sale_price_test_status_code_local_str,
+        short_sale_price_test_status_text_local_str,
+        is_short_sale_price_test_not_in_effect_local_var,
+        is_short_sale_price_test_in_effect_local_var,
+        detail_local_var,
+        detail_code_local_str,
+        detail_text_local_str,
+        is_detail_no_price_test_local_var,
+        is_detail_activated_local_var,
+        is_detail_continued_local_var,
+        is_detail_deactivated_local_var,
+        is_detail_not_available_local_var
         );
+
+    if (!admin_short_sale_price_test_status_model_local_var) {
+        goto end;
+    }
 
     return admin_short_sale_price_test_status_model_local_var;
 end:
+    if (symbol_local_str) {
+        free(symbol_local_str);
+        symbol_local_str = NULL;
+    }
+    if (timestamp_nanos_local_var) {
+        free(timestamp_nanos_local_var);
+        timestamp_nanos_local_var = NULL;
+    }
+    if (timestamp_local_str) {
+        free(timestamp_local_str);
+        timestamp_local_str = NULL;
+    }
+    if (short_sale_price_test_status_local_var) {
+        free(short_sale_price_test_status_local_var);
+        short_sale_price_test_status_local_var = NULL;
+    }
+    if (short_sale_price_test_status_code_local_str) {
+        free(short_sale_price_test_status_code_local_str);
+        short_sale_price_test_status_code_local_str = NULL;
+    }
+    if (short_sale_price_test_status_text_local_str) {
+        free(short_sale_price_test_status_text_local_str);
+        short_sale_price_test_status_text_local_str = NULL;
+    }
+    if (is_short_sale_price_test_not_in_effect_local_var) {
+        free(is_short_sale_price_test_not_in_effect_local_var);
+        is_short_sale_price_test_not_in_effect_local_var = NULL;
+    }
+    if (is_short_sale_price_test_in_effect_local_var) {
+        free(is_short_sale_price_test_in_effect_local_var);
+        is_short_sale_price_test_in_effect_local_var = NULL;
+    }
+    if (detail_local_var) {
+        free(detail_local_var);
+        detail_local_var = NULL;
+    }
+    if (detail_code_local_str) {
+        free(detail_code_local_str);
+        detail_code_local_str = NULL;
+    }
+    if (detail_text_local_str) {
+        free(detail_text_local_str);
+        detail_text_local_str = NULL;
+    }
+    if (is_detail_no_price_test_local_var) {
+        free(is_detail_no_price_test_local_var);
+        is_detail_no_price_test_local_var = NULL;
+    }
+    if (is_detail_activated_local_var) {
+        free(is_detail_activated_local_var);
+        is_detail_activated_local_var = NULL;
+    }
+    if (is_detail_continued_local_var) {
+        free(is_detail_continued_local_var);
+        is_detail_continued_local_var = NULL;
+    }
+    if (is_detail_deactivated_local_var) {
+        free(is_detail_deactivated_local_var);
+        is_detail_deactivated_local_var = NULL;
+    }
+    if (is_detail_not_available_local_var) {
+        free(is_detail_not_available_local_var);
+        is_detail_not_available_local_var = NULL;
+    }
     return NULL;
 
 }

@@ -20,24 +20,24 @@ typedef struct level2_price_level_update_model_t level2_price_level_update_model
 
 typedef struct level2_price_level_update_model_t {
     char *symbol; // string
-    long timestamp_nanos; //numeric
+    long *timestamp_nanos; //numeric
     char *timestamp; //date time
-    int is_side_buy; //boolean
-    int is_event_processing_complete; //boolean
-    int size; //numeric
-    double price; //numeric
+    int *is_side_buy; //boolean
+    int *is_event_processing_complete; //boolean
+    int *size; //numeric
+    double *price; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } level2_price_level_update_model_t;
 
 __attribute__((deprecated)) level2_price_level_update_model_t *level2_price_level_update_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int is_side_buy,
-    int is_event_processing_complete,
-    int size,
-    double price
+    int *is_side_buy,
+    int *is_event_processing_complete,
+    int *size,
+    double *price
 );
 
 void level2_price_level_update_model_free(level2_price_level_update_model_t *level2_price_level_update_model);

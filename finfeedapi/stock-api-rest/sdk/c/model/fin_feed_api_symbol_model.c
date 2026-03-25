@@ -30,6 +30,8 @@ static fin_feed_api_symbol_model_t *fin_feed_api_symbol_model_create_internal(
     if (!fin_feed_api_symbol_model_local_var) {
         return NULL;
     }
+    memset(fin_feed_api_symbol_model_local_var, 0, sizeof(fin_feed_api_symbol_model_t));
+    fin_feed_api_symbol_model_local_var->_library_owned = 1;
     fin_feed_api_symbol_model_local_var->symbol_id = symbol_id;
     fin_feed_api_symbol_model_local_var->exchange_id = exchange_id;
     fin_feed_api_symbol_model_local_var->security_category = security_category;
@@ -49,8 +51,6 @@ static fin_feed_api_symbol_model_t *fin_feed_api_symbol_model_create_internal(
     fin_feed_api_symbol_model_local_var->cfi_attribute2_desc = cfi_attribute2_desc;
     fin_feed_api_symbol_model_local_var->cfi_attribute3_desc = cfi_attribute3_desc;
     fin_feed_api_symbol_model_local_var->cfi_attribute4_desc = cfi_attribute4_desc;
-
-    fin_feed_api_symbol_model_local_var->_library_owned = 1;
     return fin_feed_api_symbol_model_local_var;
 }
 
@@ -75,7 +75,7 @@ __attribute__((deprecated)) fin_feed_api_symbol_model_t *fin_feed_api_symbol_mod
     char *cfi_attribute3_desc,
     char *cfi_attribute4_desc
     ) {
-    return fin_feed_api_symbol_model_create_internal (
+    fin_feed_api_symbol_model_t *result = fin_feed_api_symbol_model_create_internal (
         symbol_id,
         exchange_id,
         security_category,
@@ -96,6 +96,9 @@ __attribute__((deprecated)) fin_feed_api_symbol_model_t *fin_feed_api_symbol_mod
         cfi_attribute3_desc,
         cfi_attribute4_desc
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void fin_feed_api_symbol_model_free(fin_feed_api_symbol_model_t *fin_feed_api_symbol_model) {
@@ -352,6 +355,44 @@ fin_feed_api_symbol_model_t *fin_feed_api_symbol_model_parseFromJSON(cJSON *fin_
 
     fin_feed_api_symbol_model_t *fin_feed_api_symbol_model_local_var = NULL;
 
+    char *symbol_id_local_str = NULL;
+
+    char *exchange_id_local_str = NULL;
+
+    char *security_category_local_str = NULL;
+
+    char *name_local_str = NULL;
+
+    char *date_local_str = NULL;
+
+    char *asset_class_local_str = NULL;
+
+    char *cfi_code_local_str = NULL;
+
+    char *cfi_category_local_str = NULL;
+
+    char *cfi_group_local_str = NULL;
+
+    char *cfi_attribute1_local_str = NULL;
+
+    char *cfi_attribute2_local_str = NULL;
+
+    char *cfi_attribute3_local_str = NULL;
+
+    char *cfi_attribute4_local_str = NULL;
+
+    char *cfi_category_desc_local_str = NULL;
+
+    char *cfi_group_desc_local_str = NULL;
+
+    char *cfi_attribute1_desc_local_str = NULL;
+
+    char *cfi_attribute2_desc_local_str = NULL;
+
+    char *cfi_attribute3_desc_local_str = NULL;
+
+    char *cfi_attribute4_desc_local_str = NULL;
+
     // fin_feed_api_symbol_model->symbol_id
     cJSON *symbol_id = cJSON_GetObjectItemCaseSensitive(fin_feed_api_symbol_modelJSON, "symbol_id");
     if (cJSON_IsNull(symbol_id)) {
@@ -581,30 +622,130 @@ fin_feed_api_symbol_model_t *fin_feed_api_symbol_model_parseFromJSON(cJSON *fin_
     }
 
 
+    if (symbol_id && !cJSON_IsNull(symbol_id)) symbol_id_local_str = strdup(symbol_id->valuestring);
+    if (exchange_id && !cJSON_IsNull(exchange_id)) exchange_id_local_str = strdup(exchange_id->valuestring);
+    if (security_category && !cJSON_IsNull(security_category)) security_category_local_str = strdup(security_category->valuestring);
+    if (name && !cJSON_IsNull(name)) name_local_str = strdup(name->valuestring);
+    if (date && !cJSON_IsNull(date)) date_local_str = strdup(date->valuestring);
+    if (asset_class && !cJSON_IsNull(asset_class)) asset_class_local_str = strdup(asset_class->valuestring);
+    if (cfi_code && !cJSON_IsNull(cfi_code)) cfi_code_local_str = strdup(cfi_code->valuestring);
+    if (cfi_category && !cJSON_IsNull(cfi_category)) cfi_category_local_str = strdup(cfi_category->valuestring);
+    if (cfi_group && !cJSON_IsNull(cfi_group)) cfi_group_local_str = strdup(cfi_group->valuestring);
+    if (cfi_attribute1 && !cJSON_IsNull(cfi_attribute1)) cfi_attribute1_local_str = strdup(cfi_attribute1->valuestring);
+    if (cfi_attribute2 && !cJSON_IsNull(cfi_attribute2)) cfi_attribute2_local_str = strdup(cfi_attribute2->valuestring);
+    if (cfi_attribute3 && !cJSON_IsNull(cfi_attribute3)) cfi_attribute3_local_str = strdup(cfi_attribute3->valuestring);
+    if (cfi_attribute4 && !cJSON_IsNull(cfi_attribute4)) cfi_attribute4_local_str = strdup(cfi_attribute4->valuestring);
+    if (cfi_category_desc && !cJSON_IsNull(cfi_category_desc)) cfi_category_desc_local_str = strdup(cfi_category_desc->valuestring);
+    if (cfi_group_desc && !cJSON_IsNull(cfi_group_desc)) cfi_group_desc_local_str = strdup(cfi_group_desc->valuestring);
+    if (cfi_attribute1_desc && !cJSON_IsNull(cfi_attribute1_desc)) cfi_attribute1_desc_local_str = strdup(cfi_attribute1_desc->valuestring);
+    if (cfi_attribute2_desc && !cJSON_IsNull(cfi_attribute2_desc)) cfi_attribute2_desc_local_str = strdup(cfi_attribute2_desc->valuestring);
+    if (cfi_attribute3_desc && !cJSON_IsNull(cfi_attribute3_desc)) cfi_attribute3_desc_local_str = strdup(cfi_attribute3_desc->valuestring);
+    if (cfi_attribute4_desc && !cJSON_IsNull(cfi_attribute4_desc)) cfi_attribute4_desc_local_str = strdup(cfi_attribute4_desc->valuestring);
+
     fin_feed_api_symbol_model_local_var = fin_feed_api_symbol_model_create_internal (
-        symbol_id && !cJSON_IsNull(symbol_id) ? strdup(symbol_id->valuestring) : NULL,
-        exchange_id && !cJSON_IsNull(exchange_id) ? strdup(exchange_id->valuestring) : NULL,
-        security_category && !cJSON_IsNull(security_category) ? strdup(security_category->valuestring) : NULL,
-        name && !cJSON_IsNull(name) ? strdup(name->valuestring) : NULL,
-        date && !cJSON_IsNull(date) ? strdup(date->valuestring) : NULL,
-        asset_class && !cJSON_IsNull(asset_class) ? strdup(asset_class->valuestring) : NULL,
-        cfi_code && !cJSON_IsNull(cfi_code) ? strdup(cfi_code->valuestring) : NULL,
-        cfi_category && !cJSON_IsNull(cfi_category) ? strdup(cfi_category->valuestring) : NULL,
-        cfi_group && !cJSON_IsNull(cfi_group) ? strdup(cfi_group->valuestring) : NULL,
-        cfi_attribute1 && !cJSON_IsNull(cfi_attribute1) ? strdup(cfi_attribute1->valuestring) : NULL,
-        cfi_attribute2 && !cJSON_IsNull(cfi_attribute2) ? strdup(cfi_attribute2->valuestring) : NULL,
-        cfi_attribute3 && !cJSON_IsNull(cfi_attribute3) ? strdup(cfi_attribute3->valuestring) : NULL,
-        cfi_attribute4 && !cJSON_IsNull(cfi_attribute4) ? strdup(cfi_attribute4->valuestring) : NULL,
-        cfi_category_desc && !cJSON_IsNull(cfi_category_desc) ? strdup(cfi_category_desc->valuestring) : NULL,
-        cfi_group_desc && !cJSON_IsNull(cfi_group_desc) ? strdup(cfi_group_desc->valuestring) : NULL,
-        cfi_attribute1_desc && !cJSON_IsNull(cfi_attribute1_desc) ? strdup(cfi_attribute1_desc->valuestring) : NULL,
-        cfi_attribute2_desc && !cJSON_IsNull(cfi_attribute2_desc) ? strdup(cfi_attribute2_desc->valuestring) : NULL,
-        cfi_attribute3_desc && !cJSON_IsNull(cfi_attribute3_desc) ? strdup(cfi_attribute3_desc->valuestring) : NULL,
-        cfi_attribute4_desc && !cJSON_IsNull(cfi_attribute4_desc) ? strdup(cfi_attribute4_desc->valuestring) : NULL
+        symbol_id_local_str,
+        exchange_id_local_str,
+        security_category_local_str,
+        name_local_str,
+        date_local_str,
+        asset_class_local_str,
+        cfi_code_local_str,
+        cfi_category_local_str,
+        cfi_group_local_str,
+        cfi_attribute1_local_str,
+        cfi_attribute2_local_str,
+        cfi_attribute3_local_str,
+        cfi_attribute4_local_str,
+        cfi_category_desc_local_str,
+        cfi_group_desc_local_str,
+        cfi_attribute1_desc_local_str,
+        cfi_attribute2_desc_local_str,
+        cfi_attribute3_desc_local_str,
+        cfi_attribute4_desc_local_str
         );
+
+    if (!fin_feed_api_symbol_model_local_var) {
+        goto end;
+    }
 
     return fin_feed_api_symbol_model_local_var;
 end:
+    if (symbol_id_local_str) {
+        free(symbol_id_local_str);
+        symbol_id_local_str = NULL;
+    }
+    if (exchange_id_local_str) {
+        free(exchange_id_local_str);
+        exchange_id_local_str = NULL;
+    }
+    if (security_category_local_str) {
+        free(security_category_local_str);
+        security_category_local_str = NULL;
+    }
+    if (name_local_str) {
+        free(name_local_str);
+        name_local_str = NULL;
+    }
+    if (date_local_str) {
+        free(date_local_str);
+        date_local_str = NULL;
+    }
+    if (asset_class_local_str) {
+        free(asset_class_local_str);
+        asset_class_local_str = NULL;
+    }
+    if (cfi_code_local_str) {
+        free(cfi_code_local_str);
+        cfi_code_local_str = NULL;
+    }
+    if (cfi_category_local_str) {
+        free(cfi_category_local_str);
+        cfi_category_local_str = NULL;
+    }
+    if (cfi_group_local_str) {
+        free(cfi_group_local_str);
+        cfi_group_local_str = NULL;
+    }
+    if (cfi_attribute1_local_str) {
+        free(cfi_attribute1_local_str);
+        cfi_attribute1_local_str = NULL;
+    }
+    if (cfi_attribute2_local_str) {
+        free(cfi_attribute2_local_str);
+        cfi_attribute2_local_str = NULL;
+    }
+    if (cfi_attribute3_local_str) {
+        free(cfi_attribute3_local_str);
+        cfi_attribute3_local_str = NULL;
+    }
+    if (cfi_attribute4_local_str) {
+        free(cfi_attribute4_local_str);
+        cfi_attribute4_local_str = NULL;
+    }
+    if (cfi_category_desc_local_str) {
+        free(cfi_category_desc_local_str);
+        cfi_category_desc_local_str = NULL;
+    }
+    if (cfi_group_desc_local_str) {
+        free(cfi_group_desc_local_str);
+        cfi_group_desc_local_str = NULL;
+    }
+    if (cfi_attribute1_desc_local_str) {
+        free(cfi_attribute1_desc_local_str);
+        cfi_attribute1_desc_local_str = NULL;
+    }
+    if (cfi_attribute2_desc_local_str) {
+        free(cfi_attribute2_desc_local_str);
+        cfi_attribute2_desc_local_str = NULL;
+    }
+    if (cfi_attribute3_desc_local_str) {
+        free(cfi_attribute3_desc_local_str);
+        cfi_attribute3_desc_local_str = NULL;
+    }
+    if (cfi_attribute4_desc_local_str) {
+        free(cfi_attribute4_desc_local_str);
+        cfi_attribute4_desc_local_str = NULL;
+    }
     return NULL;
 
 }

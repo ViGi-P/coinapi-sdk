@@ -1,4 +1,4 @@
-# # AdminAdminMessageModel
+# AdminAdminMessageModel
 
 ## Properties
 

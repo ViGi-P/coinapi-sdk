@@ -1,4 +1,4 @@
-# # Level2PriceLevelUpdateModel
+# Level2PriceLevelUpdateModel
 
 ## Properties
 

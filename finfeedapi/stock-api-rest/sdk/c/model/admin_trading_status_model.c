@@ -7,28 +7,30 @@
 
 static admin_trading_status_model_t *admin_trading_status_model_create_internal(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int is_trading_live,
-    int is_trading_halted,
-    int is_trading_in_order_acceptance_period,
-    int is_trading_paused,
-    int is_reason_halt_news_pending,
-    int is_reason_ipo_not_yet_trading,
-    int is_reason_ipo_deferred,
-    int is_reason_halt_news_dissemination,
-    int is_reason_ipo_order_acceptance_period,
-    int is_reason_ipo_pre_launch_period,
-    int is_reason_market_wide_circuit_breaker_level1,
-    int is_reason_market_wide_circuit_breaker_level2,
-    int is_reason_market_wide_circuit_breaker_level3,
-    int is_reason_not_applicable,
-    int is_reason_not_available
+    int *is_trading_live,
+    int *is_trading_halted,
+    int *is_trading_in_order_acceptance_period,
+    int *is_trading_paused,
+    int *is_reason_halt_news_pending,
+    int *is_reason_ipo_not_yet_trading,
+    int *is_reason_ipo_deferred,
+    int *is_reason_halt_news_dissemination,
+    int *is_reason_ipo_order_acceptance_period,
+    int *is_reason_ipo_pre_launch_period,
+    int *is_reason_market_wide_circuit_breaker_level1,
+    int *is_reason_market_wide_circuit_breaker_level2,
+    int *is_reason_market_wide_circuit_breaker_level3,
+    int *is_reason_not_applicable,
+    int *is_reason_not_available
     ) {
     admin_trading_status_model_t *admin_trading_status_model_local_var = malloc(sizeof(admin_trading_status_model_t));
     if (!admin_trading_status_model_local_var) {
         return NULL;
     }
+    memset(admin_trading_status_model_local_var, 0, sizeof(admin_trading_status_model_t));
+    admin_trading_status_model_local_var->_library_owned = 1;
     admin_trading_status_model_local_var->symbol = symbol;
     admin_trading_status_model_local_var->timestamp_nanos = timestamp_nanos;
     admin_trading_status_model_local_var->timestamp = timestamp;
@@ -47,51 +49,148 @@ static admin_trading_status_model_t *admin_trading_status_model_create_internal(
     admin_trading_status_model_local_var->is_reason_market_wide_circuit_breaker_level3 = is_reason_market_wide_circuit_breaker_level3;
     admin_trading_status_model_local_var->is_reason_not_applicable = is_reason_not_applicable;
     admin_trading_status_model_local_var->is_reason_not_available = is_reason_not_available;
-
-    admin_trading_status_model_local_var->_library_owned = 1;
     return admin_trading_status_model_local_var;
 }
 
 __attribute__((deprecated)) admin_trading_status_model_t *admin_trading_status_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int is_trading_live,
-    int is_trading_halted,
-    int is_trading_in_order_acceptance_period,
-    int is_trading_paused,
-    int is_reason_halt_news_pending,
-    int is_reason_ipo_not_yet_trading,
-    int is_reason_ipo_deferred,
-    int is_reason_halt_news_dissemination,
-    int is_reason_ipo_order_acceptance_period,
-    int is_reason_ipo_pre_launch_period,
-    int is_reason_market_wide_circuit_breaker_level1,
-    int is_reason_market_wide_circuit_breaker_level2,
-    int is_reason_market_wide_circuit_breaker_level3,
-    int is_reason_not_applicable,
-    int is_reason_not_available
+    int *is_trading_live,
+    int *is_trading_halted,
+    int *is_trading_in_order_acceptance_period,
+    int *is_trading_paused,
+    int *is_reason_halt_news_pending,
+    int *is_reason_ipo_not_yet_trading,
+    int *is_reason_ipo_deferred,
+    int *is_reason_halt_news_dissemination,
+    int *is_reason_ipo_order_acceptance_period,
+    int *is_reason_ipo_pre_launch_period,
+    int *is_reason_market_wide_circuit_breaker_level1,
+    int *is_reason_market_wide_circuit_breaker_level2,
+    int *is_reason_market_wide_circuit_breaker_level3,
+    int *is_reason_not_applicable,
+    int *is_reason_not_available
     ) {
-    return admin_trading_status_model_create_internal (
+    long *timestamp_nanos_copy = NULL;
+    if (timestamp_nanos) {
+        timestamp_nanos_copy = malloc(sizeof(long));
+        if (timestamp_nanos_copy) *timestamp_nanos_copy = *timestamp_nanos;
+    }
+    int *is_trading_live_copy = NULL;
+    if (is_trading_live) {
+        is_trading_live_copy = malloc(sizeof(int));
+        if (is_trading_live_copy) *is_trading_live_copy = *is_trading_live;
+    }
+    int *is_trading_halted_copy = NULL;
+    if (is_trading_halted) {
+        is_trading_halted_copy = malloc(sizeof(int));
+        if (is_trading_halted_copy) *is_trading_halted_copy = *is_trading_halted;
+    }
+    int *is_trading_in_order_acceptance_period_copy = NULL;
+    if (is_trading_in_order_acceptance_period) {
+        is_trading_in_order_acceptance_period_copy = malloc(sizeof(int));
+        if (is_trading_in_order_acceptance_period_copy) *is_trading_in_order_acceptance_period_copy = *is_trading_in_order_acceptance_period;
+    }
+    int *is_trading_paused_copy = NULL;
+    if (is_trading_paused) {
+        is_trading_paused_copy = malloc(sizeof(int));
+        if (is_trading_paused_copy) *is_trading_paused_copy = *is_trading_paused;
+    }
+    int *is_reason_halt_news_pending_copy = NULL;
+    if (is_reason_halt_news_pending) {
+        is_reason_halt_news_pending_copy = malloc(sizeof(int));
+        if (is_reason_halt_news_pending_copy) *is_reason_halt_news_pending_copy = *is_reason_halt_news_pending;
+    }
+    int *is_reason_ipo_not_yet_trading_copy = NULL;
+    if (is_reason_ipo_not_yet_trading) {
+        is_reason_ipo_not_yet_trading_copy = malloc(sizeof(int));
+        if (is_reason_ipo_not_yet_trading_copy) *is_reason_ipo_not_yet_trading_copy = *is_reason_ipo_not_yet_trading;
+    }
+    int *is_reason_ipo_deferred_copy = NULL;
+    if (is_reason_ipo_deferred) {
+        is_reason_ipo_deferred_copy = malloc(sizeof(int));
+        if (is_reason_ipo_deferred_copy) *is_reason_ipo_deferred_copy = *is_reason_ipo_deferred;
+    }
+    int *is_reason_halt_news_dissemination_copy = NULL;
+    if (is_reason_halt_news_dissemination) {
+        is_reason_halt_news_dissemination_copy = malloc(sizeof(int));
+        if (is_reason_halt_news_dissemination_copy) *is_reason_halt_news_dissemination_copy = *is_reason_halt_news_dissemination;
+    }
+    int *is_reason_ipo_order_acceptance_period_copy = NULL;
+    if (is_reason_ipo_order_acceptance_period) {
+        is_reason_ipo_order_acceptance_period_copy = malloc(sizeof(int));
+        if (is_reason_ipo_order_acceptance_period_copy) *is_reason_ipo_order_acceptance_period_copy = *is_reason_ipo_order_acceptance_period;
+    }
+    int *is_reason_ipo_pre_launch_period_copy = NULL;
+    if (is_reason_ipo_pre_launch_period) {
+        is_reason_ipo_pre_launch_period_copy = malloc(sizeof(int));
+        if (is_reason_ipo_pre_launch_period_copy) *is_reason_ipo_pre_launch_period_copy = *is_reason_ipo_pre_launch_period;
+    }
+    int *is_reason_market_wide_circuit_breaker_level1_copy = NULL;
+    if (is_reason_market_wide_circuit_breaker_level1) {
+        is_reason_market_wide_circuit_breaker_level1_copy = malloc(sizeof(int));
+        if (is_reason_market_wide_circuit_breaker_level1_copy) *is_reason_market_wide_circuit_breaker_level1_copy = *is_reason_market_wide_circuit_breaker_level1;
+    }
+    int *is_reason_market_wide_circuit_breaker_level2_copy = NULL;
+    if (is_reason_market_wide_circuit_breaker_level2) {
+        is_reason_market_wide_circuit_breaker_level2_copy = malloc(sizeof(int));
+        if (is_reason_market_wide_circuit_breaker_level2_copy) *is_reason_market_wide_circuit_breaker_level2_copy = *is_reason_market_wide_circuit_breaker_level2;
+    }
+    int *is_reason_market_wide_circuit_breaker_level3_copy = NULL;
+    if (is_reason_market_wide_circuit_breaker_level3) {
+        is_reason_market_wide_circuit_breaker_level3_copy = malloc(sizeof(int));
+        if (is_reason_market_wide_circuit_breaker_level3_copy) *is_reason_market_wide_circuit_breaker_level3_copy = *is_reason_market_wide_circuit_breaker_level3;
+    }
+    int *is_reason_not_applicable_copy = NULL;
+    if (is_reason_not_applicable) {
+        is_reason_not_applicable_copy = malloc(sizeof(int));
+        if (is_reason_not_applicable_copy) *is_reason_not_applicable_copy = *is_reason_not_applicable;
+    }
+    int *is_reason_not_available_copy = NULL;
+    if (is_reason_not_available) {
+        is_reason_not_available_copy = malloc(sizeof(int));
+        if (is_reason_not_available_copy) *is_reason_not_available_copy = *is_reason_not_available;
+    }
+    admin_trading_status_model_t *result = admin_trading_status_model_create_internal (
         symbol,
-        timestamp_nanos,
+        timestamp_nanos_copy,
         timestamp,
-        is_trading_live,
-        is_trading_halted,
-        is_trading_in_order_acceptance_period,
-        is_trading_paused,
-        is_reason_halt_news_pending,
-        is_reason_ipo_not_yet_trading,
-        is_reason_ipo_deferred,
-        is_reason_halt_news_dissemination,
-        is_reason_ipo_order_acceptance_period,
-        is_reason_ipo_pre_launch_period,
-        is_reason_market_wide_circuit_breaker_level1,
-        is_reason_market_wide_circuit_breaker_level2,
-        is_reason_market_wide_circuit_breaker_level3,
-        is_reason_not_applicable,
-        is_reason_not_available
+        is_trading_live_copy,
+        is_trading_halted_copy,
+        is_trading_in_order_acceptance_period_copy,
+        is_trading_paused_copy,
+        is_reason_halt_news_pending_copy,
+        is_reason_ipo_not_yet_trading_copy,
+        is_reason_ipo_deferred_copy,
+        is_reason_halt_news_dissemination_copy,
+        is_reason_ipo_order_acceptance_period_copy,
+        is_reason_ipo_pre_launch_period_copy,
+        is_reason_market_wide_circuit_breaker_level1_copy,
+        is_reason_market_wide_circuit_breaker_level2_copy,
+        is_reason_market_wide_circuit_breaker_level3_copy,
+        is_reason_not_applicable_copy,
+        is_reason_not_available_copy
         );
+    if (!result) {
+        free(timestamp_nanos_copy);
+        free(is_trading_live_copy);
+        free(is_trading_halted_copy);
+        free(is_trading_in_order_acceptance_period_copy);
+        free(is_trading_paused_copy);
+        free(is_reason_halt_news_pending_copy);
+        free(is_reason_ipo_not_yet_trading_copy);
+        free(is_reason_ipo_deferred_copy);
+        free(is_reason_halt_news_dissemination_copy);
+        free(is_reason_ipo_order_acceptance_period_copy);
+        free(is_reason_ipo_pre_launch_period_copy);
+        free(is_reason_market_wide_circuit_breaker_level1_copy);
+        free(is_reason_market_wide_circuit_breaker_level2_copy);
+        free(is_reason_market_wide_circuit_breaker_level3_copy);
+        free(is_reason_not_applicable_copy);
+        free(is_reason_not_available_copy);
+    }
+    return result;
 }
 
 void admin_trading_status_model_free(admin_trading_status_model_t *admin_trading_status_model) {
@@ -107,9 +206,73 @@ void admin_trading_status_model_free(admin_trading_status_model_t *admin_trading
         free(admin_trading_status_model->symbol);
         admin_trading_status_model->symbol = NULL;
     }
+    if (admin_trading_status_model->timestamp_nanos) {
+        free(admin_trading_status_model->timestamp_nanos);
+        admin_trading_status_model->timestamp_nanos = NULL;
+    }
     if (admin_trading_status_model->timestamp) {
         free(admin_trading_status_model->timestamp);
         admin_trading_status_model->timestamp = NULL;
+    }
+    if (admin_trading_status_model->is_trading_live) {
+        free(admin_trading_status_model->is_trading_live);
+        admin_trading_status_model->is_trading_live = NULL;
+    }
+    if (admin_trading_status_model->is_trading_halted) {
+        free(admin_trading_status_model->is_trading_halted);
+        admin_trading_status_model->is_trading_halted = NULL;
+    }
+    if (admin_trading_status_model->is_trading_in_order_acceptance_period) {
+        free(admin_trading_status_model->is_trading_in_order_acceptance_period);
+        admin_trading_status_model->is_trading_in_order_acceptance_period = NULL;
+    }
+    if (admin_trading_status_model->is_trading_paused) {
+        free(admin_trading_status_model->is_trading_paused);
+        admin_trading_status_model->is_trading_paused = NULL;
+    }
+    if (admin_trading_status_model->is_reason_halt_news_pending) {
+        free(admin_trading_status_model->is_reason_halt_news_pending);
+        admin_trading_status_model->is_reason_halt_news_pending = NULL;
+    }
+    if (admin_trading_status_model->is_reason_ipo_not_yet_trading) {
+        free(admin_trading_status_model->is_reason_ipo_not_yet_trading);
+        admin_trading_status_model->is_reason_ipo_not_yet_trading = NULL;
+    }
+    if (admin_trading_status_model->is_reason_ipo_deferred) {
+        free(admin_trading_status_model->is_reason_ipo_deferred);
+        admin_trading_status_model->is_reason_ipo_deferred = NULL;
+    }
+    if (admin_trading_status_model->is_reason_halt_news_dissemination) {
+        free(admin_trading_status_model->is_reason_halt_news_dissemination);
+        admin_trading_status_model->is_reason_halt_news_dissemination = NULL;
+    }
+    if (admin_trading_status_model->is_reason_ipo_order_acceptance_period) {
+        free(admin_trading_status_model->is_reason_ipo_order_acceptance_period);
+        admin_trading_status_model->is_reason_ipo_order_acceptance_period = NULL;
+    }
+    if (admin_trading_status_model->is_reason_ipo_pre_launch_period) {
+        free(admin_trading_status_model->is_reason_ipo_pre_launch_period);
+        admin_trading_status_model->is_reason_ipo_pre_launch_period = NULL;
+    }
+    if (admin_trading_status_model->is_reason_market_wide_circuit_breaker_level1) {
+        free(admin_trading_status_model->is_reason_market_wide_circuit_breaker_level1);
+        admin_trading_status_model->is_reason_market_wide_circuit_breaker_level1 = NULL;
+    }
+    if (admin_trading_status_model->is_reason_market_wide_circuit_breaker_level2) {
+        free(admin_trading_status_model->is_reason_market_wide_circuit_breaker_level2);
+        admin_trading_status_model->is_reason_market_wide_circuit_breaker_level2 = NULL;
+    }
+    if (admin_trading_status_model->is_reason_market_wide_circuit_breaker_level3) {
+        free(admin_trading_status_model->is_reason_market_wide_circuit_breaker_level3);
+        admin_trading_status_model->is_reason_market_wide_circuit_breaker_level3 = NULL;
+    }
+    if (admin_trading_status_model->is_reason_not_applicable) {
+        free(admin_trading_status_model->is_reason_not_applicable);
+        admin_trading_status_model->is_reason_not_applicable = NULL;
+    }
+    if (admin_trading_status_model->is_reason_not_available) {
+        free(admin_trading_status_model->is_reason_not_available);
+        admin_trading_status_model->is_reason_not_available = NULL;
     }
     free(admin_trading_status_model);
 }
@@ -127,7 +290,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->timestamp_nanos
     if(admin_trading_status_model->timestamp_nanos) {
-    if(cJSON_AddNumberToObject(item, "timestamp_nanos", admin_trading_status_model->timestamp_nanos) == NULL) {
+    if(cJSON_AddNumberToObject(item, "timestamp_nanos", *admin_trading_status_model->timestamp_nanos) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -143,7 +306,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_trading_live
     if(admin_trading_status_model->is_trading_live) {
-    if(cJSON_AddBoolToObject(item, "is_trading_live", admin_trading_status_model->is_trading_live) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_trading_live", *admin_trading_status_model->is_trading_live) == NULL) {
     goto fail; //Bool
     }
     }
@@ -151,7 +314,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_trading_halted
     if(admin_trading_status_model->is_trading_halted) {
-    if(cJSON_AddBoolToObject(item, "is_trading_halted", admin_trading_status_model->is_trading_halted) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_trading_halted", *admin_trading_status_model->is_trading_halted) == NULL) {
     goto fail; //Bool
     }
     }
@@ -159,7 +322,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_trading_in_order_acceptance_period
     if(admin_trading_status_model->is_trading_in_order_acceptance_period) {
-    if(cJSON_AddBoolToObject(item, "is_trading_in_order_acceptance_period", admin_trading_status_model->is_trading_in_order_acceptance_period) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_trading_in_order_acceptance_period", *admin_trading_status_model->is_trading_in_order_acceptance_period) == NULL) {
     goto fail; //Bool
     }
     }
@@ -167,7 +330,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_trading_paused
     if(admin_trading_status_model->is_trading_paused) {
-    if(cJSON_AddBoolToObject(item, "is_trading_paused", admin_trading_status_model->is_trading_paused) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_trading_paused", *admin_trading_status_model->is_trading_paused) == NULL) {
     goto fail; //Bool
     }
     }
@@ -175,7 +338,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_reason_halt_news_pending
     if(admin_trading_status_model->is_reason_halt_news_pending) {
-    if(cJSON_AddBoolToObject(item, "is_reason_halt_news_pending", admin_trading_status_model->is_reason_halt_news_pending) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_reason_halt_news_pending", *admin_trading_status_model->is_reason_halt_news_pending) == NULL) {
     goto fail; //Bool
     }
     }
@@ -183,7 +346,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_reason_ipo_not_yet_trading
     if(admin_trading_status_model->is_reason_ipo_not_yet_trading) {
-    if(cJSON_AddBoolToObject(item, "is_reason_ipo_not_yet_trading", admin_trading_status_model->is_reason_ipo_not_yet_trading) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_reason_ipo_not_yet_trading", *admin_trading_status_model->is_reason_ipo_not_yet_trading) == NULL) {
     goto fail; //Bool
     }
     }
@@ -191,7 +354,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_reason_ipo_deferred
     if(admin_trading_status_model->is_reason_ipo_deferred) {
-    if(cJSON_AddBoolToObject(item, "is_reason_ipo_deferred", admin_trading_status_model->is_reason_ipo_deferred) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_reason_ipo_deferred", *admin_trading_status_model->is_reason_ipo_deferred) == NULL) {
     goto fail; //Bool
     }
     }
@@ -199,7 +362,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_reason_halt_news_dissemination
     if(admin_trading_status_model->is_reason_halt_news_dissemination) {
-    if(cJSON_AddBoolToObject(item, "is_reason_halt_news_dissemination", admin_trading_status_model->is_reason_halt_news_dissemination) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_reason_halt_news_dissemination", *admin_trading_status_model->is_reason_halt_news_dissemination) == NULL) {
     goto fail; //Bool
     }
     }
@@ -207,7 +370,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_reason_ipo_order_acceptance_period
     if(admin_trading_status_model->is_reason_ipo_order_acceptance_period) {
-    if(cJSON_AddBoolToObject(item, "is_reason_ipo_order_acceptance_period", admin_trading_status_model->is_reason_ipo_order_acceptance_period) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_reason_ipo_order_acceptance_period", *admin_trading_status_model->is_reason_ipo_order_acceptance_period) == NULL) {
     goto fail; //Bool
     }
     }
@@ -215,7 +378,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_reason_ipo_pre_launch_period
     if(admin_trading_status_model->is_reason_ipo_pre_launch_period) {
-    if(cJSON_AddBoolToObject(item, "is_reason_ipo_pre_launch_period", admin_trading_status_model->is_reason_ipo_pre_launch_period) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_reason_ipo_pre_launch_period", *admin_trading_status_model->is_reason_ipo_pre_launch_period) == NULL) {
     goto fail; //Bool
     }
     }
@@ -223,7 +386,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_reason_market_wide_circuit_breaker_level1
     if(admin_trading_status_model->is_reason_market_wide_circuit_breaker_level1) {
-    if(cJSON_AddBoolToObject(item, "is_reason_market_wide_circuit_breaker_level1", admin_trading_status_model->is_reason_market_wide_circuit_breaker_level1) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_reason_market_wide_circuit_breaker_level1", *admin_trading_status_model->is_reason_market_wide_circuit_breaker_level1) == NULL) {
     goto fail; //Bool
     }
     }
@@ -231,7 +394,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_reason_market_wide_circuit_breaker_level2
     if(admin_trading_status_model->is_reason_market_wide_circuit_breaker_level2) {
-    if(cJSON_AddBoolToObject(item, "is_reason_market_wide_circuit_breaker_level2", admin_trading_status_model->is_reason_market_wide_circuit_breaker_level2) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_reason_market_wide_circuit_breaker_level2", *admin_trading_status_model->is_reason_market_wide_circuit_breaker_level2) == NULL) {
     goto fail; //Bool
     }
     }
@@ -239,7 +402,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_reason_market_wide_circuit_breaker_level3
     if(admin_trading_status_model->is_reason_market_wide_circuit_breaker_level3) {
-    if(cJSON_AddBoolToObject(item, "is_reason_market_wide_circuit_breaker_level3", admin_trading_status_model->is_reason_market_wide_circuit_breaker_level3) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_reason_market_wide_circuit_breaker_level3", *admin_trading_status_model->is_reason_market_wide_circuit_breaker_level3) == NULL) {
     goto fail; //Bool
     }
     }
@@ -247,7 +410,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_reason_not_applicable
     if(admin_trading_status_model->is_reason_not_applicable) {
-    if(cJSON_AddBoolToObject(item, "is_reason_not_applicable", admin_trading_status_model->is_reason_not_applicable) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_reason_not_applicable", *admin_trading_status_model->is_reason_not_applicable) == NULL) {
     goto fail; //Bool
     }
     }
@@ -255,7 +418,7 @@ cJSON *admin_trading_status_model_convertToJSON(admin_trading_status_model_t *ad
 
     // admin_trading_status_model->is_reason_not_available
     if(admin_trading_status_model->is_reason_not_available) {
-    if(cJSON_AddBoolToObject(item, "is_reason_not_available", admin_trading_status_model->is_reason_not_available) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_reason_not_available", *admin_trading_status_model->is_reason_not_available) == NULL) {
     goto fail; //Bool
     }
     }
@@ -271,6 +434,58 @@ fail:
 admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *admin_trading_status_modelJSON){
 
     admin_trading_status_model_t *admin_trading_status_model_local_var = NULL;
+
+    char *symbol_local_str = NULL;
+
+    // define the local variable for admin_trading_status_model->timestamp_nanos
+    long *timestamp_nanos_local_var = NULL;
+
+    char *timestamp_local_str = NULL;
+
+    // define the local variable for admin_trading_status_model->is_trading_live
+    int *is_trading_live_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_trading_halted
+    int *is_trading_halted_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_trading_in_order_acceptance_period
+    int *is_trading_in_order_acceptance_period_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_trading_paused
+    int *is_trading_paused_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_reason_halt_news_pending
+    int *is_reason_halt_news_pending_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_reason_ipo_not_yet_trading
+    int *is_reason_ipo_not_yet_trading_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_reason_ipo_deferred
+    int *is_reason_ipo_deferred_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_reason_halt_news_dissemination
+    int *is_reason_halt_news_dissemination_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_reason_ipo_order_acceptance_period
+    int *is_reason_ipo_order_acceptance_period_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_reason_ipo_pre_launch_period
+    int *is_reason_ipo_pre_launch_period_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_reason_market_wide_circuit_breaker_level1
+    int *is_reason_market_wide_circuit_breaker_level1_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_reason_market_wide_circuit_breaker_level2
+    int *is_reason_market_wide_circuit_breaker_level2_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_reason_market_wide_circuit_breaker_level3
+    int *is_reason_market_wide_circuit_breaker_level3_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_reason_not_applicable
+    int *is_reason_not_applicable_local_var = NULL;
+
+    // define the local variable for admin_trading_status_model->is_reason_not_available
+    int *is_reason_not_available_local_var = NULL;
 
     // admin_trading_status_model->symbol
     cJSON *symbol = cJSON_GetObjectItemCaseSensitive(admin_trading_status_modelJSON, "symbol");
@@ -294,6 +509,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Numeric
     }
+    timestamp_nanos_local_var = malloc(sizeof(long));
+    if(!timestamp_nanos_local_var)
+    {
+        goto end;
+    }
+    *timestamp_nanos_local_var = timestamp_nanos->valuedouble;
     }
 
     // admin_trading_status_model->timestamp
@@ -318,6 +539,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_trading_live_local_var = malloc(sizeof(int));
+    if(!is_trading_live_local_var)
+    {
+        goto end;
+    }
+    *is_trading_live_local_var = is_trading_live->valueint;
     }
 
     // admin_trading_status_model->is_trading_halted
@@ -330,6 +557,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_trading_halted_local_var = malloc(sizeof(int));
+    if(!is_trading_halted_local_var)
+    {
+        goto end;
+    }
+    *is_trading_halted_local_var = is_trading_halted->valueint;
     }
 
     // admin_trading_status_model->is_trading_in_order_acceptance_period
@@ -342,6 +575,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_trading_in_order_acceptance_period_local_var = malloc(sizeof(int));
+    if(!is_trading_in_order_acceptance_period_local_var)
+    {
+        goto end;
+    }
+    *is_trading_in_order_acceptance_period_local_var = is_trading_in_order_acceptance_period->valueint;
     }
 
     // admin_trading_status_model->is_trading_paused
@@ -354,6 +593,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_trading_paused_local_var = malloc(sizeof(int));
+    if(!is_trading_paused_local_var)
+    {
+        goto end;
+    }
+    *is_trading_paused_local_var = is_trading_paused->valueint;
     }
 
     // admin_trading_status_model->is_reason_halt_news_pending
@@ -366,6 +611,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_reason_halt_news_pending_local_var = malloc(sizeof(int));
+    if(!is_reason_halt_news_pending_local_var)
+    {
+        goto end;
+    }
+    *is_reason_halt_news_pending_local_var = is_reason_halt_news_pending->valueint;
     }
 
     // admin_trading_status_model->is_reason_ipo_not_yet_trading
@@ -378,6 +629,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_reason_ipo_not_yet_trading_local_var = malloc(sizeof(int));
+    if(!is_reason_ipo_not_yet_trading_local_var)
+    {
+        goto end;
+    }
+    *is_reason_ipo_not_yet_trading_local_var = is_reason_ipo_not_yet_trading->valueint;
     }
 
     // admin_trading_status_model->is_reason_ipo_deferred
@@ -390,6 +647,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_reason_ipo_deferred_local_var = malloc(sizeof(int));
+    if(!is_reason_ipo_deferred_local_var)
+    {
+        goto end;
+    }
+    *is_reason_ipo_deferred_local_var = is_reason_ipo_deferred->valueint;
     }
 
     // admin_trading_status_model->is_reason_halt_news_dissemination
@@ -402,6 +665,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_reason_halt_news_dissemination_local_var = malloc(sizeof(int));
+    if(!is_reason_halt_news_dissemination_local_var)
+    {
+        goto end;
+    }
+    *is_reason_halt_news_dissemination_local_var = is_reason_halt_news_dissemination->valueint;
     }
 
     // admin_trading_status_model->is_reason_ipo_order_acceptance_period
@@ -414,6 +683,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_reason_ipo_order_acceptance_period_local_var = malloc(sizeof(int));
+    if(!is_reason_ipo_order_acceptance_period_local_var)
+    {
+        goto end;
+    }
+    *is_reason_ipo_order_acceptance_period_local_var = is_reason_ipo_order_acceptance_period->valueint;
     }
 
     // admin_trading_status_model->is_reason_ipo_pre_launch_period
@@ -426,6 +701,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_reason_ipo_pre_launch_period_local_var = malloc(sizeof(int));
+    if(!is_reason_ipo_pre_launch_period_local_var)
+    {
+        goto end;
+    }
+    *is_reason_ipo_pre_launch_period_local_var = is_reason_ipo_pre_launch_period->valueint;
     }
 
     // admin_trading_status_model->is_reason_market_wide_circuit_breaker_level1
@@ -438,6 +719,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_reason_market_wide_circuit_breaker_level1_local_var = malloc(sizeof(int));
+    if(!is_reason_market_wide_circuit_breaker_level1_local_var)
+    {
+        goto end;
+    }
+    *is_reason_market_wide_circuit_breaker_level1_local_var = is_reason_market_wide_circuit_breaker_level1->valueint;
     }
 
     // admin_trading_status_model->is_reason_market_wide_circuit_breaker_level2
@@ -450,6 +737,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_reason_market_wide_circuit_breaker_level2_local_var = malloc(sizeof(int));
+    if(!is_reason_market_wide_circuit_breaker_level2_local_var)
+    {
+        goto end;
+    }
+    *is_reason_market_wide_circuit_breaker_level2_local_var = is_reason_market_wide_circuit_breaker_level2->valueint;
     }
 
     // admin_trading_status_model->is_reason_market_wide_circuit_breaker_level3
@@ -462,6 +755,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_reason_market_wide_circuit_breaker_level3_local_var = malloc(sizeof(int));
+    if(!is_reason_market_wide_circuit_breaker_level3_local_var)
+    {
+        goto end;
+    }
+    *is_reason_market_wide_circuit_breaker_level3_local_var = is_reason_market_wide_circuit_breaker_level3->valueint;
     }
 
     // admin_trading_status_model->is_reason_not_applicable
@@ -474,6 +773,12 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_reason_not_applicable_local_var = malloc(sizeof(int));
+    if(!is_reason_not_applicable_local_var)
+    {
+        goto end;
+    }
+    *is_reason_not_applicable_local_var = is_reason_not_applicable->valueint;
     }
 
     // admin_trading_status_model->is_reason_not_available
@@ -486,32 +791,117 @@ admin_trading_status_model_t *admin_trading_status_model_parseFromJSON(cJSON *ad
     {
     goto end; //Bool
     }
+    is_reason_not_available_local_var = malloc(sizeof(int));
+    if(!is_reason_not_available_local_var)
+    {
+        goto end;
+    }
+    *is_reason_not_available_local_var = is_reason_not_available->valueint;
     }
 
 
+    if (symbol && !cJSON_IsNull(symbol)) symbol_local_str = strdup(symbol->valuestring);
+    if (timestamp && !cJSON_IsNull(timestamp)) timestamp_local_str = strdup(timestamp->valuestring);
+
     admin_trading_status_model_local_var = admin_trading_status_model_create_internal (
-        symbol && !cJSON_IsNull(symbol) ? strdup(symbol->valuestring) : NULL,
-        timestamp_nanos ? timestamp_nanos->valuedouble : 0,
-        timestamp && !cJSON_IsNull(timestamp) ? strdup(timestamp->valuestring) : NULL,
-        is_trading_live ? is_trading_live->valueint : 0,
-        is_trading_halted ? is_trading_halted->valueint : 0,
-        is_trading_in_order_acceptance_period ? is_trading_in_order_acceptance_period->valueint : 0,
-        is_trading_paused ? is_trading_paused->valueint : 0,
-        is_reason_halt_news_pending ? is_reason_halt_news_pending->valueint : 0,
-        is_reason_ipo_not_yet_trading ? is_reason_ipo_not_yet_trading->valueint : 0,
-        is_reason_ipo_deferred ? is_reason_ipo_deferred->valueint : 0,
-        is_reason_halt_news_dissemination ? is_reason_halt_news_dissemination->valueint : 0,
-        is_reason_ipo_order_acceptance_period ? is_reason_ipo_order_acceptance_period->valueint : 0,
-        is_reason_ipo_pre_launch_period ? is_reason_ipo_pre_launch_period->valueint : 0,
-        is_reason_market_wide_circuit_breaker_level1 ? is_reason_market_wide_circuit_breaker_level1->valueint : 0,
-        is_reason_market_wide_circuit_breaker_level2 ? is_reason_market_wide_circuit_breaker_level2->valueint : 0,
-        is_reason_market_wide_circuit_breaker_level3 ? is_reason_market_wide_circuit_breaker_level3->valueint : 0,
-        is_reason_not_applicable ? is_reason_not_applicable->valueint : 0,
-        is_reason_not_available ? is_reason_not_available->valueint : 0
+        symbol_local_str,
+        timestamp_nanos_local_var,
+        timestamp_local_str,
+        is_trading_live_local_var,
+        is_trading_halted_local_var,
+        is_trading_in_order_acceptance_period_local_var,
+        is_trading_paused_local_var,
+        is_reason_halt_news_pending_local_var,
+        is_reason_ipo_not_yet_trading_local_var,
+        is_reason_ipo_deferred_local_var,
+        is_reason_halt_news_dissemination_local_var,
+        is_reason_ipo_order_acceptance_period_local_var,
+        is_reason_ipo_pre_launch_period_local_var,
+        is_reason_market_wide_circuit_breaker_level1_local_var,
+        is_reason_market_wide_circuit_breaker_level2_local_var,
+        is_reason_market_wide_circuit_breaker_level3_local_var,
+        is_reason_not_applicable_local_var,
+        is_reason_not_available_local_var
         );
+
+    if (!admin_trading_status_model_local_var) {
+        goto end;
+    }
 
     return admin_trading_status_model_local_var;
 end:
+    if (symbol_local_str) {
+        free(symbol_local_str);
+        symbol_local_str = NULL;
+    }
+    if (timestamp_nanos_local_var) {
+        free(timestamp_nanos_local_var);
+        timestamp_nanos_local_var = NULL;
+    }
+    if (timestamp_local_str) {
+        free(timestamp_local_str);
+        timestamp_local_str = NULL;
+    }
+    if (is_trading_live_local_var) {
+        free(is_trading_live_local_var);
+        is_trading_live_local_var = NULL;
+    }
+    if (is_trading_halted_local_var) {
+        free(is_trading_halted_local_var);
+        is_trading_halted_local_var = NULL;
+    }
+    if (is_trading_in_order_acceptance_period_local_var) {
+        free(is_trading_in_order_acceptance_period_local_var);
+        is_trading_in_order_acceptance_period_local_var = NULL;
+    }
+    if (is_trading_paused_local_var) {
+        free(is_trading_paused_local_var);
+        is_trading_paused_local_var = NULL;
+    }
+    if (is_reason_halt_news_pending_local_var) {
+        free(is_reason_halt_news_pending_local_var);
+        is_reason_halt_news_pending_local_var = NULL;
+    }
+    if (is_reason_ipo_not_yet_trading_local_var) {
+        free(is_reason_ipo_not_yet_trading_local_var);
+        is_reason_ipo_not_yet_trading_local_var = NULL;
+    }
+    if (is_reason_ipo_deferred_local_var) {
+        free(is_reason_ipo_deferred_local_var);
+        is_reason_ipo_deferred_local_var = NULL;
+    }
+    if (is_reason_halt_news_dissemination_local_var) {
+        free(is_reason_halt_news_dissemination_local_var);
+        is_reason_halt_news_dissemination_local_var = NULL;
+    }
+    if (is_reason_ipo_order_acceptance_period_local_var) {
+        free(is_reason_ipo_order_acceptance_period_local_var);
+        is_reason_ipo_order_acceptance_period_local_var = NULL;
+    }
+    if (is_reason_ipo_pre_launch_period_local_var) {
+        free(is_reason_ipo_pre_launch_period_local_var);
+        is_reason_ipo_pre_launch_period_local_var = NULL;
+    }
+    if (is_reason_market_wide_circuit_breaker_level1_local_var) {
+        free(is_reason_market_wide_circuit_breaker_level1_local_var);
+        is_reason_market_wide_circuit_breaker_level1_local_var = NULL;
+    }
+    if (is_reason_market_wide_circuit_breaker_level2_local_var) {
+        free(is_reason_market_wide_circuit_breaker_level2_local_var);
+        is_reason_market_wide_circuit_breaker_level2_local_var = NULL;
+    }
+    if (is_reason_market_wide_circuit_breaker_level3_local_var) {
+        free(is_reason_market_wide_circuit_breaker_level3_local_var);
+        is_reason_market_wide_circuit_breaker_level3_local_var = NULL;
+    }
+    if (is_reason_not_applicable_local_var) {
+        free(is_reason_not_applicable_local_var);
+        is_reason_not_applicable_local_var = NULL;
+    }
+    if (is_reason_not_available_local_var) {
+        free(is_reason_not_available_local_var);
+        is_reason_not_available_local_var = NULL;
+    }
     return NULL;
 
 }

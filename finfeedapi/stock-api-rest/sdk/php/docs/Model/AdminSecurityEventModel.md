@@ -1,4 +1,4 @@
-# # AdminSecurityEventModel
+# AdminSecurityEventModel
 
 ## Properties
 

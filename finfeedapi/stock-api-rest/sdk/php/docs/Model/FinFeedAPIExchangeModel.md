@@ -1,4 +1,4 @@
-# # FinFeedAPIExchangeModel
+# FinFeedAPIExchangeModel
 
 ## Properties
 

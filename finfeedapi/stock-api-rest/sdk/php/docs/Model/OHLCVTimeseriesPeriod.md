@@ -1,4 +1,4 @@
-# # OHLCVTimeseriesPeriod
+# OHLCVTimeseriesPeriod
 
 ## Properties
 

@@ -23,6 +23,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, Stri
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class TradeTradeModel(BaseModel):
     """
@@ -43,7 +44,8 @@ class TradeTradeModel(BaseModel):
     __properties: ClassVar[List[str]] = ["is_trade_break", "symbol", "timestamp_nanos", "timestamp", "size", "price", "trade_id", "is_intermarket_sweep", "is_extended_hours_trade", "is_odd_lot_trade", "is_trade_through_exempt", "is_single_price_cross_trade"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -55,8 +57,7 @@ class TradeTradeModel(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

@@ -20,18 +20,18 @@ typedef struct level3_delete_order_model_t level3_delete_order_model_t;
 
 typedef struct level3_delete_order_model_t {
     char *symbol; // string
-    long timestamp_nanos; //numeric
+    long *timestamp_nanos; //numeric
     char *timestamp; //date time
-    long order_id_reference; //numeric
+    long *order_id_reference; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } level3_delete_order_model_t;
 
 __attribute__((deprecated)) level3_delete_order_model_t *level3_delete_order_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    long order_id_reference
+    long *order_id_reference
 );
 
 void level3_delete_order_model_free(level3_delete_order_model_t *level3_delete_order_model);

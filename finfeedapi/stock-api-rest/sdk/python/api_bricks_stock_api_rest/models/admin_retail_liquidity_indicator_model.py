@@ -23,6 +23,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class AdminRetailLiquidityIndicatorModel(BaseModel):
     """
@@ -41,7 +42,8 @@ class AdminRetailLiquidityIndicatorModel(BaseModel):
     __properties: ClassVar[List[str]] = ["symbol", "timestamp_nanos", "timestamp", "retail_liquidity_indicator", "retail_liquidity_indicator_code", "retail_liquidity_indicator_text", "is_retail_indicator_not_applicable", "is_retail_indicator_buy_interest", "is_retail_indicator_sell_interest", "is_retail_indicator_buy_and_sell_interest"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -53,8 +55,7 @@ class AdminRetailLiquidityIndicatorModel(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

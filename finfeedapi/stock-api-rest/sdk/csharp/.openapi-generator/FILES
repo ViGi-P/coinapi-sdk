@@ -82,6 +82,7 @@ src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Client/DateOnlyNullableJsonConverter.c
 src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Client/DateTimeJsonConverter.cs
 src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Client/DateTimeNullableJsonConverter.cs
 src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Client/ExceptionEventArgs.cs
+src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Client/FileParameter.cs
 src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Client/HostConfiguration.cs
 src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Client/JsonSerializerOptionsProvider.cs
 src/APIBricks.FinFeedAPI.STOCKAPI.REST.V1/Client/Option.cs

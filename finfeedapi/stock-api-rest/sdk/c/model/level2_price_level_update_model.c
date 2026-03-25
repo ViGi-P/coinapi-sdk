@@ -7,17 +7,19 @@
 
 static level2_price_level_update_model_t *level2_price_level_update_model_create_internal(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int is_side_buy,
-    int is_event_processing_complete,
-    int size,
-    double price
+    int *is_side_buy,
+    int *is_event_processing_complete,
+    int *size,
+    double *price
     ) {
     level2_price_level_update_model_t *level2_price_level_update_model_local_var = malloc(sizeof(level2_price_level_update_model_t));
     if (!level2_price_level_update_model_local_var) {
         return NULL;
     }
+    memset(level2_price_level_update_model_local_var, 0, sizeof(level2_price_level_update_model_t));
+    level2_price_level_update_model_local_var->_library_owned = 1;
     level2_price_level_update_model_local_var->symbol = symbol;
     level2_price_level_update_model_local_var->timestamp_nanos = timestamp_nanos;
     level2_price_level_update_model_local_var->timestamp = timestamp;
@@ -25,29 +27,60 @@ static level2_price_level_update_model_t *level2_price_level_update_model_create
     level2_price_level_update_model_local_var->is_event_processing_complete = is_event_processing_complete;
     level2_price_level_update_model_local_var->size = size;
     level2_price_level_update_model_local_var->price = price;
-
-    level2_price_level_update_model_local_var->_library_owned = 1;
     return level2_price_level_update_model_local_var;
 }
 
 __attribute__((deprecated)) level2_price_level_update_model_t *level2_price_level_update_model_create(
     char *symbol,
-    long timestamp_nanos,
+    long *timestamp_nanos,
     char *timestamp,
-    int is_side_buy,
-    int is_event_processing_complete,
-    int size,
-    double price
+    int *is_side_buy,
+    int *is_event_processing_complete,
+    int *size,
+    double *price
     ) {
-    return level2_price_level_update_model_create_internal (
+    long *timestamp_nanos_copy = NULL;
+    if (timestamp_nanos) {
+        timestamp_nanos_copy = malloc(sizeof(long));
+        if (timestamp_nanos_copy) *timestamp_nanos_copy = *timestamp_nanos;
+    }
+    int *is_side_buy_copy = NULL;
+    if (is_side_buy) {
+        is_side_buy_copy = malloc(sizeof(int));
+        if (is_side_buy_copy) *is_side_buy_copy = *is_side_buy;
+    }
+    int *is_event_processing_complete_copy = NULL;
+    if (is_event_processing_complete) {
+        is_event_processing_complete_copy = malloc(sizeof(int));
+        if (is_event_processing_complete_copy) *is_event_processing_complete_copy = *is_event_processing_complete;
+    }
+    int *size_copy = NULL;
+    if (size) {
+        size_copy = malloc(sizeof(int));
+        if (size_copy) *size_copy = *size;
+    }
+    double *price_copy = NULL;
+    if (price) {
+        price_copy = malloc(sizeof(double));
+        if (price_copy) *price_copy = *price;
+    }
+    level2_price_level_update_model_t *result = level2_price_level_update_model_create_internal (
         symbol,
-        timestamp_nanos,
+        timestamp_nanos_copy,
         timestamp,
-        is_side_buy,
-        is_event_processing_complete,
-        size,
-        price
+        is_side_buy_copy,
+        is_event_processing_complete_copy,
+        size_copy,
+        price_copy
         );
+    if (!result) {
+        free(timestamp_nanos_copy);
+        free(is_side_buy_copy);
+        free(is_event_processing_complete_copy);
+        free(size_copy);
+        free(price_copy);
+    }
+    return result;
 }
 
 void level2_price_level_update_model_free(level2_price_level_update_model_t *level2_price_level_update_model) {
@@ -63,9 +96,29 @@ void level2_price_level_update_model_free(level2_price_level_update_model_t *lev
         free(level2_price_level_update_model->symbol);
         level2_price_level_update_model->symbol = NULL;
     }
+    if (level2_price_level_update_model->timestamp_nanos) {
+        free(level2_price_level_update_model->timestamp_nanos);
+        level2_price_level_update_model->timestamp_nanos = NULL;
+    }
     if (level2_price_level_update_model->timestamp) {
         free(level2_price_level_update_model->timestamp);
         level2_price_level_update_model->timestamp = NULL;
+    }
+    if (level2_price_level_update_model->is_side_buy) {
+        free(level2_price_level_update_model->is_side_buy);
+        level2_price_level_update_model->is_side_buy = NULL;
+    }
+    if (level2_price_level_update_model->is_event_processing_complete) {
+        free(level2_price_level_update_model->is_event_processing_complete);
+        level2_price_level_update_model->is_event_processing_complete = NULL;
+    }
+    if (level2_price_level_update_model->size) {
+        free(level2_price_level_update_model->size);
+        level2_price_level_update_model->size = NULL;
+    }
+    if (level2_price_level_update_model->price) {
+        free(level2_price_level_update_model->price);
+        level2_price_level_update_model->price = NULL;
     }
     free(level2_price_level_update_model);
 }
@@ -83,7 +136,7 @@ cJSON *level2_price_level_update_model_convertToJSON(level2_price_level_update_m
 
     // level2_price_level_update_model->timestamp_nanos
     if(level2_price_level_update_model->timestamp_nanos) {
-    if(cJSON_AddNumberToObject(item, "timestamp_nanos", level2_price_level_update_model->timestamp_nanos) == NULL) {
+    if(cJSON_AddNumberToObject(item, "timestamp_nanos", *level2_price_level_update_model->timestamp_nanos) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -99,7 +152,7 @@ cJSON *level2_price_level_update_model_convertToJSON(level2_price_level_update_m
 
     // level2_price_level_update_model->is_side_buy
     if(level2_price_level_update_model->is_side_buy) {
-    if(cJSON_AddBoolToObject(item, "is_side_buy", level2_price_level_update_model->is_side_buy) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_side_buy", *level2_price_level_update_model->is_side_buy) == NULL) {
     goto fail; //Bool
     }
     }
@@ -107,7 +160,7 @@ cJSON *level2_price_level_update_model_convertToJSON(level2_price_level_update_m
 
     // level2_price_level_update_model->is_event_processing_complete
     if(level2_price_level_update_model->is_event_processing_complete) {
-    if(cJSON_AddBoolToObject(item, "is_event_processing_complete", level2_price_level_update_model->is_event_processing_complete) == NULL) {
+    if(cJSON_AddBoolToObject(item, "is_event_processing_complete", *level2_price_level_update_model->is_event_processing_complete) == NULL) {
     goto fail; //Bool
     }
     }
@@ -115,7 +168,7 @@ cJSON *level2_price_level_update_model_convertToJSON(level2_price_level_update_m
 
     // level2_price_level_update_model->size
     if(level2_price_level_update_model->size) {
-    if(cJSON_AddNumberToObject(item, "size", level2_price_level_update_model->size) == NULL) {
+    if(cJSON_AddNumberToObject(item, "size", *level2_price_level_update_model->size) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -123,7 +176,7 @@ cJSON *level2_price_level_update_model_convertToJSON(level2_price_level_update_m
 
     // level2_price_level_update_model->price
     if(level2_price_level_update_model->price) {
-    if(cJSON_AddNumberToObject(item, "price", level2_price_level_update_model->price) == NULL) {
+    if(cJSON_AddNumberToObject(item, "price", *level2_price_level_update_model->price) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -139,6 +192,25 @@ fail:
 level2_price_level_update_model_t *level2_price_level_update_model_parseFromJSON(cJSON *level2_price_level_update_modelJSON){
 
     level2_price_level_update_model_t *level2_price_level_update_model_local_var = NULL;
+
+    char *symbol_local_str = NULL;
+
+    // define the local variable for level2_price_level_update_model->timestamp_nanos
+    long *timestamp_nanos_local_var = NULL;
+
+    char *timestamp_local_str = NULL;
+
+    // define the local variable for level2_price_level_update_model->is_side_buy
+    int *is_side_buy_local_var = NULL;
+
+    // define the local variable for level2_price_level_update_model->is_event_processing_complete
+    int *is_event_processing_complete_local_var = NULL;
+
+    // define the local variable for level2_price_level_update_model->size
+    int *size_local_var = NULL;
+
+    // define the local variable for level2_price_level_update_model->price
+    double *price_local_var = NULL;
 
     // level2_price_level_update_model->symbol
     cJSON *symbol = cJSON_GetObjectItemCaseSensitive(level2_price_level_update_modelJSON, "symbol");
@@ -162,6 +234,12 @@ level2_price_level_update_model_t *level2_price_level_update_model_parseFromJSON
     {
     goto end; //Numeric
     }
+    timestamp_nanos_local_var = malloc(sizeof(long));
+    if(!timestamp_nanos_local_var)
+    {
+        goto end;
+    }
+    *timestamp_nanos_local_var = timestamp_nanos->valuedouble;
     }
 
     // level2_price_level_update_model->timestamp
@@ -186,6 +264,12 @@ level2_price_level_update_model_t *level2_price_level_update_model_parseFromJSON
     {
     goto end; //Bool
     }
+    is_side_buy_local_var = malloc(sizeof(int));
+    if(!is_side_buy_local_var)
+    {
+        goto end;
+    }
+    *is_side_buy_local_var = is_side_buy->valueint;
     }
 
     // level2_price_level_update_model->is_event_processing_complete
@@ -198,6 +282,12 @@ level2_price_level_update_model_t *level2_price_level_update_model_parseFromJSON
     {
     goto end; //Bool
     }
+    is_event_processing_complete_local_var = malloc(sizeof(int));
+    if(!is_event_processing_complete_local_var)
+    {
+        goto end;
+    }
+    *is_event_processing_complete_local_var = is_event_processing_complete->valueint;
     }
 
     // level2_price_level_update_model->size
@@ -210,6 +300,12 @@ level2_price_level_update_model_t *level2_price_level_update_model_parseFromJSON
     {
     goto end; //Numeric
     }
+    size_local_var = malloc(sizeof(int));
+    if(!size_local_var)
+    {
+        goto end;
+    }
+    *size_local_var = size->valuedouble;
     }
 
     // level2_price_level_update_model->price
@@ -222,21 +318,62 @@ level2_price_level_update_model_t *level2_price_level_update_model_parseFromJSON
     {
     goto end; //Numeric
     }
+    price_local_var = malloc(sizeof(double));
+    if(!price_local_var)
+    {
+        goto end;
+    }
+    *price_local_var = price->valuedouble;
     }
 
 
+    if (symbol && !cJSON_IsNull(symbol)) symbol_local_str = strdup(symbol->valuestring);
+    if (timestamp && !cJSON_IsNull(timestamp)) timestamp_local_str = strdup(timestamp->valuestring);
+
     level2_price_level_update_model_local_var = level2_price_level_update_model_create_internal (
-        symbol && !cJSON_IsNull(symbol) ? strdup(symbol->valuestring) : NULL,
-        timestamp_nanos ? timestamp_nanos->valuedouble : 0,
-        timestamp && !cJSON_IsNull(timestamp) ? strdup(timestamp->valuestring) : NULL,
-        is_side_buy ? is_side_buy->valueint : 0,
-        is_event_processing_complete ? is_event_processing_complete->valueint : 0,
-        size ? size->valuedouble : 0,
-        price ? price->valuedouble : 0
+        symbol_local_str,
+        timestamp_nanos_local_var,
+        timestamp_local_str,
+        is_side_buy_local_var,
+        is_event_processing_complete_local_var,
+        size_local_var,
+        price_local_var
         );
+
+    if (!level2_price_level_update_model_local_var) {
+        goto end;
+    }
 
     return level2_price_level_update_model_local_var;
 end:
+    if (symbol_local_str) {
+        free(symbol_local_str);
+        symbol_local_str = NULL;
+    }
+    if (timestamp_nanos_local_var) {
+        free(timestamp_nanos_local_var);
+        timestamp_nanos_local_var = NULL;
+    }
+    if (timestamp_local_str) {
+        free(timestamp_local_str);
+        timestamp_local_str = NULL;
+    }
+    if (is_side_buy_local_var) {
+        free(is_side_buy_local_var);
+        is_side_buy_local_var = NULL;
+    }
+    if (is_event_processing_complete_local_var) {
+        free(is_event_processing_complete_local_var);
+        is_event_processing_complete_local_var = NULL;
+    }
+    if (size_local_var) {
+        free(size_local_var);
+        size_local_var = NULL;
+    }
+    if (price_local_var) {
+        free(price_local_var);
+        price_local_var = NULL;
+    }
     return NULL;
 
 }
