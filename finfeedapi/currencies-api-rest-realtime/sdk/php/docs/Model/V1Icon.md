@@ -1,4 +1,4 @@
-# # V1Icon
+# V1Icon
 
 ## Properties
 

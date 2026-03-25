@@ -1,4 +1,4 @@
-# # V1Asset
+# V1Asset
 
 ## Properties
 

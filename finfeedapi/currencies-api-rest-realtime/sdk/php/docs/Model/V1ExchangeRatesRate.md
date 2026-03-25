@@ -1,4 +1,4 @@
-# # V1ExchangeRatesRate
+# V1ExchangeRatesRate
 
 ## Properties
 
