@@ -1,4 +1,4 @@
-# # V1QuoteTrade
+# V1QuoteTrade
 
 ## Properties
 

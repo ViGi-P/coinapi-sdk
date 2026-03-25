@@ -12,7 +12,7 @@ static v1_general_data_t *v1_general_data_create_internal(
     char *asset_id,
     char *symbol_id,
     char *metric_id,
-    double value_decimal,
+    double *value_decimal,
     char *value_text,
     char *value_time
     ) {
@@ -20,6 +20,8 @@ static v1_general_data_t *v1_general_data_create_internal(
     if (!v1_general_data_local_var) {
         return NULL;
     }
+    memset(v1_general_data_local_var, 0, sizeof(v1_general_data_t));
+    v1_general_data_local_var->_library_owned = 1;
     v1_general_data_local_var->entry_time = entry_time;
     v1_general_data_local_var->recv_time = recv_time;
     v1_general_data_local_var->exchange_id = exchange_id;
@@ -29,8 +31,6 @@ static v1_general_data_t *v1_general_data_create_internal(
     v1_general_data_local_var->value_decimal = value_decimal;
     v1_general_data_local_var->value_text = value_text;
     v1_general_data_local_var->value_time = value_time;
-
-    v1_general_data_local_var->_library_owned = 1;
     return v1_general_data_local_var;
 }
 
@@ -41,21 +41,30 @@ __attribute__((deprecated)) v1_general_data_t *v1_general_data_create(
     char *asset_id,
     char *symbol_id,
     char *metric_id,
-    double value_decimal,
+    double *value_decimal,
     char *value_text,
     char *value_time
     ) {
-    return v1_general_data_create_internal (
+    double *value_decimal_copy = NULL;
+    if (value_decimal) {
+        value_decimal_copy = malloc(sizeof(double));
+        if (value_decimal_copy) *value_decimal_copy = *value_decimal;
+    }
+    v1_general_data_t *result = v1_general_data_create_internal (
         entry_time,
         recv_time,
         exchange_id,
         asset_id,
         symbol_id,
         metric_id,
-        value_decimal,
+        value_decimal_copy,
         value_text,
         value_time
         );
+    if (!result) {
+        free(value_decimal_copy);
+    }
+    return result;
 }
 
 void v1_general_data_free(v1_general_data_t *v1_general_data) {
@@ -90,6 +99,10 @@ void v1_general_data_free(v1_general_data_t *v1_general_data) {
     if (v1_general_data->metric_id) {
         free(v1_general_data->metric_id);
         v1_general_data->metric_id = NULL;
+    }
+    if (v1_general_data->value_decimal) {
+        free(v1_general_data->value_decimal);
+        v1_general_data->value_decimal = NULL;
     }
     if (v1_general_data->value_text) {
         free(v1_general_data->value_text);
@@ -155,7 +168,7 @@ cJSON *v1_general_data_convertToJSON(v1_general_data_t *v1_general_data) {
 
     // v1_general_data->value_decimal
     if(v1_general_data->value_decimal) {
-    if(cJSON_AddNumberToObject(item, "value_decimal", v1_general_data->value_decimal) == NULL) {
+    if(cJSON_AddNumberToObject(item, "value_decimal", *v1_general_data->value_decimal) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -187,6 +200,25 @@ fail:
 v1_general_data_t *v1_general_data_parseFromJSON(cJSON *v1_general_dataJSON){
 
     v1_general_data_t *v1_general_data_local_var = NULL;
+
+    char *entry_time_local_str = NULL;
+
+    char *recv_time_local_str = NULL;
+
+    char *exchange_id_local_str = NULL;
+
+    char *asset_id_local_str = NULL;
+
+    char *symbol_id_local_str = NULL;
+
+    char *metric_id_local_str = NULL;
+
+    // define the local variable for v1_general_data->value_decimal
+    double *value_decimal_local_var = NULL;
+
+    char *value_text_local_str = NULL;
+
+    char *value_time_local_str = NULL;
 
     // v1_general_data->entry_time
     cJSON *entry_time = cJSON_GetObjectItemCaseSensitive(v1_general_dataJSON, "entry_time");
@@ -270,6 +302,12 @@ v1_general_data_t *v1_general_data_parseFromJSON(cJSON *v1_general_dataJSON){
     {
     goto end; //Numeric
     }
+    value_decimal_local_var = malloc(sizeof(double));
+    if(!value_decimal_local_var)
+    {
+        goto end;
+    }
+    *value_decimal_local_var = value_decimal->valuedouble;
     }
 
     // v1_general_data->value_text
@@ -297,20 +335,69 @@ v1_general_data_t *v1_general_data_parseFromJSON(cJSON *v1_general_dataJSON){
     }
 
 
+    if (entry_time && !cJSON_IsNull(entry_time)) entry_time_local_str = strdup(entry_time->valuestring);
+    if (recv_time && !cJSON_IsNull(recv_time)) recv_time_local_str = strdup(recv_time->valuestring);
+    if (exchange_id && !cJSON_IsNull(exchange_id)) exchange_id_local_str = strdup(exchange_id->valuestring);
+    if (asset_id && !cJSON_IsNull(asset_id)) asset_id_local_str = strdup(asset_id->valuestring);
+    if (symbol_id && !cJSON_IsNull(symbol_id)) symbol_id_local_str = strdup(symbol_id->valuestring);
+    if (metric_id && !cJSON_IsNull(metric_id)) metric_id_local_str = strdup(metric_id->valuestring);
+    if (value_text && !cJSON_IsNull(value_text)) value_text_local_str = strdup(value_text->valuestring);
+    if (value_time && !cJSON_IsNull(value_time)) value_time_local_str = strdup(value_time->valuestring);
+
     v1_general_data_local_var = v1_general_data_create_internal (
-        entry_time && !cJSON_IsNull(entry_time) ? strdup(entry_time->valuestring) : NULL,
-        recv_time && !cJSON_IsNull(recv_time) ? strdup(recv_time->valuestring) : NULL,
-        exchange_id && !cJSON_IsNull(exchange_id) ? strdup(exchange_id->valuestring) : NULL,
-        asset_id && !cJSON_IsNull(asset_id) ? strdup(asset_id->valuestring) : NULL,
-        symbol_id && !cJSON_IsNull(symbol_id) ? strdup(symbol_id->valuestring) : NULL,
-        metric_id && !cJSON_IsNull(metric_id) ? strdup(metric_id->valuestring) : NULL,
-        value_decimal ? value_decimal->valuedouble : 0,
-        value_text && !cJSON_IsNull(value_text) ? strdup(value_text->valuestring) : NULL,
-        value_time && !cJSON_IsNull(value_time) ? strdup(value_time->valuestring) : NULL
+        entry_time_local_str,
+        recv_time_local_str,
+        exchange_id_local_str,
+        asset_id_local_str,
+        symbol_id_local_str,
+        metric_id_local_str,
+        value_decimal_local_var,
+        value_text_local_str,
+        value_time_local_str
         );
+
+    if (!v1_general_data_local_var) {
+        goto end;
+    }
 
     return v1_general_data_local_var;
 end:
+    if (entry_time_local_str) {
+        free(entry_time_local_str);
+        entry_time_local_str = NULL;
+    }
+    if (recv_time_local_str) {
+        free(recv_time_local_str);
+        recv_time_local_str = NULL;
+    }
+    if (exchange_id_local_str) {
+        free(exchange_id_local_str);
+        exchange_id_local_str = NULL;
+    }
+    if (asset_id_local_str) {
+        free(asset_id_local_str);
+        asset_id_local_str = NULL;
+    }
+    if (symbol_id_local_str) {
+        free(symbol_id_local_str);
+        symbol_id_local_str = NULL;
+    }
+    if (metric_id_local_str) {
+        free(metric_id_local_str);
+        metric_id_local_str = NULL;
+    }
+    if (value_decimal_local_var) {
+        free(value_decimal_local_var);
+        value_decimal_local_var = NULL;
+    }
+    if (value_text_local_str) {
+        free(value_text_local_str);
+        value_text_local_str = NULL;
+    }
+    if (value_time_local_str) {
+        free(value_time_local_str);
+        value_time_local_str = NULL;
+    }
     return NULL;
 
 }

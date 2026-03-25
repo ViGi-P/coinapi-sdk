@@ -1,4 +1,4 @@
-# # OptionsStrike
+# OptionsStrike
 
 ## Properties
 

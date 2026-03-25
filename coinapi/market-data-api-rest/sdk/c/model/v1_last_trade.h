@@ -22,8 +22,8 @@ typedef struct v1_last_trade_t {
     char *time_exchange; //date time
     char *time_coinapi; //date time
     char *uuid; // string
-    double price; //numeric
-    double size; //numeric
+    double *price; //numeric
+    double *size; //numeric
     char *taker_side; // string
 
     int _library_owned; // Is the library responsible for freeing this object?
@@ -33,8 +33,8 @@ __attribute__((deprecated)) v1_last_trade_t *v1_last_trade_create(
     char *time_exchange,
     char *time_coinapi,
     char *uuid,
-    double price,
-    double size,
+    double *price,
+    double *size,
     char *taker_side
 );
 

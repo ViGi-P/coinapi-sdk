@@ -22,10 +22,10 @@ typedef struct v1_quote_t {
     char *symbol_id; // string
     char *time_exchange; //date time
     char *time_coinapi; //date time
-    double ask_price; //numeric
-    double ask_size; //numeric
-    double bid_price; //numeric
-    double bid_size; //numeric
+    double *ask_price; //numeric
+    double *ask_size; //numeric
+    double *bid_price; //numeric
+    double *bid_size; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } v1_quote_t;
@@ -34,10 +34,10 @@ __attribute__((deprecated)) v1_quote_t *v1_quote_create(
     char *symbol_id,
     char *time_exchange,
     char *time_coinapi,
-    double ask_price,
-    double ask_size,
-    double bid_price,
-    double bid_size
+    double *ask_price,
+    double *ask_size,
+    double *bid_price,
+    double *bid_size
 );
 
 void v1_quote_free(v1_quote_t *v1_quote);

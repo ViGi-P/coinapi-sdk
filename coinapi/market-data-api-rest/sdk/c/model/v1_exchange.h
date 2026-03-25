@@ -31,14 +31,14 @@ typedef struct v1_exchange_t {
     char *data_orderbook_end; //date time
     char *data_trade_start; //date time
     char *data_trade_end; //date time
-    long data_trade_count; //numeric
-    long data_symbols_count; //numeric
-    double volume_1hrs_usd; //numeric
-    double volume_1day_usd; //numeric
-    double volume_1mth_usd; //numeric
+    long *data_trade_count; //numeric
+    long *data_symbols_count; //numeric
+    double *volume_1hrs_usd; //numeric
+    double *volume_1day_usd; //numeric
+    double *volume_1mth_usd; //numeric
     list_t *metric_id; //primitive container
     list_t *icons; //nonprimitive container
-    double rank; //numeric
+    double *rank; //numeric
     char *integration_status; // string
 
     int _library_owned; // Is the library responsible for freeing this object?
@@ -56,14 +56,14 @@ __attribute__((deprecated)) v1_exchange_t *v1_exchange_create(
     char *data_orderbook_end,
     char *data_trade_start,
     char *data_trade_end,
-    long data_trade_count,
-    long data_symbols_count,
-    double volume_1hrs_usd,
-    double volume_1day_usd,
-    double volume_1mth_usd,
+    long *data_trade_count,
+    long *data_symbols_count,
+    double *volume_1hrs_usd,
+    double *volume_1day_usd,
+    double *volume_1mth_usd,
     list_t *metric_id,
     list_t *icons,
-    double rank,
+    double *rank,
     char *integration_status
 );
 

@@ -1,4 +1,4 @@
-# # V1Quote
+# V1Quote
 
 ## Properties
 

@@ -8,7 +8,7 @@
 static options_option_exchange_group_t *options_option_exchange_group_create_internal(
     char *asset_id_base,
     char *asset_id_quote,
-    double underlying_price,
+    double *underlying_price,
     char *time_expiration,
     list_t *strikes
     ) {
@@ -16,30 +16,39 @@ static options_option_exchange_group_t *options_option_exchange_group_create_int
     if (!options_option_exchange_group_local_var) {
         return NULL;
     }
+    memset(options_option_exchange_group_local_var, 0, sizeof(options_option_exchange_group_t));
+    options_option_exchange_group_local_var->_library_owned = 1;
     options_option_exchange_group_local_var->asset_id_base = asset_id_base;
     options_option_exchange_group_local_var->asset_id_quote = asset_id_quote;
     options_option_exchange_group_local_var->underlying_price = underlying_price;
     options_option_exchange_group_local_var->time_expiration = time_expiration;
     options_option_exchange_group_local_var->strikes = strikes;
-
-    options_option_exchange_group_local_var->_library_owned = 1;
     return options_option_exchange_group_local_var;
 }
 
 __attribute__((deprecated)) options_option_exchange_group_t *options_option_exchange_group_create(
     char *asset_id_base,
     char *asset_id_quote,
-    double underlying_price,
+    double *underlying_price,
     char *time_expiration,
     list_t *strikes
     ) {
-    return options_option_exchange_group_create_internal (
+    double *underlying_price_copy = NULL;
+    if (underlying_price) {
+        underlying_price_copy = malloc(sizeof(double));
+        if (underlying_price_copy) *underlying_price_copy = *underlying_price;
+    }
+    options_option_exchange_group_t *result = options_option_exchange_group_create_internal (
         asset_id_base,
         asset_id_quote,
-        underlying_price,
+        underlying_price_copy,
         time_expiration,
         strikes
         );
+    if (!result) {
+        free(underlying_price_copy);
+    }
+    return result;
 }
 
 void options_option_exchange_group_free(options_option_exchange_group_t *options_option_exchange_group) {
@@ -58,6 +67,10 @@ void options_option_exchange_group_free(options_option_exchange_group_t *options
     if (options_option_exchange_group->asset_id_quote) {
         free(options_option_exchange_group->asset_id_quote);
         options_option_exchange_group->asset_id_quote = NULL;
+    }
+    if (options_option_exchange_group->underlying_price) {
+        free(options_option_exchange_group->underlying_price);
+        options_option_exchange_group->underlying_price = NULL;
     }
     if (options_option_exchange_group->time_expiration) {
         free(options_option_exchange_group->time_expiration);
@@ -94,7 +107,7 @@ cJSON *options_option_exchange_group_convertToJSON(options_option_exchange_group
 
     // options_option_exchange_group->underlying_price
     if(options_option_exchange_group->underlying_price) {
-    if(cJSON_AddNumberToObject(item, "underlying_price", options_option_exchange_group->underlying_price) == NULL) {
+    if(cJSON_AddNumberToObject(item, "underlying_price", *options_option_exchange_group->underlying_price) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -139,6 +152,15 @@ options_option_exchange_group_t *options_option_exchange_group_parseFromJSON(cJS
 
     options_option_exchange_group_t *options_option_exchange_group_local_var = NULL;
 
+    char *asset_id_base_local_str = NULL;
+
+    char *asset_id_quote_local_str = NULL;
+
+    // define the local variable for options_option_exchange_group->underlying_price
+    double *underlying_price_local_var = NULL;
+
+    char *time_expiration_local_str = NULL;
+
     // define the local list for options_option_exchange_group->strikes
     list_t *strikesList = NULL;
 
@@ -176,6 +198,12 @@ options_option_exchange_group_t *options_option_exchange_group_parseFromJSON(cJS
     {
     goto end; //Numeric
     }
+    underlying_price_local_var = malloc(sizeof(double));
+    if(!underlying_price_local_var)
+    {
+        goto end;
+    }
+    *underlying_price_local_var = underlying_price->valuedouble;
     }
 
     // options_option_exchange_group->time_expiration
@@ -215,16 +243,40 @@ options_option_exchange_group_t *options_option_exchange_group_parseFromJSON(cJS
     }
 
 
+    if (asset_id_base && !cJSON_IsNull(asset_id_base)) asset_id_base_local_str = strdup(asset_id_base->valuestring);
+    if (asset_id_quote && !cJSON_IsNull(asset_id_quote)) asset_id_quote_local_str = strdup(asset_id_quote->valuestring);
+    if (time_expiration && !cJSON_IsNull(time_expiration)) time_expiration_local_str = strdup(time_expiration->valuestring);
+
     options_option_exchange_group_local_var = options_option_exchange_group_create_internal (
-        asset_id_base && !cJSON_IsNull(asset_id_base) ? strdup(asset_id_base->valuestring) : NULL,
-        asset_id_quote && !cJSON_IsNull(asset_id_quote) ? strdup(asset_id_quote->valuestring) : NULL,
-        underlying_price ? underlying_price->valuedouble : 0,
-        time_expiration && !cJSON_IsNull(time_expiration) ? strdup(time_expiration->valuestring) : NULL,
+        asset_id_base_local_str,
+        asset_id_quote_local_str,
+        underlying_price_local_var,
+        time_expiration_local_str,
         strikes ? strikesList : NULL
         );
 
+    if (!options_option_exchange_group_local_var) {
+        goto end;
+    }
+
     return options_option_exchange_group_local_var;
 end:
+    if (asset_id_base_local_str) {
+        free(asset_id_base_local_str);
+        asset_id_base_local_str = NULL;
+    }
+    if (asset_id_quote_local_str) {
+        free(asset_id_quote_local_str);
+        asset_id_quote_local_str = NULL;
+    }
+    if (underlying_price_local_var) {
+        free(underlying_price_local_var);
+        underlying_price_local_var = NULL;
+    }
+    if (time_expiration_local_str) {
+        free(time_expiration_local_str);
+        time_expiration_local_str = NULL;
+    }
     if (strikesList) {
         listEntry_t *listEntry = NULL;
         list_ForEach(listEntry, strikesList) {

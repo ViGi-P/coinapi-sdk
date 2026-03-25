@@ -1,4 +1,4 @@
-# # V1Trade
+# V1Trade
 
 ## Properties
 

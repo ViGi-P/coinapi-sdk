@@ -19,6 +19,8 @@ static v1_listing_item_t *v1_listing_item_create_internal(
     if (!v1_listing_item_local_var) {
         return NULL;
     }
+    memset(v1_listing_item_local_var, 0, sizeof(v1_listing_item_t));
+    v1_listing_item_local_var->_library_owned = 1;
     v1_listing_item_local_var->metric_id = metric_id;
     v1_listing_item_local_var->symbol_id = symbol_id;
     v1_listing_item_local_var->symbol_id_external = symbol_id_external;
@@ -27,8 +29,6 @@ static v1_listing_item_t *v1_listing_item_create_internal(
     v1_listing_item_local_var->asset_id_external = asset_id_external;
     v1_listing_item_local_var->chain_id = chain_id;
     v1_listing_item_local_var->network_id = network_id;
-
-    v1_listing_item_local_var->_library_owned = 1;
     return v1_listing_item_local_var;
 }
 
@@ -42,7 +42,7 @@ __attribute__((deprecated)) v1_listing_item_t *v1_listing_item_create(
     char *chain_id,
     char *network_id
     ) {
-    return v1_listing_item_create_internal (
+    v1_listing_item_t *result = v1_listing_item_create_internal (
         metric_id,
         symbol_id,
         symbol_id_external,
@@ -52,6 +52,9 @@ __attribute__((deprecated)) v1_listing_item_t *v1_listing_item_create(
         chain_id,
         network_id
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void v1_listing_item_free(v1_listing_item_t *v1_listing_item) {
@@ -176,6 +179,22 @@ v1_listing_item_t *v1_listing_item_parseFromJSON(cJSON *v1_listing_itemJSON){
 
     v1_listing_item_t *v1_listing_item_local_var = NULL;
 
+    char *metric_id_local_str = NULL;
+
+    char *symbol_id_local_str = NULL;
+
+    char *symbol_id_external_local_str = NULL;
+
+    char *exchange_id_local_str = NULL;
+
+    char *asset_id_local_str = NULL;
+
+    char *asset_id_external_local_str = NULL;
+
+    char *chain_id_local_str = NULL;
+
+    char *network_id_local_str = NULL;
+
     // v1_listing_item->metric_id
     cJSON *metric_id = cJSON_GetObjectItemCaseSensitive(v1_listing_itemJSON, "metric_id");
     if (cJSON_IsNull(metric_id)) {
@@ -273,19 +292,64 @@ v1_listing_item_t *v1_listing_item_parseFromJSON(cJSON *v1_listing_itemJSON){
     }
 
 
+    if (metric_id && !cJSON_IsNull(metric_id)) metric_id_local_str = strdup(metric_id->valuestring);
+    if (symbol_id && !cJSON_IsNull(symbol_id)) symbol_id_local_str = strdup(symbol_id->valuestring);
+    if (symbol_id_external && !cJSON_IsNull(symbol_id_external)) symbol_id_external_local_str = strdup(symbol_id_external->valuestring);
+    if (exchange_id && !cJSON_IsNull(exchange_id)) exchange_id_local_str = strdup(exchange_id->valuestring);
+    if (asset_id && !cJSON_IsNull(asset_id)) asset_id_local_str = strdup(asset_id->valuestring);
+    if (asset_id_external && !cJSON_IsNull(asset_id_external)) asset_id_external_local_str = strdup(asset_id_external->valuestring);
+    if (chain_id && !cJSON_IsNull(chain_id)) chain_id_local_str = strdup(chain_id->valuestring);
+    if (network_id && !cJSON_IsNull(network_id)) network_id_local_str = strdup(network_id->valuestring);
+
     v1_listing_item_local_var = v1_listing_item_create_internal (
-        metric_id && !cJSON_IsNull(metric_id) ? strdup(metric_id->valuestring) : NULL,
-        symbol_id && !cJSON_IsNull(symbol_id) ? strdup(symbol_id->valuestring) : NULL,
-        symbol_id_external && !cJSON_IsNull(symbol_id_external) ? strdup(symbol_id_external->valuestring) : NULL,
-        exchange_id && !cJSON_IsNull(exchange_id) ? strdup(exchange_id->valuestring) : NULL,
-        asset_id && !cJSON_IsNull(asset_id) ? strdup(asset_id->valuestring) : NULL,
-        asset_id_external && !cJSON_IsNull(asset_id_external) ? strdup(asset_id_external->valuestring) : NULL,
-        chain_id && !cJSON_IsNull(chain_id) ? strdup(chain_id->valuestring) : NULL,
-        network_id && !cJSON_IsNull(network_id) ? strdup(network_id->valuestring) : NULL
+        metric_id_local_str,
+        symbol_id_local_str,
+        symbol_id_external_local_str,
+        exchange_id_local_str,
+        asset_id_local_str,
+        asset_id_external_local_str,
+        chain_id_local_str,
+        network_id_local_str
         );
+
+    if (!v1_listing_item_local_var) {
+        goto end;
+    }
 
     return v1_listing_item_local_var;
 end:
+    if (metric_id_local_str) {
+        free(metric_id_local_str);
+        metric_id_local_str = NULL;
+    }
+    if (symbol_id_local_str) {
+        free(symbol_id_local_str);
+        symbol_id_local_str = NULL;
+    }
+    if (symbol_id_external_local_str) {
+        free(symbol_id_external_local_str);
+        symbol_id_external_local_str = NULL;
+    }
+    if (exchange_id_local_str) {
+        free(exchange_id_local_str);
+        exchange_id_local_str = NULL;
+    }
+    if (asset_id_local_str) {
+        free(asset_id_local_str);
+        asset_id_local_str = NULL;
+    }
+    if (asset_id_external_local_str) {
+        free(asset_id_external_local_str);
+        asset_id_external_local_str = NULL;
+    }
+    if (chain_id_local_str) {
+        free(chain_id_local_str);
+        chain_id_local_str = NULL;
+    }
+    if (network_id_local_str) {
+        free(network_id_local_str);
+        network_id_local_str = NULL;
+    }
     return NULL;
 
 }

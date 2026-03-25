@@ -20,9 +20,9 @@ typedef struct v1_timeseries_period_t v1_timeseries_period_t;
 
 typedef struct v1_timeseries_period_t {
     char *period_id; // string
-    int length_seconds; //numeric
-    int length_months; //numeric
-    int unit_count; //numeric
+    int *length_seconds; //numeric
+    int *length_months; //numeric
+    int *unit_count; //numeric
     char *unit_name; // string
     char *display_name; // string
 
@@ -31,9 +31,9 @@ typedef struct v1_timeseries_period_t {
 
 __attribute__((deprecated)) v1_timeseries_period_t *v1_timeseries_period_create(
     char *period_id,
-    int length_seconds,
-    int length_months,
-    int unit_count,
+    int *length_seconds,
+    int *length_months,
+    int *unit_count,
     char *unit_name,
     char *display_name
 );

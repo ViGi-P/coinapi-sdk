@@ -1,4 +1,4 @@
-# # V1Exchange
+# V1Exchange
 
 ## Properties
 

@@ -23,12 +23,12 @@ typedef struct models_exchange_timeseries_item_t {
     char *time_period_end; //date time
     char *time_open; //date time
     char *time_close; //date time
-    double price_open; //numeric
-    double price_high; //numeric
-    double price_low; //numeric
-    double price_close; //numeric
-    double volume_traded; //numeric
-    long trades_count; //numeric
+    double *price_open; //numeric
+    double *price_high; //numeric
+    double *price_low; //numeric
+    double *price_close; //numeric
+    double *volume_traded; //numeric
+    long *trades_count; //numeric
     char *symbol_id_exchange; // string
     char *symbol_id_coinapi; // string
 
@@ -40,12 +40,12 @@ __attribute__((deprecated)) models_exchange_timeseries_item_t *models_exchange_t
     char *time_period_end,
     char *time_open,
     char *time_close,
-    double price_open,
-    double price_high,
-    double price_low,
-    double price_close,
-    double volume_traded,
-    long trades_count,
+    double *price_open,
+    double *price_high,
+    double *price_low,
+    double *price_close,
+    double *volume_traded,
+    long *trades_count,
     char *symbol_id_exchange,
     char *symbol_id_coinapi
 );

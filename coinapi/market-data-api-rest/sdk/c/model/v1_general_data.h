@@ -25,7 +25,7 @@ typedef struct v1_general_data_t {
     char *asset_id; // string
     char *symbol_id; // string
     char *metric_id; // string
-    double value_decimal; //numeric
+    double *value_decimal; //numeric
     char *value_text; // string
     char *value_time; //date time
 
@@ -39,7 +39,7 @@ __attribute__((deprecated)) v1_general_data_t *v1_general_data_create(
     char *asset_id,
     char *symbol_id,
     char *metric_id,
-    double value_decimal,
+    double *value_decimal,
     char *value_text,
     char *value_time
 );

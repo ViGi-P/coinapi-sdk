@@ -1,4 +1,4 @@
-# # V1Symbol
+# V1Symbol
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# # V1MetricData
+# V1MetricData
 
 ## Properties
 

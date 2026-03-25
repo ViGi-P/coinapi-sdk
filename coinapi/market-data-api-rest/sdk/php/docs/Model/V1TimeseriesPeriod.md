@@ -1,4 +1,4 @@
-# # V1TimeseriesPeriod
+# V1TimeseriesPeriod
 
 ## Properties
 

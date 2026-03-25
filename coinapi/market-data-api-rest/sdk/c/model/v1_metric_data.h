@@ -21,7 +21,7 @@ typedef struct v1_metric_data_t v1_metric_data_t;
 typedef struct v1_metric_data_t {
     char *symbol_id; // string
     char *time; //date time
-    double value; //numeric
+    double *value; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } v1_metric_data_t;
@@ -29,7 +29,7 @@ typedef struct v1_metric_data_t {
 __attribute__((deprecated)) v1_metric_data_t *v1_metric_data_create(
     char *symbol_id,
     char *time,
-    double value
+    double *value
 );
 
 void v1_metric_data_free(v1_metric_data_t *v1_metric_data);

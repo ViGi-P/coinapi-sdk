@@ -1,4 +1,4 @@
-# # ModelsExchangeTimeseriesItem
+# ModelsExchangeTimeseriesItem
 
 ## Properties
 

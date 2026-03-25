@@ -23,8 +23,8 @@ typedef struct v1_trade_t {
     char *time_exchange; //date time
     char *time_coinapi; //date time
     char *uuid; // string
-    double price; //numeric
-    double size; //numeric
+    double *price; //numeric
+    double *size; //numeric
     char *taker_side; // string
     char *id_trade; // string
     char *id_order_maker; // string
@@ -38,8 +38,8 @@ __attribute__((deprecated)) v1_trade_t *v1_trade_create(
     char *time_exchange,
     char *time_coinapi,
     char *uuid,
-    double price,
-    double size,
+    double *price,
+    double *size,
     char *taker_side,
     char *id_trade,
     char *id_order_maker,

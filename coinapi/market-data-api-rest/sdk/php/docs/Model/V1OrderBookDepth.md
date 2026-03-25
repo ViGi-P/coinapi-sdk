@@ -1,4 +1,4 @@
-# # V1OrderBookDepth
+# V1OrderBookDepth
 
 ## Properties
 

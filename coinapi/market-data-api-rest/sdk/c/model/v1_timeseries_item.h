@@ -23,12 +23,12 @@ typedef struct v1_timeseries_item_t {
     char *time_period_end; //date time
     char *time_open; //date time
     char *time_close; //date time
-    double price_open; //numeric
-    double price_high; //numeric
-    double price_low; //numeric
-    double price_close; //numeric
-    double volume_traded; //numeric
-    long trades_count; //numeric
+    double *price_open; //numeric
+    double *price_high; //numeric
+    double *price_low; //numeric
+    double *price_close; //numeric
+    double *volume_traded; //numeric
+    long *trades_count; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } v1_timeseries_item_t;
@@ -38,12 +38,12 @@ __attribute__((deprecated)) v1_timeseries_item_t *v1_timeseries_item_create(
     char *time_period_end,
     char *time_open,
     char *time_close,
-    double price_open,
-    double price_high,
-    double price_low,
-    double price_close,
-    double volume_traded,
-    long trades_count
+    double *price_open,
+    double *price_high,
+    double *price_low,
+    double *price_close,
+    double *volume_traded,
+    long *trades_count
 );
 
 void v1_timeseries_item_free(v1_timeseries_item_t *v1_timeseries_item);

@@ -13,10 +13,10 @@ static v1_metric_t *v1_metric_create_internal(
     if (!v1_metric_local_var) {
         return NULL;
     }
+    memset(v1_metric_local_var, 0, sizeof(v1_metric_t));
+    v1_metric_local_var->_library_owned = 1;
     v1_metric_local_var->metric_id = metric_id;
     v1_metric_local_var->description = description;
-
-    v1_metric_local_var->_library_owned = 1;
     return v1_metric_local_var;
 }
 
@@ -24,10 +24,13 @@ __attribute__((deprecated)) v1_metric_t *v1_metric_create(
     char *metric_id,
     char *description
     ) {
-    return v1_metric_create_internal (
+    v1_metric_t *result = v1_metric_create_internal (
         metric_id,
         description
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void v1_metric_free(v1_metric_t *v1_metric) {
@@ -80,6 +83,10 @@ v1_metric_t *v1_metric_parseFromJSON(cJSON *v1_metricJSON){
 
     v1_metric_t *v1_metric_local_var = NULL;
 
+    char *metric_id_local_str = NULL;
+
+    char *description_local_str = NULL;
+
     // v1_metric->metric_id
     cJSON *metric_id = cJSON_GetObjectItemCaseSensitive(v1_metricJSON, "metric_id");
     if (cJSON_IsNull(metric_id)) {
@@ -105,13 +112,28 @@ v1_metric_t *v1_metric_parseFromJSON(cJSON *v1_metricJSON){
     }
 
 
+    if (metric_id && !cJSON_IsNull(metric_id)) metric_id_local_str = strdup(metric_id->valuestring);
+    if (description && !cJSON_IsNull(description)) description_local_str = strdup(description->valuestring);
+
     v1_metric_local_var = v1_metric_create_internal (
-        metric_id && !cJSON_IsNull(metric_id) ? strdup(metric_id->valuestring) : NULL,
-        description && !cJSON_IsNull(description) ? strdup(description->valuestring) : NULL
+        metric_id_local_str,
+        description_local_str
         );
+
+    if (!v1_metric_local_var) {
+        goto end;
+    }
 
     return v1_metric_local_var;
 end:
+    if (metric_id_local_str) {
+        free(metric_id_local_str);
+        metric_id_local_str = NULL;
+    }
+    if (description_local_str) {
+        free(description_local_str);
+        description_local_str = NULL;
+    }
     return NULL;
 
 }
