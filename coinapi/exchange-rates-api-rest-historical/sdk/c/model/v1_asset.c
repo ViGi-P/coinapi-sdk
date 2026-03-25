@@ -8,22 +8,22 @@
 static v1_asset_t *v1_asset_create_internal(
     char *asset_id,
     char *name,
-    int type_is_crypto,
+    int *type_is_crypto,
     char *data_quote_start,
     char *data_quote_end,
     char *data_orderbook_start,
     char *data_orderbook_end,
     char *data_trade_start,
     char *data_trade_end,
-    long data_symbols_count,
-    double volume_1hrs_usd,
-    double volume_1day_usd,
-    double volume_1mth_usd,
-    double price_usd,
+    long *data_symbols_count,
+    double *volume_1hrs_usd,
+    double *volume_1day_usd,
+    double *volume_1mth_usd,
+    double *price_usd,
     char *id_icon,
-    double supply_current,
-    double supply_total,
-    double supply_max,
+    double *supply_current,
+    double *supply_total,
+    double *supply_max,
     list_t *chain_addresses,
     char *data_start,
     char *data_end
@@ -32,6 +32,8 @@ static v1_asset_t *v1_asset_create_internal(
     if (!v1_asset_local_var) {
         return NULL;
     }
+    memset(v1_asset_local_var, 0, sizeof(v1_asset_t));
+    v1_asset_local_var->_library_owned = 1;
     v1_asset_local_var->asset_id = asset_id;
     v1_asset_local_var->name = name;
     v1_asset_local_var->type_is_crypto = type_is_crypto;
@@ -53,57 +55,112 @@ static v1_asset_t *v1_asset_create_internal(
     v1_asset_local_var->chain_addresses = chain_addresses;
     v1_asset_local_var->data_start = data_start;
     v1_asset_local_var->data_end = data_end;
-
-    v1_asset_local_var->_library_owned = 1;
     return v1_asset_local_var;
 }
 
 __attribute__((deprecated)) v1_asset_t *v1_asset_create(
     char *asset_id,
     char *name,
-    int type_is_crypto,
+    int *type_is_crypto,
     char *data_quote_start,
     char *data_quote_end,
     char *data_orderbook_start,
     char *data_orderbook_end,
     char *data_trade_start,
     char *data_trade_end,
-    long data_symbols_count,
-    double volume_1hrs_usd,
-    double volume_1day_usd,
-    double volume_1mth_usd,
-    double price_usd,
+    long *data_symbols_count,
+    double *volume_1hrs_usd,
+    double *volume_1day_usd,
+    double *volume_1mth_usd,
+    double *price_usd,
     char *id_icon,
-    double supply_current,
-    double supply_total,
-    double supply_max,
+    double *supply_current,
+    double *supply_total,
+    double *supply_max,
     list_t *chain_addresses,
     char *data_start,
     char *data_end
     ) {
-    return v1_asset_create_internal (
+    int *type_is_crypto_copy = NULL;
+    if (type_is_crypto) {
+        type_is_crypto_copy = malloc(sizeof(int));
+        if (type_is_crypto_copy) *type_is_crypto_copy = *type_is_crypto;
+    }
+    long *data_symbols_count_copy = NULL;
+    if (data_symbols_count) {
+        data_symbols_count_copy = malloc(sizeof(long));
+        if (data_symbols_count_copy) *data_symbols_count_copy = *data_symbols_count;
+    }
+    double *volume_1hrs_usd_copy = NULL;
+    if (volume_1hrs_usd) {
+        volume_1hrs_usd_copy = malloc(sizeof(double));
+        if (volume_1hrs_usd_copy) *volume_1hrs_usd_copy = *volume_1hrs_usd;
+    }
+    double *volume_1day_usd_copy = NULL;
+    if (volume_1day_usd) {
+        volume_1day_usd_copy = malloc(sizeof(double));
+        if (volume_1day_usd_copy) *volume_1day_usd_copy = *volume_1day_usd;
+    }
+    double *volume_1mth_usd_copy = NULL;
+    if (volume_1mth_usd) {
+        volume_1mth_usd_copy = malloc(sizeof(double));
+        if (volume_1mth_usd_copy) *volume_1mth_usd_copy = *volume_1mth_usd;
+    }
+    double *price_usd_copy = NULL;
+    if (price_usd) {
+        price_usd_copy = malloc(sizeof(double));
+        if (price_usd_copy) *price_usd_copy = *price_usd;
+    }
+    double *supply_current_copy = NULL;
+    if (supply_current) {
+        supply_current_copy = malloc(sizeof(double));
+        if (supply_current_copy) *supply_current_copy = *supply_current;
+    }
+    double *supply_total_copy = NULL;
+    if (supply_total) {
+        supply_total_copy = malloc(sizeof(double));
+        if (supply_total_copy) *supply_total_copy = *supply_total;
+    }
+    double *supply_max_copy = NULL;
+    if (supply_max) {
+        supply_max_copy = malloc(sizeof(double));
+        if (supply_max_copy) *supply_max_copy = *supply_max;
+    }
+    v1_asset_t *result = v1_asset_create_internal (
         asset_id,
         name,
-        type_is_crypto,
+        type_is_crypto_copy,
         data_quote_start,
         data_quote_end,
         data_orderbook_start,
         data_orderbook_end,
         data_trade_start,
         data_trade_end,
-        data_symbols_count,
-        volume_1hrs_usd,
-        volume_1day_usd,
-        volume_1mth_usd,
-        price_usd,
+        data_symbols_count_copy,
+        volume_1hrs_usd_copy,
+        volume_1day_usd_copy,
+        volume_1mth_usd_copy,
+        price_usd_copy,
         id_icon,
-        supply_current,
-        supply_total,
-        supply_max,
+        supply_current_copy,
+        supply_total_copy,
+        supply_max_copy,
         chain_addresses,
         data_start,
         data_end
         );
+    if (!result) {
+        free(type_is_crypto_copy);
+        free(data_symbols_count_copy);
+        free(volume_1hrs_usd_copy);
+        free(volume_1day_usd_copy);
+        free(volume_1mth_usd_copy);
+        free(price_usd_copy);
+        free(supply_current_copy);
+        free(supply_total_copy);
+        free(supply_max_copy);
+    }
+    return result;
 }
 
 void v1_asset_free(v1_asset_t *v1_asset) {
@@ -122,6 +179,10 @@ void v1_asset_free(v1_asset_t *v1_asset) {
     if (v1_asset->name) {
         free(v1_asset->name);
         v1_asset->name = NULL;
+    }
+    if (v1_asset->type_is_crypto) {
+        free(v1_asset->type_is_crypto);
+        v1_asset->type_is_crypto = NULL;
     }
     if (v1_asset->data_quote_start) {
         free(v1_asset->data_quote_start);
@@ -147,9 +208,41 @@ void v1_asset_free(v1_asset_t *v1_asset) {
         free(v1_asset->data_trade_end);
         v1_asset->data_trade_end = NULL;
     }
+    if (v1_asset->data_symbols_count) {
+        free(v1_asset->data_symbols_count);
+        v1_asset->data_symbols_count = NULL;
+    }
+    if (v1_asset->volume_1hrs_usd) {
+        free(v1_asset->volume_1hrs_usd);
+        v1_asset->volume_1hrs_usd = NULL;
+    }
+    if (v1_asset->volume_1day_usd) {
+        free(v1_asset->volume_1day_usd);
+        v1_asset->volume_1day_usd = NULL;
+    }
+    if (v1_asset->volume_1mth_usd) {
+        free(v1_asset->volume_1mth_usd);
+        v1_asset->volume_1mth_usd = NULL;
+    }
+    if (v1_asset->price_usd) {
+        free(v1_asset->price_usd);
+        v1_asset->price_usd = NULL;
+    }
     if (v1_asset->id_icon) {
         free(v1_asset->id_icon);
         v1_asset->id_icon = NULL;
+    }
+    if (v1_asset->supply_current) {
+        free(v1_asset->supply_current);
+        v1_asset->supply_current = NULL;
+    }
+    if (v1_asset->supply_total) {
+        free(v1_asset->supply_total);
+        v1_asset->supply_total = NULL;
+    }
+    if (v1_asset->supply_max) {
+        free(v1_asset->supply_max);
+        v1_asset->supply_max = NULL;
     }
     if (v1_asset->chain_addresses) {
         list_ForEach(listEntry, v1_asset->chain_addresses) {
@@ -190,7 +283,7 @@ cJSON *v1_asset_convertToJSON(v1_asset_t *v1_asset) {
 
     // v1_asset->type_is_crypto
     if(v1_asset->type_is_crypto) {
-    if(cJSON_AddNumberToObject(item, "type_is_crypto", v1_asset->type_is_crypto) == NULL) {
+    if(cJSON_AddNumberToObject(item, "type_is_crypto", *v1_asset->type_is_crypto) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -246,7 +339,7 @@ cJSON *v1_asset_convertToJSON(v1_asset_t *v1_asset) {
 
     // v1_asset->data_symbols_count
     if(v1_asset->data_symbols_count) {
-    if(cJSON_AddNumberToObject(item, "data_symbols_count", v1_asset->data_symbols_count) == NULL) {
+    if(cJSON_AddNumberToObject(item, "data_symbols_count", *v1_asset->data_symbols_count) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -254,7 +347,7 @@ cJSON *v1_asset_convertToJSON(v1_asset_t *v1_asset) {
 
     // v1_asset->volume_1hrs_usd
     if(v1_asset->volume_1hrs_usd) {
-    if(cJSON_AddNumberToObject(item, "volume_1hrs_usd", v1_asset->volume_1hrs_usd) == NULL) {
+    if(cJSON_AddNumberToObject(item, "volume_1hrs_usd", *v1_asset->volume_1hrs_usd) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -262,7 +355,7 @@ cJSON *v1_asset_convertToJSON(v1_asset_t *v1_asset) {
 
     // v1_asset->volume_1day_usd
     if(v1_asset->volume_1day_usd) {
-    if(cJSON_AddNumberToObject(item, "volume_1day_usd", v1_asset->volume_1day_usd) == NULL) {
+    if(cJSON_AddNumberToObject(item, "volume_1day_usd", *v1_asset->volume_1day_usd) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -270,7 +363,7 @@ cJSON *v1_asset_convertToJSON(v1_asset_t *v1_asset) {
 
     // v1_asset->volume_1mth_usd
     if(v1_asset->volume_1mth_usd) {
-    if(cJSON_AddNumberToObject(item, "volume_1mth_usd", v1_asset->volume_1mth_usd) == NULL) {
+    if(cJSON_AddNumberToObject(item, "volume_1mth_usd", *v1_asset->volume_1mth_usd) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -278,7 +371,7 @@ cJSON *v1_asset_convertToJSON(v1_asset_t *v1_asset) {
 
     // v1_asset->price_usd
     if(v1_asset->price_usd) {
-    if(cJSON_AddNumberToObject(item, "price_usd", v1_asset->price_usd) == NULL) {
+    if(cJSON_AddNumberToObject(item, "price_usd", *v1_asset->price_usd) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -294,7 +387,7 @@ cJSON *v1_asset_convertToJSON(v1_asset_t *v1_asset) {
 
     // v1_asset->supply_current
     if(v1_asset->supply_current) {
-    if(cJSON_AddNumberToObject(item, "supply_current", v1_asset->supply_current) == NULL) {
+    if(cJSON_AddNumberToObject(item, "supply_current", *v1_asset->supply_current) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -302,7 +395,7 @@ cJSON *v1_asset_convertToJSON(v1_asset_t *v1_asset) {
 
     // v1_asset->supply_total
     if(v1_asset->supply_total) {
-    if(cJSON_AddNumberToObject(item, "supply_total", v1_asset->supply_total) == NULL) {
+    if(cJSON_AddNumberToObject(item, "supply_total", *v1_asset->supply_total) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -310,7 +403,7 @@ cJSON *v1_asset_convertToJSON(v1_asset_t *v1_asset) {
 
     // v1_asset->supply_max
     if(v1_asset->supply_max) {
-    if(cJSON_AddNumberToObject(item, "supply_max", v1_asset->supply_max) == NULL) {
+    if(cJSON_AddNumberToObject(item, "supply_max", *v1_asset->supply_max) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -363,8 +456,57 @@ v1_asset_t *v1_asset_parseFromJSON(cJSON *v1_assetJSON){
 
     v1_asset_t *v1_asset_local_var = NULL;
 
+    char *asset_id_local_str = NULL;
+
+    char *name_local_str = NULL;
+
+    // define the local variable for v1_asset->type_is_crypto
+    int *type_is_crypto_local_var = NULL;
+
+    char *data_quote_start_local_str = NULL;
+
+    char *data_quote_end_local_str = NULL;
+
+    char *data_orderbook_start_local_str = NULL;
+
+    char *data_orderbook_end_local_str = NULL;
+
+    char *data_trade_start_local_str = NULL;
+
+    char *data_trade_end_local_str = NULL;
+
+    // define the local variable for v1_asset->data_symbols_count
+    long *data_symbols_count_local_var = NULL;
+
+    // define the local variable for v1_asset->volume_1hrs_usd
+    double *volume_1hrs_usd_local_var = NULL;
+
+    // define the local variable for v1_asset->volume_1day_usd
+    double *volume_1day_usd_local_var = NULL;
+
+    // define the local variable for v1_asset->volume_1mth_usd
+    double *volume_1mth_usd_local_var = NULL;
+
+    // define the local variable for v1_asset->price_usd
+    double *price_usd_local_var = NULL;
+
+    char *id_icon_local_str = NULL;
+
+    // define the local variable for v1_asset->supply_current
+    double *supply_current_local_var = NULL;
+
+    // define the local variable for v1_asset->supply_total
+    double *supply_total_local_var = NULL;
+
+    // define the local variable for v1_asset->supply_max
+    double *supply_max_local_var = NULL;
+
     // define the local list for v1_asset->chain_addresses
     list_t *chain_addressesList = NULL;
+
+    char *data_start_local_str = NULL;
+
+    char *data_end_local_str = NULL;
 
     // v1_asset->asset_id
     cJSON *asset_id = cJSON_GetObjectItemCaseSensitive(v1_assetJSON, "asset_id");
@@ -400,6 +542,12 @@ v1_asset_t *v1_asset_parseFromJSON(cJSON *v1_assetJSON){
     {
     goto end; //Numeric
     }
+    type_is_crypto_local_var = malloc(sizeof(int));
+    if(!type_is_crypto_local_var)
+    {
+        goto end;
+    }
+    *type_is_crypto_local_var = type_is_crypto->valuedouble;
     }
 
     // v1_asset->data_quote_start
@@ -484,6 +632,12 @@ v1_asset_t *v1_asset_parseFromJSON(cJSON *v1_assetJSON){
     {
     goto end; //Numeric
     }
+    data_symbols_count_local_var = malloc(sizeof(long));
+    if(!data_symbols_count_local_var)
+    {
+        goto end;
+    }
+    *data_symbols_count_local_var = data_symbols_count->valuedouble;
     }
 
     // v1_asset->volume_1hrs_usd
@@ -496,6 +650,12 @@ v1_asset_t *v1_asset_parseFromJSON(cJSON *v1_assetJSON){
     {
     goto end; //Numeric
     }
+    volume_1hrs_usd_local_var = malloc(sizeof(double));
+    if(!volume_1hrs_usd_local_var)
+    {
+        goto end;
+    }
+    *volume_1hrs_usd_local_var = volume_1hrs_usd->valuedouble;
     }
 
     // v1_asset->volume_1day_usd
@@ -508,6 +668,12 @@ v1_asset_t *v1_asset_parseFromJSON(cJSON *v1_assetJSON){
     {
     goto end; //Numeric
     }
+    volume_1day_usd_local_var = malloc(sizeof(double));
+    if(!volume_1day_usd_local_var)
+    {
+        goto end;
+    }
+    *volume_1day_usd_local_var = volume_1day_usd->valuedouble;
     }
 
     // v1_asset->volume_1mth_usd
@@ -520,6 +686,12 @@ v1_asset_t *v1_asset_parseFromJSON(cJSON *v1_assetJSON){
     {
     goto end; //Numeric
     }
+    volume_1mth_usd_local_var = malloc(sizeof(double));
+    if(!volume_1mth_usd_local_var)
+    {
+        goto end;
+    }
+    *volume_1mth_usd_local_var = volume_1mth_usd->valuedouble;
     }
 
     // v1_asset->price_usd
@@ -532,6 +704,12 @@ v1_asset_t *v1_asset_parseFromJSON(cJSON *v1_assetJSON){
     {
     goto end; //Numeric
     }
+    price_usd_local_var = malloc(sizeof(double));
+    if(!price_usd_local_var)
+    {
+        goto end;
+    }
+    *price_usd_local_var = price_usd->valuedouble;
     }
 
     // v1_asset->id_icon
@@ -556,6 +734,12 @@ v1_asset_t *v1_asset_parseFromJSON(cJSON *v1_assetJSON){
     {
     goto end; //Numeric
     }
+    supply_current_local_var = malloc(sizeof(double));
+    if(!supply_current_local_var)
+    {
+        goto end;
+    }
+    *supply_current_local_var = supply_current->valuedouble;
     }
 
     // v1_asset->supply_total
@@ -568,6 +752,12 @@ v1_asset_t *v1_asset_parseFromJSON(cJSON *v1_assetJSON){
     {
     goto end; //Numeric
     }
+    supply_total_local_var = malloc(sizeof(double));
+    if(!supply_total_local_var)
+    {
+        goto end;
+    }
+    *supply_total_local_var = supply_total->valuedouble;
     }
 
     // v1_asset->supply_max
@@ -580,6 +770,12 @@ v1_asset_t *v1_asset_parseFromJSON(cJSON *v1_assetJSON){
     {
     goto end; //Numeric
     }
+    supply_max_local_var = malloc(sizeof(double));
+    if(!supply_max_local_var)
+    {
+        goto end;
+    }
+    *supply_max_local_var = supply_max->valuedouble;
     }
 
     // v1_asset->chain_addresses
@@ -631,32 +827,120 @@ v1_asset_t *v1_asset_parseFromJSON(cJSON *v1_assetJSON){
     }
 
 
+    if (asset_id && !cJSON_IsNull(asset_id)) asset_id_local_str = strdup(asset_id->valuestring);
+    if (name && !cJSON_IsNull(name)) name_local_str = strdup(name->valuestring);
+    if (data_quote_start && !cJSON_IsNull(data_quote_start)) data_quote_start_local_str = strdup(data_quote_start->valuestring);
+    if (data_quote_end && !cJSON_IsNull(data_quote_end)) data_quote_end_local_str = strdup(data_quote_end->valuestring);
+    if (data_orderbook_start && !cJSON_IsNull(data_orderbook_start)) data_orderbook_start_local_str = strdup(data_orderbook_start->valuestring);
+    if (data_orderbook_end && !cJSON_IsNull(data_orderbook_end)) data_orderbook_end_local_str = strdup(data_orderbook_end->valuestring);
+    if (data_trade_start && !cJSON_IsNull(data_trade_start)) data_trade_start_local_str = strdup(data_trade_start->valuestring);
+    if (data_trade_end && !cJSON_IsNull(data_trade_end)) data_trade_end_local_str = strdup(data_trade_end->valuestring);
+    if (id_icon && !cJSON_IsNull(id_icon)) id_icon_local_str = strdup(id_icon->valuestring);
+    if (data_start && !cJSON_IsNull(data_start)) data_start_local_str = strdup(data_start->valuestring);
+    if (data_end && !cJSON_IsNull(data_end)) data_end_local_str = strdup(data_end->valuestring);
+
     v1_asset_local_var = v1_asset_create_internal (
-        asset_id && !cJSON_IsNull(asset_id) ? strdup(asset_id->valuestring) : NULL,
-        name && !cJSON_IsNull(name) ? strdup(name->valuestring) : NULL,
-        type_is_crypto ? type_is_crypto->valuedouble : 0,
-        data_quote_start && !cJSON_IsNull(data_quote_start) ? strdup(data_quote_start->valuestring) : NULL,
-        data_quote_end && !cJSON_IsNull(data_quote_end) ? strdup(data_quote_end->valuestring) : NULL,
-        data_orderbook_start && !cJSON_IsNull(data_orderbook_start) ? strdup(data_orderbook_start->valuestring) : NULL,
-        data_orderbook_end && !cJSON_IsNull(data_orderbook_end) ? strdup(data_orderbook_end->valuestring) : NULL,
-        data_trade_start && !cJSON_IsNull(data_trade_start) ? strdup(data_trade_start->valuestring) : NULL,
-        data_trade_end && !cJSON_IsNull(data_trade_end) ? strdup(data_trade_end->valuestring) : NULL,
-        data_symbols_count ? data_symbols_count->valuedouble : 0,
-        volume_1hrs_usd ? volume_1hrs_usd->valuedouble : 0,
-        volume_1day_usd ? volume_1day_usd->valuedouble : 0,
-        volume_1mth_usd ? volume_1mth_usd->valuedouble : 0,
-        price_usd ? price_usd->valuedouble : 0,
-        id_icon && !cJSON_IsNull(id_icon) ? strdup(id_icon->valuestring) : NULL,
-        supply_current ? supply_current->valuedouble : 0,
-        supply_total ? supply_total->valuedouble : 0,
-        supply_max ? supply_max->valuedouble : 0,
+        asset_id_local_str,
+        name_local_str,
+        type_is_crypto_local_var,
+        data_quote_start_local_str,
+        data_quote_end_local_str,
+        data_orderbook_start_local_str,
+        data_orderbook_end_local_str,
+        data_trade_start_local_str,
+        data_trade_end_local_str,
+        data_symbols_count_local_var,
+        volume_1hrs_usd_local_var,
+        volume_1day_usd_local_var,
+        volume_1mth_usd_local_var,
+        price_usd_local_var,
+        id_icon_local_str,
+        supply_current_local_var,
+        supply_total_local_var,
+        supply_max_local_var,
         chain_addresses ? chain_addressesList : NULL,
-        data_start && !cJSON_IsNull(data_start) ? strdup(data_start->valuestring) : NULL,
-        data_end && !cJSON_IsNull(data_end) ? strdup(data_end->valuestring) : NULL
+        data_start_local_str,
+        data_end_local_str
         );
+
+    if (!v1_asset_local_var) {
+        goto end;
+    }
 
     return v1_asset_local_var;
 end:
+    if (asset_id_local_str) {
+        free(asset_id_local_str);
+        asset_id_local_str = NULL;
+    }
+    if (name_local_str) {
+        free(name_local_str);
+        name_local_str = NULL;
+    }
+    if (type_is_crypto_local_var) {
+        free(type_is_crypto_local_var);
+        type_is_crypto_local_var = NULL;
+    }
+    if (data_quote_start_local_str) {
+        free(data_quote_start_local_str);
+        data_quote_start_local_str = NULL;
+    }
+    if (data_quote_end_local_str) {
+        free(data_quote_end_local_str);
+        data_quote_end_local_str = NULL;
+    }
+    if (data_orderbook_start_local_str) {
+        free(data_orderbook_start_local_str);
+        data_orderbook_start_local_str = NULL;
+    }
+    if (data_orderbook_end_local_str) {
+        free(data_orderbook_end_local_str);
+        data_orderbook_end_local_str = NULL;
+    }
+    if (data_trade_start_local_str) {
+        free(data_trade_start_local_str);
+        data_trade_start_local_str = NULL;
+    }
+    if (data_trade_end_local_str) {
+        free(data_trade_end_local_str);
+        data_trade_end_local_str = NULL;
+    }
+    if (data_symbols_count_local_var) {
+        free(data_symbols_count_local_var);
+        data_symbols_count_local_var = NULL;
+    }
+    if (volume_1hrs_usd_local_var) {
+        free(volume_1hrs_usd_local_var);
+        volume_1hrs_usd_local_var = NULL;
+    }
+    if (volume_1day_usd_local_var) {
+        free(volume_1day_usd_local_var);
+        volume_1day_usd_local_var = NULL;
+    }
+    if (volume_1mth_usd_local_var) {
+        free(volume_1mth_usd_local_var);
+        volume_1mth_usd_local_var = NULL;
+    }
+    if (price_usd_local_var) {
+        free(price_usd_local_var);
+        price_usd_local_var = NULL;
+    }
+    if (id_icon_local_str) {
+        free(id_icon_local_str);
+        id_icon_local_str = NULL;
+    }
+    if (supply_current_local_var) {
+        free(supply_current_local_var);
+        supply_current_local_var = NULL;
+    }
+    if (supply_total_local_var) {
+        free(supply_total_local_var);
+        supply_total_local_var = NULL;
+    }
+    if (supply_max_local_var) {
+        free(supply_max_local_var);
+        supply_max_local_var = NULL;
+    }
     if (chain_addressesList) {
         listEntry_t *listEntry = NULL;
         list_ForEach(listEntry, chain_addressesList) {
@@ -665,6 +949,14 @@ end:
         }
         list_freeList(chain_addressesList);
         chain_addressesList = NULL;
+    }
+    if (data_start_local_str) {
+        free(data_start_local_str);
+        data_start_local_str = NULL;
+    }
+    if (data_end_local_str) {
+        free(data_end_local_str);
+        data_end_local_str = NULL;
     }
     return NULL;
 

@@ -9,18 +9,18 @@ static v1_exchange_rate_t *v1_exchange_rate_create_internal(
     char *time,
     char *asset_id_base,
     char *asset_id_quote,
-    double rate
+    double *rate
     ) {
     v1_exchange_rate_t *v1_exchange_rate_local_var = malloc(sizeof(v1_exchange_rate_t));
     if (!v1_exchange_rate_local_var) {
         return NULL;
     }
+    memset(v1_exchange_rate_local_var, 0, sizeof(v1_exchange_rate_t));
+    v1_exchange_rate_local_var->_library_owned = 1;
     v1_exchange_rate_local_var->time = time;
     v1_exchange_rate_local_var->asset_id_base = asset_id_base;
     v1_exchange_rate_local_var->asset_id_quote = asset_id_quote;
     v1_exchange_rate_local_var->rate = rate;
-
-    v1_exchange_rate_local_var->_library_owned = 1;
     return v1_exchange_rate_local_var;
 }
 
@@ -28,14 +28,23 @@ __attribute__((deprecated)) v1_exchange_rate_t *v1_exchange_rate_create(
     char *time,
     char *asset_id_base,
     char *asset_id_quote,
-    double rate
+    double *rate
     ) {
-    return v1_exchange_rate_create_internal (
+    double *rate_copy = NULL;
+    if (rate) {
+        rate_copy = malloc(sizeof(double));
+        if (rate_copy) *rate_copy = *rate;
+    }
+    v1_exchange_rate_t *result = v1_exchange_rate_create_internal (
         time,
         asset_id_base,
         asset_id_quote,
-        rate
+        rate_copy
         );
+    if (!result) {
+        free(rate_copy);
+    }
+    return result;
 }
 
 void v1_exchange_rate_free(v1_exchange_rate_t *v1_exchange_rate) {
@@ -58,6 +67,10 @@ void v1_exchange_rate_free(v1_exchange_rate_t *v1_exchange_rate) {
     if (v1_exchange_rate->asset_id_quote) {
         free(v1_exchange_rate->asset_id_quote);
         v1_exchange_rate->asset_id_quote = NULL;
+    }
+    if (v1_exchange_rate->rate) {
+        free(v1_exchange_rate->rate);
+        v1_exchange_rate->rate = NULL;
     }
     free(v1_exchange_rate);
 }
@@ -91,7 +104,7 @@ cJSON *v1_exchange_rate_convertToJSON(v1_exchange_rate_t *v1_exchange_rate) {
 
     // v1_exchange_rate->rate
     if(v1_exchange_rate->rate) {
-    if(cJSON_AddNumberToObject(item, "rate", v1_exchange_rate->rate) == NULL) {
+    if(cJSON_AddNumberToObject(item, "rate", *v1_exchange_rate->rate) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -107,6 +120,15 @@ fail:
 v1_exchange_rate_t *v1_exchange_rate_parseFromJSON(cJSON *v1_exchange_rateJSON){
 
     v1_exchange_rate_t *v1_exchange_rate_local_var = NULL;
+
+    char *time_local_str = NULL;
+
+    char *asset_id_base_local_str = NULL;
+
+    char *asset_id_quote_local_str = NULL;
+
+    // define the local variable for v1_exchange_rate->rate
+    double *rate_local_var = NULL;
 
     // v1_exchange_rate->time
     cJSON *time = cJSON_GetObjectItemCaseSensitive(v1_exchange_rateJSON, "time");
@@ -154,18 +176,48 @@ v1_exchange_rate_t *v1_exchange_rate_parseFromJSON(cJSON *v1_exchange_rateJSON){
     {
     goto end; //Numeric
     }
+    rate_local_var = malloc(sizeof(double));
+    if(!rate_local_var)
+    {
+        goto end;
+    }
+    *rate_local_var = rate->valuedouble;
     }
 
 
+    if (time && !cJSON_IsNull(time)) time_local_str = strdup(time->valuestring);
+    if (asset_id_base && !cJSON_IsNull(asset_id_base)) asset_id_base_local_str = strdup(asset_id_base->valuestring);
+    if (asset_id_quote && !cJSON_IsNull(asset_id_quote)) asset_id_quote_local_str = strdup(asset_id_quote->valuestring);
+
     v1_exchange_rate_local_var = v1_exchange_rate_create_internal (
-        time && !cJSON_IsNull(time) ? strdup(time->valuestring) : NULL,
-        asset_id_base && !cJSON_IsNull(asset_id_base) ? strdup(asset_id_base->valuestring) : NULL,
-        asset_id_quote && !cJSON_IsNull(asset_id_quote) ? strdup(asset_id_quote->valuestring) : NULL,
-        rate ? rate->valuedouble : 0
+        time_local_str,
+        asset_id_base_local_str,
+        asset_id_quote_local_str,
+        rate_local_var
         );
+
+    if (!v1_exchange_rate_local_var) {
+        goto end;
+    }
 
     return v1_exchange_rate_local_var;
 end:
+    if (time_local_str) {
+        free(time_local_str);
+        time_local_str = NULL;
+    }
+    if (asset_id_base_local_str) {
+        free(asset_id_base_local_str);
+        asset_id_base_local_str = NULL;
+    }
+    if (asset_id_quote_local_str) {
+        free(asset_id_quote_local_str);
+        asset_id_quote_local_str = NULL;
+    }
+    if (rate_local_var) {
+        free(rate_local_var);
+        rate_local_var = NULL;
+    }
     return NULL;
 
 }

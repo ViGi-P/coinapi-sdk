@@ -6,8 +6,8 @@ This Groovy package, using the [http-builder-ng library](https://http-builder-ng
 
 - API version: v1
 - Package version: v1
-- Build date: 2026-03-24T06:07:09.113838065Z[Etc/UTC]
-- Generator version: 7.20.0
+- Build date: 2026-03-25T06:04:26.388977590Z[Etc/UTC]
+- Generator version: 7.21.0
 - Build package: org.openapitools.codegen.languages.GroovyClientCodegen
 For more information, please visit [https://www.coinapi.io](https://www.coinapi.io)
 
