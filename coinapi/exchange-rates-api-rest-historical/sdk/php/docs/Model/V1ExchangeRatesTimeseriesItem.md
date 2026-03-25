@@ -1,4 +1,4 @@
-# # V1ExchangeRatesTimeseriesItem
+# V1ExchangeRatesTimeseriesItem
 
 ## Properties
 
