@@ -10,15 +10,17 @@ static v1_exchange_rates_timeseries_item_t *v1_exchange_rates_timeseries_item_cr
     char *time_period_end,
     char *time_open,
     char *time_close,
-    double rate_open,
-    double rate_high,
-    double rate_low,
-    double rate_close
+    double *rate_open,
+    double *rate_high,
+    double *rate_low,
+    double *rate_close
     ) {
     v1_exchange_rates_timeseries_item_t *v1_exchange_rates_timeseries_item_local_var = malloc(sizeof(v1_exchange_rates_timeseries_item_t));
     if (!v1_exchange_rates_timeseries_item_local_var) {
         return NULL;
     }
+    memset(v1_exchange_rates_timeseries_item_local_var, 0, sizeof(v1_exchange_rates_timeseries_item_t));
+    v1_exchange_rates_timeseries_item_local_var->_library_owned = 1;
     v1_exchange_rates_timeseries_item_local_var->time_period_start = time_period_start;
     v1_exchange_rates_timeseries_item_local_var->time_period_end = time_period_end;
     v1_exchange_rates_timeseries_item_local_var->time_open = time_open;
@@ -27,8 +29,6 @@ static v1_exchange_rates_timeseries_item_t *v1_exchange_rates_timeseries_item_cr
     v1_exchange_rates_timeseries_item_local_var->rate_high = rate_high;
     v1_exchange_rates_timeseries_item_local_var->rate_low = rate_low;
     v1_exchange_rates_timeseries_item_local_var->rate_close = rate_close;
-
-    v1_exchange_rates_timeseries_item_local_var->_library_owned = 1;
     return v1_exchange_rates_timeseries_item_local_var;
 }
 
@@ -37,21 +37,48 @@ __attribute__((deprecated)) v1_exchange_rates_timeseries_item_t *v1_exchange_rat
     char *time_period_end,
     char *time_open,
     char *time_close,
-    double rate_open,
-    double rate_high,
-    double rate_low,
-    double rate_close
+    double *rate_open,
+    double *rate_high,
+    double *rate_low,
+    double *rate_close
     ) {
-    return v1_exchange_rates_timeseries_item_create_internal (
+    double *rate_open_copy = NULL;
+    if (rate_open) {
+        rate_open_copy = malloc(sizeof(double));
+        if (rate_open_copy) *rate_open_copy = *rate_open;
+    }
+    double *rate_high_copy = NULL;
+    if (rate_high) {
+        rate_high_copy = malloc(sizeof(double));
+        if (rate_high_copy) *rate_high_copy = *rate_high;
+    }
+    double *rate_low_copy = NULL;
+    if (rate_low) {
+        rate_low_copy = malloc(sizeof(double));
+        if (rate_low_copy) *rate_low_copy = *rate_low;
+    }
+    double *rate_close_copy = NULL;
+    if (rate_close) {
+        rate_close_copy = malloc(sizeof(double));
+        if (rate_close_copy) *rate_close_copy = *rate_close;
+    }
+    v1_exchange_rates_timeseries_item_t *result = v1_exchange_rates_timeseries_item_create_internal (
         time_period_start,
         time_period_end,
         time_open,
         time_close,
-        rate_open,
-        rate_high,
-        rate_low,
-        rate_close
+        rate_open_copy,
+        rate_high_copy,
+        rate_low_copy,
+        rate_close_copy
         );
+    if (!result) {
+        free(rate_open_copy);
+        free(rate_high_copy);
+        free(rate_low_copy);
+        free(rate_close_copy);
+    }
+    return result;
 }
 
 void v1_exchange_rates_timeseries_item_free(v1_exchange_rates_timeseries_item_t *v1_exchange_rates_timeseries_item) {
@@ -78,6 +105,22 @@ void v1_exchange_rates_timeseries_item_free(v1_exchange_rates_timeseries_item_t 
     if (v1_exchange_rates_timeseries_item->time_close) {
         free(v1_exchange_rates_timeseries_item->time_close);
         v1_exchange_rates_timeseries_item->time_close = NULL;
+    }
+    if (v1_exchange_rates_timeseries_item->rate_open) {
+        free(v1_exchange_rates_timeseries_item->rate_open);
+        v1_exchange_rates_timeseries_item->rate_open = NULL;
+    }
+    if (v1_exchange_rates_timeseries_item->rate_high) {
+        free(v1_exchange_rates_timeseries_item->rate_high);
+        v1_exchange_rates_timeseries_item->rate_high = NULL;
+    }
+    if (v1_exchange_rates_timeseries_item->rate_low) {
+        free(v1_exchange_rates_timeseries_item->rate_low);
+        v1_exchange_rates_timeseries_item->rate_low = NULL;
+    }
+    if (v1_exchange_rates_timeseries_item->rate_close) {
+        free(v1_exchange_rates_timeseries_item->rate_close);
+        v1_exchange_rates_timeseries_item->rate_close = NULL;
     }
     free(v1_exchange_rates_timeseries_item);
 }
@@ -119,7 +162,7 @@ cJSON *v1_exchange_rates_timeseries_item_convertToJSON(v1_exchange_rates_timeser
 
     // v1_exchange_rates_timeseries_item->rate_open
     if(v1_exchange_rates_timeseries_item->rate_open) {
-    if(cJSON_AddNumberToObject(item, "rate_open", v1_exchange_rates_timeseries_item->rate_open) == NULL) {
+    if(cJSON_AddNumberToObject(item, "rate_open", *v1_exchange_rates_timeseries_item->rate_open) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -127,7 +170,7 @@ cJSON *v1_exchange_rates_timeseries_item_convertToJSON(v1_exchange_rates_timeser
 
     // v1_exchange_rates_timeseries_item->rate_high
     if(v1_exchange_rates_timeseries_item->rate_high) {
-    if(cJSON_AddNumberToObject(item, "rate_high", v1_exchange_rates_timeseries_item->rate_high) == NULL) {
+    if(cJSON_AddNumberToObject(item, "rate_high", *v1_exchange_rates_timeseries_item->rate_high) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -135,7 +178,7 @@ cJSON *v1_exchange_rates_timeseries_item_convertToJSON(v1_exchange_rates_timeser
 
     // v1_exchange_rates_timeseries_item->rate_low
     if(v1_exchange_rates_timeseries_item->rate_low) {
-    if(cJSON_AddNumberToObject(item, "rate_low", v1_exchange_rates_timeseries_item->rate_low) == NULL) {
+    if(cJSON_AddNumberToObject(item, "rate_low", *v1_exchange_rates_timeseries_item->rate_low) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -143,7 +186,7 @@ cJSON *v1_exchange_rates_timeseries_item_convertToJSON(v1_exchange_rates_timeser
 
     // v1_exchange_rates_timeseries_item->rate_close
     if(v1_exchange_rates_timeseries_item->rate_close) {
-    if(cJSON_AddNumberToObject(item, "rate_close", v1_exchange_rates_timeseries_item->rate_close) == NULL) {
+    if(cJSON_AddNumberToObject(item, "rate_close", *v1_exchange_rates_timeseries_item->rate_close) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -159,6 +202,26 @@ fail:
 v1_exchange_rates_timeseries_item_t *v1_exchange_rates_timeseries_item_parseFromJSON(cJSON *v1_exchange_rates_timeseries_itemJSON){
 
     v1_exchange_rates_timeseries_item_t *v1_exchange_rates_timeseries_item_local_var = NULL;
+
+    char *time_period_start_local_str = NULL;
+
+    char *time_period_end_local_str = NULL;
+
+    char *time_open_local_str = NULL;
+
+    char *time_close_local_str = NULL;
+
+    // define the local variable for v1_exchange_rates_timeseries_item->rate_open
+    double *rate_open_local_var = NULL;
+
+    // define the local variable for v1_exchange_rates_timeseries_item->rate_high
+    double *rate_high_local_var = NULL;
+
+    // define the local variable for v1_exchange_rates_timeseries_item->rate_low
+    double *rate_low_local_var = NULL;
+
+    // define the local variable for v1_exchange_rates_timeseries_item->rate_close
+    double *rate_close_local_var = NULL;
 
     // v1_exchange_rates_timeseries_item->time_period_start
     cJSON *time_period_start = cJSON_GetObjectItemCaseSensitive(v1_exchange_rates_timeseries_itemJSON, "time_period_start");
@@ -218,6 +281,12 @@ v1_exchange_rates_timeseries_item_t *v1_exchange_rates_timeseries_item_parseFrom
     {
     goto end; //Numeric
     }
+    rate_open_local_var = malloc(sizeof(double));
+    if(!rate_open_local_var)
+    {
+        goto end;
+    }
+    *rate_open_local_var = rate_open->valuedouble;
     }
 
     // v1_exchange_rates_timeseries_item->rate_high
@@ -230,6 +299,12 @@ v1_exchange_rates_timeseries_item_t *v1_exchange_rates_timeseries_item_parseFrom
     {
     goto end; //Numeric
     }
+    rate_high_local_var = malloc(sizeof(double));
+    if(!rate_high_local_var)
+    {
+        goto end;
+    }
+    *rate_high_local_var = rate_high->valuedouble;
     }
 
     // v1_exchange_rates_timeseries_item->rate_low
@@ -242,6 +317,12 @@ v1_exchange_rates_timeseries_item_t *v1_exchange_rates_timeseries_item_parseFrom
     {
     goto end; //Numeric
     }
+    rate_low_local_var = malloc(sizeof(double));
+    if(!rate_low_local_var)
+    {
+        goto end;
+    }
+    *rate_low_local_var = rate_low->valuedouble;
     }
 
     // v1_exchange_rates_timeseries_item->rate_close
@@ -254,22 +335,69 @@ v1_exchange_rates_timeseries_item_t *v1_exchange_rates_timeseries_item_parseFrom
     {
     goto end; //Numeric
     }
+    rate_close_local_var = malloc(sizeof(double));
+    if(!rate_close_local_var)
+    {
+        goto end;
+    }
+    *rate_close_local_var = rate_close->valuedouble;
     }
 
 
+    if (time_period_start && !cJSON_IsNull(time_period_start)) time_period_start_local_str = strdup(time_period_start->valuestring);
+    if (time_period_end && !cJSON_IsNull(time_period_end)) time_period_end_local_str = strdup(time_period_end->valuestring);
+    if (time_open && !cJSON_IsNull(time_open)) time_open_local_str = strdup(time_open->valuestring);
+    if (time_close && !cJSON_IsNull(time_close)) time_close_local_str = strdup(time_close->valuestring);
+
     v1_exchange_rates_timeseries_item_local_var = v1_exchange_rates_timeseries_item_create_internal (
-        time_period_start && !cJSON_IsNull(time_period_start) ? strdup(time_period_start->valuestring) : NULL,
-        time_period_end && !cJSON_IsNull(time_period_end) ? strdup(time_period_end->valuestring) : NULL,
-        time_open && !cJSON_IsNull(time_open) ? strdup(time_open->valuestring) : NULL,
-        time_close && !cJSON_IsNull(time_close) ? strdup(time_close->valuestring) : NULL,
-        rate_open ? rate_open->valuedouble : 0,
-        rate_high ? rate_high->valuedouble : 0,
-        rate_low ? rate_low->valuedouble : 0,
-        rate_close ? rate_close->valuedouble : 0
+        time_period_start_local_str,
+        time_period_end_local_str,
+        time_open_local_str,
+        time_close_local_str,
+        rate_open_local_var,
+        rate_high_local_var,
+        rate_low_local_var,
+        rate_close_local_var
         );
+
+    if (!v1_exchange_rates_timeseries_item_local_var) {
+        goto end;
+    }
 
     return v1_exchange_rates_timeseries_item_local_var;
 end:
+    if (time_period_start_local_str) {
+        free(time_period_start_local_str);
+        time_period_start_local_str = NULL;
+    }
+    if (time_period_end_local_str) {
+        free(time_period_end_local_str);
+        time_period_end_local_str = NULL;
+    }
+    if (time_open_local_str) {
+        free(time_open_local_str);
+        time_open_local_str = NULL;
+    }
+    if (time_close_local_str) {
+        free(time_close_local_str);
+        time_close_local_str = NULL;
+    }
+    if (rate_open_local_var) {
+        free(rate_open_local_var);
+        rate_open_local_var = NULL;
+    }
+    if (rate_high_local_var) {
+        free(rate_high_local_var);
+        rate_high_local_var = NULL;
+    }
+    if (rate_low_local_var) {
+        free(rate_low_local_var);
+        rate_low_local_var = NULL;
+    }
+    if (rate_close_local_var) {
+        free(rate_close_local_var);
+        rate_close_local_var = NULL;
+    }
     return NULL;
 
 }

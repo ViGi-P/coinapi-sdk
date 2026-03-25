@@ -5,7 +5,7 @@ The `api_bricks_currencies_api_rest_historical` package is automatically generat
 
 - API version: v1
 - Package version: 1.0.0
-- Generator version: 7.20.0
+- Generator version: 7.21.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 For more information, please visit [https://www.finfeedapi.com](https://www.finfeedapi.com)
 
@@ -21,7 +21,7 @@ To be able to use it, you will need these dependencies in your own package that 
 
 * urllib3 >= 2.1.0, < 3.0.0
 * python-dateutil >= 2.8.2
-* pydantic >= 2
+* pydantic >= 2.11
 * typing-extensions >= 4.7.1
 
 ## Getting Started

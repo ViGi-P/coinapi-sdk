@@ -14,11 +14,11 @@ static v1_chain_network_address_t *v1_chain_network_address_create_internal(
     if (!v1_chain_network_address_local_var) {
         return NULL;
     }
+    memset(v1_chain_network_address_local_var, 0, sizeof(v1_chain_network_address_t));
+    v1_chain_network_address_local_var->_library_owned = 1;
     v1_chain_network_address_local_var->chain_id = chain_id;
     v1_chain_network_address_local_var->network_id = network_id;
     v1_chain_network_address_local_var->address = address;
-
-    v1_chain_network_address_local_var->_library_owned = 1;
     return v1_chain_network_address_local_var;
 }
 
@@ -27,11 +27,14 @@ __attribute__((deprecated)) v1_chain_network_address_t *v1_chain_network_address
     char *network_id,
     char *address
     ) {
-    return v1_chain_network_address_create_internal (
+    v1_chain_network_address_t *result = v1_chain_network_address_create_internal (
         chain_id,
         network_id,
         address
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void v1_chain_network_address_free(v1_chain_network_address_t *v1_chain_network_address) {
@@ -96,6 +99,12 @@ v1_chain_network_address_t *v1_chain_network_address_parseFromJSON(cJSON *v1_cha
 
     v1_chain_network_address_t *v1_chain_network_address_local_var = NULL;
 
+    char *chain_id_local_str = NULL;
+
+    char *network_id_local_str = NULL;
+
+    char *address_local_str = NULL;
+
     // v1_chain_network_address->chain_id
     cJSON *chain_id = cJSON_GetObjectItemCaseSensitive(v1_chain_network_addressJSON, "chain_id");
     if (cJSON_IsNull(chain_id)) {
@@ -133,14 +142,34 @@ v1_chain_network_address_t *v1_chain_network_address_parseFromJSON(cJSON *v1_cha
     }
 
 
+    if (chain_id && !cJSON_IsNull(chain_id)) chain_id_local_str = strdup(chain_id->valuestring);
+    if (network_id && !cJSON_IsNull(network_id)) network_id_local_str = strdup(network_id->valuestring);
+    if (address && !cJSON_IsNull(address)) address_local_str = strdup(address->valuestring);
+
     v1_chain_network_address_local_var = v1_chain_network_address_create_internal (
-        chain_id && !cJSON_IsNull(chain_id) ? strdup(chain_id->valuestring) : NULL,
-        network_id && !cJSON_IsNull(network_id) ? strdup(network_id->valuestring) : NULL,
-        address && !cJSON_IsNull(address) ? strdup(address->valuestring) : NULL
+        chain_id_local_str,
+        network_id_local_str,
+        address_local_str
         );
+
+    if (!v1_chain_network_address_local_var) {
+        goto end;
+    }
 
     return v1_chain_network_address_local_var;
 end:
+    if (chain_id_local_str) {
+        free(chain_id_local_str);
+        chain_id_local_str = NULL;
+    }
+    if (network_id_local_str) {
+        free(network_id_local_str);
+        network_id_local_str = NULL;
+    }
+    if (address_local_str) {
+        free(address_local_str);
+        address_local_str = NULL;
+    }
     return NULL;
 
 }

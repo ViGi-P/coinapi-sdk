@@ -23,10 +23,10 @@ typedef struct v1_exchange_rates_timeseries_item_t {
     char *time_period_end; //date time
     char *time_open; //date time
     char *time_close; //date time
-    double rate_open; //numeric
-    double rate_high; //numeric
-    double rate_low; //numeric
-    double rate_close; //numeric
+    double *rate_open; //numeric
+    double *rate_high; //numeric
+    double *rate_low; //numeric
+    double *rate_close; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } v1_exchange_rates_timeseries_item_t;
@@ -36,10 +36,10 @@ __attribute__((deprecated)) v1_exchange_rates_timeseries_item_t *v1_exchange_rat
     char *time_period_end,
     char *time_open,
     char *time_close,
-    double rate_open,
-    double rate_high,
-    double rate_low,
-    double rate_close
+    double *rate_open,
+    double *rate_high,
+    double *rate_low,
+    double *rate_close
 );
 
 void v1_exchange_rates_timeseries_item_free(v1_exchange_rates_timeseries_item_t *v1_exchange_rates_timeseries_item);

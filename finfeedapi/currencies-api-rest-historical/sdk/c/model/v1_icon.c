@@ -14,11 +14,11 @@ static v1_icon_t *v1_icon_create_internal(
     if (!v1_icon_local_var) {
         return NULL;
     }
+    memset(v1_icon_local_var, 0, sizeof(v1_icon_t));
+    v1_icon_local_var->_library_owned = 1;
     v1_icon_local_var->exchange_id = exchange_id;
     v1_icon_local_var->asset_id = asset_id;
     v1_icon_local_var->url = url;
-
-    v1_icon_local_var->_library_owned = 1;
     return v1_icon_local_var;
 }
 
@@ -27,11 +27,14 @@ __attribute__((deprecated)) v1_icon_t *v1_icon_create(
     char *asset_id,
     char *url
     ) {
-    return v1_icon_create_internal (
+    v1_icon_t *result = v1_icon_create_internal (
         exchange_id,
         asset_id,
         url
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void v1_icon_free(v1_icon_t *v1_icon) {
@@ -96,6 +99,12 @@ v1_icon_t *v1_icon_parseFromJSON(cJSON *v1_iconJSON){
 
     v1_icon_t *v1_icon_local_var = NULL;
 
+    char *exchange_id_local_str = NULL;
+
+    char *asset_id_local_str = NULL;
+
+    char *url_local_str = NULL;
+
     // v1_icon->exchange_id
     cJSON *exchange_id = cJSON_GetObjectItemCaseSensitive(v1_iconJSON, "exchange_id");
     if (cJSON_IsNull(exchange_id)) {
@@ -133,14 +142,34 @@ v1_icon_t *v1_icon_parseFromJSON(cJSON *v1_iconJSON){
     }
 
 
+    if (exchange_id && !cJSON_IsNull(exchange_id)) exchange_id_local_str = strdup(exchange_id->valuestring);
+    if (asset_id && !cJSON_IsNull(asset_id)) asset_id_local_str = strdup(asset_id->valuestring);
+    if (url && !cJSON_IsNull(url)) url_local_str = strdup(url->valuestring);
+
     v1_icon_local_var = v1_icon_create_internal (
-        exchange_id && !cJSON_IsNull(exchange_id) ? strdup(exchange_id->valuestring) : NULL,
-        asset_id && !cJSON_IsNull(asset_id) ? strdup(asset_id->valuestring) : NULL,
-        url && !cJSON_IsNull(url) ? strdup(url->valuestring) : NULL
+        exchange_id_local_str,
+        asset_id_local_str,
+        url_local_str
         );
+
+    if (!v1_icon_local_var) {
+        goto end;
+    }
 
     return v1_icon_local_var;
 end:
+    if (exchange_id_local_str) {
+        free(exchange_id_local_str);
+        exchange_id_local_str = NULL;
+    }
+    if (asset_id_local_str) {
+        free(asset_id_local_str);
+        asset_id_local_str = NULL;
+    }
+    if (url_local_str) {
+        free(url_local_str);
+        url_local_str = NULL;
+    }
     return NULL;
 
 }
