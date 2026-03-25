@@ -25,6 +25,7 @@ from uuid import UUID
 from api_bricks_coinapi_exchange_rates_api_rest_realtime.models.v1_chain_network_address import V1ChainNetworkAddress
 from typing import Optional, Set
 from typing_extensions import Self
+from pydantic_core import to_jsonable_python
 
 class V1Asset(BaseModel):
     """
@@ -54,7 +55,8 @@ class V1Asset(BaseModel):
     __properties: ClassVar[List[str]] = ["asset_id", "name", "type_is_crypto", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "data_symbols_count", "volume_1hrs_usd", "volume_1day_usd", "volume_1mth_usd", "price_usd", "id_icon", "supply_current", "supply_total", "supply_max", "chain_addresses", "data_start", "data_end"]
 
     model_config = ConfigDict(
-        populate_by_name=True,
+        validate_by_name=True,
+        validate_by_alias=True,
         validate_assignment=True,
         protected_namespaces=(),
     )
@@ -66,8 +68,7 @@ class V1Asset(BaseModel):
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return json.dumps(self.to_dict())
+        return json.dumps(to_jsonable_python(self.to_dict()))
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:

@@ -5,7 +5,7 @@ The `api_bricks_coinapi_exchange_rates_api_rest_realtime` package is automatical
 
 - API version: v1
 - Package version: 1.0.0
-- Generator version: 7.20.0
+- Generator version: 7.21.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 For more information, please visit [https://www.coinapi.io](https://www.coinapi.io)
 
@@ -21,7 +21,7 @@ To be able to use it, you will need these dependencies in your own package that 
 
 * urllib3 >= 2.1.0, < 3.0.0
 * python-dateutil >= 2.8.2
-* pydantic >= 2
+* pydantic >= 2.11
 * typing-extensions >= 4.7.1
 
 ## Getting Started
