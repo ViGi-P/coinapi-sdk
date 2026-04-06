@@ -18,11 +18,11 @@
 __version__ = "1.0.0"
 
 # import apis into sdk package
-from api_bricks_sec_api_rest.api.content_extraction_api import ContentExtractionApi
-from api_bricks_sec_api_rest.api.file_download_api import FileDownloadApi
-from api_bricks_sec_api_rest.api.filing_metadata_api import FilingMetadataApi
-from api_bricks_sec_api_rest.api.full_text_search_api import FullTextSearchApi
-from api_bricks_sec_api_rest.api.xbrl_conversion_api import XBRLConversionApi
+from api_bricks_sec_api_rest.api.download_api import DownloadApi
+from api_bricks_sec_api_rest.api.extractor_api import ExtractorApi
+from api_bricks_sec_api_rest.api.filings_api import FilingsApi
+from api_bricks_sec_api_rest.api.full_text_api import FullTextApi
+from api_bricks_sec_api_rest.api.xbrl_converter_api import XbrlConverterApi
 
 # import ApiClient
 from api_bricks_sec_api_rest.api_response import ApiResponse

@@ -25,11 +25,11 @@ require 'openapi_client/models/mvc_problem_details'
 require 'openapi_client/models/mvc_validation_problem_details'
 
 # APIs
-require 'openapi_client/api/content_extraction_api'
-require 'openapi_client/api/file_download_api'
-require 'openapi_client/api/filing_metadata_api'
-require 'openapi_client/api/full_text_search_api'
-require 'openapi_client/api/xbrl_conversion_api'
+require 'openapi_client/api/download_api'
+require 'openapi_client/api/extractor_api'
+require 'openapi_client/api/filings_api'
+require 'openapi_client/api/full_text_api'
+require 'openapi_client/api/xbrl_converter_api'
 
 module OpenapiClient
   class << self

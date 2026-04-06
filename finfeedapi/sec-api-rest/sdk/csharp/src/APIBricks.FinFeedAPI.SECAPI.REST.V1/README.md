@@ -60,9 +60,9 @@ namespace YourProject
         public static async Task Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
-            var api = host.Services.GetRequiredService<IContentExtractionApi>();
-            V1ExtractorGetApiResponse apiResponse = await api.V1ExtractorGetAsync("todo");
-            Dictionary<string, Object> model = apiResponse.Ok();
+            var api = host.Services.GetRequiredService<IDownloadApi>();
+            V1DownloadGetApiResponse apiResponse = await api.V1DownloadGetAsync("todo");
+            object model = apiResponse.Ok();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) => Host.CreateDefaultBuilder(args)
@@ -178,7 +178,7 @@ Authentication schemes defined for the API:
 - packageCompany: OpenAPI
 - packageCopyright: No Copyright
 - packageDescription: A library generated from a OpenAPI doc
-- packageGuid: {ACDD2880-EE73-4D25-8F5D-5DEF0E567528}
+- packageGuid: {7694E024-CE0E-4B4B-ADB0-43AB7C4B354E}
 - packageName: APIBricks.FinFeedAPI.SECAPI.REST.V1
 - packageTags: 
 - packageTitle: OpenAPI Library

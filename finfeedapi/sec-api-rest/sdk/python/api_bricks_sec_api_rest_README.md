@@ -61,17 +61,15 @@ configuration = api_bricks_sec_api_rest.Configuration(
 # Enter a context with an instance of the API client
 with api_bricks_sec_api_rest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = api_bricks_sec_api_rest.ContentExtractionApi(api_client)
-    accession_number = 'accession_number_example' # str | The SEC filing accession number used to retrieve the filing from EDGAR database.
-    type = api_bricks_sec_api_rest.DTOExtractorType() # DTOExtractorType | Result type (text or html, default: text) (optional)
+    api_instance = api_bricks_sec_api_rest.DownloadApi(api_client)
+    accession_no = 'accession_no_example' # str | SEC filing accession number in format: 0000000000-00-000000
+    file_name = 'file_name_example' # str | Name of the file to download from the filing
 
     try:
-        # Extract and classify SEC filing content
-        api_response = api_instance.v1_extractor_get(accession_number, type=type)
-        print("The response of ContentExtractionApi->v1_extractor_get:\n")
-        pprint(api_response)
+        # Download file from SEC EDGAR archive
+        api_instance.v1_download_get(accession_no, file_name)
     except ApiException as e:
-        print("Exception when calling ContentExtractionApi->v1_extractor_get: %s\n" % e)
+        print("Exception when calling DownloadApi->v1_download_get: %s\n" % e)
 
 ```
 
@@ -81,12 +79,12 @@ All URIs are relative to *https://api.sec.finfeedapi.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ContentExtractionApi* | [**v1_extractor_get**](api_bricks_sec_api_rest/docs/ContentExtractionApi.md#v1_extractor_get) | **GET** /v1/extractor | Extract and classify SEC filing content
-*ContentExtractionApi* | [**v1_extractor_item_get**](api_bricks_sec_api_rest/docs/ContentExtractionApi.md#v1_extractor_item_get) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
-*FileDownloadApi* | [**v1_download_get**](api_bricks_sec_api_rest/docs/FileDownloadApi.md#v1_download_get) | **GET** /v1/download | Download file from SEC EDGAR archive
-*FilingMetadataApi* | [**v1_filings_get**](api_bricks_sec_api_rest/docs/FilingMetadataApi.md#v1_filings_get) | **GET** /v1/filings | Query SEC filing metadata
-*FullTextSearchApi* | [**v1_full_text_get**](api_bricks_sec_api_rest/docs/FullTextSearchApi.md#v1_full_text_get) | **GET** /v1/full-text | Full-text search of SEC filing documents
-*XBRLConversionApi* | [**v1_xbrl_converter_get**](api_bricks_sec_api_rest/docs/XBRLConversionApi.md#v1_xbrl_converter_get) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
+*DownloadApi* | [**v1_download_get**](api_bricks_sec_api_rest/docs/DownloadApi.md#v1_download_get) | **GET** /v1/download | Download file from SEC EDGAR archive
+*ExtractorApi* | [**v1_extractor_get**](api_bricks_sec_api_rest/docs/ExtractorApi.md#v1_extractor_get) | **GET** /v1/extractor | Extract and classify SEC filing content
+*ExtractorApi* | [**v1_extractor_item_get**](api_bricks_sec_api_rest/docs/ExtractorApi.md#v1_extractor_item_get) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
+*FilingsApi* | [**v1_filings_get**](api_bricks_sec_api_rest/docs/FilingsApi.md#v1_filings_get) | **GET** /v1/filings | Query SEC filing metadata
+*FullTextApi* | [**v1_full_text_get**](api_bricks_sec_api_rest/docs/FullTextApi.md#v1_full_text_get) | **GET** /v1/full-text | Full-text search of SEC filing documents
+*XbrlConverterApi* | [**v1_xbrl_converter_get**](api_bricks_sec_api_rest/docs/XbrlConverterApi.md#v1_xbrl_converter_get) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
 
 
 ## Documentation For Models

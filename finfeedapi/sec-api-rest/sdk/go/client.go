@@ -50,15 +50,15 @@ type APIClient struct {
 
 	// API Services
 
-	ContentExtractionAPI *ContentExtractionAPIService
+	DownloadAPI *DownloadAPIService
 
-	FileDownloadAPI *FileDownloadAPIService
+	ExtractorAPI *ExtractorAPIService
 
-	FilingMetadataAPI *FilingMetadataAPIService
+	FilingsAPI *FilingsAPIService
 
-	FullTextSearchAPI *FullTextSearchAPIService
+	FullTextAPI *FullTextAPIService
 
-	XBRLConversionAPI *XBRLConversionAPIService
+	XbrlConverterAPI *XbrlConverterAPIService
 }
 
 type service struct {
@@ -77,11 +77,11 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.ContentExtractionAPI = (*ContentExtractionAPIService)(&c.common)
-	c.FileDownloadAPI = (*FileDownloadAPIService)(&c.common)
-	c.FilingMetadataAPI = (*FilingMetadataAPIService)(&c.common)
-	c.FullTextSearchAPI = (*FullTextSearchAPIService)(&c.common)
-	c.XBRLConversionAPI = (*XBRLConversionAPIService)(&c.common)
+	c.DownloadAPI = (*DownloadAPIService)(&c.common)
+	c.ExtractorAPI = (*ExtractorAPIService)(&c.common)
+	c.FilingsAPI = (*FilingsAPIService)(&c.common)
+	c.FullTextAPI = (*FullTextAPIService)(&c.common)
+	c.XbrlConverterAPI = (*XbrlConverterAPIService)(&c.common)
 
 	return c
 }

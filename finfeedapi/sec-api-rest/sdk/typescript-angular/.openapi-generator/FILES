@@ -4,11 +4,11 @@ README.md
 api.base.service.ts
 api.module.ts
 api/api.ts
-api/contentExtraction.service.ts
-api/fileDownload.service.ts
-api/filingMetadata.service.ts
-api/fullTextSearch.service.ts
-api/xBRLConversion.service.ts
+api/download.service.ts
+api/extractor.service.ts
+api/filings.service.ts
+api/fullText.service.ts
+api/xbrlConverter.service.ts
 configuration.ts
 encoder.ts
 git_push.sh

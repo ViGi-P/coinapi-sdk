@@ -1,12 +1,12 @@
 .openapi-generator-ignore
-API/Client/ContentExtractionApi.js
 API/Client/DTOExtractorType.js
 API/Client/DTOFilingMetadataDto.js
 API/Client/DTOFilingSortBy.js
 API/Client/DTOSecFilingResultDto.js
-API/Client/FileDownloadApi.js
-API/Client/FilingMetadataApi.js
-API/Client/FullTextSearchApi.js
+API/Client/DownloadApi.js
+API/Client/ExtractorApi.js
+API/Client/FilingsApi.js
+API/Client/FullTextApi.js
 API/Client/MvcProblemDetails.js
 API/Client/MvcValidationProblemDetails.js
-API/Client/XBRLConversionApi.js
+API/Client/XbrlConverterApi.js

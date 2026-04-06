@@ -6,7 +6,7 @@ This Groovy package, using the [http-builder-ng library](https://http-builder-ng
 
 - API version: v1
 - Package version: v1
-- Build date: 2025-06-16T09:41:09.886871040Z[Etc/UTC]
+- Build date: 2026-04-06T06:06:26.869174111Z[Etc/UTC]
 - Generator version: 7.13.0
 - Build package: org.openapitools.codegen.languages.GroovyClientCodegen
 For more information, please visit [https://www.coinapi.io](https://www.coinapi.io)
@@ -34,16 +34,14 @@ Then, run:
 
 
 ```groovy
-def apiInstance = new ContentExtractionApi()
-def accessionNumber = "accessionNumber_example" // String | The SEC filing accession number used to retrieve the filing from EDGAR database.
-def type = DTOExtractorType.fromValue("text") // DTOExtractorType | Result type (text or html, default: text)
+def apiInstance = new DownloadApi()
+def accessionNo = "accessionNo_example" // String | SEC filing accession number in format: 0000000000-00-000000
+def fileName = "fileName_example" // String | Name of the file to download from the filing
 
-apiInstance.v1ExtractorGet(accessionNumber, type)
+apiInstance.v1DownloadGet(accessionNo, fileName)
     {
     // on success
-    def result = (Map&lt;String, Object&gt;)it
-    println result
-    
+        println it
 }
     {
     // on failure

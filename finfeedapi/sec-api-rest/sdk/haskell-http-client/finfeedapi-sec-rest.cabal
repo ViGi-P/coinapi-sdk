@@ -66,11 +66,11 @@ library
   exposed-modules:
       FinFeedAPISECREST
       FinFeedAPISECREST.API
-      FinFeedAPISECREST.API.ContentExtraction
-      FinFeedAPISECREST.API.FileDownload
-      FinFeedAPISECREST.API.FilingMetadata
-      FinFeedAPISECREST.API.FullTextSearch
-      FinFeedAPISECREST.API.XBRLConversion
+      FinFeedAPISECREST.API.Download
+      FinFeedAPISECREST.API.Extractor
+      FinFeedAPISECREST.API.Filings
+      FinFeedAPISECREST.API.FullText
+      FinFeedAPISECREST.API.XbrlConverter
       FinFeedAPISECREST.Client
       FinFeedAPISECREST.Core
       FinFeedAPISECREST.Logging

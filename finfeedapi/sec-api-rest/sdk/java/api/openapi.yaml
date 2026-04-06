@@ -15,20 +15,20 @@ security:
 - APIKey: []
 - JWT: []
 tags:
-- description: Provides endpoints for extracting and classifying content from SEC
-    filing HTML documents.
-  name: Extractor
-- description: |-
-    Provides endpoints for querying historical SEC filing metadata.
-    Allows users to filter filings based on criteria like CIK, form type, date ranges, etc.
-  name: Filings
+- description: Provides endpoints for converting XBRL data to JSON format from various
+    SEC filing sources.
+  name: XbrlConverter
 - description: |-
     Provides endpoints for performing full-text searches on historical SEC filing documents.
     Allows users to query filings based on various criteria such as form type, date ranges, and text content.
   name: FullText
-- description: Provides endpoints for converting XBRL data to JSON format from various
-    SEC filing sources.
-  name: XbrlConverter
+- description: |-
+    Provides endpoints for querying historical SEC filing metadata.
+    Allows users to filter filings based on criteria like CIK, form type, date ranges, etc.
+  name: Filings
+- description: Provides endpoints for extracting and classifying content from SEC
+    filing HTML documents.
+  name: Extractor
 - description: |-
     Provides endpoints for downloading files directly from the SEC EDGAR archive.
     Allows users to download specific filing documents by accession number and filename.
@@ -36,33 +36,20 @@ tags:
 paths:
   /v1/download:
     get:
-      description: |-
-        Downloads a specific file from the SEC EDGAR archive using the accession number and filename.
-        The file is streamed directly from the SEC servers to the client.
-
-        ### Accession Number Format
-        Accession numbers must be in the format: 0000000000-00-000000 (10 digits, dash, 2 digits, dash, 6 digits)
-
-        ### File Name Examples
-        - Primary documents: `d123456d10k.htm`, `d789012d8k.htm`
-        - XBRL files: `d123456d10k_htm.xml`, `FilingSummary.xml`
-        - Exhibits: `d123456dexhibit99.htm`, `d123456dex101.htm`
-
-        ### File Types
-        The endpoint supports downloading various file types from SEC filings:
-        - HTML documents (.htm, .html)
-        - XBRL files (.xml, .xsd)
-        - Text files (.txt)
-        - PDF files (.pdf)
-        - Other document formats as submitted to SEC
-
-        :::tip
-        You can find available filenames for a specific filing using the `/v1/filings` endpoint first
-        :::
-
-        :::warning
-        This endpoint streams files directly from the SEC. Large files may take longer to download.
-        :::
+      description: "Downloads a specific file from the SEC EDGAR archive using the\
+        \ accession number and filename.\nThe file is streamed directly from the SEC\
+        \ servers to the client.\n            \n### Accession Number Format\nAccession\
+        \ numbers must be in the format: 0000000000-00-000000 (10 digits, dash, 2\
+        \ digits, dash, 6 digits)\n            \n### File Name Examples\n- Primary\
+        \ documents: `d123456d10k.htm`, `d789012d8k.htm`\n- XBRL files: `d123456d10k_htm.xml`,\
+        \ `FilingSummary.xml`\n- Exhibits: `d123456dexhibit99.htm`, `d123456dex101.htm`\n\
+        \            \n### File Types\nThe endpoint supports downloading various file\
+        \ types from SEC filings:\n- HTML documents (.htm, .html)\n- XBRL files (.xml,\
+        \ .xsd)\n- Text files (.txt)\n- PDF files (.pdf)\n- Other document formats\
+        \ as submitted to SEC\n            \n:::tip\nYou can find available filenames\
+        \ for a specific filing using the `/v1/filings` endpoint first\n:::\n    \
+        \        \n:::warning\nThis endpoint streams files directly from the SEC.\
+        \ Large files may take longer to download.\n:::"
       parameters:
       - description: "SEC filing accession number in format: 0000000000-00-000000"
         explode: true
@@ -119,7 +106,7 @@ paths:
           description: Server error
       summary: Download file from SEC EDGAR archive
       tags:
-      - File Download
+      - Download
       x-accepts:
       - application/json
       - application/octet-stream
@@ -204,7 +191,7 @@ paths:
           description: Server error
       summary: Extract and classify SEC filing content
       tags:
-      - Content Extraction
+      - Extractor
       x-accepts:
       - application/json
   /v1/extractor/item:
@@ -273,7 +260,7 @@ paths:
           description: Server error
       summary: Extract specific item content from SEC filing
       tags:
-      - Content Extraction
+      - Extractor
       x-accepts:
       - application/json
   /v1/filings:
@@ -455,7 +442,7 @@ paths:
           description: Server error
       summary: Query SEC filing metadata
       tags:
-      - Filing Metadata
+      - Filings
       x-accepts:
       - application/json
   /v1/full-text:
@@ -609,7 +596,7 @@ paths:
           description: Server error
       summary: Full-text search of SEC filing documents
       tags:
-      - Full Text Search
+      - FullText
       x-accepts:
       - application/json
   /v1/xbrl-converter:
@@ -851,7 +838,7 @@ paths:
           description: Server error
       summary: Convert XBRL data to JSON format
       tags:
-      - XBRL Conversion
+      - XbrlConverter
       x-accepts:
       - application/json
 components:

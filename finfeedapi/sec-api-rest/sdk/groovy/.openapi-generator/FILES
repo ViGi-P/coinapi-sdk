@@ -2,11 +2,11 @@
 README.md
 build.gradle
 src/main/groovy/org/openapitools/api/ApiUtils.groovy
-src/main/groovy/org/openapitools/api/ContentExtractionApi.groovy
-src/main/groovy/org/openapitools/api/FileDownloadApi.groovy
-src/main/groovy/org/openapitools/api/FilingMetadataApi.groovy
-src/main/groovy/org/openapitools/api/FullTextSearchApi.groovy
-src/main/groovy/org/openapitools/api/XbrlConversionApi.groovy
+src/main/groovy/org/openapitools/api/DownloadApi.groovy
+src/main/groovy/org/openapitools/api/ExtractorApi.groovy
+src/main/groovy/org/openapitools/api/FilingsApi.groovy
+src/main/groovy/org/openapitools/api/FullTextApi.groovy
+src/main/groovy/org/openapitools/api/XbrlConverterApi.groovy
 src/main/groovy/org/openapitools/model/DTOExtractorType.groovy
 src/main/groovy/org/openapitools/model/DTOFilingMetadataDto.groovy
 src/main/groovy/org/openapitools/model/DTOFilingSortBy.groovy

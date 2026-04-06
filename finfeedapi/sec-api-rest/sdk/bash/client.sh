@@ -96,13 +96,13 @@ declare -a result_color_table=( "$WHITE" "$WHITE" "$GREEN" "$YELLOW" "$WHITE" "$
 # 0 - optional
 # 1 - required
 declare -A operation_parameters_minimum_occurrences
+operation_parameters_minimum_occurrences["v1DownloadGet:::accession_no"]=1
+operation_parameters_minimum_occurrences["v1DownloadGet:::file_name"]=1
 operation_parameters_minimum_occurrences["v1ExtractorGet:::accession_number"]=1
 operation_parameters_minimum_occurrences["v1ExtractorGet:::type"]=0
 operation_parameters_minimum_occurrences["v1ExtractorItemGet:::accession_number"]=1
 operation_parameters_minimum_occurrences["v1ExtractorItemGet:::item_number"]=1
 operation_parameters_minimum_occurrences["v1ExtractorItemGet:::type"]=0
-operation_parameters_minimum_occurrences["v1DownloadGet:::accession_no"]=1
-operation_parameters_minimum_occurrences["v1DownloadGet:::file_name"]=1
 operation_parameters_minimum_occurrences["v1FilingsGet:::cik"]=0
 operation_parameters_minimum_occurrences["v1FilingsGet:::ticker"]=0
 operation_parameters_minimum_occurrences["v1FilingsGet:::form_type"]=0
@@ -135,13 +135,13 @@ operation_parameters_minimum_occurrences["v1XbrlConverterGet:::accession-no"]=0
 # N - N values
 # 0 - unlimited
 declare -A operation_parameters_maximum_occurrences
+operation_parameters_maximum_occurrences["v1DownloadGet:::accession_no"]=0
+operation_parameters_maximum_occurrences["v1DownloadGet:::file_name"]=0
 operation_parameters_maximum_occurrences["v1ExtractorGet:::accession_number"]=0
 operation_parameters_maximum_occurrences["v1ExtractorGet:::type"]=0
 operation_parameters_maximum_occurrences["v1ExtractorItemGet:::accession_number"]=0
 operation_parameters_maximum_occurrences["v1ExtractorItemGet:::item_number"]=0
 operation_parameters_maximum_occurrences["v1ExtractorItemGet:::type"]=0
-operation_parameters_maximum_occurrences["v1DownloadGet:::accession_no"]=0
-operation_parameters_maximum_occurrences["v1DownloadGet:::file_name"]=0
 operation_parameters_maximum_occurrences["v1FilingsGet:::cik"]=0
 operation_parameters_maximum_occurrences["v1FilingsGet:::ticker"]=0
 operation_parameters_maximum_occurrences["v1FilingsGet:::form_type"]=0
@@ -171,13 +171,13 @@ operation_parameters_maximum_occurrences["v1XbrlConverterGet:::accession-no"]=0
 # The type of collection for specifying multiple values for parameter:
 # - multi, csv, ssv, tsv
 declare -A operation_parameters_collection_type
+operation_parameters_collection_type["v1DownloadGet:::accession_no"]=""
+operation_parameters_collection_type["v1DownloadGet:::file_name"]=""
 operation_parameters_collection_type["v1ExtractorGet:::accession_number"]=""
 operation_parameters_collection_type["v1ExtractorGet:::type"]=""
 operation_parameters_collection_type["v1ExtractorItemGet:::accession_number"]=""
 operation_parameters_collection_type["v1ExtractorItemGet:::item_number"]=""
 operation_parameters_collection_type["v1ExtractorItemGet:::type"]=""
-operation_parameters_collection_type["v1DownloadGet:::accession_no"]=""
-operation_parameters_collection_type["v1DownloadGet:::file_name"]=""
 operation_parameters_collection_type["v1FilingsGet:::cik"]=""
 operation_parameters_collection_type["v1FilingsGet:::ticker"]=""
 operation_parameters_collection_type["v1FilingsGet:::form_type"]=""
@@ -609,32 +609,32 @@ EOF
     echo ""
     echo -e "${BOLD}${WHITE}Operations (grouped by tags)${OFF}"
     echo ""
-    echo -e "${BOLD}${WHITE}[contentExtraction]${OFF}"
+    echo -e "${BOLD}${WHITE}[download]${OFF}"
+read -r -d '' ops <<EOF
+  ${CYAN}v1DownloadGet${OFF};Download file from SEC EDGAR archive (AUTH) (AUTH)
+EOF
+echo "  $ops" | column -t -s ';'
+    echo ""
+    echo -e "${BOLD}${WHITE}[extractor]${OFF}"
 read -r -d '' ops <<EOF
   ${CYAN}v1ExtractorGet${OFF};Extract and classify SEC filing content (AUTH) (AUTH)
   ${CYAN}v1ExtractorItemGet${OFF};Extract specific item content from SEC filing (AUTH) (AUTH)
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
-    echo -e "${BOLD}${WHITE}[fileDownload]${OFF}"
-read -r -d '' ops <<EOF
-  ${CYAN}v1DownloadGet${OFF};Download file from SEC EDGAR archive (AUTH) (AUTH)
-EOF
-echo "  $ops" | column -t -s ';'
-    echo ""
-    echo -e "${BOLD}${WHITE}[filingMetadata]${OFF}"
+    echo -e "${BOLD}${WHITE}[filings]${OFF}"
 read -r -d '' ops <<EOF
   ${CYAN}v1FilingsGet${OFF};Query SEC filing metadata (AUTH) (AUTH)
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
-    echo -e "${BOLD}${WHITE}[fullTextSearch]${OFF}"
+    echo -e "${BOLD}${WHITE}[fullText]${OFF}"
 read -r -d '' ops <<EOF
   ${CYAN}v1FullTextGet${OFF};Full-text search of SEC filing documents (AUTH) (AUTH)
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
-    echo -e "${BOLD}${WHITE}[xBRLConversion]${OFF}"
+    echo -e "${BOLD}${WHITE}[xbrlConverter]${OFF}"
 read -r -d '' ops <<EOF
   ${CYAN}v1XbrlConverterGet${OFF};Convert XBRL data to JSON format (AUTH) (AUTH)
 EOF
@@ -690,6 +690,58 @@ print_version() {
     echo ""
 }
 
+##############################################################################
+#
+# Print help for v1DownloadGet operation
+#
+##############################################################################
+print_v1DownloadGet_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}v1DownloadGet - Download file from SEC EDGAR archive${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo -e "Downloads a specific file from the SEC EDGAR archive using the accession number and filename.
+The file is streamed directly from the SEC servers to the client.
+            
+### Accession Number Format
+Accession numbers must be in the format: 0000000000-00-000000 (10 digits, dash, 2 digits, dash, 6 digits)
+            
+### File Name Examples
+- Primary documents: 'd123456d10k.htm', 'd789012d8k.htm'
+- XBRL files: 'd123456d10k_htm.xml', 'FilingSummary.xml'
+- Exhibits: 'd123456dexhibit99.htm', 'd123456dex101.htm'
+            
+### File Types
+The endpoint supports downloading various file types from SEC filings:
+- HTML documents (.htm, .html)
+- XBRL files (.xml, .xsd)
+- Text files (.txt)
+- PDF files (.pdf)
+- Other document formats as submitted to SEC
+            
+:::tip
+You can find available filenames for a specific filing using the '/v1/filings' endpoint first
+:::
+            
+:::warning
+This endpoint streams files directly from the SEC. Large files may take longer to download.
+:::" | paste -sd' ' | fold -sw 80
+    echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}accession_no${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - SEC filing accession number in format: 0000000000-00-000000${YELLOW} Specify as: accession_no=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}file_name${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Name of the file to download from the filing${YELLOW} Specify as: file_name=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;File downloaded successfully${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=400
+    echo -e "${result_color_table[${code:0:1}]}  400;Invalid request parameters${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=404
+    echo -e "${result_color_table[${code:0:1}]}  404;Filing or file not found${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=500
+    echo -e "${result_color_table[${code:0:1}]}  500;Server error${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
 ##############################################################################
 #
 # Print help for v1ExtractorGet operation
@@ -771,58 +823,6 @@ For best results, ensure the item number matches exactly with the filing's struc
     echo -e "${result_color_table[${code:0:1}]}  400;Invalid request${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
     code=404
     echo -e "${result_color_table[${code:0:1}]}  404;Filing or item not found${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-    code=500
-    echo -e "${result_color_table[${code:0:1}]}  500;Server error${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-}
-##############################################################################
-#
-# Print help for v1DownloadGet operation
-#
-##############################################################################
-print_v1DownloadGet_help() {
-    echo ""
-    echo -e "${BOLD}${WHITE}v1DownloadGet - Download file from SEC EDGAR archive${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e ""
-    echo -e "Downloads a specific file from the SEC EDGAR archive using the accession number and filename.
-The file is streamed directly from the SEC servers to the client.
-
-### Accession Number Format
-Accession numbers must be in the format: 0000000000-00-000000 (10 digits, dash, 2 digits, dash, 6 digits)
-
-### File Name Examples
-- Primary documents: 'd123456d10k.htm', 'd789012d8k.htm'
-- XBRL files: 'd123456d10k_htm.xml', 'FilingSummary.xml'
-- Exhibits: 'd123456dexhibit99.htm', 'd123456dex101.htm'
-
-### File Types
-The endpoint supports downloading various file types from SEC filings:
-- HTML documents (.htm, .html)
-- XBRL files (.xml, .xsd)
-- Text files (.txt)
-- PDF files (.pdf)
-- Other document formats as submitted to SEC
-
-:::tip
-You can find available filenames for a specific filing using the '/v1/filings' endpoint first
-:::
-
-:::warning
-This endpoint streams files directly from the SEC. Large files may take longer to download.
-:::" | paste -sd' ' | fold -sw 80
-    echo -e ""
-    echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}accession_no${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - SEC filing accession number in format: 0000000000-00-000000${YELLOW} Specify as: accession_no=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}file_name${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Name of the file to download from the filing${YELLOW} Specify as: file_name=value${OFF}" \
-        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo ""
-    echo -e "${BOLD}${WHITE}Responses${OFF}"
-    code=200
-    echo -e "${result_color_table[${code:0:1}]}  200;File downloaded successfully${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-    code=400
-    echo -e "${result_color_table[${code:0:1}]}  400;Invalid request parameters${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
-    code=404
-    echo -e "${result_color_table[${code:0:1}]}  404;Filing or file not found${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
     code=500
     echo -e "${result_color_table[${code:0:1}]}  500;Server error${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
 }
@@ -1051,6 +1051,42 @@ The API returns a JSON object containing:
 
 ##############################################################################
 #
+# Call v1DownloadGet operation
+#
+##############################################################################
+call_v1DownloadGet() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(accession_no file_name    )
+    local path
+
+    if ! path=$(build_request_path "/v1/download" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="GET"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    if [[ "$print_curl" = true ]]; then
+        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    else
+        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    fi
+}
+
+##############################################################################
+#
 # Call v1ExtractorGet operation
 #
 ##############################################################################
@@ -1100,42 +1136,6 @@ call_v1ExtractorItemGet() {
     local path
 
     if ! path=$(build_request_path "/v1/extractor/item" path_parameter_names query_parameter_names); then
-        ERROR_MSG=$path
-        exit 1
-    fi
-    local method="GET"
-    local headers_curl
-    headers_curl=$(header_arguments_to_curl)
-    if [[ -n $header_accept ]]; then
-        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
-    fi
-
-    local basic_auth_option=""
-    if [[ -n $basic_auth_credential ]]; then
-        basic_auth_option="-u ${basic_auth_credential}"
-    fi
-    if [[ "$print_curl" = true ]]; then
-        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    else
-        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
-    fi
-}
-
-##############################################################################
-#
-# Call v1DownloadGet operation
-#
-##############################################################################
-call_v1DownloadGet() {
-    # ignore error about 'path_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local path_parameter_names=()
-    # ignore error about 'query_parameter_names' being unused; passed by reference
-    # shellcheck disable=SC2034
-    local query_parameter_names=(accession_no file_name    )
-    local path
-
-    if ! path=$(build_request_path "/v1/download" path_parameter_names query_parameter_names); then
         ERROR_MSG=$path
         exit 1
     fi
@@ -1362,14 +1362,14 @@ case $key in
         OFF=""
         result_color_table=( "" "" "" "" "" "" "" )
     ;;
+    v1DownloadGet)
+    operation="v1DownloadGet"
+    ;;
     v1ExtractorGet)
     operation="v1ExtractorGet"
     ;;
     v1ExtractorItemGet)
     operation="v1ExtractorItemGet"
-    ;;
-    v1DownloadGet)
-    operation="v1DownloadGet"
     ;;
     v1FilingsGet)
     operation="v1FilingsGet"
@@ -1474,14 +1474,14 @@ fi
 
 # Run cURL command based on the operation ID
 case $operation in
+    v1DownloadGet)
+    call_v1DownloadGet
+    ;;
     v1ExtractorGet)
     call_v1ExtractorGet
     ;;
     v1ExtractorItemGet)
     call_v1ExtractorItemGet
-    ;;
-    v1DownloadGet)
-    call_v1DownloadGet
     ;;
     v1FilingsGet)
     call_v1FilingsGet

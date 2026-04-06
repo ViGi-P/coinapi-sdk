@@ -10,11 +10,11 @@ export 'package:openapi/src/auth/oauth.dart';
 export 'package:openapi/src/serializers.dart';
 export 'package:openapi/src/model/date.dart';
 
-export 'package:openapi/src/api/content_extraction_api.dart';
-export 'package:openapi/src/api/file_download_api.dart';
-export 'package:openapi/src/api/filing_metadata_api.dart';
-export 'package:openapi/src/api/full_text_search_api.dart';
-export 'package:openapi/src/api/xbrl_conversion_api.dart';
+export 'package:openapi/src/api/download_api.dart';
+export 'package:openapi/src/api/extractor_api.dart';
+export 'package:openapi/src/api/filings_api.dart';
+export 'package:openapi/src/api/full_text_api.dart';
+export 'package:openapi/src/api/xbrl_converter_api.dart';
 
 export 'package:openapi/src/model/dto_extractor_type.dart';
 export 'package:openapi/src/model/dto_filing_metadata_dto.dart';

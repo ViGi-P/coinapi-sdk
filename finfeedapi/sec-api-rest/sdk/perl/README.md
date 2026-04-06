@@ -232,11 +232,11 @@ cpanm --quiet --no-interactive Class::Accessor Test::Exception Test::More Log::A
 
 To load the API packages:
 ```perl
-use WWW::OpenAPIClient::ContentExtractionApi;
-use WWW::OpenAPIClient::FileDownloadApi;
-use WWW::OpenAPIClient::FilingMetadataApi;
-use WWW::OpenAPIClient::FullTextSearchApi;
-use WWW::OpenAPIClient::XBRLConversionApi;
+use WWW::OpenAPIClient::DownloadApi;
+use WWW::OpenAPIClient::ExtractorApi;
+use WWW::OpenAPIClient::FilingsApi;
+use WWW::OpenAPIClient::FullTextApi;
+use WWW::OpenAPIClient::XbrlConverterApi;
 
 ```
 
@@ -259,11 +259,11 @@ use lib 'lib';
 use strict;
 use warnings;
 # load the API package
-use WWW::OpenAPIClient::ContentExtractionApi;
-use WWW::OpenAPIClient::FileDownloadApi;
-use WWW::OpenAPIClient::FilingMetadataApi;
-use WWW::OpenAPIClient::FullTextSearchApi;
-use WWW::OpenAPIClient::XBRLConversionApi;
+use WWW::OpenAPIClient::DownloadApi;
+use WWW::OpenAPIClient::ExtractorApi;
+use WWW::OpenAPIClient::FilingsApi;
+use WWW::OpenAPIClient::FullTextApi;
+use WWW::OpenAPIClient::XbrlConverterApi;
 
 # load the models
 use WWW::OpenAPIClient::Object::DTOExtractorType;
@@ -277,22 +277,21 @@ use WWW::OpenAPIClient::Object::MvcValidationProblemDetails;
 use Data::Dumper;
 
 
-my $api_instance = WWW::OpenAPIClient::ContentExtractionApi->new(
+my $api_instance = WWW::OpenAPIClient::DownloadApi->new(
     # Configure API key authorization: APIKey
     api_key => {'Authorization' => 'YOUR_API_KEY'},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'Authorization' => 'Bearer'},
 );
 
-my $accession_number = "accession_number_example"; # string | The SEC filing accession number used to retrieve the filing from EDGAR database.
-my $type = new WWW::OpenAPIClient.DTOExtractorType(); # DTOExtractorType | Result type (text or html, default: text)
+my $accession_no = "accession_no_example"; # string | SEC filing accession number in format: 0000000000-00-000000
+my $file_name = "file_name_example"; # string | Name of the file to download from the filing
 
 eval {
-    my $result = $api_instance->v1_extractor_get(accession_number => $accession_number, type => $type);
-    print Dumper($result);
+    $api_instance->v1_download_get(accession_no => $accession_no, file_name => $file_name);
 };
 if ($@) {
-    warn "Exception when calling ContentExtractionApi->v1_extractor_get: $@\n";
+    warn "Exception when calling DownloadApi->v1_download_get: $@\n";
 }
 
 ```
@@ -303,12 +302,12 @@ All URIs are relative to *https://api.sec.finfeedapi.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ContentExtractionApi* | [**v1_extractor_get**](docs/ContentExtractionApi.md#v1_extractor_get) | **GET** /v1/extractor | Extract and classify SEC filing content
-*ContentExtractionApi* | [**v1_extractor_item_get**](docs/ContentExtractionApi.md#v1_extractor_item_get) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
-*FileDownloadApi* | [**v1_download_get**](docs/FileDownloadApi.md#v1_download_get) | **GET** /v1/download | Download file from SEC EDGAR archive
-*FilingMetadataApi* | [**v1_filings_get**](docs/FilingMetadataApi.md#v1_filings_get) | **GET** /v1/filings | Query SEC filing metadata
-*FullTextSearchApi* | [**v1_full_text_get**](docs/FullTextSearchApi.md#v1_full_text_get) | **GET** /v1/full-text | Full-text search of SEC filing documents
-*XBRLConversionApi* | [**v1_xbrl_converter_get**](docs/XBRLConversionApi.md#v1_xbrl_converter_get) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
+*DownloadApi* | [**v1_download_get**](docs/DownloadApi.md#v1_download_get) | **GET** /v1/download | Download file from SEC EDGAR archive
+*ExtractorApi* | [**v1_extractor_get**](docs/ExtractorApi.md#v1_extractor_get) | **GET** /v1/extractor | Extract and classify SEC filing content
+*ExtractorApi* | [**v1_extractor_item_get**](docs/ExtractorApi.md#v1_extractor_item_get) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
+*FilingsApi* | [**v1_filings_get**](docs/FilingsApi.md#v1_filings_get) | **GET** /v1/filings | Query SEC filing metadata
+*FullTextApi* | [**v1_full_text_get**](docs/FullTextApi.md#v1_full_text_get) | **GET** /v1/full-text | Full-text search of SEC filing documents
+*XbrlConverterApi* | [**v1_xbrl_converter_get**](docs/XbrlConverterApi.md#v1_xbrl_converter_get) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
 
 
 # DOCUMENTATION FOR MODELS

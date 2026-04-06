@@ -21,8 +21,8 @@ export(MvcProblemDetails)
 export(MvcValidationProblemDetails)
 
 # APIs
-export(ContentExtractionApi)
-export(FileDownloadApi)
-export(FilingMetadataApi)
-export(FullTextSearchApi)
-export(XBRLConversionApi)
+export(DownloadApi)
+export(ExtractorApi)
+export(FilingsApi)
+export(FullTextApi)
+export(XbrlConverterApi)

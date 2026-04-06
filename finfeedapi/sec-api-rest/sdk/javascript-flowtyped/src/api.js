@@ -334,10 +334,97 @@ export type MvcValidationProblemDetails = {
 
 
 /**
- * ContentExtractionApi - fetch parameter creator
+ * DownloadApi - fetch parameter creator
  * @export
  */
-export const ContentExtractionApiFetchParamCreator = function (configuration?: Configuration) {
+export const DownloadApiFetchParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Downloads a specific file from the SEC EDGAR archive using the accession number and filename. The file is streamed directly from the SEC servers to the client.              ### Accession Number Format Accession numbers must be in the format: 0000000000-00-000000 (10 digits, dash, 2 digits, dash, 6 digits)              ### File Name Examples - Primary documents: `d123456d10k.htm`, `d789012d8k.htm` - XBRL files: `d123456d10k_htm.xml`, `FilingSummary.xml` - Exhibits: `d123456dexhibit99.htm`, `d123456dex101.htm`              ### File Types The endpoint supports downloading various file types from SEC filings: - HTML documents (.htm, .html) - XBRL files (.xml, .xsd) - Text files (.txt) - PDF files (.pdf) - Other document formats as submitted to SEC              :::tip You can find available filenames for a specific filing using the `/v1/filings` endpoint first :::              :::warning This endpoint streams files directly from the SEC. Large files may take longer to download. :::
+         * @summary Download file from SEC EDGAR archive
+         * @throws {RequiredError}
+         */
+        v1DownloadGet(accessionNo: string, fileName: string, options: RequestOptions): FetchArgs {
+            // verify required parameter 'accessionNo' is not null or undefined
+            if (accessionNo === null || accessionNo === undefined) {
+                throw new RequiredError('accessionNo','Required parameter accessionNo was null or undefined when calling v1DownloadGet.');
+            }
+            // verify required parameter 'fileName' is not null or undefined
+            if (fileName === null || fileName === undefined) {
+                throw new RequiredError('fileName','Required parameter fileName was null or undefined when calling v1DownloadGet.');
+            }
+            const localVarPath = `/v1/download`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+
+            // authentication APIKey required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+
+            if (accessionNo !== undefined) {
+                localVarQueryParameter['accession_no'] = ((accessionNo:any):string);
+            }
+
+            if (fileName !== undefined) {
+                localVarQueryParameter['file_name'] = ((fileName:any):string);
+            }
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            localVarUrlObj.search = null;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+export type DownloadApiType = { 
+    v1DownloadGet(accessionNo: string, fileName: string, options?: RequestOptions): Promise<Response>,
+}
+
+/**
+ * DownloadApi - factory function to inject configuration 
+ * @export
+ */
+export const DownloadApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): DownloadApiType {
+    const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
+    return {
+        /**
+         * Downloads a specific file from the SEC EDGAR archive using the accession number and filename. The file is streamed directly from the SEC servers to the client.              ### Accession Number Format Accession numbers must be in the format: 0000000000-00-000000 (10 digits, dash, 2 digits, dash, 6 digits)              ### File Name Examples - Primary documents: `d123456d10k.htm`, `d789012d8k.htm` - XBRL files: `d123456d10k_htm.xml`, `FilingSummary.xml` - Exhibits: `d123456dexhibit99.htm`, `d123456dex101.htm`              ### File Types The endpoint supports downloading various file types from SEC filings: - HTML documents (.htm, .html) - XBRL files (.xml, .xsd) - Text files (.txt) - PDF files (.pdf) - Other document formats as submitted to SEC              :::tip You can find available filenames for a specific filing using the `/v1/filings` endpoint first :::              :::warning This endpoint streams files directly from the SEC. Large files may take longer to download. :::
+         * @summary Download file from SEC EDGAR archive
+         * @throws {RequiredError}
+         */
+        v1DownloadGet(accessionNo: string, fileName: string, options?: RequestOptions = {}): Promise<Response> {
+            const localVarFetchArgs = DownloadApiFetchParamCreator(configuration).v1DownloadGet(accessionNo, fileName, options);
+            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response;
+                } else {
+                    throw response;
+                }
+            });
+        },
+    }
+};
+
+
+/**
+ * ExtractorApi - fetch parameter creator
+ * @export
+ */
+export const ExtractorApiFetchParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * Retrieves filing content from the EDGAR database and intelligently classifies it according to form type and item categories.  ### Supported Form Types  Form Type | Description ----------|------------ 8-K      | Current report filing 10-K     | Annual report filing 10-Q     | Quarterly report filing  ### Content Classification - 8-K forms: Content classified by item numbers (e.g., 1.01, 2.01) - 10-K/10-Q forms: Items categorized by their respective part and item structure  :::note Both HTML and plain text documents are supported for content extraction. :::
@@ -438,17 +525,17 @@ export const ContentExtractionApiFetchParamCreator = function (configuration?: C
     }
 };
 
-export type ContentExtractionApiType = { 
+export type ExtractorApiType = { 
     v1ExtractorGet(accessionNumber: string, type?: DTOExtractorType, options?: RequestOptions): Promise<{ [key: string]: AnyType; }>,
 
     v1ExtractorItemGet(accessionNumber: string, itemNumber: string, type?: DTOExtractorType, options?: RequestOptions): Promise<string>,
 }
 
 /**
- * ContentExtractionApi - factory function to inject configuration 
+ * ExtractorApi - factory function to inject configuration 
  * @export
  */
-export const ContentExtractionApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): ContentExtractionApiType {
+export const ExtractorApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): ExtractorApiType {
     const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
     return {
         /**
@@ -457,7 +544,7 @@ export const ContentExtractionApi = function(configuration?: Configuration, fetc
          * @throws {RequiredError}
          */
         v1ExtractorGet(accessionNumber: string, type?: DTOExtractorType, options?: RequestOptions = {}): Promise<{ [key: string]: AnyType; }> {
-            const localVarFetchArgs = ContentExtractionApiFetchParamCreator(configuration).v1ExtractorGet(accessionNumber, type, options);
+            const localVarFetchArgs = ExtractorApiFetchParamCreator(configuration).v1ExtractorGet(accessionNumber, type, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -472,7 +559,7 @@ export const ContentExtractionApi = function(configuration?: Configuration, fetc
          * @throws {RequiredError}
          */
         v1ExtractorItemGet(accessionNumber: string, itemNumber: string, type?: DTOExtractorType, options?: RequestOptions = {}): Promise<string> {
-            const localVarFetchArgs = ContentExtractionApiFetchParamCreator(configuration).v1ExtractorItemGet(accessionNumber, itemNumber, type, options);
+            const localVarFetchArgs = ExtractorApiFetchParamCreator(configuration).v1ExtractorItemGet(accessionNumber, itemNumber, type, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -486,97 +573,10 @@ export const ContentExtractionApi = function(configuration?: Configuration, fetc
 
 
 /**
- * FileDownloadApi - fetch parameter creator
+ * FilingsApi - fetch parameter creator
  * @export
  */
-export const FileDownloadApiFetchParamCreator = function (configuration?: Configuration) {
-    return {
-        /**
-         * Downloads a specific file from the SEC EDGAR archive using the accession number and filename. The file is streamed directly from the SEC servers to the client.  ### Accession Number Format Accession numbers must be in the format: 0000000000-00-000000 (10 digits, dash, 2 digits, dash, 6 digits)  ### File Name Examples - Primary documents: `d123456d10k.htm`, `d789012d8k.htm` - XBRL files: `d123456d10k_htm.xml`, `FilingSummary.xml` - Exhibits: `d123456dexhibit99.htm`, `d123456dex101.htm`  ### File Types The endpoint supports downloading various file types from SEC filings: - HTML documents (.htm, .html) - XBRL files (.xml, .xsd) - Text files (.txt) - PDF files (.pdf) - Other document formats as submitted to SEC  :::tip You can find available filenames for a specific filing using the `/v1/filings` endpoint first :::  :::warning This endpoint streams files directly from the SEC. Large files may take longer to download. :::
-         * @summary Download file from SEC EDGAR archive
-         * @throws {RequiredError}
-         */
-        v1DownloadGet(accessionNo: string, fileName: string, options: RequestOptions): FetchArgs {
-            // verify required parameter 'accessionNo' is not null or undefined
-            if (accessionNo === null || accessionNo === undefined) {
-                throw new RequiredError('accessionNo','Required parameter accessionNo was null or undefined when calling v1DownloadGet.');
-            }
-            // verify required parameter 'fileName' is not null or undefined
-            if (fileName === null || fileName === undefined) {
-                throw new RequiredError('fileName','Required parameter fileName was null or undefined when calling v1DownloadGet.');
-            }
-            const localVarPath = `/v1/download`;
-            const localVarUrlObj = url.parse(localVarPath, true);
-            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
-            const localVarHeaderParameter = {};
-            const localVarQueryParameter = {};
-
-            // authentication APIKey required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
-
-            // authentication JWT required
-
-            if (accessionNo !== undefined) {
-                localVarQueryParameter['accession_no'] = ((accessionNo:any):string);
-            }
-
-            if (fileName !== undefined) {
-                localVarQueryParameter['file_name'] = ((fileName:any):string);
-            }
-
-            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            localVarUrlObj.search = null;
-            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-
-            return {
-                url: url.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-    }
-};
-
-export type FileDownloadApiType = { 
-    v1DownloadGet(accessionNo: string, fileName: string, options?: RequestOptions): Promise<Response>,
-}
-
-/**
- * FileDownloadApi - factory function to inject configuration 
- * @export
- */
-export const FileDownloadApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): FileDownloadApiType {
-    const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
-    return {
-        /**
-         * Downloads a specific file from the SEC EDGAR archive using the accession number and filename. The file is streamed directly from the SEC servers to the client.  ### Accession Number Format Accession numbers must be in the format: 0000000000-00-000000 (10 digits, dash, 2 digits, dash, 6 digits)  ### File Name Examples - Primary documents: `d123456d10k.htm`, `d789012d8k.htm` - XBRL files: `d123456d10k_htm.xml`, `FilingSummary.xml` - Exhibits: `d123456dexhibit99.htm`, `d123456dex101.htm`  ### File Types The endpoint supports downloading various file types from SEC filings: - HTML documents (.htm, .html) - XBRL files (.xml, .xsd) - Text files (.txt) - PDF files (.pdf) - Other document formats as submitted to SEC  :::tip You can find available filenames for a specific filing using the `/v1/filings` endpoint first :::  :::warning This endpoint streams files directly from the SEC. Large files may take longer to download. :::
-         * @summary Download file from SEC EDGAR archive
-         * @throws {RequiredError}
-         */
-        v1DownloadGet(accessionNo: string, fileName: string, options?: RequestOptions = {}): Promise<Response> {
-            const localVarFetchArgs = FileDownloadApiFetchParamCreator(configuration).v1DownloadGet(accessionNo, fileName, options);
-            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
-                if (response.status >= 200 && response.status < 300) {
-                    return response;
-                } else {
-                    throw response;
-                }
-            });
-        },
-    }
-};
-
-
-/**
- * FilingMetadataApi - fetch parameter creator
- * @export
- */
-export const FilingMetadataApiFetchParamCreator = function (configuration?: Configuration) {
+export const FilingsApiFetchParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
@@ -661,15 +661,15 @@ export const FilingMetadataApiFetchParamCreator = function (configuration?: Conf
     }
 };
 
-export type FilingMetadataApiType = { 
+export type FilingsApiType = { 
     v1FilingsGet(cik?: number, ticker?: string, formType?: string, fillingDateStart?: string, fillingDateEnd?: string, reportDateStart?: string, reportDateEnd?: string, itemsContain?: string, pageSize?: number, pageNumber?: number, sortBy?: DTOFilingSortBy, sortOrder?: string, options?: RequestOptions): Promise<Array<DTOFilingMetadataDto>>,
 }
 
 /**
- * FilingMetadataApi - factory function to inject configuration 
+ * FilingsApi - factory function to inject configuration 
  * @export
  */
-export const FilingMetadataApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): FilingMetadataApiType {
+export const FilingsApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): FilingsApiType {
     const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
     return {
         /**
@@ -678,7 +678,7 @@ export const FilingMetadataApi = function(configuration?: Configuration, fetch: 
          * @throws {RequiredError}
          */
         v1FilingsGet(cik?: number, ticker?: string, formType?: string, fillingDateStart?: string, fillingDateEnd?: string, reportDateStart?: string, reportDateEnd?: string, itemsContain?: string, pageSize?: number, pageNumber?: number, sortBy?: DTOFilingSortBy, sortOrder?: string, options?: RequestOptions = {}): Promise<Array<DTOFilingMetadataDto>> {
-            const localVarFetchArgs = FilingMetadataApiFetchParamCreator(configuration).v1FilingsGet(cik, ticker, formType, fillingDateStart, fillingDateEnd, reportDateStart, reportDateEnd, itemsContain, pageSize, pageNumber, sortBy, sortOrder, options);
+            const localVarFetchArgs = FilingsApiFetchParamCreator(configuration).v1FilingsGet(cik, ticker, formType, fillingDateStart, fillingDateEnd, reportDateStart, reportDateEnd, itemsContain, pageSize, pageNumber, sortBy, sortOrder, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -692,10 +692,10 @@ export const FilingMetadataApi = function(configuration?: Configuration, fetch: 
 
 
 /**
- * FullTextSearchApi - fetch parameter creator
+ * FullTextApi - fetch parameter creator
  * @export
  */
-export const FullTextSearchApiFetchParamCreator = function (configuration?: Configuration) {
+export const FullTextApiFetchParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
@@ -768,15 +768,15 @@ export const FullTextSearchApiFetchParamCreator = function (configuration?: Conf
     }
 };
 
-export type FullTextSearchApiType = { 
+export type FullTextApiType = { 
     v1FullTextGet(formType?: string, fillingDateStart?: string, fillingDateEnd?: string, textContains?: string, textNotContain?: string, pageSize?: number, pageNumber?: number, sortBy?: string, sortOrder?: string, options?: RequestOptions): Promise<Array<DTOSecFilingResultDto>>,
 }
 
 /**
- * FullTextSearchApi - factory function to inject configuration 
+ * FullTextApi - factory function to inject configuration 
  * @export
  */
-export const FullTextSearchApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): FullTextSearchApiType {
+export const FullTextApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): FullTextApiType {
     const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
     return {
         /**
@@ -785,7 +785,7 @@ export const FullTextSearchApi = function(configuration?: Configuration, fetch: 
          * @throws {RequiredError}
          */
         v1FullTextGet(formType?: string, fillingDateStart?: string, fillingDateEnd?: string, textContains?: string, textNotContain?: string, pageSize?: number, pageNumber?: number, sortBy?: string, sortOrder?: string, options?: RequestOptions = {}): Promise<Array<DTOSecFilingResultDto>> {
-            const localVarFetchArgs = FullTextSearchApiFetchParamCreator(configuration).v1FullTextGet(formType, fillingDateStart, fillingDateEnd, textContains, textNotContain, pageSize, pageNumber, sortBy, sortOrder, options);
+            const localVarFetchArgs = FullTextApiFetchParamCreator(configuration).v1FullTextGet(formType, fillingDateStart, fillingDateEnd, textContains, textNotContain, pageSize, pageNumber, sortBy, sortOrder, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -799,10 +799,10 @@ export const FullTextSearchApi = function(configuration?: Configuration, fetch: 
 
 
 /**
- * XBRLConversionApi - fetch parameter creator
+ * XbrlConverterApi - fetch parameter creator
  * @export
  */
-export const XBRLConversionApiFetchParamCreator = function (configuration?: Configuration) {
+export const XbrlConverterApiFetchParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * Converts XBRL data to JSON format using one of three possible input methods.  ### Input Methods  1. HTML URL (htm-url)    - URL of the filing ending with .htm or .html    - Both filing URLs and index page URLs are accepted    - Example: https://www.sec.gov/Archives/edgar/data/1318605/000156459021004599/tsla-10k_20201231.htm  2. XBRL URL (xbrl-url)    - URL of the XBRL file ending with .xml    - Can be found in the dataFiles array from Query API    - Example: https://www.sec.gov/Archives/edgar/data/1318605/000156459021004599/tsla-10k_20201231_htm.xml  3. Accession Number (accession-no)    - The SEC filing accession number    - Example: 0001564590-21-004599  :::note Only one of the three parameters should be provided. If multiple parameters are provided, the priority order is: 1. htm-url 2. xbrl-url 3. accession-no :::  ### Supported Filing Types  - Annual Reports (10-K) - Quarterly Reports (10-Q) - Current Reports (8-K) - Registration Statements (S-1, S-3) - Foreign Private Issuer Reports (20-F, 40-F)  ### Response Format  The API returns a JSON object containing: - Financial statements (Income Statement, Balance Sheet, Cash Flow Statement) - Accounting policies and footnotes - Company information - Filing metadata  ### Example Response ```json {   \"StatementsOfIncome\": {     \"RevenueFromContractWithCustomerExcludingAssessedTax\": [       {         \"decimals\": \"-6\",         \"unitRef\": \"U_USD\",         \"period\": {           \"startDate\": \"2023-07-01\",           \"endDate\": \"2024-06-30\"         },         \"value\": \"245122000000\"       }     ]   } } ```
@@ -851,15 +851,15 @@ export const XBRLConversionApiFetchParamCreator = function (configuration?: Conf
     }
 };
 
-export type XBRLConversionApiType = { 
+export type XbrlConverterApiType = { 
     v1XbrlConverterGet(htmUrl?: string, xbrlUrl?: string, accessionNo?: string, options?: RequestOptions): Promise<{ [key: string]: AnyType; }>,
 }
 
 /**
- * XBRLConversionApi - factory function to inject configuration 
+ * XbrlConverterApi - factory function to inject configuration 
  * @export
  */
-export const XBRLConversionApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): XBRLConversionApiType {
+export const XbrlConverterApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): XbrlConverterApiType {
     const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
     return {
         /**
@@ -868,7 +868,7 @@ export const XBRLConversionApi = function(configuration?: Configuration, fetch: 
          * @throws {RequiredError}
          */
         v1XbrlConverterGet(htmUrl?: string, xbrlUrl?: string, accessionNo?: string, options?: RequestOptions = {}): Promise<{ [key: string]: AnyType; }> {
-            const localVarFetchArgs = XBRLConversionApiFetchParamCreator(configuration).v1XbrlConverterGet(htmUrl, xbrlUrl, accessionNo, options);
+            const localVarFetchArgs = XbrlConverterApiFetchParamCreator(configuration).v1XbrlConverterGet(htmUrl, xbrlUrl, accessionNo, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -882,13 +882,13 @@ export const XBRLConversionApi = function(configuration?: Configuration, fetch: 
 
 
 export type ApiTypes = { 
-    ContentExtractionApi: ContentExtractionApiType,
+    DownloadApi: DownloadApiType,
 
-    FileDownloadApi: FileDownloadApiType,
+    ExtractorApi: ExtractorApiType,
 
-    FilingMetadataApi: FilingMetadataApiType,
+    FilingsApi: FilingsApiType,
 
-    FullTextSearchApi: FullTextSearchApiType,
+    FullTextApi: FullTextApiType,
 
-    XBRLConversionApi: XBRLConversionApiType,
+    XbrlConverterApi: XbrlConverterApiType,
  }

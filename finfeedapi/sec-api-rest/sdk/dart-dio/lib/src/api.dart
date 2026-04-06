@@ -9,11 +9,11 @@ import 'package:openapi/src/auth/api_key_auth.dart';
 import 'package:openapi/src/auth/basic_auth.dart';
 import 'package:openapi/src/auth/bearer_auth.dart';
 import 'package:openapi/src/auth/oauth.dart';
-import 'package:openapi/src/api/content_extraction_api.dart';
-import 'package:openapi/src/api/file_download_api.dart';
-import 'package:openapi/src/api/filing_metadata_api.dart';
-import 'package:openapi/src/api/full_text_search_api.dart';
-import 'package:openapi/src/api/xbrl_conversion_api.dart';
+import 'package:openapi/src/api/download_api.dart';
+import 'package:openapi/src/api/extractor_api.dart';
+import 'package:openapi/src/api/filings_api.dart';
+import 'package:openapi/src/api/full_text_api.dart';
+import 'package:openapi/src/api/xbrl_converter_api.dart';
 
 class Openapi {
   static const String basePath = r'https://api.sec.finfeedapi.com';
@@ -69,33 +69,33 @@ class Openapi {
     }
   }
 
-  /// Get ContentExtractionApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get DownloadApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  ContentExtractionApi getContentExtractionApi() {
-    return ContentExtractionApi(dio, serializers);
+  DownloadApi getDownloadApi() {
+    return DownloadApi(dio, serializers);
   }
 
-  /// Get FileDownloadApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get ExtractorApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  FileDownloadApi getFileDownloadApi() {
-    return FileDownloadApi(dio, serializers);
+  ExtractorApi getExtractorApi() {
+    return ExtractorApi(dio, serializers);
   }
 
-  /// Get FilingMetadataApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get FilingsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  FilingMetadataApi getFilingMetadataApi() {
-    return FilingMetadataApi(dio, serializers);
+  FilingsApi getFilingsApi() {
+    return FilingsApi(dio, serializers);
   }
 
-  /// Get FullTextSearchApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get FullTextApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  FullTextSearchApi getFullTextSearchApi() {
-    return FullTextSearchApi(dio, serializers);
+  FullTextApi getFullTextApi() {
+    return FullTextApi(dio, serializers);
   }
 
-  /// Get XBRLConversionApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get XbrlConverterApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  XBRLConversionApi getXBRLConversionApi() {
-    return XBRLConversionApi(dio, serializers);
+  XbrlConverterApi getXbrlConverterApi() {
+    return XbrlConverterApi(dio, serializers);
   }
 }

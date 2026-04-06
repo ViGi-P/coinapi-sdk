@@ -48,15 +48,14 @@ Please follow the [installation procedure](#installation--usage) and then run th
 import 'package:openapi/openapi.dart';
 
 
-final api = Openapi().getContentExtractionApi();
-final String accessionNumber = accessionNumber_example; // String | The SEC filing accession number used to retrieve the filing from EDGAR database.
-final DTOExtractorType type = ; // DTOExtractorType | Result type (text or html, default: text)
+final api = Openapi().getDownloadApi();
+final String accessionNo = accessionNo_example; // String | SEC filing accession number in format: 0000000000-00-000000
+final String fileName = fileName_example; // String | Name of the file to download from the filing
 
 try {
-    final response = await api.v1ExtractorGet(accessionNumber, type);
-    print(response);
+    api.v1DownloadGet(accessionNo, fileName);
 } catch on DioException (e) {
-    print("Exception when calling ContentExtractionApi->v1ExtractorGet: $e\n");
+    print("Exception when calling DownloadApi->v1DownloadGet: $e\n");
 }
 
 ```
@@ -67,12 +66,12 @@ All URIs are relative to *https://api.sec.finfeedapi.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-[*ContentExtractionApi*](doc/ContentExtractionApi.md) | [**v1ExtractorGet**](doc/ContentExtractionApi.md#v1extractorget) | **GET** /v1/extractor | Extract and classify SEC filing content
-[*ContentExtractionApi*](doc/ContentExtractionApi.md) | [**v1ExtractorItemGet**](doc/ContentExtractionApi.md#v1extractoritemget) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
-[*FileDownloadApi*](doc/FileDownloadApi.md) | [**v1DownloadGet**](doc/FileDownloadApi.md#v1downloadget) | **GET** /v1/download | Download file from SEC EDGAR archive
-[*FilingMetadataApi*](doc/FilingMetadataApi.md) | [**v1FilingsGet**](doc/FilingMetadataApi.md#v1filingsget) | **GET** /v1/filings | Query SEC filing metadata
-[*FullTextSearchApi*](doc/FullTextSearchApi.md) | [**v1FullTextGet**](doc/FullTextSearchApi.md#v1fulltextget) | **GET** /v1/full-text | Full-text search of SEC filing documents
-[*XBRLConversionApi*](doc/XBRLConversionApi.md) | [**v1XbrlConverterGet**](doc/XBRLConversionApi.md#v1xbrlconverterget) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
+[*DownloadApi*](doc/DownloadApi.md) | [**v1DownloadGet**](doc/DownloadApi.md#v1downloadget) | **GET** /v1/download | Download file from SEC EDGAR archive
+[*ExtractorApi*](doc/ExtractorApi.md) | [**v1ExtractorGet**](doc/ExtractorApi.md#v1extractorget) | **GET** /v1/extractor | Extract and classify SEC filing content
+[*ExtractorApi*](doc/ExtractorApi.md) | [**v1ExtractorItemGet**](doc/ExtractorApi.md#v1extractoritemget) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
+[*FilingsApi*](doc/FilingsApi.md) | [**v1FilingsGet**](doc/FilingsApi.md#v1filingsget) | **GET** /v1/filings | Query SEC filing metadata
+[*FullTextApi*](doc/FullTextApi.md) | [**v1FullTextGet**](doc/FullTextApi.md#v1fulltextget) | **GET** /v1/full-text | Full-text search of SEC filing documents
+[*XbrlConverterApi*](doc/XbrlConverterApi.md) | [**v1XbrlConverterGet**](doc/XbrlConverterApi.md#v1xbrlconverterget) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
 
 
 ## Documentation For Models

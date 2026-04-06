@@ -83,20 +83,20 @@ namespace APIBricks.FinFeedAPI.SECAPI.REST.V1.Test.Api
         [Fact]
         public void ConfigureApiWithAClientTest()
         {
-            var contentExtractionApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IContentExtractionApi>();
-            Assert.True(contentExtractionApi.HttpClient.BaseAddress != null);
+            var downloadApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IDownloadApi>();
+            Assert.True(downloadApi.HttpClient.BaseAddress != null);
 
-            var fileDownloadApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IFileDownloadApi>();
-            Assert.True(fileDownloadApi.HttpClient.BaseAddress != null);
+            var extractorApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IExtractorApi>();
+            Assert.True(extractorApi.HttpClient.BaseAddress != null);
 
-            var filingMetadataApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IFilingMetadataApi>();
-            Assert.True(filingMetadataApi.HttpClient.BaseAddress != null);
+            var filingsApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IFilingsApi>();
+            Assert.True(filingsApi.HttpClient.BaseAddress != null);
 
-            var fullTextSearchApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IFullTextSearchApi>();
-            Assert.True(fullTextSearchApi.HttpClient.BaseAddress != null);
+            var fullTextApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IFullTextApi>();
+            Assert.True(fullTextApi.HttpClient.BaseAddress != null);
 
-            var xBRLConversionApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IXBRLConversionApi>();
-            Assert.True(xBRLConversionApi.HttpClient.BaseAddress != null);
+            var xbrlConverterApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IXbrlConverterApi>();
+            Assert.True(xbrlConverterApi.HttpClient.BaseAddress != null);
         }
 
         /// <summary>
@@ -105,20 +105,20 @@ namespace APIBricks.FinFeedAPI.SECAPI.REST.V1.Test.Api
         [Fact]
         public void ConfigureApiWithoutAClientTest()
         {
-            var contentExtractionApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IContentExtractionApi>();
-            Assert.True(contentExtractionApi.HttpClient.BaseAddress != null);
+            var downloadApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IDownloadApi>();
+            Assert.True(downloadApi.HttpClient.BaseAddress != null);
 
-            var fileDownloadApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IFileDownloadApi>();
-            Assert.True(fileDownloadApi.HttpClient.BaseAddress != null);
+            var extractorApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IExtractorApi>();
+            Assert.True(extractorApi.HttpClient.BaseAddress != null);
 
-            var filingMetadataApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IFilingMetadataApi>();
-            Assert.True(filingMetadataApi.HttpClient.BaseAddress != null);
+            var filingsApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IFilingsApi>();
+            Assert.True(filingsApi.HttpClient.BaseAddress != null);
 
-            var fullTextSearchApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IFullTextSearchApi>();
-            Assert.True(fullTextSearchApi.HttpClient.BaseAddress != null);
+            var fullTextApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IFullTextApi>();
+            Assert.True(fullTextApi.HttpClient.BaseAddress != null);
 
-            var xBRLConversionApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IXBRLConversionApi>();
-            Assert.True(xBRLConversionApi.HttpClient.BaseAddress != null);
+            var xbrlConverterApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IXbrlConverterApi>();
+            Assert.True(xbrlConverterApi.HttpClient.BaseAddress != null);
         }
 
         /// <summary>
@@ -127,20 +127,20 @@ namespace APIBricks.FinFeedAPI.SECAPI.REST.V1.Test.Api
         [Fact]
         public void AddApiWithAClientTest()
         {
-            var contentExtractionApi = _hostUsingAddWithAClient.Services.GetRequiredService<IContentExtractionApi>();
-            Assert.True(contentExtractionApi.HttpClient.BaseAddress != null);
+            var downloadApi = _hostUsingAddWithAClient.Services.GetRequiredService<IDownloadApi>();
+            Assert.True(downloadApi.HttpClient.BaseAddress != null);
             
-            var fileDownloadApi = _hostUsingAddWithAClient.Services.GetRequiredService<IFileDownloadApi>();
-            Assert.True(fileDownloadApi.HttpClient.BaseAddress != null);
+            var extractorApi = _hostUsingAddWithAClient.Services.GetRequiredService<IExtractorApi>();
+            Assert.True(extractorApi.HttpClient.BaseAddress != null);
             
-            var filingMetadataApi = _hostUsingAddWithAClient.Services.GetRequiredService<IFilingMetadataApi>();
-            Assert.True(filingMetadataApi.HttpClient.BaseAddress != null);
+            var filingsApi = _hostUsingAddWithAClient.Services.GetRequiredService<IFilingsApi>();
+            Assert.True(filingsApi.HttpClient.BaseAddress != null);
             
-            var fullTextSearchApi = _hostUsingAddWithAClient.Services.GetRequiredService<IFullTextSearchApi>();
-            Assert.True(fullTextSearchApi.HttpClient.BaseAddress != null);
+            var fullTextApi = _hostUsingAddWithAClient.Services.GetRequiredService<IFullTextApi>();
+            Assert.True(fullTextApi.HttpClient.BaseAddress != null);
             
-            var xBRLConversionApi = _hostUsingAddWithAClient.Services.GetRequiredService<IXBRLConversionApi>();
-            Assert.True(xBRLConversionApi.HttpClient.BaseAddress != null);
+            var xbrlConverterApi = _hostUsingAddWithAClient.Services.GetRequiredService<IXbrlConverterApi>();
+            Assert.True(xbrlConverterApi.HttpClient.BaseAddress != null);
         }
 
         /// <summary>
@@ -149,20 +149,20 @@ namespace APIBricks.FinFeedAPI.SECAPI.REST.V1.Test.Api
         [Fact]
         public void AddApiWithoutAClientTest()
         {
-            var contentExtractionApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IContentExtractionApi>();
-            Assert.True(contentExtractionApi.HttpClient.BaseAddress != null);
+            var downloadApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IDownloadApi>();
+            Assert.True(downloadApi.HttpClient.BaseAddress != null);
 
-            var fileDownloadApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IFileDownloadApi>();
-            Assert.True(fileDownloadApi.HttpClient.BaseAddress != null);
+            var extractorApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IExtractorApi>();
+            Assert.True(extractorApi.HttpClient.BaseAddress != null);
 
-            var filingMetadataApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IFilingMetadataApi>();
-            Assert.True(filingMetadataApi.HttpClient.BaseAddress != null);
+            var filingsApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IFilingsApi>();
+            Assert.True(filingsApi.HttpClient.BaseAddress != null);
 
-            var fullTextSearchApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IFullTextSearchApi>();
-            Assert.True(fullTextSearchApi.HttpClient.BaseAddress != null);
+            var fullTextApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IFullTextApi>();
+            Assert.True(fullTextApi.HttpClient.BaseAddress != null);
 
-            var xBRLConversionApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IXBRLConversionApi>();
-            Assert.True(xBRLConversionApi.HttpClient.BaseAddress != null);
+            var xbrlConverterApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IXbrlConverterApi>();
+            Assert.True(xbrlConverterApi.HttpClient.BaseAddress != null);
         }
     }
 }

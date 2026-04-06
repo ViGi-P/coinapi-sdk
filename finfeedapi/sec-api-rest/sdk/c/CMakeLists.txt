@@ -54,11 +54,11 @@ set(SRCS
     model/dto_sec_filing_result_dto.c
     model/mvc_problem_details.c
     model/mvc_validation_problem_details.c
-    api/ContentExtractionAPI.c
-    api/FileDownloadAPI.c
-    api/FilingMetadataAPI.c
-    api/FullTextSearchAPI.c
-    api/XBRLConversionAPI.c
+    api/DownloadAPI.c
+    api/ExtractorAPI.c
+    api/FilingsAPI.c
+    api/FullTextAPI.c
+    api/XbrlConverterAPI.c
 
 )
 
@@ -76,11 +76,11 @@ set(HDRS
     model/dto_sec_filing_result_dto.h
     model/mvc_problem_details.h
     model/mvc_validation_problem_details.h
-    api/ContentExtractionAPI.h
-    api/FileDownloadAPI.h
-    api/FilingMetadataAPI.h
-    api/FullTextSearchAPI.h
-    api/XBRLConversionAPI.h
+    api/DownloadAPI.h
+    api/ExtractorAPI.h
+    api/FilingsAPI.h
+    api/FullTextAPI.h
+    api/XbrlConverterAPI.h
 
 )
 
@@ -162,11 +162,11 @@ set(HDRS "")
 ## This section shows how to use the above compiled library to compile the source files
 ## set source files
 #set(SRCS
-#    unit-tests/manual-ContentExtractionAPI.c
-#    unit-tests/manual-FileDownloadAPI.c
-#    unit-tests/manual-FilingMetadataAPI.c
-#    unit-tests/manual-FullTextSearchAPI.c
-#    unit-tests/manual-XBRLConversionAPI.c
+#    unit-tests/manual-DownloadAPI.c
+#    unit-tests/manual-ExtractorAPI.c
+#    unit-tests/manual-FilingsAPI.c
+#    unit-tests/manual-FullTextAPI.c
+#    unit-tests/manual-XbrlConverterAPI.c
 #)
 
 ##set header files

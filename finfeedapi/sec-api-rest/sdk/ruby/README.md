@@ -71,18 +71,15 @@ OpenapiClient.configure do |config|
   config.access_token_getter = -> { 'YOUR TOKEN GETTER PROC' } 
 end
 
-api_instance = OpenapiClient::ContentExtractionApi.new
-accession_number = 'accession_number_example' # String | The SEC filing accession number used to retrieve the filing from EDGAR database.
-opts = {
-  type: OpenapiClient::DTOExtractorType::TEXT # DTOExtractorType | Result type (text or html, default: text)
-}
+api_instance = OpenapiClient::DownloadApi.new
+accession_no = 'accession_no_example' # String | SEC filing accession number in format: 0000000000-00-000000
+file_name = 'file_name_example' # String | Name of the file to download from the filing
 
 begin
-  #Extract and classify SEC filing content
-  result = api_instance.v1_extractor_get(accession_number, opts)
-  p result
+  #Download file from SEC EDGAR archive
+  api_instance.v1_download_get(accession_no, file_name)
 rescue OpenapiClient::ApiError => e
-  puts "Exception when calling ContentExtractionApi->v1_extractor_get: #{e}"
+  puts "Exception when calling DownloadApi->v1_download_get: #{e}"
 end
 
 ```
@@ -93,12 +90,12 @@ All URIs are relative to *https://api.sec.finfeedapi.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OpenapiClient::ContentExtractionApi* | [**v1_extractor_get**](docs/ContentExtractionApi.md#v1_extractor_get) | **GET** /v1/extractor | Extract and classify SEC filing content
-*OpenapiClient::ContentExtractionApi* | [**v1_extractor_item_get**](docs/ContentExtractionApi.md#v1_extractor_item_get) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
-*OpenapiClient::FileDownloadApi* | [**v1_download_get**](docs/FileDownloadApi.md#v1_download_get) | **GET** /v1/download | Download file from SEC EDGAR archive
-*OpenapiClient::FilingMetadataApi* | [**v1_filings_get**](docs/FilingMetadataApi.md#v1_filings_get) | **GET** /v1/filings | Query SEC filing metadata
-*OpenapiClient::FullTextSearchApi* | [**v1_full_text_get**](docs/FullTextSearchApi.md#v1_full_text_get) | **GET** /v1/full-text | Full-text search of SEC filing documents
-*OpenapiClient::XBRLConversionApi* | [**v1_xbrl_converter_get**](docs/XBRLConversionApi.md#v1_xbrl_converter_get) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
+*OpenapiClient::DownloadApi* | [**v1_download_get**](docs/DownloadApi.md#v1_download_get) | **GET** /v1/download | Download file from SEC EDGAR archive
+*OpenapiClient::ExtractorApi* | [**v1_extractor_get**](docs/ExtractorApi.md#v1_extractor_get) | **GET** /v1/extractor | Extract and classify SEC filing content
+*OpenapiClient::ExtractorApi* | [**v1_extractor_item_get**](docs/ExtractorApi.md#v1_extractor_item_get) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
+*OpenapiClient::FilingsApi* | [**v1_filings_get**](docs/FilingsApi.md#v1_filings_get) | **GET** /v1/filings | Query SEC filing metadata
+*OpenapiClient::FullTextApi* | [**v1_full_text_get**](docs/FullTextApi.md#v1_full_text_get) | **GET** /v1/full-text | Full-text search of SEC filing documents
+*OpenapiClient::XbrlConverterApi* | [**v1_xbrl_converter_get**](docs/XbrlConverterApi.md#v1_xbrl_converter_get) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
 
 
 ## Documentation for Models

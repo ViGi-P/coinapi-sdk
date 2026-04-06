@@ -112,19 +112,17 @@ APIKey.apiKey = "YOUR API KEY"
 var JWT = defaultClient.authentications['JWT'];
 JWT.accessToken = "YOUR ACCESS TOKEN"
 
-var api = new FinFeedApiSecRestApi.ContentExtractionApi()
-var accessionNumber = "accessionNumber_example"; // {String} The SEC filing accession number used to retrieve the filing from EDGAR database.
-var opts = {
-  'type': new FinFeedApiSecRestApi.DTOExtractorType() // {DTOExtractorType} Result type (text or html, default: text)
-};
+var api = new FinFeedApiSecRestApi.DownloadApi()
+var accessionNo = "accessionNo_example"; // {String} SEC filing accession number in format: 0000000000-00-000000
+var fileName = "fileName_example"; // {String} Name of the file to download from the filing
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
-api.v1ExtractorGet(accessionNumber, opts, callback);
+api.v1DownloadGet(accessionNo, fileName, callback);
 
 ```
 
@@ -134,12 +132,12 @@ All URIs are relative to *https://api.sec.finfeedapi.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*FinFeedApiSecRestApi.ContentExtractionApi* | [**v1ExtractorGet**](docs/ContentExtractionApi.md#v1ExtractorGet) | **GET** /v1/extractor | Extract and classify SEC filing content
-*FinFeedApiSecRestApi.ContentExtractionApi* | [**v1ExtractorItemGet**](docs/ContentExtractionApi.md#v1ExtractorItemGet) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
-*FinFeedApiSecRestApi.FileDownloadApi* | [**v1DownloadGet**](docs/FileDownloadApi.md#v1DownloadGet) | **GET** /v1/download | Download file from SEC EDGAR archive
-*FinFeedApiSecRestApi.FilingMetadataApi* | [**v1FilingsGet**](docs/FilingMetadataApi.md#v1FilingsGet) | **GET** /v1/filings | Query SEC filing metadata
-*FinFeedApiSecRestApi.FullTextSearchApi* | [**v1FullTextGet**](docs/FullTextSearchApi.md#v1FullTextGet) | **GET** /v1/full-text | Full-text search of SEC filing documents
-*FinFeedApiSecRestApi.XBRLConversionApi* | [**v1XbrlConverterGet**](docs/XBRLConversionApi.md#v1XbrlConverterGet) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
+*FinFeedApiSecRestApi.DownloadApi* | [**v1DownloadGet**](docs/DownloadApi.md#v1DownloadGet) | **GET** /v1/download | Download file from SEC EDGAR archive
+*FinFeedApiSecRestApi.ExtractorApi* | [**v1ExtractorGet**](docs/ExtractorApi.md#v1ExtractorGet) | **GET** /v1/extractor | Extract and classify SEC filing content
+*FinFeedApiSecRestApi.ExtractorApi* | [**v1ExtractorItemGet**](docs/ExtractorApi.md#v1ExtractorItemGet) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
+*FinFeedApiSecRestApi.FilingsApi* | [**v1FilingsGet**](docs/FilingsApi.md#v1FilingsGet) | **GET** /v1/filings | Query SEC filing metadata
+*FinFeedApiSecRestApi.FullTextApi* | [**v1FullTextGet**](docs/FullTextApi.md#v1FullTextGet) | **GET** /v1/full-text | Full-text search of SEC filing documents
+*FinFeedApiSecRestApi.XbrlConverterApi* | [**v1XbrlConverterGet**](docs/XbrlConverterApi.md#v1XbrlConverterGet) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
 
 
 ## Documentation for Models

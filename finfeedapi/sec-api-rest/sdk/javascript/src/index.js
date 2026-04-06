@@ -19,11 +19,11 @@ import DTOFilingSortBy from './model/DTOFilingSortBy';
 import DTOSecFilingResultDto from './model/DTOSecFilingResultDto';
 import MvcProblemDetails from './model/MvcProblemDetails';
 import MvcValidationProblemDetails from './model/MvcValidationProblemDetails';
-import ContentExtractionApi from './api/ContentExtractionApi';
-import FileDownloadApi from './api/FileDownloadApi';
-import FilingMetadataApi from './api/FilingMetadataApi';
-import FullTextSearchApi from './api/FullTextSearchApi';
-import XBRLConversionApi from './api/XBRLConversionApi';
+import DownloadApi from './api/DownloadApi';
+import ExtractorApi from './api/ExtractorApi';
+import FilingsApi from './api/FilingsApi';
+import FullTextApi from './api/FullTextApi';
+import XbrlConverterApi from './api/XbrlConverterApi';
 
 
 /**
@@ -101,32 +101,32 @@ export {
     MvcValidationProblemDetails,
 
     /**
-    * The ContentExtractionApi service constructor.
-    * @property {module:api/ContentExtractionApi}
+    * The DownloadApi service constructor.
+    * @property {module:api/DownloadApi}
     */
-    ContentExtractionApi,
+    DownloadApi,
 
     /**
-    * The FileDownloadApi service constructor.
-    * @property {module:api/FileDownloadApi}
+    * The ExtractorApi service constructor.
+    * @property {module:api/ExtractorApi}
     */
-    FileDownloadApi,
+    ExtractorApi,
 
     /**
-    * The FilingMetadataApi service constructor.
-    * @property {module:api/FilingMetadataApi}
+    * The FilingsApi service constructor.
+    * @property {module:api/FilingsApi}
     */
-    FilingMetadataApi,
+    FilingsApi,
 
     /**
-    * The FullTextSearchApi service constructor.
-    * @property {module:api/FullTextSearchApi}
+    * The FullTextApi service constructor.
+    * @property {module:api/FullTextApi}
     */
-    FullTextSearchApi,
+    FullTextApi,
 
     /**
-    * The XBRLConversionApi service constructor.
-    * @property {module:api/XBRLConversionApi}
+    * The XbrlConverterApi service constructor.
+    * @property {module:api/XbrlConverterApi}
     */
-    XBRLConversionApi
+    XbrlConverterApi
 };

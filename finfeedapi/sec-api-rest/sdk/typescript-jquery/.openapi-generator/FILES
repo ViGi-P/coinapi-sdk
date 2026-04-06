@@ -1,9 +1,9 @@
 .openapi-generator-ignore
-api/ContentExtractionApi.ts
-api/FileDownloadApi.ts
-api/FilingMetadataApi.ts
-api/FullTextSearchApi.ts
-api/XBRLConversionApi.ts
+api/DownloadApi.ts
+api/ExtractorApi.ts
+api/FilingsApi.ts
+api/FullTextApi.ts
+api/XbrlConverterApi.ts
 api/api.ts
 configuration.ts
 git_push.sh

@@ -39,7 +39,14 @@ Check out [Doxygen](https://www.doxygen.org/) for additional information about t
 All URIs are relative to https://api.sec.finfeedapi.comhttps://api.sec.finfeedapi.com
 
 
-### ContentExtractionManager
+### DownloadManager
+Method | HTTP request | Description
+------------- | ------------- | -------------
+*v1DownloadGetSync* | *GET* /v1/download | Download file from SEC EDGAR archive.
+*v1DownloadGetASync* | *GET* /v1/download | Download file from SEC EDGAR archive.
+
+
+### ExtractorManager
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 *v1ExtractorGetSync* | *GET* /v1/extractor | Extract and classify SEC filing content.
@@ -48,28 +55,21 @@ Method | HTTP request | Description
 *v1ExtractorItemGetASync* | *GET* /v1/extractor/item | Extract specific item content from SEC filing.
 
 
-### FileDownloadManager
-Method | HTTP request | Description
-------------- | ------------- | -------------
-*v1DownloadGetSync* | *GET* /v1/download | Download file from SEC EDGAR archive.
-*v1DownloadGetASync* | *GET* /v1/download | Download file from SEC EDGAR archive.
-
-
-### FilingMetadataManager
+### FilingsManager
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 *v1FilingsGetSync* | *GET* /v1/filings | Query SEC filing metadata.
 *v1FilingsGetASync* | *GET* /v1/filings | Query SEC filing metadata.
 
 
-### FullTextSearchManager
+### FullTextManager
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 *v1FullTextGetSync* | *GET* /v1/full-text | Full-text search of SEC filing documents.
 *v1FullTextGetASync* | *GET* /v1/full-text | Full-text search of SEC filing documents.
 
 
-### XBRLConversionManager
+### XbrlConverterManager
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 *v1XbrlConverterGetSync* | *GET* /v1/xbrl-converter | Convert XBRL data to JSON format.

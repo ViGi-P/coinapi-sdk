@@ -28,11 +28,11 @@ part 'auth/oauth.dart';
 part 'auth/http_basic_auth.dart';
 part 'auth/http_bearer_auth.dart';
 
-part 'api/content_extraction_api.dart';
-part 'api/file_download_api.dart';
-part 'api/filing_metadata_api.dart';
-part 'api/full_text_search_api.dart';
-part 'api/xbrl_conversion_api.dart';
+part 'api/download_api.dart';
+part 'api/extractor_api.dart';
+part 'api/filings_api.dart';
+part 'api/full_text_api.dart';
+part 'api/xbrl_converter_api.dart';
 
 part 'model/dto_extractor_type.dart';
 part 'model/dto_filing_metadata_dto.dart';

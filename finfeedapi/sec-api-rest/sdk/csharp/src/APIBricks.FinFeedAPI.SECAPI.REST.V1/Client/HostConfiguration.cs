@@ -55,16 +55,16 @@ namespace APIBricks.FinFeedAPI.SECAPI.REST.V1.Client
             JsonSerializerOptionsProvider jsonSerializerOptionsProvider = new(_jsonOptions);
             _services.AddSingleton(jsonSerializerOptionsProvider);
             _services.AddSingleton<IApiFactory, ApiFactory>();
-            _services.AddSingleton<ContentExtractionApiEvents>();
-            _services.AddTransient<IContentExtractionApi, ContentExtractionApi>();
-            _services.AddSingleton<FileDownloadApiEvents>();
-            _services.AddTransient<IFileDownloadApi, FileDownloadApi>();
-            _services.AddSingleton<FilingMetadataApiEvents>();
-            _services.AddTransient<IFilingMetadataApi, FilingMetadataApi>();
-            _services.AddSingleton<FullTextSearchApiEvents>();
-            _services.AddTransient<IFullTextSearchApi, FullTextSearchApi>();
-            _services.AddSingleton<XBRLConversionApiEvents>();
-            _services.AddTransient<IXBRLConversionApi, XBRLConversionApi>();
+            _services.AddSingleton<DownloadApiEvents>();
+            _services.AddTransient<IDownloadApi, DownloadApi>();
+            _services.AddSingleton<ExtractorApiEvents>();
+            _services.AddTransient<IExtractorApi, ExtractorApi>();
+            _services.AddSingleton<FilingsApiEvents>();
+            _services.AddTransient<IFilingsApi, FilingsApi>();
+            _services.AddSingleton<FullTextApiEvents>();
+            _services.AddTransient<IFullTextApi, FullTextApi>();
+            _services.AddSingleton<XbrlConverterApiEvents>();
+            _services.AddTransient<IXbrlConverterApi, XbrlConverterApi>();
         }
 
         /// <summary>
@@ -82,11 +82,11 @@ namespace APIBricks.FinFeedAPI.SECAPI.REST.V1.Client
 
             List<IHttpClientBuilder> builders = new List<IHttpClientBuilder>();
 
-            builders.Add(_services.AddHttpClient<IContentExtractionApi, ContentExtractionApi>(client));
-            builders.Add(_services.AddHttpClient<IFileDownloadApi, FileDownloadApi>(client));
-            builders.Add(_services.AddHttpClient<IFilingMetadataApi, FilingMetadataApi>(client));
-            builders.Add(_services.AddHttpClient<IFullTextSearchApi, FullTextSearchApi>(client));
-            builders.Add(_services.AddHttpClient<IXBRLConversionApi, XBRLConversionApi>(client));
+            builders.Add(_services.AddHttpClient<IDownloadApi, DownloadApi>(client));
+            builders.Add(_services.AddHttpClient<IExtractorApi, ExtractorApi>(client));
+            builders.Add(_services.AddHttpClient<IFilingsApi, FilingsApi>(client));
+            builders.Add(_services.AddHttpClient<IFullTextApi, FullTextApi>(client));
+            builders.Add(_services.AddHttpClient<IXbrlConverterApi, XbrlConverterApi>(client));
             
             if (builder != null)
                 foreach (IHttpClientBuilder instance in builders)

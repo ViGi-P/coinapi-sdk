@@ -14,15 +14,15 @@ Module : FinFeedAPISECREST.API
 -}
 
 module FinFeedAPISECREST.API
-  ( module FinFeedAPISECREST.API.ContentExtraction
-  , module FinFeedAPISECREST.API.FileDownload
-  , module FinFeedAPISECREST.API.FilingMetadata
-  , module FinFeedAPISECREST.API.FullTextSearch
-  , module FinFeedAPISECREST.API.XBRLConversion
+  ( module FinFeedAPISECREST.API.Download
+  , module FinFeedAPISECREST.API.Extractor
+  , module FinFeedAPISECREST.API.Filings
+  , module FinFeedAPISECREST.API.FullText
+  , module FinFeedAPISECREST.API.XbrlConverter
   ) where
 
-import FinFeedAPISECREST.API.ContentExtraction
-import FinFeedAPISECREST.API.FileDownload
-import FinFeedAPISECREST.API.FilingMetadata
-import FinFeedAPISECREST.API.FullTextSearch
-import FinFeedAPISECREST.API.XBRLConversion
+import FinFeedAPISECREST.API.Download
+import FinFeedAPISECREST.API.Extractor
+import FinFeedAPISECREST.API.Filings
+import FinFeedAPISECREST.API.FullText
+import FinFeedAPISECREST.API.XbrlConverter

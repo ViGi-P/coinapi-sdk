@@ -42,19 +42,18 @@ If everything is set correctly:
 Please follow the [installation](#installation) instruction and execute the following Apex code:
 
 ```java
-OASContentExtractionApi api = new OASContentExtractionApi();
+OASDownloadApi api = new OASDownloadApi();
 OASClient client = api.getClient();
 
 
 Map<String, Object> params = new Map<String, Object>{
-    'accessionNumber' => 'null',
-    'type' => ''
+    'accessionNo' => 'null',
+    'fileName' => 'null'
 };
 
 try {
     // cross your fingers
-    Map<String, oas_any_type_not_mapped> result = api.v1ExtractorGet(params);
-    System.debug(result);
+    api.v1DownloadGet(params);
 } catch (OAS.ApiException e) {
     // ...handle your exceptions
 }
@@ -66,12 +65,12 @@ All URIs are relative to *https://api.sec.finfeedapi.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OASContentExtractionApi* | [**v1ExtractorGet**](OASContentExtractionApi.md#v1ExtractorGet) | **GET** /v1/extractor | Extract and classify SEC filing content
-*OASContentExtractionApi* | [**v1ExtractorItemGet**](OASContentExtractionApi.md#v1ExtractorItemGet) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
-*OASFileDownloadApi* | [**v1DownloadGet**](OASFileDownloadApi.md#v1DownloadGet) | **GET** /v1/download | Download file from SEC EDGAR archive
-*OASFilingMetadataApi* | [**v1FilingsGet**](OASFilingMetadataApi.md#v1FilingsGet) | **GET** /v1/filings | Query SEC filing metadata
-*OASFullTextSearchApi* | [**v1FullTextGet**](OASFullTextSearchApi.md#v1FullTextGet) | **GET** /v1/full-text | Full-text search of SEC filing documents
-*OASXBRLConversionApi* | [**v1XbrlConverterGet**](OASXBRLConversionApi.md#v1XbrlConverterGet) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
+*OASDownloadApi* | [**v1DownloadGet**](OASDownloadApi.md#v1DownloadGet) | **GET** /v1/download | Download file from SEC EDGAR archive
+*OASExtractorApi* | [**v1ExtractorGet**](OASExtractorApi.md#v1ExtractorGet) | **GET** /v1/extractor | Extract and classify SEC filing content
+*OASExtractorApi* | [**v1ExtractorItemGet**](OASExtractorApi.md#v1ExtractorItemGet) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
+*OASFilingsApi* | [**v1FilingsGet**](OASFilingsApi.md#v1FilingsGet) | **GET** /v1/filings | Query SEC filing metadata
+*OASFullTextApi* | [**v1FullTextGet**](OASFullTextApi.md#v1FullTextGet) | **GET** /v1/full-text | Full-text search of SEC filing documents
+*OASXbrlConverterApi* | [**v1XbrlConverterGet**](OASXbrlConverterApi.md#v1XbrlConverterGet) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
 
 
 ## Documentation for Models

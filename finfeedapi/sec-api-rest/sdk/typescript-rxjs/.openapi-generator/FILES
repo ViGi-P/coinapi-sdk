@@ -1,10 +1,10 @@
 .gitignore
 .openapi-generator-ignore
-apis/ContentExtractionApi.ts
-apis/FileDownloadApi.ts
-apis/FilingMetadataApi.ts
-apis/FullTextSearchApi.ts
-apis/XBRLConversionApi.ts
+apis/DownloadApi.ts
+apis/ExtractorApi.ts
+apis/FilingsApi.ts
+apis/FullTextApi.ts
+apis/XbrlConverterApi.ts
 apis/index.ts
 index.ts
 models/DTOExtractorType.ts

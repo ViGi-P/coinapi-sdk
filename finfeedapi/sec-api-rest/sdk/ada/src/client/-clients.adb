@@ -32,6 +32,48 @@ package body .Clients is
      1 => Swagger.Mime_Json   );
 
 
+   --  Download file from SEC EDGAR archive
+   --  Downloads a specific file from the SEC EDGAR archive using the accession number and filename.
+   --  The file is streamed directly from the SEC servers to the client.
+   --              
+   --  ### Accession Number Format
+   --  Accession numbers must be in the format: 0000000000-00-000000 (10 digits, dash, 2 digits, dash, 6 digits)
+   --              
+   --  ### File Name Examples
+   --  - Primary documents: `d123456d10k.htm`, `d789012d8k.htm`
+   --  - XBRL files: `d123456d10k_htm.xml`, `FilingSummary.xml`
+   --  - Exhibits: `d123456dexhibit99.htm`, `d123456dex101.htm`
+   --              
+   --  ### File Types
+   --  The endpoint supports downloading various file types from SEC filings:
+   --  - HTML documents (.htm, .html)
+   --  - XBRL files (.xml, .xsd)
+   --  - Text files (.txt)
+   --  - PDF files (.pdf)
+   --  - Other document formats as submitted to SEC
+   --              
+   --  :::tip
+   --  You can find available filenames for a specific filing using the `/v1/filings` endpoint first
+   --  :::
+   --              
+   --  :::warning
+   --  This endpoint streams files directly from the SEC. Large files may take longer to download.
+   --  :::
+   procedure V_1Download_Get
+      (Client : in out Client_Type;
+       Accession_No : in Swagger.UString;
+       File_Name : in Swagger.UString) is
+      URI   : Swagger.Clients.URI_Type;
+   begin
+      Client.Set_Accept (Media_List_1);
+
+
+      URI.Add_Param ("accession_no", Accession_No);
+      URI.Add_Param ("file_name", File_Name);
+      URI.Set_Path ("/v1/download");
+      Client.Call (Swagger.Clients.GET, URI);
+   end V_1Download_Get;
+
    --  Extract and classify SEC filing content
    --  Retrieves filing content from the EDGAR database and intelligently classifies it according to form type and item categories.
    --  
@@ -101,48 +143,6 @@ package body .Clients is
       Client.Call (Swagger.Clients.GET, URI, Reply);
       .Models.Deserialize (Reply, "", Result);
    end V_1Extractor_Item_Get;
-
-   --  Download file from SEC EDGAR archive
-   --  Downloads a specific file from the SEC EDGAR archive using the accession number and filename.
-   --  The file is streamed directly from the SEC servers to the client.
-   --  
-   --  ### Accession Number Format
-   --  Accession numbers must be in the format: 0000000000-00-000000 (10 digits, dash, 2 digits, dash, 6 digits)
-   --  
-   --  ### File Name Examples
-   --  - Primary documents: `d123456d10k.htm`, `d789012d8k.htm`
-   --  - XBRL files: `d123456d10k_htm.xml`, `FilingSummary.xml`
-   --  - Exhibits: `d123456dexhibit99.htm`, `d123456dex101.htm`
-   --  
-   --  ### File Types
-   --  The endpoint supports downloading various file types from SEC filings:
-   --  - HTML documents (.htm, .html)
-   --  - XBRL files (.xml, .xsd)
-   --  - Text files (.txt)
-   --  - PDF files (.pdf)
-   --  - Other document formats as submitted to SEC
-   --  
-   --  :::tip
-   --  You can find available filenames for a specific filing using the `/v1/filings` endpoint first
-   --  :::
-   --  
-   --  :::warning
-   --  This endpoint streams files directly from the SEC. Large files may take longer to download.
-   --  :::
-   procedure V_1Download_Get
-      (Client : in out Client_Type;
-       Accession_No : in Swagger.UString;
-       File_Name : in Swagger.UString) is
-      URI   : Swagger.Clients.URI_Type;
-   begin
-      Client.Set_Accept (Media_List_1);
-
-
-      URI.Add_Param ("accession_no", Accession_No);
-      URI.Add_Param ("file_name", File_Name);
-      URI.Set_Path ("/v1/download");
-      Client.Call (Swagger.Clients.GET, URI);
-   end V_1Download_Get;
 
    --  Query SEC filing metadata
    --  Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.

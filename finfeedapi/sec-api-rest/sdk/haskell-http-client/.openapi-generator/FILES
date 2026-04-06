@@ -7,11 +7,11 @@ finfeedapi-sec-rest.cabal
 git_push.sh
 lib/FinFeedAPISECREST.hs
 lib/FinFeedAPISECREST/API.hs
-lib/FinFeedAPISECREST/API/ContentExtraction.hs
-lib/FinFeedAPISECREST/API/FileDownload.hs
-lib/FinFeedAPISECREST/API/FilingMetadata.hs
-lib/FinFeedAPISECREST/API/FullTextSearch.hs
-lib/FinFeedAPISECREST/API/XBRLConversion.hs
+lib/FinFeedAPISECREST/API/Download.hs
+lib/FinFeedAPISECREST/API/Extractor.hs
+lib/FinFeedAPISECREST/API/Filings.hs
+lib/FinFeedAPISECREST/API/FullText.hs
+lib/FinFeedAPISECREST/API/XbrlConverter.hs
 lib/FinFeedAPISECREST/Client.hs
 lib/FinFeedAPISECREST/Core.hs
 lib/FinFeedAPISECREST/Logging.hs

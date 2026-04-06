@@ -67,13 +67,13 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 import org.openapitools.client.core._
 import org.openapitools.client.model._
-import org.openapitools.client.api.ContentExtractionApi
+import org.openapitools.client.api.DownloadApi
 
 import akka.actor.ActorSystem
 import scala.concurrent.Future
 import scala.util.{Failure, Success}
 
-object ContentExtractionApiExample extends App {
+object DownloadApiExample extends App {
 
     implicit val system: ActorSystem = ActorSystem()
     import system.dispatcher
@@ -86,29 +86,28 @@ object ContentExtractionApiExample extends App {
 
     // Create invoker to execute requests
     val apiInvoker = ApiInvoker()
-    val apiInstance = ContentExtractionApi("https://api.sec.finfeedapi.com")
-    val accessionNumber: String = accessionNumber_example // String | The SEC filing accession number used to retrieve the filing from EDGAR database.
+    val apiInstance = DownloadApi("https://api.sec.finfeedapi.com")
+    val accessionNo: String = accessionNo_example // String | SEC filing accession number in format: 0000000000-00-000000
 
-    val `type`: ExtractorType =  // ExtractorType | Result type (text or html, default: text)
+    val fileName: String = fileName_example // String | Name of the file to download from the filing
 
-    val request = apiInstance.v1ExtractorGet(accessionNumber, `type`)
+    val request = apiInstance.v1DownloadGet(accessionNo, fileName)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
         case Success(org.openapitools.client.core.ApiResponse(code, content, headers)) =>
             System.out.println(s"Status code: $code}")
             System.out.println(s"Response headers: ${headers.mkString(", ")}")
-            System.out.println(s"Response body: $content")
 
         case Failure(error @ ApiError(code, message, responseContent, cause, headers)) =>
-            System.err.println("Exception when calling ContentExtractionApi#v1ExtractorGet")
+            System.err.println("Exception when calling DownloadApi#v1DownloadGet")
             System.err.println(s"Status code: $code}")
             System.err.println(s"Reason: $responseContent")
             System.err.println(s"Response headers: ${headers.mkString(", ")}")
             error.printStackTrace();
 
         case Failure(exception) =>
-            System.err.println("Exception when calling ContentExtractionApi#v1ExtractorGet")
+            System.err.println("Exception when calling DownloadApi#v1DownloadGet")
             exception.printStackTrace();
     }
 
@@ -122,12 +121,12 @@ All URIs are relative to *https://api.sec.finfeedapi.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ContentExtractionApi* | [**v1ExtractorGet**](docs/ContentExtractionApi.md#v1ExtractorGet) | **GET** /v1/extractor | Extract and classify SEC filing content
-*ContentExtractionApi* | [**v1ExtractorItemGet**](docs/ContentExtractionApi.md#v1ExtractorItemGet) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
-*FileDownloadApi* | [**v1DownloadGet**](docs/FileDownloadApi.md#v1DownloadGet) | **GET** /v1/download | Download file from SEC EDGAR archive
-*FilingMetadataApi* | [**v1FilingsGet**](docs/FilingMetadataApi.md#v1FilingsGet) | **GET** /v1/filings | Query SEC filing metadata
-*FullTextSearchApi* | [**v1FullTextGet**](docs/FullTextSearchApi.md#v1FullTextGet) | **GET** /v1/full-text | Full-text search of SEC filing documents
-*XBRLConversionApi* | [**v1XbrlConverterGet**](docs/XBRLConversionApi.md#v1XbrlConverterGet) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
+*DownloadApi* | [**v1DownloadGet**](docs/DownloadApi.md#v1DownloadGet) | **GET** /v1/download | Download file from SEC EDGAR archive
+*ExtractorApi* | [**v1ExtractorGet**](docs/ExtractorApi.md#v1ExtractorGet) | **GET** /v1/extractor | Extract and classify SEC filing content
+*ExtractorApi* | [**v1ExtractorItemGet**](docs/ExtractorApi.md#v1ExtractorItemGet) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
+*FilingsApi* | [**v1FilingsGet**](docs/FilingsApi.md#v1FilingsGet) | **GET** /v1/filings | Query SEC filing metadata
+*FullTextApi* | [**v1FullTextGet**](docs/FullTextApi.md#v1FullTextGet) | **GET** /v1/full-text | Full-text search of SEC filing documents
+*XbrlConverterApi* | [**v1XbrlConverterGet**](docs/XbrlConverterApi.md#v1XbrlConverterGet) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
 
 
 ## Documentation for Models
