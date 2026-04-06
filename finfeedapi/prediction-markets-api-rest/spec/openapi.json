@@ -258,7 +258,7 @@
     "/v1/activity/{exchange_id}/{market_id}/current": {
       "get": {
         "tags": [
-          "MarketActivity"
+          "Market Activity"
         ],
         "summary": "Returns the latest trade and the latest quote for a market.",
         "parameters": [
@@ -314,7 +314,7 @@
     "/v1/activity/{exchange_id}/{market_id}/latest": {
       "get": {
         "tags": [
-          "MarketActivity"
+          "Market Activity"
         ],
         "summary": "Returns recent trades and recent quotes for a market.",
         "parameters": [
@@ -370,7 +370,7 @@
     "/v1/activity/{exchange_id}/{market_id}/history/trades": {
       "get": {
         "tags": [
-          "MarketActivity"
+          "Market Activity"
         ],
         "summary": "Returns historical trades for a market from flat files.",
         "description": "Retrieves historical trade data from flat files stored in external storage (S3).\nSupports hourly granularity with automatic fallback to daily files.\nUse either 'date' for full day or 'time_start'/'time_end' for specific time ranges.\n            \n**Important:** Results are filtered by data processing time (time_coinapi) - the time when CoinAPI\nreceived and processed the data from the exchange. Each trade also includes time_exchange showing\nwhen the trade actually occurred on the exchange. Due to API polling delays, time_exchange may be\nearlier than time_coinapi.",
@@ -466,7 +466,7 @@
     "/v1/activity/{exchange_id}/{market_id}/history/quotes": {
       "get": {
         "tags": [
-          "MarketActivity"
+          "Market Activity"
         ],
         "summary": "Returns historical quotes for a market from flat files.",
         "description": "Retrieves historical quote (bid/ask) data from flat files stored in external storage (S3).\nSupports hourly granularity with automatic fallback to daily files.\nUse either 'date' for full day or 'time_start'/'time_end' for specific time ranges.\n            \n**Important:** Results are filtered by data processing time (time_coinapi) - the time when CoinAPI\nreceived and processed the data from the exchange. Each quote also includes time_exchange showing\nwhen the quote was created on the exchange. Due to API polling delays, time_exchange may be\nearlier than time_coinapi.",
@@ -875,7 +875,7 @@
     "/v1/ohlcv/periods": {
       "get": {
         "tags": [
-          "Ohlcv"
+          "OHLCV"
         ],
         "summary": "List all periods",
         "description": "Get full list of supported time periods available for requesting OHLCV timeseries data.\n            \n### Available periods\n            \nTime unit | Period identifiers\n--------- | -----------\nSecond | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC\nMinute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN\nHour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS\nDay | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY\nMonth | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH\nYear | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS\n            \n:::tip\nYou can assume that we will not remove any periods from this response, however, we may add new ones.\n:::",
@@ -1043,7 +1043,7 @@
     "/v1/ohlcv/{exchange_id}/history": {
       "get": {
         "tags": [
-          "Ohlcv"
+          "OHLCV"
         ],
         "summary": "Historical data for an exchange",
         "description": "Get OHLCV timeseries data for an exchange, returned in time ascending order.",
@@ -1127,7 +1127,7 @@
     "/v1/ohlcv/{exchange_id}/{market_id}/history": {
       "get": {
         "tags": [
-          "Ohlcv"
+          "OHLCV"
         ],
         "summary": "Historical data for a specific market",
         "description": "Get OHLCV timeseries data for a specific market, returned in time ascending order.",
@@ -1230,7 +1230,7 @@
     "/v1/ohlcv/{exchange_id}/{market_id}/latest": {
       "get": {
         "tags": [
-          "Ohlcv"
+          "OHLCV"
         ],
         "summary": "Latest data for a market",
         "description": "Get OHLCV latest timeseries data for a specific market, returned in time descending order.",
@@ -1955,15 +1955,39 @@
   "tags": [
     {
       "name": "Orderbooks",
+      "description": "Current prediction market order book snapshots by exchange and market."
+    },
+    {
+      "name": "OHLCV",
+      "description": "Prediction market open, high, low, close, and volume time series."
+    },
+    {
+      "name": "Markets",
+      "description": "Listed prediction markets, metadata, and discovery by exchange."
+    },
+    {
+      "name": "Market Activity",
+      "description": "Latest trade and quote snapshot per prediction market."
+    },
+    {
+      "name": "Exchanges",
+      "description": "Prediction market exchanges available in this API."
+    },
+    {
+      "name": "Orderbooks",
       "description": "Provides access to current market order book snapshots."
     },
     {
-      "name": "Ohlcv",
+      "name": "OHLCV",
       "description": "Retrieves OHLCV (Open, High, Low, Close, Volume) timeseries data for specific markets."
     },
     {
       "name": "Markets",
       "description": "Provides access to detailed information for prediction markets.\nA Market is a rich object containing all details for a specific prediction market, retrieved using a market_id."
+    },
+    {
+      "name": "Market Activity",
+      "description": "Retrieves the latest trade and the latest quote for a market."
     },
     {
       "name": "Exchanges",
