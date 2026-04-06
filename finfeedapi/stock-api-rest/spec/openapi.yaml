@@ -12,196 +12,10 @@ info:
 servers:
   - url: https://api-historical.stock.finfeedapi.com
 paths:
-  '/v1/native/iex/admin/messages/{symbol}':
-    get:
-      tags:
-        - Native IEX
-      summary: Get Admin Messages
-      parameters:
-        - name: symbol
-          in: path
-          description: The symbol identifier
-          required: true
-          schema:
-            type: string
-        - name: date
-          in: query
-          description: Optional date in format YYYY-MM-DD (defaults to latest available data)
-          required: true
-          schema:
-            type: string
-            format: date-time
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Admin.AdminMessageModel'
-              example: [
-  {
-    "trading_status": {
-      "symbol": "PYPL",
-      "timestamp_nanos": 1775196418272000000,
-      "timestamp": "2026-04-03T06:06:58.2720000Z",
-      "is_trading_live": true,
-      "is_trading_halted": false,
-      "is_trading_in_order_acceptance_period": false,
-      "is_trading_paused": false,
-      "is_reason_halt_news_pending": false,
-      "is_reason_ipo_not_yet_trading": false,
-      "is_reason_ipo_deferred": false,
-      "is_reason_halt_news_dissemination": false,
-      "is_reason_ipo_order_acceptance_period": false,
-      "is_reason_ipo_pre_launch_period": false,
-      "is_reason_market_wide_circuit_breaker_level1": false,
-      "is_reason_market_wide_circuit_breaker_level2": false,
-      "is_reason_market_wide_circuit_breaker_level3": false,
-      "is_reason_not_applicable": true,
-      "is_reason_not_available": false
-    }
-  },
-  {
-    "official_price": {
-      "symbol": "AAPL",
-      "timestamp_nanos": 1775196418272000000,
-      "timestamp": "2026-04-03T06:06:58.2720000Z",
-      "price_type": 81,
-      "price_type_code": "Q",
-      "price_type_text": "IEX Official Opening Price",
-      "is_price_type_opening": true,
-      "is_price_type_closing": false,
-      "official_price": 12.3456
-    }
-  },
-  {
-    "security_event": {
-      "symbol": "CRM",
-      "timestamp_nanos": 1775196418272000000,
-      "timestamp": "2026-04-03T06:06:58.2720000Z",
-      "security_event": 79,
-      "security_event_code": "O",
-      "security_event_text": "Opening Process Complete",
-      "is_opening_process_complete": true,
-      "is_closing_process_complete": false
-    }
-  },
-  {
-    "auction_information": {
-      "symbol": "AAPL",
-      "timestamp_nanos": 1775196418272000000,
-      "timestamp": "2026-04-03T06:06:58.2720000Z",
-      "auction_type": 79,
-      "auction_type_code": "O",
-      "auction_type_text": "Opening Auction",
-      "is_auction_type_opening": true,
-      "is_auction_type_closing": false,
-      "is_auction_type_ipo": false,
-      "is_auction_type_halt": false,
-      "is_auction_type_volatility": false,
-      "paired_shares": 12500,
-      "reference_price": 156.42,
-      "indicative_clearing_price": 156.5,
-      "imbalance_shares": 2300,
-      "imbalance_side": 66,
-      "imbalance_side_code": "B",
-      "imbalance_side_text": "Buy-side imbalance",
-      "is_imbalance_side_buy": true,
-      "is_imbalance_side_sell": false,
-      "is_imbalance_side_none": false,
-      "extension_number": 0,
-      "scheduled_auction_time_seconds": 1775196718,
-      "scheduled_auction_time": "2026-04-03T06:11:58.0000000Z",
-      "auction_book_clearing_price": 156.45,
-      "collar_reference_price": 157,
-      "lower_auction_collar": 152.5,
-      "upper_auction_collar": 161.5
-    }
-  },
-  {
-    "short_sale_price_test": {
-      "symbol": "MSFT",
-      "timestamp_nanos": 1775196418272000000,
-      "timestamp": "2026-04-03T06:06:58.2720000Z",
-      "short_sale_price_test_status": 1,
-      "short_sale_price_test_status_code": "1",
-      "short_sale_price_test_status_text": "Short Sale Price Test in Effect",
-      "is_short_sale_price_test_not_in_effect": false,
-      "is_short_sale_price_test_in_effect": true,
-      "detail": 65,
-      "detail_code": "A",
-      "detail_text": "Short sale price test restriction in effect due to an intraday price drop (Activated)",
-      "is_detail_no_price_test": false,
-      "is_detail_activated": true,
-      "is_detail_continued": false,
-      "is_detail_deactivated": false,
-      "is_detail_not_available": false
-    }
-  },
-  {
-    "operational_halt_status": {
-      "symbol": "AAPL",
-      "timestamp_nanos": 1775196418272000000,
-      "timestamp": "2026-04-03T06:06:58.2720000Z",
-      "operational_halt_status": 79,
-      "operational_halt_status_code": "O",
-      "operational_halt_status_text": "IEX specific operational trading halt",
-      "is_operationally_halted": true,
-      "is_not_operationally_halted": false
-    }
-  },
-  {
-    "retail_liquidity_indicator": {
-      "symbol": "GOOG",
-      "timestamp_nanos": 1775196418272000000,
-      "timestamp": "2026-04-03T06:06:58.2720000Z",
-      "retail_liquidity_indicator": 65,
-      "retail_liquidity_indicator_code": "A",
-      "retail_liquidity_indicator_text": "Buy interest for Retail",
-      "is_retail_indicator_not_applicable": false,
-      "is_retail_indicator_buy_interest": true,
-      "is_retail_indicator_sell_interest": false,
-      "is_retail_indicator_buy_and_sell_interest": false
-    }
-  },
-  {
-    "system_event": {
-      "timestamp_nanos": 1775196418272000000,
-      "timestamp": "2026-04-03T06:06:58.2720000Z",
-      "system_event": 79,
-      "system_event_code": "O",
-      "system_event_text": "Start of Messages – Outside of heartbeat messages on the lower level protocol, the start of day message is the first message sent in any trading session.",
-      "is_system_event_start_of_messages": true,
-      "is_system_event_start_of_system_hours": false,
-      "is_system_event_start_of_regular_market_hours": false,
-      "is_system_event_end_of_regular_market_hours": false,
-      "is_system_event_end_of_system_hours": false,
-      "is_system_event_end_of_messages": false
-    }
-  },
-  {
-    "security_directory": {
-      "symbol": "INTC",
-      "timestamp_nanos": 1775196418272000000,
-      "timestamp": "2026-04-03T06:06:58.2720000Z",
-      "flags": 0,
-      "round_lot_size": 100,
-      "adjusted_poc_price": 35.36,
-      "luld_tier": 1,
-      "luld_tier_code": "1",
-      "luld_tier_text": "Tier 1 NMS Stock",
-      "is_luld_tier_not_applicable": false,
-      "is_luld_tier1": true,
-      "is_luld_tier2": false
-    }
-  }
-]
   /v1/exchanges:
     get:
       tags:
-        - Metadata
+        - Exchange
       summary: List of exchanges
       responses:
         '200':
@@ -327,11 +141,11 @@ paths:
     "last_update_date": "2005-06-27T00:00:00.0000000Z"
   }
 ]
-  '/v1/native/iex/level3-order-book/{symbol}':
+  '/v1/native/iex/trade/{symbol}':
     get:
       tags:
-        - Native IEX
-      summary: Get Level-3 Order Book
+        - NativeIEX
+      summary: Get Trades
       parameters:
         - name: symbol
           in: path
@@ -354,78 +168,16 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Level3.OrderBookModel'
-              example: [
-  {
-    "add_order": {
-      "symbol": "AAPL",
-      "timestamp_nanos": 1775196418275000000,
-      "timestamp": "2026-04-03T06:06:58.2750000Z",
-      "is_side_buy": true,
-      "size": 100,
-      "price": 176.42,
-      "order_id": 123456789
-    }
-  },
-  {
-    "delete_order": {
-      "symbol": "TSLA",
-      "timestamp_nanos": 1775196418275000000,
-      "timestamp": "2026-04-03T06:06:58.2750000Z",
-      "order_id_reference": 987654321
-    }
-  },
-  {
-    "modify_order": {
-      "symbol": "NFLX",
-      "timestamp_nanos": 1775196418275000000,
-      "timestamp": "2026-04-03T06:06:58.2750000Z",
-      "order_id_reference": 789456123,
-      "is_priority_reset": false,
-      "size": 150,
-      "price": 625.85
-    }
-  },
-  {
-    "executed_order": {
-      "symbol": "META",
-      "timestamp_nanos": 1775196418275000000,
-      "timestamp": "2026-04-03T06:06:58.2750000Z",
-      "order_id_reference": 555123456,
-      "sale_condition_flags": 0,
-      "is_intermarket_sweep": false,
-      "is_extended_hours_trade": false,
-      "is_odd_lot_trade": false,
-      "is_trade_through_exempt": false,
-      "is_single_price_cross_trade": false,
-      "size": 200,
-      "price": 421,
-      "trade_id": 123987456
-    }
-  },
-  {
-    "clear_book": {
-      "symbol": "MSFT",
-      "timestamp_nanos": 1775196418275000000,
-      "timestamp": "2026-04-03T06:06:58.2750000Z"
-    }
-  }
-]
-  '/v1/native/iex/level2-price-level-update/{symbol}':
+                  $ref: '#/components/schemas/IEXTrade.TradeModel'
+  /v1/native/iex/admin/system-event:
     get:
       tags:
-        - Native IEX
-      summary: Get Level-2 Price Level Book
+        - NativeIEX
+      summary: Get System Events
       parameters:
-        - name: symbol
-          in: path
-          description: The symbol identifier
-          required: true
-          schema:
-            type: string
         - name: date
           in: query
-          description: Optional date in format YYYY-MM-DD (defaults to latest available data)
+          description: Date in format YYYY-MM-DD
           required: true
           schema:
             type: string
@@ -438,11 +190,11 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Level2.PriceLevelUpdateModel'
+                  $ref: '#/components/schemas/IEXSystemEvent.SystemEventModel'
   '/v1/native/iex/level1-quote/{symbol}':
     get:
       tags:
-        - Native IEX
+        - NativeIEX
       summary: Get Level-1 Quotes
       parameters:
         - name: symbol
@@ -466,11 +218,309 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Level1.QuoteUpdateModel'
+                  $ref: '#/components/schemas/IEXQuoteUpdate.QuoteUpdateModel'
+  '/v1/native/iex/level2-price-level-update/{symbol}':
+    get:
+      tags:
+        - NativeIEX
+      summary: Get Level-2 Price Level Book
+      parameters:
+        - name: symbol
+          in: path
+          description: The symbol identifier
+          required: true
+          schema:
+            type: string
+        - name: date
+          in: query
+          description: Optional date in format YYYY-MM-DD (defaults to latest available data)
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/IEXPriceLevelUpdate.PriceLevelUpdateModel'
+  '/v1/native/iex/level3-order-book/{symbol}':
+    get:
+      tags:
+        - NativeIEX
+      summary: Get Level-3 Order Book
+      parameters:
+        - name: symbol
+          in: path
+          description: The symbol identifier
+          required: true
+          schema:
+            type: string
+        - name: date
+          in: query
+          description: Optional date in format YYYY-MM-DD (defaults to latest available data)
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Models.OrderBookModel'
+              example: [
+  {
+    "add_order": {
+      "symbol": "AAPL",
+      "timestamp_nanos": 1775455661226000000,
+      "timestamp": "2026-04-06T06:07:41.2260000Z",
+      "is_side_buy": true,
+      "size": 100,
+      "price": 176.42,
+      "order_id": 123456789
+    }
+  },
+  {
+    "delete_order": {
+      "symbol": "TSLA",
+      "timestamp_nanos": 1775455661226000000,
+      "timestamp": "2026-04-06T06:07:41.2260000Z",
+      "order_id_reference": 987654321
+    }
+  },
+  {
+    "modify_order": {
+      "symbol": "NFLX",
+      "timestamp_nanos": 1775455661226000000,
+      "timestamp": "2026-04-06T06:07:41.2260000Z",
+      "order_id_reference": 789456123,
+      "is_priority_reset": false,
+      "size": 150,
+      "price": 625.85
+    }
+  },
+  {
+    "executed_order": {
+      "symbol": "META",
+      "timestamp_nanos": 1775455661226000000,
+      "timestamp": "2026-04-06T06:07:41.2260000Z",
+      "order_id_reference": 555123456,
+      "sale_condition_flags": 0,
+      "is_intermarket_sweep": false,
+      "is_extended_hours_trade": false,
+      "is_odd_lot_trade": false,
+      "is_trade_through_exempt": false,
+      "is_single_price_cross_trade": false,
+      "size": 200,
+      "price": 421,
+      "trade_id": 123987456
+    }
+  },
+  {
+    "clear_book": {
+      "symbol": "MSFT",
+      "timestamp_nanos": 1775455661226000000,
+      "timestamp": "2026-04-06T06:07:41.2260000Z"
+    }
+  }
+]
+  '/v1/native/iex/admin/messages/{symbol}':
+    get:
+      tags:
+        - NativeIEX
+      summary: Get Admin Messages
+      parameters:
+        - name: symbol
+          in: path
+          description: The symbol identifier
+          required: true
+          schema:
+            type: string
+        - name: date
+          in: query
+          description: Optional date in format YYYY-MM-DD (defaults to latest available data)
+          required: true
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Models.AdminMessageModel'
+              example: [
+  {
+    "trading_status": {
+      "symbol": "PYPL",
+      "timestamp_nanos": 1775455661227000000,
+      "timestamp": "2026-04-06T06:07:41.2270000Z",
+      "is_trading_live": true,
+      "is_trading_halted": false,
+      "is_trading_in_order_acceptance_period": false,
+      "is_trading_paused": false,
+      "is_reason_halt_news_pending": false,
+      "is_reason_ipo_not_yet_trading": false,
+      "is_reason_ipo_deferred": false,
+      "is_reason_halt_news_dissemination": false,
+      "is_reason_ipo_order_acceptance_period": false,
+      "is_reason_ipo_pre_launch_period": false,
+      "is_reason_market_wide_circuit_breaker_level1": false,
+      "is_reason_market_wide_circuit_breaker_level2": false,
+      "is_reason_market_wide_circuit_breaker_level3": false,
+      "is_reason_not_applicable": true,
+      "is_reason_not_available": false
+    }
+  },
+  {
+    "official_price": {
+      "symbol": "AAPL",
+      "timestamp_nanos": 1775455661227000000,
+      "timestamp": "2026-04-06T06:07:41.2270000Z",
+      "price_type": 81,
+      "price_type_code": "Q",
+      "price_type_text": "IEX Official Opening Price",
+      "is_price_type_opening": true,
+      "is_price_type_closing": false,
+      "official_price": 12.3456
+    }
+  },
+  {
+    "security_event": {
+      "symbol": "CRM",
+      "timestamp_nanos": 1775455661227000000,
+      "timestamp": "2026-04-06T06:07:41.2270000Z",
+      "security_event": 79,
+      "security_event_code": "O",
+      "security_event_text": "Opening Process Complete",
+      "is_opening_process_complete": true,
+      "is_closing_process_complete": false
+    }
+  },
+  {
+    "auction_information": {
+      "symbol": "AAPL",
+      "timestamp_nanos": 1775455661227000000,
+      "timestamp": "2026-04-06T06:07:41.2270000Z",
+      "auction_type": 79,
+      "auction_type_code": "O",
+      "auction_type_text": "Opening Auction",
+      "is_auction_type_opening": true,
+      "is_auction_type_closing": false,
+      "is_auction_type_ipo": false,
+      "is_auction_type_halt": false,
+      "is_auction_type_volatility": false,
+      "paired_shares": 12500,
+      "reference_price": 156.42,
+      "indicative_clearing_price": 156.5,
+      "imbalance_shares": 2300,
+      "imbalance_side": 66,
+      "imbalance_side_code": "B",
+      "imbalance_side_text": "Buy-side imbalance",
+      "is_imbalance_side_buy": true,
+      "is_imbalance_side_sell": false,
+      "is_imbalance_side_none": false,
+      "extension_number": 0,
+      "scheduled_auction_time_seconds": 1775455961,
+      "scheduled_auction_time": "2026-04-06T06:12:41.0000000Z",
+      "auction_book_clearing_price": 156.45,
+      "collar_reference_price": 157,
+      "lower_auction_collar": 152.5,
+      "upper_auction_collar": 161.5
+    }
+  },
+  {
+    "short_sale_price_test": {
+      "symbol": "MSFT",
+      "timestamp_nanos": 1775455661227000000,
+      "timestamp": "2026-04-06T06:07:41.2270000Z",
+      "short_sale_price_test_status": 1,
+      "short_sale_price_test_status_code": "1",
+      "short_sale_price_test_status_text": "Short Sale Price Test in Effect",
+      "is_short_sale_price_test_not_in_effect": false,
+      "is_short_sale_price_test_in_effect": true,
+      "detail": 65,
+      "detail_code": "A",
+      "detail_text": "Short sale price test restriction in effect due to an intraday price drop (Activated)",
+      "is_detail_no_price_test": false,
+      "is_detail_activated": true,
+      "is_detail_continued": false,
+      "is_detail_deactivated": false,
+      "is_detail_not_available": false
+    }
+  },
+  {
+    "operational_halt_status": {
+      "symbol": "AAPL",
+      "timestamp_nanos": 1775455661227000000,
+      "timestamp": "2026-04-06T06:07:41.2270000Z",
+      "operational_halt_status": 79,
+      "operational_halt_status_code": "O",
+      "operational_halt_status_text": "IEX specific operational trading halt",
+      "is_operationally_halted": true,
+      "is_not_operationally_halted": false
+    }
+  },
+  {
+    "retail_liquidity_indicator": {
+      "symbol": "GOOG",
+      "timestamp_nanos": 1775455661227000000,
+      "timestamp": "2026-04-06T06:07:41.2270000Z",
+      "retail_liquidity_indicator": 65,
+      "retail_liquidity_indicator_code": "A",
+      "retail_liquidity_indicator_text": "Buy interest for Retail",
+      "is_retail_indicator_not_applicable": false,
+      "is_retail_indicator_buy_interest": true,
+      "is_retail_indicator_sell_interest": false,
+      "is_retail_indicator_buy_and_sell_interest": false
+    }
+  },
+  {
+    "system_event": {
+      "timestamp_nanos": 1775455661227000000,
+      "timestamp": "2026-04-06T06:07:41.2270000Z",
+      "system_event": 79,
+      "system_event_code": "O",
+      "system_event_text": "Start of Messages – Outside of heartbeat messages on the lower level protocol, the start of day message is the first message sent in any trading session.",
+      "is_system_event_start_of_messages": true,
+      "is_system_event_start_of_system_hours": false,
+      "is_system_event_start_of_regular_market_hours": false,
+      "is_system_event_end_of_regular_market_hours": false,
+      "is_system_event_end_of_system_hours": false,
+      "is_system_event_end_of_messages": false
+    }
+  },
+  {
+    "security_directory": {
+      "symbol": "INTC",
+      "timestamp_nanos": 1775455661227000000,
+      "timestamp": "2026-04-06T06:07:41.2270000Z",
+      "flags": 0,
+      "round_lot_size": 100,
+      "adjusted_poc_price": 35.36,
+      "luld_tier": 1,
+      "luld_tier_code": "1",
+      "luld_tier_text": "Tier 1 NMS Stock",
+      "is_luld_tier_not_applicable": false,
+      "is_luld_tier1": true,
+      "is_luld_tier2": false
+    }
+  }
+]
   '/v1/symbols/{exchange_id}':
     get:
       tags:
-        - Metadata
+        - Symbols
       summary: List of symbols for the exchange
       parameters:
         - name: exchange_id
@@ -495,14 +545,14 @@ paths:
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "TESLA INC",
-    "date": "2026-04-03"
+    "date": "2026-04-06"
   },
   {
     "symbol_id": "NVDA",
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "NVIDIA CORP",
-    "date": "2026-04-03"
+    "date": "2026-04-06"
   }
 ]
             application/json:
@@ -518,14 +568,14 @@ paths:
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "TESLA INC",
-    "date": "2026-04-03"
+    "date": "2026-04-06"
   },
   {
     "symbol_id": "NVDA",
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "NVIDIA CORP",
-    "date": "2026-04-03"
+    "date": "2026-04-06"
   }
 ]
             text/json:
@@ -541,42 +591,20 @@ paths:
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "TESLA INC",
-    "date": "2026-04-03"
+    "date": "2026-04-06"
   },
   {
     "symbol_id": "NVDA",
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "NVIDIA CORP",
-    "date": "2026-04-03"
+    "date": "2026-04-06"
   }
 ]
-  /v1/native/iex/admin/system-event:
-    get:
-      tags:
-        - Native IEX
-      summary: Get System Events
-      parameters:
-        - name: date
-          in: query
-          description: Date in format YYYY-MM-DD
-          required: true
-          schema:
-            type: string
-            format: date-time
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Admin.SystemEventModel'
   /v1/ohlcv/periods:
     get:
       tags:
-        - Ohlcv
+        - TimeSeries
       summary: List all periods
       description: "Get full list of supported time periods available for requesting OHLCV timeseries data.\n            \n### Available periods\n            \nTime unit | Period identifiers\n--------- | -----------\nSecond | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC\nMinute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN\nHour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS\nDay | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY\nMonth | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH\nYear | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS\n            \n:::tip\nYou can assume that we will not remove any periods from this response, however, we may add new ones.\n:::"
       responses:
@@ -587,7 +615,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OHLCV.TimeseriesPeriod'
+                  $ref: '#/components/schemas/OHLCVTimeSeries.TimeseriesPeriod'
               examples:
                 Example response:
                   value: [
@@ -620,7 +648,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OHLCV.TimeseriesPeriod'
+                  $ref: '#/components/schemas/OHLCVTimeSeries.TimeseriesPeriod'
               examples:
                 Example response:
                   value: [
@@ -653,7 +681,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OHLCV.TimeseriesPeriod'
+                  $ref: '#/components/schemas/OHLCVTimeSeries.TimeseriesPeriod'
               examples:
                 Example response:
                   value: [
@@ -685,7 +713,7 @@ paths:
   '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/history':
     get:
       tags:
-        - Ohlcv
+        - TimeSeries
       summary: Historical data
       description: Get OHLCV timeseries data returned in time ascending order.
       parameters:
@@ -732,7 +760,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OHLCV.TimeseriesItem'
+                  $ref: '#/components/schemas/OHLCVTimeSeries.TimeseriesItem'
               examples:
                 Example response:
                   value: [
@@ -765,7 +793,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OHLCV.TimeseriesItem'
+                  $ref: '#/components/schemas/OHLCVTimeSeries.TimeseriesItem'
               examples:
                 Example response:
                   value: [
@@ -798,7 +826,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OHLCV.TimeseriesItem'
+                  $ref: '#/components/schemas/OHLCVTimeSeries.TimeseriesItem'
               examples:
                 Example response:
                   value: [
@@ -830,7 +858,7 @@ paths:
   '/v1/ohlcv/exchange/{exchange_id}/history':
     get:
       tags:
-        - Ohlcv
+        - TimeSeries
       summary: Historical data by exchange
       description: Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
       parameters:
@@ -866,21 +894,21 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OHLCV.ExchangeTimeseriesItem'
+                  $ref: '#/components/schemas/OHLCVTimeSeries.ExchangeTimeseriesItem'
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OHLCV.ExchangeTimeseriesItem'
+                  $ref: '#/components/schemas/OHLCVTimeSeries.ExchangeTimeseriesItem'
             text/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OHLCV.ExchangeTimeseriesItem'
+                  $ref: '#/components/schemas/OHLCVTimeSeries.ExchangeTimeseriesItem'
   '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/latest':
     get:
       tags:
-        - Ohlcv
+        - TimeSeries
       summary: Latest data
       description: "Get OHLCV latest timeseries data returned in time descending order. Data can be requested by the period and for the specific symbol eg `BITSTAMP_SPOT_BTC_USD`, if you need to query timeseries by asset pairs eg. `BTC/USD`, then please reffer to the Exchange Rates Timeseries data\n            \n:::info\nOHLCV Latest endpoint is just the shortcut to the OHLCV Historical endpoint with substituted `time_start` and `time_end` parameters. \nThe OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay.\n:::"
       parameters:
@@ -917,7 +945,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OHLCV.TimeseriesItem'
+                  $ref: '#/components/schemas/OHLCVTimeSeries.TimeseriesItem'
               examples:
                 Example response:
                   value: [
@@ -950,7 +978,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OHLCV.TimeseriesItem'
+                  $ref: '#/components/schemas/OHLCVTimeSeries.TimeseriesItem'
               examples:
                 Example response:
                   value: [
@@ -983,7 +1011,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OHLCV.TimeseriesItem'
+                  $ref: '#/components/schemas/OHLCVTimeSeries.TimeseriesItem'
               examples:
                 Example response:
                   value: [
@@ -1012,535 +1040,8 @@ paths:
     "trades_count": 33
   }
 ]
-  '/v1/native/iex/trade/{symbol}':
-    get:
-      tags:
-        - Native IEX
-      summary: Get Trades
-      parameters:
-        - name: symbol
-          in: path
-          description: The symbol identifier
-          required: true
-          schema:
-            type: string
-        - name: date
-          in: query
-          description: Optional date in format YYYY-MM-DD (defaults to latest available data)
-          required: true
-          schema:
-            type: string
-            format: date-time
-      responses:
-        '200':
-          description: successful operation
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Trade.TradeModel'
 components:
   schemas:
-    Admin.AdminMessageModel:
-      type: object
-      properties:
-        trading_status:
-          $ref: '#/components/schemas/Admin.TradingStatusModel'
-        official_price:
-          $ref: '#/components/schemas/Admin.OfficialPriceModel'
-        security_event:
-          $ref: '#/components/schemas/Admin.SecurityEventModel'
-        auction_information:
-          $ref: '#/components/schemas/Admin.AuctionInformationModel'
-        short_sale_price_test:
-          $ref: '#/components/schemas/Admin.ShortSalePriceTestStatusModel'
-        operational_halt_status:
-          $ref: '#/components/schemas/Admin.OperationalHaltStatusModel'
-        retail_liquidity_indicator:
-          $ref: '#/components/schemas/Admin.RetailLiquidityIndicatorModel'
-        system_event:
-          $ref: '#/components/schemas/Admin.SystemEventModel'
-        security_directory:
-          $ref: '#/components/schemas/Admin.SecurityDirectoryModel'
-      additionalProperties: false
-      description: 'Represents the response DTO for IEX admin information, combining all symbol-based admin message types'
-    Admin.AuctionInformationModel:
-      type: object
-      properties:
-        symbol:
-          type: string
-          description: The stock symbol
-          nullable: true
-        timestamp_nanos:
-          type: integer
-          description: Original timestamp in nanoseconds since epoch
-          format: int64
-        timestamp:
-          type: string
-          description: Time when the auction data was recorded as DateTime
-          format: date-time
-        auction_type:
-          type: integer
-          description: Type of auction as byte value
-          format: int32
-        auction_type_code:
-          type: string
-          description: Type of auction as character string
-          nullable: true
-        auction_type_text:
-          type: string
-          description: Human-readable description of the auction type
-          nullable: true
-        is_auction_type_opening:
-          type: boolean
-          description: Indicates if the auction type is 'Opening Auction' ('O'/0x4f).
-        is_auction_type_closing:
-          type: boolean
-          description: Indicates if the auction type is 'Closing Auction' ('C'/0x43).
-        is_auction_type_ipo:
-          type: boolean
-          description: Indicates if the auction type is 'IPO Auction' ('I'/0x49).
-        is_auction_type_halt:
-          type: boolean
-          description: Indicates if the auction type is 'Halt Auction' ('H'/0x48).
-        is_auction_type_volatility:
-          type: boolean
-          description: Indicates if the auction type is 'Volatility Auction' ('V'/0x56).
-        paired_shares:
-          type: integer
-          description: Number of shares paired at the Reference Price
-          format: int32
-        reference_price:
-          type: number
-          description: Reference price as decimal
-          format: double
-        indicative_clearing_price:
-          type: number
-          description: Indicative clearing price as decimal
-          format: double
-        imbalance_shares:
-          type: integer
-          description: Number of unpaired shares at the Reference Price
-          format: int32
-        imbalance_side:
-          type: integer
-          description: Side of the imbalance as byte value
-          format: int32
-        imbalance_side_code:
-          type: string
-          description: Side of the imbalance as character string
-          nullable: true
-        imbalance_side_text:
-          type: string
-          description: Human-readable description of the imbalance side
-          nullable: true
-        is_imbalance_side_buy:
-          type: boolean
-          description: Indicates if there is a buy-side imbalance ('B'/0x42).
-        is_imbalance_side_sell:
-          type: boolean
-          description: Indicates if there is a sell-side imbalance ('S'/0x53).
-        is_imbalance_side_none:
-          type: boolean
-          description: Indicates if there is no imbalance ('N'/0x4e).
-        extension_number:
-          type: integer
-          description: Number of extensions to the auction
-          format: int32
-        scheduled_auction_time_seconds:
-          type: integer
-          description: Scheduled auction time in seconds since epoch
-          format: int32
-        scheduled_auction_time:
-          type: string
-          description: Scheduled time for the auction as DateTime
-          format: date-time
-        auction_book_clearing_price:
-          type: number
-          description: Auction book clearing price as decimal
-          format: double
-        collar_reference_price:
-          type: number
-          description: Collar reference price as decimal
-          format: double
-        lower_auction_collar:
-          type: number
-          description: Lower auction collar as decimal
-          format: double
-        upper_auction_collar:
-          type: number
-          description: Upper auction collar as decimal
-          format: double
-      additionalProperties: false
-      description: Represents the response DTO for auction information
-    Admin.OfficialPriceModel:
-      type: object
-      properties:
-        symbol:
-          type: string
-          description: The stock symbol
-          nullable: true
-        timestamp_nanos:
-          type: integer
-          description: Original timestamp in nanoseconds since epoch
-          format: int64
-        timestamp:
-          type: string
-          description: Time when the official price was recorded as DateTime
-          format: date-time
-        price_type:
-          type: integer
-          description: Type of price as byte value
-          format: int32
-        price_type_code:
-          type: string
-          description: Type of price as character string
-          nullable: true
-        price_type_text:
-          type: string
-          description: Human-readable description of the price type
-          nullable: true
-        is_price_type_opening:
-          type: boolean
-          description: Indicates if the price type is 'IEX Official Opening Price' ('Q'/0x51).
-        is_price_type_closing:
-          type: boolean
-          description: Indicates if the price type is 'IEX Official Closing Price' ('M'/0x4d).
-        official_price:
-          type: number
-          description: Official price as decimal
-          format: double
-      additionalProperties: false
-      description: Represents the response DTO for official price information
-    Admin.OperationalHaltStatusModel:
-      type: object
-      properties:
-        symbol:
-          type: string
-          description: The stock symbol
-          nullable: true
-        timestamp_nanos:
-          type: integer
-          description: Original timestamp in nanoseconds since epoch
-          format: int64
-        timestamp:
-          type: string
-          description: Time when the operational halt status was recorded as DateTime
-          format: date-time
-        operational_halt_status:
-          type: integer
-          description: Operational halt status as byte value
-          format: int32
-        operational_halt_status_code:
-          type: string
-          description: Operational halt status as character string
-          nullable: true
-        operational_halt_status_text:
-          type: string
-          description: Human-readable description of the operational halt status
-          nullable: true
-        is_operationally_halted:
-          type: boolean
-          description: Indicates if the status is 'IEX specific operational trading halt' ('O'/0x4f).
-        is_not_operationally_halted:
-          type: boolean
-          description: Indicates if the status is 'Not operationally halted on IEX' ('N'/0x4e).
-      additionalProperties: false
-      description: Represents the response DTO for operational halt status information
-    Admin.RetailLiquidityIndicatorModel:
-      type: object
-      properties:
-        symbol:
-          type: string
-          description: The stock symbol
-          nullable: true
-        timestamp_nanos:
-          type: integer
-          description: Original timestamp in nanoseconds since epoch
-          format: int64
-        timestamp:
-          type: string
-          description: Time when the retail liquidity indicator was recorded as DateTime
-          format: date-time
-        retail_liquidity_indicator:
-          type: integer
-          description: Retail liquidity indicator as byte value
-          format: int32
-        retail_liquidity_indicator_code:
-          type: string
-          description: Retail liquidity indicator as character string
-          nullable: true
-        retail_liquidity_indicator_text:
-          type: string
-          description: Human-readable description of the retail liquidity indicator
-          nullable: true
-        is_retail_indicator_not_applicable:
-          type: boolean
-          description: Indicates if the indicator is 'Not Applicable' (' '/0x20).
-        is_retail_indicator_buy_interest:
-          type: boolean
-          description: Indicates if there is 'Buy interest for Retail' ('A'/0x41).
-        is_retail_indicator_sell_interest:
-          type: boolean
-          description: Indicates if there is 'Sell interest for Retail' ('B'/0x42).
-        is_retail_indicator_buy_and_sell_interest:
-          type: boolean
-          description: Indicates if there is 'Buy and sell interest for Retail' ('C'/0x43).
-      additionalProperties: false
-      description: Represents the response DTO for retail liquidity indicator information
-    Admin.SecurityDirectoryModel:
-      type: object
-      properties:
-        symbol:
-          type: string
-          description: The stock symbol
-          nullable: true
-        timestamp_nanos:
-          type: integer
-          description: Original timestamp in nanoseconds since epoch
-          format: int64
-        timestamp:
-          type: string
-          description: Time when the security directory information was recorded as DateTime
-          format: date-time
-        flags:
-          type: integer
-          description: Flags for the security
-          format: int32
-        round_lot_size:
-          type: integer
-          description: Number of shares that represent a round lot
-          format: int32
-        adjusted_poc_price:
-          type: number
-          description: Adjusted previous official closing price as decimal
-          format: double
-        luld_tier:
-          type: integer
-          description: LULD tier as byte value
-          format: int32
-        luld_tier_code:
-          type: string
-          description: LULD tier as numeric string
-          nullable: true
-        luld_tier_text:
-          type: string
-          description: Human-readable description of the LULD tier
-          nullable: true
-        is_luld_tier_not_applicable:
-          type: boolean
-          description: Indicates if LULD Tier is 'Not applicable' (0x0).
-        is_luld_tier1:
-          type: boolean
-          description: Indicates if LULD Tier is 'Tier 1 NMS Stock' (0x1).
-        is_luld_tier2:
-          type: boolean
-          description: Indicates if LULD Tier is 'Tier 2 NMS Stock' (0x2).
-      additionalProperties: false
-      description: Represents the response DTO for security directory information
-    Admin.SecurityEventModel:
-      type: object
-      properties:
-        symbol:
-          type: string
-          description: The stock symbol
-          nullable: true
-        timestamp_nanos:
-          type: integer
-          description: Original timestamp in nanoseconds since epoch
-          format: int64
-        timestamp:
-          type: string
-          description: Time when the security event was recorded as DateTime
-          format: date-time
-        security_event:
-          type: integer
-          description: Security event as byte value
-          format: int32
-        security_event_code:
-          type: string
-          description: Security event as character string ('O' or 'C')
-          nullable: true
-        security_event_text:
-          type: string
-          description: Human-readable description of the security event
-          nullable: true
-        is_opening_process_complete:
-          type: boolean
-          description: Indicates if the security event is 'Opening Process Complete' ('O'/0x4f).
-        is_closing_process_complete:
-          type: boolean
-          description: Indicates if the security event is 'Closing Process Complete' ('C'/0x43).
-      additionalProperties: false
-      description: Represents the response DTO for security event information
-    Admin.ShortSalePriceTestStatusModel:
-      type: object
-      properties:
-        symbol:
-          type: string
-          description: The stock symbol
-          nullable: true
-        timestamp_nanos:
-          type: integer
-          description: Original timestamp in nanoseconds since epoch
-          format: int64
-        timestamp:
-          type: string
-          description: Time when the short sale price test status was recorded as DateTime
-          format: date-time
-        short_sale_price_test_status:
-          type: integer
-          description: Short sale price test status as byte value
-          format: int32
-        short_sale_price_test_status_code:
-          type: string
-          description: Short sale price test status as hex string
-          nullable: true
-        short_sale_price_test_status_text:
-          type: string
-          description: Human-readable description of the short sale price test status
-          nullable: true
-        is_short_sale_price_test_not_in_effect:
-          type: boolean
-          description: Indicates if the short sale price test is not in effect
-        is_short_sale_price_test_in_effect:
-          type: boolean
-          description: Indicates if the short sale price test is in effect
-        detail:
-          type: integer
-          description: Detail of the short sale price test as byte value
-          format: int32
-        detail_code:
-          type: string
-          description: Detail of the short sale price test as character string
-          nullable: true
-        detail_text:
-          type: string
-          description: Human-readable description of the short sale price test detail
-          nullable: true
-        is_detail_no_price_test:
-          type: boolean
-          description: Indicates if there is no price test in place
-        is_detail_activated:
-          type: boolean
-          description: Indicates if the short sale price test restriction is in effect due to an intraday price drop
-        is_detail_continued:
-          type: boolean
-          description: Indicates if the short sale price test restriction remains in effect from prior day
-        is_detail_deactivated:
-          type: boolean
-          description: Indicates if the short sale price test restriction is deactivated
-        is_detail_not_available:
-          type: boolean
-          description: Indicates if the detail is not available
-      additionalProperties: false
-      description: Represents the response DTO for short sale price test status information
-    Admin.SystemEventModel:
-      type: object
-      properties:
-        timestamp_nanos:
-          type: integer
-          description: Original timestamp in nanoseconds since epoch
-          format: int64
-        timestamp:
-          type: string
-          description: Time when the system event was recorded as DateTime
-          format: date-time
-        system_event:
-          type: integer
-          description: System event as byte value
-          format: int32
-        system_event_code:
-          type: string
-          description: System event as string
-          nullable: true
-        system_event_text:
-          type: string
-          description: Human-readable description of the system event
-          nullable: true
-        is_system_event_start_of_messages:
-          type: boolean
-          description: "Indicates if the system event is 'Start of Messages' (O).\nOutside of heartbeat messages on the lower level protocol, \nthe start of day message is the first message sent in any trading session."
-        is_system_event_start_of_system_hours:
-          type: boolean
-          description: "Indicates if the system event is 'Start of System Hours' (S).\nThis message indicates that IEX is open and ready to start accepting orders."
-        is_system_event_start_of_regular_market_hours:
-          type: boolean
-          description: "Indicates if the system event is 'Start of Regular Market Hours' (R).\nThis message indicates that DAY and GTX orders, as well as market orders and pegged orders, \nare available for execution on IEX."
-        is_system_event_end_of_regular_market_hours:
-          type: boolean
-          description: "Indicates if the system event is 'End of Regular Market Hours' (M).\nThis message indicates that DAY orders, market orders, and pegged orders \nare no longer accepted by IEX."
-        is_system_event_end_of_system_hours:
-          type: boolean
-          description: "Indicates if the system event is 'End of System Hours' (E).\nThis message indicates that IEX is now closed and will not accept \nany new orders during this trading session. It is still possible \nto receive messages after the end of day."
-        is_system_event_end_of_messages:
-          type: boolean
-          description: "Indicates if the system event is 'End of Messages' (C).\nThis is always the last message sent in any trading session."
-      additionalProperties: false
-      description: Represents the response DTO for system event information
-    Admin.TradingStatusModel:
-      type: object
-      properties:
-        symbol:
-          type: string
-          description: The stock symbol
-          nullable: true
-        timestamp_nanos:
-          type: integer
-          description: Original timestamp in nanoseconds since epoch
-          format: int64
-        timestamp:
-          type: string
-          description: Time when the trading status was recorded as DateTime
-          format: date-time
-        is_trading_live:
-          type: boolean
-          description: Gets whether the security is currently trading on IEX
-        is_trading_halted:
-          type: boolean
-          description: Gets whether the security is halted across all US equity markets
-        is_trading_in_order_acceptance_period:
-          type: boolean
-          description: Gets whether the security is in Order Acceptance Period on IEX
-        is_trading_paused:
-          type: boolean
-          description: Gets whether the security is paused and in Order Acceptance Period on IEX
-        is_reason_halt_news_pending:
-          type: boolean
-          description: Gets whether the halt reason is News Pending
-        is_reason_ipo_not_yet_trading:
-          type: boolean
-          description: Gets whether the halt reason is IPO Not Yet Trading
-        is_reason_ipo_deferred:
-          type: boolean
-          description: Gets whether the halt reason is IPO Deferred
-        is_reason_halt_news_dissemination:
-          type: boolean
-          description: Gets whether the order acceptance period reason is Halt News Dissemination
-        is_reason_ipo_order_acceptance_period:
-          type: boolean
-          description: Gets whether the order acceptance period reason is IPO Order Acceptance Period
-        is_reason_ipo_pre_launch_period:
-          type: boolean
-          description: Gets whether the order acceptance period reason is IPO Pre-Launch Period
-        is_reason_market_wide_circuit_breaker_level1:
-          type: boolean
-          description: Gets whether the order acceptance period reason is Market-Wide Circuit Breaker Level 1 – Breached
-        is_reason_market_wide_circuit_breaker_level2:
-          type: boolean
-          description: Gets whether the order acceptance period reason is Market-Wide Circuit Breaker Level 2 – Breached
-        is_reason_market_wide_circuit_breaker_level3:
-          type: boolean
-          description: Gets whether the halt reason is Market-Wide Circuit Breaker Level 3 – Breached
-        is_reason_not_applicable:
-          type: boolean
-          description: Gets whether the reason is Not Applicable
-        is_reason_not_available:
-          type: boolean
-          description: Gets whether the halt reason is Not Available
-      additionalProperties: false
-      description: Represents the response DTO for trading status information
     FinFeedAPI.ExchangeModel:
       type: object
       properties:
@@ -1680,7 +1181,38 @@ components:
           nullable: true
           readOnly: true
       additionalProperties: { }
-    Level1.QuoteUpdateModel:
+    IEXPriceLevelUpdate.PriceLevelUpdateModel:
+      type: object
+      properties:
+        symbol:
+          type: string
+          description: The stock symbol
+          nullable: true
+        timestamp_nanos:
+          type: integer
+          description: Original timestamp in nanoseconds since epoch
+          format: int64
+        timestamp:
+          type: string
+          description: Time when the price level update was recorded as DateTime
+          format: date-time
+        is_side_buy:
+          type: boolean
+          description: Indicates if this is a price level update for the Buy Side.
+        is_event_processing_complete:
+          type: boolean
+          description: Indicates if event processing is complete.
+        size:
+          type: integer
+          description: Aggregate quoted size at the price level
+          format: int32
+        price:
+          type: number
+          description: Price level as decimal
+          format: double
+      additionalProperties: false
+      description: Represents the response DTO for price level update information
+    IEXQuoteUpdate.QuoteUpdateModel:
       type: object
       properties:
         symbol:
@@ -1719,38 +1251,97 @@ components:
           format: int32
       additionalProperties: false
       description: Represents the response DTO for quote update information
-    Level2.PriceLevelUpdateModel:
+    IEXSystemEvent.SystemEventModel:
       type: object
       properties:
-        symbol:
-          type: string
-          description: The stock symbol
-          nullable: true
         timestamp_nanos:
           type: integer
           description: Original timestamp in nanoseconds since epoch
           format: int64
         timestamp:
           type: string
-          description: Time when the price level update was recorded as DateTime
+          description: Time when the system event was recorded as DateTime
           format: date-time
-        is_side_buy:
+        system_event:
+          type: integer
+          description: System event as byte value
+          format: int32
+        system_event_code:
+          type: string
+          description: System event as string
+          nullable: true
+        system_event_text:
+          type: string
+          description: Human-readable description of the system event
+          nullable: true
+        is_system_event_start_of_messages:
           type: boolean
-          description: Indicates if this is a price level update for the Buy Side.
-        is_event_processing_complete:
+          description: "Indicates if the system event is 'Start of Messages' (O).\nOutside of heartbeat messages on the lower level protocol, \nthe start of day message is the first message sent in any trading session."
+        is_system_event_start_of_system_hours:
           type: boolean
-          description: Indicates if event processing is complete.
+          description: "Indicates if the system event is 'Start of System Hours' (S).\nThis message indicates that IEX is open and ready to start accepting orders."
+        is_system_event_start_of_regular_market_hours:
+          type: boolean
+          description: "Indicates if the system event is 'Start of Regular Market Hours' (R).\nThis message indicates that DAY and GTX orders, as well as market orders and pegged orders, \nare available for execution on IEX."
+        is_system_event_end_of_regular_market_hours:
+          type: boolean
+          description: "Indicates if the system event is 'End of Regular Market Hours' (M).\nThis message indicates that DAY orders, market orders, and pegged orders \nare no longer accepted by IEX."
+        is_system_event_end_of_system_hours:
+          type: boolean
+          description: "Indicates if the system event is 'End of System Hours' (E).\nThis message indicates that IEX is now closed and will not accept \nany new orders during this trading session. It is still possible \nto receive messages after the end of day."
+        is_system_event_end_of_messages:
+          type: boolean
+          description: "Indicates if the system event is 'End of Messages' (C).\nThis is always the last message sent in any trading session."
+      additionalProperties: false
+      description: Represents the response DTO for system event information
+    IEXTrade.TradeModel:
+      type: object
+      properties:
+        is_trade_break:
+          type: boolean
+          description: Indicates if this record represents a trade break (true) or a trade report (false).
+        symbol:
+          type: string
+          description: The stock symbol.
+          nullable: true
+        timestamp_nanos:
+          type: integer
+          description: Original timestamp in nanoseconds since epoch.
+          format: int64
+        timestamp:
+          type: string
+          description: Time when the event was recorded as DateTime (UTC).
+          format: date-time
         size:
           type: integer
-          description: Aggregate quoted size at the price level
+          description: Trade volume (or break volume) in number of shares.
           format: int32
         price:
           type: number
-          description: Price level as decimal
+          description: Trade price (or break price) as decimal.
           format: double
+        trade_id:
+          type: integer
+          description: IEX trade identifier (same for report and its corresponding break).
+          format: int64
+        is_intermarket_sweep:
+          type: boolean
+          description: "Bit 7 (Mask 0x80): Intermarket Sweep Flag.\nTrue: Intermarket Sweep Order (\"ISO\").\nFalse: Non-Intermarket Sweep Order."
+        is_extended_hours_trade:
+          type: boolean
+          description: "Bit 6 (Mask 0x40): Extended Hours Flag.\nTrue: Extended Hours Trade (i.e., Form T sale condition).\nFalse: Regular Market Session Trade."
+        is_odd_lot_trade:
+          type: boolean
+          description: "Bit 5 (Mask 0x20): Odd Lot Flag.\nTrue: Odd Lot Trade.\nFalse: Round or Mixed Lot Trade."
+        is_trade_through_exempt:
+          type: boolean
+          description: "Bit 4 (Mask 0x10): Trade Through Exempt Flag.\nTrue: Trade is not subject to Rule 611 (Trade Through) of SEC Reg. NMS.\nFalse: Trade is subject to Rule 611 (Trade Through) of SEC Reg. NMS.\nApplied when the taking order was an ISO that traded through a protected quotation,\nOR the NBBO was crossed at the time of the trade,\nOR the trade occurred through a self-helped venue's quotation,\nOR the trade was a single-price cross."
+        is_single_price_cross_trade:
+          type: boolean
+          description: "Bit 3 (Mask 0x08): Single-price Cross Trade Flag.\nTrue: Trade resulting from a single-price cross.\nFalse: Execution during continuous trading."
       additionalProperties: false
-      description: Represents the response DTO for price level update information
-    Level3.AddOrderModel:
+      description: Represents the response DTO for a single trade event (report or break).
+    Models.AddOrderModel:
       type: object
       properties:
         symbol:
@@ -1782,7 +1373,139 @@ components:
           format: int64
       additionalProperties: false
       description: Represents the response DTO for add order information
-    Level3.ClearBookModel:
+    Models.AdminMessageModel:
+      type: object
+      properties:
+        trading_status:
+          $ref: '#/components/schemas/Models.TradingStatusModel'
+        official_price:
+          $ref: '#/components/schemas/Models.OfficialPriceModel'
+        security_event:
+          $ref: '#/components/schemas/Models.SecurityEventModel'
+        auction_information:
+          $ref: '#/components/schemas/Models.AuctionInformationModel'
+        short_sale_price_test:
+          $ref: '#/components/schemas/Models.ShortSalePriceTestStatusModel'
+        operational_halt_status:
+          $ref: '#/components/schemas/Models.OperationalHaltStatusModel'
+        retail_liquidity_indicator:
+          $ref: '#/components/schemas/Models.RetailLiquidityIndicatorModel'
+        system_event:
+          $ref: '#/components/schemas/IEXSystemEvent.SystemEventModel'
+        security_directory:
+          $ref: '#/components/schemas/Models.SecurityDirectoryModel'
+      additionalProperties: false
+      description: 'Represents the response DTO for IEX admin information, combining all symbol-based admin message types'
+    Models.AuctionInformationModel:
+      type: object
+      properties:
+        symbol:
+          type: string
+          description: The stock symbol
+          nullable: true
+        timestamp_nanos:
+          type: integer
+          description: Original timestamp in nanoseconds since epoch
+          format: int64
+        timestamp:
+          type: string
+          description: Time when the auction data was recorded as DateTime
+          format: date-time
+        auction_type:
+          type: integer
+          description: Type of auction as byte value
+          format: int32
+        auction_type_code:
+          type: string
+          description: Type of auction as character string
+          nullable: true
+        auction_type_text:
+          type: string
+          description: Human-readable description of the auction type
+          nullable: true
+        is_auction_type_opening:
+          type: boolean
+          description: Indicates if the auction type is 'Opening Auction' ('O'/0x4f).
+        is_auction_type_closing:
+          type: boolean
+          description: Indicates if the auction type is 'Closing Auction' ('C'/0x43).
+        is_auction_type_ipo:
+          type: boolean
+          description: Indicates if the auction type is 'IPO Auction' ('I'/0x49).
+        is_auction_type_halt:
+          type: boolean
+          description: Indicates if the auction type is 'Halt Auction' ('H'/0x48).
+        is_auction_type_volatility:
+          type: boolean
+          description: Indicates if the auction type is 'Volatility Auction' ('V'/0x56).
+        paired_shares:
+          type: integer
+          description: Number of shares paired at the Reference Price
+          format: int32
+        reference_price:
+          type: number
+          description: Reference price as decimal
+          format: double
+        indicative_clearing_price:
+          type: number
+          description: Indicative clearing price as decimal
+          format: double
+        imbalance_shares:
+          type: integer
+          description: Number of unpaired shares at the Reference Price
+          format: int32
+        imbalance_side:
+          type: integer
+          description: Side of the imbalance as byte value
+          format: int32
+        imbalance_side_code:
+          type: string
+          description: Side of the imbalance as character string
+          nullable: true
+        imbalance_side_text:
+          type: string
+          description: Human-readable description of the imbalance side
+          nullable: true
+        is_imbalance_side_buy:
+          type: boolean
+          description: Indicates if there is a buy-side imbalance ('B'/0x42).
+        is_imbalance_side_sell:
+          type: boolean
+          description: Indicates if there is a sell-side imbalance ('S'/0x53).
+        is_imbalance_side_none:
+          type: boolean
+          description: Indicates if there is no imbalance ('N'/0x4e).
+        extension_number:
+          type: integer
+          description: Number of extensions to the auction
+          format: int32
+        scheduled_auction_time_seconds:
+          type: integer
+          description: Scheduled auction time in seconds since epoch
+          format: int32
+        scheduled_auction_time:
+          type: string
+          description: Scheduled time for the auction as DateTime
+          format: date-time
+        auction_book_clearing_price:
+          type: number
+          description: Auction book clearing price as decimal
+          format: double
+        collar_reference_price:
+          type: number
+          description: Collar reference price as decimal
+          format: double
+        lower_auction_collar:
+          type: number
+          description: Lower auction collar as decimal
+          format: double
+        upper_auction_collar:
+          type: number
+          description: Upper auction collar as decimal
+          format: double
+      additionalProperties: false
+      description: Represents the response DTO for auction information
+    Models.ClearBookModel:
       type: object
       properties:
         symbol:
@@ -1799,7 +1522,7 @@ components:
           format: date-time
       additionalProperties: false
       description: Represents the response DTO for clear book information
-    Level3.DeleteOrderModel:
+    Models.DeleteOrderModel:
       type: object
       properties:
         symbol:
@@ -1820,7 +1543,7 @@ components:
           format: int64
       additionalProperties: false
       description: Represents the response DTO for order delete information
-    Level3.ExecutedOrderModel:
+    Models.ExecutedOrderModel:
       type: object
       properties:
         symbol:
@@ -1872,7 +1595,7 @@ components:
           format: int64
       additionalProperties: false
       description: Represents the response DTO for order executed information
-    Level3.ModifyOrderModel:
+    Models.ModifyOrderModel:
       type: object
       properties:
         symbol:
@@ -1904,22 +1627,346 @@ components:
           format: double
       additionalProperties: false
       description: Represents the response DTO for order modify information
-    Level3.OrderBookModel:
+    Models.OfficialPriceModel:
+      type: object
+      properties:
+        symbol:
+          type: string
+          description: The stock symbol
+          nullable: true
+        timestamp_nanos:
+          type: integer
+          description: Original timestamp in nanoseconds since epoch
+          format: int64
+        timestamp:
+          type: string
+          description: Time when the official price was recorded as DateTime
+          format: date-time
+        price_type:
+          type: integer
+          description: Type of price as byte value
+          format: int32
+        price_type_code:
+          type: string
+          description: Type of price as character string
+          nullable: true
+        price_type_text:
+          type: string
+          description: Human-readable description of the price type
+          nullable: true
+        is_price_type_opening:
+          type: boolean
+          description: Indicates if the price type is 'IEX Official Opening Price' ('Q'/0x51).
+        is_price_type_closing:
+          type: boolean
+          description: Indicates if the price type is 'IEX Official Closing Price' ('M'/0x4d).
+        official_price:
+          type: number
+          description: Official price as decimal
+          format: double
+      additionalProperties: false
+      description: Represents the response DTO for official price information
+    Models.OperationalHaltStatusModel:
+      type: object
+      properties:
+        symbol:
+          type: string
+          description: The stock symbol
+          nullable: true
+        timestamp_nanos:
+          type: integer
+          description: Original timestamp in nanoseconds since epoch
+          format: int64
+        timestamp:
+          type: string
+          description: Time when the operational halt status was recorded as DateTime
+          format: date-time
+        operational_halt_status:
+          type: integer
+          description: Operational halt status as byte value
+          format: int32
+        operational_halt_status_code:
+          type: string
+          description: Operational halt status as character string
+          nullable: true
+        operational_halt_status_text:
+          type: string
+          description: Human-readable description of the operational halt status
+          nullable: true
+        is_operationally_halted:
+          type: boolean
+          description: Indicates if the status is 'IEX specific operational trading halt' ('O'/0x4f).
+        is_not_operationally_halted:
+          type: boolean
+          description: Indicates if the status is 'Not operationally halted on IEX' ('N'/0x4e).
+      additionalProperties: false
+      description: Represents the response DTO for operational halt status information
+    Models.OrderBookModel:
       type: object
       properties:
         add_order:
-          $ref: '#/components/schemas/Level3.AddOrderModel'
+          $ref: '#/components/schemas/Models.AddOrderModel'
         delete_order:
-          $ref: '#/components/schemas/Level3.DeleteOrderModel'
+          $ref: '#/components/schemas/Models.DeleteOrderModel'
         modify_order:
-          $ref: '#/components/schemas/Level3.ModifyOrderModel'
+          $ref: '#/components/schemas/Models.ModifyOrderModel'
         executed_order:
-          $ref: '#/components/schemas/Level3.ExecutedOrderModel'
+          $ref: '#/components/schemas/Models.ExecutedOrderModel'
         clear_book:
-          $ref: '#/components/schemas/Level3.ClearBookModel'
+          $ref: '#/components/schemas/Models.ClearBookModel'
       additionalProperties: false
       description: Represents the response DTO for Level-3 order book information
-    OHLCV.ExchangeTimeseriesItem:
+    Models.RetailLiquidityIndicatorModel:
+      type: object
+      properties:
+        symbol:
+          type: string
+          description: The stock symbol
+          nullable: true
+        timestamp_nanos:
+          type: integer
+          description: Original timestamp in nanoseconds since epoch
+          format: int64
+        timestamp:
+          type: string
+          description: Time when the retail liquidity indicator was recorded as DateTime
+          format: date-time
+        retail_liquidity_indicator:
+          type: integer
+          description: Retail liquidity indicator as byte value
+          format: int32
+        retail_liquidity_indicator_code:
+          type: string
+          description: Retail liquidity indicator as character string
+          nullable: true
+        retail_liquidity_indicator_text:
+          type: string
+          description: Human-readable description of the retail liquidity indicator
+          nullable: true
+        is_retail_indicator_not_applicable:
+          type: boolean
+          description: Indicates if the indicator is 'Not Applicable' (' '/0x20).
+        is_retail_indicator_buy_interest:
+          type: boolean
+          description: Indicates if there is 'Buy interest for Retail' ('A'/0x41).
+        is_retail_indicator_sell_interest:
+          type: boolean
+          description: Indicates if there is 'Sell interest for Retail' ('B'/0x42).
+        is_retail_indicator_buy_and_sell_interest:
+          type: boolean
+          description: Indicates if there is 'Buy and sell interest for Retail' ('C'/0x43).
+      additionalProperties: false
+      description: Represents the response DTO for retail liquidity indicator information
+    Models.SecurityDirectoryModel:
+      type: object
+      properties:
+        symbol:
+          type: string
+          description: The stock symbol
+          nullable: true
+        timestamp_nanos:
+          type: integer
+          description: Original timestamp in nanoseconds since epoch
+          format: int64
+        timestamp:
+          type: string
+          description: Time when the security directory information was recorded as DateTime
+          format: date-time
+        flags:
+          type: integer
+          description: Flags for the security
+          format: int32
+        round_lot_size:
+          type: integer
+          description: Number of shares that represent a round lot
+          format: int32
+        adjusted_poc_price:
+          type: number
+          description: Adjusted previous official closing price as decimal
+          format: double
+        luld_tier:
+          type: integer
+          description: LULD tier as byte value
+          format: int32
+        luld_tier_code:
+          type: string
+          description: LULD tier as numeric string
+          nullable: true
+        luld_tier_text:
+          type: string
+          description: Human-readable description of the LULD tier
+          nullable: true
+        is_luld_tier_not_applicable:
+          type: boolean
+          description: Indicates if LULD Tier is 'Not applicable' (0x0).
+        is_luld_tier1:
+          type: boolean
+          description: Indicates if LULD Tier is 'Tier 1 NMS Stock' (0x1).
+        is_luld_tier2:
+          type: boolean
+          description: Indicates if LULD Tier is 'Tier 2 NMS Stock' (0x2).
+      additionalProperties: false
+      description: Represents the response DTO for security directory information
+    Models.SecurityEventModel:
+      type: object
+      properties:
+        symbol:
+          type: string
+          description: The stock symbol
+          nullable: true
+        timestamp_nanos:
+          type: integer
+          description: Original timestamp in nanoseconds since epoch
+          format: int64
+        timestamp:
+          type: string
+          description: Time when the security event was recorded as DateTime
+          format: date-time
+        security_event:
+          type: integer
+          description: Security event as byte value
+          format: int32
+        security_event_code:
+          type: string
+          description: Security event as character string ('O' or 'C')
+          nullable: true
+        security_event_text:
+          type: string
+          description: Human-readable description of the security event
+          nullable: true
+        is_opening_process_complete:
+          type: boolean
+          description: Indicates if the security event is 'Opening Process Complete' ('O'/0x4f).
+        is_closing_process_complete:
+          type: boolean
+          description: Indicates if the security event is 'Closing Process Complete' ('C'/0x43).
+      additionalProperties: false
+      description: Represents the response DTO for security event information
+    Models.ShortSalePriceTestStatusModel:
+      type: object
+      properties:
+        symbol:
+          type: string
+          description: The stock symbol
+          nullable: true
+        timestamp_nanos:
+          type: integer
+          description: Original timestamp in nanoseconds since epoch
+          format: int64
+        timestamp:
+          type: string
+          description: Time when the short sale price test status was recorded as DateTime
+          format: date-time
+        short_sale_price_test_status:
+          type: integer
+          description: Short sale price test status as byte value
+          format: int32
+        short_sale_price_test_status_code:
+          type: string
+          description: Short sale price test status as hex string
+          nullable: true
+        short_sale_price_test_status_text:
+          type: string
+          description: Human-readable description of the short sale price test status
+          nullable: true
+        is_short_sale_price_test_not_in_effect:
+          type: boolean
+          description: Indicates if the short sale price test is not in effect
+        is_short_sale_price_test_in_effect:
+          type: boolean
+          description: Indicates if the short sale price test is in effect
+        detail:
+          type: integer
+          description: Detail of the short sale price test as byte value
+          format: int32
+        detail_code:
+          type: string
+          description: Detail of the short sale price test as character string
+          nullable: true
+        detail_text:
+          type: string
+          description: Human-readable description of the short sale price test detail
+          nullable: true
+        is_detail_no_price_test:
+          type: boolean
+          description: Indicates if there is no price test in place
+        is_detail_activated:
+          type: boolean
+          description: Indicates if the short sale price test restriction is in effect due to an intraday price drop
+        is_detail_continued:
+          type: boolean
+          description: Indicates if the short sale price test restriction remains in effect from prior day
+        is_detail_deactivated:
+          type: boolean
+          description: Indicates if the short sale price test restriction is deactivated
+        is_detail_not_available:
+          type: boolean
+          description: Indicates if the detail is not available
+      additionalProperties: false
+      description: Represents the response DTO for short sale price test status information
+    Models.TradingStatusModel:
+      type: object
+      properties:
+        symbol:
+          type: string
+          description: The stock symbol
+          nullable: true
+        timestamp_nanos:
+          type: integer
+          description: Original timestamp in nanoseconds since epoch
+          format: int64
+        timestamp:
+          type: string
+          description: Time when the trading status was recorded as DateTime
+          format: date-time
+        is_trading_live:
+          type: boolean
+          description: Gets whether the security is currently trading on IEX
+        is_trading_halted:
+          type: boolean
+          description: Gets whether the security is halted across all US equity markets
+        is_trading_in_order_acceptance_period:
+          type: boolean
+          description: Gets whether the security is in Order Acceptance Period on IEX
+        is_trading_paused:
+          type: boolean
+          description: Gets whether the security is paused and in Order Acceptance Period on IEX
+        is_reason_halt_news_pending:
+          type: boolean
+          description: Gets whether the halt reason is News Pending
+        is_reason_ipo_not_yet_trading:
+          type: boolean
+          description: Gets whether the halt reason is IPO Not Yet Trading
+        is_reason_ipo_deferred:
+          type: boolean
+          description: Gets whether the halt reason is IPO Deferred
+        is_reason_halt_news_dissemination:
+          type: boolean
+          description: Gets whether the order acceptance period reason is Halt News Dissemination
+        is_reason_ipo_order_acceptance_period:
+          type: boolean
+          description: Gets whether the order acceptance period reason is IPO Order Acceptance Period
+        is_reason_ipo_pre_launch_period:
+          type: boolean
+          description: Gets whether the order acceptance period reason is IPO Pre-Launch Period
+        is_reason_market_wide_circuit_breaker_level1:
+          type: boolean
+          description: Gets whether the order acceptance period reason is Market-Wide Circuit Breaker Level 1 – Breached
+        is_reason_market_wide_circuit_breaker_level2:
+          type: boolean
+          description: Gets whether the order acceptance period reason is Market-Wide Circuit Breaker Level 2 – Breached
+        is_reason_market_wide_circuit_breaker_level3:
+          type: boolean
+          description: Gets whether the halt reason is Market-Wide Circuit Breaker Level 3 – Breached
+        is_reason_not_applicable:
+          type: boolean
+          description: Gets whether the reason is Not Applicable
+        is_reason_not_available:
+          type: boolean
+          description: Gets whether the halt reason is Not Available
+      additionalProperties: false
+      description: Represents the response DTO for trading status information
+    OHLCVTimeSeries.ExchangeTimeseriesItem:
       type: object
       properties:
         time_period_start:
@@ -1973,7 +2020,7 @@ components:
           nullable: true
       additionalProperties: false
       description: Represents a timeseries item with price and volume information.
-    OHLCV.TimeseriesItem:
+    OHLCVTimeSeries.TimeseriesItem:
       type: object
       properties:
         time_period_start:
@@ -2024,7 +2071,7 @@ components:
           format: int64
       additionalProperties: false
       description: Represents a timeseries item with price and volume information.
-    OHLCV.TimeseriesPeriod:
+    OHLCVTimeSeries.TimeseriesPeriod:
       type: object
       properties:
         period_id:
@@ -2054,53 +2101,6 @@ components:
           nullable: true
       additionalProperties: false
       description: Represents a timeseries period used in exchange rate data.
-    Trade.TradeModel:
-      type: object
-      properties:
-        is_trade_break:
-          type: boolean
-          description: Indicates if this record represents a trade break (true) or a trade report (false).
-        symbol:
-          type: string
-          description: The stock symbol.
-          nullable: true
-        timestamp_nanos:
-          type: integer
-          description: Original timestamp in nanoseconds since epoch.
-          format: int64
-        timestamp:
-          type: string
-          description: Time when the event was recorded as DateTime (UTC).
-          format: date-time
-        size:
-          type: integer
-          description: Trade volume (or break volume) in number of shares.
-          format: int32
-        price:
-          type: number
-          description: Trade price (or break price) as decimal.
-          format: double
-        trade_id:
-          type: integer
-          description: IEX trade identifier (same for report and its corresponding break).
-          format: int64
-        is_intermarket_sweep:
-          type: boolean
-          description: "Bit 7 (Mask 0x80): Intermarket Sweep Flag.\nTrue: Intermarket Sweep Order (\"ISO\").\nFalse: Non-Intermarket Sweep Order."
-        is_extended_hours_trade:
-          type: boolean
-          description: "Bit 6 (Mask 0x40): Extended Hours Flag.\nTrue: Extended Hours Trade (i.e., Form T sale condition).\nFalse: Regular Market Session Trade."
-        is_odd_lot_trade:
-          type: boolean
-          description: "Bit 5 (Mask 0x20): Odd Lot Flag.\nTrue: Odd Lot Trade.\nFalse: Round or Mixed Lot Trade."
-        is_trade_through_exempt:
-          type: boolean
-          description: "Bit 4 (Mask 0x10): Trade Through Exempt Flag.\nTrue: Trade is not subject to Rule 611 (Trade Through) of SEC Reg. NMS.\nFalse: Trade is subject to Rule 611 (Trade Through) of SEC Reg. NMS.\nApplied when the taking order was an ISO that traded through a protected quotation,\nOR the NBBO was crossed at the time of the trade,\nOR the trade occurred through a self-helped venue's quotation,\nOR the trade was a single-price cross."
-        is_single_price_cross_trade:
-          type: boolean
-          description: "Bit 3 (Mask 0x08): Single-price Cross Trade Flag.\nTrue: Trade resulting from a single-price cross.\nFalse: Execution during continuous trading."
-      additionalProperties: false
-      description: Represents the response DTO for a single trade event (report or break).
   securitySchemes:
     APIKey:
       type: apiKey
@@ -2117,20 +2117,15 @@ security:
   - JWT: [ ]
 tags:
   - name: TimeSeries
-    description: "Controller for retrieving OHLCV (Open, High, Low, Close, Volume) timeseries data.\nAPI calls described in this section are related to downloading OHLCV *(Open, High, Low, Close, Volume)* timeseries data.\nEach data point of this timeseries represents several indicators calculated from transactions activity inside a time range (period).\n:::info\nOHLCV data primary purpose is to present an overview of the market in human readable form.\nIt's often used to visualize market data on charts, websites, and various kinds of reports.\n:::"
-  - name: Trade
-    description: Controller for retrieving IEX trades data
-  - name: OrderBook
-    description: Controller for retrieving IEX level-3 order book data
-  - name: PriceLevelUpdate
-    description: Controller for retrieving IEX price level update data.
-  - name: QuoteUpdate
-    description: Controller for retrieving IEX quote update data.
-  - name: AdminMessage
-    description: Controller for retrieving IEX admin message data
-  - name: SystemEvent
-    description: Controller for retrieving IEX system event data.
-  - name: Exchange
-    description: Controller for retrieving symbol information.
   - name: Symbols
-    description: Controller for retrieving symbol information.
+  - name: Exchange
+  - name: NativeIEX
+    description: Provides access to IEX market data endpoints.
+  - name: TimeSeries
+    description: "Provides access to OHLCV (Open, High, Low, Close, Volume) timeseries data.\nAPI calls described in this section are related to downloading OHLCV *(Open, High, Low, Close, Volume)* timeseries data.\nEach data point of this timeseries represents several indicators calculated from transactions activity inside a time range (period).\n:::info\nOHLCV data primary purpose is to present an overview of the market in human readable form.\nIt's often used to visualize market data on charts, websites, and various kinds of reports.\n:::"
+  - name: Symbols
+    description: Provides access to symbol metadata.
+  - name: Exchange
+    description: Provides access to exchange metadata.
+  - name: NativeIEX
+    description: Provides access to IEX trades data.
