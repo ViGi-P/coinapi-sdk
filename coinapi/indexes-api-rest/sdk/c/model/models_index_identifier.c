@@ -12,18 +12,21 @@ static models_index_identifier_t *models_index_identifier_create_internal(
     if (!models_index_identifier_local_var) {
         return NULL;
     }
-    models_index_identifier_local_var->id = id;
-
+    memset(models_index_identifier_local_var, 0, sizeof(models_index_identifier_t));
     models_index_identifier_local_var->_library_owned = 1;
+    models_index_identifier_local_var->id = id;
     return models_index_identifier_local_var;
 }
 
 __attribute__((deprecated)) models_index_identifier_t *models_index_identifier_create(
     char *id
     ) {
-    return models_index_identifier_create_internal (
+    models_index_identifier_t *result = models_index_identifier_create_internal (
         id
         );
+    if (!result) {
+    }
+    return result;
 }
 
 void models_index_identifier_free(models_index_identifier_t *models_index_identifier) {
@@ -64,6 +67,8 @@ models_index_identifier_t *models_index_identifier_parseFromJSON(cJSON *models_i
 
     models_index_identifier_t *models_index_identifier_local_var = NULL;
 
+    char *id_local_str = NULL;
+
     // models_index_identifier->id
     cJSON *id = cJSON_GetObjectItemCaseSensitive(models_index_identifierJSON, "id");
     if (cJSON_IsNull(id)) {
@@ -77,12 +82,22 @@ models_index_identifier_t *models_index_identifier_parseFromJSON(cJSON *models_i
     }
 
 
+    if (id && !cJSON_IsNull(id)) id_local_str = strdup(id->valuestring);
+
     models_index_identifier_local_var = models_index_identifier_create_internal (
-        id && !cJSON_IsNull(id) ? strdup(id->valuestring) : NULL
+        id_local_str
         );
+
+    if (!models_index_identifier_local_var) {
+        goto end;
+    }
 
     return models_index_identifier_local_var;
 end:
+    if (id_local_str) {
+        free(id_local_str);
+        id_local_str = NULL;
+    }
     return NULL;
 
 }

@@ -14,7 +14,146 @@ servers:
 security:
 - APIKey: []
 - JWT: []
+tags:
+- description: Use these endpoints to inspect and manage the asset weights used by
+    multi-asset indexes.
+  name: Multi-Asset Weights
+- description: Use these endpoints to discover supported exchanges used by index-related
+    datasets.
+  name: Metadata
+- description: Use these endpoints to discover supported time periods for index time-series
+    requests.
+  name: Periods
+- description: "Use these endpoints to explore available indexes and retrieve current,\
+    \ historical, and time-series index values."
+  name: Indexes
+- description: Use these endpoints to inspect and manage the input data that feeds
+    index definitions.
+  name: Index Input Data
 paths:
+  /v1/indexdef/input-data/{index_definition_id}:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: index_definition_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: time
+        required: false
+        schema:
+          format: date-time
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: enabled_only
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: pending_only
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: filter_asset_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: with_status_info
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
+                type: array
+            application/x-msgpack:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.IndexDefinitionSnapshotEntry"
+                type: array
+          description: successful operation
+      summary: Returns data inputs for certain index definition and time
+      tags:
+      - Index Input Data
+      x-accepts:
+      - application/json
+      - application/x-msgpack
+      - text/json
+      - text/plain
+  /v1/indexdef/input-data/{index_definition_id}/all:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: index_definition_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.IndexDefinitionInputData"
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.IndexDefinitionInputData"
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.IndexDefinitionInputData"
+                type: array
+            application/x-msgpack:
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.IndexDefinitionInputData"
+                type: array
+          description: successful operation
+      summary: Returns all data inputs for a specific index definition
+      tags:
+      - Index Input Data
+      x-accepts:
+      - application/json
+      - application/x-msgpack
+      - text/json
+      - text/plain
   /v1/indexes:
     get:
       responses:
@@ -541,6 +680,170 @@ paths:
       - application/x-msgpack
       - text/json
       - text/plain
+  /api/metadata/exchanges:
+    get:
+      description: "Get a detailed list of exchanges provided by the system.\n   \
+        \         \n:::info\nProperties of the output are providing aggregated information\
+        \ from across all symbols related to the specific exchange. If you need to\
+        \ calculate your aggregation (e.g., limiting only the particular type of symbols),\
+        \ you should use /v1/symbols endpoint as a data source.\n:::"
+      parameters:
+      - description: "Comma or semicolon delimited exchange identifiers used to filter\
+          \ response. (optional, eg. `BITSTAMP;GEMINI`)"
+        explode: true
+        in: query
+        name: filter_exchange_id
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              examples:
+                Example response:
+                  value:
+                  - exchange_id: OKCOIN_CNY
+                    website: https://www.okcoin.cn/
+                    name: OKCoin CNY
+                  - exchange_id: HUOBI
+                    website: https://www.huobi.com/
+                    name: Huobi (HBUS)
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.Exchange"
+                type: array
+            application/json:
+              examples:
+                Example response:
+                  value:
+                  - exchange_id: OKCOIN_CNY
+                    website: https://www.okcoin.cn/
+                    name: OKCoin CNY
+                  - exchange_id: HUOBI
+                    website: https://www.huobi.com/
+                    name: Huobi (HBUS)
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.Exchange"
+                type: array
+            text/json:
+              examples:
+                Example response:
+                  value:
+                  - exchange_id: OKCOIN_CNY
+                    website: https://www.okcoin.cn/
+                    name: OKCoin CNY
+                  - exchange_id: HUOBI
+                    website: https://www.huobi.com/
+                    name: Huobi (HBUS)
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.Exchange"
+                type: array
+            application/x-msgpack:
+              examples:
+                Example response:
+                  value:
+                  - exchange_id: OKCOIN_CNY
+                    website: https://www.okcoin.cn/
+                    name: OKCoin CNY
+                  - exchange_id: HUOBI
+                    website: https://www.huobi.com/
+                    name: Huobi (HBUS)
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.Exchange"
+                type: array
+          description: successful operation
+      summary: List all exchanges
+      tags:
+      - Metadata
+      x-accepts:
+      - application/json
+      - application/x-msgpack
+      - text/json
+      - text/plain
+  /api/metadata/exchanges/{exchange_id}:
+    get:
+      parameters:
+      - description: The ID of the exchange.
+        explode: false
+        in: path
+        name: exchange_id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              examples:
+                Example response:
+                  value:
+                  - exchange_id: OKCOIN_CNY
+                    website: https://www.okcoin.cn/
+                    name: OKCoin CNY
+                  - exchange_id: HUOBI
+                    website: https://www.huobi.com/
+                    name: Huobi (HBUS)
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.Exchange"
+                type: array
+            application/json:
+              examples:
+                Example response:
+                  value:
+                  - exchange_id: OKCOIN_CNY
+                    website: https://www.okcoin.cn/
+                    name: OKCoin CNY
+                  - exchange_id: HUOBI
+                    website: https://www.huobi.com/
+                    name: Huobi (HBUS)
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.Exchange"
+                type: array
+            text/json:
+              examples:
+                Example response:
+                  value:
+                  - exchange_id: OKCOIN_CNY
+                    website: https://www.okcoin.cn/
+                    name: OKCoin CNY
+                  - exchange_id: HUOBI
+                    website: https://www.huobi.com/
+                    name: Huobi (HBUS)
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.Exchange"
+                type: array
+            application/x-msgpack:
+              examples:
+                Example response:
+                  value:
+                  - exchange_id: OKCOIN_CNY
+                    website: https://www.okcoin.cn/
+                    name: OKCoin CNY
+                  - exchange_id: HUOBI
+                    website: https://www.huobi.com/
+                    name: Huobi (HBUS)
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.Exchange"
+                type: array
+          description: successful operation
+      summary: List all exchanges by exchange_id
+      tags:
+      - Metadata
+      x-accepts:
+      - application/json
+      - application/x-msgpack
+      - text/json
+      - text/plain
   /v1/indexdef/multiasset:
     get:
       responses:
@@ -569,7 +872,7 @@ paths:
           description: successful operation
       summary: Get all multi-asset weights
       tags:
-      - Indexes
+      - Multi-Asset Weights
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -611,7 +914,133 @@ paths:
           description: successful operation
       summary: Get multi-asset weights for specific index
       tags:
-      - Indexes
+      - Multi-Asset Weights
+      x-accepts:
+      - application/json
+      - application/x-msgpack
+      - text/json
+      - text/plain
+  /v1/metadata/periods:
+    get:
+      description: "Get full list of supported time periods\n            \n### Available\
+        \ periods\n            \nTime unit | Period identifiers\n--------- | -----------\n\
+        Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC\n\
+        Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN\n\
+        Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS\nDay | 1DAY, 2DAY, 3DAY,\
+        \ 5DAY, 7DAY, 10DAY\nMonth | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH\nYear | 1YRS, 2YRS,\
+        \ 3YRS, 4YRS, 5YRS\n            \n:::tip\nYou can assume that we will not\
+        \ remove any periods from this response, however, we may add new ones.\n:::"
+      responses:
+        "200":
+          content:
+            text/plain:
+              examples:
+                Example response:
+                  value:
+                  - period_id: 1SEC
+                    length_seconds: 1
+                    length_months: 0
+                    unit_count: 1
+                    unit_name: second
+                    display_name: 1 Second
+                  - period_id: 10DAY
+                    length_seconds: 864000
+                    length_months: 0
+                    unit_count: 10
+                    unit_name: day
+                    display_name: 10 Days
+                  - period_id: 2YRS
+                    length_seconds: 0
+                    length_months: 24
+                    unit_count: 2
+                    unit_name: year
+                    display_name: 2 Years
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.TimeseriesPeriod"
+                type: array
+            application/json:
+              examples:
+                Example response:
+                  value:
+                  - period_id: 1SEC
+                    length_seconds: 1
+                    length_months: 0
+                    unit_count: 1
+                    unit_name: second
+                    display_name: 1 Second
+                  - period_id: 10DAY
+                    length_seconds: 864000
+                    length_months: 0
+                    unit_count: 10
+                    unit_name: day
+                    display_name: 10 Days
+                  - period_id: 2YRS
+                    length_seconds: 0
+                    length_months: 24
+                    unit_count: 2
+                    unit_name: year
+                    display_name: 2 Years
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.TimeseriesPeriod"
+                type: array
+            text/json:
+              examples:
+                Example response:
+                  value:
+                  - period_id: 1SEC
+                    length_seconds: 1
+                    length_months: 0
+                    unit_count: 1
+                    unit_name: second
+                    display_name: 1 Second
+                  - period_id: 10DAY
+                    length_seconds: 864000
+                    length_months: 0
+                    unit_count: 10
+                    unit_name: day
+                    display_name: 10 Days
+                  - period_id: 2YRS
+                    length_seconds: 0
+                    length_months: 24
+                    unit_count: 2
+                    unit_name: year
+                    display_name: 2 Years
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.TimeseriesPeriod"
+                type: array
+            application/x-msgpack:
+              examples:
+                Example response:
+                  value:
+                  - period_id: 1SEC
+                    length_seconds: 1
+                    length_months: 0
+                    unit_count: 1
+                    unit_name: second
+                    display_name: 1 Second
+                  - period_id: 10DAY
+                    length_seconds: 864000
+                    length_months: 0
+                    unit_count: 10
+                    unit_name: day
+                    display_name: 10 Days
+                  - period_id: 2YRS
+                    length_seconds: 0
+                    length_months: 24
+                    unit_count: 2
+                    unit_name: year
+                    display_name: 2 Years
+              schema:
+                items:
+                  $ref: "#/components/schemas/Models.TimeseriesPeriod"
+                type: array
+          description: successful operation
+      summary: List all periods
+      tags:
+      - Periods
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -619,6 +1048,70 @@ paths:
       - text/plain
 components:
   schemas:
+    Models.Exchange:
+      additionalProperties: false
+      description: Represents an exchange.
+      example:
+        exchange_id: exchange_id
+        website: website
+        name: name
+      properties:
+        exchange_id:
+          description: Gets or sets the exchange ID.
+          nullable: true
+          type: string
+        website:
+          description: Gets or sets the website URL of the exchange.
+          nullable: true
+          type: string
+        name:
+          description: Gets or sets the name of the exchange.
+          nullable: true
+          type: string
+      type: object
+    Models.IndexDefinitionInputData:
+      additionalProperties: false
+      example:
+        exchangeId: exchangeId
+        baseAssetId: baseAssetId
+        beginDate: 2000-01-23T04:56:07.000+00:00
+        statusInfo: statusInfo
+        exchangeSymbolId: exchangeSymbolId
+        endDate: 2000-01-23T04:56:07.000+00:00
+        lastModificationTime: 2000-01-23T04:56:07.000+00:00
+        quoteAssetId: quoteAssetId
+        status: status
+      properties:
+        exchangeId:
+          nullable: true
+          type: string
+        exchangeSymbolId:
+          nullable: true
+          type: string
+        baseAssetId:
+          nullable: true
+          type: string
+        quoteAssetId:
+          nullable: true
+          type: string
+        beginDate:
+          format: date-time
+          nullable: true
+          type: string
+        endDate:
+          format: date-time
+          nullable: true
+          type: string
+        status:
+          nullable: true
+          type: string
+        statusInfo:
+          nullable: true
+          type: string
+        lastModificationTime:
+          format: date-time
+          type: string
+      type: object
     Models.IndexDefinitionSnapshotEntry:
       additionalProperties: false
       example:
@@ -756,6 +1249,43 @@ components:
         component_value:
           format: double
           type: number
+      type: object
+    Models.TimeseriesPeriod:
+      additionalProperties: false
+      description: Represents a timeseries period used in exchange rate data.
+      example:
+        unit_name: unit_name
+        length_months: 6
+        length_seconds: 0
+        period_id: period_id
+        display_name: display_name
+        unit_count: 1
+      properties:
+        period_id:
+          description: Gets or sets the period ID.
+          nullable: true
+          type: string
+        length_seconds:
+          description: Gets or sets the length of the period in seconds.
+          format: int32
+          type: integer
+        length_months:
+          description: Gets or sets the length of the period in months.
+          format: int32
+          type: integer
+        unit_count:
+          description: Gets or sets the unit count.
+          format: int32
+          nullable: true
+          type: integer
+        unit_name:
+          description: Gets or sets the unit name.
+          nullable: true
+          type: string
+        display_name:
+          description: Gets or sets the display name of the timeseries period.
+          nullable: true
+          type: string
       type: object
   securitySchemes:
     APIKey:

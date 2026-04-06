@@ -113,6 +113,32 @@ arbitraryReducedMaybeValue n = do
 
 -- * Models
 
+instance Arbitrary ModelsExchange where
+  arbitrary = sized genModelsExchange
+
+genModelsExchange :: Int -> Gen ModelsExchange
+genModelsExchange n =
+  ModelsExchange
+    <$> arbitraryReducedMaybe n -- modelsExchangeExchangeId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsExchangeWebsite :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsExchangeName :: Maybe Text
+  
+instance Arbitrary ModelsIndexDefinitionInputData where
+  arbitrary = sized genModelsIndexDefinitionInputData
+
+genModelsIndexDefinitionInputData :: Int -> Gen ModelsIndexDefinitionInputData
+genModelsIndexDefinitionInputData n =
+  ModelsIndexDefinitionInputData
+    <$> arbitraryReducedMaybe n -- modelsIndexDefinitionInputDataExchangeId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsIndexDefinitionInputDataExchangeSymbolId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsIndexDefinitionInputDataBaseAssetId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsIndexDefinitionInputDataQuoteAssetId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsIndexDefinitionInputDataBeginDate :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsIndexDefinitionInputDataEndDate :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsIndexDefinitionInputDataStatus :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsIndexDefinitionInputDataStatusInfo :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsIndexDefinitionInputDataLastModificationTime :: Maybe DateTime
+  
 instance Arbitrary ModelsIndexDefinitionSnapshotEntry where
   arbitrary = sized genModelsIndexDefinitionSnapshotEntry
 
@@ -175,6 +201,19 @@ genModelsIndexValueComponent n =
   ModelsIndexValueComponent
     <$> arbitraryReducedMaybe n -- modelsIndexValueComponentComponentId :: Maybe Text
     <*> arbitraryReducedMaybe n -- modelsIndexValueComponentComponentValue :: Maybe Double
+  
+instance Arbitrary ModelsTimeseriesPeriod where
+  arbitrary = sized genModelsTimeseriesPeriod
+
+genModelsTimeseriesPeriod :: Int -> Gen ModelsTimeseriesPeriod
+genModelsTimeseriesPeriod n =
+  ModelsTimeseriesPeriod
+    <$> arbitraryReducedMaybe n -- modelsTimeseriesPeriodPeriodId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsTimeseriesPeriodLengthSeconds :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsTimeseriesPeriodLengthMonths :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsTimeseriesPeriodUnitCount :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsTimeseriesPeriodUnitName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsTimeseriesPeriodDisplayName :: Maybe Text
   
 
 

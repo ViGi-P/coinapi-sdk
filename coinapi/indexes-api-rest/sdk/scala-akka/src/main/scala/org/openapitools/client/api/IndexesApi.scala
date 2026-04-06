@@ -13,7 +13,6 @@ package org.openapitools.client.api
 
 import org.openapitools.client.model.IndexDefinitionSnapshotEntry
 import org.openapitools.client.model.IndexIdentifier
-import org.openapitools.client.model.IndexMultiAssetWeight
 import org.openapitools.client.model.IndexTimeseriesItem
 import org.openapitools.client.model.IndexValue
 import java.time.OffsetDateTime
@@ -27,37 +26,6 @@ object IndexesApi {
 }
 
 class IndexesApi(baseUrl: String) {
-
-  /**
-   * Expected answers:
-   *   code 200 : Seq[IndexMultiAssetWeight] (successful operation)
-   * 
-   * Available security schemes:
-   *   APIKey (apiKey)
-   *   JWT (http)
-   */
-  def v1IndexdefMultiassetGet()(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[IndexMultiAssetWeight]] =
-    ApiRequest[Seq[IndexMultiAssetWeight]](ApiMethods.GET, baseUrl, "/v1/indexdef/multiasset", "application/json")
-      .withApiKey(apiKey, "Authorization", HEADER)
-      .withCredentials(bearerToken).withSuccessResponse[Seq[IndexMultiAssetWeight]](200)
-      
-
-  /**
-   * Expected answers:
-   *   code 200 : Seq[IndexMultiAssetWeight] (successful operation)
-   * 
-   * Available security schemes:
-   *   APIKey (apiKey)
-   *   JWT (http)
-   * 
-   * @param indexId 
-   */
-  def v1IndexdefMultiassetIndexIdGet(indexId: String)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[IndexMultiAssetWeight]] =
-    ApiRequest[Seq[IndexMultiAssetWeight]](ApiMethods.GET, baseUrl, "/v1/indexdef/multiasset/{index_id}", "application/json")
-      .withApiKey(apiKey, "Authorization", HEADER)
-      .withCredentials(bearerToken).withPathParam("index_id", indexId)
-      .withSuccessResponse[Seq[IndexMultiAssetWeight]](200)
-      
 
   /**
    * Expected answers:

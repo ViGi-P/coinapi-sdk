@@ -57,6 +57,14 @@ public class JsonUtil {
   public static Type getListTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
+    if ("ModelsExchange".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsExchange>>(){}.getType();
+    }
+    
+    if ("ModelsIndexDefinitionInputData".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsIndexDefinitionInputData>>(){}.getType();
+    }
+    
     if ("ModelsIndexDefinitionSnapshotEntry".equalsIgnoreCase(className)) {
       return new TypeToken<List<ModelsIndexDefinitionSnapshotEntry>>(){}.getType();
     }
@@ -81,11 +89,23 @@ public class JsonUtil {
       return new TypeToken<List<ModelsIndexValueComponent>>(){}.getType();
     }
     
+    if ("ModelsTimeseriesPeriod".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsTimeseriesPeriod>>(){}.getType();
+    }
+    
     return new TypeToken<List<Object>>(){}.getType();
   }
 
   public static Type getTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
+    
+    if ("ModelsExchange".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsExchange>(){}.getType();
+    }
+    
+    if ("ModelsIndexDefinitionInputData".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsIndexDefinitionInputData>(){}.getType();
+    }
     
     if ("ModelsIndexDefinitionSnapshotEntry".equalsIgnoreCase(className)) {
       return new TypeToken<ModelsIndexDefinitionSnapshotEntry>(){}.getType();
@@ -109,6 +129,10 @@ public class JsonUtil {
     
     if ("ModelsIndexValueComponent".equalsIgnoreCase(className)) {
       return new TypeToken<ModelsIndexValueComponent>(){}.getType();
+    }
+    
+    if ("ModelsTimeseriesPeriod".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsTimeseriesPeriod>(){}.getType();
     }
     
     return new TypeToken<Object>(){}.getType();

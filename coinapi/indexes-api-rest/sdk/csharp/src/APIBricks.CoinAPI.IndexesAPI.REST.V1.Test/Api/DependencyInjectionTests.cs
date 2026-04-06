@@ -83,8 +83,20 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
         [Fact]
         public void ConfigureApiWithAClientTest()
         {
+            var indexInputDataApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IIndexInputDataApi>();
+            Assert.True(indexInputDataApi.HttpClient.BaseAddress != null);
+
             var indexesApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IIndexesApi>();
             Assert.True(indexesApi.HttpClient.BaseAddress != null);
+
+            var metadataApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IMetadataApi>();
+            Assert.True(metadataApi.HttpClient.BaseAddress != null);
+
+            var multiAssetWeightsApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IMultiAssetWeightsApi>();
+            Assert.True(multiAssetWeightsApi.HttpClient.BaseAddress != null);
+
+            var periodsApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IPeriodsApi>();
+            Assert.True(periodsApi.HttpClient.BaseAddress != null);
         }
 
         /// <summary>
@@ -93,8 +105,20 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
         [Fact]
         public void ConfigureApiWithoutAClientTest()
         {
+            var indexInputDataApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IIndexInputDataApi>();
+            Assert.True(indexInputDataApi.HttpClient.BaseAddress != null);
+
             var indexesApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IIndexesApi>();
             Assert.True(indexesApi.HttpClient.BaseAddress != null);
+
+            var metadataApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IMetadataApi>();
+            Assert.True(metadataApi.HttpClient.BaseAddress != null);
+
+            var multiAssetWeightsApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IMultiAssetWeightsApi>();
+            Assert.True(multiAssetWeightsApi.HttpClient.BaseAddress != null);
+
+            var periodsApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IPeriodsApi>();
+            Assert.True(periodsApi.HttpClient.BaseAddress != null);
         }
 
         /// <summary>
@@ -103,8 +127,20 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
         [Fact]
         public void AddApiWithAClientTest()
         {
+            var indexInputDataApi = _hostUsingAddWithAClient.Services.GetRequiredService<IIndexInputDataApi>();
+            Assert.True(indexInputDataApi.HttpClient.BaseAddress != null);
+            
             var indexesApi = _hostUsingAddWithAClient.Services.GetRequiredService<IIndexesApi>();
             Assert.True(indexesApi.HttpClient.BaseAddress != null);
+            
+            var metadataApi = _hostUsingAddWithAClient.Services.GetRequiredService<IMetadataApi>();
+            Assert.True(metadataApi.HttpClient.BaseAddress != null);
+            
+            var multiAssetWeightsApi = _hostUsingAddWithAClient.Services.GetRequiredService<IMultiAssetWeightsApi>();
+            Assert.True(multiAssetWeightsApi.HttpClient.BaseAddress != null);
+            
+            var periodsApi = _hostUsingAddWithAClient.Services.GetRequiredService<IPeriodsApi>();
+            Assert.True(periodsApi.HttpClient.BaseAddress != null);
         }
 
         /// <summary>
@@ -113,8 +149,20 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
         [Fact]
         public void AddApiWithoutAClientTest()
         {
+            var indexInputDataApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IIndexInputDataApi>();
+            Assert.True(indexInputDataApi.HttpClient.BaseAddress != null);
+
             var indexesApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IIndexesApi>();
             Assert.True(indexesApi.HttpClient.BaseAddress != null);
+
+            var metadataApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IMetadataApi>();
+            Assert.True(metadataApi.HttpClient.BaseAddress != null);
+
+            var multiAssetWeightsApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IMultiAssetWeightsApi>();
+            Assert.True(multiAssetWeightsApi.HttpClient.BaseAddress != null);
+
+            var periodsApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IPeriodsApi>();
+            Assert.True(periodsApi.HttpClient.BaseAddress != null);
         }
     }
 }

@@ -4,8 +4,6 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**IndexesAPI_v1IndexdefMultiassetGet**](IndexesAPI.md#IndexesAPI_v1IndexdefMultiassetGet) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
-[**IndexesAPI_v1IndexdefMultiassetIndexIdGet**](IndexesAPI.md#IndexesAPI_v1IndexdefMultiassetIndexIdGet) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
 [**IndexesAPI_v1IndexesGet**](IndexesAPI.md#IndexesAPI_v1IndexesGet) | **GET** /v1/indexes | List indexes
 [**IndexesAPI_v1IndexesIndexDefinitionIdCurrentSnapshotGet**](IndexesAPI.md#IndexesAPI_v1IndexesIndexDefinitionIdCurrentSnapshotGet) | **GET** /v1/indexes/{index_definition_id}/currentSnapshot | Current Index Values for index definition
 [**IndexesAPI_v1IndexesIndexDefinitionIdHistorySnapshotGet**](IndexesAPI.md#IndexesAPI_v1IndexesIndexDefinitionIdHistorySnapshotGet) | **GET** /v1/indexes/{index_definition_id}/historySnapshot | Historical Index Values for index definition
@@ -13,63 +11,6 @@ Method | HTTP request | Description
 [**IndexesAPI_v1IndexesIndexIdHistoryGet**](IndexesAPI.md#IndexesAPI_v1IndexesIndexIdHistoryGet) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 [**IndexesAPI_v1IndexesIndexIdTimeseriesGet**](IndexesAPI.md#IndexesAPI_v1IndexesIndexIdTimeseriesGet) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
 
-
-# **IndexesAPI_v1IndexdefMultiassetGet**
-```c
-// Get all multi-asset weights
-//
-list_t* IndexesAPI_v1IndexdefMultiassetGet(apiClient_t *apiClient);
-```
-
-### Parameters
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**apiClient** | **apiClient_t \*** | context containing the client configuration |
-
-### Return type
-
-[list_t](models_index_multi_asset_weight.md) *
-
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **IndexesAPI_v1IndexdefMultiassetIndexIdGet**
-```c
-// Get multi-asset weights for specific index
-//
-list_t* IndexesAPI_v1IndexdefMultiassetIndexIdGet(apiClient_t *apiClient, char *index_id);
-```
-
-### Parameters
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**apiClient** | **apiClient_t \*** | context containing the client configuration |
-**index_id** | **char \*** |  | 
-
-### Return type
-
-[list_t](models_index_multi_asset_weight.md) *
-
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **IndexesAPI_v1IndexesGet**
 ```c

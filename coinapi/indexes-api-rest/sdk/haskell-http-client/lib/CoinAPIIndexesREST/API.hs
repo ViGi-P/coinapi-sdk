@@ -14,7 +14,15 @@ Module : CoinAPIIndexesREST.API
 -}
 
 module CoinAPIIndexesREST.API
-  ( module CoinAPIIndexesREST.API.Indexes
+  ( module CoinAPIIndexesREST.API.IndexInputData
+  , module CoinAPIIndexesREST.API.Indexes
+  , module CoinAPIIndexesREST.API.Metadata
+  , module CoinAPIIndexesREST.API.MultiAssetWeights
+  , module CoinAPIIndexesREST.API.Periods
   ) where
 
+import CoinAPIIndexesREST.API.IndexInputData
 import CoinAPIIndexesREST.API.Indexes
+import CoinAPIIndexesREST.API.Metadata
+import CoinAPIIndexesREST.API.MultiAssetWeights
+import CoinAPIIndexesREST.API.Periods

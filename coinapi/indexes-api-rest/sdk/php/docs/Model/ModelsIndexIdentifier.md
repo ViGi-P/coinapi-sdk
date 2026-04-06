@@ -1,4 +1,4 @@
-# # ModelsIndexIdentifier
+# ModelsIndexIdentifier
 
 ## Properties
 

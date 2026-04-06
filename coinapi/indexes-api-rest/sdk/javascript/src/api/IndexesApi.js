@@ -15,7 +15,6 @@
 import ApiClient from "../ApiClient";
 import ModelsIndexDefinitionSnapshotEntry from '../model/ModelsIndexDefinitionSnapshotEntry';
 import ModelsIndexIdentifier from '../model/ModelsIndexIdentifier';
-import ModelsIndexMultiAssetWeight from '../model/ModelsIndexMultiAssetWeight';
 import ModelsIndexTimeseriesItem from '../model/ModelsIndexTimeseriesItem';
 import ModelsIndexValue from '../model/ModelsIndexValue';
 
@@ -37,84 +36,6 @@ export default class IndexesApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-
-    /**
-     * Callback function to receive the result of the v1IndexdefMultiassetGet operation.
-     * @callback module:api/IndexesApi~v1IndexdefMultiassetGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/ModelsIndexMultiAssetWeight>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get all multi-asset weights
-     * @param {module:api/IndexesApi~v1IndexdefMultiassetGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/ModelsIndexMultiAssetWeight>}
-     */
-    v1IndexdefMultiassetGet(callback) {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['APIKey', 'JWT'];
-      let contentTypes = [];
-      let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [ModelsIndexMultiAssetWeight];
-      return this.apiClient.callApi(
-        '/v1/indexdef/multiasset', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the v1IndexdefMultiassetIndexIdGet operation.
-     * @callback module:api/IndexesApi~v1IndexdefMultiassetIndexIdGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/ModelsIndexMultiAssetWeight>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Get multi-asset weights for specific index
-     * @param {String} indexId 
-     * @param {module:api/IndexesApi~v1IndexdefMultiassetIndexIdGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/ModelsIndexMultiAssetWeight>}
-     */
-    v1IndexdefMultiassetIndexIdGet(indexId, callback) {
-      let postBody = null;
-      // verify the required parameter 'indexId' is set
-      if (indexId === undefined || indexId === null) {
-        throw new Error("Missing the required parameter 'indexId' when calling v1IndexdefMultiassetIndexIdGet");
-      }
-
-      let pathParams = {
-        'index_id': indexId
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['APIKey', 'JWT'];
-      let contentTypes = [];
-      let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [ModelsIndexMultiAssetWeight];
-      return this.apiClient.callApi(
-        '/v1/indexdef/multiasset/{index_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
 
     /**
      * Callback function to receive the result of the v1IndexesGet operation.

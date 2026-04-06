@@ -58,17 +58,18 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import org.openapitools.client.api.IndexesApi;
+import org.openapitools.client.api.IndexInputDataApi;
 
-public class IndexesApiExample {
+public class IndexInputDataApiExample {
 
     public static void main(String[] args) {
-        IndexesApi apiInstance = new IndexesApi();
+        IndexInputDataApi apiInstance = new IndexInputDataApi();
+        String indexDefinitionId = null; // String | 
         try {
-            List<ModelsIndexMultiAssetWeight> result = apiInstance.v1IndexdefMultiassetGet();
+            List<ModelsIndexDefinitionInputData> result = apiInstance.v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling IndexesApi#v1IndexdefMultiassetGet");
+            System.err.println("Exception when calling IndexInputDataApi#v1IndexdefInputDataIndexDefinitionIdAllGet");
             e.printStackTrace();
         }
     }
@@ -82,24 +83,32 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*IndexesApi* | [**v1IndexdefMultiassetGet**](docs/IndexesApi.md#v1IndexdefMultiassetGet) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
-*IndexesApi* | [**v1IndexdefMultiassetIndexIdGet**](docs/IndexesApi.md#v1IndexdefMultiassetIndexIdGet) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
+*IndexInputDataApi* | [**v1IndexdefInputDataIndexDefinitionIdAllGet**](docs/IndexInputDataApi.md#v1IndexdefInputDataIndexDefinitionIdAllGet) | **GET** /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition
+*IndexInputDataApi* | [**v1IndexdefInputDataIndexDefinitionIdGet**](docs/IndexInputDataApi.md#v1IndexdefInputDataIndexDefinitionIdGet) | **GET** /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time
 *IndexesApi* | [**v1IndexesGet**](docs/IndexesApi.md#v1IndexesGet) | **GET** /v1/indexes | List indexes
 *IndexesApi* | [**v1IndexesIndexDefinitionIdCurrentSnapshotGet**](docs/IndexesApi.md#v1IndexesIndexDefinitionIdCurrentSnapshotGet) | **GET** /v1/indexes/{index_definition_id}/currentSnapshot | Current Index Values for index definition
 *IndexesApi* | [**v1IndexesIndexDefinitionIdHistorySnapshotGet**](docs/IndexesApi.md#v1IndexesIndexDefinitionIdHistorySnapshotGet) | **GET** /v1/indexes/{index_definition_id}/historySnapshot | Historical Index Values for index definition
 *IndexesApi* | [**v1IndexesIndexIdCurrentGet**](docs/IndexesApi.md#v1IndexesIndexIdCurrentGet) | **GET** /v1/indexes/{index_id}/current | Current Index Value
 *IndexesApi* | [**v1IndexesIndexIdHistoryGet**](docs/IndexesApi.md#v1IndexesIndexIdHistoryGet) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 *IndexesApi* | [**v1IndexesIndexIdTimeseriesGet**](docs/IndexesApi.md#v1IndexesIndexIdTimeseriesGet) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
+*MetadataApi* | [**apiMetadataExchangesExchangeIdGet**](docs/MetadataApi.md#apiMetadataExchangesExchangeIdGet) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
+*MetadataApi* | [**apiMetadataExchangesGet**](docs/MetadataApi.md#apiMetadataExchangesGet) | **GET** /api/metadata/exchanges | List all exchanges
+*MultiAssetWeightsApi* | [**v1IndexdefMultiassetGet**](docs/MultiAssetWeightsApi.md#v1IndexdefMultiassetGet) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
+*MultiAssetWeightsApi* | [**v1IndexdefMultiassetIndexIdGet**](docs/MultiAssetWeightsApi.md#v1IndexdefMultiassetIndexIdGet) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
+*PeriodsApi* | [**v1MetadataPeriodsGet**](docs/PeriodsApi.md#v1MetadataPeriodsGet) | **GET** /v1/metadata/periods | List all periods
 
 
 ## Documentation for Models
 
+ - [ModelsExchange](docs/ModelsExchange.md)
+ - [ModelsIndexDefinitionInputData](docs/ModelsIndexDefinitionInputData.md)
  - [ModelsIndexDefinitionSnapshotEntry](docs/ModelsIndexDefinitionSnapshotEntry.md)
  - [ModelsIndexIdentifier](docs/ModelsIndexIdentifier.md)
  - [ModelsIndexMultiAssetWeight](docs/ModelsIndexMultiAssetWeight.md)
  - [ModelsIndexTimeseriesItem](docs/ModelsIndexTimeseriesItem.md)
  - [ModelsIndexValue](docs/ModelsIndexValue.md)
  - [ModelsIndexValueComponent](docs/ModelsIndexValueComponent.md)
+ - [ModelsTimeseriesPeriod](docs/ModelsTimeseriesPeriod.md)
 
 
 ## Documentation for Authorization

@@ -13,12 +13,19 @@ export(ApiClient)
 export(ApiResponse)
 
 # Models
+export(ModelsExchange)
+export(ModelsIndexDefinitionInputData)
 export(ModelsIndexDefinitionSnapshotEntry)
 export(ModelsIndexIdentifier)
 export(ModelsIndexMultiAssetWeight)
 export(ModelsIndexTimeseriesItem)
 export(ModelsIndexValue)
 export(ModelsIndexValueComponent)
+export(ModelsTimeseriesPeriod)
 
 # APIs
+export(IndexInputDataApi)
 export(IndexesApi)
+export(MetadataApi)
+export(MultiAssetWeightsApi)
+export(PeriodsApi)

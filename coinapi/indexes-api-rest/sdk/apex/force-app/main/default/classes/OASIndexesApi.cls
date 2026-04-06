@@ -26,52 +26,6 @@ public class OASIndexesApi {
     }
 
     /**
-     * Get all multi-asset weights
-     * 
-     * @return List<OASModelsIndexMultiAssetWeight>
-     * @throws OAS.ApiException if fails to make API call
-     */
-    public List<OASModelsIndexMultiAssetWeight> v1IndexdefMultiassetGet() {
-        List<OAS.Param> query = new List<OAS.Param>();
-        List<OAS.Param> form = new List<OAS.Param>();
-
-        return (List<OASModelsIndexMultiAssetWeight>) client.invoke(
-            'GET', '/v1/indexdef/multiasset', '',
-            query, form,
-            new Map<String, Object>(),
-            new Map<String, Object>(),
-            new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
-            new List<String>(),
-            new List<String> { 'APIKey', 'JWT' },
-            List<OASModelsIndexMultiAssetWeight>.class
-        );
-    }
-    /**
-     * Get multi-asset weights for specific index
-     * 
-     * @param indexId  (required)
-     * @return List<OASModelsIndexMultiAssetWeight>
-     * @throws OAS.ApiException if fails to make API call
-     */
-    public List<OASModelsIndexMultiAssetWeight> v1IndexdefMultiassetIndexIdGet(Map<String, Object> params) {
-        client.assertNotNull(params.get('indexId'), 'indexId');
-        List<OAS.Param> query = new List<OAS.Param>();
-        List<OAS.Param> form = new List<OAS.Param>();
-
-        return (List<OASModelsIndexMultiAssetWeight>) client.invoke(
-            'GET', '/v1/indexdef/multiasset/{index_id}', '',
-            query, form,
-            new Map<String, Object>{
-                'index_id' => (String) params.get('indexId')
-            },
-            new Map<String, Object>(),
-            new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
-            new List<String>(),
-            new List<String> { 'APIKey', 'JWT' },
-            List<OASModelsIndexMultiAssetWeight>.class
-        );
-    }
-    /**
      * List indexes
      * 
      * @return List<OASModelsIndexIdentifier>

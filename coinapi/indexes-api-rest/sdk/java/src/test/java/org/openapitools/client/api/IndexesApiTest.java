@@ -16,7 +16,6 @@ package org.openapitools.client.api;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.model.ModelsIndexDefinitionSnapshotEntry;
 import org.openapitools.client.model.ModelsIndexIdentifier;
-import org.openapitools.client.model.ModelsIndexMultiAssetWeight;
 import org.openapitools.client.model.ModelsIndexTimeseriesItem;
 import org.openapitools.client.model.ModelsIndexValue;
 import java.time.OffsetDateTime;
@@ -35,29 +34,6 @@ import java.util.Map;
 public class IndexesApiTest {
 
     private final IndexesApi api = new IndexesApi();
-
-    /**
-     * Get all multi-asset weights
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void v1IndexdefMultiassetGetTest() throws ApiException {
-        List<ModelsIndexMultiAssetWeight> response = api.v1IndexdefMultiassetGet();
-        // TODO: test validations
-    }
-
-    /**
-     * Get multi-asset weights for specific index
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void v1IndexdefMultiassetIndexIdGetTest() throws ApiException {
-        String indexId = null;
-        List<ModelsIndexMultiAssetWeight> response = api.v1IndexdefMultiassetIndexIdGet(indexId);
-        // TODO: test validations
-    }
 
     /**
      * List indexes

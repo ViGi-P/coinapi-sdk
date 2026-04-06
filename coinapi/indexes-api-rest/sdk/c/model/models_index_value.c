@@ -7,31 +7,40 @@
 
 static models_index_value_t *models_index_value_create_internal(
     char *timestamp,
-    double value,
+    double *value,
     list_t *composition
     ) {
     models_index_value_t *models_index_value_local_var = malloc(sizeof(models_index_value_t));
     if (!models_index_value_local_var) {
         return NULL;
     }
+    memset(models_index_value_local_var, 0, sizeof(models_index_value_t));
+    models_index_value_local_var->_library_owned = 1;
     models_index_value_local_var->timestamp = timestamp;
     models_index_value_local_var->value = value;
     models_index_value_local_var->composition = composition;
-
-    models_index_value_local_var->_library_owned = 1;
     return models_index_value_local_var;
 }
 
 __attribute__((deprecated)) models_index_value_t *models_index_value_create(
     char *timestamp,
-    double value,
+    double *value,
     list_t *composition
     ) {
-    return models_index_value_create_internal (
+    double *value_copy = NULL;
+    if (value) {
+        value_copy = malloc(sizeof(double));
+        if (value_copy) *value_copy = *value;
+    }
+    models_index_value_t *result = models_index_value_create_internal (
         timestamp,
-        value,
+        value_copy,
         composition
         );
+    if (!result) {
+        free(value_copy);
+    }
+    return result;
 }
 
 void models_index_value_free(models_index_value_t *models_index_value) {
@@ -46,6 +55,10 @@ void models_index_value_free(models_index_value_t *models_index_value) {
     if (models_index_value->timestamp) {
         free(models_index_value->timestamp);
         models_index_value->timestamp = NULL;
+    }
+    if (models_index_value->value) {
+        free(models_index_value->value);
+        models_index_value->value = NULL;
     }
     if (models_index_value->composition) {
         list_ForEach(listEntry, models_index_value->composition) {
@@ -70,7 +83,7 @@ cJSON *models_index_value_convertToJSON(models_index_value_t *models_index_value
 
     // models_index_value->value
     if(models_index_value->value) {
-    if(cJSON_AddNumberToObject(item, "value", models_index_value->value) == NULL) {
+    if(cJSON_AddNumberToObject(item, "value", *models_index_value->value) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -107,6 +120,11 @@ models_index_value_t *models_index_value_parseFromJSON(cJSON *models_index_value
 
     models_index_value_t *models_index_value_local_var = NULL;
 
+    char *timestamp_local_str = NULL;
+
+    // define the local variable for models_index_value->value
+    double *value_local_var = NULL;
+
     // define the local list for models_index_value->composition
     list_t *compositionList = NULL;
 
@@ -132,6 +150,12 @@ models_index_value_t *models_index_value_parseFromJSON(cJSON *models_index_value
     {
     goto end; //Numeric
     }
+    value_local_var = malloc(sizeof(double));
+    if(!value_local_var)
+    {
+        goto end;
+    }
+    *value_local_var = value->valuedouble;
     }
 
     // models_index_value->composition
@@ -159,14 +183,28 @@ models_index_value_t *models_index_value_parseFromJSON(cJSON *models_index_value
     }
 
 
+    if (timestamp && !cJSON_IsNull(timestamp)) timestamp_local_str = strdup(timestamp->valuestring);
+
     models_index_value_local_var = models_index_value_create_internal (
-        timestamp && !cJSON_IsNull(timestamp) ? strdup(timestamp->valuestring) : NULL,
-        value ? value->valuedouble : 0,
+        timestamp_local_str,
+        value_local_var,
         composition ? compositionList : NULL
         );
 
+    if (!models_index_value_local_var) {
+        goto end;
+    }
+
     return models_index_value_local_var;
 end:
+    if (timestamp_local_str) {
+        free(timestamp_local_str);
+        timestamp_local_str = NULL;
+    }
+    if (value_local_var) {
+        free(value_local_var);
+        value_local_var = NULL;
+    }
     if (compositionList) {
         listEntry_t *listEntry = NULL;
         list_ForEach(listEntry, compositionList) {

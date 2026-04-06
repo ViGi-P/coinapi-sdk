@@ -8,9 +8,17 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
+    "UnusedImport",
+    "UnnecessaryVariable",
+    "unused"
 )
 
 package org.openapitools.client.apis
@@ -21,7 +29,6 @@ import io.kotlintest.specs.ShouldSpec
 import org.openapitools.client.apis.IndexesApi
 import org.openapitools.client.models.ModelsIndexDefinitionSnapshotEntry
 import org.openapitools.client.models.ModelsIndexIdentifier
-import org.openapitools.client.models.ModelsIndexMultiAssetWeight
 import org.openapitools.client.models.ModelsIndexTimeseriesItem
 import org.openapitools.client.models.ModelsIndexValue
 
@@ -29,21 +36,6 @@ class IndexesApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of IndexesApi
         //val apiInstance = IndexesApi()
-
-        // to test v1IndexdefMultiassetGet
-        should("test v1IndexdefMultiassetGet") {
-            // uncomment below to test v1IndexdefMultiassetGet
-            //val result : kotlin.collections.List<ModelsIndexMultiAssetWeight> = apiInstance.v1IndexdefMultiassetGet()
-            //result shouldBe ("TODO")
-        }
-
-        // to test v1IndexdefMultiassetIndexIdGet
-        should("test v1IndexdefMultiassetIndexIdGet") {
-            // uncomment below to test v1IndexdefMultiassetIndexIdGet
-            //val indexId : kotlin.String = indexId_example // kotlin.String | 
-            //val result : kotlin.collections.List<ModelsIndexMultiAssetWeight> = apiInstance.v1IndexdefMultiassetIndexIdGet(indexId)
-            //result shouldBe ("TODO")
-        }
 
         // to test v1IndexesGet
         should("test v1IndexesGet") {

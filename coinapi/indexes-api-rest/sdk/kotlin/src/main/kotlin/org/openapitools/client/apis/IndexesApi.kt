@@ -8,9 +8,17 @@
 
 @file:Suppress(
     "ArrayInDataClass",
+    "DuplicatedCode",
     "EnumEntryName",
     "RemoveRedundantQualifierName",
-    "UnusedImport"
+    "RemoveRedundantCallsOfConversionMethods",
+    "REDUNDANT_CALL_OF_CONVERSION_METHOD",
+    "RedundantUnitReturnType",
+    "RemoveEmptyClassBody",
+    "UnnecessaryVariable",
+    "UnusedImport",
+    "UnnecessaryVariable",
+    "unused"
 )
 
 package org.openapitools.client.apis
@@ -21,7 +29,6 @@ import okhttp3.HttpUrl
 
 import org.openapitools.client.models.ModelsIndexDefinitionSnapshotEntry
 import org.openapitools.client.models.ModelsIndexIdentifier
-import org.openapitools.client.models.ModelsIndexMultiAssetWeight
 import org.openapitools.client.models.ModelsIndexTimeseriesItem
 import org.openapitools.client.models.ModelsIndexValue
 
@@ -45,151 +52,8 @@ open class IndexesApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://rest-api.indexes.coinapi.io")
+            System.getProperties().getProperty(ApiClient.BASE_URL_KEY, "https://rest-api.indexes.coinapi.io")
         }
-    }
-
-    /**
-     * GET /v1/indexdef/multiasset
-     * Get all multi-asset weights
-     * 
-     * @return kotlin.collections.List<ModelsIndexMultiAssetWeight>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1IndexdefMultiassetGet() : kotlin.collections.List<ModelsIndexMultiAssetWeight> {
-        val localVarResponse = v1IndexdefMultiassetGetWithHttpInfo()
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ModelsIndexMultiAssetWeight>
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /v1/indexdef/multiasset
-     * Get all multi-asset weights
-     * 
-     * @return ApiResponse<kotlin.collections.List<ModelsIndexMultiAssetWeight>?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun v1IndexdefMultiassetGetWithHttpInfo() : ApiResponse<kotlin.collections.List<ModelsIndexMultiAssetWeight>?> {
-        val localVariableConfig = v1IndexdefMultiassetGetRequestConfig()
-
-        return request<Unit, kotlin.collections.List<ModelsIndexMultiAssetWeight>>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IndexdefMultiassetGet
-     *
-     * @return RequestConfig
-     */
-    fun v1IndexdefMultiassetGetRequestConfig() : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "text/plain, application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/v1/indexdef/multiasset",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * GET /v1/indexdef/multiasset/{index_id}
-     * Get multi-asset weights for specific index
-     * 
-     * @param indexId 
-     * @return kotlin.collections.List<ModelsIndexMultiAssetWeight>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1IndexdefMultiassetIndexIdGet(indexId: kotlin.String) : kotlin.collections.List<ModelsIndexMultiAssetWeight> {
-        val localVarResponse = v1IndexdefMultiassetIndexIdGetWithHttpInfo(indexId = indexId)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ModelsIndexMultiAssetWeight>
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * GET /v1/indexdef/multiasset/{index_id}
-     * Get multi-asset weights for specific index
-     * 
-     * @param indexId 
-     * @return ApiResponse<kotlin.collections.List<ModelsIndexMultiAssetWeight>?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    fun v1IndexdefMultiassetIndexIdGetWithHttpInfo(indexId: kotlin.String) : ApiResponse<kotlin.collections.List<ModelsIndexMultiAssetWeight>?> {
-        val localVariableConfig = v1IndexdefMultiassetIndexIdGetRequestConfig(indexId = indexId)
-
-        return request<Unit, kotlin.collections.List<ModelsIndexMultiAssetWeight>>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation v1IndexdefMultiassetIndexIdGet
-     *
-     * @param indexId 
-     * @return RequestConfig
-     */
-    fun v1IndexdefMultiassetIndexIdGetRequestConfig(indexId: kotlin.String) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "text/plain, application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/v1/indexdef/multiasset/{index_id}".replace("{"+"index_id"+"}", encodeURIComponent(indexId.toString())),
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
     }
 
     /**

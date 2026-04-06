@@ -9,7 +9,11 @@ import 'package:openapi/src/auth/api_key_auth.dart';
 import 'package:openapi/src/auth/basic_auth.dart';
 import 'package:openapi/src/auth/bearer_auth.dart';
 import 'package:openapi/src/auth/oauth.dart';
+import 'package:openapi/src/api/index_input_data_api.dart';
 import 'package:openapi/src/api/indexes_api.dart';
+import 'package:openapi/src/api/metadata_api.dart';
+import 'package:openapi/src/api/multi_asset_weights_api.dart';
+import 'package:openapi/src/api/periods_api.dart';
 
 class Openapi {
   static const String basePath = r'https://rest-api.indexes.coinapi.io';
@@ -65,9 +69,33 @@ class Openapi {
     }
   }
 
+  /// Get IndexInputDataApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  IndexInputDataApi getIndexInputDataApi() {
+    return IndexInputDataApi(dio, serializers);
+  }
+
   /// Get IndexesApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   IndexesApi getIndexesApi() {
     return IndexesApi(dio, serializers);
+  }
+
+  /// Get MetadataApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MetadataApi getMetadataApi() {
+    return MetadataApi(dio, serializers);
+  }
+
+  /// Get MultiAssetWeightsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MultiAssetWeightsApi getMultiAssetWeightsApi() {
+    return MultiAssetWeightsApi(dio, serializers);
+  }
+
+  /// Get PeriodsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  PeriodsApi getPeriodsApi() {
+    return PeriodsApi(dio, serializers);
   }
 }

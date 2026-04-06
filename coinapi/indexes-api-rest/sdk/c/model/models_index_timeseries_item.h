@@ -23,11 +23,11 @@ typedef struct models_index_timeseries_item_t {
     char *time_period_end; //date time
     char *time_open; //date time
     char *time_close; //date time
-    double value_open; //numeric
-    double value_high; //numeric
-    double value_low; //numeric
-    double value_close; //numeric
-    long value_count; //numeric
+    double *value_open; //numeric
+    double *value_high; //numeric
+    double *value_low; //numeric
+    double *value_close; //numeric
+    long *value_count; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } models_index_timeseries_item_t;
@@ -37,11 +37,11 @@ __attribute__((deprecated)) models_index_timeseries_item_t *models_index_timeser
     char *time_period_end,
     char *time_open,
     char *time_close,
-    double value_open,
-    double value_high,
-    double value_low,
-    double value_close,
-    long value_count
+    double *value_open,
+    double *value_high,
+    double *value_low,
+    double *value_close,
+    long *value_count
 );
 
 void models_index_timeseries_item_free(models_index_timeseries_item_t *models_index_timeseries_item);

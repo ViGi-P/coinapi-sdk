@@ -1,4 +1,4 @@
-# # ModelsIndexMultiAssetWeight
+# ModelsIndexMultiAssetWeight
 
 ## Properties
 

@@ -22,32 +22,6 @@ func Test_openapi_IndexesAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test IndexesAPIService V1IndexdefMultiassetGet", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.IndexesAPI.V1IndexdefMultiassetGet(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test IndexesAPIService V1IndexdefMultiassetIndexIdGet", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var indexId string
-
-		resp, httpRes, err := apiClient.IndexesAPI.V1IndexdefMultiassetIndexIdGet(context.Background(), indexId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test IndexesAPIService V1IndexesGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

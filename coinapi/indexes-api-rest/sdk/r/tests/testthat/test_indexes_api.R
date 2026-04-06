@@ -5,27 +5,6 @@ context("Test IndexesApi")
 
 api_instance <- IndexesApi$new()
 
-test_that("V1IndexdefMultiassetGet", {
-  # tests for V1IndexdefMultiassetGet
-  # base path: https://rest-api.indexes.coinapi.io
-  # Get all multi-asset weights
-  # @return [array[ModelsIndexMultiAssetWeight]]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
-test_that("V1IndexdefMultiassetIndexIdGet", {
-  # tests for V1IndexdefMultiassetIndexIdGet
-  # base path: https://rest-api.indexes.coinapi.io
-  # Get multi-asset weights for specific index
-  # @param index_id character 
-  # @return [array[ModelsIndexMultiAssetWeight]]
-
-  # uncomment below to test the operation
-  #expect_equal(result, "EXPECTED_RESULT")
-})
-
 test_that("V1IndexesGet", {
   # tests for V1IndexesGet
   # base path: https://rest-api.indexes.coinapi.io

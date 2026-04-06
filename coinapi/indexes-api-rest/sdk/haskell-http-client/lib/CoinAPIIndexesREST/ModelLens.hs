@@ -37,6 +37,74 @@ import CoinAPIIndexesREST.Model
 import CoinAPIIndexesREST.Core
 
 
+-- * ModelsExchange
+
+-- | 'modelsExchangeExchangeId' Lens
+modelsExchangeExchangeIdL :: Lens_' ModelsExchange (Maybe Text)
+modelsExchangeExchangeIdL f ModelsExchange{..} = (\modelsExchangeExchangeId -> ModelsExchange { modelsExchangeExchangeId, ..} ) <$> f modelsExchangeExchangeId
+{-# INLINE modelsExchangeExchangeIdL #-}
+
+-- | 'modelsExchangeWebsite' Lens
+modelsExchangeWebsiteL :: Lens_' ModelsExchange (Maybe Text)
+modelsExchangeWebsiteL f ModelsExchange{..} = (\modelsExchangeWebsite -> ModelsExchange { modelsExchangeWebsite, ..} ) <$> f modelsExchangeWebsite
+{-# INLINE modelsExchangeWebsiteL #-}
+
+-- | 'modelsExchangeName' Lens
+modelsExchangeNameL :: Lens_' ModelsExchange (Maybe Text)
+modelsExchangeNameL f ModelsExchange{..} = (\modelsExchangeName -> ModelsExchange { modelsExchangeName, ..} ) <$> f modelsExchangeName
+{-# INLINE modelsExchangeNameL #-}
+
+
+
+-- * ModelsIndexDefinitionInputData
+
+-- | 'modelsIndexDefinitionInputDataExchangeId' Lens
+modelsIndexDefinitionInputDataExchangeIdL :: Lens_' ModelsIndexDefinitionInputData (Maybe Text)
+modelsIndexDefinitionInputDataExchangeIdL f ModelsIndexDefinitionInputData{..} = (\modelsIndexDefinitionInputDataExchangeId -> ModelsIndexDefinitionInputData { modelsIndexDefinitionInputDataExchangeId, ..} ) <$> f modelsIndexDefinitionInputDataExchangeId
+{-# INLINE modelsIndexDefinitionInputDataExchangeIdL #-}
+
+-- | 'modelsIndexDefinitionInputDataExchangeSymbolId' Lens
+modelsIndexDefinitionInputDataExchangeSymbolIdL :: Lens_' ModelsIndexDefinitionInputData (Maybe Text)
+modelsIndexDefinitionInputDataExchangeSymbolIdL f ModelsIndexDefinitionInputData{..} = (\modelsIndexDefinitionInputDataExchangeSymbolId -> ModelsIndexDefinitionInputData { modelsIndexDefinitionInputDataExchangeSymbolId, ..} ) <$> f modelsIndexDefinitionInputDataExchangeSymbolId
+{-# INLINE modelsIndexDefinitionInputDataExchangeSymbolIdL #-}
+
+-- | 'modelsIndexDefinitionInputDataBaseAssetId' Lens
+modelsIndexDefinitionInputDataBaseAssetIdL :: Lens_' ModelsIndexDefinitionInputData (Maybe Text)
+modelsIndexDefinitionInputDataBaseAssetIdL f ModelsIndexDefinitionInputData{..} = (\modelsIndexDefinitionInputDataBaseAssetId -> ModelsIndexDefinitionInputData { modelsIndexDefinitionInputDataBaseAssetId, ..} ) <$> f modelsIndexDefinitionInputDataBaseAssetId
+{-# INLINE modelsIndexDefinitionInputDataBaseAssetIdL #-}
+
+-- | 'modelsIndexDefinitionInputDataQuoteAssetId' Lens
+modelsIndexDefinitionInputDataQuoteAssetIdL :: Lens_' ModelsIndexDefinitionInputData (Maybe Text)
+modelsIndexDefinitionInputDataQuoteAssetIdL f ModelsIndexDefinitionInputData{..} = (\modelsIndexDefinitionInputDataQuoteAssetId -> ModelsIndexDefinitionInputData { modelsIndexDefinitionInputDataQuoteAssetId, ..} ) <$> f modelsIndexDefinitionInputDataQuoteAssetId
+{-# INLINE modelsIndexDefinitionInputDataQuoteAssetIdL #-}
+
+-- | 'modelsIndexDefinitionInputDataBeginDate' Lens
+modelsIndexDefinitionInputDataBeginDateL :: Lens_' ModelsIndexDefinitionInputData (Maybe DateTime)
+modelsIndexDefinitionInputDataBeginDateL f ModelsIndexDefinitionInputData{..} = (\modelsIndexDefinitionInputDataBeginDate -> ModelsIndexDefinitionInputData { modelsIndexDefinitionInputDataBeginDate, ..} ) <$> f modelsIndexDefinitionInputDataBeginDate
+{-# INLINE modelsIndexDefinitionInputDataBeginDateL #-}
+
+-- | 'modelsIndexDefinitionInputDataEndDate' Lens
+modelsIndexDefinitionInputDataEndDateL :: Lens_' ModelsIndexDefinitionInputData (Maybe DateTime)
+modelsIndexDefinitionInputDataEndDateL f ModelsIndexDefinitionInputData{..} = (\modelsIndexDefinitionInputDataEndDate -> ModelsIndexDefinitionInputData { modelsIndexDefinitionInputDataEndDate, ..} ) <$> f modelsIndexDefinitionInputDataEndDate
+{-# INLINE modelsIndexDefinitionInputDataEndDateL #-}
+
+-- | 'modelsIndexDefinitionInputDataStatus' Lens
+modelsIndexDefinitionInputDataStatusL :: Lens_' ModelsIndexDefinitionInputData (Maybe Text)
+modelsIndexDefinitionInputDataStatusL f ModelsIndexDefinitionInputData{..} = (\modelsIndexDefinitionInputDataStatus -> ModelsIndexDefinitionInputData { modelsIndexDefinitionInputDataStatus, ..} ) <$> f modelsIndexDefinitionInputDataStatus
+{-# INLINE modelsIndexDefinitionInputDataStatusL #-}
+
+-- | 'modelsIndexDefinitionInputDataStatusInfo' Lens
+modelsIndexDefinitionInputDataStatusInfoL :: Lens_' ModelsIndexDefinitionInputData (Maybe Text)
+modelsIndexDefinitionInputDataStatusInfoL f ModelsIndexDefinitionInputData{..} = (\modelsIndexDefinitionInputDataStatusInfo -> ModelsIndexDefinitionInputData { modelsIndexDefinitionInputDataStatusInfo, ..} ) <$> f modelsIndexDefinitionInputDataStatusInfo
+{-# INLINE modelsIndexDefinitionInputDataStatusInfoL #-}
+
+-- | 'modelsIndexDefinitionInputDataLastModificationTime' Lens
+modelsIndexDefinitionInputDataLastModificationTimeL :: Lens_' ModelsIndexDefinitionInputData (Maybe DateTime)
+modelsIndexDefinitionInputDataLastModificationTimeL f ModelsIndexDefinitionInputData{..} = (\modelsIndexDefinitionInputDataLastModificationTime -> ModelsIndexDefinitionInputData { modelsIndexDefinitionInputDataLastModificationTime, ..} ) <$> f modelsIndexDefinitionInputDataLastModificationTime
+{-# INLINE modelsIndexDefinitionInputDataLastModificationTimeL #-}
+
+
+
 -- * ModelsIndexDefinitionSnapshotEntry
 
 -- | 'modelsIndexDefinitionSnapshotEntryIndexId' Lens
@@ -163,5 +231,39 @@ modelsIndexValueComponentComponentIdL f ModelsIndexValueComponent{..} = (\models
 modelsIndexValueComponentComponentValueL :: Lens_' ModelsIndexValueComponent (Maybe Double)
 modelsIndexValueComponentComponentValueL f ModelsIndexValueComponent{..} = (\modelsIndexValueComponentComponentValue -> ModelsIndexValueComponent { modelsIndexValueComponentComponentValue, ..} ) <$> f modelsIndexValueComponentComponentValue
 {-# INLINE modelsIndexValueComponentComponentValueL #-}
+
+
+
+-- * ModelsTimeseriesPeriod
+
+-- | 'modelsTimeseriesPeriodPeriodId' Lens
+modelsTimeseriesPeriodPeriodIdL :: Lens_' ModelsTimeseriesPeriod (Maybe Text)
+modelsTimeseriesPeriodPeriodIdL f ModelsTimeseriesPeriod{..} = (\modelsTimeseriesPeriodPeriodId -> ModelsTimeseriesPeriod { modelsTimeseriesPeriodPeriodId, ..} ) <$> f modelsTimeseriesPeriodPeriodId
+{-# INLINE modelsTimeseriesPeriodPeriodIdL #-}
+
+-- | 'modelsTimeseriesPeriodLengthSeconds' Lens
+modelsTimeseriesPeriodLengthSecondsL :: Lens_' ModelsTimeseriesPeriod (Maybe Int)
+modelsTimeseriesPeriodLengthSecondsL f ModelsTimeseriesPeriod{..} = (\modelsTimeseriesPeriodLengthSeconds -> ModelsTimeseriesPeriod { modelsTimeseriesPeriodLengthSeconds, ..} ) <$> f modelsTimeseriesPeriodLengthSeconds
+{-# INLINE modelsTimeseriesPeriodLengthSecondsL #-}
+
+-- | 'modelsTimeseriesPeriodLengthMonths' Lens
+modelsTimeseriesPeriodLengthMonthsL :: Lens_' ModelsTimeseriesPeriod (Maybe Int)
+modelsTimeseriesPeriodLengthMonthsL f ModelsTimeseriesPeriod{..} = (\modelsTimeseriesPeriodLengthMonths -> ModelsTimeseriesPeriod { modelsTimeseriesPeriodLengthMonths, ..} ) <$> f modelsTimeseriesPeriodLengthMonths
+{-# INLINE modelsTimeseriesPeriodLengthMonthsL #-}
+
+-- | 'modelsTimeseriesPeriodUnitCount' Lens
+modelsTimeseriesPeriodUnitCountL :: Lens_' ModelsTimeseriesPeriod (Maybe Int)
+modelsTimeseriesPeriodUnitCountL f ModelsTimeseriesPeriod{..} = (\modelsTimeseriesPeriodUnitCount -> ModelsTimeseriesPeriod { modelsTimeseriesPeriodUnitCount, ..} ) <$> f modelsTimeseriesPeriodUnitCount
+{-# INLINE modelsTimeseriesPeriodUnitCountL #-}
+
+-- | 'modelsTimeseriesPeriodUnitName' Lens
+modelsTimeseriesPeriodUnitNameL :: Lens_' ModelsTimeseriesPeriod (Maybe Text)
+modelsTimeseriesPeriodUnitNameL f ModelsTimeseriesPeriod{..} = (\modelsTimeseriesPeriodUnitName -> ModelsTimeseriesPeriod { modelsTimeseriesPeriodUnitName, ..} ) <$> f modelsTimeseriesPeriodUnitName
+{-# INLINE modelsTimeseriesPeriodUnitNameL #-}
+
+-- | 'modelsTimeseriesPeriodDisplayName' Lens
+modelsTimeseriesPeriodDisplayNameL :: Lens_' ModelsTimeseriesPeriod (Maybe Text)
+modelsTimeseriesPeriodDisplayNameL f ModelsTimeseriesPeriod{..} = (\modelsTimeseriesPeriodDisplayName -> ModelsTimeseriesPeriod { modelsTimeseriesPeriodDisplayName, ..} ) <$> f modelsTimeseriesPeriodDisplayName
+{-# INLINE modelsTimeseriesPeriodDisplayNameL #-}
 
 

@@ -70,6 +70,92 @@ export class RequiredError extends Error {
 }
 
 /**
+ * Represents an exchange.
+ * @export
+ */
+export type ModelsExchange = {
+    /**
+     * Gets or sets the exchange ID.
+     * @type {string}
+     * @memberof ModelsExchange
+     */
+    exchange_id?: string;
+    /**
+     * Gets or sets the website URL of the exchange.
+     * @type {string}
+     * @memberof ModelsExchange
+     */
+    website?: string;
+    /**
+     * Gets or sets the name of the exchange.
+     * @type {string}
+     * @memberof ModelsExchange
+     */
+    name?: string;
+}
+
+/**
+ * 
+ * @export
+ */
+export type ModelsIndexDefinitionInputData = {
+    /**
+     * 
+     * @type {string}
+     * @memberof ModelsIndexDefinitionInputData
+     */
+    exchangeId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ModelsIndexDefinitionInputData
+     */
+    exchangeSymbolId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ModelsIndexDefinitionInputData
+     */
+    baseAssetId?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ModelsIndexDefinitionInputData
+     */
+    quoteAssetId?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ModelsIndexDefinitionInputData
+     */
+    beginDate?: Date;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ModelsIndexDefinitionInputData
+     */
+    endDate?: Date;
+    /**
+     * 
+     * @type {string}
+     * @memberof ModelsIndexDefinitionInputData
+     */
+    status?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ModelsIndexDefinitionInputData
+     */
+    statusInfo?: string;
+    /**
+     * 
+     * @type {Date}
+     * @memberof ModelsIndexDefinitionInputData
+     */
+    lastModificationTime?: Date;
+}
+
+/**
  * 
  * @export
  */
@@ -237,6 +323,199 @@ export type ModelsIndexValueComponent = {
     component_value?: number;
 }
 
+/**
+ * Represents a timeseries period used in exchange rate data.
+ * @export
+ */
+export type ModelsTimeseriesPeriod = {
+    /**
+     * Gets or sets the period ID.
+     * @type {string}
+     * @memberof ModelsTimeseriesPeriod
+     */
+    period_id?: string;
+    /**
+     * Gets or sets the length of the period in seconds.
+     * @type {number}
+     * @memberof ModelsTimeseriesPeriod
+     */
+    length_seconds?: number;
+    /**
+     * Gets or sets the length of the period in months.
+     * @type {number}
+     * @memberof ModelsTimeseriesPeriod
+     */
+    length_months?: number;
+    /**
+     * Gets or sets the unit count.
+     * @type {number}
+     * @memberof ModelsTimeseriesPeriod
+     */
+    unit_count?: number;
+    /**
+     * Gets or sets the unit name.
+     * @type {string}
+     * @memberof ModelsTimeseriesPeriod
+     */
+    unit_name?: string;
+    /**
+     * Gets or sets the display name of the timeseries period.
+     * @type {string}
+     * @memberof ModelsTimeseriesPeriod
+     */
+    display_name?: string;
+}
+
+
+
+/**
+ * IndexInputDataApi - fetch parameter creator
+ * @export
+ */
+export const IndexInputDataApiFetchParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @summary Returns all data inputs for a specific index definition
+         * @throws {RequiredError}
+         */
+        v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId: string, options: RequestOptions): FetchArgs {
+            // verify required parameter 'indexDefinitionId' is not null or undefined
+            if (indexDefinitionId === null || indexDefinitionId === undefined) {
+                throw new RequiredError('indexDefinitionId','Required parameter indexDefinitionId was null or undefined when calling v1IndexdefInputDataIndexDefinitionIdAllGet.');
+            }
+            const localVarPath = `/v1/indexdef/input-data/{index_definition_id}/all`
+                .replace(`{${"index_definition_id"}}`, encodeURIComponent(String(indexDefinitionId)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+
+            // authentication APIKey required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            localVarUrlObj.search = null;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Returns data inputs for certain index definition and time
+         * @throws {RequiredError}
+         */
+        v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId: string, time?: Date, enabledOnly?: boolean, pendingOnly?: boolean, filterAssetId?: string, withStatusInfo?: boolean, options: RequestOptions): FetchArgs {
+            // verify required parameter 'indexDefinitionId' is not null or undefined
+            if (indexDefinitionId === null || indexDefinitionId === undefined) {
+                throw new RequiredError('indexDefinitionId','Required parameter indexDefinitionId was null or undefined when calling v1IndexdefInputDataIndexDefinitionIdGet.');
+            }
+            const localVarPath = `/v1/indexdef/input-data/{index_definition_id}`
+                .replace(`{${"index_definition_id"}}`, encodeURIComponent(String(indexDefinitionId)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+
+            // authentication APIKey required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+
+            if (time !== undefined) {
+                localVarQueryParameter['time'] = ((time:any):Date).toISOString();
+            }
+
+            if (enabledOnly !== undefined) {
+                localVarQueryParameter['enabled_only'] = ((enabledOnly:any):string);
+            }
+
+            if (pendingOnly !== undefined) {
+                localVarQueryParameter['pending_only'] = ((pendingOnly:any):string);
+            }
+
+            if (filterAssetId !== undefined) {
+                localVarQueryParameter['filter_asset_id'] = ((filterAssetId:any):string);
+            }
+
+            if (withStatusInfo !== undefined) {
+                localVarQueryParameter['with_status_info'] = ((withStatusInfo:any):string);
+            }
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            localVarUrlObj.search = null;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+export type IndexInputDataApiType = { 
+    v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId: string, options?: RequestOptions): Promise<Array<ModelsIndexDefinitionInputData>>,
+
+    v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId: string, time?: Date, enabledOnly?: boolean, pendingOnly?: boolean, filterAssetId?: string, withStatusInfo?: boolean, options?: RequestOptions): Promise<Array<ModelsIndexDefinitionSnapshotEntry>>,
+}
+
+/**
+ * IndexInputDataApi - factory function to inject configuration 
+ * @export
+ */
+export const IndexInputDataApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): IndexInputDataApiType {
+    const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
+    return {
+        /**
+         * 
+         * @summary Returns all data inputs for a specific index definition
+         * @throws {RequiredError}
+         */
+        v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId: string, options?: RequestOptions = {}): Promise<Array<ModelsIndexDefinitionInputData>> {
+            const localVarFetchArgs = IndexInputDataApiFetchParamCreator(configuration).v1IndexdefInputDataIndexDefinitionIdAllGet(indexDefinitionId, options);
+            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    throw response;
+                }
+            });
+        },
+        /**
+         * 
+         * @summary Returns data inputs for certain index definition and time
+         * @throws {RequiredError}
+         */
+        v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId: string, time?: Date, enabledOnly?: boolean, pendingOnly?: boolean, filterAssetId?: string, withStatusInfo?: boolean, options?: RequestOptions = {}): Promise<Array<ModelsIndexDefinitionSnapshotEntry>> {
+            const localVarFetchArgs = IndexInputDataApiFetchParamCreator(configuration).v1IndexdefInputDataIndexDefinitionIdGet(indexDefinitionId, time, enabledOnly, pendingOnly, filterAssetId, withStatusInfo, options);
+            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    throw response;
+                }
+            });
+        },
+    }
+};
 
 
 /**
@@ -245,75 +524,6 @@ export type ModelsIndexValueComponent = {
  */
 export const IndexesApiFetchParamCreator = function (configuration?: Configuration) {
     return {
-        /**
-         * 
-         * @summary Get all multi-asset weights
-         * @throws {RequiredError}
-         */
-        v1IndexdefMultiassetGet(options: RequestOptions): FetchArgs {
-            const localVarPath = `/v1/indexdef/multiasset`;
-            const localVarUrlObj = url.parse(localVarPath, true);
-            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
-            const localVarHeaderParameter = {};
-            const localVarQueryParameter = {};
-
-            // authentication APIKey required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
-
-            // authentication JWT required
-
-            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            localVarUrlObj.search = null;
-            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-
-            return {
-                url: url.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Get multi-asset weights for specific index
-         * @throws {RequiredError}
-         */
-        v1IndexdefMultiassetIndexIdGet(indexId: string, options: RequestOptions): FetchArgs {
-            // verify required parameter 'indexId' is not null or undefined
-            if (indexId === null || indexId === undefined) {
-                throw new RequiredError('indexId','Required parameter indexId was null or undefined when calling v1IndexdefMultiassetIndexIdGet.');
-            }
-            const localVarPath = `/v1/indexdef/multiasset/{index_id}`
-                .replace(`{${"index_id"}}`, encodeURIComponent(String(indexId)));
-            const localVarUrlObj = url.parse(localVarPath, true);
-            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
-            const localVarHeaderParameter = {};
-            const localVarQueryParameter = {};
-
-            // authentication APIKey required
-            if (configuration && configuration.apiKey) {
-                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
-                    ? configuration.apiKey("Authorization")
-                    : configuration.apiKey;
-                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
-            }
-
-            // authentication JWT required
-
-            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
-            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
-            localVarUrlObj.search = null;
-            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
-
-            return {
-                url: url.format(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
         /**
          * 
          * @summary List indexes
@@ -579,10 +789,6 @@ export const IndexesApiFetchParamCreator = function (configuration?: Configurati
 };
 
 export type IndexesApiType = { 
-    v1IndexdefMultiassetGet(options?: RequestOptions): Promise<Array<ModelsIndexMultiAssetWeight>>,
-
-    v1IndexdefMultiassetIndexIdGet(indexId: string, options?: RequestOptions): Promise<Array<ModelsIndexMultiAssetWeight>>,
-
     v1IndexesGet(options?: RequestOptions): Promise<Array<ModelsIndexIdentifier>>,
 
     v1IndexesIndexDefinitionIdCurrentSnapshotGet(indexDefinitionId: string, options?: RequestOptions): Promise<Array<ModelsIndexDefinitionSnapshotEntry>>,
@@ -603,36 +809,6 @@ export type IndexesApiType = {
 export const IndexesApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): IndexesApiType {
     const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
     return {
-        /**
-         * 
-         * @summary Get all multi-asset weights
-         * @throws {RequiredError}
-         */
-        v1IndexdefMultiassetGet(options?: RequestOptions = {}): Promise<Array<ModelsIndexMultiAssetWeight>> {
-            const localVarFetchArgs = IndexesApiFetchParamCreator(configuration).v1IndexdefMultiassetGet(options);
-            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
-                if (response.status >= 200 && response.status < 300) {
-                    return response.json();
-                } else {
-                    throw response;
-                }
-            });
-        },
-        /**
-         * 
-         * @summary Get multi-asset weights for specific index
-         * @throws {RequiredError}
-         */
-        v1IndexdefMultiassetIndexIdGet(indexId: string, options?: RequestOptions = {}): Promise<Array<ModelsIndexMultiAssetWeight>> {
-            const localVarFetchArgs = IndexesApiFetchParamCreator(configuration).v1IndexdefMultiassetIndexIdGet(indexId, options);
-            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
-                if (response.status >= 200 && response.status < 300) {
-                    return response.json();
-                } else {
-                    throw response;
-                }
-            });
-        },
         /**
          * 
          * @summary List indexes
@@ -727,6 +903,339 @@ export const IndexesApi = function(configuration?: Configuration, fetch: FetchAP
 };
 
 
+/**
+ * MetadataApi - fetch parameter creator
+ * @export
+ */
+export const MetadataApiFetchParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @summary List all exchanges by exchange_id
+         * @throws {RequiredError}
+         */
+        apiMetadataExchangesExchangeIdGet(exchangeId: string, options: RequestOptions): FetchArgs {
+            // verify required parameter 'exchangeId' is not null or undefined
+            if (exchangeId === null || exchangeId === undefined) {
+                throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling apiMetadataExchangesExchangeIdGet.');
+            }
+            const localVarPath = `/api/metadata/exchanges/{exchange_id}`
+                .replace(`{${"exchange_id"}}`, encodeURIComponent(String(exchangeId)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+
+            // authentication APIKey required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            localVarUrlObj.search = null;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
+         * @summary List all exchanges
+         * @throws {RequiredError}
+         */
+        apiMetadataExchangesGet(filterExchangeId?: string, options: RequestOptions): FetchArgs {
+            const localVarPath = `/api/metadata/exchanges`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+
+            // authentication APIKey required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+
+            if (filterExchangeId !== undefined) {
+                localVarQueryParameter['filter_exchange_id'] = ((filterExchangeId:any):string);
+            }
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            localVarUrlObj.search = null;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+export type MetadataApiType = { 
+    apiMetadataExchangesExchangeIdGet(exchangeId: string, options?: RequestOptions): Promise<Array<ModelsExchange>>,
+
+    apiMetadataExchangesGet(filterExchangeId?: string, options?: RequestOptions): Promise<Array<ModelsExchange>>,
+}
+
+/**
+ * MetadataApi - factory function to inject configuration 
+ * @export
+ */
+export const MetadataApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): MetadataApiType {
+    const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
+    return {
+        /**
+         * 
+         * @summary List all exchanges by exchange_id
+         * @throws {RequiredError}
+         */
+        apiMetadataExchangesExchangeIdGet(exchangeId: string, options?: RequestOptions = {}): Promise<Array<ModelsExchange>> {
+            const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).apiMetadataExchangesExchangeIdGet(exchangeId, options);
+            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    throw response;
+                }
+            });
+        },
+        /**
+         * Get a detailed list of exchanges provided by the system.              :::info Properties of the output are providing aggregated information from across all symbols related to the specific exchange. If you need to calculate your aggregation (e.g., limiting only the particular type of symbols), you should use /v1/symbols endpoint as a data source. :::
+         * @summary List all exchanges
+         * @throws {RequiredError}
+         */
+        apiMetadataExchangesGet(filterExchangeId?: string, options?: RequestOptions = {}): Promise<Array<ModelsExchange>> {
+            const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).apiMetadataExchangesGet(filterExchangeId, options);
+            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    throw response;
+                }
+            });
+        },
+    }
+};
+
+
+/**
+ * MultiAssetWeightsApi - fetch parameter creator
+ * @export
+ */
+export const MultiAssetWeightsApiFetchParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @summary Get all multi-asset weights
+         * @throws {RequiredError}
+         */
+        v1IndexdefMultiassetGet(options: RequestOptions): FetchArgs {
+            const localVarPath = `/v1/indexdef/multiasset`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+
+            // authentication APIKey required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            localVarUrlObj.search = null;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get multi-asset weights for specific index
+         * @throws {RequiredError}
+         */
+        v1IndexdefMultiassetIndexIdGet(indexId: string, options: RequestOptions): FetchArgs {
+            // verify required parameter 'indexId' is not null or undefined
+            if (indexId === null || indexId === undefined) {
+                throw new RequiredError('indexId','Required parameter indexId was null or undefined when calling v1IndexdefMultiassetIndexIdGet.');
+            }
+            const localVarPath = `/v1/indexdef/multiasset/{index_id}`
+                .replace(`{${"index_id"}}`, encodeURIComponent(String(indexId)));
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+
+            // authentication APIKey required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            localVarUrlObj.search = null;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+export type MultiAssetWeightsApiType = { 
+    v1IndexdefMultiassetGet(options?: RequestOptions): Promise<Array<ModelsIndexMultiAssetWeight>>,
+
+    v1IndexdefMultiassetIndexIdGet(indexId: string, options?: RequestOptions): Promise<Array<ModelsIndexMultiAssetWeight>>,
+}
+
+/**
+ * MultiAssetWeightsApi - factory function to inject configuration 
+ * @export
+ */
+export const MultiAssetWeightsApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): MultiAssetWeightsApiType {
+    const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
+    return {
+        /**
+         * 
+         * @summary Get all multi-asset weights
+         * @throws {RequiredError}
+         */
+        v1IndexdefMultiassetGet(options?: RequestOptions = {}): Promise<Array<ModelsIndexMultiAssetWeight>> {
+            const localVarFetchArgs = MultiAssetWeightsApiFetchParamCreator(configuration).v1IndexdefMultiassetGet(options);
+            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    throw response;
+                }
+            });
+        },
+        /**
+         * 
+         * @summary Get multi-asset weights for specific index
+         * @throws {RequiredError}
+         */
+        v1IndexdefMultiassetIndexIdGet(indexId: string, options?: RequestOptions = {}): Promise<Array<ModelsIndexMultiAssetWeight>> {
+            const localVarFetchArgs = MultiAssetWeightsApiFetchParamCreator(configuration).v1IndexdefMultiassetIndexIdGet(indexId, options);
+            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    throw response;
+                }
+            });
+        },
+    }
+};
+
+
+/**
+ * PeriodsApi - fetch parameter creator
+ * @export
+ */
+export const PeriodsApiFetchParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * Get full list of supported time periods              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
+         * @summary List all periods
+         * @throws {RequiredError}
+         */
+        v1MetadataPeriodsGet(options: RequestOptions): FetchArgs {
+            const localVarPath = `/v1/metadata/periods`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+
+            // authentication APIKey required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            localVarUrlObj.search = null;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+export type PeriodsApiType = { 
+    v1MetadataPeriodsGet(options?: RequestOptions): Promise<Array<ModelsTimeseriesPeriod>>,
+}
+
+/**
+ * PeriodsApi - factory function to inject configuration 
+ * @export
+ */
+export const PeriodsApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): PeriodsApiType {
+    const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
+    return {
+        /**
+         * Get full list of supported time periods              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
+         * @summary List all periods
+         * @throws {RequiredError}
+         */
+        v1MetadataPeriodsGet(options?: RequestOptions = {}): Promise<Array<ModelsTimeseriesPeriod>> {
+            const localVarFetchArgs = PeriodsApiFetchParamCreator(configuration).v1MetadataPeriodsGet(options);
+            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response.json();
+                } else {
+                    throw response;
+                }
+            });
+        },
+    }
+};
+
+
 export type ApiTypes = { 
+    IndexInputDataApi: IndexInputDataApiType,
+
     IndexesApi: IndexesApiType,
+
+    MetadataApi: MetadataApiType,
+
+    MultiAssetWeightsApi: MultiAssetWeightsApiType,
+
+    PeriodsApi: PeriodsApiType,
  }

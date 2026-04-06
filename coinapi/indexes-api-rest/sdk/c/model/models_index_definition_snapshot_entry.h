@@ -21,7 +21,7 @@ typedef struct models_index_definition_snapshot_entry_t models_index_definition_
 typedef struct models_index_definition_snapshot_entry_t {
     char *index_id; // string
     char *timestamp; //date time
-    double value; //numeric
+    double *value; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } models_index_definition_snapshot_entry_t;
@@ -29,7 +29,7 @@ typedef struct models_index_definition_snapshot_entry_t {
 __attribute__((deprecated)) models_index_definition_snapshot_entry_t *models_index_definition_snapshot_entry_create(
     char *index_id,
     char *timestamp,
-    double value
+    double *value
 );
 
 void models_index_definition_snapshot_entry_free(models_index_definition_snapshot_entry_t *models_index_definition_snapshot_entry);

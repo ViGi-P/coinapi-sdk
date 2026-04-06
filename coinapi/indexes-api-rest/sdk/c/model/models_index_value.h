@@ -21,7 +21,7 @@ typedef struct models_index_value_t models_index_value_t;
 
 typedef struct models_index_value_t {
     char *timestamp; //date time
-    double value; //numeric
+    double *value; //numeric
     list_t *composition; //nonprimitive container
 
     int _library_owned; // Is the library responsible for freeing this object?
@@ -29,7 +29,7 @@ typedef struct models_index_value_t {
 
 __attribute__((deprecated)) models_index_value_t *models_index_value_create(
     char *timestamp,
-    double value,
+    double *value,
     list_t *composition
 );
 

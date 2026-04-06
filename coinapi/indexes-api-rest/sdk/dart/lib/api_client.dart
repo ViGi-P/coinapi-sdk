@@ -182,6 +182,10 @@ class ApiClient {
           return valueString == 'true' || valueString == '1';
         case 'DateTime':
           return value is DateTime ? value : DateTime.tryParse(value);
+        case 'ModelsExchange':
+          return ModelsExchange.fromJson(value);
+        case 'ModelsIndexDefinitionInputData':
+          return ModelsIndexDefinitionInputData.fromJson(value);
         case 'ModelsIndexDefinitionSnapshotEntry':
           return ModelsIndexDefinitionSnapshotEntry.fromJson(value);
         case 'ModelsIndexIdentifier':
@@ -194,6 +198,8 @@ class ApiClient {
           return ModelsIndexValue.fromJson(value);
         case 'ModelsIndexValueComponent':
           return ModelsIndexValueComponent.fromJson(value);
+        case 'ModelsTimeseriesPeriod':
+          return ModelsTimeseriesPeriod.fromJson(value);
         default:
           dynamic match;
           if (value is List && (match = _regList.firstMatch(targetType)?.group(1)) != null) {

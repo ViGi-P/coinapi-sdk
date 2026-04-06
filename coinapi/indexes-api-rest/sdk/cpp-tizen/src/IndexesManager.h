@@ -7,7 +7,6 @@
 #include <glib.h>
 #include "Models.IndexDefinitionSnapshotEntry.h"
 #include "Models.IndexIdentifier.h"
-#include "Models.IndexMultiAssetWeight.h"
 #include "Models.IndexTimeseriesItem.h"
 #include "Models.IndexValue.h"
 #include <list>
@@ -28,58 +27,6 @@ class IndexesManager {
 public:
 	IndexesManager();
 	virtual ~IndexesManager();
-
-/*! \brief Get all multi-asset weights. *Synchronous*
- *
- * 
- * \param handler The callback function to be invoked on completion. *Required*
- * \param accessToken The Authorization token. *Required*
- * \param userData The user data to be passed to the callback function.
- */
-bool v1IndexdefMultiassetGetSync(char * accessToken,
-	
-	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
-	, void* userData);
-
-/*! \brief Get all multi-asset weights. *Asynchronous*
- *
- * 
- * \param handler The callback function to be invoked on completion. *Required*
- * \param accessToken The Authorization token. *Required*
- * \param userData The user data to be passed to the callback function.
- */
-bool v1IndexdefMultiassetGetAsync(char * accessToken,
-	
-	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
-	, void* userData);
-
-
-/*! \brief Get multi-asset weights for specific index. *Synchronous*
- *
- * 
- * \param indexId  *Required*
- * \param handler The callback function to be invoked on completion. *Required*
- * \param accessToken The Authorization token. *Required*
- * \param userData The user data to be passed to the callback function.
- */
-bool v1IndexdefMultiassetIndexIdGetSync(char * accessToken,
-	std::string indexId, 
-	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
-	, void* userData);
-
-/*! \brief Get multi-asset weights for specific index. *Asynchronous*
- *
- * 
- * \param indexId  *Required*
- * \param handler The callback function to be invoked on completion. *Required*
- * \param accessToken The Authorization token. *Required*
- * \param userData The user data to be passed to the callback function.
- */
-bool v1IndexdefMultiassetIndexIdGetAsync(char * accessToken,
-	std::string indexId, 
-	void(* handler)(std::list<Models.IndexMultiAssetWeight>, Error, void* )
-	, void* userData);
-
 
 /*! \brief List indexes. *Synchronous*
  *

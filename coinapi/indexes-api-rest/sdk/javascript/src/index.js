@@ -13,13 +13,20 @@
 
 
 import ApiClient from './ApiClient';
+import ModelsExchange from './model/ModelsExchange';
+import ModelsIndexDefinitionInputData from './model/ModelsIndexDefinitionInputData';
 import ModelsIndexDefinitionSnapshotEntry from './model/ModelsIndexDefinitionSnapshotEntry';
 import ModelsIndexIdentifier from './model/ModelsIndexIdentifier';
 import ModelsIndexMultiAssetWeight from './model/ModelsIndexMultiAssetWeight';
 import ModelsIndexTimeseriesItem from './model/ModelsIndexTimeseriesItem';
 import ModelsIndexValue from './model/ModelsIndexValue';
 import ModelsIndexValueComponent from './model/ModelsIndexValueComponent';
+import ModelsTimeseriesPeriod from './model/ModelsTimeseriesPeriod';
+import IndexInputDataApi from './api/IndexInputDataApi';
 import IndexesApi from './api/IndexesApi';
+import MetadataApi from './api/MetadataApi';
+import MultiAssetWeightsApi from './api/MultiAssetWeightsApi';
+import PeriodsApi from './api/PeriodsApi';
 
 
 /**
@@ -61,6 +68,18 @@ export {
     ApiClient,
 
     /**
+     * The ModelsExchange model constructor.
+     * @property {module:model/ModelsExchange}
+     */
+    ModelsExchange,
+
+    /**
+     * The ModelsIndexDefinitionInputData model constructor.
+     * @property {module:model/ModelsIndexDefinitionInputData}
+     */
+    ModelsIndexDefinitionInputData,
+
+    /**
      * The ModelsIndexDefinitionSnapshotEntry model constructor.
      * @property {module:model/ModelsIndexDefinitionSnapshotEntry}
      */
@@ -97,8 +116,38 @@ export {
     ModelsIndexValueComponent,
 
     /**
+     * The ModelsTimeseriesPeriod model constructor.
+     * @property {module:model/ModelsTimeseriesPeriod}
+     */
+    ModelsTimeseriesPeriod,
+
+    /**
+    * The IndexInputDataApi service constructor.
+    * @property {module:api/IndexInputDataApi}
+    */
+    IndexInputDataApi,
+
+    /**
     * The IndexesApi service constructor.
     * @property {module:api/IndexesApi}
     */
-    IndexesApi
+    IndexesApi,
+
+    /**
+    * The MetadataApi service constructor.
+    * @property {module:api/MetadataApi}
+    */
+    MetadataApi,
+
+    /**
+    * The MultiAssetWeightsApi service constructor.
+    * @property {module:api/MultiAssetWeightsApi}
+    */
+    MultiAssetWeightsApi,
+
+    /**
+    * The PeriodsApi service constructor.
+    * @property {module:api/PeriodsApi}
+    */
+    PeriodsApi
 };

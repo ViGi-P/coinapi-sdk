@@ -8,30 +8,39 @@
 static models_index_definition_snapshot_entry_t *models_index_definition_snapshot_entry_create_internal(
     char *index_id,
     char *timestamp,
-    double value
+    double *value
     ) {
     models_index_definition_snapshot_entry_t *models_index_definition_snapshot_entry_local_var = malloc(sizeof(models_index_definition_snapshot_entry_t));
     if (!models_index_definition_snapshot_entry_local_var) {
         return NULL;
     }
+    memset(models_index_definition_snapshot_entry_local_var, 0, sizeof(models_index_definition_snapshot_entry_t));
+    models_index_definition_snapshot_entry_local_var->_library_owned = 1;
     models_index_definition_snapshot_entry_local_var->index_id = index_id;
     models_index_definition_snapshot_entry_local_var->timestamp = timestamp;
     models_index_definition_snapshot_entry_local_var->value = value;
-
-    models_index_definition_snapshot_entry_local_var->_library_owned = 1;
     return models_index_definition_snapshot_entry_local_var;
 }
 
 __attribute__((deprecated)) models_index_definition_snapshot_entry_t *models_index_definition_snapshot_entry_create(
     char *index_id,
     char *timestamp,
-    double value
+    double *value
     ) {
-    return models_index_definition_snapshot_entry_create_internal (
+    double *value_copy = NULL;
+    if (value) {
+        value_copy = malloc(sizeof(double));
+        if (value_copy) *value_copy = *value;
+    }
+    models_index_definition_snapshot_entry_t *result = models_index_definition_snapshot_entry_create_internal (
         index_id,
         timestamp,
-        value
+        value_copy
         );
+    if (!result) {
+        free(value_copy);
+    }
+    return result;
 }
 
 void models_index_definition_snapshot_entry_free(models_index_definition_snapshot_entry_t *models_index_definition_snapshot_entry) {
@@ -50,6 +59,10 @@ void models_index_definition_snapshot_entry_free(models_index_definition_snapsho
     if (models_index_definition_snapshot_entry->timestamp) {
         free(models_index_definition_snapshot_entry->timestamp);
         models_index_definition_snapshot_entry->timestamp = NULL;
+    }
+    if (models_index_definition_snapshot_entry->value) {
+        free(models_index_definition_snapshot_entry->value);
+        models_index_definition_snapshot_entry->value = NULL;
     }
     free(models_index_definition_snapshot_entry);
 }
@@ -75,7 +88,7 @@ cJSON *models_index_definition_snapshot_entry_convertToJSON(models_index_definit
 
     // models_index_definition_snapshot_entry->value
     if(models_index_definition_snapshot_entry->value) {
-    if(cJSON_AddNumberToObject(item, "value", models_index_definition_snapshot_entry->value) == NULL) {
+    if(cJSON_AddNumberToObject(item, "value", *models_index_definition_snapshot_entry->value) == NULL) {
     goto fail; //Numeric
     }
     }
@@ -91,6 +104,13 @@ fail:
 models_index_definition_snapshot_entry_t *models_index_definition_snapshot_entry_parseFromJSON(cJSON *models_index_definition_snapshot_entryJSON){
 
     models_index_definition_snapshot_entry_t *models_index_definition_snapshot_entry_local_var = NULL;
+
+    char *index_id_local_str = NULL;
+
+    char *timestamp_local_str = NULL;
+
+    // define the local variable for models_index_definition_snapshot_entry->value
+    double *value_local_var = NULL;
 
     // models_index_definition_snapshot_entry->index_id
     cJSON *index_id = cJSON_GetObjectItemCaseSensitive(models_index_definition_snapshot_entryJSON, "index_id");
@@ -126,17 +146,42 @@ models_index_definition_snapshot_entry_t *models_index_definition_snapshot_entry
     {
     goto end; //Numeric
     }
+    value_local_var = malloc(sizeof(double));
+    if(!value_local_var)
+    {
+        goto end;
+    }
+    *value_local_var = value->valuedouble;
     }
 
 
+    if (index_id && !cJSON_IsNull(index_id)) index_id_local_str = strdup(index_id->valuestring);
+    if (timestamp && !cJSON_IsNull(timestamp)) timestamp_local_str = strdup(timestamp->valuestring);
+
     models_index_definition_snapshot_entry_local_var = models_index_definition_snapshot_entry_create_internal (
-        index_id && !cJSON_IsNull(index_id) ? strdup(index_id->valuestring) : NULL,
-        timestamp && !cJSON_IsNull(timestamp) ? strdup(timestamp->valuestring) : NULL,
-        value ? value->valuedouble : 0
+        index_id_local_str,
+        timestamp_local_str,
+        value_local_var
         );
+
+    if (!models_index_definition_snapshot_entry_local_var) {
+        goto end;
+    }
 
     return models_index_definition_snapshot_entry_local_var;
 end:
+    if (index_id_local_str) {
+        free(index_id_local_str);
+        index_id_local_str = NULL;
+    }
+    if (timestamp_local_str) {
+        free(timestamp_local_str);
+        timestamp_local_str = NULL;
+    }
+    if (value_local_var) {
+        free(value_local_var);
+        value_local_var = NULL;
+    }
     return NULL;
 
 }

@@ -1,4 +1,4 @@
-# # ModelsIndexDefinitionSnapshotEntry
+# ModelsIndexDefinitionSnapshotEntry
 
 ## Properties
 

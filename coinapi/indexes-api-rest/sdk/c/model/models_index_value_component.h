@@ -20,14 +20,14 @@ typedef struct models_index_value_component_t models_index_value_component_t;
 
 typedef struct models_index_value_component_t {
     char *component_id; // string
-    double component_value; //numeric
+    double *component_value; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } models_index_value_component_t;
 
 __attribute__((deprecated)) models_index_value_component_t *models_index_value_component_create(
     char *component_id,
-    double component_value
+    double *component_value
 );
 
 void models_index_value_component_free(models_index_value_component_t *models_index_value_component);

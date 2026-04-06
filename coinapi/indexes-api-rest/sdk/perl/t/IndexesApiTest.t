@@ -30,19 +30,6 @@ my $api = WWW::OpenAPIClient::IndexesApi->new();
 isa_ok($api, 'WWW::OpenAPIClient::IndexesApi');
 
 #
-# v1_indexdef_multiasset_get test
-#
-# uncomment below and update the test
-#my $v1_indexdef_multiasset_get_result = $api->v1_indexdef_multiasset_get();
-
-#
-# v1_indexdef_multiasset_index_id_get test
-#
-# uncomment below and update the test
-#my $v1_indexdef_multiasset_index_id_get_index_id = undef; # replace NULL with a proper value
-#my $v1_indexdef_multiasset_index_id_get_result = $api->v1_indexdef_multiasset_index_id_get(index_id => $v1_indexdef_multiasset_index_id_get_index_id);
-
-#
 # v1_indexes_get test
 #
 # uncomment below and update the test

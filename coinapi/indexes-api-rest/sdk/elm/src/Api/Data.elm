@@ -15,24 +15,33 @@
 
 
 module Api.Data exposing
-    ( ModelsIndexDefinitionSnapshotEntry
+    ( ModelsExchange
+    , ModelsIndexDefinitionInputData
+    , ModelsIndexDefinitionSnapshotEntry
     , ModelsIndexIdentifier
     , ModelsIndexMultiAssetWeight
     , ModelsIndexTimeseriesItem
     , ModelsIndexValue
     , ModelsIndexValueComponent
+    , ModelsTimeseriesPeriod
+    , encodeModelsExchange
+    , encodeModelsIndexDefinitionInputData
     , encodeModelsIndexDefinitionSnapshotEntry
     , encodeModelsIndexIdentifier
     , encodeModelsIndexMultiAssetWeight
     , encodeModelsIndexTimeseriesItem
     , encodeModelsIndexValue
     , encodeModelsIndexValueComponent
+    , encodeModelsTimeseriesPeriod
+    , modelsExchangeDecoder
+    , modelsIndexDefinitionInputDataDecoder
     , modelsIndexDefinitionSnapshotEntryDecoder
     , modelsIndexIdentifierDecoder
     , modelsIndexMultiAssetWeightDecoder
     , modelsIndexTimeseriesItemDecoder
     , modelsIndexValueDecoder
     , modelsIndexValueComponentDecoder
+    , modelsTimeseriesPeriodDecoder
     )
 
 import Api
@@ -43,6 +52,28 @@ import Json.Encode
 
 
 -- MODEL
+
+
+{-| Represents an exchange.
+-}
+type alias ModelsExchange =
+    { exchangeId : Maybe String
+    , website : Maybe String
+    , name : Maybe String
+    }
+
+
+type alias ModelsIndexDefinitionInputData =
+    { exchangeId : Maybe String
+    , exchangeSymbolId : Maybe String
+    , baseAssetId : Maybe String
+    , quoteAssetId : Maybe String
+    , beginDate : Maybe Posix
+    , endDate : Maybe Posix
+    , status : Maybe String
+    , statusInfo : Maybe String
+    , lastModificationTime : Maybe Posix
+    }
 
 
 type alias ModelsIndexDefinitionSnapshotEntry =
@@ -94,7 +125,69 @@ type alias ModelsIndexValueComponent =
     }
 
 
+{-| Represents a timeseries period used in exchange rate data.
+-}
+type alias ModelsTimeseriesPeriod =
+    { periodId : Maybe String
+    , lengthSeconds : Maybe Int
+    , lengthMonths : Maybe Int
+    , unitCount : Maybe Int
+    , unitName : Maybe String
+    , displayName : Maybe String
+    }
+
+
 -- ENCODER
+
+
+encodeModelsExchange : ModelsExchange -> Json.Encode.Value
+encodeModelsExchange =
+    encodeObject << encodeModelsExchangePairs
+
+
+encodeModelsExchangeWithTag : ( String, String ) -> ModelsExchange -> Json.Encode.Value
+encodeModelsExchangeWithTag (tagField, tag) model =
+    encodeObject (encodeModelsExchangePairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsExchangePairs : ModelsExchange -> List EncodedField
+encodeModelsExchangePairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "exchange_id" Json.Encode.string model.exchangeId
+            , maybeEncodeNullable "website" Json.Encode.string model.website
+            , maybeEncodeNullable "name" Json.Encode.string model.name
+            ]
+    in
+    pairs
+
+
+encodeModelsIndexDefinitionInputData : ModelsIndexDefinitionInputData -> Json.Encode.Value
+encodeModelsIndexDefinitionInputData =
+    encodeObject << encodeModelsIndexDefinitionInputDataPairs
+
+
+encodeModelsIndexDefinitionInputDataWithTag : ( String, String ) -> ModelsIndexDefinitionInputData -> Json.Encode.Value
+encodeModelsIndexDefinitionInputDataWithTag (tagField, tag) model =
+    encodeObject (encodeModelsIndexDefinitionInputDataPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsIndexDefinitionInputDataPairs : ModelsIndexDefinitionInputData -> List EncodedField
+encodeModelsIndexDefinitionInputDataPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "exchangeId" Json.Encode.string model.exchangeId
+            , maybeEncodeNullable "exchangeSymbolId" Json.Encode.string model.exchangeSymbolId
+            , maybeEncodeNullable "baseAssetId" Json.Encode.string model.baseAssetId
+            , maybeEncodeNullable "quoteAssetId" Json.Encode.string model.quoteAssetId
+            , maybeEncodeNullable "beginDate" Api.Time.encodeDateTime model.beginDate
+            , maybeEncodeNullable "endDate" Api.Time.encodeDateTime model.endDate
+            , maybeEncodeNullable "status" Json.Encode.string model.status
+            , maybeEncodeNullable "statusInfo" Json.Encode.string model.statusInfo
+            , maybeEncode "lastModificationTime" Api.Time.encodeDateTime model.lastModificationTime
+            ]
+    in
+    pairs
 
 
 encodeModelsIndexDefinitionSnapshotEntry : ModelsIndexDefinitionSnapshotEntry -> Json.Encode.Value
@@ -232,7 +325,54 @@ encodeModelsIndexValueComponentPairs model =
     pairs
 
 
+encodeModelsTimeseriesPeriod : ModelsTimeseriesPeriod -> Json.Encode.Value
+encodeModelsTimeseriesPeriod =
+    encodeObject << encodeModelsTimeseriesPeriodPairs
+
+
+encodeModelsTimeseriesPeriodWithTag : ( String, String ) -> ModelsTimeseriesPeriod -> Json.Encode.Value
+encodeModelsTimeseriesPeriodWithTag (tagField, tag) model =
+    encodeObject (encodeModelsTimeseriesPeriodPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsTimeseriesPeriodPairs : ModelsTimeseriesPeriod -> List EncodedField
+encodeModelsTimeseriesPeriodPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "period_id" Json.Encode.string model.periodId
+            , maybeEncode "length_seconds" Json.Encode.int model.lengthSeconds
+            , maybeEncode "length_months" Json.Encode.int model.lengthMonths
+            , maybeEncodeNullable "unit_count" Json.Encode.int model.unitCount
+            , maybeEncodeNullable "unit_name" Json.Encode.string model.unitName
+            , maybeEncodeNullable "display_name" Json.Encode.string model.displayName
+            ]
+    in
+    pairs
+
+
 -- DECODER
+
+
+modelsExchangeDecoder : Json.Decode.Decoder ModelsExchange
+modelsExchangeDecoder =
+    Json.Decode.succeed ModelsExchange
+        |> maybeDecodeNullable "exchange_id" Json.Decode.string Nothing
+        |> maybeDecodeNullable "website" Json.Decode.string Nothing
+        |> maybeDecodeNullable "name" Json.Decode.string Nothing
+
+
+modelsIndexDefinitionInputDataDecoder : Json.Decode.Decoder ModelsIndexDefinitionInputData
+modelsIndexDefinitionInputDataDecoder =
+    Json.Decode.succeed ModelsIndexDefinitionInputData
+        |> maybeDecodeNullable "exchangeId" Json.Decode.string Nothing
+        |> maybeDecodeNullable "exchangeSymbolId" Json.Decode.string Nothing
+        |> maybeDecodeNullable "baseAssetId" Json.Decode.string Nothing
+        |> maybeDecodeNullable "quoteAssetId" Json.Decode.string Nothing
+        |> maybeDecodeNullable "beginDate" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "endDate" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "status" Json.Decode.string Nothing
+        |> maybeDecodeNullable "statusInfo" Json.Decode.string Nothing
+        |> maybeDecode "lastModificationTime" Api.Time.dateTimeDecoder Nothing
 
 
 modelsIndexDefinitionSnapshotEntryDecoder : Json.Decode.Decoder ModelsIndexDefinitionSnapshotEntry
@@ -284,6 +424,17 @@ modelsIndexValueComponentDecoder =
     Json.Decode.succeed ModelsIndexValueComponent
         |> maybeDecodeNullable "component_id" Json.Decode.string Nothing
         |> maybeDecode "component_value" Json.Decode.float Nothing
+
+
+modelsTimeseriesPeriodDecoder : Json.Decode.Decoder ModelsTimeseriesPeriod
+modelsTimeseriesPeriodDecoder =
+    Json.Decode.succeed ModelsTimeseriesPeriod
+        |> maybeDecodeNullable "period_id" Json.Decode.string Nothing
+        |> maybeDecode "length_seconds" Json.Decode.int Nothing
+        |> maybeDecode "length_months" Json.Decode.int Nothing
+        |> maybeDecodeNullable "unit_count" Json.Decode.int Nothing
+        |> maybeDecodeNullable "unit_name" Json.Decode.string Nothing
+        |> maybeDecodeNullable "display_name" Json.Decode.string Nothing
 
 
 

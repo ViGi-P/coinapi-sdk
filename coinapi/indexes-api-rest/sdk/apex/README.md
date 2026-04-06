@@ -42,13 +42,17 @@ If everything is set correctly:
 Please follow the [installation](#installation) instruction and execute the following Apex code:
 
 ```java
-OASIndexesApi api = new OASIndexesApi();
+OASIndexInputDataApi api = new OASIndexInputDataApi();
 OASClient client = api.getClient();
 
 
+Map<String, Object> params = new Map<String, Object>{
+    'indexDefinitionId' => 'null'
+};
+
 try {
     // cross your fingers
-    List<OASModelsIndexMultiAssetWeight> result = api.v1IndexdefMultiassetGet();
+    List<OASModelsIndexDefinitionInputData> result = api.v1IndexdefInputDataIndexDefinitionIdAllGet(params);
     System.debug(result);
 } catch (OAS.ApiException e) {
     // ...handle your exceptions
@@ -61,24 +65,32 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*OASIndexesApi* | [**v1IndexdefMultiassetGet**](OASIndexesApi.md#v1IndexdefMultiassetGet) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
-*OASIndexesApi* | [**v1IndexdefMultiassetIndexIdGet**](OASIndexesApi.md#v1IndexdefMultiassetIndexIdGet) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
+*OASIndexInputDataApi* | [**v1IndexdefInputDataIndexDefinitionIdAllGet**](OASIndexInputDataApi.md#v1IndexdefInputDataIndexDefinitionIdAllGet) | **GET** /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition
+*OASIndexInputDataApi* | [**v1IndexdefInputDataIndexDefinitionIdGet**](OASIndexInputDataApi.md#v1IndexdefInputDataIndexDefinitionIdGet) | **GET** /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time
 *OASIndexesApi* | [**v1IndexesGet**](OASIndexesApi.md#v1IndexesGet) | **GET** /v1/indexes | List indexes
 *OASIndexesApi* | [**v1IndexesIndexDefinitionIdCurrentSnapshotGet**](OASIndexesApi.md#v1IndexesIndexDefinitionIdCurrentSnapshotGet) | **GET** /v1/indexes/{index_definition_id}/currentSnapshot | Current Index Values for index definition
 *OASIndexesApi* | [**v1IndexesIndexDefinitionIdHistorySnapshotGet**](OASIndexesApi.md#v1IndexesIndexDefinitionIdHistorySnapshotGet) | **GET** /v1/indexes/{index_definition_id}/historySnapshot | Historical Index Values for index definition
 *OASIndexesApi* | [**v1IndexesIndexIdCurrentGet**](OASIndexesApi.md#v1IndexesIndexIdCurrentGet) | **GET** /v1/indexes/{index_id}/current | Current Index Value
 *OASIndexesApi* | [**v1IndexesIndexIdHistoryGet**](OASIndexesApi.md#v1IndexesIndexIdHistoryGet) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 *OASIndexesApi* | [**v1IndexesIndexIdTimeseriesGet**](OASIndexesApi.md#v1IndexesIndexIdTimeseriesGet) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
+*OASMetadataApi* | [**apiMetadataExchangesExchangeIdGet**](OASMetadataApi.md#apiMetadataExchangesExchangeIdGet) | **GET** /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id
+*OASMetadataApi* | [**apiMetadataExchangesGet**](OASMetadataApi.md#apiMetadataExchangesGet) | **GET** /api/metadata/exchanges | List all exchanges
+*OASMultiAssetWeightsApi* | [**v1IndexdefMultiassetGet**](OASMultiAssetWeightsApi.md#v1IndexdefMultiassetGet) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
+*OASMultiAssetWeightsApi* | [**v1IndexdefMultiassetIndexIdGet**](OASMultiAssetWeightsApi.md#v1IndexdefMultiassetIndexIdGet) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
+*OASPeriodsApi* | [**v1MetadataPeriodsGet**](OASPeriodsApi.md#v1MetadataPeriodsGet) | **GET** /v1/metadata/periods | List all periods
 
 
 ## Documentation for Models
 
+ - [OASModelsExchange](OASModelsExchange.md)
+ - [OASModelsIndexDefinitionInputData](OASModelsIndexDefinitionInputData.md)
  - [OASModelsIndexDefinitionSnapshotEntr](OASModelsIndexDefinitionSnapshotEntr.md)
  - [OASModelsIndexIdentifier](OASModelsIndexIdentifier.md)
  - [OASModelsIndexMultiAssetWeight](OASModelsIndexMultiAssetWeight.md)
  - [OASModelsIndexTimeseriesItem](OASModelsIndexTimeseriesItem.md)
  - [OASModelsIndexValue](OASModelsIndexValue.md)
  - [OASModelsIndexValueComponent](OASModelsIndexValueComponent.md)
+ - [OASModelsTimeseriesPeriod](OASModelsTimeseriesPeriod.md)
 
 
 ## Documentation for Authorization

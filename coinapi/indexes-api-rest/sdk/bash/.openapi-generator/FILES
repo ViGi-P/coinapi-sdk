@@ -4,10 +4,17 @@ README.md
 _client.sh
 client.sh
 client.sh.bash-completion
+docs/IndexInputDataApi.md
 docs/IndexesApi.md
+docs/MetadataApi.md
+docs/ModelsExchange.md
+docs/ModelsIndexDefinitionInputData.md
 docs/ModelsIndexDefinitionSnapshotEntry.md
 docs/ModelsIndexIdentifier.md
 docs/ModelsIndexMultiAssetWeight.md
 docs/ModelsIndexTimeseriesItem.md
 docs/ModelsIndexValue.md
 docs/ModelsIndexValueComponent.md
+docs/ModelsTimeseriesPeriod.md
+docs/MultiAssetWeightsApi.md
+docs/PeriodsApi.md

@@ -27,20 +27,6 @@ class TestIndexesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_v1_indexdef_multiasset_get(self) -> None:
-        """Test case for v1_indexdef_multiasset_get
-
-        Get all multi-asset weights
-        """
-        pass
-
-    def test_v1_indexdef_multiasset_index_id_get(self) -> None:
-        """Test case for v1_indexdef_multiasset_index_id_get
-
-        Get multi-asset weights for specific index
-        """
-        pass
-
     def test_v1_indexes_get(self) -> None:
         """Test case for v1_indexes_get
 

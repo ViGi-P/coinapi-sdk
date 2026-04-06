@@ -18,14 +18,9 @@ import type { OperationOpts, HttpHeaders, HttpQuery } from '../runtime';
 import type {
     ModelsIndexDefinitionSnapshotEntry,
     ModelsIndexIdentifier,
-    ModelsIndexMultiAssetWeight,
     ModelsIndexTimeseriesItem,
     ModelsIndexValue,
 } from '../models';
-
-export interface V1IndexdefMultiassetIndexIdGetRequest {
-    indexId: string;
-}
 
 export interface V1IndexesIndexDefinitionIdCurrentSnapshotGetRequest {
     indexDefinitionId: string;
@@ -59,42 +54,6 @@ export interface V1IndexesIndexIdTimeseriesGetRequest {
  * no description
  */
 export class IndexesApi extends BaseAPI {
-
-    /**
-     * Get all multi-asset weights
-     */
-    v1IndexdefMultiassetGet(): Observable<Array<ModelsIndexMultiAssetWeight>>
-    v1IndexdefMultiassetGet(opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsIndexMultiAssetWeight>>>
-    v1IndexdefMultiassetGet(opts?: OperationOpts): Observable<Array<ModelsIndexMultiAssetWeight> | AjaxResponse<Array<ModelsIndexMultiAssetWeight>>> {
-        const headers: HttpHeaders = {
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-        };
-
-        return this.request<Array<ModelsIndexMultiAssetWeight>>({
-            url: '/v1/indexdef/multiasset',
-            method: 'GET',
-            headers,
-        }, opts?.responseOpts);
-    };
-
-    /**
-     * Get multi-asset weights for specific index
-     */
-    v1IndexdefMultiassetIndexIdGet({ indexId }: V1IndexdefMultiassetIndexIdGetRequest): Observable<Array<ModelsIndexMultiAssetWeight>>
-    v1IndexdefMultiassetIndexIdGet({ indexId }: V1IndexdefMultiassetIndexIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsIndexMultiAssetWeight>>>
-    v1IndexdefMultiassetIndexIdGet({ indexId }: V1IndexdefMultiassetIndexIdGetRequest, opts?: OperationOpts): Observable<Array<ModelsIndexMultiAssetWeight> | AjaxResponse<Array<ModelsIndexMultiAssetWeight>>> {
-        throwIfNullOrUndefined(indexId, 'indexId', 'v1IndexdefMultiassetIndexIdGet');
-
-        const headers: HttpHeaders = {
-            ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
-        };
-
-        return this.request<Array<ModelsIndexMultiAssetWeight>>({
-            url: '/v1/indexdef/multiasset/{index_id}'.replace('{index_id}', encodeURI(indexId)),
-            method: 'GET',
-            headers,
-        }, opts?.responseOpts);
-    };
 
     /**
      * List indexes

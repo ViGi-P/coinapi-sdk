@@ -19,7 +19,11 @@ __version__ = "1.0.0"
 
 # Define package exports
 __all__ = [
+    "IndexInputDataApi",
     "IndexesApi",
+    "MetadataApi",
+    "MultiAssetWeightsApi",
+    "PeriodsApi",
     "ApiResponse",
     "ApiClient",
     "Configuration",
@@ -29,16 +33,23 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
+    "ModelsExchange",
+    "ModelsIndexDefinitionInputData",
     "ModelsIndexDefinitionSnapshotEntry",
     "ModelsIndexIdentifier",
     "ModelsIndexMultiAssetWeight",
     "ModelsIndexTimeseriesItem",
     "ModelsIndexValue",
     "ModelsIndexValueComponent",
+    "ModelsTimeseriesPeriod",
 ]
 
 # import apis into sdk package
+from api_bricks_coinapi_indexes_api_rest.api.index_input_data_api import IndexInputDataApi as IndexInputDataApi
 from api_bricks_coinapi_indexes_api_rest.api.indexes_api import IndexesApi as IndexesApi
+from api_bricks_coinapi_indexes_api_rest.api.metadata_api import MetadataApi as MetadataApi
+from api_bricks_coinapi_indexes_api_rest.api.multi_asset_weights_api import MultiAssetWeightsApi as MultiAssetWeightsApi
+from api_bricks_coinapi_indexes_api_rest.api.periods_api import PeriodsApi as PeriodsApi
 
 # import ApiClient
 from api_bricks_coinapi_indexes_api_rest.api_response import ApiResponse as ApiResponse
@@ -52,10 +63,13 @@ from api_bricks_coinapi_indexes_api_rest.exceptions import ApiAttributeError as 
 from api_bricks_coinapi_indexes_api_rest.exceptions import ApiException as ApiException
 
 # import models into sdk package
+from api_bricks_coinapi_indexes_api_rest.models.models_exchange import ModelsExchange as ModelsExchange
+from api_bricks_coinapi_indexes_api_rest.models.models_index_definition_input_data import ModelsIndexDefinitionInputData as ModelsIndexDefinitionInputData
 from api_bricks_coinapi_indexes_api_rest.models.models_index_definition_snapshot_entry import ModelsIndexDefinitionSnapshotEntry as ModelsIndexDefinitionSnapshotEntry
 from api_bricks_coinapi_indexes_api_rest.models.models_index_identifier import ModelsIndexIdentifier as ModelsIndexIdentifier
 from api_bricks_coinapi_indexes_api_rest.models.models_index_multi_asset_weight import ModelsIndexMultiAssetWeight as ModelsIndexMultiAssetWeight
 from api_bricks_coinapi_indexes_api_rest.models.models_index_timeseries_item import ModelsIndexTimeseriesItem as ModelsIndexTimeseriesItem
 from api_bricks_coinapi_indexes_api_rest.models.models_index_value import ModelsIndexValue as ModelsIndexValue
 from api_bricks_coinapi_indexes_api_rest.models.models_index_value_component import ModelsIndexValueComponent as ModelsIndexValueComponent
+from api_bricks_coinapi_indexes_api_rest.models.models_timeseries_period import ModelsTimeseriesPeriod as ModelsTimeseriesPeriod
 

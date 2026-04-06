@@ -1,3 +1,11 @@
+export * from './IndexInputDataApi';
+import { IndexInputDataApi } from './IndexInputDataApi';
 export * from './IndexesApi';
 import { IndexesApi } from './IndexesApi';
-export const APIS = [IndexesApi];
+export * from './MetadataApi';
+import { MetadataApi } from './MetadataApi';
+export * from './MultiAssetWeightsApi';
+import { MultiAssetWeightsApi } from './MultiAssetWeightsApi';
+export * from './PeriodsApi';
+import { PeriodsApi } from './PeriodsApi';
+export const APIS = [IndexInputDataApi, IndexesApi, MetadataApi, MultiAssetWeightsApi, PeriodsApi];

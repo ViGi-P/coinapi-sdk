@@ -39,13 +39,18 @@ Check out [Doxygen](https://www.doxygen.org/) for additional information about t
 All URIs are relative to https://rest-api.indexes.coinapi.iohttps://rest-api.indexes.coinapi.io
 
 
+### IndexInputDataManager
+Method | HTTP request | Description
+------------- | ------------- | -------------
+*v1IndexdefInputDataIndexDefinitionIdAllGetSync* | *GET* /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition.
+*v1IndexdefInputDataIndexDefinitionIdAllGetASync* | *GET* /v1/indexdef/input-data/{index_definition_id}/all | Returns all data inputs for a specific index definition.
+*v1IndexdefInputDataIndexDefinitionIdGetSync* | *GET* /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time.
+*v1IndexdefInputDataIndexDefinitionIdGetASync* | *GET* /v1/indexdef/input-data/{index_definition_id} | Returns data inputs for certain index definition and time.
+
+
 ### IndexesManager
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-*v1IndexdefMultiassetGetSync* | *GET* /v1/indexdef/multiasset | Get all multi-asset weights.
-*v1IndexdefMultiassetGetASync* | *GET* /v1/indexdef/multiasset | Get all multi-asset weights.
-*v1IndexdefMultiassetIndexIdGetSync* | *GET* /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index.
-*v1IndexdefMultiassetIndexIdGetASync* | *GET* /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index.
 *v1IndexesGetSync* | *GET* /v1/indexes | List indexes.
 *v1IndexesGetASync* | *GET* /v1/indexes | List indexes.
 *v1IndexesIndexDefinitionIdCurrentSnapshotGetSync* | *GET* /v1/indexes/{index_definition_id}/currentSnapshot | Current Index Values for index definition.
@@ -60,13 +65,41 @@ Method | HTTP request | Description
 *v1IndexesIndexIdTimeseriesGetASync* | *GET* /v1/indexes/{index_id}/timeseries | Timeseries Index Value.
 
 
+### MetadataManager
+Method | HTTP request | Description
+------------- | ------------- | -------------
+*apiMetadataExchangesExchangeIdGetSync* | *GET* /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id.
+*apiMetadataExchangesExchangeIdGetASync* | *GET* /api/metadata/exchanges/{exchange_id} | List all exchanges by exchange_id.
+*apiMetadataExchangesGetSync* | *GET* /api/metadata/exchanges | List all exchanges.
+*apiMetadataExchangesGetASync* | *GET* /api/metadata/exchanges | List all exchanges.
+
+
+### MultiAssetWeightsManager
+Method | HTTP request | Description
+------------- | ------------- | -------------
+*v1IndexdefMultiassetGetSync* | *GET* /v1/indexdef/multiasset | Get all multi-asset weights.
+*v1IndexdefMultiassetGetASync* | *GET* /v1/indexdef/multiasset | Get all multi-asset weights.
+*v1IndexdefMultiassetIndexIdGetSync* | *GET* /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index.
+*v1IndexdefMultiassetIndexIdGetASync* | *GET* /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index.
+
+
+### PeriodsManager
+Method | HTTP request | Description
+------------- | ------------- | -------------
+*v1MetadataPeriodsGetSync* | *GET* /v1/metadata/periods | List all periods.
+*v1MetadataPeriodsGetASync* | *GET* /v1/metadata/periods | List all periods.
+
+
 ## What are the Model files for the data structures/objects?
 Class | Description
 ------------- | -------------
+ *Models.Exchange* | Represents an exchange.
+ *Models.IndexDefinitionInputData* | 
  *Models.IndexDefinitionSnapshotEntry* | 
  *Models.IndexIdentifier* | Represents an index id
  *Models.IndexMultiAssetWeight* | 
  *Models.IndexTimeseriesItem* | Represents a timeseries item with value information.
  *Models.IndexValue* | 
  *Models.IndexValueComponent* | 
+ *Models.TimeseriesPeriod* | Represents a timeseries period used in exchange rate data.
 

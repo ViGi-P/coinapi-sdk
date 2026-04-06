@@ -68,6 +68,18 @@ import qualified Prelude as P
 -- * Parameter newtypes
 
 
+-- ** EnabledOnly
+newtype EnabledOnly = EnabledOnly { unEnabledOnly :: Bool } deriving (P.Eq, P.Show)
+
+-- ** ExchangeId
+newtype ExchangeId = ExchangeId { unExchangeId :: Text } deriving (P.Eq, P.Show)
+
+-- ** FilterAssetId
+newtype FilterAssetId = FilterAssetId { unFilterAssetId :: Text } deriving (P.Eq, P.Show)
+
+-- ** FilterExchangeId
+newtype FilterExchangeId = FilterExchangeId { unFilterExchangeId :: Text } deriving (P.Eq, P.Show)
+
 -- ** IndexDefinitionId
 newtype IndexDefinitionId = IndexDefinitionId { unIndexDefinitionId :: Text } deriving (P.Eq, P.Show)
 
@@ -76,6 +88,9 @@ newtype IndexId = IndexId { unIndexId :: Text } deriving (P.Eq, P.Show)
 
 -- ** Limit
 newtype Limit = Limit { unLimit :: Int } deriving (P.Eq, P.Show)
+
+-- ** PendingOnly
+newtype PendingOnly = PendingOnly { unPendingOnly :: Bool } deriving (P.Eq, P.Show)
 
 -- ** PeriodId
 newtype PeriodId = PeriodId { unPeriodId :: Text } deriving (P.Eq, P.Show)
@@ -95,8 +110,108 @@ newtype TimeStart = TimeStart { unTimeStart :: DateTime } deriving (P.Eq, P.Show
 -- ** TimeStartText
 newtype TimeStartText = TimeStartText { unTimeStartText :: Text } deriving (P.Eq, P.Show)
 
+-- ** WithStatusInfo
+newtype WithStatusInfo = WithStatusInfo { unWithStatusInfo :: Bool } deriving (P.Eq, P.Show)
+
 -- * Models
 
+
+-- ** ModelsExchange
+-- | ModelsExchange
+-- Represents an exchange.
+data ModelsExchange = ModelsExchange
+  { modelsExchangeExchangeId :: !(Maybe Text) -- ^ "exchange_id" - Gets or sets the exchange ID.
+  , modelsExchangeWebsite :: !(Maybe Text) -- ^ "website" - Gets or sets the website URL of the exchange.
+  , modelsExchangeName :: !(Maybe Text) -- ^ "name" - Gets or sets the name of the exchange.
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsExchange
+instance A.FromJSON ModelsExchange where
+  parseJSON = A.withObject "ModelsExchange" $ \o ->
+    ModelsExchange
+      <$> (o .:? "exchange_id")
+      <*> (o .:? "website")
+      <*> (o .:? "name")
+
+-- | ToJSON ModelsExchange
+instance A.ToJSON ModelsExchange where
+  toJSON ModelsExchange {..} =
+   _omitNulls
+      [ "exchange_id" .= modelsExchangeExchangeId
+      , "website" .= modelsExchangeWebsite
+      , "name" .= modelsExchangeName
+      ]
+
+
+-- | Construct a value of type 'ModelsExchange' (by applying it's required fields, if any)
+mkModelsExchange
+  :: ModelsExchange
+mkModelsExchange =
+  ModelsExchange
+  { modelsExchangeExchangeId = Nothing
+  , modelsExchangeWebsite = Nothing
+  , modelsExchangeName = Nothing
+  }
+
+-- ** ModelsIndexDefinitionInputData
+-- | ModelsIndexDefinitionInputData
+data ModelsIndexDefinitionInputData = ModelsIndexDefinitionInputData
+  { modelsIndexDefinitionInputDataExchangeId :: !(Maybe Text) -- ^ "exchangeId"
+  , modelsIndexDefinitionInputDataExchangeSymbolId :: !(Maybe Text) -- ^ "exchangeSymbolId"
+  , modelsIndexDefinitionInputDataBaseAssetId :: !(Maybe Text) -- ^ "baseAssetId"
+  , modelsIndexDefinitionInputDataQuoteAssetId :: !(Maybe Text) -- ^ "quoteAssetId"
+  , modelsIndexDefinitionInputDataBeginDate :: !(Maybe DateTime) -- ^ "beginDate"
+  , modelsIndexDefinitionInputDataEndDate :: !(Maybe DateTime) -- ^ "endDate"
+  , modelsIndexDefinitionInputDataStatus :: !(Maybe Text) -- ^ "status"
+  , modelsIndexDefinitionInputDataStatusInfo :: !(Maybe Text) -- ^ "statusInfo"
+  , modelsIndexDefinitionInputDataLastModificationTime :: !(Maybe DateTime) -- ^ "lastModificationTime"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsIndexDefinitionInputData
+instance A.FromJSON ModelsIndexDefinitionInputData where
+  parseJSON = A.withObject "ModelsIndexDefinitionInputData" $ \o ->
+    ModelsIndexDefinitionInputData
+      <$> (o .:? "exchangeId")
+      <*> (o .:? "exchangeSymbolId")
+      <*> (o .:? "baseAssetId")
+      <*> (o .:? "quoteAssetId")
+      <*> (o .:? "beginDate")
+      <*> (o .:? "endDate")
+      <*> (o .:? "status")
+      <*> (o .:? "statusInfo")
+      <*> (o .:? "lastModificationTime")
+
+-- | ToJSON ModelsIndexDefinitionInputData
+instance A.ToJSON ModelsIndexDefinitionInputData where
+  toJSON ModelsIndexDefinitionInputData {..} =
+   _omitNulls
+      [ "exchangeId" .= modelsIndexDefinitionInputDataExchangeId
+      , "exchangeSymbolId" .= modelsIndexDefinitionInputDataExchangeSymbolId
+      , "baseAssetId" .= modelsIndexDefinitionInputDataBaseAssetId
+      , "quoteAssetId" .= modelsIndexDefinitionInputDataQuoteAssetId
+      , "beginDate" .= modelsIndexDefinitionInputDataBeginDate
+      , "endDate" .= modelsIndexDefinitionInputDataEndDate
+      , "status" .= modelsIndexDefinitionInputDataStatus
+      , "statusInfo" .= modelsIndexDefinitionInputDataStatusInfo
+      , "lastModificationTime" .= modelsIndexDefinitionInputDataLastModificationTime
+      ]
+
+
+-- | Construct a value of type 'ModelsIndexDefinitionInputData' (by applying it's required fields, if any)
+mkModelsIndexDefinitionInputData
+  :: ModelsIndexDefinitionInputData
+mkModelsIndexDefinitionInputData =
+  ModelsIndexDefinitionInputData
+  { modelsIndexDefinitionInputDataExchangeId = Nothing
+  , modelsIndexDefinitionInputDataExchangeSymbolId = Nothing
+  , modelsIndexDefinitionInputDataBaseAssetId = Nothing
+  , modelsIndexDefinitionInputDataQuoteAssetId = Nothing
+  , modelsIndexDefinitionInputDataBeginDate = Nothing
+  , modelsIndexDefinitionInputDataEndDate = Nothing
+  , modelsIndexDefinitionInputDataStatus = Nothing
+  , modelsIndexDefinitionInputDataStatusInfo = Nothing
+  , modelsIndexDefinitionInputDataLastModificationTime = Nothing
+  }
 
 -- ** ModelsIndexDefinitionSnapshotEntry
 -- | ModelsIndexDefinitionSnapshotEntry
@@ -326,6 +441,55 @@ mkModelsIndexValueComponent =
   ModelsIndexValueComponent
   { modelsIndexValueComponentComponentId = Nothing
   , modelsIndexValueComponentComponentValue = Nothing
+  }
+
+-- ** ModelsTimeseriesPeriod
+-- | ModelsTimeseriesPeriod
+-- Represents a timeseries period used in exchange rate data.
+data ModelsTimeseriesPeriod = ModelsTimeseriesPeriod
+  { modelsTimeseriesPeriodPeriodId :: !(Maybe Text) -- ^ "period_id" - Gets or sets the period ID.
+  , modelsTimeseriesPeriodLengthSeconds :: !(Maybe Int) -- ^ "length_seconds" - Gets or sets the length of the period in seconds.
+  , modelsTimeseriesPeriodLengthMonths :: !(Maybe Int) -- ^ "length_months" - Gets or sets the length of the period in months.
+  , modelsTimeseriesPeriodUnitCount :: !(Maybe Int) -- ^ "unit_count" - Gets or sets the unit count.
+  , modelsTimeseriesPeriodUnitName :: !(Maybe Text) -- ^ "unit_name" - Gets or sets the unit name.
+  , modelsTimeseriesPeriodDisplayName :: !(Maybe Text) -- ^ "display_name" - Gets or sets the display name of the timeseries period.
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsTimeseriesPeriod
+instance A.FromJSON ModelsTimeseriesPeriod where
+  parseJSON = A.withObject "ModelsTimeseriesPeriod" $ \o ->
+    ModelsTimeseriesPeriod
+      <$> (o .:? "period_id")
+      <*> (o .:? "length_seconds")
+      <*> (o .:? "length_months")
+      <*> (o .:? "unit_count")
+      <*> (o .:? "unit_name")
+      <*> (o .:? "display_name")
+
+-- | ToJSON ModelsTimeseriesPeriod
+instance A.ToJSON ModelsTimeseriesPeriod where
+  toJSON ModelsTimeseriesPeriod {..} =
+   _omitNulls
+      [ "period_id" .= modelsTimeseriesPeriodPeriodId
+      , "length_seconds" .= modelsTimeseriesPeriodLengthSeconds
+      , "length_months" .= modelsTimeseriesPeriodLengthMonths
+      , "unit_count" .= modelsTimeseriesPeriodUnitCount
+      , "unit_name" .= modelsTimeseriesPeriodUnitName
+      , "display_name" .= modelsTimeseriesPeriodDisplayName
+      ]
+
+
+-- | Construct a value of type 'ModelsTimeseriesPeriod' (by applying it's required fields, if any)
+mkModelsTimeseriesPeriod
+  :: ModelsTimeseriesPeriod
+mkModelsTimeseriesPeriod =
+  ModelsTimeseriesPeriod
+  { modelsTimeseriesPeriodPeriodId = Nothing
+  , modelsTimeseriesPeriodLengthSeconds = Nothing
+  , modelsTimeseriesPeriodLengthMonths = Nothing
+  , modelsTimeseriesPeriodUnitCount = Nothing
+  , modelsTimeseriesPeriodUnitName = Nothing
+  , modelsTimeseriesPeriodDisplayName = Nothing
   }
 
 

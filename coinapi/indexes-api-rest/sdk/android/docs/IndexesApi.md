@@ -4,8 +4,6 @@ All URIs are relative to *https://rest-api.indexes.coinapi.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1IndexdefMultiassetGet**](IndexesApi.md#v1IndexdefMultiassetGet) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
-[**v1IndexdefMultiassetIndexIdGet**](IndexesApi.md#v1IndexdefMultiassetIndexIdGet) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
 [**v1IndexesGet**](IndexesApi.md#v1IndexesGet) | **GET** /v1/indexes | List indexes
 [**v1IndexesIndexDefinitionIdCurrentSnapshotGet**](IndexesApi.md#v1IndexesIndexDefinitionIdCurrentSnapshotGet) | **GET** /v1/indexes/{index_definition_id}/currentSnapshot | Current Index Values for index definition
 [**v1IndexesIndexDefinitionIdHistorySnapshotGet**](IndexesApi.md#v1IndexesIndexDefinitionIdHistorySnapshotGet) | **GET** /v1/indexes/{index_definition_id}/historySnapshot | Historical Index Values for index definition
@@ -13,90 +11,6 @@ Method | HTTP request | Description
 [**v1IndexesIndexIdHistoryGet**](IndexesApi.md#v1IndexesIndexIdHistoryGet) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 [**v1IndexesIndexIdTimeseriesGet**](IndexesApi.md#v1IndexesIndexIdTimeseriesGet) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
 
-
-
-## v1IndexdefMultiassetGet
-
-> List&lt;ModelsIndexMultiAssetWeight&gt; v1IndexdefMultiassetGet()
-
-Get all multi-asset weights
-
-### Example
-
-```java
-// Import classes:
-//import org.openapitools.client.api.IndexesApi;
-
-IndexesApi apiInstance = new IndexesApi();
-try {
-    List<ModelsIndexMultiAssetWeight> result = apiInstance.v1IndexdefMultiassetGet();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IndexesApi#v1IndexdefMultiassetGet");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List&lt;ModelsIndexMultiAssetWeight&gt;**](ModelsIndexMultiAssetWeight.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-
-## v1IndexdefMultiassetIndexIdGet
-
-> List&lt;ModelsIndexMultiAssetWeight&gt; v1IndexdefMultiassetIndexIdGet(indexId)
-
-Get multi-asset weights for specific index
-
-### Example
-
-```java
-// Import classes:
-//import org.openapitools.client.api.IndexesApi;
-
-IndexesApi apiInstance = new IndexesApi();
-String indexId = null; // String | 
-try {
-    List<ModelsIndexMultiAssetWeight> result = apiInstance.v1IndexdefMultiassetIndexIdGet(indexId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling IndexesApi#v1IndexdefMultiassetIndexIdGet");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexId** | **String**|  | [default to null]
-
-### Return type
-
-[**List&lt;ModelsIndexMultiAssetWeight&gt;**](ModelsIndexMultiAssetWeight.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json, application/x-msgpack
 
 
 ## v1IndexesGet

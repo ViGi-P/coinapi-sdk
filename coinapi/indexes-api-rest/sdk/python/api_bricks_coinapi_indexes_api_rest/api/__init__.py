@@ -1,5 +1,9 @@
 # flake8: noqa
 
 # import apis into api package
+from api_bricks_coinapi_indexes_api_rest.api.index_input_data_api import IndexInputDataApi
 from api_bricks_coinapi_indexes_api_rest.api.indexes_api import IndexesApi
+from api_bricks_coinapi_indexes_api_rest.api.metadata_api import MetadataApi
+from api_bricks_coinapi_indexes_api_rest.api.multi_asset_weights_api import MultiAssetWeightsApi
+from api_bricks_coinapi_indexes_api_rest.api.periods_api import PeriodsApi
 

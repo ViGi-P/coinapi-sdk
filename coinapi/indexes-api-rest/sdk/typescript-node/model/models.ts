@@ -1,11 +1,14 @@
 import localVarRequest from 'request';
 
+export * from './modelsExchange';
+export * from './modelsIndexDefinitionInputData';
 export * from './modelsIndexDefinitionSnapshotEntry';
 export * from './modelsIndexIdentifier';
 export * from './modelsIndexMultiAssetWeight';
 export * from './modelsIndexTimeseriesItem';
 export * from './modelsIndexValue';
 export * from './modelsIndexValueComponent';
+export * from './modelsTimeseriesPeriod';
 
 import * as fs from 'fs';
 
@@ -20,12 +23,15 @@ export interface RequestDetailedFile {
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
+import { ModelsExchange } from './modelsExchange';
+import { ModelsIndexDefinitionInputData } from './modelsIndexDefinitionInputData';
 import { ModelsIndexDefinitionSnapshotEntry } from './modelsIndexDefinitionSnapshotEntry';
 import { ModelsIndexIdentifier } from './modelsIndexIdentifier';
 import { ModelsIndexMultiAssetWeight } from './modelsIndexMultiAssetWeight';
 import { ModelsIndexTimeseriesItem } from './modelsIndexTimeseriesItem';
 import { ModelsIndexValue } from './modelsIndexValue';
 import { ModelsIndexValueComponent } from './modelsIndexValueComponent';
+import { ModelsTimeseriesPeriod } from './modelsTimeseriesPeriod';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -43,12 +49,15 @@ let enumsMap: {[index: string]: any} = {
 }
 
 let typeMap: {[index: string]: any} = {
+    "ModelsExchange": ModelsExchange,
+    "ModelsIndexDefinitionInputData": ModelsIndexDefinitionInputData,
     "ModelsIndexDefinitionSnapshotEntry": ModelsIndexDefinitionSnapshotEntry,
     "ModelsIndexIdentifier": ModelsIndexIdentifier,
     "ModelsIndexMultiAssetWeight": ModelsIndexMultiAssetWeight,
     "ModelsIndexTimeseriesItem": ModelsIndexTimeseriesItem,
     "ModelsIndexValue": ModelsIndexValue,
     "ModelsIndexValueComponent": ModelsIndexValueComponent,
+    "ModelsTimeseriesPeriod": ModelsTimeseriesPeriod,
 }
 
 // Check if a string starts with another string without using es6 features

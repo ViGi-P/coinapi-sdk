@@ -1,105 +1,18 @@
 -module(openapi_api).
 
--export([ v1_indexdef_multiasset_get/0
-        , v1_indexdef_multiasset_index_id_get/1
-        , v1_indexes_get/0
-        , v1_indexes_index_definition_id_current_snapshot_get/1
-        , v1_indexes_index_definition_id_history_snapshot_get/1
-        , v1_indexes_index_id_current_get/1
-        , v1_indexes_index_id_history_get/1
-        , v1_indexes_index_id_timeseries_get/4
+-export([ v1_metadata_periods_get/0
         ]).
 
 -define(BASE_URL, "").
 
-%% @doc Get all multi-asset weights
-%% 
--spec v1_indexdef_multiasset_get() ->
+%% @doc List all periods
+%% Get full list of supported time periods              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
+-spec v1_metadata_periods_get() ->
   openapi_utils:response().
-v1_indexdef_multiasset_get() ->
+v1_metadata_periods_get() ->
   Method      = get,
   Host        = application:get_env(openapi, host, "http://localhost:8080"),
-  Path        = ["/v1/indexdef/multiasset"],
+  Path        = ["/v1/metadata/periods"],
 
   openapi_utils:request(Method, [Host, ?BASE_URL, Path]).
-
-%% @doc Get multi-asset weights for specific index
-%% 
--spec v1_indexdef_multiasset_index_id_get(binary()) ->
-  openapi_utils:response().
-v1_indexdef_multiasset_index_id_get(IndexId) ->
-  Method      = get,
-  Host        = application:get_env(openapi, host, "http://localhost:8080"),
-  Path        = ["/v1/indexdef/multiasset/", IndexId, ""],
-
-  openapi_utils:request(Method, [Host, ?BASE_URL, Path]).
-
-%% @doc List indexes
-%% 
--spec v1_indexes_get() ->
-  openapi_utils:response().
-v1_indexes_get() ->
-  Method      = get,
-  Host        = application:get_env(openapi, host, "http://localhost:8080"),
-  Path        = ["/v1/indexes"],
-
-  openapi_utils:request(Method, [Host, ?BASE_URL, Path]).
-
-%% @doc Current Index Values for index definition
-%% 
--spec v1_indexes_index_definition_id_current_snapshot_get(binary()) ->
-  openapi_utils:response().
-v1_indexes_index_definition_id_current_snapshot_get(IndexDefinitionId) ->
-  Method      = get,
-  Host        = application:get_env(openapi, host, "http://localhost:8080"),
-  Path        = ["/v1/indexes/", IndexDefinitionId, "/currentSnapshot"],
-
-  openapi_utils:request(Method, [Host, ?BASE_URL, Path]).
-
-%% @doc Historical Index Values for index definition
-%% 
--spec v1_indexes_index_definition_id_history_snapshot_get(binary()) ->
-  openapi_utils:response().
-v1_indexes_index_definition_id_history_snapshot_get(IndexDefinitionId) ->
-  Method      = get,
-  Host        = application:get_env(openapi, host, "http://localhost:8080"),
-  Path        = ["/v1/indexes/", IndexDefinitionId, "/historySnapshot"],
-  QueryString = [<<"time=">>, Time, <<"&">>],
-
-  openapi_utils:request(Method, [Host, ?BASE_URL, Path, <<"?">>, QueryString]).
-
-%% @doc Current Index Value
-%% 
--spec v1_indexes_index_id_current_get(binary()) ->
-  openapi_utils:response().
-v1_indexes_index_id_current_get(IndexId) ->
-  Method      = get,
-  Host        = application:get_env(openapi, host, "http://localhost:8080"),
-  Path        = ["/v1/indexes/", IndexId, "/current"],
-
-  openapi_utils:request(Method, [Host, ?BASE_URL, Path]).
-
-%% @doc Historical Index Value w/Composition
-%% 
--spec v1_indexes_index_id_history_get(binary()) ->
-  openapi_utils:response().
-v1_indexes_index_id_history_get(IndexId) ->
-  Method      = get,
-  Host        = application:get_env(openapi, host, "http://localhost:8080"),
-  Path        = ["/v1/indexes/", IndexId, "/history"],
-  QueryString = [<<"time_start=">>, TimeStart, <<"&">>, <<"time_end=">>, TimeEnd, <<"&">>, <<"limit=">>, Limit, <<"&">>],
-
-  openapi_utils:request(Method, [Host, ?BASE_URL, Path, <<"?">>, QueryString]).
-
-%% @doc Timeseries Index Value
-%% 
--spec v1_indexes_index_id_timeseries_get(binary(), binary(), binary(), binary()) ->
-  openapi_utils:response().
-v1_indexes_index_id_timeseries_get(IndexId, PeriodId, TimeStart, TimeEnd) ->
-  Method      = get,
-  Host        = application:get_env(openapi, host, "http://localhost:8080"),
-  Path        = ["/v1/indexes/", IndexId, "/timeseries"],
-  QueryString = [<<"period_id=">>, PeriodId, <<"&">>, <<"time_start=">>, TimeStart, <<"&">>, <<"time_end=">>, TimeEnd, <<"&">>, <<"limit=">>, Limit, <<"&">>],
-
-  openapi_utils:request(Method, [Host, ?BASE_URL, Path, <<"?">>, QueryString]).
 

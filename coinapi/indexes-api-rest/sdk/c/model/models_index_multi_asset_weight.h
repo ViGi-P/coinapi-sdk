@@ -21,7 +21,7 @@ typedef struct models_index_multi_asset_weight_t models_index_multi_asset_weight
 typedef struct models_index_multi_asset_weight_t {
     char *index_id; // string
     char *asset_id; // string
-    double weight; //numeric
+    double *weight; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
 } models_index_multi_asset_weight_t;
@@ -29,7 +29,7 @@ typedef struct models_index_multi_asset_weight_t {
 __attribute__((deprecated)) models_index_multi_asset_weight_t *models_index_multi_asset_weight_create(
     char *index_id,
     char *asset_id,
-    double weight
+    double *weight
 );
 
 void models_index_multi_asset_weight_free(models_index_multi_asset_weight_t *models_index_multi_asset_weight);

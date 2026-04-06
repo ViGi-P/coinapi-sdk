@@ -48,13 +48,20 @@ set(SRCS
     src/binary.c
     external/cJSON.c
     model/object.c
+    model/models_exchange.c
+    model/models_index_definition_input_data.c
     model/models_index_definition_snapshot_entry.c
     model/models_index_identifier.c
     model/models_index_multi_asset_weight.c
     model/models_index_timeseries_item.c
     model/models_index_value.c
     model/models_index_value_component.c
+    model/models_timeseries_period.c
+    api/IndexInputDataAPI.c
     api/IndexesAPI.c
+    api/MetadataAPI.c
+    api/MultiAssetWeightsAPI.c
+    api/PeriodsAPI.c
 
 )
 
@@ -66,13 +73,20 @@ set(HDRS
     external/cJSON.h
     model/object.h
     model/any_type.h
+    model/models_exchange.h
+    model/models_index_definition_input_data.h
     model/models_index_definition_snapshot_entry.h
     model/models_index_identifier.h
     model/models_index_multi_asset_weight.h
     model/models_index_timeseries_item.h
     model/models_index_value.h
     model/models_index_value_component.h
+    model/models_timeseries_period.h
+    api/IndexInputDataAPI.h
     api/IndexesAPI.h
+    api/MetadataAPI.h
+    api/MultiAssetWeightsAPI.h
+    api/PeriodsAPI.h
 
 )
 
@@ -158,7 +172,11 @@ set(HDRS "")
 ## This section shows how to use the above compiled library to compile the source files
 ## set source files
 #set(SRCS
+#    unit-tests/manual-IndexInputDataAPI.c
 #    unit-tests/manual-IndexesAPI.c
+#    unit-tests/manual-MetadataAPI.c
+#    unit-tests/manual-MultiAssetWeightsAPI.c
+#    unit-tests/manual-PeriodsAPI.c
 #)
 
 ##set header files

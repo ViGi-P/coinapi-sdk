@@ -17,20 +17,6 @@ void main() {
   // final instance = IndexesApi();
 
   group('tests for IndexesApi', () {
-    // Get all multi-asset weights
-    //
-    //Future<List<ModelsIndexMultiAssetWeight>> v1IndexdefMultiassetGet() async
-    test('test v1IndexdefMultiassetGet', () async {
-      // TODO
-    });
-
-    // Get multi-asset weights for specific index
-    //
-    //Future<List<ModelsIndexMultiAssetWeight>> v1IndexdefMultiassetIndexIdGet(String indexId) async
-    test('test v1IndexdefMultiassetIndexIdGet', () async {
-      // TODO
-    });
-
     // List indexes
     //
     //Future<List<ModelsIndexIdentifier>> v1IndexesGet() async

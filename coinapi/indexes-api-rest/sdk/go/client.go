@@ -50,7 +50,15 @@ type APIClient struct {
 
 	// API Services
 
+	IndexInputDataAPI *IndexInputDataAPIService
+
 	IndexesAPI *IndexesAPIService
+
+	MetadataAPI *MetadataAPIService
+
+	MultiAssetWeightsAPI *MultiAssetWeightsAPIService
+
+	PeriodsAPI *PeriodsAPIService
 }
 
 type service struct {
@@ -69,7 +77,11 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
+	c.IndexInputDataAPI = (*IndexInputDataAPIService)(&c.common)
 	c.IndexesAPI = (*IndexesAPIService)(&c.common)
+	c.MetadataAPI = (*MetadataAPIService)(&c.common)
+	c.MultiAssetWeightsAPI = (*MultiAssetWeightsAPIService)(&c.common)
+	c.PeriodsAPI = (*PeriodsAPIService)(&c.common)
 
 	return c
 }

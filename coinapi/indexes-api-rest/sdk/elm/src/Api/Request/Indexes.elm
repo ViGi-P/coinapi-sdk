@@ -15,9 +15,7 @@
 
 
 module Api.Request.Indexes exposing
-    ( v1IndexdefMultiassetGet
-    , v1IndexdefMultiassetIndexIdGet
-    , v1IndexesGet
+    ( v1IndexesGet
     , v1IndexesIndexDefinitionIdCurrentSnapshotGet
     , v1IndexesIndexDefinitionIdHistorySnapshotGet
     , v1IndexesIndexIdCurrentGet
@@ -33,34 +31,6 @@ import Http
 import Json.Decode
 import Json.Encode
 
-
-{-| Get all multi-asset weights
--}
-v1IndexdefMultiassetGet : String -> Api.Request (List Api.Data.ModelsIndexMultiAssetWeight)
-v1IndexdefMultiassetGet auth_token =
-    Api.request
-        "GET"
-        "/v1/indexdef/multiasset"
-        []
-        []
-        []
-        Nothing
-        (Json.Decode.list Api.Data.modelsIndexMultiAssetWeightDecoder)
-        |> Api.withBearerToken auth_token
-
-{-| Get multi-asset weights for specific index
--}
-v1IndexdefMultiassetIndexIdGet : String -> String -> Api.Request (List Api.Data.ModelsIndexMultiAssetWeight)
-v1IndexdefMultiassetIndexIdGet indexId_path auth_token =
-    Api.request
-        "GET"
-        "/v1/indexdef/multiasset/{index_id}"
-        [ ( "index_id", identity indexId_path ) ]
-        []
-        []
-        Nothing
-        (Json.Decode.list Api.Data.modelsIndexMultiAssetWeightDecoder)
-        |> Api.withBearerToken auth_token
 
 {-| List indexes
 -}

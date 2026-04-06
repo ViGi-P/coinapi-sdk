@@ -28,14 +28,21 @@ part 'auth/oauth.dart';
 part 'auth/http_basic_auth.dart';
 part 'auth/http_bearer_auth.dart';
 
+part 'api/index_input_data_api.dart';
 part 'api/indexes_api.dart';
+part 'api/metadata_api.dart';
+part 'api/multi_asset_weights_api.dart';
+part 'api/periods_api.dart';
 
+part 'model/models_exchange.dart';
+part 'model/models_index_definition_input_data.dart';
 part 'model/models_index_definition_snapshot_entry.dart';
 part 'model/models_index_identifier.dart';
 part 'model/models_index_multi_asset_weight.dart';
 part 'model/models_index_timeseries_item.dart';
 part 'model/models_index_value.dart';
 part 'model/models_index_value_component.dart';
+part 'model/models_timeseries_period.dart';
 
 
 /// An [ApiClient] instance that uses the default values obtained from

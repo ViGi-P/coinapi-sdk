@@ -4,8 +4,6 @@ All URIs are relative to **
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1IndexdefMultiassetGet**](IndexesApi.md#v1IndexdefMultiassetGet) | **GET** /v1/indexdef/multiasset | Get all multi-asset weights
-[**v1IndexdefMultiassetIndexIdGet**](IndexesApi.md#v1IndexdefMultiassetIndexIdGet) | **GET** /v1/indexdef/multiasset/{index_id} | Get multi-asset weights for specific index
 [**v1IndexesGet**](IndexesApi.md#v1IndexesGet) | **GET** /v1/indexes | List indexes
 [**v1IndexesIndexDefinitionIdCurrentSnapshotGet**](IndexesApi.md#v1IndexesIndexDefinitionIdCurrentSnapshotGet) | **GET** /v1/indexes/{index_definition_id}/currentSnapshot | Current Index Values for index definition
 [**v1IndexesIndexDefinitionIdHistorySnapshotGet**](IndexesApi.md#v1IndexesIndexDefinitionIdHistorySnapshotGet) | **GET** /v1/indexes/{index_definition_id}/historySnapshot | Historical Index Values for index definition
@@ -13,69 +11,6 @@ Method | HTTP request | Description
 [**v1IndexesIndexIdHistoryGet**](IndexesApi.md#v1IndexesIndexIdHistoryGet) | **GET** /v1/indexes/{index_id}/history | Historical Index Value w/Composition
 [**v1IndexesIndexIdTimeseriesGet**](IndexesApi.md#v1IndexesIndexIdTimeseriesGet) | **GET** /v1/indexes/{index_id}/timeseries | Timeseries Index Value
 
-
-
-## v1IndexdefMultiassetGet
-
-Get all multi-asset weights
-
-### Example
-
-```bash
- v1IndexdefMultiassetGet
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**array[ModelsIndexMultiAssetWeight]**](ModelsIndexMultiAssetWeight.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
-- **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## v1IndexdefMultiassetIndexIdGet
-
-Get multi-asset weights for specific index
-
-### Example
-
-```bash
- v1IndexdefMultiassetIndexIdGet index_id=value
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **indexId** | **string** |  | [default to null]
-
-### Return type
-
-[**array[ModelsIndexMultiAssetWeight]**](ModelsIndexMultiAssetWeight.md)
-
-### Authorization
-
-[APIKey](../README.md#APIKey), [JWT](../README.md#JWT)
-
-### HTTP request headers
-
-- **Content-Type**: Not Applicable
-- **Accept**: text/plain, application/json, text/json, application/x-msgpack
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
 ## v1IndexesGet

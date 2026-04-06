@@ -7,21 +7,8 @@
 #include "../include/binary.h"
 #include "../model/models_index_definition_snapshot_entry.h"
 #include "../model/models_index_identifier.h"
-#include "../model/models_index_multi_asset_weight.h"
 #include "../model/models_index_timeseries_item.h"
 #include "../model/models_index_value.h"
-
-
-// Get all multi-asset weights
-//
-list_t*
-IndexesAPI_v1IndexdefMultiassetGet(apiClient_t *apiClient);
-
-
-// Get multi-asset weights for specific index
-//
-list_t*
-IndexesAPI_v1IndexdefMultiassetIndexIdGet(apiClient_t *apiClient, char *index_id);
 
 
 // List indexes

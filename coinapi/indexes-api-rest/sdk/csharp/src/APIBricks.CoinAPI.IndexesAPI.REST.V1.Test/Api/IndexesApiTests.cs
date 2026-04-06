@@ -52,29 +52,6 @@ namespace APIBricks.CoinAPI.IndexesAPI.REST.V1.Test.Api
         }
 
         /// <summary>
-        /// Test V1IndexdefMultiassetGet
-        /// </summary>
-        [Fact (Skip = "not implemented")]
-        public async Task V1IndexdefMultiassetGetAsyncTest()
-        {
-            var response = await _instance.V1IndexdefMultiassetGetAsync();
-            var model = response.Ok();
-            Assert.IsType<List<ModelsIndexMultiAssetWeight>>(model);
-        }
-
-        /// <summary>
-        /// Test V1IndexdefMultiassetIndexIdGet
-        /// </summary>
-        [Fact (Skip = "not implemented")]
-        public async Task V1IndexdefMultiassetIndexIdGetAsyncTest()
-        {
-            string indexId = default!;
-            var response = await _instance.V1IndexdefMultiassetIndexIdGetAsync(indexId);
-            var model = response.Ok();
-            Assert.IsType<List<ModelsIndexMultiAssetWeight>>(model);
-        }
-
-        /// <summary>
         /// Test V1IndexesGet
         /// </summary>
         [Fact (Skip = "not implemented")]

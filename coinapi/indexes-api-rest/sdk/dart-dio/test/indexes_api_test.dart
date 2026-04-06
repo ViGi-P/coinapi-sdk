@@ -7,20 +7,6 @@ void main() {
   final instance = Openapi().getIndexesApi();
 
   group(IndexesApi, () {
-    // Get all multi-asset weights
-    //
-    //Future<BuiltList<ModelsIndexMultiAssetWeight>> v1IndexdefMultiassetGet() async
-    test('test v1IndexdefMultiassetGet', () async {
-      // TODO
-    });
-
-    // Get multi-asset weights for specific index
-    //
-    //Future<BuiltList<ModelsIndexMultiAssetWeight>> v1IndexdefMultiassetIndexIdGet(String indexId) async
-    test('test v1IndexdefMultiassetIndexIdGet', () async {
-      // TODO
-    });
-
     // List indexes
     //
     //Future<BuiltList<ModelsIndexIdentifier>> v1IndexesGet() async

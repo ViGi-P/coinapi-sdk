@@ -1,3 +1,11 @@
+export * from './indexInputData.service';
+import { IndexInputDataService } from './indexInputData.service';
 export * from './indexes.service';
 import { IndexesService } from './indexes.service';
-export const APIS = [IndexesService];
+export * from './metadata.service';
+import { MetadataService } from './metadata.service';
+export * from './multiAssetWeights.service';
+import { MultiAssetWeightsService } from './multiAssetWeights.service';
+export * from './periods.service';
+import { PeriodsService } from './periods.service';
+export const APIS = [IndexInputDataService, IndexesService, MetadataService, MultiAssetWeightsService, PeriodsService];
