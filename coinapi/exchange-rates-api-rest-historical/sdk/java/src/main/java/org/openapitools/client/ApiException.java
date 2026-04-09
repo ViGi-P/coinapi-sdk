@@ -21,7 +21,7 @@ import java.util.List;
  * <p>ApiException class.</p>
  */
 @SuppressWarnings("serial")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-08T06:10:47.218904533Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-09T06:29:50.374177735Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ApiException extends Exception {
     private static final long serialVersionUID = 1L;
 
