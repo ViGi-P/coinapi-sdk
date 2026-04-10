@@ -1417,13 +1417,3 @@ tags:
     description: Latest trade and quote snapshot per prediction market.
   - name: Exchanges
     description: Prediction market exchanges available in this API.
-  - name: Orderbooks
-    description: Provides access to current market order book snapshots.
-  - name: OHLCV
-    description: 'Retrieves OHLCV (Open, High, Low, Close, Volume) timeseries data for specific markets.'
-  - name: Markets
-    description: "Provides access to detailed information for prediction markets.\nA Market is a rich object containing all details for a specific prediction market, retrieved using a market_id."
-  - name: Market Activity
-    description: Retrieves the latest trade and the latest quote for a market.
-  - name: Exchanges
-    description: Provides access to exchange metadata.
