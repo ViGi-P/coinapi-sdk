@@ -1409,11 +1409,16 @@ security:
 tags:
   - name: Orderbooks
     description: Current prediction market order book snapshots by exchange and market.
+    x-displayName: Orderbooks
   - name: OHLCV
     description: 'Prediction market open, high, low, close, and volume time series.'
+    x-displayName: OHLCV
   - name: Markets
     description: 'Listed prediction markets, metadata, and discovery by exchange.'
+    x-displayName: Markets
   - name: Market Activity
     description: Latest trade and quote snapshot per prediction market.
+    x-displayName: Market Activity
   - name: Exchanges
     description: Prediction market exchanges available in this API.
+    x-displayName: Exchanges
