@@ -55,6 +55,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Client
             _services.AddSingleton<IApiFactory, ApiFactory>();
             _services.AddSingleton<ExchangeRatesApiEvents>();
             _services.AddSingleton<MetadataApiEvents>();
+            _services.AddSingleton<RateLimitApiEvents>();
         }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Client
 
             builders.Add(_services.AddHttpClient<IExchangeRatesApi, ExchangeRatesApi>("APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Api.IExchangeRatesApi", client));
             builders.Add(_services.AddHttpClient<IMetadataApi, MetadataApi>("APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Api.IMetadataApi", client));
+            builders.Add(_services.AddHttpClient<IRateLimitApi, RateLimitApi>("APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Api.IRateLimitApi", client));
             
             if (builder != null)
                 foreach (IHttpClientBuilder instance in builders)

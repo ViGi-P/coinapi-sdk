@@ -86,6 +86,9 @@ Class | Method | HTTP request | Description
 *MetadataApi* | [**v1_assets_asset_id_get**](api_bricks_currencies_api_rest_realtime/docs/MetadataApi.md#v1_assets_asset_id_get) | **GET** /v1/assets/{asset_id} | List all assets by asset ID
 *MetadataApi* | [**v1_assets_get**](api_bricks_currencies_api_rest_realtime/docs/MetadataApi.md#v1_assets_get) | **GET** /v1/assets | List all assets
 *MetadataApi* | [**v1_assets_icons_size_get**](api_bricks_currencies_api_rest_realtime/docs/MetadataApi.md#v1_assets_icons_size_get) | **GET** /v1/assets/icons/{size} | List all asset icons
+*RateLimitApi* | [**internal_ratelimit_wsconcon_apikey_get**](api_bricks_currencies_api_rest_realtime/docs/RateLimitApi.md#internal_ratelimit_wsconcon_apikey_get) | **GET** /internal/ratelimit/wsconcon/apikey | 
+*RateLimitApi* | [**internal_ratelimit_wshello_ip_get**](api_bricks_currencies_api_rest_realtime/docs/RateLimitApi.md#internal_ratelimit_wshello_ip_get) | **GET** /internal/ratelimit/wshello/ip | 
+*RateLimitApi* | [**internal_ratelimit_wsreq_ip_get**](api_bricks_currencies_api_rest_realtime/docs/RateLimitApi.md#internal_ratelimit_wsreq_ip_get) | **GET** /internal/ratelimit/wsreq/ip | 
 
 
 ## Documentation For Models

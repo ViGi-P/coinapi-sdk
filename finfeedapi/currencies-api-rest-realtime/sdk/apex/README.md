@@ -71,6 +71,9 @@ Class | Method | HTTP request | Description
 *OASMetadataApi* | [**v1AssetsAssetIdGet**](OASMetadataApi.md#v1AssetsAssetIdGet) | **GET** /v1/assets/{asset_id} | List all assets by asset ID
 *OASMetadataApi* | [**v1AssetsGet**](OASMetadataApi.md#v1AssetsGet) | **GET** /v1/assets | List all assets
 *OASMetadataApi* | [**v1AssetsIconsSizeGet**](OASMetadataApi.md#v1AssetsIconsSizeGet) | **GET** /v1/assets/icons/{size} | List all asset icons
+*OASRateLimitApi* | [**internalRatelimitWsconconApikeyGet**](OASRateLimitApi.md#internalRatelimitWsconconApikeyGet) | **GET** /internal/ratelimit/wsconcon/apikey | 
+*OASRateLimitApi* | [**internalRatelimitWshelloIpGet**](OASRateLimitApi.md#internalRatelimitWshelloIpGet) | **GET** /internal/ratelimit/wshello/ip | 
+*OASRateLimitApi* | [**internalRatelimitWsreqIpGet**](OASRateLimitApi.md#internalRatelimitWsreqIpGet) | **GET** /internal/ratelimit/wsreq/ip | 
 
 
 ## Documentation for Models

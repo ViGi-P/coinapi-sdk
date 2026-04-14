@@ -11,6 +11,7 @@ import 'package:openapi/src/auth/bearer_auth.dart';
 import 'package:openapi/src/auth/oauth.dart';
 import 'package:openapi/src/api/exchange_rates_api.dart';
 import 'package:openapi/src/api/metadata_api.dart';
+import 'package:openapi/src/api/rate_limit_api.dart';
 
 class Openapi {
   static const String basePath = r'https://api-realtime.fx.finfeedapi.com';
@@ -76,5 +77,11 @@ class Openapi {
   /// by doing that all interceptors will not be executed
   MetadataApi getMetadataApi() {
     return MetadataApi(dio, serializers);
+  }
+
+  /// Get RateLimitApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  RateLimitApi getRateLimitApi() {
+    return RateLimitApi(dio, serializers);
   }
 }

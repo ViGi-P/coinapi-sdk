@@ -6,6 +6,7 @@ README.md
 composer.json
 docs/Api/ExchangeRatesApi.md
 docs/Api/MetadataApi.md
+docs/Api/RateLimitApi.md
 docs/Model/V1Asset.md
 docs/Model/V1ChainNetworkAddress.md
 docs/Model/V1ExchangeRate.md
@@ -15,6 +16,7 @@ docs/Model/V1Icon.md
 git_push.sh
 lib/Api/ExchangeRatesApi.php
 lib/Api/MetadataApi.php
+lib/Api/RateLimitApi.php
 lib/ApiException.php
 lib/Configuration.php
 lib/FormDataProcessor.php
@@ -30,6 +32,7 @@ lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/ExchangeRatesApiTest.php
 test/Api/MetadataApiTest.php
+test/Api/RateLimitApiTest.php
 test/Model/V1AssetTest.php
 test/Model/V1ChainNetworkAddressTest.php
 test/Model/V1ExchangeRateTest.php

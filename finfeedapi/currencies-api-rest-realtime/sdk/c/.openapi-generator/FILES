@@ -7,8 +7,11 @@ api/ExchangeRatesAPI.c
 api/ExchangeRatesAPI.h
 api/MetadataAPI.c
 api/MetadataAPI.h
+api/RateLimitAPI.c
+api/RateLimitAPI.h
 docs/ExchangeRatesAPI.md
 docs/MetadataAPI.md
+docs/RateLimitAPI.md
 docs/v1_asset.md
 docs/v1_chain_network_address.md
 docs/v1_exchange_rate.md

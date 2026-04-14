@@ -21,6 +21,7 @@ import V1ExchangeRatesRate from './model/V1ExchangeRatesRate';
 import V1Icon from './model/V1Icon';
 import ExchangeRatesApi from './api/ExchangeRatesApi';
 import MetadataApi from './api/MetadataApi';
+import RateLimitApi from './api/RateLimitApi';
 
 
 /**
@@ -107,5 +108,11 @@ export {
     * The MetadataApi service constructor.
     * @property {module:api/MetadataApi}
     */
-    MetadataApi
+    MetadataApi,
+
+    /**
+    * The RateLimitApi service constructor.
+    * @property {module:api/RateLimitApi}
+    */
+    RateLimitApi
 };

@@ -51,6 +51,9 @@ All URIs are relative to *https://api-realtime.fx.finfeedapi.com*
 | *MetadataApi* | [**v1AssetsAssetIdGet**](docs/MetadataApi.md#v1assetsassetidget) | **GET** /v1/assets/{asset_id} | List all assets by asset ID |
 | *MetadataApi* | [**v1AssetsGet**](docs/MetadataApi.md#v1assetsget) | **GET** /v1/assets | List all assets |
 | *MetadataApi* | [**v1AssetsIconsSizeGet**](docs/MetadataApi.md#v1assetsiconssizeget) | **GET** /v1/assets/icons/{size} | List all asset icons |
+| *RateLimitApi* | [**internalRatelimitWsconconApikeyGet**](docs/RateLimitApi.md#internalratelimitwsconconapikeyget) | **GET** /internal/ratelimit/wsconcon/apikey |  |
+| *RateLimitApi* | [**internalRatelimitWshelloIpGet**](docs/RateLimitApi.md#internalratelimitwshelloipget) | **GET** /internal/ratelimit/wshello/ip |  |
+| *RateLimitApi* | [**internalRatelimitWsreqIpGet**](docs/RateLimitApi.md#internalratelimitwsreqipget) | **GET** /internal/ratelimit/wsreq/ip |  |
 
 
 <a id="documentation-for-models"></a>

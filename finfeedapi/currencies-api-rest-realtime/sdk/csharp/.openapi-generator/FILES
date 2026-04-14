@@ -6,6 +6,7 @@ api/openapi.yaml
 appveyor.yml
 docs/apis/ExchangeRatesApi.md
 docs/apis/MetadataApi.md
+docs/apis/RateLimitApi.md
 docs/models/V1Asset.md
 docs/models/V1ChainNetworkAddress.md
 docs/models/V1ExchangeRate.md
@@ -19,6 +20,7 @@ src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Api/ApiTestsBase.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Api/DependencyInjectionTests.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Api/ExchangeRatesApiTests.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Api/MetadataApiTests.cs
+src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Api/RateLimitApiTests.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Model/V1AssetTests.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Model/V1ChainNetworkAddressTests.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Test/Model/V1ExchangeRateTests.cs
@@ -30,6 +32,7 @@ src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/APIBricks.FinFeedAPI.Cur
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Api/ExchangeRatesApi.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Api/IApi.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Api/MetadataApi.cs
+src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Api/RateLimitApi.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Client/ApiException.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Client/ApiFactory.cs
 src/APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime/Client/ApiKeyToken.cs

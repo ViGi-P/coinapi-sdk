@@ -6,6 +6,7 @@ client.sh
 client.sh.bash-completion
 docs/ExchangeRatesApi.md
 docs/MetadataApi.md
+docs/RateLimitApi.md
 docs/V1Asset.md
 docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md

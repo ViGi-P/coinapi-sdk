@@ -4,6 +4,7 @@ build.gradle
 src/main/groovy/org/openapitools/api/ApiUtils.groovy
 src/main/groovy/org/openapitools/api/ExchangeRatesApi.groovy
 src/main/groovy/org/openapitools/api/MetadataApi.groovy
+src/main/groovy/org/openapitools/api/RateLimitApi.groovy
 src/main/groovy/org/openapitools/model/V1Asset.groovy
 src/main/groovy/org/openapitools/model/V1ChainNetworkAddress.groovy
 src/main/groovy/org/openapitools/model/V1ExchangeRate.groovy

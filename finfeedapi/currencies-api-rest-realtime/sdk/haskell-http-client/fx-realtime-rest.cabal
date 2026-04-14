@@ -68,6 +68,7 @@ library
       FXRealtimeREST.API
       FXRealtimeREST.API.ExchangeRates
       FXRealtimeREST.API.Metadata
+      FXRealtimeREST.API.RateLimit
       FXRealtimeREST.Client
       FXRealtimeREST.Core
       FXRealtimeREST.Logging

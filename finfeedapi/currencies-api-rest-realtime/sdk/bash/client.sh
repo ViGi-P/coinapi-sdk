@@ -555,6 +555,14 @@ read -r -d '' ops <<EOF
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
+    echo -e "${BOLD}${WHITE}[rateLimit]${OFF}"
+read -r -d '' ops <<EOF
+  ${CYAN}internalRatelimitWsconconApikeyGet${OFF}; (AUTH) (AUTH)
+  ${CYAN}internalRatelimitWshelloIpGet${OFF}; (AUTH) (AUTH)
+  ${CYAN}internalRatelimitWsreqIpGet${OFF}; (AUTH) (AUTH)
+EOF
+echo "  $ops" | column -t -s ';'
+    echo ""
     echo -e "${BOLD}${WHITE}Options${OFF}"
     echo -e "  -h,--help\\t\\t\\t\\tPrint this help"
     echo -e "  -V,--version\\t\\t\\t\\tPrint API version"
@@ -718,6 +726,48 @@ print_v1AssetsIconsSizeGet_help() {
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
     echo -e "${result_color_table[${code:0:1}]}  200;successful operation${OFF}" | paste -sd' ' - | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
+# Print help for internalRatelimitWsconconApikeyGet operation
+#
+##############################################################################
+print_internalRatelimitWsconconApikeyGet_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}internalRatelimitWsconconApikeyGet - ${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;OK${OFF}" | paste -sd' ' - | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
+# Print help for internalRatelimitWshelloIpGet operation
+#
+##############################################################################
+print_internalRatelimitWshelloIpGet_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}internalRatelimitWshelloIpGet - ${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;OK${OFF}" | paste -sd' ' - | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
+# Print help for internalRatelimitWsreqIpGet operation
+#
+##############################################################################
+print_internalRatelimitWsreqIpGet_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}internalRatelimitWsreqIpGet - ${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;OK${OFF}" | paste -sd' ' - | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
 }
 
 
@@ -901,6 +951,114 @@ call_v1AssetsIconsSizeGet() {
     fi
 }
 
+##############################################################################
+#
+# Call internalRatelimitWsconconApikeyGet operation
+#
+##############################################################################
+call_internalRatelimitWsconconApikeyGet() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(    )
+    local path
+
+    if ! path=$(build_request_path "/internal/ratelimit/wsconcon/apikey" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="GET"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    if [[ "$print_curl" = true ]]; then
+        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    else
+        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    fi
+}
+
+##############################################################################
+#
+# Call internalRatelimitWshelloIpGet operation
+#
+##############################################################################
+call_internalRatelimitWshelloIpGet() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(    )
+    local path
+
+    if ! path=$(build_request_path "/internal/ratelimit/wshello/ip" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="GET"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    if [[ "$print_curl" = true ]]; then
+        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    else
+        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    fi
+}
+
+##############################################################################
+#
+# Call internalRatelimitWsreqIpGet operation
+#
+##############################################################################
+call_internalRatelimitWsreqIpGet() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(    )
+    local path
+
+    if ! path=$(build_request_path "/internal/ratelimit/wsreq/ip" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="GET"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    if [[ "$print_curl" = true ]]; then
+        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    else
+        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    fi
+}
+
 
 
 ##############################################################################
@@ -1013,6 +1171,15 @@ case $key in
     v1AssetsIconsSizeGet)
     operation="v1AssetsIconsSizeGet"
     ;;
+    internalRatelimitWsconconApikeyGet)
+    operation="internalRatelimitWsconconApikeyGet"
+    ;;
+    internalRatelimitWshelloIpGet)
+    operation="internalRatelimitWshelloIpGet"
+    ;;
+    internalRatelimitWsreqIpGet)
+    operation="internalRatelimitWsreqIpGet"
+    ;;
     *==*)
     # Parse body arguments and convert them into top level
     # JSON properties passed in the body content as strings
@@ -1121,6 +1288,15 @@ case $operation in
     ;;
     v1AssetsIconsSizeGet)
     call_v1AssetsIconsSizeGet
+    ;;
+    internalRatelimitWsconconApikeyGet)
+    call_internalRatelimitWsconconApikeyGet
+    ;;
+    internalRatelimitWshelloIpGet)
+    call_internalRatelimitWshelloIpGet
+    ;;
+    internalRatelimitWsreqIpGet)
+    call_internalRatelimitWsreqIpGet
     ;;
     *)
     ERROR_MSG="ERROR: Unknown operation: $operation"

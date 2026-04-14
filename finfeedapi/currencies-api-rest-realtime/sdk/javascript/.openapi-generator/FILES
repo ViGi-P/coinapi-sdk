@@ -5,6 +5,7 @@
 README.md
 docs/ExchangeRatesApi.md
 docs/MetadataApi.md
+docs/RateLimitApi.md
 docs/V1Asset.md
 docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
@@ -17,6 +18,7 @@ package.json
 src/ApiClient.js
 src/api/ExchangeRatesApi.js
 src/api/MetadataApi.js
+src/api/RateLimitApi.js
 src/index.js
 src/model/V1Asset.js
 src/model/V1ChainNetworkAddress.js
@@ -26,6 +28,7 @@ src/model/V1ExchangeRatesRate.js
 src/model/V1Icon.js
 test/api/ExchangeRatesApi.spec.js
 test/api/MetadataApi.spec.js
+test/api/RateLimitApi.spec.js
 test/model/V1Asset.spec.js
 test/model/V1ChainNetworkAddress.spec.js
 test/model/V1ExchangeRate.spec.js

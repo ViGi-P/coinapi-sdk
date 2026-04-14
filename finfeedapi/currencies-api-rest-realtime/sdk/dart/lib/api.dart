@@ -30,6 +30,7 @@ part 'auth/http_bearer_auth.dart';
 
 part 'api/exchange_rates_api.dart';
 part 'api/metadata_api.dart';
+part 'api/rate_limit_api.dart';
 
 part 'model/v1_asset.dart';
 part 'model/v1_chain_network_address.dart';

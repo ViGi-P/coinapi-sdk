@@ -8,6 +8,7 @@ build.gradle
 build.sbt
 docs/ExchangeRatesApi.md
 docs/MetadataApi.md
+docs/RateLimitApi.md
 docs/V1Asset.md
 docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
@@ -38,6 +39,7 @@ src/main/java/org/openapitools/client/ServerVariable.java
 src/main/java/org/openapitools/client/StringUtil.java
 src/main/java/org/openapitools/client/api/ExchangeRatesApi.java
 src/main/java/org/openapitools/client/api/MetadataApi.java
+src/main/java/org/openapitools/client/api/RateLimitApi.java
 src/main/java/org/openapitools/client/auth/ApiKeyAuth.java
 src/main/java/org/openapitools/client/auth/Authentication.java
 src/main/java/org/openapitools/client/auth/HttpBasicAuth.java
@@ -51,6 +53,7 @@ src/main/java/org/openapitools/client/model/V1ExchangeRatesRate.java
 src/main/java/org/openapitools/client/model/V1Icon.java
 src/test/java/org/openapitools/client/api/ExchangeRatesApiTest.java
 src/test/java/org/openapitools/client/api/MetadataApiTest.java
+src/test/java/org/openapitools/client/api/RateLimitApiTest.java
 src/test/java/org/openapitools/client/model/V1AssetTest.java
 src/test/java/org/openapitools/client/model/V1ChainNetworkAddressTest.java
 src/test/java/org/openapitools/client/model/V1ExchangeRateTest.java

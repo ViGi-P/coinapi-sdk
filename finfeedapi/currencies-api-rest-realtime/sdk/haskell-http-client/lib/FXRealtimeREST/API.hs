@@ -16,7 +16,9 @@ Module : FXRealtimeREST.API
 module FXRealtimeREST.API
   ( module FXRealtimeREST.API.ExchangeRates
   , module FXRealtimeREST.API.Metadata
+  , module FXRealtimeREST.API.RateLimit
   ) where
 
 import FXRealtimeREST.API.ExchangeRates
 import FXRealtimeREST.API.Metadata
+import FXRealtimeREST.API.RateLimit

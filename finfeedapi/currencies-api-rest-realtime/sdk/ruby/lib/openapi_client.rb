@@ -28,6 +28,7 @@ require 'openapi_client/models/v1_icon'
 # APIs
 require 'openapi_client/api/exchange_rates_api'
 require 'openapi_client/api/metadata_api'
+require 'openapi_client/api/rate_limit_api'
 
 module OpenapiClient
   class << self

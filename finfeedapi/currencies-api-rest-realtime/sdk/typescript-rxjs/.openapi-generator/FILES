@@ -2,6 +2,7 @@
 .openapi-generator-ignore
 apis/ExchangeRatesApi.ts
 apis/MetadataApi.ts
+apis/RateLimitApi.ts
 apis/index.ts
 index.ts
 models/V1Asset.ts

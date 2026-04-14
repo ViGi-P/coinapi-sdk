@@ -137,6 +137,9 @@ Class | Method | HTTP request | Description
 *FxRealtimeRestApi.MetadataApi* | [**v1AssetsAssetIdGet**](docs/MetadataApi.md#v1AssetsAssetIdGet) | **GET** /v1/assets/{asset_id} | List all assets by asset ID
 *FxRealtimeRestApi.MetadataApi* | [**v1AssetsGet**](docs/MetadataApi.md#v1AssetsGet) | **GET** /v1/assets | List all assets
 *FxRealtimeRestApi.MetadataApi* | [**v1AssetsIconsSizeGet**](docs/MetadataApi.md#v1AssetsIconsSizeGet) | **GET** /v1/assets/icons/{size} | List all asset icons
+*FxRealtimeRestApi.RateLimitApi* | [**internalRatelimitWsconconApikeyGet**](docs/RateLimitApi.md#internalRatelimitWsconconApikeyGet) | **GET** /internal/ratelimit/wsconcon/apikey | 
+*FxRealtimeRestApi.RateLimitApi* | [**internalRatelimitWshelloIpGet**](docs/RateLimitApi.md#internalRatelimitWshelloIpGet) | **GET** /internal/ratelimit/wshello/ip | 
+*FxRealtimeRestApi.RateLimitApi* | [**internalRatelimitWsreqIpGet**](docs/RateLimitApi.md#internalRatelimitWsreqIpGet) | **GET** /internal/ratelimit/wsreq/ip | 
 
 
 ## Documentation for Models

@@ -28,6 +28,9 @@ Class | Method | HTTP request | Description
 *METADATA_API* | [**v1_assets_asset_id_get**](docs/METADATA_API.md#v1_assets_asset_id_get) | **Get** /v1/assets/{asset_id} | List all assets by asset ID
 *METADATA_API* | [**v1_assets_get**](docs/METADATA_API.md#v1_assets_get) | **Get** /v1/assets | List all assets
 *METADATA_API* | [**v1_assets_icons_size_get**](docs/METADATA_API.md#v1_assets_icons_size_get) | **Get** /v1/assets/icons/{size} | List all asset icons
+*RATELIMIT_API* | [**internal_ratelimit_wsconcon_apikey_get**](docs/RATELIMIT_API.md#internal_ratelimit_wsconcon_apikey_get) | **Get** /internal/ratelimit/wsconcon/apikey | 
+*RATELIMIT_API* | [**internal_ratelimit_wshello_ip_get**](docs/RATELIMIT_API.md#internal_ratelimit_wshello_ip_get) | **Get** /internal/ratelimit/wshello/ip | 
+*RATELIMIT_API* | [**internal_ratelimit_wsreq_ip_get**](docs/RATELIMIT_API.md#internal_ratelimit_wsreq_ip_get) | **Get** /internal/ratelimit/wsreq/ip | 
 
 
 ## Documentation For Models

@@ -9,6 +9,7 @@ lib/FXRealtimeREST.hs
 lib/FXRealtimeREST/API.hs
 lib/FXRealtimeREST/API/ExchangeRates.hs
 lib/FXRealtimeREST/API/Metadata.hs
+lib/FXRealtimeREST/API/RateLimit.hs
 lib/FXRealtimeREST/Client.hs
 lib/FXRealtimeREST/Core.hs
 lib/FXRealtimeREST/Logging.hs

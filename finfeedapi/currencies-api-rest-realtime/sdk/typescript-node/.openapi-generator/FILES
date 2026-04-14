@@ -4,6 +4,7 @@ api.ts
 api/apis.ts
 api/exchangeRatesApi.ts
 api/metadataApi.ts
+api/rateLimitApi.ts
 git_push.sh
 model/models.ts
 model/v1Asset.ts

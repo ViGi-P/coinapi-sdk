@@ -25,6 +25,7 @@ build = {
 	modules = {
 		["openapiclient.api.exchange_rates_api"] = "openapiclient/api/exchange_rates_api.lua";
 		["openapiclient.api.metadata_api"] = "openapiclient/api/metadata_api.lua";
+		["openapiclient.api.rate_limit_api"] = "openapiclient/api/rate_limit_api.lua";
 		["openapiclient.model.v1_asset"] = "openapiclient/model/v1_asset.lua";
 		["openapiclient.model.v1_chain_network_address"] = "openapiclient/model/v1_chain_network_address.lua";
 		["openapiclient.model.v1_exchange_rate"] = "openapiclient/model/v1_exchange_rate.lua";

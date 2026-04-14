@@ -4,6 +4,7 @@ README.md
 appveyor.yml
 docs/ExchangeRatesApi.md
 docs/MetadataApi.md
+docs/RateLimitApi.md
 docs/V1Asset.md
 docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
@@ -12,6 +13,7 @@ docs/V1ExchangeRatesRate.md
 docs/V1Icon.md
 src/PSOpenAPITools/Api/ExchangeRatesApi.ps1
 src/PSOpenAPITools/Api/MetadataApi.ps1
+src/PSOpenAPITools/Api/RateLimitApi.ps1
 src/PSOpenAPITools/Client/Configuration.ps1
 src/PSOpenAPITools/Model/V1Asset.ps1
 src/PSOpenAPITools/Model/V1ChainNetworkAddress.ps1
@@ -28,6 +30,7 @@ src/PSOpenAPITools/Private/RSAEncryptionProvider.cs
 src/PSOpenAPITools/en-US/about_PSOpenAPITools.help.txt
 tests/Api/ExchangeRatesApi.Tests.ps1
 tests/Api/MetadataApi.Tests.ps1
+tests/Api/RateLimitApi.Tests.ps1
 tests/Model/V1Asset.Tests.ps1
 tests/Model/V1ChainNetworkAddress.Tests.ps1
 tests/Model/V1ExchangeRate.Tests.ps1

@@ -21,6 +21,7 @@ __version__ = "1.0.0"
 __all__ = [
     "ExchangeRatesApi",
     "MetadataApi",
+    "RateLimitApi",
     "ApiResponse",
     "ApiClient",
     "Configuration",
@@ -41,6 +42,7 @@ __all__ = [
 # import apis into sdk package
 from api_bricks_currencies_api_rest_realtime.api.exchange_rates_api import ExchangeRatesApi as ExchangeRatesApi
 from api_bricks_currencies_api_rest_realtime.api.metadata_api import MetadataApi as MetadataApi
+from api_bricks_currencies_api_rest_realtime.api.rate_limit_api import RateLimitApi as RateLimitApi
 
 # import ApiClient
 from api_bricks_currencies_api_rest_realtime.api_response import ApiResponse as ApiResponse

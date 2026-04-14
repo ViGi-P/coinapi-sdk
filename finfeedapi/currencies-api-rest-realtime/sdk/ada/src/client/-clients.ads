@@ -72,4 +72,16 @@ package .Clients is
        Size : in Integer;
        Result : out .Models.V1Icon_Type_Vectors.Vector);
 
+   --  
+   procedure Internal_Ratelimit_Wsconcon_Apikey_Get
+      (Client : in out Client_Type);
+
+   --  
+   procedure Internal_Ratelimit_Wshello_Ip_Get
+      (Client : in out Client_Type);
+
+   --  
+   procedure Internal_Ratelimit_Wsreq_Ip_Get
+      (Client : in out Client_Type);
+
 end .Clients;

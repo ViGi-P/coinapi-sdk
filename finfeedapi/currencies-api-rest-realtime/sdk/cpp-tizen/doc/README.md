@@ -59,6 +59,17 @@ Method | HTTP request | Description
 *v1AssetsIconsSizeGetASync* | *GET* /v1/assets/icons/{size} | List all asset icons.
 
 
+### RateLimitManager
+Method | HTTP request | Description
+------------- | ------------- | -------------
+*internalRatelimitWsconconApikeyGetSync* | *GET* /internal/ratelimit/wsconcon/apikey | .
+*internalRatelimitWsconconApikeyGetASync* | *GET* /internal/ratelimit/wsconcon/apikey | .
+*internalRatelimitWshelloIpGetSync* | *GET* /internal/ratelimit/wshello/ip | .
+*internalRatelimitWshelloIpGetASync* | *GET* /internal/ratelimit/wshello/ip | .
+*internalRatelimitWsreqIpGetSync* | *GET* /internal/ratelimit/wsreq/ip | .
+*internalRatelimitWsreqIpGetASync* | *GET* /internal/ratelimit/wsreq/ip | .
+
+
 ## What are the Model files for the data structures/objects?
 Class | Description
 ------------- | -------------

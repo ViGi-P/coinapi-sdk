@@ -655,8 +655,173 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
 };
 
 
+/**
+ * RateLimitApi - fetch parameter creator
+ * @export
+ */
+export const RateLimitApiFetchParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @throws {RequiredError}
+         */
+        internalRatelimitWsconconApikeyGet(options: RequestOptions): FetchArgs {
+            const localVarPath = `/internal/ratelimit/wsconcon/apikey`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+
+            // authentication APIKey required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            localVarUrlObj.search = null;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @throws {RequiredError}
+         */
+        internalRatelimitWshelloIpGet(options: RequestOptions): FetchArgs {
+            const localVarPath = `/internal/ratelimit/wshello/ip`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+
+            // authentication APIKey required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            localVarUrlObj.search = null;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @throws {RequiredError}
+         */
+        internalRatelimitWsreqIpGet(options: RequestOptions): FetchArgs {
+            const localVarPath = `/internal/ratelimit/wsreq/ip`;
+            const localVarUrlObj = url.parse(localVarPath, true);
+            const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+
+            // authentication APIKey required
+            if (configuration && configuration.apiKey) {
+                const localVarApiKeyValue = typeof configuration.apiKey === 'function'
+                    ? configuration.apiKey("Authorization")
+                    : configuration.apiKey;
+                localVarHeaderParameter["Authorization"] = localVarApiKeyValue;
+            }
+
+            // authentication JWT required
+
+            localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            localVarUrlObj.search = null;
+            localVarRequestOptions.headers = Object.assign({}, localVarHeaderParameter, options.headers);
+
+            return {
+                url: url.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+export type RateLimitApiType = { 
+    internalRatelimitWsconconApikeyGet(options?: RequestOptions): Promise<Response>,
+
+    internalRatelimitWshelloIpGet(options?: RequestOptions): Promise<Response>,
+
+    internalRatelimitWsreqIpGet(options?: RequestOptions): Promise<Response>,
+}
+
+/**
+ * RateLimitApi - factory function to inject configuration 
+ * @export
+ */
+export const RateLimitApi = function(configuration?: Configuration, fetch: FetchAPI = portableFetch): RateLimitApiType {
+    const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
+    return {
+        /**
+         * 
+         * @throws {RequiredError}
+         */
+        internalRatelimitWsconconApikeyGet(options?: RequestOptions = {}): Promise<Response> {
+            const localVarFetchArgs = RateLimitApiFetchParamCreator(configuration).internalRatelimitWsconconApikeyGet(options);
+            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response;
+                } else {
+                    throw response;
+                }
+            });
+        },
+        /**
+         * 
+         * @throws {RequiredError}
+         */
+        internalRatelimitWshelloIpGet(options?: RequestOptions = {}): Promise<Response> {
+            const localVarFetchArgs = RateLimitApiFetchParamCreator(configuration).internalRatelimitWshelloIpGet(options);
+            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response;
+                } else {
+                    throw response;
+                }
+            });
+        },
+        /**
+         * 
+         * @throws {RequiredError}
+         */
+        internalRatelimitWsreqIpGet(options?: RequestOptions = {}): Promise<Response> {
+            const localVarFetchArgs = RateLimitApiFetchParamCreator(configuration).internalRatelimitWsreqIpGet(options);
+            return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
+                if (response.status >= 200 && response.status < 300) {
+                    return response;
+                } else {
+                    throw response;
+                }
+            });
+        },
+    }
+};
+
+
 export type ApiTypes = { 
     ExchangeRatesApi: ExchangeRatesApiType,
 
     MetadataApi: MetadataApiType,
+
+    RateLimitApi: RateLimitApiType,
  }

@@ -53,6 +53,8 @@ type APIClient struct {
 	ExchangeRatesAPI *ExchangeRatesAPIService
 
 	MetadataAPI *MetadataAPIService
+
+	RateLimitAPI *RateLimitAPIService
 }
 
 type service struct {
@@ -73,6 +75,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.ExchangeRatesAPI = (*ExchangeRatesAPIService)(&c.common)
 	c.MetadataAPI = (*MetadataAPIService)(&c.common)
+	c.RateLimitAPI = (*RateLimitAPIService)(&c.common)
 
 	return c
 }
