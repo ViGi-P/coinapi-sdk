@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a timeseries item with value information.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-06T06:07:44.347987937Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-14T06:03:55.906754248Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class ModelsIndexTimeseriesItem {
   public static final String SERIALIZED_NAME_TIME_PERIOD_START = "time_period_start";
   @SerializedName(SERIALIZED_NAME_TIME_PERIOD_START)

@@ -18,18 +18,23 @@ tags:
 - description: Use these endpoints to inspect and manage the asset weights used by
     multi-asset indexes.
   name: Multi-Asset Weights
+  x-displayName: Multi-Asset Weights
 - description: Use these endpoints to discover supported exchanges used by index-related
     datasets.
   name: Metadata
+  x-displayName: Metadata
 - description: Use these endpoints to discover supported time periods for index time-series
     requests.
   name: Periods
+  x-displayName: Periods
 - description: "Use these endpoints to explore available indexes and retrieve current,\
     \ historical, and time-series index values."
   name: Indexes
+  x-displayName: Indexes
 - description: Use these endpoints to inspect and manage the input data that feeds
     index definitions.
   name: Index Input Data
+  x-displayName: Index Input Data
 paths:
   /v1/indexdef/input-data/{index_definition_id}:
     get:
