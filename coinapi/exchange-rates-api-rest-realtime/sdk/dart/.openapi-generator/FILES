@@ -5,6 +5,7 @@ README.md
 analysis_options.yaml
 doc/ExchangeRatesApi.md
 doc/MetadataApi.md
+doc/RateLimitApi.md
 doc/V1Asset.md
 doc/V1ChainNetworkAddress.md
 doc/V1ExchangeRate.md
@@ -15,6 +16,7 @@ git_push.sh
 lib/api.dart
 lib/api/exchange_rates_api.dart
 lib/api/metadata_api.dart
+lib/api/rate_limit_api.dart
 lib/api_client.dart
 lib/api_exception.dart
 lib/api_helper.dart
@@ -32,6 +34,7 @@ lib/model/v1_icon.dart
 pubspec.yaml
 test/exchange_rates_api_test.dart
 test/metadata_api_test.dart
+test/rate_limit_api_test.dart
 test/v1_asset_test.dart
 test/v1_chain_network_address_test.dart
 test/v1_exchange_rate_test.dart

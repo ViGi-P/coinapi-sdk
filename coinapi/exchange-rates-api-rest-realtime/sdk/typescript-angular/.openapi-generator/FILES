@@ -6,6 +6,7 @@ api.module.ts
 api/api.ts
 api/exchangeRates.service.ts
 api/metadata.service.ts
+api/rateLimit.service.ts
 configuration.ts
 encoder.ts
 git_push.sh

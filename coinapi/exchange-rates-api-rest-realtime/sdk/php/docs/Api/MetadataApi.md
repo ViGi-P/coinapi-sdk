@@ -1,6 +1,6 @@
 # OpenAPI\Client\MetadataApi
 
-&lt;span data-status-page&#x3D;\&quot;28923\&quot;&gt;&lt;/span&gt;
+Use these endpoints to discover supported assets and asset icons. This metadata helps you identify valid asset IDs before requesting exchange rates.
 
 All URIs are relative to https://api-realtime.exrates.coinapi.io, except if the operation defines another base path.
 

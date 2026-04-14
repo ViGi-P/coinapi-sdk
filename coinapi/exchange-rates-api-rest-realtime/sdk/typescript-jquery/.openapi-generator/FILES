@@ -1,6 +1,7 @@
 .openapi-generator-ignore
 api/ExchangeRatesApi.ts
 api/MetadataApi.ts
+api/RateLimitApi.ts
 api/api.ts
 configuration.ts
 git_push.sh

@@ -139,4 +139,37 @@ package body .Clients is
       Client.Call (Swagger.Clients.GET, URI, Reply);
       .Models.Deserialize (Reply, "", Result);
    end V_1Assets_Icons_Size_Get;
+
+   --  
+   procedure Internal_Ratelimit_Wsconcon_Apikey_Get
+      (Client : in out Client_Type) is
+      URI   : Swagger.Clients.URI_Type;
+   begin
+
+
+      URI.Set_Path ("/internal/ratelimit/wsconcon/apikey");
+      Client.Call (Swagger.Clients.GET, URI);
+   end Internal_Ratelimit_Wsconcon_Apikey_Get;
+
+   --  
+   procedure Internal_Ratelimit_Wshello_Ip_Get
+      (Client : in out Client_Type) is
+      URI   : Swagger.Clients.URI_Type;
+   begin
+
+
+      URI.Set_Path ("/internal/ratelimit/wshello/ip");
+      Client.Call (Swagger.Clients.GET, URI);
+   end Internal_Ratelimit_Wshello_Ip_Get;
+
+   --  
+   procedure Internal_Ratelimit_Wsreq_Ip_Get
+      (Client : in out Client_Type) is
+      URI   : Swagger.Clients.URI_Type;
+   begin
+
+
+      URI.Set_Path ("/internal/ratelimit/wsreq/ip");
+      Client.Call (Swagger.Clients.GET, URI);
+   end Internal_Ratelimit_Wsreq_Ip_Get;
 end .Clients;

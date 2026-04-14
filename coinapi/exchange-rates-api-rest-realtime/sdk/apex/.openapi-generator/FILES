@@ -13,6 +13,10 @@ force-app/main/default/classes/OASMetadataApi.cls
 force-app/main/default/classes/OASMetadataApi.cls-meta.xml
 force-app/main/default/classes/OASMetadataApiTest.cls
 force-app/main/default/classes/OASMetadataApiTest.cls-meta.xml
+force-app/main/default/classes/OASRateLimitApi.cls
+force-app/main/default/classes/OASRateLimitApi.cls-meta.xml
+force-app/main/default/classes/OASRateLimitApiTest.cls
+force-app/main/default/classes/OASRateLimitApiTest.cls-meta.xml
 force-app/main/default/classes/OASResponseMock.cls
 force-app/main/default/classes/OASResponseMock.cls-meta.xml
 force-app/main/default/classes/OASTest.cls

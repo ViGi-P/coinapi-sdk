@@ -16,7 +16,9 @@ Module : ExchangeRatesRealtimeREST.API
 module ExchangeRatesRealtimeREST.API
   ( module ExchangeRatesRealtimeREST.API.ExchangeRates
   , module ExchangeRatesRealtimeREST.API.Metadata
+  , module ExchangeRatesRealtimeREST.API.RateLimit
   ) where
 
 import ExchangeRatesRealtimeREST.API.ExchangeRates
 import ExchangeRatesRealtimeREST.API.Metadata
+import ExchangeRatesRealtimeREST.API.RateLimit

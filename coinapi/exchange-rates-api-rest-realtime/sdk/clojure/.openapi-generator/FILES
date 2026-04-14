@@ -4,6 +4,7 @@ git_push.sh
 project.clj
 src/exchange_rates_realtime_rest_api/api/exchange_rates.clj
 src/exchange_rates_realtime_rest_api/api/metadata.clj
+src/exchange_rates_realtime_rest_api/api/rate_limit.clj
 src/exchange_rates_realtime_rest_api/core.clj
 src/exchange_rates_realtime_rest_api/specs/v1/asset.clj
 src/exchange_rates_realtime_rest_api/specs/v1/chain_network_address.clj

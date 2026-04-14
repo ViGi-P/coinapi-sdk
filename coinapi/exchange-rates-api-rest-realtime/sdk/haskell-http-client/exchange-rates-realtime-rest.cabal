@@ -68,6 +68,7 @@ library
       ExchangeRatesRealtimeREST.API
       ExchangeRatesRealtimeREST.API.ExchangeRates
       ExchangeRatesRealtimeREST.API.Metadata
+      ExchangeRatesRealtimeREST.API.RateLimit
       ExchangeRatesRealtimeREST.Client
       ExchangeRatesRealtimeREST.Core
       ExchangeRatesRealtimeREST.Logging

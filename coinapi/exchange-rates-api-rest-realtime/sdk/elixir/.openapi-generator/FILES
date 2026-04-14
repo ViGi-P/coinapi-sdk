@@ -6,6 +6,7 @@ config/config.exs
 config/runtime.exs
 lib/exchange_rates_realtime_restapi/api/exchange_rates.ex
 lib/exchange_rates_realtime_restapi/api/metadata.ex
+lib/exchange_rates_realtime_restapi/api/rate_limit.ex
 lib/exchange_rates_realtime_restapi/connection.ex
 lib/exchange_rates_realtime_restapi/deserializer.ex
 lib/exchange_rates_realtime_restapi/model/v1_asset.ex

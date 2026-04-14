@@ -300,7 +300,9 @@ case $state in
             "getSpecificRate[Get specific rate]" \
             "v1ExchangerateAssetIdBaseGet[Get all current rates]"             "v1AssetsAssetIdGet[List all assets by asset ID]" \
             "v1AssetsGet[List all assets]" \
-            "v1AssetsIconsSizeGet[List all asset icons]" \
+            "v1AssetsIconsSizeGet[List all asset icons]"             "internalRatelimitWsconconApikeyGet[]" \
+            "internalRatelimitWshelloIpGet[]" \
+            "internalRatelimitWsreqIpGet[]" \
 
     _arguments "(--help)--help[Print information about operation]"
 
@@ -345,6 +347,24 @@ case $state in
         _op_arguments=(
           "size=:[PATH] The size of the icons."
                     )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      internalRatelimitWsconconApikeyGet)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      internalRatelimitWshelloIpGet)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      internalRatelimitWsreqIpGet)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
     esac

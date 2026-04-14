@@ -4,6 +4,7 @@ README.md
 build.gradle
 docs/ExchangeRatesApi.md
 docs/MetadataApi.md
+docs/RateLimitApi.md
 docs/V1Asset.md
 docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
@@ -24,6 +25,7 @@ src/main/java/org/openapitools/client/JsonUtil.java
 src/main/java/org/openapitools/client/Pair.java
 src/main/java/org/openapitools/client/api/ExchangeRatesApi.java
 src/main/java/org/openapitools/client/api/MetadataApi.java
+src/main/java/org/openapitools/client/api/RateLimitApi.java
 src/main/java/org/openapitools/client/auth/ApiKeyAuth.java
 src/main/java/org/openapitools/client/auth/Authentication.java
 src/main/java/org/openapitools/client/auth/HttpBasicAuth.java
