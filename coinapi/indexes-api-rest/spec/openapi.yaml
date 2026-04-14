@@ -1269,11 +1269,16 @@ security:
 tags:
   - name: Multi-Asset Weights
     description: Use these endpoints to inspect and manage the asset weights used by multi-asset indexes.
+    x-displayName: Multi-Asset Weights
   - name: Metadata
     description: Use these endpoints to discover supported exchanges used by index-related datasets.
+    x-displayName: Metadata
   - name: Periods
     description: Use these endpoints to discover supported time periods for index time-series requests.
+    x-displayName: Periods
   - name: Indexes
     description: 'Use these endpoints to explore available indexes and retrieve current, historical, and time-series index values.'
+    x-displayName: Indexes
   - name: Index Input Data
     description: Use these endpoints to inspect and manage the input data that feeds index definitions.
+    x-displayName: Index Input Data
