@@ -58,32 +58,32 @@ cleanup() -> ok.
 initial_state() -> #{}.
 
 %%==============================================================================
-%% v1_assets_asset_id_get
+%% internal_ratelimit_wsconcon_apikey_get
 %%==============================================================================
 
-v1_assets_asset_id_get(AssetId) ->
-  openapi_api:v1_assets_asset_id_get(AssetId).
+internal_ratelimit_wsconcon_apikey_get() ->
+  openapi_api:internal_ratelimit_wsconcon_apikey_get().
 
-v1_assets_asset_id_get_args(_S) ->
-  [binary()].
-
-%%==============================================================================
-%% v1_assets_get
-%%==============================================================================
-
-v1_assets_get() ->
-  openapi_api:v1_assets_get().
-
-v1_assets_get_args(_S) ->
+internal_ratelimit_wsconcon_apikey_get_args(_S) ->
   [].
 
 %%==============================================================================
-%% v1_assets_icons_size_get
+%% internal_ratelimit_wshello_ip_get
 %%==============================================================================
 
-v1_assets_icons_size_get(Size) ->
-  openapi_api:v1_assets_icons_size_get(Size).
+internal_ratelimit_wshello_ip_get() ->
+  openapi_api:internal_ratelimit_wshello_ip_get().
 
-v1_assets_icons_size_get_args(_S) ->
-  [integer()].
+internal_ratelimit_wshello_ip_get_args(_S) ->
+  [].
+
+%%==============================================================================
+%% internal_ratelimit_wsreq_ip_get
+%%==============================================================================
+
+internal_ratelimit_wsreq_ip_get() ->
+  openapi_api:internal_ratelimit_wsreq_ip_get().
+
+internal_ratelimit_wsreq_ip_get_args(_S) ->
+  [].
 

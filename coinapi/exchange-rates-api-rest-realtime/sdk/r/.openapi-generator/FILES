@@ -10,6 +10,7 @@ R/api_client.R
 R/api_response.R
 R/exchange_rates_api.R
 R/metadata_api.R
+R/rate_limit_api.R
 R/v1_asset.R
 R/v1_chain_network_address.R
 R/v1_exchange_rate.R
@@ -19,6 +20,7 @@ R/v1_icon.R
 README.md
 docs/ExchangeRatesApi.md
 docs/MetadataApi.md
+docs/RateLimitApi.md
 docs/V1Asset.md
 docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
@@ -29,6 +31,7 @@ git_push.sh
 tests/testthat.R
 tests/testthat/test_exchange_rates_api.R
 tests/testthat/test_metadata_api.R
+tests/testthat/test_rate_limit_api.R
 tests/testthat/test_v1_asset.R
 tests/testthat/test_v1_chain_network_address.R
 tests/testthat/test_v1_exchange_rate.R

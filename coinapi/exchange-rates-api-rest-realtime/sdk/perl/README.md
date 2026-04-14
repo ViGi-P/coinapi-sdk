@@ -234,6 +234,7 @@ To load the API packages:
 ```perl
 use WWW::OpenAPIClient::ExchangeRatesApi;
 use WWW::OpenAPIClient::MetadataApi;
+use WWW::OpenAPIClient::RateLimitApi;
 
 ```
 
@@ -258,6 +259,7 @@ use warnings;
 # load the API package
 use WWW::OpenAPIClient::ExchangeRatesApi;
 use WWW::OpenAPIClient::MetadataApi;
+use WWW::OpenAPIClient::RateLimitApi;
 
 # load the models
 use WWW::OpenAPIClient::Object::V1Asset;
@@ -302,6 +304,9 @@ Class | Method | HTTP request | Description
 *MetadataApi* | [**v1_assets_asset_id_get**](docs/MetadataApi.md#v1_assets_asset_id_get) | **GET** /v1/assets/{asset_id} | List all assets by asset ID
 *MetadataApi* | [**v1_assets_get**](docs/MetadataApi.md#v1_assets_get) | **GET** /v1/assets | List all assets
 *MetadataApi* | [**v1_assets_icons_size_get**](docs/MetadataApi.md#v1_assets_icons_size_get) | **GET** /v1/assets/icons/{size} | List all asset icons
+*RateLimitApi* | [**internal_ratelimit_wsconcon_apikey_get**](docs/RateLimitApi.md#internal_ratelimit_wsconcon_apikey_get) | **GET** /internal/ratelimit/wsconcon/apikey | 
+*RateLimitApi* | [**internal_ratelimit_wshello_ip_get**](docs/RateLimitApi.md#internal_ratelimit_wshello_ip_get) | **GET** /internal/ratelimit/wshello/ip | 
+*RateLimitApi* | [**internal_ratelimit_wsreq_ip_get**](docs/RateLimitApi.md#internal_ratelimit_wsreq_ip_get) | **GET** /internal/ratelimit/wsreq/ip | 
 
 
 # DOCUMENTATION FOR MODELS

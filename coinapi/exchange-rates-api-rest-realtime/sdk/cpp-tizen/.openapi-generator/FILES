@@ -13,6 +13,8 @@ src/MetadataManager.h
 src/NetClient.cpp
 src/NetClient.h
 src/Object.h
+src/RateLimitManager.cpp
+src/RateLimitManager.h
 src/RequestInfo.h
 src/V1Asset.cpp
 src/V1Asset.h

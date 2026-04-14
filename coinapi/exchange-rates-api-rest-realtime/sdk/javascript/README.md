@@ -137,6 +137,9 @@ Class | Method | HTTP request | Description
 *ExchangeRatesRealtimeRestApi.MetadataApi* | [**v1AssetsAssetIdGet**](docs/MetadataApi.md#v1AssetsAssetIdGet) | **GET** /v1/assets/{asset_id} | List all assets by asset ID
 *ExchangeRatesRealtimeRestApi.MetadataApi* | [**v1AssetsGet**](docs/MetadataApi.md#v1AssetsGet) | **GET** /v1/assets | List all assets
 *ExchangeRatesRealtimeRestApi.MetadataApi* | [**v1AssetsIconsSizeGet**](docs/MetadataApi.md#v1AssetsIconsSizeGet) | **GET** /v1/assets/icons/{size} | List all asset icons
+*ExchangeRatesRealtimeRestApi.RateLimitApi* | [**internalRatelimitWsconconApikeyGet**](docs/RateLimitApi.md#internalRatelimitWsconconApikeyGet) | **GET** /internal/ratelimit/wsconcon/apikey | 
+*ExchangeRatesRealtimeRestApi.RateLimitApi* | [**internalRatelimitWshelloIpGet**](docs/RateLimitApi.md#internalRatelimitWshelloIpGet) | **GET** /internal/ratelimit/wshello/ip | 
+*ExchangeRatesRealtimeRestApi.RateLimitApi* | [**internalRatelimitWsreqIpGet**](docs/RateLimitApi.md#internalRatelimitWsreqIpGet) | **GET** /internal/ratelimit/wsreq/ip | 
 
 
 ## Documentation for Models

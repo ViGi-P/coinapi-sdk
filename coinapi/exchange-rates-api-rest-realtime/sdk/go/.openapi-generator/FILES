@@ -5,10 +5,12 @@ README.md
 api/openapi.yaml
 api_exchange_rates.go
 api_metadata.go
+api_rate_limit.go
 client.go
 configuration.go
 docs/ExchangeRatesAPI.md
 docs/MetadataAPI.md
+docs/RateLimitAPI.md
 docs/V1Asset.md
 docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
@@ -27,4 +29,5 @@ model_v1_icon.go
 response.go
 test/api_exchange_rates_test.go
 test/api_metadata_test.go
+test/api_rate_limit_test.go
 utils.go

@@ -12,6 +12,7 @@ export 'package:openapi/src/model/date.dart';
 
 export 'package:openapi/src/api/exchange_rates_api.dart';
 export 'package:openapi/src/api/metadata_api.dart';
+export 'package:openapi/src/api/rate_limit_api.dart';
 
 export 'package:openapi/src/model/v1_asset.dart';
 export 'package:openapi/src/model/v1_chain_network_address.dart';

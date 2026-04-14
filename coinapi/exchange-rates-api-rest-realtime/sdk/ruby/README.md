@@ -96,6 +96,9 @@ Class | Method | HTTP request | Description
 *OpenapiClient::MetadataApi* | [**v1_assets_asset_id_get**](docs/MetadataApi.md#v1_assets_asset_id_get) | **GET** /v1/assets/{asset_id} | List all assets by asset ID
 *OpenapiClient::MetadataApi* | [**v1_assets_get**](docs/MetadataApi.md#v1_assets_get) | **GET** /v1/assets | List all assets
 *OpenapiClient::MetadataApi* | [**v1_assets_icons_size_get**](docs/MetadataApi.md#v1_assets_icons_size_get) | **GET** /v1/assets/icons/{size} | List all asset icons
+*OpenapiClient::RateLimitApi* | [**internal_ratelimit_wsconcon_apikey_get**](docs/RateLimitApi.md#internal_ratelimit_wsconcon_apikey_get) | **GET** /internal/ratelimit/wsconcon/apikey | 
+*OpenapiClient::RateLimitApi* | [**internal_ratelimit_wshello_ip_get**](docs/RateLimitApi.md#internal_ratelimit_wshello_ip_get) | **GET** /internal/ratelimit/wshello/ip | 
+*OpenapiClient::RateLimitApi* | [**internal_ratelimit_wsreq_ip_get**](docs/RateLimitApi.md#internal_ratelimit_wsreq_ip_get) | **GET** /internal/ratelimit/wsreq/ip | 
 
 
 ## Documentation for Models

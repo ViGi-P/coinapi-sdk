@@ -6,6 +6,7 @@ bin/autodoc
 cpanfile
 docs/ExchangeRatesApi.md
 docs/MetadataApi.md
+docs/RateLimitApi.md
 docs/V1Asset.md
 docs/V1ChainNetworkAddress.md
 docs/V1ExchangeRate.md
@@ -24,10 +25,12 @@ lib/WWW/OpenAPIClient/Object/V1ExchangeRate.pm
 lib/WWW/OpenAPIClient/Object/V1ExchangeRates.pm
 lib/WWW/OpenAPIClient/Object/V1ExchangeRatesRate.pm
 lib/WWW/OpenAPIClient/Object/V1Icon.pm
+lib/WWW/OpenAPIClient/RateLimitApi.pm
 lib/WWW/OpenAPIClient/Role.pm
 lib/WWW/OpenAPIClient/Role/AutoDoc.pm
 t/ExchangeRatesApiTest.t
 t/MetadataApiTest.t
+t/RateLimitApiTest.t
 t/V1AssetTest.t
 t/V1ChainNetworkAddressTest.t
 t/V1ExchangeRateTest.t

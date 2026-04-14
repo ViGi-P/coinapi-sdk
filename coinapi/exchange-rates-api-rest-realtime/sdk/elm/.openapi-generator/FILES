@@ -6,4 +6,5 @@ src/Api.elm
 src/Api/Data.elm
 src/Api/Request/ExchangeRates.elm
 src/Api/Request/Metadata.elm
+src/Api/Request/RateLimit.elm
 src/Api/Time.elm

@@ -55,6 +55,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Client
             _services.AddSingleton<IApiFactory, ApiFactory>();
             _services.AddSingleton<ExchangeRatesApiEvents>();
             _services.AddSingleton<MetadataApiEvents>();
+            _services.AddSingleton<RateLimitApiEvents>();
         }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Client
 
             builders.Add(_services.AddHttpClient<IExchangeRatesApi, ExchangeRatesApi>("APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api.IExchangeRatesApi", client));
             builders.Add(_services.AddHttpClient<IMetadataApi, MetadataApi>("APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api.IMetadataApi", client));
+            builders.Add(_services.AddHttpClient<IRateLimitApi, RateLimitApi>("APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Api.IRateLimitApi", client));
             
             if (builder != null)
                 foreach (IHttpClientBuilder instance in builders)

@@ -72,6 +72,9 @@ Class | Method | HTTP request | Description
 [*MetadataApi*](doc/MetadataApi.md) | [**v1AssetsAssetIdGet**](doc/MetadataApi.md#v1assetsassetidget) | **GET** /v1/assets/{asset_id} | List all assets by asset ID
 [*MetadataApi*](doc/MetadataApi.md) | [**v1AssetsGet**](doc/MetadataApi.md#v1assetsget) | **GET** /v1/assets | List all assets
 [*MetadataApi*](doc/MetadataApi.md) | [**v1AssetsIconsSizeGet**](doc/MetadataApi.md#v1assetsiconssizeget) | **GET** /v1/assets/icons/{size} | List all asset icons
+[*RateLimitApi*](doc/RateLimitApi.md) | [**internalRatelimitWsconconApikeyGet**](doc/RateLimitApi.md#internalratelimitwsconconapikeyget) | **GET** /internal/ratelimit/wsconcon/apikey | 
+[*RateLimitApi*](doc/RateLimitApi.md) | [**internalRatelimitWshelloIpGet**](doc/RateLimitApi.md#internalratelimitwshelloipget) | **GET** /internal/ratelimit/wshello/ip | 
+[*RateLimitApi*](doc/RateLimitApi.md) | [**internalRatelimitWsreqIpGet**](doc/RateLimitApi.md#internalratelimitwsreqipget) | **GET** /internal/ratelimit/wsreq/ip | 
 
 
 ## Documentation For Models

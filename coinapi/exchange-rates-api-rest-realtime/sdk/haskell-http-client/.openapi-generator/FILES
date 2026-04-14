@@ -9,6 +9,7 @@ lib/ExchangeRatesRealtimeREST.hs
 lib/ExchangeRatesRealtimeREST/API.hs
 lib/ExchangeRatesRealtimeREST/API/ExchangeRates.hs
 lib/ExchangeRatesRealtimeREST/API/Metadata.hs
+lib/ExchangeRatesRealtimeREST/API/RateLimit.hs
 lib/ExchangeRatesRealtimeREST/Client.hs
 lib/ExchangeRatesRealtimeREST/Core.hs
 lib/ExchangeRatesRealtimeREST/Logging.hs

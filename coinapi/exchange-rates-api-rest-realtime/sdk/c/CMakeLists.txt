@@ -56,6 +56,7 @@ set(SRCS
     model/v1_icon.c
     api/ExchangeRatesAPI.c
     api/MetadataAPI.c
+    api/RateLimitAPI.c
 
 )
 
@@ -75,6 +76,7 @@ set(HDRS
     model/v1_icon.h
     api/ExchangeRatesAPI.h
     api/MetadataAPI.h
+    api/RateLimitAPI.h
 
 )
 
@@ -162,6 +164,7 @@ set(HDRS "")
 #set(SRCS
 #    unit-tests/manual-ExchangeRatesAPI.c
 #    unit-tests/manual-MetadataAPI.c
+#    unit-tests/manual-RateLimitAPI.c
 #)
 
 ##set header files

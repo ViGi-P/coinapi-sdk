@@ -74,6 +74,9 @@ _()
     operations["v1AssetsAssetIdGet"]=1
     operations["v1AssetsGet"]=1
     operations["v1AssetsIconsSizeGet"]=1
+    operations["internalRatelimitWsconconApikeyGet"]=1
+    operations["internalRatelimitWshelloIpGet"]=1
+    operations["internalRatelimitWsreqIpGet"]=1
 
     # An associative array of operations to their parameters
     # Only include path, query and header parameters
@@ -83,6 +86,9 @@ _()
     operation_parameters["v1AssetsAssetIdGet"]="asset_id= "
     operation_parameters["v1AssetsGet"]="filter_asset_id= "
     operation_parameters["v1AssetsIconsSizeGet"]="size= "
+    operation_parameters["internalRatelimitWsconconApikeyGet"]=""
+    operation_parameters["internalRatelimitWshelloIpGet"]=""
+    operation_parameters["internalRatelimitWsreqIpGet"]=""
 
     # An associative array of possible values for enum parameters
     declare -A operation_parameters_enum_values

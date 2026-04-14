@@ -2,6 +2,8 @@ export * from './exchangeRatesApi';
 import { ExchangeRatesApi } from './exchangeRatesApi';
 export * from './metadataApi';
 import { MetadataApi } from './metadataApi';
+export * from './rateLimitApi';
+import { RateLimitApi } from './rateLimitApi';
 import * as http from 'http';
 
 export class HttpError extends Error {
@@ -13,4 +15,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [ExchangeRatesApi, MetadataApi];
+export const APIS = [ExchangeRatesApi, MetadataApi, RateLimitApi];

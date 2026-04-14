@@ -88,6 +88,9 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Test.Api
 
             var metadataApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IMetadataApi>();
             Assert.True(metadataApi.HttpClient.BaseAddress != null);
+
+            var rateLimitApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IRateLimitApi>();
+            Assert.True(rateLimitApi.HttpClient.BaseAddress != null);
         }
 
         /// <summary>
@@ -101,6 +104,9 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Test.Api
 
             var metadataApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IMetadataApi>();
             Assert.True(metadataApi.HttpClient.BaseAddress != null);
+
+            var rateLimitApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IRateLimitApi>();
+            Assert.True(rateLimitApi.HttpClient.BaseAddress != null);
         }
 
         /// <summary>
@@ -114,6 +120,9 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Test.Api
             
             var metadataApi = _hostUsingAddWithAClient.Services.GetRequiredService<IMetadataApi>();
             Assert.True(metadataApi.HttpClient.BaseAddress != null);
+            
+            var rateLimitApi = _hostUsingAddWithAClient.Services.GetRequiredService<IRateLimitApi>();
+            Assert.True(rateLimitApi.HttpClient.BaseAddress != null);
         }
 
         /// <summary>
@@ -127,6 +136,9 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Realtime.REST.V1.Test.Api
 
             var metadataApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IMetadataApi>();
             Assert.True(metadataApi.HttpClient.BaseAddress != null);
+
+            var rateLimitApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IRateLimitApi>();
+            Assert.True(rateLimitApi.HttpClient.BaseAddress != null);
         }
     }
 }
