@@ -42,7 +42,7 @@ import com.squareup.moshi.JsonClass
  * @param optionTypeIsCall Indicates whether the option type is a call.
  * @param optionStrikePrice The strike price for options.
  * @param optionContractUnit The contract unit for options.
- * @param optionExerciseStyle The exercise style for options.
+ * @param optionExerciseStyle The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
  * @param optionExpirationTime The expiration time for options.
  * @param contractDeliveryTime The delivery time for contracts.
  * @param contractUnit The contract unit for contracts.
@@ -73,8 +73,14 @@ import com.squareup.moshi.JsonClass
  * @param assetIdQuoteExchange The quote asset identifier in the exchange.
  * @param pricePrecision The price precision.
  * @param sizePrecision The size precision.
- * @param rawKvp Not normalized raw kvp data.
+ * @param rawKvp Key Value Pair store with raw data from the data source.
+ * @param futureIsInverse Indicates whether the futures contract is inverse (coin-margined).
+ * @param futureIsQuanto Indicates whether the futures contract is quanto.
  * @param volumeToUsd Volume unit in USD.
+ * @param optionBarrierUpPrice The up barrier price for barrier options.
+ * @param optionBarrierUpType The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+ * @param optionBarrierDownPrice The down barrier price for barrier options.
+ * @param optionBarrierDownType The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
  * @param symbolIdInt The symbol identifier in integer immutable format, used to correlate data across different APIs.
  */
 
@@ -129,7 +135,7 @@ data class V1Symbol (
     @Json(name = "option_contract_unit")
     val optionContractUnit: kotlin.Double? = null,
 
-    /* The exercise style for options. */
+    /* The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. */
     @Json(name = "option_exercise_style")
     val optionExerciseStyle: kotlin.String? = null,
 
@@ -251,13 +257,37 @@ data class V1Symbol (
     @Json(name = "size_precision")
     val sizePrecision: kotlin.Double? = null,
 
-    /* Not normalized raw kvp data. */
+    /* Key Value Pair store with raw data from the data source. */
     @Json(name = "raw_kvp")
     val rawKvp: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+
+    /* Indicates whether the futures contract is inverse (coin-margined). */
+    @Json(name = "future_is_inverse")
+    val futureIsInverse: kotlin.Boolean? = null,
+
+    /* Indicates whether the futures contract is quanto. */
+    @Json(name = "future_is_quanto")
+    val futureIsQuanto: kotlin.Boolean? = null,
 
     /* Volume unit in USD. */
     @Json(name = "volume_to_usd")
     val volumeToUsd: kotlin.Double? = null,
+
+    /* The up barrier price for barrier options. */
+    @Json(name = "option_barrier_up_price")
+    val optionBarrierUpPrice: kotlin.Double? = null,
+
+    /* The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. */
+    @Json(name = "option_barrier_up_type")
+    val optionBarrierUpType: kotlin.String? = null,
+
+    /* The down barrier price for barrier options. */
+    @Json(name = "option_barrier_down_price")
+    val optionBarrierDownPrice: kotlin.Double? = null,
+
+    /* The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. */
+    @Json(name = "option_barrier_down_type")
+    val optionBarrierDownType: kotlin.String? = null,
 
     /* The symbol identifier in integer immutable format, used to correlate data across different APIs. */
     @Json(name = "symbol_id_int")

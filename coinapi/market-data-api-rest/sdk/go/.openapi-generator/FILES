@@ -19,8 +19,8 @@ docs/ExchangeRatesAPI.md
 docs/MetadataAPI.md
 docs/MetricsV1API.md
 docs/MetricsV2API.md
-docs/ModelsExchangeTimeseriesItem.md
-docs/OhlcvAPI.md
+docs/OHLCVAPI.md
+docs/OhlcvExchangeTimeseriesItem.md
 docs/OptionsAPI.md
 docs/OptionsOptionExchangeGroup.md
 docs/OptionsStrike.md
@@ -56,7 +56,7 @@ docs/V1Trade.md
 git_push.sh
 go.mod
 go.sum
-model_models_exchange_timeseries_item.go
+model_ohlcv_exchange_timeseries_item.go
 model_options_option_exchange_group.go
 model_options_strike.go
 model_v1_asset.go

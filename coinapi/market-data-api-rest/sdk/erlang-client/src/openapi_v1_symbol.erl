@@ -49,7 +49,13 @@
        'price_precision' => float(),
        'size_precision' => float(),
        'raw_kvp' => maps:map(),
+       'future_is_inverse' => boolean(),
+       'future_is_quanto' => boolean(),
        'volume_to_usd' => float(),
+       'option_barrier_up_price' => float(),
+       'option_barrier_up_type' => binary(),
+       'option_barrier_down_price' => float(),
+       'option_barrier_down_type' => binary(),
        'symbol_id_int' => integer()
      }.
 
@@ -97,7 +103,13 @@ encode(#{ 'symbol_id' := SymbolId,
           'price_precision' := PricePrecision,
           'size_precision' := SizePrecision,
           'raw_kvp' := RawKvp,
+          'future_is_inverse' := FutureIsInverse,
+          'future_is_quanto' := FutureIsQuanto,
           'volume_to_usd' := VolumeToUsd,
+          'option_barrier_up_price' := OptionBarrierUpPrice,
+          'option_barrier_up_type' := OptionBarrierUpType,
+          'option_barrier_down_price' := OptionBarrierDownPrice,
+          'option_barrier_down_type' := OptionBarrierDownType,
           'symbol_id_int' := SymbolIdInt
         }) ->
     #{ 'symbol_id' => SymbolId,
@@ -144,6 +156,12 @@ encode(#{ 'symbol_id' := SymbolId,
        'price_precision' => PricePrecision,
        'size_precision' => SizePrecision,
        'raw_kvp' => RawKvp,
+       'future_is_inverse' => FutureIsInverse,
+       'future_is_quanto' => FutureIsQuanto,
        'volume_to_usd' => VolumeToUsd,
+       'option_barrier_up_price' => OptionBarrierUpPrice,
+       'option_barrier_up_type' => OptionBarrierUpType,
+       'option_barrier_down_price' => OptionBarrierDownPrice,
+       'option_barrier_down_type' => OptionBarrierDownType,
        'symbol_id_int' => SymbolIdInt
      }.

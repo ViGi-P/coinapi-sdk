@@ -6,8 +6,8 @@ docs/ExchangeRatesApi.md
 docs/MetadataApi.md
 docs/MetricsV1Api.md
 docs/MetricsV2Api.md
-docs/ModelsExchangeTimeseriesItem.md
-docs/OhlcvApi.md
+docs/OHLCVApi.md
+docs/OhlcvExchangeTimeseriesItem.md
 docs/OptionsApi.md
 docs/OptionsOptionExchangeGroup.md
 docs/OptionsStrike.md
@@ -49,7 +49,7 @@ src/main/scala/org/openapitools/client/api/ExchangeRatesApi.scala
 src/main/scala/org/openapitools/client/api/MetadataApi.scala
 src/main/scala/org/openapitools/client/api/MetricsV1Api.scala
 src/main/scala/org/openapitools/client/api/MetricsV2Api.scala
-src/main/scala/org/openapitools/client/api/OhlcvApi.scala
+src/main/scala/org/openapitools/client/api/OHLCVApi.scala
 src/main/scala/org/openapitools/client/api/OptionsApi.scala
 src/main/scala/org/openapitools/client/api/OrderBookApi.scala
 src/main/scala/org/openapitools/client/api/OrderBookL3Api.scala

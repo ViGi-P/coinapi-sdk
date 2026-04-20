@@ -16,7 +16,7 @@
 | **option_type_is_call** | **Boolean** | Indicates whether the option type is a call. | [optional] |
 | **option_strike_price** | **Float** | The strike price for options. | [optional] |
 | **option_contract_unit** | **Float** | The contract unit for options. | [optional] |
-| **option_exercise_style** | **String** | The exercise style for options. | [optional] |
+| **option_exercise_style** | **String** | The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. | [optional] |
 | **option_expiration_time** | **Time** | The expiration time for options. | [optional] |
 | **contract_delivery_time** | **Time** | The delivery time for contracts. | [optional] |
 | **contract_unit** | **Float** | The contract unit for contracts. | [optional] |
@@ -47,8 +47,14 @@
 | **asset_id_quote_exchange** | **String** | The quote asset identifier in the exchange. | [optional] |
 | **price_precision** | **Float** | The price precision. | [optional] |
 | **size_precision** | **Float** | The size precision. | [optional] |
-| **raw_kvp** | **Hash&lt;String, String&gt;** | Not normalized raw kvp data. | [optional] |
+| **raw_kvp** | **Hash&lt;String, String&gt;** | Key Value Pair store with raw data from the data source. | [optional] |
+| **future_is_inverse** | **Boolean** | Indicates whether the futures contract is inverse (coin-margined). | [optional] |
+| **future_is_quanto** | **Boolean** | Indicates whether the futures contract is quanto. | [optional] |
 | **volume_to_usd** | **Float** | Volume unit in USD. | [optional] |
+| **option_barrier_up_price** | **Float** | The up barrier price for barrier options. | [optional] |
+| **option_barrier_up_type** | **String** | The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. | [optional] |
+| **option_barrier_down_price** | **Float** | The down barrier price for barrier options. | [optional] |
+| **option_barrier_down_type** | **String** | The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. | [optional] |
 | **symbol_id_int** | **Integer** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional][readonly] |
 
 ## Example
@@ -101,7 +107,13 @@ instance = OpenapiClient::V1Symbol.new(
   price_precision: null,
   size_precision: null,
   raw_kvp: null,
+  future_is_inverse: null,
+  future_is_quanto: null,
   volume_to_usd: null,
+  option_barrier_up_price: null,
+  option_barrier_up_type: null,
+  option_barrier_down_price: null,
+  option_barrier_down_type: null,
   symbol_id_int: null
 )
 ```

@@ -1,0 +1,90 @@
+goog.provide('API.Client.Ohlcv.ExchangeTimeseriesItem');
+
+/**
+ * Represents a timeseries item with price and volume information.
+ * @record
+ */
+API.Client.OhlcvExchangeTimeseriesItem = function() {}
+
+/**
+ * The start time of the time period.
+ * @type {!Date}
+ * @export
+ */
+API.Client.OhlcvExchangeTimeseriesItem.prototype.timePeriodStart;
+
+/**
+ * The end time of the time period.
+ * @type {!Date}
+ * @export
+ */
+API.Client.OhlcvExchangeTimeseriesItem.prototype.timePeriodEnd;
+
+/**
+ * The time when the price opened.
+ * @type {!Date}
+ * @export
+ */
+API.Client.OhlcvExchangeTimeseriesItem.prototype.timeOpen;
+
+/**
+ * The time when the price closed.
+ * @type {!Date}
+ * @export
+ */
+API.Client.OhlcvExchangeTimeseriesItem.prototype.timeClose;
+
+/**
+ * The opening price.
+ * @type {!number}
+ * @export
+ */
+API.Client.OhlcvExchangeTimeseriesItem.prototype.priceOpen;
+
+/**
+ * The highest price during the time period.
+ * @type {!number}
+ * @export
+ */
+API.Client.OhlcvExchangeTimeseriesItem.prototype.priceHigh;
+
+/**
+ * The lowest price during the time period.
+ * @type {!number}
+ * @export
+ */
+API.Client.OhlcvExchangeTimeseriesItem.prototype.priceLow;
+
+/**
+ * The closing price.
+ * @type {!number}
+ * @export
+ */
+API.Client.OhlcvExchangeTimeseriesItem.prototype.priceClose;
+
+/**
+ * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+ * @type {!number}
+ * @export
+ */
+API.Client.OhlcvExchangeTimeseriesItem.prototype.volumeTraded;
+
+/**
+ * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+ * @type {!number}
+ * @export
+ */
+API.Client.OhlcvExchangeTimeseriesItem.prototype.tradesCount;
+
+/**
+ * @type {!string}
+ * @export
+ */
+API.Client.OhlcvExchangeTimeseriesItem.prototype.symbolIdExchange;
+
+/**
+ * @type {!string}
+ * @export
+ */
+API.Client.OhlcvExchangeTimeseriesItem.prototype.symbolIdCoinapi;
+

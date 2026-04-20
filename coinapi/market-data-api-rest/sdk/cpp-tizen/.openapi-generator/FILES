@@ -14,13 +14,13 @@ src/MetricsV1Manager.cpp
 src/MetricsV1Manager.h
 src/MetricsV2Manager.cpp
 src/MetricsV2Manager.h
-src/ModelsExchangeTimeseriesItem.cpp
-src/ModelsExchangeTimeseriesItem.h
 src/NetClient.cpp
 src/NetClient.h
+src/OHLCVManager.cpp
+src/OHLCVManager.h
 src/Object.h
-src/OhlcvManager.cpp
-src/OhlcvManager.h
+src/OhlcvExchangeTimeseriesItem.cpp
+src/OhlcvExchangeTimeseriesItem.h
 src/OptionsManager.cpp
 src/OptionsManager.h
 src/OptionsOptionExchangeGroup.cpp

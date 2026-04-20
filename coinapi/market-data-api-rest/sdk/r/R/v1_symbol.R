@@ -19,7 +19,7 @@
 #' @field option_type_is_call Indicates whether the option type is a call. character [optional]
 #' @field option_strike_price The strike price for options. numeric [optional]
 #' @field option_contract_unit The contract unit for options. numeric [optional]
-#' @field option_exercise_style The exercise style for options. character [optional]
+#' @field option_exercise_style The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. character [optional]
 #' @field option_expiration_time The expiration time for options. character [optional]
 #' @field contract_delivery_time The delivery time for contracts. character [optional]
 #' @field contract_unit The contract unit for contracts. numeric [optional]
@@ -50,8 +50,14 @@
 #' @field asset_id_quote_exchange The quote asset identifier in the exchange. character [optional]
 #' @field price_precision The price precision. numeric [optional]
 #' @field size_precision The size precision. numeric [optional]
-#' @field raw_kvp Not normalized raw kvp data. named list(character) [optional]
+#' @field raw_kvp Key Value Pair store with raw data from the data source. named list(character) [optional]
+#' @field future_is_inverse Indicates whether the futures contract is inverse (coin-margined). character [optional]
+#' @field future_is_quanto Indicates whether the futures contract is quanto. character [optional]
 #' @field volume_to_usd Volume unit in USD. numeric [optional]
+#' @field option_barrier_up_price The up barrier price for barrier options. numeric [optional]
+#' @field option_barrier_up_type The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. character [optional]
+#' @field option_barrier_down_price The down barrier price for barrier options. numeric [optional]
+#' @field option_barrier_down_type The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. character [optional]
 #' @field symbol_id_int The symbol identifier in integer immutable format, used to correlate data across different APIs. integer [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
@@ -103,7 +109,13 @@ V1Symbol <- R6::R6Class(
     `price_precision` = NULL,
     `size_precision` = NULL,
     `raw_kvp` = NULL,
+    `future_is_inverse` = NULL,
+    `future_is_quanto` = NULL,
     `volume_to_usd` = NULL,
+    `option_barrier_up_price` = NULL,
+    `option_barrier_up_type` = NULL,
+    `option_barrier_down_price` = NULL,
+    `option_barrier_down_type` = NULL,
     `symbol_id_int` = NULL,
 
     #' @description
@@ -121,7 +133,7 @@ V1Symbol <- R6::R6Class(
     #' @param option_type_is_call Indicates whether the option type is a call.
     #' @param option_strike_price The strike price for options.
     #' @param option_contract_unit The contract unit for options.
-    #' @param option_exercise_style The exercise style for options.
+    #' @param option_exercise_style The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
     #' @param option_expiration_time The expiration time for options.
     #' @param contract_delivery_time The delivery time for contracts.
     #' @param contract_unit The contract unit for contracts.
@@ -152,11 +164,17 @@ V1Symbol <- R6::R6Class(
     #' @param asset_id_quote_exchange The quote asset identifier in the exchange.
     #' @param price_precision The price precision.
     #' @param size_precision The size precision.
-    #' @param raw_kvp Not normalized raw kvp data.
+    #' @param raw_kvp Key Value Pair store with raw data from the data source.
+    #' @param future_is_inverse Indicates whether the futures contract is inverse (coin-margined).
+    #' @param future_is_quanto Indicates whether the futures contract is quanto.
     #' @param volume_to_usd Volume unit in USD.
+    #' @param option_barrier_up_price The up barrier price for barrier options.
+    #' @param option_barrier_up_type The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+    #' @param option_barrier_down_price The down barrier price for barrier options.
+    #' @param option_barrier_down_type The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
     #' @param symbol_id_int The symbol identifier in integer immutable format, used to correlate data across different APIs.
     #' @param ... Other optional arguments.
-    initialize = function(`symbol_id` = NULL, `exchange_id` = NULL, `symbol_type` = NULL, `asset_id_base` = NULL, `asset_id_quote` = NULL, `asset_id_unit` = NULL, `future_contract_unit` = NULL, `future_contract_unit_asset` = NULL, `future_delivery_time` = NULL, `option_type_is_call` = NULL, `option_strike_price` = NULL, `option_contract_unit` = NULL, `option_exercise_style` = NULL, `option_expiration_time` = NULL, `contract_delivery_time` = NULL, `contract_unit` = NULL, `contract_unit_asset` = NULL, `contract_id` = NULL, `contract_display_name` = NULL, `contract_display_description` = NULL, `data_start` = NULL, `data_end` = NULL, `data_quote_start` = NULL, `data_quote_end` = NULL, `data_orderbook_start` = NULL, `data_orderbook_end` = NULL, `data_trade_start` = NULL, `data_trade_end` = NULL, `index_id` = NULL, `index_display_name` = NULL, `index_display_description` = NULL, `volume_1hrs` = NULL, `volume_1hrs_usd` = NULL, `volume_1day` = NULL, `volume_1day_usd` = NULL, `volume_1mth` = NULL, `volume_1mth_usd` = NULL, `price` = NULL, `symbol_id_exchange` = NULL, `asset_id_base_exchange` = NULL, `asset_id_quote_exchange` = NULL, `price_precision` = NULL, `size_precision` = NULL, `raw_kvp` = NULL, `volume_to_usd` = NULL, `symbol_id_int` = NULL, ...) {
+    initialize = function(`symbol_id` = NULL, `exchange_id` = NULL, `symbol_type` = NULL, `asset_id_base` = NULL, `asset_id_quote` = NULL, `asset_id_unit` = NULL, `future_contract_unit` = NULL, `future_contract_unit_asset` = NULL, `future_delivery_time` = NULL, `option_type_is_call` = NULL, `option_strike_price` = NULL, `option_contract_unit` = NULL, `option_exercise_style` = NULL, `option_expiration_time` = NULL, `contract_delivery_time` = NULL, `contract_unit` = NULL, `contract_unit_asset` = NULL, `contract_id` = NULL, `contract_display_name` = NULL, `contract_display_description` = NULL, `data_start` = NULL, `data_end` = NULL, `data_quote_start` = NULL, `data_quote_end` = NULL, `data_orderbook_start` = NULL, `data_orderbook_end` = NULL, `data_trade_start` = NULL, `data_trade_end` = NULL, `index_id` = NULL, `index_display_name` = NULL, `index_display_description` = NULL, `volume_1hrs` = NULL, `volume_1hrs_usd` = NULL, `volume_1day` = NULL, `volume_1day_usd` = NULL, `volume_1mth` = NULL, `volume_1mth_usd` = NULL, `price` = NULL, `symbol_id_exchange` = NULL, `asset_id_base_exchange` = NULL, `asset_id_quote_exchange` = NULL, `price_precision` = NULL, `size_precision` = NULL, `raw_kvp` = NULL, `future_is_inverse` = NULL, `future_is_quanto` = NULL, `volume_to_usd` = NULL, `option_barrier_up_price` = NULL, `option_barrier_up_type` = NULL, `option_barrier_down_price` = NULL, `option_barrier_down_type` = NULL, `symbol_id_int` = NULL, ...) {
       if (!is.null(`symbol_id`)) {
         if (!(is.character(`symbol_id`) && length(`symbol_id`) == 1)) {
           stop(paste("Error! Invalid data for `symbol_id`. Must be a string:", `symbol_id`))
@@ -420,11 +438,47 @@ V1Symbol <- R6::R6Class(
         sapply(`raw_kvp`, function(x) stopifnot(is.character(x)))
         self$`raw_kvp` <- `raw_kvp`
       }
+      if (!is.null(`future_is_inverse`)) {
+        if (!(is.logical(`future_is_inverse`) && length(`future_is_inverse`) == 1)) {
+          stop(paste("Error! Invalid data for `future_is_inverse`. Must be a boolean:", `future_is_inverse`))
+        }
+        self$`future_is_inverse` <- `future_is_inverse`
+      }
+      if (!is.null(`future_is_quanto`)) {
+        if (!(is.logical(`future_is_quanto`) && length(`future_is_quanto`) == 1)) {
+          stop(paste("Error! Invalid data for `future_is_quanto`. Must be a boolean:", `future_is_quanto`))
+        }
+        self$`future_is_quanto` <- `future_is_quanto`
+      }
       if (!is.null(`volume_to_usd`)) {
         if (!(is.numeric(`volume_to_usd`) && length(`volume_to_usd`) == 1)) {
           stop(paste("Error! Invalid data for `volume_to_usd`. Must be a number:", `volume_to_usd`))
         }
         self$`volume_to_usd` <- `volume_to_usd`
+      }
+      if (!is.null(`option_barrier_up_price`)) {
+        if (!(is.numeric(`option_barrier_up_price`) && length(`option_barrier_up_price`) == 1)) {
+          stop(paste("Error! Invalid data for `option_barrier_up_price`. Must be a number:", `option_barrier_up_price`))
+        }
+        self$`option_barrier_up_price` <- `option_barrier_up_price`
+      }
+      if (!is.null(`option_barrier_up_type`)) {
+        if (!(is.character(`option_barrier_up_type`) && length(`option_barrier_up_type`) == 1)) {
+          stop(paste("Error! Invalid data for `option_barrier_up_type`. Must be a string:", `option_barrier_up_type`))
+        }
+        self$`option_barrier_up_type` <- `option_barrier_up_type`
+      }
+      if (!is.null(`option_barrier_down_price`)) {
+        if (!(is.numeric(`option_barrier_down_price`) && length(`option_barrier_down_price`) == 1)) {
+          stop(paste("Error! Invalid data for `option_barrier_down_price`. Must be a number:", `option_barrier_down_price`))
+        }
+        self$`option_barrier_down_price` <- `option_barrier_down_price`
+      }
+      if (!is.null(`option_barrier_down_type`)) {
+        if (!(is.character(`option_barrier_down_type`) && length(`option_barrier_down_type`) == 1)) {
+          stop(paste("Error! Invalid data for `option_barrier_down_type`. Must be a string:", `option_barrier_down_type`))
+        }
+        self$`option_barrier_down_type` <- `option_barrier_down_type`
       }
       if (!is.null(`symbol_id_int`)) {
         if (!(is.numeric(`symbol_id_int`) && length(`symbol_id_int`) == 1)) {
@@ -641,9 +695,33 @@ V1Symbol <- R6::R6Class(
         V1SymbolObject[["raw_kvp"]] <-
           self$`raw_kvp`
       }
+      if (!is.null(self$`future_is_inverse`)) {
+        V1SymbolObject[["future_is_inverse"]] <-
+          self$`future_is_inverse`
+      }
+      if (!is.null(self$`future_is_quanto`)) {
+        V1SymbolObject[["future_is_quanto"]] <-
+          self$`future_is_quanto`
+      }
       if (!is.null(self$`volume_to_usd`)) {
         V1SymbolObject[["volume_to_usd"]] <-
           self$`volume_to_usd`
+      }
+      if (!is.null(self$`option_barrier_up_price`)) {
+        V1SymbolObject[["option_barrier_up_price"]] <-
+          self$`option_barrier_up_price`
+      }
+      if (!is.null(self$`option_barrier_up_type`)) {
+        V1SymbolObject[["option_barrier_up_type"]] <-
+          self$`option_barrier_up_type`
+      }
+      if (!is.null(self$`option_barrier_down_price`)) {
+        V1SymbolObject[["option_barrier_down_price"]] <-
+          self$`option_barrier_down_price`
+      }
+      if (!is.null(self$`option_barrier_down_type`)) {
+        V1SymbolObject[["option_barrier_down_type"]] <-
+          self$`option_barrier_down_type`
       }
       if (!is.null(self$`symbol_id_int`)) {
         V1SymbolObject[["symbol_id_int"]] <-
@@ -791,8 +869,26 @@ V1Symbol <- R6::R6Class(
       if (!is.null(this_object$`raw_kvp`)) {
         self$`raw_kvp` <- ApiClient$new()$deserializeObj(this_object$`raw_kvp`, "map(character)", loadNamespace("openapi"))
       }
+      if (!is.null(this_object$`future_is_inverse`)) {
+        self$`future_is_inverse` <- this_object$`future_is_inverse`
+      }
+      if (!is.null(this_object$`future_is_quanto`)) {
+        self$`future_is_quanto` <- this_object$`future_is_quanto`
+      }
       if (!is.null(this_object$`volume_to_usd`)) {
         self$`volume_to_usd` <- this_object$`volume_to_usd`
+      }
+      if (!is.null(this_object$`option_barrier_up_price`)) {
+        self$`option_barrier_up_price` <- this_object$`option_barrier_up_price`
+      }
+      if (!is.null(this_object$`option_barrier_up_type`)) {
+        self$`option_barrier_up_type` <- this_object$`option_barrier_up_type`
+      }
+      if (!is.null(this_object$`option_barrier_down_price`)) {
+        self$`option_barrier_down_price` <- this_object$`option_barrier_down_price`
+      }
+      if (!is.null(this_object$`option_barrier_down_type`)) {
+        self$`option_barrier_down_type` <- this_object$`option_barrier_down_type`
       }
       if (!is.null(this_object$`symbol_id_int`)) {
         self$`symbol_id_int` <- this_object$`symbol_id_int`
@@ -862,7 +958,13 @@ V1Symbol <- R6::R6Class(
       self$`price_precision` <- this_object$`price_precision`
       self$`size_precision` <- this_object$`size_precision`
       self$`raw_kvp` <- ApiClient$new()$deserializeObj(this_object$`raw_kvp`, "map(character)", loadNamespace("openapi"))
+      self$`future_is_inverse` <- this_object$`future_is_inverse`
+      self$`future_is_quanto` <- this_object$`future_is_quanto`
       self$`volume_to_usd` <- this_object$`volume_to_usd`
+      self$`option_barrier_up_price` <- this_object$`option_barrier_up_price`
+      self$`option_barrier_up_type` <- this_object$`option_barrier_up_type`
+      self$`option_barrier_down_price` <- this_object$`option_barrier_down_price`
+      self$`option_barrier_down_type` <- this_object$`option_barrier_down_type`
       self$`symbol_id_int` <- this_object$`symbol_id_int`
       self
     },

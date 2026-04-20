@@ -103,7 +103,7 @@ test_that("option_contract_unit", {
 
 test_that("option_exercise_style", {
   # tests for the property `option_exercise_style` (character)
-  # The exercise style for options.
+  # The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`option_exercise_style`, "EXPECTED_RESULT")
@@ -349,10 +349,26 @@ test_that("size_precision", {
 
 test_that("raw_kvp", {
   # tests for the property `raw_kvp` (map(character))
-  # Not normalized raw kvp data.
+  # Key Value Pair store with raw data from the data source.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`raw_kvp`, "EXPECTED_RESULT")
+})
+
+test_that("future_is_inverse", {
+  # tests for the property `future_is_inverse` (character)
+  # Indicates whether the futures contract is inverse (coin-margined).
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`future_is_inverse`, "EXPECTED_RESULT")
+})
+
+test_that("future_is_quanto", {
+  # tests for the property `future_is_quanto` (character)
+  # Indicates whether the futures contract is quanto.
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`future_is_quanto`, "EXPECTED_RESULT")
 })
 
 test_that("volume_to_usd", {
@@ -361,6 +377,38 @@ test_that("volume_to_usd", {
 
   # uncomment below to test the property
   #expect_equal(model.instance$`volume_to_usd`, "EXPECTED_RESULT")
+})
+
+test_that("option_barrier_up_price", {
+  # tests for the property `option_barrier_up_price` (numeric)
+  # The up barrier price for barrier options.
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`option_barrier_up_price`, "EXPECTED_RESULT")
+})
+
+test_that("option_barrier_up_type", {
+  # tests for the property `option_barrier_up_type` (character)
+  # The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`option_barrier_up_type`, "EXPECTED_RESULT")
+})
+
+test_that("option_barrier_down_price", {
+  # tests for the property `option_barrier_down_price` (numeric)
+  # The down barrier price for barrier options.
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`option_barrier_down_price`, "EXPECTED_RESULT")
+})
+
+test_that("option_barrier_down_type", {
+  # tests for the property `option_barrier_down_type` (character)
+  # The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`option_barrier_down_type`, "EXPECTED_RESULT")
 })
 
 test_that("symbol_id_int", {

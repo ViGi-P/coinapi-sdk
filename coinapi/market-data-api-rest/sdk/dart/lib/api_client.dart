@@ -182,8 +182,8 @@ class ApiClient {
           return valueString == 'true' || valueString == '1';
         case 'DateTime':
           return value is DateTime ? value : DateTime.tryParse(value);
-        case 'ModelsExchangeTimeseriesItem':
-          return ModelsExchangeTimeseriesItem.fromJson(value);
+        case 'OhlcvExchangeTimeseriesItem':
+          return OhlcvExchangeTimeseriesItem.fromJson(value);
         case 'OptionsOptionExchangeGroup':
           return OptionsOptionExchangeGroup.fromJson(value);
         case 'OptionsStrike':

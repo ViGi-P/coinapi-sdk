@@ -116,7 +116,13 @@ private class OASV1SymbolTest {
         System.assertEquals('pricePrecision', x-property-mappings.get('price_precision'));
         System.assertEquals('sizePrecision', x-property-mappings.get('size_precision'));
         System.assertEquals('rawKvp', x-property-mappings.get('raw_kvp'));
+        System.assertEquals('futureIsInverse', x-property-mappings.get('future_is_inverse'));
+        System.assertEquals('futureIsQuanto', x-property-mappings.get('future_is_quanto'));
         System.assertEquals('volumeToUsd', x-property-mappings.get('volume_to_usd'));
+        System.assertEquals('optionBarrierUpPrice', x-property-mappings.get('option_barrier_up_price'));
+        System.assertEquals('optionBarrierUpType', x-property-mappings.get('option_barrier_up_type'));
+        System.assertEquals('optionBarrierDownPrice', x-property-mappings.get('option_barrier_down_price'));
+        System.assertEquals('optionBarrierDownType', x-property-mappings.get('option_barrier_down_type'));
         System.assertEquals('symbolIdInt', x-property-mappings.get('symbol_id_int'));
     }
 
@@ -167,7 +173,13 @@ private class OASV1SymbolTest {
         System.assertEquals(null, v1Symbol.assetIdQuoteExchange);
         System.assertEquals(null, v1Symbol.pricePrecision);
         System.assertEquals(null, v1Symbol.sizePrecision);
+        System.assertEquals(null, v1Symbol.futureIsInverse);
+        System.assertEquals(null, v1Symbol.futureIsQuanto);
         System.assertEquals(null, v1Symbol.volumeToUsd);
+        System.assertEquals(null, v1Symbol.optionBarrierUpPrice);
+        System.assertEquals(null, v1Symbol.optionBarrierUpType);
+        System.assertEquals(null, v1Symbol.optionBarrierDownPrice);
+        System.assertEquals(null, v1Symbol.optionBarrierDownType);
         System.assertEquals(null, v1Symbol.symbolIdInt);
     }
 }

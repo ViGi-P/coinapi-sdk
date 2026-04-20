@@ -1,4 +1,4 @@
-export * from './ModelsExchangeTimeseriesItem';
+export * from './OhlcvExchangeTimeseriesItem';
 export * from './OptionsOptionExchangeGroup';
 export * from './OptionsStrike';
 export * from './V1Asset';

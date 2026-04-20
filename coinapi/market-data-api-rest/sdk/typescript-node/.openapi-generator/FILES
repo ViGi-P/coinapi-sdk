@@ -6,7 +6,7 @@ api/exchangeRatesApi.ts
 api/metadataApi.ts
 api/metricsV1Api.ts
 api/metricsV2Api.ts
-api/ohlcvApi.ts
+api/oHLCVApi.ts
 api/optionsApi.ts
 api/orderBookApi.ts
 api/orderBookL3Api.ts
@@ -14,7 +14,7 @@ api/quotesApi.ts
 api/tradesApi.ts
 git_push.sh
 model/models.ts
-model/modelsExchangeTimeseriesItem.ts
+model/ohlcvExchangeTimeseriesItem.ts
 model/optionsOptionExchangeGroup.ts
 model/optionsStrike.ts
 model/v1Asset.ts

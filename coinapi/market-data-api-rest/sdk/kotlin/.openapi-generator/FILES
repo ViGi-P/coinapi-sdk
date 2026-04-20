@@ -5,8 +5,8 @@ docs/ExchangeRatesApi.md
 docs/MetadataApi.md
 docs/MetricsV1Api.md
 docs/MetricsV2Api.md
-docs/ModelsExchangeTimeseriesItem.md
-docs/OhlcvApi.md
+docs/OHLCVApi.md
+docs/OhlcvExchangeTimeseriesItem.md
 docs/OptionsApi.md
 docs/OptionsOptionExchangeGroup.md
 docs/OptionsStrike.md
@@ -48,7 +48,7 @@ src/main/kotlin/org/openapitools/client/apis/ExchangeRatesApi.kt
 src/main/kotlin/org/openapitools/client/apis/MetadataApi.kt
 src/main/kotlin/org/openapitools/client/apis/MetricsV1Api.kt
 src/main/kotlin/org/openapitools/client/apis/MetricsV2Api.kt
-src/main/kotlin/org/openapitools/client/apis/OhlcvApi.kt
+src/main/kotlin/org/openapitools/client/apis/OHLCVApi.kt
 src/main/kotlin/org/openapitools/client/apis/OptionsApi.kt
 src/main/kotlin/org/openapitools/client/apis/OrderBookApi.kt
 src/main/kotlin/org/openapitools/client/apis/OrderBookL3Api.kt
@@ -71,7 +71,7 @@ src/main/kotlin/org/openapitools/client/infrastructure/ResponseExtensions.kt
 src/main/kotlin/org/openapitools/client/infrastructure/Serializer.kt
 src/main/kotlin/org/openapitools/client/infrastructure/URIAdapter.kt
 src/main/kotlin/org/openapitools/client/infrastructure/UUIDAdapter.kt
-src/main/kotlin/org/openapitools/client/models/ModelsExchangeTimeseriesItem.kt
+src/main/kotlin/org/openapitools/client/models/OhlcvExchangeTimeseriesItem.kt
 src/main/kotlin/org/openapitools/client/models/OptionsOptionExchangeGroup.kt
 src/main/kotlin/org/openapitools/client/models/OptionsStrike.kt
 src/main/kotlin/org/openapitools/client/models/V1Asset.kt
@@ -103,13 +103,13 @@ src/test/kotlin/org/openapitools/client/apis/ExchangeRatesApiTest.kt
 src/test/kotlin/org/openapitools/client/apis/MetadataApiTest.kt
 src/test/kotlin/org/openapitools/client/apis/MetricsV1ApiTest.kt
 src/test/kotlin/org/openapitools/client/apis/MetricsV2ApiTest.kt
-src/test/kotlin/org/openapitools/client/apis/OhlcvApiTest.kt
+src/test/kotlin/org/openapitools/client/apis/OHLCVApiTest.kt
 src/test/kotlin/org/openapitools/client/apis/OptionsApiTest.kt
 src/test/kotlin/org/openapitools/client/apis/OrderBookApiTest.kt
 src/test/kotlin/org/openapitools/client/apis/OrderBookL3ApiTest.kt
 src/test/kotlin/org/openapitools/client/apis/QuotesApiTest.kt
 src/test/kotlin/org/openapitools/client/apis/TradesApiTest.kt
-src/test/kotlin/org/openapitools/client/models/ModelsExchangeTimeseriesItemTest.kt
+src/test/kotlin/org/openapitools/client/models/OhlcvExchangeTimeseriesItemTest.kt
 src/test/kotlin/org/openapitools/client/models/OptionsOptionExchangeGroupTest.kt
 src/test/kotlin/org/openapitools/client/models/OptionsStrikeTest.kt
 src/test/kotlin/org/openapitools/client/models/V1AssetTest.kt

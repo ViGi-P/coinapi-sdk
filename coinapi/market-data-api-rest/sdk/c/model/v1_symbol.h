@@ -63,7 +63,13 @@ typedef struct v1_symbol_t {
     double *price_precision; //numeric
     double *size_precision; //numeric
     list_t* raw_kvp; //map
+    int *future_is_inverse; //boolean
+    int *future_is_quanto; //boolean
     double *volume_to_usd; //numeric
+    double *option_barrier_up_price; //numeric
+    char *option_barrier_up_type; // string
+    double *option_barrier_down_price; //numeric
+    char *option_barrier_down_type; // string
     int *symbol_id_int; //numeric
 
     int _library_owned; // Is the library responsible for freeing this object?
@@ -114,7 +120,13 @@ __attribute__((deprecated)) v1_symbol_t *v1_symbol_create(
     double *price_precision,
     double *size_precision,
     list_t* raw_kvp,
+    int *future_is_inverse,
+    int *future_is_quanto,
     double *volume_to_usd,
+    double *option_barrier_up_price,
+    char *option_barrier_up_type,
+    double *option_barrier_down_price,
+    char *option_barrier_down_type,
     int *symbol_id_int
 );
 

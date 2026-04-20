@@ -11,7 +11,7 @@
             [coin-api-market-data-rest-api.specs.v1/order-book-depth :refer :all]
             [coin-api-market-data-rest-api.specs.v1/metric-info :refer :all]
             [coin-api-market-data-rest-api.specs.v1/exchange-rates :refer :all]
-            [coin-api-market-data-rest-api.specs.models/exchange-timeseries-item :refer :all]
+            [coin-api-market-data-rest-api.specs.ohlcv/exchange-timeseries-item :refer :all]
             [coin-api-market-data-rest-api.specs.v1/exchange :refer :all]
             [coin-api-market-data-rest-api.specs.v1/quote :refer :all]
             [coin-api-market-data-rest-api.specs.v1/symbol-mapping :refer :all]

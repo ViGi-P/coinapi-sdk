@@ -16,7 +16,7 @@ lib/coin_api_market_data_restapi/api/quotes.ex
 lib/coin_api_market_data_restapi/api/trades.ex
 lib/coin_api_market_data_restapi/connection.ex
 lib/coin_api_market_data_restapi/deserializer.ex
-lib/coin_api_market_data_restapi/model/models_exchange_timeseries_item.ex
+lib/coin_api_market_data_restapi/model/ohlcv_exchange_timeseries_item.ex
 lib/coin_api_market_data_restapi/model/options_option_exchange_group.ex
 lib/coin_api_market_data_restapi/model/options_strike.ex
 lib/coin_api_market_data_restapi/model/v1_asset.ex

@@ -11,8 +11,8 @@
 part of openapi.api;
 
 
-class OhlcvApi {
-  OhlcvApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
+class OHLCVApi {
+  OHLCVApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
@@ -82,7 +82,7 @@ class OhlcvApi {
   ///
   /// * [String] timeEnd (required):
   ///   Timeseries ending time in ISO 8601
-  Future<List<ModelsExchangeTimeseriesItem>?> v1OhlcvExchangesExchangeIdHistoryGet(String exchangeId, String periodId, String timeStart, String timeEnd,) async {
+  Future<List<OhlcvExchangeTimeseriesItem>?> v1OhlcvExchangesExchangeIdHistoryGet(String exchangeId, String periodId, String timeStart, String timeEnd,) async {
     final response = await v1OhlcvExchangesExchangeIdHistoryGetWithHttpInfo(exchangeId, periodId, timeStart, timeEnd,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -92,8 +92,8 @@ class OhlcvApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<ModelsExchangeTimeseriesItem>') as List)
-        .cast<ModelsExchangeTimeseriesItem>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<OhlcvExchangeTimeseriesItem>') as List)
+        .cast<OhlcvExchangeTimeseriesItem>()
         .toList(growable: false);
 
     }

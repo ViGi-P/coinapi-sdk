@@ -39,7 +39,7 @@ part 'api/order_book_l3_api.dart';
 part 'api/quotes_api.dart';
 part 'api/trades_api.dart';
 
-part 'model/models_exchange_timeseries_item.dart';
+part 'model/ohlcv_exchange_timeseries_item.dart';
 part 'model/options_option_exchange_group.dart';
 part 'model/options_strike.dart';
 part 'model/v1_asset.dart';

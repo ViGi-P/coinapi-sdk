@@ -24,7 +24,7 @@ part 'v1_symbol.g.dart';
 /// * [optionTypeIsCall] - Indicates whether the option type is a call.
 /// * [optionStrikePrice] - The strike price for options.
 /// * [optionContractUnit] - The contract unit for options.
-/// * [optionExerciseStyle] - The exercise style for options.
+/// * [optionExerciseStyle] - The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
 /// * [optionExpirationTime] - The expiration time for options.
 /// * [contractDeliveryTime] - The delivery time for contracts.
 /// * [contractUnit] - The contract unit for contracts.
@@ -55,8 +55,14 @@ part 'v1_symbol.g.dart';
 /// * [assetIdQuoteExchange] - The quote asset identifier in the exchange.
 /// * [pricePrecision] - The price precision.
 /// * [sizePrecision] - The size precision.
-/// * [rawKvp] - Not normalized raw kvp data.
+/// * [rawKvp] - Key Value Pair store with raw data from the data source.
+/// * [futureIsInverse] - Indicates whether the futures contract is inverse (coin-margined).
+/// * [futureIsQuanto] - Indicates whether the futures contract is quanto.
 /// * [volumeToUsd] - Volume unit in USD.
+/// * [optionBarrierUpPrice] - The up barrier price for barrier options.
+/// * [optionBarrierUpType] - The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+/// * [optionBarrierDownPrice] - The down barrier price for barrier options.
+/// * [optionBarrierDownType] - The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
 /// * [symbolIdInt] - The symbol identifier in integer immutable format, used to correlate data across different APIs.
 @BuiltValue()
 abstract class V1Symbol implements Built<V1Symbol, V1SymbolBuilder> {
@@ -108,7 +114,7 @@ abstract class V1Symbol implements Built<V1Symbol, V1SymbolBuilder> {
   @BuiltValueField(wireName: r'option_contract_unit')
   double? get optionContractUnit;
 
-  /// The exercise style for options.
+  /// The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
   @BuiltValueField(wireName: r'option_exercise_style')
   String? get optionExerciseStyle;
 
@@ -230,13 +236,37 @@ abstract class V1Symbol implements Built<V1Symbol, V1SymbolBuilder> {
   @BuiltValueField(wireName: r'size_precision')
   double? get sizePrecision;
 
-  /// Not normalized raw kvp data.
+  /// Key Value Pair store with raw data from the data source.
   @BuiltValueField(wireName: r'raw_kvp')
   BuiltMap<String, String>? get rawKvp;
+
+  /// Indicates whether the futures contract is inverse (coin-margined).
+  @BuiltValueField(wireName: r'future_is_inverse')
+  bool? get futureIsInverse;
+
+  /// Indicates whether the futures contract is quanto.
+  @BuiltValueField(wireName: r'future_is_quanto')
+  bool? get futureIsQuanto;
 
   /// Volume unit in USD.
   @BuiltValueField(wireName: r'volume_to_usd')
   double? get volumeToUsd;
+
+  /// The up barrier price for barrier options.
+  @BuiltValueField(wireName: r'option_barrier_up_price')
+  double? get optionBarrierUpPrice;
+
+  /// The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  @BuiltValueField(wireName: r'option_barrier_up_type')
+  String? get optionBarrierUpType;
+
+  /// The down barrier price for barrier options.
+  @BuiltValueField(wireName: r'option_barrier_down_price')
+  double? get optionBarrierDownPrice;
+
+  /// The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  @BuiltValueField(wireName: r'option_barrier_down_type')
+  String? get optionBarrierDownType;
 
   /// The symbol identifier in integer immutable format, used to correlate data across different APIs.
   @BuiltValueField(wireName: r'symbol_id_int')
@@ -573,11 +603,53 @@ class _$V1SymbolSerializer implements PrimitiveSerializer<V1Symbol> {
         specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(String)]),
       );
     }
+    if (object.futureIsInverse != null) {
+      yield r'future_is_inverse';
+      yield serializers.serialize(
+        object.futureIsInverse,
+        specifiedType: const FullType.nullable(bool),
+      );
+    }
+    if (object.futureIsQuanto != null) {
+      yield r'future_is_quanto';
+      yield serializers.serialize(
+        object.futureIsQuanto,
+        specifiedType: const FullType.nullable(bool),
+      );
+    }
     if (object.volumeToUsd != null) {
       yield r'volume_to_usd';
       yield serializers.serialize(
         object.volumeToUsd,
         specifiedType: const FullType.nullable(double),
+      );
+    }
+    if (object.optionBarrierUpPrice != null) {
+      yield r'option_barrier_up_price';
+      yield serializers.serialize(
+        object.optionBarrierUpPrice,
+        specifiedType: const FullType.nullable(double),
+      );
+    }
+    if (object.optionBarrierUpType != null) {
+      yield r'option_barrier_up_type';
+      yield serializers.serialize(
+        object.optionBarrierUpType,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.optionBarrierDownPrice != null) {
+      yield r'option_barrier_down_price';
+      yield serializers.serialize(
+        object.optionBarrierDownPrice,
+        specifiedType: const FullType.nullable(double),
+      );
+    }
+    if (object.optionBarrierDownType != null) {
+      yield r'option_barrier_down_type';
+      yield serializers.serialize(
+        object.optionBarrierDownType,
+        specifiedType: const FullType.nullable(String),
       );
     }
     if (object.symbolIdInt != null) {
@@ -962,6 +1034,22 @@ class _$V1SymbolSerializer implements PrimitiveSerializer<V1Symbol> {
           if (valueDes == null) continue;
           result.rawKvp.replace(valueDes);
           break;
+        case r'future_is_inverse':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
+          result.futureIsInverse = valueDes;
+          break;
+        case r'future_is_quanto':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(bool),
+          ) as bool?;
+          if (valueDes == null) continue;
+          result.futureIsQuanto = valueDes;
+          break;
         case r'volume_to_usd':
           final valueDes = serializers.deserialize(
             value,
@@ -969,6 +1057,38 @@ class _$V1SymbolSerializer implements PrimitiveSerializer<V1Symbol> {
           ) as double?;
           if (valueDes == null) continue;
           result.volumeToUsd = valueDes;
+          break;
+        case r'option_barrier_up_price':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(double),
+          ) as double?;
+          if (valueDes == null) continue;
+          result.optionBarrierUpPrice = valueDes;
+          break;
+        case r'option_barrier_up_type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.optionBarrierUpType = valueDes;
+          break;
+        case r'option_barrier_down_price':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(double),
+          ) as double?;
+          if (valueDes == null) continue;
+          result.optionBarrierDownPrice = valueDes;
+          break;
+        case r'option_barrier_down_type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.optionBarrierDownType = valueDes;
           break;
         case r'symbol_id_int':
           final valueDes = serializers.deserialize(

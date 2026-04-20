@@ -12,16 +12,16 @@ import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
 
-/// tests for OhlcvApi
+/// tests for OHLCVApi
 void main() {
-  // final instance = OhlcvApi();
+  // final instance = OHLCVApi();
 
-  group('tests for OhlcvApi', () {
+  group('tests for OHLCVApi', () {
     // Historical data by exchange
     //
     // Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange eg `BITSTAMP`              :::info The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. The difference between `time_end` and `time_start` cannot be higher than 1 day. The `period_id` cannot be higher than `1DAY`. :::
     //
-    //Future<List<ModelsExchangeTimeseriesItem>> v1OhlcvExchangesExchangeIdHistoryGet(String exchangeId, String periodId, String timeStart, String timeEnd) async
+    //Future<List<OhlcvExchangeTimeseriesItem>> v1OhlcvExchangesExchangeIdHistoryGet(String exchangeId, String periodId, String timeStart, String timeEnd) async
     test('test v1OhlcvExchangesExchangeIdHistoryGet', () async {
       // TODO
     });

@@ -8,8 +8,8 @@ docs/ExchangeRatesApi.md
 docs/MetadataApi.md
 docs/MetricsV1Api.md
 docs/MetricsV2Api.md
-docs/ModelsExchangeTimeseriesItem.md
-docs/OhlcvApi.md
+docs/OHLCVApi.md
+docs/OhlcvExchangeTimeseriesItem.md
 docs/OptionsApi.md
 docs/OptionsOptionExchangeGroup.md
 docs/OptionsStrike.md

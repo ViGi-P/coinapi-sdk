@@ -1,7 +1,7 @@
 /*
 CoinAPI Market Data REST API
 
-Testing OhlcvAPIService
+Testing OHLCVAPIService
 
 */
 
@@ -17,18 +17,18 @@ import (
 	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
-func Test_openapi_OhlcvAPIService(t *testing.T) {
+func Test_openapi_OHLCVAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test OhlcvAPIService V1OhlcvExchangesExchangeIdHistoryGet", func(t *testing.T) {
+	t.Run("Test OHLCVAPIService V1OhlcvExchangesExchangeIdHistoryGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var exchangeId string
 
-		resp, httpRes, err := apiClient.OhlcvAPI.V1OhlcvExchangesExchangeIdHistoryGet(context.Background(), exchangeId).Execute()
+		resp, httpRes, err := apiClient.OHLCVAPI.V1OhlcvExchangesExchangeIdHistoryGet(context.Background(), exchangeId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,11 +36,11 @@ func Test_openapi_OhlcvAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test OhlcvAPIService V1OhlcvPeriodsGet", func(t *testing.T) {
+	t.Run("Test OHLCVAPIService V1OhlcvPeriodsGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.OhlcvAPI.V1OhlcvPeriodsGet(context.Background()).Execute()
+		resp, httpRes, err := apiClient.OHLCVAPI.V1OhlcvPeriodsGet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -48,27 +48,27 @@ func Test_openapi_OhlcvAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test OhlcvAPIService V1OhlcvSymbolIdHistoryGet", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var symbolId string
-
-		resp, httpRes, err := apiClient.OhlcvAPI.V1OhlcvSymbolIdHistoryGet(context.Background(), symbolId).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test OhlcvAPIService V1OhlcvSymbolIdLatestGet", func(t *testing.T) {
+	t.Run("Test OHLCVAPIService V1OhlcvSymbolIdHistoryGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var symbolId string
 
-		resp, httpRes, err := apiClient.OhlcvAPI.V1OhlcvSymbolIdLatestGet(context.Background(), symbolId).Execute()
+		resp, httpRes, err := apiClient.OHLCVAPI.V1OhlcvSymbolIdHistoryGet(context.Background(), symbolId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test OHLCVAPIService V1OhlcvSymbolIdLatestGet", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var symbolId string
+
+		resp, httpRes, err := apiClient.OHLCVAPI.V1OhlcvSymbolIdLatestGet(context.Background(), symbolId).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

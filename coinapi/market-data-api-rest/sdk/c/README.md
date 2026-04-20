@@ -98,10 +98,10 @@ Category | Method | HTTP request | Description
 *MetricsV2API* | [**MetricsV2API_marketdataListMetricsV2ExchangeHistory**](docs/MetricsV2API.md#MetricsV2API_marketdataListMetricsV2ExchangeHistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
 *MetricsV2API* | [**MetricsV2API_marketdataListMetricsV2ExchangeListing**](docs/MetricsV2API.md#MetricsV2API_marketdataListMetricsV2ExchangeListing) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
 *MetricsV2API* | [**MetricsV2API_marketdataListMetricsV2Listing**](docs/MetricsV2API.md#MetricsV2API_marketdataListMetricsV2Listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
-*OhlcvAPI* | [**OhlcvAPI_v1OhlcvExchangesExchangeIdHistoryGet**](docs/OhlcvAPI.md#OhlcvAPI_v1OhlcvExchangesExchangeIdHistoryGet) | **GET** /v1/ohlcv/exchanges/{exchange_id}/history | Historical data by exchange
-*OhlcvAPI* | [**OhlcvAPI_v1OhlcvPeriodsGet**](docs/OhlcvAPI.md#OhlcvAPI_v1OhlcvPeriodsGet) | **GET** /v1/ohlcv/periods | List all periods
-*OhlcvAPI* | [**OhlcvAPI_v1OhlcvSymbolIdHistoryGet**](docs/OhlcvAPI.md#OhlcvAPI_v1OhlcvSymbolIdHistoryGet) | **GET** /v1/ohlcv/{symbol_id}/history | Historical data
-*OhlcvAPI* | [**OhlcvAPI_v1OhlcvSymbolIdLatestGet**](docs/OhlcvAPI.md#OhlcvAPI_v1OhlcvSymbolIdLatestGet) | **GET** /v1/ohlcv/{symbol_id}/latest | Latest data
+*OHLCVAPI* | [**OHLCVAPI_v1OhlcvExchangesExchangeIdHistoryGet**](docs/OHLCVAPI.md#OHLCVAPI_v1OhlcvExchangesExchangeIdHistoryGet) | **GET** /v1/ohlcv/exchanges/{exchange_id}/history | Historical data by exchange
+*OHLCVAPI* | [**OHLCVAPI_v1OhlcvPeriodsGet**](docs/OHLCVAPI.md#OHLCVAPI_v1OhlcvPeriodsGet) | **GET** /v1/ohlcv/periods | List all periods
+*OHLCVAPI* | [**OHLCVAPI_v1OhlcvSymbolIdHistoryGet**](docs/OHLCVAPI.md#OHLCVAPI_v1OhlcvSymbolIdHistoryGet) | **GET** /v1/ohlcv/{symbol_id}/history | Historical data
+*OHLCVAPI* | [**OHLCVAPI_v1OhlcvSymbolIdLatestGet**](docs/OHLCVAPI.md#OHLCVAPI_v1OhlcvSymbolIdLatestGet) | **GET** /v1/ohlcv/{symbol_id}/latest | Latest data
 *OptionsAPI* | [**OptionsAPI_v1OptionsExchangeIdCurrentGet**](docs/OptionsAPI.md#OptionsAPI_v1OptionsExchangeIdCurrentGet) | **GET** /v1/options/{exchange_id}/current | Current data by Exchange
 *OrderBookAPI* | [**OrderBookAPI_v1OrderbooksSymbolIdCurrentGet**](docs/OrderBookAPI.md#OrderBookAPI_v1OrderbooksSymbolIdCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/current | Get current order book
 *OrderBookAPI* | [**OrderBookAPI_v1OrderbooksSymbolIdDepthCurrentGet**](docs/OrderBookAPI.md#OrderBookAPI_v1OrderbooksSymbolIdDepthCurrentGet) | **GET** /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book
@@ -120,7 +120,7 @@ Category | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [models_exchange_timeseries_item_t](docs/models_exchange_timeseries_item.md)
+ - [ohlcv_exchange_timeseries_item_t](docs/ohlcv_exchange_timeseries_item.md)
  - [options_option_exchange_group_t](docs/options_option_exchange_group.md)
  - [options_strike_t](docs/options_strike.md)
  - [v1_asset_t](docs/v1_asset.md)

@@ -50,7 +50,13 @@ static v1_symbol_t *v1_symbol_create_internal(
     double *price_precision,
     double *size_precision,
     list_t* raw_kvp,
+    int *future_is_inverse,
+    int *future_is_quanto,
     double *volume_to_usd,
+    double *option_barrier_up_price,
+    char *option_barrier_up_type,
+    double *option_barrier_down_price,
+    char *option_barrier_down_type,
     int *symbol_id_int
     ) {
     v1_symbol_t *v1_symbol_local_var = malloc(sizeof(v1_symbol_t));
@@ -103,7 +109,13 @@ static v1_symbol_t *v1_symbol_create_internal(
     v1_symbol_local_var->price_precision = price_precision;
     v1_symbol_local_var->size_precision = size_precision;
     v1_symbol_local_var->raw_kvp = raw_kvp;
+    v1_symbol_local_var->future_is_inverse = future_is_inverse;
+    v1_symbol_local_var->future_is_quanto = future_is_quanto;
     v1_symbol_local_var->volume_to_usd = volume_to_usd;
+    v1_symbol_local_var->option_barrier_up_price = option_barrier_up_price;
+    v1_symbol_local_var->option_barrier_up_type = option_barrier_up_type;
+    v1_symbol_local_var->option_barrier_down_price = option_barrier_down_price;
+    v1_symbol_local_var->option_barrier_down_type = option_barrier_down_type;
     v1_symbol_local_var->symbol_id_int = symbol_id_int;
     return v1_symbol_local_var;
 }
@@ -153,7 +165,13 @@ __attribute__((deprecated)) v1_symbol_t *v1_symbol_create(
     double *price_precision,
     double *size_precision,
     list_t* raw_kvp,
+    int *future_is_inverse,
+    int *future_is_quanto,
     double *volume_to_usd,
+    double *option_barrier_up_price,
+    char *option_barrier_up_type,
+    double *option_barrier_down_price,
+    char *option_barrier_down_type,
     int *symbol_id_int
     ) {
     double *future_contract_unit_copy = NULL;
@@ -226,10 +244,30 @@ __attribute__((deprecated)) v1_symbol_t *v1_symbol_create(
         size_precision_copy = malloc(sizeof(double));
         if (size_precision_copy) *size_precision_copy = *size_precision;
     }
+    int *future_is_inverse_copy = NULL;
+    if (future_is_inverse) {
+        future_is_inverse_copy = malloc(sizeof(int));
+        if (future_is_inverse_copy) *future_is_inverse_copy = *future_is_inverse;
+    }
+    int *future_is_quanto_copy = NULL;
+    if (future_is_quanto) {
+        future_is_quanto_copy = malloc(sizeof(int));
+        if (future_is_quanto_copy) *future_is_quanto_copy = *future_is_quanto;
+    }
     double *volume_to_usd_copy = NULL;
     if (volume_to_usd) {
         volume_to_usd_copy = malloc(sizeof(double));
         if (volume_to_usd_copy) *volume_to_usd_copy = *volume_to_usd;
+    }
+    double *option_barrier_up_price_copy = NULL;
+    if (option_barrier_up_price) {
+        option_barrier_up_price_copy = malloc(sizeof(double));
+        if (option_barrier_up_price_copy) *option_barrier_up_price_copy = *option_barrier_up_price;
+    }
+    double *option_barrier_down_price_copy = NULL;
+    if (option_barrier_down_price) {
+        option_barrier_down_price_copy = malloc(sizeof(double));
+        if (option_barrier_down_price_copy) *option_barrier_down_price_copy = *option_barrier_down_price;
     }
     int *symbol_id_int_copy = NULL;
     if (symbol_id_int) {
@@ -281,7 +319,13 @@ __attribute__((deprecated)) v1_symbol_t *v1_symbol_create(
         price_precision_copy,
         size_precision_copy,
         raw_kvp,
+        future_is_inverse_copy,
+        future_is_quanto_copy,
         volume_to_usd_copy,
+        option_barrier_up_price_copy,
+        option_barrier_up_type,
+        option_barrier_down_price_copy,
+        option_barrier_down_type,
         symbol_id_int_copy
         );
     if (!result) {
@@ -299,7 +343,11 @@ __attribute__((deprecated)) v1_symbol_t *v1_symbol_create(
         free(price_copy);
         free(price_precision_copy);
         free(size_precision_copy);
+        free(future_is_inverse_copy);
+        free(future_is_quanto_copy);
         free(volume_to_usd_copy);
+        free(option_barrier_up_price_copy);
+        free(option_barrier_down_price_copy);
         free(symbol_id_int_copy);
     }
     return result;
@@ -496,9 +544,33 @@ void v1_symbol_free(v1_symbol_t *v1_symbol) {
         list_freeList(v1_symbol->raw_kvp);
         v1_symbol->raw_kvp = NULL;
     }
+    if (v1_symbol->future_is_inverse) {
+        free(v1_symbol->future_is_inverse);
+        v1_symbol->future_is_inverse = NULL;
+    }
+    if (v1_symbol->future_is_quanto) {
+        free(v1_symbol->future_is_quanto);
+        v1_symbol->future_is_quanto = NULL;
+    }
     if (v1_symbol->volume_to_usd) {
         free(v1_symbol->volume_to_usd);
         v1_symbol->volume_to_usd = NULL;
+    }
+    if (v1_symbol->option_barrier_up_price) {
+        free(v1_symbol->option_barrier_up_price);
+        v1_symbol->option_barrier_up_price = NULL;
+    }
+    if (v1_symbol->option_barrier_up_type) {
+        free(v1_symbol->option_barrier_up_type);
+        v1_symbol->option_barrier_up_type = NULL;
+    }
+    if (v1_symbol->option_barrier_down_price) {
+        free(v1_symbol->option_barrier_down_price);
+        v1_symbol->option_barrier_down_price = NULL;
+    }
+    if (v1_symbol->option_barrier_down_type) {
+        free(v1_symbol->option_barrier_down_type);
+        v1_symbol->option_barrier_down_type = NULL;
     }
     if (v1_symbol->symbol_id_int) {
         free(v1_symbol->symbol_id_int);
@@ -874,10 +946,58 @@ cJSON *v1_symbol_convertToJSON(v1_symbol_t *v1_symbol) {
     }
 
 
+    // v1_symbol->future_is_inverse
+    if(v1_symbol->future_is_inverse) {
+    if(cJSON_AddBoolToObject(item, "future_is_inverse", *v1_symbol->future_is_inverse) == NULL) {
+    goto fail; //Bool
+    }
+    }
+
+
+    // v1_symbol->future_is_quanto
+    if(v1_symbol->future_is_quanto) {
+    if(cJSON_AddBoolToObject(item, "future_is_quanto", *v1_symbol->future_is_quanto) == NULL) {
+    goto fail; //Bool
+    }
+    }
+
+
     // v1_symbol->volume_to_usd
     if(v1_symbol->volume_to_usd) {
     if(cJSON_AddNumberToObject(item, "volume_to_usd", *v1_symbol->volume_to_usd) == NULL) {
     goto fail; //Numeric
+    }
+    }
+
+
+    // v1_symbol->option_barrier_up_price
+    if(v1_symbol->option_barrier_up_price) {
+    if(cJSON_AddNumberToObject(item, "option_barrier_up_price", *v1_symbol->option_barrier_up_price) == NULL) {
+    goto fail; //Numeric
+    }
+    }
+
+
+    // v1_symbol->option_barrier_up_type
+    if(v1_symbol->option_barrier_up_type) {
+    if(cJSON_AddStringToObject(item, "option_barrier_up_type", v1_symbol->option_barrier_up_type) == NULL) {
+    goto fail; //String
+    }
+    }
+
+
+    // v1_symbol->option_barrier_down_price
+    if(v1_symbol->option_barrier_down_price) {
+    if(cJSON_AddNumberToObject(item, "option_barrier_down_price", *v1_symbol->option_barrier_down_price) == NULL) {
+    goto fail; //Numeric
+    }
+    }
+
+
+    // v1_symbol->option_barrier_down_type
+    if(v1_symbol->option_barrier_down_type) {
+    if(cJSON_AddStringToObject(item, "option_barrier_down_type", v1_symbol->option_barrier_down_type) == NULL) {
+    goto fail; //String
     }
     }
 
@@ -1004,8 +1124,24 @@ v1_symbol_t *v1_symbol_parseFromJSON(cJSON *v1_symbolJSON){
     // define the local map for v1_symbol->raw_kvp
     list_t *raw_kvpList = NULL;
 
+    // define the local variable for v1_symbol->future_is_inverse
+    int *future_is_inverse_local_var = NULL;
+
+    // define the local variable for v1_symbol->future_is_quanto
+    int *future_is_quanto_local_var = NULL;
+
     // define the local variable for v1_symbol->volume_to_usd
     double *volume_to_usd_local_var = NULL;
+
+    // define the local variable for v1_symbol->option_barrier_up_price
+    double *option_barrier_up_price_local_var = NULL;
+
+    char *option_barrier_up_type_local_str = NULL;
+
+    // define the local variable for v1_symbol->option_barrier_down_price
+    double *option_barrier_down_price_local_var = NULL;
+
+    char *option_barrier_down_type_local_str = NULL;
 
     // define the local variable for v1_symbol->symbol_id_int
     int *symbol_id_int_local_var = NULL;
@@ -1638,6 +1774,42 @@ v1_symbol_t *v1_symbol_parseFromJSON(cJSON *v1_symbolJSON){
     }
     }
 
+    // v1_symbol->future_is_inverse
+    cJSON *future_is_inverse = cJSON_GetObjectItemCaseSensitive(v1_symbolJSON, "future_is_inverse");
+    if (cJSON_IsNull(future_is_inverse)) {
+        future_is_inverse = NULL;
+    }
+    if (future_is_inverse) { 
+    if(!cJSON_IsBool(future_is_inverse))
+    {
+    goto end; //Bool
+    }
+    future_is_inverse_local_var = malloc(sizeof(int));
+    if(!future_is_inverse_local_var)
+    {
+        goto end;
+    }
+    *future_is_inverse_local_var = future_is_inverse->valueint;
+    }
+
+    // v1_symbol->future_is_quanto
+    cJSON *future_is_quanto = cJSON_GetObjectItemCaseSensitive(v1_symbolJSON, "future_is_quanto");
+    if (cJSON_IsNull(future_is_quanto)) {
+        future_is_quanto = NULL;
+    }
+    if (future_is_quanto) { 
+    if(!cJSON_IsBool(future_is_quanto))
+    {
+    goto end; //Bool
+    }
+    future_is_quanto_local_var = malloc(sizeof(int));
+    if(!future_is_quanto_local_var)
+    {
+        goto end;
+    }
+    *future_is_quanto_local_var = future_is_quanto->valueint;
+    }
+
     // v1_symbol->volume_to_usd
     cJSON *volume_to_usd = cJSON_GetObjectItemCaseSensitive(v1_symbolJSON, "volume_to_usd");
     if (cJSON_IsNull(volume_to_usd)) {
@@ -1654,6 +1826,66 @@ v1_symbol_t *v1_symbol_parseFromJSON(cJSON *v1_symbolJSON){
         goto end;
     }
     *volume_to_usd_local_var = volume_to_usd->valuedouble;
+    }
+
+    // v1_symbol->option_barrier_up_price
+    cJSON *option_barrier_up_price = cJSON_GetObjectItemCaseSensitive(v1_symbolJSON, "option_barrier_up_price");
+    if (cJSON_IsNull(option_barrier_up_price)) {
+        option_barrier_up_price = NULL;
+    }
+    if (option_barrier_up_price) { 
+    if(!cJSON_IsNumber(option_barrier_up_price))
+    {
+    goto end; //Numeric
+    }
+    option_barrier_up_price_local_var = malloc(sizeof(double));
+    if(!option_barrier_up_price_local_var)
+    {
+        goto end;
+    }
+    *option_barrier_up_price_local_var = option_barrier_up_price->valuedouble;
+    }
+
+    // v1_symbol->option_barrier_up_type
+    cJSON *option_barrier_up_type = cJSON_GetObjectItemCaseSensitive(v1_symbolJSON, "option_barrier_up_type");
+    if (cJSON_IsNull(option_barrier_up_type)) {
+        option_barrier_up_type = NULL;
+    }
+    if (option_barrier_up_type) { 
+    if(!cJSON_IsString(option_barrier_up_type) && !cJSON_IsNull(option_barrier_up_type))
+    {
+    goto end; //String
+    }
+    }
+
+    // v1_symbol->option_barrier_down_price
+    cJSON *option_barrier_down_price = cJSON_GetObjectItemCaseSensitive(v1_symbolJSON, "option_barrier_down_price");
+    if (cJSON_IsNull(option_barrier_down_price)) {
+        option_barrier_down_price = NULL;
+    }
+    if (option_barrier_down_price) { 
+    if(!cJSON_IsNumber(option_barrier_down_price))
+    {
+    goto end; //Numeric
+    }
+    option_barrier_down_price_local_var = malloc(sizeof(double));
+    if(!option_barrier_down_price_local_var)
+    {
+        goto end;
+    }
+    *option_barrier_down_price_local_var = option_barrier_down_price->valuedouble;
+    }
+
+    // v1_symbol->option_barrier_down_type
+    cJSON *option_barrier_down_type = cJSON_GetObjectItemCaseSensitive(v1_symbolJSON, "option_barrier_down_type");
+    if (cJSON_IsNull(option_barrier_down_type)) {
+        option_barrier_down_type = NULL;
+    }
+    if (option_barrier_down_type) { 
+    if(!cJSON_IsString(option_barrier_down_type) && !cJSON_IsNull(option_barrier_down_type))
+    {
+    goto end; //String
+    }
     }
 
     // v1_symbol->symbol_id_int
@@ -1704,6 +1936,8 @@ v1_symbol_t *v1_symbol_parseFromJSON(cJSON *v1_symbolJSON){
     if (symbol_id_exchange && !cJSON_IsNull(symbol_id_exchange)) symbol_id_exchange_local_str = strdup(symbol_id_exchange->valuestring);
     if (asset_id_base_exchange && !cJSON_IsNull(asset_id_base_exchange)) asset_id_base_exchange_local_str = strdup(asset_id_base_exchange->valuestring);
     if (asset_id_quote_exchange && !cJSON_IsNull(asset_id_quote_exchange)) asset_id_quote_exchange_local_str = strdup(asset_id_quote_exchange->valuestring);
+    if (option_barrier_up_type && !cJSON_IsNull(option_barrier_up_type)) option_barrier_up_type_local_str = strdup(option_barrier_up_type->valuestring);
+    if (option_barrier_down_type && !cJSON_IsNull(option_barrier_down_type)) option_barrier_down_type_local_str = strdup(option_barrier_down_type->valuestring);
 
     v1_symbol_local_var = v1_symbol_create_internal (
         symbol_id_local_str,
@@ -1750,7 +1984,13 @@ v1_symbol_t *v1_symbol_parseFromJSON(cJSON *v1_symbolJSON){
         price_precision_local_var,
         size_precision_local_var,
         raw_kvp ? raw_kvpList : NULL,
+        future_is_inverse_local_var,
+        future_is_quanto_local_var,
         volume_to_usd_local_var,
+        option_barrier_up_price_local_var,
+        option_barrier_up_type_local_str,
+        option_barrier_down_price_local_var,
+        option_barrier_down_type_local_str,
         symbol_id_int_local_var
         );
 
@@ -1946,9 +2186,33 @@ end:
         list_freeList(raw_kvpList);
         raw_kvpList = NULL;
     }
+    if (future_is_inverse_local_var) {
+        free(future_is_inverse_local_var);
+        future_is_inverse_local_var = NULL;
+    }
+    if (future_is_quanto_local_var) {
+        free(future_is_quanto_local_var);
+        future_is_quanto_local_var = NULL;
+    }
     if (volume_to_usd_local_var) {
         free(volume_to_usd_local_var);
         volume_to_usd_local_var = NULL;
+    }
+    if (option_barrier_up_price_local_var) {
+        free(option_barrier_up_price_local_var);
+        option_barrier_up_price_local_var = NULL;
+    }
+    if (option_barrier_up_type_local_str) {
+        free(option_barrier_up_type_local_str);
+        option_barrier_up_type_local_str = NULL;
+    }
+    if (option_barrier_down_price_local_var) {
+        free(option_barrier_down_price_local_var);
+        option_barrier_down_price_local_var = NULL;
+    }
+    if (option_barrier_down_type_local_str) {
+        free(option_barrier_down_type_local_str);
+        option_barrier_down_type_local_str = NULL;
     }
     if (symbol_id_int_local_var) {
         free(symbol_id_int_local_var);

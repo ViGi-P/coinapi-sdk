@@ -66,7 +66,13 @@ v1_symbol_t* instantiate_v1_symbol(int include_optional) {
       1.337,
       1.337,
       list_createList(),
+      1,
+      1,
       1.337,
+      1.337,
+      "0",
+      1.337,
+      "0",
       56
     );
   } else {
@@ -115,7 +121,13 @@ v1_symbol_t* instantiate_v1_symbol(int include_optional) {
       1.337,
       1.337,
       list_createList(),
+      1,
+      1,
       1.337,
+      1.337,
+      "0",
+      1.337,
+      "0",
       56
     );
   }

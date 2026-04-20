@@ -1,6 +1,6 @@
 # OpenAPI\Client\QuotesApi
 
-Controller for retrieving quotes data, also known as quotes or passive level 1 data.
+Best bid and ask with sizes and last trade when the venue publishes them.
 
 All URIs are relative to https://rest.coinapi.io, except if the operation defines another base path.
 

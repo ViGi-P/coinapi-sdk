@@ -9,11 +9,11 @@
 
 %% @doc Historical data by exchange
 %% Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange eg `BITSTAMP`              :::info The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. The difference between `time_end` and `time_start` cannot be higher than 1 day. The `period_id` cannot be higher than `1DAY`. :::
--spec v1_ohlcv_exchanges_exchange_id_history_get(ctx:ctx(), binary(), binary(), binary(), binary()) -> {ok, [openapi_models_exchange_timeseries_item:openapi_models_exchange_timeseries_item()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_ohlcv_exchanges_exchange_id_history_get(ctx:ctx(), binary(), binary(), binary(), binary()) -> {ok, [openapi_ohlcv_exchange_timeseries_item:openapi_ohlcv_exchange_timeseries_item()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_ohlcv_exchanges_exchange_id_history_get(Ctx, ExchangeId, PeriodId, TimeStart, TimeEnd) ->
     v1_ohlcv_exchanges_exchange_id_history_get(Ctx, ExchangeId, PeriodId, TimeStart, TimeEnd, #{}).
 
--spec v1_ohlcv_exchanges_exchange_id_history_get(ctx:ctx(), binary(), binary(), binary(), binary(), maps:map()) -> {ok, [openapi_models_exchange_timeseries_item:openapi_models_exchange_timeseries_item()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_ohlcv_exchanges_exchange_id_history_get(ctx:ctx(), binary(), binary(), binary(), binary(), maps:map()) -> {ok, [openapi_ohlcv_exchange_timeseries_item:openapi_ohlcv_exchange_timeseries_item()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_ohlcv_exchanges_exchange_id_history_get(Ctx, ExchangeId, PeriodId, TimeStart, TimeEnd, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),

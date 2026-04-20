@@ -62,7 +62,7 @@ export interface V1Symbol {
      */
     option_contract_unit?: number | null;
     /**
-     * The exercise style for options.
+     * The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
      */
     option_exercise_style?: string | null;
     /**
@@ -180,13 +180,37 @@ export interface V1Symbol {
      */
     size_precision?: number | null;
     /**
-     * Not normalized raw kvp data.
+     * Key Value Pair store with raw data from the data source.
      */
     raw_kvp?: { [key: string]: string; } | null;
+    /**
+     * Indicates whether the futures contract is inverse (coin-margined).
+     */
+    future_is_inverse?: boolean | null;
+    /**
+     * Indicates whether the futures contract is quanto.
+     */
+    future_is_quanto?: boolean | null;
     /**
      * Volume unit in USD.
      */
     volume_to_usd?: number | null;
+    /**
+     * The up barrier price for barrier options.
+     */
+    option_barrier_up_price?: number | null;
+    /**
+     * The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+     */
+    option_barrier_up_type?: string | null;
+    /**
+     * The down barrier price for barrier options.
+     */
+    option_barrier_down_price?: number | null;
+    /**
+     * The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+     */
+    option_barrier_down_type?: string | null;
     /**
      * The symbol identifier in integer immutable format, used to correlate data across different APIs.
      */

@@ -12,7 +12,7 @@ src/coin_api_market_data_rest_api/api/order_book_l_.clj
 src/coin_api_market_data_rest_api/api/quotes.clj
 src/coin_api_market_data_rest_api/api/trades.clj
 src/coin_api_market_data_rest_api/core.clj
-src/coin_api_market_data_rest_api/specs/models/exchange_timeseries_item.clj
+src/coin_api_market_data_rest_api/specs/ohlcv/exchange_timeseries_item.clj
 src/coin_api_market_data_rest_api/specs/options/option_exchange_group.clj
 src/coin_api_market_data_rest_api/specs/options/strike.clj
 src/coin_api_market_data_rest_api/specs/v1/asset.clj

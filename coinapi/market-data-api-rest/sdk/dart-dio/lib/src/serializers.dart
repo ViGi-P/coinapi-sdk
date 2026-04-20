@@ -14,7 +14,7 @@ import 'package:built_value/iso_8601_date_time_serializer.dart';
 import 'package:openapi/src/date_serializer.dart';
 import 'package:openapi/src/model/date.dart';
 
-import 'package:openapi/src/model/models_exchange_timeseries_item.dart';
+import 'package:openapi/src/model/ohlcv_exchange_timeseries_item.dart';
 import 'package:openapi/src/model/options_option_exchange_group.dart';
 import 'package:openapi/src/model/options_strike.dart';
 import 'package:openapi/src/model/v1_asset.dart';
@@ -46,7 +46,7 @@ import 'package:openapi/src/model/v1_trade.dart';
 part 'serializers.g.dart';
 
 @SerializersFor([
-  ModelsExchangeTimeseriesItem,
+  OhlcvExchangeTimeseriesItem,
   OptionsOptionExchangeGroup,
   OptionsStrike,
   V1Asset,
@@ -81,16 +81,16 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<V1Exchange>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(OhlcvExchangeTimeseriesItem)]),
+        () => ListBuilder<OhlcvExchangeTimeseriesItem>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1Quote)]),
         () => ListBuilder<V1Quote>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1Trade)]),
         () => ListBuilder<V1Trade>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(ModelsExchangeTimeseriesItem)]),
-        () => ListBuilder<ModelsExchangeTimeseriesItem>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1OrderBook)]),

@@ -88,7 +88,7 @@ void main() {
       // TODO
     });
 
-    // The exercise style for options.
+    // The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
     // String optionExerciseStyle
     test('to test the property `optionExerciseStyle`', () async {
       // TODO
@@ -272,15 +272,51 @@ void main() {
       // TODO
     });
 
-    // Not normalized raw kvp data.
+    // Key Value Pair store with raw data from the data source.
     // Map<String, String> rawKvp (default value: const {})
     test('to test the property `rawKvp`', () async {
+      // TODO
+    });
+
+    // Indicates whether the futures contract is inverse (coin-margined).
+    // bool futureIsInverse
+    test('to test the property `futureIsInverse`', () async {
+      // TODO
+    });
+
+    // Indicates whether the futures contract is quanto.
+    // bool futureIsQuanto
+    test('to test the property `futureIsQuanto`', () async {
       // TODO
     });
 
     // Volume unit in USD.
     // double volumeToUsd
     test('to test the property `volumeToUsd`', () async {
+      // TODO
+    });
+
+    // The up barrier price for barrier options.
+    // double optionBarrierUpPrice
+    test('to test the property `optionBarrierUpPrice`', () async {
+      // TODO
+    });
+
+    // The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+    // String optionBarrierUpType
+    test('to test the property `optionBarrierUpType`', () async {
+      // TODO
+    });
+
+    // The down barrier price for barrier options.
+    // double optionBarrierDownPrice
+    test('to test the property `optionBarrierDownPrice`', () async {
+      // TODO
+    });
+
+    // The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+    // String optionBarrierDownType
+    test('to test the property `optionBarrierDownType`', () async {
       // TODO
     });
 

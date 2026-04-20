@@ -10,17 +10,17 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/models_exchange_timeseries_item.dart';
+import 'package:openapi/src/model/ohlcv_exchange_timeseries_item.dart';
 import 'package:openapi/src/model/v1_timeseries_item.dart';
 import 'package:openapi/src/model/v1_timeseries_period.dart';
 
-class OhlcvApi {
+class OHLCVApi {
 
   final Dio _dio;
 
   final Serializers _serializers;
 
-  const OhlcvApi(this._dio, this._serializers);
+  const OHLCVApi(this._dio, this._serializers);
 
   /// Historical data by exchange
   /// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange eg &#x60;BITSTAMP&#x60;              :::info The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. The difference between &#x60;time_end&#x60; and &#x60;time_start&#x60; cannot be higher than 1 day. The &#x60;period_id&#x60; cannot be higher than &#x60;1DAY&#x60;. :::
@@ -37,9 +37,9 @@ class OhlcvApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<ModelsExchangeTimeseriesItem>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<OhlcvExchangeTimeseriesItem>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<ModelsExchangeTimeseriesItem>>> v1OhlcvExchangesExchangeIdHistoryGet({ 
+  Future<Response<BuiltList<OhlcvExchangeTimeseriesItem>>> v1OhlcvExchangesExchangeIdHistoryGet({ 
     required String exchangeId,
     required String periodId,
     required String timeStart,
@@ -90,14 +90,14 @@ class OhlcvApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<ModelsExchangeTimeseriesItem>? _responseData;
+    BuiltList<OhlcvExchangeTimeseriesItem>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(ModelsExchangeTimeseriesItem)]),
-      ) as BuiltList<ModelsExchangeTimeseriesItem>;
+        specifiedType: const FullType(BuiltList, [FullType(OhlcvExchangeTimeseriesItem)]),
+      ) as BuiltList<OhlcvExchangeTimeseriesItem>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -109,7 +109,7 @@ class OhlcvApi {
       );
     }
 
-    return Response<BuiltList<ModelsExchangeTimeseriesItem>>(
+    return Response<BuiltList<OhlcvExchangeTimeseriesItem>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

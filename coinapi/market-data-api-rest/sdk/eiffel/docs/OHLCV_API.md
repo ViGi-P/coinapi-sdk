@@ -11,7 +11,7 @@ Feature | HTTP request | Description
 
 
 # **v1_ohlcv_exchanges_exchange_id_history_get**
-> v1_ohlcv_exchanges_exchange_id_history_get (exchange_id: STRING_32 ; period_id: STRING_32 ; time_start: STRING_32 ; time_end: STRING_32 ): detachable LIST [MODELS_EXCHANGE_TIMESERIES_ITEM]
+> v1_ohlcv_exchanges_exchange_id_history_get (exchange_id: STRING_32 ; period_id: STRING_32 ; time_start: STRING_32 ; time_end: STRING_32 ): detachable LIST [OHLCV_EXCHANGE_TIMESERIES_ITEM]
 
 
 Historical data by exchange
@@ -30,7 +30,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [MODELS_EXCHANGE_TIMESERIES_ITEM]**](Models.ExchangeTimeseriesItem.md)
+[**LIST [OHLCV_EXCHANGE_TIMESERIES_ITEM]**](Ohlcv.ExchangeTimeseriesItem.md)
 
 ### Authorization
 

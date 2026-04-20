@@ -11,7 +11,7 @@ lib/CoinAPIMarketDataREST/API/ExchangeRates.hs
 lib/CoinAPIMarketDataREST/API/Metadata.hs
 lib/CoinAPIMarketDataREST/API/MetricsV1.hs
 lib/CoinAPIMarketDataREST/API/MetricsV2.hs
-lib/CoinAPIMarketDataREST/API/Ohlcv.hs
+lib/CoinAPIMarketDataREST/API/OHLCV.hs
 lib/CoinAPIMarketDataREST/API/Options.hs
 lib/CoinAPIMarketDataREST/API/OrderBook.hs
 lib/CoinAPIMarketDataREST/API/OrderBookL3.hs

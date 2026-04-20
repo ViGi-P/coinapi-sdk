@@ -10,8 +10,8 @@ docs/ExchangeRatesApi.md
 docs/MetadataApi.md
 docs/MetricsV1Api.md
 docs/MetricsV2Api.md
-docs/ModelsExchangeTimeseriesItem.md
 docs/OhlcvApi.md
+docs/OhlcvExchangeTimeseriesItem.md
 docs/OptionsApi.md
 docs/OptionsOptionExchangeGroup.md
 docs/OptionsStrike.md
@@ -81,7 +81,7 @@ src/main/java/org/openapitools/client/auth/Authentication.java
 src/main/java/org/openapitools/client/auth/HttpBasicAuth.java
 src/main/java/org/openapitools/client/auth/HttpBearerAuth.java
 src/main/java/org/openapitools/client/model/AbstractOpenApiSchema.java
-src/main/java/org/openapitools/client/model/ModelsExchangeTimeseriesItem.java
+src/main/java/org/openapitools/client/model/OhlcvExchangeTimeseriesItem.java
 src/main/java/org/openapitools/client/model/OptionsOptionExchangeGroup.java
 src/main/java/org/openapitools/client/model/OptionsStrike.java
 src/main/java/org/openapitools/client/model/V1Asset.java
@@ -119,7 +119,7 @@ src/test/java/org/openapitools/client/api/OrderBookApiTest.java
 src/test/java/org/openapitools/client/api/OrderBookL3ApiTest.java
 src/test/java/org/openapitools/client/api/QuotesApiTest.java
 src/test/java/org/openapitools/client/api/TradesApiTest.java
-src/test/java/org/openapitools/client/model/ModelsExchangeTimeseriesItemTest.java
+src/test/java/org/openapitools/client/model/OhlcvExchangeTimeseriesItemTest.java
 src/test/java/org/openapitools/client/model/OptionsOptionExchangeGroupTest.java
 src/test/java/org/openapitools/client/model/OptionsStrikeTest.java
 src/test/java/org/openapitools/client/model/V1AssetTest.java

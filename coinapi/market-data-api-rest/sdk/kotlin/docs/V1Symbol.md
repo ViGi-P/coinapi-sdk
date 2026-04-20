@@ -16,7 +16,7 @@
 | **optionTypeIsCall** | **kotlin.Boolean** | Indicates whether the option type is a call. |  [optional] |
 | **optionStrikePrice** | **kotlin.Double** | The strike price for options. |  [optional] |
 | **optionContractUnit** | **kotlin.Double** | The contract unit for options. |  [optional] |
-| **optionExerciseStyle** | **kotlin.String** | The exercise style for options. |  [optional] |
+| **optionExerciseStyle** | **kotlin.String** | The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. |  [optional] |
 | **optionExpirationTime** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | The expiration time for options. |  [optional] |
 | **contractDeliveryTime** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | The delivery time for contracts. |  [optional] |
 | **contractUnit** | **kotlin.Double** | The contract unit for contracts. |  [optional] |
@@ -47,8 +47,14 @@
 | **assetIdQuoteExchange** | **kotlin.String** | The quote asset identifier in the exchange. |  [optional] |
 | **pricePrecision** | **kotlin.Double** | The price precision. |  [optional] |
 | **sizePrecision** | **kotlin.Double** | The size precision. |  [optional] |
-| **rawKvp** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** | Not normalized raw kvp data. |  [optional] |
+| **rawKvp** | **kotlin.collections.Map&lt;kotlin.String, kotlin.String&gt;** | Key Value Pair store with raw data from the data source. |  [optional] |
+| **futureIsInverse** | **kotlin.Boolean** | Indicates whether the futures contract is inverse (coin-margined). |  [optional] |
+| **futureIsQuanto** | **kotlin.Boolean** | Indicates whether the futures contract is quanto. |  [optional] |
 | **volumeToUsd** | **kotlin.Double** | Volume unit in USD. |  [optional] |
+| **optionBarrierUpPrice** | **kotlin.Double** | The up barrier price for barrier options. |  [optional] |
+| **optionBarrierUpType** | **kotlin.String** | The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. |  [optional] |
+| **optionBarrierDownPrice** | **kotlin.Double** | The down barrier price for barrier options. |  [optional] |
+| **optionBarrierDownType** | **kotlin.String** | The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. |  [optional] |
 | **symbolIdInt** | **kotlin.Int** | The symbol identifier in integer immutable format, used to correlate data across different APIs. |  [optional] [readonly] |
 
 

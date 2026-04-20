@@ -3,7 +3,7 @@ api/ExchangeRatesApi.ts
 api/MetadataApi.ts
 api/MetricsV1Api.ts
 api/MetricsV2Api.ts
-api/OhlcvApi.ts
+api/OHLCVApi.ts
 api/OptionsApi.ts
 api/OrderBookApi.ts
 api/OrderBookL3Api.ts
@@ -13,7 +13,7 @@ api/api.ts
 configuration.ts
 git_push.sh
 index.ts
-model/ModelsExchangeTimeseriesItem.ts
+model/OhlcvExchangeTimeseriesItem.ts
 model/OptionsOptionExchangeGroup.ts
 model/OptionsStrike.ts
 model/V1Asset.ts

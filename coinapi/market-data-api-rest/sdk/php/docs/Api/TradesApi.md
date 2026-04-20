@@ -1,6 +1,6 @@
 # OpenAPI\Client\TradesApi
 
-Controller for retrieving trade data related to executed transactions.
+Executed trades with price, size, and taker side when reported or inferred.
 
 All URIs are relative to https://rest.coinapi.io, except if the operation defines another base path.
 

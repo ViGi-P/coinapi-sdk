@@ -6,8 +6,8 @@ export * from './metricsV1Api';
 import { MetricsV1Api } from './metricsV1Api';
 export * from './metricsV2Api';
 import { MetricsV2Api } from './metricsV2Api';
-export * from './ohlcvApi';
-import { OhlcvApi } from './ohlcvApi';
+export * from './oHLCVApi';
+import { OHLCVApi } from './oHLCVApi';
 export * from './optionsApi';
 import { OptionsApi } from './optionsApi';
 export * from './orderBookApi';
@@ -29,4 +29,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [ExchangeRatesApi, MetadataApi, MetricsV1Api, MetricsV2Api, OhlcvApi, OptionsApi, OrderBookApi, OrderBookL3Api, QuotesApi, TradesApi];
+export const APIS = [ExchangeRatesApi, MetadataApi, MetricsV1Api, MetricsV2Api, OHLCVApi, OptionsApi, OrderBookApi, OrderBookL3Api, QuotesApi, TradesApi];

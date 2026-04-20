@@ -18,7 +18,7 @@ feature -- Test routines
             --
             -- Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange eg &#x60;BITSTAMP&#x60;              :::info The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. The difference between &#x60;time_end&#x60; and &#x60;time_start&#x60; cannot be higher than 1 day. The &#x60;period_id&#x60; cannot be higher than &#x60;1DAY&#x60;. :::
         local
-            l_response: LIST [MODELS_EXCHANGE_TIMESERIES_ITEM]
+            l_response: LIST [OHLCV_EXCHANGE_TIMESERIES_ITEM]
             l_exchange_id: STRING_32
             l_period_id: STRING_32
             l_time_start: STRING_32

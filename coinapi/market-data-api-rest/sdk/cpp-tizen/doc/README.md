@@ -123,7 +123,7 @@ Method | HTTP request | Description
 *marketdataListMetricsV2ListingASync* | *GET* /v2/metrics/listing | Listing of all supported metrics.
 
 
-### OhlcvManager
+### OHLCVManager
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 *v1OhlcvExchangesExchangeIdHistoryGetSync* | *GET* /v1/ohlcv/exchanges/{exchange_id}/history | Historical data by exchange.
@@ -192,7 +192,7 @@ Method | HTTP request | Description
 ## What are the Model files for the data structures/objects?
 Class | Description
 ------------- | -------------
- *Models.ExchangeTimeseriesItem* | Represents a timeseries item with price and volume information.
+ *Ohlcv.ExchangeTimeseriesItem* | Represents a timeseries item with price and volume information.
  *Options.OptionExchangeGroup* | Represents an option exchange group data model.
  *Options.Strike* | Represents a strike within the option exchange group.
  *V1.Asset* | Represents an asset.

@@ -730,6 +730,7 @@ SPOT | `{exchange_id}_SPOT_{asset_id_base}_{asset_id_quote}`
 FUTURES | `{exchange_id}_FTS_{asset_id_base}_{asset_id_quote}_{YYMMDD of future_delivery_time}`
 OPTION | `{exchange_id}_OPT_{asset_id_base}_{asset_id_quote}_{YYMMDD of option_expiration_time}_{option_strike_price}_{option_type_is_call as C/P}`
 PERPETUAL | `{exchange_id}_PERP_{asset_id_base}_{asset_id_quote}`
+DEPLOYER_PERPETUAL | `{exchange_id}_DPERP_{deployer_symbol}_{asset_id_quote}`
 INDEX | `{exchange_id}_IDX_{index_id}`
 CREDIT | `{exchange_id}_CRE_{asset_id_base}`
 CONTACT  | `{exchange_id}_COT_{contract_id}`
@@ -746,6 +747,7 @@ SPOT | FX Spot | Agreement to exchange one asset for another one *(e.g. Buy BTC 
 FUTURES | Futures contract | FX Spot derivative contract where traders agree to trade fx spot at predetermined future time
 OPTION | Option contract | FX Spot derivative contract where traders agree to trade right to require buy or sell of fx spot at agreed price on exercise date
 PERPETUAL | Perpetual contract | FX Spot derivative contract where traders agree to trade fx spot continously without predetermined future delivery time
+DEPLOYER_PERPETUAL | Deployer Perpetual contract | Perpetual contract for user-deployed markets *(e.g. Hyperliquid user-deployed perpetuals)*
 INDEX | Index | Statistical composite that measures changes in the economy or markets.
 CREDIT | Credit/Funding | Margin funding contract. Order book displays lending offers and borrow bids. Price represents the daily rate.
 CONTRACT | Contract | Represents other types of financial instruments *(e.g. spreads, interest rate swap)*
@@ -767,6 +769,13 @@ future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10
 future_contract_unit_asset | Identifier of the asset used to denominate the contract unit
             
 ### Additional output variables for `symbol_type = PERPETUAL`
+            
+Variable | Description
+--------- | -----------
+future_contract_unit | Contact size *(eg. 10 BTC if `future_contract_unit` = `10` and `future_contract_unit_asset` = `BTC`)*
+future_contract_unit_asset | Identifier of the asset used to denominate the contract unit
+            
+### Additional output variables for `symbol_type = DEPLOYER_PERPETUAL`
             
 Variable | Description
 --------- | -----------

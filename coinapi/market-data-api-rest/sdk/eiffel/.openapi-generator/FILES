@@ -6,8 +6,8 @@ docs/EXCHANGERATES_API.md
 docs/METADATA_API.md
 docs/METRICSV1_API.md
 docs/METRICSV2_API.md
-docs/MODELS_EXCHANGE_TIMESERIES_ITEM.md
 docs/OHLCV_API.md
+docs/OHLCV_EXCHANGE_TIMESERIES_ITEM.md
 docs/OPTIONS_API.md
 docs/OPTIONS_OPTION_EXCHANGE_GROUP.md
 docs/OPTIONS_STRIKE.md
@@ -51,7 +51,7 @@ src/api/order_book_l3_api.e
 src/api/quotes_api.e
 src/api/trades_api.e
 src/api_client.e
-src/domain/models_exchange_timeseries_item.e
+src/domain/ohlcv_exchange_timeseries_item.e
 src/domain/options_option_exchange_group.e
 src/domain/options_strike.e
 src/domain/v1_asset.e

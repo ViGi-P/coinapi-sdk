@@ -105,7 +105,7 @@ class V1SymbolTest : ShouldSpec() {
             //modelInstance.optionContractUnit shouldBe ("TODO")
         }
 
-        // to test the property `optionExerciseStyle` - The exercise style for options.
+        // to test the property `optionExerciseStyle` - The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
         should("test optionExerciseStyle") {
             // uncomment below to test the property
             //modelInstance.optionExerciseStyle shouldBe ("TODO")
@@ -291,16 +291,52 @@ class V1SymbolTest : ShouldSpec() {
             //modelInstance.sizePrecision shouldBe ("TODO")
         }
 
-        // to test the property `rawKvp` - Not normalized raw kvp data.
+        // to test the property `rawKvp` - Key Value Pair store with raw data from the data source.
         should("test rawKvp") {
             // uncomment below to test the property
             //modelInstance.rawKvp shouldBe ("TODO")
+        }
+
+        // to test the property `futureIsInverse` - Indicates whether the futures contract is inverse (coin-margined).
+        should("test futureIsInverse") {
+            // uncomment below to test the property
+            //modelInstance.futureIsInverse shouldBe ("TODO")
+        }
+
+        // to test the property `futureIsQuanto` - Indicates whether the futures contract is quanto.
+        should("test futureIsQuanto") {
+            // uncomment below to test the property
+            //modelInstance.futureIsQuanto shouldBe ("TODO")
         }
 
         // to test the property `volumeToUsd` - Volume unit in USD.
         should("test volumeToUsd") {
             // uncomment below to test the property
             //modelInstance.volumeToUsd shouldBe ("TODO")
+        }
+
+        // to test the property `optionBarrierUpPrice` - The up barrier price for barrier options.
+        should("test optionBarrierUpPrice") {
+            // uncomment below to test the property
+            //modelInstance.optionBarrierUpPrice shouldBe ("TODO")
+        }
+
+        // to test the property `optionBarrierUpType` - The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+        should("test optionBarrierUpType") {
+            // uncomment below to test the property
+            //modelInstance.optionBarrierUpType shouldBe ("TODO")
+        }
+
+        // to test the property `optionBarrierDownPrice` - The down barrier price for barrier options.
+        should("test optionBarrierDownPrice") {
+            // uncomment below to test the property
+            //modelInstance.optionBarrierDownPrice shouldBe ("TODO")
+        }
+
+        // to test the property `optionBarrierDownType` - The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+        should("test optionBarrierDownType") {
+            // uncomment below to test the property
+            //modelInstance.optionBarrierDownType shouldBe ("TODO")
         }
 
         // to test the property `symbolIdInt` - The symbol identifier in integer immutable format, used to correlate data across different APIs.

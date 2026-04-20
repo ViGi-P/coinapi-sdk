@@ -51,7 +51,13 @@
    (ds/opt :price_precision) float?
    (ds/opt :size_precision) float?
    (ds/opt :raw_kvp) (s/map-of string? string?)
+   (ds/opt :future_is_inverse) boolean?
+   (ds/opt :future_is_quanto) boolean?
    (ds/opt :volume_to_usd) float?
+   (ds/opt :option_barrier_up_price) float?
+   (ds/opt :option_barrier_up_type) string?
+   (ds/opt :option_barrier_down_price) float?
+   (ds/opt :option_barrier_down_type) string?
    (ds/opt :symbol_id_int) int?
    })
 

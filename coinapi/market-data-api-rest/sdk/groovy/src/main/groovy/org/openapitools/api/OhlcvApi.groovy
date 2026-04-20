@@ -1,7 +1,7 @@
 package org.openapitools.api;
 
 import org.openapitools.api.ApiUtils
-import org.openapitools.model.ModelsExchangeTimeseriesItem
+import org.openapitools.model.OhlcvExchangeTimeseriesItem
 import org.openapitools.model.V1TimeseriesItem
 import org.openapitools.model.V1TimeseriesPeriod
 
@@ -54,7 +54,7 @@ class OhlcvApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    ModelsExchangeTimeseriesItem.class )
+                    OhlcvExchangeTimeseriesItem.class )
 
     }
 

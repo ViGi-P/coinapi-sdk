@@ -11,7 +11,7 @@
             [coin-api-market-data-rest-api.specs.v1/order-book-depth :refer :all]
             [coin-api-market-data-rest-api.specs.v1/metric-info :refer :all]
             [coin-api-market-data-rest-api.specs.v1/exchange-rates :refer :all]
-            [coin-api-market-data-rest-api.specs.models/exchange-timeseries-item :refer :all]
+            [coin-api-market-data-rest-api.specs.ohlcv/exchange-timeseries-item :refer :all]
             [coin-api-market-data-rest-api.specs.v1/exchange :refer :all]
             [coin-api-market-data-rest-api.specs.v1/quote :refer :all]
             [coin-api-market-data-rest-api.specs.v1/symbol-mapping :refer :all]
@@ -55,7 +55,7 @@ The `period_id` cannot be higher than `1DAY`.
              :accepts       ["text/plain" "application/json" "text/json" "application/x-msgpack"]
              :auth-names    ["APIKey" "JWT"]}))
 
-(defn-spec v1-ohlcv-exchanges-exchange-id-history-get (s/coll-of models/exchange-timeseries-item-spec)
+(defn-spec v1-ohlcv-exchanges-exchange-id-history-get (s/coll-of ohlcv/exchange-timeseries-item-spec)
   "Historical data by exchange
   Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange eg `BITSTAMP`
             
@@ -67,7 +67,7 @@ The `period_id` cannot be higher than `1DAY`.
   [exchange_id string?, period_id string?, time_start string?, time_end string?]
   (let [res (:data (v1-ohlcv-exchanges-exchange-id-history-get-with-http-info exchange_id period_id time_start time_end))]
     (if (:decode-models *api-context*)
-       (st/decode (s/coll-of models/exchange-timeseries-item-spec) res st/string-transformer)
+       (st/decode (s/coll-of ohlcv/exchange-timeseries-item-spec) res st/string-transformer)
        res)))
 
 

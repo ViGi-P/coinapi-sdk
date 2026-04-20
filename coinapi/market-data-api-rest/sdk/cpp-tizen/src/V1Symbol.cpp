@@ -67,7 +67,13 @@ V1.Symbol::__init()
 	//price_precision = double(0);
 	//size_precision = double(0);
 	//new std::map()std::map> raw_kvp;
+	//future_is_inverse = bool(false);
+	//future_is_quanto = bool(false);
 	//volume_to_usd = double(0);
+	//option_barrier_up_price = double(0);
+	//option_barrier_up_type = std::string();
+	//option_barrier_down_price = double(0);
+	//option_barrier_down_type = std::string();
 	//symbol_id_int = int(0);
 }
 
@@ -294,10 +300,40 @@ V1.Symbol::__cleanup()
 	//delete raw_kvp;
 	//raw_kvp = NULL;
 	//}
+	//if(future_is_inverse != NULL) {
+	//
+	//delete future_is_inverse;
+	//future_is_inverse = NULL;
+	//}
+	//if(future_is_quanto != NULL) {
+	//
+	//delete future_is_quanto;
+	//future_is_quanto = NULL;
+	//}
 	//if(volume_to_usd != NULL) {
 	//
 	//delete volume_to_usd;
 	//volume_to_usd = NULL;
+	//}
+	//if(option_barrier_up_price != NULL) {
+	//
+	//delete option_barrier_up_price;
+	//option_barrier_up_price = NULL;
+	//}
+	//if(option_barrier_up_type != NULL) {
+	//
+	//delete option_barrier_up_type;
+	//option_barrier_up_type = NULL;
+	//}
+	//if(option_barrier_down_price != NULL) {
+	//
+	//delete option_barrier_down_price;
+	//option_barrier_down_price = NULL;
+	//}
+	//if(option_barrier_down_type != NULL) {
+	//
+	//delete option_barrier_down_type;
+	//option_barrier_down_type = NULL;
 	//}
 	//if(symbol_id_int != NULL) {
 	//
@@ -797,6 +833,28 @@ V1.Symbol::fromJson(char* jsonStr)
 		}
 		
 	}
+	const gchar *future_is_inverseKey = "future_is_inverse";
+	node = json_object_get_member(pJsonObject, future_is_inverseKey);
+	if (node !=NULL) {
+	
+
+		if (isprimitive("bool")) {
+			jsonToValue(&future_is_inverse, node, "bool", "");
+		} else {
+			
+		}
+	}
+	const gchar *future_is_quantoKey = "future_is_quanto";
+	node = json_object_get_member(pJsonObject, future_is_quantoKey);
+	if (node !=NULL) {
+	
+
+		if (isprimitive("bool")) {
+			jsonToValue(&future_is_quanto, node, "bool", "");
+		} else {
+			
+		}
+	}
 	const gchar *volume_to_usdKey = "volume_to_usd";
 	node = json_object_get_member(pJsonObject, volume_to_usdKey);
 	if (node !=NULL) {
@@ -804,6 +862,50 @@ V1.Symbol::fromJson(char* jsonStr)
 
 		if (isprimitive("double")) {
 			jsonToValue(&volume_to_usd, node, "double", "");
+		} else {
+			
+		}
+	}
+	const gchar *option_barrier_up_priceKey = "option_barrier_up_price";
+	node = json_object_get_member(pJsonObject, option_barrier_up_priceKey);
+	if (node !=NULL) {
+	
+
+		if (isprimitive("double")) {
+			jsonToValue(&option_barrier_up_price, node, "double", "");
+		} else {
+			
+		}
+	}
+	const gchar *option_barrier_up_typeKey = "option_barrier_up_type";
+	node = json_object_get_member(pJsonObject, option_barrier_up_typeKey);
+	if (node !=NULL) {
+	
+
+		if (isprimitive("std::string")) {
+			jsonToValue(&option_barrier_up_type, node, "std::string", "");
+		} else {
+			
+		}
+	}
+	const gchar *option_barrier_down_priceKey = "option_barrier_down_price";
+	node = json_object_get_member(pJsonObject, option_barrier_down_priceKey);
+	if (node !=NULL) {
+	
+
+		if (isprimitive("double")) {
+			jsonToValue(&option_barrier_down_price, node, "double", "");
+		} else {
+			
+		}
+	}
+	const gchar *option_barrier_down_typeKey = "option_barrier_down_type";
+	node = json_object_get_member(pJsonObject, option_barrier_down_typeKey);
+	if (node !=NULL) {
+	
+
+		if (isprimitive("std::string")) {
+			jsonToValue(&option_barrier_down_type, node, "std::string", "");
 		} else {
 			
 		}
@@ -1237,6 +1339,24 @@ V1.Symbol::toJson()
 
 	const gchar *raw_kvpKey = "raw_kvp";
 	json_object_set_member(pJsonObject, raw_kvpKey, node);
+	if (isprimitive("bool")) {
+		bool obj = getFutureIsInverse();
+		node = converttoJson(&obj, "bool", "");
+	}
+	else {
+		
+	}
+	const gchar *future_is_inverseKey = "future_is_inverse";
+	json_object_set_member(pJsonObject, future_is_inverseKey, node);
+	if (isprimitive("bool")) {
+		bool obj = getFutureIsQuanto();
+		node = converttoJson(&obj, "bool", "");
+	}
+	else {
+		
+	}
+	const gchar *future_is_quantoKey = "future_is_quanto";
+	json_object_set_member(pJsonObject, future_is_quantoKey, node);
 	if (isprimitive("double")) {
 		double obj = getVolumeToUsd();
 		node = converttoJson(&obj, "double", "");
@@ -1246,6 +1366,42 @@ V1.Symbol::toJson()
 	}
 	const gchar *volume_to_usdKey = "volume_to_usd";
 	json_object_set_member(pJsonObject, volume_to_usdKey, node);
+	if (isprimitive("double")) {
+		double obj = getOptionBarrierUpPrice();
+		node = converttoJson(&obj, "double", "");
+	}
+	else {
+		
+	}
+	const gchar *option_barrier_up_priceKey = "option_barrier_up_price";
+	json_object_set_member(pJsonObject, option_barrier_up_priceKey, node);
+	if (isprimitive("std::string")) {
+		std::string obj = getOptionBarrierUpType();
+		node = converttoJson(&obj, "std::string", "");
+	}
+	else {
+		
+	}
+	const gchar *option_barrier_up_typeKey = "option_barrier_up_type";
+	json_object_set_member(pJsonObject, option_barrier_up_typeKey, node);
+	if (isprimitive("double")) {
+		double obj = getOptionBarrierDownPrice();
+		node = converttoJson(&obj, "double", "");
+	}
+	else {
+		
+	}
+	const gchar *option_barrier_down_priceKey = "option_barrier_down_price";
+	json_object_set_member(pJsonObject, option_barrier_down_priceKey, node);
+	if (isprimitive("std::string")) {
+		std::string obj = getOptionBarrierDownType();
+		node = converttoJson(&obj, "std::string", "");
+	}
+	else {
+		
+	}
+	const gchar *option_barrier_down_typeKey = "option_barrier_down_type";
+	json_object_set_member(pJsonObject, option_barrier_down_typeKey, node);
 	if (isprimitive("int")) {
 		int obj = getSymbolIdInt();
 		node = converttoJson(&obj, "int", "");
@@ -1791,6 +1947,30 @@ V1.Symbol::setRawKvp(std::map <string, string> raw_kvp)
 	this->raw_kvp = raw_kvp;
 }
 
+bool
+V1.Symbol::getFutureIsInverse()
+{
+	return future_is_inverse;
+}
+
+void
+V1.Symbol::setFutureIsInverse(bool  future_is_inverse)
+{
+	this->future_is_inverse = future_is_inverse;
+}
+
+bool
+V1.Symbol::getFutureIsQuanto()
+{
+	return future_is_quanto;
+}
+
+void
+V1.Symbol::setFutureIsQuanto(bool  future_is_quanto)
+{
+	this->future_is_quanto = future_is_quanto;
+}
+
 double
 V1.Symbol::getVolumeToUsd()
 {
@@ -1801,6 +1981,54 @@ void
 V1.Symbol::setVolumeToUsd(double  volume_to_usd)
 {
 	this->volume_to_usd = volume_to_usd;
+}
+
+double
+V1.Symbol::getOptionBarrierUpPrice()
+{
+	return option_barrier_up_price;
+}
+
+void
+V1.Symbol::setOptionBarrierUpPrice(double  option_barrier_up_price)
+{
+	this->option_barrier_up_price = option_barrier_up_price;
+}
+
+std::string
+V1.Symbol::getOptionBarrierUpType()
+{
+	return option_barrier_up_type;
+}
+
+void
+V1.Symbol::setOptionBarrierUpType(std::string  option_barrier_up_type)
+{
+	this->option_barrier_up_type = option_barrier_up_type;
+}
+
+double
+V1.Symbol::getOptionBarrierDownPrice()
+{
+	return option_barrier_down_price;
+}
+
+void
+V1.Symbol::setOptionBarrierDownPrice(double  option_barrier_down_price)
+{
+	this->option_barrier_down_price = option_barrier_down_price;
+}
+
+std::string
+V1.Symbol::getOptionBarrierDownType()
+{
+	return option_barrier_down_type;
+}
+
+void
+V1.Symbol::setOptionBarrierDownType(std::string  option_barrier_down_type)
+{
+	this->option_barrier_down_type = option_barrier_down_type;
 }
 
 int

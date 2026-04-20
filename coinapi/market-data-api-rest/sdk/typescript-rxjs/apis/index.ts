@@ -2,7 +2,7 @@ export * from './ExchangeRatesApi';
 export * from './MetadataApi';
 export * from './MetricsV1Api';
 export * from './MetricsV2Api';
-export * from './OhlcvApi';
+export * from './OHLCVApi';
 export * from './OptionsApi';
 export * from './OrderBookApi';
 export * from './OrderBookL3Api';

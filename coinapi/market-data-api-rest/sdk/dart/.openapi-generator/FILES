@@ -7,8 +7,8 @@ doc/ExchangeRatesApi.md
 doc/MetadataApi.md
 doc/MetricsV1Api.md
 doc/MetricsV2Api.md
-doc/ModelsExchangeTimeseriesItem.md
-doc/OhlcvApi.md
+doc/OHLCVApi.md
+doc/OhlcvExchangeTimeseriesItem.md
 doc/OptionsApi.md
 doc/OptionsOptionExchangeGroup.md
 doc/OptionsStrike.md
@@ -61,7 +61,7 @@ lib/auth/authentication.dart
 lib/auth/http_basic_auth.dart
 lib/auth/http_bearer_auth.dart
 lib/auth/oauth.dart
-lib/model/models_exchange_timeseries_item.dart
+lib/model/ohlcv_exchange_timeseries_item.dart
 lib/model/options_option_exchange_group.dart
 lib/model/options_strike.dart
 lib/model/v1_asset.dart
@@ -94,8 +94,8 @@ test/exchange_rates_api_test.dart
 test/metadata_api_test.dart
 test/metrics_v1_api_test.dart
 test/metrics_v2_api_test.dart
-test/models_exchange_timeseries_item_test.dart
 test/ohlcv_api_test.dart
+test/ohlcv_exchange_timeseries_item_test.dart
 test/options_api_test.dart
 test/options_option_exchange_group_test.dart
 test/options_strike_test.dart

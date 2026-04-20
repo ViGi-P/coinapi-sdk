@@ -135,10 +135,10 @@ Class | Method | HTTP request | Description
 *MetricsV2Api* | [**marketdataListMetricsV2ExchangeHistory**](docs/MetricsV2Api.md#marketdatalistmetricsv2exchangehistory) | **GET** /v2/metrics/exchange/history | Historical metrics for the exchange
 *MetricsV2Api* | [**marketdataListMetricsV2ExchangeListing**](docs/MetricsV2Api.md#marketdatalistmetricsv2exchangelisting) | **GET** /v2/metrics/exchange/listing | Listing of metrics available for specific exchange
 *MetricsV2Api* | [**marketdataListMetricsV2Listing**](docs/MetricsV2Api.md#marketdatalistmetricsv2listing) | **GET** /v2/metrics/listing | Listing of all supported metrics
-*OhlcvApi* | [**v1OhlcvExchangesExchangeIdHistoryGet**](docs/OhlcvApi.md#v1ohlcvexchangesexchangeidhistoryget) | **GET** /v1/ohlcv/exchanges/{exchange_id}/history | Historical data by exchange
-*OhlcvApi* | [**v1OhlcvPeriodsGet**](docs/OhlcvApi.md#v1ohlcvperiodsget) | **GET** /v1/ohlcv/periods | List all periods
-*OhlcvApi* | [**v1OhlcvSymbolIdHistoryGet**](docs/OhlcvApi.md#v1ohlcvsymbolidhistoryget) | **GET** /v1/ohlcv/{symbol_id}/history | Historical data
-*OhlcvApi* | [**v1OhlcvSymbolIdLatestGet**](docs/OhlcvApi.md#v1ohlcvsymbolidlatestget) | **GET** /v1/ohlcv/{symbol_id}/latest | Latest data
+*OHLCVApi* | [**v1OhlcvExchangesExchangeIdHistoryGet**](docs/OHLCVApi.md#v1ohlcvexchangesexchangeidhistoryget) | **GET** /v1/ohlcv/exchanges/{exchange_id}/history | Historical data by exchange
+*OHLCVApi* | [**v1OhlcvPeriodsGet**](docs/OHLCVApi.md#v1ohlcvperiodsget) | **GET** /v1/ohlcv/periods | List all periods
+*OHLCVApi* | [**v1OhlcvSymbolIdHistoryGet**](docs/OHLCVApi.md#v1ohlcvsymbolidhistoryget) | **GET** /v1/ohlcv/{symbol_id}/history | Historical data
+*OHLCVApi* | [**v1OhlcvSymbolIdLatestGet**](docs/OHLCVApi.md#v1ohlcvsymbolidlatestget) | **GET** /v1/ohlcv/{symbol_id}/latest | Latest data
 *OptionsApi* | [**v1OptionsExchangeIdCurrentGet**](docs/OptionsApi.md#v1optionsexchangeidcurrentget) | **GET** /v1/options/{exchange_id}/current | Current data by Exchange
 *OrderBookApi* | [**v1OrderbooksSymbolIdCurrentGet**](docs/OrderBookApi.md#v1orderbookssymbolidcurrentget) | **GET** /v1/orderbooks/{symbol_id}/current | Get current order book
 *OrderBookApi* | [**v1OrderbooksSymbolIdDepthCurrentGet**](docs/OrderBookApi.md#v1orderbookssymboliddepthcurrentget) | **GET** /v1/orderbooks/{symbol_id}/depth/current | Current depth of the order book
@@ -157,7 +157,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [ModelsExchangeTimeseriesItem](docs/ModelsExchangeTimeseriesItem.md)
+ - [OhlcvExchangeTimeseriesItem](docs/OhlcvExchangeTimeseriesItem.md)
  - [OptionsOptionExchangeGroup](docs/OptionsOptionExchangeGroup.md)
  - [OptionsStrike](docs/OptionsStrike.md)
  - [V1Asset](docs/V1Asset.md)

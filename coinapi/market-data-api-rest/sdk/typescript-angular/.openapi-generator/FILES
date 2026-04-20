@@ -8,7 +8,7 @@ api/exchangeRates.service.ts
 api/metadata.service.ts
 api/metricsV1.service.ts
 api/metricsV2.service.ts
-api/ohlcv.service.ts
+api/oHLCV.service.ts
 api/options.service.ts
 api/orderBook.service.ts
 api/orderBookL3.service.ts
@@ -19,7 +19,7 @@ encoder.ts
 git_push.sh
 index.ts
 model/models.ts
-model/modelsExchangeTimeseriesItem.ts
+model/ohlcvExchangeTimeseriesItem.ts
 model/optionsOptionExchangeGroup.ts
 model/optionsStrike.ts
 model/v1Asset.ts

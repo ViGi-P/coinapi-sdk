@@ -48,7 +48,7 @@ set(SRCS
     src/binary.c
     external/cJSON.c
     model/object.c
-    model/models_exchange_timeseries_item.c
+    model/ohlcv_exchange_timeseries_item.c
     model/options_option_exchange_group.c
     model/options_strike.c
     model/v1_asset.c
@@ -80,7 +80,7 @@ set(SRCS
     api/MetadataAPI.c
     api/MetricsV1API.c
     api/MetricsV2API.c
-    api/OhlcvAPI.c
+    api/OHLCVAPI.c
     api/OptionsAPI.c
     api/OrderBookAPI.c
     api/OrderBookL3API.c
@@ -97,7 +97,7 @@ set(HDRS
     external/cJSON.h
     model/object.h
     model/any_type.h
-    model/models_exchange_timeseries_item.h
+    model/ohlcv_exchange_timeseries_item.h
     model/options_option_exchange_group.h
     model/options_strike.h
     model/v1_asset.h
@@ -129,7 +129,7 @@ set(HDRS
     api/MetadataAPI.h
     api/MetricsV1API.h
     api/MetricsV2API.h
-    api/OhlcvAPI.h
+    api/OHLCVAPI.h
     api/OptionsAPI.h
     api/OrderBookAPI.h
     api/OrderBookL3API.h
@@ -224,7 +224,7 @@ set(HDRS "")
 #    unit-tests/manual-MetadataAPI.c
 #    unit-tests/manual-MetricsV1API.c
 #    unit-tests/manual-MetricsV2API.c
-#    unit-tests/manual-OhlcvAPI.c
+#    unit-tests/manual-OHLCVAPI.c
 #    unit-tests/manual-OptionsAPI.c
 #    unit-tests/manual-OrderBookAPI.c
 #    unit-tests/manual-OrderBookL3API.c

@@ -3,8 +3,8 @@ API/Client/ExchangeRatesApi.js
 API/Client/MetadataApi.js
 API/Client/MetricsV1Api.js
 API/Client/MetricsV2Api.js
-API/Client/ModelsExchangeTimeseriesItem.js
-API/Client/OhlcvApi.js
+API/Client/OHLCVApi.js
+API/Client/OhlcvExchangeTimeseriesItem.js
 API/Client/OptionsApi.js
 API/Client/OptionsOptionExchangeGroup.js
 API/Client/OptionsStrike.js

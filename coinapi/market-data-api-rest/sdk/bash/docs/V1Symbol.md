@@ -47,7 +47,13 @@ Name | Type | Description | Notes
 **priceUnderscoreprecision** | **float** |  | [optional] [default to null]
 **sizeUnderscoreprecision** | **float** |  | [optional] [default to null]
 **rawUnderscorekvp** | **map[String, string]** |  | [optional] [default to null]
+**futureUnderscoreisUnderscoreinverse** | **boolean** |  | [optional] [default to null]
+**futureUnderscoreisUnderscorequanto** | **boolean** |  | [optional] [default to null]
 **volumeUnderscoretoUnderscoreusd** | **float** |  | [optional] [default to null]
+**optionUnderscorebarrierUnderscoreupUnderscoreprice** | **float** |  | [optional] [default to null]
+**optionUnderscorebarrierUnderscoreupUnderscoretype** | **string** |  | [optional] [default to null]
+**optionUnderscorebarrierUnderscoredownUnderscoreprice** | **float** |  | [optional] [default to null]
+**optionUnderscorebarrierUnderscoredownUnderscoretype** | **string** |  | [optional] [default to null]
 **symbolUnderscoreidUnderscoreint** | **integer** |  | [optional] [readonly] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

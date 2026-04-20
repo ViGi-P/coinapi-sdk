@@ -21,7 +21,7 @@ export 'package:openapi/src/api/order_book_l3_api.dart';
 export 'package:openapi/src/api/quotes_api.dart';
 export 'package:openapi/src/api/trades_api.dart';
 
-export 'package:openapi/src/model/models_exchange_timeseries_item.dart';
+export 'package:openapi/src/model/ohlcv_exchange_timeseries_item.dart';
 export 'package:openapi/src/model/options_option_exchange_group.dart';
 export 'package:openapi/src/model/options_strike.dart';
 export 'package:openapi/src/model/v1_asset.dart';

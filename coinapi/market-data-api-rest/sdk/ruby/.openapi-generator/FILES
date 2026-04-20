@@ -11,8 +11,8 @@ docs/ExchangeRatesApi.md
 docs/MetadataApi.md
 docs/MetricsV1Api.md
 docs/MetricsV2Api.md
-docs/ModelsExchangeTimeseriesItem.md
-docs/OhlcvApi.md
+docs/OHLCVApi.md
+docs/OhlcvExchangeTimeseriesItem.md
 docs/OptionsApi.md
 docs/OptionsOptionExchangeGroup.md
 docs/OptionsStrike.md
@@ -61,7 +61,7 @@ lib/openapi_client/api_client.rb
 lib/openapi_client/api_error.rb
 lib/openapi_client/api_model_base.rb
 lib/openapi_client/configuration.rb
-lib/openapi_client/models/models_exchange_timeseries_item.rb
+lib/openapi_client/models/ohlcv_exchange_timeseries_item.rb
 lib/openapi_client/models/options_option_exchange_group.rb
 lib/openapi_client/models/options_strike.rb
 lib/openapi_client/models/v1_asset.rb
@@ -101,7 +101,7 @@ spec/api/order_book_api_spec.rb
 spec/api/order_book_l3_api_spec.rb
 spec/api/quotes_api_spec.rb
 spec/api/trades_api_spec.rb
-spec/models/models_exchange_timeseries_item_spec.rb
+spec/models/ohlcv_exchange_timeseries_item_spec.rb
 spec/models/options_option_exchange_group_spec.rb
 spec/models/options_strike_spec.rb
 spec/models/v1_asset_spec.rb

@@ -98,10 +98,10 @@ class Openapi {
     return MetricsV2Api(dio, serializers);
   }
 
-  /// Get OhlcvApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get OHLCVApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  OhlcvApi getOhlcvApi() {
-    return OhlcvApi(dio, serializers);
+  OHLCVApi getOHLCVApi() {
+    return OHLCVApi(dio, serializers);
   }
 
   /// Get OptionsApi instance, base route and serializer can be overridden by a given but be careful,

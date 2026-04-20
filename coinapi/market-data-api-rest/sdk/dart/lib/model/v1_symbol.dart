@@ -57,7 +57,13 @@ class V1Symbol {
     this.pricePrecision,
     this.sizePrecision,
     this.rawKvp = const {},
+    this.futureIsInverse,
+    this.futureIsQuanto,
     this.volumeToUsd,
+    this.optionBarrierUpPrice,
+    this.optionBarrierUpType,
+    this.optionBarrierDownPrice,
+    this.optionBarrierDownType,
     this.symbolIdInt,
   });
 
@@ -97,7 +103,7 @@ class V1Symbol {
   /// The contract unit for options.
   double? optionContractUnit;
 
-  /// The exercise style for options.
+  /// The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
   String? optionExerciseStyle;
 
   /// The expiration time for options.
@@ -188,11 +194,29 @@ class V1Symbol {
   /// The size precision.
   double? sizePrecision;
 
-  /// Not normalized raw kvp data.
+  /// Key Value Pair store with raw data from the data source.
   Map<String, String>? rawKvp;
+
+  /// Indicates whether the futures contract is inverse (coin-margined).
+  bool? futureIsInverse;
+
+  /// Indicates whether the futures contract is quanto.
+  bool? futureIsQuanto;
 
   /// Volume unit in USD.
   double? volumeToUsd;
+
+  /// The up barrier price for barrier options.
+  double? optionBarrierUpPrice;
+
+  /// The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  String? optionBarrierUpType;
+
+  /// The down barrier price for barrier options.
+  double? optionBarrierDownPrice;
+
+  /// The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  String? optionBarrierDownType;
 
   /// The symbol identifier in integer immutable format, used to correlate data across different APIs.
   int? symbolIdInt;
@@ -243,7 +267,13 @@ class V1Symbol {
     other.pricePrecision == pricePrecision &&
     other.sizePrecision == sizePrecision &&
     _deepEquality.equals(other.rawKvp, rawKvp) &&
+    other.futureIsInverse == futureIsInverse &&
+    other.futureIsQuanto == futureIsQuanto &&
     other.volumeToUsd == volumeToUsd &&
+    other.optionBarrierUpPrice == optionBarrierUpPrice &&
+    other.optionBarrierUpType == optionBarrierUpType &&
+    other.optionBarrierDownPrice == optionBarrierDownPrice &&
+    other.optionBarrierDownType == optionBarrierDownType &&
     other.symbolIdInt == symbolIdInt;
 
   @override
@@ -293,11 +323,17 @@ class V1Symbol {
     (pricePrecision == null ? 0 : pricePrecision!.hashCode) +
     (sizePrecision == null ? 0 : sizePrecision!.hashCode) +
     (rawKvp == null ? 0 : rawKvp!.hashCode) +
+    (futureIsInverse == null ? 0 : futureIsInverse!.hashCode) +
+    (futureIsQuanto == null ? 0 : futureIsQuanto!.hashCode) +
     (volumeToUsd == null ? 0 : volumeToUsd!.hashCode) +
+    (optionBarrierUpPrice == null ? 0 : optionBarrierUpPrice!.hashCode) +
+    (optionBarrierUpType == null ? 0 : optionBarrierUpType!.hashCode) +
+    (optionBarrierDownPrice == null ? 0 : optionBarrierDownPrice!.hashCode) +
+    (optionBarrierDownType == null ? 0 : optionBarrierDownType!.hashCode) +
     (symbolIdInt == null ? 0 : symbolIdInt!.hashCode);
 
   @override
-  String toString() => 'V1Symbol[symbolId=$symbolId, exchangeId=$exchangeId, symbolType=$symbolType, assetIdBase=$assetIdBase, assetIdQuote=$assetIdQuote, assetIdUnit=$assetIdUnit, futureContractUnit=$futureContractUnit, futureContractUnitAsset=$futureContractUnitAsset, futureDeliveryTime=$futureDeliveryTime, optionTypeIsCall=$optionTypeIsCall, optionStrikePrice=$optionStrikePrice, optionContractUnit=$optionContractUnit, optionExerciseStyle=$optionExerciseStyle, optionExpirationTime=$optionExpirationTime, contractDeliveryTime=$contractDeliveryTime, contractUnit=$contractUnit, contractUnitAsset=$contractUnitAsset, contractId=$contractId, contractDisplayName=$contractDisplayName, contractDisplayDescription=$contractDisplayDescription, dataStart=$dataStart, dataEnd=$dataEnd, dataQuoteStart=$dataQuoteStart, dataQuoteEnd=$dataQuoteEnd, dataOrderbookStart=$dataOrderbookStart, dataOrderbookEnd=$dataOrderbookEnd, dataTradeStart=$dataTradeStart, dataTradeEnd=$dataTradeEnd, indexId=$indexId, indexDisplayName=$indexDisplayName, indexDisplayDescription=$indexDisplayDescription, volume1hrs=$volume1hrs, volume1hrsUsd=$volume1hrsUsd, volume1day=$volume1day, volume1dayUsd=$volume1dayUsd, volume1mth=$volume1mth, volume1mthUsd=$volume1mthUsd, price=$price, symbolIdExchange=$symbolIdExchange, assetIdBaseExchange=$assetIdBaseExchange, assetIdQuoteExchange=$assetIdQuoteExchange, pricePrecision=$pricePrecision, sizePrecision=$sizePrecision, rawKvp=$rawKvp, volumeToUsd=$volumeToUsd, symbolIdInt=$symbolIdInt]';
+  String toString() => 'V1Symbol[symbolId=$symbolId, exchangeId=$exchangeId, symbolType=$symbolType, assetIdBase=$assetIdBase, assetIdQuote=$assetIdQuote, assetIdUnit=$assetIdUnit, futureContractUnit=$futureContractUnit, futureContractUnitAsset=$futureContractUnitAsset, futureDeliveryTime=$futureDeliveryTime, optionTypeIsCall=$optionTypeIsCall, optionStrikePrice=$optionStrikePrice, optionContractUnit=$optionContractUnit, optionExerciseStyle=$optionExerciseStyle, optionExpirationTime=$optionExpirationTime, contractDeliveryTime=$contractDeliveryTime, contractUnit=$contractUnit, contractUnitAsset=$contractUnitAsset, contractId=$contractId, contractDisplayName=$contractDisplayName, contractDisplayDescription=$contractDisplayDescription, dataStart=$dataStart, dataEnd=$dataEnd, dataQuoteStart=$dataQuoteStart, dataQuoteEnd=$dataQuoteEnd, dataOrderbookStart=$dataOrderbookStart, dataOrderbookEnd=$dataOrderbookEnd, dataTradeStart=$dataTradeStart, dataTradeEnd=$dataTradeEnd, indexId=$indexId, indexDisplayName=$indexDisplayName, indexDisplayDescription=$indexDisplayDescription, volume1hrs=$volume1hrs, volume1hrsUsd=$volume1hrsUsd, volume1day=$volume1day, volume1dayUsd=$volume1dayUsd, volume1mth=$volume1mth, volume1mthUsd=$volume1mthUsd, price=$price, symbolIdExchange=$symbolIdExchange, assetIdBaseExchange=$assetIdBaseExchange, assetIdQuoteExchange=$assetIdQuoteExchange, pricePrecision=$pricePrecision, sizePrecision=$sizePrecision, rawKvp=$rawKvp, futureIsInverse=$futureIsInverse, futureIsQuanto=$futureIsQuanto, volumeToUsd=$volumeToUsd, optionBarrierUpPrice=$optionBarrierUpPrice, optionBarrierUpType=$optionBarrierUpType, optionBarrierDownPrice=$optionBarrierDownPrice, optionBarrierDownType=$optionBarrierDownType, symbolIdInt=$symbolIdInt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -521,10 +557,40 @@ class V1Symbol {
     } else {
       json[r'raw_kvp'] = null;
     }
+    if (this.futureIsInverse != null) {
+      json[r'future_is_inverse'] = this.futureIsInverse;
+    } else {
+      json[r'future_is_inverse'] = null;
+    }
+    if (this.futureIsQuanto != null) {
+      json[r'future_is_quanto'] = this.futureIsQuanto;
+    } else {
+      json[r'future_is_quanto'] = null;
+    }
     if (this.volumeToUsd != null) {
       json[r'volume_to_usd'] = this.volumeToUsd;
     } else {
       json[r'volume_to_usd'] = null;
+    }
+    if (this.optionBarrierUpPrice != null) {
+      json[r'option_barrier_up_price'] = this.optionBarrierUpPrice;
+    } else {
+      json[r'option_barrier_up_price'] = null;
+    }
+    if (this.optionBarrierUpType != null) {
+      json[r'option_barrier_up_type'] = this.optionBarrierUpType;
+    } else {
+      json[r'option_barrier_up_type'] = null;
+    }
+    if (this.optionBarrierDownPrice != null) {
+      json[r'option_barrier_down_price'] = this.optionBarrierDownPrice;
+    } else {
+      json[r'option_barrier_down_price'] = null;
+    }
+    if (this.optionBarrierDownType != null) {
+      json[r'option_barrier_down_type'] = this.optionBarrierDownType;
+    } else {
+      json[r'option_barrier_down_type'] = null;
     }
     if (this.symbolIdInt != null) {
       json[r'symbol_id_int'] = this.symbolIdInt;
@@ -593,7 +659,13 @@ class V1Symbol {
         pricePrecision: mapValueOfType<double>(json, r'price_precision'),
         sizePrecision: mapValueOfType<double>(json, r'size_precision'),
         rawKvp: mapCastOfType<String, String>(json, r'raw_kvp') ?? const {},
+        futureIsInverse: mapValueOfType<bool>(json, r'future_is_inverse'),
+        futureIsQuanto: mapValueOfType<bool>(json, r'future_is_quanto'),
         volumeToUsd: mapValueOfType<double>(json, r'volume_to_usd'),
+        optionBarrierUpPrice: mapValueOfType<double>(json, r'option_barrier_up_price'),
+        optionBarrierUpType: mapValueOfType<String>(json, r'option_barrier_up_type'),
+        optionBarrierDownPrice: mapValueOfType<double>(json, r'option_barrier_down_price'),
+        optionBarrierDownType: mapValueOfType<String>(json, r'option_barrier_down_type'),
         symbolIdInt: mapValueOfType<int>(json, r'symbol_id_int'),
       );
     }

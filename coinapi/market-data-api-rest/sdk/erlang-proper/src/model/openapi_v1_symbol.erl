@@ -53,7 +53,13 @@
   | {'price_precision', float() }
   | {'size_precision', float() }
   | {'raw_kvp', map() }
+  | {'future_is_inverse', boolean() }
+  | {'future_is_quanto', boolean() }
   | {'volume_to_usd', float() }
+  | {'option_barrier_up_price', float() }
+  | {'option_barrier_up_type', binary() }
+  | {'option_barrier_down_price', float() }
+  | {'option_barrier_down_type', binary() }
   | {'symbol_id_int', integer() }
   ].
 
@@ -106,7 +112,13 @@ openapi_v1_symbol(Fields) ->
             , {'price_precision', float() }
             , {'size_precision', float() }
             , {'raw_kvp', map() }
+            , {'future_is_inverse', boolean() }
+            , {'future_is_quanto', boolean() }
             , {'volume_to_usd', float() }
+            , {'option_barrier_up_price', float() }
+            , {'option_barrier_up_type', binary() }
+            , {'option_barrier_down_price', float() }
+            , {'option_barrier_down_type', binary() }
             , {'symbol_id_int', integer() }
             ],
   lists:ukeymerge(1, lists:sort(Fields), lists:sort(Default)).

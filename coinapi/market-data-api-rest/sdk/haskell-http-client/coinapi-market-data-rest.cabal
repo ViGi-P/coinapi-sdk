@@ -70,7 +70,7 @@ library
       CoinAPIMarketDataREST.API.Metadata
       CoinAPIMarketDataREST.API.MetricsV1
       CoinAPIMarketDataREST.API.MetricsV2
-      CoinAPIMarketDataREST.API.Ohlcv
+      CoinAPIMarketDataREST.API.OHLCV
       CoinAPIMarketDataREST.API.Options
       CoinAPIMarketDataREST.API.OrderBook
       CoinAPIMarketDataREST.API.OrderBookL3

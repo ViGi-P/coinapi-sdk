@@ -130,11 +130,11 @@ public:
 	/*! \brief Set The contract unit for options.
 	 */
 	void setOptionContractUnit(double  option_contract_unit);
-	/*! \brief Get The exercise style for options.
+	/*! \brief Get The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
 	 */
 	std::string getOptionExerciseStyle();
 
-	/*! \brief Set The exercise style for options.
+	/*! \brief Set The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
 	 */
 	void setOptionExerciseStyle(std::string  option_exercise_style);
 	/*! \brief Get The expiration time for options.
@@ -347,13 +347,27 @@ public:
 	/*! \brief Set The size precision.
 	 */
 	void setSizePrecision(double  size_precision);
-	/*! \brief Get Not normalized raw kvp data.
+	/*! \brief Get Key Value Pair store with raw data from the data source.
 	 */
 	std::map<std::string, std::string> getRawKvp();
 
-	/*! \brief Set Not normalized raw kvp data.
+	/*! \brief Set Key Value Pair store with raw data from the data source.
 	 */
 	void setRawKvp(std::map <std::string, std::string> raw_kvp);
+	/*! \brief Get Indicates whether the futures contract is inverse (coin-margined).
+	 */
+	bool getFutureIsInverse();
+
+	/*! \brief Set Indicates whether the futures contract is inverse (coin-margined).
+	 */
+	void setFutureIsInverse(bool  future_is_inverse);
+	/*! \brief Get Indicates whether the futures contract is quanto.
+	 */
+	bool getFutureIsQuanto();
+
+	/*! \brief Set Indicates whether the futures contract is quanto.
+	 */
+	void setFutureIsQuanto(bool  future_is_quanto);
 	/*! \brief Get Volume unit in USD.
 	 */
 	double getVolumeToUsd();
@@ -361,6 +375,34 @@ public:
 	/*! \brief Set Volume unit in USD.
 	 */
 	void setVolumeToUsd(double  volume_to_usd);
+	/*! \brief Get The up barrier price for barrier options.
+	 */
+	double getOptionBarrierUpPrice();
+
+	/*! \brief Set The up barrier price for barrier options.
+	 */
+	void setOptionBarrierUpPrice(double  option_barrier_up_price);
+	/*! \brief Get The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+	 */
+	std::string getOptionBarrierUpType();
+
+	/*! \brief Set The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+	 */
+	void setOptionBarrierUpType(std::string  option_barrier_up_type);
+	/*! \brief Get The down barrier price for barrier options.
+	 */
+	double getOptionBarrierDownPrice();
+
+	/*! \brief Set The down barrier price for barrier options.
+	 */
+	void setOptionBarrierDownPrice(double  option_barrier_down_price);
+	/*! \brief Get The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+	 */
+	std::string getOptionBarrierDownType();
+
+	/*! \brief Set The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+	 */
+	void setOptionBarrierDownType(std::string  option_barrier_down_type);
 	/*! \brief Get The symbol identifier in integer immutable format, used to correlate data across different APIs.
 	 */
 	int getSymbolIdInt();
@@ -414,7 +456,13 @@ private:
 	double price_precision;
 	double size_precision;
 	std::map <std::string, std::string>raw_kvp;
+	bool future_is_inverse;
+	bool future_is_quanto;
 	double volume_to_usd;
+	double option_barrier_up_price;
+	std::string option_barrier_up_type;
+	double option_barrier_down_price;
+	std::string option_barrier_down_type;
 	int symbol_id_int;
 	void __init();
 	void __cleanup();

@@ -6,8 +6,8 @@ docs/ExchangeRatesApi.md
 docs/MetadataApi.md
 docs/MetricsV1Api.md
 docs/MetricsV2Api.md
-docs/ModelsExchangeTimeseriesItem.md
-docs/OhlcvApi.md
+docs/OHLCVApi.md
+docs/OhlcvExchangeTimeseriesItem.md
 docs/OptionsApi.md
 docs/OptionsOptionExchangeGroup.md
 docs/OptionsStrike.md
@@ -56,7 +56,7 @@ src/main/java/org/openapitools/client/api/ExchangeRatesApi.java
 src/main/java/org/openapitools/client/api/MetadataApi.java
 src/main/java/org/openapitools/client/api/MetricsV1Api.java
 src/main/java/org/openapitools/client/api/MetricsV2Api.java
-src/main/java/org/openapitools/client/api/OhlcvApi.java
+src/main/java/org/openapitools/client/api/OHLCVApi.java
 src/main/java/org/openapitools/client/api/OptionsApi.java
 src/main/java/org/openapitools/client/api/OrderBookApi.java
 src/main/java/org/openapitools/client/api/OrderBookL3Api.java
@@ -65,7 +65,7 @@ src/main/java/org/openapitools/client/api/TradesApi.java
 src/main/java/org/openapitools/client/auth/ApiKeyAuth.java
 src/main/java/org/openapitools/client/auth/Authentication.java
 src/main/java/org/openapitools/client/auth/HttpBasicAuth.java
-src/main/java/org/openapitools/client/model/ModelsExchangeTimeseriesItem.java
+src/main/java/org/openapitools/client/model/OhlcvExchangeTimeseriesItem.java
 src/main/java/org/openapitools/client/model/OptionsOptionExchangeGroup.java
 src/main/java/org/openapitools/client/model/OptionsStrike.java
 src/main/java/org/openapitools/client/model/V1Asset.java

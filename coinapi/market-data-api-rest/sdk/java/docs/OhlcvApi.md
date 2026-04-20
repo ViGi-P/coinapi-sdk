@@ -12,7 +12,7 @@ All URIs are relative to *https://rest.coinapi.io*
 
 <a id="v1OhlcvExchangesExchangeIdHistoryGet"></a>
 # **v1OhlcvExchangesExchangeIdHistoryGet**
-> List&lt;ModelsExchangeTimeseriesItem&gt; v1OhlcvExchangesExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
+> List&lt;OhlcvExchangeTimeseriesItem&gt; v1OhlcvExchangesExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
 
 Historical data by exchange
 
@@ -49,7 +49,7 @@ public class Example {
     String timeStart = "timeStart_example"; // String | Timeseries starting time in ISO 8601
     String timeEnd = "timeEnd_example"; // String | Timeseries ending time in ISO 8601
     try {
-      List<ModelsExchangeTimeseriesItem> result = apiInstance.v1OhlcvExchangesExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd);
+      List<OhlcvExchangeTimeseriesItem> result = apiInstance.v1OhlcvExchangesExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OhlcvApi#v1OhlcvExchangesExchangeIdHistoryGet");
@@ -73,7 +73,7 @@ public class Example {
 
 ### Return type
 
-[**List&lt;ModelsExchangeTimeseriesItem&gt;**](ModelsExchangeTimeseriesItem.md)
+[**List&lt;OhlcvExchangeTimeseriesItem&gt;**](OhlcvExchangeTimeseriesItem.md)
 
 ### Authorization
 

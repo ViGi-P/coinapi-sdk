@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **OptionTypeIsCall** | Pointer to **NullableBool** | Indicates whether the option type is a call. | [optional] 
 **OptionStrikePrice** | Pointer to **NullableFloat64** | The strike price for options. | [optional] 
 **OptionContractUnit** | Pointer to **NullableFloat64** | The contract unit for options. | [optional] 
-**OptionExerciseStyle** | Pointer to **NullableString** | The exercise style for options. | [optional] 
+**OptionExerciseStyle** | Pointer to **NullableString** | The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. | [optional] 
 **OptionExpirationTime** | Pointer to **NullableTime** | The expiration time for options. | [optional] 
 **ContractDeliveryTime** | Pointer to **NullableTime** | The delivery time for contracts. | [optional] 
 **ContractUnit** | Pointer to **NullableFloat64** | The contract unit for contracts. | [optional] 
@@ -47,8 +47,14 @@ Name | Type | Description | Notes
 **AssetIdQuoteExchange** | Pointer to **NullableString** | The quote asset identifier in the exchange. | [optional] 
 **PricePrecision** | Pointer to **NullableFloat64** | The price precision. | [optional] 
 **SizePrecision** | Pointer to **NullableFloat64** | The size precision. | [optional] 
-**RawKvp** | Pointer to **map[string]string** | Not normalized raw kvp data. | [optional] 
+**RawKvp** | Pointer to **map[string]string** | Key Value Pair store with raw data from the data source. | [optional] 
+**FutureIsInverse** | Pointer to **NullableBool** | Indicates whether the futures contract is inverse (coin-margined). | [optional] 
+**FutureIsQuanto** | Pointer to **NullableBool** | Indicates whether the futures contract is quanto. | [optional] 
 **VolumeToUsd** | Pointer to **NullableFloat64** | Volume unit in USD. | [optional] 
+**OptionBarrierUpPrice** | Pointer to **NullableFloat64** | The up barrier price for barrier options. | [optional] 
+**OptionBarrierUpType** | Pointer to **NullableString** | The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. | [optional] 
+**OptionBarrierDownPrice** | Pointer to **NullableFloat64** | The down barrier price for barrier options. | [optional] 
+**OptionBarrierDownType** | Pointer to **NullableString** | The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. | [optional] 
 **SymbolIdInt** | Pointer to **NullableInt32** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly] 
 
 ## Methods
@@ -1610,6 +1616,76 @@ HasRawKvp returns a boolean if a field has been set.
 `func (o *V1Symbol) UnsetRawKvp()`
 
 UnsetRawKvp ensures that no value is present for RawKvp, not even an explicit nil
+### GetFutureIsInverse
+
+`func (o *V1Symbol) GetFutureIsInverse() bool`
+
+GetFutureIsInverse returns the FutureIsInverse field if non-nil, zero value otherwise.
+
+### GetFutureIsInverseOk
+
+`func (o *V1Symbol) GetFutureIsInverseOk() (*bool, bool)`
+
+GetFutureIsInverseOk returns a tuple with the FutureIsInverse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFutureIsInverse
+
+`func (o *V1Symbol) SetFutureIsInverse(v bool)`
+
+SetFutureIsInverse sets FutureIsInverse field to given value.
+
+### HasFutureIsInverse
+
+`func (o *V1Symbol) HasFutureIsInverse() bool`
+
+HasFutureIsInverse returns a boolean if a field has been set.
+
+### SetFutureIsInverseNil
+
+`func (o *V1Symbol) SetFutureIsInverseNil(b bool)`
+
+ SetFutureIsInverseNil sets the value for FutureIsInverse to be an explicit nil
+
+### UnsetFutureIsInverse
+`func (o *V1Symbol) UnsetFutureIsInverse()`
+
+UnsetFutureIsInverse ensures that no value is present for FutureIsInverse, not even an explicit nil
+### GetFutureIsQuanto
+
+`func (o *V1Symbol) GetFutureIsQuanto() bool`
+
+GetFutureIsQuanto returns the FutureIsQuanto field if non-nil, zero value otherwise.
+
+### GetFutureIsQuantoOk
+
+`func (o *V1Symbol) GetFutureIsQuantoOk() (*bool, bool)`
+
+GetFutureIsQuantoOk returns a tuple with the FutureIsQuanto field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFutureIsQuanto
+
+`func (o *V1Symbol) SetFutureIsQuanto(v bool)`
+
+SetFutureIsQuanto sets FutureIsQuanto field to given value.
+
+### HasFutureIsQuanto
+
+`func (o *V1Symbol) HasFutureIsQuanto() bool`
+
+HasFutureIsQuanto returns a boolean if a field has been set.
+
+### SetFutureIsQuantoNil
+
+`func (o *V1Symbol) SetFutureIsQuantoNil(b bool)`
+
+ SetFutureIsQuantoNil sets the value for FutureIsQuanto to be an explicit nil
+
+### UnsetFutureIsQuanto
+`func (o *V1Symbol) UnsetFutureIsQuanto()`
+
+UnsetFutureIsQuanto ensures that no value is present for FutureIsQuanto, not even an explicit nil
 ### GetVolumeToUsd
 
 `func (o *V1Symbol) GetVolumeToUsd() float64`
@@ -1645,6 +1721,146 @@ HasVolumeToUsd returns a boolean if a field has been set.
 `func (o *V1Symbol) UnsetVolumeToUsd()`
 
 UnsetVolumeToUsd ensures that no value is present for VolumeToUsd, not even an explicit nil
+### GetOptionBarrierUpPrice
+
+`func (o *V1Symbol) GetOptionBarrierUpPrice() float64`
+
+GetOptionBarrierUpPrice returns the OptionBarrierUpPrice field if non-nil, zero value otherwise.
+
+### GetOptionBarrierUpPriceOk
+
+`func (o *V1Symbol) GetOptionBarrierUpPriceOk() (*float64, bool)`
+
+GetOptionBarrierUpPriceOk returns a tuple with the OptionBarrierUpPrice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptionBarrierUpPrice
+
+`func (o *V1Symbol) SetOptionBarrierUpPrice(v float64)`
+
+SetOptionBarrierUpPrice sets OptionBarrierUpPrice field to given value.
+
+### HasOptionBarrierUpPrice
+
+`func (o *V1Symbol) HasOptionBarrierUpPrice() bool`
+
+HasOptionBarrierUpPrice returns a boolean if a field has been set.
+
+### SetOptionBarrierUpPriceNil
+
+`func (o *V1Symbol) SetOptionBarrierUpPriceNil(b bool)`
+
+ SetOptionBarrierUpPriceNil sets the value for OptionBarrierUpPrice to be an explicit nil
+
+### UnsetOptionBarrierUpPrice
+`func (o *V1Symbol) UnsetOptionBarrierUpPrice()`
+
+UnsetOptionBarrierUpPrice ensures that no value is present for OptionBarrierUpPrice, not even an explicit nil
+### GetOptionBarrierUpType
+
+`func (o *V1Symbol) GetOptionBarrierUpType() string`
+
+GetOptionBarrierUpType returns the OptionBarrierUpType field if non-nil, zero value otherwise.
+
+### GetOptionBarrierUpTypeOk
+
+`func (o *V1Symbol) GetOptionBarrierUpTypeOk() (*string, bool)`
+
+GetOptionBarrierUpTypeOk returns a tuple with the OptionBarrierUpType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptionBarrierUpType
+
+`func (o *V1Symbol) SetOptionBarrierUpType(v string)`
+
+SetOptionBarrierUpType sets OptionBarrierUpType field to given value.
+
+### HasOptionBarrierUpType
+
+`func (o *V1Symbol) HasOptionBarrierUpType() bool`
+
+HasOptionBarrierUpType returns a boolean if a field has been set.
+
+### SetOptionBarrierUpTypeNil
+
+`func (o *V1Symbol) SetOptionBarrierUpTypeNil(b bool)`
+
+ SetOptionBarrierUpTypeNil sets the value for OptionBarrierUpType to be an explicit nil
+
+### UnsetOptionBarrierUpType
+`func (o *V1Symbol) UnsetOptionBarrierUpType()`
+
+UnsetOptionBarrierUpType ensures that no value is present for OptionBarrierUpType, not even an explicit nil
+### GetOptionBarrierDownPrice
+
+`func (o *V1Symbol) GetOptionBarrierDownPrice() float64`
+
+GetOptionBarrierDownPrice returns the OptionBarrierDownPrice field if non-nil, zero value otherwise.
+
+### GetOptionBarrierDownPriceOk
+
+`func (o *V1Symbol) GetOptionBarrierDownPriceOk() (*float64, bool)`
+
+GetOptionBarrierDownPriceOk returns a tuple with the OptionBarrierDownPrice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptionBarrierDownPrice
+
+`func (o *V1Symbol) SetOptionBarrierDownPrice(v float64)`
+
+SetOptionBarrierDownPrice sets OptionBarrierDownPrice field to given value.
+
+### HasOptionBarrierDownPrice
+
+`func (o *V1Symbol) HasOptionBarrierDownPrice() bool`
+
+HasOptionBarrierDownPrice returns a boolean if a field has been set.
+
+### SetOptionBarrierDownPriceNil
+
+`func (o *V1Symbol) SetOptionBarrierDownPriceNil(b bool)`
+
+ SetOptionBarrierDownPriceNil sets the value for OptionBarrierDownPrice to be an explicit nil
+
+### UnsetOptionBarrierDownPrice
+`func (o *V1Symbol) UnsetOptionBarrierDownPrice()`
+
+UnsetOptionBarrierDownPrice ensures that no value is present for OptionBarrierDownPrice, not even an explicit nil
+### GetOptionBarrierDownType
+
+`func (o *V1Symbol) GetOptionBarrierDownType() string`
+
+GetOptionBarrierDownType returns the OptionBarrierDownType field if non-nil, zero value otherwise.
+
+### GetOptionBarrierDownTypeOk
+
+`func (o *V1Symbol) GetOptionBarrierDownTypeOk() (*string, bool)`
+
+GetOptionBarrierDownTypeOk returns a tuple with the OptionBarrierDownType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptionBarrierDownType
+
+`func (o *V1Symbol) SetOptionBarrierDownType(v string)`
+
+SetOptionBarrierDownType sets OptionBarrierDownType field to given value.
+
+### HasOptionBarrierDownType
+
+`func (o *V1Symbol) HasOptionBarrierDownType() bool`
+
+HasOptionBarrierDownType returns a boolean if a field has been set.
+
+### SetOptionBarrierDownTypeNil
+
+`func (o *V1Symbol) SetOptionBarrierDownTypeNil(b bool)`
+
+ SetOptionBarrierDownTypeNil sets the value for OptionBarrierDownType to be an explicit nil
+
+### UnsetOptionBarrierDownType
+`func (o *V1Symbol) UnsetOptionBarrierDownType()`
+
+UnsetOptionBarrierDownType ensures that no value is present for OptionBarrierDownType, not even an explicit nil
 ### GetSymbolIdInt
 
 `func (o *V1Symbol) GetSymbolIdInt() int32`

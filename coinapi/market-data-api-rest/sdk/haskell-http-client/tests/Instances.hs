@@ -113,24 +113,24 @@ arbitraryReducedMaybeValue n = do
 
 -- * Models
 
-instance Arbitrary ModelsExchangeTimeseriesItem where
-  arbitrary = sized genModelsExchangeTimeseriesItem
+instance Arbitrary OhlcvExchangeTimeseriesItem where
+  arbitrary = sized genOhlcvExchangeTimeseriesItem
 
-genModelsExchangeTimeseriesItem :: Int -> Gen ModelsExchangeTimeseriesItem
-genModelsExchangeTimeseriesItem n =
-  ModelsExchangeTimeseriesItem
-    <$> arbitraryReducedMaybe n -- modelsExchangeTimeseriesItemTimePeriodStart :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- modelsExchangeTimeseriesItemTimePeriodEnd :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- modelsExchangeTimeseriesItemTimeOpen :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- modelsExchangeTimeseriesItemTimeClose :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- modelsExchangeTimeseriesItemPriceOpen :: Maybe Double
-    <*> arbitraryReducedMaybe n -- modelsExchangeTimeseriesItemPriceHigh :: Maybe Double
-    <*> arbitraryReducedMaybe n -- modelsExchangeTimeseriesItemPriceLow :: Maybe Double
-    <*> arbitraryReducedMaybe n -- modelsExchangeTimeseriesItemPriceClose :: Maybe Double
-    <*> arbitraryReducedMaybe n -- modelsExchangeTimeseriesItemVolumeTraded :: Maybe Double
-    <*> arbitraryReducedMaybe n -- modelsExchangeTimeseriesItemTradesCount :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- modelsExchangeTimeseriesItemSymbolIdExchange :: Maybe Text
-    <*> arbitraryReducedMaybe n -- modelsExchangeTimeseriesItemSymbolIdCoinapi :: Maybe Text
+genOhlcvExchangeTimeseriesItem :: Int -> Gen OhlcvExchangeTimeseriesItem
+genOhlcvExchangeTimeseriesItem n =
+  OhlcvExchangeTimeseriesItem
+    <$> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemTimePeriodStart :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemTimePeriodEnd :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemTimeOpen :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemTimeClose :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemPriceOpen :: Maybe Double
+    <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemPriceHigh :: Maybe Double
+    <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemPriceLow :: Maybe Double
+    <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemPriceClose :: Maybe Double
+    <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemVolumeTraded :: Maybe Double
+    <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemTradesCount :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemSymbolIdExchange :: Maybe Text
+    <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemSymbolIdCoinapi :: Maybe Text
   
 instance Arbitrary OptionsOptionExchangeGroup where
   arbitrary = sized genOptionsOptionExchangeGroup
@@ -473,7 +473,13 @@ genV1Symbol n =
     <*> arbitraryReducedMaybe n -- v1SymbolPricePrecision :: Maybe Double
     <*> arbitraryReducedMaybe n -- v1SymbolSizePrecision :: Maybe Double
     <*> arbitraryReducedMaybe n -- v1SymbolRawKvp :: Maybe (Map.Map String Text)
+    <*> arbitraryReducedMaybe n -- v1SymbolFutureIsInverse :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- v1SymbolFutureIsQuanto :: Maybe Bool
     <*> arbitraryReducedMaybe n -- v1SymbolVolumeToUsd :: Maybe Double
+    <*> arbitraryReducedMaybe n -- v1SymbolOptionBarrierUpPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- v1SymbolOptionBarrierUpType :: Maybe Text
+    <*> arbitraryReducedMaybe n -- v1SymbolOptionBarrierDownPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- v1SymbolOptionBarrierDownType :: Maybe Text
     <*> arbitraryReducedMaybe n -- v1SymbolSymbolIdInt :: Maybe Int
   
 instance Arbitrary V1SymbolMapping where

@@ -32,7 +32,7 @@ class V1Symbol {
     Double optionStrikePrice
     /* The contract unit for options. */
     Double optionContractUnit
-    /* The exercise style for options. */
+    /* The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. */
     String optionExerciseStyle
     /* The expiration time for options. */
     Date optionExpirationTime
@@ -94,10 +94,22 @@ class V1Symbol {
     Double pricePrecision
     /* The size precision. */
     Double sizePrecision
-    /* Not normalized raw kvp data. */
+    /* Key Value Pair store with raw data from the data source. */
     Map<String, String> rawKvp
+    /* Indicates whether the futures contract is inverse (coin-margined). */
+    Boolean futureIsInverse
+    /* Indicates whether the futures contract is quanto. */
+    Boolean futureIsQuanto
     /* Volume unit in USD. */
     Double volumeToUsd
+    /* The up barrier price for barrier options. */
+    Double optionBarrierUpPrice
+    /* The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. */
+    String optionBarrierUpType
+    /* The down barrier price for barrier options. */
+    Double optionBarrierDownPrice
+    /* The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. */
+    String optionBarrierDownType
     /* The symbol identifier in integer immutable format, used to correlate data across different APIs. */
     Integer symbolIdInt
 }

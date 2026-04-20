@@ -91,7 +91,7 @@ API.Client.V1Symbol.prototype.optionStrikePrice;
 API.Client.V1Symbol.prototype.optionContractUnit;
 
 /**
- * The exercise style for options.
+ * The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
  * @type {!string}
  * @export
  */
@@ -306,11 +306,25 @@ API.Client.V1Symbol.prototype.pricePrecision;
 API.Client.V1Symbol.prototype.sizePrecision;
 
 /**
- * Not normalized raw kvp data.
+ * Key Value Pair store with raw data from the data source.
  * @type {!Object<!string, string>}
  * @export
  */
 API.Client.V1Symbol.prototype.rawKvp;
+
+/**
+ * Indicates whether the futures contract is inverse (coin-margined).
+ * @type {!boolean}
+ * @export
+ */
+API.Client.V1Symbol.prototype.futureIsInverse;
+
+/**
+ * Indicates whether the futures contract is quanto.
+ * @type {!boolean}
+ * @export
+ */
+API.Client.V1Symbol.prototype.futureIsQuanto;
 
 /**
  * Volume unit in USD.
@@ -318,6 +332,34 @@ API.Client.V1Symbol.prototype.rawKvp;
  * @export
  */
 API.Client.V1Symbol.prototype.volumeToUsd;
+
+/**
+ * The up barrier price for barrier options.
+ * @type {!number}
+ * @export
+ */
+API.Client.V1Symbol.prototype.optionBarrierUpPrice;
+
+/**
+ * The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+ * @type {!string}
+ * @export
+ */
+API.Client.V1Symbol.prototype.optionBarrierUpType;
+
+/**
+ * The down barrier price for barrier options.
+ * @type {!number}
+ * @export
+ */
+API.Client.V1Symbol.prototype.optionBarrierDownPrice;
+
+/**
+ * The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+ * @type {!string}
+ * @export
+ */
+API.Client.V1Symbol.prototype.optionBarrierDownType;
 
 /**
  * The symbol identifier in integer immutable format, used to correlate data across different APIs.

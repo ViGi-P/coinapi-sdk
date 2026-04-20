@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **OptionTypeIsCall** | **Boolean** | Indicates whether the option type is a call. | [optional] 
 **OptionStrikePrice** | **Double** | The strike price for options. | [optional] 
 **OptionContractUnit** | **Double** | The contract unit for options. | [optional] 
-**OptionExerciseStyle** | **String** | The exercise style for options. | [optional] 
+**OptionExerciseStyle** | **String** | The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. | [optional] 
 **OptionExpirationTime** | **System.DateTime** | The expiration time for options. | [optional] 
 **ContractDeliveryTime** | **System.DateTime** | The delivery time for contracts. | [optional] 
 **ContractUnit** | **Double** | The contract unit for contracts. | [optional] 
@@ -46,8 +46,14 @@ Name | Type | Description | Notes
 **AssetIdQuoteExchange** | **String** | The quote asset identifier in the exchange. | [optional] 
 **PricePrecision** | **Double** | The price precision. | [optional] 
 **SizePrecision** | **Double** | The size precision. | [optional] 
-**RawKvp** | **System.Collections.Hashtable** | Not normalized raw kvp data. | [optional] 
+**RawKvp** | **System.Collections.Hashtable** | Key Value Pair store with raw data from the data source. | [optional] 
+**FutureIsInverse** | **Boolean** | Indicates whether the futures contract is inverse (coin-margined). | [optional] 
+**FutureIsQuanto** | **Boolean** | Indicates whether the futures contract is quanto. | [optional] 
 **VolumeToUsd** | **Double** | Volume unit in USD. | [optional] 
+**OptionBarrierUpPrice** | **Double** | The up barrier price for barrier options. | [optional] 
+**OptionBarrierUpType** | **String** | The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. | [optional] 
+**OptionBarrierDownPrice** | **Double** | The down barrier price for barrier options. | [optional] 
+**OptionBarrierDownType** | **String** | The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. | [optional] 
 **SymbolIdInt** | **Int32** | The symbol identifier in integer immutable format, used to correlate data across different APIs. | [optional] [readonly] 
 
 ## Examples
@@ -98,7 +104,13 @@ $V1Symbol = Initialize-PSOpenAPIToolsV1Symbol  -SymbolId null `
  -PricePrecision null `
  -SizePrecision null `
  -RawKvp null `
+ -FutureIsInverse null `
+ -FutureIsQuanto null `
  -VolumeToUsd null `
+ -OptionBarrierUpPrice null `
+ -OptionBarrierUpType null `
+ -OptionBarrierDownPrice null `
+ -OptionBarrierDownType null `
  -SymbolIdInt null
 ```
 

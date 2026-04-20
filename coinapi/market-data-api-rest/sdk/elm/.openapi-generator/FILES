@@ -8,7 +8,7 @@ src/Api/Request/ExchangeRates.elm
 src/Api/Request/Metadata.elm
 src/Api/Request/MetricsV1.elm
 src/Api/Request/MetricsV2.elm
-src/Api/Request/Ohlcv.elm
+src/Api/Request/OHLCV.elm
 src/Api/Request/Options.elm
 src/Api/Request/OrderBook.elm
 src/Api/Request/OrderBookL3.elm

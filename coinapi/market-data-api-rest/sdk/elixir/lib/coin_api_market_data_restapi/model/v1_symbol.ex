@@ -52,7 +52,13 @@ defmodule CoinAPIMarketDataRESTAPI.Model.V1Symbol do
     :price_precision,
     :size_precision,
     :raw_kvp,
+    :future_is_inverse,
+    :future_is_quanto,
     :volume_to_usd,
+    :option_barrier_up_price,
+    :option_barrier_up_type,
+    :option_barrier_down_price,
+    :option_barrier_down_type,
     :symbol_id_int
   ]
 
@@ -101,7 +107,13 @@ defmodule CoinAPIMarketDataRESTAPI.Model.V1Symbol do
     :price_precision => float() | nil,
     :size_precision => float() | nil,
     :raw_kvp => %{optional(String.t) => String.t} | nil,
+    :future_is_inverse => boolean() | nil,
+    :future_is_quanto => boolean() | nil,
     :volume_to_usd => float() | nil,
+    :option_barrier_up_price => float() | nil,
+    :option_barrier_up_type => String.t | nil,
+    :option_barrier_down_price => float() | nil,
+    :option_barrier_down_type => String.t | nil,
     :symbol_id_int => integer() | nil
   }
 

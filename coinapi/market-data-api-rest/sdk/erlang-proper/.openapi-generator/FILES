@@ -1,7 +1,7 @@
 .openapi-generator-ignore
 README.md
 rebar.config
-src/model/openapi_models_exchange_timeseries_item.erl
+src/model/openapi_ohlcv_exchange_timeseries_item.erl
 src/model/openapi_options_option_exchange_group.erl
 src/model/openapi_options_strike.erl
 src/model/openapi_v1_asset.erl

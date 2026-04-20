@@ -1,6 +1,6 @@
 import localVarRequest from 'request';
 
-export * from './modelsExchangeTimeseriesItem';
+export * from './ohlcvExchangeTimeseriesItem';
 export * from './optionsOptionExchangeGroup';
 export * from './optionsStrike';
 export * from './v1Asset';
@@ -42,7 +42,7 @@ export interface RequestDetailedFile {
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
-import { ModelsExchangeTimeseriesItem } from './modelsExchangeTimeseriesItem';
+import { OhlcvExchangeTimeseriesItem } from './ohlcvExchangeTimeseriesItem';
 import { OptionsOptionExchangeGroup } from './optionsOptionExchangeGroup';
 import { OptionsStrike } from './optionsStrike';
 import { V1Asset } from './v1Asset';
@@ -87,7 +87,7 @@ let enumsMap: {[index: string]: any} = {
 }
 
 let typeMap: {[index: string]: any} = {
-    "ModelsExchangeTimeseriesItem": ModelsExchangeTimeseriesItem,
+    "OhlcvExchangeTimeseriesItem": OhlcvExchangeTimeseriesItem,
     "OptionsOptionExchangeGroup": OptionsOptionExchangeGroup,
     "OptionsStrike": OptionsStrike,
     "V1Asset": V1Asset,
