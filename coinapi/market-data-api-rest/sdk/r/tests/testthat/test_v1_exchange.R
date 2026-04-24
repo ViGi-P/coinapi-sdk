@@ -31,6 +31,7 @@ test_that("name", {
 
 test_that("data_start", {
   # tests for the property `data_start` (character)
+  # Gets the start date of the exchange&#39;s data.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`data_start`, "EXPECTED_RESULT")
@@ -38,6 +39,7 @@ test_that("data_start", {
 
 test_that("data_end", {
   # tests for the property `data_end` (character)
+  # Gets the end date of the exchange&#39;s data.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`data_end`, "EXPECTED_RESULT")
@@ -149,7 +151,7 @@ test_that("icons", {
 
 test_that("rank", {
   # tests for the property `rank` (numeric)
-  # Rank of the exchange.
+  # Rank of the exchange - higher rank means exchange is more reliable
 
   # uncomment below to test the property
   #expect_equal(model.instance$`rank`, "EXPECTED_RESULT")

@@ -129,13 +129,13 @@ public class OASV1Asset implements OAS.MappedProperties {
     public List<OASV1ChainNetworkAddress> chainAddresses { get; set; }
 
     /**
-     * Get dataStart
+     * Gets the start date of the available data as a string in the format "yyyy-MM-dd".
      * @return dataStart
      */
     public String dataStart { get; private set; }
 
     /**
-     * Get dataEnd
+     * Gets the end date of the available data as a string in the format "yyyy-MM-dd".
      * @return dataEnd
      */
     public String dataEnd { get; private set; }

@@ -33,31 +33,31 @@ class V1OrderBookBaseTest : ShouldSpec() {
         // uncomment below to create an instance of V1OrderBookBase
         //val modelInstance = V1OrderBookBase()
 
-        // to test the property `symbolId` - The symbol identifier.
+        // to test the property `symbolId` - Gets or sets the symbol identifier.
         should("test symbolId") {
             // uncomment below to test the property
             //modelInstance.symbolId shouldBe ("TODO")
         }
 
-        // to test the property `timeExchange` - The exchange time of the order book.
+        // to test the property `timeExchange` - Gets or sets the exchange time of the order book.
         should("test timeExchange") {
             // uncomment below to test the property
             //modelInstance.timeExchange shouldBe ("TODO")
         }
 
-        // to test the property `timeCoinapi` - The CoinAPI time when the order book was received.
+        // to test the property `timeCoinapi` - Gets or sets the CoinAPI time when the order book was received.
         should("test timeCoinapi") {
             // uncomment below to test the property
             //modelInstance.timeCoinapi shouldBe ("TODO")
         }
 
-        // to test the property `asks` - The asks made by market makers.
+        // to test the property `asks` - Gets or sets the asks made by market makers.
         should("test asks") {
             // uncomment below to test the property
             //modelInstance.asks shouldBe ("TODO")
         }
 
-        // to test the property `bids` - The bids made by market makers.
+        // to test the property `bids` - Gets or sets the bids made by market makers.
         should("test bids") {
             // uncomment below to test the property
             //modelInstance.bids shouldBe ("TODO")

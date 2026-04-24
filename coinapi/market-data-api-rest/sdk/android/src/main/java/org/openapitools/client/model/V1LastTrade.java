@@ -37,9 +37,9 @@ public class V1LastTrade {
   private String takerSide = null;
 
   /**
-   * The exchange time of the last trade.
+   * Gets or sets the exchange time of the last trade.
    **/
-  @ApiModelProperty(value = "The exchange time of the last trade.")
+  @ApiModelProperty(value = "Gets or sets the exchange time of the last trade.")
   public Date getTimeExchange() {
     return timeExchange;
   }
@@ -48,9 +48,9 @@ public class V1LastTrade {
   }
 
   /**
-   * The CoinAPI time when the last trade was received.
+   * Gets or sets the CoinAPI time when the last trade was received.
    **/
-  @ApiModelProperty(value = "The CoinAPI time when the last trade was received.")
+  @ApiModelProperty(value = "Gets or sets the CoinAPI time when the last trade was received.")
   public Date getTimeCoinapi() {
     return timeCoinapi;
   }
@@ -59,9 +59,9 @@ public class V1LastTrade {
   }
 
   /**
-   * The UUID of the last trade.
+   * Gets or sets the UUID of the last trade.
    **/
-  @ApiModelProperty(value = "The UUID of the last trade.")
+  @ApiModelProperty(value = "Gets or sets the UUID of the last trade.")
   public UUID getUuid() {
     return uuid;
   }
@@ -70,9 +70,9 @@ public class V1LastTrade {
   }
 
   /**
-   * The price of the last trade.
+   * Gets or sets the price of the last trade.
    **/
-  @ApiModelProperty(value = "The price of the last trade.")
+  @ApiModelProperty(value = "Gets or sets the price of the last trade.")
   public Double getPrice() {
     return price;
   }
@@ -81,9 +81,9 @@ public class V1LastTrade {
   }
 
   /**
-   * The size of the last trade.
+   * Gets or sets the size of the last trade.
    **/
-  @ApiModelProperty(value = "The size of the last trade.")
+  @ApiModelProperty(value = "Gets or sets the size of the last trade.")
   public Double getSize() {
     return size;
   }
@@ -92,9 +92,9 @@ public class V1LastTrade {
   }
 
   /**
-   * The taker side of the last trade.
+   * Gets or sets the taker side of the last trade.
    **/
-  @ApiModelProperty(value = "The taker side of the last trade.")
+  @ApiModelProperty(value = "Gets or sets the taker side of the last trade.")
   public String getTakerSide() {
     return takerSide;
   }

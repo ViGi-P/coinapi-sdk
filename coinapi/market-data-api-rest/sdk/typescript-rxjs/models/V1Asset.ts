@@ -136,11 +136,13 @@ export interface V1Asset {
      */
     chain_addresses?: Array<V1ChainNetworkAddress> | null;
     /**
+     * Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
      * @type {string}
      * @memberof V1Asset
      */
     readonly data_start?: string | null;
     /**
+     * Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
      * @type {string}
      * @memberof V1Asset
      */

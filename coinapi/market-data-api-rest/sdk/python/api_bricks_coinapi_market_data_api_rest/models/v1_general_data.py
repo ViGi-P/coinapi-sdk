@@ -27,7 +27,7 @@ from pydantic_core import to_jsonable_python
 
 class V1GeneralData(BaseModel):
     """
-    Class representation of general metric data. This class is an XML type with name 'general_data' and inherits from the BaseCsvModel class.
+    Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class.
     """ # noqa: E501
     entry_time: Optional[datetime] = Field(default=None, description="Gets or sets the entry time for the data point.")
     recv_time: Optional[datetime] = Field(default=None, description="Gets or sets the received time for the data point.")

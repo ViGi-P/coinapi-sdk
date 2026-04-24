@@ -15,37 +15,37 @@
  */
 public class OASV1TimeseriesPeriod implements OAS.MappedProperties {
     /**
-     * The period ID.
+     * Gets or sets the period ID.
      * @return periodId
      */
     public String periodId { get; set; }
 
     /**
-     * The length of the period in seconds.
+     * Gets or sets the length of the period in seconds.
      * @return lengthSeconds
      */
     public Integer lengthSeconds { get; set; }
 
     /**
-     * The length of the period in months.
+     * Gets or sets the length of the period in months.
      * @return lengthMonths
      */
     public Integer lengthMonths { get; set; }
 
     /**
-     * The unit count.
+     * Gets or sets the unit count.
      * @return unitCount
      */
     public Integer unitCount { get; set; }
 
     /**
-     * The unit name.
+     * Gets or sets the unit name.
      * @return unitName
      */
     public String unitName { get; set; }
 
     /**
-     * The display name of the timeseries period.
+     * Gets or sets the display name of the timeseries period.
      * @return displayName
      */
     public String displayName { get; set; }

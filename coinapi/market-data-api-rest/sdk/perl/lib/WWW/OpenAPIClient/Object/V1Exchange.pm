@@ -244,14 +244,14 @@ __PACKAGE__->method_documentation({
     'data_start' => {
         datatype => 'string',
         base_name => 'data_start',
-        description => '',
+        description => 'Gets the start date of the exchange&#39;s data.',
         format => '',
         read_only => '',
             },
     'data_end' => {
         datatype => 'string',
         base_name => 'data_end',
-        description => '',
+        description => 'Gets the end date of the exchange&#39;s data.',
         format => '',
         read_only => '',
             },
@@ -349,7 +349,7 @@ __PACKAGE__->method_documentation({
     'rank' => {
         datatype => 'double',
         base_name => 'rank',
-        description => 'Rank of the exchange.',
+        description => 'Rank of the exchange - higher rank means exchange is more reliable',
         format => '',
         read_only => '',
             },

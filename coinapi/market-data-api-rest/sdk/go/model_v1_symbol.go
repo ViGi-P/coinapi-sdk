@@ -21,107 +21,109 @@ var _ MappedNullable = &V1Symbol{}
 
 // V1Symbol Represents a symbol data model.
 type V1Symbol struct {
-	// The symbol identifier.
+	// Gets or sets the symbol identifier.
 	SymbolId NullableString `json:"symbol_id,omitempty"`
-	// The exchange identifier.
+	// Gets or sets the exchange identifier.
 	ExchangeId NullableString `json:"exchange_id,omitempty"`
-	// The symbol type.
+	// Gets or sets the symbol type.
 	SymbolType NullableString `json:"symbol_type,omitempty"`
-	// The base asset identifier.
+	// Gets or sets the base asset identifier.
 	AssetIdBase NullableString `json:"asset_id_base,omitempty"`
-	// The quote asset identifier.
+	// Gets or sets the quote asset identifier.
 	AssetIdQuote NullableString `json:"asset_id_quote,omitempty"`
-	// The unit asset identifier.
+	// Gets or sets the unit asset identifier.
 	AssetIdUnit NullableString `json:"asset_id_unit,omitempty"`
-	// The contract unit for futures.
+	// Gets or sets the contract unit for futures.
 	FutureContractUnit NullableFloat64 `json:"future_contract_unit,omitempty"`
-	// The asset used as the unit for futures contract.
+	// Gets or sets the asset used as the unit for futures contract.
 	FutureContractUnitAsset NullableString `json:"future_contract_unit_asset,omitempty"`
-	// The future delivery time for futures contract.
+	// Gets or sets the future delivery time for futures contract.
 	FutureDeliveryTime NullableTime `json:"future_delivery_time,omitempty"`
-	// Indicates whether the option type is a call.
+	// Gets or sets a value indicating whether the option type is a call.
 	OptionTypeIsCall NullableBool `json:"option_type_is_call,omitempty"`
-	// The strike price for options.
+	// Gets or sets the strike price for options.
 	OptionStrikePrice NullableFloat64 `json:"option_strike_price,omitempty"`
-	// The contract unit for options.
+	// Gets or sets the contract unit for options.
 	OptionContractUnit NullableFloat64 `json:"option_contract_unit,omitempty"`
-	// The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+	// Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
 	OptionExerciseStyle NullableString `json:"option_exercise_style,omitempty"`
-	// The expiration time for options.
+	// Gets or sets the expiration time for options.
 	OptionExpirationTime NullableTime `json:"option_expiration_time,omitempty"`
-	// The delivery time for contracts.
+	// Gets or sets the delivery time for contracts.
 	ContractDeliveryTime NullableTime `json:"contract_delivery_time,omitempty"`
-	// The contract unit for contracts.
+	// Gets or sets the contract unit for contracts.
 	ContractUnit NullableFloat64 `json:"contract_unit,omitempty"`
-	// The asset used as the unit for contracts.
+	// Gets or sets the asset used as the unit for contracts.
 	ContractUnitAsset NullableString `json:"contract_unit_asset,omitempty"`
-	// The contract identifier.
+	// Gets or sets the contract identifier.
 	ContractId NullableString `json:"contract_id,omitempty"`
-	// The display name of the contract.
+	// Gets or sets the display name of the contract.
 	ContractDisplayName NullableString `json:"contract_display_name,omitempty"`
-	// The display description of the contract.
+	// Gets or sets the display description of the contract.
 	ContractDisplayDescription NullableString `json:"contract_display_description,omitempty"`
+	// Gets the start date of the data in string format (\"yyyy-MM-dd\").
 	DataStart NullableString `json:"data_start,omitempty"`
+	// Gets the end date of the data in string format (\"yyyy-MM-dd\").
 	DataEnd NullableString `json:"data_end,omitempty"`
-	// The start date of quote data.
+	// Gets or sets the start date of quote data.
 	DataQuoteStart NullableTime `json:"data_quote_start,omitempty"`
-	// The end date of quote data.
+	// Gets or sets the end date of quote data.
 	DataQuoteEnd NullableTime `json:"data_quote_end,omitempty"`
-	// The start date of order book data.
+	// Gets or sets the start date of order book data.
 	DataOrderbookStart NullableTime `json:"data_orderbook_start,omitempty"`
-	// The end date of order book data.
+	// Gets or sets the end date of order book data.
 	DataOrderbookEnd NullableTime `json:"data_orderbook_end,omitempty"`
-	// The start date of trade data.
+	// Gets or sets the start date of trade data.
 	DataTradeStart NullableTime `json:"data_trade_start,omitempty"`
-	// The end date of trade data.
+	// Gets or sets the end date of trade data.
 	DataTradeEnd NullableTime `json:"data_trade_end,omitempty"`
-	// The index identifier.
+	// Gets or sets the index identifier.
 	IndexId NullableString `json:"index_id,omitempty"`
-	// The display name of the index.
+	// Gets or sets the display name of the index.
 	IndexDisplayName NullableString `json:"index_display_name,omitempty"`
-	// The display description of the index.
+	// Gets or sets the display description of the index.
 	IndexDisplayDescription NullableString `json:"index_display_description,omitempty"`
-	// The volume in the last 1 hour.
+	// Gets or sets the volume in the last 1 hour.
 	Volume1hrs NullableFloat64 `json:"volume_1hrs,omitempty"`
-	// The volume in USD in the last 1 hour.
+	// Gets or sets the volume in USD in the last 1 hour.
 	Volume1hrsUsd NullableFloat64 `json:"volume_1hrs_usd,omitempty"`
-	// The volume in the last 1 day.
+	// Gets or sets the volume in the last 1 day.
 	Volume1day NullableFloat64 `json:"volume_1day,omitempty"`
-	// The volume in USD in the last 1 day.
+	// Gets or sets the volume in USD in the last 1 day.
 	Volume1dayUsd NullableFloat64 `json:"volume_1day_usd,omitempty"`
-	// The volume in the last 1 month.
+	// Gets or sets the volume in the last 1 month.
 	Volume1mth NullableFloat64 `json:"volume_1mth,omitempty"`
-	// The volume in USD in the last 1 month.
+	// Gets or sets the volume in USD in the last 1 month.
 	Volume1mthUsd NullableFloat64 `json:"volume_1mth_usd,omitempty"`
-	// The price.
+	// Gets or sets the price.
 	Price NullableFloat64 `json:"price,omitempty"`
-	// The symbol identifier in the exchange.
+	// Gets or sets the symbol identifier in the exchange.
 	SymbolIdExchange NullableString `json:"symbol_id_exchange,omitempty"`
-	// The base asset identifier in the exchange.
+	// Gets or sets the base asset identifier in the exchange.
 	AssetIdBaseExchange NullableString `json:"asset_id_base_exchange,omitempty"`
-	// The quote asset identifier in the exchange.
+	// Gets or sets the quote asset identifier in the exchange.
 	AssetIdQuoteExchange NullableString `json:"asset_id_quote_exchange,omitempty"`
-	// The price precision.
+	// Gets or sets the price precision.
 	PricePrecision NullableFloat64 `json:"price_precision,omitempty"`
-	// The size precision.
+	// Gets or sets the size precision.
 	SizePrecision NullableFloat64 `json:"size_precision,omitempty"`
 	// Key Value Pair store with raw data from the data source.
 	RawKvp map[string]string `json:"raw_kvp,omitempty"`
-	// Indicates whether the futures contract is inverse (coin-margined).
+	// Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
 	FutureIsInverse NullableBool `json:"future_is_inverse,omitempty"`
-	// Indicates whether the futures contract is quanto.
+	// Gets or sets a value indicating whether the futures contract is quanto.
 	FutureIsQuanto NullableBool `json:"future_is_quanto,omitempty"`
-	// Volume unit in USD.
+	// Gets or sets the volume in USD.
 	VolumeToUsd NullableFloat64 `json:"volume_to_usd,omitempty"`
-	// The up barrier price for barrier options.
+	// Gets or sets the up barrier price for barrier options.
 	OptionBarrierUpPrice NullableFloat64 `json:"option_barrier_up_price,omitempty"`
-	// The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+	// Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
 	OptionBarrierUpType NullableString `json:"option_barrier_up_type,omitempty"`
-	// The down barrier price for barrier options.
+	// Gets or sets the down barrier price for barrier options.
 	OptionBarrierDownPrice NullableFloat64 `json:"option_barrier_down_price,omitempty"`
-	// The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+	// Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
 	OptionBarrierDownType NullableString `json:"option_barrier_down_type,omitempty"`
-	// The symbol identifier in integer immutable format, used to correlate data across different APIs.
+	// Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
 	SymbolIdInt NullableInt32 `json:"symbol_id_int,omitempty"`
 }
 

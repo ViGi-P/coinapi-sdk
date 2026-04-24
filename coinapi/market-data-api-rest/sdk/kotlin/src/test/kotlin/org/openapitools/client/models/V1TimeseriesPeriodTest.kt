@@ -33,37 +33,37 @@ class V1TimeseriesPeriodTest : ShouldSpec() {
         // uncomment below to create an instance of V1TimeseriesPeriod
         //val modelInstance = V1TimeseriesPeriod()
 
-        // to test the property `periodId` - The period ID.
+        // to test the property `periodId` - Gets or sets the period ID.
         should("test periodId") {
             // uncomment below to test the property
             //modelInstance.periodId shouldBe ("TODO")
         }
 
-        // to test the property `lengthSeconds` - The length of the period in seconds.
+        // to test the property `lengthSeconds` - Gets or sets the length of the period in seconds.
         should("test lengthSeconds") {
             // uncomment below to test the property
             //modelInstance.lengthSeconds shouldBe ("TODO")
         }
 
-        // to test the property `lengthMonths` - The length of the period in months.
+        // to test the property `lengthMonths` - Gets or sets the length of the period in months.
         should("test lengthMonths") {
             // uncomment below to test the property
             //modelInstance.lengthMonths shouldBe ("TODO")
         }
 
-        // to test the property `unitCount` - The unit count.
+        // to test the property `unitCount` - Gets or sets the unit count.
         should("test unitCount") {
             // uncomment below to test the property
             //modelInstance.unitCount shouldBe ("TODO")
         }
 
-        // to test the property `unitName` - The unit name.
+        // to test the property `unitName` - Gets or sets the unit name.
         should("test unitName") {
             // uncomment below to test the property
             //modelInstance.unitName shouldBe ("TODO")
         }
 
-        // to test the property `displayName` - The display name of the timeseries period.
+        // to test the property `displayName` - Gets or sets the display name of the timeseries period.
         should("test displayName") {
             // uncomment below to test the property
             //modelInstance.displayName shouldBe ("TODO")

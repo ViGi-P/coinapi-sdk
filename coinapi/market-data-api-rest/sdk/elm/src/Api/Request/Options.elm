@@ -31,7 +31,7 @@ import Json.Encode
 Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
 
 -}
-v1OptionsExchangeIdCurrentGet : String -> String -> Api.Request (List Api.Data.OptionsOptionExchangeGroup)
+v1OptionsExchangeIdCurrentGet : String -> String -> Api.Request (List Api.Data.V1OptionExchangeGroup)
 v1OptionsExchangeIdCurrentGet exchangeId_path auth_token =
     Api.request
         "GET"
@@ -40,5 +40,5 @@ v1OptionsExchangeIdCurrentGet exchangeId_path auth_token =
         []
         []
         Nothing
-        (Json.Decode.list Api.Data.optionsOptionExchangeGroupDecoder)
+        (Json.Decode.list Api.Data.v1OptionExchangeGroupDecoder)
         |> Api.withBearerToken auth_token

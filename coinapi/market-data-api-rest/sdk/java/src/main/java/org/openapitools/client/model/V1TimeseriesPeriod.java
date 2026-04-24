@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a timeseries period used in exchange rate data.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-23T06:06:39.606952276Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-24T06:05:03.999499045Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class V1TimeseriesPeriod {
   public static final String SERIALIZED_NAME_PERIOD_ID = "period_id";
   @SerializedName(SERIALIZED_NAME_PERIOD_ID)
@@ -90,7 +90,7 @@ public class V1TimeseriesPeriod {
   }
 
   /**
-   * The period ID.
+   * Gets or sets the period ID.
    * @return periodId
    */
   @javax.annotation.Nullable
@@ -109,7 +109,7 @@ public class V1TimeseriesPeriod {
   }
 
   /**
-   * The length of the period in seconds.
+   * Gets or sets the length of the period in seconds.
    * @return lengthSeconds
    */
   @javax.annotation.Nullable
@@ -128,7 +128,7 @@ public class V1TimeseriesPeriod {
   }
 
   /**
-   * The length of the period in months.
+   * Gets or sets the length of the period in months.
    * @return lengthMonths
    */
   @javax.annotation.Nullable
@@ -147,7 +147,7 @@ public class V1TimeseriesPeriod {
   }
 
   /**
-   * The unit count.
+   * Gets or sets the unit count.
    * @return unitCount
    */
   @javax.annotation.Nullable
@@ -166,7 +166,7 @@ public class V1TimeseriesPeriod {
   }
 
   /**
-   * The unit name.
+   * Gets or sets the unit name.
    * @return unitName
    */
   @javax.annotation.Nullable
@@ -185,7 +185,7 @@ public class V1TimeseriesPeriod {
   }
 
   /**
-   * The display name of the timeseries period.
+   * Gets or sets the display name of the timeseries period.
    * @return displayName
    */
   @javax.annotation.Nullable

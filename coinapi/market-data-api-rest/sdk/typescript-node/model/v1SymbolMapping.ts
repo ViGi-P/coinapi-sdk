@@ -17,39 +17,39 @@ import { RequestFile } from './models';
 */
 export class V1SymbolMapping {
     /**
-    * The symbol ID.
+    * Gets or sets the symbol ID.
     */
     'symbolId'?: string | null;
     /**
-    * The exchange-specific symbol ID.
+    * Gets or sets the exchange-specific symbol ID.
     */
     'symbolIdExchange'?: string | null;
     /**
-    * The CoinAPI DataInfo ID.
+    * Gets or sets the DataInfo ID.
     */
     'coinapiDatainfoId'?: number;
     /**
-    * The exchange-specific base asset ID.
+    * Gets or sets the exchange-specific base asset ID.
     */
     'assetIdBaseExchange'?: string | null;
     /**
-    * The exchange-specific quote asset ID.
+    * Gets or sets the exchange-specific quote asset ID.
     */
     'assetIdQuoteExchange'?: string | null;
     /**
-    * The base asset ID.
+    * Gets or sets the base asset ID.
     */
     'assetIdBase'?: string | null;
     /**
-    * The quote asset ID.
+    * Gets or sets the quote asset ID.
     */
     'assetIdQuote'?: string | null;
     /**
-    * The price precision.
+    * Gets or sets the price precision.
     */
     'pricePrecision'?: number | null;
     /**
-    * The size precision.
+    * Gets or sets the size precision.
     */
     'sizePrecision'?: number | null;
 

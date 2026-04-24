@@ -9,7 +9,7 @@
 | **timeCoinapi** | [**java.time.OffsetDateTime**](java.time.OffsetDateTime.md) | The time when the trade was received by CoinAPI. |  [optional] |
 | **uuid** | [**java.util.UUID**](java.util.UUID.md) | The unique identifier for the trade. |  [optional] |
 | **price** | **kotlin.Double** | The price of the transaction. |  [optional] |
-| **propertySize** | **kotlin.Double** | The base asset amount traded in the transaction. |  [optional] |
+| **propertySize** | **kotlin.Double** | The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series. |  [optional] |
 | **takerSide** | **kotlin.String** | The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN). |  [optional] |
 | **idTrade** | **kotlin.String** | The trade identifier. |  [optional] |
 | **idOrderMaker** | **kotlin.String** | The order maker identifier. |  [optional] |

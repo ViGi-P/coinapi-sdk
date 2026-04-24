@@ -10,7 +10,7 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/options_option_exchange_group.dart';
+import 'package:openapi/src/model/v1_option_exchange_group.dart';
 
 class OptionsApi {
 
@@ -32,9 +32,9 @@ class OptionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<OptionsOptionExchangeGroup>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<V1OptionExchangeGroup>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<OptionsOptionExchangeGroup>>> v1OptionsExchangeIdCurrentGet({ 
+  Future<Response<BuiltList<V1OptionExchangeGroup>>> v1OptionsExchangeIdCurrentGet({ 
     required String exchangeId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -75,14 +75,14 @@ class OptionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<OptionsOptionExchangeGroup>? _responseData;
+    BuiltList<V1OptionExchangeGroup>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(OptionsOptionExchangeGroup)]),
-      ) as BuiltList<OptionsOptionExchangeGroup>;
+        specifiedType: const FullType(BuiltList, [FullType(V1OptionExchangeGroup)]),
+      ) as BuiltList<V1OptionExchangeGroup>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -94,7 +94,7 @@ class OptionsApi {
       );
     }
 
-    return Response<BuiltList<OptionsOptionExchangeGroup>>(
+    return Response<BuiltList<V1OptionExchangeGroup>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -30,7 +30,7 @@ type ApiV1OptionsExchangeIdCurrentGetRequest struct {
 	exchangeId string
 }
 
-func (r ApiV1OptionsExchangeIdCurrentGetRequest) Execute() ([]OptionsOptionExchangeGroup, *http.Response, error) {
+func (r ApiV1OptionsExchangeIdCurrentGetRequest) Execute() ([]V1OptionExchangeGroup, *http.Response, error) {
 	return r.ApiService.V1OptionsExchangeIdCurrentGetExecute(r)
 }
 
@@ -55,13 +55,13 @@ func (a *OptionsAPIService) V1OptionsExchangeIdCurrentGet(ctx context.Context, e
 }
 
 // Execute executes the request
-//  @return []OptionsOptionExchangeGroup
-func (a *OptionsAPIService) V1OptionsExchangeIdCurrentGetExecute(r ApiV1OptionsExchangeIdCurrentGetRequest) ([]OptionsOptionExchangeGroup, *http.Response, error) {
+//  @return []V1OptionExchangeGroup
+func (a *OptionsAPIService) V1OptionsExchangeIdCurrentGetExecute(r ApiV1OptionsExchangeIdCurrentGetRequest) ([]V1OptionExchangeGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []OptionsOptionExchangeGroup
+		localVarReturnValue  []V1OptionExchangeGroup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OptionsAPIService.V1OptionsExchangeIdCurrentGet")

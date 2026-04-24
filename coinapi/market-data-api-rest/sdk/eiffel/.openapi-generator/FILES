@@ -9,8 +9,6 @@ docs/METRICSV2_API.md
 docs/OHLCV_API.md
 docs/OHLCV_EXCHANGE_TIMESERIES_ITEM.md
 docs/OPTIONS_API.md
-docs/OPTIONS_OPTION_EXCHANGE_GROUP.md
-docs/OPTIONS_STRIKE.md
 docs/ORDERBOOKL3_API.md
 docs/ORDERBOOK_API.md
 docs/QUOTES_API.md
@@ -30,11 +28,13 @@ docs/V1_LISTING_ITEM.md
 docs/V1_METRIC.md
 docs/V1_METRIC_DATA.md
 docs/V1_METRIC_INFO.md
+docs/V1_OPTION_EXCHANGE_GROUP.md
 docs/V1_ORDER_BOOK.md
 docs/V1_ORDER_BOOK_BASE.md
 docs/V1_ORDER_BOOK_DEPTH.md
 docs/V1_QUOTE.md
 docs/V1_QUOTE_TRADE.md
+docs/V1_STRIKE.md
 docs/V1_SYMBOL.md
 docs/V1_SYMBOL_MAPPING.md
 docs/V1_TIMESERIES_ITEM.md
@@ -52,8 +52,6 @@ src/api/quotes_api.e
 src/api/trades_api.e
 src/api_client.e
 src/domain/ohlcv_exchange_timeseries_item.e
-src/domain/options_option_exchange_group.e
-src/domain/options_strike.e
 src/domain/v1_asset.e
 src/domain/v1_chain.e
 src/domain/v1_chain_network_address.e
@@ -69,11 +67,13 @@ src/domain/v1_listing_item.e
 src/domain/v1_metric.e
 src/domain/v1_metric_data.e
 src/domain/v1_metric_info.e
+src/domain/v1_option_exchange_group.e
 src/domain/v1_order_book.e
 src/domain/v1_order_book_base.e
 src/domain/v1_order_book_depth.e
 src/domain/v1_quote.e
 src/domain/v1_quote_trade.e
+src/domain/v1_strike.e
 src/domain/v1_symbol.e
 src/domain/v1_symbol_mapping.e
 src/domain/v1_timeseries_item.e

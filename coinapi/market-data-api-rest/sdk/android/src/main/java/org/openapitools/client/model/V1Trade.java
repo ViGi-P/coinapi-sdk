@@ -100,9 +100,9 @@ public class V1Trade {
   }
 
   /**
-   * The base asset amount traded in the transaction.
+   * The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
    **/
-  @ApiModelProperty(value = "The base asset amount traded in the transaction.")
+  @ApiModelProperty(value = "The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.")
   public Double getSize() {
     return size;
   }

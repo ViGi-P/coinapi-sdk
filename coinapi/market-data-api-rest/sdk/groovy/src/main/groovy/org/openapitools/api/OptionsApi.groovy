@@ -1,7 +1,7 @@
 package org.openapitools.api;
 
 import org.openapitools.api.ApiUtils
-import org.openapitools.model.OptionsOptionExchangeGroup
+import org.openapitools.model.V1OptionExchangeGroup
 
 class OptionsApi {
     String basePath = "https://rest.coinapi.io"
@@ -31,7 +31,7 @@ class OptionsApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    OptionsOptionExchangeGroup.class )
+                    V1OptionExchangeGroup.class )
 
     }
 

@@ -31,44 +31,44 @@ import com.squareup.moshi.JsonClass
 /**
  * Represents a quote trade data model.
  *
- * @param symbolId The symbol identifier.
- * @param timeExchange The exchange time of the quote trade.
- * @param timeCoinapi The CoinAPI time when the quote trade was received.
- * @param askPrice The best asking price.
- * @param askSize The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
- * @param bidPrice The best bidding price.
- * @param bidSize The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+ * @param symbolId Gets or sets the symbol identifier.
+ * @param timeExchange Gets or sets the exchange time of the quote trade.
+ * @param timeCoinapi Gets or sets the CoinAPI time when the quote trade was received.
+ * @param askPrice Gets or sets the best asking price.
+ * @param askSize Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+ * @param bidPrice Gets or sets the best bidding price.
+ * @param bidSize Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
  * @param lastTrade 
  */
 
 
 data class V1QuoteTrade (
 
-    /* The symbol identifier. */
+    /* Gets or sets the symbol identifier. */
     @Json(name = "symbol_id")
     val symbolId: kotlin.String? = null,
 
-    /* The exchange time of the quote trade. */
+    /* Gets or sets the exchange time of the quote trade. */
     @Json(name = "time_exchange")
     val timeExchange: java.time.OffsetDateTime? = null,
 
-    /* The CoinAPI time when the quote trade was received. */
+    /* Gets or sets the CoinAPI time when the quote trade was received. */
     @Json(name = "time_coinapi")
     val timeCoinapi: java.time.OffsetDateTime? = null,
 
-    /* The best asking price. */
+    /* Gets or sets the best asking price. */
     @Json(name = "ask_price")
     val askPrice: kotlin.Double? = null,
 
-    /* The volume resting on the best ask. If the value is equal to zero, then the size is unknown. */
+    /* Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown. */
     @Json(name = "ask_size")
     val askSize: kotlin.Double? = null,
 
-    /* The best bidding price. */
+    /* Gets or sets the best bidding price. */
     @Json(name = "bid_price")
     val bidPrice: kotlin.Double? = null,
 
-    /* The volume resting on the best bid. If the value is equal to zero, then the size is unknown. */
+    /* Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown. */
     @Json(name = "bid_size")
     val bidSize: kotlin.Double? = null,
 

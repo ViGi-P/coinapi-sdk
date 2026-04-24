@@ -11,7 +11,7 @@
  */
 
 /**
- * Represents a listing item.
+ * Represents a listing data item.
  */
 public class OASV1ListingItem implements OAS.MappedProperties {
     /**
@@ -21,13 +21,13 @@ public class OASV1ListingItem implements OAS.MappedProperties {
     public String metricId { get; set; }
 
     /**
-     * The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+     * Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
      * @return symbolId
      */
     public String symbolId { get; set; }
 
     /**
-     * The exchange-native symbol identifier. Null for exchange-level metrics.
+     * Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
      * @return symbolIdExternal
      */
     public String symbolIdExternal { get; set; }
@@ -45,19 +45,19 @@ public class OASV1ListingItem implements OAS.MappedProperties {
     public String assetId { get; set; }
 
     /**
-     * Gets or sets the asset ID from the exchange.
+     * Gets or sets the asset ID.
      * @return assetIdExternal
      */
     public String assetIdExternal { get; set; }
 
     /**
-     * Gets or sets the chain id.
+     * Gets or sets the chain ID.
      * @return chainId
      */
     public String chainId { get; set; }
 
     /**
-     * Gets or sets the network id.
+     * Gets or sets the network ID.
      * @return networkId
      */
     public String networkId { get; set; }

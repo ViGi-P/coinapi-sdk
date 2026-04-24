@@ -1,7 +1,7 @@
 /*
  * V1.ListingItem.h
  *
- * Represents a listing item.
+ * Represents a listing data item.
  */
 
 #ifndef _V1.ListingItem_H_
@@ -20,7 +20,7 @@ namespace Tizen {
 namespace ArtikCloud {
 
 
-/*! \brief Represents a listing item.
+/*! \brief Represents a listing data item.
  *
  *  \ingroup Models
  *
@@ -52,18 +52,18 @@ public:
 	/*! \brief Set Gets or sets the metric ID.
 	 */
 	void setMetricId(std::string  metric_id);
-	/*! \brief Get The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+	/*! \brief Get Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
 	 */
 	std::string getSymbolId();
 
-	/*! \brief Set The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+	/*! \brief Set Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
 	 */
 	void setSymbolId(std::string  symbol_id);
-	/*! \brief Get The exchange-native symbol identifier. Null for exchange-level metrics.
+	/*! \brief Get Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
 	 */
 	std::string getSymbolIdExternal();
 
-	/*! \brief Set The exchange-native symbol identifier. Null for exchange-level metrics.
+	/*! \brief Set Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
 	 */
 	void setSymbolIdExternal(std::string  symbol_id_external);
 	/*! \brief Get Gets or sets the exchange ID.
@@ -80,25 +80,25 @@ public:
 	/*! \brief Set Gets or sets the asset ID.
 	 */
 	void setAssetId(std::string  asset_id);
-	/*! \brief Get Gets or sets the asset ID from the exchange.
+	/*! \brief Get Gets or sets the asset ID.
 	 */
 	std::string getAssetIdExternal();
 
-	/*! \brief Set Gets or sets the asset ID from the exchange.
+	/*! \brief Set Gets or sets the asset ID.
 	 */
 	void setAssetIdExternal(std::string  asset_id_external);
-	/*! \brief Get Gets or sets the chain id.
+	/*! \brief Get Gets or sets the chain ID.
 	 */
 	std::string getChainId();
 
-	/*! \brief Set Gets or sets the chain id.
+	/*! \brief Set Gets or sets the chain ID.
 	 */
 	void setChainId(std::string  chain_id);
-	/*! \brief Get Gets or sets the network id.
+	/*! \brief Get Gets or sets the network ID.
 	 */
 	std::string getNetworkId();
 
-	/*! \brief Set Gets or sets the network id.
+	/*! \brief Set Gets or sets the network ID.
 	 */
 	void setNetworkId(std::string  network_id);
 

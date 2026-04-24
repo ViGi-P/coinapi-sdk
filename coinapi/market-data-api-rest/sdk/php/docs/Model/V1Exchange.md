@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **exchange_id** | **string** | Gets or sets the exchange ID. | [optional]
 **website** | **string** | Gets or sets the website URL of the exchange. | [optional]
 **name** | **string** | Gets or sets the name of the exchange. | [optional]
-**data_start** | **string** |  | [optional] [readonly]
-**data_end** | **string** |  | [optional] [readonly]
+**data_start** | **string** | Gets the start date of the exchange&#39;s data. | [optional] [readonly]
+**data_end** | **string** | Gets the end date of the exchange&#39;s data. | [optional] [readonly]
 **data_quote_start** | **\DateTime** | Gets or sets the start date of quote data. | [optional]
 **data_quote_end** | **\DateTime** | Gets or sets the end date of quote data. | [optional]
 **data_orderbook_start** | **\DateTime** | Gets or sets the start date of order book data. | [optional]
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **volume_1mth_usd** | **float** | Gets or sets the USD volume in the last 1 month. | [optional]
 **metric_id** | **string[]** | Gets or sets the list of metric IDs. | [optional]
 **icons** | [**\OpenAPI\Client\Model\V1Icon[]**](V1Icon.md) | Gets or sets the list of icons for the exchange. | [optional] [readonly]
-**rank** | **float** | Rank of the exchange. | [optional]
+**rank** | **float** | Rank of the exchange - higher rank means exchange is more reliable | [optional]
 **integration_status** | **string** | Status of the integration | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

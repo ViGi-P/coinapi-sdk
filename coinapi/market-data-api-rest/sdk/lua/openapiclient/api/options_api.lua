@@ -16,7 +16,7 @@ local dkjson = require "dkjson"
 local basexx = require "basexx"
 
 -- model import
-local openapiclient_options_option_exchange_group = require "openapiclient.model.options_option_exchange_group"
+local openapiclient_v1_option_exchange_group = require "openapiclient.model.v1_option_exchange_group"
 
 local options_api = {}
 local options_api_mt = {
@@ -83,7 +83,7 @@ function options_api:v1_options_exchange_id_current_get(exchange_id)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_options_option_exchange_group.cast(ob)
+			openapiclient_v1_option_exchange_group.cast(ob)
 		end
 		return result, headers
 	else

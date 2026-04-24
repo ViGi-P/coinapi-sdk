@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **v1OptionsExchangeIdCurrentGet**
-> BuiltList<OptionsOptionExchangeGroup> v1OptionsExchangeIdCurrentGet(exchangeId)
+> BuiltList<V1OptionExchangeGroup> v1OptionsExchangeIdCurrentGet(exchangeId)
 
 Current data by Exchange
 
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;OptionsOptionExchangeGroup&gt;**](OptionsOptionExchangeGroup.md)
+[**BuiltList&lt;V1OptionExchangeGroup&gt;**](V1OptionExchangeGroup.md)
 
 ### Authorization
 

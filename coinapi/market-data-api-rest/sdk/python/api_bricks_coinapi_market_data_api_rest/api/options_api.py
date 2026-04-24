@@ -19,7 +19,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List
 from typing_extensions import Annotated
-from api_bricks_coinapi_market_data_api_rest.models.options_option_exchange_group import OptionsOptionExchangeGroup
+from api_bricks_coinapi_market_data_api_rest.models.v1_option_exchange_group import V1OptionExchangeGroup
 
 from api_bricks_coinapi_market_data_api_rest.api_client import ApiClient, RequestSerialized
 from api_bricks_coinapi_market_data_api_rest.api_response import ApiResponse
@@ -55,7 +55,7 @@ class OptionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[OptionsOptionExchangeGroup]:
+    ) -> List[V1OptionExchangeGroup]:
         """Current data by Exchange
 
         Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
@@ -93,7 +93,7 @@ class OptionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[OptionsOptionExchangeGroup]",
+            '200': "List[V1OptionExchangeGroup]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -122,7 +122,7 @@ class OptionsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[OptionsOptionExchangeGroup]]:
+    ) -> ApiResponse[List[V1OptionExchangeGroup]]:
         """Current data by Exchange
 
         Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
@@ -160,7 +160,7 @@ class OptionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[OptionsOptionExchangeGroup]",
+            '200': "List[V1OptionExchangeGroup]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -227,7 +227,7 @@ class OptionsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[OptionsOptionExchangeGroup]",
+            '200': "List[V1OptionExchangeGroup]",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -33,55 +33,55 @@ class V1SymbolMappingTest : ShouldSpec() {
         // uncomment below to create an instance of V1SymbolMapping
         //val modelInstance = V1SymbolMapping()
 
-        // to test the property `symbolId` - The symbol ID.
+        // to test the property `symbolId` - Gets or sets the symbol ID.
         should("test symbolId") {
             // uncomment below to test the property
             //modelInstance.symbolId shouldBe ("TODO")
         }
 
-        // to test the property `symbolIdExchange` - The exchange-specific symbol ID.
+        // to test the property `symbolIdExchange` - Gets or sets the exchange-specific symbol ID.
         should("test symbolIdExchange") {
             // uncomment below to test the property
             //modelInstance.symbolIdExchange shouldBe ("TODO")
         }
 
-        // to test the property `coinapiDatainfoId` - The CoinAPI DataInfo ID.
+        // to test the property `coinapiDatainfoId` - Gets or sets the DataInfo ID.
         should("test coinapiDatainfoId") {
             // uncomment below to test the property
             //modelInstance.coinapiDatainfoId shouldBe ("TODO")
         }
 
-        // to test the property `assetIdBaseExchange` - The exchange-specific base asset ID.
+        // to test the property `assetIdBaseExchange` - Gets or sets the exchange-specific base asset ID.
         should("test assetIdBaseExchange") {
             // uncomment below to test the property
             //modelInstance.assetIdBaseExchange shouldBe ("TODO")
         }
 
-        // to test the property `assetIdQuoteExchange` - The exchange-specific quote asset ID.
+        // to test the property `assetIdQuoteExchange` - Gets or sets the exchange-specific quote asset ID.
         should("test assetIdQuoteExchange") {
             // uncomment below to test the property
             //modelInstance.assetIdQuoteExchange shouldBe ("TODO")
         }
 
-        // to test the property `assetIdBase` - The base asset ID.
+        // to test the property `assetIdBase` - Gets or sets the base asset ID.
         should("test assetIdBase") {
             // uncomment below to test the property
             //modelInstance.assetIdBase shouldBe ("TODO")
         }
 
-        // to test the property `assetIdQuote` - The quote asset ID.
+        // to test the property `assetIdQuote` - Gets or sets the quote asset ID.
         should("test assetIdQuote") {
             // uncomment below to test the property
             //modelInstance.assetIdQuote shouldBe ("TODO")
         }
 
-        // to test the property `pricePrecision` - The price precision.
+        // to test the property `pricePrecision` - Gets or sets the price precision.
         should("test pricePrecision") {
             // uncomment below to test the property
             //modelInstance.pricePrecision shouldBe ("TODO")
         }
 
-        // to test the property `sizePrecision` - The size precision.
+        // to test the property `sizePrecision` - Gets or sets the size precision.
         should("test sizePrecision") {
             // uncomment below to test the property
             //modelInstance.sizePrecision shouldBe ("TODO")

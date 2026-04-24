@@ -28,12 +28,14 @@ API.Client.V1Exchange.prototype.website;
 API.Client.V1Exchange.prototype.name;
 
 /**
+ * Gets the start date of the exchange's data.
  * @type {!string}
  * @export
  */
 API.Client.V1Exchange.prototype.dataStart;
 
 /**
+ * Gets the end date of the exchange's data.
  * @type {!string}
  * @export
  */
@@ -131,7 +133,7 @@ API.Client.V1Exchange.prototype.metricId;
 API.Client.V1Exchange.prototype.icons;
 
 /**
- * Rank of the exchange.
+ * Rank of the exchange - higher rank means exchange is more reliable
  * @type {!number}
  * @export
  */

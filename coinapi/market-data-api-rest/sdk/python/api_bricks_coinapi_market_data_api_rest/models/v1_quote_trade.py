@@ -30,13 +30,13 @@ class V1QuoteTrade(BaseModel):
     """
     Represents a quote trade data model.
     """ # noqa: E501
-    symbol_id: Optional[StrictStr] = Field(default=None, description="The symbol identifier.")
-    time_exchange: Optional[datetime] = Field(default=None, description="The exchange time of the quote trade.")
-    time_coinapi: Optional[datetime] = Field(default=None, description="The CoinAPI time when the quote trade was received.")
-    ask_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The best asking price.")
-    ask_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The volume resting on the best ask. If the value is equal to zero, then the size is unknown.")
-    bid_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The best bidding price.")
-    bid_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The volume resting on the best bid. If the value is equal to zero, then the size is unknown.")
+    symbol_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the symbol identifier.")
+    time_exchange: Optional[datetime] = Field(default=None, description="Gets or sets the exchange time of the quote trade.")
+    time_coinapi: Optional[datetime] = Field(default=None, description="Gets or sets the CoinAPI time when the quote trade was received.")
+    ask_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the best asking price.")
+    ask_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.")
+    bid_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the best bidding price.")
+    bid_size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.")
     last_trade: Optional[V1LastTrade] = None
     __properties: ClassVar[List[str]] = ["symbol_id", "time_exchange", "time_coinapi", "ask_price", "ask_size", "bid_price", "bid_size", "last_trade"]
 

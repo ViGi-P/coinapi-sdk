@@ -33,14 +33,6 @@ force-app/main/default/classes/OASOptionsApi.cls
 force-app/main/default/classes/OASOptionsApi.cls-meta.xml
 force-app/main/default/classes/OASOptionsApiTest.cls
 force-app/main/default/classes/OASOptionsApiTest.cls-meta.xml
-force-app/main/default/classes/OASOptionsOptionExchangeGroup.cls
-force-app/main/default/classes/OASOptionsOptionExchangeGroup.cls-meta.xml
-force-app/main/default/classes/OASOptionsOptionExchangeGroupTest.cls
-force-app/main/default/classes/OASOptionsOptionExchangeGroupTest.cls-meta.xml
-force-app/main/default/classes/OASOptionsStrike.cls
-force-app/main/default/classes/OASOptionsStrike.cls-meta.xml
-force-app/main/default/classes/OASOptionsStrikeTest.cls
-force-app/main/default/classes/OASOptionsStrikeTest.cls-meta.xml
 force-app/main/default/classes/OASOrderBookApi.cls
 force-app/main/default/classes/OASOrderBookApi.cls-meta.xml
 force-app/main/default/classes/OASOrderBookApiTest.cls
@@ -121,6 +113,10 @@ force-app/main/default/classes/OASV1MetricInfoTest.cls
 force-app/main/default/classes/OASV1MetricInfoTest.cls-meta.xml
 force-app/main/default/classes/OASV1MetricTest.cls
 force-app/main/default/classes/OASV1MetricTest.cls-meta.xml
+force-app/main/default/classes/OASV1OptionExchangeGroup.cls
+force-app/main/default/classes/OASV1OptionExchangeGroup.cls-meta.xml
+force-app/main/default/classes/OASV1OptionExchangeGroupTest.cls
+force-app/main/default/classes/OASV1OptionExchangeGroupTest.cls-meta.xml
 force-app/main/default/classes/OASV1OrderBook.cls
 force-app/main/default/classes/OASV1OrderBook.cls-meta.xml
 force-app/main/default/classes/OASV1OrderBookBase.cls
@@ -141,6 +137,10 @@ force-app/main/default/classes/OASV1QuoteTrade.cls
 force-app/main/default/classes/OASV1QuoteTrade.cls-meta.xml
 force-app/main/default/classes/OASV1QuoteTradeTest.cls
 force-app/main/default/classes/OASV1QuoteTradeTest.cls-meta.xml
+force-app/main/default/classes/OASV1Strike.cls
+force-app/main/default/classes/OASV1Strike.cls-meta.xml
+force-app/main/default/classes/OASV1StrikeTest.cls
+force-app/main/default/classes/OASV1StrikeTest.cls-meta.xml
 force-app/main/default/classes/OASV1Symbol.cls
 force-app/main/default/classes/OASV1Symbol.cls-meta.xml
 force-app/main/default/classes/OASV1SymbolMapping.cls

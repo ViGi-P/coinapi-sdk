@@ -45,74 +45,74 @@ public:
 	 */
 	void fromJson(char* jsonStr);
 
-	/*! \brief Get The start time of the time period.
+	/*! \brief Get Gets or sets the start time of the time period.
 	 */
 	std::string getTimePeriodStart();
 
-	/*! \brief Set The start time of the time period.
+	/*! \brief Set Gets or sets the start time of the time period.
 	 */
 	void setTimePeriodStart(std::string  time_period_start);
-	/*! \brief Get The end time of the time period.
+	/*! \brief Get Gets or sets the end time of the time period.
 	 */
 	std::string getTimePeriodEnd();
 
-	/*! \brief Set The end time of the time period.
+	/*! \brief Set Gets or sets the end time of the time period.
 	 */
 	void setTimePeriodEnd(std::string  time_period_end);
-	/*! \brief Get The time when the price opened.
+	/*! \brief Get Gets or sets the time when the price opened.
 	 */
 	std::string getTimeOpen();
 
-	/*! \brief Set The time when the price opened.
+	/*! \brief Set Gets or sets the time when the price opened.
 	 */
 	void setTimeOpen(std::string  time_open);
-	/*! \brief Get The time when the price closed.
+	/*! \brief Get Gets or sets the time when the price closed.
 	 */
 	std::string getTimeClose();
 
-	/*! \brief Set The time when the price closed.
+	/*! \brief Set Gets or sets the time when the price closed.
 	 */
 	void setTimeClose(std::string  time_close);
-	/*! \brief Get The opening price.
+	/*! \brief Get Gets or sets the opening price.
 	 */
 	double getPriceOpen();
 
-	/*! \brief Set The opening price.
+	/*! \brief Set Gets or sets the opening price.
 	 */
 	void setPriceOpen(double  price_open);
-	/*! \brief Get The highest price during the time period.
+	/*! \brief Get Gets or sets the highest price during the time period.
 	 */
 	double getPriceHigh();
 
-	/*! \brief Set The highest price during the time period.
+	/*! \brief Set Gets or sets the highest price during the time period.
 	 */
 	void setPriceHigh(double  price_high);
-	/*! \brief Get The lowest price during the time period.
+	/*! \brief Get Gets or sets the lowest price during the time period.
 	 */
 	double getPriceLow();
 
-	/*! \brief Set The lowest price during the time period.
+	/*! \brief Set Gets or sets the lowest price during the time period.
 	 */
 	void setPriceLow(double  price_low);
-	/*! \brief Get The closing price.
+	/*! \brief Get Gets or sets the closing price.
 	 */
 	double getPriceClose();
 
-	/*! \brief Set The closing price.
+	/*! \brief Set Gets or sets the closing price.
 	 */
 	void setPriceClose(double  price_close);
-	/*! \brief Get The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+	/*! \brief Get Gets or sets the total volume traded during the time period.
 	 */
 	double getVolumeTraded();
 
-	/*! \brief Set The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+	/*! \brief Set Gets or sets the total volume traded during the time period.
 	 */
 	void setVolumeTraded(double  volume_traded);
-	/*! \brief Get The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+	/*! \brief Get Gets or sets the number of trades executed during the time period.
 	 */
 	long long getTradesCount();
 
-	/*! \brief Set The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+	/*! \brief Set Gets or sets the number of trades executed during the time period.
 	 */
 	void setTradesCount(long long  trades_count);
 	/*! \brief Get 

@@ -52,7 +52,7 @@ export class OptionsApi {
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
      */
     public v1OptionsExchangeIdCurrentGet(exchangeId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.OptionsOptionExchangeGroup>;  },
+    { response: JQueryXHR; body: Array<models.V1OptionExchangeGroup>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/options/{exchange_id}/current'.replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
@@ -105,11 +105,11 @@ export class OptionsApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.OptionsOptionExchangeGroup>;  },
+            { response: JQueryXHR; body: Array<models.V1OptionExchangeGroup>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.OptionsOptionExchangeGroup>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.V1OptionExchangeGroup>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})

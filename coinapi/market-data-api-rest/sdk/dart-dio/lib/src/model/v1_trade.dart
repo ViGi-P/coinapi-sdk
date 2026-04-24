@@ -16,7 +16,7 @@ part 'v1_trade.g.dart';
 /// * [timeCoinapi] - The time when the trade was received by CoinAPI.
 /// * [uuid] - The unique identifier for the trade.
 /// * [price] - The price of the transaction.
-/// * [size] - The base asset amount traded in the transaction.
+/// * [size] - The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
 /// * [takerSide] - The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN).
 /// * [idTrade] - The trade identifier.
 /// * [idOrderMaker] - The order maker identifier.
@@ -43,7 +43,7 @@ abstract class V1Trade implements Built<V1Trade, V1TradeBuilder> {
   @BuiltValueField(wireName: r'price')
   double? get price;
 
-  /// The base asset amount traded in the transaction.
+  /// The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
   @BuiltValueField(wireName: r'size')
   double? get size;
 

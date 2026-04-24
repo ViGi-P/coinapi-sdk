@@ -30,53 +30,53 @@ import com.squareup.moshi.JsonClass
 /**
  * Represents symbol mapping information for exchange symbols.
  *
- * @param symbolId The symbol ID.
- * @param symbolIdExchange The exchange-specific symbol ID.
- * @param coinapiDatainfoId The CoinAPI DataInfo ID.
- * @param assetIdBaseExchange The exchange-specific base asset ID.
- * @param assetIdQuoteExchange The exchange-specific quote asset ID.
- * @param assetIdBase The base asset ID.
- * @param assetIdQuote The quote asset ID.
- * @param pricePrecision The price precision.
- * @param sizePrecision The size precision.
+ * @param symbolId Gets or sets the symbol ID.
+ * @param symbolIdExchange Gets or sets the exchange-specific symbol ID.
+ * @param coinapiDatainfoId Gets or sets the DataInfo ID.
+ * @param assetIdBaseExchange Gets or sets the exchange-specific base asset ID.
+ * @param assetIdQuoteExchange Gets or sets the exchange-specific quote asset ID.
+ * @param assetIdBase Gets or sets the base asset ID.
+ * @param assetIdQuote Gets or sets the quote asset ID.
+ * @param pricePrecision Gets or sets the price precision.
+ * @param sizePrecision Gets or sets the size precision.
  */
 
 
 data class V1SymbolMapping (
 
-    /* The symbol ID. */
+    /* Gets or sets the symbol ID. */
     @Json(name = "symbol_id")
     val symbolId: kotlin.String? = null,
 
-    /* The exchange-specific symbol ID. */
+    /* Gets or sets the exchange-specific symbol ID. */
     @Json(name = "symbol_id_exchange")
     val symbolIdExchange: kotlin.String? = null,
 
-    /* The CoinAPI DataInfo ID. */
+    /* Gets or sets the DataInfo ID. */
     @Json(name = "coinapi_datainfo_id")
     val coinapiDatainfoId: kotlin.Int? = null,
 
-    /* The exchange-specific base asset ID. */
+    /* Gets or sets the exchange-specific base asset ID. */
     @Json(name = "asset_id_base_exchange")
     val assetIdBaseExchange: kotlin.String? = null,
 
-    /* The exchange-specific quote asset ID. */
+    /* Gets or sets the exchange-specific quote asset ID. */
     @Json(name = "asset_id_quote_exchange")
     val assetIdQuoteExchange: kotlin.String? = null,
 
-    /* The base asset ID. */
+    /* Gets or sets the base asset ID. */
     @Json(name = "asset_id_base")
     val assetIdBase: kotlin.String? = null,
 
-    /* The quote asset ID. */
+    /* Gets or sets the quote asset ID. */
     @Json(name = "asset_id_quote")
     val assetIdQuote: kotlin.String? = null,
 
-    /* The price precision. */
+    /* Gets or sets the price precision. */
     @Json(name = "price_precision")
     val pricePrecision: kotlin.Double? = null,
 
-    /* The size precision. */
+    /* Gets or sets the size precision. */
     @Json(name = "size_precision")
     val sizePrecision: kotlin.Double? = null
 

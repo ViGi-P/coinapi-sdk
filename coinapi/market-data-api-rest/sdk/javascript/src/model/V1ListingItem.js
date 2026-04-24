@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class V1ListingItem {
     /**
      * Constructs a new <code>V1ListingItem</code>.
-     * Represents a listing item.
+     * Represents a listing data item.
      * @alias module:model/V1ListingItem
      */
     constructor() { 
@@ -130,13 +130,13 @@ class V1ListingItem {
 V1ListingItem.prototype['metric_id'] = undefined;
 
 /**
- * The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+ * Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
  * @member {String} symbol_id
  */
 V1ListingItem.prototype['symbol_id'] = undefined;
 
 /**
- * The exchange-native symbol identifier. Null for exchange-level metrics.
+ * Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
  * @member {String} symbol_id_external
  */
 V1ListingItem.prototype['symbol_id_external'] = undefined;
@@ -154,19 +154,19 @@ V1ListingItem.prototype['exchange_id'] = undefined;
 V1ListingItem.prototype['asset_id'] = undefined;
 
 /**
- * Gets or sets the asset ID from the exchange.
+ * Gets or sets the asset ID.
  * @member {String} asset_id_external
  */
 V1ListingItem.prototype['asset_id_external'] = undefined;
 
 /**
- * Gets or sets the chain id.
+ * Gets or sets the chain ID.
  * @member {String} chain_id
  */
 V1ListingItem.prototype['chain_id'] = undefined;
 
 /**
- * Gets or sets the network id.
+ * Gets or sets the network ID.
  * @member {String} network_id
  */
 V1ListingItem.prototype['network_id'] = undefined;

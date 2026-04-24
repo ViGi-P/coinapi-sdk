@@ -8,7 +8,7 @@ Feature | HTTP request | Description
 
 
 # **v1_options_exchange_id_current_get**
-> v1_options_exchange_id_current_get (exchange_id: STRING_32 ): detachable LIST [OPTIONS_OPTION_EXCHANGE_GROUP]
+> v1_options_exchange_id_current_get (exchange_id: STRING_32 ): detachable LIST [V1_OPTION_EXCHANGE_GROUP]
 
 
 Current data by Exchange
@@ -24,7 +24,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [OPTIONS_OPTION_EXCHANGE_GROUP]**](Options.OptionExchangeGroup.md)
+[**LIST [V1_OPTION_EXCHANGE_GROUP]**](v1.OptionExchangeGroup.md)
 
 ### Authorization
 

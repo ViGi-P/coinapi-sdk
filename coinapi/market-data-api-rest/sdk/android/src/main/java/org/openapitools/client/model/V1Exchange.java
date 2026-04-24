@@ -99,8 +99,9 @@ public class V1Exchange {
   }
 
   /**
+   * Gets the start date of the exchange's data.
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Gets the start date of the exchange's data.")
   public String getDataStart() {
     return dataStart;
   }
@@ -109,8 +110,9 @@ public class V1Exchange {
   }
 
   /**
+   * Gets the end date of the exchange's data.
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Gets the end date of the exchange's data.")
   public String getDataEnd() {
     return dataEnd;
   }
@@ -262,9 +264,9 @@ public class V1Exchange {
   }
 
   /**
-   * Rank of the exchange.
+   * Rank of the exchange - higher rank means exchange is more reliable
    **/
-  @ApiModelProperty(value = "Rank of the exchange.")
+  @ApiModelProperty(value = "Rank of the exchange - higher rank means exchange is more reliable")
   public Double getRank() {
     return rank;
   }

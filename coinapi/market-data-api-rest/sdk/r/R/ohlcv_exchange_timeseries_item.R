@@ -7,16 +7,16 @@
 #' @title OhlcvExchangeTimeseriesItem
 #' @description OhlcvExchangeTimeseriesItem Class
 #' @format An \code{R6Class} generator object
-#' @field time_period_start The start time of the time period. character [optional]
-#' @field time_period_end The end time of the time period. character [optional]
-#' @field time_open The time when the price opened. character [optional]
-#' @field time_close The time when the price closed. character [optional]
-#' @field price_open The opening price. numeric [optional]
-#' @field price_high The highest price during the time period. numeric [optional]
-#' @field price_low The lowest price during the time period. numeric [optional]
-#' @field price_close The closing price. numeric [optional]
-#' @field volume_traded The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. numeric [optional]
-#' @field trades_count The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. integer [optional]
+#' @field time_period_start Gets or sets the start time of the time period. character [optional]
+#' @field time_period_end Gets or sets the end time of the time period. character [optional]
+#' @field time_open Gets or sets the time when the price opened. character [optional]
+#' @field time_close Gets or sets the time when the price closed. character [optional]
+#' @field price_open Gets or sets the opening price. numeric [optional]
+#' @field price_high Gets or sets the highest price during the time period. numeric [optional]
+#' @field price_low Gets or sets the lowest price during the time period. numeric [optional]
+#' @field price_close Gets or sets the closing price. numeric [optional]
+#' @field volume_traded Gets or sets the total volume traded during the time period. numeric [optional]
+#' @field trades_count Gets or sets the number of trades executed during the time period. integer [optional]
 #' @field symbol_id_exchange  character [optional]
 #' @field symbol_id_coinapi  character [optional]
 #' @importFrom R6 R6Class
@@ -41,16 +41,16 @@ OhlcvExchangeTimeseriesItem <- R6::R6Class(
     #' @description
     #' Initialize a new OhlcvExchangeTimeseriesItem class.
     #'
-    #' @param time_period_start The start time of the time period.
-    #' @param time_period_end The end time of the time period.
-    #' @param time_open The time when the price opened.
-    #' @param time_close The time when the price closed.
-    #' @param price_open The opening price.
-    #' @param price_high The highest price during the time period.
-    #' @param price_low The lowest price during the time period.
-    #' @param price_close The closing price.
-    #' @param volume_traded The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
-    #' @param trades_count The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+    #' @param time_period_start Gets or sets the start time of the time period.
+    #' @param time_period_end Gets or sets the end time of the time period.
+    #' @param time_open Gets or sets the time when the price opened.
+    #' @param time_close Gets or sets the time when the price closed.
+    #' @param price_open Gets or sets the opening price.
+    #' @param price_high Gets or sets the highest price during the time period.
+    #' @param price_low Gets or sets the lowest price during the time period.
+    #' @param price_close Gets or sets the closing price.
+    #' @param volume_traded Gets or sets the total volume traded during the time period.
+    #' @param trades_count Gets or sets the number of trades executed during the time period.
     #' @param symbol_id_exchange symbol_id_exchange
     #' @param symbol_id_coinapi symbol_id_coinapi
     #' @param ... Other optional arguments.

@@ -11,40 +11,40 @@ part 'v1_order_book_depth.g.dart';
 /// Represents the depth of an order book.
 ///
 /// Properties:
-/// * [symbolId] - The symbol identifier.
-/// * [timeExchange] - The exchange time of the order book.
-/// * [timeCoinapi] - The CoinAPI time when the order book was received.
-/// * [askLevels] - The number of ask levels in the order book.
-/// * [bidLevels] - The number of bid levels in the order book.
-/// * [askDepth] - The depth of the ask side of the order book.
-/// * [bidDepth] - The depth of the bid side of the order book.
+/// * [symbolId] - Gets or sets the symbol identifier.
+/// * [timeExchange] - Gets or sets the exchange time of the order book.
+/// * [timeCoinapi] - Gets or sets the CoinAPI time when the order book was received.
+/// * [askLevels] - Gets or sets the number of ask levels in the order book.
+/// * [bidLevels] - Gets or sets the number of bid levels in the order book.
+/// * [askDepth] - Gets or sets the depth of the ask side of the order book.
+/// * [bidDepth] - Gets or sets the depth of the bid side of the order book.
 @BuiltValue()
 abstract class V1OrderBookDepth implements Built<V1OrderBookDepth, V1OrderBookDepthBuilder> {
-  /// The symbol identifier.
+  /// Gets or sets the symbol identifier.
   @BuiltValueField(wireName: r'symbol_id')
   String? get symbolId;
 
-  /// The exchange time of the order book.
+  /// Gets or sets the exchange time of the order book.
   @BuiltValueField(wireName: r'time_exchange')
   DateTime? get timeExchange;
 
-  /// The CoinAPI time when the order book was received.
+  /// Gets or sets the CoinAPI time when the order book was received.
   @BuiltValueField(wireName: r'time_coinapi')
   DateTime? get timeCoinapi;
 
-  /// The number of ask levels in the order book.
+  /// Gets or sets the number of ask levels in the order book.
   @BuiltValueField(wireName: r'ask_levels')
   int? get askLevels;
 
-  /// The number of bid levels in the order book.
+  /// Gets or sets the number of bid levels in the order book.
   @BuiltValueField(wireName: r'bid_levels')
   int? get bidLevels;
 
-  /// The depth of the ask side of the order book.
+  /// Gets or sets the depth of the ask side of the order book.
   @BuiltValueField(wireName: r'ask_depth')
   double? get askDepth;
 
-  /// The depth of the bid side of the order book.
+  /// Gets or sets the depth of the bid side of the order book.
   @BuiltValueField(wireName: r'bid_depth')
   double? get bidDepth;
 

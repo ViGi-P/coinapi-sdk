@@ -28,7 +28,7 @@ using APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client;
 namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
 {
     /// <summary>
-    /// Class representation of general metric data. This class is an XML type with name &#39;general_data&#39; and inherits from the BaseCsvModel class.
+    /// Class representation of general metric data. This class is an XML type with name \&quot;general_data\&quot; and inherits from the BaseCsvModel class.
     /// </summary>
     public partial class V1GeneralData : IValidatableObject
     {

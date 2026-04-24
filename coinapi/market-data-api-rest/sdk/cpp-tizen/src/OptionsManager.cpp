@@ -51,13 +51,13 @@ static gpointer __OptionsManagerthreadFunc(gpointer data)
 static bool v1OptionsExchangeIdCurrentGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Options.OptionExchangeGroup>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Options.OptionExchangeGroup>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<V1.OptionExchangeGroup>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<V1.OptionExchangeGroup>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Options.OptionExchangeGroup> out;
+	std::list<V1.OptionExchangeGroup> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -71,7 +71,7 @@ static bool v1OptionsExchangeIdCurrentGetProcessor(MemoryStruct_s p_chunk, long 
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Options.OptionExchangeGroup singlemodel;
+			V1.OptionExchangeGroup singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -97,7 +97,7 @@ static bool v1OptionsExchangeIdCurrentGetProcessor(MemoryStruct_s p_chunk, long 
 
 static bool v1OptionsExchangeIdCurrentGetHelper(char * accessToken,
 	std::string exchangeId, 
-	void(* handler)(std::list<Options.OptionExchangeGroup>, Error, void* )
+	void(* handler)(std::list<V1.OptionExchangeGroup>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -174,7 +174,7 @@ static bool v1OptionsExchangeIdCurrentGetHelper(char * accessToken,
 
 bool OptionsManager::v1OptionsExchangeIdCurrentGetAsync(char * accessToken,
 	std::string exchangeId, 
-	void(* handler)(std::list<Options.OptionExchangeGroup>, Error, void* )
+	void(* handler)(std::list<V1.OptionExchangeGroup>, Error, void* )
 	, void* userData)
 {
 	return v1OptionsExchangeIdCurrentGetHelper(accessToken,
@@ -184,7 +184,7 @@ bool OptionsManager::v1OptionsExchangeIdCurrentGetAsync(char * accessToken,
 
 bool OptionsManager::v1OptionsExchangeIdCurrentGetSync(char * accessToken,
 	std::string exchangeId, 
-	void(* handler)(std::list<Options.OptionExchangeGroup>, Error, void* )
+	void(* handler)(std::list<V1.OptionExchangeGroup>, Error, void* )
 	, void* userData)
 {
 	return v1OptionsExchangeIdCurrentGetHelper(accessToken,

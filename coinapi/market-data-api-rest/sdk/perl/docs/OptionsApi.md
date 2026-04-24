@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **v1_options_exchange_id_current_get**
-> ARRAY[OptionsOptionExchangeGroup] v1_options_exchange_id_current_get(exchange_id => $exchange_id)
+> ARRAY[V1OptionExchangeGroup] v1_options_exchange_id_current_get(exchange_id => $exchange_id)
 
 Current data by Exchange
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[OptionsOptionExchangeGroup]**](OptionsOptionExchangeGroup.md)
+[**ARRAY[V1OptionExchangeGroup]**](V1OptionExchangeGroup.md)
 
 ### Authorization
 

@@ -65,7 +65,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1OptionsExchangeIdCurrentGetApiResponse"/>
     /// </summary>
-    public interface IV1OptionsExchangeIdCurrentGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<OptionsOptionExchangeGroup>?>
+    public interface IV1OptionsExchangeIdCurrentGetApiResponse : APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client.IApiResponse, IOk<List<V1OptionExchangeGroup>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -375,11 +375,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<OptionsOptionExchangeGroup>? Ok()
+            public List<V1OptionExchangeGroup>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<OptionsOptionExchangeGroup>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<V1OptionExchangeGroup>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -388,7 +388,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<OptionsOptionExchangeGroup>? result)
+            public bool TryOk([NotNullWhen(true)]out List<V1OptionExchangeGroup>? result)
             {
                 result = null;
 

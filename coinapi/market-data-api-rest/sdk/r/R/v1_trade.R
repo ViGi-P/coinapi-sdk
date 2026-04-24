@@ -12,7 +12,7 @@
 #' @field time_coinapi The time when the trade was received by CoinAPI. character [optional]
 #' @field uuid The unique identifier for the trade. character [optional]
 #' @field price The price of the transaction. numeric [optional]
-#' @field size The base asset amount traded in the transaction. numeric [optional]
+#' @field size The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series. numeric [optional]
 #' @field taker_side The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN). character [optional]
 #' @field id_trade The trade identifier. character [optional]
 #' @field id_order_maker The order maker identifier. character [optional]
@@ -42,7 +42,7 @@ V1Trade <- R6::R6Class(
     #' @param time_coinapi The time when the trade was received by CoinAPI.
     #' @param uuid The unique identifier for the trade.
     #' @param price The price of the transaction.
-    #' @param size The base asset amount traded in the transaction.
+    #' @param size The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
     #' @param taker_side The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN).
     #' @param id_trade The trade identifier.
     #' @param id_order_maker The order maker identifier.

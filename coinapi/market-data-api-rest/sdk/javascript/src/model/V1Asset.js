@@ -276,11 +276,13 @@ V1Asset.prototype['supply_max'] = undefined;
 V1Asset.prototype['chain_addresses'] = undefined;
 
 /**
+ * Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
  * @member {String} data_start
  */
 V1Asset.prototype['data_start'] = undefined;
 
 /**
+ * Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
  * @member {String} data_end
  */
 V1Asset.prototype['data_end'] = undefined;

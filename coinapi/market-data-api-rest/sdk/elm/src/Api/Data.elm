@@ -16,8 +16,6 @@
 
 module Api.Data exposing
     ( OhlcvExchangeTimeseriesItem
-    , OptionsOptionExchangeGroup
-    , OptionsStrike
     , V1Asset
     , V1Chain
     , V1ChainNetworkAddress
@@ -33,19 +31,19 @@ module Api.Data exposing
     , V1Metric
     , V1MetricData
     , V1MetricInfo
+    , V1OptionExchangeGroup
     , V1OrderBook
     , V1OrderBookBase
     , V1OrderBookDepth
     , V1Quote
     , V1QuoteTrade
+    , V1Strike
     , V1Symbol
     , V1SymbolMapping
     , V1TimeseriesItem
     , V1TimeseriesPeriod
     , V1Trade
     , encodeOhlcvExchangeTimeseriesItem
-    , encodeOptionsOptionExchangeGroup
-    , encodeOptionsStrike
     , encodeV1Asset
     , encodeV1Chain
     , encodeV1ChainNetworkAddress
@@ -61,19 +59,19 @@ module Api.Data exposing
     , encodeV1Metric
     , encodeV1MetricData
     , encodeV1MetricInfo
+    , encodeV1OptionExchangeGroup
     , encodeV1OrderBook
     , encodeV1OrderBookBase
     , encodeV1OrderBookDepth
     , encodeV1Quote
     , encodeV1QuoteTrade
+    , encodeV1Strike
     , encodeV1Symbol
     , encodeV1SymbolMapping
     , encodeV1TimeseriesItem
     , encodeV1TimeseriesPeriod
     , encodeV1Trade
     , ohlcvExchangeTimeseriesItemDecoder
-    , optionsOptionExchangeGroupDecoder
-    , optionsStrikeDecoder
     , v1AssetDecoder
     , v1ChainDecoder
     , v1ChainNetworkAddressDecoder
@@ -89,11 +87,13 @@ module Api.Data exposing
     , v1MetricDecoder
     , v1MetricDataDecoder
     , v1MetricInfoDecoder
+    , v1OptionExchangeGroupDecoder
     , v1OrderBookDecoder
     , v1OrderBookBaseDecoder
     , v1OrderBookDepthDecoder
     , v1QuoteDecoder
     , v1QuoteTradeDecoder
+    , v1StrikeDecoder
     , v1SymbolDecoder
     , v1SymbolMappingDecoder
     , v1TimeseriesItemDecoder
@@ -127,26 +127,6 @@ type alias OhlcvExchangeTimeseriesItem =
     , tradesCount : Maybe Int
     , symbolIdExchange : Maybe String
     , symbolIdCoinapi : Maybe String
-    }
-
-
-{-| Represents an option exchange group data model.
--}
-type alias OptionsOptionExchangeGroup =
-    { assetIdBase : Maybe String
-    , assetIdQuote : Maybe String
-    , underlyingPrice : Maybe Float
-    , timeExpiration : Maybe Posix
-    , strikes : Maybe ( List OptionsStrike )
-    }
-
-
-{-| Represents a strike within the option exchange group.
--}
-type alias OptionsStrike =
-    { strikePrice : Maybe Float
-    , call : Maybe V1QuoteTrade
-    , put : Maybe V1QuoteTrade
     }
 
 
@@ -261,7 +241,7 @@ type alias V1ExchangeRatesTimeseriesItem =
     }
 
 
-{-| Class representation of general metric data. This class is an XML type with name 'general_data' and inherits from the BaseCsvModel class.
+{-| Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class.
 -}
 type alias V1GeneralData =
     { entryTime : Maybe Posix
@@ -297,7 +277,7 @@ type alias V1LastTrade =
     }
 
 
-{-| Represents a listing item.
+{-| Represents a listing data item.
 -}
 type alias V1ListingItem =
     { metricId : Maybe String
@@ -334,6 +314,17 @@ type alias V1MetricInfo =
     { metricId : Maybe String
     , description : Maybe String
     , sourceId : Maybe String
+    }
+
+
+{-| Represents an option exchange group data model.
+-}
+type alias V1OptionExchangeGroup =
+    { assetIdBase : Maybe String
+    , assetIdQuote : Maybe String
+    , underlyingPrice : Maybe Float
+    , timeExpiration : Maybe Posix
+    , strikes : Maybe ( List V1Strike )
     }
 
 
@@ -399,6 +390,15 @@ type alias V1QuoteTrade =
     }
 
 
+{-| Represents a strike within the option exchange group.
+-}
+type alias V1Strike =
+    { strikePrice : Maybe Float
+    , call : Maybe V1QuoteTrade
+    , put : Maybe V1QuoteTrade
+    }
+
+
 {-| Represents a symbol data model.
 -}
 type alias V1Symbol =
@@ -445,7 +445,7 @@ type alias V1Symbol =
     , assetIdQuoteExchange : Maybe String
     , pricePrecision : Maybe Float
     , sizePrecision : Maybe Float
-    , rawKvp : Maybe ( Dict.Dict String String )
+    , rawKvp : Maybe ( Dict.Dict String Maybe String )
     , futureIsInverse : Maybe Bool
     , futureIsQuanto : Maybe Bool
     , volumeToUsd : Maybe Float
@@ -545,52 +545,6 @@ encodeOhlcvExchangeTimeseriesItemPairs model =
             , maybeEncode "trades_count" Json.Encode.int model.tradesCount
             , maybeEncodeNullable "symbol_id_exchange" Json.Encode.string model.symbolIdExchange
             , maybeEncodeNullable "symbol_id_coinapi" Json.Encode.string model.symbolIdCoinapi
-            ]
-    in
-    pairs
-
-
-encodeOptionsOptionExchangeGroup : OptionsOptionExchangeGroup -> Json.Encode.Value
-encodeOptionsOptionExchangeGroup =
-    encodeObject << encodeOptionsOptionExchangeGroupPairs
-
-
-encodeOptionsOptionExchangeGroupWithTag : ( String, String ) -> OptionsOptionExchangeGroup -> Json.Encode.Value
-encodeOptionsOptionExchangeGroupWithTag (tagField, tag) model =
-    encodeObject (encodeOptionsOptionExchangeGroupPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeOptionsOptionExchangeGroupPairs : OptionsOptionExchangeGroup -> List EncodedField
-encodeOptionsOptionExchangeGroupPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "asset_id_base" Json.Encode.string model.assetIdBase
-            , maybeEncodeNullable "asset_id_quote" Json.Encode.string model.assetIdQuote
-            , maybeEncodeNullable "underlying_price" Json.Encode.float model.underlyingPrice
-            , maybeEncode "time_expiration" Api.Time.encodeDateTime model.timeExpiration
-            , maybeEncodeNullable "strikes" (Json.Encode.list encodeOptionsStrike) model.strikes
-            ]
-    in
-    pairs
-
-
-encodeOptionsStrike : OptionsStrike -> Json.Encode.Value
-encodeOptionsStrike =
-    encodeObject << encodeOptionsStrikePairs
-
-
-encodeOptionsStrikeWithTag : ( String, String ) -> OptionsStrike -> Json.Encode.Value
-encodeOptionsStrikeWithTag (tagField, tag) model =
-    encodeObject (encodeOptionsStrikePairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeOptionsStrikePairs : OptionsStrike -> List EncodedField
-encodeOptionsStrikePairs model =
-    let
-        pairs =
-            [ maybeEncode "strike_price" Json.Encode.float model.strikePrice
-            , maybeEncode "call" encodeV1QuoteTrade model.call
-            , maybeEncode "put" encodeV1QuoteTrade model.put
             ]
     in
     pairs
@@ -978,6 +932,30 @@ encodeV1MetricInfoPairs model =
     pairs
 
 
+encodeV1OptionExchangeGroup : V1OptionExchangeGroup -> Json.Encode.Value
+encodeV1OptionExchangeGroup =
+    encodeObject << encodeV1OptionExchangeGroupPairs
+
+
+encodeV1OptionExchangeGroupWithTag : ( String, String ) -> V1OptionExchangeGroup -> Json.Encode.Value
+encodeV1OptionExchangeGroupWithTag (tagField, tag) model =
+    encodeObject (encodeV1OptionExchangeGroupPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeV1OptionExchangeGroupPairs : V1OptionExchangeGroup -> List EncodedField
+encodeV1OptionExchangeGroupPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "asset_id_base" Json.Encode.string model.assetIdBase
+            , maybeEncodeNullable "asset_id_quote" Json.Encode.string model.assetIdQuote
+            , maybeEncodeNullable "underlying_price" Json.Encode.float model.underlyingPrice
+            , maybeEncode "time_expiration" Api.Time.encodeDateTime model.timeExpiration
+            , maybeEncodeNullable "strikes" (Json.Encode.list encodeV1Strike) model.strikes
+            ]
+    in
+    pairs
+
+
 encodeV1OrderBook : V1OrderBook -> Json.Encode.Value
 encodeV1OrderBook =
     encodeObject << encodeV1OrderBookPairs
@@ -1100,6 +1078,28 @@ encodeV1QuoteTradePairs model =
             , maybeEncodeNullable "bid_price" Json.Encode.float model.bidPrice
             , maybeEncodeNullable "bid_size" Json.Encode.float model.bidSize
             , maybeEncode "last_trade" encodeV1LastTrade model.lastTrade
+            ]
+    in
+    pairs
+
+
+encodeV1Strike : V1Strike -> Json.Encode.Value
+encodeV1Strike =
+    encodeObject << encodeV1StrikePairs
+
+
+encodeV1StrikeWithTag : ( String, String ) -> V1Strike -> Json.Encode.Value
+encodeV1StrikeWithTag (tagField, tag) model =
+    encodeObject (encodeV1StrikePairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeV1StrikePairs : V1Strike -> List EncodedField
+encodeV1StrikePairs model =
+    let
+        pairs =
+            [ maybeEncode "strike_price" Json.Encode.float model.strikePrice
+            , maybeEncode "call" encodeV1QuoteTrade model.call
+            , maybeEncode "put" encodeV1QuoteTrade model.put
             ]
     in
     pairs
@@ -1307,24 +1307,6 @@ ohlcvExchangeTimeseriesItemDecoder =
         |> maybeDecodeNullable "symbol_id_coinapi" Json.Decode.string Nothing
 
 
-optionsOptionExchangeGroupDecoder : Json.Decode.Decoder OptionsOptionExchangeGroup
-optionsOptionExchangeGroupDecoder =
-    Json.Decode.succeed OptionsOptionExchangeGroup
-        |> maybeDecodeNullable "asset_id_base" Json.Decode.string Nothing
-        |> maybeDecodeNullable "asset_id_quote" Json.Decode.string Nothing
-        |> maybeDecodeNullable "underlying_price" Json.Decode.float Nothing
-        |> maybeDecode "time_expiration" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecodeNullable "strikes" (Json.Decode.list optionsStrikeDecoder) Nothing
-
-
-optionsStrikeDecoder : Json.Decode.Decoder OptionsStrike
-optionsStrikeDecoder =
-    Json.Decode.succeed OptionsStrike
-        |> maybeDecode "strike_price" Json.Decode.float Nothing
-        |> maybeDecode "call" v1QuoteTradeDecoder Nothing
-        |> maybeDecode "put" v1QuoteTradeDecoder Nothing
-
-
 v1AssetDecoder : Json.Decode.Decoder V1Asset
 v1AssetDecoder =
     Json.Decode.succeed V1Asset
@@ -1497,6 +1479,16 @@ v1MetricInfoDecoder =
         |> maybeDecodeNullable "source_id" Json.Decode.string Nothing
 
 
+v1OptionExchangeGroupDecoder : Json.Decode.Decoder V1OptionExchangeGroup
+v1OptionExchangeGroupDecoder =
+    Json.Decode.succeed V1OptionExchangeGroup
+        |> maybeDecodeNullable "asset_id_base" Json.Decode.string Nothing
+        |> maybeDecodeNullable "asset_id_quote" Json.Decode.string Nothing
+        |> maybeDecodeNullable "underlying_price" Json.Decode.float Nothing
+        |> maybeDecode "time_expiration" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecodeNullable "strikes" (Json.Decode.list v1StrikeDecoder) Nothing
+
+
 v1OrderBookDecoder : Json.Decode.Decoder V1OrderBook
 v1OrderBookDecoder =
     Json.Decode.succeed V1OrderBook
@@ -1552,6 +1544,14 @@ v1QuoteTradeDecoder =
         |> maybeDecodeNullable "bid_price" Json.Decode.float Nothing
         |> maybeDecodeNullable "bid_size" Json.Decode.float Nothing
         |> maybeDecode "last_trade" v1LastTradeDecoder Nothing
+
+
+v1StrikeDecoder : Json.Decode.Decoder V1Strike
+v1StrikeDecoder =
+    Json.Decode.succeed V1Strike
+        |> maybeDecode "strike_price" Json.Decode.float Nothing
+        |> maybeDecode "call" v1QuoteTradeDecoder Nothing
+        |> maybeDecode "put" v1QuoteTradeDecoder Nothing
 
 
 v1SymbolDecoder : Json.Decode.Decoder V1Symbol

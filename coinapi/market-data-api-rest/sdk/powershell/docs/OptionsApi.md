@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a id="Invoke-V1OptionsExchangeIdCurrentGet"></a>
 # **Invoke-V1OptionsExchangeIdCurrentGet**
-> OptionsOptionExchangeGroup[] Invoke-V1OptionsExchangeIdCurrentGet<br>
+> V1OptionExchangeGroup[] Invoke-V1OptionsExchangeIdCurrentGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ExchangeId] <String><br>
 
 Current data by Exchange
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OptionsOptionExchangeGroup[]**](OptionsOptionExchangeGroup.md) (PSCustomObject)
+[**V1OptionExchangeGroup[]**](V1OptionExchangeGroup.md) (PSCustomObject)
 
 ### Authorization
 

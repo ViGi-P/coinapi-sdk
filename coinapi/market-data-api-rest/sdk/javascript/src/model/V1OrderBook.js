@@ -87,31 +87,31 @@ class V1OrderBook {
 
 
 /**
- * The symbol identifier.
+ * Gets or sets the symbol identifier.
  * @member {String} symbol_id
  */
 V1OrderBook.prototype['symbol_id'] = undefined;
 
 /**
- * The exchange time of the order book.
+ * Gets or sets the exchange time of the order book.
  * @member {Date} time_exchange
  */
 V1OrderBook.prototype['time_exchange'] = undefined;
 
 /**
- * The CoinAPI time when the order book was received.
+ * Gets or sets the CoinAPI time when the order book was received.
  * @member {Date} time_coinapi
  */
 V1OrderBook.prototype['time_coinapi'] = undefined;
 
 /**
- * The asks made by market makers.
+ * Gets or sets the asks made by market makers.
  * @member {Object} asks
  */
 V1OrderBook.prototype['asks'] = undefined;
 
 /**
- * The bids made by market makers.
+ * Gets or sets the bids made by market makers.
  * @member {Object} bids
  */
 V1OrderBook.prototype['bids'] = undefined;

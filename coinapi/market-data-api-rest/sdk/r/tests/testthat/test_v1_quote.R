@@ -7,7 +7,7 @@ model_instance <- V1Quote$new()
 
 test_that("symbol_id", {
   # tests for the property `symbol_id` (character)
-  # The symbol identifier.
+  # Gets or sets the symbol identifier.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`symbol_id`, "EXPECTED_RESULT")
@@ -15,7 +15,7 @@ test_that("symbol_id", {
 
 test_that("time_exchange", {
   # tests for the property `time_exchange` (character)
-  # The exchange time of the quote.
+  # Gets or sets the exchange time of the quote.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`time_exchange`, "EXPECTED_RESULT")
@@ -23,7 +23,7 @@ test_that("time_exchange", {
 
 test_that("time_coinapi", {
   # tests for the property `time_coinapi` (character)
-  # The CoinAPI time when the quote was received.
+  # Gets or sets the CoinAPI time when the quote was received.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`time_coinapi`, "EXPECTED_RESULT")
@@ -31,7 +31,7 @@ test_that("time_coinapi", {
 
 test_that("ask_price", {
   # tests for the property `ask_price` (numeric)
-  # The best asking price.
+  # Gets or sets the best asking price.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`ask_price`, "EXPECTED_RESULT")
@@ -39,7 +39,7 @@ test_that("ask_price", {
 
 test_that("ask_size", {
   # tests for the property `ask_size` (numeric)
-  # The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+  # Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`ask_size`, "EXPECTED_RESULT")
@@ -47,7 +47,7 @@ test_that("ask_size", {
 
 test_that("bid_price", {
   # tests for the property `bid_price` (numeric)
-  # The best bidding price.
+  # Gets or sets the best bidding price.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`bid_price`, "EXPECTED_RESULT")
@@ -55,7 +55,7 @@ test_that("bid_price", {
 
 test_that("bid_size", {
   # tests for the property `bid_size` (numeric)
-  # The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+  # Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`bid_size`, "EXPECTED_RESULT")

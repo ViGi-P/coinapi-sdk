@@ -13,7 +13,7 @@
 /*
  * V1_GeneralData.h
  *
- * Class representation of general metric data. This class is an XML type with name &#39;general_data&#39; and inherits from the BaseCsvModel class.
+ * Class representation of general metric data. This class is an XML type with name \&quot;general_data\&quot; and inherits from the BaseCsvModel class.
  */
 
 #ifndef ORG_OPENAPITOOLS_CLIENT_MODEL_V1_GeneralData_H_
@@ -33,7 +33,7 @@ namespace model {
 
 
 /// <summary>
-/// Class representation of general metric data. This class is an XML type with name &#39;general_data&#39; and inherits from the BaseCsvModel class.
+/// Class representation of general metric data. This class is an XML type with name \&quot;general_data\&quot; and inherits from the BaseCsvModel class.
 /// </summary>
 class  V1_GeneralData
     : public ModelBase

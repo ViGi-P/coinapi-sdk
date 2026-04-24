@@ -34,8 +34,8 @@ import com.squareup.moshi.JsonClass
  * @param exchangeId Gets or sets the exchange ID.
  * @param website Gets or sets the website URL of the exchange.
  * @param name Gets or sets the name of the exchange.
- * @param dataStart 
- * @param dataEnd 
+ * @param dataStart Gets the start date of the exchange's data.
+ * @param dataEnd Gets the end date of the exchange's data.
  * @param dataQuoteStart Gets or sets the start date of quote data.
  * @param dataQuoteEnd Gets or sets the end date of quote data.
  * @param dataOrderbookStart Gets or sets the start date of order book data.
@@ -49,7 +49,7 @@ import com.squareup.moshi.JsonClass
  * @param volume1mthUsd Gets or sets the USD volume in the last 1 month.
  * @param metricId Gets or sets the list of metric IDs.
  * @param icons Gets or sets the list of icons for the exchange.
- * @param rank Rank of the exchange.
+ * @param rank Rank of the exchange - higher rank means exchange is more reliable
  * @param integrationStatus Status of the integration
  */
 
@@ -68,9 +68,11 @@ data class V1Exchange (
     @Json(name = "name")
     val name: kotlin.String? = null,
 
+    /* Gets the start date of the exchange's data. */
     @Json(name = "data_start")
     val dataStart: kotlin.String? = null,
 
+    /* Gets the end date of the exchange's data. */
     @Json(name = "data_end")
     val dataEnd: kotlin.String? = null,
 
@@ -126,7 +128,7 @@ data class V1Exchange (
     @Json(name = "icons")
     val icons: kotlin.collections.List<V1Icon>? = null,
 
-    /* Rank of the exchange. */
+    /* Rank of the exchange - higher rank means exchange is more reliable */
     @Json(name = "rank")
     val rank: kotlin.Double? = null,
 

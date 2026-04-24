@@ -15,37 +15,37 @@
  */
 public class OASV1LastTrade implements OAS.MappedProperties {
     /**
-     * The exchange time of the last trade.
+     * Gets or sets the exchange time of the last trade.
      * @return timeExchange
      */
     public Datetime timeExchange { get; set; }
 
     /**
-     * The CoinAPI time when the last trade was received.
+     * Gets or sets the CoinAPI time when the last trade was received.
      * @return timeCoinapi
      */
     public Datetime timeCoinapi { get; set; }
 
     /**
-     * The UUID of the last trade.
+     * Gets or sets the UUID of the last trade.
      * @return uuid
      */
     public String uuid { get; set; }
 
     /**
-     * The price of the last trade.
+     * Gets or sets the price of the last trade.
      * @return price
      */
     public Double price { get; set; }
 
     /**
-     * The size of the last trade.
+     * Gets or sets the size of the last trade.
      * @return size
      */
     public Double size { get; set; }
 
     /**
-     * The taker side of the last trade.
+     * Gets or sets the taker side of the last trade.
      * @return takerSide
      */
     public String takerSide { get; set; }

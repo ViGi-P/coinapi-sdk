@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**periodId** | **String** | The period ID. | [optional] 
-**lengthSeconds** | **Number** | The length of the period in seconds. | [optional] 
-**lengthMonths** | **Number** | The length of the period in months. | [optional] 
-**unitCount** | **Number** | The unit count. | [optional] 
-**unitName** | **String** | The unit name. | [optional] 
-**displayName** | **String** | The display name of the timeseries period. | [optional] 
+**periodId** | **String** | Gets or sets the period ID. | [optional] 
+**lengthSeconds** | **Number** | Gets or sets the length of the period in seconds. | [optional] 
+**lengthMonths** | **Number** | Gets or sets the length of the period in months. | [optional] 
+**unitCount** | **Number** | Gets or sets the unit count. | [optional] 
+**unitName** | **String** | Gets or sets the unit name. | [optional] 
+**displayName** | **String** | Gets or sets the display name of the timeseries period. | [optional] 
 
 

@@ -990,7 +990,7 @@ package body .Clients is
    procedure V_1Options_Exchange_Id_Current_Get
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;
-       Result : out .Models.OptionsOptionExchangeGroup_Type_Vectors.Vector) is
+       Result : out .Models.V1OptionExchangeGroup_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
    begin

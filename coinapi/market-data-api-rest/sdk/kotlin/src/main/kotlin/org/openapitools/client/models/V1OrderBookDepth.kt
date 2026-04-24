@@ -30,43 +30,43 @@ import com.squareup.moshi.JsonClass
 /**
  * Represents the depth of an order book.
  *
- * @param symbolId The symbol identifier.
- * @param timeExchange The exchange time of the order book.
- * @param timeCoinapi The CoinAPI time when the order book was received.
- * @param askLevels The number of ask levels in the order book.
- * @param bidLevels The number of bid levels in the order book.
- * @param askDepth The depth of the ask side of the order book.
- * @param bidDepth The depth of the bid side of the order book.
+ * @param symbolId Gets or sets the symbol identifier.
+ * @param timeExchange Gets or sets the exchange time of the order book.
+ * @param timeCoinapi Gets or sets the CoinAPI time when the order book was received.
+ * @param askLevels Gets or sets the number of ask levels in the order book.
+ * @param bidLevels Gets or sets the number of bid levels in the order book.
+ * @param askDepth Gets or sets the depth of the ask side of the order book.
+ * @param bidDepth Gets or sets the depth of the bid side of the order book.
  */
 
 
 data class V1OrderBookDepth (
 
-    /* The symbol identifier. */
+    /* Gets or sets the symbol identifier. */
     @Json(name = "symbol_id")
     val symbolId: kotlin.String? = null,
 
-    /* The exchange time of the order book. */
+    /* Gets or sets the exchange time of the order book. */
     @Json(name = "time_exchange")
     val timeExchange: java.time.OffsetDateTime? = null,
 
-    /* The CoinAPI time when the order book was received. */
+    /* Gets or sets the CoinAPI time when the order book was received. */
     @Json(name = "time_coinapi")
     val timeCoinapi: java.time.OffsetDateTime? = null,
 
-    /* The number of ask levels in the order book. */
+    /* Gets or sets the number of ask levels in the order book. */
     @Json(name = "ask_levels")
     val askLevels: kotlin.Long? = null,
 
-    /* The number of bid levels in the order book. */
+    /* Gets or sets the number of bid levels in the order book. */
     @Json(name = "bid_levels")
     val bidLevels: kotlin.Long? = null,
 
-    /* The depth of the ask side of the order book. */
+    /* Gets or sets the depth of the ask side of the order book. */
     @Json(name = "ask_depth")
     val askDepth: kotlin.Double? = null,
 
-    /* The depth of the bid side of the order book. */
+    /* Gets or sets the depth of the bid side of the order book. */
     @Json(name = "bid_depth")
     val bidDepth: kotlin.Double? = null
 

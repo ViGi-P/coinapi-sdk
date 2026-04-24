@@ -9,8 +9,6 @@ docs/MetricsV2Api.md
 docs/OHLCVApi.md
 docs/OhlcvExchangeTimeseriesItem.md
 docs/OptionsApi.md
-docs/OptionsOptionExchangeGroup.md
-docs/OptionsStrike.md
 docs/OrderBookApi.md
 docs/OrderBookL3Api.md
 docs/QuotesApi.md
@@ -30,11 +28,13 @@ docs/V1ListingItem.md
 docs/V1Metric.md
 docs/V1MetricData.md
 docs/V1MetricInfo.md
+docs/V1OptionExchangeGroup.md
 docs/V1OrderBook.md
 docs/V1OrderBookBase.md
 docs/V1OrderBookDepth.md
 docs/V1Quote.md
 docs/V1QuoteTrade.md
+docs/V1Strike.md
 docs/V1Symbol.md
 docs/V1SymbolMapping.md
 docs/V1TimeseriesItem.md
@@ -66,8 +66,6 @@ src/main/java/org/openapitools/client/auth/ApiKeyAuth.java
 src/main/java/org/openapitools/client/auth/Authentication.java
 src/main/java/org/openapitools/client/auth/HttpBasicAuth.java
 src/main/java/org/openapitools/client/model/OhlcvExchangeTimeseriesItem.java
-src/main/java/org/openapitools/client/model/OptionsOptionExchangeGroup.java
-src/main/java/org/openapitools/client/model/OptionsStrike.java
 src/main/java/org/openapitools/client/model/V1Asset.java
 src/main/java/org/openapitools/client/model/V1Chain.java
 src/main/java/org/openapitools/client/model/V1ChainNetworkAddress.java
@@ -83,11 +81,13 @@ src/main/java/org/openapitools/client/model/V1ListingItem.java
 src/main/java/org/openapitools/client/model/V1Metric.java
 src/main/java/org/openapitools/client/model/V1MetricData.java
 src/main/java/org/openapitools/client/model/V1MetricInfo.java
+src/main/java/org/openapitools/client/model/V1OptionExchangeGroup.java
 src/main/java/org/openapitools/client/model/V1OrderBook.java
 src/main/java/org/openapitools/client/model/V1OrderBookBase.java
 src/main/java/org/openapitools/client/model/V1OrderBookDepth.java
 src/main/java/org/openapitools/client/model/V1Quote.java
 src/main/java/org/openapitools/client/model/V1QuoteTrade.java
+src/main/java/org/openapitools/client/model/V1Strike.java
 src/main/java/org/openapitools/client/model/V1Symbol.java
 src/main/java/org/openapitools/client/model/V1SymbolMapping.java
 src/main/java/org/openapitools/client/model/V1TimeseriesItem.java

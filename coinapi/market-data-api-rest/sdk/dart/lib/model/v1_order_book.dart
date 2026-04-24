@@ -20,10 +20,10 @@ class V1OrderBook {
     this.bids,
   });
 
-  /// The symbol identifier.
+  /// Gets or sets the symbol identifier.
   String? symbolId;
 
-  /// The exchange time of the order book.
+  /// Gets or sets the exchange time of the order book.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -32,7 +32,7 @@ class V1OrderBook {
   ///
   DateTime? timeExchange;
 
-  /// The CoinAPI time when the order book was received.
+  /// Gets or sets the CoinAPI time when the order book was received.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -41,10 +41,10 @@ class V1OrderBook {
   ///
   DateTime? timeCoinapi;
 
-  /// The asks made by market makers.
+  /// Gets or sets the asks made by market makers.
   Object? asks;
 
-  /// The bids made by market makers.
+  /// Gets or sets the bids made by market makers.
   Object? bids;
 
   @override

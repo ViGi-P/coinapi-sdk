@@ -22,8 +22,6 @@ docs/MetricsV2API.md
 docs/OHLCVAPI.md
 docs/OhlcvExchangeTimeseriesItem.md
 docs/OptionsAPI.md
-docs/OptionsOptionExchangeGroup.md
-docs/OptionsStrike.md
 docs/OrderBookAPI.md
 docs/OrderBookL3API.md
 docs/QuotesAPI.md
@@ -43,11 +41,13 @@ docs/V1ListingItem.md
 docs/V1Metric.md
 docs/V1MetricData.md
 docs/V1MetricInfo.md
+docs/V1OptionExchangeGroup.md
 docs/V1OrderBook.md
 docs/V1OrderBookBase.md
 docs/V1OrderBookDepth.md
 docs/V1Quote.md
 docs/V1QuoteTrade.md
+docs/V1Strike.md
 docs/V1Symbol.md
 docs/V1SymbolMapping.md
 docs/V1TimeseriesItem.md
@@ -57,8 +57,6 @@ git_push.sh
 go.mod
 go.sum
 model_ohlcv_exchange_timeseries_item.go
-model_options_option_exchange_group.go
-model_options_strike.go
 model_v1_asset.go
 model_v1_chain.go
 model_v1_chain_network_address.go
@@ -74,11 +72,13 @@ model_v1_listing_item.go
 model_v1_metric.go
 model_v1_metric_data.go
 model_v1_metric_info.go
+model_v1_option_exchange_group.go
 model_v1_order_book.go
 model_v1_order_book_base.go
 model_v1_order_book_depth.go
 model_v1_quote.go
 model_v1_quote_trade.go
+model_v1_strike.go
 model_v1_symbol.go
 model_v1_symbol_mapping.go
 model_v1_timeseries_item.go

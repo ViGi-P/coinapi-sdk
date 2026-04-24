@@ -28,7 +28,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- * Class representation of general metric data. This class is an XML type with name 'general_data' and inherits from the BaseCsvModel class.
+ * Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class.
  *
  * @param entryTime Gets or sets the entry time for the data point.
  * @param recvTime Gets or sets the received time for the data point.

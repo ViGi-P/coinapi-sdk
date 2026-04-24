@@ -18,23 +18,23 @@ import (
 // checks if the V1ListingItem type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &V1ListingItem{}
 
-// V1ListingItem Represents a listing item.
+// V1ListingItem Represents a listing data item.
 type V1ListingItem struct {
 	// Gets or sets the metric ID.
 	MetricId NullableString `json:"metric_id,omitempty"`
-	// The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+	// Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
 	SymbolId NullableString `json:"symbol_id,omitempty"`
-	// The exchange-native symbol identifier. Null for exchange-level metrics.
+	// Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
 	SymbolIdExternal NullableString `json:"symbol_id_external,omitempty"`
 	// Gets or sets the exchange ID.
 	ExchangeId NullableString `json:"exchange_id,omitempty"`
 	// Gets or sets the asset ID.
 	AssetId NullableString `json:"asset_id,omitempty"`
-	// Gets or sets the asset ID from the exchange.
+	// Gets or sets the asset ID.
 	AssetIdExternal NullableString `json:"asset_id_external,omitempty"`
-	// Gets or sets the chain id.
+	// Gets or sets the chain ID.
 	ChainId NullableString `json:"chain_id,omitempty"`
-	// Gets or sets the network id.
+	// Gets or sets the network ID.
 	NetworkId NullableString `json:"network_id,omitempty"`
 }
 

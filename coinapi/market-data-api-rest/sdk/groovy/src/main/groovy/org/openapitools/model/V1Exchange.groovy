@@ -16,9 +16,9 @@ class V1Exchange {
     String website
     /* Gets or sets the name of the exchange. */
     String name
-    
+    /* Gets the start date of the exchange's data. */
     String dataStart
-    
+    /* Gets the end date of the exchange's data. */
     String dataEnd
     /* Gets or sets the start date of quote data. */
     Date dataQuoteStart
@@ -46,7 +46,7 @@ class V1Exchange {
     List<String> metricId
     /* Gets or sets the list of icons for the exchange. */
     List<V1Icon> icons
-    /* Rank of the exchange. */
+    /* Rank of the exchange - higher rank means exchange is more reliable */
     Double rank
     /* Status of the integration */
     String integrationStatus

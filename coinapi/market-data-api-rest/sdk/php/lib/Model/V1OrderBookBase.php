@@ -332,7 +332,7 @@ class V1OrderBookBase implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets symbol_id
      *
-     * @param string|null $symbol_id The symbol identifier.
+     * @param string|null $symbol_id Gets or sets the symbol identifier.
      *
      * @return self
      */
@@ -366,7 +366,7 @@ class V1OrderBookBase implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_exchange
      *
-     * @param \DateTime|null $time_exchange The exchange time of the order book.
+     * @param \DateTime|null $time_exchange Gets or sets the exchange time of the order book.
      *
      * @return self
      */
@@ -393,7 +393,7 @@ class V1OrderBookBase implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_coinapi
      *
-     * @param \DateTime|null $time_coinapi The CoinAPI time when the order book was received.
+     * @param \DateTime|null $time_coinapi Gets or sets the CoinAPI time when the order book was received.
      *
      * @return self
      */
@@ -420,7 +420,7 @@ class V1OrderBookBase implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets asks
      *
-     * @param mixed|null $asks The asks made by market makers.
+     * @param mixed|null $asks Gets or sets the asks made by market makers.
      *
      * @return self
      */
@@ -454,7 +454,7 @@ class V1OrderBookBase implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bids
      *
-     * @param mixed|null $bids The bids made by market makers.
+     * @param mixed|null $bids Gets or sets the bids made by market makers.
      *
      * @return self
      */

@@ -356,14 +356,14 @@ __PACKAGE__->method_documentation({
     'data_start' => {
         datatype => 'string',
         base_name => 'data_start',
-        description => '',
+        description => 'Gets the start date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.',
         format => '',
         read_only => '',
             },
     'data_end' => {
         datatype => 'string',
         base_name => 'data_end',
-        description => '',
+        description => 'Gets the end date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.',
         format => '',
         read_only => '',
             },

@@ -29,15 +29,15 @@ public class OASOptionsApi {
      * Current data by Exchange
      * Get current options data for a specific exchange.\n\nReturns option data grouped by underlying asset, quote currency, and expiration time,\nwith quotes for both calls and puts at each strike price.
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges) (required)
-     * @return List<OASOptionsOptionExchangeGroup>
+     * @return List<OASV1OptionExchangeGroup>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASOptionsOptionExchangeGroup> v1OptionsExchangeIdCurrentGet(Map<String, Object> params) {
+    public List<OASV1OptionExchangeGroup> v1OptionsExchangeIdCurrentGet(Map<String, Object> params) {
         client.assertNotNull(params.get('exchangeId'), 'exchangeId');
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASOptionsOptionExchangeGroup>) client.invoke(
+        return (List<OASV1OptionExchangeGroup>) client.invoke(
             'GET', '/v1/options/{exchange_id}/current', '',
             query, form,
             new Map<String, Object>{
@@ -47,7 +47,7 @@ public class OASOptionsApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json', 'application/x-msgpack' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASOptionsOptionExchangeGroup>.class
+            List<OASV1OptionExchangeGroup>.class
         );
     }
 }

@@ -61,14 +61,6 @@ public class JsonUtil {
       return new TypeToken<List<OhlcvExchangeTimeseriesItem>>(){}.getType();
     }
     
-    if ("OptionsOptionExchangeGroup".equalsIgnoreCase(className)) {
-      return new TypeToken<List<OptionsOptionExchangeGroup>>(){}.getType();
-    }
-    
-    if ("OptionsStrike".equalsIgnoreCase(className)) {
-      return new TypeToken<List<OptionsStrike>>(){}.getType();
-    }
-    
     if ("V1Asset".equalsIgnoreCase(className)) {
       return new TypeToken<List<V1Asset>>(){}.getType();
     }
@@ -129,6 +121,10 @@ public class JsonUtil {
       return new TypeToken<List<V1MetricInfo>>(){}.getType();
     }
     
+    if ("V1OptionExchangeGroup".equalsIgnoreCase(className)) {
+      return new TypeToken<List<V1OptionExchangeGroup>>(){}.getType();
+    }
+    
     if ("V1OrderBook".equalsIgnoreCase(className)) {
       return new TypeToken<List<V1OrderBook>>(){}.getType();
     }
@@ -147,6 +143,10 @@ public class JsonUtil {
     
     if ("V1QuoteTrade".equalsIgnoreCase(className)) {
       return new TypeToken<List<V1QuoteTrade>>(){}.getType();
+    }
+    
+    if ("V1Strike".equalsIgnoreCase(className)) {
+      return new TypeToken<List<V1Strike>>(){}.getType();
     }
     
     if ("V1Symbol".equalsIgnoreCase(className)) {
@@ -177,14 +177,6 @@ public class JsonUtil {
     
     if ("OhlcvExchangeTimeseriesItem".equalsIgnoreCase(className)) {
       return new TypeToken<OhlcvExchangeTimeseriesItem>(){}.getType();
-    }
-    
-    if ("OptionsOptionExchangeGroup".equalsIgnoreCase(className)) {
-      return new TypeToken<OptionsOptionExchangeGroup>(){}.getType();
-    }
-    
-    if ("OptionsStrike".equalsIgnoreCase(className)) {
-      return new TypeToken<OptionsStrike>(){}.getType();
     }
     
     if ("V1Asset".equalsIgnoreCase(className)) {
@@ -247,6 +239,10 @@ public class JsonUtil {
       return new TypeToken<V1MetricInfo>(){}.getType();
     }
     
+    if ("V1OptionExchangeGroup".equalsIgnoreCase(className)) {
+      return new TypeToken<V1OptionExchangeGroup>(){}.getType();
+    }
+    
     if ("V1OrderBook".equalsIgnoreCase(className)) {
       return new TypeToken<V1OrderBook>(){}.getType();
     }
@@ -265,6 +261,10 @@ public class JsonUtil {
     
     if ("V1QuoteTrade".equalsIgnoreCase(className)) {
       return new TypeToken<V1QuoteTrade>(){}.getType();
+    }
+    
+    if ("V1Strike".equalsIgnoreCase(className)) {
+      return new TypeToken<V1Strike>(){}.getType();
     }
     
     if ("V1Symbol".equalsIgnoreCase(className)) {

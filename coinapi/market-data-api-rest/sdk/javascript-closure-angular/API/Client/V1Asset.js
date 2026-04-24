@@ -140,12 +140,14 @@ API.Client.V1Asset.prototype.supplyMax;
 API.Client.V1Asset.prototype.chainAddresses;
 
 /**
+ * Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
  * @type {!string}
  * @export
  */
 API.Client.V1Asset.prototype.dataStart;
 
 /**
+ * Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
  * @type {!string}
  * @export
  */

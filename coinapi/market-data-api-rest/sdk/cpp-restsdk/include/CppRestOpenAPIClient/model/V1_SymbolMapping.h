@@ -59,7 +59,7 @@ public:
 
 
     /// <summary>
-    /// The symbol ID.
+    /// Gets or sets the symbol ID.
     /// </summary>
     utility::string_t getSymbolId() const;
     bool symbolIdIsSet() const;
@@ -67,7 +67,7 @@ public:
     void setSymbolId(const utility::string_t& value);
 
     /// <summary>
-    /// The exchange-specific symbol ID.
+    /// Gets or sets the exchange-specific symbol ID.
     /// </summary>
     utility::string_t getSymbolIdExchange() const;
     bool symbolIdExchangeIsSet() const;
@@ -75,7 +75,7 @@ public:
     void setSymbolIdExchange(const utility::string_t& value);
 
     /// <summary>
-    /// The CoinAPI DataInfo ID.
+    /// Gets or sets the DataInfo ID.
     /// </summary>
     int32_t getCoinapiDatainfoId() const;
     bool coinapiDatainfoIdIsSet() const;
@@ -83,7 +83,7 @@ public:
     void setCoinapiDatainfoId(int32_t value);
 
     /// <summary>
-    /// The exchange-specific base asset ID.
+    /// Gets or sets the exchange-specific base asset ID.
     /// </summary>
     utility::string_t getAssetIdBaseExchange() const;
     bool assetIdBaseExchangeIsSet() const;
@@ -91,7 +91,7 @@ public:
     void setAssetIdBaseExchange(const utility::string_t& value);
 
     /// <summary>
-    /// The exchange-specific quote asset ID.
+    /// Gets or sets the exchange-specific quote asset ID.
     /// </summary>
     utility::string_t getAssetIdQuoteExchange() const;
     bool assetIdQuoteExchangeIsSet() const;
@@ -99,7 +99,7 @@ public:
     void setAssetIdQuoteExchange(const utility::string_t& value);
 
     /// <summary>
-    /// The base asset ID.
+    /// Gets or sets the base asset ID.
     /// </summary>
     utility::string_t getAssetIdBase() const;
     bool assetIdBaseIsSet() const;
@@ -107,7 +107,7 @@ public:
     void setAssetIdBase(const utility::string_t& value);
 
     /// <summary>
-    /// The quote asset ID.
+    /// Gets or sets the quote asset ID.
     /// </summary>
     utility::string_t getAssetIdQuote() const;
     bool assetIdQuoteIsSet() const;
@@ -115,7 +115,7 @@ public:
     void setAssetIdQuote(const utility::string_t& value);
 
     /// <summary>
-    /// The price precision.
+    /// Gets or sets the price precision.
     /// </summary>
     double getPricePrecision() const;
     bool pricePrecisionIsSet() const;
@@ -123,7 +123,7 @@ public:
     void setPricePrecision(double value);
 
     /// <summary>
-    /// The size precision.
+    /// Gets or sets the size precision.
     /// </summary>
     double getSizePrecision() const;
     bool sizePrecisionIsSet() const;

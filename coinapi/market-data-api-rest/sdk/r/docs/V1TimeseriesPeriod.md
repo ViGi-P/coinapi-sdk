@@ -5,11 +5,11 @@ Represents a timeseries period used in exchange rate data.
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**period_id** | **character** | The period ID. | [optional] 
-**length_seconds** | **integer** | The length of the period in seconds. | [optional] 
-**length_months** | **integer** | The length of the period in months. | [optional] 
-**unit_count** | **integer** | The unit count. | [optional] 
-**unit_name** | **character** | The unit name. | [optional] 
-**display_name** | **character** | The display name of the timeseries period. | [optional] 
+**period_id** | **character** | Gets or sets the period ID. | [optional] 
+**length_seconds** | **integer** | Gets or sets the length of the period in seconds. | [optional] 
+**length_months** | **integer** | Gets or sets the length of the period in months. | [optional] 
+**unit_count** | **integer** | Gets or sets the unit count. | [optional] 
+**unit_name** | **character** | Gets or sets the unit name. | [optional] 
+**display_name** | **character** | Gets or sets the display name of the timeseries period. | [optional] 
 
 

@@ -71,7 +71,7 @@ import qualified Prelude as P
 v1OptionsExchangeIdCurrentGet
   :: Accept accept -- ^ request accept ('MimeType')
   -> ExchangeId -- ^ "exchangeId" -  Exchange identifier (from the Metadata -> Exchanges)
-  -> CoinAPIMarketDataRESTRequest V1OptionsExchangeIdCurrentGet MimeNoContent [OptionsOptionExchangeGroup] accept
+  -> CoinAPIMarketDataRESTRequest V1OptionsExchangeIdCurrentGet MimeNoContent [V1OptionExchangeGroup] accept
 v1OptionsExchangeIdCurrentGet  _ (ExchangeId exchangeId) =
   _mkRequest "GET" ["/v1/options/",toPath exchangeId,"/current"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)

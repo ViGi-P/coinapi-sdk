@@ -7,12 +7,12 @@
 #' @title V1TimeseriesPeriod
 #' @description V1TimeseriesPeriod Class
 #' @format An \code{R6Class} generator object
-#' @field period_id The period ID. character [optional]
-#' @field length_seconds The length of the period in seconds. integer [optional]
-#' @field length_months The length of the period in months. integer [optional]
-#' @field unit_count The unit count. integer [optional]
-#' @field unit_name The unit name. character [optional]
-#' @field display_name The display name of the timeseries period. character [optional]
+#' @field period_id Gets or sets the period ID. character [optional]
+#' @field length_seconds Gets or sets the length of the period in seconds. integer [optional]
+#' @field length_months Gets or sets the length of the period in months. integer [optional]
+#' @field unit_count Gets or sets the unit count. integer [optional]
+#' @field unit_name Gets or sets the unit name. character [optional]
+#' @field display_name Gets or sets the display name of the timeseries period. character [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -29,12 +29,12 @@ V1TimeseriesPeriod <- R6::R6Class(
     #' @description
     #' Initialize a new V1TimeseriesPeriod class.
     #'
-    #' @param period_id The period ID.
-    #' @param length_seconds The length of the period in seconds.
-    #' @param length_months The length of the period in months.
-    #' @param unit_count The unit count.
-    #' @param unit_name The unit name.
-    #' @param display_name The display name of the timeseries period.
+    #' @param period_id Gets or sets the period ID.
+    #' @param length_seconds Gets or sets the length of the period in seconds.
+    #' @param length_months Gets or sets the length of the period in months.
+    #' @param unit_count Gets or sets the unit count.
+    #' @param unit_name Gets or sets the unit name.
+    #' @param display_name Gets or sets the display name of the timeseries period.
     #' @param ... Other optional arguments.
     initialize = function(`period_id` = NULL, `length_seconds` = NULL, `length_months` = NULL, `unit_count` = NULL, `unit_name` = NULL, `display_name` = NULL, ...) {
       if (!is.null(`period_id`)) {

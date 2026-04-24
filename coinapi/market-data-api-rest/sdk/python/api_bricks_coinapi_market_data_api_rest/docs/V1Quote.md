@@ -6,13 +6,13 @@ Represents a quote data model.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**symbol_id** | **str** | The symbol identifier. | [optional] 
-**time_exchange** | **datetime** | The exchange time of the quote. | [optional] 
-**time_coinapi** | **datetime** | The CoinAPI time when the quote was received. | [optional] 
-**ask_price** | **float** | The best asking price. | [optional] 
-**ask_size** | **float** | The volume resting on the best ask. If the value is equal to zero, then the size is unknown. | [optional] 
-**bid_price** | **float** | The best bidding price. | [optional] 
-**bid_size** | **float** | The volume resting on the best bid. If the value is equal to zero, then the size is unknown. | [optional] 
+**symbol_id** | **str** | Gets or sets the symbol identifier. | [optional] 
+**time_exchange** | **datetime** | Gets or sets the exchange time of the quote. | [optional] 
+**time_coinapi** | **datetime** | Gets or sets the CoinAPI time when the quote was received. | [optional] 
+**ask_price** | **float** | Gets or sets the best asking price. | [optional] 
+**ask_size** | **float** | Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown. | [optional] 
+**bid_price** | **float** | Gets or sets the best bidding price. | [optional] 
+**bid_size** | **float** | Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown. | [optional] 
 
 ## Example
 

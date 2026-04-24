@@ -7,35 +7,35 @@ goog.provide('API.Client.v1.OrderBookBase');
 API.Client.V1OrderBookBase = function() {}
 
 /**
- * The symbol identifier.
+ * Gets or sets the symbol identifier.
  * @type {!string}
  * @export
  */
 API.Client.V1OrderBookBase.prototype.symbolId;
 
 /**
- * The exchange time of the order book.
+ * Gets or sets the exchange time of the order book.
  * @type {!Date}
  * @export
  */
 API.Client.V1OrderBookBase.prototype.timeExchange;
 
 /**
- * The CoinAPI time when the order book was received.
+ * Gets or sets the CoinAPI time when the order book was received.
  * @type {!Date}
  * @export
  */
 API.Client.V1OrderBookBase.prototype.timeCoinapi;
 
 /**
- * The asks made by market makers.
+ * Gets or sets the asks made by market makers.
  * @type {!API.Client.AnyType}
  * @export
  */
 API.Client.V1OrderBookBase.prototype.asks;
 
 /**
- * The bids made by market makers.
+ * Gets or sets the bids made by market makers.
  * @type {!API.Client.AnyType}
  * @export
  */

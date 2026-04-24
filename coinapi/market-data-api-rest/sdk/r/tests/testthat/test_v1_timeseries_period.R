@@ -7,7 +7,7 @@ model_instance <- V1TimeseriesPeriod$new()
 
 test_that("period_id", {
   # tests for the property `period_id` (character)
-  # The period ID.
+  # Gets or sets the period ID.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`period_id`, "EXPECTED_RESULT")
@@ -15,7 +15,7 @@ test_that("period_id", {
 
 test_that("length_seconds", {
   # tests for the property `length_seconds` (integer)
-  # The length of the period in seconds.
+  # Gets or sets the length of the period in seconds.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`length_seconds`, "EXPECTED_RESULT")
@@ -23,7 +23,7 @@ test_that("length_seconds", {
 
 test_that("length_months", {
   # tests for the property `length_months` (integer)
-  # The length of the period in months.
+  # Gets or sets the length of the period in months.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`length_months`, "EXPECTED_RESULT")
@@ -31,7 +31,7 @@ test_that("length_months", {
 
 test_that("unit_count", {
   # tests for the property `unit_count` (integer)
-  # The unit count.
+  # Gets or sets the unit count.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`unit_count`, "EXPECTED_RESULT")
@@ -39,7 +39,7 @@ test_that("unit_count", {
 
 test_that("unit_name", {
   # tests for the property `unit_name` (character)
-  # The unit name.
+  # Gets or sets the unit name.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`unit_name`, "EXPECTED_RESULT")
@@ -47,7 +47,7 @@ test_that("unit_name", {
 
 test_that("display_name", {
   # tests for the property `display_name` (character)
-  # The display name of the timeseries period.
+  # Gets or sets the display name of the timeseries period.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`display_name`, "EXPECTED_RESULT")

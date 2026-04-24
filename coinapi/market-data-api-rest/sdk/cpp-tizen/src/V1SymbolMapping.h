@@ -45,67 +45,67 @@ public:
 	 */
 	void fromJson(char* jsonStr);
 
-	/*! \brief Get The symbol ID.
+	/*! \brief Get Gets or sets the symbol ID.
 	 */
 	std::string getSymbolId();
 
-	/*! \brief Set The symbol ID.
+	/*! \brief Set Gets or sets the symbol ID.
 	 */
 	void setSymbolId(std::string  symbol_id);
-	/*! \brief Get The exchange-specific symbol ID.
+	/*! \brief Get Gets or sets the exchange-specific symbol ID.
 	 */
 	std::string getSymbolIdExchange();
 
-	/*! \brief Set The exchange-specific symbol ID.
+	/*! \brief Set Gets or sets the exchange-specific symbol ID.
 	 */
 	void setSymbolIdExchange(std::string  symbol_id_exchange);
-	/*! \brief Get The CoinAPI DataInfo ID.
+	/*! \brief Get Gets or sets the DataInfo ID.
 	 */
 	int getCoinapiDatainfoId();
 
-	/*! \brief Set The CoinAPI DataInfo ID.
+	/*! \brief Set Gets or sets the DataInfo ID.
 	 */
 	void setCoinapiDatainfoId(int  coinapi_datainfo_id);
-	/*! \brief Get The exchange-specific base asset ID.
+	/*! \brief Get Gets or sets the exchange-specific base asset ID.
 	 */
 	std::string getAssetIdBaseExchange();
 
-	/*! \brief Set The exchange-specific base asset ID.
+	/*! \brief Set Gets or sets the exchange-specific base asset ID.
 	 */
 	void setAssetIdBaseExchange(std::string  asset_id_base_exchange);
-	/*! \brief Get The exchange-specific quote asset ID.
+	/*! \brief Get Gets or sets the exchange-specific quote asset ID.
 	 */
 	std::string getAssetIdQuoteExchange();
 
-	/*! \brief Set The exchange-specific quote asset ID.
+	/*! \brief Set Gets or sets the exchange-specific quote asset ID.
 	 */
 	void setAssetIdQuoteExchange(std::string  asset_id_quote_exchange);
-	/*! \brief Get The base asset ID.
+	/*! \brief Get Gets or sets the base asset ID.
 	 */
 	std::string getAssetIdBase();
 
-	/*! \brief Set The base asset ID.
+	/*! \brief Set Gets or sets the base asset ID.
 	 */
 	void setAssetIdBase(std::string  asset_id_base);
-	/*! \brief Get The quote asset ID.
+	/*! \brief Get Gets or sets the quote asset ID.
 	 */
 	std::string getAssetIdQuote();
 
-	/*! \brief Set The quote asset ID.
+	/*! \brief Set Gets or sets the quote asset ID.
 	 */
 	void setAssetIdQuote(std::string  asset_id_quote);
-	/*! \brief Get The price precision.
+	/*! \brief Get Gets or sets the price precision.
 	 */
 	double getPricePrecision();
 
-	/*! \brief Set The price precision.
+	/*! \brief Set Gets or sets the price precision.
 	 */
 	void setPricePrecision(double  price_precision);
-	/*! \brief Get The size precision.
+	/*! \brief Get Gets or sets the size precision.
 	 */
 	double getSizePrecision();
 
-	/*! \brief Set The size precision.
+	/*! \brief Set Gets or sets the size precision.
 	 */
 	void setSizePrecision(double  size_precision);
 

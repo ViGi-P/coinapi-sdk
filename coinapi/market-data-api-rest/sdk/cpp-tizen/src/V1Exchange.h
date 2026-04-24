@@ -68,18 +68,18 @@ public:
 	/*! \brief Set Gets or sets the name of the exchange.
 	 */
 	void setName(std::string  name);
-	/*! \brief Get 
+	/*! \brief Get Gets the start date of the exchange's data.
 	 */
 	std::string getDataStart();
 
-	/*! \brief Set 
+	/*! \brief Set Gets the start date of the exchange's data.
 	 */
 	void setDataStart(std::string  data_start);
-	/*! \brief Get 
+	/*! \brief Get Gets the end date of the exchange's data.
 	 */
 	std::string getDataEnd();
 
-	/*! \brief Set 
+	/*! \brief Set Gets the end date of the exchange's data.
 	 */
 	void setDataEnd(std::string  data_end);
 	/*! \brief Get Gets or sets the start date of quote data.
@@ -173,11 +173,11 @@ public:
 	/*! \brief Set Gets or sets the list of icons for the exchange.
 	 */
 	void setIcons(std::list <V1.Icon> icons);
-	/*! \brief Get Rank of the exchange.
+	/*! \brief Get Rank of the exchange - higher rank means exchange is more reliable
 	 */
 	double getRank();
 
-	/*! \brief Set Rank of the exchange.
+	/*! \brief Set Rank of the exchange - higher rank means exchange is more reliable
 	 */
 	void setRank(double  rank);
 	/*! \brief Get Status of the integration

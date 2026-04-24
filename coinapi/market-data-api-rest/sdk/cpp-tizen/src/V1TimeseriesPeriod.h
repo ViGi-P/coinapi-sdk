@@ -45,46 +45,46 @@ public:
 	 */
 	void fromJson(char* jsonStr);
 
-	/*! \brief Get The period ID.
+	/*! \brief Get Gets or sets the period ID.
 	 */
 	std::string getPeriodId();
 
-	/*! \brief Set The period ID.
+	/*! \brief Set Gets or sets the period ID.
 	 */
 	void setPeriodId(std::string  period_id);
-	/*! \brief Get The length of the period in seconds.
+	/*! \brief Get Gets or sets the length of the period in seconds.
 	 */
 	int getLengthSeconds();
 
-	/*! \brief Set The length of the period in seconds.
+	/*! \brief Set Gets or sets the length of the period in seconds.
 	 */
 	void setLengthSeconds(int  length_seconds);
-	/*! \brief Get The length of the period in months.
+	/*! \brief Get Gets or sets the length of the period in months.
 	 */
 	int getLengthMonths();
 
-	/*! \brief Set The length of the period in months.
+	/*! \brief Set Gets or sets the length of the period in months.
 	 */
 	void setLengthMonths(int  length_months);
-	/*! \brief Get The unit count.
+	/*! \brief Get Gets or sets the unit count.
 	 */
 	int getUnitCount();
 
-	/*! \brief Set The unit count.
+	/*! \brief Set Gets or sets the unit count.
 	 */
 	void setUnitCount(int  unit_count);
-	/*! \brief Get The unit name.
+	/*! \brief Get Gets or sets the unit name.
 	 */
 	std::string getUnitName();
 
-	/*! \brief Set The unit name.
+	/*! \brief Set Gets or sets the unit name.
 	 */
 	void setUnitName(std::string  unit_name);
-	/*! \brief Get The display name of the timeseries period.
+	/*! \brief Get Gets or sets the display name of the timeseries period.
 	 */
 	std::string getDisplayName();
 
-	/*! \brief Set The display name of the timeseries period.
+	/*! \brief Set Gets or sets the display name of the timeseries period.
 	 */
 	void setDisplayName(std::string  display_name);
 

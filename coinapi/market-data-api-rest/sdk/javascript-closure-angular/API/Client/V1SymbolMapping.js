@@ -7,63 +7,63 @@ goog.provide('API.Client.v1.SymbolMapping');
 API.Client.V1SymbolMapping = function() {}
 
 /**
- * The symbol ID.
+ * Gets or sets the symbol ID.
  * @type {!string}
  * @export
  */
 API.Client.V1SymbolMapping.prototype.symbolId;
 
 /**
- * The exchange-specific symbol ID.
+ * Gets or sets the exchange-specific symbol ID.
  * @type {!string}
  * @export
  */
 API.Client.V1SymbolMapping.prototype.symbolIdExchange;
 
 /**
- * The CoinAPI DataInfo ID.
+ * Gets or sets the DataInfo ID.
  * @type {!number}
  * @export
  */
 API.Client.V1SymbolMapping.prototype.coinapiDatainfoId;
 
 /**
- * The exchange-specific base asset ID.
+ * Gets or sets the exchange-specific base asset ID.
  * @type {!string}
  * @export
  */
 API.Client.V1SymbolMapping.prototype.assetIdBaseExchange;
 
 /**
- * The exchange-specific quote asset ID.
+ * Gets or sets the exchange-specific quote asset ID.
  * @type {!string}
  * @export
  */
 API.Client.V1SymbolMapping.prototype.assetIdQuoteExchange;
 
 /**
- * The base asset ID.
+ * Gets or sets the base asset ID.
  * @type {!string}
  * @export
  */
 API.Client.V1SymbolMapping.prototype.assetIdBase;
 
 /**
- * The quote asset ID.
+ * Gets or sets the quote asset ID.
  * @type {!string}
  * @export
  */
 API.Client.V1SymbolMapping.prototype.assetIdQuote;
 
 /**
- * The price precision.
+ * Gets or sets the price precision.
  * @type {!number}
  * @export
  */
 API.Client.V1SymbolMapping.prototype.pricePrecision;
 
 /**
- * The size precision.
+ * Gets or sets the size precision.
  * @type {!number}
  * @export
  */

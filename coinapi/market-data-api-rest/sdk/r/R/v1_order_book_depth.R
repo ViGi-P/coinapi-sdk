@@ -7,13 +7,13 @@
 #' @title V1OrderBookDepth
 #' @description V1OrderBookDepth Class
 #' @format An \code{R6Class} generator object
-#' @field symbol_id The symbol identifier. character [optional]
-#' @field time_exchange The exchange time of the order book. character [optional]
-#' @field time_coinapi The CoinAPI time when the order book was received. character [optional]
-#' @field ask_levels The number of ask levels in the order book. integer [optional]
-#' @field bid_levels The number of bid levels in the order book. integer [optional]
-#' @field ask_depth The depth of the ask side of the order book. numeric [optional]
-#' @field bid_depth The depth of the bid side of the order book. numeric [optional]
+#' @field symbol_id Gets or sets the symbol identifier. character [optional]
+#' @field time_exchange Gets or sets the exchange time of the order book. character [optional]
+#' @field time_coinapi Gets or sets the CoinAPI time when the order book was received. character [optional]
+#' @field ask_levels Gets or sets the number of ask levels in the order book. integer [optional]
+#' @field bid_levels Gets or sets the number of bid levels in the order book. integer [optional]
+#' @field ask_depth Gets or sets the depth of the ask side of the order book. numeric [optional]
+#' @field bid_depth Gets or sets the depth of the bid side of the order book. numeric [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -31,13 +31,13 @@ V1OrderBookDepth <- R6::R6Class(
     #' @description
     #' Initialize a new V1OrderBookDepth class.
     #'
-    #' @param symbol_id The symbol identifier.
-    #' @param time_exchange The exchange time of the order book.
-    #' @param time_coinapi The CoinAPI time when the order book was received.
-    #' @param ask_levels The number of ask levels in the order book.
-    #' @param bid_levels The number of bid levels in the order book.
-    #' @param ask_depth The depth of the ask side of the order book.
-    #' @param bid_depth The depth of the bid side of the order book.
+    #' @param symbol_id Gets or sets the symbol identifier.
+    #' @param time_exchange Gets or sets the exchange time of the order book.
+    #' @param time_coinapi Gets or sets the CoinAPI time when the order book was received.
+    #' @param ask_levels Gets or sets the number of ask levels in the order book.
+    #' @param bid_levels Gets or sets the number of bid levels in the order book.
+    #' @param ask_depth Gets or sets the depth of the ask side of the order book.
+    #' @param bid_depth Gets or sets the depth of the bid side of the order book.
     #' @param ... Other optional arguments.
     initialize = function(`symbol_id` = NULL, `time_exchange` = NULL, `time_coinapi` = NULL, `ask_levels` = NULL, `bid_levels` = NULL, `ask_depth` = NULL, `bid_depth` = NULL, ...) {
       if (!is.null(`symbol_id`)) {

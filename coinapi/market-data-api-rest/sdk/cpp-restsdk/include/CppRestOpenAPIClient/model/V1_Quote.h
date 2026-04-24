@@ -59,7 +59,7 @@ public:
 
 
     /// <summary>
-    /// The symbol identifier.
+    /// Gets or sets the symbol identifier.
     /// </summary>
     utility::string_t getSymbolId() const;
     bool symbolIdIsSet() const;
@@ -67,7 +67,7 @@ public:
     void setSymbolId(const utility::string_t& value);
 
     /// <summary>
-    /// The exchange time of the quote.
+    /// Gets or sets the exchange time of the quote.
     /// </summary>
     utility::datetime getTimeExchange() const;
     bool timeExchangeIsSet() const;
@@ -75,7 +75,7 @@ public:
     void setTimeExchange(const utility::datetime& value);
 
     /// <summary>
-    /// The CoinAPI time when the quote was received.
+    /// Gets or sets the CoinAPI time when the quote was received.
     /// </summary>
     utility::datetime getTimeCoinapi() const;
     bool timeCoinapiIsSet() const;
@@ -83,7 +83,7 @@ public:
     void setTimeCoinapi(const utility::datetime& value);
 
     /// <summary>
-    /// The best asking price.
+    /// Gets or sets the best asking price.
     /// </summary>
     double getAskPrice() const;
     bool askPriceIsSet() const;
@@ -91,7 +91,7 @@ public:
     void setAskPrice(double value);
 
     /// <summary>
-    /// The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+    /// Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
     /// </summary>
     double getAskSize() const;
     bool askSizeIsSet() const;
@@ -99,7 +99,7 @@ public:
     void setAskSize(double value);
 
     /// <summary>
-    /// The best bidding price.
+    /// Gets or sets the best bidding price.
     /// </summary>
     double getBidPrice() const;
     bool bidPriceIsSet() const;
@@ -107,7 +107,7 @@ public:
     void setBidPrice(double value);
 
     /// <summary>
-    /// The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+    /// Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
     /// </summary>
     double getBidSize() const;
     bool bidSizeIsSet() const;

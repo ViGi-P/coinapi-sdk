@@ -13,8 +13,6 @@ apis/TradesApi.ts
 apis/index.ts
 index.ts
 models/OhlcvExchangeTimeseriesItem.ts
-models/OptionsOptionExchangeGroup.ts
-models/OptionsStrike.ts
 models/V1Asset.ts
 models/V1Chain.ts
 models/V1ChainNetworkAddress.ts
@@ -30,11 +28,13 @@ models/V1ListingItem.ts
 models/V1Metric.ts
 models/V1MetricData.ts
 models/V1MetricInfo.ts
+models/V1OptionExchangeGroup.ts
 models/V1OrderBook.ts
 models/V1OrderBookBase.ts
 models/V1OrderBookDepth.ts
 models/V1Quote.ts
 models/V1QuoteTrade.ts
+models/V1Strike.ts
 models/V1Symbol.ts
 models/V1SymbolMapping.ts
 models/V1TimeseriesItem.ts

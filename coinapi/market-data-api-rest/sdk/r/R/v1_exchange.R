@@ -10,8 +10,8 @@
 #' @field exchange_id Gets or sets the exchange ID. character [optional]
 #' @field website Gets or sets the website URL of the exchange. character [optional]
 #' @field name Gets or sets the name of the exchange. character [optional]
-#' @field data_start  character [optional]
-#' @field data_end  character [optional]
+#' @field data_start Gets the start date of the exchange's data. character [optional]
+#' @field data_end Gets the end date of the exchange's data. character [optional]
 #' @field data_quote_start Gets or sets the start date of quote data. character [optional]
 #' @field data_quote_end Gets or sets the end date of quote data. character [optional]
 #' @field data_orderbook_start Gets or sets the start date of order book data. character [optional]
@@ -25,7 +25,7 @@
 #' @field volume_1mth_usd Gets or sets the USD volume in the last 1 month. numeric [optional]
 #' @field metric_id Gets or sets the list of metric IDs. list(character) [optional]
 #' @field icons Gets or sets the list of icons for the exchange. list(\link{V1Icon}) [optional]
-#' @field rank Rank of the exchange. numeric [optional]
+#' @field rank Rank of the exchange - higher rank means exchange is more reliable numeric [optional]
 #' @field integration_status Status of the integration character [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
@@ -60,8 +60,8 @@ V1Exchange <- R6::R6Class(
     #' @param exchange_id Gets or sets the exchange ID.
     #' @param website Gets or sets the website URL of the exchange.
     #' @param name Gets or sets the name of the exchange.
-    #' @param data_start data_start
-    #' @param data_end data_end
+    #' @param data_start Gets the start date of the exchange's data.
+    #' @param data_end Gets the end date of the exchange's data.
     #' @param data_quote_start Gets or sets the start date of quote data.
     #' @param data_quote_end Gets or sets the end date of quote data.
     #' @param data_orderbook_start Gets or sets the start date of order book data.
@@ -75,7 +75,7 @@ V1Exchange <- R6::R6Class(
     #' @param volume_1mth_usd Gets or sets the USD volume in the last 1 month.
     #' @param metric_id Gets or sets the list of metric IDs.
     #' @param icons Gets or sets the list of icons for the exchange.
-    #' @param rank Rank of the exchange.
+    #' @param rank Rank of the exchange - higher rank means exchange is more reliable
     #' @param integration_status Status of the integration
     #' @param ... Other optional arguments.
     initialize = function(`exchange_id` = NULL, `website` = NULL, `name` = NULL, `data_start` = NULL, `data_end` = NULL, `data_quote_start` = NULL, `data_quote_end` = NULL, `data_orderbook_start` = NULL, `data_orderbook_end` = NULL, `data_trade_start` = NULL, `data_trade_end` = NULL, `data_trade_count` = NULL, `data_symbols_count` = NULL, `volume_1hrs_usd` = NULL, `volume_1day_usd` = NULL, `volume_1mth_usd` = NULL, `metric_id` = NULL, `icons` = NULL, `rank` = NULL, `integration_status` = NULL, ...) {

@@ -1,7 +1,7 @@
 goog.provide('API.Client.v1.ListingItem');
 
 /**
- * Represents a listing item.
+ * Represents a listing data item.
  * @record
  */
 API.Client.V1ListingItem = function() {}
@@ -14,14 +14,14 @@ API.Client.V1ListingItem = function() {}
 API.Client.V1ListingItem.prototype.metricId;
 
 /**
- * The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+ * Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
  * @type {!string}
  * @export
  */
 API.Client.V1ListingItem.prototype.symbolId;
 
 /**
- * The exchange-native symbol identifier. Null for exchange-level metrics.
+ * Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
  * @type {!string}
  * @export
  */
@@ -42,21 +42,21 @@ API.Client.V1ListingItem.prototype.exchangeId;
 API.Client.V1ListingItem.prototype.assetId;
 
 /**
- * Gets or sets the asset ID from the exchange.
+ * Gets or sets the asset ID.
  * @type {!string}
  * @export
  */
 API.Client.V1ListingItem.prototype.assetIdExternal;
 
 /**
- * Gets or sets the chain id.
+ * Gets or sets the chain ID.
  * @type {!string}
  * @export
  */
 API.Client.V1ListingItem.prototype.chainId;
 
 /**
- * Gets or sets the network id.
+ * Gets or sets the network ID.
  * @type {!string}
  * @export
  */

@@ -7,7 +7,7 @@ model_instance <- V1SymbolMapping$new()
 
 test_that("symbol_id", {
   # tests for the property `symbol_id` (character)
-  # The symbol ID.
+  # Gets or sets the symbol ID.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`symbol_id`, "EXPECTED_RESULT")
@@ -15,7 +15,7 @@ test_that("symbol_id", {
 
 test_that("symbol_id_exchange", {
   # tests for the property `symbol_id_exchange` (character)
-  # The exchange-specific symbol ID.
+  # Gets or sets the exchange-specific symbol ID.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`symbol_id_exchange`, "EXPECTED_RESULT")
@@ -23,7 +23,7 @@ test_that("symbol_id_exchange", {
 
 test_that("coinapi_datainfo_id", {
   # tests for the property `coinapi_datainfo_id` (integer)
-  # The CoinAPI DataInfo ID.
+  # Gets or sets the DataInfo ID.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`coinapi_datainfo_id`, "EXPECTED_RESULT")
@@ -31,7 +31,7 @@ test_that("coinapi_datainfo_id", {
 
 test_that("asset_id_base_exchange", {
   # tests for the property `asset_id_base_exchange` (character)
-  # The exchange-specific base asset ID.
+  # Gets or sets the exchange-specific base asset ID.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`asset_id_base_exchange`, "EXPECTED_RESULT")
@@ -39,7 +39,7 @@ test_that("asset_id_base_exchange", {
 
 test_that("asset_id_quote_exchange", {
   # tests for the property `asset_id_quote_exchange` (character)
-  # The exchange-specific quote asset ID.
+  # Gets or sets the exchange-specific quote asset ID.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`asset_id_quote_exchange`, "EXPECTED_RESULT")
@@ -47,7 +47,7 @@ test_that("asset_id_quote_exchange", {
 
 test_that("asset_id_base", {
   # tests for the property `asset_id_base` (character)
-  # The base asset ID.
+  # Gets or sets the base asset ID.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`asset_id_base`, "EXPECTED_RESULT")
@@ -55,7 +55,7 @@ test_that("asset_id_base", {
 
 test_that("asset_id_quote", {
   # tests for the property `asset_id_quote` (character)
-  # The quote asset ID.
+  # Gets or sets the quote asset ID.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`asset_id_quote`, "EXPECTED_RESULT")
@@ -63,7 +63,7 @@ test_that("asset_id_quote", {
 
 test_that("price_precision", {
   # tests for the property `price_precision` (numeric)
-  # The price precision.
+  # Gets or sets the price precision.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`price_precision`, "EXPECTED_RESULT")
@@ -71,7 +71,7 @@ test_that("price_precision", {
 
 test_that("size_precision", {
   # tests for the property `size_precision` (numeric)
-  # The size precision.
+  # Gets or sets the size precision.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`size_precision`, "EXPECTED_RESULT")

@@ -15,8 +15,6 @@ import 'package:openapi/src/date_serializer.dart';
 import 'package:openapi/src/model/date.dart';
 
 import 'package:openapi/src/model/ohlcv_exchange_timeseries_item.dart';
-import 'package:openapi/src/model/options_option_exchange_group.dart';
-import 'package:openapi/src/model/options_strike.dart';
 import 'package:openapi/src/model/v1_asset.dart';
 import 'package:openapi/src/model/v1_chain.dart';
 import 'package:openapi/src/model/v1_chain_network_address.dart';
@@ -32,11 +30,13 @@ import 'package:openapi/src/model/v1_listing_item.dart';
 import 'package:openapi/src/model/v1_metric.dart';
 import 'package:openapi/src/model/v1_metric_data.dart';
 import 'package:openapi/src/model/v1_metric_info.dart';
+import 'package:openapi/src/model/v1_option_exchange_group.dart';
 import 'package:openapi/src/model/v1_order_book.dart';
 import 'package:openapi/src/model/v1_order_book_base.dart';
 import 'package:openapi/src/model/v1_order_book_depth.dart';
 import 'package:openapi/src/model/v1_quote.dart';
 import 'package:openapi/src/model/v1_quote_trade.dart';
+import 'package:openapi/src/model/v1_strike.dart';
 import 'package:openapi/src/model/v1_symbol.dart';
 import 'package:openapi/src/model/v1_symbol_mapping.dart';
 import 'package:openapi/src/model/v1_timeseries_item.dart';
@@ -47,8 +47,6 @@ part 'serializers.g.dart';
 
 @SerializersFor([
   OhlcvExchangeTimeseriesItem,
-  OptionsOptionExchangeGroup,
-  OptionsStrike,
   V1Asset,
   V1Chain,
   V1ChainNetworkAddress,
@@ -64,11 +62,13 @@ part 'serializers.g.dart';
   V1Metric,
   V1MetricData,
   V1MetricInfo,
+  V1OptionExchangeGroup,
   V1OrderBook,
   V1OrderBookBase,
   V1OrderBookDepth,
   V1Quote,
   V1QuoteTrade,
+  V1Strike,
   V1Symbol,
   V1SymbolMapping,
   V1TimeseriesItem,
@@ -91,6 +91,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1Trade)]),
         () => ListBuilder<V1Trade>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(V1OptionExchangeGroup)]),
+        () => ListBuilder<V1OptionExchangeGroup>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1OrderBook)]),
@@ -127,10 +131,6 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1OrderBookBase)]),
         () => ListBuilder<V1OrderBookBase>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(OptionsOptionExchangeGroup)]),
-        () => ListBuilder<OptionsOptionExchangeGroup>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(V1SymbolMapping)]),

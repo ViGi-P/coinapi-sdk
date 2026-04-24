@@ -35,7 +35,7 @@ class V1Trade(BaseModel):
     time_coinapi: Optional[datetime] = Field(default=None, description="The time when the trade was received by CoinAPI.")
     uuid: Optional[UUID] = Field(default=None, description="The unique identifier for the trade.")
     price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The price of the transaction.")
-    size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The base asset amount traded in the transaction.")
+    size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.")
     taker_side: Optional[StrictStr] = Field(default=None, description="The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN).")
     id_trade: Optional[StrictStr] = Field(default=None, description="The trade identifier.")
     id_order_maker: Optional[StrictStr] = Field(default=None, description="The order maker identifier.")

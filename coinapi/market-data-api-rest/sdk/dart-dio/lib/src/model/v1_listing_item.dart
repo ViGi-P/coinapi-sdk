@@ -8,28 +8,28 @@ import 'package:built_value/serializer.dart';
 
 part 'v1_listing_item.g.dart';
 
-/// Represents a listing item.
+/// Represents a listing data item.
 ///
 /// Properties:
 /// * [metricId] - Gets or sets the metric ID.
-/// * [symbolId] - The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
-/// * [symbolIdExternal] - The exchange-native symbol identifier. Null for exchange-level metrics.
+/// * [symbolId] - Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
+/// * [symbolIdExternal] - Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
 /// * [exchangeId] - Gets or sets the exchange ID.
 /// * [assetId] - Gets or sets the asset ID.
-/// * [assetIdExternal] - Gets or sets the asset ID from the exchange.
-/// * [chainId] - Gets or sets the chain id.
-/// * [networkId] - Gets or sets the network id.
+/// * [assetIdExternal] - Gets or sets the asset ID.
+/// * [chainId] - Gets or sets the chain ID.
+/// * [networkId] - Gets or sets the network ID.
 @BuiltValue()
 abstract class V1ListingItem implements Built<V1ListingItem, V1ListingItemBuilder> {
   /// Gets or sets the metric ID.
   @BuiltValueField(wireName: r'metric_id')
   String? get metricId;
 
-  /// The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+  /// Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
   @BuiltValueField(wireName: r'symbol_id')
   String? get symbolId;
 
-  /// The exchange-native symbol identifier. Null for exchange-level metrics.
+  /// Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
   @BuiltValueField(wireName: r'symbol_id_external')
   String? get symbolIdExternal;
 
@@ -41,15 +41,15 @@ abstract class V1ListingItem implements Built<V1ListingItem, V1ListingItemBuilde
   @BuiltValueField(wireName: r'asset_id')
   String? get assetId;
 
-  /// Gets or sets the asset ID from the exchange.
+  /// Gets or sets the asset ID.
   @BuiltValueField(wireName: r'asset_id_external')
   String? get assetIdExternal;
 
-  /// Gets or sets the chain id.
+  /// Gets or sets the chain ID.
   @BuiltValueField(wireName: r'chain_id')
   String? get chainId;
 
-  /// Gets or sets the network id.
+  /// Gets or sets the network ID.
   @BuiltValueField(wireName: r'network_id')
   String? get networkId;
 

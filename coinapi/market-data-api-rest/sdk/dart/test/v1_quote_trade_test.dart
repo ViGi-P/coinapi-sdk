@@ -16,43 +16,43 @@ void main() {
   // final instance = V1QuoteTrade();
 
   group('test V1QuoteTrade', () {
-    // The symbol identifier.
+    // Gets or sets the symbol identifier.
     // String symbolId
     test('to test the property `symbolId`', () async {
       // TODO
     });
 
-    // The exchange time of the quote trade.
+    // Gets or sets the exchange time of the quote trade.
     // DateTime timeExchange
     test('to test the property `timeExchange`', () async {
       // TODO
     });
 
-    // The CoinAPI time when the quote trade was received.
+    // Gets or sets the CoinAPI time when the quote trade was received.
     // DateTime timeCoinapi
     test('to test the property `timeCoinapi`', () async {
       // TODO
     });
 
-    // The best asking price.
+    // Gets or sets the best asking price.
     // double askPrice
     test('to test the property `askPrice`', () async {
       // TODO
     });
 
-    // The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+    // Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
     // double askSize
     test('to test the property `askSize`', () async {
       // TODO
     });
 
-    // The best bidding price.
+    // Gets or sets the best bidding price.
     // double bidPrice
     test('to test the property `bidPrice`', () async {
       // TODO
     });
 
-    // The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+    // Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
     // double bidSize
     test('to test the property `bidSize`', () async {
       // TODO

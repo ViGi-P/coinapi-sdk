@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## V1OptionsExchangeIdCurrentGet
 
-> []OptionsOptionExchangeGroup V1OptionsExchangeIdCurrentGet(ctx, exchangeId).Execute()
+> []V1OptionExchangeGroup V1OptionsExchangeIdCurrentGet(ctx, exchangeId).Execute()
 
 Current data by Exchange
 
@@ -38,7 +38,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OptionsAPI.V1OptionsExchangeIdCurrentGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1OptionsExchangeIdCurrentGet`: []OptionsOptionExchangeGroup
+	// response from `V1OptionsExchangeIdCurrentGet`: []V1OptionExchangeGroup
 	fmt.Fprintf(os.Stdout, "Response from `OptionsAPI.V1OptionsExchangeIdCurrentGet`: %v\n", resp)
 }
 ```
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]OptionsOptionExchangeGroup**](OptionsOptionExchangeGroup.md)
+[**[]V1OptionExchangeGroup**](V1OptionExchangeGroup.md)
 
 ### Authorization
 

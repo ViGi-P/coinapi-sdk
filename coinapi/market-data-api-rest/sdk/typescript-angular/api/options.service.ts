@@ -17,7 +17,7 @@ import { Observable }                                        from 'rxjs';
 import { OpenApiHttpParams, QueryParamStyle } from '../query.params';
 
 // @ts-ignore
-import { OptionsOptionExchangeGroup } from '../model/optionsOptionExchangeGroup';
+import { V1OptionExchangeGroup } from '../model/v1OptionExchangeGroup';
 
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -44,9 +44,9 @@ export class OptionsService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1OptionsExchangeIdCurrentGet(exchangeId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<OptionsOptionExchangeGroup>>;
-    public v1OptionsExchangeIdCurrentGet(exchangeId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<OptionsOptionExchangeGroup>>>;
-    public v1OptionsExchangeIdCurrentGet(exchangeId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<OptionsOptionExchangeGroup>>>;
+    public v1OptionsExchangeIdCurrentGet(exchangeId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<Array<V1OptionExchangeGroup>>;
+    public v1OptionsExchangeIdCurrentGet(exchangeId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<V1OptionExchangeGroup>>>;
+    public v1OptionsExchangeIdCurrentGet(exchangeId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<V1OptionExchangeGroup>>>;
     public v1OptionsExchangeIdCurrentGet(exchangeId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json' | 'application/x-msgpack', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (exchangeId === null || exchangeId === undefined) {
             throw new Error('Required parameter exchangeId was null or undefined when calling v1OptionsExchangeIdCurrentGet.');
@@ -88,7 +88,7 @@ export class OptionsService extends BaseService {
 
         let localVarPath = `/v1/options/${this.configuration.encodeParam({name: "exchangeId", value: exchangeId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/current`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<OptionsOptionExchangeGroup>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<V1OptionExchangeGroup>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,

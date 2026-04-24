@@ -54,9 +54,9 @@ Gets or sets the maximum supply of the asset.
 .PARAMETER ChainAddresses
 
 .PARAMETER DataStart
-No description available.
+Gets the start date of the available data as a string in the format ""yyyy-MM-dd"".
 .PARAMETER DataEnd
-No description available.
+Gets the end date of the available data as a string in the format ""yyyy-MM-dd"".
 .OUTPUTS
 
 V1Asset<PSCustomObject>

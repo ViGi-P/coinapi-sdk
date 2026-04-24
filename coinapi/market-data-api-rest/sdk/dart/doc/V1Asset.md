@@ -27,8 +27,8 @@ Name | Type | Description | Notes
 **supplyTotal** | **double** | Gets or sets the total supply of the asset. | [optional] 
 **supplyMax** | **double** | Gets or sets the maximum supply of the asset. | [optional] 
 **chainAddresses** | [**List<V1ChainNetworkAddress>**](V1ChainNetworkAddress.md) |  | [optional] [default to const []]
-**dataStart** | **String** |  | [optional] [readonly] 
-**dataEnd** | **String** |  | [optional] [readonly] 
+**dataStart** | **String** | Gets the start date of the available data as a string in the format \"yyyy-MM-dd\". | [optional] [readonly] 
+**dataEnd** | **String** | Gets the end date of the available data as a string in the format \"yyyy-MM-dd\". | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

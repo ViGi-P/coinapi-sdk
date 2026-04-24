@@ -17,27 +17,27 @@ import { RequestFile } from './models';
 */
 export class V1TimeseriesPeriod {
     /**
-    * The period ID.
+    * Gets or sets the period ID.
     */
     'periodId'?: string | null;
     /**
-    * The length of the period in seconds.
+    * Gets or sets the length of the period in seconds.
     */
     'lengthSeconds'?: number;
     /**
-    * The length of the period in months.
+    * Gets or sets the length of the period in months.
     */
     'lengthMonths'?: number;
     /**
-    * The unit count.
+    * Gets or sets the unit count.
     */
     'unitCount'?: number | null;
     /**
-    * The unit name.
+    * Gets or sets the unit name.
     */
     'unitName'?: string | null;
     /**
-    * The display name of the timeseries period.
+    * Gets or sets the display name of the timeseries period.
     */
     'displayName'?: string | null;
 

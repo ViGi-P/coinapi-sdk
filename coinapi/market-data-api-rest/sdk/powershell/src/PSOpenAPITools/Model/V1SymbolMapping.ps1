@@ -16,23 +16,23 @@ No summary available.
 Represents symbol mapping information for exchange symbols.
 
 .PARAMETER SymbolId
-The symbol ID.
+Gets or sets the symbol ID.
 .PARAMETER SymbolIdExchange
-The exchange-specific symbol ID.
+Gets or sets the exchange-specific symbol ID.
 .PARAMETER CoinapiDatainfoId
-The CoinAPI DataInfo ID.
+Gets or sets the DataInfo ID.
 .PARAMETER AssetIdBaseExchange
-The exchange-specific base asset ID.
+Gets or sets the exchange-specific base asset ID.
 .PARAMETER AssetIdQuoteExchange
-The exchange-specific quote asset ID.
+Gets or sets the exchange-specific quote asset ID.
 .PARAMETER AssetIdBase
-The base asset ID.
+Gets or sets the base asset ID.
 .PARAMETER AssetIdQuote
-The quote asset ID.
+Gets or sets the quote asset ID.
 .PARAMETER PricePrecision
-The price precision.
+Gets or sets the price precision.
 .PARAMETER SizePrecision
-The size precision.
+Gets or sets the size precision.
 .OUTPUTS
 
 V1SymbolMapping<PSCustomObject>

@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TimeExchange** | Pointer to **time.Time** | The exchange time of the last trade. | [optional] 
-**TimeCoinapi** | Pointer to **time.Time** | The CoinAPI time when the last trade was received. | [optional] 
-**Uuid** | Pointer to **string** | The UUID of the last trade. | [optional] 
-**Price** | Pointer to **float64** | The price of the last trade. | [optional] 
-**Size** | Pointer to **float64** | The size of the last trade. | [optional] 
-**TakerSide** | Pointer to **NullableString** | The taker side of the last trade. | [optional] 
+**TimeExchange** | Pointer to **time.Time** | Gets or sets the exchange time of the last trade. | [optional] 
+**TimeCoinapi** | Pointer to **time.Time** | Gets or sets the CoinAPI time when the last trade was received. | [optional] 
+**Uuid** | Pointer to **string** | Gets or sets the UUID of the last trade. | [optional] 
+**Price** | Pointer to **float64** | Gets or sets the price of the last trade. | [optional] 
+**Size** | Pointer to **float64** | Gets or sets the size of the last trade. | [optional] 
+**TakerSide** | Pointer to **NullableString** | Gets or sets the taker side of the last trade. | [optional] 
 
 ## Methods
 

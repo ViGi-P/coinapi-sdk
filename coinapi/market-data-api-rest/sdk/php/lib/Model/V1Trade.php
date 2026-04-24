@@ -509,7 +509,7 @@ class V1Trade implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets size
      *
-     * @param float|null $size The base asset amount traded in the transaction.
+     * @param float|null $size The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
      *
      * @return self
      */

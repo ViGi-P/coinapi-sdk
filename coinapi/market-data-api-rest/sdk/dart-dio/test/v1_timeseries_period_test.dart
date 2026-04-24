@@ -7,37 +7,37 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(V1TimeseriesPeriod, () {
-    // The period ID.
+    // Gets or sets the period ID.
     // String periodId
     test('to test the property `periodId`', () async {
       // TODO
     });
 
-    // The length of the period in seconds.
+    // Gets or sets the length of the period in seconds.
     // int lengthSeconds
     test('to test the property `lengthSeconds`', () async {
       // TODO
     });
 
-    // The length of the period in months.
+    // Gets or sets the length of the period in months.
     // int lengthMonths
     test('to test the property `lengthMonths`', () async {
       // TODO
     });
 
-    // The unit count.
+    // Gets or sets the unit count.
     // int unitCount
     test('to test the property `unitCount`', () async {
       // TODO
     });
 
-    // The unit name.
+    // Gets or sets the unit name.
     // String unitName
     test('to test the property `unitName`', () async {
       // TODO
     });
 
-    // The display name of the timeseries period.
+    // Gets or sets the display name of the timeseries period.
     // String displayName
     test('to test the property `displayName`', () async {
       // TODO

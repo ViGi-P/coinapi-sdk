@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**symbol_id** | **string** | The symbol identifier. | [optional]
-**time_exchange** | **\DateTime** | The exchange time of the quote trade. | [optional]
-**time_coinapi** | **\DateTime** | The CoinAPI time when the quote trade was received. | [optional]
-**ask_price** | **float** | The best asking price. | [optional]
-**ask_size** | **float** | The volume resting on the best ask. If the value is equal to zero, then the size is unknown. | [optional]
-**bid_price** | **float** | The best bidding price. | [optional]
-**bid_size** | **float** | The volume resting on the best bid. If the value is equal to zero, then the size is unknown. | [optional]
+**symbol_id** | **string** | Gets or sets the symbol identifier. | [optional]
+**time_exchange** | **\DateTime** | Gets or sets the exchange time of the quote trade. | [optional]
+**time_coinapi** | **\DateTime** | Gets or sets the CoinAPI time when the quote trade was received. | [optional]
+**ask_price** | **float** | Gets or sets the best asking price. | [optional]
+**ask_size** | **float** | Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown. | [optional]
+**bid_price** | **float** | Gets or sets the best bidding price. | [optional]
+**bid_size** | **float** | Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown. | [optional]
 **last_trade** | [**\OpenAPI\Client\Model\V1LastTrade**](V1LastTrade.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

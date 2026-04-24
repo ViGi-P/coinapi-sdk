@@ -27,7 +27,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import org.openapitools.client.apis.OptionsApi
-import org.openapitools.client.models.OptionsOptionExchangeGroup
+import org.openapitools.client.models.V1OptionExchangeGroup
 
 class OptionsApiTest : ShouldSpec() {
     init {
@@ -38,7 +38,7 @@ class OptionsApiTest : ShouldSpec() {
         should("test v1OptionsExchangeIdCurrentGet") {
             // uncomment below to test v1OptionsExchangeIdCurrentGet
             //val exchangeId : kotlin.String = exchangeId_example // kotlin.String | Exchange identifier (from the Metadata -> Exchanges)
-            //val result : kotlin.collections.List<OptionsOptionExchangeGroup> = apiInstance.v1OptionsExchangeIdCurrentGet(exchangeId)
+            //val result : kotlin.collections.List<V1OptionExchangeGroup> = apiInstance.v1OptionsExchangeIdCurrentGet(exchangeId)
             //result shouldBe ("TODO")
         }
 

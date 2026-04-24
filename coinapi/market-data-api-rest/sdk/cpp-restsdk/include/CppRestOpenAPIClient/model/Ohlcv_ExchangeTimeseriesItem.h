@@ -59,7 +59,7 @@ public:
 
 
     /// <summary>
-    /// The start time of the time period.
+    /// Gets or sets the start time of the time period.
     /// </summary>
     utility::datetime getTimePeriodStart() const;
     bool timePeriodStartIsSet() const;
@@ -67,7 +67,7 @@ public:
     void setTimePeriodStart(const utility::datetime& value);
 
     /// <summary>
-    /// The end time of the time period.
+    /// Gets or sets the end time of the time period.
     /// </summary>
     utility::datetime getTimePeriodEnd() const;
     bool timePeriodEndIsSet() const;
@@ -75,7 +75,7 @@ public:
     void setTimePeriodEnd(const utility::datetime& value);
 
     /// <summary>
-    /// The time when the price opened.
+    /// Gets or sets the time when the price opened.
     /// </summary>
     utility::datetime getTimeOpen() const;
     bool timeOpenIsSet() const;
@@ -83,7 +83,7 @@ public:
     void setTimeOpen(const utility::datetime& value);
 
     /// <summary>
-    /// The time when the price closed.
+    /// Gets or sets the time when the price closed.
     /// </summary>
     utility::datetime getTimeClose() const;
     bool timeCloseIsSet() const;
@@ -91,7 +91,7 @@ public:
     void setTimeClose(const utility::datetime& value);
 
     /// <summary>
-    /// The opening price.
+    /// Gets or sets the opening price.
     /// </summary>
     double getPriceOpen() const;
     bool priceOpenIsSet() const;
@@ -99,7 +99,7 @@ public:
     void setPriceOpen(double value);
 
     /// <summary>
-    /// The highest price during the time period.
+    /// Gets or sets the highest price during the time period.
     /// </summary>
     double getPriceHigh() const;
     bool priceHighIsSet() const;
@@ -107,7 +107,7 @@ public:
     void setPriceHigh(double value);
 
     /// <summary>
-    /// The lowest price during the time period.
+    /// Gets or sets the lowest price during the time period.
     /// </summary>
     double getPriceLow() const;
     bool priceLowIsSet() const;
@@ -115,7 +115,7 @@ public:
     void setPriceLow(double value);
 
     /// <summary>
-    /// The closing price.
+    /// Gets or sets the closing price.
     /// </summary>
     double getPriceClose() const;
     bool priceCloseIsSet() const;
@@ -123,7 +123,7 @@ public:
     void setPriceClose(double value);
 
     /// <summary>
-    /// The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+    /// Gets or sets the total volume traded during the time period.
     /// </summary>
     double getVolumeTraded() const;
     bool volumeTradedIsSet() const;
@@ -131,7 +131,7 @@ public:
     void setVolumeTraded(double value);
 
     /// <summary>
-    /// The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+    /// Gets or sets the number of trades executed during the time period.
     /// </summary>
     int64_t getTradesCount() const;
     bool tradesCountIsSet() const;

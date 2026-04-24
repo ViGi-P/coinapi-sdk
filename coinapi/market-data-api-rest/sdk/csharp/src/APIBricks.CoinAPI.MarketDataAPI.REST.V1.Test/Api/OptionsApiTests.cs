@@ -60,7 +60,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Api
             string exchangeId = default!;
             var response = await _instance.V1OptionsExchangeIdCurrentGetAsync(exchangeId);
             var model = response.Ok();
-            Assert.IsType<List<OptionsOptionExchangeGroup>>(model);
+            Assert.IsType<List<V1OptionExchangeGroup>>(model);
         }
     }
 }

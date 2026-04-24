@@ -45,46 +45,46 @@ public:
 	 */
 	void fromJson(char* jsonStr);
 
-	/*! \brief Get The exchange time of the last trade.
+	/*! \brief Get Gets or sets the exchange time of the last trade.
 	 */
 	std::string getTimeExchange();
 
-	/*! \brief Set The exchange time of the last trade.
+	/*! \brief Set Gets or sets the exchange time of the last trade.
 	 */
 	void setTimeExchange(std::string  time_exchange);
-	/*! \brief Get The CoinAPI time when the last trade was received.
+	/*! \brief Get Gets or sets the CoinAPI time when the last trade was received.
 	 */
 	std::string getTimeCoinapi();
 
-	/*! \brief Set The CoinAPI time when the last trade was received.
+	/*! \brief Set Gets or sets the CoinAPI time when the last trade was received.
 	 */
 	void setTimeCoinapi(std::string  time_coinapi);
-	/*! \brief Get The UUID of the last trade.
+	/*! \brief Get Gets or sets the UUID of the last trade.
 	 */
 	std::string getUuid();
 
-	/*! \brief Set The UUID of the last trade.
+	/*! \brief Set Gets or sets the UUID of the last trade.
 	 */
 	void setUuid(std::string  uuid);
-	/*! \brief Get The price of the last trade.
+	/*! \brief Get Gets or sets the price of the last trade.
 	 */
 	double getPrice();
 
-	/*! \brief Set The price of the last trade.
+	/*! \brief Set Gets or sets the price of the last trade.
 	 */
 	void setPrice(double  price);
-	/*! \brief Get The size of the last trade.
+	/*! \brief Get Gets or sets the size of the last trade.
 	 */
 	double getSize();
 
-	/*! \brief Set The size of the last trade.
+	/*! \brief Set Gets or sets the size of the last trade.
 	 */
 	void setSize(double  size);
-	/*! \brief Get The taker side of the last trade.
+	/*! \brief Get Gets or sets the taker side of the last trade.
 	 */
 	std::string getTakerSide();
 
-	/*! \brief Set The taker side of the last trade.
+	/*! \brief Set Gets or sets the taker side of the last trade.
 	 */
 	void setTakerSide(std::string  taker_side);
 

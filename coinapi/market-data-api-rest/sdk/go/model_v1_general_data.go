@@ -19,7 +19,7 @@ import (
 // checks if the V1GeneralData type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &V1GeneralData{}
 
-// V1GeneralData Class representation of general metric data. This class is an XML type with name 'general_data' and inherits from the BaseCsvModel class.
+// V1GeneralData Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class.
 type V1GeneralData struct {
 	// Gets or sets the entry time for the data point.
 	EntryTime *time.Time `json:"entry_time,omitempty"`

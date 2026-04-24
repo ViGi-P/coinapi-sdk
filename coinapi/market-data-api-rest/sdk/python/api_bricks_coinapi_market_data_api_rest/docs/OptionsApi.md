@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **v1_options_exchange_id_current_get**
-> List[OptionsOptionExchangeGroup] v1_options_exchange_id_current_get(exchange_id)
+> List[V1OptionExchangeGroup] v1_options_exchange_id_current_get(exchange_id)
 
 Current data by Exchange
 
@@ -24,7 +24,7 @@ with quotes for both calls and puts at each strike price.
 
 ```python
 import api_bricks_coinapi_market_data_api_rest
-from api_bricks_coinapi_market_data_api_rest.models.options_option_exchange_group import OptionsOptionExchangeGroup
+from api_bricks_coinapi_market_data_api_rest.models.v1_option_exchange_group import V1OptionExchangeGroup
 from api_bricks_coinapi_market_data_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[OptionsOptionExchangeGroup]**](OptionsOptionExchangeGroup.md)
+[**List[V1OptionExchangeGroup]**](V1OptionExchangeGroup.md)
 
 ### Authorization
 

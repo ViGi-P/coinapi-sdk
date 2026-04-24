@@ -7,299 +7,301 @@ goog.provide('API.Client.v1.Symbol');
 API.Client.V1Symbol = function() {}
 
 /**
- * The symbol identifier.
+ * Gets or sets the symbol identifier.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.symbolId;
 
 /**
- * The exchange identifier.
+ * Gets or sets the exchange identifier.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.exchangeId;
 
 /**
- * The symbol type.
+ * Gets or sets the symbol type.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.symbolType;
 
 /**
- * The base asset identifier.
+ * Gets or sets the base asset identifier.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.assetIdBase;
 
 /**
- * The quote asset identifier.
+ * Gets or sets the quote asset identifier.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.assetIdQuote;
 
 /**
- * The unit asset identifier.
+ * Gets or sets the unit asset identifier.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.assetIdUnit;
 
 /**
- * The contract unit for futures.
+ * Gets or sets the contract unit for futures.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.futureContractUnit;
 
 /**
- * The asset used as the unit for futures contract.
+ * Gets or sets the asset used as the unit for futures contract.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.futureContractUnitAsset;
 
 /**
- * The future delivery time for futures contract.
+ * Gets or sets the future delivery time for futures contract.
  * @type {!Date}
  * @export
  */
 API.Client.V1Symbol.prototype.futureDeliveryTime;
 
 /**
- * Indicates whether the option type is a call.
+ * Gets or sets a value indicating whether the option type is a call.
  * @type {!boolean}
  * @export
  */
 API.Client.V1Symbol.prototype.optionTypeIsCall;
 
 /**
- * The strike price for options.
+ * Gets or sets the strike price for options.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.optionStrikePrice;
 
 /**
- * The contract unit for options.
+ * Gets or sets the contract unit for options.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.optionContractUnit;
 
 /**
- * The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+ * Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.optionExerciseStyle;
 
 /**
- * The expiration time for options.
+ * Gets or sets the expiration time for options.
  * @type {!Date}
  * @export
  */
 API.Client.V1Symbol.prototype.optionExpirationTime;
 
 /**
- * The delivery time for contracts.
+ * Gets or sets the delivery time for contracts.
  * @type {!Date}
  * @export
  */
 API.Client.V1Symbol.prototype.contractDeliveryTime;
 
 /**
- * The contract unit for contracts.
+ * Gets or sets the contract unit for contracts.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.contractUnit;
 
 /**
- * The asset used as the unit for contracts.
+ * Gets or sets the asset used as the unit for contracts.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.contractUnitAsset;
 
 /**
- * The contract identifier.
+ * Gets or sets the contract identifier.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.contractId;
 
 /**
- * The display name of the contract.
+ * Gets or sets the display name of the contract.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.contractDisplayName;
 
 /**
- * The display description of the contract.
+ * Gets or sets the display description of the contract.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.contractDisplayDescription;
 
 /**
+ * Gets the start date of the data in string format (\"yyyy-MM-dd\").
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.dataStart;
 
 /**
+ * Gets the end date of the data in string format (\"yyyy-MM-dd\").
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.dataEnd;
 
 /**
- * The start date of quote data.
+ * Gets or sets the start date of quote data.
  * @type {!Date}
  * @export
  */
 API.Client.V1Symbol.prototype.dataQuoteStart;
 
 /**
- * The end date of quote data.
+ * Gets or sets the end date of quote data.
  * @type {!Date}
  * @export
  */
 API.Client.V1Symbol.prototype.dataQuoteEnd;
 
 /**
- * The start date of order book data.
+ * Gets or sets the start date of order book data.
  * @type {!Date}
  * @export
  */
 API.Client.V1Symbol.prototype.dataOrderbookStart;
 
 /**
- * The end date of order book data.
+ * Gets or sets the end date of order book data.
  * @type {!Date}
  * @export
  */
 API.Client.V1Symbol.prototype.dataOrderbookEnd;
 
 /**
- * The start date of trade data.
+ * Gets or sets the start date of trade data.
  * @type {!Date}
  * @export
  */
 API.Client.V1Symbol.prototype.dataTradeStart;
 
 /**
- * The end date of trade data.
+ * Gets or sets the end date of trade data.
  * @type {!Date}
  * @export
  */
 API.Client.V1Symbol.prototype.dataTradeEnd;
 
 /**
- * The index identifier.
+ * Gets or sets the index identifier.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.indexId;
 
 /**
- * The display name of the index.
+ * Gets or sets the display name of the index.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.indexDisplayName;
 
 /**
- * The display description of the index.
+ * Gets or sets the display description of the index.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.indexDisplayDescription;
 
 /**
- * The volume in the last 1 hour.
+ * Gets or sets the volume in the last 1 hour.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.volume1hrs;
 
 /**
- * The volume in USD in the last 1 hour.
+ * Gets or sets the volume in USD in the last 1 hour.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.volume1hrsUsd;
 
 /**
- * The volume in the last 1 day.
+ * Gets or sets the volume in the last 1 day.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.volume1day;
 
 /**
- * The volume in USD in the last 1 day.
+ * Gets or sets the volume in USD in the last 1 day.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.volume1dayUsd;
 
 /**
- * The volume in the last 1 month.
+ * Gets or sets the volume in the last 1 month.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.volume1mth;
 
 /**
- * The volume in USD in the last 1 month.
+ * Gets or sets the volume in USD in the last 1 month.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.volume1mthUsd;
 
 /**
- * The price.
+ * Gets or sets the price.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.price;
 
 /**
- * The symbol identifier in the exchange.
+ * Gets or sets the symbol identifier in the exchange.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.symbolIdExchange;
 
 /**
- * The base asset identifier in the exchange.
+ * Gets or sets the base asset identifier in the exchange.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.assetIdBaseExchange;
 
 /**
- * The quote asset identifier in the exchange.
+ * Gets or sets the quote asset identifier in the exchange.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.assetIdQuoteExchange;
 
 /**
- * The price precision.
+ * Gets or sets the price precision.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.pricePrecision;
 
 /**
- * The size precision.
+ * Gets or sets the size precision.
  * @type {!number}
  * @export
  */
@@ -313,56 +315,56 @@ API.Client.V1Symbol.prototype.sizePrecision;
 API.Client.V1Symbol.prototype.rawKvp;
 
 /**
- * Indicates whether the futures contract is inverse (coin-margined).
+ * Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
  * @type {!boolean}
  * @export
  */
 API.Client.V1Symbol.prototype.futureIsInverse;
 
 /**
- * Indicates whether the futures contract is quanto.
+ * Gets or sets a value indicating whether the futures contract is quanto.
  * @type {!boolean}
  * @export
  */
 API.Client.V1Symbol.prototype.futureIsQuanto;
 
 /**
- * Volume unit in USD.
+ * Gets or sets the volume in USD.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.volumeToUsd;
 
 /**
- * The up barrier price for barrier options.
+ * Gets or sets the up barrier price for barrier options.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.optionBarrierUpPrice;
 
 /**
- * The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+ * Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.optionBarrierUpType;
 
 /**
- * The down barrier price for barrier options.
+ * Gets or sets the down barrier price for barrier options.
  * @type {!number}
  * @export
  */
 API.Client.V1Symbol.prototype.optionBarrierDownPrice;
 
 /**
- * The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+ * Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
  * @type {!string}
  * @export
  */
 API.Client.V1Symbol.prototype.optionBarrierDownType;
 
 /**
- * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+ * Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
  * @type {!number}
  * @export
  */

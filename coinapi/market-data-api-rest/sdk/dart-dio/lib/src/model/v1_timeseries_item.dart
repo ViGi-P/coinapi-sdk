@@ -11,55 +11,55 @@ part 'v1_timeseries_item.g.dart';
 /// Represents a timeseries item with price and volume information.
 ///
 /// Properties:
-/// * [timePeriodStart] - The start time of the time period.
-/// * [timePeriodEnd] - The end time of the time period.
-/// * [timeOpen] - The time when the price opened.
-/// * [timeClose] - The time when the price closed.
-/// * [priceOpen] - The opening price.
-/// * [priceHigh] - The highest price during the time period.
-/// * [priceLow] - The lowest price during the time period.
-/// * [priceClose] - The closing price.
-/// * [volumeTraded] - The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
-/// * [tradesCount] - The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+/// * [timePeriodStart] - Gets or sets the start time of the time period.
+/// * [timePeriodEnd] - Gets or sets the end time of the time period.
+/// * [timeOpen] - Gets or sets the time when the price opened.
+/// * [timeClose] - Gets or sets the time when the price closed.
+/// * [priceOpen] - Gets or sets the opening price.
+/// * [priceHigh] - Gets or sets the highest price during the time period.
+/// * [priceLow] - Gets or sets the lowest price during the time period.
+/// * [priceClose] - Gets or sets the closing price.
+/// * [volumeTraded] - Gets or sets the total volume traded during the time period.
+/// * [tradesCount] - Gets or sets the number of trades executed during the time period.
 @BuiltValue()
 abstract class V1TimeseriesItem implements Built<V1TimeseriesItem, V1TimeseriesItemBuilder> {
-  /// The start time of the time period.
+  /// Gets or sets the start time of the time period.
   @BuiltValueField(wireName: r'time_period_start')
   DateTime? get timePeriodStart;
 
-  /// The end time of the time period.
+  /// Gets or sets the end time of the time period.
   @BuiltValueField(wireName: r'time_period_end')
   DateTime? get timePeriodEnd;
 
-  /// The time when the price opened.
+  /// Gets or sets the time when the price opened.
   @BuiltValueField(wireName: r'time_open')
   DateTime? get timeOpen;
 
-  /// The time when the price closed.
+  /// Gets or sets the time when the price closed.
   @BuiltValueField(wireName: r'time_close')
   DateTime? get timeClose;
 
-  /// The opening price.
+  /// Gets or sets the opening price.
   @BuiltValueField(wireName: r'price_open')
   double? get priceOpen;
 
-  /// The highest price during the time period.
+  /// Gets or sets the highest price during the time period.
   @BuiltValueField(wireName: r'price_high')
   double? get priceHigh;
 
-  /// The lowest price during the time period.
+  /// Gets or sets the lowest price during the time period.
   @BuiltValueField(wireName: r'price_low')
   double? get priceLow;
 
-  /// The closing price.
+  /// Gets or sets the closing price.
   @BuiltValueField(wireName: r'price_close')
   double? get priceClose;
 
-  /// The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+  /// Gets or sets the total volume traded during the time period.
   @BuiltValueField(wireName: r'volume_traded')
   double? get volumeTraded;
 
-  /// The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+  /// Gets or sets the number of trades executed during the time period.
   @BuiltValueField(wireName: r'trades_count')
   int? get tradesCount;
 

@@ -14,15 +14,15 @@ require 'date'
 require 'time'
 
 module OpenapiClient
-  # Represents a listing item.
+  # Represents a listing data item.
   class V1ListingItem < ApiModelBase
     # Gets or sets the metric ID.
     attr_accessor :metric_id
 
-    # The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+    # Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
     attr_accessor :symbol_id
 
-    # The exchange-native symbol identifier. Null for exchange-level metrics.
+    # Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
     attr_accessor :symbol_id_external
 
     # Gets or sets the exchange ID.
@@ -31,13 +31,13 @@ module OpenapiClient
     # Gets or sets the asset ID.
     attr_accessor :asset_id
 
-    # Gets or sets the asset ID from the exchange.
+    # Gets or sets the asset ID.
     attr_accessor :asset_id_external
 
-    # Gets or sets the chain id.
+    # Gets or sets the chain ID.
     attr_accessor :chain_id
 
-    # Gets or sets the network id.
+    # Gets or sets the network ID.
     attr_accessor :network_id
 
     # Attribute mapping from ruby-style variable name to JSON key.

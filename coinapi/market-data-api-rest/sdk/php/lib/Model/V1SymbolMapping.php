@@ -360,7 +360,7 @@ class V1SymbolMapping implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets symbol_id
      *
-     * @param string|null $symbol_id The symbol ID.
+     * @param string|null $symbol_id Gets or sets the symbol ID.
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class V1SymbolMapping implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets symbol_id_exchange
      *
-     * @param string|null $symbol_id_exchange The exchange-specific symbol ID.
+     * @param string|null $symbol_id_exchange Gets or sets the exchange-specific symbol ID.
      *
      * @return self
      */
@@ -428,7 +428,7 @@ class V1SymbolMapping implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets coinapi_datainfo_id
      *
-     * @param int|null $coinapi_datainfo_id The CoinAPI DataInfo ID.
+     * @param int|null $coinapi_datainfo_id Gets or sets the DataInfo ID.
      *
      * @return self
      */
@@ -455,7 +455,7 @@ class V1SymbolMapping implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets asset_id_base_exchange
      *
-     * @param string|null $asset_id_base_exchange The exchange-specific base asset ID.
+     * @param string|null $asset_id_base_exchange Gets or sets the exchange-specific base asset ID.
      *
      * @return self
      */
@@ -489,7 +489,7 @@ class V1SymbolMapping implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets asset_id_quote_exchange
      *
-     * @param string|null $asset_id_quote_exchange The exchange-specific quote asset ID.
+     * @param string|null $asset_id_quote_exchange Gets or sets the exchange-specific quote asset ID.
      *
      * @return self
      */
@@ -523,7 +523,7 @@ class V1SymbolMapping implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets asset_id_base
      *
-     * @param string|null $asset_id_base The base asset ID.
+     * @param string|null $asset_id_base Gets or sets the base asset ID.
      *
      * @return self
      */
@@ -557,7 +557,7 @@ class V1SymbolMapping implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets asset_id_quote
      *
-     * @param string|null $asset_id_quote The quote asset ID.
+     * @param string|null $asset_id_quote Gets or sets the quote asset ID.
      *
      * @return self
      */
@@ -591,7 +591,7 @@ class V1SymbolMapping implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_precision
      *
-     * @param float|null $price_precision The price precision.
+     * @param float|null $price_precision Gets or sets the price precision.
      *
      * @return self
      */
@@ -625,7 +625,7 @@ class V1SymbolMapping implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets size_precision
      *
-     * @param float|null $size_precision The size precision.
+     * @param float|null $size_precision Gets or sets the size precision.
      *
      * @return self
      */

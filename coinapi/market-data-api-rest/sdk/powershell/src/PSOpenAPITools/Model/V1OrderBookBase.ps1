@@ -16,15 +16,15 @@ No summary available.
 Represents the base model for order book data.
 
 .PARAMETER SymbolId
-The symbol identifier.
+Gets or sets the symbol identifier.
 .PARAMETER TimeExchange
-The exchange time of the order book.
+Gets or sets the exchange time of the order book.
 .PARAMETER TimeCoinapi
-The CoinAPI time when the order book was received.
+Gets or sets the CoinAPI time when the order book was received.
 .PARAMETER Asks
-The asks made by market makers.
+Gets or sets the asks made by market makers.
 .PARAMETER Bids
-The bids made by market makers.
+Gets or sets the bids made by market makers.
 .OUTPUTS
 
 V1OrderBookBase<PSCustomObject>

@@ -16,7 +16,7 @@ import type { AjaxResponse } from 'rxjs/ajax';
 import { BaseAPI, throwIfNullOrUndefined, encodeURI } from '../runtime';
 import type { OperationOpts, HttpHeaders } from '../runtime';
 import type {
-    OptionsOptionExchangeGroup,
+    V1OptionExchangeGroup,
 } from '../models';
 
 export interface V1OptionsExchangeIdCurrentGetRequest {
@@ -32,16 +32,16 @@ export class OptionsApi extends BaseAPI {
      * Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
      * Current data by Exchange
      */
-    v1OptionsExchangeIdCurrentGet({ exchangeId }: V1OptionsExchangeIdCurrentGetRequest): Observable<Array<OptionsOptionExchangeGroup>>
-    v1OptionsExchangeIdCurrentGet({ exchangeId }: V1OptionsExchangeIdCurrentGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<OptionsOptionExchangeGroup>>>
-    v1OptionsExchangeIdCurrentGet({ exchangeId }: V1OptionsExchangeIdCurrentGetRequest, opts?: OperationOpts): Observable<Array<OptionsOptionExchangeGroup> | AjaxResponse<Array<OptionsOptionExchangeGroup>>> {
+    v1OptionsExchangeIdCurrentGet({ exchangeId }: V1OptionsExchangeIdCurrentGetRequest): Observable<Array<V1OptionExchangeGroup>>
+    v1OptionsExchangeIdCurrentGet({ exchangeId }: V1OptionsExchangeIdCurrentGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<V1OptionExchangeGroup>>>
+    v1OptionsExchangeIdCurrentGet({ exchangeId }: V1OptionsExchangeIdCurrentGetRequest, opts?: OperationOpts): Observable<Array<V1OptionExchangeGroup> | AjaxResponse<Array<V1OptionExchangeGroup>>> {
         throwIfNullOrUndefined(exchangeId, 'exchangeId', 'v1OptionsExchangeIdCurrentGet');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };
 
-        return this.request<Array<OptionsOptionExchangeGroup>>({
+        return this.request<Array<V1OptionExchangeGroup>>({
             url: '/v1/options/{exchange_id}/current'.replace('{exchange_id}', encodeURI(exchangeId)),
             method: 'GET',
             headers,

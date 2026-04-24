@@ -26,8 +26,8 @@
 #' @field supply_total Gets or sets the total supply of the asset. numeric [optional]
 #' @field supply_max Gets or sets the maximum supply of the asset. numeric [optional]
 #' @field chain_addresses  list(\link{V1ChainNetworkAddress}) [optional]
-#' @field data_start  character [optional]
-#' @field data_end  character [optional]
+#' @field data_start Gets the start date of the available data as a string in the format \"yyyy-MM-dd\". character [optional]
+#' @field data_end Gets the end date of the available data as a string in the format \"yyyy-MM-dd\". character [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -78,8 +78,8 @@ V1Asset <- R6::R6Class(
     #' @param supply_total Gets or sets the total supply of the asset.
     #' @param supply_max Gets or sets the maximum supply of the asset.
     #' @param chain_addresses 
-    #' @param data_start data_start
-    #' @param data_end data_end
+    #' @param data_start Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
+    #' @param data_end Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
     #' @param ... Other optional arguments.
     initialize = function(`asset_id` = NULL, `name` = NULL, `type_is_crypto` = NULL, `data_quote_start` = NULL, `data_quote_end` = NULL, `data_orderbook_start` = NULL, `data_orderbook_end` = NULL, `data_trade_start` = NULL, `data_trade_end` = NULL, `data_symbols_count` = NULL, `volume_1hrs_usd` = NULL, `volume_1day_usd` = NULL, `volume_1mth_usd` = NULL, `price_usd` = NULL, `id_icon` = NULL, `supply_current` = NULL, `supply_total` = NULL, `supply_max` = NULL, `chain_addresses` = NULL, `data_start` = NULL, `data_end` = NULL, ...) {
       if (!is.null(`asset_id`)) {

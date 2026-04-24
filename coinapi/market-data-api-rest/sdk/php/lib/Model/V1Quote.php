@@ -346,7 +346,7 @@ class V1Quote implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets symbol_id
      *
-     * @param string|null $symbol_id The symbol identifier.
+     * @param string|null $symbol_id Gets or sets the symbol identifier.
      *
      * @return self
      */
@@ -380,7 +380,7 @@ class V1Quote implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_exchange
      *
-     * @param \DateTime|null $time_exchange The exchange time of the quote.
+     * @param \DateTime|null $time_exchange Gets or sets the exchange time of the quote.
      *
      * @return self
      */
@@ -407,7 +407,7 @@ class V1Quote implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_coinapi
      *
-     * @param \DateTime|null $time_coinapi The CoinAPI time when the quote was received.
+     * @param \DateTime|null $time_coinapi Gets or sets the CoinAPI time when the quote was received.
      *
      * @return self
      */
@@ -434,7 +434,7 @@ class V1Quote implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ask_price
      *
-     * @param float|null $ask_price The best asking price.
+     * @param float|null $ask_price Gets or sets the best asking price.
      *
      * @return self
      */
@@ -468,7 +468,7 @@ class V1Quote implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ask_size
      *
-     * @param float|null $ask_size The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+     * @param float|null $ask_size Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
      *
      * @return self
      */
@@ -502,7 +502,7 @@ class V1Quote implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bid_price
      *
-     * @param float|null $bid_price The best bidding price.
+     * @param float|null $bid_price Gets or sets the best bidding price.
      *
      * @return self
      */
@@ -536,7 +536,7 @@ class V1Quote implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bid_size
      *
-     * @param float|null $bid_size The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+     * @param float|null $bid_size Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
      *
      * @return self
      */

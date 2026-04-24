@@ -1,5 +1,5 @@
 # APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model.V1GeneralData
-Class representation of general metric data. This class is an XML type with name 'general_data' and inherits from the BaseCsvModel class.
+Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class.
 
 ## Properties
 

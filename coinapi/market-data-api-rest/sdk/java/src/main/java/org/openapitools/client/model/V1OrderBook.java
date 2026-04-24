@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an order book with additional information and functionality.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-23T06:06:39.606952276Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-24T06:05:03.999499045Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class V1OrderBook {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
@@ -86,7 +86,7 @@ public class V1OrderBook {
   }
 
   /**
-   * The symbol identifier.
+   * Gets or sets the symbol identifier.
    * @return symbolId
    */
   @javax.annotation.Nullable
@@ -105,7 +105,7 @@ public class V1OrderBook {
   }
 
   /**
-   * The exchange time of the order book.
+   * Gets or sets the exchange time of the order book.
    * @return timeExchange
    */
   @javax.annotation.Nullable
@@ -124,7 +124,7 @@ public class V1OrderBook {
   }
 
   /**
-   * The CoinAPI time when the order book was received.
+   * Gets or sets the CoinAPI time when the order book was received.
    * @return timeCoinapi
    */
   @javax.annotation.Nullable
@@ -143,7 +143,7 @@ public class V1OrderBook {
   }
 
   /**
-   * The asks made by market makers.
+   * Gets or sets the asks made by market makers.
    * @return asks
    */
   @javax.annotation.Nullable
@@ -162,7 +162,7 @@ public class V1OrderBook {
   }
 
   /**
-   * The bids made by market makers.
+   * Gets or sets the bids made by market makers.
    * @return bids
    */
   @javax.annotation.Nullable

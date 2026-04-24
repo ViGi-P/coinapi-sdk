@@ -11,35 +11,35 @@ part 'v1_last_trade.g.dart';
 /// Represents the last executed transaction.
 ///
 /// Properties:
-/// * [timeExchange] - The exchange time of the last trade.
-/// * [timeCoinapi] - The CoinAPI time when the last trade was received.
-/// * [uuid] - The UUID of the last trade.
-/// * [price] - The price of the last trade.
-/// * [size] - The size of the last trade.
-/// * [takerSide] - The taker side of the last trade.
+/// * [timeExchange] - Gets or sets the exchange time of the last trade.
+/// * [timeCoinapi] - Gets or sets the CoinAPI time when the last trade was received.
+/// * [uuid] - Gets or sets the UUID of the last trade.
+/// * [price] - Gets or sets the price of the last trade.
+/// * [size] - Gets or sets the size of the last trade.
+/// * [takerSide] - Gets or sets the taker side of the last trade.
 @BuiltValue()
 abstract class V1LastTrade implements Built<V1LastTrade, V1LastTradeBuilder> {
-  /// The exchange time of the last trade.
+  /// Gets or sets the exchange time of the last trade.
   @BuiltValueField(wireName: r'time_exchange')
   DateTime? get timeExchange;
 
-  /// The CoinAPI time when the last trade was received.
+  /// Gets or sets the CoinAPI time when the last trade was received.
   @BuiltValueField(wireName: r'time_coinapi')
   DateTime? get timeCoinapi;
 
-  /// The UUID of the last trade.
+  /// Gets or sets the UUID of the last trade.
   @BuiltValueField(wireName: r'uuid')
   String? get uuid;
 
-  /// The price of the last trade.
+  /// Gets or sets the price of the last trade.
   @BuiltValueField(wireName: r'price')
   double? get price;
 
-  /// The size of the last trade.
+  /// Gets or sets the size of the last trade.
   @BuiltValueField(wireName: r'size')
   double? get size;
 
-  /// The taker side of the last trade.
+  /// Gets or sets the taker side of the last trade.
   @BuiltValueField(wireName: r'taker_side')
   String? get takerSide;
 

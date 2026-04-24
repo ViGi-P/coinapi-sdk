@@ -11,35 +11,35 @@ part 'v1_timeseries_period.g.dart';
 /// Represents a timeseries period used in exchange rate data.
 ///
 /// Properties:
-/// * [periodId] - The period ID.
-/// * [lengthSeconds] - The length of the period in seconds.
-/// * [lengthMonths] - The length of the period in months.
-/// * [unitCount] - The unit count.
-/// * [unitName] - The unit name.
-/// * [displayName] - The display name of the timeseries period.
+/// * [periodId] - Gets or sets the period ID.
+/// * [lengthSeconds] - Gets or sets the length of the period in seconds.
+/// * [lengthMonths] - Gets or sets the length of the period in months.
+/// * [unitCount] - Gets or sets the unit count.
+/// * [unitName] - Gets or sets the unit name.
+/// * [displayName] - Gets or sets the display name of the timeseries period.
 @BuiltValue()
 abstract class V1TimeseriesPeriod implements Built<V1TimeseriesPeriod, V1TimeseriesPeriodBuilder> {
-  /// The period ID.
+  /// Gets or sets the period ID.
   @BuiltValueField(wireName: r'period_id')
   String? get periodId;
 
-  /// The length of the period in seconds.
+  /// Gets or sets the length of the period in seconds.
   @BuiltValueField(wireName: r'length_seconds')
   int? get lengthSeconds;
 
-  /// The length of the period in months.
+  /// Gets or sets the length of the period in months.
   @BuiltValueField(wireName: r'length_months')
   int? get lengthMonths;
 
-  /// The unit count.
+  /// Gets or sets the unit count.
   @BuiltValueField(wireName: r'unit_count')
   int? get unitCount;
 
-  /// The unit name.
+  /// Gets or sets the unit name.
   @BuiltValueField(wireName: r'unit_name')
   String? get unitName;
 
-  /// The display name of the timeseries period.
+  /// Gets or sets the display name of the timeseries period.
   @BuiltValueField(wireName: r'display_name')
   String? get displayName;
 

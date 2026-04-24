@@ -7,7 +7,7 @@ model_instance <- V1OrderBookBase$new()
 
 test_that("symbol_id", {
   # tests for the property `symbol_id` (character)
-  # The symbol identifier.
+  # Gets or sets the symbol identifier.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`symbol_id`, "EXPECTED_RESULT")
@@ -15,7 +15,7 @@ test_that("symbol_id", {
 
 test_that("time_exchange", {
   # tests for the property `time_exchange` (character)
-  # The exchange time of the order book.
+  # Gets or sets the exchange time of the order book.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`time_exchange`, "EXPECTED_RESULT")
@@ -23,7 +23,7 @@ test_that("time_exchange", {
 
 test_that("time_coinapi", {
   # tests for the property `time_coinapi` (character)
-  # The CoinAPI time when the order book was received.
+  # Gets or sets the CoinAPI time when the order book was received.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`time_coinapi`, "EXPECTED_RESULT")
@@ -31,7 +31,7 @@ test_that("time_coinapi", {
 
 test_that("asks", {
   # tests for the property `asks` (AnyType)
-  # The asks made by market makers.
+  # Gets or sets the asks made by market makers.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`asks`, "EXPECTED_RESULT")
@@ -39,7 +39,7 @@ test_that("asks", {
 
 test_that("bids", {
   # tests for the property `bids` (AnyType)
-  # The bids made by market makers.
+  # Gets or sets the bids made by market makers.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`bids`, "EXPECTED_RESULT")

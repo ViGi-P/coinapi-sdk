@@ -2,7 +2,7 @@
 
 CoinAPI Market Data REST API
 - API version: v1
-  - Build date: 2026-04-23T06:06:39.606952276Z[Etc/UTC]
+  - Build date: 2026-04-24T06:05:03.999499045Z[Etc/UTC]
   - Generator version: 7.21.0
 
 Cryptocurrency market data: metadata, quotes, books, trades, OHLCV, rates, metrics, options.
@@ -184,8 +184,6 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [OhlcvExchangeTimeseriesItem](docs/OhlcvExchangeTimeseriesItem.md)
- - [OptionsOptionExchangeGroup](docs/OptionsOptionExchangeGroup.md)
- - [OptionsStrike](docs/OptionsStrike.md)
  - [V1Asset](docs/V1Asset.md)
  - [V1Chain](docs/V1Chain.md)
  - [V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
@@ -201,11 +199,13 @@ Class | Method | HTTP request | Description
  - [V1Metric](docs/V1Metric.md)
  - [V1MetricData](docs/V1MetricData.md)
  - [V1MetricInfo](docs/V1MetricInfo.md)
+ - [V1OptionExchangeGroup](docs/V1OptionExchangeGroup.md)
  - [V1OrderBook](docs/V1OrderBook.md)
  - [V1OrderBookBase](docs/V1OrderBookBase.md)
  - [V1OrderBookDepth](docs/V1OrderBookDepth.md)
  - [V1Quote](docs/V1Quote.md)
  - [V1QuoteTrade](docs/V1QuoteTrade.md)
+ - [V1Strike](docs/V1Strike.md)
  - [V1Symbol](docs/V1Symbol.md)
  - [V1SymbolMapping](docs/V1SymbolMapping.md)
  - [V1TimeseriesItem](docs/V1TimeseriesItem.md)

@@ -21,7 +21,9 @@ case class Exchange (
   website: Option[String] = None,
   /* Gets or sets the name of the exchange. */
   name: Option[String] = None,
+  /* Gets the start date of the exchange's data. */
   dataStart: Option[String] = None,
+  /* Gets the end date of the exchange's data. */
   dataEnd: Option[String] = None,
   /* Gets or sets the start date of quote data. */
   dataQuoteStart: Option[OffsetDateTime] = None,
@@ -49,7 +51,7 @@ case class Exchange (
   metricId: Option[Seq[String]] = None,
   /* Gets or sets the list of icons for the exchange. */
   icons: Option[Seq[Icon]] = None,
-  /* Rank of the exchange. */
+  /* Rank of the exchange - higher rank means exchange is more reliable */
   rank: Option[Double] = None,
   /* Status of the integration */
   integrationStatus: Option[String] = None

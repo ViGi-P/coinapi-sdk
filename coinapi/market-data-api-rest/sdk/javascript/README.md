@@ -190,8 +190,6 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [CoinApiMarketDataRestApi.OhlcvExchangeTimeseriesItem](docs/OhlcvExchangeTimeseriesItem.md)
- - [CoinApiMarketDataRestApi.OptionsOptionExchangeGroup](docs/OptionsOptionExchangeGroup.md)
- - [CoinApiMarketDataRestApi.OptionsStrike](docs/OptionsStrike.md)
  - [CoinApiMarketDataRestApi.V1Asset](docs/V1Asset.md)
  - [CoinApiMarketDataRestApi.V1Chain](docs/V1Chain.md)
  - [CoinApiMarketDataRestApi.V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
@@ -207,11 +205,13 @@ Class | Method | HTTP request | Description
  - [CoinApiMarketDataRestApi.V1Metric](docs/V1Metric.md)
  - [CoinApiMarketDataRestApi.V1MetricData](docs/V1MetricData.md)
  - [CoinApiMarketDataRestApi.V1MetricInfo](docs/V1MetricInfo.md)
+ - [CoinApiMarketDataRestApi.V1OptionExchangeGroup](docs/V1OptionExchangeGroup.md)
  - [CoinApiMarketDataRestApi.V1OrderBook](docs/V1OrderBook.md)
  - [CoinApiMarketDataRestApi.V1OrderBookBase](docs/V1OrderBookBase.md)
  - [CoinApiMarketDataRestApi.V1OrderBookDepth](docs/V1OrderBookDepth.md)
  - [CoinApiMarketDataRestApi.V1Quote](docs/V1Quote.md)
  - [CoinApiMarketDataRestApi.V1QuoteTrade](docs/V1QuoteTrade.md)
+ - [CoinApiMarketDataRestApi.V1Strike](docs/V1Strike.md)
  - [CoinApiMarketDataRestApi.V1Symbol](docs/V1Symbol.md)
  - [CoinApiMarketDataRestApi.V1SymbolMapping](docs/V1SymbolMapping.md)
  - [CoinApiMarketDataRestApi.V1TimeseriesItem](docs/V1TimeseriesItem.md)

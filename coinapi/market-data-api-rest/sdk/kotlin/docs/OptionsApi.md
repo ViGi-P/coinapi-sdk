@@ -9,7 +9,7 @@ All URIs are relative to *https://rest.coinapi.io*
 
 <a id="v1OptionsExchangeIdCurrentGet"></a>
 # **v1OptionsExchangeIdCurrentGet**
-> kotlin.collections.List&lt;OptionsOptionExchangeGroup&gt; v1OptionsExchangeIdCurrentGet(exchangeId)
+> kotlin.collections.List&lt;V1OptionExchangeGroup&gt; v1OptionsExchangeIdCurrentGet(exchangeId)
 
 Current data by Exchange
 
@@ -24,7 +24,7 @@ Get current options data for a specific exchange.  Returns option data grouped b
 val apiInstance = OptionsApi()
 val exchangeId : kotlin.String = exchangeId_example // kotlin.String | Exchange identifier (from the Metadata -> Exchanges)
 try {
-    val result : kotlin.collections.List<OptionsOptionExchangeGroup> = apiInstance.v1OptionsExchangeIdCurrentGet(exchangeId)
+    val result : kotlin.collections.List<V1OptionExchangeGroup> = apiInstance.v1OptionsExchangeIdCurrentGet(exchangeId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling OptionsApi#v1OptionsExchangeIdCurrentGet")
@@ -42,7 +42,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;OptionsOptionExchangeGroup&gt;**](OptionsOptionExchangeGroup.md)
+[**kotlin.collections.List&lt;V1OptionExchangeGroup&gt;**](V1OptionExchangeGroup.md)
 
 ### Authorization
 

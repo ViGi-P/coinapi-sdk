@@ -28,7 +28,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-OptionsOptionExchangeGroup[]
+V1OptionExchangeGroup[]
 #>
 function Invoke-V1OptionsExchangeIdCurrentGet {
     [CmdletBinding()]
@@ -95,7 +95,7 @@ function Invoke-V1OptionsExchangeIdCurrentGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "OptionsOptionExchangeGroup[]" `
+                                -ReturnType "V1OptionExchangeGroup[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {

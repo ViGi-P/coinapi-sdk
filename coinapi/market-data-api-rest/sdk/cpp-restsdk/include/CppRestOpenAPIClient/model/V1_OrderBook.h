@@ -60,7 +60,7 @@ public:
 
 
     /// <summary>
-    /// The symbol identifier.
+    /// Gets or sets the symbol identifier.
     /// </summary>
     utility::string_t getSymbolId() const;
     bool symbolIdIsSet() const;
@@ -68,7 +68,7 @@ public:
     void setSymbolId(const utility::string_t& value);
 
     /// <summary>
-    /// The exchange time of the order book.
+    /// Gets or sets the exchange time of the order book.
     /// </summary>
     utility::datetime getTimeExchange() const;
     bool timeExchangeIsSet() const;
@@ -76,7 +76,7 @@ public:
     void setTimeExchange(const utility::datetime& value);
 
     /// <summary>
-    /// The CoinAPI time when the order book was received.
+    /// Gets or sets the CoinAPI time when the order book was received.
     /// </summary>
     utility::datetime getTimeCoinapi() const;
     bool timeCoinapiIsSet() const;
@@ -84,7 +84,7 @@ public:
     void setTimeCoinapi(const utility::datetime& value);
 
     /// <summary>
-    /// The asks made by market makers.
+    /// Gets or sets the asks made by market makers.
     /// </summary>
     std::shared_ptr<AnyType> getAsks() const;
     bool asksIsSet() const;
@@ -92,7 +92,7 @@ public:
     void setAsks(const std::shared_ptr<AnyType>& value);
 
     /// <summary>
-    /// The bids made by market makers.
+    /// Gets or sets the bids made by market makers.
     /// </summary>
     std::shared_ptr<AnyType> getBids() const;
     bool bidsIsSet() const;

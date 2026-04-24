@@ -123,8 +123,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [OhlcvExchangeTimeseriesItem](doc/OhlcvExchangeTimeseriesItem.md)
- - [OptionsOptionExchangeGroup](doc/OptionsOptionExchangeGroup.md)
- - [OptionsStrike](doc/OptionsStrike.md)
  - [V1Asset](doc/V1Asset.md)
  - [V1Chain](doc/V1Chain.md)
  - [V1ChainNetworkAddress](doc/V1ChainNetworkAddress.md)
@@ -140,11 +138,13 @@ Class | Method | HTTP request | Description
  - [V1Metric](doc/V1Metric.md)
  - [V1MetricData](doc/V1MetricData.md)
  - [V1MetricInfo](doc/V1MetricInfo.md)
+ - [V1OptionExchangeGroup](doc/V1OptionExchangeGroup.md)
  - [V1OrderBook](doc/V1OrderBook.md)
  - [V1OrderBookBase](doc/V1OrderBookBase.md)
  - [V1OrderBookDepth](doc/V1OrderBookDepth.md)
  - [V1Quote](doc/V1Quote.md)
  - [V1QuoteTrade](doc/V1QuoteTrade.md)
+ - [V1Strike](doc/V1Strike.md)
  - [V1Symbol](doc/V1Symbol.md)
  - [V1SymbolMapping](doc/V1SymbolMapping.md)
  - [V1TimeseriesItem](doc/V1TimeseriesItem.md)

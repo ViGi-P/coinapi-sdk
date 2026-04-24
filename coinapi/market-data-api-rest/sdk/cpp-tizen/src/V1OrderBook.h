@@ -46,39 +46,39 @@ public:
 	 */
 	void fromJson(char* jsonStr);
 
-	/*! \brief Get The symbol identifier.
+	/*! \brief Get Gets or sets the symbol identifier.
 	 */
 	std::string getSymbolId();
 
-	/*! \brief Set The symbol identifier.
+	/*! \brief Set Gets or sets the symbol identifier.
 	 */
 	void setSymbolId(std::string  symbol_id);
-	/*! \brief Get The exchange time of the order book.
+	/*! \brief Get Gets or sets the exchange time of the order book.
 	 */
 	std::string getTimeExchange();
 
-	/*! \brief Set The exchange time of the order book.
+	/*! \brief Set Gets or sets the exchange time of the order book.
 	 */
 	void setTimeExchange(std::string  time_exchange);
-	/*! \brief Get The CoinAPI time when the order book was received.
+	/*! \brief Get Gets or sets the CoinAPI time when the order book was received.
 	 */
 	std::string getTimeCoinapi();
 
-	/*! \brief Set The CoinAPI time when the order book was received.
+	/*! \brief Set Gets or sets the CoinAPI time when the order book was received.
 	 */
 	void setTimeCoinapi(std::string  time_coinapi);
-	/*! \brief Get The asks made by market makers.
+	/*! \brief Get Gets or sets the asks made by market makers.
 	 */
 	AnyType getAsks();
 
-	/*! \brief Set The asks made by market makers.
+	/*! \brief Set Gets or sets the asks made by market makers.
 	 */
 	void setAsks(AnyType  asks);
-	/*! \brief Get The bids made by market makers.
+	/*! \brief Get Gets or sets the bids made by market makers.
 	 */
 	AnyType getBids();
 
-	/*! \brief Set The bids made by market makers.
+	/*! \brief Set Gets or sets the bids made by market makers.
 	 */
 	void setBids(AnyType  bids);
 

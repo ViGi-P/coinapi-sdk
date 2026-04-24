@@ -20,17 +20,17 @@ class V1_TIMESERIES_PERIOD
 feature --Access
 
     period_id: detachable STRING_32
-      -- The period ID.
+      -- Gets or sets the period ID.
     length_seconds: INTEGER_32
-      -- The length of the period in seconds.
+      -- Gets or sets the length of the period in seconds.
     length_months: INTEGER_32
-      -- The length of the period in months.
+      -- Gets or sets the length of the period in months.
     unit_count: INTEGER_32
-      -- The unit count.
+      -- Gets or sets the unit count.
     unit_name: detachable STRING_32
-      -- The unit name.
+      -- Gets or sets the unit name.
     display_name: detachable STRING_32
-      -- The display name of the timeseries period.
+      -- Gets or sets the display name of the timeseries period.
 
 feature -- Change Element
 

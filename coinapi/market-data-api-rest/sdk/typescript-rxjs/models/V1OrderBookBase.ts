@@ -18,31 +18,31 @@
  */
 export interface V1OrderBookBase {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      * @type {string}
      * @memberof V1OrderBookBase
      */
     symbol_id?: string | null;
     /**
-     * The exchange time of the order book.
+     * Gets or sets the exchange time of the order book.
      * @type {string}
      * @memberof V1OrderBookBase
      */
     time_exchange?: string;
     /**
-     * The CoinAPI time when the order book was received.
+     * Gets or sets the CoinAPI time when the order book was received.
      * @type {string}
      * @memberof V1OrderBookBase
      */
     time_coinapi?: string;
     /**
-     * The asks made by market makers.
+     * Gets or sets the asks made by market makers.
      * @type {any}
      * @memberof V1OrderBookBase
      */
     asks?: any | null;
     /**
-     * The bids made by market makers.
+     * Gets or sets the bids made by market makers.
      * @type {any}
      * @memberof V1OrderBookBase
      */

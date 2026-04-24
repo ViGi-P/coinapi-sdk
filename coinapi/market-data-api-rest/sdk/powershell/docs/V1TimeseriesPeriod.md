@@ -3,12 +3,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PeriodId** | **String** | The period ID. | [optional] 
-**LengthSeconds** | **Int32** | The length of the period in seconds. | [optional] 
-**LengthMonths** | **Int32** | The length of the period in months. | [optional] 
-**UnitCount** | **Int32** | The unit count. | [optional] 
-**UnitName** | **String** | The unit name. | [optional] 
-**DisplayName** | **String** | The display name of the timeseries period. | [optional] 
+**PeriodId** | **String** | Gets or sets the period ID. | [optional] 
+**LengthSeconds** | **Int32** | Gets or sets the length of the period in seconds. | [optional] 
+**LengthMonths** | **Int32** | Gets or sets the length of the period in months. | [optional] 
+**UnitCount** | **Int32** | Gets or sets the unit count. | [optional] 
+**UnitName** | **String** | Gets or sets the unit name. | [optional] 
+**DisplayName** | **String** | Gets or sets the display name of the timeseries period. | [optional] 
 
 ## Examples
 

@@ -16,19 +16,19 @@ import org.openapitools.client.core.ApiModel
 case class ListingItem (
   /* Gets or sets the metric ID. */
   metricId: Option[String] = None,
-  /* The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol. */
+  /* Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics. */
   symbolId: Option[String] = None,
-  /* The exchange-native symbol identifier. Null for exchange-level metrics. */
+  /* Gets or sets the exchange-native symbol ID. Null for exchange-level metrics. */
   symbolIdExternal: Option[String] = None,
   /* Gets or sets the exchange ID. */
   exchangeId: Option[String] = None,
   /* Gets or sets the asset ID. */
   assetId: Option[String] = None,
-  /* Gets or sets the asset ID from the exchange. */
+  /* Gets or sets the asset ID. */
   assetIdExternal: Option[String] = None,
-  /* Gets or sets the chain id. */
+  /* Gets or sets the chain ID. */
   chainId: Option[String] = None,
-  /* Gets or sets the network id. */
+  /* Gets or sets the network ID. */
   networkId: Option[String] = None
 ) extends ApiModel
 

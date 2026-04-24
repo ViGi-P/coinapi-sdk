@@ -661,7 +661,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets symbol_id
      *
-     * @param string|null $symbol_id The symbol identifier.
+     * @param string|null $symbol_id Gets or sets the symbol identifier.
      *
      * @return self
      */
@@ -695,7 +695,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets exchange_id
      *
-     * @param string|null $exchange_id The exchange identifier.
+     * @param string|null $exchange_id Gets or sets the exchange identifier.
      *
      * @return self
      */
@@ -729,7 +729,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets symbol_type
      *
-     * @param string|null $symbol_type The symbol type.
+     * @param string|null $symbol_type Gets or sets the symbol type.
      *
      * @return self
      */
@@ -763,7 +763,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets asset_id_base
      *
-     * @param string|null $asset_id_base The base asset identifier.
+     * @param string|null $asset_id_base Gets or sets the base asset identifier.
      *
      * @return self
      */
@@ -797,7 +797,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets asset_id_quote
      *
-     * @param string|null $asset_id_quote The quote asset identifier.
+     * @param string|null $asset_id_quote Gets or sets the quote asset identifier.
      *
      * @return self
      */
@@ -831,7 +831,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets asset_id_unit
      *
-     * @param string|null $asset_id_unit The unit asset identifier.
+     * @param string|null $asset_id_unit Gets or sets the unit asset identifier.
      *
      * @return self
      */
@@ -865,7 +865,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets future_contract_unit
      *
-     * @param float|null $future_contract_unit The contract unit for futures.
+     * @param float|null $future_contract_unit Gets or sets the contract unit for futures.
      *
      * @return self
      */
@@ -899,7 +899,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets future_contract_unit_asset
      *
-     * @param string|null $future_contract_unit_asset The asset used as the unit for futures contract.
+     * @param string|null $future_contract_unit_asset Gets or sets the asset used as the unit for futures contract.
      *
      * @return self
      */
@@ -933,7 +933,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets future_delivery_time
      *
-     * @param \DateTime|null $future_delivery_time The future delivery time for futures contract.
+     * @param \DateTime|null $future_delivery_time Gets or sets the future delivery time for futures contract.
      *
      * @return self
      */
@@ -967,7 +967,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets option_type_is_call
      *
-     * @param bool|null $option_type_is_call Indicates whether the option type is a call.
+     * @param bool|null $option_type_is_call Gets or sets a value indicating whether the option type is a call.
      *
      * @return self
      */
@@ -1001,7 +1001,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets option_strike_price
      *
-     * @param float|null $option_strike_price The strike price for options.
+     * @param float|null $option_strike_price Gets or sets the strike price for options.
      *
      * @return self
      */
@@ -1035,7 +1035,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets option_contract_unit
      *
-     * @param float|null $option_contract_unit The contract unit for options.
+     * @param float|null $option_contract_unit Gets or sets the contract unit for options.
      *
      * @return self
      */
@@ -1069,7 +1069,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets option_exercise_style
      *
-     * @param string|null $option_exercise_style The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+     * @param string|null $option_exercise_style Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
      *
      * @return self
      */
@@ -1103,7 +1103,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets option_expiration_time
      *
-     * @param \DateTime|null $option_expiration_time The expiration time for options.
+     * @param \DateTime|null $option_expiration_time Gets or sets the expiration time for options.
      *
      * @return self
      */
@@ -1137,7 +1137,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contract_delivery_time
      *
-     * @param \DateTime|null $contract_delivery_time The delivery time for contracts.
+     * @param \DateTime|null $contract_delivery_time Gets or sets the delivery time for contracts.
      *
      * @return self
      */
@@ -1171,7 +1171,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contract_unit
      *
-     * @param float|null $contract_unit The contract unit for contracts.
+     * @param float|null $contract_unit Gets or sets the contract unit for contracts.
      *
      * @return self
      */
@@ -1205,7 +1205,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contract_unit_asset
      *
-     * @param string|null $contract_unit_asset The asset used as the unit for contracts.
+     * @param string|null $contract_unit_asset Gets or sets the asset used as the unit for contracts.
      *
      * @return self
      */
@@ -1239,7 +1239,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contract_id
      *
-     * @param string|null $contract_id The contract identifier.
+     * @param string|null $contract_id Gets or sets the contract identifier.
      *
      * @return self
      */
@@ -1273,7 +1273,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contract_display_name
      *
-     * @param string|null $contract_display_name The display name of the contract.
+     * @param string|null $contract_display_name Gets or sets the display name of the contract.
      *
      * @return self
      */
@@ -1307,7 +1307,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets contract_display_description
      *
-     * @param string|null $contract_display_description The display description of the contract.
+     * @param string|null $contract_display_description Gets or sets the display description of the contract.
      *
      * @return self
      */
@@ -1341,7 +1341,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_start
      *
-     * @param string|null $data_start data_start
+     * @param string|null $data_start Gets the start date of the data in string format (\"yyyy-MM-dd\").
      *
      * @return self
      */
@@ -1375,7 +1375,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_end
      *
-     * @param string|null $data_end data_end
+     * @param string|null $data_end Gets the end date of the data in string format (\"yyyy-MM-dd\").
      *
      * @return self
      */
@@ -1409,7 +1409,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_quote_start
      *
-     * @param \DateTime|null $data_quote_start The start date of quote data.
+     * @param \DateTime|null $data_quote_start Gets or sets the start date of quote data.
      *
      * @return self
      */
@@ -1443,7 +1443,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_quote_end
      *
-     * @param \DateTime|null $data_quote_end The end date of quote data.
+     * @param \DateTime|null $data_quote_end Gets or sets the end date of quote data.
      *
      * @return self
      */
@@ -1477,7 +1477,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_orderbook_start
      *
-     * @param \DateTime|null $data_orderbook_start The start date of order book data.
+     * @param \DateTime|null $data_orderbook_start Gets or sets the start date of order book data.
      *
      * @return self
      */
@@ -1511,7 +1511,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_orderbook_end
      *
-     * @param \DateTime|null $data_orderbook_end The end date of order book data.
+     * @param \DateTime|null $data_orderbook_end Gets or sets the end date of order book data.
      *
      * @return self
      */
@@ -1545,7 +1545,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_trade_start
      *
-     * @param \DateTime|null $data_trade_start The start date of trade data.
+     * @param \DateTime|null $data_trade_start Gets or sets the start date of trade data.
      *
      * @return self
      */
@@ -1579,7 +1579,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_trade_end
      *
-     * @param \DateTime|null $data_trade_end The end date of trade data.
+     * @param \DateTime|null $data_trade_end Gets or sets the end date of trade data.
      *
      * @return self
      */
@@ -1613,7 +1613,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets index_id
      *
-     * @param string|null $index_id The index identifier.
+     * @param string|null $index_id Gets or sets the index identifier.
      *
      * @return self
      */
@@ -1647,7 +1647,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets index_display_name
      *
-     * @param string|null $index_display_name The display name of the index.
+     * @param string|null $index_display_name Gets or sets the display name of the index.
      *
      * @return self
      */
@@ -1681,7 +1681,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets index_display_description
      *
-     * @param string|null $index_display_description The display description of the index.
+     * @param string|null $index_display_description Gets or sets the display description of the index.
      *
      * @return self
      */
@@ -1715,7 +1715,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets volume_1hrs
      *
-     * @param float|null $volume_1hrs The volume in the last 1 hour.
+     * @param float|null $volume_1hrs Gets or sets the volume in the last 1 hour.
      *
      * @return self
      */
@@ -1749,7 +1749,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets volume_1hrs_usd
      *
-     * @param float|null $volume_1hrs_usd The volume in USD in the last 1 hour.
+     * @param float|null $volume_1hrs_usd Gets or sets the volume in USD in the last 1 hour.
      *
      * @return self
      */
@@ -1783,7 +1783,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets volume_1day
      *
-     * @param float|null $volume_1day The volume in the last 1 day.
+     * @param float|null $volume_1day Gets or sets the volume in the last 1 day.
      *
      * @return self
      */
@@ -1817,7 +1817,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets volume_1day_usd
      *
-     * @param float|null $volume_1day_usd The volume in USD in the last 1 day.
+     * @param float|null $volume_1day_usd Gets or sets the volume in USD in the last 1 day.
      *
      * @return self
      */
@@ -1851,7 +1851,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets volume_1mth
      *
-     * @param float|null $volume_1mth The volume in the last 1 month.
+     * @param float|null $volume_1mth Gets or sets the volume in the last 1 month.
      *
      * @return self
      */
@@ -1885,7 +1885,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets volume_1mth_usd
      *
-     * @param float|null $volume_1mth_usd The volume in USD in the last 1 month.
+     * @param float|null $volume_1mth_usd Gets or sets the volume in USD in the last 1 month.
      *
      * @return self
      */
@@ -1919,7 +1919,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price
      *
-     * @param float|null $price The price.
+     * @param float|null $price Gets or sets the price.
      *
      * @return self
      */
@@ -1953,7 +1953,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets symbol_id_exchange
      *
-     * @param string|null $symbol_id_exchange The symbol identifier in the exchange.
+     * @param string|null $symbol_id_exchange Gets or sets the symbol identifier in the exchange.
      *
      * @return self
      */
@@ -1987,7 +1987,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets asset_id_base_exchange
      *
-     * @param string|null $asset_id_base_exchange The base asset identifier in the exchange.
+     * @param string|null $asset_id_base_exchange Gets or sets the base asset identifier in the exchange.
      *
      * @return self
      */
@@ -2021,7 +2021,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets asset_id_quote_exchange
      *
-     * @param string|null $asset_id_quote_exchange The quote asset identifier in the exchange.
+     * @param string|null $asset_id_quote_exchange Gets or sets the quote asset identifier in the exchange.
      *
      * @return self
      */
@@ -2055,7 +2055,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_precision
      *
-     * @param float|null $price_precision The price precision.
+     * @param float|null $price_precision Gets or sets the price precision.
      *
      * @return self
      */
@@ -2089,7 +2089,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets size_precision
      *
-     * @param float|null $size_precision The size precision.
+     * @param float|null $size_precision Gets or sets the size precision.
      *
      * @return self
      */
@@ -2157,7 +2157,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets future_is_inverse
      *
-     * @param bool|null $future_is_inverse Indicates whether the futures contract is inverse (coin-margined).
+     * @param bool|null $future_is_inverse Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
      *
      * @return self
      */
@@ -2191,7 +2191,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets future_is_quanto
      *
-     * @param bool|null $future_is_quanto Indicates whether the futures contract is quanto.
+     * @param bool|null $future_is_quanto Gets or sets a value indicating whether the futures contract is quanto.
      *
      * @return self
      */
@@ -2225,7 +2225,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets volume_to_usd
      *
-     * @param float|null $volume_to_usd Volume unit in USD.
+     * @param float|null $volume_to_usd Gets or sets the volume in USD.
      *
      * @return self
      */
@@ -2259,7 +2259,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets option_barrier_up_price
      *
-     * @param float|null $option_barrier_up_price The up barrier price for barrier options.
+     * @param float|null $option_barrier_up_price Gets or sets the up barrier price for barrier options.
      *
      * @return self
      */
@@ -2293,7 +2293,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets option_barrier_up_type
      *
-     * @param string|null $option_barrier_up_type The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+     * @param string|null $option_barrier_up_type Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
      *
      * @return self
      */
@@ -2327,7 +2327,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets option_barrier_down_price
      *
-     * @param float|null $option_barrier_down_price The down barrier price for barrier options.
+     * @param float|null $option_barrier_down_price Gets or sets the down barrier price for barrier options.
      *
      * @return self
      */
@@ -2361,7 +2361,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets option_barrier_down_type
      *
-     * @param string|null $option_barrier_down_type The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+     * @param string|null $option_barrier_down_type Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
      *
      * @return self
      */
@@ -2395,7 +2395,7 @@ class V1Symbol implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets symbol_id_int
      *
-     * @param int|null $symbol_id_int The symbol identifier in integer immutable format, used to correlate data across different APIs.
+     * @param int|null $symbol_id_int Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
      *
      * @return self
      */

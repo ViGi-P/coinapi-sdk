@@ -20,19 +20,19 @@ class V1_ORDER_BOOK_DEPTH
 feature --Access
 
     symbol_id: detachable STRING_32
-      -- The symbol identifier.
+      -- Gets or sets the symbol identifier.
     time_exchange: detachable DATE_TIME
-      -- The exchange time of the order book.
+      -- Gets or sets the exchange time of the order book.
     time_coinapi: detachable DATE_TIME
-      -- The CoinAPI time when the order book was received.
+      -- Gets or sets the CoinAPI time when the order book was received.
     ask_levels: INTEGER_64
-      -- The number of ask levels in the order book.
+      -- Gets or sets the number of ask levels in the order book.
     bid_levels: INTEGER_64
-      -- The number of bid levels in the order book.
+      -- Gets or sets the number of bid levels in the order book.
     ask_depth: REAL_64
-      -- The depth of the ask side of the order book.
+      -- Gets or sets the depth of the ask side of the order book.
     bid_depth: REAL_64
-      -- The depth of the bid side of the order book.
+      -- Gets or sets the depth of the bid side of the order book.
 
 feature -- Change Element
 

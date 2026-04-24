@@ -14,7 +14,7 @@ package org.openapitools.client.model
 import org.openapitools.client.core.ApiModel
 
 case class Strike (
-  /* The strike price. */
+  /* Gets or sets the strike price. */
   strikePrice: Option[Double] = None,
   call: Option[QuoteTrade] = None,
   put: Option[QuoteTrade] = None

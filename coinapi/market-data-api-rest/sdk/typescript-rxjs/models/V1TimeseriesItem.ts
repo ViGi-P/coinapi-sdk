@@ -18,61 +18,61 @@
  */
 export interface V1TimeseriesItem {
     /**
-     * The start time of the time period.
+     * Gets or sets the start time of the time period.
      * @type {string}
      * @memberof V1TimeseriesItem
      */
     time_period_start?: string;
     /**
-     * The end time of the time period.
+     * Gets or sets the end time of the time period.
      * @type {string}
      * @memberof V1TimeseriesItem
      */
     time_period_end?: string;
     /**
-     * The time when the price opened.
+     * Gets or sets the time when the price opened.
      * @type {string}
      * @memberof V1TimeseriesItem
      */
     time_open?: string | null;
     /**
-     * The time when the price closed.
+     * Gets or sets the time when the price closed.
      * @type {string}
      * @memberof V1TimeseriesItem
      */
     time_close?: string | null;
     /**
-     * The opening price.
+     * Gets or sets the opening price.
      * @type {number}
      * @memberof V1TimeseriesItem
      */
     price_open?: number | null;
     /**
-     * The highest price during the time period.
+     * Gets or sets the highest price during the time period.
      * @type {number}
      * @memberof V1TimeseriesItem
      */
     price_high?: number | null;
     /**
-     * The lowest price during the time period.
+     * Gets or sets the lowest price during the time period.
      * @type {number}
      * @memberof V1TimeseriesItem
      */
     price_low?: number | null;
     /**
-     * The closing price.
+     * Gets or sets the closing price.
      * @type {number}
      * @memberof V1TimeseriesItem
      */
     price_close?: number | null;
     /**
-     * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+     * Gets or sets the total volume traded during the time period.
      * @type {number}
      * @memberof V1TimeseriesItem
      */
     volume_traded?: number;
     /**
-     * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+     * Gets or sets the number of trades executed during the time period.
      * @type {number}
      * @memberof V1TimeseriesItem
      */

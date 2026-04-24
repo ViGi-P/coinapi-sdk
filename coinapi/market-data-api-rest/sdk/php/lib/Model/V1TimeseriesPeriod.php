@@ -339,7 +339,7 @@ class V1TimeseriesPeriod implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets period_id
      *
-     * @param string|null $period_id The period ID.
+     * @param string|null $period_id Gets or sets the period ID.
      *
      * @return self
      */
@@ -373,7 +373,7 @@ class V1TimeseriesPeriod implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets length_seconds
      *
-     * @param int|null $length_seconds The length of the period in seconds.
+     * @param int|null $length_seconds Gets or sets the length of the period in seconds.
      *
      * @return self
      */
@@ -400,7 +400,7 @@ class V1TimeseriesPeriod implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets length_months
      *
-     * @param int|null $length_months The length of the period in months.
+     * @param int|null $length_months Gets or sets the length of the period in months.
      *
      * @return self
      */
@@ -427,7 +427,7 @@ class V1TimeseriesPeriod implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets unit_count
      *
-     * @param int|null $unit_count The unit count.
+     * @param int|null $unit_count Gets or sets the unit count.
      *
      * @return self
      */
@@ -461,7 +461,7 @@ class V1TimeseriesPeriod implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets unit_name
      *
-     * @param string|null $unit_name The unit name.
+     * @param string|null $unit_name Gets or sets the unit name.
      *
      * @return self
      */
@@ -495,7 +495,7 @@ class V1TimeseriesPeriod implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets display_name
      *
-     * @param string|null $display_name The display name of the timeseries period.
+     * @param string|null $display_name Gets or sets the display name of the timeseries period.
      *
      * @return self
      */

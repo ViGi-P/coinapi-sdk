@@ -29,11 +29,11 @@ class V1OrderBookBase(BaseModel):
     """
     Represents the base model for order book data.
     """ # noqa: E501
-    symbol_id: Optional[StrictStr] = Field(default=None, description="The symbol identifier.")
-    time_exchange: Optional[datetime] = Field(default=None, description="The exchange time of the order book.")
-    time_coinapi: Optional[datetime] = Field(default=None, description="The CoinAPI time when the order book was received.")
-    asks: Optional[Any] = Field(default=None, description="The asks made by market makers.")
-    bids: Optional[Any] = Field(default=None, description="The bids made by market makers.")
+    symbol_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the symbol identifier.")
+    time_exchange: Optional[datetime] = Field(default=None, description="Gets or sets the exchange time of the order book.")
+    time_coinapi: Optional[datetime] = Field(default=None, description="Gets or sets the CoinAPI time when the order book was received.")
+    asks: Optional[Any] = Field(default=None, description="Gets or sets the asks made by market makers.")
+    bids: Optional[Any] = Field(default=None, description="Gets or sets the bids made by market makers.")
     __properties: ClassVar[List[str]] = ["symbol_id", "time_exchange", "time_coinapi", "asks", "bids"]
 
     model_config = ConfigDict(

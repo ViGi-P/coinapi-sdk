@@ -26,9 +26,9 @@ feature --Access
     name: detachable STRING_32
       -- Gets or sets the name of the exchange.
     data_start: detachable STRING_32
-      
+      -- Gets the start date of the exchange's data.
     data_end: detachable STRING_32
-      
+      -- Gets the end date of the exchange's data.
     data_quote_start: detachable DATE_TIME
       -- Gets or sets the start date of quote data.
     data_quote_end: detachable DATE_TIME
@@ -56,7 +56,7 @@ feature --Access
     icons: detachable LIST [V1_ICON]
       -- Gets or sets the list of icons for the exchange.
     rank: REAL_64
-      -- Rank of the exchange.
+      -- Rank of the exchange - higher rank means exchange is more reliable
     integration_status: detachable STRING_32
       -- Status of the integration
 

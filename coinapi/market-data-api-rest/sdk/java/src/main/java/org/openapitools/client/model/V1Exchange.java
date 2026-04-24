@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an exchange.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-23T06:06:39.606952276Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-24T06:05:03.999499045Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class V1Exchange {
   public static final String SERIALIZED_NAME_EXCHANGE_ID = "exchange_id";
   @SerializedName(SERIALIZED_NAME_EXCHANGE_ID)
@@ -227,7 +227,7 @@ public class V1Exchange {
 
 
   /**
-   * Get dataStart
+   * Gets the start date of the exchange&#39;s data.
    * @return dataStart
    */
   @javax.annotation.Nullable
@@ -238,7 +238,7 @@ public class V1Exchange {
 
 
   /**
-   * Get dataEnd
+   * Gets the end date of the exchange&#39;s data.
    * @return dataEnd
    */
   @javax.annotation.Nullable
@@ -501,7 +501,7 @@ public class V1Exchange {
   }
 
   /**
-   * Rank of the exchange.
+   * Rank of the exchange - higher rank means exchange is more reliable
    * @return rank
    */
   @javax.annotation.Nullable

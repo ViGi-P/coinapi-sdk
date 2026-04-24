@@ -33,43 +33,43 @@ class V1QuoteTest : ShouldSpec() {
         // uncomment below to create an instance of V1Quote
         //val modelInstance = V1Quote()
 
-        // to test the property `symbolId` - The symbol identifier.
+        // to test the property `symbolId` - Gets or sets the symbol identifier.
         should("test symbolId") {
             // uncomment below to test the property
             //modelInstance.symbolId shouldBe ("TODO")
         }
 
-        // to test the property `timeExchange` - The exchange time of the quote.
+        // to test the property `timeExchange` - Gets or sets the exchange time of the quote.
         should("test timeExchange") {
             // uncomment below to test the property
             //modelInstance.timeExchange shouldBe ("TODO")
         }
 
-        // to test the property `timeCoinapi` - The CoinAPI time when the quote was received.
+        // to test the property `timeCoinapi` - Gets or sets the CoinAPI time when the quote was received.
         should("test timeCoinapi") {
             // uncomment below to test the property
             //modelInstance.timeCoinapi shouldBe ("TODO")
         }
 
-        // to test the property `askPrice` - The best asking price.
+        // to test the property `askPrice` - Gets or sets the best asking price.
         should("test askPrice") {
             // uncomment below to test the property
             //modelInstance.askPrice shouldBe ("TODO")
         }
 
-        // to test the property `askSize` - The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+        // to test the property `askSize` - Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
         should("test askSize") {
             // uncomment below to test the property
             //modelInstance.askSize shouldBe ("TODO")
         }
 
-        // to test the property `bidPrice` - The best bidding price.
+        // to test the property `bidPrice` - Gets or sets the best bidding price.
         should("test bidPrice") {
             // uncomment below to test the property
             //modelInstance.bidPrice shouldBe ("TODO")
         }
 
-        // to test the property `bidSize` - The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+        // to test the property `bidSize` - Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
         should("test bidSize") {
             // uncomment below to test the property
             //modelInstance.bidSize shouldBe ("TODO")

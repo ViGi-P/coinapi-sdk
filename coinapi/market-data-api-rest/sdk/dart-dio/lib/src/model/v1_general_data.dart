@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'v1_general_data.g.dart';
 
-/// Class representation of general metric data. This class is an XML type with name 'general_data' and inherits from the BaseCsvModel class.
+/// Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class.
 ///
 /// Properties:
 /// * [entryTime] - Gets or sets the entry time for the data point.

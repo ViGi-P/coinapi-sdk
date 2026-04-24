@@ -40,7 +40,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <param name="timeCoinapi">The time when the trade was received by CoinAPI.</param>
         /// <param name="uuid">The unique identifier for the trade.</param>
         /// <param name="price">The price of the transaction.</param>
-        /// <param name="size">The base asset amount traded in the transaction.</param>
+        /// <param name="size">The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.</param>
         /// <param name="takerSide">The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN).</param>
         /// <param name="idTrade">The trade identifier.</param>
         /// <param name="idOrderMaker">The order maker identifier.</param>
@@ -141,9 +141,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> SizeOption { get; private set; }
 
         /// <summary>
-        /// The base asset amount traded in the transaction.
+        /// The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
         /// </summary>
-        /// <value>The base asset amount traded in the transaction.</value>
+        /// <value>The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.</value>
         [JsonPropertyName("size")]
         public double? Size { get { return this.SizeOption; } set { this.SizeOption = new(value); } }
 

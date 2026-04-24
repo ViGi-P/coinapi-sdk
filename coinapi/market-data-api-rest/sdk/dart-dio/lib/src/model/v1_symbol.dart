@@ -12,263 +12,265 @@ part 'v1_symbol.g.dart';
 /// Represents a symbol data model.
 ///
 /// Properties:
-/// * [symbolId] - The symbol identifier.
-/// * [exchangeId] - The exchange identifier.
-/// * [symbolType] - The symbol type.
-/// * [assetIdBase] - The base asset identifier.
-/// * [assetIdQuote] - The quote asset identifier.
-/// * [assetIdUnit] - The unit asset identifier.
-/// * [futureContractUnit] - The contract unit for futures.
-/// * [futureContractUnitAsset] - The asset used as the unit for futures contract.
-/// * [futureDeliveryTime] - The future delivery time for futures contract.
-/// * [optionTypeIsCall] - Indicates whether the option type is a call.
-/// * [optionStrikePrice] - The strike price for options.
-/// * [optionContractUnit] - The contract unit for options.
-/// * [optionExerciseStyle] - The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
-/// * [optionExpirationTime] - The expiration time for options.
-/// * [contractDeliveryTime] - The delivery time for contracts.
-/// * [contractUnit] - The contract unit for contracts.
-/// * [contractUnitAsset] - The asset used as the unit for contracts.
-/// * [contractId] - The contract identifier.
-/// * [contractDisplayName] - The display name of the contract.
-/// * [contractDisplayDescription] - The display description of the contract.
-/// * [dataStart] 
-/// * [dataEnd] 
-/// * [dataQuoteStart] - The start date of quote data.
-/// * [dataQuoteEnd] - The end date of quote data.
-/// * [dataOrderbookStart] - The start date of order book data.
-/// * [dataOrderbookEnd] - The end date of order book data.
-/// * [dataTradeStart] - The start date of trade data.
-/// * [dataTradeEnd] - The end date of trade data.
-/// * [indexId] - The index identifier.
-/// * [indexDisplayName] - The display name of the index.
-/// * [indexDisplayDescription] - The display description of the index.
-/// * [volume1hrs] - The volume in the last 1 hour.
-/// * [volume1hrsUsd] - The volume in USD in the last 1 hour.
-/// * [volume1day] - The volume in the last 1 day.
-/// * [volume1dayUsd] - The volume in USD in the last 1 day.
-/// * [volume1mth] - The volume in the last 1 month.
-/// * [volume1mthUsd] - The volume in USD in the last 1 month.
-/// * [price] - The price.
-/// * [symbolIdExchange] - The symbol identifier in the exchange.
-/// * [assetIdBaseExchange] - The base asset identifier in the exchange.
-/// * [assetIdQuoteExchange] - The quote asset identifier in the exchange.
-/// * [pricePrecision] - The price precision.
-/// * [sizePrecision] - The size precision.
+/// * [symbolId] - Gets or sets the symbol identifier.
+/// * [exchangeId] - Gets or sets the exchange identifier.
+/// * [symbolType] - Gets or sets the symbol type.
+/// * [assetIdBase] - Gets or sets the base asset identifier.
+/// * [assetIdQuote] - Gets or sets the quote asset identifier.
+/// * [assetIdUnit] - Gets or sets the unit asset identifier.
+/// * [futureContractUnit] - Gets or sets the contract unit for futures.
+/// * [futureContractUnitAsset] - Gets or sets the asset used as the unit for futures contract.
+/// * [futureDeliveryTime] - Gets or sets the future delivery time for futures contract.
+/// * [optionTypeIsCall] - Gets or sets a value indicating whether the option type is a call.
+/// * [optionStrikePrice] - Gets or sets the strike price for options.
+/// * [optionContractUnit] - Gets or sets the contract unit for options.
+/// * [optionExerciseStyle] - Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+/// * [optionExpirationTime] - Gets or sets the expiration time for options.
+/// * [contractDeliveryTime] - Gets or sets the delivery time for contracts.
+/// * [contractUnit] - Gets or sets the contract unit for contracts.
+/// * [contractUnitAsset] - Gets or sets the asset used as the unit for contracts.
+/// * [contractId] - Gets or sets the contract identifier.
+/// * [contractDisplayName] - Gets or sets the display name of the contract.
+/// * [contractDisplayDescription] - Gets or sets the display description of the contract.
+/// * [dataStart] - Gets the start date of the data in string format (\"yyyy-MM-dd\").
+/// * [dataEnd] - Gets the end date of the data in string format (\"yyyy-MM-dd\").
+/// * [dataQuoteStart] - Gets or sets the start date of quote data.
+/// * [dataQuoteEnd] - Gets or sets the end date of quote data.
+/// * [dataOrderbookStart] - Gets or sets the start date of order book data.
+/// * [dataOrderbookEnd] - Gets or sets the end date of order book data.
+/// * [dataTradeStart] - Gets or sets the start date of trade data.
+/// * [dataTradeEnd] - Gets or sets the end date of trade data.
+/// * [indexId] - Gets or sets the index identifier.
+/// * [indexDisplayName] - Gets or sets the display name of the index.
+/// * [indexDisplayDescription] - Gets or sets the display description of the index.
+/// * [volume1hrs] - Gets or sets the volume in the last 1 hour.
+/// * [volume1hrsUsd] - Gets or sets the volume in USD in the last 1 hour.
+/// * [volume1day] - Gets or sets the volume in the last 1 day.
+/// * [volume1dayUsd] - Gets or sets the volume in USD in the last 1 day.
+/// * [volume1mth] - Gets or sets the volume in the last 1 month.
+/// * [volume1mthUsd] - Gets or sets the volume in USD in the last 1 month.
+/// * [price] - Gets or sets the price.
+/// * [symbolIdExchange] - Gets or sets the symbol identifier in the exchange.
+/// * [assetIdBaseExchange] - Gets or sets the base asset identifier in the exchange.
+/// * [assetIdQuoteExchange] - Gets or sets the quote asset identifier in the exchange.
+/// * [pricePrecision] - Gets or sets the price precision.
+/// * [sizePrecision] - Gets or sets the size precision.
 /// * [rawKvp] - Key Value Pair store with raw data from the data source.
-/// * [futureIsInverse] - Indicates whether the futures contract is inverse (coin-margined).
-/// * [futureIsQuanto] - Indicates whether the futures contract is quanto.
-/// * [volumeToUsd] - Volume unit in USD.
-/// * [optionBarrierUpPrice] - The up barrier price for barrier options.
-/// * [optionBarrierUpType] - The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
-/// * [optionBarrierDownPrice] - The down barrier price for barrier options.
-/// * [optionBarrierDownType] - The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
-/// * [symbolIdInt] - The symbol identifier in integer immutable format, used to correlate data across different APIs.
+/// * [futureIsInverse] - Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
+/// * [futureIsQuanto] - Gets or sets a value indicating whether the futures contract is quanto.
+/// * [volumeToUsd] - Gets or sets the volume in USD.
+/// * [optionBarrierUpPrice] - Gets or sets the up barrier price for barrier options.
+/// * [optionBarrierUpType] - Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+/// * [optionBarrierDownPrice] - Gets or sets the down barrier price for barrier options.
+/// * [optionBarrierDownType] - Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+/// * [symbolIdInt] - Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
 @BuiltValue()
 abstract class V1Symbol implements Built<V1Symbol, V1SymbolBuilder> {
-  /// The symbol identifier.
+  /// Gets or sets the symbol identifier.
   @BuiltValueField(wireName: r'symbol_id')
   String? get symbolId;
 
-  /// The exchange identifier.
+  /// Gets or sets the exchange identifier.
   @BuiltValueField(wireName: r'exchange_id')
   String? get exchangeId;
 
-  /// The symbol type.
+  /// Gets or sets the symbol type.
   @BuiltValueField(wireName: r'symbol_type')
   String? get symbolType;
 
-  /// The base asset identifier.
+  /// Gets or sets the base asset identifier.
   @BuiltValueField(wireName: r'asset_id_base')
   String? get assetIdBase;
 
-  /// The quote asset identifier.
+  /// Gets or sets the quote asset identifier.
   @BuiltValueField(wireName: r'asset_id_quote')
   String? get assetIdQuote;
 
-  /// The unit asset identifier.
+  /// Gets or sets the unit asset identifier.
   @BuiltValueField(wireName: r'asset_id_unit')
   String? get assetIdUnit;
 
-  /// The contract unit for futures.
+  /// Gets or sets the contract unit for futures.
   @BuiltValueField(wireName: r'future_contract_unit')
   double? get futureContractUnit;
 
-  /// The asset used as the unit for futures contract.
+  /// Gets or sets the asset used as the unit for futures contract.
   @BuiltValueField(wireName: r'future_contract_unit_asset')
   String? get futureContractUnitAsset;
 
-  /// The future delivery time for futures contract.
+  /// Gets or sets the future delivery time for futures contract.
   @BuiltValueField(wireName: r'future_delivery_time')
   DateTime? get futureDeliveryTime;
 
-  /// Indicates whether the option type is a call.
+  /// Gets or sets a value indicating whether the option type is a call.
   @BuiltValueField(wireName: r'option_type_is_call')
   bool? get optionTypeIsCall;
 
-  /// The strike price for options.
+  /// Gets or sets the strike price for options.
   @BuiltValueField(wireName: r'option_strike_price')
   double? get optionStrikePrice;
 
-  /// The contract unit for options.
+  /// Gets or sets the contract unit for options.
   @BuiltValueField(wireName: r'option_contract_unit')
   double? get optionContractUnit;
 
-  /// The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+  /// Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
   @BuiltValueField(wireName: r'option_exercise_style')
   String? get optionExerciseStyle;
 
-  /// The expiration time for options.
+  /// Gets or sets the expiration time for options.
   @BuiltValueField(wireName: r'option_expiration_time')
   DateTime? get optionExpirationTime;
 
-  /// The delivery time for contracts.
+  /// Gets or sets the delivery time for contracts.
   @BuiltValueField(wireName: r'contract_delivery_time')
   DateTime? get contractDeliveryTime;
 
-  /// The contract unit for contracts.
+  /// Gets or sets the contract unit for contracts.
   @BuiltValueField(wireName: r'contract_unit')
   double? get contractUnit;
 
-  /// The asset used as the unit for contracts.
+  /// Gets or sets the asset used as the unit for contracts.
   @BuiltValueField(wireName: r'contract_unit_asset')
   String? get contractUnitAsset;
 
-  /// The contract identifier.
+  /// Gets or sets the contract identifier.
   @BuiltValueField(wireName: r'contract_id')
   String? get contractId;
 
-  /// The display name of the contract.
+  /// Gets or sets the display name of the contract.
   @BuiltValueField(wireName: r'contract_display_name')
   String? get contractDisplayName;
 
-  /// The display description of the contract.
+  /// Gets or sets the display description of the contract.
   @BuiltValueField(wireName: r'contract_display_description')
   String? get contractDisplayDescription;
 
+  /// Gets the start date of the data in string format (\"yyyy-MM-dd\").
   @BuiltValueField(wireName: r'data_start')
   String? get dataStart;
 
+  /// Gets the end date of the data in string format (\"yyyy-MM-dd\").
   @BuiltValueField(wireName: r'data_end')
   String? get dataEnd;
 
-  /// The start date of quote data.
+  /// Gets or sets the start date of quote data.
   @BuiltValueField(wireName: r'data_quote_start')
   DateTime? get dataQuoteStart;
 
-  /// The end date of quote data.
+  /// Gets or sets the end date of quote data.
   @BuiltValueField(wireName: r'data_quote_end')
   DateTime? get dataQuoteEnd;
 
-  /// The start date of order book data.
+  /// Gets or sets the start date of order book data.
   @BuiltValueField(wireName: r'data_orderbook_start')
   DateTime? get dataOrderbookStart;
 
-  /// The end date of order book data.
+  /// Gets or sets the end date of order book data.
   @BuiltValueField(wireName: r'data_orderbook_end')
   DateTime? get dataOrderbookEnd;
 
-  /// The start date of trade data.
+  /// Gets or sets the start date of trade data.
   @BuiltValueField(wireName: r'data_trade_start')
   DateTime? get dataTradeStart;
 
-  /// The end date of trade data.
+  /// Gets or sets the end date of trade data.
   @BuiltValueField(wireName: r'data_trade_end')
   DateTime? get dataTradeEnd;
 
-  /// The index identifier.
+  /// Gets or sets the index identifier.
   @BuiltValueField(wireName: r'index_id')
   String? get indexId;
 
-  /// The display name of the index.
+  /// Gets or sets the display name of the index.
   @BuiltValueField(wireName: r'index_display_name')
   String? get indexDisplayName;
 
-  /// The display description of the index.
+  /// Gets or sets the display description of the index.
   @BuiltValueField(wireName: r'index_display_description')
   String? get indexDisplayDescription;
 
-  /// The volume in the last 1 hour.
+  /// Gets or sets the volume in the last 1 hour.
   @BuiltValueField(wireName: r'volume_1hrs')
   double? get volume1hrs;
 
-  /// The volume in USD in the last 1 hour.
+  /// Gets or sets the volume in USD in the last 1 hour.
   @BuiltValueField(wireName: r'volume_1hrs_usd')
   double? get volume1hrsUsd;
 
-  /// The volume in the last 1 day.
+  /// Gets or sets the volume in the last 1 day.
   @BuiltValueField(wireName: r'volume_1day')
   double? get volume1day;
 
-  /// The volume in USD in the last 1 day.
+  /// Gets or sets the volume in USD in the last 1 day.
   @BuiltValueField(wireName: r'volume_1day_usd')
   double? get volume1dayUsd;
 
-  /// The volume in the last 1 month.
+  /// Gets or sets the volume in the last 1 month.
   @BuiltValueField(wireName: r'volume_1mth')
   double? get volume1mth;
 
-  /// The volume in USD in the last 1 month.
+  /// Gets or sets the volume in USD in the last 1 month.
   @BuiltValueField(wireName: r'volume_1mth_usd')
   double? get volume1mthUsd;
 
-  /// The price.
+  /// Gets or sets the price.
   @BuiltValueField(wireName: r'price')
   double? get price;
 
-  /// The symbol identifier in the exchange.
+  /// Gets or sets the symbol identifier in the exchange.
   @BuiltValueField(wireName: r'symbol_id_exchange')
   String? get symbolIdExchange;
 
-  /// The base asset identifier in the exchange.
+  /// Gets or sets the base asset identifier in the exchange.
   @BuiltValueField(wireName: r'asset_id_base_exchange')
   String? get assetIdBaseExchange;
 
-  /// The quote asset identifier in the exchange.
+  /// Gets or sets the quote asset identifier in the exchange.
   @BuiltValueField(wireName: r'asset_id_quote_exchange')
   String? get assetIdQuoteExchange;
 
-  /// The price precision.
+  /// Gets or sets the price precision.
   @BuiltValueField(wireName: r'price_precision')
   double? get pricePrecision;
 
-  /// The size precision.
+  /// Gets or sets the size precision.
   @BuiltValueField(wireName: r'size_precision')
   double? get sizePrecision;
 
   /// Key Value Pair store with raw data from the data source.
   @BuiltValueField(wireName: r'raw_kvp')
-  BuiltMap<String, String>? get rawKvp;
+  BuiltMap<String, String?>? get rawKvp;
 
-  /// Indicates whether the futures contract is inverse (coin-margined).
+  /// Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
   @BuiltValueField(wireName: r'future_is_inverse')
   bool? get futureIsInverse;
 
-  /// Indicates whether the futures contract is quanto.
+  /// Gets or sets a value indicating whether the futures contract is quanto.
   @BuiltValueField(wireName: r'future_is_quanto')
   bool? get futureIsQuanto;
 
-  /// Volume unit in USD.
+  /// Gets or sets the volume in USD.
   @BuiltValueField(wireName: r'volume_to_usd')
   double? get volumeToUsd;
 
-  /// The up barrier price for barrier options.
+  /// Gets or sets the up barrier price for barrier options.
   @BuiltValueField(wireName: r'option_barrier_up_price')
   double? get optionBarrierUpPrice;
 
-  /// The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  /// Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
   @BuiltValueField(wireName: r'option_barrier_up_type')
   String? get optionBarrierUpType;
 
-  /// The down barrier price for barrier options.
+  /// Gets or sets the down barrier price for barrier options.
   @BuiltValueField(wireName: r'option_barrier_down_price')
   double? get optionBarrierDownPrice;
 
-  /// The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  /// Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
   @BuiltValueField(wireName: r'option_barrier_down_type')
   String? get optionBarrierDownType;
 
-  /// The symbol identifier in integer immutable format, used to correlate data across different APIs.
+  /// Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
   @BuiltValueField(wireName: r'symbol_id_int')
   int? get symbolIdInt;
 
@@ -600,7 +602,7 @@ class _$V1SymbolSerializer implements PrimitiveSerializer<V1Symbol> {
       yield r'raw_kvp';
       yield serializers.serialize(
         object.rawKvp,
-        specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(String)]),
+        specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType.nullable(String)]),
       );
     }
     if (object.futureIsInverse != null) {
@@ -1029,8 +1031,8 @@ class _$V1SymbolSerializer implements PrimitiveSerializer<V1Symbol> {
         case r'raw_kvp':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType(String)]),
-          ) as BuiltMap<String, String>?;
+            specifiedType: const FullType.nullable(BuiltMap, [FullType(String), FullType.nullable(String)]),
+          ) as BuiltMap<String, String?>?;
           if (valueDes == null) continue;
           result.rawKvp.replace(valueDes);
           break;

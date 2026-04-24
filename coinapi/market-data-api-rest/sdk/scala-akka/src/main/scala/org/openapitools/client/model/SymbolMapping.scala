@@ -14,23 +14,23 @@ package org.openapitools.client.model
 import org.openapitools.client.core.ApiModel
 
 case class SymbolMapping (
-  /* The symbol ID. */
+  /* Gets or sets the symbol ID. */
   symbolId: Option[String] = None,
-  /* The exchange-specific symbol ID. */
+  /* Gets or sets the exchange-specific symbol ID. */
   symbolIdExchange: Option[String] = None,
-  /* The CoinAPI DataInfo ID. */
+  /* Gets or sets the DataInfo ID. */
   coinapiDatainfoId: Option[Int] = None,
-  /* The exchange-specific base asset ID. */
+  /* Gets or sets the exchange-specific base asset ID. */
   assetIdBaseExchange: Option[String] = None,
-  /* The exchange-specific quote asset ID. */
+  /* Gets or sets the exchange-specific quote asset ID. */
   assetIdQuoteExchange: Option[String] = None,
-  /* The base asset ID. */
+  /* Gets or sets the base asset ID. */
   assetIdBase: Option[String] = None,
-  /* The quote asset ID. */
+  /* Gets or sets the quote asset ID. */
   assetIdQuote: Option[String] = None,
-  /* The price precision. */
+  /* Gets or sets the price precision. */
   pricePrecision: Option[Double] = None,
-  /* The size precision. */
+  /* Gets or sets the size precision. */
   sizePrecision: Option[Double] = None
 ) extends ApiModel
 

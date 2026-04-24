@@ -15,259 +15,259 @@
  */
 public class OASV1Symbol implements OAS.MappedProperties {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      * @return symbolId
      */
     public String symbolId { get; set; }
 
     /**
-     * The exchange identifier.
+     * Gets or sets the exchange identifier.
      * @return exchangeId
      */
     public String exchangeId { get; set; }
 
     /**
-     * The symbol type.
+     * Gets or sets the symbol type.
      * @return symbolType
      */
     public String symbolType { get; set; }
 
     /**
-     * The base asset identifier.
+     * Gets or sets the base asset identifier.
      * @return assetIdBase
      */
     public String assetIdBase { get; set; }
 
     /**
-     * The quote asset identifier.
+     * Gets or sets the quote asset identifier.
      * @return assetIdQuote
      */
     public String assetIdQuote { get; set; }
 
     /**
-     * The unit asset identifier.
+     * Gets or sets the unit asset identifier.
      * @return assetIdUnit
      */
     public String assetIdUnit { get; set; }
 
     /**
-     * The contract unit for futures.
+     * Gets or sets the contract unit for futures.
      * @return futureContractUnit
      */
     public Double futureContractUnit { get; set; }
 
     /**
-     * The asset used as the unit for futures contract.
+     * Gets or sets the asset used as the unit for futures contract.
      * @return futureContractUnitAsset
      */
     public String futureContractUnitAsset { get; set; }
 
     /**
-     * The future delivery time for futures contract.
+     * Gets or sets the future delivery time for futures contract.
      * @return futureDeliveryTime
      */
     public Datetime futureDeliveryTime { get; set; }
 
     /**
-     * Indicates whether the option type is a call.
+     * Gets or sets a value indicating whether the option type is a call.
      * @return optionTypeIsCall
      */
     public Boolean optionTypeIsCall { get; set; }
 
     /**
-     * The strike price for options.
+     * Gets or sets the strike price for options.
      * @return optionStrikePrice
      */
     public Double optionStrikePrice { get; set; }
 
     /**
-     * The contract unit for options.
+     * Gets or sets the contract unit for options.
      * @return optionContractUnit
      */
     public Double optionContractUnit { get; set; }
 
     /**
-     * The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+     * Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
      * @return optionExerciseStyle
      */
     public String optionExerciseStyle { get; set; }
 
     /**
-     * The expiration time for options.
+     * Gets or sets the expiration time for options.
      * @return optionExpirationTime
      */
     public Datetime optionExpirationTime { get; set; }
 
     /**
-     * The delivery time for contracts.
+     * Gets or sets the delivery time for contracts.
      * @return contractDeliveryTime
      */
     public Datetime contractDeliveryTime { get; set; }
 
     /**
-     * The contract unit for contracts.
+     * Gets or sets the contract unit for contracts.
      * @return contractUnit
      */
     public Double contractUnit { get; set; }
 
     /**
-     * The asset used as the unit for contracts.
+     * Gets or sets the asset used as the unit for contracts.
      * @return contractUnitAsset
      */
     public String contractUnitAsset { get; set; }
 
     /**
-     * The contract identifier.
+     * Gets or sets the contract identifier.
      * @return contractId
      */
     public String contractId { get; set; }
 
     /**
-     * The display name of the contract.
+     * Gets or sets the display name of the contract.
      * @return contractDisplayName
      */
     public String contractDisplayName { get; set; }
 
     /**
-     * The display description of the contract.
+     * Gets or sets the display description of the contract.
      * @return contractDisplayDescription
      */
     public String contractDisplayDescription { get; set; }
 
     /**
-     * Get dataStart
+     * Gets the start date of the data in string format ("yyyy-MM-dd").
      * @return dataStart
      */
     public String dataStart { get; private set; }
 
     /**
-     * Get dataEnd
+     * Gets the end date of the data in string format ("yyyy-MM-dd").
      * @return dataEnd
      */
     public String dataEnd { get; private set; }
 
     /**
-     * The start date of quote data.
+     * Gets or sets the start date of quote data.
      * @return dataQuoteStart
      */
     public Datetime dataQuoteStart { get; set; }
 
     /**
-     * The end date of quote data.
+     * Gets or sets the end date of quote data.
      * @return dataQuoteEnd
      */
     public Datetime dataQuoteEnd { get; set; }
 
     /**
-     * The start date of order book data.
+     * Gets or sets the start date of order book data.
      * @return dataOrderbookStart
      */
     public Datetime dataOrderbookStart { get; set; }
 
     /**
-     * The end date of order book data.
+     * Gets or sets the end date of order book data.
      * @return dataOrderbookEnd
      */
     public Datetime dataOrderbookEnd { get; set; }
 
     /**
-     * The start date of trade data.
+     * Gets or sets the start date of trade data.
      * @return dataTradeStart
      */
     public Datetime dataTradeStart { get; set; }
 
     /**
-     * The end date of trade data.
+     * Gets or sets the end date of trade data.
      * @return dataTradeEnd
      */
     public Datetime dataTradeEnd { get; set; }
 
     /**
-     * The index identifier.
+     * Gets or sets the index identifier.
      * @return indexId
      */
     public String indexId { get; set; }
 
     /**
-     * The display name of the index.
+     * Gets or sets the display name of the index.
      * @return indexDisplayName
      */
     public String indexDisplayName { get; set; }
 
     /**
-     * The display description of the index.
+     * Gets or sets the display description of the index.
      * @return indexDisplayDescription
      */
     public String indexDisplayDescription { get; set; }
 
     /**
-     * The volume in the last 1 hour.
+     * Gets or sets the volume in the last 1 hour.
      * @return volume1hrs
      */
     public Double volume1hrs { get; set; }
 
     /**
-     * The volume in USD in the last 1 hour.
+     * Gets or sets the volume in USD in the last 1 hour.
      * @return volume1hrsUsd
      */
     public Double volume1hrsUsd { get; set; }
 
     /**
-     * The volume in the last 1 day.
+     * Gets or sets the volume in the last 1 day.
      * @return volume1day
      */
     public Double volume1day { get; set; }
 
     /**
-     * The volume in USD in the last 1 day.
+     * Gets or sets the volume in USD in the last 1 day.
      * @return volume1dayUsd
      */
     public Double volume1dayUsd { get; set; }
 
     /**
-     * The volume in the last 1 month.
+     * Gets or sets the volume in the last 1 month.
      * @return volume1mth
      */
     public Double volume1mth { get; set; }
 
     /**
-     * The volume in USD in the last 1 month.
+     * Gets or sets the volume in USD in the last 1 month.
      * @return volume1mthUsd
      */
     public Double volume1mthUsd { get; set; }
 
     /**
-     * The price.
+     * Gets or sets the price.
      * @return price
      */
     public Double price { get; set; }
 
     /**
-     * The symbol identifier in the exchange.
+     * Gets or sets the symbol identifier in the exchange.
      * @return symbolIdExchange
      */
     public String symbolIdExchange { get; set; }
 
     /**
-     * The base asset identifier in the exchange.
+     * Gets or sets the base asset identifier in the exchange.
      * @return assetIdBaseExchange
      */
     public String assetIdBaseExchange { get; set; }
 
     /**
-     * The quote asset identifier in the exchange.
+     * Gets or sets the quote asset identifier in the exchange.
      * @return assetIdQuoteExchange
      */
     public String assetIdQuoteExchange { get; set; }
 
     /**
-     * The price precision.
+     * Gets or sets the price precision.
      * @return pricePrecision
      */
     public Double pricePrecision { get; set; }
 
     /**
-     * The size precision.
+     * Gets or sets the size precision.
      * @return sizePrecision
      */
     public Double sizePrecision { get; set; }
@@ -279,49 +279,49 @@ public class OASV1Symbol implements OAS.MappedProperties {
     public Map<String, String> rawKvp { get; set; }
 
     /**
-     * Indicates whether the futures contract is inverse (coin-margined).
+     * Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
      * @return futureIsInverse
      */
     public Boolean futureIsInverse { get; set; }
 
     /**
-     * Indicates whether the futures contract is quanto.
+     * Gets or sets a value indicating whether the futures contract is quanto.
      * @return futureIsQuanto
      */
     public Boolean futureIsQuanto { get; set; }
 
     /**
-     * Volume unit in USD.
+     * Gets or sets the volume in USD.
      * @return volumeToUsd
      */
     public Double volumeToUsd { get; set; }
 
     /**
-     * The up barrier price for barrier options.
+     * Gets or sets the up barrier price for barrier options.
      * @return optionBarrierUpPrice
      */
     public Double optionBarrierUpPrice { get; set; }
 
     /**
-     * The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+     * Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
      * @return optionBarrierUpType
      */
     public String optionBarrierUpType { get; set; }
 
     /**
-     * The down barrier price for barrier options.
+     * Gets or sets the down barrier price for barrier options.
      * @return optionBarrierDownPrice
      */
     public Double optionBarrierDownPrice { get; set; }
 
     /**
-     * The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+     * Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
      * @return optionBarrierDownType
      */
     public String optionBarrierDownType { get; set; }
 
     /**
-     * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+     * Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
      * @return symbolIdInt
      */
     public Integer symbolIdInt { get; private set; }

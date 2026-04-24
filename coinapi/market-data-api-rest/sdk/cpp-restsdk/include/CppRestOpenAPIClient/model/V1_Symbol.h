@@ -60,7 +60,7 @@ public:
 
 
     /// <summary>
-    /// The symbol identifier.
+    /// Gets or sets the symbol identifier.
     /// </summary>
     utility::string_t getSymbolId() const;
     bool symbolIdIsSet() const;
@@ -68,7 +68,7 @@ public:
     void setSymbolId(const utility::string_t& value);
 
     /// <summary>
-    /// The exchange identifier.
+    /// Gets or sets the exchange identifier.
     /// </summary>
     utility::string_t getExchangeId() const;
     bool exchangeIdIsSet() const;
@@ -76,7 +76,7 @@ public:
     void setExchangeId(const utility::string_t& value);
 
     /// <summary>
-    /// The symbol type.
+    /// Gets or sets the symbol type.
     /// </summary>
     utility::string_t getSymbolType() const;
     bool symbolTypeIsSet() const;
@@ -84,7 +84,7 @@ public:
     void setSymbolType(const utility::string_t& value);
 
     /// <summary>
-    /// The base asset identifier.
+    /// Gets or sets the base asset identifier.
     /// </summary>
     utility::string_t getAssetIdBase() const;
     bool assetIdBaseIsSet() const;
@@ -92,7 +92,7 @@ public:
     void setAssetIdBase(const utility::string_t& value);
 
     /// <summary>
-    /// The quote asset identifier.
+    /// Gets or sets the quote asset identifier.
     /// </summary>
     utility::string_t getAssetIdQuote() const;
     bool assetIdQuoteIsSet() const;
@@ -100,7 +100,7 @@ public:
     void setAssetIdQuote(const utility::string_t& value);
 
     /// <summary>
-    /// The unit asset identifier.
+    /// Gets or sets the unit asset identifier.
     /// </summary>
     utility::string_t getAssetIdUnit() const;
     bool assetIdUnitIsSet() const;
@@ -108,7 +108,7 @@ public:
     void setAssetIdUnit(const utility::string_t& value);
 
     /// <summary>
-    /// The contract unit for futures.
+    /// Gets or sets the contract unit for futures.
     /// </summary>
     double getFutureContractUnit() const;
     bool futureContractUnitIsSet() const;
@@ -116,7 +116,7 @@ public:
     void setFutureContractUnit(double value);
 
     /// <summary>
-    /// The asset used as the unit for futures contract.
+    /// Gets or sets the asset used as the unit for futures contract.
     /// </summary>
     utility::string_t getFutureContractUnitAsset() const;
     bool futureContractUnitAssetIsSet() const;
@@ -124,7 +124,7 @@ public:
     void setFutureContractUnitAsset(const utility::string_t& value);
 
     /// <summary>
-    /// The future delivery time for futures contract.
+    /// Gets or sets the future delivery time for futures contract.
     /// </summary>
     utility::datetime getFutureDeliveryTime() const;
     bool futureDeliveryTimeIsSet() const;
@@ -132,7 +132,7 @@ public:
     void setFutureDeliveryTime(const utility::datetime& value);
 
     /// <summary>
-    /// Indicates whether the option type is a call.
+    /// Gets or sets a value indicating whether the option type is a call.
     /// </summary>
     bool isOptionTypeIsCall() const;
     bool optionTypeIsCallIsSet() const;
@@ -140,7 +140,7 @@ public:
     void setOptionTypeIsCall(bool value);
 
     /// <summary>
-    /// The strike price for options.
+    /// Gets or sets the strike price for options.
     /// </summary>
     double getOptionStrikePrice() const;
     bool optionStrikePriceIsSet() const;
@@ -148,7 +148,7 @@ public:
     void setOptionStrikePrice(double value);
 
     /// <summary>
-    /// The contract unit for options.
+    /// Gets or sets the contract unit for options.
     /// </summary>
     double getOptionContractUnit() const;
     bool optionContractUnitIsSet() const;
@@ -156,7 +156,7 @@ public:
     void setOptionContractUnit(double value);
 
     /// <summary>
-    /// The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+    /// Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
     /// </summary>
     utility::string_t getOptionExerciseStyle() const;
     bool optionExerciseStyleIsSet() const;
@@ -164,7 +164,7 @@ public:
     void setOptionExerciseStyle(const utility::string_t& value);
 
     /// <summary>
-    /// The expiration time for options.
+    /// Gets or sets the expiration time for options.
     /// </summary>
     utility::datetime getOptionExpirationTime() const;
     bool optionExpirationTimeIsSet() const;
@@ -172,7 +172,7 @@ public:
     void setOptionExpirationTime(const utility::datetime& value);
 
     /// <summary>
-    /// The delivery time for contracts.
+    /// Gets or sets the delivery time for contracts.
     /// </summary>
     utility::datetime getContractDeliveryTime() const;
     bool contractDeliveryTimeIsSet() const;
@@ -180,7 +180,7 @@ public:
     void setContractDeliveryTime(const utility::datetime& value);
 
     /// <summary>
-    /// The contract unit for contracts.
+    /// Gets or sets the contract unit for contracts.
     /// </summary>
     double getContractUnit() const;
     bool contractUnitIsSet() const;
@@ -188,7 +188,7 @@ public:
     void setContractUnit(double value);
 
     /// <summary>
-    /// The asset used as the unit for contracts.
+    /// Gets or sets the asset used as the unit for contracts.
     /// </summary>
     utility::string_t getContractUnitAsset() const;
     bool contractUnitAssetIsSet() const;
@@ -196,7 +196,7 @@ public:
     void setContractUnitAsset(const utility::string_t& value);
 
     /// <summary>
-    /// The contract identifier.
+    /// Gets or sets the contract identifier.
     /// </summary>
     utility::string_t getContractId() const;
     bool contractIdIsSet() const;
@@ -204,7 +204,7 @@ public:
     void setContractId(const utility::string_t& value);
 
     /// <summary>
-    /// The display name of the contract.
+    /// Gets or sets the display name of the contract.
     /// </summary>
     utility::string_t getContractDisplayName() const;
     bool contractDisplayNameIsSet() const;
@@ -212,25 +212,31 @@ public:
     void setContractDisplayName(const utility::string_t& value);
 
     /// <summary>
-    /// The display description of the contract.
+    /// Gets or sets the display description of the contract.
     /// </summary>
     utility::string_t getContractDisplayDescription() const;
     bool contractDisplayDescriptionIsSet() const;
     void unsetContract_display_description();
     void setContractDisplayDescription(const utility::string_t& value);
 
+    /// <summary>
+    /// Gets the start date of the data in string format (\&quot;yyyy-MM-dd\&quot;).
+    /// </summary>
     utility::string_t getDataStart() const;
     bool dataStartIsSet() const;
     void unsetData_start();
     void setDataStart(const utility::string_t& value);
 
+    /// <summary>
+    /// Gets the end date of the data in string format (\&quot;yyyy-MM-dd\&quot;).
+    /// </summary>
     utility::string_t getDataEnd() const;
     bool dataEndIsSet() const;
     void unsetData_end();
     void setDataEnd(const utility::string_t& value);
 
     /// <summary>
-    /// The start date of quote data.
+    /// Gets or sets the start date of quote data.
     /// </summary>
     utility::datetime getDataQuoteStart() const;
     bool dataQuoteStartIsSet() const;
@@ -238,7 +244,7 @@ public:
     void setDataQuoteStart(const utility::datetime& value);
 
     /// <summary>
-    /// The end date of quote data.
+    /// Gets or sets the end date of quote data.
     /// </summary>
     utility::datetime getDataQuoteEnd() const;
     bool dataQuoteEndIsSet() const;
@@ -246,7 +252,7 @@ public:
     void setDataQuoteEnd(const utility::datetime& value);
 
     /// <summary>
-    /// The start date of order book data.
+    /// Gets or sets the start date of order book data.
     /// </summary>
     utility::datetime getDataOrderbookStart() const;
     bool dataOrderbookStartIsSet() const;
@@ -254,7 +260,7 @@ public:
     void setDataOrderbookStart(const utility::datetime& value);
 
     /// <summary>
-    /// The end date of order book data.
+    /// Gets or sets the end date of order book data.
     /// </summary>
     utility::datetime getDataOrderbookEnd() const;
     bool dataOrderbookEndIsSet() const;
@@ -262,7 +268,7 @@ public:
     void setDataOrderbookEnd(const utility::datetime& value);
 
     /// <summary>
-    /// The start date of trade data.
+    /// Gets or sets the start date of trade data.
     /// </summary>
     utility::datetime getDataTradeStart() const;
     bool dataTradeStartIsSet() const;
@@ -270,7 +276,7 @@ public:
     void setDataTradeStart(const utility::datetime& value);
 
     /// <summary>
-    /// The end date of trade data.
+    /// Gets or sets the end date of trade data.
     /// </summary>
     utility::datetime getDataTradeEnd() const;
     bool dataTradeEndIsSet() const;
@@ -278,7 +284,7 @@ public:
     void setDataTradeEnd(const utility::datetime& value);
 
     /// <summary>
-    /// The index identifier.
+    /// Gets or sets the index identifier.
     /// </summary>
     utility::string_t getIndexId() const;
     bool indexIdIsSet() const;
@@ -286,7 +292,7 @@ public:
     void setIndexId(const utility::string_t& value);
 
     /// <summary>
-    /// The display name of the index.
+    /// Gets or sets the display name of the index.
     /// </summary>
     utility::string_t getIndexDisplayName() const;
     bool indexDisplayNameIsSet() const;
@@ -294,7 +300,7 @@ public:
     void setIndexDisplayName(const utility::string_t& value);
 
     /// <summary>
-    /// The display description of the index.
+    /// Gets or sets the display description of the index.
     /// </summary>
     utility::string_t getIndexDisplayDescription() const;
     bool indexDisplayDescriptionIsSet() const;
@@ -302,7 +308,7 @@ public:
     void setIndexDisplayDescription(const utility::string_t& value);
 
     /// <summary>
-    /// The volume in the last 1 hour.
+    /// Gets or sets the volume in the last 1 hour.
     /// </summary>
     double getVolume1hrs() const;
     bool volume1hrsIsSet() const;
@@ -310,7 +316,7 @@ public:
     void setVolume1hrs(double value);
 
     /// <summary>
-    /// The volume in USD in the last 1 hour.
+    /// Gets or sets the volume in USD in the last 1 hour.
     /// </summary>
     double getVolume1hrsUsd() const;
     bool volume1hrsUsdIsSet() const;
@@ -318,7 +324,7 @@ public:
     void setVolume1hrsUsd(double value);
 
     /// <summary>
-    /// The volume in the last 1 day.
+    /// Gets or sets the volume in the last 1 day.
     /// </summary>
     double getVolume1day() const;
     bool volume1dayIsSet() const;
@@ -326,7 +332,7 @@ public:
     void setVolume1day(double value);
 
     /// <summary>
-    /// The volume in USD in the last 1 day.
+    /// Gets or sets the volume in USD in the last 1 day.
     /// </summary>
     double getVolume1dayUsd() const;
     bool volume1dayUsdIsSet() const;
@@ -334,7 +340,7 @@ public:
     void setVolume1dayUsd(double value);
 
     /// <summary>
-    /// The volume in the last 1 month.
+    /// Gets or sets the volume in the last 1 month.
     /// </summary>
     double getVolume1mth() const;
     bool volume1mthIsSet() const;
@@ -342,7 +348,7 @@ public:
     void setVolume1mth(double value);
 
     /// <summary>
-    /// The volume in USD in the last 1 month.
+    /// Gets or sets the volume in USD in the last 1 month.
     /// </summary>
     double getVolume1mthUsd() const;
     bool volume1mthUsdIsSet() const;
@@ -350,7 +356,7 @@ public:
     void setVolume1mthUsd(double value);
 
     /// <summary>
-    /// The price.
+    /// Gets or sets the price.
     /// </summary>
     double getPrice() const;
     bool priceIsSet() const;
@@ -358,7 +364,7 @@ public:
     void setPrice(double value);
 
     /// <summary>
-    /// The symbol identifier in the exchange.
+    /// Gets or sets the symbol identifier in the exchange.
     /// </summary>
     utility::string_t getSymbolIdExchange() const;
     bool symbolIdExchangeIsSet() const;
@@ -366,7 +372,7 @@ public:
     void setSymbolIdExchange(const utility::string_t& value);
 
     /// <summary>
-    /// The base asset identifier in the exchange.
+    /// Gets or sets the base asset identifier in the exchange.
     /// </summary>
     utility::string_t getAssetIdBaseExchange() const;
     bool assetIdBaseExchangeIsSet() const;
@@ -374,7 +380,7 @@ public:
     void setAssetIdBaseExchange(const utility::string_t& value);
 
     /// <summary>
-    /// The quote asset identifier in the exchange.
+    /// Gets or sets the quote asset identifier in the exchange.
     /// </summary>
     utility::string_t getAssetIdQuoteExchange() const;
     bool assetIdQuoteExchangeIsSet() const;
@@ -382,7 +388,7 @@ public:
     void setAssetIdQuoteExchange(const utility::string_t& value);
 
     /// <summary>
-    /// The price precision.
+    /// Gets or sets the price precision.
     /// </summary>
     double getPricePrecision() const;
     bool pricePrecisionIsSet() const;
@@ -390,7 +396,7 @@ public:
     void setPricePrecision(double value);
 
     /// <summary>
-    /// The size precision.
+    /// Gets or sets the size precision.
     /// </summary>
     double getSizePrecision() const;
     bool sizePrecisionIsSet() const;
@@ -406,7 +412,7 @@ public:
     void setRawKvp(const std::map<utility::string_t, utility::string_t>& value);
 
     /// <summary>
-    /// Indicates whether the futures contract is inverse (coin-margined).
+    /// Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
     /// </summary>
     bool isFutureIsInverse() const;
     bool futureIsInverseIsSet() const;
@@ -414,7 +420,7 @@ public:
     void setFutureIsInverse(bool value);
 
     /// <summary>
-    /// Indicates whether the futures contract is quanto.
+    /// Gets or sets a value indicating whether the futures contract is quanto.
     /// </summary>
     bool isFutureIsQuanto() const;
     bool futureIsQuantoIsSet() const;
@@ -422,7 +428,7 @@ public:
     void setFutureIsQuanto(bool value);
 
     /// <summary>
-    /// Volume unit in USD.
+    /// Gets or sets the volume in USD.
     /// </summary>
     double getVolumeToUsd() const;
     bool volumeToUsdIsSet() const;
@@ -430,7 +436,7 @@ public:
     void setVolumeToUsd(double value);
 
     /// <summary>
-    /// The up barrier price for barrier options.
+    /// Gets or sets the up barrier price for barrier options.
     /// </summary>
     double getOptionBarrierUpPrice() const;
     bool optionBarrierUpPriceIsSet() const;
@@ -438,7 +444,7 @@ public:
     void setOptionBarrierUpPrice(double value);
 
     /// <summary>
-    /// The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+    /// Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
     /// </summary>
     utility::string_t getOptionBarrierUpType() const;
     bool optionBarrierUpTypeIsSet() const;
@@ -446,7 +452,7 @@ public:
     void setOptionBarrierUpType(const utility::string_t& value);
 
     /// <summary>
-    /// The down barrier price for barrier options.
+    /// Gets or sets the down barrier price for barrier options.
     /// </summary>
     double getOptionBarrierDownPrice() const;
     bool optionBarrierDownPriceIsSet() const;
@@ -454,7 +460,7 @@ public:
     void setOptionBarrierDownPrice(double value);
 
     /// <summary>
-    /// The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+    /// Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
     /// </summary>
     utility::string_t getOptionBarrierDownType() const;
     bool optionBarrierDownTypeIsSet() const;
@@ -462,7 +468,7 @@ public:
     void setOptionBarrierDownType(const utility::string_t& value);
 
     /// <summary>
-    /// The symbol identifier in integer immutable format, used to correlate data across different APIs.
+    /// Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
     /// </summary>
     int32_t getSymbolIdInt() const;
     bool symbolIdIntIsSet() const;

@@ -24,7 +24,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](options_option_exchange_group.md) *
+[list_t](v1_option_exchange_group.md) *
 
 
 ### Authorization

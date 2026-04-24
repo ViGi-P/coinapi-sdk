@@ -7,22 +7,22 @@ import org.openapitools.jackson.nullable.JsonNullable;
 
 @Canonical
 class V1SymbolMapping {
-    /* The symbol ID. */
+    /* Gets or sets the symbol ID. */
     String symbolId
-    /* The exchange-specific symbol ID. */
+    /* Gets or sets the exchange-specific symbol ID. */
     String symbolIdExchange
-    /* The CoinAPI DataInfo ID. */
+    /* Gets or sets the DataInfo ID. */
     Integer coinapiDatainfoId
-    /* The exchange-specific base asset ID. */
+    /* Gets or sets the exchange-specific base asset ID. */
     String assetIdBaseExchange
-    /* The exchange-specific quote asset ID. */
+    /* Gets or sets the exchange-specific quote asset ID. */
     String assetIdQuoteExchange
-    /* The base asset ID. */
+    /* Gets or sets the base asset ID. */
     String assetIdBase
-    /* The quote asset ID. */
+    /* Gets or sets the quote asset ID. */
     String assetIdQuote
-    /* The price precision. */
+    /* Gets or sets the price precision. */
     Double pricePrecision
-    /* The size precision. */
+    /* Gets or sets the size precision. */
     Double sizePrecision
 }

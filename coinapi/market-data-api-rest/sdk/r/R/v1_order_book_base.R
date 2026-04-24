@@ -7,11 +7,11 @@
 #' @title V1OrderBookBase
 #' @description V1OrderBookBase Class
 #' @format An \code{R6Class} generator object
-#' @field symbol_id The symbol identifier. character [optional]
-#' @field time_exchange The exchange time of the order book. character [optional]
-#' @field time_coinapi The CoinAPI time when the order book was received. character [optional]
-#' @field asks The asks made by market makers. \link{AnyType} [optional]
-#' @field bids The bids made by market makers. \link{AnyType} [optional]
+#' @field symbol_id Gets or sets the symbol identifier. character [optional]
+#' @field time_exchange Gets or sets the exchange time of the order book. character [optional]
+#' @field time_coinapi Gets or sets the CoinAPI time when the order book was received. character [optional]
+#' @field asks Gets or sets the asks made by market makers. \link{AnyType} [optional]
+#' @field bids Gets or sets the bids made by market makers. \link{AnyType} [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -27,11 +27,11 @@ V1OrderBookBase <- R6::R6Class(
     #' @description
     #' Initialize a new V1OrderBookBase class.
     #'
-    #' @param symbol_id The symbol identifier.
-    #' @param time_exchange The exchange time of the order book.
-    #' @param time_coinapi The CoinAPI time when the order book was received.
-    #' @param asks The asks made by market makers.
-    #' @param bids The bids made by market makers.
+    #' @param symbol_id Gets or sets the symbol identifier.
+    #' @param time_exchange Gets or sets the exchange time of the order book.
+    #' @param time_coinapi Gets or sets the CoinAPI time when the order book was received.
+    #' @param asks Gets or sets the asks made by market makers.
+    #' @param bids Gets or sets the bids made by market makers.
     #' @param ... Other optional arguments.
     initialize = function(`symbol_id` = NULL, `time_exchange` = NULL, `time_coinapi` = NULL, `asks` = NULL, `bids` = NULL, ...) {
       if (!is.null(`symbol_id`)) {

@@ -17,52 +17,52 @@ import * as models from './models';
  */
 export interface OhlcvExchangeTimeseriesItem {
     /**
-     * The start time of the time period.
+     * Gets or sets the start time of the time period.
      */
     time_period_start?: string;
 
     /**
-     * The end time of the time period.
+     * Gets or sets the end time of the time period.
      */
     time_period_end?: string;
 
     /**
-     * The time when the price opened.
+     * Gets or sets the time when the price opened.
      */
     time_open?: string;
 
     /**
-     * The time when the price closed.
+     * Gets or sets the time when the price closed.
      */
     time_close?: string;
 
     /**
-     * The opening price.
+     * Gets or sets the opening price.
      */
     price_open?: number;
 
     /**
-     * The highest price during the time period.
+     * Gets or sets the highest price during the time period.
      */
     price_high?: number;
 
     /**
-     * The lowest price during the time period.
+     * Gets or sets the lowest price during the time period.
      */
     price_low?: number;
 
     /**
-     * The closing price.
+     * Gets or sets the closing price.
      */
     price_close?: number;
 
     /**
-     * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+     * Gets or sets the total volume traded during the time period.
      */
     volume_traded?: number;
 
     /**
-     * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+     * Gets or sets the number of trades executed during the time period.
      */
     trades_count?: number;
 

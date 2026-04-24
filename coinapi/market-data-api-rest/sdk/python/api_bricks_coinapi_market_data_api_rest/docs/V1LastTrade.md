@@ -6,12 +6,12 @@ Represents the last executed transaction.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**time_exchange** | **datetime** | The exchange time of the last trade. | [optional] 
-**time_coinapi** | **datetime** | The CoinAPI time when the last trade was received. | [optional] 
-**uuid** | **UUID** | The UUID of the last trade. | [optional] 
-**price** | **float** | The price of the last trade. | [optional] 
-**size** | **float** | The size of the last trade. | [optional] 
-**taker_side** | **str** | The taker side of the last trade. | [optional] 
+**time_exchange** | **datetime** | Gets or sets the exchange time of the last trade. | [optional] 
+**time_coinapi** | **datetime** | Gets or sets the CoinAPI time when the last trade was received. | [optional] 
+**uuid** | **UUID** | Gets or sets the UUID of the last trade. | [optional] 
+**price** | **float** | Gets or sets the price of the last trade. | [optional] 
+**size** | **float** | Gets or sets the size of the last trade. | [optional] 
+**taker_side** | **str** | Gets or sets the taker side of the last trade. | [optional] 
 
 ## Example
 

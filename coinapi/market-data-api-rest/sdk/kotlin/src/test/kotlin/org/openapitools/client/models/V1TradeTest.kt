@@ -63,7 +63,7 @@ class V1TradeTest : ShouldSpec() {
             //modelInstance.price shouldBe ("TODO")
         }
 
-        // to test the property `propertySize` - The base asset amount traded in the transaction.
+        // to test the property `propertySize` - The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
         should("test propertySize") {
             // uncomment below to test the property
             //modelInstance.propertySize shouldBe ("TODO")

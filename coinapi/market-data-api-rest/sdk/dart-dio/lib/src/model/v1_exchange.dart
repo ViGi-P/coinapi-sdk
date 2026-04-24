@@ -16,8 +16,8 @@ part 'v1_exchange.g.dart';
 /// * [exchangeId] - Gets or sets the exchange ID.
 /// * [website] - Gets or sets the website URL of the exchange.
 /// * [name] - Gets or sets the name of the exchange.
-/// * [dataStart] 
-/// * [dataEnd] 
+/// * [dataStart] - Gets the start date of the exchange's data.
+/// * [dataEnd] - Gets the end date of the exchange's data.
 /// * [dataQuoteStart] - Gets or sets the start date of quote data.
 /// * [dataQuoteEnd] - Gets or sets the end date of quote data.
 /// * [dataOrderbookStart] - Gets or sets the start date of order book data.
@@ -31,7 +31,7 @@ part 'v1_exchange.g.dart';
 /// * [volume1mthUsd] - Gets or sets the USD volume in the last 1 month.
 /// * [metricId] - Gets or sets the list of metric IDs.
 /// * [icons] - Gets or sets the list of icons for the exchange.
-/// * [rank] - Rank of the exchange.
+/// * [rank] - Rank of the exchange - higher rank means exchange is more reliable
 /// * [integrationStatus] - Status of the integration
 @BuiltValue()
 abstract class V1Exchange implements Built<V1Exchange, V1ExchangeBuilder> {
@@ -47,9 +47,11 @@ abstract class V1Exchange implements Built<V1Exchange, V1ExchangeBuilder> {
   @BuiltValueField(wireName: r'name')
   String? get name;
 
+  /// Gets the start date of the exchange's data.
   @BuiltValueField(wireName: r'data_start')
   String? get dataStart;
 
+  /// Gets the end date of the exchange's data.
   @BuiltValueField(wireName: r'data_end')
   String? get dataEnd;
 
@@ -105,7 +107,7 @@ abstract class V1Exchange implements Built<V1Exchange, V1ExchangeBuilder> {
   @BuiltValueField(wireName: r'icons')
   BuiltList<V1Icon>? get icons;
 
-  /// Rank of the exchange.
+  /// Rank of the exchange - higher rank means exchange is more reliable
   @BuiltValueField(wireName: r'rank')
   double? get rank;
 

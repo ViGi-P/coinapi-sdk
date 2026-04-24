@@ -35,12 +35,12 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="V1LastTrade" /> class.
         /// </summary>
-        /// <param name="timeExchange">The exchange time of the last trade.</param>
-        /// <param name="timeCoinapi">The CoinAPI time when the last trade was received.</param>
-        /// <param name="uuid">The UUID of the last trade.</param>
-        /// <param name="price">The price of the last trade.</param>
-        /// <param name="size">The size of the last trade.</param>
-        /// <param name="takerSide">The taker side of the last trade.</param>
+        /// <param name="timeExchange">Gets or sets the exchange time of the last trade.</param>
+        /// <param name="timeCoinapi">Gets or sets the CoinAPI time when the last trade was received.</param>
+        /// <param name="uuid">Gets or sets the UUID of the last trade.</param>
+        /// <param name="price">Gets or sets the price of the last trade.</param>
+        /// <param name="size">Gets or sets the size of the last trade.</param>
+        /// <param name="takerSide">Gets or sets the taker side of the last trade.</param>
         [JsonConstructor]
         public V1LastTrade(Option<DateTime?> timeExchange = default, Option<DateTime?> timeCoinapi = default, Option<Guid?> uuid = default, Option<double?> price = default, Option<double?> size = default, Option<string?> takerSide = default)
         {
@@ -63,9 +63,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<DateTime?> TimeExchangeOption { get; private set; }
 
         /// <summary>
-        /// The exchange time of the last trade.
+        /// Gets or sets the exchange time of the last trade.
         /// </summary>
-        /// <value>The exchange time of the last trade.</value>
+        /// <value>Gets or sets the exchange time of the last trade.</value>
         [JsonPropertyName("time_exchange")]
         public DateTime? TimeExchange { get { return this.TimeExchangeOption; } set { this.TimeExchangeOption = new(value); } }
 
@@ -77,9 +77,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<DateTime?> TimeCoinapiOption { get; private set; }
 
         /// <summary>
-        /// The CoinAPI time when the last trade was received.
+        /// Gets or sets the CoinAPI time when the last trade was received.
         /// </summary>
-        /// <value>The CoinAPI time when the last trade was received.</value>
+        /// <value>Gets or sets the CoinAPI time when the last trade was received.</value>
         [JsonPropertyName("time_coinapi")]
         public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption; } set { this.TimeCoinapiOption = new(value); } }
 
@@ -91,9 +91,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<Guid?> UuidOption { get; private set; }
 
         /// <summary>
-        /// The UUID of the last trade.
+        /// Gets or sets the UUID of the last trade.
         /// </summary>
-        /// <value>The UUID of the last trade.</value>
+        /// <value>Gets or sets the UUID of the last trade.</value>
         [JsonPropertyName("uuid")]
         public Guid? Uuid { get { return this.UuidOption; } set { this.UuidOption = new(value); } }
 
@@ -105,9 +105,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> PriceOption { get; private set; }
 
         /// <summary>
-        /// The price of the last trade.
+        /// Gets or sets the price of the last trade.
         /// </summary>
-        /// <value>The price of the last trade.</value>
+        /// <value>Gets or sets the price of the last trade.</value>
         [JsonPropertyName("price")]
         public double? Price { get { return this.PriceOption; } set { this.PriceOption = new(value); } }
 
@@ -119,9 +119,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> SizeOption { get; private set; }
 
         /// <summary>
-        /// The size of the last trade.
+        /// Gets or sets the size of the last trade.
         /// </summary>
-        /// <value>The size of the last trade.</value>
+        /// <value>Gets or sets the size of the last trade.</value>
         [JsonPropertyName("size")]
         public double? Size { get { return this.SizeOption; } set { this.SizeOption = new(value); } }
 
@@ -133,9 +133,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> TakerSideOption { get; private set; }
 
         /// <summary>
-        /// The taker side of the last trade.
+        /// Gets or sets the taker side of the last trade.
         /// </summary>
-        /// <value>The taker side of the last trade.</value>
+        /// <value>Gets or sets the taker side of the last trade.</value>
         [JsonPropertyName("taker_side")]
         public string? TakerSide { get { return this.TakerSideOption; } set { this.TakerSideOption = new(value); } }
 

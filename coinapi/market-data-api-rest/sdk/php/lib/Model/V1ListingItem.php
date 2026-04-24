@@ -36,7 +36,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * V1ListingItem Class Doc Comment
  *
  * @category Class
- * @description Represents a listing item.
+ * @description Represents a listing data item.
  * @package  OpenAPI\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -387,7 +387,7 @@ class V1ListingItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets symbol_id
      *
-     * @param string|null $symbol_id The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+     * @param string|null $symbol_id Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class V1ListingItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets symbol_id_external
      *
-     * @param string|null $symbol_id_external The exchange-native symbol identifier. Null for exchange-level metrics.
+     * @param string|null $symbol_id_external Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
      *
      * @return self
      */
@@ -523,7 +523,7 @@ class V1ListingItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets asset_id_external
      *
-     * @param string|null $asset_id_external Gets or sets the asset ID from the exchange.
+     * @param string|null $asset_id_external Gets or sets the asset ID.
      *
      * @return self
      */
@@ -557,7 +557,7 @@ class V1ListingItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets chain_id
      *
-     * @param string|null $chain_id Gets or sets the chain id.
+     * @param string|null $chain_id Gets or sets the chain ID.
      *
      * @return self
      */
@@ -591,7 +591,7 @@ class V1ListingItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets network_id
      *
-     * @param string|null $network_id Gets or sets the network id.
+     * @param string|null $network_id Gets or sets the network ID.
      *
      * @return self
      */

@@ -6,16 +6,16 @@ Represents a timeseries item with price and volume information.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**time_period_start** | **datetime** | The start time of the time period. | [optional] 
-**time_period_end** | **datetime** | The end time of the time period. | [optional] 
-**time_open** | **datetime** | The time when the price opened. | [optional] 
-**time_close** | **datetime** | The time when the price closed. | [optional] 
-**price_open** | **float** | The opening price. | [optional] 
-**price_high** | **float** | The highest price during the time period. | [optional] 
-**price_low** | **float** | The lowest price during the time period. | [optional] 
-**price_close** | **float** | The closing price. | [optional] 
-**volume_traded** | **float** | The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
-**trades_count** | **int** | The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
+**time_period_start** | **datetime** | Gets or sets the start time of the time period. | [optional] 
+**time_period_end** | **datetime** | Gets or sets the end time of the time period. | [optional] 
+**time_open** | **datetime** | Gets or sets the time when the price opened. | [optional] 
+**time_close** | **datetime** | Gets or sets the time when the price closed. | [optional] 
+**price_open** | **float** | Gets or sets the opening price. | [optional] 
+**price_high** | **float** | Gets or sets the highest price during the time period. | [optional] 
+**price_low** | **float** | Gets or sets the lowest price during the time period. | [optional] 
+**price_close** | **float** | Gets or sets the closing price. | [optional] 
+**volume_traded** | **float** | Gets or sets the total volume traded during the time period. | [optional] 
+**trades_count** | **int** | Gets or sets the number of trades executed during the time period. | [optional] 
 **symbol_id_exchange** | **str** |  | [optional] 
 **symbol_id_coinapi** | **str** |  | [optional] 
 

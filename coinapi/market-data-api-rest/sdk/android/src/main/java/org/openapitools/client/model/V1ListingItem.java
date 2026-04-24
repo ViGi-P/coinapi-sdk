@@ -16,9 +16,9 @@ import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Represents a listing item.
+ * Represents a listing data item.
  **/
-@ApiModel(description = "Represents a listing item.")
+@ApiModel(description = "Represents a listing data item.")
 public class V1ListingItem {
   
   @SerializedName("metric_id")
@@ -50,9 +50,9 @@ public class V1ListingItem {
   }
 
   /**
-   * The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+   * Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
    **/
-  @ApiModelProperty(value = "The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.")
+  @ApiModelProperty(value = "Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.")
   public String getSymbolId() {
     return symbolId;
   }
@@ -61,9 +61,9 @@ public class V1ListingItem {
   }
 
   /**
-   * The exchange-native symbol identifier. Null for exchange-level metrics.
+   * Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
    **/
-  @ApiModelProperty(value = "The exchange-native symbol identifier. Null for exchange-level metrics.")
+  @ApiModelProperty(value = "Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.")
   public String getSymbolIdExternal() {
     return symbolIdExternal;
   }
@@ -94,9 +94,9 @@ public class V1ListingItem {
   }
 
   /**
-   * Gets or sets the asset ID from the exchange.
+   * Gets or sets the asset ID.
    **/
-  @ApiModelProperty(value = "Gets or sets the asset ID from the exchange.")
+  @ApiModelProperty(value = "Gets or sets the asset ID.")
   public String getAssetIdExternal() {
     return assetIdExternal;
   }
@@ -105,9 +105,9 @@ public class V1ListingItem {
   }
 
   /**
-   * Gets or sets the chain id.
+   * Gets or sets the chain ID.
    **/
-  @ApiModelProperty(value = "Gets or sets the chain id.")
+  @ApiModelProperty(value = "Gets or sets the chain ID.")
   public String getChainId() {
     return chainId;
   }
@@ -116,9 +116,9 @@ public class V1ListingItem {
   }
 
   /**
-   * Gets or sets the network id.
+   * Gets or sets the network ID.
    **/
-  @ApiModelProperty(value = "Gets or sets the network id.")
+  @ApiModelProperty(value = "Gets or sets the network ID.")
   public String getNetworkId() {
     return networkId;
   }

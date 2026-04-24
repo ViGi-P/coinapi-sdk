@@ -25,8 +25,6 @@ include/CppRestOpenAPIClient/api/OrderBookL3Api.h
 include/CppRestOpenAPIClient/api/QuotesApi.h
 include/CppRestOpenAPIClient/api/TradesApi.h
 include/CppRestOpenAPIClient/model/Ohlcv_ExchangeTimeseriesItem.h
-include/CppRestOpenAPIClient/model/Options_OptionExchangeGroup.h
-include/CppRestOpenAPIClient/model/Options_Strike.h
 include/CppRestOpenAPIClient/model/V1_Asset.h
 include/CppRestOpenAPIClient/model/V1_Chain.h
 include/CppRestOpenAPIClient/model/V1_ChainNetworkAddress.h
@@ -42,11 +40,13 @@ include/CppRestOpenAPIClient/model/V1_ListingItem.h
 include/CppRestOpenAPIClient/model/V1_Metric.h
 include/CppRestOpenAPIClient/model/V1_MetricData.h
 include/CppRestOpenAPIClient/model/V1_MetricInfo.h
+include/CppRestOpenAPIClient/model/V1_OptionExchangeGroup.h
 include/CppRestOpenAPIClient/model/V1_OrderBook.h
 include/CppRestOpenAPIClient/model/V1_OrderBookBase.h
 include/CppRestOpenAPIClient/model/V1_OrderBookDepth.h
 include/CppRestOpenAPIClient/model/V1_Quote.h
 include/CppRestOpenAPIClient/model/V1_QuoteTrade.h
+include/CppRestOpenAPIClient/model/V1_Strike.h
 include/CppRestOpenAPIClient/model/V1_Symbol.h
 include/CppRestOpenAPIClient/model/V1_SymbolMapping.h
 include/CppRestOpenAPIClient/model/V1_TimeseriesItem.h
@@ -72,8 +72,6 @@ src/api/OrderBookL3Api.cpp
 src/api/QuotesApi.cpp
 src/api/TradesApi.cpp
 src/model/Ohlcv_ExchangeTimeseriesItem.cpp
-src/model/Options_OptionExchangeGroup.cpp
-src/model/Options_Strike.cpp
 src/model/V1_Asset.cpp
 src/model/V1_Chain.cpp
 src/model/V1_ChainNetworkAddress.cpp
@@ -89,11 +87,13 @@ src/model/V1_ListingItem.cpp
 src/model/V1_Metric.cpp
 src/model/V1_MetricData.cpp
 src/model/V1_MetricInfo.cpp
+src/model/V1_OptionExchangeGroup.cpp
 src/model/V1_OrderBook.cpp
 src/model/V1_OrderBookBase.cpp
 src/model/V1_OrderBookDepth.cpp
 src/model/V1_Quote.cpp
 src/model/V1_QuoteTrade.cpp
+src/model/V1_Strike.cpp
 src/model/V1_Symbol.cpp
 src/model/V1_SymbolMapping.cpp
 src/model/V1_TimeseriesItem.cpp

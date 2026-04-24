@@ -248,8 +248,6 @@ use WWW::OpenAPIClient::TradesApi;
 To load the models:
 ```perl
 use WWW::OpenAPIClient::Object::OhlcvExchangeTimeseriesItem;
-use WWW::OpenAPIClient::Object::OptionsOptionExchangeGroup;
-use WWW::OpenAPIClient::Object::OptionsStrike;
 use WWW::OpenAPIClient::Object::V1Asset;
 use WWW::OpenAPIClient::Object::V1Chain;
 use WWW::OpenAPIClient::Object::V1ChainNetworkAddress;
@@ -265,11 +263,13 @@ use WWW::OpenAPIClient::Object::V1ListingItem;
 use WWW::OpenAPIClient::Object::V1Metric;
 use WWW::OpenAPIClient::Object::V1MetricData;
 use WWW::OpenAPIClient::Object::V1MetricInfo;
+use WWW::OpenAPIClient::Object::V1OptionExchangeGroup;
 use WWW::OpenAPIClient::Object::V1OrderBook;
 use WWW::OpenAPIClient::Object::V1OrderBookBase;
 use WWW::OpenAPIClient::Object::V1OrderBookDepth;
 use WWW::OpenAPIClient::Object::V1Quote;
 use WWW::OpenAPIClient::Object::V1QuoteTrade;
+use WWW::OpenAPIClient::Object::V1Strike;
 use WWW::OpenAPIClient::Object::V1Symbol;
 use WWW::OpenAPIClient::Object::V1SymbolMapping;
 use WWW::OpenAPIClient::Object::V1TimeseriesItem;
@@ -299,8 +299,6 @@ use WWW::OpenAPIClient::TradesApi;
 
 # load the models
 use WWW::OpenAPIClient::Object::OhlcvExchangeTimeseriesItem;
-use WWW::OpenAPIClient::Object::OptionsOptionExchangeGroup;
-use WWW::OpenAPIClient::Object::OptionsStrike;
 use WWW::OpenAPIClient::Object::V1Asset;
 use WWW::OpenAPIClient::Object::V1Chain;
 use WWW::OpenAPIClient::Object::V1ChainNetworkAddress;
@@ -316,11 +314,13 @@ use WWW::OpenAPIClient::Object::V1ListingItem;
 use WWW::OpenAPIClient::Object::V1Metric;
 use WWW::OpenAPIClient::Object::V1MetricData;
 use WWW::OpenAPIClient::Object::V1MetricInfo;
+use WWW::OpenAPIClient::Object::V1OptionExchangeGroup;
 use WWW::OpenAPIClient::Object::V1OrderBook;
 use WWW::OpenAPIClient::Object::V1OrderBookBase;
 use WWW::OpenAPIClient::Object::V1OrderBookDepth;
 use WWW::OpenAPIClient::Object::V1Quote;
 use WWW::OpenAPIClient::Object::V1QuoteTrade;
+use WWW::OpenAPIClient::Object::V1Strike;
 use WWW::OpenAPIClient::Object::V1Symbol;
 use WWW::OpenAPIClient::Object::V1SymbolMapping;
 use WWW::OpenAPIClient::Object::V1TimeseriesItem;
@@ -412,8 +412,6 @@ Class | Method | HTTP request | Description
 
 # DOCUMENTATION FOR MODELS
  - [WWW::OpenAPIClient::Object::OhlcvExchangeTimeseriesItem](docs/OhlcvExchangeTimeseriesItem.md)
- - [WWW::OpenAPIClient::Object::OptionsOptionExchangeGroup](docs/OptionsOptionExchangeGroup.md)
- - [WWW::OpenAPIClient::Object::OptionsStrike](docs/OptionsStrike.md)
  - [WWW::OpenAPIClient::Object::V1Asset](docs/V1Asset.md)
  - [WWW::OpenAPIClient::Object::V1Chain](docs/V1Chain.md)
  - [WWW::OpenAPIClient::Object::V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
@@ -429,11 +427,13 @@ Class | Method | HTTP request | Description
  - [WWW::OpenAPIClient::Object::V1Metric](docs/V1Metric.md)
  - [WWW::OpenAPIClient::Object::V1MetricData](docs/V1MetricData.md)
  - [WWW::OpenAPIClient::Object::V1MetricInfo](docs/V1MetricInfo.md)
+ - [WWW::OpenAPIClient::Object::V1OptionExchangeGroup](docs/V1OptionExchangeGroup.md)
  - [WWW::OpenAPIClient::Object::V1OrderBook](docs/V1OrderBook.md)
  - [WWW::OpenAPIClient::Object::V1OrderBookBase](docs/V1OrderBookBase.md)
  - [WWW::OpenAPIClient::Object::V1OrderBookDepth](docs/V1OrderBookDepth.md)
  - [WWW::OpenAPIClient::Object::V1Quote](docs/V1Quote.md)
  - [WWW::OpenAPIClient::Object::V1QuoteTrade](docs/V1QuoteTrade.md)
+ - [WWW::OpenAPIClient::Object::V1Strike](docs/V1Strike.md)
  - [WWW::OpenAPIClient::Object::V1Symbol](docs/V1Symbol.md)
  - [WWW::OpenAPIClient::Object::V1SymbolMapping](docs/V1SymbolMapping.md)
  - [WWW::OpenAPIClient::Object::V1TimeseriesItem](docs/V1TimeseriesItem.md)

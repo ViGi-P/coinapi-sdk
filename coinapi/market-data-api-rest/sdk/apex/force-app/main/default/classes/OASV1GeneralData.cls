@@ -11,7 +11,7 @@
  */
 
 /**
- * Class representation of general metric data. This class is an XML type with name \&#39;general_data\&#39; and inherits from the BaseCsvModel class.
+ * Class representation of general metric data. This class is an XML type with name &quot;general_data&quot; and inherits from the BaseCsvModel class.
  */
 public class OASV1GeneralData implements OAS.MappedProperties {
     /**

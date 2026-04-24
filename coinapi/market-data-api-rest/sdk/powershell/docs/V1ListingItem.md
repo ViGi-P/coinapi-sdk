@@ -4,13 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MetricId** | **String** | Gets or sets the metric ID. | [optional] 
-**SymbolId** | **String** | The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol. | [optional] 
-**SymbolIdExternal** | **String** | The exchange-native symbol identifier. Null for exchange-level metrics. | [optional] 
+**SymbolId** | **String** | Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics. | [optional] 
+**SymbolIdExternal** | **String** | Gets or sets the exchange-native symbol ID. Null for exchange-level metrics. | [optional] 
 **ExchangeId** | **String** | Gets or sets the exchange ID. | [optional] 
 **AssetId** | **String** | Gets or sets the asset ID. | [optional] 
-**AssetIdExternal** | **String** | Gets or sets the asset ID from the exchange. | [optional] 
-**ChainId** | **String** | Gets or sets the chain id. | [optional] 
-**NetworkId** | **String** | Gets or sets the network id. | [optional] 
+**AssetIdExternal** | **String** | Gets or sets the asset ID. | [optional] 
+**ChainId** | **String** | Gets or sets the chain ID. | [optional] 
+**NetworkId** | **String** | Gets or sets the network ID. | [optional] 
 
 ## Examples
 

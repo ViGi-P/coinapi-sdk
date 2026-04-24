@@ -15,15 +15,15 @@ import java.time.OffsetDateTime
 import org.openapitools.client.core.ApiModel
 
 case class OptionExchangeGroup (
-  /* The base asset identifier. */
+  /* Gets or sets the base asset identifier. */
   assetIdBase: Option[String] = None,
-  /* The quote asset identifier. */
+  /* Gets or sets the quote asset identifier. */
   assetIdQuote: Option[String] = None,
-  /* The underlying price of the option. */
+  /* Gets or sets the underlying price of the option. */
   underlyingPrice: Option[Double] = None,
-  /* The expiration time of the option. */
+  /* Gets or sets the expiration time of the option. */
   timeExpiration: Option[OffsetDateTime] = None,
-  /* The list of strikes available. */
+  /* Gets or sets the list of strikes available. */
   strikes: Option[Seq[Strike]] = None
 ) extends ApiModel
 

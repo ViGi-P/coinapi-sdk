@@ -6,11 +6,11 @@ Represents the base model for order book data.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**symbol_id** | **str** | The symbol identifier. | [optional] 
-**time_exchange** | **datetime** | The exchange time of the order book. | [optional] 
-**time_coinapi** | **datetime** | The CoinAPI time when the order book was received. | [optional] 
-**asks** | **object** | The asks made by market makers. | [optional] 
-**bids** | **object** | The bids made by market makers. | [optional] 
+**symbol_id** | **str** | Gets or sets the symbol identifier. | [optional] 
+**time_exchange** | **datetime** | Gets or sets the exchange time of the order book. | [optional] 
+**time_coinapi** | **datetime** | Gets or sets the CoinAPI time when the order book was received. | [optional] 
+**asks** | **object** | Gets or sets the asks made by market makers. | [optional] 
+**bids** | **object** | Gets or sets the bids made by market makers. | [optional] 
 
 ## Example
 

@@ -1,7 +1,7 @@
 /*
  * v1_general_data.h
  *
- * Class representation of general metric data. This class is an XML type with name &#39;general_data&#39; and inherits from the BaseCsvModel class.
+ * Class representation of general metric data. This class is an XML type with name \&quot;general_data\&quot; and inherits from the BaseCsvModel class.
  */
 
 #ifndef _v1_general_data_H_

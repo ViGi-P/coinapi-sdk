@@ -28,16 +28,16 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 /**
- * Represents a listing item.
+ * Represents a listing data item.
  *
  * @param metricId Gets or sets the metric ID.
- * @param symbolId The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
- * @param symbolIdExternal The exchange-native symbol identifier. Null for exchange-level metrics.
+ * @param symbolId Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
+ * @param symbolIdExternal Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
  * @param exchangeId Gets or sets the exchange ID.
  * @param assetId Gets or sets the asset ID.
- * @param assetIdExternal Gets or sets the asset ID from the exchange.
- * @param chainId Gets or sets the chain id.
- * @param networkId Gets or sets the network id.
+ * @param assetIdExternal Gets or sets the asset ID.
+ * @param chainId Gets or sets the chain ID.
+ * @param networkId Gets or sets the network ID.
  */
 
 
@@ -47,11 +47,11 @@ data class V1ListingItem (
     @Json(name = "metric_id")
     val metricId: kotlin.String? = null,
 
-    /* The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol. */
+    /* Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics. */
     @Json(name = "symbol_id")
     val symbolId: kotlin.String? = null,
 
-    /* The exchange-native symbol identifier. Null for exchange-level metrics. */
+    /* Gets or sets the exchange-native symbol ID. Null for exchange-level metrics. */
     @Json(name = "symbol_id_external")
     val symbolIdExternal: kotlin.String? = null,
 
@@ -63,15 +63,15 @@ data class V1ListingItem (
     @Json(name = "asset_id")
     val assetId: kotlin.String? = null,
 
-    /* Gets or sets the asset ID from the exchange. */
+    /* Gets or sets the asset ID. */
     @Json(name = "asset_id_external")
     val assetIdExternal: kotlin.String? = null,
 
-    /* Gets or sets the chain id. */
+    /* Gets or sets the chain ID. */
     @Json(name = "chain_id")
     val chainId: kotlin.String? = null,
 
-    /* Gets or sets the network id. */
+    /* Gets or sets the network ID. */
     @Json(name = "network_id")
     val networkId: kotlin.String? = null
 

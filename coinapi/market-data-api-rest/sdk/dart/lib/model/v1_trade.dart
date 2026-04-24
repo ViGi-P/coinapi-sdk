@@ -64,7 +64,7 @@ class V1Trade {
   ///
   double? price;
 
-  /// The base asset amount traded in the transaction.
+  /// The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated

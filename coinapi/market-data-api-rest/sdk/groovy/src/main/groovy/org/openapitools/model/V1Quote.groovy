@@ -7,18 +7,18 @@ import org.openapitools.jackson.nullable.JsonNullable;
 
 @Canonical
 class V1Quote {
-    /* The symbol identifier. */
+    /* Gets or sets the symbol identifier. */
     String symbolId
-    /* The exchange time of the quote. */
+    /* Gets or sets the exchange time of the quote. */
     Date timeExchange
-    /* The CoinAPI time when the quote was received. */
+    /* Gets or sets the CoinAPI time when the quote was received. */
     Date timeCoinapi
-    /* The best asking price. */
+    /* Gets or sets the best asking price. */
     Double askPrice
-    /* The volume resting on the best ask. If the value is equal to zero, then the size is unknown. */
+    /* Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown. */
     Double askSize
-    /* The best bidding price. */
+    /* Gets or sets the best bidding price. */
     Double bidPrice
-    /* The volume resting on the best bid. If the value is equal to zero, then the size is unknown. */
+    /* Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown. */
     Double bidSize
 }

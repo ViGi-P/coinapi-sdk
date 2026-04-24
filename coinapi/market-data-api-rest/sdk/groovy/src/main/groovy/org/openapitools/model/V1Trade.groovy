@@ -18,7 +18,7 @@ class V1Trade {
     UUID uuid
     /* The price of the transaction. */
     Double price
-    /* The base asset amount traded in the transaction. */
+    /* The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series. */
     Double size
     /* The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN). */
     String takerSide

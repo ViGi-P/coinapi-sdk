@@ -35,12 +35,12 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="V1TimeseriesPeriod" /> class.
         /// </summary>
-        /// <param name="periodId">The period ID.</param>
-        /// <param name="lengthSeconds">The length of the period in seconds.</param>
-        /// <param name="lengthMonths">The length of the period in months.</param>
-        /// <param name="unitCount">The unit count.</param>
-        /// <param name="unitName">The unit name.</param>
-        /// <param name="displayName">The display name of the timeseries period.</param>
+        /// <param name="periodId">Gets or sets the period ID.</param>
+        /// <param name="lengthSeconds">Gets or sets the length of the period in seconds.</param>
+        /// <param name="lengthMonths">Gets or sets the length of the period in months.</param>
+        /// <param name="unitCount">Gets or sets the unit count.</param>
+        /// <param name="unitName">Gets or sets the unit name.</param>
+        /// <param name="displayName">Gets or sets the display name of the timeseries period.</param>
         [JsonConstructor]
         public V1TimeseriesPeriod(Option<string?> periodId = default, Option<int?> lengthSeconds = default, Option<int?> lengthMonths = default, Option<int?> unitCount = default, Option<string?> unitName = default, Option<string?> displayName = default)
         {
@@ -63,9 +63,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> PeriodIdOption { get; private set; }
 
         /// <summary>
-        /// The period ID.
+        /// Gets or sets the period ID.
         /// </summary>
-        /// <value>The period ID.</value>
+        /// <value>Gets or sets the period ID.</value>
         [JsonPropertyName("period_id")]
         public string? PeriodId { get { return this.PeriodIdOption; } set { this.PeriodIdOption = new(value); } }
 
@@ -77,9 +77,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<int?> LengthSecondsOption { get; private set; }
 
         /// <summary>
-        /// The length of the period in seconds.
+        /// Gets or sets the length of the period in seconds.
         /// </summary>
-        /// <value>The length of the period in seconds.</value>
+        /// <value>Gets or sets the length of the period in seconds.</value>
         [JsonPropertyName("length_seconds")]
         public int? LengthSeconds { get { return this.LengthSecondsOption; } set { this.LengthSecondsOption = new(value); } }
 
@@ -91,9 +91,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<int?> LengthMonthsOption { get; private set; }
 
         /// <summary>
-        /// The length of the period in months.
+        /// Gets or sets the length of the period in months.
         /// </summary>
-        /// <value>The length of the period in months.</value>
+        /// <value>Gets or sets the length of the period in months.</value>
         [JsonPropertyName("length_months")]
         public int? LengthMonths { get { return this.LengthMonthsOption; } set { this.LengthMonthsOption = new(value); } }
 
@@ -105,9 +105,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<int?> UnitCountOption { get; private set; }
 
         /// <summary>
-        /// The unit count.
+        /// Gets or sets the unit count.
         /// </summary>
-        /// <value>The unit count.</value>
+        /// <value>Gets or sets the unit count.</value>
         [JsonPropertyName("unit_count")]
         public int? UnitCount { get { return this.UnitCountOption; } set { this.UnitCountOption = new(value); } }
 
@@ -119,9 +119,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> UnitNameOption { get; private set; }
 
         /// <summary>
-        /// The unit name.
+        /// Gets or sets the unit name.
         /// </summary>
-        /// <value>The unit name.</value>
+        /// <value>Gets or sets the unit name.</value>
         [JsonPropertyName("unit_name")]
         public string? UnitName { get { return this.UnitNameOption; } set { this.UnitNameOption = new(value); } }
 
@@ -133,9 +133,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> DisplayNameOption { get; private set; }
 
         /// <summary>
-        /// The display name of the timeseries period.
+        /// Gets or sets the display name of the timeseries period.
         /// </summary>
-        /// <value>The display name of the timeseries period.</value>
+        /// <value>Gets or sets the display name of the timeseries period.</value>
         [JsonPropertyName("display_name")]
         public string? DisplayName { get { return this.DisplayNameOption; } set { this.DisplayNameOption = new(value); } }
 

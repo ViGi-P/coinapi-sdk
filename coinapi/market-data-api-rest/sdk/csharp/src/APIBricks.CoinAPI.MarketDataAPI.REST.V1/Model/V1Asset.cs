@@ -54,8 +54,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <param name="supplyTotal">Gets or sets the total supply of the asset.</param>
         /// <param name="supplyMax">Gets or sets the maximum supply of the asset.</param>
         /// <param name="chainAddresses">chainAddresses</param>
-        /// <param name="dataStart">dataStart</param>
-        /// <param name="dataEnd">dataEnd</param>
+        /// <param name="dataStart">Gets the start date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.</param>
+        /// <param name="dataEnd">Gets the end date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.</param>
         [JsonConstructor]
         public V1Asset(Option<string?> assetId = default, Option<string?> name = default, Option<int?> typeIsCrypto = default, Option<DateTime?> dataQuoteStart = default, Option<DateTime?> dataQuoteEnd = default, Option<DateTime?> dataOrderbookStart = default, Option<DateTime?> dataOrderbookEnd = default, Option<DateTime?> dataTradeStart = default, Option<DateTime?> dataTradeEnd = default, Option<long?> dataSymbolsCount = default, Option<double?> volume1hrsUsd = default, Option<double?> volume1dayUsd = default, Option<double?> volume1mthUsd = default, Option<double?> priceUsd = default, Option<Guid?> idIcon = default, Option<double?> supplyCurrent = default, Option<double?> supplyTotal = default, Option<double?> supplyMax = default, Option<List<V1ChainNetworkAddress>?> chainAddresses = default, Option<string?> dataStart = default, Option<string?> dataEnd = default)
         {
@@ -358,8 +358,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> DataStartOption { get; }
 
         /// <summary>
-        /// Gets or Sets DataStart
+        /// Gets the start date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.
         /// </summary>
+        /// <value>Gets the start date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.</value>
         [JsonPropertyName("data_start")]
         public string? DataStart { get { return this.DataStartOption; } }
 
@@ -371,8 +372,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> DataEndOption { get; }
 
         /// <summary>
-        /// Gets or Sets DataEnd
+        /// Gets the end date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.
         /// </summary>
+        /// <value>Gets the end date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.</value>
         [JsonPropertyName("data_end")]
         public string? DataEnd { get { return this.DataEndOption; } }
 

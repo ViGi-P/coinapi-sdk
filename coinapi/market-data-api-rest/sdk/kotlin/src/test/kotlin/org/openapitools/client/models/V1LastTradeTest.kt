@@ -33,37 +33,37 @@ class V1LastTradeTest : ShouldSpec() {
         // uncomment below to create an instance of V1LastTrade
         //val modelInstance = V1LastTrade()
 
-        // to test the property `timeExchange` - The exchange time of the last trade.
+        // to test the property `timeExchange` - Gets or sets the exchange time of the last trade.
         should("test timeExchange") {
             // uncomment below to test the property
             //modelInstance.timeExchange shouldBe ("TODO")
         }
 
-        // to test the property `timeCoinapi` - The CoinAPI time when the last trade was received.
+        // to test the property `timeCoinapi` - Gets or sets the CoinAPI time when the last trade was received.
         should("test timeCoinapi") {
             // uncomment below to test the property
             //modelInstance.timeCoinapi shouldBe ("TODO")
         }
 
-        // to test the property `uuid` - The UUID of the last trade.
+        // to test the property `uuid` - Gets or sets the UUID of the last trade.
         should("test uuid") {
             // uncomment below to test the property
             //modelInstance.uuid shouldBe ("TODO")
         }
 
-        // to test the property `price` - The price of the last trade.
+        // to test the property `price` - Gets or sets the price of the last trade.
         should("test price") {
             // uncomment below to test the property
             //modelInstance.price shouldBe ("TODO")
         }
 
-        // to test the property `propertySize` - The size of the last trade.
+        // to test the property `propertySize` - Gets or sets the size of the last trade.
         should("test propertySize") {
             // uncomment below to test the property
             //modelInstance.propertySize shouldBe ("TODO")
         }
 
-        // to test the property `takerSide` - The taker side of the last trade.
+        // to test the property `takerSide` - Gets or sets the taker side of the last trade.
         should("test takerSide") {
             // uncomment below to test the property
             //modelInstance.takerSide shouldBe ("TODO")

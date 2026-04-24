@@ -24,14 +24,14 @@ inherit
 feature -- API Access
 
 
-	v1_options_exchange_id_current_get (exchange_id: STRING_32): detachable LIST [OPTIONS_OPTION_EXCHANGE_GROUP]
+	v1_options_exchange_id_current_get (exchange_id: STRING_32): detachable LIST [V1_OPTION_EXCHANGE_GROUP]
 			-- Current data by Exchange
 			-- Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
 			-- 
 			-- argument: exchange_id Exchange identifier (from the Metadata -&gt; Exchanges) (required)
 			-- 
 			-- 
-			-- Result LIST [OPTIONS_OPTION_EXCHANGE_GROUP]
+			-- Result LIST [V1_OPTION_EXCHANGE_GROUP]
 		require
 		local
   			l_path: STRING
@@ -53,7 +53,7 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [OPTIONS_OPTION_EXCHANGE_GROUP] } l_response.data ({ LIST [OPTIONS_OPTION_EXCHANGE_GROUP] }) as l_data then
+			elseif attached { LIST [V1_OPTION_EXCHANGE_GROUP] } l_response.data ({ LIST [V1_OPTION_EXCHANGE_GROUP] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")

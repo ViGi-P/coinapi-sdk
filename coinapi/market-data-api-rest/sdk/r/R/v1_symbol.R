@@ -7,58 +7,58 @@
 #' @title V1Symbol
 #' @description V1Symbol Class
 #' @format An \code{R6Class} generator object
-#' @field symbol_id The symbol identifier. character [optional]
-#' @field exchange_id The exchange identifier. character [optional]
-#' @field symbol_type The symbol type. character [optional]
-#' @field asset_id_base The base asset identifier. character [optional]
-#' @field asset_id_quote The quote asset identifier. character [optional]
-#' @field asset_id_unit The unit asset identifier. character [optional]
-#' @field future_contract_unit The contract unit for futures. numeric [optional]
-#' @field future_contract_unit_asset The asset used as the unit for futures contract. character [optional]
-#' @field future_delivery_time The future delivery time for futures contract. character [optional]
-#' @field option_type_is_call Indicates whether the option type is a call. character [optional]
-#' @field option_strike_price The strike price for options. numeric [optional]
-#' @field option_contract_unit The contract unit for options. numeric [optional]
-#' @field option_exercise_style The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. character [optional]
-#' @field option_expiration_time The expiration time for options. character [optional]
-#' @field contract_delivery_time The delivery time for contracts. character [optional]
-#' @field contract_unit The contract unit for contracts. numeric [optional]
-#' @field contract_unit_asset The asset used as the unit for contracts. character [optional]
-#' @field contract_id The contract identifier. character [optional]
-#' @field contract_display_name The display name of the contract. character [optional]
-#' @field contract_display_description The display description of the contract. character [optional]
-#' @field data_start  character [optional]
-#' @field data_end  character [optional]
-#' @field data_quote_start The start date of quote data. character [optional]
-#' @field data_quote_end The end date of quote data. character [optional]
-#' @field data_orderbook_start The start date of order book data. character [optional]
-#' @field data_orderbook_end The end date of order book data. character [optional]
-#' @field data_trade_start The start date of trade data. character [optional]
-#' @field data_trade_end The end date of trade data. character [optional]
-#' @field index_id The index identifier. character [optional]
-#' @field index_display_name The display name of the index. character [optional]
-#' @field index_display_description The display description of the index. character [optional]
-#' @field volume_1hrs The volume in the last 1 hour. numeric [optional]
-#' @field volume_1hrs_usd The volume in USD in the last 1 hour. numeric [optional]
-#' @field volume_1day The volume in the last 1 day. numeric [optional]
-#' @field volume_1day_usd The volume in USD in the last 1 day. numeric [optional]
-#' @field volume_1mth The volume in the last 1 month. numeric [optional]
-#' @field volume_1mth_usd The volume in USD in the last 1 month. numeric [optional]
-#' @field price The price. numeric [optional]
-#' @field symbol_id_exchange The symbol identifier in the exchange. character [optional]
-#' @field asset_id_base_exchange The base asset identifier in the exchange. character [optional]
-#' @field asset_id_quote_exchange The quote asset identifier in the exchange. character [optional]
-#' @field price_precision The price precision. numeric [optional]
-#' @field size_precision The size precision. numeric [optional]
+#' @field symbol_id Gets or sets the symbol identifier. character [optional]
+#' @field exchange_id Gets or sets the exchange identifier. character [optional]
+#' @field symbol_type Gets or sets the symbol type. character [optional]
+#' @field asset_id_base Gets or sets the base asset identifier. character [optional]
+#' @field asset_id_quote Gets or sets the quote asset identifier. character [optional]
+#' @field asset_id_unit Gets or sets the unit asset identifier. character [optional]
+#' @field future_contract_unit Gets or sets the contract unit for futures. numeric [optional]
+#' @field future_contract_unit_asset Gets or sets the asset used as the unit for futures contract. character [optional]
+#' @field future_delivery_time Gets or sets the future delivery time for futures contract. character [optional]
+#' @field option_type_is_call Gets or sets a value indicating whether the option type is a call. character [optional]
+#' @field option_strike_price Gets or sets the strike price for options. numeric [optional]
+#' @field option_contract_unit Gets or sets the contract unit for options. numeric [optional]
+#' @field option_exercise_style Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. character [optional]
+#' @field option_expiration_time Gets or sets the expiration time for options. character [optional]
+#' @field contract_delivery_time Gets or sets the delivery time for contracts. character [optional]
+#' @field contract_unit Gets or sets the contract unit for contracts. numeric [optional]
+#' @field contract_unit_asset Gets or sets the asset used as the unit for contracts. character [optional]
+#' @field contract_id Gets or sets the contract identifier. character [optional]
+#' @field contract_display_name Gets or sets the display name of the contract. character [optional]
+#' @field contract_display_description Gets or sets the display description of the contract. character [optional]
+#' @field data_start Gets the start date of the data in string format (\"yyyy-MM-dd\"). character [optional]
+#' @field data_end Gets the end date of the data in string format (\"yyyy-MM-dd\"). character [optional]
+#' @field data_quote_start Gets or sets the start date of quote data. character [optional]
+#' @field data_quote_end Gets or sets the end date of quote data. character [optional]
+#' @field data_orderbook_start Gets or sets the start date of order book data. character [optional]
+#' @field data_orderbook_end Gets or sets the end date of order book data. character [optional]
+#' @field data_trade_start Gets or sets the start date of trade data. character [optional]
+#' @field data_trade_end Gets or sets the end date of trade data. character [optional]
+#' @field index_id Gets or sets the index identifier. character [optional]
+#' @field index_display_name Gets or sets the display name of the index. character [optional]
+#' @field index_display_description Gets or sets the display description of the index. character [optional]
+#' @field volume_1hrs Gets or sets the volume in the last 1 hour. numeric [optional]
+#' @field volume_1hrs_usd Gets or sets the volume in USD in the last 1 hour. numeric [optional]
+#' @field volume_1day Gets or sets the volume in the last 1 day. numeric [optional]
+#' @field volume_1day_usd Gets or sets the volume in USD in the last 1 day. numeric [optional]
+#' @field volume_1mth Gets or sets the volume in the last 1 month. numeric [optional]
+#' @field volume_1mth_usd Gets or sets the volume in USD in the last 1 month. numeric [optional]
+#' @field price Gets or sets the price. numeric [optional]
+#' @field symbol_id_exchange Gets or sets the symbol identifier in the exchange. character [optional]
+#' @field asset_id_base_exchange Gets or sets the base asset identifier in the exchange. character [optional]
+#' @field asset_id_quote_exchange Gets or sets the quote asset identifier in the exchange. character [optional]
+#' @field price_precision Gets or sets the price precision. numeric [optional]
+#' @field size_precision Gets or sets the size precision. numeric [optional]
 #' @field raw_kvp Key Value Pair store with raw data from the data source. named list(character) [optional]
-#' @field future_is_inverse Indicates whether the futures contract is inverse (coin-margined). character [optional]
-#' @field future_is_quanto Indicates whether the futures contract is quanto. character [optional]
-#' @field volume_to_usd Volume unit in USD. numeric [optional]
-#' @field option_barrier_up_price The up barrier price for barrier options. numeric [optional]
-#' @field option_barrier_up_type The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. character [optional]
-#' @field option_barrier_down_price The down barrier price for barrier options. numeric [optional]
-#' @field option_barrier_down_type The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. character [optional]
-#' @field symbol_id_int The symbol identifier in integer immutable format, used to correlate data across different APIs. integer [optional]
+#' @field future_is_inverse Gets or sets a value indicating whether the futures contract is inverse (coin-margined). character [optional]
+#' @field future_is_quanto Gets or sets a value indicating whether the futures contract is quanto. character [optional]
+#' @field volume_to_usd Gets or sets the volume in USD. numeric [optional]
+#' @field option_barrier_up_price Gets or sets the up barrier price for barrier options. numeric [optional]
+#' @field option_barrier_up_type Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. character [optional]
+#' @field option_barrier_down_price Gets or sets the down barrier price for barrier options. numeric [optional]
+#' @field option_barrier_down_type Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. character [optional]
+#' @field symbol_id_int Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs. integer [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -121,58 +121,58 @@ V1Symbol <- R6::R6Class(
     #' @description
     #' Initialize a new V1Symbol class.
     #'
-    #' @param symbol_id The symbol identifier.
-    #' @param exchange_id The exchange identifier.
-    #' @param symbol_type The symbol type.
-    #' @param asset_id_base The base asset identifier.
-    #' @param asset_id_quote The quote asset identifier.
-    #' @param asset_id_unit The unit asset identifier.
-    #' @param future_contract_unit The contract unit for futures.
-    #' @param future_contract_unit_asset The asset used as the unit for futures contract.
-    #' @param future_delivery_time The future delivery time for futures contract.
-    #' @param option_type_is_call Indicates whether the option type is a call.
-    #' @param option_strike_price The strike price for options.
-    #' @param option_contract_unit The contract unit for options.
-    #' @param option_exercise_style The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
-    #' @param option_expiration_time The expiration time for options.
-    #' @param contract_delivery_time The delivery time for contracts.
-    #' @param contract_unit The contract unit for contracts.
-    #' @param contract_unit_asset The asset used as the unit for contracts.
-    #' @param contract_id The contract identifier.
-    #' @param contract_display_name The display name of the contract.
-    #' @param contract_display_description The display description of the contract.
-    #' @param data_start data_start
-    #' @param data_end data_end
-    #' @param data_quote_start The start date of quote data.
-    #' @param data_quote_end The end date of quote data.
-    #' @param data_orderbook_start The start date of order book data.
-    #' @param data_orderbook_end The end date of order book data.
-    #' @param data_trade_start The start date of trade data.
-    #' @param data_trade_end The end date of trade data.
-    #' @param index_id The index identifier.
-    #' @param index_display_name The display name of the index.
-    #' @param index_display_description The display description of the index.
-    #' @param volume_1hrs The volume in the last 1 hour.
-    #' @param volume_1hrs_usd The volume in USD in the last 1 hour.
-    #' @param volume_1day The volume in the last 1 day.
-    #' @param volume_1day_usd The volume in USD in the last 1 day.
-    #' @param volume_1mth The volume in the last 1 month.
-    #' @param volume_1mth_usd The volume in USD in the last 1 month.
-    #' @param price The price.
-    #' @param symbol_id_exchange The symbol identifier in the exchange.
-    #' @param asset_id_base_exchange The base asset identifier in the exchange.
-    #' @param asset_id_quote_exchange The quote asset identifier in the exchange.
-    #' @param price_precision The price precision.
-    #' @param size_precision The size precision.
+    #' @param symbol_id Gets or sets the symbol identifier.
+    #' @param exchange_id Gets or sets the exchange identifier.
+    #' @param symbol_type Gets or sets the symbol type.
+    #' @param asset_id_base Gets or sets the base asset identifier.
+    #' @param asset_id_quote Gets or sets the quote asset identifier.
+    #' @param asset_id_unit Gets or sets the unit asset identifier.
+    #' @param future_contract_unit Gets or sets the contract unit for futures.
+    #' @param future_contract_unit_asset Gets or sets the asset used as the unit for futures contract.
+    #' @param future_delivery_time Gets or sets the future delivery time for futures contract.
+    #' @param option_type_is_call Gets or sets a value indicating whether the option type is a call.
+    #' @param option_strike_price Gets or sets the strike price for options.
+    #' @param option_contract_unit Gets or sets the contract unit for options.
+    #' @param option_exercise_style Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+    #' @param option_expiration_time Gets or sets the expiration time for options.
+    #' @param contract_delivery_time Gets or sets the delivery time for contracts.
+    #' @param contract_unit Gets or sets the contract unit for contracts.
+    #' @param contract_unit_asset Gets or sets the asset used as the unit for contracts.
+    #' @param contract_id Gets or sets the contract identifier.
+    #' @param contract_display_name Gets or sets the display name of the contract.
+    #' @param contract_display_description Gets or sets the display description of the contract.
+    #' @param data_start Gets the start date of the data in string format (\"yyyy-MM-dd\").
+    #' @param data_end Gets the end date of the data in string format (\"yyyy-MM-dd\").
+    #' @param data_quote_start Gets or sets the start date of quote data.
+    #' @param data_quote_end Gets or sets the end date of quote data.
+    #' @param data_orderbook_start Gets or sets the start date of order book data.
+    #' @param data_orderbook_end Gets or sets the end date of order book data.
+    #' @param data_trade_start Gets or sets the start date of trade data.
+    #' @param data_trade_end Gets or sets the end date of trade data.
+    #' @param index_id Gets or sets the index identifier.
+    #' @param index_display_name Gets or sets the display name of the index.
+    #' @param index_display_description Gets or sets the display description of the index.
+    #' @param volume_1hrs Gets or sets the volume in the last 1 hour.
+    #' @param volume_1hrs_usd Gets or sets the volume in USD in the last 1 hour.
+    #' @param volume_1day Gets or sets the volume in the last 1 day.
+    #' @param volume_1day_usd Gets or sets the volume in USD in the last 1 day.
+    #' @param volume_1mth Gets or sets the volume in the last 1 month.
+    #' @param volume_1mth_usd Gets or sets the volume in USD in the last 1 month.
+    #' @param price Gets or sets the price.
+    #' @param symbol_id_exchange Gets or sets the symbol identifier in the exchange.
+    #' @param asset_id_base_exchange Gets or sets the base asset identifier in the exchange.
+    #' @param asset_id_quote_exchange Gets or sets the quote asset identifier in the exchange.
+    #' @param price_precision Gets or sets the price precision.
+    #' @param size_precision Gets or sets the size precision.
     #' @param raw_kvp Key Value Pair store with raw data from the data source.
-    #' @param future_is_inverse Indicates whether the futures contract is inverse (coin-margined).
-    #' @param future_is_quanto Indicates whether the futures contract is quanto.
-    #' @param volume_to_usd Volume unit in USD.
-    #' @param option_barrier_up_price The up barrier price for barrier options.
-    #' @param option_barrier_up_type The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
-    #' @param option_barrier_down_price The down barrier price for barrier options.
-    #' @param option_barrier_down_type The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
-    #' @param symbol_id_int The symbol identifier in integer immutable format, used to correlate data across different APIs.
+    #' @param future_is_inverse Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
+    #' @param future_is_quanto Gets or sets a value indicating whether the futures contract is quanto.
+    #' @param volume_to_usd Gets or sets the volume in USD.
+    #' @param option_barrier_up_price Gets or sets the up barrier price for barrier options.
+    #' @param option_barrier_up_type Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+    #' @param option_barrier_down_price Gets or sets the down barrier price for barrier options.
+    #' @param option_barrier_down_type Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+    #' @param symbol_id_int Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
     #' @param ... Other optional arguments.
     initialize = function(`symbol_id` = NULL, `exchange_id` = NULL, `symbol_type` = NULL, `asset_id_base` = NULL, `asset_id_quote` = NULL, `asset_id_unit` = NULL, `future_contract_unit` = NULL, `future_contract_unit_asset` = NULL, `future_delivery_time` = NULL, `option_type_is_call` = NULL, `option_strike_price` = NULL, `option_contract_unit` = NULL, `option_exercise_style` = NULL, `option_expiration_time` = NULL, `contract_delivery_time` = NULL, `contract_unit` = NULL, `contract_unit_asset` = NULL, `contract_id` = NULL, `contract_display_name` = NULL, `contract_display_description` = NULL, `data_start` = NULL, `data_end` = NULL, `data_quote_start` = NULL, `data_quote_end` = NULL, `data_orderbook_start` = NULL, `data_orderbook_end` = NULL, `data_trade_start` = NULL, `data_trade_end` = NULL, `index_id` = NULL, `index_display_name` = NULL, `index_display_description` = NULL, `volume_1hrs` = NULL, `volume_1hrs_usd` = NULL, `volume_1day` = NULL, `volume_1day_usd` = NULL, `volume_1mth` = NULL, `volume_1mth_usd` = NULL, `price` = NULL, `symbol_id_exchange` = NULL, `asset_id_base_exchange` = NULL, `asset_id_quote_exchange` = NULL, `price_precision` = NULL, `size_precision` = NULL, `raw_kvp` = NULL, `future_is_inverse` = NULL, `future_is_quanto` = NULL, `volume_to_usd` = NULL, `option_barrier_up_price` = NULL, `option_barrier_up_type` = NULL, `option_barrier_down_price` = NULL, `option_barrier_down_type` = NULL, `symbol_id_int` = NULL, ...) {
       if (!is.null(`symbol_id`)) {

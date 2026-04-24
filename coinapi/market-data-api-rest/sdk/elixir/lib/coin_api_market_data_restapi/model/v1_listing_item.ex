@@ -3,7 +3,7 @@
 
 defmodule CoinAPIMarketDataRESTAPI.Model.V1ListingItem do
   @moduledoc """
-  Represents a listing item.
+  Represents a listing data item.
   """
 
   @derive JSON.Encoder

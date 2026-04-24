@@ -278,8 +278,9 @@ public class V1Asset {
   }
 
   /**
+   * Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".")
   public String getDataStart() {
     return dataStart;
   }
@@ -288,8 +289,9 @@ public class V1Asset {
   }
 
   /**
+   * Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".")
   public String getDataEnd() {
     return dataEnd;
   }

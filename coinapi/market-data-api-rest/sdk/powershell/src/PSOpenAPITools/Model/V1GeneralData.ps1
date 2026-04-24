@@ -13,7 +13,7 @@ No summary available.
 
 .DESCRIPTION
 
-Class representation of general metric data. This class is an XML type with name 'general_data' and inherits from the BaseCsvModel class.
+Class representation of general metric data. This class is an XML type with name ""general_data"" and inherits from the BaseCsvModel class.
 
 .PARAMETER EntryTime
 Gets or sets the entry time for the data point.

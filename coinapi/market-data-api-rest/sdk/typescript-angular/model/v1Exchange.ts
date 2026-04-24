@@ -26,7 +26,13 @@ export interface V1Exchange {
      * Gets or sets the name of the exchange.
      */
     name?: string | null;
+    /**
+     * Gets the start date of the exchange\'s data.
+     */
     readonly data_start?: string | null;
+    /**
+     * Gets the end date of the exchange\'s data.
+     */
     readonly data_end?: string | null;
     /**
      * Gets or sets the start date of quote data.
@@ -81,7 +87,7 @@ export interface V1Exchange {
      */
     readonly icons?: Array<V1Icon> | null;
     /**
-     * Rank of the exchange.
+     * Rank of the exchange - higher rank means exchange is more reliable
      */
     rank?: number;
     /**

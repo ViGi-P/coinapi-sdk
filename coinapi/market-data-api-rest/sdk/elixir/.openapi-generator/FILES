@@ -17,8 +17,6 @@ lib/coin_api_market_data_restapi/api/trades.ex
 lib/coin_api_market_data_restapi/connection.ex
 lib/coin_api_market_data_restapi/deserializer.ex
 lib/coin_api_market_data_restapi/model/ohlcv_exchange_timeseries_item.ex
-lib/coin_api_market_data_restapi/model/options_option_exchange_group.ex
-lib/coin_api_market_data_restapi/model/options_strike.ex
 lib/coin_api_market_data_restapi/model/v1_asset.ex
 lib/coin_api_market_data_restapi/model/v1_chain.ex
 lib/coin_api_market_data_restapi/model/v1_chain_network_address.ex
@@ -34,11 +32,13 @@ lib/coin_api_market_data_restapi/model/v1_listing_item.ex
 lib/coin_api_market_data_restapi/model/v1_metric.ex
 lib/coin_api_market_data_restapi/model/v1_metric_data.ex
 lib/coin_api_market_data_restapi/model/v1_metric_info.ex
+lib/coin_api_market_data_restapi/model/v1_option_exchange_group.ex
 lib/coin_api_market_data_restapi/model/v1_order_book.ex
 lib/coin_api_market_data_restapi/model/v1_order_book_base.ex
 lib/coin_api_market_data_restapi/model/v1_order_book_depth.ex
 lib/coin_api_market_data_restapi/model/v1_quote.ex
 lib/coin_api_market_data_restapi/model/v1_quote_trade.ex
+lib/coin_api_market_data_restapi/model/v1_strike.ex
 lib/coin_api_market_data_restapi/model/v1_symbol.ex
 lib/coin_api_market_data_restapi/model/v1_symbol_mapping.ex
 lib/coin_api_market_data_restapi/model/v1_timeseries_item.ex

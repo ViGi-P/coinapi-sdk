@@ -5,7 +5,7 @@
 #include <cstring>
 #include <list>
 #include <glib.h>
-#include "Options.OptionExchangeGroup.h"
+#include "V1.OptionExchangeGroup.h"
 #include <list>
 #include "Error.h"
 
@@ -35,7 +35,7 @@ public:
  */
 bool v1OptionsExchangeIdCurrentGetSync(char * accessToken,
 	std::string exchangeId, 
-	void(* handler)(std::list<Options.OptionExchangeGroup>, Error, void* )
+	void(* handler)(std::list<V1.OptionExchangeGroup>, Error, void* )
 	, void* userData);
 
 /*! \brief Current data by Exchange. *Asynchronous*
@@ -48,7 +48,7 @@ bool v1OptionsExchangeIdCurrentGetSync(char * accessToken,
  */
 bool v1OptionsExchangeIdCurrentGetAsync(char * accessToken,
 	std::string exchangeId, 
-	void(* handler)(std::list<Options.OptionExchangeGroup>, Error, void* )
+	void(* handler)(std::list<V1.OptionExchangeGroup>, Error, void* )
 	, void* userData);
 
 

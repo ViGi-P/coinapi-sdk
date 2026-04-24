@@ -367,7 +367,7 @@ class V1TimeseriesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_period_start
      *
-     * @param \DateTime|null $time_period_start The start time of the time period.
+     * @param \DateTime|null $time_period_start Gets or sets the start time of the time period.
      *
      * @return self
      */
@@ -394,7 +394,7 @@ class V1TimeseriesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_period_end
      *
-     * @param \DateTime|null $time_period_end The end time of the time period.
+     * @param \DateTime|null $time_period_end Gets or sets the end time of the time period.
      *
      * @return self
      */
@@ -421,7 +421,7 @@ class V1TimeseriesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_open
      *
-     * @param \DateTime|null $time_open The time when the price opened.
+     * @param \DateTime|null $time_open Gets or sets the time when the price opened.
      *
      * @return self
      */
@@ -455,7 +455,7 @@ class V1TimeseriesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_close
      *
-     * @param \DateTime|null $time_close The time when the price closed.
+     * @param \DateTime|null $time_close Gets or sets the time when the price closed.
      *
      * @return self
      */
@@ -489,7 +489,7 @@ class V1TimeseriesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_open
      *
-     * @param float|null $price_open The opening price.
+     * @param float|null $price_open Gets or sets the opening price.
      *
      * @return self
      */
@@ -523,7 +523,7 @@ class V1TimeseriesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_high
      *
-     * @param float|null $price_high The highest price during the time period.
+     * @param float|null $price_high Gets or sets the highest price during the time period.
      *
      * @return self
      */
@@ -557,7 +557,7 @@ class V1TimeseriesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_low
      *
-     * @param float|null $price_low The lowest price during the time period.
+     * @param float|null $price_low Gets or sets the lowest price during the time period.
      *
      * @return self
      */
@@ -591,7 +591,7 @@ class V1TimeseriesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price_close
      *
-     * @param float|null $price_close The closing price.
+     * @param float|null $price_close Gets or sets the closing price.
      *
      * @return self
      */
@@ -625,7 +625,7 @@ class V1TimeseriesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets volume_traded
      *
-     * @param float|null $volume_traded The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+     * @param float|null $volume_traded Gets or sets the total volume traded during the time period.
      *
      * @return self
      */
@@ -652,7 +652,7 @@ class V1TimeseriesItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets trades_count
      *
-     * @param int|null $trades_count The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+     * @param int|null $trades_count Gets or sets the number of trades executed during the time period.
      *
      * @return self
      */

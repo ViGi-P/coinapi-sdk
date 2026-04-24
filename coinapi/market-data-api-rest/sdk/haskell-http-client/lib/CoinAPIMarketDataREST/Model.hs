@@ -156,16 +156,16 @@ newtype TimeStartDateTime = TimeStartDateTime { unTimeStartDateTime :: DateTime 
 -- | OhlcvExchangeTimeseriesItem
 -- Represents a timeseries item with price and volume information.
 data OhlcvExchangeTimeseriesItem = OhlcvExchangeTimeseriesItem
-  { ohlcvExchangeTimeseriesItemTimePeriodStart :: !(Maybe DateTime) -- ^ "time_period_start" - The start time of the time period.
-  , ohlcvExchangeTimeseriesItemTimePeriodEnd :: !(Maybe DateTime) -- ^ "time_period_end" - The end time of the time period.
-  , ohlcvExchangeTimeseriesItemTimeOpen :: !(Maybe DateTime) -- ^ "time_open" - The time when the price opened.
-  , ohlcvExchangeTimeseriesItemTimeClose :: !(Maybe DateTime) -- ^ "time_close" - The time when the price closed.
-  , ohlcvExchangeTimeseriesItemPriceOpen :: !(Maybe Double) -- ^ "price_open" - The opening price.
-  , ohlcvExchangeTimeseriesItemPriceHigh :: !(Maybe Double) -- ^ "price_high" - The highest price during the time period.
-  , ohlcvExchangeTimeseriesItemPriceLow :: !(Maybe Double) -- ^ "price_low" - The lowest price during the time period.
-  , ohlcvExchangeTimeseriesItemPriceClose :: !(Maybe Double) -- ^ "price_close" - The closing price.
-  , ohlcvExchangeTimeseriesItemVolumeTraded :: !(Maybe Double) -- ^ "volume_traded" - The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
-  , ohlcvExchangeTimeseriesItemTradesCount :: !(Maybe Integer) -- ^ "trades_count" - The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+  { ohlcvExchangeTimeseriesItemTimePeriodStart :: !(Maybe DateTime) -- ^ "time_period_start" - Gets or sets the start time of the time period.
+  , ohlcvExchangeTimeseriesItemTimePeriodEnd :: !(Maybe DateTime) -- ^ "time_period_end" - Gets or sets the end time of the time period.
+  , ohlcvExchangeTimeseriesItemTimeOpen :: !(Maybe DateTime) -- ^ "time_open" - Gets or sets the time when the price opened.
+  , ohlcvExchangeTimeseriesItemTimeClose :: !(Maybe DateTime) -- ^ "time_close" - Gets or sets the time when the price closed.
+  , ohlcvExchangeTimeseriesItemPriceOpen :: !(Maybe Double) -- ^ "price_open" - Gets or sets the opening price.
+  , ohlcvExchangeTimeseriesItemPriceHigh :: !(Maybe Double) -- ^ "price_high" - Gets or sets the highest price during the time period.
+  , ohlcvExchangeTimeseriesItemPriceLow :: !(Maybe Double) -- ^ "price_low" - Gets or sets the lowest price during the time period.
+  , ohlcvExchangeTimeseriesItemPriceClose :: !(Maybe Double) -- ^ "price_close" - Gets or sets the closing price.
+  , ohlcvExchangeTimeseriesItemVolumeTraded :: !(Maybe Double) -- ^ "volume_traded" - Gets or sets the total volume traded during the time period.
+  , ohlcvExchangeTimeseriesItemTradesCount :: !(Maybe Integer) -- ^ "trades_count" - Gets or sets the number of trades executed during the time period.
   , ohlcvExchangeTimeseriesItemSymbolIdExchange :: !(Maybe Text) -- ^ "symbol_id_exchange"
   , ohlcvExchangeTimeseriesItemSymbolIdCoinapi :: !(Maybe Text) -- ^ "symbol_id_coinapi"
   } deriving (P.Show, P.Eq, P.Typeable)
@@ -225,88 +225,6 @@ mkOhlcvExchangeTimeseriesItem =
   , ohlcvExchangeTimeseriesItemSymbolIdCoinapi = Nothing
   }
 
--- ** OptionsOptionExchangeGroup
--- | OptionsOptionExchangeGroup
--- Represents an option exchange group data model.
-data OptionsOptionExchangeGroup = OptionsOptionExchangeGroup
-  { optionsOptionExchangeGroupAssetIdBase :: !(Maybe Text) -- ^ "asset_id_base" - The base asset identifier.
-  , optionsOptionExchangeGroupAssetIdQuote :: !(Maybe Text) -- ^ "asset_id_quote" - The quote asset identifier.
-  , optionsOptionExchangeGroupUnderlyingPrice :: !(Maybe Double) -- ^ "underlying_price" - The underlying price of the option.
-  , optionsOptionExchangeGroupTimeExpiration :: !(Maybe DateTime) -- ^ "time_expiration" - The expiration time of the option.
-  , optionsOptionExchangeGroupStrikes :: !(Maybe [OptionsStrike]) -- ^ "strikes" - The list of strikes available.
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON OptionsOptionExchangeGroup
-instance A.FromJSON OptionsOptionExchangeGroup where
-  parseJSON = A.withObject "OptionsOptionExchangeGroup" $ \o ->
-    OptionsOptionExchangeGroup
-      <$> (o .:? "asset_id_base")
-      <*> (o .:? "asset_id_quote")
-      <*> (o .:? "underlying_price")
-      <*> (o .:? "time_expiration")
-      <*> (o .:? "strikes")
-
--- | ToJSON OptionsOptionExchangeGroup
-instance A.ToJSON OptionsOptionExchangeGroup where
-  toJSON OptionsOptionExchangeGroup {..} =
-   _omitNulls
-      [ "asset_id_base" .= optionsOptionExchangeGroupAssetIdBase
-      , "asset_id_quote" .= optionsOptionExchangeGroupAssetIdQuote
-      , "underlying_price" .= optionsOptionExchangeGroupUnderlyingPrice
-      , "time_expiration" .= optionsOptionExchangeGroupTimeExpiration
-      , "strikes" .= optionsOptionExchangeGroupStrikes
-      ]
-
-
--- | Construct a value of type 'OptionsOptionExchangeGroup' (by applying it's required fields, if any)
-mkOptionsOptionExchangeGroup
-  :: OptionsOptionExchangeGroup
-mkOptionsOptionExchangeGroup =
-  OptionsOptionExchangeGroup
-  { optionsOptionExchangeGroupAssetIdBase = Nothing
-  , optionsOptionExchangeGroupAssetIdQuote = Nothing
-  , optionsOptionExchangeGroupUnderlyingPrice = Nothing
-  , optionsOptionExchangeGroupTimeExpiration = Nothing
-  , optionsOptionExchangeGroupStrikes = Nothing
-  }
-
--- ** OptionsStrike
--- | OptionsStrike
--- Represents a strike within the option exchange group.
-data OptionsStrike = OptionsStrike
-  { optionsStrikeStrikePrice :: !(Maybe Double) -- ^ "strike_price" - The strike price.
-  , optionsStrikeCall :: !(Maybe V1QuoteTrade) -- ^ "call"
-  , optionsStrikePut :: !(Maybe V1QuoteTrade) -- ^ "put"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON OptionsStrike
-instance A.FromJSON OptionsStrike where
-  parseJSON = A.withObject "OptionsStrike" $ \o ->
-    OptionsStrike
-      <$> (o .:? "strike_price")
-      <*> (o .:? "call")
-      <*> (o .:? "put")
-
--- | ToJSON OptionsStrike
-instance A.ToJSON OptionsStrike where
-  toJSON OptionsStrike {..} =
-   _omitNulls
-      [ "strike_price" .= optionsStrikeStrikePrice
-      , "call" .= optionsStrikeCall
-      , "put" .= optionsStrikePut
-      ]
-
-
--- | Construct a value of type 'OptionsStrike' (by applying it's required fields, if any)
-mkOptionsStrike
-  :: OptionsStrike
-mkOptionsStrike =
-  OptionsStrike
-  { optionsStrikeStrikePrice = Nothing
-  , optionsStrikeCall = Nothing
-  , optionsStrikePut = Nothing
-  }
-
 -- ** V1Asset
 -- | V1Asset
 -- Represents an asset.
@@ -330,8 +248,8 @@ data V1Asset = V1Asset
   , v1AssetSupplyTotal :: !(Maybe Double) -- ^ "supply_total" - Gets or sets the total supply of the asset.
   , v1AssetSupplyMax :: !(Maybe Double) -- ^ "supply_max" - Gets or sets the maximum supply of the asset.
   , v1AssetChainAddresses :: !(Maybe [V1ChainNetworkAddress]) -- ^ "chain_addresses" - 
-  , v1AssetDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start"
-  , v1AssetDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end"
+  , v1AssetDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start" - Gets the start date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.
+  , v1AssetDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end" - Gets the end date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1Asset
@@ -493,8 +411,8 @@ data V1Exchange = V1Exchange
   { v1ExchangeExchangeId :: !(Maybe Text) -- ^ "exchange_id" - Gets or sets the exchange ID.
   , v1ExchangeWebsite :: !(Maybe Text) -- ^ "website" - Gets or sets the website URL of the exchange.
   , v1ExchangeName :: !(Maybe Text) -- ^ "name" - Gets or sets the name of the exchange.
-  , v1ExchangeDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start"
-  , v1ExchangeDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end"
+  , v1ExchangeDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start" - Gets the start date of the exchange&#39;s data.
+  , v1ExchangeDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end" - Gets the end date of the exchange&#39;s data.
   , v1ExchangeDataQuoteStart :: !(Maybe DateTime) -- ^ "data_quote_start" - Gets or sets the start date of quote data.
   , v1ExchangeDataQuoteEnd :: !(Maybe DateTime) -- ^ "data_quote_end" - Gets or sets the end date of quote data.
   , v1ExchangeDataOrderbookStart :: !(Maybe DateTime) -- ^ "data_orderbook_start" - Gets or sets the start date of order book data.
@@ -508,7 +426,7 @@ data V1Exchange = V1Exchange
   , v1ExchangeVolume1mthUsd :: !(Maybe Double) -- ^ "volume_1mth_usd" - Gets or sets the USD volume in the last 1 month.
   , v1ExchangeMetricId :: !(Maybe [Text]) -- ^ "metric_id" - Gets or sets the list of metric IDs.
   , v1ExchangeIcons :: !(Maybe [V1Icon]) -- ^ /ReadOnly/ "icons" - Gets or sets the list of icons for the exchange.
-  , v1ExchangeRank :: !(Maybe Double) -- ^ "rank" - Rank of the exchange.
+  , v1ExchangeRank :: !(Maybe Double) -- ^ "rank" - Rank of the exchange - higher rank means exchange is more reliable
   , v1ExchangeIntegrationStatus :: !(Maybe Text) -- ^ "integration_status" - Status of the integration
   } deriving (P.Show, P.Eq, P.Typeable)
 
@@ -761,7 +679,7 @@ mkV1ExchangeRatesTimeseriesItem =
 
 -- ** V1GeneralData
 -- | V1GeneralData
--- Class representation of general metric data. This class is an XML type with name 'general_data' and inherits from the BaseCsvModel class.
+-- Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class.
 data V1GeneralData = V1GeneralData
   { v1GeneralDataEntryTime :: !(Maybe DateTime) -- ^ "entry_time" - Gets or sets the entry time for the data point.
   , v1GeneralDataRecvTime :: !(Maybe DateTime) -- ^ "recv_time" - Gets or sets the received time for the data point.
@@ -861,12 +779,12 @@ mkV1Icon =
 -- | V1LastTrade
 -- Represents the last executed transaction.
 data V1LastTrade = V1LastTrade
-  { v1LastTradeTimeExchange :: !(Maybe DateTime) -- ^ "time_exchange" - The exchange time of the last trade.
-  , v1LastTradeTimeCoinapi :: !(Maybe DateTime) -- ^ "time_coinapi" - The CoinAPI time when the last trade was received.
-  , v1LastTradeUuid :: !(Maybe Text) -- ^ "uuid" - The UUID of the last trade.
-  , v1LastTradePrice :: !(Maybe Double) -- ^ "price" - The price of the last trade.
-  , v1LastTradeSize :: !(Maybe Double) -- ^ "size" - The size of the last trade.
-  , v1LastTradeTakerSide :: !(Maybe Text) -- ^ "taker_side" - The taker side of the last trade.
+  { v1LastTradeTimeExchange :: !(Maybe DateTime) -- ^ "time_exchange" - Gets or sets the exchange time of the last trade.
+  , v1LastTradeTimeCoinapi :: !(Maybe DateTime) -- ^ "time_coinapi" - Gets or sets the CoinAPI time when the last trade was received.
+  , v1LastTradeUuid :: !(Maybe Text) -- ^ "uuid" - Gets or sets the UUID of the last trade.
+  , v1LastTradePrice :: !(Maybe Double) -- ^ "price" - Gets or sets the price of the last trade.
+  , v1LastTradeSize :: !(Maybe Double) -- ^ "size" - Gets or sets the size of the last trade.
+  , v1LastTradeTakerSide :: !(Maybe Text) -- ^ "taker_side" - Gets or sets the taker side of the last trade.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1LastTrade
@@ -908,16 +826,16 @@ mkV1LastTrade =
 
 -- ** V1ListingItem
 -- | V1ListingItem
--- Represents a listing item.
+-- Represents a listing data item.
 data V1ListingItem = V1ListingItem
   { v1ListingItemMetricId :: !(Maybe Text) -- ^ "metric_id" - Gets or sets the metric ID.
-  , v1ListingItemSymbolId :: !(Maybe Text) -- ^ "symbol_id" - The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
-  , v1ListingItemSymbolIdExternal :: !(Maybe Text) -- ^ "symbol_id_external" - The exchange-native symbol identifier. Null for exchange-level metrics.
+  , v1ListingItemSymbolId :: !(Maybe Text) -- ^ "symbol_id" - Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
+  , v1ListingItemSymbolIdExternal :: !(Maybe Text) -- ^ "symbol_id_external" - Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
   , v1ListingItemExchangeId :: !(Maybe Text) -- ^ "exchange_id" - Gets or sets the exchange ID.
   , v1ListingItemAssetId :: !(Maybe Text) -- ^ "asset_id" - Gets or sets the asset ID.
-  , v1ListingItemAssetIdExternal :: !(Maybe Text) -- ^ "asset_id_external" - Gets or sets the asset ID from the exchange.
-  , v1ListingItemChainId :: !(Maybe Text) -- ^ "chain_id" - Gets or sets the chain id.
-  , v1ListingItemNetworkId :: !(Maybe Text) -- ^ "network_id" - Gets or sets the network id.
+  , v1ListingItemAssetIdExternal :: !(Maybe Text) -- ^ "asset_id_external" - Gets or sets the asset ID.
+  , v1ListingItemChainId :: !(Maybe Text) -- ^ "chain_id" - Gets or sets the chain ID.
+  , v1ListingItemNetworkId :: !(Maybe Text) -- ^ "network_id" - Gets or sets the network ID.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1ListingItem
@@ -1070,15 +988,60 @@ mkV1MetricInfo =
   , v1MetricInfoSourceId = Nothing
   }
 
+-- ** V1OptionExchangeGroup
+-- | V1OptionExchangeGroup
+-- Represents an option exchange group data model.
+data V1OptionExchangeGroup = V1OptionExchangeGroup
+  { v1OptionExchangeGroupAssetIdBase :: !(Maybe Text) -- ^ "asset_id_base" - Gets or sets the base asset identifier.
+  , v1OptionExchangeGroupAssetIdQuote :: !(Maybe Text) -- ^ "asset_id_quote" - Gets or sets the quote asset identifier.
+  , v1OptionExchangeGroupUnderlyingPrice :: !(Maybe Double) -- ^ "underlying_price" - Gets or sets the underlying price of the option.
+  , v1OptionExchangeGroupTimeExpiration :: !(Maybe DateTime) -- ^ "time_expiration" - Gets or sets the expiration time of the option.
+  , v1OptionExchangeGroupStrikes :: !(Maybe [V1Strike]) -- ^ "strikes" - Gets or sets the list of strikes available.
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON V1OptionExchangeGroup
+instance A.FromJSON V1OptionExchangeGroup where
+  parseJSON = A.withObject "V1OptionExchangeGroup" $ \o ->
+    V1OptionExchangeGroup
+      <$> (o .:? "asset_id_base")
+      <*> (o .:? "asset_id_quote")
+      <*> (o .:? "underlying_price")
+      <*> (o .:? "time_expiration")
+      <*> (o .:? "strikes")
+
+-- | ToJSON V1OptionExchangeGroup
+instance A.ToJSON V1OptionExchangeGroup where
+  toJSON V1OptionExchangeGroup {..} =
+   _omitNulls
+      [ "asset_id_base" .= v1OptionExchangeGroupAssetIdBase
+      , "asset_id_quote" .= v1OptionExchangeGroupAssetIdQuote
+      , "underlying_price" .= v1OptionExchangeGroupUnderlyingPrice
+      , "time_expiration" .= v1OptionExchangeGroupTimeExpiration
+      , "strikes" .= v1OptionExchangeGroupStrikes
+      ]
+
+
+-- | Construct a value of type 'V1OptionExchangeGroup' (by applying it's required fields, if any)
+mkV1OptionExchangeGroup
+  :: V1OptionExchangeGroup
+mkV1OptionExchangeGroup =
+  V1OptionExchangeGroup
+  { v1OptionExchangeGroupAssetIdBase = Nothing
+  , v1OptionExchangeGroupAssetIdQuote = Nothing
+  , v1OptionExchangeGroupUnderlyingPrice = Nothing
+  , v1OptionExchangeGroupTimeExpiration = Nothing
+  , v1OptionExchangeGroupStrikes = Nothing
+  }
+
 -- ** V1OrderBook
 -- | V1OrderBook
 -- Represents an order book with additional information and functionality.
 data V1OrderBook = V1OrderBook
-  { v1OrderBookSymbolId :: !(Maybe Text) -- ^ "symbol_id" - The symbol identifier.
-  , v1OrderBookTimeExchange :: !(Maybe DateTime) -- ^ "time_exchange" - The exchange time of the order book.
-  , v1OrderBookTimeCoinapi :: !(Maybe DateTime) -- ^ "time_coinapi" - The CoinAPI time when the order book was received.
-  , v1OrderBookAsks :: !(Maybe AnyType) -- ^ "asks" - The asks made by market makers.
-  , v1OrderBookBids :: !(Maybe AnyType) -- ^ "bids" - The bids made by market makers.
+  { v1OrderBookSymbolId :: !(Maybe Text) -- ^ "symbol_id" - Gets or sets the symbol identifier.
+  , v1OrderBookTimeExchange :: !(Maybe DateTime) -- ^ "time_exchange" - Gets or sets the exchange time of the order book.
+  , v1OrderBookTimeCoinapi :: !(Maybe DateTime) -- ^ "time_coinapi" - Gets or sets the CoinAPI time when the order book was received.
+  , v1OrderBookAsks :: !(Maybe AnyType) -- ^ "asks" - Gets or sets the asks made by market makers.
+  , v1OrderBookBids :: !(Maybe AnyType) -- ^ "bids" - Gets or sets the bids made by market makers.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1OrderBook
@@ -1119,11 +1082,11 @@ mkV1OrderBook =
 -- | V1OrderBookBase
 -- Represents the base model for order book data.
 data V1OrderBookBase = V1OrderBookBase
-  { v1OrderBookBaseSymbolId :: !(Maybe Text) -- ^ "symbol_id" - The symbol identifier.
-  , v1OrderBookBaseTimeExchange :: !(Maybe DateTime) -- ^ "time_exchange" - The exchange time of the order book.
-  , v1OrderBookBaseTimeCoinapi :: !(Maybe DateTime) -- ^ "time_coinapi" - The CoinAPI time when the order book was received.
-  , v1OrderBookBaseAsks :: !(Maybe AnyType) -- ^ "asks" - The asks made by market makers.
-  , v1OrderBookBaseBids :: !(Maybe AnyType) -- ^ "bids" - The bids made by market makers.
+  { v1OrderBookBaseSymbolId :: !(Maybe Text) -- ^ "symbol_id" - Gets or sets the symbol identifier.
+  , v1OrderBookBaseTimeExchange :: !(Maybe DateTime) -- ^ "time_exchange" - Gets or sets the exchange time of the order book.
+  , v1OrderBookBaseTimeCoinapi :: !(Maybe DateTime) -- ^ "time_coinapi" - Gets or sets the CoinAPI time when the order book was received.
+  , v1OrderBookBaseAsks :: !(Maybe AnyType) -- ^ "asks" - Gets or sets the asks made by market makers.
+  , v1OrderBookBaseBids :: !(Maybe AnyType) -- ^ "bids" - Gets or sets the bids made by market makers.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1OrderBookBase
@@ -1164,13 +1127,13 @@ mkV1OrderBookBase =
 -- | V1OrderBookDepth
 -- Represents the depth of an order book.
 data V1OrderBookDepth = V1OrderBookDepth
-  { v1OrderBookDepthSymbolId :: !(Maybe Text) -- ^ "symbol_id" - The symbol identifier.
-  , v1OrderBookDepthTimeExchange :: !(Maybe DateTime) -- ^ "time_exchange" - The exchange time of the order book.
-  , v1OrderBookDepthTimeCoinapi :: !(Maybe DateTime) -- ^ "time_coinapi" - The CoinAPI time when the order book was received.
-  , v1OrderBookDepthAskLevels :: !(Maybe Integer) -- ^ "ask_levels" - The number of ask levels in the order book.
-  , v1OrderBookDepthBidLevels :: !(Maybe Integer) -- ^ "bid_levels" - The number of bid levels in the order book.
-  , v1OrderBookDepthAskDepth :: !(Maybe Double) -- ^ "ask_depth" - The depth of the ask side of the order book.
-  , v1OrderBookDepthBidDepth :: !(Maybe Double) -- ^ "bid_depth" - The depth of the bid side of the order book.
+  { v1OrderBookDepthSymbolId :: !(Maybe Text) -- ^ "symbol_id" - Gets or sets the symbol identifier.
+  , v1OrderBookDepthTimeExchange :: !(Maybe DateTime) -- ^ "time_exchange" - Gets or sets the exchange time of the order book.
+  , v1OrderBookDepthTimeCoinapi :: !(Maybe DateTime) -- ^ "time_coinapi" - Gets or sets the CoinAPI time when the order book was received.
+  , v1OrderBookDepthAskLevels :: !(Maybe Integer) -- ^ "ask_levels" - Gets or sets the number of ask levels in the order book.
+  , v1OrderBookDepthBidLevels :: !(Maybe Integer) -- ^ "bid_levels" - Gets or sets the number of bid levels in the order book.
+  , v1OrderBookDepthAskDepth :: !(Maybe Double) -- ^ "ask_depth" - Gets or sets the depth of the ask side of the order book.
+  , v1OrderBookDepthBidDepth :: !(Maybe Double) -- ^ "bid_depth" - Gets or sets the depth of the bid side of the order book.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1OrderBookDepth
@@ -1217,13 +1180,13 @@ mkV1OrderBookDepth =
 -- | V1Quote
 -- Represents a quote data model.
 data V1Quote = V1Quote
-  { v1QuoteSymbolId :: !(Maybe Text) -- ^ "symbol_id" - The symbol identifier.
-  , v1QuoteTimeExchange :: !(Maybe DateTime) -- ^ "time_exchange" - The exchange time of the quote.
-  , v1QuoteTimeCoinapi :: !(Maybe DateTime) -- ^ "time_coinapi" - The CoinAPI time when the quote was received.
-  , v1QuoteAskPrice :: !(Maybe Double) -- ^ "ask_price" - The best asking price.
-  , v1QuoteAskSize :: !(Maybe Double) -- ^ "ask_size" - The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
-  , v1QuoteBidPrice :: !(Maybe Double) -- ^ "bid_price" - The best bidding price.
-  , v1QuoteBidSize :: !(Maybe Double) -- ^ "bid_size" - The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+  { v1QuoteSymbolId :: !(Maybe Text) -- ^ "symbol_id" - Gets or sets the symbol identifier.
+  , v1QuoteTimeExchange :: !(Maybe DateTime) -- ^ "time_exchange" - Gets or sets the exchange time of the quote.
+  , v1QuoteTimeCoinapi :: !(Maybe DateTime) -- ^ "time_coinapi" - Gets or sets the CoinAPI time when the quote was received.
+  , v1QuoteAskPrice :: !(Maybe Double) -- ^ "ask_price" - Gets or sets the best asking price.
+  , v1QuoteAskSize :: !(Maybe Double) -- ^ "ask_size" - Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+  , v1QuoteBidPrice :: !(Maybe Double) -- ^ "bid_price" - Gets or sets the best bidding price.
+  , v1QuoteBidSize :: !(Maybe Double) -- ^ "bid_size" - Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1Quote
@@ -1270,13 +1233,13 @@ mkV1Quote =
 -- | V1QuoteTrade
 -- Represents a quote trade data model.
 data V1QuoteTrade = V1QuoteTrade
-  { v1QuoteTradeSymbolId :: !(Maybe Text) -- ^ "symbol_id" - The symbol identifier.
-  , v1QuoteTradeTimeExchange :: !(Maybe DateTime) -- ^ "time_exchange" - The exchange time of the quote trade.
-  , v1QuoteTradeTimeCoinapi :: !(Maybe DateTime) -- ^ "time_coinapi" - The CoinAPI time when the quote trade was received.
-  , v1QuoteTradeAskPrice :: !(Maybe Double) -- ^ "ask_price" - The best asking price.
-  , v1QuoteTradeAskSize :: !(Maybe Double) -- ^ "ask_size" - The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
-  , v1QuoteTradeBidPrice :: !(Maybe Double) -- ^ "bid_price" - The best bidding price.
-  , v1QuoteTradeBidSize :: !(Maybe Double) -- ^ "bid_size" - The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+  { v1QuoteTradeSymbolId :: !(Maybe Text) -- ^ "symbol_id" - Gets or sets the symbol identifier.
+  , v1QuoteTradeTimeExchange :: !(Maybe DateTime) -- ^ "time_exchange" - Gets or sets the exchange time of the quote trade.
+  , v1QuoteTradeTimeCoinapi :: !(Maybe DateTime) -- ^ "time_coinapi" - Gets or sets the CoinAPI time when the quote trade was received.
+  , v1QuoteTradeAskPrice :: !(Maybe Double) -- ^ "ask_price" - Gets or sets the best asking price.
+  , v1QuoteTradeAskSize :: !(Maybe Double) -- ^ "ask_size" - Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+  , v1QuoteTradeBidPrice :: !(Maybe Double) -- ^ "bid_price" - Gets or sets the best bidding price.
+  , v1QuoteTradeBidSize :: !(Maybe Double) -- ^ "bid_size" - Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
   , v1QuoteTradeLastTrade :: !(Maybe V1LastTrade) -- ^ "last_trade"
   } deriving (P.Show, P.Eq, P.Typeable)
 
@@ -1323,62 +1286,99 @@ mkV1QuoteTrade =
   , v1QuoteTradeLastTrade = Nothing
   }
 
+-- ** V1Strike
+-- | V1Strike
+-- Represents a strike within the option exchange group.
+data V1Strike = V1Strike
+  { v1StrikeStrikePrice :: !(Maybe Double) -- ^ "strike_price" - Gets or sets the strike price.
+  , v1StrikeCall :: !(Maybe V1QuoteTrade) -- ^ "call"
+  , v1StrikePut :: !(Maybe V1QuoteTrade) -- ^ "put"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON V1Strike
+instance A.FromJSON V1Strike where
+  parseJSON = A.withObject "V1Strike" $ \o ->
+    V1Strike
+      <$> (o .:? "strike_price")
+      <*> (o .:? "call")
+      <*> (o .:? "put")
+
+-- | ToJSON V1Strike
+instance A.ToJSON V1Strike where
+  toJSON V1Strike {..} =
+   _omitNulls
+      [ "strike_price" .= v1StrikeStrikePrice
+      , "call" .= v1StrikeCall
+      , "put" .= v1StrikePut
+      ]
+
+
+-- | Construct a value of type 'V1Strike' (by applying it's required fields, if any)
+mkV1Strike
+  :: V1Strike
+mkV1Strike =
+  V1Strike
+  { v1StrikeStrikePrice = Nothing
+  , v1StrikeCall = Nothing
+  , v1StrikePut = Nothing
+  }
+
 -- ** V1Symbol
 -- | V1Symbol
 -- Represents a symbol data model.
 data V1Symbol = V1Symbol
-  { v1SymbolSymbolId :: !(Maybe Text) -- ^ "symbol_id" - The symbol identifier.
-  , v1SymbolExchangeId :: !(Maybe Text) -- ^ "exchange_id" - The exchange identifier.
-  , v1SymbolSymbolType :: !(Maybe Text) -- ^ "symbol_type" - The symbol type.
-  , v1SymbolAssetIdBase :: !(Maybe Text) -- ^ "asset_id_base" - The base asset identifier.
-  , v1SymbolAssetIdQuote :: !(Maybe Text) -- ^ "asset_id_quote" - The quote asset identifier.
-  , v1SymbolAssetIdUnit :: !(Maybe Text) -- ^ "asset_id_unit" - The unit asset identifier.
-  , v1SymbolFutureContractUnit :: !(Maybe Double) -- ^ "future_contract_unit" - The contract unit for futures.
-  , v1SymbolFutureContractUnitAsset :: !(Maybe Text) -- ^ "future_contract_unit_asset" - The asset used as the unit for futures contract.
-  , v1SymbolFutureDeliveryTime :: !(Maybe DateTime) -- ^ "future_delivery_time" - The future delivery time for futures contract.
-  , v1SymbolOptionTypeIsCall :: !(Maybe Bool) -- ^ "option_type_is_call" - Indicates whether the option type is a call.
-  , v1SymbolOptionStrikePrice :: !(Maybe Double) -- ^ "option_strike_price" - The strike price for options.
-  , v1SymbolOptionContractUnit :: !(Maybe Double) -- ^ "option_contract_unit" - The contract unit for options.
-  , v1SymbolOptionExerciseStyle :: !(Maybe Text) -- ^ "option_exercise_style" - The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
-  , v1SymbolOptionExpirationTime :: !(Maybe DateTime) -- ^ "option_expiration_time" - The expiration time for options.
-  , v1SymbolContractDeliveryTime :: !(Maybe DateTime) -- ^ "contract_delivery_time" - The delivery time for contracts.
-  , v1SymbolContractUnit :: !(Maybe Double) -- ^ "contract_unit" - The contract unit for contracts.
-  , v1SymbolContractUnitAsset :: !(Maybe Text) -- ^ "contract_unit_asset" - The asset used as the unit for contracts.
-  , v1SymbolContractId :: !(Maybe Text) -- ^ "contract_id" - The contract identifier.
-  , v1SymbolContractDisplayName :: !(Maybe Text) -- ^ "contract_display_name" - The display name of the contract.
-  , v1SymbolContractDisplayDescription :: !(Maybe Text) -- ^ "contract_display_description" - The display description of the contract.
-  , v1SymbolDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start"
-  , v1SymbolDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end"
-  , v1SymbolDataQuoteStart :: !(Maybe DateTime) -- ^ "data_quote_start" - The start date of quote data.
-  , v1SymbolDataQuoteEnd :: !(Maybe DateTime) -- ^ "data_quote_end" - The end date of quote data.
-  , v1SymbolDataOrderbookStart :: !(Maybe DateTime) -- ^ "data_orderbook_start" - The start date of order book data.
-  , v1SymbolDataOrderbookEnd :: !(Maybe DateTime) -- ^ "data_orderbook_end" - The end date of order book data.
-  , v1SymbolDataTradeStart :: !(Maybe DateTime) -- ^ "data_trade_start" - The start date of trade data.
-  , v1SymbolDataTradeEnd :: !(Maybe DateTime) -- ^ "data_trade_end" - The end date of trade data.
-  , v1SymbolIndexId :: !(Maybe Text) -- ^ "index_id" - The index identifier.
-  , v1SymbolIndexDisplayName :: !(Maybe Text) -- ^ "index_display_name" - The display name of the index.
-  , v1SymbolIndexDisplayDescription :: !(Maybe Text) -- ^ "index_display_description" - The display description of the index.
-  , v1SymbolVolume1hrs :: !(Maybe Double) -- ^ "volume_1hrs" - The volume in the last 1 hour.
-  , v1SymbolVolume1hrsUsd :: !(Maybe Double) -- ^ "volume_1hrs_usd" - The volume in USD in the last 1 hour.
-  , v1SymbolVolume1day :: !(Maybe Double) -- ^ "volume_1day" - The volume in the last 1 day.
-  , v1SymbolVolume1dayUsd :: !(Maybe Double) -- ^ "volume_1day_usd" - The volume in USD in the last 1 day.
-  , v1SymbolVolume1mth :: !(Maybe Double) -- ^ "volume_1mth" - The volume in the last 1 month.
-  , v1SymbolVolume1mthUsd :: !(Maybe Double) -- ^ "volume_1mth_usd" - The volume in USD in the last 1 month.
-  , v1SymbolPrice :: !(Maybe Double) -- ^ "price" - The price.
-  , v1SymbolSymbolIdExchange :: !(Maybe Text) -- ^ "symbol_id_exchange" - The symbol identifier in the exchange.
-  , v1SymbolAssetIdBaseExchange :: !(Maybe Text) -- ^ "asset_id_base_exchange" - The base asset identifier in the exchange.
-  , v1SymbolAssetIdQuoteExchange :: !(Maybe Text) -- ^ "asset_id_quote_exchange" - The quote asset identifier in the exchange.
-  , v1SymbolPricePrecision :: !(Maybe Double) -- ^ "price_precision" - The price precision.
-  , v1SymbolSizePrecision :: !(Maybe Double) -- ^ "size_precision" - The size precision.
+  { v1SymbolSymbolId :: !(Maybe Text) -- ^ "symbol_id" - Gets or sets the symbol identifier.
+  , v1SymbolExchangeId :: !(Maybe Text) -- ^ "exchange_id" - Gets or sets the exchange identifier.
+  , v1SymbolSymbolType :: !(Maybe Text) -- ^ "symbol_type" - Gets or sets the symbol type.
+  , v1SymbolAssetIdBase :: !(Maybe Text) -- ^ "asset_id_base" - Gets or sets the base asset identifier.
+  , v1SymbolAssetIdQuote :: !(Maybe Text) -- ^ "asset_id_quote" - Gets or sets the quote asset identifier.
+  , v1SymbolAssetIdUnit :: !(Maybe Text) -- ^ "asset_id_unit" - Gets or sets the unit asset identifier.
+  , v1SymbolFutureContractUnit :: !(Maybe Double) -- ^ "future_contract_unit" - Gets or sets the contract unit for futures.
+  , v1SymbolFutureContractUnitAsset :: !(Maybe Text) -- ^ "future_contract_unit_asset" - Gets or sets the asset used as the unit for futures contract.
+  , v1SymbolFutureDeliveryTime :: !(Maybe DateTime) -- ^ "future_delivery_time" - Gets or sets the future delivery time for futures contract.
+  , v1SymbolOptionTypeIsCall :: !(Maybe Bool) -- ^ "option_type_is_call" - Gets or sets a value indicating whether the option type is a call.
+  , v1SymbolOptionStrikePrice :: !(Maybe Double) -- ^ "option_strike_price" - Gets or sets the strike price for options.
+  , v1SymbolOptionContractUnit :: !(Maybe Double) -- ^ "option_contract_unit" - Gets or sets the contract unit for options.
+  , v1SymbolOptionExerciseStyle :: !(Maybe Text) -- ^ "option_exercise_style" - Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+  , v1SymbolOptionExpirationTime :: !(Maybe DateTime) -- ^ "option_expiration_time" - Gets or sets the expiration time for options.
+  , v1SymbolContractDeliveryTime :: !(Maybe DateTime) -- ^ "contract_delivery_time" - Gets or sets the delivery time for contracts.
+  , v1SymbolContractUnit :: !(Maybe Double) -- ^ "contract_unit" - Gets or sets the contract unit for contracts.
+  , v1SymbolContractUnitAsset :: !(Maybe Text) -- ^ "contract_unit_asset" - Gets or sets the asset used as the unit for contracts.
+  , v1SymbolContractId :: !(Maybe Text) -- ^ "contract_id" - Gets or sets the contract identifier.
+  , v1SymbolContractDisplayName :: !(Maybe Text) -- ^ "contract_display_name" - Gets or sets the display name of the contract.
+  , v1SymbolContractDisplayDescription :: !(Maybe Text) -- ^ "contract_display_description" - Gets or sets the display description of the contract.
+  , v1SymbolDataStart :: !(Maybe Text) -- ^ /ReadOnly/ "data_start" - Gets the start date of the data in string format (\&quot;yyyy-MM-dd\&quot;).
+  , v1SymbolDataEnd :: !(Maybe Text) -- ^ /ReadOnly/ "data_end" - Gets the end date of the data in string format (\&quot;yyyy-MM-dd\&quot;).
+  , v1SymbolDataQuoteStart :: !(Maybe DateTime) -- ^ "data_quote_start" - Gets or sets the start date of quote data.
+  , v1SymbolDataQuoteEnd :: !(Maybe DateTime) -- ^ "data_quote_end" - Gets or sets the end date of quote data.
+  , v1SymbolDataOrderbookStart :: !(Maybe DateTime) -- ^ "data_orderbook_start" - Gets or sets the start date of order book data.
+  , v1SymbolDataOrderbookEnd :: !(Maybe DateTime) -- ^ "data_orderbook_end" - Gets or sets the end date of order book data.
+  , v1SymbolDataTradeStart :: !(Maybe DateTime) -- ^ "data_trade_start" - Gets or sets the start date of trade data.
+  , v1SymbolDataTradeEnd :: !(Maybe DateTime) -- ^ "data_trade_end" - Gets or sets the end date of trade data.
+  , v1SymbolIndexId :: !(Maybe Text) -- ^ "index_id" - Gets or sets the index identifier.
+  , v1SymbolIndexDisplayName :: !(Maybe Text) -- ^ "index_display_name" - Gets or sets the display name of the index.
+  , v1SymbolIndexDisplayDescription :: !(Maybe Text) -- ^ "index_display_description" - Gets or sets the display description of the index.
+  , v1SymbolVolume1hrs :: !(Maybe Double) -- ^ "volume_1hrs" - Gets or sets the volume in the last 1 hour.
+  , v1SymbolVolume1hrsUsd :: !(Maybe Double) -- ^ "volume_1hrs_usd" - Gets or sets the volume in USD in the last 1 hour.
+  , v1SymbolVolume1day :: !(Maybe Double) -- ^ "volume_1day" - Gets or sets the volume in the last 1 day.
+  , v1SymbolVolume1dayUsd :: !(Maybe Double) -- ^ "volume_1day_usd" - Gets or sets the volume in USD in the last 1 day.
+  , v1SymbolVolume1mth :: !(Maybe Double) -- ^ "volume_1mth" - Gets or sets the volume in the last 1 month.
+  , v1SymbolVolume1mthUsd :: !(Maybe Double) -- ^ "volume_1mth_usd" - Gets or sets the volume in USD in the last 1 month.
+  , v1SymbolPrice :: !(Maybe Double) -- ^ "price" - Gets or sets the price.
+  , v1SymbolSymbolIdExchange :: !(Maybe Text) -- ^ "symbol_id_exchange" - Gets or sets the symbol identifier in the exchange.
+  , v1SymbolAssetIdBaseExchange :: !(Maybe Text) -- ^ "asset_id_base_exchange" - Gets or sets the base asset identifier in the exchange.
+  , v1SymbolAssetIdQuoteExchange :: !(Maybe Text) -- ^ "asset_id_quote_exchange" - Gets or sets the quote asset identifier in the exchange.
+  , v1SymbolPricePrecision :: !(Maybe Double) -- ^ "price_precision" - Gets or sets the price precision.
+  , v1SymbolSizePrecision :: !(Maybe Double) -- ^ "size_precision" - Gets or sets the size precision.
   , v1SymbolRawKvp :: !(Maybe (Map.Map String Text)) -- ^ "raw_kvp" - Key Value Pair store with raw data from the data source.
-  , v1SymbolFutureIsInverse :: !(Maybe Bool) -- ^ "future_is_inverse" - Indicates whether the futures contract is inverse (coin-margined).
-  , v1SymbolFutureIsQuanto :: !(Maybe Bool) -- ^ "future_is_quanto" - Indicates whether the futures contract is quanto.
-  , v1SymbolVolumeToUsd :: !(Maybe Double) -- ^ "volume_to_usd" - Volume unit in USD.
-  , v1SymbolOptionBarrierUpPrice :: !(Maybe Double) -- ^ "option_barrier_up_price" - The up barrier price for barrier options.
-  , v1SymbolOptionBarrierUpType :: !(Maybe Text) -- ^ "option_barrier_up_type" - The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
-  , v1SymbolOptionBarrierDownPrice :: !(Maybe Double) -- ^ "option_barrier_down_price" - The down barrier price for barrier options.
-  , v1SymbolOptionBarrierDownType :: !(Maybe Text) -- ^ "option_barrier_down_type" - The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
-  , v1SymbolSymbolIdInt :: !(Maybe Int) -- ^ /ReadOnly/ "symbol_id_int" - The symbol identifier in integer immutable format, used to correlate data across different APIs.
+  , v1SymbolFutureIsInverse :: !(Maybe Bool) -- ^ "future_is_inverse" - Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
+  , v1SymbolFutureIsQuanto :: !(Maybe Bool) -- ^ "future_is_quanto" - Gets or sets a value indicating whether the futures contract is quanto.
+  , v1SymbolVolumeToUsd :: !(Maybe Double) -- ^ "volume_to_usd" - Gets or sets the volume in USD.
+  , v1SymbolOptionBarrierUpPrice :: !(Maybe Double) -- ^ "option_barrier_up_price" - Gets or sets the up barrier price for barrier options.
+  , v1SymbolOptionBarrierUpType :: !(Maybe Text) -- ^ "option_barrier_up_type" - Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  , v1SymbolOptionBarrierDownPrice :: !(Maybe Double) -- ^ "option_barrier_down_price" - Gets or sets the down barrier price for barrier options.
+  , v1SymbolOptionBarrierDownType :: !(Maybe Text) -- ^ "option_barrier_down_type" - Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  , v1SymbolSymbolIdInt :: !(Maybe Int) -- ^ /ReadOnly/ "symbol_id_int" - Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1Symbol
@@ -1560,15 +1560,15 @@ mkV1Symbol =
 -- | V1SymbolMapping
 -- Represents symbol mapping information for exchange symbols.
 data V1SymbolMapping = V1SymbolMapping
-  { v1SymbolMappingSymbolId :: !(Maybe Text) -- ^ "symbol_id" - The symbol ID.
-  , v1SymbolMappingSymbolIdExchange :: !(Maybe Text) -- ^ "symbol_id_exchange" - The exchange-specific symbol ID.
-  , v1SymbolMappingCoinapiDatainfoId :: !(Maybe Int) -- ^ "coinapi_datainfo_id" - The CoinAPI DataInfo ID.
-  , v1SymbolMappingAssetIdBaseExchange :: !(Maybe Text) -- ^ "asset_id_base_exchange" - The exchange-specific base asset ID.
-  , v1SymbolMappingAssetIdQuoteExchange :: !(Maybe Text) -- ^ "asset_id_quote_exchange" - The exchange-specific quote asset ID.
-  , v1SymbolMappingAssetIdBase :: !(Maybe Text) -- ^ "asset_id_base" - The base asset ID.
-  , v1SymbolMappingAssetIdQuote :: !(Maybe Text) -- ^ "asset_id_quote" - The quote asset ID.
-  , v1SymbolMappingPricePrecision :: !(Maybe Double) -- ^ "price_precision" - The price precision.
-  , v1SymbolMappingSizePrecision :: !(Maybe Double) -- ^ "size_precision" - The size precision.
+  { v1SymbolMappingSymbolId :: !(Maybe Text) -- ^ "symbol_id" - Gets or sets the symbol ID.
+  , v1SymbolMappingSymbolIdExchange :: !(Maybe Text) -- ^ "symbol_id_exchange" - Gets or sets the exchange-specific symbol ID.
+  , v1SymbolMappingCoinapiDatainfoId :: !(Maybe Int) -- ^ "coinapi_datainfo_id" - Gets or sets the DataInfo ID.
+  , v1SymbolMappingAssetIdBaseExchange :: !(Maybe Text) -- ^ "asset_id_base_exchange" - Gets or sets the exchange-specific base asset ID.
+  , v1SymbolMappingAssetIdQuoteExchange :: !(Maybe Text) -- ^ "asset_id_quote_exchange" - Gets or sets the exchange-specific quote asset ID.
+  , v1SymbolMappingAssetIdBase :: !(Maybe Text) -- ^ "asset_id_base" - Gets or sets the base asset ID.
+  , v1SymbolMappingAssetIdQuote :: !(Maybe Text) -- ^ "asset_id_quote" - Gets or sets the quote asset ID.
+  , v1SymbolMappingPricePrecision :: !(Maybe Double) -- ^ "price_precision" - Gets or sets the price precision.
+  , v1SymbolMappingSizePrecision :: !(Maybe Double) -- ^ "size_precision" - Gets or sets the size precision.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1SymbolMapping
@@ -1621,16 +1621,16 @@ mkV1SymbolMapping =
 -- | V1TimeseriesItem
 -- Represents a timeseries item with price and volume information.
 data V1TimeseriesItem = V1TimeseriesItem
-  { v1TimeseriesItemTimePeriodStart :: !(Maybe DateTime) -- ^ "time_period_start" - The start time of the time period.
-  , v1TimeseriesItemTimePeriodEnd :: !(Maybe DateTime) -- ^ "time_period_end" - The end time of the time period.
-  , v1TimeseriesItemTimeOpen :: !(Maybe DateTime) -- ^ "time_open" - The time when the price opened.
-  , v1TimeseriesItemTimeClose :: !(Maybe DateTime) -- ^ "time_close" - The time when the price closed.
-  , v1TimeseriesItemPriceOpen :: !(Maybe Double) -- ^ "price_open" - The opening price.
-  , v1TimeseriesItemPriceHigh :: !(Maybe Double) -- ^ "price_high" - The highest price during the time period.
-  , v1TimeseriesItemPriceLow :: !(Maybe Double) -- ^ "price_low" - The lowest price during the time period.
-  , v1TimeseriesItemPriceClose :: !(Maybe Double) -- ^ "price_close" - The closing price.
-  , v1TimeseriesItemVolumeTraded :: !(Maybe Double) -- ^ "volume_traded" - The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
-  , v1TimeseriesItemTradesCount :: !(Maybe Integer) -- ^ "trades_count" - The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+  { v1TimeseriesItemTimePeriodStart :: !(Maybe DateTime) -- ^ "time_period_start" - Gets or sets the start time of the time period.
+  , v1TimeseriesItemTimePeriodEnd :: !(Maybe DateTime) -- ^ "time_period_end" - Gets or sets the end time of the time period.
+  , v1TimeseriesItemTimeOpen :: !(Maybe DateTime) -- ^ "time_open" - Gets or sets the time when the price opened.
+  , v1TimeseriesItemTimeClose :: !(Maybe DateTime) -- ^ "time_close" - Gets or sets the time when the price closed.
+  , v1TimeseriesItemPriceOpen :: !(Maybe Double) -- ^ "price_open" - Gets or sets the opening price.
+  , v1TimeseriesItemPriceHigh :: !(Maybe Double) -- ^ "price_high" - Gets or sets the highest price during the time period.
+  , v1TimeseriesItemPriceLow :: !(Maybe Double) -- ^ "price_low" - Gets or sets the lowest price during the time period.
+  , v1TimeseriesItemPriceClose :: !(Maybe Double) -- ^ "price_close" - Gets or sets the closing price.
+  , v1TimeseriesItemVolumeTraded :: !(Maybe Double) -- ^ "volume_traded" - Gets or sets the total volume traded during the time period.
+  , v1TimeseriesItemTradesCount :: !(Maybe Integer) -- ^ "trades_count" - Gets or sets the number of trades executed during the time period.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1TimeseriesItem
@@ -1686,12 +1686,12 @@ mkV1TimeseriesItem =
 -- | V1TimeseriesPeriod
 -- Represents a timeseries period used in exchange rate data.
 data V1TimeseriesPeriod = V1TimeseriesPeriod
-  { v1TimeseriesPeriodPeriodId :: !(Maybe Text) -- ^ "period_id" - The period ID.
-  , v1TimeseriesPeriodLengthSeconds :: !(Maybe Int) -- ^ "length_seconds" - The length of the period in seconds.
-  , v1TimeseriesPeriodLengthMonths :: !(Maybe Int) -- ^ "length_months" - The length of the period in months.
-  , v1TimeseriesPeriodUnitCount :: !(Maybe Int) -- ^ "unit_count" - The unit count.
-  , v1TimeseriesPeriodUnitName :: !(Maybe Text) -- ^ "unit_name" - The unit name.
-  , v1TimeseriesPeriodDisplayName :: !(Maybe Text) -- ^ "display_name" - The display name of the timeseries period.
+  { v1TimeseriesPeriodPeriodId :: !(Maybe Text) -- ^ "period_id" - Gets or sets the period ID.
+  , v1TimeseriesPeriodLengthSeconds :: !(Maybe Int) -- ^ "length_seconds" - Gets or sets the length of the period in seconds.
+  , v1TimeseriesPeriodLengthMonths :: !(Maybe Int) -- ^ "length_months" - Gets or sets the length of the period in months.
+  , v1TimeseriesPeriodUnitCount :: !(Maybe Int) -- ^ "unit_count" - Gets or sets the unit count.
+  , v1TimeseriesPeriodUnitName :: !(Maybe Text) -- ^ "unit_name" - Gets or sets the unit name.
+  , v1TimeseriesPeriodDisplayName :: !(Maybe Text) -- ^ "display_name" - Gets or sets the display name of the timeseries period.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1TimeseriesPeriod
@@ -1740,7 +1740,7 @@ data V1Trade = V1Trade
   , v1TradeTimeCoinapi :: !(Maybe DateTime) -- ^ "time_coinapi" - The time when the trade was received by CoinAPI.
   , v1TradeUuid :: !(Maybe Text) -- ^ "uuid" - The unique identifier for the trade.
   , v1TradePrice :: !(Maybe Double) -- ^ "price" - The price of the transaction.
-  , v1TradeSize :: !(Maybe Double) -- ^ "size" - The base asset amount traded in the transaction.
+  , v1TradeSize :: !(Maybe Double) -- ^ "size" - The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
   , v1TradeTakerSide :: !(Maybe Text) -- ^ "taker_side" - The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN).
   , v1TradeIdTrade :: !(Maybe Text) -- ^ "id_trade" - The trade identifier.
   , v1TradeIdOrderMaker :: !(Maybe Text) -- ^ "id_order_maker" - The order maker identifier.

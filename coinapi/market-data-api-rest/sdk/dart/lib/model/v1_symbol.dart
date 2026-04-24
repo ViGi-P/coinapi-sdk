@@ -67,158 +67,160 @@ class V1Symbol {
     this.symbolIdInt,
   });
 
-  /// The symbol identifier.
+  /// Gets or sets the symbol identifier.
   String? symbolId;
 
-  /// The exchange identifier.
+  /// Gets or sets the exchange identifier.
   String? exchangeId;
 
-  /// The symbol type.
+  /// Gets or sets the symbol type.
   String? symbolType;
 
-  /// The base asset identifier.
+  /// Gets or sets the base asset identifier.
   String? assetIdBase;
 
-  /// The quote asset identifier.
+  /// Gets or sets the quote asset identifier.
   String? assetIdQuote;
 
-  /// The unit asset identifier.
+  /// Gets or sets the unit asset identifier.
   String? assetIdUnit;
 
-  /// The contract unit for futures.
+  /// Gets or sets the contract unit for futures.
   double? futureContractUnit;
 
-  /// The asset used as the unit for futures contract.
+  /// Gets or sets the asset used as the unit for futures contract.
   String? futureContractUnitAsset;
 
-  /// The future delivery time for futures contract.
+  /// Gets or sets the future delivery time for futures contract.
   DateTime? futureDeliveryTime;
 
-  /// Indicates whether the option type is a call.
+  /// Gets or sets a value indicating whether the option type is a call.
   bool? optionTypeIsCall;
 
-  /// The strike price for options.
+  /// Gets or sets the strike price for options.
   double? optionStrikePrice;
 
-  /// The contract unit for options.
+  /// Gets or sets the contract unit for options.
   double? optionContractUnit;
 
-  /// The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+  /// Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
   String? optionExerciseStyle;
 
-  /// The expiration time for options.
+  /// Gets or sets the expiration time for options.
   DateTime? optionExpirationTime;
 
-  /// The delivery time for contracts.
+  /// Gets or sets the delivery time for contracts.
   DateTime? contractDeliveryTime;
 
-  /// The contract unit for contracts.
+  /// Gets or sets the contract unit for contracts.
   double? contractUnit;
 
-  /// The asset used as the unit for contracts.
+  /// Gets or sets the asset used as the unit for contracts.
   String? contractUnitAsset;
 
-  /// The contract identifier.
+  /// Gets or sets the contract identifier.
   String? contractId;
 
-  /// The display name of the contract.
+  /// Gets or sets the display name of the contract.
   String? contractDisplayName;
 
-  /// The display description of the contract.
+  /// Gets or sets the display description of the contract.
   String? contractDisplayDescription;
 
+  /// Gets the start date of the data in string format (\"yyyy-MM-dd\").
   String? dataStart;
 
+  /// Gets the end date of the data in string format (\"yyyy-MM-dd\").
   String? dataEnd;
 
-  /// The start date of quote data.
+  /// Gets or sets the start date of quote data.
   DateTime? dataQuoteStart;
 
-  /// The end date of quote data.
+  /// Gets or sets the end date of quote data.
   DateTime? dataQuoteEnd;
 
-  /// The start date of order book data.
+  /// Gets or sets the start date of order book data.
   DateTime? dataOrderbookStart;
 
-  /// The end date of order book data.
+  /// Gets or sets the end date of order book data.
   DateTime? dataOrderbookEnd;
 
-  /// The start date of trade data.
+  /// Gets or sets the start date of trade data.
   DateTime? dataTradeStart;
 
-  /// The end date of trade data.
+  /// Gets or sets the end date of trade data.
   DateTime? dataTradeEnd;
 
-  /// The index identifier.
+  /// Gets or sets the index identifier.
   String? indexId;
 
-  /// The display name of the index.
+  /// Gets or sets the display name of the index.
   String? indexDisplayName;
 
-  /// The display description of the index.
+  /// Gets or sets the display description of the index.
   String? indexDisplayDescription;
 
-  /// The volume in the last 1 hour.
+  /// Gets or sets the volume in the last 1 hour.
   double? volume1hrs;
 
-  /// The volume in USD in the last 1 hour.
+  /// Gets or sets the volume in USD in the last 1 hour.
   double? volume1hrsUsd;
 
-  /// The volume in the last 1 day.
+  /// Gets or sets the volume in the last 1 day.
   double? volume1day;
 
-  /// The volume in USD in the last 1 day.
+  /// Gets or sets the volume in USD in the last 1 day.
   double? volume1dayUsd;
 
-  /// The volume in the last 1 month.
+  /// Gets or sets the volume in the last 1 month.
   double? volume1mth;
 
-  /// The volume in USD in the last 1 month.
+  /// Gets or sets the volume in USD in the last 1 month.
   double? volume1mthUsd;
 
-  /// The price.
+  /// Gets or sets the price.
   double? price;
 
-  /// The symbol identifier in the exchange.
+  /// Gets or sets the symbol identifier in the exchange.
   String? symbolIdExchange;
 
-  /// The base asset identifier in the exchange.
+  /// Gets or sets the base asset identifier in the exchange.
   String? assetIdBaseExchange;
 
-  /// The quote asset identifier in the exchange.
+  /// Gets or sets the quote asset identifier in the exchange.
   String? assetIdQuoteExchange;
 
-  /// The price precision.
+  /// Gets or sets the price precision.
   double? pricePrecision;
 
-  /// The size precision.
+  /// Gets or sets the size precision.
   double? sizePrecision;
 
   /// Key Value Pair store with raw data from the data source.
   Map<String, String>? rawKvp;
 
-  /// Indicates whether the futures contract is inverse (coin-margined).
+  /// Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
   bool? futureIsInverse;
 
-  /// Indicates whether the futures contract is quanto.
+  /// Gets or sets a value indicating whether the futures contract is quanto.
   bool? futureIsQuanto;
 
-  /// Volume unit in USD.
+  /// Gets or sets the volume in USD.
   double? volumeToUsd;
 
-  /// The up barrier price for barrier options.
+  /// Gets or sets the up barrier price for barrier options.
   double? optionBarrierUpPrice;
 
-  /// The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  /// Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
   String? optionBarrierUpType;
 
-  /// The down barrier price for barrier options.
+  /// Gets or sets the down barrier price for barrier options.
   double? optionBarrierDownPrice;
 
-  /// The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  /// Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
   String? optionBarrierDownType;
 
-  /// The symbol identifier in integer immutable format, used to correlate data across different APIs.
+  /// Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
   int? symbolIdInt;
 
   @override

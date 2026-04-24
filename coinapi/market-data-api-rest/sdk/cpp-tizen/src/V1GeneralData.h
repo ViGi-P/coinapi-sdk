@@ -1,7 +1,7 @@
 /*
  * V1.GeneralData.h
  *
- * Class representation of general metric data. This class is an XML type with name &#39;general_data&#39; and inherits from the BaseCsvModel class.
+ * Class representation of general metric data. This class is an XML type with name \&quot;general_data\&quot; and inherits from the BaseCsvModel class.
  */
 
 #ifndef _V1.GeneralData_H_
@@ -20,7 +20,7 @@ namespace Tizen {
 namespace ArtikCloud {
 
 
-/*! \brief Class representation of general metric data. This class is an XML type with name 'general_data' and inherits from the BaseCsvModel class.
+/*! \brief Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class.
  *
  *  \ingroup Models
  *

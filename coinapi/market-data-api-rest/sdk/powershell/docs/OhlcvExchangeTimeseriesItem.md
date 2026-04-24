@@ -3,16 +3,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TimePeriodStart** | **System.DateTime** | The start time of the time period. | [optional] 
-**TimePeriodEnd** | **System.DateTime** | The end time of the time period. | [optional] 
-**TimeOpen** | **System.DateTime** | The time when the price opened. | [optional] 
-**TimeClose** | **System.DateTime** | The time when the price closed. | [optional] 
-**PriceOpen** | **Double** | The opening price. | [optional] 
-**PriceHigh** | **Double** | The highest price during the time period. | [optional] 
-**PriceLow** | **Double** | The lowest price during the time period. | [optional] 
-**PriceClose** | **Double** | The closing price. | [optional] 
-**VolumeTraded** | **Double** | The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
-**TradesCount** | **Int64** | The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
+**TimePeriodStart** | **System.DateTime** | Gets or sets the start time of the time period. | [optional] 
+**TimePeriodEnd** | **System.DateTime** | Gets or sets the end time of the time period. | [optional] 
+**TimeOpen** | **System.DateTime** | Gets or sets the time when the price opened. | [optional] 
+**TimeClose** | **System.DateTime** | Gets or sets the time when the price closed. | [optional] 
+**PriceOpen** | **Double** | Gets or sets the opening price. | [optional] 
+**PriceHigh** | **Double** | Gets or sets the highest price during the time period. | [optional] 
+**PriceLow** | **Double** | Gets or sets the lowest price during the time period. | [optional] 
+**PriceClose** | **Double** | Gets or sets the closing price. | [optional] 
+**VolumeTraded** | **Double** | Gets or sets the total volume traded during the time period. | [optional] 
+**TradesCount** | **Int64** | Gets or sets the number of trades executed during the time period. | [optional] 
 **SymbolIdExchange** | **String** |  | [optional] 
 **SymbolIdCoinapi** | **String** |  | [optional] 
 

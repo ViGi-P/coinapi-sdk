@@ -45,53 +45,53 @@ public:
 	 */
 	void fromJson(char* jsonStr);
 
-	/*! \brief Get The symbol identifier.
+	/*! \brief Get Gets or sets the symbol identifier.
 	 */
 	std::string getSymbolId();
 
-	/*! \brief Set The symbol identifier.
+	/*! \brief Set Gets or sets the symbol identifier.
 	 */
 	void setSymbolId(std::string  symbol_id);
-	/*! \brief Get The exchange time of the order book.
+	/*! \brief Get Gets or sets the exchange time of the order book.
 	 */
 	std::string getTimeExchange();
 
-	/*! \brief Set The exchange time of the order book.
+	/*! \brief Set Gets or sets the exchange time of the order book.
 	 */
 	void setTimeExchange(std::string  time_exchange);
-	/*! \brief Get The CoinAPI time when the order book was received.
+	/*! \brief Get Gets or sets the CoinAPI time when the order book was received.
 	 */
 	std::string getTimeCoinapi();
 
-	/*! \brief Set The CoinAPI time when the order book was received.
+	/*! \brief Set Gets or sets the CoinAPI time when the order book was received.
 	 */
 	void setTimeCoinapi(std::string  time_coinapi);
-	/*! \brief Get The number of ask levels in the order book.
+	/*! \brief Get Gets or sets the number of ask levels in the order book.
 	 */
 	long long getAskLevels();
 
-	/*! \brief Set The number of ask levels in the order book.
+	/*! \brief Set Gets or sets the number of ask levels in the order book.
 	 */
 	void setAskLevels(long long  ask_levels);
-	/*! \brief Get The number of bid levels in the order book.
+	/*! \brief Get Gets or sets the number of bid levels in the order book.
 	 */
 	long long getBidLevels();
 
-	/*! \brief Set The number of bid levels in the order book.
+	/*! \brief Set Gets or sets the number of bid levels in the order book.
 	 */
 	void setBidLevels(long long  bid_levels);
-	/*! \brief Get The depth of the ask side of the order book.
+	/*! \brief Get Gets or sets the depth of the ask side of the order book.
 	 */
 	double getAskDepth();
 
-	/*! \brief Set The depth of the ask side of the order book.
+	/*! \brief Set Gets or sets the depth of the ask side of the order book.
 	 */
 	void setAskDepth(double  ask_depth);
-	/*! \brief Get The depth of the bid side of the order book.
+	/*! \brief Get Gets or sets the depth of the bid side of the order book.
 	 */
 	double getBidDepth();
 
-	/*! \brief Set The depth of the bid side of the order book.
+	/*! \brief Set Gets or sets the depth of the bid side of the order book.
 	 */
 	void setBidDepth(double  bid_depth);
 

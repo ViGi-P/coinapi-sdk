@@ -21,7 +21,7 @@ import ApiClient from '../ApiClient';
 class V1GeneralData {
     /**
      * Constructs a new <code>V1GeneralData</code>.
-     * Class representation of general metric data. This class is an XML type with name &#39;general_data&#39; and inherits from the BaseCsvModel class.
+     * Class representation of general metric data. This class is an XML type with name \&quot;general_data\&quot; and inherits from the BaseCsvModel class.
      * @alias module:model/V1GeneralData
      */
     constructor() { 

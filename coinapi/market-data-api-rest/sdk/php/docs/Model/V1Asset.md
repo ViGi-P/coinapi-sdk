@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **supply_total** | **float** | Gets or sets the total supply of the asset. | [optional]
 **supply_max** | **float** | Gets or sets the maximum supply of the asset. | [optional]
 **chain_addresses** | [**\OpenAPI\Client\Model\V1ChainNetworkAddress[]**](V1ChainNetworkAddress.md) |  | [optional]
-**data_start** | **string** |  | [optional] [readonly]
-**data_end** | **string** |  | [optional] [readonly]
+**data_start** | **string** | Gets the start date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;. | [optional] [readonly]
+**data_end** | **string** | Gets the end date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;. | [optional] [readonly]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

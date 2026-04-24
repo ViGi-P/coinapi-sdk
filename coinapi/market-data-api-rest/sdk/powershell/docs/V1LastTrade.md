@@ -3,12 +3,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TimeExchange** | **System.DateTime** | The exchange time of the last trade. | [optional] 
-**TimeCoinapi** | **System.DateTime** | The CoinAPI time when the last trade was received. | [optional] 
-**Uuid** | **String** | The UUID of the last trade. | [optional] 
-**Price** | **Double** | The price of the last trade. | [optional] 
-**Size** | **Double** | The size of the last trade. | [optional] 
-**TakerSide** | **String** | The taker side of the last trade. | [optional] 
+**TimeExchange** | **System.DateTime** | Gets or sets the exchange time of the last trade. | [optional] 
+**TimeCoinapi** | **System.DateTime** | Gets or sets the CoinAPI time when the last trade was received. | [optional] 
+**Uuid** | **String** | Gets or sets the UUID of the last trade. | [optional] 
+**Price** | **Double** | Gets or sets the price of the last trade. | [optional] 
+**Size** | **Double** | Gets or sets the size of the last trade. | [optional] 
+**TakerSide** | **String** | Gets or sets the taker side of the last trade. | [optional] 
 
 ## Examples
 

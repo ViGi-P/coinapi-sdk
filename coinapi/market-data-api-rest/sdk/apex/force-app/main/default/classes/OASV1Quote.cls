@@ -15,43 +15,43 @@
  */
 public class OASV1Quote implements OAS.MappedProperties {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      * @return symbolId
      */
     public String symbolId { get; set; }
 
     /**
-     * The exchange time of the quote.
+     * Gets or sets the exchange time of the quote.
      * @return timeExchange
      */
     public Datetime timeExchange { get; set; }
 
     /**
-     * The CoinAPI time when the quote was received.
+     * Gets or sets the CoinAPI time when the quote was received.
      * @return timeCoinapi
      */
     public Datetime timeCoinapi { get; set; }
 
     /**
-     * The best asking price.
+     * Gets or sets the best asking price.
      * @return askPrice
      */
     public Double askPrice { get; set; }
 
     /**
-     * The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+     * Gets or sets the volume resting on the best ask.\nIf the value is equal to zero, then the size is unknown.
      * @return askSize
      */
     public Double askSize { get; set; }
 
     /**
-     * The best bidding price.
+     * Gets or sets the best bidding price.
      * @return bidPrice
      */
     public Double bidPrice { get; set; }
 
     /**
-     * The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+     * Gets or sets the volume resting on the best bid.\nIf the value is equal to zero, then the size is unknown.
      * @return bidSize
      */
     public Double bidSize { get; set; }

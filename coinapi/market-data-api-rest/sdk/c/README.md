@@ -121,8 +121,6 @@ Category | Method | HTTP request | Description
 ## Documentation for Models
 
  - [ohlcv_exchange_timeseries_item_t](docs/ohlcv_exchange_timeseries_item.md)
- - [options_option_exchange_group_t](docs/options_option_exchange_group.md)
- - [options_strike_t](docs/options_strike.md)
  - [v1_asset_t](docs/v1_asset.md)
  - [v1_chain_t](docs/v1_chain.md)
  - [v1_chain_network_address_t](docs/v1_chain_network_address.md)
@@ -138,11 +136,13 @@ Category | Method | HTTP request | Description
  - [v1_metric_t](docs/v1_metric.md)
  - [v1_metric_data_t](docs/v1_metric_data.md)
  - [v1_metric_info_t](docs/v1_metric_info.md)
+ - [v1_option_exchange_group_t](docs/v1_option_exchange_group.md)
  - [v1_order_book_t](docs/v1_order_book.md)
  - [v1_order_book_base_t](docs/v1_order_book_base.md)
  - [v1_order_book_depth_t](docs/v1_order_book_depth.md)
  - [v1_quote_t](docs/v1_quote.md)
  - [v1_quote_trade_t](docs/v1_quote_trade.md)
+ - [v1_strike_t](docs/v1_strike.md)
  - [v1_symbol_t](docs/v1_symbol.md)
  - [v1_symbol_mapping_t](docs/v1_symbol_mapping.md)
  - [v1_timeseries_item_t](docs/v1_timeseries_item.md)

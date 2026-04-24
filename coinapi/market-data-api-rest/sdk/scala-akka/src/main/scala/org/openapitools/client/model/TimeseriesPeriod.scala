@@ -14,17 +14,17 @@ package org.openapitools.client.model
 import org.openapitools.client.core.ApiModel
 
 case class TimeseriesPeriod (
-  /* The period ID. */
+  /* Gets or sets the period ID. */
   periodId: Option[String] = None,
-  /* The length of the period in seconds. */
+  /* Gets or sets the length of the period in seconds. */
   lengthSeconds: Option[Int] = None,
-  /* The length of the period in months. */
+  /* Gets or sets the length of the period in months. */
   lengthMonths: Option[Int] = None,
-  /* The unit count. */
+  /* Gets or sets the unit count. */
   unitCount: Option[Int] = None,
-  /* The unit name. */
+  /* Gets or sets the unit name. */
   unitName: Option[String] = None,
-  /* The display name of the timeseries period. */
+  /* Gets or sets the display name of the timeseries period. */
   displayName: Option[String] = None
 ) extends ApiModel
 

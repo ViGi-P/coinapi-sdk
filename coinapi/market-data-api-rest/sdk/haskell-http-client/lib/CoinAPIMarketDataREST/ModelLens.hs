@@ -101,54 +101,6 @@ ohlcvExchangeTimeseriesItemSymbolIdCoinapiL f OhlcvExchangeTimeseriesItem{..} = 
 
 
 
--- * OptionsOptionExchangeGroup
-
--- | 'optionsOptionExchangeGroupAssetIdBase' Lens
-optionsOptionExchangeGroupAssetIdBaseL :: Lens_' OptionsOptionExchangeGroup (Maybe Text)
-optionsOptionExchangeGroupAssetIdBaseL f OptionsOptionExchangeGroup{..} = (\optionsOptionExchangeGroupAssetIdBase -> OptionsOptionExchangeGroup { optionsOptionExchangeGroupAssetIdBase, ..} ) <$> f optionsOptionExchangeGroupAssetIdBase
-{-# INLINE optionsOptionExchangeGroupAssetIdBaseL #-}
-
--- | 'optionsOptionExchangeGroupAssetIdQuote' Lens
-optionsOptionExchangeGroupAssetIdQuoteL :: Lens_' OptionsOptionExchangeGroup (Maybe Text)
-optionsOptionExchangeGroupAssetIdQuoteL f OptionsOptionExchangeGroup{..} = (\optionsOptionExchangeGroupAssetIdQuote -> OptionsOptionExchangeGroup { optionsOptionExchangeGroupAssetIdQuote, ..} ) <$> f optionsOptionExchangeGroupAssetIdQuote
-{-# INLINE optionsOptionExchangeGroupAssetIdQuoteL #-}
-
--- | 'optionsOptionExchangeGroupUnderlyingPrice' Lens
-optionsOptionExchangeGroupUnderlyingPriceL :: Lens_' OptionsOptionExchangeGroup (Maybe Double)
-optionsOptionExchangeGroupUnderlyingPriceL f OptionsOptionExchangeGroup{..} = (\optionsOptionExchangeGroupUnderlyingPrice -> OptionsOptionExchangeGroup { optionsOptionExchangeGroupUnderlyingPrice, ..} ) <$> f optionsOptionExchangeGroupUnderlyingPrice
-{-# INLINE optionsOptionExchangeGroupUnderlyingPriceL #-}
-
--- | 'optionsOptionExchangeGroupTimeExpiration' Lens
-optionsOptionExchangeGroupTimeExpirationL :: Lens_' OptionsOptionExchangeGroup (Maybe DateTime)
-optionsOptionExchangeGroupTimeExpirationL f OptionsOptionExchangeGroup{..} = (\optionsOptionExchangeGroupTimeExpiration -> OptionsOptionExchangeGroup { optionsOptionExchangeGroupTimeExpiration, ..} ) <$> f optionsOptionExchangeGroupTimeExpiration
-{-# INLINE optionsOptionExchangeGroupTimeExpirationL #-}
-
--- | 'optionsOptionExchangeGroupStrikes' Lens
-optionsOptionExchangeGroupStrikesL :: Lens_' OptionsOptionExchangeGroup (Maybe [OptionsStrike])
-optionsOptionExchangeGroupStrikesL f OptionsOptionExchangeGroup{..} = (\optionsOptionExchangeGroupStrikes -> OptionsOptionExchangeGroup { optionsOptionExchangeGroupStrikes, ..} ) <$> f optionsOptionExchangeGroupStrikes
-{-# INLINE optionsOptionExchangeGroupStrikesL #-}
-
-
-
--- * OptionsStrike
-
--- | 'optionsStrikeStrikePrice' Lens
-optionsStrikeStrikePriceL :: Lens_' OptionsStrike (Maybe Double)
-optionsStrikeStrikePriceL f OptionsStrike{..} = (\optionsStrikeStrikePrice -> OptionsStrike { optionsStrikeStrikePrice, ..} ) <$> f optionsStrikeStrikePrice
-{-# INLINE optionsStrikeStrikePriceL #-}
-
--- | 'optionsStrikeCall' Lens
-optionsStrikeCallL :: Lens_' OptionsStrike (Maybe V1QuoteTrade)
-optionsStrikeCallL f OptionsStrike{..} = (\optionsStrikeCall -> OptionsStrike { optionsStrikeCall, ..} ) <$> f optionsStrikeCall
-{-# INLINE optionsStrikeCallL #-}
-
--- | 'optionsStrikePut' Lens
-optionsStrikePutL :: Lens_' OptionsStrike (Maybe V1QuoteTrade)
-optionsStrikePutL f OptionsStrike{..} = (\optionsStrikePut -> OptionsStrike { optionsStrikePut, ..} ) <$> f optionsStrikePut
-{-# INLINE optionsStrikePutL #-}
-
-
-
 -- * V1Asset
 
 -- | 'v1AssetAssetId' Lens
@@ -694,6 +646,35 @@ v1MetricInfoSourceIdL f V1MetricInfo{..} = (\v1MetricInfoSourceId -> V1MetricInf
 
 
 
+-- * V1OptionExchangeGroup
+
+-- | 'v1OptionExchangeGroupAssetIdBase' Lens
+v1OptionExchangeGroupAssetIdBaseL :: Lens_' V1OptionExchangeGroup (Maybe Text)
+v1OptionExchangeGroupAssetIdBaseL f V1OptionExchangeGroup{..} = (\v1OptionExchangeGroupAssetIdBase -> V1OptionExchangeGroup { v1OptionExchangeGroupAssetIdBase, ..} ) <$> f v1OptionExchangeGroupAssetIdBase
+{-# INLINE v1OptionExchangeGroupAssetIdBaseL #-}
+
+-- | 'v1OptionExchangeGroupAssetIdQuote' Lens
+v1OptionExchangeGroupAssetIdQuoteL :: Lens_' V1OptionExchangeGroup (Maybe Text)
+v1OptionExchangeGroupAssetIdQuoteL f V1OptionExchangeGroup{..} = (\v1OptionExchangeGroupAssetIdQuote -> V1OptionExchangeGroup { v1OptionExchangeGroupAssetIdQuote, ..} ) <$> f v1OptionExchangeGroupAssetIdQuote
+{-# INLINE v1OptionExchangeGroupAssetIdQuoteL #-}
+
+-- | 'v1OptionExchangeGroupUnderlyingPrice' Lens
+v1OptionExchangeGroupUnderlyingPriceL :: Lens_' V1OptionExchangeGroup (Maybe Double)
+v1OptionExchangeGroupUnderlyingPriceL f V1OptionExchangeGroup{..} = (\v1OptionExchangeGroupUnderlyingPrice -> V1OptionExchangeGroup { v1OptionExchangeGroupUnderlyingPrice, ..} ) <$> f v1OptionExchangeGroupUnderlyingPrice
+{-# INLINE v1OptionExchangeGroupUnderlyingPriceL #-}
+
+-- | 'v1OptionExchangeGroupTimeExpiration' Lens
+v1OptionExchangeGroupTimeExpirationL :: Lens_' V1OptionExchangeGroup (Maybe DateTime)
+v1OptionExchangeGroupTimeExpirationL f V1OptionExchangeGroup{..} = (\v1OptionExchangeGroupTimeExpiration -> V1OptionExchangeGroup { v1OptionExchangeGroupTimeExpiration, ..} ) <$> f v1OptionExchangeGroupTimeExpiration
+{-# INLINE v1OptionExchangeGroupTimeExpirationL #-}
+
+-- | 'v1OptionExchangeGroupStrikes' Lens
+v1OptionExchangeGroupStrikesL :: Lens_' V1OptionExchangeGroup (Maybe [V1Strike])
+v1OptionExchangeGroupStrikesL f V1OptionExchangeGroup{..} = (\v1OptionExchangeGroupStrikes -> V1OptionExchangeGroup { v1OptionExchangeGroupStrikes, ..} ) <$> f v1OptionExchangeGroupStrikes
+{-# INLINE v1OptionExchangeGroupStrikesL #-}
+
+
+
 -- * V1OrderBook
 
 -- | 'v1OrderBookSymbolId' Lens
@@ -871,6 +852,25 @@ v1QuoteTradeBidSizeL f V1QuoteTrade{..} = (\v1QuoteTradeBidSize -> V1QuoteTrade 
 v1QuoteTradeLastTradeL :: Lens_' V1QuoteTrade (Maybe V1LastTrade)
 v1QuoteTradeLastTradeL f V1QuoteTrade{..} = (\v1QuoteTradeLastTrade -> V1QuoteTrade { v1QuoteTradeLastTrade, ..} ) <$> f v1QuoteTradeLastTrade
 {-# INLINE v1QuoteTradeLastTradeL #-}
+
+
+
+-- * V1Strike
+
+-- | 'v1StrikeStrikePrice' Lens
+v1StrikeStrikePriceL :: Lens_' V1Strike (Maybe Double)
+v1StrikeStrikePriceL f V1Strike{..} = (\v1StrikeStrikePrice -> V1Strike { v1StrikeStrikePrice, ..} ) <$> f v1StrikeStrikePrice
+{-# INLINE v1StrikeStrikePriceL #-}
+
+-- | 'v1StrikeCall' Lens
+v1StrikeCallL :: Lens_' V1Strike (Maybe V1QuoteTrade)
+v1StrikeCallL f V1Strike{..} = (\v1StrikeCall -> V1Strike { v1StrikeCall, ..} ) <$> f v1StrikeCall
+{-# INLINE v1StrikeCallL #-}
+
+-- | 'v1StrikePut' Lens
+v1StrikePutL :: Lens_' V1Strike (Maybe V1QuoteTrade)
+v1StrikePutL f V1Strike{..} = (\v1StrikePut -> V1Strike { v1StrikePut, ..} ) <$> f v1StrikePut
+{-# INLINE v1StrikePutL #-}
 
 
 

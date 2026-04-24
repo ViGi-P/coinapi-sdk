@@ -59,7 +59,7 @@ public:
 
 
     /// <summary>
-    /// The period ID.
+    /// Gets or sets the period ID.
     /// </summary>
     utility::string_t getPeriodId() const;
     bool periodIdIsSet() const;
@@ -67,7 +67,7 @@ public:
     void setPeriodId(const utility::string_t& value);
 
     /// <summary>
-    /// The length of the period in seconds.
+    /// Gets or sets the length of the period in seconds.
     /// </summary>
     int32_t getLengthSeconds() const;
     bool lengthSecondsIsSet() const;
@@ -75,7 +75,7 @@ public:
     void setLengthSeconds(int32_t value);
 
     /// <summary>
-    /// The length of the period in months.
+    /// Gets or sets the length of the period in months.
     /// </summary>
     int32_t getLengthMonths() const;
     bool lengthMonthsIsSet() const;
@@ -83,7 +83,7 @@ public:
     void setLengthMonths(int32_t value);
 
     /// <summary>
-    /// The unit count.
+    /// Gets or sets the unit count.
     /// </summary>
     int32_t getUnitCount() const;
     bool unitCountIsSet() const;
@@ -91,7 +91,7 @@ public:
     void setUnitCount(int32_t value);
 
     /// <summary>
-    /// The unit name.
+    /// Gets or sets the unit name.
     /// </summary>
     utility::string_t getUnitName() const;
     bool unitNameIsSet() const;
@@ -99,7 +99,7 @@ public:
     void setUnitName(const utility::string_t& value);
 
     /// <summary>
-    /// The display name of the timeseries period.
+    /// Gets or sets the display name of the timeseries period.
     /// </summary>
     utility::string_t getDisplayName() const;
     bool displayNameIsSet() const;

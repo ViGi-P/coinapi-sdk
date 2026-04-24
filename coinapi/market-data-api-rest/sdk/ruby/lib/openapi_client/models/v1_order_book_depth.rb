@@ -16,25 +16,25 @@ require 'time'
 module OpenapiClient
   # Represents the depth of an order book.
   class V1OrderBookDepth < ApiModelBase
-    # The symbol identifier.
+    # Gets or sets the symbol identifier.
     attr_accessor :symbol_id
 
-    # The exchange time of the order book.
+    # Gets or sets the exchange time of the order book.
     attr_accessor :time_exchange
 
-    # The CoinAPI time when the order book was received.
+    # Gets or sets the CoinAPI time when the order book was received.
     attr_accessor :time_coinapi
 
-    # The number of ask levels in the order book.
+    # Gets or sets the number of ask levels in the order book.
     attr_accessor :ask_levels
 
-    # The number of bid levels in the order book.
+    # Gets or sets the number of bid levels in the order book.
     attr_accessor :bid_levels
 
-    # The depth of the ask side of the order book.
+    # Gets or sets the depth of the ask side of the order book.
     attr_accessor :ask_depth
 
-    # The depth of the bid side of the order book.
+    # Gets or sets the depth of the bid side of the order book.
     attr_accessor :bid_depth
 
     # Attribute mapping from ruby-style variable name to JSON key.

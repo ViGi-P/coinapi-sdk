@@ -7,31 +7,31 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(V1OrderBook, () {
-    // The symbol identifier.
+    // Gets or sets the symbol identifier.
     // String symbolId
     test('to test the property `symbolId`', () async {
       // TODO
     });
 
-    // The exchange time of the order book.
+    // Gets or sets the exchange time of the order book.
     // DateTime timeExchange
     test('to test the property `timeExchange`', () async {
       // TODO
     });
 
-    // The CoinAPI time when the order book was received.
+    // Gets or sets the CoinAPI time when the order book was received.
     // DateTime timeCoinapi
     test('to test the property `timeCoinapi`', () async {
       // TODO
     });
 
-    // The asks made by market makers.
+    // Gets or sets the asks made by market makers.
     // JsonObject asks
     test('to test the property `asks`', () async {
       // TODO
     });
 
-    // The bids made by market makers.
+    // Gets or sets the bids made by market makers.
     // JsonObject bids
     test('to test the property `bids`', () async {
       // TODO

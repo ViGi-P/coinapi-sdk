@@ -15,31 +15,31 @@
  */
 public class OASV1OrderBook implements OAS.MappedProperties {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      * @return symbolId
      */
     public String symbolId { get; set; }
 
     /**
-     * The exchange time of the order book.
+     * Gets or sets the exchange time of the order book.
      * @return timeExchange
      */
     public Datetime timeExchange { get; set; }
 
     /**
-     * The CoinAPI time when the order book was received.
+     * Gets or sets the CoinAPI time when the order book was received.
      * @return timeCoinapi
      */
     public Datetime timeCoinapi { get; set; }
 
     /**
-     * The asks made by market makers.
+     * Gets or sets the asks made by market makers.
      * @return asks
      */
     public oas_any_type_not_mapped asks { get; set; }
 
     /**
-     * The bids made by market makers.
+     * Gets or sets the bids made by market makers.
      * @return bids
      */
     public oas_any_type_not_mapped bids { get; set; }

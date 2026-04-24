@@ -48,7 +48,7 @@ export interface V1Trade {
      */
     price?: number;
     /**
-     * The base asset amount traded in the transaction.
+     * The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
      * @type {number}
      * @memberof V1Trade
      */

@@ -65,10 +65,10 @@ sub new {
     __PACKAGE__->method_documentation->{ 'v1_options_exchange_id_current_get' } = {
         summary => 'Current data by Exchange',
         params => $params,
-        returns => 'ARRAY[OptionsOptionExchangeGroup]',
+        returns => 'ARRAY[V1OptionExchangeGroup]',
         };
 }
-# @return ARRAY[OptionsOptionExchangeGroup]
+# @return ARRAY[V1OptionExchangeGroup]
 #
 sub v1_options_exchange_id_current_get {
     my ($self, %args) = @_;
@@ -111,7 +111,7 @@ sub v1_options_exchange_id_current_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[OptionsOptionExchangeGroup]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[V1OptionExchangeGroup]', $response);
     return $_response_object;
 }
 

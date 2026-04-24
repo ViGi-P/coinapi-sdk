@@ -17,37 +17,37 @@ import * as models from './models';
  */
 export interface V1Quote {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      */
     symbol_id?: string;
 
     /**
-     * The exchange time of the quote.
+     * Gets or sets the exchange time of the quote.
      */
     time_exchange?: string;
 
     /**
-     * The CoinAPI time when the quote was received.
+     * Gets or sets the CoinAPI time when the quote was received.
      */
     time_coinapi?: string;
 
     /**
-     * The best asking price.
+     * Gets or sets the best asking price.
      */
     ask_price?: number;
 
     /**
-     * The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+     * Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
      */
     ask_size?: number;
 
     /**
-     * The best bidding price.
+     * Gets or sets the best bidding price.
      */
     bid_price?: number;
 
     /**
-     * The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+     * Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
      */
     bid_size?: number;
 

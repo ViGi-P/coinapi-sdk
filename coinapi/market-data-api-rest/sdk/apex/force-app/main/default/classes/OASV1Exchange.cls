@@ -33,13 +33,13 @@ public class OASV1Exchange implements OAS.MappedProperties {
     public String name { get; set; }
 
     /**
-     * Get dataStart
+     * Gets the start date of the exchange\'s data.
      * @return dataStart
      */
     public String dataStart { get; private set; }
 
     /**
-     * Get dataEnd
+     * Gets the end date of the exchange\'s data.
      * @return dataEnd
      */
     public String dataEnd { get; private set; }
@@ -123,7 +123,7 @@ public class OASV1Exchange implements OAS.MappedProperties {
     public List<OASV1Icon> icons { get; private set; }
 
     /**
-     * Rank of the exchange.
+     * Rank of the exchange - higher rank means exchange is more reliable
      * @return rank
      */
     public Double rank { get; set; }

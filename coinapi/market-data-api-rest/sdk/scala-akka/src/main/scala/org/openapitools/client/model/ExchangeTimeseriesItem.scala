@@ -15,25 +15,25 @@ import java.time.OffsetDateTime
 import org.openapitools.client.core.ApiModel
 
 case class ExchangeTimeseriesItem (
-  /* The start time of the time period. */
+  /* Gets or sets the start time of the time period. */
   timePeriodStart: Option[OffsetDateTime] = None,
-  /* The end time of the time period. */
+  /* Gets or sets the end time of the time period. */
   timePeriodEnd: Option[OffsetDateTime] = None,
-  /* The time when the price opened. */
+  /* Gets or sets the time when the price opened. */
   timeOpen: Option[OffsetDateTime] = None,
-  /* The time when the price closed. */
+  /* Gets or sets the time when the price closed. */
   timeClose: Option[OffsetDateTime] = None,
-  /* The opening price. */
+  /* Gets or sets the opening price. */
   priceOpen: Option[Double] = None,
-  /* The highest price during the time period. */
+  /* Gets or sets the highest price during the time period. */
   priceHigh: Option[Double] = None,
-  /* The lowest price during the time period. */
+  /* Gets or sets the lowest price during the time period. */
   priceLow: Option[Double] = None,
-  /* The closing price. */
+  /* Gets or sets the closing price. */
   priceClose: Option[Double] = None,
-  /* The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. */
+  /* Gets or sets the total volume traded during the time period. */
   volumeTraded: Option[Double] = None,
-  /* The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. */
+  /* Gets or sets the number of trades executed during the time period. */
   tradesCount: Option[Long] = None,
   symbolIdExchange: Option[String] = None,
   symbolIdCoinapi: Option[String] = None

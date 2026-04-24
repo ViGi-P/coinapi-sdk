@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import OptionsOptionExchangeGroup from '../model/OptionsOptionExchangeGroup';
+import V1OptionExchangeGroup from '../model/V1OptionExchangeGroup';
 
 /**
 * Options service.
@@ -38,7 +38,7 @@ export default class OptionsApi {
      * Callback function to receive the result of the v1OptionsExchangeIdCurrentGet operation.
      * @callback module:api/OptionsApi~v1OptionsExchangeIdCurrentGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/OptionsOptionExchangeGroup>} data The data returned by the service call.
+     * @param {Array.<module:model/V1OptionExchangeGroup>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -47,7 +47,7 @@ export default class OptionsApi {
      * Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
      * @param {String} exchangeId Exchange identifier (from the Metadata -> Exchanges)
      * @param {module:api/OptionsApi~v1OptionsExchangeIdCurrentGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/OptionsOptionExchangeGroup>}
+     * data is of type: {@link Array.<module:model/V1OptionExchangeGroup>}
      */
     v1OptionsExchangeIdCurrentGet(exchangeId, callback) {
       let postBody = null;
@@ -69,7 +69,7 @@ export default class OptionsApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
-      let returnType = [OptionsOptionExchangeGroup];
+      let returnType = [V1OptionExchangeGroup];
       return this.apiClient.callApi(
         '/v1/options/{exchange_id}/current', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

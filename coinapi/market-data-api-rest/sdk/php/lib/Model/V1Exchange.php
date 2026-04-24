@@ -539,7 +539,7 @@ class V1Exchange implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_start
      *
-     * @param string|null $data_start data_start
+     * @param string|null $data_start Gets the start date of the exchange's data.
      *
      * @return self
      */
@@ -573,7 +573,7 @@ class V1Exchange implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_end
      *
-     * @param string|null $data_end data_end
+     * @param string|null $data_end Gets the end date of the exchange's data.
      *
      * @return self
      */
@@ -1049,7 +1049,7 @@ class V1Exchange implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets rank
      *
-     * @param float|null $rank Rank of the exchange.
+     * @param float|null $rank Rank of the exchange - higher rank means exchange is more reliable
      *
      * @return self
      */

@@ -85,11 +85,17 @@ public:
     void unsetName();
     void setName(const utility::string_t& value);
 
+    /// <summary>
+    /// Gets the start date of the exchange&#39;s data.
+    /// </summary>
     utility::string_t getDataStart() const;
     bool dataStartIsSet() const;
     void unsetData_start();
     void setDataStart(const utility::string_t& value);
 
+    /// <summary>
+    /// Gets the end date of the exchange&#39;s data.
+    /// </summary>
     utility::string_t getDataEnd() const;
     bool dataEndIsSet() const;
     void unsetData_end();
@@ -200,7 +206,7 @@ public:
     void setIcons(const std::vector<std::shared_ptr<V1_Icon>>& value);
 
     /// <summary>
-    /// Rank of the exchange.
+    /// Rank of the exchange - higher rank means exchange is more reliable
     /// </summary>
     double getRank() const;
     bool rankIsSet() const;

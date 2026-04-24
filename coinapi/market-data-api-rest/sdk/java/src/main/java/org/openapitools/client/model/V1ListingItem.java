@@ -47,9 +47,9 @@ import java.util.Set;
 import org.openapitools.client.JSON;
 
 /**
- * Represents a listing item.
+ * Represents a listing data item.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-23T06:06:39.606952276Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-24T06:05:03.999499045Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class V1ListingItem {
   public static final String SERIALIZED_NAME_METRIC_ID = "metric_id";
   @SerializedName(SERIALIZED_NAME_METRIC_ID)
@@ -119,7 +119,7 @@ public class V1ListingItem {
   }
 
   /**
-   * The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+   * Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
    * @return symbolId
    */
   @javax.annotation.Nullable
@@ -138,7 +138,7 @@ public class V1ListingItem {
   }
 
   /**
-   * The exchange-native symbol identifier. Null for exchange-level metrics.
+   * Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
    * @return symbolIdExternal
    */
   @javax.annotation.Nullable
@@ -195,7 +195,7 @@ public class V1ListingItem {
   }
 
   /**
-   * Gets or sets the asset ID from the exchange.
+   * Gets or sets the asset ID.
    * @return assetIdExternal
    */
   @javax.annotation.Nullable
@@ -214,7 +214,7 @@ public class V1ListingItem {
   }
 
   /**
-   * Gets or sets the chain id.
+   * Gets or sets the chain ID.
    * @return chainId
    */
   @javax.annotation.Nullable
@@ -233,7 +233,7 @@ public class V1ListingItem {
   }
 
   /**
-   * Gets or sets the network id.
+   * Gets or sets the network ID.
    * @return networkId
    */
   @javax.annotation.Nullable

@@ -98,37 +98,37 @@ class V1TimeseriesPeriod {
 
 
 /**
- * The period ID.
+ * Gets or sets the period ID.
  * @member {String} period_id
  */
 V1TimeseriesPeriod.prototype['period_id'] = undefined;
 
 /**
- * The length of the period in seconds.
+ * Gets or sets the length of the period in seconds.
  * @member {Number} length_seconds
  */
 V1TimeseriesPeriod.prototype['length_seconds'] = undefined;
 
 /**
- * The length of the period in months.
+ * Gets or sets the length of the period in months.
  * @member {Number} length_months
  */
 V1TimeseriesPeriod.prototype['length_months'] = undefined;
 
 /**
- * The unit count.
+ * Gets or sets the unit count.
  * @member {Number} unit_count
  */
 V1TimeseriesPeriod.prototype['unit_count'] = undefined;
 
 /**
- * The unit name.
+ * Gets or sets the unit name.
  * @member {String} unit_name
  */
 V1TimeseriesPeriod.prototype['unit_name'] = undefined;
 
 /**
- * The display name of the timeseries period.
+ * Gets or sets the display name of the timeseries period.
  * @member {String} display_name
  */
 V1TimeseriesPeriod.prototype['display_name'] = undefined;

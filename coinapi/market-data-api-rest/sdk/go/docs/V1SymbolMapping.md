@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SymbolId** | Pointer to **NullableString** | The symbol ID. | [optional] 
-**SymbolIdExchange** | Pointer to **NullableString** | The exchange-specific symbol ID. | [optional] 
-**CoinapiDatainfoId** | Pointer to **int32** | The CoinAPI DataInfo ID. | [optional] 
-**AssetIdBaseExchange** | Pointer to **NullableString** | The exchange-specific base asset ID. | [optional] 
-**AssetIdQuoteExchange** | Pointer to **NullableString** | The exchange-specific quote asset ID. | [optional] 
-**AssetIdBase** | Pointer to **NullableString** | The base asset ID. | [optional] 
-**AssetIdQuote** | Pointer to **NullableString** | The quote asset ID. | [optional] 
-**PricePrecision** | Pointer to **NullableFloat64** | The price precision. | [optional] 
-**SizePrecision** | Pointer to **NullableFloat64** | The size precision. | [optional] 
+**SymbolId** | Pointer to **NullableString** | Gets or sets the symbol ID. | [optional] 
+**SymbolIdExchange** | Pointer to **NullableString** | Gets or sets the exchange-specific symbol ID. | [optional] 
+**CoinapiDatainfoId** | Pointer to **int32** | Gets or sets the DataInfo ID. | [optional] 
+**AssetIdBaseExchange** | Pointer to **NullableString** | Gets or sets the exchange-specific base asset ID. | [optional] 
+**AssetIdQuoteExchange** | Pointer to **NullableString** | Gets or sets the exchange-specific quote asset ID. | [optional] 
+**AssetIdBase** | Pointer to **NullableString** | Gets or sets the base asset ID. | [optional] 
+**AssetIdQuote** | Pointer to **NullableString** | Gets or sets the quote asset ID. | [optional] 
+**PricePrecision** | Pointer to **NullableFloat64** | Gets or sets the price precision. | [optional] 
+**SizePrecision** | Pointer to **NullableFloat64** | Gets or sets the size precision. | [optional] 
 
 ## Methods
 

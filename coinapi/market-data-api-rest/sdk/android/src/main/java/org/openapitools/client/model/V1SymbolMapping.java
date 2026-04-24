@@ -41,9 +41,9 @@ public class V1SymbolMapping {
   private Double sizePrecision = null;
 
   /**
-   * The symbol ID.
+   * Gets or sets the symbol ID.
    **/
-  @ApiModelProperty(value = "The symbol ID.")
+  @ApiModelProperty(value = "Gets or sets the symbol ID.")
   public String getSymbolId() {
     return symbolId;
   }
@@ -52,9 +52,9 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The exchange-specific symbol ID.
+   * Gets or sets the exchange-specific symbol ID.
    **/
-  @ApiModelProperty(value = "The exchange-specific symbol ID.")
+  @ApiModelProperty(value = "Gets or sets the exchange-specific symbol ID.")
   public String getSymbolIdExchange() {
     return symbolIdExchange;
   }
@@ -63,9 +63,9 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The CoinAPI DataInfo ID.
+   * Gets or sets the DataInfo ID.
    **/
-  @ApiModelProperty(value = "The CoinAPI DataInfo ID.")
+  @ApiModelProperty(value = "Gets or sets the DataInfo ID.")
   public Integer getCoinapiDatainfoId() {
     return coinapiDatainfoId;
   }
@@ -74,9 +74,9 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The exchange-specific base asset ID.
+   * Gets or sets the exchange-specific base asset ID.
    **/
-  @ApiModelProperty(value = "The exchange-specific base asset ID.")
+  @ApiModelProperty(value = "Gets or sets the exchange-specific base asset ID.")
   public String getAssetIdBaseExchange() {
     return assetIdBaseExchange;
   }
@@ -85,9 +85,9 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The exchange-specific quote asset ID.
+   * Gets or sets the exchange-specific quote asset ID.
    **/
-  @ApiModelProperty(value = "The exchange-specific quote asset ID.")
+  @ApiModelProperty(value = "Gets or sets the exchange-specific quote asset ID.")
   public String getAssetIdQuoteExchange() {
     return assetIdQuoteExchange;
   }
@@ -96,9 +96,9 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The base asset ID.
+   * Gets or sets the base asset ID.
    **/
-  @ApiModelProperty(value = "The base asset ID.")
+  @ApiModelProperty(value = "Gets or sets the base asset ID.")
   public String getAssetIdBase() {
     return assetIdBase;
   }
@@ -107,9 +107,9 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The quote asset ID.
+   * Gets or sets the quote asset ID.
    **/
-  @ApiModelProperty(value = "The quote asset ID.")
+  @ApiModelProperty(value = "Gets or sets the quote asset ID.")
   public String getAssetIdQuote() {
     return assetIdQuote;
   }
@@ -118,9 +118,9 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The price precision.
+   * Gets or sets the price precision.
    **/
-  @ApiModelProperty(value = "The price precision.")
+  @ApiModelProperty(value = "Gets or sets the price precision.")
   public Double getPricePrecision() {
     return pricePrecision;
   }
@@ -129,9 +129,9 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The size precision.
+   * Gets or sets the size precision.
    **/
-  @ApiModelProperty(value = "The size precision.")
+  @ApiModelProperty(value = "Gets or sets the size precision.")
   public Double getSizePrecision() {
     return sizePrecision;
   }

@@ -20,8 +20,6 @@ git_push.sh
 index.ts
 model/models.ts
 model/ohlcvExchangeTimeseriesItem.ts
-model/optionsOptionExchangeGroup.ts
-model/optionsStrike.ts
 model/v1Asset.ts
 model/v1Chain.ts
 model/v1ChainNetworkAddress.ts
@@ -37,11 +35,13 @@ model/v1ListingItem.ts
 model/v1Metric.ts
 model/v1MetricData.ts
 model/v1MetricInfo.ts
+model/v1OptionExchangeGroup.ts
 model/v1OrderBook.ts
 model/v1OrderBookBase.ts
 model/v1OrderBookDepth.ts
 model/v1Quote.ts
 model/v1QuoteTrade.ts
+model/v1Strike.ts
 model/v1Symbol.ts
 model/v1SymbolMapping.ts
 model/v1TimeseriesItem.ts

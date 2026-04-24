@@ -15,19 +15,19 @@ import java.time.OffsetDateTime
 import org.openapitools.client.core.ApiModel
 
 case class OrderBookDepth (
-  /* The symbol identifier. */
+  /* Gets or sets the symbol identifier. */
   symbolId: Option[String] = None,
-  /* The exchange time of the order book. */
+  /* Gets or sets the exchange time of the order book. */
   timeExchange: Option[OffsetDateTime] = None,
-  /* The CoinAPI time when the order book was received. */
+  /* Gets or sets the CoinAPI time when the order book was received. */
   timeCoinapi: Option[OffsetDateTime] = None,
-  /* The number of ask levels in the order book. */
+  /* Gets or sets the number of ask levels in the order book. */
   askLevels: Option[Long] = None,
-  /* The number of bid levels in the order book. */
+  /* Gets or sets the number of bid levels in the order book. */
   bidLevels: Option[Long] = None,
-  /* The depth of the ask side of the order book. */
+  /* Gets or sets the depth of the ask side of the order book. */
   askDepth: Option[Double] = None,
-  /* The depth of the bid side of the order book. */
+  /* Gets or sets the depth of the bid side of the order book. */
   bidDepth: Option[Double] = None
 ) extends ApiModel
 

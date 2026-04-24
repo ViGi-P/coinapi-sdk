@@ -36,7 +36,7 @@ OptionsApi::~OptionsApi()
 {
 }
 
-pplx::task<std::vector<std::shared_ptr<Options_OptionExchangeGroup>>> OptionsApi::v1OptionsExchangeIdCurrentGet(utility::string_t exchangeId) const
+pplx::task<std::vector<std::shared_ptr<V1_OptionExchangeGroup>>> OptionsApi::v1OptionsExchangeIdCurrentGet(utility::string_t exchangeId) const
 {
 
 
@@ -150,14 +150,14 @@ pplx::task<std::vector<std::shared_ptr<Options_OptionExchangeGroup>>> OptionsApi
     })
     .then([=, this](utility::string_t localVarResponse)
     {
-        std::vector<std::shared_ptr<Options_OptionExchangeGroup>> localVarResult;
+        std::vector<std::shared_ptr<V1_OptionExchangeGroup>> localVarResult;
 
         if(localVarResponseHttpContentType == utility::conversions::to_string_t("application/json"))
         {
             web::json::value localVarJson = web::json::value::parse(localVarResponse);
             for( auto& localVarItem : localVarJson.as_array() )
             {
-                std::shared_ptr<Options_OptionExchangeGroup> localVarItemObj;
+                std::shared_ptr<V1_OptionExchangeGroup> localVarItemObj;
                 ModelBase::fromJson(localVarItem, localVarItemObj);
                 localVarResult.push_back(localVarItemObj);
             }

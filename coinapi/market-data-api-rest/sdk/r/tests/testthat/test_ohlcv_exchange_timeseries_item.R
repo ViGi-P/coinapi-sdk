@@ -7,7 +7,7 @@ model_instance <- OhlcvExchangeTimeseriesItem$new()
 
 test_that("time_period_start", {
   # tests for the property `time_period_start` (character)
-  # The start time of the time period.
+  # Gets or sets the start time of the time period.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`time_period_start`, "EXPECTED_RESULT")
@@ -15,7 +15,7 @@ test_that("time_period_start", {
 
 test_that("time_period_end", {
   # tests for the property `time_period_end` (character)
-  # The end time of the time period.
+  # Gets or sets the end time of the time period.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`time_period_end`, "EXPECTED_RESULT")
@@ -23,7 +23,7 @@ test_that("time_period_end", {
 
 test_that("time_open", {
   # tests for the property `time_open` (character)
-  # The time when the price opened.
+  # Gets or sets the time when the price opened.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`time_open`, "EXPECTED_RESULT")
@@ -31,7 +31,7 @@ test_that("time_open", {
 
 test_that("time_close", {
   # tests for the property `time_close` (character)
-  # The time when the price closed.
+  # Gets or sets the time when the price closed.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`time_close`, "EXPECTED_RESULT")
@@ -39,7 +39,7 @@ test_that("time_close", {
 
 test_that("price_open", {
   # tests for the property `price_open` (numeric)
-  # The opening price.
+  # Gets or sets the opening price.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`price_open`, "EXPECTED_RESULT")
@@ -47,7 +47,7 @@ test_that("price_open", {
 
 test_that("price_high", {
   # tests for the property `price_high` (numeric)
-  # The highest price during the time period.
+  # Gets or sets the highest price during the time period.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`price_high`, "EXPECTED_RESULT")
@@ -55,7 +55,7 @@ test_that("price_high", {
 
 test_that("price_low", {
   # tests for the property `price_low` (numeric)
-  # The lowest price during the time period.
+  # Gets or sets the lowest price during the time period.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`price_low`, "EXPECTED_RESULT")
@@ -63,7 +63,7 @@ test_that("price_low", {
 
 test_that("price_close", {
   # tests for the property `price_close` (numeric)
-  # The closing price.
+  # Gets or sets the closing price.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`price_close`, "EXPECTED_RESULT")
@@ -71,7 +71,7 @@ test_that("price_close", {
 
 test_that("volume_traded", {
   # tests for the property `volume_traded` (numeric)
-  # The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+  # Gets or sets the total volume traded during the time period.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`volume_traded`, "EXPECTED_RESULT")
@@ -79,7 +79,7 @@ test_that("volume_traded", {
 
 test_that("trades_count", {
   # tests for the property `trades_count` (integer)
-  # The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+  # Gets or sets the number of trades executed during the time period.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`trades_count`, "EXPECTED_RESULT")

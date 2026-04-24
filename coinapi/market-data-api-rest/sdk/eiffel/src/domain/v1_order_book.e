@@ -20,15 +20,15 @@ class V1_ORDER_BOOK
 feature --Access
 
     symbol_id: detachable STRING_32
-      -- The symbol identifier.
+      -- Gets or sets the symbol identifier.
     time_exchange: detachable DATE_TIME
-      -- The exchange time of the order book.
+      -- Gets or sets the exchange time of the order book.
     time_coinapi: detachable DATE_TIME
-      -- The CoinAPI time when the order book was received.
+      -- Gets or sets the CoinAPI time when the order book was received.
     asks: detachable ANY
-      -- The asks made by market makers.
+      -- Gets or sets the asks made by market makers.
     bids: detachable ANY
-      -- The bids made by market makers.
+      -- Gets or sets the bids made by market makers.
 
 feature -- Change Element
 

@@ -20,19 +20,19 @@ class V1_QUOTE
 feature --Access
 
     symbol_id: detachable STRING_32
-      -- The symbol identifier.
+      -- Gets or sets the symbol identifier.
     time_exchange: detachable DATE_TIME
-      -- The exchange time of the quote.
+      -- Gets or sets the exchange time of the quote.
     time_coinapi: detachable DATE_TIME
-      -- The CoinAPI time when the quote was received.
+      -- Gets or sets the CoinAPI time when the quote was received.
     ask_price: REAL_64
-      -- The best asking price.
+      -- Gets or sets the best asking price.
     ask_size: REAL_64
-      -- The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+      -- Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
     bid_price: REAL_64
-      -- The best bidding price.
+      -- Gets or sets the best bidding price.
     bid_size: REAL_64
-      -- The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+      -- Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
 
 feature -- Change Element
 

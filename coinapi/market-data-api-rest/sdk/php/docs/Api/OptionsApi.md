@@ -12,7 +12,7 @@ All URIs are relative to https://rest.coinapi.io, except if the operation define
 ## `v1OptionsExchangeIdCurrentGet()`
 
 ```php
-v1OptionsExchangeIdCurrentGet($exchange_id): \OpenAPI\Client\Model\OptionsOptionExchangeGroup[]
+v1OptionsExchangeIdCurrentGet($exchange_id): \OpenAPI\Client\Model\V1OptionExchangeGroup[]
 ```
 
 Current data by Exchange
@@ -59,7 +59,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OptionsOptionExchangeGroup[]**](../Model/OptionsOptionExchangeGroup.md)
+[**\OpenAPI\Client\Model\V1OptionExchangeGroup[]**](../Model/V1OptionExchangeGroup.md)
 
 ### Authorization
 

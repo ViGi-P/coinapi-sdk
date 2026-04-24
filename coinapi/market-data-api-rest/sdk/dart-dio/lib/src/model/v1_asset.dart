@@ -32,8 +32,8 @@ part 'v1_asset.g.dart';
 /// * [supplyTotal] - Gets or sets the total supply of the asset.
 /// * [supplyMax] - Gets or sets the maximum supply of the asset.
 /// * [chainAddresses] - 
-/// * [dataStart] 
-/// * [dataEnd] 
+/// * [dataStart] - Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
+/// * [dataEnd] - Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
 @BuiltValue()
 abstract class V1Asset implements Built<V1Asset, V1AssetBuilder> {
   /// Gets or sets the asset ID.
@@ -112,9 +112,11 @@ abstract class V1Asset implements Built<V1Asset, V1AssetBuilder> {
   @BuiltValueField(wireName: r'chain_addresses')
   BuiltList<V1ChainNetworkAddress>? get chainAddresses;
 
+  /// Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
   @BuiltValueField(wireName: r'data_start')
   String? get dataStart;
 
+  /// Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
   @BuiltValueField(wireName: r'data_end')
   String? get dataEnd;
 

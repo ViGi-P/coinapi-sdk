@@ -11,7 +11,7 @@ void main() {
     //
     // Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
     //
-    //Future<BuiltList<OptionsOptionExchangeGroup>> v1OptionsExchangeIdCurrentGet(String exchangeId) async
+    //Future<BuiltList<V1OptionExchangeGroup>> v1OptionsExchangeIdCurrentGet(String exchangeId) async
     test('test v1OptionsExchangeIdCurrentGet', () async {
       // TODO
     });

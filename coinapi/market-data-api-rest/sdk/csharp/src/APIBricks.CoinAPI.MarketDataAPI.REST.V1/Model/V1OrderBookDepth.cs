@@ -35,13 +35,13 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="V1OrderBookDepth" /> class.
         /// </summary>
-        /// <param name="symbolId">The symbol identifier.</param>
-        /// <param name="timeExchange">The exchange time of the order book.</param>
-        /// <param name="timeCoinapi">The CoinAPI time when the order book was received.</param>
-        /// <param name="askLevels">The number of ask levels in the order book.</param>
-        /// <param name="bidLevels">The number of bid levels in the order book.</param>
-        /// <param name="askDepth">The depth of the ask side of the order book.</param>
-        /// <param name="bidDepth">The depth of the bid side of the order book.</param>
+        /// <param name="symbolId">Gets or sets the symbol identifier.</param>
+        /// <param name="timeExchange">Gets or sets the exchange time of the order book.</param>
+        /// <param name="timeCoinapi">Gets or sets the CoinAPI time when the order book was received.</param>
+        /// <param name="askLevels">Gets or sets the number of ask levels in the order book.</param>
+        /// <param name="bidLevels">Gets or sets the number of bid levels in the order book.</param>
+        /// <param name="askDepth">Gets or sets the depth of the ask side of the order book.</param>
+        /// <param name="bidDepth">Gets or sets the depth of the bid side of the order book.</param>
         [JsonConstructor]
         public V1OrderBookDepth(Option<string?> symbolId = default, Option<DateTime?> timeExchange = default, Option<DateTime?> timeCoinapi = default, Option<long?> askLevels = default, Option<long?> bidLevels = default, Option<double?> askDepth = default, Option<double?> bidDepth = default)
         {
@@ -65,9 +65,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> SymbolIdOption { get; private set; }
 
         /// <summary>
-        /// The symbol identifier.
+        /// Gets or sets the symbol identifier.
         /// </summary>
-        /// <value>The symbol identifier.</value>
+        /// <value>Gets or sets the symbol identifier.</value>
         [JsonPropertyName("symbol_id")]
         public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
 
@@ -79,9 +79,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<DateTime?> TimeExchangeOption { get; private set; }
 
         /// <summary>
-        /// The exchange time of the order book.
+        /// Gets or sets the exchange time of the order book.
         /// </summary>
-        /// <value>The exchange time of the order book.</value>
+        /// <value>Gets or sets the exchange time of the order book.</value>
         [JsonPropertyName("time_exchange")]
         public DateTime? TimeExchange { get { return this.TimeExchangeOption; } set { this.TimeExchangeOption = new(value); } }
 
@@ -93,9 +93,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<DateTime?> TimeCoinapiOption { get; private set; }
 
         /// <summary>
-        /// The CoinAPI time when the order book was received.
+        /// Gets or sets the CoinAPI time when the order book was received.
         /// </summary>
-        /// <value>The CoinAPI time when the order book was received.</value>
+        /// <value>Gets or sets the CoinAPI time when the order book was received.</value>
         [JsonPropertyName("time_coinapi")]
         public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption; } set { this.TimeCoinapiOption = new(value); } }
 
@@ -107,9 +107,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<long?> AskLevelsOption { get; private set; }
 
         /// <summary>
-        /// The number of ask levels in the order book.
+        /// Gets or sets the number of ask levels in the order book.
         /// </summary>
-        /// <value>The number of ask levels in the order book.</value>
+        /// <value>Gets or sets the number of ask levels in the order book.</value>
         [JsonPropertyName("ask_levels")]
         public long? AskLevels { get { return this.AskLevelsOption; } set { this.AskLevelsOption = new(value); } }
 
@@ -121,9 +121,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<long?> BidLevelsOption { get; private set; }
 
         /// <summary>
-        /// The number of bid levels in the order book.
+        /// Gets or sets the number of bid levels in the order book.
         /// </summary>
-        /// <value>The number of bid levels in the order book.</value>
+        /// <value>Gets or sets the number of bid levels in the order book.</value>
         [JsonPropertyName("bid_levels")]
         public long? BidLevels { get { return this.BidLevelsOption; } set { this.BidLevelsOption = new(value); } }
 
@@ -135,9 +135,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> AskDepthOption { get; private set; }
 
         /// <summary>
-        /// The depth of the ask side of the order book.
+        /// Gets or sets the depth of the ask side of the order book.
         /// </summary>
-        /// <value>The depth of the ask side of the order book.</value>
+        /// <value>Gets or sets the depth of the ask side of the order book.</value>
         [JsonPropertyName("ask_depth")]
         public double? AskDepth { get { return this.AskDepthOption; } set { this.AskDepthOption = new(value); } }
 
@@ -149,9 +149,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> BidDepthOption { get; private set; }
 
         /// <summary>
-        /// The depth of the bid side of the order book.
+        /// Gets or sets the depth of the bid side of the order book.
         /// </summary>
-        /// <value>The depth of the bid side of the order book.</value>
+        /// <value>Gets or sets the depth of the bid side of the order book.</value>
         [JsonPropertyName("bid_depth")]
         public double? BidDepth { get { return this.BidDepthOption; } set { this.BidDepthOption = new(value); } }
 
