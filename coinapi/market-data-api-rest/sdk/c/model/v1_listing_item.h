@@ -1,7 +1,7 @@
 /*
  * v1_listing_item.h
  *
- * Represents a listing item.
+ * Represents a listing data item.
  */
 
 #ifndef _v1_listing_item_H_

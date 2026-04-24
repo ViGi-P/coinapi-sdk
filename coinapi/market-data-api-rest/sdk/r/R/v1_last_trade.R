@@ -7,12 +7,12 @@
 #' @title V1LastTrade
 #' @description V1LastTrade Class
 #' @format An \code{R6Class} generator object
-#' @field time_exchange The exchange time of the last trade. character [optional]
-#' @field time_coinapi The CoinAPI time when the last trade was received. character [optional]
-#' @field uuid The UUID of the last trade. character [optional]
-#' @field price The price of the last trade. numeric [optional]
-#' @field size The size of the last trade. numeric [optional]
-#' @field taker_side The taker side of the last trade. character [optional]
+#' @field time_exchange Gets or sets the exchange time of the last trade. character [optional]
+#' @field time_coinapi Gets or sets the CoinAPI time when the last trade was received. character [optional]
+#' @field uuid Gets or sets the UUID of the last trade. character [optional]
+#' @field price Gets or sets the price of the last trade. numeric [optional]
+#' @field size Gets or sets the size of the last trade. numeric [optional]
+#' @field taker_side Gets or sets the taker side of the last trade. character [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -29,12 +29,12 @@ V1LastTrade <- R6::R6Class(
     #' @description
     #' Initialize a new V1LastTrade class.
     #'
-    #' @param time_exchange The exchange time of the last trade.
-    #' @param time_coinapi The CoinAPI time when the last trade was received.
-    #' @param uuid The UUID of the last trade.
-    #' @param price The price of the last trade.
-    #' @param size The size of the last trade.
-    #' @param taker_side The taker side of the last trade.
+    #' @param time_exchange Gets or sets the exchange time of the last trade.
+    #' @param time_coinapi Gets or sets the CoinAPI time when the last trade was received.
+    #' @param uuid Gets or sets the UUID of the last trade.
+    #' @param price Gets or sets the price of the last trade.
+    #' @param size Gets or sets the size of the last trade.
+    #' @param taker_side Gets or sets the taker side of the last trade.
     #' @param ... Other optional arguments.
     initialize = function(`time_exchange` = NULL, `time_coinapi` = NULL, `uuid` = NULL, `price` = NULL, `size` = NULL, `taker_side` = NULL, ...) {
       if (!is.null(`time_exchange`)) {

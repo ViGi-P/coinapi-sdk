@@ -35,7 +35,7 @@ import com.squareup.moshi.JsonClass
  * @param timeCoinapi The time when the trade was received by CoinAPI.
  * @param uuid The unique identifier for the trade.
  * @param price The price of the transaction.
- * @param propertySize The base asset amount traded in the transaction.
+ * @param propertySize The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
  * @param takerSide The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN).
  * @param idTrade The trade identifier.
  * @param idOrderMaker The order maker identifier.
@@ -65,7 +65,7 @@ data class V1Trade (
     @Json(name = "price")
     val price: kotlin.Double? = null,
 
-    /* The base asset amount traded in the transaction. */
+    /* The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series. */
     @Json(name = "size")
     val propertySize: kotlin.Double? = null,
 

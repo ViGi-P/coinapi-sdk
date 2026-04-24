@@ -16,17 +16,17 @@ No summary available.
 Represents a timeseries period used in exchange rate data.
 
 .PARAMETER PeriodId
-The period ID.
+Gets or sets the period ID.
 .PARAMETER LengthSeconds
-The length of the period in seconds.
+Gets or sets the length of the period in seconds.
 .PARAMETER LengthMonths
-The length of the period in months.
+Gets or sets the length of the period in months.
 .PARAMETER UnitCount
-The unit count.
+Gets or sets the unit count.
 .PARAMETER UnitName
-The unit name.
+Gets or sets the unit name.
 .PARAMETER DisplayName
-The display name of the timeseries period.
+Gets or sets the display name of the timeseries period.
 .OUTPUTS
 
 V1TimeseriesPeriod<PSCustomObject>

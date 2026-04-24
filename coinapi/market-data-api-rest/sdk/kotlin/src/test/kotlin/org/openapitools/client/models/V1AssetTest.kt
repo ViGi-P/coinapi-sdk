@@ -148,13 +148,13 @@ class V1AssetTest : ShouldSpec() {
             //modelInstance.chainAddresses shouldBe ("TODO")
         }
 
-        // to test the property `dataStart`
+        // to test the property `dataStart` - Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
         should("test dataStart") {
             // uncomment below to test the property
             //modelInstance.dataStart shouldBe ("TODO")
         }
 
-        // to test the property `dataEnd`
+        // to test the property `dataEnd` - Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
         should("test dataEnd") {
             // uncomment below to test the property
             //modelInstance.dataEnd shouldBe ("TODO")

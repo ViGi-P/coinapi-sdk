@@ -29,16 +29,16 @@ class V1TimeseriesItem(BaseModel):
     """
     Represents a timeseries item with price and volume information.
     """ # noqa: E501
-    time_period_start: Optional[datetime] = Field(default=None, description="The start time of the time period.")
-    time_period_end: Optional[datetime] = Field(default=None, description="The end time of the time period.")
-    time_open: Optional[datetime] = Field(default=None, description="The time when the price opened.")
-    time_close: Optional[datetime] = Field(default=None, description="The time when the price closed.")
-    price_open: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The opening price.")
-    price_high: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The highest price during the time period.")
-    price_low: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The lowest price during the time period.")
-    price_close: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The closing price.")
-    volume_traded: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.")
-    trades_count: Optional[StrictInt] = Field(default=None, description="The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.")
+    time_period_start: Optional[datetime] = Field(default=None, description="Gets or sets the start time of the time period.")
+    time_period_end: Optional[datetime] = Field(default=None, description="Gets or sets the end time of the time period.")
+    time_open: Optional[datetime] = Field(default=None, description="Gets or sets the time when the price opened.")
+    time_close: Optional[datetime] = Field(default=None, description="Gets or sets the time when the price closed.")
+    price_open: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the opening price.")
+    price_high: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the highest price during the time period.")
+    price_low: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the lowest price during the time period.")
+    price_close: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the closing price.")
+    volume_traded: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the total volume traded during the time period.")
+    trades_count: Optional[StrictInt] = Field(default=None, description="Gets or sets the number of trades executed during the time period.")
     __properties: ClassVar[List[str]] = ["time_period_start", "time_period_end", "time_open", "time_close", "price_open", "price_high", "price_low", "price_close", "volume_traded", "trades_count"]
 
     model_config = ConfigDict(

@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.OptionsOptionExchangeGroup;
+import org.openapitools.client.model.V1OptionExchangeGroup;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -148,7 +148,7 @@ public class OptionsApi {
      * Current data by Exchange
      * Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges) (required)
-     * @return List&lt;OptionsOptionExchangeGroup&gt;
+     * @return List&lt;V1OptionExchangeGroup&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -157,8 +157,8 @@ public class OptionsApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<OptionsOptionExchangeGroup> v1OptionsExchangeIdCurrentGet(@javax.annotation.Nonnull String exchangeId) throws ApiException {
-        ApiResponse<List<OptionsOptionExchangeGroup>> localVarResp = v1OptionsExchangeIdCurrentGetWithHttpInfo(exchangeId);
+    public List<V1OptionExchangeGroup> v1OptionsExchangeIdCurrentGet(@javax.annotation.Nonnull String exchangeId) throws ApiException {
+        ApiResponse<List<V1OptionExchangeGroup>> localVarResp = v1OptionsExchangeIdCurrentGetWithHttpInfo(exchangeId);
         return localVarResp.getData();
     }
 
@@ -166,7 +166,7 @@ public class OptionsApi {
      * Current data by Exchange
      * Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges) (required)
-     * @return ApiResponse&lt;List&lt;OptionsOptionExchangeGroup&gt;&gt;
+     * @return ApiResponse&lt;List&lt;V1OptionExchangeGroup&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -175,9 +175,9 @@ public class OptionsApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<OptionsOptionExchangeGroup>> v1OptionsExchangeIdCurrentGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId) throws ApiException {
+    public ApiResponse<List<V1OptionExchangeGroup>> v1OptionsExchangeIdCurrentGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId) throws ApiException {
         okhttp3.Call localVarCall = v1OptionsExchangeIdCurrentGetValidateBeforeCall(exchangeId, null);
-        Type localVarReturnType = new TypeToken<List<OptionsOptionExchangeGroup>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<V1OptionExchangeGroup>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -195,10 +195,10 @@ public class OptionsApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OptionsExchangeIdCurrentGetAsync(@javax.annotation.Nonnull String exchangeId, final ApiCallback<List<OptionsOptionExchangeGroup>> _callback) throws ApiException {
+    public okhttp3.Call v1OptionsExchangeIdCurrentGetAsync(@javax.annotation.Nonnull String exchangeId, final ApiCallback<List<V1OptionExchangeGroup>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OptionsExchangeIdCurrentGetValidateBeforeCall(exchangeId, _callback);
-        Type localVarReturnType = new TypeToken<List<OptionsOptionExchangeGroup>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<V1OptionExchangeGroup>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

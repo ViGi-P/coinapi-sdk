@@ -31,8 +31,14 @@ export interface V1Exchange {
      */
     name?: string;
 
+    /**
+     * Gets the start date of the exchange\'s data.
+     */
     data_start?: string;
 
+    /**
+     * Gets the end date of the exchange\'s data.
+     */
     data_end?: string;
 
     /**
@@ -101,7 +107,7 @@ export interface V1Exchange {
     icons?: Array<models.V1Icon>;
 
     /**
-     * Rank of the exchange.
+     * Rank of the exchange - higher rank means exchange is more reliable
      */
     rank?: number;
 

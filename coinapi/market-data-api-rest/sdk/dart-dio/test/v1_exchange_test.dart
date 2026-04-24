@@ -25,11 +25,13 @@ void main() {
       // TODO
     });
 
+    // Gets the start date of the exchange's data.
     // String dataStart
     test('to test the property `dataStart`', () async {
       // TODO
     });
 
+    // Gets the end date of the exchange's data.
     // String dataEnd
     test('to test the property `dataEnd`', () async {
       // TODO
@@ -113,7 +115,7 @@ void main() {
       // TODO
     });
 
-    // Rank of the exchange.
+    // Rank of the exchange - higher rank means exchange is more reliable
     // double rank
     test('to test the property `rank`', () async {
       // TODO

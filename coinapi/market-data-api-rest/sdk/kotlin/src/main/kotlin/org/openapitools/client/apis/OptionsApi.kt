@@ -27,7 +27,7 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import org.openapitools.client.models.OptionsOptionExchangeGroup
+import org.openapitools.client.models.V1OptionExchangeGroup
 
 import com.squareup.moshi.Json
 
@@ -58,7 +58,7 @@ open class OptionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * Current data by Exchange
      * Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
-     * @return kotlin.collections.List<OptionsOptionExchangeGroup>
+     * @return kotlin.collections.List<V1OptionExchangeGroup>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -67,11 +67,11 @@ open class OptionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1OptionsExchangeIdCurrentGet(exchangeId: kotlin.String) : kotlin.collections.List<OptionsOptionExchangeGroup> {
+    fun v1OptionsExchangeIdCurrentGet(exchangeId: kotlin.String) : kotlin.collections.List<V1OptionExchangeGroup> {
         val localVarResponse = v1OptionsExchangeIdCurrentGetWithHttpInfo(exchangeId = exchangeId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<OptionsOptionExchangeGroup>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<V1OptionExchangeGroup>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -90,16 +90,16 @@ open class OptionsApi(basePath: kotlin.String = defaultBasePath, client: Call.Fa
      * Current data by Exchange
      * Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
-     * @return ApiResponse<kotlin.collections.List<OptionsOptionExchangeGroup>?>
+     * @return ApiResponse<kotlin.collections.List<V1OptionExchangeGroup>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1OptionsExchangeIdCurrentGetWithHttpInfo(exchangeId: kotlin.String) : ApiResponse<kotlin.collections.List<OptionsOptionExchangeGroup>?> {
+    fun v1OptionsExchangeIdCurrentGetWithHttpInfo(exchangeId: kotlin.String) : ApiResponse<kotlin.collections.List<V1OptionExchangeGroup>?> {
         val localVariableConfig = v1OptionsExchangeIdCurrentGetRequestConfig(exchangeId = exchangeId)
 
-        return request<Unit, kotlin.collections.List<OptionsOptionExchangeGroup>>(
+        return request<Unit, kotlin.collections.List<V1OptionExchangeGroup>>(
             localVariableConfig
         )
     }

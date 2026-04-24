@@ -152,7 +152,7 @@ V1Trade.prototype['uuid'] = undefined;
 V1Trade.prototype['price'] = undefined;
 
 /**
- * The base asset amount traded in the transaction.
+ * The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
  * @member {Number} size
  */
 V1Trade.prototype['size'] = undefined;

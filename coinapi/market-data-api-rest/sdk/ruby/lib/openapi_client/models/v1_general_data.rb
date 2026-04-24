@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module OpenapiClient
-  # Class representation of general metric data. This class is an XML type with name 'general_data' and inherits from the BaseCsvModel class.
+  # Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class.
   class V1GeneralData < ApiModelBase
     # Gets or sets the entry time for the data point.
     attr_accessor :entry_time

@@ -18,55 +18,55 @@
  */
 export interface V1SymbolMapping {
     /**
-     * The symbol ID.
+     * Gets or sets the symbol ID.
      * @type {string}
      * @memberof V1SymbolMapping
      */
     symbol_id?: string | null;
     /**
-     * The exchange-specific symbol ID.
+     * Gets or sets the exchange-specific symbol ID.
      * @type {string}
      * @memberof V1SymbolMapping
      */
     symbol_id_exchange?: string | null;
     /**
-     * The CoinAPI DataInfo ID.
+     * Gets or sets the DataInfo ID.
      * @type {number}
      * @memberof V1SymbolMapping
      */
     coinapi_datainfo_id?: number;
     /**
-     * The exchange-specific base asset ID.
+     * Gets or sets the exchange-specific base asset ID.
      * @type {string}
      * @memberof V1SymbolMapping
      */
     asset_id_base_exchange?: string | null;
     /**
-     * The exchange-specific quote asset ID.
+     * Gets or sets the exchange-specific quote asset ID.
      * @type {string}
      * @memberof V1SymbolMapping
      */
     asset_id_quote_exchange?: string | null;
     /**
-     * The base asset ID.
+     * Gets or sets the base asset ID.
      * @type {string}
      * @memberof V1SymbolMapping
      */
     asset_id_base?: string | null;
     /**
-     * The quote asset ID.
+     * Gets or sets the quote asset ID.
      * @type {string}
      * @memberof V1SymbolMapping
      */
     asset_id_quote?: string | null;
     /**
-     * The price precision.
+     * Gets or sets the price precision.
      * @type {number}
      * @memberof V1SymbolMapping
      */
     price_precision?: number | null;
     /**
-     * The size precision.
+     * Gets or sets the size precision.
      * @type {number}
      * @memberof V1SymbolMapping
      */

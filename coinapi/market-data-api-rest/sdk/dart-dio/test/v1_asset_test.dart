@@ -121,11 +121,13 @@ void main() {
       // TODO
     });
 
+    // Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
     // String dataStart
     test('to test the property `dataStart`', () async {
       // TODO
     });
 
+    // Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
     // String dataEnd
     test('to test the property `dataEnd`', () async {
       // TODO

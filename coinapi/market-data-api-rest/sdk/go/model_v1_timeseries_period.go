@@ -20,17 +20,17 @@ var _ MappedNullable = &V1TimeseriesPeriod{}
 
 // V1TimeseriesPeriod Represents a timeseries period used in exchange rate data.
 type V1TimeseriesPeriod struct {
-	// The period ID.
+	// Gets or sets the period ID.
 	PeriodId NullableString `json:"period_id,omitempty"`
-	// The length of the period in seconds.
+	// Gets or sets the length of the period in seconds.
 	LengthSeconds *int32 `json:"length_seconds,omitempty"`
-	// The length of the period in months.
+	// Gets or sets the length of the period in months.
 	LengthMonths *int32 `json:"length_months,omitempty"`
-	// The unit count.
+	// Gets or sets the unit count.
 	UnitCount NullableInt32 `json:"unit_count,omitempty"`
-	// The unit name.
+	// Gets or sets the unit name.
 	UnitName NullableString `json:"unit_name,omitempty"`
-	// The display name of the timeseries period.
+	// Gets or sets the display name of the timeseries period.
 	DisplayName NullableString `json:"display_name,omitempty"`
 }
 

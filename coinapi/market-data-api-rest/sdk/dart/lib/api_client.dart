@@ -184,10 +184,6 @@ class ApiClient {
           return value is DateTime ? value : DateTime.tryParse(value);
         case 'OhlcvExchangeTimeseriesItem':
           return OhlcvExchangeTimeseriesItem.fromJson(value);
-        case 'OptionsOptionExchangeGroup':
-          return OptionsOptionExchangeGroup.fromJson(value);
-        case 'OptionsStrike':
-          return OptionsStrike.fromJson(value);
         case 'V1Asset':
           return V1Asset.fromJson(value);
         case 'V1Chain':
@@ -218,6 +214,8 @@ class ApiClient {
           return V1MetricData.fromJson(value);
         case 'V1MetricInfo':
           return V1MetricInfo.fromJson(value);
+        case 'V1OptionExchangeGroup':
+          return V1OptionExchangeGroup.fromJson(value);
         case 'V1OrderBook':
           return V1OrderBook.fromJson(value);
         case 'V1OrderBookBase':
@@ -228,6 +226,8 @@ class ApiClient {
           return V1Quote.fromJson(value);
         case 'V1QuoteTrade':
           return V1QuoteTrade.fromJson(value);
+        case 'V1Strike':
+          return V1Strike.fromJson(value);
         case 'V1Symbol':
           return V1Symbol.fromJson(value);
         case 'V1SymbolMapping':

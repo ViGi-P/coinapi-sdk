@@ -37,7 +37,7 @@ describe 'OptionsApi' do
   # Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
   # @param exchange_id Exchange identifier (from the Metadata -&gt; Exchanges)
   # @param [Hash] opts the optional parameters
-  # @return [Array<OptionsOptionExchangeGroup>]
+  # @return [Array<V1OptionExchangeGroup>]
   describe 'v1_options_exchange_id_current_get test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TimePeriodStart** | Pointer to **time.Time** | The start time of the time period. | [optional] 
-**TimePeriodEnd** | Pointer to **time.Time** | The end time of the time period. | [optional] 
-**TimeOpen** | Pointer to **NullableTime** | The time when the price opened. | [optional] 
-**TimeClose** | Pointer to **NullableTime** | The time when the price closed. | [optional] 
-**PriceOpen** | Pointer to **NullableFloat64** | The opening price. | [optional] 
-**PriceHigh** | Pointer to **NullableFloat64** | The highest price during the time period. | [optional] 
-**PriceLow** | Pointer to **NullableFloat64** | The lowest price during the time period. | [optional] 
-**PriceClose** | Pointer to **NullableFloat64** | The closing price. | [optional] 
-**VolumeTraded** | Pointer to **float64** | The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
-**TradesCount** | Pointer to **int64** | The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
+**TimePeriodStart** | Pointer to **time.Time** | Gets or sets the start time of the time period. | [optional] 
+**TimePeriodEnd** | Pointer to **time.Time** | Gets or sets the end time of the time period. | [optional] 
+**TimeOpen** | Pointer to **NullableTime** | Gets or sets the time when the price opened. | [optional] 
+**TimeClose** | Pointer to **NullableTime** | Gets or sets the time when the price closed. | [optional] 
+**PriceOpen** | Pointer to **NullableFloat64** | Gets or sets the opening price. | [optional] 
+**PriceHigh** | Pointer to **NullableFloat64** | Gets or sets the highest price during the time period. | [optional] 
+**PriceLow** | Pointer to **NullableFloat64** | Gets or sets the lowest price during the time period. | [optional] 
+**PriceClose** | Pointer to **NullableFloat64** | Gets or sets the closing price. | [optional] 
+**VolumeTraded** | Pointer to **float64** | Gets or sets the total volume traded during the time period. | [optional] 
+**TradesCount** | Pointer to **int64** | Gets or sets the number of trades executed during the time period. | [optional] 
 **SymbolIdExchange** | Pointer to **NullableString** |  | [optional] 
 **SymbolIdCoinapi** | Pointer to **NullableString** |  | [optional] 
 

@@ -119,55 +119,55 @@ class V1SymbolMapping {
 
 
 /**
- * The symbol ID.
+ * Gets or sets the symbol ID.
  * @member {String} symbol_id
  */
 V1SymbolMapping.prototype['symbol_id'] = undefined;
 
 /**
- * The exchange-specific symbol ID.
+ * Gets or sets the exchange-specific symbol ID.
  * @member {String} symbol_id_exchange
  */
 V1SymbolMapping.prototype['symbol_id_exchange'] = undefined;
 
 /**
- * The CoinAPI DataInfo ID.
+ * Gets or sets the DataInfo ID.
  * @member {Number} coinapi_datainfo_id
  */
 V1SymbolMapping.prototype['coinapi_datainfo_id'] = undefined;
 
 /**
- * The exchange-specific base asset ID.
+ * Gets or sets the exchange-specific base asset ID.
  * @member {String} asset_id_base_exchange
  */
 V1SymbolMapping.prototype['asset_id_base_exchange'] = undefined;
 
 /**
- * The exchange-specific quote asset ID.
+ * Gets or sets the exchange-specific quote asset ID.
  * @member {String} asset_id_quote_exchange
  */
 V1SymbolMapping.prototype['asset_id_quote_exchange'] = undefined;
 
 /**
- * The base asset ID.
+ * Gets or sets the base asset ID.
  * @member {String} asset_id_base
  */
 V1SymbolMapping.prototype['asset_id_base'] = undefined;
 
 /**
- * The quote asset ID.
+ * Gets or sets the quote asset ID.
  * @member {String} asset_id_quote
  */
 V1SymbolMapping.prototype['asset_id_quote'] = undefined;
 
 /**
- * The price precision.
+ * Gets or sets the price precision.
  * @member {Number} price_precision
  */
 V1SymbolMapping.prototype['price_precision'] = undefined;
 
 /**
- * The size precision.
+ * Gets or sets the size precision.
  * @member {Number} size_precision
  */
 V1SymbolMapping.prototype['size_precision'] = undefined;

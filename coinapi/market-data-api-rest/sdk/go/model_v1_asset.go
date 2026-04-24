@@ -59,7 +59,9 @@ type V1Asset struct {
 	SupplyMax NullableFloat64 `json:"supply_max,omitempty"`
 	// 
 	ChainAddresses []V1ChainNetworkAddress `json:"chain_addresses,omitempty"`
+	// Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
 	DataStart NullableString `json:"data_start,omitempty"`
+	// Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
 	DataEnd NullableString `json:"data_end,omitempty"`
 }
 

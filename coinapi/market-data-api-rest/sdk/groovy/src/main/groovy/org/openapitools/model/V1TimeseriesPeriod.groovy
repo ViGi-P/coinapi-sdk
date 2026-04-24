@@ -7,16 +7,16 @@ import org.openapitools.jackson.nullable.JsonNullable;
 
 @Canonical
 class V1TimeseriesPeriod {
-    /* The period ID. */
+    /* Gets or sets the period ID. */
     String periodId
-    /* The length of the period in seconds. */
+    /* Gets or sets the length of the period in seconds. */
     Integer lengthSeconds
-    /* The length of the period in months. */
+    /* Gets or sets the length of the period in months. */
     Integer lengthMonths
-    /* The unit count. */
+    /* Gets or sets the unit count. */
     Integer unitCount
-    /* The unit name. */
+    /* Gets or sets the unit name. */
     String unitName
-    /* The display name of the timeseries period. */
+    /* Gets or sets the display name of the timeseries period. */
     String displayName
 }

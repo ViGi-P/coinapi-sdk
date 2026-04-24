@@ -38,8 +38,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <param name="exchangeId">Gets or sets the exchange ID.</param>
         /// <param name="website">Gets or sets the website URL of the exchange.</param>
         /// <param name="name">Gets or sets the name of the exchange.</param>
-        /// <param name="dataStart">dataStart</param>
-        /// <param name="dataEnd">dataEnd</param>
+        /// <param name="dataStart">Gets the start date of the exchange&#39;s data.</param>
+        /// <param name="dataEnd">Gets the end date of the exchange&#39;s data.</param>
         /// <param name="dataQuoteStart">Gets or sets the start date of quote data.</param>
         /// <param name="dataQuoteEnd">Gets or sets the end date of quote data.</param>
         /// <param name="dataOrderbookStart">Gets or sets the start date of order book data.</param>
@@ -53,7 +53,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <param name="volume1mthUsd">Gets or sets the USD volume in the last 1 month.</param>
         /// <param name="metricId">Gets or sets the list of metric IDs.</param>
         /// <param name="icons">Gets or sets the list of icons for the exchange.</param>
-        /// <param name="rank">Rank of the exchange.</param>
+        /// <param name="rank">Rank of the exchange - higher rank means exchange is more reliable</param>
         /// <param name="integrationStatus">Status of the integration</param>
         [JsonConstructor]
         public V1Exchange(Option<string?> exchangeId = default, Option<string?> website = default, Option<string?> name = default, Option<string?> dataStart = default, Option<string?> dataEnd = default, Option<DateTime?> dataQuoteStart = default, Option<DateTime?> dataQuoteEnd = default, Option<DateTime?> dataOrderbookStart = default, Option<DateTime?> dataOrderbookEnd = default, Option<DateTime?> dataTradeStart = default, Option<DateTime?> dataTradeEnd = default, Option<long?> dataTradeCount = default, Option<long?> dataSymbolsCount = default, Option<double?> volume1hrsUsd = default, Option<double?> volume1dayUsd = default, Option<double?> volume1mthUsd = default, Option<List<string>?> metricId = default, Option<List<V1Icon>?> icons = default, Option<double?> rank = default, Option<string?> integrationStatus = default)
@@ -133,8 +133,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> DataStartOption { get; }
 
         /// <summary>
-        /// Gets or Sets DataStart
+        /// Gets the start date of the exchange&#39;s data.
         /// </summary>
+        /// <value>Gets the start date of the exchange&#39;s data.</value>
         [JsonPropertyName("data_start")]
         public string? DataStart { get { return this.DataStartOption; } }
 
@@ -146,8 +147,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> DataEndOption { get; }
 
         /// <summary>
-        /// Gets or Sets DataEnd
+        /// Gets the end date of the exchange&#39;s data.
         /// </summary>
+        /// <value>Gets the end date of the exchange&#39;s data.</value>
         [JsonPropertyName("data_end")]
         public string? DataEnd { get { return this.DataEndOption; } }
 
@@ -341,9 +343,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> RankOption { get; private set; }
 
         /// <summary>
-        /// Rank of the exchange.
+        /// Rank of the exchange - higher rank means exchange is more reliable
         /// </summary>
-        /// <value>Rank of the exchange.</value>
+        /// <value>Rank of the exchange - higher rank means exchange is more reliable</value>
         [JsonPropertyName("rank")]
         public double? Rank { get { return this.RankOption; } set { this.RankOption = new(value); } }
 

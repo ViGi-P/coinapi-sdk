@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **ExchangeId** | Pointer to **NullableString** | Gets or sets the exchange ID. | [optional] 
 **Website** | Pointer to **NullableString** | Gets or sets the website URL of the exchange. | [optional] 
 **Name** | Pointer to **NullableString** | Gets or sets the name of the exchange. | [optional] 
-**DataStart** | Pointer to **NullableString** |  | [optional] [readonly] 
-**DataEnd** | Pointer to **NullableString** |  | [optional] [readonly] 
+**DataStart** | Pointer to **NullableString** | Gets the start date of the exchange&#39;s data. | [optional] [readonly] 
+**DataEnd** | Pointer to **NullableString** | Gets the end date of the exchange&#39;s data. | [optional] [readonly] 
 **DataQuoteStart** | Pointer to **NullableTime** | Gets or sets the start date of quote data. | [optional] 
 **DataQuoteEnd** | Pointer to **NullableTime** | Gets or sets the end date of quote data. | [optional] 
 **DataOrderbookStart** | Pointer to **NullableTime** | Gets or sets the start date of order book data. | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **Volume1mthUsd** | Pointer to **NullableFloat64** | Gets or sets the USD volume in the last 1 month. | [optional] 
 **MetricId** | Pointer to **[]string** | Gets or sets the list of metric IDs. | [optional] 
 **Icons** | Pointer to [**[]V1Icon**](V1Icon.md) | Gets or sets the list of icons for the exchange. | [optional] [readonly] 
-**Rank** | Pointer to **float64** | Rank of the exchange. | [optional] 
+**Rank** | Pointer to **float64** | Rank of the exchange - higher rank means exchange is more reliable | [optional] 
 **IntegrationStatus** | Pointer to **NullableString** | Status of the integration | [optional] 
 
 ## Methods

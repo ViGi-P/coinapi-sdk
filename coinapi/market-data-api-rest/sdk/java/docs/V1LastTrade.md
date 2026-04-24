@@ -8,12 +8,12 @@ Represents the last executed transaction.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**timeExchange** | **OffsetDateTime** | The exchange time of the last trade. |  [optional] |
-|**timeCoinapi** | **OffsetDateTime** | The CoinAPI time when the last trade was received. |  [optional] |
-|**uuid** | **UUID** | The UUID of the last trade. |  [optional] |
-|**price** | **Double** | The price of the last trade. |  [optional] |
-|**size** | **Double** | The size of the last trade. |  [optional] |
-|**takerSide** | **String** | The taker side of the last trade. |  [optional] |
+|**timeExchange** | **OffsetDateTime** | Gets or sets the exchange time of the last trade. |  [optional] |
+|**timeCoinapi** | **OffsetDateTime** | Gets or sets the CoinAPI time when the last trade was received. |  [optional] |
+|**uuid** | **UUID** | Gets or sets the UUID of the last trade. |  [optional] |
+|**price** | **Double** | Gets or sets the price of the last trade. |  [optional] |
+|**size** | **Double** | Gets or sets the size of the last trade. |  [optional] |
+|**takerSide** | **String** | Gets or sets the taker side of the last trade. |  [optional] |
 
 
 

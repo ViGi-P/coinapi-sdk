@@ -25,8 +25,10 @@ module OpenapiClient
     # Gets or sets the name of the exchange.
     attr_accessor :name
 
+    # Gets the start date of the exchange's data.
     attr_accessor :data_start
 
+    # Gets the end date of the exchange's data.
     attr_accessor :data_end
 
     # Gets or sets the start date of quote data.
@@ -68,7 +70,7 @@ module OpenapiClient
     # Gets or sets the list of icons for the exchange.
     attr_accessor :icons
 
-    # Rank of the exchange.
+    # Rank of the exchange - higher rank means exchange is more reliable
     attr_accessor :rank
 
     # Status of the integration

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **TimeCoinapi** | **System.DateTime** | The time when the trade was received by CoinAPI. | [optional] 
 **Uuid** | **String** | The unique identifier for the trade. | [optional] 
 **Price** | **Double** | The price of the transaction. | [optional] 
-**Size** | **Double** | The base asset amount traded in the transaction. | [optional] 
+**Size** | **Double** | The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series. | [optional] 
 **TakerSide** | **String** | The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN). | [optional] 
 **IdTrade** | **String** | The trade identifier. | [optional] 
 **IdOrderMaker** | **String** | The order maker identifier. | [optional] 

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SymbolId** | Pointer to **NullableString** | The symbol identifier. | [optional] 
-**TimeExchange** | Pointer to **time.Time** | The exchange time of the order book. | [optional] 
-**TimeCoinapi** | Pointer to **time.Time** | The CoinAPI time when the order book was received. | [optional] 
-**AskLevels** | Pointer to **int64** | The number of ask levels in the order book. | [optional] 
-**BidLevels** | Pointer to **int64** | The number of bid levels in the order book. | [optional] 
-**AskDepth** | Pointer to **float64** | The depth of the ask side of the order book. | [optional] 
-**BidDepth** | Pointer to **float64** | The depth of the bid side of the order book. | [optional] 
+**SymbolId** | Pointer to **NullableString** | Gets or sets the symbol identifier. | [optional] 
+**TimeExchange** | Pointer to **time.Time** | Gets or sets the exchange time of the order book. | [optional] 
+**TimeCoinapi** | Pointer to **time.Time** | Gets or sets the CoinAPI time when the order book was received. | [optional] 
+**AskLevels** | Pointer to **int64** | Gets or sets the number of ask levels in the order book. | [optional] 
+**BidLevels** | Pointer to **int64** | Gets or sets the number of bid levels in the order book. | [optional] 
+**AskDepth** | Pointer to **float64** | Gets or sets the depth of the ask side of the order book. | [optional] 
+**BidDepth** | Pointer to **float64** | Gets or sets the depth of the bid side of the order book. | [optional] 
 
 ## Methods
 

@@ -108,8 +108,6 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [PSOpenAPITools\Model.OhlcvExchangeTimeseriesItem](docs/OhlcvExchangeTimeseriesItem.md)
- - [PSOpenAPITools\Model.OptionsOptionExchangeGroup](docs/OptionsOptionExchangeGroup.md)
- - [PSOpenAPITools\Model.OptionsStrike](docs/OptionsStrike.md)
  - [PSOpenAPITools\Model.V1Asset](docs/V1Asset.md)
  - [PSOpenAPITools\Model.V1Chain](docs/V1Chain.md)
  - [PSOpenAPITools\Model.V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
@@ -125,11 +123,13 @@ Class | Method | HTTP request | Description
  - [PSOpenAPITools\Model.V1Metric](docs/V1Metric.md)
  - [PSOpenAPITools\Model.V1MetricData](docs/V1MetricData.md)
  - [PSOpenAPITools\Model.V1MetricInfo](docs/V1MetricInfo.md)
+ - [PSOpenAPITools\Model.V1OptionExchangeGroup](docs/V1OptionExchangeGroup.md)
  - [PSOpenAPITools\Model.V1OrderBook](docs/V1OrderBook.md)
  - [PSOpenAPITools\Model.V1OrderBookBase](docs/V1OrderBookBase.md)
  - [PSOpenAPITools\Model.V1OrderBookDepth](docs/V1OrderBookDepth.md)
  - [PSOpenAPITools\Model.V1Quote](docs/V1Quote.md)
  - [PSOpenAPITools\Model.V1QuoteTrade](docs/V1QuoteTrade.md)
+ - [PSOpenAPITools\Model.V1Strike](docs/V1Strike.md)
  - [PSOpenAPITools\Model.V1Symbol](docs/V1Symbol.md)
  - [PSOpenAPITools\Model.V1SymbolMapping](docs/V1SymbolMapping.md)
  - [PSOpenAPITools\Model.V1TimeseriesItem](docs/V1TimeseriesItem.md)

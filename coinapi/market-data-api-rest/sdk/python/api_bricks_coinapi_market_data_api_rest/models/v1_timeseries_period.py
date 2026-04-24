@@ -28,12 +28,12 @@ class V1TimeseriesPeriod(BaseModel):
     """
     Represents a timeseries period used in exchange rate data.
     """ # noqa: E501
-    period_id: Optional[StrictStr] = Field(default=None, description="The period ID.")
-    length_seconds: Optional[StrictInt] = Field(default=None, description="The length of the period in seconds.")
-    length_months: Optional[StrictInt] = Field(default=None, description="The length of the period in months.")
-    unit_count: Optional[StrictInt] = Field(default=None, description="The unit count.")
-    unit_name: Optional[StrictStr] = Field(default=None, description="The unit name.")
-    display_name: Optional[StrictStr] = Field(default=None, description="The display name of the timeseries period.")
+    period_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the period ID.")
+    length_seconds: Optional[StrictInt] = Field(default=None, description="Gets or sets the length of the period in seconds.")
+    length_months: Optional[StrictInt] = Field(default=None, description="Gets or sets the length of the period in months.")
+    unit_count: Optional[StrictInt] = Field(default=None, description="Gets or sets the unit count.")
+    unit_name: Optional[StrictStr] = Field(default=None, description="Gets or sets the unit name.")
+    display_name: Optional[StrictStr] = Field(default=None, description="Gets or sets the display name of the timeseries period.")
     __properties: ClassVar[List[str]] = ["period_id", "length_seconds", "length_months", "unit_count", "unit_name", "display_name"]
 
     model_config = ConfigDict(

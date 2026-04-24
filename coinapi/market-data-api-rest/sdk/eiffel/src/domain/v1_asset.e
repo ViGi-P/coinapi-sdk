@@ -58,9 +58,9 @@ feature --Access
     chain_addresses: detachable LIST [V1_CHAIN_NETWORK_ADDRESS]
       -- 
     data_start: detachable STRING_32
-      
+      -- Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
     data_end: detachable STRING_32
-      
+      -- Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
 
 feature -- Change Element
 

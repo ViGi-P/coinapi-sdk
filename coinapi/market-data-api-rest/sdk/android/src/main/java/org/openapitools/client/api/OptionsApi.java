@@ -24,7 +24,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import java.util.*;
-import org.openapitools.client.model.OptionsOptionExchangeGroup;
+import org.openapitools.client.model.V1OptionExchangeGroup;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -60,9 +60,9 @@ public class OptionsApi {
   * Current data by Exchange
   * Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
    * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
-   * @return List<OptionsOptionExchangeGroup>
+   * @return List<V1OptionExchangeGroup>
   */
-  public List<OptionsOptionExchangeGroup> v1OptionsExchangeIdCurrentGet (String exchangeId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<V1OptionExchangeGroup> v1OptionsExchangeIdCurrentGet (String exchangeId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'exchangeId' is set
     if (exchangeId == null) {
@@ -97,7 +97,7 @@ public class OptionsApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<OptionsOptionExchangeGroup>) ApiInvoker.deserialize(localVarResponse, "array", OptionsOptionExchangeGroup.class);
+         return (List<V1OptionExchangeGroup>) ApiInvoker.deserialize(localVarResponse, "array", V1OptionExchangeGroup.class);
       } else {
          return null;
       }
@@ -123,7 +123,7 @@ public class OptionsApi {
    * Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
    * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
   */
-  public void v1OptionsExchangeIdCurrentGet (String exchangeId, final Response.Listener<List<OptionsOptionExchangeGroup>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1OptionsExchangeIdCurrentGet (String exchangeId, final Response.Listener<List<V1OptionExchangeGroup>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'exchangeId' is set
@@ -168,7 +168,7 @@ public class OptionsApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<OptionsOptionExchangeGroup>) ApiInvoker.deserialize(localVarResponse,  "array", OptionsOptionExchangeGroup.class));
+              responseListener.onResponse((List<V1OptionExchangeGroup>) ApiInvoker.deserialize(localVarResponse,  "array", V1OptionExchangeGroup.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

@@ -129,9 +129,9 @@ public class V1Symbol {
   private Integer symbolIdInt = null;
 
   /**
-   * The symbol identifier.
+   * Gets or sets the symbol identifier.
    **/
-  @ApiModelProperty(value = "The symbol identifier.")
+  @ApiModelProperty(value = "Gets or sets the symbol identifier.")
   public String getSymbolId() {
     return symbolId;
   }
@@ -140,9 +140,9 @@ public class V1Symbol {
   }
 
   /**
-   * The exchange identifier.
+   * Gets or sets the exchange identifier.
    **/
-  @ApiModelProperty(value = "The exchange identifier.")
+  @ApiModelProperty(value = "Gets or sets the exchange identifier.")
   public String getExchangeId() {
     return exchangeId;
   }
@@ -151,9 +151,9 @@ public class V1Symbol {
   }
 
   /**
-   * The symbol type.
+   * Gets or sets the symbol type.
    **/
-  @ApiModelProperty(value = "The symbol type.")
+  @ApiModelProperty(value = "Gets or sets the symbol type.")
   public String getSymbolType() {
     return symbolType;
   }
@@ -162,9 +162,9 @@ public class V1Symbol {
   }
 
   /**
-   * The base asset identifier.
+   * Gets or sets the base asset identifier.
    **/
-  @ApiModelProperty(value = "The base asset identifier.")
+  @ApiModelProperty(value = "Gets or sets the base asset identifier.")
   public String getAssetIdBase() {
     return assetIdBase;
   }
@@ -173,9 +173,9 @@ public class V1Symbol {
   }
 
   /**
-   * The quote asset identifier.
+   * Gets or sets the quote asset identifier.
    **/
-  @ApiModelProperty(value = "The quote asset identifier.")
+  @ApiModelProperty(value = "Gets or sets the quote asset identifier.")
   public String getAssetIdQuote() {
     return assetIdQuote;
   }
@@ -184,9 +184,9 @@ public class V1Symbol {
   }
 
   /**
-   * The unit asset identifier.
+   * Gets or sets the unit asset identifier.
    **/
-  @ApiModelProperty(value = "The unit asset identifier.")
+  @ApiModelProperty(value = "Gets or sets the unit asset identifier.")
   public String getAssetIdUnit() {
     return assetIdUnit;
   }
@@ -195,9 +195,9 @@ public class V1Symbol {
   }
 
   /**
-   * The contract unit for futures.
+   * Gets or sets the contract unit for futures.
    **/
-  @ApiModelProperty(value = "The contract unit for futures.")
+  @ApiModelProperty(value = "Gets or sets the contract unit for futures.")
   public Double getFutureContractUnit() {
     return futureContractUnit;
   }
@@ -206,9 +206,9 @@ public class V1Symbol {
   }
 
   /**
-   * The asset used as the unit for futures contract.
+   * Gets or sets the asset used as the unit for futures contract.
    **/
-  @ApiModelProperty(value = "The asset used as the unit for futures contract.")
+  @ApiModelProperty(value = "Gets or sets the asset used as the unit for futures contract.")
   public String getFutureContractUnitAsset() {
     return futureContractUnitAsset;
   }
@@ -217,9 +217,9 @@ public class V1Symbol {
   }
 
   /**
-   * The future delivery time for futures contract.
+   * Gets or sets the future delivery time for futures contract.
    **/
-  @ApiModelProperty(value = "The future delivery time for futures contract.")
+  @ApiModelProperty(value = "Gets or sets the future delivery time for futures contract.")
   public Date getFutureDeliveryTime() {
     return futureDeliveryTime;
   }
@@ -228,9 +228,9 @@ public class V1Symbol {
   }
 
   /**
-   * Indicates whether the option type is a call.
+   * Gets or sets a value indicating whether the option type is a call.
    **/
-  @ApiModelProperty(value = "Indicates whether the option type is a call.")
+  @ApiModelProperty(value = "Gets or sets a value indicating whether the option type is a call.")
   public Boolean getOptionTypeIsCall() {
     return optionTypeIsCall;
   }
@@ -239,9 +239,9 @@ public class V1Symbol {
   }
 
   /**
-   * The strike price for options.
+   * Gets or sets the strike price for options.
    **/
-  @ApiModelProperty(value = "The strike price for options.")
+  @ApiModelProperty(value = "Gets or sets the strike price for options.")
   public Double getOptionStrikePrice() {
     return optionStrikePrice;
   }
@@ -250,9 +250,9 @@ public class V1Symbol {
   }
 
   /**
-   * The contract unit for options.
+   * Gets or sets the contract unit for options.
    **/
-  @ApiModelProperty(value = "The contract unit for options.")
+  @ApiModelProperty(value = "Gets or sets the contract unit for options.")
   public Double getOptionContractUnit() {
     return optionContractUnit;
   }
@@ -261,9 +261,9 @@ public class V1Symbol {
   }
 
   /**
-   * The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+   * Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
    **/
-  @ApiModelProperty(value = "The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.")
+  @ApiModelProperty(value = "Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.")
   public String getOptionExerciseStyle() {
     return optionExerciseStyle;
   }
@@ -272,9 +272,9 @@ public class V1Symbol {
   }
 
   /**
-   * The expiration time for options.
+   * Gets or sets the expiration time for options.
    **/
-  @ApiModelProperty(value = "The expiration time for options.")
+  @ApiModelProperty(value = "Gets or sets the expiration time for options.")
   public Date getOptionExpirationTime() {
     return optionExpirationTime;
   }
@@ -283,9 +283,9 @@ public class V1Symbol {
   }
 
   /**
-   * The delivery time for contracts.
+   * Gets or sets the delivery time for contracts.
    **/
-  @ApiModelProperty(value = "The delivery time for contracts.")
+  @ApiModelProperty(value = "Gets or sets the delivery time for contracts.")
   public Date getContractDeliveryTime() {
     return contractDeliveryTime;
   }
@@ -294,9 +294,9 @@ public class V1Symbol {
   }
 
   /**
-   * The contract unit for contracts.
+   * Gets or sets the contract unit for contracts.
    **/
-  @ApiModelProperty(value = "The contract unit for contracts.")
+  @ApiModelProperty(value = "Gets or sets the contract unit for contracts.")
   public Double getContractUnit() {
     return contractUnit;
   }
@@ -305,9 +305,9 @@ public class V1Symbol {
   }
 
   /**
-   * The asset used as the unit for contracts.
+   * Gets or sets the asset used as the unit for contracts.
    **/
-  @ApiModelProperty(value = "The asset used as the unit for contracts.")
+  @ApiModelProperty(value = "Gets or sets the asset used as the unit for contracts.")
   public String getContractUnitAsset() {
     return contractUnitAsset;
   }
@@ -316,9 +316,9 @@ public class V1Symbol {
   }
 
   /**
-   * The contract identifier.
+   * Gets or sets the contract identifier.
    **/
-  @ApiModelProperty(value = "The contract identifier.")
+  @ApiModelProperty(value = "Gets or sets the contract identifier.")
   public String getContractId() {
     return contractId;
   }
@@ -327,9 +327,9 @@ public class V1Symbol {
   }
 
   /**
-   * The display name of the contract.
+   * Gets or sets the display name of the contract.
    **/
-  @ApiModelProperty(value = "The display name of the contract.")
+  @ApiModelProperty(value = "Gets or sets the display name of the contract.")
   public String getContractDisplayName() {
     return contractDisplayName;
   }
@@ -338,9 +338,9 @@ public class V1Symbol {
   }
 
   /**
-   * The display description of the contract.
+   * Gets or sets the display description of the contract.
    **/
-  @ApiModelProperty(value = "The display description of the contract.")
+  @ApiModelProperty(value = "Gets or sets the display description of the contract.")
   public String getContractDisplayDescription() {
     return contractDisplayDescription;
   }
@@ -349,8 +349,9 @@ public class V1Symbol {
   }
 
   /**
+   * Gets the start date of the data in string format (\"yyyy-MM-dd\").
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Gets the start date of the data in string format (\"yyyy-MM-dd\").")
   public String getDataStart() {
     return dataStart;
   }
@@ -359,8 +360,9 @@ public class V1Symbol {
   }
 
   /**
+   * Gets the end date of the data in string format (\"yyyy-MM-dd\").
    **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Gets the end date of the data in string format (\"yyyy-MM-dd\").")
   public String getDataEnd() {
     return dataEnd;
   }
@@ -369,9 +371,9 @@ public class V1Symbol {
   }
 
   /**
-   * The start date of quote data.
+   * Gets or sets the start date of quote data.
    **/
-  @ApiModelProperty(value = "The start date of quote data.")
+  @ApiModelProperty(value = "Gets or sets the start date of quote data.")
   public Date getDataQuoteStart() {
     return dataQuoteStart;
   }
@@ -380,9 +382,9 @@ public class V1Symbol {
   }
 
   /**
-   * The end date of quote data.
+   * Gets or sets the end date of quote data.
    **/
-  @ApiModelProperty(value = "The end date of quote data.")
+  @ApiModelProperty(value = "Gets or sets the end date of quote data.")
   public Date getDataQuoteEnd() {
     return dataQuoteEnd;
   }
@@ -391,9 +393,9 @@ public class V1Symbol {
   }
 
   /**
-   * The start date of order book data.
+   * Gets or sets the start date of order book data.
    **/
-  @ApiModelProperty(value = "The start date of order book data.")
+  @ApiModelProperty(value = "Gets or sets the start date of order book data.")
   public Date getDataOrderbookStart() {
     return dataOrderbookStart;
   }
@@ -402,9 +404,9 @@ public class V1Symbol {
   }
 
   /**
-   * The end date of order book data.
+   * Gets or sets the end date of order book data.
    **/
-  @ApiModelProperty(value = "The end date of order book data.")
+  @ApiModelProperty(value = "Gets or sets the end date of order book data.")
   public Date getDataOrderbookEnd() {
     return dataOrderbookEnd;
   }
@@ -413,9 +415,9 @@ public class V1Symbol {
   }
 
   /**
-   * The start date of trade data.
+   * Gets or sets the start date of trade data.
    **/
-  @ApiModelProperty(value = "The start date of trade data.")
+  @ApiModelProperty(value = "Gets or sets the start date of trade data.")
   public Date getDataTradeStart() {
     return dataTradeStart;
   }
@@ -424,9 +426,9 @@ public class V1Symbol {
   }
 
   /**
-   * The end date of trade data.
+   * Gets or sets the end date of trade data.
    **/
-  @ApiModelProperty(value = "The end date of trade data.")
+  @ApiModelProperty(value = "Gets or sets the end date of trade data.")
   public Date getDataTradeEnd() {
     return dataTradeEnd;
   }
@@ -435,9 +437,9 @@ public class V1Symbol {
   }
 
   /**
-   * The index identifier.
+   * Gets or sets the index identifier.
    **/
-  @ApiModelProperty(value = "The index identifier.")
+  @ApiModelProperty(value = "Gets or sets the index identifier.")
   public String getIndexId() {
     return indexId;
   }
@@ -446,9 +448,9 @@ public class V1Symbol {
   }
 
   /**
-   * The display name of the index.
+   * Gets or sets the display name of the index.
    **/
-  @ApiModelProperty(value = "The display name of the index.")
+  @ApiModelProperty(value = "Gets or sets the display name of the index.")
   public String getIndexDisplayName() {
     return indexDisplayName;
   }
@@ -457,9 +459,9 @@ public class V1Symbol {
   }
 
   /**
-   * The display description of the index.
+   * Gets or sets the display description of the index.
    **/
-  @ApiModelProperty(value = "The display description of the index.")
+  @ApiModelProperty(value = "Gets or sets the display description of the index.")
   public String getIndexDisplayDescription() {
     return indexDisplayDescription;
   }
@@ -468,9 +470,9 @@ public class V1Symbol {
   }
 
   /**
-   * The volume in the last 1 hour.
+   * Gets or sets the volume in the last 1 hour.
    **/
-  @ApiModelProperty(value = "The volume in the last 1 hour.")
+  @ApiModelProperty(value = "Gets or sets the volume in the last 1 hour.")
   public Double getVolume1hrs() {
     return volume1hrs;
   }
@@ -479,9 +481,9 @@ public class V1Symbol {
   }
 
   /**
-   * The volume in USD in the last 1 hour.
+   * Gets or sets the volume in USD in the last 1 hour.
    **/
-  @ApiModelProperty(value = "The volume in USD in the last 1 hour.")
+  @ApiModelProperty(value = "Gets or sets the volume in USD in the last 1 hour.")
   public Double getVolume1hrsUsd() {
     return volume1hrsUsd;
   }
@@ -490,9 +492,9 @@ public class V1Symbol {
   }
 
   /**
-   * The volume in the last 1 day.
+   * Gets or sets the volume in the last 1 day.
    **/
-  @ApiModelProperty(value = "The volume in the last 1 day.")
+  @ApiModelProperty(value = "Gets or sets the volume in the last 1 day.")
   public Double getVolume1day() {
     return volume1day;
   }
@@ -501,9 +503,9 @@ public class V1Symbol {
   }
 
   /**
-   * The volume in USD in the last 1 day.
+   * Gets or sets the volume in USD in the last 1 day.
    **/
-  @ApiModelProperty(value = "The volume in USD in the last 1 day.")
+  @ApiModelProperty(value = "Gets or sets the volume in USD in the last 1 day.")
   public Double getVolume1dayUsd() {
     return volume1dayUsd;
   }
@@ -512,9 +514,9 @@ public class V1Symbol {
   }
 
   /**
-   * The volume in the last 1 month.
+   * Gets or sets the volume in the last 1 month.
    **/
-  @ApiModelProperty(value = "The volume in the last 1 month.")
+  @ApiModelProperty(value = "Gets or sets the volume in the last 1 month.")
   public Double getVolume1mth() {
     return volume1mth;
   }
@@ -523,9 +525,9 @@ public class V1Symbol {
   }
 
   /**
-   * The volume in USD in the last 1 month.
+   * Gets or sets the volume in USD in the last 1 month.
    **/
-  @ApiModelProperty(value = "The volume in USD in the last 1 month.")
+  @ApiModelProperty(value = "Gets or sets the volume in USD in the last 1 month.")
   public Double getVolume1mthUsd() {
     return volume1mthUsd;
   }
@@ -534,9 +536,9 @@ public class V1Symbol {
   }
 
   /**
-   * The price.
+   * Gets or sets the price.
    **/
-  @ApiModelProperty(value = "The price.")
+  @ApiModelProperty(value = "Gets or sets the price.")
   public Double getPrice() {
     return price;
   }
@@ -545,9 +547,9 @@ public class V1Symbol {
   }
 
   /**
-   * The symbol identifier in the exchange.
+   * Gets or sets the symbol identifier in the exchange.
    **/
-  @ApiModelProperty(value = "The symbol identifier in the exchange.")
+  @ApiModelProperty(value = "Gets or sets the symbol identifier in the exchange.")
   public String getSymbolIdExchange() {
     return symbolIdExchange;
   }
@@ -556,9 +558,9 @@ public class V1Symbol {
   }
 
   /**
-   * The base asset identifier in the exchange.
+   * Gets or sets the base asset identifier in the exchange.
    **/
-  @ApiModelProperty(value = "The base asset identifier in the exchange.")
+  @ApiModelProperty(value = "Gets or sets the base asset identifier in the exchange.")
   public String getAssetIdBaseExchange() {
     return assetIdBaseExchange;
   }
@@ -567,9 +569,9 @@ public class V1Symbol {
   }
 
   /**
-   * The quote asset identifier in the exchange.
+   * Gets or sets the quote asset identifier in the exchange.
    **/
-  @ApiModelProperty(value = "The quote asset identifier in the exchange.")
+  @ApiModelProperty(value = "Gets or sets the quote asset identifier in the exchange.")
   public String getAssetIdQuoteExchange() {
     return assetIdQuoteExchange;
   }
@@ -578,9 +580,9 @@ public class V1Symbol {
   }
 
   /**
-   * The price precision.
+   * Gets or sets the price precision.
    **/
-  @ApiModelProperty(value = "The price precision.")
+  @ApiModelProperty(value = "Gets or sets the price precision.")
   public Double getPricePrecision() {
     return pricePrecision;
   }
@@ -589,9 +591,9 @@ public class V1Symbol {
   }
 
   /**
-   * The size precision.
+   * Gets or sets the size precision.
    **/
-  @ApiModelProperty(value = "The size precision.")
+  @ApiModelProperty(value = "Gets or sets the size precision.")
   public Double getSizePrecision() {
     return sizePrecision;
   }
@@ -611,9 +613,9 @@ public class V1Symbol {
   }
 
   /**
-   * Indicates whether the futures contract is inverse (coin-margined).
+   * Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
    **/
-  @ApiModelProperty(value = "Indicates whether the futures contract is inverse (coin-margined).")
+  @ApiModelProperty(value = "Gets or sets a value indicating whether the futures contract is inverse (coin-margined).")
   public Boolean getFutureIsInverse() {
     return futureIsInverse;
   }
@@ -622,9 +624,9 @@ public class V1Symbol {
   }
 
   /**
-   * Indicates whether the futures contract is quanto.
+   * Gets or sets a value indicating whether the futures contract is quanto.
    **/
-  @ApiModelProperty(value = "Indicates whether the futures contract is quanto.")
+  @ApiModelProperty(value = "Gets or sets a value indicating whether the futures contract is quanto.")
   public Boolean getFutureIsQuanto() {
     return futureIsQuanto;
   }
@@ -633,9 +635,9 @@ public class V1Symbol {
   }
 
   /**
-   * Volume unit in USD.
+   * Gets or sets the volume in USD.
    **/
-  @ApiModelProperty(value = "Volume unit in USD.")
+  @ApiModelProperty(value = "Gets or sets the volume in USD.")
   public Double getVolumeToUsd() {
     return volumeToUsd;
   }
@@ -644,9 +646,9 @@ public class V1Symbol {
   }
 
   /**
-   * The up barrier price for barrier options.
+   * Gets or sets the up barrier price for barrier options.
    **/
-  @ApiModelProperty(value = "The up barrier price for barrier options.")
+  @ApiModelProperty(value = "Gets or sets the up barrier price for barrier options.")
   public Double getOptionBarrierUpPrice() {
     return optionBarrierUpPrice;
   }
@@ -655,9 +657,9 @@ public class V1Symbol {
   }
 
   /**
-   * The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+   * Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
    **/
-  @ApiModelProperty(value = "The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.")
+  @ApiModelProperty(value = "Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.")
   public String getOptionBarrierUpType() {
     return optionBarrierUpType;
   }
@@ -666,9 +668,9 @@ public class V1Symbol {
   }
 
   /**
-   * The down barrier price for barrier options.
+   * Gets or sets the down barrier price for barrier options.
    **/
-  @ApiModelProperty(value = "The down barrier price for barrier options.")
+  @ApiModelProperty(value = "Gets or sets the down barrier price for barrier options.")
   public Double getOptionBarrierDownPrice() {
     return optionBarrierDownPrice;
   }
@@ -677,9 +679,9 @@ public class V1Symbol {
   }
 
   /**
-   * The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+   * Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
    **/
-  @ApiModelProperty(value = "The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.")
+  @ApiModelProperty(value = "Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.")
   public String getOptionBarrierDownType() {
     return optionBarrierDownType;
   }
@@ -688,9 +690,9 @@ public class V1Symbol {
   }
 
   /**
-   * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+   * Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
    **/
-  @ApiModelProperty(value = "The symbol identifier in integer immutable format, used to correlate data across different APIs.")
+  @ApiModelProperty(value = "Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.")
   public Integer getSymbolIdInt() {
     return symbolIdInt;
   }

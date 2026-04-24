@@ -46,53 +46,53 @@ public:
 	 */
 	void fromJson(char* jsonStr);
 
-	/*! \brief Get The symbol identifier.
+	/*! \brief Get Gets or sets the symbol identifier.
 	 */
 	std::string getSymbolId();
 
-	/*! \brief Set The symbol identifier.
+	/*! \brief Set Gets or sets the symbol identifier.
 	 */
 	void setSymbolId(std::string  symbol_id);
-	/*! \brief Get The exchange time of the quote trade.
+	/*! \brief Get Gets or sets the exchange time of the quote trade.
 	 */
 	std::string getTimeExchange();
 
-	/*! \brief Set The exchange time of the quote trade.
+	/*! \brief Set Gets or sets the exchange time of the quote trade.
 	 */
 	void setTimeExchange(std::string  time_exchange);
-	/*! \brief Get The CoinAPI time when the quote trade was received.
+	/*! \brief Get Gets or sets the CoinAPI time when the quote trade was received.
 	 */
 	std::string getTimeCoinapi();
 
-	/*! \brief Set The CoinAPI time when the quote trade was received.
+	/*! \brief Set Gets or sets the CoinAPI time when the quote trade was received.
 	 */
 	void setTimeCoinapi(std::string  time_coinapi);
-	/*! \brief Get The best asking price.
+	/*! \brief Get Gets or sets the best asking price.
 	 */
 	double getAskPrice();
 
-	/*! \brief Set The best asking price.
+	/*! \brief Set Gets or sets the best asking price.
 	 */
 	void setAskPrice(double  ask_price);
-	/*! \brief Get The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+	/*! \brief Get Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
 	 */
 	double getAskSize();
 
-	/*! \brief Set The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+	/*! \brief Set Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
 	 */
 	void setAskSize(double  ask_size);
-	/*! \brief Get The best bidding price.
+	/*! \brief Get Gets or sets the best bidding price.
 	 */
 	double getBidPrice();
 
-	/*! \brief Set The best bidding price.
+	/*! \brief Set Gets or sets the best bidding price.
 	 */
 	void setBidPrice(double  bid_price);
-	/*! \brief Get The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+	/*! \brief Get Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
 	 */
 	double getBidSize();
 
-	/*! \brief Set The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+	/*! \brief Set Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
 	 */
 	void setBidSize(double  bid_size);
 	/*! \brief Get 

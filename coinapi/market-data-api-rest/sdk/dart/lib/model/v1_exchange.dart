@@ -44,8 +44,10 @@ class V1Exchange {
   /// Gets or sets the name of the exchange.
   String? name;
 
+  /// Gets the start date of the exchange's data.
   String? dataStart;
 
+  /// Gets the end date of the exchange's data.
   String? dataEnd;
 
   /// Gets or sets the start date of quote data.
@@ -87,7 +89,7 @@ class V1Exchange {
   /// Gets or sets the list of icons for the exchange.
   List<V1Icon>? icons;
 
-  /// Rank of the exchange.
+  /// Rank of the exchange - higher rank means exchange is more reliable
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated

@@ -132,28 +132,6 @@ genOhlcvExchangeTimeseriesItem n =
     <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemSymbolIdExchange :: Maybe Text
     <*> arbitraryReducedMaybe n -- ohlcvExchangeTimeseriesItemSymbolIdCoinapi :: Maybe Text
   
-instance Arbitrary OptionsOptionExchangeGroup where
-  arbitrary = sized genOptionsOptionExchangeGroup
-
-genOptionsOptionExchangeGroup :: Int -> Gen OptionsOptionExchangeGroup
-genOptionsOptionExchangeGroup n =
-  OptionsOptionExchangeGroup
-    <$> arbitraryReducedMaybe n -- optionsOptionExchangeGroupAssetIdBase :: Maybe Text
-    <*> arbitraryReducedMaybe n -- optionsOptionExchangeGroupAssetIdQuote :: Maybe Text
-    <*> arbitraryReducedMaybe n -- optionsOptionExchangeGroupUnderlyingPrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- optionsOptionExchangeGroupTimeExpiration :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- optionsOptionExchangeGroupStrikes :: Maybe [OptionsStrike]
-  
-instance Arbitrary OptionsStrike where
-  arbitrary = sized genOptionsStrike
-
-genOptionsStrike :: Int -> Gen OptionsStrike
-genOptionsStrike n =
-  OptionsStrike
-    <$> arbitraryReducedMaybe n -- optionsStrikeStrikePrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- optionsStrikeCall :: Maybe V1QuoteTrade
-    <*> arbitraryReducedMaybe n -- optionsStrikePut :: Maybe V1QuoteTrade
-  
 instance Arbitrary V1Asset where
   arbitrary = sized genV1Asset
 
@@ -356,6 +334,18 @@ genV1MetricInfo n =
     <*> arbitraryReducedMaybe n -- v1MetricInfoDescription :: Maybe Text
     <*> arbitraryReducedMaybe n -- v1MetricInfoSourceId :: Maybe Text
   
+instance Arbitrary V1OptionExchangeGroup where
+  arbitrary = sized genV1OptionExchangeGroup
+
+genV1OptionExchangeGroup :: Int -> Gen V1OptionExchangeGroup
+genV1OptionExchangeGroup n =
+  V1OptionExchangeGroup
+    <$> arbitraryReducedMaybe n -- v1OptionExchangeGroupAssetIdBase :: Maybe Text
+    <*> arbitraryReducedMaybe n -- v1OptionExchangeGroupAssetIdQuote :: Maybe Text
+    <*> arbitraryReducedMaybe n -- v1OptionExchangeGroupUnderlyingPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- v1OptionExchangeGroupTimeExpiration :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- v1OptionExchangeGroupStrikes :: Maybe [V1Strike]
+  
 instance Arbitrary V1OrderBook where
   arbitrary = sized genV1OrderBook
 
@@ -422,6 +412,16 @@ genV1QuoteTrade n =
     <*> arbitraryReducedMaybe n -- v1QuoteTradeBidPrice :: Maybe Double
     <*> arbitraryReducedMaybe n -- v1QuoteTradeBidSize :: Maybe Double
     <*> arbitraryReducedMaybe n -- v1QuoteTradeLastTrade :: Maybe V1LastTrade
+  
+instance Arbitrary V1Strike where
+  arbitrary = sized genV1Strike
+
+genV1Strike :: Int -> Gen V1Strike
+genV1Strike n =
+  V1Strike
+    <$> arbitraryReducedMaybe n -- v1StrikeStrikePrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- v1StrikeCall :: Maybe V1QuoteTrade
+    <*> arbitraryReducedMaybe n -- v1StrikePut :: Maybe V1QuoteTrade
   
 instance Arbitrary V1Symbol where
   arbitrary = sized genV1Symbol

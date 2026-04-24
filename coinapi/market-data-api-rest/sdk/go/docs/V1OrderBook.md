@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SymbolId** | Pointer to **NullableString** | The symbol identifier. | [optional] 
-**TimeExchange** | Pointer to **time.Time** | The exchange time of the order book. | [optional] 
-**TimeCoinapi** | Pointer to **time.Time** | The CoinAPI time when the order book was received. | [optional] 
-**Asks** | Pointer to **interface{}** | The asks made by market makers. | [optional] 
-**Bids** | Pointer to **interface{}** | The bids made by market makers. | [optional] 
+**SymbolId** | Pointer to **NullableString** | Gets or sets the symbol identifier. | [optional] 
+**TimeExchange** | Pointer to **time.Time** | Gets or sets the exchange time of the order book. | [optional] 
+**TimeCoinapi** | Pointer to **time.Time** | Gets or sets the CoinAPI time when the order book was received. | [optional] 
+**Asks** | Pointer to **interface{}** | Gets or sets the asks made by market makers. | [optional] 
+**Bids** | Pointer to **interface{}** | Gets or sets the bids made by market makers. | [optional] 
 
 ## Methods
 

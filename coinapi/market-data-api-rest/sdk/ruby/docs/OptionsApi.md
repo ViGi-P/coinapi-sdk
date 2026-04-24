@@ -9,7 +9,7 @@ All URIs are relative to *https://rest.coinapi.io*
 
 ## v1_options_exchange_id_current_get
 
-> <Array<OptionsOptionExchangeGroup>> v1_options_exchange_id_current_get(exchange_id)
+> <Array<V1OptionExchangeGroup>> v1_options_exchange_id_current_get(exchange_id)
 
 Current data by Exchange
 
@@ -47,7 +47,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<OptionsOptionExchangeGroup>>, Integer, Hash)> v1_options_exchange_id_current_get_with_http_info(exchange_id)
+> <Array(<Array<V1OptionExchangeGroup>>, Integer, Hash)> v1_options_exchange_id_current_get_with_http_info(exchange_id)
 
 ```ruby
 begin
@@ -55,7 +55,7 @@ begin
   data, status_code, headers = api_instance.v1_options_exchange_id_current_get_with_http_info(exchange_id)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<OptionsOptionExchangeGroup>>
+  p data # => <Array<V1OptionExchangeGroup>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling OptionsApi->v1_options_exchange_id_current_get_with_http_info: #{e}"
 end
@@ -69,7 +69,7 @@ end
 
 ### Return type
 
-[**Array&lt;OptionsOptionExchangeGroup&gt;**](OptionsOptionExchangeGroup.md)
+[**Array&lt;V1OptionExchangeGroup&gt;**](V1OptionExchangeGroup.md)
 
 ### Authorization
 

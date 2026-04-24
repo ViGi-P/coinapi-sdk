@@ -33,8 +33,8 @@ class V1Exchange(BaseModel):
     exchange_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the exchange ID.")
     website: Optional[StrictStr] = Field(default=None, description="Gets or sets the website URL of the exchange.")
     name: Optional[StrictStr] = Field(default=None, description="Gets or sets the name of the exchange.")
-    data_start: Optional[StrictStr] = None
-    data_end: Optional[StrictStr] = None
+    data_start: Optional[StrictStr] = Field(default=None, description="Gets the start date of the exchange's data.")
+    data_end: Optional[StrictStr] = Field(default=None, description="Gets the end date of the exchange's data.")
     data_quote_start: Optional[datetime] = Field(default=None, description="Gets or sets the start date of quote data.")
     data_quote_end: Optional[datetime] = Field(default=None, description="Gets or sets the end date of quote data.")
     data_orderbook_start: Optional[datetime] = Field(default=None, description="Gets or sets the start date of order book data.")
@@ -48,7 +48,7 @@ class V1Exchange(BaseModel):
     volume_1mth_usd: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the USD volume in the last 1 month.")
     metric_id: Optional[List[StrictStr]] = Field(default=None, description="Gets or sets the list of metric IDs.")
     icons: Optional[List[V1Icon]] = Field(default=None, description="Gets or sets the list of icons for the exchange.")
-    rank: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Rank of the exchange.")
+    rank: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Rank of the exchange - higher rank means exchange is more reliable")
     integration_status: Optional[StrictStr] = Field(default=None, description="Status of the integration")
     __properties: ClassVar[List[str]] = ["exchange_id", "website", "name", "data_start", "data_end", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "data_trade_count", "data_symbols_count", "volume_1hrs_usd", "volume_1day_usd", "volume_1mth_usd", "metric_id", "icons", "rank", "integration_status"]
 

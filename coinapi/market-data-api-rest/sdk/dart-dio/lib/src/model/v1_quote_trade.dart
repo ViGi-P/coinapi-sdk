@@ -12,41 +12,41 @@ part 'v1_quote_trade.g.dart';
 /// Represents a quote trade data model.
 ///
 /// Properties:
-/// * [symbolId] - The symbol identifier.
-/// * [timeExchange] - The exchange time of the quote trade.
-/// * [timeCoinapi] - The CoinAPI time when the quote trade was received.
-/// * [askPrice] - The best asking price.
-/// * [askSize] - The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
-/// * [bidPrice] - The best bidding price.
-/// * [bidSize] - The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+/// * [symbolId] - Gets or sets the symbol identifier.
+/// * [timeExchange] - Gets or sets the exchange time of the quote trade.
+/// * [timeCoinapi] - Gets or sets the CoinAPI time when the quote trade was received.
+/// * [askPrice] - Gets or sets the best asking price.
+/// * [askSize] - Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+/// * [bidPrice] - Gets or sets the best bidding price.
+/// * [bidSize] - Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
 /// * [lastTrade] 
 @BuiltValue()
 abstract class V1QuoteTrade implements Built<V1QuoteTrade, V1QuoteTradeBuilder> {
-  /// The symbol identifier.
+  /// Gets or sets the symbol identifier.
   @BuiltValueField(wireName: r'symbol_id')
   String? get symbolId;
 
-  /// The exchange time of the quote trade.
+  /// Gets or sets the exchange time of the quote trade.
   @BuiltValueField(wireName: r'time_exchange')
   DateTime? get timeExchange;
 
-  /// The CoinAPI time when the quote trade was received.
+  /// Gets or sets the CoinAPI time when the quote trade was received.
   @BuiltValueField(wireName: r'time_coinapi')
   DateTime? get timeCoinapi;
 
-  /// The best asking price.
+  /// Gets or sets the best asking price.
   @BuiltValueField(wireName: r'ask_price')
   double? get askPrice;
 
-  /// The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+  /// Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
   @BuiltValueField(wireName: r'ask_size')
   double? get askSize;
 
-  /// The best bidding price.
+  /// Gets or sets the best bidding price.
   @BuiltValueField(wireName: r'bid_price')
   double? get bidPrice;
 
-  /// The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+  /// Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
   @BuiltValueField(wireName: r'bid_size')
   double? get bidSize;
 

@@ -312,257 +312,259 @@ class V1Symbol {
 
 
 /**
- * The symbol identifier.
+ * Gets or sets the symbol identifier.
  * @member {String} symbol_id
  */
 V1Symbol.prototype['symbol_id'] = undefined;
 
 /**
- * The exchange identifier.
+ * Gets or sets the exchange identifier.
  * @member {String} exchange_id
  */
 V1Symbol.prototype['exchange_id'] = undefined;
 
 /**
- * The symbol type.
+ * Gets or sets the symbol type.
  * @member {String} symbol_type
  */
 V1Symbol.prototype['symbol_type'] = undefined;
 
 /**
- * The base asset identifier.
+ * Gets or sets the base asset identifier.
  * @member {String} asset_id_base
  */
 V1Symbol.prototype['asset_id_base'] = undefined;
 
 /**
- * The quote asset identifier.
+ * Gets or sets the quote asset identifier.
  * @member {String} asset_id_quote
  */
 V1Symbol.prototype['asset_id_quote'] = undefined;
 
 /**
- * The unit asset identifier.
+ * Gets or sets the unit asset identifier.
  * @member {String} asset_id_unit
  */
 V1Symbol.prototype['asset_id_unit'] = undefined;
 
 /**
- * The contract unit for futures.
+ * Gets or sets the contract unit for futures.
  * @member {Number} future_contract_unit
  */
 V1Symbol.prototype['future_contract_unit'] = undefined;
 
 /**
- * The asset used as the unit for futures contract.
+ * Gets or sets the asset used as the unit for futures contract.
  * @member {String} future_contract_unit_asset
  */
 V1Symbol.prototype['future_contract_unit_asset'] = undefined;
 
 /**
- * The future delivery time for futures contract.
+ * Gets or sets the future delivery time for futures contract.
  * @member {Date} future_delivery_time
  */
 V1Symbol.prototype['future_delivery_time'] = undefined;
 
 /**
- * Indicates whether the option type is a call.
+ * Gets or sets a value indicating whether the option type is a call.
  * @member {Boolean} option_type_is_call
  */
 V1Symbol.prototype['option_type_is_call'] = undefined;
 
 /**
- * The strike price for options.
+ * Gets or sets the strike price for options.
  * @member {Number} option_strike_price
  */
 V1Symbol.prototype['option_strike_price'] = undefined;
 
 /**
- * The contract unit for options.
+ * Gets or sets the contract unit for options.
  * @member {Number} option_contract_unit
  */
 V1Symbol.prototype['option_contract_unit'] = undefined;
 
 /**
- * The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+ * Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
  * @member {String} option_exercise_style
  */
 V1Symbol.prototype['option_exercise_style'] = undefined;
 
 /**
- * The expiration time for options.
+ * Gets or sets the expiration time for options.
  * @member {Date} option_expiration_time
  */
 V1Symbol.prototype['option_expiration_time'] = undefined;
 
 /**
- * The delivery time for contracts.
+ * Gets or sets the delivery time for contracts.
  * @member {Date} contract_delivery_time
  */
 V1Symbol.prototype['contract_delivery_time'] = undefined;
 
 /**
- * The contract unit for contracts.
+ * Gets or sets the contract unit for contracts.
  * @member {Number} contract_unit
  */
 V1Symbol.prototype['contract_unit'] = undefined;
 
 /**
- * The asset used as the unit for contracts.
+ * Gets or sets the asset used as the unit for contracts.
  * @member {String} contract_unit_asset
  */
 V1Symbol.prototype['contract_unit_asset'] = undefined;
 
 /**
- * The contract identifier.
+ * Gets or sets the contract identifier.
  * @member {String} contract_id
  */
 V1Symbol.prototype['contract_id'] = undefined;
 
 /**
- * The display name of the contract.
+ * Gets or sets the display name of the contract.
  * @member {String} contract_display_name
  */
 V1Symbol.prototype['contract_display_name'] = undefined;
 
 /**
- * The display description of the contract.
+ * Gets or sets the display description of the contract.
  * @member {String} contract_display_description
  */
 V1Symbol.prototype['contract_display_description'] = undefined;
 
 /**
+ * Gets the start date of the data in string format (\"yyyy-MM-dd\").
  * @member {String} data_start
  */
 V1Symbol.prototype['data_start'] = undefined;
 
 /**
+ * Gets the end date of the data in string format (\"yyyy-MM-dd\").
  * @member {String} data_end
  */
 V1Symbol.prototype['data_end'] = undefined;
 
 /**
- * The start date of quote data.
+ * Gets or sets the start date of quote data.
  * @member {Date} data_quote_start
  */
 V1Symbol.prototype['data_quote_start'] = undefined;
 
 /**
- * The end date of quote data.
+ * Gets or sets the end date of quote data.
  * @member {Date} data_quote_end
  */
 V1Symbol.prototype['data_quote_end'] = undefined;
 
 /**
- * The start date of order book data.
+ * Gets or sets the start date of order book data.
  * @member {Date} data_orderbook_start
  */
 V1Symbol.prototype['data_orderbook_start'] = undefined;
 
 /**
- * The end date of order book data.
+ * Gets or sets the end date of order book data.
  * @member {Date} data_orderbook_end
  */
 V1Symbol.prototype['data_orderbook_end'] = undefined;
 
 /**
- * The start date of trade data.
+ * Gets or sets the start date of trade data.
  * @member {Date} data_trade_start
  */
 V1Symbol.prototype['data_trade_start'] = undefined;
 
 /**
- * The end date of trade data.
+ * Gets or sets the end date of trade data.
  * @member {Date} data_trade_end
  */
 V1Symbol.prototype['data_trade_end'] = undefined;
 
 /**
- * The index identifier.
+ * Gets or sets the index identifier.
  * @member {String} index_id
  */
 V1Symbol.prototype['index_id'] = undefined;
 
 /**
- * The display name of the index.
+ * Gets or sets the display name of the index.
  * @member {String} index_display_name
  */
 V1Symbol.prototype['index_display_name'] = undefined;
 
 /**
- * The display description of the index.
+ * Gets or sets the display description of the index.
  * @member {String} index_display_description
  */
 V1Symbol.prototype['index_display_description'] = undefined;
 
 /**
- * The volume in the last 1 hour.
+ * Gets or sets the volume in the last 1 hour.
  * @member {Number} volume_1hrs
  */
 V1Symbol.prototype['volume_1hrs'] = undefined;
 
 /**
- * The volume in USD in the last 1 hour.
+ * Gets or sets the volume in USD in the last 1 hour.
  * @member {Number} volume_1hrs_usd
  */
 V1Symbol.prototype['volume_1hrs_usd'] = undefined;
 
 /**
- * The volume in the last 1 day.
+ * Gets or sets the volume in the last 1 day.
  * @member {Number} volume_1day
  */
 V1Symbol.prototype['volume_1day'] = undefined;
 
 /**
- * The volume in USD in the last 1 day.
+ * Gets or sets the volume in USD in the last 1 day.
  * @member {Number} volume_1day_usd
  */
 V1Symbol.prototype['volume_1day_usd'] = undefined;
 
 /**
- * The volume in the last 1 month.
+ * Gets or sets the volume in the last 1 month.
  * @member {Number} volume_1mth
  */
 V1Symbol.prototype['volume_1mth'] = undefined;
 
 /**
- * The volume in USD in the last 1 month.
+ * Gets or sets the volume in USD in the last 1 month.
  * @member {Number} volume_1mth_usd
  */
 V1Symbol.prototype['volume_1mth_usd'] = undefined;
 
 /**
- * The price.
+ * Gets or sets the price.
  * @member {Number} price
  */
 V1Symbol.prototype['price'] = undefined;
 
 /**
- * The symbol identifier in the exchange.
+ * Gets or sets the symbol identifier in the exchange.
  * @member {String} symbol_id_exchange
  */
 V1Symbol.prototype['symbol_id_exchange'] = undefined;
 
 /**
- * The base asset identifier in the exchange.
+ * Gets or sets the base asset identifier in the exchange.
  * @member {String} asset_id_base_exchange
  */
 V1Symbol.prototype['asset_id_base_exchange'] = undefined;
 
 /**
- * The quote asset identifier in the exchange.
+ * Gets or sets the quote asset identifier in the exchange.
  * @member {String} asset_id_quote_exchange
  */
 V1Symbol.prototype['asset_id_quote_exchange'] = undefined;
 
 /**
- * The price precision.
+ * Gets or sets the price precision.
  * @member {Number} price_precision
  */
 V1Symbol.prototype['price_precision'] = undefined;
 
 /**
- * The size precision.
+ * Gets or sets the size precision.
  * @member {Number} size_precision
  */
 V1Symbol.prototype['size_precision'] = undefined;
@@ -574,49 +576,49 @@ V1Symbol.prototype['size_precision'] = undefined;
 V1Symbol.prototype['raw_kvp'] = undefined;
 
 /**
- * Indicates whether the futures contract is inverse (coin-margined).
+ * Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
  * @member {Boolean} future_is_inverse
  */
 V1Symbol.prototype['future_is_inverse'] = undefined;
 
 /**
- * Indicates whether the futures contract is quanto.
+ * Gets or sets a value indicating whether the futures contract is quanto.
  * @member {Boolean} future_is_quanto
  */
 V1Symbol.prototype['future_is_quanto'] = undefined;
 
 /**
- * Volume unit in USD.
+ * Gets or sets the volume in USD.
  * @member {Number} volume_to_usd
  */
 V1Symbol.prototype['volume_to_usd'] = undefined;
 
 /**
- * The up barrier price for barrier options.
+ * Gets or sets the up barrier price for barrier options.
  * @member {Number} option_barrier_up_price
  */
 V1Symbol.prototype['option_barrier_up_price'] = undefined;
 
 /**
- * The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+ * Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
  * @member {String} option_barrier_up_type
  */
 V1Symbol.prototype['option_barrier_up_type'] = undefined;
 
 /**
- * The down barrier price for barrier options.
+ * Gets or sets the down barrier price for barrier options.
  * @member {Number} option_barrier_down_price
  */
 V1Symbol.prototype['option_barrier_down_price'] = undefined;
 
 /**
- * The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+ * Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
  * @member {String} option_barrier_down_type
  */
 V1Symbol.prototype['option_barrier_down_type'] = undefined;
 
 /**
- * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+ * Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
  * @member {Number} symbol_id_int
  */
 V1Symbol.prototype['symbol_id_int'] = undefined;

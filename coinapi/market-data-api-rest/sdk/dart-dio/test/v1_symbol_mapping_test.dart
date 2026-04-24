@@ -7,55 +7,55 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(V1SymbolMapping, () {
-    // The symbol ID.
+    // Gets or sets the symbol ID.
     // String symbolId
     test('to test the property `symbolId`', () async {
       // TODO
     });
 
-    // The exchange-specific symbol ID.
+    // Gets or sets the exchange-specific symbol ID.
     // String symbolIdExchange
     test('to test the property `symbolIdExchange`', () async {
       // TODO
     });
 
-    // The CoinAPI DataInfo ID.
+    // Gets or sets the DataInfo ID.
     // int coinapiDatainfoId
     test('to test the property `coinapiDatainfoId`', () async {
       // TODO
     });
 
-    // The exchange-specific base asset ID.
+    // Gets or sets the exchange-specific base asset ID.
     // String assetIdBaseExchange
     test('to test the property `assetIdBaseExchange`', () async {
       // TODO
     });
 
-    // The exchange-specific quote asset ID.
+    // Gets or sets the exchange-specific quote asset ID.
     // String assetIdQuoteExchange
     test('to test the property `assetIdQuoteExchange`', () async {
       // TODO
     });
 
-    // The base asset ID.
+    // Gets or sets the base asset ID.
     // String assetIdBase
     test('to test the property `assetIdBase`', () async {
       // TODO
     });
 
-    // The quote asset ID.
+    // Gets or sets the quote asset ID.
     // String assetIdQuote
     test('to test the property `assetIdQuote`', () async {
       // TODO
     });
 
-    // The price precision.
+    // Gets or sets the price precision.
     // double pricePrecision
     test('to test the property `pricePrecision`', () async {
       // TODO
     });
 
-    // The size precision.
+    // Gets or sets the size precision.
     // double sizePrecision
     test('to test the property `sizePrecision`', () async {
       // TODO

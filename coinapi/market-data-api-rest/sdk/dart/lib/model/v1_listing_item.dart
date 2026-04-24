@@ -26,10 +26,10 @@ class V1ListingItem {
   /// Gets or sets the metric ID.
   String? metricId;
 
-  /// The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+  /// Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
   String? symbolId;
 
-  /// The exchange-native symbol identifier. Null for exchange-level metrics.
+  /// Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
   String? symbolIdExternal;
 
   /// Gets or sets the exchange ID.
@@ -38,13 +38,13 @@ class V1ListingItem {
   /// Gets or sets the asset ID.
   String? assetId;
 
-  /// Gets or sets the asset ID from the exchange.
+  /// Gets or sets the asset ID.
   String? assetIdExternal;
 
-  /// Gets or sets the chain id.
+  /// Gets or sets the chain ID.
   String? chainId;
 
-  /// Gets or sets the network id.
+  /// Gets or sets the network ID.
   String? networkId;
 
   @override

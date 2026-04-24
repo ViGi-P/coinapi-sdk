@@ -17,31 +17,31 @@ import { RequestFile } from './models';
 */
 export class V1OrderBookDepth {
     /**
-    * The symbol identifier.
+    * Gets or sets the symbol identifier.
     */
     'symbolId'?: string | null;
     /**
-    * The exchange time of the order book.
+    * Gets or sets the exchange time of the order book.
     */
     'timeExchange'?: Date;
     /**
-    * The CoinAPI time when the order book was received.
+    * Gets or sets the CoinAPI time when the order book was received.
     */
     'timeCoinapi'?: Date;
     /**
-    * The number of ask levels in the order book.
+    * Gets or sets the number of ask levels in the order book.
     */
     'askLevels'?: number;
     /**
-    * The number of bid levels in the order book.
+    * Gets or sets the number of bid levels in the order book.
     */
     'bidLevels'?: number;
     /**
-    * The depth of the ask side of the order book.
+    * Gets or sets the depth of the ask side of the order book.
     */
     'askDepth'?: number;
     /**
-    * The depth of the bid side of the order book.
+    * Gets or sets the depth of the bid side of the order book.
     */
     'bidDepth'?: number;
 

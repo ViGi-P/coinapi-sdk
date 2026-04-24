@@ -54,7 +54,9 @@ case class Asset (
   supplyMax: Option[Double] = None,
   /*  */
   chainAddresses: Option[Seq[ChainNetworkAddress]] = None,
+  /* Gets the start date of the available data as a string in the format \"yyyy-MM-dd\". */
   dataStart: Option[String] = None,
+  /* Gets the end date of the available data as a string in the format \"yyyy-MM-dd\". */
   dataEnd: Option[String] = None
 ) extends ApiModel
 

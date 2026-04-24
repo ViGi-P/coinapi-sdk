@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * V1ListingItemTest Class Doc Comment
  *
  * @category    Class
- * @description Represents a listing item.
+ * @description Represents a listing data item.
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

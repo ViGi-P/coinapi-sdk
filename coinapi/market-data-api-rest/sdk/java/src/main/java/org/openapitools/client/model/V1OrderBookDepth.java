@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the depth of an order book.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-23T06:06:39.606952276Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-24T06:05:03.999499045Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class V1OrderBookDepth {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
@@ -96,7 +96,7 @@ public class V1OrderBookDepth {
   }
 
   /**
-   * The symbol identifier.
+   * Gets or sets the symbol identifier.
    * @return symbolId
    */
   @javax.annotation.Nullable
@@ -115,7 +115,7 @@ public class V1OrderBookDepth {
   }
 
   /**
-   * The exchange time of the order book.
+   * Gets or sets the exchange time of the order book.
    * @return timeExchange
    */
   @javax.annotation.Nullable
@@ -134,7 +134,7 @@ public class V1OrderBookDepth {
   }
 
   /**
-   * The CoinAPI time when the order book was received.
+   * Gets or sets the CoinAPI time when the order book was received.
    * @return timeCoinapi
    */
   @javax.annotation.Nullable
@@ -153,7 +153,7 @@ public class V1OrderBookDepth {
   }
 
   /**
-   * The number of ask levels in the order book.
+   * Gets or sets the number of ask levels in the order book.
    * @return askLevels
    */
   @javax.annotation.Nullable
@@ -172,7 +172,7 @@ public class V1OrderBookDepth {
   }
 
   /**
-   * The number of bid levels in the order book.
+   * Gets or sets the number of bid levels in the order book.
    * @return bidLevels
    */
   @javax.annotation.Nullable
@@ -191,7 +191,7 @@ public class V1OrderBookDepth {
   }
 
   /**
-   * The depth of the ask side of the order book.
+   * Gets or sets the depth of the ask side of the order book.
    * @return askDepth
    */
   @javax.annotation.Nullable
@@ -210,7 +210,7 @@ public class V1OrderBookDepth {
   }
 
   /**
-   * The depth of the bid side of the order book.
+   * Gets or sets the depth of the bid side of the order book.
    * @return bidDepth
    */
   @javax.annotation.Nullable

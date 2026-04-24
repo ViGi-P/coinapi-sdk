@@ -102,8 +102,6 @@ All URIs are relative to *https://rest.coinapi.io*
 ## Documentation for Models
 
  - [org.openapitools.client.models.OhlcvExchangeTimeseriesItem](docs/OhlcvExchangeTimeseriesItem.md)
- - [org.openapitools.client.models.OptionsOptionExchangeGroup](docs/OptionsOptionExchangeGroup.md)
- - [org.openapitools.client.models.OptionsStrike](docs/OptionsStrike.md)
  - [org.openapitools.client.models.V1Asset](docs/V1Asset.md)
  - [org.openapitools.client.models.V1Chain](docs/V1Chain.md)
  - [org.openapitools.client.models.V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
@@ -119,11 +117,13 @@ All URIs are relative to *https://rest.coinapi.io*
  - [org.openapitools.client.models.V1Metric](docs/V1Metric.md)
  - [org.openapitools.client.models.V1MetricData](docs/V1MetricData.md)
  - [org.openapitools.client.models.V1MetricInfo](docs/V1MetricInfo.md)
+ - [org.openapitools.client.models.V1OptionExchangeGroup](docs/V1OptionExchangeGroup.md)
  - [org.openapitools.client.models.V1OrderBook](docs/V1OrderBook.md)
  - [org.openapitools.client.models.V1OrderBookBase](docs/V1OrderBookBase.md)
  - [org.openapitools.client.models.V1OrderBookDepth](docs/V1OrderBookDepth.md)
  - [org.openapitools.client.models.V1Quote](docs/V1Quote.md)
  - [org.openapitools.client.models.V1QuoteTrade](docs/V1QuoteTrade.md)
+ - [org.openapitools.client.models.V1Strike](docs/V1Strike.md)
  - [org.openapitools.client.models.V1Symbol](docs/V1Symbol.md)
  - [org.openapitools.client.models.V1SymbolMapping](docs/V1SymbolMapping.md)
  - [org.openapitools.client.models.V1TimeseriesItem](docs/V1TimeseriesItem.md)

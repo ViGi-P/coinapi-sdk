@@ -31,7 +31,7 @@ type V1Trade struct {
 	Uuid *string `json:"uuid,omitempty"`
 	// The price of the transaction.
 	Price *float64 `json:"price,omitempty"`
-	// The base asset amount traded in the transaction.
+	// The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
 	Size *float64 `json:"size,omitempty"`
 	// The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN).
 	TakerSide NullableString `json:"taker_side,omitempty"`

@@ -17,43 +17,43 @@ import { RequestFile } from './models';
 */
 export class V1TimeseriesItem {
     /**
-    * The start time of the time period.
+    * Gets or sets the start time of the time period.
     */
     'timePeriodStart'?: Date;
     /**
-    * The end time of the time period.
+    * Gets or sets the end time of the time period.
     */
     'timePeriodEnd'?: Date;
     /**
-    * The time when the price opened.
+    * Gets or sets the time when the price opened.
     */
     'timeOpen'?: Date | null;
     /**
-    * The time when the price closed.
+    * Gets or sets the time when the price closed.
     */
     'timeClose'?: Date | null;
     /**
-    * The opening price.
+    * Gets or sets the opening price.
     */
     'priceOpen'?: number | null;
     /**
-    * The highest price during the time period.
+    * Gets or sets the highest price during the time period.
     */
     'priceHigh'?: number | null;
     /**
-    * The lowest price during the time period.
+    * Gets or sets the lowest price during the time period.
     */
     'priceLow'?: number | null;
     /**
-    * The closing price.
+    * Gets or sets the closing price.
     */
     'priceClose'?: number | null;
     /**
-    * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+    * Gets or sets the total volume traded during the time period.
     */
     'volumeTraded'?: number;
     /**
-    * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+    * Gets or sets the number of trades executed during the time period.
     */
     'tradesCount'?: number;
 

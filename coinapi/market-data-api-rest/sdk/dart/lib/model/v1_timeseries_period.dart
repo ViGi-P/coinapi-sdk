@@ -21,10 +21,10 @@ class V1TimeseriesPeriod {
     this.displayName,
   });
 
-  /// The period ID.
+  /// Gets or sets the period ID.
   String? periodId;
 
-  /// The length of the period in seconds.
+  /// Gets or sets the length of the period in seconds.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -33,7 +33,7 @@ class V1TimeseriesPeriod {
   ///
   int? lengthSeconds;
 
-  /// The length of the period in months.
+  /// Gets or sets the length of the period in months.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -42,13 +42,13 @@ class V1TimeseriesPeriod {
   ///
   int? lengthMonths;
 
-  /// The unit count.
+  /// Gets or sets the unit count.
   int? unitCount;
 
-  /// The unit name.
+  /// Gets or sets the unit name.
   String? unitName;
 
-  /// The display name of the timeseries period.
+  /// Gets or sets the display name of the timeseries period.
   String? displayName;
 
   @override

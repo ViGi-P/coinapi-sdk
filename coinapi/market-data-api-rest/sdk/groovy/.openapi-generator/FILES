@@ -13,8 +13,6 @@ src/main/groovy/org/openapitools/api/OrderBookL3Api.groovy
 src/main/groovy/org/openapitools/api/QuotesApi.groovy
 src/main/groovy/org/openapitools/api/TradesApi.groovy
 src/main/groovy/org/openapitools/model/OhlcvExchangeTimeseriesItem.groovy
-src/main/groovy/org/openapitools/model/OptionsOptionExchangeGroup.groovy
-src/main/groovy/org/openapitools/model/OptionsStrike.groovy
 src/main/groovy/org/openapitools/model/V1Asset.groovy
 src/main/groovy/org/openapitools/model/V1Chain.groovy
 src/main/groovy/org/openapitools/model/V1ChainNetworkAddress.groovy
@@ -30,11 +28,13 @@ src/main/groovy/org/openapitools/model/V1ListingItem.groovy
 src/main/groovy/org/openapitools/model/V1Metric.groovy
 src/main/groovy/org/openapitools/model/V1MetricData.groovy
 src/main/groovy/org/openapitools/model/V1MetricInfo.groovy
+src/main/groovy/org/openapitools/model/V1OptionExchangeGroup.groovy
 src/main/groovy/org/openapitools/model/V1OrderBook.groovy
 src/main/groovy/org/openapitools/model/V1OrderBookBase.groovy
 src/main/groovy/org/openapitools/model/V1OrderBookDepth.groovy
 src/main/groovy/org/openapitools/model/V1Quote.groovy
 src/main/groovy/org/openapitools/model/V1QuoteTrade.groovy
+src/main/groovy/org/openapitools/model/V1Strike.groovy
 src/main/groovy/org/openapitools/model/V1Symbol.groovy
 src/main/groovy/org/openapitools/model/V1SymbolMapping.groovy
 src/main/groovy/org/openapitools/model/V1TimeseriesItem.groovy

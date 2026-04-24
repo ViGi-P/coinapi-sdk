@@ -27,7 +27,9 @@ type V1Exchange struct {
 	Website NullableString `json:"website,omitempty"`
 	// Gets or sets the name of the exchange.
 	Name NullableString `json:"name,omitempty"`
+	// Gets the start date of the exchange's data.
 	DataStart NullableString `json:"data_start,omitempty"`
+	// Gets the end date of the exchange's data.
 	DataEnd NullableString `json:"data_end,omitempty"`
 	// Gets or sets the start date of quote data.
 	DataQuoteStart NullableTime `json:"data_quote_start,omitempty"`
@@ -55,7 +57,7 @@ type V1Exchange struct {
 	MetricId []string `json:"metric_id,omitempty"`
 	// Gets or sets the list of icons for the exchange.
 	Icons []V1Icon `json:"icons,omitempty"`
-	// Rank of the exchange.
+	// Rank of the exchange - higher rank means exchange is more reliable
 	Rank *float64 `json:"rank,omitempty"`
 	// Status of the integration
 	IntegrationStatus NullableString `json:"integration_status,omitempty"`

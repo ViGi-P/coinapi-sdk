@@ -21,25 +21,25 @@ var _ MappedNullable = &V1TimeseriesItem{}
 
 // V1TimeseriesItem Represents a timeseries item with price and volume information.
 type V1TimeseriesItem struct {
-	// The start time of the time period.
+	// Gets or sets the start time of the time period.
 	TimePeriodStart *time.Time `json:"time_period_start,omitempty"`
-	// The end time of the time period.
+	// Gets or sets the end time of the time period.
 	TimePeriodEnd *time.Time `json:"time_period_end,omitempty"`
-	// The time when the price opened.
+	// Gets or sets the time when the price opened.
 	TimeOpen NullableTime `json:"time_open,omitempty"`
-	// The time when the price closed.
+	// Gets or sets the time when the price closed.
 	TimeClose NullableTime `json:"time_close,omitempty"`
-	// The opening price.
+	// Gets or sets the opening price.
 	PriceOpen NullableFloat64 `json:"price_open,omitempty"`
-	// The highest price during the time period.
+	// Gets or sets the highest price during the time period.
 	PriceHigh NullableFloat64 `json:"price_high,omitempty"`
-	// The lowest price during the time period.
+	// Gets or sets the lowest price during the time period.
 	PriceLow NullableFloat64 `json:"price_low,omitempty"`
-	// The closing price.
+	// Gets or sets the closing price.
 	PriceClose NullableFloat64 `json:"price_close,omitempty"`
-	// The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+	// Gets or sets the total volume traded during the time period.
 	VolumeTraded *float64 `json:"volume_traded,omitempty"`
-	// The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+	// Gets or sets the number of trades executed during the time period.
 	TradesCount *int64 `json:"trades_count,omitempty"`
 }
 

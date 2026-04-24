@@ -17,205 +17,211 @@ import { RequestFile } from './models';
 */
 export class V1Symbol {
     /**
-    * The symbol identifier.
+    * Gets or sets the symbol identifier.
     */
     'symbolId'?: string | null;
     /**
-    * The exchange identifier.
+    * Gets or sets the exchange identifier.
     */
     'exchangeId'?: string | null;
     /**
-    * The symbol type.
+    * Gets or sets the symbol type.
     */
     'symbolType'?: string | null;
     /**
-    * The base asset identifier.
+    * Gets or sets the base asset identifier.
     */
     'assetIdBase'?: string | null;
     /**
-    * The quote asset identifier.
+    * Gets or sets the quote asset identifier.
     */
     'assetIdQuote'?: string | null;
     /**
-    * The unit asset identifier.
+    * Gets or sets the unit asset identifier.
     */
     'assetIdUnit'?: string | null;
     /**
-    * The contract unit for futures.
+    * Gets or sets the contract unit for futures.
     */
     'futureContractUnit'?: number | null;
     /**
-    * The asset used as the unit for futures contract.
+    * Gets or sets the asset used as the unit for futures contract.
     */
     'futureContractUnitAsset'?: string | null;
     /**
-    * The future delivery time for futures contract.
+    * Gets or sets the future delivery time for futures contract.
     */
     'futureDeliveryTime'?: Date | null;
     /**
-    * Indicates whether the option type is a call.
+    * Gets or sets a value indicating whether the option type is a call.
     */
     'optionTypeIsCall'?: boolean | null;
     /**
-    * The strike price for options.
+    * Gets or sets the strike price for options.
     */
     'optionStrikePrice'?: number | null;
     /**
-    * The contract unit for options.
+    * Gets or sets the contract unit for options.
     */
     'optionContractUnit'?: number | null;
     /**
-    * The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+    * Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
     */
     'optionExerciseStyle'?: string | null;
     /**
-    * The expiration time for options.
+    * Gets or sets the expiration time for options.
     */
     'optionExpirationTime'?: Date | null;
     /**
-    * The delivery time for contracts.
+    * Gets or sets the delivery time for contracts.
     */
     'contractDeliveryTime'?: Date | null;
     /**
-    * The contract unit for contracts.
+    * Gets or sets the contract unit for contracts.
     */
     'contractUnit'?: number | null;
     /**
-    * The asset used as the unit for contracts.
+    * Gets or sets the asset used as the unit for contracts.
     */
     'contractUnitAsset'?: string | null;
     /**
-    * The contract identifier.
+    * Gets or sets the contract identifier.
     */
     'contractId'?: string | null;
     /**
-    * The display name of the contract.
+    * Gets or sets the display name of the contract.
     */
     'contractDisplayName'?: string | null;
     /**
-    * The display description of the contract.
+    * Gets or sets the display description of the contract.
     */
     'contractDisplayDescription'?: string | null;
+    /**
+    * Gets the start date of the data in string format (\"yyyy-MM-dd\").
+    */
     'dataStart'?: string | null;
+    /**
+    * Gets the end date of the data in string format (\"yyyy-MM-dd\").
+    */
     'dataEnd'?: string | null;
     /**
-    * The start date of quote data.
+    * Gets or sets the start date of quote data.
     */
     'dataQuoteStart'?: Date | null;
     /**
-    * The end date of quote data.
+    * Gets or sets the end date of quote data.
     */
     'dataQuoteEnd'?: Date | null;
     /**
-    * The start date of order book data.
+    * Gets or sets the start date of order book data.
     */
     'dataOrderbookStart'?: Date | null;
     /**
-    * The end date of order book data.
+    * Gets or sets the end date of order book data.
     */
     'dataOrderbookEnd'?: Date | null;
     /**
-    * The start date of trade data.
+    * Gets or sets the start date of trade data.
     */
     'dataTradeStart'?: Date | null;
     /**
-    * The end date of trade data.
+    * Gets or sets the end date of trade data.
     */
     'dataTradeEnd'?: Date | null;
     /**
-    * The index identifier.
+    * Gets or sets the index identifier.
     */
     'indexId'?: string | null;
     /**
-    * The display name of the index.
+    * Gets or sets the display name of the index.
     */
     'indexDisplayName'?: string | null;
     /**
-    * The display description of the index.
+    * Gets or sets the display description of the index.
     */
     'indexDisplayDescription'?: string | null;
     /**
-    * The volume in the last 1 hour.
+    * Gets or sets the volume in the last 1 hour.
     */
     'volume1hrs'?: number | null;
     /**
-    * The volume in USD in the last 1 hour.
+    * Gets or sets the volume in USD in the last 1 hour.
     */
     'volume1hrsUsd'?: number | null;
     /**
-    * The volume in the last 1 day.
+    * Gets or sets the volume in the last 1 day.
     */
     'volume1day'?: number | null;
     /**
-    * The volume in USD in the last 1 day.
+    * Gets or sets the volume in USD in the last 1 day.
     */
     'volume1dayUsd'?: number | null;
     /**
-    * The volume in the last 1 month.
+    * Gets or sets the volume in the last 1 month.
     */
     'volume1mth'?: number | null;
     /**
-    * The volume in USD in the last 1 month.
+    * Gets or sets the volume in USD in the last 1 month.
     */
     'volume1mthUsd'?: number | null;
     /**
-    * The price.
+    * Gets or sets the price.
     */
     'price'?: number | null;
     /**
-    * The symbol identifier in the exchange.
+    * Gets or sets the symbol identifier in the exchange.
     */
     'symbolIdExchange'?: string | null;
     /**
-    * The base asset identifier in the exchange.
+    * Gets or sets the base asset identifier in the exchange.
     */
     'assetIdBaseExchange'?: string | null;
     /**
-    * The quote asset identifier in the exchange.
+    * Gets or sets the quote asset identifier in the exchange.
     */
     'assetIdQuoteExchange'?: string | null;
     /**
-    * The price precision.
+    * Gets or sets the price precision.
     */
     'pricePrecision'?: number | null;
     /**
-    * The size precision.
+    * Gets or sets the size precision.
     */
     'sizePrecision'?: number | null;
     /**
     * Key Value Pair store with raw data from the data source.
     */
-    'rawKvp'?: { [key: string]: string; } | null;
+    'rawKvp'?: { [key: string]: string | null; } | null;
     /**
-    * Indicates whether the futures contract is inverse (coin-margined).
+    * Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
     */
     'futureIsInverse'?: boolean | null;
     /**
-    * Indicates whether the futures contract is quanto.
+    * Gets or sets a value indicating whether the futures contract is quanto.
     */
     'futureIsQuanto'?: boolean | null;
     /**
-    * Volume unit in USD.
+    * Gets or sets the volume in USD.
     */
     'volumeToUsd'?: number | null;
     /**
-    * The up barrier price for barrier options.
+    * Gets or sets the up barrier price for barrier options.
     */
     'optionBarrierUpPrice'?: number | null;
     /**
-    * The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+    * Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
     */
     'optionBarrierUpType'?: string | null;
     /**
-    * The down barrier price for barrier options.
+    * Gets or sets the down barrier price for barrier options.
     */
     'optionBarrierDownPrice'?: number | null;
     /**
-    * The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+    * Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
     */
     'optionBarrierDownType'?: string | null;
     /**
-    * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+    * Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
     */
     'symbolIdInt'?: number | null;
 
@@ -440,7 +446,7 @@ export class V1Symbol {
         {
             "name": "rawKvp",
             "baseName": "raw_kvp",
-            "type": "{ [key: string]: string; }"
+            "type": "{ [key: string]: string | null; }"
         },
         {
             "name": "futureIsInverse",

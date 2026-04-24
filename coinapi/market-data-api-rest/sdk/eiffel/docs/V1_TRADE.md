@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **time_coinapi** | [**DATE_TIME**](DATE_TIME.md) | The time when the trade was received by CoinAPI. | [optional] [default to null]
 **uuid** | [**UUID**](UUID.md) | The unique identifier for the trade. | [optional] [default to null]
 **price** | **REAL_64** | The price of the transaction. | [optional] [default to null]
-**size** | **REAL_64** | The base asset amount traded in the transaction. | [optional] [default to null]
+**size** | **REAL_64** | The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series. | [optional] [default to null]
 **taker_side** | [**STRING_32**](STRING_32.md) | The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN). | [optional] [default to null]
 **id_trade** | [**STRING_32**](STRING_32.md) | The trade identifier. | [optional] [default to null]
 **id_order_maker** | [**STRING_32**](STRING_32.md) | The order maker identifier. | [optional] [default to null]

@@ -15,7 +15,7 @@ test_that("metric_id", {
 
 test_that("symbol_id", {
   # tests for the property `symbol_id` (character)
-  # The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+  # Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`symbol_id`, "EXPECTED_RESULT")
@@ -23,7 +23,7 @@ test_that("symbol_id", {
 
 test_that("symbol_id_external", {
   # tests for the property `symbol_id_external` (character)
-  # The exchange-native symbol identifier. Null for exchange-level metrics.
+  # Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`symbol_id_external`, "EXPECTED_RESULT")
@@ -47,7 +47,7 @@ test_that("asset_id", {
 
 test_that("asset_id_external", {
   # tests for the property `asset_id_external` (character)
-  # Gets or sets the asset ID from the exchange.
+  # Gets or sets the asset ID.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`asset_id_external`, "EXPECTED_RESULT")
@@ -55,7 +55,7 @@ test_that("asset_id_external", {
 
 test_that("chain_id", {
   # tests for the property `chain_id` (character)
-  # Gets or sets the chain id.
+  # Gets or sets the chain ID.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`chain_id`, "EXPECTED_RESULT")
@@ -63,7 +63,7 @@ test_that("chain_id", {
 
 test_that("network_id", {
   # tests for the property `network_id` (character)
-  # Gets or sets the network id.
+  # Gets or sets the network ID.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`network_id`, "EXPECTED_RESULT")

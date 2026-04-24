@@ -93,43 +93,43 @@ class V1Quote {
 
 
 /**
- * The symbol identifier.
+ * Gets or sets the symbol identifier.
  * @member {String} symbol_id
  */
 V1Quote.prototype['symbol_id'] = undefined;
 
 /**
- * The exchange time of the quote.
+ * Gets or sets the exchange time of the quote.
  * @member {Date} time_exchange
  */
 V1Quote.prototype['time_exchange'] = undefined;
 
 /**
- * The CoinAPI time when the quote was received.
+ * Gets or sets the CoinAPI time when the quote was received.
  * @member {Date} time_coinapi
  */
 V1Quote.prototype['time_coinapi'] = undefined;
 
 /**
- * The best asking price.
+ * Gets or sets the best asking price.
  * @member {Number} ask_price
  */
 V1Quote.prototype['ask_price'] = undefined;
 
 /**
- * The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+ * Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
  * @member {Number} ask_size
  */
 V1Quote.prototype['ask_size'] = undefined;
 
 /**
- * The best bidding price.
+ * Gets or sets the best bidding price.
  * @member {Number} bid_price
  */
 V1Quote.prototype['bid_price'] = undefined;
 
 /**
- * The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+ * Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
  * @member {Number} bid_size
  */
 V1Quote.prototype['bid_size'] = undefined;

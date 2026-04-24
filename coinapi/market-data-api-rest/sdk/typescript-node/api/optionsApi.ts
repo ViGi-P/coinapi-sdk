@@ -15,7 +15,7 @@ import localVarRequest from 'request';
 import http from 'http';
 
 /* tslint:disable:no-unused-locals */
-import { OptionsOptionExchangeGroup } from '../model/optionsOptionExchangeGroup';
+import { V1OptionExchangeGroup } from '../model/v1OptionExchangeGroup';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
 import { HttpBasicAuth, HttpBearerAuth, ApiKeyAuth, OAuth } from '../model/models';
@@ -99,7 +99,7 @@ export class OptionsApi {
      * @summary Current data by Exchange
      * @param exchangeId Exchange identifier (from the Metadata -&gt; Exchanges)
      */
-    public async v1OptionsExchangeIdCurrentGet (exchangeId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<OptionsOptionExchangeGroup>;  }> {
+    public async v1OptionsExchangeIdCurrentGet (exchangeId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1OptionExchangeGroup>;  }> {
         const localVarPath = this.basePath + '/v1/options/{exchange_id}/current'
             .replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
@@ -153,13 +153,13 @@ export class OptionsApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<OptionsOptionExchangeGroup>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<V1OptionExchangeGroup>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<OptionsOptionExchangeGroup>");
+                            body = ObjectSerializer.deserialize(body, "Array<V1OptionExchangeGroup>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));

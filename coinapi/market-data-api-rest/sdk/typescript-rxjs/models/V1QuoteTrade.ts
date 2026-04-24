@@ -22,43 +22,43 @@ import type {
  */
 export interface V1QuoteTrade {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      * @type {string}
      * @memberof V1QuoteTrade
      */
     symbol_id?: string | null;
     /**
-     * The exchange time of the quote trade.
+     * Gets or sets the exchange time of the quote trade.
      * @type {string}
      * @memberof V1QuoteTrade
      */
     time_exchange?: string;
     /**
-     * The CoinAPI time when the quote trade was received.
+     * Gets or sets the CoinAPI time when the quote trade was received.
      * @type {string}
      * @memberof V1QuoteTrade
      */
     time_coinapi?: string;
     /**
-     * The best asking price.
+     * Gets or sets the best asking price.
      * @type {number}
      * @memberof V1QuoteTrade
      */
     ask_price?: number | null;
     /**
-     * The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+     * Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
      * @type {number}
      * @memberof V1QuoteTrade
      */
     ask_size?: number | null;
     /**
-     * The best bidding price.
+     * Gets or sets the best bidding price.
      * @type {number}
      * @memberof V1QuoteTrade
      */
     bid_price?: number | null;
     /**
-     * The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+     * Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
      * @type {number}
      * @memberof V1QuoteTrade
      */

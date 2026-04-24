@@ -6,11 +6,11 @@
 
 %% @doc Current data by Exchange
 %% Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
--spec v1_options_exchange_id_current_get(ctx:ctx(), binary()) -> {ok, [openapi_options_option_exchange_group:openapi_options_option_exchange_group()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_options_exchange_id_current_get(ctx:ctx(), binary()) -> {ok, [openapi_v1_option_exchange_group:openapi_v1_option_exchange_group()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_options_exchange_id_current_get(Ctx, ExchangeId) ->
     v1_options_exchange_id_current_get(Ctx, ExchangeId, #{}).
 
--spec v1_options_exchange_id_current_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_options_option_exchange_group:openapi_options_option_exchange_group()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_options_exchange_id_current_get(ctx:ctx(), binary(), maps:map()) -> {ok, [openapi_v1_option_exchange_group:openapi_v1_option_exchange_group()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_options_exchange_id_current_get(Ctx, ExchangeId, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),

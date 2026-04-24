@@ -346,7 +346,7 @@ class V1OrderBookDepth implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets symbol_id
      *
-     * @param string|null $symbol_id The symbol identifier.
+     * @param string|null $symbol_id Gets or sets the symbol identifier.
      *
      * @return self
      */
@@ -380,7 +380,7 @@ class V1OrderBookDepth implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_exchange
      *
-     * @param \DateTime|null $time_exchange The exchange time of the order book.
+     * @param \DateTime|null $time_exchange Gets or sets the exchange time of the order book.
      *
      * @return self
      */
@@ -407,7 +407,7 @@ class V1OrderBookDepth implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_coinapi
      *
-     * @param \DateTime|null $time_coinapi The CoinAPI time when the order book was received.
+     * @param \DateTime|null $time_coinapi Gets or sets the CoinAPI time when the order book was received.
      *
      * @return self
      */
@@ -434,7 +434,7 @@ class V1OrderBookDepth implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ask_levels
      *
-     * @param int|null $ask_levels The number of ask levels in the order book.
+     * @param int|null $ask_levels Gets or sets the number of ask levels in the order book.
      *
      * @return self
      */
@@ -461,7 +461,7 @@ class V1OrderBookDepth implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bid_levels
      *
-     * @param int|null $bid_levels The number of bid levels in the order book.
+     * @param int|null $bid_levels Gets or sets the number of bid levels in the order book.
      *
      * @return self
      */
@@ -488,7 +488,7 @@ class V1OrderBookDepth implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ask_depth
      *
-     * @param float|null $ask_depth The depth of the ask side of the order book.
+     * @param float|null $ask_depth Gets or sets the depth of the ask side of the order book.
      *
      * @return self
      */
@@ -515,7 +515,7 @@ class V1OrderBookDepth implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets bid_depth
      *
-     * @param float|null $bid_depth The depth of the bid side of the order book.
+     * @param float|null $bid_depth Gets or sets the depth of the bid side of the order book.
      *
      * @return self
      */

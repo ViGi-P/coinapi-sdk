@@ -14,27 +14,27 @@
  */
 export interface V1LastTrade { 
     /**
-     * The exchange time of the last trade.
+     * Gets or sets the exchange time of the last trade.
      */
     time_exchange?: string;
     /**
-     * The CoinAPI time when the last trade was received.
+     * Gets or sets the CoinAPI time when the last trade was received.
      */
     time_coinapi?: string;
     /**
-     * The UUID of the last trade.
+     * Gets or sets the UUID of the last trade.
      */
     uuid?: string;
     /**
-     * The price of the last trade.
+     * Gets or sets the price of the last trade.
      */
     price?: number;
     /**
-     * The size of the last trade.
+     * Gets or sets the size of the last trade.
      */
     size?: number;
     /**
-     * The taker side of the last trade.
+     * Gets or sets the taker side of the last trade.
      */
     taker_side?: string | null;
 }

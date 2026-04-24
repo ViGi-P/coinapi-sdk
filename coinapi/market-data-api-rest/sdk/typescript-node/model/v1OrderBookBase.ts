@@ -17,23 +17,23 @@ import { RequestFile } from './models';
 */
 export class V1OrderBookBase {
     /**
-    * The symbol identifier.
+    * Gets or sets the symbol identifier.
     */
     'symbolId'?: string | null;
     /**
-    * The exchange time of the order book.
+    * Gets or sets the exchange time of the order book.
     */
     'timeExchange'?: Date;
     /**
-    * The CoinAPI time when the order book was received.
+    * Gets or sets the CoinAPI time when the order book was received.
     */
     'timeCoinapi'?: Date;
     /**
-    * The asks made by market makers.
+    * Gets or sets the asks made by market makers.
     */
     'asks'?: any | null;
     /**
-    * The bids made by market makers.
+    * Gets or sets the bids made by market makers.
     */
     'bids'?: any | null;
 

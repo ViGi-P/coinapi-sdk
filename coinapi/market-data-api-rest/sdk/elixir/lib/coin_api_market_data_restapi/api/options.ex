@@ -21,10 +21,10 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Options do
 
   ### Returns
 
-  - `{:ok, [%OptionsOptionExchangeGroup{}, ...]}` on success
+  - `{:ok, [%V1OptionExchangeGroup{}, ...]}` on success
   - `{:error, Tesla.Env.t}` on failure
   """
-  @spec v1_options_exchange_id_current_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.OptionsOptionExchangeGroup.t]} | {:error, Tesla.Env.t}
+  @spec v1_options_exchange_id_current_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [CoinAPIMarketDataRESTAPI.Model.V1OptionExchangeGroup.t]} | {:error, Tesla.Env.t}
   def v1_options_exchange_id_current_get(connection, exchange_id, _opts \\ []) do
     request =
       %{}
@@ -35,7 +35,7 @@ defmodule CoinAPIMarketDataRESTAPI.Api.Options do
     connection
     |> Connection.request(request)
     |> evaluate_response([
-      {200, CoinAPIMarketDataRESTAPI.Model.OptionsOptionExchangeGroup}
+      {200, CoinAPIMarketDataRESTAPI.Model.V1OptionExchangeGroup}
     ])
   end
 end

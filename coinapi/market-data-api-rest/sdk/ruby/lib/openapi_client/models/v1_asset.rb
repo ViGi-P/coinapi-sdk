@@ -73,8 +73,10 @@ module OpenapiClient
     # 
     attr_accessor :chain_addresses
 
+    # Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
     attr_accessor :data_start
 
+    # Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
     attr_accessor :data_end
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -33,259 +33,259 @@ class V1SymbolTest : ShouldSpec() {
         // uncomment below to create an instance of V1Symbol
         //val modelInstance = V1Symbol()
 
-        // to test the property `symbolId` - The symbol identifier.
+        // to test the property `symbolId` - Gets or sets the symbol identifier.
         should("test symbolId") {
             // uncomment below to test the property
             //modelInstance.symbolId shouldBe ("TODO")
         }
 
-        // to test the property `exchangeId` - The exchange identifier.
+        // to test the property `exchangeId` - Gets or sets the exchange identifier.
         should("test exchangeId") {
             // uncomment below to test the property
             //modelInstance.exchangeId shouldBe ("TODO")
         }
 
-        // to test the property `symbolType` - The symbol type.
+        // to test the property `symbolType` - Gets or sets the symbol type.
         should("test symbolType") {
             // uncomment below to test the property
             //modelInstance.symbolType shouldBe ("TODO")
         }
 
-        // to test the property `assetIdBase` - The base asset identifier.
+        // to test the property `assetIdBase` - Gets or sets the base asset identifier.
         should("test assetIdBase") {
             // uncomment below to test the property
             //modelInstance.assetIdBase shouldBe ("TODO")
         }
 
-        // to test the property `assetIdQuote` - The quote asset identifier.
+        // to test the property `assetIdQuote` - Gets or sets the quote asset identifier.
         should("test assetIdQuote") {
             // uncomment below to test the property
             //modelInstance.assetIdQuote shouldBe ("TODO")
         }
 
-        // to test the property `assetIdUnit` - The unit asset identifier.
+        // to test the property `assetIdUnit` - Gets or sets the unit asset identifier.
         should("test assetIdUnit") {
             // uncomment below to test the property
             //modelInstance.assetIdUnit shouldBe ("TODO")
         }
 
-        // to test the property `futureContractUnit` - The contract unit for futures.
+        // to test the property `futureContractUnit` - Gets or sets the contract unit for futures.
         should("test futureContractUnit") {
             // uncomment below to test the property
             //modelInstance.futureContractUnit shouldBe ("TODO")
         }
 
-        // to test the property `futureContractUnitAsset` - The asset used as the unit for futures contract.
+        // to test the property `futureContractUnitAsset` - Gets or sets the asset used as the unit for futures contract.
         should("test futureContractUnitAsset") {
             // uncomment below to test the property
             //modelInstance.futureContractUnitAsset shouldBe ("TODO")
         }
 
-        // to test the property `futureDeliveryTime` - The future delivery time for futures contract.
+        // to test the property `futureDeliveryTime` - Gets or sets the future delivery time for futures contract.
         should("test futureDeliveryTime") {
             // uncomment below to test the property
             //modelInstance.futureDeliveryTime shouldBe ("TODO")
         }
 
-        // to test the property `optionTypeIsCall` - Indicates whether the option type is a call.
+        // to test the property `optionTypeIsCall` - Gets or sets a value indicating whether the option type is a call.
         should("test optionTypeIsCall") {
             // uncomment below to test the property
             //modelInstance.optionTypeIsCall shouldBe ("TODO")
         }
 
-        // to test the property `optionStrikePrice` - The strike price for options.
+        // to test the property `optionStrikePrice` - Gets or sets the strike price for options.
         should("test optionStrikePrice") {
             // uncomment below to test the property
             //modelInstance.optionStrikePrice shouldBe ("TODO")
         }
 
-        // to test the property `optionContractUnit` - The contract unit for options.
+        // to test the property `optionContractUnit` - Gets or sets the contract unit for options.
         should("test optionContractUnit") {
             // uncomment below to test the property
             //modelInstance.optionContractUnit shouldBe ("TODO")
         }
 
-        // to test the property `optionExerciseStyle` - The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+        // to test the property `optionExerciseStyle` - Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
         should("test optionExerciseStyle") {
             // uncomment below to test the property
             //modelInstance.optionExerciseStyle shouldBe ("TODO")
         }
 
-        // to test the property `optionExpirationTime` - The expiration time for options.
+        // to test the property `optionExpirationTime` - Gets or sets the expiration time for options.
         should("test optionExpirationTime") {
             // uncomment below to test the property
             //modelInstance.optionExpirationTime shouldBe ("TODO")
         }
 
-        // to test the property `contractDeliveryTime` - The delivery time for contracts.
+        // to test the property `contractDeliveryTime` - Gets or sets the delivery time for contracts.
         should("test contractDeliveryTime") {
             // uncomment below to test the property
             //modelInstance.contractDeliveryTime shouldBe ("TODO")
         }
 
-        // to test the property `contractUnit` - The contract unit for contracts.
+        // to test the property `contractUnit` - Gets or sets the contract unit for contracts.
         should("test contractUnit") {
             // uncomment below to test the property
             //modelInstance.contractUnit shouldBe ("TODO")
         }
 
-        // to test the property `contractUnitAsset` - The asset used as the unit for contracts.
+        // to test the property `contractUnitAsset` - Gets or sets the asset used as the unit for contracts.
         should("test contractUnitAsset") {
             // uncomment below to test the property
             //modelInstance.contractUnitAsset shouldBe ("TODO")
         }
 
-        // to test the property `contractId` - The contract identifier.
+        // to test the property `contractId` - Gets or sets the contract identifier.
         should("test contractId") {
             // uncomment below to test the property
             //modelInstance.contractId shouldBe ("TODO")
         }
 
-        // to test the property `contractDisplayName` - The display name of the contract.
+        // to test the property `contractDisplayName` - Gets or sets the display name of the contract.
         should("test contractDisplayName") {
             // uncomment below to test the property
             //modelInstance.contractDisplayName shouldBe ("TODO")
         }
 
-        // to test the property `contractDisplayDescription` - The display description of the contract.
+        // to test the property `contractDisplayDescription` - Gets or sets the display description of the contract.
         should("test contractDisplayDescription") {
             // uncomment below to test the property
             //modelInstance.contractDisplayDescription shouldBe ("TODO")
         }
 
-        // to test the property `dataStart`
+        // to test the property `dataStart` - Gets the start date of the data in string format (\"yyyy-MM-dd\").
         should("test dataStart") {
             // uncomment below to test the property
             //modelInstance.dataStart shouldBe ("TODO")
         }
 
-        // to test the property `dataEnd`
+        // to test the property `dataEnd` - Gets the end date of the data in string format (\"yyyy-MM-dd\").
         should("test dataEnd") {
             // uncomment below to test the property
             //modelInstance.dataEnd shouldBe ("TODO")
         }
 
-        // to test the property `dataQuoteStart` - The start date of quote data.
+        // to test the property `dataQuoteStart` - Gets or sets the start date of quote data.
         should("test dataQuoteStart") {
             // uncomment below to test the property
             //modelInstance.dataQuoteStart shouldBe ("TODO")
         }
 
-        // to test the property `dataQuoteEnd` - The end date of quote data.
+        // to test the property `dataQuoteEnd` - Gets or sets the end date of quote data.
         should("test dataQuoteEnd") {
             // uncomment below to test the property
             //modelInstance.dataQuoteEnd shouldBe ("TODO")
         }
 
-        // to test the property `dataOrderbookStart` - The start date of order book data.
+        // to test the property `dataOrderbookStart` - Gets or sets the start date of order book data.
         should("test dataOrderbookStart") {
             // uncomment below to test the property
             //modelInstance.dataOrderbookStart shouldBe ("TODO")
         }
 
-        // to test the property `dataOrderbookEnd` - The end date of order book data.
+        // to test the property `dataOrderbookEnd` - Gets or sets the end date of order book data.
         should("test dataOrderbookEnd") {
             // uncomment below to test the property
             //modelInstance.dataOrderbookEnd shouldBe ("TODO")
         }
 
-        // to test the property `dataTradeStart` - The start date of trade data.
+        // to test the property `dataTradeStart` - Gets or sets the start date of trade data.
         should("test dataTradeStart") {
             // uncomment below to test the property
             //modelInstance.dataTradeStart shouldBe ("TODO")
         }
 
-        // to test the property `dataTradeEnd` - The end date of trade data.
+        // to test the property `dataTradeEnd` - Gets or sets the end date of trade data.
         should("test dataTradeEnd") {
             // uncomment below to test the property
             //modelInstance.dataTradeEnd shouldBe ("TODO")
         }
 
-        // to test the property `indexId` - The index identifier.
+        // to test the property `indexId` - Gets or sets the index identifier.
         should("test indexId") {
             // uncomment below to test the property
             //modelInstance.indexId shouldBe ("TODO")
         }
 
-        // to test the property `indexDisplayName` - The display name of the index.
+        // to test the property `indexDisplayName` - Gets or sets the display name of the index.
         should("test indexDisplayName") {
             // uncomment below to test the property
             //modelInstance.indexDisplayName shouldBe ("TODO")
         }
 
-        // to test the property `indexDisplayDescription` - The display description of the index.
+        // to test the property `indexDisplayDescription` - Gets or sets the display description of the index.
         should("test indexDisplayDescription") {
             // uncomment below to test the property
             //modelInstance.indexDisplayDescription shouldBe ("TODO")
         }
 
-        // to test the property `volume1hrs` - The volume in the last 1 hour.
+        // to test the property `volume1hrs` - Gets or sets the volume in the last 1 hour.
         should("test volume1hrs") {
             // uncomment below to test the property
             //modelInstance.volume1hrs shouldBe ("TODO")
         }
 
-        // to test the property `volume1hrsUsd` - The volume in USD in the last 1 hour.
+        // to test the property `volume1hrsUsd` - Gets or sets the volume in USD in the last 1 hour.
         should("test volume1hrsUsd") {
             // uncomment below to test the property
             //modelInstance.volume1hrsUsd shouldBe ("TODO")
         }
 
-        // to test the property `volume1day` - The volume in the last 1 day.
+        // to test the property `volume1day` - Gets or sets the volume in the last 1 day.
         should("test volume1day") {
             // uncomment below to test the property
             //modelInstance.volume1day shouldBe ("TODO")
         }
 
-        // to test the property `volume1dayUsd` - The volume in USD in the last 1 day.
+        // to test the property `volume1dayUsd` - Gets or sets the volume in USD in the last 1 day.
         should("test volume1dayUsd") {
             // uncomment below to test the property
             //modelInstance.volume1dayUsd shouldBe ("TODO")
         }
 
-        // to test the property `volume1mth` - The volume in the last 1 month.
+        // to test the property `volume1mth` - Gets or sets the volume in the last 1 month.
         should("test volume1mth") {
             // uncomment below to test the property
             //modelInstance.volume1mth shouldBe ("TODO")
         }
 
-        // to test the property `volume1mthUsd` - The volume in USD in the last 1 month.
+        // to test the property `volume1mthUsd` - Gets or sets the volume in USD in the last 1 month.
         should("test volume1mthUsd") {
             // uncomment below to test the property
             //modelInstance.volume1mthUsd shouldBe ("TODO")
         }
 
-        // to test the property `price` - The price.
+        // to test the property `price` - Gets or sets the price.
         should("test price") {
             // uncomment below to test the property
             //modelInstance.price shouldBe ("TODO")
         }
 
-        // to test the property `symbolIdExchange` - The symbol identifier in the exchange.
+        // to test the property `symbolIdExchange` - Gets or sets the symbol identifier in the exchange.
         should("test symbolIdExchange") {
             // uncomment below to test the property
             //modelInstance.symbolIdExchange shouldBe ("TODO")
         }
 
-        // to test the property `assetIdBaseExchange` - The base asset identifier in the exchange.
+        // to test the property `assetIdBaseExchange` - Gets or sets the base asset identifier in the exchange.
         should("test assetIdBaseExchange") {
             // uncomment below to test the property
             //modelInstance.assetIdBaseExchange shouldBe ("TODO")
         }
 
-        // to test the property `assetIdQuoteExchange` - The quote asset identifier in the exchange.
+        // to test the property `assetIdQuoteExchange` - Gets or sets the quote asset identifier in the exchange.
         should("test assetIdQuoteExchange") {
             // uncomment below to test the property
             //modelInstance.assetIdQuoteExchange shouldBe ("TODO")
         }
 
-        // to test the property `pricePrecision` - The price precision.
+        // to test the property `pricePrecision` - Gets or sets the price precision.
         should("test pricePrecision") {
             // uncomment below to test the property
             //modelInstance.pricePrecision shouldBe ("TODO")
         }
 
-        // to test the property `sizePrecision` - The size precision.
+        // to test the property `sizePrecision` - Gets or sets the size precision.
         should("test sizePrecision") {
             // uncomment below to test the property
             //modelInstance.sizePrecision shouldBe ("TODO")
@@ -297,49 +297,49 @@ class V1SymbolTest : ShouldSpec() {
             //modelInstance.rawKvp shouldBe ("TODO")
         }
 
-        // to test the property `futureIsInverse` - Indicates whether the futures contract is inverse (coin-margined).
+        // to test the property `futureIsInverse` - Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
         should("test futureIsInverse") {
             // uncomment below to test the property
             //modelInstance.futureIsInverse shouldBe ("TODO")
         }
 
-        // to test the property `futureIsQuanto` - Indicates whether the futures contract is quanto.
+        // to test the property `futureIsQuanto` - Gets or sets a value indicating whether the futures contract is quanto.
         should("test futureIsQuanto") {
             // uncomment below to test the property
             //modelInstance.futureIsQuanto shouldBe ("TODO")
         }
 
-        // to test the property `volumeToUsd` - Volume unit in USD.
+        // to test the property `volumeToUsd` - Gets or sets the volume in USD.
         should("test volumeToUsd") {
             // uncomment below to test the property
             //modelInstance.volumeToUsd shouldBe ("TODO")
         }
 
-        // to test the property `optionBarrierUpPrice` - The up barrier price for barrier options.
+        // to test the property `optionBarrierUpPrice` - Gets or sets the up barrier price for barrier options.
         should("test optionBarrierUpPrice") {
             // uncomment below to test the property
             //modelInstance.optionBarrierUpPrice shouldBe ("TODO")
         }
 
-        // to test the property `optionBarrierUpType` - The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+        // to test the property `optionBarrierUpType` - Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
         should("test optionBarrierUpType") {
             // uncomment below to test the property
             //modelInstance.optionBarrierUpType shouldBe ("TODO")
         }
 
-        // to test the property `optionBarrierDownPrice` - The down barrier price for barrier options.
+        // to test the property `optionBarrierDownPrice` - Gets or sets the down barrier price for barrier options.
         should("test optionBarrierDownPrice") {
             // uncomment below to test the property
             //modelInstance.optionBarrierDownPrice shouldBe ("TODO")
         }
 
-        // to test the property `optionBarrierDownType` - The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+        // to test the property `optionBarrierDownType` - Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
         should("test optionBarrierDownType") {
             // uncomment below to test the property
             //modelInstance.optionBarrierDownType shouldBe ("TODO")
         }
 
-        // to test the property `symbolIdInt` - The symbol identifier in integer immutable format, used to correlate data across different APIs.
+        // to test the property `symbolIdInt` - Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
         should("test symbolIdInt") {
             // uncomment below to test the property
             //modelInstance.symbolIdInt shouldBe ("TODO")

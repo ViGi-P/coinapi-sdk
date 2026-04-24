@@ -13,7 +13,7 @@
 /*
  * V1_ListingItem.h
  *
- * Represents a listing item.
+ * Represents a listing data item.
  */
 
 #ifndef ORG_OPENAPITOOLS_CLIENT_MODEL_V1_ListingItem_H_
@@ -33,7 +33,7 @@ namespace model {
 
 
 /// <summary>
-/// Represents a listing item.
+/// Represents a listing data item.
 /// </summary>
 class  V1_ListingItem
     : public ModelBase
@@ -67,7 +67,7 @@ public:
     void setMetricId(const utility::string_t& value);
 
     /// <summary>
-    /// The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+    /// Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
     /// </summary>
     utility::string_t getSymbolId() const;
     bool symbolIdIsSet() const;
@@ -75,7 +75,7 @@ public:
     void setSymbolId(const utility::string_t& value);
 
     /// <summary>
-    /// The exchange-native symbol identifier. Null for exchange-level metrics.
+    /// Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
     /// </summary>
     utility::string_t getSymbolIdExternal() const;
     bool symbolIdExternalIsSet() const;
@@ -99,7 +99,7 @@ public:
     void setAssetId(const utility::string_t& value);
 
     /// <summary>
-    /// Gets or sets the asset ID from the exchange.
+    /// Gets or sets the asset ID.
     /// </summary>
     utility::string_t getAssetIdExternal() const;
     bool assetIdExternalIsSet() const;
@@ -107,7 +107,7 @@ public:
     void setAssetIdExternal(const utility::string_t& value);
 
     /// <summary>
-    /// Gets or sets the chain id.
+    /// Gets or sets the chain ID.
     /// </summary>
     utility::string_t getChainId() const;
     bool chainIdIsSet() const;
@@ -115,7 +115,7 @@ public:
     void setChainId(const utility::string_t& value);
 
     /// <summary>
-    /// Gets or sets the network id.
+    /// Gets or sets the network ID.
     /// </summary>
     utility::string_t getNetworkId() const;
     bool networkIdIsSet() const;

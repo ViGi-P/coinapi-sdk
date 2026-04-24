@@ -30,38 +30,38 @@ import com.squareup.moshi.JsonClass
 /**
  * Represents a timeseries period used in exchange rate data.
  *
- * @param periodId The period ID.
- * @param lengthSeconds The length of the period in seconds.
- * @param lengthMonths The length of the period in months.
- * @param unitCount The unit count.
- * @param unitName The unit name.
- * @param displayName The display name of the timeseries period.
+ * @param periodId Gets or sets the period ID.
+ * @param lengthSeconds Gets or sets the length of the period in seconds.
+ * @param lengthMonths Gets or sets the length of the period in months.
+ * @param unitCount Gets or sets the unit count.
+ * @param unitName Gets or sets the unit name.
+ * @param displayName Gets or sets the display name of the timeseries period.
  */
 
 
 data class V1TimeseriesPeriod (
 
-    /* The period ID. */
+    /* Gets or sets the period ID. */
     @Json(name = "period_id")
     val periodId: kotlin.String? = null,
 
-    /* The length of the period in seconds. */
+    /* Gets or sets the length of the period in seconds. */
     @Json(name = "length_seconds")
     val lengthSeconds: kotlin.Int? = null,
 
-    /* The length of the period in months. */
+    /* Gets or sets the length of the period in months. */
     @Json(name = "length_months")
     val lengthMonths: kotlin.Int? = null,
 
-    /* The unit count. */
+    /* Gets or sets the unit count. */
     @Json(name = "unit_count")
     val unitCount: kotlin.Int? = null,
 
-    /* The unit name. */
+    /* Gets or sets the unit name. */
     @Json(name = "unit_name")
     val unitName: kotlin.String? = null,
 
-    /* The display name of the timeseries period. */
+    /* Gets or sets the display name of the timeseries period. */
     @Json(name = "display_name")
     val displayName: kotlin.String? = null
 

@@ -23,10 +23,10 @@ class V1QuoteTrade {
     this.lastTrade,
   });
 
-  /// The symbol identifier.
+  /// Gets or sets the symbol identifier.
   String? symbolId;
 
-  /// The exchange time of the quote trade.
+  /// Gets or sets the exchange time of the quote trade.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -35,7 +35,7 @@ class V1QuoteTrade {
   ///
   DateTime? timeExchange;
 
-  /// The CoinAPI time when the quote trade was received.
+  /// Gets or sets the CoinAPI time when the quote trade was received.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -44,16 +44,16 @@ class V1QuoteTrade {
   ///
   DateTime? timeCoinapi;
 
-  /// The best asking price.
+  /// Gets or sets the best asking price.
   double? askPrice;
 
-  /// The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+  /// Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
   double? askSize;
 
-  /// The best bidding price.
+  /// Gets or sets the best bidding price.
   double? bidPrice;
 
-  /// The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+  /// Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
   double? bidSize;
 
   ///

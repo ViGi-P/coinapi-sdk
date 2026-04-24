@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **TimeCoinapi** | Pointer to **time.Time** | The time when the trade was received by CoinAPI. | [optional] 
 **Uuid** | Pointer to **string** | The unique identifier for the trade. | [optional] 
 **Price** | Pointer to **float64** | The price of the transaction. | [optional] 
-**Size** | Pointer to **float64** | The base asset amount traded in the transaction. | [optional] 
+**Size** | Pointer to **float64** | The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series. | [optional] 
 **TakerSide** | Pointer to **NullableString** | The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN). | [optional] 
 **IdTrade** | Pointer to **NullableString** | The trade identifier. | [optional] 
 **IdOrderMaker** | Pointer to **NullableString** | The order maker identifier. | [optional] 

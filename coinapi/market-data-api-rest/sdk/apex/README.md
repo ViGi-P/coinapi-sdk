@@ -122,8 +122,6 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [OASOhlcvExchangeTimeseriesItem](OASOhlcvExchangeTimeseriesItem.md)
- - [OASOptionsOptionExchangeGroup](OASOptionsOptionExchangeGroup.md)
- - [OASOptionsStrike](OASOptionsStrike.md)
  - [OASV1Asset](OASV1Asset.md)
  - [OASV1Chain](OASV1Chain.md)
  - [OASV1ChainNetworkAddress](OASV1ChainNetworkAddress.md)
@@ -139,11 +137,13 @@ Class | Method | HTTP request | Description
  - [OASV1Metric](OASV1Metric.md)
  - [OASV1MetricData](OASV1MetricData.md)
  - [OASV1MetricInfo](OASV1MetricInfo.md)
+ - [OASV1OptionExchangeGroup](OASV1OptionExchangeGroup.md)
  - [OASV1OrderBook](OASV1OrderBook.md)
  - [OASV1OrderBookBase](OASV1OrderBookBase.md)
  - [OASV1OrderBookDepth](OASV1OrderBookDepth.md)
  - [OASV1Quote](OASV1Quote.md)
  - [OASV1QuoteTrade](OASV1QuoteTrade.md)
+ - [OASV1Strike](OASV1Strike.md)
  - [OASV1Symbol](OASV1Symbol.md)
  - [OASV1SymbolMapping](OASV1SymbolMapping.md)
  - [OASV1TimeseriesItem](OASV1TimeseriesItem.md)

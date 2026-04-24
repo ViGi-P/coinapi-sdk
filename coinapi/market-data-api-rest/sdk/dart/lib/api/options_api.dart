@@ -60,7 +60,7 @@ class OptionsApi {
   ///
   /// * [String] exchangeId (required):
   ///   Exchange identifier (from the Metadata -> Exchanges)
-  Future<List<OptionsOptionExchangeGroup>?> v1OptionsExchangeIdCurrentGet(String exchangeId,) async {
+  Future<List<V1OptionExchangeGroup>?> v1OptionsExchangeIdCurrentGet(String exchangeId,) async {
     final response = await v1OptionsExchangeIdCurrentGetWithHttpInfo(exchangeId,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -70,8 +70,8 @@ class OptionsApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<OptionsOptionExchangeGroup>') as List)
-        .cast<OptionsOptionExchangeGroup>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<V1OptionExchangeGroup>') as List)
+        .cast<V1OptionExchangeGroup>()
         .toList(growable: false);
 
     }

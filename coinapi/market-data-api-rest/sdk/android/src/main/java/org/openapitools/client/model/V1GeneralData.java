@@ -17,9 +17,9 @@ import io.swagger.annotations.*;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Class representation of general metric data. This class is an XML type with name &#39;general_data&#39; and inherits from the BaseCsvModel class.
+ * Class representation of general metric data. This class is an XML type with name \&quot;general_data\&quot; and inherits from the BaseCsvModel class.
  **/
-@ApiModel(description = "Class representation of general metric data. This class is an XML type with name 'general_data' and inherits from the BaseCsvModel class.")
+@ApiModel(description = "Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class.")
 public class V1GeneralData {
   
   @SerializedName("entry_time")

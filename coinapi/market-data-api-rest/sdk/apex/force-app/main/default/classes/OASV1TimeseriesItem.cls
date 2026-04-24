@@ -15,61 +15,61 @@
  */
 public class OASV1TimeseriesItem implements OAS.MappedProperties {
     /**
-     * The start time of the time period.
+     * Gets or sets the start time of the time period.
      * @return timePeriodStart
      */
     public Datetime timePeriodStart { get; set; }
 
     /**
-     * The end time of the time period.
+     * Gets or sets the end time of the time period.
      * @return timePeriodEnd
      */
     public Datetime timePeriodEnd { get; set; }
 
     /**
-     * The time when the price opened.
+     * Gets or sets the time when the price opened.
      * @return timeOpen
      */
     public Datetime timeOpen { get; set; }
 
     /**
-     * The time when the price closed.
+     * Gets or sets the time when the price closed.
      * @return timeClose
      */
     public Datetime timeClose { get; set; }
 
     /**
-     * The opening price.
+     * Gets or sets the opening price.
      * @return priceOpen
      */
     public Double priceOpen { get; set; }
 
     /**
-     * The highest price during the time period.
+     * Gets or sets the highest price during the time period.
      * @return priceHigh
      */
     public Double priceHigh { get; set; }
 
     /**
-     * The lowest price during the time period.
+     * Gets or sets the lowest price during the time period.
      * @return priceLow
      */
     public Double priceLow { get; set; }
 
     /**
-     * The closing price.
+     * Gets or sets the closing price.
      * @return priceClose
      */
     public Double priceClose { get; set; }
 
     /**
-     * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+     * Gets or sets the total volume traded during the time period.
      * @return volumeTraded
      */
     public Double volumeTraded { get; set; }
 
     /**
-     * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+     * Gets or sets the number of trades executed during the time period.
      * @return tradesCount
      */
     public Long tradesCount { get; set; }

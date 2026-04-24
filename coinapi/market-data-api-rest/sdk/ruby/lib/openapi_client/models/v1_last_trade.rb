@@ -16,22 +16,22 @@ require 'time'
 module OpenapiClient
   # Represents the last executed transaction.
   class V1LastTrade < ApiModelBase
-    # The exchange time of the last trade.
+    # Gets or sets the exchange time of the last trade.
     attr_accessor :time_exchange
 
-    # The CoinAPI time when the last trade was received.
+    # Gets or sets the CoinAPI time when the last trade was received.
     attr_accessor :time_coinapi
 
-    # The UUID of the last trade.
+    # Gets or sets the UUID of the last trade.
     attr_accessor :uuid
 
-    # The price of the last trade.
+    # Gets or sets the price of the last trade.
     attr_accessor :price
 
-    # The size of the last trade.
+    # Gets or sets the size of the last trade.
     attr_accessor :size
 
-    # The taker side of the last trade.
+    # Gets or sets the taker side of the last trade.
     attr_accessor :taker_side
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -20,23 +20,23 @@ class V1_SYMBOL_MAPPING
 feature --Access
 
     symbol_id: detachable STRING_32
-      -- The symbol ID.
+      -- Gets or sets the symbol ID.
     symbol_id_exchange: detachable STRING_32
-      -- The exchange-specific symbol ID.
+      -- Gets or sets the exchange-specific symbol ID.
     coinapi_datainfo_id: INTEGER_32
-      -- The CoinAPI DataInfo ID.
+      -- Gets or sets the DataInfo ID.
     asset_id_base_exchange: detachable STRING_32
-      -- The exchange-specific base asset ID.
+      -- Gets or sets the exchange-specific base asset ID.
     asset_id_quote_exchange: detachable STRING_32
-      -- The exchange-specific quote asset ID.
+      -- Gets or sets the exchange-specific quote asset ID.
     asset_id_base: detachable STRING_32
-      -- The base asset ID.
+      -- Gets or sets the base asset ID.
     asset_id_quote: detachable STRING_32
-      -- The quote asset ID.
+      -- Gets or sets the quote asset ID.
     price_precision: REAL_64
-      -- The price precision.
+      -- Gets or sets the price precision.
     size_precision: REAL_64
-      -- The size precision.
+      -- Gets or sets the size precision.
 
 feature -- Change Element
 

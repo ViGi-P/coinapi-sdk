@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents symbol mapping information for exchange symbols.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-23T06:06:39.606952276Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-24T06:05:03.999499045Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class V1SymbolMapping {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
@@ -105,7 +105,7 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The symbol ID.
+   * Gets or sets the symbol ID.
    * @return symbolId
    */
   @javax.annotation.Nullable
@@ -124,7 +124,7 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The exchange-specific symbol ID.
+   * Gets or sets the exchange-specific symbol ID.
    * @return symbolIdExchange
    */
   @javax.annotation.Nullable
@@ -143,7 +143,7 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The CoinAPI DataInfo ID.
+   * Gets or sets the DataInfo ID.
    * @return coinapiDatainfoId
    */
   @javax.annotation.Nullable
@@ -162,7 +162,7 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The exchange-specific base asset ID.
+   * Gets or sets the exchange-specific base asset ID.
    * @return assetIdBaseExchange
    */
   @javax.annotation.Nullable
@@ -181,7 +181,7 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The exchange-specific quote asset ID.
+   * Gets or sets the exchange-specific quote asset ID.
    * @return assetIdQuoteExchange
    */
   @javax.annotation.Nullable
@@ -200,7 +200,7 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The base asset ID.
+   * Gets or sets the base asset ID.
    * @return assetIdBase
    */
   @javax.annotation.Nullable
@@ -219,7 +219,7 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The quote asset ID.
+   * Gets or sets the quote asset ID.
    * @return assetIdQuote
    */
   @javax.annotation.Nullable
@@ -238,7 +238,7 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The price precision.
+   * Gets or sets the price precision.
    * @return pricePrecision
    */
   @javax.annotation.Nullable
@@ -257,7 +257,7 @@ public class V1SymbolMapping {
   }
 
   /**
-   * The size precision.
+   * Gets or sets the size precision.
    * @return sizePrecision
    */
   @javax.annotation.Nullable

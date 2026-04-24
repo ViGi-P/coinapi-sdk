@@ -1,20 +1,20 @@
 #' Create a new V1ListingItem
 #'
 #' @description
-#' Represents a listing item.
+#' Represents a listing data item.
 #'
 #' @docType class
 #' @title V1ListingItem
 #' @description V1ListingItem Class
 #' @format An \code{R6Class} generator object
 #' @field metric_id Gets or sets the metric ID. character [optional]
-#' @field symbol_id The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol. character [optional]
-#' @field symbol_id_external The exchange-native symbol identifier. Null for exchange-level metrics. character [optional]
+#' @field symbol_id Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics. character [optional]
+#' @field symbol_id_external Gets or sets the exchange-native symbol ID. Null for exchange-level metrics. character [optional]
 #' @field exchange_id Gets or sets the exchange ID. character [optional]
 #' @field asset_id Gets or sets the asset ID. character [optional]
-#' @field asset_id_external Gets or sets the asset ID from the exchange. character [optional]
-#' @field chain_id Gets or sets the chain id. character [optional]
-#' @field network_id Gets or sets the network id. character [optional]
+#' @field asset_id_external Gets or sets the asset ID. character [optional]
+#' @field chain_id Gets or sets the chain ID. character [optional]
+#' @field network_id Gets or sets the network ID. character [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -34,13 +34,13 @@ V1ListingItem <- R6::R6Class(
     #' Initialize a new V1ListingItem class.
     #'
     #' @param metric_id Gets or sets the metric ID.
-    #' @param symbol_id The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
-    #' @param symbol_id_external The exchange-native symbol identifier. Null for exchange-level metrics.
+    #' @param symbol_id Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
+    #' @param symbol_id_external Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
     #' @param exchange_id Gets or sets the exchange ID.
     #' @param asset_id Gets or sets the asset ID.
-    #' @param asset_id_external Gets or sets the asset ID from the exchange.
-    #' @param chain_id Gets or sets the chain id.
-    #' @param network_id Gets or sets the network id.
+    #' @param asset_id_external Gets or sets the asset ID.
+    #' @param chain_id Gets or sets the chain ID.
+    #' @param network_id Gets or sets the network ID.
     #' @param ... Other optional arguments.
     initialize = function(`metric_id` = NULL, `symbol_id` = NULL, `symbol_id_external` = NULL, `exchange_id` = NULL, `asset_id` = NULL, `asset_id_external` = NULL, `chain_id` = NULL, `network_id` = NULL, ...) {
       if (!is.null(`metric_id`)) {

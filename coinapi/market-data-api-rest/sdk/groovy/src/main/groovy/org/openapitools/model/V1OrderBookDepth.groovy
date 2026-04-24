@@ -7,18 +7,18 @@ import org.openapitools.jackson.nullable.JsonNullable;
 
 @Canonical
 class V1OrderBookDepth {
-    /* The symbol identifier. */
+    /* Gets or sets the symbol identifier. */
     String symbolId
-    /* The exchange time of the order book. */
+    /* Gets or sets the exchange time of the order book. */
     Date timeExchange
-    /* The CoinAPI time when the order book was received. */
+    /* Gets or sets the CoinAPI time when the order book was received. */
     Date timeCoinapi
-    /* The number of ask levels in the order book. */
+    /* Gets or sets the number of ask levels in the order book. */
     Long askLevels
-    /* The number of bid levels in the order book. */
+    /* Gets or sets the number of bid levels in the order book. */
     Long bidLevels
-    /* The depth of the ask side of the order book. */
+    /* Gets or sets the depth of the ask side of the order book. */
     Double askDepth
-    /* The depth of the bid side of the order book. */
+    /* Gets or sets the depth of the bid side of the order book. */
     Double bidDepth
 }

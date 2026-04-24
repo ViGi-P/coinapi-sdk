@@ -15,55 +15,55 @@
  */
 public class OASV1SymbolMapping implements OAS.MappedProperties {
     /**
-     * The symbol ID.
+     * Gets or sets the symbol ID.
      * @return symbolId
      */
     public String symbolId { get; set; }
 
     /**
-     * The exchange-specific symbol ID.
+     * Gets or sets the exchange-specific symbol ID.
      * @return symbolIdExchange
      */
     public String symbolIdExchange { get; set; }
 
     /**
-     * The CoinAPI DataInfo ID.
+     * Gets or sets the DataInfo ID.
      * @return coinapiDatainfoId
      */
     public Integer coinapiDatainfoId { get; set; }
 
     /**
-     * The exchange-specific base asset ID.
+     * Gets or sets the exchange-specific base asset ID.
      * @return assetIdBaseExchange
      */
     public String assetIdBaseExchange { get; set; }
 
     /**
-     * The exchange-specific quote asset ID.
+     * Gets or sets the exchange-specific quote asset ID.
      * @return assetIdQuoteExchange
      */
     public String assetIdQuoteExchange { get; set; }
 
     /**
-     * The base asset ID.
+     * Gets or sets the base asset ID.
      * @return assetIdBase
      */
     public String assetIdBase { get; set; }
 
     /**
-     * The quote asset ID.
+     * Gets or sets the quote asset ID.
      * @return assetIdQuote
      */
     public String assetIdQuote { get; set; }
 
     /**
-     * The price precision.
+     * Gets or sets the price precision.
      * @return pricePrecision
      */
     public Double pricePrecision { get; set; }
 
     /**
-     * The size precision.
+     * Gets or sets the size precision.
      * @return sizePrecision
      */
     public Double sizePrecision { get; set; }

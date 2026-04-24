@@ -10,7 +10,7 @@
 
 
 /**
- * Represents a listing item.
+ * Represents a listing data item.
  */
 export interface V1ListingItem { 
     /**
@@ -18,11 +18,11 @@ export interface V1ListingItem {
      */
     metric_id?: string | null;
     /**
-     * The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+     * Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
      */
     symbol_id?: string | null;
     /**
-     * The exchange-native symbol identifier. Null for exchange-level metrics.
+     * Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
      */
     symbol_id_external?: string | null;
     /**
@@ -34,15 +34,15 @@ export interface V1ListingItem {
      */
     asset_id?: string | null;
     /**
-     * Gets or sets the asset ID from the exchange.
+     * Gets or sets the asset ID.
      */
     asset_id_external?: string | null;
     /**
-     * Gets or sets the chain id.
+     * Gets or sets the chain ID.
      */
     chain_id?: string | null;
     /**
-     * Gets or sets the network id.
+     * Gets or sets the network ID.
      */
     network_id?: string | null;
 }

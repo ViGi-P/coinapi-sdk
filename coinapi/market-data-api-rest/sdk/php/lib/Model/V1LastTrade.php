@@ -339,7 +339,7 @@ class V1LastTrade implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_exchange
      *
-     * @param \DateTime|null $time_exchange The exchange time of the last trade.
+     * @param \DateTime|null $time_exchange Gets or sets the exchange time of the last trade.
      *
      * @return self
      */
@@ -366,7 +366,7 @@ class V1LastTrade implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets time_coinapi
      *
-     * @param \DateTime|null $time_coinapi The CoinAPI time when the last trade was received.
+     * @param \DateTime|null $time_coinapi Gets or sets the CoinAPI time when the last trade was received.
      *
      * @return self
      */
@@ -393,7 +393,7 @@ class V1LastTrade implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets uuid
      *
-     * @param string|null $uuid The UUID of the last trade.
+     * @param string|null $uuid Gets or sets the UUID of the last trade.
      *
      * @return self
      */
@@ -420,7 +420,7 @@ class V1LastTrade implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets price
      *
-     * @param float|null $price The price of the last trade.
+     * @param float|null $price Gets or sets the price of the last trade.
      *
      * @return self
      */
@@ -447,7 +447,7 @@ class V1LastTrade implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets size
      *
-     * @param float|null $size The size of the last trade.
+     * @param float|null $size Gets or sets the size of the last trade.
      *
      * @return self
      */
@@ -474,7 +474,7 @@ class V1LastTrade implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets taker_side
      *
-     * @param string|null $taker_side The taker side of the last trade.
+     * @param string|null $taker_side Gets or sets the taker side of the last trade.
      *
      * @return self
      */

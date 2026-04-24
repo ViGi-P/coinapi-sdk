@@ -136,7 +136,7 @@ class OptionsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \OpenAPI\Client\Model\OptionsOptionExchangeGroup[]
+     * @return \OpenAPI\Client\Model\V1OptionExchangeGroup[]
      */
     public function v1OptionsExchangeIdCurrentGet($exchange_id, string $contentType = self::contentTypes['v1OptionsExchangeIdCurrentGet'][0])
     {
@@ -154,7 +154,7 @@ class OptionsApi
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \OpenAPI\Client\Model\OptionsOptionExchangeGroup[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \OpenAPI\Client\Model\V1OptionExchangeGroup[], HTTP status code, HTTP response headers (array of strings)
      */
     public function v1OptionsExchangeIdCurrentGetWithHttpInfo($exchange_id, string $contentType = self::contentTypes['v1OptionsExchangeIdCurrentGet'][0])
     {
@@ -186,7 +186,7 @@ class OptionsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\OpenAPI\Client\Model\OptionsOptionExchangeGroup[]',
+                        '\OpenAPI\Client\Model\V1OptionExchangeGroup[]',
                         $request,
                         $response,
                     );
@@ -208,7 +208,7 @@ class OptionsApi
             }
 
             return $this->handleResponseWithDataType(
-                '\OpenAPI\Client\Model\OptionsOptionExchangeGroup[]',
+                '\OpenAPI\Client\Model\V1OptionExchangeGroup[]',
                 $request,
                 $response,
             );
@@ -217,7 +217,7 @@ class OptionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\OptionsOptionExchangeGroup[]',
+                        '\OpenAPI\Client\Model\V1OptionExchangeGroup[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -263,7 +263,7 @@ class OptionsApi
      */
     public function v1OptionsExchangeIdCurrentGetAsyncWithHttpInfo($exchange_id, string $contentType = self::contentTypes['v1OptionsExchangeIdCurrentGet'][0])
     {
-        $returnType = '\OpenAPI\Client\Model\OptionsOptionExchangeGroup[]';
+        $returnType = '\OpenAPI\Client\Model\V1OptionExchangeGroup[]';
         $request = $this->v1OptionsExchangeIdCurrentGetRequest($exchange_id, $contentType);
 
         return $this->client

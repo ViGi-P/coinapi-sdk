@@ -8,16 +8,16 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**timePeriodStart** | [**DateTime**](DateTime.md) | The start time of the time period. | [optional] 
-**timePeriodEnd** | [**DateTime**](DateTime.md) | The end time of the time period. | [optional] 
-**timeOpen** | [**DateTime**](DateTime.md) | The time when the price opened. | [optional] 
-**timeClose** | [**DateTime**](DateTime.md) | The time when the price closed. | [optional] 
-**priceOpen** | **double** | The opening price. | [optional] 
-**priceHigh** | **double** | The highest price during the time period. | [optional] 
-**priceLow** | **double** | The lowest price during the time period. | [optional] 
-**priceClose** | **double** | The closing price. | [optional] 
-**volumeTraded** | **double** | The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
-**tradesCount** | **int** | The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. | [optional] 
+**timePeriodStart** | [**DateTime**](DateTime.md) | Gets or sets the start time of the time period. | [optional] 
+**timePeriodEnd** | [**DateTime**](DateTime.md) | Gets or sets the end time of the time period. | [optional] 
+**timeOpen** | [**DateTime**](DateTime.md) | Gets or sets the time when the price opened. | [optional] 
+**timeClose** | [**DateTime**](DateTime.md) | Gets or sets the time when the price closed. | [optional] 
+**priceOpen** | **double** | Gets or sets the opening price. | [optional] 
+**priceHigh** | **double** | Gets or sets the highest price during the time period. | [optional] 
+**priceLow** | **double** | Gets or sets the lowest price during the time period. | [optional] 
+**priceClose** | **double** | Gets or sets the closing price. | [optional] 
+**volumeTraded** | **double** | Gets or sets the total volume traded during the time period. | [optional] 
+**tradesCount** | **int** | Gets or sets the number of trades executed during the time period. | [optional] 
 **symbolIdExchange** | **String** |  | [optional] 
 **symbolIdCoinapi** | **String** |  | [optional] 
 

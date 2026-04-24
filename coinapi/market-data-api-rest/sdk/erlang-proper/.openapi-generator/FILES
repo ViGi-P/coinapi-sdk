@@ -2,8 +2,6 @@
 README.md
 rebar.config
 src/model/openapi_ohlcv_exchange_timeseries_item.erl
-src/model/openapi_options_option_exchange_group.erl
-src/model/openapi_options_strike.erl
 src/model/openapi_v1_asset.erl
 src/model/openapi_v1_chain.erl
 src/model/openapi_v1_chain_network_address.erl
@@ -19,11 +17,13 @@ src/model/openapi_v1_listing_item.erl
 src/model/openapi_v1_metric.erl
 src/model/openapi_v1_metric_data.erl
 src/model/openapi_v1_metric_info.erl
+src/model/openapi_v1_option_exchange_group.erl
 src/model/openapi_v1_order_book.erl
 src/model/openapi_v1_order_book_base.erl
 src/model/openapi_v1_order_book_depth.erl
 src/model/openapi_v1_quote.erl
 src/model/openapi_v1_quote_trade.erl
+src/model/openapi_v1_strike.erl
 src/model/openapi_v1_symbol.erl
 src/model/openapi_v1_symbol_mapping.erl
 src/model/openapi_v1_timeseries_item.erl

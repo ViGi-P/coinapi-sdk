@@ -12,30 +12,30 @@ part 'v1_order_book.g.dart';
 /// Represents an order book with additional information and functionality.
 ///
 /// Properties:
-/// * [symbolId] - The symbol identifier.
-/// * [timeExchange] - The exchange time of the order book.
-/// * [timeCoinapi] - The CoinAPI time when the order book was received.
-/// * [asks] - The asks made by market makers.
-/// * [bids] - The bids made by market makers.
+/// * [symbolId] - Gets or sets the symbol identifier.
+/// * [timeExchange] - Gets or sets the exchange time of the order book.
+/// * [timeCoinapi] - Gets or sets the CoinAPI time when the order book was received.
+/// * [asks] - Gets or sets the asks made by market makers.
+/// * [bids] - Gets or sets the bids made by market makers.
 @BuiltValue()
 abstract class V1OrderBook implements Built<V1OrderBook, V1OrderBookBuilder> {
-  /// The symbol identifier.
+  /// Gets or sets the symbol identifier.
   @BuiltValueField(wireName: r'symbol_id')
   String? get symbolId;
 
-  /// The exchange time of the order book.
+  /// Gets or sets the exchange time of the order book.
   @BuiltValueField(wireName: r'time_exchange')
   DateTime? get timeExchange;
 
-  /// The CoinAPI time when the order book was received.
+  /// Gets or sets the CoinAPI time when the order book was received.
   @BuiltValueField(wireName: r'time_coinapi')
   DateTime? get timeCoinapi;
 
-  /// The asks made by market makers.
+  /// Gets or sets the asks made by market makers.
   @BuiltValueField(wireName: r'asks')
   JsonObject? get asks;
 
-  /// The bids made by market makers.
+  /// Gets or sets the bids made by market makers.
   @BuiltValueField(wireName: r'bids')
   JsonObject? get bids;
 

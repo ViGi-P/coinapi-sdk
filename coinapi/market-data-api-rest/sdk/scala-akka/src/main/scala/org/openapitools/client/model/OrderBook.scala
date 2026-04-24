@@ -15,15 +15,15 @@ import java.time.OffsetDateTime
 import org.openapitools.client.core.ApiModel
 
 case class OrderBook (
-  /* The symbol identifier. */
+  /* Gets or sets the symbol identifier. */
   symbolId: Option[String] = None,
-  /* The exchange time of the order book. */
+  /* Gets or sets the exchange time of the order book. */
   timeExchange: Option[OffsetDateTime] = None,
-  /* The CoinAPI time when the order book was received. */
+  /* Gets or sets the CoinAPI time when the order book was received. */
   timeCoinapi: Option[OffsetDateTime] = None,
-  /* The asks made by market makers. */
+  /* Gets or sets the asks made by market makers. */
   asks: Option[AnyType] = None,
-  /* The bids made by market makers. */
+  /* Gets or sets the bids made by market makers. */
   bids: Option[AnyType] = None
 ) extends ApiModel
 

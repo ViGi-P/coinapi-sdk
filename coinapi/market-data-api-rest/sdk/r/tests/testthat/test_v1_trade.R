@@ -47,7 +47,7 @@ test_that("price", {
 
 test_that("size", {
   # tests for the property `size` (numeric)
-  # The base asset amount traded in the transaction.
+  # The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`size`, "EXPECTED_RESULT")

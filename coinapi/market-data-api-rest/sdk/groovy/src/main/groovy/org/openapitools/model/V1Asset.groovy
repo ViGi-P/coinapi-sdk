@@ -49,8 +49,8 @@ class V1Asset {
     Double supplyMax
     /*  */
     List<V1ChainNetworkAddress> chainAddresses
-    
+    /* Gets the start date of the available data as a string in the format \"yyyy-MM-dd\". */
     String dataStart
-    
+    /* Gets the end date of the available data as a string in the format \"yyyy-MM-dd\". */
     String dataEnd
 }

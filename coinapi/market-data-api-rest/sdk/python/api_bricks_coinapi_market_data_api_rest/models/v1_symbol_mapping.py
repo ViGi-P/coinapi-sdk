@@ -28,15 +28,15 @@ class V1SymbolMapping(BaseModel):
     """
     Represents symbol mapping information for exchange symbols.
     """ # noqa: E501
-    symbol_id: Optional[StrictStr] = Field(default=None, description="The symbol ID.")
-    symbol_id_exchange: Optional[StrictStr] = Field(default=None, description="The exchange-specific symbol ID.")
-    coinapi_datainfo_id: Optional[StrictInt] = Field(default=None, description="The CoinAPI DataInfo ID.")
-    asset_id_base_exchange: Optional[StrictStr] = Field(default=None, description="The exchange-specific base asset ID.")
-    asset_id_quote_exchange: Optional[StrictStr] = Field(default=None, description="The exchange-specific quote asset ID.")
-    asset_id_base: Optional[StrictStr] = Field(default=None, description="The base asset ID.")
-    asset_id_quote: Optional[StrictStr] = Field(default=None, description="The quote asset ID.")
-    price_precision: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The price precision.")
-    size_precision: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The size precision.")
+    symbol_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the symbol ID.")
+    symbol_id_exchange: Optional[StrictStr] = Field(default=None, description="Gets or sets the exchange-specific symbol ID.")
+    coinapi_datainfo_id: Optional[StrictInt] = Field(default=None, description="Gets or sets the DataInfo ID.")
+    asset_id_base_exchange: Optional[StrictStr] = Field(default=None, description="Gets or sets the exchange-specific base asset ID.")
+    asset_id_quote_exchange: Optional[StrictStr] = Field(default=None, description="Gets or sets the exchange-specific quote asset ID.")
+    asset_id_base: Optional[StrictStr] = Field(default=None, description="Gets or sets the base asset ID.")
+    asset_id_quote: Optional[StrictStr] = Field(default=None, description="Gets or sets the quote asset ID.")
+    price_precision: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the price precision.")
+    size_precision: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the size precision.")
     __properties: ClassVar[List[str]] = ["symbol_id", "symbol_id_exchange", "coinapi_datainfo_id", "asset_id_base_exchange", "asset_id_quote_exchange", "asset_id_base", "asset_id_quote", "price_precision", "size_precision"]
 
     model_config = ConfigDict(

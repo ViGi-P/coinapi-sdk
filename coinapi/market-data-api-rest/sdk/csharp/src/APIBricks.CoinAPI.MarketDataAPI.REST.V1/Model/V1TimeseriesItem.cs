@@ -35,16 +35,16 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="V1TimeseriesItem" /> class.
         /// </summary>
-        /// <param name="timePeriodStart">The start time of the time period.</param>
-        /// <param name="timePeriodEnd">The end time of the time period.</param>
-        /// <param name="timeOpen">The time when the price opened.</param>
-        /// <param name="timeClose">The time when the price closed.</param>
-        /// <param name="priceOpen">The opening price.</param>
-        /// <param name="priceHigh">The highest price during the time period.</param>
-        /// <param name="priceLow">The lowest price during the time period.</param>
-        /// <param name="priceClose">The closing price.</param>
-        /// <param name="volumeTraded">The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.</param>
-        /// <param name="tradesCount">The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.</param>
+        /// <param name="timePeriodStart">Gets or sets the start time of the time period.</param>
+        /// <param name="timePeriodEnd">Gets or sets the end time of the time period.</param>
+        /// <param name="timeOpen">Gets or sets the time when the price opened.</param>
+        /// <param name="timeClose">Gets or sets the time when the price closed.</param>
+        /// <param name="priceOpen">Gets or sets the opening price.</param>
+        /// <param name="priceHigh">Gets or sets the highest price during the time period.</param>
+        /// <param name="priceLow">Gets or sets the lowest price during the time period.</param>
+        /// <param name="priceClose">Gets or sets the closing price.</param>
+        /// <param name="volumeTraded">Gets or sets the total volume traded during the time period.</param>
+        /// <param name="tradesCount">Gets or sets the number of trades executed during the time period.</param>
         [JsonConstructor]
         public V1TimeseriesItem(Option<DateTime?> timePeriodStart = default, Option<DateTime?> timePeriodEnd = default, Option<DateTime?> timeOpen = default, Option<DateTime?> timeClose = default, Option<double?> priceOpen = default, Option<double?> priceHigh = default, Option<double?> priceLow = default, Option<double?> priceClose = default, Option<double?> volumeTraded = default, Option<long?> tradesCount = default)
         {
@@ -71,9 +71,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<DateTime?> TimePeriodStartOption { get; private set; }
 
         /// <summary>
-        /// The start time of the time period.
+        /// Gets or sets the start time of the time period.
         /// </summary>
-        /// <value>The start time of the time period.</value>
+        /// <value>Gets or sets the start time of the time period.</value>
         [JsonPropertyName("time_period_start")]
         public DateTime? TimePeriodStart { get { return this.TimePeriodStartOption; } set { this.TimePeriodStartOption = new(value); } }
 
@@ -85,9 +85,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<DateTime?> TimePeriodEndOption { get; private set; }
 
         /// <summary>
-        /// The end time of the time period.
+        /// Gets or sets the end time of the time period.
         /// </summary>
-        /// <value>The end time of the time period.</value>
+        /// <value>Gets or sets the end time of the time period.</value>
         [JsonPropertyName("time_period_end")]
         public DateTime? TimePeriodEnd { get { return this.TimePeriodEndOption; } set { this.TimePeriodEndOption = new(value); } }
 
@@ -99,9 +99,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<DateTime?> TimeOpenOption { get; private set; }
 
         /// <summary>
-        /// The time when the price opened.
+        /// Gets or sets the time when the price opened.
         /// </summary>
-        /// <value>The time when the price opened.</value>
+        /// <value>Gets or sets the time when the price opened.</value>
         [JsonPropertyName("time_open")]
         public DateTime? TimeOpen { get { return this.TimeOpenOption; } set { this.TimeOpenOption = new(value); } }
 
@@ -113,9 +113,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<DateTime?> TimeCloseOption { get; private set; }
 
         /// <summary>
-        /// The time when the price closed.
+        /// Gets or sets the time when the price closed.
         /// </summary>
-        /// <value>The time when the price closed.</value>
+        /// <value>Gets or sets the time when the price closed.</value>
         [JsonPropertyName("time_close")]
         public DateTime? TimeClose { get { return this.TimeCloseOption; } set { this.TimeCloseOption = new(value); } }
 
@@ -127,9 +127,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> PriceOpenOption { get; private set; }
 
         /// <summary>
-        /// The opening price.
+        /// Gets or sets the opening price.
         /// </summary>
-        /// <value>The opening price.</value>
+        /// <value>Gets or sets the opening price.</value>
         [JsonPropertyName("price_open")]
         public double? PriceOpen { get { return this.PriceOpenOption; } set { this.PriceOpenOption = new(value); } }
 
@@ -141,9 +141,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> PriceHighOption { get; private set; }
 
         /// <summary>
-        /// The highest price during the time period.
+        /// Gets or sets the highest price during the time period.
         /// </summary>
-        /// <value>The highest price during the time period.</value>
+        /// <value>Gets or sets the highest price during the time period.</value>
         [JsonPropertyName("price_high")]
         public double? PriceHigh { get { return this.PriceHighOption; } set { this.PriceHighOption = new(value); } }
 
@@ -155,9 +155,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> PriceLowOption { get; private set; }
 
         /// <summary>
-        /// The lowest price during the time period.
+        /// Gets or sets the lowest price during the time period.
         /// </summary>
-        /// <value>The lowest price during the time period.</value>
+        /// <value>Gets or sets the lowest price during the time period.</value>
         [JsonPropertyName("price_low")]
         public double? PriceLow { get { return this.PriceLowOption; } set { this.PriceLowOption = new(value); } }
 
@@ -169,9 +169,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> PriceCloseOption { get; private set; }
 
         /// <summary>
-        /// The closing price.
+        /// Gets or sets the closing price.
         /// </summary>
-        /// <value>The closing price.</value>
+        /// <value>Gets or sets the closing price.</value>
         [JsonPropertyName("price_close")]
         public double? PriceClose { get { return this.PriceCloseOption; } set { this.PriceCloseOption = new(value); } }
 
@@ -183,9 +183,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> VolumeTradedOption { get; private set; }
 
         /// <summary>
-        /// The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+        /// Gets or sets the total volume traded during the time period.
         /// </summary>
-        /// <value>The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.</value>
+        /// <value>Gets or sets the total volume traded during the time period.</value>
         [JsonPropertyName("volume_traded")]
         public double? VolumeTraded { get { return this.VolumeTradedOption; } set { this.VolumeTradedOption = new(value); } }
 
@@ -197,9 +197,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<long?> TradesCountOption { get; private set; }
 
         /// <summary>
-        /// The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+        /// Gets or sets the number of trades executed during the time period.
         /// </summary>
-        /// <value>The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.</value>
+        /// <value>Gets or sets the number of trades executed during the time period.</value>
         [JsonPropertyName("trades_count")]
         public long? TradesCount { get { return this.TradesCountOption; } set { this.TradesCountOption = new(value); } }
 

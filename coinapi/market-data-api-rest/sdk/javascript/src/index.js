@@ -14,8 +14,6 @@
 
 import ApiClient from './ApiClient';
 import OhlcvExchangeTimeseriesItem from './model/OhlcvExchangeTimeseriesItem';
-import OptionsOptionExchangeGroup from './model/OptionsOptionExchangeGroup';
-import OptionsStrike from './model/OptionsStrike';
 import V1Asset from './model/V1Asset';
 import V1Chain from './model/V1Chain';
 import V1ChainNetworkAddress from './model/V1ChainNetworkAddress';
@@ -31,11 +29,13 @@ import V1ListingItem from './model/V1ListingItem';
 import V1Metric from './model/V1Metric';
 import V1MetricData from './model/V1MetricData';
 import V1MetricInfo from './model/V1MetricInfo';
+import V1OptionExchangeGroup from './model/V1OptionExchangeGroup';
 import V1OrderBook from './model/V1OrderBook';
 import V1OrderBookBase from './model/V1OrderBookBase';
 import V1OrderBookDepth from './model/V1OrderBookDepth';
 import V1Quote from './model/V1Quote';
 import V1QuoteTrade from './model/V1QuoteTrade';
+import V1Strike from './model/V1Strike';
 import V1Symbol from './model/V1Symbol';
 import V1SymbolMapping from './model/V1SymbolMapping';
 import V1TimeseriesItem from './model/V1TimeseriesItem';
@@ -96,18 +96,6 @@ export {
      * @property {module:model/OhlcvExchangeTimeseriesItem}
      */
     OhlcvExchangeTimeseriesItem,
-
-    /**
-     * The OptionsOptionExchangeGroup model constructor.
-     * @property {module:model/OptionsOptionExchangeGroup}
-     */
-    OptionsOptionExchangeGroup,
-
-    /**
-     * The OptionsStrike model constructor.
-     * @property {module:model/OptionsStrike}
-     */
-    OptionsStrike,
 
     /**
      * The V1Asset model constructor.
@@ -200,6 +188,12 @@ export {
     V1MetricInfo,
 
     /**
+     * The V1OptionExchangeGroup model constructor.
+     * @property {module:model/V1OptionExchangeGroup}
+     */
+    V1OptionExchangeGroup,
+
+    /**
      * The V1OrderBook model constructor.
      * @property {module:model/V1OrderBook}
      */
@@ -228,6 +222,12 @@ export {
      * @property {module:model/V1QuoteTrade}
      */
     V1QuoteTrade,
+
+    /**
+     * The V1Strike model constructor.
+     * @property {module:model/V1Strike}
+     */
+    V1Strike,
 
     /**
      * The V1Symbol model constructor.

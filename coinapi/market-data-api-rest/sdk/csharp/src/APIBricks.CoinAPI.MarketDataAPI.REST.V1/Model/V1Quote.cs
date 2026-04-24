@@ -35,13 +35,13 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="V1Quote" /> class.
         /// </summary>
-        /// <param name="symbolId">The symbol identifier.</param>
-        /// <param name="timeExchange">The exchange time of the quote.</param>
-        /// <param name="timeCoinapi">The CoinAPI time when the quote was received.</param>
-        /// <param name="askPrice">The best asking price.</param>
-        /// <param name="askSize">The volume resting on the best ask. If the value is equal to zero, then the size is unknown.</param>
-        /// <param name="bidPrice">The best bidding price.</param>
-        /// <param name="bidSize">The volume resting on the best bid. If the value is equal to zero, then the size is unknown.</param>
+        /// <param name="symbolId">Gets or sets the symbol identifier.</param>
+        /// <param name="timeExchange">Gets or sets the exchange time of the quote.</param>
+        /// <param name="timeCoinapi">Gets or sets the CoinAPI time when the quote was received.</param>
+        /// <param name="askPrice">Gets or sets the best asking price.</param>
+        /// <param name="askSize">Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.</param>
+        /// <param name="bidPrice">Gets or sets the best bidding price.</param>
+        /// <param name="bidSize">Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.</param>
         [JsonConstructor]
         public V1Quote(Option<string?> symbolId = default, Option<DateTime?> timeExchange = default, Option<DateTime?> timeCoinapi = default, Option<double?> askPrice = default, Option<double?> askSize = default, Option<double?> bidPrice = default, Option<double?> bidSize = default)
         {
@@ -65,9 +65,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> SymbolIdOption { get; private set; }
 
         /// <summary>
-        /// The symbol identifier.
+        /// Gets or sets the symbol identifier.
         /// </summary>
-        /// <value>The symbol identifier.</value>
+        /// <value>Gets or sets the symbol identifier.</value>
         [JsonPropertyName("symbol_id")]
         public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
 
@@ -79,9 +79,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<DateTime?> TimeExchangeOption { get; private set; }
 
         /// <summary>
-        /// The exchange time of the quote.
+        /// Gets or sets the exchange time of the quote.
         /// </summary>
-        /// <value>The exchange time of the quote.</value>
+        /// <value>Gets or sets the exchange time of the quote.</value>
         [JsonPropertyName("time_exchange")]
         public DateTime? TimeExchange { get { return this.TimeExchangeOption; } set { this.TimeExchangeOption = new(value); } }
 
@@ -93,9 +93,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<DateTime?> TimeCoinapiOption { get; private set; }
 
         /// <summary>
-        /// The CoinAPI time when the quote was received.
+        /// Gets or sets the CoinAPI time when the quote was received.
         /// </summary>
-        /// <value>The CoinAPI time when the quote was received.</value>
+        /// <value>Gets or sets the CoinAPI time when the quote was received.</value>
         [JsonPropertyName("time_coinapi")]
         public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption; } set { this.TimeCoinapiOption = new(value); } }
 
@@ -107,9 +107,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> AskPriceOption { get; private set; }
 
         /// <summary>
-        /// The best asking price.
+        /// Gets or sets the best asking price.
         /// </summary>
-        /// <value>The best asking price.</value>
+        /// <value>Gets or sets the best asking price.</value>
         [JsonPropertyName("ask_price")]
         public double? AskPrice { get { return this.AskPriceOption; } set { this.AskPriceOption = new(value); } }
 
@@ -121,9 +121,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> AskSizeOption { get; private set; }
 
         /// <summary>
-        /// The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+        /// Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
         /// </summary>
-        /// <value>The volume resting on the best ask. If the value is equal to zero, then the size is unknown.</value>
+        /// <value>Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.</value>
         [JsonPropertyName("ask_size")]
         public double? AskSize { get { return this.AskSizeOption; } set { this.AskSizeOption = new(value); } }
 
@@ -135,9 +135,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> BidPriceOption { get; private set; }
 
         /// <summary>
-        /// The best bidding price.
+        /// Gets or sets the best bidding price.
         /// </summary>
-        /// <value>The best bidding price.</value>
+        /// <value>Gets or sets the best bidding price.</value>
         [JsonPropertyName("bid_price")]
         public double? BidPrice { get { return this.BidPriceOption; } set { this.BidPriceOption = new(value); } }
 
@@ -149,9 +149,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<double?> BidSizeOption { get; private set; }
 
         /// <summary>
-        /// The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+        /// Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
         /// </summary>
-        /// <value>The volume resting on the best bid. If the value is equal to zero, then the size is unknown.</value>
+        /// <value>Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.</value>
         [JsonPropertyName("bid_size")]
         public double? BidSize { get { return this.BidSizeOption; } set { this.BidSizeOption = new(value); } }
 

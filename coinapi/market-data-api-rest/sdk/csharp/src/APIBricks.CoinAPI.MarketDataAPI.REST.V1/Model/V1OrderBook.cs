@@ -35,11 +35,11 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="V1OrderBook" /> class.
         /// </summary>
-        /// <param name="symbolId">The symbol identifier.</param>
-        /// <param name="timeExchange">The exchange time of the order book.</param>
-        /// <param name="timeCoinapi">The CoinAPI time when the order book was received.</param>
-        /// <param name="asks">The asks made by market makers.</param>
-        /// <param name="bids">The bids made by market makers.</param>
+        /// <param name="symbolId">Gets or sets the symbol identifier.</param>
+        /// <param name="timeExchange">Gets or sets the exchange time of the order book.</param>
+        /// <param name="timeCoinapi">Gets or sets the CoinAPI time when the order book was received.</param>
+        /// <param name="asks">Gets or sets the asks made by market makers.</param>
+        /// <param name="bids">Gets or sets the bids made by market makers.</param>
         [JsonConstructor]
         public V1OrderBook(Option<string?> symbolId = default, Option<DateTime?> timeExchange = default, Option<DateTime?> timeCoinapi = default, Option<Object?> asks = default, Option<Object?> bids = default)
         {
@@ -61,9 +61,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> SymbolIdOption { get; private set; }
 
         /// <summary>
-        /// The symbol identifier.
+        /// Gets or sets the symbol identifier.
         /// </summary>
-        /// <value>The symbol identifier.</value>
+        /// <value>Gets or sets the symbol identifier.</value>
         [JsonPropertyName("symbol_id")]
         public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
 
@@ -75,9 +75,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<DateTime?> TimeExchangeOption { get; private set; }
 
         /// <summary>
-        /// The exchange time of the order book.
+        /// Gets or sets the exchange time of the order book.
         /// </summary>
-        /// <value>The exchange time of the order book.</value>
+        /// <value>Gets or sets the exchange time of the order book.</value>
         [JsonPropertyName("time_exchange")]
         public DateTime? TimeExchange { get { return this.TimeExchangeOption; } set { this.TimeExchangeOption = new(value); } }
 
@@ -89,9 +89,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<DateTime?> TimeCoinapiOption { get; private set; }
 
         /// <summary>
-        /// The CoinAPI time when the order book was received.
+        /// Gets or sets the CoinAPI time when the order book was received.
         /// </summary>
-        /// <value>The CoinAPI time when the order book was received.</value>
+        /// <value>Gets or sets the CoinAPI time when the order book was received.</value>
         [JsonPropertyName("time_coinapi")]
         public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption; } set { this.TimeCoinapiOption = new(value); } }
 
@@ -103,9 +103,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<Object?> AsksOption { get; private set; }
 
         /// <summary>
-        /// The asks made by market makers.
+        /// Gets or sets the asks made by market makers.
         /// </summary>
-        /// <value>The asks made by market makers.</value>
+        /// <value>Gets or sets the asks made by market makers.</value>
         [JsonPropertyName("asks")]
         public Object? Asks { get { return this.AsksOption; } set { this.AsksOption = new(value); } }
 
@@ -117,9 +117,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<Object?> BidsOption { get; private set; }
 
         /// <summary>
-        /// The bids made by market makers.
+        /// Gets or sets the bids made by market makers.
         /// </summary>
-        /// <value>The bids made by market makers.</value>
+        /// <value>Gets or sets the bids made by market makers.</value>
         [JsonPropertyName("bids")]
         public Object? Bids { get { return this.BidsOption; } set { this.BidsOption = new(value); } }
 

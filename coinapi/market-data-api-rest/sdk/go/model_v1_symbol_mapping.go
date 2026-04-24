@@ -20,23 +20,23 @@ var _ MappedNullable = &V1SymbolMapping{}
 
 // V1SymbolMapping Represents symbol mapping information for exchange symbols.
 type V1SymbolMapping struct {
-	// The symbol ID.
+	// Gets or sets the symbol ID.
 	SymbolId NullableString `json:"symbol_id,omitempty"`
-	// The exchange-specific symbol ID.
+	// Gets or sets the exchange-specific symbol ID.
 	SymbolIdExchange NullableString `json:"symbol_id_exchange,omitempty"`
-	// The CoinAPI DataInfo ID.
+	// Gets or sets the DataInfo ID.
 	CoinapiDatainfoId *int32 `json:"coinapi_datainfo_id,omitempty"`
-	// The exchange-specific base asset ID.
+	// Gets or sets the exchange-specific base asset ID.
 	AssetIdBaseExchange NullableString `json:"asset_id_base_exchange,omitempty"`
-	// The exchange-specific quote asset ID.
+	// Gets or sets the exchange-specific quote asset ID.
 	AssetIdQuoteExchange NullableString `json:"asset_id_quote_exchange,omitempty"`
-	// The base asset ID.
+	// Gets or sets the base asset ID.
 	AssetIdBase NullableString `json:"asset_id_base,omitempty"`
-	// The quote asset ID.
+	// Gets or sets the quote asset ID.
 	AssetIdQuote NullableString `json:"asset_id_quote,omitempty"`
-	// The price precision.
+	// Gets or sets the price precision.
 	PricePrecision NullableFloat64 `json:"price_precision,omitempty"`
-	// The size precision.
+	// Gets or sets the size precision.
 	SizePrecision NullableFloat64 `json:"size_precision,omitempty"`
 }
 

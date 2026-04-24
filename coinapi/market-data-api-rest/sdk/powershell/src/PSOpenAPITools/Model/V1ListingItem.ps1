@@ -13,24 +13,24 @@ No summary available.
 
 .DESCRIPTION
 
-Represents a listing item.
+Represents a listing data item.
 
 .PARAMETER MetricId
 Gets or sets the metric ID.
 .PARAMETER SymbolId
-The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
 .PARAMETER SymbolIdExternal
-The exchange-native symbol identifier. Null for exchange-level metrics.
+Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
 .PARAMETER ExchangeId
 Gets or sets the exchange ID.
 .PARAMETER AssetId
 Gets or sets the asset ID.
 .PARAMETER AssetIdExternal
-Gets or sets the asset ID from the exchange.
+Gets or sets the asset ID.
 .PARAMETER ChainId
-Gets or sets the chain id.
+Gets or sets the chain ID.
 .PARAMETER NetworkId
-Gets or sets the network id.
+Gets or sets the network ID.
 .OUTPUTS
 
 V1ListingItem<PSCustomObject>

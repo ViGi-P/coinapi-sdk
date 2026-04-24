@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **exchangeId** | **String** | Gets or sets the exchange ID. | [optional] 
 **website** | **String** | Gets or sets the website URL of the exchange. | [optional] 
 **name** | **String** | Gets or sets the name of the exchange. | [optional] 
-**dataStart** | **String** |  | [optional] 
-**dataEnd** | **String** |  | [optional] 
+**dataStart** | **String** | Gets the start date of the exchange's data. | [optional] 
+**dataEnd** | **String** | Gets the end date of the exchange's data. | [optional] 
 **dataQuoteStart** | [**DateTime**](DateTime.md) | Gets or sets the start date of quote data. | [optional] 
 **dataQuoteEnd** | [**DateTime**](DateTime.md) | Gets or sets the end date of quote data. | [optional] 
 **dataOrderbookStart** | [**DateTime**](DateTime.md) | Gets or sets the start date of order book data. | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **volume1mthUsd** | **double** | Gets or sets the USD volume in the last 1 month. | [optional] 
 **metricId** | **BuiltList&lt;String&gt;** | Gets or sets the list of metric IDs. | [optional] 
 **icons** | [**BuiltList&lt;V1Icon&gt;**](V1Icon.md) | Gets or sets the list of icons for the exchange. | [optional] 
-**rank** | **double** | Rank of the exchange. | [optional] 
+**rank** | **double** | Rank of the exchange - higher rank means exchange is more reliable | [optional] 
 **integrationStatus** | **String** | Status of the integration | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

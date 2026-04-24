@@ -33,43 +33,43 @@ class V1OrderBookDepthTest : ShouldSpec() {
         // uncomment below to create an instance of V1OrderBookDepth
         //val modelInstance = V1OrderBookDepth()
 
-        // to test the property `symbolId` - The symbol identifier.
+        // to test the property `symbolId` - Gets or sets the symbol identifier.
         should("test symbolId") {
             // uncomment below to test the property
             //modelInstance.symbolId shouldBe ("TODO")
         }
 
-        // to test the property `timeExchange` - The exchange time of the order book.
+        // to test the property `timeExchange` - Gets or sets the exchange time of the order book.
         should("test timeExchange") {
             // uncomment below to test the property
             //modelInstance.timeExchange shouldBe ("TODO")
         }
 
-        // to test the property `timeCoinapi` - The CoinAPI time when the order book was received.
+        // to test the property `timeCoinapi` - Gets or sets the CoinAPI time when the order book was received.
         should("test timeCoinapi") {
             // uncomment below to test the property
             //modelInstance.timeCoinapi shouldBe ("TODO")
         }
 
-        // to test the property `askLevels` - The number of ask levels in the order book.
+        // to test the property `askLevels` - Gets or sets the number of ask levels in the order book.
         should("test askLevels") {
             // uncomment below to test the property
             //modelInstance.askLevels shouldBe ("TODO")
         }
 
-        // to test the property `bidLevels` - The number of bid levels in the order book.
+        // to test the property `bidLevels` - Gets or sets the number of bid levels in the order book.
         should("test bidLevels") {
             // uncomment below to test the property
             //modelInstance.bidLevels shouldBe ("TODO")
         }
 
-        // to test the property `askDepth` - The depth of the ask side of the order book.
+        // to test the property `askDepth` - Gets or sets the depth of the ask side of the order book.
         should("test askDepth") {
             // uncomment below to test the property
             //modelInstance.askDepth shouldBe ("TODO")
         }
 
-        // to test the property `bidDepth` - The depth of the bid side of the order book.
+        // to test the property `bidDepth` - Gets or sets the depth of the bid side of the order book.
         should("test bidDepth") {
             // uncomment below to test the property
             //modelInstance.bidDepth shouldBe ("TODO")

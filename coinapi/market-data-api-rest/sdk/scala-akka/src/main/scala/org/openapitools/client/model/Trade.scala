@@ -26,7 +26,7 @@ case class Trade (
   uuid: Option[UUID] = None,
   /* The price of the transaction. */
   price: Option[Double] = None,
-  /* The base asset amount traded in the transaction. */
+  /* The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series. */
   size: Option[Double] = None,
   /* The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN). */
   takerSide: Option[String] = None,

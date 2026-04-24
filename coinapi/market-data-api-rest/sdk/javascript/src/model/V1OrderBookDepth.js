@@ -93,43 +93,43 @@ class V1OrderBookDepth {
 
 
 /**
- * The symbol identifier.
+ * Gets or sets the symbol identifier.
  * @member {String} symbol_id
  */
 V1OrderBookDepth.prototype['symbol_id'] = undefined;
 
 /**
- * The exchange time of the order book.
+ * Gets or sets the exchange time of the order book.
  * @member {Date} time_exchange
  */
 V1OrderBookDepth.prototype['time_exchange'] = undefined;
 
 /**
- * The CoinAPI time when the order book was received.
+ * Gets or sets the CoinAPI time when the order book was received.
  * @member {Date} time_coinapi
  */
 V1OrderBookDepth.prototype['time_coinapi'] = undefined;
 
 /**
- * The number of ask levels in the order book.
+ * Gets or sets the number of ask levels in the order book.
  * @member {Number} ask_levels
  */
 V1OrderBookDepth.prototype['ask_levels'] = undefined;
 
 /**
- * The number of bid levels in the order book.
+ * Gets or sets the number of bid levels in the order book.
  * @member {Number} bid_levels
  */
 V1OrderBookDepth.prototype['bid_levels'] = undefined;
 
 /**
- * The depth of the ask side of the order book.
+ * Gets or sets the depth of the ask side of the order book.
  * @member {Number} ask_depth
  */
 V1OrderBookDepth.prototype['ask_depth'] = undefined;
 
 /**
- * The depth of the bid side of the order book.
+ * Gets or sets the depth of the bid side of the order book.
  * @member {Number} bid_depth
  */
 V1OrderBookDepth.prototype['bid_depth'] = undefined;

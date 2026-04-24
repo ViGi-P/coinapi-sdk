@@ -149,8 +149,6 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [OpenapiClient::OhlcvExchangeTimeseriesItem](docs/OhlcvExchangeTimeseriesItem.md)
- - [OpenapiClient::OptionsOptionExchangeGroup](docs/OptionsOptionExchangeGroup.md)
- - [OpenapiClient::OptionsStrike](docs/OptionsStrike.md)
  - [OpenapiClient::V1Asset](docs/V1Asset.md)
  - [OpenapiClient::V1Chain](docs/V1Chain.md)
  - [OpenapiClient::V1ChainNetworkAddress](docs/V1ChainNetworkAddress.md)
@@ -166,11 +164,13 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::V1Metric](docs/V1Metric.md)
  - [OpenapiClient::V1MetricData](docs/V1MetricData.md)
  - [OpenapiClient::V1MetricInfo](docs/V1MetricInfo.md)
+ - [OpenapiClient::V1OptionExchangeGroup](docs/V1OptionExchangeGroup.md)
  - [OpenapiClient::V1OrderBook](docs/V1OrderBook.md)
  - [OpenapiClient::V1OrderBookBase](docs/V1OrderBookBase.md)
  - [OpenapiClient::V1OrderBookDepth](docs/V1OrderBookDepth.md)
  - [OpenapiClient::V1Quote](docs/V1Quote.md)
  - [OpenapiClient::V1QuoteTrade](docs/V1QuoteTrade.md)
+ - [OpenapiClient::V1Strike](docs/V1Strike.md)
  - [OpenapiClient::V1Symbol](docs/V1Symbol.md)
  - [OpenapiClient::V1SymbolMapping](docs/V1SymbolMapping.md)
  - [OpenapiClient::V1TimeseriesItem](docs/V1TimeseriesItem.md)

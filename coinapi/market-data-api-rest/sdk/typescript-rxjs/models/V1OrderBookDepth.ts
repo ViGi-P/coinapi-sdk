@@ -18,43 +18,43 @@
  */
 export interface V1OrderBookDepth {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      * @type {string}
      * @memberof V1OrderBookDepth
      */
     symbol_id?: string | null;
     /**
-     * The exchange time of the order book.
+     * Gets or sets the exchange time of the order book.
      * @type {string}
      * @memberof V1OrderBookDepth
      */
     time_exchange?: string;
     /**
-     * The CoinAPI time when the order book was received.
+     * Gets or sets the CoinAPI time when the order book was received.
      * @type {string}
      * @memberof V1OrderBookDepth
      */
     time_coinapi?: string;
     /**
-     * The number of ask levels in the order book.
+     * Gets or sets the number of ask levels in the order book.
      * @type {number}
      * @memberof V1OrderBookDepth
      */
     ask_levels?: number;
     /**
-     * The number of bid levels in the order book.
+     * Gets or sets the number of bid levels in the order book.
      * @type {number}
      * @memberof V1OrderBookDepth
      */
     bid_levels?: number;
     /**
-     * The depth of the ask side of the order book.
+     * Gets or sets the depth of the ask side of the order book.
      * @type {number}
      * @memberof V1OrderBookDepth
      */
     ask_depth?: number;
     /**
-     * The depth of the bid side of the order book.
+     * Gets or sets the depth of the bid side of the order book.
      * @type {number}
      * @memberof V1OrderBookDepth
      */

@@ -28,7 +28,7 @@ using APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client;
 namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
 {
     /// <summary>
-    /// Represents a listing item.
+    /// Represents a listing data item.
     /// </summary>
     public partial class V1ListingItem : IValidatableObject
     {
@@ -36,13 +36,13 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// Initializes a new instance of the <see cref="V1ListingItem" /> class.
         /// </summary>
         /// <param name="metricId">Gets or sets the metric ID.</param>
-        /// <param name="symbolId">The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.</param>
-        /// <param name="symbolIdExternal">The exchange-native symbol identifier. Null for exchange-level metrics.</param>
+        /// <param name="symbolId">Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.</param>
+        /// <param name="symbolIdExternal">Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.</param>
         /// <param name="exchangeId">Gets or sets the exchange ID.</param>
         /// <param name="assetId">Gets or sets the asset ID.</param>
-        /// <param name="assetIdExternal">Gets or sets the asset ID from the exchange.</param>
-        /// <param name="chainId">Gets or sets the chain id.</param>
-        /// <param name="networkId">Gets or sets the network id.</param>
+        /// <param name="assetIdExternal">Gets or sets the asset ID.</param>
+        /// <param name="chainId">Gets or sets the chain ID.</param>
+        /// <param name="networkId">Gets or sets the network ID.</param>
         [JsonConstructor]
         public V1ListingItem(Option<string?> metricId = default, Option<string?> symbolId = default, Option<string?> symbolIdExternal = default, Option<string?> exchangeId = default, Option<string?> assetId = default, Option<string?> assetIdExternal = default, Option<string?> chainId = default, Option<string?> networkId = default)
         {
@@ -81,9 +81,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> SymbolIdOption { get; private set; }
 
         /// <summary>
-        /// The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+        /// Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
         /// </summary>
-        /// <value>The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.</value>
+        /// <value>Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.</value>
         [JsonPropertyName("symbol_id")]
         public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
 
@@ -95,9 +95,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> SymbolIdExternalOption { get; private set; }
 
         /// <summary>
-        /// The exchange-native symbol identifier. Null for exchange-level metrics.
+        /// Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
         /// </summary>
-        /// <value>The exchange-native symbol identifier. Null for exchange-level metrics.</value>
+        /// <value>Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.</value>
         [JsonPropertyName("symbol_id_external")]
         public string? SymbolIdExternal { get { return this.SymbolIdExternalOption; } set { this.SymbolIdExternalOption = new(value); } }
 
@@ -137,9 +137,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> AssetIdExternalOption { get; private set; }
 
         /// <summary>
-        /// Gets or sets the asset ID from the exchange.
+        /// Gets or sets the asset ID.
         /// </summary>
-        /// <value>Gets or sets the asset ID from the exchange.</value>
+        /// <value>Gets or sets the asset ID.</value>
         [JsonPropertyName("asset_id_external")]
         public string? AssetIdExternal { get { return this.AssetIdExternalOption; } set { this.AssetIdExternalOption = new(value); } }
 
@@ -151,9 +151,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> ChainIdOption { get; private set; }
 
         /// <summary>
-        /// Gets or sets the chain id.
+        /// Gets or sets the chain ID.
         /// </summary>
-        /// <value>Gets or sets the chain id.</value>
+        /// <value>Gets or sets the chain ID.</value>
         [JsonPropertyName("chain_id")]
         public string? ChainId { get { return this.ChainIdOption; } set { this.ChainIdOption = new(value); } }
 
@@ -165,9 +165,9 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public Option<string?> NetworkIdOption { get; private set; }
 
         /// <summary>
-        /// Gets or sets the network id.
+        /// Gets or sets the network ID.
         /// </summary>
-        /// <value>Gets or sets the network id.</value>
+        /// <value>Gets or sets the network ID.</value>
         [JsonPropertyName("network_id")]
         public string? NetworkId { get { return this.NetworkIdOption; } set { this.NetworkIdOption = new(value); } }
 

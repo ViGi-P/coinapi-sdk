@@ -16,17 +16,17 @@ import java.util.UUID
 import org.openapitools.client.core.ApiModel
 
 case class LastTrade (
-  /* The exchange time of the last trade. */
+  /* Gets or sets the exchange time of the last trade. */
   timeExchange: Option[OffsetDateTime] = None,
-  /* The CoinAPI time when the last trade was received. */
+  /* Gets or sets the CoinAPI time when the last trade was received. */
   timeCoinapi: Option[OffsetDateTime] = None,
-  /* The UUID of the last trade. */
+  /* Gets or sets the UUID of the last trade. */
   uuid: Option[UUID] = None,
-  /* The price of the last trade. */
+  /* Gets or sets the price of the last trade. */
   price: Option[Double] = None,
-  /* The size of the last trade. */
+  /* Gets or sets the size of the last trade. */
   size: Option[Double] = None,
-  /* The taker side of the last trade. */
+  /* Gets or sets the taker side of the last trade. */
   takerSide: Option[String] = None
 ) extends ApiModel
 

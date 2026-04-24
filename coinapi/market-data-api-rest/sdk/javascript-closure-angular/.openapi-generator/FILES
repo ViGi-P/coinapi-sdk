@@ -6,8 +6,6 @@ API/Client/MetricsV2Api.js
 API/Client/OHLCVApi.js
 API/Client/OhlcvExchangeTimeseriesItem.js
 API/Client/OptionsApi.js
-API/Client/OptionsOptionExchangeGroup.js
-API/Client/OptionsStrike.js
 API/Client/OrderBookApi.js
 API/Client/OrderBookL3Api.js
 API/Client/QuotesApi.js
@@ -27,11 +25,13 @@ API/Client/V1ListingItem.js
 API/Client/V1Metric.js
 API/Client/V1MetricData.js
 API/Client/V1MetricInfo.js
+API/Client/V1OptionExchangeGroup.js
 API/Client/V1OrderBook.js
 API/Client/V1OrderBookBase.js
 API/Client/V1OrderBookDepth.js
 API/Client/V1Quote.js
 API/Client/V1QuoteTrade.js
+API/Client/V1Strike.js
 API/Client/V1Symbol.js
 API/Client/V1SymbolMapping.js
 API/Client/V1TimeseriesItem.js

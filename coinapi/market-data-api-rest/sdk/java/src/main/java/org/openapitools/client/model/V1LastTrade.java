@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the last executed transaction.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-23T06:06:39.606952276Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-24T06:05:03.999499045Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class V1LastTrade {
   public static final String SERIALIZED_NAME_TIME_EXCHANGE = "time_exchange";
   @SerializedName(SERIALIZED_NAME_TIME_EXCHANGE)
@@ -92,7 +92,7 @@ public class V1LastTrade {
   }
 
   /**
-   * The exchange time of the last trade.
+   * Gets or sets the exchange time of the last trade.
    * @return timeExchange
    */
   @javax.annotation.Nullable
@@ -111,7 +111,7 @@ public class V1LastTrade {
   }
 
   /**
-   * The CoinAPI time when the last trade was received.
+   * Gets or sets the CoinAPI time when the last trade was received.
    * @return timeCoinapi
    */
   @javax.annotation.Nullable
@@ -130,7 +130,7 @@ public class V1LastTrade {
   }
 
   /**
-   * The UUID of the last trade.
+   * Gets or sets the UUID of the last trade.
    * @return uuid
    */
   @javax.annotation.Nullable
@@ -149,7 +149,7 @@ public class V1LastTrade {
   }
 
   /**
-   * The price of the last trade.
+   * Gets or sets the price of the last trade.
    * @return price
    */
   @javax.annotation.Nullable
@@ -168,7 +168,7 @@ public class V1LastTrade {
   }
 
   /**
-   * The size of the last trade.
+   * Gets or sets the size of the last trade.
    * @return size
    */
   @javax.annotation.Nullable
@@ -187,7 +187,7 @@ public class V1LastTrade {
   }
 
   /**
-   * The taker side of the last trade.
+   * Gets or sets the taker side of the last trade.
    * @return takerSide
    */
   @javax.annotation.Nullable

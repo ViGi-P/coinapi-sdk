@@ -33,61 +33,61 @@ class V1TimeseriesItemTest : ShouldSpec() {
         // uncomment below to create an instance of V1TimeseriesItem
         //val modelInstance = V1TimeseriesItem()
 
-        // to test the property `timePeriodStart` - The start time of the time period.
+        // to test the property `timePeriodStart` - Gets or sets the start time of the time period.
         should("test timePeriodStart") {
             // uncomment below to test the property
             //modelInstance.timePeriodStart shouldBe ("TODO")
         }
 
-        // to test the property `timePeriodEnd` - The end time of the time period.
+        // to test the property `timePeriodEnd` - Gets or sets the end time of the time period.
         should("test timePeriodEnd") {
             // uncomment below to test the property
             //modelInstance.timePeriodEnd shouldBe ("TODO")
         }
 
-        // to test the property `timeOpen` - The time when the price opened.
+        // to test the property `timeOpen` - Gets or sets the time when the price opened.
         should("test timeOpen") {
             // uncomment below to test the property
             //modelInstance.timeOpen shouldBe ("TODO")
         }
 
-        // to test the property `timeClose` - The time when the price closed.
+        // to test the property `timeClose` - Gets or sets the time when the price closed.
         should("test timeClose") {
             // uncomment below to test the property
             //modelInstance.timeClose shouldBe ("TODO")
         }
 
-        // to test the property `priceOpen` - The opening price.
+        // to test the property `priceOpen` - Gets or sets the opening price.
         should("test priceOpen") {
             // uncomment below to test the property
             //modelInstance.priceOpen shouldBe ("TODO")
         }
 
-        // to test the property `priceHigh` - The highest price during the time period.
+        // to test the property `priceHigh` - Gets or sets the highest price during the time period.
         should("test priceHigh") {
             // uncomment below to test the property
             //modelInstance.priceHigh shouldBe ("TODO")
         }
 
-        // to test the property `priceLow` - The lowest price during the time period.
+        // to test the property `priceLow` - Gets or sets the lowest price during the time period.
         should("test priceLow") {
             // uncomment below to test the property
             //modelInstance.priceLow shouldBe ("TODO")
         }
 
-        // to test the property `priceClose` - The closing price.
+        // to test the property `priceClose` - Gets or sets the closing price.
         should("test priceClose") {
             // uncomment below to test the property
             //modelInstance.priceClose shouldBe ("TODO")
         }
 
-        // to test the property `volumeTraded` - The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+        // to test the property `volumeTraded` - Gets or sets the total volume traded during the time period.
         should("test volumeTraded") {
             // uncomment below to test the property
             //modelInstance.volumeTraded shouldBe ("TODO")
         }
 
-        // to test the property `tradesCount` - The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+        // to test the property `tradesCount` - Gets or sets the number of trades executed during the time period.
         should("test tradesCount") {
             // uncomment below to test the property
             //modelInstance.tradesCount shouldBe ("TODO")

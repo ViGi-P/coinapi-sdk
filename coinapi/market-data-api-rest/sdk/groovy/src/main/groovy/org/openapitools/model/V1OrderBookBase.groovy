@@ -7,14 +7,14 @@ import org.openapitools.jackson.nullable.JsonNullable;
 
 @Canonical
 class V1OrderBookBase {
-    /* The symbol identifier. */
+    /* Gets or sets the symbol identifier. */
     String symbolId
-    /* The exchange time of the order book. */
+    /* Gets or sets the exchange time of the order book. */
     Date timeExchange
-    /* The CoinAPI time when the order book was received. */
+    /* Gets or sets the CoinAPI time when the order book was received. */
     Date timeCoinapi
-    /* The asks made by market makers. */
+    /* Gets or sets the asks made by market makers. */
     Object asks = null
-    /* The bids made by market makers. */
+    /* Gets or sets the bids made by market makers. */
     Object bids = null
 }

@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **exchangeId** | **String** | Gets or sets the exchange ID. |  [optional]
 **website** | **String** | Gets or sets the website URL of the exchange. |  [optional]
 **name** | **String** | Gets or sets the name of the exchange. |  [optional]
-**dataStart** | **String** |  |  [optional] [readonly]
-**dataEnd** | **String** |  |  [optional] [readonly]
+**dataStart** | **String** | Gets the start date of the exchange&#39;s data. |  [optional] [readonly]
+**dataEnd** | **String** | Gets the end date of the exchange&#39;s data. |  [optional] [readonly]
 **dataQuoteStart** | **OffsetDateTime** | Gets or sets the start date of quote data. |  [optional]
 **dataQuoteEnd** | **OffsetDateTime** | Gets or sets the end date of quote data. |  [optional]
 **dataOrderbookStart** | **OffsetDateTime** | Gets or sets the start date of order book data. |  [optional]
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **volume1mthUsd** | **Double** | Gets or sets the USD volume in the last 1 month. |  [optional]
 **metricId** | **Seq&lt;String&gt;** | Gets or sets the list of metric IDs. |  [optional]
 **icons** | [**Seq&lt;Icon&gt;**](Icon.md) | Gets or sets the list of icons for the exchange. |  [optional] [readonly]
-**rank** | **Double** | Rank of the exchange. |  [optional]
+**rank** | **Double** | Rank of the exchange - higher rank means exchange is more reliable |  [optional]
 **integrationStatus** | **String** | Status of the integration |  [optional]
 
 

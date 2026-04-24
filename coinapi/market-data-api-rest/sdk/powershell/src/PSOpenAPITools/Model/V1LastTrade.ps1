@@ -16,17 +16,17 @@ No summary available.
 Represents the last executed transaction.
 
 .PARAMETER TimeExchange
-The exchange time of the last trade.
+Gets or sets the exchange time of the last trade.
 .PARAMETER TimeCoinapi
-The CoinAPI time when the last trade was received.
+Gets or sets the CoinAPI time when the last trade was received.
 .PARAMETER Uuid
-The UUID of the last trade.
+Gets or sets the UUID of the last trade.
 .PARAMETER Price
-The price of the last trade.
+Gets or sets the price of the last trade.
 .PARAMETER Size
-The size of the last trade.
+Gets or sets the size of the last trade.
 .PARAMETER TakerSide
-The taker side of the last trade.
+Gets or sets the taker side of the last trade.
 .OUTPUTS
 
 V1LastTrade<PSCustomObject>

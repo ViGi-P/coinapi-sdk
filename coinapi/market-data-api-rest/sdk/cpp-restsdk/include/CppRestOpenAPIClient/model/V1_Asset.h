@@ -213,11 +213,17 @@ public:
     void unsetChain_addresses();
     void setChainAddresses(const std::vector<std::shared_ptr<V1_ChainNetworkAddress>>& value);
 
+    /// <summary>
+    /// Gets the start date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.
+    /// </summary>
     utility::string_t getDataStart() const;
     bool dataStartIsSet() const;
     void unsetData_start();
     void setDataStart(const utility::string_t& value);
 
+    /// <summary>
+    /// Gets the end date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.
+    /// </summary>
     utility::string_t getDataEnd() const;
     bool dataEndIsSet() const;
     void unsetData_end();

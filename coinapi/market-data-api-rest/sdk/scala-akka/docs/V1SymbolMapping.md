@@ -8,15 +8,15 @@ Represents symbol mapping information for exchange symbols.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**symbolId** | **String** | The symbol ID. |  [optional]
-**symbolIdExchange** | **String** | The exchange-specific symbol ID. |  [optional]
-**coinapiDatainfoId** | **Int** | The CoinAPI DataInfo ID. |  [optional]
-**assetIdBaseExchange** | **String** | The exchange-specific base asset ID. |  [optional]
-**assetIdQuoteExchange** | **String** | The exchange-specific quote asset ID. |  [optional]
-**assetIdBase** | **String** | The base asset ID. |  [optional]
-**assetIdQuote** | **String** | The quote asset ID. |  [optional]
-**pricePrecision** | **Double** | The price precision. |  [optional]
-**sizePrecision** | **Double** | The size precision. |  [optional]
+**symbolId** | **String** | Gets or sets the symbol ID. |  [optional]
+**symbolIdExchange** | **String** | Gets or sets the exchange-specific symbol ID. |  [optional]
+**coinapiDatainfoId** | **Int** | Gets or sets the DataInfo ID. |  [optional]
+**assetIdBaseExchange** | **String** | Gets or sets the exchange-specific base asset ID. |  [optional]
+**assetIdQuoteExchange** | **String** | Gets or sets the exchange-specific quote asset ID. |  [optional]
+**assetIdBase** | **String** | Gets or sets the base asset ID. |  [optional]
+**assetIdQuote** | **String** | Gets or sets the quote asset ID. |  [optional]
+**pricePrecision** | **Double** | Gets or sets the price precision. |  [optional]
+**sizePrecision** | **Double** | Gets or sets the size precision. |  [optional]
 
 
 

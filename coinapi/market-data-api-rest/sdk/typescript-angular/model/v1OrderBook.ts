@@ -14,23 +14,23 @@
  */
 export interface V1OrderBook { 
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      */
     symbol_id?: string | null;
     /**
-     * The exchange time of the order book.
+     * Gets or sets the exchange time of the order book.
      */
     time_exchange?: string;
     /**
-     * The CoinAPI time when the order book was received.
+     * Gets or sets the CoinAPI time when the order book was received.
      */
     time_coinapi?: string;
     /**
-     * The asks made by market makers.
+     * Gets or sets the asks made by market makers.
      */
     asks?: any | null;
     /**
-     * The bids made by market makers.
+     * Gets or sets the bids made by market makers.
      */
     bids?: any | null;
 }

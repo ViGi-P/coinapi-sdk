@@ -14,27 +14,27 @@
  */
 export interface V1TimeseriesPeriod { 
     /**
-     * The period ID.
+     * Gets or sets the period ID.
      */
     period_id?: string | null;
     /**
-     * The length of the period in seconds.
+     * Gets or sets the length of the period in seconds.
      */
     length_seconds?: number;
     /**
-     * The length of the period in months.
+     * Gets or sets the length of the period in months.
      */
     length_months?: number;
     /**
-     * The unit count.
+     * Gets or sets the unit count.
      */
     unit_count?: number | null;
     /**
-     * The unit name.
+     * Gets or sets the unit name.
      */
     unit_name?: string | null;
     /**
-     * The display name of the timeseries period.
+     * Gets or sets the display name of the timeseries period.
      */
     display_name?: string | null;
 }

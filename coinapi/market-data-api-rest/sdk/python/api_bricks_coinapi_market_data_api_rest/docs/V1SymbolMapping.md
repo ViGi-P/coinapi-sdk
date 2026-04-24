@@ -6,15 +6,15 @@ Represents symbol mapping information for exchange symbols.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**symbol_id** | **str** | The symbol ID. | [optional] 
-**symbol_id_exchange** | **str** | The exchange-specific symbol ID. | [optional] 
-**coinapi_datainfo_id** | **int** | The CoinAPI DataInfo ID. | [optional] 
-**asset_id_base_exchange** | **str** | The exchange-specific base asset ID. | [optional] 
-**asset_id_quote_exchange** | **str** | The exchange-specific quote asset ID. | [optional] 
-**asset_id_base** | **str** | The base asset ID. | [optional] 
-**asset_id_quote** | **str** | The quote asset ID. | [optional] 
-**price_precision** | **float** | The price precision. | [optional] 
-**size_precision** | **float** | The size precision. | [optional] 
+**symbol_id** | **str** | Gets or sets the symbol ID. | [optional] 
+**symbol_id_exchange** | **str** | Gets or sets the exchange-specific symbol ID. | [optional] 
+**coinapi_datainfo_id** | **int** | Gets or sets the DataInfo ID. | [optional] 
+**asset_id_base_exchange** | **str** | Gets or sets the exchange-specific base asset ID. | [optional] 
+**asset_id_quote_exchange** | **str** | Gets or sets the exchange-specific quote asset ID. | [optional] 
+**asset_id_base** | **str** | Gets or sets the base asset ID. | [optional] 
+**asset_id_quote** | **str** | Gets or sets the quote asset ID. | [optional] 
+**price_precision** | **float** | Gets or sets the price precision. | [optional] 
+**size_precision** | **float** | Gets or sets the size precision. | [optional] 
 
 ## Example
 

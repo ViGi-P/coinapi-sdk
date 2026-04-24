@@ -16,19 +16,19 @@ require 'time'
 module OpenapiClient
   # Represents the base model for order book data.
   class V1OrderBookBase < ApiModelBase
-    # The symbol identifier.
+    # Gets or sets the symbol identifier.
     attr_accessor :symbol_id
 
-    # The exchange time of the order book.
+    # Gets or sets the exchange time of the order book.
     attr_accessor :time_exchange
 
-    # The CoinAPI time when the order book was received.
+    # Gets or sets the CoinAPI time when the order book was received.
     attr_accessor :time_coinapi
 
-    # The asks made by market makers.
+    # Gets or sets the asks made by market makers.
     attr_accessor :asks
 
-    # The bids made by market makers.
+    # Gets or sets the bids made by market makers.
     attr_accessor :bids
 
     # Attribute mapping from ruby-style variable name to JSON key.

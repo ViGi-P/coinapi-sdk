@@ -185,11 +185,13 @@ V1Exchange.prototype['website'] = undefined;
 V1Exchange.prototype['name'] = undefined;
 
 /**
+ * Gets the start date of the exchange's data.
  * @member {String} data_start
  */
 V1Exchange.prototype['data_start'] = undefined;
 
 /**
+ * Gets the end date of the exchange's data.
  * @member {String} data_end
  */
 V1Exchange.prototype['data_end'] = undefined;
@@ -273,7 +275,7 @@ V1Exchange.prototype['metric_id'] = undefined;
 V1Exchange.prototype['icons'] = undefined;
 
 /**
- * Rank of the exchange.
+ * Rank of the exchange - higher rank means exchange is more reliable
  * @member {Number} rank
  */
 V1Exchange.prototype['rank'] = undefined;

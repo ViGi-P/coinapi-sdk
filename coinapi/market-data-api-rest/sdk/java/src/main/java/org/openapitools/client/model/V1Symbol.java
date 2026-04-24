@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a symbol data model.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-23T06:06:39.606952276Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-24T06:05:03.999499045Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class V1Symbol {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
@@ -334,7 +334,7 @@ public class V1Symbol {
   }
 
   /**
-   * The symbol identifier.
+   * Gets or sets the symbol identifier.
    * @return symbolId
    */
   @javax.annotation.Nullable
@@ -353,7 +353,7 @@ public class V1Symbol {
   }
 
   /**
-   * The exchange identifier.
+   * Gets or sets the exchange identifier.
    * @return exchangeId
    */
   @javax.annotation.Nullable
@@ -372,7 +372,7 @@ public class V1Symbol {
   }
 
   /**
-   * The symbol type.
+   * Gets or sets the symbol type.
    * @return symbolType
    */
   @javax.annotation.Nullable
@@ -391,7 +391,7 @@ public class V1Symbol {
   }
 
   /**
-   * The base asset identifier.
+   * Gets or sets the base asset identifier.
    * @return assetIdBase
    */
   @javax.annotation.Nullable
@@ -410,7 +410,7 @@ public class V1Symbol {
   }
 
   /**
-   * The quote asset identifier.
+   * Gets or sets the quote asset identifier.
    * @return assetIdQuote
    */
   @javax.annotation.Nullable
@@ -429,7 +429,7 @@ public class V1Symbol {
   }
 
   /**
-   * The unit asset identifier.
+   * Gets or sets the unit asset identifier.
    * @return assetIdUnit
    */
   @javax.annotation.Nullable
@@ -448,7 +448,7 @@ public class V1Symbol {
   }
 
   /**
-   * The contract unit for futures.
+   * Gets or sets the contract unit for futures.
    * @return futureContractUnit
    */
   @javax.annotation.Nullable
@@ -467,7 +467,7 @@ public class V1Symbol {
   }
 
   /**
-   * The asset used as the unit for futures contract.
+   * Gets or sets the asset used as the unit for futures contract.
    * @return futureContractUnitAsset
    */
   @javax.annotation.Nullable
@@ -486,7 +486,7 @@ public class V1Symbol {
   }
 
   /**
-   * The future delivery time for futures contract.
+   * Gets or sets the future delivery time for futures contract.
    * @return futureDeliveryTime
    */
   @javax.annotation.Nullable
@@ -505,7 +505,7 @@ public class V1Symbol {
   }
 
   /**
-   * Indicates whether the option type is a call.
+   * Gets or sets a value indicating whether the option type is a call.
    * @return optionTypeIsCall
    */
   @javax.annotation.Nullable
@@ -524,7 +524,7 @@ public class V1Symbol {
   }
 
   /**
-   * The strike price for options.
+   * Gets or sets the strike price for options.
    * @return optionStrikePrice
    */
   @javax.annotation.Nullable
@@ -543,7 +543,7 @@ public class V1Symbol {
   }
 
   /**
-   * The contract unit for options.
+   * Gets or sets the contract unit for options.
    * @return optionContractUnit
    */
   @javax.annotation.Nullable
@@ -562,7 +562,7 @@ public class V1Symbol {
   }
 
   /**
-   * The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+   * Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
    * @return optionExerciseStyle
    */
   @javax.annotation.Nullable
@@ -581,7 +581,7 @@ public class V1Symbol {
   }
 
   /**
-   * The expiration time for options.
+   * Gets or sets the expiration time for options.
    * @return optionExpirationTime
    */
   @javax.annotation.Nullable
@@ -600,7 +600,7 @@ public class V1Symbol {
   }
 
   /**
-   * The delivery time for contracts.
+   * Gets or sets the delivery time for contracts.
    * @return contractDeliveryTime
    */
   @javax.annotation.Nullable
@@ -619,7 +619,7 @@ public class V1Symbol {
   }
 
   /**
-   * The contract unit for contracts.
+   * Gets or sets the contract unit for contracts.
    * @return contractUnit
    */
   @javax.annotation.Nullable
@@ -638,7 +638,7 @@ public class V1Symbol {
   }
 
   /**
-   * The asset used as the unit for contracts.
+   * Gets or sets the asset used as the unit for contracts.
    * @return contractUnitAsset
    */
   @javax.annotation.Nullable
@@ -657,7 +657,7 @@ public class V1Symbol {
   }
 
   /**
-   * The contract identifier.
+   * Gets or sets the contract identifier.
    * @return contractId
    */
   @javax.annotation.Nullable
@@ -676,7 +676,7 @@ public class V1Symbol {
   }
 
   /**
-   * The display name of the contract.
+   * Gets or sets the display name of the contract.
    * @return contractDisplayName
    */
   @javax.annotation.Nullable
@@ -695,7 +695,7 @@ public class V1Symbol {
   }
 
   /**
-   * The display description of the contract.
+   * Gets or sets the display description of the contract.
    * @return contractDisplayDescription
    */
   @javax.annotation.Nullable
@@ -709,7 +709,7 @@ public class V1Symbol {
 
 
   /**
-   * Get dataStart
+   * Gets the start date of the data in string format (\&quot;yyyy-MM-dd\&quot;).
    * @return dataStart
    */
   @javax.annotation.Nullable
@@ -720,7 +720,7 @@ public class V1Symbol {
 
 
   /**
-   * Get dataEnd
+   * Gets the end date of the data in string format (\&quot;yyyy-MM-dd\&quot;).
    * @return dataEnd
    */
   @javax.annotation.Nullable
@@ -736,7 +736,7 @@ public class V1Symbol {
   }
 
   /**
-   * The start date of quote data.
+   * Gets or sets the start date of quote data.
    * @return dataQuoteStart
    */
   @javax.annotation.Nullable
@@ -755,7 +755,7 @@ public class V1Symbol {
   }
 
   /**
-   * The end date of quote data.
+   * Gets or sets the end date of quote data.
    * @return dataQuoteEnd
    */
   @javax.annotation.Nullable
@@ -774,7 +774,7 @@ public class V1Symbol {
   }
 
   /**
-   * The start date of order book data.
+   * Gets or sets the start date of order book data.
    * @return dataOrderbookStart
    */
   @javax.annotation.Nullable
@@ -793,7 +793,7 @@ public class V1Symbol {
   }
 
   /**
-   * The end date of order book data.
+   * Gets or sets the end date of order book data.
    * @return dataOrderbookEnd
    */
   @javax.annotation.Nullable
@@ -812,7 +812,7 @@ public class V1Symbol {
   }
 
   /**
-   * The start date of trade data.
+   * Gets or sets the start date of trade data.
    * @return dataTradeStart
    */
   @javax.annotation.Nullable
@@ -831,7 +831,7 @@ public class V1Symbol {
   }
 
   /**
-   * The end date of trade data.
+   * Gets or sets the end date of trade data.
    * @return dataTradeEnd
    */
   @javax.annotation.Nullable
@@ -850,7 +850,7 @@ public class V1Symbol {
   }
 
   /**
-   * The index identifier.
+   * Gets or sets the index identifier.
    * @return indexId
    */
   @javax.annotation.Nullable
@@ -869,7 +869,7 @@ public class V1Symbol {
   }
 
   /**
-   * The display name of the index.
+   * Gets or sets the display name of the index.
    * @return indexDisplayName
    */
   @javax.annotation.Nullable
@@ -888,7 +888,7 @@ public class V1Symbol {
   }
 
   /**
-   * The display description of the index.
+   * Gets or sets the display description of the index.
    * @return indexDisplayDescription
    */
   @javax.annotation.Nullable
@@ -907,7 +907,7 @@ public class V1Symbol {
   }
 
   /**
-   * The volume in the last 1 hour.
+   * Gets or sets the volume in the last 1 hour.
    * @return volume1hrs
    */
   @javax.annotation.Nullable
@@ -926,7 +926,7 @@ public class V1Symbol {
   }
 
   /**
-   * The volume in USD in the last 1 hour.
+   * Gets or sets the volume in USD in the last 1 hour.
    * @return volume1hrsUsd
    */
   @javax.annotation.Nullable
@@ -945,7 +945,7 @@ public class V1Symbol {
   }
 
   /**
-   * The volume in the last 1 day.
+   * Gets or sets the volume in the last 1 day.
    * @return volume1day
    */
   @javax.annotation.Nullable
@@ -964,7 +964,7 @@ public class V1Symbol {
   }
 
   /**
-   * The volume in USD in the last 1 day.
+   * Gets or sets the volume in USD in the last 1 day.
    * @return volume1dayUsd
    */
   @javax.annotation.Nullable
@@ -983,7 +983,7 @@ public class V1Symbol {
   }
 
   /**
-   * The volume in the last 1 month.
+   * Gets or sets the volume in the last 1 month.
    * @return volume1mth
    */
   @javax.annotation.Nullable
@@ -1002,7 +1002,7 @@ public class V1Symbol {
   }
 
   /**
-   * The volume in USD in the last 1 month.
+   * Gets or sets the volume in USD in the last 1 month.
    * @return volume1mthUsd
    */
   @javax.annotation.Nullable
@@ -1021,7 +1021,7 @@ public class V1Symbol {
   }
 
   /**
-   * The price.
+   * Gets or sets the price.
    * @return price
    */
   @javax.annotation.Nullable
@@ -1040,7 +1040,7 @@ public class V1Symbol {
   }
 
   /**
-   * The symbol identifier in the exchange.
+   * Gets or sets the symbol identifier in the exchange.
    * @return symbolIdExchange
    */
   @javax.annotation.Nullable
@@ -1059,7 +1059,7 @@ public class V1Symbol {
   }
 
   /**
-   * The base asset identifier in the exchange.
+   * Gets or sets the base asset identifier in the exchange.
    * @return assetIdBaseExchange
    */
   @javax.annotation.Nullable
@@ -1078,7 +1078,7 @@ public class V1Symbol {
   }
 
   /**
-   * The quote asset identifier in the exchange.
+   * Gets or sets the quote asset identifier in the exchange.
    * @return assetIdQuoteExchange
    */
   @javax.annotation.Nullable
@@ -1097,7 +1097,7 @@ public class V1Symbol {
   }
 
   /**
-   * The price precision.
+   * Gets or sets the price precision.
    * @return pricePrecision
    */
   @javax.annotation.Nullable
@@ -1116,7 +1116,7 @@ public class V1Symbol {
   }
 
   /**
-   * The size precision.
+   * Gets or sets the size precision.
    * @return sizePrecision
    */
   @javax.annotation.Nullable
@@ -1162,7 +1162,7 @@ public class V1Symbol {
   }
 
   /**
-   * Indicates whether the futures contract is inverse (coin-margined).
+   * Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
    * @return futureIsInverse
    */
   @javax.annotation.Nullable
@@ -1181,7 +1181,7 @@ public class V1Symbol {
   }
 
   /**
-   * Indicates whether the futures contract is quanto.
+   * Gets or sets a value indicating whether the futures contract is quanto.
    * @return futureIsQuanto
    */
   @javax.annotation.Nullable
@@ -1200,7 +1200,7 @@ public class V1Symbol {
   }
 
   /**
-   * Volume unit in USD.
+   * Gets or sets the volume in USD.
    * @return volumeToUsd
    */
   @javax.annotation.Nullable
@@ -1219,7 +1219,7 @@ public class V1Symbol {
   }
 
   /**
-   * The up barrier price for barrier options.
+   * Gets or sets the up barrier price for barrier options.
    * @return optionBarrierUpPrice
    */
   @javax.annotation.Nullable
@@ -1238,7 +1238,7 @@ public class V1Symbol {
   }
 
   /**
-   * The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+   * Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
    * @return optionBarrierUpType
    */
   @javax.annotation.Nullable
@@ -1257,7 +1257,7 @@ public class V1Symbol {
   }
 
   /**
-   * The down barrier price for barrier options.
+   * Gets or sets the down barrier price for barrier options.
    * @return optionBarrierDownPrice
    */
   @javax.annotation.Nullable
@@ -1276,7 +1276,7 @@ public class V1Symbol {
   }
 
   /**
-   * The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+   * Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
    * @return optionBarrierDownType
    */
   @javax.annotation.Nullable
@@ -1290,7 +1290,7 @@ public class V1Symbol {
 
 
   /**
-   * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+   * Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
    * @return symbolIdInt
    */
   @javax.annotation.Nullable

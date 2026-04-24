@@ -59,7 +59,7 @@ public:
 
 
     /// <summary>
-    /// The exchange time of the last trade.
+    /// Gets or sets the exchange time of the last trade.
     /// </summary>
     utility::datetime getTimeExchange() const;
     bool timeExchangeIsSet() const;
@@ -67,7 +67,7 @@ public:
     void setTimeExchange(const utility::datetime& value);
 
     /// <summary>
-    /// The CoinAPI time when the last trade was received.
+    /// Gets or sets the CoinAPI time when the last trade was received.
     /// </summary>
     utility::datetime getTimeCoinapi() const;
     bool timeCoinapiIsSet() const;
@@ -75,7 +75,7 @@ public:
     void setTimeCoinapi(const utility::datetime& value);
 
     /// <summary>
-    /// The UUID of the last trade.
+    /// Gets or sets the UUID of the last trade.
     /// </summary>
     utility::string_t getUuid() const;
     bool uuidIsSet() const;
@@ -83,7 +83,7 @@ public:
     void setUuid(const utility::string_t& value);
 
     /// <summary>
-    /// The price of the last trade.
+    /// Gets or sets the price of the last trade.
     /// </summary>
     double getPrice() const;
     bool priceIsSet() const;
@@ -91,7 +91,7 @@ public:
     void setPrice(double value);
 
     /// <summary>
-    /// The size of the last trade.
+    /// Gets or sets the size of the last trade.
     /// </summary>
     double getSize() const;
     bool sizeIsSet() const;
@@ -99,7 +99,7 @@ public:
     void setSize(double value);
 
     /// <summary>
-    /// The taker side of the last trade.
+    /// Gets or sets the taker side of the last trade.
     /// </summary>
     utility::string_t getTakerSide() const;
     bool takerSideIsSet() const;

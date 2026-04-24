@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **TimeCoinapi** | **DateTime** | The time when the trade was received by CoinAPI. | [optional] 
 **Uuid** | **Guid** | The unique identifier for the trade. | [optional] 
 **Price** | **double** | The price of the transaction. | [optional] 
-**Size** | **double** | The base asset amount traded in the transaction. | [optional] 
+**Size** | **double** | The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series. | [optional] 
 **TakerSide** | **string** | The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN). | [optional] 
 **IdTrade** | **string** | The trade identifier. | [optional] 
 **IdOrderMaker** | **string** | The order maker identifier. | [optional] 

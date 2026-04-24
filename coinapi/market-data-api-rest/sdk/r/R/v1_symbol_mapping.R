@@ -7,15 +7,15 @@
 #' @title V1SymbolMapping
 #' @description V1SymbolMapping Class
 #' @format An \code{R6Class} generator object
-#' @field symbol_id The symbol ID. character [optional]
-#' @field symbol_id_exchange The exchange-specific symbol ID. character [optional]
-#' @field coinapi_datainfo_id The CoinAPI DataInfo ID. integer [optional]
-#' @field asset_id_base_exchange The exchange-specific base asset ID. character [optional]
-#' @field asset_id_quote_exchange The exchange-specific quote asset ID. character [optional]
-#' @field asset_id_base The base asset ID. character [optional]
-#' @field asset_id_quote The quote asset ID. character [optional]
-#' @field price_precision The price precision. numeric [optional]
-#' @field size_precision The size precision. numeric [optional]
+#' @field symbol_id Gets or sets the symbol ID. character [optional]
+#' @field symbol_id_exchange Gets or sets the exchange-specific symbol ID. character [optional]
+#' @field coinapi_datainfo_id Gets or sets the DataInfo ID. integer [optional]
+#' @field asset_id_base_exchange Gets or sets the exchange-specific base asset ID. character [optional]
+#' @field asset_id_quote_exchange Gets or sets the exchange-specific quote asset ID. character [optional]
+#' @field asset_id_base Gets or sets the base asset ID. character [optional]
+#' @field asset_id_quote Gets or sets the quote asset ID. character [optional]
+#' @field price_precision Gets or sets the price precision. numeric [optional]
+#' @field size_precision Gets or sets the size precision. numeric [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -35,15 +35,15 @@ V1SymbolMapping <- R6::R6Class(
     #' @description
     #' Initialize a new V1SymbolMapping class.
     #'
-    #' @param symbol_id The symbol ID.
-    #' @param symbol_id_exchange The exchange-specific symbol ID.
-    #' @param coinapi_datainfo_id The CoinAPI DataInfo ID.
-    #' @param asset_id_base_exchange The exchange-specific base asset ID.
-    #' @param asset_id_quote_exchange The exchange-specific quote asset ID.
-    #' @param asset_id_base The base asset ID.
-    #' @param asset_id_quote The quote asset ID.
-    #' @param price_precision The price precision.
-    #' @param size_precision The size precision.
+    #' @param symbol_id Gets or sets the symbol ID.
+    #' @param symbol_id_exchange Gets or sets the exchange-specific symbol ID.
+    #' @param coinapi_datainfo_id Gets or sets the DataInfo ID.
+    #' @param asset_id_base_exchange Gets or sets the exchange-specific base asset ID.
+    #' @param asset_id_quote_exchange Gets or sets the exchange-specific quote asset ID.
+    #' @param asset_id_base Gets or sets the base asset ID.
+    #' @param asset_id_quote Gets or sets the quote asset ID.
+    #' @param price_precision Gets or sets the price precision.
+    #' @param size_precision Gets or sets the size precision.
     #' @param ... Other optional arguments.
     initialize = function(`symbol_id` = NULL, `symbol_id_exchange` = NULL, `coinapi_datainfo_id` = NULL, `asset_id_base_exchange` = NULL, `asset_id_quote_exchange` = NULL, `asset_id_base` = NULL, `asset_id_quote` = NULL, `price_precision` = NULL, `size_precision` = NULL, ...) {
       if (!is.null(`symbol_id`)) {

@@ -23,8 +23,8 @@ Name | Type | Description | Notes
 **SupplyTotal** | Pointer to **NullableFloat64** | Gets or sets the total supply of the asset. | [optional] 
 **SupplyMax** | Pointer to **NullableFloat64** | Gets or sets the maximum supply of the asset. | [optional] 
 **ChainAddresses** | Pointer to [**[]V1ChainNetworkAddress**](V1ChainNetworkAddress.md) |  | [optional] 
-**DataStart** | Pointer to **NullableString** |  | [optional] [readonly] 
-**DataEnd** | Pointer to **NullableString** |  | [optional] [readonly] 
+**DataStart** | Pointer to **NullableString** | Gets the start date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;. | [optional] [readonly] 
+**DataEnd** | Pointer to **NullableString** | Gets the end date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;. | [optional] [readonly] 
 
 ## Methods
 

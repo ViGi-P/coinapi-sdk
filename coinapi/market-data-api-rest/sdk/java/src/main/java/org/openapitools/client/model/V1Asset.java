@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an asset.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-23T06:06:39.606952276Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-24T06:05:03.999499045Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class V1Asset {
   public static final String SERIALIZED_NAME_ASSET_ID = "asset_id";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -543,7 +543,7 @@ public class V1Asset {
 
 
   /**
-   * Get dataStart
+   * Gets the start date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.
    * @return dataStart
    */
   @javax.annotation.Nullable
@@ -554,7 +554,7 @@ public class V1Asset {
 
 
   /**
-   * Get dataEnd
+   * Gets the end date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.
    * @return dataEnd
    */
   @javax.annotation.Nullable

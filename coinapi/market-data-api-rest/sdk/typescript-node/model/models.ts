@@ -1,8 +1,6 @@
 import localVarRequest from 'request';
 
 export * from './ohlcvExchangeTimeseriesItem';
-export * from './optionsOptionExchangeGroup';
-export * from './optionsStrike';
 export * from './v1Asset';
 export * from './v1Chain';
 export * from './v1ChainNetworkAddress';
@@ -18,11 +16,13 @@ export * from './v1ListingItem';
 export * from './v1Metric';
 export * from './v1MetricData';
 export * from './v1MetricInfo';
+export * from './v1OptionExchangeGroup';
 export * from './v1OrderBook';
 export * from './v1OrderBookBase';
 export * from './v1OrderBookDepth';
 export * from './v1Quote';
 export * from './v1QuoteTrade';
+export * from './v1Strike';
 export * from './v1Symbol';
 export * from './v1SymbolMapping';
 export * from './v1TimeseriesItem';
@@ -43,8 +43,6 @@ export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
 import { OhlcvExchangeTimeseriesItem } from './ohlcvExchangeTimeseriesItem';
-import { OptionsOptionExchangeGroup } from './optionsOptionExchangeGroup';
-import { OptionsStrike } from './optionsStrike';
 import { V1Asset } from './v1Asset';
 import { V1Chain } from './v1Chain';
 import { V1ChainNetworkAddress } from './v1ChainNetworkAddress';
@@ -60,11 +58,13 @@ import { V1ListingItem } from './v1ListingItem';
 import { V1Metric } from './v1Metric';
 import { V1MetricData } from './v1MetricData';
 import { V1MetricInfo } from './v1MetricInfo';
+import { V1OptionExchangeGroup } from './v1OptionExchangeGroup';
 import { V1OrderBook } from './v1OrderBook';
 import { V1OrderBookBase } from './v1OrderBookBase';
 import { V1OrderBookDepth } from './v1OrderBookDepth';
 import { V1Quote } from './v1Quote';
 import { V1QuoteTrade } from './v1QuoteTrade';
+import { V1Strike } from './v1Strike';
 import { V1Symbol } from './v1Symbol';
 import { V1SymbolMapping } from './v1SymbolMapping';
 import { V1TimeseriesItem } from './v1TimeseriesItem';
@@ -88,8 +88,6 @@ let enumsMap: {[index: string]: any} = {
 
 let typeMap: {[index: string]: any} = {
     "OhlcvExchangeTimeseriesItem": OhlcvExchangeTimeseriesItem,
-    "OptionsOptionExchangeGroup": OptionsOptionExchangeGroup,
-    "OptionsStrike": OptionsStrike,
     "V1Asset": V1Asset,
     "V1Chain": V1Chain,
     "V1ChainNetworkAddress": V1ChainNetworkAddress,
@@ -105,11 +103,13 @@ let typeMap: {[index: string]: any} = {
     "V1Metric": V1Metric,
     "V1MetricData": V1MetricData,
     "V1MetricInfo": V1MetricInfo,
+    "V1OptionExchangeGroup": V1OptionExchangeGroup,
     "V1OrderBook": V1OrderBook,
     "V1OrderBookBase": V1OrderBookBase,
     "V1OrderBookDepth": V1OrderBookDepth,
     "V1Quote": V1Quote,
     "V1QuoteTrade": V1QuoteTrade,
+    "V1Strike": V1Strike,
     "V1Symbol": V1Symbol,
     "V1SymbolMapping": V1SymbolMapping,
     "V1TimeseriesItem": V1TimeseriesItem,

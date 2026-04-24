@@ -16,109 +16,109 @@ No summary available.
 Represents a symbol data model.
 
 .PARAMETER SymbolId
-The symbol identifier.
+Gets or sets the symbol identifier.
 .PARAMETER ExchangeId
-The exchange identifier.
+Gets or sets the exchange identifier.
 .PARAMETER SymbolType
-The symbol type.
+Gets or sets the symbol type.
 .PARAMETER AssetIdBase
-The base asset identifier.
+Gets or sets the base asset identifier.
 .PARAMETER AssetIdQuote
-The quote asset identifier.
+Gets or sets the quote asset identifier.
 .PARAMETER AssetIdUnit
-The unit asset identifier.
+Gets or sets the unit asset identifier.
 .PARAMETER FutureContractUnit
-The contract unit for futures.
+Gets or sets the contract unit for futures.
 .PARAMETER FutureContractUnitAsset
-The asset used as the unit for futures contract.
+Gets or sets the asset used as the unit for futures contract.
 .PARAMETER FutureDeliveryTime
-The future delivery time for futures contract.
+Gets or sets the future delivery time for futures contract.
 .PARAMETER OptionTypeIsCall
-Indicates whether the option type is a call.
+Gets or sets a value indicating whether the option type is a call.
 .PARAMETER OptionStrikePrice
-The strike price for options.
+Gets or sets the strike price for options.
 .PARAMETER OptionContractUnit
-The contract unit for options.
+Gets or sets the contract unit for options.
 .PARAMETER OptionExerciseStyle
-The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
 .PARAMETER OptionExpirationTime
-The expiration time for options.
+Gets or sets the expiration time for options.
 .PARAMETER ContractDeliveryTime
-The delivery time for contracts.
+Gets or sets the delivery time for contracts.
 .PARAMETER ContractUnit
-The contract unit for contracts.
+Gets or sets the contract unit for contracts.
 .PARAMETER ContractUnitAsset
-The asset used as the unit for contracts.
+Gets or sets the asset used as the unit for contracts.
 .PARAMETER ContractId
-The contract identifier.
+Gets or sets the contract identifier.
 .PARAMETER ContractDisplayName
-The display name of the contract.
+Gets or sets the display name of the contract.
 .PARAMETER ContractDisplayDescription
-The display description of the contract.
+Gets or sets the display description of the contract.
 .PARAMETER DataStart
-No description available.
+Gets the start date of the data in string format (""yyyy-MM-dd"").
 .PARAMETER DataEnd
-No description available.
+Gets the end date of the data in string format (""yyyy-MM-dd"").
 .PARAMETER DataQuoteStart
-The start date of quote data.
+Gets or sets the start date of quote data.
 .PARAMETER DataQuoteEnd
-The end date of quote data.
+Gets or sets the end date of quote data.
 .PARAMETER DataOrderbookStart
-The start date of order book data.
+Gets or sets the start date of order book data.
 .PARAMETER DataOrderbookEnd
-The end date of order book data.
+Gets or sets the end date of order book data.
 .PARAMETER DataTradeStart
-The start date of trade data.
+Gets or sets the start date of trade data.
 .PARAMETER DataTradeEnd
-The end date of trade data.
+Gets or sets the end date of trade data.
 .PARAMETER IndexId
-The index identifier.
+Gets or sets the index identifier.
 .PARAMETER IndexDisplayName
-The display name of the index.
+Gets or sets the display name of the index.
 .PARAMETER IndexDisplayDescription
-The display description of the index.
+Gets or sets the display description of the index.
 .PARAMETER Volume1hrs
-The volume in the last 1 hour.
+Gets or sets the volume in the last 1 hour.
 .PARAMETER Volume1hrsUsd
-The volume in USD in the last 1 hour.
+Gets or sets the volume in USD in the last 1 hour.
 .PARAMETER Volume1day
-The volume in the last 1 day.
+Gets or sets the volume in the last 1 day.
 .PARAMETER Volume1dayUsd
-The volume in USD in the last 1 day.
+Gets or sets the volume in USD in the last 1 day.
 .PARAMETER Volume1mth
-The volume in the last 1 month.
+Gets or sets the volume in the last 1 month.
 .PARAMETER Volume1mthUsd
-The volume in USD in the last 1 month.
+Gets or sets the volume in USD in the last 1 month.
 .PARAMETER Price
-The price.
+Gets or sets the price.
 .PARAMETER SymbolIdExchange
-The symbol identifier in the exchange.
+Gets or sets the symbol identifier in the exchange.
 .PARAMETER AssetIdBaseExchange
-The base asset identifier in the exchange.
+Gets or sets the base asset identifier in the exchange.
 .PARAMETER AssetIdQuoteExchange
-The quote asset identifier in the exchange.
+Gets or sets the quote asset identifier in the exchange.
 .PARAMETER PricePrecision
-The price precision.
+Gets or sets the price precision.
 .PARAMETER SizePrecision
-The size precision.
+Gets or sets the size precision.
 .PARAMETER RawKvp
 Key Value Pair store with raw data from the data source.
 .PARAMETER FutureIsInverse
-Indicates whether the futures contract is inverse (coin-margined).
+Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
 .PARAMETER FutureIsQuanto
-Indicates whether the futures contract is quanto.
+Gets or sets a value indicating whether the futures contract is quanto.
 .PARAMETER VolumeToUsd
-Volume unit in USD.
+Gets or sets the volume in USD.
 .PARAMETER OptionBarrierUpPrice
-The up barrier price for barrier options.
+Gets or sets the up barrier price for barrier options.
 .PARAMETER OptionBarrierUpType
-The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
 .PARAMETER OptionBarrierDownPrice
-The down barrier price for barrier options.
+Gets or sets the down barrier price for barrier options.
 .PARAMETER OptionBarrierDownType
-The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
 .PARAMETER SymbolIdInt
-The symbol identifier in integer immutable format, used to correlate data across different APIs.
+Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
 .OUTPUTS
 
 V1Symbol<PSCustomObject>

@@ -23,7 +23,7 @@
 
 #include "CppRestOpenAPIClient/ApiClient.h"
 
-#include "CppRestOpenAPIClient/model/Options_OptionExchangeGroup.h"
+#include "CppRestOpenAPIClient/model/V1_OptionExchangeGroup.h"
 #include <vector>
 #include <cpprest/details/basic_types.h>
 #include <boost/optional.hpp>
@@ -52,7 +52,7 @@ public:
     /// Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
     /// </remarks>
     /// <param name="exchangeId">Exchange identifier (from the Metadata -&gt; Exchanges)</param>
-    pplx::task<std::vector<std::shared_ptr<Options_OptionExchangeGroup>>> v1OptionsExchangeIdCurrentGet(
+    pplx::task<std::vector<std::shared_ptr<V1_OptionExchangeGroup>>> v1OptionsExchangeIdCurrentGet(
         utility::string_t exchangeId
     ) const;
 

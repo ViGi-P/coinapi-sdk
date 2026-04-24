@@ -4,13 +4,13 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **symbol_id** | **String** | The symbol identifier. | [optional] |
-| **time_exchange** | **Time** | The exchange time of the order book. | [optional] |
-| **time_coinapi** | **Time** | The CoinAPI time when the order book was received. | [optional] |
-| **ask_levels** | **Integer** | The number of ask levels in the order book. | [optional] |
-| **bid_levels** | **Integer** | The number of bid levels in the order book. | [optional] |
-| **ask_depth** | **Float** | The depth of the ask side of the order book. | [optional] |
-| **bid_depth** | **Float** | The depth of the bid side of the order book. | [optional] |
+| **symbol_id** | **String** | Gets or sets the symbol identifier. | [optional] |
+| **time_exchange** | **Time** | Gets or sets the exchange time of the order book. | [optional] |
+| **time_coinapi** | **Time** | Gets or sets the CoinAPI time when the order book was received. | [optional] |
+| **ask_levels** | **Integer** | Gets or sets the number of ask levels in the order book. | [optional] |
+| **bid_levels** | **Integer** | Gets or sets the number of bid levels in the order book. | [optional] |
+| **ask_depth** | **Float** | Gets or sets the depth of the ask side of the order book. | [optional] |
+| **bid_depth** | **Float** | Gets or sets the depth of the bid side of the order book. | [optional] |
 
 ## Example
 

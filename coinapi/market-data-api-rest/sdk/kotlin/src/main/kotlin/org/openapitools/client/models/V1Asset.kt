@@ -50,8 +50,8 @@ import com.squareup.moshi.JsonClass
  * @param supplyTotal Gets or sets the total supply of the asset.
  * @param supplyMax Gets or sets the maximum supply of the asset.
  * @param chainAddresses 
- * @param dataStart 
- * @param dataEnd 
+ * @param dataStart Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
+ * @param dataEnd Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
  */
 
 
@@ -133,9 +133,11 @@ data class V1Asset (
     @Json(name = "chain_addresses")
     val chainAddresses: kotlin.collections.List<V1ChainNetworkAddress>? = null,
 
+    /* Gets the start date of the available data as a string in the format \"yyyy-MM-dd\". */
     @Json(name = "data_start")
     val dataStart: kotlin.String? = null,
 
+    /* Gets the end date of the available data as a string in the format \"yyyy-MM-dd\". */
     @Json(name = "data_end")
     val dataEnd: kotlin.String? = null
 

@@ -7,42 +7,42 @@ goog.provide('API.Client.v1.TimeseriesPeriod');
 API.Client.V1TimeseriesPeriod = function() {}
 
 /**
- * The period ID.
+ * Gets or sets the period ID.
  * @type {!string}
  * @export
  */
 API.Client.V1TimeseriesPeriod.prototype.periodId;
 
 /**
- * The length of the period in seconds.
+ * Gets or sets the length of the period in seconds.
  * @type {!number}
  * @export
  */
 API.Client.V1TimeseriesPeriod.prototype.lengthSeconds;
 
 /**
- * The length of the period in months.
+ * Gets or sets the length of the period in months.
  * @type {!number}
  * @export
  */
 API.Client.V1TimeseriesPeriod.prototype.lengthMonths;
 
 /**
- * The unit count.
+ * Gets or sets the unit count.
  * @type {!number}
  * @export
  */
 API.Client.V1TimeseriesPeriod.prototype.unitCount;
 
 /**
- * The unit name.
+ * Gets or sets the unit name.
  * @type {!string}
  * @export
  */
 API.Client.V1TimeseriesPeriod.prototype.unitName;
 
 /**
- * The display name of the timeseries period.
+ * Gets or sets the display name of the timeseries period.
  * @type {!string}
  * @export
  */

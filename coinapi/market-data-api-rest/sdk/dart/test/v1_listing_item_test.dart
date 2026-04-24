@@ -22,13 +22,13 @@ void main() {
       // TODO
     });
 
-    // The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+    // Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
     // String symbolId
     test('to test the property `symbolId`', () async {
       // TODO
     });
 
-    // The exchange-native symbol identifier. Null for exchange-level metrics.
+    // Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
     // String symbolIdExternal
     test('to test the property `symbolIdExternal`', () async {
       // TODO
@@ -46,19 +46,19 @@ void main() {
       // TODO
     });
 
-    // Gets or sets the asset ID from the exchange.
+    // Gets or sets the asset ID.
     // String assetIdExternal
     test('to test the property `assetIdExternal`', () async {
       // TODO
     });
 
-    // Gets or sets the chain id.
+    // Gets or sets the chain ID.
     // String chainId
     test('to test the property `chainId`', () async {
       // TODO
     });
 
-    // Gets or sets the network id.
+    // Gets or sets the network ID.
     // String networkId
     test('to test the property `networkId`', () async {
       // TODO

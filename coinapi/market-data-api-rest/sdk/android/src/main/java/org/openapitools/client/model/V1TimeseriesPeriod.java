@@ -35,9 +35,9 @@ public class V1TimeseriesPeriod {
   private String displayName = null;
 
   /**
-   * The period ID.
+   * Gets or sets the period ID.
    **/
-  @ApiModelProperty(value = "The period ID.")
+  @ApiModelProperty(value = "Gets or sets the period ID.")
   public String getPeriodId() {
     return periodId;
   }
@@ -46,9 +46,9 @@ public class V1TimeseriesPeriod {
   }
 
   /**
-   * The length of the period in seconds.
+   * Gets or sets the length of the period in seconds.
    **/
-  @ApiModelProperty(value = "The length of the period in seconds.")
+  @ApiModelProperty(value = "Gets or sets the length of the period in seconds.")
   public Integer getLengthSeconds() {
     return lengthSeconds;
   }
@@ -57,9 +57,9 @@ public class V1TimeseriesPeriod {
   }
 
   /**
-   * The length of the period in months.
+   * Gets or sets the length of the period in months.
    **/
-  @ApiModelProperty(value = "The length of the period in months.")
+  @ApiModelProperty(value = "Gets or sets the length of the period in months.")
   public Integer getLengthMonths() {
     return lengthMonths;
   }
@@ -68,9 +68,9 @@ public class V1TimeseriesPeriod {
   }
 
   /**
-   * The unit count.
+   * Gets or sets the unit count.
    **/
-  @ApiModelProperty(value = "The unit count.")
+  @ApiModelProperty(value = "Gets or sets the unit count.")
   public Integer getUnitCount() {
     return unitCount;
   }
@@ -79,9 +79,9 @@ public class V1TimeseriesPeriod {
   }
 
   /**
-   * The unit name.
+   * Gets or sets the unit name.
    **/
-  @ApiModelProperty(value = "The unit name.")
+  @ApiModelProperty(value = "Gets or sets the unit name.")
   public String getUnitName() {
     return unitName;
   }
@@ -90,9 +90,9 @@ public class V1TimeseriesPeriod {
   }
 
   /**
-   * The display name of the timeseries period.
+   * Gets or sets the display name of the timeseries period.
    **/
-  @ApiModelProperty(value = "The display name of the timeseries period.")
+  @ApiModelProperty(value = "Gets or sets the display name of the timeseries period.")
   public String getDisplayName() {
     return displayName;
   }

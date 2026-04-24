@@ -24,13 +24,13 @@ class V1SymbolMapping {
     this.sizePrecision,
   });
 
-  /// The symbol ID.
+  /// Gets or sets the symbol ID.
   String? symbolId;
 
-  /// The exchange-specific symbol ID.
+  /// Gets or sets the exchange-specific symbol ID.
   String? symbolIdExchange;
 
-  /// The CoinAPI DataInfo ID.
+  /// Gets or sets the DataInfo ID.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -39,22 +39,22 @@ class V1SymbolMapping {
   ///
   int? coinapiDatainfoId;
 
-  /// The exchange-specific base asset ID.
+  /// Gets or sets the exchange-specific base asset ID.
   String? assetIdBaseExchange;
 
-  /// The exchange-specific quote asset ID.
+  /// Gets or sets the exchange-specific quote asset ID.
   String? assetIdQuoteExchange;
 
-  /// The base asset ID.
+  /// Gets or sets the base asset ID.
   String? assetIdBase;
 
-  /// The quote asset ID.
+  /// Gets or sets the quote asset ID.
   String? assetIdQuote;
 
-  /// The price precision.
+  /// Gets or sets the price precision.
   double? pricePrecision;
 
-  /// The size precision.
+  /// Gets or sets the size precision.
   double? sizePrecision;
 
   @override

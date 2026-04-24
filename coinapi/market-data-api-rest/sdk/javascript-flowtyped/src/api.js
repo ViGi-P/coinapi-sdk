@@ -75,61 +75,61 @@ export class RequiredError extends Error {
  */
 export type OhlcvExchangeTimeseriesItem = {
     /**
-     * The start time of the time period.
+     * Gets or sets the start time of the time period.
      * @type {Date}
      * @memberof OhlcvExchangeTimeseriesItem
      */
     time_period_start?: Date;
     /**
-     * The end time of the time period.
+     * Gets or sets the end time of the time period.
      * @type {Date}
      * @memberof OhlcvExchangeTimeseriesItem
      */
     time_period_end?: Date;
     /**
-     * The time when the price opened.
+     * Gets or sets the time when the price opened.
      * @type {Date}
      * @memberof OhlcvExchangeTimeseriesItem
      */
     time_open?: Date;
     /**
-     * The time when the price closed.
+     * Gets or sets the time when the price closed.
      * @type {Date}
      * @memberof OhlcvExchangeTimeseriesItem
      */
     time_close?: Date;
     /**
-     * The opening price.
+     * Gets or sets the opening price.
      * @type {number}
      * @memberof OhlcvExchangeTimeseriesItem
      */
     price_open?: number;
     /**
-     * The highest price during the time period.
+     * Gets or sets the highest price during the time period.
      * @type {number}
      * @memberof OhlcvExchangeTimeseriesItem
      */
     price_high?: number;
     /**
-     * The lowest price during the time period.
+     * Gets or sets the lowest price during the time period.
      * @type {number}
      * @memberof OhlcvExchangeTimeseriesItem
      */
     price_low?: number;
     /**
-     * The closing price.
+     * Gets or sets the closing price.
      * @type {number}
      * @memberof OhlcvExchangeTimeseriesItem
      */
     price_close?: number;
     /**
-     * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+     * Gets or sets the total volume traded during the time period.
      * @type {number}
      * @memberof OhlcvExchangeTimeseriesItem
      */
     volume_traded?: number;
     /**
-     * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+     * Gets or sets the number of trades executed during the time period.
      * @type {number}
      * @memberof OhlcvExchangeTimeseriesItem
      */
@@ -146,68 +146,6 @@ export type OhlcvExchangeTimeseriesItem = {
      * @memberof OhlcvExchangeTimeseriesItem
      */
     symbol_id_coinapi?: string;
-}
-
-/**
- * Represents an option exchange group data model.
- * @export
- */
-export type OptionsOptionExchangeGroup = {
-    /**
-     * The base asset identifier.
-     * @type {string}
-     * @memberof OptionsOptionExchangeGroup
-     */
-    asset_id_base?: string;
-    /**
-     * The quote asset identifier.
-     * @type {string}
-     * @memberof OptionsOptionExchangeGroup
-     */
-    asset_id_quote?: string;
-    /**
-     * The underlying price of the option.
-     * @type {number}
-     * @memberof OptionsOptionExchangeGroup
-     */
-    underlying_price?: number;
-    /**
-     * The expiration time of the option.
-     * @type {Date}
-     * @memberof OptionsOptionExchangeGroup
-     */
-    time_expiration?: Date;
-    /**
-     * The list of strikes available.
-     * @type {Array<OptionsStrike>}
-     * @memberof OptionsOptionExchangeGroup
-     */
-    strikes?: Array<OptionsStrike>;
-}
-
-/**
- * Represents a strike within the option exchange group.
- * @export
- */
-export type OptionsStrike = {
-    /**
-     * The strike price.
-     * @type {number}
-     * @memberof OptionsStrike
-     */
-    strike_price?: number;
-    /**
-     * 
-     * @type {V1QuoteTrade}
-     * @memberof OptionsStrike
-     */
-    call?: V1QuoteTrade;
-    /**
-     * 
-     * @type {V1QuoteTrade}
-     * @memberof OptionsStrike
-     */
-    put?: V1QuoteTrade;
 }
 
 /**
@@ -330,13 +268,13 @@ export type V1Asset = {
      */
     chain_addresses?: Array<V1ChainNetworkAddress>;
     /**
-     * 
+     * Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
      * @type {string}
      * @memberof V1Asset
      */
     data_start?: string;
     /**
-     * 
+     * Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
      * @type {string}
      * @memberof V1Asset
      */
@@ -411,13 +349,13 @@ export type V1Exchange = {
      */
     name?: string;
     /**
-     * 
+     * Gets the start date of the exchange\'s data.
      * @type {string}
      * @memberof V1Exchange
      */
     data_start?: string;
     /**
-     * 
+     * Gets the end date of the exchange\'s data.
      * @type {string}
      * @memberof V1Exchange
      */
@@ -501,7 +439,7 @@ export type V1Exchange = {
      */
     icons?: Array<V1Icon>;
     /**
-     * Rank of the exchange.
+     * Rank of the exchange - higher rank means exchange is more reliable
      * @type {number}
      * @memberof V1Exchange
      */
@@ -645,7 +583,7 @@ export type V1ExchangeRatesTimeseriesItem = {
 }
 
 /**
- * Class representation of general metric data. This class is an XML type with name \'general_data\' and inherits from the BaseCsvModel class.
+ * Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class.
  * @export
  */
 export type V1GeneralData = {
@@ -736,37 +674,37 @@ export type V1Icon = {
  */
 export type V1LastTrade = {
     /**
-     * The exchange time of the last trade.
+     * Gets or sets the exchange time of the last trade.
      * @type {Date}
      * @memberof V1LastTrade
      */
     time_exchange?: Date;
     /**
-     * The CoinAPI time when the last trade was received.
+     * Gets or sets the CoinAPI time when the last trade was received.
      * @type {Date}
      * @memberof V1LastTrade
      */
     time_coinapi?: Date;
     /**
-     * The UUID of the last trade.
+     * Gets or sets the UUID of the last trade.
      * @type {string}
      * @memberof V1LastTrade
      */
     uuid?: string;
     /**
-     * The price of the last trade.
+     * Gets or sets the price of the last trade.
      * @type {number}
      * @memberof V1LastTrade
      */
     price?: number;
     /**
-     * The size of the last trade.
+     * Gets or sets the size of the last trade.
      * @type {number}
      * @memberof V1LastTrade
      */
     size?: number;
     /**
-     * The taker side of the last trade.
+     * Gets or sets the taker side of the last trade.
      * @type {string}
      * @memberof V1LastTrade
      */
@@ -774,7 +712,7 @@ export type V1LastTrade = {
 }
 
 /**
- * Represents a listing item.
+ * Represents a listing data item.
  * @export
  */
 export type V1ListingItem = {
@@ -785,13 +723,13 @@ export type V1ListingItem = {
      */
     metric_id?: string;
     /**
-     * The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+     * Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
      * @type {string}
      * @memberof V1ListingItem
      */
     symbol_id?: string;
     /**
-     * The exchange-native symbol identifier. Null for exchange-level metrics.
+     * Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
      * @type {string}
      * @memberof V1ListingItem
      */
@@ -809,19 +747,19 @@ export type V1ListingItem = {
      */
     asset_id?: string;
     /**
-     * Gets or sets the asset ID from the exchange.
+     * Gets or sets the asset ID.
      * @type {string}
      * @memberof V1ListingItem
      */
     asset_id_external?: string;
     /**
-     * Gets or sets the chain id.
+     * Gets or sets the chain ID.
      * @type {string}
      * @memberof V1ListingItem
      */
     chain_id?: string;
     /**
-     * Gets or sets the network id.
+     * Gets or sets the network ID.
      * @type {string}
      * @memberof V1ListingItem
      */
@@ -898,36 +836,73 @@ export type V1MetricInfo = {
 }
 
 /**
+ * Represents an option exchange group data model.
+ * @export
+ */
+export type V1OptionExchangeGroup = {
+    /**
+     * Gets or sets the base asset identifier.
+     * @type {string}
+     * @memberof V1OptionExchangeGroup
+     */
+    asset_id_base?: string;
+    /**
+     * Gets or sets the quote asset identifier.
+     * @type {string}
+     * @memberof V1OptionExchangeGroup
+     */
+    asset_id_quote?: string;
+    /**
+     * Gets or sets the underlying price of the option.
+     * @type {number}
+     * @memberof V1OptionExchangeGroup
+     */
+    underlying_price?: number;
+    /**
+     * Gets or sets the expiration time of the option.
+     * @type {Date}
+     * @memberof V1OptionExchangeGroup
+     */
+    time_expiration?: Date;
+    /**
+     * Gets or sets the list of strikes available.
+     * @type {Array<V1Strike>}
+     * @memberof V1OptionExchangeGroup
+     */
+    strikes?: Array<V1Strike>;
+}
+
+/**
  * Represents an order book with additional information and functionality.
  * @export
  */
 export type V1OrderBook = {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      * @type {string}
      * @memberof V1OrderBook
      */
     symbol_id?: string;
     /**
-     * The exchange time of the order book.
+     * Gets or sets the exchange time of the order book.
      * @type {Date}
      * @memberof V1OrderBook
      */
     time_exchange?: Date;
     /**
-     * The CoinAPI time when the order book was received.
+     * Gets or sets the CoinAPI time when the order book was received.
      * @type {Date}
      * @memberof V1OrderBook
      */
     time_coinapi?: Date;
     /**
-     * The asks made by market makers.
+     * Gets or sets the asks made by market makers.
      * @type {AnyType}
      * @memberof V1OrderBook
      */
     asks?: AnyType;
     /**
-     * The bids made by market makers.
+     * Gets or sets the bids made by market makers.
      * @type {AnyType}
      * @memberof V1OrderBook
      */
@@ -940,31 +915,31 @@ export type V1OrderBook = {
  */
 export type V1OrderBookBase = {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      * @type {string}
      * @memberof V1OrderBookBase
      */
     symbol_id?: string;
     /**
-     * The exchange time of the order book.
+     * Gets or sets the exchange time of the order book.
      * @type {Date}
      * @memberof V1OrderBookBase
      */
     time_exchange?: Date;
     /**
-     * The CoinAPI time when the order book was received.
+     * Gets or sets the CoinAPI time when the order book was received.
      * @type {Date}
      * @memberof V1OrderBookBase
      */
     time_coinapi?: Date;
     /**
-     * The asks made by market makers.
+     * Gets or sets the asks made by market makers.
      * @type {AnyType}
      * @memberof V1OrderBookBase
      */
     asks?: AnyType;
     /**
-     * The bids made by market makers.
+     * Gets or sets the bids made by market makers.
      * @type {AnyType}
      * @memberof V1OrderBookBase
      */
@@ -977,43 +952,43 @@ export type V1OrderBookBase = {
  */
 export type V1OrderBookDepth = {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      * @type {string}
      * @memberof V1OrderBookDepth
      */
     symbol_id?: string;
     /**
-     * The exchange time of the order book.
+     * Gets or sets the exchange time of the order book.
      * @type {Date}
      * @memberof V1OrderBookDepth
      */
     time_exchange?: Date;
     /**
-     * The CoinAPI time when the order book was received.
+     * Gets or sets the CoinAPI time when the order book was received.
      * @type {Date}
      * @memberof V1OrderBookDepth
      */
     time_coinapi?: Date;
     /**
-     * The number of ask levels in the order book.
+     * Gets or sets the number of ask levels in the order book.
      * @type {number}
      * @memberof V1OrderBookDepth
      */
     ask_levels?: number;
     /**
-     * The number of bid levels in the order book.
+     * Gets or sets the number of bid levels in the order book.
      * @type {number}
      * @memberof V1OrderBookDepth
      */
     bid_levels?: number;
     /**
-     * The depth of the ask side of the order book.
+     * Gets or sets the depth of the ask side of the order book.
      * @type {number}
      * @memberof V1OrderBookDepth
      */
     ask_depth?: number;
     /**
-     * The depth of the bid side of the order book.
+     * Gets or sets the depth of the bid side of the order book.
      * @type {number}
      * @memberof V1OrderBookDepth
      */
@@ -1026,43 +1001,43 @@ export type V1OrderBookDepth = {
  */
 export type V1Quote = {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      * @type {string}
      * @memberof V1Quote
      */
     symbol_id?: string;
     /**
-     * The exchange time of the quote.
+     * Gets or sets the exchange time of the quote.
      * @type {Date}
      * @memberof V1Quote
      */
     time_exchange?: Date;
     /**
-     * The CoinAPI time when the quote was received.
+     * Gets or sets the CoinAPI time when the quote was received.
      * @type {Date}
      * @memberof V1Quote
      */
     time_coinapi?: Date;
     /**
-     * The best asking price.
+     * Gets or sets the best asking price.
      * @type {number}
      * @memberof V1Quote
      */
     ask_price?: number;
     /**
-     * The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+     * Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
      * @type {number}
      * @memberof V1Quote
      */
     ask_size?: number;
     /**
-     * The best bidding price.
+     * Gets or sets the best bidding price.
      * @type {number}
      * @memberof V1Quote
      */
     bid_price?: number;
     /**
-     * The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+     * Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
      * @type {number}
      * @memberof V1Quote
      */
@@ -1075,43 +1050,43 @@ export type V1Quote = {
  */
 export type V1QuoteTrade = {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      * @type {string}
      * @memberof V1QuoteTrade
      */
     symbol_id?: string;
     /**
-     * The exchange time of the quote trade.
+     * Gets or sets the exchange time of the quote trade.
      * @type {Date}
      * @memberof V1QuoteTrade
      */
     time_exchange?: Date;
     /**
-     * The CoinAPI time when the quote trade was received.
+     * Gets or sets the CoinAPI time when the quote trade was received.
      * @type {Date}
      * @memberof V1QuoteTrade
      */
     time_coinapi?: Date;
     /**
-     * The best asking price.
+     * Gets or sets the best asking price.
      * @type {number}
      * @memberof V1QuoteTrade
      */
     ask_price?: number;
     /**
-     * The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+     * Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
      * @type {number}
      * @memberof V1QuoteTrade
      */
     ask_size?: number;
     /**
-     * The best bidding price.
+     * Gets or sets the best bidding price.
      * @type {number}
      * @memberof V1QuoteTrade
      */
     bid_price?: number;
     /**
-     * The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+     * Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
      * @type {number}
      * @memberof V1QuoteTrade
      */
@@ -1125,318 +1100,343 @@ export type V1QuoteTrade = {
 }
 
 /**
+ * Represents a strike within the option exchange group.
+ * @export
+ */
+export type V1Strike = {
+    /**
+     * Gets or sets the strike price.
+     * @type {number}
+     * @memberof V1Strike
+     */
+    strike_price?: number;
+    /**
+     * 
+     * @type {V1QuoteTrade}
+     * @memberof V1Strike
+     */
+    call?: V1QuoteTrade;
+    /**
+     * 
+     * @type {V1QuoteTrade}
+     * @memberof V1Strike
+     */
+    put?: V1QuoteTrade;
+}
+
+/**
  * Represents a symbol data model.
  * @export
  */
 export type V1Symbol = {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      * @type {string}
      * @memberof V1Symbol
      */
     symbol_id?: string;
     /**
-     * The exchange identifier.
+     * Gets or sets the exchange identifier.
      * @type {string}
      * @memberof V1Symbol
      */
     exchange_id?: string;
     /**
-     * The symbol type.
+     * Gets or sets the symbol type.
      * @type {string}
      * @memberof V1Symbol
      */
     symbol_type?: string;
     /**
-     * The base asset identifier.
+     * Gets or sets the base asset identifier.
      * @type {string}
      * @memberof V1Symbol
      */
     asset_id_base?: string;
     /**
-     * The quote asset identifier.
+     * Gets or sets the quote asset identifier.
      * @type {string}
      * @memberof V1Symbol
      */
     asset_id_quote?: string;
     /**
-     * The unit asset identifier.
+     * Gets or sets the unit asset identifier.
      * @type {string}
      * @memberof V1Symbol
      */
     asset_id_unit?: string;
     /**
-     * The contract unit for futures.
+     * Gets or sets the contract unit for futures.
      * @type {number}
      * @memberof V1Symbol
      */
     future_contract_unit?: number;
     /**
-     * The asset used as the unit for futures contract.
+     * Gets or sets the asset used as the unit for futures contract.
      * @type {string}
      * @memberof V1Symbol
      */
     future_contract_unit_asset?: string;
     /**
-     * The future delivery time for futures contract.
+     * Gets or sets the future delivery time for futures contract.
      * @type {Date}
      * @memberof V1Symbol
      */
     future_delivery_time?: Date;
     /**
-     * Indicates whether the option type is a call.
+     * Gets or sets a value indicating whether the option type is a call.
      * @type {boolean}
      * @memberof V1Symbol
      */
     option_type_is_call?: boolean;
     /**
-     * The strike price for options.
+     * Gets or sets the strike price for options.
      * @type {number}
      * @memberof V1Symbol
      */
     option_strike_price?: number;
     /**
-     * The contract unit for options.
+     * Gets or sets the contract unit for options.
      * @type {number}
      * @memberof V1Symbol
      */
     option_contract_unit?: number;
     /**
-     * The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+     * Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
      * @type {string}
      * @memberof V1Symbol
      */
     option_exercise_style?: string;
     /**
-     * The expiration time for options.
+     * Gets or sets the expiration time for options.
      * @type {Date}
      * @memberof V1Symbol
      */
     option_expiration_time?: Date;
     /**
-     * The delivery time for contracts.
+     * Gets or sets the delivery time for contracts.
      * @type {Date}
      * @memberof V1Symbol
      */
     contract_delivery_time?: Date;
     /**
-     * The contract unit for contracts.
+     * Gets or sets the contract unit for contracts.
      * @type {number}
      * @memberof V1Symbol
      */
     contract_unit?: number;
     /**
-     * The asset used as the unit for contracts.
+     * Gets or sets the asset used as the unit for contracts.
      * @type {string}
      * @memberof V1Symbol
      */
     contract_unit_asset?: string;
     /**
-     * The contract identifier.
+     * Gets or sets the contract identifier.
      * @type {string}
      * @memberof V1Symbol
      */
     contract_id?: string;
     /**
-     * The display name of the contract.
+     * Gets or sets the display name of the contract.
      * @type {string}
      * @memberof V1Symbol
      */
     contract_display_name?: string;
     /**
-     * The display description of the contract.
+     * Gets or sets the display description of the contract.
      * @type {string}
      * @memberof V1Symbol
      */
     contract_display_description?: string;
     /**
-     * 
+     * Gets the start date of the data in string format (\"yyyy-MM-dd\").
      * @type {string}
      * @memberof V1Symbol
      */
     data_start?: string;
     /**
-     * 
+     * Gets the end date of the data in string format (\"yyyy-MM-dd\").
      * @type {string}
      * @memberof V1Symbol
      */
     data_end?: string;
     /**
-     * The start date of quote data.
+     * Gets or sets the start date of quote data.
      * @type {Date}
      * @memberof V1Symbol
      */
     data_quote_start?: Date;
     /**
-     * The end date of quote data.
+     * Gets or sets the end date of quote data.
      * @type {Date}
      * @memberof V1Symbol
      */
     data_quote_end?: Date;
     /**
-     * The start date of order book data.
+     * Gets or sets the start date of order book data.
      * @type {Date}
      * @memberof V1Symbol
      */
     data_orderbook_start?: Date;
     /**
-     * The end date of order book data.
+     * Gets or sets the end date of order book data.
      * @type {Date}
      * @memberof V1Symbol
      */
     data_orderbook_end?: Date;
     /**
-     * The start date of trade data.
+     * Gets or sets the start date of trade data.
      * @type {Date}
      * @memberof V1Symbol
      */
     data_trade_start?: Date;
     /**
-     * The end date of trade data.
+     * Gets or sets the end date of trade data.
      * @type {Date}
      * @memberof V1Symbol
      */
     data_trade_end?: Date;
     /**
-     * The index identifier.
+     * Gets or sets the index identifier.
      * @type {string}
      * @memberof V1Symbol
      */
     index_id?: string;
     /**
-     * The display name of the index.
+     * Gets or sets the display name of the index.
      * @type {string}
      * @memberof V1Symbol
      */
     index_display_name?: string;
     /**
-     * The display description of the index.
+     * Gets or sets the display description of the index.
      * @type {string}
      * @memberof V1Symbol
      */
     index_display_description?: string;
     /**
-     * The volume in the last 1 hour.
+     * Gets or sets the volume in the last 1 hour.
      * @type {number}
      * @memberof V1Symbol
      */
     volume_1hrs?: number;
     /**
-     * The volume in USD in the last 1 hour.
+     * Gets or sets the volume in USD in the last 1 hour.
      * @type {number}
      * @memberof V1Symbol
      */
     volume_1hrs_usd?: number;
     /**
-     * The volume in the last 1 day.
+     * Gets or sets the volume in the last 1 day.
      * @type {number}
      * @memberof V1Symbol
      */
     volume_1day?: number;
     /**
-     * The volume in USD in the last 1 day.
+     * Gets or sets the volume in USD in the last 1 day.
      * @type {number}
      * @memberof V1Symbol
      */
     volume_1day_usd?: number;
     /**
-     * The volume in the last 1 month.
+     * Gets or sets the volume in the last 1 month.
      * @type {number}
      * @memberof V1Symbol
      */
     volume_1mth?: number;
     /**
-     * The volume in USD in the last 1 month.
+     * Gets or sets the volume in USD in the last 1 month.
      * @type {number}
      * @memberof V1Symbol
      */
     volume_1mth_usd?: number;
     /**
-     * The price.
+     * Gets or sets the price.
      * @type {number}
      * @memberof V1Symbol
      */
     price?: number;
     /**
-     * The symbol identifier in the exchange.
+     * Gets or sets the symbol identifier in the exchange.
      * @type {string}
      * @memberof V1Symbol
      */
     symbol_id_exchange?: string;
     /**
-     * The base asset identifier in the exchange.
+     * Gets or sets the base asset identifier in the exchange.
      * @type {string}
      * @memberof V1Symbol
      */
     asset_id_base_exchange?: string;
     /**
-     * The quote asset identifier in the exchange.
+     * Gets or sets the quote asset identifier in the exchange.
      * @type {string}
      * @memberof V1Symbol
      */
     asset_id_quote_exchange?: string;
     /**
-     * The price precision.
+     * Gets or sets the price precision.
      * @type {number}
      * @memberof V1Symbol
      */
     price_precision?: number;
     /**
-     * The size precision.
+     * Gets or sets the size precision.
      * @type {number}
      * @memberof V1Symbol
      */
     size_precision?: number;
     /**
      * Key Value Pair store with raw data from the data source.
-     * @type {{ [key: string]: string; }}
+     * @type {{ [key: string]: string | null; }}
      * @memberof V1Symbol
      */
-    raw_kvp?: { [key: string]: string; };
+    raw_kvp?: { [key: string]: string | null; };
     /**
-     * Indicates whether the futures contract is inverse (coin-margined).
+     * Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
      * @type {boolean}
      * @memberof V1Symbol
      */
     future_is_inverse?: boolean;
     /**
-     * Indicates whether the futures contract is quanto.
+     * Gets or sets a value indicating whether the futures contract is quanto.
      * @type {boolean}
      * @memberof V1Symbol
      */
     future_is_quanto?: boolean;
     /**
-     * Volume unit in USD.
+     * Gets or sets the volume in USD.
      * @type {number}
      * @memberof V1Symbol
      */
     volume_to_usd?: number;
     /**
-     * The up barrier price for barrier options.
+     * Gets or sets the up barrier price for barrier options.
      * @type {number}
      * @memberof V1Symbol
      */
     option_barrier_up_price?: number;
     /**
-     * The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+     * Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
      * @type {string}
      * @memberof V1Symbol
      */
     option_barrier_up_type?: string;
     /**
-     * The down barrier price for barrier options.
+     * Gets or sets the down barrier price for barrier options.
      * @type {number}
      * @memberof V1Symbol
      */
     option_barrier_down_price?: number;
     /**
-     * The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+     * Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
      * @type {string}
      * @memberof V1Symbol
      */
     option_barrier_down_type?: string;
     /**
-     * The symbol identifier in integer immutable format, used to correlate data across different APIs.
+     * Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
      * @type {number}
      * @memberof V1Symbol
      */
@@ -1449,55 +1449,55 @@ export type V1Symbol = {
  */
 export type V1SymbolMapping = {
     /**
-     * The symbol ID.
+     * Gets or sets the symbol ID.
      * @type {string}
      * @memberof V1SymbolMapping
      */
     symbol_id?: string;
     /**
-     * The exchange-specific symbol ID.
+     * Gets or sets the exchange-specific symbol ID.
      * @type {string}
      * @memberof V1SymbolMapping
      */
     symbol_id_exchange?: string;
     /**
-     * The CoinAPI DataInfo ID.
+     * Gets or sets the DataInfo ID.
      * @type {number}
      * @memberof V1SymbolMapping
      */
     coinapi_datainfo_id?: number;
     /**
-     * The exchange-specific base asset ID.
+     * Gets or sets the exchange-specific base asset ID.
      * @type {string}
      * @memberof V1SymbolMapping
      */
     asset_id_base_exchange?: string;
     /**
-     * The exchange-specific quote asset ID.
+     * Gets or sets the exchange-specific quote asset ID.
      * @type {string}
      * @memberof V1SymbolMapping
      */
     asset_id_quote_exchange?: string;
     /**
-     * The base asset ID.
+     * Gets or sets the base asset ID.
      * @type {string}
      * @memberof V1SymbolMapping
      */
     asset_id_base?: string;
     /**
-     * The quote asset ID.
+     * Gets or sets the quote asset ID.
      * @type {string}
      * @memberof V1SymbolMapping
      */
     asset_id_quote?: string;
     /**
-     * The price precision.
+     * Gets or sets the price precision.
      * @type {number}
      * @memberof V1SymbolMapping
      */
     price_precision?: number;
     /**
-     * The size precision.
+     * Gets or sets the size precision.
      * @type {number}
      * @memberof V1SymbolMapping
      */
@@ -1510,61 +1510,61 @@ export type V1SymbolMapping = {
  */
 export type V1TimeseriesItem = {
     /**
-     * The start time of the time period.
+     * Gets or sets the start time of the time period.
      * @type {Date}
      * @memberof V1TimeseriesItem
      */
     time_period_start?: Date;
     /**
-     * The end time of the time period.
+     * Gets or sets the end time of the time period.
      * @type {Date}
      * @memberof V1TimeseriesItem
      */
     time_period_end?: Date;
     /**
-     * The time when the price opened.
+     * Gets or sets the time when the price opened.
      * @type {Date}
      * @memberof V1TimeseriesItem
      */
     time_open?: Date;
     /**
-     * The time when the price closed.
+     * Gets or sets the time when the price closed.
      * @type {Date}
      * @memberof V1TimeseriesItem
      */
     time_close?: Date;
     /**
-     * The opening price.
+     * Gets or sets the opening price.
      * @type {number}
      * @memberof V1TimeseriesItem
      */
     price_open?: number;
     /**
-     * The highest price during the time period.
+     * Gets or sets the highest price during the time period.
      * @type {number}
      * @memberof V1TimeseriesItem
      */
     price_high?: number;
     /**
-     * The lowest price during the time period.
+     * Gets or sets the lowest price during the time period.
      * @type {number}
      * @memberof V1TimeseriesItem
      */
     price_low?: number;
     /**
-     * The closing price.
+     * Gets or sets the closing price.
      * @type {number}
      * @memberof V1TimeseriesItem
      */
     price_close?: number;
     /**
-     * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+     * Gets or sets the total volume traded during the time period.
      * @type {number}
      * @memberof V1TimeseriesItem
      */
     volume_traded?: number;
     /**
-     * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+     * Gets or sets the number of trades executed during the time period.
      * @type {number}
      * @memberof V1TimeseriesItem
      */
@@ -1577,37 +1577,37 @@ export type V1TimeseriesItem = {
  */
 export type V1TimeseriesPeriod = {
     /**
-     * The period ID.
+     * Gets or sets the period ID.
      * @type {string}
      * @memberof V1TimeseriesPeriod
      */
     period_id?: string;
     /**
-     * The length of the period in seconds.
+     * Gets or sets the length of the period in seconds.
      * @type {number}
      * @memberof V1TimeseriesPeriod
      */
     length_seconds?: number;
     /**
-     * The length of the period in months.
+     * Gets or sets the length of the period in months.
      * @type {number}
      * @memberof V1TimeseriesPeriod
      */
     length_months?: number;
     /**
-     * The unit count.
+     * Gets or sets the unit count.
      * @type {number}
      * @memberof V1TimeseriesPeriod
      */
     unit_count?: number;
     /**
-     * The unit name.
+     * Gets or sets the unit name.
      * @type {string}
      * @memberof V1TimeseriesPeriod
      */
     unit_name?: string;
     /**
-     * The display name of the timeseries period.
+     * Gets or sets the display name of the timeseries period.
      * @type {string}
      * @memberof V1TimeseriesPeriod
      */
@@ -1650,7 +1650,7 @@ export type V1Trade = {
      */
     price?: number;
     /**
-     * The base asset amount traded in the transaction.
+     * The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
      * @type {number}
      * @memberof V1Trade
      */
@@ -4136,7 +4136,7 @@ export const OptionsApiFetchParamCreator = function (configuration?: Configurati
 };
 
 export type OptionsApiType = { 
-    v1OptionsExchangeIdCurrentGet(exchangeId: string, options?: RequestOptions): Promise<Array<OptionsOptionExchangeGroup>>,
+    v1OptionsExchangeIdCurrentGet(exchangeId: string, options?: RequestOptions): Promise<Array<V1OptionExchangeGroup>>,
 }
 
 /**
@@ -4151,7 +4151,7 @@ export const OptionsApi = function(configuration?: Configuration, fetch: FetchAP
          * @summary Current data by Exchange
          * @throws {RequiredError}
          */
-        v1OptionsExchangeIdCurrentGet(exchangeId: string, options?: RequestOptions = {}): Promise<Array<OptionsOptionExchangeGroup>> {
+        v1OptionsExchangeIdCurrentGet(exchangeId: string, options?: RequestOptions = {}): Promise<Array<V1OptionExchangeGroup>> {
             const localVarFetchArgs = OptionsApiFetchParamCreator(configuration).v1OptionsExchangeIdCurrentGet(exchangeId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {

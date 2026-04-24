@@ -11,7 +11,7 @@ test_that("V1OptionsExchangeIdCurrentGet", {
   # Current data by Exchange
   # Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
   # @param exchange_id character Exchange identifier (from the Metadata -> Exchanges)
-  # @return [array[OptionsOptionExchangeGroup]]
+  # @return [array[V1OptionExchangeGroup]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")

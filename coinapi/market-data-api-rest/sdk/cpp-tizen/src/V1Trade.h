@@ -80,11 +80,11 @@ public:
 	/*! \brief Set The price of the transaction.
 	 */
 	void setPrice(double  price);
-	/*! \brief Get The base asset amount traded in the transaction.
+	/*! \brief Get The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
 	 */
 	double getSize();
 
-	/*! \brief Set The base asset amount traded in the transaction.
+	/*! \brief Set The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
 	 */
 	void setSize(double  size);
 	/*! \brief Get The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN).

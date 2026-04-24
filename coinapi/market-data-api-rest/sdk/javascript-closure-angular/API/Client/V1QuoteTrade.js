@@ -7,49 +7,49 @@ goog.provide('API.Client.v1.QuoteTrade');
 API.Client.V1QuoteTrade = function() {}
 
 /**
- * The symbol identifier.
+ * Gets or sets the symbol identifier.
  * @type {!string}
  * @export
  */
 API.Client.V1QuoteTrade.prototype.symbolId;
 
 /**
- * The exchange time of the quote trade.
+ * Gets or sets the exchange time of the quote trade.
  * @type {!Date}
  * @export
  */
 API.Client.V1QuoteTrade.prototype.timeExchange;
 
 /**
- * The CoinAPI time when the quote trade was received.
+ * Gets or sets the CoinAPI time when the quote trade was received.
  * @type {!Date}
  * @export
  */
 API.Client.V1QuoteTrade.prototype.timeCoinapi;
 
 /**
- * The best asking price.
+ * Gets or sets the best asking price.
  * @type {!number}
  * @export
  */
 API.Client.V1QuoteTrade.prototype.askPrice;
 
 /**
- * The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+ * Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
  * @type {!number}
  * @export
  */
 API.Client.V1QuoteTrade.prototype.askSize;
 
 /**
- * The best bidding price.
+ * Gets or sets the best bidding price.
  * @type {!number}
  * @export
  */
 API.Client.V1QuoteTrade.prototype.bidPrice;
 
 /**
- * The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+ * Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
  * @type {!number}
  * @export
  */

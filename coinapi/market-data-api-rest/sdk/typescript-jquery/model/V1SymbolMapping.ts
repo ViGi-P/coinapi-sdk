@@ -17,47 +17,47 @@ import * as models from './models';
  */
 export interface V1SymbolMapping {
     /**
-     * The symbol ID.
+     * Gets or sets the symbol ID.
      */
     symbol_id?: string;
 
     /**
-     * The exchange-specific symbol ID.
+     * Gets or sets the exchange-specific symbol ID.
      */
     symbol_id_exchange?: string;
 
     /**
-     * The CoinAPI DataInfo ID.
+     * Gets or sets the DataInfo ID.
      */
     coinapi_datainfo_id?: number;
 
     /**
-     * The exchange-specific base asset ID.
+     * Gets or sets the exchange-specific base asset ID.
      */
     asset_id_base_exchange?: string;
 
     /**
-     * The exchange-specific quote asset ID.
+     * Gets or sets the exchange-specific quote asset ID.
      */
     asset_id_quote_exchange?: string;
 
     /**
-     * The base asset ID.
+     * Gets or sets the base asset ID.
      */
     asset_id_base?: string;
 
     /**
-     * The quote asset ID.
+     * Gets or sets the quote asset ID.
      */
     asset_id_quote?: string;
 
     /**
-     * The price precision.
+     * Gets or sets the price precision.
      */
     price_precision?: number;
 
     /**
-     * The size precision.
+     * Gets or sets the size precision.
      */
     size_precision?: number;
 

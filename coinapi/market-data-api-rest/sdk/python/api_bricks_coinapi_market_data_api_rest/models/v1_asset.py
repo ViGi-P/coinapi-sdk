@@ -50,8 +50,8 @@ class V1Asset(BaseModel):
     supply_total: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the total supply of the asset.")
     supply_max: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the maximum supply of the asset.")
     chain_addresses: Optional[List[V1ChainNetworkAddress]] = None
-    data_start: Optional[StrictStr] = None
-    data_end: Optional[StrictStr] = None
+    data_start: Optional[StrictStr] = Field(default=None, description="Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".")
+    data_end: Optional[StrictStr] = Field(default=None, description="Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".")
     __properties: ClassVar[List[str]] = ["asset_id", "name", "type_is_crypto", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "data_symbols_count", "volume_1hrs_usd", "volume_1day_usd", "volume_1mth_usd", "price_usd", "id_icon", "supply_current", "supply_total", "supply_max", "chain_addresses", "data_start", "data_end"]
 
     model_config = ConfigDict(

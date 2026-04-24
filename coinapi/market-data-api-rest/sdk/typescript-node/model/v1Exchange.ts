@@ -29,7 +29,13 @@ export class V1Exchange {
     * Gets or sets the name of the exchange.
     */
     'name'?: string | null;
+    /**
+    * Gets the start date of the exchange\'s data.
+    */
     'dataStart'?: string | null;
+    /**
+    * Gets the end date of the exchange\'s data.
+    */
     'dataEnd'?: string | null;
     /**
     * Gets or sets the start date of quote data.
@@ -84,7 +90,7 @@ export class V1Exchange {
     */
     'icons'?: Array<V1Icon> | null;
     /**
-    * Rank of the exchange.
+    * Rank of the exchange - higher rank means exchange is more reliable
     */
     'rank'?: number;
     /**

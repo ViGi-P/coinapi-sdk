@@ -15,43 +15,43 @@
  */
 public class OASV1OrderBookDepth implements OAS.MappedProperties {
     /**
-     * The symbol identifier.
+     * Gets or sets the symbol identifier.
      * @return symbolId
      */
     public String symbolId { get; set; }
 
     /**
-     * The exchange time of the order book.
+     * Gets or sets the exchange time of the order book.
      * @return timeExchange
      */
     public Datetime timeExchange { get; set; }
 
     /**
-     * The CoinAPI time when the order book was received.
+     * Gets or sets the CoinAPI time when the order book was received.
      * @return timeCoinapi
      */
     public Datetime timeCoinapi { get; set; }
 
     /**
-     * The number of ask levels in the order book.
+     * Gets or sets the number of ask levels in the order book.
      * @return askLevels
      */
     public Long askLevels { get; set; }
 
     /**
-     * The number of bid levels in the order book.
+     * Gets or sets the number of bid levels in the order book.
      * @return bidLevels
      */
     public Long bidLevels { get; set; }
 
     /**
-     * The depth of the ask side of the order book.
+     * Gets or sets the depth of the ask side of the order book.
      * @return askDepth
      */
     public Double askDepth { get; set; }
 
     /**
-     * The depth of the bid side of the order book.
+     * Gets or sets the depth of the bid side of the order book.
      * @return bidDepth
      */
     public Double bidDepth { get; set; }

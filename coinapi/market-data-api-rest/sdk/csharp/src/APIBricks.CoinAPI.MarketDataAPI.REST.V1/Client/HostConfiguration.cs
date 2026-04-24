@@ -45,8 +45,6 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client
             _jsonOptions.Converters.Add(new DateOnlyJsonConverter());
             _jsonOptions.Converters.Add(new DateOnlyNullableJsonConverter());
             _jsonOptions.Converters.Add(new OhlcvExchangeTimeseriesItemJsonConverter());
-            _jsonOptions.Converters.Add(new OptionsOptionExchangeGroupJsonConverter());
-            _jsonOptions.Converters.Add(new OptionsStrikeJsonConverter());
             _jsonOptions.Converters.Add(new V1AssetJsonConverter());
             _jsonOptions.Converters.Add(new V1ChainJsonConverter());
             _jsonOptions.Converters.Add(new V1ChainNetworkAddressJsonConverter());
@@ -62,11 +60,13 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Client
             _jsonOptions.Converters.Add(new V1MetricJsonConverter());
             _jsonOptions.Converters.Add(new V1MetricDataJsonConverter());
             _jsonOptions.Converters.Add(new V1MetricInfoJsonConverter());
+            _jsonOptions.Converters.Add(new V1OptionExchangeGroupJsonConverter());
             _jsonOptions.Converters.Add(new V1OrderBookJsonConverter());
             _jsonOptions.Converters.Add(new V1OrderBookBaseJsonConverter());
             _jsonOptions.Converters.Add(new V1OrderBookDepthJsonConverter());
             _jsonOptions.Converters.Add(new V1QuoteJsonConverter());
             _jsonOptions.Converters.Add(new V1QuoteTradeJsonConverter());
+            _jsonOptions.Converters.Add(new V1StrikeJsonConverter());
             _jsonOptions.Converters.Add(new V1SymbolJsonConverter());
             _jsonOptions.Converters.Add(new V1SymbolMappingJsonConverter());
             _jsonOptions.Converters.Add(new V1TimeseriesItemJsonConverter());

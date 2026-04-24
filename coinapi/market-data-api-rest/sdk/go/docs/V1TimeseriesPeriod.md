@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PeriodId** | Pointer to **NullableString** | The period ID. | [optional] 
-**LengthSeconds** | Pointer to **int32** | The length of the period in seconds. | [optional] 
-**LengthMonths** | Pointer to **int32** | The length of the period in months. | [optional] 
-**UnitCount** | Pointer to **NullableInt32** | The unit count. | [optional] 
-**UnitName** | Pointer to **NullableString** | The unit name. | [optional] 
-**DisplayName** | Pointer to **NullableString** | The display name of the timeseries period. | [optional] 
+**PeriodId** | Pointer to **NullableString** | Gets or sets the period ID. | [optional] 
+**LengthSeconds** | Pointer to **int32** | Gets or sets the length of the period in seconds. | [optional] 
+**LengthMonths** | Pointer to **int32** | Gets or sets the length of the period in months. | [optional] 
+**UnitCount** | Pointer to **NullableInt32** | Gets or sets the unit count. | [optional] 
+**UnitName** | Pointer to **NullableString** | Gets or sets the unit name. | [optional] 
+**DisplayName** | Pointer to **NullableString** | Gets or sets the display name of the timeseries period. | [optional] 
 
 ## Methods
 

@@ -21,19 +21,19 @@ var _ MappedNullable = &V1Quote{}
 
 // V1Quote Represents a quote data model.
 type V1Quote struct {
-	// The symbol identifier.
+	// Gets or sets the symbol identifier.
 	SymbolId NullableString `json:"symbol_id,omitempty"`
-	// The exchange time of the quote.
+	// Gets or sets the exchange time of the quote.
 	TimeExchange *time.Time `json:"time_exchange,omitempty"`
-	// The CoinAPI time when the quote was received.
+	// Gets or sets the CoinAPI time when the quote was received.
 	TimeCoinapi *time.Time `json:"time_coinapi,omitempty"`
-	// The best asking price.
+	// Gets or sets the best asking price.
 	AskPrice NullableFloat64 `json:"ask_price,omitempty"`
-	// The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+	// Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
 	AskSize NullableFloat64 `json:"ask_size,omitempty"`
-	// The best bidding price.
+	// Gets or sets the best bidding price.
 	BidPrice NullableFloat64 `json:"bid_price,omitempty"`
-	// The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+	// Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
 	BidSize NullableFloat64 `json:"bid_size,omitempty"`
 }
 

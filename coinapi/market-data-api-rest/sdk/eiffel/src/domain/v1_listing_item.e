@@ -22,19 +22,19 @@ feature --Access
     metric_id: detachable STRING_32
       -- Gets or sets the metric ID.
     symbol_id: detachable STRING_32
-      -- The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+      -- Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
     symbol_id_external: detachable STRING_32
-      -- The exchange-native symbol identifier. Null for exchange-level metrics.
+      -- Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
     exchange_id: detachable STRING_32
       -- Gets or sets the exchange ID.
     asset_id: detachable STRING_32
       -- Gets or sets the asset ID.
     asset_id_external: detachable STRING_32
-      -- Gets or sets the asset ID from the exchange.
+      -- Gets or sets the asset ID.
     chain_id: detachable STRING_32
-      -- Gets or sets the chain id.
+      -- Gets or sets the chain ID.
     network_id: detachable STRING_32
-      -- Gets or sets the network id.
+      -- Gets or sets the network ID.
 
 feature -- Change Element
 

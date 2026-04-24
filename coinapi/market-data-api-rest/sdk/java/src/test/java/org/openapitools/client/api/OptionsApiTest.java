@@ -14,7 +14,7 @@
 package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
-import org.openapitools.client.model.OptionsOptionExchangeGroup;
+import org.openapitools.client.model.V1OptionExchangeGroup;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -41,7 +41,7 @@ public class OptionsApiTest {
     @Test
     public void v1OptionsExchangeIdCurrentGetTest() throws ApiException {
         String exchangeId = null;
-        List<OptionsOptionExchangeGroup> response = api.v1OptionsExchangeIdCurrentGet(exchangeId);
+        List<V1OptionExchangeGroup> response = api.v1OptionsExchangeIdCurrentGet(exchangeId);
         // TODO: test validations
     }
 

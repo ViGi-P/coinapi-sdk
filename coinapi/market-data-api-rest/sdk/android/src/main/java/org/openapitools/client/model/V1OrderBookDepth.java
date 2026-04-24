@@ -38,9 +38,9 @@ public class V1OrderBookDepth {
   private Double bidDepth = null;
 
   /**
-   * The symbol identifier.
+   * Gets or sets the symbol identifier.
    **/
-  @ApiModelProperty(value = "The symbol identifier.")
+  @ApiModelProperty(value = "Gets or sets the symbol identifier.")
   public String getSymbolId() {
     return symbolId;
   }
@@ -49,9 +49,9 @@ public class V1OrderBookDepth {
   }
 
   /**
-   * The exchange time of the order book.
+   * Gets or sets the exchange time of the order book.
    **/
-  @ApiModelProperty(value = "The exchange time of the order book.")
+  @ApiModelProperty(value = "Gets or sets the exchange time of the order book.")
   public Date getTimeExchange() {
     return timeExchange;
   }
@@ -60,9 +60,9 @@ public class V1OrderBookDepth {
   }
 
   /**
-   * The CoinAPI time when the order book was received.
+   * Gets or sets the CoinAPI time when the order book was received.
    **/
-  @ApiModelProperty(value = "The CoinAPI time when the order book was received.")
+  @ApiModelProperty(value = "Gets or sets the CoinAPI time when the order book was received.")
   public Date getTimeCoinapi() {
     return timeCoinapi;
   }
@@ -71,9 +71,9 @@ public class V1OrderBookDepth {
   }
 
   /**
-   * The number of ask levels in the order book.
+   * Gets or sets the number of ask levels in the order book.
    **/
-  @ApiModelProperty(value = "The number of ask levels in the order book.")
+  @ApiModelProperty(value = "Gets or sets the number of ask levels in the order book.")
   public Long getAskLevels() {
     return askLevels;
   }
@@ -82,9 +82,9 @@ public class V1OrderBookDepth {
   }
 
   /**
-   * The number of bid levels in the order book.
+   * Gets or sets the number of bid levels in the order book.
    **/
-  @ApiModelProperty(value = "The number of bid levels in the order book.")
+  @ApiModelProperty(value = "Gets or sets the number of bid levels in the order book.")
   public Long getBidLevels() {
     return bidLevels;
   }
@@ -93,9 +93,9 @@ public class V1OrderBookDepth {
   }
 
   /**
-   * The depth of the ask side of the order book.
+   * Gets or sets the depth of the ask side of the order book.
    **/
-  @ApiModelProperty(value = "The depth of the ask side of the order book.")
+  @ApiModelProperty(value = "Gets or sets the depth of the ask side of the order book.")
   public Double getAskDepth() {
     return askDepth;
   }
@@ -104,9 +104,9 @@ public class V1OrderBookDepth {
   }
 
   /**
-   * The depth of the bid side of the order book.
+   * Gets or sets the depth of the bid side of the order book.
    **/
-  @ApiModelProperty(value = "The depth of the bid side of the order book.")
+  @ApiModelProperty(value = "Gets or sets the depth of the bid side of the order book.")
   public Double getBidDepth() {
     return bidDepth;
   }

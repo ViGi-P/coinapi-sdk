@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## v1OptionsExchangeIdCurrentGet
 
-> [OptionsOptionExchangeGroup] v1OptionsExchangeIdCurrentGet(exchangeId)
+> [V1OptionExchangeGroup] v1OptionsExchangeIdCurrentGet(exchangeId)
 
 Current data by Exchange
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[OptionsOptionExchangeGroup]**](OptionsOptionExchangeGroup.md)
+[**[V1OptionExchangeGroup]**](V1OptionExchangeGroup.md)
 
 ### Authorization
 

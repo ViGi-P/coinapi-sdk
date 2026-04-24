@@ -22,10 +22,10 @@ class V1OrderBookDepth {
     this.bidDepth,
   });
 
-  /// The symbol identifier.
+  /// Gets or sets the symbol identifier.
   String? symbolId;
 
-  /// The exchange time of the order book.
+  /// Gets or sets the exchange time of the order book.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -34,7 +34,7 @@ class V1OrderBookDepth {
   ///
   DateTime? timeExchange;
 
-  /// The CoinAPI time when the order book was received.
+  /// Gets or sets the CoinAPI time when the order book was received.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -43,7 +43,7 @@ class V1OrderBookDepth {
   ///
   DateTime? timeCoinapi;
 
-  /// The number of ask levels in the order book.
+  /// Gets or sets the number of ask levels in the order book.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -52,7 +52,7 @@ class V1OrderBookDepth {
   ///
   int? askLevels;
 
-  /// The number of bid levels in the order book.
+  /// Gets or sets the number of bid levels in the order book.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -61,7 +61,7 @@ class V1OrderBookDepth {
   ///
   int? bidLevels;
 
-  /// The depth of the ask side of the order book.
+  /// Gets or sets the depth of the ask side of the order book.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -70,7 +70,7 @@ class V1OrderBookDepth {
   ///
   double? askDepth;
 
-  /// The depth of the bid side of the order book.
+  /// Gets or sets the depth of the bid side of the order book.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated

@@ -52,13 +52,13 @@ class V1ExchangeTest : ShouldSpec() {
             //modelInstance.name shouldBe ("TODO")
         }
 
-        // to test the property `dataStart`
+        // to test the property `dataStart` - Gets the start date of the exchange's data.
         should("test dataStart") {
             // uncomment below to test the property
             //modelInstance.dataStart shouldBe ("TODO")
         }
 
-        // to test the property `dataEnd`
+        // to test the property `dataEnd` - Gets the end date of the exchange's data.
         should("test dataEnd") {
             // uncomment below to test the property
             //modelInstance.dataEnd shouldBe ("TODO")
@@ -142,7 +142,7 @@ class V1ExchangeTest : ShouldSpec() {
             //modelInstance.icons shouldBe ("TODO")
         }
 
-        // to test the property `rank` - Rank of the exchange.
+        // to test the property `rank` - Rank of the exchange - higher rank means exchange is more reliable
         should("test rank") {
             // uncomment below to test the property
             //modelInstance.rank shouldBe ("TODO")

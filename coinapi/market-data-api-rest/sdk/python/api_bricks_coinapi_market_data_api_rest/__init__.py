@@ -39,8 +39,6 @@ __all__ = [
     "ApiAttributeError",
     "ApiException",
     "OhlcvExchangeTimeseriesItem",
-    "OptionsOptionExchangeGroup",
-    "OptionsStrike",
     "V1Asset",
     "V1Chain",
     "V1ChainNetworkAddress",
@@ -56,11 +54,13 @@ __all__ = [
     "V1Metric",
     "V1MetricData",
     "V1MetricInfo",
+    "V1OptionExchangeGroup",
     "V1OrderBook",
     "V1OrderBookBase",
     "V1OrderBookDepth",
     "V1Quote",
     "V1QuoteTrade",
+    "V1Strike",
     "V1Symbol",
     "V1SymbolMapping",
     "V1TimeseriesItem",
@@ -93,8 +93,6 @@ from api_bricks_coinapi_market_data_api_rest.exceptions import ApiException as A
 
 # import models into sdk package
 from api_bricks_coinapi_market_data_api_rest.models.ohlcv_exchange_timeseries_item import OhlcvExchangeTimeseriesItem as OhlcvExchangeTimeseriesItem
-from api_bricks_coinapi_market_data_api_rest.models.options_option_exchange_group import OptionsOptionExchangeGroup as OptionsOptionExchangeGroup
-from api_bricks_coinapi_market_data_api_rest.models.options_strike import OptionsStrike as OptionsStrike
 from api_bricks_coinapi_market_data_api_rest.models.v1_asset import V1Asset as V1Asset
 from api_bricks_coinapi_market_data_api_rest.models.v1_chain import V1Chain as V1Chain
 from api_bricks_coinapi_market_data_api_rest.models.v1_chain_network_address import V1ChainNetworkAddress as V1ChainNetworkAddress
@@ -110,11 +108,13 @@ from api_bricks_coinapi_market_data_api_rest.models.v1_listing_item import V1Lis
 from api_bricks_coinapi_market_data_api_rest.models.v1_metric import V1Metric as V1Metric
 from api_bricks_coinapi_market_data_api_rest.models.v1_metric_data import V1MetricData as V1MetricData
 from api_bricks_coinapi_market_data_api_rest.models.v1_metric_info import V1MetricInfo as V1MetricInfo
+from api_bricks_coinapi_market_data_api_rest.models.v1_option_exchange_group import V1OptionExchangeGroup as V1OptionExchangeGroup
 from api_bricks_coinapi_market_data_api_rest.models.v1_order_book import V1OrderBook as V1OrderBook
 from api_bricks_coinapi_market_data_api_rest.models.v1_order_book_base import V1OrderBookBase as V1OrderBookBase
 from api_bricks_coinapi_market_data_api_rest.models.v1_order_book_depth import V1OrderBookDepth as V1OrderBookDepth
 from api_bricks_coinapi_market_data_api_rest.models.v1_quote import V1Quote as V1Quote
 from api_bricks_coinapi_market_data_api_rest.models.v1_quote_trade import V1QuoteTrade as V1QuoteTrade
+from api_bricks_coinapi_market_data_api_rest.models.v1_strike import V1Strike as V1Strike
 from api_bricks_coinapi_market_data_api_rest.models.v1_symbol import V1Symbol as V1Symbol
 from api_bricks_coinapi_market_data_api_rest.models.v1_symbol_mapping import V1SymbolMapping as V1SymbolMapping
 from api_bricks_coinapi_market_data_api_rest.models.v1_timeseries_item import V1TimeseriesItem as V1TimeseriesItem

@@ -35,9 +35,9 @@ public class V1OrderBookBase {
   private OasAnyTypeNotMapped bids = null;
 
   /**
-   * The symbol identifier.
+   * Gets or sets the symbol identifier.
    **/
-  @ApiModelProperty(value = "The symbol identifier.")
+  @ApiModelProperty(value = "Gets or sets the symbol identifier.")
   public String getSymbolId() {
     return symbolId;
   }
@@ -46,9 +46,9 @@ public class V1OrderBookBase {
   }
 
   /**
-   * The exchange time of the order book.
+   * Gets or sets the exchange time of the order book.
    **/
-  @ApiModelProperty(value = "The exchange time of the order book.")
+  @ApiModelProperty(value = "Gets or sets the exchange time of the order book.")
   public Date getTimeExchange() {
     return timeExchange;
   }
@@ -57,9 +57,9 @@ public class V1OrderBookBase {
   }
 
   /**
-   * The CoinAPI time when the order book was received.
+   * Gets or sets the CoinAPI time when the order book was received.
    **/
-  @ApiModelProperty(value = "The CoinAPI time when the order book was received.")
+  @ApiModelProperty(value = "Gets or sets the CoinAPI time when the order book was received.")
   public Date getTimeCoinapi() {
     return timeCoinapi;
   }
@@ -68,9 +68,9 @@ public class V1OrderBookBase {
   }
 
   /**
-   * The asks made by market makers.
+   * Gets or sets the asks made by market makers.
    **/
-  @ApiModelProperty(value = "The asks made by market makers.")
+  @ApiModelProperty(value = "Gets or sets the asks made by market makers.")
   public OasAnyTypeNotMapped getAsks() {
     return asks;
   }
@@ -79,9 +79,9 @@ public class V1OrderBookBase {
   }
 
   /**
-   * The bids made by market makers.
+   * Gets or sets the bids made by market makers.
    **/
-  @ApiModelProperty(value = "The bids made by market makers.")
+  @ApiModelProperty(value = "Gets or sets the bids made by market makers.")
   public OasAnyTypeNotMapped getBids() {
     return bids;
   }

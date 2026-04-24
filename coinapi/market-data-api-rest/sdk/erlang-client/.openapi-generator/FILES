@@ -9,8 +9,6 @@ src/openapi_metrics_v2_api.erl
 src/openapi_ohlcv_api.erl
 src/openapi_ohlcv_exchange_timeseries_item.erl
 src/openapi_options_api.erl
-src/openapi_options_option_exchange_group.erl
-src/openapi_options_strike.erl
 src/openapi_order_book_api.erl
 src/openapi_order_book_l3_api.erl
 src/openapi_quotes_api.erl
@@ -31,11 +29,13 @@ src/openapi_v1_listing_item.erl
 src/openapi_v1_metric.erl
 src/openapi_v1_metric_data.erl
 src/openapi_v1_metric_info.erl
+src/openapi_v1_option_exchange_group.erl
 src/openapi_v1_order_book.erl
 src/openapi_v1_order_book_base.erl
 src/openapi_v1_order_book_depth.erl
 src/openapi_v1_quote.erl
 src/openapi_v1_quote_trade.erl
+src/openapi_v1_strike.erl
 src/openapi_v1_symbol.erl
 src/openapi_v1_symbol_mapping.erl
 src/openapi_v1_timeseries_item.erl

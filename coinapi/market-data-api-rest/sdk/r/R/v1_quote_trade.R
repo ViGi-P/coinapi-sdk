@@ -7,13 +7,13 @@
 #' @title V1QuoteTrade
 #' @description V1QuoteTrade Class
 #' @format An \code{R6Class} generator object
-#' @field symbol_id The symbol identifier. character [optional]
-#' @field time_exchange The exchange time of the quote trade. character [optional]
-#' @field time_coinapi The CoinAPI time when the quote trade was received. character [optional]
-#' @field ask_price The best asking price. numeric [optional]
-#' @field ask_size The volume resting on the best ask. If the value is equal to zero, then the size is unknown. numeric [optional]
-#' @field bid_price The best bidding price. numeric [optional]
-#' @field bid_size The volume resting on the best bid. If the value is equal to zero, then the size is unknown. numeric [optional]
+#' @field symbol_id Gets or sets the symbol identifier. character [optional]
+#' @field time_exchange Gets or sets the exchange time of the quote trade. character [optional]
+#' @field time_coinapi Gets or sets the CoinAPI time when the quote trade was received. character [optional]
+#' @field ask_price Gets or sets the best asking price. numeric [optional]
+#' @field ask_size Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown. numeric [optional]
+#' @field bid_price Gets or sets the best bidding price. numeric [optional]
+#' @field bid_size Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown. numeric [optional]
 #' @field last_trade  \link{V1LastTrade} [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
@@ -33,13 +33,13 @@ V1QuoteTrade <- R6::R6Class(
     #' @description
     #' Initialize a new V1QuoteTrade class.
     #'
-    #' @param symbol_id The symbol identifier.
-    #' @param time_exchange The exchange time of the quote trade.
-    #' @param time_coinapi The CoinAPI time when the quote trade was received.
-    #' @param ask_price The best asking price.
-    #' @param ask_size The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
-    #' @param bid_price The best bidding price.
-    #' @param bid_size The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+    #' @param symbol_id Gets or sets the symbol identifier.
+    #' @param time_exchange Gets or sets the exchange time of the quote trade.
+    #' @param time_coinapi Gets or sets the CoinAPI time when the quote trade was received.
+    #' @param ask_price Gets or sets the best asking price.
+    #' @param ask_size Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+    #' @param bid_price Gets or sets the best bidding price.
+    #' @param bid_size Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
     #' @param last_trade last_trade
     #' @param ... Other optional arguments.
     initialize = function(`symbol_id` = NULL, `time_exchange` = NULL, `time_coinapi` = NULL, `ask_price` = NULL, `ask_size` = NULL, `bid_price` = NULL, `bid_size` = NULL, `last_trade` = NULL, ...) {

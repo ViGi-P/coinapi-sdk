@@ -1227,106 +1227,6 @@ package body .Models is
 
    procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
                         Name  : in String;
-                        Value : in .Models.OptionsStrike_Type) is
-   begin
-      Into.Start_Entity (Name);
-      Serialize (Into, "strike_price", Value.Strike_Price);
-      Serialize (Into, "call", Value.Call);
-      Serialize (Into, "put", Value.Put);
-      Into.End_Entity (Name);
-   end Serialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in OptionsStrike_Type_Vectors.Vector) is
-   begin
-      Into.Start_Array (Name);
-      for Item of Value loop
-         Serialize (Into, "", Item);
-      end loop;
-      Into.End_Array (Name);
-   end Serialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.OptionsStrike_Type) is
-      Object : Swagger.Value_Type;
-   begin
-      Swagger.Streams.Deserialize (From, Name, Object);
-      Swagger.Streams.Deserialize (Object, "strike_price", Value.Strike_Price);
-      Deserialize (Object, "call", Value.Call);
-      Deserialize (Object, "put", Value.Put);
-   end Deserialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out OptionsStrike_Type_Vectors.Vector) is
-      List : Swagger.Value_Array_Type;
-      Item : .Models.OptionsStrike_Type;
-   begin
-      Value.Clear;
-      Swagger.Streams.Deserialize (From, Name, List);
-      for Data of List loop
-         Deserialize (Data, "", Item);
-         Value.Append (Item);
-      end loop;
-   end Deserialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.OptionsOptionExchangeGroup_Type) is
-   begin
-      Into.Start_Entity (Name);
-      Into.Write_Entity ("asset_id_base", Value.Asset_Id_Base);
-      Into.Write_Entity ("asset_id_quote", Value.Asset_Id_Quote);
-      Serialize (Into, "underlying_price", Value.Underlying_Price);
-      if not Value.Time_Expiration.Is_Null then
-         Into.Write_Entity ("time_expiration", Value.Time_Expiration);
-      end if;
-      Serialize (Into, "strikes", Value.Strikes);
-      Into.End_Entity (Name);
-   end Serialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in OptionsOptionExchangeGroup_Type_Vectors.Vector) is
-   begin
-      Into.Start_Array (Name);
-      for Item of Value loop
-         Serialize (Into, "", Item);
-      end loop;
-      Into.End_Array (Name);
-   end Serialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.OptionsOptionExchangeGroup_Type) is
-      Object : Swagger.Value_Type;
-   begin
-      Swagger.Streams.Deserialize (From, Name, Object);
-      Swagger.Streams.Deserialize (Object, "asset_id_base", Value.Asset_Id_Base);
-      Swagger.Streams.Deserialize (Object, "asset_id_quote", Value.Asset_Id_Quote);
-      Swagger.Streams.Deserialize (Object, "underlying_price", Value.Underlying_Price);
-      Swagger.Streams.Deserialize (Object, "time_expiration", Value.Time_Expiration);
-      Deserialize (Object, "strikes", Value.Strikes);
-   end Deserialize;
-
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out OptionsOptionExchangeGroup_Type_Vectors.Vector) is
-      List : Swagger.Value_Array_Type;
-      Item : .Models.OptionsOptionExchangeGroup_Type;
-   begin
-      Value.Clear;
-      Swagger.Streams.Deserialize (From, Name, List);
-      for Data of List loop
-         Deserialize (Data, "", Item);
-         Value.Append (Item);
-      end loop;
-   end Deserialize;
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
                         Value : in .Models.V1Asset_Type) is
    begin
       Into.Start_Entity (Name);
@@ -1698,6 +1598,106 @@ package body .Models is
                           Value : in out V1QuoteTrade_Type_Vectors.Vector) is
       List : Swagger.Value_Array_Type;
       Item : .Models.V1QuoteTrade_Type;
+   begin
+      Value.Clear;
+      Swagger.Streams.Deserialize (From, Name, List);
+      for Data of List loop
+         Deserialize (Data, "", Item);
+         Value.Append (Item);
+      end loop;
+   end Deserialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.V1Strike_Type) is
+   begin
+      Into.Start_Entity (Name);
+      Serialize (Into, "strike_price", Value.Strike_Price);
+      Serialize (Into, "call", Value.Call);
+      Serialize (Into, "put", Value.Put);
+      Into.End_Entity (Name);
+   end Serialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in V1Strike_Type_Vectors.Vector) is
+   begin
+      Into.Start_Array (Name);
+      for Item of Value loop
+         Serialize (Into, "", Item);
+      end loop;
+      Into.End_Array (Name);
+   end Serialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.V1Strike_Type) is
+      Object : Swagger.Value_Type;
+   begin
+      Swagger.Streams.Deserialize (From, Name, Object);
+      Swagger.Streams.Deserialize (Object, "strike_price", Value.Strike_Price);
+      Deserialize (Object, "call", Value.Call);
+      Deserialize (Object, "put", Value.Put);
+   end Deserialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out V1Strike_Type_Vectors.Vector) is
+      List : Swagger.Value_Array_Type;
+      Item : .Models.V1Strike_Type;
+   begin
+      Value.Clear;
+      Swagger.Streams.Deserialize (From, Name, List);
+      for Data of List loop
+         Deserialize (Data, "", Item);
+         Value.Append (Item);
+      end loop;
+   end Deserialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.V1OptionExchangeGroup_Type) is
+   begin
+      Into.Start_Entity (Name);
+      Into.Write_Entity ("asset_id_base", Value.Asset_Id_Base);
+      Into.Write_Entity ("asset_id_quote", Value.Asset_Id_Quote);
+      Serialize (Into, "underlying_price", Value.Underlying_Price);
+      if not Value.Time_Expiration.Is_Null then
+         Into.Write_Entity ("time_expiration", Value.Time_Expiration);
+      end if;
+      Serialize (Into, "strikes", Value.Strikes);
+      Into.End_Entity (Name);
+   end Serialize;
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in V1OptionExchangeGroup_Type_Vectors.Vector) is
+   begin
+      Into.Start_Array (Name);
+      for Item of Value loop
+         Serialize (Into, "", Item);
+      end loop;
+      Into.End_Array (Name);
+   end Serialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.V1OptionExchangeGroup_Type) is
+      Object : Swagger.Value_Type;
+   begin
+      Swagger.Streams.Deserialize (From, Name, Object);
+      Swagger.Streams.Deserialize (Object, "asset_id_base", Value.Asset_Id_Base);
+      Swagger.Streams.Deserialize (Object, "asset_id_quote", Value.Asset_Id_Quote);
+      Swagger.Streams.Deserialize (Object, "underlying_price", Value.Underlying_Price);
+      Swagger.Streams.Deserialize (Object, "time_expiration", Value.Time_Expiration);
+      Deserialize (Object, "strikes", Value.Strikes);
+   end Deserialize;
+
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out V1OptionExchangeGroup_Type_Vectors.Vector) is
+      List : Swagger.Value_Array_Type;
+      Item : .Models.V1OptionExchangeGroup_Type;
    begin
       Value.Clear;
       Swagger.Streams.Deserialize (From, Name, List);

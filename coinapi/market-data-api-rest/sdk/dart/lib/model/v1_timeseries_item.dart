@@ -25,7 +25,7 @@ class V1TimeseriesItem {
     this.tradesCount,
   });
 
-  /// The start time of the time period.
+  /// Gets or sets the start time of the time period.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -34,7 +34,7 @@ class V1TimeseriesItem {
   ///
   DateTime? timePeriodStart;
 
-  /// The end time of the time period.
+  /// Gets or sets the end time of the time period.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -43,25 +43,25 @@ class V1TimeseriesItem {
   ///
   DateTime? timePeriodEnd;
 
-  /// The time when the price opened.
+  /// Gets or sets the time when the price opened.
   DateTime? timeOpen;
 
-  /// The time when the price closed.
+  /// Gets or sets the time when the price closed.
   DateTime? timeClose;
 
-  /// The opening price.
+  /// Gets or sets the opening price.
   double? priceOpen;
 
-  /// The highest price during the time period.
+  /// Gets or sets the highest price during the time period.
   double? priceHigh;
 
-  /// The lowest price during the time period.
+  /// Gets or sets the lowest price during the time period.
   double? priceLow;
 
-  /// The closing price.
+  /// Gets or sets the closing price.
   double? priceClose;
 
-  /// The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+  /// Gets or sets the total volume traded during the time period.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -70,7 +70,7 @@ class V1TimeseriesItem {
   ///
   double? volumeTraded;
 
-  /// The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+  /// Gets or sets the number of trades executed during the time period.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated

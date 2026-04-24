@@ -39,13 +39,13 @@ class V1ListingItemTest : ShouldSpec() {
             //modelInstance.metricId shouldBe ("TODO")
         }
 
-        // to test the property `symbolId` - The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+        // to test the property `symbolId` - Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
         should("test symbolId") {
             // uncomment below to test the property
             //modelInstance.symbolId shouldBe ("TODO")
         }
 
-        // to test the property `symbolIdExternal` - The exchange-native symbol identifier. Null for exchange-level metrics.
+        // to test the property `symbolIdExternal` - Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
         should("test symbolIdExternal") {
             // uncomment below to test the property
             //modelInstance.symbolIdExternal shouldBe ("TODO")
@@ -63,19 +63,19 @@ class V1ListingItemTest : ShouldSpec() {
             //modelInstance.assetId shouldBe ("TODO")
         }
 
-        // to test the property `assetIdExternal` - Gets or sets the asset ID from the exchange.
+        // to test the property `assetIdExternal` - Gets or sets the asset ID.
         should("test assetIdExternal") {
             // uncomment below to test the property
             //modelInstance.assetIdExternal shouldBe ("TODO")
         }
 
-        // to test the property `chainId` - Gets or sets the chain id.
+        // to test the property `chainId` - Gets or sets the chain ID.
         should("test chainId") {
             // uncomment below to test the property
             //modelInstance.chainId shouldBe ("TODO")
         }
 
-        // to test the property `networkId` - Gets or sets the network id.
+        // to test the property `networkId` - Gets or sets the network ID.
         should("test networkId") {
             // uncomment below to test the property
             //modelInstance.networkId shouldBe ("TODO")

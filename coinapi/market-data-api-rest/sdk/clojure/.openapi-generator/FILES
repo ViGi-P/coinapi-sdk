@@ -13,8 +13,6 @@ src/coin_api_market_data_rest_api/api/quotes.clj
 src/coin_api_market_data_rest_api/api/trades.clj
 src/coin_api_market_data_rest_api/core.clj
 src/coin_api_market_data_rest_api/specs/ohlcv/exchange_timeseries_item.clj
-src/coin_api_market_data_rest_api/specs/options/option_exchange_group.clj
-src/coin_api_market_data_rest_api/specs/options/strike.clj
 src/coin_api_market_data_rest_api/specs/v1/asset.clj
 src/coin_api_market_data_rest_api/specs/v1/chain.clj
 src/coin_api_market_data_rest_api/specs/v1/chain_network_address.clj
@@ -30,11 +28,13 @@ src/coin_api_market_data_rest_api/specs/v1/listing_item.clj
 src/coin_api_market_data_rest_api/specs/v1/metric.clj
 src/coin_api_market_data_rest_api/specs/v1/metric_data.clj
 src/coin_api_market_data_rest_api/specs/v1/metric_info.clj
+src/coin_api_market_data_rest_api/specs/v1/option_exchange_group.clj
 src/coin_api_market_data_rest_api/specs/v1/order_book.clj
 src/coin_api_market_data_rest_api/specs/v1/order_book_base.clj
 src/coin_api_market_data_rest_api/specs/v1/order_book_depth.clj
 src/coin_api_market_data_rest_api/specs/v1/quote.clj
 src/coin_api_market_data_rest_api/specs/v1/quote_trade.clj
+src/coin_api_market_data_rest_api/specs/v1/strike.clj
 src/coin_api_market_data_rest_api/specs/v1/symbol.clj
 src/coin_api_market_data_rest_api/specs/v1/symbol_mapping.clj
 src/coin_api_market_data_rest_api/specs/v1/timeseries_item.clj

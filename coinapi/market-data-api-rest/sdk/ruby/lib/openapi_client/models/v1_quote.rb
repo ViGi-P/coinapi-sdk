@@ -16,25 +16,25 @@ require 'time'
 module OpenapiClient
   # Represents a quote data model.
   class V1Quote < ApiModelBase
-    # The symbol identifier.
+    # Gets or sets the symbol identifier.
     attr_accessor :symbol_id
 
-    # The exchange time of the quote.
+    # Gets or sets the exchange time of the quote.
     attr_accessor :time_exchange
 
-    # The CoinAPI time when the quote was received.
+    # Gets or sets the CoinAPI time when the quote was received.
     attr_accessor :time_coinapi
 
-    # The best asking price.
+    # Gets or sets the best asking price.
     attr_accessor :ask_price
 
-    # The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+    # Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
     attr_accessor :ask_size
 
-    # The best bidding price.
+    # Gets or sets the best bidding price.
     attr_accessor :bid_price
 
-    # The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+    # Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
     attr_accessor :bid_size
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -41,9 +41,9 @@ public class V1QuoteTrade {
   private V1LastTrade lastTrade = null;
 
   /**
-   * The symbol identifier.
+   * Gets or sets the symbol identifier.
    **/
-  @ApiModelProperty(value = "The symbol identifier.")
+  @ApiModelProperty(value = "Gets or sets the symbol identifier.")
   public String getSymbolId() {
     return symbolId;
   }
@@ -52,9 +52,9 @@ public class V1QuoteTrade {
   }
 
   /**
-   * The exchange time of the quote trade.
+   * Gets or sets the exchange time of the quote trade.
    **/
-  @ApiModelProperty(value = "The exchange time of the quote trade.")
+  @ApiModelProperty(value = "Gets or sets the exchange time of the quote trade.")
   public Date getTimeExchange() {
     return timeExchange;
   }
@@ -63,9 +63,9 @@ public class V1QuoteTrade {
   }
 
   /**
-   * The CoinAPI time when the quote trade was received.
+   * Gets or sets the CoinAPI time when the quote trade was received.
    **/
-  @ApiModelProperty(value = "The CoinAPI time when the quote trade was received.")
+  @ApiModelProperty(value = "Gets or sets the CoinAPI time when the quote trade was received.")
   public Date getTimeCoinapi() {
     return timeCoinapi;
   }
@@ -74,9 +74,9 @@ public class V1QuoteTrade {
   }
 
   /**
-   * The best asking price.
+   * Gets or sets the best asking price.
    **/
-  @ApiModelProperty(value = "The best asking price.")
+  @ApiModelProperty(value = "Gets or sets the best asking price.")
   public Double getAskPrice() {
     return askPrice;
   }
@@ -85,9 +85,9 @@ public class V1QuoteTrade {
   }
 
   /**
-   * The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+   * Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
    **/
-  @ApiModelProperty(value = "The volume resting on the best ask. If the value is equal to zero, then the size is unknown.")
+  @ApiModelProperty(value = "Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.")
   public Double getAskSize() {
     return askSize;
   }
@@ -96,9 +96,9 @@ public class V1QuoteTrade {
   }
 
   /**
-   * The best bidding price.
+   * Gets or sets the best bidding price.
    **/
-  @ApiModelProperty(value = "The best bidding price.")
+  @ApiModelProperty(value = "Gets or sets the best bidding price.")
   public Double getBidPrice() {
     return bidPrice;
   }
@@ -107,9 +107,9 @@ public class V1QuoteTrade {
   }
 
   /**
-   * The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+   * Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
    **/
-  @ApiModelProperty(value = "The volume resting on the best bid. If the value is equal to zero, then the size is unknown.")
+  @ApiModelProperty(value = "Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.")
   public Double getBidSize() {
     return bidSize;
   }

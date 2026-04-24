@@ -16,19 +16,19 @@ No summary available.
 Represents the depth of an order book.
 
 .PARAMETER SymbolId
-The symbol identifier.
+Gets or sets the symbol identifier.
 .PARAMETER TimeExchange
-The exchange time of the order book.
+Gets or sets the exchange time of the order book.
 .PARAMETER TimeCoinapi
-The CoinAPI time when the order book was received.
+Gets or sets the CoinAPI time when the order book was received.
 .PARAMETER AskLevels
-The number of ask levels in the order book.
+Gets or sets the number of ask levels in the order book.
 .PARAMETER BidLevels
-The number of bid levels in the order book.
+Gets or sets the number of bid levels in the order book.
 .PARAMETER AskDepth
-The depth of the ask side of the order book.
+Gets or sets the depth of the ask side of the order book.
 .PARAMETER BidDepth
-The depth of the bid side of the order book.
+Gets or sets the depth of the bid side of the order book.
 .OUTPUTS
 
 V1OrderBookDepth<PSCustomObject>

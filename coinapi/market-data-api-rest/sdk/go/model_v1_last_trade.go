@@ -21,17 +21,17 @@ var _ MappedNullable = &V1LastTrade{}
 
 // V1LastTrade Represents the last executed transaction.
 type V1LastTrade struct {
-	// The exchange time of the last trade.
+	// Gets or sets the exchange time of the last trade.
 	TimeExchange *time.Time `json:"time_exchange,omitempty"`
-	// The CoinAPI time when the last trade was received.
+	// Gets or sets the CoinAPI time when the last trade was received.
 	TimeCoinapi *time.Time `json:"time_coinapi,omitempty"`
-	// The UUID of the last trade.
+	// Gets or sets the UUID of the last trade.
 	Uuid *string `json:"uuid,omitempty"`
-	// The price of the last trade.
+	// Gets or sets the price of the last trade.
 	Price *float64 `json:"price,omitempty"`
-	// The size of the last trade.
+	// Gets or sets the size of the last trade.
 	Size *float64 `json:"size,omitempty"`
-	// The taker side of the last trade.
+	// Gets or sets the taker side of the last trade.
 	TakerSide NullableString `json:"taker_side,omitempty"`
 }
 

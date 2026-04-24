@@ -11,8 +11,6 @@ docs/MetricsV2Api.md
 docs/OHLCVApi.md
 docs/OhlcvExchangeTimeseriesItem.md
 docs/OptionsApi.md
-docs/OptionsOptionExchangeGroup.md
-docs/OptionsStrike.md
 docs/OrderBookApi.md
 docs/OrderBookL3Api.md
 docs/QuotesApi.md
@@ -32,11 +30,13 @@ docs/V1ListingItem.md
 docs/V1Metric.md
 docs/V1MetricData.md
 docs/V1MetricInfo.md
+docs/V1OptionExchangeGroup.md
 docs/V1OrderBook.md
 docs/V1OrderBookBase.md
 docs/V1OrderBookDepth.md
 docs/V1Quote.md
 docs/V1QuoteTrade.md
+docs/V1Strike.md
 docs/V1Symbol.md
 docs/V1SymbolMapping.md
 docs/V1TimeseriesItem.md

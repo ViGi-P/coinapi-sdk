@@ -49,8 +49,6 @@ set(SRCS
     external/cJSON.c
     model/object.c
     model/ohlcv_exchange_timeseries_item.c
-    model/options_option_exchange_group.c
-    model/options_strike.c
     model/v1_asset.c
     model/v1_chain.c
     model/v1_chain_network_address.c
@@ -66,11 +64,13 @@ set(SRCS
     model/v1_metric.c
     model/v1_metric_data.c
     model/v1_metric_info.c
+    model/v1_option_exchange_group.c
     model/v1_order_book.c
     model/v1_order_book_base.c
     model/v1_order_book_depth.c
     model/v1_quote.c
     model/v1_quote_trade.c
+    model/v1_strike.c
     model/v1_symbol.c
     model/v1_symbol_mapping.c
     model/v1_timeseries_item.c
@@ -98,8 +98,6 @@ set(HDRS
     model/object.h
     model/any_type.h
     model/ohlcv_exchange_timeseries_item.h
-    model/options_option_exchange_group.h
-    model/options_strike.h
     model/v1_asset.h
     model/v1_chain.h
     model/v1_chain_network_address.h
@@ -115,11 +113,13 @@ set(HDRS
     model/v1_metric.h
     model/v1_metric_data.h
     model/v1_metric_info.h
+    model/v1_option_exchange_group.h
     model/v1_order_book.h
     model/v1_order_book_base.h
     model/v1_order_book_depth.h
     model/v1_quote.h
     model/v1_quote_trade.h
+    model/v1_strike.h
     model/v1_symbol.h
     model/v1_symbol_mapping.h
     model/v1_timeseries_item.h

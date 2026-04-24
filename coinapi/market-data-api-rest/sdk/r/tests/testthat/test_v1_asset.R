@@ -159,6 +159,7 @@ test_that("chain_addresses", {
 
 test_that("data_start", {
   # tests for the property `data_start` (character)
+  # Gets the start date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`data_start`, "EXPECTED_RESULT")
@@ -166,6 +167,7 @@ test_that("data_start", {
 
 test_that("data_end", {
   # tests for the property `data_end` (character)
+  # Gets the end date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`data_end`, "EXPECTED_RESULT")

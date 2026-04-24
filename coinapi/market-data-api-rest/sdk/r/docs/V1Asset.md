@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **supply_total** | **numeric** | Gets or sets the total supply of the asset. | [optional] 
 **supply_max** | **numeric** | Gets or sets the maximum supply of the asset. | [optional] 
 **chain_addresses** | [**array[V1ChainNetworkAddress]**](v1.ChainNetworkAddress.md) |  | [optional] 
-**data_start** | **character** |  | [optional] [readonly] 
-**data_end** | **character** |  | [optional] [readonly] 
+**data_start** | **character** | Gets the start date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;. | [optional] [readonly] 
+**data_end** | **character** | Gets the end date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;. | [optional] [readonly] 
 
 

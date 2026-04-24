@@ -30,58 +30,58 @@ import com.squareup.moshi.JsonClass
 /**
  * Represents a timeseries item with price and volume information.
  *
- * @param timePeriodStart The start time of the time period.
- * @param timePeriodEnd The end time of the time period.
- * @param timeOpen The time when the price opened.
- * @param timeClose The time when the price closed.
- * @param priceOpen The opening price.
- * @param priceHigh The highest price during the time period.
- * @param priceLow The lowest price during the time period.
- * @param priceClose The closing price.
- * @param volumeTraded The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
- * @param tradesCount The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+ * @param timePeriodStart Gets or sets the start time of the time period.
+ * @param timePeriodEnd Gets or sets the end time of the time period.
+ * @param timeOpen Gets or sets the time when the price opened.
+ * @param timeClose Gets or sets the time when the price closed.
+ * @param priceOpen Gets or sets the opening price.
+ * @param priceHigh Gets or sets the highest price during the time period.
+ * @param priceLow Gets or sets the lowest price during the time period.
+ * @param priceClose Gets or sets the closing price.
+ * @param volumeTraded Gets or sets the total volume traded during the time period.
+ * @param tradesCount Gets or sets the number of trades executed during the time period.
  */
 
 
 data class V1TimeseriesItem (
 
-    /* The start time of the time period. */
+    /* Gets or sets the start time of the time period. */
     @Json(name = "time_period_start")
     val timePeriodStart: java.time.OffsetDateTime? = null,
 
-    /* The end time of the time period. */
+    /* Gets or sets the end time of the time period. */
     @Json(name = "time_period_end")
     val timePeriodEnd: java.time.OffsetDateTime? = null,
 
-    /* The time when the price opened. */
+    /* Gets or sets the time when the price opened. */
     @Json(name = "time_open")
     val timeOpen: java.time.OffsetDateTime? = null,
 
-    /* The time when the price closed. */
+    /* Gets or sets the time when the price closed. */
     @Json(name = "time_close")
     val timeClose: java.time.OffsetDateTime? = null,
 
-    /* The opening price. */
+    /* Gets or sets the opening price. */
     @Json(name = "price_open")
     val priceOpen: kotlin.Double? = null,
 
-    /* The highest price during the time period. */
+    /* Gets or sets the highest price during the time period. */
     @Json(name = "price_high")
     val priceHigh: kotlin.Double? = null,
 
-    /* The lowest price during the time period. */
+    /* Gets or sets the lowest price during the time period. */
     @Json(name = "price_low")
     val priceLow: kotlin.Double? = null,
 
-    /* The closing price. */
+    /* Gets or sets the closing price. */
     @Json(name = "price_close")
     val priceClose: kotlin.Double? = null,
 
-    /* The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity. */
+    /* Gets or sets the total volume traded during the time period. */
     @Json(name = "volume_traded")
     val volumeTraded: kotlin.Double? = null,
 
-    /* The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity. */
+    /* Gets or sets the number of trades executed during the time period. */
     @Json(name = "trades_count")
     val tradesCount: kotlin.Long? = null
 

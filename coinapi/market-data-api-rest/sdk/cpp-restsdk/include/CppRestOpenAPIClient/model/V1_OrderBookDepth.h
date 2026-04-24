@@ -59,7 +59,7 @@ public:
 
 
     /// <summary>
-    /// The symbol identifier.
+    /// Gets or sets the symbol identifier.
     /// </summary>
     utility::string_t getSymbolId() const;
     bool symbolIdIsSet() const;
@@ -67,7 +67,7 @@ public:
     void setSymbolId(const utility::string_t& value);
 
     /// <summary>
-    /// The exchange time of the order book.
+    /// Gets or sets the exchange time of the order book.
     /// </summary>
     utility::datetime getTimeExchange() const;
     bool timeExchangeIsSet() const;
@@ -75,7 +75,7 @@ public:
     void setTimeExchange(const utility::datetime& value);
 
     /// <summary>
-    /// The CoinAPI time when the order book was received.
+    /// Gets or sets the CoinAPI time when the order book was received.
     /// </summary>
     utility::datetime getTimeCoinapi() const;
     bool timeCoinapiIsSet() const;
@@ -83,7 +83,7 @@ public:
     void setTimeCoinapi(const utility::datetime& value);
 
     /// <summary>
-    /// The number of ask levels in the order book.
+    /// Gets or sets the number of ask levels in the order book.
     /// </summary>
     int64_t getAskLevels() const;
     bool askLevelsIsSet() const;
@@ -91,7 +91,7 @@ public:
     void setAskLevels(int64_t value);
 
     /// <summary>
-    /// The number of bid levels in the order book.
+    /// Gets or sets the number of bid levels in the order book.
     /// </summary>
     int64_t getBidLevels() const;
     bool bidLevelsIsSet() const;
@@ -99,7 +99,7 @@ public:
     void setBidLevels(int64_t value);
 
     /// <summary>
-    /// The depth of the ask side of the order book.
+    /// Gets or sets the depth of the ask side of the order book.
     /// </summary>
     double getAskDepth() const;
     bool askDepthIsSet() const;
@@ -107,7 +107,7 @@ public:
     void setAskDepth(double value);
 
     /// <summary>
-    /// The depth of the bid side of the order book.
+    /// Gets or sets the depth of the bid side of the order book.
     /// </summary>
     double getBidDepth() const;
     bool bidDepthIsSet() const;

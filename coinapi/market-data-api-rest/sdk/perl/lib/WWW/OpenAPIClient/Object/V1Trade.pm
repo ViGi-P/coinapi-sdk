@@ -257,7 +257,7 @@ __PACKAGE__->method_documentation({
     'size' => {
         datatype => 'double',
         base_name => 'size',
-        description => 'The base asset amount traded in the transaction.',
+        description => 'The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.',
         format => '',
         read_only => '',
             },

@@ -32,7 +32,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[OptionsOptionExchangeGroup]**](OptionsOptionExchangeGroup.md)
+[**array[V1OptionExchangeGroup]**](V1OptionExchangeGroup.md)
 
 ### Authorization
 

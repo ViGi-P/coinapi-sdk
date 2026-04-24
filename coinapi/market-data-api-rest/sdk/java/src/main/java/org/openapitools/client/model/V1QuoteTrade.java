@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a quote trade data model.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-23T06:06:39.606952276Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-24T06:05:03.999499045Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class V1QuoteTrade {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
@@ -102,7 +102,7 @@ public class V1QuoteTrade {
   }
 
   /**
-   * The symbol identifier.
+   * Gets or sets the symbol identifier.
    * @return symbolId
    */
   @javax.annotation.Nullable
@@ -121,7 +121,7 @@ public class V1QuoteTrade {
   }
 
   /**
-   * The exchange time of the quote trade.
+   * Gets or sets the exchange time of the quote trade.
    * @return timeExchange
    */
   @javax.annotation.Nullable
@@ -140,7 +140,7 @@ public class V1QuoteTrade {
   }
 
   /**
-   * The CoinAPI time when the quote trade was received.
+   * Gets or sets the CoinAPI time when the quote trade was received.
    * @return timeCoinapi
    */
   @javax.annotation.Nullable
@@ -159,7 +159,7 @@ public class V1QuoteTrade {
   }
 
   /**
-   * The best asking price.
+   * Gets or sets the best asking price.
    * @return askPrice
    */
   @javax.annotation.Nullable
@@ -178,7 +178,7 @@ public class V1QuoteTrade {
   }
 
   /**
-   * The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+   * Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
    * @return askSize
    */
   @javax.annotation.Nullable
@@ -197,7 +197,7 @@ public class V1QuoteTrade {
   }
 
   /**
-   * The best bidding price.
+   * Gets or sets the best bidding price.
    * @return bidPrice
    */
   @javax.annotation.Nullable
@@ -216,7 +216,7 @@ public class V1QuoteTrade {
   }
 
   /**
-   * The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+   * Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
    * @return bidSize
    */
   @javax.annotation.Nullable

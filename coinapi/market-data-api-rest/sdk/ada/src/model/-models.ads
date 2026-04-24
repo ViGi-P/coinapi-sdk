@@ -662,62 +662,6 @@ package .Models is
 
 
 
-   type OptionsStrike_Type is
-     record
-       Strike_Price : Swagger.Number;
-       Call : .Models.V1QuoteTrade_Type;
-       Put : .Models.V1QuoteTrade_Type;
-     end record;
-
-
-   package OptionsStrike_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.OptionsStrike_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.OptionsStrike_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in OptionsStrike_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.OptionsStrike_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out OptionsStrike_Type_Vectors.Vector);
-
-
-
-   type OptionsOptionExchangeGroup_Type is
-     record
-       Asset_Id_Base : Swagger.Nullable_UString;
-       Asset_Id_Quote : Swagger.Nullable_UString;
-       Underlying_Price : Swagger.Number;
-       Time_Expiration : Swagger.Nullable_Date;
-       Strikes : .Models.OptionsStrike_Type_Vectors.Vector;
-     end record;
-
-
-   package OptionsOptionExchangeGroup_Type_Vectors is
-      new Ada.Containers.Vectors (Index_Type   => Positive,
-                                  Element_Type => .Models.OptionsOptionExchangeGroup_Type);
-
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in .Models.OptionsOptionExchangeGroup_Type);
-   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
-                        Name  : in String;
-                        Value : in OptionsOptionExchangeGroup_Type_Vectors.Vector);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : out .Models.OptionsOptionExchangeGroup_Type);
-   procedure Deserialize (From  : in Swagger.Value_Type;
-                          Name  : in String;
-                          Value : in out OptionsOptionExchangeGroup_Type_Vectors.Vector);
-
-
-
    type V1Asset_Type is
      record
        Asset_Id : Swagger.Nullable_UString;
@@ -920,6 +864,62 @@ package .Models is
    procedure Deserialize (From  : in Swagger.Value_Type;
                           Name  : in String;
                           Value : in out V1QuoteTrade_Type_Vectors.Vector);
+
+
+
+   type V1Strike_Type is
+     record
+       Strike_Price : Swagger.Number;
+       Call : .Models.V1QuoteTrade_Type;
+       Put : .Models.V1QuoteTrade_Type;
+     end record;
+
+
+   package V1Strike_Type_Vectors is
+      new Ada.Containers.Vectors (Index_Type   => Positive,
+                                  Element_Type => .Models.V1Strike_Type);
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.V1Strike_Type);
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in V1Strike_Type_Vectors.Vector);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.V1Strike_Type);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out V1Strike_Type_Vectors.Vector);
+
+
+
+   type V1OptionExchangeGroup_Type is
+     record
+       Asset_Id_Base : Swagger.Nullable_UString;
+       Asset_Id_Quote : Swagger.Nullable_UString;
+       Underlying_Price : Swagger.Number;
+       Time_Expiration : Swagger.Nullable_Date;
+       Strikes : .Models.V1Strike_Type_Vectors.Vector;
+     end record;
+
+
+   package V1OptionExchangeGroup_Type_Vectors is
+      new Ada.Containers.Vectors (Index_Type   => Positive,
+                                  Element_Type => .Models.V1OptionExchangeGroup_Type);
+
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in .Models.V1OptionExchangeGroup_Type);
+   procedure Serialize (Into  : in out Swagger.Streams.Output_Stream'Class;
+                        Name  : in String;
+                        Value : in V1OptionExchangeGroup_Type_Vectors.Vector);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : out .Models.V1OptionExchangeGroup_Type);
+   procedure Deserialize (From  : in Swagger.Value_Type;
+                          Name  : in String;
+                          Value : in out V1OptionExchangeGroup_Type_Vectors.Vector);
 
 
 end .Models;

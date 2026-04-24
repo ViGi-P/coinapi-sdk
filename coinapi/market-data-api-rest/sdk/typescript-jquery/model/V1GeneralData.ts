@@ -13,7 +13,7 @@
 import * as models from './models';
 
 /**
- * Class representation of general metric data. This class is an XML type with name \'general_data\' and inherits from the BaseCsvModel class.
+ * Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class.
  */
 export interface V1GeneralData {
     /**

@@ -180,18 +180,18 @@ public:
 	/*! \brief Set 
 	 */
 	void setChainAddresses(std::list <V1.ChainNetworkAddress> chain_addresses);
-	/*! \brief Get 
+	/*! \brief Get Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
 	 */
 	std::string getDataStart();
 
-	/*! \brief Set 
+	/*! \brief Set Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
 	 */
 	void setDataStart(std::string  data_start);
-	/*! \brief Get 
+	/*! \brief Get Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
 	 */
 	std::string getDataEnd();
 
-	/*! \brief Set 
+	/*! \brief Set Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
 	 */
 	void setDataEnd(std::string  data_end);
 

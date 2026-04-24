@@ -7,7 +7,7 @@ model_instance <- V1LastTrade$new()
 
 test_that("time_exchange", {
   # tests for the property `time_exchange` (character)
-  # The exchange time of the last trade.
+  # Gets or sets the exchange time of the last trade.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`time_exchange`, "EXPECTED_RESULT")
@@ -15,7 +15,7 @@ test_that("time_exchange", {
 
 test_that("time_coinapi", {
   # tests for the property `time_coinapi` (character)
-  # The CoinAPI time when the last trade was received.
+  # Gets or sets the CoinAPI time when the last trade was received.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`time_coinapi`, "EXPECTED_RESULT")
@@ -23,7 +23,7 @@ test_that("time_coinapi", {
 
 test_that("uuid", {
   # tests for the property `uuid` (character)
-  # The UUID of the last trade.
+  # Gets or sets the UUID of the last trade.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`uuid`, "EXPECTED_RESULT")
@@ -31,7 +31,7 @@ test_that("uuid", {
 
 test_that("price", {
   # tests for the property `price` (numeric)
-  # The price of the last trade.
+  # Gets or sets the price of the last trade.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`price`, "EXPECTED_RESULT")
@@ -39,7 +39,7 @@ test_that("price", {
 
 test_that("size", {
   # tests for the property `size` (numeric)
-  # The size of the last trade.
+  # Gets or sets the size of the last trade.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`size`, "EXPECTED_RESULT")
@@ -47,7 +47,7 @@ test_that("size", {
 
 test_that("taker_side", {
   # tests for the property `taker_side` (character)
-  # The taker side of the last trade.
+  # Gets or sets the taker side of the last trade.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`taker_side`, "EXPECTED_RESULT")

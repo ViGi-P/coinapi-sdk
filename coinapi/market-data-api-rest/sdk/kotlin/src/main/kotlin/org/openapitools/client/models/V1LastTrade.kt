@@ -30,38 +30,38 @@ import com.squareup.moshi.JsonClass
 /**
  * Represents the last executed transaction.
  *
- * @param timeExchange The exchange time of the last trade.
- * @param timeCoinapi The CoinAPI time when the last trade was received.
- * @param uuid The UUID of the last trade.
- * @param price The price of the last trade.
- * @param propertySize The size of the last trade.
- * @param takerSide The taker side of the last trade.
+ * @param timeExchange Gets or sets the exchange time of the last trade.
+ * @param timeCoinapi Gets or sets the CoinAPI time when the last trade was received.
+ * @param uuid Gets or sets the UUID of the last trade.
+ * @param price Gets or sets the price of the last trade.
+ * @param propertySize Gets or sets the size of the last trade.
+ * @param takerSide Gets or sets the taker side of the last trade.
  */
 
 
 data class V1LastTrade (
 
-    /* The exchange time of the last trade. */
+    /* Gets or sets the exchange time of the last trade. */
     @Json(name = "time_exchange")
     val timeExchange: java.time.OffsetDateTime? = null,
 
-    /* The CoinAPI time when the last trade was received. */
+    /* Gets or sets the CoinAPI time when the last trade was received. */
     @Json(name = "time_coinapi")
     val timeCoinapi: java.time.OffsetDateTime? = null,
 
-    /* The UUID of the last trade. */
+    /* Gets or sets the UUID of the last trade. */
     @Json(name = "uuid")
     val uuid: java.util.UUID? = null,
 
-    /* The price of the last trade. */
+    /* Gets or sets the price of the last trade. */
     @Json(name = "price")
     val price: kotlin.Double? = null,
 
-    /* The size of the last trade. */
+    /* Gets or sets the size of the last trade. */
     @Json(name = "size")
     val propertySize: kotlin.Double? = null,
 
-    /* The taker side of the last trade. */
+    /* Gets or sets the taker side of the last trade. */
     @Json(name = "taker_side")
     val takerSide: kotlin.String? = null
 

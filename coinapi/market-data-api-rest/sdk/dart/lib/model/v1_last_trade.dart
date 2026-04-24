@@ -21,7 +21,7 @@ class V1LastTrade {
     this.takerSide,
   });
 
-  /// The exchange time of the last trade.
+  /// Gets or sets the exchange time of the last trade.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -30,7 +30,7 @@ class V1LastTrade {
   ///
   DateTime? timeExchange;
 
-  /// The CoinAPI time when the last trade was received.
+  /// Gets or sets the CoinAPI time when the last trade was received.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -39,7 +39,7 @@ class V1LastTrade {
   ///
   DateTime? timeCoinapi;
 
-  /// The UUID of the last trade.
+  /// Gets or sets the UUID of the last trade.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -48,7 +48,7 @@ class V1LastTrade {
   ///
   String? uuid;
 
-  /// The price of the last trade.
+  /// Gets or sets the price of the last trade.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -57,7 +57,7 @@ class V1LastTrade {
   ///
   double? price;
 
-  /// The size of the last trade.
+  /// Gets or sets the size of the last trade.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated
@@ -66,7 +66,7 @@ class V1LastTrade {
   ///
   double? size;
 
-  /// The taker side of the last trade.
+  /// Gets or sets the taker side of the last trade.
   String? takerSide;
 
   @override

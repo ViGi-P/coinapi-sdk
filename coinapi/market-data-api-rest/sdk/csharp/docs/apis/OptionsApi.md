@@ -8,7 +8,7 @@ All URIs are relative to *https://rest.coinapi.io*
 
 <a id="v1optionsexchangeidcurrentget"></a>
 # **V1OptionsExchangeIdCurrentGet**
-> List&lt;OptionsOptionExchangeGroup&gt; V1OptionsExchangeIdCurrentGet (string exchangeId)
+> List&lt;V1OptionExchangeGroup&gt; V1OptionsExchangeIdCurrentGet (string exchangeId)
 
 Current data by Exchange
 
@@ -23,7 +23,7 @@ Get current options data for a specific exchange.  Returns option data grouped b
 
 ### Return type
 
-[**List&lt;OptionsOptionExchangeGroup&gt;**](OptionsOptionExchangeGroup.md)
+[**List&lt;V1OptionExchangeGroup&gt;**](V1OptionExchangeGroup.md)
 
 ### Authorization
 

@@ -29,13 +29,13 @@ class V1OrderBookDepth(BaseModel):
     """
     Represents the depth of an order book.
     """ # noqa: E501
-    symbol_id: Optional[StrictStr] = Field(default=None, description="The symbol identifier.")
-    time_exchange: Optional[datetime] = Field(default=None, description="The exchange time of the order book.")
-    time_coinapi: Optional[datetime] = Field(default=None, description="The CoinAPI time when the order book was received.")
-    ask_levels: Optional[StrictInt] = Field(default=None, description="The number of ask levels in the order book.")
-    bid_levels: Optional[StrictInt] = Field(default=None, description="The number of bid levels in the order book.")
-    ask_depth: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The depth of the ask side of the order book.")
-    bid_depth: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The depth of the bid side of the order book.")
+    symbol_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the symbol identifier.")
+    time_exchange: Optional[datetime] = Field(default=None, description="Gets or sets the exchange time of the order book.")
+    time_coinapi: Optional[datetime] = Field(default=None, description="Gets or sets the CoinAPI time when the order book was received.")
+    ask_levels: Optional[StrictInt] = Field(default=None, description="Gets or sets the number of ask levels in the order book.")
+    bid_levels: Optional[StrictInt] = Field(default=None, description="Gets or sets the number of bid levels in the order book.")
+    ask_depth: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the depth of the ask side of the order book.")
+    bid_depth: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the depth of the bid side of the order book.")
     __properties: ClassVar[List[str]] = ["symbol_id", "time_exchange", "time_coinapi", "ask_levels", "bid_levels", "ask_depth", "bid_depth"]
 
     model_config = ConfigDict(

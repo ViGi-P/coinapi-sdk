@@ -21,19 +21,19 @@ var _ MappedNullable = &V1OrderBookDepth{}
 
 // V1OrderBookDepth Represents the depth of an order book.
 type V1OrderBookDepth struct {
-	// The symbol identifier.
+	// Gets or sets the symbol identifier.
 	SymbolId NullableString `json:"symbol_id,omitempty"`
-	// The exchange time of the order book.
+	// Gets or sets the exchange time of the order book.
 	TimeExchange *time.Time `json:"time_exchange,omitempty"`
-	// The CoinAPI time when the order book was received.
+	// Gets or sets the CoinAPI time when the order book was received.
 	TimeCoinapi *time.Time `json:"time_coinapi,omitempty"`
-	// The number of ask levels in the order book.
+	// Gets or sets the number of ask levels in the order book.
 	AskLevels *int64 `json:"ask_levels,omitempty"`
-	// The number of bid levels in the order book.
+	// Gets or sets the number of bid levels in the order book.
 	BidLevels *int64 `json:"bid_levels,omitempty"`
-	// The depth of the ask side of the order book.
+	// Gets or sets the depth of the ask side of the order book.
 	AskDepth *float64 `json:"ask_depth,omitempty"`
-	// The depth of the bid side of the order book.
+	// Gets or sets the depth of the bid side of the order book.
 	BidDepth *float64 `json:"bid_depth,omitempty"`
 }
 

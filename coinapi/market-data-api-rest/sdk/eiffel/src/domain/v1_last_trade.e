@@ -20,17 +20,17 @@ class V1_LAST_TRADE
 feature --Access
 
     time_exchange: detachable DATE_TIME
-      -- The exchange time of the last trade.
+      -- Gets or sets the exchange time of the last trade.
     time_coinapi: detachable DATE_TIME
-      -- The CoinAPI time when the last trade was received.
+      -- Gets or sets the CoinAPI time when the last trade was received.
     uuid: detachable UUID
-      -- The UUID of the last trade.
+      -- Gets or sets the UUID of the last trade.
     price: REAL_64
-      -- The price of the last trade.
+      -- Gets or sets the price of the last trade.
     size: REAL_64
-      -- The size of the last trade.
+      -- Gets or sets the size of the last trade.
     taker_side: detachable STRING_32
-      -- The taker side of the last trade.
+      -- Gets or sets the taker side of the last trade.
 
 feature -- Change Element
 

@@ -30,266 +30,268 @@ import com.squareup.moshi.JsonClass
 /**
  * Represents a symbol data model.
  *
- * @param symbolId The symbol identifier.
- * @param exchangeId The exchange identifier.
- * @param symbolType The symbol type.
- * @param assetIdBase The base asset identifier.
- * @param assetIdQuote The quote asset identifier.
- * @param assetIdUnit The unit asset identifier.
- * @param futureContractUnit The contract unit for futures.
- * @param futureContractUnitAsset The asset used as the unit for futures contract.
- * @param futureDeliveryTime The future delivery time for futures contract.
- * @param optionTypeIsCall Indicates whether the option type is a call.
- * @param optionStrikePrice The strike price for options.
- * @param optionContractUnit The contract unit for options.
- * @param optionExerciseStyle The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
- * @param optionExpirationTime The expiration time for options.
- * @param contractDeliveryTime The delivery time for contracts.
- * @param contractUnit The contract unit for contracts.
- * @param contractUnitAsset The asset used as the unit for contracts.
- * @param contractId The contract identifier.
- * @param contractDisplayName The display name of the contract.
- * @param contractDisplayDescription The display description of the contract.
- * @param dataStart 
- * @param dataEnd 
- * @param dataQuoteStart The start date of quote data.
- * @param dataQuoteEnd The end date of quote data.
- * @param dataOrderbookStart The start date of order book data.
- * @param dataOrderbookEnd The end date of order book data.
- * @param dataTradeStart The start date of trade data.
- * @param dataTradeEnd The end date of trade data.
- * @param indexId The index identifier.
- * @param indexDisplayName The display name of the index.
- * @param indexDisplayDescription The display description of the index.
- * @param volume1hrs The volume in the last 1 hour.
- * @param volume1hrsUsd The volume in USD in the last 1 hour.
- * @param volume1day The volume in the last 1 day.
- * @param volume1dayUsd The volume in USD in the last 1 day.
- * @param volume1mth The volume in the last 1 month.
- * @param volume1mthUsd The volume in USD in the last 1 month.
- * @param price The price.
- * @param symbolIdExchange The symbol identifier in the exchange.
- * @param assetIdBaseExchange The base asset identifier in the exchange.
- * @param assetIdQuoteExchange The quote asset identifier in the exchange.
- * @param pricePrecision The price precision.
- * @param sizePrecision The size precision.
+ * @param symbolId Gets or sets the symbol identifier.
+ * @param exchangeId Gets or sets the exchange identifier.
+ * @param symbolType Gets or sets the symbol type.
+ * @param assetIdBase Gets or sets the base asset identifier.
+ * @param assetIdQuote Gets or sets the quote asset identifier.
+ * @param assetIdUnit Gets or sets the unit asset identifier.
+ * @param futureContractUnit Gets or sets the contract unit for futures.
+ * @param futureContractUnitAsset Gets or sets the asset used as the unit for futures contract.
+ * @param futureDeliveryTime Gets or sets the future delivery time for futures contract.
+ * @param optionTypeIsCall Gets or sets a value indicating whether the option type is a call.
+ * @param optionStrikePrice Gets or sets the strike price for options.
+ * @param optionContractUnit Gets or sets the contract unit for options.
+ * @param optionExerciseStyle Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+ * @param optionExpirationTime Gets or sets the expiration time for options.
+ * @param contractDeliveryTime Gets or sets the delivery time for contracts.
+ * @param contractUnit Gets or sets the contract unit for contracts.
+ * @param contractUnitAsset Gets or sets the asset used as the unit for contracts.
+ * @param contractId Gets or sets the contract identifier.
+ * @param contractDisplayName Gets or sets the display name of the contract.
+ * @param contractDisplayDescription Gets or sets the display description of the contract.
+ * @param dataStart Gets the start date of the data in string format (\"yyyy-MM-dd\").
+ * @param dataEnd Gets the end date of the data in string format (\"yyyy-MM-dd\").
+ * @param dataQuoteStart Gets or sets the start date of quote data.
+ * @param dataQuoteEnd Gets or sets the end date of quote data.
+ * @param dataOrderbookStart Gets or sets the start date of order book data.
+ * @param dataOrderbookEnd Gets or sets the end date of order book data.
+ * @param dataTradeStart Gets or sets the start date of trade data.
+ * @param dataTradeEnd Gets or sets the end date of trade data.
+ * @param indexId Gets or sets the index identifier.
+ * @param indexDisplayName Gets or sets the display name of the index.
+ * @param indexDisplayDescription Gets or sets the display description of the index.
+ * @param volume1hrs Gets or sets the volume in the last 1 hour.
+ * @param volume1hrsUsd Gets or sets the volume in USD in the last 1 hour.
+ * @param volume1day Gets or sets the volume in the last 1 day.
+ * @param volume1dayUsd Gets or sets the volume in USD in the last 1 day.
+ * @param volume1mth Gets or sets the volume in the last 1 month.
+ * @param volume1mthUsd Gets or sets the volume in USD in the last 1 month.
+ * @param price Gets or sets the price.
+ * @param symbolIdExchange Gets or sets the symbol identifier in the exchange.
+ * @param assetIdBaseExchange Gets or sets the base asset identifier in the exchange.
+ * @param assetIdQuoteExchange Gets or sets the quote asset identifier in the exchange.
+ * @param pricePrecision Gets or sets the price precision.
+ * @param sizePrecision Gets or sets the size precision.
  * @param rawKvp Key Value Pair store with raw data from the data source.
- * @param futureIsInverse Indicates whether the futures contract is inverse (coin-margined).
- * @param futureIsQuanto Indicates whether the futures contract is quanto.
- * @param volumeToUsd Volume unit in USD.
- * @param optionBarrierUpPrice The up barrier price for barrier options.
- * @param optionBarrierUpType The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
- * @param optionBarrierDownPrice The down barrier price for barrier options.
- * @param optionBarrierDownType The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
- * @param symbolIdInt The symbol identifier in integer immutable format, used to correlate data across different APIs.
+ * @param futureIsInverse Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
+ * @param futureIsQuanto Gets or sets a value indicating whether the futures contract is quanto.
+ * @param volumeToUsd Gets or sets the volume in USD.
+ * @param optionBarrierUpPrice Gets or sets the up barrier price for barrier options.
+ * @param optionBarrierUpType Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+ * @param optionBarrierDownPrice Gets or sets the down barrier price for barrier options.
+ * @param optionBarrierDownType Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+ * @param symbolIdInt Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
  */
 
 
 data class V1Symbol (
 
-    /* The symbol identifier. */
+    /* Gets or sets the symbol identifier. */
     @Json(name = "symbol_id")
     val symbolId: kotlin.String? = null,
 
-    /* The exchange identifier. */
+    /* Gets or sets the exchange identifier. */
     @Json(name = "exchange_id")
     val exchangeId: kotlin.String? = null,
 
-    /* The symbol type. */
+    /* Gets or sets the symbol type. */
     @Json(name = "symbol_type")
     val symbolType: kotlin.String? = null,
 
-    /* The base asset identifier. */
+    /* Gets or sets the base asset identifier. */
     @Json(name = "asset_id_base")
     val assetIdBase: kotlin.String? = null,
 
-    /* The quote asset identifier. */
+    /* Gets or sets the quote asset identifier. */
     @Json(name = "asset_id_quote")
     val assetIdQuote: kotlin.String? = null,
 
-    /* The unit asset identifier. */
+    /* Gets or sets the unit asset identifier. */
     @Json(name = "asset_id_unit")
     val assetIdUnit: kotlin.String? = null,
 
-    /* The contract unit for futures. */
+    /* Gets or sets the contract unit for futures. */
     @Json(name = "future_contract_unit")
     val futureContractUnit: kotlin.Double? = null,
 
-    /* The asset used as the unit for futures contract. */
+    /* Gets or sets the asset used as the unit for futures contract. */
     @Json(name = "future_contract_unit_asset")
     val futureContractUnitAsset: kotlin.String? = null,
 
-    /* The future delivery time for futures contract. */
+    /* Gets or sets the future delivery time for futures contract. */
     @Json(name = "future_delivery_time")
     val futureDeliveryTime: java.time.OffsetDateTime? = null,
 
-    /* Indicates whether the option type is a call. */
+    /* Gets or sets a value indicating whether the option type is a call. */
     @Json(name = "option_type_is_call")
     val optionTypeIsCall: kotlin.Boolean? = null,
 
-    /* The strike price for options. */
+    /* Gets or sets the strike price for options. */
     @Json(name = "option_strike_price")
     val optionStrikePrice: kotlin.Double? = null,
 
-    /* The contract unit for options. */
+    /* Gets or sets the contract unit for options. */
     @Json(name = "option_contract_unit")
     val optionContractUnit: kotlin.Double? = null,
 
-    /* The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. */
+    /* Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC. */
     @Json(name = "option_exercise_style")
     val optionExerciseStyle: kotlin.String? = null,
 
-    /* The expiration time for options. */
+    /* Gets or sets the expiration time for options. */
     @Json(name = "option_expiration_time")
     val optionExpirationTime: java.time.OffsetDateTime? = null,
 
-    /* The delivery time for contracts. */
+    /* Gets or sets the delivery time for contracts. */
     @Json(name = "contract_delivery_time")
     val contractDeliveryTime: java.time.OffsetDateTime? = null,
 
-    /* The contract unit for contracts. */
+    /* Gets or sets the contract unit for contracts. */
     @Json(name = "contract_unit")
     val contractUnit: kotlin.Double? = null,
 
-    /* The asset used as the unit for contracts. */
+    /* Gets or sets the asset used as the unit for contracts. */
     @Json(name = "contract_unit_asset")
     val contractUnitAsset: kotlin.String? = null,
 
-    /* The contract identifier. */
+    /* Gets or sets the contract identifier. */
     @Json(name = "contract_id")
     val contractId: kotlin.String? = null,
 
-    /* The display name of the contract. */
+    /* Gets or sets the display name of the contract. */
     @Json(name = "contract_display_name")
     val contractDisplayName: kotlin.String? = null,
 
-    /* The display description of the contract. */
+    /* Gets or sets the display description of the contract. */
     @Json(name = "contract_display_description")
     val contractDisplayDescription: kotlin.String? = null,
 
+    /* Gets the start date of the data in string format (\"yyyy-MM-dd\"). */
     @Json(name = "data_start")
     val dataStart: kotlin.String? = null,
 
+    /* Gets the end date of the data in string format (\"yyyy-MM-dd\"). */
     @Json(name = "data_end")
     val dataEnd: kotlin.String? = null,
 
-    /* The start date of quote data. */
+    /* Gets or sets the start date of quote data. */
     @Json(name = "data_quote_start")
     val dataQuoteStart: java.time.OffsetDateTime? = null,
 
-    /* The end date of quote data. */
+    /* Gets or sets the end date of quote data. */
     @Json(name = "data_quote_end")
     val dataQuoteEnd: java.time.OffsetDateTime? = null,
 
-    /* The start date of order book data. */
+    /* Gets or sets the start date of order book data. */
     @Json(name = "data_orderbook_start")
     val dataOrderbookStart: java.time.OffsetDateTime? = null,
 
-    /* The end date of order book data. */
+    /* Gets or sets the end date of order book data. */
     @Json(name = "data_orderbook_end")
     val dataOrderbookEnd: java.time.OffsetDateTime? = null,
 
-    /* The start date of trade data. */
+    /* Gets or sets the start date of trade data. */
     @Json(name = "data_trade_start")
     val dataTradeStart: java.time.OffsetDateTime? = null,
 
-    /* The end date of trade data. */
+    /* Gets or sets the end date of trade data. */
     @Json(name = "data_trade_end")
     val dataTradeEnd: java.time.OffsetDateTime? = null,
 
-    /* The index identifier. */
+    /* Gets or sets the index identifier. */
     @Json(name = "index_id")
     val indexId: kotlin.String? = null,
 
-    /* The display name of the index. */
+    /* Gets or sets the display name of the index. */
     @Json(name = "index_display_name")
     val indexDisplayName: kotlin.String? = null,
 
-    /* The display description of the index. */
+    /* Gets or sets the display description of the index. */
     @Json(name = "index_display_description")
     val indexDisplayDescription: kotlin.String? = null,
 
-    /* The volume in the last 1 hour. */
+    /* Gets or sets the volume in the last 1 hour. */
     @Json(name = "volume_1hrs")
     val volume1hrs: kotlin.Double? = null,
 
-    /* The volume in USD in the last 1 hour. */
+    /* Gets or sets the volume in USD in the last 1 hour. */
     @Json(name = "volume_1hrs_usd")
     val volume1hrsUsd: kotlin.Double? = null,
 
-    /* The volume in the last 1 day. */
+    /* Gets or sets the volume in the last 1 day. */
     @Json(name = "volume_1day")
     val volume1day: kotlin.Double? = null,
 
-    /* The volume in USD in the last 1 day. */
+    /* Gets or sets the volume in USD in the last 1 day. */
     @Json(name = "volume_1day_usd")
     val volume1dayUsd: kotlin.Double? = null,
 
-    /* The volume in the last 1 month. */
+    /* Gets or sets the volume in the last 1 month. */
     @Json(name = "volume_1mth")
     val volume1mth: kotlin.Double? = null,
 
-    /* The volume in USD in the last 1 month. */
+    /* Gets or sets the volume in USD in the last 1 month. */
     @Json(name = "volume_1mth_usd")
     val volume1mthUsd: kotlin.Double? = null,
 
-    /* The price. */
+    /* Gets or sets the price. */
     @Json(name = "price")
     val price: kotlin.Double? = null,
 
-    /* The symbol identifier in the exchange. */
+    /* Gets or sets the symbol identifier in the exchange. */
     @Json(name = "symbol_id_exchange")
     val symbolIdExchange: kotlin.String? = null,
 
-    /* The base asset identifier in the exchange. */
+    /* Gets or sets the base asset identifier in the exchange. */
     @Json(name = "asset_id_base_exchange")
     val assetIdBaseExchange: kotlin.String? = null,
 
-    /* The quote asset identifier in the exchange. */
+    /* Gets or sets the quote asset identifier in the exchange. */
     @Json(name = "asset_id_quote_exchange")
     val assetIdQuoteExchange: kotlin.String? = null,
 
-    /* The price precision. */
+    /* Gets or sets the price precision. */
     @Json(name = "price_precision")
     val pricePrecision: kotlin.Double? = null,
 
-    /* The size precision. */
+    /* Gets or sets the size precision. */
     @Json(name = "size_precision")
     val sizePrecision: kotlin.Double? = null,
 
     /* Key Value Pair store with raw data from the data source. */
     @Json(name = "raw_kvp")
-    val rawKvp: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
+    val rawKvp: kotlin.collections.Map<kotlin.String, kotlin.String?>? = null,
 
-    /* Indicates whether the futures contract is inverse (coin-margined). */
+    /* Gets or sets a value indicating whether the futures contract is inverse (coin-margined). */
     @Json(name = "future_is_inverse")
     val futureIsInverse: kotlin.Boolean? = null,
 
-    /* Indicates whether the futures contract is quanto. */
+    /* Gets or sets a value indicating whether the futures contract is quanto. */
     @Json(name = "future_is_quanto")
     val futureIsQuanto: kotlin.Boolean? = null,
 
-    /* Volume unit in USD. */
+    /* Gets or sets the volume in USD. */
     @Json(name = "volume_to_usd")
     val volumeToUsd: kotlin.Double? = null,
 
-    /* The up barrier price for barrier options. */
+    /* Gets or sets the up barrier price for barrier options. */
     @Json(name = "option_barrier_up_price")
     val optionBarrierUpPrice: kotlin.Double? = null,
 
-    /* The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. */
+    /* Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. */
     @Json(name = "option_barrier_up_type")
     val optionBarrierUpType: kotlin.String? = null,
 
-    /* The down barrier price for barrier options. */
+    /* Gets or sets the down barrier price for barrier options. */
     @Json(name = "option_barrier_down_price")
     val optionBarrierDownPrice: kotlin.Double? = null,
 
-    /* The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. */
+    /* Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT. */
     @Json(name = "option_barrier_down_type")
     val optionBarrierDownType: kotlin.String? = null,
 
-    /* The symbol identifier in integer immutable format, used to correlate data across different APIs. */
+    /* Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs. */
     @Json(name = "symbol_id_int")
     val symbolIdInt: kotlin.Int? = null
 

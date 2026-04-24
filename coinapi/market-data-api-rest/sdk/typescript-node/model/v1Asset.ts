@@ -93,7 +93,13 @@ export class V1Asset {
     * 
     */
     'chainAddresses'?: Array<V1ChainNetworkAddress> | null;
+    /**
+    * Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
+    */
     'dataStart'?: string | null;
+    /**
+    * Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
+    */
     'dataEnd'?: string | null;
 
     static discriminator: string | undefined = undefined;

@@ -26,16 +26,16 @@ from pydantic_core import to_jsonable_python
 
 class V1ListingItem(BaseModel):
     """
-    Represents a listing item.
+    Represents a listing data item.
     """ # noqa: E501
     metric_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the metric ID.")
-    symbol_id: Optional[StrictStr] = Field(default=None, description="The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.")
-    symbol_id_external: Optional[StrictStr] = Field(default=None, description="The exchange-native symbol identifier. Null for exchange-level metrics.")
+    symbol_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.")
+    symbol_id_external: Optional[StrictStr] = Field(default=None, description="Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.")
     exchange_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the exchange ID.")
     asset_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the asset ID.")
-    asset_id_external: Optional[StrictStr] = Field(default=None, description="Gets or sets the asset ID from the exchange.")
-    chain_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the chain id.")
-    network_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the network id.")
+    asset_id_external: Optional[StrictStr] = Field(default=None, description="Gets or sets the asset ID.")
+    chain_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the chain ID.")
+    network_id: Optional[StrictStr] = Field(default=None, description="Gets or sets the network ID.")
     __properties: ClassVar[List[str]] = ["metric_id", "symbol_id", "symbol_id_external", "exchange_id", "asset_id", "asset_id_external", "chain_id", "network_id"]
 
     model_config = ConfigDict(

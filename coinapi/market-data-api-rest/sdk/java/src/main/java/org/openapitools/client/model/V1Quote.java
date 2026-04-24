@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a quote data model.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-23T06:06:39.606952276Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-24T06:05:03.999499045Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class V1Quote {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
@@ -96,7 +96,7 @@ public class V1Quote {
   }
 
   /**
-   * The symbol identifier.
+   * Gets or sets the symbol identifier.
    * @return symbolId
    */
   @javax.annotation.Nullable
@@ -115,7 +115,7 @@ public class V1Quote {
   }
 
   /**
-   * The exchange time of the quote.
+   * Gets or sets the exchange time of the quote.
    * @return timeExchange
    */
   @javax.annotation.Nullable
@@ -134,7 +134,7 @@ public class V1Quote {
   }
 
   /**
-   * The CoinAPI time when the quote was received.
+   * Gets or sets the CoinAPI time when the quote was received.
    * @return timeCoinapi
    */
   @javax.annotation.Nullable
@@ -153,7 +153,7 @@ public class V1Quote {
   }
 
   /**
-   * The best asking price.
+   * Gets or sets the best asking price.
    * @return askPrice
    */
   @javax.annotation.Nullable
@@ -172,7 +172,7 @@ public class V1Quote {
   }
 
   /**
-   * The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+   * Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
    * @return askSize
    */
   @javax.annotation.Nullable
@@ -191,7 +191,7 @@ public class V1Quote {
   }
 
   /**
-   * The best bidding price.
+   * Gets or sets the best bidding price.
    * @return bidPrice
    */
   @javax.annotation.Nullable
@@ -210,7 +210,7 @@ public class V1Quote {
   }
 
   /**
-   * The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+   * Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
    * @return bidSize
    */
   @javax.annotation.Nullable

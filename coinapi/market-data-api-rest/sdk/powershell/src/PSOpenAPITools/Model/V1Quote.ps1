@@ -16,19 +16,19 @@ No summary available.
 Represents a quote data model.
 
 .PARAMETER SymbolId
-The symbol identifier.
+Gets or sets the symbol identifier.
 .PARAMETER TimeExchange
-The exchange time of the quote.
+Gets or sets the exchange time of the quote.
 .PARAMETER TimeCoinapi
-The CoinAPI time when the quote was received.
+Gets or sets the CoinAPI time when the quote was received.
 .PARAMETER AskPrice
-The best asking price.
+Gets or sets the best asking price.
 .PARAMETER AskSize
-The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
 .PARAMETER BidPrice
-The best bidding price.
+Gets or sets the best bidding price.
 .PARAMETER BidSize
-The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
 .OUTPUTS
 
 V1Quote<PSCustomObject>

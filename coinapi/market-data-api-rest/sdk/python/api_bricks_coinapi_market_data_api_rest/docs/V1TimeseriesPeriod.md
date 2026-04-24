@@ -6,12 +6,12 @@ Represents a timeseries period used in exchange rate data.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**period_id** | **str** | The period ID. | [optional] 
-**length_seconds** | **int** | The length of the period in seconds. | [optional] 
-**length_months** | **int** | The length of the period in months. | [optional] 
-**unit_count** | **int** | The unit count. | [optional] 
-**unit_name** | **str** | The unit name. | [optional] 
-**display_name** | **str** | The display name of the timeseries period. | [optional] 
+**period_id** | **str** | Gets or sets the period ID. | [optional] 
+**length_seconds** | **int** | Gets or sets the length of the period in seconds. | [optional] 
+**length_months** | **int** | Gets or sets the length of the period in months. | [optional] 
+**unit_count** | **int** | Gets or sets the unit count. | [optional] 
+**unit_name** | **str** | Gets or sets the unit name. | [optional] 
+**display_name** | **str** | Gets or sets the display name of the timeseries period. | [optional] 
 
 ## Example
 

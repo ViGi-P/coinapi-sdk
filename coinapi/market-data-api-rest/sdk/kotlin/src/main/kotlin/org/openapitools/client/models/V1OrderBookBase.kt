@@ -30,33 +30,33 @@ import com.squareup.moshi.JsonClass
 /**
  * Represents the base model for order book data.
  *
- * @param symbolId The symbol identifier.
- * @param timeExchange The exchange time of the order book.
- * @param timeCoinapi The CoinAPI time when the order book was received.
- * @param asks The asks made by market makers.
- * @param bids The bids made by market makers.
+ * @param symbolId Gets or sets the symbol identifier.
+ * @param timeExchange Gets or sets the exchange time of the order book.
+ * @param timeCoinapi Gets or sets the CoinAPI time when the order book was received.
+ * @param asks Gets or sets the asks made by market makers.
+ * @param bids Gets or sets the bids made by market makers.
  */
 
 
 data class V1OrderBookBase (
 
-    /* The symbol identifier. */
+    /* Gets or sets the symbol identifier. */
     @Json(name = "symbol_id")
     val symbolId: kotlin.String? = null,
 
-    /* The exchange time of the order book. */
+    /* Gets or sets the exchange time of the order book. */
     @Json(name = "time_exchange")
     val timeExchange: java.time.OffsetDateTime? = null,
 
-    /* The CoinAPI time when the order book was received. */
+    /* Gets or sets the CoinAPI time when the order book was received. */
     @Json(name = "time_coinapi")
     val timeCoinapi: java.time.OffsetDateTime? = null,
 
-    /* The asks made by market makers. */
+    /* Gets or sets the asks made by market makers. */
     @Json(name = "asks")
     val asks: kotlin.Any? = null,
 
-    /* The bids made by market makers. */
+    /* Gets or sets the bids made by market makers. */
     @Json(name = "bids")
     val bids: kotlin.Any? = null
 

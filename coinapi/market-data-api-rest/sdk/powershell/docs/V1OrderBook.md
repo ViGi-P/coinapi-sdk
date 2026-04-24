@@ -3,11 +3,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SymbolId** | **String** | The symbol identifier. | [optional] 
-**TimeExchange** | **System.DateTime** | The exchange time of the order book. | [optional] 
-**TimeCoinapi** | **System.DateTime** | The CoinAPI time when the order book was received. | [optional] 
-**Asks** | [**AnyType**](.md) | The asks made by market makers. | [optional] 
-**Bids** | [**AnyType**](.md) | The bids made by market makers. | [optional] 
+**SymbolId** | **String** | Gets or sets the symbol identifier. | [optional] 
+**TimeExchange** | **System.DateTime** | Gets or sets the exchange time of the order book. | [optional] 
+**TimeCoinapi** | **System.DateTime** | Gets or sets the CoinAPI time when the order book was received. | [optional] 
+**Asks** | [**AnyType**](.md) | Gets or sets the asks made by market makers. | [optional] 
+**Bids** | [**AnyType**](.md) | Gets or sets the bids made by market makers. | [optional] 
 
 ## Examples
 

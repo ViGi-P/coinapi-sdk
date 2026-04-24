@@ -18,8 +18,8 @@ private class OASOptionsApiTest {
 
         OASClient client;
         OASOptionsApi api;
-        List<OASOptionsOptionExchangeGroup> response;
-        List<OASOptionsOptionExchangeGroup> expectedResponse;
+        List<OASV1OptionExchangeGroup> response;
+        List<OASV1OptionExchangeGroup> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -27,20 +27,20 @@ private class OASOptionsApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASOptionsOptionExchangeGroup>{OASOptionsOptionExchangeGroup.getExample()});
+        js = JSON.serialize(new List<OASV1OptionExchangeGroup>{OASV1OptionExchangeGroup.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASOptionsOptionExchangeGroup>{OASOptionsOptionExchangeGroup.getExample()};
-        response = (List<OASOptionsOptionExchangeGroup>) api.v1OptionsExchangeIdCurrentGet(params);
+        expectedResponse = new List<OASV1OptionExchangeGroup>{OASV1OptionExchangeGroup.getExample()};
+        response = (List<OASV1OptionExchangeGroup>) api.v1OptionsExchangeIdCurrentGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASOptionsApi(client);
 
-        js = JSON.serialize(new List<OASOptionsOptionExchangeGroup>{OASOptionsOptionExchangeGroup.getExample()});
+        js = JSON.serialize(new List<OASV1OptionExchangeGroup>{OASV1OptionExchangeGroup.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASOptionsOptionExchangeGroup>{OASOptionsOptionExchangeGroup.getExample()};
-        response = (List<OASOptionsOptionExchangeGroup>) api.v1OptionsExchangeIdCurrentGet(params);
+        expectedResponse = new List<OASV1OptionExchangeGroup>{OASV1OptionExchangeGroup.getExample()};
+        response = (List<OASV1OptionExchangeGroup>) api.v1OptionsExchangeIdCurrentGet(params);
         System.assertEquals(expectedResponse, response);
     }
 }

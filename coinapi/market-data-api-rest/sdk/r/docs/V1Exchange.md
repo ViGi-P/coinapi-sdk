@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **exchange_id** | **character** | Gets or sets the exchange ID. | [optional] 
 **website** | **character** | Gets or sets the website URL of the exchange. | [optional] 
 **name** | **character** | Gets or sets the name of the exchange. | [optional] 
-**data_start** | **character** |  | [optional] [readonly] 
-**data_end** | **character** |  | [optional] [readonly] 
+**data_start** | **character** | Gets the start date of the exchange&#39;s data. | [optional] [readonly] 
+**data_end** | **character** | Gets the end date of the exchange&#39;s data. | [optional] [readonly] 
 **data_quote_start** | **character** | Gets or sets the start date of quote data. | [optional] 
 **data_quote_end** | **character** | Gets or sets the end date of quote data. | [optional] 
 **data_orderbook_start** | **character** | Gets or sets the start date of order book data. | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **volume_1mth_usd** | **numeric** | Gets or sets the USD volume in the last 1 month. | [optional] 
 **metric_id** | **array[character]** | Gets or sets the list of metric IDs. | [optional] 
 **icons** | [**array[V1Icon]**](v1.Icon.md) | Gets or sets the list of icons for the exchange. | [optional] [readonly] 
-**rank** | **numeric** | Rank of the exchange. | [optional] 
+**rank** | **numeric** | Rank of the exchange - higher rank means exchange is more reliable | [optional] 
 **integration_status** | **character** | Status of the integration | [optional] 
 
 

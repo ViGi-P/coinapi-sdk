@@ -18,31 +18,31 @@ import { V1LastTrade } from './v1LastTrade';
 */
 export class V1QuoteTrade {
     /**
-    * The symbol identifier.
+    * Gets or sets the symbol identifier.
     */
     'symbolId'?: string | null;
     /**
-    * The exchange time of the quote trade.
+    * Gets or sets the exchange time of the quote trade.
     */
     'timeExchange'?: Date;
     /**
-    * The CoinAPI time when the quote trade was received.
+    * Gets or sets the CoinAPI time when the quote trade was received.
     */
     'timeCoinapi'?: Date;
     /**
-    * The best asking price.
+    * Gets or sets the best asking price.
     */
     'askPrice'?: number | null;
     /**
-    * The volume resting on the best ask. If the value is equal to zero, then the size is unknown.
+    * Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.
     */
     'askSize'?: number | null;
     /**
-    * The best bidding price.
+    * Gets or sets the best bidding price.
     */
     'bidPrice'?: number | null;
     /**
-    * The volume resting on the best bid. If the value is equal to zero, then the size is unknown.
+    * Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.
     */
     'bidSize'?: number | null;
     'lastTrade'?: V1LastTrade;

@@ -45,7 +45,7 @@ public class OASV1Trade implements OAS.MappedProperties {
     public Double price { get; set; }
 
     /**
-     * The base asset amount traded in the transaction.
+     * The base asset amount traded in the transaction.\nIf the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
      * @return size
      */
     public Double size { get; set; }

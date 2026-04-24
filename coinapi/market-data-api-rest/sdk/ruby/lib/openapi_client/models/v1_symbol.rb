@@ -16,158 +16,160 @@ require 'time'
 module OpenapiClient
   # Represents a symbol data model.
   class V1Symbol < ApiModelBase
-    # The symbol identifier.
+    # Gets or sets the symbol identifier.
     attr_accessor :symbol_id
 
-    # The exchange identifier.
+    # Gets or sets the exchange identifier.
     attr_accessor :exchange_id
 
-    # The symbol type.
+    # Gets or sets the symbol type.
     attr_accessor :symbol_type
 
-    # The base asset identifier.
+    # Gets or sets the base asset identifier.
     attr_accessor :asset_id_base
 
-    # The quote asset identifier.
+    # Gets or sets the quote asset identifier.
     attr_accessor :asset_id_quote
 
-    # The unit asset identifier.
+    # Gets or sets the unit asset identifier.
     attr_accessor :asset_id_unit
 
-    # The contract unit for futures.
+    # Gets or sets the contract unit for futures.
     attr_accessor :future_contract_unit
 
-    # The asset used as the unit for futures contract.
+    # Gets or sets the asset used as the unit for futures contract.
     attr_accessor :future_contract_unit_asset
 
-    # The future delivery time for futures contract.
+    # Gets or sets the future delivery time for futures contract.
     attr_accessor :future_delivery_time
 
-    # Indicates whether the option type is a call.
+    # Gets or sets a value indicating whether the option type is a call.
     attr_accessor :option_type_is_call
 
-    # The strike price for options.
+    # Gets or sets the strike price for options.
     attr_accessor :option_strike_price
 
-    # The contract unit for options.
+    # Gets or sets the contract unit for options.
     attr_accessor :option_contract_unit
 
-    # The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+    # Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
     attr_accessor :option_exercise_style
 
-    # The expiration time for options.
+    # Gets or sets the expiration time for options.
     attr_accessor :option_expiration_time
 
-    # The delivery time for contracts.
+    # Gets or sets the delivery time for contracts.
     attr_accessor :contract_delivery_time
 
-    # The contract unit for contracts.
+    # Gets or sets the contract unit for contracts.
     attr_accessor :contract_unit
 
-    # The asset used as the unit for contracts.
+    # Gets or sets the asset used as the unit for contracts.
     attr_accessor :contract_unit_asset
 
-    # The contract identifier.
+    # Gets or sets the contract identifier.
     attr_accessor :contract_id
 
-    # The display name of the contract.
+    # Gets or sets the display name of the contract.
     attr_accessor :contract_display_name
 
-    # The display description of the contract.
+    # Gets or sets the display description of the contract.
     attr_accessor :contract_display_description
 
+    # Gets the start date of the data in string format (\"yyyy-MM-dd\").
     attr_accessor :data_start
 
+    # Gets the end date of the data in string format (\"yyyy-MM-dd\").
     attr_accessor :data_end
 
-    # The start date of quote data.
+    # Gets or sets the start date of quote data.
     attr_accessor :data_quote_start
 
-    # The end date of quote data.
+    # Gets or sets the end date of quote data.
     attr_accessor :data_quote_end
 
-    # The start date of order book data.
+    # Gets or sets the start date of order book data.
     attr_accessor :data_orderbook_start
 
-    # The end date of order book data.
+    # Gets or sets the end date of order book data.
     attr_accessor :data_orderbook_end
 
-    # The start date of trade data.
+    # Gets or sets the start date of trade data.
     attr_accessor :data_trade_start
 
-    # The end date of trade data.
+    # Gets or sets the end date of trade data.
     attr_accessor :data_trade_end
 
-    # The index identifier.
+    # Gets or sets the index identifier.
     attr_accessor :index_id
 
-    # The display name of the index.
+    # Gets or sets the display name of the index.
     attr_accessor :index_display_name
 
-    # The display description of the index.
+    # Gets or sets the display description of the index.
     attr_accessor :index_display_description
 
-    # The volume in the last 1 hour.
+    # Gets or sets the volume in the last 1 hour.
     attr_accessor :volume_1hrs
 
-    # The volume in USD in the last 1 hour.
+    # Gets or sets the volume in USD in the last 1 hour.
     attr_accessor :volume_1hrs_usd
 
-    # The volume in the last 1 day.
+    # Gets or sets the volume in the last 1 day.
     attr_accessor :volume_1day
 
-    # The volume in USD in the last 1 day.
+    # Gets or sets the volume in USD in the last 1 day.
     attr_accessor :volume_1day_usd
 
-    # The volume in the last 1 month.
+    # Gets or sets the volume in the last 1 month.
     attr_accessor :volume_1mth
 
-    # The volume in USD in the last 1 month.
+    # Gets or sets the volume in USD in the last 1 month.
     attr_accessor :volume_1mth_usd
 
-    # The price.
+    # Gets or sets the price.
     attr_accessor :price
 
-    # The symbol identifier in the exchange.
+    # Gets or sets the symbol identifier in the exchange.
     attr_accessor :symbol_id_exchange
 
-    # The base asset identifier in the exchange.
+    # Gets or sets the base asset identifier in the exchange.
     attr_accessor :asset_id_base_exchange
 
-    # The quote asset identifier in the exchange.
+    # Gets or sets the quote asset identifier in the exchange.
     attr_accessor :asset_id_quote_exchange
 
-    # The price precision.
+    # Gets or sets the price precision.
     attr_accessor :price_precision
 
-    # The size precision.
+    # Gets or sets the size precision.
     attr_accessor :size_precision
 
     # Key Value Pair store with raw data from the data source.
     attr_accessor :raw_kvp
 
-    # Indicates whether the futures contract is inverse (coin-margined).
+    # Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
     attr_accessor :future_is_inverse
 
-    # Indicates whether the futures contract is quanto.
+    # Gets or sets a value indicating whether the futures contract is quanto.
     attr_accessor :future_is_quanto
 
-    # Volume unit in USD.
+    # Gets or sets the volume in USD.
     attr_accessor :volume_to_usd
 
-    # The up barrier price for barrier options.
+    # Gets or sets the up barrier price for barrier options.
     attr_accessor :option_barrier_up_price
 
-    # The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+    # Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
     attr_accessor :option_barrier_up_type
 
-    # The down barrier price for barrier options.
+    # Gets or sets the down barrier price for barrier options.
     attr_accessor :option_barrier_down_price
 
-    # The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+    # Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
     attr_accessor :option_barrier_down_type
 
-    # The symbol identifier in integer immutable format, used to correlate data across different APIs.
+    # Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
     attr_accessor :symbol_id_int
 
     # Attribute mapping from ruby-style variable name to JSON key.

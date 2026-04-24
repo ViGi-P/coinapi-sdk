@@ -30,12 +30,12 @@ class V1LastTrade(BaseModel):
     """
     Represents the last executed transaction.
     """ # noqa: E501
-    time_exchange: Optional[datetime] = Field(default=None, description="The exchange time of the last trade.")
-    time_coinapi: Optional[datetime] = Field(default=None, description="The CoinAPI time when the last trade was received.")
-    uuid: Optional[UUID] = Field(default=None, description="The UUID of the last trade.")
-    price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The price of the last trade.")
-    size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The size of the last trade.")
-    taker_side: Optional[StrictStr] = Field(default=None, description="The taker side of the last trade.")
+    time_exchange: Optional[datetime] = Field(default=None, description="Gets or sets the exchange time of the last trade.")
+    time_coinapi: Optional[datetime] = Field(default=None, description="Gets or sets the CoinAPI time when the last trade was received.")
+    uuid: Optional[UUID] = Field(default=None, description="Gets or sets the UUID of the last trade.")
+    price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the price of the last trade.")
+    size: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Gets or sets the size of the last trade.")
+    taker_side: Optional[StrictStr] = Field(default=None, description="Gets or sets the taker side of the last trade.")
     __properties: ClassVar[List[str]] = ["time_exchange", "time_coinapi", "uuid", "price", "size", "taker_side"]
 
     model_config = ConfigDict(

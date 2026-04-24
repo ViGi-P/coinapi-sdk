@@ -22,9 +22,9 @@ Gets or sets the website URL of the exchange.
 .PARAMETER Name
 Gets or sets the name of the exchange.
 .PARAMETER DataStart
-No description available.
+Gets the start date of the exchange's data.
 .PARAMETER DataEnd
-No description available.
+Gets the end date of the exchange's data.
 .PARAMETER DataQuoteStart
 Gets or sets the start date of quote data.
 .PARAMETER DataQuoteEnd
@@ -52,7 +52,7 @@ Gets or sets the list of metric IDs.
 .PARAMETER Icons
 Gets or sets the list of icons for the exchange.
 .PARAMETER Rank
-Rank of the exchange.
+Rank of the exchange - higher rank means exchange is more reliable
 .PARAMETER IntegrationStatus
 Status of the integration
 .OUTPUTS

@@ -21,15 +21,15 @@ var _ MappedNullable = &V1OrderBook{}
 
 // V1OrderBook Represents an order book with additional information and functionality.
 type V1OrderBook struct {
-	// The symbol identifier.
+	// Gets or sets the symbol identifier.
 	SymbolId NullableString `json:"symbol_id,omitempty"`
-	// The exchange time of the order book.
+	// Gets or sets the exchange time of the order book.
 	TimeExchange *time.Time `json:"time_exchange,omitempty"`
-	// The CoinAPI time when the order book was received.
+	// Gets or sets the CoinAPI time when the order book was received.
 	TimeCoinapi *time.Time `json:"time_coinapi,omitempty"`
-	// The asks made by market makers.
+	// Gets or sets the asks made by market makers.
 	Asks interface{} `json:"asks,omitempty"`
-	// The bids made by market makers.
+	// Gets or sets the bids made by market makers.
 	Bids interface{} `json:"bids,omitempty"`
 }
 

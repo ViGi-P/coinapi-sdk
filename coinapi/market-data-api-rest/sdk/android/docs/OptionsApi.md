@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## v1OptionsExchangeIdCurrentGet
 
-> List&lt;OptionsOptionExchangeGroup&gt; v1OptionsExchangeIdCurrentGet(exchangeId)
+> List&lt;V1OptionExchangeGroup&gt; v1OptionsExchangeIdCurrentGet(exchangeId)
 
 Current data by Exchange
 
@@ -25,7 +25,7 @@ Get current options data for a specific exchange.  Returns option data grouped b
 OptionsApi apiInstance = new OptionsApi();
 String exchangeId = null; // String | Exchange identifier (from the Metadata -> Exchanges)
 try {
-    List<OptionsOptionExchangeGroup> result = apiInstance.v1OptionsExchangeIdCurrentGet(exchangeId);
+    List<V1OptionExchangeGroup> result = apiInstance.v1OptionsExchangeIdCurrentGet(exchangeId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OptionsApi#v1OptionsExchangeIdCurrentGet");
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;OptionsOptionExchangeGroup&gt;**](OptionsOptionExchangeGroup.md)
+[**List&lt;V1OptionExchangeGroup&gt;**](V1OptionExchangeGroup.md)
 
 ### Authorization
 

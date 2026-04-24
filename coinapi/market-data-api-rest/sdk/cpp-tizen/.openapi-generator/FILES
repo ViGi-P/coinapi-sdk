@@ -23,10 +23,6 @@ src/OhlcvExchangeTimeseriesItem.cpp
 src/OhlcvExchangeTimeseriesItem.h
 src/OptionsManager.cpp
 src/OptionsManager.h
-src/OptionsOptionExchangeGroup.cpp
-src/OptionsOptionExchangeGroup.h
-src/OptionsStrike.cpp
-src/OptionsStrike.h
 src/OrderBookL3Manager.cpp
 src/OrderBookL3Manager.h
 src/OrderBookManager.cpp
@@ -66,6 +62,8 @@ src/V1MetricData.cpp
 src/V1MetricData.h
 src/V1MetricInfo.cpp
 src/V1MetricInfo.h
+src/V1OptionExchangeGroup.cpp
+src/V1OptionExchangeGroup.h
 src/V1OrderBook.cpp
 src/V1OrderBook.h
 src/V1OrderBookBase.cpp
@@ -76,6 +74,8 @@ src/V1Quote.cpp
 src/V1Quote.h
 src/V1QuoteTrade.cpp
 src/V1QuoteTrade.h
+src/V1Strike.cpp
+src/V1Strike.h
 src/V1Symbol.cpp
 src/V1Symbol.h
 src/V1SymbolMapping.cpp

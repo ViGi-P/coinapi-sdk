@@ -7,7 +7,7 @@ model_instance <- V1Symbol$new()
 
 test_that("symbol_id", {
   # tests for the property `symbol_id` (character)
-  # The symbol identifier.
+  # Gets or sets the symbol identifier.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`symbol_id`, "EXPECTED_RESULT")
@@ -15,7 +15,7 @@ test_that("symbol_id", {
 
 test_that("exchange_id", {
   # tests for the property `exchange_id` (character)
-  # The exchange identifier.
+  # Gets or sets the exchange identifier.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`exchange_id`, "EXPECTED_RESULT")
@@ -23,7 +23,7 @@ test_that("exchange_id", {
 
 test_that("symbol_type", {
   # tests for the property `symbol_type` (character)
-  # The symbol type.
+  # Gets or sets the symbol type.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`symbol_type`, "EXPECTED_RESULT")
@@ -31,7 +31,7 @@ test_that("symbol_type", {
 
 test_that("asset_id_base", {
   # tests for the property `asset_id_base` (character)
-  # The base asset identifier.
+  # Gets or sets the base asset identifier.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`asset_id_base`, "EXPECTED_RESULT")
@@ -39,7 +39,7 @@ test_that("asset_id_base", {
 
 test_that("asset_id_quote", {
   # tests for the property `asset_id_quote` (character)
-  # The quote asset identifier.
+  # Gets or sets the quote asset identifier.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`asset_id_quote`, "EXPECTED_RESULT")
@@ -47,7 +47,7 @@ test_that("asset_id_quote", {
 
 test_that("asset_id_unit", {
   # tests for the property `asset_id_unit` (character)
-  # The unit asset identifier.
+  # Gets or sets the unit asset identifier.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`asset_id_unit`, "EXPECTED_RESULT")
@@ -55,7 +55,7 @@ test_that("asset_id_unit", {
 
 test_that("future_contract_unit", {
   # tests for the property `future_contract_unit` (numeric)
-  # The contract unit for futures.
+  # Gets or sets the contract unit for futures.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`future_contract_unit`, "EXPECTED_RESULT")
@@ -63,7 +63,7 @@ test_that("future_contract_unit", {
 
 test_that("future_contract_unit_asset", {
   # tests for the property `future_contract_unit_asset` (character)
-  # The asset used as the unit for futures contract.
+  # Gets or sets the asset used as the unit for futures contract.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`future_contract_unit_asset`, "EXPECTED_RESULT")
@@ -71,7 +71,7 @@ test_that("future_contract_unit_asset", {
 
 test_that("future_delivery_time", {
   # tests for the property `future_delivery_time` (character)
-  # The future delivery time for futures contract.
+  # Gets or sets the future delivery time for futures contract.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`future_delivery_time`, "EXPECTED_RESULT")
@@ -79,7 +79,7 @@ test_that("future_delivery_time", {
 
 test_that("option_type_is_call", {
   # tests for the property `option_type_is_call` (character)
-  # Indicates whether the option type is a call.
+  # Gets or sets a value indicating whether the option type is a call.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`option_type_is_call`, "EXPECTED_RESULT")
@@ -87,7 +87,7 @@ test_that("option_type_is_call", {
 
 test_that("option_strike_price", {
   # tests for the property `option_strike_price` (numeric)
-  # The strike price for options.
+  # Gets or sets the strike price for options.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`option_strike_price`, "EXPECTED_RESULT")
@@ -95,7 +95,7 @@ test_that("option_strike_price", {
 
 test_that("option_contract_unit", {
   # tests for the property `option_contract_unit` (numeric)
-  # The contract unit for options.
+  # Gets or sets the contract unit for options.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`option_contract_unit`, "EXPECTED_RESULT")
@@ -103,7 +103,7 @@ test_that("option_contract_unit", {
 
 test_that("option_exercise_style", {
   # tests for the property `option_exercise_style` (character)
-  # The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
+  # Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`option_exercise_style`, "EXPECTED_RESULT")
@@ -111,7 +111,7 @@ test_that("option_exercise_style", {
 
 test_that("option_expiration_time", {
   # tests for the property `option_expiration_time` (character)
-  # The expiration time for options.
+  # Gets or sets the expiration time for options.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`option_expiration_time`, "EXPECTED_RESULT")
@@ -119,7 +119,7 @@ test_that("option_expiration_time", {
 
 test_that("contract_delivery_time", {
   # tests for the property `contract_delivery_time` (character)
-  # The delivery time for contracts.
+  # Gets or sets the delivery time for contracts.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`contract_delivery_time`, "EXPECTED_RESULT")
@@ -127,7 +127,7 @@ test_that("contract_delivery_time", {
 
 test_that("contract_unit", {
   # tests for the property `contract_unit` (numeric)
-  # The contract unit for contracts.
+  # Gets or sets the contract unit for contracts.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`contract_unit`, "EXPECTED_RESULT")
@@ -135,7 +135,7 @@ test_that("contract_unit", {
 
 test_that("contract_unit_asset", {
   # tests for the property `contract_unit_asset` (character)
-  # The asset used as the unit for contracts.
+  # Gets or sets the asset used as the unit for contracts.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`contract_unit_asset`, "EXPECTED_RESULT")
@@ -143,7 +143,7 @@ test_that("contract_unit_asset", {
 
 test_that("contract_id", {
   # tests for the property `contract_id` (character)
-  # The contract identifier.
+  # Gets or sets the contract identifier.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`contract_id`, "EXPECTED_RESULT")
@@ -151,7 +151,7 @@ test_that("contract_id", {
 
 test_that("contract_display_name", {
   # tests for the property `contract_display_name` (character)
-  # The display name of the contract.
+  # Gets or sets the display name of the contract.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`contract_display_name`, "EXPECTED_RESULT")
@@ -159,7 +159,7 @@ test_that("contract_display_name", {
 
 test_that("contract_display_description", {
   # tests for the property `contract_display_description` (character)
-  # The display description of the contract.
+  # Gets or sets the display description of the contract.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`contract_display_description`, "EXPECTED_RESULT")
@@ -167,6 +167,7 @@ test_that("contract_display_description", {
 
 test_that("data_start", {
   # tests for the property `data_start` (character)
+  # Gets the start date of the data in string format (\&quot;yyyy-MM-dd\&quot;).
 
   # uncomment below to test the property
   #expect_equal(model.instance$`data_start`, "EXPECTED_RESULT")
@@ -174,6 +175,7 @@ test_that("data_start", {
 
 test_that("data_end", {
   # tests for the property `data_end` (character)
+  # Gets the end date of the data in string format (\&quot;yyyy-MM-dd\&quot;).
 
   # uncomment below to test the property
   #expect_equal(model.instance$`data_end`, "EXPECTED_RESULT")
@@ -181,7 +183,7 @@ test_that("data_end", {
 
 test_that("data_quote_start", {
   # tests for the property `data_quote_start` (character)
-  # The start date of quote data.
+  # Gets or sets the start date of quote data.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`data_quote_start`, "EXPECTED_RESULT")
@@ -189,7 +191,7 @@ test_that("data_quote_start", {
 
 test_that("data_quote_end", {
   # tests for the property `data_quote_end` (character)
-  # The end date of quote data.
+  # Gets or sets the end date of quote data.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`data_quote_end`, "EXPECTED_RESULT")
@@ -197,7 +199,7 @@ test_that("data_quote_end", {
 
 test_that("data_orderbook_start", {
   # tests for the property `data_orderbook_start` (character)
-  # The start date of order book data.
+  # Gets or sets the start date of order book data.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`data_orderbook_start`, "EXPECTED_RESULT")
@@ -205,7 +207,7 @@ test_that("data_orderbook_start", {
 
 test_that("data_orderbook_end", {
   # tests for the property `data_orderbook_end` (character)
-  # The end date of order book data.
+  # Gets or sets the end date of order book data.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`data_orderbook_end`, "EXPECTED_RESULT")
@@ -213,7 +215,7 @@ test_that("data_orderbook_end", {
 
 test_that("data_trade_start", {
   # tests for the property `data_trade_start` (character)
-  # The start date of trade data.
+  # Gets or sets the start date of trade data.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`data_trade_start`, "EXPECTED_RESULT")
@@ -221,7 +223,7 @@ test_that("data_trade_start", {
 
 test_that("data_trade_end", {
   # tests for the property `data_trade_end` (character)
-  # The end date of trade data.
+  # Gets or sets the end date of trade data.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`data_trade_end`, "EXPECTED_RESULT")
@@ -229,7 +231,7 @@ test_that("data_trade_end", {
 
 test_that("index_id", {
   # tests for the property `index_id` (character)
-  # The index identifier.
+  # Gets or sets the index identifier.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`index_id`, "EXPECTED_RESULT")
@@ -237,7 +239,7 @@ test_that("index_id", {
 
 test_that("index_display_name", {
   # tests for the property `index_display_name` (character)
-  # The display name of the index.
+  # Gets or sets the display name of the index.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`index_display_name`, "EXPECTED_RESULT")
@@ -245,7 +247,7 @@ test_that("index_display_name", {
 
 test_that("index_display_description", {
   # tests for the property `index_display_description` (character)
-  # The display description of the index.
+  # Gets or sets the display description of the index.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`index_display_description`, "EXPECTED_RESULT")
@@ -253,7 +255,7 @@ test_that("index_display_description", {
 
 test_that("volume_1hrs", {
   # tests for the property `volume_1hrs` (numeric)
-  # The volume in the last 1 hour.
+  # Gets or sets the volume in the last 1 hour.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`volume_1hrs`, "EXPECTED_RESULT")
@@ -261,7 +263,7 @@ test_that("volume_1hrs", {
 
 test_that("volume_1hrs_usd", {
   # tests for the property `volume_1hrs_usd` (numeric)
-  # The volume in USD in the last 1 hour.
+  # Gets or sets the volume in USD in the last 1 hour.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`volume_1hrs_usd`, "EXPECTED_RESULT")
@@ -269,7 +271,7 @@ test_that("volume_1hrs_usd", {
 
 test_that("volume_1day", {
   # tests for the property `volume_1day` (numeric)
-  # The volume in the last 1 day.
+  # Gets or sets the volume in the last 1 day.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`volume_1day`, "EXPECTED_RESULT")
@@ -277,7 +279,7 @@ test_that("volume_1day", {
 
 test_that("volume_1day_usd", {
   # tests for the property `volume_1day_usd` (numeric)
-  # The volume in USD in the last 1 day.
+  # Gets or sets the volume in USD in the last 1 day.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`volume_1day_usd`, "EXPECTED_RESULT")
@@ -285,7 +287,7 @@ test_that("volume_1day_usd", {
 
 test_that("volume_1mth", {
   # tests for the property `volume_1mth` (numeric)
-  # The volume in the last 1 month.
+  # Gets or sets the volume in the last 1 month.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`volume_1mth`, "EXPECTED_RESULT")
@@ -293,7 +295,7 @@ test_that("volume_1mth", {
 
 test_that("volume_1mth_usd", {
   # tests for the property `volume_1mth_usd` (numeric)
-  # The volume in USD in the last 1 month.
+  # Gets or sets the volume in USD in the last 1 month.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`volume_1mth_usd`, "EXPECTED_RESULT")
@@ -301,7 +303,7 @@ test_that("volume_1mth_usd", {
 
 test_that("price", {
   # tests for the property `price` (numeric)
-  # The price.
+  # Gets or sets the price.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`price`, "EXPECTED_RESULT")
@@ -309,7 +311,7 @@ test_that("price", {
 
 test_that("symbol_id_exchange", {
   # tests for the property `symbol_id_exchange` (character)
-  # The symbol identifier in the exchange.
+  # Gets or sets the symbol identifier in the exchange.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`symbol_id_exchange`, "EXPECTED_RESULT")
@@ -317,7 +319,7 @@ test_that("symbol_id_exchange", {
 
 test_that("asset_id_base_exchange", {
   # tests for the property `asset_id_base_exchange` (character)
-  # The base asset identifier in the exchange.
+  # Gets or sets the base asset identifier in the exchange.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`asset_id_base_exchange`, "EXPECTED_RESULT")
@@ -325,7 +327,7 @@ test_that("asset_id_base_exchange", {
 
 test_that("asset_id_quote_exchange", {
   # tests for the property `asset_id_quote_exchange` (character)
-  # The quote asset identifier in the exchange.
+  # Gets or sets the quote asset identifier in the exchange.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`asset_id_quote_exchange`, "EXPECTED_RESULT")
@@ -333,7 +335,7 @@ test_that("asset_id_quote_exchange", {
 
 test_that("price_precision", {
   # tests for the property `price_precision` (numeric)
-  # The price precision.
+  # Gets or sets the price precision.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`price_precision`, "EXPECTED_RESULT")
@@ -341,7 +343,7 @@ test_that("price_precision", {
 
 test_that("size_precision", {
   # tests for the property `size_precision` (numeric)
-  # The size precision.
+  # Gets or sets the size precision.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`size_precision`, "EXPECTED_RESULT")
@@ -357,7 +359,7 @@ test_that("raw_kvp", {
 
 test_that("future_is_inverse", {
   # tests for the property `future_is_inverse` (character)
-  # Indicates whether the futures contract is inverse (coin-margined).
+  # Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
 
   # uncomment below to test the property
   #expect_equal(model.instance$`future_is_inverse`, "EXPECTED_RESULT")
@@ -365,7 +367,7 @@ test_that("future_is_inverse", {
 
 test_that("future_is_quanto", {
   # tests for the property `future_is_quanto` (character)
-  # Indicates whether the futures contract is quanto.
+  # Gets or sets a value indicating whether the futures contract is quanto.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`future_is_quanto`, "EXPECTED_RESULT")
@@ -373,7 +375,7 @@ test_that("future_is_quanto", {
 
 test_that("volume_to_usd", {
   # tests for the property `volume_to_usd` (numeric)
-  # Volume unit in USD.
+  # Gets or sets the volume in USD.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`volume_to_usd`, "EXPECTED_RESULT")
@@ -381,7 +383,7 @@ test_that("volume_to_usd", {
 
 test_that("option_barrier_up_price", {
   # tests for the property `option_barrier_up_price` (numeric)
-  # The up barrier price for barrier options.
+  # Gets or sets the up barrier price for barrier options.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`option_barrier_up_price`, "EXPECTED_RESULT")
@@ -389,7 +391,7 @@ test_that("option_barrier_up_price", {
 
 test_that("option_barrier_up_type", {
   # tests for the property `option_barrier_up_type` (character)
-  # The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  # Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`option_barrier_up_type`, "EXPECTED_RESULT")
@@ -397,7 +399,7 @@ test_that("option_barrier_up_type", {
 
 test_that("option_barrier_down_price", {
   # tests for the property `option_barrier_down_price` (numeric)
-  # The down barrier price for barrier options.
+  # Gets or sets the down barrier price for barrier options.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`option_barrier_down_price`, "EXPECTED_RESULT")
@@ -405,7 +407,7 @@ test_that("option_barrier_down_price", {
 
 test_that("option_barrier_down_type", {
   # tests for the property `option_barrier_down_type` (character)
-  # The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
+  # Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`option_barrier_down_type`, "EXPECTED_RESULT")
@@ -413,7 +415,7 @@ test_that("option_barrier_down_type", {
 
 test_that("symbol_id_int", {
   # tests for the property `symbol_id_int` (integer)
-  # The symbol identifier in integer immutable format, used to correlate data across different APIs.
+  # Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.
 
   # uncomment below to test the property
   #expect_equal(model.instance$`symbol_id_int`, "EXPECTED_RESULT")

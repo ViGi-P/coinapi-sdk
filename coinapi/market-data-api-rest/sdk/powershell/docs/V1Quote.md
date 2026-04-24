@@ -3,13 +3,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SymbolId** | **String** | The symbol identifier. | [optional] 
-**TimeExchange** | **System.DateTime** | The exchange time of the quote. | [optional] 
-**TimeCoinapi** | **System.DateTime** | The CoinAPI time when the quote was received. | [optional] 
-**AskPrice** | **Double** | The best asking price. | [optional] 
-**AskSize** | **Double** | The volume resting on the best ask. If the value is equal to zero, then the size is unknown. | [optional] 
-**BidPrice** | **Double** | The best bidding price. | [optional] 
-**BidSize** | **Double** | The volume resting on the best bid. If the value is equal to zero, then the size is unknown. | [optional] 
+**SymbolId** | **String** | Gets or sets the symbol identifier. | [optional] 
+**TimeExchange** | **System.DateTime** | Gets or sets the exchange time of the quote. | [optional] 
+**TimeCoinapi** | **System.DateTime** | Gets or sets the CoinAPI time when the quote was received. | [optional] 
+**AskPrice** | **Double** | Gets or sets the best asking price. | [optional] 
+**AskSize** | **Double** | Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown. | [optional] 
+**BidPrice** | **Double** | Gets or sets the best bidding price. | [optional] 
+**BidSize** | **Double** | Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown. | [optional] 
 
 ## Examples
 

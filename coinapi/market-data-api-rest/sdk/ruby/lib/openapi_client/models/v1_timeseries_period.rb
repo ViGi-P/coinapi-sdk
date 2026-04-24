@@ -16,22 +16,22 @@ require 'time'
 module OpenapiClient
   # Represents a timeseries period used in exchange rate data.
   class V1TimeseriesPeriod < ApiModelBase
-    # The period ID.
+    # Gets or sets the period ID.
     attr_accessor :period_id
 
-    # The length of the period in seconds.
+    # Gets or sets the length of the period in seconds.
     attr_accessor :length_seconds
 
-    # The length of the period in months.
+    # Gets or sets the length of the period in months.
     attr_accessor :length_months
 
-    # The unit count.
+    # Gets or sets the unit count.
     attr_accessor :unit_count
 
-    # The unit name.
+    # Gets or sets the unit name.
     attr_accessor :unit_name
 
-    # The display name of the timeseries period.
+    # Gets or sets the display name of the timeseries period.
     attr_accessor :display_name
 
     # Attribute mapping from ruby-style variable name to JSON key.

@@ -137,8 +137,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [OhlcvExchangeTimeseriesItem](api_bricks_coinapi_market_data_api_rest/docs/OhlcvExchangeTimeseriesItem.md)
- - [OptionsOptionExchangeGroup](api_bricks_coinapi_market_data_api_rest/docs/OptionsOptionExchangeGroup.md)
- - [OptionsStrike](api_bricks_coinapi_market_data_api_rest/docs/OptionsStrike.md)
  - [V1Asset](api_bricks_coinapi_market_data_api_rest/docs/V1Asset.md)
  - [V1Chain](api_bricks_coinapi_market_data_api_rest/docs/V1Chain.md)
  - [V1ChainNetworkAddress](api_bricks_coinapi_market_data_api_rest/docs/V1ChainNetworkAddress.md)
@@ -154,11 +152,13 @@ Class | Method | HTTP request | Description
  - [V1Metric](api_bricks_coinapi_market_data_api_rest/docs/V1Metric.md)
  - [V1MetricData](api_bricks_coinapi_market_data_api_rest/docs/V1MetricData.md)
  - [V1MetricInfo](api_bricks_coinapi_market_data_api_rest/docs/V1MetricInfo.md)
+ - [V1OptionExchangeGroup](api_bricks_coinapi_market_data_api_rest/docs/V1OptionExchangeGroup.md)
  - [V1OrderBook](api_bricks_coinapi_market_data_api_rest/docs/V1OrderBook.md)
  - [V1OrderBookBase](api_bricks_coinapi_market_data_api_rest/docs/V1OrderBookBase.md)
  - [V1OrderBookDepth](api_bricks_coinapi_market_data_api_rest/docs/V1OrderBookDepth.md)
  - [V1Quote](api_bricks_coinapi_market_data_api_rest/docs/V1Quote.md)
  - [V1QuoteTrade](api_bricks_coinapi_market_data_api_rest/docs/V1QuoteTrade.md)
+ - [V1Strike](api_bricks_coinapi_market_data_api_rest/docs/V1Strike.md)
  - [V1Symbol](api_bricks_coinapi_market_data_api_rest/docs/V1Symbol.md)
  - [V1SymbolMapping](api_bricks_coinapi_market_data_api_rest/docs/V1SymbolMapping.md)
  - [V1TimeseriesItem](api_bricks_coinapi_market_data_api_rest/docs/V1TimeseriesItem.md)

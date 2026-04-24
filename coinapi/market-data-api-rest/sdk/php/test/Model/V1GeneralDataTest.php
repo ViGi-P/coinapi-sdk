@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * V1GeneralDataTest Class Doc Comment
  *
  * @category    Class
- * @description Class representation of general metric data. This class is an XML type with name &#39;general_data&#39; and inherits from the BaseCsvModel class.
+ * @description Class representation of general metric data. This class is an XML type with name \&quot;general_data\&quot; and inherits from the BaseCsvModel class.
  * @package     OpenAPI\Client
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

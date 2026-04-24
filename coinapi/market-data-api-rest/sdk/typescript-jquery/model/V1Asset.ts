@@ -111,8 +111,14 @@ export interface V1Asset {
      */
     chain_addresses?: Array<models.V1ChainNetworkAddress>;
 
+    /**
+     * Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
+     */
     data_start?: string;
 
+    /**
+     * Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
+     */
     data_end?: string;
 
 }

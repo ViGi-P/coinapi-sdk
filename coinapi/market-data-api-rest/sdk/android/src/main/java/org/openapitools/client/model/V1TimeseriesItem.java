@@ -44,9 +44,9 @@ public class V1TimeseriesItem {
   private Long tradesCount = null;
 
   /**
-   * The start time of the time period.
+   * Gets or sets the start time of the time period.
    **/
-  @ApiModelProperty(value = "The start time of the time period.")
+  @ApiModelProperty(value = "Gets or sets the start time of the time period.")
   public Date getTimePeriodStart() {
     return timePeriodStart;
   }
@@ -55,9 +55,9 @@ public class V1TimeseriesItem {
   }
 
   /**
-   * The end time of the time period.
+   * Gets or sets the end time of the time period.
    **/
-  @ApiModelProperty(value = "The end time of the time period.")
+  @ApiModelProperty(value = "Gets or sets the end time of the time period.")
   public Date getTimePeriodEnd() {
     return timePeriodEnd;
   }
@@ -66,9 +66,9 @@ public class V1TimeseriesItem {
   }
 
   /**
-   * The time when the price opened.
+   * Gets or sets the time when the price opened.
    **/
-  @ApiModelProperty(value = "The time when the price opened.")
+  @ApiModelProperty(value = "Gets or sets the time when the price opened.")
   public Date getTimeOpen() {
     return timeOpen;
   }
@@ -77,9 +77,9 @@ public class V1TimeseriesItem {
   }
 
   /**
-   * The time when the price closed.
+   * Gets or sets the time when the price closed.
    **/
-  @ApiModelProperty(value = "The time when the price closed.")
+  @ApiModelProperty(value = "Gets or sets the time when the price closed.")
   public Date getTimeClose() {
     return timeClose;
   }
@@ -88,9 +88,9 @@ public class V1TimeseriesItem {
   }
 
   /**
-   * The opening price.
+   * Gets or sets the opening price.
    **/
-  @ApiModelProperty(value = "The opening price.")
+  @ApiModelProperty(value = "Gets or sets the opening price.")
   public Double getPriceOpen() {
     return priceOpen;
   }
@@ -99,9 +99,9 @@ public class V1TimeseriesItem {
   }
 
   /**
-   * The highest price during the time period.
+   * Gets or sets the highest price during the time period.
    **/
-  @ApiModelProperty(value = "The highest price during the time period.")
+  @ApiModelProperty(value = "Gets or sets the highest price during the time period.")
   public Double getPriceHigh() {
     return priceHigh;
   }
@@ -110,9 +110,9 @@ public class V1TimeseriesItem {
   }
 
   /**
-   * The lowest price during the time period.
+   * Gets or sets the lowest price during the time period.
    **/
-  @ApiModelProperty(value = "The lowest price during the time period.")
+  @ApiModelProperty(value = "Gets or sets the lowest price during the time period.")
   public Double getPriceLow() {
     return priceLow;
   }
@@ -121,9 +121,9 @@ public class V1TimeseriesItem {
   }
 
   /**
-   * The closing price.
+   * Gets or sets the closing price.
    **/
-  @ApiModelProperty(value = "The closing price.")
+  @ApiModelProperty(value = "Gets or sets the closing price.")
   public Double getPriceClose() {
     return priceClose;
   }
@@ -132,9 +132,9 @@ public class V1TimeseriesItem {
   }
 
   /**
-   * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+   * Gets or sets the total volume traded during the time period.
    **/
-  @ApiModelProperty(value = "The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.")
+  @ApiModelProperty(value = "Gets or sets the total volume traded during the time period.")
   public Double getVolumeTraded() {
     return volumeTraded;
   }
@@ -143,9 +143,9 @@ public class V1TimeseriesItem {
   }
 
   /**
-   * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+   * Gets or sets the number of trades executed during the time period.
    **/
-  @ApiModelProperty(value = "The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.")
+  @ApiModelProperty(value = "Gets or sets the number of trades executed during the time period.")
   public Long getTradesCount() {
     return tradesCount;
   }

@@ -23,8 +23,8 @@
 | **supply_total** | **Float** | Gets or sets the total supply of the asset. | [optional] |
 | **supply_max** | **Float** | Gets or sets the maximum supply of the asset. | [optional] |
 | **chain_addresses** | [**Array&lt;V1ChainNetworkAddress&gt;**](V1ChainNetworkAddress.md) |  | [optional] |
-| **data_start** | **String** |  | [optional][readonly] |
-| **data_end** | **String** |  | [optional][readonly] |
+| **data_start** | **String** | Gets the start date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;. | [optional][readonly] |
+| **data_end** | **String** | Gets the end date of the available data as a string in the format \&quot;yyyy-MM-dd\&quot;. | [optional][readonly] |
 
 ## Example
 

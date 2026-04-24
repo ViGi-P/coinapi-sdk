@@ -94,37 +94,37 @@ class V1LastTrade {
 
 
 /**
- * The exchange time of the last trade.
+ * Gets or sets the exchange time of the last trade.
  * @member {Date} time_exchange
  */
 V1LastTrade.prototype['time_exchange'] = undefined;
 
 /**
- * The CoinAPI time when the last trade was received.
+ * Gets or sets the CoinAPI time when the last trade was received.
  * @member {Date} time_coinapi
  */
 V1LastTrade.prototype['time_coinapi'] = undefined;
 
 /**
- * The UUID of the last trade.
+ * Gets or sets the UUID of the last trade.
  * @member {String} uuid
  */
 V1LastTrade.prototype['uuid'] = undefined;
 
 /**
- * The price of the last trade.
+ * Gets or sets the price of the last trade.
  * @member {Number} price
  */
 V1LastTrade.prototype['price'] = undefined;
 
 /**
- * The size of the last trade.
+ * Gets or sets the size of the last trade.
  * @member {Number} size
  */
 V1LastTrade.prototype['size'] = undefined;
 
 /**
- * The taker side of the last trade.
+ * Gets or sets the taker side of the last trade.
  * @member {String} taker_side
  */
 V1LastTrade.prototype['taker_side'] = undefined;

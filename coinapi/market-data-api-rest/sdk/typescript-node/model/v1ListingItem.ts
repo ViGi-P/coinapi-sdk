@@ -13,7 +13,7 @@
 import { RequestFile } from './models';
 
 /**
-* Represents a listing item.
+* Represents a listing data item.
 */
 export class V1ListingItem {
     /**
@@ -21,11 +21,11 @@ export class V1ListingItem {
     */
     'metricId'?: string | null;
     /**
-    * The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.
+    * Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.
     */
     'symbolId'?: string | null;
     /**
-    * The exchange-native symbol identifier. Null for exchange-level metrics.
+    * Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.
     */
     'symbolIdExternal'?: string | null;
     /**
@@ -37,15 +37,15 @@ export class V1ListingItem {
     */
     'assetId'?: string | null;
     /**
-    * Gets or sets the asset ID from the exchange.
+    * Gets or sets the asset ID.
     */
     'assetIdExternal'?: string | null;
     /**
-    * Gets or sets the chain id.
+    * Gets or sets the chain ID.
     */
     'chainId'?: string | null;
     /**
-    * Gets or sets the network id.
+    * Gets or sets the network ID.
     */
     'networkId'?: string | null;
 

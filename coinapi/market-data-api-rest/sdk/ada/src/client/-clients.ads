@@ -501,7 +501,7 @@ package .Clients is
    procedure V_1Options_Exchange_Id_Current_Get
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;
-       Result : out .Models.OptionsOptionExchangeGroup_Type_Vectors.Vector);
+       Result : out .Models.V1OptionExchangeGroup_Type_Vectors.Vector);
 
    --  Get current order book
    --  Retrieves the current order book for the specified symbol.

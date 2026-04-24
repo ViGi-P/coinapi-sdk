@@ -23,7 +23,7 @@ module OpenapiClient
     # Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
     # @param exchange_id [String] Exchange identifier (from the Metadata -&gt; Exchanges)
     # @param [Hash] opts the optional parameters
-    # @return [Array<OptionsOptionExchangeGroup>]
+    # @return [Array<V1OptionExchangeGroup>]
     def v1_options_exchange_id_current_get(exchange_id, opts = {})
       data, _status_code, _headers = v1_options_exchange_id_current_get_with_http_info(exchange_id, opts)
       data
@@ -33,7 +33,7 @@ module OpenapiClient
     # Get current options data for a specific exchange.  Returns option data grouped by underlying asset, quote currency, and expiration time, with quotes for both calls and puts at each strike price.
     # @param exchange_id [String] Exchange identifier (from the Metadata -&gt; Exchanges)
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Array<OptionsOptionExchangeGroup>, Integer, Hash)>] Array<OptionsOptionExchangeGroup> data, response status code and response headers
+    # @return [Array<(Array<V1OptionExchangeGroup>, Integer, Hash)>] Array<V1OptionExchangeGroup> data, response status code and response headers
     def v1_options_exchange_id_current_get_with_http_info(exchange_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: OptionsApi.v1_options_exchange_id_current_get ...'
@@ -60,7 +60,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'Array<OptionsOptionExchangeGroup>'
+      return_type = opts[:debug_return_type] || 'Array<V1OptionExchangeGroup>'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']

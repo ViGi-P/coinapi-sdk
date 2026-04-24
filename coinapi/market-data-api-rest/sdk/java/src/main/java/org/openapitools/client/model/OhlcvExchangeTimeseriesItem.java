@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a timeseries item with price and volume information.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-23T06:06:39.606952276Z[Etc/UTC]", comments = "Generator version: 7.21.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-04-24T06:05:03.999499045Z[Etc/UTC]", comments = "Generator version: 7.21.0")
 public class OhlcvExchangeTimeseriesItem {
   public static final String SERIALIZED_NAME_TIME_PERIOD_START = "time_period_start";
   @SerializedName(SERIALIZED_NAME_TIME_PERIOD_START)
@@ -121,7 +121,7 @@ public class OhlcvExchangeTimeseriesItem {
   }
 
   /**
-   * The start time of the time period.
+   * Gets or sets the start time of the time period.
    * @return timePeriodStart
    */
   @javax.annotation.Nullable
@@ -140,7 +140,7 @@ public class OhlcvExchangeTimeseriesItem {
   }
 
   /**
-   * The end time of the time period.
+   * Gets or sets the end time of the time period.
    * @return timePeriodEnd
    */
   @javax.annotation.Nullable
@@ -159,7 +159,7 @@ public class OhlcvExchangeTimeseriesItem {
   }
 
   /**
-   * The time when the price opened.
+   * Gets or sets the time when the price opened.
    * @return timeOpen
    */
   @javax.annotation.Nullable
@@ -178,7 +178,7 @@ public class OhlcvExchangeTimeseriesItem {
   }
 
   /**
-   * The time when the price closed.
+   * Gets or sets the time when the price closed.
    * @return timeClose
    */
   @javax.annotation.Nullable
@@ -197,7 +197,7 @@ public class OhlcvExchangeTimeseriesItem {
   }
 
   /**
-   * The opening price.
+   * Gets or sets the opening price.
    * @return priceOpen
    */
   @javax.annotation.Nullable
@@ -216,7 +216,7 @@ public class OhlcvExchangeTimeseriesItem {
   }
 
   /**
-   * The highest price during the time period.
+   * Gets or sets the highest price during the time period.
    * @return priceHigh
    */
   @javax.annotation.Nullable
@@ -235,7 +235,7 @@ public class OhlcvExchangeTimeseriesItem {
   }
 
   /**
-   * The lowest price during the time period.
+   * Gets or sets the lowest price during the time period.
    * @return priceLow
    */
   @javax.annotation.Nullable
@@ -254,7 +254,7 @@ public class OhlcvExchangeTimeseriesItem {
   }
 
   /**
-   * The closing price.
+   * Gets or sets the closing price.
    * @return priceClose
    */
   @javax.annotation.Nullable
@@ -273,7 +273,7 @@ public class OhlcvExchangeTimeseriesItem {
   }
 
   /**
-   * The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+   * Gets or sets the total volume traded during the time period.
    * @return volumeTraded
    */
   @javax.annotation.Nullable
@@ -292,7 +292,7 @@ public class OhlcvExchangeTimeseriesItem {
   }
 
   /**
-   * The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.
+   * Gets or sets the number of trades executed during the time period.
    * @return tradesCount
    */
   @javax.annotation.Nullable

@@ -11,50 +11,50 @@ part 'v1_symbol_mapping.g.dart';
 /// Represents symbol mapping information for exchange symbols.
 ///
 /// Properties:
-/// * [symbolId] - The symbol ID.
-/// * [symbolIdExchange] - The exchange-specific symbol ID.
-/// * [coinapiDatainfoId] - The CoinAPI DataInfo ID.
-/// * [assetIdBaseExchange] - The exchange-specific base asset ID.
-/// * [assetIdQuoteExchange] - The exchange-specific quote asset ID.
-/// * [assetIdBase] - The base asset ID.
-/// * [assetIdQuote] - The quote asset ID.
-/// * [pricePrecision] - The price precision.
-/// * [sizePrecision] - The size precision.
+/// * [symbolId] - Gets or sets the symbol ID.
+/// * [symbolIdExchange] - Gets or sets the exchange-specific symbol ID.
+/// * [coinapiDatainfoId] - Gets or sets the DataInfo ID.
+/// * [assetIdBaseExchange] - Gets or sets the exchange-specific base asset ID.
+/// * [assetIdQuoteExchange] - Gets or sets the exchange-specific quote asset ID.
+/// * [assetIdBase] - Gets or sets the base asset ID.
+/// * [assetIdQuote] - Gets or sets the quote asset ID.
+/// * [pricePrecision] - Gets or sets the price precision.
+/// * [sizePrecision] - Gets or sets the size precision.
 @BuiltValue()
 abstract class V1SymbolMapping implements Built<V1SymbolMapping, V1SymbolMappingBuilder> {
-  /// The symbol ID.
+  /// Gets or sets the symbol ID.
   @BuiltValueField(wireName: r'symbol_id')
   String? get symbolId;
 
-  /// The exchange-specific symbol ID.
+  /// Gets or sets the exchange-specific symbol ID.
   @BuiltValueField(wireName: r'symbol_id_exchange')
   String? get symbolIdExchange;
 
-  /// The CoinAPI DataInfo ID.
+  /// Gets or sets the DataInfo ID.
   @BuiltValueField(wireName: r'coinapi_datainfo_id')
   int? get coinapiDatainfoId;
 
-  /// The exchange-specific base asset ID.
+  /// Gets or sets the exchange-specific base asset ID.
   @BuiltValueField(wireName: r'asset_id_base_exchange')
   String? get assetIdBaseExchange;
 
-  /// The exchange-specific quote asset ID.
+  /// Gets or sets the exchange-specific quote asset ID.
   @BuiltValueField(wireName: r'asset_id_quote_exchange')
   String? get assetIdQuoteExchange;
 
-  /// The base asset ID.
+  /// Gets or sets the base asset ID.
   @BuiltValueField(wireName: r'asset_id_base')
   String? get assetIdBase;
 
-  /// The quote asset ID.
+  /// Gets or sets the quote asset ID.
   @BuiltValueField(wireName: r'asset_id_quote')
   String? get assetIdQuote;
 
-  /// The price precision.
+  /// Gets or sets the price precision.
   @BuiltValueField(wireName: r'price_precision')
   double? get pricePrecision;
 
-  /// The size precision.
+  /// Gets or sets the size precision.
   @BuiltValueField(wireName: r'size_precision')
   double? get sizePrecision;
 

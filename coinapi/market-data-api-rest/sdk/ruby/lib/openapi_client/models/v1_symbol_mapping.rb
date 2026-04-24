@@ -16,31 +16,31 @@ require 'time'
 module OpenapiClient
   # Represents symbol mapping information for exchange symbols.
   class V1SymbolMapping < ApiModelBase
-    # The symbol ID.
+    # Gets or sets the symbol ID.
     attr_accessor :symbol_id
 
-    # The exchange-specific symbol ID.
+    # Gets or sets the exchange-specific symbol ID.
     attr_accessor :symbol_id_exchange
 
-    # The CoinAPI DataInfo ID.
+    # Gets or sets the DataInfo ID.
     attr_accessor :coinapi_datainfo_id
 
-    # The exchange-specific base asset ID.
+    # Gets or sets the exchange-specific base asset ID.
     attr_accessor :asset_id_base_exchange
 
-    # The exchange-specific quote asset ID.
+    # Gets or sets the exchange-specific quote asset ID.
     attr_accessor :asset_id_quote_exchange
 
-    # The base asset ID.
+    # Gets or sets the base asset ID.
     attr_accessor :asset_id_base
 
-    # The quote asset ID.
+    # Gets or sets the quote asset ID.
     attr_accessor :asset_id_quote
 
-    # The price precision.
+    # Gets or sets the price precision.
     attr_accessor :price_precision
 
-    # The size precision.
+    # Gets or sets the size precision.
     attr_accessor :size_precision
 
     # Attribute mapping from ruby-style variable name to JSON key.

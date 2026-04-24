@@ -40,11 +40,13 @@ export interface V1Exchange {
      */
     name?: string | null;
     /**
+     * Gets the start date of the exchange\'s data.
      * @type {string}
      * @memberof V1Exchange
      */
     readonly data_start?: string | null;
     /**
+     * Gets the end date of the exchange\'s data.
      * @type {string}
      * @memberof V1Exchange
      */
@@ -128,7 +130,7 @@ export interface V1Exchange {
      */
     readonly icons?: Array<V1Icon> | null;
     /**
-     * Rank of the exchange.
+     * Rank of the exchange - higher rank means exchange is more reliable
      * @type {number}
      * @memberof V1Exchange
      */

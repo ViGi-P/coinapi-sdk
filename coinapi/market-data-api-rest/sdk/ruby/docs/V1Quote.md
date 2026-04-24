@@ -4,13 +4,13 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **symbol_id** | **String** | The symbol identifier. | [optional] |
-| **time_exchange** | **Time** | The exchange time of the quote. | [optional] |
-| **time_coinapi** | **Time** | The CoinAPI time when the quote was received. | [optional] |
-| **ask_price** | **Float** | The best asking price. | [optional] |
-| **ask_size** | **Float** | The volume resting on the best ask. If the value is equal to zero, then the size is unknown. | [optional] |
-| **bid_price** | **Float** | The best bidding price. | [optional] |
-| **bid_size** | **Float** | The volume resting on the best bid. If the value is equal to zero, then the size is unknown. | [optional] |
+| **symbol_id** | **String** | Gets or sets the symbol identifier. | [optional] |
+| **time_exchange** | **Time** | Gets or sets the exchange time of the quote. | [optional] |
+| **time_coinapi** | **Time** | Gets or sets the CoinAPI time when the quote was received. | [optional] |
+| **ask_price** | **Float** | Gets or sets the best asking price. | [optional] |
+| **ask_size** | **Float** | Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown. | [optional] |
+| **bid_price** | **Float** | Gets or sets the best bidding price. | [optional] |
+| **bid_size** | **Float** | Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown. | [optional] |
 
 ## Example
 

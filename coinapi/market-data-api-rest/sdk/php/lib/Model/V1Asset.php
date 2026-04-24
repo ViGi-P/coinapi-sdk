@@ -1083,7 +1083,7 @@ class V1Asset implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_start
      *
-     * @param string|null $data_start data_start
+     * @param string|null $data_start Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".
      *
      * @return self
      */
@@ -1117,7 +1117,7 @@ class V1Asset implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets data_end
      *
-     * @param string|null $data_end data_end
+     * @param string|null $data_end Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".
      *
      * @return self
      */

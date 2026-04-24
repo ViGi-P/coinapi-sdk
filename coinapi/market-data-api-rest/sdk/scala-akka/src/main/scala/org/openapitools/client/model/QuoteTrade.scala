@@ -15,19 +15,19 @@ import java.time.OffsetDateTime
 import org.openapitools.client.core.ApiModel
 
 case class QuoteTrade (
-  /* The symbol identifier. */
+  /* Gets or sets the symbol identifier. */
   symbolId: Option[String] = None,
-  /* The exchange time of the quote trade. */
+  /* Gets or sets the exchange time of the quote trade. */
   timeExchange: Option[OffsetDateTime] = None,
-  /* The CoinAPI time when the quote trade was received. */
+  /* Gets or sets the CoinAPI time when the quote trade was received. */
   timeCoinapi: Option[OffsetDateTime] = None,
-  /* The best asking price. */
+  /* Gets or sets the best asking price. */
   askPrice: Option[Double] = None,
-  /* The volume resting on the best ask. If the value is equal to zero, then the size is unknown. */
+  /* Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown. */
   askSize: Option[Double] = None,
-  /* The best bidding price. */
+  /* Gets or sets the best bidding price. */
   bidPrice: Option[Double] = None,
-  /* The volume resting on the best bid. If the value is equal to zero, then the size is unknown. */
+  /* Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown. */
   bidSize: Option[Double] = None,
   lastTrade: Option[LastTrade] = None
 ) extends ApiModel

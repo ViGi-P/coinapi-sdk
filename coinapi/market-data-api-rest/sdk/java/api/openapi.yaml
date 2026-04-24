@@ -100,7 +100,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-04-23T06:05:58.7695418Z
+                    time: 2026-04-24T06:04:29.4992533Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -110,7 +110,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-04-23T06:05:58.7695418Z
+                    time: 2026-04-24T06:04:29.4992533Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -120,7 +120,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-04-23T06:05:58.7695418Z
+                    time: 2026-04-24T06:04:29.4992533Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -130,7 +130,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-04-23T06:05:58.7695418Z
+                    time: 2026-04-24T06:04:29.4992533Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -5432,7 +5432,7 @@ paths:
                           taker_side: SELL
               schema:
                 items:
-                  $ref: "#/components/schemas/Options.OptionExchangeGroup"
+                  $ref: "#/components/schemas/v1.OptionExchangeGroup"
                 type: array
             application/json:
               examples:
@@ -5476,7 +5476,7 @@ paths:
                           taker_side: SELL
               schema:
                 items:
-                  $ref: "#/components/schemas/Options.OptionExchangeGroup"
+                  $ref: "#/components/schemas/v1.OptionExchangeGroup"
                 type: array
             text/json:
               examples:
@@ -5520,7 +5520,7 @@ paths:
                           taker_side: SELL
               schema:
                 items:
-                  $ref: "#/components/schemas/Options.OptionExchangeGroup"
+                  $ref: "#/components/schemas/v1.OptionExchangeGroup"
                 type: array
             application/x-msgpack:
               examples:
@@ -5564,7 +5564,7 @@ paths:
                           taker_side: SELL
               schema:
                 items:
-                  $ref: "#/components/schemas/Options.OptionExchangeGroup"
+                  $ref: "#/components/schemas/v1.OptionExchangeGroup"
                 type: array
           description: successful operation
       summary: Current data by Exchange
@@ -7300,52 +7300,50 @@ components:
         price_low: 1.4658129805029452
       properties:
         time_period_start:
-          description: The start time of the time period.
+          description: Gets or sets the start time of the time period.
           format: date-time
           type: string
         time_period_end:
-          description: The end time of the time period.
+          description: Gets or sets the end time of the time period.
           format: date-time
           type: string
         time_open:
-          description: The time when the price opened.
+          description: Gets or sets the time when the price opened.
           format: date-time
           nullable: true
           type: string
         time_close:
-          description: The time when the price closed.
+          description: Gets or sets the time when the price closed.
           format: date-time
           nullable: true
           type: string
         price_open:
-          description: The opening price.
+          description: Gets or sets the opening price.
           format: double
           nullable: true
           type: number
         price_high:
-          description: The highest price during the time period.
+          description: Gets or sets the highest price during the time period.
           format: double
           nullable: true
           type: number
         price_low:
-          description: The lowest price during the time period.
+          description: Gets or sets the lowest price during the time period.
           format: double
           nullable: true
           type: number
         price_close:
-          description: The closing price.
+          description: Gets or sets the closing price.
           format: double
           nullable: true
           type: number
         volume_traded:
-          description: The total volume traded during the time period. This could
-            be zero if there was not transactions and there was only orderbook activity.
+          description: Gets or sets the total volume traded during the time period.
           format: double
           type: number
         trades_count:
-          description: The number of trades executed during the time period. This
-            could be zero if there was not transactions and there was only orderbook
-            activity.
+          description: Gets or sets the number of trades executed during the time
+            period.
           format: int64
           type: integer
         symbol_id_exchange:
@@ -7354,147 +7352,6 @@ components:
         symbol_id_coinapi:
           nullable: true
           type: string
-      type: object
-    Options.OptionExchangeGroup:
-      additionalProperties: false
-      description: Represents an option exchange group data model.
-      example:
-        asset_id_base: asset_id_base
-        underlying_price: 0.8008281904610115
-        time_expiration: 2000-01-23T04:56:07.000+00:00
-        strikes:
-        - call:
-            time_exchange: 2000-01-23T04:56:07.000+00:00
-            ask_size: 5.962133916683182
-            last_trade:
-              time_exchange: 2000-01-23T04:56:07.000+00:00
-              size: 9.301444243932576
-              price: 7.061401241503109
-              time_coinapi: 2000-01-23T04:56:07.000+00:00
-              taker_side: taker_side
-              uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-            bid_size: 2.3021358869347655
-            time_coinapi: 2000-01-23T04:56:07.000+00:00
-            symbol_id: symbol_id
-            bid_price: 5.637376656633329
-            ask_price: 1.4658129805029452
-          put:
-            time_exchange: 2000-01-23T04:56:07.000+00:00
-            ask_size: 5.962133916683182
-            last_trade:
-              time_exchange: 2000-01-23T04:56:07.000+00:00
-              size: 9.301444243932576
-              price: 7.061401241503109
-              time_coinapi: 2000-01-23T04:56:07.000+00:00
-              taker_side: taker_side
-              uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-            bid_size: 2.3021358869347655
-            time_coinapi: 2000-01-23T04:56:07.000+00:00
-            symbol_id: symbol_id
-            bid_price: 5.637376656633329
-            ask_price: 1.4658129805029452
-          strike_price: 6.027456183070403
-        - call:
-            time_exchange: 2000-01-23T04:56:07.000+00:00
-            ask_size: 5.962133916683182
-            last_trade:
-              time_exchange: 2000-01-23T04:56:07.000+00:00
-              size: 9.301444243932576
-              price: 7.061401241503109
-              time_coinapi: 2000-01-23T04:56:07.000+00:00
-              taker_side: taker_side
-              uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-            bid_size: 2.3021358869347655
-            time_coinapi: 2000-01-23T04:56:07.000+00:00
-            symbol_id: symbol_id
-            bid_price: 5.637376656633329
-            ask_price: 1.4658129805029452
-          put:
-            time_exchange: 2000-01-23T04:56:07.000+00:00
-            ask_size: 5.962133916683182
-            last_trade:
-              time_exchange: 2000-01-23T04:56:07.000+00:00
-              size: 9.301444243932576
-              price: 7.061401241503109
-              time_coinapi: 2000-01-23T04:56:07.000+00:00
-              taker_side: taker_side
-              uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-            bid_size: 2.3021358869347655
-            time_coinapi: 2000-01-23T04:56:07.000+00:00
-            symbol_id: symbol_id
-            bid_price: 5.637376656633329
-            ask_price: 1.4658129805029452
-          strike_price: 6.027456183070403
-        asset_id_quote: asset_id_quote
-      properties:
-        asset_id_base:
-          description: The base asset identifier.
-          nullable: true
-          type: string
-        asset_id_quote:
-          description: The quote asset identifier.
-          nullable: true
-          type: string
-        underlying_price:
-          description: The underlying price of the option.
-          format: double
-          nullable: true
-          type: number
-        time_expiration:
-          description: The expiration time of the option.
-          format: date-time
-          type: string
-        strikes:
-          description: The list of strikes available.
-          items:
-            $ref: "#/components/schemas/Options.Strike"
-          nullable: true
-          type: array
-      type: object
-    Options.Strike:
-      additionalProperties: false
-      description: Represents a strike within the option exchange group.
-      example:
-        call:
-          time_exchange: 2000-01-23T04:56:07.000+00:00
-          ask_size: 5.962133916683182
-          last_trade:
-            time_exchange: 2000-01-23T04:56:07.000+00:00
-            size: 9.301444243932576
-            price: 7.061401241503109
-            time_coinapi: 2000-01-23T04:56:07.000+00:00
-            taker_side: taker_side
-            uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          bid_size: 2.3021358869347655
-          time_coinapi: 2000-01-23T04:56:07.000+00:00
-          symbol_id: symbol_id
-          bid_price: 5.637376656633329
-          ask_price: 1.4658129805029452
-        put:
-          time_exchange: 2000-01-23T04:56:07.000+00:00
-          ask_size: 5.962133916683182
-          last_trade:
-            time_exchange: 2000-01-23T04:56:07.000+00:00
-            size: 9.301444243932576
-            price: 7.061401241503109
-            time_coinapi: 2000-01-23T04:56:07.000+00:00
-            taker_side: taker_side
-            uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          bid_size: 2.3021358869347655
-          time_coinapi: 2000-01-23T04:56:07.000+00:00
-          symbol_id: symbol_id
-          bid_price: 5.637376656633329
-          ask_price: 1.4658129805029452
-        strike_price: 6.027456183070403
-      properties:
-        strike_price:
-          description: The strike price.
-          format: double
-          type: number
-        call:
-          $ref: "#/components/schemas/v1.QuoteTrade"
-        put:
-          $ref: "#/components/schemas/v1.QuoteTrade"
       type: object
     v1.Asset:
       additionalProperties: false
@@ -7622,10 +7479,14 @@ components:
           nullable: true
           type: array
         data_start:
+          description: Gets the start date of the available data as a string in the
+            format "yyyy-MM-dd".
           nullable: true
           readOnly: true
           type: string
         data_end:
+          description: Gets the end date of the available data as a string in the
+            format "yyyy-MM-dd".
           nullable: true
           readOnly: true
           type: string
@@ -7713,10 +7574,12 @@ components:
           nullable: true
           type: string
         data_start:
+          description: Gets the start date of the exchange's data.
           nullable: true
           readOnly: true
           type: string
         data_end:
+          description: Gets the end date of the exchange's data.
           nullable: true
           readOnly: true
           type: string
@@ -7789,7 +7652,7 @@ components:
           readOnly: true
           type: array
         rank:
-          description: Rank of the exchange.
+          description: Rank of the exchange - higher rank means exchange is more reliable
           format: double
           type: number
         integration_status:
@@ -7923,7 +7786,7 @@ components:
     v1.GeneralData:
       additionalProperties: false
       description: Class representation of general metric data. This class is an XML
-        type with name 'general_data' and inherits from the BaseCsvModel class.
+        type with name "general_data" and inherits from the BaseCsvModel class.
       example:
         entry_time: 2000-01-23T04:56:07.000+00:00
         metric_id: metric_id
@@ -8008,33 +7871,33 @@ components:
         uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
       properties:
         time_exchange:
-          description: The exchange time of the last trade.
+          description: Gets or sets the exchange time of the last trade.
           format: date-time
           type: string
         time_coinapi:
-          description: The CoinAPI time when the last trade was received.
+          description: Gets or sets the CoinAPI time when the last trade was received.
           format: date-time
           type: string
         uuid:
-          description: The UUID of the last trade.
+          description: Gets or sets the UUID of the last trade.
           format: uuid
           type: string
         price:
-          description: The price of the last trade.
+          description: Gets or sets the price of the last trade.
           format: double
           type: number
         size:
-          description: The size of the last trade.
+          description: Gets or sets the size of the last trade.
           format: double
           type: number
         taker_side:
-          description: The taker side of the last trade.
+          description: Gets or sets the taker side of the last trade.
           nullable: true
           type: string
       type: object
     v1.ListingItem:
       additionalProperties: false
-      description: Represents a listing item.
+      description: Represents a listing data item.
       example:
         metric_id: metric_id
         exchange_id: exchange_id
@@ -8050,12 +7913,12 @@ components:
           nullable: true
           type: string
         symbol_id:
-          description: The CoinAPI symbol identifier. Null for exchange-level metrics
-            that are not associated with a specific symbol.
+          description: Gets or sets the CoinAPI symbol ID. Null for exchange-level
+            metrics.
           nullable: true
           type: string
         symbol_id_external:
-          description: The exchange-native symbol identifier. Null for exchange-level
+          description: Gets or sets the exchange-native symbol ID. Null for exchange-level
             metrics.
           nullable: true
           type: string
@@ -8068,15 +7931,15 @@ components:
           nullable: true
           type: string
         asset_id_external:
-          description: Gets or sets the asset ID from the exchange.
+          description: Gets or sets the asset ID.
           nullable: true
           type: string
         chain_id:
-          description: Gets or sets the chain id.
+          description: Gets or sets the chain ID.
           nullable: true
           type: string
         network_id:
-          description: Gets or sets the network id.
+          description: Gets or sets the network ID.
           nullable: true
           type: string
       type: object
@@ -8138,6 +8001,102 @@ components:
           nullable: true
           type: string
       type: object
+    v1.OptionExchangeGroup:
+      additionalProperties: false
+      description: Represents an option exchange group data model.
+      example:
+        asset_id_base: asset_id_base
+        underlying_price: 0.8008281904610115
+        time_expiration: 2000-01-23T04:56:07.000+00:00
+        strikes:
+        - call:
+            time_exchange: 2000-01-23T04:56:07.000+00:00
+            ask_size: 5.962133916683182
+            last_trade:
+              time_exchange: 2000-01-23T04:56:07.000+00:00
+              size: 9.301444243932576
+              price: 7.061401241503109
+              time_coinapi: 2000-01-23T04:56:07.000+00:00
+              taker_side: taker_side
+              uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            bid_size: 2.3021358869347655
+            time_coinapi: 2000-01-23T04:56:07.000+00:00
+            symbol_id: symbol_id
+            bid_price: 5.637376656633329
+            ask_price: 1.4658129805029452
+          put:
+            time_exchange: 2000-01-23T04:56:07.000+00:00
+            ask_size: 5.962133916683182
+            last_trade:
+              time_exchange: 2000-01-23T04:56:07.000+00:00
+              size: 9.301444243932576
+              price: 7.061401241503109
+              time_coinapi: 2000-01-23T04:56:07.000+00:00
+              taker_side: taker_side
+              uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            bid_size: 2.3021358869347655
+            time_coinapi: 2000-01-23T04:56:07.000+00:00
+            symbol_id: symbol_id
+            bid_price: 5.637376656633329
+            ask_price: 1.4658129805029452
+          strike_price: 6.027456183070403
+        - call:
+            time_exchange: 2000-01-23T04:56:07.000+00:00
+            ask_size: 5.962133916683182
+            last_trade:
+              time_exchange: 2000-01-23T04:56:07.000+00:00
+              size: 9.301444243932576
+              price: 7.061401241503109
+              time_coinapi: 2000-01-23T04:56:07.000+00:00
+              taker_side: taker_side
+              uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            bid_size: 2.3021358869347655
+            time_coinapi: 2000-01-23T04:56:07.000+00:00
+            symbol_id: symbol_id
+            bid_price: 5.637376656633329
+            ask_price: 1.4658129805029452
+          put:
+            time_exchange: 2000-01-23T04:56:07.000+00:00
+            ask_size: 5.962133916683182
+            last_trade:
+              time_exchange: 2000-01-23T04:56:07.000+00:00
+              size: 9.301444243932576
+              price: 7.061401241503109
+              time_coinapi: 2000-01-23T04:56:07.000+00:00
+              taker_side: taker_side
+              uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            bid_size: 2.3021358869347655
+            time_coinapi: 2000-01-23T04:56:07.000+00:00
+            symbol_id: symbol_id
+            bid_price: 5.637376656633329
+            ask_price: 1.4658129805029452
+          strike_price: 6.027456183070403
+        asset_id_quote: asset_id_quote
+      properties:
+        asset_id_base:
+          description: Gets or sets the base asset identifier.
+          nullable: true
+          type: string
+        asset_id_quote:
+          description: Gets or sets the quote asset identifier.
+          nullable: true
+          type: string
+        underlying_price:
+          description: Gets or sets the underlying price of the option.
+          format: double
+          nullable: true
+          type: number
+        time_expiration:
+          description: Gets or sets the expiration time of the option.
+          format: date-time
+          type: string
+        strikes:
+          description: Gets or sets the list of strikes available.
+          items:
+            $ref: "#/components/schemas/v1.Strike"
+          nullable: true
+          type: array
+      type: object
     v1.OrderBook:
       additionalProperties: false
       description: Represents an order book with additional information and functionality.
@@ -8149,22 +8108,22 @@ components:
         symbol_id: symbol_id
       properties:
         symbol_id:
-          description: The symbol identifier.
+          description: Gets or sets the symbol identifier.
           nullable: true
           type: string
         time_exchange:
-          description: The exchange time of the order book.
+          description: Gets or sets the exchange time of the order book.
           format: date-time
           type: string
         time_coinapi:
-          description: The CoinAPI time when the order book was received.
+          description: Gets or sets the CoinAPI time when the order book was received.
           format: date-time
           type: string
         asks:
-          description: The asks made by market makers.
+          description: Gets or sets the asks made by market makers.
           nullable: true
         bids:
-          description: The bids made by market makers.
+          description: Gets or sets the bids made by market makers.
           nullable: true
       type: object
     v1.OrderBookBase:
@@ -8178,22 +8137,22 @@ components:
         symbol_id: symbol_id
       properties:
         symbol_id:
-          description: The symbol identifier.
+          description: Gets or sets the symbol identifier.
           nullable: true
           type: string
         time_exchange:
-          description: The exchange time of the order book.
+          description: Gets or sets the exchange time of the order book.
           format: date-time
           type: string
         time_coinapi:
-          description: The CoinAPI time when the order book was received.
+          description: Gets or sets the CoinAPI time when the order book was received.
           format: date-time
           type: string
         asks:
-          description: The asks made by market makers.
+          description: Gets or sets the asks made by market makers.
           nullable: true
         bids:
-          description: The bids made by market makers.
+          description: Gets or sets the bids made by market makers.
           nullable: true
       type: object
     v1.OrderBookDepth:
@@ -8209,31 +8168,31 @@ components:
         symbol_id: symbol_id
       properties:
         symbol_id:
-          description: The symbol identifier.
+          description: Gets or sets the symbol identifier.
           nullable: true
           type: string
         time_exchange:
-          description: The exchange time of the order book.
+          description: Gets or sets the exchange time of the order book.
           format: date-time
           type: string
         time_coinapi:
-          description: The CoinAPI time when the order book was received.
+          description: Gets or sets the CoinAPI time when the order book was received.
           format: date-time
           type: string
         ask_levels:
-          description: The number of ask levels in the order book.
+          description: Gets or sets the number of ask levels in the order book.
           format: int64
           type: integer
         bid_levels:
-          description: The number of bid levels in the order book.
+          description: Gets or sets the number of bid levels in the order book.
           format: int64
           type: integer
         ask_depth:
-          description: The depth of the ask side of the order book.
+          description: Gets or sets the depth of the ask side of the order book.
           format: double
           type: number
         bid_depth:
-          description: The depth of the bid side of the order book.
+          description: Gets or sets the depth of the bid side of the order book.
           format: double
           type: number
       type: object
@@ -8250,36 +8209,38 @@ components:
         ask_price: 0.8008281904610115
       properties:
         symbol_id:
-          description: The symbol identifier.
+          description: Gets or sets the symbol identifier.
           nullable: true
           type: string
         time_exchange:
-          description: The exchange time of the quote.
+          description: Gets or sets the exchange time of the quote.
           format: date-time
           type: string
         time_coinapi:
-          description: The CoinAPI time when the quote was received.
+          description: Gets or sets the CoinAPI time when the quote was received.
           format: date-time
           type: string
         ask_price:
-          description: The best asking price.
+          description: Gets or sets the best asking price.
           format: double
           nullable: true
           type: number
         ask_size:
-          description: "The volume resting on the best ask. If the value is equal\
-            \ to zero, then the size is unknown."
+          description: |-
+            Gets or sets the volume resting on the best ask.
+            If the value is equal to zero, then the size is unknown.
           format: double
           nullable: true
           type: number
         bid_price:
-          description: The best bidding price.
+          description: Gets or sets the best bidding price.
           format: double
           nullable: true
           type: number
         bid_size:
-          description: "The volume resting on the best bid. If the value is equal\
-            \ to zero, then the size is unknown."
+          description: |-
+            Gets or sets the volume resting on the best bid.
+            If the value is equal to zero, then the size is unknown.
           format: double
           nullable: true
           type: number
@@ -8304,41 +8265,88 @@ components:
         ask_price: 1.4658129805029452
       properties:
         symbol_id:
-          description: The symbol identifier.
+          description: Gets or sets the symbol identifier.
           nullable: true
           type: string
         time_exchange:
-          description: The exchange time of the quote trade.
+          description: Gets or sets the exchange time of the quote trade.
           format: date-time
           type: string
         time_coinapi:
-          description: The CoinAPI time when the quote trade was received.
+          description: Gets or sets the CoinAPI time when the quote trade was received.
           format: date-time
           type: string
         ask_price:
-          description: The best asking price.
+          description: Gets or sets the best asking price.
           format: double
           nullable: true
           type: number
         ask_size:
-          description: "The volume resting on the best ask. If the value is equal\
-            \ to zero, then the size is unknown."
+          description: |-
+            Gets or sets the volume resting on the best ask.
+            If the value is equal to zero, then the size is unknown.
           format: double
           nullable: true
           type: number
         bid_price:
-          description: The best bidding price.
+          description: Gets or sets the best bidding price.
           format: double
           nullable: true
           type: number
         bid_size:
-          description: "The volume resting on the best bid. If the value is equal\
-            \ to zero, then the size is unknown."
+          description: |-
+            Gets or sets the volume resting on the best bid.
+            If the value is equal to zero, then the size is unknown.
           format: double
           nullable: true
           type: number
         last_trade:
           $ref: "#/components/schemas/v1.LastTrade"
+      type: object
+    v1.Strike:
+      additionalProperties: false
+      description: Represents a strike within the option exchange group.
+      example:
+        call:
+          time_exchange: 2000-01-23T04:56:07.000+00:00
+          ask_size: 5.962133916683182
+          last_trade:
+            time_exchange: 2000-01-23T04:56:07.000+00:00
+            size: 9.301444243932576
+            price: 7.061401241503109
+            time_coinapi: 2000-01-23T04:56:07.000+00:00
+            taker_side: taker_side
+            uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          bid_size: 2.3021358869347655
+          time_coinapi: 2000-01-23T04:56:07.000+00:00
+          symbol_id: symbol_id
+          bid_price: 5.637376656633329
+          ask_price: 1.4658129805029452
+        put:
+          time_exchange: 2000-01-23T04:56:07.000+00:00
+          ask_size: 5.962133916683182
+          last_trade:
+            time_exchange: 2000-01-23T04:56:07.000+00:00
+            size: 9.301444243932576
+            price: 7.061401241503109
+            time_coinapi: 2000-01-23T04:56:07.000+00:00
+            taker_side: taker_side
+            uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          bid_size: 2.3021358869347655
+          time_coinapi: 2000-01-23T04:56:07.000+00:00
+          symbol_id: symbol_id
+          bid_price: 5.637376656633329
+          ask_price: 1.4658129805029452
+        strike_price: 6.027456183070403
+      properties:
+        strike_price:
+          description: Gets or sets the strike price.
+          format: double
+          type: number
+        call:
+          $ref: "#/components/schemas/v1.QuoteTrade"
+        put:
+          $ref: "#/components/schemas/v1.QuoteTrade"
       type: object
     v1.Symbol:
       additionalProperties: false
@@ -8399,242 +8407,248 @@ components:
         volume_1day_usd: 9.301444243932576
       properties:
         symbol_id:
-          description: The symbol identifier.
+          description: Gets or sets the symbol identifier.
           nullable: true
           type: string
         exchange_id:
-          description: The exchange identifier.
+          description: Gets or sets the exchange identifier.
           nullable: true
           type: string
         symbol_type:
-          description: The symbol type.
+          description: Gets or sets the symbol type.
           nullable: true
           type: string
         asset_id_base:
-          description: The base asset identifier.
+          description: Gets or sets the base asset identifier.
           nullable: true
           type: string
         asset_id_quote:
-          description: The quote asset identifier.
+          description: Gets or sets the quote asset identifier.
           nullable: true
           type: string
         asset_id_unit:
-          description: The unit asset identifier.
+          description: Gets or sets the unit asset identifier.
           nullable: true
           type: string
         future_contract_unit:
-          description: The contract unit for futures.
+          description: Gets or sets the contract unit for futures.
           format: double
           nullable: true
           type: number
         future_contract_unit_asset:
-          description: The asset used as the unit for futures contract.
+          description: Gets or sets the asset used as the unit for futures contract.
           nullable: true
           type: string
         future_delivery_time:
-          description: The future delivery time for futures contract.
+          description: Gets or sets the future delivery time for futures contract.
           format: date-time
           nullable: true
           type: string
         option_type_is_call:
-          description: Indicates whether the option type is a call.
+          description: Gets or sets a value indicating whether the option type is
+            a call.
           nullable: true
           type: boolean
         option_strike_price:
-          description: The strike price for options.
+          description: Gets or sets the strike price for options.
           format: double
           nullable: true
           type: number
         option_contract_unit:
-          description: The contract unit for options.
+          description: Gets or sets the contract unit for options.
           format: double
           nullable: true
           type: number
         option_exercise_style:
-          description: "The exercise style for options. Possible values: AMERICAN,\
-            \ ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC."
+          description: "Gets or sets the exercise style for options. Possible values:\
+            \ AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC."
           nullable: true
           type: string
         option_expiration_time:
-          description: The expiration time for options.
+          description: Gets or sets the expiration time for options.
           format: date-time
           nullable: true
           type: string
         contract_delivery_time:
-          description: The delivery time for contracts.
+          description: Gets or sets the delivery time for contracts.
           format: date-time
           nullable: true
           type: string
         contract_unit:
-          description: The contract unit for contracts.
+          description: Gets or sets the contract unit for contracts.
           format: double
           nullable: true
           type: number
         contract_unit_asset:
-          description: The asset used as the unit for contracts.
+          description: Gets or sets the asset used as the unit for contracts.
           nullable: true
           type: string
         contract_id:
-          description: The contract identifier.
+          description: Gets or sets the contract identifier.
           nullable: true
           type: string
         contract_display_name:
-          description: The display name of the contract.
+          description: Gets or sets the display name of the contract.
           nullable: true
           type: string
         contract_display_description:
-          description: The display description of the contract.
+          description: Gets or sets the display description of the contract.
           nullable: true
           type: string
         data_start:
+          description: Gets the start date of the data in string format ("yyyy-MM-dd").
           nullable: true
           readOnly: true
           type: string
         data_end:
+          description: Gets the end date of the data in string format ("yyyy-MM-dd").
           nullable: true
           readOnly: true
           type: string
         data_quote_start:
-          description: The start date of quote data.
+          description: Gets or sets the start date of quote data.
           format: date-time
           nullable: true
           type: string
         data_quote_end:
-          description: The end date of quote data.
+          description: Gets or sets the end date of quote data.
           format: date-time
           nullable: true
           type: string
         data_orderbook_start:
-          description: The start date of order book data.
+          description: Gets or sets the start date of order book data.
           format: date-time
           nullable: true
           type: string
         data_orderbook_end:
-          description: The end date of order book data.
+          description: Gets or sets the end date of order book data.
           format: date-time
           nullable: true
           type: string
         data_trade_start:
-          description: The start date of trade data.
+          description: Gets or sets the start date of trade data.
           format: date-time
           nullable: true
           type: string
         data_trade_end:
-          description: The end date of trade data.
+          description: Gets or sets the end date of trade data.
           format: date-time
           nullable: true
           type: string
         index_id:
-          description: The index identifier.
+          description: Gets or sets the index identifier.
           nullable: true
           type: string
         index_display_name:
-          description: The display name of the index.
+          description: Gets or sets the display name of the index.
           nullable: true
           type: string
         index_display_description:
-          description: The display description of the index.
+          description: Gets or sets the display description of the index.
           nullable: true
           type: string
         volume_1hrs:
-          description: The volume in the last 1 hour.
+          description: Gets or sets the volume in the last 1 hour.
           format: double
           nullable: true
           type: number
         volume_1hrs_usd:
-          description: The volume in USD in the last 1 hour.
+          description: Gets or sets the volume in USD in the last 1 hour.
           format: double
           nullable: true
           type: number
         volume_1day:
-          description: The volume in the last 1 day.
+          description: Gets or sets the volume in the last 1 day.
           format: double
           nullable: true
           type: number
         volume_1day_usd:
-          description: The volume in USD in the last 1 day.
+          description: Gets or sets the volume in USD in the last 1 day.
           format: double
           nullable: true
           type: number
         volume_1mth:
-          description: The volume in the last 1 month.
+          description: Gets or sets the volume in the last 1 month.
           format: double
           nullable: true
           type: number
         volume_1mth_usd:
-          description: The volume in USD in the last 1 month.
+          description: Gets or sets the volume in USD in the last 1 month.
           format: double
           nullable: true
           type: number
         price:
-          description: The price.
+          description: Gets or sets the price.
           format: double
           nullable: true
           type: number
         symbol_id_exchange:
-          description: The symbol identifier in the exchange.
+          description: Gets or sets the symbol identifier in the exchange.
           nullable: true
           type: string
         asset_id_base_exchange:
-          description: The base asset identifier in the exchange.
+          description: Gets or sets the base asset identifier in the exchange.
           nullable: true
           type: string
         asset_id_quote_exchange:
-          description: The quote asset identifier in the exchange.
+          description: Gets or sets the quote asset identifier in the exchange.
           nullable: true
           type: string
         price_precision:
-          description: The price precision.
+          description: Gets or sets the price precision.
           format: double
           nullable: true
           type: number
         size_precision:
-          description: The size precision.
+          description: Gets or sets the size precision.
           format: double
           nullable: true
           type: number
         raw_kvp:
           additionalProperties:
+            nullable: true
             type: string
           description: Key Value Pair store with raw data from the data source.
           nullable: true
           type: object
         future_is_inverse:
-          description: Indicates whether the futures contract is inverse (coin-margined).
+          description: Gets or sets a value indicating whether the futures contract
+            is inverse (coin-margined).
           nullable: true
           type: boolean
         future_is_quanto:
-          description: Indicates whether the futures contract is quanto.
+          description: Gets or sets a value indicating whether the futures contract
+            is quanto.
           nullable: true
           type: boolean
         volume_to_usd:
-          description: Volume unit in USD.
+          description: Gets or sets the volume in USD.
           format: double
           nullable: true
           type: number
         option_barrier_up_price:
-          description: The up barrier price for barrier options.
+          description: Gets or sets the up barrier price for barrier options.
           format: double
           nullable: true
           type: number
         option_barrier_up_type:
-          description: "The up barrier type for barrier options. Possible values:\
-            \ EXPIRATION, IN, OUT."
+          description: "Gets or sets the up barrier type for barrier options. Possible\
+            \ values: EXPIRATION, IN, OUT."
           nullable: true
           type: string
         option_barrier_down_price:
-          description: The down barrier price for barrier options.
+          description: Gets or sets the down barrier price for barrier options.
           format: double
           nullable: true
           type: number
         option_barrier_down_type:
-          description: "The down barrier type for barrier options. Possible values:\
-            \ EXPIRATION, IN, OUT."
+          description: "Gets or sets the down barrier type for barrier options. Possible\
+            \ values: EXPIRATION, IN, OUT."
           nullable: true
           type: string
         symbol_id_int:
-          description: "The symbol identifier in integer immutable format, used to\
-            \ correlate data across different APIs."
+          description: "Gets or sets the symbol identifier in integer immutable format,\
+            \ used to correlate data across different APIs."
           format: int32
           nullable: true
           readOnly: true
@@ -8655,40 +8669,40 @@ components:
         price_precision: 6.027456183070403
       properties:
         symbol_id:
-          description: The symbol ID.
+          description: Gets or sets the symbol ID.
           nullable: true
           type: string
         symbol_id_exchange:
-          description: The exchange-specific symbol ID.
+          description: Gets or sets the exchange-specific symbol ID.
           nullable: true
           type: string
         coinapi_datainfo_id:
-          description: The CoinAPI DataInfo ID.
+          description: Gets or sets the DataInfo ID.
           format: int32
           type: integer
         asset_id_base_exchange:
-          description: The exchange-specific base asset ID.
+          description: Gets or sets the exchange-specific base asset ID.
           nullable: true
           type: string
         asset_id_quote_exchange:
-          description: The exchange-specific quote asset ID.
+          description: Gets or sets the exchange-specific quote asset ID.
           nullable: true
           type: string
         asset_id_base:
-          description: The base asset ID.
+          description: Gets or sets the base asset ID.
           nullable: true
           type: string
         asset_id_quote:
-          description: The quote asset ID.
+          description: Gets or sets the quote asset ID.
           nullable: true
           type: string
         price_precision:
-          description: The price precision.
+          description: Gets or sets the price precision.
           format: double
           nullable: true
           type: number
         size_precision:
-          description: The size precision.
+          description: Gets or sets the size precision.
           format: double
           nullable: true
           type: number
@@ -8709,52 +8723,50 @@ components:
         price_low: 1.4658129805029452
       properties:
         time_period_start:
-          description: The start time of the time period.
+          description: Gets or sets the start time of the time period.
           format: date-time
           type: string
         time_period_end:
-          description: The end time of the time period.
+          description: Gets or sets the end time of the time period.
           format: date-time
           type: string
         time_open:
-          description: The time when the price opened.
+          description: Gets or sets the time when the price opened.
           format: date-time
           nullable: true
           type: string
         time_close:
-          description: The time when the price closed.
+          description: Gets or sets the time when the price closed.
           format: date-time
           nullable: true
           type: string
         price_open:
-          description: The opening price.
+          description: Gets or sets the opening price.
           format: double
           nullable: true
           type: number
         price_high:
-          description: The highest price during the time period.
+          description: Gets or sets the highest price during the time period.
           format: double
           nullable: true
           type: number
         price_low:
-          description: The lowest price during the time period.
+          description: Gets or sets the lowest price during the time period.
           format: double
           nullable: true
           type: number
         price_close:
-          description: The closing price.
+          description: Gets or sets the closing price.
           format: double
           nullable: true
           type: number
         volume_traded:
-          description: The total volume traded during the time period. This could
-            be zero if there was not transactions and there was only orderbook activity.
+          description: Gets or sets the total volume traded during the time period.
           format: double
           type: number
         trades_count:
-          description: The number of trades executed during the time period. This
-            could be zero if there was not transactions and there was only orderbook
-            activity.
+          description: Gets or sets the number of trades executed during the time
+            period.
           format: int64
           type: integer
       type: object
@@ -8770,28 +8782,28 @@ components:
         unit_count: 1
       properties:
         period_id:
-          description: The period ID.
+          description: Gets or sets the period ID.
           nullable: true
           type: string
         length_seconds:
-          description: The length of the period in seconds.
+          description: Gets or sets the length of the period in seconds.
           format: int32
           type: integer
         length_months:
-          description: The length of the period in months.
+          description: Gets or sets the length of the period in months.
           format: int32
           type: integer
         unit_count:
-          description: The unit count.
+          description: Gets or sets the unit count.
           format: int32
           nullable: true
           type: integer
         unit_name:
-          description: The unit name.
+          description: Gets or sets the unit name.
           nullable: true
           type: string
         display_name:
-          description: The display name of the timeseries period.
+          description: Gets or sets the display name of the timeseries period.
           nullable: true
           type: string
       type: object
@@ -8831,7 +8843,9 @@ components:
           format: double
           type: number
         size:
-          description: The base asset amount traded in the transaction.
+          description: |-
+            The base asset amount traded in the transaction.
+            If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.
           format: double
           type: number
         taker_side:

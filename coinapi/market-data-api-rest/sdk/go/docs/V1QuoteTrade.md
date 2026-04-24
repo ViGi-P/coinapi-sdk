@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SymbolId** | Pointer to **NullableString** | The symbol identifier. | [optional] 
-**TimeExchange** | Pointer to **time.Time** | The exchange time of the quote trade. | [optional] 
-**TimeCoinapi** | Pointer to **time.Time** | The CoinAPI time when the quote trade was received. | [optional] 
-**AskPrice** | Pointer to **NullableFloat64** | The best asking price. | [optional] 
-**AskSize** | Pointer to **NullableFloat64** | The volume resting on the best ask. If the value is equal to zero, then the size is unknown. | [optional] 
-**BidPrice** | Pointer to **NullableFloat64** | The best bidding price. | [optional] 
-**BidSize** | Pointer to **NullableFloat64** | The volume resting on the best bid. If the value is equal to zero, then the size is unknown. | [optional] 
+**SymbolId** | Pointer to **NullableString** | Gets or sets the symbol identifier. | [optional] 
+**TimeExchange** | Pointer to **time.Time** | Gets or sets the exchange time of the quote trade. | [optional] 
+**TimeCoinapi** | Pointer to **time.Time** | Gets or sets the CoinAPI time when the quote trade was received. | [optional] 
+**AskPrice** | Pointer to **NullableFloat64** | Gets or sets the best asking price. | [optional] 
+**AskSize** | Pointer to **NullableFloat64** | Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown. | [optional] 
+**BidPrice** | Pointer to **NullableFloat64** | Gets or sets the best bidding price. | [optional] 
+**BidSize** | Pointer to **NullableFloat64** | Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown. | [optional] 
 **LastTrade** | Pointer to [**V1LastTrade**](V1LastTrade.md) |  | [optional] 
 
 ## Methods
