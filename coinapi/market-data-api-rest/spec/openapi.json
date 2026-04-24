@@ -67,7 +67,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-04-23T06:05:58.7695418Z",
+  "time": "2026-04-24T06:04:29.4992533Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -82,7 +82,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-04-23T06:05:58.7695418Z",
+  "time": "2026-04-24T06:04:29.4992533Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -97,7 +97,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-04-23T06:05:58.7695418Z",
+  "time": "2026-04-24T06:04:29.4992533Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -112,7 +112,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-04-23T06:05:58.7695418Z",
+  "time": "2026-04-24T06:04:29.4992533Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -6850,7 +6850,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Options.OptionExchangeGroup"
+                    "$ref": "#/components/schemas/v1.OptionExchangeGroup"
                   }
                 },
                 "examples": {
@@ -6909,7 +6909,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Options.OptionExchangeGroup"
+                    "$ref": "#/components/schemas/v1.OptionExchangeGroup"
                   }
                 },
                 "examples": {
@@ -6968,7 +6968,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Options.OptionExchangeGroup"
+                    "$ref": "#/components/schemas/v1.OptionExchangeGroup"
                   }
                 },
                 "examples": {
@@ -7027,7 +7027,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Options.OptionExchangeGroup"
+                    "$ref": "#/components/schemas/v1.OptionExchangeGroup"
                   }
                 },
                 "examples": {
@@ -9309,58 +9309,58 @@
         "properties": {
           "time_period_start": {
             "type": "string",
-            "description": "The start time of the time period.",
+            "description": "Gets or sets the start time of the time period.",
             "format": "date-time"
           },
           "time_period_end": {
             "type": "string",
-            "description": "The end time of the time period.",
+            "description": "Gets or sets the end time of the time period.",
             "format": "date-time"
           },
           "time_open": {
             "type": "string",
-            "description": "The time when the price opened.",
+            "description": "Gets or sets the time when the price opened.",
             "format": "date-time",
             "nullable": true
           },
           "time_close": {
             "type": "string",
-            "description": "The time when the price closed.",
+            "description": "Gets or sets the time when the price closed.",
             "format": "date-time",
             "nullable": true
           },
           "price_open": {
             "type": "number",
-            "description": "The opening price.",
+            "description": "Gets or sets the opening price.",
             "format": "double",
             "nullable": true
           },
           "price_high": {
             "type": "number",
-            "description": "The highest price during the time period.",
+            "description": "Gets or sets the highest price during the time period.",
             "format": "double",
             "nullable": true
           },
           "price_low": {
             "type": "number",
-            "description": "The lowest price during the time period.",
+            "description": "Gets or sets the lowest price during the time period.",
             "format": "double",
             "nullable": true
           },
           "price_close": {
             "type": "number",
-            "description": "The closing price.",
+            "description": "Gets or sets the closing price.",
             "format": "double",
             "nullable": true
           },
           "volume_traded": {
             "type": "number",
-            "description": "The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.",
+            "description": "Gets or sets the total volume traded during the time period.",
             "format": "double"
           },
           "trades_count": {
             "type": "integer",
-            "description": "The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.",
+            "description": "Gets or sets the number of trades executed during the time period.",
             "format": "int64"
           },
           "symbol_id_exchange": {
@@ -9374,60 +9374,6 @@
         },
         "additionalProperties": false,
         "description": "Represents a timeseries item with price and volume information."
-      },
-      "Options.OptionExchangeGroup": {
-        "type": "object",
-        "properties": {
-          "asset_id_base": {
-            "type": "string",
-            "description": "The base asset identifier.",
-            "nullable": true
-          },
-          "asset_id_quote": {
-            "type": "string",
-            "description": "The quote asset identifier.",
-            "nullable": true
-          },
-          "underlying_price": {
-            "type": "number",
-            "description": "The underlying price of the option.",
-            "format": "double",
-            "nullable": true
-          },
-          "time_expiration": {
-            "type": "string",
-            "description": "The expiration time of the option.",
-            "format": "date-time"
-          },
-          "strikes": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Options.Strike"
-            },
-            "description": "The list of strikes available.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents an option exchange group data model."
-      },
-      "Options.Strike": {
-        "type": "object",
-        "properties": {
-          "strike_price": {
-            "type": "number",
-            "description": "The strike price.",
-            "format": "double"
-          },
-          "call": {
-            "$ref": "#/components/schemas/v1.QuoteTrade"
-          },
-          "put": {
-            "$ref": "#/components/schemas/v1.QuoteTrade"
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a strike within the option exchange group."
       },
       "v1.Asset": {
         "type": "object",
@@ -9547,11 +9493,13 @@
           },
           "data_start": {
             "type": "string",
+            "description": "Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".",
             "nullable": true,
             "readOnly": true
           },
           "data_end": {
             "type": "string",
+            "description": "Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".",
             "nullable": true,
             "readOnly": true
           }
@@ -9618,11 +9566,13 @@
           },
           "data_start": {
             "type": "string",
+            "description": "Gets the start date of the exchange's data.",
             "nullable": true,
             "readOnly": true
           },
           "data_end": {
             "type": "string",
+            "description": "Gets the end date of the exchange's data.",
             "nullable": true,
             "readOnly": true
           },
@@ -9711,7 +9661,7 @@
           },
           "rank": {
             "type": "number",
-            "description": "Rank of the exchange.",
+            "description": "Rank of the exchange - higher rank means exchange is more reliable",
             "format": "double"
           },
           "integration_status": {
@@ -9897,7 +9847,7 @@
           }
         },
         "additionalProperties": false,
-        "description": "Class representation of general metric data. This class is an XML type with name 'general_data' and inherits from the BaseCsvModel class."
+        "description": "Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class."
       },
       "v1.Icon": {
         "type": "object",
@@ -9926,32 +9876,32 @@
         "properties": {
           "time_exchange": {
             "type": "string",
-            "description": "The exchange time of the last trade.",
+            "description": "Gets or sets the exchange time of the last trade.",
             "format": "date-time"
           },
           "time_coinapi": {
             "type": "string",
-            "description": "The CoinAPI time when the last trade was received.",
+            "description": "Gets or sets the CoinAPI time when the last trade was received.",
             "format": "date-time"
           },
           "uuid": {
             "type": "string",
-            "description": "The UUID of the last trade.",
+            "description": "Gets or sets the UUID of the last trade.",
             "format": "uuid"
           },
           "price": {
             "type": "number",
-            "description": "The price of the last trade.",
+            "description": "Gets or sets the price of the last trade.",
             "format": "double"
           },
           "size": {
             "type": "number",
-            "description": "The size of the last trade.",
+            "description": "Gets or sets the size of the last trade.",
             "format": "double"
           },
           "taker_side": {
             "type": "string",
-            "description": "The taker side of the last trade.",
+            "description": "Gets or sets the taker side of the last trade.",
             "nullable": true
           }
         },
@@ -9968,12 +9918,12 @@
           },
           "symbol_id": {
             "type": "string",
-            "description": "The CoinAPI symbol identifier. Null for exchange-level metrics that are not associated with a specific symbol.",
+            "description": "Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.",
             "nullable": true
           },
           "symbol_id_external": {
             "type": "string",
-            "description": "The exchange-native symbol identifier. Null for exchange-level metrics.",
+            "description": "Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.",
             "nullable": true
           },
           "exchange_id": {
@@ -9988,22 +9938,22 @@
           },
           "asset_id_external": {
             "type": "string",
-            "description": "Gets or sets the asset ID from the exchange.",
+            "description": "Gets or sets the asset ID.",
             "nullable": true
           },
           "chain_id": {
             "type": "string",
-            "description": "Gets or sets the chain id.",
+            "description": "Gets or sets the chain ID.",
             "nullable": true
           },
           "network_id": {
             "type": "string",
-            "description": "Gets or sets the network id.",
+            "description": "Gets or sets the network ID.",
             "nullable": true
           }
         },
         "additionalProperties": false,
-        "description": "Represents a listing item."
+        "description": "Represents a listing data item."
       },
       "v1.Metric": {
         "type": "object",
@@ -10066,30 +10016,66 @@
         "additionalProperties": false,
         "description": "Represents a metric information."
       },
+      "v1.OptionExchangeGroup": {
+        "type": "object",
+        "properties": {
+          "asset_id_base": {
+            "type": "string",
+            "description": "Gets or sets the base asset identifier.",
+            "nullable": true
+          },
+          "asset_id_quote": {
+            "type": "string",
+            "description": "Gets or sets the quote asset identifier.",
+            "nullable": true
+          },
+          "underlying_price": {
+            "type": "number",
+            "description": "Gets or sets the underlying price of the option.",
+            "format": "double",
+            "nullable": true
+          },
+          "time_expiration": {
+            "type": "string",
+            "description": "Gets or sets the expiration time of the option.",
+            "format": "date-time"
+          },
+          "strikes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/v1.Strike"
+            },
+            "description": "Gets or sets the list of strikes available.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents an option exchange group data model."
+      },
       "v1.OrderBook": {
         "type": "object",
         "properties": {
           "symbol_id": {
             "type": "string",
-            "description": "The symbol identifier.",
+            "description": "Gets or sets the symbol identifier.",
             "nullable": true
           },
           "time_exchange": {
             "type": "string",
-            "description": "The exchange time of the order book.",
+            "description": "Gets or sets the exchange time of the order book.",
             "format": "date-time"
           },
           "time_coinapi": {
             "type": "string",
-            "description": "The CoinAPI time when the order book was received.",
+            "description": "Gets or sets the CoinAPI time when the order book was received.",
             "format": "date-time"
           },
           "asks": {
-            "description": "The asks made by market makers.",
+            "description": "Gets or sets the asks made by market makers.",
             "nullable": true
           },
           "bids": {
-            "description": "The bids made by market makers.",
+            "description": "Gets or sets the bids made by market makers.",
             "nullable": true
           }
         },
@@ -10101,25 +10087,25 @@
         "properties": {
           "symbol_id": {
             "type": "string",
-            "description": "The symbol identifier.",
+            "description": "Gets or sets the symbol identifier.",
             "nullable": true
           },
           "time_exchange": {
             "type": "string",
-            "description": "The exchange time of the order book.",
+            "description": "Gets or sets the exchange time of the order book.",
             "format": "date-time"
           },
           "time_coinapi": {
             "type": "string",
-            "description": "The CoinAPI time when the order book was received.",
+            "description": "Gets or sets the CoinAPI time when the order book was received.",
             "format": "date-time"
           },
           "asks": {
-            "description": "The asks made by market makers.",
+            "description": "Gets or sets the asks made by market makers.",
             "nullable": true
           },
           "bids": {
-            "description": "The bids made by market makers.",
+            "description": "Gets or sets the bids made by market makers.",
             "nullable": true
           }
         },
@@ -10131,37 +10117,37 @@
         "properties": {
           "symbol_id": {
             "type": "string",
-            "description": "The symbol identifier.",
+            "description": "Gets or sets the symbol identifier.",
             "nullable": true
           },
           "time_exchange": {
             "type": "string",
-            "description": "The exchange time of the order book.",
+            "description": "Gets or sets the exchange time of the order book.",
             "format": "date-time"
           },
           "time_coinapi": {
             "type": "string",
-            "description": "The CoinAPI time when the order book was received.",
+            "description": "Gets or sets the CoinAPI time when the order book was received.",
             "format": "date-time"
           },
           "ask_levels": {
             "type": "integer",
-            "description": "The number of ask levels in the order book.",
+            "description": "Gets or sets the number of ask levels in the order book.",
             "format": "int64"
           },
           "bid_levels": {
             "type": "integer",
-            "description": "The number of bid levels in the order book.",
+            "description": "Gets or sets the number of bid levels in the order book.",
             "format": "int64"
           },
           "ask_depth": {
             "type": "number",
-            "description": "The depth of the ask side of the order book.",
+            "description": "Gets or sets the depth of the ask side of the order book.",
             "format": "double"
           },
           "bid_depth": {
             "type": "number",
-            "description": "The depth of the bid side of the order book.",
+            "description": "Gets or sets the depth of the bid side of the order book.",
             "format": "double"
           }
         },
@@ -10173,40 +10159,40 @@
         "properties": {
           "symbol_id": {
             "type": "string",
-            "description": "The symbol identifier.",
+            "description": "Gets or sets the symbol identifier.",
             "nullable": true
           },
           "time_exchange": {
             "type": "string",
-            "description": "The exchange time of the quote.",
+            "description": "Gets or sets the exchange time of the quote.",
             "format": "date-time"
           },
           "time_coinapi": {
             "type": "string",
-            "description": "The CoinAPI time when the quote was received.",
+            "description": "Gets or sets the CoinAPI time when the quote was received.",
             "format": "date-time"
           },
           "ask_price": {
             "type": "number",
-            "description": "The best asking price.",
+            "description": "Gets or sets the best asking price.",
             "format": "double",
             "nullable": true
           },
           "ask_size": {
             "type": "number",
-            "description": "The volume resting on the best ask. If the value is equal to zero, then the size is unknown.",
+            "description": "Gets or sets the volume resting on the best ask.\nIf the value is equal to zero, then the size is unknown.",
             "format": "double",
             "nullable": true
           },
           "bid_price": {
             "type": "number",
-            "description": "The best bidding price.",
+            "description": "Gets or sets the best bidding price.",
             "format": "double",
             "nullable": true
           },
           "bid_size": {
             "type": "number",
-            "description": "The volume resting on the best bid. If the value is equal to zero, then the size is unknown.",
+            "description": "Gets or sets the volume resting on the best bid.\nIf the value is equal to zero, then the size is unknown.",
             "format": "double",
             "nullable": true
           }
@@ -10219,40 +10205,40 @@
         "properties": {
           "symbol_id": {
             "type": "string",
-            "description": "The symbol identifier.",
+            "description": "Gets or sets the symbol identifier.",
             "nullable": true
           },
           "time_exchange": {
             "type": "string",
-            "description": "The exchange time of the quote trade.",
+            "description": "Gets or sets the exchange time of the quote trade.",
             "format": "date-time"
           },
           "time_coinapi": {
             "type": "string",
-            "description": "The CoinAPI time when the quote trade was received.",
+            "description": "Gets or sets the CoinAPI time when the quote trade was received.",
             "format": "date-time"
           },
           "ask_price": {
             "type": "number",
-            "description": "The best asking price.",
+            "description": "Gets or sets the best asking price.",
             "format": "double",
             "nullable": true
           },
           "ask_size": {
             "type": "number",
-            "description": "The volume resting on the best ask. If the value is equal to zero, then the size is unknown.",
+            "description": "Gets or sets the volume resting on the best ask.\nIf the value is equal to zero, then the size is unknown.",
             "format": "double",
             "nullable": true
           },
           "bid_price": {
             "type": "number",
-            "description": "The best bidding price.",
+            "description": "Gets or sets the best bidding price.",
             "format": "double",
             "nullable": true
           },
           "bid_size": {
             "type": "number",
-            "description": "The volume resting on the best bid. If the value is equal to zero, then the size is unknown.",
+            "description": "Gets or sets the volume resting on the best bid.\nIf the value is equal to zero, then the size is unknown.",
             "format": "double",
             "nullable": true
           },
@@ -10263,295 +10249,316 @@
         "additionalProperties": false,
         "description": "Represents a quote trade data model."
       },
+      "v1.Strike": {
+        "type": "object",
+        "properties": {
+          "strike_price": {
+            "type": "number",
+            "description": "Gets or sets the strike price.",
+            "format": "double"
+          },
+          "call": {
+            "$ref": "#/components/schemas/v1.QuoteTrade"
+          },
+          "put": {
+            "$ref": "#/components/schemas/v1.QuoteTrade"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a strike within the option exchange group."
+      },
       "v1.Symbol": {
         "type": "object",
         "properties": {
           "symbol_id": {
             "type": "string",
-            "description": "The symbol identifier.",
+            "description": "Gets or sets the symbol identifier.",
             "nullable": true
           },
           "exchange_id": {
             "type": "string",
-            "description": "The exchange identifier.",
+            "description": "Gets or sets the exchange identifier.",
             "nullable": true
           },
           "symbol_type": {
             "type": "string",
-            "description": "The symbol type.",
+            "description": "Gets or sets the symbol type.",
             "nullable": true
           },
           "asset_id_base": {
             "type": "string",
-            "description": "The base asset identifier.",
+            "description": "Gets or sets the base asset identifier.",
             "nullable": true
           },
           "asset_id_quote": {
             "type": "string",
-            "description": "The quote asset identifier.",
+            "description": "Gets or sets the quote asset identifier.",
             "nullable": true
           },
           "asset_id_unit": {
             "type": "string",
-            "description": "The unit asset identifier.",
+            "description": "Gets or sets the unit asset identifier.",
             "nullable": true
           },
           "future_contract_unit": {
             "type": "number",
-            "description": "The contract unit for futures.",
+            "description": "Gets or sets the contract unit for futures.",
             "format": "double",
             "nullable": true
           },
           "future_contract_unit_asset": {
             "type": "string",
-            "description": "The asset used as the unit for futures contract.",
+            "description": "Gets or sets the asset used as the unit for futures contract.",
             "nullable": true
           },
           "future_delivery_time": {
             "type": "string",
-            "description": "The future delivery time for futures contract.",
+            "description": "Gets or sets the future delivery time for futures contract.",
             "format": "date-time",
             "nullable": true
           },
           "option_type_is_call": {
             "type": "boolean",
-            "description": "Indicates whether the option type is a call.",
+            "description": "Gets or sets a value indicating whether the option type is a call.",
             "nullable": true
           },
           "option_strike_price": {
             "type": "number",
-            "description": "The strike price for options.",
+            "description": "Gets or sets the strike price for options.",
             "format": "double",
             "nullable": true
           },
           "option_contract_unit": {
             "type": "number",
-            "description": "The contract unit for options.",
+            "description": "Gets or sets the contract unit for options.",
             "format": "double",
             "nullable": true
           },
           "option_exercise_style": {
             "type": "string",
-            "description": "The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.",
+            "description": "Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.",
             "nullable": true
           },
           "option_expiration_time": {
             "type": "string",
-            "description": "The expiration time for options.",
+            "description": "Gets or sets the expiration time for options.",
             "format": "date-time",
             "nullable": true
           },
           "contract_delivery_time": {
             "type": "string",
-            "description": "The delivery time for contracts.",
+            "description": "Gets or sets the delivery time for contracts.",
             "format": "date-time",
             "nullable": true
           },
           "contract_unit": {
             "type": "number",
-            "description": "The contract unit for contracts.",
+            "description": "Gets or sets the contract unit for contracts.",
             "format": "double",
             "nullable": true
           },
           "contract_unit_asset": {
             "type": "string",
-            "description": "The asset used as the unit for contracts.",
+            "description": "Gets or sets the asset used as the unit for contracts.",
             "nullable": true
           },
           "contract_id": {
             "type": "string",
-            "description": "The contract identifier.",
+            "description": "Gets or sets the contract identifier.",
             "nullable": true
           },
           "contract_display_name": {
             "type": "string",
-            "description": "The display name of the contract.",
+            "description": "Gets or sets the display name of the contract.",
             "nullable": true
           },
           "contract_display_description": {
             "type": "string",
-            "description": "The display description of the contract.",
+            "description": "Gets or sets the display description of the contract.",
             "nullable": true
           },
           "data_start": {
             "type": "string",
+            "description": "Gets the start date of the data in string format (\"yyyy-MM-dd\").",
             "nullable": true,
             "readOnly": true
           },
           "data_end": {
             "type": "string",
+            "description": "Gets the end date of the data in string format (\"yyyy-MM-dd\").",
             "nullable": true,
             "readOnly": true
           },
           "data_quote_start": {
             "type": "string",
-            "description": "The start date of quote data.",
+            "description": "Gets or sets the start date of quote data.",
             "format": "date-time",
             "nullable": true
           },
           "data_quote_end": {
             "type": "string",
-            "description": "The end date of quote data.",
+            "description": "Gets or sets the end date of quote data.",
             "format": "date-time",
             "nullable": true
           },
           "data_orderbook_start": {
             "type": "string",
-            "description": "The start date of order book data.",
+            "description": "Gets or sets the start date of order book data.",
             "format": "date-time",
             "nullable": true
           },
           "data_orderbook_end": {
             "type": "string",
-            "description": "The end date of order book data.",
+            "description": "Gets or sets the end date of order book data.",
             "format": "date-time",
             "nullable": true
           },
           "data_trade_start": {
             "type": "string",
-            "description": "The start date of trade data.",
+            "description": "Gets or sets the start date of trade data.",
             "format": "date-time",
             "nullable": true
           },
           "data_trade_end": {
             "type": "string",
-            "description": "The end date of trade data.",
+            "description": "Gets or sets the end date of trade data.",
             "format": "date-time",
             "nullable": true
           },
           "index_id": {
             "type": "string",
-            "description": "The index identifier.",
+            "description": "Gets or sets the index identifier.",
             "nullable": true
           },
           "index_display_name": {
             "type": "string",
-            "description": "The display name of the index.",
+            "description": "Gets or sets the display name of the index.",
             "nullable": true
           },
           "index_display_description": {
             "type": "string",
-            "description": "The display description of the index.",
+            "description": "Gets or sets the display description of the index.",
             "nullable": true
           },
           "volume_1hrs": {
             "type": "number",
-            "description": "The volume in the last 1 hour.",
+            "description": "Gets or sets the volume in the last 1 hour.",
             "format": "double",
             "nullable": true
           },
           "volume_1hrs_usd": {
             "type": "number",
-            "description": "The volume in USD in the last 1 hour.",
+            "description": "Gets or sets the volume in USD in the last 1 hour.",
             "format": "double",
             "nullable": true
           },
           "volume_1day": {
             "type": "number",
-            "description": "The volume in the last 1 day.",
+            "description": "Gets or sets the volume in the last 1 day.",
             "format": "double",
             "nullable": true
           },
           "volume_1day_usd": {
             "type": "number",
-            "description": "The volume in USD in the last 1 day.",
+            "description": "Gets or sets the volume in USD in the last 1 day.",
             "format": "double",
             "nullable": true
           },
           "volume_1mth": {
             "type": "number",
-            "description": "The volume in the last 1 month.",
+            "description": "Gets or sets the volume in the last 1 month.",
             "format": "double",
             "nullable": true
           },
           "volume_1mth_usd": {
             "type": "number",
-            "description": "The volume in USD in the last 1 month.",
+            "description": "Gets or sets the volume in USD in the last 1 month.",
             "format": "double",
             "nullable": true
           },
           "price": {
             "type": "number",
-            "description": "The price.",
+            "description": "Gets or sets the price.",
             "format": "double",
             "nullable": true
           },
           "symbol_id_exchange": {
             "type": "string",
-            "description": "The symbol identifier in the exchange.",
+            "description": "Gets or sets the symbol identifier in the exchange.",
             "nullable": true
           },
           "asset_id_base_exchange": {
             "type": "string",
-            "description": "The base asset identifier in the exchange.",
+            "description": "Gets or sets the base asset identifier in the exchange.",
             "nullable": true
           },
           "asset_id_quote_exchange": {
             "type": "string",
-            "description": "The quote asset identifier in the exchange.",
+            "description": "Gets or sets the quote asset identifier in the exchange.",
             "nullable": true
           },
           "price_precision": {
             "type": "number",
-            "description": "The price precision.",
+            "description": "Gets or sets the price precision.",
             "format": "double",
             "nullable": true
           },
           "size_precision": {
             "type": "number",
-            "description": "The size precision.",
+            "description": "Gets or sets the size precision.",
             "format": "double",
             "nullable": true
           },
           "raw_kvp": {
             "type": "object",
             "additionalProperties": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "description": "Key Value Pair store with raw data from the data source.",
             "nullable": true
           },
           "future_is_inverse": {
             "type": "boolean",
-            "description": "Indicates whether the futures contract is inverse (coin-margined).",
+            "description": "Gets or sets a value indicating whether the futures contract is inverse (coin-margined).",
             "nullable": true
           },
           "future_is_quanto": {
             "type": "boolean",
-            "description": "Indicates whether the futures contract is quanto.",
+            "description": "Gets or sets a value indicating whether the futures contract is quanto.",
             "nullable": true
           },
           "volume_to_usd": {
             "type": "number",
-            "description": "Volume unit in USD.",
+            "description": "Gets or sets the volume in USD.",
             "format": "double",
             "nullable": true
           },
           "option_barrier_up_price": {
             "type": "number",
-            "description": "The up barrier price for barrier options.",
+            "description": "Gets or sets the up barrier price for barrier options.",
             "format": "double",
             "nullable": true
           },
           "option_barrier_up_type": {
             "type": "string",
-            "description": "The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.",
+            "description": "Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.",
             "nullable": true
           },
           "option_barrier_down_price": {
             "type": "number",
-            "description": "The down barrier price for barrier options.",
+            "description": "Gets or sets the down barrier price for barrier options.",
             "format": "double",
             "nullable": true
           },
           "option_barrier_down_type": {
             "type": "string",
-            "description": "The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.",
+            "description": "Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.",
             "nullable": true
           },
           "symbol_id_int": {
             "type": "integer",
-            "description": "The symbol identifier in integer immutable format, used to correlate data across different APIs.",
+            "description": "Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.",
             "format": "int32",
             "nullable": true,
             "readOnly": true
@@ -10565,48 +10572,48 @@
         "properties": {
           "symbol_id": {
             "type": "string",
-            "description": "The symbol ID.",
+            "description": "Gets or sets the symbol ID.",
             "nullable": true
           },
           "symbol_id_exchange": {
             "type": "string",
-            "description": "The exchange-specific symbol ID.",
+            "description": "Gets or sets the exchange-specific symbol ID.",
             "nullable": true
           },
           "coinapi_datainfo_id": {
             "type": "integer",
-            "description": "The CoinAPI DataInfo ID.",
+            "description": "Gets or sets the DataInfo ID.",
             "format": "int32"
           },
           "asset_id_base_exchange": {
             "type": "string",
-            "description": "The exchange-specific base asset ID.",
+            "description": "Gets or sets the exchange-specific base asset ID.",
             "nullable": true
           },
           "asset_id_quote_exchange": {
             "type": "string",
-            "description": "The exchange-specific quote asset ID.",
+            "description": "Gets or sets the exchange-specific quote asset ID.",
             "nullable": true
           },
           "asset_id_base": {
             "type": "string",
-            "description": "The base asset ID.",
+            "description": "Gets or sets the base asset ID.",
             "nullable": true
           },
           "asset_id_quote": {
             "type": "string",
-            "description": "The quote asset ID.",
+            "description": "Gets or sets the quote asset ID.",
             "nullable": true
           },
           "price_precision": {
             "type": "number",
-            "description": "The price precision.",
+            "description": "Gets or sets the price precision.",
             "format": "double",
             "nullable": true
           },
           "size_precision": {
             "type": "number",
-            "description": "The size precision.",
+            "description": "Gets or sets the size precision.",
             "format": "double",
             "nullable": true
           }
@@ -10619,58 +10626,58 @@
         "properties": {
           "time_period_start": {
             "type": "string",
-            "description": "The start time of the time period.",
+            "description": "Gets or sets the start time of the time period.",
             "format": "date-time"
           },
           "time_period_end": {
             "type": "string",
-            "description": "The end time of the time period.",
+            "description": "Gets or sets the end time of the time period.",
             "format": "date-time"
           },
           "time_open": {
             "type": "string",
-            "description": "The time when the price opened.",
+            "description": "Gets or sets the time when the price opened.",
             "format": "date-time",
             "nullable": true
           },
           "time_close": {
             "type": "string",
-            "description": "The time when the price closed.",
+            "description": "Gets or sets the time when the price closed.",
             "format": "date-time",
             "nullable": true
           },
           "price_open": {
             "type": "number",
-            "description": "The opening price.",
+            "description": "Gets or sets the opening price.",
             "format": "double",
             "nullable": true
           },
           "price_high": {
             "type": "number",
-            "description": "The highest price during the time period.",
+            "description": "Gets or sets the highest price during the time period.",
             "format": "double",
             "nullable": true
           },
           "price_low": {
             "type": "number",
-            "description": "The lowest price during the time period.",
+            "description": "Gets or sets the lowest price during the time period.",
             "format": "double",
             "nullable": true
           },
           "price_close": {
             "type": "number",
-            "description": "The closing price.",
+            "description": "Gets or sets the closing price.",
             "format": "double",
             "nullable": true
           },
           "volume_traded": {
             "type": "number",
-            "description": "The total volume traded during the time period. This could be zero if there was not transactions and there was only orderbook activity.",
+            "description": "Gets or sets the total volume traded during the time period.",
             "format": "double"
           },
           "trades_count": {
             "type": "integer",
-            "description": "The number of trades executed during the time period. This could be zero if there was not transactions and there was only orderbook activity.",
+            "description": "Gets or sets the number of trades executed during the time period.",
             "format": "int64"
           }
         },
@@ -10682,33 +10689,33 @@
         "properties": {
           "period_id": {
             "type": "string",
-            "description": "The period ID.",
+            "description": "Gets or sets the period ID.",
             "nullable": true
           },
           "length_seconds": {
             "type": "integer",
-            "description": "The length of the period in seconds.",
+            "description": "Gets or sets the length of the period in seconds.",
             "format": "int32"
           },
           "length_months": {
             "type": "integer",
-            "description": "The length of the period in months.",
+            "description": "Gets or sets the length of the period in months.",
             "format": "int32"
           },
           "unit_count": {
             "type": "integer",
-            "description": "The unit count.",
+            "description": "Gets or sets the unit count.",
             "format": "int32",
             "nullable": true
           },
           "unit_name": {
             "type": "string",
-            "description": "The unit name.",
+            "description": "Gets or sets the unit name.",
             "nullable": true
           },
           "display_name": {
             "type": "string",
-            "description": "The display name of the timeseries period.",
+            "description": "Gets or sets the display name of the timeseries period.",
             "nullable": true
           }
         },
@@ -10745,7 +10752,7 @@
           },
           "size": {
             "type": "number",
-            "description": "The base asset amount traded in the transaction.",
+            "description": "The base asset amount traded in the transaction.\nIf the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.",
             "format": "double"
           },
           "taker_side": {
