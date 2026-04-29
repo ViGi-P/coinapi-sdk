@@ -101,8 +101,8 @@ export class ExchangeRatesApi {
      */
     public async getSpecificRate (assetIdBase: string, assetIdQuote: string, time?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: V1ExchangeRate;  }> {
         const localVarPath = this.basePath + '/v1/exchangerate/{asset_id_base}/{asset_id_quote}'
-            .replace('{' + 'asset_id_base' + '}', encodeURIComponent(String(assetIdBase)))
-            .replace('{' + 'asset_id_quote' + '}', encodeURIComponent(String(assetIdQuote)));
+            .replace('{asset_id_base}', encodeURIComponent(String(assetIdBase)))
+            .replace('{asset_id_quote}', encodeURIComponent(String(assetIdQuote)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json'];
@@ -189,8 +189,8 @@ export class ExchangeRatesApi {
      */
     public async v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet (assetIdBase: string, assetIdQuote: string, periodId?: string, timeStart?: string, timeEnd?: string, limit?: number, extendedGapFilling?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1ExchangeRatesTimeseriesItem>;  }> {
         const localVarPath = this.basePath + '/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history'
-            .replace('{' + 'asset_id_base' + '}', encodeURIComponent(String(assetIdBase)))
-            .replace('{' + 'asset_id_quote' + '}', encodeURIComponent(String(assetIdQuote)));
+            .replace('{asset_id_base}', encodeURIComponent(String(assetIdBase)))
+            .replace('{asset_id_quote}', encodeURIComponent(String(assetIdQuote)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json'];
@@ -290,7 +290,7 @@ export class ExchangeRatesApi {
      */
     public async v1ExchangerateAssetIdBaseGet (assetIdBase: string, filterAssetId?: string, invert?: boolean, time?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: V1ExchangeRates;  }> {
         const localVarPath = this.basePath + '/v1/exchangerate/{asset_id_base}'
-            .replace('{' + 'asset_id_base' + '}', encodeURIComponent(String(assetIdBase)));
+            .replace('{asset_id_base}', encodeURIComponent(String(assetIdBase)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json'];

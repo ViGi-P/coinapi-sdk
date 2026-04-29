@@ -71,14 +71,14 @@ function Initialize-V1ExchangeRatesTimeseriesItem {
 
 
         $PSO = [PSCustomObject]@{
-            "time_period_start" = ${TimePeriodStart}
-            "time_period_end" = ${TimePeriodEnd}
-            "time_open" = ${TimeOpen}
-            "time_close" = ${TimeClose}
-            "rate_open" = ${RateOpen}
-            "rate_high" = ${RateHigh}
-            "rate_low" = ${RateLow}
-            "rate_close" = ${RateClose}
+            'time_period_start' = ${TimePeriodStart}
+            'time_period_end' = ${TimePeriodEnd}
+            'time_open' = ${TimeOpen}
+            'time_close' = ${TimeClose}
+            'rate_open' = ${RateOpen}
+            'rate_high' = ${RateHigh}
+            'rate_low' = ${RateLow}
+            'rate_close' = ${RateClose}
         }
 
 
@@ -116,70 +116,70 @@ function ConvertFrom-JsonToV1ExchangeRatesTimeseriesItem {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1ExchangeRatesTimeseriesItem
-        $AllProperties = ("time_period_start", "time_period_end", "time_open", "time_close", "rate_open", "rate_high", "rate_low", "rate_close")
+        $AllProperties = ('time_period_start', 'time_period_end', 'time_open', 'time_close', 'rate_open', 'rate_high', 'rate_low', 'rate_close')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_period_start"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_period_start'))) { #optional property not found
             $TimePeriodStart = $null
         } else {
-            $TimePeriodStart = $JsonParameters.PSobject.Properties["time_period_start"].value
+            $TimePeriodStart = $JsonParameters.PSobject.Properties['time_period_start'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_period_end"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_period_end'))) { #optional property not found
             $TimePeriodEnd = $null
         } else {
-            $TimePeriodEnd = $JsonParameters.PSobject.Properties["time_period_end"].value
+            $TimePeriodEnd = $JsonParameters.PSobject.Properties['time_period_end'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_open"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_open'))) { #optional property not found
             $TimeOpen = $null
         } else {
-            $TimeOpen = $JsonParameters.PSobject.Properties["time_open"].value
+            $TimeOpen = $JsonParameters.PSobject.Properties['time_open'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_close"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_close'))) { #optional property not found
             $TimeClose = $null
         } else {
-            $TimeClose = $JsonParameters.PSobject.Properties["time_close"].value
+            $TimeClose = $JsonParameters.PSobject.Properties['time_close'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "rate_open"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'rate_open'))) { #optional property not found
             $RateOpen = $null
         } else {
-            $RateOpen = $JsonParameters.PSobject.Properties["rate_open"].value
+            $RateOpen = $JsonParameters.PSobject.Properties['rate_open'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "rate_high"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'rate_high'))) { #optional property not found
             $RateHigh = $null
         } else {
-            $RateHigh = $JsonParameters.PSobject.Properties["rate_high"].value
+            $RateHigh = $JsonParameters.PSobject.Properties['rate_high'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "rate_low"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'rate_low'))) { #optional property not found
             $RateLow = $null
         } else {
-            $RateLow = $JsonParameters.PSobject.Properties["rate_low"].value
+            $RateLow = $JsonParameters.PSobject.Properties['rate_low'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "rate_close"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'rate_close'))) { #optional property not found
             $RateClose = $null
         } else {
-            $RateClose = $JsonParameters.PSobject.Properties["rate_close"].value
+            $RateClose = $JsonParameters.PSobject.Properties['rate_close'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "time_period_start" = ${TimePeriodStart}
-            "time_period_end" = ${TimePeriodEnd}
-            "time_open" = ${TimeOpen}
-            "time_close" = ${TimeClose}
-            "rate_open" = ${RateOpen}
-            "rate_high" = ${RateHigh}
-            "rate_low" = ${RateLow}
-            "rate_close" = ${RateClose}
+            'time_period_start' = ${TimePeriodStart}
+            'time_period_end' = ${TimePeriodEnd}
+            'time_open' = ${TimeOpen}
+            'time_close' = ${TimeClose}
+            'rate_open' = ${RateOpen}
+            'rate_high' = ${RateHigh}
+            'rate_low' = ${RateLow}
+            'rate_close' = ${RateClose}
         }
 
         return $PSO

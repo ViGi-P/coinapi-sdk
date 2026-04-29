@@ -67,7 +67,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model
         /// </summary>
         /// <value>The period ID.</value>
         [JsonPropertyName("period_id")]
-        public string? PeriodId { get { return this.PeriodIdOption; } set { this.PeriodIdOption = new(value); } }
+        public string? PeriodId { get { return this.PeriodIdOption.Value; } set { this.PeriodIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of LengthSeconds
@@ -81,7 +81,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model
         /// </summary>
         /// <value>The length of the period in seconds.</value>
         [JsonPropertyName("length_seconds")]
-        public int? LengthSeconds { get { return this.LengthSecondsOption; } set { this.LengthSecondsOption = new(value); } }
+        public int? LengthSeconds { get { return this.LengthSecondsOption.Value; } set { this.LengthSecondsOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of LengthMonths
@@ -95,7 +95,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model
         /// </summary>
         /// <value>The length of the period in months.</value>
         [JsonPropertyName("length_months")]
-        public int? LengthMonths { get { return this.LengthMonthsOption; } set { this.LengthMonthsOption = new(value); } }
+        public int? LengthMonths { get { return this.LengthMonthsOption.Value; } set { this.LengthMonthsOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of UnitCount
@@ -109,7 +109,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model
         /// </summary>
         /// <value>The unit count.</value>
         [JsonPropertyName("unit_count")]
-        public int? UnitCount { get { return this.UnitCountOption; } set { this.UnitCountOption = new(value); } }
+        public int? UnitCount { get { return this.UnitCountOption.Value; } set { this.UnitCountOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of UnitName
@@ -123,7 +123,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model
         /// </summary>
         /// <value>The unit name.</value>
         [JsonPropertyName("unit_name")]
-        public string? UnitName { get { return this.UnitNameOption; } set { this.UnitNameOption = new(value); } }
+        public string? UnitName { get { return this.UnitNameOption.Value; } set { this.UnitNameOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DisplayName
@@ -137,7 +137,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model
         /// </summary>
         /// <value>The display name of the timeseries period.</value>
         [JsonPropertyName("display_name")]
-        public string? DisplayName { get { return this.DisplayNameOption; } set { this.DisplayNameOption = new(value); } }
+        public string? DisplayName { get { return this.DisplayNameOption.Value; } set { this.DisplayNameOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

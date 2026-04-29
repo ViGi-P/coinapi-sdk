@@ -51,10 +51,10 @@ function Initialize-V1ExchangeRate {
 
 
         $PSO = [PSCustomObject]@{
-            "time" = ${Time}
-            "asset_id_base" = ${AssetIdBase}
-            "asset_id_quote" = ${AssetIdQuote}
-            "rate" = ${Rate}
+            'time' = ${Time}
+            'asset_id_base' = ${AssetIdBase}
+            'asset_id_quote' = ${AssetIdQuote}
+            'rate' = ${Rate}
         }
 
 
@@ -92,42 +92,42 @@ function ConvertFrom-JsonToV1ExchangeRate {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1ExchangeRate
-        $AllProperties = ("time", "asset_id_base", "asset_id_quote", "rate")
+        $AllProperties = ('time', 'asset_id_base', 'asset_id_quote', 'rate')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time'))) { #optional property not found
             $Time = $null
         } else {
-            $Time = $JsonParameters.PSobject.Properties["time"].value
+            $Time = $JsonParameters.PSobject.Properties['time'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_base"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_base'))) { #optional property not found
             $AssetIdBase = $null
         } else {
-            $AssetIdBase = $JsonParameters.PSobject.Properties["asset_id_base"].value
+            $AssetIdBase = $JsonParameters.PSobject.Properties['asset_id_base'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_quote"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_quote'))) { #optional property not found
             $AssetIdQuote = $null
         } else {
-            $AssetIdQuote = $JsonParameters.PSobject.Properties["asset_id_quote"].value
+            $AssetIdQuote = $JsonParameters.PSobject.Properties['asset_id_quote'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "rate"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'rate'))) { #optional property not found
             $Rate = $null
         } else {
-            $Rate = $JsonParameters.PSobject.Properties["rate"].value
+            $Rate = $JsonParameters.PSobject.Properties['rate'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "time" = ${Time}
-            "asset_id_base" = ${AssetIdBase}
-            "asset_id_quote" = ${AssetIdQuote}
-            "rate" = ${Rate}
+            'time' = ${Time}
+            'asset_id_base' = ${AssetIdBase}
+            'asset_id_quote' = ${AssetIdQuote}
+            'rate' = ${Rate}
         }
 
         return $PSO

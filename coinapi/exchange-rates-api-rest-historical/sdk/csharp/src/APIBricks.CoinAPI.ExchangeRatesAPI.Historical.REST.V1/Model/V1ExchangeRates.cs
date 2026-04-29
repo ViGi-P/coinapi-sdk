@@ -59,7 +59,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the base asset ID.</value>
         [JsonPropertyName("asset_id_base")]
-        public string? AssetIdBase { get { return this.AssetIdBaseOption; } set { this.AssetIdBaseOption = new(value); } }
+        public string? AssetIdBase { get { return this.AssetIdBaseOption.Value; } set { this.AssetIdBaseOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Rates
@@ -73,7 +73,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the list of exchange rates.</value>
         [JsonPropertyName("rates")]
-        public List<V1ExchangeRatesRate>? Rates { get { return this.RatesOption; } set { this.RatesOption = new(value); } }
+        public List<V1ExchangeRatesRate>? Rates { get { return this.RatesOption.Value; } set { this.RatesOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

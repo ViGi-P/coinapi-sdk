@@ -61,7 +61,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the time of the exchange rate.</value>
         [JsonPropertyName("time")]
-        public DateTime? Time { get { return this.TimeOption; } set { this.TimeOption = new(value); } }
+        public DateTime? Time { get { return this.TimeOption.Value; } set { this.TimeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetIdQuote
@@ -75,7 +75,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the quote asset ID of the exchange rate.</value>
         [JsonPropertyName("asset_id_quote")]
-        public string? AssetIdQuote { get { return this.AssetIdQuoteOption; } set { this.AssetIdQuoteOption = new(value); } }
+        public string? AssetIdQuote { get { return this.AssetIdQuoteOption.Value; } set { this.AssetIdQuoteOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Rate
@@ -89,7 +89,7 @@ namespace APIBricks.CoinAPI.ExchangeRatesAPI.Historical.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the exchange rate value.</value>
         [JsonPropertyName("rate")]
-        public double? Rate { get { return this.RateOption; } set { this.RateOption = new(value); } }
+        public double? Rate { get { return this.RateOption.Value; } set { this.RateOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

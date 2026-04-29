@@ -46,9 +46,9 @@ function Initialize-V1ChainNetworkAddress {
 
 
         $PSO = [PSCustomObject]@{
-            "chain_id" = ${ChainId}
-            "network_id" = ${NetworkId}
-            "address" = ${Address}
+            'chain_id' = ${ChainId}
+            'network_id' = ${NetworkId}
+            'address' = ${Address}
         }
 
 
@@ -86,35 +86,35 @@ function ConvertFrom-JsonToV1ChainNetworkAddress {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1ChainNetworkAddress
-        $AllProperties = ("chain_id", "network_id", "address")
+        $AllProperties = ('chain_id', 'network_id', 'address')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "chain_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'chain_id'))) { #optional property not found
             $ChainId = $null
         } else {
-            $ChainId = $JsonParameters.PSobject.Properties["chain_id"].value
+            $ChainId = $JsonParameters.PSobject.Properties['chain_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "network_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'network_id'))) { #optional property not found
             $NetworkId = $null
         } else {
-            $NetworkId = $JsonParameters.PSobject.Properties["network_id"].value
+            $NetworkId = $JsonParameters.PSobject.Properties['network_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "address"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'address'))) { #optional property not found
             $Address = $null
         } else {
-            $Address = $JsonParameters.PSobject.Properties["address"].value
+            $Address = $JsonParameters.PSobject.Properties['address'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "chain_id" = ${ChainId}
-            "network_id" = ${NetworkId}
-            "address" = ${Address}
+            'chain_id' = ${ChainId}
+            'network_id' = ${NetworkId}
+            'address' = ${Address}
         }
 
         return $PSO
