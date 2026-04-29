@@ -63,7 +63,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Model
         /// </summary>
         /// <value>Gets or sets the time of the exchange rate.</value>
         [JsonPropertyName("time")]
-        public DateTime? Time { get { return this.TimeOption; } set { this.TimeOption = new(value); } }
+        public DateTime? Time { get { return this.TimeOption.Value; } set { this.TimeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetIdBase
@@ -77,7 +77,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Model
         /// </summary>
         /// <value>Gets or sets the base asset ID of the exchange rate.</value>
         [JsonPropertyName("asset_id_base")]
-        public string? AssetIdBase { get { return this.AssetIdBaseOption; } set { this.AssetIdBaseOption = new(value); } }
+        public string? AssetIdBase { get { return this.AssetIdBaseOption.Value; } set { this.AssetIdBaseOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetIdQuote
@@ -91,7 +91,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Model
         /// </summary>
         /// <value>Gets or sets the quote asset ID of the exchange rate.</value>
         [JsonPropertyName("asset_id_quote")]
-        public string? AssetIdQuote { get { return this.AssetIdQuoteOption; } set { this.AssetIdQuoteOption = new(value); } }
+        public string? AssetIdQuote { get { return this.AssetIdQuoteOption.Value; } set { this.AssetIdQuoteOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Rate
@@ -105,7 +105,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Model
         /// </summary>
         /// <value>Gets or sets the exchange rate value.</value>
         [JsonPropertyName("rate")]
-        public double? Rate { get { return this.RateOption; } set { this.RateOption = new(value); } }
+        public double? Rate { get { return this.RateOption.Value; } set { this.RateOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

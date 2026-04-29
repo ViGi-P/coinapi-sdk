@@ -365,7 +365,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/assets/{asset_id}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/assets/{asset_id}");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/assets/{asset_id}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Basset_id%7D", Uri.EscapeDataString(assetId.ToString()));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
@@ -625,7 +625,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/assets"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/assets");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/assets");
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
 
@@ -878,7 +878,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/assets/icons/{size}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/assets/icons/{size}");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/assets/icons/{size}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bsize%7D", Uri.EscapeDataString(size.ToString()));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();

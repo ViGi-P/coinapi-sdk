@@ -326,7 +326,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/exchangerate/{asset_id_base}/{asset_id_quote}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/exchangerate/{asset_id_base}/{asset_id_quote}");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/exchangerate/{asset_id_base}/{asset_id_quote}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Basset_id_base%7D", Uri.EscapeDataString(assetIdBase.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Basset_id_quote%7D", Uri.EscapeDataString(assetIdQuote.ToString()));
 
@@ -603,7 +603,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/exchangerate/{asset_id_base}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/exchangerate/{asset_id_base}");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/exchangerate/{asset_id_base}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Basset_id_base%7D", Uri.EscapeDataString(assetIdBase.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);

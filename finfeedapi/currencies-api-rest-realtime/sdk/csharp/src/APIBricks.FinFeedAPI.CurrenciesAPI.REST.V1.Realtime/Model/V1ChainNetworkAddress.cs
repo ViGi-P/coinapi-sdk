@@ -61,7 +61,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Model
         /// </summary>
         /// <value>Gets or sets chain id</value>
         [JsonPropertyName("chain_id")]
-        public string? ChainId { get { return this.ChainIdOption; } set { this.ChainIdOption = new(value); } }
+        public string? ChainId { get { return this.ChainIdOption.Value; } set { this.ChainIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of NetworkId
@@ -75,7 +75,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Model
         /// </summary>
         /// <value>Gets or sets network id</value>
         [JsonPropertyName("network_id")]
-        public string? NetworkId { get { return this.NetworkIdOption; } set { this.NetworkIdOption = new(value); } }
+        public string? NetworkId { get { return this.NetworkIdOption.Value; } set { this.NetworkIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Address
@@ -89,7 +89,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Model
         /// </summary>
         /// <value>Gets or sets chain address</value>
         [JsonPropertyName("address")]
-        public string? Address { get { return this.AddressOption; } set { this.AddressOption = new(value); } }
+        public string? Address { get { return this.AddressOption.Value; } set { this.AddressOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

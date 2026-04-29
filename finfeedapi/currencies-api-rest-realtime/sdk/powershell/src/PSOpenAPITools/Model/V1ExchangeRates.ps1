@@ -41,8 +41,8 @@ function Initialize-V1ExchangeRates {
 
 
         $PSO = [PSCustomObject]@{
-            "asset_id_base" = ${AssetIdBase}
-            "rates" = ${Rates}
+            'asset_id_base' = ${AssetIdBase}
+            'rates' = ${Rates}
         }
 
 
@@ -80,28 +80,28 @@ function ConvertFrom-JsonToV1ExchangeRates {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1ExchangeRates
-        $AllProperties = ("asset_id_base", "rates")
+        $AllProperties = ('asset_id_base', 'rates')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_base"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_base'))) { #optional property not found
             $AssetIdBase = $null
         } else {
-            $AssetIdBase = $JsonParameters.PSobject.Properties["asset_id_base"].value
+            $AssetIdBase = $JsonParameters.PSobject.Properties['asset_id_base'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "rates"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'rates'))) { #optional property not found
             $Rates = $null
         } else {
-            $Rates = $JsonParameters.PSobject.Properties["rates"].value
+            $Rates = $JsonParameters.PSobject.Properties['rates'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "asset_id_base" = ${AssetIdBase}
-            "rates" = ${Rates}
+            'asset_id_base' = ${AssetIdBase}
+            'rates' = ${Rates}
         }
 
         return $PSO

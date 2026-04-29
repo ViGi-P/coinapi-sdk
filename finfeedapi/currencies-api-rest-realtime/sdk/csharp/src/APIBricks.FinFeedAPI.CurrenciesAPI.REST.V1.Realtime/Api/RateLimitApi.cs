@@ -335,7 +335,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/internal/ratelimit/wsconcon/apikey"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/internal/ratelimit/wsconcon/apikey");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/internal/ratelimit/wsconcon/apikey");
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar1 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
@@ -527,7 +527,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/internal/ratelimit/wshello/ip"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/internal/ratelimit/wshello/ip");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/internal/ratelimit/wshello/ip");
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar1 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
@@ -719,7 +719,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Realtime.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/internal/ratelimit/wsreq/ip"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/internal/ratelimit/wsreq/ip");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/internal/ratelimit/wsreq/ip");
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar1 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
