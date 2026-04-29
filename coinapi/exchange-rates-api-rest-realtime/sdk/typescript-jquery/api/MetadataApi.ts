@@ -55,7 +55,7 @@ export class MetadataApi {
     { response: JQueryXHR; body: Array<models.V1Asset>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/assets/{asset_id}'.replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)));
+        let localVarPath = this.basePath + '/v1/assets/{asset_id}'.replace('{asset_id}', encodeURIComponent(String(assetId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -195,7 +195,7 @@ export class MetadataApi {
     { response: JQueryXHR; body: Array<models.V1Icon>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/assets/icons/{size}'.replace('{' + 'size' + '}', encodeURIComponent(String(size)));
+        let localVarPath = this.basePath + '/v1/assets/icons/{size}'.replace('{size}', encodeURIComponent(String(size)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

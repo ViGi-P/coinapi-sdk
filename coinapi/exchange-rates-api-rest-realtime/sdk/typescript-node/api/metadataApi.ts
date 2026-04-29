@@ -102,7 +102,7 @@ export class MetadataApi {
      */
     public async v1AssetsAssetIdGet (assetId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Asset>;  }> {
         const localVarPath = this.basePath + '/v1/assets/{asset_id}'
-            .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)));
+            .replace('{asset_id}', encodeURIComponent(String(assetId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -250,7 +250,7 @@ export class MetadataApi {
      */
     public async v1AssetsIconsSizeGet (size: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Icon>;  }> {
         const localVarPath = this.basePath + '/v1/assets/icons/{size}'
-            .replace('{' + 'size' + '}', encodeURIComponent(String(size)));
+            .replace('{size}', encodeURIComponent(String(size)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
