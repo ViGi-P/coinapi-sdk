@@ -66,13 +66,13 @@ function Initialize-V1Quote {
 
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "time_exchange" = ${TimeExchange}
-            "time_coinapi" = ${TimeCoinapi}
-            "ask_price" = ${AskPrice}
-            "ask_size" = ${AskSize}
-            "bid_price" = ${BidPrice}
-            "bid_size" = ${BidSize}
+            'symbol_id' = ${SymbolId}
+            'time_exchange' = ${TimeExchange}
+            'time_coinapi' = ${TimeCoinapi}
+            'ask_price' = ${AskPrice}
+            'ask_size' = ${AskSize}
+            'bid_price' = ${BidPrice}
+            'bid_size' = ${BidSize}
         }
 
 
@@ -110,63 +110,63 @@ function ConvertFrom-JsonToV1Quote {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1Quote
-        $AllProperties = ("symbol_id", "time_exchange", "time_coinapi", "ask_price", "ask_size", "bid_price", "bid_size")
+        $AllProperties = ('symbol_id', 'time_exchange', 'time_coinapi', 'ask_price', 'ask_size', 'bid_price', 'bid_size')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_id'))) { #optional property not found
             $SymbolId = $null
         } else {
-            $SymbolId = $JsonParameters.PSobject.Properties["symbol_id"].value
+            $SymbolId = $JsonParameters.PSobject.Properties['symbol_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_exchange"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_exchange'))) { #optional property not found
             $TimeExchange = $null
         } else {
-            $TimeExchange = $JsonParameters.PSobject.Properties["time_exchange"].value
+            $TimeExchange = $JsonParameters.PSobject.Properties['time_exchange'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_coinapi"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_coinapi'))) { #optional property not found
             $TimeCoinapi = $null
         } else {
-            $TimeCoinapi = $JsonParameters.PSobject.Properties["time_coinapi"].value
+            $TimeCoinapi = $JsonParameters.PSobject.Properties['time_coinapi'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "ask_price"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'ask_price'))) { #optional property not found
             $AskPrice = $null
         } else {
-            $AskPrice = $JsonParameters.PSobject.Properties["ask_price"].value
+            $AskPrice = $JsonParameters.PSobject.Properties['ask_price'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "ask_size"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'ask_size'))) { #optional property not found
             $AskSize = $null
         } else {
-            $AskSize = $JsonParameters.PSobject.Properties["ask_size"].value
+            $AskSize = $JsonParameters.PSobject.Properties['ask_size'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "bid_price"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'bid_price'))) { #optional property not found
             $BidPrice = $null
         } else {
-            $BidPrice = $JsonParameters.PSobject.Properties["bid_price"].value
+            $BidPrice = $JsonParameters.PSobject.Properties['bid_price'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "bid_size"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'bid_size'))) { #optional property not found
             $BidSize = $null
         } else {
-            $BidSize = $JsonParameters.PSobject.Properties["bid_size"].value
+            $BidSize = $JsonParameters.PSobject.Properties['bid_size'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "time_exchange" = ${TimeExchange}
-            "time_coinapi" = ${TimeCoinapi}
-            "ask_price" = ${AskPrice}
-            "ask_size" = ${AskSize}
-            "bid_price" = ${BidPrice}
-            "bid_size" = ${BidSize}
+            'symbol_id' = ${SymbolId}
+            'time_exchange' = ${TimeExchange}
+            'time_coinapi' = ${TimeCoinapi}
+            'ask_price' = ${AskPrice}
+            'ask_size' = ${AskSize}
+            'bid_price' = ${BidPrice}
+            'bid_size' = ${BidSize}
         }
 
         return $PSO

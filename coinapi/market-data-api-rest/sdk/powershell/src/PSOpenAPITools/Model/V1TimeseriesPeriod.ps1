@@ -61,12 +61,12 @@ function Initialize-V1TimeseriesPeriod {
 
 
         $PSO = [PSCustomObject]@{
-            "period_id" = ${PeriodId}
-            "length_seconds" = ${LengthSeconds}
-            "length_months" = ${LengthMonths}
-            "unit_count" = ${UnitCount}
-            "unit_name" = ${UnitName}
-            "display_name" = ${DisplayName}
+            'period_id' = ${PeriodId}
+            'length_seconds' = ${LengthSeconds}
+            'length_months' = ${LengthMonths}
+            'unit_count' = ${UnitCount}
+            'unit_name' = ${UnitName}
+            'display_name' = ${DisplayName}
         }
 
 
@@ -104,56 +104,56 @@ function ConvertFrom-JsonToV1TimeseriesPeriod {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1TimeseriesPeriod
-        $AllProperties = ("period_id", "length_seconds", "length_months", "unit_count", "unit_name", "display_name")
+        $AllProperties = ('period_id', 'length_seconds', 'length_months', 'unit_count', 'unit_name', 'display_name')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "period_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'period_id'))) { #optional property not found
             $PeriodId = $null
         } else {
-            $PeriodId = $JsonParameters.PSobject.Properties["period_id"].value
+            $PeriodId = $JsonParameters.PSobject.Properties['period_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "length_seconds"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'length_seconds'))) { #optional property not found
             $LengthSeconds = $null
         } else {
-            $LengthSeconds = $JsonParameters.PSobject.Properties["length_seconds"].value
+            $LengthSeconds = $JsonParameters.PSobject.Properties['length_seconds'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "length_months"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'length_months'))) { #optional property not found
             $LengthMonths = $null
         } else {
-            $LengthMonths = $JsonParameters.PSobject.Properties["length_months"].value
+            $LengthMonths = $JsonParameters.PSobject.Properties['length_months'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "unit_count"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'unit_count'))) { #optional property not found
             $UnitCount = $null
         } else {
-            $UnitCount = $JsonParameters.PSobject.Properties["unit_count"].value
+            $UnitCount = $JsonParameters.PSobject.Properties['unit_count'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "unit_name"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'unit_name'))) { #optional property not found
             $UnitName = $null
         } else {
-            $UnitName = $JsonParameters.PSobject.Properties["unit_name"].value
+            $UnitName = $JsonParameters.PSobject.Properties['unit_name'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "display_name"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'display_name'))) { #optional property not found
             $DisplayName = $null
         } else {
-            $DisplayName = $JsonParameters.PSobject.Properties["display_name"].value
+            $DisplayName = $JsonParameters.PSobject.Properties['display_name'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "period_id" = ${PeriodId}
-            "length_seconds" = ${LengthSeconds}
-            "length_months" = ${LengthMonths}
-            "unit_count" = ${UnitCount}
-            "unit_name" = ${UnitName}
-            "display_name" = ${DisplayName}
+            'period_id' = ${PeriodId}
+            'length_seconds' = ${LengthSeconds}
+            'length_months' = ${LengthMonths}
+            'unit_count' = ${UnitCount}
+            'unit_name' = ${UnitName}
+            'display_name' = ${DisplayName}
         }
 
         return $PSO

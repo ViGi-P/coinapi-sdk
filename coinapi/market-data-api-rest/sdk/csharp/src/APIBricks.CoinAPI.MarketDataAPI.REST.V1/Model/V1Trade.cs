@@ -75,7 +75,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>The symbol identifier.</value>
         [JsonPropertyName("symbol_id")]
-        public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
+        public string? SymbolId { get { return this.SymbolIdOption.Value; } set { this.SymbolIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeExchange
@@ -89,7 +89,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>The time of trade reported by the exchange.</value>
         [JsonPropertyName("time_exchange")]
-        public DateTime? TimeExchange { get { return this.TimeExchangeOption; } set { this.TimeExchangeOption = new(value); } }
+        public DateTime? TimeExchange { get { return this.TimeExchangeOption.Value; } set { this.TimeExchangeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeCoinapi
@@ -103,7 +103,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>The time when the trade was received by CoinAPI.</value>
         [JsonPropertyName("time_coinapi")]
-        public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption; } set { this.TimeCoinapiOption = new(value); } }
+        public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption.Value; } set { this.TimeCoinapiOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Uuid
@@ -117,7 +117,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>The unique identifier for the trade.</value>
         [JsonPropertyName("uuid")]
-        public Guid? Uuid { get { return this.UuidOption; } set { this.UuidOption = new(value); } }
+        public Guid? Uuid { get { return this.UuidOption.Value; } set { this.UuidOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Price
@@ -131,7 +131,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>The price of the transaction.</value>
         [JsonPropertyName("price")]
-        public double? Price { get { return this.PriceOption; } set { this.PriceOption = new(value); } }
+        public double? Price { get { return this.PriceOption.Value; } set { this.PriceOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Size
@@ -145,7 +145,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>The base asset amount traded in the transaction. If the value is zero, it indicates that the transaction price is just marking a data point, such as in the index time series.</value>
         [JsonPropertyName("size")]
-        public double? Size { get { return this.SizeOption; } set { this.SizeOption = new(value); } }
+        public double? Size { get { return this.SizeOption.Value; } set { this.SizeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TakerSide
@@ -159,7 +159,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>The aggressor side of the transaction (BUY/SELL/BUY_ESTIMATED/SELL_ESTIMATED/UNKNOWN).</value>
         [JsonPropertyName("taker_side")]
-        public string? TakerSide { get { return this.TakerSideOption; } set { this.TakerSideOption = new(value); } }
+        public string? TakerSide { get { return this.TakerSideOption.Value; } set { this.TakerSideOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of IdTrade
@@ -173,7 +173,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>The trade identifier.</value>
         [JsonPropertyName("id_trade")]
-        public string? IdTrade { get { return this.IdTradeOption; } set { this.IdTradeOption = new(value); } }
+        public string? IdTrade { get { return this.IdTradeOption.Value; } set { this.IdTradeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of IdOrderMaker
@@ -187,7 +187,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>The order maker identifier.</value>
         [JsonPropertyName("id_order_maker")]
-        public string? IdOrderMaker { get { return this.IdOrderMakerOption; } set { this.IdOrderMakerOption = new(value); } }
+        public string? IdOrderMaker { get { return this.IdOrderMakerOption.Value; } set { this.IdOrderMakerOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of IdOrderTaker
@@ -201,7 +201,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>The order taker identifier.</value>
         [JsonPropertyName("id_order_taker")]
-        public string? IdOrderTaker { get { return this.IdOrderTakerOption; } set { this.IdOrderTakerOption = new(value); } }
+        public string? IdOrderTaker { get { return this.IdOrderTakerOption.Value; } set { this.IdOrderTakerOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

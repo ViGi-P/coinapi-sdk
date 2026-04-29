@@ -55,7 +55,7 @@ export class OptionsApi {
     { response: JQueryXHR; body: Array<models.V1OptionExchangeGroup>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/options/{exchange_id}/current'.replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+        let localVarPath = this.basePath + '/v1/options/{exchange_id}/current'.replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

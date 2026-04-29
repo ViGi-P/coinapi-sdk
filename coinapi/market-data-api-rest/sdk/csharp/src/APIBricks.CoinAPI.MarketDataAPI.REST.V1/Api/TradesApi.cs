@@ -395,7 +395,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/trades/latest"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/trades/latest");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/trades/latest");
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
 
@@ -709,7 +709,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/trades/{symbol_id}/history"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/trades/{symbol_id}/history");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/trades/{symbol_id}/history");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bsymbol_id%7D", Uri.EscapeDataString(symbolId.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
@@ -1000,7 +1000,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/trades/{symbol_id}/latest"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/trades/{symbol_id}/latest");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/trades/{symbol_id}/latest");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bsymbol_id%7D", Uri.EscapeDataString(symbolId.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);

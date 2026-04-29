@@ -106,7 +106,7 @@ export class MetadataApi {
      */
     public async v1AssetsAssetIdGet (assetId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Asset>;  }> {
         const localVarPath = this.basePath + '/v1/assets/{asset_id}'
-            .replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)));
+            .replace('{asset_id}', encodeURIComponent(String(assetId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -254,7 +254,7 @@ export class MetadataApi {
      */
     public async v1AssetsIconsSizeGet (size: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Icon>;  }> {
         const localVarPath = this.basePath + '/v1/assets/icons/{size}'
-            .replace('{' + 'size' + '}', encodeURIComponent(String(size)));
+            .replace('{size}', encodeURIComponent(String(size)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -329,7 +329,7 @@ export class MetadataApi {
      */
     public async v1ChainsChainIdGet (chainId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Chain>;  }> {
         const localVarPath = this.basePath + '/v1/chains/{chain_id}'
-            .replace('{' + 'chain_id' + '}', encodeURIComponent(String(chainId)));
+            .replace('{chain_id}', encodeURIComponent(String(chainId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -477,7 +477,7 @@ export class MetadataApi {
      */
     public async v1ExchangesExchangeIdGet (exchangeId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Exchange>;  }> {
         const localVarPath = this.basePath + '/v1/exchanges/{exchange_id}'
-            .replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+            .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -625,7 +625,7 @@ export class MetadataApi {
      */
     public async v1ExchangesIconsSizeGet (size: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Icon>;  }> {
         const localVarPath = this.basePath + '/v1/exchanges/icons/{size}'
-            .replace('{' + 'size' + '}', encodeURIComponent(String(size)));
+            .replace('{size}', encodeURIComponent(String(size)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -702,7 +702,7 @@ export class MetadataApi {
      */
     public async v1SymbolsExchangeIdActiveGet (exchangeId: string, filterSymbolId?: string, filterAssetId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Symbol>;  }> {
         const localVarPath = this.basePath + '/v1/symbols/{exchange_id}/active'
-            .replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+            .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -787,7 +787,7 @@ export class MetadataApi {
      */
     public async v1SymbolsExchangeIdHistoryGet (exchangeId: string, page?: number, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Symbol>;  }> {
         const localVarPath = this.basePath + '/v1/symbols/{exchange_id}/history'
-            .replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+            .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -870,7 +870,7 @@ export class MetadataApi {
      */
     public async v1SymbolsMapExchangeIdGet (exchangeId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1SymbolMapping>;  }> {
         const localVarPath = this.basePath + '/v1/symbols/map/{exchange_id}'
-            .replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+            .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];

@@ -71,14 +71,14 @@ function Initialize-V1ListingItem {
 
 
         $PSO = [PSCustomObject]@{
-            "metric_id" = ${MetricId}
-            "symbol_id" = ${SymbolId}
-            "symbol_id_external" = ${SymbolIdExternal}
-            "exchange_id" = ${ExchangeId}
-            "asset_id" = ${AssetId}
-            "asset_id_external" = ${AssetIdExternal}
-            "chain_id" = ${ChainId}
-            "network_id" = ${NetworkId}
+            'metric_id' = ${MetricId}
+            'symbol_id' = ${SymbolId}
+            'symbol_id_external' = ${SymbolIdExternal}
+            'exchange_id' = ${ExchangeId}
+            'asset_id' = ${AssetId}
+            'asset_id_external' = ${AssetIdExternal}
+            'chain_id' = ${ChainId}
+            'network_id' = ${NetworkId}
         }
 
 
@@ -116,70 +116,70 @@ function ConvertFrom-JsonToV1ListingItem {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1ListingItem
-        $AllProperties = ("metric_id", "symbol_id", "symbol_id_external", "exchange_id", "asset_id", "asset_id_external", "chain_id", "network_id")
+        $AllProperties = ('metric_id', 'symbol_id', 'symbol_id_external', 'exchange_id', 'asset_id', 'asset_id_external', 'chain_id', 'network_id')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "metric_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'metric_id'))) { #optional property not found
             $MetricId = $null
         } else {
-            $MetricId = $JsonParameters.PSobject.Properties["metric_id"].value
+            $MetricId = $JsonParameters.PSobject.Properties['metric_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_id'))) { #optional property not found
             $SymbolId = $null
         } else {
-            $SymbolId = $JsonParameters.PSobject.Properties["symbol_id"].value
+            $SymbolId = $JsonParameters.PSobject.Properties['symbol_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id_external"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_id_external'))) { #optional property not found
             $SymbolIdExternal = $null
         } else {
-            $SymbolIdExternal = $JsonParameters.PSobject.Properties["symbol_id_external"].value
+            $SymbolIdExternal = $JsonParameters.PSobject.Properties['symbol_id_external'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "exchange_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'exchange_id'))) { #optional property not found
             $ExchangeId = $null
         } else {
-            $ExchangeId = $JsonParameters.PSobject.Properties["exchange_id"].value
+            $ExchangeId = $JsonParameters.PSobject.Properties['exchange_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id'))) { #optional property not found
             $AssetId = $null
         } else {
-            $AssetId = $JsonParameters.PSobject.Properties["asset_id"].value
+            $AssetId = $JsonParameters.PSobject.Properties['asset_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_external"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_external'))) { #optional property not found
             $AssetIdExternal = $null
         } else {
-            $AssetIdExternal = $JsonParameters.PSobject.Properties["asset_id_external"].value
+            $AssetIdExternal = $JsonParameters.PSobject.Properties['asset_id_external'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "chain_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'chain_id'))) { #optional property not found
             $ChainId = $null
         } else {
-            $ChainId = $JsonParameters.PSobject.Properties["chain_id"].value
+            $ChainId = $JsonParameters.PSobject.Properties['chain_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "network_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'network_id'))) { #optional property not found
             $NetworkId = $null
         } else {
-            $NetworkId = $JsonParameters.PSobject.Properties["network_id"].value
+            $NetworkId = $JsonParameters.PSobject.Properties['network_id'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "metric_id" = ${MetricId}
-            "symbol_id" = ${SymbolId}
-            "symbol_id_external" = ${SymbolIdExternal}
-            "exchange_id" = ${ExchangeId}
-            "asset_id" = ${AssetId}
-            "asset_id_external" = ${AssetIdExternal}
-            "chain_id" = ${ChainId}
-            "network_id" = ${NetworkId}
+            'metric_id' = ${MetricId}
+            'symbol_id' = ${SymbolId}
+            'symbol_id_external' = ${SymbolIdExternal}
+            'exchange_id' = ${ExchangeId}
+            'asset_id' = ${AssetId}
+            'asset_id_external' = ${AssetIdExternal}
+            'chain_id' = ${ChainId}
+            'network_id' = ${NetworkId}
         }
 
         return $PSO

@@ -189,7 +189,7 @@ export class TradesApi {
      */
     public async v1TradesSymbolIdHistoryGet (symbolId: string, date?: string, timeStart?: string, timeEnd?: string, limit?: number, includeId?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Trade>;  }> {
         const localVarPath = this.basePath + '/v1/trades/{symbol_id}/history'
-            .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+            .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -286,7 +286,7 @@ export class TradesApi {
      */
     public async v1TradesSymbolIdLatestGet (symbolId: string, limit?: number, includeId?: boolean, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Trade>;  }> {
         const localVarPath = this.basePath + '/v1/trades/{symbol_id}/latest'
-            .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+            .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];

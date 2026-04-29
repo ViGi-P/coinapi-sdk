@@ -81,16 +81,16 @@ function Initialize-V1TimeseriesItem {
 
 
         $PSO = [PSCustomObject]@{
-            "time_period_start" = ${TimePeriodStart}
-            "time_period_end" = ${TimePeriodEnd}
-            "time_open" = ${TimeOpen}
-            "time_close" = ${TimeClose}
-            "price_open" = ${PriceOpen}
-            "price_high" = ${PriceHigh}
-            "price_low" = ${PriceLow}
-            "price_close" = ${PriceClose}
-            "volume_traded" = ${VolumeTraded}
-            "trades_count" = ${TradesCount}
+            'time_period_start' = ${TimePeriodStart}
+            'time_period_end' = ${TimePeriodEnd}
+            'time_open' = ${TimeOpen}
+            'time_close' = ${TimeClose}
+            'price_open' = ${PriceOpen}
+            'price_high' = ${PriceHigh}
+            'price_low' = ${PriceLow}
+            'price_close' = ${PriceClose}
+            'volume_traded' = ${VolumeTraded}
+            'trades_count' = ${TradesCount}
         }
 
 
@@ -128,84 +128,84 @@ function ConvertFrom-JsonToV1TimeseriesItem {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1TimeseriesItem
-        $AllProperties = ("time_period_start", "time_period_end", "time_open", "time_close", "price_open", "price_high", "price_low", "price_close", "volume_traded", "trades_count")
+        $AllProperties = ('time_period_start', 'time_period_end', 'time_open', 'time_close', 'price_open', 'price_high', 'price_low', 'price_close', 'volume_traded', 'trades_count')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_period_start"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_period_start'))) { #optional property not found
             $TimePeriodStart = $null
         } else {
-            $TimePeriodStart = $JsonParameters.PSobject.Properties["time_period_start"].value
+            $TimePeriodStart = $JsonParameters.PSobject.Properties['time_period_start'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_period_end"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_period_end'))) { #optional property not found
             $TimePeriodEnd = $null
         } else {
-            $TimePeriodEnd = $JsonParameters.PSobject.Properties["time_period_end"].value
+            $TimePeriodEnd = $JsonParameters.PSobject.Properties['time_period_end'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_open"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_open'))) { #optional property not found
             $TimeOpen = $null
         } else {
-            $TimeOpen = $JsonParameters.PSobject.Properties["time_open"].value
+            $TimeOpen = $JsonParameters.PSobject.Properties['time_open'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_close"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_close'))) { #optional property not found
             $TimeClose = $null
         } else {
-            $TimeClose = $JsonParameters.PSobject.Properties["time_close"].value
+            $TimeClose = $JsonParameters.PSobject.Properties['time_close'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "price_open"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'price_open'))) { #optional property not found
             $PriceOpen = $null
         } else {
-            $PriceOpen = $JsonParameters.PSobject.Properties["price_open"].value
+            $PriceOpen = $JsonParameters.PSobject.Properties['price_open'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "price_high"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'price_high'))) { #optional property not found
             $PriceHigh = $null
         } else {
-            $PriceHigh = $JsonParameters.PSobject.Properties["price_high"].value
+            $PriceHigh = $JsonParameters.PSobject.Properties['price_high'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "price_low"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'price_low'))) { #optional property not found
             $PriceLow = $null
         } else {
-            $PriceLow = $JsonParameters.PSobject.Properties["price_low"].value
+            $PriceLow = $JsonParameters.PSobject.Properties['price_low'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "price_close"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'price_close'))) { #optional property not found
             $PriceClose = $null
         } else {
-            $PriceClose = $JsonParameters.PSobject.Properties["price_close"].value
+            $PriceClose = $JsonParameters.PSobject.Properties['price_close'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "volume_traded"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'volume_traded'))) { #optional property not found
             $VolumeTraded = $null
         } else {
-            $VolumeTraded = $JsonParameters.PSobject.Properties["volume_traded"].value
+            $VolumeTraded = $JsonParameters.PSobject.Properties['volume_traded'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "trades_count"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'trades_count'))) { #optional property not found
             $TradesCount = $null
         } else {
-            $TradesCount = $JsonParameters.PSobject.Properties["trades_count"].value
+            $TradesCount = $JsonParameters.PSobject.Properties['trades_count'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "time_period_start" = ${TimePeriodStart}
-            "time_period_end" = ${TimePeriodEnd}
-            "time_open" = ${TimeOpen}
-            "time_close" = ${TimeClose}
-            "price_open" = ${PriceOpen}
-            "price_high" = ${PriceHigh}
-            "price_low" = ${PriceLow}
-            "price_close" = ${PriceClose}
-            "volume_traded" = ${VolumeTraded}
-            "trades_count" = ${TradesCount}
+            'time_period_start' = ${TimePeriodStart}
+            'time_period_end' = ${TimePeriodEnd}
+            'time_open' = ${TimeOpen}
+            'time_close' = ${TimeClose}
+            'price_open' = ${PriceOpen}
+            'price_high' = ${PriceHigh}
+            'price_low' = ${PriceLow}
+            'price_close' = ${PriceClose}
+            'volume_traded' = ${VolumeTraded}
+            'trades_count' = ${TradesCount}
         }
 
         return $PSO

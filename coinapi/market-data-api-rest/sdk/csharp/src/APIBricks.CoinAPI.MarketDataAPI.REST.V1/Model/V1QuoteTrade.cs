@@ -71,7 +71,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the symbol identifier.</value>
         [JsonPropertyName("symbol_id")]
-        public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
+        public string? SymbolId { get { return this.SymbolIdOption.Value; } set { this.SymbolIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeExchange
@@ -85,7 +85,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the exchange time of the quote trade.</value>
         [JsonPropertyName("time_exchange")]
-        public DateTime? TimeExchange { get { return this.TimeExchangeOption; } set { this.TimeExchangeOption = new(value); } }
+        public DateTime? TimeExchange { get { return this.TimeExchangeOption.Value; } set { this.TimeExchangeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeCoinapi
@@ -99,7 +99,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the CoinAPI time when the quote trade was received.</value>
         [JsonPropertyName("time_coinapi")]
-        public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption; } set { this.TimeCoinapiOption = new(value); } }
+        public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption.Value; } set { this.TimeCoinapiOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AskPrice
@@ -113,7 +113,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the best asking price.</value>
         [JsonPropertyName("ask_price")]
-        public double? AskPrice { get { return this.AskPriceOption; } set { this.AskPriceOption = new(value); } }
+        public double? AskPrice { get { return this.AskPriceOption.Value; } set { this.AskPriceOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AskSize
@@ -127,7 +127,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the volume resting on the best ask. If the value is equal to zero, then the size is unknown.</value>
         [JsonPropertyName("ask_size")]
-        public double? AskSize { get { return this.AskSizeOption; } set { this.AskSizeOption = new(value); } }
+        public double? AskSize { get { return this.AskSizeOption.Value; } set { this.AskSizeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of BidPrice
@@ -141,7 +141,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the best bidding price.</value>
         [JsonPropertyName("bid_price")]
-        public double? BidPrice { get { return this.BidPriceOption; } set { this.BidPriceOption = new(value); } }
+        public double? BidPrice { get { return this.BidPriceOption.Value; } set { this.BidPriceOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of BidSize
@@ -155,7 +155,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the volume resting on the best bid. If the value is equal to zero, then the size is unknown.</value>
         [JsonPropertyName("bid_size")]
-        public double? BidSize { get { return this.BidSizeOption; } set { this.BidSizeOption = new(value); } }
+        public double? BidSize { get { return this.BidSizeOption.Value; } set { this.BidSizeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of LastTrade
@@ -168,7 +168,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// Gets or Sets LastTrade
         /// </summary>
         [JsonPropertyName("last_trade")]
-        public V1LastTrade? LastTrade { get { return this.LastTradeOption; } set { this.LastTradeOption = new(value); } }
+        public V1LastTrade? LastTrade { get { return this.LastTradeOption.Value; } set { this.LastTradeOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -65,7 +65,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the symbol identifier.</value>
         [JsonPropertyName("symbol_id")]
-        public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
+        public string? SymbolId { get { return this.SymbolIdOption.Value; } set { this.SymbolIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeExchange
@@ -79,7 +79,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the exchange time of the order book.</value>
         [JsonPropertyName("time_exchange")]
-        public DateTime? TimeExchange { get { return this.TimeExchangeOption; } set { this.TimeExchangeOption = new(value); } }
+        public DateTime? TimeExchange { get { return this.TimeExchangeOption.Value; } set { this.TimeExchangeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeCoinapi
@@ -93,7 +93,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the CoinAPI time when the order book was received.</value>
         [JsonPropertyName("time_coinapi")]
-        public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption; } set { this.TimeCoinapiOption = new(value); } }
+        public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption.Value; } set { this.TimeCoinapiOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Asks
@@ -107,7 +107,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the asks made by market makers.</value>
         [JsonPropertyName("asks")]
-        public Object? Asks { get { return this.AsksOption; } set { this.AsksOption = new(value); } }
+        public Object? Asks { get { return this.AsksOption.Value; } set { this.AsksOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Bids
@@ -121,7 +121,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the bids made by market makers.</value>
         [JsonPropertyName("bids")]
-        public Object? Bids { get { return this.BidsOption; } set { this.BidsOption = new(value); } }
+        public Object? Bids { get { return this.BidsOption.Value; } set { this.BidsOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

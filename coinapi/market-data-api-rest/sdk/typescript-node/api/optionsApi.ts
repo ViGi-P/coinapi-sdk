@@ -101,7 +101,7 @@ export class OptionsApi {
      */
     public async v1OptionsExchangeIdCurrentGet (exchangeId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1OptionExchangeGroup>;  }> {
         const localVarPath = this.basePath + '/v1/options/{exchange_id}/current'
-            .replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+            .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];

@@ -65,7 +65,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the base asset identifier.</value>
         [JsonPropertyName("asset_id_base")]
-        public string? AssetIdBase { get { return this.AssetIdBaseOption; } set { this.AssetIdBaseOption = new(value); } }
+        public string? AssetIdBase { get { return this.AssetIdBaseOption.Value; } set { this.AssetIdBaseOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetIdQuote
@@ -79,7 +79,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the quote asset identifier.</value>
         [JsonPropertyName("asset_id_quote")]
-        public string? AssetIdQuote { get { return this.AssetIdQuoteOption; } set { this.AssetIdQuoteOption = new(value); } }
+        public string? AssetIdQuote { get { return this.AssetIdQuoteOption.Value; } set { this.AssetIdQuoteOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of UnderlyingPrice
@@ -93,7 +93,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the underlying price of the option.</value>
         [JsonPropertyName("underlying_price")]
-        public double? UnderlyingPrice { get { return this.UnderlyingPriceOption; } set { this.UnderlyingPriceOption = new(value); } }
+        public double? UnderlyingPrice { get { return this.UnderlyingPriceOption.Value; } set { this.UnderlyingPriceOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeExpiration
@@ -107,7 +107,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the expiration time of the option.</value>
         [JsonPropertyName("time_expiration")]
-        public DateTime? TimeExpiration { get { return this.TimeExpirationOption; } set { this.TimeExpirationOption = new(value); } }
+        public DateTime? TimeExpiration { get { return this.TimeExpirationOption.Value; } set { this.TimeExpirationOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Strikes
@@ -121,7 +121,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the list of strikes available.</value>
         [JsonPropertyName("strikes")]
-        public List<V1Strike>? Strikes { get { return this.StrikesOption; } set { this.StrikesOption = new(value); } }
+        public List<V1Strike>? Strikes { get { return this.StrikesOption.Value; } set { this.StrikesOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

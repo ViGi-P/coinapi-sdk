@@ -57,7 +57,7 @@ export class ExchangeRatesApi {
     { response: JQueryXHR; body: models.V1ExchangeRate;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/exchangerate/{asset_id_base}/{asset_id_quote}'.replace('{' + 'asset_id_base' + '}', encodeURIComponent(String(assetIdBase))).replace('{' + 'asset_id_quote' + '}', encodeURIComponent(String(assetIdQuote)));
+        let localVarPath = this.basePath + '/v1/exchangerate/{asset_id_base}/{asset_id_quote}'.replace('{asset_id_base}', encodeURIComponent(String(assetIdBase))).replace('{asset_id_quote}', encodeURIComponent(String(assetIdQuote)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -141,7 +141,7 @@ export class ExchangeRatesApi {
     { response: JQueryXHR; body: Array<models.V1ExchangeRatesTimeseriesItem>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history'.replace('{' + 'asset_id_base' + '}', encodeURIComponent(String(assetIdBase))).replace('{' + 'asset_id_quote' + '}', encodeURIComponent(String(assetIdQuote)));
+        let localVarPath = this.basePath + '/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history'.replace('{asset_id_base}', encodeURIComponent(String(assetIdBase))).replace('{asset_id_quote}', encodeURIComponent(String(assetIdQuote)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -232,7 +232,7 @@ export class ExchangeRatesApi {
     { response: JQueryXHR; body: models.V1ExchangeRates;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/exchangerate/{asset_id_base}'.replace('{' + 'asset_id_base' + '}', encodeURIComponent(String(assetIdBase)));
+        let localVarPath = this.basePath + '/v1/exchangerate/{asset_id_base}'.replace('{asset_id_base}', encodeURIComponent(String(assetIdBase)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

@@ -197,7 +197,7 @@ export class QuotesApi {
     { response: JQueryXHR; body: models.V1QuoteTrade;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/quotes/{symbol_id}/current'.replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+        let localVarPath = this.basePath + '/v1/quotes/{symbol_id}/current'.replace('{symbol_id}', encodeURIComponent(String(symbolId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -272,7 +272,7 @@ export class QuotesApi {
     { response: JQueryXHR; body: Array<models.V1Quote>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/quotes/{symbol_id}/history'.replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+        let localVarPath = this.basePath + '/v1/quotes/{symbol_id}/history'.replace('{symbol_id}', encodeURIComponent(String(symbolId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -356,7 +356,7 @@ export class QuotesApi {
     { response: JQueryXHR; body: Array<models.V1Quote>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/quotes/{symbol_id}/latest'.replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+        let localVarPath = this.basePath + '/v1/quotes/{symbol_id}/latest'.replace('{symbol_id}', encodeURIComponent(String(symbolId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

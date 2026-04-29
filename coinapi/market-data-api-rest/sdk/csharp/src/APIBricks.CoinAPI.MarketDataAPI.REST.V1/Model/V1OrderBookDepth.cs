@@ -69,7 +69,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the symbol identifier.</value>
         [JsonPropertyName("symbol_id")]
-        public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
+        public string? SymbolId { get { return this.SymbolIdOption.Value; } set { this.SymbolIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeExchange
@@ -83,7 +83,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the exchange time of the order book.</value>
         [JsonPropertyName("time_exchange")]
-        public DateTime? TimeExchange { get { return this.TimeExchangeOption; } set { this.TimeExchangeOption = new(value); } }
+        public DateTime? TimeExchange { get { return this.TimeExchangeOption.Value; } set { this.TimeExchangeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeCoinapi
@@ -97,7 +97,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the CoinAPI time when the order book was received.</value>
         [JsonPropertyName("time_coinapi")]
-        public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption; } set { this.TimeCoinapiOption = new(value); } }
+        public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption.Value; } set { this.TimeCoinapiOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AskLevels
@@ -111,7 +111,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the number of ask levels in the order book.</value>
         [JsonPropertyName("ask_levels")]
-        public long? AskLevels { get { return this.AskLevelsOption; } set { this.AskLevelsOption = new(value); } }
+        public long? AskLevels { get { return this.AskLevelsOption.Value; } set { this.AskLevelsOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of BidLevels
@@ -125,7 +125,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the number of bid levels in the order book.</value>
         [JsonPropertyName("bid_levels")]
-        public long? BidLevels { get { return this.BidLevelsOption; } set { this.BidLevelsOption = new(value); } }
+        public long? BidLevels { get { return this.BidLevelsOption.Value; } set { this.BidLevelsOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AskDepth
@@ -139,7 +139,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the depth of the ask side of the order book.</value>
         [JsonPropertyName("ask_depth")]
-        public double? AskDepth { get { return this.AskDepthOption; } set { this.AskDepthOption = new(value); } }
+        public double? AskDepth { get { return this.AskDepthOption.Value; } set { this.AskDepthOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of BidDepth
@@ -153,7 +153,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the depth of the bid side of the order book.</value>
         [JsonPropertyName("bid_depth")]
-        public double? BidDepth { get { return this.BidDepthOption; } set { this.BidDepthOption = new(value); } }
+        public double? BidDepth { get { return this.BidDepthOption.Value; } set { this.BidDepthOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

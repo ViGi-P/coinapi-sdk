@@ -131,26 +131,26 @@ function Initialize-V1Exchange {
 
 
         $PSO = [PSCustomObject]@{
-            "exchange_id" = ${ExchangeId}
-            "website" = ${Website}
-            "name" = ${Name}
-            "data_start" = ${DataStart}
-            "data_end" = ${DataEnd}
-            "data_quote_start" = ${DataQuoteStart}
-            "data_quote_end" = ${DataQuoteEnd}
-            "data_orderbook_start" = ${DataOrderbookStart}
-            "data_orderbook_end" = ${DataOrderbookEnd}
-            "data_trade_start" = ${DataTradeStart}
-            "data_trade_end" = ${DataTradeEnd}
-            "data_trade_count" = ${DataTradeCount}
-            "data_symbols_count" = ${DataSymbolsCount}
-            "volume_1hrs_usd" = ${Volume1hrsUsd}
-            "volume_1day_usd" = ${Volume1dayUsd}
-            "volume_1mth_usd" = ${Volume1mthUsd}
-            "metric_id" = ${MetricId}
-            "icons" = ${Icons}
-            "rank" = ${Rank}
-            "integration_status" = ${IntegrationStatus}
+            'exchange_id' = ${ExchangeId}
+            'website' = ${Website}
+            'name' = ${Name}
+            'data_start' = ${DataStart}
+            'data_end' = ${DataEnd}
+            'data_quote_start' = ${DataQuoteStart}
+            'data_quote_end' = ${DataQuoteEnd}
+            'data_orderbook_start' = ${DataOrderbookStart}
+            'data_orderbook_end' = ${DataOrderbookEnd}
+            'data_trade_start' = ${DataTradeStart}
+            'data_trade_end' = ${DataTradeEnd}
+            'data_trade_count' = ${DataTradeCount}
+            'data_symbols_count' = ${DataSymbolsCount}
+            'volume_1hrs_usd' = ${Volume1hrsUsd}
+            'volume_1day_usd' = ${Volume1dayUsd}
+            'volume_1mth_usd' = ${Volume1mthUsd}
+            'metric_id' = ${MetricId}
+            'icons' = ${Icons}
+            'rank' = ${Rank}
+            'integration_status' = ${IntegrationStatus}
         }
 
 
@@ -188,154 +188,154 @@ function ConvertFrom-JsonToV1Exchange {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1Exchange
-        $AllProperties = ("exchange_id", "website", "name", "data_start", "data_end", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "data_trade_count", "data_symbols_count", "volume_1hrs_usd", "volume_1day_usd", "volume_1mth_usd", "metric_id", "icons", "rank", "integration_status")
+        $AllProperties = ('exchange_id', 'website', 'name', 'data_start', 'data_end', 'data_quote_start', 'data_quote_end', 'data_orderbook_start', 'data_orderbook_end', 'data_trade_start', 'data_trade_end', 'data_trade_count', 'data_symbols_count', 'volume_1hrs_usd', 'volume_1day_usd', 'volume_1mth_usd', 'metric_id', 'icons', 'rank', 'integration_status')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "exchange_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'exchange_id'))) { #optional property not found
             $ExchangeId = $null
         } else {
-            $ExchangeId = $JsonParameters.PSobject.Properties["exchange_id"].value
+            $ExchangeId = $JsonParameters.PSobject.Properties['exchange_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "website"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'website'))) { #optional property not found
             $Website = $null
         } else {
-            $Website = $JsonParameters.PSobject.Properties["website"].value
+            $Website = $JsonParameters.PSobject.Properties['website'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "name"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'name'))) { #optional property not found
             $Name = $null
         } else {
-            $Name = $JsonParameters.PSobject.Properties["name"].value
+            $Name = $JsonParameters.PSobject.Properties['name'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_start"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_start'))) { #optional property not found
             $DataStart = $null
         } else {
-            $DataStart = $JsonParameters.PSobject.Properties["data_start"].value
+            $DataStart = $JsonParameters.PSobject.Properties['data_start'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_end"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_end'))) { #optional property not found
             $DataEnd = $null
         } else {
-            $DataEnd = $JsonParameters.PSobject.Properties["data_end"].value
+            $DataEnd = $JsonParameters.PSobject.Properties['data_end'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_quote_start"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_quote_start'))) { #optional property not found
             $DataQuoteStart = $null
         } else {
-            $DataQuoteStart = $JsonParameters.PSobject.Properties["data_quote_start"].value
+            $DataQuoteStart = $JsonParameters.PSobject.Properties['data_quote_start'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_quote_end"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_quote_end'))) { #optional property not found
             $DataQuoteEnd = $null
         } else {
-            $DataQuoteEnd = $JsonParameters.PSobject.Properties["data_quote_end"].value
+            $DataQuoteEnd = $JsonParameters.PSobject.Properties['data_quote_end'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_orderbook_start"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_orderbook_start'))) { #optional property not found
             $DataOrderbookStart = $null
         } else {
-            $DataOrderbookStart = $JsonParameters.PSobject.Properties["data_orderbook_start"].value
+            $DataOrderbookStart = $JsonParameters.PSobject.Properties['data_orderbook_start'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_orderbook_end"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_orderbook_end'))) { #optional property not found
             $DataOrderbookEnd = $null
         } else {
-            $DataOrderbookEnd = $JsonParameters.PSobject.Properties["data_orderbook_end"].value
+            $DataOrderbookEnd = $JsonParameters.PSobject.Properties['data_orderbook_end'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_trade_start"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_trade_start'))) { #optional property not found
             $DataTradeStart = $null
         } else {
-            $DataTradeStart = $JsonParameters.PSobject.Properties["data_trade_start"].value
+            $DataTradeStart = $JsonParameters.PSobject.Properties['data_trade_start'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_trade_end"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_trade_end'))) { #optional property not found
             $DataTradeEnd = $null
         } else {
-            $DataTradeEnd = $JsonParameters.PSobject.Properties["data_trade_end"].value
+            $DataTradeEnd = $JsonParameters.PSobject.Properties['data_trade_end'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_trade_count"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_trade_count'))) { #optional property not found
             $DataTradeCount = $null
         } else {
-            $DataTradeCount = $JsonParameters.PSobject.Properties["data_trade_count"].value
+            $DataTradeCount = $JsonParameters.PSobject.Properties['data_trade_count'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_symbols_count"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_symbols_count'))) { #optional property not found
             $DataSymbolsCount = $null
         } else {
-            $DataSymbolsCount = $JsonParameters.PSobject.Properties["data_symbols_count"].value
+            $DataSymbolsCount = $JsonParameters.PSobject.Properties['data_symbols_count'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "volume_1hrs_usd"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'volume_1hrs_usd'))) { #optional property not found
             $Volume1hrsUsd = $null
         } else {
-            $Volume1hrsUsd = $JsonParameters.PSobject.Properties["volume_1hrs_usd"].value
+            $Volume1hrsUsd = $JsonParameters.PSobject.Properties['volume_1hrs_usd'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "volume_1day_usd"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'volume_1day_usd'))) { #optional property not found
             $Volume1dayUsd = $null
         } else {
-            $Volume1dayUsd = $JsonParameters.PSobject.Properties["volume_1day_usd"].value
+            $Volume1dayUsd = $JsonParameters.PSobject.Properties['volume_1day_usd'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "volume_1mth_usd"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'volume_1mth_usd'))) { #optional property not found
             $Volume1mthUsd = $null
         } else {
-            $Volume1mthUsd = $JsonParameters.PSobject.Properties["volume_1mth_usd"].value
+            $Volume1mthUsd = $JsonParameters.PSobject.Properties['volume_1mth_usd'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "metric_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'metric_id'))) { #optional property not found
             $MetricId = $null
         } else {
-            $MetricId = $JsonParameters.PSobject.Properties["metric_id"].value
+            $MetricId = $JsonParameters.PSobject.Properties['metric_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "icons"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'icons'))) { #optional property not found
             $Icons = $null
         } else {
-            $Icons = $JsonParameters.PSobject.Properties["icons"].value
+            $Icons = $JsonParameters.PSobject.Properties['icons'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "rank"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'rank'))) { #optional property not found
             $Rank = $null
         } else {
-            $Rank = $JsonParameters.PSobject.Properties["rank"].value
+            $Rank = $JsonParameters.PSobject.Properties['rank'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "integration_status"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'integration_status'))) { #optional property not found
             $IntegrationStatus = $null
         } else {
-            $IntegrationStatus = $JsonParameters.PSobject.Properties["integration_status"].value
+            $IntegrationStatus = $JsonParameters.PSobject.Properties['integration_status'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "exchange_id" = ${ExchangeId}
-            "website" = ${Website}
-            "name" = ${Name}
-            "data_start" = ${DataStart}
-            "data_end" = ${DataEnd}
-            "data_quote_start" = ${DataQuoteStart}
-            "data_quote_end" = ${DataQuoteEnd}
-            "data_orderbook_start" = ${DataOrderbookStart}
-            "data_orderbook_end" = ${DataOrderbookEnd}
-            "data_trade_start" = ${DataTradeStart}
-            "data_trade_end" = ${DataTradeEnd}
-            "data_trade_count" = ${DataTradeCount}
-            "data_symbols_count" = ${DataSymbolsCount}
-            "volume_1hrs_usd" = ${Volume1hrsUsd}
-            "volume_1day_usd" = ${Volume1dayUsd}
-            "volume_1mth_usd" = ${Volume1mthUsd}
-            "metric_id" = ${MetricId}
-            "icons" = ${Icons}
-            "rank" = ${Rank}
-            "integration_status" = ${IntegrationStatus}
+            'exchange_id' = ${ExchangeId}
+            'website' = ${Website}
+            'name' = ${Name}
+            'data_start' = ${DataStart}
+            'data_end' = ${DataEnd}
+            'data_quote_start' = ${DataQuoteStart}
+            'data_quote_end' = ${DataQuoteEnd}
+            'data_orderbook_start' = ${DataOrderbookStart}
+            'data_orderbook_end' = ${DataOrderbookEnd}
+            'data_trade_start' = ${DataTradeStart}
+            'data_trade_end' = ${DataTradeEnd}
+            'data_trade_count' = ${DataTradeCount}
+            'data_symbols_count' = ${DataSymbolsCount}
+            'volume_1hrs_usd' = ${Volume1hrsUsd}
+            'volume_1day_usd' = ${Volume1dayUsd}
+            'volume_1mth_usd' = ${Volume1mthUsd}
+            'metric_id' = ${MetricId}
+            'icons' = ${Icons}
+            'rank' = ${Rank}
+            'integration_status' = ${IntegrationStatus}
         }
 
         return $PSO

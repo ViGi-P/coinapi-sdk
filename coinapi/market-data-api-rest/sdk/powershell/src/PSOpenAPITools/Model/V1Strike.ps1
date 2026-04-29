@@ -46,9 +46,9 @@ function Initialize-V1Strike {
 
 
         $PSO = [PSCustomObject]@{
-            "strike_price" = ${StrikePrice}
-            "call" = ${Call}
-            "put" = ${Put}
+            'strike_price' = ${StrikePrice}
+            'call' = ${Call}
+            'put' = ${Put}
         }
 
 
@@ -86,35 +86,35 @@ function ConvertFrom-JsonToV1Strike {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1Strike
-        $AllProperties = ("strike_price", "call", "put")
+        $AllProperties = ('strike_price', 'call', 'put')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "strike_price"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'strike_price'))) { #optional property not found
             $StrikePrice = $null
         } else {
-            $StrikePrice = $JsonParameters.PSobject.Properties["strike_price"].value
+            $StrikePrice = $JsonParameters.PSobject.Properties['strike_price'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "call"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'call'))) { #optional property not found
             $Call = $null
         } else {
-            $Call = $JsonParameters.PSobject.Properties["call"].value
+            $Call = $JsonParameters.PSobject.Properties['call'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "put"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'put'))) { #optional property not found
             $Put = $null
         } else {
-            $Put = $JsonParameters.PSobject.Properties["put"].value
+            $Put = $JsonParameters.PSobject.Properties['put'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "strike_price" = ${StrikePrice}
-            "call" = ${Call}
-            "put" = ${Put}
+            'strike_price' = ${StrikePrice}
+            'call' = ${Call}
+            'put' = ${Put}
         }
 
         return $PSO

@@ -129,7 +129,7 @@ export class OrderBookL3Api {
     { response: JQueryXHR; body: models.V1OrderBookBase;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/orderbooks3/{symbol_id}/current'.replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+        let localVarPath = this.basePath + '/v1/orderbooks3/{symbol_id}/current'.replace('{symbol_id}', encodeURIComponent(String(symbolId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

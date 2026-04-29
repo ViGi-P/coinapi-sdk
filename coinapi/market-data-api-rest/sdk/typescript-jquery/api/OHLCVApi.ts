@@ -58,7 +58,7 @@ export class OHLCVApi {
     { response: JQueryXHR; body: Array<models.OhlcvExchangeTimeseriesItem>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/ohlcv/exchanges/{exchange_id}/history'.replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+        let localVarPath = this.basePath + '/v1/ohlcv/exchanges/{exchange_id}/history'.replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -222,7 +222,7 @@ export class OHLCVApi {
     { response: JQueryXHR; body: Array<models.V1TimeseriesItem>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/ohlcv/{symbol_id}/history'.replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+        let localVarPath = this.basePath + '/v1/ohlcv/{symbol_id}/history'.replace('{symbol_id}', encodeURIComponent(String(symbolId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -312,7 +312,7 @@ export class OHLCVApi {
     { response: JQueryXHR; body: Array<models.V1TimeseriesItem>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/ohlcv/{symbol_id}/latest'.replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+        let localVarPath = this.basePath + '/v1/ohlcv/{symbol_id}/latest'.replace('{symbol_id}', encodeURIComponent(String(symbolId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

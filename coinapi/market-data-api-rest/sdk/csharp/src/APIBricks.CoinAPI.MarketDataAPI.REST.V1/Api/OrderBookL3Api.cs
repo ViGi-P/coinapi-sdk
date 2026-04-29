@@ -320,7 +320,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/orderbooks3/current"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/orderbooks3/current");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/orderbooks3/current");
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
 
@@ -595,7 +595,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/orderbooks3/{symbol_id}/current"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/orderbooks3/{symbol_id}/current");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/orderbooks3/{symbol_id}/current");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bsymbol_id%7D", Uri.EscapeDataString(symbolId.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);

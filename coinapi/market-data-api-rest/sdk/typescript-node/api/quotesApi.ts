@@ -253,7 +253,7 @@ export class QuotesApi {
      */
     public async v1QuotesSymbolIdCurrentGet (symbolId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: V1QuoteTrade;  }> {
         const localVarPath = this.basePath + '/v1/quotes/{symbol_id}/current'
-            .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+            .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -332,7 +332,7 @@ export class QuotesApi {
      */
     public async v1QuotesSymbolIdHistoryGet (symbolId: string, date?: string, timeStart?: string, timeEnd?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Quote>;  }> {
         const localVarPath = this.basePath + '/v1/quotes/{symbol_id}/history'
-            .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+            .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -424,7 +424,7 @@ export class QuotesApi {
      */
     public async v1QuotesSymbolIdLatestGet (symbolId: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1Quote>;  }> {
         const localVarPath = this.basePath + '/v1/quotes/{symbol_id}/latest'
-            .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+            .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];

@@ -106,7 +106,7 @@ export class OHLCVApi {
      */
     public async v1OhlcvExchangesExchangeIdHistoryGet (exchangeId: string, periodId: string, timeStart: string, timeEnd: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<OhlcvExchangeTimeseriesItem>;  }> {
         const localVarPath = this.basePath + '/v1/ohlcv/exchanges/{exchange_id}/history'
-            .replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+            .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -280,7 +280,7 @@ export class OHLCVApi {
      */
     public async v1OhlcvSymbolIdHistoryGet (symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1TimeseriesItem>;  }> {
         const localVarPath = this.basePath + '/v1/ohlcv/{symbol_id}/history'
-            .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+            .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -378,7 +378,7 @@ export class OHLCVApi {
      */
     public async v1OhlcvSymbolIdLatestGet (symbolId: string, periodId: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1TimeseriesItem>;  }> {
         const localVarPath = this.basePath + '/v1/ohlcv/{symbol_id}/latest'
-            .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+            .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];

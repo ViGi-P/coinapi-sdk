@@ -71,7 +71,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the metric ID.</value>
         [JsonPropertyName("metric_id")]
-        public string? MetricId { get { return this.MetricIdOption; } set { this.MetricIdOption = new(value); } }
+        public string? MetricId { get { return this.MetricIdOption.Value; } set { this.MetricIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SymbolId
@@ -85,7 +85,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the CoinAPI symbol ID. Null for exchange-level metrics.</value>
         [JsonPropertyName("symbol_id")]
-        public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
+        public string? SymbolId { get { return this.SymbolIdOption.Value; } set { this.SymbolIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SymbolIdExternal
@@ -99,7 +99,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the exchange-native symbol ID. Null for exchange-level metrics.</value>
         [JsonPropertyName("symbol_id_external")]
-        public string? SymbolIdExternal { get { return this.SymbolIdExternalOption; } set { this.SymbolIdExternalOption = new(value); } }
+        public string? SymbolIdExternal { get { return this.SymbolIdExternalOption.Value; } set { this.SymbolIdExternalOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ExchangeId
@@ -113,7 +113,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the exchange ID.</value>
         [JsonPropertyName("exchange_id")]
-        public string? ExchangeId { get { return this.ExchangeIdOption; } set { this.ExchangeIdOption = new(value); } }
+        public string? ExchangeId { get { return this.ExchangeIdOption.Value; } set { this.ExchangeIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetId
@@ -127,7 +127,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the asset ID.</value>
         [JsonPropertyName("asset_id")]
-        public string? AssetId { get { return this.AssetIdOption; } set { this.AssetIdOption = new(value); } }
+        public string? AssetId { get { return this.AssetIdOption.Value; } set { this.AssetIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetIdExternal
@@ -141,7 +141,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the asset ID.</value>
         [JsonPropertyName("asset_id_external")]
-        public string? AssetIdExternal { get { return this.AssetIdExternalOption; } set { this.AssetIdExternalOption = new(value); } }
+        public string? AssetIdExternal { get { return this.AssetIdExternalOption.Value; } set { this.AssetIdExternalOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ChainId
@@ -155,7 +155,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the chain ID.</value>
         [JsonPropertyName("chain_id")]
-        public string? ChainId { get { return this.ChainIdOption; } set { this.ChainIdOption = new(value); } }
+        public string? ChainId { get { return this.ChainIdOption.Value; } set { this.ChainIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of NetworkId
@@ -169,7 +169,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the network ID.</value>
         [JsonPropertyName("network_id")]
-        public string? NetworkId { get { return this.NetworkIdOption; } set { this.NetworkIdOption = new(value); } }
+        public string? NetworkId { get { return this.NetworkIdOption.Value; } set { this.NetworkIdOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

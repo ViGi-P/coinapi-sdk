@@ -56,7 +56,7 @@ export class OrderBookApi {
     { response: JQueryXHR; body: models.V1OrderBookBase;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/orderbooks/{symbol_id}/current'.replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+        let localVarPath = this.basePath + '/v1/orderbooks/{symbol_id}/current'.replace('{symbol_id}', encodeURIComponent(String(symbolId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -131,7 +131,7 @@ export class OrderBookApi {
     { response: JQueryXHR; body: models.V1OrderBookDepth;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/orderbooks/{symbol_id}/depth/current'.replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+        let localVarPath = this.basePath + '/v1/orderbooks/{symbol_id}/depth/current'.replace('{symbol_id}', encodeURIComponent(String(symbolId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -210,7 +210,7 @@ export class OrderBookApi {
     { response: JQueryXHR; body: Array<models.V1OrderBook>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/orderbooks/{symbol_id}/history'.replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+        let localVarPath = this.basePath + '/v1/orderbooks/{symbol_id}/history'.replace('{symbol_id}', encodeURIComponent(String(symbolId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

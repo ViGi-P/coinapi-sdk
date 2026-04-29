@@ -76,15 +76,15 @@ function Initialize-V1SymbolMapping {
 
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "symbol_id_exchange" = ${SymbolIdExchange}
-            "coinapi_datainfo_id" = ${CoinapiDatainfoId}
-            "asset_id_base_exchange" = ${AssetIdBaseExchange}
-            "asset_id_quote_exchange" = ${AssetIdQuoteExchange}
-            "asset_id_base" = ${AssetIdBase}
-            "asset_id_quote" = ${AssetIdQuote}
-            "price_precision" = ${PricePrecision}
-            "size_precision" = ${SizePrecision}
+            'symbol_id' = ${SymbolId}
+            'symbol_id_exchange' = ${SymbolIdExchange}
+            'coinapi_datainfo_id' = ${CoinapiDatainfoId}
+            'asset_id_base_exchange' = ${AssetIdBaseExchange}
+            'asset_id_quote_exchange' = ${AssetIdQuoteExchange}
+            'asset_id_base' = ${AssetIdBase}
+            'asset_id_quote' = ${AssetIdQuote}
+            'price_precision' = ${PricePrecision}
+            'size_precision' = ${SizePrecision}
         }
 
 
@@ -122,77 +122,77 @@ function ConvertFrom-JsonToV1SymbolMapping {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1SymbolMapping
-        $AllProperties = ("symbol_id", "symbol_id_exchange", "coinapi_datainfo_id", "asset_id_base_exchange", "asset_id_quote_exchange", "asset_id_base", "asset_id_quote", "price_precision", "size_precision")
+        $AllProperties = ('symbol_id', 'symbol_id_exchange', 'coinapi_datainfo_id', 'asset_id_base_exchange', 'asset_id_quote_exchange', 'asset_id_base', 'asset_id_quote', 'price_precision', 'size_precision')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_id'))) { #optional property not found
             $SymbolId = $null
         } else {
-            $SymbolId = $JsonParameters.PSobject.Properties["symbol_id"].value
+            $SymbolId = $JsonParameters.PSobject.Properties['symbol_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id_exchange"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_id_exchange'))) { #optional property not found
             $SymbolIdExchange = $null
         } else {
-            $SymbolIdExchange = $JsonParameters.PSobject.Properties["symbol_id_exchange"].value
+            $SymbolIdExchange = $JsonParameters.PSobject.Properties['symbol_id_exchange'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "coinapi_datainfo_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'coinapi_datainfo_id'))) { #optional property not found
             $CoinapiDatainfoId = $null
         } else {
-            $CoinapiDatainfoId = $JsonParameters.PSobject.Properties["coinapi_datainfo_id"].value
+            $CoinapiDatainfoId = $JsonParameters.PSobject.Properties['coinapi_datainfo_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_base_exchange"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_base_exchange'))) { #optional property not found
             $AssetIdBaseExchange = $null
         } else {
-            $AssetIdBaseExchange = $JsonParameters.PSobject.Properties["asset_id_base_exchange"].value
+            $AssetIdBaseExchange = $JsonParameters.PSobject.Properties['asset_id_base_exchange'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_quote_exchange"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_quote_exchange'))) { #optional property not found
             $AssetIdQuoteExchange = $null
         } else {
-            $AssetIdQuoteExchange = $JsonParameters.PSobject.Properties["asset_id_quote_exchange"].value
+            $AssetIdQuoteExchange = $JsonParameters.PSobject.Properties['asset_id_quote_exchange'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_base"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_base'))) { #optional property not found
             $AssetIdBase = $null
         } else {
-            $AssetIdBase = $JsonParameters.PSobject.Properties["asset_id_base"].value
+            $AssetIdBase = $JsonParameters.PSobject.Properties['asset_id_base'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_quote"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_quote'))) { #optional property not found
             $AssetIdQuote = $null
         } else {
-            $AssetIdQuote = $JsonParameters.PSobject.Properties["asset_id_quote"].value
+            $AssetIdQuote = $JsonParameters.PSobject.Properties['asset_id_quote'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "price_precision"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'price_precision'))) { #optional property not found
             $PricePrecision = $null
         } else {
-            $PricePrecision = $JsonParameters.PSobject.Properties["price_precision"].value
+            $PricePrecision = $JsonParameters.PSobject.Properties['price_precision'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "size_precision"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'size_precision'))) { #optional property not found
             $SizePrecision = $null
         } else {
-            $SizePrecision = $JsonParameters.PSobject.Properties["size_precision"].value
+            $SizePrecision = $JsonParameters.PSobject.Properties['size_precision'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "symbol_id_exchange" = ${SymbolIdExchange}
-            "coinapi_datainfo_id" = ${CoinapiDatainfoId}
-            "asset_id_base_exchange" = ${AssetIdBaseExchange}
-            "asset_id_quote_exchange" = ${AssetIdQuoteExchange}
-            "asset_id_base" = ${AssetIdBase}
-            "asset_id_quote" = ${AssetIdQuote}
-            "price_precision" = ${PricePrecision}
-            "size_precision" = ${SizePrecision}
+            'symbol_id' = ${SymbolId}
+            'symbol_id_exchange' = ${SymbolIdExchange}
+            'coinapi_datainfo_id' = ${CoinapiDatainfoId}
+            'asset_id_base_exchange' = ${AssetIdBaseExchange}
+            'asset_id_quote_exchange' = ${AssetIdQuoteExchange}
+            'asset_id_base' = ${AssetIdBase}
+            'asset_id_quote' = ${AssetIdQuote}
+            'price_precision' = ${PricePrecision}
+            'size_precision' = ${SizePrecision}
         }
 
         return $PSO

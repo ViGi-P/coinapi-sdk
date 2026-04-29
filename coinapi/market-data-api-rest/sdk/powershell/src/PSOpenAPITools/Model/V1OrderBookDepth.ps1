@@ -66,13 +66,13 @@ function Initialize-V1OrderBookDepth {
 
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "time_exchange" = ${TimeExchange}
-            "time_coinapi" = ${TimeCoinapi}
-            "ask_levels" = ${AskLevels}
-            "bid_levels" = ${BidLevels}
-            "ask_depth" = ${AskDepth}
-            "bid_depth" = ${BidDepth}
+            'symbol_id' = ${SymbolId}
+            'time_exchange' = ${TimeExchange}
+            'time_coinapi' = ${TimeCoinapi}
+            'ask_levels' = ${AskLevels}
+            'bid_levels' = ${BidLevels}
+            'ask_depth' = ${AskDepth}
+            'bid_depth' = ${BidDepth}
         }
 
 
@@ -110,63 +110,63 @@ function ConvertFrom-JsonToV1OrderBookDepth {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1OrderBookDepth
-        $AllProperties = ("symbol_id", "time_exchange", "time_coinapi", "ask_levels", "bid_levels", "ask_depth", "bid_depth")
+        $AllProperties = ('symbol_id', 'time_exchange', 'time_coinapi', 'ask_levels', 'bid_levels', 'ask_depth', 'bid_depth')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_id'))) { #optional property not found
             $SymbolId = $null
         } else {
-            $SymbolId = $JsonParameters.PSobject.Properties["symbol_id"].value
+            $SymbolId = $JsonParameters.PSobject.Properties['symbol_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_exchange"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_exchange'))) { #optional property not found
             $TimeExchange = $null
         } else {
-            $TimeExchange = $JsonParameters.PSobject.Properties["time_exchange"].value
+            $TimeExchange = $JsonParameters.PSobject.Properties['time_exchange'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_coinapi"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_coinapi'))) { #optional property not found
             $TimeCoinapi = $null
         } else {
-            $TimeCoinapi = $JsonParameters.PSobject.Properties["time_coinapi"].value
+            $TimeCoinapi = $JsonParameters.PSobject.Properties['time_coinapi'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "ask_levels"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'ask_levels'))) { #optional property not found
             $AskLevels = $null
         } else {
-            $AskLevels = $JsonParameters.PSobject.Properties["ask_levels"].value
+            $AskLevels = $JsonParameters.PSobject.Properties['ask_levels'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "bid_levels"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'bid_levels'))) { #optional property not found
             $BidLevels = $null
         } else {
-            $BidLevels = $JsonParameters.PSobject.Properties["bid_levels"].value
+            $BidLevels = $JsonParameters.PSobject.Properties['bid_levels'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "ask_depth"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'ask_depth'))) { #optional property not found
             $AskDepth = $null
         } else {
-            $AskDepth = $JsonParameters.PSobject.Properties["ask_depth"].value
+            $AskDepth = $JsonParameters.PSobject.Properties['ask_depth'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "bid_depth"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'bid_depth'))) { #optional property not found
             $BidDepth = $null
         } else {
-            $BidDepth = $JsonParameters.PSobject.Properties["bid_depth"].value
+            $BidDepth = $JsonParameters.PSobject.Properties['bid_depth'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "time_exchange" = ${TimeExchange}
-            "time_coinapi" = ${TimeCoinapi}
-            "ask_levels" = ${AskLevels}
-            "bid_levels" = ${BidLevels}
-            "ask_depth" = ${AskDepth}
-            "bid_depth" = ${BidDepth}
+            'symbol_id' = ${SymbolId}
+            'time_exchange' = ${TimeExchange}
+            'time_coinapi' = ${TimeCoinapi}
+            'ask_levels' = ${AskLevels}
+            'bid_levels' = ${BidLevels}
+            'ask_depth' = ${AskDepth}
+            'bid_depth' = ${BidDepth}
         }
 
         return $PSO

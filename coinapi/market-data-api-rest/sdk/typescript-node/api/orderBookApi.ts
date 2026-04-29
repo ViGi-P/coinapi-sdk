@@ -104,7 +104,7 @@ export class OrderBookApi {
      */
     public async v1OrderbooksSymbolIdCurrentGet (symbolId: string, limitLevels?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: V1OrderBookBase;  }> {
         const localVarPath = this.basePath + '/v1/orderbooks/{symbol_id}/current'
-            .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+            .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -184,7 +184,7 @@ export class OrderBookApi {
      */
     public async v1OrderbooksSymbolIdDepthCurrentGet (symbolId: string, limitLevels?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: V1OrderBookDepth;  }> {
         const localVarPath = this.basePath + '/v1/orderbooks/{symbol_id}/depth/current'
-            .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+            .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];
@@ -268,7 +268,7 @@ export class OrderBookApi {
      */
     public async v1OrderbooksSymbolIdHistoryGet (symbolId: string, date?: string, timeStart?: string, timeEnd?: string, limit?: number, limitLevels?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<V1OrderBook>;  }> {
         const localVarPath = this.basePath + '/v1/orderbooks/{symbol_id}/history'
-            .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+            .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];

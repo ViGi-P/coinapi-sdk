@@ -180,7 +180,7 @@ export class OrderBookL3Api {
      */
     public async v1Orderbooks3SymbolIdCurrentGet (symbolId: string, limitLevels?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: V1OrderBookBase;  }> {
         const localVarPath = this.basePath + '/v1/orderbooks3/{symbol_id}/current'
-            .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+            .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json', 'application/x-msgpack'];

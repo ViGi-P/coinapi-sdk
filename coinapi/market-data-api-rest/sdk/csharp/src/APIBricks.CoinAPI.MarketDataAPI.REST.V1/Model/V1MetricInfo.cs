@@ -61,7 +61,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the metric identifier.</value>
         [JsonPropertyName("metric_id")]
-        public string? MetricId { get { return this.MetricIdOption; } set { this.MetricIdOption = new(value); } }
+        public string? MetricId { get { return this.MetricIdOption.Value; } set { this.MetricIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Description
@@ -75,7 +75,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the description of the metric.</value>
         [JsonPropertyName("description")]
-        public string? Description { get { return this.DescriptionOption; } set { this.DescriptionOption = new(value); } }
+        public string? Description { get { return this.DescriptionOption.Value; } set { this.DescriptionOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SourceId
@@ -89,7 +89,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the source identifier of the metric.</value>
         [JsonPropertyName("source_id")]
-        public string? SourceId { get { return this.SourceIdOption; } set { this.SourceIdOption = new(value); } }
+        public string? SourceId { get { return this.SourceIdOption.Value; } set { this.SourceIdOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

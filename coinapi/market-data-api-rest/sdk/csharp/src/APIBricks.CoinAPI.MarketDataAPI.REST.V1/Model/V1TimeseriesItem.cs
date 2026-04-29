@@ -75,7 +75,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the start time of the time period.</value>
         [JsonPropertyName("time_period_start")]
-        public DateTime? TimePeriodStart { get { return this.TimePeriodStartOption; } set { this.TimePeriodStartOption = new(value); } }
+        public DateTime? TimePeriodStart { get { return this.TimePeriodStartOption.Value; } set { this.TimePeriodStartOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimePeriodEnd
@@ -89,7 +89,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the end time of the time period.</value>
         [JsonPropertyName("time_period_end")]
-        public DateTime? TimePeriodEnd { get { return this.TimePeriodEndOption; } set { this.TimePeriodEndOption = new(value); } }
+        public DateTime? TimePeriodEnd { get { return this.TimePeriodEndOption.Value; } set { this.TimePeriodEndOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeOpen
@@ -103,7 +103,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the time when the price opened.</value>
         [JsonPropertyName("time_open")]
-        public DateTime? TimeOpen { get { return this.TimeOpenOption; } set { this.TimeOpenOption = new(value); } }
+        public DateTime? TimeOpen { get { return this.TimeOpenOption.Value; } set { this.TimeOpenOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeClose
@@ -117,7 +117,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the time when the price closed.</value>
         [JsonPropertyName("time_close")]
-        public DateTime? TimeClose { get { return this.TimeCloseOption; } set { this.TimeCloseOption = new(value); } }
+        public DateTime? TimeClose { get { return this.TimeCloseOption.Value; } set { this.TimeCloseOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of PriceOpen
@@ -131,7 +131,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the opening price.</value>
         [JsonPropertyName("price_open")]
-        public double? PriceOpen { get { return this.PriceOpenOption; } set { this.PriceOpenOption = new(value); } }
+        public double? PriceOpen { get { return this.PriceOpenOption.Value; } set { this.PriceOpenOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of PriceHigh
@@ -145,7 +145,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the highest price during the time period.</value>
         [JsonPropertyName("price_high")]
-        public double? PriceHigh { get { return this.PriceHighOption; } set { this.PriceHighOption = new(value); } }
+        public double? PriceHigh { get { return this.PriceHighOption.Value; } set { this.PriceHighOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of PriceLow
@@ -159,7 +159,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the lowest price during the time period.</value>
         [JsonPropertyName("price_low")]
-        public double? PriceLow { get { return this.PriceLowOption; } set { this.PriceLowOption = new(value); } }
+        public double? PriceLow { get { return this.PriceLowOption.Value; } set { this.PriceLowOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of PriceClose
@@ -173,7 +173,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the closing price.</value>
         [JsonPropertyName("price_close")]
-        public double? PriceClose { get { return this.PriceCloseOption; } set { this.PriceCloseOption = new(value); } }
+        public double? PriceClose { get { return this.PriceCloseOption.Value; } set { this.PriceCloseOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of VolumeTraded
@@ -187,7 +187,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the total volume traded during the time period.</value>
         [JsonPropertyName("volume_traded")]
-        public double? VolumeTraded { get { return this.VolumeTradedOption; } set { this.VolumeTradedOption = new(value); } }
+        public double? VolumeTraded { get { return this.VolumeTradedOption.Value; } set { this.VolumeTradedOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TradesCount
@@ -201,7 +201,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the number of trades executed during the time period.</value>
         [JsonPropertyName("trades_count")]
-        public long? TradesCount { get { return this.TradesCountOption; } set { this.TradesCountOption = new(value); } }
+        public long? TradesCount { get { return this.TradesCountOption.Value; } set { this.TradesCountOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

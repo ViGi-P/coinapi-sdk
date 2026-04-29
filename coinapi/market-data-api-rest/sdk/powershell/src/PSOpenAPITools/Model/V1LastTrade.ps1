@@ -61,12 +61,12 @@ function Initialize-V1LastTrade {
 
 
         $PSO = [PSCustomObject]@{
-            "time_exchange" = ${TimeExchange}
-            "time_coinapi" = ${TimeCoinapi}
-            "uuid" = ${Uuid}
-            "price" = ${Price}
-            "size" = ${Size}
-            "taker_side" = ${TakerSide}
+            'time_exchange' = ${TimeExchange}
+            'time_coinapi' = ${TimeCoinapi}
+            'uuid' = ${Uuid}
+            'price' = ${Price}
+            'size' = ${Size}
+            'taker_side' = ${TakerSide}
         }
 
 
@@ -104,56 +104,56 @@ function ConvertFrom-JsonToV1LastTrade {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1LastTrade
-        $AllProperties = ("time_exchange", "time_coinapi", "uuid", "price", "size", "taker_side")
+        $AllProperties = ('time_exchange', 'time_coinapi', 'uuid', 'price', 'size', 'taker_side')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_exchange"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_exchange'))) { #optional property not found
             $TimeExchange = $null
         } else {
-            $TimeExchange = $JsonParameters.PSobject.Properties["time_exchange"].value
+            $TimeExchange = $JsonParameters.PSobject.Properties['time_exchange'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_coinapi"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_coinapi'))) { #optional property not found
             $TimeCoinapi = $null
         } else {
-            $TimeCoinapi = $JsonParameters.PSobject.Properties["time_coinapi"].value
+            $TimeCoinapi = $JsonParameters.PSobject.Properties['time_coinapi'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "uuid"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'uuid'))) { #optional property not found
             $Uuid = $null
         } else {
-            $Uuid = $JsonParameters.PSobject.Properties["uuid"].value
+            $Uuid = $JsonParameters.PSobject.Properties['uuid'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "price"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'price'))) { #optional property not found
             $Price = $null
         } else {
-            $Price = $JsonParameters.PSobject.Properties["price"].value
+            $Price = $JsonParameters.PSobject.Properties['price'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "size"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'size'))) { #optional property not found
             $Size = $null
         } else {
-            $Size = $JsonParameters.PSobject.Properties["size"].value
+            $Size = $JsonParameters.PSobject.Properties['size'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "taker_side"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'taker_side'))) { #optional property not found
             $TakerSide = $null
         } else {
-            $TakerSide = $JsonParameters.PSobject.Properties["taker_side"].value
+            $TakerSide = $JsonParameters.PSobject.Properties['taker_side'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "time_exchange" = ${TimeExchange}
-            "time_coinapi" = ${TimeCoinapi}
-            "uuid" = ${Uuid}
-            "price" = ${Price}
-            "size" = ${Size}
-            "taker_side" = ${TakerSide}
+            'time_exchange' = ${TimeExchange}
+            'time_coinapi' = ${TimeCoinapi}
+            'uuid' = ${Uuid}
+            'price' = ${Price}
+            'size' = ${Size}
+            'taker_side' = ${TakerSide}
         }
 
         return $PSO

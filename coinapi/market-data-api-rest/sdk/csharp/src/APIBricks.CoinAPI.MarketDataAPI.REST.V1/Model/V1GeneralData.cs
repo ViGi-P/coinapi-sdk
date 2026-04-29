@@ -73,7 +73,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the entry time for the data point.</value>
         [JsonPropertyName("entry_time")]
-        public DateTime? EntryTime { get { return this.EntryTimeOption; } set { this.EntryTimeOption = new(value); } }
+        public DateTime? EntryTime { get { return this.EntryTimeOption.Value; } set { this.EntryTimeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of RecvTime
@@ -87,7 +87,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the received time for the data point.</value>
         [JsonPropertyName("recv_time")]
-        public DateTime? RecvTime { get { return this.RecvTimeOption; } set { this.RecvTimeOption = new(value); } }
+        public DateTime? RecvTime { get { return this.RecvTimeOption.Value; } set { this.RecvTimeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ExchangeId
@@ -101,7 +101,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the identifier for the exchange.</value>
         [JsonPropertyName("exchange_id")]
-        public string? ExchangeId { get { return this.ExchangeIdOption; } set { this.ExchangeIdOption = new(value); } }
+        public string? ExchangeId { get { return this.ExchangeIdOption.Value; } set { this.ExchangeIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetId
@@ -115,7 +115,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the identifier for the asset.</value>
         [JsonPropertyName("asset_id")]
-        public string? AssetId { get { return this.AssetIdOption; } set { this.AssetIdOption = new(value); } }
+        public string? AssetId { get { return this.AssetIdOption.Value; } set { this.AssetIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SymbolId
@@ -129,7 +129,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the identifier for the symbol.</value>
         [JsonPropertyName("symbol_id")]
-        public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
+        public string? SymbolId { get { return this.SymbolIdOption.Value; } set { this.SymbolIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of MetricId
@@ -143,7 +143,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the identifier for the metric.</value>
         [JsonPropertyName("metric_id")]
-        public string? MetricId { get { return this.MetricIdOption; } set { this.MetricIdOption = new(value); } }
+        public string? MetricId { get { return this.MetricIdOption.Value; } set { this.MetricIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ValueDecimal
@@ -157,7 +157,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the decimal value for the metric.</value>
         [JsonPropertyName("value_decimal")]
-        public double? ValueDecimal { get { return this.ValueDecimalOption; } set { this.ValueDecimalOption = new(value); } }
+        public double? ValueDecimal { get { return this.ValueDecimalOption.Value; } set { this.ValueDecimalOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ValueText
@@ -171,7 +171,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the textual representation of the value for the metric.</value>
         [JsonPropertyName("value_text")]
-        public string? ValueText { get { return this.ValueTextOption; } set { this.ValueTextOption = new(value); } }
+        public string? ValueText { get { return this.ValueTextOption.Value; } set { this.ValueTextOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ValueTime
@@ -185,7 +185,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the timestamp value for the metric.</value>
         [JsonPropertyName("value_time")]
-        public DateTime? ValueTime { get { return this.ValueTimeOption; } set { this.ValueTimeOption = new(value); } }
+        public DateTime? ValueTime { get { return this.ValueTimeOption.Value; } set { this.ValueTimeOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

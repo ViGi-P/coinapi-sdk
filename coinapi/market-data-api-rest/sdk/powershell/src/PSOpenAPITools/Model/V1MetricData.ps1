@@ -46,9 +46,9 @@ function Initialize-V1MetricData {
 
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "time" = ${Time}
-            "value" = ${Value}
+            'symbol_id' = ${SymbolId}
+            'time' = ${Time}
+            'value' = ${Value}
         }
 
 
@@ -86,35 +86,35 @@ function ConvertFrom-JsonToV1MetricData {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1MetricData
-        $AllProperties = ("symbol_id", "time", "value")
+        $AllProperties = ('symbol_id', 'time', 'value')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_id'))) { #optional property not found
             $SymbolId = $null
         } else {
-            $SymbolId = $JsonParameters.PSobject.Properties["symbol_id"].value
+            $SymbolId = $JsonParameters.PSobject.Properties['symbol_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time'))) { #optional property not found
             $Time = $null
         } else {
-            $Time = $JsonParameters.PSobject.Properties["time"].value
+            $Time = $JsonParameters.PSobject.Properties['time'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "value"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'value'))) { #optional property not found
             $Value = $null
         } else {
-            $Value = $JsonParameters.PSobject.Properties["value"].value
+            $Value = $JsonParameters.PSobject.Properties['value'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "time" = ${Time}
-            "value" = ${Value}
+            'symbol_id' = ${SymbolId}
+            'time' = ${Time}
+            'value' = ${Value}
         }
 
         return $PSO

@@ -291,58 +291,58 @@ function Initialize-V1Symbol {
 
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "exchange_id" = ${ExchangeId}
-            "symbol_type" = ${SymbolType}
-            "asset_id_base" = ${AssetIdBase}
-            "asset_id_quote" = ${AssetIdQuote}
-            "asset_id_unit" = ${AssetIdUnit}
-            "future_contract_unit" = ${FutureContractUnit}
-            "future_contract_unit_asset" = ${FutureContractUnitAsset}
-            "future_delivery_time" = ${FutureDeliveryTime}
-            "option_type_is_call" = ${OptionTypeIsCall}
-            "option_strike_price" = ${OptionStrikePrice}
-            "option_contract_unit" = ${OptionContractUnit}
-            "option_exercise_style" = ${OptionExerciseStyle}
-            "option_expiration_time" = ${OptionExpirationTime}
-            "contract_delivery_time" = ${ContractDeliveryTime}
-            "contract_unit" = ${ContractUnit}
-            "contract_unit_asset" = ${ContractUnitAsset}
-            "contract_id" = ${ContractId}
-            "contract_display_name" = ${ContractDisplayName}
-            "contract_display_description" = ${ContractDisplayDescription}
-            "data_start" = ${DataStart}
-            "data_end" = ${DataEnd}
-            "data_quote_start" = ${DataQuoteStart}
-            "data_quote_end" = ${DataQuoteEnd}
-            "data_orderbook_start" = ${DataOrderbookStart}
-            "data_orderbook_end" = ${DataOrderbookEnd}
-            "data_trade_start" = ${DataTradeStart}
-            "data_trade_end" = ${DataTradeEnd}
-            "index_id" = ${IndexId}
-            "index_display_name" = ${IndexDisplayName}
-            "index_display_description" = ${IndexDisplayDescription}
-            "volume_1hrs" = ${Volume1hrs}
-            "volume_1hrs_usd" = ${Volume1hrsUsd}
-            "volume_1day" = ${Volume1day}
-            "volume_1day_usd" = ${Volume1dayUsd}
-            "volume_1mth" = ${Volume1mth}
-            "volume_1mth_usd" = ${Volume1mthUsd}
-            "price" = ${Price}
-            "symbol_id_exchange" = ${SymbolIdExchange}
-            "asset_id_base_exchange" = ${AssetIdBaseExchange}
-            "asset_id_quote_exchange" = ${AssetIdQuoteExchange}
-            "price_precision" = ${PricePrecision}
-            "size_precision" = ${SizePrecision}
-            "raw_kvp" = ${RawKvp}
-            "future_is_inverse" = ${FutureIsInverse}
-            "future_is_quanto" = ${FutureIsQuanto}
-            "volume_to_usd" = ${VolumeToUsd}
-            "option_barrier_up_price" = ${OptionBarrierUpPrice}
-            "option_barrier_up_type" = ${OptionBarrierUpType}
-            "option_barrier_down_price" = ${OptionBarrierDownPrice}
-            "option_barrier_down_type" = ${OptionBarrierDownType}
-            "symbol_id_int" = ${SymbolIdInt}
+            'symbol_id' = ${SymbolId}
+            'exchange_id' = ${ExchangeId}
+            'symbol_type' = ${SymbolType}
+            'asset_id_base' = ${AssetIdBase}
+            'asset_id_quote' = ${AssetIdQuote}
+            'asset_id_unit' = ${AssetIdUnit}
+            'future_contract_unit' = ${FutureContractUnit}
+            'future_contract_unit_asset' = ${FutureContractUnitAsset}
+            'future_delivery_time' = ${FutureDeliveryTime}
+            'option_type_is_call' = ${OptionTypeIsCall}
+            'option_strike_price' = ${OptionStrikePrice}
+            'option_contract_unit' = ${OptionContractUnit}
+            'option_exercise_style' = ${OptionExerciseStyle}
+            'option_expiration_time' = ${OptionExpirationTime}
+            'contract_delivery_time' = ${ContractDeliveryTime}
+            'contract_unit' = ${ContractUnit}
+            'contract_unit_asset' = ${ContractUnitAsset}
+            'contract_id' = ${ContractId}
+            'contract_display_name' = ${ContractDisplayName}
+            'contract_display_description' = ${ContractDisplayDescription}
+            'data_start' = ${DataStart}
+            'data_end' = ${DataEnd}
+            'data_quote_start' = ${DataQuoteStart}
+            'data_quote_end' = ${DataQuoteEnd}
+            'data_orderbook_start' = ${DataOrderbookStart}
+            'data_orderbook_end' = ${DataOrderbookEnd}
+            'data_trade_start' = ${DataTradeStart}
+            'data_trade_end' = ${DataTradeEnd}
+            'index_id' = ${IndexId}
+            'index_display_name' = ${IndexDisplayName}
+            'index_display_description' = ${IndexDisplayDescription}
+            'volume_1hrs' = ${Volume1hrs}
+            'volume_1hrs_usd' = ${Volume1hrsUsd}
+            'volume_1day' = ${Volume1day}
+            'volume_1day_usd' = ${Volume1dayUsd}
+            'volume_1mth' = ${Volume1mth}
+            'volume_1mth_usd' = ${Volume1mthUsd}
+            'price' = ${Price}
+            'symbol_id_exchange' = ${SymbolIdExchange}
+            'asset_id_base_exchange' = ${AssetIdBaseExchange}
+            'asset_id_quote_exchange' = ${AssetIdQuoteExchange}
+            'price_precision' = ${PricePrecision}
+            'size_precision' = ${SizePrecision}
+            'raw_kvp' = ${RawKvp}
+            'future_is_inverse' = ${FutureIsInverse}
+            'future_is_quanto' = ${FutureIsQuanto}
+            'volume_to_usd' = ${VolumeToUsd}
+            'option_barrier_up_price' = ${OptionBarrierUpPrice}
+            'option_barrier_up_type' = ${OptionBarrierUpType}
+            'option_barrier_down_price' = ${OptionBarrierDownPrice}
+            'option_barrier_down_type' = ${OptionBarrierDownType}
+            'symbol_id_int' = ${SymbolIdInt}
         }
 
 
@@ -380,378 +380,378 @@ function ConvertFrom-JsonToV1Symbol {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1Symbol
-        $AllProperties = ("symbol_id", "exchange_id", "symbol_type", "asset_id_base", "asset_id_quote", "asset_id_unit", "future_contract_unit", "future_contract_unit_asset", "future_delivery_time", "option_type_is_call", "option_strike_price", "option_contract_unit", "option_exercise_style", "option_expiration_time", "contract_delivery_time", "contract_unit", "contract_unit_asset", "contract_id", "contract_display_name", "contract_display_description", "data_start", "data_end", "data_quote_start", "data_quote_end", "data_orderbook_start", "data_orderbook_end", "data_trade_start", "data_trade_end", "index_id", "index_display_name", "index_display_description", "volume_1hrs", "volume_1hrs_usd", "volume_1day", "volume_1day_usd", "volume_1mth", "volume_1mth_usd", "price", "symbol_id_exchange", "asset_id_base_exchange", "asset_id_quote_exchange", "price_precision", "size_precision", "raw_kvp", "future_is_inverse", "future_is_quanto", "volume_to_usd", "option_barrier_up_price", "option_barrier_up_type", "option_barrier_down_price", "option_barrier_down_type", "symbol_id_int")
+        $AllProperties = ('symbol_id', 'exchange_id', 'symbol_type', 'asset_id_base', 'asset_id_quote', 'asset_id_unit', 'future_contract_unit', 'future_contract_unit_asset', 'future_delivery_time', 'option_type_is_call', 'option_strike_price', 'option_contract_unit', 'option_exercise_style', 'option_expiration_time', 'contract_delivery_time', 'contract_unit', 'contract_unit_asset', 'contract_id', 'contract_display_name', 'contract_display_description', 'data_start', 'data_end', 'data_quote_start', 'data_quote_end', 'data_orderbook_start', 'data_orderbook_end', 'data_trade_start', 'data_trade_end', 'index_id', 'index_display_name', 'index_display_description', 'volume_1hrs', 'volume_1hrs_usd', 'volume_1day', 'volume_1day_usd', 'volume_1mth', 'volume_1mth_usd', 'price', 'symbol_id_exchange', 'asset_id_base_exchange', 'asset_id_quote_exchange', 'price_precision', 'size_precision', 'raw_kvp', 'future_is_inverse', 'future_is_quanto', 'volume_to_usd', 'option_barrier_up_price', 'option_barrier_up_type', 'option_barrier_down_price', 'option_barrier_down_type', 'symbol_id_int')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_id'))) { #optional property not found
             $SymbolId = $null
         } else {
-            $SymbolId = $JsonParameters.PSobject.Properties["symbol_id"].value
+            $SymbolId = $JsonParameters.PSobject.Properties['symbol_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "exchange_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'exchange_id'))) { #optional property not found
             $ExchangeId = $null
         } else {
-            $ExchangeId = $JsonParameters.PSobject.Properties["exchange_id"].value
+            $ExchangeId = $JsonParameters.PSobject.Properties['exchange_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_type"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_type'))) { #optional property not found
             $SymbolType = $null
         } else {
-            $SymbolType = $JsonParameters.PSobject.Properties["symbol_type"].value
+            $SymbolType = $JsonParameters.PSobject.Properties['symbol_type'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_base"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_base'))) { #optional property not found
             $AssetIdBase = $null
         } else {
-            $AssetIdBase = $JsonParameters.PSobject.Properties["asset_id_base"].value
+            $AssetIdBase = $JsonParameters.PSobject.Properties['asset_id_base'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_quote"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_quote'))) { #optional property not found
             $AssetIdQuote = $null
         } else {
-            $AssetIdQuote = $JsonParameters.PSobject.Properties["asset_id_quote"].value
+            $AssetIdQuote = $JsonParameters.PSobject.Properties['asset_id_quote'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_unit"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_unit'))) { #optional property not found
             $AssetIdUnit = $null
         } else {
-            $AssetIdUnit = $JsonParameters.PSobject.Properties["asset_id_unit"].value
+            $AssetIdUnit = $JsonParameters.PSobject.Properties['asset_id_unit'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "future_contract_unit"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'future_contract_unit'))) { #optional property not found
             $FutureContractUnit = $null
         } else {
-            $FutureContractUnit = $JsonParameters.PSobject.Properties["future_contract_unit"].value
+            $FutureContractUnit = $JsonParameters.PSobject.Properties['future_contract_unit'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "future_contract_unit_asset"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'future_contract_unit_asset'))) { #optional property not found
             $FutureContractUnitAsset = $null
         } else {
-            $FutureContractUnitAsset = $JsonParameters.PSobject.Properties["future_contract_unit_asset"].value
+            $FutureContractUnitAsset = $JsonParameters.PSobject.Properties['future_contract_unit_asset'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "future_delivery_time"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'future_delivery_time'))) { #optional property not found
             $FutureDeliveryTime = $null
         } else {
-            $FutureDeliveryTime = $JsonParameters.PSobject.Properties["future_delivery_time"].value
+            $FutureDeliveryTime = $JsonParameters.PSobject.Properties['future_delivery_time'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "option_type_is_call"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'option_type_is_call'))) { #optional property not found
             $OptionTypeIsCall = $null
         } else {
-            $OptionTypeIsCall = $JsonParameters.PSobject.Properties["option_type_is_call"].value
+            $OptionTypeIsCall = $JsonParameters.PSobject.Properties['option_type_is_call'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "option_strike_price"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'option_strike_price'))) { #optional property not found
             $OptionStrikePrice = $null
         } else {
-            $OptionStrikePrice = $JsonParameters.PSobject.Properties["option_strike_price"].value
+            $OptionStrikePrice = $JsonParameters.PSobject.Properties['option_strike_price'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "option_contract_unit"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'option_contract_unit'))) { #optional property not found
             $OptionContractUnit = $null
         } else {
-            $OptionContractUnit = $JsonParameters.PSobject.Properties["option_contract_unit"].value
+            $OptionContractUnit = $JsonParameters.PSobject.Properties['option_contract_unit'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "option_exercise_style"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'option_exercise_style'))) { #optional property not found
             $OptionExerciseStyle = $null
         } else {
-            $OptionExerciseStyle = $JsonParameters.PSobject.Properties["option_exercise_style"].value
+            $OptionExerciseStyle = $JsonParameters.PSobject.Properties['option_exercise_style'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "option_expiration_time"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'option_expiration_time'))) { #optional property not found
             $OptionExpirationTime = $null
         } else {
-            $OptionExpirationTime = $JsonParameters.PSobject.Properties["option_expiration_time"].value
+            $OptionExpirationTime = $JsonParameters.PSobject.Properties['option_expiration_time'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "contract_delivery_time"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'contract_delivery_time'))) { #optional property not found
             $ContractDeliveryTime = $null
         } else {
-            $ContractDeliveryTime = $JsonParameters.PSobject.Properties["contract_delivery_time"].value
+            $ContractDeliveryTime = $JsonParameters.PSobject.Properties['contract_delivery_time'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "contract_unit"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'contract_unit'))) { #optional property not found
             $ContractUnit = $null
         } else {
-            $ContractUnit = $JsonParameters.PSobject.Properties["contract_unit"].value
+            $ContractUnit = $JsonParameters.PSobject.Properties['contract_unit'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "contract_unit_asset"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'contract_unit_asset'))) { #optional property not found
             $ContractUnitAsset = $null
         } else {
-            $ContractUnitAsset = $JsonParameters.PSobject.Properties["contract_unit_asset"].value
+            $ContractUnitAsset = $JsonParameters.PSobject.Properties['contract_unit_asset'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "contract_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'contract_id'))) { #optional property not found
             $ContractId = $null
         } else {
-            $ContractId = $JsonParameters.PSobject.Properties["contract_id"].value
+            $ContractId = $JsonParameters.PSobject.Properties['contract_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "contract_display_name"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'contract_display_name'))) { #optional property not found
             $ContractDisplayName = $null
         } else {
-            $ContractDisplayName = $JsonParameters.PSobject.Properties["contract_display_name"].value
+            $ContractDisplayName = $JsonParameters.PSobject.Properties['contract_display_name'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "contract_display_description"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'contract_display_description'))) { #optional property not found
             $ContractDisplayDescription = $null
         } else {
-            $ContractDisplayDescription = $JsonParameters.PSobject.Properties["contract_display_description"].value
+            $ContractDisplayDescription = $JsonParameters.PSobject.Properties['contract_display_description'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_start"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_start'))) { #optional property not found
             $DataStart = $null
         } else {
-            $DataStart = $JsonParameters.PSobject.Properties["data_start"].value
+            $DataStart = $JsonParameters.PSobject.Properties['data_start'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_end"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_end'))) { #optional property not found
             $DataEnd = $null
         } else {
-            $DataEnd = $JsonParameters.PSobject.Properties["data_end"].value
+            $DataEnd = $JsonParameters.PSobject.Properties['data_end'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_quote_start"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_quote_start'))) { #optional property not found
             $DataQuoteStart = $null
         } else {
-            $DataQuoteStart = $JsonParameters.PSobject.Properties["data_quote_start"].value
+            $DataQuoteStart = $JsonParameters.PSobject.Properties['data_quote_start'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_quote_end"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_quote_end'))) { #optional property not found
             $DataQuoteEnd = $null
         } else {
-            $DataQuoteEnd = $JsonParameters.PSobject.Properties["data_quote_end"].value
+            $DataQuoteEnd = $JsonParameters.PSobject.Properties['data_quote_end'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_orderbook_start"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_orderbook_start'))) { #optional property not found
             $DataOrderbookStart = $null
         } else {
-            $DataOrderbookStart = $JsonParameters.PSobject.Properties["data_orderbook_start"].value
+            $DataOrderbookStart = $JsonParameters.PSobject.Properties['data_orderbook_start'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_orderbook_end"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_orderbook_end'))) { #optional property not found
             $DataOrderbookEnd = $null
         } else {
-            $DataOrderbookEnd = $JsonParameters.PSobject.Properties["data_orderbook_end"].value
+            $DataOrderbookEnd = $JsonParameters.PSobject.Properties['data_orderbook_end'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_trade_start"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_trade_start'))) { #optional property not found
             $DataTradeStart = $null
         } else {
-            $DataTradeStart = $JsonParameters.PSobject.Properties["data_trade_start"].value
+            $DataTradeStart = $JsonParameters.PSobject.Properties['data_trade_start'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "data_trade_end"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'data_trade_end'))) { #optional property not found
             $DataTradeEnd = $null
         } else {
-            $DataTradeEnd = $JsonParameters.PSobject.Properties["data_trade_end"].value
+            $DataTradeEnd = $JsonParameters.PSobject.Properties['data_trade_end'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "index_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'index_id'))) { #optional property not found
             $IndexId = $null
         } else {
-            $IndexId = $JsonParameters.PSobject.Properties["index_id"].value
+            $IndexId = $JsonParameters.PSobject.Properties['index_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "index_display_name"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'index_display_name'))) { #optional property not found
             $IndexDisplayName = $null
         } else {
-            $IndexDisplayName = $JsonParameters.PSobject.Properties["index_display_name"].value
+            $IndexDisplayName = $JsonParameters.PSobject.Properties['index_display_name'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "index_display_description"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'index_display_description'))) { #optional property not found
             $IndexDisplayDescription = $null
         } else {
-            $IndexDisplayDescription = $JsonParameters.PSobject.Properties["index_display_description"].value
+            $IndexDisplayDescription = $JsonParameters.PSobject.Properties['index_display_description'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "volume_1hrs"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'volume_1hrs'))) { #optional property not found
             $Volume1hrs = $null
         } else {
-            $Volume1hrs = $JsonParameters.PSobject.Properties["volume_1hrs"].value
+            $Volume1hrs = $JsonParameters.PSobject.Properties['volume_1hrs'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "volume_1hrs_usd"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'volume_1hrs_usd'))) { #optional property not found
             $Volume1hrsUsd = $null
         } else {
-            $Volume1hrsUsd = $JsonParameters.PSobject.Properties["volume_1hrs_usd"].value
+            $Volume1hrsUsd = $JsonParameters.PSobject.Properties['volume_1hrs_usd'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "volume_1day"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'volume_1day'))) { #optional property not found
             $Volume1day = $null
         } else {
-            $Volume1day = $JsonParameters.PSobject.Properties["volume_1day"].value
+            $Volume1day = $JsonParameters.PSobject.Properties['volume_1day'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "volume_1day_usd"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'volume_1day_usd'))) { #optional property not found
             $Volume1dayUsd = $null
         } else {
-            $Volume1dayUsd = $JsonParameters.PSobject.Properties["volume_1day_usd"].value
+            $Volume1dayUsd = $JsonParameters.PSobject.Properties['volume_1day_usd'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "volume_1mth"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'volume_1mth'))) { #optional property not found
             $Volume1mth = $null
         } else {
-            $Volume1mth = $JsonParameters.PSobject.Properties["volume_1mth"].value
+            $Volume1mth = $JsonParameters.PSobject.Properties['volume_1mth'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "volume_1mth_usd"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'volume_1mth_usd'))) { #optional property not found
             $Volume1mthUsd = $null
         } else {
-            $Volume1mthUsd = $JsonParameters.PSobject.Properties["volume_1mth_usd"].value
+            $Volume1mthUsd = $JsonParameters.PSobject.Properties['volume_1mth_usd'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "price"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'price'))) { #optional property not found
             $Price = $null
         } else {
-            $Price = $JsonParameters.PSobject.Properties["price"].value
+            $Price = $JsonParameters.PSobject.Properties['price'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id_exchange"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_id_exchange'))) { #optional property not found
             $SymbolIdExchange = $null
         } else {
-            $SymbolIdExchange = $JsonParameters.PSobject.Properties["symbol_id_exchange"].value
+            $SymbolIdExchange = $JsonParameters.PSobject.Properties['symbol_id_exchange'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_base_exchange"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_base_exchange'))) { #optional property not found
             $AssetIdBaseExchange = $null
         } else {
-            $AssetIdBaseExchange = $JsonParameters.PSobject.Properties["asset_id_base_exchange"].value
+            $AssetIdBaseExchange = $JsonParameters.PSobject.Properties['asset_id_base_exchange'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_quote_exchange"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_quote_exchange'))) { #optional property not found
             $AssetIdQuoteExchange = $null
         } else {
-            $AssetIdQuoteExchange = $JsonParameters.PSobject.Properties["asset_id_quote_exchange"].value
+            $AssetIdQuoteExchange = $JsonParameters.PSobject.Properties['asset_id_quote_exchange'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "price_precision"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'price_precision'))) { #optional property not found
             $PricePrecision = $null
         } else {
-            $PricePrecision = $JsonParameters.PSobject.Properties["price_precision"].value
+            $PricePrecision = $JsonParameters.PSobject.Properties['price_precision'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "size_precision"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'size_precision'))) { #optional property not found
             $SizePrecision = $null
         } else {
-            $SizePrecision = $JsonParameters.PSobject.Properties["size_precision"].value
+            $SizePrecision = $JsonParameters.PSobject.Properties['size_precision'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "raw_kvp"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'raw_kvp'))) { #optional property not found
             $RawKvp = $null
         } else {
-            $RawKvp = $JsonParameters.PSobject.Properties["raw_kvp"].value
+            $RawKvp = $JsonParameters.PSobject.Properties['raw_kvp'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "future_is_inverse"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'future_is_inverse'))) { #optional property not found
             $FutureIsInverse = $null
         } else {
-            $FutureIsInverse = $JsonParameters.PSobject.Properties["future_is_inverse"].value
+            $FutureIsInverse = $JsonParameters.PSobject.Properties['future_is_inverse'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "future_is_quanto"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'future_is_quanto'))) { #optional property not found
             $FutureIsQuanto = $null
         } else {
-            $FutureIsQuanto = $JsonParameters.PSobject.Properties["future_is_quanto"].value
+            $FutureIsQuanto = $JsonParameters.PSobject.Properties['future_is_quanto'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "volume_to_usd"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'volume_to_usd'))) { #optional property not found
             $VolumeToUsd = $null
         } else {
-            $VolumeToUsd = $JsonParameters.PSobject.Properties["volume_to_usd"].value
+            $VolumeToUsd = $JsonParameters.PSobject.Properties['volume_to_usd'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "option_barrier_up_price"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'option_barrier_up_price'))) { #optional property not found
             $OptionBarrierUpPrice = $null
         } else {
-            $OptionBarrierUpPrice = $JsonParameters.PSobject.Properties["option_barrier_up_price"].value
+            $OptionBarrierUpPrice = $JsonParameters.PSobject.Properties['option_barrier_up_price'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "option_barrier_up_type"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'option_barrier_up_type'))) { #optional property not found
             $OptionBarrierUpType = $null
         } else {
-            $OptionBarrierUpType = $JsonParameters.PSobject.Properties["option_barrier_up_type"].value
+            $OptionBarrierUpType = $JsonParameters.PSobject.Properties['option_barrier_up_type'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "option_barrier_down_price"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'option_barrier_down_price'))) { #optional property not found
             $OptionBarrierDownPrice = $null
         } else {
-            $OptionBarrierDownPrice = $JsonParameters.PSobject.Properties["option_barrier_down_price"].value
+            $OptionBarrierDownPrice = $JsonParameters.PSobject.Properties['option_barrier_down_price'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "option_barrier_down_type"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'option_barrier_down_type'))) { #optional property not found
             $OptionBarrierDownType = $null
         } else {
-            $OptionBarrierDownType = $JsonParameters.PSobject.Properties["option_barrier_down_type"].value
+            $OptionBarrierDownType = $JsonParameters.PSobject.Properties['option_barrier_down_type'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id_int"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_id_int'))) { #optional property not found
             $SymbolIdInt = $null
         } else {
-            $SymbolIdInt = $JsonParameters.PSobject.Properties["symbol_id_int"].value
+            $SymbolIdInt = $JsonParameters.PSobject.Properties['symbol_id_int'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "exchange_id" = ${ExchangeId}
-            "symbol_type" = ${SymbolType}
-            "asset_id_base" = ${AssetIdBase}
-            "asset_id_quote" = ${AssetIdQuote}
-            "asset_id_unit" = ${AssetIdUnit}
-            "future_contract_unit" = ${FutureContractUnit}
-            "future_contract_unit_asset" = ${FutureContractUnitAsset}
-            "future_delivery_time" = ${FutureDeliveryTime}
-            "option_type_is_call" = ${OptionTypeIsCall}
-            "option_strike_price" = ${OptionStrikePrice}
-            "option_contract_unit" = ${OptionContractUnit}
-            "option_exercise_style" = ${OptionExerciseStyle}
-            "option_expiration_time" = ${OptionExpirationTime}
-            "contract_delivery_time" = ${ContractDeliveryTime}
-            "contract_unit" = ${ContractUnit}
-            "contract_unit_asset" = ${ContractUnitAsset}
-            "contract_id" = ${ContractId}
-            "contract_display_name" = ${ContractDisplayName}
-            "contract_display_description" = ${ContractDisplayDescription}
-            "data_start" = ${DataStart}
-            "data_end" = ${DataEnd}
-            "data_quote_start" = ${DataQuoteStart}
-            "data_quote_end" = ${DataQuoteEnd}
-            "data_orderbook_start" = ${DataOrderbookStart}
-            "data_orderbook_end" = ${DataOrderbookEnd}
-            "data_trade_start" = ${DataTradeStart}
-            "data_trade_end" = ${DataTradeEnd}
-            "index_id" = ${IndexId}
-            "index_display_name" = ${IndexDisplayName}
-            "index_display_description" = ${IndexDisplayDescription}
-            "volume_1hrs" = ${Volume1hrs}
-            "volume_1hrs_usd" = ${Volume1hrsUsd}
-            "volume_1day" = ${Volume1day}
-            "volume_1day_usd" = ${Volume1dayUsd}
-            "volume_1mth" = ${Volume1mth}
-            "volume_1mth_usd" = ${Volume1mthUsd}
-            "price" = ${Price}
-            "symbol_id_exchange" = ${SymbolIdExchange}
-            "asset_id_base_exchange" = ${AssetIdBaseExchange}
-            "asset_id_quote_exchange" = ${AssetIdQuoteExchange}
-            "price_precision" = ${PricePrecision}
-            "size_precision" = ${SizePrecision}
-            "raw_kvp" = ${RawKvp}
-            "future_is_inverse" = ${FutureIsInverse}
-            "future_is_quanto" = ${FutureIsQuanto}
-            "volume_to_usd" = ${VolumeToUsd}
-            "option_barrier_up_price" = ${OptionBarrierUpPrice}
-            "option_barrier_up_type" = ${OptionBarrierUpType}
-            "option_barrier_down_price" = ${OptionBarrierDownPrice}
-            "option_barrier_down_type" = ${OptionBarrierDownType}
-            "symbol_id_int" = ${SymbolIdInt}
+            'symbol_id' = ${SymbolId}
+            'exchange_id' = ${ExchangeId}
+            'symbol_type' = ${SymbolType}
+            'asset_id_base' = ${AssetIdBase}
+            'asset_id_quote' = ${AssetIdQuote}
+            'asset_id_unit' = ${AssetIdUnit}
+            'future_contract_unit' = ${FutureContractUnit}
+            'future_contract_unit_asset' = ${FutureContractUnitAsset}
+            'future_delivery_time' = ${FutureDeliveryTime}
+            'option_type_is_call' = ${OptionTypeIsCall}
+            'option_strike_price' = ${OptionStrikePrice}
+            'option_contract_unit' = ${OptionContractUnit}
+            'option_exercise_style' = ${OptionExerciseStyle}
+            'option_expiration_time' = ${OptionExpirationTime}
+            'contract_delivery_time' = ${ContractDeliveryTime}
+            'contract_unit' = ${ContractUnit}
+            'contract_unit_asset' = ${ContractUnitAsset}
+            'contract_id' = ${ContractId}
+            'contract_display_name' = ${ContractDisplayName}
+            'contract_display_description' = ${ContractDisplayDescription}
+            'data_start' = ${DataStart}
+            'data_end' = ${DataEnd}
+            'data_quote_start' = ${DataQuoteStart}
+            'data_quote_end' = ${DataQuoteEnd}
+            'data_orderbook_start' = ${DataOrderbookStart}
+            'data_orderbook_end' = ${DataOrderbookEnd}
+            'data_trade_start' = ${DataTradeStart}
+            'data_trade_end' = ${DataTradeEnd}
+            'index_id' = ${IndexId}
+            'index_display_name' = ${IndexDisplayName}
+            'index_display_description' = ${IndexDisplayDescription}
+            'volume_1hrs' = ${Volume1hrs}
+            'volume_1hrs_usd' = ${Volume1hrsUsd}
+            'volume_1day' = ${Volume1day}
+            'volume_1day_usd' = ${Volume1dayUsd}
+            'volume_1mth' = ${Volume1mth}
+            'volume_1mth_usd' = ${Volume1mthUsd}
+            'price' = ${Price}
+            'symbol_id_exchange' = ${SymbolIdExchange}
+            'asset_id_base_exchange' = ${AssetIdBaseExchange}
+            'asset_id_quote_exchange' = ${AssetIdQuoteExchange}
+            'price_precision' = ${PricePrecision}
+            'size_precision' = ${SizePrecision}
+            'raw_kvp' = ${RawKvp}
+            'future_is_inverse' = ${FutureIsInverse}
+            'future_is_quanto' = ${FutureIsQuanto}
+            'volume_to_usd' = ${VolumeToUsd}
+            'option_barrier_up_price' = ${OptionBarrierUpPrice}
+            'option_barrier_up_type' = ${OptionBarrierUpType}
+            'option_barrier_down_price' = ${OptionBarrierDownPrice}
+            'option_barrier_down_type' = ${OptionBarrierDownType}
+            'symbol_id_int' = ${SymbolIdInt}
         }
 
         return $PSO

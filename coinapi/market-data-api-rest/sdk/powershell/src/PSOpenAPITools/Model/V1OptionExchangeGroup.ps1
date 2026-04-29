@@ -56,11 +56,11 @@ function Initialize-V1OptionExchangeGroup {
 
 
         $PSO = [PSCustomObject]@{
-            "asset_id_base" = ${AssetIdBase}
-            "asset_id_quote" = ${AssetIdQuote}
-            "underlying_price" = ${UnderlyingPrice}
-            "time_expiration" = ${TimeExpiration}
-            "strikes" = ${Strikes}
+            'asset_id_base' = ${AssetIdBase}
+            'asset_id_quote' = ${AssetIdQuote}
+            'underlying_price' = ${UnderlyingPrice}
+            'time_expiration' = ${TimeExpiration}
+            'strikes' = ${Strikes}
         }
 
 
@@ -98,49 +98,49 @@ function ConvertFrom-JsonToV1OptionExchangeGroup {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1OptionExchangeGroup
-        $AllProperties = ("asset_id_base", "asset_id_quote", "underlying_price", "time_expiration", "strikes")
+        $AllProperties = ('asset_id_base', 'asset_id_quote', 'underlying_price', 'time_expiration', 'strikes')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_base"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_base'))) { #optional property not found
             $AssetIdBase = $null
         } else {
-            $AssetIdBase = $JsonParameters.PSobject.Properties["asset_id_base"].value
+            $AssetIdBase = $JsonParameters.PSobject.Properties['asset_id_base'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id_quote"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id_quote'))) { #optional property not found
             $AssetIdQuote = $null
         } else {
-            $AssetIdQuote = $JsonParameters.PSobject.Properties["asset_id_quote"].value
+            $AssetIdQuote = $JsonParameters.PSobject.Properties['asset_id_quote'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "underlying_price"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'underlying_price'))) { #optional property not found
             $UnderlyingPrice = $null
         } else {
-            $UnderlyingPrice = $JsonParameters.PSobject.Properties["underlying_price"].value
+            $UnderlyingPrice = $JsonParameters.PSobject.Properties['underlying_price'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_expiration"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_expiration'))) { #optional property not found
             $TimeExpiration = $null
         } else {
-            $TimeExpiration = $JsonParameters.PSobject.Properties["time_expiration"].value
+            $TimeExpiration = $JsonParameters.PSobject.Properties['time_expiration'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "strikes"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'strikes'))) { #optional property not found
             $Strikes = $null
         } else {
-            $Strikes = $JsonParameters.PSobject.Properties["strikes"].value
+            $Strikes = $JsonParameters.PSobject.Properties['strikes'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "asset_id_base" = ${AssetIdBase}
-            "asset_id_quote" = ${AssetIdQuote}
-            "underlying_price" = ${UnderlyingPrice}
-            "time_expiration" = ${TimeExpiration}
-            "strikes" = ${Strikes}
+            'asset_id_base' = ${AssetIdBase}
+            'asset_id_quote' = ${AssetIdQuote}
+            'underlying_price' = ${UnderlyingPrice}
+            'time_expiration' = ${TimeExpiration}
+            'strikes' = ${Strikes}
         }
 
         return $PSO

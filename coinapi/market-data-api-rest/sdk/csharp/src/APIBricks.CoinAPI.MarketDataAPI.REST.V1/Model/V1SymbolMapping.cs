@@ -73,7 +73,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the symbol ID.</value>
         [JsonPropertyName("symbol_id")]
-        public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
+        public string? SymbolId { get { return this.SymbolIdOption.Value; } set { this.SymbolIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SymbolIdExchange
@@ -87,7 +87,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the exchange-specific symbol ID.</value>
         [JsonPropertyName("symbol_id_exchange")]
-        public string? SymbolIdExchange { get { return this.SymbolIdExchangeOption; } set { this.SymbolIdExchangeOption = new(value); } }
+        public string? SymbolIdExchange { get { return this.SymbolIdExchangeOption.Value; } set { this.SymbolIdExchangeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of CoinapiDatainfoId
@@ -101,7 +101,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the DataInfo ID.</value>
         [JsonPropertyName("coinapi_datainfo_id")]
-        public int? CoinapiDatainfoId { get { return this.CoinapiDatainfoIdOption; } set { this.CoinapiDatainfoIdOption = new(value); } }
+        public int? CoinapiDatainfoId { get { return this.CoinapiDatainfoIdOption.Value; } set { this.CoinapiDatainfoIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetIdBaseExchange
@@ -115,7 +115,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the exchange-specific base asset ID.</value>
         [JsonPropertyName("asset_id_base_exchange")]
-        public string? AssetIdBaseExchange { get { return this.AssetIdBaseExchangeOption; } set { this.AssetIdBaseExchangeOption = new(value); } }
+        public string? AssetIdBaseExchange { get { return this.AssetIdBaseExchangeOption.Value; } set { this.AssetIdBaseExchangeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetIdQuoteExchange
@@ -129,7 +129,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the exchange-specific quote asset ID.</value>
         [JsonPropertyName("asset_id_quote_exchange")]
-        public string? AssetIdQuoteExchange { get { return this.AssetIdQuoteExchangeOption; } set { this.AssetIdQuoteExchangeOption = new(value); } }
+        public string? AssetIdQuoteExchange { get { return this.AssetIdQuoteExchangeOption.Value; } set { this.AssetIdQuoteExchangeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetIdBase
@@ -143,7 +143,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the base asset ID.</value>
         [JsonPropertyName("asset_id_base")]
-        public string? AssetIdBase { get { return this.AssetIdBaseOption; } set { this.AssetIdBaseOption = new(value); } }
+        public string? AssetIdBase { get { return this.AssetIdBaseOption.Value; } set { this.AssetIdBaseOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetIdQuote
@@ -157,7 +157,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the quote asset ID.</value>
         [JsonPropertyName("asset_id_quote")]
-        public string? AssetIdQuote { get { return this.AssetIdQuoteOption; } set { this.AssetIdQuoteOption = new(value); } }
+        public string? AssetIdQuote { get { return this.AssetIdQuoteOption.Value; } set { this.AssetIdQuoteOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of PricePrecision
@@ -171,7 +171,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the price precision.</value>
         [JsonPropertyName("price_precision")]
-        public double? PricePrecision { get { return this.PricePrecisionOption; } set { this.PricePrecisionOption = new(value); } }
+        public double? PricePrecision { get { return this.PricePrecisionOption.Value; } set { this.PricePrecisionOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SizePrecision
@@ -185,7 +185,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the size precision.</value>
         [JsonPropertyName("size_precision")]
-        public double? SizePrecision { get { return this.SizePrecisionOption; } set { this.SizePrecisionOption = new(value); } }
+        public double? SizePrecision { get { return this.SizePrecisionOption.Value; } set { this.SizePrecisionOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

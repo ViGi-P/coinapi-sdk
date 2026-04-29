@@ -55,7 +55,7 @@ export class MetadataApi {
     { response: JQueryXHR; body: Array<models.V1Asset>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/assets/{asset_id}'.replace('{' + 'asset_id' + '}', encodeURIComponent(String(assetId)));
+        let localVarPath = this.basePath + '/v1/assets/{asset_id}'.replace('{asset_id}', encodeURIComponent(String(assetId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -195,7 +195,7 @@ export class MetadataApi {
     { response: JQueryXHR; body: Array<models.V1Icon>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/assets/icons/{size}'.replace('{' + 'size' + '}', encodeURIComponent(String(size)));
+        let localVarPath = this.basePath + '/v1/assets/icons/{size}'.replace('{size}', encodeURIComponent(String(size)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -266,7 +266,7 @@ export class MetadataApi {
     { response: JQueryXHR; body: Array<models.V1Chain>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/chains/{chain_id}'.replace('{' + 'chain_id' + '}', encodeURIComponent(String(chainId)));
+        let localVarPath = this.basePath + '/v1/chains/{chain_id}'.replace('{chain_id}', encodeURIComponent(String(chainId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -406,7 +406,7 @@ export class MetadataApi {
     { response: JQueryXHR; body: Array<models.V1Exchange>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/exchanges/{exchange_id}'.replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+        let localVarPath = this.basePath + '/v1/exchanges/{exchange_id}'.replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -546,7 +546,7 @@ export class MetadataApi {
     { response: JQueryXHR; body: Array<models.V1Icon>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/exchanges/icons/{size}'.replace('{' + 'size' + '}', encodeURIComponent(String(size)));
+        let localVarPath = this.basePath + '/v1/exchanges/icons/{size}'.replace('{size}', encodeURIComponent(String(size)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -619,7 +619,7 @@ export class MetadataApi {
     { response: JQueryXHR; body: Array<models.V1Symbol>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/symbols/{exchange_id}/active'.replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+        let localVarPath = this.basePath + '/v1/symbols/{exchange_id}/active'.replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -698,7 +698,7 @@ export class MetadataApi {
     { response: JQueryXHR; body: Array<models.V1Symbol>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/symbols/{exchange_id}/history'.replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+        let localVarPath = this.basePath + '/v1/symbols/{exchange_id}/history'.replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -775,7 +775,7 @@ export class MetadataApi {
     { response: JQueryXHR; body: Array<models.V1SymbolMapping>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/symbols/map/{exchange_id}'.replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+        let localVarPath = this.basePath + '/v1/symbols/map/{exchange_id}'.replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

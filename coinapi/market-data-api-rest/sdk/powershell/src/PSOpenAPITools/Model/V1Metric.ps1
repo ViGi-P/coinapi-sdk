@@ -41,8 +41,8 @@ function Initialize-V1Metric {
 
 
         $PSO = [PSCustomObject]@{
-            "metric_id" = ${MetricId}
-            "description" = ${Description}
+            'metric_id' = ${MetricId}
+            'description' = ${Description}
         }
 
 
@@ -80,28 +80,28 @@ function ConvertFrom-JsonToV1Metric {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1Metric
-        $AllProperties = ("metric_id", "description")
+        $AllProperties = ('metric_id', 'description')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "metric_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'metric_id'))) { #optional property not found
             $MetricId = $null
         } else {
-            $MetricId = $JsonParameters.PSobject.Properties["metric_id"].value
+            $MetricId = $JsonParameters.PSobject.Properties['metric_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "description"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'description'))) { #optional property not found
             $Description = $null
         } else {
-            $Description = $JsonParameters.PSobject.Properties["description"].value
+            $Description = $JsonParameters.PSobject.Properties['description'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "metric_id" = ${MetricId}
-            "description" = ${Description}
+            'metric_id' = ${MetricId}
+            'description' = ${Description}
         }
 
         return $PSO

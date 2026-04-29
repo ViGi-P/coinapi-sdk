@@ -56,11 +56,11 @@ function Initialize-V1OrderBook {
 
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "time_exchange" = ${TimeExchange}
-            "time_coinapi" = ${TimeCoinapi}
-            "asks" = ${Asks}
-            "bids" = ${Bids}
+            'symbol_id' = ${SymbolId}
+            'time_exchange' = ${TimeExchange}
+            'time_coinapi' = ${TimeCoinapi}
+            'asks' = ${Asks}
+            'bids' = ${Bids}
         }
 
 
@@ -98,49 +98,49 @@ function ConvertFrom-JsonToV1OrderBook {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1OrderBook
-        $AllProperties = ("symbol_id", "time_exchange", "time_coinapi", "asks", "bids")
+        $AllProperties = ('symbol_id', 'time_exchange', 'time_coinapi', 'asks', 'bids')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_id'))) { #optional property not found
             $SymbolId = $null
         } else {
-            $SymbolId = $JsonParameters.PSobject.Properties["symbol_id"].value
+            $SymbolId = $JsonParameters.PSobject.Properties['symbol_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_exchange"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_exchange'))) { #optional property not found
             $TimeExchange = $null
         } else {
-            $TimeExchange = $JsonParameters.PSobject.Properties["time_exchange"].value
+            $TimeExchange = $JsonParameters.PSobject.Properties['time_exchange'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "time_coinapi"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'time_coinapi'))) { #optional property not found
             $TimeCoinapi = $null
         } else {
-            $TimeCoinapi = $JsonParameters.PSobject.Properties["time_coinapi"].value
+            $TimeCoinapi = $JsonParameters.PSobject.Properties['time_coinapi'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asks"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asks'))) { #optional property not found
             $Asks = $null
         } else {
-            $Asks = $JsonParameters.PSobject.Properties["asks"].value
+            $Asks = $JsonParameters.PSobject.Properties['asks'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "bids"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'bids'))) { #optional property not found
             $Bids = $null
         } else {
-            $Bids = $JsonParameters.PSobject.Properties["bids"].value
+            $Bids = $JsonParameters.PSobject.Properties['bids'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "time_exchange" = ${TimeExchange}
-            "time_coinapi" = ${TimeCoinapi}
-            "asks" = ${Asks}
-            "bids" = ${Bids}
+            'symbol_id' = ${SymbolId}
+            'time_exchange' = ${TimeExchange}
+            'time_coinapi' = ${TimeCoinapi}
+            'asks' = ${Asks}
+            'bids' = ${Bids}
         }
 
         return $PSO

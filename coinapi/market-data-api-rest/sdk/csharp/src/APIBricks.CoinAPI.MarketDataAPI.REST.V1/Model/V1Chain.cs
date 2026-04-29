@@ -59,7 +59,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the chain identifier.</value>
         [JsonPropertyName("chain_id")]
-        public string? ChainId { get { return this.ChainIdOption; } set { this.ChainIdOption = new(value); } }
+        public string? ChainId { get { return this.ChainIdOption.Value; } set { this.ChainIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Name
@@ -73,7 +73,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the name of the chain.</value>
         [JsonPropertyName("name")]
-        public string? Name { get { return this.NameOption; } set { this.NameOption = new(value); } }
+        public string? Name { get { return this.NameOption.Value; } set { this.NameOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

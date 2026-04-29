@@ -61,7 +61,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the symbol id.</value>
         [JsonPropertyName("symbol_id")]
-        public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
+        public string? SymbolId { get { return this.SymbolIdOption.Value; } set { this.SymbolIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Time
@@ -75,7 +75,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the time at which the value is recorded.</value>
         [JsonPropertyName("time")]
-        public DateTime? Time { get { return this.TimeOption; } set { this.TimeOption = new(value); } }
+        public DateTime? Time { get { return this.TimeOption.Value; } set { this.TimeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Value
@@ -89,7 +89,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the value of the metric.</value>
         [JsonPropertyName("value")]
-        public double? Value { get { return this.ValueOption; } set { this.ValueOption = new(value); } }
+        public double? Value { get { return this.ValueOption.Value; } set { this.ValueOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

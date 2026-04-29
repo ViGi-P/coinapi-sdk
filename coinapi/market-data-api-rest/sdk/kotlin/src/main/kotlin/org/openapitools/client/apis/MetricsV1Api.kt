@@ -246,10 +246,10 @@ open class MetricsV1Api(basePath: kotlin.String = defaultBasePath, client: Call.
                 }
                 put("exchange_id", listOf(exchangeId.toString()))
                 if (timeStart != null) {
-                    put("time_start", listOf(parseDateToQueryString(timeStart)))
+                    put("time_start", listOf(parseDateToQueryString<java.time.OffsetDateTime>(timeStart)))
                 }
                 if (timeEnd != null) {
-                    put("time_end", listOf(parseDateToQueryString(timeEnd)))
+                    put("time_end", listOf(parseDateToQueryString<java.time.OffsetDateTime>(timeEnd)))
                 }
                 if (timeFormat != null) {
                     put("time_format", listOf(timeFormat.toString()))
@@ -546,10 +546,10 @@ open class MetricsV1Api(basePath: kotlin.String = defaultBasePath, client: Call.
                 put("metric_id", listOf(metricId.toString()))
                 put("exchange_id", listOf(exchangeId.toString()))
                 if (timeStart != null) {
-                    put("time_start", listOf(parseDateToQueryString(timeStart)))
+                    put("time_start", listOf(parseDateToQueryString<java.time.OffsetDateTime>(timeStart)))
                 }
                 if (timeEnd != null) {
-                    put("time_end", listOf(parseDateToQueryString(timeEnd)))
+                    put("time_end", listOf(parseDateToQueryString<java.time.OffsetDateTime>(timeEnd)))
                 }
                 if (timeFormat != null) {
                     put("time_format", listOf(timeFormat.toString()))
@@ -898,10 +898,10 @@ open class MetricsV1Api(basePath: kotlin.String = defaultBasePath, client: Call.
                 put("metric_id", listOf(metricId.toString()))
                 put("symbol_id", listOf(symbolId.toString()))
                 if (timeStart != null) {
-                    put("time_start", listOf(parseDateToQueryString(timeStart)))
+                    put("time_start", listOf(parseDateToQueryString<java.time.OffsetDateTime>(timeStart)))
                 }
                 if (timeEnd != null) {
-                    put("time_end", listOf(parseDateToQueryString(timeEnd)))
+                    put("time_end", listOf(parseDateToQueryString<java.time.OffsetDateTime>(timeEnd)))
                 }
                 if (timeFormat != null) {
                     put("time_format", listOf(timeFormat.toString()))

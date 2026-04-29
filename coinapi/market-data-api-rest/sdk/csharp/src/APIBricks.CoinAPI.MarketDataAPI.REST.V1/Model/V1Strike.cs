@@ -61,7 +61,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the strike price.</value>
         [JsonPropertyName("strike_price")]
-        public double? StrikePrice { get { return this.StrikePriceOption; } set { this.StrikePriceOption = new(value); } }
+        public double? StrikePrice { get { return this.StrikePriceOption.Value; } set { this.StrikePriceOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Call
@@ -74,7 +74,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// Gets or Sets Call
         /// </summary>
         [JsonPropertyName("call")]
-        public V1QuoteTrade? Call { get { return this.CallOption; } set { this.CallOption = new(value); } }
+        public V1QuoteTrade? Call { get { return this.CallOption.Value; } set { this.CallOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Put
@@ -87,7 +87,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// Gets or Sets Put
         /// </summary>
         [JsonPropertyName("put")]
-        public V1QuoteTrade? Put { get { return this.PutOption; } set { this.PutOption = new(value); } }
+        public V1QuoteTrade? Put { get { return this.PutOption.Value; } set { this.PutOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

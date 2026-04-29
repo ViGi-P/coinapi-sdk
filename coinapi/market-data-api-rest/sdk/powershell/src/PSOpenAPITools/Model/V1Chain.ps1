@@ -41,8 +41,8 @@ function Initialize-V1Chain {
 
 
         $PSO = [PSCustomObject]@{
-            "chain_id" = ${ChainId}
-            "name" = ${Name}
+            'chain_id' = ${ChainId}
+            'name' = ${Name}
         }
 
 
@@ -80,28 +80,28 @@ function ConvertFrom-JsonToV1Chain {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1Chain
-        $AllProperties = ("chain_id", "name")
+        $AllProperties = ('chain_id', 'name')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "chain_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'chain_id'))) { #optional property not found
             $ChainId = $null
         } else {
-            $ChainId = $JsonParameters.PSobject.Properties["chain_id"].value
+            $ChainId = $JsonParameters.PSobject.Properties['chain_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "name"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'name'))) { #optional property not found
             $Name = $null
         } else {
-            $Name = $JsonParameters.PSobject.Properties["name"].value
+            $Name = $JsonParameters.PSobject.Properties['name'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "chain_id" = ${ChainId}
-            "name" = ${Name}
+            'chain_id' = ${ChainId}
+            'name' = ${Name}
         }
 
         return $PSO

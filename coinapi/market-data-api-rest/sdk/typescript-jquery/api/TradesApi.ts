@@ -137,7 +137,7 @@ export class TradesApi {
     { response: JQueryXHR; body: Array<models.V1Trade>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/trades/{symbol_id}/history'.replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+        let localVarPath = this.basePath + '/v1/trades/{symbol_id}/history'.replace('{symbol_id}', encodeURIComponent(String(symbolId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -225,7 +225,7 @@ export class TradesApi {
     { response: JQueryXHR; body: Array<models.V1Trade>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/trades/{symbol_id}/latest'.replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+        let localVarPath = this.basePath + '/v1/trades/{symbol_id}/latest'.replace('{symbol_id}', encodeURIComponent(String(symbolId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

@@ -1704,8 +1704,8 @@ export const ExchangeRatesApiFetchParamCreator = function (configuration?: Confi
                 throw new RequiredError('assetIdQuote','Required parameter assetIdQuote was null or undefined when calling getSpecificRate.');
             }
             const localVarPath = `/v1/exchangerate/{asset_id_base}/{asset_id_quote}`
-                .replace(`{${"asset_id_base"}}`, encodeURIComponent(String(assetIdBase)))
-                .replace(`{${"asset_id_quote"}}`, encodeURIComponent(String(assetIdQuote)));
+                .replace('{asset_id_base}', encodeURIComponent(String(assetIdBase)))
+                .replace('{asset_id_quote}', encodeURIComponent(String(assetIdQuote)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -1750,8 +1750,8 @@ export const ExchangeRatesApiFetchParamCreator = function (configuration?: Confi
                 throw new RequiredError('assetIdQuote','Required parameter assetIdQuote was null or undefined when calling v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet.');
             }
             const localVarPath = `/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history`
-                .replace(`{${"asset_id_base"}}`, encodeURIComponent(String(assetIdBase)))
-                .replace(`{${"asset_id_quote"}}`, encodeURIComponent(String(assetIdQuote)));
+                .replace('{asset_id_base}', encodeURIComponent(String(assetIdBase)))
+                .replace('{asset_id_quote}', encodeURIComponent(String(assetIdQuote)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -1804,7 +1804,7 @@ export const ExchangeRatesApiFetchParamCreator = function (configuration?: Confi
                 throw new RequiredError('assetIdBase','Required parameter assetIdBase was null or undefined when calling v1ExchangerateAssetIdBaseGet.');
             }
             const localVarPath = `/v1/exchangerate/{asset_id_base}`
-                .replace(`{${"asset_id_base"}}`, encodeURIComponent(String(assetIdBase)));
+                .replace('{asset_id_base}', encodeURIComponent(String(assetIdBase)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -1975,7 +1975,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
                 throw new RequiredError('assetId','Required parameter assetId was null or undefined when calling v1AssetsAssetIdGet.');
             }
             const localVarPath = `/v1/assets/{asset_id}`
-                .replace(`{${"asset_id"}}`, encodeURIComponent(String(assetId)));
+                .replace('{asset_id}', encodeURIComponent(String(assetId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2048,7 +2048,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
                 throw new RequiredError('size','Required parameter size was null or undefined when calling v1AssetsIconsSizeGet.');
             }
             const localVarPath = `/v1/assets/icons/{size}`
-                .replace(`{${"size"}}`, encodeURIComponent(String(size)));
+                .replace('{size}', encodeURIComponent(String(size)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2085,7 +2085,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
                 throw new RequiredError('chainId','Required parameter chainId was null or undefined when calling v1ChainsChainIdGet.');
             }
             const localVarPath = `/v1/chains/{chain_id}`
-                .replace(`{${"chain_id"}}`, encodeURIComponent(String(chainId)));
+                .replace('{chain_id}', encodeURIComponent(String(chainId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2158,7 +2158,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
                 throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling v1ExchangesExchangeIdGet.');
             }
             const localVarPath = `/v1/exchanges/{exchange_id}`
-                .replace(`{${"exchange_id"}}`, encodeURIComponent(String(exchangeId)));
+                .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2231,7 +2231,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
                 throw new RequiredError('size','Required parameter size was null or undefined when calling v1ExchangesIconsSizeGet.');
             }
             const localVarPath = `/v1/exchanges/icons/{size}`
-                .replace(`{${"size"}}`, encodeURIComponent(String(size)));
+                .replace('{size}', encodeURIComponent(String(size)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2268,7 +2268,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
                 throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling v1SymbolsExchangeIdActiveGet.');
             }
             const localVarPath = `/v1/symbols/{exchange_id}/active`
-                .replace(`{${"exchange_id"}}`, encodeURIComponent(String(exchangeId)));
+                .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2313,7 +2313,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
                 throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling v1SymbolsExchangeIdHistoryGet.');
             }
             const localVarPath = `/v1/symbols/{exchange_id}/history`
-                .replace(`{${"exchange_id"}}`, encodeURIComponent(String(exchangeId)));
+                .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2358,7 +2358,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
                 throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling v1SymbolsMapExchangeIdGet.');
             }
             const localVarPath = `/v1/symbols/map/{exchange_id}`
-                .replace(`{${"exchange_id"}}`, encodeURIComponent(String(exchangeId)));
+                .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -3829,7 +3829,7 @@ export const OHLCVApiFetchParamCreator = function (configuration?: Configuration
                 throw new RequiredError('timeEnd','Required parameter timeEnd was null or undefined when calling v1OhlcvExchangesExchangeIdHistoryGet.');
             }
             const localVarPath = `/v1/ohlcv/exchanges/{exchange_id}/history`
-                .replace(`{${"exchange_id"}}`, encodeURIComponent(String(exchangeId)));
+                .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -3914,7 +3914,7 @@ export const OHLCVApiFetchParamCreator = function (configuration?: Configuration
                 throw new RequiredError('periodId','Required parameter periodId was null or undefined when calling v1OhlcvSymbolIdHistoryGet.');
             }
             const localVarPath = `/v1/ohlcv/{symbol_id}/history`
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
+                .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -3971,7 +3971,7 @@ export const OHLCVApiFetchParamCreator = function (configuration?: Configuration
                 throw new RequiredError('periodId','Required parameter periodId was null or undefined when calling v1OhlcvSymbolIdLatestGet.');
             }
             const localVarPath = `/v1/ohlcv/{symbol_id}/latest`
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
+                .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -4106,7 +4106,7 @@ export const OptionsApiFetchParamCreator = function (configuration?: Configurati
                 throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling v1OptionsExchangeIdCurrentGet.');
             }
             const localVarPath = `/v1/options/{exchange_id}/current`
-                .replace(`{${"exchange_id"}}`, encodeURIComponent(String(exchangeId)));
+                .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -4182,7 +4182,7 @@ export const OrderBookApiFetchParamCreator = function (configuration?: Configura
                 throw new RequiredError('symbolId','Required parameter symbolId was null or undefined when calling v1OrderbooksSymbolIdCurrentGet.');
             }
             const localVarPath = `/v1/orderbooks/{symbol_id}/current`
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
+                .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -4223,7 +4223,7 @@ export const OrderBookApiFetchParamCreator = function (configuration?: Configura
                 throw new RequiredError('symbolId','Required parameter symbolId was null or undefined when calling v1OrderbooksSymbolIdDepthCurrentGet.');
             }
             const localVarPath = `/v1/orderbooks/{symbol_id}/depth/current`
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
+                .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -4264,7 +4264,7 @@ export const OrderBookApiFetchParamCreator = function (configuration?: Configura
                 throw new RequiredError('symbolId','Required parameter symbolId was null or undefined when calling v1OrderbooksSymbolIdHistoryGet.');
             }
             const localVarPath = `/v1/orderbooks/{symbol_id}/history`
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
+                .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -4434,7 +4434,7 @@ export const OrderBookL3ApiFetchParamCreator = function (configuration?: Configu
                 throw new RequiredError('symbolId','Required parameter symbolId was null or undefined when calling v1Orderbooks3SymbolIdCurrentGet.');
             }
             const localVarPath = `/v1/orderbooks3/{symbol_id}/current`
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
+                .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -4607,7 +4607,7 @@ export const QuotesApiFetchParamCreator = function (configuration?: Configuratio
                 throw new RequiredError('symbolId','Required parameter symbolId was null or undefined when calling v1QuotesSymbolIdCurrentGet.');
             }
             const localVarPath = `/v1/quotes/{symbol_id}/current`
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
+                .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -4644,7 +4644,7 @@ export const QuotesApiFetchParamCreator = function (configuration?: Configuratio
                 throw new RequiredError('symbolId','Required parameter symbolId was null or undefined when calling v1QuotesSymbolIdHistoryGet.');
             }
             const localVarPath = `/v1/quotes/{symbol_id}/history`
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
+                .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -4697,7 +4697,7 @@ export const QuotesApiFetchParamCreator = function (configuration?: Configuratio
                 throw new RequiredError('symbolId','Required parameter symbolId was null or undefined when calling v1QuotesSymbolIdLatestGet.');
             }
             const localVarPath = `/v1/quotes/{symbol_id}/latest`
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
+                .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -4889,7 +4889,7 @@ export const TradesApiFetchParamCreator = function (configuration?: Configuratio
                 throw new RequiredError('symbolId','Required parameter symbolId was null or undefined when calling v1TradesSymbolIdHistoryGet.');
             }
             const localVarPath = `/v1/trades/{symbol_id}/history`
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
+                .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -4946,7 +4946,7 @@ export const TradesApiFetchParamCreator = function (configuration?: Configuratio
                 throw new RequiredError('symbolId','Required parameter symbolId was null or undefined when calling v1TradesSymbolIdLatestGet.');
             }
             const localVarPath = `/v1/trades/{symbol_id}/latest`
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
+                .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};

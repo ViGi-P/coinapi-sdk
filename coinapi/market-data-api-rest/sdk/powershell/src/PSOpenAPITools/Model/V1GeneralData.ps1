@@ -76,15 +76,15 @@ function Initialize-V1GeneralData {
 
 
         $PSO = [PSCustomObject]@{
-            "entry_time" = ${EntryTime}
-            "recv_time" = ${RecvTime}
-            "exchange_id" = ${ExchangeId}
-            "asset_id" = ${AssetId}
-            "symbol_id" = ${SymbolId}
-            "metric_id" = ${MetricId}
-            "value_decimal" = ${ValueDecimal}
-            "value_text" = ${ValueText}
-            "value_time" = ${ValueTime}
+            'entry_time' = ${EntryTime}
+            'recv_time' = ${RecvTime}
+            'exchange_id' = ${ExchangeId}
+            'asset_id' = ${AssetId}
+            'symbol_id' = ${SymbolId}
+            'metric_id' = ${MetricId}
+            'value_decimal' = ${ValueDecimal}
+            'value_text' = ${ValueText}
+            'value_time' = ${ValueTime}
         }
 
 
@@ -122,77 +122,77 @@ function ConvertFrom-JsonToV1GeneralData {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1GeneralData
-        $AllProperties = ("entry_time", "recv_time", "exchange_id", "asset_id", "symbol_id", "metric_id", "value_decimal", "value_text", "value_time")
+        $AllProperties = ('entry_time', 'recv_time', 'exchange_id', 'asset_id', 'symbol_id', 'metric_id', 'value_decimal', 'value_text', 'value_time')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "entry_time"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'entry_time'))) { #optional property not found
             $EntryTime = $null
         } else {
-            $EntryTime = $JsonParameters.PSobject.Properties["entry_time"].value
+            $EntryTime = $JsonParameters.PSobject.Properties['entry_time'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "recv_time"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'recv_time'))) { #optional property not found
             $RecvTime = $null
         } else {
-            $RecvTime = $JsonParameters.PSobject.Properties["recv_time"].value
+            $RecvTime = $JsonParameters.PSobject.Properties['recv_time'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "exchange_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'exchange_id'))) { #optional property not found
             $ExchangeId = $null
         } else {
-            $ExchangeId = $JsonParameters.PSobject.Properties["exchange_id"].value
+            $ExchangeId = $JsonParameters.PSobject.Properties['exchange_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id'))) { #optional property not found
             $AssetId = $null
         } else {
-            $AssetId = $JsonParameters.PSobject.Properties["asset_id"].value
+            $AssetId = $JsonParameters.PSobject.Properties['asset_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_id'))) { #optional property not found
             $SymbolId = $null
         } else {
-            $SymbolId = $JsonParameters.PSobject.Properties["symbol_id"].value
+            $SymbolId = $JsonParameters.PSobject.Properties['symbol_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "metric_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'metric_id'))) { #optional property not found
             $MetricId = $null
         } else {
-            $MetricId = $JsonParameters.PSobject.Properties["metric_id"].value
+            $MetricId = $JsonParameters.PSobject.Properties['metric_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "value_decimal"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'value_decimal'))) { #optional property not found
             $ValueDecimal = $null
         } else {
-            $ValueDecimal = $JsonParameters.PSobject.Properties["value_decimal"].value
+            $ValueDecimal = $JsonParameters.PSobject.Properties['value_decimal'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "value_text"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'value_text'))) { #optional property not found
             $ValueText = $null
         } else {
-            $ValueText = $JsonParameters.PSobject.Properties["value_text"].value
+            $ValueText = $JsonParameters.PSobject.Properties['value_text'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "value_time"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'value_time'))) { #optional property not found
             $ValueTime = $null
         } else {
-            $ValueTime = $JsonParameters.PSobject.Properties["value_time"].value
+            $ValueTime = $JsonParameters.PSobject.Properties['value_time'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "entry_time" = ${EntryTime}
-            "recv_time" = ${RecvTime}
-            "exchange_id" = ${ExchangeId}
-            "asset_id" = ${AssetId}
-            "symbol_id" = ${SymbolId}
-            "metric_id" = ${MetricId}
-            "value_decimal" = ${ValueDecimal}
-            "value_text" = ${ValueText}
-            "value_time" = ${ValueTime}
+            'entry_time' = ${EntryTime}
+            'recv_time' = ${RecvTime}
+            'exchange_id' = ${ExchangeId}
+            'asset_id' = ${AssetId}
+            'symbol_id' = ${SymbolId}
+            'metric_id' = ${MetricId}
+            'value_decimal' = ${ValueDecimal}
+            'value_text' = ${ValueText}
+            'value_time' = ${ValueTime}
         }
 
         return $PSO

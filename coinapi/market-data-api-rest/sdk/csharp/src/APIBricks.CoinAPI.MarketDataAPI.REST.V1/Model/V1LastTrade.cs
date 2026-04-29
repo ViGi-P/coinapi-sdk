@@ -67,7 +67,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the exchange time of the last trade.</value>
         [JsonPropertyName("time_exchange")]
-        public DateTime? TimeExchange { get { return this.TimeExchangeOption; } set { this.TimeExchangeOption = new(value); } }
+        public DateTime? TimeExchange { get { return this.TimeExchangeOption.Value; } set { this.TimeExchangeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeCoinapi
@@ -81,7 +81,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the CoinAPI time when the last trade was received.</value>
         [JsonPropertyName("time_coinapi")]
-        public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption; } set { this.TimeCoinapiOption = new(value); } }
+        public DateTime? TimeCoinapi { get { return this.TimeCoinapiOption.Value; } set { this.TimeCoinapiOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Uuid
@@ -95,7 +95,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the UUID of the last trade.</value>
         [JsonPropertyName("uuid")]
-        public Guid? Uuid { get { return this.UuidOption; } set { this.UuidOption = new(value); } }
+        public Guid? Uuid { get { return this.UuidOption.Value; } set { this.UuidOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Price
@@ -109,7 +109,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the price of the last trade.</value>
         [JsonPropertyName("price")]
-        public double? Price { get { return this.PriceOption; } set { this.PriceOption = new(value); } }
+        public double? Price { get { return this.PriceOption.Value; } set { this.PriceOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Size
@@ -123,7 +123,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the size of the last trade.</value>
         [JsonPropertyName("size")]
-        public double? Size { get { return this.SizeOption; } set { this.SizeOption = new(value); } }
+        public double? Size { get { return this.SizeOption.Value; } set { this.SizeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TakerSide
@@ -137,7 +137,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// </summary>
         /// <value>Gets or sets the taker side of the last trade.</value>
         [JsonPropertyName("taker_side")]
-        public string? TakerSide { get { return this.TakerSideOption; } set { this.TakerSideOption = new(value); } }
+        public string? TakerSide { get { return this.TakerSideOption.Value; } set { this.TakerSideOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object
