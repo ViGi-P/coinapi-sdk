@@ -448,8 +448,8 @@ export const ExchangeRatesApiFetchParamCreator = function (configuration?: Confi
                 throw new RequiredError('assetIdQuote','Required parameter assetIdQuote was null or undefined when calling getSpecificRate.');
             }
             const localVarPath = `/v1/exchangerate/{asset_id_base}/{asset_id_quote}`
-                .replace(`{${"asset_id_base"}}`, encodeURIComponent(String(assetIdBase)))
-                .replace(`{${"asset_id_quote"}}`, encodeURIComponent(String(assetIdQuote)));
+                .replace('{asset_id_base}', encodeURIComponent(String(assetIdBase)))
+                .replace('{asset_id_quote}', encodeURIComponent(String(assetIdQuote)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -492,8 +492,8 @@ export const ExchangeRatesApiFetchParamCreator = function (configuration?: Confi
                 throw new RequiredError('assetIdQuote','Required parameter assetIdQuote was null or undefined when calling v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet.');
             }
             const localVarPath = `/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history`
-                .replace(`{${"asset_id_base"}}`, encodeURIComponent(String(assetIdBase)))
-                .replace(`{${"asset_id_quote"}}`, encodeURIComponent(String(assetIdQuote)));
+                .replace('{asset_id_base}', encodeURIComponent(String(assetIdBase)))
+                .replace('{asset_id_quote}', encodeURIComponent(String(assetIdQuote)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -548,7 +548,7 @@ export const ExchangeRatesApiFetchParamCreator = function (configuration?: Confi
                 throw new RequiredError('assetIdBase','Required parameter assetIdBase was null or undefined when calling v1ExchangerateAssetIdBaseGet.');
             }
             const localVarPath = `/v1/exchangerate/{asset_id_base}`
-                .replace(`{${"asset_id_base"}}`, encodeURIComponent(String(assetIdBase)));
+                .replace('{asset_id_base}', encodeURIComponent(String(assetIdBase)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -715,7 +715,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
                 throw new RequiredError('assetId','Required parameter assetId was null or undefined when calling v1AssetsAssetIdGet.');
             }
             const localVarPath = `/v1/assets/{asset_id}`
-                .replace(`{${"asset_id"}}`, encodeURIComponent(String(assetId)));
+                .replace('{asset_id}', encodeURIComponent(String(assetId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -784,7 +784,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
                 throw new RequiredError('size','Required parameter size was null or undefined when calling v1AssetsIconsSizeGet.');
             }
             const localVarPath = `/v1/assets/icons/{size}`
-                .replace(`{${"size"}}`, encodeURIComponent(String(size)));
+                .replace('{size}', encodeURIComponent(String(size)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};

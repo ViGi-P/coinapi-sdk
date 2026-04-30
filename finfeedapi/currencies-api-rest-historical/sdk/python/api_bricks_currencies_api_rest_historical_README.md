@@ -5,13 +5,13 @@ The `api_bricks_currencies_api_rest_historical` package is automatically generat
 
 - API version: v1
 - Package version: 1.0.0
-- Generator version: 7.21.0
+- Generator version: 7.22.0
 - Build package: org.openapitools.codegen.languages.PythonClientCodegen
 For more information, please visit [https://www.finfeedapi.com](https://www.finfeedapi.com)
 
 ## Requirements.
 
-Python 3.9+
+Python 3.10+
 
 ## Installation & Usage
 

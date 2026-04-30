@@ -46,9 +46,9 @@ function Initialize-V1Icon {
 
 
         $PSO = [PSCustomObject]@{
-            "exchange_id" = ${ExchangeId}
-            "asset_id" = ${AssetId}
-            "url" = ${Url}
+            'exchange_id' = ${ExchangeId}
+            'asset_id' = ${AssetId}
+            'url' = ${Url}
         }
 
 
@@ -86,35 +86,35 @@ function ConvertFrom-JsonToV1Icon {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1Icon
-        $AllProperties = ("exchange_id", "asset_id", "url")
+        $AllProperties = ('exchange_id', 'asset_id', 'url')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "exchange_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'exchange_id'))) { #optional property not found
             $ExchangeId = $null
         } else {
-            $ExchangeId = $JsonParameters.PSobject.Properties["exchange_id"].value
+            $ExchangeId = $JsonParameters.PSobject.Properties['exchange_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_id'))) { #optional property not found
             $AssetId = $null
         } else {
-            $AssetId = $JsonParameters.PSobject.Properties["asset_id"].value
+            $AssetId = $JsonParameters.PSobject.Properties['asset_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "url"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'url'))) { #optional property not found
             $Url = $null
         } else {
-            $Url = $JsonParameters.PSobject.Properties["url"].value
+            $Url = $JsonParameters.PSobject.Properties['url'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "exchange_id" = ${ExchangeId}
-            "asset_id" = ${AssetId}
-            "url" = ${Url}
+            'exchange_id' = ${ExchangeId}
+            'asset_id' = ${AssetId}
+            'url' = ${Url}
         }
 
         return $PSO

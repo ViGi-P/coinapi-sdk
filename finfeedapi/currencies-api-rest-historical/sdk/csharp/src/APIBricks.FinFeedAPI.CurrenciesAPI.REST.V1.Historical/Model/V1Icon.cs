@@ -61,7 +61,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the exchange ID associated with the icon.</value>
         [JsonPropertyName("exchange_id")]
-        public string? ExchangeId { get { return this.ExchangeIdOption; } set { this.ExchangeIdOption = new(value); } }
+        public string? ExchangeId { get { return this.ExchangeIdOption.Value; } set { this.ExchangeIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetId
@@ -75,7 +75,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the asset ID associated with the icon.</value>
         [JsonPropertyName("asset_id")]
-        public string? AssetId { get { return this.AssetIdOption; } set { this.AssetIdOption = new(value); } }
+        public string? AssetId { get { return this.AssetIdOption.Value; } set { this.AssetIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Url
@@ -89,7 +89,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the URL of the icon.</value>
         [JsonPropertyName("url")]
-        public string? Url { get { return this.UrlOption; } set { this.UrlOption = new(value); } }
+        public string? Url { get { return this.UrlOption.Value; } set { this.UrlOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object

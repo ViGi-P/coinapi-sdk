@@ -97,7 +97,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the asset ID.</value>
         [JsonPropertyName("asset_id")]
-        public string? AssetId { get { return this.AssetIdOption; } set { this.AssetIdOption = new(value); } }
+        public string? AssetId { get { return this.AssetIdOption.Value; } set { this.AssetIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Name
@@ -111,7 +111,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the name of the asset.</value>
         [JsonPropertyName("name")]
-        public string? Name { get { return this.NameOption; } set { this.NameOption = new(value); } }
+        public string? Name { get { return this.NameOption.Value; } set { this.NameOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TypeIsCrypto
@@ -125,7 +125,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets a value indicating whether the asset is a cryptocurrency.</value>
         [JsonPropertyName("type_is_crypto")]
-        public int? TypeIsCrypto { get { return this.TypeIsCryptoOption; } set { this.TypeIsCryptoOption = new(value); } }
+        public int? TypeIsCrypto { get { return this.TypeIsCryptoOption.Value; } set { this.TypeIsCryptoOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DataQuoteStart
@@ -139,7 +139,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the start date of quote data.</value>
         [JsonPropertyName("data_quote_start")]
-        public DateTime? DataQuoteStart { get { return this.DataQuoteStartOption; } set { this.DataQuoteStartOption = new(value); } }
+        public DateTime? DataQuoteStart { get { return this.DataQuoteStartOption.Value; } set { this.DataQuoteStartOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DataQuoteEnd
@@ -153,7 +153,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the end date of quote data.</value>
         [JsonPropertyName("data_quote_end")]
-        public DateTime? DataQuoteEnd { get { return this.DataQuoteEndOption; } set { this.DataQuoteEndOption = new(value); } }
+        public DateTime? DataQuoteEnd { get { return this.DataQuoteEndOption.Value; } set { this.DataQuoteEndOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DataOrderbookStart
@@ -167,7 +167,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the start date of order book data.</value>
         [JsonPropertyName("data_orderbook_start")]
-        public DateTime? DataOrderbookStart { get { return this.DataOrderbookStartOption; } set { this.DataOrderbookStartOption = new(value); } }
+        public DateTime? DataOrderbookStart { get { return this.DataOrderbookStartOption.Value; } set { this.DataOrderbookStartOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DataOrderbookEnd
@@ -181,7 +181,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the end date of order book data.</value>
         [JsonPropertyName("data_orderbook_end")]
-        public DateTime? DataOrderbookEnd { get { return this.DataOrderbookEndOption; } set { this.DataOrderbookEndOption = new(value); } }
+        public DateTime? DataOrderbookEnd { get { return this.DataOrderbookEndOption.Value; } set { this.DataOrderbookEndOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DataTradeStart
@@ -195,7 +195,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the start date of trade data.</value>
         [JsonPropertyName("data_trade_start")]
-        public DateTime? DataTradeStart { get { return this.DataTradeStartOption; } set { this.DataTradeStartOption = new(value); } }
+        public DateTime? DataTradeStart { get { return this.DataTradeStartOption.Value; } set { this.DataTradeStartOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DataTradeEnd
@@ -209,7 +209,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the end date of trade data.</value>
         [JsonPropertyName("data_trade_end")]
-        public DateTime? DataTradeEnd { get { return this.DataTradeEndOption; } set { this.DataTradeEndOption = new(value); } }
+        public DateTime? DataTradeEnd { get { return this.DataTradeEndOption.Value; } set { this.DataTradeEndOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DataSymbolsCount
@@ -223,7 +223,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the number of symbols.</value>
         [JsonPropertyName("data_symbols_count")]
-        public long? DataSymbolsCount { get { return this.DataSymbolsCountOption; } set { this.DataSymbolsCountOption = new(value); } }
+        public long? DataSymbolsCount { get { return this.DataSymbolsCountOption.Value; } set { this.DataSymbolsCountOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Volume1hrsUsd
@@ -237,7 +237,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the USD volume in the last 1 hour.</value>
         [JsonPropertyName("volume_1hrs_usd")]
-        public double? Volume1hrsUsd { get { return this.Volume1hrsUsdOption; } set { this.Volume1hrsUsdOption = new(value); } }
+        public double? Volume1hrsUsd { get { return this.Volume1hrsUsdOption.Value; } set { this.Volume1hrsUsdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Volume1dayUsd
@@ -251,7 +251,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the USD volume in the last 1 day.</value>
         [JsonPropertyName("volume_1day_usd")]
-        public double? Volume1dayUsd { get { return this.Volume1dayUsdOption; } set { this.Volume1dayUsdOption = new(value); } }
+        public double? Volume1dayUsd { get { return this.Volume1dayUsdOption.Value; } set { this.Volume1dayUsdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Volume1mthUsd
@@ -265,7 +265,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the USD volume in the last 1 month.</value>
         [JsonPropertyName("volume_1mth_usd")]
-        public double? Volume1mthUsd { get { return this.Volume1mthUsdOption; } set { this.Volume1mthUsdOption = new(value); } }
+        public double? Volume1mthUsd { get { return this.Volume1mthUsdOption.Value; } set { this.Volume1mthUsdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of PriceUsd
@@ -279,7 +279,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the USD price of the asset.</value>
         [JsonPropertyName("price_usd")]
-        public double? PriceUsd { get { return this.PriceUsdOption; } set { this.PriceUsdOption = new(value); } }
+        public double? PriceUsd { get { return this.PriceUsdOption.Value; } set { this.PriceUsdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of IdIcon
@@ -293,7 +293,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the ID of the icon for the asset.</value>
         [JsonPropertyName("id_icon")]
-        public Guid? IdIcon { get { return this.IdIconOption; } set { this.IdIconOption = new(value); } }
+        public Guid? IdIcon { get { return this.IdIconOption.Value; } set { this.IdIconOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SupplyCurrent
@@ -307,7 +307,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the current supply of the asset.</value>
         [JsonPropertyName("supply_current")]
-        public double? SupplyCurrent { get { return this.SupplyCurrentOption; } set { this.SupplyCurrentOption = new(value); } }
+        public double? SupplyCurrent { get { return this.SupplyCurrentOption.Value; } set { this.SupplyCurrentOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SupplyTotal
@@ -321,7 +321,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the total supply of the asset.</value>
         [JsonPropertyName("supply_total")]
-        public double? SupplyTotal { get { return this.SupplyTotalOption; } set { this.SupplyTotalOption = new(value); } }
+        public double? SupplyTotal { get { return this.SupplyTotalOption.Value; } set { this.SupplyTotalOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SupplyMax
@@ -335,7 +335,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the maximum supply of the asset.</value>
         [JsonPropertyName("supply_max")]
-        public double? SupplyMax { get { return this.SupplyMaxOption; } set { this.SupplyMaxOption = new(value); } }
+        public double? SupplyMax { get { return this.SupplyMaxOption.Value; } set { this.SupplyMaxOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ChainAddresses
@@ -348,7 +348,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// Gets or Sets ChainAddresses
         /// </summary>
         [JsonPropertyName("chain_addresses")]
-        public List<V1ChainNetworkAddress>? ChainAddresses { get { return this.ChainAddressesOption; } set { this.ChainAddressesOption = new(value); } }
+        public List<V1ChainNetworkAddress>? ChainAddresses { get { return this.ChainAddressesOption.Value; } set { this.ChainAddressesOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DataStart
@@ -361,7 +361,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// Gets or Sets DataStart
         /// </summary>
         [JsonPropertyName("data_start")]
-        public string? DataStart { get { return this.DataStartOption; } }
+        public string? DataStart { get { return this.DataStartOption.Value; } }
 
         /// <summary>
         /// Used to track the state of DataEnd
@@ -374,7 +374,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// Gets or Sets DataEnd
         /// </summary>
         [JsonPropertyName("data_end")]
-        public string? DataEnd { get { return this.DataEndOption; } }
+        public string? DataEnd { get { return this.DataEndOption.Value; } }
 
         /// <summary>
         /// Returns the string presentation of the object

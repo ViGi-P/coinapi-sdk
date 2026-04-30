@@ -71,7 +71,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the start time of the period.</value>
         [JsonPropertyName("time_period_start")]
-        public DateTime? TimePeriodStart { get { return this.TimePeriodStartOption; } set { this.TimePeriodStartOption = new(value); } }
+        public DateTime? TimePeriodStart { get { return this.TimePeriodStartOption.Value; } set { this.TimePeriodStartOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimePeriodEnd
@@ -85,7 +85,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the end time of the period.</value>
         [JsonPropertyName("time_period_end")]
-        public DateTime? TimePeriodEnd { get { return this.TimePeriodEndOption; } set { this.TimePeriodEndOption = new(value); } }
+        public DateTime? TimePeriodEnd { get { return this.TimePeriodEndOption.Value; } set { this.TimePeriodEndOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeOpen
@@ -99,7 +99,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the opening time of the period.</value>
         [JsonPropertyName("time_open")]
-        public DateTime? TimeOpen { get { return this.TimeOpenOption; } set { this.TimeOpenOption = new(value); } }
+        public DateTime? TimeOpen { get { return this.TimeOpenOption.Value; } set { this.TimeOpenOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of TimeClose
@@ -113,7 +113,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the closing time of the period.</value>
         [JsonPropertyName("time_close")]
-        public DateTime? TimeClose { get { return this.TimeCloseOption; } set { this.TimeCloseOption = new(value); } }
+        public DateTime? TimeClose { get { return this.TimeCloseOption.Value; } set { this.TimeCloseOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of RateOpen
@@ -127,7 +127,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the opening rate for the period.</value>
         [JsonPropertyName("rate_open")]
-        public double? RateOpen { get { return this.RateOpenOption; } set { this.RateOpenOption = new(value); } }
+        public double? RateOpen { get { return this.RateOpenOption.Value; } set { this.RateOpenOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of RateHigh
@@ -141,7 +141,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the highest rate for the period.</value>
         [JsonPropertyName("rate_high")]
-        public double? RateHigh { get { return this.RateHighOption; } set { this.RateHighOption = new(value); } }
+        public double? RateHigh { get { return this.RateHighOption.Value; } set { this.RateHighOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of RateLow
@@ -155,7 +155,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the lowest rate for the period.</value>
         [JsonPropertyName("rate_low")]
-        public double? RateLow { get { return this.RateLowOption; } set { this.RateLowOption = new(value); } }
+        public double? RateLow { get { return this.RateLowOption.Value; } set { this.RateLowOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of RateClose
@@ -169,7 +169,7 @@ namespace APIBricks.FinFeedAPI.CurrenciesAPI.REST.V1.Historical.Model
         /// </summary>
         /// <value>Gets or sets the closing rate for the period.</value>
         [JsonPropertyName("rate_close")]
-        public double? RateClose { get { return this.RateCloseOption; } set { this.RateCloseOption = new(value); } }
+        public double? RateClose { get { return this.RateCloseOption.Value; } set { this.RateCloseOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object
