@@ -71,10 +71,10 @@ sub new {
     __PACKAGE__->method_documentation->{ 'v1_native_iex_admin_messages_symbol_get' } = {
         summary => 'Get Admin Messages',
         params => $params,
-        returns => 'ARRAY[AdminAdminMessageModel]',
+        returns => 'ARRAY[ModelsAdminMessageModel]',
         };
 }
-# @return ARRAY[AdminAdminMessageModel]
+# @return ARRAY[ModelsAdminMessageModel]
 #
 sub v1_native_iex_admin_messages_symbol_get {
     my ($self, %args) = @_;
@@ -127,7 +127,7 @@ sub v1_native_iex_admin_messages_symbol_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[AdminAdminMessageModel]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[ModelsAdminMessageModel]', $response);
     return $_response_object;
 }
 
@@ -148,10 +148,10 @@ sub v1_native_iex_admin_messages_symbol_get {
     __PACKAGE__->method_documentation->{ 'v1_native_iex_admin_system_event_get' } = {
         summary => 'Get System Events',
         params => $params,
-        returns => 'ARRAY[AdminSystemEventModel]',
+        returns => 'ARRAY[IEXSystemEventSystemEventModel]',
         };
 }
-# @return ARRAY[AdminSystemEventModel]
+# @return ARRAY[IEXSystemEventSystemEventModel]
 #
 sub v1_native_iex_admin_system_event_get {
     my ($self, %args) = @_;
@@ -192,7 +192,7 @@ sub v1_native_iex_admin_system_event_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[AdminSystemEventModel]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[IEXSystemEventSystemEventModel]', $response);
     return $_response_object;
 }
 
@@ -219,10 +219,10 @@ sub v1_native_iex_admin_system_event_get {
     __PACKAGE__->method_documentation->{ 'v1_native_iex_level1_quote_symbol_get' } = {
         summary => 'Get Level-1 Quotes',
         params => $params,
-        returns => 'ARRAY[Level1QuoteUpdateModel]',
+        returns => 'ARRAY[IEXQuoteUpdateQuoteUpdateModel]',
         };
 }
-# @return ARRAY[Level1QuoteUpdateModel]
+# @return ARRAY[IEXQuoteUpdateQuoteUpdateModel]
 #
 sub v1_native_iex_level1_quote_symbol_get {
     my ($self, %args) = @_;
@@ -275,7 +275,7 @@ sub v1_native_iex_level1_quote_symbol_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[Level1QuoteUpdateModel]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[IEXQuoteUpdateQuoteUpdateModel]', $response);
     return $_response_object;
 }
 
@@ -302,10 +302,10 @@ sub v1_native_iex_level1_quote_symbol_get {
     __PACKAGE__->method_documentation->{ 'v1_native_iex_level2_price_level_update_symbol_get' } = {
         summary => 'Get Level-2 Price Level Book',
         params => $params,
-        returns => 'ARRAY[Level2PriceLevelUpdateModel]',
+        returns => 'ARRAY[IEXPriceLevelUpdatePriceLevelUpdateModel]',
         };
 }
-# @return ARRAY[Level2PriceLevelUpdateModel]
+# @return ARRAY[IEXPriceLevelUpdatePriceLevelUpdateModel]
 #
 sub v1_native_iex_level2_price_level_update_symbol_get {
     my ($self, %args) = @_;
@@ -358,7 +358,7 @@ sub v1_native_iex_level2_price_level_update_symbol_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[Level2PriceLevelUpdateModel]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[IEXPriceLevelUpdatePriceLevelUpdateModel]', $response);
     return $_response_object;
 }
 
@@ -385,10 +385,10 @@ sub v1_native_iex_level2_price_level_update_symbol_get {
     __PACKAGE__->method_documentation->{ 'v1_native_iex_level3_order_book_symbol_get' } = {
         summary => 'Get Level-3 Order Book',
         params => $params,
-        returns => 'ARRAY[Level3OrderBookModel]',
+        returns => 'ARRAY[ModelsOrderBookModel]',
         };
 }
-# @return ARRAY[Level3OrderBookModel]
+# @return ARRAY[ModelsOrderBookModel]
 #
 sub v1_native_iex_level3_order_book_symbol_get {
     my ($self, %args) = @_;
@@ -441,7 +441,7 @@ sub v1_native_iex_level3_order_book_symbol_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[Level3OrderBookModel]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[ModelsOrderBookModel]', $response);
     return $_response_object;
 }
 
@@ -468,10 +468,10 @@ sub v1_native_iex_level3_order_book_symbol_get {
     __PACKAGE__->method_documentation->{ 'v1_native_iex_trade_symbol_get' } = {
         summary => 'Get Trades',
         params => $params,
-        returns => 'ARRAY[TradeTradeModel]',
+        returns => 'ARRAY[IEXTradeTradeModel]',
         };
 }
-# @return ARRAY[TradeTradeModel]
+# @return ARRAY[IEXTradeTradeModel]
 #
 sub v1_native_iex_trade_symbol_get {
     my ($self, %args) = @_;
@@ -524,7 +524,7 @@ sub v1_native_iex_trade_symbol_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[TradeTradeModel]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[IEXTradeTradeModel]', $response);
     return $_response_object;
 }
 

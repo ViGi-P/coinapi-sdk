@@ -51,13 +51,13 @@ static gpointer __OhlcvManagerthreadFunc(gpointer data)
 static bool v1OhlcvExchangeExchangeIdHistoryGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<OHLCV.ExchangeTimeseriesItem>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<OHLCV.ExchangeTimeseriesItem>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<OHLCVTimeSeries.ExchangeTimeseriesItem>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<OHLCVTimeSeries.ExchangeTimeseriesItem>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<OHLCV.ExchangeTimeseriesItem> out;
+	std::list<OHLCVTimeSeries.ExchangeTimeseriesItem> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -71,7 +71,7 @@ static bool v1OhlcvExchangeExchangeIdHistoryGetProcessor(MemoryStruct_s p_chunk,
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			OHLCV.ExchangeTimeseriesItem singlemodel;
+			OHLCVTimeSeries.ExchangeTimeseriesItem singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -97,7 +97,7 @@ static bool v1OhlcvExchangeExchangeIdHistoryGetProcessor(MemoryStruct_s p_chunk,
 
 static bool v1OhlcvExchangeExchangeIdHistoryGetHelper(char * accessToken,
 	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, 
-	void(* handler)(std::list<OHLCV.ExchangeTimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.ExchangeTimeseriesItem>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -186,7 +186,7 @@ static bool v1OhlcvExchangeExchangeIdHistoryGetHelper(char * accessToken,
 
 bool OhlcvManager::v1OhlcvExchangeExchangeIdHistoryGetAsync(char * accessToken,
 	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, 
-	void(* handler)(std::list<OHLCV.ExchangeTimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.ExchangeTimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1OhlcvExchangeExchangeIdHistoryGetHelper(accessToken,
@@ -196,7 +196,7 @@ bool OhlcvManager::v1OhlcvExchangeExchangeIdHistoryGetAsync(char * accessToken,
 
 bool OhlcvManager::v1OhlcvExchangeExchangeIdHistoryGetSync(char * accessToken,
 	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, 
-	void(* handler)(std::list<OHLCV.ExchangeTimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.ExchangeTimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1OhlcvExchangeExchangeIdHistoryGetHelper(accessToken,
@@ -207,13 +207,13 @@ bool OhlcvManager::v1OhlcvExchangeExchangeIdHistoryGetSync(char * accessToken,
 static bool v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<OHLCV.TimeseriesItem>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<OHLCV.TimeseriesItem>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<OHLCV.TimeseriesItem> out;
+	std::list<OHLCVTimeSeries.TimeseriesItem> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -227,7 +227,7 @@ static bool v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetProcessor(MemoryStr
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			OHLCV.TimeseriesItem singlemodel;
+			OHLCVTimeSeries.TimeseriesItem singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -253,7 +253,7 @@ static bool v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetProcessor(MemoryStr
 
 static bool v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetHelper(char * accessToken,
 	std::string exchangeId, std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<OHLCV.TimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -361,7 +361,7 @@ static bool v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetHelper(char * acces
 
 bool OhlcvManager::v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetAsync(char * accessToken,
 	std::string exchangeId, std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<OHLCV.TimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetHelper(accessToken,
@@ -371,7 +371,7 @@ bool OhlcvManager::v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetAsync(char *
 
 bool OhlcvManager::v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetSync(char * accessToken,
 	std::string exchangeId, std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<OHLCV.TimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetHelper(accessToken,
@@ -382,13 +382,13 @@ bool OhlcvManager::v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetSync(char * 
 static bool v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<OHLCV.TimeseriesItem>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<OHLCV.TimeseriesItem>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<OHLCV.TimeseriesItem> out;
+	std::list<OHLCVTimeSeries.TimeseriesItem> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -402,7 +402,7 @@ static bool v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetProcessor(MemoryStru
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			OHLCV.TimeseriesItem singlemodel;
+			OHLCVTimeSeries.TimeseriesItem singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -428,7 +428,7 @@ static bool v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetProcessor(MemoryStru
 
 static bool v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetHelper(char * accessToken,
 	std::string exchangeId, std::string symbolId, std::string periodId, int limit, 
-	void(* handler)(std::list<OHLCV.TimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -522,7 +522,7 @@ static bool v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetHelper(char * access
 
 bool OhlcvManager::v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetAsync(char * accessToken,
 	std::string exchangeId, std::string symbolId, std::string periodId, int limit, 
-	void(* handler)(std::list<OHLCV.TimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetHelper(accessToken,
@@ -532,7 +532,7 @@ bool OhlcvManager::v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetAsync(char * 
 
 bool OhlcvManager::v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetSync(char * accessToken,
 	std::string exchangeId, std::string symbolId, std::string periodId, int limit, 
-	void(* handler)(std::list<OHLCV.TimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetHelper(accessToken,
@@ -543,13 +543,13 @@ bool OhlcvManager::v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetSync(char * a
 static bool v1OhlcvPeriodsGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<OHLCV.TimeseriesPeriod>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<OHLCV.TimeseriesPeriod>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesPeriod>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<OHLCVTimeSeries.TimeseriesPeriod>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<OHLCV.TimeseriesPeriod> out;
+	std::list<OHLCVTimeSeries.TimeseriesPeriod> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -563,7 +563,7 @@ static bool v1OhlcvPeriodsGetProcessor(MemoryStruct_s p_chunk, long code, char* 
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			OHLCV.TimeseriesPeriod singlemodel;
+			OHLCVTimeSeries.TimeseriesPeriod singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -589,7 +589,7 @@ static bool v1OhlcvPeriodsGetProcessor(MemoryStruct_s p_chunk, long code, char* 
 
 static bool v1OhlcvPeriodsGetHelper(char * accessToken,
 	
-	void(* handler)(std::list<OHLCV.TimeseriesPeriod>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesPeriod>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -660,7 +660,7 @@ static bool v1OhlcvPeriodsGetHelper(char * accessToken,
 
 bool OhlcvManager::v1OhlcvPeriodsGetAsync(char * accessToken,
 	
-	void(* handler)(std::list<OHLCV.TimeseriesPeriod>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesPeriod>, Error, void* )
 	, void* userData)
 {
 	return v1OhlcvPeriodsGetHelper(accessToken,
@@ -670,7 +670,7 @@ bool OhlcvManager::v1OhlcvPeriodsGetAsync(char * accessToken,
 
 bool OhlcvManager::v1OhlcvPeriodsGetSync(char * accessToken,
 	
-	void(* handler)(std::list<OHLCV.TimeseriesPeriod>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesPeriod>, Error, void* )
 	, void* userData)
 {
 	return v1OhlcvPeriodsGetHelper(accessToken,

@@ -27,7 +27,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-AdminAdminMessageModel[]
+ModelsAdminMessageModel[]
 #>
 function Invoke-V1NativeIexAdminMessagesSymbolGet {
     [CmdletBinding()]
@@ -94,7 +94,7 @@ function Invoke-V1NativeIexAdminMessagesSymbolGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "AdminAdminMessageModel[]" `
+                                -ReturnType "ModelsAdminMessageModel[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -123,7 +123,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-AdminSystemEventModel[]
+IEXSystemEventSystemEventModel[]
 #>
 function Invoke-V1NativeIexAdminSystemEventGet {
     [CmdletBinding()]
@@ -183,7 +183,7 @@ function Invoke-V1NativeIexAdminSystemEventGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "AdminSystemEventModel[]" `
+                                -ReturnType "IEXSystemEventSystemEventModel[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -215,7 +215,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-Level1QuoteUpdateModel[]
+IEXQuoteUpdateQuoteUpdateModel[]
 #>
 function Invoke-V1NativeIexLevel1QuoteSymbolGet {
     [CmdletBinding()]
@@ -282,7 +282,7 @@ function Invoke-V1NativeIexLevel1QuoteSymbolGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "Level1QuoteUpdateModel[]" `
+                                -ReturnType "IEXQuoteUpdateQuoteUpdateModel[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -314,7 +314,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-Level2PriceLevelUpdateModel[]
+IEXPriceLevelUpdatePriceLevelUpdateModel[]
 #>
 function Invoke-V1NativeIexLevel2PriceLevelUpdateSymbolGet {
     [CmdletBinding()]
@@ -381,7 +381,7 @@ function Invoke-V1NativeIexLevel2PriceLevelUpdateSymbolGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "Level2PriceLevelUpdateModel[]" `
+                                -ReturnType "IEXPriceLevelUpdatePriceLevelUpdateModel[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -413,7 +413,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-Level3OrderBookModel[]
+ModelsOrderBookModel[]
 #>
 function Invoke-V1NativeIexLevel3OrderBookSymbolGet {
     [CmdletBinding()]
@@ -480,7 +480,7 @@ function Invoke-V1NativeIexLevel3OrderBookSymbolGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "Level3OrderBookModel[]" `
+                                -ReturnType "ModelsOrderBookModel[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -512,7 +512,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-TradeTradeModel[]
+IEXTradeTradeModel[]
 #>
 function Invoke-V1NativeIexTradeSymbolGet {
     [CmdletBinding()]
@@ -579,7 +579,7 @@ function Invoke-V1NativeIexTradeSymbolGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "TradeTradeModel[]" `
+                                -ReturnType "IEXTradeTradeModel[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {

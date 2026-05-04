@@ -34,7 +34,7 @@ import Json.Encode
 Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
 
 -}
-v1OhlcvExchangeExchangeIdHistoryGet : String -> String -> String -> String -> String -> Api.Request (List Api.Data.OHLCVExchangeTimeseriesItem)
+v1OhlcvExchangeExchangeIdHistoryGet : String -> String -> String -> String -> String -> Api.Request (List Api.Data.OHLCVTimeSeriesExchangeTimeseriesItem)
 v1OhlcvExchangeExchangeIdHistoryGet exchangeId_path periodId_query timeStart_query timeEnd_query auth_token =
     Api.request
         "GET"
@@ -43,7 +43,7 @@ v1OhlcvExchangeExchangeIdHistoryGet exchangeId_path periodId_query timeStart_que
         [ ( "period_id", Just <| identity periodId_query ), ( "time_start", Just <| identity timeStart_query ), ( "time_end", Just <| identity timeEnd_query ) ]
         []
         Nothing
-        (Json.Decode.list Api.Data.oHLCVExchangeTimeseriesItemDecoder)
+        (Json.Decode.list Api.Data.oHLCVTimeSeriesExchangeTimeseriesItemDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Historical data
@@ -51,7 +51,7 @@ v1OhlcvExchangeExchangeIdHistoryGet exchangeId_path periodId_query timeStart_que
 Get OHLCV timeseries data returned in time ascending order.
 
 -}
-v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet : String -> String -> String -> Maybe String -> Maybe String -> Maybe Int -> String -> Api.Request (List Api.Data.OHLCVTimeseriesItem)
+v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet : String -> String -> String -> Maybe String -> Maybe String -> Maybe Int -> String -> Api.Request (List Api.Data.OHLCVTimeSeriesTimeseriesItem)
 v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet exchangeId_path symbolId_path periodId_query timeStart_query timeEnd_query limit_query auth_token =
     Api.request
         "GET"
@@ -60,7 +60,7 @@ v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet exchangeId_path symbolId_path 
         [ ( "period_id", Just <| identity periodId_query ), ( "time_start", Maybe.map identity timeStart_query ), ( "time_end", Maybe.map identity timeEnd_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
-        (Json.Decode.list Api.Data.oHLCVTimeseriesItemDecoder)
+        (Json.Decode.list Api.Data.oHLCVTimeSeriesTimeseriesItemDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Latest data
@@ -68,7 +68,7 @@ v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet exchangeId_path symbolId_path 
 Get OHLCV latest timeseries data returned in time descending order. Data can be requested by the period and for the specific symbol eg `BITSTAMP_SPOT_BTC_USD`, if you need to query timeseries by asset pairs eg. `BTC/USD`, then please reffer to the Exchange Rates Timeseries data              :::info OHLCV Latest endpoint is just the shortcut to the OHLCV Historical endpoint with substituted `time_start` and `time_end` parameters.  The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
 
 -}
-v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet : String -> String -> String -> Maybe Int -> String -> Api.Request (List Api.Data.OHLCVTimeseriesItem)
+v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet : String -> String -> String -> Maybe Int -> String -> Api.Request (List Api.Data.OHLCVTimeSeriesTimeseriesItem)
 v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet exchangeId_path symbolId_path periodId_query limit_query auth_token =
     Api.request
         "GET"
@@ -77,7 +77,7 @@ v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet exchangeId_path symbolId_path p
         [ ( "period_id", Just <| identity periodId_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
-        (Json.Decode.list Api.Data.oHLCVTimeseriesItemDecoder)
+        (Json.Decode.list Api.Data.oHLCVTimeSeriesTimeseriesItemDecoder)
         |> Api.withBearerToken auth_token
 
 {-| List all periods
@@ -85,7 +85,7 @@ v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet exchangeId_path symbolId_path p
 Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
 
 -}
-v1OhlcvPeriodsGet : String -> Api.Request (List Api.Data.OHLCVTimeseriesPeriod)
+v1OhlcvPeriodsGet : String -> Api.Request (List Api.Data.OHLCVTimeSeriesTimeseriesPeriod)
 v1OhlcvPeriodsGet auth_token =
     Api.request
         "GET"
@@ -94,5 +94,5 @@ v1OhlcvPeriodsGet auth_token =
         []
         []
         Nothing
-        (Json.Decode.list Api.Data.oHLCVTimeseriesPeriodDecoder)
+        (Json.Decode.list Api.Data.oHLCVTimeSeriesTimeseriesPeriodDecoder)
         |> Api.withBearerToken auth_token

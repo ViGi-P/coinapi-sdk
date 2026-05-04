@@ -190,7 +190,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1NativeIexAdminMessagesSymbolGetApiResponse"/>
     /// </summary>
-    public interface IV1NativeIexAdminMessagesSymbolGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<AdminAdminMessageModel>?>
+    public interface IV1NativeIexAdminMessagesSymbolGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<ModelsAdminMessageModel>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -202,7 +202,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1NativeIexAdminSystemEventGetApiResponse"/>
     /// </summary>
-    public interface IV1NativeIexAdminSystemEventGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<AdminSystemEventModel>?>
+    public interface IV1NativeIexAdminSystemEventGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<IEXSystemEventSystemEventModel>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -214,7 +214,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1NativeIexLevel1QuoteSymbolGetApiResponse"/>
     /// </summary>
-    public interface IV1NativeIexLevel1QuoteSymbolGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<Level1QuoteUpdateModel>?>
+    public interface IV1NativeIexLevel1QuoteSymbolGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<IEXQuoteUpdateQuoteUpdateModel>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -226,7 +226,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse"/>
     /// </summary>
-    public interface IV1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<Level2PriceLevelUpdateModel>?>
+    public interface IV1NativeIexLevel2PriceLevelUpdateSymbolGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<IEXPriceLevelUpdatePriceLevelUpdateModel>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -238,7 +238,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1NativeIexLevel3OrderBookSymbolGetApiResponse"/>
     /// </summary>
-    public interface IV1NativeIexLevel3OrderBookSymbolGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<Level3OrderBookModel>?>
+    public interface IV1NativeIexLevel3OrderBookSymbolGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<ModelsOrderBookModel>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -250,7 +250,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1NativeIexTradeSymbolGetApiResponse"/>
     /// </summary>
-    public interface IV1NativeIexTradeSymbolGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<TradeTradeModel>?>
+    public interface IV1NativeIexTradeSymbolGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<IEXTradeTradeModel>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -546,7 +546,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/native/iex/admin/messages/{symbol}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/native/iex/admin/messages/{symbol}");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/native/iex/admin/messages/{symbol}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bsymbol%7D", Uri.EscapeDataString(symbol.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
@@ -669,11 +669,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<AdminAdminMessageModel>? Ok()
+            public List<ModelsAdminMessageModel>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<AdminAdminMessageModel>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<ModelsAdminMessageModel>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -682,7 +682,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<AdminAdminMessageModel>? result)
+            public bool TryOk([NotNullWhen(true)]out List<ModelsAdminMessageModel>? result)
             {
                 result = null;
 
@@ -796,7 +796,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/native/iex/admin/system-event"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/native/iex/admin/system-event");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/native/iex/admin/system-event");
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
 
@@ -918,11 +918,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<AdminSystemEventModel>? Ok()
+            public List<IEXSystemEventSystemEventModel>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<AdminSystemEventModel>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<IEXSystemEventSystemEventModel>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -931,7 +931,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<AdminSystemEventModel>? result)
+            public bool TryOk([NotNullWhen(true)]out List<IEXSystemEventSystemEventModel>? result)
             {
                 result = null;
 
@@ -1064,7 +1064,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/native/iex/level1-quote/{symbol}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/native/iex/level1-quote/{symbol}");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/native/iex/level1-quote/{symbol}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bsymbol%7D", Uri.EscapeDataString(symbol.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
@@ -1187,11 +1187,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<Level1QuoteUpdateModel>? Ok()
+            public List<IEXQuoteUpdateQuoteUpdateModel>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<Level1QuoteUpdateModel>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<IEXQuoteUpdateQuoteUpdateModel>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1200,7 +1200,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<Level1QuoteUpdateModel>? result)
+            public bool TryOk([NotNullWhen(true)]out List<IEXQuoteUpdateQuoteUpdateModel>? result)
             {
                 result = null;
 
@@ -1333,7 +1333,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/native/iex/level2-price-level-update/{symbol}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/native/iex/level2-price-level-update/{symbol}");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/native/iex/level2-price-level-update/{symbol}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bsymbol%7D", Uri.EscapeDataString(symbol.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
@@ -1456,11 +1456,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<Level2PriceLevelUpdateModel>? Ok()
+            public List<IEXPriceLevelUpdatePriceLevelUpdateModel>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<Level2PriceLevelUpdateModel>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<IEXPriceLevelUpdatePriceLevelUpdateModel>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1469,7 +1469,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<Level2PriceLevelUpdateModel>? result)
+            public bool TryOk([NotNullWhen(true)]out List<IEXPriceLevelUpdatePriceLevelUpdateModel>? result)
             {
                 result = null;
 
@@ -1602,7 +1602,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/native/iex/level3-order-book/{symbol}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/native/iex/level3-order-book/{symbol}");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/native/iex/level3-order-book/{symbol}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bsymbol%7D", Uri.EscapeDataString(symbol.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
@@ -1725,11 +1725,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<Level3OrderBookModel>? Ok()
+            public List<ModelsOrderBookModel>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<Level3OrderBookModel>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<ModelsOrderBookModel>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1738,7 +1738,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<Level3OrderBookModel>? result)
+            public bool TryOk([NotNullWhen(true)]out List<ModelsOrderBookModel>? result)
             {
                 result = null;
 
@@ -1871,7 +1871,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/native/iex/trade/{symbol}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/native/iex/trade/{symbol}");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/native/iex/trade/{symbol}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bsymbol%7D", Uri.EscapeDataString(symbol.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
@@ -1994,11 +1994,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<TradeTradeModel>? Ok()
+            public List<IEXTradeTradeModel>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<TradeTradeModel>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<IEXTradeTradeModel>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -2007,7 +2007,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<TradeTradeModel>? result)
+            public bool TryOk([NotNullWhen(true)]out List<IEXTradeTradeModel>? result)
             {
                 result = null;
 

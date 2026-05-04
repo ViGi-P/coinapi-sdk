@@ -24,9 +24,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
 import java.util.*;
-import org.openapitools.client.model.OHLCVExchangeTimeseriesItem;
-import org.openapitools.client.model.OHLCVTimeseriesItem;
-import org.openapitools.client.model.OHLCVTimeseriesPeriod;
+import org.openapitools.client.model.OHLCVTimeSeriesExchangeTimeseriesItem;
+import org.openapitools.client.model.OHLCVTimeSeriesTimeseriesItem;
+import org.openapitools.client.model.OHLCVTimeSeriesTimeseriesPeriod;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -65,9 +65,9 @@ public class OhlcvApi {
    * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
    * @param timeStart Timeseries starting time in ISO 8601
    * @param timeEnd Timeseries ending time in ISO 8601
-   * @return List<OHLCVExchangeTimeseriesItem>
+   * @return List<OHLCVTimeSeriesExchangeTimeseriesItem>
   */
-  public List<OHLCVExchangeTimeseriesItem> v1OhlcvExchangeExchangeIdHistoryGet (String exchangeId, String periodId, String timeStart, String timeEnd) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<OHLCVTimeSeriesExchangeTimeseriesItem> v1OhlcvExchangeExchangeIdHistoryGet (String exchangeId, String periodId, String timeStart, String timeEnd) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'exchangeId' is set
     if (exchangeId == null) {
@@ -120,7 +120,7 @@ public class OhlcvApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<OHLCVExchangeTimeseriesItem>) ApiInvoker.deserialize(localVarResponse, "array", OHLCVExchangeTimeseriesItem.class);
+         return (List<OHLCVTimeSeriesExchangeTimeseriesItem>) ApiInvoker.deserialize(localVarResponse, "array", OHLCVTimeSeriesExchangeTimeseriesItem.class);
       } else {
          return null;
       }
@@ -146,7 +146,7 @@ public class OhlcvApi {
    * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
    * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)   * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)   * @param timeStart Timeseries starting time in ISO 8601   * @param timeEnd Timeseries ending time in ISO 8601
   */
-  public void v1OhlcvExchangeExchangeIdHistoryGet (String exchangeId, String periodId, String timeStart, String timeEnd, final Response.Listener<List<OHLCVExchangeTimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1OhlcvExchangeExchangeIdHistoryGet (String exchangeId, String periodId, String timeStart, String timeEnd, final Response.Listener<List<OHLCVTimeSeriesExchangeTimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'exchangeId' is set
@@ -209,7 +209,7 @@ public class OhlcvApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<OHLCVExchangeTimeseriesItem>) ApiInvoker.deserialize(localVarResponse,  "array", OHLCVExchangeTimeseriesItem.class));
+              responseListener.onResponse((List<OHLCVTimeSeriesExchangeTimeseriesItem>) ApiInvoker.deserialize(localVarResponse,  "array", OHLCVTimeSeriesExchangeTimeseriesItem.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -233,9 +233,9 @@ public class OhlcvApi {
    * @param timeStart Timeseries starting time in ISO 8601
    * @param timeEnd Timeseries ending time in ISO 8601
    * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-   * @return List<OHLCVTimeseriesItem>
+   * @return List<OHLCVTimeSeriesTimeseriesItem>
   */
-  public List<OHLCVTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet (String exchangeId, String symbolId, String periodId, String timeStart, String timeEnd, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<OHLCVTimeSeriesTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet (String exchangeId, String symbolId, String periodId, String timeStart, String timeEnd, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'exchangeId' is set
     if (exchangeId == null) {
@@ -284,7 +284,7 @@ public class OhlcvApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<OHLCVTimeseriesItem>) ApiInvoker.deserialize(localVarResponse, "array", OHLCVTimeseriesItem.class);
+         return (List<OHLCVTimeSeriesTimeseriesItem>) ApiInvoker.deserialize(localVarResponse, "array", OHLCVTimeSeriesTimeseriesItem.class);
       } else {
          return null;
       }
@@ -310,7 +310,7 @@ public class OhlcvApi {
    * Get OHLCV timeseries data returned in time ascending order.
    * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)   * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)   * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)   * @param timeStart Timeseries starting time in ISO 8601   * @param timeEnd Timeseries ending time in ISO 8601   * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   */
-  public void v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet (String exchangeId, String symbolId, String periodId, String timeStart, String timeEnd, Integer limit, final Response.Listener<List<OHLCVTimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet (String exchangeId, String symbolId, String periodId, String timeStart, String timeEnd, Integer limit, final Response.Listener<List<OHLCVTimeSeriesTimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'exchangeId' is set
@@ -369,7 +369,7 @@ public class OhlcvApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<OHLCVTimeseriesItem>) ApiInvoker.deserialize(localVarResponse,  "array", OHLCVTimeseriesItem.class));
+              responseListener.onResponse((List<OHLCVTimeSeriesTimeseriesItem>) ApiInvoker.deserialize(localVarResponse,  "array", OHLCVTimeSeriesTimeseriesItem.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -391,9 +391,9 @@ public class OhlcvApi {
    * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
    * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
    * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-   * @return List<OHLCVTimeseriesItem>
+   * @return List<OHLCVTimeSeriesTimeseriesItem>
   */
-  public List<OHLCVTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet (String exchangeId, String symbolId, String periodId, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<OHLCVTimeSeriesTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet (String exchangeId, String symbolId, String periodId, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'exchangeId' is set
     if (exchangeId == null) {
@@ -440,7 +440,7 @@ public class OhlcvApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<OHLCVTimeseriesItem>) ApiInvoker.deserialize(localVarResponse, "array", OHLCVTimeseriesItem.class);
+         return (List<OHLCVTimeSeriesTimeseriesItem>) ApiInvoker.deserialize(localVarResponse, "array", OHLCVTimeSeriesTimeseriesItem.class);
       } else {
          return null;
       }
@@ -466,7 +466,7 @@ public class OhlcvApi {
    * Get OHLCV latest timeseries data returned in time descending order. Data can be requested by the period and for the specific symbol eg &#x60;BITSTAMP_SPOT_BTC_USD&#x60;, if you need to query timeseries by asset pairs eg. &#x60;BTC/USD&#x60;, then please reffer to the Exchange Rates Timeseries data              :::info OHLCV Latest endpoint is just the shortcut to the OHLCV Historical endpoint with substituted &#x60;time_start&#x60; and &#x60;time_end&#x60; parameters.  The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
    * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)   * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)   * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)   * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   */
-  public void v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet (String exchangeId, String symbolId, String periodId, Integer limit, final Response.Listener<List<OHLCVTimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet (String exchangeId, String symbolId, String periodId, Integer limit, final Response.Listener<List<OHLCVTimeSeriesTimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'exchangeId' is set
@@ -523,7 +523,7 @@ public class OhlcvApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<OHLCVTimeseriesItem>) ApiInvoker.deserialize(localVarResponse,  "array", OHLCVTimeseriesItem.class));
+              responseListener.onResponse((List<OHLCVTimeSeriesTimeseriesItem>) ApiInvoker.deserialize(localVarResponse,  "array", OHLCVTimeSeriesTimeseriesItem.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -541,9 +541,9 @@ public class OhlcvApi {
   /**
   * List all periods
   * Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
-   * @return List<OHLCVTimeseriesPeriod>
+   * @return List<OHLCVTimeSeriesTimeseriesPeriod>
   */
-  public List<OHLCVTimeseriesPeriod> v1OhlcvPeriodsGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<OHLCVTimeSeriesTimeseriesPeriod> v1OhlcvPeriodsGet () throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
 
     // create path and map variables
@@ -573,7 +573,7 @@ public class OhlcvApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<OHLCVTimeseriesPeriod>) ApiInvoker.deserialize(localVarResponse, "array", OHLCVTimeseriesPeriod.class);
+         return (List<OHLCVTimeSeriesTimeseriesPeriod>) ApiInvoker.deserialize(localVarResponse, "array", OHLCVTimeSeriesTimeseriesPeriod.class);
       } else {
          return null;
       }
@@ -599,7 +599,7 @@ public class OhlcvApi {
    * Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
 
   */
-  public void v1OhlcvPeriodsGet (final Response.Listener<List<OHLCVTimeseriesPeriod>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1OhlcvPeriodsGet (final Response.Listener<List<OHLCVTimeSeriesTimeseriesPeriod>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
 
@@ -639,7 +639,7 @@ public class OhlcvApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<OHLCVTimeseriesPeriod>) ApiInvoker.deserialize(localVarResponse,  "array", OHLCVTimeseriesPeriod.class));
+              responseListener.onResponse((List<OHLCVTimeSeriesTimeseriesPeriod>) ApiInvoker.deserialize(localVarResponse,  "array", OHLCVTimeSeriesTimeseriesPeriod.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

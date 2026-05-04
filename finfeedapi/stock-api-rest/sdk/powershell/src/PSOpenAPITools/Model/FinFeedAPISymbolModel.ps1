@@ -126,25 +126,25 @@ function Initialize-FinFeedAPISymbolModel {
 
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "exchange_id" = ${ExchangeId}
-            "security_category" = ${SecurityCategory}
-            "name" = ${Name}
-            "date" = ${Date}
-            "asset_class" = ${AssetClass}
-            "cfi_code" = ${CfiCode}
-            "cfi_category" = ${CfiCategory}
-            "cfi_group" = ${CfiGroup}
-            "cfi_attribute1" = ${CfiAttribute1}
-            "cfi_attribute2" = ${CfiAttribute2}
-            "cfi_attribute3" = ${CfiAttribute3}
-            "cfi_attribute4" = ${CfiAttribute4}
-            "cfi_category_desc" = ${CfiCategoryDesc}
-            "cfi_group_desc" = ${CfiGroupDesc}
-            "cfi_attribute1_desc" = ${CfiAttribute1Desc}
-            "cfi_attribute2_desc" = ${CfiAttribute2Desc}
-            "cfi_attribute3_desc" = ${CfiAttribute3Desc}
-            "cfi_attribute4_desc" = ${CfiAttribute4Desc}
+            'symbol_id' = ${SymbolId}
+            'exchange_id' = ${ExchangeId}
+            'security_category' = ${SecurityCategory}
+            'name' = ${Name}
+            'date' = ${Date}
+            'asset_class' = ${AssetClass}
+            'cfi_code' = ${CfiCode}
+            'cfi_category' = ${CfiCategory}
+            'cfi_group' = ${CfiGroup}
+            'cfi_attribute1' = ${CfiAttribute1}
+            'cfi_attribute2' = ${CfiAttribute2}
+            'cfi_attribute3' = ${CfiAttribute3}
+            'cfi_attribute4' = ${CfiAttribute4}
+            'cfi_category_desc' = ${CfiCategoryDesc}
+            'cfi_group_desc' = ${CfiGroupDesc}
+            'cfi_attribute1_desc' = ${CfiAttribute1Desc}
+            'cfi_attribute2_desc' = ${CfiAttribute2Desc}
+            'cfi_attribute3_desc' = ${CfiAttribute3Desc}
+            'cfi_attribute4_desc' = ${CfiAttribute4Desc}
         }
 
 
@@ -183,7 +183,7 @@ function ConvertFrom-JsonToFinFeedAPISymbolModel {
         $FinFeedAPISymbolModelAdditionalProperties = @{}
 
         # check if Json contains properties not defined in FinFeedAPISymbolModel
-        $AllProperties = ("symbol_id", "exchange_id", "security_category", "name", "date", "asset_class", "cfi_code", "cfi_category", "cfi_group", "cfi_attribute1", "cfi_attribute2", "cfi_attribute3", "cfi_attribute4", "cfi_category_desc", "cfi_group_desc", "cfi_attribute1_desc", "cfi_attribute2_desc", "cfi_attribute3_desc", "cfi_attribute4_desc")
+        $AllProperties = ('symbol_id', 'exchange_id', 'security_category', 'name', 'date', 'asset_class', 'cfi_code', 'cfi_category', 'cfi_group', 'cfi_attribute1', 'cfi_attribute2', 'cfi_attribute3', 'cfi_attribute4', 'cfi_category_desc', 'cfi_group_desc', 'cfi_attribute1_desc', 'cfi_attribute2_desc', 'cfi_attribute3_desc', 'cfi_attribute4_desc')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             # store undefined properties in additionalProperties
             if (!($AllProperties.Contains($name))) {
@@ -191,141 +191,141 @@ function ConvertFrom-JsonToFinFeedAPISymbolModel {
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "symbol_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'symbol_id'))) { #optional property not found
             $SymbolId = $null
         } else {
-            $SymbolId = $JsonParameters.PSobject.Properties["symbol_id"].value
+            $SymbolId = $JsonParameters.PSobject.Properties['symbol_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "exchange_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'exchange_id'))) { #optional property not found
             $ExchangeId = $null
         } else {
-            $ExchangeId = $JsonParameters.PSobject.Properties["exchange_id"].value
+            $ExchangeId = $JsonParameters.PSobject.Properties['exchange_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "security_category"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'security_category'))) { #optional property not found
             $SecurityCategory = $null
         } else {
-            $SecurityCategory = $JsonParameters.PSobject.Properties["security_category"].value
+            $SecurityCategory = $JsonParameters.PSobject.Properties['security_category'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "name"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'name'))) { #optional property not found
             $Name = $null
         } else {
-            $Name = $JsonParameters.PSobject.Properties["name"].value
+            $Name = $JsonParameters.PSobject.Properties['name'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "date"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'date'))) { #optional property not found
             $Date = $null
         } else {
-            $Date = $JsonParameters.PSobject.Properties["date"].value
+            $Date = $JsonParameters.PSobject.Properties['date'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "asset_class"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'asset_class'))) { #optional property not found
             $AssetClass = $null
         } else {
-            $AssetClass = $JsonParameters.PSobject.Properties["asset_class"].value
+            $AssetClass = $JsonParameters.PSobject.Properties['asset_class'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "cfi_code"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'cfi_code'))) { #optional property not found
             $CfiCode = $null
         } else {
-            $CfiCode = $JsonParameters.PSobject.Properties["cfi_code"].value
+            $CfiCode = $JsonParameters.PSobject.Properties['cfi_code'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "cfi_category"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'cfi_category'))) { #optional property not found
             $CfiCategory = $null
         } else {
-            $CfiCategory = $JsonParameters.PSobject.Properties["cfi_category"].value
+            $CfiCategory = $JsonParameters.PSobject.Properties['cfi_category'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "cfi_group"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'cfi_group'))) { #optional property not found
             $CfiGroup = $null
         } else {
-            $CfiGroup = $JsonParameters.PSobject.Properties["cfi_group"].value
+            $CfiGroup = $JsonParameters.PSobject.Properties['cfi_group'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "cfi_attribute1"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'cfi_attribute1'))) { #optional property not found
             $CfiAttribute1 = $null
         } else {
-            $CfiAttribute1 = $JsonParameters.PSobject.Properties["cfi_attribute1"].value
+            $CfiAttribute1 = $JsonParameters.PSobject.Properties['cfi_attribute1'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "cfi_attribute2"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'cfi_attribute2'))) { #optional property not found
             $CfiAttribute2 = $null
         } else {
-            $CfiAttribute2 = $JsonParameters.PSobject.Properties["cfi_attribute2"].value
+            $CfiAttribute2 = $JsonParameters.PSobject.Properties['cfi_attribute2'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "cfi_attribute3"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'cfi_attribute3'))) { #optional property not found
             $CfiAttribute3 = $null
         } else {
-            $CfiAttribute3 = $JsonParameters.PSobject.Properties["cfi_attribute3"].value
+            $CfiAttribute3 = $JsonParameters.PSobject.Properties['cfi_attribute3'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "cfi_attribute4"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'cfi_attribute4'))) { #optional property not found
             $CfiAttribute4 = $null
         } else {
-            $CfiAttribute4 = $JsonParameters.PSobject.Properties["cfi_attribute4"].value
+            $CfiAttribute4 = $JsonParameters.PSobject.Properties['cfi_attribute4'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "cfi_category_desc"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'cfi_category_desc'))) { #optional property not found
             $CfiCategoryDesc = $null
         } else {
-            $CfiCategoryDesc = $JsonParameters.PSobject.Properties["cfi_category_desc"].value
+            $CfiCategoryDesc = $JsonParameters.PSobject.Properties['cfi_category_desc'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "cfi_group_desc"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'cfi_group_desc'))) { #optional property not found
             $CfiGroupDesc = $null
         } else {
-            $CfiGroupDesc = $JsonParameters.PSobject.Properties["cfi_group_desc"].value
+            $CfiGroupDesc = $JsonParameters.PSobject.Properties['cfi_group_desc'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "cfi_attribute1_desc"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'cfi_attribute1_desc'))) { #optional property not found
             $CfiAttribute1Desc = $null
         } else {
-            $CfiAttribute1Desc = $JsonParameters.PSobject.Properties["cfi_attribute1_desc"].value
+            $CfiAttribute1Desc = $JsonParameters.PSobject.Properties['cfi_attribute1_desc'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "cfi_attribute2_desc"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'cfi_attribute2_desc'))) { #optional property not found
             $CfiAttribute2Desc = $null
         } else {
-            $CfiAttribute2Desc = $JsonParameters.PSobject.Properties["cfi_attribute2_desc"].value
+            $CfiAttribute2Desc = $JsonParameters.PSobject.Properties['cfi_attribute2_desc'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "cfi_attribute3_desc"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'cfi_attribute3_desc'))) { #optional property not found
             $CfiAttribute3Desc = $null
         } else {
-            $CfiAttribute3Desc = $JsonParameters.PSobject.Properties["cfi_attribute3_desc"].value
+            $CfiAttribute3Desc = $JsonParameters.PSobject.Properties['cfi_attribute3_desc'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "cfi_attribute4_desc"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'cfi_attribute4_desc'))) { #optional property not found
             $CfiAttribute4Desc = $null
         } else {
-            $CfiAttribute4Desc = $JsonParameters.PSobject.Properties["cfi_attribute4_desc"].value
+            $CfiAttribute4Desc = $JsonParameters.PSobject.Properties['cfi_attribute4_desc'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "symbol_id" = ${SymbolId}
-            "exchange_id" = ${ExchangeId}
-            "security_category" = ${SecurityCategory}
-            "name" = ${Name}
-            "date" = ${Date}
-            "asset_class" = ${AssetClass}
-            "cfi_code" = ${CfiCode}
-            "cfi_category" = ${CfiCategory}
-            "cfi_group" = ${CfiGroup}
-            "cfi_attribute1" = ${CfiAttribute1}
-            "cfi_attribute2" = ${CfiAttribute2}
-            "cfi_attribute3" = ${CfiAttribute3}
-            "cfi_attribute4" = ${CfiAttribute4}
-            "cfi_category_desc" = ${CfiCategoryDesc}
-            "cfi_group_desc" = ${CfiGroupDesc}
-            "cfi_attribute1_desc" = ${CfiAttribute1Desc}
-            "cfi_attribute2_desc" = ${CfiAttribute2Desc}
-            "cfi_attribute3_desc" = ${CfiAttribute3Desc}
-            "cfi_attribute4_desc" = ${CfiAttribute4Desc}
-            "AdditionalProperties" = $FinFeedAPISymbolModelAdditionalProperties
+            'symbol_id' = ${SymbolId}
+            'exchange_id' = ${ExchangeId}
+            'security_category' = ${SecurityCategory}
+            'name' = ${Name}
+            'date' = ${Date}
+            'asset_class' = ${AssetClass}
+            'cfi_code' = ${CfiCode}
+            'cfi_category' = ${CfiCategory}
+            'cfi_group' = ${CfiGroup}
+            'cfi_attribute1' = ${CfiAttribute1}
+            'cfi_attribute2' = ${CfiAttribute2}
+            'cfi_attribute3' = ${CfiAttribute3}
+            'cfi_attribute4' = ${CfiAttribute4}
+            'cfi_category_desc' = ${CfiCategoryDesc}
+            'cfi_group_desc' = ${CfiGroupDesc}
+            'cfi_attribute1_desc' = ${CfiAttribute1Desc}
+            'cfi_attribute2_desc' = ${CfiAttribute2Desc}
+            'cfi_attribute3_desc' = ${CfiAttribute3Desc}
+            'cfi_attribute4_desc' = ${CfiAttribute4Desc}
+            'AdditionalProperties' = $FinFeedAPISymbolModelAdditionalProperties
         }
 
         return $PSO

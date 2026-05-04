@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import OHLCVExchangeTimeseriesItem from '../model/OHLCVExchangeTimeseriesItem';
-import OHLCVTimeseriesItem from '../model/OHLCVTimeseriesItem';
-import OHLCVTimeseriesPeriod from '../model/OHLCVTimeseriesPeriod';
+import OHLCVTimeSeriesExchangeTimeseriesItem from '../model/OHLCVTimeSeriesExchangeTimeseriesItem';
+import OHLCVTimeSeriesTimeseriesItem from '../model/OHLCVTimeSeriesTimeseriesItem';
+import OHLCVTimeSeriesTimeseriesPeriod from '../model/OHLCVTimeSeriesTimeseriesPeriod';
 
 /**
 * Ohlcv service.
@@ -40,7 +40,7 @@ export default class OhlcvApi {
      * Callback function to receive the result of the v1OhlcvExchangeExchangeIdHistoryGet operation.
      * @callback module:api/OhlcvApi~v1OhlcvExchangeExchangeIdHistoryGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/OHLCVExchangeTimeseriesItem>} data The data returned by the service call.
+     * @param {Array.<module:model/OHLCVTimeSeriesExchangeTimeseriesItem>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -52,7 +52,7 @@ export default class OhlcvApi {
      * @param {String} timeStart Timeseries starting time in ISO 8601
      * @param {String} timeEnd Timeseries ending time in ISO 8601
      * @param {module:api/OhlcvApi~v1OhlcvExchangeExchangeIdHistoryGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/OHLCVExchangeTimeseriesItem>}
+     * data is of type: {@link Array.<module:model/OHLCVTimeSeriesExchangeTimeseriesItem>}
      */
     v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, callback) {
       let postBody = null;
@@ -89,7 +89,7 @@ export default class OhlcvApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json'];
-      let returnType = [OHLCVExchangeTimeseriesItem];
+      let returnType = [OHLCVTimeSeriesExchangeTimeseriesItem];
       return this.apiClient.callApi(
         '/v1/ohlcv/exchange/{exchange_id}/history', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -101,7 +101,7 @@ export default class OhlcvApi {
      * Callback function to receive the result of the v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet operation.
      * @callback module:api/OhlcvApi~v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/OHLCVTimeseriesItem>} data The data returned by the service call.
+     * @param {Array.<module:model/OHLCVTimeSeriesTimeseriesItem>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -116,7 +116,7 @@ export default class OhlcvApi {
      * @param {String} [timeEnd] Timeseries ending time in ISO 8601
      * @param {Number} [limit = 100)] Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param {module:api/OhlcvApi~v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/OHLCVTimeseriesItem>}
+     * data is of type: {@link Array.<module:model/OHLCVTimeSeriesTimeseriesItem>}
      */
     v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, opts, callback) {
       opts = opts || {};
@@ -152,7 +152,7 @@ export default class OhlcvApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json'];
-      let returnType = [OHLCVTimeseriesItem];
+      let returnType = [OHLCVTimeSeriesTimeseriesItem];
       return this.apiClient.callApi(
         '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/history', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -164,7 +164,7 @@ export default class OhlcvApi {
      * Callback function to receive the result of the v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet operation.
      * @callback module:api/OhlcvApi~v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/OHLCVTimeseriesItem>} data The data returned by the service call.
+     * @param {Array.<module:model/OHLCVTimeSeriesTimeseriesItem>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -177,7 +177,7 @@ export default class OhlcvApi {
      * @param {Object} opts Optional parameters
      * @param {Number} [limit = 100)] Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      * @param {module:api/OhlcvApi~v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/OHLCVTimeseriesItem>}
+     * data is of type: {@link Array.<module:model/OHLCVTimeSeriesTimeseriesItem>}
      */
     v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, opts, callback) {
       opts = opts || {};
@@ -211,7 +211,7 @@ export default class OhlcvApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json'];
-      let returnType = [OHLCVTimeseriesItem];
+      let returnType = [OHLCVTimeSeriesTimeseriesItem];
       return this.apiClient.callApi(
         '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/latest', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -223,7 +223,7 @@ export default class OhlcvApi {
      * Callback function to receive the result of the v1OhlcvPeriodsGet operation.
      * @callback module:api/OhlcvApi~v1OhlcvPeriodsGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/OHLCVTimeseriesPeriod>} data The data returned by the service call.
+     * @param {Array.<module:model/OHLCVTimeSeriesTimeseriesPeriod>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -231,7 +231,7 @@ export default class OhlcvApi {
      * List all periods
      * Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
      * @param {module:api/OhlcvApi~v1OhlcvPeriodsGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/OHLCVTimeseriesPeriod>}
+     * data is of type: {@link Array.<module:model/OHLCVTimeSeriesTimeseriesPeriod>}
      */
     v1OhlcvPeriodsGet(callback) {
       let postBody = null;
@@ -248,7 +248,7 @@ export default class OhlcvApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['text/plain', 'application/json', 'text/json'];
-      let returnType = [OHLCVTimeseriesPeriod];
+      let returnType = [OHLCVTimeSeriesTimeseriesPeriod];
       return this.apiClient.callApi(
         '/v1/ohlcv/periods', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

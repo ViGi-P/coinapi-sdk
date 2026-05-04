@@ -30,7 +30,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](ohlcv_exchange_timeseries_item.md) *
+[list_t](ohlcv_time_series_exchange_timeseries_item.md) *
 
 
 ### Authorization
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](ohlcv_timeseries_item.md) *
+[list_t](ohlcv_time_series_timeseries_item.md) *
 
 
 ### Authorization
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](ohlcv_timeseries_item.md) *
+[list_t](ohlcv_time_series_timeseries_item.md) *
 
 
 ### Authorization
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](ohlcv_timeseries_period.md) *
+[list_t](ohlcv_time_series_timeseries_period.md) *
 
 
 ### Authorization

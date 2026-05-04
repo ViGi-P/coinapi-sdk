@@ -169,7 +169,7 @@ NativeIEXApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[AdminAdminMessageModel]
+    #' @return array[ModelsAdminMessageModel]
     V1NativeIexAdminMessagesSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -192,7 +192,7 @@ NativeIEXApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[AdminAdminMessageModel]) with additional information such as HTTP status code, headers
+    #' @return API response (array[ModelsAdminMessageModel]) with additional information such as HTTP status code, headers
     V1NativeIexAdminMessagesSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -265,7 +265,7 @@ NativeIEXApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[AdminAdminMessageModel]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[ModelsAdminMessageModel]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -299,7 +299,7 @@ NativeIEXApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[AdminSystemEventModel]
+    #' @return array[IEXSystemEventSystemEventModel]
     V1NativeIexAdminSystemEventGet = function(date, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1NativeIexAdminSystemEventGetWithHttpInfo(date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -321,7 +321,7 @@ NativeIEXApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[AdminSystemEventModel]) with additional information such as HTTP status code, headers
+    #' @return API response (array[IEXSystemEventSystemEventModel]) with additional information such as HTTP status code, headers
     V1NativeIexAdminSystemEventGetWithHttpInfo = function(date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -382,7 +382,7 @@ NativeIEXApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[AdminSystemEventModel]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[IEXSystemEventSystemEventModel]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -417,7 +417,7 @@ NativeIEXApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[Level1QuoteUpdateModel]
+    #' @return array[IEXQuoteUpdateQuoteUpdateModel]
     V1NativeIexLevel1QuoteSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -440,7 +440,7 @@ NativeIEXApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[Level1QuoteUpdateModel]) with additional information such as HTTP status code, headers
+    #' @return API response (array[IEXQuoteUpdateQuoteUpdateModel]) with additional information such as HTTP status code, headers
     V1NativeIexLevel1QuoteSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -513,7 +513,7 @@ NativeIEXApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[Level1QuoteUpdateModel]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[IEXQuoteUpdateQuoteUpdateModel]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -548,7 +548,7 @@ NativeIEXApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[Level2PriceLevelUpdateModel]
+    #' @return array[IEXPriceLevelUpdatePriceLevelUpdateModel]
     V1NativeIexLevel2PriceLevelUpdateSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -571,7 +571,7 @@ NativeIEXApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[Level2PriceLevelUpdateModel]) with additional information such as HTTP status code, headers
+    #' @return API response (array[IEXPriceLevelUpdatePriceLevelUpdateModel]) with additional information such as HTTP status code, headers
     V1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -644,7 +644,7 @@ NativeIEXApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[Level2PriceLevelUpdateModel]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[IEXPriceLevelUpdatePriceLevelUpdateModel]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -679,7 +679,7 @@ NativeIEXApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[Level3OrderBookModel]
+    #' @return array[ModelsOrderBookModel]
     V1NativeIexLevel3OrderBookSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -702,7 +702,7 @@ NativeIEXApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[Level3OrderBookModel]) with additional information such as HTTP status code, headers
+    #' @return API response (array[ModelsOrderBookModel]) with additional information such as HTTP status code, headers
     V1NativeIexLevel3OrderBookSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -775,7 +775,7 @@ NativeIEXApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[Level3OrderBookModel]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[ModelsOrderBookModel]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }
@@ -810,7 +810,7 @@ NativeIEXApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return array[TradeTradeModel]
+    #' @return array[IEXTradeTradeModel]
     V1NativeIexTradeSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       local_var_response <- self$V1NativeIexTradeSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
@@ -833,7 +833,7 @@ NativeIEXApi <- R6::R6Class(
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
-    #' @return API response (array[TradeTradeModel]) with additional information such as HTTP status code, headers
+    #' @return API response (array[IEXTradeTradeModel]) with additional information such as HTTP status code, headers
     V1NativeIexTradeSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
@@ -906,7 +906,7 @@ NativeIEXApi <- R6::R6Class(
         }
 
         deserialized_resp_obj <- tryCatch(
-          self$api_client$DeserializeResponse(local_var_resp, "array[TradeTradeModel]"),
+          self$api_client$DeserializeResponse(local_var_resp, "array[IEXTradeTradeModel]"),
           error = function(e) {
             stop("Failed to deserialize response")
           }

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **v1OhlcvExchangeExchangeIdHistoryGet**
-> BuiltList<OHLCVExchangeTimeseriesItem> v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
+> BuiltList<OHLCVTimeSeriesExchangeTimeseriesItem> v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
 
 Historical data by exchange
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;OHLCVExchangeTimeseriesItem&gt;**](OHLCVExchangeTimeseriesItem.md)
+[**BuiltList&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt;**](OHLCVTimeSeriesExchangeTimeseriesItem.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet**
-> BuiltList<OHLCVTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit)
+> BuiltList<OHLCVTimeSeriesTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit)
 
 Historical data
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;OHLCVTimeseriesItem&gt;**](OHLCVTimeseriesItem.md)
+[**BuiltList&lt;OHLCVTimeSeriesTimeseriesItem&gt;**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet**
-> BuiltList<OHLCVTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit)
+> BuiltList<OHLCVTimeSeriesTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit)
 
 Latest data
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;OHLCVTimeseriesItem&gt;**](OHLCVTimeseriesItem.md)
+[**BuiltList&lt;OHLCVTimeSeriesTimeseriesItem&gt;**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1OhlcvPeriodsGet**
-> BuiltList<OHLCVTimeseriesPeriod> v1OhlcvPeriodsGet()
+> BuiltList<OHLCVTimeSeriesTimeseriesPeriod> v1OhlcvPeriodsGet()
 
 List all periods
 
@@ -208,7 +208,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;OHLCVTimeseriesPeriod&gt;**](OHLCVTimeseriesPeriod.md)
+[**BuiltList&lt;OHLCVTimeSeriesTimeseriesPeriod&gt;**](OHLCVTimeSeriesTimeseriesPeriod.md)
 
 ### Authorization
 

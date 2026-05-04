@@ -21,8 +21,8 @@ private class OASOhlcvApiTest {
 
         OASClient client;
         OASOhlcvApi api;
-        List<OASOHLCVExchangeTimeseriesItem> response;
-        List<OASOHLCVExchangeTimeseriesItem> expectedResponse;
+        List<OASOHLCVTimeSeriesExchangeTimeseries> response;
+        List<OASOHLCVTimeSeriesExchangeTimeseries> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -30,20 +30,20 @@ private class OASOhlcvApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASOHLCVExchangeTimeseriesItem>{OASOHLCVExchangeTimeseriesItem.getExample()});
+        js = JSON.serialize(new List<OASOHLCVTimeSeriesExchangeTimeseries>{OASOHLCVTimeSeriesExchangeTimeseries.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASOHLCVExchangeTimeseriesItem>{OASOHLCVExchangeTimeseriesItem.getExample()};
-        response = (List<OASOHLCVExchangeTimeseriesItem>) api.v1OhlcvExchangeExchangeIdHistoryGet(params);
+        expectedResponse = new List<OASOHLCVTimeSeriesExchangeTimeseries>{OASOHLCVTimeSeriesExchangeTimeseries.getExample()};
+        response = (List<OASOHLCVTimeSeriesExchangeTimeseries>) api.v1OhlcvExchangeExchangeIdHistoryGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASOhlcvApi(client);
 
-        js = JSON.serialize(new List<OASOHLCVExchangeTimeseriesItem>{OASOHLCVExchangeTimeseriesItem.getExample()});
+        js = JSON.serialize(new List<OASOHLCVTimeSeriesExchangeTimeseries>{OASOHLCVTimeSeriesExchangeTimeseries.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASOHLCVExchangeTimeseriesItem>{OASOHLCVExchangeTimeseriesItem.getExample()};
-        response = (List<OASOHLCVExchangeTimeseriesItem>) api.v1OhlcvExchangeExchangeIdHistoryGet(params);
+        expectedResponse = new List<OASOHLCVTimeSeriesExchangeTimeseries>{OASOHLCVTimeSeriesExchangeTimeseries.getExample()};
+        response = (List<OASOHLCVTimeSeriesExchangeTimeseries>) api.v1OhlcvExchangeExchangeIdHistoryGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -70,8 +70,8 @@ private class OASOhlcvApiTest {
 
         OASClient client;
         OASOhlcvApi api;
-        List<OASOHLCVTimeseriesItem> response;
-        List<OASOHLCVTimeseriesItem> expectedResponse;
+        List<OASOHLCVTimeSeriesTimeseriesItem> response;
+        List<OASOHLCVTimeSeriesTimeseriesItem> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -79,20 +79,20 @@ private class OASOhlcvApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASOHLCVTimeseriesItem>{OASOHLCVTimeseriesItem.getExample()});
+        js = JSON.serialize(new List<OASOHLCVTimeSeriesTimeseriesItem>{OASOHLCVTimeSeriesTimeseriesItem.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASOHLCVTimeseriesItem>{OASOHLCVTimeseriesItem.getExample()};
-        response = (List<OASOHLCVTimeseriesItem>) api.v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(params);
+        expectedResponse = new List<OASOHLCVTimeSeriesTimeseriesItem>{OASOHLCVTimeSeriesTimeseriesItem.getExample()};
+        response = (List<OASOHLCVTimeSeriesTimeseriesItem>) api.v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASOhlcvApi(client);
 
-        js = JSON.serialize(new List<OASOHLCVTimeseriesItem>{OASOHLCVTimeseriesItem.getExample()});
+        js = JSON.serialize(new List<OASOHLCVTimeSeriesTimeseriesItem>{OASOHLCVTimeSeriesTimeseriesItem.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASOHLCVTimeseriesItem>{OASOHLCVTimeseriesItem.getExample()};
-        response = (List<OASOHLCVTimeseriesItem>) api.v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(params);
+        expectedResponse = new List<OASOHLCVTimeSeriesTimeseriesItem>{OASOHLCVTimeSeriesTimeseriesItem.getExample()};
+        response = (List<OASOHLCVTimeSeriesTimeseriesItem>) api.v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -117,8 +117,8 @@ private class OASOhlcvApiTest {
 
         OASClient client;
         OASOhlcvApi api;
-        List<OASOHLCVTimeseriesItem> response;
-        List<OASOHLCVTimeseriesItem> expectedResponse;
+        List<OASOHLCVTimeSeriesTimeseriesItem> response;
+        List<OASOHLCVTimeSeriesTimeseriesItem> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -126,20 +126,20 @@ private class OASOhlcvApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASOHLCVTimeseriesItem>{OASOHLCVTimeseriesItem.getExample()});
+        js = JSON.serialize(new List<OASOHLCVTimeSeriesTimeseriesItem>{OASOHLCVTimeSeriesTimeseriesItem.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASOHLCVTimeseriesItem>{OASOHLCVTimeseriesItem.getExample()};
-        response = (List<OASOHLCVTimeseriesItem>) api.v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(params);
+        expectedResponse = new List<OASOHLCVTimeSeriesTimeseriesItem>{OASOHLCVTimeSeriesTimeseriesItem.getExample()};
+        response = (List<OASOHLCVTimeSeriesTimeseriesItem>) api.v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(params);
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASOhlcvApi(client);
 
-        js = JSON.serialize(new List<OASOHLCVTimeseriesItem>{OASOHLCVTimeseriesItem.getExample()});
+        js = JSON.serialize(new List<OASOHLCVTimeSeriesTimeseriesItem>{OASOHLCVTimeSeriesTimeseriesItem.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASOHLCVTimeseriesItem>{OASOHLCVTimeseriesItem.getExample()};
-        response = (List<OASOHLCVTimeseriesItem>) api.v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(params);
+        expectedResponse = new List<OASOHLCVTimeSeriesTimeseriesItem>{OASOHLCVTimeSeriesTimeseriesItem.getExample()};
+        response = (List<OASOHLCVTimeSeriesTimeseriesItem>) api.v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(params);
         System.assertEquals(expectedResponse, response);
     }
 
@@ -157,8 +157,8 @@ private class OASOhlcvApiTest {
 
         OASClient client;
         OASOhlcvApi api;
-        List<OASOHLCVTimeseriesPeriod> response;
-        List<OASOHLCVTimeseriesPeriod> expectedResponse;
+        List<OASOHLCVTimeSeriesTimeseriesPeriod> response;
+        List<OASOHLCVTimeSeriesTimeseriesPeriod> expectedResponse;
         String js = '';
 
         client = new OASClient();
@@ -166,20 +166,20 @@ private class OASOhlcvApiTest {
         ((OAS.ApiKeyAuth)client.getAuthentication('APIKey')).setApiKey('foo-bar-api-key');
 
 
-        js = JSON.serialize(new List<OASOHLCVTimeseriesPeriod>{OASOHLCVTimeseriesPeriod.getExample()});
+        js = JSON.serialize(new List<OASOHLCVTimeSeriesTimeseriesPeriod>{OASOHLCVTimeSeriesTimeseriesPeriod.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASOHLCVTimeseriesPeriod>{OASOHLCVTimeseriesPeriod.getExample()};
-        response = (List<OASOHLCVTimeseriesPeriod>) api.v1OhlcvPeriodsGet();
+        expectedResponse = new List<OASOHLCVTimeSeriesTimeseriesPeriod>{OASOHLCVTimeSeriesTimeseriesPeriod.getExample()};
+        response = (List<OASOHLCVTimeSeriesTimeseriesPeriod>) api.v1OhlcvPeriodsGet();
         System.assertEquals(expectedResponse, response);
         client = new OASClient();
         api = new OASOhlcvApi(client);
 
-        js = JSON.serialize(new List<OASOHLCVTimeseriesPeriod>{OASOHLCVTimeseriesPeriod.getExample()});
+        js = JSON.serialize(new List<OASOHLCVTimeSeriesTimeseriesPeriod>{OASOHLCVTimeSeriesTimeseriesPeriod.getExample()});
         res.setHeader('Content-Type', 'application/json');
         res.setBody(js);
-        expectedResponse = new List<OASOHLCVTimeseriesPeriod>{OASOHLCVTimeseriesPeriod.getExample()};
-        response = (List<OASOHLCVTimeseriesPeriod>) api.v1OhlcvPeriodsGet();
+        expectedResponse = new List<OASOHLCVTimeSeriesTimeseriesPeriod>{OASOHLCVTimeSeriesTimeseriesPeriod.getExample()};
+        response = (List<OASOHLCVTimeSeriesTimeseriesPeriod>) api.v1OhlcvPeriodsGet();
         System.assertEquals(expectedResponse, response);
     }
 }

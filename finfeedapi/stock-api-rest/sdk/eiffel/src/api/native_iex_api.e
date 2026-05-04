@@ -24,7 +24,7 @@ inherit
 feature -- API Access
 
 
-	v1_native_iex_admin_messages_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [ADMIN_ADMIN_MESSAGE_MODEL]
+	v1_native_iex_admin_messages_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [MODELS_ADMIN_MESSAGE_MODEL]
 			-- Get Admin Messages
 			-- 
 			-- 
@@ -33,7 +33,7 @@ feature -- API Access
 			-- argument: date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
 			-- 
 			-- 
-			-- Result LIST [ADMIN_ADMIN_MESSAGE_MODEL]
+			-- Result LIST [MODELS_ADMIN_MESSAGE_MODEL]
 		require
 		local
   			l_path: STRING
@@ -56,21 +56,21 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [ADMIN_ADMIN_MESSAGE_MODEL] } l_response.data ({ LIST [ADMIN_ADMIN_MESSAGE_MODEL] }) as l_data then
+			elseif attached { LIST [MODELS_ADMIN_MESSAGE_MODEL] } l_response.data ({ LIST [MODELS_ADMIN_MESSAGE_MODEL] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_native_iex_admin_system_event_get (date: DATE_TIME): detachable LIST [ADMIN_SYSTEM_EVENT_MODEL]
+	v1_native_iex_admin_system_event_get (date: DATE_TIME): detachable LIST [IEX_SYSTEM_EVENT_SYSTEM_EVENT_MODEL]
 			-- Get System Events
 			-- 
 			-- 
 			-- argument: date Date in format YYYY-MM-DD (required)
 			-- 
 			-- 
-			-- Result LIST [ADMIN_SYSTEM_EVENT_MODEL]
+			-- Result LIST [IEX_SYSTEM_EVENT_SYSTEM_EVENT_MODEL]
 		require
 		local
   			l_path: STRING
@@ -92,14 +92,14 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [ADMIN_SYSTEM_EVENT_MODEL] } l_response.data ({ LIST [ADMIN_SYSTEM_EVENT_MODEL] }) as l_data then
+			elseif attached { LIST [IEX_SYSTEM_EVENT_SYSTEM_EVENT_MODEL] } l_response.data ({ LIST [IEX_SYSTEM_EVENT_SYSTEM_EVENT_MODEL] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_native_iex_level1_quote_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [LEVEL1_QUOTE_UPDATE_MODEL]
+	v1_native_iex_level1_quote_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [IEX_QUOTE_UPDATE_QUOTE_UPDATE_MODEL]
 			-- Get Level-1 Quotes
 			-- 
 			-- 
@@ -108,7 +108,7 @@ feature -- API Access
 			-- argument: date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
 			-- 
 			-- 
-			-- Result LIST [LEVEL1_QUOTE_UPDATE_MODEL]
+			-- Result LIST [IEX_QUOTE_UPDATE_QUOTE_UPDATE_MODEL]
 		require
 		local
   			l_path: STRING
@@ -131,14 +131,14 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [LEVEL1_QUOTE_UPDATE_MODEL] } l_response.data ({ LIST [LEVEL1_QUOTE_UPDATE_MODEL] }) as l_data then
+			elseif attached { LIST [IEX_QUOTE_UPDATE_QUOTE_UPDATE_MODEL] } l_response.data ({ LIST [IEX_QUOTE_UPDATE_QUOTE_UPDATE_MODEL] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_native_iex_level2_price_level_update_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [LEVEL2_PRICE_LEVEL_UPDATE_MODEL]
+	v1_native_iex_level2_price_level_update_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [IEX_PRICE_LEVEL_UPDATE_PRICE_LEVEL_UPDATE_MODEL]
 			-- Get Level-2 Price Level Book
 			-- 
 			-- 
@@ -147,7 +147,7 @@ feature -- API Access
 			-- argument: date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
 			-- 
 			-- 
-			-- Result LIST [LEVEL2_PRICE_LEVEL_UPDATE_MODEL]
+			-- Result LIST [IEX_PRICE_LEVEL_UPDATE_PRICE_LEVEL_UPDATE_MODEL]
 		require
 		local
   			l_path: STRING
@@ -170,14 +170,14 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [LEVEL2_PRICE_LEVEL_UPDATE_MODEL] } l_response.data ({ LIST [LEVEL2_PRICE_LEVEL_UPDATE_MODEL] }) as l_data then
+			elseif attached { LIST [IEX_PRICE_LEVEL_UPDATE_PRICE_LEVEL_UPDATE_MODEL] } l_response.data ({ LIST [IEX_PRICE_LEVEL_UPDATE_PRICE_LEVEL_UPDATE_MODEL] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_native_iex_level3_order_book_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [LEVEL3_ORDER_BOOK_MODEL]
+	v1_native_iex_level3_order_book_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [MODELS_ORDER_BOOK_MODEL]
 			-- Get Level-3 Order Book
 			-- 
 			-- 
@@ -186,7 +186,7 @@ feature -- API Access
 			-- argument: date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
 			-- 
 			-- 
-			-- Result LIST [LEVEL3_ORDER_BOOK_MODEL]
+			-- Result LIST [MODELS_ORDER_BOOK_MODEL]
 		require
 		local
   			l_path: STRING
@@ -209,14 +209,14 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [LEVEL3_ORDER_BOOK_MODEL] } l_response.data ({ LIST [LEVEL3_ORDER_BOOK_MODEL] }) as l_data then
+			elseif attached { LIST [MODELS_ORDER_BOOK_MODEL] } l_response.data ({ LIST [MODELS_ORDER_BOOK_MODEL] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_native_iex_trade_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [TRADE_TRADE_MODEL]
+	v1_native_iex_trade_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [IEX_TRADE_TRADE_MODEL]
 			-- Get Trades
 			-- 
 			-- 
@@ -225,7 +225,7 @@ feature -- API Access
 			-- argument: date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
 			-- 
 			-- 
-			-- Result LIST [TRADE_TRADE_MODEL]
+			-- Result LIST [IEX_TRADE_TRADE_MODEL]
 		require
 		local
   			l_path: STRING
@@ -248,7 +248,7 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [TRADE_TRADE_MODEL] } l_response.data ({ LIST [TRADE_TRADE_MODEL] }) as l_data then
+			elseif attached { LIST [IEX_TRADE_TRADE_MODEL] } l_response.data ({ LIST [IEX_TRADE_TRADE_MODEL] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")

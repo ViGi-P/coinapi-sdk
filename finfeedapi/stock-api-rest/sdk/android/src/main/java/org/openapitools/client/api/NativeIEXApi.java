@@ -23,14 +23,14 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import org.openapitools.client.model.AdminAdminMessageModel;
-import org.openapitools.client.model.AdminSystemEventModel;
 import java.util.Date;
-import org.openapitools.client.model.Level1QuoteUpdateModel;
-import org.openapitools.client.model.Level2PriceLevelUpdateModel;
-import org.openapitools.client.model.Level3OrderBookModel;
+import org.openapitools.client.model.IEXPriceLevelUpdatePriceLevelUpdateModel;
+import org.openapitools.client.model.IEXQuoteUpdateQuoteUpdateModel;
+import org.openapitools.client.model.IEXSystemEventSystemEventModel;
+import org.openapitools.client.model.IEXTradeTradeModel;
 import java.util.*;
-import org.openapitools.client.model.TradeTradeModel;
+import org.openapitools.client.model.ModelsAdminMessageModel;
+import org.openapitools.client.model.ModelsOrderBookModel;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -67,9 +67,9 @@ public class NativeIEXApi {
   * 
    * @param symbol The symbol identifier
    * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-   * @return List<AdminAdminMessageModel>
+   * @return List<ModelsAdminMessageModel>
   */
-  public List<AdminAdminMessageModel> v1NativeIexAdminMessagesSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ModelsAdminMessageModel> v1NativeIexAdminMessagesSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'symbol' is set
     if (symbol == null) {
@@ -110,7 +110,7 @@ public class NativeIEXApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<AdminAdminMessageModel>) ApiInvoker.deserialize(localVarResponse, "array", AdminAdminMessageModel.class);
+         return (List<ModelsAdminMessageModel>) ApiInvoker.deserialize(localVarResponse, "array", ModelsAdminMessageModel.class);
       } else {
          return null;
       }
@@ -136,7 +136,7 @@ public class NativeIEXApi {
    * 
    * @param symbol The symbol identifier   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
   */
-  public void v1NativeIexAdminMessagesSymbolGet (String symbol, Date date, final Response.Listener<List<AdminAdminMessageModel>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1NativeIexAdminMessagesSymbolGet (String symbol, Date date, final Response.Listener<List<ModelsAdminMessageModel>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'symbol' is set
@@ -187,7 +187,7 @@ public class NativeIEXApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<AdminAdminMessageModel>) ApiInvoker.deserialize(localVarResponse,  "array", AdminAdminMessageModel.class));
+              responseListener.onResponse((List<ModelsAdminMessageModel>) ApiInvoker.deserialize(localVarResponse,  "array", ModelsAdminMessageModel.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -206,9 +206,9 @@ public class NativeIEXApi {
   * Get System Events
   * 
    * @param date Date in format YYYY-MM-DD
-   * @return List<AdminSystemEventModel>
+   * @return List<IEXSystemEventSystemEventModel>
   */
-  public List<AdminSystemEventModel> v1NativeIexAdminSystemEventGet (Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<IEXSystemEventSystemEventModel> v1NativeIexAdminSystemEventGet (Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'date' is set
     if (date == null) {
@@ -244,7 +244,7 @@ public class NativeIEXApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<AdminSystemEventModel>) ApiInvoker.deserialize(localVarResponse, "array", AdminSystemEventModel.class);
+         return (List<IEXSystemEventSystemEventModel>) ApiInvoker.deserialize(localVarResponse, "array", IEXSystemEventSystemEventModel.class);
       } else {
          return null;
       }
@@ -270,7 +270,7 @@ public class NativeIEXApi {
    * 
    * @param date Date in format YYYY-MM-DD
   */
-  public void v1NativeIexAdminSystemEventGet (Date date, final Response.Listener<List<AdminSystemEventModel>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1NativeIexAdminSystemEventGet (Date date, final Response.Listener<List<IEXSystemEventSystemEventModel>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'date' is set
@@ -316,7 +316,7 @@ public class NativeIEXApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<AdminSystemEventModel>) ApiInvoker.deserialize(localVarResponse,  "array", AdminSystemEventModel.class));
+              responseListener.onResponse((List<IEXSystemEventSystemEventModel>) ApiInvoker.deserialize(localVarResponse,  "array", IEXSystemEventSystemEventModel.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -336,9 +336,9 @@ public class NativeIEXApi {
   * 
    * @param symbol The symbol identifier
    * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-   * @return List<Level1QuoteUpdateModel>
+   * @return List<IEXQuoteUpdateQuoteUpdateModel>
   */
-  public List<Level1QuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<IEXQuoteUpdateQuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'symbol' is set
     if (symbol == null) {
@@ -379,7 +379,7 @@ public class NativeIEXApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<Level1QuoteUpdateModel>) ApiInvoker.deserialize(localVarResponse, "array", Level1QuoteUpdateModel.class);
+         return (List<IEXQuoteUpdateQuoteUpdateModel>) ApiInvoker.deserialize(localVarResponse, "array", IEXQuoteUpdateQuoteUpdateModel.class);
       } else {
          return null;
       }
@@ -405,7 +405,7 @@ public class NativeIEXApi {
    * 
    * @param symbol The symbol identifier   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
   */
-  public void v1NativeIexLevel1QuoteSymbolGet (String symbol, Date date, final Response.Listener<List<Level1QuoteUpdateModel>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1NativeIexLevel1QuoteSymbolGet (String symbol, Date date, final Response.Listener<List<IEXQuoteUpdateQuoteUpdateModel>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'symbol' is set
@@ -456,7 +456,7 @@ public class NativeIEXApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<Level1QuoteUpdateModel>) ApiInvoker.deserialize(localVarResponse,  "array", Level1QuoteUpdateModel.class));
+              responseListener.onResponse((List<IEXQuoteUpdateQuoteUpdateModel>) ApiInvoker.deserialize(localVarResponse,  "array", IEXQuoteUpdateQuoteUpdateModel.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -476,9 +476,9 @@ public class NativeIEXApi {
   * 
    * @param symbol The symbol identifier
    * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-   * @return List<Level2PriceLevelUpdateModel>
+   * @return List<IEXPriceLevelUpdatePriceLevelUpdateModel>
   */
-  public List<Level2PriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<IEXPriceLevelUpdatePriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'symbol' is set
     if (symbol == null) {
@@ -519,7 +519,7 @@ public class NativeIEXApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<Level2PriceLevelUpdateModel>) ApiInvoker.deserialize(localVarResponse, "array", Level2PriceLevelUpdateModel.class);
+         return (List<IEXPriceLevelUpdatePriceLevelUpdateModel>) ApiInvoker.deserialize(localVarResponse, "array", IEXPriceLevelUpdatePriceLevelUpdateModel.class);
       } else {
          return null;
       }
@@ -545,7 +545,7 @@ public class NativeIEXApi {
    * 
    * @param symbol The symbol identifier   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
   */
-  public void v1NativeIexLevel2PriceLevelUpdateSymbolGet (String symbol, Date date, final Response.Listener<List<Level2PriceLevelUpdateModel>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1NativeIexLevel2PriceLevelUpdateSymbolGet (String symbol, Date date, final Response.Listener<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'symbol' is set
@@ -596,7 +596,7 @@ public class NativeIEXApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<Level2PriceLevelUpdateModel>) ApiInvoker.deserialize(localVarResponse,  "array", Level2PriceLevelUpdateModel.class));
+              responseListener.onResponse((List<IEXPriceLevelUpdatePriceLevelUpdateModel>) ApiInvoker.deserialize(localVarResponse,  "array", IEXPriceLevelUpdatePriceLevelUpdateModel.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -616,9 +616,9 @@ public class NativeIEXApi {
   * 
    * @param symbol The symbol identifier
    * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-   * @return List<Level3OrderBookModel>
+   * @return List<ModelsOrderBookModel>
   */
-  public List<Level3OrderBookModel> v1NativeIexLevel3OrderBookSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ModelsOrderBookModel> v1NativeIexLevel3OrderBookSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'symbol' is set
     if (symbol == null) {
@@ -659,7 +659,7 @@ public class NativeIEXApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<Level3OrderBookModel>) ApiInvoker.deserialize(localVarResponse, "array", Level3OrderBookModel.class);
+         return (List<ModelsOrderBookModel>) ApiInvoker.deserialize(localVarResponse, "array", ModelsOrderBookModel.class);
       } else {
          return null;
       }
@@ -685,7 +685,7 @@ public class NativeIEXApi {
    * 
    * @param symbol The symbol identifier   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
   */
-  public void v1NativeIexLevel3OrderBookSymbolGet (String symbol, Date date, final Response.Listener<List<Level3OrderBookModel>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1NativeIexLevel3OrderBookSymbolGet (String symbol, Date date, final Response.Listener<List<ModelsOrderBookModel>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'symbol' is set
@@ -736,7 +736,7 @@ public class NativeIEXApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<Level3OrderBookModel>) ApiInvoker.deserialize(localVarResponse,  "array", Level3OrderBookModel.class));
+              responseListener.onResponse((List<ModelsOrderBookModel>) ApiInvoker.deserialize(localVarResponse,  "array", ModelsOrderBookModel.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -756,9 +756,9 @@ public class NativeIEXApi {
   * 
    * @param symbol The symbol identifier
    * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-   * @return List<TradeTradeModel>
+   * @return List<IEXTradeTradeModel>
   */
-  public List<TradeTradeModel> v1NativeIexTradeSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<IEXTradeTradeModel> v1NativeIexTradeSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'symbol' is set
     if (symbol == null) {
@@ -799,7 +799,7 @@ public class NativeIEXApi {
     try {
       String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
       if (localVarResponse != null) {
-         return (List<TradeTradeModel>) ApiInvoker.deserialize(localVarResponse, "array", TradeTradeModel.class);
+         return (List<IEXTradeTradeModel>) ApiInvoker.deserialize(localVarResponse, "array", IEXTradeTradeModel.class);
       } else {
          return null;
       }
@@ -825,7 +825,7 @@ public class NativeIEXApi {
    * 
    * @param symbol The symbol identifier   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
   */
-  public void v1NativeIexTradeSymbolGet (String symbol, Date date, final Response.Listener<List<TradeTradeModel>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1NativeIexTradeSymbolGet (String symbol, Date date, final Response.Listener<List<IEXTradeTradeModel>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'symbol' is set
@@ -876,7 +876,7 @@ public class NativeIEXApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<TradeTradeModel>) ApiInvoker.deserialize(localVarResponse,  "array", TradeTradeModel.class));
+              responseListener.onResponse((List<IEXTradeTradeModel>) ApiInvoker.deserialize(localVarResponse,  "array", IEXTradeTradeModel.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }

@@ -28,7 +28,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](admin_admin_message_model.md) *
+[list_t](models_admin_message_model.md) *
 
 
 ### Authorization
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](admin_system_event_model.md) *
+[list_t](iex_system_event_system_event_model.md) *
 
 
 ### Authorization
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](level1_quote_update_model.md) *
+[list_t](iex_quote_update_quote_update_model.md) *
 
 
 ### Authorization
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](level2_price_level_update_model.md) *
+[list_t](iex_price_level_update_price_level_update_model.md) *
 
 
 ### Authorization
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](level3_order_book_model.md) *
+[list_t](models_order_book_model.md) *
 
 
 ### Authorization
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[list_t](trade_trade_model.md) *
+[list_t](iex_trade_trade_model.md) *
 
 
 ### Authorization

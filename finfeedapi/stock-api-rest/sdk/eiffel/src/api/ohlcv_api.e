@@ -24,7 +24,7 @@ inherit
 feature -- API Access
 
 
-	v1_ohlcv_exchange_exchange_id_history_get (exchange_id: STRING_32; period_id: STRING_32; time_start: STRING_32; time_end: STRING_32): detachable LIST [OHLCV_EXCHANGE_TIMESERIES_ITEM]
+	v1_ohlcv_exchange_exchange_id_history_get (exchange_id: STRING_32; period_id: STRING_32; time_start: STRING_32; time_end: STRING_32): detachable LIST [OHLCV_TIME_SERIES_EXCHANGE_TIMESERIES_ITEM]
 			-- Historical data by exchange
 			-- Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
 			-- 
@@ -37,7 +37,7 @@ feature -- API Access
 			-- argument: time_end Timeseries ending time in ISO 8601 (required)
 			-- 
 			-- 
-			-- Result LIST [OHLCV_EXCHANGE_TIMESERIES_ITEM]
+			-- Result LIST [OHLCV_TIME_SERIES_EXCHANGE_TIMESERIES_ITEM]
 		require
 		local
   			l_path: STRING
@@ -62,14 +62,14 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [OHLCV_EXCHANGE_TIMESERIES_ITEM] } l_response.data ({ LIST [OHLCV_EXCHANGE_TIMESERIES_ITEM] }) as l_data then
+			elseif attached { LIST [OHLCV_TIME_SERIES_EXCHANGE_TIMESERIES_ITEM] } l_response.data ({ LIST [OHLCV_TIME_SERIES_EXCHANGE_TIMESERIES_ITEM] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get (exchange_id: STRING_32; symbol_id: STRING_32; period_id: STRING_32; time_start: STRING_32; time_end: STRING_32; limit: INTEGER_32): detachable LIST [OHLCV_TIMESERIES_ITEM]
+	v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get (exchange_id: STRING_32; symbol_id: STRING_32; period_id: STRING_32; time_start: STRING_32; time_end: STRING_32; limit: INTEGER_32): detachable LIST [OHLCV_TIME_SERIES_TIMESERIES_ITEM]
 			-- Historical data
 			-- Get OHLCV timeseries data returned in time ascending order.
 			-- 
@@ -86,7 +86,7 @@ feature -- API Access
 			-- argument: limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
 			-- 
 			-- 
-			-- Result LIST [OHLCV_TIMESERIES_ITEM]
+			-- Result LIST [OHLCV_TIME_SERIES_TIMESERIES_ITEM]
 		require
 		local
   			l_path: STRING
@@ -113,14 +113,14 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [OHLCV_TIMESERIES_ITEM] } l_response.data ({ LIST [OHLCV_TIMESERIES_ITEM] }) as l_data then
+			elseif attached { LIST [OHLCV_TIME_SERIES_TIMESERIES_ITEM] } l_response.data ({ LIST [OHLCV_TIME_SERIES_TIMESERIES_ITEM] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get (exchange_id: STRING_32; symbol_id: STRING_32; period_id: STRING_32; limit: INTEGER_32): detachable LIST [OHLCV_TIMESERIES_ITEM]
+	v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get (exchange_id: STRING_32; symbol_id: STRING_32; period_id: STRING_32; limit: INTEGER_32): detachable LIST [OHLCV_TIME_SERIES_TIMESERIES_ITEM]
 			-- Latest data
 			-- Get OHLCV latest timeseries data returned in time descending order. Data can be requested by the period and for the specific symbol eg &#x60;BITSTAMP_SPOT_BTC_USD&#x60;, if you need to query timeseries by asset pairs eg. &#x60;BTC/USD&#x60;, then please reffer to the Exchange Rates Timeseries data              :::info OHLCV Latest endpoint is just the shortcut to the OHLCV Historical endpoint with substituted &#x60;time_start&#x60; and &#x60;time_end&#x60; parameters.  The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
 			-- 
@@ -133,7 +133,7 @@ feature -- API Access
 			-- argument: limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
 			-- 
 			-- 
-			-- Result LIST [OHLCV_TIMESERIES_ITEM]
+			-- Result LIST [OHLCV_TIME_SERIES_TIMESERIES_ITEM]
 		require
 		local
   			l_path: STRING
@@ -158,19 +158,19 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [OHLCV_TIMESERIES_ITEM] } l_response.data ({ LIST [OHLCV_TIMESERIES_ITEM] }) as l_data then
+			elseif attached { LIST [OHLCV_TIME_SERIES_TIMESERIES_ITEM] } l_response.data ({ LIST [OHLCV_TIME_SERIES_TIMESERIES_ITEM] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")
 			end
 		end
 
-	v1_ohlcv_periods_get : detachable LIST [OHLCV_TIMESERIES_PERIOD]
+	v1_ohlcv_periods_get : detachable LIST [OHLCV_TIME_SERIES_TIMESERIES_PERIOD]
 			-- List all periods
 			-- Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
 			-- 
 			-- 
-			-- Result LIST [OHLCV_TIMESERIES_PERIOD]
+			-- Result LIST [OHLCV_TIME_SERIES_TIMESERIES_PERIOD]
 		require
 		local
   			l_path: STRING
@@ -191,7 +191,7 @@ feature -- API Access
 			l_response := api_client.call_api (l_path, "Get", l_request, Void, agent deserializer)
 			if l_response.has_error then
 				last_error := l_response.error
-			elseif attached { LIST [OHLCV_TIMESERIES_PERIOD] } l_response.data ({ LIST [OHLCV_TIMESERIES_PERIOD] }) as l_data then
+			elseif attached { LIST [OHLCV_TIME_SERIES_TIMESERIES_PERIOD] } l_response.data ({ LIST [OHLCV_TIME_SERIES_TIMESERIES_PERIOD] }) as l_data then
 				Result := l_data
 			else
 				create last_error.make ("Unknown error: Status response [ " + l_response.status.out + "]")

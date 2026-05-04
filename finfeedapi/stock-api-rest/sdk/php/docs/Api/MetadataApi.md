@@ -1,6 +1,6 @@
 # OpenAPI\Client\MetadataApi
 
-
+Provides access to exchange and symbol metadata.
 
 All URIs are relative to https://api-historical.stock.finfeedapi.com, except if the operation defines another base path.
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## v1OhlcvExchangeExchangeIdHistoryGet
 
-> List&lt;OHLCVExchangeTimeseriesItem&gt; v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
+> List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt; v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
 
 Historical data by exchange
 
@@ -31,7 +31,7 @@ String periodId = null; // String | Identifier of requested timeseries period (e
 String timeStart = null; // String | Timeseries starting time in ISO 8601
 String timeEnd = null; // String | Timeseries ending time in ISO 8601
 try {
-    List<OHLCVExchangeTimeseriesItem> result = apiInstance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd);
+    List<OHLCVTimeSeriesExchangeTimeseriesItem> result = apiInstance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OhlcvApi#v1OhlcvExchangeExchangeIdHistoryGet");
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;OHLCVExchangeTimeseriesItem&gt;**](OHLCVExchangeTimeseriesItem.md)
+[**List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt;**](OHLCVTimeSeriesExchangeTimeseriesItem.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ## v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet
 
-> List&lt;OHLCVTimeseriesItem&gt; v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit)
+> List&lt;OHLCVTimeSeriesTimeseriesItem&gt; v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit)
 
 Historical data
 
@@ -85,7 +85,7 @@ String timeStart = null; // String | Timeseries starting time in ISO 8601
 String timeEnd = null; // String | Timeseries ending time in ISO 8601
 Integer limit = 100; // Integer | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 try {
-    List<OHLCVTimeseriesItem> result = apiInstance.v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit);
+    List<OHLCVTimeSeriesTimeseriesItem> result = apiInstance.v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OhlcvApi#v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet");
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;OHLCVTimeseriesItem&gt;**](OHLCVTimeseriesItem.md)
+[**List&lt;OHLCVTimeSeriesTimeseriesItem&gt;**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ## v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet
 
-> List&lt;OHLCVTimeseriesItem&gt; v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit)
+> List&lt;OHLCVTimeSeriesTimeseriesItem&gt; v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit)
 
 Latest data
 
@@ -139,7 +139,7 @@ String symbolId = null; // String | Symbol identifier of requested timeseries (f
 String periodId = null; // String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 Integer limit = 100; // Integer | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 try {
-    List<OHLCVTimeseriesItem> result = apiInstance.v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit);
+    List<OHLCVTimeSeriesTimeseriesItem> result = apiInstance.v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OhlcvApi#v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet");
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;OHLCVTimeseriesItem&gt;**](OHLCVTimeseriesItem.md)
+[**List&lt;OHLCVTimeSeriesTimeseriesItem&gt;**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ## v1OhlcvPeriodsGet
 
-> List&lt;OHLCVTimeseriesPeriod&gt; v1OhlcvPeriodsGet()
+> List&lt;OHLCVTimeSeriesTimeseriesPeriod&gt; v1OhlcvPeriodsGet()
 
 List all periods
 
@@ -187,7 +187,7 @@ Get full list of supported time periods available for requesting OHLCV timeserie
 
 OhlcvApi apiInstance = new OhlcvApi();
 try {
-    List<OHLCVTimeseriesPeriod> result = apiInstance.v1OhlcvPeriodsGet();
+    List<OHLCVTimeSeriesTimeseriesPeriod> result = apiInstance.v1OhlcvPeriodsGet();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OhlcvApi#v1OhlcvPeriodsGet");
@@ -201,7 +201,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;OHLCVTimeseriesPeriod&gt;**](OHLCVTimeseriesPeriod.md)
+[**List&lt;OHLCVTimeSeriesTimeseriesPeriod&gt;**](OHLCVTimeSeriesTimeseriesPeriod.md)
 
 ### Authorization
 

@@ -63,7 +63,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
             string timeEnd = default!;
             var response = await _instance.V1OhlcvExchangeExchangeIdHistoryGetAsync(exchangeId, periodId, timeStart, timeEnd);
             var model = response.Ok();
-            Assert.IsType<List<OHLCVExchangeTimeseriesItem>>(model);
+            Assert.IsType<List<OHLCVTimeSeriesExchangeTimeseriesItem>>(model);
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
             Client.Option<int> limit = default!;
             var response = await _instance.V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetAsync(exchangeId, symbolId, periodId, timeStart, timeEnd, limit);
             var model = response.Ok();
-            Assert.IsType<List<OHLCVTimeseriesItem>>(model);
+            Assert.IsType<List<OHLCVTimeSeriesTimeseriesItem>>(model);
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
             Client.Option<int> limit = default!;
             var response = await _instance.V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetAsync(exchangeId, symbolId, periodId, limit);
             var model = response.Ok();
-            Assert.IsType<List<OHLCVTimeseriesItem>>(model);
+            Assert.IsType<List<OHLCVTimeSeriesTimeseriesItem>>(model);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
         {
             var response = await _instance.V1OhlcvPeriodsGetAsync();
             var model = response.Ok();
-            Assert.IsType<List<OHLCVTimeseriesPeriod>>(model);
+            Assert.IsType<List<OHLCVTimeSeriesTimeseriesPeriod>>(model);
         }
     }
 }

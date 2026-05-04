@@ -27,9 +27,9 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import org.openapitools.client.apis.OhlcvApi
-import org.openapitools.client.models.OHLCVExchangeTimeseriesItem
-import org.openapitools.client.models.OHLCVTimeseriesItem
-import org.openapitools.client.models.OHLCVTimeseriesPeriod
+import org.openapitools.client.models.OHLCVTimeSeriesExchangeTimeseriesItem
+import org.openapitools.client.models.OHLCVTimeSeriesTimeseriesItem
+import org.openapitools.client.models.OHLCVTimeSeriesTimeseriesPeriod
 
 class OhlcvApiTest : ShouldSpec() {
     init {
@@ -43,7 +43,7 @@ class OhlcvApiTest : ShouldSpec() {
             //val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
             //val timeStart : kotlin.String = timeStart_example // kotlin.String | Timeseries starting time in ISO 8601
             //val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601
-            //val result : kotlin.collections.List<OHLCVExchangeTimeseriesItem> = apiInstance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
+            //val result : kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem> = apiInstance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
             //result shouldBe ("TODO")
         }
 
@@ -56,7 +56,7 @@ class OhlcvApiTest : ShouldSpec() {
             //val timeStart : kotlin.String = timeStart_example // kotlin.String | Timeseries starting time in ISO 8601
             //val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601
             //val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-            //val result : kotlin.collections.List<OHLCVTimeseriesItem> = apiInstance.v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit)
+            //val result : kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem> = apiInstance.v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit)
             //result shouldBe ("TODO")
         }
 
@@ -67,14 +67,14 @@ class OhlcvApiTest : ShouldSpec() {
             //val symbolId : kotlin.String = symbolId_example // kotlin.String | Symbol identifier of requested timeseries (from the Metadata -> Symbols)
             //val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
             //val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-            //val result : kotlin.collections.List<OHLCVTimeseriesItem> = apiInstance.v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit)
+            //val result : kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem> = apiInstance.v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit)
             //result shouldBe ("TODO")
         }
 
         // to test v1OhlcvPeriodsGet
         should("test v1OhlcvPeriodsGet") {
             // uncomment below to test v1OhlcvPeriodsGet
-            //val result : kotlin.collections.List<OHLCVTimeseriesPeriod> = apiInstance.v1OhlcvPeriodsGet()
+            //val result : kotlin.collections.List<OHLCVTimeSeriesTimeseriesPeriod> = apiInstance.v1OhlcvPeriodsGet()
             //result shouldBe ("TODO")
         }
 

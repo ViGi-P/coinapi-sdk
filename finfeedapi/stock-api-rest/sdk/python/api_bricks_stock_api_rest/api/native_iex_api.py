@@ -20,12 +20,12 @@ from datetime import datetime
 from pydantic import Field, StrictStr
 from typing import List
 from typing_extensions import Annotated
-from api_bricks_stock_api_rest.models.admin_admin_message_model import AdminAdminMessageModel
-from api_bricks_stock_api_rest.models.admin_system_event_model import AdminSystemEventModel
-from api_bricks_stock_api_rest.models.level1_quote_update_model import Level1QuoteUpdateModel
-from api_bricks_stock_api_rest.models.level2_price_level_update_model import Level2PriceLevelUpdateModel
-from api_bricks_stock_api_rest.models.level3_order_book_model import Level3OrderBookModel
-from api_bricks_stock_api_rest.models.trade_trade_model import TradeTradeModel
+from api_bricks_stock_api_rest.models.iex_price_level_update_price_level_update_model import IEXPriceLevelUpdatePriceLevelUpdateModel
+from api_bricks_stock_api_rest.models.iex_quote_update_quote_update_model import IEXQuoteUpdateQuoteUpdateModel
+from api_bricks_stock_api_rest.models.iex_system_event_system_event_model import IEXSystemEventSystemEventModel
+from api_bricks_stock_api_rest.models.iex_trade_trade_model import IEXTradeTradeModel
+from api_bricks_stock_api_rest.models.models_admin_message_model import ModelsAdminMessageModel
+from api_bricks_stock_api_rest.models.models_order_book_model import ModelsOrderBookModel
 
 from api_bricks_stock_api_rest.api_client import ApiClient, RequestSerialized
 from api_bricks_stock_api_rest.api_response import ApiResponse
@@ -62,7 +62,7 @@ class NativeIEXApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[AdminAdminMessageModel]:
+    ) -> List[ModelsAdminMessageModel]:
         """Get Admin Messages
 
 
@@ -102,7 +102,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[AdminAdminMessageModel]",
+            '200': "List[ModelsAdminMessageModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -132,7 +132,7 @@ class NativeIEXApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[AdminAdminMessageModel]]:
+    ) -> ApiResponse[List[ModelsAdminMessageModel]]:
         """Get Admin Messages
 
 
@@ -172,7 +172,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[AdminAdminMessageModel]",
+            '200': "List[ModelsAdminMessageModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -242,7 +242,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[AdminAdminMessageModel]",
+            '200': "List[ModelsAdminMessageModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -346,7 +346,7 @@ class NativeIEXApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[AdminSystemEventModel]:
+    ) -> List[IEXSystemEventSystemEventModel]:
         """Get System Events
 
 
@@ -383,7 +383,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[AdminSystemEventModel]",
+            '200': "List[IEXSystemEventSystemEventModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -412,7 +412,7 @@ class NativeIEXApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[AdminSystemEventModel]]:
+    ) -> ApiResponse[List[IEXSystemEventSystemEventModel]]:
         """Get System Events
 
 
@@ -449,7 +449,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[AdminSystemEventModel]",
+            '200': "List[IEXSystemEventSystemEventModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -515,7 +515,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[AdminSystemEventModel]",
+            '200': "List[IEXSystemEventSystemEventModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -617,7 +617,7 @@ class NativeIEXApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[Level1QuoteUpdateModel]:
+    ) -> List[IEXQuoteUpdateQuoteUpdateModel]:
         """Get Level-1 Quotes
 
 
@@ -657,7 +657,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[Level1QuoteUpdateModel]",
+            '200': "List[IEXQuoteUpdateQuoteUpdateModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -687,7 +687,7 @@ class NativeIEXApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[Level1QuoteUpdateModel]]:
+    ) -> ApiResponse[List[IEXQuoteUpdateQuoteUpdateModel]]:
         """Get Level-1 Quotes
 
 
@@ -727,7 +727,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[Level1QuoteUpdateModel]",
+            '200': "List[IEXQuoteUpdateQuoteUpdateModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -797,7 +797,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[Level1QuoteUpdateModel]",
+            '200': "List[IEXQuoteUpdateQuoteUpdateModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -902,7 +902,7 @@ class NativeIEXApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[Level2PriceLevelUpdateModel]:
+    ) -> List[IEXPriceLevelUpdatePriceLevelUpdateModel]:
         """Get Level-2 Price Level Book
 
 
@@ -942,7 +942,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[Level2PriceLevelUpdateModel]",
+            '200': "List[IEXPriceLevelUpdatePriceLevelUpdateModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -972,7 +972,7 @@ class NativeIEXApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[Level2PriceLevelUpdateModel]]:
+    ) -> ApiResponse[List[IEXPriceLevelUpdatePriceLevelUpdateModel]]:
         """Get Level-2 Price Level Book
 
 
@@ -1012,7 +1012,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[Level2PriceLevelUpdateModel]",
+            '200': "List[IEXPriceLevelUpdatePriceLevelUpdateModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1082,7 +1082,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[Level2PriceLevelUpdateModel]",
+            '200': "List[IEXPriceLevelUpdatePriceLevelUpdateModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1187,7 +1187,7 @@ class NativeIEXApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[Level3OrderBookModel]:
+    ) -> List[ModelsOrderBookModel]:
         """Get Level-3 Order Book
 
 
@@ -1227,7 +1227,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[Level3OrderBookModel]",
+            '200': "List[ModelsOrderBookModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1257,7 +1257,7 @@ class NativeIEXApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[Level3OrderBookModel]]:
+    ) -> ApiResponse[List[ModelsOrderBookModel]]:
         """Get Level-3 Order Book
 
 
@@ -1297,7 +1297,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[Level3OrderBookModel]",
+            '200': "List[ModelsOrderBookModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1367,7 +1367,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[Level3OrderBookModel]",
+            '200': "List[ModelsOrderBookModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1472,7 +1472,7 @@ class NativeIEXApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[TradeTradeModel]:
+    ) -> List[IEXTradeTradeModel]:
         """Get Trades
 
 
@@ -1512,7 +1512,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[TradeTradeModel]",
+            '200': "List[IEXTradeTradeModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1542,7 +1542,7 @@ class NativeIEXApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[TradeTradeModel]]:
+    ) -> ApiResponse[List[IEXTradeTradeModel]]:
         """Get Trades
 
 
@@ -1582,7 +1582,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[TradeTradeModel]",
+            '200': "List[IEXTradeTradeModel]",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1652,7 +1652,7 @@ class NativeIEXApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[TradeTradeModel]",
+            '200': "List[IEXTradeTradeModel]",
         }
         response_data = self.api_client.call_api(
             *_param,

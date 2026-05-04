@@ -57,46 +57,6 @@ public class JsonUtil {
   public static Type getListTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
     
-    if ("AdminAdminMessageModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AdminAdminMessageModel>>(){}.getType();
-    }
-    
-    if ("AdminAuctionInformationModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AdminAuctionInformationModel>>(){}.getType();
-    }
-    
-    if ("AdminOfficialPriceModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AdminOfficialPriceModel>>(){}.getType();
-    }
-    
-    if ("AdminOperationalHaltStatusModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AdminOperationalHaltStatusModel>>(){}.getType();
-    }
-    
-    if ("AdminRetailLiquidityIndicatorModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AdminRetailLiquidityIndicatorModel>>(){}.getType();
-    }
-    
-    if ("AdminSecurityDirectoryModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AdminSecurityDirectoryModel>>(){}.getType();
-    }
-    
-    if ("AdminSecurityEventModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AdminSecurityEventModel>>(){}.getType();
-    }
-    
-    if ("AdminShortSalePriceTestStatusModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AdminShortSalePriceTestStatusModel>>(){}.getType();
-    }
-    
-    if ("AdminSystemEventModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AdminSystemEventModel>>(){}.getType();
-    }
-    
-    if ("AdminTradingStatusModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<AdminTradingStatusModel>>(){}.getType();
-    }
-    
     if ("FinFeedAPIExchangeModel".equalsIgnoreCase(className)) {
       return new TypeToken<List<FinFeedAPIExchangeModel>>(){}.getType();
     }
@@ -105,52 +65,92 @@ public class JsonUtil {
       return new TypeToken<List<FinFeedAPISymbolModel>>(){}.getType();
     }
     
-    if ("Level1QuoteUpdateModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Level1QuoteUpdateModel>>(){}.getType();
+    if ("IEXPriceLevelUpdatePriceLevelUpdateModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IEXPriceLevelUpdatePriceLevelUpdateModel>>(){}.getType();
     }
     
-    if ("Level2PriceLevelUpdateModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Level2PriceLevelUpdateModel>>(){}.getType();
+    if ("IEXQuoteUpdateQuoteUpdateModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IEXQuoteUpdateQuoteUpdateModel>>(){}.getType();
     }
     
-    if ("Level3AddOrderModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Level3AddOrderModel>>(){}.getType();
+    if ("IEXSystemEventSystemEventModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IEXSystemEventSystemEventModel>>(){}.getType();
     }
     
-    if ("Level3ClearBookModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Level3ClearBookModel>>(){}.getType();
+    if ("IEXTradeTradeModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<IEXTradeTradeModel>>(){}.getType();
     }
     
-    if ("Level3DeleteOrderModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Level3DeleteOrderModel>>(){}.getType();
+    if ("ModelsAddOrderModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsAddOrderModel>>(){}.getType();
     }
     
-    if ("Level3ExecutedOrderModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Level3ExecutedOrderModel>>(){}.getType();
+    if ("ModelsAdminMessageModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsAdminMessageModel>>(){}.getType();
     }
     
-    if ("Level3ModifyOrderModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Level3ModifyOrderModel>>(){}.getType();
+    if ("ModelsAuctionInformationModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsAuctionInformationModel>>(){}.getType();
     }
     
-    if ("Level3OrderBookModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<Level3OrderBookModel>>(){}.getType();
+    if ("ModelsClearBookModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsClearBookModel>>(){}.getType();
     }
     
-    if ("OHLCVExchangeTimeseriesItem".equalsIgnoreCase(className)) {
-      return new TypeToken<List<OHLCVExchangeTimeseriesItem>>(){}.getType();
+    if ("ModelsDeleteOrderModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsDeleteOrderModel>>(){}.getType();
     }
     
-    if ("OHLCVTimeseriesItem".equalsIgnoreCase(className)) {
-      return new TypeToken<List<OHLCVTimeseriesItem>>(){}.getType();
+    if ("ModelsExecutedOrderModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsExecutedOrderModel>>(){}.getType();
     }
     
-    if ("OHLCVTimeseriesPeriod".equalsIgnoreCase(className)) {
-      return new TypeToken<List<OHLCVTimeseriesPeriod>>(){}.getType();
+    if ("ModelsModifyOrderModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsModifyOrderModel>>(){}.getType();
     }
     
-    if ("TradeTradeModel".equalsIgnoreCase(className)) {
-      return new TypeToken<List<TradeTradeModel>>(){}.getType();
+    if ("ModelsOfficialPriceModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsOfficialPriceModel>>(){}.getType();
+    }
+    
+    if ("ModelsOperationalHaltStatusModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsOperationalHaltStatusModel>>(){}.getType();
+    }
+    
+    if ("ModelsOrderBookModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsOrderBookModel>>(){}.getType();
+    }
+    
+    if ("ModelsRetailLiquidityIndicatorModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsRetailLiquidityIndicatorModel>>(){}.getType();
+    }
+    
+    if ("ModelsSecurityDirectoryModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsSecurityDirectoryModel>>(){}.getType();
+    }
+    
+    if ("ModelsSecurityEventModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsSecurityEventModel>>(){}.getType();
+    }
+    
+    if ("ModelsShortSalePriceTestStatusModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsShortSalePriceTestStatusModel>>(){}.getType();
+    }
+    
+    if ("ModelsTradingStatusModel".equalsIgnoreCase(className)) {
+      return new TypeToken<List<ModelsTradingStatusModel>>(){}.getType();
+    }
+    
+    if ("OHLCVTimeSeriesExchangeTimeseriesItem".equalsIgnoreCase(className)) {
+      return new TypeToken<List<OHLCVTimeSeriesExchangeTimeseriesItem>>(){}.getType();
+    }
+    
+    if ("OHLCVTimeSeriesTimeseriesItem".equalsIgnoreCase(className)) {
+      return new TypeToken<List<OHLCVTimeSeriesTimeseriesItem>>(){}.getType();
+    }
+    
+    if ("OHLCVTimeSeriesTimeseriesPeriod".equalsIgnoreCase(className)) {
+      return new TypeToken<List<OHLCVTimeSeriesTimeseriesPeriod>>(){}.getType();
     }
     
     return new TypeToken<List<Object>>(){}.getType();
@@ -158,46 +158,6 @@ public class JsonUtil {
 
   public static Type getTypeForDeserialization(Class cls) {
     String className = cls.getSimpleName();
-    
-    if ("AdminAdminMessageModel".equalsIgnoreCase(className)) {
-      return new TypeToken<AdminAdminMessageModel>(){}.getType();
-    }
-    
-    if ("AdminAuctionInformationModel".equalsIgnoreCase(className)) {
-      return new TypeToken<AdminAuctionInformationModel>(){}.getType();
-    }
-    
-    if ("AdminOfficialPriceModel".equalsIgnoreCase(className)) {
-      return new TypeToken<AdminOfficialPriceModel>(){}.getType();
-    }
-    
-    if ("AdminOperationalHaltStatusModel".equalsIgnoreCase(className)) {
-      return new TypeToken<AdminOperationalHaltStatusModel>(){}.getType();
-    }
-    
-    if ("AdminRetailLiquidityIndicatorModel".equalsIgnoreCase(className)) {
-      return new TypeToken<AdminRetailLiquidityIndicatorModel>(){}.getType();
-    }
-    
-    if ("AdminSecurityDirectoryModel".equalsIgnoreCase(className)) {
-      return new TypeToken<AdminSecurityDirectoryModel>(){}.getType();
-    }
-    
-    if ("AdminSecurityEventModel".equalsIgnoreCase(className)) {
-      return new TypeToken<AdminSecurityEventModel>(){}.getType();
-    }
-    
-    if ("AdminShortSalePriceTestStatusModel".equalsIgnoreCase(className)) {
-      return new TypeToken<AdminShortSalePriceTestStatusModel>(){}.getType();
-    }
-    
-    if ("AdminSystemEventModel".equalsIgnoreCase(className)) {
-      return new TypeToken<AdminSystemEventModel>(){}.getType();
-    }
-    
-    if ("AdminTradingStatusModel".equalsIgnoreCase(className)) {
-      return new TypeToken<AdminTradingStatusModel>(){}.getType();
-    }
     
     if ("FinFeedAPIExchangeModel".equalsIgnoreCase(className)) {
       return new TypeToken<FinFeedAPIExchangeModel>(){}.getType();
@@ -207,52 +167,92 @@ public class JsonUtil {
       return new TypeToken<FinFeedAPISymbolModel>(){}.getType();
     }
     
-    if ("Level1QuoteUpdateModel".equalsIgnoreCase(className)) {
-      return new TypeToken<Level1QuoteUpdateModel>(){}.getType();
+    if ("IEXPriceLevelUpdatePriceLevelUpdateModel".equalsIgnoreCase(className)) {
+      return new TypeToken<IEXPriceLevelUpdatePriceLevelUpdateModel>(){}.getType();
     }
     
-    if ("Level2PriceLevelUpdateModel".equalsIgnoreCase(className)) {
-      return new TypeToken<Level2PriceLevelUpdateModel>(){}.getType();
+    if ("IEXQuoteUpdateQuoteUpdateModel".equalsIgnoreCase(className)) {
+      return new TypeToken<IEXQuoteUpdateQuoteUpdateModel>(){}.getType();
     }
     
-    if ("Level3AddOrderModel".equalsIgnoreCase(className)) {
-      return new TypeToken<Level3AddOrderModel>(){}.getType();
+    if ("IEXSystemEventSystemEventModel".equalsIgnoreCase(className)) {
+      return new TypeToken<IEXSystemEventSystemEventModel>(){}.getType();
     }
     
-    if ("Level3ClearBookModel".equalsIgnoreCase(className)) {
-      return new TypeToken<Level3ClearBookModel>(){}.getType();
+    if ("IEXTradeTradeModel".equalsIgnoreCase(className)) {
+      return new TypeToken<IEXTradeTradeModel>(){}.getType();
     }
     
-    if ("Level3DeleteOrderModel".equalsIgnoreCase(className)) {
-      return new TypeToken<Level3DeleteOrderModel>(){}.getType();
+    if ("ModelsAddOrderModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsAddOrderModel>(){}.getType();
     }
     
-    if ("Level3ExecutedOrderModel".equalsIgnoreCase(className)) {
-      return new TypeToken<Level3ExecutedOrderModel>(){}.getType();
+    if ("ModelsAdminMessageModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsAdminMessageModel>(){}.getType();
     }
     
-    if ("Level3ModifyOrderModel".equalsIgnoreCase(className)) {
-      return new TypeToken<Level3ModifyOrderModel>(){}.getType();
+    if ("ModelsAuctionInformationModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsAuctionInformationModel>(){}.getType();
     }
     
-    if ("Level3OrderBookModel".equalsIgnoreCase(className)) {
-      return new TypeToken<Level3OrderBookModel>(){}.getType();
+    if ("ModelsClearBookModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsClearBookModel>(){}.getType();
     }
     
-    if ("OHLCVExchangeTimeseriesItem".equalsIgnoreCase(className)) {
-      return new TypeToken<OHLCVExchangeTimeseriesItem>(){}.getType();
+    if ("ModelsDeleteOrderModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsDeleteOrderModel>(){}.getType();
     }
     
-    if ("OHLCVTimeseriesItem".equalsIgnoreCase(className)) {
-      return new TypeToken<OHLCVTimeseriesItem>(){}.getType();
+    if ("ModelsExecutedOrderModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsExecutedOrderModel>(){}.getType();
     }
     
-    if ("OHLCVTimeseriesPeriod".equalsIgnoreCase(className)) {
-      return new TypeToken<OHLCVTimeseriesPeriod>(){}.getType();
+    if ("ModelsModifyOrderModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsModifyOrderModel>(){}.getType();
     }
     
-    if ("TradeTradeModel".equalsIgnoreCase(className)) {
-      return new TypeToken<TradeTradeModel>(){}.getType();
+    if ("ModelsOfficialPriceModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsOfficialPriceModel>(){}.getType();
+    }
+    
+    if ("ModelsOperationalHaltStatusModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsOperationalHaltStatusModel>(){}.getType();
+    }
+    
+    if ("ModelsOrderBookModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsOrderBookModel>(){}.getType();
+    }
+    
+    if ("ModelsRetailLiquidityIndicatorModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsRetailLiquidityIndicatorModel>(){}.getType();
+    }
+    
+    if ("ModelsSecurityDirectoryModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsSecurityDirectoryModel>(){}.getType();
+    }
+    
+    if ("ModelsSecurityEventModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsSecurityEventModel>(){}.getType();
+    }
+    
+    if ("ModelsShortSalePriceTestStatusModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsShortSalePriceTestStatusModel>(){}.getType();
+    }
+    
+    if ("ModelsTradingStatusModel".equalsIgnoreCase(className)) {
+      return new TypeToken<ModelsTradingStatusModel>(){}.getType();
+    }
+    
+    if ("OHLCVTimeSeriesExchangeTimeseriesItem".equalsIgnoreCase(className)) {
+      return new TypeToken<OHLCVTimeSeriesExchangeTimeseriesItem>(){}.getType();
+    }
+    
+    if ("OHLCVTimeSeriesTimeseriesItem".equalsIgnoreCase(className)) {
+      return new TypeToken<OHLCVTimeSeriesTimeseriesItem>(){}.getType();
+    }
+    
+    if ("OHLCVTimeSeriesTimeseriesPeriod".equalsIgnoreCase(className)) {
+      return new TypeToken<OHLCVTimeSeriesTimeseriesPeriod>(){}.getType();
     }
     
     return new TypeToken<Object>(){}.getType();

@@ -48,30 +48,30 @@ set(SRCS
     src/binary.c
     external/cJSON.c
     model/object.c
-    model/admin_admin_message_model.c
-    model/admin_auction_information_model.c
-    model/admin_official_price_model.c
-    model/admin_operational_halt_status_model.c
-    model/admin_retail_liquidity_indicator_model.c
-    model/admin_security_directory_model.c
-    model/admin_security_event_model.c
-    model/admin_short_sale_price_test_status_model.c
-    model/admin_system_event_model.c
-    model/admin_trading_status_model.c
     model/fin_feed_api_exchange_model.c
     model/fin_feed_api_symbol_model.c
-    model/level1_quote_update_model.c
-    model/level2_price_level_update_model.c
-    model/level3_add_order_model.c
-    model/level3_clear_book_model.c
-    model/level3_delete_order_model.c
-    model/level3_executed_order_model.c
-    model/level3_modify_order_model.c
-    model/level3_order_book_model.c
-    model/ohlcv_exchange_timeseries_item.c
-    model/ohlcv_timeseries_item.c
-    model/ohlcv_timeseries_period.c
-    model/trade_trade_model.c
+    model/iex_price_level_update_price_level_update_model.c
+    model/iex_quote_update_quote_update_model.c
+    model/iex_system_event_system_event_model.c
+    model/iex_trade_trade_model.c
+    model/models_add_order_model.c
+    model/models_admin_message_model.c
+    model/models_auction_information_model.c
+    model/models_clear_book_model.c
+    model/models_delete_order_model.c
+    model/models_executed_order_model.c
+    model/models_modify_order_model.c
+    model/models_official_price_model.c
+    model/models_operational_halt_status_model.c
+    model/models_order_book_model.c
+    model/models_retail_liquidity_indicator_model.c
+    model/models_security_directory_model.c
+    model/models_security_event_model.c
+    model/models_short_sale_price_test_status_model.c
+    model/models_trading_status_model.c
+    model/ohlcv_time_series_exchange_timeseries_item.c
+    model/ohlcv_time_series_timeseries_item.c
+    model/ohlcv_time_series_timeseries_period.c
     api/MetadataAPI.c
     api/NativeIEXAPI.c
     api/OhlcvAPI.c
@@ -86,30 +86,30 @@ set(HDRS
     external/cJSON.h
     model/object.h
     model/any_type.h
-    model/admin_admin_message_model.h
-    model/admin_auction_information_model.h
-    model/admin_official_price_model.h
-    model/admin_operational_halt_status_model.h
-    model/admin_retail_liquidity_indicator_model.h
-    model/admin_security_directory_model.h
-    model/admin_security_event_model.h
-    model/admin_short_sale_price_test_status_model.h
-    model/admin_system_event_model.h
-    model/admin_trading_status_model.h
     model/fin_feed_api_exchange_model.h
     model/fin_feed_api_symbol_model.h
-    model/level1_quote_update_model.h
-    model/level2_price_level_update_model.h
-    model/level3_add_order_model.h
-    model/level3_clear_book_model.h
-    model/level3_delete_order_model.h
-    model/level3_executed_order_model.h
-    model/level3_modify_order_model.h
-    model/level3_order_book_model.h
-    model/ohlcv_exchange_timeseries_item.h
-    model/ohlcv_timeseries_item.h
-    model/ohlcv_timeseries_period.h
-    model/trade_trade_model.h
+    model/iex_price_level_update_price_level_update_model.h
+    model/iex_quote_update_quote_update_model.h
+    model/iex_system_event_system_event_model.h
+    model/iex_trade_trade_model.h
+    model/models_add_order_model.h
+    model/models_admin_message_model.h
+    model/models_auction_information_model.h
+    model/models_clear_book_model.h
+    model/models_delete_order_model.h
+    model/models_executed_order_model.h
+    model/models_modify_order_model.h
+    model/models_official_price_model.h
+    model/models_operational_halt_status_model.h
+    model/models_order_book_model.h
+    model/models_retail_liquidity_indicator_model.h
+    model/models_security_directory_model.h
+    model/models_security_event_model.h
+    model/models_short_sale_price_test_status_model.h
+    model/models_trading_status_model.h
+    model/ohlcv_time_series_exchange_timeseries_item.h
+    model/ohlcv_time_series_timeseries_item.h
+    model/ohlcv_time_series_timeseries_period.h
     api/MetadataAPI.h
     api/NativeIEXAPI.h
     api/OhlcvAPI.h

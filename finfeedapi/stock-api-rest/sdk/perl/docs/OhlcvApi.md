@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **v1_ohlcv_exchange_exchange_id_history_get**
-> ARRAY[OHLCVExchangeTimeseriesItem] v1_ohlcv_exchange_exchange_id_history_get(exchange_id => $exchange_id, period_id => $period_id, time_start => $time_start, time_end => $time_end)
+> ARRAY[OHLCVTimeSeriesExchangeTimeseriesItem] v1_ohlcv_exchange_exchange_id_history_get(exchange_id => $exchange_id, period_id => $period_id, time_start => $time_start, time_end => $time_end)
 
 Historical data by exchange
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[OHLCVExchangeTimeseriesItem]**](OHLCVExchangeTimeseriesItem.md)
+[**ARRAY[OHLCVTimeSeriesExchangeTimeseriesItem]**](OHLCVTimeSeriesExchangeTimeseriesItem.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get**
-> ARRAY[OHLCVTimeseriesItem] v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get(exchange_id => $exchange_id, symbol_id => $symbol_id, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit)
+> ARRAY[OHLCVTimeSeriesTimeseriesItem] v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get(exchange_id => $exchange_id, symbol_id => $symbol_id, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit)
 
 Historical data
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[OHLCVTimeseriesItem]**](OHLCVTimeseriesItem.md)
+[**ARRAY[OHLCVTimeSeriesTimeseriesItem]**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get**
-> ARRAY[OHLCVTimeseriesItem] v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get(exchange_id => $exchange_id, symbol_id => $symbol_id, period_id => $period_id, limit => $limit)
+> ARRAY[OHLCVTimeSeriesTimeseriesItem] v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get(exchange_id => $exchange_id, symbol_id => $symbol_id, period_id => $period_id, limit => $limit)
 
 Latest data
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[OHLCVTimeseriesItem]**](OHLCVTimeseriesItem.md)
+[**ARRAY[OHLCVTimeSeriesTimeseriesItem]**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_ohlcv_periods_get**
-> ARRAY[OHLCVTimeseriesPeriod] v1_ohlcv_periods_get()
+> ARRAY[OHLCVTimeSeriesTimeseriesPeriod] v1_ohlcv_periods_get()
 
 List all periods
 
@@ -236,7 +236,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ARRAY[OHLCVTimeseriesPeriod]**](OHLCVTimeseriesPeriod.md)
+[**ARRAY[OHLCVTimeSeriesTimeseriesPeriod]**](OHLCVTimeSeriesTimeseriesPeriod.md)
 
 ### Authorization
 

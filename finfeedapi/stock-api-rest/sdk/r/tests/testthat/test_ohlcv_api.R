@@ -14,7 +14,7 @@ test_that("V1OhlcvExchangeExchangeIdHistoryGet", {
   # @param period_id character Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
   # @param time_start character Timeseries starting time in ISO 8601
   # @param time_end character Timeseries ending time in ISO 8601
-  # @return [array[OHLCVExchangeTimeseriesItem]]
+  # @return [array[OHLCVTimeSeriesExchangeTimeseriesItem]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -31,7 +31,7 @@ test_that("V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet", {
   # @param time_start character Timeseries starting time in ISO 8601 (optional)
   # @param time_end character Timeseries ending time in ISO 8601 (optional)
   # @param limit integer Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional)
-  # @return [array[OHLCVTimeseriesItem]]
+  # @return [array[OHLCVTimeSeriesTimeseriesItem]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -46,7 +46,7 @@ test_that("V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet", {
   # @param symbol_id character Symbol identifier of requested timeseries (from the Metadata -> Symbols)
   # @param period_id character Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
   # @param limit integer Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional)
-  # @return [array[OHLCVTimeseriesItem]]
+  # @return [array[OHLCVTimeSeriesTimeseriesItem]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -57,7 +57,7 @@ test_that("V1OhlcvPeriodsGet", {
   # base path: https://api-historical.stock.finfeedapi.com
   # List all periods
   # Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
-  # @return [array[OHLCVTimeseriesPeriod]]
+  # @return [array[OHLCVTimeSeriesTimeseriesPeriod]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")

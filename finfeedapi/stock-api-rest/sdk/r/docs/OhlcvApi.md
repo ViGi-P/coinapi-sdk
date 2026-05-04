@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **V1OhlcvExchangeExchangeIdHistoryGet**
-> array[OHLCVExchangeTimeseriesItem] V1OhlcvExchangeExchangeIdHistoryGet(exchange_id, period_id, time_start, time_end)
+> array[OHLCVTimeSeriesExchangeTimeseriesItem] V1OhlcvExchangeExchangeIdHistoryGet(exchange_id, period_id, time_start, time_end)
 
 Historical data by exchange
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[OHLCVExchangeTimeseriesItem]**](OHLCV.ExchangeTimeseriesItem.md)
+[**array[OHLCVTimeSeriesExchangeTimeseriesItem]**](OHLCVTimeSeries.ExchangeTimeseriesItem.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet**
-> array[OHLCVTimeseriesItem] V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchange_id, symbol_id, period_id, time_start = var.time_start, time_end = var.time_end, limit = 100)
+> array[OHLCVTimeSeriesTimeseriesItem] V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchange_id, symbol_id, period_id, time_start = var.time_start, time_end = var.time_end, limit = 100)
 
 Historical data
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[OHLCVTimeseriesItem]**](OHLCV.TimeseriesItem.md)
+[**array[OHLCVTimeSeriesTimeseriesItem]**](OHLCVTimeSeries.TimeseriesItem.md)
 
 ### Authorization
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet**
-> array[OHLCVTimeseriesItem] V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchange_id, symbol_id, period_id, limit = 100)
+> array[OHLCVTimeSeriesTimeseriesItem] V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchange_id, symbol_id, period_id, limit = 100)
 
 Latest data
 
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[OHLCVTimeseriesItem]**](OHLCV.TimeseriesItem.md)
+[**array[OHLCVTimeSeriesTimeseriesItem]**](OHLCVTimeSeries.TimeseriesItem.md)
 
 ### Authorization
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1OhlcvPeriodsGet**
-> array[OHLCVTimeseriesPeriod] V1OhlcvPeriodsGet()
+> array[OHLCVTimeSeriesTimeseriesPeriod] V1OhlcvPeriodsGet()
 
 List all periods
 
@@ -215,7 +215,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**array[OHLCVTimeseriesPeriod]**](OHLCV.TimeseriesPeriod.md)
+[**array[OHLCVTimeSeriesTimeseriesPeriod]**](OHLCVTimeSeries.TimeseriesPeriod.md)
 
 ### Authorization
 

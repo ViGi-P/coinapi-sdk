@@ -15,78 +15,78 @@
 
 
 module Api.Data exposing
-    ( AdminAdminMessageModel
-    , AdminAuctionInformationModel
-    , AdminOfficialPriceModel
-    , AdminOperationalHaltStatusModel
-    , AdminRetailLiquidityIndicatorModel
-    , AdminSecurityDirectoryModel
-    , AdminSecurityEventModel
-    , AdminShortSalePriceTestStatusModel
-    , AdminSystemEventModel
-    , AdminTradingStatusModel
-    , FinFeedAPIExchangeModel
+    ( FinFeedAPIExchangeModel
     , FinFeedAPISymbolModel
-    , Level1QuoteUpdateModel
-    , Level2PriceLevelUpdateModel
-    , Level3AddOrderModel
-    , Level3ClearBookModel
-    , Level3DeleteOrderModel
-    , Level3ExecutedOrderModel
-    , Level3ModifyOrderModel
-    , Level3OrderBookModel
-    , OHLCVExchangeTimeseriesItem
-    , OHLCVTimeseriesItem
-    , OHLCVTimeseriesPeriod
-    , TradeTradeModel
-    , encodeAdminAdminMessageModel
-    , encodeAdminAuctionInformationModel
-    , encodeAdminOfficialPriceModel
-    , encodeAdminOperationalHaltStatusModel
-    , encodeAdminRetailLiquidityIndicatorModel
-    , encodeAdminSecurityDirectoryModel
-    , encodeAdminSecurityEventModel
-    , encodeAdminShortSalePriceTestStatusModel
-    , encodeAdminSystemEventModel
-    , encodeAdminTradingStatusModel
+    , IEXPriceLevelUpdatePriceLevelUpdateModel
+    , IEXQuoteUpdateQuoteUpdateModel
+    , IEXSystemEventSystemEventModel
+    , IEXTradeTradeModel
+    , ModelsAddOrderModel
+    , ModelsAdminMessageModel
+    , ModelsAuctionInformationModel
+    , ModelsClearBookModel
+    , ModelsDeleteOrderModel
+    , ModelsExecutedOrderModel
+    , ModelsModifyOrderModel
+    , ModelsOfficialPriceModel
+    , ModelsOperationalHaltStatusModel
+    , ModelsOrderBookModel
+    , ModelsRetailLiquidityIndicatorModel
+    , ModelsSecurityDirectoryModel
+    , ModelsSecurityEventModel
+    , ModelsShortSalePriceTestStatusModel
+    , ModelsTradingStatusModel
+    , OHLCVTimeSeriesExchangeTimeseriesItem
+    , OHLCVTimeSeriesTimeseriesItem
+    , OHLCVTimeSeriesTimeseriesPeriod
     , encodeFinFeedAPIExchangeModel
     , encodeFinFeedAPISymbolModel
-    , encodeLevel1QuoteUpdateModel
-    , encodeLevel2PriceLevelUpdateModel
-    , encodeLevel3AddOrderModel
-    , encodeLevel3ClearBookModel
-    , encodeLevel3DeleteOrderModel
-    , encodeLevel3ExecutedOrderModel
-    , encodeLevel3ModifyOrderModel
-    , encodeLevel3OrderBookModel
-    , encodeOHLCVExchangeTimeseriesItem
-    , encodeOHLCVTimeseriesItem
-    , encodeOHLCVTimeseriesPeriod
-    , encodeTradeTradeModel
-    , adminAdminMessageModelDecoder
-    , adminAuctionInformationModelDecoder
-    , adminOfficialPriceModelDecoder
-    , adminOperationalHaltStatusModelDecoder
-    , adminRetailLiquidityIndicatorModelDecoder
-    , adminSecurityDirectoryModelDecoder
-    , adminSecurityEventModelDecoder
-    , adminShortSalePriceTestStatusModelDecoder
-    , adminSystemEventModelDecoder
-    , adminTradingStatusModelDecoder
+    , encodeIEXPriceLevelUpdatePriceLevelUpdateModel
+    , encodeIEXQuoteUpdateQuoteUpdateModel
+    , encodeIEXSystemEventSystemEventModel
+    , encodeIEXTradeTradeModel
+    , encodeModelsAddOrderModel
+    , encodeModelsAdminMessageModel
+    , encodeModelsAuctionInformationModel
+    , encodeModelsClearBookModel
+    , encodeModelsDeleteOrderModel
+    , encodeModelsExecutedOrderModel
+    , encodeModelsModifyOrderModel
+    , encodeModelsOfficialPriceModel
+    , encodeModelsOperationalHaltStatusModel
+    , encodeModelsOrderBookModel
+    , encodeModelsRetailLiquidityIndicatorModel
+    , encodeModelsSecurityDirectoryModel
+    , encodeModelsSecurityEventModel
+    , encodeModelsShortSalePriceTestStatusModel
+    , encodeModelsTradingStatusModel
+    , encodeOHLCVTimeSeriesExchangeTimeseriesItem
+    , encodeOHLCVTimeSeriesTimeseriesItem
+    , encodeOHLCVTimeSeriesTimeseriesPeriod
     , finFeedAPIExchangeModelDecoder
     , finFeedAPISymbolModelDecoder
-    , level1QuoteUpdateModelDecoder
-    , level2PriceLevelUpdateModelDecoder
-    , level3AddOrderModelDecoder
-    , level3ClearBookModelDecoder
-    , level3DeleteOrderModelDecoder
-    , level3ExecutedOrderModelDecoder
-    , level3ModifyOrderModelDecoder
-    , level3OrderBookModelDecoder
-    , oHLCVExchangeTimeseriesItemDecoder
-    , oHLCVTimeseriesItemDecoder
-    , oHLCVTimeseriesPeriodDecoder
-    , tradeTradeModelDecoder
+    , iEXPriceLevelUpdatePriceLevelUpdateModelDecoder
+    , iEXQuoteUpdateQuoteUpdateModelDecoder
+    , iEXSystemEventSystemEventModelDecoder
+    , iEXTradeTradeModelDecoder
+    , modelsAddOrderModelDecoder
+    , modelsAdminMessageModelDecoder
+    , modelsAuctionInformationModelDecoder
+    , modelsClearBookModelDecoder
+    , modelsDeleteOrderModelDecoder
+    , modelsExecutedOrderModelDecoder
+    , modelsModifyOrderModelDecoder
+    , modelsOfficialPriceModelDecoder
+    , modelsOperationalHaltStatusModelDecoder
+    , modelsOrderBookModelDecoder
+    , modelsRetailLiquidityIndicatorModelDecoder
+    , modelsSecurityDirectoryModelDecoder
+    , modelsSecurityEventModelDecoder
+    , modelsShortSalePriceTestStatusModelDecoder
+    , modelsTradingStatusModelDecoder
+    , oHLCVTimeSeriesExchangeTimeseriesItemDecoder
+    , oHLCVTimeSeriesTimeseriesItemDecoder
+    , oHLCVTimeSeriesTimeseriesPeriodDecoder
     )
 
 import Api
@@ -97,195 +97,6 @@ import Json.Encode
 
 
 -- MODEL
-
-
-{-| Represents the response DTO for IEX admin information, combining all symbol-based admin message types
--}
-type alias AdminAdminMessageModel =
-    { tradingStatus : Maybe AdminTradingStatusModel
-    , officialPrice : Maybe AdminOfficialPriceModel
-    , securityEvent : Maybe AdminSecurityEventModel
-    , auctionInformation : Maybe AdminAuctionInformationModel
-    , shortSalePriceTest : Maybe AdminShortSalePriceTestStatusModel
-    , operationalHaltStatus : Maybe AdminOperationalHaltStatusModel
-    , retailLiquidityIndicator : Maybe AdminRetailLiquidityIndicatorModel
-    , systemEvent : Maybe AdminSystemEventModel
-    , securityDirectory : Maybe AdminSecurityDirectoryModel
-    }
-
-
-{-| Represents the response DTO for auction information
--}
-type alias AdminAuctionInformationModel =
-    { symbol : Maybe String
-    , timestampNanos : Maybe Int
-    , timestamp : Maybe Posix
-    , auctionType : Maybe Int
-    , auctionTypeCode : Maybe String
-    , auctionTypeText : Maybe String
-    , isAuctionTypeOpening : Maybe Bool
-    , isAuctionTypeClosing : Maybe Bool
-    , isAuctionTypeIpo : Maybe Bool
-    , isAuctionTypeHalt : Maybe Bool
-    , isAuctionTypeVolatility : Maybe Bool
-    , pairedShares : Maybe Int
-    , referencePrice : Maybe Float
-    , indicativeClearingPrice : Maybe Float
-    , imbalanceShares : Maybe Int
-    , imbalanceSide : Maybe Int
-    , imbalanceSideCode : Maybe String
-    , imbalanceSideText : Maybe String
-    , isImbalanceSideBuy : Maybe Bool
-    , isImbalanceSideSell : Maybe Bool
-    , isImbalanceSideNone : Maybe Bool
-    , extensionNumber : Maybe Int
-    , scheduledAuctionTimeSeconds : Maybe Int
-    , scheduledAuctionTime : Maybe Posix
-    , auctionBookClearingPrice : Maybe Float
-    , collarReferencePrice : Maybe Float
-    , lowerAuctionCollar : Maybe Float
-    , upperAuctionCollar : Maybe Float
-    }
-
-
-{-| Represents the response DTO for official price information
--}
-type alias AdminOfficialPriceModel =
-    { symbol : Maybe String
-    , timestampNanos : Maybe Int
-    , timestamp : Maybe Posix
-    , priceType : Maybe Int
-    , priceTypeCode : Maybe String
-    , priceTypeText : Maybe String
-    , isPriceTypeOpening : Maybe Bool
-    , isPriceTypeClosing : Maybe Bool
-    , officialPrice : Maybe Float
-    }
-
-
-{-| Represents the response DTO for operational halt status information
--}
-type alias AdminOperationalHaltStatusModel =
-    { symbol : Maybe String
-    , timestampNanos : Maybe Int
-    , timestamp : Maybe Posix
-    , operationalHaltStatus : Maybe Int
-    , operationalHaltStatusCode : Maybe String
-    , operationalHaltStatusText : Maybe String
-    , isOperationallyHalted : Maybe Bool
-    , isNotOperationallyHalted : Maybe Bool
-    }
-
-
-{-| Represents the response DTO for retail liquidity indicator information
--}
-type alias AdminRetailLiquidityIndicatorModel =
-    { symbol : Maybe String
-    , timestampNanos : Maybe Int
-    , timestamp : Maybe Posix
-    , retailLiquidityIndicator : Maybe Int
-    , retailLiquidityIndicatorCode : Maybe String
-    , retailLiquidityIndicatorText : Maybe String
-    , isRetailIndicatorNotApplicable : Maybe Bool
-    , isRetailIndicatorBuyInterest : Maybe Bool
-    , isRetailIndicatorSellInterest : Maybe Bool
-    , isRetailIndicatorBuyAndSellInterest : Maybe Bool
-    }
-
-
-{-| Represents the response DTO for security directory information
--}
-type alias AdminSecurityDirectoryModel =
-    { symbol : Maybe String
-    , timestampNanos : Maybe Int
-    , timestamp : Maybe Posix
-    , flags : Maybe Int
-    , roundLotSize : Maybe Int
-    , adjustedPocPrice : Maybe Float
-    , luldTier : Maybe Int
-    , luldTierCode : Maybe String
-    , luldTierText : Maybe String
-    , isLuldTierNotApplicable : Maybe Bool
-    , isLuldTier1 : Maybe Bool
-    , isLuldTier2 : Maybe Bool
-    }
-
-
-{-| Represents the response DTO for security event information
--}
-type alias AdminSecurityEventModel =
-    { symbol : Maybe String
-    , timestampNanos : Maybe Int
-    , timestamp : Maybe Posix
-    , securityEvent : Maybe Int
-    , securityEventCode : Maybe String
-    , securityEventText : Maybe String
-    , isOpeningProcessComplete : Maybe Bool
-    , isClosingProcessComplete : Maybe Bool
-    }
-
-
-{-| Represents the response DTO for short sale price test status information
--}
-type alias AdminShortSalePriceTestStatusModel =
-    { symbol : Maybe String
-    , timestampNanos : Maybe Int
-    , timestamp : Maybe Posix
-    , shortSalePriceTestStatus : Maybe Int
-    , shortSalePriceTestStatusCode : Maybe String
-    , shortSalePriceTestStatusText : Maybe String
-    , isShortSalePriceTestNotInEffect : Maybe Bool
-    , isShortSalePriceTestInEffect : Maybe Bool
-    , detail : Maybe Int
-    , detailCode : Maybe String
-    , detailText : Maybe String
-    , isDetailNoPriceTest : Maybe Bool
-    , isDetailActivated : Maybe Bool
-    , isDetailContinued : Maybe Bool
-    , isDetailDeactivated : Maybe Bool
-    , isDetailNotAvailable : Maybe Bool
-    }
-
-
-{-| Represents the response DTO for system event information
--}
-type alias AdminSystemEventModel =
-    { timestampNanos : Maybe Int
-    , timestamp : Maybe Posix
-    , systemEvent : Maybe Int
-    , systemEventCode : Maybe String
-    , systemEventText : Maybe String
-    , isSystemEventStartOfMessages : Maybe Bool
-    , isSystemEventStartOfSystemHours : Maybe Bool
-    , isSystemEventStartOfRegularMarketHours : Maybe Bool
-    , isSystemEventEndOfRegularMarketHours : Maybe Bool
-    , isSystemEventEndOfSystemHours : Maybe Bool
-    , isSystemEventEndOfMessages : Maybe Bool
-    }
-
-
-{-| Represents the response DTO for trading status information
--}
-type alias AdminTradingStatusModel =
-    { symbol : Maybe String
-    , timestampNanos : Maybe Int
-    , timestamp : Maybe Posix
-    , isTradingLive : Maybe Bool
-    , isTradingHalted : Maybe Bool
-    , isTradingInOrderAcceptancePeriod : Maybe Bool
-    , isTradingPaused : Maybe Bool
-    , isReasonHaltNewsPending : Maybe Bool
-    , isReasonIpoNotYetTrading : Maybe Bool
-    , isReasonIpoDeferred : Maybe Bool
-    , isReasonHaltNewsDissemination : Maybe Bool
-    , isReasonIpoOrderAcceptancePeriod : Maybe Bool
-    , isReasonIpoPreLaunchPeriod : Maybe Bool
-    , isReasonMarketWideCircuitBreakerLevel1 : Maybe Bool
-    , isReasonMarketWideCircuitBreakerLevel2 : Maybe Bool
-    , isReasonMarketWideCircuitBreakerLevel3 : Maybe Bool
-    , isReasonNotApplicable : Maybe Bool
-    , isReasonNotAvailable : Maybe Bool
-    }
 
 
 type alias FinFeedAPIExchangeModel =
@@ -334,9 +145,22 @@ type alias FinFeedAPISymbolModel =
     }
 
 
+{-| Represents the response DTO for price level update information
+-}
+type alias IEXPriceLevelUpdatePriceLevelUpdateModel =
+    { symbol : Maybe String
+    , timestampNanos : Maybe Int
+    , timestamp : Maybe Posix
+    , isSideBuy : Maybe Bool
+    , isEventProcessingComplete : Maybe Bool
+    , size : Maybe Int
+    , price : Maybe Float
+    }
+
+
 {-| Represents the response DTO for quote update information
 -}
-type alias Level1QuoteUpdateModel =
+type alias IEXQuoteUpdateQuoteUpdateModel =
     { symbol : Maybe String
     , timestampNanos : Maybe Int
     , timestamp : Maybe Posix
@@ -349,22 +173,44 @@ type alias Level1QuoteUpdateModel =
     }
 
 
-{-| Represents the response DTO for price level update information
+{-| Represents the response DTO for system event information
 -}
-type alias Level2PriceLevelUpdateModel =
-    { symbol : Maybe String
+type alias IEXSystemEventSystemEventModel =
+    { timestampNanos : Maybe Int
+    , timestamp : Maybe Posix
+    , systemEvent : Maybe Int
+    , systemEventCode : Maybe String
+    , systemEventText : Maybe String
+    , isSystemEventStartOfMessages : Maybe Bool
+    , isSystemEventStartOfSystemHours : Maybe Bool
+    , isSystemEventStartOfRegularMarketHours : Maybe Bool
+    , isSystemEventEndOfRegularMarketHours : Maybe Bool
+    , isSystemEventEndOfSystemHours : Maybe Bool
+    , isSystemEventEndOfMessages : Maybe Bool
+    }
+
+
+{-| Represents the response DTO for a single trade event (report or break).
+-}
+type alias IEXTradeTradeModel =
+    { isTradeBreak : Maybe Bool
+    , symbol : Maybe String
     , timestampNanos : Maybe Int
     , timestamp : Maybe Posix
-    , isSideBuy : Maybe Bool
-    , isEventProcessingComplete : Maybe Bool
     , size : Maybe Int
     , price : Maybe Float
+    , tradeId : Maybe Int
+    , isIntermarketSweep : Maybe Bool
+    , isExtendedHoursTrade : Maybe Bool
+    , isOddLotTrade : Maybe Bool
+    , isTradeThroughExempt : Maybe Bool
+    , isSinglePriceCrossTrade : Maybe Bool
     }
 
 
 {-| Represents the response DTO for add order information
 -}
-type alias Level3AddOrderModel =
+type alias ModelsAddOrderModel =
     { symbol : Maybe String
     , timestampNanos : Maybe Int
     , timestamp : Maybe Posix
@@ -375,9 +221,58 @@ type alias Level3AddOrderModel =
     }
 
 
+{-| Represents the response DTO for IEX admin information, combining all symbol-based admin message types
+-}
+type alias ModelsAdminMessageModel =
+    { tradingStatus : Maybe ModelsTradingStatusModel
+    , officialPrice : Maybe ModelsOfficialPriceModel
+    , securityEvent : Maybe ModelsSecurityEventModel
+    , auctionInformation : Maybe ModelsAuctionInformationModel
+    , shortSalePriceTest : Maybe ModelsShortSalePriceTestStatusModel
+    , operationalHaltStatus : Maybe ModelsOperationalHaltStatusModel
+    , retailLiquidityIndicator : Maybe ModelsRetailLiquidityIndicatorModel
+    , systemEvent : Maybe IEXSystemEventSystemEventModel
+    , securityDirectory : Maybe ModelsSecurityDirectoryModel
+    }
+
+
+{-| Represents the response DTO for auction information
+-}
+type alias ModelsAuctionInformationModel =
+    { symbol : Maybe String
+    , timestampNanos : Maybe Int
+    , timestamp : Maybe Posix
+    , auctionType : Maybe Int
+    , auctionTypeCode : Maybe String
+    , auctionTypeText : Maybe String
+    , isAuctionTypeOpening : Maybe Bool
+    , isAuctionTypeClosing : Maybe Bool
+    , isAuctionTypeIpo : Maybe Bool
+    , isAuctionTypeHalt : Maybe Bool
+    , isAuctionTypeVolatility : Maybe Bool
+    , pairedShares : Maybe Int
+    , referencePrice : Maybe Float
+    , indicativeClearingPrice : Maybe Float
+    , imbalanceShares : Maybe Int
+    , imbalanceSide : Maybe Int
+    , imbalanceSideCode : Maybe String
+    , imbalanceSideText : Maybe String
+    , isImbalanceSideBuy : Maybe Bool
+    , isImbalanceSideSell : Maybe Bool
+    , isImbalanceSideNone : Maybe Bool
+    , extensionNumber : Maybe Int
+    , scheduledAuctionTimeSeconds : Maybe Int
+    , scheduledAuctionTime : Maybe Posix
+    , auctionBookClearingPrice : Maybe Float
+    , collarReferencePrice : Maybe Float
+    , lowerAuctionCollar : Maybe Float
+    , upperAuctionCollar : Maybe Float
+    }
+
+
 {-| Represents the response DTO for clear book information
 -}
-type alias Level3ClearBookModel =
+type alias ModelsClearBookModel =
     { symbol : Maybe String
     , timestampNanos : Maybe Int
     , timestamp : Maybe Posix
@@ -386,7 +281,7 @@ type alias Level3ClearBookModel =
 
 {-| Represents the response DTO for order delete information
 -}
-type alias Level3DeleteOrderModel =
+type alias ModelsDeleteOrderModel =
     { symbol : Maybe String
     , timestampNanos : Maybe Int
     , timestamp : Maybe Posix
@@ -396,7 +291,7 @@ type alias Level3DeleteOrderModel =
 
 {-| Represents the response DTO for order executed information
 -}
-type alias Level3ExecutedOrderModel =
+type alias ModelsExecutedOrderModel =
     { symbol : Maybe String
     , timestampNanos : Maybe Int
     , timestamp : Maybe Posix
@@ -415,7 +310,7 @@ type alias Level3ExecutedOrderModel =
 
 {-| Represents the response DTO for order modify information
 -}
-type alias Level3ModifyOrderModel =
+type alias ModelsModifyOrderModel =
     { symbol : Maybe String
     , timestampNanos : Maybe Int
     , timestamp : Maybe Posix
@@ -426,20 +321,143 @@ type alias Level3ModifyOrderModel =
     }
 
 
+{-| Represents the response DTO for official price information
+-}
+type alias ModelsOfficialPriceModel =
+    { symbol : Maybe String
+    , timestampNanos : Maybe Int
+    , timestamp : Maybe Posix
+    , priceType : Maybe Int
+    , priceTypeCode : Maybe String
+    , priceTypeText : Maybe String
+    , isPriceTypeOpening : Maybe Bool
+    , isPriceTypeClosing : Maybe Bool
+    , officialPrice : Maybe Float
+    }
+
+
+{-| Represents the response DTO for operational halt status information
+-}
+type alias ModelsOperationalHaltStatusModel =
+    { symbol : Maybe String
+    , timestampNanos : Maybe Int
+    , timestamp : Maybe Posix
+    , operationalHaltStatus : Maybe Int
+    , operationalHaltStatusCode : Maybe String
+    , operationalHaltStatusText : Maybe String
+    , isOperationallyHalted : Maybe Bool
+    , isNotOperationallyHalted : Maybe Bool
+    }
+
+
 {-| Represents the response DTO for Level-3 order book information
 -}
-type alias Level3OrderBookModel =
-    { addOrder : Maybe Level3AddOrderModel
-    , deleteOrder : Maybe Level3DeleteOrderModel
-    , modifyOrder : Maybe Level3ModifyOrderModel
-    , executedOrder : Maybe Level3ExecutedOrderModel
-    , clearBook : Maybe Level3ClearBookModel
+type alias ModelsOrderBookModel =
+    { addOrder : Maybe ModelsAddOrderModel
+    , deleteOrder : Maybe ModelsDeleteOrderModel
+    , modifyOrder : Maybe ModelsModifyOrderModel
+    , executedOrder : Maybe ModelsExecutedOrderModel
+    , clearBook : Maybe ModelsClearBookModel
+    }
+
+
+{-| Represents the response DTO for retail liquidity indicator information
+-}
+type alias ModelsRetailLiquidityIndicatorModel =
+    { symbol : Maybe String
+    , timestampNanos : Maybe Int
+    , timestamp : Maybe Posix
+    , retailLiquidityIndicator : Maybe Int
+    , retailLiquidityIndicatorCode : Maybe String
+    , retailLiquidityIndicatorText : Maybe String
+    , isRetailIndicatorNotApplicable : Maybe Bool
+    , isRetailIndicatorBuyInterest : Maybe Bool
+    , isRetailIndicatorSellInterest : Maybe Bool
+    , isRetailIndicatorBuyAndSellInterest : Maybe Bool
+    }
+
+
+{-| Represents the response DTO for security directory information
+-}
+type alias ModelsSecurityDirectoryModel =
+    { symbol : Maybe String
+    , timestampNanos : Maybe Int
+    , timestamp : Maybe Posix
+    , flags : Maybe Int
+    , roundLotSize : Maybe Int
+    , adjustedPocPrice : Maybe Float
+    , luldTier : Maybe Int
+    , luldTierCode : Maybe String
+    , luldTierText : Maybe String
+    , isLuldTierNotApplicable : Maybe Bool
+    , isLuldTier1 : Maybe Bool
+    , isLuldTier2 : Maybe Bool
+    }
+
+
+{-| Represents the response DTO for security event information
+-}
+type alias ModelsSecurityEventModel =
+    { symbol : Maybe String
+    , timestampNanos : Maybe Int
+    , timestamp : Maybe Posix
+    , securityEvent : Maybe Int
+    , securityEventCode : Maybe String
+    , securityEventText : Maybe String
+    , isOpeningProcessComplete : Maybe Bool
+    , isClosingProcessComplete : Maybe Bool
+    }
+
+
+{-| Represents the response DTO for short sale price test status information
+-}
+type alias ModelsShortSalePriceTestStatusModel =
+    { symbol : Maybe String
+    , timestampNanos : Maybe Int
+    , timestamp : Maybe Posix
+    , shortSalePriceTestStatus : Maybe Int
+    , shortSalePriceTestStatusCode : Maybe String
+    , shortSalePriceTestStatusText : Maybe String
+    , isShortSalePriceTestNotInEffect : Maybe Bool
+    , isShortSalePriceTestInEffect : Maybe Bool
+    , detail : Maybe Int
+    , detailCode : Maybe String
+    , detailText : Maybe String
+    , isDetailNoPriceTest : Maybe Bool
+    , isDetailActivated : Maybe Bool
+    , isDetailContinued : Maybe Bool
+    , isDetailDeactivated : Maybe Bool
+    , isDetailNotAvailable : Maybe Bool
+    }
+
+
+{-| Represents the response DTO for trading status information
+-}
+type alias ModelsTradingStatusModel =
+    { symbol : Maybe String
+    , timestampNanos : Maybe Int
+    , timestamp : Maybe Posix
+    , isTradingLive : Maybe Bool
+    , isTradingHalted : Maybe Bool
+    , isTradingInOrderAcceptancePeriod : Maybe Bool
+    , isTradingPaused : Maybe Bool
+    , isReasonHaltNewsPending : Maybe Bool
+    , isReasonIpoNotYetTrading : Maybe Bool
+    , isReasonIpoDeferred : Maybe Bool
+    , isReasonHaltNewsDissemination : Maybe Bool
+    , isReasonIpoOrderAcceptancePeriod : Maybe Bool
+    , isReasonIpoPreLaunchPeriod : Maybe Bool
+    , isReasonMarketWideCircuitBreakerLevel1 : Maybe Bool
+    , isReasonMarketWideCircuitBreakerLevel2 : Maybe Bool
+    , isReasonMarketWideCircuitBreakerLevel3 : Maybe Bool
+    , isReasonNotApplicable : Maybe Bool
+    , isReasonNotAvailable : Maybe Bool
     }
 
 
 {-| Represents a timeseries item with price and volume information.
 -}
-type alias OHLCVExchangeTimeseriesItem =
+type alias OHLCVTimeSeriesExchangeTimeseriesItem =
     { timePeriodStart : Maybe Posix
     , timePeriodEnd : Maybe Posix
     , timeOpen : Maybe Posix
@@ -456,7 +474,7 @@ type alias OHLCVExchangeTimeseriesItem =
 
 {-| Represents a timeseries item with price and volume information.
 -}
-type alias OHLCVTimeseriesItem =
+type alias OHLCVTimeSeriesTimeseriesItem =
     { timePeriodStart : Maybe Posix
     , timePeriodEnd : Maybe Posix
     , timeOpen : Maybe Posix
@@ -472,7 +490,7 @@ type alias OHLCVTimeseriesItem =
 
 {-| Represents a timeseries period used in exchange rate data.
 -}
-type alias OHLCVTimeseriesPeriod =
+type alias OHLCVTimeSeriesTimeseriesPeriod =
     { periodId : Maybe String
     , lengthSeconds : Maybe Int
     , lengthMonths : Maybe Int
@@ -482,344 +500,7 @@ type alias OHLCVTimeseriesPeriod =
     }
 
 
-{-| Represents the response DTO for a single trade event (report or break).
--}
-type alias TradeTradeModel =
-    { isTradeBreak : Maybe Bool
-    , symbol : Maybe String
-    , timestampNanos : Maybe Int
-    , timestamp : Maybe Posix
-    , size : Maybe Int
-    , price : Maybe Float
-    , tradeId : Maybe Int
-    , isIntermarketSweep : Maybe Bool
-    , isExtendedHoursTrade : Maybe Bool
-    , isOddLotTrade : Maybe Bool
-    , isTradeThroughExempt : Maybe Bool
-    , isSinglePriceCrossTrade : Maybe Bool
-    }
-
-
 -- ENCODER
-
-
-encodeAdminAdminMessageModel : AdminAdminMessageModel -> Json.Encode.Value
-encodeAdminAdminMessageModel =
-    encodeObject << encodeAdminAdminMessageModelPairs
-
-
-encodeAdminAdminMessageModelWithTag : ( String, String ) -> AdminAdminMessageModel -> Json.Encode.Value
-encodeAdminAdminMessageModelWithTag (tagField, tag) model =
-    encodeObject (encodeAdminAdminMessageModelPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeAdminAdminMessageModelPairs : AdminAdminMessageModel -> List EncodedField
-encodeAdminAdminMessageModelPairs model =
-    let
-        pairs =
-            [ maybeEncode "trading_status" encodeAdminTradingStatusModel model.tradingStatus
-            , maybeEncode "official_price" encodeAdminOfficialPriceModel model.officialPrice
-            , maybeEncode "security_event" encodeAdminSecurityEventModel model.securityEvent
-            , maybeEncode "auction_information" encodeAdminAuctionInformationModel model.auctionInformation
-            , maybeEncode "short_sale_price_test" encodeAdminShortSalePriceTestStatusModel model.shortSalePriceTest
-            , maybeEncode "operational_halt_status" encodeAdminOperationalHaltStatusModel model.operationalHaltStatus
-            , maybeEncode "retail_liquidity_indicator" encodeAdminRetailLiquidityIndicatorModel model.retailLiquidityIndicator
-            , maybeEncode "system_event" encodeAdminSystemEventModel model.systemEvent
-            , maybeEncode "security_directory" encodeAdminSecurityDirectoryModel model.securityDirectory
-            ]
-    in
-    pairs
-
-
-encodeAdminAuctionInformationModel : AdminAuctionInformationModel -> Json.Encode.Value
-encodeAdminAuctionInformationModel =
-    encodeObject << encodeAdminAuctionInformationModelPairs
-
-
-encodeAdminAuctionInformationModelWithTag : ( String, String ) -> AdminAuctionInformationModel -> Json.Encode.Value
-encodeAdminAuctionInformationModelWithTag (tagField, tag) model =
-    encodeObject (encodeAdminAuctionInformationModelPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeAdminAuctionInformationModelPairs : AdminAuctionInformationModel -> List EncodedField
-encodeAdminAuctionInformationModelPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
-            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
-            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
-            , maybeEncode "auction_type" Json.Encode.int model.auctionType
-            , maybeEncodeNullable "auction_type_code" Json.Encode.string model.auctionTypeCode
-            , maybeEncodeNullable "auction_type_text" Json.Encode.string model.auctionTypeText
-            , maybeEncode "is_auction_type_opening" Json.Encode.bool model.isAuctionTypeOpening
-            , maybeEncode "is_auction_type_closing" Json.Encode.bool model.isAuctionTypeClosing
-            , maybeEncode "is_auction_type_ipo" Json.Encode.bool model.isAuctionTypeIpo
-            , maybeEncode "is_auction_type_halt" Json.Encode.bool model.isAuctionTypeHalt
-            , maybeEncode "is_auction_type_volatility" Json.Encode.bool model.isAuctionTypeVolatility
-            , maybeEncode "paired_shares" Json.Encode.int model.pairedShares
-            , maybeEncode "reference_price" Json.Encode.float model.referencePrice
-            , maybeEncode "indicative_clearing_price" Json.Encode.float model.indicativeClearingPrice
-            , maybeEncode "imbalance_shares" Json.Encode.int model.imbalanceShares
-            , maybeEncode "imbalance_side" Json.Encode.int model.imbalanceSide
-            , maybeEncodeNullable "imbalance_side_code" Json.Encode.string model.imbalanceSideCode
-            , maybeEncodeNullable "imbalance_side_text" Json.Encode.string model.imbalanceSideText
-            , maybeEncode "is_imbalance_side_buy" Json.Encode.bool model.isImbalanceSideBuy
-            , maybeEncode "is_imbalance_side_sell" Json.Encode.bool model.isImbalanceSideSell
-            , maybeEncode "is_imbalance_side_none" Json.Encode.bool model.isImbalanceSideNone
-            , maybeEncode "extension_number" Json.Encode.int model.extensionNumber
-            , maybeEncode "scheduled_auction_time_seconds" Json.Encode.int model.scheduledAuctionTimeSeconds
-            , maybeEncode "scheduled_auction_time" Api.Time.encodeDateTime model.scheduledAuctionTime
-            , maybeEncode "auction_book_clearing_price" Json.Encode.float model.auctionBookClearingPrice
-            , maybeEncode "collar_reference_price" Json.Encode.float model.collarReferencePrice
-            , maybeEncode "lower_auction_collar" Json.Encode.float model.lowerAuctionCollar
-            , maybeEncode "upper_auction_collar" Json.Encode.float model.upperAuctionCollar
-            ]
-    in
-    pairs
-
-
-encodeAdminOfficialPriceModel : AdminOfficialPriceModel -> Json.Encode.Value
-encodeAdminOfficialPriceModel =
-    encodeObject << encodeAdminOfficialPriceModelPairs
-
-
-encodeAdminOfficialPriceModelWithTag : ( String, String ) -> AdminOfficialPriceModel -> Json.Encode.Value
-encodeAdminOfficialPriceModelWithTag (tagField, tag) model =
-    encodeObject (encodeAdminOfficialPriceModelPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeAdminOfficialPriceModelPairs : AdminOfficialPriceModel -> List EncodedField
-encodeAdminOfficialPriceModelPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
-            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
-            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
-            , maybeEncode "price_type" Json.Encode.int model.priceType
-            , maybeEncodeNullable "price_type_code" Json.Encode.string model.priceTypeCode
-            , maybeEncodeNullable "price_type_text" Json.Encode.string model.priceTypeText
-            , maybeEncode "is_price_type_opening" Json.Encode.bool model.isPriceTypeOpening
-            , maybeEncode "is_price_type_closing" Json.Encode.bool model.isPriceTypeClosing
-            , maybeEncode "official_price" Json.Encode.float model.officialPrice
-            ]
-    in
-    pairs
-
-
-encodeAdminOperationalHaltStatusModel : AdminOperationalHaltStatusModel -> Json.Encode.Value
-encodeAdminOperationalHaltStatusModel =
-    encodeObject << encodeAdminOperationalHaltStatusModelPairs
-
-
-encodeAdminOperationalHaltStatusModelWithTag : ( String, String ) -> AdminOperationalHaltStatusModel -> Json.Encode.Value
-encodeAdminOperationalHaltStatusModelWithTag (tagField, tag) model =
-    encodeObject (encodeAdminOperationalHaltStatusModelPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeAdminOperationalHaltStatusModelPairs : AdminOperationalHaltStatusModel -> List EncodedField
-encodeAdminOperationalHaltStatusModelPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
-            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
-            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
-            , maybeEncode "operational_halt_status" Json.Encode.int model.operationalHaltStatus
-            , maybeEncodeNullable "operational_halt_status_code" Json.Encode.string model.operationalHaltStatusCode
-            , maybeEncodeNullable "operational_halt_status_text" Json.Encode.string model.operationalHaltStatusText
-            , maybeEncode "is_operationally_halted" Json.Encode.bool model.isOperationallyHalted
-            , maybeEncode "is_not_operationally_halted" Json.Encode.bool model.isNotOperationallyHalted
-            ]
-    in
-    pairs
-
-
-encodeAdminRetailLiquidityIndicatorModel : AdminRetailLiquidityIndicatorModel -> Json.Encode.Value
-encodeAdminRetailLiquidityIndicatorModel =
-    encodeObject << encodeAdminRetailLiquidityIndicatorModelPairs
-
-
-encodeAdminRetailLiquidityIndicatorModelWithTag : ( String, String ) -> AdminRetailLiquidityIndicatorModel -> Json.Encode.Value
-encodeAdminRetailLiquidityIndicatorModelWithTag (tagField, tag) model =
-    encodeObject (encodeAdminRetailLiquidityIndicatorModelPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeAdminRetailLiquidityIndicatorModelPairs : AdminRetailLiquidityIndicatorModel -> List EncodedField
-encodeAdminRetailLiquidityIndicatorModelPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
-            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
-            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
-            , maybeEncode "retail_liquidity_indicator" Json.Encode.int model.retailLiquidityIndicator
-            , maybeEncodeNullable "retail_liquidity_indicator_code" Json.Encode.string model.retailLiquidityIndicatorCode
-            , maybeEncodeNullable "retail_liquidity_indicator_text" Json.Encode.string model.retailLiquidityIndicatorText
-            , maybeEncode "is_retail_indicator_not_applicable" Json.Encode.bool model.isRetailIndicatorNotApplicable
-            , maybeEncode "is_retail_indicator_buy_interest" Json.Encode.bool model.isRetailIndicatorBuyInterest
-            , maybeEncode "is_retail_indicator_sell_interest" Json.Encode.bool model.isRetailIndicatorSellInterest
-            , maybeEncode "is_retail_indicator_buy_and_sell_interest" Json.Encode.bool model.isRetailIndicatorBuyAndSellInterest
-            ]
-    in
-    pairs
-
-
-encodeAdminSecurityDirectoryModel : AdminSecurityDirectoryModel -> Json.Encode.Value
-encodeAdminSecurityDirectoryModel =
-    encodeObject << encodeAdminSecurityDirectoryModelPairs
-
-
-encodeAdminSecurityDirectoryModelWithTag : ( String, String ) -> AdminSecurityDirectoryModel -> Json.Encode.Value
-encodeAdminSecurityDirectoryModelWithTag (tagField, tag) model =
-    encodeObject (encodeAdminSecurityDirectoryModelPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeAdminSecurityDirectoryModelPairs : AdminSecurityDirectoryModel -> List EncodedField
-encodeAdminSecurityDirectoryModelPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
-            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
-            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
-            , maybeEncode "flags" Json.Encode.int model.flags
-            , maybeEncode "round_lot_size" Json.Encode.int model.roundLotSize
-            , maybeEncode "adjusted_poc_price" Json.Encode.float model.adjustedPocPrice
-            , maybeEncode "luld_tier" Json.Encode.int model.luldTier
-            , maybeEncodeNullable "luld_tier_code" Json.Encode.string model.luldTierCode
-            , maybeEncodeNullable "luld_tier_text" Json.Encode.string model.luldTierText
-            , maybeEncode "is_luld_tier_not_applicable" Json.Encode.bool model.isLuldTierNotApplicable
-            , maybeEncode "is_luld_tier1" Json.Encode.bool model.isLuldTier1
-            , maybeEncode "is_luld_tier2" Json.Encode.bool model.isLuldTier2
-            ]
-    in
-    pairs
-
-
-encodeAdminSecurityEventModel : AdminSecurityEventModel -> Json.Encode.Value
-encodeAdminSecurityEventModel =
-    encodeObject << encodeAdminSecurityEventModelPairs
-
-
-encodeAdminSecurityEventModelWithTag : ( String, String ) -> AdminSecurityEventModel -> Json.Encode.Value
-encodeAdminSecurityEventModelWithTag (tagField, tag) model =
-    encodeObject (encodeAdminSecurityEventModelPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeAdminSecurityEventModelPairs : AdminSecurityEventModel -> List EncodedField
-encodeAdminSecurityEventModelPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
-            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
-            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
-            , maybeEncode "security_event" Json.Encode.int model.securityEvent
-            , maybeEncodeNullable "security_event_code" Json.Encode.string model.securityEventCode
-            , maybeEncodeNullable "security_event_text" Json.Encode.string model.securityEventText
-            , maybeEncode "is_opening_process_complete" Json.Encode.bool model.isOpeningProcessComplete
-            , maybeEncode "is_closing_process_complete" Json.Encode.bool model.isClosingProcessComplete
-            ]
-    in
-    pairs
-
-
-encodeAdminShortSalePriceTestStatusModel : AdminShortSalePriceTestStatusModel -> Json.Encode.Value
-encodeAdminShortSalePriceTestStatusModel =
-    encodeObject << encodeAdminShortSalePriceTestStatusModelPairs
-
-
-encodeAdminShortSalePriceTestStatusModelWithTag : ( String, String ) -> AdminShortSalePriceTestStatusModel -> Json.Encode.Value
-encodeAdminShortSalePriceTestStatusModelWithTag (tagField, tag) model =
-    encodeObject (encodeAdminShortSalePriceTestStatusModelPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeAdminShortSalePriceTestStatusModelPairs : AdminShortSalePriceTestStatusModel -> List EncodedField
-encodeAdminShortSalePriceTestStatusModelPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
-            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
-            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
-            , maybeEncode "short_sale_price_test_status" Json.Encode.int model.shortSalePriceTestStatus
-            , maybeEncodeNullable "short_sale_price_test_status_code" Json.Encode.string model.shortSalePriceTestStatusCode
-            , maybeEncodeNullable "short_sale_price_test_status_text" Json.Encode.string model.shortSalePriceTestStatusText
-            , maybeEncode "is_short_sale_price_test_not_in_effect" Json.Encode.bool model.isShortSalePriceTestNotInEffect
-            , maybeEncode "is_short_sale_price_test_in_effect" Json.Encode.bool model.isShortSalePriceTestInEffect
-            , maybeEncode "detail" Json.Encode.int model.detail
-            , maybeEncodeNullable "detail_code" Json.Encode.string model.detailCode
-            , maybeEncodeNullable "detail_text" Json.Encode.string model.detailText
-            , maybeEncode "is_detail_no_price_test" Json.Encode.bool model.isDetailNoPriceTest
-            , maybeEncode "is_detail_activated" Json.Encode.bool model.isDetailActivated
-            , maybeEncode "is_detail_continued" Json.Encode.bool model.isDetailContinued
-            , maybeEncode "is_detail_deactivated" Json.Encode.bool model.isDetailDeactivated
-            , maybeEncode "is_detail_not_available" Json.Encode.bool model.isDetailNotAvailable
-            ]
-    in
-    pairs
-
-
-encodeAdminSystemEventModel : AdminSystemEventModel -> Json.Encode.Value
-encodeAdminSystemEventModel =
-    encodeObject << encodeAdminSystemEventModelPairs
-
-
-encodeAdminSystemEventModelWithTag : ( String, String ) -> AdminSystemEventModel -> Json.Encode.Value
-encodeAdminSystemEventModelWithTag (tagField, tag) model =
-    encodeObject (encodeAdminSystemEventModelPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeAdminSystemEventModelPairs : AdminSystemEventModel -> List EncodedField
-encodeAdminSystemEventModelPairs model =
-    let
-        pairs =
-            [ maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
-            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
-            , maybeEncode "system_event" Json.Encode.int model.systemEvent
-            , maybeEncodeNullable "system_event_code" Json.Encode.string model.systemEventCode
-            , maybeEncodeNullable "system_event_text" Json.Encode.string model.systemEventText
-            , maybeEncode "is_system_event_start_of_messages" Json.Encode.bool model.isSystemEventStartOfMessages
-            , maybeEncode "is_system_event_start_of_system_hours" Json.Encode.bool model.isSystemEventStartOfSystemHours
-            , maybeEncode "is_system_event_start_of_regular_market_hours" Json.Encode.bool model.isSystemEventStartOfRegularMarketHours
-            , maybeEncode "is_system_event_end_of_regular_market_hours" Json.Encode.bool model.isSystemEventEndOfRegularMarketHours
-            , maybeEncode "is_system_event_end_of_system_hours" Json.Encode.bool model.isSystemEventEndOfSystemHours
-            , maybeEncode "is_system_event_end_of_messages" Json.Encode.bool model.isSystemEventEndOfMessages
-            ]
-    in
-    pairs
-
-
-encodeAdminTradingStatusModel : AdminTradingStatusModel -> Json.Encode.Value
-encodeAdminTradingStatusModel =
-    encodeObject << encodeAdminTradingStatusModelPairs
-
-
-encodeAdminTradingStatusModelWithTag : ( String, String ) -> AdminTradingStatusModel -> Json.Encode.Value
-encodeAdminTradingStatusModelWithTag (tagField, tag) model =
-    encodeObject (encodeAdminTradingStatusModelPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeAdminTradingStatusModelPairs : AdminTradingStatusModel -> List EncodedField
-encodeAdminTradingStatusModelPairs model =
-    let
-        pairs =
-            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
-            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
-            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
-            , maybeEncode "is_trading_live" Json.Encode.bool model.isTradingLive
-            , maybeEncode "is_trading_halted" Json.Encode.bool model.isTradingHalted
-            , maybeEncode "is_trading_in_order_acceptance_period" Json.Encode.bool model.isTradingInOrderAcceptancePeriod
-            , maybeEncode "is_trading_paused" Json.Encode.bool model.isTradingPaused
-            , maybeEncode "is_reason_halt_news_pending" Json.Encode.bool model.isReasonHaltNewsPending
-            , maybeEncode "is_reason_ipo_not_yet_trading" Json.Encode.bool model.isReasonIpoNotYetTrading
-            , maybeEncode "is_reason_ipo_deferred" Json.Encode.bool model.isReasonIpoDeferred
-            , maybeEncode "is_reason_halt_news_dissemination" Json.Encode.bool model.isReasonHaltNewsDissemination
-            , maybeEncode "is_reason_ipo_order_acceptance_period" Json.Encode.bool model.isReasonIpoOrderAcceptancePeriod
-            , maybeEncode "is_reason_ipo_pre_launch_period" Json.Encode.bool model.isReasonIpoPreLaunchPeriod
-            , maybeEncode "is_reason_market_wide_circuit_breaker_level1" Json.Encode.bool model.isReasonMarketWideCircuitBreakerLevel1
-            , maybeEncode "is_reason_market_wide_circuit_breaker_level2" Json.Encode.bool model.isReasonMarketWideCircuitBreakerLevel2
-            , maybeEncode "is_reason_market_wide_circuit_breaker_level3" Json.Encode.bool model.isReasonMarketWideCircuitBreakerLevel3
-            , maybeEncode "is_reason_not_applicable" Json.Encode.bool model.isReasonNotApplicable
-            , maybeEncode "is_reason_not_available" Json.Encode.bool model.isReasonNotAvailable
-            ]
-    in
-    pairs
 
 
 encodeFinFeedAPIExchangeModel : FinFeedAPIExchangeModel -> Json.Encode.Value
@@ -898,18 +579,44 @@ encodeFinFeedAPISymbolModelPairs model =
     pairs
 
 
-encodeLevel1QuoteUpdateModel : Level1QuoteUpdateModel -> Json.Encode.Value
-encodeLevel1QuoteUpdateModel =
-    encodeObject << encodeLevel1QuoteUpdateModelPairs
+encodeIEXPriceLevelUpdatePriceLevelUpdateModel : IEXPriceLevelUpdatePriceLevelUpdateModel -> Json.Encode.Value
+encodeIEXPriceLevelUpdatePriceLevelUpdateModel =
+    encodeObject << encodeIEXPriceLevelUpdatePriceLevelUpdateModelPairs
 
 
-encodeLevel1QuoteUpdateModelWithTag : ( String, String ) -> Level1QuoteUpdateModel -> Json.Encode.Value
-encodeLevel1QuoteUpdateModelWithTag (tagField, tag) model =
-    encodeObject (encodeLevel1QuoteUpdateModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+encodeIEXPriceLevelUpdatePriceLevelUpdateModelWithTag : ( String, String ) -> IEXPriceLevelUpdatePriceLevelUpdateModel -> Json.Encode.Value
+encodeIEXPriceLevelUpdatePriceLevelUpdateModelWithTag (tagField, tag) model =
+    encodeObject (encodeIEXPriceLevelUpdatePriceLevelUpdateModelPairs model ++ [ encode tagField Json.Encode.string tag ])
 
 
-encodeLevel1QuoteUpdateModelPairs : Level1QuoteUpdateModel -> List EncodedField
-encodeLevel1QuoteUpdateModelPairs model =
+encodeIEXPriceLevelUpdatePriceLevelUpdateModelPairs : IEXPriceLevelUpdatePriceLevelUpdateModel -> List EncodedField
+encodeIEXPriceLevelUpdatePriceLevelUpdateModelPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
+            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
+            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
+            , maybeEncode "is_side_buy" Json.Encode.bool model.isSideBuy
+            , maybeEncode "is_event_processing_complete" Json.Encode.bool model.isEventProcessingComplete
+            , maybeEncode "size" Json.Encode.int model.size
+            , maybeEncode "price" Json.Encode.float model.price
+            ]
+    in
+    pairs
+
+
+encodeIEXQuoteUpdateQuoteUpdateModel : IEXQuoteUpdateQuoteUpdateModel -> Json.Encode.Value
+encodeIEXQuoteUpdateQuoteUpdateModel =
+    encodeObject << encodeIEXQuoteUpdateQuoteUpdateModelPairs
+
+
+encodeIEXQuoteUpdateQuoteUpdateModelWithTag : ( String, String ) -> IEXQuoteUpdateQuoteUpdateModel -> Json.Encode.Value
+encodeIEXQuoteUpdateQuoteUpdateModelWithTag (tagField, tag) model =
+    encodeObject (encodeIEXQuoteUpdateQuoteUpdateModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeIEXQuoteUpdateQuoteUpdateModelPairs : IEXQuoteUpdateQuoteUpdateModel -> List EncodedField
+encodeIEXQuoteUpdateQuoteUpdateModelPairs model =
     let
         pairs =
             [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
@@ -926,44 +633,79 @@ encodeLevel1QuoteUpdateModelPairs model =
     pairs
 
 
-encodeLevel2PriceLevelUpdateModel : Level2PriceLevelUpdateModel -> Json.Encode.Value
-encodeLevel2PriceLevelUpdateModel =
-    encodeObject << encodeLevel2PriceLevelUpdateModelPairs
+encodeIEXSystemEventSystemEventModel : IEXSystemEventSystemEventModel -> Json.Encode.Value
+encodeIEXSystemEventSystemEventModel =
+    encodeObject << encodeIEXSystemEventSystemEventModelPairs
 
 
-encodeLevel2PriceLevelUpdateModelWithTag : ( String, String ) -> Level2PriceLevelUpdateModel -> Json.Encode.Value
-encodeLevel2PriceLevelUpdateModelWithTag (tagField, tag) model =
-    encodeObject (encodeLevel2PriceLevelUpdateModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+encodeIEXSystemEventSystemEventModelWithTag : ( String, String ) -> IEXSystemEventSystemEventModel -> Json.Encode.Value
+encodeIEXSystemEventSystemEventModelWithTag (tagField, tag) model =
+    encodeObject (encodeIEXSystemEventSystemEventModelPairs model ++ [ encode tagField Json.Encode.string tag ])
 
 
-encodeLevel2PriceLevelUpdateModelPairs : Level2PriceLevelUpdateModel -> List EncodedField
-encodeLevel2PriceLevelUpdateModelPairs model =
+encodeIEXSystemEventSystemEventModelPairs : IEXSystemEventSystemEventModel -> List EncodedField
+encodeIEXSystemEventSystemEventModelPairs model =
     let
         pairs =
-            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
-            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
+            [ maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
             , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
-            , maybeEncode "is_side_buy" Json.Encode.bool model.isSideBuy
-            , maybeEncode "is_event_processing_complete" Json.Encode.bool model.isEventProcessingComplete
-            , maybeEncode "size" Json.Encode.int model.size
-            , maybeEncode "price" Json.Encode.float model.price
+            , maybeEncode "system_event" Json.Encode.int model.systemEvent
+            , maybeEncodeNullable "system_event_code" Json.Encode.string model.systemEventCode
+            , maybeEncodeNullable "system_event_text" Json.Encode.string model.systemEventText
+            , maybeEncode "is_system_event_start_of_messages" Json.Encode.bool model.isSystemEventStartOfMessages
+            , maybeEncode "is_system_event_start_of_system_hours" Json.Encode.bool model.isSystemEventStartOfSystemHours
+            , maybeEncode "is_system_event_start_of_regular_market_hours" Json.Encode.bool model.isSystemEventStartOfRegularMarketHours
+            , maybeEncode "is_system_event_end_of_regular_market_hours" Json.Encode.bool model.isSystemEventEndOfRegularMarketHours
+            , maybeEncode "is_system_event_end_of_system_hours" Json.Encode.bool model.isSystemEventEndOfSystemHours
+            , maybeEncode "is_system_event_end_of_messages" Json.Encode.bool model.isSystemEventEndOfMessages
             ]
     in
     pairs
 
 
-encodeLevel3AddOrderModel : Level3AddOrderModel -> Json.Encode.Value
-encodeLevel3AddOrderModel =
-    encodeObject << encodeLevel3AddOrderModelPairs
+encodeIEXTradeTradeModel : IEXTradeTradeModel -> Json.Encode.Value
+encodeIEXTradeTradeModel =
+    encodeObject << encodeIEXTradeTradeModelPairs
 
 
-encodeLevel3AddOrderModelWithTag : ( String, String ) -> Level3AddOrderModel -> Json.Encode.Value
-encodeLevel3AddOrderModelWithTag (tagField, tag) model =
-    encodeObject (encodeLevel3AddOrderModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+encodeIEXTradeTradeModelWithTag : ( String, String ) -> IEXTradeTradeModel -> Json.Encode.Value
+encodeIEXTradeTradeModelWithTag (tagField, tag) model =
+    encodeObject (encodeIEXTradeTradeModelPairs model ++ [ encode tagField Json.Encode.string tag ])
 
 
-encodeLevel3AddOrderModelPairs : Level3AddOrderModel -> List EncodedField
-encodeLevel3AddOrderModelPairs model =
+encodeIEXTradeTradeModelPairs : IEXTradeTradeModel -> List EncodedField
+encodeIEXTradeTradeModelPairs model =
+    let
+        pairs =
+            [ maybeEncode "is_trade_break" Json.Encode.bool model.isTradeBreak
+            , maybeEncodeNullable "symbol" Json.Encode.string model.symbol
+            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
+            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
+            , maybeEncode "size" Json.Encode.int model.size
+            , maybeEncode "price" Json.Encode.float model.price
+            , maybeEncode "trade_id" Json.Encode.int model.tradeId
+            , maybeEncode "is_intermarket_sweep" Json.Encode.bool model.isIntermarketSweep
+            , maybeEncode "is_extended_hours_trade" Json.Encode.bool model.isExtendedHoursTrade
+            , maybeEncode "is_odd_lot_trade" Json.Encode.bool model.isOddLotTrade
+            , maybeEncode "is_trade_through_exempt" Json.Encode.bool model.isTradeThroughExempt
+            , maybeEncode "is_single_price_cross_trade" Json.Encode.bool model.isSinglePriceCrossTrade
+            ]
+    in
+    pairs
+
+
+encodeModelsAddOrderModel : ModelsAddOrderModel -> Json.Encode.Value
+encodeModelsAddOrderModel =
+    encodeObject << encodeModelsAddOrderModelPairs
+
+
+encodeModelsAddOrderModelWithTag : ( String, String ) -> ModelsAddOrderModel -> Json.Encode.Value
+encodeModelsAddOrderModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsAddOrderModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsAddOrderModelPairs : ModelsAddOrderModel -> List EncodedField
+encodeModelsAddOrderModelPairs model =
     let
         pairs =
             [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
@@ -978,18 +720,93 @@ encodeLevel3AddOrderModelPairs model =
     pairs
 
 
-encodeLevel3ClearBookModel : Level3ClearBookModel -> Json.Encode.Value
-encodeLevel3ClearBookModel =
-    encodeObject << encodeLevel3ClearBookModelPairs
+encodeModelsAdminMessageModel : ModelsAdminMessageModel -> Json.Encode.Value
+encodeModelsAdminMessageModel =
+    encodeObject << encodeModelsAdminMessageModelPairs
 
 
-encodeLevel3ClearBookModelWithTag : ( String, String ) -> Level3ClearBookModel -> Json.Encode.Value
-encodeLevel3ClearBookModelWithTag (tagField, tag) model =
-    encodeObject (encodeLevel3ClearBookModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+encodeModelsAdminMessageModelWithTag : ( String, String ) -> ModelsAdminMessageModel -> Json.Encode.Value
+encodeModelsAdminMessageModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsAdminMessageModelPairs model ++ [ encode tagField Json.Encode.string tag ])
 
 
-encodeLevel3ClearBookModelPairs : Level3ClearBookModel -> List EncodedField
-encodeLevel3ClearBookModelPairs model =
+encodeModelsAdminMessageModelPairs : ModelsAdminMessageModel -> List EncodedField
+encodeModelsAdminMessageModelPairs model =
+    let
+        pairs =
+            [ maybeEncode "trading_status" encodeModelsTradingStatusModel model.tradingStatus
+            , maybeEncode "official_price" encodeModelsOfficialPriceModel model.officialPrice
+            , maybeEncode "security_event" encodeModelsSecurityEventModel model.securityEvent
+            , maybeEncode "auction_information" encodeModelsAuctionInformationModel model.auctionInformation
+            , maybeEncode "short_sale_price_test" encodeModelsShortSalePriceTestStatusModel model.shortSalePriceTest
+            , maybeEncode "operational_halt_status" encodeModelsOperationalHaltStatusModel model.operationalHaltStatus
+            , maybeEncode "retail_liquidity_indicator" encodeModelsRetailLiquidityIndicatorModel model.retailLiquidityIndicator
+            , maybeEncode "system_event" encodeIEXSystemEventSystemEventModel model.systemEvent
+            , maybeEncode "security_directory" encodeModelsSecurityDirectoryModel model.securityDirectory
+            ]
+    in
+    pairs
+
+
+encodeModelsAuctionInformationModel : ModelsAuctionInformationModel -> Json.Encode.Value
+encodeModelsAuctionInformationModel =
+    encodeObject << encodeModelsAuctionInformationModelPairs
+
+
+encodeModelsAuctionInformationModelWithTag : ( String, String ) -> ModelsAuctionInformationModel -> Json.Encode.Value
+encodeModelsAuctionInformationModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsAuctionInformationModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsAuctionInformationModelPairs : ModelsAuctionInformationModel -> List EncodedField
+encodeModelsAuctionInformationModelPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
+            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
+            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
+            , maybeEncode "auction_type" Json.Encode.int model.auctionType
+            , maybeEncodeNullable "auction_type_code" Json.Encode.string model.auctionTypeCode
+            , maybeEncodeNullable "auction_type_text" Json.Encode.string model.auctionTypeText
+            , maybeEncode "is_auction_type_opening" Json.Encode.bool model.isAuctionTypeOpening
+            , maybeEncode "is_auction_type_closing" Json.Encode.bool model.isAuctionTypeClosing
+            , maybeEncode "is_auction_type_ipo" Json.Encode.bool model.isAuctionTypeIpo
+            , maybeEncode "is_auction_type_halt" Json.Encode.bool model.isAuctionTypeHalt
+            , maybeEncode "is_auction_type_volatility" Json.Encode.bool model.isAuctionTypeVolatility
+            , maybeEncode "paired_shares" Json.Encode.int model.pairedShares
+            , maybeEncode "reference_price" Json.Encode.float model.referencePrice
+            , maybeEncode "indicative_clearing_price" Json.Encode.float model.indicativeClearingPrice
+            , maybeEncode "imbalance_shares" Json.Encode.int model.imbalanceShares
+            , maybeEncode "imbalance_side" Json.Encode.int model.imbalanceSide
+            , maybeEncodeNullable "imbalance_side_code" Json.Encode.string model.imbalanceSideCode
+            , maybeEncodeNullable "imbalance_side_text" Json.Encode.string model.imbalanceSideText
+            , maybeEncode "is_imbalance_side_buy" Json.Encode.bool model.isImbalanceSideBuy
+            , maybeEncode "is_imbalance_side_sell" Json.Encode.bool model.isImbalanceSideSell
+            , maybeEncode "is_imbalance_side_none" Json.Encode.bool model.isImbalanceSideNone
+            , maybeEncode "extension_number" Json.Encode.int model.extensionNumber
+            , maybeEncode "scheduled_auction_time_seconds" Json.Encode.int model.scheduledAuctionTimeSeconds
+            , maybeEncode "scheduled_auction_time" Api.Time.encodeDateTime model.scheduledAuctionTime
+            , maybeEncode "auction_book_clearing_price" Json.Encode.float model.auctionBookClearingPrice
+            , maybeEncode "collar_reference_price" Json.Encode.float model.collarReferencePrice
+            , maybeEncode "lower_auction_collar" Json.Encode.float model.lowerAuctionCollar
+            , maybeEncode "upper_auction_collar" Json.Encode.float model.upperAuctionCollar
+            ]
+    in
+    pairs
+
+
+encodeModelsClearBookModel : ModelsClearBookModel -> Json.Encode.Value
+encodeModelsClearBookModel =
+    encodeObject << encodeModelsClearBookModelPairs
+
+
+encodeModelsClearBookModelWithTag : ( String, String ) -> ModelsClearBookModel -> Json.Encode.Value
+encodeModelsClearBookModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsClearBookModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsClearBookModelPairs : ModelsClearBookModel -> List EncodedField
+encodeModelsClearBookModelPairs model =
     let
         pairs =
             [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
@@ -1000,18 +817,18 @@ encodeLevel3ClearBookModelPairs model =
     pairs
 
 
-encodeLevel3DeleteOrderModel : Level3DeleteOrderModel -> Json.Encode.Value
-encodeLevel3DeleteOrderModel =
-    encodeObject << encodeLevel3DeleteOrderModelPairs
+encodeModelsDeleteOrderModel : ModelsDeleteOrderModel -> Json.Encode.Value
+encodeModelsDeleteOrderModel =
+    encodeObject << encodeModelsDeleteOrderModelPairs
 
 
-encodeLevel3DeleteOrderModelWithTag : ( String, String ) -> Level3DeleteOrderModel -> Json.Encode.Value
-encodeLevel3DeleteOrderModelWithTag (tagField, tag) model =
-    encodeObject (encodeLevel3DeleteOrderModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+encodeModelsDeleteOrderModelWithTag : ( String, String ) -> ModelsDeleteOrderModel -> Json.Encode.Value
+encodeModelsDeleteOrderModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsDeleteOrderModelPairs model ++ [ encode tagField Json.Encode.string tag ])
 
 
-encodeLevel3DeleteOrderModelPairs : Level3DeleteOrderModel -> List EncodedField
-encodeLevel3DeleteOrderModelPairs model =
+encodeModelsDeleteOrderModelPairs : ModelsDeleteOrderModel -> List EncodedField
+encodeModelsDeleteOrderModelPairs model =
     let
         pairs =
             [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
@@ -1023,18 +840,18 @@ encodeLevel3DeleteOrderModelPairs model =
     pairs
 
 
-encodeLevel3ExecutedOrderModel : Level3ExecutedOrderModel -> Json.Encode.Value
-encodeLevel3ExecutedOrderModel =
-    encodeObject << encodeLevel3ExecutedOrderModelPairs
+encodeModelsExecutedOrderModel : ModelsExecutedOrderModel -> Json.Encode.Value
+encodeModelsExecutedOrderModel =
+    encodeObject << encodeModelsExecutedOrderModelPairs
 
 
-encodeLevel3ExecutedOrderModelWithTag : ( String, String ) -> Level3ExecutedOrderModel -> Json.Encode.Value
-encodeLevel3ExecutedOrderModelWithTag (tagField, tag) model =
-    encodeObject (encodeLevel3ExecutedOrderModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+encodeModelsExecutedOrderModelWithTag : ( String, String ) -> ModelsExecutedOrderModel -> Json.Encode.Value
+encodeModelsExecutedOrderModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsExecutedOrderModelPairs model ++ [ encode tagField Json.Encode.string tag ])
 
 
-encodeLevel3ExecutedOrderModelPairs : Level3ExecutedOrderModel -> List EncodedField
-encodeLevel3ExecutedOrderModelPairs model =
+encodeModelsExecutedOrderModelPairs : ModelsExecutedOrderModel -> List EncodedField
+encodeModelsExecutedOrderModelPairs model =
     let
         pairs =
             [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
@@ -1055,18 +872,18 @@ encodeLevel3ExecutedOrderModelPairs model =
     pairs
 
 
-encodeLevel3ModifyOrderModel : Level3ModifyOrderModel -> Json.Encode.Value
-encodeLevel3ModifyOrderModel =
-    encodeObject << encodeLevel3ModifyOrderModelPairs
+encodeModelsModifyOrderModel : ModelsModifyOrderModel -> Json.Encode.Value
+encodeModelsModifyOrderModel =
+    encodeObject << encodeModelsModifyOrderModelPairs
 
 
-encodeLevel3ModifyOrderModelWithTag : ( String, String ) -> Level3ModifyOrderModel -> Json.Encode.Value
-encodeLevel3ModifyOrderModelWithTag (tagField, tag) model =
-    encodeObject (encodeLevel3ModifyOrderModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+encodeModelsModifyOrderModelWithTag : ( String, String ) -> ModelsModifyOrderModel -> Json.Encode.Value
+encodeModelsModifyOrderModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsModifyOrderModelPairs model ++ [ encode tagField Json.Encode.string tag ])
 
 
-encodeLevel3ModifyOrderModelPairs : Level3ModifyOrderModel -> List EncodedField
-encodeLevel3ModifyOrderModelPairs model =
+encodeModelsModifyOrderModelPairs : ModelsModifyOrderModel -> List EncodedField
+encodeModelsModifyOrderModelPairs model =
     let
         pairs =
             [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
@@ -1081,42 +898,256 @@ encodeLevel3ModifyOrderModelPairs model =
     pairs
 
 
-encodeLevel3OrderBookModel : Level3OrderBookModel -> Json.Encode.Value
-encodeLevel3OrderBookModel =
-    encodeObject << encodeLevel3OrderBookModelPairs
+encodeModelsOfficialPriceModel : ModelsOfficialPriceModel -> Json.Encode.Value
+encodeModelsOfficialPriceModel =
+    encodeObject << encodeModelsOfficialPriceModelPairs
 
 
-encodeLevel3OrderBookModelWithTag : ( String, String ) -> Level3OrderBookModel -> Json.Encode.Value
-encodeLevel3OrderBookModelWithTag (tagField, tag) model =
-    encodeObject (encodeLevel3OrderBookModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+encodeModelsOfficialPriceModelWithTag : ( String, String ) -> ModelsOfficialPriceModel -> Json.Encode.Value
+encodeModelsOfficialPriceModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsOfficialPriceModelPairs model ++ [ encode tagField Json.Encode.string tag ])
 
 
-encodeLevel3OrderBookModelPairs : Level3OrderBookModel -> List EncodedField
-encodeLevel3OrderBookModelPairs model =
+encodeModelsOfficialPriceModelPairs : ModelsOfficialPriceModel -> List EncodedField
+encodeModelsOfficialPriceModelPairs model =
     let
         pairs =
-            [ maybeEncode "add_order" encodeLevel3AddOrderModel model.addOrder
-            , maybeEncode "delete_order" encodeLevel3DeleteOrderModel model.deleteOrder
-            , maybeEncode "modify_order" encodeLevel3ModifyOrderModel model.modifyOrder
-            , maybeEncode "executed_order" encodeLevel3ExecutedOrderModel model.executedOrder
-            , maybeEncode "clear_book" encodeLevel3ClearBookModel model.clearBook
+            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
+            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
+            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
+            , maybeEncode "price_type" Json.Encode.int model.priceType
+            , maybeEncodeNullable "price_type_code" Json.Encode.string model.priceTypeCode
+            , maybeEncodeNullable "price_type_text" Json.Encode.string model.priceTypeText
+            , maybeEncode "is_price_type_opening" Json.Encode.bool model.isPriceTypeOpening
+            , maybeEncode "is_price_type_closing" Json.Encode.bool model.isPriceTypeClosing
+            , maybeEncode "official_price" Json.Encode.float model.officialPrice
             ]
     in
     pairs
 
 
-encodeOHLCVExchangeTimeseriesItem : OHLCVExchangeTimeseriesItem -> Json.Encode.Value
-encodeOHLCVExchangeTimeseriesItem =
-    encodeObject << encodeOHLCVExchangeTimeseriesItemPairs
+encodeModelsOperationalHaltStatusModel : ModelsOperationalHaltStatusModel -> Json.Encode.Value
+encodeModelsOperationalHaltStatusModel =
+    encodeObject << encodeModelsOperationalHaltStatusModelPairs
 
 
-encodeOHLCVExchangeTimeseriesItemWithTag : ( String, String ) -> OHLCVExchangeTimeseriesItem -> Json.Encode.Value
-encodeOHLCVExchangeTimeseriesItemWithTag (tagField, tag) model =
-    encodeObject (encodeOHLCVExchangeTimeseriesItemPairs model ++ [ encode tagField Json.Encode.string tag ])
+encodeModelsOperationalHaltStatusModelWithTag : ( String, String ) -> ModelsOperationalHaltStatusModel -> Json.Encode.Value
+encodeModelsOperationalHaltStatusModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsOperationalHaltStatusModelPairs model ++ [ encode tagField Json.Encode.string tag ])
 
 
-encodeOHLCVExchangeTimeseriesItemPairs : OHLCVExchangeTimeseriesItem -> List EncodedField
-encodeOHLCVExchangeTimeseriesItemPairs model =
+encodeModelsOperationalHaltStatusModelPairs : ModelsOperationalHaltStatusModel -> List EncodedField
+encodeModelsOperationalHaltStatusModelPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
+            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
+            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
+            , maybeEncode "operational_halt_status" Json.Encode.int model.operationalHaltStatus
+            , maybeEncodeNullable "operational_halt_status_code" Json.Encode.string model.operationalHaltStatusCode
+            , maybeEncodeNullable "operational_halt_status_text" Json.Encode.string model.operationalHaltStatusText
+            , maybeEncode "is_operationally_halted" Json.Encode.bool model.isOperationallyHalted
+            , maybeEncode "is_not_operationally_halted" Json.Encode.bool model.isNotOperationallyHalted
+            ]
+    in
+    pairs
+
+
+encodeModelsOrderBookModel : ModelsOrderBookModel -> Json.Encode.Value
+encodeModelsOrderBookModel =
+    encodeObject << encodeModelsOrderBookModelPairs
+
+
+encodeModelsOrderBookModelWithTag : ( String, String ) -> ModelsOrderBookModel -> Json.Encode.Value
+encodeModelsOrderBookModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsOrderBookModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsOrderBookModelPairs : ModelsOrderBookModel -> List EncodedField
+encodeModelsOrderBookModelPairs model =
+    let
+        pairs =
+            [ maybeEncode "add_order" encodeModelsAddOrderModel model.addOrder
+            , maybeEncode "delete_order" encodeModelsDeleteOrderModel model.deleteOrder
+            , maybeEncode "modify_order" encodeModelsModifyOrderModel model.modifyOrder
+            , maybeEncode "executed_order" encodeModelsExecutedOrderModel model.executedOrder
+            , maybeEncode "clear_book" encodeModelsClearBookModel model.clearBook
+            ]
+    in
+    pairs
+
+
+encodeModelsRetailLiquidityIndicatorModel : ModelsRetailLiquidityIndicatorModel -> Json.Encode.Value
+encodeModelsRetailLiquidityIndicatorModel =
+    encodeObject << encodeModelsRetailLiquidityIndicatorModelPairs
+
+
+encodeModelsRetailLiquidityIndicatorModelWithTag : ( String, String ) -> ModelsRetailLiquidityIndicatorModel -> Json.Encode.Value
+encodeModelsRetailLiquidityIndicatorModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsRetailLiquidityIndicatorModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsRetailLiquidityIndicatorModelPairs : ModelsRetailLiquidityIndicatorModel -> List EncodedField
+encodeModelsRetailLiquidityIndicatorModelPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
+            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
+            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
+            , maybeEncode "retail_liquidity_indicator" Json.Encode.int model.retailLiquidityIndicator
+            , maybeEncodeNullable "retail_liquidity_indicator_code" Json.Encode.string model.retailLiquidityIndicatorCode
+            , maybeEncodeNullable "retail_liquidity_indicator_text" Json.Encode.string model.retailLiquidityIndicatorText
+            , maybeEncode "is_retail_indicator_not_applicable" Json.Encode.bool model.isRetailIndicatorNotApplicable
+            , maybeEncode "is_retail_indicator_buy_interest" Json.Encode.bool model.isRetailIndicatorBuyInterest
+            , maybeEncode "is_retail_indicator_sell_interest" Json.Encode.bool model.isRetailIndicatorSellInterest
+            , maybeEncode "is_retail_indicator_buy_and_sell_interest" Json.Encode.bool model.isRetailIndicatorBuyAndSellInterest
+            ]
+    in
+    pairs
+
+
+encodeModelsSecurityDirectoryModel : ModelsSecurityDirectoryModel -> Json.Encode.Value
+encodeModelsSecurityDirectoryModel =
+    encodeObject << encodeModelsSecurityDirectoryModelPairs
+
+
+encodeModelsSecurityDirectoryModelWithTag : ( String, String ) -> ModelsSecurityDirectoryModel -> Json.Encode.Value
+encodeModelsSecurityDirectoryModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsSecurityDirectoryModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsSecurityDirectoryModelPairs : ModelsSecurityDirectoryModel -> List EncodedField
+encodeModelsSecurityDirectoryModelPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
+            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
+            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
+            , maybeEncode "flags" Json.Encode.int model.flags
+            , maybeEncode "round_lot_size" Json.Encode.int model.roundLotSize
+            , maybeEncode "adjusted_poc_price" Json.Encode.float model.adjustedPocPrice
+            , maybeEncode "luld_tier" Json.Encode.int model.luldTier
+            , maybeEncodeNullable "luld_tier_code" Json.Encode.string model.luldTierCode
+            , maybeEncodeNullable "luld_tier_text" Json.Encode.string model.luldTierText
+            , maybeEncode "is_luld_tier_not_applicable" Json.Encode.bool model.isLuldTierNotApplicable
+            , maybeEncode "is_luld_tier1" Json.Encode.bool model.isLuldTier1
+            , maybeEncode "is_luld_tier2" Json.Encode.bool model.isLuldTier2
+            ]
+    in
+    pairs
+
+
+encodeModelsSecurityEventModel : ModelsSecurityEventModel -> Json.Encode.Value
+encodeModelsSecurityEventModel =
+    encodeObject << encodeModelsSecurityEventModelPairs
+
+
+encodeModelsSecurityEventModelWithTag : ( String, String ) -> ModelsSecurityEventModel -> Json.Encode.Value
+encodeModelsSecurityEventModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsSecurityEventModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsSecurityEventModelPairs : ModelsSecurityEventModel -> List EncodedField
+encodeModelsSecurityEventModelPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
+            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
+            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
+            , maybeEncode "security_event" Json.Encode.int model.securityEvent
+            , maybeEncodeNullable "security_event_code" Json.Encode.string model.securityEventCode
+            , maybeEncodeNullable "security_event_text" Json.Encode.string model.securityEventText
+            , maybeEncode "is_opening_process_complete" Json.Encode.bool model.isOpeningProcessComplete
+            , maybeEncode "is_closing_process_complete" Json.Encode.bool model.isClosingProcessComplete
+            ]
+    in
+    pairs
+
+
+encodeModelsShortSalePriceTestStatusModel : ModelsShortSalePriceTestStatusModel -> Json.Encode.Value
+encodeModelsShortSalePriceTestStatusModel =
+    encodeObject << encodeModelsShortSalePriceTestStatusModelPairs
+
+
+encodeModelsShortSalePriceTestStatusModelWithTag : ( String, String ) -> ModelsShortSalePriceTestStatusModel -> Json.Encode.Value
+encodeModelsShortSalePriceTestStatusModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsShortSalePriceTestStatusModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsShortSalePriceTestStatusModelPairs : ModelsShortSalePriceTestStatusModel -> List EncodedField
+encodeModelsShortSalePriceTestStatusModelPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
+            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
+            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
+            , maybeEncode "short_sale_price_test_status" Json.Encode.int model.shortSalePriceTestStatus
+            , maybeEncodeNullable "short_sale_price_test_status_code" Json.Encode.string model.shortSalePriceTestStatusCode
+            , maybeEncodeNullable "short_sale_price_test_status_text" Json.Encode.string model.shortSalePriceTestStatusText
+            , maybeEncode "is_short_sale_price_test_not_in_effect" Json.Encode.bool model.isShortSalePriceTestNotInEffect
+            , maybeEncode "is_short_sale_price_test_in_effect" Json.Encode.bool model.isShortSalePriceTestInEffect
+            , maybeEncode "detail" Json.Encode.int model.detail
+            , maybeEncodeNullable "detail_code" Json.Encode.string model.detailCode
+            , maybeEncodeNullable "detail_text" Json.Encode.string model.detailText
+            , maybeEncode "is_detail_no_price_test" Json.Encode.bool model.isDetailNoPriceTest
+            , maybeEncode "is_detail_activated" Json.Encode.bool model.isDetailActivated
+            , maybeEncode "is_detail_continued" Json.Encode.bool model.isDetailContinued
+            , maybeEncode "is_detail_deactivated" Json.Encode.bool model.isDetailDeactivated
+            , maybeEncode "is_detail_not_available" Json.Encode.bool model.isDetailNotAvailable
+            ]
+    in
+    pairs
+
+
+encodeModelsTradingStatusModel : ModelsTradingStatusModel -> Json.Encode.Value
+encodeModelsTradingStatusModel =
+    encodeObject << encodeModelsTradingStatusModelPairs
+
+
+encodeModelsTradingStatusModelWithTag : ( String, String ) -> ModelsTradingStatusModel -> Json.Encode.Value
+encodeModelsTradingStatusModelWithTag (tagField, tag) model =
+    encodeObject (encodeModelsTradingStatusModelPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeModelsTradingStatusModelPairs : ModelsTradingStatusModel -> List EncodedField
+encodeModelsTradingStatusModelPairs model =
+    let
+        pairs =
+            [ maybeEncodeNullable "symbol" Json.Encode.string model.symbol
+            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
+            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
+            , maybeEncode "is_trading_live" Json.Encode.bool model.isTradingLive
+            , maybeEncode "is_trading_halted" Json.Encode.bool model.isTradingHalted
+            , maybeEncode "is_trading_in_order_acceptance_period" Json.Encode.bool model.isTradingInOrderAcceptancePeriod
+            , maybeEncode "is_trading_paused" Json.Encode.bool model.isTradingPaused
+            , maybeEncode "is_reason_halt_news_pending" Json.Encode.bool model.isReasonHaltNewsPending
+            , maybeEncode "is_reason_ipo_not_yet_trading" Json.Encode.bool model.isReasonIpoNotYetTrading
+            , maybeEncode "is_reason_ipo_deferred" Json.Encode.bool model.isReasonIpoDeferred
+            , maybeEncode "is_reason_halt_news_dissemination" Json.Encode.bool model.isReasonHaltNewsDissemination
+            , maybeEncode "is_reason_ipo_order_acceptance_period" Json.Encode.bool model.isReasonIpoOrderAcceptancePeriod
+            , maybeEncode "is_reason_ipo_pre_launch_period" Json.Encode.bool model.isReasonIpoPreLaunchPeriod
+            , maybeEncode "is_reason_market_wide_circuit_breaker_level1" Json.Encode.bool model.isReasonMarketWideCircuitBreakerLevel1
+            , maybeEncode "is_reason_market_wide_circuit_breaker_level2" Json.Encode.bool model.isReasonMarketWideCircuitBreakerLevel2
+            , maybeEncode "is_reason_market_wide_circuit_breaker_level3" Json.Encode.bool model.isReasonMarketWideCircuitBreakerLevel3
+            , maybeEncode "is_reason_not_applicable" Json.Encode.bool model.isReasonNotApplicable
+            , maybeEncode "is_reason_not_available" Json.Encode.bool model.isReasonNotAvailable
+            ]
+    in
+    pairs
+
+
+encodeOHLCVTimeSeriesExchangeTimeseriesItem : OHLCVTimeSeriesExchangeTimeseriesItem -> Json.Encode.Value
+encodeOHLCVTimeSeriesExchangeTimeseriesItem =
+    encodeObject << encodeOHLCVTimeSeriesExchangeTimeseriesItemPairs
+
+
+encodeOHLCVTimeSeriesExchangeTimeseriesItemWithTag : ( String, String ) -> OHLCVTimeSeriesExchangeTimeseriesItem -> Json.Encode.Value
+encodeOHLCVTimeSeriesExchangeTimeseriesItemWithTag (tagField, tag) model =
+    encodeObject (encodeOHLCVTimeSeriesExchangeTimeseriesItemPairs model ++ [ encode tagField Json.Encode.string tag ])
+
+
+encodeOHLCVTimeSeriesExchangeTimeseriesItemPairs : OHLCVTimeSeriesExchangeTimeseriesItem -> List EncodedField
+encodeOHLCVTimeSeriesExchangeTimeseriesItemPairs model =
     let
         pairs =
             [ maybeEncode "time_period_start" Api.Time.encodeDateTime model.timePeriodStart
@@ -1135,18 +1166,18 @@ encodeOHLCVExchangeTimeseriesItemPairs model =
     pairs
 
 
-encodeOHLCVTimeseriesItem : OHLCVTimeseriesItem -> Json.Encode.Value
-encodeOHLCVTimeseriesItem =
-    encodeObject << encodeOHLCVTimeseriesItemPairs
+encodeOHLCVTimeSeriesTimeseriesItem : OHLCVTimeSeriesTimeseriesItem -> Json.Encode.Value
+encodeOHLCVTimeSeriesTimeseriesItem =
+    encodeObject << encodeOHLCVTimeSeriesTimeseriesItemPairs
 
 
-encodeOHLCVTimeseriesItemWithTag : ( String, String ) -> OHLCVTimeseriesItem -> Json.Encode.Value
-encodeOHLCVTimeseriesItemWithTag (tagField, tag) model =
-    encodeObject (encodeOHLCVTimeseriesItemPairs model ++ [ encode tagField Json.Encode.string tag ])
+encodeOHLCVTimeSeriesTimeseriesItemWithTag : ( String, String ) -> OHLCVTimeSeriesTimeseriesItem -> Json.Encode.Value
+encodeOHLCVTimeSeriesTimeseriesItemWithTag (tagField, tag) model =
+    encodeObject (encodeOHLCVTimeSeriesTimeseriesItemPairs model ++ [ encode tagField Json.Encode.string tag ])
 
 
-encodeOHLCVTimeseriesItemPairs : OHLCVTimeseriesItem -> List EncodedField
-encodeOHLCVTimeseriesItemPairs model =
+encodeOHLCVTimeSeriesTimeseriesItemPairs : OHLCVTimeSeriesTimeseriesItem -> List EncodedField
+encodeOHLCVTimeSeriesTimeseriesItemPairs model =
     let
         pairs =
             [ maybeEncode "time_period_start" Api.Time.encodeDateTime model.timePeriodStart
@@ -1164,18 +1195,18 @@ encodeOHLCVTimeseriesItemPairs model =
     pairs
 
 
-encodeOHLCVTimeseriesPeriod : OHLCVTimeseriesPeriod -> Json.Encode.Value
-encodeOHLCVTimeseriesPeriod =
-    encodeObject << encodeOHLCVTimeseriesPeriodPairs
+encodeOHLCVTimeSeriesTimeseriesPeriod : OHLCVTimeSeriesTimeseriesPeriod -> Json.Encode.Value
+encodeOHLCVTimeSeriesTimeseriesPeriod =
+    encodeObject << encodeOHLCVTimeSeriesTimeseriesPeriodPairs
 
 
-encodeOHLCVTimeseriesPeriodWithTag : ( String, String ) -> OHLCVTimeseriesPeriod -> Json.Encode.Value
-encodeOHLCVTimeseriesPeriodWithTag (tagField, tag) model =
-    encodeObject (encodeOHLCVTimeseriesPeriodPairs model ++ [ encode tagField Json.Encode.string tag ])
+encodeOHLCVTimeSeriesTimeseriesPeriodWithTag : ( String, String ) -> OHLCVTimeSeriesTimeseriesPeriod -> Json.Encode.Value
+encodeOHLCVTimeSeriesTimeseriesPeriodWithTag (tagField, tag) model =
+    encodeObject (encodeOHLCVTimeSeriesTimeseriesPeriodPairs model ++ [ encode tagField Json.Encode.string tag ])
 
 
-encodeOHLCVTimeseriesPeriodPairs : OHLCVTimeseriesPeriod -> List EncodedField
-encodeOHLCVTimeseriesPeriodPairs model =
+encodeOHLCVTimeSeriesTimeseriesPeriodPairs : OHLCVTimeSeriesTimeseriesPeriod -> List EncodedField
+encodeOHLCVTimeSeriesTimeseriesPeriodPairs model =
     let
         pairs =
             [ maybeEncodeNullable "period_id" Json.Encode.string model.periodId
@@ -1189,217 +1220,7 @@ encodeOHLCVTimeseriesPeriodPairs model =
     pairs
 
 
-encodeTradeTradeModel : TradeTradeModel -> Json.Encode.Value
-encodeTradeTradeModel =
-    encodeObject << encodeTradeTradeModelPairs
-
-
-encodeTradeTradeModelWithTag : ( String, String ) -> TradeTradeModel -> Json.Encode.Value
-encodeTradeTradeModelWithTag (tagField, tag) model =
-    encodeObject (encodeTradeTradeModelPairs model ++ [ encode tagField Json.Encode.string tag ])
-
-
-encodeTradeTradeModelPairs : TradeTradeModel -> List EncodedField
-encodeTradeTradeModelPairs model =
-    let
-        pairs =
-            [ maybeEncode "is_trade_break" Json.Encode.bool model.isTradeBreak
-            , maybeEncodeNullable "symbol" Json.Encode.string model.symbol
-            , maybeEncode "timestamp_nanos" Json.Encode.int model.timestampNanos
-            , maybeEncode "timestamp" Api.Time.encodeDateTime model.timestamp
-            , maybeEncode "size" Json.Encode.int model.size
-            , maybeEncode "price" Json.Encode.float model.price
-            , maybeEncode "trade_id" Json.Encode.int model.tradeId
-            , maybeEncode "is_intermarket_sweep" Json.Encode.bool model.isIntermarketSweep
-            , maybeEncode "is_extended_hours_trade" Json.Encode.bool model.isExtendedHoursTrade
-            , maybeEncode "is_odd_lot_trade" Json.Encode.bool model.isOddLotTrade
-            , maybeEncode "is_trade_through_exempt" Json.Encode.bool model.isTradeThroughExempt
-            , maybeEncode "is_single_price_cross_trade" Json.Encode.bool model.isSinglePriceCrossTrade
-            ]
-    in
-    pairs
-
-
 -- DECODER
-
-
-adminAdminMessageModelDecoder : Json.Decode.Decoder AdminAdminMessageModel
-adminAdminMessageModelDecoder =
-    Json.Decode.succeed AdminAdminMessageModel
-        |> maybeDecode "trading_status" adminTradingStatusModelDecoder Nothing
-        |> maybeDecode "official_price" adminOfficialPriceModelDecoder Nothing
-        |> maybeDecode "security_event" adminSecurityEventModelDecoder Nothing
-        |> maybeDecode "auction_information" adminAuctionInformationModelDecoder Nothing
-        |> maybeDecode "short_sale_price_test" adminShortSalePriceTestStatusModelDecoder Nothing
-        |> maybeDecode "operational_halt_status" adminOperationalHaltStatusModelDecoder Nothing
-        |> maybeDecode "retail_liquidity_indicator" adminRetailLiquidityIndicatorModelDecoder Nothing
-        |> maybeDecode "system_event" adminSystemEventModelDecoder Nothing
-        |> maybeDecode "security_directory" adminSecurityDirectoryModelDecoder Nothing
-
-
-adminAuctionInformationModelDecoder : Json.Decode.Decoder AdminAuctionInformationModel
-adminAuctionInformationModelDecoder =
-    Json.Decode.succeed AdminAuctionInformationModel
-        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
-        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
-        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "auction_type" Json.Decode.int Nothing
-        |> maybeDecodeNullable "auction_type_code" Json.Decode.string Nothing
-        |> maybeDecodeNullable "auction_type_text" Json.Decode.string Nothing
-        |> maybeDecode "is_auction_type_opening" Json.Decode.bool Nothing
-        |> maybeDecode "is_auction_type_closing" Json.Decode.bool Nothing
-        |> maybeDecode "is_auction_type_ipo" Json.Decode.bool Nothing
-        |> maybeDecode "is_auction_type_halt" Json.Decode.bool Nothing
-        |> maybeDecode "is_auction_type_volatility" Json.Decode.bool Nothing
-        |> maybeDecode "paired_shares" Json.Decode.int Nothing
-        |> maybeDecode "reference_price" Json.Decode.float Nothing
-        |> maybeDecode "indicative_clearing_price" Json.Decode.float Nothing
-        |> maybeDecode "imbalance_shares" Json.Decode.int Nothing
-        |> maybeDecode "imbalance_side" Json.Decode.int Nothing
-        |> maybeDecodeNullable "imbalance_side_code" Json.Decode.string Nothing
-        |> maybeDecodeNullable "imbalance_side_text" Json.Decode.string Nothing
-        |> maybeDecode "is_imbalance_side_buy" Json.Decode.bool Nothing
-        |> maybeDecode "is_imbalance_side_sell" Json.Decode.bool Nothing
-        |> maybeDecode "is_imbalance_side_none" Json.Decode.bool Nothing
-        |> maybeDecode "extension_number" Json.Decode.int Nothing
-        |> maybeDecode "scheduled_auction_time_seconds" Json.Decode.int Nothing
-        |> maybeDecode "scheduled_auction_time" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "auction_book_clearing_price" Json.Decode.float Nothing
-        |> maybeDecode "collar_reference_price" Json.Decode.float Nothing
-        |> maybeDecode "lower_auction_collar" Json.Decode.float Nothing
-        |> maybeDecode "upper_auction_collar" Json.Decode.float Nothing
-
-
-adminOfficialPriceModelDecoder : Json.Decode.Decoder AdminOfficialPriceModel
-adminOfficialPriceModelDecoder =
-    Json.Decode.succeed AdminOfficialPriceModel
-        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
-        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
-        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "price_type" Json.Decode.int Nothing
-        |> maybeDecodeNullable "price_type_code" Json.Decode.string Nothing
-        |> maybeDecodeNullable "price_type_text" Json.Decode.string Nothing
-        |> maybeDecode "is_price_type_opening" Json.Decode.bool Nothing
-        |> maybeDecode "is_price_type_closing" Json.Decode.bool Nothing
-        |> maybeDecode "official_price" Json.Decode.float Nothing
-
-
-adminOperationalHaltStatusModelDecoder : Json.Decode.Decoder AdminOperationalHaltStatusModel
-adminOperationalHaltStatusModelDecoder =
-    Json.Decode.succeed AdminOperationalHaltStatusModel
-        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
-        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
-        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "operational_halt_status" Json.Decode.int Nothing
-        |> maybeDecodeNullable "operational_halt_status_code" Json.Decode.string Nothing
-        |> maybeDecodeNullable "operational_halt_status_text" Json.Decode.string Nothing
-        |> maybeDecode "is_operationally_halted" Json.Decode.bool Nothing
-        |> maybeDecode "is_not_operationally_halted" Json.Decode.bool Nothing
-
-
-adminRetailLiquidityIndicatorModelDecoder : Json.Decode.Decoder AdminRetailLiquidityIndicatorModel
-adminRetailLiquidityIndicatorModelDecoder =
-    Json.Decode.succeed AdminRetailLiquidityIndicatorModel
-        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
-        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
-        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "retail_liquidity_indicator" Json.Decode.int Nothing
-        |> maybeDecodeNullable "retail_liquidity_indicator_code" Json.Decode.string Nothing
-        |> maybeDecodeNullable "retail_liquidity_indicator_text" Json.Decode.string Nothing
-        |> maybeDecode "is_retail_indicator_not_applicable" Json.Decode.bool Nothing
-        |> maybeDecode "is_retail_indicator_buy_interest" Json.Decode.bool Nothing
-        |> maybeDecode "is_retail_indicator_sell_interest" Json.Decode.bool Nothing
-        |> maybeDecode "is_retail_indicator_buy_and_sell_interest" Json.Decode.bool Nothing
-
-
-adminSecurityDirectoryModelDecoder : Json.Decode.Decoder AdminSecurityDirectoryModel
-adminSecurityDirectoryModelDecoder =
-    Json.Decode.succeed AdminSecurityDirectoryModel
-        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
-        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
-        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "flags" Json.Decode.int Nothing
-        |> maybeDecode "round_lot_size" Json.Decode.int Nothing
-        |> maybeDecode "adjusted_poc_price" Json.Decode.float Nothing
-        |> maybeDecode "luld_tier" Json.Decode.int Nothing
-        |> maybeDecodeNullable "luld_tier_code" Json.Decode.string Nothing
-        |> maybeDecodeNullable "luld_tier_text" Json.Decode.string Nothing
-        |> maybeDecode "is_luld_tier_not_applicable" Json.Decode.bool Nothing
-        |> maybeDecode "is_luld_tier1" Json.Decode.bool Nothing
-        |> maybeDecode "is_luld_tier2" Json.Decode.bool Nothing
-
-
-adminSecurityEventModelDecoder : Json.Decode.Decoder AdminSecurityEventModel
-adminSecurityEventModelDecoder =
-    Json.Decode.succeed AdminSecurityEventModel
-        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
-        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
-        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "security_event" Json.Decode.int Nothing
-        |> maybeDecodeNullable "security_event_code" Json.Decode.string Nothing
-        |> maybeDecodeNullable "security_event_text" Json.Decode.string Nothing
-        |> maybeDecode "is_opening_process_complete" Json.Decode.bool Nothing
-        |> maybeDecode "is_closing_process_complete" Json.Decode.bool Nothing
-
-
-adminShortSalePriceTestStatusModelDecoder : Json.Decode.Decoder AdminShortSalePriceTestStatusModel
-adminShortSalePriceTestStatusModelDecoder =
-    Json.Decode.succeed AdminShortSalePriceTestStatusModel
-        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
-        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
-        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "short_sale_price_test_status" Json.Decode.int Nothing
-        |> maybeDecodeNullable "short_sale_price_test_status_code" Json.Decode.string Nothing
-        |> maybeDecodeNullable "short_sale_price_test_status_text" Json.Decode.string Nothing
-        |> maybeDecode "is_short_sale_price_test_not_in_effect" Json.Decode.bool Nothing
-        |> maybeDecode "is_short_sale_price_test_in_effect" Json.Decode.bool Nothing
-        |> maybeDecode "detail" Json.Decode.int Nothing
-        |> maybeDecodeNullable "detail_code" Json.Decode.string Nothing
-        |> maybeDecodeNullable "detail_text" Json.Decode.string Nothing
-        |> maybeDecode "is_detail_no_price_test" Json.Decode.bool Nothing
-        |> maybeDecode "is_detail_activated" Json.Decode.bool Nothing
-        |> maybeDecode "is_detail_continued" Json.Decode.bool Nothing
-        |> maybeDecode "is_detail_deactivated" Json.Decode.bool Nothing
-        |> maybeDecode "is_detail_not_available" Json.Decode.bool Nothing
-
-
-adminSystemEventModelDecoder : Json.Decode.Decoder AdminSystemEventModel
-adminSystemEventModelDecoder =
-    Json.Decode.succeed AdminSystemEventModel
-        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
-        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "system_event" Json.Decode.int Nothing
-        |> maybeDecodeNullable "system_event_code" Json.Decode.string Nothing
-        |> maybeDecodeNullable "system_event_text" Json.Decode.string Nothing
-        |> maybeDecode "is_system_event_start_of_messages" Json.Decode.bool Nothing
-        |> maybeDecode "is_system_event_start_of_system_hours" Json.Decode.bool Nothing
-        |> maybeDecode "is_system_event_start_of_regular_market_hours" Json.Decode.bool Nothing
-        |> maybeDecode "is_system_event_end_of_regular_market_hours" Json.Decode.bool Nothing
-        |> maybeDecode "is_system_event_end_of_system_hours" Json.Decode.bool Nothing
-        |> maybeDecode "is_system_event_end_of_messages" Json.Decode.bool Nothing
-
-
-adminTradingStatusModelDecoder : Json.Decode.Decoder AdminTradingStatusModel
-adminTradingStatusModelDecoder =
-    Json.Decode.succeed AdminTradingStatusModel
-        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
-        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
-        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "is_trading_live" Json.Decode.bool Nothing
-        |> maybeDecode "is_trading_halted" Json.Decode.bool Nothing
-        |> maybeDecode "is_trading_in_order_acceptance_period" Json.Decode.bool Nothing
-        |> maybeDecode "is_trading_paused" Json.Decode.bool Nothing
-        |> maybeDecode "is_reason_halt_news_pending" Json.Decode.bool Nothing
-        |> maybeDecode "is_reason_ipo_not_yet_trading" Json.Decode.bool Nothing
-        |> maybeDecode "is_reason_ipo_deferred" Json.Decode.bool Nothing
-        |> maybeDecode "is_reason_halt_news_dissemination" Json.Decode.bool Nothing
-        |> maybeDecode "is_reason_ipo_order_acceptance_period" Json.Decode.bool Nothing
-        |> maybeDecode "is_reason_ipo_pre_launch_period" Json.Decode.bool Nothing
-        |> maybeDecode "is_reason_market_wide_circuit_breaker_level1" Json.Decode.bool Nothing
-        |> maybeDecode "is_reason_market_wide_circuit_breaker_level2" Json.Decode.bool Nothing
-        |> maybeDecode "is_reason_market_wide_circuit_breaker_level3" Json.Decode.bool Nothing
-        |> maybeDecode "is_reason_not_applicable" Json.Decode.bool Nothing
-        |> maybeDecode "is_reason_not_available" Json.Decode.bool Nothing
 
 
 finFeedAPIExchangeModelDecoder : Json.Decode.Decoder FinFeedAPIExchangeModel
@@ -1450,9 +1271,21 @@ finFeedAPISymbolModelDecoder =
         |> maybeDecodeNullable "cfi_attribute4_desc" Json.Decode.string Nothing
 
 
-level1QuoteUpdateModelDecoder : Json.Decode.Decoder Level1QuoteUpdateModel
-level1QuoteUpdateModelDecoder =
-    Json.Decode.succeed Level1QuoteUpdateModel
+iEXPriceLevelUpdatePriceLevelUpdateModelDecoder : Json.Decode.Decoder IEXPriceLevelUpdatePriceLevelUpdateModel
+iEXPriceLevelUpdatePriceLevelUpdateModelDecoder =
+    Json.Decode.succeed IEXPriceLevelUpdatePriceLevelUpdateModel
+        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
+        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
+        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "is_side_buy" Json.Decode.bool Nothing
+        |> maybeDecode "is_event_processing_complete" Json.Decode.bool Nothing
+        |> maybeDecode "size" Json.Decode.int Nothing
+        |> maybeDecode "price" Json.Decode.float Nothing
+
+
+iEXQuoteUpdateQuoteUpdateModelDecoder : Json.Decode.Decoder IEXQuoteUpdateQuoteUpdateModel
+iEXQuoteUpdateQuoteUpdateModelDecoder =
+    Json.Decode.succeed IEXQuoteUpdateQuoteUpdateModel
         |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
         |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
         |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
@@ -1464,21 +1297,42 @@ level1QuoteUpdateModelDecoder =
         |> maybeDecode "bid_size" Json.Decode.int Nothing
 
 
-level2PriceLevelUpdateModelDecoder : Json.Decode.Decoder Level2PriceLevelUpdateModel
-level2PriceLevelUpdateModelDecoder =
-    Json.Decode.succeed Level2PriceLevelUpdateModel
+iEXSystemEventSystemEventModelDecoder : Json.Decode.Decoder IEXSystemEventSystemEventModel
+iEXSystemEventSystemEventModelDecoder =
+    Json.Decode.succeed IEXSystemEventSystemEventModel
+        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
+        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "system_event" Json.Decode.int Nothing
+        |> maybeDecodeNullable "system_event_code" Json.Decode.string Nothing
+        |> maybeDecodeNullable "system_event_text" Json.Decode.string Nothing
+        |> maybeDecode "is_system_event_start_of_messages" Json.Decode.bool Nothing
+        |> maybeDecode "is_system_event_start_of_system_hours" Json.Decode.bool Nothing
+        |> maybeDecode "is_system_event_start_of_regular_market_hours" Json.Decode.bool Nothing
+        |> maybeDecode "is_system_event_end_of_regular_market_hours" Json.Decode.bool Nothing
+        |> maybeDecode "is_system_event_end_of_system_hours" Json.Decode.bool Nothing
+        |> maybeDecode "is_system_event_end_of_messages" Json.Decode.bool Nothing
+
+
+iEXTradeTradeModelDecoder : Json.Decode.Decoder IEXTradeTradeModel
+iEXTradeTradeModelDecoder =
+    Json.Decode.succeed IEXTradeTradeModel
+        |> maybeDecode "is_trade_break" Json.Decode.bool Nothing
         |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
         |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
         |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "is_side_buy" Json.Decode.bool Nothing
-        |> maybeDecode "is_event_processing_complete" Json.Decode.bool Nothing
         |> maybeDecode "size" Json.Decode.int Nothing
         |> maybeDecode "price" Json.Decode.float Nothing
+        |> maybeDecode "trade_id" Json.Decode.int Nothing
+        |> maybeDecode "is_intermarket_sweep" Json.Decode.bool Nothing
+        |> maybeDecode "is_extended_hours_trade" Json.Decode.bool Nothing
+        |> maybeDecode "is_odd_lot_trade" Json.Decode.bool Nothing
+        |> maybeDecode "is_trade_through_exempt" Json.Decode.bool Nothing
+        |> maybeDecode "is_single_price_cross_trade" Json.Decode.bool Nothing
 
 
-level3AddOrderModelDecoder : Json.Decode.Decoder Level3AddOrderModel
-level3AddOrderModelDecoder =
-    Json.Decode.succeed Level3AddOrderModel
+modelsAddOrderModelDecoder : Json.Decode.Decoder ModelsAddOrderModel
+modelsAddOrderModelDecoder =
+    Json.Decode.succeed ModelsAddOrderModel
         |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
         |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
         |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
@@ -1488,26 +1342,73 @@ level3AddOrderModelDecoder =
         |> maybeDecode "order_id" Json.Decode.int Nothing
 
 
-level3ClearBookModelDecoder : Json.Decode.Decoder Level3ClearBookModel
-level3ClearBookModelDecoder =
-    Json.Decode.succeed Level3ClearBookModel
+modelsAdminMessageModelDecoder : Json.Decode.Decoder ModelsAdminMessageModel
+modelsAdminMessageModelDecoder =
+    Json.Decode.succeed ModelsAdminMessageModel
+        |> maybeDecode "trading_status" modelsTradingStatusModelDecoder Nothing
+        |> maybeDecode "official_price" modelsOfficialPriceModelDecoder Nothing
+        |> maybeDecode "security_event" modelsSecurityEventModelDecoder Nothing
+        |> maybeDecode "auction_information" modelsAuctionInformationModelDecoder Nothing
+        |> maybeDecode "short_sale_price_test" modelsShortSalePriceTestStatusModelDecoder Nothing
+        |> maybeDecode "operational_halt_status" modelsOperationalHaltStatusModelDecoder Nothing
+        |> maybeDecode "retail_liquidity_indicator" modelsRetailLiquidityIndicatorModelDecoder Nothing
+        |> maybeDecode "system_event" iEXSystemEventSystemEventModelDecoder Nothing
+        |> maybeDecode "security_directory" modelsSecurityDirectoryModelDecoder Nothing
+
+
+modelsAuctionInformationModelDecoder : Json.Decode.Decoder ModelsAuctionInformationModel
+modelsAuctionInformationModelDecoder =
+    Json.Decode.succeed ModelsAuctionInformationModel
+        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
+        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
+        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "auction_type" Json.Decode.int Nothing
+        |> maybeDecodeNullable "auction_type_code" Json.Decode.string Nothing
+        |> maybeDecodeNullable "auction_type_text" Json.Decode.string Nothing
+        |> maybeDecode "is_auction_type_opening" Json.Decode.bool Nothing
+        |> maybeDecode "is_auction_type_closing" Json.Decode.bool Nothing
+        |> maybeDecode "is_auction_type_ipo" Json.Decode.bool Nothing
+        |> maybeDecode "is_auction_type_halt" Json.Decode.bool Nothing
+        |> maybeDecode "is_auction_type_volatility" Json.Decode.bool Nothing
+        |> maybeDecode "paired_shares" Json.Decode.int Nothing
+        |> maybeDecode "reference_price" Json.Decode.float Nothing
+        |> maybeDecode "indicative_clearing_price" Json.Decode.float Nothing
+        |> maybeDecode "imbalance_shares" Json.Decode.int Nothing
+        |> maybeDecode "imbalance_side" Json.Decode.int Nothing
+        |> maybeDecodeNullable "imbalance_side_code" Json.Decode.string Nothing
+        |> maybeDecodeNullable "imbalance_side_text" Json.Decode.string Nothing
+        |> maybeDecode "is_imbalance_side_buy" Json.Decode.bool Nothing
+        |> maybeDecode "is_imbalance_side_sell" Json.Decode.bool Nothing
+        |> maybeDecode "is_imbalance_side_none" Json.Decode.bool Nothing
+        |> maybeDecode "extension_number" Json.Decode.int Nothing
+        |> maybeDecode "scheduled_auction_time_seconds" Json.Decode.int Nothing
+        |> maybeDecode "scheduled_auction_time" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "auction_book_clearing_price" Json.Decode.float Nothing
+        |> maybeDecode "collar_reference_price" Json.Decode.float Nothing
+        |> maybeDecode "lower_auction_collar" Json.Decode.float Nothing
+        |> maybeDecode "upper_auction_collar" Json.Decode.float Nothing
+
+
+modelsClearBookModelDecoder : Json.Decode.Decoder ModelsClearBookModel
+modelsClearBookModelDecoder =
+    Json.Decode.succeed ModelsClearBookModel
         |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
         |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
         |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
 
 
-level3DeleteOrderModelDecoder : Json.Decode.Decoder Level3DeleteOrderModel
-level3DeleteOrderModelDecoder =
-    Json.Decode.succeed Level3DeleteOrderModel
+modelsDeleteOrderModelDecoder : Json.Decode.Decoder ModelsDeleteOrderModel
+modelsDeleteOrderModelDecoder =
+    Json.Decode.succeed ModelsDeleteOrderModel
         |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
         |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
         |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
         |> maybeDecode "order_id_reference" Json.Decode.int Nothing
 
 
-level3ExecutedOrderModelDecoder : Json.Decode.Decoder Level3ExecutedOrderModel
-level3ExecutedOrderModelDecoder =
-    Json.Decode.succeed Level3ExecutedOrderModel
+modelsExecutedOrderModelDecoder : Json.Decode.Decoder ModelsExecutedOrderModel
+modelsExecutedOrderModelDecoder =
+    Json.Decode.succeed ModelsExecutedOrderModel
         |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
         |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
         |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
@@ -1523,9 +1424,9 @@ level3ExecutedOrderModelDecoder =
         |> maybeDecode "trade_id" Json.Decode.int Nothing
 
 
-level3ModifyOrderModelDecoder : Json.Decode.Decoder Level3ModifyOrderModel
-level3ModifyOrderModelDecoder =
-    Json.Decode.succeed Level3ModifyOrderModel
+modelsModifyOrderModelDecoder : Json.Decode.Decoder ModelsModifyOrderModel
+modelsModifyOrderModelDecoder =
+    Json.Decode.succeed ModelsModifyOrderModel
         |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
         |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
         |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
@@ -1535,19 +1436,135 @@ level3ModifyOrderModelDecoder =
         |> maybeDecode "price" Json.Decode.float Nothing
 
 
-level3OrderBookModelDecoder : Json.Decode.Decoder Level3OrderBookModel
-level3OrderBookModelDecoder =
-    Json.Decode.succeed Level3OrderBookModel
-        |> maybeDecode "add_order" level3AddOrderModelDecoder Nothing
-        |> maybeDecode "delete_order" level3DeleteOrderModelDecoder Nothing
-        |> maybeDecode "modify_order" level3ModifyOrderModelDecoder Nothing
-        |> maybeDecode "executed_order" level3ExecutedOrderModelDecoder Nothing
-        |> maybeDecode "clear_book" level3ClearBookModelDecoder Nothing
+modelsOfficialPriceModelDecoder : Json.Decode.Decoder ModelsOfficialPriceModel
+modelsOfficialPriceModelDecoder =
+    Json.Decode.succeed ModelsOfficialPriceModel
+        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
+        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
+        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "price_type" Json.Decode.int Nothing
+        |> maybeDecodeNullable "price_type_code" Json.Decode.string Nothing
+        |> maybeDecodeNullable "price_type_text" Json.Decode.string Nothing
+        |> maybeDecode "is_price_type_opening" Json.Decode.bool Nothing
+        |> maybeDecode "is_price_type_closing" Json.Decode.bool Nothing
+        |> maybeDecode "official_price" Json.Decode.float Nothing
 
 
-oHLCVExchangeTimeseriesItemDecoder : Json.Decode.Decoder OHLCVExchangeTimeseriesItem
-oHLCVExchangeTimeseriesItemDecoder =
-    Json.Decode.succeed OHLCVExchangeTimeseriesItem
+modelsOperationalHaltStatusModelDecoder : Json.Decode.Decoder ModelsOperationalHaltStatusModel
+modelsOperationalHaltStatusModelDecoder =
+    Json.Decode.succeed ModelsOperationalHaltStatusModel
+        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
+        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
+        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "operational_halt_status" Json.Decode.int Nothing
+        |> maybeDecodeNullable "operational_halt_status_code" Json.Decode.string Nothing
+        |> maybeDecodeNullable "operational_halt_status_text" Json.Decode.string Nothing
+        |> maybeDecode "is_operationally_halted" Json.Decode.bool Nothing
+        |> maybeDecode "is_not_operationally_halted" Json.Decode.bool Nothing
+
+
+modelsOrderBookModelDecoder : Json.Decode.Decoder ModelsOrderBookModel
+modelsOrderBookModelDecoder =
+    Json.Decode.succeed ModelsOrderBookModel
+        |> maybeDecode "add_order" modelsAddOrderModelDecoder Nothing
+        |> maybeDecode "delete_order" modelsDeleteOrderModelDecoder Nothing
+        |> maybeDecode "modify_order" modelsModifyOrderModelDecoder Nothing
+        |> maybeDecode "executed_order" modelsExecutedOrderModelDecoder Nothing
+        |> maybeDecode "clear_book" modelsClearBookModelDecoder Nothing
+
+
+modelsRetailLiquidityIndicatorModelDecoder : Json.Decode.Decoder ModelsRetailLiquidityIndicatorModel
+modelsRetailLiquidityIndicatorModelDecoder =
+    Json.Decode.succeed ModelsRetailLiquidityIndicatorModel
+        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
+        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
+        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "retail_liquidity_indicator" Json.Decode.int Nothing
+        |> maybeDecodeNullable "retail_liquidity_indicator_code" Json.Decode.string Nothing
+        |> maybeDecodeNullable "retail_liquidity_indicator_text" Json.Decode.string Nothing
+        |> maybeDecode "is_retail_indicator_not_applicable" Json.Decode.bool Nothing
+        |> maybeDecode "is_retail_indicator_buy_interest" Json.Decode.bool Nothing
+        |> maybeDecode "is_retail_indicator_sell_interest" Json.Decode.bool Nothing
+        |> maybeDecode "is_retail_indicator_buy_and_sell_interest" Json.Decode.bool Nothing
+
+
+modelsSecurityDirectoryModelDecoder : Json.Decode.Decoder ModelsSecurityDirectoryModel
+modelsSecurityDirectoryModelDecoder =
+    Json.Decode.succeed ModelsSecurityDirectoryModel
+        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
+        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
+        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "flags" Json.Decode.int Nothing
+        |> maybeDecode "round_lot_size" Json.Decode.int Nothing
+        |> maybeDecode "adjusted_poc_price" Json.Decode.float Nothing
+        |> maybeDecode "luld_tier" Json.Decode.int Nothing
+        |> maybeDecodeNullable "luld_tier_code" Json.Decode.string Nothing
+        |> maybeDecodeNullable "luld_tier_text" Json.Decode.string Nothing
+        |> maybeDecode "is_luld_tier_not_applicable" Json.Decode.bool Nothing
+        |> maybeDecode "is_luld_tier1" Json.Decode.bool Nothing
+        |> maybeDecode "is_luld_tier2" Json.Decode.bool Nothing
+
+
+modelsSecurityEventModelDecoder : Json.Decode.Decoder ModelsSecurityEventModel
+modelsSecurityEventModelDecoder =
+    Json.Decode.succeed ModelsSecurityEventModel
+        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
+        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
+        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "security_event" Json.Decode.int Nothing
+        |> maybeDecodeNullable "security_event_code" Json.Decode.string Nothing
+        |> maybeDecodeNullable "security_event_text" Json.Decode.string Nothing
+        |> maybeDecode "is_opening_process_complete" Json.Decode.bool Nothing
+        |> maybeDecode "is_closing_process_complete" Json.Decode.bool Nothing
+
+
+modelsShortSalePriceTestStatusModelDecoder : Json.Decode.Decoder ModelsShortSalePriceTestStatusModel
+modelsShortSalePriceTestStatusModelDecoder =
+    Json.Decode.succeed ModelsShortSalePriceTestStatusModel
+        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
+        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
+        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "short_sale_price_test_status" Json.Decode.int Nothing
+        |> maybeDecodeNullable "short_sale_price_test_status_code" Json.Decode.string Nothing
+        |> maybeDecodeNullable "short_sale_price_test_status_text" Json.Decode.string Nothing
+        |> maybeDecode "is_short_sale_price_test_not_in_effect" Json.Decode.bool Nothing
+        |> maybeDecode "is_short_sale_price_test_in_effect" Json.Decode.bool Nothing
+        |> maybeDecode "detail" Json.Decode.int Nothing
+        |> maybeDecodeNullable "detail_code" Json.Decode.string Nothing
+        |> maybeDecodeNullable "detail_text" Json.Decode.string Nothing
+        |> maybeDecode "is_detail_no_price_test" Json.Decode.bool Nothing
+        |> maybeDecode "is_detail_activated" Json.Decode.bool Nothing
+        |> maybeDecode "is_detail_continued" Json.Decode.bool Nothing
+        |> maybeDecode "is_detail_deactivated" Json.Decode.bool Nothing
+        |> maybeDecode "is_detail_not_available" Json.Decode.bool Nothing
+
+
+modelsTradingStatusModelDecoder : Json.Decode.Decoder ModelsTradingStatusModel
+modelsTradingStatusModelDecoder =
+    Json.Decode.succeed ModelsTradingStatusModel
+        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
+        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
+        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
+        |> maybeDecode "is_trading_live" Json.Decode.bool Nothing
+        |> maybeDecode "is_trading_halted" Json.Decode.bool Nothing
+        |> maybeDecode "is_trading_in_order_acceptance_period" Json.Decode.bool Nothing
+        |> maybeDecode "is_trading_paused" Json.Decode.bool Nothing
+        |> maybeDecode "is_reason_halt_news_pending" Json.Decode.bool Nothing
+        |> maybeDecode "is_reason_ipo_not_yet_trading" Json.Decode.bool Nothing
+        |> maybeDecode "is_reason_ipo_deferred" Json.Decode.bool Nothing
+        |> maybeDecode "is_reason_halt_news_dissemination" Json.Decode.bool Nothing
+        |> maybeDecode "is_reason_ipo_order_acceptance_period" Json.Decode.bool Nothing
+        |> maybeDecode "is_reason_ipo_pre_launch_period" Json.Decode.bool Nothing
+        |> maybeDecode "is_reason_market_wide_circuit_breaker_level1" Json.Decode.bool Nothing
+        |> maybeDecode "is_reason_market_wide_circuit_breaker_level2" Json.Decode.bool Nothing
+        |> maybeDecode "is_reason_market_wide_circuit_breaker_level3" Json.Decode.bool Nothing
+        |> maybeDecode "is_reason_not_applicable" Json.Decode.bool Nothing
+        |> maybeDecode "is_reason_not_available" Json.Decode.bool Nothing
+
+
+oHLCVTimeSeriesExchangeTimeseriesItemDecoder : Json.Decode.Decoder OHLCVTimeSeriesExchangeTimeseriesItem
+oHLCVTimeSeriesExchangeTimeseriesItemDecoder =
+    Json.Decode.succeed OHLCVTimeSeriesExchangeTimeseriesItem
         |> maybeDecode "time_period_start" Api.Time.dateTimeDecoder Nothing
         |> maybeDecode "time_period_end" Api.Time.dateTimeDecoder Nothing
         |> maybeDecodeNullable "time_open" Api.Time.dateTimeDecoder Nothing
@@ -1561,9 +1578,9 @@ oHLCVExchangeTimeseriesItemDecoder =
         |> maybeDecodeNullable "symbol_id_exchange" Json.Decode.string Nothing
 
 
-oHLCVTimeseriesItemDecoder : Json.Decode.Decoder OHLCVTimeseriesItem
-oHLCVTimeseriesItemDecoder =
-    Json.Decode.succeed OHLCVTimeseriesItem
+oHLCVTimeSeriesTimeseriesItemDecoder : Json.Decode.Decoder OHLCVTimeSeriesTimeseriesItem
+oHLCVTimeSeriesTimeseriesItemDecoder =
+    Json.Decode.succeed OHLCVTimeSeriesTimeseriesItem
         |> maybeDecode "time_period_start" Api.Time.dateTimeDecoder Nothing
         |> maybeDecode "time_period_end" Api.Time.dateTimeDecoder Nothing
         |> maybeDecodeNullable "time_open" Api.Time.dateTimeDecoder Nothing
@@ -1576,32 +1593,15 @@ oHLCVTimeseriesItemDecoder =
         |> maybeDecode "trades_count" Json.Decode.int Nothing
 
 
-oHLCVTimeseriesPeriodDecoder : Json.Decode.Decoder OHLCVTimeseriesPeriod
-oHLCVTimeseriesPeriodDecoder =
-    Json.Decode.succeed OHLCVTimeseriesPeriod
+oHLCVTimeSeriesTimeseriesPeriodDecoder : Json.Decode.Decoder OHLCVTimeSeriesTimeseriesPeriod
+oHLCVTimeSeriesTimeseriesPeriodDecoder =
+    Json.Decode.succeed OHLCVTimeSeriesTimeseriesPeriod
         |> maybeDecodeNullable "period_id" Json.Decode.string Nothing
         |> maybeDecode "length_seconds" Json.Decode.int Nothing
         |> maybeDecode "length_months" Json.Decode.int Nothing
         |> maybeDecodeNullable "unit_count" Json.Decode.int Nothing
         |> maybeDecodeNullable "unit_name" Json.Decode.string Nothing
         |> maybeDecodeNullable "display_name" Json.Decode.string Nothing
-
-
-tradeTradeModelDecoder : Json.Decode.Decoder TradeTradeModel
-tradeTradeModelDecoder =
-    Json.Decode.succeed TradeTradeModel
-        |> maybeDecode "is_trade_break" Json.Decode.bool Nothing
-        |> maybeDecodeNullable "symbol" Json.Decode.string Nothing
-        |> maybeDecode "timestamp_nanos" Json.Decode.int Nothing
-        |> maybeDecode "timestamp" Api.Time.dateTimeDecoder Nothing
-        |> maybeDecode "size" Json.Decode.int Nothing
-        |> maybeDecode "price" Json.Decode.float Nothing
-        |> maybeDecode "trade_id" Json.Decode.int Nothing
-        |> maybeDecode "is_intermarket_sweep" Json.Decode.bool Nothing
-        |> maybeDecode "is_extended_hours_trade" Json.Decode.bool Nothing
-        |> maybeDecode "is_odd_lot_trade" Json.Decode.bool Nothing
-        |> maybeDecode "is_trade_through_exempt" Json.Decode.bool Nothing
-        |> maybeDecode "is_single_price_cross_trade" Json.Decode.bool Nothing
 
 
 

@@ -34,7 +34,7 @@ import Json.Encode
 
 {-| Get Admin Messages
 -}
-v1NativeIexAdminMessagesSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.AdminAdminMessageModel)
+v1NativeIexAdminMessagesSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.ModelsAdminMessageModel)
 v1NativeIexAdminMessagesSymbolGet symbol_path date_query auth_token =
     Api.request
         "GET"
@@ -43,12 +43,12 @@ v1NativeIexAdminMessagesSymbolGet symbol_path date_query auth_token =
         [ ( "date", Just <| Api.Time.dateTimeToString date_query ) ]
         []
         Nothing
-        (Json.Decode.list Api.Data.adminAdminMessageModelDecoder)
+        (Json.Decode.list Api.Data.modelsAdminMessageModelDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Get System Events
 -}
-v1NativeIexAdminSystemEventGet : Posix -> String -> Api.Request (List Api.Data.AdminSystemEventModel)
+v1NativeIexAdminSystemEventGet : Posix -> String -> Api.Request (List Api.Data.IEXSystemEventSystemEventModel)
 v1NativeIexAdminSystemEventGet date_query auth_token =
     Api.request
         "GET"
@@ -57,12 +57,12 @@ v1NativeIexAdminSystemEventGet date_query auth_token =
         [ ( "date", Just <| Api.Time.dateTimeToString date_query ) ]
         []
         Nothing
-        (Json.Decode.list Api.Data.adminSystemEventModelDecoder)
+        (Json.Decode.list Api.Data.iEXSystemEventSystemEventModelDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Get Level-1 Quotes
 -}
-v1NativeIexLevel1QuoteSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.Level1QuoteUpdateModel)
+v1NativeIexLevel1QuoteSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.IEXQuoteUpdateQuoteUpdateModel)
 v1NativeIexLevel1QuoteSymbolGet symbol_path date_query auth_token =
     Api.request
         "GET"
@@ -71,12 +71,12 @@ v1NativeIexLevel1QuoteSymbolGet symbol_path date_query auth_token =
         [ ( "date", Just <| Api.Time.dateTimeToString date_query ) ]
         []
         Nothing
-        (Json.Decode.list Api.Data.level1QuoteUpdateModelDecoder)
+        (Json.Decode.list Api.Data.iEXQuoteUpdateQuoteUpdateModelDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Get Level-2 Price Level Book
 -}
-v1NativeIexLevel2PriceLevelUpdateSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.Level2PriceLevelUpdateModel)
+v1NativeIexLevel2PriceLevelUpdateSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.IEXPriceLevelUpdatePriceLevelUpdateModel)
 v1NativeIexLevel2PriceLevelUpdateSymbolGet symbol_path date_query auth_token =
     Api.request
         "GET"
@@ -85,12 +85,12 @@ v1NativeIexLevel2PriceLevelUpdateSymbolGet symbol_path date_query auth_token =
         [ ( "date", Just <| Api.Time.dateTimeToString date_query ) ]
         []
         Nothing
-        (Json.Decode.list Api.Data.level2PriceLevelUpdateModelDecoder)
+        (Json.Decode.list Api.Data.iEXPriceLevelUpdatePriceLevelUpdateModelDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Get Level-3 Order Book
 -}
-v1NativeIexLevel3OrderBookSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.Level3OrderBookModel)
+v1NativeIexLevel3OrderBookSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.ModelsOrderBookModel)
 v1NativeIexLevel3OrderBookSymbolGet symbol_path date_query auth_token =
     Api.request
         "GET"
@@ -99,12 +99,12 @@ v1NativeIexLevel3OrderBookSymbolGet symbol_path date_query auth_token =
         [ ( "date", Just <| Api.Time.dateTimeToString date_query ) ]
         []
         Nothing
-        (Json.Decode.list Api.Data.level3OrderBookModelDecoder)
+        (Json.Decode.list Api.Data.modelsOrderBookModelDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Get Trades
 -}
-v1NativeIexTradeSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.TradeTradeModel)
+v1NativeIexTradeSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.IEXTradeTradeModel)
 v1NativeIexTradeSymbolGet symbol_path date_query auth_token =
     Api.request
         "GET"
@@ -113,5 +113,5 @@ v1NativeIexTradeSymbolGet symbol_path date_query auth_token =
         [ ( "date", Just <| Api.Time.dateTimeToString date_query ) ]
         []
         Nothing
-        (Json.Decode.list Api.Data.tradeTradeModelDecoder)
+        (Json.Decode.list Api.Data.iEXTradeTradeModelDecoder)
         |> Api.withBearerToken auth_token

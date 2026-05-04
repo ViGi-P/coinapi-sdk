@@ -11,7 +11,7 @@ test_that("V1NativeIexAdminMessagesSymbolGet", {
   # Get Admin Messages
   # @param symbol character The symbol identifier
   # @param date character Optional date in format YYYY-MM-DD (defaults to latest available data)
-  # @return [array[AdminAdminMessageModel]]
+  # @return [array[ModelsAdminMessageModel]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -22,7 +22,7 @@ test_that("V1NativeIexAdminSystemEventGet", {
   # base path: https://api-historical.stock.finfeedapi.com
   # Get System Events
   # @param date character Date in format YYYY-MM-DD
-  # @return [array[AdminSystemEventModel]]
+  # @return [array[IEXSystemEventSystemEventModel]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -34,7 +34,7 @@ test_that("V1NativeIexLevel1QuoteSymbolGet", {
   # Get Level-1 Quotes
   # @param symbol character The symbol identifier
   # @param date character Optional date in format YYYY-MM-DD (defaults to latest available data)
-  # @return [array[Level1QuoteUpdateModel]]
+  # @return [array[IEXQuoteUpdateQuoteUpdateModel]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -46,7 +46,7 @@ test_that("V1NativeIexLevel2PriceLevelUpdateSymbolGet", {
   # Get Level-2 Price Level Book
   # @param symbol character The symbol identifier
   # @param date character Optional date in format YYYY-MM-DD (defaults to latest available data)
-  # @return [array[Level2PriceLevelUpdateModel]]
+  # @return [array[IEXPriceLevelUpdatePriceLevelUpdateModel]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -58,7 +58,7 @@ test_that("V1NativeIexLevel3OrderBookSymbolGet", {
   # Get Level-3 Order Book
   # @param symbol character The symbol identifier
   # @param date character Optional date in format YYYY-MM-DD (defaults to latest available data)
-  # @return [array[Level3OrderBookModel]]
+  # @return [array[ModelsOrderBookModel]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")
@@ -70,7 +70,7 @@ test_that("V1NativeIexTradeSymbolGet", {
   # Get Trades
   # @param symbol character The symbol identifier
   # @param date character Optional date in format YYYY-MM-DD (defaults to latest available data)
-  # @return [array[TradeTradeModel]]
+  # @return [array[IEXTradeTradeModel]]
 
   # uncomment below to test the operation
   #expect_equal(result, "EXPECTED_RESULT")

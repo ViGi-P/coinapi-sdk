@@ -33,7 +33,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[AdminAdminMessageModel]**](AdminAdminMessageModel.md)
+[**array[ModelsAdminMessageModel]**](ModelsAdminMessageModel.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[AdminSystemEventModel]**](AdminSystemEventModel.md)
+[**array[IEXSystemEventSystemEventModel]**](IEXSystemEventSystemEventModel.md)
 
 ### Authorization
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[Level1QuoteUpdateModel]**](Level1QuoteUpdateModel.md)
+[**array[IEXQuoteUpdateQuoteUpdateModel]**](IEXQuoteUpdateQuoteUpdateModel.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[Level2PriceLevelUpdateModel]**](Level2PriceLevelUpdateModel.md)
+[**array[IEXPriceLevelUpdatePriceLevelUpdateModel]**](IEXPriceLevelUpdatePriceLevelUpdateModel.md)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[Level3OrderBookModel]**](Level3OrderBookModel.md)
+[**array[ModelsOrderBookModel]**](ModelsOrderBookModel.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[TradeTradeModel]**](TradeTradeModel.md)
+[**array[IEXTradeTradeModel]**](IEXTradeTradeModel.md)
 
 ### Authorization
 

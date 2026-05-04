@@ -12,7 +12,7 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 <a id="v1OhlcvExchangeExchangeIdHistoryGet"></a>
 # **v1OhlcvExchangeExchangeIdHistoryGet**
-> kotlin.collections.List&lt;OHLCVExchangeTimeseriesItem&gt; v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
+> kotlin.collections.List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt; v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
 
 Historical data by exchange
 
@@ -30,7 +30,7 @@ val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of
 val timeStart : kotlin.String = timeStart_example // kotlin.String | Timeseries starting time in ISO 8601
 val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601
 try {
-    val result : kotlin.collections.List<OHLCVExchangeTimeseriesItem> = apiInstance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
+    val result : kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem> = apiInstance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling OhlcvApi#v1OhlcvExchangeExchangeIdHistoryGet")
@@ -51,7 +51,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;OHLCVExchangeTimeseriesItem&gt;**](OHLCVExchangeTimeseriesItem.md)
+[**kotlin.collections.List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt;**](OHLCVTimeSeriesExchangeTimeseriesItem.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Configure JWT:
 
 <a id="v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet"></a>
 # **v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet**
-> kotlin.collections.List&lt;OHLCVTimeseriesItem&gt; v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit)
+> kotlin.collections.List&lt;OHLCVTimeSeriesTimeseriesItem&gt; v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit)
 
 Historical data
 
@@ -89,7 +89,7 @@ val timeStart : kotlin.String = timeStart_example // kotlin.String | Timeseries 
 val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601
 val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 try {
-    val result : kotlin.collections.List<OHLCVTimeseriesItem> = apiInstance.v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit)
+    val result : kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem> = apiInstance.v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling OhlcvApi#v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet")
@@ -112,7 +112,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;OHLCVTimeseriesItem&gt;**](OHLCVTimeseriesItem.md)
+[**kotlin.collections.List&lt;OHLCVTimeSeriesTimeseriesItem&gt;**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ Configure JWT:
 
 <a id="v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet"></a>
 # **v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet**
-> kotlin.collections.List&lt;OHLCVTimeseriesItem&gt; v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit)
+> kotlin.collections.List&lt;OHLCVTimeSeriesTimeseriesItem&gt; v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit)
 
 Latest data
 
@@ -148,7 +148,7 @@ val symbolId : kotlin.String = symbolId_example // kotlin.String | Symbol identi
 val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
 val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 try {
-    val result : kotlin.collections.List<OHLCVTimeseriesItem> = apiInstance.v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit)
+    val result : kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem> = apiInstance.v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling OhlcvApi#v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet")
@@ -169,7 +169,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;OHLCVTimeseriesItem&gt;**](OHLCVTimeseriesItem.md)
+[**kotlin.collections.List&lt;OHLCVTimeSeriesTimeseriesItem&gt;**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -187,7 +187,7 @@ Configure JWT:
 
 <a id="v1OhlcvPeriodsGet"></a>
 # **v1OhlcvPeriodsGet**
-> kotlin.collections.List&lt;OHLCVTimeseriesPeriod&gt; v1OhlcvPeriodsGet()
+> kotlin.collections.List&lt;OHLCVTimeSeriesTimeseriesPeriod&gt; v1OhlcvPeriodsGet()
 
 List all periods
 
@@ -201,7 +201,7 @@ Get full list of supported time periods available for requesting OHLCV timeserie
 
 val apiInstance = OhlcvApi()
 try {
-    val result : kotlin.collections.List<OHLCVTimeseriesPeriod> = apiInstance.v1OhlcvPeriodsGet()
+    val result : kotlin.collections.List<OHLCVTimeSeriesTimeseriesPeriod> = apiInstance.v1OhlcvPeriodsGet()
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling OhlcvApi#v1OhlcvPeriodsGet")
@@ -217,7 +217,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**kotlin.collections.List&lt;OHLCVTimeseriesPeriod&gt;**](OHLCVTimeseriesPeriod.md)
+[**kotlin.collections.List&lt;OHLCVTimeSeriesTimeseriesPeriod&gt;**](OHLCVTimeSeriesTimeseriesPeriod.md)
 
 ### Authorization
 

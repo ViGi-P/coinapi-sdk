@@ -55,10 +55,10 @@ export class OhlcvApi {
      * @param timeEnd Timeseries ending time in ISO 8601
      */
     public v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.OHLCVExchangeTimeseriesItem>;  },
+    { response: JQueryXHR; body: Array<models.OHLCVTimeSeriesExchangeTimeseriesItem>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/ohlcv/exchange/{exchange_id}/history'.replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+        let localVarPath = this.basePath + '/v1/ohlcv/exchange/{exchange_id}/history'.replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -131,11 +131,11 @@ export class OhlcvApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.OHLCVExchangeTimeseriesItem>;  },
+            { response: JQueryXHR; body: Array<models.OHLCVTimeSeriesExchangeTimeseriesItem>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.OHLCVExchangeTimeseriesItem>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.OHLCVTimeSeriesExchangeTimeseriesItem>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -154,10 +154,10 @@ export class OhlcvApi {
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
     public v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId: string, symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.OHLCVTimeseriesItem>;  },
+    { response: JQueryXHR; body: Array<models.OHLCVTimeSeriesTimeseriesItem>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/history'.replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId))).replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+        let localVarPath = this.basePath + '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/history'.replace('{exchange_id}', encodeURIComponent(String(exchangeId))).replace('{symbol_id}', encodeURIComponent(String(symbolId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -228,11 +228,11 @@ export class OhlcvApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.OHLCVTimeseriesItem>;  },
+            { response: JQueryXHR; body: Array<models.OHLCVTimeSeriesTimeseriesItem>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.OHLCVTimeseriesItem>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.OHLCVTimeSeriesTimeseriesItem>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -249,10 +249,10 @@ export class OhlcvApi {
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
     public v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId: string, symbolId: string, periodId: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.OHLCVTimeseriesItem>;  },
+    { response: JQueryXHR; body: Array<models.OHLCVTimeSeriesTimeseriesItem>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/latest'.replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId))).replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+        let localVarPath = this.basePath + '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/latest'.replace('{exchange_id}', encodeURIComponent(String(exchangeId))).replace('{symbol_id}', encodeURIComponent(String(symbolId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -317,11 +317,11 @@ export class OhlcvApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.OHLCVTimeseriesItem>;  },
+            { response: JQueryXHR; body: Array<models.OHLCVTimeSeriesTimeseriesItem>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.OHLCVTimeseriesItem>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.OHLCVTimeSeriesTimeseriesItem>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -334,7 +334,7 @@ export class OhlcvApi {
      * @summary List all periods
      */
     public v1OhlcvPeriodsGet(extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.OHLCVTimeseriesPeriod>;  },
+    { response: JQueryXHR; body: Array<models.OHLCVTimeSeriesTimeseriesPeriod>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/ohlcv/periods';
@@ -381,11 +381,11 @@ export class OhlcvApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.OHLCVTimeseriesPeriod>;  },
+            { response: JQueryXHR; body: Array<models.OHLCVTimeSeriesTimeseriesPeriod>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.OHLCVTimeseriesPeriod>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.OHLCVTimeSeriesTimeseriesPeriod>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})

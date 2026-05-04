@@ -53,10 +53,10 @@ export class NativeIEXApi {
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
     public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.AdminAdminMessageModel>;  },
+    { response: JQueryXHR; body: Array<models.ModelsAdminMessageModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/native/iex/admin/messages/{symbol}'.replace('{' + 'symbol' + '}', encodeURIComponent(String(symbol)));
+        let localVarPath = this.basePath + '/v1/native/iex/admin/messages/{symbol}'.replace('{symbol}', encodeURIComponent(String(symbol)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -111,11 +111,11 @@ export class NativeIEXApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.AdminAdminMessageModel>;  },
+            { response: JQueryXHR; body: Array<models.ModelsAdminMessageModel>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.AdminAdminMessageModel>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.ModelsAdminMessageModel>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -129,7 +129,7 @@ export class NativeIEXApi {
      * @param date Date in format YYYY-MM-DD
      */
     public v1NativeIexAdminSystemEventGet(date: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.AdminSystemEventModel>;  },
+    { response: JQueryXHR; body: Array<models.IEXSystemEventSystemEventModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
         let localVarPath = this.basePath + '/v1/native/iex/admin/system-event';
@@ -182,11 +182,11 @@ export class NativeIEXApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.AdminSystemEventModel>;  },
+            { response: JQueryXHR; body: Array<models.IEXSystemEventSystemEventModel>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.AdminSystemEventModel>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.IEXSystemEventSystemEventModel>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -201,10 +201,10 @@ export class NativeIEXApi {
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
     public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.Level1QuoteUpdateModel>;  },
+    { response: JQueryXHR; body: Array<models.IEXQuoteUpdateQuoteUpdateModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/native/iex/level1-quote/{symbol}'.replace('{' + 'symbol' + '}', encodeURIComponent(String(symbol)));
+        let localVarPath = this.basePath + '/v1/native/iex/level1-quote/{symbol}'.replace('{symbol}', encodeURIComponent(String(symbol)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -259,11 +259,11 @@ export class NativeIEXApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.Level1QuoteUpdateModel>;  },
+            { response: JQueryXHR; body: Array<models.IEXQuoteUpdateQuoteUpdateModel>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.Level1QuoteUpdateModel>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.IEXQuoteUpdateQuoteUpdateModel>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -278,10 +278,10 @@ export class NativeIEXApi {
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
     public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.Level2PriceLevelUpdateModel>;  },
+    { response: JQueryXHR; body: Array<models.IEXPriceLevelUpdatePriceLevelUpdateModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/native/iex/level2-price-level-update/{symbol}'.replace('{' + 'symbol' + '}', encodeURIComponent(String(symbol)));
+        let localVarPath = this.basePath + '/v1/native/iex/level2-price-level-update/{symbol}'.replace('{symbol}', encodeURIComponent(String(symbol)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -336,11 +336,11 @@ export class NativeIEXApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.Level2PriceLevelUpdateModel>;  },
+            { response: JQueryXHR; body: Array<models.IEXPriceLevelUpdatePriceLevelUpdateModel>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.Level2PriceLevelUpdateModel>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.IEXPriceLevelUpdatePriceLevelUpdateModel>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -355,10 +355,10 @@ export class NativeIEXApi {
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
     public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.Level3OrderBookModel>;  },
+    { response: JQueryXHR; body: Array<models.ModelsOrderBookModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/native/iex/level3-order-book/{symbol}'.replace('{' + 'symbol' + '}', encodeURIComponent(String(symbol)));
+        let localVarPath = this.basePath + '/v1/native/iex/level3-order-book/{symbol}'.replace('{symbol}', encodeURIComponent(String(symbol)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -413,11 +413,11 @@ export class NativeIEXApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.Level3OrderBookModel>;  },
+            { response: JQueryXHR; body: Array<models.ModelsOrderBookModel>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.Level3OrderBookModel>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.ModelsOrderBookModel>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})
@@ -432,10 +432,10 @@ export class NativeIEXApi {
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
     public v1NativeIexTradeSymbolGet(symbol: string, date: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: Array<models.TradeTradeModel>;  },
+    { response: JQueryXHR; body: Array<models.IEXTradeTradeModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/native/iex/trade/{symbol}'.replace('{' + 'symbol' + '}', encodeURIComponent(String(symbol)));
+        let localVarPath = this.basePath + '/v1/native/iex/trade/{symbol}'.replace('{symbol}', encodeURIComponent(String(symbol)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
@@ -490,11 +490,11 @@ export class NativeIEXApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: Array<models.TradeTradeModel>;  },
+            { response: JQueryXHR; body: Array<models.IEXTradeTradeModel>;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: Array<models.TradeTradeModel>, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: Array<models.IEXTradeTradeModel>, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})

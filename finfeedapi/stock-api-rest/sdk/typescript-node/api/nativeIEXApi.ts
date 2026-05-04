@@ -15,12 +15,12 @@ import localVarRequest from 'request';
 import http from 'http';
 
 /* tslint:disable:no-unused-locals */
-import { AdminAdminMessageModel } from '../model/adminAdminMessageModel';
-import { AdminSystemEventModel } from '../model/adminSystemEventModel';
-import { Level1QuoteUpdateModel } from '../model/level1QuoteUpdateModel';
-import { Level2PriceLevelUpdateModel } from '../model/level2PriceLevelUpdateModel';
-import { Level3OrderBookModel } from '../model/level3OrderBookModel';
-import { TradeTradeModel } from '../model/tradeTradeModel';
+import { IEXPriceLevelUpdatePriceLevelUpdateModel } from '../model/iEXPriceLevelUpdatePriceLevelUpdateModel';
+import { IEXQuoteUpdateQuoteUpdateModel } from '../model/iEXQuoteUpdateQuoteUpdateModel';
+import { IEXSystemEventSystemEventModel } from '../model/iEXSystemEventSystemEventModel';
+import { IEXTradeTradeModel } from '../model/iEXTradeTradeModel';
+import { ModelsAdminMessageModel } from '../model/modelsAdminMessageModel';
+import { ModelsOrderBookModel } from '../model/modelsOrderBookModel';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
 import { HttpBasicAuth, HttpBearerAuth, ApiKeyAuth, OAuth } from '../model/models';
@@ -105,9 +105,9 @@ export class NativeIEXApi {
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
-    public async v1NativeIexAdminMessagesSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<AdminAdminMessageModel>;  }> {
+    public async v1NativeIexAdminMessagesSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsAdminMessageModel>;  }> {
         const localVarPath = this.basePath + '/v1/native/iex/admin/messages/{symbol}'
-            .replace('{' + 'symbol' + '}', encodeURIComponent(String(symbol)));
+            .replace('{symbol}', encodeURIComponent(String(symbol)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['application/json'];
@@ -168,13 +168,13 @@ export class NativeIEXApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<AdminAdminMessageModel>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<ModelsAdminMessageModel>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<AdminAdminMessageModel>");
+                            body = ObjectSerializer.deserialize(body, "Array<ModelsAdminMessageModel>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -189,7 +189,7 @@ export class NativeIEXApi {
      * @summary Get System Events
      * @param date Date in format YYYY-MM-DD
      */
-    public async v1NativeIexAdminSystemEventGet (date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<AdminSystemEventModel>;  }> {
+    public async v1NativeIexAdminSystemEventGet (date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IEXSystemEventSystemEventModel>;  }> {
         const localVarPath = this.basePath + '/v1/native/iex/admin/system-event';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -246,13 +246,13 @@ export class NativeIEXApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<AdminSystemEventModel>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<IEXSystemEventSystemEventModel>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<AdminSystemEventModel>");
+                            body = ObjectSerializer.deserialize(body, "Array<IEXSystemEventSystemEventModel>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -268,9 +268,9 @@ export class NativeIEXApi {
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
-    public async v1NativeIexLevel1QuoteSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<Level1QuoteUpdateModel>;  }> {
+    public async v1NativeIexLevel1QuoteSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IEXQuoteUpdateQuoteUpdateModel>;  }> {
         const localVarPath = this.basePath + '/v1/native/iex/level1-quote/{symbol}'
-            .replace('{' + 'symbol' + '}', encodeURIComponent(String(symbol)));
+            .replace('{symbol}', encodeURIComponent(String(symbol)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['application/json'];
@@ -331,13 +331,13 @@ export class NativeIEXApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<Level1QuoteUpdateModel>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<IEXQuoteUpdateQuoteUpdateModel>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<Level1QuoteUpdateModel>");
+                            body = ObjectSerializer.deserialize(body, "Array<IEXQuoteUpdateQuoteUpdateModel>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -353,9 +353,9 @@ export class NativeIEXApi {
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
-    public async v1NativeIexLevel2PriceLevelUpdateSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<Level2PriceLevelUpdateModel>;  }> {
+    public async v1NativeIexLevel2PriceLevelUpdateSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IEXPriceLevelUpdatePriceLevelUpdateModel>;  }> {
         const localVarPath = this.basePath + '/v1/native/iex/level2-price-level-update/{symbol}'
-            .replace('{' + 'symbol' + '}', encodeURIComponent(String(symbol)));
+            .replace('{symbol}', encodeURIComponent(String(symbol)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['application/json'];
@@ -416,13 +416,13 @@ export class NativeIEXApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<Level2PriceLevelUpdateModel>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<IEXPriceLevelUpdatePriceLevelUpdateModel>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<Level2PriceLevelUpdateModel>");
+                            body = ObjectSerializer.deserialize(body, "Array<IEXPriceLevelUpdatePriceLevelUpdateModel>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -438,9 +438,9 @@ export class NativeIEXApi {
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
-    public async v1NativeIexLevel3OrderBookSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<Level3OrderBookModel>;  }> {
+    public async v1NativeIexLevel3OrderBookSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsOrderBookModel>;  }> {
         const localVarPath = this.basePath + '/v1/native/iex/level3-order-book/{symbol}'
-            .replace('{' + 'symbol' + '}', encodeURIComponent(String(symbol)));
+            .replace('{symbol}', encodeURIComponent(String(symbol)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['application/json'];
@@ -501,13 +501,13 @@ export class NativeIEXApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<Level3OrderBookModel>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<ModelsOrderBookModel>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<Level3OrderBookModel>");
+                            body = ObjectSerializer.deserialize(body, "Array<ModelsOrderBookModel>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -523,9 +523,9 @@ export class NativeIEXApi {
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
-    public async v1NativeIexTradeSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<TradeTradeModel>;  }> {
+    public async v1NativeIexTradeSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IEXTradeTradeModel>;  }> {
         const localVarPath = this.basePath + '/v1/native/iex/trade/{symbol}'
-            .replace('{' + 'symbol' + '}', encodeURIComponent(String(symbol)));
+            .replace('{symbol}', encodeURIComponent(String(symbol)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['application/json'];
@@ -586,13 +586,13 @@ export class NativeIEXApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<TradeTradeModel>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<IEXTradeTradeModel>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<TradeTradeModel>");
+                            body = ObjectSerializer.deserialize(body, "Array<IEXTradeTradeModel>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));

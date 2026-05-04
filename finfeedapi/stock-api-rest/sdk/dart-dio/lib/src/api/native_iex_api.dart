@@ -10,12 +10,12 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:openapi/src/api_util.dart';
-import 'package:openapi/src/model/admin_admin_message_model.dart';
-import 'package:openapi/src/model/admin_system_event_model.dart';
-import 'package:openapi/src/model/level1_quote_update_model.dart';
-import 'package:openapi/src/model/level2_price_level_update_model.dart';
-import 'package:openapi/src/model/level3_order_book_model.dart';
-import 'package:openapi/src/model/trade_trade_model.dart';
+import 'package:openapi/src/model/iex_price_level_update_price_level_update_model.dart';
+import 'package:openapi/src/model/iex_quote_update_quote_update_model.dart';
+import 'package:openapi/src/model/iex_system_event_system_event_model.dart';
+import 'package:openapi/src/model/iex_trade_trade_model.dart';
+import 'package:openapi/src/model/models_admin_message_model.dart';
+import 'package:openapi/src/model/models_order_book_model.dart';
 
 class NativeIEXApi {
 
@@ -38,9 +38,9 @@ class NativeIEXApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<AdminAdminMessageModel>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<ModelsAdminMessageModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<AdminAdminMessageModel>>> v1NativeIexAdminMessagesSymbolGet({ 
+  Future<Response<BuiltList<ModelsAdminMessageModel>>> v1NativeIexAdminMessagesSymbolGet({ 
     required String symbol,
     required DateTime date,
     CancelToken? cancelToken,
@@ -87,14 +87,14 @@ class NativeIEXApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<AdminAdminMessageModel>? _responseData;
+    BuiltList<ModelsAdminMessageModel>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(AdminAdminMessageModel)]),
-      ) as BuiltList<AdminAdminMessageModel>;
+        specifiedType: const FullType(BuiltList, [FullType(ModelsAdminMessageModel)]),
+      ) as BuiltList<ModelsAdminMessageModel>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -106,7 +106,7 @@ class NativeIEXApi {
       );
     }
 
-    return Response<BuiltList<AdminAdminMessageModel>>(
+    return Response<BuiltList<ModelsAdminMessageModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -130,9 +130,9 @@ class NativeIEXApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<AdminSystemEventModel>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<IEXSystemEventSystemEventModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<AdminSystemEventModel>>> v1NativeIexAdminSystemEventGet({ 
+  Future<Response<BuiltList<IEXSystemEventSystemEventModel>>> v1NativeIexAdminSystemEventGet({ 
     required DateTime date,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -178,14 +178,14 @@ class NativeIEXApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<AdminSystemEventModel>? _responseData;
+    BuiltList<IEXSystemEventSystemEventModel>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(AdminSystemEventModel)]),
-      ) as BuiltList<AdminSystemEventModel>;
+        specifiedType: const FullType(BuiltList, [FullType(IEXSystemEventSystemEventModel)]),
+      ) as BuiltList<IEXSystemEventSystemEventModel>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -197,7 +197,7 @@ class NativeIEXApi {
       );
     }
 
-    return Response<BuiltList<AdminSystemEventModel>>(
+    return Response<BuiltList<IEXSystemEventSystemEventModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -222,9 +222,9 @@ class NativeIEXApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Level1QuoteUpdateModel>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<IEXQuoteUpdateQuoteUpdateModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<Level1QuoteUpdateModel>>> v1NativeIexLevel1QuoteSymbolGet({ 
+  Future<Response<BuiltList<IEXQuoteUpdateQuoteUpdateModel>>> v1NativeIexLevel1QuoteSymbolGet({ 
     required String symbol,
     required DateTime date,
     CancelToken? cancelToken,
@@ -271,14 +271,14 @@ class NativeIEXApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Level1QuoteUpdateModel>? _responseData;
+    BuiltList<IEXQuoteUpdateQuoteUpdateModel>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(Level1QuoteUpdateModel)]),
-      ) as BuiltList<Level1QuoteUpdateModel>;
+        specifiedType: const FullType(BuiltList, [FullType(IEXQuoteUpdateQuoteUpdateModel)]),
+      ) as BuiltList<IEXQuoteUpdateQuoteUpdateModel>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -290,7 +290,7 @@ class NativeIEXApi {
       );
     }
 
-    return Response<BuiltList<Level1QuoteUpdateModel>>(
+    return Response<BuiltList<IEXQuoteUpdateQuoteUpdateModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -315,9 +315,9 @@ class NativeIEXApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Level2PriceLevelUpdateModel>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<IEXPriceLevelUpdatePriceLevelUpdateModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<Level2PriceLevelUpdateModel>>> v1NativeIexLevel2PriceLevelUpdateSymbolGet({ 
+  Future<Response<BuiltList<IEXPriceLevelUpdatePriceLevelUpdateModel>>> v1NativeIexLevel2PriceLevelUpdateSymbolGet({ 
     required String symbol,
     required DateTime date,
     CancelToken? cancelToken,
@@ -364,14 +364,14 @@ class NativeIEXApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Level2PriceLevelUpdateModel>? _responseData;
+    BuiltList<IEXPriceLevelUpdatePriceLevelUpdateModel>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(Level2PriceLevelUpdateModel)]),
-      ) as BuiltList<Level2PriceLevelUpdateModel>;
+        specifiedType: const FullType(BuiltList, [FullType(IEXPriceLevelUpdatePriceLevelUpdateModel)]),
+      ) as BuiltList<IEXPriceLevelUpdatePriceLevelUpdateModel>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -383,7 +383,7 @@ class NativeIEXApi {
       );
     }
 
-    return Response<BuiltList<Level2PriceLevelUpdateModel>>(
+    return Response<BuiltList<IEXPriceLevelUpdatePriceLevelUpdateModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -408,9 +408,9 @@ class NativeIEXApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Level3OrderBookModel>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<ModelsOrderBookModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<Level3OrderBookModel>>> v1NativeIexLevel3OrderBookSymbolGet({ 
+  Future<Response<BuiltList<ModelsOrderBookModel>>> v1NativeIexLevel3OrderBookSymbolGet({ 
     required String symbol,
     required DateTime date,
     CancelToken? cancelToken,
@@ -457,14 +457,14 @@ class NativeIEXApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Level3OrderBookModel>? _responseData;
+    BuiltList<ModelsOrderBookModel>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(Level3OrderBookModel)]),
-      ) as BuiltList<Level3OrderBookModel>;
+        specifiedType: const FullType(BuiltList, [FullType(ModelsOrderBookModel)]),
+      ) as BuiltList<ModelsOrderBookModel>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -476,7 +476,7 @@ class NativeIEXApi {
       );
     }
 
-    return Response<BuiltList<Level3OrderBookModel>>(
+    return Response<BuiltList<ModelsOrderBookModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -501,9 +501,9 @@ class NativeIEXApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<TradeTradeModel>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<IEXTradeTradeModel>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<TradeTradeModel>>> v1NativeIexTradeSymbolGet({ 
+  Future<Response<BuiltList<IEXTradeTradeModel>>> v1NativeIexTradeSymbolGet({ 
     required String symbol,
     required DateTime date,
     CancelToken? cancelToken,
@@ -550,14 +550,14 @@ class NativeIEXApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<TradeTradeModel>? _responseData;
+    BuiltList<IEXTradeTradeModel>? _responseData;
 
     try {
       final rawResponse = _response.data;
       _responseData = rawResponse == null ? null : _serializers.deserialize(
         rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(TradeTradeModel)]),
-      ) as BuiltList<TradeTradeModel>;
+        specifiedType: const FullType(BuiltList, [FullType(IEXTradeTradeModel)]),
+      ) as BuiltList<IEXTradeTradeModel>;
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -569,7 +569,7 @@ class NativeIEXApi {
       );
     }
 
-    return Response<BuiltList<TradeTradeModel>>(
+    return Response<BuiltList<IEXTradeTradeModel>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

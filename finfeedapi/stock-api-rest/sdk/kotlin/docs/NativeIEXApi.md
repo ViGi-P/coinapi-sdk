@@ -14,7 +14,7 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 <a id="v1NativeIexAdminMessagesSymbolGet"></a>
 # **v1NativeIexAdminMessagesSymbolGet**
-> kotlin.collections.List&lt;AdminAdminMessageModel&gt; v1NativeIexAdminMessagesSymbolGet(symbol, date)
+> kotlin.collections.List&lt;ModelsAdminMessageModel&gt; v1NativeIexAdminMessagesSymbolGet(symbol, date)
 
 Get Admin Messages
 
@@ -28,7 +28,7 @@ val apiInstance = NativeIEXApi()
 val symbol : kotlin.String = symbol_example // kotlin.String | The symbol identifier
 val date : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 try {
-    val result : kotlin.collections.List<AdminAdminMessageModel> = apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date)
+    val result : kotlin.collections.List<ModelsAdminMessageModel> = apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling NativeIEXApi#v1NativeIexAdminMessagesSymbolGet")
@@ -47,7 +47,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;AdminAdminMessageModel&gt;**](AdminAdminMessageModel.md)
+[**kotlin.collections.List&lt;ModelsAdminMessageModel&gt;**](ModelsAdminMessageModel.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Configure JWT:
 
 <a id="v1NativeIexAdminSystemEventGet"></a>
 # **v1NativeIexAdminSystemEventGet**
-> kotlin.collections.List&lt;AdminSystemEventModel&gt; v1NativeIexAdminSystemEventGet(date)
+> kotlin.collections.List&lt;IEXSystemEventSystemEventModel&gt; v1NativeIexAdminSystemEventGet(date)
 
 Get System Events
 
@@ -78,7 +78,7 @@ Get System Events
 val apiInstance = NativeIEXApi()
 val date : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Date in format YYYY-MM-DD
 try {
-    val result : kotlin.collections.List<AdminSystemEventModel> = apiInstance.v1NativeIexAdminSystemEventGet(date)
+    val result : kotlin.collections.List<IEXSystemEventSystemEventModel> = apiInstance.v1NativeIexAdminSystemEventGet(date)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling NativeIEXApi#v1NativeIexAdminSystemEventGet")
@@ -96,7 +96,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;AdminSystemEventModel&gt;**](AdminSystemEventModel.md)
+[**kotlin.collections.List&lt;IEXSystemEventSystemEventModel&gt;**](IEXSystemEventSystemEventModel.md)
 
 ### Authorization
 
@@ -114,7 +114,7 @@ Configure JWT:
 
 <a id="v1NativeIexLevel1QuoteSymbolGet"></a>
 # **v1NativeIexLevel1QuoteSymbolGet**
-> kotlin.collections.List&lt;Level1QuoteUpdateModel&gt; v1NativeIexLevel1QuoteSymbolGet(symbol, date)
+> kotlin.collections.List&lt;IEXQuoteUpdateQuoteUpdateModel&gt; v1NativeIexLevel1QuoteSymbolGet(symbol, date)
 
 Get Level-1 Quotes
 
@@ -128,7 +128,7 @@ val apiInstance = NativeIEXApi()
 val symbol : kotlin.String = symbol_example // kotlin.String | The symbol identifier
 val date : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 try {
-    val result : kotlin.collections.List<Level1QuoteUpdateModel> = apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date)
+    val result : kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel> = apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling NativeIEXApi#v1NativeIexLevel1QuoteSymbolGet")
@@ -147,7 +147,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;Level1QuoteUpdateModel&gt;**](Level1QuoteUpdateModel.md)
+[**kotlin.collections.List&lt;IEXQuoteUpdateQuoteUpdateModel&gt;**](IEXQuoteUpdateQuoteUpdateModel.md)
 
 ### Authorization
 
@@ -165,7 +165,7 @@ Configure JWT:
 
 <a id="v1NativeIexLevel2PriceLevelUpdateSymbolGet"></a>
 # **v1NativeIexLevel2PriceLevelUpdateSymbolGet**
-> kotlin.collections.List&lt;Level2PriceLevelUpdateModel&gt; v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
+> kotlin.collections.List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt; v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
 
 Get Level-2 Price Level Book
 
@@ -179,7 +179,7 @@ val apiInstance = NativeIEXApi()
 val symbol : kotlin.String = symbol_example // kotlin.String | The symbol identifier
 val date : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 try {
-    val result : kotlin.collections.List<Level2PriceLevelUpdateModel> = apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
+    val result : kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel> = apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling NativeIEXApi#v1NativeIexLevel2PriceLevelUpdateSymbolGet")
@@ -198,7 +198,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;Level2PriceLevelUpdateModel&gt;**](Level2PriceLevelUpdateModel.md)
+[**kotlin.collections.List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt;**](IEXPriceLevelUpdatePriceLevelUpdateModel.md)
 
 ### Authorization
 
@@ -216,7 +216,7 @@ Configure JWT:
 
 <a id="v1NativeIexLevel3OrderBookSymbolGet"></a>
 # **v1NativeIexLevel3OrderBookSymbolGet**
-> kotlin.collections.List&lt;Level3OrderBookModel&gt; v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
+> kotlin.collections.List&lt;ModelsOrderBookModel&gt; v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
 
 Get Level-3 Order Book
 
@@ -230,7 +230,7 @@ val apiInstance = NativeIEXApi()
 val symbol : kotlin.String = symbol_example // kotlin.String | The symbol identifier
 val date : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 try {
-    val result : kotlin.collections.List<Level3OrderBookModel> = apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
+    val result : kotlin.collections.List<ModelsOrderBookModel> = apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling NativeIEXApi#v1NativeIexLevel3OrderBookSymbolGet")
@@ -249,7 +249,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;Level3OrderBookModel&gt;**](Level3OrderBookModel.md)
+[**kotlin.collections.List&lt;ModelsOrderBookModel&gt;**](ModelsOrderBookModel.md)
 
 ### Authorization
 
@@ -267,7 +267,7 @@ Configure JWT:
 
 <a id="v1NativeIexTradeSymbolGet"></a>
 # **v1NativeIexTradeSymbolGet**
-> kotlin.collections.List&lt;TradeTradeModel&gt; v1NativeIexTradeSymbolGet(symbol, date)
+> kotlin.collections.List&lt;IEXTradeTradeModel&gt; v1NativeIexTradeSymbolGet(symbol, date)
 
 Get Trades
 
@@ -281,7 +281,7 @@ val apiInstance = NativeIEXApi()
 val symbol : kotlin.String = symbol_example // kotlin.String | The symbol identifier
 val date : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 try {
-    val result : kotlin.collections.List<TradeTradeModel> = apiInstance.v1NativeIexTradeSymbolGet(symbol, date)
+    val result : kotlin.collections.List<IEXTradeTradeModel> = apiInstance.v1NativeIexTradeSymbolGet(symbol, date)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling NativeIEXApi#v1NativeIexTradeSymbolGet")
@@ -300,7 +300,7 @@ try {
 
 ### Return type
 
-[**kotlin.collections.List&lt;TradeTradeModel&gt;**](TradeTradeModel.md)
+[**kotlin.collections.List&lt;IEXTradeTradeModel&gt;**](IEXTradeTradeModel.md)
 
 ### Authorization
 

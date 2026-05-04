@@ -5,9 +5,9 @@
 #include <cstring>
 #include <list>
 #include <glib.h>
-#include "OHLCV.ExchangeTimeseriesItem.h"
-#include "OHLCV.TimeseriesItem.h"
-#include "OHLCV.TimeseriesPeriod.h"
+#include "OHLCVTimeSeries.ExchangeTimeseriesItem.h"
+#include "OHLCVTimeSeries.TimeseriesItem.h"
+#include "OHLCVTimeSeries.TimeseriesPeriod.h"
 #include <list>
 #include "Error.h"
 
@@ -40,7 +40,7 @@ public:
  */
 bool v1OhlcvExchangeExchangeIdHistoryGetSync(char * accessToken,
 	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, 
-	void(* handler)(std::list<OHLCV.ExchangeTimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.ExchangeTimeseriesItem>, Error, void* )
 	, void* userData);
 
 /*! \brief Historical data by exchange. *Asynchronous*
@@ -56,7 +56,7 @@ bool v1OhlcvExchangeExchangeIdHistoryGetSync(char * accessToken,
  */
 bool v1OhlcvExchangeExchangeIdHistoryGetAsync(char * accessToken,
 	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, 
-	void(* handler)(std::list<OHLCV.ExchangeTimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.ExchangeTimeseriesItem>, Error, void* )
 	, void* userData);
 
 
@@ -75,7 +75,7 @@ bool v1OhlcvExchangeExchangeIdHistoryGetAsync(char * accessToken,
  */
 bool v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetSync(char * accessToken,
 	std::string exchangeId, std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<OHLCV.TimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )
 	, void* userData);
 
 /*! \brief Historical data. *Asynchronous*
@@ -93,7 +93,7 @@ bool v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetSync(char * accessToken,
  */
 bool v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetAsync(char * accessToken,
 	std::string exchangeId, std::string symbolId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
-	void(* handler)(std::list<OHLCV.TimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )
 	, void* userData);
 
 
@@ -110,7 +110,7 @@ bool v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetAsync(char * accessToken,
  */
 bool v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetSync(char * accessToken,
 	std::string exchangeId, std::string symbolId, std::string periodId, int limit, 
-	void(* handler)(std::list<OHLCV.TimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )
 	, void* userData);
 
 /*! \brief Latest data. *Asynchronous*
@@ -126,7 +126,7 @@ bool v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetSync(char * accessToken,
  */
 bool v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetAsync(char * accessToken,
 	std::string exchangeId, std::string symbolId, std::string periodId, int limit, 
-	void(* handler)(std::list<OHLCV.TimeseriesItem>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesItem>, Error, void* )
 	, void* userData);
 
 
@@ -139,7 +139,7 @@ bool v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetAsync(char * accessToken,
  */
 bool v1OhlcvPeriodsGetSync(char * accessToken,
 	
-	void(* handler)(std::list<OHLCV.TimeseriesPeriod>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesPeriod>, Error, void* )
 	, void* userData);
 
 /*! \brief List all periods. *Asynchronous*
@@ -151,7 +151,7 @@ bool v1OhlcvPeriodsGetSync(char * accessToken,
  */
 bool v1OhlcvPeriodsGetAsync(char * accessToken,
 	
-	void(* handler)(std::list<OHLCV.TimeseriesPeriod>, Error, void* )
+	void(* handler)(std::list<OHLCVTimeSeries.TimeseriesPeriod>, Error, void* )
 	, void* userData);
 
 

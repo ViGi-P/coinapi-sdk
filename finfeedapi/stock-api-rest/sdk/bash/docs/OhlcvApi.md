@@ -35,7 +35,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[OHLCVExchangeTimeseriesItem]**](OHLCVExchangeTimeseriesItem.md)
+[**array[OHLCVTimeSeriesExchangeTimeseriesItem]**](OHLCVTimeSeriesExchangeTimeseriesItem.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[OHLCVTimeseriesItem]**](OHLCVTimeseriesItem.md)
+[**array[OHLCVTimeSeriesTimeseriesItem]**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**array[OHLCVTimeseriesItem]**](OHLCVTimeseriesItem.md)
+[**array[OHLCVTimeSeriesTimeseriesItem]**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -165,7 +165,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**array[OHLCVTimeseriesPeriod]**](OHLCVTimeseriesPeriod.md)
+[**array[OHLCVTimeSeriesTimeseriesPeriod]**](OHLCVTimeSeriesTimeseriesPeriod.md)
 
 ### Authorization
 

@@ -51,13 +51,13 @@ static gpointer __NativeIEXManagerthreadFunc(gpointer data)
 static bool v1NativeIexAdminMessagesSymbolGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Admin.AdminMessageModel>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Admin.AdminMessageModel>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<Models.AdminMessageModel>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<Models.AdminMessageModel>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Admin.AdminMessageModel> out;
+	std::list<Models.AdminMessageModel> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -71,7 +71,7 @@ static bool v1NativeIexAdminMessagesSymbolGetProcessor(MemoryStruct_s p_chunk, l
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Admin.AdminMessageModel singlemodel;
+			Models.AdminMessageModel singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -97,7 +97,7 @@ static bool v1NativeIexAdminMessagesSymbolGetProcessor(MemoryStruct_s p_chunk, l
 
 static bool v1NativeIexAdminMessagesSymbolGetHelper(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Admin.AdminMessageModel>, Error, void* )
+	void(* handler)(std::list<Models.AdminMessageModel>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -178,7 +178,7 @@ static bool v1NativeIexAdminMessagesSymbolGetHelper(char * accessToken,
 
 bool NativeIEXManager::v1NativeIexAdminMessagesSymbolGetAsync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Admin.AdminMessageModel>, Error, void* )
+	void(* handler)(std::list<Models.AdminMessageModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexAdminMessagesSymbolGetHelper(accessToken,
@@ -188,7 +188,7 @@ bool NativeIEXManager::v1NativeIexAdminMessagesSymbolGetAsync(char * accessToken
 
 bool NativeIEXManager::v1NativeIexAdminMessagesSymbolGetSync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Admin.AdminMessageModel>, Error, void* )
+	void(* handler)(std::list<Models.AdminMessageModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexAdminMessagesSymbolGetHelper(accessToken,
@@ -199,13 +199,13 @@ bool NativeIEXManager::v1NativeIexAdminMessagesSymbolGetSync(char * accessToken,
 static bool v1NativeIexAdminSystemEventGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Admin.SystemEventModel>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Admin.SystemEventModel>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<IEXSystemEvent.SystemEventModel>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<IEXSystemEvent.SystemEventModel>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Admin.SystemEventModel> out;
+	std::list<IEXSystemEvent.SystemEventModel> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -219,7 +219,7 @@ static bool v1NativeIexAdminSystemEventGetProcessor(MemoryStruct_s p_chunk, long
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Admin.SystemEventModel singlemodel;
+			IEXSystemEvent.SystemEventModel singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -245,7 +245,7 @@ static bool v1NativeIexAdminSystemEventGetProcessor(MemoryStruct_s p_chunk, long
 
 static bool v1NativeIexAdminSystemEventGetHelper(char * accessToken,
 	std::string date, 
-	void(* handler)(std::list<Admin.SystemEventModel>, Error, void* )
+	void(* handler)(std::list<IEXSystemEvent.SystemEventModel>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -320,7 +320,7 @@ static bool v1NativeIexAdminSystemEventGetHelper(char * accessToken,
 
 bool NativeIEXManager::v1NativeIexAdminSystemEventGetAsync(char * accessToken,
 	std::string date, 
-	void(* handler)(std::list<Admin.SystemEventModel>, Error, void* )
+	void(* handler)(std::list<IEXSystemEvent.SystemEventModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexAdminSystemEventGetHelper(accessToken,
@@ -330,7 +330,7 @@ bool NativeIEXManager::v1NativeIexAdminSystemEventGetAsync(char * accessToken,
 
 bool NativeIEXManager::v1NativeIexAdminSystemEventGetSync(char * accessToken,
 	std::string date, 
-	void(* handler)(std::list<Admin.SystemEventModel>, Error, void* )
+	void(* handler)(std::list<IEXSystemEvent.SystemEventModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexAdminSystemEventGetHelper(accessToken,
@@ -341,13 +341,13 @@ bool NativeIEXManager::v1NativeIexAdminSystemEventGetSync(char * accessToken,
 static bool v1NativeIexLevel1QuoteSymbolGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Level1.QuoteUpdateModel>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Level1.QuoteUpdateModel>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<IEXQuoteUpdate.QuoteUpdateModel>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<IEXQuoteUpdate.QuoteUpdateModel>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Level1.QuoteUpdateModel> out;
+	std::list<IEXQuoteUpdate.QuoteUpdateModel> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -361,7 +361,7 @@ static bool v1NativeIexLevel1QuoteSymbolGetProcessor(MemoryStruct_s p_chunk, lon
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Level1.QuoteUpdateModel singlemodel;
+			IEXQuoteUpdate.QuoteUpdateModel singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -387,7 +387,7 @@ static bool v1NativeIexLevel1QuoteSymbolGetProcessor(MemoryStruct_s p_chunk, lon
 
 static bool v1NativeIexLevel1QuoteSymbolGetHelper(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level1.QuoteUpdateModel>, Error, void* )
+	void(* handler)(std::list<IEXQuoteUpdate.QuoteUpdateModel>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -468,7 +468,7 @@ static bool v1NativeIexLevel1QuoteSymbolGetHelper(char * accessToken,
 
 bool NativeIEXManager::v1NativeIexLevel1QuoteSymbolGetAsync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level1.QuoteUpdateModel>, Error, void* )
+	void(* handler)(std::list<IEXQuoteUpdate.QuoteUpdateModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexLevel1QuoteSymbolGetHelper(accessToken,
@@ -478,7 +478,7 @@ bool NativeIEXManager::v1NativeIexLevel1QuoteSymbolGetAsync(char * accessToken,
 
 bool NativeIEXManager::v1NativeIexLevel1QuoteSymbolGetSync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level1.QuoteUpdateModel>, Error, void* )
+	void(* handler)(std::list<IEXQuoteUpdate.QuoteUpdateModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexLevel1QuoteSymbolGetHelper(accessToken,
@@ -489,13 +489,13 @@ bool NativeIEXManager::v1NativeIexLevel1QuoteSymbolGetSync(char * accessToken,
 static bool v1NativeIexLevel2PriceLevelUpdateSymbolGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Level2.PriceLevelUpdateModel>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Level2.PriceLevelUpdateModel>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<IEXPriceLevelUpdate.PriceLevelUpdateModel>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<IEXPriceLevelUpdate.PriceLevelUpdateModel>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Level2.PriceLevelUpdateModel> out;
+	std::list<IEXPriceLevelUpdate.PriceLevelUpdateModel> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -509,7 +509,7 @@ static bool v1NativeIexLevel2PriceLevelUpdateSymbolGetProcessor(MemoryStruct_s p
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Level2.PriceLevelUpdateModel singlemodel;
+			IEXPriceLevelUpdate.PriceLevelUpdateModel singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -535,7 +535,7 @@ static bool v1NativeIexLevel2PriceLevelUpdateSymbolGetProcessor(MemoryStruct_s p
 
 static bool v1NativeIexLevel2PriceLevelUpdateSymbolGetHelper(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level2.PriceLevelUpdateModel>, Error, void* )
+	void(* handler)(std::list<IEXPriceLevelUpdate.PriceLevelUpdateModel>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -616,7 +616,7 @@ static bool v1NativeIexLevel2PriceLevelUpdateSymbolGetHelper(char * accessToken,
 
 bool NativeIEXManager::v1NativeIexLevel2PriceLevelUpdateSymbolGetAsync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level2.PriceLevelUpdateModel>, Error, void* )
+	void(* handler)(std::list<IEXPriceLevelUpdate.PriceLevelUpdateModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexLevel2PriceLevelUpdateSymbolGetHelper(accessToken,
@@ -626,7 +626,7 @@ bool NativeIEXManager::v1NativeIexLevel2PriceLevelUpdateSymbolGetAsync(char * ac
 
 bool NativeIEXManager::v1NativeIexLevel2PriceLevelUpdateSymbolGetSync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level2.PriceLevelUpdateModel>, Error, void* )
+	void(* handler)(std::list<IEXPriceLevelUpdate.PriceLevelUpdateModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexLevel2PriceLevelUpdateSymbolGetHelper(accessToken,
@@ -637,13 +637,13 @@ bool NativeIEXManager::v1NativeIexLevel2PriceLevelUpdateSymbolGetSync(char * acc
 static bool v1NativeIexLevel3OrderBookSymbolGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Level3.OrderBookModel>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Level3.OrderBookModel>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<Models.OrderBookModel>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<Models.OrderBookModel>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Level3.OrderBookModel> out;
+	std::list<Models.OrderBookModel> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -657,7 +657,7 @@ static bool v1NativeIexLevel3OrderBookSymbolGetProcessor(MemoryStruct_s p_chunk,
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Level3.OrderBookModel singlemodel;
+			Models.OrderBookModel singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -683,7 +683,7 @@ static bool v1NativeIexLevel3OrderBookSymbolGetProcessor(MemoryStruct_s p_chunk,
 
 static bool v1NativeIexLevel3OrderBookSymbolGetHelper(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level3.OrderBookModel>, Error, void* )
+	void(* handler)(std::list<Models.OrderBookModel>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -764,7 +764,7 @@ static bool v1NativeIexLevel3OrderBookSymbolGetHelper(char * accessToken,
 
 bool NativeIEXManager::v1NativeIexLevel3OrderBookSymbolGetAsync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level3.OrderBookModel>, Error, void* )
+	void(* handler)(std::list<Models.OrderBookModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexLevel3OrderBookSymbolGetHelper(accessToken,
@@ -774,7 +774,7 @@ bool NativeIEXManager::v1NativeIexLevel3OrderBookSymbolGetAsync(char * accessTok
 
 bool NativeIEXManager::v1NativeIexLevel3OrderBookSymbolGetSync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level3.OrderBookModel>, Error, void* )
+	void(* handler)(std::list<Models.OrderBookModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexLevel3OrderBookSymbolGetHelper(accessToken,
@@ -785,13 +785,13 @@ bool NativeIEXManager::v1NativeIexLevel3OrderBookSymbolGetSync(char * accessToke
 static bool v1NativeIexTradeSymbolGetProcessor(MemoryStruct_s p_chunk, long code, char* errormsg, void* userData,
 	void(* voidHandler)())
 {
-	void(* handler)(std::list<Trade.TradeModel>, Error, void* )
-	= reinterpret_cast<void(*)(std::list<Trade.TradeModel>, Error, void* )> (voidHandler);
+	void(* handler)(std::list<IEXTrade.TradeModel>, Error, void* )
+	= reinterpret_cast<void(*)(std::list<IEXTrade.TradeModel>, Error, void* )> (voidHandler);
 	
 	JsonNode* pJson;
 	char * data = p_chunk.memory;
 
-	std::list<Trade.TradeModel> out;
+	std::list<IEXTrade.TradeModel> out;
 	
 
 	if (code >= 200 && code < 300) {
@@ -805,7 +805,7 @@ static bool v1NativeIexTradeSymbolGetProcessor(MemoryStruct_s p_chunk, long code
 		for(guint i = 0; i < length; i++){
 			JsonNode* myJson = json_array_get_element (jsonarray, i);
 			char * singlenodestr = json_to_string(myJson, false);
-			Trade.TradeModel singlemodel;
+			IEXTrade.TradeModel singlemodel;
 			singlemodel.fromJson(singlenodestr);
 			out.push_front(singlemodel);
 			g_free(static_cast<gpointer>(singlenodestr));
@@ -831,7 +831,7 @@ static bool v1NativeIexTradeSymbolGetProcessor(MemoryStruct_s p_chunk, long code
 
 static bool v1NativeIexTradeSymbolGetHelper(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Trade.TradeModel>, Error, void* )
+	void(* handler)(std::list<IEXTrade.TradeModel>, Error, void* )
 	, void* userData, bool isAsync)
 {
 
@@ -912,7 +912,7 @@ static bool v1NativeIexTradeSymbolGetHelper(char * accessToken,
 
 bool NativeIEXManager::v1NativeIexTradeSymbolGetAsync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Trade.TradeModel>, Error, void* )
+	void(* handler)(std::list<IEXTrade.TradeModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexTradeSymbolGetHelper(accessToken,
@@ -922,7 +922,7 @@ bool NativeIEXManager::v1NativeIexTradeSymbolGetAsync(char * accessToken,
 
 bool NativeIEXManager::v1NativeIexTradeSymbolGetSync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Trade.TradeModel>, Error, void* )
+	void(* handler)(std::list<IEXTrade.TradeModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexTradeSymbolGetHelper(accessToken,

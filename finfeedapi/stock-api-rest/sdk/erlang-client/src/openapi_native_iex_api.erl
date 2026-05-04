@@ -11,11 +11,11 @@
 
 %% @doc Get Admin Messages
 %% 
--spec v1_native_iex_admin_messages_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_admin_admin_message_model:openapi_admin_admin_message_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_native_iex_admin_messages_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_models_admin_message_model:openapi_models_admin_message_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_admin_messages_symbol_get(Ctx, Symbol, Date) ->
     v1_native_iex_admin_messages_symbol_get(Ctx, Symbol, Date, #{}).
 
--spec v1_native_iex_admin_messages_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time(), maps:map()) -> {ok, [openapi_admin_admin_message_model:openapi_admin_admin_message_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_native_iex_admin_messages_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time(), maps:map()) -> {ok, [openapi_models_admin_message_model:openapi_models_admin_message_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_admin_messages_symbol_get(Ctx, Symbol, Date, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
@@ -32,11 +32,11 @@ v1_native_iex_admin_messages_symbol_get(Ctx, Symbol, Date, Optional) ->
 
 %% @doc Get System Events
 %% 
--spec v1_native_iex_admin_system_event_get(ctx:ctx(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_admin_system_event_model:openapi_admin_system_event_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_native_iex_admin_system_event_get(ctx:ctx(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_i_ex_system_event_system_event_model:openapi_i_ex_system_event_system_event_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_admin_system_event_get(Ctx, Date) ->
     v1_native_iex_admin_system_event_get(Ctx, Date, #{}).
 
--spec v1_native_iex_admin_system_event_get(ctx:ctx(), openapi_date_time:openapi_date_time(), maps:map()) -> {ok, [openapi_admin_system_event_model:openapi_admin_system_event_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_native_iex_admin_system_event_get(ctx:ctx(), openapi_date_time:openapi_date_time(), maps:map()) -> {ok, [openapi_i_ex_system_event_system_event_model:openapi_i_ex_system_event_system_event_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_admin_system_event_get(Ctx, Date, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
@@ -53,11 +53,11 @@ v1_native_iex_admin_system_event_get(Ctx, Date, Optional) ->
 
 %% @doc Get Level-1 Quotes
 %% 
--spec v1_native_iex_level1_quote_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_level1_quote_update_model:openapi_level1_quote_update_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_native_iex_level1_quote_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_i_ex_quote_update_quote_update_model:openapi_i_ex_quote_update_quote_update_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_level1_quote_symbol_get(Ctx, Symbol, Date) ->
     v1_native_iex_level1_quote_symbol_get(Ctx, Symbol, Date, #{}).
 
--spec v1_native_iex_level1_quote_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time(), maps:map()) -> {ok, [openapi_level1_quote_update_model:openapi_level1_quote_update_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_native_iex_level1_quote_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time(), maps:map()) -> {ok, [openapi_i_ex_quote_update_quote_update_model:openapi_i_ex_quote_update_quote_update_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_level1_quote_symbol_get(Ctx, Symbol, Date, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
@@ -74,11 +74,11 @@ v1_native_iex_level1_quote_symbol_get(Ctx, Symbol, Date, Optional) ->
 
 %% @doc Get Level-2 Price Level Book
 %% 
--spec v1_native_iex_level2_price_level_update_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_level2_price_level_update_model:openapi_level2_price_level_update_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_native_iex_level2_price_level_update_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_i_ex_price_level_update_price_level_update_model:openapi_i_ex_price_level_update_price_level_update_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_level2_price_level_update_symbol_get(Ctx, Symbol, Date) ->
     v1_native_iex_level2_price_level_update_symbol_get(Ctx, Symbol, Date, #{}).
 
--spec v1_native_iex_level2_price_level_update_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time(), maps:map()) -> {ok, [openapi_level2_price_level_update_model:openapi_level2_price_level_update_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_native_iex_level2_price_level_update_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time(), maps:map()) -> {ok, [openapi_i_ex_price_level_update_price_level_update_model:openapi_i_ex_price_level_update_price_level_update_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_level2_price_level_update_symbol_get(Ctx, Symbol, Date, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
@@ -95,11 +95,11 @@ v1_native_iex_level2_price_level_update_symbol_get(Ctx, Symbol, Date, Optional) 
 
 %% @doc Get Level-3 Order Book
 %% 
--spec v1_native_iex_level3_order_book_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_level3_order_book_model:openapi_level3_order_book_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_native_iex_level3_order_book_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_models_order_book_model:openapi_models_order_book_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_level3_order_book_symbol_get(Ctx, Symbol, Date) ->
     v1_native_iex_level3_order_book_symbol_get(Ctx, Symbol, Date, #{}).
 
--spec v1_native_iex_level3_order_book_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time(), maps:map()) -> {ok, [openapi_level3_order_book_model:openapi_level3_order_book_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_native_iex_level3_order_book_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time(), maps:map()) -> {ok, [openapi_models_order_book_model:openapi_models_order_book_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_level3_order_book_symbol_get(Ctx, Symbol, Date, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),
@@ -116,11 +116,11 @@ v1_native_iex_level3_order_book_symbol_get(Ctx, Symbol, Date, Optional) ->
 
 %% @doc Get Trades
 %% 
--spec v1_native_iex_trade_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_trade_trade_model:openapi_trade_trade_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_native_iex_trade_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_i_ex_trade_trade_model:openapi_i_ex_trade_trade_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_trade_symbol_get(Ctx, Symbol, Date) ->
     v1_native_iex_trade_symbol_get(Ctx, Symbol, Date, #{}).
 
--spec v1_native_iex_trade_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time(), maps:map()) -> {ok, [openapi_trade_trade_model:openapi_trade_trade_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
+-spec v1_native_iex_trade_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time(), maps:map()) -> {ok, [openapi_i_ex_trade_trade_model:openapi_i_ex_trade_trade_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_trade_symbol_get(Ctx, Symbol, Date, Optional) ->
     _OptionalParams = maps:get(params, Optional, #{}),
     Cfg = maps:get(cfg, Optional, application:get_env(openapi_api, config, #{})),

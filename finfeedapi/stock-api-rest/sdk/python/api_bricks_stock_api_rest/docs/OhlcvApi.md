@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **v1_ohlcv_exchange_exchange_id_history_get**
-> List[OHLCVExchangeTimeseriesItem] v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end)
+> List[OHLCVTimeSeriesExchangeTimeseriesItem] v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end)
 
 Historical data by exchange
 
@@ -24,7 +24,7 @@ Get OHLCV timeseries data returned in time ascending order. Data can be requeste
 
 ```python
 import api_bricks_stock_api_rest
-from api_bricks_stock_api_rest.models.ohlcv_exchange_timeseries_item import OHLCVExchangeTimeseriesItem
+from api_bricks_stock_api_rest.models.ohlcv_time_series_exchange_timeseries_item import OHLCVTimeSeriesExchangeTimeseriesItem
 from api_bricks_stock_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[OHLCVExchangeTimeseriesItem]**](OHLCVExchangeTimeseriesItem.md)
+[**List[OHLCVTimeSeriesExchangeTimeseriesItem]**](OHLCVTimeSeriesExchangeTimeseriesItem.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get**
-> List[OHLCVTimeseriesItem] v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get(exchange_id, symbol_id, period_id, time_start=time_start, time_end=time_end, limit=limit)
+> List[OHLCVTimeSeriesTimeseriesItem] v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get(exchange_id, symbol_id, period_id, time_start=time_start, time_end=time_end, limit=limit)
 
 Historical data
 
@@ -115,7 +115,7 @@ Get OHLCV timeseries data returned in time ascending order.
 
 ```python
 import api_bricks_stock_api_rest
-from api_bricks_stock_api_rest.models.ohlcv_timeseries_item import OHLCVTimeseriesItem
+from api_bricks_stock_api_rest.models.ohlcv_time_series_timeseries_item import OHLCVTimeSeriesTimeseriesItem
 from api_bricks_stock_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[OHLCVTimeseriesItem]**](OHLCVTimeseriesItem.md)
+[**List[OHLCVTimeSeriesTimeseriesItem]**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get**
-> List[OHLCVTimeseriesItem] v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get(exchange_id, symbol_id, period_id, limit=limit)
+> List[OHLCVTimeSeriesTimeseriesItem] v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get(exchange_id, symbol_id, period_id, limit=limit)
 
 Latest data
 
@@ -215,7 +215,7 @@ The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-
 
 ```python
 import api_bricks_stock_api_rest
-from api_bricks_stock_api_rest.models.ohlcv_timeseries_item import OHLCVTimeseriesItem
+from api_bricks_stock_api_rest.models.ohlcv_time_series_timeseries_item import OHLCVTimeSeriesTimeseriesItem
 from api_bricks_stock_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[OHLCVTimeseriesItem]**](OHLCVTimeseriesItem.md)
+[**List[OHLCVTimeSeriesTimeseriesItem]**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_ohlcv_periods_get**
-> List[OHLCVTimeseriesPeriod] v1_ohlcv_periods_get()
+> List[OHLCVTimeSeriesTimeseriesPeriod] v1_ohlcv_periods_get()
 
 List all periods
 
@@ -321,7 +321,7 @@ You can assume that we will not remove any periods from this response, however, 
 
 ```python
 import api_bricks_stock_api_rest
-from api_bricks_stock_api_rest.models.ohlcv_timeseries_period import OHLCVTimeseriesPeriod
+from api_bricks_stock_api_rest.models.ohlcv_time_series_timeseries_period import OHLCVTimeSeriesTimeseriesPeriod
 from api_bricks_stock_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -369,7 +369,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List[OHLCVTimeseriesPeriod]**](OHLCVTimeseriesPeriod.md)
+[**List[OHLCVTimeSeriesTimeseriesPeriod]**](OHLCVTimeSeriesTimeseriesPeriod.md)
 
 ### Authorization
 

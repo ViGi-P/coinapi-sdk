@@ -14,13 +14,13 @@
 package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
-import org.openapitools.client.model.AdminAdminMessageModel;
-import org.openapitools.client.model.AdminSystemEventModel;
-import org.openapitools.client.model.Level1QuoteUpdateModel;
-import org.openapitools.client.model.Level2PriceLevelUpdateModel;
-import org.openapitools.client.model.Level3OrderBookModel;
+import org.openapitools.client.model.IEXPriceLevelUpdatePriceLevelUpdateModel;
+import org.openapitools.client.model.IEXQuoteUpdateQuoteUpdateModel;
+import org.openapitools.client.model.IEXSystemEventSystemEventModel;
+import org.openapitools.client.model.IEXTradeTradeModel;
+import org.openapitools.client.model.ModelsAdminMessageModel;
+import org.openapitools.client.model.ModelsOrderBookModel;
 import java.time.OffsetDateTime;
-import org.openapitools.client.model.TradeTradeModel;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -46,7 +46,7 @@ public class NativeIexApiTest {
     public void v1NativeIexAdminMessagesSymbolGetTest() throws ApiException {
         String symbol = null;
         OffsetDateTime date = null;
-        List<AdminAdminMessageModel> response = api.v1NativeIexAdminMessagesSymbolGet(symbol, date);
+        List<ModelsAdminMessageModel> response = api.v1NativeIexAdminMessagesSymbolGet(symbol, date);
         // TODO: test validations
     }
 
@@ -58,7 +58,7 @@ public class NativeIexApiTest {
     @Test
     public void v1NativeIexAdminSystemEventGetTest() throws ApiException {
         OffsetDateTime date = null;
-        List<AdminSystemEventModel> response = api.v1NativeIexAdminSystemEventGet(date);
+        List<IEXSystemEventSystemEventModel> response = api.v1NativeIexAdminSystemEventGet(date);
         // TODO: test validations
     }
 
@@ -71,7 +71,7 @@ public class NativeIexApiTest {
     public void v1NativeIexLevel1QuoteSymbolGetTest() throws ApiException {
         String symbol = null;
         OffsetDateTime date = null;
-        List<Level1QuoteUpdateModel> response = api.v1NativeIexLevel1QuoteSymbolGet(symbol, date);
+        List<IEXQuoteUpdateQuoteUpdateModel> response = api.v1NativeIexLevel1QuoteSymbolGet(symbol, date);
         // TODO: test validations
     }
 
@@ -84,7 +84,7 @@ public class NativeIexApiTest {
     public void v1NativeIexLevel2PriceLevelUpdateSymbolGetTest() throws ApiException {
         String symbol = null;
         OffsetDateTime date = null;
-        List<Level2PriceLevelUpdateModel> response = api.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date);
+        List<IEXPriceLevelUpdatePriceLevelUpdateModel> response = api.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date);
         // TODO: test validations
     }
 
@@ -97,7 +97,7 @@ public class NativeIexApiTest {
     public void v1NativeIexLevel3OrderBookSymbolGetTest() throws ApiException {
         String symbol = null;
         OffsetDateTime date = null;
-        List<Level3OrderBookModel> response = api.v1NativeIexLevel3OrderBookSymbolGet(symbol, date);
+        List<ModelsOrderBookModel> response = api.v1NativeIexLevel3OrderBookSymbolGet(symbol, date);
         // TODO: test validations
     }
 
@@ -110,7 +110,7 @@ public class NativeIexApiTest {
     public void v1NativeIexTradeSymbolGetTest() throws ApiException {
         String symbol = null;
         OffsetDateTime date = null;
-        List<TradeTradeModel> response = api.v1NativeIexTradeSymbolGet(symbol, date);
+        List<IEXTradeTradeModel> response = api.v1NativeIexTradeSymbolGet(symbol, date);
         // TODO: test validations
     }
 

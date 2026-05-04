@@ -11,7 +11,7 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 <a id="v1ohlcvexchangeexchangeidhistoryget"></a>
 # **V1OhlcvExchangeExchangeIdHistoryGet**
-> List&lt;OHLCVExchangeTimeseriesItem&gt; V1OhlcvExchangeExchangeIdHistoryGet (string exchangeId, string periodId, string timeStart, string timeEnd)
+> List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt; V1OhlcvExchangeExchangeIdHistoryGet (string exchangeId, string periodId, string timeStart, string timeEnd)
 
 Historical data by exchange
 
@@ -29,7 +29,7 @@ Get OHLCV timeseries data returned in time ascending order. Data can be requeste
 
 ### Return type
 
-[**List&lt;OHLCVExchangeTimeseriesItem&gt;**](OHLCVExchangeTimeseriesItem.md)
+[**List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt;**](OHLCVTimeSeriesExchangeTimeseriesItem.md)
 
 ### Authorization
 
@@ -50,7 +50,7 @@ Get OHLCV timeseries data returned in time ascending order. Data can be requeste
 
 <a id="v1ohlcvexchangesymbolexchangeidsymbolidhistoryget"></a>
 # **V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet**
-> List&lt;OHLCVTimeseriesItem&gt; V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet (string exchangeId, string symbolId, string periodId, string timeStart = null, string timeEnd = null, int limit = null)
+> List&lt;OHLCVTimeSeriesTimeseriesItem&gt; V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet (string exchangeId, string symbolId, string periodId, string timeStart = null, string timeEnd = null, int limit = null)
 
 Historical data
 
@@ -70,7 +70,7 @@ Get OHLCV timeseries data returned in time ascending order.
 
 ### Return type
 
-[**List&lt;OHLCVTimeseriesItem&gt;**](OHLCVTimeseriesItem.md)
+[**List&lt;OHLCVTimeSeriesTimeseriesItem&gt;**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ Get OHLCV timeseries data returned in time ascending order.
 
 <a id="v1ohlcvexchangesymbolexchangeidsymbolidlatestget"></a>
 # **V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet**
-> List&lt;OHLCVTimeseriesItem&gt; V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet (string exchangeId, string symbolId, string periodId, int limit = null)
+> List&lt;OHLCVTimeSeriesTimeseriesItem&gt; V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet (string exchangeId, string symbolId, string periodId, int limit = null)
 
 Latest data
 
@@ -109,7 +109,7 @@ Get OHLCV latest timeseries data returned in time descending order. Data can be 
 
 ### Return type
 
-[**List&lt;OHLCVTimeseriesItem&gt;**](OHLCVTimeseriesItem.md)
+[**List&lt;OHLCVTimeSeriesTimeseriesItem&gt;**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ Get OHLCV latest timeseries data returned in time descending order. Data can be 
 
 <a id="v1ohlcvperiodsget"></a>
 # **V1OhlcvPeriodsGet**
-> List&lt;OHLCVTimeseriesPeriod&gt; V1OhlcvPeriodsGet ()
+> List&lt;OHLCVTimeSeriesTimeseriesPeriod&gt; V1OhlcvPeriodsGet ()
 
 List all periods
 
@@ -141,7 +141,7 @@ Get full list of supported time periods available for requesting OHLCV timeserie
 This endpoint does not need any parameter.
 ### Return type
 
-[**List&lt;OHLCVTimeseriesPeriod&gt;**](OHLCVTimeseriesPeriod.md)
+[**List&lt;OHLCVTimeSeriesTimeseriesPeriod&gt;**](OHLCVTimeSeriesTimeseriesPeriod.md)
 
 ### Authorization
 

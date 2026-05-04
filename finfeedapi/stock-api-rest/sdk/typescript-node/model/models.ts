@@ -1,29 +1,29 @@
 import localVarRequest from 'request';
 
-export * from './adminAdminMessageModel';
-export * from './adminAuctionInformationModel';
-export * from './adminOfficialPriceModel';
-export * from './adminOperationalHaltStatusModel';
-export * from './adminRetailLiquidityIndicatorModel';
-export * from './adminSecurityDirectoryModel';
-export * from './adminSecurityEventModel';
-export * from './adminShortSalePriceTestStatusModel';
-export * from './adminSystemEventModel';
-export * from './adminTradingStatusModel';
 export * from './finFeedAPIExchangeModel';
 export * from './finFeedAPISymbolModel';
-export * from './level1QuoteUpdateModel';
-export * from './level2PriceLevelUpdateModel';
-export * from './level3AddOrderModel';
-export * from './level3ClearBookModel';
-export * from './level3DeleteOrderModel';
-export * from './level3ExecutedOrderModel';
-export * from './level3ModifyOrderModel';
-export * from './level3OrderBookModel';
-export * from './oHLCVExchangeTimeseriesItem';
-export * from './oHLCVTimeseriesItem';
-export * from './oHLCVTimeseriesPeriod';
-export * from './tradeTradeModel';
+export * from './iEXPriceLevelUpdatePriceLevelUpdateModel';
+export * from './iEXQuoteUpdateQuoteUpdateModel';
+export * from './iEXSystemEventSystemEventModel';
+export * from './iEXTradeTradeModel';
+export * from './modelsAddOrderModel';
+export * from './modelsAdminMessageModel';
+export * from './modelsAuctionInformationModel';
+export * from './modelsClearBookModel';
+export * from './modelsDeleteOrderModel';
+export * from './modelsExecutedOrderModel';
+export * from './modelsModifyOrderModel';
+export * from './modelsOfficialPriceModel';
+export * from './modelsOperationalHaltStatusModel';
+export * from './modelsOrderBookModel';
+export * from './modelsRetailLiquidityIndicatorModel';
+export * from './modelsSecurityDirectoryModel';
+export * from './modelsSecurityEventModel';
+export * from './modelsShortSalePriceTestStatusModel';
+export * from './modelsTradingStatusModel';
+export * from './oHLCVTimeSeriesExchangeTimeseriesItem';
+export * from './oHLCVTimeSeriesTimeseriesItem';
+export * from './oHLCVTimeSeriesTimeseriesPeriod';
 
 import * as fs from 'fs';
 
@@ -38,30 +38,30 @@ export interface RequestDetailedFile {
 export type RequestFile = string | Buffer | fs.ReadStream | RequestDetailedFile;
 
 
-import { AdminAdminMessageModel } from './adminAdminMessageModel';
-import { AdminAuctionInformationModel } from './adminAuctionInformationModel';
-import { AdminOfficialPriceModel } from './adminOfficialPriceModel';
-import { AdminOperationalHaltStatusModel } from './adminOperationalHaltStatusModel';
-import { AdminRetailLiquidityIndicatorModel } from './adminRetailLiquidityIndicatorModel';
-import { AdminSecurityDirectoryModel } from './adminSecurityDirectoryModel';
-import { AdminSecurityEventModel } from './adminSecurityEventModel';
-import { AdminShortSalePriceTestStatusModel } from './adminShortSalePriceTestStatusModel';
-import { AdminSystemEventModel } from './adminSystemEventModel';
-import { AdminTradingStatusModel } from './adminTradingStatusModel';
 import { FinFeedAPIExchangeModel } from './finFeedAPIExchangeModel';
 import { FinFeedAPISymbolModel } from './finFeedAPISymbolModel';
-import { Level1QuoteUpdateModel } from './level1QuoteUpdateModel';
-import { Level2PriceLevelUpdateModel } from './level2PriceLevelUpdateModel';
-import { Level3AddOrderModel } from './level3AddOrderModel';
-import { Level3ClearBookModel } from './level3ClearBookModel';
-import { Level3DeleteOrderModel } from './level3DeleteOrderModel';
-import { Level3ExecutedOrderModel } from './level3ExecutedOrderModel';
-import { Level3ModifyOrderModel } from './level3ModifyOrderModel';
-import { Level3OrderBookModel } from './level3OrderBookModel';
-import { OHLCVExchangeTimeseriesItem } from './oHLCVExchangeTimeseriesItem';
-import { OHLCVTimeseriesItem } from './oHLCVTimeseriesItem';
-import { OHLCVTimeseriesPeriod } from './oHLCVTimeseriesPeriod';
-import { TradeTradeModel } from './tradeTradeModel';
+import { IEXPriceLevelUpdatePriceLevelUpdateModel } from './iEXPriceLevelUpdatePriceLevelUpdateModel';
+import { IEXQuoteUpdateQuoteUpdateModel } from './iEXQuoteUpdateQuoteUpdateModel';
+import { IEXSystemEventSystemEventModel } from './iEXSystemEventSystemEventModel';
+import { IEXTradeTradeModel } from './iEXTradeTradeModel';
+import { ModelsAddOrderModel } from './modelsAddOrderModel';
+import { ModelsAdminMessageModel } from './modelsAdminMessageModel';
+import { ModelsAuctionInformationModel } from './modelsAuctionInformationModel';
+import { ModelsClearBookModel } from './modelsClearBookModel';
+import { ModelsDeleteOrderModel } from './modelsDeleteOrderModel';
+import { ModelsExecutedOrderModel } from './modelsExecutedOrderModel';
+import { ModelsModifyOrderModel } from './modelsModifyOrderModel';
+import { ModelsOfficialPriceModel } from './modelsOfficialPriceModel';
+import { ModelsOperationalHaltStatusModel } from './modelsOperationalHaltStatusModel';
+import { ModelsOrderBookModel } from './modelsOrderBookModel';
+import { ModelsRetailLiquidityIndicatorModel } from './modelsRetailLiquidityIndicatorModel';
+import { ModelsSecurityDirectoryModel } from './modelsSecurityDirectoryModel';
+import { ModelsSecurityEventModel } from './modelsSecurityEventModel';
+import { ModelsShortSalePriceTestStatusModel } from './modelsShortSalePriceTestStatusModel';
+import { ModelsTradingStatusModel } from './modelsTradingStatusModel';
+import { OHLCVTimeSeriesExchangeTimeseriesItem } from './oHLCVTimeSeriesExchangeTimeseriesItem';
+import { OHLCVTimeSeriesTimeseriesItem } from './oHLCVTimeSeriesTimeseriesItem';
+import { OHLCVTimeSeriesTimeseriesPeriod } from './oHLCVTimeSeriesTimeseriesPeriod';
 
 /* tslint:disable:no-unused-variable */
 let primitives = [
@@ -79,30 +79,30 @@ let enumsMap: {[index: string]: any} = {
 }
 
 let typeMap: {[index: string]: any} = {
-    "AdminAdminMessageModel": AdminAdminMessageModel,
-    "AdminAuctionInformationModel": AdminAuctionInformationModel,
-    "AdminOfficialPriceModel": AdminOfficialPriceModel,
-    "AdminOperationalHaltStatusModel": AdminOperationalHaltStatusModel,
-    "AdminRetailLiquidityIndicatorModel": AdminRetailLiquidityIndicatorModel,
-    "AdminSecurityDirectoryModel": AdminSecurityDirectoryModel,
-    "AdminSecurityEventModel": AdminSecurityEventModel,
-    "AdminShortSalePriceTestStatusModel": AdminShortSalePriceTestStatusModel,
-    "AdminSystemEventModel": AdminSystemEventModel,
-    "AdminTradingStatusModel": AdminTradingStatusModel,
     "FinFeedAPIExchangeModel": FinFeedAPIExchangeModel,
     "FinFeedAPISymbolModel": FinFeedAPISymbolModel,
-    "Level1QuoteUpdateModel": Level1QuoteUpdateModel,
-    "Level2PriceLevelUpdateModel": Level2PriceLevelUpdateModel,
-    "Level3AddOrderModel": Level3AddOrderModel,
-    "Level3ClearBookModel": Level3ClearBookModel,
-    "Level3DeleteOrderModel": Level3DeleteOrderModel,
-    "Level3ExecutedOrderModel": Level3ExecutedOrderModel,
-    "Level3ModifyOrderModel": Level3ModifyOrderModel,
-    "Level3OrderBookModel": Level3OrderBookModel,
-    "OHLCVExchangeTimeseriesItem": OHLCVExchangeTimeseriesItem,
-    "OHLCVTimeseriesItem": OHLCVTimeseriesItem,
-    "OHLCVTimeseriesPeriod": OHLCVTimeseriesPeriod,
-    "TradeTradeModel": TradeTradeModel,
+    "IEXPriceLevelUpdatePriceLevelUpdateModel": IEXPriceLevelUpdatePriceLevelUpdateModel,
+    "IEXQuoteUpdateQuoteUpdateModel": IEXQuoteUpdateQuoteUpdateModel,
+    "IEXSystemEventSystemEventModel": IEXSystemEventSystemEventModel,
+    "IEXTradeTradeModel": IEXTradeTradeModel,
+    "ModelsAddOrderModel": ModelsAddOrderModel,
+    "ModelsAdminMessageModel": ModelsAdminMessageModel,
+    "ModelsAuctionInformationModel": ModelsAuctionInformationModel,
+    "ModelsClearBookModel": ModelsClearBookModel,
+    "ModelsDeleteOrderModel": ModelsDeleteOrderModel,
+    "ModelsExecutedOrderModel": ModelsExecutedOrderModel,
+    "ModelsModifyOrderModel": ModelsModifyOrderModel,
+    "ModelsOfficialPriceModel": ModelsOfficialPriceModel,
+    "ModelsOperationalHaltStatusModel": ModelsOperationalHaltStatusModel,
+    "ModelsOrderBookModel": ModelsOrderBookModel,
+    "ModelsRetailLiquidityIndicatorModel": ModelsRetailLiquidityIndicatorModel,
+    "ModelsSecurityDirectoryModel": ModelsSecurityDirectoryModel,
+    "ModelsSecurityEventModel": ModelsSecurityEventModel,
+    "ModelsShortSalePriceTestStatusModel": ModelsShortSalePriceTestStatusModel,
+    "ModelsTradingStatusModel": ModelsTradingStatusModel,
+    "OHLCVTimeSeriesExchangeTimeseriesItem": OHLCVTimeSeriesExchangeTimeseriesItem,
+    "OHLCVTimeSeriesTimeseriesItem": OHLCVTimeSeriesTimeseriesItem,
+    "OHLCVTimeSeriesTimeseriesPeriod": OHLCVTimeSeriesTimeseriesPeriod,
 }
 
 // Check if a string starts with another string without using es6 features

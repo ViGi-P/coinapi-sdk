@@ -82,7 +82,7 @@ class OhlcvApi {
   ///
   /// * [String] timeEnd (required):
   ///   Timeseries ending time in ISO 8601
-  Future<List<OHLCVExchangeTimeseriesItem>?> v1OhlcvExchangeExchangeIdHistoryGet(String exchangeId, String periodId, String timeStart, String timeEnd,) async {
+  Future<List<OHLCVTimeSeriesExchangeTimeseriesItem>?> v1OhlcvExchangeExchangeIdHistoryGet(String exchangeId, String periodId, String timeStart, String timeEnd,) async {
     final response = await v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId, periodId, timeStart, timeEnd,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -92,8 +92,8 @@ class OhlcvApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<OHLCVExchangeTimeseriesItem>') as List)
-        .cast<OHLCVExchangeTimeseriesItem>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<OHLCVTimeSeriesExchangeTimeseriesItem>') as List)
+        .cast<OHLCVTimeSeriesExchangeTimeseriesItem>()
         .toList(growable: false);
 
     }
@@ -186,7 +186,7 @@ class OhlcvApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<OHLCVTimeseriesItem>?> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(String exchangeId, String symbolId, String periodId, { String? timeStart, String? timeEnd, int? limit, }) async {
+  Future<List<OHLCVTimeSeriesTimeseriesItem>?> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(String exchangeId, String symbolId, String periodId, { String? timeStart, String? timeEnd, int? limit, }) async {
     final response = await v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(exchangeId, symbolId, periodId,  timeStart: timeStart, timeEnd: timeEnd, limit: limit, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -196,8 +196,8 @@ class OhlcvApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<OHLCVTimeseriesItem>') as List)
-        .cast<OHLCVTimeseriesItem>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<OHLCVTimeSeriesTimeseriesItem>') as List)
+        .cast<OHLCVTimeSeriesTimeseriesItem>()
         .toList(growable: false);
 
     }
@@ -272,7 +272,7 @@ class OhlcvApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<OHLCVTimeseriesItem>?> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(String exchangeId, String symbolId, String periodId, { int? limit, }) async {
+  Future<List<OHLCVTimeSeriesTimeseriesItem>?> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(String exchangeId, String symbolId, String periodId, { int? limit, }) async {
     final response = await v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(exchangeId, symbolId, periodId,  limit: limit, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -282,8 +282,8 @@ class OhlcvApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<OHLCVTimeseriesItem>') as List)
-        .cast<OHLCVTimeseriesItem>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<OHLCVTimeSeriesTimeseriesItem>') as List)
+        .cast<OHLCVTimeSeriesTimeseriesItem>()
         .toList(growable: false);
 
     }
@@ -323,7 +323,7 @@ class OhlcvApi {
   /// List all periods
   ///
   /// Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
-  Future<List<OHLCVTimeseriesPeriod>?> v1OhlcvPeriodsGet() async {
+  Future<List<OHLCVTimeSeriesTimeseriesPeriod>?> v1OhlcvPeriodsGet() async {
     final response = await v1OhlcvPeriodsGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -333,8 +333,8 @@ class OhlcvApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<OHLCVTimeseriesPeriod>') as List)
-        .cast<OHLCVTimeseriesPeriod>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<OHLCVTimeSeriesTimeseriesPeriod>') as List)
+        .cast<OHLCVTimeSeriesTimeseriesPeriod>()
         .toList(growable: false);
 
     }

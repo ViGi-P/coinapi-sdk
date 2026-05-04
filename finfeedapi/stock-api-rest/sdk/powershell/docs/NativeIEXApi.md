@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a id="Invoke-V1NativeIexAdminMessagesSymbolGet"></a>
 # **Invoke-V1NativeIexAdminMessagesSymbolGet**
-> AdminAdminMessageModel[] Invoke-V1NativeIexAdminMessagesSymbolGet<br>
+> ModelsAdminMessageModel[] Invoke-V1NativeIexAdminMessagesSymbolGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Symbol] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Date] <System.DateTime><br>
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdminAdminMessageModel[]**](AdminAdminMessageModel.md) (PSCustomObject)
+[**ModelsAdminMessageModel[]**](ModelsAdminMessageModel.md) (PSCustomObject)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1NativeIexAdminSystemEventGet"></a>
 # **Invoke-V1NativeIexAdminSystemEventGet**
-> AdminSystemEventModel[] Invoke-V1NativeIexAdminSystemEventGet<br>
+> IEXSystemEventSystemEventModel[] Invoke-V1NativeIexAdminSystemEventGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Date] <System.DateTime><br>
 
 Get System Events
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdminSystemEventModel[]**](AdminSystemEventModel.md) (PSCustomObject)
+[**IEXSystemEventSystemEventModel[]**](IEXSystemEventSystemEventModel.md) (PSCustomObject)
 
 ### Authorization
 
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1NativeIexLevel1QuoteSymbolGet"></a>
 # **Invoke-V1NativeIexLevel1QuoteSymbolGet**
-> Level1QuoteUpdateModel[] Invoke-V1NativeIexLevel1QuoteSymbolGet<br>
+> IEXQuoteUpdateQuoteUpdateModel[] Invoke-V1NativeIexLevel1QuoteSymbolGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Symbol] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Date] <System.DateTime><br>
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Level1QuoteUpdateModel[]**](Level1QuoteUpdateModel.md) (PSCustomObject)
+[**IEXQuoteUpdateQuoteUpdateModel[]**](IEXQuoteUpdateQuoteUpdateModel.md) (PSCustomObject)
 
 ### Authorization
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1NativeIexLevel2PriceLevelUpdateSymbolGet"></a>
 # **Invoke-V1NativeIexLevel2PriceLevelUpdateSymbolGet**
-> Level2PriceLevelUpdateModel[] Invoke-V1NativeIexLevel2PriceLevelUpdateSymbolGet<br>
+> IEXPriceLevelUpdatePriceLevelUpdateModel[] Invoke-V1NativeIexLevel2PriceLevelUpdateSymbolGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Symbol] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Date] <System.DateTime><br>
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Level2PriceLevelUpdateModel[]**](Level2PriceLevelUpdateModel.md) (PSCustomObject)
+[**IEXPriceLevelUpdatePriceLevelUpdateModel[]**](IEXPriceLevelUpdatePriceLevelUpdateModel.md) (PSCustomObject)
 
 ### Authorization
 
@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1NativeIexLevel3OrderBookSymbolGet"></a>
 # **Invoke-V1NativeIexLevel3OrderBookSymbolGet**
-> Level3OrderBookModel[] Invoke-V1NativeIexLevel3OrderBookSymbolGet<br>
+> ModelsOrderBookModel[] Invoke-V1NativeIexLevel3OrderBookSymbolGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Symbol] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Date] <System.DateTime><br>
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Level3OrderBookModel[]**](Level3OrderBookModel.md) (PSCustomObject)
+[**ModelsOrderBookModel[]**](ModelsOrderBookModel.md) (PSCustomObject)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1NativeIexTradeSymbolGet"></a>
 # **Invoke-V1NativeIexTradeSymbolGet**
-> TradeTradeModel[] Invoke-V1NativeIexTradeSymbolGet<br>
+> IEXTradeTradeModel[] Invoke-V1NativeIexTradeSymbolGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Symbol] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Date] <System.DateTime><br>
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TradeTradeModel[]**](TradeTradeModel.md) (PSCustomObject)
+[**IEXTradeTradeModel[]**](IEXTradeTradeModel.md) (PSCustomObject)
 
 ### Authorization
 

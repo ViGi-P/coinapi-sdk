@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## v1OhlcvExchangeExchangeIdHistoryGet
 
-> [OHLCVExchangeTimeseriesItem] v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
+> [OHLCVTimeSeriesExchangeTimeseriesItem] v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
 
 Historical data by exchange
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[OHLCVExchangeTimeseriesItem]**](OHLCVExchangeTimeseriesItem.md)
+[**[OHLCVTimeSeriesExchangeTimeseriesItem]**](OHLCVTimeSeriesExchangeTimeseriesItem.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ## v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet
 
-> [OHLCVTimeseriesItem] v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, opts)
+> [OHLCVTimeSeriesTimeseriesItem] v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, opts)
 
 Historical data
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[OHLCVTimeseriesItem]**](OHLCVTimeseriesItem.md)
+[**[OHLCVTimeSeriesTimeseriesItem]**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ## v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet
 
-> [OHLCVTimeseriesItem] v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, opts)
+> [OHLCVTimeSeriesTimeseriesItem] v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, opts)
 
 Latest data
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[OHLCVTimeseriesItem]**](OHLCVTimeseriesItem.md)
+[**[OHLCVTimeSeriesTimeseriesItem]**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ## v1OhlcvPeriodsGet
 
-> [OHLCVTimeseriesPeriod] v1OhlcvPeriodsGet()
+> [OHLCVTimeSeriesTimeseriesPeriod] v1OhlcvPeriodsGet()
 
 List all periods
 
@@ -237,7 +237,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[OHLCVTimeseriesPeriod]**](OHLCVTimeseriesPeriod.md)
+[**[OHLCVTimeSeriesTimeseriesPeriod]**](OHLCVTimeSeriesTimeseriesPeriod.md)
 
 ### Authorization
 

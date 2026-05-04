@@ -27,12 +27,12 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import org.openapitools.client.models.AdminAdminMessageModel
-import org.openapitools.client.models.AdminSystemEventModel
-import org.openapitools.client.models.Level1QuoteUpdateModel
-import org.openapitools.client.models.Level2PriceLevelUpdateModel
-import org.openapitools.client.models.Level3OrderBookModel
-import org.openapitools.client.models.TradeTradeModel
+import org.openapitools.client.models.IEXPriceLevelUpdatePriceLevelUpdateModel
+import org.openapitools.client.models.IEXQuoteUpdateQuoteUpdateModel
+import org.openapitools.client.models.IEXSystemEventSystemEventModel
+import org.openapitools.client.models.IEXTradeTradeModel
+import org.openapitools.client.models.ModelsAdminMessageModel
+import org.openapitools.client.models.ModelsOrderBookModel
 
 import com.squareup.moshi.Json
 
@@ -64,7 +64,7 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-     * @return kotlin.collections.List<AdminAdminMessageModel>
+     * @return kotlin.collections.List<ModelsAdminMessageModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -73,11 +73,11 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1NativeIexAdminMessagesSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<AdminAdminMessageModel> {
+    fun v1NativeIexAdminMessagesSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<ModelsAdminMessageModel> {
         val localVarResponse = v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol = symbol, date = date)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<AdminAdminMessageModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ModelsAdminMessageModel>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -97,16 +97,16 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-     * @return ApiResponse<kotlin.collections.List<AdminAdminMessageModel>?>
+     * @return ApiResponse<kotlin.collections.List<ModelsAdminMessageModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<AdminAdminMessageModel>?> {
+    fun v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<ModelsAdminMessageModel>?> {
         val localVariableConfig = v1NativeIexAdminMessagesSymbolGetRequestConfig(symbol = symbol, date = date)
 
-        return request<Unit, kotlin.collections.List<AdminAdminMessageModel>>(
+        return request<Unit, kotlin.collections.List<ModelsAdminMessageModel>>(
             localVariableConfig
         )
     }
@@ -122,7 +122,7 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                put("date", listOf(parseDateToQueryString(date)))
+                put("date", listOf(parseDateToQueryString<java.time.OffsetDateTime>(date)))
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -142,7 +142,7 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * Get System Events
      * 
      * @param date Date in format YYYY-MM-DD
-     * @return kotlin.collections.List<AdminSystemEventModel>
+     * @return kotlin.collections.List<IEXSystemEventSystemEventModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -151,11 +151,11 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1NativeIexAdminSystemEventGet(date: java.time.OffsetDateTime) : kotlin.collections.List<AdminSystemEventModel> {
+    fun v1NativeIexAdminSystemEventGet(date: java.time.OffsetDateTime) : kotlin.collections.List<IEXSystemEventSystemEventModel> {
         val localVarResponse = v1NativeIexAdminSystemEventGetWithHttpInfo(date = date)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<AdminSystemEventModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IEXSystemEventSystemEventModel>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -174,16 +174,16 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * Get System Events
      * 
      * @param date Date in format YYYY-MM-DD
-     * @return ApiResponse<kotlin.collections.List<AdminSystemEventModel>?>
+     * @return ApiResponse<kotlin.collections.List<IEXSystemEventSystemEventModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1NativeIexAdminSystemEventGetWithHttpInfo(date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<AdminSystemEventModel>?> {
+    fun v1NativeIexAdminSystemEventGetWithHttpInfo(date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<IEXSystemEventSystemEventModel>?> {
         val localVariableConfig = v1NativeIexAdminSystemEventGetRequestConfig(date = date)
 
-        return request<Unit, kotlin.collections.List<AdminSystemEventModel>>(
+        return request<Unit, kotlin.collections.List<IEXSystemEventSystemEventModel>>(
             localVariableConfig
         )
     }
@@ -198,7 +198,7 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                put("date", listOf(parseDateToQueryString(date)))
+                put("date", listOf(parseDateToQueryString<java.time.OffsetDateTime>(date)))
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -219,7 +219,7 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-     * @return kotlin.collections.List<Level1QuoteUpdateModel>
+     * @return kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -228,11 +228,11 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1NativeIexLevel1QuoteSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<Level1QuoteUpdateModel> {
+    fun v1NativeIexLevel1QuoteSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel> {
         val localVarResponse = v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol = symbol, date = date)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Level1QuoteUpdateModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -252,16 +252,16 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-     * @return ApiResponse<kotlin.collections.List<Level1QuoteUpdateModel>?>
+     * @return ApiResponse<kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<Level1QuoteUpdateModel>?> {
+    fun v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel>?> {
         val localVariableConfig = v1NativeIexLevel1QuoteSymbolGetRequestConfig(symbol = symbol, date = date)
 
-        return request<Unit, kotlin.collections.List<Level1QuoteUpdateModel>>(
+        return request<Unit, kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel>>(
             localVariableConfig
         )
     }
@@ -277,7 +277,7 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                put("date", listOf(parseDateToQueryString(date)))
+                put("date", listOf(parseDateToQueryString<java.time.OffsetDateTime>(date)))
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -298,7 +298,7 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-     * @return kotlin.collections.List<Level2PriceLevelUpdateModel>
+     * @return kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -307,11 +307,11 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<Level2PriceLevelUpdateModel> {
+    fun v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel> {
         val localVarResponse = v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol = symbol, date = date)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Level2PriceLevelUpdateModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -331,16 +331,16 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-     * @return ApiResponse<kotlin.collections.List<Level2PriceLevelUpdateModel>?>
+     * @return ApiResponse<kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<Level2PriceLevelUpdateModel>?> {
+    fun v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel>?> {
         val localVariableConfig = v1NativeIexLevel2PriceLevelUpdateSymbolGetRequestConfig(symbol = symbol, date = date)
 
-        return request<Unit, kotlin.collections.List<Level2PriceLevelUpdateModel>>(
+        return request<Unit, kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel>>(
             localVariableConfig
         )
     }
@@ -356,7 +356,7 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                put("date", listOf(parseDateToQueryString(date)))
+                put("date", listOf(parseDateToQueryString<java.time.OffsetDateTime>(date)))
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -377,7 +377,7 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-     * @return kotlin.collections.List<Level3OrderBookModel>
+     * @return kotlin.collections.List<ModelsOrderBookModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -386,11 +386,11 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1NativeIexLevel3OrderBookSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<Level3OrderBookModel> {
+    fun v1NativeIexLevel3OrderBookSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<ModelsOrderBookModel> {
         val localVarResponse = v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol = symbol, date = date)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Level3OrderBookModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ModelsOrderBookModel>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -410,16 +410,16 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-     * @return ApiResponse<kotlin.collections.List<Level3OrderBookModel>?>
+     * @return ApiResponse<kotlin.collections.List<ModelsOrderBookModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<Level3OrderBookModel>?> {
+    fun v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<ModelsOrderBookModel>?> {
         val localVariableConfig = v1NativeIexLevel3OrderBookSymbolGetRequestConfig(symbol = symbol, date = date)
 
-        return request<Unit, kotlin.collections.List<Level3OrderBookModel>>(
+        return request<Unit, kotlin.collections.List<ModelsOrderBookModel>>(
             localVariableConfig
         )
     }
@@ -435,7 +435,7 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                put("date", listOf(parseDateToQueryString(date)))
+                put("date", listOf(parseDateToQueryString<java.time.OffsetDateTime>(date)))
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -456,7 +456,7 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-     * @return kotlin.collections.List<TradeTradeModel>
+     * @return kotlin.collections.List<IEXTradeTradeModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -465,11 +465,11 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1NativeIexTradeSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<TradeTradeModel> {
+    fun v1NativeIexTradeSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<IEXTradeTradeModel> {
         val localVarResponse = v1NativeIexTradeSymbolGetWithHttpInfo(symbol = symbol, date = date)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<TradeTradeModel>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IEXTradeTradeModel>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -489,16 +489,16 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * 
      * @param symbol The symbol identifier
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
-     * @return ApiResponse<kotlin.collections.List<TradeTradeModel>?>
+     * @return ApiResponse<kotlin.collections.List<IEXTradeTradeModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1NativeIexTradeSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<TradeTradeModel>?> {
+    fun v1NativeIexTradeSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<IEXTradeTradeModel>?> {
         val localVariableConfig = v1NativeIexTradeSymbolGetRequestConfig(symbol = symbol, date = date)
 
-        return request<Unit, kotlin.collections.List<TradeTradeModel>>(
+        return request<Unit, kotlin.collections.List<IEXTradeTradeModel>>(
             localVariableConfig
         )
     }
@@ -514,7 +514,7 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                put("date", listOf(parseDateToQueryString(date)))
+                put("date", listOf(parseDateToQueryString<java.time.OffsetDateTime>(date)))
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"

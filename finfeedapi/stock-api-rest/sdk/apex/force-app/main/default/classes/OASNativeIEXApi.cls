@@ -30,10 +30,10 @@ public class OASNativeIEXApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param r_date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return List<OASAdminAdminMessageModel>
+     * @return List<OASModelsAdminMessageModel>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASAdminAdminMessageModel> v1NativeIexAdminMessagesSymbolGet(Map<String, Object> params) {
+    public List<OASModelsAdminMessageModel> v1NativeIexAdminMessagesSymbolGet(Map<String, Object> params) {
         client.assertNotNull(params.get('symbol'), 'symbol');
         client.assertNotNull(params.get('r_date'), 'r_date');
         List<OAS.Param> query = new List<OAS.Param>();
@@ -43,7 +43,7 @@ public class OASNativeIEXApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASAdminAdminMessageModel>) client.invoke(
+        return (List<OASModelsAdminMessageModel>) client.invoke(
             'GET', '/v1/native/iex/admin/messages/{symbol}', '',
             query, form,
             new Map<String, Object>{
@@ -53,17 +53,17 @@ public class OASNativeIEXApi {
             new List<String>{ 'application/json' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASAdminAdminMessageModel>.class
+            List<OASModelsAdminMessageModel>.class
         );
     }
     /**
      * Get System Events
      * 
      * @param r_date Date in format YYYY-MM-DD (required)
-     * @return List<OASAdminSystemEventModel>
+     * @return List<OASIEXSystemEventSystemEventModel>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASAdminSystemEventModel> v1NativeIexAdminSystemEventGet(Map<String, Object> params) {
+    public List<OASIEXSystemEventSystemEventModel> v1NativeIexAdminSystemEventGet(Map<String, Object> params) {
         client.assertNotNull(params.get('r_date'), 'r_date');
         List<OAS.Param> query = new List<OAS.Param>();
 
@@ -72,7 +72,7 @@ public class OASNativeIEXApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASAdminSystemEventModel>) client.invoke(
+        return (List<OASIEXSystemEventSystemEventModel>) client.invoke(
             'GET', '/v1/native/iex/admin/system-event', '',
             query, form,
             new Map<String, Object>(),
@@ -80,7 +80,7 @@ public class OASNativeIEXApi {
             new List<String>{ 'application/json' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASAdminSystemEventModel>.class
+            List<OASIEXSystemEventSystemEventModel>.class
         );
     }
     /**
@@ -88,10 +88,10 @@ public class OASNativeIEXApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param r_date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return List<OASLevel1QuoteUpdateModel>
+     * @return List<OASIEXQuoteUpdateQuoteUpdateModel>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASLevel1QuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet(Map<String, Object> params) {
+    public List<OASIEXQuoteUpdateQuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet(Map<String, Object> params) {
         client.assertNotNull(params.get('symbol'), 'symbol');
         client.assertNotNull(params.get('r_date'), 'r_date');
         List<OAS.Param> query = new List<OAS.Param>();
@@ -101,7 +101,7 @@ public class OASNativeIEXApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASLevel1QuoteUpdateModel>) client.invoke(
+        return (List<OASIEXQuoteUpdateQuoteUpdateModel>) client.invoke(
             'GET', '/v1/native/iex/level1-quote/{symbol}', '',
             query, form,
             new Map<String, Object>{
@@ -111,7 +111,7 @@ public class OASNativeIEXApi {
             new List<String>{ 'application/json' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASLevel1QuoteUpdateModel>.class
+            List<OASIEXQuoteUpdateQuoteUpdateModel>.class
         );
     }
     /**
@@ -119,10 +119,10 @@ public class OASNativeIEXApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param r_date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return List<OASLevel2PriceLevelUpdateModel>
+     * @return List<OASIEXPriceLevelUpdatePriceLevelUpda>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASLevel2PriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet(Map<String, Object> params) {
+    public List<OASIEXPriceLevelUpdatePriceLevelUpda> v1NativeIexLevel2PriceLevelUpdateSymbolGet(Map<String, Object> params) {
         client.assertNotNull(params.get('symbol'), 'symbol');
         client.assertNotNull(params.get('r_date'), 'r_date');
         List<OAS.Param> query = new List<OAS.Param>();
@@ -132,7 +132,7 @@ public class OASNativeIEXApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASLevel2PriceLevelUpdateModel>) client.invoke(
+        return (List<OASIEXPriceLevelUpdatePriceLevelUpda>) client.invoke(
             'GET', '/v1/native/iex/level2-price-level-update/{symbol}', '',
             query, form,
             new Map<String, Object>{
@@ -142,7 +142,7 @@ public class OASNativeIEXApi {
             new List<String>{ 'application/json' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASLevel2PriceLevelUpdateModel>.class
+            List<OASIEXPriceLevelUpdatePriceLevelUpda>.class
         );
     }
     /**
@@ -150,10 +150,10 @@ public class OASNativeIEXApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param r_date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return List<OASLevel3OrderBookModel>
+     * @return List<OASModelsOrderBookModel>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASLevel3OrderBookModel> v1NativeIexLevel3OrderBookSymbolGet(Map<String, Object> params) {
+    public List<OASModelsOrderBookModel> v1NativeIexLevel3OrderBookSymbolGet(Map<String, Object> params) {
         client.assertNotNull(params.get('symbol'), 'symbol');
         client.assertNotNull(params.get('r_date'), 'r_date');
         List<OAS.Param> query = new List<OAS.Param>();
@@ -163,7 +163,7 @@ public class OASNativeIEXApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASLevel3OrderBookModel>) client.invoke(
+        return (List<OASModelsOrderBookModel>) client.invoke(
             'GET', '/v1/native/iex/level3-order-book/{symbol}', '',
             query, form,
             new Map<String, Object>{
@@ -173,7 +173,7 @@ public class OASNativeIEXApi {
             new List<String>{ 'application/json' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASLevel3OrderBookModel>.class
+            List<OASModelsOrderBookModel>.class
         );
     }
     /**
@@ -181,10 +181,10 @@ public class OASNativeIEXApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param r_date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return List<OASTradeTradeModel>
+     * @return List<OASIEXTradeTradeModel>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASTradeTradeModel> v1NativeIexTradeSymbolGet(Map<String, Object> params) {
+    public List<OASIEXTradeTradeModel> v1NativeIexTradeSymbolGet(Map<String, Object> params) {
         client.assertNotNull(params.get('symbol'), 'symbol');
         client.assertNotNull(params.get('r_date'), 'r_date');
         List<OAS.Param> query = new List<OAS.Param>();
@@ -194,7 +194,7 @@ public class OASNativeIEXApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASTradeTradeModel>) client.invoke(
+        return (List<OASIEXTradeTradeModel>) client.invoke(
             'GET', '/v1/native/iex/trade/{symbol}', '',
             query, form,
             new Map<String, Object>{
@@ -204,7 +204,7 @@ public class OASNativeIEXApi {
             new List<String>{ 'application/json' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASTradeTradeModel>.class
+            List<OASIEXTradeTradeModel>.class
         );
     }
 }

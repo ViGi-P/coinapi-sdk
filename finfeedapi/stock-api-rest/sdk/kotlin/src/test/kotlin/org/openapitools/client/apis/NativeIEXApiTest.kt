@@ -27,12 +27,12 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import org.openapitools.client.apis.NativeIEXApi
-import org.openapitools.client.models.AdminAdminMessageModel
-import org.openapitools.client.models.AdminSystemEventModel
-import org.openapitools.client.models.Level1QuoteUpdateModel
-import org.openapitools.client.models.Level2PriceLevelUpdateModel
-import org.openapitools.client.models.Level3OrderBookModel
-import org.openapitools.client.models.TradeTradeModel
+import org.openapitools.client.models.IEXPriceLevelUpdatePriceLevelUpdateModel
+import org.openapitools.client.models.IEXQuoteUpdateQuoteUpdateModel
+import org.openapitools.client.models.IEXSystemEventSystemEventModel
+import org.openapitools.client.models.IEXTradeTradeModel
+import org.openapitools.client.models.ModelsAdminMessageModel
+import org.openapitools.client.models.ModelsOrderBookModel
 
 class NativeIEXApiTest : ShouldSpec() {
     init {
@@ -44,7 +44,7 @@ class NativeIEXApiTest : ShouldSpec() {
             // uncomment below to test v1NativeIexAdminMessagesSymbolGet
             //val symbol : kotlin.String = symbol_example // kotlin.String | The symbol identifier
             //val date : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
-            //val result : kotlin.collections.List<AdminAdminMessageModel> = apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date)
+            //val result : kotlin.collections.List<ModelsAdminMessageModel> = apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date)
             //result shouldBe ("TODO")
         }
 
@@ -52,7 +52,7 @@ class NativeIEXApiTest : ShouldSpec() {
         should("test v1NativeIexAdminSystemEventGet") {
             // uncomment below to test v1NativeIexAdminSystemEventGet
             //val date : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Date in format YYYY-MM-DD
-            //val result : kotlin.collections.List<AdminSystemEventModel> = apiInstance.v1NativeIexAdminSystemEventGet(date)
+            //val result : kotlin.collections.List<IEXSystemEventSystemEventModel> = apiInstance.v1NativeIexAdminSystemEventGet(date)
             //result shouldBe ("TODO")
         }
 
@@ -61,7 +61,7 @@ class NativeIEXApiTest : ShouldSpec() {
             // uncomment below to test v1NativeIexLevel1QuoteSymbolGet
             //val symbol : kotlin.String = symbol_example // kotlin.String | The symbol identifier
             //val date : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
-            //val result : kotlin.collections.List<Level1QuoteUpdateModel> = apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date)
+            //val result : kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel> = apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date)
             //result shouldBe ("TODO")
         }
 
@@ -70,7 +70,7 @@ class NativeIEXApiTest : ShouldSpec() {
             // uncomment below to test v1NativeIexLevel2PriceLevelUpdateSymbolGet
             //val symbol : kotlin.String = symbol_example // kotlin.String | The symbol identifier
             //val date : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
-            //val result : kotlin.collections.List<Level2PriceLevelUpdateModel> = apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
+            //val result : kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel> = apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
             //result shouldBe ("TODO")
         }
 
@@ -79,7 +79,7 @@ class NativeIEXApiTest : ShouldSpec() {
             // uncomment below to test v1NativeIexLevel3OrderBookSymbolGet
             //val symbol : kotlin.String = symbol_example // kotlin.String | The symbol identifier
             //val date : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
-            //val result : kotlin.collections.List<Level3OrderBookModel> = apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
+            //val result : kotlin.collections.List<ModelsOrderBookModel> = apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
             //result shouldBe ("TODO")
         }
 
@@ -88,7 +88,7 @@ class NativeIEXApiTest : ShouldSpec() {
             // uncomment below to test v1NativeIexTradeSymbolGet
             //val symbol : kotlin.String = symbol_example // kotlin.String | The symbol identifier
             //val date : java.time.OffsetDateTime = 2013-10-20T19:20:30+01:00 // java.time.OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
-            //val result : kotlin.collections.List<TradeTradeModel> = apiInstance.v1NativeIexTradeSymbolGet(symbol, date)
+            //val result : kotlin.collections.List<IEXTradeTradeModel> = apiInstance.v1NativeIexTradeSymbolGet(symbol, date)
             //result shouldBe ("TODO")
         }
 

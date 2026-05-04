@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a id="Invoke-V1OhlcvExchangeExchangeIdHistoryGet"></a>
 # **Invoke-V1OhlcvExchangeExchangeIdHistoryGet**
-> OHLCVExchangeTimeseriesItem[] Invoke-V1OhlcvExchangeExchangeIdHistoryGet<br>
+> OHLCVTimeSeriesExchangeTimeseriesItem[] Invoke-V1OhlcvExchangeExchangeIdHistoryGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ExchangeId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-PeriodId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TimeStart] <String><br>
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OHLCVExchangeTimeseriesItem[]**](OHLCVExchangeTimeseriesItem.md) (PSCustomObject)
+[**OHLCVTimeSeriesExchangeTimeseriesItem[]**](OHLCVTimeSeriesExchangeTimeseriesItem.md) (PSCustomObject)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet"></a>
 # **Invoke-V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet**
-> OHLCVTimeseriesItem[] Invoke-V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet<br>
+> OHLCVTimeSeriesTimeseriesItem[] Invoke-V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ExchangeId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-SymbolId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-PeriodId] <String><br>
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OHLCVTimeseriesItem[]**](OHLCVTimeseriesItem.md) (PSCustomObject)
+[**OHLCVTimeSeriesTimeseriesItem[]**](OHLCVTimeSeriesTimeseriesItem.md) (PSCustomObject)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet"></a>
 # **Invoke-V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet**
-> OHLCVTimeseriesItem[] Invoke-V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet<br>
+> OHLCVTimeSeriesTimeseriesItem[] Invoke-V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ExchangeId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-SymbolId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-PeriodId] <String><br>
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OHLCVTimeseriesItem[]**](OHLCVTimeseriesItem.md) (PSCustomObject)
+[**OHLCVTimeSeriesTimeseriesItem[]**](OHLCVTimeSeriesTimeseriesItem.md) (PSCustomObject)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 <a id="Invoke-V1OhlcvPeriodsGet"></a>
 # **Invoke-V1OhlcvPeriodsGet**
-> OHLCVTimeseriesPeriod[] Invoke-V1OhlcvPeriodsGet<br>
+> OHLCVTimeSeriesTimeseriesPeriod[] Invoke-V1OhlcvPeriodsGet<br>
 
 List all periods
 
@@ -229,7 +229,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**OHLCVTimeseriesPeriod[]**](OHLCVTimeseriesPeriod.md) (PSCustomObject)
+[**OHLCVTimeSeriesTimeseriesPeriod[]**](OHLCVTimeSeriesTimeseriesPeriod.md) (PSCustomObject)
 
 ### Authorization
 

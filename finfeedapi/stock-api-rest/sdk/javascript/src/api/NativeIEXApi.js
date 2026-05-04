@@ -13,12 +13,12 @@
 
 
 import ApiClient from "../ApiClient";
-import AdminAdminMessageModel from '../model/AdminAdminMessageModel';
-import AdminSystemEventModel from '../model/AdminSystemEventModel';
-import Level1QuoteUpdateModel from '../model/Level1QuoteUpdateModel';
-import Level2PriceLevelUpdateModel from '../model/Level2PriceLevelUpdateModel';
-import Level3OrderBookModel from '../model/Level3OrderBookModel';
-import TradeTradeModel from '../model/TradeTradeModel';
+import IEXPriceLevelUpdatePriceLevelUpdateModel from '../model/IEXPriceLevelUpdatePriceLevelUpdateModel';
+import IEXQuoteUpdateQuoteUpdateModel from '../model/IEXQuoteUpdateQuoteUpdateModel';
+import IEXSystemEventSystemEventModel from '../model/IEXSystemEventSystemEventModel';
+import IEXTradeTradeModel from '../model/IEXTradeTradeModel';
+import ModelsAdminMessageModel from '../model/ModelsAdminMessageModel';
+import ModelsOrderBookModel from '../model/ModelsOrderBookModel';
 
 /**
 * NativeIEX service.
@@ -43,7 +43,7 @@ export default class NativeIEXApi {
      * Callback function to receive the result of the v1NativeIexAdminMessagesSymbolGet operation.
      * @callback module:api/NativeIEXApi~v1NativeIexAdminMessagesSymbolGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/AdminAdminMessageModel>} data The data returned by the service call.
+     * @param {Array.<module:model/ModelsAdminMessageModel>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -52,7 +52,7 @@ export default class NativeIEXApi {
      * @param {String} symbol The symbol identifier
      * @param {Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param {module:api/NativeIEXApi~v1NativeIexAdminMessagesSymbolGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/AdminAdminMessageModel>}
+     * data is of type: {@link Array.<module:model/ModelsAdminMessageModel>}
      */
     v1NativeIexAdminMessagesSymbolGet(symbol, date, callback) {
       let postBody = null;
@@ -79,7 +79,7 @@ export default class NativeIEXApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [AdminAdminMessageModel];
+      let returnType = [ModelsAdminMessageModel];
       return this.apiClient.callApi(
         '/v1/native/iex/admin/messages/{symbol}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -91,7 +91,7 @@ export default class NativeIEXApi {
      * Callback function to receive the result of the v1NativeIexAdminSystemEventGet operation.
      * @callback module:api/NativeIEXApi~v1NativeIexAdminSystemEventGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/AdminSystemEventModel>} data The data returned by the service call.
+     * @param {Array.<module:model/IEXSystemEventSystemEventModel>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -99,7 +99,7 @@ export default class NativeIEXApi {
      * Get System Events
      * @param {Date} date Date in format YYYY-MM-DD
      * @param {module:api/NativeIEXApi~v1NativeIexAdminSystemEventGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/AdminSystemEventModel>}
+     * data is of type: {@link Array.<module:model/IEXSystemEventSystemEventModel>}
      */
     v1NativeIexAdminSystemEventGet(date, callback) {
       let postBody = null;
@@ -121,7 +121,7 @@ export default class NativeIEXApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [AdminSystemEventModel];
+      let returnType = [IEXSystemEventSystemEventModel];
       return this.apiClient.callApi(
         '/v1/native/iex/admin/system-event', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -133,7 +133,7 @@ export default class NativeIEXApi {
      * Callback function to receive the result of the v1NativeIexLevel1QuoteSymbolGet operation.
      * @callback module:api/NativeIEXApi~v1NativeIexLevel1QuoteSymbolGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Level1QuoteUpdateModel>} data The data returned by the service call.
+     * @param {Array.<module:model/IEXQuoteUpdateQuoteUpdateModel>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -142,7 +142,7 @@ export default class NativeIEXApi {
      * @param {String} symbol The symbol identifier
      * @param {Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param {module:api/NativeIEXApi~v1NativeIexLevel1QuoteSymbolGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Level1QuoteUpdateModel>}
+     * data is of type: {@link Array.<module:model/IEXQuoteUpdateQuoteUpdateModel>}
      */
     v1NativeIexLevel1QuoteSymbolGet(symbol, date, callback) {
       let postBody = null;
@@ -169,7 +169,7 @@ export default class NativeIEXApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Level1QuoteUpdateModel];
+      let returnType = [IEXQuoteUpdateQuoteUpdateModel];
       return this.apiClient.callApi(
         '/v1/native/iex/level1-quote/{symbol}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -181,7 +181,7 @@ export default class NativeIEXApi {
      * Callback function to receive the result of the v1NativeIexLevel2PriceLevelUpdateSymbolGet operation.
      * @callback module:api/NativeIEXApi~v1NativeIexLevel2PriceLevelUpdateSymbolGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Level2PriceLevelUpdateModel>} data The data returned by the service call.
+     * @param {Array.<module:model/IEXPriceLevelUpdatePriceLevelUpdateModel>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -190,7 +190,7 @@ export default class NativeIEXApi {
      * @param {String} symbol The symbol identifier
      * @param {Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param {module:api/NativeIEXApi~v1NativeIexLevel2PriceLevelUpdateSymbolGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Level2PriceLevelUpdateModel>}
+     * data is of type: {@link Array.<module:model/IEXPriceLevelUpdatePriceLevelUpdateModel>}
      */
     v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, callback) {
       let postBody = null;
@@ -217,7 +217,7 @@ export default class NativeIEXApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Level2PriceLevelUpdateModel];
+      let returnType = [IEXPriceLevelUpdatePriceLevelUpdateModel];
       return this.apiClient.callApi(
         '/v1/native/iex/level2-price-level-update/{symbol}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -229,7 +229,7 @@ export default class NativeIEXApi {
      * Callback function to receive the result of the v1NativeIexLevel3OrderBookSymbolGet operation.
      * @callback module:api/NativeIEXApi~v1NativeIexLevel3OrderBookSymbolGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Level3OrderBookModel>} data The data returned by the service call.
+     * @param {Array.<module:model/ModelsOrderBookModel>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -238,7 +238,7 @@ export default class NativeIEXApi {
      * @param {String} symbol The symbol identifier
      * @param {Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param {module:api/NativeIEXApi~v1NativeIexLevel3OrderBookSymbolGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/Level3OrderBookModel>}
+     * data is of type: {@link Array.<module:model/ModelsOrderBookModel>}
      */
     v1NativeIexLevel3OrderBookSymbolGet(symbol, date, callback) {
       let postBody = null;
@@ -265,7 +265,7 @@ export default class NativeIEXApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Level3OrderBookModel];
+      let returnType = [ModelsOrderBookModel];
       return this.apiClient.callApi(
         '/v1/native/iex/level3-order-book/{symbol}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -277,7 +277,7 @@ export default class NativeIEXApi {
      * Callback function to receive the result of the v1NativeIexTradeSymbolGet operation.
      * @callback module:api/NativeIEXApi~v1NativeIexTradeSymbolGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/TradeTradeModel>} data The data returned by the service call.
+     * @param {Array.<module:model/IEXTradeTradeModel>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -286,7 +286,7 @@ export default class NativeIEXApi {
      * @param {String} symbol The symbol identifier
      * @param {Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @param {module:api/NativeIEXApi~v1NativeIexTradeSymbolGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/TradeTradeModel>}
+     * data is of type: {@link Array.<module:model/IEXTradeTradeModel>}
      */
     v1NativeIexTradeSymbolGet(symbol, date, callback) {
       let postBody = null;
@@ -313,7 +313,7 @@ export default class NativeIEXApi {
       let authNames = ['APIKey', 'JWT'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [TradeTradeModel];
+      let returnType = [IEXTradeTradeModel];
       return this.apiClient.callApi(
         '/v1/native/iex/trade/{symbol}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

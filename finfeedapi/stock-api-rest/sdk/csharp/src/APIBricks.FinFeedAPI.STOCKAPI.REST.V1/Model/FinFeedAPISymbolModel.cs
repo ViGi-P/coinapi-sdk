@@ -92,7 +92,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets SymbolId
         /// </summary>
         [JsonPropertyName("symbol_id")]
-        public string? SymbolId { get { return this.SymbolIdOption; } set { this.SymbolIdOption = new(value); } }
+        public string? SymbolId { get { return this.SymbolIdOption.Value; } set { this.SymbolIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ExchangeId
@@ -105,7 +105,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets ExchangeId
         /// </summary>
         [JsonPropertyName("exchange_id")]
-        public string? ExchangeId { get { return this.ExchangeIdOption; } set { this.ExchangeIdOption = new(value); } }
+        public string? ExchangeId { get { return this.ExchangeIdOption.Value; } set { this.ExchangeIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SecurityCategory
@@ -118,7 +118,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets SecurityCategory
         /// </summary>
         [JsonPropertyName("security_category")]
-        public string? SecurityCategory { get { return this.SecurityCategoryOption; } }
+        public string? SecurityCategory { get { return this.SecurityCategoryOption.Value; } }
 
         /// <summary>
         /// Used to track the state of Name
@@ -131,7 +131,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets Name
         /// </summary>
         [JsonPropertyName("name")]
-        public string? Name { get { return this.NameOption; } set { this.NameOption = new(value); } }
+        public string? Name { get { return this.NameOption.Value; } set { this.NameOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Date
@@ -144,7 +144,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets Date
         /// </summary>
         [JsonPropertyName("date")]
-        public string? Date { get { return this.DateOption; } set { this.DateOption = new(value); } }
+        public string? Date { get { return this.DateOption.Value; } set { this.DateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssetClass
@@ -157,7 +157,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets AssetClass
         /// </summary>
         [JsonPropertyName("asset_class")]
-        public string? AssetClass { get { return this.AssetClassOption; } set { this.AssetClassOption = new(value); } }
+        public string? AssetClass { get { return this.AssetClassOption.Value; } set { this.AssetClassOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of CfiCode
@@ -170,7 +170,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CfiCode
         /// </summary>
         [JsonPropertyName("cfi_code")]
-        public string? CfiCode { get { return this.CfiCodeOption; } set { this.CfiCodeOption = new(value); } }
+        public string? CfiCode { get { return this.CfiCodeOption.Value; } set { this.CfiCodeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of CfiCategory
@@ -183,7 +183,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CfiCategory
         /// </summary>
         [JsonPropertyName("cfi_category")]
-        public string? CfiCategory { get { return this.CfiCategoryOption; } }
+        public string? CfiCategory { get { return this.CfiCategoryOption.Value; } }
 
         /// <summary>
         /// Used to track the state of CfiGroup
@@ -196,7 +196,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CfiGroup
         /// </summary>
         [JsonPropertyName("cfi_group")]
-        public string? CfiGroup { get { return this.CfiGroupOption; } }
+        public string? CfiGroup { get { return this.CfiGroupOption.Value; } }
 
         /// <summary>
         /// Used to track the state of CfiAttribute1
@@ -209,7 +209,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CfiAttribute1
         /// </summary>
         [JsonPropertyName("cfi_attribute1")]
-        public string? CfiAttribute1 { get { return this.CfiAttribute1Option; } }
+        public string? CfiAttribute1 { get { return this.CfiAttribute1Option.Value; } }
 
         /// <summary>
         /// Used to track the state of CfiAttribute2
@@ -222,7 +222,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CfiAttribute2
         /// </summary>
         [JsonPropertyName("cfi_attribute2")]
-        public string? CfiAttribute2 { get { return this.CfiAttribute2Option; } }
+        public string? CfiAttribute2 { get { return this.CfiAttribute2Option.Value; } }
 
         /// <summary>
         /// Used to track the state of CfiAttribute3
@@ -235,7 +235,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CfiAttribute3
         /// </summary>
         [JsonPropertyName("cfi_attribute3")]
-        public string? CfiAttribute3 { get { return this.CfiAttribute3Option; } }
+        public string? CfiAttribute3 { get { return this.CfiAttribute3Option.Value; } }
 
         /// <summary>
         /// Used to track the state of CfiAttribute4
@@ -248,7 +248,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CfiAttribute4
         /// </summary>
         [JsonPropertyName("cfi_attribute4")]
-        public string? CfiAttribute4 { get { return this.CfiAttribute4Option; } }
+        public string? CfiAttribute4 { get { return this.CfiAttribute4Option.Value; } }
 
         /// <summary>
         /// Used to track the state of CfiCategoryDesc
@@ -261,7 +261,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CfiCategoryDesc
         /// </summary>
         [JsonPropertyName("cfi_category_desc")]
-        public string? CfiCategoryDesc { get { return this.CfiCategoryDescOption; } }
+        public string? CfiCategoryDesc { get { return this.CfiCategoryDescOption.Value; } }
 
         /// <summary>
         /// Used to track the state of CfiGroupDesc
@@ -274,7 +274,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CfiGroupDesc
         /// </summary>
         [JsonPropertyName("cfi_group_desc")]
-        public string? CfiGroupDesc { get { return this.CfiGroupDescOption; } }
+        public string? CfiGroupDesc { get { return this.CfiGroupDescOption.Value; } }
 
         /// <summary>
         /// Used to track the state of CfiAttribute1Desc
@@ -287,7 +287,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CfiAttribute1Desc
         /// </summary>
         [JsonPropertyName("cfi_attribute1_desc")]
-        public string? CfiAttribute1Desc { get { return this.CfiAttribute1DescOption; } }
+        public string? CfiAttribute1Desc { get { return this.CfiAttribute1DescOption.Value; } }
 
         /// <summary>
         /// Used to track the state of CfiAttribute2Desc
@@ -300,7 +300,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CfiAttribute2Desc
         /// </summary>
         [JsonPropertyName("cfi_attribute2_desc")]
-        public string? CfiAttribute2Desc { get { return this.CfiAttribute2DescOption; } }
+        public string? CfiAttribute2Desc { get { return this.CfiAttribute2DescOption.Value; } }
 
         /// <summary>
         /// Used to track the state of CfiAttribute3Desc
@@ -313,7 +313,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CfiAttribute3Desc
         /// </summary>
         [JsonPropertyName("cfi_attribute3_desc")]
-        public string? CfiAttribute3Desc { get { return this.CfiAttribute3DescOption; } }
+        public string? CfiAttribute3Desc { get { return this.CfiAttribute3DescOption.Value; } }
 
         /// <summary>
         /// Used to track the state of CfiAttribute4Desc
@@ -326,7 +326,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CfiAttribute4Desc
         /// </summary>
         [JsonPropertyName("cfi_attribute4_desc")]
-        public string? CfiAttribute4Desc { get { return this.CfiAttribute4DescOption; } }
+        public string? CfiAttribute4Desc { get { return this.CfiAttribute4DescOption.Value; } }
 
         /// <summary>
         /// Gets or Sets additional properties

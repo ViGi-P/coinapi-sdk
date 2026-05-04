@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## v1NativeIexAdminMessagesSymbolGet
 
-> [AdminAdminMessageModel] v1NativeIexAdminMessagesSymbolGet(symbol, date)
+> [ModelsAdminMessageModel] v1NativeIexAdminMessagesSymbolGet(symbol, date)
 
 Get Admin Messages
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[AdminAdminMessageModel]**](AdminAdminMessageModel.md)
+[**[ModelsAdminMessageModel]**](ModelsAdminMessageModel.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexAdminSystemEventGet
 
-> [AdminSystemEventModel] v1NativeIexAdminSystemEventGet(date)
+> [IEXSystemEventSystemEventModel] v1NativeIexAdminSystemEventGet(date)
 
 Get System Events
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[AdminSystemEventModel]**](AdminSystemEventModel.md)
+[**[IEXSystemEventSystemEventModel]**](IEXSystemEventSystemEventModel.md)
 
 ### Authorization
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexLevel1QuoteSymbolGet
 
-> [Level1QuoteUpdateModel] v1NativeIexLevel1QuoteSymbolGet(symbol, date)
+> [IEXQuoteUpdateQuoteUpdateModel] v1NativeIexLevel1QuoteSymbolGet(symbol, date)
 
 Get Level-1 Quotes
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Level1QuoteUpdateModel]**](Level1QuoteUpdateModel.md)
+[**[IEXQuoteUpdateQuoteUpdateModel]**](IEXQuoteUpdateQuoteUpdateModel.md)
 
 ### Authorization
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexLevel2PriceLevelUpdateSymbolGet
 
-> [Level2PriceLevelUpdateModel] v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
+> [IEXPriceLevelUpdatePriceLevelUpdateModel] v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
 
 Get Level-2 Price Level Book
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Level2PriceLevelUpdateModel]**](Level2PriceLevelUpdateModel.md)
+[**[IEXPriceLevelUpdatePriceLevelUpdateModel]**](IEXPriceLevelUpdatePriceLevelUpdateModel.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexLevel3OrderBookSymbolGet
 
-> [Level3OrderBookModel] v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
+> [ModelsOrderBookModel] v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
 
 Get Level-3 Order Book
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Level3OrderBookModel]**](Level3OrderBookModel.md)
+[**[ModelsOrderBookModel]**](ModelsOrderBookModel.md)
 
 ### Authorization
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexTradeSymbolGet
 
-> [TradeTradeModel] v1NativeIexTradeSymbolGet(symbol, date)
+> [IEXTradeTradeModel] v1NativeIexTradeSymbolGet(symbol, date)
 
 Get Trades
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[TradeTradeModel]**](TradeTradeModel.md)
+[**[IEXTradeTradeModel]**](IEXTradeTradeModel.md)
 
 ### Authorization
 

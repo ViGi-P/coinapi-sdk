@@ -1,6 +1,6 @@
 # OpenAPI\Client\NativeIEXApi
 
-
+Provides access to IEX market data endpoints.
 
 All URIs are relative to https://api-historical.stock.finfeedapi.com, except if the operation defines another base path.
 
@@ -17,7 +17,7 @@ All URIs are relative to https://api-historical.stock.finfeedapi.com, except if 
 ## `v1NativeIexAdminMessagesSymbolGet()`
 
 ```php
-v1NativeIexAdminMessagesSymbolGet($symbol, $date): \OpenAPI\Client\Model\AdminAdminMessageModel[]
+v1NativeIexAdminMessagesSymbolGet($symbol, $date): \OpenAPI\Client\Model\ModelsAdminMessageModel[]
 ```
 
 Get Admin Messages
@@ -64,7 +64,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\AdminAdminMessageModel[]**](../Model/AdminAdminMessageModel.md)
+[**\OpenAPI\Client\Model\ModelsAdminMessageModel[]**](../Model/ModelsAdminMessageModel.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ try {
 ## `v1NativeIexAdminSystemEventGet()`
 
 ```php
-v1NativeIexAdminSystemEventGet($date): \OpenAPI\Client\Model\AdminSystemEventModel[]
+v1NativeIexAdminSystemEventGet($date): \OpenAPI\Client\Model\IEXSystemEventSystemEventModel[]
 ```
 
 Get System Events
@@ -127,7 +127,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\AdminSystemEventModel[]**](../Model/AdminSystemEventModel.md)
+[**\OpenAPI\Client\Model\IEXSystemEventSystemEventModel[]**](../Model/IEXSystemEventSystemEventModel.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ try {
 ## `v1NativeIexLevel1QuoteSymbolGet()`
 
 ```php
-v1NativeIexLevel1QuoteSymbolGet($symbol, $date): \OpenAPI\Client\Model\Level1QuoteUpdateModel[]
+v1NativeIexLevel1QuoteSymbolGet($symbol, $date): \OpenAPI\Client\Model\IEXQuoteUpdateQuoteUpdateModel[]
 ```
 
 Get Level-1 Quotes
@@ -192,7 +192,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Level1QuoteUpdateModel[]**](../Model/Level1QuoteUpdateModel.md)
+[**\OpenAPI\Client\Model\IEXQuoteUpdateQuoteUpdateModel[]**](../Model/IEXQuoteUpdateQuoteUpdateModel.md)
 
 ### Authorization
 
@@ -210,7 +210,7 @@ try {
 ## `v1NativeIexLevel2PriceLevelUpdateSymbolGet()`
 
 ```php
-v1NativeIexLevel2PriceLevelUpdateSymbolGet($symbol, $date): \OpenAPI\Client\Model\Level2PriceLevelUpdateModel[]
+v1NativeIexLevel2PriceLevelUpdateSymbolGet($symbol, $date): \OpenAPI\Client\Model\IEXPriceLevelUpdatePriceLevelUpdateModel[]
 ```
 
 Get Level-2 Price Level Book
@@ -257,7 +257,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Level2PriceLevelUpdateModel[]**](../Model/Level2PriceLevelUpdateModel.md)
+[**\OpenAPI\Client\Model\IEXPriceLevelUpdatePriceLevelUpdateModel[]**](../Model/IEXPriceLevelUpdatePriceLevelUpdateModel.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ try {
 ## `v1NativeIexLevel3OrderBookSymbolGet()`
 
 ```php
-v1NativeIexLevel3OrderBookSymbolGet($symbol, $date): \OpenAPI\Client\Model\Level3OrderBookModel[]
+v1NativeIexLevel3OrderBookSymbolGet($symbol, $date): \OpenAPI\Client\Model\ModelsOrderBookModel[]
 ```
 
 Get Level-3 Order Book
@@ -322,7 +322,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\Level3OrderBookModel[]**](../Model/Level3OrderBookModel.md)
+[**\OpenAPI\Client\Model\ModelsOrderBookModel[]**](../Model/ModelsOrderBookModel.md)
 
 ### Authorization
 
@@ -340,7 +340,7 @@ try {
 ## `v1NativeIexTradeSymbolGet()`
 
 ```php
-v1NativeIexTradeSymbolGet($symbol, $date): \OpenAPI\Client\Model\TradeTradeModel[]
+v1NativeIexTradeSymbolGet($symbol, $date): \OpenAPI\Client\Model\IEXTradeTradeModel[]
 ```
 
 Get Trades
@@ -387,7 +387,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\TradeTradeModel[]**](../Model/TradeTradeModel.md)
+[**\OpenAPI\Client\Model\IEXTradeTradeModel[]**](../Model/IEXTradeTradeModel.md)
 
 ### Authorization
 

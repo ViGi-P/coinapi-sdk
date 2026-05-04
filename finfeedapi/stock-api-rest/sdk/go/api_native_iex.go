@@ -38,7 +38,7 @@ func (r ApiV1NativeIexAdminMessagesSymbolGetRequest) Date(date time.Time) ApiV1N
 	return r
 }
 
-func (r ApiV1NativeIexAdminMessagesSymbolGetRequest) Execute() ([]AdminAdminMessageModel, *http.Response, error) {
+func (r ApiV1NativeIexAdminMessagesSymbolGetRequest) Execute() ([]ModelsAdminMessageModel, *http.Response, error) {
 	return r.ApiService.V1NativeIexAdminMessagesSymbolGetExecute(r)
 }
 
@@ -58,13 +58,13 @@ func (a *NativeIEXAPIService) V1NativeIexAdminMessagesSymbolGet(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return []AdminAdminMessageModel
-func (a *NativeIEXAPIService) V1NativeIexAdminMessagesSymbolGetExecute(r ApiV1NativeIexAdminMessagesSymbolGetRequest) ([]AdminAdminMessageModel, *http.Response, error) {
+//  @return []ModelsAdminMessageModel
+func (a *NativeIEXAPIService) V1NativeIexAdminMessagesSymbolGetExecute(r ApiV1NativeIexAdminMessagesSymbolGetRequest) ([]ModelsAdminMessageModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []AdminAdminMessageModel
+		localVarReturnValue  []ModelsAdminMessageModel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NativeIEXAPIService.V1NativeIexAdminMessagesSymbolGet")
@@ -163,7 +163,7 @@ func (r ApiV1NativeIexAdminSystemEventGetRequest) Date(date time.Time) ApiV1Nati
 	return r
 }
 
-func (r ApiV1NativeIexAdminSystemEventGetRequest) Execute() ([]AdminSystemEventModel, *http.Response, error) {
+func (r ApiV1NativeIexAdminSystemEventGetRequest) Execute() ([]IEXSystemEventSystemEventModel, *http.Response, error) {
 	return r.ApiService.V1NativeIexAdminSystemEventGetExecute(r)
 }
 
@@ -181,13 +181,13 @@ func (a *NativeIEXAPIService) V1NativeIexAdminSystemEventGet(ctx context.Context
 }
 
 // Execute executes the request
-//  @return []AdminSystemEventModel
-func (a *NativeIEXAPIService) V1NativeIexAdminSystemEventGetExecute(r ApiV1NativeIexAdminSystemEventGetRequest) ([]AdminSystemEventModel, *http.Response, error) {
+//  @return []IEXSystemEventSystemEventModel
+func (a *NativeIEXAPIService) V1NativeIexAdminSystemEventGetExecute(r ApiV1NativeIexAdminSystemEventGetRequest) ([]IEXSystemEventSystemEventModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []AdminSystemEventModel
+		localVarReturnValue  []IEXSystemEventSystemEventModel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NativeIEXAPIService.V1NativeIexAdminSystemEventGet")
@@ -286,7 +286,7 @@ func (r ApiV1NativeIexLevel1QuoteSymbolGetRequest) Date(date time.Time) ApiV1Nat
 	return r
 }
 
-func (r ApiV1NativeIexLevel1QuoteSymbolGetRequest) Execute() ([]Level1QuoteUpdateModel, *http.Response, error) {
+func (r ApiV1NativeIexLevel1QuoteSymbolGetRequest) Execute() ([]IEXQuoteUpdateQuoteUpdateModel, *http.Response, error) {
 	return r.ApiService.V1NativeIexLevel1QuoteSymbolGetExecute(r)
 }
 
@@ -306,13 +306,13 @@ func (a *NativeIEXAPIService) V1NativeIexLevel1QuoteSymbolGet(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return []Level1QuoteUpdateModel
-func (a *NativeIEXAPIService) V1NativeIexLevel1QuoteSymbolGetExecute(r ApiV1NativeIexLevel1QuoteSymbolGetRequest) ([]Level1QuoteUpdateModel, *http.Response, error) {
+//  @return []IEXQuoteUpdateQuoteUpdateModel
+func (a *NativeIEXAPIService) V1NativeIexLevel1QuoteSymbolGetExecute(r ApiV1NativeIexLevel1QuoteSymbolGetRequest) ([]IEXQuoteUpdateQuoteUpdateModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []Level1QuoteUpdateModel
+		localVarReturnValue  []IEXQuoteUpdateQuoteUpdateModel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NativeIEXAPIService.V1NativeIexLevel1QuoteSymbolGet")
@@ -412,7 +412,7 @@ func (r ApiV1NativeIexLevel2PriceLevelUpdateSymbolGetRequest) Date(date time.Tim
 	return r
 }
 
-func (r ApiV1NativeIexLevel2PriceLevelUpdateSymbolGetRequest) Execute() ([]Level2PriceLevelUpdateModel, *http.Response, error) {
+func (r ApiV1NativeIexLevel2PriceLevelUpdateSymbolGetRequest) Execute() ([]IEXPriceLevelUpdatePriceLevelUpdateModel, *http.Response, error) {
 	return r.ApiService.V1NativeIexLevel2PriceLevelUpdateSymbolGetExecute(r)
 }
 
@@ -432,13 +432,13 @@ func (a *NativeIEXAPIService) V1NativeIexLevel2PriceLevelUpdateSymbolGet(ctx con
 }
 
 // Execute executes the request
-//  @return []Level2PriceLevelUpdateModel
-func (a *NativeIEXAPIService) V1NativeIexLevel2PriceLevelUpdateSymbolGetExecute(r ApiV1NativeIexLevel2PriceLevelUpdateSymbolGetRequest) ([]Level2PriceLevelUpdateModel, *http.Response, error) {
+//  @return []IEXPriceLevelUpdatePriceLevelUpdateModel
+func (a *NativeIEXAPIService) V1NativeIexLevel2PriceLevelUpdateSymbolGetExecute(r ApiV1NativeIexLevel2PriceLevelUpdateSymbolGetRequest) ([]IEXPriceLevelUpdatePriceLevelUpdateModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []Level2PriceLevelUpdateModel
+		localVarReturnValue  []IEXPriceLevelUpdatePriceLevelUpdateModel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NativeIEXAPIService.V1NativeIexLevel2PriceLevelUpdateSymbolGet")
@@ -538,7 +538,7 @@ func (r ApiV1NativeIexLevel3OrderBookSymbolGetRequest) Date(date time.Time) ApiV
 	return r
 }
 
-func (r ApiV1NativeIexLevel3OrderBookSymbolGetRequest) Execute() ([]Level3OrderBookModel, *http.Response, error) {
+func (r ApiV1NativeIexLevel3OrderBookSymbolGetRequest) Execute() ([]ModelsOrderBookModel, *http.Response, error) {
 	return r.ApiService.V1NativeIexLevel3OrderBookSymbolGetExecute(r)
 }
 
@@ -558,13 +558,13 @@ func (a *NativeIEXAPIService) V1NativeIexLevel3OrderBookSymbolGet(ctx context.Co
 }
 
 // Execute executes the request
-//  @return []Level3OrderBookModel
-func (a *NativeIEXAPIService) V1NativeIexLevel3OrderBookSymbolGetExecute(r ApiV1NativeIexLevel3OrderBookSymbolGetRequest) ([]Level3OrderBookModel, *http.Response, error) {
+//  @return []ModelsOrderBookModel
+func (a *NativeIEXAPIService) V1NativeIexLevel3OrderBookSymbolGetExecute(r ApiV1NativeIexLevel3OrderBookSymbolGetRequest) ([]ModelsOrderBookModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []Level3OrderBookModel
+		localVarReturnValue  []ModelsOrderBookModel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NativeIEXAPIService.V1NativeIexLevel3OrderBookSymbolGet")
@@ -664,7 +664,7 @@ func (r ApiV1NativeIexTradeSymbolGetRequest) Date(date time.Time) ApiV1NativeIex
 	return r
 }
 
-func (r ApiV1NativeIexTradeSymbolGetRequest) Execute() ([]TradeTradeModel, *http.Response, error) {
+func (r ApiV1NativeIexTradeSymbolGetRequest) Execute() ([]IEXTradeTradeModel, *http.Response, error) {
 	return r.ApiService.V1NativeIexTradeSymbolGetExecute(r)
 }
 
@@ -684,13 +684,13 @@ func (a *NativeIEXAPIService) V1NativeIexTradeSymbolGet(ctx context.Context, sym
 }
 
 // Execute executes the request
-//  @return []TradeTradeModel
-func (a *NativeIEXAPIService) V1NativeIexTradeSymbolGetExecute(r ApiV1NativeIexTradeSymbolGetRequest) ([]TradeTradeModel, *http.Response, error) {
+//  @return []IEXTradeTradeModel
+func (a *NativeIEXAPIService) V1NativeIexTradeSymbolGetExecute(r ApiV1NativeIexTradeSymbolGetRequest) ([]IEXTradeTradeModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []TradeTradeModel
+		localVarReturnValue  []IEXTradeTradeModel
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NativeIEXAPIService.V1NativeIexTradeSymbolGet")

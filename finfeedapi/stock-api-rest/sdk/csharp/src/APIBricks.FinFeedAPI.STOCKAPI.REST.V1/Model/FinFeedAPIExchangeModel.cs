@@ -92,7 +92,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets ExchangeId
         /// </summary>
         [JsonPropertyName("exchange_id")]
-        public string? ExchangeId { get { return this.ExchangeIdOption; } set { this.ExchangeIdOption = new(value); } }
+        public string? ExchangeId { get { return this.ExchangeIdOption.Value; } set { this.ExchangeIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of LastDatapointDate
@@ -105,7 +105,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets LastDatapointDate
         /// </summary>
         [JsonPropertyName("last_datapoint_date")]
-        public string? LastDatapointDate { get { return this.LastDatapointDateOption; } set { this.LastDatapointDateOption = new(value); } }
+        public string? LastDatapointDate { get { return this.LastDatapointDateOption.Value; } set { this.LastDatapointDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Mic
@@ -118,7 +118,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets Mic
         /// </summary>
         [JsonPropertyName("mic")]
-        public string? Mic { get { return this.MicOption; } set { this.MicOption = new(value); } }
+        public string? Mic { get { return this.MicOption.Value; } set { this.MicOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of OperatingMic
@@ -131,7 +131,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets OperatingMic
         /// </summary>
         [JsonPropertyName("operating_mic")]
-        public string? OperatingMic { get { return this.OperatingMicOption; } set { this.OperatingMicOption = new(value); } }
+        public string? OperatingMic { get { return this.OperatingMicOption.Value; } set { this.OperatingMicOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of OprtSgmt
@@ -144,7 +144,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets OprtSgmt
         /// </summary>
         [JsonPropertyName("oprt_sgmt")]
-        public string? OprtSgmt { get { return this.OprtSgmtOption; } set { this.OprtSgmtOption = new(value); } }
+        public string? OprtSgmt { get { return this.OprtSgmtOption.Value; } set { this.OprtSgmtOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of MarketNameInstitutionDescription
@@ -157,7 +157,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets MarketNameInstitutionDescription
         /// </summary>
         [JsonPropertyName("market_name_institution_description")]
-        public string? MarketNameInstitutionDescription { get { return this.MarketNameInstitutionDescriptionOption; } set { this.MarketNameInstitutionDescriptionOption = new(value); } }
+        public string? MarketNameInstitutionDescription { get { return this.MarketNameInstitutionDescriptionOption.Value; } set { this.MarketNameInstitutionDescriptionOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of LegalEntityName
@@ -170,7 +170,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets LegalEntityName
         /// </summary>
         [JsonPropertyName("legal_entity_name")]
-        public string? LegalEntityName { get { return this.LegalEntityNameOption; } set { this.LegalEntityNameOption = new(value); } }
+        public string? LegalEntityName { get { return this.LegalEntityNameOption.Value; } set { this.LegalEntityNameOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Lei
@@ -183,7 +183,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets Lei
         /// </summary>
         [JsonPropertyName("lei")]
-        public string? Lei { get { return this.LeiOption; } set { this.LeiOption = new(value); } }
+        public string? Lei { get { return this.LeiOption.Value; } set { this.LeiOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of MarketCategoryCode
@@ -196,7 +196,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets MarketCategoryCode
         /// </summary>
         [JsonPropertyName("market_category_code")]
-        public string? MarketCategoryCode { get { return this.MarketCategoryCodeOption; } set { this.MarketCategoryCodeOption = new(value); } }
+        public string? MarketCategoryCode { get { return this.MarketCategoryCodeOption.Value; } set { this.MarketCategoryCodeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Acronym
@@ -209,7 +209,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets Acronym
         /// </summary>
         [JsonPropertyName("acronym")]
-        public string? Acronym { get { return this.AcronymOption; } set { this.AcronymOption = new(value); } }
+        public string? Acronym { get { return this.AcronymOption.Value; } set { this.AcronymOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of IsoCountryCode
@@ -222,7 +222,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets IsoCountryCode
         /// </summary>
         [JsonPropertyName("iso_country_code")]
-        public string? IsoCountryCode { get { return this.IsoCountryCodeOption; } set { this.IsoCountryCodeOption = new(value); } }
+        public string? IsoCountryCode { get { return this.IsoCountryCodeOption.Value; } set { this.IsoCountryCodeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of City
@@ -235,7 +235,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets City
         /// </summary>
         [JsonPropertyName("city")]
-        public string? City { get { return this.CityOption; } set { this.CityOption = new(value); } }
+        public string? City { get { return this.CityOption.Value; } set { this.CityOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Website
@@ -248,7 +248,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets Website
         /// </summary>
         [JsonPropertyName("website")]
-        public string? Website { get { return this.WebsiteOption; } set { this.WebsiteOption = new(value); } }
+        public string? Website { get { return this.WebsiteOption.Value; } set { this.WebsiteOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Status
@@ -261,7 +261,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets Status
         /// </summary>
         [JsonPropertyName("status")]
-        public string? Status { get { return this.StatusOption; } set { this.StatusOption = new(value); } }
+        public string? Status { get { return this.StatusOption.Value; } set { this.StatusOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of CreationDate
@@ -274,7 +274,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets CreationDate
         /// </summary>
         [JsonPropertyName("creation_date")]
-        public DateTime? CreationDate { get { return this.CreationDateOption; } set { this.CreationDateOption = new(value); } }
+        public DateTime? CreationDate { get { return this.CreationDateOption.Value; } set { this.CreationDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of LastUpdateDate
@@ -287,7 +287,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets LastUpdateDate
         /// </summary>
         [JsonPropertyName("last_update_date")]
-        public DateTime? LastUpdateDate { get { return this.LastUpdateDateOption; } set { this.LastUpdateDateOption = new(value); } }
+        public DateTime? LastUpdateDate { get { return this.LastUpdateDateOption.Value; } set { this.LastUpdateDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of LastValidationDate
@@ -300,7 +300,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets LastValidationDate
         /// </summary>
         [JsonPropertyName("last_validation_date")]
-        public DateTime? LastValidationDate { get { return this.LastValidationDateOption; } set { this.LastValidationDateOption = new(value); } }
+        public DateTime? LastValidationDate { get { return this.LastValidationDateOption.Value; } set { this.LastValidationDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ExpiryDate
@@ -313,7 +313,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets ExpiryDate
         /// </summary>
         [JsonPropertyName("expiry_date")]
-        public DateTime? ExpiryDate { get { return this.ExpiryDateOption; } set { this.ExpiryDateOption = new(value); } }
+        public DateTime? ExpiryDate { get { return this.ExpiryDateOption.Value; } set { this.ExpiryDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Comments
@@ -326,7 +326,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Model
         /// Gets or Sets Comments
         /// </summary>
         [JsonPropertyName("comments")]
-        public string? Comments { get { return this.CommentsOption; } set { this.CommentsOption = new(value); } }
+        public string? Comments { get { return this.CommentsOption.Value; } set { this.CommentsOption = new(value); } }
 
         /// <summary>
         /// Gets or Sets additional properties

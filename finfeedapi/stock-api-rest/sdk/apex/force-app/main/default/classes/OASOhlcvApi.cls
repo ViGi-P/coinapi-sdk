@@ -32,10 +32,10 @@ public class OASOhlcvApi {
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
-     * @return List<OASOHLCVExchangeTimeseriesItem>
+     * @return List<OASOHLCVTimeSeriesExchangeTimeseries>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASOHLCVExchangeTimeseriesItem> v1OhlcvExchangeExchangeIdHistoryGet(Map<String, Object> params) {
+    public List<OASOHLCVTimeSeriesExchangeTimeseries> v1OhlcvExchangeExchangeIdHistoryGet(Map<String, Object> params) {
         client.assertNotNull(params.get('exchangeId'), 'exchangeId');
         client.assertNotNull(params.get('periodId'), 'periodId');
         client.assertNotNull(params.get('timeStart'), 'timeStart');
@@ -49,7 +49,7 @@ public class OASOhlcvApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASOHLCVExchangeTimeseriesItem>) client.invoke(
+        return (List<OASOHLCVTimeSeriesExchangeTimeseries>) client.invoke(
             'GET', '/v1/ohlcv/exchange/{exchange_id}/history', '',
             query, form,
             new Map<String, Object>{
@@ -59,7 +59,7 @@ public class OASOhlcvApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASOHLCVExchangeTimeseriesItem>.class
+            List<OASOHLCVTimeSeriesExchangeTimeseries>.class
         );
     }
     /**
@@ -71,10 +71,10 @@ public class OASOhlcvApi {
      * @param timeStart Timeseries starting time in ISO 8601 (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (optional)
      * @param r_limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return List<OASOHLCVTimeseriesItem>
+     * @return List<OASOHLCVTimeSeriesTimeseriesItem>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASOHLCVTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(Map<String, Object> params) {
+    public List<OASOHLCVTimeSeriesTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(Map<String, Object> params) {
         client.assertNotNull(params.get('exchangeId'), 'exchangeId');
         client.assertNotNull(params.get('symbolId'), 'symbolId');
         client.assertNotNull(params.get('periodId'), 'periodId');
@@ -88,7 +88,7 @@ public class OASOhlcvApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASOHLCVTimeseriesItem>) client.invoke(
+        return (List<OASOHLCVTimeSeriesTimeseriesItem>) client.invoke(
             'GET', '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/history', '',
             query, form,
             new Map<String, Object>{
@@ -99,7 +99,7 @@ public class OASOhlcvApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASOHLCVTimeseriesItem>.class
+            List<OASOHLCVTimeSeriesTimeseriesItem>.class
         );
     }
     /**
@@ -109,10 +109,10 @@ public class OASOhlcvApi {
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
      * @param r_limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return List<OASOHLCVTimeseriesItem>
+     * @return List<OASOHLCVTimeSeriesTimeseriesItem>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASOHLCVTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(Map<String, Object> params) {
+    public List<OASOHLCVTimeSeriesTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(Map<String, Object> params) {
         client.assertNotNull(params.get('exchangeId'), 'exchangeId');
         client.assertNotNull(params.get('symbolId'), 'symbolId');
         client.assertNotNull(params.get('periodId'), 'periodId');
@@ -124,7 +124,7 @@ public class OASOhlcvApi {
 
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASOHLCVTimeseriesItem>) client.invoke(
+        return (List<OASOHLCVTimeSeriesTimeseriesItem>) client.invoke(
             'GET', '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/latest', '',
             query, form,
             new Map<String, Object>{
@@ -135,20 +135,20 @@ public class OASOhlcvApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASOHLCVTimeseriesItem>.class
+            List<OASOHLCVTimeSeriesTimeseriesItem>.class
         );
     }
     /**
      * List all periods
      * Get full list of supported time periods available for requesting OHLCV timeseries data.\n            \n### Available periods\n            \nTime unit | Period identifiers\n--------- | -----------\nSecond | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC\nMinute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN\nHour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS\nDay | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY\nMonth | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH\nYear | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS\n            \n:::tip\nYou can assume that we will not remove any periods from this response, however, we may add new ones.\n:::
-     * @return List<OASOHLCVTimeseriesPeriod>
+     * @return List<OASOHLCVTimeSeriesTimeseriesPeriod>
      * @throws OAS.ApiException if fails to make API call
      */
-    public List<OASOHLCVTimeseriesPeriod> v1OhlcvPeriodsGet() {
+    public List<OASOHLCVTimeSeriesTimeseriesPeriod> v1OhlcvPeriodsGet() {
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
-        return (List<OASOHLCVTimeseriesPeriod>) client.invoke(
+        return (List<OASOHLCVTimeSeriesTimeseriesPeriod>) client.invoke(
             'GET', '/v1/ohlcv/periods', '',
             query, form,
             new Map<String, Object>(),
@@ -156,7 +156,7 @@ public class OASOhlcvApi {
             new List<String>{ 'text/plain', 'application/json', 'text/json' },
             new List<String>(),
             new List<String> { 'APIKey', 'JWT' },
-            List<OASOHLCVTimeseriesPeriod>.class
+            List<OASOHLCVTimeSeriesTimeseriesPeriod>.class
         );
     }
 }

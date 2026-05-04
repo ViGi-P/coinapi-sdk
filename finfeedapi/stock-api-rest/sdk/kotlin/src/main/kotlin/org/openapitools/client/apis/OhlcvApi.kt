@@ -27,9 +27,9 @@ import java.io.IOException
 import okhttp3.Call
 import okhttp3.HttpUrl
 
-import org.openapitools.client.models.OHLCVExchangeTimeseriesItem
-import org.openapitools.client.models.OHLCVTimeseriesItem
-import org.openapitools.client.models.OHLCVTimeseriesPeriod
+import org.openapitools.client.models.OHLCVTimeSeriesExchangeTimeseriesItem
+import org.openapitools.client.models.OHLCVTimeSeriesTimeseriesItem
+import org.openapitools.client.models.OHLCVTimeSeriesTimeseriesPeriod
 
 import com.squareup.moshi.Json
 
@@ -63,7 +63,7 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
      * @param timeStart Timeseries starting time in ISO 8601
      * @param timeEnd Timeseries ending time in ISO 8601
-     * @return kotlin.collections.List<OHLCVExchangeTimeseriesItem>
+     * @return kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -72,11 +72,11 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String) : kotlin.collections.List<OHLCVExchangeTimeseriesItem> {
+    fun v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String) : kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem> {
         val localVarResponse = v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId = exchangeId, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<OHLCVExchangeTimeseriesItem>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -98,16 +98,16 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
      * @param timeStart Timeseries starting time in ISO 8601
      * @param timeEnd Timeseries ending time in ISO 8601
-     * @return ApiResponse<kotlin.collections.List<OHLCVExchangeTimeseriesItem>?>
+     * @return ApiResponse<kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String) : ApiResponse<kotlin.collections.List<OHLCVExchangeTimeseriesItem>?> {
+    fun v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String) : ApiResponse<kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem>?> {
         val localVariableConfig = v1OhlcvExchangeExchangeIdHistoryGetRequestConfig(exchangeId = exchangeId, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd)
 
-        return request<Unit, kotlin.collections.List<OHLCVExchangeTimeseriesItem>>(
+        return request<Unit, kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem>>(
             localVariableConfig
         )
     }
@@ -152,7 +152,7 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param timeStart Timeseries starting time in ISO 8601 (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (optional)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return kotlin.collections.List<OHLCVTimeseriesItem>
+     * @return kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -161,11 +161,11 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId: kotlin.String, symbolId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String? = null, timeEnd: kotlin.String? = null, limit: kotlin.Int? = 100) : kotlin.collections.List<OHLCVTimeseriesItem> {
+    fun v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId: kotlin.String, symbolId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String? = null, timeEnd: kotlin.String? = null, limit: kotlin.Int? = 100) : kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem> {
         val localVarResponse = v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(exchangeId = exchangeId, symbolId = symbolId, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd, limit = limit)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<OHLCVTimeseriesItem>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -189,16 +189,16 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param timeStart Timeseries starting time in ISO 8601 (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (optional)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return ApiResponse<kotlin.collections.List<OHLCVTimeseriesItem>?>
+     * @return ApiResponse<kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(exchangeId: kotlin.String, symbolId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String?, timeEnd: kotlin.String?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<OHLCVTimeseriesItem>?> {
+    fun v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(exchangeId: kotlin.String, symbolId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String?, timeEnd: kotlin.String?, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem>?> {
         val localVariableConfig = v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetRequestConfig(exchangeId = exchangeId, symbolId = symbolId, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd, limit = limit)
 
-        return request<Unit, kotlin.collections.List<OHLCVTimeseriesItem>>(
+        return request<Unit, kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem>>(
             localVariableConfig
         )
     }
@@ -250,7 +250,7 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return kotlin.collections.List<OHLCVTimeseriesItem>
+     * @return kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -259,11 +259,11 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId: kotlin.String, symbolId: kotlin.String, periodId: kotlin.String, limit: kotlin.Int? = 100) : kotlin.collections.List<OHLCVTimeseriesItem> {
+    fun v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId: kotlin.String, symbolId: kotlin.String, periodId: kotlin.String, limit: kotlin.Int? = 100) : kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem> {
         val localVarResponse = v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(exchangeId = exchangeId, symbolId = symbolId, periodId = periodId, limit = limit)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<OHLCVTimeseriesItem>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -285,16 +285,16 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return ApiResponse<kotlin.collections.List<OHLCVTimeseriesItem>?>
+     * @return ApiResponse<kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(exchangeId: kotlin.String, symbolId: kotlin.String, periodId: kotlin.String, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<OHLCVTimeseriesItem>?> {
+    fun v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(exchangeId: kotlin.String, symbolId: kotlin.String, periodId: kotlin.String, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem>?> {
         val localVariableConfig = v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetRequestConfig(exchangeId = exchangeId, symbolId = symbolId, periodId = periodId, limit = limit)
 
-        return request<Unit, kotlin.collections.List<OHLCVTimeseriesItem>>(
+        return request<Unit, kotlin.collections.List<OHLCVTimeSeriesTimeseriesItem>>(
             localVariableConfig
         )
     }
@@ -334,7 +334,7 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * GET /v1/ohlcv/periods
      * List all periods
      * Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
-     * @return kotlin.collections.List<OHLCVTimeseriesPeriod>
+     * @return kotlin.collections.List<OHLCVTimeSeriesTimeseriesPeriod>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -343,11 +343,11 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1OhlcvPeriodsGet() : kotlin.collections.List<OHLCVTimeseriesPeriod> {
+    fun v1OhlcvPeriodsGet() : kotlin.collections.List<OHLCVTimeSeriesTimeseriesPeriod> {
         val localVarResponse = v1OhlcvPeriodsGetWithHttpInfo()
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<OHLCVTimeseriesPeriod>
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<OHLCVTimeSeriesTimeseriesPeriod>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -365,16 +365,16 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * GET /v1/ohlcv/periods
      * List all periods
      * Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
-     * @return ApiResponse<kotlin.collections.List<OHLCVTimeseriesPeriod>?>
+     * @return ApiResponse<kotlin.collections.List<OHLCVTimeSeriesTimeseriesPeriod>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1OhlcvPeriodsGetWithHttpInfo() : ApiResponse<kotlin.collections.List<OHLCVTimeseriesPeriod>?> {
+    fun v1OhlcvPeriodsGetWithHttpInfo() : ApiResponse<kotlin.collections.List<OHLCVTimeSeriesTimeseriesPeriod>?> {
         val localVariableConfig = v1OhlcvPeriodsGetRequestConfig()
 
-        return request<Unit, kotlin.collections.List<OHLCVTimeseriesPeriod>>(
+        return request<Unit, kotlin.collections.List<OHLCVTimeSeriesTimeseriesPeriod>>(
             localVariableConfig
         )
     }

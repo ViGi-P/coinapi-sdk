@@ -19,42 +19,42 @@ void main() {
   group('tests for NativeIEXApi', () {
     // Get Admin Messages
     //
-    //Future<List<AdminAdminMessageModel>> v1NativeIexAdminMessagesSymbolGet(String symbol, DateTime date) async
+    //Future<List<ModelsAdminMessageModel>> v1NativeIexAdminMessagesSymbolGet(String symbol, DateTime date) async
     test('test v1NativeIexAdminMessagesSymbolGet', () async {
       // TODO
     });
 
     // Get System Events
     //
-    //Future<List<AdminSystemEventModel>> v1NativeIexAdminSystemEventGet(DateTime date) async
+    //Future<List<IEXSystemEventSystemEventModel>> v1NativeIexAdminSystemEventGet(DateTime date) async
     test('test v1NativeIexAdminSystemEventGet', () async {
       // TODO
     });
 
     // Get Level-1 Quotes
     //
-    //Future<List<Level1QuoteUpdateModel>> v1NativeIexLevel1QuoteSymbolGet(String symbol, DateTime date) async
+    //Future<List<IEXQuoteUpdateQuoteUpdateModel>> v1NativeIexLevel1QuoteSymbolGet(String symbol, DateTime date) async
     test('test v1NativeIexLevel1QuoteSymbolGet', () async {
       // TODO
     });
 
     // Get Level-2 Price Level Book
     //
-    //Future<List<Level2PriceLevelUpdateModel>> v1NativeIexLevel2PriceLevelUpdateSymbolGet(String symbol, DateTime date) async
+    //Future<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> v1NativeIexLevel2PriceLevelUpdateSymbolGet(String symbol, DateTime date) async
     test('test v1NativeIexLevel2PriceLevelUpdateSymbolGet', () async {
       // TODO
     });
 
     // Get Level-3 Order Book
     //
-    //Future<List<Level3OrderBookModel>> v1NativeIexLevel3OrderBookSymbolGet(String symbol, DateTime date) async
+    //Future<List<ModelsOrderBookModel>> v1NativeIexLevel3OrderBookSymbolGet(String symbol, DateTime date) async
     test('test v1NativeIexLevel3OrderBookSymbolGet', () async {
       // TODO
     });
 
     // Get Trades
     //
-    //Future<List<TradeTradeModel>> v1NativeIexTradeSymbolGet(String symbol, DateTime date) async
+    //Future<List<IEXTradeTradeModel>> v1NativeIexTradeSymbolGet(String symbol, DateTime date) async
     test('test v1NativeIexTradeSymbolGet', () async {
       // TODO
     });

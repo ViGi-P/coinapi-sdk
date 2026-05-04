@@ -1,9 +1,9 @@
 package org.openapitools.api;
 
 import org.openapitools.api.ApiUtils
-import org.openapitools.model.OHLCVExchangeTimeseriesItem
-import org.openapitools.model.OHLCVTimeseriesItem
-import org.openapitools.model.OHLCVTimeseriesPeriod
+import org.openapitools.model.OHLCVTimeSeriesExchangeTimeseriesItem
+import org.openapitools.model.OHLCVTimeSeriesTimeseriesItem
+import org.openapitools.model.OHLCVTimeSeriesTimeseriesPeriod
 
 class OhlcvApi {
     String basePath = "https://api-historical.stock.finfeedapi.com"
@@ -54,7 +54,7 @@ class OhlcvApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    OHLCVExchangeTimeseriesItem.class )
+                    OHLCVTimeSeriesExchangeTimeseriesItem.class )
 
     }
 
@@ -101,7 +101,7 @@ class OhlcvApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    OHLCVTimeseriesItem.class )
+                    OHLCVTimeSeriesTimeseriesItem.class )
 
     }
 
@@ -142,7 +142,7 @@ class OhlcvApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    OHLCVTimeseriesItem.class )
+                    OHLCVTimeSeriesTimeseriesItem.class )
 
     }
 
@@ -165,7 +165,7 @@ class OhlcvApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    OHLCVTimeseriesPeriod.class )
+                    OHLCVTimeSeriesTimeseriesPeriod.class )
 
     }
 

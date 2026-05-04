@@ -126,25 +126,25 @@ function Initialize-FinFeedAPIExchangeModel {
 
 
         $PSO = [PSCustomObject]@{
-            "exchange_id" = ${ExchangeId}
-            "last_datapoint_date" = ${LastDatapointDate}
-            "mic" = ${Mic}
-            "operating_mic" = ${OperatingMic}
-            "oprt_sgmt" = ${OprtSgmt}
-            "market_name_institution_description" = ${MarketNameInstitutionDescription}
-            "legal_entity_name" = ${LegalEntityName}
-            "lei" = ${Lei}
-            "market_category_code" = ${MarketCategoryCode}
-            "acronym" = ${Acronym}
-            "iso_country_code" = ${IsoCountryCode}
-            "city" = ${City}
-            "website" = ${Website}
-            "status" = ${Status}
-            "creation_date" = ${CreationDate}
-            "last_update_date" = ${LastUpdateDate}
-            "last_validation_date" = ${LastValidationDate}
-            "expiry_date" = ${ExpiryDate}
-            "comments" = ${Comments}
+            'exchange_id' = ${ExchangeId}
+            'last_datapoint_date' = ${LastDatapointDate}
+            'mic' = ${Mic}
+            'operating_mic' = ${OperatingMic}
+            'oprt_sgmt' = ${OprtSgmt}
+            'market_name_institution_description' = ${MarketNameInstitutionDescription}
+            'legal_entity_name' = ${LegalEntityName}
+            'lei' = ${Lei}
+            'market_category_code' = ${MarketCategoryCode}
+            'acronym' = ${Acronym}
+            'iso_country_code' = ${IsoCountryCode}
+            'city' = ${City}
+            'website' = ${Website}
+            'status' = ${Status}
+            'creation_date' = ${CreationDate}
+            'last_update_date' = ${LastUpdateDate}
+            'last_validation_date' = ${LastValidationDate}
+            'expiry_date' = ${ExpiryDate}
+            'comments' = ${Comments}
         }
 
 
@@ -183,7 +183,7 @@ function ConvertFrom-JsonToFinFeedAPIExchangeModel {
         $FinFeedAPIExchangeModelAdditionalProperties = @{}
 
         # check if Json contains properties not defined in FinFeedAPIExchangeModel
-        $AllProperties = ("exchange_id", "last_datapoint_date", "mic", "operating_mic", "oprt_sgmt", "market_name_institution_description", "legal_entity_name", "lei", "market_category_code", "acronym", "iso_country_code", "city", "website", "status", "creation_date", "last_update_date", "last_validation_date", "expiry_date", "comments")
+        $AllProperties = ('exchange_id', 'last_datapoint_date', 'mic', 'operating_mic', 'oprt_sgmt', 'market_name_institution_description', 'legal_entity_name', 'lei', 'market_category_code', 'acronym', 'iso_country_code', 'city', 'website', 'status', 'creation_date', 'last_update_date', 'last_validation_date', 'expiry_date', 'comments')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             # store undefined properties in additionalProperties
             if (!($AllProperties.Contains($name))) {
@@ -191,141 +191,141 @@ function ConvertFrom-JsonToFinFeedAPIExchangeModel {
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "exchange_id"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'exchange_id'))) { #optional property not found
             $ExchangeId = $null
         } else {
-            $ExchangeId = $JsonParameters.PSobject.Properties["exchange_id"].value
+            $ExchangeId = $JsonParameters.PSobject.Properties['exchange_id'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "last_datapoint_date"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'last_datapoint_date'))) { #optional property not found
             $LastDatapointDate = $null
         } else {
-            $LastDatapointDate = $JsonParameters.PSobject.Properties["last_datapoint_date"].value
+            $LastDatapointDate = $JsonParameters.PSobject.Properties['last_datapoint_date'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "mic"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'mic'))) { #optional property not found
             $Mic = $null
         } else {
-            $Mic = $JsonParameters.PSobject.Properties["mic"].value
+            $Mic = $JsonParameters.PSobject.Properties['mic'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "operating_mic"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'operating_mic'))) { #optional property not found
             $OperatingMic = $null
         } else {
-            $OperatingMic = $JsonParameters.PSobject.Properties["operating_mic"].value
+            $OperatingMic = $JsonParameters.PSobject.Properties['operating_mic'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "oprt_sgmt"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'oprt_sgmt'))) { #optional property not found
             $OprtSgmt = $null
         } else {
-            $OprtSgmt = $JsonParameters.PSobject.Properties["oprt_sgmt"].value
+            $OprtSgmt = $JsonParameters.PSobject.Properties['oprt_sgmt'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "market_name_institution_description"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'market_name_institution_description'))) { #optional property not found
             $MarketNameInstitutionDescription = $null
         } else {
-            $MarketNameInstitutionDescription = $JsonParameters.PSobject.Properties["market_name_institution_description"].value
+            $MarketNameInstitutionDescription = $JsonParameters.PSobject.Properties['market_name_institution_description'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "legal_entity_name"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'legal_entity_name'))) { #optional property not found
             $LegalEntityName = $null
         } else {
-            $LegalEntityName = $JsonParameters.PSobject.Properties["legal_entity_name"].value
+            $LegalEntityName = $JsonParameters.PSobject.Properties['legal_entity_name'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "lei"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'lei'))) { #optional property not found
             $Lei = $null
         } else {
-            $Lei = $JsonParameters.PSobject.Properties["lei"].value
+            $Lei = $JsonParameters.PSobject.Properties['lei'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "market_category_code"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'market_category_code'))) { #optional property not found
             $MarketCategoryCode = $null
         } else {
-            $MarketCategoryCode = $JsonParameters.PSobject.Properties["market_category_code"].value
+            $MarketCategoryCode = $JsonParameters.PSobject.Properties['market_category_code'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "acronym"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'acronym'))) { #optional property not found
             $Acronym = $null
         } else {
-            $Acronym = $JsonParameters.PSobject.Properties["acronym"].value
+            $Acronym = $JsonParameters.PSobject.Properties['acronym'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "iso_country_code"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'iso_country_code'))) { #optional property not found
             $IsoCountryCode = $null
         } else {
-            $IsoCountryCode = $JsonParameters.PSobject.Properties["iso_country_code"].value
+            $IsoCountryCode = $JsonParameters.PSobject.Properties['iso_country_code'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "city"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'city'))) { #optional property not found
             $City = $null
         } else {
-            $City = $JsonParameters.PSobject.Properties["city"].value
+            $City = $JsonParameters.PSobject.Properties['city'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "website"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'website'))) { #optional property not found
             $Website = $null
         } else {
-            $Website = $JsonParameters.PSobject.Properties["website"].value
+            $Website = $JsonParameters.PSobject.Properties['website'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "status"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'status'))) { #optional property not found
             $Status = $null
         } else {
-            $Status = $JsonParameters.PSobject.Properties["status"].value
+            $Status = $JsonParameters.PSobject.Properties['status'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "creation_date"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'creation_date'))) { #optional property not found
             $CreationDate = $null
         } else {
-            $CreationDate = $JsonParameters.PSobject.Properties["creation_date"].value
+            $CreationDate = $JsonParameters.PSobject.Properties['creation_date'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "last_update_date"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'last_update_date'))) { #optional property not found
             $LastUpdateDate = $null
         } else {
-            $LastUpdateDate = $JsonParameters.PSobject.Properties["last_update_date"].value
+            $LastUpdateDate = $JsonParameters.PSobject.Properties['last_update_date'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "last_validation_date"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'last_validation_date'))) { #optional property not found
             $LastValidationDate = $null
         } else {
-            $LastValidationDate = $JsonParameters.PSobject.Properties["last_validation_date"].value
+            $LastValidationDate = $JsonParameters.PSobject.Properties['last_validation_date'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "expiry_date"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'expiry_date'))) { #optional property not found
             $ExpiryDate = $null
         } else {
-            $ExpiryDate = $JsonParameters.PSobject.Properties["expiry_date"].value
+            $ExpiryDate = $JsonParameters.PSobject.Properties['expiry_date'].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "comments"))) { #optional property not found
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'comments'))) { #optional property not found
             $Comments = $null
         } else {
-            $Comments = $JsonParameters.PSobject.Properties["comments"].value
+            $Comments = $JsonParameters.PSobject.Properties['comments'].value
         }
 
         $PSO = [PSCustomObject]@{
-            "exchange_id" = ${ExchangeId}
-            "last_datapoint_date" = ${LastDatapointDate}
-            "mic" = ${Mic}
-            "operating_mic" = ${OperatingMic}
-            "oprt_sgmt" = ${OprtSgmt}
-            "market_name_institution_description" = ${MarketNameInstitutionDescription}
-            "legal_entity_name" = ${LegalEntityName}
-            "lei" = ${Lei}
-            "market_category_code" = ${MarketCategoryCode}
-            "acronym" = ${Acronym}
-            "iso_country_code" = ${IsoCountryCode}
-            "city" = ${City}
-            "website" = ${Website}
-            "status" = ${Status}
-            "creation_date" = ${CreationDate}
-            "last_update_date" = ${LastUpdateDate}
-            "last_validation_date" = ${LastValidationDate}
-            "expiry_date" = ${ExpiryDate}
-            "comments" = ${Comments}
-            "AdditionalProperties" = $FinFeedAPIExchangeModelAdditionalProperties
+            'exchange_id' = ${ExchangeId}
+            'last_datapoint_date' = ${LastDatapointDate}
+            'mic' = ${Mic}
+            'operating_mic' = ${OperatingMic}
+            'oprt_sgmt' = ${OprtSgmt}
+            'market_name_institution_description' = ${MarketNameInstitutionDescription}
+            'legal_entity_name' = ${LegalEntityName}
+            'lei' = ${Lei}
+            'market_category_code' = ${MarketCategoryCode}
+            'acronym' = ${Acronym}
+            'iso_country_code' = ${IsoCountryCode}
+            'city' = ${City}
+            'website' = ${Website}
+            'status' = ${Status}
+            'creation_date' = ${CreationDate}
+            'last_update_date' = ${LastUpdateDate}
+            'last_validation_date' = ${LastValidationDate}
+            'expiry_date' = ${ExpiryDate}
+            'comments' = ${Comments}
+            'AdditionalProperties' = $FinFeedAPIExchangeModelAdditionalProperties
         }
 
         return $PSO

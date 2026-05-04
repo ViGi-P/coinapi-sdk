@@ -13,7 +13,7 @@ Feature | HTTP request | Description
 
 
 # **v1_native_iex_admin_messages_symbol_get**
-> v1_native_iex_admin_messages_symbol_get (symbol: STRING_32 ; date: DATE_TIME ): detachable LIST [ADMIN_ADMIN_MESSAGE_MODEL]
+> v1_native_iex_admin_messages_symbol_get (symbol: STRING_32 ; date: DATE_TIME ): detachable LIST [MODELS_ADMIN_MESSAGE_MODEL]
 
 
 Get Admin Messages
@@ -28,7 +28,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [ADMIN_ADMIN_MESSAGE_MODEL]**](Admin.AdminMessageModel.md)
+[**LIST [MODELS_ADMIN_MESSAGE_MODEL]**](Models.AdminMessageModel.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_admin_system_event_get**
-> v1_native_iex_admin_system_event_get (date: DATE_TIME ): detachable LIST [ADMIN_SYSTEM_EVENT_MODEL]
+> v1_native_iex_admin_system_event_get (date: DATE_TIME ): detachable LIST [IEX_SYSTEM_EVENT_SYSTEM_EVENT_MODEL]
 
 
 Get System Events
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [ADMIN_SYSTEM_EVENT_MODEL]**](Admin.SystemEventModel.md)
+[**LIST [IEX_SYSTEM_EVENT_SYSTEM_EVENT_MODEL]**](IEXSystemEvent.SystemEventModel.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level1_quote_symbol_get**
-> v1_native_iex_level1_quote_symbol_get (symbol: STRING_32 ; date: DATE_TIME ): detachable LIST [LEVEL1_QUOTE_UPDATE_MODEL]
+> v1_native_iex_level1_quote_symbol_get (symbol: STRING_32 ; date: DATE_TIME ): detachable LIST [IEX_QUOTE_UPDATE_QUOTE_UPDATE_MODEL]
 
 
 Get Level-1 Quotes
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [LEVEL1_QUOTE_UPDATE_MODEL]**](Level1.QuoteUpdateModel.md)
+[**LIST [IEX_QUOTE_UPDATE_QUOTE_UPDATE_MODEL]**](IEXQuoteUpdate.QuoteUpdateModel.md)
 
 ### Authorization
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level2_price_level_update_symbol_get**
-> v1_native_iex_level2_price_level_update_symbol_get (symbol: STRING_32 ; date: DATE_TIME ): detachable LIST [LEVEL2_PRICE_LEVEL_UPDATE_MODEL]
+> v1_native_iex_level2_price_level_update_symbol_get (symbol: STRING_32 ; date: DATE_TIME ): detachable LIST [IEX_PRICE_LEVEL_UPDATE_PRICE_LEVEL_UPDATE_MODEL]
 
 
 Get Level-2 Price Level Book
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [LEVEL2_PRICE_LEVEL_UPDATE_MODEL]**](Level2.PriceLevelUpdateModel.md)
+[**LIST [IEX_PRICE_LEVEL_UPDATE_PRICE_LEVEL_UPDATE_MODEL]**](IEXPriceLevelUpdate.PriceLevelUpdateModel.md)
 
 ### Authorization
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level3_order_book_symbol_get**
-> v1_native_iex_level3_order_book_symbol_get (symbol: STRING_32 ; date: DATE_TIME ): detachable LIST [LEVEL3_ORDER_BOOK_MODEL]
+> v1_native_iex_level3_order_book_symbol_get (symbol: STRING_32 ; date: DATE_TIME ): detachable LIST [MODELS_ORDER_BOOK_MODEL]
 
 
 Get Level-3 Order Book
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [LEVEL3_ORDER_BOOK_MODEL]**](Level3.OrderBookModel.md)
+[**LIST [MODELS_ORDER_BOOK_MODEL]**](Models.OrderBookModel.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_trade_symbol_get**
-> v1_native_iex_trade_symbol_get (symbol: STRING_32 ; date: DATE_TIME ): detachable LIST [TRADE_TRADE_MODEL]
+> v1_native_iex_trade_symbol_get (symbol: STRING_32 ; date: DATE_TIME ): detachable LIST [IEX_TRADE_TRADE_MODEL]
 
 
 Get Trades
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [TRADE_TRADE_MODEL]**](Trade.TradeModel.md)
+[**LIST [IEX_TRADE_TRADE_MODEL]**](IEXTrade.TradeModel.md)
 
 ### Authorization
 

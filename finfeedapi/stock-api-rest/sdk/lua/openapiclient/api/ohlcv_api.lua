@@ -16,9 +16,9 @@ local dkjson = require "dkjson"
 local basexx = require "basexx"
 
 -- model import
-local openapiclient_ohlcv_exchange_timeseries_item = require "openapiclient.model.ohlcv_exchange_timeseries_item"
-local openapiclient_ohlcv_timeseries_item = require "openapiclient.model.ohlcv_timeseries_item"
-local openapiclient_ohlcv_timeseries_period = require "openapiclient.model.ohlcv_timeseries_period"
+local openapiclient_ohlcv_time_series_exchange_timeseries_item = require "openapiclient.model.ohlcv_time_series_exchange_timeseries_item"
+local openapiclient_ohlcv_time_series_timeseries_item = require "openapiclient.model.ohlcv_time_series_timeseries_item"
+local openapiclient_ohlcv_time_series_timeseries_period = require "openapiclient.model.ohlcv_time_series_timeseries_period"
 
 local ohlcv_api = {}
 local ohlcv_api_mt = {
@@ -85,7 +85,7 @@ function ohlcv_api:v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_ohlcv_exchange_timeseries_item.cast(ob)
+			openapiclient_ohlcv_time_series_exchange_timeseries_item.cast(ob)
 		end
 		return result, headers
 	else
@@ -138,7 +138,7 @@ function ohlcv_api:v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get(ex
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_ohlcv_timeseries_item.cast(ob)
+			openapiclient_ohlcv_time_series_timeseries_item.cast(ob)
 		end
 		return result, headers
 	else
@@ -191,7 +191,7 @@ function ohlcv_api:v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get(exc
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_ohlcv_timeseries_item.cast(ob)
+			openapiclient_ohlcv_time_series_timeseries_item.cast(ob)
 		end
 		return result, headers
 	else
@@ -244,7 +244,7 @@ function ohlcv_api:v1_ohlcv_periods_get()
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_ohlcv_timeseries_period.cast(ob)
+			openapiclient_ohlcv_time_series_timeseries_period.cast(ob)
 		end
 		return result, headers
 	else

@@ -170,7 +170,7 @@ export class MetadataApi {
      */
     public async v1SymbolsExchangeIdGet (exchangeId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<FinFeedAPISymbolModel>;  }> {
         const localVarPath = this.basePath + '/v1/symbols/{exchange_id}'
-            .replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+            .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json'];

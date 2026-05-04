@@ -51,7 +51,7 @@ func (r ApiV1OhlcvExchangeExchangeIdHistoryGetRequest) TimeEnd(timeEnd string) A
 	return r
 }
 
-func (r ApiV1OhlcvExchangeExchangeIdHistoryGetRequest) Execute() ([]OHLCVExchangeTimeseriesItem, *http.Response, error) {
+func (r ApiV1OhlcvExchangeExchangeIdHistoryGetRequest) Execute() ([]OHLCVTimeSeriesExchangeTimeseriesItem, *http.Response, error) {
 	return r.ApiService.V1OhlcvExchangeExchangeIdHistoryGetExecute(r)
 }
 
@@ -73,13 +73,13 @@ func (a *OhlcvAPIService) V1OhlcvExchangeExchangeIdHistoryGet(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return []OHLCVExchangeTimeseriesItem
-func (a *OhlcvAPIService) V1OhlcvExchangeExchangeIdHistoryGetExecute(r ApiV1OhlcvExchangeExchangeIdHistoryGetRequest) ([]OHLCVExchangeTimeseriesItem, *http.Response, error) {
+//  @return []OHLCVTimeSeriesExchangeTimeseriesItem
+func (a *OhlcvAPIService) V1OhlcvExchangeExchangeIdHistoryGetExecute(r ApiV1OhlcvExchangeExchangeIdHistoryGetRequest) ([]OHLCVTimeSeriesExchangeTimeseriesItem, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []OHLCVExchangeTimeseriesItem
+		localVarReturnValue  []OHLCVTimeSeriesExchangeTimeseriesItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OhlcvAPIService.V1OhlcvExchangeExchangeIdHistoryGet")
@@ -209,7 +209,7 @@ func (r ApiV1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetRequest) Limit(limit
 	return r
 }
 
-func (r ApiV1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetRequest) Execute() ([]OHLCVTimeseriesItem, *http.Response, error) {
+func (r ApiV1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetRequest) Execute() ([]OHLCVTimeSeriesTimeseriesItem, *http.Response, error) {
 	return r.ApiService.V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetExecute(r)
 }
 
@@ -233,13 +233,13 @@ func (a *OhlcvAPIService) V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(ctx 
 }
 
 // Execute executes the request
-//  @return []OHLCVTimeseriesItem
-func (a *OhlcvAPIService) V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetExecute(r ApiV1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetRequest) ([]OHLCVTimeseriesItem, *http.Response, error) {
+//  @return []OHLCVTimeSeriesTimeseriesItem
+func (a *OhlcvAPIService) V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetExecute(r ApiV1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetRequest) ([]OHLCVTimeSeriesTimeseriesItem, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []OHLCVTimeseriesItem
+		localVarReturnValue  []OHLCVTimeSeriesTimeseriesItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OhlcvAPIService.V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet")
@@ -361,7 +361,7 @@ func (r ApiV1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetRequest) Limit(limit 
 	return r
 }
 
-func (r ApiV1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetRequest) Execute() ([]OHLCVTimeseriesItem, *http.Response, error) {
+func (r ApiV1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetRequest) Execute() ([]OHLCVTimeSeriesTimeseriesItem, *http.Response, error) {
 	return r.ApiService.V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetExecute(r)
 }
 
@@ -390,13 +390,13 @@ func (a *OhlcvAPIService) V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(ctx c
 }
 
 // Execute executes the request
-//  @return []OHLCVTimeseriesItem
-func (a *OhlcvAPIService) V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetExecute(r ApiV1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetRequest) ([]OHLCVTimeseriesItem, *http.Response, error) {
+//  @return []OHLCVTimeSeriesTimeseriesItem
+func (a *OhlcvAPIService) V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetExecute(r ApiV1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetRequest) ([]OHLCVTimeSeriesTimeseriesItem, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []OHLCVTimeseriesItem
+		localVarReturnValue  []OHLCVTimeSeriesTimeseriesItem
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OhlcvAPIService.V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet")
@@ -496,7 +496,7 @@ type ApiV1OhlcvPeriodsGetRequest struct {
 	ApiService *OhlcvAPIService
 }
 
-func (r ApiV1OhlcvPeriodsGetRequest) Execute() ([]OHLCVTimeseriesPeriod, *http.Response, error) {
+func (r ApiV1OhlcvPeriodsGetRequest) Execute() ([]OHLCVTimeSeriesTimeseriesPeriod, *http.Response, error) {
 	return r.ApiService.V1OhlcvPeriodsGetExecute(r)
 }
 
@@ -531,13 +531,13 @@ func (a *OhlcvAPIService) V1OhlcvPeriodsGet(ctx context.Context) ApiV1OhlcvPerio
 }
 
 // Execute executes the request
-//  @return []OHLCVTimeseriesPeriod
-func (a *OhlcvAPIService) V1OhlcvPeriodsGetExecute(r ApiV1OhlcvPeriodsGetRequest) ([]OHLCVTimeseriesPeriod, *http.Response, error) {
+//  @return []OHLCVTimeSeriesTimeseriesPeriod
+func (a *OhlcvAPIService) V1OhlcvPeriodsGetExecute(r ApiV1OhlcvPeriodsGetRequest) ([]OHLCVTimeSeriesTimeseriesPeriod, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []OHLCVTimeseriesPeriod
+		localVarReturnValue  []OHLCVTimeSeriesTimeseriesPeriod
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OhlcvAPIService.V1OhlcvPeriodsGet")

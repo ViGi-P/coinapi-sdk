@@ -16,9 +16,9 @@ import type { AjaxResponse } from 'rxjs/ajax';
 import { BaseAPI, throwIfNullOrUndefined, encodeURI } from '../runtime';
 import type { OperationOpts, HttpHeaders, HttpQuery } from '../runtime';
 import type {
-    OHLCVExchangeTimeseriesItem,
-    OHLCVTimeseriesItem,
-    OHLCVTimeseriesPeriod,
+    OHLCVTimeSeriesExchangeTimeseriesItem,
+    OHLCVTimeSeriesTimeseriesItem,
+    OHLCVTimeSeriesTimeseriesPeriod,
 } from '../models';
 
 export interface V1OhlcvExchangeExchangeIdHistoryGetRequest {
@@ -53,9 +53,9 @@ export class OhlcvApi extends BaseAPI {
      * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
      * Historical data by exchange
      */
-    v1OhlcvExchangeExchangeIdHistoryGet({ exchangeId, periodId, timeStart, timeEnd }: V1OhlcvExchangeExchangeIdHistoryGetRequest): Observable<Array<OHLCVExchangeTimeseriesItem>>
-    v1OhlcvExchangeExchangeIdHistoryGet({ exchangeId, periodId, timeStart, timeEnd }: V1OhlcvExchangeExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<OHLCVExchangeTimeseriesItem>>>
-    v1OhlcvExchangeExchangeIdHistoryGet({ exchangeId, periodId, timeStart, timeEnd }: V1OhlcvExchangeExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<Array<OHLCVExchangeTimeseriesItem> | AjaxResponse<Array<OHLCVExchangeTimeseriesItem>>> {
+    v1OhlcvExchangeExchangeIdHistoryGet({ exchangeId, periodId, timeStart, timeEnd }: V1OhlcvExchangeExchangeIdHistoryGetRequest): Observable<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>
+    v1OhlcvExchangeExchangeIdHistoryGet({ exchangeId, periodId, timeStart, timeEnd }: V1OhlcvExchangeExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>>
+    v1OhlcvExchangeExchangeIdHistoryGet({ exchangeId, periodId, timeStart, timeEnd }: V1OhlcvExchangeExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<Array<OHLCVTimeSeriesExchangeTimeseriesItem> | AjaxResponse<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>> {
         throwIfNullOrUndefined(exchangeId, 'exchangeId', 'v1OhlcvExchangeExchangeIdHistoryGet');
         throwIfNullOrUndefined(periodId, 'periodId', 'v1OhlcvExchangeExchangeIdHistoryGet');
         throwIfNullOrUndefined(timeStart, 'timeStart', 'v1OhlcvExchangeExchangeIdHistoryGet');
@@ -71,7 +71,7 @@ export class OhlcvApi extends BaseAPI {
             'time_end': timeEnd,
         };
 
-        return this.request<Array<OHLCVExchangeTimeseriesItem>>({
+        return this.request<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>({
             url: '/v1/ohlcv/exchange/{exchange_id}/history'.replace('{exchange_id}', encodeURI(exchangeId)),
             method: 'GET',
             headers,
@@ -83,9 +83,9 @@ export class OhlcvApi extends BaseAPI {
      * Get OHLCV timeseries data returned in time ascending order.
      * Historical data
      */
-    v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet({ exchangeId, symbolId, periodId, timeStart, timeEnd, limit }: V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetRequest): Observable<Array<OHLCVTimeseriesItem>>
-    v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet({ exchangeId, symbolId, periodId, timeStart, timeEnd, limit }: V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<OHLCVTimeseriesItem>>>
-    v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet({ exchangeId, symbolId, periodId, timeStart, timeEnd, limit }: V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetRequest, opts?: OperationOpts): Observable<Array<OHLCVTimeseriesItem> | AjaxResponse<Array<OHLCVTimeseriesItem>>> {
+    v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet({ exchangeId, symbolId, periodId, timeStart, timeEnd, limit }: V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetRequest): Observable<Array<OHLCVTimeSeriesTimeseriesItem>>
+    v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet({ exchangeId, symbolId, periodId, timeStart, timeEnd, limit }: V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<OHLCVTimeSeriesTimeseriesItem>>>
+    v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet({ exchangeId, symbolId, periodId, timeStart, timeEnd, limit }: V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetRequest, opts?: OperationOpts): Observable<Array<OHLCVTimeSeriesTimeseriesItem> | AjaxResponse<Array<OHLCVTimeSeriesTimeseriesItem>>> {
         throwIfNullOrUndefined(exchangeId, 'exchangeId', 'v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet');
         throwIfNullOrUndefined(symbolId, 'symbolId', 'v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet');
         throwIfNullOrUndefined(periodId, 'periodId', 'v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet');
@@ -102,7 +102,7 @@ export class OhlcvApi extends BaseAPI {
         if (timeEnd != null) { query['time_end'] = timeEnd; }
         if (limit != null) { query['limit'] = limit; }
 
-        return this.request<Array<OHLCVTimeseriesItem>>({
+        return this.request<Array<OHLCVTimeSeriesTimeseriesItem>>({
             url: '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/history'.replace('{exchange_id}', encodeURI(exchangeId)).replace('{symbol_id}', encodeURI(symbolId)),
             method: 'GET',
             headers,
@@ -114,9 +114,9 @@ export class OhlcvApi extends BaseAPI {
      * Get OHLCV latest timeseries data returned in time descending order. Data can be requested by the period and for the specific symbol eg `BITSTAMP_SPOT_BTC_USD`, if you need to query timeseries by asset pairs eg. `BTC/USD`, then please reffer to the Exchange Rates Timeseries data              :::info OHLCV Latest endpoint is just the shortcut to the OHLCV Historical endpoint with substituted `time_start` and `time_end` parameters.  The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-time data stream to get data without delay. :::
      * Latest data
      */
-    v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet({ exchangeId, symbolId, periodId, limit }: V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetRequest): Observable<Array<OHLCVTimeseriesItem>>
-    v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet({ exchangeId, symbolId, periodId, limit }: V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<OHLCVTimeseriesItem>>>
-    v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet({ exchangeId, symbolId, periodId, limit }: V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetRequest, opts?: OperationOpts): Observable<Array<OHLCVTimeseriesItem> | AjaxResponse<Array<OHLCVTimeseriesItem>>> {
+    v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet({ exchangeId, symbolId, periodId, limit }: V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetRequest): Observable<Array<OHLCVTimeSeriesTimeseriesItem>>
+    v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet({ exchangeId, symbolId, periodId, limit }: V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<OHLCVTimeSeriesTimeseriesItem>>>
+    v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet({ exchangeId, symbolId, periodId, limit }: V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetRequest, opts?: OperationOpts): Observable<Array<OHLCVTimeSeriesTimeseriesItem> | AjaxResponse<Array<OHLCVTimeSeriesTimeseriesItem>>> {
         throwIfNullOrUndefined(exchangeId, 'exchangeId', 'v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet');
         throwIfNullOrUndefined(symbolId, 'symbolId', 'v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet');
         throwIfNullOrUndefined(periodId, 'periodId', 'v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet');
@@ -131,7 +131,7 @@ export class OhlcvApi extends BaseAPI {
 
         if (limit != null) { query['limit'] = limit; }
 
-        return this.request<Array<OHLCVTimeseriesItem>>({
+        return this.request<Array<OHLCVTimeSeriesTimeseriesItem>>({
             url: '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/latest'.replace('{exchange_id}', encodeURI(exchangeId)).replace('{symbol_id}', encodeURI(symbolId)),
             method: 'GET',
             headers,
@@ -143,14 +143,14 @@ export class OhlcvApi extends BaseAPI {
      * Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
      * List all periods
      */
-    v1OhlcvPeriodsGet(): Observable<Array<OHLCVTimeseriesPeriod>>
-    v1OhlcvPeriodsGet(opts?: OperationOpts): Observable<AjaxResponse<Array<OHLCVTimeseriesPeriod>>>
-    v1OhlcvPeriodsGet(opts?: OperationOpts): Observable<Array<OHLCVTimeseriesPeriod> | AjaxResponse<Array<OHLCVTimeseriesPeriod>>> {
+    v1OhlcvPeriodsGet(): Observable<Array<OHLCVTimeSeriesTimeseriesPeriod>>
+    v1OhlcvPeriodsGet(opts?: OperationOpts): Observable<AjaxResponse<Array<OHLCVTimeSeriesTimeseriesPeriod>>>
+    v1OhlcvPeriodsGet(opts?: OperationOpts): Observable<Array<OHLCVTimeSeriesTimeseriesPeriod> | AjaxResponse<Array<OHLCVTimeSeriesTimeseriesPeriod>>> {
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };
 
-        return this.request<Array<OHLCVTimeseriesPeriod>>({
+        return this.request<Array<OHLCVTimeSeriesTimeseriesPeriod>>({
             url: '/v1/ohlcv/periods',
             method: 'GET',
             headers,

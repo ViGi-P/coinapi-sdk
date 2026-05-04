@@ -37,7 +37,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-OHLCVExchangeTimeseriesItem[]
+OHLCVTimeSeriesExchangeTimeseriesItem[]
 #>
 function Invoke-V1OhlcvExchangeExchangeIdHistoryGet {
     [CmdletBinding()]
@@ -128,7 +128,7 @@ function Invoke-V1OhlcvExchangeExchangeIdHistoryGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "OHLCVExchangeTimeseriesItem[]" `
+                                -ReturnType "OHLCVTimeSeriesExchangeTimeseriesItem[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -176,7 +176,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-OHLCVTimeseriesItem[]
+OHLCVTimeSeriesTimeseriesItem[]
 #>
 function Invoke-V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet {
     [CmdletBinding()]
@@ -279,7 +279,7 @@ function Invoke-V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "OHLCVTimeseriesItem[]" `
+                                -ReturnType "OHLCVTimeSeriesTimeseriesItem[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -321,7 +321,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-OHLCVTimeseriesItem[]
+OHLCVTimeSeriesTimeseriesItem[]
 #>
 function Invoke-V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet {
     [CmdletBinding()]
@@ -410,7 +410,7 @@ function Invoke-V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "OHLCVTimeseriesItem[]" `
+                                -ReturnType "OHLCVTimeSeriesTimeseriesItem[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {
@@ -440,7 +440,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 .OUTPUTS
 
-OHLCVTimeseriesPeriod[]
+OHLCVTimeSeriesTimeseriesPeriod[]
 #>
 function Invoke-V1OhlcvPeriodsGet {
     [CmdletBinding()]
@@ -500,7 +500,7 @@ function Invoke-V1OhlcvPeriodsGet {
                                 -QueryParameters $LocalVarQueryParameters `
                                 -FormParameters $LocalVarFormParameters `
                                 -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "OHLCVTimeseriesPeriod[]" `
+                                -ReturnType "OHLCVTimeSeriesTimeseriesPeriod[]" `
                                 -IsBodyNullable $false
 
         if ($WithHttpInfo.IsPresent) {

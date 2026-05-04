@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **v1NativeIexAdminMessagesSymbolGet**
-> BuiltList<AdminAdminMessageModel> v1NativeIexAdminMessagesSymbolGet(symbol, date)
+> BuiltList<ModelsAdminMessageModel> v1NativeIexAdminMessagesSymbolGet(symbol, date)
 
 Get Admin Messages
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;AdminAdminMessageModel&gt;**](AdminAdminMessageModel.md)
+[**BuiltList&lt;ModelsAdminMessageModel&gt;**](ModelsAdminMessageModel.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexAdminSystemEventGet**
-> BuiltList<AdminSystemEventModel> v1NativeIexAdminSystemEventGet(date)
+> BuiltList<IEXSystemEventSystemEventModel> v1NativeIexAdminSystemEventGet(date)
 
 Get System Events
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;AdminSystemEventModel&gt;**](AdminSystemEventModel.md)
+[**BuiltList&lt;IEXSystemEventSystemEventModel&gt;**](IEXSystemEventSystemEventModel.md)
 
 ### Authorization
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexLevel1QuoteSymbolGet**
-> BuiltList<Level1QuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet(symbol, date)
+> BuiltList<IEXQuoteUpdateQuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet(symbol, date)
 
 Get Level-1 Quotes
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;Level1QuoteUpdateModel&gt;**](Level1QuoteUpdateModel.md)
+[**BuiltList&lt;IEXQuoteUpdateQuoteUpdateModel&gt;**](IEXQuoteUpdateQuoteUpdateModel.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexLevel2PriceLevelUpdateSymbolGet**
-> BuiltList<Level2PriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
+> BuiltList<IEXPriceLevelUpdatePriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
 
 Get Level-2 Price Level Book
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;Level2PriceLevelUpdateModel&gt;**](Level2PriceLevelUpdateModel.md)
+[**BuiltList&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt;**](IEXPriceLevelUpdatePriceLevelUpdateModel.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexLevel3OrderBookSymbolGet**
-> BuiltList<Level3OrderBookModel> v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
+> BuiltList<ModelsOrderBookModel> v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
 
 Get Level-3 Order Book
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;Level3OrderBookModel&gt;**](Level3OrderBookModel.md)
+[**BuiltList&lt;ModelsOrderBookModel&gt;**](ModelsOrderBookModel.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexTradeSymbolGet**
-> BuiltList<TradeTradeModel> v1NativeIexTradeSymbolGet(symbol, date)
+> BuiltList<IEXTradeTradeModel> v1NativeIexTradeSymbolGet(symbol, date)
 
 Get Trades
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;TradeTradeModel&gt;**](TradeTradeModel.md)
+[**BuiltList&lt;IEXTradeTradeModel&gt;**](IEXTradeTradeModel.md)
 
 ### Authorization
 

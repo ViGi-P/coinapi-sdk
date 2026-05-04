@@ -13,30 +13,30 @@
 
 
 import ApiClient from './ApiClient';
-import AdminAdminMessageModel from './model/AdminAdminMessageModel';
-import AdminAuctionInformationModel from './model/AdminAuctionInformationModel';
-import AdminOfficialPriceModel from './model/AdminOfficialPriceModel';
-import AdminOperationalHaltStatusModel from './model/AdminOperationalHaltStatusModel';
-import AdminRetailLiquidityIndicatorModel from './model/AdminRetailLiquidityIndicatorModel';
-import AdminSecurityDirectoryModel from './model/AdminSecurityDirectoryModel';
-import AdminSecurityEventModel from './model/AdminSecurityEventModel';
-import AdminShortSalePriceTestStatusModel from './model/AdminShortSalePriceTestStatusModel';
-import AdminSystemEventModel from './model/AdminSystemEventModel';
-import AdminTradingStatusModel from './model/AdminTradingStatusModel';
 import FinFeedAPIExchangeModel from './model/FinFeedAPIExchangeModel';
 import FinFeedAPISymbolModel from './model/FinFeedAPISymbolModel';
-import Level1QuoteUpdateModel from './model/Level1QuoteUpdateModel';
-import Level2PriceLevelUpdateModel from './model/Level2PriceLevelUpdateModel';
-import Level3AddOrderModel from './model/Level3AddOrderModel';
-import Level3ClearBookModel from './model/Level3ClearBookModel';
-import Level3DeleteOrderModel from './model/Level3DeleteOrderModel';
-import Level3ExecutedOrderModel from './model/Level3ExecutedOrderModel';
-import Level3ModifyOrderModel from './model/Level3ModifyOrderModel';
-import Level3OrderBookModel from './model/Level3OrderBookModel';
-import OHLCVExchangeTimeseriesItem from './model/OHLCVExchangeTimeseriesItem';
-import OHLCVTimeseriesItem from './model/OHLCVTimeseriesItem';
-import OHLCVTimeseriesPeriod from './model/OHLCVTimeseriesPeriod';
-import TradeTradeModel from './model/TradeTradeModel';
+import IEXPriceLevelUpdatePriceLevelUpdateModel from './model/IEXPriceLevelUpdatePriceLevelUpdateModel';
+import IEXQuoteUpdateQuoteUpdateModel from './model/IEXQuoteUpdateQuoteUpdateModel';
+import IEXSystemEventSystemEventModel from './model/IEXSystemEventSystemEventModel';
+import IEXTradeTradeModel from './model/IEXTradeTradeModel';
+import ModelsAddOrderModel from './model/ModelsAddOrderModel';
+import ModelsAdminMessageModel from './model/ModelsAdminMessageModel';
+import ModelsAuctionInformationModel from './model/ModelsAuctionInformationModel';
+import ModelsClearBookModel from './model/ModelsClearBookModel';
+import ModelsDeleteOrderModel from './model/ModelsDeleteOrderModel';
+import ModelsExecutedOrderModel from './model/ModelsExecutedOrderModel';
+import ModelsModifyOrderModel from './model/ModelsModifyOrderModel';
+import ModelsOfficialPriceModel from './model/ModelsOfficialPriceModel';
+import ModelsOperationalHaltStatusModel from './model/ModelsOperationalHaltStatusModel';
+import ModelsOrderBookModel from './model/ModelsOrderBookModel';
+import ModelsRetailLiquidityIndicatorModel from './model/ModelsRetailLiquidityIndicatorModel';
+import ModelsSecurityDirectoryModel from './model/ModelsSecurityDirectoryModel';
+import ModelsSecurityEventModel from './model/ModelsSecurityEventModel';
+import ModelsShortSalePriceTestStatusModel from './model/ModelsShortSalePriceTestStatusModel';
+import ModelsTradingStatusModel from './model/ModelsTradingStatusModel';
+import OHLCVTimeSeriesExchangeTimeseriesItem from './model/OHLCVTimeSeriesExchangeTimeseriesItem';
+import OHLCVTimeSeriesTimeseriesItem from './model/OHLCVTimeSeriesTimeseriesItem';
+import OHLCVTimeSeriesTimeseriesPeriod from './model/OHLCVTimeSeriesTimeseriesPeriod';
 import MetadataApi from './api/MetadataApi';
 import NativeIEXApi from './api/NativeIEXApi';
 import OhlcvApi from './api/OhlcvApi';
@@ -81,66 +81,6 @@ export {
     ApiClient,
 
     /**
-     * The AdminAdminMessageModel model constructor.
-     * @property {module:model/AdminAdminMessageModel}
-     */
-    AdminAdminMessageModel,
-
-    /**
-     * The AdminAuctionInformationModel model constructor.
-     * @property {module:model/AdminAuctionInformationModel}
-     */
-    AdminAuctionInformationModel,
-
-    /**
-     * The AdminOfficialPriceModel model constructor.
-     * @property {module:model/AdminOfficialPriceModel}
-     */
-    AdminOfficialPriceModel,
-
-    /**
-     * The AdminOperationalHaltStatusModel model constructor.
-     * @property {module:model/AdminOperationalHaltStatusModel}
-     */
-    AdminOperationalHaltStatusModel,
-
-    /**
-     * The AdminRetailLiquidityIndicatorModel model constructor.
-     * @property {module:model/AdminRetailLiquidityIndicatorModel}
-     */
-    AdminRetailLiquidityIndicatorModel,
-
-    /**
-     * The AdminSecurityDirectoryModel model constructor.
-     * @property {module:model/AdminSecurityDirectoryModel}
-     */
-    AdminSecurityDirectoryModel,
-
-    /**
-     * The AdminSecurityEventModel model constructor.
-     * @property {module:model/AdminSecurityEventModel}
-     */
-    AdminSecurityEventModel,
-
-    /**
-     * The AdminShortSalePriceTestStatusModel model constructor.
-     * @property {module:model/AdminShortSalePriceTestStatusModel}
-     */
-    AdminShortSalePriceTestStatusModel,
-
-    /**
-     * The AdminSystemEventModel model constructor.
-     * @property {module:model/AdminSystemEventModel}
-     */
-    AdminSystemEventModel,
-
-    /**
-     * The AdminTradingStatusModel model constructor.
-     * @property {module:model/AdminTradingStatusModel}
-     */
-    AdminTradingStatusModel,
-
-    /**
      * The FinFeedAPIExchangeModel model constructor.
      * @property {module:model/FinFeedAPIExchangeModel}
      */
@@ -153,76 +93,136 @@ export {
     FinFeedAPISymbolModel,
 
     /**
-     * The Level1QuoteUpdateModel model constructor.
-     * @property {module:model/Level1QuoteUpdateModel}
+     * The IEXPriceLevelUpdatePriceLevelUpdateModel model constructor.
+     * @property {module:model/IEXPriceLevelUpdatePriceLevelUpdateModel}
      */
-    Level1QuoteUpdateModel,
+    IEXPriceLevelUpdatePriceLevelUpdateModel,
 
     /**
-     * The Level2PriceLevelUpdateModel model constructor.
-     * @property {module:model/Level2PriceLevelUpdateModel}
+     * The IEXQuoteUpdateQuoteUpdateModel model constructor.
+     * @property {module:model/IEXQuoteUpdateQuoteUpdateModel}
      */
-    Level2PriceLevelUpdateModel,
+    IEXQuoteUpdateQuoteUpdateModel,
 
     /**
-     * The Level3AddOrderModel model constructor.
-     * @property {module:model/Level3AddOrderModel}
+     * The IEXSystemEventSystemEventModel model constructor.
+     * @property {module:model/IEXSystemEventSystemEventModel}
      */
-    Level3AddOrderModel,
+    IEXSystemEventSystemEventModel,
 
     /**
-     * The Level3ClearBookModel model constructor.
-     * @property {module:model/Level3ClearBookModel}
+     * The IEXTradeTradeModel model constructor.
+     * @property {module:model/IEXTradeTradeModel}
      */
-    Level3ClearBookModel,
+    IEXTradeTradeModel,
 
     /**
-     * The Level3DeleteOrderModel model constructor.
-     * @property {module:model/Level3DeleteOrderModel}
+     * The ModelsAddOrderModel model constructor.
+     * @property {module:model/ModelsAddOrderModel}
      */
-    Level3DeleteOrderModel,
+    ModelsAddOrderModel,
 
     /**
-     * The Level3ExecutedOrderModel model constructor.
-     * @property {module:model/Level3ExecutedOrderModel}
+     * The ModelsAdminMessageModel model constructor.
+     * @property {module:model/ModelsAdminMessageModel}
      */
-    Level3ExecutedOrderModel,
+    ModelsAdminMessageModel,
 
     /**
-     * The Level3ModifyOrderModel model constructor.
-     * @property {module:model/Level3ModifyOrderModel}
+     * The ModelsAuctionInformationModel model constructor.
+     * @property {module:model/ModelsAuctionInformationModel}
      */
-    Level3ModifyOrderModel,
+    ModelsAuctionInformationModel,
 
     /**
-     * The Level3OrderBookModel model constructor.
-     * @property {module:model/Level3OrderBookModel}
+     * The ModelsClearBookModel model constructor.
+     * @property {module:model/ModelsClearBookModel}
      */
-    Level3OrderBookModel,
+    ModelsClearBookModel,
 
     /**
-     * The OHLCVExchangeTimeseriesItem model constructor.
-     * @property {module:model/OHLCVExchangeTimeseriesItem}
+     * The ModelsDeleteOrderModel model constructor.
+     * @property {module:model/ModelsDeleteOrderModel}
      */
-    OHLCVExchangeTimeseriesItem,
+    ModelsDeleteOrderModel,
 
     /**
-     * The OHLCVTimeseriesItem model constructor.
-     * @property {module:model/OHLCVTimeseriesItem}
+     * The ModelsExecutedOrderModel model constructor.
+     * @property {module:model/ModelsExecutedOrderModel}
      */
-    OHLCVTimeseriesItem,
+    ModelsExecutedOrderModel,
 
     /**
-     * The OHLCVTimeseriesPeriod model constructor.
-     * @property {module:model/OHLCVTimeseriesPeriod}
+     * The ModelsModifyOrderModel model constructor.
+     * @property {module:model/ModelsModifyOrderModel}
      */
-    OHLCVTimeseriesPeriod,
+    ModelsModifyOrderModel,
 
     /**
-     * The TradeTradeModel model constructor.
-     * @property {module:model/TradeTradeModel}
+     * The ModelsOfficialPriceModel model constructor.
+     * @property {module:model/ModelsOfficialPriceModel}
      */
-    TradeTradeModel,
+    ModelsOfficialPriceModel,
+
+    /**
+     * The ModelsOperationalHaltStatusModel model constructor.
+     * @property {module:model/ModelsOperationalHaltStatusModel}
+     */
+    ModelsOperationalHaltStatusModel,
+
+    /**
+     * The ModelsOrderBookModel model constructor.
+     * @property {module:model/ModelsOrderBookModel}
+     */
+    ModelsOrderBookModel,
+
+    /**
+     * The ModelsRetailLiquidityIndicatorModel model constructor.
+     * @property {module:model/ModelsRetailLiquidityIndicatorModel}
+     */
+    ModelsRetailLiquidityIndicatorModel,
+
+    /**
+     * The ModelsSecurityDirectoryModel model constructor.
+     * @property {module:model/ModelsSecurityDirectoryModel}
+     */
+    ModelsSecurityDirectoryModel,
+
+    /**
+     * The ModelsSecurityEventModel model constructor.
+     * @property {module:model/ModelsSecurityEventModel}
+     */
+    ModelsSecurityEventModel,
+
+    /**
+     * The ModelsShortSalePriceTestStatusModel model constructor.
+     * @property {module:model/ModelsShortSalePriceTestStatusModel}
+     */
+    ModelsShortSalePriceTestStatusModel,
+
+    /**
+     * The ModelsTradingStatusModel model constructor.
+     * @property {module:model/ModelsTradingStatusModel}
+     */
+    ModelsTradingStatusModel,
+
+    /**
+     * The OHLCVTimeSeriesExchangeTimeseriesItem model constructor.
+     * @property {module:model/OHLCVTimeSeriesExchangeTimeseriesItem}
+     */
+    OHLCVTimeSeriesExchangeTimeseriesItem,
+
+    /**
+     * The OHLCVTimeSeriesTimeseriesItem model constructor.
+     * @property {module:model/OHLCVTimeSeriesTimeseriesItem}
+     */
+    OHLCVTimeSeriesTimeseriesItem,
+
+    /**
+     * The OHLCVTimeSeriesTimeseriesPeriod model constructor.
+     * @property {module:model/OHLCVTimeSeriesTimeseriesPeriod}
+     */
+    OHLCVTimeSeriesTimeseriesPeriod,
 
     /**
     * The MetadataApi service constructor.

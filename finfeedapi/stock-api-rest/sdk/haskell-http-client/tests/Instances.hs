@@ -113,205 +113,6 @@ arbitraryReducedMaybeValue n = do
 
 -- * Models
 
-instance Arbitrary AdminAdminMessageModel where
-  arbitrary = sized genAdminAdminMessageModel
-
-genAdminAdminMessageModel :: Int -> Gen AdminAdminMessageModel
-genAdminAdminMessageModel n =
-  AdminAdminMessageModel
-    <$> arbitraryReducedMaybe n -- adminAdminMessageModelTradingStatus :: Maybe AdminTradingStatusModel
-    <*> arbitraryReducedMaybe n -- adminAdminMessageModelOfficialPrice :: Maybe AdminOfficialPriceModel
-    <*> arbitraryReducedMaybe n -- adminAdminMessageModelSecurityEvent :: Maybe AdminSecurityEventModel
-    <*> arbitraryReducedMaybe n -- adminAdminMessageModelAuctionInformation :: Maybe AdminAuctionInformationModel
-    <*> arbitraryReducedMaybe n -- adminAdminMessageModelShortSalePriceTest :: Maybe AdminShortSalePriceTestStatusModel
-    <*> arbitraryReducedMaybe n -- adminAdminMessageModelOperationalHaltStatus :: Maybe AdminOperationalHaltStatusModel
-    <*> arbitraryReducedMaybe n -- adminAdminMessageModelRetailLiquidityIndicator :: Maybe AdminRetailLiquidityIndicatorModel
-    <*> arbitraryReducedMaybe n -- adminAdminMessageModelSystemEvent :: Maybe AdminSystemEventModel
-    <*> arbitraryReducedMaybe n -- adminAdminMessageModelSecurityDirectory :: Maybe AdminSecurityDirectoryModel
-  
-instance Arbitrary AdminAuctionInformationModel where
-  arbitrary = sized genAdminAuctionInformationModel
-
-genAdminAuctionInformationModel :: Int -> Gen AdminAuctionInformationModel
-genAdminAuctionInformationModel n =
-  AdminAuctionInformationModel
-    <$> arbitraryReducedMaybe n -- adminAuctionInformationModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelAuctionType :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelAuctionTypeCode :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelAuctionTypeText :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelIsAuctionTypeOpening :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelIsAuctionTypeClosing :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelIsAuctionTypeIpo :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelIsAuctionTypeHalt :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelIsAuctionTypeVolatility :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelPairedShares :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelReferencePrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelIndicativeClearingPrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelImbalanceShares :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelImbalanceSide :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelImbalanceSideCode :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelImbalanceSideText :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelIsImbalanceSideBuy :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelIsImbalanceSideSell :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelIsImbalanceSideNone :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelExtensionNumber :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelScheduledAuctionTimeSeconds :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelScheduledAuctionTime :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelAuctionBookClearingPrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelCollarReferencePrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelLowerAuctionCollar :: Maybe Double
-    <*> arbitraryReducedMaybe n -- adminAuctionInformationModelUpperAuctionCollar :: Maybe Double
-  
-instance Arbitrary AdminOfficialPriceModel where
-  arbitrary = sized genAdminOfficialPriceModel
-
-genAdminOfficialPriceModel :: Int -> Gen AdminOfficialPriceModel
-genAdminOfficialPriceModel n =
-  AdminOfficialPriceModel
-    <$> arbitraryReducedMaybe n -- adminOfficialPriceModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminOfficialPriceModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- adminOfficialPriceModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- adminOfficialPriceModelPriceType :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminOfficialPriceModelPriceTypeCode :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminOfficialPriceModelPriceTypeText :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminOfficialPriceModelIsPriceTypeOpening :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminOfficialPriceModelIsPriceTypeClosing :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminOfficialPriceModelOfficialPrice :: Maybe Double
-  
-instance Arbitrary AdminOperationalHaltStatusModel where
-  arbitrary = sized genAdminOperationalHaltStatusModel
-
-genAdminOperationalHaltStatusModel :: Int -> Gen AdminOperationalHaltStatusModel
-genAdminOperationalHaltStatusModel n =
-  AdminOperationalHaltStatusModel
-    <$> arbitraryReducedMaybe n -- adminOperationalHaltStatusModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminOperationalHaltStatusModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- adminOperationalHaltStatusModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- adminOperationalHaltStatusModelOperationalHaltStatus :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminOperationalHaltStatusModelOperationalHaltStatusCode :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminOperationalHaltStatusModelOperationalHaltStatusText :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminOperationalHaltStatusModelIsOperationallyHalted :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminOperationalHaltStatusModelIsNotOperationallyHalted :: Maybe Bool
-  
-instance Arbitrary AdminRetailLiquidityIndicatorModel where
-  arbitrary = sized genAdminRetailLiquidityIndicatorModel
-
-genAdminRetailLiquidityIndicatorModel :: Int -> Gen AdminRetailLiquidityIndicatorModel
-genAdminRetailLiquidityIndicatorModel n =
-  AdminRetailLiquidityIndicatorModel
-    <$> arbitraryReducedMaybe n -- adminRetailLiquidityIndicatorModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminRetailLiquidityIndicatorModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- adminRetailLiquidityIndicatorModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- adminRetailLiquidityIndicatorModelRetailLiquidityIndicator :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorText :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest :: Maybe Bool
-  
-instance Arbitrary AdminSecurityDirectoryModel where
-  arbitrary = sized genAdminSecurityDirectoryModel
-
-genAdminSecurityDirectoryModel :: Int -> Gen AdminSecurityDirectoryModel
-genAdminSecurityDirectoryModel n =
-  AdminSecurityDirectoryModel
-    <$> arbitraryReducedMaybe n -- adminSecurityDirectoryModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminSecurityDirectoryModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- adminSecurityDirectoryModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- adminSecurityDirectoryModelFlags :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminSecurityDirectoryModelRoundLotSize :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminSecurityDirectoryModelAdjustedPocPrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- adminSecurityDirectoryModelLuldTier :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminSecurityDirectoryModelLuldTierCode :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminSecurityDirectoryModelLuldTierText :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminSecurityDirectoryModelIsLuldTierNotApplicable :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminSecurityDirectoryModelIsLuldTier1 :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminSecurityDirectoryModelIsLuldTier2 :: Maybe Bool
-  
-instance Arbitrary AdminSecurityEventModel where
-  arbitrary = sized genAdminSecurityEventModel
-
-genAdminSecurityEventModel :: Int -> Gen AdminSecurityEventModel
-genAdminSecurityEventModel n =
-  AdminSecurityEventModel
-    <$> arbitraryReducedMaybe n -- adminSecurityEventModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminSecurityEventModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- adminSecurityEventModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- adminSecurityEventModelSecurityEvent :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminSecurityEventModelSecurityEventCode :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminSecurityEventModelSecurityEventText :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminSecurityEventModelIsOpeningProcessComplete :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminSecurityEventModelIsClosingProcessComplete :: Maybe Bool
-  
-instance Arbitrary AdminShortSalePriceTestStatusModel where
-  arbitrary = sized genAdminShortSalePriceTestStatusModel
-
-genAdminShortSalePriceTestStatusModel :: Int -> Gen AdminShortSalePriceTestStatusModel
-genAdminShortSalePriceTestStatusModel n =
-  AdminShortSalePriceTestStatusModel
-    <$> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelShortSalePriceTestStatus :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelShortSalePriceTestStatusCode :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelShortSalePriceTestStatusText :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelIsShortSalePriceTestInEffect :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelDetail :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelDetailCode :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelDetailText :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelIsDetailNoPriceTest :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelIsDetailActivated :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelIsDetailContinued :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelIsDetailDeactivated :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminShortSalePriceTestStatusModelIsDetailNotAvailable :: Maybe Bool
-  
-instance Arbitrary AdminSystemEventModel where
-  arbitrary = sized genAdminSystemEventModel
-
-genAdminSystemEventModel :: Int -> Gen AdminSystemEventModel
-genAdminSystemEventModel n =
-  AdminSystemEventModel
-    <$> arbitraryReducedMaybe n -- adminSystemEventModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- adminSystemEventModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- adminSystemEventModelSystemEvent :: Maybe Int
-    <*> arbitraryReducedMaybe n -- adminSystemEventModelSystemEventCode :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminSystemEventModelSystemEventText :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminSystemEventModelIsSystemEventStartOfMessages :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminSystemEventModelIsSystemEventStartOfSystemHours :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminSystemEventModelIsSystemEventStartOfRegularMarketHours :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminSystemEventModelIsSystemEventEndOfRegularMarketHours :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminSystemEventModelIsSystemEventEndOfSystemHours :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminSystemEventModelIsSystemEventEndOfMessages :: Maybe Bool
-  
-instance Arbitrary AdminTradingStatusModel where
-  arbitrary = sized genAdminTradingStatusModel
-
-genAdminTradingStatusModel :: Int -> Gen AdminTradingStatusModel
-genAdminTradingStatusModel n =
-  AdminTradingStatusModel
-    <$> arbitraryReducedMaybe n -- adminTradingStatusModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsTradingLive :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsTradingHalted :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsTradingInOrderAcceptancePeriod :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsTradingPaused :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsReasonHaltNewsPending :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsReasonIpoNotYetTrading :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsReasonIpoDeferred :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsReasonHaltNewsDissemination :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsReasonIpoOrderAcceptancePeriod :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsReasonIpoPreLaunchPeriod :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1 :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2 :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3 :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsReasonNotApplicable :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- adminTradingStatusModelIsReasonNotAvailable :: Maybe Bool
-  
 instance Arbitrary FinFeedAPIExchangeModel where
   arbitrary = sized genFinFeedAPIExchangeModel
 
@@ -364,183 +165,382 @@ genFinFeedAPISymbolModel n =
     <*> arbitraryReducedMaybe n -- finFeedAPISymbolModelCfiAttribute3Desc :: Maybe Text
     <*> arbitraryReducedMaybe n -- finFeedAPISymbolModelCfiAttribute4Desc :: Maybe Text
   
-instance Arbitrary Level1QuoteUpdateModel where
-  arbitrary = sized genLevel1QuoteUpdateModel
+instance Arbitrary IEXPriceLevelUpdatePriceLevelUpdateModel where
+  arbitrary = sized genIEXPriceLevelUpdatePriceLevelUpdateModel
 
-genLevel1QuoteUpdateModel :: Int -> Gen Level1QuoteUpdateModel
-genLevel1QuoteUpdateModel n =
-  Level1QuoteUpdateModel
-    <$> arbitraryReducedMaybe n -- level1QuoteUpdateModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- level1QuoteUpdateModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- level1QuoteUpdateModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- level1QuoteUpdateModelIsSymbolAvailable :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- level1QuoteUpdateModelIsPrePostMarketSession :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- level1QuoteUpdateModelAskSize :: Maybe Int
-    <*> arbitraryReducedMaybe n -- level1QuoteUpdateModelAskPrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- level1QuoteUpdateModelBidPrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- level1QuoteUpdateModelBidSize :: Maybe Int
+genIEXPriceLevelUpdatePriceLevelUpdateModel :: Int -> Gen IEXPriceLevelUpdatePriceLevelUpdateModel
+genIEXPriceLevelUpdatePriceLevelUpdateModel n =
+  IEXPriceLevelUpdatePriceLevelUpdateModel
+    <$> arbitraryReducedMaybe n -- iEXPriceLevelUpdatePriceLevelUpdateModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- iEXPriceLevelUpdatePriceLevelUpdateModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- iEXPriceLevelUpdatePriceLevelUpdateModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- iEXPriceLevelUpdatePriceLevelUpdateModelIsSideBuy :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXPriceLevelUpdatePriceLevelUpdateModelIsEventProcessingComplete :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXPriceLevelUpdatePriceLevelUpdateModelSize :: Maybe Int
+    <*> arbitraryReducedMaybe n -- iEXPriceLevelUpdatePriceLevelUpdateModelPrice :: Maybe Double
   
-instance Arbitrary Level2PriceLevelUpdateModel where
-  arbitrary = sized genLevel2PriceLevelUpdateModel
+instance Arbitrary IEXQuoteUpdateQuoteUpdateModel where
+  arbitrary = sized genIEXQuoteUpdateQuoteUpdateModel
 
-genLevel2PriceLevelUpdateModel :: Int -> Gen Level2PriceLevelUpdateModel
-genLevel2PriceLevelUpdateModel n =
-  Level2PriceLevelUpdateModel
-    <$> arbitraryReducedMaybe n -- level2PriceLevelUpdateModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- level2PriceLevelUpdateModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- level2PriceLevelUpdateModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- level2PriceLevelUpdateModelIsSideBuy :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- level2PriceLevelUpdateModelIsEventProcessingComplete :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- level2PriceLevelUpdateModelSize :: Maybe Int
-    <*> arbitraryReducedMaybe n -- level2PriceLevelUpdateModelPrice :: Maybe Double
+genIEXQuoteUpdateQuoteUpdateModel :: Int -> Gen IEXQuoteUpdateQuoteUpdateModel
+genIEXQuoteUpdateQuoteUpdateModel n =
+  IEXQuoteUpdateQuoteUpdateModel
+    <$> arbitraryReducedMaybe n -- iEXQuoteUpdateQuoteUpdateModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- iEXQuoteUpdateQuoteUpdateModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- iEXQuoteUpdateQuoteUpdateModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- iEXQuoteUpdateQuoteUpdateModelIsSymbolAvailable :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXQuoteUpdateQuoteUpdateModelIsPrePostMarketSession :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXQuoteUpdateQuoteUpdateModelAskSize :: Maybe Int
+    <*> arbitraryReducedMaybe n -- iEXQuoteUpdateQuoteUpdateModelAskPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- iEXQuoteUpdateQuoteUpdateModelBidPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- iEXQuoteUpdateQuoteUpdateModelBidSize :: Maybe Int
   
-instance Arbitrary Level3AddOrderModel where
-  arbitrary = sized genLevel3AddOrderModel
+instance Arbitrary IEXSystemEventSystemEventModel where
+  arbitrary = sized genIEXSystemEventSystemEventModel
 
-genLevel3AddOrderModel :: Int -> Gen Level3AddOrderModel
-genLevel3AddOrderModel n =
-  Level3AddOrderModel
-    <$> arbitraryReducedMaybe n -- level3AddOrderModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- level3AddOrderModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- level3AddOrderModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- level3AddOrderModelIsSideBuy :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- level3AddOrderModelSize :: Maybe Int
-    <*> arbitraryReducedMaybe n -- level3AddOrderModelPrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- level3AddOrderModelOrderId :: Maybe Integer
+genIEXSystemEventSystemEventModel :: Int -> Gen IEXSystemEventSystemEventModel
+genIEXSystemEventSystemEventModel n =
+  IEXSystemEventSystemEventModel
+    <$> arbitraryReducedMaybe n -- iEXSystemEventSystemEventModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- iEXSystemEventSystemEventModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- iEXSystemEventSystemEventModelSystemEvent :: Maybe Int
+    <*> arbitraryReducedMaybe n -- iEXSystemEventSystemEventModelSystemEventCode :: Maybe Text
+    <*> arbitraryReducedMaybe n -- iEXSystemEventSystemEventModelSystemEventText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- iEXSystemEventSystemEventModelIsSystemEventStartOfMessages :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXSystemEventSystemEventModelIsSystemEventStartOfSystemHours :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXSystemEventSystemEventModelIsSystemEventStartOfRegularMarketHours :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXSystemEventSystemEventModelIsSystemEventEndOfRegularMarketHours :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXSystemEventSystemEventModelIsSystemEventEndOfSystemHours :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXSystemEventSystemEventModelIsSystemEventEndOfMessages :: Maybe Bool
   
-instance Arbitrary Level3ClearBookModel where
-  arbitrary = sized genLevel3ClearBookModel
+instance Arbitrary IEXTradeTradeModel where
+  arbitrary = sized genIEXTradeTradeModel
 
-genLevel3ClearBookModel :: Int -> Gen Level3ClearBookModel
-genLevel3ClearBookModel n =
-  Level3ClearBookModel
-    <$> arbitraryReducedMaybe n -- level3ClearBookModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- level3ClearBookModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- level3ClearBookModelTimestamp :: Maybe DateTime
+genIEXTradeTradeModel :: Int -> Gen IEXTradeTradeModel
+genIEXTradeTradeModel n =
+  IEXTradeTradeModel
+    <$> arbitraryReducedMaybe n -- iEXTradeTradeModelIsTradeBreak :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXTradeTradeModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- iEXTradeTradeModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- iEXTradeTradeModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- iEXTradeTradeModelSize :: Maybe Int
+    <*> arbitraryReducedMaybe n -- iEXTradeTradeModelPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- iEXTradeTradeModelTradeId :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- iEXTradeTradeModelIsIntermarketSweep :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXTradeTradeModelIsExtendedHoursTrade :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXTradeTradeModelIsOddLotTrade :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXTradeTradeModelIsTradeThroughExempt :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- iEXTradeTradeModelIsSinglePriceCrossTrade :: Maybe Bool
   
-instance Arbitrary Level3DeleteOrderModel where
-  arbitrary = sized genLevel3DeleteOrderModel
+instance Arbitrary ModelsAddOrderModel where
+  arbitrary = sized genModelsAddOrderModel
 
-genLevel3DeleteOrderModel :: Int -> Gen Level3DeleteOrderModel
-genLevel3DeleteOrderModel n =
-  Level3DeleteOrderModel
-    <$> arbitraryReducedMaybe n -- level3DeleteOrderModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- level3DeleteOrderModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- level3DeleteOrderModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- level3DeleteOrderModelOrderIdReference :: Maybe Integer
+genModelsAddOrderModel :: Int -> Gen ModelsAddOrderModel
+genModelsAddOrderModel n =
+  ModelsAddOrderModel
+    <$> arbitraryReducedMaybe n -- modelsAddOrderModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsAddOrderModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsAddOrderModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsAddOrderModelIsSideBuy :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsAddOrderModelSize :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsAddOrderModelPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- modelsAddOrderModelOrderId :: Maybe Integer
   
-instance Arbitrary Level3ExecutedOrderModel where
-  arbitrary = sized genLevel3ExecutedOrderModel
+instance Arbitrary ModelsAdminMessageModel where
+  arbitrary = sized genModelsAdminMessageModel
 
-genLevel3ExecutedOrderModel :: Int -> Gen Level3ExecutedOrderModel
-genLevel3ExecutedOrderModel n =
-  Level3ExecutedOrderModel
-    <$> arbitraryReducedMaybe n -- level3ExecutedOrderModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- level3ExecutedOrderModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- level3ExecutedOrderModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- level3ExecutedOrderModelOrderIdReference :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- level3ExecutedOrderModelSaleConditionFlags :: Maybe Int
-    <*> arbitraryReducedMaybe n -- level3ExecutedOrderModelIsIntermarketSweep :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- level3ExecutedOrderModelIsExtendedHoursTrade :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- level3ExecutedOrderModelIsOddLotTrade :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- level3ExecutedOrderModelIsTradeThroughExempt :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- level3ExecutedOrderModelIsSinglePriceCrossTrade :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- level3ExecutedOrderModelSize :: Maybe Int
-    <*> arbitraryReducedMaybe n -- level3ExecutedOrderModelPrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- level3ExecutedOrderModelTradeId :: Maybe Integer
+genModelsAdminMessageModel :: Int -> Gen ModelsAdminMessageModel
+genModelsAdminMessageModel n =
+  ModelsAdminMessageModel
+    <$> arbitraryReducedMaybe n -- modelsAdminMessageModelTradingStatus :: Maybe ModelsTradingStatusModel
+    <*> arbitraryReducedMaybe n -- modelsAdminMessageModelOfficialPrice :: Maybe ModelsOfficialPriceModel
+    <*> arbitraryReducedMaybe n -- modelsAdminMessageModelSecurityEvent :: Maybe ModelsSecurityEventModel
+    <*> arbitraryReducedMaybe n -- modelsAdminMessageModelAuctionInformation :: Maybe ModelsAuctionInformationModel
+    <*> arbitraryReducedMaybe n -- modelsAdminMessageModelShortSalePriceTest :: Maybe ModelsShortSalePriceTestStatusModel
+    <*> arbitraryReducedMaybe n -- modelsAdminMessageModelOperationalHaltStatus :: Maybe ModelsOperationalHaltStatusModel
+    <*> arbitraryReducedMaybe n -- modelsAdminMessageModelRetailLiquidityIndicator :: Maybe ModelsRetailLiquidityIndicatorModel
+    <*> arbitraryReducedMaybe n -- modelsAdminMessageModelSystemEvent :: Maybe IEXSystemEventSystemEventModel
+    <*> arbitraryReducedMaybe n -- modelsAdminMessageModelSecurityDirectory :: Maybe ModelsSecurityDirectoryModel
   
-instance Arbitrary Level3ModifyOrderModel where
-  arbitrary = sized genLevel3ModifyOrderModel
+instance Arbitrary ModelsAuctionInformationModel where
+  arbitrary = sized genModelsAuctionInformationModel
 
-genLevel3ModifyOrderModel :: Int -> Gen Level3ModifyOrderModel
-genLevel3ModifyOrderModel n =
-  Level3ModifyOrderModel
-    <$> arbitraryReducedMaybe n -- level3ModifyOrderModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- level3ModifyOrderModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- level3ModifyOrderModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- level3ModifyOrderModelOrderIdReference :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- level3ModifyOrderModelIsPriorityReset :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- level3ModifyOrderModelSize :: Maybe Int
-    <*> arbitraryReducedMaybe n -- level3ModifyOrderModelPrice :: Maybe Double
+genModelsAuctionInformationModel :: Int -> Gen ModelsAuctionInformationModel
+genModelsAuctionInformationModel n =
+  ModelsAuctionInformationModel
+    <$> arbitraryReducedMaybe n -- modelsAuctionInformationModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelAuctionType :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelAuctionTypeCode :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelAuctionTypeText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelIsAuctionTypeOpening :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelIsAuctionTypeClosing :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelIsAuctionTypeIpo :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelIsAuctionTypeHalt :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelIsAuctionTypeVolatility :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelPairedShares :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelReferencePrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelIndicativeClearingPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelImbalanceShares :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelImbalanceSide :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelImbalanceSideCode :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelImbalanceSideText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelIsImbalanceSideBuy :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelIsImbalanceSideSell :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelIsImbalanceSideNone :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelExtensionNumber :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelScheduledAuctionTimeSeconds :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelScheduledAuctionTime :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelAuctionBookClearingPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelCollarReferencePrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelLowerAuctionCollar :: Maybe Double
+    <*> arbitraryReducedMaybe n -- modelsAuctionInformationModelUpperAuctionCollar :: Maybe Double
   
-instance Arbitrary Level3OrderBookModel where
-  arbitrary = sized genLevel3OrderBookModel
+instance Arbitrary ModelsClearBookModel where
+  arbitrary = sized genModelsClearBookModel
 
-genLevel3OrderBookModel :: Int -> Gen Level3OrderBookModel
-genLevel3OrderBookModel n =
-  Level3OrderBookModel
-    <$> arbitraryReducedMaybe n -- level3OrderBookModelAddOrder :: Maybe Level3AddOrderModel
-    <*> arbitraryReducedMaybe n -- level3OrderBookModelDeleteOrder :: Maybe Level3DeleteOrderModel
-    <*> arbitraryReducedMaybe n -- level3OrderBookModelModifyOrder :: Maybe Level3ModifyOrderModel
-    <*> arbitraryReducedMaybe n -- level3OrderBookModelExecutedOrder :: Maybe Level3ExecutedOrderModel
-    <*> arbitraryReducedMaybe n -- level3OrderBookModelClearBook :: Maybe Level3ClearBookModel
+genModelsClearBookModel :: Int -> Gen ModelsClearBookModel
+genModelsClearBookModel n =
+  ModelsClearBookModel
+    <$> arbitraryReducedMaybe n -- modelsClearBookModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsClearBookModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsClearBookModelTimestamp :: Maybe DateTime
   
-instance Arbitrary OHLCVExchangeTimeseriesItem where
-  arbitrary = sized genOHLCVExchangeTimeseriesItem
+instance Arbitrary ModelsDeleteOrderModel where
+  arbitrary = sized genModelsDeleteOrderModel
 
-genOHLCVExchangeTimeseriesItem :: Int -> Gen OHLCVExchangeTimeseriesItem
-genOHLCVExchangeTimeseriesItem n =
-  OHLCVExchangeTimeseriesItem
-    <$> arbitraryReducedMaybe n -- oHLCVExchangeTimeseriesItemTimePeriodStart :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- oHLCVExchangeTimeseriesItemTimePeriodEnd :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- oHLCVExchangeTimeseriesItemTimeOpen :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- oHLCVExchangeTimeseriesItemTimeClose :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- oHLCVExchangeTimeseriesItemPriceOpen :: Maybe Double
-    <*> arbitraryReducedMaybe n -- oHLCVExchangeTimeseriesItemPriceHigh :: Maybe Double
-    <*> arbitraryReducedMaybe n -- oHLCVExchangeTimeseriesItemPriceLow :: Maybe Double
-    <*> arbitraryReducedMaybe n -- oHLCVExchangeTimeseriesItemPriceClose :: Maybe Double
-    <*> arbitraryReducedMaybe n -- oHLCVExchangeTimeseriesItemVolumeTraded :: Maybe Double
-    <*> arbitraryReducedMaybe n -- oHLCVExchangeTimeseriesItemTradesCount :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- oHLCVExchangeTimeseriesItemSymbolIdExchange :: Maybe Text
+genModelsDeleteOrderModel :: Int -> Gen ModelsDeleteOrderModel
+genModelsDeleteOrderModel n =
+  ModelsDeleteOrderModel
+    <$> arbitraryReducedMaybe n -- modelsDeleteOrderModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsDeleteOrderModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsDeleteOrderModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsDeleteOrderModelOrderIdReference :: Maybe Integer
   
-instance Arbitrary OHLCVTimeseriesItem where
-  arbitrary = sized genOHLCVTimeseriesItem
+instance Arbitrary ModelsExecutedOrderModel where
+  arbitrary = sized genModelsExecutedOrderModel
 
-genOHLCVTimeseriesItem :: Int -> Gen OHLCVTimeseriesItem
-genOHLCVTimeseriesItem n =
-  OHLCVTimeseriesItem
-    <$> arbitraryReducedMaybe n -- oHLCVTimeseriesItemTimePeriodStart :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesItemTimePeriodEnd :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesItemTimeOpen :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesItemTimeClose :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesItemPriceOpen :: Maybe Double
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesItemPriceHigh :: Maybe Double
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesItemPriceLow :: Maybe Double
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesItemPriceClose :: Maybe Double
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesItemVolumeTraded :: Maybe Double
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesItemTradesCount :: Maybe Integer
+genModelsExecutedOrderModel :: Int -> Gen ModelsExecutedOrderModel
+genModelsExecutedOrderModel n =
+  ModelsExecutedOrderModel
+    <$> arbitraryReducedMaybe n -- modelsExecutedOrderModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsExecutedOrderModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsExecutedOrderModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsExecutedOrderModelOrderIdReference :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsExecutedOrderModelSaleConditionFlags :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsExecutedOrderModelIsIntermarketSweep :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsExecutedOrderModelIsExtendedHoursTrade :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsExecutedOrderModelIsOddLotTrade :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsExecutedOrderModelIsTradeThroughExempt :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsExecutedOrderModelIsSinglePriceCrossTrade :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsExecutedOrderModelSize :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsExecutedOrderModelPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- modelsExecutedOrderModelTradeId :: Maybe Integer
   
-instance Arbitrary OHLCVTimeseriesPeriod where
-  arbitrary = sized genOHLCVTimeseriesPeriod
+instance Arbitrary ModelsModifyOrderModel where
+  arbitrary = sized genModelsModifyOrderModel
 
-genOHLCVTimeseriesPeriod :: Int -> Gen OHLCVTimeseriesPeriod
-genOHLCVTimeseriesPeriod n =
-  OHLCVTimeseriesPeriod
-    <$> arbitraryReducedMaybe n -- oHLCVTimeseriesPeriodPeriodId :: Maybe Text
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesPeriodLengthSeconds :: Maybe Int
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesPeriodLengthMonths :: Maybe Int
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesPeriodUnitCount :: Maybe Int
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesPeriodUnitName :: Maybe Text
-    <*> arbitraryReducedMaybe n -- oHLCVTimeseriesPeriodDisplayName :: Maybe Text
+genModelsModifyOrderModel :: Int -> Gen ModelsModifyOrderModel
+genModelsModifyOrderModel n =
+  ModelsModifyOrderModel
+    <$> arbitraryReducedMaybe n -- modelsModifyOrderModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsModifyOrderModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsModifyOrderModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsModifyOrderModelOrderIdReference :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsModifyOrderModelIsPriorityReset :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsModifyOrderModelSize :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsModifyOrderModelPrice :: Maybe Double
   
-instance Arbitrary TradeTradeModel where
-  arbitrary = sized genTradeTradeModel
+instance Arbitrary ModelsOfficialPriceModel where
+  arbitrary = sized genModelsOfficialPriceModel
 
-genTradeTradeModel :: Int -> Gen TradeTradeModel
-genTradeTradeModel n =
-  TradeTradeModel
-    <$> arbitraryReducedMaybe n -- tradeTradeModelIsTradeBreak :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- tradeTradeModelSymbol :: Maybe Text
-    <*> arbitraryReducedMaybe n -- tradeTradeModelTimestampNanos :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- tradeTradeModelTimestamp :: Maybe DateTime
-    <*> arbitraryReducedMaybe n -- tradeTradeModelSize :: Maybe Int
-    <*> arbitraryReducedMaybe n -- tradeTradeModelPrice :: Maybe Double
-    <*> arbitraryReducedMaybe n -- tradeTradeModelTradeId :: Maybe Integer
-    <*> arbitraryReducedMaybe n -- tradeTradeModelIsIntermarketSweep :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- tradeTradeModelIsExtendedHoursTrade :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- tradeTradeModelIsOddLotTrade :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- tradeTradeModelIsTradeThroughExempt :: Maybe Bool
-    <*> arbitraryReducedMaybe n -- tradeTradeModelIsSinglePriceCrossTrade :: Maybe Bool
+genModelsOfficialPriceModel :: Int -> Gen ModelsOfficialPriceModel
+genModelsOfficialPriceModel n =
+  ModelsOfficialPriceModel
+    <$> arbitraryReducedMaybe n -- modelsOfficialPriceModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsOfficialPriceModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsOfficialPriceModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsOfficialPriceModelPriceType :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsOfficialPriceModelPriceTypeCode :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsOfficialPriceModelPriceTypeText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsOfficialPriceModelIsPriceTypeOpening :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsOfficialPriceModelIsPriceTypeClosing :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsOfficialPriceModelOfficialPrice :: Maybe Double
+  
+instance Arbitrary ModelsOperationalHaltStatusModel where
+  arbitrary = sized genModelsOperationalHaltStatusModel
+
+genModelsOperationalHaltStatusModel :: Int -> Gen ModelsOperationalHaltStatusModel
+genModelsOperationalHaltStatusModel n =
+  ModelsOperationalHaltStatusModel
+    <$> arbitraryReducedMaybe n -- modelsOperationalHaltStatusModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsOperationalHaltStatusModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsOperationalHaltStatusModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsOperationalHaltStatusModelOperationalHaltStatus :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsOperationalHaltStatusModelOperationalHaltStatusCode :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsOperationalHaltStatusModelOperationalHaltStatusText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsOperationalHaltStatusModelIsOperationallyHalted :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsOperationalHaltStatusModelIsNotOperationallyHalted :: Maybe Bool
+  
+instance Arbitrary ModelsOrderBookModel where
+  arbitrary = sized genModelsOrderBookModel
+
+genModelsOrderBookModel :: Int -> Gen ModelsOrderBookModel
+genModelsOrderBookModel n =
+  ModelsOrderBookModel
+    <$> arbitraryReducedMaybe n -- modelsOrderBookModelAddOrder :: Maybe ModelsAddOrderModel
+    <*> arbitraryReducedMaybe n -- modelsOrderBookModelDeleteOrder :: Maybe ModelsDeleteOrderModel
+    <*> arbitraryReducedMaybe n -- modelsOrderBookModelModifyOrder :: Maybe ModelsModifyOrderModel
+    <*> arbitraryReducedMaybe n -- modelsOrderBookModelExecutedOrder :: Maybe ModelsExecutedOrderModel
+    <*> arbitraryReducedMaybe n -- modelsOrderBookModelClearBook :: Maybe ModelsClearBookModel
+  
+instance Arbitrary ModelsRetailLiquidityIndicatorModel where
+  arbitrary = sized genModelsRetailLiquidityIndicatorModel
+
+genModelsRetailLiquidityIndicatorModel :: Int -> Gen ModelsRetailLiquidityIndicatorModel
+genModelsRetailLiquidityIndicatorModel n =
+  ModelsRetailLiquidityIndicatorModel
+    <$> arbitraryReducedMaybe n -- modelsRetailLiquidityIndicatorModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsRetailLiquidityIndicatorModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsRetailLiquidityIndicatorModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsRetailLiquidityIndicatorModelRetailLiquidityIndicator :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest :: Maybe Bool
+  
+instance Arbitrary ModelsSecurityDirectoryModel where
+  arbitrary = sized genModelsSecurityDirectoryModel
+
+genModelsSecurityDirectoryModel :: Int -> Gen ModelsSecurityDirectoryModel
+genModelsSecurityDirectoryModel n =
+  ModelsSecurityDirectoryModel
+    <$> arbitraryReducedMaybe n -- modelsSecurityDirectoryModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsSecurityDirectoryModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsSecurityDirectoryModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsSecurityDirectoryModelFlags :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsSecurityDirectoryModelRoundLotSize :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsSecurityDirectoryModelAdjustedPocPrice :: Maybe Double
+    <*> arbitraryReducedMaybe n -- modelsSecurityDirectoryModelLuldTier :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsSecurityDirectoryModelLuldTierCode :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsSecurityDirectoryModelLuldTierText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsSecurityDirectoryModelIsLuldTierNotApplicable :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsSecurityDirectoryModelIsLuldTier1 :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsSecurityDirectoryModelIsLuldTier2 :: Maybe Bool
+  
+instance Arbitrary ModelsSecurityEventModel where
+  arbitrary = sized genModelsSecurityEventModel
+
+genModelsSecurityEventModel :: Int -> Gen ModelsSecurityEventModel
+genModelsSecurityEventModel n =
+  ModelsSecurityEventModel
+    <$> arbitraryReducedMaybe n -- modelsSecurityEventModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsSecurityEventModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsSecurityEventModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsSecurityEventModelSecurityEvent :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsSecurityEventModelSecurityEventCode :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsSecurityEventModelSecurityEventText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsSecurityEventModelIsOpeningProcessComplete :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsSecurityEventModelIsClosingProcessComplete :: Maybe Bool
+  
+instance Arbitrary ModelsShortSalePriceTestStatusModel where
+  arbitrary = sized genModelsShortSalePriceTestStatusModel
+
+genModelsShortSalePriceTestStatusModel :: Int -> Gen ModelsShortSalePriceTestStatusModel
+genModelsShortSalePriceTestStatusModel n =
+  ModelsShortSalePriceTestStatusModel
+    <$> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelShortSalePriceTestStatus :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelShortSalePriceTestStatusCode :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelShortSalePriceTestStatusText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelIsShortSalePriceTestInEffect :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelDetail :: Maybe Int
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelDetailCode :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelDetailText :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelIsDetailNoPriceTest :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelIsDetailActivated :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelIsDetailContinued :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelIsDetailDeactivated :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsShortSalePriceTestStatusModelIsDetailNotAvailable :: Maybe Bool
+  
+instance Arbitrary ModelsTradingStatusModel where
+  arbitrary = sized genModelsTradingStatusModel
+
+genModelsTradingStatusModel :: Int -> Gen ModelsTradingStatusModel
+genModelsTradingStatusModel n =
+  ModelsTradingStatusModel
+    <$> arbitraryReducedMaybe n -- modelsTradingStatusModelSymbol :: Maybe Text
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelTimestampNanos :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelTimestamp :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsTradingLive :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsTradingHalted :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsTradingInOrderAcceptancePeriod :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsTradingPaused :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsReasonHaltNewsPending :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsReasonIpoNotYetTrading :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsReasonIpoDeferred :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsReasonHaltNewsDissemination :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsReasonIpoOrderAcceptancePeriod :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsReasonIpoPreLaunchPeriod :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1 :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2 :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3 :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsReasonNotApplicable :: Maybe Bool
+    <*> arbitraryReducedMaybe n -- modelsTradingStatusModelIsReasonNotAvailable :: Maybe Bool
+  
+instance Arbitrary OHLCVTimeSeriesExchangeTimeseriesItem where
+  arbitrary = sized genOHLCVTimeSeriesExchangeTimeseriesItem
+
+genOHLCVTimeSeriesExchangeTimeseriesItem :: Int -> Gen OHLCVTimeSeriesExchangeTimeseriesItem
+genOHLCVTimeSeriesExchangeTimeseriesItem n =
+  OHLCVTimeSeriesExchangeTimeseriesItem
+    <$> arbitraryReducedMaybe n -- oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodStart :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodEnd :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesExchangeTimeseriesItemTimeOpen :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesExchangeTimeseriesItemTimeClose :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesExchangeTimeseriesItemPriceOpen :: Maybe Double
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesExchangeTimeseriesItemPriceHigh :: Maybe Double
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesExchangeTimeseriesItemPriceLow :: Maybe Double
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesExchangeTimeseriesItemPriceClose :: Maybe Double
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesExchangeTimeseriesItemVolumeTraded :: Maybe Double
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesExchangeTimeseriesItemTradesCount :: Maybe Integer
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesExchangeTimeseriesItemSymbolIdExchange :: Maybe Text
+  
+instance Arbitrary OHLCVTimeSeriesTimeseriesItem where
+  arbitrary = sized genOHLCVTimeSeriesTimeseriesItem
+
+genOHLCVTimeSeriesTimeseriesItem :: Int -> Gen OHLCVTimeSeriesTimeseriesItem
+genOHLCVTimeSeriesTimeseriesItem n =
+  OHLCVTimeSeriesTimeseriesItem
+    <$> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesItemTimePeriodStart :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesItemTimePeriodEnd :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesItemTimeOpen :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesItemTimeClose :: Maybe DateTime
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesItemPriceOpen :: Maybe Double
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesItemPriceHigh :: Maybe Double
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesItemPriceLow :: Maybe Double
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesItemPriceClose :: Maybe Double
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesItemVolumeTraded :: Maybe Double
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesItemTradesCount :: Maybe Integer
+  
+instance Arbitrary OHLCVTimeSeriesTimeseriesPeriod where
+  arbitrary = sized genOHLCVTimeSeriesTimeseriesPeriod
+
+genOHLCVTimeSeriesTimeseriesPeriod :: Int -> Gen OHLCVTimeSeriesTimeseriesPeriod
+genOHLCVTimeSeriesTimeseriesPeriod n =
+  OHLCVTimeSeriesTimeseriesPeriod
+    <$> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesPeriodPeriodId :: Maybe Text
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesPeriodLengthSeconds :: Maybe Int
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesPeriodLengthMonths :: Maybe Int
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesPeriodUnitCount :: Maybe Int
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesPeriodUnitName :: Maybe Text
+    <*> arbitraryReducedMaybe n -- oHLCVTimeSeriesTimeseriesPeriodDisplayName :: Maybe Text
   
 
 

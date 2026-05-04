@@ -74,7 +74,7 @@ v1OhlcvExchangeExchangeIdHistoryGet
   -> PeriodId -- ^ "periodId" -  Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
   -> TimeStart -- ^ "timeStart" -  Timeseries starting time in ISO 8601
   -> TimeEnd -- ^ "timeEnd" -  Timeseries ending time in ISO 8601
-  -> FinFeedAPIStockRESTRequest V1OhlcvExchangeExchangeIdHistoryGet MimeNoContent [OHLCVExchangeTimeseriesItem] accept
+  -> FinFeedAPIStockRESTRequest V1OhlcvExchangeExchangeIdHistoryGet MimeNoContent [OHLCVTimeSeriesExchangeTimeseriesItem] accept
 v1OhlcvExchangeExchangeIdHistoryGet  _ (ExchangeId exchangeId) (PeriodId periodId) (TimeStart timeStart) (TimeEnd timeEnd) =
   _mkRequest "GET" ["/v1/ohlcv/exchange/",toPath exchangeId,"/history"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -107,7 +107,7 @@ v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet
   -> ExchangeId -- ^ "exchangeId" -  Exchange identifier of requested timeseries (from the Metadata -> Exchanges)
   -> SymbolId -- ^ "symbolId" -  Symbol identifier of requested timeseries (from the Metadata -> Symbols)
   -> PeriodId -- ^ "periodId" -  Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
-  -> FinFeedAPIStockRESTRequest V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet MimeNoContent [OHLCVTimeseriesItem] accept
+  -> FinFeedAPIStockRESTRequest V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet MimeNoContent [OHLCVTimeSeriesTimeseriesItem] accept
 v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet  _ (ExchangeId exchangeId) (SymbolId symbolId) (PeriodId periodId) =
   _mkRequest "GET" ["/v1/ohlcv/exchange-symbol/",toPath exchangeId,"/",toPath symbolId,"/history"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -153,7 +153,7 @@ v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet
   -> ExchangeId -- ^ "exchangeId" -  Exchange identifier of requested timeseries (from the Metadata -> Exchanges)
   -> SymbolId -- ^ "symbolId" -  Symbol identifier of requested timeseries (from the Metadata -> Symbols)
   -> PeriodId -- ^ "periodId" -  Identifier of requested timeseries period (e.g. `5SEC` or `2MTH`)
-  -> FinFeedAPIStockRESTRequest V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet MimeNoContent [OHLCVTimeseriesItem] accept
+  -> FinFeedAPIStockRESTRequest V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet MimeNoContent [OHLCVTimeSeriesTimeseriesItem] accept
 v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet  _ (ExchangeId exchangeId) (SymbolId symbolId) (PeriodId periodId) =
   _mkRequest "GET" ["/v1/ohlcv/exchange-symbol/",toPath exchangeId,"/",toPath symbolId,"/latest"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -186,7 +186,7 @@ instance Produces V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet MimePlainText
 -- 
 v1OhlcvPeriodsGet
   :: Accept accept -- ^ request accept ('MimeType')
-  -> FinFeedAPIStockRESTRequest V1OhlcvPeriodsGet MimeNoContent [OHLCVTimeseriesPeriod] accept
+  -> FinFeedAPIStockRESTRequest V1OhlcvPeriodsGet MimeNoContent [OHLCVTimeSeriesTimeseriesPeriod] accept
 v1OhlcvPeriodsGet  _ =
   _mkRequest "GET" ["/v1/ohlcv/periods"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)

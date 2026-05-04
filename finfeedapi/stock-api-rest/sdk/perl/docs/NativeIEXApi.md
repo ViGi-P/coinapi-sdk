@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **v1_native_iex_admin_messages_symbol_get**
-> ARRAY[AdminAdminMessageModel] v1_native_iex_admin_messages_symbol_get(symbol => $symbol, date => $date)
+> ARRAY[ModelsAdminMessageModel] v1_native_iex_admin_messages_symbol_get(symbol => $symbol, date => $date)
 
 Get Admin Messages
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[AdminAdminMessageModel]**](AdminAdminMessageModel.md)
+[**ARRAY[ModelsAdminMessageModel]**](ModelsAdminMessageModel.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_admin_system_event_get**
-> ARRAY[AdminSystemEventModel] v1_native_iex_admin_system_event_get(date => $date)
+> ARRAY[IEXSystemEventSystemEventModel] v1_native_iex_admin_system_event_get(date => $date)
 
 Get System Events
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[AdminSystemEventModel]**](AdminSystemEventModel.md)
+[**ARRAY[IEXSystemEventSystemEventModel]**](IEXSystemEventSystemEventModel.md)
 
 ### Authorization
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level1_quote_symbol_get**
-> ARRAY[Level1QuoteUpdateModel] v1_native_iex_level1_quote_symbol_get(symbol => $symbol, date => $date)
+> ARRAY[IEXQuoteUpdateQuoteUpdateModel] v1_native_iex_level1_quote_symbol_get(symbol => $symbol, date => $date)
 
 Get Level-1 Quotes
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[Level1QuoteUpdateModel]**](Level1QuoteUpdateModel.md)
+[**ARRAY[IEXQuoteUpdateQuoteUpdateModel]**](IEXQuoteUpdateQuoteUpdateModel.md)
 
 ### Authorization
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level2_price_level_update_symbol_get**
-> ARRAY[Level2PriceLevelUpdateModel] v1_native_iex_level2_price_level_update_symbol_get(symbol => $symbol, date => $date)
+> ARRAY[IEXPriceLevelUpdatePriceLevelUpdateModel] v1_native_iex_level2_price_level_update_symbol_get(symbol => $symbol, date => $date)
 
 Get Level-2 Price Level Book
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[Level2PriceLevelUpdateModel]**](Level2PriceLevelUpdateModel.md)
+[**ARRAY[IEXPriceLevelUpdatePriceLevelUpdateModel]**](IEXPriceLevelUpdatePriceLevelUpdateModel.md)
 
 ### Authorization
 
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level3_order_book_symbol_get**
-> ARRAY[Level3OrderBookModel] v1_native_iex_level3_order_book_symbol_get(symbol => $symbol, date => $date)
+> ARRAY[ModelsOrderBookModel] v1_native_iex_level3_order_book_symbol_get(symbol => $symbol, date => $date)
 
 Get Level-3 Order Book
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[Level3OrderBookModel]**](Level3OrderBookModel.md)
+[**ARRAY[ModelsOrderBookModel]**](ModelsOrderBookModel.md)
 
 ### Authorization
 
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_trade_symbol_get**
-> ARRAY[TradeTradeModel] v1_native_iex_trade_symbol_get(symbol => $symbol, date => $date)
+> ARRAY[IEXTradeTradeModel] v1_native_iex_trade_symbol_get(symbol => $symbol, date => $date)
 
 Get Trades
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ARRAY[TradeTradeModel]**](TradeTradeModel.md)
+[**ARRAY[IEXTradeTradeModel]**](IEXTradeTradeModel.md)
 
 ### Authorization
 

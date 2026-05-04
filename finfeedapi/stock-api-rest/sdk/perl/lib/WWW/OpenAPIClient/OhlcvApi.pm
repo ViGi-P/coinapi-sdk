@@ -83,10 +83,10 @@ sub new {
     __PACKAGE__->method_documentation->{ 'v1_ohlcv_exchange_exchange_id_history_get' } = {
         summary => 'Historical data by exchange',
         params => $params,
-        returns => 'ARRAY[OHLCVExchangeTimeseriesItem]',
+        returns => 'ARRAY[OHLCVTimeSeriesExchangeTimeseriesItem]',
         };
 }
-# @return ARRAY[OHLCVExchangeTimeseriesItem]
+# @return ARRAY[OHLCVTimeSeriesExchangeTimeseriesItem]
 #
 sub v1_ohlcv_exchange_exchange_id_history_get {
     my ($self, %args) = @_;
@@ -159,7 +159,7 @@ sub v1_ohlcv_exchange_exchange_id_history_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[OHLCVExchangeTimeseriesItem]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[OHLCVTimeSeriesExchangeTimeseriesItem]', $response);
     return $_response_object;
 }
 
@@ -210,10 +210,10 @@ sub v1_ohlcv_exchange_exchange_id_history_get {
     __PACKAGE__->method_documentation->{ 'v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get' } = {
         summary => 'Historical data',
         params => $params,
-        returns => 'ARRAY[OHLCVTimeseriesItem]',
+        returns => 'ARRAY[OHLCVTimeSeriesTimeseriesItem]',
         };
 }
-# @return ARRAY[OHLCVTimeseriesItem]
+# @return ARRAY[OHLCVTimeSeriesTimeseriesItem]
 #
 sub v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get {
     my ($self, %args) = @_;
@@ -293,7 +293,7 @@ sub v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[OHLCVTimeseriesItem]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[OHLCVTimeSeriesTimeseriesItem]', $response);
     return $_response_object;
 }
 
@@ -332,10 +332,10 @@ sub v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get {
     __PACKAGE__->method_documentation->{ 'v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get' } = {
         summary => 'Latest data',
         params => $params,
-        returns => 'ARRAY[OHLCVTimeseriesItem]',
+        returns => 'ARRAY[OHLCVTimeSeriesTimeseriesItem]',
         };
 }
-# @return ARRAY[OHLCVTimeseriesItem]
+# @return ARRAY[OHLCVTimeSeriesTimeseriesItem]
 #
 sub v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get {
     my ($self, %args) = @_;
@@ -405,7 +405,7 @@ sub v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[OHLCVTimeseriesItem]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[OHLCVTimeSeriesTimeseriesItem]', $response);
     return $_response_object;
 }
 
@@ -420,10 +420,10 @@ sub v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get {
     __PACKAGE__->method_documentation->{ 'v1_ohlcv_periods_get' } = {
         summary => 'List all periods',
         params => $params,
-        returns => 'ARRAY[OHLCVTimeseriesPeriod]',
+        returns => 'ARRAY[OHLCVTimeSeriesTimeseriesPeriod]',
         };
 }
-# @return ARRAY[OHLCVTimeseriesPeriod]
+# @return ARRAY[OHLCVTimeSeriesTimeseriesPeriod]
 #
 sub v1_ohlcv_periods_get {
     my ($self, %args) = @_;
@@ -454,7 +454,7 @@ sub v1_ohlcv_periods_get {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[OHLCVTimeseriesPeriod]', $response);
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[OHLCVTimeSeriesTimeseriesPeriod]', $response);
     return $_response_object;
 }
 

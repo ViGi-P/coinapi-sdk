@@ -16,12 +16,12 @@ local dkjson = require "dkjson"
 local basexx = require "basexx"
 
 -- model import
-local openapiclient_admin_admin_message_model = require "openapiclient.model.admin_admin_message_model"
-local openapiclient_admin_system_event_model = require "openapiclient.model.admin_system_event_model"
-local openapiclient_level1_quote_update_model = require "openapiclient.model.level1_quote_update_model"
-local openapiclient_level2_price_level_update_model = require "openapiclient.model.level2_price_level_update_model"
-local openapiclient_level3_order_book_model = require "openapiclient.model.level3_order_book_model"
-local openapiclient_trade_trade_model = require "openapiclient.model.trade_trade_model"
+local openapiclient_iex_price_level_update_price_level_update_model = require "openapiclient.model.iex_price_level_update_price_level_update_model"
+local openapiclient_iex_quote_update_quote_update_model = require "openapiclient.model.iex_quote_update_quote_update_model"
+local openapiclient_iex_system_event_system_event_model = require "openapiclient.model.iex_system_event_system_event_model"
+local openapiclient_iex_trade_trade_model = require "openapiclient.model.iex_trade_trade_model"
+local openapiclient_models_admin_message_model = require "openapiclient.model.models_admin_message_model"
+local openapiclient_models_order_book_model = require "openapiclient.model.models_order_book_model"
 
 local native_iex_api = {}
 local native_iex_api_mt = {
@@ -88,7 +88,7 @@ function native_iex_api:v1_native_iex_admin_messages_symbol_get(symbol, date)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_admin_admin_message_model.cast(ob)
+			openapiclient_models_admin_message_model.cast(ob)
 		end
 		return result, headers
 	else
@@ -141,7 +141,7 @@ function native_iex_api:v1_native_iex_admin_system_event_get(date)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_admin_system_event_model.cast(ob)
+			openapiclient_iex_system_event_system_event_model.cast(ob)
 		end
 		return result, headers
 	else
@@ -194,7 +194,7 @@ function native_iex_api:v1_native_iex_level1_quote_symbol_get(symbol, date)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_level1_quote_update_model.cast(ob)
+			openapiclient_iex_quote_update_quote_update_model.cast(ob)
 		end
 		return result, headers
 	else
@@ -247,7 +247,7 @@ function native_iex_api:v1_native_iex_level2_price_level_update_symbol_get(symbo
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_level2_price_level_update_model.cast(ob)
+			openapiclient_iex_price_level_update_price_level_update_model.cast(ob)
 		end
 		return result, headers
 	else
@@ -300,7 +300,7 @@ function native_iex_api:v1_native_iex_level3_order_book_symbol_get(symbol, date)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_level3_order_book_model.cast(ob)
+			openapiclient_models_order_book_model.cast(ob)
 		end
 		return result, headers
 	else
@@ -353,7 +353,7 @@ function native_iex_api:v1_native_iex_trade_symbol_get(symbol, date)
 			return nil, err3
 		end
 		for _, ob in ipairs(result) do
-			openapiclient_trade_trade_model.cast(ob)
+			openapiclient_iex_trade_trade_model.cast(ob)
 		end
 		return result, headers
 	else

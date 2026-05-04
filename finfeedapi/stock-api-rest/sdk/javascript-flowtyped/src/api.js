@@ -70,850 +70,6 @@ export class RequiredError extends Error {
 }
 
 /**
- * Represents the response DTO for IEX admin information, combining all symbol-based admin message types
- * @export
- */
-export type AdminAdminMessageModel = {
-    /**
-     * 
-     * @type {AdminTradingStatusModel}
-     * @memberof AdminAdminMessageModel
-     */
-    trading_status?: AdminTradingStatusModel;
-    /**
-     * 
-     * @type {AdminOfficialPriceModel}
-     * @memberof AdminAdminMessageModel
-     */
-    official_price?: AdminOfficialPriceModel;
-    /**
-     * 
-     * @type {AdminSecurityEventModel}
-     * @memberof AdminAdminMessageModel
-     */
-    security_event?: AdminSecurityEventModel;
-    /**
-     * 
-     * @type {AdminAuctionInformationModel}
-     * @memberof AdminAdminMessageModel
-     */
-    auction_information?: AdminAuctionInformationModel;
-    /**
-     * 
-     * @type {AdminShortSalePriceTestStatusModel}
-     * @memberof AdminAdminMessageModel
-     */
-    short_sale_price_test?: AdminShortSalePriceTestStatusModel;
-    /**
-     * 
-     * @type {AdminOperationalHaltStatusModel}
-     * @memberof AdminAdminMessageModel
-     */
-    operational_halt_status?: AdminOperationalHaltStatusModel;
-    /**
-     * 
-     * @type {AdminRetailLiquidityIndicatorModel}
-     * @memberof AdminAdminMessageModel
-     */
-    retail_liquidity_indicator?: AdminRetailLiquidityIndicatorModel;
-    /**
-     * 
-     * @type {AdminSystemEventModel}
-     * @memberof AdminAdminMessageModel
-     */
-    system_event?: AdminSystemEventModel;
-    /**
-     * 
-     * @type {AdminSecurityDirectoryModel}
-     * @memberof AdminAdminMessageModel
-     */
-    security_directory?: AdminSecurityDirectoryModel;
-}
-
-/**
- * Represents the response DTO for auction information
- * @export
- */
-export type AdminAuctionInformationModel = {
-    /**
-     * The stock symbol
-     * @type {string}
-     * @memberof AdminAuctionInformationModel
-     */
-    symbol?: string;
-    /**
-     * Original timestamp in nanoseconds since epoch
-     * @type {number}
-     * @memberof AdminAuctionInformationModel
-     */
-    timestamp_nanos?: number;
-    /**
-     * Time when the auction data was recorded as DateTime
-     * @type {Date}
-     * @memberof AdminAuctionInformationModel
-     */
-    timestamp?: Date;
-    /**
-     * Type of auction as byte value
-     * @type {number}
-     * @memberof AdminAuctionInformationModel
-     */
-    auction_type?: number;
-    /**
-     * Type of auction as character string
-     * @type {string}
-     * @memberof AdminAuctionInformationModel
-     */
-    auction_type_code?: string;
-    /**
-     * Human-readable description of the auction type
-     * @type {string}
-     * @memberof AdminAuctionInformationModel
-     */
-    auction_type_text?: string;
-    /**
-     * Indicates if the auction type is \'Opening Auction\' (\'O\'/0x4f).
-     * @type {boolean}
-     * @memberof AdminAuctionInformationModel
-     */
-    is_auction_type_opening?: boolean;
-    /**
-     * Indicates if the auction type is \'Closing Auction\' (\'C\'/0x43).
-     * @type {boolean}
-     * @memberof AdminAuctionInformationModel
-     */
-    is_auction_type_closing?: boolean;
-    /**
-     * Indicates if the auction type is \'IPO Auction\' (\'I\'/0x49).
-     * @type {boolean}
-     * @memberof AdminAuctionInformationModel
-     */
-    is_auction_type_ipo?: boolean;
-    /**
-     * Indicates if the auction type is \'Halt Auction\' (\'H\'/0x48).
-     * @type {boolean}
-     * @memberof AdminAuctionInformationModel
-     */
-    is_auction_type_halt?: boolean;
-    /**
-     * Indicates if the auction type is \'Volatility Auction\' (\'V\'/0x56).
-     * @type {boolean}
-     * @memberof AdminAuctionInformationModel
-     */
-    is_auction_type_volatility?: boolean;
-    /**
-     * Number of shares paired at the Reference Price
-     * @type {number}
-     * @memberof AdminAuctionInformationModel
-     */
-    paired_shares?: number;
-    /**
-     * Reference price as decimal
-     * @type {number}
-     * @memberof AdminAuctionInformationModel
-     */
-    reference_price?: number;
-    /**
-     * Indicative clearing price as decimal
-     * @type {number}
-     * @memberof AdminAuctionInformationModel
-     */
-    indicative_clearing_price?: number;
-    /**
-     * Number of unpaired shares at the Reference Price
-     * @type {number}
-     * @memberof AdminAuctionInformationModel
-     */
-    imbalance_shares?: number;
-    /**
-     * Side of the imbalance as byte value
-     * @type {number}
-     * @memberof AdminAuctionInformationModel
-     */
-    imbalance_side?: number;
-    /**
-     * Side of the imbalance as character string
-     * @type {string}
-     * @memberof AdminAuctionInformationModel
-     */
-    imbalance_side_code?: string;
-    /**
-     * Human-readable description of the imbalance side
-     * @type {string}
-     * @memberof AdminAuctionInformationModel
-     */
-    imbalance_side_text?: string;
-    /**
-     * Indicates if there is a buy-side imbalance (\'B\'/0x42).
-     * @type {boolean}
-     * @memberof AdminAuctionInformationModel
-     */
-    is_imbalance_side_buy?: boolean;
-    /**
-     * Indicates if there is a sell-side imbalance (\'S\'/0x53).
-     * @type {boolean}
-     * @memberof AdminAuctionInformationModel
-     */
-    is_imbalance_side_sell?: boolean;
-    /**
-     * Indicates if there is no imbalance (\'N\'/0x4e).
-     * @type {boolean}
-     * @memberof AdminAuctionInformationModel
-     */
-    is_imbalance_side_none?: boolean;
-    /**
-     * Number of extensions to the auction
-     * @type {number}
-     * @memberof AdminAuctionInformationModel
-     */
-    extension_number?: number;
-    /**
-     * Scheduled auction time in seconds since epoch
-     * @type {number}
-     * @memberof AdminAuctionInformationModel
-     */
-    scheduled_auction_time_seconds?: number;
-    /**
-     * Scheduled time for the auction as DateTime
-     * @type {Date}
-     * @memberof AdminAuctionInformationModel
-     */
-    scheduled_auction_time?: Date;
-    /**
-     * Auction book clearing price as decimal
-     * @type {number}
-     * @memberof AdminAuctionInformationModel
-     */
-    auction_book_clearing_price?: number;
-    /**
-     * Collar reference price as decimal
-     * @type {number}
-     * @memberof AdminAuctionInformationModel
-     */
-    collar_reference_price?: number;
-    /**
-     * Lower auction collar as decimal
-     * @type {number}
-     * @memberof AdminAuctionInformationModel
-     */
-    lower_auction_collar?: number;
-    /**
-     * Upper auction collar as decimal
-     * @type {number}
-     * @memberof AdminAuctionInformationModel
-     */
-    upper_auction_collar?: number;
-}
-
-/**
- * Represents the response DTO for official price information
- * @export
- */
-export type AdminOfficialPriceModel = {
-    /**
-     * The stock symbol
-     * @type {string}
-     * @memberof AdminOfficialPriceModel
-     */
-    symbol?: string;
-    /**
-     * Original timestamp in nanoseconds since epoch
-     * @type {number}
-     * @memberof AdminOfficialPriceModel
-     */
-    timestamp_nanos?: number;
-    /**
-     * Time when the official price was recorded as DateTime
-     * @type {Date}
-     * @memberof AdminOfficialPriceModel
-     */
-    timestamp?: Date;
-    /**
-     * Type of price as byte value
-     * @type {number}
-     * @memberof AdminOfficialPriceModel
-     */
-    price_type?: number;
-    /**
-     * Type of price as character string
-     * @type {string}
-     * @memberof AdminOfficialPriceModel
-     */
-    price_type_code?: string;
-    /**
-     * Human-readable description of the price type
-     * @type {string}
-     * @memberof AdminOfficialPriceModel
-     */
-    price_type_text?: string;
-    /**
-     * Indicates if the price type is \'IEX Official Opening Price\' (\'Q\'/0x51).
-     * @type {boolean}
-     * @memberof AdminOfficialPriceModel
-     */
-    is_price_type_opening?: boolean;
-    /**
-     * Indicates if the price type is \'IEX Official Closing Price\' (\'M\'/0x4d).
-     * @type {boolean}
-     * @memberof AdminOfficialPriceModel
-     */
-    is_price_type_closing?: boolean;
-    /**
-     * Official price as decimal
-     * @type {number}
-     * @memberof AdminOfficialPriceModel
-     */
-    official_price?: number;
-}
-
-/**
- * Represents the response DTO for operational halt status information
- * @export
- */
-export type AdminOperationalHaltStatusModel = {
-    /**
-     * The stock symbol
-     * @type {string}
-     * @memberof AdminOperationalHaltStatusModel
-     */
-    symbol?: string;
-    /**
-     * Original timestamp in nanoseconds since epoch
-     * @type {number}
-     * @memberof AdminOperationalHaltStatusModel
-     */
-    timestamp_nanos?: number;
-    /**
-     * Time when the operational halt status was recorded as DateTime
-     * @type {Date}
-     * @memberof AdminOperationalHaltStatusModel
-     */
-    timestamp?: Date;
-    /**
-     * Operational halt status as byte value
-     * @type {number}
-     * @memberof AdminOperationalHaltStatusModel
-     */
-    operational_halt_status?: number;
-    /**
-     * Operational halt status as character string
-     * @type {string}
-     * @memberof AdminOperationalHaltStatusModel
-     */
-    operational_halt_status_code?: string;
-    /**
-     * Human-readable description of the operational halt status
-     * @type {string}
-     * @memberof AdminOperationalHaltStatusModel
-     */
-    operational_halt_status_text?: string;
-    /**
-     * Indicates if the status is \'IEX specific operational trading halt\' (\'O\'/0x4f).
-     * @type {boolean}
-     * @memberof AdminOperationalHaltStatusModel
-     */
-    is_operationally_halted?: boolean;
-    /**
-     * Indicates if the status is \'Not operationally halted on IEX\' (\'N\'/0x4e).
-     * @type {boolean}
-     * @memberof AdminOperationalHaltStatusModel
-     */
-    is_not_operationally_halted?: boolean;
-}
-
-/**
- * Represents the response DTO for retail liquidity indicator information
- * @export
- */
-export type AdminRetailLiquidityIndicatorModel = {
-    /**
-     * The stock symbol
-     * @type {string}
-     * @memberof AdminRetailLiquidityIndicatorModel
-     */
-    symbol?: string;
-    /**
-     * Original timestamp in nanoseconds since epoch
-     * @type {number}
-     * @memberof AdminRetailLiquidityIndicatorModel
-     */
-    timestamp_nanos?: number;
-    /**
-     * Time when the retail liquidity indicator was recorded as DateTime
-     * @type {Date}
-     * @memberof AdminRetailLiquidityIndicatorModel
-     */
-    timestamp?: Date;
-    /**
-     * Retail liquidity indicator as byte value
-     * @type {number}
-     * @memberof AdminRetailLiquidityIndicatorModel
-     */
-    retail_liquidity_indicator?: number;
-    /**
-     * Retail liquidity indicator as character string
-     * @type {string}
-     * @memberof AdminRetailLiquidityIndicatorModel
-     */
-    retail_liquidity_indicator_code?: string;
-    /**
-     * Human-readable description of the retail liquidity indicator
-     * @type {string}
-     * @memberof AdminRetailLiquidityIndicatorModel
-     */
-    retail_liquidity_indicator_text?: string;
-    /**
-     * Indicates if the indicator is \'Not Applicable\' (\' \'/0x20).
-     * @type {boolean}
-     * @memberof AdminRetailLiquidityIndicatorModel
-     */
-    is_retail_indicator_not_applicable?: boolean;
-    /**
-     * Indicates if there is \'Buy interest for Retail\' (\'A\'/0x41).
-     * @type {boolean}
-     * @memberof AdminRetailLiquidityIndicatorModel
-     */
-    is_retail_indicator_buy_interest?: boolean;
-    /**
-     * Indicates if there is \'Sell interest for Retail\' (\'B\'/0x42).
-     * @type {boolean}
-     * @memberof AdminRetailLiquidityIndicatorModel
-     */
-    is_retail_indicator_sell_interest?: boolean;
-    /**
-     * Indicates if there is \'Buy and sell interest for Retail\' (\'C\'/0x43).
-     * @type {boolean}
-     * @memberof AdminRetailLiquidityIndicatorModel
-     */
-    is_retail_indicator_buy_and_sell_interest?: boolean;
-}
-
-/**
- * Represents the response DTO for security directory information
- * @export
- */
-export type AdminSecurityDirectoryModel = {
-    /**
-     * The stock symbol
-     * @type {string}
-     * @memberof AdminSecurityDirectoryModel
-     */
-    symbol?: string;
-    /**
-     * Original timestamp in nanoseconds since epoch
-     * @type {number}
-     * @memberof AdminSecurityDirectoryModel
-     */
-    timestamp_nanos?: number;
-    /**
-     * Time when the security directory information was recorded as DateTime
-     * @type {Date}
-     * @memberof AdminSecurityDirectoryModel
-     */
-    timestamp?: Date;
-    /**
-     * Flags for the security
-     * @type {number}
-     * @memberof AdminSecurityDirectoryModel
-     */
-    flags?: number;
-    /**
-     * Number of shares that represent a round lot
-     * @type {number}
-     * @memberof AdminSecurityDirectoryModel
-     */
-    round_lot_size?: number;
-    /**
-     * Adjusted previous official closing price as decimal
-     * @type {number}
-     * @memberof AdminSecurityDirectoryModel
-     */
-    adjusted_poc_price?: number;
-    /**
-     * LULD tier as byte value
-     * @type {number}
-     * @memberof AdminSecurityDirectoryModel
-     */
-    luld_tier?: number;
-    /**
-     * LULD tier as numeric string
-     * @type {string}
-     * @memberof AdminSecurityDirectoryModel
-     */
-    luld_tier_code?: string;
-    /**
-     * Human-readable description of the LULD tier
-     * @type {string}
-     * @memberof AdminSecurityDirectoryModel
-     */
-    luld_tier_text?: string;
-    /**
-     * Indicates if LULD Tier is \'Not applicable\' (0x0).
-     * @type {boolean}
-     * @memberof AdminSecurityDirectoryModel
-     */
-    is_luld_tier_not_applicable?: boolean;
-    /**
-     * Indicates if LULD Tier is \'Tier 1 NMS Stock\' (0x1).
-     * @type {boolean}
-     * @memberof AdminSecurityDirectoryModel
-     */
-    is_luld_tier1?: boolean;
-    /**
-     * Indicates if LULD Tier is \'Tier 2 NMS Stock\' (0x2).
-     * @type {boolean}
-     * @memberof AdminSecurityDirectoryModel
-     */
-    is_luld_tier2?: boolean;
-}
-
-/**
- * Represents the response DTO for security event information
- * @export
- */
-export type AdminSecurityEventModel = {
-    /**
-     * The stock symbol
-     * @type {string}
-     * @memberof AdminSecurityEventModel
-     */
-    symbol?: string;
-    /**
-     * Original timestamp in nanoseconds since epoch
-     * @type {number}
-     * @memberof AdminSecurityEventModel
-     */
-    timestamp_nanos?: number;
-    /**
-     * Time when the security event was recorded as DateTime
-     * @type {Date}
-     * @memberof AdminSecurityEventModel
-     */
-    timestamp?: Date;
-    /**
-     * Security event as byte value
-     * @type {number}
-     * @memberof AdminSecurityEventModel
-     */
-    security_event?: number;
-    /**
-     * Security event as character string (\'O\' or \'C\')
-     * @type {string}
-     * @memberof AdminSecurityEventModel
-     */
-    security_event_code?: string;
-    /**
-     * Human-readable description of the security event
-     * @type {string}
-     * @memberof AdminSecurityEventModel
-     */
-    security_event_text?: string;
-    /**
-     * Indicates if the security event is \'Opening Process Complete\' (\'O\'/0x4f).
-     * @type {boolean}
-     * @memberof AdminSecurityEventModel
-     */
-    is_opening_process_complete?: boolean;
-    /**
-     * Indicates if the security event is \'Closing Process Complete\' (\'C\'/0x43).
-     * @type {boolean}
-     * @memberof AdminSecurityEventModel
-     */
-    is_closing_process_complete?: boolean;
-}
-
-/**
- * Represents the response DTO for short sale price test status information
- * @export
- */
-export type AdminShortSalePriceTestStatusModel = {
-    /**
-     * The stock symbol
-     * @type {string}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    symbol?: string;
-    /**
-     * Original timestamp in nanoseconds since epoch
-     * @type {number}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    timestamp_nanos?: number;
-    /**
-     * Time when the short sale price test status was recorded as DateTime
-     * @type {Date}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    timestamp?: Date;
-    /**
-     * Short sale price test status as byte value
-     * @type {number}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    short_sale_price_test_status?: number;
-    /**
-     * Short sale price test status as hex string
-     * @type {string}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    short_sale_price_test_status_code?: string;
-    /**
-     * Human-readable description of the short sale price test status
-     * @type {string}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    short_sale_price_test_status_text?: string;
-    /**
-     * Indicates if the short sale price test is not in effect
-     * @type {boolean}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    is_short_sale_price_test_not_in_effect?: boolean;
-    /**
-     * Indicates if the short sale price test is in effect
-     * @type {boolean}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    is_short_sale_price_test_in_effect?: boolean;
-    /**
-     * Detail of the short sale price test as byte value
-     * @type {number}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    detail?: number;
-    /**
-     * Detail of the short sale price test as character string
-     * @type {string}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    detail_code?: string;
-    /**
-     * Human-readable description of the short sale price test detail
-     * @type {string}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    detail_text?: string;
-    /**
-     * Indicates if there is no price test in place
-     * @type {boolean}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    is_detail_no_price_test?: boolean;
-    /**
-     * Indicates if the short sale price test restriction is in effect due to an intraday price drop
-     * @type {boolean}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    is_detail_activated?: boolean;
-    /**
-     * Indicates if the short sale price test restriction remains in effect from prior day
-     * @type {boolean}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    is_detail_continued?: boolean;
-    /**
-     * Indicates if the short sale price test restriction is deactivated
-     * @type {boolean}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    is_detail_deactivated?: boolean;
-    /**
-     * Indicates if the detail is not available
-     * @type {boolean}
-     * @memberof AdminShortSalePriceTestStatusModel
-     */
-    is_detail_not_available?: boolean;
-}
-
-/**
- * Represents the response DTO for system event information
- * @export
- */
-export type AdminSystemEventModel = {
-    /**
-     * Original timestamp in nanoseconds since epoch
-     * @type {number}
-     * @memberof AdminSystemEventModel
-     */
-    timestamp_nanos?: number;
-    /**
-     * Time when the system event was recorded as DateTime
-     * @type {Date}
-     * @memberof AdminSystemEventModel
-     */
-    timestamp?: Date;
-    /**
-     * System event as byte value
-     * @type {number}
-     * @memberof AdminSystemEventModel
-     */
-    system_event?: number;
-    /**
-     * System event as string
-     * @type {string}
-     * @memberof AdminSystemEventModel
-     */
-    system_event_code?: string;
-    /**
-     * Human-readable description of the system event
-     * @type {string}
-     * @memberof AdminSystemEventModel
-     */
-    system_event_text?: string;
-    /**
-     * Indicates if the system event is \'Start of Messages\' (O). Outside of heartbeat messages on the lower level protocol,  the start of day message is the first message sent in any trading session.
-     * @type {boolean}
-     * @memberof AdminSystemEventModel
-     */
-    is_system_event_start_of_messages?: boolean;
-    /**
-     * Indicates if the system event is \'Start of System Hours\' (S). This message indicates that IEX is open and ready to start accepting orders.
-     * @type {boolean}
-     * @memberof AdminSystemEventModel
-     */
-    is_system_event_start_of_system_hours?: boolean;
-    /**
-     * Indicates if the system event is \'Start of Regular Market Hours\' (R). This message indicates that DAY and GTX orders, as well as market orders and pegged orders,  are available for execution on IEX.
-     * @type {boolean}
-     * @memberof AdminSystemEventModel
-     */
-    is_system_event_start_of_regular_market_hours?: boolean;
-    /**
-     * Indicates if the system event is \'End of Regular Market Hours\' (M). This message indicates that DAY orders, market orders, and pegged orders  are no longer accepted by IEX.
-     * @type {boolean}
-     * @memberof AdminSystemEventModel
-     */
-    is_system_event_end_of_regular_market_hours?: boolean;
-    /**
-     * Indicates if the system event is \'End of System Hours\' (E). This message indicates that IEX is now closed and will not accept  any new orders during this trading session. It is still possible  to receive messages after the end of day.
-     * @type {boolean}
-     * @memberof AdminSystemEventModel
-     */
-    is_system_event_end_of_system_hours?: boolean;
-    /**
-     * Indicates if the system event is \'End of Messages\' (C). This is always the last message sent in any trading session.
-     * @type {boolean}
-     * @memberof AdminSystemEventModel
-     */
-    is_system_event_end_of_messages?: boolean;
-}
-
-/**
- * Represents the response DTO for trading status information
- * @export
- */
-export type AdminTradingStatusModel = {
-    /**
-     * The stock symbol
-     * @type {string}
-     * @memberof AdminTradingStatusModel
-     */
-    symbol?: string;
-    /**
-     * Original timestamp in nanoseconds since epoch
-     * @type {number}
-     * @memberof AdminTradingStatusModel
-     */
-    timestamp_nanos?: number;
-    /**
-     * Time when the trading status was recorded as DateTime
-     * @type {Date}
-     * @memberof AdminTradingStatusModel
-     */
-    timestamp?: Date;
-    /**
-     * Gets whether the security is currently trading on IEX
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_trading_live?: boolean;
-    /**
-     * Gets whether the security is halted across all US equity markets
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_trading_halted?: boolean;
-    /**
-     * Gets whether the security is in Order Acceptance Period on IEX
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_trading_in_order_acceptance_period?: boolean;
-    /**
-     * Gets whether the security is paused and in Order Acceptance Period on IEX
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_trading_paused?: boolean;
-    /**
-     * Gets whether the halt reason is News Pending
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_reason_halt_news_pending?: boolean;
-    /**
-     * Gets whether the halt reason is IPO Not Yet Trading
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_reason_ipo_not_yet_trading?: boolean;
-    /**
-     * Gets whether the halt reason is IPO Deferred
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_reason_ipo_deferred?: boolean;
-    /**
-     * Gets whether the order acceptance period reason is Halt News Dissemination
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_reason_halt_news_dissemination?: boolean;
-    /**
-     * Gets whether the order acceptance period reason is IPO Order Acceptance Period
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_reason_ipo_order_acceptance_period?: boolean;
-    /**
-     * Gets whether the order acceptance period reason is IPO Pre-Launch Period
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_reason_ipo_pre_launch_period?: boolean;
-    /**
-     * Gets whether the order acceptance period reason is Market-Wide Circuit Breaker Level 1 – Breached
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_reason_market_wide_circuit_breaker_level1?: boolean;
-    /**
-     * Gets whether the order acceptance period reason is Market-Wide Circuit Breaker Level 2 – Breached
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_reason_market_wide_circuit_breaker_level2?: boolean;
-    /**
-     * Gets whether the halt reason is Market-Wide Circuit Breaker Level 3 – Breached
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_reason_market_wide_circuit_breaker_level3?: boolean;
-    /**
-     * Gets whether the reason is Not Applicable
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_reason_not_applicable?: boolean;
-    /**
-     * Gets whether the halt reason is Not Available
-     * @type {boolean}
-     * @memberof AdminTradingStatusModel
-     */
-    is_reason_not_available?: boolean;
-}
-
-/**
  * 
  * @export
  */
@@ -1160,185 +316,573 @@ export type FinFeedAPISymbolModel = {
 }
 
 /**
- * Represents the response DTO for quote update information
- * @export
- */
-export type Level1QuoteUpdateModel = {
-    /**
-     * The stock symbol
-     * @type {string}
-     * @memberof Level1QuoteUpdateModel
-     */
-    symbol?: string;
-    /**
-     * Original timestamp in nanoseconds since epoch
-     * @type {number}
-     * @memberof Level1QuoteUpdateModel
-     */
-    timestamp_nanos?: number;
-    /**
-     * Time when the quote update was recorded as DateTime
-     * @type {Date}
-     * @memberof Level1QuoteUpdateModel
-     */
-    timestamp?: Date;
-    /**
-     * Gets whether the symbol is available for trading True if active, False if halted, paused, or otherwise not available
-     * @type {boolean}
-     * @memberof Level1QuoteUpdateModel
-     */
-    is_symbol_available?: boolean;
-    /**
-     * Gets whether the market session is regular or pre/post-market True if pre/post-market session, False if regular market session
-     * @type {boolean}
-     * @memberof Level1QuoteUpdateModel
-     */
-    is_pre_post_market_session?: boolean;
-    /**
-     * Ask size in number of shares
-     * @type {number}
-     * @memberof Level1QuoteUpdateModel
-     */
-    ask_size?: number;
-    /**
-     * Ask price as decimal
-     * @type {number}
-     * @memberof Level1QuoteUpdateModel
-     */
-    ask_price?: number;
-    /**
-     * Bid price as decimal
-     * @type {number}
-     * @memberof Level1QuoteUpdateModel
-     */
-    bid_price?: number;
-    /**
-     * Bid size in number of shares
-     * @type {number}
-     * @memberof Level1QuoteUpdateModel
-     */
-    bid_size?: number;
-}
-
-/**
  * Represents the response DTO for price level update information
  * @export
  */
-export type Level2PriceLevelUpdateModel = {
+export type IEXPriceLevelUpdatePriceLevelUpdateModel = {
     /**
      * The stock symbol
      * @type {string}
-     * @memberof Level2PriceLevelUpdateModel
+     * @memberof IEXPriceLevelUpdatePriceLevelUpdateModel
      */
     symbol?: string;
     /**
      * Original timestamp in nanoseconds since epoch
      * @type {number}
-     * @memberof Level2PriceLevelUpdateModel
+     * @memberof IEXPriceLevelUpdatePriceLevelUpdateModel
      */
     timestamp_nanos?: number;
     /**
      * Time when the price level update was recorded as DateTime
      * @type {Date}
-     * @memberof Level2PriceLevelUpdateModel
+     * @memberof IEXPriceLevelUpdatePriceLevelUpdateModel
      */
     timestamp?: Date;
     /**
      * Indicates if this is a price level update for the Buy Side.
      * @type {boolean}
-     * @memberof Level2PriceLevelUpdateModel
+     * @memberof IEXPriceLevelUpdatePriceLevelUpdateModel
      */
     is_side_buy?: boolean;
     /**
      * Indicates if event processing is complete.
      * @type {boolean}
-     * @memberof Level2PriceLevelUpdateModel
+     * @memberof IEXPriceLevelUpdatePriceLevelUpdateModel
      */
     is_event_processing_complete?: boolean;
     /**
      * Aggregate quoted size at the price level
      * @type {number}
-     * @memberof Level2PriceLevelUpdateModel
+     * @memberof IEXPriceLevelUpdatePriceLevelUpdateModel
      */
     size?: number;
     /**
      * Price level as decimal
      * @type {number}
-     * @memberof Level2PriceLevelUpdateModel
+     * @memberof IEXPriceLevelUpdatePriceLevelUpdateModel
      */
     price?: number;
+}
+
+/**
+ * Represents the response DTO for quote update information
+ * @export
+ */
+export type IEXQuoteUpdateQuoteUpdateModel = {
+    /**
+     * The stock symbol
+     * @type {string}
+     * @memberof IEXQuoteUpdateQuoteUpdateModel
+     */
+    symbol?: string;
+    /**
+     * Original timestamp in nanoseconds since epoch
+     * @type {number}
+     * @memberof IEXQuoteUpdateQuoteUpdateModel
+     */
+    timestamp_nanos?: number;
+    /**
+     * Time when the quote update was recorded as DateTime
+     * @type {Date}
+     * @memberof IEXQuoteUpdateQuoteUpdateModel
+     */
+    timestamp?: Date;
+    /**
+     * Gets whether the symbol is available for trading True if active, False if halted, paused, or otherwise not available
+     * @type {boolean}
+     * @memberof IEXQuoteUpdateQuoteUpdateModel
+     */
+    is_symbol_available?: boolean;
+    /**
+     * Gets whether the market session is regular or pre/post-market True if pre/post-market session, False if regular market session
+     * @type {boolean}
+     * @memberof IEXQuoteUpdateQuoteUpdateModel
+     */
+    is_pre_post_market_session?: boolean;
+    /**
+     * Ask size in number of shares
+     * @type {number}
+     * @memberof IEXQuoteUpdateQuoteUpdateModel
+     */
+    ask_size?: number;
+    /**
+     * Ask price as decimal
+     * @type {number}
+     * @memberof IEXQuoteUpdateQuoteUpdateModel
+     */
+    ask_price?: number;
+    /**
+     * Bid price as decimal
+     * @type {number}
+     * @memberof IEXQuoteUpdateQuoteUpdateModel
+     */
+    bid_price?: number;
+    /**
+     * Bid size in number of shares
+     * @type {number}
+     * @memberof IEXQuoteUpdateQuoteUpdateModel
+     */
+    bid_size?: number;
+}
+
+/**
+ * Represents the response DTO for system event information
+ * @export
+ */
+export type IEXSystemEventSystemEventModel = {
+    /**
+     * Original timestamp in nanoseconds since epoch
+     * @type {number}
+     * @memberof IEXSystemEventSystemEventModel
+     */
+    timestamp_nanos?: number;
+    /**
+     * Time when the system event was recorded as DateTime
+     * @type {Date}
+     * @memberof IEXSystemEventSystemEventModel
+     */
+    timestamp?: Date;
+    /**
+     * System event as byte value
+     * @type {number}
+     * @memberof IEXSystemEventSystemEventModel
+     */
+    system_event?: number;
+    /**
+     * System event as string
+     * @type {string}
+     * @memberof IEXSystemEventSystemEventModel
+     */
+    system_event_code?: string;
+    /**
+     * Human-readable description of the system event
+     * @type {string}
+     * @memberof IEXSystemEventSystemEventModel
+     */
+    system_event_text?: string;
+    /**
+     * Indicates if the system event is \'Start of Messages\' (O). Outside of heartbeat messages on the lower level protocol,  the start of day message is the first message sent in any trading session.
+     * @type {boolean}
+     * @memberof IEXSystemEventSystemEventModel
+     */
+    is_system_event_start_of_messages?: boolean;
+    /**
+     * Indicates if the system event is \'Start of System Hours\' (S). This message indicates that IEX is open and ready to start accepting orders.
+     * @type {boolean}
+     * @memberof IEXSystemEventSystemEventModel
+     */
+    is_system_event_start_of_system_hours?: boolean;
+    /**
+     * Indicates if the system event is \'Start of Regular Market Hours\' (R). This message indicates that DAY and GTX orders, as well as market orders and pegged orders,  are available for execution on IEX.
+     * @type {boolean}
+     * @memberof IEXSystemEventSystemEventModel
+     */
+    is_system_event_start_of_regular_market_hours?: boolean;
+    /**
+     * Indicates if the system event is \'End of Regular Market Hours\' (M). This message indicates that DAY orders, market orders, and pegged orders  are no longer accepted by IEX.
+     * @type {boolean}
+     * @memberof IEXSystemEventSystemEventModel
+     */
+    is_system_event_end_of_regular_market_hours?: boolean;
+    /**
+     * Indicates if the system event is \'End of System Hours\' (E). This message indicates that IEX is now closed and will not accept  any new orders during this trading session. It is still possible  to receive messages after the end of day.
+     * @type {boolean}
+     * @memberof IEXSystemEventSystemEventModel
+     */
+    is_system_event_end_of_system_hours?: boolean;
+    /**
+     * Indicates if the system event is \'End of Messages\' (C). This is always the last message sent in any trading session.
+     * @type {boolean}
+     * @memberof IEXSystemEventSystemEventModel
+     */
+    is_system_event_end_of_messages?: boolean;
+}
+
+/**
+ * Represents the response DTO for a single trade event (report or break).
+ * @export
+ */
+export type IEXTradeTradeModel = {
+    /**
+     * Indicates if this record represents a trade break (true) or a trade report (false).
+     * @type {boolean}
+     * @memberof IEXTradeTradeModel
+     */
+    is_trade_break?: boolean;
+    /**
+     * The stock symbol.
+     * @type {string}
+     * @memberof IEXTradeTradeModel
+     */
+    symbol?: string;
+    /**
+     * Original timestamp in nanoseconds since epoch.
+     * @type {number}
+     * @memberof IEXTradeTradeModel
+     */
+    timestamp_nanos?: number;
+    /**
+     * Time when the event was recorded as DateTime (UTC).
+     * @type {Date}
+     * @memberof IEXTradeTradeModel
+     */
+    timestamp?: Date;
+    /**
+     * Trade volume (or break volume) in number of shares.
+     * @type {number}
+     * @memberof IEXTradeTradeModel
+     */
+    size?: number;
+    /**
+     * Trade price (or break price) as decimal.
+     * @type {number}
+     * @memberof IEXTradeTradeModel
+     */
+    price?: number;
+    /**
+     * IEX trade identifier (same for report and its corresponding break).
+     * @type {number}
+     * @memberof IEXTradeTradeModel
+     */
+    trade_id?: number;
+    /**
+     * Bit 7 (Mask 0x80): Intermarket Sweep Flag. True: Intermarket Sweep Order (\"ISO\"). False: Non-Intermarket Sweep Order.
+     * @type {boolean}
+     * @memberof IEXTradeTradeModel
+     */
+    is_intermarket_sweep?: boolean;
+    /**
+     * Bit 6 (Mask 0x40): Extended Hours Flag. True: Extended Hours Trade (i.e., Form T sale condition). False: Regular Market Session Trade.
+     * @type {boolean}
+     * @memberof IEXTradeTradeModel
+     */
+    is_extended_hours_trade?: boolean;
+    /**
+     * Bit 5 (Mask 0x20): Odd Lot Flag. True: Odd Lot Trade. False: Round or Mixed Lot Trade.
+     * @type {boolean}
+     * @memberof IEXTradeTradeModel
+     */
+    is_odd_lot_trade?: boolean;
+    /**
+     * Bit 4 (Mask 0x10): Trade Through Exempt Flag. True: Trade is not subject to Rule 611 (Trade Through) of SEC Reg. NMS. False: Trade is subject to Rule 611 (Trade Through) of SEC Reg. NMS. Applied when the taking order was an ISO that traded through a protected quotation, OR the NBBO was crossed at the time of the trade, OR the trade occurred through a self-helped venue\'s quotation, OR the trade was a single-price cross.
+     * @type {boolean}
+     * @memberof IEXTradeTradeModel
+     */
+    is_trade_through_exempt?: boolean;
+    /**
+     * Bit 3 (Mask 0x08): Single-price Cross Trade Flag. True: Trade resulting from a single-price cross. False: Execution during continuous trading.
+     * @type {boolean}
+     * @memberof IEXTradeTradeModel
+     */
+    is_single_price_cross_trade?: boolean;
 }
 
 /**
  * Represents the response DTO for add order information
  * @export
  */
-export type Level3AddOrderModel = {
+export type ModelsAddOrderModel = {
     /**
      * The stock symbol
      * @type {string}
-     * @memberof Level3AddOrderModel
+     * @memberof ModelsAddOrderModel
      */
     symbol?: string;
     /**
      * Original timestamp in nanoseconds since epoch
      * @type {number}
-     * @memberof Level3AddOrderModel
+     * @memberof ModelsAddOrderModel
      */
     timestamp_nanos?: number;
     /**
      * Time when the order was added as DateTime (UTC)
      * @type {Date}
-     * @memberof Level3AddOrderModel
+     * @memberof ModelsAddOrderModel
      */
     timestamp?: Date;
     /**
      * Indicates if this is a Buy order (\'8\'/0x38).
      * @type {boolean}
-     * @memberof Level3AddOrderModel
+     * @memberof ModelsAddOrderModel
      */
     is_side_buy?: boolean;
     /**
      * Quoted size in number of shares
      * @type {number}
-     * @memberof Level3AddOrderModel
+     * @memberof ModelsAddOrderModel
      */
     size?: number;
     /**
      * Price as decimal
      * @type {number}
-     * @memberof Level3AddOrderModel
+     * @memberof ModelsAddOrderModel
      */
     price?: number;
     /**
      * Order identifier
      * @type {number}
-     * @memberof Level3AddOrderModel
+     * @memberof ModelsAddOrderModel
      */
     order_id?: number;
+}
+
+/**
+ * Represents the response DTO for IEX admin information, combining all symbol-based admin message types
+ * @export
+ */
+export type ModelsAdminMessageModel = {
+    /**
+     * 
+     * @type {ModelsTradingStatusModel}
+     * @memberof ModelsAdminMessageModel
+     */
+    trading_status?: ModelsTradingStatusModel;
+    /**
+     * 
+     * @type {ModelsOfficialPriceModel}
+     * @memberof ModelsAdminMessageModel
+     */
+    official_price?: ModelsOfficialPriceModel;
+    /**
+     * 
+     * @type {ModelsSecurityEventModel}
+     * @memberof ModelsAdminMessageModel
+     */
+    security_event?: ModelsSecurityEventModel;
+    /**
+     * 
+     * @type {ModelsAuctionInformationModel}
+     * @memberof ModelsAdminMessageModel
+     */
+    auction_information?: ModelsAuctionInformationModel;
+    /**
+     * 
+     * @type {ModelsShortSalePriceTestStatusModel}
+     * @memberof ModelsAdminMessageModel
+     */
+    short_sale_price_test?: ModelsShortSalePriceTestStatusModel;
+    /**
+     * 
+     * @type {ModelsOperationalHaltStatusModel}
+     * @memberof ModelsAdminMessageModel
+     */
+    operational_halt_status?: ModelsOperationalHaltStatusModel;
+    /**
+     * 
+     * @type {ModelsRetailLiquidityIndicatorModel}
+     * @memberof ModelsAdminMessageModel
+     */
+    retail_liquidity_indicator?: ModelsRetailLiquidityIndicatorModel;
+    /**
+     * 
+     * @type {IEXSystemEventSystemEventModel}
+     * @memberof ModelsAdminMessageModel
+     */
+    system_event?: IEXSystemEventSystemEventModel;
+    /**
+     * 
+     * @type {ModelsSecurityDirectoryModel}
+     * @memberof ModelsAdminMessageModel
+     */
+    security_directory?: ModelsSecurityDirectoryModel;
+}
+
+/**
+ * Represents the response DTO for auction information
+ * @export
+ */
+export type ModelsAuctionInformationModel = {
+    /**
+     * The stock symbol
+     * @type {string}
+     * @memberof ModelsAuctionInformationModel
+     */
+    symbol?: string;
+    /**
+     * Original timestamp in nanoseconds since epoch
+     * @type {number}
+     * @memberof ModelsAuctionInformationModel
+     */
+    timestamp_nanos?: number;
+    /**
+     * Time when the auction data was recorded as DateTime
+     * @type {Date}
+     * @memberof ModelsAuctionInformationModel
+     */
+    timestamp?: Date;
+    /**
+     * Type of auction as byte value
+     * @type {number}
+     * @memberof ModelsAuctionInformationModel
+     */
+    auction_type?: number;
+    /**
+     * Type of auction as character string
+     * @type {string}
+     * @memberof ModelsAuctionInformationModel
+     */
+    auction_type_code?: string;
+    /**
+     * Human-readable description of the auction type
+     * @type {string}
+     * @memberof ModelsAuctionInformationModel
+     */
+    auction_type_text?: string;
+    /**
+     * Indicates if the auction type is \'Opening Auction\' (\'O\'/0x4f).
+     * @type {boolean}
+     * @memberof ModelsAuctionInformationModel
+     */
+    is_auction_type_opening?: boolean;
+    /**
+     * Indicates if the auction type is \'Closing Auction\' (\'C\'/0x43).
+     * @type {boolean}
+     * @memberof ModelsAuctionInformationModel
+     */
+    is_auction_type_closing?: boolean;
+    /**
+     * Indicates if the auction type is \'IPO Auction\' (\'I\'/0x49).
+     * @type {boolean}
+     * @memberof ModelsAuctionInformationModel
+     */
+    is_auction_type_ipo?: boolean;
+    /**
+     * Indicates if the auction type is \'Halt Auction\' (\'H\'/0x48).
+     * @type {boolean}
+     * @memberof ModelsAuctionInformationModel
+     */
+    is_auction_type_halt?: boolean;
+    /**
+     * Indicates if the auction type is \'Volatility Auction\' (\'V\'/0x56).
+     * @type {boolean}
+     * @memberof ModelsAuctionInformationModel
+     */
+    is_auction_type_volatility?: boolean;
+    /**
+     * Number of shares paired at the Reference Price
+     * @type {number}
+     * @memberof ModelsAuctionInformationModel
+     */
+    paired_shares?: number;
+    /**
+     * Reference price as decimal
+     * @type {number}
+     * @memberof ModelsAuctionInformationModel
+     */
+    reference_price?: number;
+    /**
+     * Indicative clearing price as decimal
+     * @type {number}
+     * @memberof ModelsAuctionInformationModel
+     */
+    indicative_clearing_price?: number;
+    /**
+     * Number of unpaired shares at the Reference Price
+     * @type {number}
+     * @memberof ModelsAuctionInformationModel
+     */
+    imbalance_shares?: number;
+    /**
+     * Side of the imbalance as byte value
+     * @type {number}
+     * @memberof ModelsAuctionInformationModel
+     */
+    imbalance_side?: number;
+    /**
+     * Side of the imbalance as character string
+     * @type {string}
+     * @memberof ModelsAuctionInformationModel
+     */
+    imbalance_side_code?: string;
+    /**
+     * Human-readable description of the imbalance side
+     * @type {string}
+     * @memberof ModelsAuctionInformationModel
+     */
+    imbalance_side_text?: string;
+    /**
+     * Indicates if there is a buy-side imbalance (\'B\'/0x42).
+     * @type {boolean}
+     * @memberof ModelsAuctionInformationModel
+     */
+    is_imbalance_side_buy?: boolean;
+    /**
+     * Indicates if there is a sell-side imbalance (\'S\'/0x53).
+     * @type {boolean}
+     * @memberof ModelsAuctionInformationModel
+     */
+    is_imbalance_side_sell?: boolean;
+    /**
+     * Indicates if there is no imbalance (\'N\'/0x4e).
+     * @type {boolean}
+     * @memberof ModelsAuctionInformationModel
+     */
+    is_imbalance_side_none?: boolean;
+    /**
+     * Number of extensions to the auction
+     * @type {number}
+     * @memberof ModelsAuctionInformationModel
+     */
+    extension_number?: number;
+    /**
+     * Scheduled auction time in seconds since epoch
+     * @type {number}
+     * @memberof ModelsAuctionInformationModel
+     */
+    scheduled_auction_time_seconds?: number;
+    /**
+     * Scheduled time for the auction as DateTime
+     * @type {Date}
+     * @memberof ModelsAuctionInformationModel
+     */
+    scheduled_auction_time?: Date;
+    /**
+     * Auction book clearing price as decimal
+     * @type {number}
+     * @memberof ModelsAuctionInformationModel
+     */
+    auction_book_clearing_price?: number;
+    /**
+     * Collar reference price as decimal
+     * @type {number}
+     * @memberof ModelsAuctionInformationModel
+     */
+    collar_reference_price?: number;
+    /**
+     * Lower auction collar as decimal
+     * @type {number}
+     * @memberof ModelsAuctionInformationModel
+     */
+    lower_auction_collar?: number;
+    /**
+     * Upper auction collar as decimal
+     * @type {number}
+     * @memberof ModelsAuctionInformationModel
+     */
+    upper_auction_collar?: number;
 }
 
 /**
  * Represents the response DTO for clear book information
  * @export
  */
-export type Level3ClearBookModel = {
+export type ModelsClearBookModel = {
     /**
      * The stock symbol
      * @type {string}
-     * @memberof Level3ClearBookModel
+     * @memberof ModelsClearBookModel
      */
     symbol?: string;
     /**
      * Original timestamp in nanoseconds since epoch
      * @type {number}
-     * @memberof Level3ClearBookModel
+     * @memberof ModelsClearBookModel
      */
     timestamp_nanos?: number;
     /**
      * Time when the book was cleared as DateTime
      * @type {Date}
-     * @memberof Level3ClearBookModel
+     * @memberof ModelsClearBookModel
      */
     timestamp?: Date;
 }
@@ -1347,29 +891,29 @@ export type Level3ClearBookModel = {
  * Represents the response DTO for order delete information
  * @export
  */
-export type Level3DeleteOrderModel = {
+export type ModelsDeleteOrderModel = {
     /**
      * The stock symbol
      * @type {string}
-     * @memberof Level3DeleteOrderModel
+     * @memberof ModelsDeleteOrderModel
      */
     symbol?: string;
     /**
      * Original timestamp in nanoseconds since epoch
      * @type {number}
-     * @memberof Level3DeleteOrderModel
+     * @memberof ModelsDeleteOrderModel
      */
     timestamp_nanos?: number;
     /**
      * Time when the order was deleted as DateTime
      * @type {Date}
-     * @memberof Level3DeleteOrderModel
+     * @memberof ModelsDeleteOrderModel
      */
     timestamp?: Date;
     /**
      * Order identifier reference
      * @type {number}
-     * @memberof Level3DeleteOrderModel
+     * @memberof ModelsDeleteOrderModel
      */
     order_id_reference?: number;
 }
@@ -1378,83 +922,83 @@ export type Level3DeleteOrderModel = {
  * Represents the response DTO for order executed information
  * @export
  */
-export type Level3ExecutedOrderModel = {
+export type ModelsExecutedOrderModel = {
     /**
      * The stock symbol
      * @type {string}
-     * @memberof Level3ExecutedOrderModel
+     * @memberof ModelsExecutedOrderModel
      */
     symbol?: string;
     /**
      * Original timestamp in nanoseconds since epoch
      * @type {number}
-     * @memberof Level3ExecutedOrderModel
+     * @memberof ModelsExecutedOrderModel
      */
     timestamp_nanos?: number;
     /**
      * Time when the order was executed as DateTime
      * @type {Date}
-     * @memberof Level3ExecutedOrderModel
+     * @memberof ModelsExecutedOrderModel
      */
     timestamp?: Date;
     /**
      * Order identifier reference
      * @type {number}
-     * @memberof Level3ExecutedOrderModel
+     * @memberof ModelsExecutedOrderModel
      */
     order_id_reference?: number;
     /**
      * Sale condition flags for the execution as byte value
      * @type {number}
-     * @memberof Level3ExecutedOrderModel
+     * @memberof ModelsExecutedOrderModel
      */
     sale_condition_flags?: number;
     /**
      * Bit 7 (Mask 0x80): Intermarket Sweep Flag True: Intermarket Sweep Order (\"ISO\") False: Non-Intermarket Sweep Order
      * @type {boolean}
-     * @memberof Level3ExecutedOrderModel
+     * @memberof ModelsExecutedOrderModel
      */
     is_intermarket_sweep?: boolean;
     /**
      * Bit 6 (Mask 0x40): Extended Hours Flag True: Extended Hours Trade (i.e., Form T sale condition) False: Regular Market Session Trade
      * @type {boolean}
-     * @memberof Level3ExecutedOrderModel
+     * @memberof ModelsExecutedOrderModel
      */
     is_extended_hours_trade?: boolean;
     /**
      * Bit 5 (Mask 0x20): Odd Lot Flag True: Odd Lot Trade False: Round or Mixed Lot Trade
      * @type {boolean}
-     * @memberof Level3ExecutedOrderModel
+     * @memberof ModelsExecutedOrderModel
      */
     is_odd_lot_trade?: boolean;
     /**
      * Bit 4 (Mask 0x10): Trade Through Exempt Flag True: Trade is not subject to Rule 611 (Trade Through) of SEC Reg. NMS False: Trade is subject to Rule 611 (Trade Through) of SEC Reg. NMS
      * @type {boolean}
-     * @memberof Level3ExecutedOrderModel
+     * @memberof ModelsExecutedOrderModel
      */
     is_trade_through_exempt?: boolean;
     /**
      * Bit 3 (Mask 0x08): Single-price Cross Trade Flag True: Trade resulting from a single-price cross False: Execution during continuous trading
      * @type {boolean}
-     * @memberof Level3ExecutedOrderModel
+     * @memberof ModelsExecutedOrderModel
      */
     is_single_price_cross_trade?: boolean;
     /**
      * Trade volume in number of shares
      * @type {number}
-     * @memberof Level3ExecutedOrderModel
+     * @memberof ModelsExecutedOrderModel
      */
     size?: number;
     /**
      * Execution price as decimal
      * @type {number}
-     * @memberof Level3ExecutedOrderModel
+     * @memberof ModelsExecutedOrderModel
      */
     price?: number;
     /**
      * IEX trade identifier
      * @type {number}
-     * @memberof Level3ExecutedOrderModel
+     * @memberof ModelsExecutedOrderModel
      */
     trade_id?: number;
 }
@@ -1463,157 +1007,692 @@ export type Level3ExecutedOrderModel = {
  * Represents the response DTO for order modify information
  * @export
  */
-export type Level3ModifyOrderModel = {
+export type ModelsModifyOrderModel = {
     /**
      * The stock symbol
      * @type {string}
-     * @memberof Level3ModifyOrderModel
+     * @memberof ModelsModifyOrderModel
      */
     symbol?: string;
     /**
      * Original timestamp in nanoseconds since epoch
      * @type {number}
-     * @memberof Level3ModifyOrderModel
+     * @memberof ModelsModifyOrderModel
      */
     timestamp_nanos?: number;
     /**
      * Time when the order was modified as DateTime (UTC)
      * @type {Date}
-     * @memberof Level3ModifyOrderModel
+     * @memberof ModelsModifyOrderModel
      */
     timestamp?: Date;
     /**
      * Order identifier reference
      * @type {number}
-     * @memberof Level3ModifyOrderModel
+     * @memberof ModelsModifyOrderModel
      */
     order_id_reference?: number;
     /**
      * Indicates if priority is reseted
      * @type {boolean}
-     * @memberof Level3ModifyOrderModel
+     * @memberof ModelsModifyOrderModel
      */
     is_priority_reset?: boolean;
     /**
      * New total quoted size in number of shares
      * @type {number}
-     * @memberof Level3ModifyOrderModel
+     * @memberof ModelsModifyOrderModel
      */
     size?: number;
     /**
      * Price as decimal
      * @type {number}
-     * @memberof Level3ModifyOrderModel
+     * @memberof ModelsModifyOrderModel
      */
     price?: number;
+}
+
+/**
+ * Represents the response DTO for official price information
+ * @export
+ */
+export type ModelsOfficialPriceModel = {
+    /**
+     * The stock symbol
+     * @type {string}
+     * @memberof ModelsOfficialPriceModel
+     */
+    symbol?: string;
+    /**
+     * Original timestamp in nanoseconds since epoch
+     * @type {number}
+     * @memberof ModelsOfficialPriceModel
+     */
+    timestamp_nanos?: number;
+    /**
+     * Time when the official price was recorded as DateTime
+     * @type {Date}
+     * @memberof ModelsOfficialPriceModel
+     */
+    timestamp?: Date;
+    /**
+     * Type of price as byte value
+     * @type {number}
+     * @memberof ModelsOfficialPriceModel
+     */
+    price_type?: number;
+    /**
+     * Type of price as character string
+     * @type {string}
+     * @memberof ModelsOfficialPriceModel
+     */
+    price_type_code?: string;
+    /**
+     * Human-readable description of the price type
+     * @type {string}
+     * @memberof ModelsOfficialPriceModel
+     */
+    price_type_text?: string;
+    /**
+     * Indicates if the price type is \'IEX Official Opening Price\' (\'Q\'/0x51).
+     * @type {boolean}
+     * @memberof ModelsOfficialPriceModel
+     */
+    is_price_type_opening?: boolean;
+    /**
+     * Indicates if the price type is \'IEX Official Closing Price\' (\'M\'/0x4d).
+     * @type {boolean}
+     * @memberof ModelsOfficialPriceModel
+     */
+    is_price_type_closing?: boolean;
+    /**
+     * Official price as decimal
+     * @type {number}
+     * @memberof ModelsOfficialPriceModel
+     */
+    official_price?: number;
+}
+
+/**
+ * Represents the response DTO for operational halt status information
+ * @export
+ */
+export type ModelsOperationalHaltStatusModel = {
+    /**
+     * The stock symbol
+     * @type {string}
+     * @memberof ModelsOperationalHaltStatusModel
+     */
+    symbol?: string;
+    /**
+     * Original timestamp in nanoseconds since epoch
+     * @type {number}
+     * @memberof ModelsOperationalHaltStatusModel
+     */
+    timestamp_nanos?: number;
+    /**
+     * Time when the operational halt status was recorded as DateTime
+     * @type {Date}
+     * @memberof ModelsOperationalHaltStatusModel
+     */
+    timestamp?: Date;
+    /**
+     * Operational halt status as byte value
+     * @type {number}
+     * @memberof ModelsOperationalHaltStatusModel
+     */
+    operational_halt_status?: number;
+    /**
+     * Operational halt status as character string
+     * @type {string}
+     * @memberof ModelsOperationalHaltStatusModel
+     */
+    operational_halt_status_code?: string;
+    /**
+     * Human-readable description of the operational halt status
+     * @type {string}
+     * @memberof ModelsOperationalHaltStatusModel
+     */
+    operational_halt_status_text?: string;
+    /**
+     * Indicates if the status is \'IEX specific operational trading halt\' (\'O\'/0x4f).
+     * @type {boolean}
+     * @memberof ModelsOperationalHaltStatusModel
+     */
+    is_operationally_halted?: boolean;
+    /**
+     * Indicates if the status is \'Not operationally halted on IEX\' (\'N\'/0x4e).
+     * @type {boolean}
+     * @memberof ModelsOperationalHaltStatusModel
+     */
+    is_not_operationally_halted?: boolean;
 }
 
 /**
  * Represents the response DTO for Level-3 order book information
  * @export
  */
-export type Level3OrderBookModel = {
+export type ModelsOrderBookModel = {
     /**
      * 
-     * @type {Level3AddOrderModel}
-     * @memberof Level3OrderBookModel
+     * @type {ModelsAddOrderModel}
+     * @memberof ModelsOrderBookModel
      */
-    add_order?: Level3AddOrderModel;
+    add_order?: ModelsAddOrderModel;
     /**
      * 
-     * @type {Level3DeleteOrderModel}
-     * @memberof Level3OrderBookModel
+     * @type {ModelsDeleteOrderModel}
+     * @memberof ModelsOrderBookModel
      */
-    delete_order?: Level3DeleteOrderModel;
+    delete_order?: ModelsDeleteOrderModel;
     /**
      * 
-     * @type {Level3ModifyOrderModel}
-     * @memberof Level3OrderBookModel
+     * @type {ModelsModifyOrderModel}
+     * @memberof ModelsOrderBookModel
      */
-    modify_order?: Level3ModifyOrderModel;
+    modify_order?: ModelsModifyOrderModel;
     /**
      * 
-     * @type {Level3ExecutedOrderModel}
-     * @memberof Level3OrderBookModel
+     * @type {ModelsExecutedOrderModel}
+     * @memberof ModelsOrderBookModel
      */
-    executed_order?: Level3ExecutedOrderModel;
+    executed_order?: ModelsExecutedOrderModel;
     /**
      * 
-     * @type {Level3ClearBookModel}
-     * @memberof Level3OrderBookModel
+     * @type {ModelsClearBookModel}
+     * @memberof ModelsOrderBookModel
      */
-    clear_book?: Level3ClearBookModel;
+    clear_book?: ModelsClearBookModel;
+}
+
+/**
+ * Represents the response DTO for retail liquidity indicator information
+ * @export
+ */
+export type ModelsRetailLiquidityIndicatorModel = {
+    /**
+     * The stock symbol
+     * @type {string}
+     * @memberof ModelsRetailLiquidityIndicatorModel
+     */
+    symbol?: string;
+    /**
+     * Original timestamp in nanoseconds since epoch
+     * @type {number}
+     * @memberof ModelsRetailLiquidityIndicatorModel
+     */
+    timestamp_nanos?: number;
+    /**
+     * Time when the retail liquidity indicator was recorded as DateTime
+     * @type {Date}
+     * @memberof ModelsRetailLiquidityIndicatorModel
+     */
+    timestamp?: Date;
+    /**
+     * Retail liquidity indicator as byte value
+     * @type {number}
+     * @memberof ModelsRetailLiquidityIndicatorModel
+     */
+    retail_liquidity_indicator?: number;
+    /**
+     * Retail liquidity indicator as character string
+     * @type {string}
+     * @memberof ModelsRetailLiquidityIndicatorModel
+     */
+    retail_liquidity_indicator_code?: string;
+    /**
+     * Human-readable description of the retail liquidity indicator
+     * @type {string}
+     * @memberof ModelsRetailLiquidityIndicatorModel
+     */
+    retail_liquidity_indicator_text?: string;
+    /**
+     * Indicates if the indicator is \'Not Applicable\' (\' \'/0x20).
+     * @type {boolean}
+     * @memberof ModelsRetailLiquidityIndicatorModel
+     */
+    is_retail_indicator_not_applicable?: boolean;
+    /**
+     * Indicates if there is \'Buy interest for Retail\' (\'A\'/0x41).
+     * @type {boolean}
+     * @memberof ModelsRetailLiquidityIndicatorModel
+     */
+    is_retail_indicator_buy_interest?: boolean;
+    /**
+     * Indicates if there is \'Sell interest for Retail\' (\'B\'/0x42).
+     * @type {boolean}
+     * @memberof ModelsRetailLiquidityIndicatorModel
+     */
+    is_retail_indicator_sell_interest?: boolean;
+    /**
+     * Indicates if there is \'Buy and sell interest for Retail\' (\'C\'/0x43).
+     * @type {boolean}
+     * @memberof ModelsRetailLiquidityIndicatorModel
+     */
+    is_retail_indicator_buy_and_sell_interest?: boolean;
+}
+
+/**
+ * Represents the response DTO for security directory information
+ * @export
+ */
+export type ModelsSecurityDirectoryModel = {
+    /**
+     * The stock symbol
+     * @type {string}
+     * @memberof ModelsSecurityDirectoryModel
+     */
+    symbol?: string;
+    /**
+     * Original timestamp in nanoseconds since epoch
+     * @type {number}
+     * @memberof ModelsSecurityDirectoryModel
+     */
+    timestamp_nanos?: number;
+    /**
+     * Time when the security directory information was recorded as DateTime
+     * @type {Date}
+     * @memberof ModelsSecurityDirectoryModel
+     */
+    timestamp?: Date;
+    /**
+     * Flags for the security
+     * @type {number}
+     * @memberof ModelsSecurityDirectoryModel
+     */
+    flags?: number;
+    /**
+     * Number of shares that represent a round lot
+     * @type {number}
+     * @memberof ModelsSecurityDirectoryModel
+     */
+    round_lot_size?: number;
+    /**
+     * Adjusted previous official closing price as decimal
+     * @type {number}
+     * @memberof ModelsSecurityDirectoryModel
+     */
+    adjusted_poc_price?: number;
+    /**
+     * LULD tier as byte value
+     * @type {number}
+     * @memberof ModelsSecurityDirectoryModel
+     */
+    luld_tier?: number;
+    /**
+     * LULD tier as numeric string
+     * @type {string}
+     * @memberof ModelsSecurityDirectoryModel
+     */
+    luld_tier_code?: string;
+    /**
+     * Human-readable description of the LULD tier
+     * @type {string}
+     * @memberof ModelsSecurityDirectoryModel
+     */
+    luld_tier_text?: string;
+    /**
+     * Indicates if LULD Tier is \'Not applicable\' (0x0).
+     * @type {boolean}
+     * @memberof ModelsSecurityDirectoryModel
+     */
+    is_luld_tier_not_applicable?: boolean;
+    /**
+     * Indicates if LULD Tier is \'Tier 1 NMS Stock\' (0x1).
+     * @type {boolean}
+     * @memberof ModelsSecurityDirectoryModel
+     */
+    is_luld_tier1?: boolean;
+    /**
+     * Indicates if LULD Tier is \'Tier 2 NMS Stock\' (0x2).
+     * @type {boolean}
+     * @memberof ModelsSecurityDirectoryModel
+     */
+    is_luld_tier2?: boolean;
+}
+
+/**
+ * Represents the response DTO for security event information
+ * @export
+ */
+export type ModelsSecurityEventModel = {
+    /**
+     * The stock symbol
+     * @type {string}
+     * @memberof ModelsSecurityEventModel
+     */
+    symbol?: string;
+    /**
+     * Original timestamp in nanoseconds since epoch
+     * @type {number}
+     * @memberof ModelsSecurityEventModel
+     */
+    timestamp_nanos?: number;
+    /**
+     * Time when the security event was recorded as DateTime
+     * @type {Date}
+     * @memberof ModelsSecurityEventModel
+     */
+    timestamp?: Date;
+    /**
+     * Security event as byte value
+     * @type {number}
+     * @memberof ModelsSecurityEventModel
+     */
+    security_event?: number;
+    /**
+     * Security event as character string (\'O\' or \'C\')
+     * @type {string}
+     * @memberof ModelsSecurityEventModel
+     */
+    security_event_code?: string;
+    /**
+     * Human-readable description of the security event
+     * @type {string}
+     * @memberof ModelsSecurityEventModel
+     */
+    security_event_text?: string;
+    /**
+     * Indicates if the security event is \'Opening Process Complete\' (\'O\'/0x4f).
+     * @type {boolean}
+     * @memberof ModelsSecurityEventModel
+     */
+    is_opening_process_complete?: boolean;
+    /**
+     * Indicates if the security event is \'Closing Process Complete\' (\'C\'/0x43).
+     * @type {boolean}
+     * @memberof ModelsSecurityEventModel
+     */
+    is_closing_process_complete?: boolean;
+}
+
+/**
+ * Represents the response DTO for short sale price test status information
+ * @export
+ */
+export type ModelsShortSalePriceTestStatusModel = {
+    /**
+     * The stock symbol
+     * @type {string}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    symbol?: string;
+    /**
+     * Original timestamp in nanoseconds since epoch
+     * @type {number}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    timestamp_nanos?: number;
+    /**
+     * Time when the short sale price test status was recorded as DateTime
+     * @type {Date}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    timestamp?: Date;
+    /**
+     * Short sale price test status as byte value
+     * @type {number}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    short_sale_price_test_status?: number;
+    /**
+     * Short sale price test status as hex string
+     * @type {string}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    short_sale_price_test_status_code?: string;
+    /**
+     * Human-readable description of the short sale price test status
+     * @type {string}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    short_sale_price_test_status_text?: string;
+    /**
+     * Indicates if the short sale price test is not in effect
+     * @type {boolean}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    is_short_sale_price_test_not_in_effect?: boolean;
+    /**
+     * Indicates if the short sale price test is in effect
+     * @type {boolean}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    is_short_sale_price_test_in_effect?: boolean;
+    /**
+     * Detail of the short sale price test as byte value
+     * @type {number}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    detail?: number;
+    /**
+     * Detail of the short sale price test as character string
+     * @type {string}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    detail_code?: string;
+    /**
+     * Human-readable description of the short sale price test detail
+     * @type {string}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    detail_text?: string;
+    /**
+     * Indicates if there is no price test in place
+     * @type {boolean}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    is_detail_no_price_test?: boolean;
+    /**
+     * Indicates if the short sale price test restriction is in effect due to an intraday price drop
+     * @type {boolean}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    is_detail_activated?: boolean;
+    /**
+     * Indicates if the short sale price test restriction remains in effect from prior day
+     * @type {boolean}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    is_detail_continued?: boolean;
+    /**
+     * Indicates if the short sale price test restriction is deactivated
+     * @type {boolean}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    is_detail_deactivated?: boolean;
+    /**
+     * Indicates if the detail is not available
+     * @type {boolean}
+     * @memberof ModelsShortSalePriceTestStatusModel
+     */
+    is_detail_not_available?: boolean;
+}
+
+/**
+ * Represents the response DTO for trading status information
+ * @export
+ */
+export type ModelsTradingStatusModel = {
+    /**
+     * The stock symbol
+     * @type {string}
+     * @memberof ModelsTradingStatusModel
+     */
+    symbol?: string;
+    /**
+     * Original timestamp in nanoseconds since epoch
+     * @type {number}
+     * @memberof ModelsTradingStatusModel
+     */
+    timestamp_nanos?: number;
+    /**
+     * Time when the trading status was recorded as DateTime
+     * @type {Date}
+     * @memberof ModelsTradingStatusModel
+     */
+    timestamp?: Date;
+    /**
+     * Gets whether the security is currently trading on IEX
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_trading_live?: boolean;
+    /**
+     * Gets whether the security is halted across all US equity markets
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_trading_halted?: boolean;
+    /**
+     * Gets whether the security is in Order Acceptance Period on IEX
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_trading_in_order_acceptance_period?: boolean;
+    /**
+     * Gets whether the security is paused and in Order Acceptance Period on IEX
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_trading_paused?: boolean;
+    /**
+     * Gets whether the halt reason is News Pending
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_reason_halt_news_pending?: boolean;
+    /**
+     * Gets whether the halt reason is IPO Not Yet Trading
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_reason_ipo_not_yet_trading?: boolean;
+    /**
+     * Gets whether the halt reason is IPO Deferred
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_reason_ipo_deferred?: boolean;
+    /**
+     * Gets whether the order acceptance period reason is Halt News Dissemination
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_reason_halt_news_dissemination?: boolean;
+    /**
+     * Gets whether the order acceptance period reason is IPO Order Acceptance Period
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_reason_ipo_order_acceptance_period?: boolean;
+    /**
+     * Gets whether the order acceptance period reason is IPO Pre-Launch Period
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_reason_ipo_pre_launch_period?: boolean;
+    /**
+     * Gets whether the order acceptance period reason is Market-Wide Circuit Breaker Level 1 – Breached
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_reason_market_wide_circuit_breaker_level1?: boolean;
+    /**
+     * Gets whether the order acceptance period reason is Market-Wide Circuit Breaker Level 2 – Breached
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_reason_market_wide_circuit_breaker_level2?: boolean;
+    /**
+     * Gets whether the halt reason is Market-Wide Circuit Breaker Level 3 – Breached
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_reason_market_wide_circuit_breaker_level3?: boolean;
+    /**
+     * Gets whether the reason is Not Applicable
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_reason_not_applicable?: boolean;
+    /**
+     * Gets whether the halt reason is Not Available
+     * @type {boolean}
+     * @memberof ModelsTradingStatusModel
+     */
+    is_reason_not_available?: boolean;
 }
 
 /**
  * Represents a timeseries item with price and volume information.
  * @export
  */
-export type OHLCVExchangeTimeseriesItem = {
+export type OHLCVTimeSeriesExchangeTimeseriesItem = {
     /**
      * Gets or sets the start time of the time period.
      * @type {Date}
-     * @memberof OHLCVExchangeTimeseriesItem
+     * @memberof OHLCVTimeSeriesExchangeTimeseriesItem
      */
     time_period_start?: Date;
     /**
      * Gets or sets the end time of the time period.
      * @type {Date}
-     * @memberof OHLCVExchangeTimeseriesItem
+     * @memberof OHLCVTimeSeriesExchangeTimeseriesItem
      */
     time_period_end?: Date;
     /**
      * Gets or sets the time when the price opened.
      * @type {Date}
-     * @memberof OHLCVExchangeTimeseriesItem
+     * @memberof OHLCVTimeSeriesExchangeTimeseriesItem
      */
     time_open?: Date;
     /**
      * Gets or sets the time when the price closed.
      * @type {Date}
-     * @memberof OHLCVExchangeTimeseriesItem
+     * @memberof OHLCVTimeSeriesExchangeTimeseriesItem
      */
     time_close?: Date;
     /**
      * Gets or sets the opening price.
      * @type {number}
-     * @memberof OHLCVExchangeTimeseriesItem
+     * @memberof OHLCVTimeSeriesExchangeTimeseriesItem
      */
     price_open?: number;
     /**
      * Gets or sets the highest price during the time period.
      * @type {number}
-     * @memberof OHLCVExchangeTimeseriesItem
+     * @memberof OHLCVTimeSeriesExchangeTimeseriesItem
      */
     price_high?: number;
     /**
      * Gets or sets the lowest price during the time period.
      * @type {number}
-     * @memberof OHLCVExchangeTimeseriesItem
+     * @memberof OHLCVTimeSeriesExchangeTimeseriesItem
      */
     price_low?: number;
     /**
      * Gets or sets the closing price.
      * @type {number}
-     * @memberof OHLCVExchangeTimeseriesItem
+     * @memberof OHLCVTimeSeriesExchangeTimeseriesItem
      */
     price_close?: number;
     /**
      * Gets or sets the total volume traded during the time period.
      * @type {number}
-     * @memberof OHLCVExchangeTimeseriesItem
+     * @memberof OHLCVTimeSeriesExchangeTimeseriesItem
      */
     volume_traded?: number;
     /**
      * Gets or sets the number of trades executed during the time period.
      * @type {number}
-     * @memberof OHLCVExchangeTimeseriesItem
+     * @memberof OHLCVTimeSeriesExchangeTimeseriesItem
      */
     trades_count?: number;
     /**
      * 
      * @type {string}
-     * @memberof OHLCVExchangeTimeseriesItem
+     * @memberof OHLCVTimeSeriesExchangeTimeseriesItem
      */
     symbol_id_exchange?: string;
 }
@@ -1622,65 +1701,65 @@ export type OHLCVExchangeTimeseriesItem = {
  * Represents a timeseries item with price and volume information.
  * @export
  */
-export type OHLCVTimeseriesItem = {
+export type OHLCVTimeSeriesTimeseriesItem = {
     /**
      * Gets or sets the start time of the time period.
      * @type {Date}
-     * @memberof OHLCVTimeseriesItem
+     * @memberof OHLCVTimeSeriesTimeseriesItem
      */
     time_period_start?: Date;
     /**
      * Gets or sets the end time of the time period.
      * @type {Date}
-     * @memberof OHLCVTimeseriesItem
+     * @memberof OHLCVTimeSeriesTimeseriesItem
      */
     time_period_end?: Date;
     /**
      * Gets or sets the time when the price opened.
      * @type {Date}
-     * @memberof OHLCVTimeseriesItem
+     * @memberof OHLCVTimeSeriesTimeseriesItem
      */
     time_open?: Date;
     /**
      * Gets or sets the time when the price closed.
      * @type {Date}
-     * @memberof OHLCVTimeseriesItem
+     * @memberof OHLCVTimeSeriesTimeseriesItem
      */
     time_close?: Date;
     /**
      * Gets or sets the opening price.
      * @type {number}
-     * @memberof OHLCVTimeseriesItem
+     * @memberof OHLCVTimeSeriesTimeseriesItem
      */
     price_open?: number;
     /**
      * Gets or sets the highest price during the time period.
      * @type {number}
-     * @memberof OHLCVTimeseriesItem
+     * @memberof OHLCVTimeSeriesTimeseriesItem
      */
     price_high?: number;
     /**
      * Gets or sets the lowest price during the time period.
      * @type {number}
-     * @memberof OHLCVTimeseriesItem
+     * @memberof OHLCVTimeSeriesTimeseriesItem
      */
     price_low?: number;
     /**
      * Gets or sets the closing price.
      * @type {number}
-     * @memberof OHLCVTimeseriesItem
+     * @memberof OHLCVTimeSeriesTimeseriesItem
      */
     price_close?: number;
     /**
      * Gets or sets the total volume traded during the time period.
      * @type {number}
-     * @memberof OHLCVTimeseriesItem
+     * @memberof OHLCVTimeSeriesTimeseriesItem
      */
     volume_traded?: number;
     /**
      * Gets or sets the number of trades executed during the time period.
      * @type {number}
-     * @memberof OHLCVTimeseriesItem
+     * @memberof OHLCVTimeSeriesTimeseriesItem
      */
     trades_count?: number;
 }
@@ -1689,122 +1768,43 @@ export type OHLCVTimeseriesItem = {
  * Represents a timeseries period used in exchange rate data.
  * @export
  */
-export type OHLCVTimeseriesPeriod = {
+export type OHLCVTimeSeriesTimeseriesPeriod = {
     /**
      * Gets or sets the period ID.
      * @type {string}
-     * @memberof OHLCVTimeseriesPeriod
+     * @memberof OHLCVTimeSeriesTimeseriesPeriod
      */
     period_id?: string;
     /**
      * Gets or sets the length of the period in seconds.
      * @type {number}
-     * @memberof OHLCVTimeseriesPeriod
+     * @memberof OHLCVTimeSeriesTimeseriesPeriod
      */
     length_seconds?: number;
     /**
      * Gets or sets the length of the period in months.
      * @type {number}
-     * @memberof OHLCVTimeseriesPeriod
+     * @memberof OHLCVTimeSeriesTimeseriesPeriod
      */
     length_months?: number;
     /**
      * Gets or sets the unit count.
      * @type {number}
-     * @memberof OHLCVTimeseriesPeriod
+     * @memberof OHLCVTimeSeriesTimeseriesPeriod
      */
     unit_count?: number;
     /**
      * Gets or sets the unit name.
      * @type {string}
-     * @memberof OHLCVTimeseriesPeriod
+     * @memberof OHLCVTimeSeriesTimeseriesPeriod
      */
     unit_name?: string;
     /**
      * Gets or sets the display name of the timeseries period.
      * @type {string}
-     * @memberof OHLCVTimeseriesPeriod
+     * @memberof OHLCVTimeSeriesTimeseriesPeriod
      */
     display_name?: string;
-}
-
-/**
- * Represents the response DTO for a single trade event (report or break).
- * @export
- */
-export type TradeTradeModel = {
-    /**
-     * Indicates if this record represents a trade break (true) or a trade report (false).
-     * @type {boolean}
-     * @memberof TradeTradeModel
-     */
-    is_trade_break?: boolean;
-    /**
-     * The stock symbol.
-     * @type {string}
-     * @memberof TradeTradeModel
-     */
-    symbol?: string;
-    /**
-     * Original timestamp in nanoseconds since epoch.
-     * @type {number}
-     * @memberof TradeTradeModel
-     */
-    timestamp_nanos?: number;
-    /**
-     * Time when the event was recorded as DateTime (UTC).
-     * @type {Date}
-     * @memberof TradeTradeModel
-     */
-    timestamp?: Date;
-    /**
-     * Trade volume (or break volume) in number of shares.
-     * @type {number}
-     * @memberof TradeTradeModel
-     */
-    size?: number;
-    /**
-     * Trade price (or break price) as decimal.
-     * @type {number}
-     * @memberof TradeTradeModel
-     */
-    price?: number;
-    /**
-     * IEX trade identifier (same for report and its corresponding break).
-     * @type {number}
-     * @memberof TradeTradeModel
-     */
-    trade_id?: number;
-    /**
-     * Bit 7 (Mask 0x80): Intermarket Sweep Flag. True: Intermarket Sweep Order (\"ISO\"). False: Non-Intermarket Sweep Order.
-     * @type {boolean}
-     * @memberof TradeTradeModel
-     */
-    is_intermarket_sweep?: boolean;
-    /**
-     * Bit 6 (Mask 0x40): Extended Hours Flag. True: Extended Hours Trade (i.e., Form T sale condition). False: Regular Market Session Trade.
-     * @type {boolean}
-     * @memberof TradeTradeModel
-     */
-    is_extended_hours_trade?: boolean;
-    /**
-     * Bit 5 (Mask 0x20): Odd Lot Flag. True: Odd Lot Trade. False: Round or Mixed Lot Trade.
-     * @type {boolean}
-     * @memberof TradeTradeModel
-     */
-    is_odd_lot_trade?: boolean;
-    /**
-     * Bit 4 (Mask 0x10): Trade Through Exempt Flag. True: Trade is not subject to Rule 611 (Trade Through) of SEC Reg. NMS. False: Trade is subject to Rule 611 (Trade Through) of SEC Reg. NMS. Applied when the taking order was an ISO that traded through a protected quotation, OR the NBBO was crossed at the time of the trade, OR the trade occurred through a self-helped venue\'s quotation, OR the trade was a single-price cross.
-     * @type {boolean}
-     * @memberof TradeTradeModel
-     */
-    is_trade_through_exempt?: boolean;
-    /**
-     * Bit 3 (Mask 0x08): Single-price Cross Trade Flag. True: Trade resulting from a single-price cross. False: Execution during continuous trading.
-     * @type {boolean}
-     * @memberof TradeTradeModel
-     */
-    is_single_price_cross_trade?: boolean;
 }
 
 
@@ -1858,7 +1858,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
                 throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling v1SymbolsExchangeIdGet.');
             }
             const localVarPath = `/v1/symbols/{exchange_id}`
-                .replace(`{${"exchange_id"}}`, encodeURIComponent(String(exchangeId)));
+                .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -1955,7 +1955,7 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
                 throw new RequiredError('_date','Required parameter _date was null or undefined when calling v1NativeIexAdminMessagesSymbolGet.');
             }
             const localVarPath = `/v1/native/iex/admin/messages/{symbol}`
-                .replace(`{${"symbol"}}`, encodeURIComponent(String(symbol)));
+                .replace('{symbol}', encodeURIComponent(String(symbol)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2040,7 +2040,7 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
                 throw new RequiredError('_date','Required parameter _date was null or undefined when calling v1NativeIexLevel1QuoteSymbolGet.');
             }
             const localVarPath = `/v1/native/iex/level1-quote/{symbol}`
-                .replace(`{${"symbol"}}`, encodeURIComponent(String(symbol)));
+                .replace('{symbol}', encodeURIComponent(String(symbol)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2085,7 +2085,7 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
                 throw new RequiredError('_date','Required parameter _date was null or undefined when calling v1NativeIexLevel2PriceLevelUpdateSymbolGet.');
             }
             const localVarPath = `/v1/native/iex/level2-price-level-update/{symbol}`
-                .replace(`{${"symbol"}}`, encodeURIComponent(String(symbol)));
+                .replace('{symbol}', encodeURIComponent(String(symbol)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2130,7 +2130,7 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
                 throw new RequiredError('_date','Required parameter _date was null or undefined when calling v1NativeIexLevel3OrderBookSymbolGet.');
             }
             const localVarPath = `/v1/native/iex/level3-order-book/{symbol}`
-                .replace(`{${"symbol"}}`, encodeURIComponent(String(symbol)));
+                .replace('{symbol}', encodeURIComponent(String(symbol)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2175,7 +2175,7 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
                 throw new RequiredError('_date','Required parameter _date was null or undefined when calling v1NativeIexTradeSymbolGet.');
             }
             const localVarPath = `/v1/native/iex/trade/{symbol}`
-                .replace(`{${"symbol"}}`, encodeURIComponent(String(symbol)));
+                .replace('{symbol}', encodeURIComponent(String(symbol)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2209,17 +2209,17 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
 };
 
 export type NativeIEXApiType = { 
-    v1NativeIexAdminMessagesSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<AdminAdminMessageModel>>,
+    v1NativeIexAdminMessagesSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<ModelsAdminMessageModel>>,
 
-    v1NativeIexAdminSystemEventGet(_date: Date, options?: RequestOptions): Promise<Array<AdminSystemEventModel>>,
+    v1NativeIexAdminSystemEventGet(_date: Date, options?: RequestOptions): Promise<Array<IEXSystemEventSystemEventModel>>,
 
-    v1NativeIexLevel1QuoteSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<Level1QuoteUpdateModel>>,
+    v1NativeIexLevel1QuoteSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<IEXQuoteUpdateQuoteUpdateModel>>,
 
-    v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<Level2PriceLevelUpdateModel>>,
+    v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>,
 
-    v1NativeIexLevel3OrderBookSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<Level3OrderBookModel>>,
+    v1NativeIexLevel3OrderBookSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<ModelsOrderBookModel>>,
 
-    v1NativeIexTradeSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<TradeTradeModel>>,
+    v1NativeIexTradeSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<IEXTradeTradeModel>>,
 }
 
 /**
@@ -2234,7 +2234,7 @@ export const NativeIEXApi = function(configuration?: Configuration, fetch: Fetch
          * @summary Get Admin Messages
          * @throws {RequiredError}
          */
-        v1NativeIexAdminMessagesSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<AdminAdminMessageModel>> {
+        v1NativeIexAdminMessagesSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<ModelsAdminMessageModel>> {
             const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexAdminMessagesSymbolGet(symbol, _date, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2249,7 +2249,7 @@ export const NativeIEXApi = function(configuration?: Configuration, fetch: Fetch
          * @summary Get System Events
          * @throws {RequiredError}
          */
-        v1NativeIexAdminSystemEventGet(_date: Date, options?: RequestOptions = {}): Promise<Array<AdminSystemEventModel>> {
+        v1NativeIexAdminSystemEventGet(_date: Date, options?: RequestOptions = {}): Promise<Array<IEXSystemEventSystemEventModel>> {
             const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexAdminSystemEventGet(_date, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2264,7 +2264,7 @@ export const NativeIEXApi = function(configuration?: Configuration, fetch: Fetch
          * @summary Get Level-1 Quotes
          * @throws {RequiredError}
          */
-        v1NativeIexLevel1QuoteSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<Level1QuoteUpdateModel>> {
+        v1NativeIexLevel1QuoteSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<IEXQuoteUpdateQuoteUpdateModel>> {
             const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexLevel1QuoteSymbolGet(symbol, _date, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2279,7 +2279,7 @@ export const NativeIEXApi = function(configuration?: Configuration, fetch: Fetch
          * @summary Get Level-2 Price Level Book
          * @throws {RequiredError}
          */
-        v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<Level2PriceLevelUpdateModel>> {
+        v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>> {
             const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, _date, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2294,7 +2294,7 @@ export const NativeIEXApi = function(configuration?: Configuration, fetch: Fetch
          * @summary Get Level-3 Order Book
          * @throws {RequiredError}
          */
-        v1NativeIexLevel3OrderBookSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<Level3OrderBookModel>> {
+        v1NativeIexLevel3OrderBookSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<ModelsOrderBookModel>> {
             const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexLevel3OrderBookSymbolGet(symbol, _date, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2309,7 +2309,7 @@ export const NativeIEXApi = function(configuration?: Configuration, fetch: Fetch
          * @summary Get Trades
          * @throws {RequiredError}
          */
-        v1NativeIexTradeSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<TradeTradeModel>> {
+        v1NativeIexTradeSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<IEXTradeTradeModel>> {
             const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexTradeSymbolGet(symbol, _date, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2352,7 +2352,7 @@ export const OhlcvApiFetchParamCreator = function (configuration?: Configuration
                 throw new RequiredError('timeEnd','Required parameter timeEnd was null or undefined when calling v1OhlcvExchangeExchangeIdHistoryGet.');
             }
             const localVarPath = `/v1/ohlcv/exchange/{exchange_id}/history`
-                .replace(`{${"exchange_id"}}`, encodeURIComponent(String(exchangeId)));
+                .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2409,8 +2409,8 @@ export const OhlcvApiFetchParamCreator = function (configuration?: Configuration
                 throw new RequiredError('periodId','Required parameter periodId was null or undefined when calling v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet.');
             }
             const localVarPath = `/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/history`
-                .replace(`{${"exchange_id"}}`, encodeURIComponent(String(exchangeId)))
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
+                .replace('{exchange_id}', encodeURIComponent(String(exchangeId)))
+                .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2471,8 +2471,8 @@ export const OhlcvApiFetchParamCreator = function (configuration?: Configuration
                 throw new RequiredError('periodId','Required parameter periodId was null or undefined when calling v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet.');
             }
             const localVarPath = `/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/latest`
-                .replace(`{${"exchange_id"}}`, encodeURIComponent(String(exchangeId)))
-                .replace(`{${"symbol_id"}}`, encodeURIComponent(String(symbolId)));
+                .replace('{exchange_id}', encodeURIComponent(String(exchangeId)))
+                .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
             const localVarUrlObj = url.parse(localVarPath, true);
             const localVarRequestOptions: RequestOptions = Object.assign({}, { method: 'GET' }, options);
             const localVarHeaderParameter = {};
@@ -2542,13 +2542,13 @@ export const OhlcvApiFetchParamCreator = function (configuration?: Configuration
 };
 
 export type OhlcvApiType = { 
-    v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, options?: RequestOptions): Promise<Array<OHLCVExchangeTimeseriesItem>>,
+    v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, options?: RequestOptions): Promise<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>,
 
-    v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId: string, symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, options?: RequestOptions): Promise<Array<OHLCVTimeseriesItem>>,
+    v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId: string, symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, options?: RequestOptions): Promise<Array<OHLCVTimeSeriesTimeseriesItem>>,
 
-    v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId: string, symbolId: string, periodId: string, limit?: number, options?: RequestOptions): Promise<Array<OHLCVTimeseriesItem>>,
+    v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId: string, symbolId: string, periodId: string, limit?: number, options?: RequestOptions): Promise<Array<OHLCVTimeSeriesTimeseriesItem>>,
 
-    v1OhlcvPeriodsGet(options?: RequestOptions): Promise<Array<OHLCVTimeseriesPeriod>>,
+    v1OhlcvPeriodsGet(options?: RequestOptions): Promise<Array<OHLCVTimeSeriesTimeseriesPeriod>>,
 }
 
 /**
@@ -2563,7 +2563,7 @@ export const OhlcvApi = function(configuration?: Configuration, fetch: FetchAPI 
          * @summary Historical data by exchange
          * @throws {RequiredError}
          */
-        v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, options?: RequestOptions = {}): Promise<Array<OHLCVExchangeTimeseriesItem>> {
+        v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, options?: RequestOptions = {}): Promise<Array<OHLCVTimeSeriesExchangeTimeseriesItem>> {
             const localVarFetchArgs = OhlcvApiFetchParamCreator(configuration).v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2578,7 +2578,7 @@ export const OhlcvApi = function(configuration?: Configuration, fetch: FetchAPI 
          * @summary Historical data
          * @throws {RequiredError}
          */
-        v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId: string, symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, options?: RequestOptions = {}): Promise<Array<OHLCVTimeseriesItem>> {
+        v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId: string, symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, options?: RequestOptions = {}): Promise<Array<OHLCVTimeSeriesTimeseriesItem>> {
             const localVarFetchArgs = OhlcvApiFetchParamCreator(configuration).v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2593,7 +2593,7 @@ export const OhlcvApi = function(configuration?: Configuration, fetch: FetchAPI 
          * @summary Latest data
          * @throws {RequiredError}
          */
-        v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId: string, symbolId: string, periodId: string, limit?: number, options?: RequestOptions = {}): Promise<Array<OHLCVTimeseriesItem>> {
+        v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId: string, symbolId: string, periodId: string, limit?: number, options?: RequestOptions = {}): Promise<Array<OHLCVTimeSeriesTimeseriesItem>> {
             const localVarFetchArgs = OhlcvApiFetchParamCreator(configuration).v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
@@ -2608,7 +2608,7 @@ export const OhlcvApi = function(configuration?: Configuration, fetch: FetchAPI 
          * @summary List all periods
          * @throws {RequiredError}
          */
-        v1OhlcvPeriodsGet(options?: RequestOptions = {}): Promise<Array<OHLCVTimeseriesPeriod>> {
+        v1OhlcvPeriodsGet(options?: RequestOptions = {}): Promise<Array<OHLCVTimeSeriesTimeseriesPeriod>> {
             const localVarFetchArgs = OhlcvApiFetchParamCreator(configuration).v1OhlcvPeriodsGet(options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {

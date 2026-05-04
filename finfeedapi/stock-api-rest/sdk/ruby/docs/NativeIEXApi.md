@@ -14,7 +14,7 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 ## v1_native_iex_admin_messages_symbol_get
 
-> <Array<AdminAdminMessageModel>> v1_native_iex_admin_messages_symbol_get(symbol, date)
+> <Array<ModelsAdminMessageModel>> v1_native_iex_admin_messages_symbol_get(symbol, date)
 
 Get Admin Messages
 
@@ -51,7 +51,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<AdminAdminMessageModel>>, Integer, Hash)> v1_native_iex_admin_messages_symbol_get_with_http_info(symbol, date)
+> <Array(<Array<ModelsAdminMessageModel>>, Integer, Hash)> v1_native_iex_admin_messages_symbol_get_with_http_info(symbol, date)
 
 ```ruby
 begin
@@ -59,7 +59,7 @@ begin
   data, status_code, headers = api_instance.v1_native_iex_admin_messages_symbol_get_with_http_info(symbol, date)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<AdminAdminMessageModel>>
+  p data # => <Array<ModelsAdminMessageModel>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NativeIEXApi->v1_native_iex_admin_messages_symbol_get_with_http_info: #{e}"
 end
@@ -74,7 +74,7 @@ end
 
 ### Return type
 
-[**Array&lt;AdminAdminMessageModel&gt;**](AdminAdminMessageModel.md)
+[**Array&lt;ModelsAdminMessageModel&gt;**](ModelsAdminMessageModel.md)
 
 ### Authorization
 
@@ -88,7 +88,7 @@ end
 
 ## v1_native_iex_admin_system_event_get
 
-> <Array<AdminSystemEventModel>> v1_native_iex_admin_system_event_get(date)
+> <Array<IEXSystemEventSystemEventModel>> v1_native_iex_admin_system_event_get(date)
 
 Get System Events
 
@@ -124,7 +124,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<AdminSystemEventModel>>, Integer, Hash)> v1_native_iex_admin_system_event_get_with_http_info(date)
+> <Array(<Array<IEXSystemEventSystemEventModel>>, Integer, Hash)> v1_native_iex_admin_system_event_get_with_http_info(date)
 
 ```ruby
 begin
@@ -132,7 +132,7 @@ begin
   data, status_code, headers = api_instance.v1_native_iex_admin_system_event_get_with_http_info(date)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<AdminSystemEventModel>>
+  p data # => <Array<IEXSystemEventSystemEventModel>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NativeIEXApi->v1_native_iex_admin_system_event_get_with_http_info: #{e}"
 end
@@ -146,7 +146,7 @@ end
 
 ### Return type
 
-[**Array&lt;AdminSystemEventModel&gt;**](AdminSystemEventModel.md)
+[**Array&lt;IEXSystemEventSystemEventModel&gt;**](IEXSystemEventSystemEventModel.md)
 
 ### Authorization
 
@@ -160,7 +160,7 @@ end
 
 ## v1_native_iex_level1_quote_symbol_get
 
-> <Array<Level1QuoteUpdateModel>> v1_native_iex_level1_quote_symbol_get(symbol, date)
+> <Array<IEXQuoteUpdateQuoteUpdateModel>> v1_native_iex_level1_quote_symbol_get(symbol, date)
 
 Get Level-1 Quotes
 
@@ -197,7 +197,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<Level1QuoteUpdateModel>>, Integer, Hash)> v1_native_iex_level1_quote_symbol_get_with_http_info(symbol, date)
+> <Array(<Array<IEXQuoteUpdateQuoteUpdateModel>>, Integer, Hash)> v1_native_iex_level1_quote_symbol_get_with_http_info(symbol, date)
 
 ```ruby
 begin
@@ -205,7 +205,7 @@ begin
   data, status_code, headers = api_instance.v1_native_iex_level1_quote_symbol_get_with_http_info(symbol, date)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<Level1QuoteUpdateModel>>
+  p data # => <Array<IEXQuoteUpdateQuoteUpdateModel>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NativeIEXApi->v1_native_iex_level1_quote_symbol_get_with_http_info: #{e}"
 end
@@ -220,7 +220,7 @@ end
 
 ### Return type
 
-[**Array&lt;Level1QuoteUpdateModel&gt;**](Level1QuoteUpdateModel.md)
+[**Array&lt;IEXQuoteUpdateQuoteUpdateModel&gt;**](IEXQuoteUpdateQuoteUpdateModel.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ end
 
 ## v1_native_iex_level2_price_level_update_symbol_get
 
-> <Array<Level2PriceLevelUpdateModel>> v1_native_iex_level2_price_level_update_symbol_get(symbol, date)
+> <Array<IEXPriceLevelUpdatePriceLevelUpdateModel>> v1_native_iex_level2_price_level_update_symbol_get(symbol, date)
 
 Get Level-2 Price Level Book
 
@@ -271,7 +271,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<Level2PriceLevelUpdateModel>>, Integer, Hash)> v1_native_iex_level2_price_level_update_symbol_get_with_http_info(symbol, date)
+> <Array(<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>, Integer, Hash)> v1_native_iex_level2_price_level_update_symbol_get_with_http_info(symbol, date)
 
 ```ruby
 begin
@@ -279,7 +279,7 @@ begin
   data, status_code, headers = api_instance.v1_native_iex_level2_price_level_update_symbol_get_with_http_info(symbol, date)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<Level2PriceLevelUpdateModel>>
+  p data # => <Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NativeIEXApi->v1_native_iex_level2_price_level_update_symbol_get_with_http_info: #{e}"
 end
@@ -294,7 +294,7 @@ end
 
 ### Return type
 
-[**Array&lt;Level2PriceLevelUpdateModel&gt;**](Level2PriceLevelUpdateModel.md)
+[**Array&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt;**](IEXPriceLevelUpdatePriceLevelUpdateModel.md)
 
 ### Authorization
 
@@ -308,7 +308,7 @@ end
 
 ## v1_native_iex_level3_order_book_symbol_get
 
-> <Array<Level3OrderBookModel>> v1_native_iex_level3_order_book_symbol_get(symbol, date)
+> <Array<ModelsOrderBookModel>> v1_native_iex_level3_order_book_symbol_get(symbol, date)
 
 Get Level-3 Order Book
 
@@ -345,7 +345,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<Level3OrderBookModel>>, Integer, Hash)> v1_native_iex_level3_order_book_symbol_get_with_http_info(symbol, date)
+> <Array(<Array<ModelsOrderBookModel>>, Integer, Hash)> v1_native_iex_level3_order_book_symbol_get_with_http_info(symbol, date)
 
 ```ruby
 begin
@@ -353,7 +353,7 @@ begin
   data, status_code, headers = api_instance.v1_native_iex_level3_order_book_symbol_get_with_http_info(symbol, date)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<Level3OrderBookModel>>
+  p data # => <Array<ModelsOrderBookModel>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NativeIEXApi->v1_native_iex_level3_order_book_symbol_get_with_http_info: #{e}"
 end
@@ -368,7 +368,7 @@ end
 
 ### Return type
 
-[**Array&lt;Level3OrderBookModel&gt;**](Level3OrderBookModel.md)
+[**Array&lt;ModelsOrderBookModel&gt;**](ModelsOrderBookModel.md)
 
 ### Authorization
 
@@ -382,7 +382,7 @@ end
 
 ## v1_native_iex_trade_symbol_get
 
-> <Array<TradeTradeModel>> v1_native_iex_trade_symbol_get(symbol, date)
+> <Array<IEXTradeTradeModel>> v1_native_iex_trade_symbol_get(symbol, date)
 
 Get Trades
 
@@ -419,7 +419,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<TradeTradeModel>>, Integer, Hash)> v1_native_iex_trade_symbol_get_with_http_info(symbol, date)
+> <Array(<Array<IEXTradeTradeModel>>, Integer, Hash)> v1_native_iex_trade_symbol_get_with_http_info(symbol, date)
 
 ```ruby
 begin
@@ -427,7 +427,7 @@ begin
   data, status_code, headers = api_instance.v1_native_iex_trade_symbol_get_with_http_info(symbol, date)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<TradeTradeModel>>
+  p data # => <Array<IEXTradeTradeModel>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NativeIEXApi->v1_native_iex_trade_symbol_get_with_http_info: #{e}"
 end
@@ -442,7 +442,7 @@ end
 
 ### Return type
 
-[**Array&lt;TradeTradeModel&gt;**](TradeTradeModel.md)
+[**Array&lt;IEXTradeTradeModel&gt;**](IEXTradeTradeModel.md)
 
 ### Authorization
 

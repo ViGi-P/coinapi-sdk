@@ -13,7 +13,7 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 <a id="v1nativeiexadminmessagessymbolget"></a>
 # **V1NativeIexAdminMessagesSymbolGet**
-> List&lt;AdminAdminMessageModel&gt; V1NativeIexAdminMessagesSymbolGet (string symbol, DateTime date)
+> List&lt;ModelsAdminMessageModel&gt; V1NativeIexAdminMessagesSymbolGet (string symbol, DateTime date)
 
 Get Admin Messages
 
@@ -27,7 +27,7 @@ Get Admin Messages
 
 ### Return type
 
-[**List&lt;AdminAdminMessageModel&gt;**](AdminAdminMessageModel.md)
+[**List&lt;ModelsAdminMessageModel&gt;**](ModelsAdminMessageModel.md)
 
 ### Authorization
 
@@ -48,7 +48,7 @@ Get Admin Messages
 
 <a id="v1nativeiexadminsystemeventget"></a>
 # **V1NativeIexAdminSystemEventGet**
-> List&lt;AdminSystemEventModel&gt; V1NativeIexAdminSystemEventGet (DateTime date)
+> List&lt;IEXSystemEventSystemEventModel&gt; V1NativeIexAdminSystemEventGet (DateTime date)
 
 Get System Events
 
@@ -61,7 +61,7 @@ Get System Events
 
 ### Return type
 
-[**List&lt;AdminSystemEventModel&gt;**](AdminSystemEventModel.md)
+[**List&lt;IEXSystemEventSystemEventModel&gt;**](IEXSystemEventSystemEventModel.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ Get System Events
 
 <a id="v1nativeiexlevel1quotesymbolget"></a>
 # **V1NativeIexLevel1QuoteSymbolGet**
-> List&lt;Level1QuoteUpdateModel&gt; V1NativeIexLevel1QuoteSymbolGet (string symbol, DateTime date)
+> List&lt;IEXQuoteUpdateQuoteUpdateModel&gt; V1NativeIexLevel1QuoteSymbolGet (string symbol, DateTime date)
 
 Get Level-1 Quotes
 
@@ -96,7 +96,7 @@ Get Level-1 Quotes
 
 ### Return type
 
-[**List&lt;Level1QuoteUpdateModel&gt;**](Level1QuoteUpdateModel.md)
+[**List&lt;IEXQuoteUpdateQuoteUpdateModel&gt;**](IEXQuoteUpdateQuoteUpdateModel.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ Get Level-1 Quotes
 
 <a id="v1nativeiexlevel2pricelevelupdatesymbolget"></a>
 # **V1NativeIexLevel2PriceLevelUpdateSymbolGet**
-> List&lt;Level2PriceLevelUpdateModel&gt; V1NativeIexLevel2PriceLevelUpdateSymbolGet (string symbol, DateTime date)
+> List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt; V1NativeIexLevel2PriceLevelUpdateSymbolGet (string symbol, DateTime date)
 
 Get Level-2 Price Level Book
 
@@ -131,7 +131,7 @@ Get Level-2 Price Level Book
 
 ### Return type
 
-[**List&lt;Level2PriceLevelUpdateModel&gt;**](Level2PriceLevelUpdateModel.md)
+[**List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt;**](IEXPriceLevelUpdatePriceLevelUpdateModel.md)
 
 ### Authorization
 
@@ -152,7 +152,7 @@ Get Level-2 Price Level Book
 
 <a id="v1nativeiexlevel3orderbooksymbolget"></a>
 # **V1NativeIexLevel3OrderBookSymbolGet**
-> List&lt;Level3OrderBookModel&gt; V1NativeIexLevel3OrderBookSymbolGet (string symbol, DateTime date)
+> List&lt;ModelsOrderBookModel&gt; V1NativeIexLevel3OrderBookSymbolGet (string symbol, DateTime date)
 
 Get Level-3 Order Book
 
@@ -166,7 +166,7 @@ Get Level-3 Order Book
 
 ### Return type
 
-[**List&lt;Level3OrderBookModel&gt;**](Level3OrderBookModel.md)
+[**List&lt;ModelsOrderBookModel&gt;**](ModelsOrderBookModel.md)
 
 ### Authorization
 
@@ -187,7 +187,7 @@ Get Level-3 Order Book
 
 <a id="v1nativeiextradesymbolget"></a>
 # **V1NativeIexTradeSymbolGet**
-> List&lt;TradeTradeModel&gt; V1NativeIexTradeSymbolGet (string symbol, DateTime date)
+> List&lt;IEXTradeTradeModel&gt; V1NativeIexTradeSymbolGet (string symbol, DateTime date)
 
 Get Trades
 
@@ -201,7 +201,7 @@ Get Trades
 
 ### Return type
 
-[**List&lt;TradeTradeModel&gt;**](TradeTradeModel.md)
+[**List&lt;IEXTradeTradeModel&gt;**](IEXTradeTradeModel.md)
 
 ### Authorization
 

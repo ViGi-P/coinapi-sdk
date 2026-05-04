@@ -154,7 +154,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1OhlcvExchangeExchangeIdHistoryGetApiResponse"/>
     /// </summary>
-    public interface IV1OhlcvExchangeExchangeIdHistoryGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<OHLCVExchangeTimeseriesItem>?>
+    public interface IV1OhlcvExchangeExchangeIdHistoryGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<OHLCVTimeSeriesExchangeTimeseriesItem>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -166,7 +166,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetApiResponse"/>
     /// </summary>
-    public interface IV1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<OHLCVTimeseriesItem>?>
+    public interface IV1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<OHLCVTimeSeriesTimeseriesItem>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -178,7 +178,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetApiResponse"/>
     /// </summary>
-    public interface IV1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<OHLCVTimeseriesItem>?>
+    public interface IV1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<OHLCVTimeSeriesTimeseriesItem>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -190,7 +190,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
     /// <summary>
     /// The <see cref="IV1OhlcvPeriodsGetApiResponse"/>
     /// </summary>
-    public interface IV1OhlcvPeriodsGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<OHLCVTimeseriesPeriod>?>
+    public interface IV1OhlcvPeriodsGetApiResponse : APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Client.IApiResponse, IOk<List<OHLCVTimeSeriesTimeseriesPeriod>?>
     {
         /// <summary>
         /// Returns true if the response is 200 Ok
@@ -470,7 +470,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/ohlcv/exchange/{exchange_id}/history"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/ohlcv/exchange/{exchange_id}/history");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/ohlcv/exchange/{exchange_id}/history");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bexchange_id%7D", Uri.EscapeDataString(exchangeId.ToString()));
 
                     System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
@@ -597,11 +597,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<OHLCVExchangeTimeseriesItem>? Ok()
+            public List<OHLCVTimeSeriesExchangeTimeseriesItem>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<OHLCVExchangeTimeseriesItem>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<OHLCVTimeSeriesExchangeTimeseriesItem>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -610,7 +610,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<OHLCVExchangeTimeseriesItem>? result)
+            public bool TryOk([NotNullWhen(true)]out List<OHLCVTimeSeriesExchangeTimeseriesItem>? result)
             {
                 result = null;
 
@@ -783,7 +783,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/history"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/history");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/history");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bexchange_id%7D", Uri.EscapeDataString(exchangeId.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bsymbol_id%7D", Uri.EscapeDataString(symbolId.ToString()));
 
@@ -918,11 +918,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<OHLCVTimeseriesItem>? Ok()
+            public List<OHLCVTimeSeriesTimeseriesItem>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<OHLCVTimeseriesItem>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<OHLCVTimeSeriesTimeseriesItem>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -931,7 +931,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<OHLCVTimeseriesItem>? result)
+            public bool TryOk([NotNullWhen(true)]out List<OHLCVTimeSeriesTimeseriesItem>? result)
             {
                 result = null;
 
@@ -1084,7 +1084,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/latest"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/latest");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/latest");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bexchange_id%7D", Uri.EscapeDataString(exchangeId.ToString()));
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bsymbol_id%7D", Uri.EscapeDataString(symbolId.ToString()));
 
@@ -1213,11 +1213,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<OHLCVTimeseriesItem>? Ok()
+            public List<OHLCVTimeSeriesTimeseriesItem>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<OHLCVTimeseriesItem>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<OHLCVTimeSeriesTimeseriesItem>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1226,7 +1226,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<OHLCVTimeseriesItem>? result)
+            public bool TryOk([NotNullWhen(true)]out List<OHLCVTimeSeriesTimeseriesItem>? result)
             {
                 result = null;
 
@@ -1330,7 +1330,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/ohlcv/periods"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/ohlcv/periods");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/ohlcv/periods");
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar1 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
@@ -1448,11 +1448,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// Deserializes the response if the response is 200 Ok
             /// </summary>
             /// <returns></returns>
-            public List<OHLCVTimeseriesPeriod>? Ok()
+            public List<OHLCVTimeSeriesTimeseriesPeriod>? Ok()
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<List<OHLCVTimeseriesPeriod>>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<List<OHLCVTimeSeriesTimeseriesPeriod>>(RawContent, _jsonSerializerOptions)
                     : null;
             }
 
@@ -1461,7 +1461,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out List<OHLCVTimeseriesPeriod>? result)
+            public bool TryOk([NotNullWhen(true)]out List<OHLCVTimeSeriesTimeseriesPeriod>? result)
             {
                 result = null;
 

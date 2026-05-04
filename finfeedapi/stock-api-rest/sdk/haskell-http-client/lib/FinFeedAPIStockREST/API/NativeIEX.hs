@@ -69,7 +69,7 @@ import qualified Prelude as P
 v1NativeIexAdminMessagesSymbolGet
   :: Symbol -- ^ "symbol" -  The symbol identifier
   -> ParamDate -- ^ "date" -  Optional date in format YYYY-MM-DD (defaults to latest available data)
-  -> FinFeedAPIStockRESTRequest V1NativeIexAdminMessagesSymbolGet MimeNoContent [AdminAdminMessageModel] MimeJSON
+  -> FinFeedAPIStockRESTRequest V1NativeIexAdminMessagesSymbolGet MimeNoContent [ModelsAdminMessageModel] MimeJSON
 v1NativeIexAdminMessagesSymbolGet (Symbol symbol) (ParamDate date) =
   _mkRequest "GET" ["/v1/native/iex/admin/messages/",toPath symbol]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -91,7 +91,7 @@ instance Produces V1NativeIexAdminMessagesSymbolGet MimeJSON
 -- 
 v1NativeIexAdminSystemEventGet
   :: ParamDate -- ^ "date" -  Date in format YYYY-MM-DD
-  -> FinFeedAPIStockRESTRequest V1NativeIexAdminSystemEventGet MimeNoContent [AdminSystemEventModel] MimeJSON
+  -> FinFeedAPIStockRESTRequest V1NativeIexAdminSystemEventGet MimeNoContent [IEXSystemEventSystemEventModel] MimeJSON
 v1NativeIexAdminSystemEventGet (ParamDate date) =
   _mkRequest "GET" ["/v1/native/iex/admin/system-event"]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -114,7 +114,7 @@ instance Produces V1NativeIexAdminSystemEventGet MimeJSON
 v1NativeIexLevel1QuoteSymbolGet
   :: Symbol -- ^ "symbol" -  The symbol identifier
   -> ParamDate -- ^ "date" -  Optional date in format YYYY-MM-DD (defaults to latest available data)
-  -> FinFeedAPIStockRESTRequest V1NativeIexLevel1QuoteSymbolGet MimeNoContent [Level1QuoteUpdateModel] MimeJSON
+  -> FinFeedAPIStockRESTRequest V1NativeIexLevel1QuoteSymbolGet MimeNoContent [IEXQuoteUpdateQuoteUpdateModel] MimeJSON
 v1NativeIexLevel1QuoteSymbolGet (Symbol symbol) (ParamDate date) =
   _mkRequest "GET" ["/v1/native/iex/level1-quote/",toPath symbol]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -137,7 +137,7 @@ instance Produces V1NativeIexLevel1QuoteSymbolGet MimeJSON
 v1NativeIexLevel2PriceLevelUpdateSymbolGet
   :: Symbol -- ^ "symbol" -  The symbol identifier
   -> ParamDate -- ^ "date" -  Optional date in format YYYY-MM-DD (defaults to latest available data)
-  -> FinFeedAPIStockRESTRequest V1NativeIexLevel2PriceLevelUpdateSymbolGet MimeNoContent [Level2PriceLevelUpdateModel] MimeJSON
+  -> FinFeedAPIStockRESTRequest V1NativeIexLevel2PriceLevelUpdateSymbolGet MimeNoContent [IEXPriceLevelUpdatePriceLevelUpdateModel] MimeJSON
 v1NativeIexLevel2PriceLevelUpdateSymbolGet (Symbol symbol) (ParamDate date) =
   _mkRequest "GET" ["/v1/native/iex/level2-price-level-update/",toPath symbol]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -160,7 +160,7 @@ instance Produces V1NativeIexLevel2PriceLevelUpdateSymbolGet MimeJSON
 v1NativeIexLevel3OrderBookSymbolGet
   :: Symbol -- ^ "symbol" -  The symbol identifier
   -> ParamDate -- ^ "date" -  Optional date in format YYYY-MM-DD (defaults to latest available data)
-  -> FinFeedAPIStockRESTRequest V1NativeIexLevel3OrderBookSymbolGet MimeNoContent [Level3OrderBookModel] MimeJSON
+  -> FinFeedAPIStockRESTRequest V1NativeIexLevel3OrderBookSymbolGet MimeNoContent [ModelsOrderBookModel] MimeJSON
 v1NativeIexLevel3OrderBookSymbolGet (Symbol symbol) (ParamDate date) =
   _mkRequest "GET" ["/v1/native/iex/level3-order-book/",toPath symbol]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)
@@ -183,7 +183,7 @@ instance Produces V1NativeIexLevel3OrderBookSymbolGet MimeJSON
 v1NativeIexTradeSymbolGet
   :: Symbol -- ^ "symbol" -  The symbol identifier
   -> ParamDate -- ^ "date" -  Optional date in format YYYY-MM-DD (defaults to latest available data)
-  -> FinFeedAPIStockRESTRequest V1NativeIexTradeSymbolGet MimeNoContent [TradeTradeModel] MimeJSON
+  -> FinFeedAPIStockRESTRequest V1NativeIexTradeSymbolGet MimeNoContent [IEXTradeTradeModel] MimeJSON
 v1NativeIexTradeSymbolGet (Symbol symbol) (ParamDate date) =
   _mkRequest "GET" ["/v1/native/iex/trade/",toPath symbol]
     `_hasAuthType` (P.Proxy :: P.Proxy AuthApiKeyAPIKey)

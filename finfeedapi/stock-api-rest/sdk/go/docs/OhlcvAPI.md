@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## V1OhlcvExchangeExchangeIdHistoryGet
 
-> []OHLCVExchangeTimeseriesItem V1OhlcvExchangeExchangeIdHistoryGet(ctx, exchangeId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Execute()
+> []OHLCVTimeSeriesExchangeTimeseriesItem V1OhlcvExchangeExchangeIdHistoryGet(ctx, exchangeId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Execute()
 
 Historical data by exchange
 
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OhlcvAPI.V1OhlcvExchangeExchangeIdHistoryGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1OhlcvExchangeExchangeIdHistoryGet`: []OHLCVExchangeTimeseriesItem
+	// response from `V1OhlcvExchangeExchangeIdHistoryGet`: []OHLCVTimeSeriesExchangeTimeseriesItem
 	fmt.Fprintf(os.Stdout, "Response from `OhlcvAPI.V1OhlcvExchangeExchangeIdHistoryGet`: %v\n", resp)
 }
 ```
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]OHLCVExchangeTimeseriesItem**](OHLCVExchangeTimeseriesItem.md)
+[**[]OHLCVTimeSeriesExchangeTimeseriesItem**](OHLCVTimeSeriesExchangeTimeseriesItem.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ## V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet
 
-> []OHLCVTimeseriesItem V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(ctx, exchangeId, symbolId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).Execute()
+> []OHLCVTimeSeriesTimeseriesItem V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(ctx, exchangeId, symbolId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).Execute()
 
 Historical data
 
@@ -122,7 +122,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OhlcvAPI.V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet`: []OHLCVTimeseriesItem
+	// response from `V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet`: []OHLCVTimeSeriesTimeseriesItem
 	fmt.Fprintf(os.Stdout, "Response from `OhlcvAPI.V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet`: %v\n", resp)
 }
 ```
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]OHLCVTimeseriesItem**](OHLCVTimeseriesItem.md)
+[**[]OHLCVTimeSeriesTimeseriesItem**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ## V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet
 
-> []OHLCVTimeseriesItem V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(ctx, exchangeId, symbolId).PeriodId(periodId).Limit(limit).Execute()
+> []OHLCVTimeSeriesTimeseriesItem V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(ctx, exchangeId, symbolId).PeriodId(periodId).Limit(limit).Execute()
 
 Latest data
 
@@ -201,7 +201,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OhlcvAPI.V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet`: []OHLCVTimeseriesItem
+	// response from `V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet`: []OHLCVTimeSeriesTimeseriesItem
 	fmt.Fprintf(os.Stdout, "Response from `OhlcvAPI.V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet`: %v\n", resp)
 }
 ```
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]OHLCVTimeseriesItem**](OHLCVTimeseriesItem.md)
+[**[]OHLCVTimeSeriesTimeseriesItem**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ## V1OhlcvPeriodsGet
 
-> []OHLCVTimeseriesPeriod V1OhlcvPeriodsGet(ctx).Execute()
+> []OHLCVTimeSeriesTimeseriesPeriod V1OhlcvPeriodsGet(ctx).Execute()
 
 List all periods
 
@@ -274,7 +274,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `OhlcvAPI.V1OhlcvPeriodsGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1OhlcvPeriodsGet`: []OHLCVTimeseriesPeriod
+	// response from `V1OhlcvPeriodsGet`: []OHLCVTimeSeriesTimeseriesPeriod
 	fmt.Fprintf(os.Stdout, "Response from `OhlcvAPI.V1OhlcvPeriodsGet`: %v\n", resp)
 }
 ```
@@ -290,7 +290,7 @@ Other parameters are passed through a pointer to a apiV1OhlcvPeriodsGetRequest s
 
 ### Return type
 
-[**[]OHLCVTimeseriesPeriod**](OHLCVTimeseriesPeriod.md)
+[**[]OHLCVTimeSeriesTimeseriesPeriod**](OHLCVTimeSeriesTimeseriesPeriod.md)
 
 ### Authorization
 

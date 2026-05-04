@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **v1NativeIexAdminMessagesSymbolGet**
-> List<AdminAdminMessageModel> v1NativeIexAdminMessagesSymbolGet(symbol, date)
+> List<ModelsAdminMessageModel> v1NativeIexAdminMessagesSymbolGet(symbol, date)
 
 Get Admin Messages
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<AdminAdminMessageModel>**](AdminAdminMessageModel.md)
+[**List<ModelsAdminMessageModel>**](ModelsAdminMessageModel.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexAdminSystemEventGet**
-> List<AdminSystemEventModel> v1NativeIexAdminSystemEventGet(date)
+> List<IEXSystemEventSystemEventModel> v1NativeIexAdminSystemEventGet(date)
 
 Get System Events
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<AdminSystemEventModel>**](AdminSystemEventModel.md)
+[**List<IEXSystemEventSystemEventModel>**](IEXSystemEventSystemEventModel.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexLevel1QuoteSymbolGet**
-> List<Level1QuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet(symbol, date)
+> List<IEXQuoteUpdateQuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet(symbol, date)
 
 Get Level-1 Quotes
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<Level1QuoteUpdateModel>**](Level1QuoteUpdateModel.md)
+[**List<IEXQuoteUpdateQuoteUpdateModel>**](IEXQuoteUpdateQuoteUpdateModel.md)
 
 ### Authorization
 
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexLevel2PriceLevelUpdateSymbolGet**
-> List<Level2PriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
+> List<IEXPriceLevelUpdatePriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
 
 Get Level-2 Price Level Book
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<Level2PriceLevelUpdateModel>**](Level2PriceLevelUpdateModel.md)
+[**List<IEXPriceLevelUpdatePriceLevelUpdateModel>**](IEXPriceLevelUpdatePriceLevelUpdateModel.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexLevel3OrderBookSymbolGet**
-> List<Level3OrderBookModel> v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
+> List<ModelsOrderBookModel> v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
 
 Get Level-3 Order Book
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<Level3OrderBookModel>**](Level3OrderBookModel.md)
+[**List<ModelsOrderBookModel>**](ModelsOrderBookModel.md)
 
 ### Authorization
 
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexTradeSymbolGet**
-> List<TradeTradeModel> v1NativeIexTradeSymbolGet(symbol, date)
+> List<IEXTradeTradeModel> v1NativeIexTradeSymbolGet(symbol, date)
 
 Get Trades
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<TradeTradeModel>**](TradeTradeModel.md)
+[**List<IEXTradeTradeModel>**](IEXTradeTradeModel.md)
 
 ### Authorization
 

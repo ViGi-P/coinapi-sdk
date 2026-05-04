@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **v1_native_iex_admin_messages_symbol_get**
-> List[AdminAdminMessageModel] v1_native_iex_admin_messages_symbol_get(symbol, var_date)
+> List[ModelsAdminMessageModel] v1_native_iex_admin_messages_symbol_get(symbol, var_date)
 
 Get Admin Messages
 
@@ -24,7 +24,7 @@ Get Admin Messages
 
 ```python
 import api_bricks_stock_api_rest
-from api_bricks_stock_api_rest.models.admin_admin_message_model import AdminAdminMessageModel
+from api_bricks_stock_api_rest.models.models_admin_message_model import ModelsAdminMessageModel
 from api_bricks_stock_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[AdminAdminMessageModel]**](AdminAdminMessageModel.md)
+[**List[ModelsAdminMessageModel]**](ModelsAdminMessageModel.md)
 
 ### Authorization
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_admin_system_event_get**
-> List[AdminSystemEventModel] v1_native_iex_admin_system_event_get(var_date)
+> List[IEXSystemEventSystemEventModel] v1_native_iex_admin_system_event_get(var_date)
 
 Get System Events
 
@@ -109,7 +109,7 @@ Get System Events
 
 ```python
 import api_bricks_stock_api_rest
-from api_bricks_stock_api_rest.models.admin_system_event_model import AdminSystemEventModel
+from api_bricks_stock_api_rest.models.iex_system_event_system_event_model import IEXSystemEventSystemEventModel
 from api_bricks_stock_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[AdminSystemEventModel]**](AdminSystemEventModel.md)
+[**List[IEXSystemEventSystemEventModel]**](IEXSystemEventSystemEventModel.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level1_quote_symbol_get**
-> List[Level1QuoteUpdateModel] v1_native_iex_level1_quote_symbol_get(symbol, var_date)
+> List[IEXQuoteUpdateQuoteUpdateModel] v1_native_iex_level1_quote_symbol_get(symbol, var_date)
 
 Get Level-1 Quotes
 
@@ -192,7 +192,7 @@ Get Level-1 Quotes
 
 ```python
 import api_bricks_stock_api_rest
-from api_bricks_stock_api_rest.models.level1_quote_update_model import Level1QuoteUpdateModel
+from api_bricks_stock_api_rest.models.iex_quote_update_quote_update_model import IEXQuoteUpdateQuoteUpdateModel
 from api_bricks_stock_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[Level1QuoteUpdateModel]**](Level1QuoteUpdateModel.md)
+[**List[IEXQuoteUpdateQuoteUpdateModel]**](IEXQuoteUpdateQuoteUpdateModel.md)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level2_price_level_update_symbol_get**
-> List[Level2PriceLevelUpdateModel] v1_native_iex_level2_price_level_update_symbol_get(symbol, var_date)
+> List[IEXPriceLevelUpdatePriceLevelUpdateModel] v1_native_iex_level2_price_level_update_symbol_get(symbol, var_date)
 
 Get Level-2 Price Level Book
 
@@ -277,7 +277,7 @@ Get Level-2 Price Level Book
 
 ```python
 import api_bricks_stock_api_rest
-from api_bricks_stock_api_rest.models.level2_price_level_update_model import Level2PriceLevelUpdateModel
+from api_bricks_stock_api_rest.models.iex_price_level_update_price_level_update_model import IEXPriceLevelUpdatePriceLevelUpdateModel
 from api_bricks_stock_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[Level2PriceLevelUpdateModel]**](Level2PriceLevelUpdateModel.md)
+[**List[IEXPriceLevelUpdatePriceLevelUpdateModel]**](IEXPriceLevelUpdatePriceLevelUpdateModel.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level3_order_book_symbol_get**
-> List[Level3OrderBookModel] v1_native_iex_level3_order_book_symbol_get(symbol, var_date)
+> List[ModelsOrderBookModel] v1_native_iex_level3_order_book_symbol_get(symbol, var_date)
 
 Get Level-3 Order Book
 
@@ -362,7 +362,7 @@ Get Level-3 Order Book
 
 ```python
 import api_bricks_stock_api_rest
-from api_bricks_stock_api_rest.models.level3_order_book_model import Level3OrderBookModel
+from api_bricks_stock_api_rest.models.models_order_book_model import ModelsOrderBookModel
 from api_bricks_stock_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[Level3OrderBookModel]**](Level3OrderBookModel.md)
+[**List[ModelsOrderBookModel]**](ModelsOrderBookModel.md)
 
 ### Authorization
 
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_trade_symbol_get**
-> List[TradeTradeModel] v1_native_iex_trade_symbol_get(symbol, var_date)
+> List[IEXTradeTradeModel] v1_native_iex_trade_symbol_get(symbol, var_date)
 
 Get Trades
 
@@ -447,7 +447,7 @@ Get Trades
 
 ```python
 import api_bricks_stock_api_rest
-from api_bricks_stock_api_rest.models.trade_trade_model import TradeTradeModel
+from api_bricks_stock_api_rest.models.iex_trade_trade_model import IEXTradeTradeModel
 from api_bricks_stock_api_rest.rest import ApiException
 from pprint import pprint
 
@@ -501,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List[TradeTradeModel]**](TradeTradeModel.md)
+[**List[IEXTradeTradeModel]**](IEXTradeTradeModel.md)
 
 ### Authorization
 

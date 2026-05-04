@@ -3,30 +3,30 @@
             [clojure.spec.alpha :as s]
             [spec-tools.core :as st]
             [orchestra.core :refer [defn-spec]]
+            [fin-feed-api-stock-rest-api.specs.models/order-book-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/add-order-model :refer :all]
             [fin-feed-api-stock-rest-api.specs.fin-feed-api/exchange-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.level1/quote-update-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.level3/order-book-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.admin/security-directory-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.admin/trading-status-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.ohlcv/timeseries-period :refer :all]
-            [fin-feed-api-stock-rest-api.specs.level3/delete-order-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.ohlcv/timeseries-item :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/trading-status-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.iex-system-event/system-event-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.iex-trade/trade-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/auction-information-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/short-sale-price-test-status-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.ohlcv-time-series/exchange-timeseries-item :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/modify-order-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/security-event-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.iex-quote-update/quote-update-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/executed-order-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/admin-message-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/clear-book-model :refer :all]
             [fin-feed-api-stock-rest-api.specs.fin-feed-api/symbol-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.level3/executed-order-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.admin/official-price-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.admin/short-sale-price-test-status-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.admin/security-event-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.level3/modify-order-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.admin/auction-information-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.admin/retail-liquidity-indicator-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.ohlcv/exchange-timeseries-item :refer :all]
-            [fin-feed-api-stock-rest-api.specs.level2/price-level-update-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.admin/admin-message-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.level3/clear-book-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.trade/trade-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.level3/add-order-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.admin/operational-halt-status-model :refer :all]
-            [fin-feed-api-stock-rest-api.specs.admin/system-event-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.ohlcv-time-series/timeseries-period :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/delete-order-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/security-directory-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.iex-price-level-update/price-level-update-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/retail-liquidity-indicator-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.ohlcv-time-series/timeseries-item :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/official-price-model :refer :all]
+            [fin-feed-api-stock-rest-api.specs.models/operational-halt-status-model :refer :all]
             )
   (:import (java.io File)))
 
@@ -45,13 +45,13 @@
              :accepts       ["text/plain" "application/json" "text/json"]
              :auth-names    ["APIKey" "JWT"]}))
 
-(defn-spec v1-ohlcv-exchange-exchange-id-history-get (s/coll-of ohlcv/exchange-timeseries-item-spec)
+(defn-spec v1-ohlcv-exchange-exchange-id-history-get (s/coll-of ohlcv-time-series/exchange-timeseries-item-spec)
   "Historical data by exchange
   Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange."
   [exchange_id string?, period_id string?, time_start string?, time_end string?]
   (let [res (:data (v1-ohlcv-exchange-exchange-id-history-get-with-http-info exchange_id period_id time_start time_end))]
     (if (:decode-models *api-context*)
-       (st/decode (s/coll-of ohlcv/exchange-timeseries-item-spec) res st/string-transformer)
+       (st/decode (s/coll-of ohlcv-time-series/exchange-timeseries-item-spec) res st/string-transformer)
        res)))
 
 
@@ -70,14 +70,14 @@
               :accepts       ["text/plain" "application/json" "text/json"]
               :auth-names    ["APIKey" "JWT"]})))
 
-(defn-spec v1-ohlcv-exchange-symbol-exchange-id-symbol-id-history-get (s/coll-of ohlcv/timeseries-item-spec)
+(defn-spec v1-ohlcv-exchange-symbol-exchange-id-symbol-id-history-get (s/coll-of ohlcv-time-series/timeseries-item-spec)
   "Historical data
   Get OHLCV timeseries data returned in time ascending order."
   ([exchange_id string?, symbol_id string?, period_id string?, ] (v1-ohlcv-exchange-symbol-exchange-id-symbol-id-history-get exchange_id symbol_id period_id nil))
   ([exchange_id string?, symbol_id string?, period_id string?, optional-params any?]
    (let [res (:data (v1-ohlcv-exchange-symbol-exchange-id-symbol-id-history-get-with-http-info exchange_id symbol_id period_id optional-params))]
      (if (:decode-models *api-context*)
-        (st/decode (s/coll-of ohlcv/timeseries-item-spec) res st/string-transformer)
+        (st/decode (s/coll-of ohlcv-time-series/timeseries-item-spec) res st/string-transformer)
         res))))
 
 
@@ -101,7 +101,7 @@ The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-
               :accepts       ["text/plain" "application/json" "text/json"]
               :auth-names    ["APIKey" "JWT"]})))
 
-(defn-spec v1-ohlcv-exchange-symbol-exchange-id-symbol-id-latest-get (s/coll-of ohlcv/timeseries-item-spec)
+(defn-spec v1-ohlcv-exchange-symbol-exchange-id-symbol-id-latest-get (s/coll-of ohlcv-time-series/timeseries-item-spec)
   "Latest data
   Get OHLCV latest timeseries data returned in time descending order. Data can be requested by the period and for the specific symbol eg `BITSTAMP_SPOT_BTC_USD`, if you need to query timeseries by asset pairs eg. `BTC/USD`, then please reffer to the Exchange Rates Timeseries data
             
@@ -113,7 +113,7 @@ The OHLCV Historical endpoint data can be delayed a few seconds. Use OHLCV real-
   ([exchange_id string?, symbol_id string?, period_id string?, optional-params any?]
    (let [res (:data (v1-ohlcv-exchange-symbol-exchange-id-symbol-id-latest-get-with-http-info exchange_id symbol_id period_id optional-params))]
      (if (:decode-models *api-context*)
-        (st/decode (s/coll-of ohlcv/timeseries-item-spec) res st/string-transformer)
+        (st/decode (s/coll-of ohlcv-time-series/timeseries-item-spec) res st/string-transformer)
         res))))
 
 
@@ -145,7 +145,7 @@ You can assume that we will not remove any periods from this response, however, 
              :accepts       ["text/plain" "application/json" "text/json"]
              :auth-names    ["APIKey" "JWT"]}))
 
-(defn-spec v1-ohlcv-periods-get (s/coll-of ohlcv/timeseries-period-spec)
+(defn-spec v1-ohlcv-periods-get (s/coll-of ohlcv-time-series/timeseries-period-spec)
   "List all periods
   Get full list of supported time periods available for requesting OHLCV timeseries data.
             
@@ -166,7 +166,7 @@ You can assume that we will not remove any periods from this response, however, 
   []
   (let [res (:data (v1-ohlcv-periods-get-with-http-info))]
     (if (:decode-models *api-context*)
-       (st/decode (s/coll-of ohlcv/timeseries-period-spec) res st/string-transformer)
+       (st/decode (s/coll-of ohlcv-time-series/timeseries-period-spec) res st/string-transformer)
        res)))
 
 

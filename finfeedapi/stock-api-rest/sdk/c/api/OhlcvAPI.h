@@ -5,9 +5,9 @@
 #include "../external/cJSON.h"
 #include "../include/keyValuePair.h"
 #include "../include/binary.h"
-#include "../model/ohlcv_exchange_timeseries_item.h"
-#include "../model/ohlcv_timeseries_item.h"
-#include "../model/ohlcv_timeseries_period.h"
+#include "../model/ohlcv_time_series_exchange_timeseries_item.h"
+#include "../model/ohlcv_time_series_timeseries_item.h"
+#include "../model/ohlcv_time_series_timeseries_period.h"
 
 
 // Historical data by exchange

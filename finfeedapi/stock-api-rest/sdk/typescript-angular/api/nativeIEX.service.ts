@@ -17,17 +17,17 @@ import { Observable }                                        from 'rxjs';
 import { OpenApiHttpParams, QueryParamStyle } from '../query.params';
 
 // @ts-ignore
-import { AdminAdminMessageModel } from '../model/adminAdminMessageModel';
+import { IEXPriceLevelUpdatePriceLevelUpdateModel } from '../model/iEXPriceLevelUpdatePriceLevelUpdateModel';
 // @ts-ignore
-import { AdminSystemEventModel } from '../model/adminSystemEventModel';
+import { IEXQuoteUpdateQuoteUpdateModel } from '../model/iEXQuoteUpdateQuoteUpdateModel';
 // @ts-ignore
-import { Level1QuoteUpdateModel } from '../model/level1QuoteUpdateModel';
+import { IEXSystemEventSystemEventModel } from '../model/iEXSystemEventSystemEventModel';
 // @ts-ignore
-import { Level2PriceLevelUpdateModel } from '../model/level2PriceLevelUpdateModel';
+import { IEXTradeTradeModel } from '../model/iEXTradeTradeModel';
 // @ts-ignore
-import { Level3OrderBookModel } from '../model/level3OrderBookModel';
+import { ModelsAdminMessageModel } from '../model/modelsAdminMessageModel';
 // @ts-ignore
-import { TradeTradeModel } from '../model/tradeTradeModel';
+import { ModelsOrderBookModel } from '../model/modelsOrderBookModel';
 
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -54,9 +54,9 @@ export class NativeIEXService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<AdminAdminMessageModel>>;
-    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<AdminAdminMessageModel>>>;
-    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<AdminAdminMessageModel>>>;
+    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<ModelsAdminMessageModel>>;
+    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<ModelsAdminMessageModel>>>;
+    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<ModelsAdminMessageModel>>>;
     public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (symbol === null || symbol === undefined) {
             throw new Error('Required parameter symbol was null or undefined when calling v1NativeIexAdminMessagesSymbolGet.');
@@ -109,7 +109,7 @@ export class NativeIEXService extends BaseService {
 
         let localVarPath = `/v1/native/iex/admin/messages/${this.configuration.encodeParam({name: "symbol", value: symbol, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<AdminAdminMessageModel>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<ModelsAdminMessageModel>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters.toHttpParams(),
@@ -131,9 +131,9 @@ export class NativeIEXService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1NativeIexAdminSystemEventGet(date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<AdminSystemEventModel>>;
-    public v1NativeIexAdminSystemEventGet(date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<AdminSystemEventModel>>>;
-    public v1NativeIexAdminSystemEventGet(date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<AdminSystemEventModel>>>;
+    public v1NativeIexAdminSystemEventGet(date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<IEXSystemEventSystemEventModel>>;
+    public v1NativeIexAdminSystemEventGet(date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IEXSystemEventSystemEventModel>>>;
+    public v1NativeIexAdminSystemEventGet(date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IEXSystemEventSystemEventModel>>>;
     public v1NativeIexAdminSystemEventGet(date: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (date === null || date === undefined) {
             throw new Error('Required parameter date was null or undefined when calling v1NativeIexAdminSystemEventGet.');
@@ -183,7 +183,7 @@ export class NativeIEXService extends BaseService {
 
         let localVarPath = `/v1/native/iex/admin/system-event`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<AdminSystemEventModel>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<IEXSystemEventSystemEventModel>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters.toHttpParams(),
@@ -206,9 +206,9 @@ export class NativeIEXService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<Level1QuoteUpdateModel>>;
-    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Level1QuoteUpdateModel>>>;
-    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<Level1QuoteUpdateModel>>>;
+    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<IEXQuoteUpdateQuoteUpdateModel>>;
+    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IEXQuoteUpdateQuoteUpdateModel>>>;
+    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IEXQuoteUpdateQuoteUpdateModel>>>;
     public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (symbol === null || symbol === undefined) {
             throw new Error('Required parameter symbol was null or undefined when calling v1NativeIexLevel1QuoteSymbolGet.');
@@ -261,7 +261,7 @@ export class NativeIEXService extends BaseService {
 
         let localVarPath = `/v1/native/iex/level1-quote/${this.configuration.encodeParam({name: "symbol", value: symbol, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<Level1QuoteUpdateModel>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<IEXQuoteUpdateQuoteUpdateModel>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters.toHttpParams(),
@@ -284,9 +284,9 @@ export class NativeIEXService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<Level2PriceLevelUpdateModel>>;
-    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Level2PriceLevelUpdateModel>>>;
-    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<Level2PriceLevelUpdateModel>>>;
+    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>;
+    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>>;
+    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>>;
     public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (symbol === null || symbol === undefined) {
             throw new Error('Required parameter symbol was null or undefined when calling v1NativeIexLevel2PriceLevelUpdateSymbolGet.');
@@ -339,7 +339,7 @@ export class NativeIEXService extends BaseService {
 
         let localVarPath = `/v1/native/iex/level2-price-level-update/${this.configuration.encodeParam({name: "symbol", value: symbol, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<Level2PriceLevelUpdateModel>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters.toHttpParams(),
@@ -362,9 +362,9 @@ export class NativeIEXService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<Level3OrderBookModel>>;
-    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<Level3OrderBookModel>>>;
-    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<Level3OrderBookModel>>>;
+    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<ModelsOrderBookModel>>;
+    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<ModelsOrderBookModel>>>;
+    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<ModelsOrderBookModel>>>;
     public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (symbol === null || symbol === undefined) {
             throw new Error('Required parameter symbol was null or undefined when calling v1NativeIexLevel3OrderBookSymbolGet.');
@@ -417,7 +417,7 @@ export class NativeIEXService extends BaseService {
 
         let localVarPath = `/v1/native/iex/level3-order-book/${this.configuration.encodeParam({name: "symbol", value: symbol, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<Level3OrderBookModel>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<ModelsOrderBookModel>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters.toHttpParams(),
@@ -440,9 +440,9 @@ export class NativeIEXService extends BaseService {
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1NativeIexTradeSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<TradeTradeModel>>;
-    public v1NativeIexTradeSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<TradeTradeModel>>>;
-    public v1NativeIexTradeSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<TradeTradeModel>>>;
+    public v1NativeIexTradeSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<IEXTradeTradeModel>>;
+    public v1NativeIexTradeSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IEXTradeTradeModel>>>;
+    public v1NativeIexTradeSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IEXTradeTradeModel>>>;
     public v1NativeIexTradeSymbolGet(symbol: string, date: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (symbol === null || symbol === undefined) {
             throw new Error('Required parameter symbol was null or undefined when calling v1NativeIexTradeSymbolGet.');
@@ -495,7 +495,7 @@ export class NativeIEXService extends BaseService {
 
         let localVarPath = `/v1/native/iex/trade/${this.configuration.encodeParam({name: "symbol", value: symbol, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}`;
         const { basePath, withCredentials } = this.configuration;
-        return this.httpClient.request<Array<TradeTradeModel>>('get', `${basePath}${localVarPath}`,
+        return this.httpClient.request<Array<IEXTradeTradeModel>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 params: localVarQueryParameters.toHttpParams(),

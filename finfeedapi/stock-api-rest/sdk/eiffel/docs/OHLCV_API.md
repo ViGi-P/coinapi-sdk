@@ -11,7 +11,7 @@ Feature | HTTP request | Description
 
 
 # **v1_ohlcv_exchange_exchange_id_history_get**
-> v1_ohlcv_exchange_exchange_id_history_get (exchange_id: STRING_32 ; period_id: STRING_32 ; time_start: STRING_32 ; time_end: STRING_32 ): detachable LIST [OHLCV_EXCHANGE_TIMESERIES_ITEM]
+> v1_ohlcv_exchange_exchange_id_history_get (exchange_id: STRING_32 ; period_id: STRING_32 ; time_start: STRING_32 ; time_end: STRING_32 ): detachable LIST [OHLCV_TIME_SERIES_EXCHANGE_TIMESERIES_ITEM]
 
 
 Historical data by exchange
@@ -30,7 +30,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [OHLCV_EXCHANGE_TIMESERIES_ITEM]**](OHLCV.ExchangeTimeseriesItem.md)
+[**LIST [OHLCV_TIME_SERIES_EXCHANGE_TIMESERIES_ITEM]**](OHLCVTimeSeries.ExchangeTimeseriesItem.md)
 
 ### Authorization
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get**
-> v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get (exchange_id: STRING_32 ; symbol_id: STRING_32 ; period_id: STRING_32 ; time_start:  detachable STRING_32 ; time_end:  detachable STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [OHLCV_TIMESERIES_ITEM]
+> v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get (exchange_id: STRING_32 ; symbol_id: STRING_32 ; period_id: STRING_32 ; time_start:  detachable STRING_32 ; time_end:  detachable STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [OHLCV_TIME_SERIES_TIMESERIES_ITEM]
 
 
 Historical data
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [OHLCV_TIMESERIES_ITEM]**](OHLCV.TimeseriesItem.md)
+[**LIST [OHLCV_TIME_SERIES_TIMESERIES_ITEM]**](OHLCVTimeSeries.TimeseriesItem.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get**
-> v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get (exchange_id: STRING_32 ; symbol_id: STRING_32 ; period_id: STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [OHLCV_TIMESERIES_ITEM]
+> v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get (exchange_id: STRING_32 ; symbol_id: STRING_32 ; period_id: STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [OHLCV_TIME_SERIES_TIMESERIES_ITEM]
 
 
 Latest data
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LIST [OHLCV_TIMESERIES_ITEM]**](OHLCV.TimeseriesItem.md)
+[**LIST [OHLCV_TIME_SERIES_TIMESERIES_ITEM]**](OHLCVTimeSeries.TimeseriesItem.md)
 
 ### Authorization
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_ohlcv_periods_get**
-> v1_ohlcv_periods_get : detachable LIST [OHLCV_TIMESERIES_PERIOD]
+> v1_ohlcv_periods_get : detachable LIST [OHLCV_TIME_SERIES_TIMESERIES_PERIOD]
 
 
 List all periods
@@ -125,7 +125,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**LIST [OHLCV_TIMESERIES_PERIOD]**](OHLCV.TimeseriesPeriod.md)
+[**LIST [OHLCV_TIME_SERIES_TIMESERIES_PERIOD]**](OHLCVTimeSeries.TimeseriesPeriod.md)
 
 ### Authorization
 

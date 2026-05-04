@@ -27,9 +27,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.OHLCVExchangeTimeseriesItem;
-import org.openapitools.client.model.OHLCVTimeseriesItem;
-import org.openapitools.client.model.OHLCVTimeseriesPeriod;
+import org.openapitools.client.model.OHLCVTimeSeriesExchangeTimeseriesItem;
+import org.openapitools.client.model.OHLCVTimeSeriesTimeseriesItem;
+import org.openapitools.client.model.OHLCVTimeSeriesTimeseriesPeriod;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -182,7 +182,7 @@ public class OhlcvApi {
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
-     * @return List&lt;OHLCVExchangeTimeseriesItem&gt;
+     * @return List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -191,8 +191,8 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<OHLCVExchangeTimeseriesItem> v1OhlcvExchangeExchangeIdHistoryGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd) throws ApiException {
-        ApiResponse<List<OHLCVExchangeTimeseriesItem>> localVarResp = v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId, periodId, timeStart, timeEnd);
+    public List<OHLCVTimeSeriesExchangeTimeseriesItem> v1OhlcvExchangeExchangeIdHistoryGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd) throws ApiException {
+        ApiResponse<List<OHLCVTimeSeriesExchangeTimeseriesItem>> localVarResp = v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId, periodId, timeStart, timeEnd);
         return localVarResp.getData();
     }
 
@@ -203,7 +203,7 @@ public class OhlcvApi {
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
-     * @return ApiResponse&lt;List&lt;OHLCVExchangeTimeseriesItem&gt;&gt;
+     * @return ApiResponse&lt;List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -212,9 +212,9 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<OHLCVExchangeTimeseriesItem>> v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd) throws ApiException {
+    public ApiResponse<List<OHLCVTimeSeriesExchangeTimeseriesItem>> v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd) throws ApiException {
         okhttp3.Call localVarCall = v1OhlcvExchangeExchangeIdHistoryGetValidateBeforeCall(exchangeId, periodId, timeStart, timeEnd, null);
-        Type localVarReturnType = new TypeToken<List<OHLCVExchangeTimeseriesItem>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OHLCVTimeSeriesExchangeTimeseriesItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -235,10 +235,10 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OhlcvExchangeExchangeIdHistoryGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, final ApiCallback<List<OHLCVExchangeTimeseriesItem>> _callback) throws ApiException {
+    public okhttp3.Call v1OhlcvExchangeExchangeIdHistoryGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, final ApiCallback<List<OHLCVTimeSeriesExchangeTimeseriesItem>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OhlcvExchangeExchangeIdHistoryGetValidateBeforeCall(exchangeId, periodId, timeStart, timeEnd, _callback);
-        Type localVarReturnType = new TypeToken<List<OHLCVExchangeTimeseriesItem>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OHLCVTimeSeriesExchangeTimeseriesItem>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -354,7 +354,7 @@ public class OhlcvApi {
      * @param timeStart Timeseries starting time in ISO 8601 (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (optional)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return List&lt;OHLCVTimeseriesItem&gt;
+     * @return List&lt;OHLCVTimeSeriesTimeseriesItem&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -363,8 +363,8 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<OHLCVTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<OHLCVTimeseriesItem>> localVarResp = v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(exchangeId, symbolId, periodId, timeStart, timeEnd, limit);
+    public List<OHLCVTimeSeriesTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<List<OHLCVTimeSeriesTimeseriesItem>> localVarResp = v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(exchangeId, symbolId, periodId, timeStart, timeEnd, limit);
         return localVarResp.getData();
     }
 
@@ -377,7 +377,7 @@ public class OhlcvApi {
      * @param timeStart Timeseries starting time in ISO 8601 (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (optional)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return ApiResponse&lt;List&lt;OHLCVTimeseriesItem&gt;&gt;
+     * @return ApiResponse&lt;List&lt;OHLCVTimeSeriesTimeseriesItem&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -386,9 +386,9 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<OHLCVTimeseriesItem>> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
+    public ApiResponse<List<OHLCVTimeSeriesTimeseriesItem>> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetValidateBeforeCall(exchangeId, symbolId, periodId, timeStart, timeEnd, limit, null);
-        Type localVarReturnType = new TypeToken<List<OHLCVTimeseriesItem>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OHLCVTimeSeriesTimeseriesItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -411,10 +411,10 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback<List<OHLCVTimeseriesItem>> _callback) throws ApiException {
+    public okhttp3.Call v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable String timeStart, @javax.annotation.Nullable String timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback<List<OHLCVTimeSeriesTimeseriesItem>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetValidateBeforeCall(exchangeId, symbolId, periodId, timeStart, timeEnd, limit, _callback);
-        Type localVarReturnType = new TypeToken<List<OHLCVTimeseriesItem>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OHLCVTimeSeriesTimeseriesItem>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -518,7 +518,7 @@ public class OhlcvApi {
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return List&lt;OHLCVTimeseriesItem&gt;
+     * @return List&lt;OHLCVTimeSeriesTimeseriesItem&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -527,8 +527,8 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<OHLCVTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<OHLCVTimeseriesItem>> localVarResp = v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(exchangeId, symbolId, periodId, limit);
+    public List<OHLCVTimeSeriesTimeseriesItem> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<List<OHLCVTimeSeriesTimeseriesItem>> localVarResp = v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(exchangeId, symbolId, periodId, limit);
         return localVarResp.getData();
     }
 
@@ -539,7 +539,7 @@ public class OhlcvApi {
      * @param symbolId Symbol identifier of requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;) (required)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @return ApiResponse&lt;List&lt;OHLCVTimeseriesItem&gt;&gt;
+     * @return ApiResponse&lt;List&lt;OHLCVTimeSeriesTimeseriesItem&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -548,9 +548,9 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<OHLCVTimeseriesItem>> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
+    public ApiResponse<List<OHLCVTimeSeriesTimeseriesItem>> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit) throws ApiException {
         okhttp3.Call localVarCall = v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetValidateBeforeCall(exchangeId, symbolId, periodId, limit, null);
-        Type localVarReturnType = new TypeToken<List<OHLCVTimeseriesItem>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OHLCVTimeSeriesTimeseriesItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -571,10 +571,10 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback<List<OHLCVTimeseriesItem>> _callback) throws ApiException {
+    public okhttp3.Call v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String symbolId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nullable Integer limit, final ApiCallback<List<OHLCVTimeSeriesTimeseriesItem>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetValidateBeforeCall(exchangeId, symbolId, periodId, limit, _callback);
-        Type localVarReturnType = new TypeToken<List<OHLCVTimeseriesItem>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OHLCVTimeSeriesTimeseriesItem>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -645,7 +645,7 @@ public class OhlcvApi {
     /**
      * List all periods
      * Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
-     * @return List&lt;OHLCVTimeseriesPeriod&gt;
+     * @return List&lt;OHLCVTimeSeriesTimeseriesPeriod&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -654,15 +654,15 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<OHLCVTimeseriesPeriod> v1OhlcvPeriodsGet() throws ApiException {
-        ApiResponse<List<OHLCVTimeseriesPeriod>> localVarResp = v1OhlcvPeriodsGetWithHttpInfo();
+    public List<OHLCVTimeSeriesTimeseriesPeriod> v1OhlcvPeriodsGet() throws ApiException {
+        ApiResponse<List<OHLCVTimeSeriesTimeseriesPeriod>> localVarResp = v1OhlcvPeriodsGetWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * List all periods
      * Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
-     * @return ApiResponse&lt;List&lt;OHLCVTimeseriesPeriod&gt;&gt;
+     * @return ApiResponse&lt;List&lt;OHLCVTimeSeriesTimeseriesPeriod&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -671,9 +671,9 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<OHLCVTimeseriesPeriod>> v1OhlcvPeriodsGetWithHttpInfo() throws ApiException {
+    public ApiResponse<List<OHLCVTimeSeriesTimeseriesPeriod>> v1OhlcvPeriodsGetWithHttpInfo() throws ApiException {
         okhttp3.Call localVarCall = v1OhlcvPeriodsGetValidateBeforeCall(null);
-        Type localVarReturnType = new TypeToken<List<OHLCVTimeseriesPeriod>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OHLCVTimeSeriesTimeseriesPeriod>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -690,10 +690,10 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OhlcvPeriodsGetAsync(final ApiCallback<List<OHLCVTimeseriesPeriod>> _callback) throws ApiException {
+    public okhttp3.Call v1OhlcvPeriodsGetAsync(final ApiCallback<List<OHLCVTimeSeriesTimeseriesPeriod>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1OhlcvPeriodsGetValidateBeforeCall(_callback);
-        Type localVarReturnType = new TypeToken<List<OHLCVTimeseriesPeriod>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<OHLCVTimeSeriesTimeseriesPeriod>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

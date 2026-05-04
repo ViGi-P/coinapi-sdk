@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## V1NativeIexAdminMessagesSymbolGet
 
-> []AdminAdminMessageModel V1NativeIexAdminMessagesSymbolGet(ctx, symbol).Date(date).Execute()
+> []ModelsAdminMessageModel V1NativeIexAdminMessagesSymbolGet(ctx, symbol).Date(date).Execute()
 
 Get Admin Messages
 
@@ -43,7 +43,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NativeIEXAPI.V1NativeIexAdminMessagesSymbolGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1NativeIexAdminMessagesSymbolGet`: []AdminAdminMessageModel
+	// response from `V1NativeIexAdminMessagesSymbolGet`: []ModelsAdminMessageModel
 	fmt.Fprintf(os.Stdout, "Response from `NativeIEXAPI.V1NativeIexAdminMessagesSymbolGet`: %v\n", resp)
 }
 ```
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]AdminAdminMessageModel**](AdminAdminMessageModel.md)
+[**[]ModelsAdminMessageModel**](ModelsAdminMessageModel.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ## V1NativeIexAdminSystemEventGet
 
-> []AdminSystemEventModel V1NativeIexAdminSystemEventGet(ctx).Date(date).Execute()
+> []IEXSystemEventSystemEventModel V1NativeIexAdminSystemEventGet(ctx).Date(date).Execute()
 
 Get System Events
 
@@ -113,7 +113,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NativeIEXAPI.V1NativeIexAdminSystemEventGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1NativeIexAdminSystemEventGet`: []AdminSystemEventModel
+	// response from `V1NativeIexAdminSystemEventGet`: []IEXSystemEventSystemEventModel
 	fmt.Fprintf(os.Stdout, "Response from `NativeIEXAPI.V1NativeIexAdminSystemEventGet`: %v\n", resp)
 }
 ```
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]AdminSystemEventModel**](AdminSystemEventModel.md)
+[**[]IEXSystemEventSystemEventModel**](IEXSystemEventSystemEventModel.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## V1NativeIexLevel1QuoteSymbolGet
 
-> []Level1QuoteUpdateModel V1NativeIexLevel1QuoteSymbolGet(ctx, symbol).Date(date).Execute()
+> []IEXQuoteUpdateQuoteUpdateModel V1NativeIexLevel1QuoteSymbolGet(ctx, symbol).Date(date).Execute()
 
 Get Level-1 Quotes
 
@@ -179,7 +179,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NativeIEXAPI.V1NativeIexLevel1QuoteSymbolGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1NativeIexLevel1QuoteSymbolGet`: []Level1QuoteUpdateModel
+	// response from `V1NativeIexLevel1QuoteSymbolGet`: []IEXQuoteUpdateQuoteUpdateModel
 	fmt.Fprintf(os.Stdout, "Response from `NativeIEXAPI.V1NativeIexLevel1QuoteSymbolGet`: %v\n", resp)
 }
 ```
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Level1QuoteUpdateModel**](Level1QuoteUpdateModel.md)
+[**[]IEXQuoteUpdateQuoteUpdateModel**](IEXQuoteUpdateQuoteUpdateModel.md)
 
 ### Authorization
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ## V1NativeIexLevel2PriceLevelUpdateSymbolGet
 
-> []Level2PriceLevelUpdateModel V1NativeIexLevel2PriceLevelUpdateSymbolGet(ctx, symbol).Date(date).Execute()
+> []IEXPriceLevelUpdatePriceLevelUpdateModel V1NativeIexLevel2PriceLevelUpdateSymbolGet(ctx, symbol).Date(date).Execute()
 
 Get Level-2 Price Level Book
 
@@ -250,7 +250,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NativeIEXAPI.V1NativeIexLevel2PriceLevelUpdateSymbolGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1NativeIexLevel2PriceLevelUpdateSymbolGet`: []Level2PriceLevelUpdateModel
+	// response from `V1NativeIexLevel2PriceLevelUpdateSymbolGet`: []IEXPriceLevelUpdatePriceLevelUpdateModel
 	fmt.Fprintf(os.Stdout, "Response from `NativeIEXAPI.V1NativeIexLevel2PriceLevelUpdateSymbolGet`: %v\n", resp)
 }
 ```
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Level2PriceLevelUpdateModel**](Level2PriceLevelUpdateModel.md)
+[**[]IEXPriceLevelUpdatePriceLevelUpdateModel**](IEXPriceLevelUpdatePriceLevelUpdateModel.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ## V1NativeIexLevel3OrderBookSymbolGet
 
-> []Level3OrderBookModel V1NativeIexLevel3OrderBookSymbolGet(ctx, symbol).Date(date).Execute()
+> []ModelsOrderBookModel V1NativeIexLevel3OrderBookSymbolGet(ctx, symbol).Date(date).Execute()
 
 Get Level-3 Order Book
 
@@ -321,7 +321,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NativeIEXAPI.V1NativeIexLevel3OrderBookSymbolGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1NativeIexLevel3OrderBookSymbolGet`: []Level3OrderBookModel
+	// response from `V1NativeIexLevel3OrderBookSymbolGet`: []ModelsOrderBookModel
 	fmt.Fprintf(os.Stdout, "Response from `NativeIEXAPI.V1NativeIexLevel3OrderBookSymbolGet`: %v\n", resp)
 }
 ```
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]Level3OrderBookModel**](Level3OrderBookModel.md)
+[**[]ModelsOrderBookModel**](ModelsOrderBookModel.md)
 
 ### Authorization
 
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 ## V1NativeIexTradeSymbolGet
 
-> []TradeTradeModel V1NativeIexTradeSymbolGet(ctx, symbol).Date(date).Execute()
+> []IEXTradeTradeModel V1NativeIexTradeSymbolGet(ctx, symbol).Date(date).Execute()
 
 Get Trades
 
@@ -392,7 +392,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `NativeIEXAPI.V1NativeIexTradeSymbolGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `V1NativeIexTradeSymbolGet`: []TradeTradeModel
+	// response from `V1NativeIexTradeSymbolGet`: []IEXTradeTradeModel
 	fmt.Fprintf(os.Stdout, "Response from `NativeIEXAPI.V1NativeIexTradeSymbolGet`: %v\n", resp)
 }
 ```
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]TradeTradeModel**](TradeTradeModel.md)
+[**[]IEXTradeTradeModel**](IEXTradeTradeModel.md)
 
 ### Authorization
 

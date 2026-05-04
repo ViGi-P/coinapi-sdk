@@ -12,7 +12,7 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 ## v1_ohlcv_exchange_exchange_id_history_get
 
-> <Array<OHLCVExchangeTimeseriesItem>> v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end)
+> <Array<OHLCVTimeSeriesExchangeTimeseriesItem>> v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end)
 
 Historical data by exchange
 
@@ -53,7 +53,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<OHLCVExchangeTimeseriesItem>>, Integer, Hash)> v1_ohlcv_exchange_exchange_id_history_get_with_http_info(exchange_id, period_id, time_start, time_end)
+> <Array(<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>, Integer, Hash)> v1_ohlcv_exchange_exchange_id_history_get_with_http_info(exchange_id, period_id, time_start, time_end)
 
 ```ruby
 begin
@@ -61,7 +61,7 @@ begin
   data, status_code, headers = api_instance.v1_ohlcv_exchange_exchange_id_history_get_with_http_info(exchange_id, period_id, time_start, time_end)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<OHLCVExchangeTimeseriesItem>>
+  p data # => <Array<OHLCVTimeSeriesExchangeTimeseriesItem>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling OhlcvApi->v1_ohlcv_exchange_exchange_id_history_get_with_http_info: #{e}"
 end
@@ -78,7 +78,7 @@ end
 
 ### Return type
 
-[**Array&lt;OHLCVExchangeTimeseriesItem&gt;**](OHLCVExchangeTimeseriesItem.md)
+[**Array&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt;**](OHLCVTimeSeriesExchangeTimeseriesItem.md)
 
 ### Authorization
 
@@ -92,7 +92,7 @@ end
 
 ## v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get
 
-> <Array<OHLCVTimeseriesItem>> v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get(exchange_id, symbol_id, period_id, opts)
+> <Array<OHLCVTimeSeriesTimeseriesItem>> v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get(exchange_id, symbol_id, period_id, opts)
 
 Historical data
 
@@ -137,7 +137,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<OHLCVTimeseriesItem>>, Integer, Hash)> v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get_with_http_info(exchange_id, symbol_id, period_id, opts)
+> <Array(<Array<OHLCVTimeSeriesTimeseriesItem>>, Integer, Hash)> v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get_with_http_info(exchange_id, symbol_id, period_id, opts)
 
 ```ruby
 begin
@@ -145,7 +145,7 @@ begin
   data, status_code, headers = api_instance.v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get_with_http_info(exchange_id, symbol_id, period_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<OHLCVTimeseriesItem>>
+  p data # => <Array<OHLCVTimeSeriesTimeseriesItem>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling OhlcvApi->v1_ohlcv_exchange_symbol_exchange_id_symbol_id_history_get_with_http_info: #{e}"
 end
@@ -164,7 +164,7 @@ end
 
 ### Return type
 
-[**Array&lt;OHLCVTimeseriesItem&gt;**](OHLCVTimeseriesItem.md)
+[**Array&lt;OHLCVTimeSeriesTimeseriesItem&gt;**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -178,7 +178,7 @@ end
 
 ## v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get
 
-> <Array<OHLCVTimeseriesItem>> v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get(exchange_id, symbol_id, period_id, opts)
+> <Array<OHLCVTimeSeriesTimeseriesItem>> v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get(exchange_id, symbol_id, period_id, opts)
 
 Latest data
 
@@ -221,7 +221,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<OHLCVTimeseriesItem>>, Integer, Hash)> v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get_with_http_info(exchange_id, symbol_id, period_id, opts)
+> <Array(<Array<OHLCVTimeSeriesTimeseriesItem>>, Integer, Hash)> v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get_with_http_info(exchange_id, symbol_id, period_id, opts)
 
 ```ruby
 begin
@@ -229,7 +229,7 @@ begin
   data, status_code, headers = api_instance.v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get_with_http_info(exchange_id, symbol_id, period_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<OHLCVTimeseriesItem>>
+  p data # => <Array<OHLCVTimeSeriesTimeseriesItem>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling OhlcvApi->v1_ohlcv_exchange_symbol_exchange_id_symbol_id_latest_get_with_http_info: #{e}"
 end
@@ -246,7 +246,7 @@ end
 
 ### Return type
 
-[**Array&lt;OHLCVTimeseriesItem&gt;**](OHLCVTimeseriesItem.md)
+[**Array&lt;OHLCVTimeSeriesTimeseriesItem&gt;**](OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -260,7 +260,7 @@ end
 
 ## v1_ohlcv_periods_get
 
-> <Array<OHLCVTimeseriesPeriod>> v1_ohlcv_periods_get
+> <Array<OHLCVTimeSeriesTimeseriesPeriod>> v1_ohlcv_periods_get
 
 List all periods
 
@@ -297,7 +297,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<OHLCVTimeseriesPeriod>>, Integer, Hash)> v1_ohlcv_periods_get_with_http_info
+> <Array(<Array<OHLCVTimeSeriesTimeseriesPeriod>>, Integer, Hash)> v1_ohlcv_periods_get_with_http_info
 
 ```ruby
 begin
@@ -305,7 +305,7 @@ begin
   data, status_code, headers = api_instance.v1_ohlcv_periods_get_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <Array<OHLCVTimeseriesPeriod>>
+  p data # => <Array<OHLCVTimeSeriesTimeseriesPeriod>>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling OhlcvApi->v1_ohlcv_periods_get_with_http_info: #{e}"
 end
@@ -317,7 +317,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Array&lt;OHLCVTimeseriesPeriod&gt;**](OHLCVTimeseriesPeriod.md)
+[**Array&lt;OHLCVTimeSeriesTimeseriesPeriod&gt;**](OHLCVTimeSeriesTimeseriesPeriod.md)
 
 ### Authorization
 

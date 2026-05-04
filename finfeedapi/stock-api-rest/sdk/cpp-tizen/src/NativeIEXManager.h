@@ -5,12 +5,12 @@
 #include <cstring>
 #include <list>
 #include <glib.h>
-#include "Admin.AdminMessageModel.h"
-#include "Admin.SystemEventModel.h"
-#include "Level1.QuoteUpdateModel.h"
-#include "Level2.PriceLevelUpdateModel.h"
-#include "Level3.OrderBookModel.h"
-#include "Trade.TradeModel.h"
+#include "IEXPriceLevelUpdate.PriceLevelUpdateModel.h"
+#include "IEXQuoteUpdate.QuoteUpdateModel.h"
+#include "IEXSystemEvent.SystemEventModel.h"
+#include "IEXTrade.TradeModel.h"
+#include "Models.AdminMessageModel.h"
+#include "Models.OrderBookModel.h"
 #include <list>
 #include "Error.h"
 
@@ -41,7 +41,7 @@ public:
  */
 bool v1NativeIexAdminMessagesSymbolGetSync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Admin.AdminMessageModel>, Error, void* )
+	void(* handler)(std::list<Models.AdminMessageModel>, Error, void* )
 	, void* userData);
 
 /*! \brief Get Admin Messages. *Asynchronous*
@@ -55,7 +55,7 @@ bool v1NativeIexAdminMessagesSymbolGetSync(char * accessToken,
  */
 bool v1NativeIexAdminMessagesSymbolGetAsync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Admin.AdminMessageModel>, Error, void* )
+	void(* handler)(std::list<Models.AdminMessageModel>, Error, void* )
 	, void* userData);
 
 
@@ -69,7 +69,7 @@ bool v1NativeIexAdminMessagesSymbolGetAsync(char * accessToken,
  */
 bool v1NativeIexAdminSystemEventGetSync(char * accessToken,
 	std::string date, 
-	void(* handler)(std::list<Admin.SystemEventModel>, Error, void* )
+	void(* handler)(std::list<IEXSystemEvent.SystemEventModel>, Error, void* )
 	, void* userData);
 
 /*! \brief Get System Events. *Asynchronous*
@@ -82,7 +82,7 @@ bool v1NativeIexAdminSystemEventGetSync(char * accessToken,
  */
 bool v1NativeIexAdminSystemEventGetAsync(char * accessToken,
 	std::string date, 
-	void(* handler)(std::list<Admin.SystemEventModel>, Error, void* )
+	void(* handler)(std::list<IEXSystemEvent.SystemEventModel>, Error, void* )
 	, void* userData);
 
 
@@ -97,7 +97,7 @@ bool v1NativeIexAdminSystemEventGetAsync(char * accessToken,
  */
 bool v1NativeIexLevel1QuoteSymbolGetSync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level1.QuoteUpdateModel>, Error, void* )
+	void(* handler)(std::list<IEXQuoteUpdate.QuoteUpdateModel>, Error, void* )
 	, void* userData);
 
 /*! \brief Get Level-1 Quotes. *Asynchronous*
@@ -111,7 +111,7 @@ bool v1NativeIexLevel1QuoteSymbolGetSync(char * accessToken,
  */
 bool v1NativeIexLevel1QuoteSymbolGetAsync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level1.QuoteUpdateModel>, Error, void* )
+	void(* handler)(std::list<IEXQuoteUpdate.QuoteUpdateModel>, Error, void* )
 	, void* userData);
 
 
@@ -126,7 +126,7 @@ bool v1NativeIexLevel1QuoteSymbolGetAsync(char * accessToken,
  */
 bool v1NativeIexLevel2PriceLevelUpdateSymbolGetSync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level2.PriceLevelUpdateModel>, Error, void* )
+	void(* handler)(std::list<IEXPriceLevelUpdate.PriceLevelUpdateModel>, Error, void* )
 	, void* userData);
 
 /*! \brief Get Level-2 Price Level Book. *Asynchronous*
@@ -140,7 +140,7 @@ bool v1NativeIexLevel2PriceLevelUpdateSymbolGetSync(char * accessToken,
  */
 bool v1NativeIexLevel2PriceLevelUpdateSymbolGetAsync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level2.PriceLevelUpdateModel>, Error, void* )
+	void(* handler)(std::list<IEXPriceLevelUpdate.PriceLevelUpdateModel>, Error, void* )
 	, void* userData);
 
 
@@ -155,7 +155,7 @@ bool v1NativeIexLevel2PriceLevelUpdateSymbolGetAsync(char * accessToken,
  */
 bool v1NativeIexLevel3OrderBookSymbolGetSync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level3.OrderBookModel>, Error, void* )
+	void(* handler)(std::list<Models.OrderBookModel>, Error, void* )
 	, void* userData);
 
 /*! \brief Get Level-3 Order Book. *Asynchronous*
@@ -169,7 +169,7 @@ bool v1NativeIexLevel3OrderBookSymbolGetSync(char * accessToken,
  */
 bool v1NativeIexLevel3OrderBookSymbolGetAsync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Level3.OrderBookModel>, Error, void* )
+	void(* handler)(std::list<Models.OrderBookModel>, Error, void* )
 	, void* userData);
 
 
@@ -184,7 +184,7 @@ bool v1NativeIexLevel3OrderBookSymbolGetAsync(char * accessToken,
  */
 bool v1NativeIexTradeSymbolGetSync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Trade.TradeModel>, Error, void* )
+	void(* handler)(std::list<IEXTrade.TradeModel>, Error, void* )
 	, void* userData);
 
 /*! \brief Get Trades. *Asynchronous*
@@ -198,7 +198,7 @@ bool v1NativeIexTradeSymbolGetSync(char * accessToken,
  */
 bool v1NativeIexTradeSymbolGetAsync(char * accessToken,
 	std::string symbol, std::string date, 
-	void(* handler)(std::list<Trade.TradeModel>, Error, void* )
+	void(* handler)(std::list<IEXTrade.TradeModel>, Error, void* )
 	, void* userData);
 
 

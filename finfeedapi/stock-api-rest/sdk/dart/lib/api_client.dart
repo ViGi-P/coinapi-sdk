@@ -182,54 +182,54 @@ class ApiClient {
           return valueString == 'true' || valueString == '1';
         case 'DateTime':
           return value is DateTime ? value : DateTime.tryParse(value);
-        case 'AdminAdminMessageModel':
-          return AdminAdminMessageModel.fromJson(value);
-        case 'AdminAuctionInformationModel':
-          return AdminAuctionInformationModel.fromJson(value);
-        case 'AdminOfficialPriceModel':
-          return AdminOfficialPriceModel.fromJson(value);
-        case 'AdminOperationalHaltStatusModel':
-          return AdminOperationalHaltStatusModel.fromJson(value);
-        case 'AdminRetailLiquidityIndicatorModel':
-          return AdminRetailLiquidityIndicatorModel.fromJson(value);
-        case 'AdminSecurityDirectoryModel':
-          return AdminSecurityDirectoryModel.fromJson(value);
-        case 'AdminSecurityEventModel':
-          return AdminSecurityEventModel.fromJson(value);
-        case 'AdminShortSalePriceTestStatusModel':
-          return AdminShortSalePriceTestStatusModel.fromJson(value);
-        case 'AdminSystemEventModel':
-          return AdminSystemEventModel.fromJson(value);
-        case 'AdminTradingStatusModel':
-          return AdminTradingStatusModel.fromJson(value);
         case 'FinFeedAPIExchangeModel':
           return FinFeedAPIExchangeModel.fromJson(value);
         case 'FinFeedAPISymbolModel':
           return FinFeedAPISymbolModel.fromJson(value);
-        case 'Level1QuoteUpdateModel':
-          return Level1QuoteUpdateModel.fromJson(value);
-        case 'Level2PriceLevelUpdateModel':
-          return Level2PriceLevelUpdateModel.fromJson(value);
-        case 'Level3AddOrderModel':
-          return Level3AddOrderModel.fromJson(value);
-        case 'Level3ClearBookModel':
-          return Level3ClearBookModel.fromJson(value);
-        case 'Level3DeleteOrderModel':
-          return Level3DeleteOrderModel.fromJson(value);
-        case 'Level3ExecutedOrderModel':
-          return Level3ExecutedOrderModel.fromJson(value);
-        case 'Level3ModifyOrderModel':
-          return Level3ModifyOrderModel.fromJson(value);
-        case 'Level3OrderBookModel':
-          return Level3OrderBookModel.fromJson(value);
-        case 'OHLCVExchangeTimeseriesItem':
-          return OHLCVExchangeTimeseriesItem.fromJson(value);
-        case 'OHLCVTimeseriesItem':
-          return OHLCVTimeseriesItem.fromJson(value);
-        case 'OHLCVTimeseriesPeriod':
-          return OHLCVTimeseriesPeriod.fromJson(value);
-        case 'TradeTradeModel':
-          return TradeTradeModel.fromJson(value);
+        case 'IEXPriceLevelUpdatePriceLevelUpdateModel':
+          return IEXPriceLevelUpdatePriceLevelUpdateModel.fromJson(value);
+        case 'IEXQuoteUpdateQuoteUpdateModel':
+          return IEXQuoteUpdateQuoteUpdateModel.fromJson(value);
+        case 'IEXSystemEventSystemEventModel':
+          return IEXSystemEventSystemEventModel.fromJson(value);
+        case 'IEXTradeTradeModel':
+          return IEXTradeTradeModel.fromJson(value);
+        case 'ModelsAddOrderModel':
+          return ModelsAddOrderModel.fromJson(value);
+        case 'ModelsAdminMessageModel':
+          return ModelsAdminMessageModel.fromJson(value);
+        case 'ModelsAuctionInformationModel':
+          return ModelsAuctionInformationModel.fromJson(value);
+        case 'ModelsClearBookModel':
+          return ModelsClearBookModel.fromJson(value);
+        case 'ModelsDeleteOrderModel':
+          return ModelsDeleteOrderModel.fromJson(value);
+        case 'ModelsExecutedOrderModel':
+          return ModelsExecutedOrderModel.fromJson(value);
+        case 'ModelsModifyOrderModel':
+          return ModelsModifyOrderModel.fromJson(value);
+        case 'ModelsOfficialPriceModel':
+          return ModelsOfficialPriceModel.fromJson(value);
+        case 'ModelsOperationalHaltStatusModel':
+          return ModelsOperationalHaltStatusModel.fromJson(value);
+        case 'ModelsOrderBookModel':
+          return ModelsOrderBookModel.fromJson(value);
+        case 'ModelsRetailLiquidityIndicatorModel':
+          return ModelsRetailLiquidityIndicatorModel.fromJson(value);
+        case 'ModelsSecurityDirectoryModel':
+          return ModelsSecurityDirectoryModel.fromJson(value);
+        case 'ModelsSecurityEventModel':
+          return ModelsSecurityEventModel.fromJson(value);
+        case 'ModelsShortSalePriceTestStatusModel':
+          return ModelsShortSalePriceTestStatusModel.fromJson(value);
+        case 'ModelsTradingStatusModel':
+          return ModelsTradingStatusModel.fromJson(value);
+        case 'OHLCVTimeSeriesExchangeTimeseriesItem':
+          return OHLCVTimeSeriesExchangeTimeseriesItem.fromJson(value);
+        case 'OHLCVTimeSeriesTimeseriesItem':
+          return OHLCVTimeSeriesTimeseriesItem.fromJson(value);
+        case 'OHLCVTimeSeriesTimeseriesPeriod':
+          return OHLCVTimeSeriesTimeseriesPeriod.fromJson(value);
         default:
           dynamic match;
           if (value is List && (match = _regList.firstMatch(targetType)?.group(1)) != null) {

@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## v1NativeIexAdminMessagesSymbolGet
 
-> List&lt;AdminAdminMessageModel&gt; v1NativeIexAdminMessagesSymbolGet(symbol, date)
+> List&lt;ModelsAdminMessageModel&gt; v1NativeIexAdminMessagesSymbolGet(symbol, date)
 
 Get Admin Messages
 
@@ -29,7 +29,7 @@ NativeIEXApi apiInstance = new NativeIEXApi();
 String symbol = null; // String | The symbol identifier
 Date date = null; // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
 try {
-    List<AdminAdminMessageModel> result = apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date);
+    List<ModelsAdminMessageModel> result = apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NativeIEXApi#v1NativeIexAdminMessagesSymbolGet");
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;AdminAdminMessageModel&gt;**](AdminAdminMessageModel.md)
+[**List&lt;ModelsAdminMessageModel&gt;**](ModelsAdminMessageModel.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexAdminSystemEventGet
 
-> List&lt;AdminSystemEventModel&gt; v1NativeIexAdminSystemEventGet(date)
+> List&lt;IEXSystemEventSystemEventModel&gt; v1NativeIexAdminSystemEventGet(date)
 
 Get System Events
 
@@ -74,7 +74,7 @@ Get System Events
 NativeIEXApi apiInstance = new NativeIEXApi();
 Date date = null; // Date | Date in format YYYY-MM-DD
 try {
-    List<AdminSystemEventModel> result = apiInstance.v1NativeIexAdminSystemEventGet(date);
+    List<IEXSystemEventSystemEventModel> result = apiInstance.v1NativeIexAdminSystemEventGet(date);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NativeIEXApi#v1NativeIexAdminSystemEventGet");
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;AdminSystemEventModel&gt;**](AdminSystemEventModel.md)
+[**List&lt;IEXSystemEventSystemEventModel&gt;**](IEXSystemEventSystemEventModel.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexLevel1QuoteSymbolGet
 
-> List&lt;Level1QuoteUpdateModel&gt; v1NativeIexLevel1QuoteSymbolGet(symbol, date)
+> List&lt;IEXQuoteUpdateQuoteUpdateModel&gt; v1NativeIexLevel1QuoteSymbolGet(symbol, date)
 
 Get Level-1 Quotes
 
@@ -119,7 +119,7 @@ NativeIEXApi apiInstance = new NativeIEXApi();
 String symbol = null; // String | The symbol identifier
 Date date = null; // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
 try {
-    List<Level1QuoteUpdateModel> result = apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date);
+    List<IEXQuoteUpdateQuoteUpdateModel> result = apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NativeIEXApi#v1NativeIexLevel1QuoteSymbolGet");
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Level1QuoteUpdateModel&gt;**](Level1QuoteUpdateModel.md)
+[**List&lt;IEXQuoteUpdateQuoteUpdateModel&gt;**](IEXQuoteUpdateQuoteUpdateModel.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexLevel2PriceLevelUpdateSymbolGet
 
-> List&lt;Level2PriceLevelUpdateModel&gt; v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
+> List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt; v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
 
 Get Level-2 Price Level Book
 
@@ -165,7 +165,7 @@ NativeIEXApi apiInstance = new NativeIEXApi();
 String symbol = null; // String | The symbol identifier
 Date date = null; // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
 try {
-    List<Level2PriceLevelUpdateModel> result = apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date);
+    List<IEXPriceLevelUpdatePriceLevelUpdateModel> result = apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NativeIEXApi#v1NativeIexLevel2PriceLevelUpdateSymbolGet");
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Level2PriceLevelUpdateModel&gt;**](Level2PriceLevelUpdateModel.md)
+[**List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt;**](IEXPriceLevelUpdatePriceLevelUpdateModel.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexLevel3OrderBookSymbolGet
 
-> List&lt;Level3OrderBookModel&gt; v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
+> List&lt;ModelsOrderBookModel&gt; v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
 
 Get Level-3 Order Book
 
@@ -211,7 +211,7 @@ NativeIEXApi apiInstance = new NativeIEXApi();
 String symbol = null; // String | The symbol identifier
 Date date = null; // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
 try {
-    List<Level3OrderBookModel> result = apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date);
+    List<ModelsOrderBookModel> result = apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NativeIEXApi#v1NativeIexLevel3OrderBookSymbolGet");
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;Level3OrderBookModel&gt;**](Level3OrderBookModel.md)
+[**List&lt;ModelsOrderBookModel&gt;**](ModelsOrderBookModel.md)
 
 ### Authorization
 
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexTradeSymbolGet
 
-> List&lt;TradeTradeModel&gt; v1NativeIexTradeSymbolGet(symbol, date)
+> List&lt;IEXTradeTradeModel&gt; v1NativeIexTradeSymbolGet(symbol, date)
 
 Get Trades
 
@@ -257,7 +257,7 @@ NativeIEXApi apiInstance = new NativeIEXApi();
 String symbol = null; // String | The symbol identifier
 Date date = null; // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
 try {
-    List<TradeTradeModel> result = apiInstance.v1NativeIexTradeSymbolGet(symbol, date);
+    List<IEXTradeTradeModel> result = apiInstance.v1NativeIexTradeSymbolGet(symbol, date);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NativeIEXApi#v1NativeIexTradeSymbolGet");
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;TradeTradeModel&gt;**](TradeTradeModel.md)
+[**List&lt;IEXTradeTradeModel&gt;**](IEXTradeTradeModel.md)
 
 ### Authorization
 

@@ -285,7 +285,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/exchanges"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/exchanges");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/exchanges");
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar1 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
@@ -543,7 +543,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                     uriBuilderLocalVar.Scheme = HttpClient.BaseAddress.Scheme;
                     uriBuilderLocalVar.Path = HttpClient.BaseAddress.AbsolutePath == "/"
                         ? "/v1/symbols/{exchange_id}"
-                        : string.Concat(HttpClient.BaseAddress.AbsolutePath, "/v1/symbols/{exchange_id}");
+                        : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/symbols/{exchange_id}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bexchange_id%7D", Uri.EscapeDataString(exchangeId.ToString()));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();

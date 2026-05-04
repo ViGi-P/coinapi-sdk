@@ -119,7 +119,7 @@ export class MetadataApi {
     { response: JQueryXHR; body: Array<models.FinFeedAPISymbolModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/v1/symbols/{exchange_id}'.replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+        let localVarPath = this.basePath + '/v1/symbols/{exchange_id}'.replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
 
         let queryParameters: any = {};
         let headerParams: any = {};

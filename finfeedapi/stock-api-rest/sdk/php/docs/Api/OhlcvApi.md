@@ -1,6 +1,6 @@
 # OpenAPI\Client\OhlcvApi
 
-
+Provides access to OHLCV (Open, High, Low, Close, Volume) timeseries data.
 
 All URIs are relative to https://api-historical.stock.finfeedapi.com, except if the operation defines another base path.
 
@@ -15,7 +15,7 @@ All URIs are relative to https://api-historical.stock.finfeedapi.com, except if 
 ## `v1OhlcvExchangeExchangeIdHistoryGet()`
 
 ```php
-v1OhlcvExchangeExchangeIdHistoryGet($exchange_id, $period_id, $time_start, $time_end): \OpenAPI\Client\Model\OHLCVExchangeTimeseriesItem[]
+v1OhlcvExchangeExchangeIdHistoryGet($exchange_id, $period_id, $time_start, $time_end): \OpenAPI\Client\Model\OHLCVTimeSeriesExchangeTimeseriesItem[]
 ```
 
 Historical data by exchange
@@ -68,7 +68,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OHLCVExchangeTimeseriesItem[]**](../Model/OHLCVExchangeTimeseriesItem.md)
+[**\OpenAPI\Client\Model\OHLCVTimeSeriesExchangeTimeseriesItem[]**](../Model/OHLCVTimeSeriesExchangeTimeseriesItem.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ try {
 ## `v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet()`
 
 ```php
-v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet($exchange_id, $symbol_id, $period_id, $time_start, $time_end, $limit): \OpenAPI\Client\Model\OHLCVTimeseriesItem[]
+v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet($exchange_id, $symbol_id, $period_id, $time_start, $time_end, $limit): \OpenAPI\Client\Model\OHLCVTimeSeriesTimeseriesItem[]
 ```
 
 Historical data
@@ -143,7 +143,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OHLCVTimeseriesItem[]**](../Model/OHLCVTimeseriesItem.md)
+[**\OpenAPI\Client\Model\OHLCVTimeSeriesTimeseriesItem[]**](../Model/OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -161,7 +161,7 @@ try {
 ## `v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet()`
 
 ```php
-v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet($exchange_id, $symbol_id, $period_id, $limit): \OpenAPI\Client\Model\OHLCVTimeseriesItem[]
+v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet($exchange_id, $symbol_id, $period_id, $limit): \OpenAPI\Client\Model\OHLCVTimeSeriesTimeseriesItem[]
 ```
 
 Latest data
@@ -214,7 +214,7 @@ try {
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OHLCVTimeseriesItem[]**](../Model/OHLCVTimeseriesItem.md)
+[**\OpenAPI\Client\Model\OHLCVTimeSeriesTimeseriesItem[]**](../Model/OHLCVTimeSeriesTimeseriesItem.md)
 
 ### Authorization
 
@@ -232,7 +232,7 @@ try {
 ## `v1OhlcvPeriodsGet()`
 
 ```php
-v1OhlcvPeriodsGet(): \OpenAPI\Client\Model\OHLCVTimeseriesPeriod[]
+v1OhlcvPeriodsGet(): \OpenAPI\Client\Model\OHLCVTimeSeriesTimeseriesPeriod[]
 ```
 
 List all periods
@@ -276,7 +276,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\OpenAPI\Client\Model\OHLCVTimeseriesPeriod[]**](../Model/OHLCVTimeseriesPeriod.md)
+[**\OpenAPI\Client\Model\OHLCVTimeSeriesTimeseriesPeriod[]**](../Model/OHLCVTimeSeriesTimeseriesPeriod.md)
 
 ### Authorization
 

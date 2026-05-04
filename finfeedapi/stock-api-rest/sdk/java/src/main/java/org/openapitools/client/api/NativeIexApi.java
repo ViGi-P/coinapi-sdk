@@ -27,13 +27,13 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.AdminAdminMessageModel;
-import org.openapitools.client.model.AdminSystemEventModel;
-import org.openapitools.client.model.Level1QuoteUpdateModel;
-import org.openapitools.client.model.Level2PriceLevelUpdateModel;
-import org.openapitools.client.model.Level3OrderBookModel;
+import org.openapitools.client.model.IEXPriceLevelUpdatePriceLevelUpdateModel;
+import org.openapitools.client.model.IEXQuoteUpdateQuoteUpdateModel;
+import org.openapitools.client.model.IEXSystemEventSystemEventModel;
+import org.openapitools.client.model.IEXTradeTradeModel;
+import org.openapitools.client.model.ModelsAdminMessageModel;
+import org.openapitools.client.model.ModelsOrderBookModel;
 import java.time.OffsetDateTime;
-import org.openapitools.client.model.TradeTradeModel;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -162,7 +162,7 @@ public class NativeIexApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return List&lt;AdminAdminMessageModel&gt;
+     * @return List&lt;ModelsAdminMessageModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -171,8 +171,8 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<AdminAdminMessageModel> v1NativeIexAdminMessagesSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
-        ApiResponse<List<AdminAdminMessageModel>> localVarResp = v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol, date);
+    public List<ModelsAdminMessageModel> v1NativeIexAdminMessagesSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        ApiResponse<List<ModelsAdminMessageModel>> localVarResp = v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol, date);
         return localVarResp.getData();
     }
 
@@ -181,7 +181,7 @@ public class NativeIexApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return ApiResponse&lt;List&lt;AdminAdminMessageModel&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ModelsAdminMessageModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -190,9 +190,9 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<AdminAdminMessageModel>> v1NativeIexAdminMessagesSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+    public ApiResponse<List<ModelsAdminMessageModel>> v1NativeIexAdminMessagesSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
         okhttp3.Call localVarCall = v1NativeIexAdminMessagesSymbolGetValidateBeforeCall(symbol, date, null);
-        Type localVarReturnType = new TypeToken<List<AdminAdminMessageModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsAdminMessageModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -211,10 +211,10 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexAdminMessagesSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<AdminAdminMessageModel>> _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexAdminMessagesSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<ModelsAdminMessageModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1NativeIexAdminMessagesSymbolGetValidateBeforeCall(symbol, date, _callback);
-        Type localVarReturnType = new TypeToken<List<AdminAdminMessageModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsAdminMessageModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -294,7 +294,7 @@ public class NativeIexApi {
      * Get System Events
      * 
      * @param date Date in format YYYY-MM-DD (required)
-     * @return List&lt;AdminSystemEventModel&gt;
+     * @return List&lt;IEXSystemEventSystemEventModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -303,8 +303,8 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<AdminSystemEventModel> v1NativeIexAdminSystemEventGet(@javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
-        ApiResponse<List<AdminSystemEventModel>> localVarResp = v1NativeIexAdminSystemEventGetWithHttpInfo(date);
+    public List<IEXSystemEventSystemEventModel> v1NativeIexAdminSystemEventGet(@javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        ApiResponse<List<IEXSystemEventSystemEventModel>> localVarResp = v1NativeIexAdminSystemEventGetWithHttpInfo(date);
         return localVarResp.getData();
     }
 
@@ -312,7 +312,7 @@ public class NativeIexApi {
      * Get System Events
      * 
      * @param date Date in format YYYY-MM-DD (required)
-     * @return ApiResponse&lt;List&lt;AdminSystemEventModel&gt;&gt;
+     * @return ApiResponse&lt;List&lt;IEXSystemEventSystemEventModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -321,9 +321,9 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<AdminSystemEventModel>> v1NativeIexAdminSystemEventGetWithHttpInfo(@javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+    public ApiResponse<List<IEXSystemEventSystemEventModel>> v1NativeIexAdminSystemEventGetWithHttpInfo(@javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
         okhttp3.Call localVarCall = v1NativeIexAdminSystemEventGetValidateBeforeCall(date, null);
-        Type localVarReturnType = new TypeToken<List<AdminSystemEventModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<IEXSystemEventSystemEventModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -341,10 +341,10 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexAdminSystemEventGetAsync(@javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<AdminSystemEventModel>> _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexAdminSystemEventGetAsync(@javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<IEXSystemEventSystemEventModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1NativeIexAdminSystemEventGetValidateBeforeCall(date, _callback);
-        Type localVarReturnType = new TypeToken<List<AdminSystemEventModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<IEXSystemEventSystemEventModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -432,7 +432,7 @@ public class NativeIexApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return List&lt;Level1QuoteUpdateModel&gt;
+     * @return List&lt;IEXQuoteUpdateQuoteUpdateModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -441,8 +441,8 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<Level1QuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
-        ApiResponse<List<Level1QuoteUpdateModel>> localVarResp = v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol, date);
+    public List<IEXQuoteUpdateQuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        ApiResponse<List<IEXQuoteUpdateQuoteUpdateModel>> localVarResp = v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol, date);
         return localVarResp.getData();
     }
 
@@ -451,7 +451,7 @@ public class NativeIexApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return ApiResponse&lt;List&lt;Level1QuoteUpdateModel&gt;&gt;
+     * @return ApiResponse&lt;List&lt;IEXQuoteUpdateQuoteUpdateModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -460,9 +460,9 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Level1QuoteUpdateModel>> v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+    public ApiResponse<List<IEXQuoteUpdateQuoteUpdateModel>> v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
         okhttp3.Call localVarCall = v1NativeIexLevel1QuoteSymbolGetValidateBeforeCall(symbol, date, null);
-        Type localVarReturnType = new TypeToken<List<Level1QuoteUpdateModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<IEXQuoteUpdateQuoteUpdateModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -481,10 +481,10 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexLevel1QuoteSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<Level1QuoteUpdateModel>> _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexLevel1QuoteSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<IEXQuoteUpdateQuoteUpdateModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1NativeIexLevel1QuoteSymbolGetValidateBeforeCall(symbol, date, _callback);
-        Type localVarReturnType = new TypeToken<List<Level1QuoteUpdateModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<IEXQuoteUpdateQuoteUpdateModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -572,7 +572,7 @@ public class NativeIexApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return List&lt;Level2PriceLevelUpdateModel&gt;
+     * @return List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -581,8 +581,8 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<Level2PriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
-        ApiResponse<List<Level2PriceLevelUpdateModel>> localVarResp = v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol, date);
+    public List<IEXPriceLevelUpdatePriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        ApiResponse<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> localVarResp = v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol, date);
         return localVarResp.getData();
     }
 
@@ -591,7 +591,7 @@ public class NativeIexApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return ApiResponse&lt;List&lt;Level2PriceLevelUpdateModel&gt;&gt;
+     * @return ApiResponse&lt;List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -600,9 +600,9 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Level2PriceLevelUpdateModel>> v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+    public ApiResponse<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
         okhttp3.Call localVarCall = v1NativeIexLevel2PriceLevelUpdateSymbolGetValidateBeforeCall(symbol, date, null);
-        Type localVarReturnType = new TypeToken<List<Level2PriceLevelUpdateModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<IEXPriceLevelUpdatePriceLevelUpdateModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -621,10 +621,10 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexLevel2PriceLevelUpdateSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<Level2PriceLevelUpdateModel>> _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexLevel2PriceLevelUpdateSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1NativeIexLevel2PriceLevelUpdateSymbolGetValidateBeforeCall(symbol, date, _callback);
-        Type localVarReturnType = new TypeToken<List<Level2PriceLevelUpdateModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<IEXPriceLevelUpdatePriceLevelUpdateModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -712,7 +712,7 @@ public class NativeIexApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return List&lt;Level3OrderBookModel&gt;
+     * @return List&lt;ModelsOrderBookModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -721,8 +721,8 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<Level3OrderBookModel> v1NativeIexLevel3OrderBookSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
-        ApiResponse<List<Level3OrderBookModel>> localVarResp = v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol, date);
+    public List<ModelsOrderBookModel> v1NativeIexLevel3OrderBookSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        ApiResponse<List<ModelsOrderBookModel>> localVarResp = v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol, date);
         return localVarResp.getData();
     }
 
@@ -731,7 +731,7 @@ public class NativeIexApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return ApiResponse&lt;List&lt;Level3OrderBookModel&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ModelsOrderBookModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -740,9 +740,9 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Level3OrderBookModel>> v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+    public ApiResponse<List<ModelsOrderBookModel>> v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
         okhttp3.Call localVarCall = v1NativeIexLevel3OrderBookSymbolGetValidateBeforeCall(symbol, date, null);
-        Type localVarReturnType = new TypeToken<List<Level3OrderBookModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsOrderBookModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -761,10 +761,10 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexLevel3OrderBookSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<Level3OrderBookModel>> _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexLevel3OrderBookSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<ModelsOrderBookModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1NativeIexLevel3OrderBookSymbolGetValidateBeforeCall(symbol, date, _callback);
-        Type localVarReturnType = new TypeToken<List<Level3OrderBookModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ModelsOrderBookModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -852,7 +852,7 @@ public class NativeIexApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return List&lt;TradeTradeModel&gt;
+     * @return List&lt;IEXTradeTradeModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -861,8 +861,8 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<TradeTradeModel> v1NativeIexTradeSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
-        ApiResponse<List<TradeTradeModel>> localVarResp = v1NativeIexTradeSymbolGetWithHttpInfo(symbol, date);
+    public List<IEXTradeTradeModel> v1NativeIexTradeSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        ApiResponse<List<IEXTradeTradeModel>> localVarResp = v1NativeIexTradeSymbolGetWithHttpInfo(symbol, date);
         return localVarResp.getData();
     }
 
@@ -871,7 +871,7 @@ public class NativeIexApi {
      * 
      * @param symbol The symbol identifier (required)
      * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
-     * @return ApiResponse&lt;List&lt;TradeTradeModel&gt;&gt;
+     * @return ApiResponse&lt;List&lt;IEXTradeTradeModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -880,9 +880,9 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<TradeTradeModel>> v1NativeIexTradeSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+    public ApiResponse<List<IEXTradeTradeModel>> v1NativeIexTradeSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
         okhttp3.Call localVarCall = v1NativeIexTradeSymbolGetValidateBeforeCall(symbol, date, null);
-        Type localVarReturnType = new TypeToken<List<TradeTradeModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<IEXTradeTradeModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -901,10 +901,10 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexTradeSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<TradeTradeModel>> _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexTradeSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<IEXTradeTradeModel>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = v1NativeIexTradeSymbolGetValidateBeforeCall(symbol, date, _callback);
-        Type localVarReturnType = new TypeToken<List<TradeTradeModel>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<IEXTradeTradeModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

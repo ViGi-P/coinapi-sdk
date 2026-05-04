@@ -95,772 +95,6 @@ newtype TimeStart = TimeStart { unTimeStart :: Text } deriving (P.Eq, P.Show)
 -- * Models
 
 
--- ** AdminAdminMessageModel
--- | AdminAdminMessageModel
--- Represents the response DTO for IEX admin information, combining all symbol-based admin message types
-data AdminAdminMessageModel = AdminAdminMessageModel
-  { adminAdminMessageModelTradingStatus :: !(Maybe AdminTradingStatusModel) -- ^ "trading_status"
-  , adminAdminMessageModelOfficialPrice :: !(Maybe AdminOfficialPriceModel) -- ^ "official_price"
-  , adminAdminMessageModelSecurityEvent :: !(Maybe AdminSecurityEventModel) -- ^ "security_event"
-  , adminAdminMessageModelAuctionInformation :: !(Maybe AdminAuctionInformationModel) -- ^ "auction_information"
-  , adminAdminMessageModelShortSalePriceTest :: !(Maybe AdminShortSalePriceTestStatusModel) -- ^ "short_sale_price_test"
-  , adminAdminMessageModelOperationalHaltStatus :: !(Maybe AdminOperationalHaltStatusModel) -- ^ "operational_halt_status"
-  , adminAdminMessageModelRetailLiquidityIndicator :: !(Maybe AdminRetailLiquidityIndicatorModel) -- ^ "retail_liquidity_indicator"
-  , adminAdminMessageModelSystemEvent :: !(Maybe AdminSystemEventModel) -- ^ "system_event"
-  , adminAdminMessageModelSecurityDirectory :: !(Maybe AdminSecurityDirectoryModel) -- ^ "security_directory"
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON AdminAdminMessageModel
-instance A.FromJSON AdminAdminMessageModel where
-  parseJSON = A.withObject "AdminAdminMessageModel" $ \o ->
-    AdminAdminMessageModel
-      <$> (o .:? "trading_status")
-      <*> (o .:? "official_price")
-      <*> (o .:? "security_event")
-      <*> (o .:? "auction_information")
-      <*> (o .:? "short_sale_price_test")
-      <*> (o .:? "operational_halt_status")
-      <*> (o .:? "retail_liquidity_indicator")
-      <*> (o .:? "system_event")
-      <*> (o .:? "security_directory")
-
--- | ToJSON AdminAdminMessageModel
-instance A.ToJSON AdminAdminMessageModel where
-  toJSON AdminAdminMessageModel {..} =
-   _omitNulls
-      [ "trading_status" .= adminAdminMessageModelTradingStatus
-      , "official_price" .= adminAdminMessageModelOfficialPrice
-      , "security_event" .= adminAdminMessageModelSecurityEvent
-      , "auction_information" .= adminAdminMessageModelAuctionInformation
-      , "short_sale_price_test" .= adminAdminMessageModelShortSalePriceTest
-      , "operational_halt_status" .= adminAdminMessageModelOperationalHaltStatus
-      , "retail_liquidity_indicator" .= adminAdminMessageModelRetailLiquidityIndicator
-      , "system_event" .= adminAdminMessageModelSystemEvent
-      , "security_directory" .= adminAdminMessageModelSecurityDirectory
-      ]
-
-
--- | Construct a value of type 'AdminAdminMessageModel' (by applying it's required fields, if any)
-mkAdminAdminMessageModel
-  :: AdminAdminMessageModel
-mkAdminAdminMessageModel =
-  AdminAdminMessageModel
-  { adminAdminMessageModelTradingStatus = Nothing
-  , adminAdminMessageModelOfficialPrice = Nothing
-  , adminAdminMessageModelSecurityEvent = Nothing
-  , adminAdminMessageModelAuctionInformation = Nothing
-  , adminAdminMessageModelShortSalePriceTest = Nothing
-  , adminAdminMessageModelOperationalHaltStatus = Nothing
-  , adminAdminMessageModelRetailLiquidityIndicator = Nothing
-  , adminAdminMessageModelSystemEvent = Nothing
-  , adminAdminMessageModelSecurityDirectory = Nothing
-  }
-
--- ** AdminAuctionInformationModel
--- | AdminAuctionInformationModel
--- Represents the response DTO for auction information
-data AdminAuctionInformationModel = AdminAuctionInformationModel
-  { adminAuctionInformationModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , adminAuctionInformationModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , adminAuctionInformationModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the auction data was recorded as DateTime
-  , adminAuctionInformationModelAuctionType :: !(Maybe Int) -- ^ "auction_type" - Type of auction as byte value
-  , adminAuctionInformationModelAuctionTypeCode :: !(Maybe Text) -- ^ "auction_type_code" - Type of auction as character string
-  , adminAuctionInformationModelAuctionTypeText :: !(Maybe Text) -- ^ "auction_type_text" - Human-readable description of the auction type
-  , adminAuctionInformationModelIsAuctionTypeOpening :: !(Maybe Bool) -- ^ "is_auction_type_opening" - Indicates if the auction type is &#39;Opening Auction&#39; (&#39;O&#39;/0x4f).
-  , adminAuctionInformationModelIsAuctionTypeClosing :: !(Maybe Bool) -- ^ "is_auction_type_closing" - Indicates if the auction type is &#39;Closing Auction&#39; (&#39;C&#39;/0x43).
-  , adminAuctionInformationModelIsAuctionTypeIpo :: !(Maybe Bool) -- ^ "is_auction_type_ipo" - Indicates if the auction type is &#39;IPO Auction&#39; (&#39;I&#39;/0x49).
-  , adminAuctionInformationModelIsAuctionTypeHalt :: !(Maybe Bool) -- ^ "is_auction_type_halt" - Indicates if the auction type is &#39;Halt Auction&#39; (&#39;H&#39;/0x48).
-  , adminAuctionInformationModelIsAuctionTypeVolatility :: !(Maybe Bool) -- ^ "is_auction_type_volatility" - Indicates if the auction type is &#39;Volatility Auction&#39; (&#39;V&#39;/0x56).
-  , adminAuctionInformationModelPairedShares :: !(Maybe Int) -- ^ "paired_shares" - Number of shares paired at the Reference Price
-  , adminAuctionInformationModelReferencePrice :: !(Maybe Double) -- ^ "reference_price" - Reference price as decimal
-  , adminAuctionInformationModelIndicativeClearingPrice :: !(Maybe Double) -- ^ "indicative_clearing_price" - Indicative clearing price as decimal
-  , adminAuctionInformationModelImbalanceShares :: !(Maybe Int) -- ^ "imbalance_shares" - Number of unpaired shares at the Reference Price
-  , adminAuctionInformationModelImbalanceSide :: !(Maybe Int) -- ^ "imbalance_side" - Side of the imbalance as byte value
-  , adminAuctionInformationModelImbalanceSideCode :: !(Maybe Text) -- ^ "imbalance_side_code" - Side of the imbalance as character string
-  , adminAuctionInformationModelImbalanceSideText :: !(Maybe Text) -- ^ "imbalance_side_text" - Human-readable description of the imbalance side
-  , adminAuctionInformationModelIsImbalanceSideBuy :: !(Maybe Bool) -- ^ "is_imbalance_side_buy" - Indicates if there is a buy-side imbalance (&#39;B&#39;/0x42).
-  , adminAuctionInformationModelIsImbalanceSideSell :: !(Maybe Bool) -- ^ "is_imbalance_side_sell" - Indicates if there is a sell-side imbalance (&#39;S&#39;/0x53).
-  , adminAuctionInformationModelIsImbalanceSideNone :: !(Maybe Bool) -- ^ "is_imbalance_side_none" - Indicates if there is no imbalance (&#39;N&#39;/0x4e).
-  , adminAuctionInformationModelExtensionNumber :: !(Maybe Int) -- ^ "extension_number" - Number of extensions to the auction
-  , adminAuctionInformationModelScheduledAuctionTimeSeconds :: !(Maybe Int) -- ^ "scheduled_auction_time_seconds" - Scheduled auction time in seconds since epoch
-  , adminAuctionInformationModelScheduledAuctionTime :: !(Maybe DateTime) -- ^ "scheduled_auction_time" - Scheduled time for the auction as DateTime
-  , adminAuctionInformationModelAuctionBookClearingPrice :: !(Maybe Double) -- ^ "auction_book_clearing_price" - Auction book clearing price as decimal
-  , adminAuctionInformationModelCollarReferencePrice :: !(Maybe Double) -- ^ "collar_reference_price" - Collar reference price as decimal
-  , adminAuctionInformationModelLowerAuctionCollar :: !(Maybe Double) -- ^ "lower_auction_collar" - Lower auction collar as decimal
-  , adminAuctionInformationModelUpperAuctionCollar :: !(Maybe Double) -- ^ "upper_auction_collar" - Upper auction collar as decimal
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON AdminAuctionInformationModel
-instance A.FromJSON AdminAuctionInformationModel where
-  parseJSON = A.withObject "AdminAuctionInformationModel" $ \o ->
-    AdminAuctionInformationModel
-      <$> (o .:? "symbol")
-      <*> (o .:? "timestamp_nanos")
-      <*> (o .:? "timestamp")
-      <*> (o .:? "auction_type")
-      <*> (o .:? "auction_type_code")
-      <*> (o .:? "auction_type_text")
-      <*> (o .:? "is_auction_type_opening")
-      <*> (o .:? "is_auction_type_closing")
-      <*> (o .:? "is_auction_type_ipo")
-      <*> (o .:? "is_auction_type_halt")
-      <*> (o .:? "is_auction_type_volatility")
-      <*> (o .:? "paired_shares")
-      <*> (o .:? "reference_price")
-      <*> (o .:? "indicative_clearing_price")
-      <*> (o .:? "imbalance_shares")
-      <*> (o .:? "imbalance_side")
-      <*> (o .:? "imbalance_side_code")
-      <*> (o .:? "imbalance_side_text")
-      <*> (o .:? "is_imbalance_side_buy")
-      <*> (o .:? "is_imbalance_side_sell")
-      <*> (o .:? "is_imbalance_side_none")
-      <*> (o .:? "extension_number")
-      <*> (o .:? "scheduled_auction_time_seconds")
-      <*> (o .:? "scheduled_auction_time")
-      <*> (o .:? "auction_book_clearing_price")
-      <*> (o .:? "collar_reference_price")
-      <*> (o .:? "lower_auction_collar")
-      <*> (o .:? "upper_auction_collar")
-
--- | ToJSON AdminAuctionInformationModel
-instance A.ToJSON AdminAuctionInformationModel where
-  toJSON AdminAuctionInformationModel {..} =
-   _omitNulls
-      [ "symbol" .= adminAuctionInformationModelSymbol
-      , "timestamp_nanos" .= adminAuctionInformationModelTimestampNanos
-      , "timestamp" .= adminAuctionInformationModelTimestamp
-      , "auction_type" .= adminAuctionInformationModelAuctionType
-      , "auction_type_code" .= adminAuctionInformationModelAuctionTypeCode
-      , "auction_type_text" .= adminAuctionInformationModelAuctionTypeText
-      , "is_auction_type_opening" .= adminAuctionInformationModelIsAuctionTypeOpening
-      , "is_auction_type_closing" .= adminAuctionInformationModelIsAuctionTypeClosing
-      , "is_auction_type_ipo" .= adminAuctionInformationModelIsAuctionTypeIpo
-      , "is_auction_type_halt" .= adminAuctionInformationModelIsAuctionTypeHalt
-      , "is_auction_type_volatility" .= adminAuctionInformationModelIsAuctionTypeVolatility
-      , "paired_shares" .= adminAuctionInformationModelPairedShares
-      , "reference_price" .= adminAuctionInformationModelReferencePrice
-      , "indicative_clearing_price" .= adminAuctionInformationModelIndicativeClearingPrice
-      , "imbalance_shares" .= adminAuctionInformationModelImbalanceShares
-      , "imbalance_side" .= adminAuctionInformationModelImbalanceSide
-      , "imbalance_side_code" .= adminAuctionInformationModelImbalanceSideCode
-      , "imbalance_side_text" .= adminAuctionInformationModelImbalanceSideText
-      , "is_imbalance_side_buy" .= adminAuctionInformationModelIsImbalanceSideBuy
-      , "is_imbalance_side_sell" .= adminAuctionInformationModelIsImbalanceSideSell
-      , "is_imbalance_side_none" .= adminAuctionInformationModelIsImbalanceSideNone
-      , "extension_number" .= adminAuctionInformationModelExtensionNumber
-      , "scheduled_auction_time_seconds" .= adminAuctionInformationModelScheduledAuctionTimeSeconds
-      , "scheduled_auction_time" .= adminAuctionInformationModelScheduledAuctionTime
-      , "auction_book_clearing_price" .= adminAuctionInformationModelAuctionBookClearingPrice
-      , "collar_reference_price" .= adminAuctionInformationModelCollarReferencePrice
-      , "lower_auction_collar" .= adminAuctionInformationModelLowerAuctionCollar
-      , "upper_auction_collar" .= adminAuctionInformationModelUpperAuctionCollar
-      ]
-
-
--- | Construct a value of type 'AdminAuctionInformationModel' (by applying it's required fields, if any)
-mkAdminAuctionInformationModel
-  :: AdminAuctionInformationModel
-mkAdminAuctionInformationModel =
-  AdminAuctionInformationModel
-  { adminAuctionInformationModelSymbol = Nothing
-  , adminAuctionInformationModelTimestampNanos = Nothing
-  , adminAuctionInformationModelTimestamp = Nothing
-  , adminAuctionInformationModelAuctionType = Nothing
-  , adminAuctionInformationModelAuctionTypeCode = Nothing
-  , adminAuctionInformationModelAuctionTypeText = Nothing
-  , adminAuctionInformationModelIsAuctionTypeOpening = Nothing
-  , adminAuctionInformationModelIsAuctionTypeClosing = Nothing
-  , adminAuctionInformationModelIsAuctionTypeIpo = Nothing
-  , adminAuctionInformationModelIsAuctionTypeHalt = Nothing
-  , adminAuctionInformationModelIsAuctionTypeVolatility = Nothing
-  , adminAuctionInformationModelPairedShares = Nothing
-  , adminAuctionInformationModelReferencePrice = Nothing
-  , adminAuctionInformationModelIndicativeClearingPrice = Nothing
-  , adminAuctionInformationModelImbalanceShares = Nothing
-  , adminAuctionInformationModelImbalanceSide = Nothing
-  , adminAuctionInformationModelImbalanceSideCode = Nothing
-  , adminAuctionInformationModelImbalanceSideText = Nothing
-  , adminAuctionInformationModelIsImbalanceSideBuy = Nothing
-  , adminAuctionInformationModelIsImbalanceSideSell = Nothing
-  , adminAuctionInformationModelIsImbalanceSideNone = Nothing
-  , adminAuctionInformationModelExtensionNumber = Nothing
-  , adminAuctionInformationModelScheduledAuctionTimeSeconds = Nothing
-  , adminAuctionInformationModelScheduledAuctionTime = Nothing
-  , adminAuctionInformationModelAuctionBookClearingPrice = Nothing
-  , adminAuctionInformationModelCollarReferencePrice = Nothing
-  , adminAuctionInformationModelLowerAuctionCollar = Nothing
-  , adminAuctionInformationModelUpperAuctionCollar = Nothing
-  }
-
--- ** AdminOfficialPriceModel
--- | AdminOfficialPriceModel
--- Represents the response DTO for official price information
-data AdminOfficialPriceModel = AdminOfficialPriceModel
-  { adminOfficialPriceModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , adminOfficialPriceModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , adminOfficialPriceModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the official price was recorded as DateTime
-  , adminOfficialPriceModelPriceType :: !(Maybe Int) -- ^ "price_type" - Type of price as byte value
-  , adminOfficialPriceModelPriceTypeCode :: !(Maybe Text) -- ^ "price_type_code" - Type of price as character string
-  , adminOfficialPriceModelPriceTypeText :: !(Maybe Text) -- ^ "price_type_text" - Human-readable description of the price type
-  , adminOfficialPriceModelIsPriceTypeOpening :: !(Maybe Bool) -- ^ "is_price_type_opening" - Indicates if the price type is &#39;IEX Official Opening Price&#39; (&#39;Q&#39;/0x51).
-  , adminOfficialPriceModelIsPriceTypeClosing :: !(Maybe Bool) -- ^ "is_price_type_closing" - Indicates if the price type is &#39;IEX Official Closing Price&#39; (&#39;M&#39;/0x4d).
-  , adminOfficialPriceModelOfficialPrice :: !(Maybe Double) -- ^ "official_price" - Official price as decimal
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON AdminOfficialPriceModel
-instance A.FromJSON AdminOfficialPriceModel where
-  parseJSON = A.withObject "AdminOfficialPriceModel" $ \o ->
-    AdminOfficialPriceModel
-      <$> (o .:? "symbol")
-      <*> (o .:? "timestamp_nanos")
-      <*> (o .:? "timestamp")
-      <*> (o .:? "price_type")
-      <*> (o .:? "price_type_code")
-      <*> (o .:? "price_type_text")
-      <*> (o .:? "is_price_type_opening")
-      <*> (o .:? "is_price_type_closing")
-      <*> (o .:? "official_price")
-
--- | ToJSON AdminOfficialPriceModel
-instance A.ToJSON AdminOfficialPriceModel where
-  toJSON AdminOfficialPriceModel {..} =
-   _omitNulls
-      [ "symbol" .= adminOfficialPriceModelSymbol
-      , "timestamp_nanos" .= adminOfficialPriceModelTimestampNanos
-      , "timestamp" .= adminOfficialPriceModelTimestamp
-      , "price_type" .= adminOfficialPriceModelPriceType
-      , "price_type_code" .= adminOfficialPriceModelPriceTypeCode
-      , "price_type_text" .= adminOfficialPriceModelPriceTypeText
-      , "is_price_type_opening" .= adminOfficialPriceModelIsPriceTypeOpening
-      , "is_price_type_closing" .= adminOfficialPriceModelIsPriceTypeClosing
-      , "official_price" .= adminOfficialPriceModelOfficialPrice
-      ]
-
-
--- | Construct a value of type 'AdminOfficialPriceModel' (by applying it's required fields, if any)
-mkAdminOfficialPriceModel
-  :: AdminOfficialPriceModel
-mkAdminOfficialPriceModel =
-  AdminOfficialPriceModel
-  { adminOfficialPriceModelSymbol = Nothing
-  , adminOfficialPriceModelTimestampNanos = Nothing
-  , adminOfficialPriceModelTimestamp = Nothing
-  , adminOfficialPriceModelPriceType = Nothing
-  , adminOfficialPriceModelPriceTypeCode = Nothing
-  , adminOfficialPriceModelPriceTypeText = Nothing
-  , adminOfficialPriceModelIsPriceTypeOpening = Nothing
-  , adminOfficialPriceModelIsPriceTypeClosing = Nothing
-  , adminOfficialPriceModelOfficialPrice = Nothing
-  }
-
--- ** AdminOperationalHaltStatusModel
--- | AdminOperationalHaltStatusModel
--- Represents the response DTO for operational halt status information
-data AdminOperationalHaltStatusModel = AdminOperationalHaltStatusModel
-  { adminOperationalHaltStatusModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , adminOperationalHaltStatusModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , adminOperationalHaltStatusModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the operational halt status was recorded as DateTime
-  , adminOperationalHaltStatusModelOperationalHaltStatus :: !(Maybe Int) -- ^ "operational_halt_status" - Operational halt status as byte value
-  , adminOperationalHaltStatusModelOperationalHaltStatusCode :: !(Maybe Text) -- ^ "operational_halt_status_code" - Operational halt status as character string
-  , adminOperationalHaltStatusModelOperationalHaltStatusText :: !(Maybe Text) -- ^ "operational_halt_status_text" - Human-readable description of the operational halt status
-  , adminOperationalHaltStatusModelIsOperationallyHalted :: !(Maybe Bool) -- ^ "is_operationally_halted" - Indicates if the status is &#39;IEX specific operational trading halt&#39; (&#39;O&#39;/0x4f).
-  , adminOperationalHaltStatusModelIsNotOperationallyHalted :: !(Maybe Bool) -- ^ "is_not_operationally_halted" - Indicates if the status is &#39;Not operationally halted on IEX&#39; (&#39;N&#39;/0x4e).
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON AdminOperationalHaltStatusModel
-instance A.FromJSON AdminOperationalHaltStatusModel where
-  parseJSON = A.withObject "AdminOperationalHaltStatusModel" $ \o ->
-    AdminOperationalHaltStatusModel
-      <$> (o .:? "symbol")
-      <*> (o .:? "timestamp_nanos")
-      <*> (o .:? "timestamp")
-      <*> (o .:? "operational_halt_status")
-      <*> (o .:? "operational_halt_status_code")
-      <*> (o .:? "operational_halt_status_text")
-      <*> (o .:? "is_operationally_halted")
-      <*> (o .:? "is_not_operationally_halted")
-
--- | ToJSON AdminOperationalHaltStatusModel
-instance A.ToJSON AdminOperationalHaltStatusModel where
-  toJSON AdminOperationalHaltStatusModel {..} =
-   _omitNulls
-      [ "symbol" .= adminOperationalHaltStatusModelSymbol
-      , "timestamp_nanos" .= adminOperationalHaltStatusModelTimestampNanos
-      , "timestamp" .= adminOperationalHaltStatusModelTimestamp
-      , "operational_halt_status" .= adminOperationalHaltStatusModelOperationalHaltStatus
-      , "operational_halt_status_code" .= adminOperationalHaltStatusModelOperationalHaltStatusCode
-      , "operational_halt_status_text" .= adminOperationalHaltStatusModelOperationalHaltStatusText
-      , "is_operationally_halted" .= adminOperationalHaltStatusModelIsOperationallyHalted
-      , "is_not_operationally_halted" .= adminOperationalHaltStatusModelIsNotOperationallyHalted
-      ]
-
-
--- | Construct a value of type 'AdminOperationalHaltStatusModel' (by applying it's required fields, if any)
-mkAdminOperationalHaltStatusModel
-  :: AdminOperationalHaltStatusModel
-mkAdminOperationalHaltStatusModel =
-  AdminOperationalHaltStatusModel
-  { adminOperationalHaltStatusModelSymbol = Nothing
-  , adminOperationalHaltStatusModelTimestampNanos = Nothing
-  , adminOperationalHaltStatusModelTimestamp = Nothing
-  , adminOperationalHaltStatusModelOperationalHaltStatus = Nothing
-  , adminOperationalHaltStatusModelOperationalHaltStatusCode = Nothing
-  , adminOperationalHaltStatusModelOperationalHaltStatusText = Nothing
-  , adminOperationalHaltStatusModelIsOperationallyHalted = Nothing
-  , adminOperationalHaltStatusModelIsNotOperationallyHalted = Nothing
-  }
-
--- ** AdminRetailLiquidityIndicatorModel
--- | AdminRetailLiquidityIndicatorModel
--- Represents the response DTO for retail liquidity indicator information
-data AdminRetailLiquidityIndicatorModel = AdminRetailLiquidityIndicatorModel
-  { adminRetailLiquidityIndicatorModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , adminRetailLiquidityIndicatorModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , adminRetailLiquidityIndicatorModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the retail liquidity indicator was recorded as DateTime
-  , adminRetailLiquidityIndicatorModelRetailLiquidityIndicator :: !(Maybe Int) -- ^ "retail_liquidity_indicator" - Retail liquidity indicator as byte value
-  , adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode :: !(Maybe Text) -- ^ "retail_liquidity_indicator_code" - Retail liquidity indicator as character string
-  , adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorText :: !(Maybe Text) -- ^ "retail_liquidity_indicator_text" - Human-readable description of the retail liquidity indicator
-  , adminRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable :: !(Maybe Bool) -- ^ "is_retail_indicator_not_applicable" - Indicates if the indicator is &#39;Not Applicable&#39; (&#39; &#39;/0x20).
-  , adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest :: !(Maybe Bool) -- ^ "is_retail_indicator_buy_interest" - Indicates if there is &#39;Buy interest for Retail&#39; (&#39;A&#39;/0x41).
-  , adminRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest :: !(Maybe Bool) -- ^ "is_retail_indicator_sell_interest" - Indicates if there is &#39;Sell interest for Retail&#39; (&#39;B&#39;/0x42).
-  , adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest :: !(Maybe Bool) -- ^ "is_retail_indicator_buy_and_sell_interest" - Indicates if there is &#39;Buy and sell interest for Retail&#39; (&#39;C&#39;/0x43).
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON AdminRetailLiquidityIndicatorModel
-instance A.FromJSON AdminRetailLiquidityIndicatorModel where
-  parseJSON = A.withObject "AdminRetailLiquidityIndicatorModel" $ \o ->
-    AdminRetailLiquidityIndicatorModel
-      <$> (o .:? "symbol")
-      <*> (o .:? "timestamp_nanos")
-      <*> (o .:? "timestamp")
-      <*> (o .:? "retail_liquidity_indicator")
-      <*> (o .:? "retail_liquidity_indicator_code")
-      <*> (o .:? "retail_liquidity_indicator_text")
-      <*> (o .:? "is_retail_indicator_not_applicable")
-      <*> (o .:? "is_retail_indicator_buy_interest")
-      <*> (o .:? "is_retail_indicator_sell_interest")
-      <*> (o .:? "is_retail_indicator_buy_and_sell_interest")
-
--- | ToJSON AdminRetailLiquidityIndicatorModel
-instance A.ToJSON AdminRetailLiquidityIndicatorModel where
-  toJSON AdminRetailLiquidityIndicatorModel {..} =
-   _omitNulls
-      [ "symbol" .= adminRetailLiquidityIndicatorModelSymbol
-      , "timestamp_nanos" .= adminRetailLiquidityIndicatorModelTimestampNanos
-      , "timestamp" .= adminRetailLiquidityIndicatorModelTimestamp
-      , "retail_liquidity_indicator" .= adminRetailLiquidityIndicatorModelRetailLiquidityIndicator
-      , "retail_liquidity_indicator_code" .= adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode
-      , "retail_liquidity_indicator_text" .= adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorText
-      , "is_retail_indicator_not_applicable" .= adminRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable
-      , "is_retail_indicator_buy_interest" .= adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest
-      , "is_retail_indicator_sell_interest" .= adminRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest
-      , "is_retail_indicator_buy_and_sell_interest" .= adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest
-      ]
-
-
--- | Construct a value of type 'AdminRetailLiquidityIndicatorModel' (by applying it's required fields, if any)
-mkAdminRetailLiquidityIndicatorModel
-  :: AdminRetailLiquidityIndicatorModel
-mkAdminRetailLiquidityIndicatorModel =
-  AdminRetailLiquidityIndicatorModel
-  { adminRetailLiquidityIndicatorModelSymbol = Nothing
-  , adminRetailLiquidityIndicatorModelTimestampNanos = Nothing
-  , adminRetailLiquidityIndicatorModelTimestamp = Nothing
-  , adminRetailLiquidityIndicatorModelRetailLiquidityIndicator = Nothing
-  , adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode = Nothing
-  , adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorText = Nothing
-  , adminRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable = Nothing
-  , adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest = Nothing
-  , adminRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest = Nothing
-  , adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest = Nothing
-  }
-
--- ** AdminSecurityDirectoryModel
--- | AdminSecurityDirectoryModel
--- Represents the response DTO for security directory information
-data AdminSecurityDirectoryModel = AdminSecurityDirectoryModel
-  { adminSecurityDirectoryModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , adminSecurityDirectoryModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , adminSecurityDirectoryModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the security directory information was recorded as DateTime
-  , adminSecurityDirectoryModelFlags :: !(Maybe Int) -- ^ "flags" - Flags for the security
-  , adminSecurityDirectoryModelRoundLotSize :: !(Maybe Int) -- ^ "round_lot_size" - Number of shares that represent a round lot
-  , adminSecurityDirectoryModelAdjustedPocPrice :: !(Maybe Double) -- ^ "adjusted_poc_price" - Adjusted previous official closing price as decimal
-  , adminSecurityDirectoryModelLuldTier :: !(Maybe Int) -- ^ "luld_tier" - LULD tier as byte value
-  , adminSecurityDirectoryModelLuldTierCode :: !(Maybe Text) -- ^ "luld_tier_code" - LULD tier as numeric string
-  , adminSecurityDirectoryModelLuldTierText :: !(Maybe Text) -- ^ "luld_tier_text" - Human-readable description of the LULD tier
-  , adminSecurityDirectoryModelIsLuldTierNotApplicable :: !(Maybe Bool) -- ^ "is_luld_tier_not_applicable" - Indicates if LULD Tier is &#39;Not applicable&#39; (0x0).
-  , adminSecurityDirectoryModelIsLuldTier1 :: !(Maybe Bool) -- ^ "is_luld_tier1" - Indicates if LULD Tier is &#39;Tier 1 NMS Stock&#39; (0x1).
-  , adminSecurityDirectoryModelIsLuldTier2 :: !(Maybe Bool) -- ^ "is_luld_tier2" - Indicates if LULD Tier is &#39;Tier 2 NMS Stock&#39; (0x2).
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON AdminSecurityDirectoryModel
-instance A.FromJSON AdminSecurityDirectoryModel where
-  parseJSON = A.withObject "AdminSecurityDirectoryModel" $ \o ->
-    AdminSecurityDirectoryModel
-      <$> (o .:? "symbol")
-      <*> (o .:? "timestamp_nanos")
-      <*> (o .:? "timestamp")
-      <*> (o .:? "flags")
-      <*> (o .:? "round_lot_size")
-      <*> (o .:? "adjusted_poc_price")
-      <*> (o .:? "luld_tier")
-      <*> (o .:? "luld_tier_code")
-      <*> (o .:? "luld_tier_text")
-      <*> (o .:? "is_luld_tier_not_applicable")
-      <*> (o .:? "is_luld_tier1")
-      <*> (o .:? "is_luld_tier2")
-
--- | ToJSON AdminSecurityDirectoryModel
-instance A.ToJSON AdminSecurityDirectoryModel where
-  toJSON AdminSecurityDirectoryModel {..} =
-   _omitNulls
-      [ "symbol" .= adminSecurityDirectoryModelSymbol
-      , "timestamp_nanos" .= adminSecurityDirectoryModelTimestampNanos
-      , "timestamp" .= adminSecurityDirectoryModelTimestamp
-      , "flags" .= adminSecurityDirectoryModelFlags
-      , "round_lot_size" .= adminSecurityDirectoryModelRoundLotSize
-      , "adjusted_poc_price" .= adminSecurityDirectoryModelAdjustedPocPrice
-      , "luld_tier" .= adminSecurityDirectoryModelLuldTier
-      , "luld_tier_code" .= adminSecurityDirectoryModelLuldTierCode
-      , "luld_tier_text" .= adminSecurityDirectoryModelLuldTierText
-      , "is_luld_tier_not_applicable" .= adminSecurityDirectoryModelIsLuldTierNotApplicable
-      , "is_luld_tier1" .= adminSecurityDirectoryModelIsLuldTier1
-      , "is_luld_tier2" .= adminSecurityDirectoryModelIsLuldTier2
-      ]
-
-
--- | Construct a value of type 'AdminSecurityDirectoryModel' (by applying it's required fields, if any)
-mkAdminSecurityDirectoryModel
-  :: AdminSecurityDirectoryModel
-mkAdminSecurityDirectoryModel =
-  AdminSecurityDirectoryModel
-  { adminSecurityDirectoryModelSymbol = Nothing
-  , adminSecurityDirectoryModelTimestampNanos = Nothing
-  , adminSecurityDirectoryModelTimestamp = Nothing
-  , adminSecurityDirectoryModelFlags = Nothing
-  , adminSecurityDirectoryModelRoundLotSize = Nothing
-  , adminSecurityDirectoryModelAdjustedPocPrice = Nothing
-  , adminSecurityDirectoryModelLuldTier = Nothing
-  , adminSecurityDirectoryModelLuldTierCode = Nothing
-  , adminSecurityDirectoryModelLuldTierText = Nothing
-  , adminSecurityDirectoryModelIsLuldTierNotApplicable = Nothing
-  , adminSecurityDirectoryModelIsLuldTier1 = Nothing
-  , adminSecurityDirectoryModelIsLuldTier2 = Nothing
-  }
-
--- ** AdminSecurityEventModel
--- | AdminSecurityEventModel
--- Represents the response DTO for security event information
-data AdminSecurityEventModel = AdminSecurityEventModel
-  { adminSecurityEventModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , adminSecurityEventModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , adminSecurityEventModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the security event was recorded as DateTime
-  , adminSecurityEventModelSecurityEvent :: !(Maybe Int) -- ^ "security_event" - Security event as byte value
-  , adminSecurityEventModelSecurityEventCode :: !(Maybe Text) -- ^ "security_event_code" - Security event as character string (&#39;O&#39; or &#39;C&#39;)
-  , adminSecurityEventModelSecurityEventText :: !(Maybe Text) -- ^ "security_event_text" - Human-readable description of the security event
-  , adminSecurityEventModelIsOpeningProcessComplete :: !(Maybe Bool) -- ^ "is_opening_process_complete" - Indicates if the security event is &#39;Opening Process Complete&#39; (&#39;O&#39;/0x4f).
-  , adminSecurityEventModelIsClosingProcessComplete :: !(Maybe Bool) -- ^ "is_closing_process_complete" - Indicates if the security event is &#39;Closing Process Complete&#39; (&#39;C&#39;/0x43).
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON AdminSecurityEventModel
-instance A.FromJSON AdminSecurityEventModel where
-  parseJSON = A.withObject "AdminSecurityEventModel" $ \o ->
-    AdminSecurityEventModel
-      <$> (o .:? "symbol")
-      <*> (o .:? "timestamp_nanos")
-      <*> (o .:? "timestamp")
-      <*> (o .:? "security_event")
-      <*> (o .:? "security_event_code")
-      <*> (o .:? "security_event_text")
-      <*> (o .:? "is_opening_process_complete")
-      <*> (o .:? "is_closing_process_complete")
-
--- | ToJSON AdminSecurityEventModel
-instance A.ToJSON AdminSecurityEventModel where
-  toJSON AdminSecurityEventModel {..} =
-   _omitNulls
-      [ "symbol" .= adminSecurityEventModelSymbol
-      , "timestamp_nanos" .= adminSecurityEventModelTimestampNanos
-      , "timestamp" .= adminSecurityEventModelTimestamp
-      , "security_event" .= adminSecurityEventModelSecurityEvent
-      , "security_event_code" .= adminSecurityEventModelSecurityEventCode
-      , "security_event_text" .= adminSecurityEventModelSecurityEventText
-      , "is_opening_process_complete" .= adminSecurityEventModelIsOpeningProcessComplete
-      , "is_closing_process_complete" .= adminSecurityEventModelIsClosingProcessComplete
-      ]
-
-
--- | Construct a value of type 'AdminSecurityEventModel' (by applying it's required fields, if any)
-mkAdminSecurityEventModel
-  :: AdminSecurityEventModel
-mkAdminSecurityEventModel =
-  AdminSecurityEventModel
-  { adminSecurityEventModelSymbol = Nothing
-  , adminSecurityEventModelTimestampNanos = Nothing
-  , adminSecurityEventModelTimestamp = Nothing
-  , adminSecurityEventModelSecurityEvent = Nothing
-  , adminSecurityEventModelSecurityEventCode = Nothing
-  , adminSecurityEventModelSecurityEventText = Nothing
-  , adminSecurityEventModelIsOpeningProcessComplete = Nothing
-  , adminSecurityEventModelIsClosingProcessComplete = Nothing
-  }
-
--- ** AdminShortSalePriceTestStatusModel
--- | AdminShortSalePriceTestStatusModel
--- Represents the response DTO for short sale price test status information
-data AdminShortSalePriceTestStatusModel = AdminShortSalePriceTestStatusModel
-  { adminShortSalePriceTestStatusModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , adminShortSalePriceTestStatusModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , adminShortSalePriceTestStatusModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the short sale price test status was recorded as DateTime
-  , adminShortSalePriceTestStatusModelShortSalePriceTestStatus :: !(Maybe Int) -- ^ "short_sale_price_test_status" - Short sale price test status as byte value
-  , adminShortSalePriceTestStatusModelShortSalePriceTestStatusCode :: !(Maybe Text) -- ^ "short_sale_price_test_status_code" - Short sale price test status as hex string
-  , adminShortSalePriceTestStatusModelShortSalePriceTestStatusText :: !(Maybe Text) -- ^ "short_sale_price_test_status_text" - Human-readable description of the short sale price test status
-  , adminShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect :: !(Maybe Bool) -- ^ "is_short_sale_price_test_not_in_effect" - Indicates if the short sale price test is not in effect
-  , adminShortSalePriceTestStatusModelIsShortSalePriceTestInEffect :: !(Maybe Bool) -- ^ "is_short_sale_price_test_in_effect" - Indicates if the short sale price test is in effect
-  , adminShortSalePriceTestStatusModelDetail :: !(Maybe Int) -- ^ "detail" - Detail of the short sale price test as byte value
-  , adminShortSalePriceTestStatusModelDetailCode :: !(Maybe Text) -- ^ "detail_code" - Detail of the short sale price test as character string
-  , adminShortSalePriceTestStatusModelDetailText :: !(Maybe Text) -- ^ "detail_text" - Human-readable description of the short sale price test detail
-  , adminShortSalePriceTestStatusModelIsDetailNoPriceTest :: !(Maybe Bool) -- ^ "is_detail_no_price_test" - Indicates if there is no price test in place
-  , adminShortSalePriceTestStatusModelIsDetailActivated :: !(Maybe Bool) -- ^ "is_detail_activated" - Indicates if the short sale price test restriction is in effect due to an intraday price drop
-  , adminShortSalePriceTestStatusModelIsDetailContinued :: !(Maybe Bool) -- ^ "is_detail_continued" - Indicates if the short sale price test restriction remains in effect from prior day
-  , adminShortSalePriceTestStatusModelIsDetailDeactivated :: !(Maybe Bool) -- ^ "is_detail_deactivated" - Indicates if the short sale price test restriction is deactivated
-  , adminShortSalePriceTestStatusModelIsDetailNotAvailable :: !(Maybe Bool) -- ^ "is_detail_not_available" - Indicates if the detail is not available
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON AdminShortSalePriceTestStatusModel
-instance A.FromJSON AdminShortSalePriceTestStatusModel where
-  parseJSON = A.withObject "AdminShortSalePriceTestStatusModel" $ \o ->
-    AdminShortSalePriceTestStatusModel
-      <$> (o .:? "symbol")
-      <*> (o .:? "timestamp_nanos")
-      <*> (o .:? "timestamp")
-      <*> (o .:? "short_sale_price_test_status")
-      <*> (o .:? "short_sale_price_test_status_code")
-      <*> (o .:? "short_sale_price_test_status_text")
-      <*> (o .:? "is_short_sale_price_test_not_in_effect")
-      <*> (o .:? "is_short_sale_price_test_in_effect")
-      <*> (o .:? "detail")
-      <*> (o .:? "detail_code")
-      <*> (o .:? "detail_text")
-      <*> (o .:? "is_detail_no_price_test")
-      <*> (o .:? "is_detail_activated")
-      <*> (o .:? "is_detail_continued")
-      <*> (o .:? "is_detail_deactivated")
-      <*> (o .:? "is_detail_not_available")
-
--- | ToJSON AdminShortSalePriceTestStatusModel
-instance A.ToJSON AdminShortSalePriceTestStatusModel where
-  toJSON AdminShortSalePriceTestStatusModel {..} =
-   _omitNulls
-      [ "symbol" .= adminShortSalePriceTestStatusModelSymbol
-      , "timestamp_nanos" .= adminShortSalePriceTestStatusModelTimestampNanos
-      , "timestamp" .= adminShortSalePriceTestStatusModelTimestamp
-      , "short_sale_price_test_status" .= adminShortSalePriceTestStatusModelShortSalePriceTestStatus
-      , "short_sale_price_test_status_code" .= adminShortSalePriceTestStatusModelShortSalePriceTestStatusCode
-      , "short_sale_price_test_status_text" .= adminShortSalePriceTestStatusModelShortSalePriceTestStatusText
-      , "is_short_sale_price_test_not_in_effect" .= adminShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect
-      , "is_short_sale_price_test_in_effect" .= adminShortSalePriceTestStatusModelIsShortSalePriceTestInEffect
-      , "detail" .= adminShortSalePriceTestStatusModelDetail
-      , "detail_code" .= adminShortSalePriceTestStatusModelDetailCode
-      , "detail_text" .= adminShortSalePriceTestStatusModelDetailText
-      , "is_detail_no_price_test" .= adminShortSalePriceTestStatusModelIsDetailNoPriceTest
-      , "is_detail_activated" .= adminShortSalePriceTestStatusModelIsDetailActivated
-      , "is_detail_continued" .= adminShortSalePriceTestStatusModelIsDetailContinued
-      , "is_detail_deactivated" .= adminShortSalePriceTestStatusModelIsDetailDeactivated
-      , "is_detail_not_available" .= adminShortSalePriceTestStatusModelIsDetailNotAvailable
-      ]
-
-
--- | Construct a value of type 'AdminShortSalePriceTestStatusModel' (by applying it's required fields, if any)
-mkAdminShortSalePriceTestStatusModel
-  :: AdminShortSalePriceTestStatusModel
-mkAdminShortSalePriceTestStatusModel =
-  AdminShortSalePriceTestStatusModel
-  { adminShortSalePriceTestStatusModelSymbol = Nothing
-  , adminShortSalePriceTestStatusModelTimestampNanos = Nothing
-  , adminShortSalePriceTestStatusModelTimestamp = Nothing
-  , adminShortSalePriceTestStatusModelShortSalePriceTestStatus = Nothing
-  , adminShortSalePriceTestStatusModelShortSalePriceTestStatusCode = Nothing
-  , adminShortSalePriceTestStatusModelShortSalePriceTestStatusText = Nothing
-  , adminShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect = Nothing
-  , adminShortSalePriceTestStatusModelIsShortSalePriceTestInEffect = Nothing
-  , adminShortSalePriceTestStatusModelDetail = Nothing
-  , adminShortSalePriceTestStatusModelDetailCode = Nothing
-  , adminShortSalePriceTestStatusModelDetailText = Nothing
-  , adminShortSalePriceTestStatusModelIsDetailNoPriceTest = Nothing
-  , adminShortSalePriceTestStatusModelIsDetailActivated = Nothing
-  , adminShortSalePriceTestStatusModelIsDetailContinued = Nothing
-  , adminShortSalePriceTestStatusModelIsDetailDeactivated = Nothing
-  , adminShortSalePriceTestStatusModelIsDetailNotAvailable = Nothing
-  }
-
--- ** AdminSystemEventModel
--- | AdminSystemEventModel
--- Represents the response DTO for system event information
-data AdminSystemEventModel = AdminSystemEventModel
-  { adminSystemEventModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , adminSystemEventModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the system event was recorded as DateTime
-  , adminSystemEventModelSystemEvent :: !(Maybe Int) -- ^ "system_event" - System event as byte value
-  , adminSystemEventModelSystemEventCode :: !(Maybe Text) -- ^ "system_event_code" - System event as string
-  , adminSystemEventModelSystemEventText :: !(Maybe Text) -- ^ "system_event_text" - Human-readable description of the system event
-  , adminSystemEventModelIsSystemEventStartOfMessages :: !(Maybe Bool) -- ^ "is_system_event_start_of_messages" - Indicates if the system event is &#39;Start of Messages&#39; (O). Outside of heartbeat messages on the lower level protocol,  the start of day message is the first message sent in any trading session.
-  , adminSystemEventModelIsSystemEventStartOfSystemHours :: !(Maybe Bool) -- ^ "is_system_event_start_of_system_hours" - Indicates if the system event is &#39;Start of System Hours&#39; (S). This message indicates that IEX is open and ready to start accepting orders.
-  , adminSystemEventModelIsSystemEventStartOfRegularMarketHours :: !(Maybe Bool) -- ^ "is_system_event_start_of_regular_market_hours" - Indicates if the system event is &#39;Start of Regular Market Hours&#39; (R). This message indicates that DAY and GTX orders, as well as market orders and pegged orders,  are available for execution on IEX.
-  , adminSystemEventModelIsSystemEventEndOfRegularMarketHours :: !(Maybe Bool) -- ^ "is_system_event_end_of_regular_market_hours" - Indicates if the system event is &#39;End of Regular Market Hours&#39; (M). This message indicates that DAY orders, market orders, and pegged orders  are no longer accepted by IEX.
-  , adminSystemEventModelIsSystemEventEndOfSystemHours :: !(Maybe Bool) -- ^ "is_system_event_end_of_system_hours" - Indicates if the system event is &#39;End of System Hours&#39; (E). This message indicates that IEX is now closed and will not accept  any new orders during this trading session. It is still possible  to receive messages after the end of day.
-  , adminSystemEventModelIsSystemEventEndOfMessages :: !(Maybe Bool) -- ^ "is_system_event_end_of_messages" - Indicates if the system event is &#39;End of Messages&#39; (C). This is always the last message sent in any trading session.
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON AdminSystemEventModel
-instance A.FromJSON AdminSystemEventModel where
-  parseJSON = A.withObject "AdminSystemEventModel" $ \o ->
-    AdminSystemEventModel
-      <$> (o .:? "timestamp_nanos")
-      <*> (o .:? "timestamp")
-      <*> (o .:? "system_event")
-      <*> (o .:? "system_event_code")
-      <*> (o .:? "system_event_text")
-      <*> (o .:? "is_system_event_start_of_messages")
-      <*> (o .:? "is_system_event_start_of_system_hours")
-      <*> (o .:? "is_system_event_start_of_regular_market_hours")
-      <*> (o .:? "is_system_event_end_of_regular_market_hours")
-      <*> (o .:? "is_system_event_end_of_system_hours")
-      <*> (o .:? "is_system_event_end_of_messages")
-
--- | ToJSON AdminSystemEventModel
-instance A.ToJSON AdminSystemEventModel where
-  toJSON AdminSystemEventModel {..} =
-   _omitNulls
-      [ "timestamp_nanos" .= adminSystemEventModelTimestampNanos
-      , "timestamp" .= adminSystemEventModelTimestamp
-      , "system_event" .= adminSystemEventModelSystemEvent
-      , "system_event_code" .= adminSystemEventModelSystemEventCode
-      , "system_event_text" .= adminSystemEventModelSystemEventText
-      , "is_system_event_start_of_messages" .= adminSystemEventModelIsSystemEventStartOfMessages
-      , "is_system_event_start_of_system_hours" .= adminSystemEventModelIsSystemEventStartOfSystemHours
-      , "is_system_event_start_of_regular_market_hours" .= adminSystemEventModelIsSystemEventStartOfRegularMarketHours
-      , "is_system_event_end_of_regular_market_hours" .= adminSystemEventModelIsSystemEventEndOfRegularMarketHours
-      , "is_system_event_end_of_system_hours" .= adminSystemEventModelIsSystemEventEndOfSystemHours
-      , "is_system_event_end_of_messages" .= adminSystemEventModelIsSystemEventEndOfMessages
-      ]
-
-
--- | Construct a value of type 'AdminSystemEventModel' (by applying it's required fields, if any)
-mkAdminSystemEventModel
-  :: AdminSystemEventModel
-mkAdminSystemEventModel =
-  AdminSystemEventModel
-  { adminSystemEventModelTimestampNanos = Nothing
-  , adminSystemEventModelTimestamp = Nothing
-  , adminSystemEventModelSystemEvent = Nothing
-  , adminSystemEventModelSystemEventCode = Nothing
-  , adminSystemEventModelSystemEventText = Nothing
-  , adminSystemEventModelIsSystemEventStartOfMessages = Nothing
-  , adminSystemEventModelIsSystemEventStartOfSystemHours = Nothing
-  , adminSystemEventModelIsSystemEventStartOfRegularMarketHours = Nothing
-  , adminSystemEventModelIsSystemEventEndOfRegularMarketHours = Nothing
-  , adminSystemEventModelIsSystemEventEndOfSystemHours = Nothing
-  , adminSystemEventModelIsSystemEventEndOfMessages = Nothing
-  }
-
--- ** AdminTradingStatusModel
--- | AdminTradingStatusModel
--- Represents the response DTO for trading status information
-data AdminTradingStatusModel = AdminTradingStatusModel
-  { adminTradingStatusModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , adminTradingStatusModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , adminTradingStatusModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the trading status was recorded as DateTime
-  , adminTradingStatusModelIsTradingLive :: !(Maybe Bool) -- ^ "is_trading_live" - Gets whether the security is currently trading on IEX
-  , adminTradingStatusModelIsTradingHalted :: !(Maybe Bool) -- ^ "is_trading_halted" - Gets whether the security is halted across all US equity markets
-  , adminTradingStatusModelIsTradingInOrderAcceptancePeriod :: !(Maybe Bool) -- ^ "is_trading_in_order_acceptance_period" - Gets whether the security is in Order Acceptance Period on IEX
-  , adminTradingStatusModelIsTradingPaused :: !(Maybe Bool) -- ^ "is_trading_paused" - Gets whether the security is paused and in Order Acceptance Period on IEX
-  , adminTradingStatusModelIsReasonHaltNewsPending :: !(Maybe Bool) -- ^ "is_reason_halt_news_pending" - Gets whether the halt reason is News Pending
-  , adminTradingStatusModelIsReasonIpoNotYetTrading :: !(Maybe Bool) -- ^ "is_reason_ipo_not_yet_trading" - Gets whether the halt reason is IPO Not Yet Trading
-  , adminTradingStatusModelIsReasonIpoDeferred :: !(Maybe Bool) -- ^ "is_reason_ipo_deferred" - Gets whether the halt reason is IPO Deferred
-  , adminTradingStatusModelIsReasonHaltNewsDissemination :: !(Maybe Bool) -- ^ "is_reason_halt_news_dissemination" - Gets whether the order acceptance period reason is Halt News Dissemination
-  , adminTradingStatusModelIsReasonIpoOrderAcceptancePeriod :: !(Maybe Bool) -- ^ "is_reason_ipo_order_acceptance_period" - Gets whether the order acceptance period reason is IPO Order Acceptance Period
-  , adminTradingStatusModelIsReasonIpoPreLaunchPeriod :: !(Maybe Bool) -- ^ "is_reason_ipo_pre_launch_period" - Gets whether the order acceptance period reason is IPO Pre-Launch Period
-  , adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1 :: !(Maybe Bool) -- ^ "is_reason_market_wide_circuit_breaker_level1" - Gets whether the order acceptance period reason is Market-Wide Circuit Breaker Level 1 – Breached
-  , adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2 :: !(Maybe Bool) -- ^ "is_reason_market_wide_circuit_breaker_level2" - Gets whether the order acceptance period reason is Market-Wide Circuit Breaker Level 2 – Breached
-  , adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3 :: !(Maybe Bool) -- ^ "is_reason_market_wide_circuit_breaker_level3" - Gets whether the halt reason is Market-Wide Circuit Breaker Level 3 – Breached
-  , adminTradingStatusModelIsReasonNotApplicable :: !(Maybe Bool) -- ^ "is_reason_not_applicable" - Gets whether the reason is Not Applicable
-  , adminTradingStatusModelIsReasonNotAvailable :: !(Maybe Bool) -- ^ "is_reason_not_available" - Gets whether the halt reason is Not Available
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON AdminTradingStatusModel
-instance A.FromJSON AdminTradingStatusModel where
-  parseJSON = A.withObject "AdminTradingStatusModel" $ \o ->
-    AdminTradingStatusModel
-      <$> (o .:? "symbol")
-      <*> (o .:? "timestamp_nanos")
-      <*> (o .:? "timestamp")
-      <*> (o .:? "is_trading_live")
-      <*> (o .:? "is_trading_halted")
-      <*> (o .:? "is_trading_in_order_acceptance_period")
-      <*> (o .:? "is_trading_paused")
-      <*> (o .:? "is_reason_halt_news_pending")
-      <*> (o .:? "is_reason_ipo_not_yet_trading")
-      <*> (o .:? "is_reason_ipo_deferred")
-      <*> (o .:? "is_reason_halt_news_dissemination")
-      <*> (o .:? "is_reason_ipo_order_acceptance_period")
-      <*> (o .:? "is_reason_ipo_pre_launch_period")
-      <*> (o .:? "is_reason_market_wide_circuit_breaker_level1")
-      <*> (o .:? "is_reason_market_wide_circuit_breaker_level2")
-      <*> (o .:? "is_reason_market_wide_circuit_breaker_level3")
-      <*> (o .:? "is_reason_not_applicable")
-      <*> (o .:? "is_reason_not_available")
-
--- | ToJSON AdminTradingStatusModel
-instance A.ToJSON AdminTradingStatusModel where
-  toJSON AdminTradingStatusModel {..} =
-   _omitNulls
-      [ "symbol" .= adminTradingStatusModelSymbol
-      , "timestamp_nanos" .= adminTradingStatusModelTimestampNanos
-      , "timestamp" .= adminTradingStatusModelTimestamp
-      , "is_trading_live" .= adminTradingStatusModelIsTradingLive
-      , "is_trading_halted" .= adminTradingStatusModelIsTradingHalted
-      , "is_trading_in_order_acceptance_period" .= adminTradingStatusModelIsTradingInOrderAcceptancePeriod
-      , "is_trading_paused" .= adminTradingStatusModelIsTradingPaused
-      , "is_reason_halt_news_pending" .= adminTradingStatusModelIsReasonHaltNewsPending
-      , "is_reason_ipo_not_yet_trading" .= adminTradingStatusModelIsReasonIpoNotYetTrading
-      , "is_reason_ipo_deferred" .= adminTradingStatusModelIsReasonIpoDeferred
-      , "is_reason_halt_news_dissemination" .= adminTradingStatusModelIsReasonHaltNewsDissemination
-      , "is_reason_ipo_order_acceptance_period" .= adminTradingStatusModelIsReasonIpoOrderAcceptancePeriod
-      , "is_reason_ipo_pre_launch_period" .= adminTradingStatusModelIsReasonIpoPreLaunchPeriod
-      , "is_reason_market_wide_circuit_breaker_level1" .= adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1
-      , "is_reason_market_wide_circuit_breaker_level2" .= adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2
-      , "is_reason_market_wide_circuit_breaker_level3" .= adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3
-      , "is_reason_not_applicable" .= adminTradingStatusModelIsReasonNotApplicable
-      , "is_reason_not_available" .= adminTradingStatusModelIsReasonNotAvailable
-      ]
-
-
--- | Construct a value of type 'AdminTradingStatusModel' (by applying it's required fields, if any)
-mkAdminTradingStatusModel
-  :: AdminTradingStatusModel
-mkAdminTradingStatusModel =
-  AdminTradingStatusModel
-  { adminTradingStatusModelSymbol = Nothing
-  , adminTradingStatusModelTimestampNanos = Nothing
-  , adminTradingStatusModelTimestamp = Nothing
-  , adminTradingStatusModelIsTradingLive = Nothing
-  , adminTradingStatusModelIsTradingHalted = Nothing
-  , adminTradingStatusModelIsTradingInOrderAcceptancePeriod = Nothing
-  , adminTradingStatusModelIsTradingPaused = Nothing
-  , adminTradingStatusModelIsReasonHaltNewsPending = Nothing
-  , adminTradingStatusModelIsReasonIpoNotYetTrading = Nothing
-  , adminTradingStatusModelIsReasonIpoDeferred = Nothing
-  , adminTradingStatusModelIsReasonHaltNewsDissemination = Nothing
-  , adminTradingStatusModelIsReasonIpoOrderAcceptancePeriod = Nothing
-  , adminTradingStatusModelIsReasonIpoPreLaunchPeriod = Nothing
-  , adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1 = Nothing
-  , adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2 = Nothing
-  , adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3 = Nothing
-  , adminTradingStatusModelIsReasonNotApplicable = Nothing
-  , adminTradingStatusModelIsReasonNotAvailable = Nothing
-  }
-
 -- ** FinFeedAPIExchangeModel
 -- | FinFeedAPIExchangeModel
 data FinFeedAPIExchangeModel = FinFeedAPIExchangeModel
@@ -1061,25 +295,78 @@ mkFinFeedAPISymbolModel =
   , finFeedAPISymbolModelCfiAttribute4Desc = Nothing
   }
 
--- ** Level1QuoteUpdateModel
--- | Level1QuoteUpdateModel
--- Represents the response DTO for quote update information
-data Level1QuoteUpdateModel = Level1QuoteUpdateModel
-  { level1QuoteUpdateModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , level1QuoteUpdateModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , level1QuoteUpdateModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the quote update was recorded as DateTime
-  , level1QuoteUpdateModelIsSymbolAvailable :: !(Maybe Bool) -- ^ "is_symbol_available" - Gets whether the symbol is available for trading True if active, False if halted, paused, or otherwise not available
-  , level1QuoteUpdateModelIsPrePostMarketSession :: !(Maybe Bool) -- ^ "is_pre_post_market_session" - Gets whether the market session is regular or pre/post-market True if pre/post-market session, False if regular market session
-  , level1QuoteUpdateModelAskSize :: !(Maybe Int) -- ^ "ask_size" - Ask size in number of shares
-  , level1QuoteUpdateModelAskPrice :: !(Maybe Double) -- ^ "ask_price" - Ask price as decimal
-  , level1QuoteUpdateModelBidPrice :: !(Maybe Double) -- ^ "bid_price" - Bid price as decimal
-  , level1QuoteUpdateModelBidSize :: !(Maybe Int) -- ^ "bid_size" - Bid size in number of shares
+-- ** IEXPriceLevelUpdatePriceLevelUpdateModel
+-- | IEXPriceLevelUpdatePriceLevelUpdateModel
+-- Represents the response DTO for price level update information
+data IEXPriceLevelUpdatePriceLevelUpdateModel = IEXPriceLevelUpdatePriceLevelUpdateModel
+  { iEXPriceLevelUpdatePriceLevelUpdateModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , iEXPriceLevelUpdatePriceLevelUpdateModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , iEXPriceLevelUpdatePriceLevelUpdateModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the price level update was recorded as DateTime
+  , iEXPriceLevelUpdatePriceLevelUpdateModelIsSideBuy :: !(Maybe Bool) -- ^ "is_side_buy" - Indicates if this is a price level update for the Buy Side.
+  , iEXPriceLevelUpdatePriceLevelUpdateModelIsEventProcessingComplete :: !(Maybe Bool) -- ^ "is_event_processing_complete" - Indicates if event processing is complete.
+  , iEXPriceLevelUpdatePriceLevelUpdateModelSize :: !(Maybe Int) -- ^ "size" - Aggregate quoted size at the price level
+  , iEXPriceLevelUpdatePriceLevelUpdateModelPrice :: !(Maybe Double) -- ^ "price" - Price level as decimal
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON Level1QuoteUpdateModel
-instance A.FromJSON Level1QuoteUpdateModel where
-  parseJSON = A.withObject "Level1QuoteUpdateModel" $ \o ->
-    Level1QuoteUpdateModel
+-- | FromJSON IEXPriceLevelUpdatePriceLevelUpdateModel
+instance A.FromJSON IEXPriceLevelUpdatePriceLevelUpdateModel where
+  parseJSON = A.withObject "IEXPriceLevelUpdatePriceLevelUpdateModel" $ \o ->
+    IEXPriceLevelUpdatePriceLevelUpdateModel
+      <$> (o .:? "symbol")
+      <*> (o .:? "timestamp_nanos")
+      <*> (o .:? "timestamp")
+      <*> (o .:? "is_side_buy")
+      <*> (o .:? "is_event_processing_complete")
+      <*> (o .:? "size")
+      <*> (o .:? "price")
+
+-- | ToJSON IEXPriceLevelUpdatePriceLevelUpdateModel
+instance A.ToJSON IEXPriceLevelUpdatePriceLevelUpdateModel where
+  toJSON IEXPriceLevelUpdatePriceLevelUpdateModel {..} =
+   _omitNulls
+      [ "symbol" .= iEXPriceLevelUpdatePriceLevelUpdateModelSymbol
+      , "timestamp_nanos" .= iEXPriceLevelUpdatePriceLevelUpdateModelTimestampNanos
+      , "timestamp" .= iEXPriceLevelUpdatePriceLevelUpdateModelTimestamp
+      , "is_side_buy" .= iEXPriceLevelUpdatePriceLevelUpdateModelIsSideBuy
+      , "is_event_processing_complete" .= iEXPriceLevelUpdatePriceLevelUpdateModelIsEventProcessingComplete
+      , "size" .= iEXPriceLevelUpdatePriceLevelUpdateModelSize
+      , "price" .= iEXPriceLevelUpdatePriceLevelUpdateModelPrice
+      ]
+
+
+-- | Construct a value of type 'IEXPriceLevelUpdatePriceLevelUpdateModel' (by applying it's required fields, if any)
+mkIEXPriceLevelUpdatePriceLevelUpdateModel
+  :: IEXPriceLevelUpdatePriceLevelUpdateModel
+mkIEXPriceLevelUpdatePriceLevelUpdateModel =
+  IEXPriceLevelUpdatePriceLevelUpdateModel
+  { iEXPriceLevelUpdatePriceLevelUpdateModelSymbol = Nothing
+  , iEXPriceLevelUpdatePriceLevelUpdateModelTimestampNanos = Nothing
+  , iEXPriceLevelUpdatePriceLevelUpdateModelTimestamp = Nothing
+  , iEXPriceLevelUpdatePriceLevelUpdateModelIsSideBuy = Nothing
+  , iEXPriceLevelUpdatePriceLevelUpdateModelIsEventProcessingComplete = Nothing
+  , iEXPriceLevelUpdatePriceLevelUpdateModelSize = Nothing
+  , iEXPriceLevelUpdatePriceLevelUpdateModelPrice = Nothing
+  }
+
+-- ** IEXQuoteUpdateQuoteUpdateModel
+-- | IEXQuoteUpdateQuoteUpdateModel
+-- Represents the response DTO for quote update information
+data IEXQuoteUpdateQuoteUpdateModel = IEXQuoteUpdateQuoteUpdateModel
+  { iEXQuoteUpdateQuoteUpdateModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , iEXQuoteUpdateQuoteUpdateModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , iEXQuoteUpdateQuoteUpdateModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the quote update was recorded as DateTime
+  , iEXQuoteUpdateQuoteUpdateModelIsSymbolAvailable :: !(Maybe Bool) -- ^ "is_symbol_available" - Gets whether the symbol is available for trading True if active, False if halted, paused, or otherwise not available
+  , iEXQuoteUpdateQuoteUpdateModelIsPrePostMarketSession :: !(Maybe Bool) -- ^ "is_pre_post_market_session" - Gets whether the market session is regular or pre/post-market True if pre/post-market session, False if regular market session
+  , iEXQuoteUpdateQuoteUpdateModelAskSize :: !(Maybe Int) -- ^ "ask_size" - Ask size in number of shares
+  , iEXQuoteUpdateQuoteUpdateModelAskPrice :: !(Maybe Double) -- ^ "ask_price" - Ask price as decimal
+  , iEXQuoteUpdateQuoteUpdateModelBidPrice :: !(Maybe Double) -- ^ "bid_price" - Bid price as decimal
+  , iEXQuoteUpdateQuoteUpdateModelBidSize :: !(Maybe Int) -- ^ "bid_size" - Bid size in number of shares
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON IEXQuoteUpdateQuoteUpdateModel
+instance A.FromJSON IEXQuoteUpdateQuoteUpdateModel where
+  parseJSON = A.withObject "IEXQuoteUpdateQuoteUpdateModel" $ \o ->
+    IEXQuoteUpdateQuoteUpdateModel
       <$> (o .:? "symbol")
       <*> (o .:? "timestamp_nanos")
       <*> (o .:? "timestamp")
@@ -1090,108 +377,197 @@ instance A.FromJSON Level1QuoteUpdateModel where
       <*> (o .:? "bid_price")
       <*> (o .:? "bid_size")
 
--- | ToJSON Level1QuoteUpdateModel
-instance A.ToJSON Level1QuoteUpdateModel where
-  toJSON Level1QuoteUpdateModel {..} =
+-- | ToJSON IEXQuoteUpdateQuoteUpdateModel
+instance A.ToJSON IEXQuoteUpdateQuoteUpdateModel where
+  toJSON IEXQuoteUpdateQuoteUpdateModel {..} =
    _omitNulls
-      [ "symbol" .= level1QuoteUpdateModelSymbol
-      , "timestamp_nanos" .= level1QuoteUpdateModelTimestampNanos
-      , "timestamp" .= level1QuoteUpdateModelTimestamp
-      , "is_symbol_available" .= level1QuoteUpdateModelIsSymbolAvailable
-      , "is_pre_post_market_session" .= level1QuoteUpdateModelIsPrePostMarketSession
-      , "ask_size" .= level1QuoteUpdateModelAskSize
-      , "ask_price" .= level1QuoteUpdateModelAskPrice
-      , "bid_price" .= level1QuoteUpdateModelBidPrice
-      , "bid_size" .= level1QuoteUpdateModelBidSize
+      [ "symbol" .= iEXQuoteUpdateQuoteUpdateModelSymbol
+      , "timestamp_nanos" .= iEXQuoteUpdateQuoteUpdateModelTimestampNanos
+      , "timestamp" .= iEXQuoteUpdateQuoteUpdateModelTimestamp
+      , "is_symbol_available" .= iEXQuoteUpdateQuoteUpdateModelIsSymbolAvailable
+      , "is_pre_post_market_session" .= iEXQuoteUpdateQuoteUpdateModelIsPrePostMarketSession
+      , "ask_size" .= iEXQuoteUpdateQuoteUpdateModelAskSize
+      , "ask_price" .= iEXQuoteUpdateQuoteUpdateModelAskPrice
+      , "bid_price" .= iEXQuoteUpdateQuoteUpdateModelBidPrice
+      , "bid_size" .= iEXQuoteUpdateQuoteUpdateModelBidSize
       ]
 
 
--- | Construct a value of type 'Level1QuoteUpdateModel' (by applying it's required fields, if any)
-mkLevel1QuoteUpdateModel
-  :: Level1QuoteUpdateModel
-mkLevel1QuoteUpdateModel =
-  Level1QuoteUpdateModel
-  { level1QuoteUpdateModelSymbol = Nothing
-  , level1QuoteUpdateModelTimestampNanos = Nothing
-  , level1QuoteUpdateModelTimestamp = Nothing
-  , level1QuoteUpdateModelIsSymbolAvailable = Nothing
-  , level1QuoteUpdateModelIsPrePostMarketSession = Nothing
-  , level1QuoteUpdateModelAskSize = Nothing
-  , level1QuoteUpdateModelAskPrice = Nothing
-  , level1QuoteUpdateModelBidPrice = Nothing
-  , level1QuoteUpdateModelBidSize = Nothing
+-- | Construct a value of type 'IEXQuoteUpdateQuoteUpdateModel' (by applying it's required fields, if any)
+mkIEXQuoteUpdateQuoteUpdateModel
+  :: IEXQuoteUpdateQuoteUpdateModel
+mkIEXQuoteUpdateQuoteUpdateModel =
+  IEXQuoteUpdateQuoteUpdateModel
+  { iEXQuoteUpdateQuoteUpdateModelSymbol = Nothing
+  , iEXQuoteUpdateQuoteUpdateModelTimestampNanos = Nothing
+  , iEXQuoteUpdateQuoteUpdateModelTimestamp = Nothing
+  , iEXQuoteUpdateQuoteUpdateModelIsSymbolAvailable = Nothing
+  , iEXQuoteUpdateQuoteUpdateModelIsPrePostMarketSession = Nothing
+  , iEXQuoteUpdateQuoteUpdateModelAskSize = Nothing
+  , iEXQuoteUpdateQuoteUpdateModelAskPrice = Nothing
+  , iEXQuoteUpdateQuoteUpdateModelBidPrice = Nothing
+  , iEXQuoteUpdateQuoteUpdateModelBidSize = Nothing
   }
 
--- ** Level2PriceLevelUpdateModel
--- | Level2PriceLevelUpdateModel
--- Represents the response DTO for price level update information
-data Level2PriceLevelUpdateModel = Level2PriceLevelUpdateModel
-  { level2PriceLevelUpdateModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , level2PriceLevelUpdateModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , level2PriceLevelUpdateModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the price level update was recorded as DateTime
-  , level2PriceLevelUpdateModelIsSideBuy :: !(Maybe Bool) -- ^ "is_side_buy" - Indicates if this is a price level update for the Buy Side.
-  , level2PriceLevelUpdateModelIsEventProcessingComplete :: !(Maybe Bool) -- ^ "is_event_processing_complete" - Indicates if event processing is complete.
-  , level2PriceLevelUpdateModelSize :: !(Maybe Int) -- ^ "size" - Aggregate quoted size at the price level
-  , level2PriceLevelUpdateModelPrice :: !(Maybe Double) -- ^ "price" - Price level as decimal
+-- ** IEXSystemEventSystemEventModel
+-- | IEXSystemEventSystemEventModel
+-- Represents the response DTO for system event information
+data IEXSystemEventSystemEventModel = IEXSystemEventSystemEventModel
+  { iEXSystemEventSystemEventModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , iEXSystemEventSystemEventModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the system event was recorded as DateTime
+  , iEXSystemEventSystemEventModelSystemEvent :: !(Maybe Int) -- ^ "system_event" - System event as byte value
+  , iEXSystemEventSystemEventModelSystemEventCode :: !(Maybe Text) -- ^ "system_event_code" - System event as string
+  , iEXSystemEventSystemEventModelSystemEventText :: !(Maybe Text) -- ^ "system_event_text" - Human-readable description of the system event
+  , iEXSystemEventSystemEventModelIsSystemEventStartOfMessages :: !(Maybe Bool) -- ^ "is_system_event_start_of_messages" - Indicates if the system event is &#39;Start of Messages&#39; (O). Outside of heartbeat messages on the lower level protocol,  the start of day message is the first message sent in any trading session.
+  , iEXSystemEventSystemEventModelIsSystemEventStartOfSystemHours :: !(Maybe Bool) -- ^ "is_system_event_start_of_system_hours" - Indicates if the system event is &#39;Start of System Hours&#39; (S). This message indicates that IEX is open and ready to start accepting orders.
+  , iEXSystemEventSystemEventModelIsSystemEventStartOfRegularMarketHours :: !(Maybe Bool) -- ^ "is_system_event_start_of_regular_market_hours" - Indicates if the system event is &#39;Start of Regular Market Hours&#39; (R). This message indicates that DAY and GTX orders, as well as market orders and pegged orders,  are available for execution on IEX.
+  , iEXSystemEventSystemEventModelIsSystemEventEndOfRegularMarketHours :: !(Maybe Bool) -- ^ "is_system_event_end_of_regular_market_hours" - Indicates if the system event is &#39;End of Regular Market Hours&#39; (M). This message indicates that DAY orders, market orders, and pegged orders  are no longer accepted by IEX.
+  , iEXSystemEventSystemEventModelIsSystemEventEndOfSystemHours :: !(Maybe Bool) -- ^ "is_system_event_end_of_system_hours" - Indicates if the system event is &#39;End of System Hours&#39; (E). This message indicates that IEX is now closed and will not accept  any new orders during this trading session. It is still possible  to receive messages after the end of day.
+  , iEXSystemEventSystemEventModelIsSystemEventEndOfMessages :: !(Maybe Bool) -- ^ "is_system_event_end_of_messages" - Indicates if the system event is &#39;End of Messages&#39; (C). This is always the last message sent in any trading session.
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON Level2PriceLevelUpdateModel
-instance A.FromJSON Level2PriceLevelUpdateModel where
-  parseJSON = A.withObject "Level2PriceLevelUpdateModel" $ \o ->
-    Level2PriceLevelUpdateModel
-      <$> (o .:? "symbol")
+-- | FromJSON IEXSystemEventSystemEventModel
+instance A.FromJSON IEXSystemEventSystemEventModel where
+  parseJSON = A.withObject "IEXSystemEventSystemEventModel" $ \o ->
+    IEXSystemEventSystemEventModel
+      <$> (o .:? "timestamp_nanos")
+      <*> (o .:? "timestamp")
+      <*> (o .:? "system_event")
+      <*> (o .:? "system_event_code")
+      <*> (o .:? "system_event_text")
+      <*> (o .:? "is_system_event_start_of_messages")
+      <*> (o .:? "is_system_event_start_of_system_hours")
+      <*> (o .:? "is_system_event_start_of_regular_market_hours")
+      <*> (o .:? "is_system_event_end_of_regular_market_hours")
+      <*> (o .:? "is_system_event_end_of_system_hours")
+      <*> (o .:? "is_system_event_end_of_messages")
+
+-- | ToJSON IEXSystemEventSystemEventModel
+instance A.ToJSON IEXSystemEventSystemEventModel where
+  toJSON IEXSystemEventSystemEventModel {..} =
+   _omitNulls
+      [ "timestamp_nanos" .= iEXSystemEventSystemEventModelTimestampNanos
+      , "timestamp" .= iEXSystemEventSystemEventModelTimestamp
+      , "system_event" .= iEXSystemEventSystemEventModelSystemEvent
+      , "system_event_code" .= iEXSystemEventSystemEventModelSystemEventCode
+      , "system_event_text" .= iEXSystemEventSystemEventModelSystemEventText
+      , "is_system_event_start_of_messages" .= iEXSystemEventSystemEventModelIsSystemEventStartOfMessages
+      , "is_system_event_start_of_system_hours" .= iEXSystemEventSystemEventModelIsSystemEventStartOfSystemHours
+      , "is_system_event_start_of_regular_market_hours" .= iEXSystemEventSystemEventModelIsSystemEventStartOfRegularMarketHours
+      , "is_system_event_end_of_regular_market_hours" .= iEXSystemEventSystemEventModelIsSystemEventEndOfRegularMarketHours
+      , "is_system_event_end_of_system_hours" .= iEXSystemEventSystemEventModelIsSystemEventEndOfSystemHours
+      , "is_system_event_end_of_messages" .= iEXSystemEventSystemEventModelIsSystemEventEndOfMessages
+      ]
+
+
+-- | Construct a value of type 'IEXSystemEventSystemEventModel' (by applying it's required fields, if any)
+mkIEXSystemEventSystemEventModel
+  :: IEXSystemEventSystemEventModel
+mkIEXSystemEventSystemEventModel =
+  IEXSystemEventSystemEventModel
+  { iEXSystemEventSystemEventModelTimestampNanos = Nothing
+  , iEXSystemEventSystemEventModelTimestamp = Nothing
+  , iEXSystemEventSystemEventModelSystemEvent = Nothing
+  , iEXSystemEventSystemEventModelSystemEventCode = Nothing
+  , iEXSystemEventSystemEventModelSystemEventText = Nothing
+  , iEXSystemEventSystemEventModelIsSystemEventStartOfMessages = Nothing
+  , iEXSystemEventSystemEventModelIsSystemEventStartOfSystemHours = Nothing
+  , iEXSystemEventSystemEventModelIsSystemEventStartOfRegularMarketHours = Nothing
+  , iEXSystemEventSystemEventModelIsSystemEventEndOfRegularMarketHours = Nothing
+  , iEXSystemEventSystemEventModelIsSystemEventEndOfSystemHours = Nothing
+  , iEXSystemEventSystemEventModelIsSystemEventEndOfMessages = Nothing
+  }
+
+-- ** IEXTradeTradeModel
+-- | IEXTradeTradeModel
+-- Represents the response DTO for a single trade event (report or break).
+data IEXTradeTradeModel = IEXTradeTradeModel
+  { iEXTradeTradeModelIsTradeBreak :: !(Maybe Bool) -- ^ "is_trade_break" - Indicates if this record represents a trade break (true) or a trade report (false).
+  , iEXTradeTradeModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol.
+  , iEXTradeTradeModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch.
+  , iEXTradeTradeModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the event was recorded as DateTime (UTC).
+  , iEXTradeTradeModelSize :: !(Maybe Int) -- ^ "size" - Trade volume (or break volume) in number of shares.
+  , iEXTradeTradeModelPrice :: !(Maybe Double) -- ^ "price" - Trade price (or break price) as decimal.
+  , iEXTradeTradeModelTradeId :: !(Maybe Integer) -- ^ "trade_id" - IEX trade identifier (same for report and its corresponding break).
+  , iEXTradeTradeModelIsIntermarketSweep :: !(Maybe Bool) -- ^ "is_intermarket_sweep" - Bit 7 (Mask 0x80): Intermarket Sweep Flag. True: Intermarket Sweep Order (\&quot;ISO\&quot;). False: Non-Intermarket Sweep Order.
+  , iEXTradeTradeModelIsExtendedHoursTrade :: !(Maybe Bool) -- ^ "is_extended_hours_trade" - Bit 6 (Mask 0x40): Extended Hours Flag. True: Extended Hours Trade (i.e., Form T sale condition). False: Regular Market Session Trade.
+  , iEXTradeTradeModelIsOddLotTrade :: !(Maybe Bool) -- ^ "is_odd_lot_trade" - Bit 5 (Mask 0x20): Odd Lot Flag. True: Odd Lot Trade. False: Round or Mixed Lot Trade.
+  , iEXTradeTradeModelIsTradeThroughExempt :: !(Maybe Bool) -- ^ "is_trade_through_exempt" - Bit 4 (Mask 0x10): Trade Through Exempt Flag. True: Trade is not subject to Rule 611 (Trade Through) of SEC Reg. NMS. False: Trade is subject to Rule 611 (Trade Through) of SEC Reg. NMS. Applied when the taking order was an ISO that traded through a protected quotation, OR the NBBO was crossed at the time of the trade, OR the trade occurred through a self-helped venue&#39;s quotation, OR the trade was a single-price cross.
+  , iEXTradeTradeModelIsSinglePriceCrossTrade :: !(Maybe Bool) -- ^ "is_single_price_cross_trade" - Bit 3 (Mask 0x08): Single-price Cross Trade Flag. True: Trade resulting from a single-price cross. False: Execution during continuous trading.
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON IEXTradeTradeModel
+instance A.FromJSON IEXTradeTradeModel where
+  parseJSON = A.withObject "IEXTradeTradeModel" $ \o ->
+    IEXTradeTradeModel
+      <$> (o .:? "is_trade_break")
+      <*> (o .:? "symbol")
       <*> (o .:? "timestamp_nanos")
       <*> (o .:? "timestamp")
-      <*> (o .:? "is_side_buy")
-      <*> (o .:? "is_event_processing_complete")
       <*> (o .:? "size")
       <*> (o .:? "price")
+      <*> (o .:? "trade_id")
+      <*> (o .:? "is_intermarket_sweep")
+      <*> (o .:? "is_extended_hours_trade")
+      <*> (o .:? "is_odd_lot_trade")
+      <*> (o .:? "is_trade_through_exempt")
+      <*> (o .:? "is_single_price_cross_trade")
 
--- | ToJSON Level2PriceLevelUpdateModel
-instance A.ToJSON Level2PriceLevelUpdateModel where
-  toJSON Level2PriceLevelUpdateModel {..} =
+-- | ToJSON IEXTradeTradeModel
+instance A.ToJSON IEXTradeTradeModel where
+  toJSON IEXTradeTradeModel {..} =
    _omitNulls
-      [ "symbol" .= level2PriceLevelUpdateModelSymbol
-      , "timestamp_nanos" .= level2PriceLevelUpdateModelTimestampNanos
-      , "timestamp" .= level2PriceLevelUpdateModelTimestamp
-      , "is_side_buy" .= level2PriceLevelUpdateModelIsSideBuy
-      , "is_event_processing_complete" .= level2PriceLevelUpdateModelIsEventProcessingComplete
-      , "size" .= level2PriceLevelUpdateModelSize
-      , "price" .= level2PriceLevelUpdateModelPrice
+      [ "is_trade_break" .= iEXTradeTradeModelIsTradeBreak
+      , "symbol" .= iEXTradeTradeModelSymbol
+      , "timestamp_nanos" .= iEXTradeTradeModelTimestampNanos
+      , "timestamp" .= iEXTradeTradeModelTimestamp
+      , "size" .= iEXTradeTradeModelSize
+      , "price" .= iEXTradeTradeModelPrice
+      , "trade_id" .= iEXTradeTradeModelTradeId
+      , "is_intermarket_sweep" .= iEXTradeTradeModelIsIntermarketSweep
+      , "is_extended_hours_trade" .= iEXTradeTradeModelIsExtendedHoursTrade
+      , "is_odd_lot_trade" .= iEXTradeTradeModelIsOddLotTrade
+      , "is_trade_through_exempt" .= iEXTradeTradeModelIsTradeThroughExempt
+      , "is_single_price_cross_trade" .= iEXTradeTradeModelIsSinglePriceCrossTrade
       ]
 
 
--- | Construct a value of type 'Level2PriceLevelUpdateModel' (by applying it's required fields, if any)
-mkLevel2PriceLevelUpdateModel
-  :: Level2PriceLevelUpdateModel
-mkLevel2PriceLevelUpdateModel =
-  Level2PriceLevelUpdateModel
-  { level2PriceLevelUpdateModelSymbol = Nothing
-  , level2PriceLevelUpdateModelTimestampNanos = Nothing
-  , level2PriceLevelUpdateModelTimestamp = Nothing
-  , level2PriceLevelUpdateModelIsSideBuy = Nothing
-  , level2PriceLevelUpdateModelIsEventProcessingComplete = Nothing
-  , level2PriceLevelUpdateModelSize = Nothing
-  , level2PriceLevelUpdateModelPrice = Nothing
+-- | Construct a value of type 'IEXTradeTradeModel' (by applying it's required fields, if any)
+mkIEXTradeTradeModel
+  :: IEXTradeTradeModel
+mkIEXTradeTradeModel =
+  IEXTradeTradeModel
+  { iEXTradeTradeModelIsTradeBreak = Nothing
+  , iEXTradeTradeModelSymbol = Nothing
+  , iEXTradeTradeModelTimestampNanos = Nothing
+  , iEXTradeTradeModelTimestamp = Nothing
+  , iEXTradeTradeModelSize = Nothing
+  , iEXTradeTradeModelPrice = Nothing
+  , iEXTradeTradeModelTradeId = Nothing
+  , iEXTradeTradeModelIsIntermarketSweep = Nothing
+  , iEXTradeTradeModelIsExtendedHoursTrade = Nothing
+  , iEXTradeTradeModelIsOddLotTrade = Nothing
+  , iEXTradeTradeModelIsTradeThroughExempt = Nothing
+  , iEXTradeTradeModelIsSinglePriceCrossTrade = Nothing
   }
 
--- ** Level3AddOrderModel
--- | Level3AddOrderModel
+-- ** ModelsAddOrderModel
+-- | ModelsAddOrderModel
 -- Represents the response DTO for add order information
-data Level3AddOrderModel = Level3AddOrderModel
-  { level3AddOrderModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , level3AddOrderModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , level3AddOrderModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the order was added as DateTime (UTC)
-  , level3AddOrderModelIsSideBuy :: !(Maybe Bool) -- ^ "is_side_buy" - Indicates if this is a Buy order (&#39;8&#39;/0x38).
-  , level3AddOrderModelSize :: !(Maybe Int) -- ^ "size" - Quoted size in number of shares
-  , level3AddOrderModelPrice :: !(Maybe Double) -- ^ "price" - Price as decimal
-  , level3AddOrderModelOrderId :: !(Maybe Integer) -- ^ "order_id" - Order identifier
+data ModelsAddOrderModel = ModelsAddOrderModel
+  { modelsAddOrderModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , modelsAddOrderModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , modelsAddOrderModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the order was added as DateTime (UTC)
+  , modelsAddOrderModelIsSideBuy :: !(Maybe Bool) -- ^ "is_side_buy" - Indicates if this is a Buy order (&#39;8&#39;/0x38).
+  , modelsAddOrderModelSize :: !(Maybe Int) -- ^ "size" - Quoted size in number of shares
+  , modelsAddOrderModelPrice :: !(Maybe Double) -- ^ "price" - Price as decimal
+  , modelsAddOrderModelOrderId :: !(Maybe Integer) -- ^ "order_id" - Order identifier
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON Level3AddOrderModel
-instance A.FromJSON Level3AddOrderModel where
-  parseJSON = A.withObject "Level3AddOrderModel" $ \o ->
-    Level3AddOrderModel
+-- | FromJSON ModelsAddOrderModel
+instance A.FromJSON ModelsAddOrderModel where
+  parseJSON = A.withObject "ModelsAddOrderModel" $ \o ->
+    ModelsAddOrderModel
       <$> (o .:? "symbol")
       <*> (o .:? "timestamp_nanos")
       <*> (o .:? "timestamp")
@@ -1200,135 +576,333 @@ instance A.FromJSON Level3AddOrderModel where
       <*> (o .:? "price")
       <*> (o .:? "order_id")
 
--- | ToJSON Level3AddOrderModel
-instance A.ToJSON Level3AddOrderModel where
-  toJSON Level3AddOrderModel {..} =
+-- | ToJSON ModelsAddOrderModel
+instance A.ToJSON ModelsAddOrderModel where
+  toJSON ModelsAddOrderModel {..} =
    _omitNulls
-      [ "symbol" .= level3AddOrderModelSymbol
-      , "timestamp_nanos" .= level3AddOrderModelTimestampNanos
-      , "timestamp" .= level3AddOrderModelTimestamp
-      , "is_side_buy" .= level3AddOrderModelIsSideBuy
-      , "size" .= level3AddOrderModelSize
-      , "price" .= level3AddOrderModelPrice
-      , "order_id" .= level3AddOrderModelOrderId
+      [ "symbol" .= modelsAddOrderModelSymbol
+      , "timestamp_nanos" .= modelsAddOrderModelTimestampNanos
+      , "timestamp" .= modelsAddOrderModelTimestamp
+      , "is_side_buy" .= modelsAddOrderModelIsSideBuy
+      , "size" .= modelsAddOrderModelSize
+      , "price" .= modelsAddOrderModelPrice
+      , "order_id" .= modelsAddOrderModelOrderId
       ]
 
 
--- | Construct a value of type 'Level3AddOrderModel' (by applying it's required fields, if any)
-mkLevel3AddOrderModel
-  :: Level3AddOrderModel
-mkLevel3AddOrderModel =
-  Level3AddOrderModel
-  { level3AddOrderModelSymbol = Nothing
-  , level3AddOrderModelTimestampNanos = Nothing
-  , level3AddOrderModelTimestamp = Nothing
-  , level3AddOrderModelIsSideBuy = Nothing
-  , level3AddOrderModelSize = Nothing
-  , level3AddOrderModelPrice = Nothing
-  , level3AddOrderModelOrderId = Nothing
+-- | Construct a value of type 'ModelsAddOrderModel' (by applying it's required fields, if any)
+mkModelsAddOrderModel
+  :: ModelsAddOrderModel
+mkModelsAddOrderModel =
+  ModelsAddOrderModel
+  { modelsAddOrderModelSymbol = Nothing
+  , modelsAddOrderModelTimestampNanos = Nothing
+  , modelsAddOrderModelTimestamp = Nothing
+  , modelsAddOrderModelIsSideBuy = Nothing
+  , modelsAddOrderModelSize = Nothing
+  , modelsAddOrderModelPrice = Nothing
+  , modelsAddOrderModelOrderId = Nothing
   }
 
--- ** Level3ClearBookModel
--- | Level3ClearBookModel
--- Represents the response DTO for clear book information
-data Level3ClearBookModel = Level3ClearBookModel
-  { level3ClearBookModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , level3ClearBookModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , level3ClearBookModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the book was cleared as DateTime
+-- ** ModelsAdminMessageModel
+-- | ModelsAdminMessageModel
+-- Represents the response DTO for IEX admin information, combining all symbol-based admin message types
+data ModelsAdminMessageModel = ModelsAdminMessageModel
+  { modelsAdminMessageModelTradingStatus :: !(Maybe ModelsTradingStatusModel) -- ^ "trading_status"
+  , modelsAdminMessageModelOfficialPrice :: !(Maybe ModelsOfficialPriceModel) -- ^ "official_price"
+  , modelsAdminMessageModelSecurityEvent :: !(Maybe ModelsSecurityEventModel) -- ^ "security_event"
+  , modelsAdminMessageModelAuctionInformation :: !(Maybe ModelsAuctionInformationModel) -- ^ "auction_information"
+  , modelsAdminMessageModelShortSalePriceTest :: !(Maybe ModelsShortSalePriceTestStatusModel) -- ^ "short_sale_price_test"
+  , modelsAdminMessageModelOperationalHaltStatus :: !(Maybe ModelsOperationalHaltStatusModel) -- ^ "operational_halt_status"
+  , modelsAdminMessageModelRetailLiquidityIndicator :: !(Maybe ModelsRetailLiquidityIndicatorModel) -- ^ "retail_liquidity_indicator"
+  , modelsAdminMessageModelSystemEvent :: !(Maybe IEXSystemEventSystemEventModel) -- ^ "system_event"
+  , modelsAdminMessageModelSecurityDirectory :: !(Maybe ModelsSecurityDirectoryModel) -- ^ "security_directory"
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON Level3ClearBookModel
-instance A.FromJSON Level3ClearBookModel where
-  parseJSON = A.withObject "Level3ClearBookModel" $ \o ->
-    Level3ClearBookModel
+-- | FromJSON ModelsAdminMessageModel
+instance A.FromJSON ModelsAdminMessageModel where
+  parseJSON = A.withObject "ModelsAdminMessageModel" $ \o ->
+    ModelsAdminMessageModel
+      <$> (o .:? "trading_status")
+      <*> (o .:? "official_price")
+      <*> (o .:? "security_event")
+      <*> (o .:? "auction_information")
+      <*> (o .:? "short_sale_price_test")
+      <*> (o .:? "operational_halt_status")
+      <*> (o .:? "retail_liquidity_indicator")
+      <*> (o .:? "system_event")
+      <*> (o .:? "security_directory")
+
+-- | ToJSON ModelsAdminMessageModel
+instance A.ToJSON ModelsAdminMessageModel where
+  toJSON ModelsAdminMessageModel {..} =
+   _omitNulls
+      [ "trading_status" .= modelsAdminMessageModelTradingStatus
+      , "official_price" .= modelsAdminMessageModelOfficialPrice
+      , "security_event" .= modelsAdminMessageModelSecurityEvent
+      , "auction_information" .= modelsAdminMessageModelAuctionInformation
+      , "short_sale_price_test" .= modelsAdminMessageModelShortSalePriceTest
+      , "operational_halt_status" .= modelsAdminMessageModelOperationalHaltStatus
+      , "retail_liquidity_indicator" .= modelsAdminMessageModelRetailLiquidityIndicator
+      , "system_event" .= modelsAdminMessageModelSystemEvent
+      , "security_directory" .= modelsAdminMessageModelSecurityDirectory
+      ]
+
+
+-- | Construct a value of type 'ModelsAdminMessageModel' (by applying it's required fields, if any)
+mkModelsAdminMessageModel
+  :: ModelsAdminMessageModel
+mkModelsAdminMessageModel =
+  ModelsAdminMessageModel
+  { modelsAdminMessageModelTradingStatus = Nothing
+  , modelsAdminMessageModelOfficialPrice = Nothing
+  , modelsAdminMessageModelSecurityEvent = Nothing
+  , modelsAdminMessageModelAuctionInformation = Nothing
+  , modelsAdminMessageModelShortSalePriceTest = Nothing
+  , modelsAdminMessageModelOperationalHaltStatus = Nothing
+  , modelsAdminMessageModelRetailLiquidityIndicator = Nothing
+  , modelsAdminMessageModelSystemEvent = Nothing
+  , modelsAdminMessageModelSecurityDirectory = Nothing
+  }
+
+-- ** ModelsAuctionInformationModel
+-- | ModelsAuctionInformationModel
+-- Represents the response DTO for auction information
+data ModelsAuctionInformationModel = ModelsAuctionInformationModel
+  { modelsAuctionInformationModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , modelsAuctionInformationModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , modelsAuctionInformationModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the auction data was recorded as DateTime
+  , modelsAuctionInformationModelAuctionType :: !(Maybe Int) -- ^ "auction_type" - Type of auction as byte value
+  , modelsAuctionInformationModelAuctionTypeCode :: !(Maybe Text) -- ^ "auction_type_code" - Type of auction as character string
+  , modelsAuctionInformationModelAuctionTypeText :: !(Maybe Text) -- ^ "auction_type_text" - Human-readable description of the auction type
+  , modelsAuctionInformationModelIsAuctionTypeOpening :: !(Maybe Bool) -- ^ "is_auction_type_opening" - Indicates if the auction type is &#39;Opening Auction&#39; (&#39;O&#39;/0x4f).
+  , modelsAuctionInformationModelIsAuctionTypeClosing :: !(Maybe Bool) -- ^ "is_auction_type_closing" - Indicates if the auction type is &#39;Closing Auction&#39; (&#39;C&#39;/0x43).
+  , modelsAuctionInformationModelIsAuctionTypeIpo :: !(Maybe Bool) -- ^ "is_auction_type_ipo" - Indicates if the auction type is &#39;IPO Auction&#39; (&#39;I&#39;/0x49).
+  , modelsAuctionInformationModelIsAuctionTypeHalt :: !(Maybe Bool) -- ^ "is_auction_type_halt" - Indicates if the auction type is &#39;Halt Auction&#39; (&#39;H&#39;/0x48).
+  , modelsAuctionInformationModelIsAuctionTypeVolatility :: !(Maybe Bool) -- ^ "is_auction_type_volatility" - Indicates if the auction type is &#39;Volatility Auction&#39; (&#39;V&#39;/0x56).
+  , modelsAuctionInformationModelPairedShares :: !(Maybe Int) -- ^ "paired_shares" - Number of shares paired at the Reference Price
+  , modelsAuctionInformationModelReferencePrice :: !(Maybe Double) -- ^ "reference_price" - Reference price as decimal
+  , modelsAuctionInformationModelIndicativeClearingPrice :: !(Maybe Double) -- ^ "indicative_clearing_price" - Indicative clearing price as decimal
+  , modelsAuctionInformationModelImbalanceShares :: !(Maybe Int) -- ^ "imbalance_shares" - Number of unpaired shares at the Reference Price
+  , modelsAuctionInformationModelImbalanceSide :: !(Maybe Int) -- ^ "imbalance_side" - Side of the imbalance as byte value
+  , modelsAuctionInformationModelImbalanceSideCode :: !(Maybe Text) -- ^ "imbalance_side_code" - Side of the imbalance as character string
+  , modelsAuctionInformationModelImbalanceSideText :: !(Maybe Text) -- ^ "imbalance_side_text" - Human-readable description of the imbalance side
+  , modelsAuctionInformationModelIsImbalanceSideBuy :: !(Maybe Bool) -- ^ "is_imbalance_side_buy" - Indicates if there is a buy-side imbalance (&#39;B&#39;/0x42).
+  , modelsAuctionInformationModelIsImbalanceSideSell :: !(Maybe Bool) -- ^ "is_imbalance_side_sell" - Indicates if there is a sell-side imbalance (&#39;S&#39;/0x53).
+  , modelsAuctionInformationModelIsImbalanceSideNone :: !(Maybe Bool) -- ^ "is_imbalance_side_none" - Indicates if there is no imbalance (&#39;N&#39;/0x4e).
+  , modelsAuctionInformationModelExtensionNumber :: !(Maybe Int) -- ^ "extension_number" - Number of extensions to the auction
+  , modelsAuctionInformationModelScheduledAuctionTimeSeconds :: !(Maybe Int) -- ^ "scheduled_auction_time_seconds" - Scheduled auction time in seconds since epoch
+  , modelsAuctionInformationModelScheduledAuctionTime :: !(Maybe DateTime) -- ^ "scheduled_auction_time" - Scheduled time for the auction as DateTime
+  , modelsAuctionInformationModelAuctionBookClearingPrice :: !(Maybe Double) -- ^ "auction_book_clearing_price" - Auction book clearing price as decimal
+  , modelsAuctionInformationModelCollarReferencePrice :: !(Maybe Double) -- ^ "collar_reference_price" - Collar reference price as decimal
+  , modelsAuctionInformationModelLowerAuctionCollar :: !(Maybe Double) -- ^ "lower_auction_collar" - Lower auction collar as decimal
+  , modelsAuctionInformationModelUpperAuctionCollar :: !(Maybe Double) -- ^ "upper_auction_collar" - Upper auction collar as decimal
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsAuctionInformationModel
+instance A.FromJSON ModelsAuctionInformationModel where
+  parseJSON = A.withObject "ModelsAuctionInformationModel" $ \o ->
+    ModelsAuctionInformationModel
+      <$> (o .:? "symbol")
+      <*> (o .:? "timestamp_nanos")
+      <*> (o .:? "timestamp")
+      <*> (o .:? "auction_type")
+      <*> (o .:? "auction_type_code")
+      <*> (o .:? "auction_type_text")
+      <*> (o .:? "is_auction_type_opening")
+      <*> (o .:? "is_auction_type_closing")
+      <*> (o .:? "is_auction_type_ipo")
+      <*> (o .:? "is_auction_type_halt")
+      <*> (o .:? "is_auction_type_volatility")
+      <*> (o .:? "paired_shares")
+      <*> (o .:? "reference_price")
+      <*> (o .:? "indicative_clearing_price")
+      <*> (o .:? "imbalance_shares")
+      <*> (o .:? "imbalance_side")
+      <*> (o .:? "imbalance_side_code")
+      <*> (o .:? "imbalance_side_text")
+      <*> (o .:? "is_imbalance_side_buy")
+      <*> (o .:? "is_imbalance_side_sell")
+      <*> (o .:? "is_imbalance_side_none")
+      <*> (o .:? "extension_number")
+      <*> (o .:? "scheduled_auction_time_seconds")
+      <*> (o .:? "scheduled_auction_time")
+      <*> (o .:? "auction_book_clearing_price")
+      <*> (o .:? "collar_reference_price")
+      <*> (o .:? "lower_auction_collar")
+      <*> (o .:? "upper_auction_collar")
+
+-- | ToJSON ModelsAuctionInformationModel
+instance A.ToJSON ModelsAuctionInformationModel where
+  toJSON ModelsAuctionInformationModel {..} =
+   _omitNulls
+      [ "symbol" .= modelsAuctionInformationModelSymbol
+      , "timestamp_nanos" .= modelsAuctionInformationModelTimestampNanos
+      , "timestamp" .= modelsAuctionInformationModelTimestamp
+      , "auction_type" .= modelsAuctionInformationModelAuctionType
+      , "auction_type_code" .= modelsAuctionInformationModelAuctionTypeCode
+      , "auction_type_text" .= modelsAuctionInformationModelAuctionTypeText
+      , "is_auction_type_opening" .= modelsAuctionInformationModelIsAuctionTypeOpening
+      , "is_auction_type_closing" .= modelsAuctionInformationModelIsAuctionTypeClosing
+      , "is_auction_type_ipo" .= modelsAuctionInformationModelIsAuctionTypeIpo
+      , "is_auction_type_halt" .= modelsAuctionInformationModelIsAuctionTypeHalt
+      , "is_auction_type_volatility" .= modelsAuctionInformationModelIsAuctionTypeVolatility
+      , "paired_shares" .= modelsAuctionInformationModelPairedShares
+      , "reference_price" .= modelsAuctionInformationModelReferencePrice
+      , "indicative_clearing_price" .= modelsAuctionInformationModelIndicativeClearingPrice
+      , "imbalance_shares" .= modelsAuctionInformationModelImbalanceShares
+      , "imbalance_side" .= modelsAuctionInformationModelImbalanceSide
+      , "imbalance_side_code" .= modelsAuctionInformationModelImbalanceSideCode
+      , "imbalance_side_text" .= modelsAuctionInformationModelImbalanceSideText
+      , "is_imbalance_side_buy" .= modelsAuctionInformationModelIsImbalanceSideBuy
+      , "is_imbalance_side_sell" .= modelsAuctionInformationModelIsImbalanceSideSell
+      , "is_imbalance_side_none" .= modelsAuctionInformationModelIsImbalanceSideNone
+      , "extension_number" .= modelsAuctionInformationModelExtensionNumber
+      , "scheduled_auction_time_seconds" .= modelsAuctionInformationModelScheduledAuctionTimeSeconds
+      , "scheduled_auction_time" .= modelsAuctionInformationModelScheduledAuctionTime
+      , "auction_book_clearing_price" .= modelsAuctionInformationModelAuctionBookClearingPrice
+      , "collar_reference_price" .= modelsAuctionInformationModelCollarReferencePrice
+      , "lower_auction_collar" .= modelsAuctionInformationModelLowerAuctionCollar
+      , "upper_auction_collar" .= modelsAuctionInformationModelUpperAuctionCollar
+      ]
+
+
+-- | Construct a value of type 'ModelsAuctionInformationModel' (by applying it's required fields, if any)
+mkModelsAuctionInformationModel
+  :: ModelsAuctionInformationModel
+mkModelsAuctionInformationModel =
+  ModelsAuctionInformationModel
+  { modelsAuctionInformationModelSymbol = Nothing
+  , modelsAuctionInformationModelTimestampNanos = Nothing
+  , modelsAuctionInformationModelTimestamp = Nothing
+  , modelsAuctionInformationModelAuctionType = Nothing
+  , modelsAuctionInformationModelAuctionTypeCode = Nothing
+  , modelsAuctionInformationModelAuctionTypeText = Nothing
+  , modelsAuctionInformationModelIsAuctionTypeOpening = Nothing
+  , modelsAuctionInformationModelIsAuctionTypeClosing = Nothing
+  , modelsAuctionInformationModelIsAuctionTypeIpo = Nothing
+  , modelsAuctionInformationModelIsAuctionTypeHalt = Nothing
+  , modelsAuctionInformationModelIsAuctionTypeVolatility = Nothing
+  , modelsAuctionInformationModelPairedShares = Nothing
+  , modelsAuctionInformationModelReferencePrice = Nothing
+  , modelsAuctionInformationModelIndicativeClearingPrice = Nothing
+  , modelsAuctionInformationModelImbalanceShares = Nothing
+  , modelsAuctionInformationModelImbalanceSide = Nothing
+  , modelsAuctionInformationModelImbalanceSideCode = Nothing
+  , modelsAuctionInformationModelImbalanceSideText = Nothing
+  , modelsAuctionInformationModelIsImbalanceSideBuy = Nothing
+  , modelsAuctionInformationModelIsImbalanceSideSell = Nothing
+  , modelsAuctionInformationModelIsImbalanceSideNone = Nothing
+  , modelsAuctionInformationModelExtensionNumber = Nothing
+  , modelsAuctionInformationModelScheduledAuctionTimeSeconds = Nothing
+  , modelsAuctionInformationModelScheduledAuctionTime = Nothing
+  , modelsAuctionInformationModelAuctionBookClearingPrice = Nothing
+  , modelsAuctionInformationModelCollarReferencePrice = Nothing
+  , modelsAuctionInformationModelLowerAuctionCollar = Nothing
+  , modelsAuctionInformationModelUpperAuctionCollar = Nothing
+  }
+
+-- ** ModelsClearBookModel
+-- | ModelsClearBookModel
+-- Represents the response DTO for clear book information
+data ModelsClearBookModel = ModelsClearBookModel
+  { modelsClearBookModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , modelsClearBookModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , modelsClearBookModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the book was cleared as DateTime
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsClearBookModel
+instance A.FromJSON ModelsClearBookModel where
+  parseJSON = A.withObject "ModelsClearBookModel" $ \o ->
+    ModelsClearBookModel
       <$> (o .:? "symbol")
       <*> (o .:? "timestamp_nanos")
       <*> (o .:? "timestamp")
 
--- | ToJSON Level3ClearBookModel
-instance A.ToJSON Level3ClearBookModel where
-  toJSON Level3ClearBookModel {..} =
+-- | ToJSON ModelsClearBookModel
+instance A.ToJSON ModelsClearBookModel where
+  toJSON ModelsClearBookModel {..} =
    _omitNulls
-      [ "symbol" .= level3ClearBookModelSymbol
-      , "timestamp_nanos" .= level3ClearBookModelTimestampNanos
-      , "timestamp" .= level3ClearBookModelTimestamp
+      [ "symbol" .= modelsClearBookModelSymbol
+      , "timestamp_nanos" .= modelsClearBookModelTimestampNanos
+      , "timestamp" .= modelsClearBookModelTimestamp
       ]
 
 
--- | Construct a value of type 'Level3ClearBookModel' (by applying it's required fields, if any)
-mkLevel3ClearBookModel
-  :: Level3ClearBookModel
-mkLevel3ClearBookModel =
-  Level3ClearBookModel
-  { level3ClearBookModelSymbol = Nothing
-  , level3ClearBookModelTimestampNanos = Nothing
-  , level3ClearBookModelTimestamp = Nothing
+-- | Construct a value of type 'ModelsClearBookModel' (by applying it's required fields, if any)
+mkModelsClearBookModel
+  :: ModelsClearBookModel
+mkModelsClearBookModel =
+  ModelsClearBookModel
+  { modelsClearBookModelSymbol = Nothing
+  , modelsClearBookModelTimestampNanos = Nothing
+  , modelsClearBookModelTimestamp = Nothing
   }
 
--- ** Level3DeleteOrderModel
--- | Level3DeleteOrderModel
+-- ** ModelsDeleteOrderModel
+-- | ModelsDeleteOrderModel
 -- Represents the response DTO for order delete information
-data Level3DeleteOrderModel = Level3DeleteOrderModel
-  { level3DeleteOrderModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , level3DeleteOrderModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , level3DeleteOrderModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the order was deleted as DateTime
-  , level3DeleteOrderModelOrderIdReference :: !(Maybe Integer) -- ^ "order_id_reference" - Order identifier reference
+data ModelsDeleteOrderModel = ModelsDeleteOrderModel
+  { modelsDeleteOrderModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , modelsDeleteOrderModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , modelsDeleteOrderModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the order was deleted as DateTime
+  , modelsDeleteOrderModelOrderIdReference :: !(Maybe Integer) -- ^ "order_id_reference" - Order identifier reference
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON Level3DeleteOrderModel
-instance A.FromJSON Level3DeleteOrderModel where
-  parseJSON = A.withObject "Level3DeleteOrderModel" $ \o ->
-    Level3DeleteOrderModel
+-- | FromJSON ModelsDeleteOrderModel
+instance A.FromJSON ModelsDeleteOrderModel where
+  parseJSON = A.withObject "ModelsDeleteOrderModel" $ \o ->
+    ModelsDeleteOrderModel
       <$> (o .:? "symbol")
       <*> (o .:? "timestamp_nanos")
       <*> (o .:? "timestamp")
       <*> (o .:? "order_id_reference")
 
--- | ToJSON Level3DeleteOrderModel
-instance A.ToJSON Level3DeleteOrderModel where
-  toJSON Level3DeleteOrderModel {..} =
+-- | ToJSON ModelsDeleteOrderModel
+instance A.ToJSON ModelsDeleteOrderModel where
+  toJSON ModelsDeleteOrderModel {..} =
    _omitNulls
-      [ "symbol" .= level3DeleteOrderModelSymbol
-      , "timestamp_nanos" .= level3DeleteOrderModelTimestampNanos
-      , "timestamp" .= level3DeleteOrderModelTimestamp
-      , "order_id_reference" .= level3DeleteOrderModelOrderIdReference
+      [ "symbol" .= modelsDeleteOrderModelSymbol
+      , "timestamp_nanos" .= modelsDeleteOrderModelTimestampNanos
+      , "timestamp" .= modelsDeleteOrderModelTimestamp
+      , "order_id_reference" .= modelsDeleteOrderModelOrderIdReference
       ]
 
 
--- | Construct a value of type 'Level3DeleteOrderModel' (by applying it's required fields, if any)
-mkLevel3DeleteOrderModel
-  :: Level3DeleteOrderModel
-mkLevel3DeleteOrderModel =
-  Level3DeleteOrderModel
-  { level3DeleteOrderModelSymbol = Nothing
-  , level3DeleteOrderModelTimestampNanos = Nothing
-  , level3DeleteOrderModelTimestamp = Nothing
-  , level3DeleteOrderModelOrderIdReference = Nothing
+-- | Construct a value of type 'ModelsDeleteOrderModel' (by applying it's required fields, if any)
+mkModelsDeleteOrderModel
+  :: ModelsDeleteOrderModel
+mkModelsDeleteOrderModel =
+  ModelsDeleteOrderModel
+  { modelsDeleteOrderModelSymbol = Nothing
+  , modelsDeleteOrderModelTimestampNanos = Nothing
+  , modelsDeleteOrderModelTimestamp = Nothing
+  , modelsDeleteOrderModelOrderIdReference = Nothing
   }
 
--- ** Level3ExecutedOrderModel
--- | Level3ExecutedOrderModel
+-- ** ModelsExecutedOrderModel
+-- | ModelsExecutedOrderModel
 -- Represents the response DTO for order executed information
-data Level3ExecutedOrderModel = Level3ExecutedOrderModel
-  { level3ExecutedOrderModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , level3ExecutedOrderModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , level3ExecutedOrderModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the order was executed as DateTime
-  , level3ExecutedOrderModelOrderIdReference :: !(Maybe Integer) -- ^ "order_id_reference" - Order identifier reference
-  , level3ExecutedOrderModelSaleConditionFlags :: !(Maybe Int) -- ^ "sale_condition_flags" - Sale condition flags for the execution as byte value
-  , level3ExecutedOrderModelIsIntermarketSweep :: !(Maybe Bool) -- ^ "is_intermarket_sweep" - Bit 7 (Mask 0x80): Intermarket Sweep Flag True: Intermarket Sweep Order (\&quot;ISO\&quot;) False: Non-Intermarket Sweep Order
-  , level3ExecutedOrderModelIsExtendedHoursTrade :: !(Maybe Bool) -- ^ "is_extended_hours_trade" - Bit 6 (Mask 0x40): Extended Hours Flag True: Extended Hours Trade (i.e., Form T sale condition) False: Regular Market Session Trade
-  , level3ExecutedOrderModelIsOddLotTrade :: !(Maybe Bool) -- ^ "is_odd_lot_trade" - Bit 5 (Mask 0x20): Odd Lot Flag True: Odd Lot Trade False: Round or Mixed Lot Trade
-  , level3ExecutedOrderModelIsTradeThroughExempt :: !(Maybe Bool) -- ^ "is_trade_through_exempt" - Bit 4 (Mask 0x10): Trade Through Exempt Flag True: Trade is not subject to Rule 611 (Trade Through) of SEC Reg. NMS False: Trade is subject to Rule 611 (Trade Through) of SEC Reg. NMS
-  , level3ExecutedOrderModelIsSinglePriceCrossTrade :: !(Maybe Bool) -- ^ "is_single_price_cross_trade" - Bit 3 (Mask 0x08): Single-price Cross Trade Flag True: Trade resulting from a single-price cross False: Execution during continuous trading
-  , level3ExecutedOrderModelSize :: !(Maybe Int) -- ^ "size" - Trade volume in number of shares
-  , level3ExecutedOrderModelPrice :: !(Maybe Double) -- ^ "price" - Execution price as decimal
-  , level3ExecutedOrderModelTradeId :: !(Maybe Integer) -- ^ "trade_id" - IEX trade identifier
+data ModelsExecutedOrderModel = ModelsExecutedOrderModel
+  { modelsExecutedOrderModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , modelsExecutedOrderModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , modelsExecutedOrderModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the order was executed as DateTime
+  , modelsExecutedOrderModelOrderIdReference :: !(Maybe Integer) -- ^ "order_id_reference" - Order identifier reference
+  , modelsExecutedOrderModelSaleConditionFlags :: !(Maybe Int) -- ^ "sale_condition_flags" - Sale condition flags for the execution as byte value
+  , modelsExecutedOrderModelIsIntermarketSweep :: !(Maybe Bool) -- ^ "is_intermarket_sweep" - Bit 7 (Mask 0x80): Intermarket Sweep Flag True: Intermarket Sweep Order (\&quot;ISO\&quot;) False: Non-Intermarket Sweep Order
+  , modelsExecutedOrderModelIsExtendedHoursTrade :: !(Maybe Bool) -- ^ "is_extended_hours_trade" - Bit 6 (Mask 0x40): Extended Hours Flag True: Extended Hours Trade (i.e., Form T sale condition) False: Regular Market Session Trade
+  , modelsExecutedOrderModelIsOddLotTrade :: !(Maybe Bool) -- ^ "is_odd_lot_trade" - Bit 5 (Mask 0x20): Odd Lot Flag True: Odd Lot Trade False: Round or Mixed Lot Trade
+  , modelsExecutedOrderModelIsTradeThroughExempt :: !(Maybe Bool) -- ^ "is_trade_through_exempt" - Bit 4 (Mask 0x10): Trade Through Exempt Flag True: Trade is not subject to Rule 611 (Trade Through) of SEC Reg. NMS False: Trade is subject to Rule 611 (Trade Through) of SEC Reg. NMS
+  , modelsExecutedOrderModelIsSinglePriceCrossTrade :: !(Maybe Bool) -- ^ "is_single_price_cross_trade" - Bit 3 (Mask 0x08): Single-price Cross Trade Flag True: Trade resulting from a single-price cross False: Execution during continuous trading
+  , modelsExecutedOrderModelSize :: !(Maybe Int) -- ^ "size" - Trade volume in number of shares
+  , modelsExecutedOrderModelPrice :: !(Maybe Double) -- ^ "price" - Execution price as decimal
+  , modelsExecutedOrderModelTradeId :: !(Maybe Integer) -- ^ "trade_id" - IEX trade identifier
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON Level3ExecutedOrderModel
-instance A.FromJSON Level3ExecutedOrderModel where
-  parseJSON = A.withObject "Level3ExecutedOrderModel" $ \o ->
-    Level3ExecutedOrderModel
+-- | FromJSON ModelsExecutedOrderModel
+instance A.FromJSON ModelsExecutedOrderModel where
+  parseJSON = A.withObject "ModelsExecutedOrderModel" $ \o ->
+    ModelsExecutedOrderModel
       <$> (o .:? "symbol")
       <*> (o .:? "timestamp_nanos")
       <*> (o .:? "timestamp")
@@ -1343,63 +917,63 @@ instance A.FromJSON Level3ExecutedOrderModel where
       <*> (o .:? "price")
       <*> (o .:? "trade_id")
 
--- | ToJSON Level3ExecutedOrderModel
-instance A.ToJSON Level3ExecutedOrderModel where
-  toJSON Level3ExecutedOrderModel {..} =
+-- | ToJSON ModelsExecutedOrderModel
+instance A.ToJSON ModelsExecutedOrderModel where
+  toJSON ModelsExecutedOrderModel {..} =
    _omitNulls
-      [ "symbol" .= level3ExecutedOrderModelSymbol
-      , "timestamp_nanos" .= level3ExecutedOrderModelTimestampNanos
-      , "timestamp" .= level3ExecutedOrderModelTimestamp
-      , "order_id_reference" .= level3ExecutedOrderModelOrderIdReference
-      , "sale_condition_flags" .= level3ExecutedOrderModelSaleConditionFlags
-      , "is_intermarket_sweep" .= level3ExecutedOrderModelIsIntermarketSweep
-      , "is_extended_hours_trade" .= level3ExecutedOrderModelIsExtendedHoursTrade
-      , "is_odd_lot_trade" .= level3ExecutedOrderModelIsOddLotTrade
-      , "is_trade_through_exempt" .= level3ExecutedOrderModelIsTradeThroughExempt
-      , "is_single_price_cross_trade" .= level3ExecutedOrderModelIsSinglePriceCrossTrade
-      , "size" .= level3ExecutedOrderModelSize
-      , "price" .= level3ExecutedOrderModelPrice
-      , "trade_id" .= level3ExecutedOrderModelTradeId
+      [ "symbol" .= modelsExecutedOrderModelSymbol
+      , "timestamp_nanos" .= modelsExecutedOrderModelTimestampNanos
+      , "timestamp" .= modelsExecutedOrderModelTimestamp
+      , "order_id_reference" .= modelsExecutedOrderModelOrderIdReference
+      , "sale_condition_flags" .= modelsExecutedOrderModelSaleConditionFlags
+      , "is_intermarket_sweep" .= modelsExecutedOrderModelIsIntermarketSweep
+      , "is_extended_hours_trade" .= modelsExecutedOrderModelIsExtendedHoursTrade
+      , "is_odd_lot_trade" .= modelsExecutedOrderModelIsOddLotTrade
+      , "is_trade_through_exempt" .= modelsExecutedOrderModelIsTradeThroughExempt
+      , "is_single_price_cross_trade" .= modelsExecutedOrderModelIsSinglePriceCrossTrade
+      , "size" .= modelsExecutedOrderModelSize
+      , "price" .= modelsExecutedOrderModelPrice
+      , "trade_id" .= modelsExecutedOrderModelTradeId
       ]
 
 
--- | Construct a value of type 'Level3ExecutedOrderModel' (by applying it's required fields, if any)
-mkLevel3ExecutedOrderModel
-  :: Level3ExecutedOrderModel
-mkLevel3ExecutedOrderModel =
-  Level3ExecutedOrderModel
-  { level3ExecutedOrderModelSymbol = Nothing
-  , level3ExecutedOrderModelTimestampNanos = Nothing
-  , level3ExecutedOrderModelTimestamp = Nothing
-  , level3ExecutedOrderModelOrderIdReference = Nothing
-  , level3ExecutedOrderModelSaleConditionFlags = Nothing
-  , level3ExecutedOrderModelIsIntermarketSweep = Nothing
-  , level3ExecutedOrderModelIsExtendedHoursTrade = Nothing
-  , level3ExecutedOrderModelIsOddLotTrade = Nothing
-  , level3ExecutedOrderModelIsTradeThroughExempt = Nothing
-  , level3ExecutedOrderModelIsSinglePriceCrossTrade = Nothing
-  , level3ExecutedOrderModelSize = Nothing
-  , level3ExecutedOrderModelPrice = Nothing
-  , level3ExecutedOrderModelTradeId = Nothing
+-- | Construct a value of type 'ModelsExecutedOrderModel' (by applying it's required fields, if any)
+mkModelsExecutedOrderModel
+  :: ModelsExecutedOrderModel
+mkModelsExecutedOrderModel =
+  ModelsExecutedOrderModel
+  { modelsExecutedOrderModelSymbol = Nothing
+  , modelsExecutedOrderModelTimestampNanos = Nothing
+  , modelsExecutedOrderModelTimestamp = Nothing
+  , modelsExecutedOrderModelOrderIdReference = Nothing
+  , modelsExecutedOrderModelSaleConditionFlags = Nothing
+  , modelsExecutedOrderModelIsIntermarketSweep = Nothing
+  , modelsExecutedOrderModelIsExtendedHoursTrade = Nothing
+  , modelsExecutedOrderModelIsOddLotTrade = Nothing
+  , modelsExecutedOrderModelIsTradeThroughExempt = Nothing
+  , modelsExecutedOrderModelIsSinglePriceCrossTrade = Nothing
+  , modelsExecutedOrderModelSize = Nothing
+  , modelsExecutedOrderModelPrice = Nothing
+  , modelsExecutedOrderModelTradeId = Nothing
   }
 
--- ** Level3ModifyOrderModel
--- | Level3ModifyOrderModel
+-- ** ModelsModifyOrderModel
+-- | ModelsModifyOrderModel
 -- Represents the response DTO for order modify information
-data Level3ModifyOrderModel = Level3ModifyOrderModel
-  { level3ModifyOrderModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
-  , level3ModifyOrderModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
-  , level3ModifyOrderModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the order was modified as DateTime (UTC)
-  , level3ModifyOrderModelOrderIdReference :: !(Maybe Integer) -- ^ "order_id_reference" - Order identifier reference
-  , level3ModifyOrderModelIsPriorityReset :: !(Maybe Bool) -- ^ "is_priority_reset" - Indicates if priority is reseted
-  , level3ModifyOrderModelSize :: !(Maybe Int) -- ^ "size" - New total quoted size in number of shares
-  , level3ModifyOrderModelPrice :: !(Maybe Double) -- ^ "price" - Price as decimal
+data ModelsModifyOrderModel = ModelsModifyOrderModel
+  { modelsModifyOrderModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , modelsModifyOrderModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , modelsModifyOrderModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the order was modified as DateTime (UTC)
+  , modelsModifyOrderModelOrderIdReference :: !(Maybe Integer) -- ^ "order_id_reference" - Order identifier reference
+  , modelsModifyOrderModelIsPriorityReset :: !(Maybe Bool) -- ^ "is_priority_reset" - Indicates if priority is reseted
+  , modelsModifyOrderModelSize :: !(Maybe Int) -- ^ "size" - New total quoted size in number of shares
+  , modelsModifyOrderModelPrice :: !(Maybe Double) -- ^ "price" - Price as decimal
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON Level3ModifyOrderModel
-instance A.FromJSON Level3ModifyOrderModel where
-  parseJSON = A.withObject "Level3ModifyOrderModel" $ \o ->
-    Level3ModifyOrderModel
+-- | FromJSON ModelsModifyOrderModel
+instance A.FromJSON ModelsModifyOrderModel where
+  parseJSON = A.withObject "ModelsModifyOrderModel" $ \o ->
+    ModelsModifyOrderModel
       <$> (o .:? "symbol")
       <*> (o .:? "timestamp_nanos")
       <*> (o .:? "timestamp")
@@ -1408,100 +982,599 @@ instance A.FromJSON Level3ModifyOrderModel where
       <*> (o .:? "size")
       <*> (o .:? "price")
 
--- | ToJSON Level3ModifyOrderModel
-instance A.ToJSON Level3ModifyOrderModel where
-  toJSON Level3ModifyOrderModel {..} =
+-- | ToJSON ModelsModifyOrderModel
+instance A.ToJSON ModelsModifyOrderModel where
+  toJSON ModelsModifyOrderModel {..} =
    _omitNulls
-      [ "symbol" .= level3ModifyOrderModelSymbol
-      , "timestamp_nanos" .= level3ModifyOrderModelTimestampNanos
-      , "timestamp" .= level3ModifyOrderModelTimestamp
-      , "order_id_reference" .= level3ModifyOrderModelOrderIdReference
-      , "is_priority_reset" .= level3ModifyOrderModelIsPriorityReset
-      , "size" .= level3ModifyOrderModelSize
-      , "price" .= level3ModifyOrderModelPrice
+      [ "symbol" .= modelsModifyOrderModelSymbol
+      , "timestamp_nanos" .= modelsModifyOrderModelTimestampNanos
+      , "timestamp" .= modelsModifyOrderModelTimestamp
+      , "order_id_reference" .= modelsModifyOrderModelOrderIdReference
+      , "is_priority_reset" .= modelsModifyOrderModelIsPriorityReset
+      , "size" .= modelsModifyOrderModelSize
+      , "price" .= modelsModifyOrderModelPrice
       ]
 
 
--- | Construct a value of type 'Level3ModifyOrderModel' (by applying it's required fields, if any)
-mkLevel3ModifyOrderModel
-  :: Level3ModifyOrderModel
-mkLevel3ModifyOrderModel =
-  Level3ModifyOrderModel
-  { level3ModifyOrderModelSymbol = Nothing
-  , level3ModifyOrderModelTimestampNanos = Nothing
-  , level3ModifyOrderModelTimestamp = Nothing
-  , level3ModifyOrderModelOrderIdReference = Nothing
-  , level3ModifyOrderModelIsPriorityReset = Nothing
-  , level3ModifyOrderModelSize = Nothing
-  , level3ModifyOrderModelPrice = Nothing
+-- | Construct a value of type 'ModelsModifyOrderModel' (by applying it's required fields, if any)
+mkModelsModifyOrderModel
+  :: ModelsModifyOrderModel
+mkModelsModifyOrderModel =
+  ModelsModifyOrderModel
+  { modelsModifyOrderModelSymbol = Nothing
+  , modelsModifyOrderModelTimestampNanos = Nothing
+  , modelsModifyOrderModelTimestamp = Nothing
+  , modelsModifyOrderModelOrderIdReference = Nothing
+  , modelsModifyOrderModelIsPriorityReset = Nothing
+  , modelsModifyOrderModelSize = Nothing
+  , modelsModifyOrderModelPrice = Nothing
   }
 
--- ** Level3OrderBookModel
--- | Level3OrderBookModel
--- Represents the response DTO for Level-3 order book information
-data Level3OrderBookModel = Level3OrderBookModel
-  { level3OrderBookModelAddOrder :: !(Maybe Level3AddOrderModel) -- ^ "add_order"
-  , level3OrderBookModelDeleteOrder :: !(Maybe Level3DeleteOrderModel) -- ^ "delete_order"
-  , level3OrderBookModelModifyOrder :: !(Maybe Level3ModifyOrderModel) -- ^ "modify_order"
-  , level3OrderBookModelExecutedOrder :: !(Maybe Level3ExecutedOrderModel) -- ^ "executed_order"
-  , level3OrderBookModelClearBook :: !(Maybe Level3ClearBookModel) -- ^ "clear_book"
+-- ** ModelsOfficialPriceModel
+-- | ModelsOfficialPriceModel
+-- Represents the response DTO for official price information
+data ModelsOfficialPriceModel = ModelsOfficialPriceModel
+  { modelsOfficialPriceModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , modelsOfficialPriceModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , modelsOfficialPriceModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the official price was recorded as DateTime
+  , modelsOfficialPriceModelPriceType :: !(Maybe Int) -- ^ "price_type" - Type of price as byte value
+  , modelsOfficialPriceModelPriceTypeCode :: !(Maybe Text) -- ^ "price_type_code" - Type of price as character string
+  , modelsOfficialPriceModelPriceTypeText :: !(Maybe Text) -- ^ "price_type_text" - Human-readable description of the price type
+  , modelsOfficialPriceModelIsPriceTypeOpening :: !(Maybe Bool) -- ^ "is_price_type_opening" - Indicates if the price type is &#39;IEX Official Opening Price&#39; (&#39;Q&#39;/0x51).
+  , modelsOfficialPriceModelIsPriceTypeClosing :: !(Maybe Bool) -- ^ "is_price_type_closing" - Indicates if the price type is &#39;IEX Official Closing Price&#39; (&#39;M&#39;/0x4d).
+  , modelsOfficialPriceModelOfficialPrice :: !(Maybe Double) -- ^ "official_price" - Official price as decimal
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON Level3OrderBookModel
-instance A.FromJSON Level3OrderBookModel where
-  parseJSON = A.withObject "Level3OrderBookModel" $ \o ->
-    Level3OrderBookModel
+-- | FromJSON ModelsOfficialPriceModel
+instance A.FromJSON ModelsOfficialPriceModel where
+  parseJSON = A.withObject "ModelsOfficialPriceModel" $ \o ->
+    ModelsOfficialPriceModel
+      <$> (o .:? "symbol")
+      <*> (o .:? "timestamp_nanos")
+      <*> (o .:? "timestamp")
+      <*> (o .:? "price_type")
+      <*> (o .:? "price_type_code")
+      <*> (o .:? "price_type_text")
+      <*> (o .:? "is_price_type_opening")
+      <*> (o .:? "is_price_type_closing")
+      <*> (o .:? "official_price")
+
+-- | ToJSON ModelsOfficialPriceModel
+instance A.ToJSON ModelsOfficialPriceModel where
+  toJSON ModelsOfficialPriceModel {..} =
+   _omitNulls
+      [ "symbol" .= modelsOfficialPriceModelSymbol
+      , "timestamp_nanos" .= modelsOfficialPriceModelTimestampNanos
+      , "timestamp" .= modelsOfficialPriceModelTimestamp
+      , "price_type" .= modelsOfficialPriceModelPriceType
+      , "price_type_code" .= modelsOfficialPriceModelPriceTypeCode
+      , "price_type_text" .= modelsOfficialPriceModelPriceTypeText
+      , "is_price_type_opening" .= modelsOfficialPriceModelIsPriceTypeOpening
+      , "is_price_type_closing" .= modelsOfficialPriceModelIsPriceTypeClosing
+      , "official_price" .= modelsOfficialPriceModelOfficialPrice
+      ]
+
+
+-- | Construct a value of type 'ModelsOfficialPriceModel' (by applying it's required fields, if any)
+mkModelsOfficialPriceModel
+  :: ModelsOfficialPriceModel
+mkModelsOfficialPriceModel =
+  ModelsOfficialPriceModel
+  { modelsOfficialPriceModelSymbol = Nothing
+  , modelsOfficialPriceModelTimestampNanos = Nothing
+  , modelsOfficialPriceModelTimestamp = Nothing
+  , modelsOfficialPriceModelPriceType = Nothing
+  , modelsOfficialPriceModelPriceTypeCode = Nothing
+  , modelsOfficialPriceModelPriceTypeText = Nothing
+  , modelsOfficialPriceModelIsPriceTypeOpening = Nothing
+  , modelsOfficialPriceModelIsPriceTypeClosing = Nothing
+  , modelsOfficialPriceModelOfficialPrice = Nothing
+  }
+
+-- ** ModelsOperationalHaltStatusModel
+-- | ModelsOperationalHaltStatusModel
+-- Represents the response DTO for operational halt status information
+data ModelsOperationalHaltStatusModel = ModelsOperationalHaltStatusModel
+  { modelsOperationalHaltStatusModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , modelsOperationalHaltStatusModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , modelsOperationalHaltStatusModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the operational halt status was recorded as DateTime
+  , modelsOperationalHaltStatusModelOperationalHaltStatus :: !(Maybe Int) -- ^ "operational_halt_status" - Operational halt status as byte value
+  , modelsOperationalHaltStatusModelOperationalHaltStatusCode :: !(Maybe Text) -- ^ "operational_halt_status_code" - Operational halt status as character string
+  , modelsOperationalHaltStatusModelOperationalHaltStatusText :: !(Maybe Text) -- ^ "operational_halt_status_text" - Human-readable description of the operational halt status
+  , modelsOperationalHaltStatusModelIsOperationallyHalted :: !(Maybe Bool) -- ^ "is_operationally_halted" - Indicates if the status is &#39;IEX specific operational trading halt&#39; (&#39;O&#39;/0x4f).
+  , modelsOperationalHaltStatusModelIsNotOperationallyHalted :: !(Maybe Bool) -- ^ "is_not_operationally_halted" - Indicates if the status is &#39;Not operationally halted on IEX&#39; (&#39;N&#39;/0x4e).
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsOperationalHaltStatusModel
+instance A.FromJSON ModelsOperationalHaltStatusModel where
+  parseJSON = A.withObject "ModelsOperationalHaltStatusModel" $ \o ->
+    ModelsOperationalHaltStatusModel
+      <$> (o .:? "symbol")
+      <*> (o .:? "timestamp_nanos")
+      <*> (o .:? "timestamp")
+      <*> (o .:? "operational_halt_status")
+      <*> (o .:? "operational_halt_status_code")
+      <*> (o .:? "operational_halt_status_text")
+      <*> (o .:? "is_operationally_halted")
+      <*> (o .:? "is_not_operationally_halted")
+
+-- | ToJSON ModelsOperationalHaltStatusModel
+instance A.ToJSON ModelsOperationalHaltStatusModel where
+  toJSON ModelsOperationalHaltStatusModel {..} =
+   _omitNulls
+      [ "symbol" .= modelsOperationalHaltStatusModelSymbol
+      , "timestamp_nanos" .= modelsOperationalHaltStatusModelTimestampNanos
+      , "timestamp" .= modelsOperationalHaltStatusModelTimestamp
+      , "operational_halt_status" .= modelsOperationalHaltStatusModelOperationalHaltStatus
+      , "operational_halt_status_code" .= modelsOperationalHaltStatusModelOperationalHaltStatusCode
+      , "operational_halt_status_text" .= modelsOperationalHaltStatusModelOperationalHaltStatusText
+      , "is_operationally_halted" .= modelsOperationalHaltStatusModelIsOperationallyHalted
+      , "is_not_operationally_halted" .= modelsOperationalHaltStatusModelIsNotOperationallyHalted
+      ]
+
+
+-- | Construct a value of type 'ModelsOperationalHaltStatusModel' (by applying it's required fields, if any)
+mkModelsOperationalHaltStatusModel
+  :: ModelsOperationalHaltStatusModel
+mkModelsOperationalHaltStatusModel =
+  ModelsOperationalHaltStatusModel
+  { modelsOperationalHaltStatusModelSymbol = Nothing
+  , modelsOperationalHaltStatusModelTimestampNanos = Nothing
+  , modelsOperationalHaltStatusModelTimestamp = Nothing
+  , modelsOperationalHaltStatusModelOperationalHaltStatus = Nothing
+  , modelsOperationalHaltStatusModelOperationalHaltStatusCode = Nothing
+  , modelsOperationalHaltStatusModelOperationalHaltStatusText = Nothing
+  , modelsOperationalHaltStatusModelIsOperationallyHalted = Nothing
+  , modelsOperationalHaltStatusModelIsNotOperationallyHalted = Nothing
+  }
+
+-- ** ModelsOrderBookModel
+-- | ModelsOrderBookModel
+-- Represents the response DTO for Level-3 order book information
+data ModelsOrderBookModel = ModelsOrderBookModel
+  { modelsOrderBookModelAddOrder :: !(Maybe ModelsAddOrderModel) -- ^ "add_order"
+  , modelsOrderBookModelDeleteOrder :: !(Maybe ModelsDeleteOrderModel) -- ^ "delete_order"
+  , modelsOrderBookModelModifyOrder :: !(Maybe ModelsModifyOrderModel) -- ^ "modify_order"
+  , modelsOrderBookModelExecutedOrder :: !(Maybe ModelsExecutedOrderModel) -- ^ "executed_order"
+  , modelsOrderBookModelClearBook :: !(Maybe ModelsClearBookModel) -- ^ "clear_book"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsOrderBookModel
+instance A.FromJSON ModelsOrderBookModel where
+  parseJSON = A.withObject "ModelsOrderBookModel" $ \o ->
+    ModelsOrderBookModel
       <$> (o .:? "add_order")
       <*> (o .:? "delete_order")
       <*> (o .:? "modify_order")
       <*> (o .:? "executed_order")
       <*> (o .:? "clear_book")
 
--- | ToJSON Level3OrderBookModel
-instance A.ToJSON Level3OrderBookModel where
-  toJSON Level3OrderBookModel {..} =
+-- | ToJSON ModelsOrderBookModel
+instance A.ToJSON ModelsOrderBookModel where
+  toJSON ModelsOrderBookModel {..} =
    _omitNulls
-      [ "add_order" .= level3OrderBookModelAddOrder
-      , "delete_order" .= level3OrderBookModelDeleteOrder
-      , "modify_order" .= level3OrderBookModelModifyOrder
-      , "executed_order" .= level3OrderBookModelExecutedOrder
-      , "clear_book" .= level3OrderBookModelClearBook
+      [ "add_order" .= modelsOrderBookModelAddOrder
+      , "delete_order" .= modelsOrderBookModelDeleteOrder
+      , "modify_order" .= modelsOrderBookModelModifyOrder
+      , "executed_order" .= modelsOrderBookModelExecutedOrder
+      , "clear_book" .= modelsOrderBookModelClearBook
       ]
 
 
--- | Construct a value of type 'Level3OrderBookModel' (by applying it's required fields, if any)
-mkLevel3OrderBookModel
-  :: Level3OrderBookModel
-mkLevel3OrderBookModel =
-  Level3OrderBookModel
-  { level3OrderBookModelAddOrder = Nothing
-  , level3OrderBookModelDeleteOrder = Nothing
-  , level3OrderBookModelModifyOrder = Nothing
-  , level3OrderBookModelExecutedOrder = Nothing
-  , level3OrderBookModelClearBook = Nothing
+-- | Construct a value of type 'ModelsOrderBookModel' (by applying it's required fields, if any)
+mkModelsOrderBookModel
+  :: ModelsOrderBookModel
+mkModelsOrderBookModel =
+  ModelsOrderBookModel
+  { modelsOrderBookModelAddOrder = Nothing
+  , modelsOrderBookModelDeleteOrder = Nothing
+  , modelsOrderBookModelModifyOrder = Nothing
+  , modelsOrderBookModelExecutedOrder = Nothing
+  , modelsOrderBookModelClearBook = Nothing
   }
 
--- ** OHLCVExchangeTimeseriesItem
--- | OHLCVExchangeTimeseriesItem
--- Represents a timeseries item with price and volume information.
-data OHLCVExchangeTimeseriesItem = OHLCVExchangeTimeseriesItem
-  { oHLCVExchangeTimeseriesItemTimePeriodStart :: !(Maybe DateTime) -- ^ "time_period_start" - Gets or sets the start time of the time period.
-  , oHLCVExchangeTimeseriesItemTimePeriodEnd :: !(Maybe DateTime) -- ^ "time_period_end" - Gets or sets the end time of the time period.
-  , oHLCVExchangeTimeseriesItemTimeOpen :: !(Maybe DateTime) -- ^ "time_open" - Gets or sets the time when the price opened.
-  , oHLCVExchangeTimeseriesItemTimeClose :: !(Maybe DateTime) -- ^ "time_close" - Gets or sets the time when the price closed.
-  , oHLCVExchangeTimeseriesItemPriceOpen :: !(Maybe Double) -- ^ "price_open" - Gets or sets the opening price.
-  , oHLCVExchangeTimeseriesItemPriceHigh :: !(Maybe Double) -- ^ "price_high" - Gets or sets the highest price during the time period.
-  , oHLCVExchangeTimeseriesItemPriceLow :: !(Maybe Double) -- ^ "price_low" - Gets or sets the lowest price during the time period.
-  , oHLCVExchangeTimeseriesItemPriceClose :: !(Maybe Double) -- ^ "price_close" - Gets or sets the closing price.
-  , oHLCVExchangeTimeseriesItemVolumeTraded :: !(Maybe Double) -- ^ "volume_traded" - Gets or sets the total volume traded during the time period.
-  , oHLCVExchangeTimeseriesItemTradesCount :: !(Maybe Integer) -- ^ "trades_count" - Gets or sets the number of trades executed during the time period.
-  , oHLCVExchangeTimeseriesItemSymbolIdExchange :: !(Maybe Text) -- ^ "symbol_id_exchange"
+-- ** ModelsRetailLiquidityIndicatorModel
+-- | ModelsRetailLiquidityIndicatorModel
+-- Represents the response DTO for retail liquidity indicator information
+data ModelsRetailLiquidityIndicatorModel = ModelsRetailLiquidityIndicatorModel
+  { modelsRetailLiquidityIndicatorModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , modelsRetailLiquidityIndicatorModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , modelsRetailLiquidityIndicatorModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the retail liquidity indicator was recorded as DateTime
+  , modelsRetailLiquidityIndicatorModelRetailLiquidityIndicator :: !(Maybe Int) -- ^ "retail_liquidity_indicator" - Retail liquidity indicator as byte value
+  , modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode :: !(Maybe Text) -- ^ "retail_liquidity_indicator_code" - Retail liquidity indicator as character string
+  , modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorText :: !(Maybe Text) -- ^ "retail_liquidity_indicator_text" - Human-readable description of the retail liquidity indicator
+  , modelsRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable :: !(Maybe Bool) -- ^ "is_retail_indicator_not_applicable" - Indicates if the indicator is &#39;Not Applicable&#39; (&#39; &#39;/0x20).
+  , modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest :: !(Maybe Bool) -- ^ "is_retail_indicator_buy_interest" - Indicates if there is &#39;Buy interest for Retail&#39; (&#39;A&#39;/0x41).
+  , modelsRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest :: !(Maybe Bool) -- ^ "is_retail_indicator_sell_interest" - Indicates if there is &#39;Sell interest for Retail&#39; (&#39;B&#39;/0x42).
+  , modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest :: !(Maybe Bool) -- ^ "is_retail_indicator_buy_and_sell_interest" - Indicates if there is &#39;Buy and sell interest for Retail&#39; (&#39;C&#39;/0x43).
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON OHLCVExchangeTimeseriesItem
-instance A.FromJSON OHLCVExchangeTimeseriesItem where
-  parseJSON = A.withObject "OHLCVExchangeTimeseriesItem" $ \o ->
-    OHLCVExchangeTimeseriesItem
+-- | FromJSON ModelsRetailLiquidityIndicatorModel
+instance A.FromJSON ModelsRetailLiquidityIndicatorModel where
+  parseJSON = A.withObject "ModelsRetailLiquidityIndicatorModel" $ \o ->
+    ModelsRetailLiquidityIndicatorModel
+      <$> (o .:? "symbol")
+      <*> (o .:? "timestamp_nanos")
+      <*> (o .:? "timestamp")
+      <*> (o .:? "retail_liquidity_indicator")
+      <*> (o .:? "retail_liquidity_indicator_code")
+      <*> (o .:? "retail_liquidity_indicator_text")
+      <*> (o .:? "is_retail_indicator_not_applicable")
+      <*> (o .:? "is_retail_indicator_buy_interest")
+      <*> (o .:? "is_retail_indicator_sell_interest")
+      <*> (o .:? "is_retail_indicator_buy_and_sell_interest")
+
+-- | ToJSON ModelsRetailLiquidityIndicatorModel
+instance A.ToJSON ModelsRetailLiquidityIndicatorModel where
+  toJSON ModelsRetailLiquidityIndicatorModel {..} =
+   _omitNulls
+      [ "symbol" .= modelsRetailLiquidityIndicatorModelSymbol
+      , "timestamp_nanos" .= modelsRetailLiquidityIndicatorModelTimestampNanos
+      , "timestamp" .= modelsRetailLiquidityIndicatorModelTimestamp
+      , "retail_liquidity_indicator" .= modelsRetailLiquidityIndicatorModelRetailLiquidityIndicator
+      , "retail_liquidity_indicator_code" .= modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode
+      , "retail_liquidity_indicator_text" .= modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorText
+      , "is_retail_indicator_not_applicable" .= modelsRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable
+      , "is_retail_indicator_buy_interest" .= modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest
+      , "is_retail_indicator_sell_interest" .= modelsRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest
+      , "is_retail_indicator_buy_and_sell_interest" .= modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest
+      ]
+
+
+-- | Construct a value of type 'ModelsRetailLiquidityIndicatorModel' (by applying it's required fields, if any)
+mkModelsRetailLiquidityIndicatorModel
+  :: ModelsRetailLiquidityIndicatorModel
+mkModelsRetailLiquidityIndicatorModel =
+  ModelsRetailLiquidityIndicatorModel
+  { modelsRetailLiquidityIndicatorModelSymbol = Nothing
+  , modelsRetailLiquidityIndicatorModelTimestampNanos = Nothing
+  , modelsRetailLiquidityIndicatorModelTimestamp = Nothing
+  , modelsRetailLiquidityIndicatorModelRetailLiquidityIndicator = Nothing
+  , modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode = Nothing
+  , modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorText = Nothing
+  , modelsRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable = Nothing
+  , modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest = Nothing
+  , modelsRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest = Nothing
+  , modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest = Nothing
+  }
+
+-- ** ModelsSecurityDirectoryModel
+-- | ModelsSecurityDirectoryModel
+-- Represents the response DTO for security directory information
+data ModelsSecurityDirectoryModel = ModelsSecurityDirectoryModel
+  { modelsSecurityDirectoryModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , modelsSecurityDirectoryModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , modelsSecurityDirectoryModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the security directory information was recorded as DateTime
+  , modelsSecurityDirectoryModelFlags :: !(Maybe Int) -- ^ "flags" - Flags for the security
+  , modelsSecurityDirectoryModelRoundLotSize :: !(Maybe Int) -- ^ "round_lot_size" - Number of shares that represent a round lot
+  , modelsSecurityDirectoryModelAdjustedPocPrice :: !(Maybe Double) -- ^ "adjusted_poc_price" - Adjusted previous official closing price as decimal
+  , modelsSecurityDirectoryModelLuldTier :: !(Maybe Int) -- ^ "luld_tier" - LULD tier as byte value
+  , modelsSecurityDirectoryModelLuldTierCode :: !(Maybe Text) -- ^ "luld_tier_code" - LULD tier as numeric string
+  , modelsSecurityDirectoryModelLuldTierText :: !(Maybe Text) -- ^ "luld_tier_text" - Human-readable description of the LULD tier
+  , modelsSecurityDirectoryModelIsLuldTierNotApplicable :: !(Maybe Bool) -- ^ "is_luld_tier_not_applicable" - Indicates if LULD Tier is &#39;Not applicable&#39; (0x0).
+  , modelsSecurityDirectoryModelIsLuldTier1 :: !(Maybe Bool) -- ^ "is_luld_tier1" - Indicates if LULD Tier is &#39;Tier 1 NMS Stock&#39; (0x1).
+  , modelsSecurityDirectoryModelIsLuldTier2 :: !(Maybe Bool) -- ^ "is_luld_tier2" - Indicates if LULD Tier is &#39;Tier 2 NMS Stock&#39; (0x2).
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsSecurityDirectoryModel
+instance A.FromJSON ModelsSecurityDirectoryModel where
+  parseJSON = A.withObject "ModelsSecurityDirectoryModel" $ \o ->
+    ModelsSecurityDirectoryModel
+      <$> (o .:? "symbol")
+      <*> (o .:? "timestamp_nanos")
+      <*> (o .:? "timestamp")
+      <*> (o .:? "flags")
+      <*> (o .:? "round_lot_size")
+      <*> (o .:? "adjusted_poc_price")
+      <*> (o .:? "luld_tier")
+      <*> (o .:? "luld_tier_code")
+      <*> (o .:? "luld_tier_text")
+      <*> (o .:? "is_luld_tier_not_applicable")
+      <*> (o .:? "is_luld_tier1")
+      <*> (o .:? "is_luld_tier2")
+
+-- | ToJSON ModelsSecurityDirectoryModel
+instance A.ToJSON ModelsSecurityDirectoryModel where
+  toJSON ModelsSecurityDirectoryModel {..} =
+   _omitNulls
+      [ "symbol" .= modelsSecurityDirectoryModelSymbol
+      , "timestamp_nanos" .= modelsSecurityDirectoryModelTimestampNanos
+      , "timestamp" .= modelsSecurityDirectoryModelTimestamp
+      , "flags" .= modelsSecurityDirectoryModelFlags
+      , "round_lot_size" .= modelsSecurityDirectoryModelRoundLotSize
+      , "adjusted_poc_price" .= modelsSecurityDirectoryModelAdjustedPocPrice
+      , "luld_tier" .= modelsSecurityDirectoryModelLuldTier
+      , "luld_tier_code" .= modelsSecurityDirectoryModelLuldTierCode
+      , "luld_tier_text" .= modelsSecurityDirectoryModelLuldTierText
+      , "is_luld_tier_not_applicable" .= modelsSecurityDirectoryModelIsLuldTierNotApplicable
+      , "is_luld_tier1" .= modelsSecurityDirectoryModelIsLuldTier1
+      , "is_luld_tier2" .= modelsSecurityDirectoryModelIsLuldTier2
+      ]
+
+
+-- | Construct a value of type 'ModelsSecurityDirectoryModel' (by applying it's required fields, if any)
+mkModelsSecurityDirectoryModel
+  :: ModelsSecurityDirectoryModel
+mkModelsSecurityDirectoryModel =
+  ModelsSecurityDirectoryModel
+  { modelsSecurityDirectoryModelSymbol = Nothing
+  , modelsSecurityDirectoryModelTimestampNanos = Nothing
+  , modelsSecurityDirectoryModelTimestamp = Nothing
+  , modelsSecurityDirectoryModelFlags = Nothing
+  , modelsSecurityDirectoryModelRoundLotSize = Nothing
+  , modelsSecurityDirectoryModelAdjustedPocPrice = Nothing
+  , modelsSecurityDirectoryModelLuldTier = Nothing
+  , modelsSecurityDirectoryModelLuldTierCode = Nothing
+  , modelsSecurityDirectoryModelLuldTierText = Nothing
+  , modelsSecurityDirectoryModelIsLuldTierNotApplicable = Nothing
+  , modelsSecurityDirectoryModelIsLuldTier1 = Nothing
+  , modelsSecurityDirectoryModelIsLuldTier2 = Nothing
+  }
+
+-- ** ModelsSecurityEventModel
+-- | ModelsSecurityEventModel
+-- Represents the response DTO for security event information
+data ModelsSecurityEventModel = ModelsSecurityEventModel
+  { modelsSecurityEventModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , modelsSecurityEventModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , modelsSecurityEventModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the security event was recorded as DateTime
+  , modelsSecurityEventModelSecurityEvent :: !(Maybe Int) -- ^ "security_event" - Security event as byte value
+  , modelsSecurityEventModelSecurityEventCode :: !(Maybe Text) -- ^ "security_event_code" - Security event as character string (&#39;O&#39; or &#39;C&#39;)
+  , modelsSecurityEventModelSecurityEventText :: !(Maybe Text) -- ^ "security_event_text" - Human-readable description of the security event
+  , modelsSecurityEventModelIsOpeningProcessComplete :: !(Maybe Bool) -- ^ "is_opening_process_complete" - Indicates if the security event is &#39;Opening Process Complete&#39; (&#39;O&#39;/0x4f).
+  , modelsSecurityEventModelIsClosingProcessComplete :: !(Maybe Bool) -- ^ "is_closing_process_complete" - Indicates if the security event is &#39;Closing Process Complete&#39; (&#39;C&#39;/0x43).
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsSecurityEventModel
+instance A.FromJSON ModelsSecurityEventModel where
+  parseJSON = A.withObject "ModelsSecurityEventModel" $ \o ->
+    ModelsSecurityEventModel
+      <$> (o .:? "symbol")
+      <*> (o .:? "timestamp_nanos")
+      <*> (o .:? "timestamp")
+      <*> (o .:? "security_event")
+      <*> (o .:? "security_event_code")
+      <*> (o .:? "security_event_text")
+      <*> (o .:? "is_opening_process_complete")
+      <*> (o .:? "is_closing_process_complete")
+
+-- | ToJSON ModelsSecurityEventModel
+instance A.ToJSON ModelsSecurityEventModel where
+  toJSON ModelsSecurityEventModel {..} =
+   _omitNulls
+      [ "symbol" .= modelsSecurityEventModelSymbol
+      , "timestamp_nanos" .= modelsSecurityEventModelTimestampNanos
+      , "timestamp" .= modelsSecurityEventModelTimestamp
+      , "security_event" .= modelsSecurityEventModelSecurityEvent
+      , "security_event_code" .= modelsSecurityEventModelSecurityEventCode
+      , "security_event_text" .= modelsSecurityEventModelSecurityEventText
+      , "is_opening_process_complete" .= modelsSecurityEventModelIsOpeningProcessComplete
+      , "is_closing_process_complete" .= modelsSecurityEventModelIsClosingProcessComplete
+      ]
+
+
+-- | Construct a value of type 'ModelsSecurityEventModel' (by applying it's required fields, if any)
+mkModelsSecurityEventModel
+  :: ModelsSecurityEventModel
+mkModelsSecurityEventModel =
+  ModelsSecurityEventModel
+  { modelsSecurityEventModelSymbol = Nothing
+  , modelsSecurityEventModelTimestampNanos = Nothing
+  , modelsSecurityEventModelTimestamp = Nothing
+  , modelsSecurityEventModelSecurityEvent = Nothing
+  , modelsSecurityEventModelSecurityEventCode = Nothing
+  , modelsSecurityEventModelSecurityEventText = Nothing
+  , modelsSecurityEventModelIsOpeningProcessComplete = Nothing
+  , modelsSecurityEventModelIsClosingProcessComplete = Nothing
+  }
+
+-- ** ModelsShortSalePriceTestStatusModel
+-- | ModelsShortSalePriceTestStatusModel
+-- Represents the response DTO for short sale price test status information
+data ModelsShortSalePriceTestStatusModel = ModelsShortSalePriceTestStatusModel
+  { modelsShortSalePriceTestStatusModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , modelsShortSalePriceTestStatusModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , modelsShortSalePriceTestStatusModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the short sale price test status was recorded as DateTime
+  , modelsShortSalePriceTestStatusModelShortSalePriceTestStatus :: !(Maybe Int) -- ^ "short_sale_price_test_status" - Short sale price test status as byte value
+  , modelsShortSalePriceTestStatusModelShortSalePriceTestStatusCode :: !(Maybe Text) -- ^ "short_sale_price_test_status_code" - Short sale price test status as hex string
+  , modelsShortSalePriceTestStatusModelShortSalePriceTestStatusText :: !(Maybe Text) -- ^ "short_sale_price_test_status_text" - Human-readable description of the short sale price test status
+  , modelsShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect :: !(Maybe Bool) -- ^ "is_short_sale_price_test_not_in_effect" - Indicates if the short sale price test is not in effect
+  , modelsShortSalePriceTestStatusModelIsShortSalePriceTestInEffect :: !(Maybe Bool) -- ^ "is_short_sale_price_test_in_effect" - Indicates if the short sale price test is in effect
+  , modelsShortSalePriceTestStatusModelDetail :: !(Maybe Int) -- ^ "detail" - Detail of the short sale price test as byte value
+  , modelsShortSalePriceTestStatusModelDetailCode :: !(Maybe Text) -- ^ "detail_code" - Detail of the short sale price test as character string
+  , modelsShortSalePriceTestStatusModelDetailText :: !(Maybe Text) -- ^ "detail_text" - Human-readable description of the short sale price test detail
+  , modelsShortSalePriceTestStatusModelIsDetailNoPriceTest :: !(Maybe Bool) -- ^ "is_detail_no_price_test" - Indicates if there is no price test in place
+  , modelsShortSalePriceTestStatusModelIsDetailActivated :: !(Maybe Bool) -- ^ "is_detail_activated" - Indicates if the short sale price test restriction is in effect due to an intraday price drop
+  , modelsShortSalePriceTestStatusModelIsDetailContinued :: !(Maybe Bool) -- ^ "is_detail_continued" - Indicates if the short sale price test restriction remains in effect from prior day
+  , modelsShortSalePriceTestStatusModelIsDetailDeactivated :: !(Maybe Bool) -- ^ "is_detail_deactivated" - Indicates if the short sale price test restriction is deactivated
+  , modelsShortSalePriceTestStatusModelIsDetailNotAvailable :: !(Maybe Bool) -- ^ "is_detail_not_available" - Indicates if the detail is not available
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsShortSalePriceTestStatusModel
+instance A.FromJSON ModelsShortSalePriceTestStatusModel where
+  parseJSON = A.withObject "ModelsShortSalePriceTestStatusModel" $ \o ->
+    ModelsShortSalePriceTestStatusModel
+      <$> (o .:? "symbol")
+      <*> (o .:? "timestamp_nanos")
+      <*> (o .:? "timestamp")
+      <*> (o .:? "short_sale_price_test_status")
+      <*> (o .:? "short_sale_price_test_status_code")
+      <*> (o .:? "short_sale_price_test_status_text")
+      <*> (o .:? "is_short_sale_price_test_not_in_effect")
+      <*> (o .:? "is_short_sale_price_test_in_effect")
+      <*> (o .:? "detail")
+      <*> (o .:? "detail_code")
+      <*> (o .:? "detail_text")
+      <*> (o .:? "is_detail_no_price_test")
+      <*> (o .:? "is_detail_activated")
+      <*> (o .:? "is_detail_continued")
+      <*> (o .:? "is_detail_deactivated")
+      <*> (o .:? "is_detail_not_available")
+
+-- | ToJSON ModelsShortSalePriceTestStatusModel
+instance A.ToJSON ModelsShortSalePriceTestStatusModel where
+  toJSON ModelsShortSalePriceTestStatusModel {..} =
+   _omitNulls
+      [ "symbol" .= modelsShortSalePriceTestStatusModelSymbol
+      , "timestamp_nanos" .= modelsShortSalePriceTestStatusModelTimestampNanos
+      , "timestamp" .= modelsShortSalePriceTestStatusModelTimestamp
+      , "short_sale_price_test_status" .= modelsShortSalePriceTestStatusModelShortSalePriceTestStatus
+      , "short_sale_price_test_status_code" .= modelsShortSalePriceTestStatusModelShortSalePriceTestStatusCode
+      , "short_sale_price_test_status_text" .= modelsShortSalePriceTestStatusModelShortSalePriceTestStatusText
+      , "is_short_sale_price_test_not_in_effect" .= modelsShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect
+      , "is_short_sale_price_test_in_effect" .= modelsShortSalePriceTestStatusModelIsShortSalePriceTestInEffect
+      , "detail" .= modelsShortSalePriceTestStatusModelDetail
+      , "detail_code" .= modelsShortSalePriceTestStatusModelDetailCode
+      , "detail_text" .= modelsShortSalePriceTestStatusModelDetailText
+      , "is_detail_no_price_test" .= modelsShortSalePriceTestStatusModelIsDetailNoPriceTest
+      , "is_detail_activated" .= modelsShortSalePriceTestStatusModelIsDetailActivated
+      , "is_detail_continued" .= modelsShortSalePriceTestStatusModelIsDetailContinued
+      , "is_detail_deactivated" .= modelsShortSalePriceTestStatusModelIsDetailDeactivated
+      , "is_detail_not_available" .= modelsShortSalePriceTestStatusModelIsDetailNotAvailable
+      ]
+
+
+-- | Construct a value of type 'ModelsShortSalePriceTestStatusModel' (by applying it's required fields, if any)
+mkModelsShortSalePriceTestStatusModel
+  :: ModelsShortSalePriceTestStatusModel
+mkModelsShortSalePriceTestStatusModel =
+  ModelsShortSalePriceTestStatusModel
+  { modelsShortSalePriceTestStatusModelSymbol = Nothing
+  , modelsShortSalePriceTestStatusModelTimestampNanos = Nothing
+  , modelsShortSalePriceTestStatusModelTimestamp = Nothing
+  , modelsShortSalePriceTestStatusModelShortSalePriceTestStatus = Nothing
+  , modelsShortSalePriceTestStatusModelShortSalePriceTestStatusCode = Nothing
+  , modelsShortSalePriceTestStatusModelShortSalePriceTestStatusText = Nothing
+  , modelsShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect = Nothing
+  , modelsShortSalePriceTestStatusModelIsShortSalePriceTestInEffect = Nothing
+  , modelsShortSalePriceTestStatusModelDetail = Nothing
+  , modelsShortSalePriceTestStatusModelDetailCode = Nothing
+  , modelsShortSalePriceTestStatusModelDetailText = Nothing
+  , modelsShortSalePriceTestStatusModelIsDetailNoPriceTest = Nothing
+  , modelsShortSalePriceTestStatusModelIsDetailActivated = Nothing
+  , modelsShortSalePriceTestStatusModelIsDetailContinued = Nothing
+  , modelsShortSalePriceTestStatusModelIsDetailDeactivated = Nothing
+  , modelsShortSalePriceTestStatusModelIsDetailNotAvailable = Nothing
+  }
+
+-- ** ModelsTradingStatusModel
+-- | ModelsTradingStatusModel
+-- Represents the response DTO for trading status information
+data ModelsTradingStatusModel = ModelsTradingStatusModel
+  { modelsTradingStatusModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol
+  , modelsTradingStatusModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch
+  , modelsTradingStatusModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the trading status was recorded as DateTime
+  , modelsTradingStatusModelIsTradingLive :: !(Maybe Bool) -- ^ "is_trading_live" - Gets whether the security is currently trading on IEX
+  , modelsTradingStatusModelIsTradingHalted :: !(Maybe Bool) -- ^ "is_trading_halted" - Gets whether the security is halted across all US equity markets
+  , modelsTradingStatusModelIsTradingInOrderAcceptancePeriod :: !(Maybe Bool) -- ^ "is_trading_in_order_acceptance_period" - Gets whether the security is in Order Acceptance Period on IEX
+  , modelsTradingStatusModelIsTradingPaused :: !(Maybe Bool) -- ^ "is_trading_paused" - Gets whether the security is paused and in Order Acceptance Period on IEX
+  , modelsTradingStatusModelIsReasonHaltNewsPending :: !(Maybe Bool) -- ^ "is_reason_halt_news_pending" - Gets whether the halt reason is News Pending
+  , modelsTradingStatusModelIsReasonIpoNotYetTrading :: !(Maybe Bool) -- ^ "is_reason_ipo_not_yet_trading" - Gets whether the halt reason is IPO Not Yet Trading
+  , modelsTradingStatusModelIsReasonIpoDeferred :: !(Maybe Bool) -- ^ "is_reason_ipo_deferred" - Gets whether the halt reason is IPO Deferred
+  , modelsTradingStatusModelIsReasonHaltNewsDissemination :: !(Maybe Bool) -- ^ "is_reason_halt_news_dissemination" - Gets whether the order acceptance period reason is Halt News Dissemination
+  , modelsTradingStatusModelIsReasonIpoOrderAcceptancePeriod :: !(Maybe Bool) -- ^ "is_reason_ipo_order_acceptance_period" - Gets whether the order acceptance period reason is IPO Order Acceptance Period
+  , modelsTradingStatusModelIsReasonIpoPreLaunchPeriod :: !(Maybe Bool) -- ^ "is_reason_ipo_pre_launch_period" - Gets whether the order acceptance period reason is IPO Pre-Launch Period
+  , modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1 :: !(Maybe Bool) -- ^ "is_reason_market_wide_circuit_breaker_level1" - Gets whether the order acceptance period reason is Market-Wide Circuit Breaker Level 1 – Breached
+  , modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2 :: !(Maybe Bool) -- ^ "is_reason_market_wide_circuit_breaker_level2" - Gets whether the order acceptance period reason is Market-Wide Circuit Breaker Level 2 – Breached
+  , modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3 :: !(Maybe Bool) -- ^ "is_reason_market_wide_circuit_breaker_level3" - Gets whether the halt reason is Market-Wide Circuit Breaker Level 3 – Breached
+  , modelsTradingStatusModelIsReasonNotApplicable :: !(Maybe Bool) -- ^ "is_reason_not_applicable" - Gets whether the reason is Not Applicable
+  , modelsTradingStatusModelIsReasonNotAvailable :: !(Maybe Bool) -- ^ "is_reason_not_available" - Gets whether the halt reason is Not Available
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON ModelsTradingStatusModel
+instance A.FromJSON ModelsTradingStatusModel where
+  parseJSON = A.withObject "ModelsTradingStatusModel" $ \o ->
+    ModelsTradingStatusModel
+      <$> (o .:? "symbol")
+      <*> (o .:? "timestamp_nanos")
+      <*> (o .:? "timestamp")
+      <*> (o .:? "is_trading_live")
+      <*> (o .:? "is_trading_halted")
+      <*> (o .:? "is_trading_in_order_acceptance_period")
+      <*> (o .:? "is_trading_paused")
+      <*> (o .:? "is_reason_halt_news_pending")
+      <*> (o .:? "is_reason_ipo_not_yet_trading")
+      <*> (o .:? "is_reason_ipo_deferred")
+      <*> (o .:? "is_reason_halt_news_dissemination")
+      <*> (o .:? "is_reason_ipo_order_acceptance_period")
+      <*> (o .:? "is_reason_ipo_pre_launch_period")
+      <*> (o .:? "is_reason_market_wide_circuit_breaker_level1")
+      <*> (o .:? "is_reason_market_wide_circuit_breaker_level2")
+      <*> (o .:? "is_reason_market_wide_circuit_breaker_level3")
+      <*> (o .:? "is_reason_not_applicable")
+      <*> (o .:? "is_reason_not_available")
+
+-- | ToJSON ModelsTradingStatusModel
+instance A.ToJSON ModelsTradingStatusModel where
+  toJSON ModelsTradingStatusModel {..} =
+   _omitNulls
+      [ "symbol" .= modelsTradingStatusModelSymbol
+      , "timestamp_nanos" .= modelsTradingStatusModelTimestampNanos
+      , "timestamp" .= modelsTradingStatusModelTimestamp
+      , "is_trading_live" .= modelsTradingStatusModelIsTradingLive
+      , "is_trading_halted" .= modelsTradingStatusModelIsTradingHalted
+      , "is_trading_in_order_acceptance_period" .= modelsTradingStatusModelIsTradingInOrderAcceptancePeriod
+      , "is_trading_paused" .= modelsTradingStatusModelIsTradingPaused
+      , "is_reason_halt_news_pending" .= modelsTradingStatusModelIsReasonHaltNewsPending
+      , "is_reason_ipo_not_yet_trading" .= modelsTradingStatusModelIsReasonIpoNotYetTrading
+      , "is_reason_ipo_deferred" .= modelsTradingStatusModelIsReasonIpoDeferred
+      , "is_reason_halt_news_dissemination" .= modelsTradingStatusModelIsReasonHaltNewsDissemination
+      , "is_reason_ipo_order_acceptance_period" .= modelsTradingStatusModelIsReasonIpoOrderAcceptancePeriod
+      , "is_reason_ipo_pre_launch_period" .= modelsTradingStatusModelIsReasonIpoPreLaunchPeriod
+      , "is_reason_market_wide_circuit_breaker_level1" .= modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1
+      , "is_reason_market_wide_circuit_breaker_level2" .= modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2
+      , "is_reason_market_wide_circuit_breaker_level3" .= modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3
+      , "is_reason_not_applicable" .= modelsTradingStatusModelIsReasonNotApplicable
+      , "is_reason_not_available" .= modelsTradingStatusModelIsReasonNotAvailable
+      ]
+
+
+-- | Construct a value of type 'ModelsTradingStatusModel' (by applying it's required fields, if any)
+mkModelsTradingStatusModel
+  :: ModelsTradingStatusModel
+mkModelsTradingStatusModel =
+  ModelsTradingStatusModel
+  { modelsTradingStatusModelSymbol = Nothing
+  , modelsTradingStatusModelTimestampNanos = Nothing
+  , modelsTradingStatusModelTimestamp = Nothing
+  , modelsTradingStatusModelIsTradingLive = Nothing
+  , modelsTradingStatusModelIsTradingHalted = Nothing
+  , modelsTradingStatusModelIsTradingInOrderAcceptancePeriod = Nothing
+  , modelsTradingStatusModelIsTradingPaused = Nothing
+  , modelsTradingStatusModelIsReasonHaltNewsPending = Nothing
+  , modelsTradingStatusModelIsReasonIpoNotYetTrading = Nothing
+  , modelsTradingStatusModelIsReasonIpoDeferred = Nothing
+  , modelsTradingStatusModelIsReasonHaltNewsDissemination = Nothing
+  , modelsTradingStatusModelIsReasonIpoOrderAcceptancePeriod = Nothing
+  , modelsTradingStatusModelIsReasonIpoPreLaunchPeriod = Nothing
+  , modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1 = Nothing
+  , modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2 = Nothing
+  , modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3 = Nothing
+  , modelsTradingStatusModelIsReasonNotApplicable = Nothing
+  , modelsTradingStatusModelIsReasonNotAvailable = Nothing
+  }
+
+-- ** OHLCVTimeSeriesExchangeTimeseriesItem
+-- | OHLCVTimeSeriesExchangeTimeseriesItem
+-- Represents a timeseries item with price and volume information.
+data OHLCVTimeSeriesExchangeTimeseriesItem = OHLCVTimeSeriesExchangeTimeseriesItem
+  { oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodStart :: !(Maybe DateTime) -- ^ "time_period_start" - Gets or sets the start time of the time period.
+  , oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodEnd :: !(Maybe DateTime) -- ^ "time_period_end" - Gets or sets the end time of the time period.
+  , oHLCVTimeSeriesExchangeTimeseriesItemTimeOpen :: !(Maybe DateTime) -- ^ "time_open" - Gets or sets the time when the price opened.
+  , oHLCVTimeSeriesExchangeTimeseriesItemTimeClose :: !(Maybe DateTime) -- ^ "time_close" - Gets or sets the time when the price closed.
+  , oHLCVTimeSeriesExchangeTimeseriesItemPriceOpen :: !(Maybe Double) -- ^ "price_open" - Gets or sets the opening price.
+  , oHLCVTimeSeriesExchangeTimeseriesItemPriceHigh :: !(Maybe Double) -- ^ "price_high" - Gets or sets the highest price during the time period.
+  , oHLCVTimeSeriesExchangeTimeseriesItemPriceLow :: !(Maybe Double) -- ^ "price_low" - Gets or sets the lowest price during the time period.
+  , oHLCVTimeSeriesExchangeTimeseriesItemPriceClose :: !(Maybe Double) -- ^ "price_close" - Gets or sets the closing price.
+  , oHLCVTimeSeriesExchangeTimeseriesItemVolumeTraded :: !(Maybe Double) -- ^ "volume_traded" - Gets or sets the total volume traded during the time period.
+  , oHLCVTimeSeriesExchangeTimeseriesItemTradesCount :: !(Maybe Integer) -- ^ "trades_count" - Gets or sets the number of trades executed during the time period.
+  , oHLCVTimeSeriesExchangeTimeseriesItemSymbolIdExchange :: !(Maybe Text) -- ^ "symbol_id_exchange"
+  } deriving (P.Show, P.Eq, P.Typeable)
+
+-- | FromJSON OHLCVTimeSeriesExchangeTimeseriesItem
+instance A.FromJSON OHLCVTimeSeriesExchangeTimeseriesItem where
+  parseJSON = A.withObject "OHLCVTimeSeriesExchangeTimeseriesItem" $ \o ->
+    OHLCVTimeSeriesExchangeTimeseriesItem
       <$> (o .:? "time_period_start")
       <*> (o .:? "time_period_end")
       <*> (o .:? "time_open")
@@ -1514,62 +1587,62 @@ instance A.FromJSON OHLCVExchangeTimeseriesItem where
       <*> (o .:? "trades_count")
       <*> (o .:? "symbol_id_exchange")
 
--- | ToJSON OHLCVExchangeTimeseriesItem
-instance A.ToJSON OHLCVExchangeTimeseriesItem where
-  toJSON OHLCVExchangeTimeseriesItem {..} =
+-- | ToJSON OHLCVTimeSeriesExchangeTimeseriesItem
+instance A.ToJSON OHLCVTimeSeriesExchangeTimeseriesItem where
+  toJSON OHLCVTimeSeriesExchangeTimeseriesItem {..} =
    _omitNulls
-      [ "time_period_start" .= oHLCVExchangeTimeseriesItemTimePeriodStart
-      , "time_period_end" .= oHLCVExchangeTimeseriesItemTimePeriodEnd
-      , "time_open" .= oHLCVExchangeTimeseriesItemTimeOpen
-      , "time_close" .= oHLCVExchangeTimeseriesItemTimeClose
-      , "price_open" .= oHLCVExchangeTimeseriesItemPriceOpen
-      , "price_high" .= oHLCVExchangeTimeseriesItemPriceHigh
-      , "price_low" .= oHLCVExchangeTimeseriesItemPriceLow
-      , "price_close" .= oHLCVExchangeTimeseriesItemPriceClose
-      , "volume_traded" .= oHLCVExchangeTimeseriesItemVolumeTraded
-      , "trades_count" .= oHLCVExchangeTimeseriesItemTradesCount
-      , "symbol_id_exchange" .= oHLCVExchangeTimeseriesItemSymbolIdExchange
+      [ "time_period_start" .= oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodStart
+      , "time_period_end" .= oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodEnd
+      , "time_open" .= oHLCVTimeSeriesExchangeTimeseriesItemTimeOpen
+      , "time_close" .= oHLCVTimeSeriesExchangeTimeseriesItemTimeClose
+      , "price_open" .= oHLCVTimeSeriesExchangeTimeseriesItemPriceOpen
+      , "price_high" .= oHLCVTimeSeriesExchangeTimeseriesItemPriceHigh
+      , "price_low" .= oHLCVTimeSeriesExchangeTimeseriesItemPriceLow
+      , "price_close" .= oHLCVTimeSeriesExchangeTimeseriesItemPriceClose
+      , "volume_traded" .= oHLCVTimeSeriesExchangeTimeseriesItemVolumeTraded
+      , "trades_count" .= oHLCVTimeSeriesExchangeTimeseriesItemTradesCount
+      , "symbol_id_exchange" .= oHLCVTimeSeriesExchangeTimeseriesItemSymbolIdExchange
       ]
 
 
--- | Construct a value of type 'OHLCVExchangeTimeseriesItem' (by applying it's required fields, if any)
-mkOHLCVExchangeTimeseriesItem
-  :: OHLCVExchangeTimeseriesItem
-mkOHLCVExchangeTimeseriesItem =
-  OHLCVExchangeTimeseriesItem
-  { oHLCVExchangeTimeseriesItemTimePeriodStart = Nothing
-  , oHLCVExchangeTimeseriesItemTimePeriodEnd = Nothing
-  , oHLCVExchangeTimeseriesItemTimeOpen = Nothing
-  , oHLCVExchangeTimeseriesItemTimeClose = Nothing
-  , oHLCVExchangeTimeseriesItemPriceOpen = Nothing
-  , oHLCVExchangeTimeseriesItemPriceHigh = Nothing
-  , oHLCVExchangeTimeseriesItemPriceLow = Nothing
-  , oHLCVExchangeTimeseriesItemPriceClose = Nothing
-  , oHLCVExchangeTimeseriesItemVolumeTraded = Nothing
-  , oHLCVExchangeTimeseriesItemTradesCount = Nothing
-  , oHLCVExchangeTimeseriesItemSymbolIdExchange = Nothing
+-- | Construct a value of type 'OHLCVTimeSeriesExchangeTimeseriesItem' (by applying it's required fields, if any)
+mkOHLCVTimeSeriesExchangeTimeseriesItem
+  :: OHLCVTimeSeriesExchangeTimeseriesItem
+mkOHLCVTimeSeriesExchangeTimeseriesItem =
+  OHLCVTimeSeriesExchangeTimeseriesItem
+  { oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodStart = Nothing
+  , oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodEnd = Nothing
+  , oHLCVTimeSeriesExchangeTimeseriesItemTimeOpen = Nothing
+  , oHLCVTimeSeriesExchangeTimeseriesItemTimeClose = Nothing
+  , oHLCVTimeSeriesExchangeTimeseriesItemPriceOpen = Nothing
+  , oHLCVTimeSeriesExchangeTimeseriesItemPriceHigh = Nothing
+  , oHLCVTimeSeriesExchangeTimeseriesItemPriceLow = Nothing
+  , oHLCVTimeSeriesExchangeTimeseriesItemPriceClose = Nothing
+  , oHLCVTimeSeriesExchangeTimeseriesItemVolumeTraded = Nothing
+  , oHLCVTimeSeriesExchangeTimeseriesItemTradesCount = Nothing
+  , oHLCVTimeSeriesExchangeTimeseriesItemSymbolIdExchange = Nothing
   }
 
--- ** OHLCVTimeseriesItem
--- | OHLCVTimeseriesItem
+-- ** OHLCVTimeSeriesTimeseriesItem
+-- | OHLCVTimeSeriesTimeseriesItem
 -- Represents a timeseries item with price and volume information.
-data OHLCVTimeseriesItem = OHLCVTimeseriesItem
-  { oHLCVTimeseriesItemTimePeriodStart :: !(Maybe DateTime) -- ^ "time_period_start" - Gets or sets the start time of the time period.
-  , oHLCVTimeseriesItemTimePeriodEnd :: !(Maybe DateTime) -- ^ "time_period_end" - Gets or sets the end time of the time period.
-  , oHLCVTimeseriesItemTimeOpen :: !(Maybe DateTime) -- ^ "time_open" - Gets or sets the time when the price opened.
-  , oHLCVTimeseriesItemTimeClose :: !(Maybe DateTime) -- ^ "time_close" - Gets or sets the time when the price closed.
-  , oHLCVTimeseriesItemPriceOpen :: !(Maybe Double) -- ^ "price_open" - Gets or sets the opening price.
-  , oHLCVTimeseriesItemPriceHigh :: !(Maybe Double) -- ^ "price_high" - Gets or sets the highest price during the time period.
-  , oHLCVTimeseriesItemPriceLow :: !(Maybe Double) -- ^ "price_low" - Gets or sets the lowest price during the time period.
-  , oHLCVTimeseriesItemPriceClose :: !(Maybe Double) -- ^ "price_close" - Gets or sets the closing price.
-  , oHLCVTimeseriesItemVolumeTraded :: !(Maybe Double) -- ^ "volume_traded" - Gets or sets the total volume traded during the time period.
-  , oHLCVTimeseriesItemTradesCount :: !(Maybe Integer) -- ^ "trades_count" - Gets or sets the number of trades executed during the time period.
+data OHLCVTimeSeriesTimeseriesItem = OHLCVTimeSeriesTimeseriesItem
+  { oHLCVTimeSeriesTimeseriesItemTimePeriodStart :: !(Maybe DateTime) -- ^ "time_period_start" - Gets or sets the start time of the time period.
+  , oHLCVTimeSeriesTimeseriesItemTimePeriodEnd :: !(Maybe DateTime) -- ^ "time_period_end" - Gets or sets the end time of the time period.
+  , oHLCVTimeSeriesTimeseriesItemTimeOpen :: !(Maybe DateTime) -- ^ "time_open" - Gets or sets the time when the price opened.
+  , oHLCVTimeSeriesTimeseriesItemTimeClose :: !(Maybe DateTime) -- ^ "time_close" - Gets or sets the time when the price closed.
+  , oHLCVTimeSeriesTimeseriesItemPriceOpen :: !(Maybe Double) -- ^ "price_open" - Gets or sets the opening price.
+  , oHLCVTimeSeriesTimeseriesItemPriceHigh :: !(Maybe Double) -- ^ "price_high" - Gets or sets the highest price during the time period.
+  , oHLCVTimeSeriesTimeseriesItemPriceLow :: !(Maybe Double) -- ^ "price_low" - Gets or sets the lowest price during the time period.
+  , oHLCVTimeSeriesTimeseriesItemPriceClose :: !(Maybe Double) -- ^ "price_close" - Gets or sets the closing price.
+  , oHLCVTimeSeriesTimeseriesItemVolumeTraded :: !(Maybe Double) -- ^ "volume_traded" - Gets or sets the total volume traded during the time period.
+  , oHLCVTimeSeriesTimeseriesItemTradesCount :: !(Maybe Integer) -- ^ "trades_count" - Gets or sets the number of trades executed during the time period.
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON OHLCVTimeseriesItem
-instance A.FromJSON OHLCVTimeseriesItem where
-  parseJSON = A.withObject "OHLCVTimeseriesItem" $ \o ->
-    OHLCVTimeseriesItem
+-- | FromJSON OHLCVTimeSeriesTimeseriesItem
+instance A.FromJSON OHLCVTimeSeriesTimeseriesItem where
+  parseJSON = A.withObject "OHLCVTimeSeriesTimeseriesItem" $ \o ->
+    OHLCVTimeSeriesTimeseriesItem
       <$> (o .:? "time_period_start")
       <*> (o .:? "time_period_end")
       <*> (o .:? "time_open")
@@ -1581,56 +1654,56 @@ instance A.FromJSON OHLCVTimeseriesItem where
       <*> (o .:? "volume_traded")
       <*> (o .:? "trades_count")
 
--- | ToJSON OHLCVTimeseriesItem
-instance A.ToJSON OHLCVTimeseriesItem where
-  toJSON OHLCVTimeseriesItem {..} =
+-- | ToJSON OHLCVTimeSeriesTimeseriesItem
+instance A.ToJSON OHLCVTimeSeriesTimeseriesItem where
+  toJSON OHLCVTimeSeriesTimeseriesItem {..} =
    _omitNulls
-      [ "time_period_start" .= oHLCVTimeseriesItemTimePeriodStart
-      , "time_period_end" .= oHLCVTimeseriesItemTimePeriodEnd
-      , "time_open" .= oHLCVTimeseriesItemTimeOpen
-      , "time_close" .= oHLCVTimeseriesItemTimeClose
-      , "price_open" .= oHLCVTimeseriesItemPriceOpen
-      , "price_high" .= oHLCVTimeseriesItemPriceHigh
-      , "price_low" .= oHLCVTimeseriesItemPriceLow
-      , "price_close" .= oHLCVTimeseriesItemPriceClose
-      , "volume_traded" .= oHLCVTimeseriesItemVolumeTraded
-      , "trades_count" .= oHLCVTimeseriesItemTradesCount
+      [ "time_period_start" .= oHLCVTimeSeriesTimeseriesItemTimePeriodStart
+      , "time_period_end" .= oHLCVTimeSeriesTimeseriesItemTimePeriodEnd
+      , "time_open" .= oHLCVTimeSeriesTimeseriesItemTimeOpen
+      , "time_close" .= oHLCVTimeSeriesTimeseriesItemTimeClose
+      , "price_open" .= oHLCVTimeSeriesTimeseriesItemPriceOpen
+      , "price_high" .= oHLCVTimeSeriesTimeseriesItemPriceHigh
+      , "price_low" .= oHLCVTimeSeriesTimeseriesItemPriceLow
+      , "price_close" .= oHLCVTimeSeriesTimeseriesItemPriceClose
+      , "volume_traded" .= oHLCVTimeSeriesTimeseriesItemVolumeTraded
+      , "trades_count" .= oHLCVTimeSeriesTimeseriesItemTradesCount
       ]
 
 
--- | Construct a value of type 'OHLCVTimeseriesItem' (by applying it's required fields, if any)
-mkOHLCVTimeseriesItem
-  :: OHLCVTimeseriesItem
-mkOHLCVTimeseriesItem =
-  OHLCVTimeseriesItem
-  { oHLCVTimeseriesItemTimePeriodStart = Nothing
-  , oHLCVTimeseriesItemTimePeriodEnd = Nothing
-  , oHLCVTimeseriesItemTimeOpen = Nothing
-  , oHLCVTimeseriesItemTimeClose = Nothing
-  , oHLCVTimeseriesItemPriceOpen = Nothing
-  , oHLCVTimeseriesItemPriceHigh = Nothing
-  , oHLCVTimeseriesItemPriceLow = Nothing
-  , oHLCVTimeseriesItemPriceClose = Nothing
-  , oHLCVTimeseriesItemVolumeTraded = Nothing
-  , oHLCVTimeseriesItemTradesCount = Nothing
+-- | Construct a value of type 'OHLCVTimeSeriesTimeseriesItem' (by applying it's required fields, if any)
+mkOHLCVTimeSeriesTimeseriesItem
+  :: OHLCVTimeSeriesTimeseriesItem
+mkOHLCVTimeSeriesTimeseriesItem =
+  OHLCVTimeSeriesTimeseriesItem
+  { oHLCVTimeSeriesTimeseriesItemTimePeriodStart = Nothing
+  , oHLCVTimeSeriesTimeseriesItemTimePeriodEnd = Nothing
+  , oHLCVTimeSeriesTimeseriesItemTimeOpen = Nothing
+  , oHLCVTimeSeriesTimeseriesItemTimeClose = Nothing
+  , oHLCVTimeSeriesTimeseriesItemPriceOpen = Nothing
+  , oHLCVTimeSeriesTimeseriesItemPriceHigh = Nothing
+  , oHLCVTimeSeriesTimeseriesItemPriceLow = Nothing
+  , oHLCVTimeSeriesTimeseriesItemPriceClose = Nothing
+  , oHLCVTimeSeriesTimeseriesItemVolumeTraded = Nothing
+  , oHLCVTimeSeriesTimeseriesItemTradesCount = Nothing
   }
 
--- ** OHLCVTimeseriesPeriod
--- | OHLCVTimeseriesPeriod
+-- ** OHLCVTimeSeriesTimeseriesPeriod
+-- | OHLCVTimeSeriesTimeseriesPeriod
 -- Represents a timeseries period used in exchange rate data.
-data OHLCVTimeseriesPeriod = OHLCVTimeseriesPeriod
-  { oHLCVTimeseriesPeriodPeriodId :: !(Maybe Text) -- ^ "period_id" - Gets or sets the period ID.
-  , oHLCVTimeseriesPeriodLengthSeconds :: !(Maybe Int) -- ^ "length_seconds" - Gets or sets the length of the period in seconds.
-  , oHLCVTimeseriesPeriodLengthMonths :: !(Maybe Int) -- ^ "length_months" - Gets or sets the length of the period in months.
-  , oHLCVTimeseriesPeriodUnitCount :: !(Maybe Int) -- ^ "unit_count" - Gets or sets the unit count.
-  , oHLCVTimeseriesPeriodUnitName :: !(Maybe Text) -- ^ "unit_name" - Gets or sets the unit name.
-  , oHLCVTimeseriesPeriodDisplayName :: !(Maybe Text) -- ^ "display_name" - Gets or sets the display name of the timeseries period.
+data OHLCVTimeSeriesTimeseriesPeriod = OHLCVTimeSeriesTimeseriesPeriod
+  { oHLCVTimeSeriesTimeseriesPeriodPeriodId :: !(Maybe Text) -- ^ "period_id" - Gets or sets the period ID.
+  , oHLCVTimeSeriesTimeseriesPeriodLengthSeconds :: !(Maybe Int) -- ^ "length_seconds" - Gets or sets the length of the period in seconds.
+  , oHLCVTimeSeriesTimeseriesPeriodLengthMonths :: !(Maybe Int) -- ^ "length_months" - Gets or sets the length of the period in months.
+  , oHLCVTimeSeriesTimeseriesPeriodUnitCount :: !(Maybe Int) -- ^ "unit_count" - Gets or sets the unit count.
+  , oHLCVTimeSeriesTimeseriesPeriodUnitName :: !(Maybe Text) -- ^ "unit_name" - Gets or sets the unit name.
+  , oHLCVTimeSeriesTimeseriesPeriodDisplayName :: !(Maybe Text) -- ^ "display_name" - Gets or sets the display name of the timeseries period.
   } deriving (P.Show, P.Eq, P.Typeable)
 
--- | FromJSON OHLCVTimeseriesPeriod
-instance A.FromJSON OHLCVTimeseriesPeriod where
-  parseJSON = A.withObject "OHLCVTimeseriesPeriod" $ \o ->
-    OHLCVTimeseriesPeriod
+-- | FromJSON OHLCVTimeSeriesTimeseriesPeriod
+instance A.FromJSON OHLCVTimeSeriesTimeseriesPeriod where
+  parseJSON = A.withObject "OHLCVTimeSeriesTimeseriesPeriod" $ \o ->
+    OHLCVTimeSeriesTimeseriesPeriod
       <$> (o .:? "period_id")
       <*> (o .:? "length_seconds")
       <*> (o .:? "length_months")
@@ -1638,103 +1711,30 @@ instance A.FromJSON OHLCVTimeseriesPeriod where
       <*> (o .:? "unit_name")
       <*> (o .:? "display_name")
 
--- | ToJSON OHLCVTimeseriesPeriod
-instance A.ToJSON OHLCVTimeseriesPeriod where
-  toJSON OHLCVTimeseriesPeriod {..} =
+-- | ToJSON OHLCVTimeSeriesTimeseriesPeriod
+instance A.ToJSON OHLCVTimeSeriesTimeseriesPeriod where
+  toJSON OHLCVTimeSeriesTimeseriesPeriod {..} =
    _omitNulls
-      [ "period_id" .= oHLCVTimeseriesPeriodPeriodId
-      , "length_seconds" .= oHLCVTimeseriesPeriodLengthSeconds
-      , "length_months" .= oHLCVTimeseriesPeriodLengthMonths
-      , "unit_count" .= oHLCVTimeseriesPeriodUnitCount
-      , "unit_name" .= oHLCVTimeseriesPeriodUnitName
-      , "display_name" .= oHLCVTimeseriesPeriodDisplayName
+      [ "period_id" .= oHLCVTimeSeriesTimeseriesPeriodPeriodId
+      , "length_seconds" .= oHLCVTimeSeriesTimeseriesPeriodLengthSeconds
+      , "length_months" .= oHLCVTimeSeriesTimeseriesPeriodLengthMonths
+      , "unit_count" .= oHLCVTimeSeriesTimeseriesPeriodUnitCount
+      , "unit_name" .= oHLCVTimeSeriesTimeseriesPeriodUnitName
+      , "display_name" .= oHLCVTimeSeriesTimeseriesPeriodDisplayName
       ]
 
 
--- | Construct a value of type 'OHLCVTimeseriesPeriod' (by applying it's required fields, if any)
-mkOHLCVTimeseriesPeriod
-  :: OHLCVTimeseriesPeriod
-mkOHLCVTimeseriesPeriod =
-  OHLCVTimeseriesPeriod
-  { oHLCVTimeseriesPeriodPeriodId = Nothing
-  , oHLCVTimeseriesPeriodLengthSeconds = Nothing
-  , oHLCVTimeseriesPeriodLengthMonths = Nothing
-  , oHLCVTimeseriesPeriodUnitCount = Nothing
-  , oHLCVTimeseriesPeriodUnitName = Nothing
-  , oHLCVTimeseriesPeriodDisplayName = Nothing
-  }
-
--- ** TradeTradeModel
--- | TradeTradeModel
--- Represents the response DTO for a single trade event (report or break).
-data TradeTradeModel = TradeTradeModel
-  { tradeTradeModelIsTradeBreak :: !(Maybe Bool) -- ^ "is_trade_break" - Indicates if this record represents a trade break (true) or a trade report (false).
-  , tradeTradeModelSymbol :: !(Maybe Text) -- ^ "symbol" - The stock symbol.
-  , tradeTradeModelTimestampNanos :: !(Maybe Integer) -- ^ "timestamp_nanos" - Original timestamp in nanoseconds since epoch.
-  , tradeTradeModelTimestamp :: !(Maybe DateTime) -- ^ "timestamp" - Time when the event was recorded as DateTime (UTC).
-  , tradeTradeModelSize :: !(Maybe Int) -- ^ "size" - Trade volume (or break volume) in number of shares.
-  , tradeTradeModelPrice :: !(Maybe Double) -- ^ "price" - Trade price (or break price) as decimal.
-  , tradeTradeModelTradeId :: !(Maybe Integer) -- ^ "trade_id" - IEX trade identifier (same for report and its corresponding break).
-  , tradeTradeModelIsIntermarketSweep :: !(Maybe Bool) -- ^ "is_intermarket_sweep" - Bit 7 (Mask 0x80): Intermarket Sweep Flag. True: Intermarket Sweep Order (\&quot;ISO\&quot;). False: Non-Intermarket Sweep Order.
-  , tradeTradeModelIsExtendedHoursTrade :: !(Maybe Bool) -- ^ "is_extended_hours_trade" - Bit 6 (Mask 0x40): Extended Hours Flag. True: Extended Hours Trade (i.e., Form T sale condition). False: Regular Market Session Trade.
-  , tradeTradeModelIsOddLotTrade :: !(Maybe Bool) -- ^ "is_odd_lot_trade" - Bit 5 (Mask 0x20): Odd Lot Flag. True: Odd Lot Trade. False: Round or Mixed Lot Trade.
-  , tradeTradeModelIsTradeThroughExempt :: !(Maybe Bool) -- ^ "is_trade_through_exempt" - Bit 4 (Mask 0x10): Trade Through Exempt Flag. True: Trade is not subject to Rule 611 (Trade Through) of SEC Reg. NMS. False: Trade is subject to Rule 611 (Trade Through) of SEC Reg. NMS. Applied when the taking order was an ISO that traded through a protected quotation, OR the NBBO was crossed at the time of the trade, OR the trade occurred through a self-helped venue&#39;s quotation, OR the trade was a single-price cross.
-  , tradeTradeModelIsSinglePriceCrossTrade :: !(Maybe Bool) -- ^ "is_single_price_cross_trade" - Bit 3 (Mask 0x08): Single-price Cross Trade Flag. True: Trade resulting from a single-price cross. False: Execution during continuous trading.
-  } deriving (P.Show, P.Eq, P.Typeable)
-
--- | FromJSON TradeTradeModel
-instance A.FromJSON TradeTradeModel where
-  parseJSON = A.withObject "TradeTradeModel" $ \o ->
-    TradeTradeModel
-      <$> (o .:? "is_trade_break")
-      <*> (o .:? "symbol")
-      <*> (o .:? "timestamp_nanos")
-      <*> (o .:? "timestamp")
-      <*> (o .:? "size")
-      <*> (o .:? "price")
-      <*> (o .:? "trade_id")
-      <*> (o .:? "is_intermarket_sweep")
-      <*> (o .:? "is_extended_hours_trade")
-      <*> (o .:? "is_odd_lot_trade")
-      <*> (o .:? "is_trade_through_exempt")
-      <*> (o .:? "is_single_price_cross_trade")
-
--- | ToJSON TradeTradeModel
-instance A.ToJSON TradeTradeModel where
-  toJSON TradeTradeModel {..} =
-   _omitNulls
-      [ "is_trade_break" .= tradeTradeModelIsTradeBreak
-      , "symbol" .= tradeTradeModelSymbol
-      , "timestamp_nanos" .= tradeTradeModelTimestampNanos
-      , "timestamp" .= tradeTradeModelTimestamp
-      , "size" .= tradeTradeModelSize
-      , "price" .= tradeTradeModelPrice
-      , "trade_id" .= tradeTradeModelTradeId
-      , "is_intermarket_sweep" .= tradeTradeModelIsIntermarketSweep
-      , "is_extended_hours_trade" .= tradeTradeModelIsExtendedHoursTrade
-      , "is_odd_lot_trade" .= tradeTradeModelIsOddLotTrade
-      , "is_trade_through_exempt" .= tradeTradeModelIsTradeThroughExempt
-      , "is_single_price_cross_trade" .= tradeTradeModelIsSinglePriceCrossTrade
-      ]
-
-
--- | Construct a value of type 'TradeTradeModel' (by applying it's required fields, if any)
-mkTradeTradeModel
-  :: TradeTradeModel
-mkTradeTradeModel =
-  TradeTradeModel
-  { tradeTradeModelIsTradeBreak = Nothing
-  , tradeTradeModelSymbol = Nothing
-  , tradeTradeModelTimestampNanos = Nothing
-  , tradeTradeModelTimestamp = Nothing
-  , tradeTradeModelSize = Nothing
-  , tradeTradeModelPrice = Nothing
-  , tradeTradeModelTradeId = Nothing
-  , tradeTradeModelIsIntermarketSweep = Nothing
-  , tradeTradeModelIsExtendedHoursTrade = Nothing
-  , tradeTradeModelIsOddLotTrade = Nothing
-  , tradeTradeModelIsTradeThroughExempt = Nothing
-  , tradeTradeModelIsSinglePriceCrossTrade = Nothing
+-- | Construct a value of type 'OHLCVTimeSeriesTimeseriesPeriod' (by applying it's required fields, if any)
+mkOHLCVTimeSeriesTimeseriesPeriod
+  :: OHLCVTimeSeriesTimeseriesPeriod
+mkOHLCVTimeSeriesTimeseriesPeriod =
+  OHLCVTimeSeriesTimeseriesPeriod
+  { oHLCVTimeSeriesTimeseriesPeriodPeriodId = Nothing
+  , oHLCVTimeSeriesTimeseriesPeriodLengthSeconds = Nothing
+  , oHLCVTimeSeriesTimeseriesPeriodLengthMonths = Nothing
+  , oHLCVTimeSeriesTimeseriesPeriodUnitCount = Nothing
+  , oHLCVTimeSeriesTimeseriesPeriodUnitName = Nothing
+  , oHLCVTimeSeriesTimeseriesPeriodDisplayName = Nothing
   }
 
 

@@ -14,9 +14,9 @@
 package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
-import org.openapitools.client.model.OHLCVExchangeTimeseriesItem;
-import org.openapitools.client.model.OHLCVTimeseriesItem;
-import org.openapitools.client.model.OHLCVTimeseriesPeriod;
+import org.openapitools.client.model.OHLCVTimeSeriesExchangeTimeseriesItem;
+import org.openapitools.client.model.OHLCVTimeSeriesTimeseriesItem;
+import org.openapitools.client.model.OHLCVTimeSeriesTimeseriesPeriod;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -46,7 +46,7 @@ public class OhlcvApiTest {
         String periodId = null;
         String timeStart = null;
         String timeEnd = null;
-        List<OHLCVExchangeTimeseriesItem> response = api.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd);
+        List<OHLCVTimeSeriesExchangeTimeseriesItem> response = api.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd);
         // TODO: test validations
     }
 
@@ -65,7 +65,7 @@ public class OhlcvApiTest {
         String timeStart = null;
         String timeEnd = null;
         Integer limit = null;
-        List<OHLCVTimeseriesItem> response = api.v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit);
+        List<OHLCVTimeSeriesTimeseriesItem> response = api.v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId, symbolId, periodId, timeStart, timeEnd, limit);
         // TODO: test validations
     }
 
@@ -82,7 +82,7 @@ public class OhlcvApiTest {
         String symbolId = null;
         String periodId = null;
         Integer limit = null;
-        List<OHLCVTimeseriesItem> response = api.v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit);
+        List<OHLCVTimeSeriesTimeseriesItem> response = api.v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(exchangeId, symbolId, periodId, limit);
         // TODO: test validations
     }
 
@@ -95,7 +95,7 @@ public class OhlcvApiTest {
      */
     @Test
     public void v1OhlcvPeriodsGetTest() throws ApiException {
-        List<OHLCVTimeseriesPeriod> response = api.v1OhlcvPeriodsGet();
+        List<OHLCVTimeSeriesTimeseriesPeriod> response = api.v1OhlcvPeriodsGet();
         // TODO: test validations
     }
 

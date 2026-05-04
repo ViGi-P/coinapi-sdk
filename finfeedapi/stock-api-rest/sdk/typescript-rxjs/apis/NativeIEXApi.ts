@@ -16,12 +16,12 @@ import type { AjaxResponse } from 'rxjs/ajax';
 import { BaseAPI, throwIfNullOrUndefined, encodeURI } from '../runtime';
 import type { OperationOpts, HttpHeaders, HttpQuery } from '../runtime';
 import type {
-    AdminAdminMessageModel,
-    AdminSystemEventModel,
-    Level1QuoteUpdateModel,
-    Level2PriceLevelUpdateModel,
-    Level3OrderBookModel,
-    TradeTradeModel,
+    IEXPriceLevelUpdatePriceLevelUpdateModel,
+    IEXQuoteUpdateQuoteUpdateModel,
+    IEXSystemEventSystemEventModel,
+    IEXTradeTradeModel,
+    ModelsAdminMessageModel,
+    ModelsOrderBookModel,
 } from '../models';
 
 export interface V1NativeIexAdminMessagesSymbolGetRequest {
@@ -61,9 +61,9 @@ export class NativeIEXApi extends BaseAPI {
     /**
      * Get Admin Messages
      */
-    v1NativeIexAdminMessagesSymbolGet({ symbol, date }: V1NativeIexAdminMessagesSymbolGetRequest): Observable<Array<AdminAdminMessageModel>>
-    v1NativeIexAdminMessagesSymbolGet({ symbol, date }: V1NativeIexAdminMessagesSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<AdminAdminMessageModel>>>
-    v1NativeIexAdminMessagesSymbolGet({ symbol, date }: V1NativeIexAdminMessagesSymbolGetRequest, opts?: OperationOpts): Observable<Array<AdminAdminMessageModel> | AjaxResponse<Array<AdminAdminMessageModel>>> {
+    v1NativeIexAdminMessagesSymbolGet({ symbol, date }: V1NativeIexAdminMessagesSymbolGetRequest): Observable<Array<ModelsAdminMessageModel>>
+    v1NativeIexAdminMessagesSymbolGet({ symbol, date }: V1NativeIexAdminMessagesSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsAdminMessageModel>>>
+    v1NativeIexAdminMessagesSymbolGet({ symbol, date }: V1NativeIexAdminMessagesSymbolGetRequest, opts?: OperationOpts): Observable<Array<ModelsAdminMessageModel> | AjaxResponse<Array<ModelsAdminMessageModel>>> {
         throwIfNullOrUndefined(symbol, 'symbol', 'v1NativeIexAdminMessagesSymbolGet');
         throwIfNullOrUndefined(date, 'date', 'v1NativeIexAdminMessagesSymbolGet');
 
@@ -75,7 +75,7 @@ export class NativeIEXApi extends BaseAPI {
             'date': (date as any).toISOString(),
         };
 
-        return this.request<Array<AdminAdminMessageModel>>({
+        return this.request<Array<ModelsAdminMessageModel>>({
             url: '/v1/native/iex/admin/messages/{symbol}'.replace('{symbol}', encodeURI(symbol)),
             method: 'GET',
             headers,
@@ -86,9 +86,9 @@ export class NativeIEXApi extends BaseAPI {
     /**
      * Get System Events
      */
-    v1NativeIexAdminSystemEventGet({ date }: V1NativeIexAdminSystemEventGetRequest): Observable<Array<AdminSystemEventModel>>
-    v1NativeIexAdminSystemEventGet({ date }: V1NativeIexAdminSystemEventGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<AdminSystemEventModel>>>
-    v1NativeIexAdminSystemEventGet({ date }: V1NativeIexAdminSystemEventGetRequest, opts?: OperationOpts): Observable<Array<AdminSystemEventModel> | AjaxResponse<Array<AdminSystemEventModel>>> {
+    v1NativeIexAdminSystemEventGet({ date }: V1NativeIexAdminSystemEventGetRequest): Observable<Array<IEXSystemEventSystemEventModel>>
+    v1NativeIexAdminSystemEventGet({ date }: V1NativeIexAdminSystemEventGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IEXSystemEventSystemEventModel>>>
+    v1NativeIexAdminSystemEventGet({ date }: V1NativeIexAdminSystemEventGetRequest, opts?: OperationOpts): Observable<Array<IEXSystemEventSystemEventModel> | AjaxResponse<Array<IEXSystemEventSystemEventModel>>> {
         throwIfNullOrUndefined(date, 'date', 'v1NativeIexAdminSystemEventGet');
 
         const headers: HttpHeaders = {
@@ -99,7 +99,7 @@ export class NativeIEXApi extends BaseAPI {
             'date': (date as any).toISOString(),
         };
 
-        return this.request<Array<AdminSystemEventModel>>({
+        return this.request<Array<IEXSystemEventSystemEventModel>>({
             url: '/v1/native/iex/admin/system-event',
             method: 'GET',
             headers,
@@ -110,9 +110,9 @@ export class NativeIEXApi extends BaseAPI {
     /**
      * Get Level-1 Quotes
      */
-    v1NativeIexLevel1QuoteSymbolGet({ symbol, date }: V1NativeIexLevel1QuoteSymbolGetRequest): Observable<Array<Level1QuoteUpdateModel>>
-    v1NativeIexLevel1QuoteSymbolGet({ symbol, date }: V1NativeIexLevel1QuoteSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<Level1QuoteUpdateModel>>>
-    v1NativeIexLevel1QuoteSymbolGet({ symbol, date }: V1NativeIexLevel1QuoteSymbolGetRequest, opts?: OperationOpts): Observable<Array<Level1QuoteUpdateModel> | AjaxResponse<Array<Level1QuoteUpdateModel>>> {
+    v1NativeIexLevel1QuoteSymbolGet({ symbol, date }: V1NativeIexLevel1QuoteSymbolGetRequest): Observable<Array<IEXQuoteUpdateQuoteUpdateModel>>
+    v1NativeIexLevel1QuoteSymbolGet({ symbol, date }: V1NativeIexLevel1QuoteSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IEXQuoteUpdateQuoteUpdateModel>>>
+    v1NativeIexLevel1QuoteSymbolGet({ symbol, date }: V1NativeIexLevel1QuoteSymbolGetRequest, opts?: OperationOpts): Observable<Array<IEXQuoteUpdateQuoteUpdateModel> | AjaxResponse<Array<IEXQuoteUpdateQuoteUpdateModel>>> {
         throwIfNullOrUndefined(symbol, 'symbol', 'v1NativeIexLevel1QuoteSymbolGet');
         throwIfNullOrUndefined(date, 'date', 'v1NativeIexLevel1QuoteSymbolGet');
 
@@ -124,7 +124,7 @@ export class NativeIEXApi extends BaseAPI {
             'date': (date as any).toISOString(),
         };
 
-        return this.request<Array<Level1QuoteUpdateModel>>({
+        return this.request<Array<IEXQuoteUpdateQuoteUpdateModel>>({
             url: '/v1/native/iex/level1-quote/{symbol}'.replace('{symbol}', encodeURI(symbol)),
             method: 'GET',
             headers,
@@ -135,9 +135,9 @@ export class NativeIEXApi extends BaseAPI {
     /**
      * Get Level-2 Price Level Book
      */
-    v1NativeIexLevel2PriceLevelUpdateSymbolGet({ symbol, date }: V1NativeIexLevel2PriceLevelUpdateSymbolGetRequest): Observable<Array<Level2PriceLevelUpdateModel>>
-    v1NativeIexLevel2PriceLevelUpdateSymbolGet({ symbol, date }: V1NativeIexLevel2PriceLevelUpdateSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<Level2PriceLevelUpdateModel>>>
-    v1NativeIexLevel2PriceLevelUpdateSymbolGet({ symbol, date }: V1NativeIexLevel2PriceLevelUpdateSymbolGetRequest, opts?: OperationOpts): Observable<Array<Level2PriceLevelUpdateModel> | AjaxResponse<Array<Level2PriceLevelUpdateModel>>> {
+    v1NativeIexLevel2PriceLevelUpdateSymbolGet({ symbol, date }: V1NativeIexLevel2PriceLevelUpdateSymbolGetRequest): Observable<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>
+    v1NativeIexLevel2PriceLevelUpdateSymbolGet({ symbol, date }: V1NativeIexLevel2PriceLevelUpdateSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>>
+    v1NativeIexLevel2PriceLevelUpdateSymbolGet({ symbol, date }: V1NativeIexLevel2PriceLevelUpdateSymbolGetRequest, opts?: OperationOpts): Observable<Array<IEXPriceLevelUpdatePriceLevelUpdateModel> | AjaxResponse<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>> {
         throwIfNullOrUndefined(symbol, 'symbol', 'v1NativeIexLevel2PriceLevelUpdateSymbolGet');
         throwIfNullOrUndefined(date, 'date', 'v1NativeIexLevel2PriceLevelUpdateSymbolGet');
 
@@ -149,7 +149,7 @@ export class NativeIEXApi extends BaseAPI {
             'date': (date as any).toISOString(),
         };
 
-        return this.request<Array<Level2PriceLevelUpdateModel>>({
+        return this.request<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>({
             url: '/v1/native/iex/level2-price-level-update/{symbol}'.replace('{symbol}', encodeURI(symbol)),
             method: 'GET',
             headers,
@@ -160,9 +160,9 @@ export class NativeIEXApi extends BaseAPI {
     /**
      * Get Level-3 Order Book
      */
-    v1NativeIexLevel3OrderBookSymbolGet({ symbol, date }: V1NativeIexLevel3OrderBookSymbolGetRequest): Observable<Array<Level3OrderBookModel>>
-    v1NativeIexLevel3OrderBookSymbolGet({ symbol, date }: V1NativeIexLevel3OrderBookSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<Level3OrderBookModel>>>
-    v1NativeIexLevel3OrderBookSymbolGet({ symbol, date }: V1NativeIexLevel3OrderBookSymbolGetRequest, opts?: OperationOpts): Observable<Array<Level3OrderBookModel> | AjaxResponse<Array<Level3OrderBookModel>>> {
+    v1NativeIexLevel3OrderBookSymbolGet({ symbol, date }: V1NativeIexLevel3OrderBookSymbolGetRequest): Observable<Array<ModelsOrderBookModel>>
+    v1NativeIexLevel3OrderBookSymbolGet({ symbol, date }: V1NativeIexLevel3OrderBookSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsOrderBookModel>>>
+    v1NativeIexLevel3OrderBookSymbolGet({ symbol, date }: V1NativeIexLevel3OrderBookSymbolGetRequest, opts?: OperationOpts): Observable<Array<ModelsOrderBookModel> | AjaxResponse<Array<ModelsOrderBookModel>>> {
         throwIfNullOrUndefined(symbol, 'symbol', 'v1NativeIexLevel3OrderBookSymbolGet');
         throwIfNullOrUndefined(date, 'date', 'v1NativeIexLevel3OrderBookSymbolGet');
 
@@ -174,7 +174,7 @@ export class NativeIEXApi extends BaseAPI {
             'date': (date as any).toISOString(),
         };
 
-        return this.request<Array<Level3OrderBookModel>>({
+        return this.request<Array<ModelsOrderBookModel>>({
             url: '/v1/native/iex/level3-order-book/{symbol}'.replace('{symbol}', encodeURI(symbol)),
             method: 'GET',
             headers,
@@ -185,9 +185,9 @@ export class NativeIEXApi extends BaseAPI {
     /**
      * Get Trades
      */
-    v1NativeIexTradeSymbolGet({ symbol, date }: V1NativeIexTradeSymbolGetRequest): Observable<Array<TradeTradeModel>>
-    v1NativeIexTradeSymbolGet({ symbol, date }: V1NativeIexTradeSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<TradeTradeModel>>>
-    v1NativeIexTradeSymbolGet({ symbol, date }: V1NativeIexTradeSymbolGetRequest, opts?: OperationOpts): Observable<Array<TradeTradeModel> | AjaxResponse<Array<TradeTradeModel>>> {
+    v1NativeIexTradeSymbolGet({ symbol, date }: V1NativeIexTradeSymbolGetRequest): Observable<Array<IEXTradeTradeModel>>
+    v1NativeIexTradeSymbolGet({ symbol, date }: V1NativeIexTradeSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IEXTradeTradeModel>>>
+    v1NativeIexTradeSymbolGet({ symbol, date }: V1NativeIexTradeSymbolGetRequest, opts?: OperationOpts): Observable<Array<IEXTradeTradeModel> | AjaxResponse<Array<IEXTradeTradeModel>>> {
         throwIfNullOrUndefined(symbol, 'symbol', 'v1NativeIexTradeSymbolGet');
         throwIfNullOrUndefined(date, 'date', 'v1NativeIexTradeSymbolGet');
 
@@ -199,7 +199,7 @@ export class NativeIEXApi extends BaseAPI {
             'date': (date as any).toISOString(),
         };
 
-        return this.request<Array<TradeTradeModel>>({
+        return this.request<Array<IEXTradeTradeModel>>({
             url: '/v1/native/iex/trade/{symbol}'.replace('{symbol}', encodeURI(symbol)),
             method: 'GET',
             headers,

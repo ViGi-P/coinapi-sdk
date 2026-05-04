@@ -15,9 +15,9 @@ import localVarRequest from 'request';
 import http from 'http';
 
 /* tslint:disable:no-unused-locals */
-import { OHLCVExchangeTimeseriesItem } from '../model/oHLCVExchangeTimeseriesItem';
-import { OHLCVTimeseriesItem } from '../model/oHLCVTimeseriesItem';
-import { OHLCVTimeseriesPeriod } from '../model/oHLCVTimeseriesPeriod';
+import { OHLCVTimeSeriesExchangeTimeseriesItem } from '../model/oHLCVTimeSeriesExchangeTimeseriesItem';
+import { OHLCVTimeSeriesTimeseriesItem } from '../model/oHLCVTimeSeriesTimeseriesItem';
+import { OHLCVTimeSeriesTimeseriesPeriod } from '../model/oHLCVTimeSeriesTimeseriesPeriod';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
 import { HttpBasicAuth, HttpBearerAuth, ApiKeyAuth, OAuth } from '../model/models';
@@ -104,9 +104,9 @@ export class OhlcvApi {
      * @param timeStart Timeseries starting time in ISO 8601
      * @param timeEnd Timeseries ending time in ISO 8601
      */
-    public async v1OhlcvExchangeExchangeIdHistoryGet (exchangeId: string, periodId: string, timeStart: string, timeEnd: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<OHLCVExchangeTimeseriesItem>;  }> {
+    public async v1OhlcvExchangeExchangeIdHistoryGet (exchangeId: string, periodId: string, timeStart: string, timeEnd: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeSeriesExchangeTimeseriesItem>;  }> {
         const localVarPath = this.basePath + '/v1/ohlcv/exchange/{exchange_id}/history'
-            .replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)));
+            .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json'];
@@ -185,13 +185,13 @@ export class OhlcvApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<OHLCVExchangeTimeseriesItem>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeSeriesExchangeTimeseriesItem>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<OHLCVExchangeTimeseriesItem>");
+                            body = ObjectSerializer.deserialize(body, "Array<OHLCVTimeSeriesExchangeTimeseriesItem>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -211,10 +211,10 @@ export class OhlcvApi {
      * @param timeEnd Timeseries ending time in ISO 8601
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
-    public async v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet (exchangeId: string, symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeseriesItem>;  }> {
+    public async v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet (exchangeId: string, symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeSeriesTimeseriesItem>;  }> {
         const localVarPath = this.basePath + '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/history'
-            .replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)))
-            .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+            .replace('{exchange_id}', encodeURIComponent(String(exchangeId)))
+            .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json'];
@@ -292,13 +292,13 @@ export class OhlcvApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeseriesItem>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeSeriesTimeseriesItem>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<OHLCVTimeseriesItem>");
+                            body = ObjectSerializer.deserialize(body, "Array<OHLCVTimeSeriesTimeseriesItem>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -316,10 +316,10 @@ export class OhlcvApi {
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;2MTH&#x60;)
      * @param limit Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
      */
-    public async v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet (exchangeId: string, symbolId: string, periodId: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeseriesItem>;  }> {
+    public async v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet (exchangeId: string, symbolId: string, periodId: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeSeriesTimeseriesItem>;  }> {
         const localVarPath = this.basePath + '/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/latest'
-            .replace('{' + 'exchange_id' + '}', encodeURIComponent(String(exchangeId)))
-            .replace('{' + 'symbol_id' + '}', encodeURIComponent(String(symbolId)));
+            .replace('{exchange_id}', encodeURIComponent(String(exchangeId)))
+            .replace('{symbol_id}', encodeURIComponent(String(symbolId)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
         const produces = ['text/plain', 'application/json', 'text/json'];
@@ -389,13 +389,13 @@ export class OhlcvApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeseriesItem>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeSeriesTimeseriesItem>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<OHLCVTimeseriesItem>");
+                            body = ObjectSerializer.deserialize(body, "Array<OHLCVTimeSeriesTimeseriesItem>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));
@@ -409,7 +409,7 @@ export class OhlcvApi {
      * Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
      * @summary List all periods
      */
-    public async v1OhlcvPeriodsGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeseriesPeriod>;  }> {
+    public async v1OhlcvPeriodsGet (options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeSeriesTimeseriesPeriod>;  }> {
         const localVarPath = this.basePath + '/v1/ohlcv/periods';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -457,13 +457,13 @@ export class OhlcvApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeseriesPeriod>;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeSeriesTimeseriesPeriod>;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
-                            body = ObjectSerializer.deserialize(body, "Array<OHLCVTimeseriesPeriod>");
+                            body = ObjectSerializer.deserialize(body, "Array<OHLCVTimeSeriesTimeseriesPeriod>");
                             resolve({ response: response, body: body });
                         } else {
                             reject(new HttpError(response, body, response.statusCode));

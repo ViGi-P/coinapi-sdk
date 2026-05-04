@@ -37,691 +37,6 @@ import FinFeedAPIStockREST.Model
 import FinFeedAPIStockREST.Core
 
 
--- * AdminAdminMessageModel
-
--- | 'adminAdminMessageModelTradingStatus' Lens
-adminAdminMessageModelTradingStatusL :: Lens_' AdminAdminMessageModel (Maybe AdminTradingStatusModel)
-adminAdminMessageModelTradingStatusL f AdminAdminMessageModel{..} = (\adminAdminMessageModelTradingStatus -> AdminAdminMessageModel { adminAdminMessageModelTradingStatus, ..} ) <$> f adminAdminMessageModelTradingStatus
-{-# INLINE adminAdminMessageModelTradingStatusL #-}
-
--- | 'adminAdminMessageModelOfficialPrice' Lens
-adminAdminMessageModelOfficialPriceL :: Lens_' AdminAdminMessageModel (Maybe AdminOfficialPriceModel)
-adminAdminMessageModelOfficialPriceL f AdminAdminMessageModel{..} = (\adminAdminMessageModelOfficialPrice -> AdminAdminMessageModel { adminAdminMessageModelOfficialPrice, ..} ) <$> f adminAdminMessageModelOfficialPrice
-{-# INLINE adminAdminMessageModelOfficialPriceL #-}
-
--- | 'adminAdminMessageModelSecurityEvent' Lens
-adminAdminMessageModelSecurityEventL :: Lens_' AdminAdminMessageModel (Maybe AdminSecurityEventModel)
-adminAdminMessageModelSecurityEventL f AdminAdminMessageModel{..} = (\adminAdminMessageModelSecurityEvent -> AdminAdminMessageModel { adminAdminMessageModelSecurityEvent, ..} ) <$> f adminAdminMessageModelSecurityEvent
-{-# INLINE adminAdminMessageModelSecurityEventL #-}
-
--- | 'adminAdminMessageModelAuctionInformation' Lens
-adminAdminMessageModelAuctionInformationL :: Lens_' AdminAdminMessageModel (Maybe AdminAuctionInformationModel)
-adminAdminMessageModelAuctionInformationL f AdminAdminMessageModel{..} = (\adminAdminMessageModelAuctionInformation -> AdminAdminMessageModel { adminAdminMessageModelAuctionInformation, ..} ) <$> f adminAdminMessageModelAuctionInformation
-{-# INLINE adminAdminMessageModelAuctionInformationL #-}
-
--- | 'adminAdminMessageModelShortSalePriceTest' Lens
-adminAdminMessageModelShortSalePriceTestL :: Lens_' AdminAdminMessageModel (Maybe AdminShortSalePriceTestStatusModel)
-adminAdminMessageModelShortSalePriceTestL f AdminAdminMessageModel{..} = (\adminAdminMessageModelShortSalePriceTest -> AdminAdminMessageModel { adminAdminMessageModelShortSalePriceTest, ..} ) <$> f adminAdminMessageModelShortSalePriceTest
-{-# INLINE adminAdminMessageModelShortSalePriceTestL #-}
-
--- | 'adminAdminMessageModelOperationalHaltStatus' Lens
-adminAdminMessageModelOperationalHaltStatusL :: Lens_' AdminAdminMessageModel (Maybe AdminOperationalHaltStatusModel)
-adminAdminMessageModelOperationalHaltStatusL f AdminAdminMessageModel{..} = (\adminAdminMessageModelOperationalHaltStatus -> AdminAdminMessageModel { adminAdminMessageModelOperationalHaltStatus, ..} ) <$> f adminAdminMessageModelOperationalHaltStatus
-{-# INLINE adminAdminMessageModelOperationalHaltStatusL #-}
-
--- | 'adminAdminMessageModelRetailLiquidityIndicator' Lens
-adminAdminMessageModelRetailLiquidityIndicatorL :: Lens_' AdminAdminMessageModel (Maybe AdminRetailLiquidityIndicatorModel)
-adminAdminMessageModelRetailLiquidityIndicatorL f AdminAdminMessageModel{..} = (\adminAdminMessageModelRetailLiquidityIndicator -> AdminAdminMessageModel { adminAdminMessageModelRetailLiquidityIndicator, ..} ) <$> f adminAdminMessageModelRetailLiquidityIndicator
-{-# INLINE adminAdminMessageModelRetailLiquidityIndicatorL #-}
-
--- | 'adminAdminMessageModelSystemEvent' Lens
-adminAdminMessageModelSystemEventL :: Lens_' AdminAdminMessageModel (Maybe AdminSystemEventModel)
-adminAdminMessageModelSystemEventL f AdminAdminMessageModel{..} = (\adminAdminMessageModelSystemEvent -> AdminAdminMessageModel { adminAdminMessageModelSystemEvent, ..} ) <$> f adminAdminMessageModelSystemEvent
-{-# INLINE adminAdminMessageModelSystemEventL #-}
-
--- | 'adminAdminMessageModelSecurityDirectory' Lens
-adminAdminMessageModelSecurityDirectoryL :: Lens_' AdminAdminMessageModel (Maybe AdminSecurityDirectoryModel)
-adminAdminMessageModelSecurityDirectoryL f AdminAdminMessageModel{..} = (\adminAdminMessageModelSecurityDirectory -> AdminAdminMessageModel { adminAdminMessageModelSecurityDirectory, ..} ) <$> f adminAdminMessageModelSecurityDirectory
-{-# INLINE adminAdminMessageModelSecurityDirectoryL #-}
-
-
-
--- * AdminAuctionInformationModel
-
--- | 'adminAuctionInformationModelSymbol' Lens
-adminAuctionInformationModelSymbolL :: Lens_' AdminAuctionInformationModel (Maybe Text)
-adminAuctionInformationModelSymbolL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelSymbol -> AdminAuctionInformationModel { adminAuctionInformationModelSymbol, ..} ) <$> f adminAuctionInformationModelSymbol
-{-# INLINE adminAuctionInformationModelSymbolL #-}
-
--- | 'adminAuctionInformationModelTimestampNanos' Lens
-adminAuctionInformationModelTimestampNanosL :: Lens_' AdminAuctionInformationModel (Maybe Integer)
-adminAuctionInformationModelTimestampNanosL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelTimestampNanos -> AdminAuctionInformationModel { adminAuctionInformationModelTimestampNanos, ..} ) <$> f adminAuctionInformationModelTimestampNanos
-{-# INLINE adminAuctionInformationModelTimestampNanosL #-}
-
--- | 'adminAuctionInformationModelTimestamp' Lens
-adminAuctionInformationModelTimestampL :: Lens_' AdminAuctionInformationModel (Maybe DateTime)
-adminAuctionInformationModelTimestampL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelTimestamp -> AdminAuctionInformationModel { adminAuctionInformationModelTimestamp, ..} ) <$> f adminAuctionInformationModelTimestamp
-{-# INLINE adminAuctionInformationModelTimestampL #-}
-
--- | 'adminAuctionInformationModelAuctionType' Lens
-adminAuctionInformationModelAuctionTypeL :: Lens_' AdminAuctionInformationModel (Maybe Int)
-adminAuctionInformationModelAuctionTypeL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelAuctionType -> AdminAuctionInformationModel { adminAuctionInformationModelAuctionType, ..} ) <$> f adminAuctionInformationModelAuctionType
-{-# INLINE adminAuctionInformationModelAuctionTypeL #-}
-
--- | 'adminAuctionInformationModelAuctionTypeCode' Lens
-adminAuctionInformationModelAuctionTypeCodeL :: Lens_' AdminAuctionInformationModel (Maybe Text)
-adminAuctionInformationModelAuctionTypeCodeL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelAuctionTypeCode -> AdminAuctionInformationModel { adminAuctionInformationModelAuctionTypeCode, ..} ) <$> f adminAuctionInformationModelAuctionTypeCode
-{-# INLINE adminAuctionInformationModelAuctionTypeCodeL #-}
-
--- | 'adminAuctionInformationModelAuctionTypeText' Lens
-adminAuctionInformationModelAuctionTypeTextL :: Lens_' AdminAuctionInformationModel (Maybe Text)
-adminAuctionInformationModelAuctionTypeTextL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelAuctionTypeText -> AdminAuctionInformationModel { adminAuctionInformationModelAuctionTypeText, ..} ) <$> f adminAuctionInformationModelAuctionTypeText
-{-# INLINE adminAuctionInformationModelAuctionTypeTextL #-}
-
--- | 'adminAuctionInformationModelIsAuctionTypeOpening' Lens
-adminAuctionInformationModelIsAuctionTypeOpeningL :: Lens_' AdminAuctionInformationModel (Maybe Bool)
-adminAuctionInformationModelIsAuctionTypeOpeningL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelIsAuctionTypeOpening -> AdminAuctionInformationModel { adminAuctionInformationModelIsAuctionTypeOpening, ..} ) <$> f adminAuctionInformationModelIsAuctionTypeOpening
-{-# INLINE adminAuctionInformationModelIsAuctionTypeOpeningL #-}
-
--- | 'adminAuctionInformationModelIsAuctionTypeClosing' Lens
-adminAuctionInformationModelIsAuctionTypeClosingL :: Lens_' AdminAuctionInformationModel (Maybe Bool)
-adminAuctionInformationModelIsAuctionTypeClosingL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelIsAuctionTypeClosing -> AdminAuctionInformationModel { adminAuctionInformationModelIsAuctionTypeClosing, ..} ) <$> f adminAuctionInformationModelIsAuctionTypeClosing
-{-# INLINE adminAuctionInformationModelIsAuctionTypeClosingL #-}
-
--- | 'adminAuctionInformationModelIsAuctionTypeIpo' Lens
-adminAuctionInformationModelIsAuctionTypeIpoL :: Lens_' AdminAuctionInformationModel (Maybe Bool)
-adminAuctionInformationModelIsAuctionTypeIpoL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelIsAuctionTypeIpo -> AdminAuctionInformationModel { adminAuctionInformationModelIsAuctionTypeIpo, ..} ) <$> f adminAuctionInformationModelIsAuctionTypeIpo
-{-# INLINE adminAuctionInformationModelIsAuctionTypeIpoL #-}
-
--- | 'adminAuctionInformationModelIsAuctionTypeHalt' Lens
-adminAuctionInformationModelIsAuctionTypeHaltL :: Lens_' AdminAuctionInformationModel (Maybe Bool)
-adminAuctionInformationModelIsAuctionTypeHaltL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelIsAuctionTypeHalt -> AdminAuctionInformationModel { adminAuctionInformationModelIsAuctionTypeHalt, ..} ) <$> f adminAuctionInformationModelIsAuctionTypeHalt
-{-# INLINE adminAuctionInformationModelIsAuctionTypeHaltL #-}
-
--- | 'adminAuctionInformationModelIsAuctionTypeVolatility' Lens
-adminAuctionInformationModelIsAuctionTypeVolatilityL :: Lens_' AdminAuctionInformationModel (Maybe Bool)
-adminAuctionInformationModelIsAuctionTypeVolatilityL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelIsAuctionTypeVolatility -> AdminAuctionInformationModel { adminAuctionInformationModelIsAuctionTypeVolatility, ..} ) <$> f adminAuctionInformationModelIsAuctionTypeVolatility
-{-# INLINE adminAuctionInformationModelIsAuctionTypeVolatilityL #-}
-
--- | 'adminAuctionInformationModelPairedShares' Lens
-adminAuctionInformationModelPairedSharesL :: Lens_' AdminAuctionInformationModel (Maybe Int)
-adminAuctionInformationModelPairedSharesL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelPairedShares -> AdminAuctionInformationModel { adminAuctionInformationModelPairedShares, ..} ) <$> f adminAuctionInformationModelPairedShares
-{-# INLINE adminAuctionInformationModelPairedSharesL #-}
-
--- | 'adminAuctionInformationModelReferencePrice' Lens
-adminAuctionInformationModelReferencePriceL :: Lens_' AdminAuctionInformationModel (Maybe Double)
-adminAuctionInformationModelReferencePriceL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelReferencePrice -> AdminAuctionInformationModel { adminAuctionInformationModelReferencePrice, ..} ) <$> f adminAuctionInformationModelReferencePrice
-{-# INLINE adminAuctionInformationModelReferencePriceL #-}
-
--- | 'adminAuctionInformationModelIndicativeClearingPrice' Lens
-adminAuctionInformationModelIndicativeClearingPriceL :: Lens_' AdminAuctionInformationModel (Maybe Double)
-adminAuctionInformationModelIndicativeClearingPriceL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelIndicativeClearingPrice -> AdminAuctionInformationModel { adminAuctionInformationModelIndicativeClearingPrice, ..} ) <$> f adminAuctionInformationModelIndicativeClearingPrice
-{-# INLINE adminAuctionInformationModelIndicativeClearingPriceL #-}
-
--- | 'adminAuctionInformationModelImbalanceShares' Lens
-adminAuctionInformationModelImbalanceSharesL :: Lens_' AdminAuctionInformationModel (Maybe Int)
-adminAuctionInformationModelImbalanceSharesL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelImbalanceShares -> AdminAuctionInformationModel { adminAuctionInformationModelImbalanceShares, ..} ) <$> f adminAuctionInformationModelImbalanceShares
-{-# INLINE adminAuctionInformationModelImbalanceSharesL #-}
-
--- | 'adminAuctionInformationModelImbalanceSide' Lens
-adminAuctionInformationModelImbalanceSideL :: Lens_' AdminAuctionInformationModel (Maybe Int)
-adminAuctionInformationModelImbalanceSideL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelImbalanceSide -> AdminAuctionInformationModel { adminAuctionInformationModelImbalanceSide, ..} ) <$> f adminAuctionInformationModelImbalanceSide
-{-# INLINE adminAuctionInformationModelImbalanceSideL #-}
-
--- | 'adminAuctionInformationModelImbalanceSideCode' Lens
-adminAuctionInformationModelImbalanceSideCodeL :: Lens_' AdminAuctionInformationModel (Maybe Text)
-adminAuctionInformationModelImbalanceSideCodeL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelImbalanceSideCode -> AdminAuctionInformationModel { adminAuctionInformationModelImbalanceSideCode, ..} ) <$> f adminAuctionInformationModelImbalanceSideCode
-{-# INLINE adminAuctionInformationModelImbalanceSideCodeL #-}
-
--- | 'adminAuctionInformationModelImbalanceSideText' Lens
-adminAuctionInformationModelImbalanceSideTextL :: Lens_' AdminAuctionInformationModel (Maybe Text)
-adminAuctionInformationModelImbalanceSideTextL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelImbalanceSideText -> AdminAuctionInformationModel { adminAuctionInformationModelImbalanceSideText, ..} ) <$> f adminAuctionInformationModelImbalanceSideText
-{-# INLINE adminAuctionInformationModelImbalanceSideTextL #-}
-
--- | 'adminAuctionInformationModelIsImbalanceSideBuy' Lens
-adminAuctionInformationModelIsImbalanceSideBuyL :: Lens_' AdminAuctionInformationModel (Maybe Bool)
-adminAuctionInformationModelIsImbalanceSideBuyL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelIsImbalanceSideBuy -> AdminAuctionInformationModel { adminAuctionInformationModelIsImbalanceSideBuy, ..} ) <$> f adminAuctionInformationModelIsImbalanceSideBuy
-{-# INLINE adminAuctionInformationModelIsImbalanceSideBuyL #-}
-
--- | 'adminAuctionInformationModelIsImbalanceSideSell' Lens
-adminAuctionInformationModelIsImbalanceSideSellL :: Lens_' AdminAuctionInformationModel (Maybe Bool)
-adminAuctionInformationModelIsImbalanceSideSellL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelIsImbalanceSideSell -> AdminAuctionInformationModel { adminAuctionInformationModelIsImbalanceSideSell, ..} ) <$> f adminAuctionInformationModelIsImbalanceSideSell
-{-# INLINE adminAuctionInformationModelIsImbalanceSideSellL #-}
-
--- | 'adminAuctionInformationModelIsImbalanceSideNone' Lens
-adminAuctionInformationModelIsImbalanceSideNoneL :: Lens_' AdminAuctionInformationModel (Maybe Bool)
-adminAuctionInformationModelIsImbalanceSideNoneL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelIsImbalanceSideNone -> AdminAuctionInformationModel { adminAuctionInformationModelIsImbalanceSideNone, ..} ) <$> f adminAuctionInformationModelIsImbalanceSideNone
-{-# INLINE adminAuctionInformationModelIsImbalanceSideNoneL #-}
-
--- | 'adminAuctionInformationModelExtensionNumber' Lens
-adminAuctionInformationModelExtensionNumberL :: Lens_' AdminAuctionInformationModel (Maybe Int)
-adminAuctionInformationModelExtensionNumberL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelExtensionNumber -> AdminAuctionInformationModel { adminAuctionInformationModelExtensionNumber, ..} ) <$> f adminAuctionInformationModelExtensionNumber
-{-# INLINE adminAuctionInformationModelExtensionNumberL #-}
-
--- | 'adminAuctionInformationModelScheduledAuctionTimeSeconds' Lens
-adminAuctionInformationModelScheduledAuctionTimeSecondsL :: Lens_' AdminAuctionInformationModel (Maybe Int)
-adminAuctionInformationModelScheduledAuctionTimeSecondsL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelScheduledAuctionTimeSeconds -> AdminAuctionInformationModel { adminAuctionInformationModelScheduledAuctionTimeSeconds, ..} ) <$> f adminAuctionInformationModelScheduledAuctionTimeSeconds
-{-# INLINE adminAuctionInformationModelScheduledAuctionTimeSecondsL #-}
-
--- | 'adminAuctionInformationModelScheduledAuctionTime' Lens
-adminAuctionInformationModelScheduledAuctionTimeL :: Lens_' AdminAuctionInformationModel (Maybe DateTime)
-adminAuctionInformationModelScheduledAuctionTimeL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelScheduledAuctionTime -> AdminAuctionInformationModel { adminAuctionInformationModelScheduledAuctionTime, ..} ) <$> f adminAuctionInformationModelScheduledAuctionTime
-{-# INLINE adminAuctionInformationModelScheduledAuctionTimeL #-}
-
--- | 'adminAuctionInformationModelAuctionBookClearingPrice' Lens
-adminAuctionInformationModelAuctionBookClearingPriceL :: Lens_' AdminAuctionInformationModel (Maybe Double)
-adminAuctionInformationModelAuctionBookClearingPriceL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelAuctionBookClearingPrice -> AdminAuctionInformationModel { adminAuctionInformationModelAuctionBookClearingPrice, ..} ) <$> f adminAuctionInformationModelAuctionBookClearingPrice
-{-# INLINE adminAuctionInformationModelAuctionBookClearingPriceL #-}
-
--- | 'adminAuctionInformationModelCollarReferencePrice' Lens
-adminAuctionInformationModelCollarReferencePriceL :: Lens_' AdminAuctionInformationModel (Maybe Double)
-adminAuctionInformationModelCollarReferencePriceL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelCollarReferencePrice -> AdminAuctionInformationModel { adminAuctionInformationModelCollarReferencePrice, ..} ) <$> f adminAuctionInformationModelCollarReferencePrice
-{-# INLINE adminAuctionInformationModelCollarReferencePriceL #-}
-
--- | 'adminAuctionInformationModelLowerAuctionCollar' Lens
-adminAuctionInformationModelLowerAuctionCollarL :: Lens_' AdminAuctionInformationModel (Maybe Double)
-adminAuctionInformationModelLowerAuctionCollarL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelLowerAuctionCollar -> AdminAuctionInformationModel { adminAuctionInformationModelLowerAuctionCollar, ..} ) <$> f adminAuctionInformationModelLowerAuctionCollar
-{-# INLINE adminAuctionInformationModelLowerAuctionCollarL #-}
-
--- | 'adminAuctionInformationModelUpperAuctionCollar' Lens
-adminAuctionInformationModelUpperAuctionCollarL :: Lens_' AdminAuctionInformationModel (Maybe Double)
-adminAuctionInformationModelUpperAuctionCollarL f AdminAuctionInformationModel{..} = (\adminAuctionInformationModelUpperAuctionCollar -> AdminAuctionInformationModel { adminAuctionInformationModelUpperAuctionCollar, ..} ) <$> f adminAuctionInformationModelUpperAuctionCollar
-{-# INLINE adminAuctionInformationModelUpperAuctionCollarL #-}
-
-
-
--- * AdminOfficialPriceModel
-
--- | 'adminOfficialPriceModelSymbol' Lens
-adminOfficialPriceModelSymbolL :: Lens_' AdminOfficialPriceModel (Maybe Text)
-adminOfficialPriceModelSymbolL f AdminOfficialPriceModel{..} = (\adminOfficialPriceModelSymbol -> AdminOfficialPriceModel { adminOfficialPriceModelSymbol, ..} ) <$> f adminOfficialPriceModelSymbol
-{-# INLINE adminOfficialPriceModelSymbolL #-}
-
--- | 'adminOfficialPriceModelTimestampNanos' Lens
-adminOfficialPriceModelTimestampNanosL :: Lens_' AdminOfficialPriceModel (Maybe Integer)
-adminOfficialPriceModelTimestampNanosL f AdminOfficialPriceModel{..} = (\adminOfficialPriceModelTimestampNanos -> AdminOfficialPriceModel { adminOfficialPriceModelTimestampNanos, ..} ) <$> f adminOfficialPriceModelTimestampNanos
-{-# INLINE adminOfficialPriceModelTimestampNanosL #-}
-
--- | 'adminOfficialPriceModelTimestamp' Lens
-adminOfficialPriceModelTimestampL :: Lens_' AdminOfficialPriceModel (Maybe DateTime)
-adminOfficialPriceModelTimestampL f AdminOfficialPriceModel{..} = (\adminOfficialPriceModelTimestamp -> AdminOfficialPriceModel { adminOfficialPriceModelTimestamp, ..} ) <$> f adminOfficialPriceModelTimestamp
-{-# INLINE adminOfficialPriceModelTimestampL #-}
-
--- | 'adminOfficialPriceModelPriceType' Lens
-adminOfficialPriceModelPriceTypeL :: Lens_' AdminOfficialPriceModel (Maybe Int)
-adminOfficialPriceModelPriceTypeL f AdminOfficialPriceModel{..} = (\adminOfficialPriceModelPriceType -> AdminOfficialPriceModel { adminOfficialPriceModelPriceType, ..} ) <$> f adminOfficialPriceModelPriceType
-{-# INLINE adminOfficialPriceModelPriceTypeL #-}
-
--- | 'adminOfficialPriceModelPriceTypeCode' Lens
-adminOfficialPriceModelPriceTypeCodeL :: Lens_' AdminOfficialPriceModel (Maybe Text)
-adminOfficialPriceModelPriceTypeCodeL f AdminOfficialPriceModel{..} = (\adminOfficialPriceModelPriceTypeCode -> AdminOfficialPriceModel { adminOfficialPriceModelPriceTypeCode, ..} ) <$> f adminOfficialPriceModelPriceTypeCode
-{-# INLINE adminOfficialPriceModelPriceTypeCodeL #-}
-
--- | 'adminOfficialPriceModelPriceTypeText' Lens
-adminOfficialPriceModelPriceTypeTextL :: Lens_' AdminOfficialPriceModel (Maybe Text)
-adminOfficialPriceModelPriceTypeTextL f AdminOfficialPriceModel{..} = (\adminOfficialPriceModelPriceTypeText -> AdminOfficialPriceModel { adminOfficialPriceModelPriceTypeText, ..} ) <$> f adminOfficialPriceModelPriceTypeText
-{-# INLINE adminOfficialPriceModelPriceTypeTextL #-}
-
--- | 'adminOfficialPriceModelIsPriceTypeOpening' Lens
-adminOfficialPriceModelIsPriceTypeOpeningL :: Lens_' AdminOfficialPriceModel (Maybe Bool)
-adminOfficialPriceModelIsPriceTypeOpeningL f AdminOfficialPriceModel{..} = (\adminOfficialPriceModelIsPriceTypeOpening -> AdminOfficialPriceModel { adminOfficialPriceModelIsPriceTypeOpening, ..} ) <$> f adminOfficialPriceModelIsPriceTypeOpening
-{-# INLINE adminOfficialPriceModelIsPriceTypeOpeningL #-}
-
--- | 'adminOfficialPriceModelIsPriceTypeClosing' Lens
-adminOfficialPriceModelIsPriceTypeClosingL :: Lens_' AdminOfficialPriceModel (Maybe Bool)
-adminOfficialPriceModelIsPriceTypeClosingL f AdminOfficialPriceModel{..} = (\adminOfficialPriceModelIsPriceTypeClosing -> AdminOfficialPriceModel { adminOfficialPriceModelIsPriceTypeClosing, ..} ) <$> f adminOfficialPriceModelIsPriceTypeClosing
-{-# INLINE adminOfficialPriceModelIsPriceTypeClosingL #-}
-
--- | 'adminOfficialPriceModelOfficialPrice' Lens
-adminOfficialPriceModelOfficialPriceL :: Lens_' AdminOfficialPriceModel (Maybe Double)
-adminOfficialPriceModelOfficialPriceL f AdminOfficialPriceModel{..} = (\adminOfficialPriceModelOfficialPrice -> AdminOfficialPriceModel { adminOfficialPriceModelOfficialPrice, ..} ) <$> f adminOfficialPriceModelOfficialPrice
-{-# INLINE adminOfficialPriceModelOfficialPriceL #-}
-
-
-
--- * AdminOperationalHaltStatusModel
-
--- | 'adminOperationalHaltStatusModelSymbol' Lens
-adminOperationalHaltStatusModelSymbolL :: Lens_' AdminOperationalHaltStatusModel (Maybe Text)
-adminOperationalHaltStatusModelSymbolL f AdminOperationalHaltStatusModel{..} = (\adminOperationalHaltStatusModelSymbol -> AdminOperationalHaltStatusModel { adminOperationalHaltStatusModelSymbol, ..} ) <$> f adminOperationalHaltStatusModelSymbol
-{-# INLINE adminOperationalHaltStatusModelSymbolL #-}
-
--- | 'adminOperationalHaltStatusModelTimestampNanos' Lens
-adminOperationalHaltStatusModelTimestampNanosL :: Lens_' AdminOperationalHaltStatusModel (Maybe Integer)
-adminOperationalHaltStatusModelTimestampNanosL f AdminOperationalHaltStatusModel{..} = (\adminOperationalHaltStatusModelTimestampNanos -> AdminOperationalHaltStatusModel { adminOperationalHaltStatusModelTimestampNanos, ..} ) <$> f adminOperationalHaltStatusModelTimestampNanos
-{-# INLINE adminOperationalHaltStatusModelTimestampNanosL #-}
-
--- | 'adminOperationalHaltStatusModelTimestamp' Lens
-adminOperationalHaltStatusModelTimestampL :: Lens_' AdminOperationalHaltStatusModel (Maybe DateTime)
-adminOperationalHaltStatusModelTimestampL f AdminOperationalHaltStatusModel{..} = (\adminOperationalHaltStatusModelTimestamp -> AdminOperationalHaltStatusModel { adminOperationalHaltStatusModelTimestamp, ..} ) <$> f adminOperationalHaltStatusModelTimestamp
-{-# INLINE adminOperationalHaltStatusModelTimestampL #-}
-
--- | 'adminOperationalHaltStatusModelOperationalHaltStatus' Lens
-adminOperationalHaltStatusModelOperationalHaltStatusL :: Lens_' AdminOperationalHaltStatusModel (Maybe Int)
-adminOperationalHaltStatusModelOperationalHaltStatusL f AdminOperationalHaltStatusModel{..} = (\adminOperationalHaltStatusModelOperationalHaltStatus -> AdminOperationalHaltStatusModel { adminOperationalHaltStatusModelOperationalHaltStatus, ..} ) <$> f adminOperationalHaltStatusModelOperationalHaltStatus
-{-# INLINE adminOperationalHaltStatusModelOperationalHaltStatusL #-}
-
--- | 'adminOperationalHaltStatusModelOperationalHaltStatusCode' Lens
-adminOperationalHaltStatusModelOperationalHaltStatusCodeL :: Lens_' AdminOperationalHaltStatusModel (Maybe Text)
-adminOperationalHaltStatusModelOperationalHaltStatusCodeL f AdminOperationalHaltStatusModel{..} = (\adminOperationalHaltStatusModelOperationalHaltStatusCode -> AdminOperationalHaltStatusModel { adminOperationalHaltStatusModelOperationalHaltStatusCode, ..} ) <$> f adminOperationalHaltStatusModelOperationalHaltStatusCode
-{-# INLINE adminOperationalHaltStatusModelOperationalHaltStatusCodeL #-}
-
--- | 'adminOperationalHaltStatusModelOperationalHaltStatusText' Lens
-adminOperationalHaltStatusModelOperationalHaltStatusTextL :: Lens_' AdminOperationalHaltStatusModel (Maybe Text)
-adminOperationalHaltStatusModelOperationalHaltStatusTextL f AdminOperationalHaltStatusModel{..} = (\adminOperationalHaltStatusModelOperationalHaltStatusText -> AdminOperationalHaltStatusModel { adminOperationalHaltStatusModelOperationalHaltStatusText, ..} ) <$> f adminOperationalHaltStatusModelOperationalHaltStatusText
-{-# INLINE adminOperationalHaltStatusModelOperationalHaltStatusTextL #-}
-
--- | 'adminOperationalHaltStatusModelIsOperationallyHalted' Lens
-adminOperationalHaltStatusModelIsOperationallyHaltedL :: Lens_' AdminOperationalHaltStatusModel (Maybe Bool)
-adminOperationalHaltStatusModelIsOperationallyHaltedL f AdminOperationalHaltStatusModel{..} = (\adminOperationalHaltStatusModelIsOperationallyHalted -> AdminOperationalHaltStatusModel { adminOperationalHaltStatusModelIsOperationallyHalted, ..} ) <$> f adminOperationalHaltStatusModelIsOperationallyHalted
-{-# INLINE adminOperationalHaltStatusModelIsOperationallyHaltedL #-}
-
--- | 'adminOperationalHaltStatusModelIsNotOperationallyHalted' Lens
-adminOperationalHaltStatusModelIsNotOperationallyHaltedL :: Lens_' AdminOperationalHaltStatusModel (Maybe Bool)
-adminOperationalHaltStatusModelIsNotOperationallyHaltedL f AdminOperationalHaltStatusModel{..} = (\adminOperationalHaltStatusModelIsNotOperationallyHalted -> AdminOperationalHaltStatusModel { adminOperationalHaltStatusModelIsNotOperationallyHalted, ..} ) <$> f adminOperationalHaltStatusModelIsNotOperationallyHalted
-{-# INLINE adminOperationalHaltStatusModelIsNotOperationallyHaltedL #-}
-
-
-
--- * AdminRetailLiquidityIndicatorModel
-
--- | 'adminRetailLiquidityIndicatorModelSymbol' Lens
-adminRetailLiquidityIndicatorModelSymbolL :: Lens_' AdminRetailLiquidityIndicatorModel (Maybe Text)
-adminRetailLiquidityIndicatorModelSymbolL f AdminRetailLiquidityIndicatorModel{..} = (\adminRetailLiquidityIndicatorModelSymbol -> AdminRetailLiquidityIndicatorModel { adminRetailLiquidityIndicatorModelSymbol, ..} ) <$> f adminRetailLiquidityIndicatorModelSymbol
-{-# INLINE adminRetailLiquidityIndicatorModelSymbolL #-}
-
--- | 'adminRetailLiquidityIndicatorModelTimestampNanos' Lens
-adminRetailLiquidityIndicatorModelTimestampNanosL :: Lens_' AdminRetailLiquidityIndicatorModel (Maybe Integer)
-adminRetailLiquidityIndicatorModelTimestampNanosL f AdminRetailLiquidityIndicatorModel{..} = (\adminRetailLiquidityIndicatorModelTimestampNanos -> AdminRetailLiquidityIndicatorModel { adminRetailLiquidityIndicatorModelTimestampNanos, ..} ) <$> f adminRetailLiquidityIndicatorModelTimestampNanos
-{-# INLINE adminRetailLiquidityIndicatorModelTimestampNanosL #-}
-
--- | 'adminRetailLiquidityIndicatorModelTimestamp' Lens
-adminRetailLiquidityIndicatorModelTimestampL :: Lens_' AdminRetailLiquidityIndicatorModel (Maybe DateTime)
-adminRetailLiquidityIndicatorModelTimestampL f AdminRetailLiquidityIndicatorModel{..} = (\adminRetailLiquidityIndicatorModelTimestamp -> AdminRetailLiquidityIndicatorModel { adminRetailLiquidityIndicatorModelTimestamp, ..} ) <$> f adminRetailLiquidityIndicatorModelTimestamp
-{-# INLINE adminRetailLiquidityIndicatorModelTimestampL #-}
-
--- | 'adminRetailLiquidityIndicatorModelRetailLiquidityIndicator' Lens
-adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorL :: Lens_' AdminRetailLiquidityIndicatorModel (Maybe Int)
-adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorL f AdminRetailLiquidityIndicatorModel{..} = (\adminRetailLiquidityIndicatorModelRetailLiquidityIndicator -> AdminRetailLiquidityIndicatorModel { adminRetailLiquidityIndicatorModelRetailLiquidityIndicator, ..} ) <$> f adminRetailLiquidityIndicatorModelRetailLiquidityIndicator
-{-# INLINE adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorL #-}
-
--- | 'adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode' Lens
-adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorCodeL :: Lens_' AdminRetailLiquidityIndicatorModel (Maybe Text)
-adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorCodeL f AdminRetailLiquidityIndicatorModel{..} = (\adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode -> AdminRetailLiquidityIndicatorModel { adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode, ..} ) <$> f adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode
-{-# INLINE adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorCodeL #-}
-
--- | 'adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorText' Lens
-adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorTextL :: Lens_' AdminRetailLiquidityIndicatorModel (Maybe Text)
-adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorTextL f AdminRetailLiquidityIndicatorModel{..} = (\adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorText -> AdminRetailLiquidityIndicatorModel { adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorText, ..} ) <$> f adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorText
-{-# INLINE adminRetailLiquidityIndicatorModelRetailLiquidityIndicatorTextL #-}
-
--- | 'adminRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable' Lens
-adminRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicableL :: Lens_' AdminRetailLiquidityIndicatorModel (Maybe Bool)
-adminRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicableL f AdminRetailLiquidityIndicatorModel{..} = (\adminRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable -> AdminRetailLiquidityIndicatorModel { adminRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable, ..} ) <$> f adminRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable
-{-# INLINE adminRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicableL #-}
-
--- | 'adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest' Lens
-adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterestL :: Lens_' AdminRetailLiquidityIndicatorModel (Maybe Bool)
-adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterestL f AdminRetailLiquidityIndicatorModel{..} = (\adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest -> AdminRetailLiquidityIndicatorModel { adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest, ..} ) <$> f adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest
-{-# INLINE adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterestL #-}
-
--- | 'adminRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest' Lens
-adminRetailLiquidityIndicatorModelIsRetailIndicatorSellInterestL :: Lens_' AdminRetailLiquidityIndicatorModel (Maybe Bool)
-adminRetailLiquidityIndicatorModelIsRetailIndicatorSellInterestL f AdminRetailLiquidityIndicatorModel{..} = (\adminRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest -> AdminRetailLiquidityIndicatorModel { adminRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest, ..} ) <$> f adminRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest
-{-# INLINE adminRetailLiquidityIndicatorModelIsRetailIndicatorSellInterestL #-}
-
--- | 'adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest' Lens
-adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterestL :: Lens_' AdminRetailLiquidityIndicatorModel (Maybe Bool)
-adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterestL f AdminRetailLiquidityIndicatorModel{..} = (\adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest -> AdminRetailLiquidityIndicatorModel { adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest, ..} ) <$> f adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest
-{-# INLINE adminRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterestL #-}
-
-
-
--- * AdminSecurityDirectoryModel
-
--- | 'adminSecurityDirectoryModelSymbol' Lens
-adminSecurityDirectoryModelSymbolL :: Lens_' AdminSecurityDirectoryModel (Maybe Text)
-adminSecurityDirectoryModelSymbolL f AdminSecurityDirectoryModel{..} = (\adminSecurityDirectoryModelSymbol -> AdminSecurityDirectoryModel { adminSecurityDirectoryModelSymbol, ..} ) <$> f adminSecurityDirectoryModelSymbol
-{-# INLINE adminSecurityDirectoryModelSymbolL #-}
-
--- | 'adminSecurityDirectoryModelTimestampNanos' Lens
-adminSecurityDirectoryModelTimestampNanosL :: Lens_' AdminSecurityDirectoryModel (Maybe Integer)
-adminSecurityDirectoryModelTimestampNanosL f AdminSecurityDirectoryModel{..} = (\adminSecurityDirectoryModelTimestampNanos -> AdminSecurityDirectoryModel { adminSecurityDirectoryModelTimestampNanos, ..} ) <$> f adminSecurityDirectoryModelTimestampNanos
-{-# INLINE adminSecurityDirectoryModelTimestampNanosL #-}
-
--- | 'adminSecurityDirectoryModelTimestamp' Lens
-adminSecurityDirectoryModelTimestampL :: Lens_' AdminSecurityDirectoryModel (Maybe DateTime)
-adminSecurityDirectoryModelTimestampL f AdminSecurityDirectoryModel{..} = (\adminSecurityDirectoryModelTimestamp -> AdminSecurityDirectoryModel { adminSecurityDirectoryModelTimestamp, ..} ) <$> f adminSecurityDirectoryModelTimestamp
-{-# INLINE adminSecurityDirectoryModelTimestampL #-}
-
--- | 'adminSecurityDirectoryModelFlags' Lens
-adminSecurityDirectoryModelFlagsL :: Lens_' AdminSecurityDirectoryModel (Maybe Int)
-adminSecurityDirectoryModelFlagsL f AdminSecurityDirectoryModel{..} = (\adminSecurityDirectoryModelFlags -> AdminSecurityDirectoryModel { adminSecurityDirectoryModelFlags, ..} ) <$> f adminSecurityDirectoryModelFlags
-{-# INLINE adminSecurityDirectoryModelFlagsL #-}
-
--- | 'adminSecurityDirectoryModelRoundLotSize' Lens
-adminSecurityDirectoryModelRoundLotSizeL :: Lens_' AdminSecurityDirectoryModel (Maybe Int)
-adminSecurityDirectoryModelRoundLotSizeL f AdminSecurityDirectoryModel{..} = (\adminSecurityDirectoryModelRoundLotSize -> AdminSecurityDirectoryModel { adminSecurityDirectoryModelRoundLotSize, ..} ) <$> f adminSecurityDirectoryModelRoundLotSize
-{-# INLINE adminSecurityDirectoryModelRoundLotSizeL #-}
-
--- | 'adminSecurityDirectoryModelAdjustedPocPrice' Lens
-adminSecurityDirectoryModelAdjustedPocPriceL :: Lens_' AdminSecurityDirectoryModel (Maybe Double)
-adminSecurityDirectoryModelAdjustedPocPriceL f AdminSecurityDirectoryModel{..} = (\adminSecurityDirectoryModelAdjustedPocPrice -> AdminSecurityDirectoryModel { adminSecurityDirectoryModelAdjustedPocPrice, ..} ) <$> f adminSecurityDirectoryModelAdjustedPocPrice
-{-# INLINE adminSecurityDirectoryModelAdjustedPocPriceL #-}
-
--- | 'adminSecurityDirectoryModelLuldTier' Lens
-adminSecurityDirectoryModelLuldTierL :: Lens_' AdminSecurityDirectoryModel (Maybe Int)
-adminSecurityDirectoryModelLuldTierL f AdminSecurityDirectoryModel{..} = (\adminSecurityDirectoryModelLuldTier -> AdminSecurityDirectoryModel { adminSecurityDirectoryModelLuldTier, ..} ) <$> f adminSecurityDirectoryModelLuldTier
-{-# INLINE adminSecurityDirectoryModelLuldTierL #-}
-
--- | 'adminSecurityDirectoryModelLuldTierCode' Lens
-adminSecurityDirectoryModelLuldTierCodeL :: Lens_' AdminSecurityDirectoryModel (Maybe Text)
-adminSecurityDirectoryModelLuldTierCodeL f AdminSecurityDirectoryModel{..} = (\adminSecurityDirectoryModelLuldTierCode -> AdminSecurityDirectoryModel { adminSecurityDirectoryModelLuldTierCode, ..} ) <$> f adminSecurityDirectoryModelLuldTierCode
-{-# INLINE adminSecurityDirectoryModelLuldTierCodeL #-}
-
--- | 'adminSecurityDirectoryModelLuldTierText' Lens
-adminSecurityDirectoryModelLuldTierTextL :: Lens_' AdminSecurityDirectoryModel (Maybe Text)
-adminSecurityDirectoryModelLuldTierTextL f AdminSecurityDirectoryModel{..} = (\adminSecurityDirectoryModelLuldTierText -> AdminSecurityDirectoryModel { adminSecurityDirectoryModelLuldTierText, ..} ) <$> f adminSecurityDirectoryModelLuldTierText
-{-# INLINE adminSecurityDirectoryModelLuldTierTextL #-}
-
--- | 'adminSecurityDirectoryModelIsLuldTierNotApplicable' Lens
-adminSecurityDirectoryModelIsLuldTierNotApplicableL :: Lens_' AdminSecurityDirectoryModel (Maybe Bool)
-adminSecurityDirectoryModelIsLuldTierNotApplicableL f AdminSecurityDirectoryModel{..} = (\adminSecurityDirectoryModelIsLuldTierNotApplicable -> AdminSecurityDirectoryModel { adminSecurityDirectoryModelIsLuldTierNotApplicable, ..} ) <$> f adminSecurityDirectoryModelIsLuldTierNotApplicable
-{-# INLINE adminSecurityDirectoryModelIsLuldTierNotApplicableL #-}
-
--- | 'adminSecurityDirectoryModelIsLuldTier1' Lens
-adminSecurityDirectoryModelIsLuldTier1L :: Lens_' AdminSecurityDirectoryModel (Maybe Bool)
-adminSecurityDirectoryModelIsLuldTier1L f AdminSecurityDirectoryModel{..} = (\adminSecurityDirectoryModelIsLuldTier1 -> AdminSecurityDirectoryModel { adminSecurityDirectoryModelIsLuldTier1, ..} ) <$> f adminSecurityDirectoryModelIsLuldTier1
-{-# INLINE adminSecurityDirectoryModelIsLuldTier1L #-}
-
--- | 'adminSecurityDirectoryModelIsLuldTier2' Lens
-adminSecurityDirectoryModelIsLuldTier2L :: Lens_' AdminSecurityDirectoryModel (Maybe Bool)
-adminSecurityDirectoryModelIsLuldTier2L f AdminSecurityDirectoryModel{..} = (\adminSecurityDirectoryModelIsLuldTier2 -> AdminSecurityDirectoryModel { adminSecurityDirectoryModelIsLuldTier2, ..} ) <$> f adminSecurityDirectoryModelIsLuldTier2
-{-# INLINE adminSecurityDirectoryModelIsLuldTier2L #-}
-
-
-
--- * AdminSecurityEventModel
-
--- | 'adminSecurityEventModelSymbol' Lens
-adminSecurityEventModelSymbolL :: Lens_' AdminSecurityEventModel (Maybe Text)
-adminSecurityEventModelSymbolL f AdminSecurityEventModel{..} = (\adminSecurityEventModelSymbol -> AdminSecurityEventModel { adminSecurityEventModelSymbol, ..} ) <$> f adminSecurityEventModelSymbol
-{-# INLINE adminSecurityEventModelSymbolL #-}
-
--- | 'adminSecurityEventModelTimestampNanos' Lens
-adminSecurityEventModelTimestampNanosL :: Lens_' AdminSecurityEventModel (Maybe Integer)
-adminSecurityEventModelTimestampNanosL f AdminSecurityEventModel{..} = (\adminSecurityEventModelTimestampNanos -> AdminSecurityEventModel { adminSecurityEventModelTimestampNanos, ..} ) <$> f adminSecurityEventModelTimestampNanos
-{-# INLINE adminSecurityEventModelTimestampNanosL #-}
-
--- | 'adminSecurityEventModelTimestamp' Lens
-adminSecurityEventModelTimestampL :: Lens_' AdminSecurityEventModel (Maybe DateTime)
-adminSecurityEventModelTimestampL f AdminSecurityEventModel{..} = (\adminSecurityEventModelTimestamp -> AdminSecurityEventModel { adminSecurityEventModelTimestamp, ..} ) <$> f adminSecurityEventModelTimestamp
-{-# INLINE adminSecurityEventModelTimestampL #-}
-
--- | 'adminSecurityEventModelSecurityEvent' Lens
-adminSecurityEventModelSecurityEventL :: Lens_' AdminSecurityEventModel (Maybe Int)
-adminSecurityEventModelSecurityEventL f AdminSecurityEventModel{..} = (\adminSecurityEventModelSecurityEvent -> AdminSecurityEventModel { adminSecurityEventModelSecurityEvent, ..} ) <$> f adminSecurityEventModelSecurityEvent
-{-# INLINE adminSecurityEventModelSecurityEventL #-}
-
--- | 'adminSecurityEventModelSecurityEventCode' Lens
-adminSecurityEventModelSecurityEventCodeL :: Lens_' AdminSecurityEventModel (Maybe Text)
-adminSecurityEventModelSecurityEventCodeL f AdminSecurityEventModel{..} = (\adminSecurityEventModelSecurityEventCode -> AdminSecurityEventModel { adminSecurityEventModelSecurityEventCode, ..} ) <$> f adminSecurityEventModelSecurityEventCode
-{-# INLINE adminSecurityEventModelSecurityEventCodeL #-}
-
--- | 'adminSecurityEventModelSecurityEventText' Lens
-adminSecurityEventModelSecurityEventTextL :: Lens_' AdminSecurityEventModel (Maybe Text)
-adminSecurityEventModelSecurityEventTextL f AdminSecurityEventModel{..} = (\adminSecurityEventModelSecurityEventText -> AdminSecurityEventModel { adminSecurityEventModelSecurityEventText, ..} ) <$> f adminSecurityEventModelSecurityEventText
-{-# INLINE adminSecurityEventModelSecurityEventTextL #-}
-
--- | 'adminSecurityEventModelIsOpeningProcessComplete' Lens
-adminSecurityEventModelIsOpeningProcessCompleteL :: Lens_' AdminSecurityEventModel (Maybe Bool)
-adminSecurityEventModelIsOpeningProcessCompleteL f AdminSecurityEventModel{..} = (\adminSecurityEventModelIsOpeningProcessComplete -> AdminSecurityEventModel { adminSecurityEventModelIsOpeningProcessComplete, ..} ) <$> f adminSecurityEventModelIsOpeningProcessComplete
-{-# INLINE adminSecurityEventModelIsOpeningProcessCompleteL #-}
-
--- | 'adminSecurityEventModelIsClosingProcessComplete' Lens
-adminSecurityEventModelIsClosingProcessCompleteL :: Lens_' AdminSecurityEventModel (Maybe Bool)
-adminSecurityEventModelIsClosingProcessCompleteL f AdminSecurityEventModel{..} = (\adminSecurityEventModelIsClosingProcessComplete -> AdminSecurityEventModel { adminSecurityEventModelIsClosingProcessComplete, ..} ) <$> f adminSecurityEventModelIsClosingProcessComplete
-{-# INLINE adminSecurityEventModelIsClosingProcessCompleteL #-}
-
-
-
--- * AdminShortSalePriceTestStatusModel
-
--- | 'adminShortSalePriceTestStatusModelSymbol' Lens
-adminShortSalePriceTestStatusModelSymbolL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Text)
-adminShortSalePriceTestStatusModelSymbolL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelSymbol -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelSymbol, ..} ) <$> f adminShortSalePriceTestStatusModelSymbol
-{-# INLINE adminShortSalePriceTestStatusModelSymbolL #-}
-
--- | 'adminShortSalePriceTestStatusModelTimestampNanos' Lens
-adminShortSalePriceTestStatusModelTimestampNanosL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Integer)
-adminShortSalePriceTestStatusModelTimestampNanosL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelTimestampNanos -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelTimestampNanos, ..} ) <$> f adminShortSalePriceTestStatusModelTimestampNanos
-{-# INLINE adminShortSalePriceTestStatusModelTimestampNanosL #-}
-
--- | 'adminShortSalePriceTestStatusModelTimestamp' Lens
-adminShortSalePriceTestStatusModelTimestampL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe DateTime)
-adminShortSalePriceTestStatusModelTimestampL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelTimestamp -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelTimestamp, ..} ) <$> f adminShortSalePriceTestStatusModelTimestamp
-{-# INLINE adminShortSalePriceTestStatusModelTimestampL #-}
-
--- | 'adminShortSalePriceTestStatusModelShortSalePriceTestStatus' Lens
-adminShortSalePriceTestStatusModelShortSalePriceTestStatusL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Int)
-adminShortSalePriceTestStatusModelShortSalePriceTestStatusL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelShortSalePriceTestStatus -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelShortSalePriceTestStatus, ..} ) <$> f adminShortSalePriceTestStatusModelShortSalePriceTestStatus
-{-# INLINE adminShortSalePriceTestStatusModelShortSalePriceTestStatusL #-}
-
--- | 'adminShortSalePriceTestStatusModelShortSalePriceTestStatusCode' Lens
-adminShortSalePriceTestStatusModelShortSalePriceTestStatusCodeL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Text)
-adminShortSalePriceTestStatusModelShortSalePriceTestStatusCodeL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelShortSalePriceTestStatusCode -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelShortSalePriceTestStatusCode, ..} ) <$> f adminShortSalePriceTestStatusModelShortSalePriceTestStatusCode
-{-# INLINE adminShortSalePriceTestStatusModelShortSalePriceTestStatusCodeL #-}
-
--- | 'adminShortSalePriceTestStatusModelShortSalePriceTestStatusText' Lens
-adminShortSalePriceTestStatusModelShortSalePriceTestStatusTextL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Text)
-adminShortSalePriceTestStatusModelShortSalePriceTestStatusTextL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelShortSalePriceTestStatusText -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelShortSalePriceTestStatusText, ..} ) <$> f adminShortSalePriceTestStatusModelShortSalePriceTestStatusText
-{-# INLINE adminShortSalePriceTestStatusModelShortSalePriceTestStatusTextL #-}
-
--- | 'adminShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect' Lens
-adminShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffectL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Bool)
-adminShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffectL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect, ..} ) <$> f adminShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect
-{-# INLINE adminShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffectL #-}
-
--- | 'adminShortSalePriceTestStatusModelIsShortSalePriceTestInEffect' Lens
-adminShortSalePriceTestStatusModelIsShortSalePriceTestInEffectL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Bool)
-adminShortSalePriceTestStatusModelIsShortSalePriceTestInEffectL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelIsShortSalePriceTestInEffect -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelIsShortSalePriceTestInEffect, ..} ) <$> f adminShortSalePriceTestStatusModelIsShortSalePriceTestInEffect
-{-# INLINE adminShortSalePriceTestStatusModelIsShortSalePriceTestInEffectL #-}
-
--- | 'adminShortSalePriceTestStatusModelDetail' Lens
-adminShortSalePriceTestStatusModelDetailL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Int)
-adminShortSalePriceTestStatusModelDetailL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelDetail -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelDetail, ..} ) <$> f adminShortSalePriceTestStatusModelDetail
-{-# INLINE adminShortSalePriceTestStatusModelDetailL #-}
-
--- | 'adminShortSalePriceTestStatusModelDetailCode' Lens
-adminShortSalePriceTestStatusModelDetailCodeL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Text)
-adminShortSalePriceTestStatusModelDetailCodeL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelDetailCode -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelDetailCode, ..} ) <$> f adminShortSalePriceTestStatusModelDetailCode
-{-# INLINE adminShortSalePriceTestStatusModelDetailCodeL #-}
-
--- | 'adminShortSalePriceTestStatusModelDetailText' Lens
-adminShortSalePriceTestStatusModelDetailTextL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Text)
-adminShortSalePriceTestStatusModelDetailTextL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelDetailText -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelDetailText, ..} ) <$> f adminShortSalePriceTestStatusModelDetailText
-{-# INLINE adminShortSalePriceTestStatusModelDetailTextL #-}
-
--- | 'adminShortSalePriceTestStatusModelIsDetailNoPriceTest' Lens
-adminShortSalePriceTestStatusModelIsDetailNoPriceTestL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Bool)
-adminShortSalePriceTestStatusModelIsDetailNoPriceTestL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelIsDetailNoPriceTest -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelIsDetailNoPriceTest, ..} ) <$> f adminShortSalePriceTestStatusModelIsDetailNoPriceTest
-{-# INLINE adminShortSalePriceTestStatusModelIsDetailNoPriceTestL #-}
-
--- | 'adminShortSalePriceTestStatusModelIsDetailActivated' Lens
-adminShortSalePriceTestStatusModelIsDetailActivatedL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Bool)
-adminShortSalePriceTestStatusModelIsDetailActivatedL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelIsDetailActivated -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelIsDetailActivated, ..} ) <$> f adminShortSalePriceTestStatusModelIsDetailActivated
-{-# INLINE adminShortSalePriceTestStatusModelIsDetailActivatedL #-}
-
--- | 'adminShortSalePriceTestStatusModelIsDetailContinued' Lens
-adminShortSalePriceTestStatusModelIsDetailContinuedL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Bool)
-adminShortSalePriceTestStatusModelIsDetailContinuedL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelIsDetailContinued -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelIsDetailContinued, ..} ) <$> f adminShortSalePriceTestStatusModelIsDetailContinued
-{-# INLINE adminShortSalePriceTestStatusModelIsDetailContinuedL #-}
-
--- | 'adminShortSalePriceTestStatusModelIsDetailDeactivated' Lens
-adminShortSalePriceTestStatusModelIsDetailDeactivatedL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Bool)
-adminShortSalePriceTestStatusModelIsDetailDeactivatedL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelIsDetailDeactivated -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelIsDetailDeactivated, ..} ) <$> f adminShortSalePriceTestStatusModelIsDetailDeactivated
-{-# INLINE adminShortSalePriceTestStatusModelIsDetailDeactivatedL #-}
-
--- | 'adminShortSalePriceTestStatusModelIsDetailNotAvailable' Lens
-adminShortSalePriceTestStatusModelIsDetailNotAvailableL :: Lens_' AdminShortSalePriceTestStatusModel (Maybe Bool)
-adminShortSalePriceTestStatusModelIsDetailNotAvailableL f AdminShortSalePriceTestStatusModel{..} = (\adminShortSalePriceTestStatusModelIsDetailNotAvailable -> AdminShortSalePriceTestStatusModel { adminShortSalePriceTestStatusModelIsDetailNotAvailable, ..} ) <$> f adminShortSalePriceTestStatusModelIsDetailNotAvailable
-{-# INLINE adminShortSalePriceTestStatusModelIsDetailNotAvailableL #-}
-
-
-
--- * AdminSystemEventModel
-
--- | 'adminSystemEventModelTimestampNanos' Lens
-adminSystemEventModelTimestampNanosL :: Lens_' AdminSystemEventModel (Maybe Integer)
-adminSystemEventModelTimestampNanosL f AdminSystemEventModel{..} = (\adminSystemEventModelTimestampNanos -> AdminSystemEventModel { adminSystemEventModelTimestampNanos, ..} ) <$> f adminSystemEventModelTimestampNanos
-{-# INLINE adminSystemEventModelTimestampNanosL #-}
-
--- | 'adminSystemEventModelTimestamp' Lens
-adminSystemEventModelTimestampL :: Lens_' AdminSystemEventModel (Maybe DateTime)
-adminSystemEventModelTimestampL f AdminSystemEventModel{..} = (\adminSystemEventModelTimestamp -> AdminSystemEventModel { adminSystemEventModelTimestamp, ..} ) <$> f adminSystemEventModelTimestamp
-{-# INLINE adminSystemEventModelTimestampL #-}
-
--- | 'adminSystemEventModelSystemEvent' Lens
-adminSystemEventModelSystemEventL :: Lens_' AdminSystemEventModel (Maybe Int)
-adminSystemEventModelSystemEventL f AdminSystemEventModel{..} = (\adminSystemEventModelSystemEvent -> AdminSystemEventModel { adminSystemEventModelSystemEvent, ..} ) <$> f adminSystemEventModelSystemEvent
-{-# INLINE adminSystemEventModelSystemEventL #-}
-
--- | 'adminSystemEventModelSystemEventCode' Lens
-adminSystemEventModelSystemEventCodeL :: Lens_' AdminSystemEventModel (Maybe Text)
-adminSystemEventModelSystemEventCodeL f AdminSystemEventModel{..} = (\adminSystemEventModelSystemEventCode -> AdminSystemEventModel { adminSystemEventModelSystemEventCode, ..} ) <$> f adminSystemEventModelSystemEventCode
-{-# INLINE adminSystemEventModelSystemEventCodeL #-}
-
--- | 'adminSystemEventModelSystemEventText' Lens
-adminSystemEventModelSystemEventTextL :: Lens_' AdminSystemEventModel (Maybe Text)
-adminSystemEventModelSystemEventTextL f AdminSystemEventModel{..} = (\adminSystemEventModelSystemEventText -> AdminSystemEventModel { adminSystemEventModelSystemEventText, ..} ) <$> f adminSystemEventModelSystemEventText
-{-# INLINE adminSystemEventModelSystemEventTextL #-}
-
--- | 'adminSystemEventModelIsSystemEventStartOfMessages' Lens
-adminSystemEventModelIsSystemEventStartOfMessagesL :: Lens_' AdminSystemEventModel (Maybe Bool)
-adminSystemEventModelIsSystemEventStartOfMessagesL f AdminSystemEventModel{..} = (\adminSystemEventModelIsSystemEventStartOfMessages -> AdminSystemEventModel { adminSystemEventModelIsSystemEventStartOfMessages, ..} ) <$> f adminSystemEventModelIsSystemEventStartOfMessages
-{-# INLINE adminSystemEventModelIsSystemEventStartOfMessagesL #-}
-
--- | 'adminSystemEventModelIsSystemEventStartOfSystemHours' Lens
-adminSystemEventModelIsSystemEventStartOfSystemHoursL :: Lens_' AdminSystemEventModel (Maybe Bool)
-adminSystemEventModelIsSystemEventStartOfSystemHoursL f AdminSystemEventModel{..} = (\adminSystemEventModelIsSystemEventStartOfSystemHours -> AdminSystemEventModel { adminSystemEventModelIsSystemEventStartOfSystemHours, ..} ) <$> f adminSystemEventModelIsSystemEventStartOfSystemHours
-{-# INLINE adminSystemEventModelIsSystemEventStartOfSystemHoursL #-}
-
--- | 'adminSystemEventModelIsSystemEventStartOfRegularMarketHours' Lens
-adminSystemEventModelIsSystemEventStartOfRegularMarketHoursL :: Lens_' AdminSystemEventModel (Maybe Bool)
-adminSystemEventModelIsSystemEventStartOfRegularMarketHoursL f AdminSystemEventModel{..} = (\adminSystemEventModelIsSystemEventStartOfRegularMarketHours -> AdminSystemEventModel { adminSystemEventModelIsSystemEventStartOfRegularMarketHours, ..} ) <$> f adminSystemEventModelIsSystemEventStartOfRegularMarketHours
-{-# INLINE adminSystemEventModelIsSystemEventStartOfRegularMarketHoursL #-}
-
--- | 'adminSystemEventModelIsSystemEventEndOfRegularMarketHours' Lens
-adminSystemEventModelIsSystemEventEndOfRegularMarketHoursL :: Lens_' AdminSystemEventModel (Maybe Bool)
-adminSystemEventModelIsSystemEventEndOfRegularMarketHoursL f AdminSystemEventModel{..} = (\adminSystemEventModelIsSystemEventEndOfRegularMarketHours -> AdminSystemEventModel { adminSystemEventModelIsSystemEventEndOfRegularMarketHours, ..} ) <$> f adminSystemEventModelIsSystemEventEndOfRegularMarketHours
-{-# INLINE adminSystemEventModelIsSystemEventEndOfRegularMarketHoursL #-}
-
--- | 'adminSystemEventModelIsSystemEventEndOfSystemHours' Lens
-adminSystemEventModelIsSystemEventEndOfSystemHoursL :: Lens_' AdminSystemEventModel (Maybe Bool)
-adminSystemEventModelIsSystemEventEndOfSystemHoursL f AdminSystemEventModel{..} = (\adminSystemEventModelIsSystemEventEndOfSystemHours -> AdminSystemEventModel { adminSystemEventModelIsSystemEventEndOfSystemHours, ..} ) <$> f adminSystemEventModelIsSystemEventEndOfSystemHours
-{-# INLINE adminSystemEventModelIsSystemEventEndOfSystemHoursL #-}
-
--- | 'adminSystemEventModelIsSystemEventEndOfMessages' Lens
-adminSystemEventModelIsSystemEventEndOfMessagesL :: Lens_' AdminSystemEventModel (Maybe Bool)
-adminSystemEventModelIsSystemEventEndOfMessagesL f AdminSystemEventModel{..} = (\adminSystemEventModelIsSystemEventEndOfMessages -> AdminSystemEventModel { adminSystemEventModelIsSystemEventEndOfMessages, ..} ) <$> f adminSystemEventModelIsSystemEventEndOfMessages
-{-# INLINE adminSystemEventModelIsSystemEventEndOfMessagesL #-}
-
-
-
--- * AdminTradingStatusModel
-
--- | 'adminTradingStatusModelSymbol' Lens
-adminTradingStatusModelSymbolL :: Lens_' AdminTradingStatusModel (Maybe Text)
-adminTradingStatusModelSymbolL f AdminTradingStatusModel{..} = (\adminTradingStatusModelSymbol -> AdminTradingStatusModel { adminTradingStatusModelSymbol, ..} ) <$> f adminTradingStatusModelSymbol
-{-# INLINE adminTradingStatusModelSymbolL #-}
-
--- | 'adminTradingStatusModelTimestampNanos' Lens
-adminTradingStatusModelTimestampNanosL :: Lens_' AdminTradingStatusModel (Maybe Integer)
-adminTradingStatusModelTimestampNanosL f AdminTradingStatusModel{..} = (\adminTradingStatusModelTimestampNanos -> AdminTradingStatusModel { adminTradingStatusModelTimestampNanos, ..} ) <$> f adminTradingStatusModelTimestampNanos
-{-# INLINE adminTradingStatusModelTimestampNanosL #-}
-
--- | 'adminTradingStatusModelTimestamp' Lens
-adminTradingStatusModelTimestampL :: Lens_' AdminTradingStatusModel (Maybe DateTime)
-adminTradingStatusModelTimestampL f AdminTradingStatusModel{..} = (\adminTradingStatusModelTimestamp -> AdminTradingStatusModel { adminTradingStatusModelTimestamp, ..} ) <$> f adminTradingStatusModelTimestamp
-{-# INLINE adminTradingStatusModelTimestampL #-}
-
--- | 'adminTradingStatusModelIsTradingLive' Lens
-adminTradingStatusModelIsTradingLiveL :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsTradingLiveL f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsTradingLive -> AdminTradingStatusModel { adminTradingStatusModelIsTradingLive, ..} ) <$> f adminTradingStatusModelIsTradingLive
-{-# INLINE adminTradingStatusModelIsTradingLiveL #-}
-
--- | 'adminTradingStatusModelIsTradingHalted' Lens
-adminTradingStatusModelIsTradingHaltedL :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsTradingHaltedL f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsTradingHalted -> AdminTradingStatusModel { adminTradingStatusModelIsTradingHalted, ..} ) <$> f adminTradingStatusModelIsTradingHalted
-{-# INLINE adminTradingStatusModelIsTradingHaltedL #-}
-
--- | 'adminTradingStatusModelIsTradingInOrderAcceptancePeriod' Lens
-adminTradingStatusModelIsTradingInOrderAcceptancePeriodL :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsTradingInOrderAcceptancePeriodL f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsTradingInOrderAcceptancePeriod -> AdminTradingStatusModel { adminTradingStatusModelIsTradingInOrderAcceptancePeriod, ..} ) <$> f adminTradingStatusModelIsTradingInOrderAcceptancePeriod
-{-# INLINE adminTradingStatusModelIsTradingInOrderAcceptancePeriodL #-}
-
--- | 'adminTradingStatusModelIsTradingPaused' Lens
-adminTradingStatusModelIsTradingPausedL :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsTradingPausedL f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsTradingPaused -> AdminTradingStatusModel { adminTradingStatusModelIsTradingPaused, ..} ) <$> f adminTradingStatusModelIsTradingPaused
-{-# INLINE adminTradingStatusModelIsTradingPausedL #-}
-
--- | 'adminTradingStatusModelIsReasonHaltNewsPending' Lens
-adminTradingStatusModelIsReasonHaltNewsPendingL :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsReasonHaltNewsPendingL f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsReasonHaltNewsPending -> AdminTradingStatusModel { adminTradingStatusModelIsReasonHaltNewsPending, ..} ) <$> f adminTradingStatusModelIsReasonHaltNewsPending
-{-# INLINE adminTradingStatusModelIsReasonHaltNewsPendingL #-}
-
--- | 'adminTradingStatusModelIsReasonIpoNotYetTrading' Lens
-adminTradingStatusModelIsReasonIpoNotYetTradingL :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsReasonIpoNotYetTradingL f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsReasonIpoNotYetTrading -> AdminTradingStatusModel { adminTradingStatusModelIsReasonIpoNotYetTrading, ..} ) <$> f adminTradingStatusModelIsReasonIpoNotYetTrading
-{-# INLINE adminTradingStatusModelIsReasonIpoNotYetTradingL #-}
-
--- | 'adminTradingStatusModelIsReasonIpoDeferred' Lens
-adminTradingStatusModelIsReasonIpoDeferredL :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsReasonIpoDeferredL f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsReasonIpoDeferred -> AdminTradingStatusModel { adminTradingStatusModelIsReasonIpoDeferred, ..} ) <$> f adminTradingStatusModelIsReasonIpoDeferred
-{-# INLINE adminTradingStatusModelIsReasonIpoDeferredL #-}
-
--- | 'adminTradingStatusModelIsReasonHaltNewsDissemination' Lens
-adminTradingStatusModelIsReasonHaltNewsDisseminationL :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsReasonHaltNewsDisseminationL f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsReasonHaltNewsDissemination -> AdminTradingStatusModel { adminTradingStatusModelIsReasonHaltNewsDissemination, ..} ) <$> f adminTradingStatusModelIsReasonHaltNewsDissemination
-{-# INLINE adminTradingStatusModelIsReasonHaltNewsDisseminationL #-}
-
--- | 'adminTradingStatusModelIsReasonIpoOrderAcceptancePeriod' Lens
-adminTradingStatusModelIsReasonIpoOrderAcceptancePeriodL :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsReasonIpoOrderAcceptancePeriodL f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsReasonIpoOrderAcceptancePeriod -> AdminTradingStatusModel { adminTradingStatusModelIsReasonIpoOrderAcceptancePeriod, ..} ) <$> f adminTradingStatusModelIsReasonIpoOrderAcceptancePeriod
-{-# INLINE adminTradingStatusModelIsReasonIpoOrderAcceptancePeriodL #-}
-
--- | 'adminTradingStatusModelIsReasonIpoPreLaunchPeriod' Lens
-adminTradingStatusModelIsReasonIpoPreLaunchPeriodL :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsReasonIpoPreLaunchPeriodL f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsReasonIpoPreLaunchPeriod -> AdminTradingStatusModel { adminTradingStatusModelIsReasonIpoPreLaunchPeriod, ..} ) <$> f adminTradingStatusModelIsReasonIpoPreLaunchPeriod
-{-# INLINE adminTradingStatusModelIsReasonIpoPreLaunchPeriodL #-}
-
--- | 'adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1' Lens
-adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1L :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1L f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1 -> AdminTradingStatusModel { adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1, ..} ) <$> f adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1
-{-# INLINE adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1L #-}
-
--- | 'adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2' Lens
-adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2L :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2L f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2 -> AdminTradingStatusModel { adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2, ..} ) <$> f adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2
-{-# INLINE adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2L #-}
-
--- | 'adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3' Lens
-adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3L :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3L f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3 -> AdminTradingStatusModel { adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3, ..} ) <$> f adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3
-{-# INLINE adminTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3L #-}
-
--- | 'adminTradingStatusModelIsReasonNotApplicable' Lens
-adminTradingStatusModelIsReasonNotApplicableL :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsReasonNotApplicableL f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsReasonNotApplicable -> AdminTradingStatusModel { adminTradingStatusModelIsReasonNotApplicable, ..} ) <$> f adminTradingStatusModelIsReasonNotApplicable
-{-# INLINE adminTradingStatusModelIsReasonNotApplicableL #-}
-
--- | 'adminTradingStatusModelIsReasonNotAvailable' Lens
-adminTradingStatusModelIsReasonNotAvailableL :: Lens_' AdminTradingStatusModel (Maybe Bool)
-adminTradingStatusModelIsReasonNotAvailableL f AdminTradingStatusModel{..} = (\adminTradingStatusModelIsReasonNotAvailable -> AdminTradingStatusModel { adminTradingStatusModelIsReasonNotAvailable, ..} ) <$> f adminTradingStatusModelIsReasonNotAvailable
-{-# INLINE adminTradingStatusModelIsReasonNotAvailableL #-}
-
-
-
 -- * FinFeedAPIExchangeModel
 
 -- | 'finFeedAPIExchangeModelExchangeId' Lens
@@ -920,520 +235,1205 @@ finFeedAPISymbolModelCfiAttribute4DescL f FinFeedAPISymbolModel{..} = (\finFeedA
 
 
 
--- * Level1QuoteUpdateModel
-
--- | 'level1QuoteUpdateModelSymbol' Lens
-level1QuoteUpdateModelSymbolL :: Lens_' Level1QuoteUpdateModel (Maybe Text)
-level1QuoteUpdateModelSymbolL f Level1QuoteUpdateModel{..} = (\level1QuoteUpdateModelSymbol -> Level1QuoteUpdateModel { level1QuoteUpdateModelSymbol, ..} ) <$> f level1QuoteUpdateModelSymbol
-{-# INLINE level1QuoteUpdateModelSymbolL #-}
-
--- | 'level1QuoteUpdateModelTimestampNanos' Lens
-level1QuoteUpdateModelTimestampNanosL :: Lens_' Level1QuoteUpdateModel (Maybe Integer)
-level1QuoteUpdateModelTimestampNanosL f Level1QuoteUpdateModel{..} = (\level1QuoteUpdateModelTimestampNanos -> Level1QuoteUpdateModel { level1QuoteUpdateModelTimestampNanos, ..} ) <$> f level1QuoteUpdateModelTimestampNanos
-{-# INLINE level1QuoteUpdateModelTimestampNanosL #-}
-
--- | 'level1QuoteUpdateModelTimestamp' Lens
-level1QuoteUpdateModelTimestampL :: Lens_' Level1QuoteUpdateModel (Maybe DateTime)
-level1QuoteUpdateModelTimestampL f Level1QuoteUpdateModel{..} = (\level1QuoteUpdateModelTimestamp -> Level1QuoteUpdateModel { level1QuoteUpdateModelTimestamp, ..} ) <$> f level1QuoteUpdateModelTimestamp
-{-# INLINE level1QuoteUpdateModelTimestampL #-}
-
--- | 'level1QuoteUpdateModelIsSymbolAvailable' Lens
-level1QuoteUpdateModelIsSymbolAvailableL :: Lens_' Level1QuoteUpdateModel (Maybe Bool)
-level1QuoteUpdateModelIsSymbolAvailableL f Level1QuoteUpdateModel{..} = (\level1QuoteUpdateModelIsSymbolAvailable -> Level1QuoteUpdateModel { level1QuoteUpdateModelIsSymbolAvailable, ..} ) <$> f level1QuoteUpdateModelIsSymbolAvailable
-{-# INLINE level1QuoteUpdateModelIsSymbolAvailableL #-}
-
--- | 'level1QuoteUpdateModelIsPrePostMarketSession' Lens
-level1QuoteUpdateModelIsPrePostMarketSessionL :: Lens_' Level1QuoteUpdateModel (Maybe Bool)
-level1QuoteUpdateModelIsPrePostMarketSessionL f Level1QuoteUpdateModel{..} = (\level1QuoteUpdateModelIsPrePostMarketSession -> Level1QuoteUpdateModel { level1QuoteUpdateModelIsPrePostMarketSession, ..} ) <$> f level1QuoteUpdateModelIsPrePostMarketSession
-{-# INLINE level1QuoteUpdateModelIsPrePostMarketSessionL #-}
-
--- | 'level1QuoteUpdateModelAskSize' Lens
-level1QuoteUpdateModelAskSizeL :: Lens_' Level1QuoteUpdateModel (Maybe Int)
-level1QuoteUpdateModelAskSizeL f Level1QuoteUpdateModel{..} = (\level1QuoteUpdateModelAskSize -> Level1QuoteUpdateModel { level1QuoteUpdateModelAskSize, ..} ) <$> f level1QuoteUpdateModelAskSize
-{-# INLINE level1QuoteUpdateModelAskSizeL #-}
-
--- | 'level1QuoteUpdateModelAskPrice' Lens
-level1QuoteUpdateModelAskPriceL :: Lens_' Level1QuoteUpdateModel (Maybe Double)
-level1QuoteUpdateModelAskPriceL f Level1QuoteUpdateModel{..} = (\level1QuoteUpdateModelAskPrice -> Level1QuoteUpdateModel { level1QuoteUpdateModelAskPrice, ..} ) <$> f level1QuoteUpdateModelAskPrice
-{-# INLINE level1QuoteUpdateModelAskPriceL #-}
-
--- | 'level1QuoteUpdateModelBidPrice' Lens
-level1QuoteUpdateModelBidPriceL :: Lens_' Level1QuoteUpdateModel (Maybe Double)
-level1QuoteUpdateModelBidPriceL f Level1QuoteUpdateModel{..} = (\level1QuoteUpdateModelBidPrice -> Level1QuoteUpdateModel { level1QuoteUpdateModelBidPrice, ..} ) <$> f level1QuoteUpdateModelBidPrice
-{-# INLINE level1QuoteUpdateModelBidPriceL #-}
-
--- | 'level1QuoteUpdateModelBidSize' Lens
-level1QuoteUpdateModelBidSizeL :: Lens_' Level1QuoteUpdateModel (Maybe Int)
-level1QuoteUpdateModelBidSizeL f Level1QuoteUpdateModel{..} = (\level1QuoteUpdateModelBidSize -> Level1QuoteUpdateModel { level1QuoteUpdateModelBidSize, ..} ) <$> f level1QuoteUpdateModelBidSize
-{-# INLINE level1QuoteUpdateModelBidSizeL #-}
-
-
-
--- * Level2PriceLevelUpdateModel
-
--- | 'level2PriceLevelUpdateModelSymbol' Lens
-level2PriceLevelUpdateModelSymbolL :: Lens_' Level2PriceLevelUpdateModel (Maybe Text)
-level2PriceLevelUpdateModelSymbolL f Level2PriceLevelUpdateModel{..} = (\level2PriceLevelUpdateModelSymbol -> Level2PriceLevelUpdateModel { level2PriceLevelUpdateModelSymbol, ..} ) <$> f level2PriceLevelUpdateModelSymbol
-{-# INLINE level2PriceLevelUpdateModelSymbolL #-}
-
--- | 'level2PriceLevelUpdateModelTimestampNanos' Lens
-level2PriceLevelUpdateModelTimestampNanosL :: Lens_' Level2PriceLevelUpdateModel (Maybe Integer)
-level2PriceLevelUpdateModelTimestampNanosL f Level2PriceLevelUpdateModel{..} = (\level2PriceLevelUpdateModelTimestampNanos -> Level2PriceLevelUpdateModel { level2PriceLevelUpdateModelTimestampNanos, ..} ) <$> f level2PriceLevelUpdateModelTimestampNanos
-{-# INLINE level2PriceLevelUpdateModelTimestampNanosL #-}
-
--- | 'level2PriceLevelUpdateModelTimestamp' Lens
-level2PriceLevelUpdateModelTimestampL :: Lens_' Level2PriceLevelUpdateModel (Maybe DateTime)
-level2PriceLevelUpdateModelTimestampL f Level2PriceLevelUpdateModel{..} = (\level2PriceLevelUpdateModelTimestamp -> Level2PriceLevelUpdateModel { level2PriceLevelUpdateModelTimestamp, ..} ) <$> f level2PriceLevelUpdateModelTimestamp
-{-# INLINE level2PriceLevelUpdateModelTimestampL #-}
-
--- | 'level2PriceLevelUpdateModelIsSideBuy' Lens
-level2PriceLevelUpdateModelIsSideBuyL :: Lens_' Level2PriceLevelUpdateModel (Maybe Bool)
-level2PriceLevelUpdateModelIsSideBuyL f Level2PriceLevelUpdateModel{..} = (\level2PriceLevelUpdateModelIsSideBuy -> Level2PriceLevelUpdateModel { level2PriceLevelUpdateModelIsSideBuy, ..} ) <$> f level2PriceLevelUpdateModelIsSideBuy
-{-# INLINE level2PriceLevelUpdateModelIsSideBuyL #-}
-
--- | 'level2PriceLevelUpdateModelIsEventProcessingComplete' Lens
-level2PriceLevelUpdateModelIsEventProcessingCompleteL :: Lens_' Level2PriceLevelUpdateModel (Maybe Bool)
-level2PriceLevelUpdateModelIsEventProcessingCompleteL f Level2PriceLevelUpdateModel{..} = (\level2PriceLevelUpdateModelIsEventProcessingComplete -> Level2PriceLevelUpdateModel { level2PriceLevelUpdateModelIsEventProcessingComplete, ..} ) <$> f level2PriceLevelUpdateModelIsEventProcessingComplete
-{-# INLINE level2PriceLevelUpdateModelIsEventProcessingCompleteL #-}
-
--- | 'level2PriceLevelUpdateModelSize' Lens
-level2PriceLevelUpdateModelSizeL :: Lens_' Level2PriceLevelUpdateModel (Maybe Int)
-level2PriceLevelUpdateModelSizeL f Level2PriceLevelUpdateModel{..} = (\level2PriceLevelUpdateModelSize -> Level2PriceLevelUpdateModel { level2PriceLevelUpdateModelSize, ..} ) <$> f level2PriceLevelUpdateModelSize
-{-# INLINE level2PriceLevelUpdateModelSizeL #-}
-
--- | 'level2PriceLevelUpdateModelPrice' Lens
-level2PriceLevelUpdateModelPriceL :: Lens_' Level2PriceLevelUpdateModel (Maybe Double)
-level2PriceLevelUpdateModelPriceL f Level2PriceLevelUpdateModel{..} = (\level2PriceLevelUpdateModelPrice -> Level2PriceLevelUpdateModel { level2PriceLevelUpdateModelPrice, ..} ) <$> f level2PriceLevelUpdateModelPrice
-{-# INLINE level2PriceLevelUpdateModelPriceL #-}
-
-
-
--- * Level3AddOrderModel
-
--- | 'level3AddOrderModelSymbol' Lens
-level3AddOrderModelSymbolL :: Lens_' Level3AddOrderModel (Maybe Text)
-level3AddOrderModelSymbolL f Level3AddOrderModel{..} = (\level3AddOrderModelSymbol -> Level3AddOrderModel { level3AddOrderModelSymbol, ..} ) <$> f level3AddOrderModelSymbol
-{-# INLINE level3AddOrderModelSymbolL #-}
-
--- | 'level3AddOrderModelTimestampNanos' Lens
-level3AddOrderModelTimestampNanosL :: Lens_' Level3AddOrderModel (Maybe Integer)
-level3AddOrderModelTimestampNanosL f Level3AddOrderModel{..} = (\level3AddOrderModelTimestampNanos -> Level3AddOrderModel { level3AddOrderModelTimestampNanos, ..} ) <$> f level3AddOrderModelTimestampNanos
-{-# INLINE level3AddOrderModelTimestampNanosL #-}
-
--- | 'level3AddOrderModelTimestamp' Lens
-level3AddOrderModelTimestampL :: Lens_' Level3AddOrderModel (Maybe DateTime)
-level3AddOrderModelTimestampL f Level3AddOrderModel{..} = (\level3AddOrderModelTimestamp -> Level3AddOrderModel { level3AddOrderModelTimestamp, ..} ) <$> f level3AddOrderModelTimestamp
-{-# INLINE level3AddOrderModelTimestampL #-}
-
--- | 'level3AddOrderModelIsSideBuy' Lens
-level3AddOrderModelIsSideBuyL :: Lens_' Level3AddOrderModel (Maybe Bool)
-level3AddOrderModelIsSideBuyL f Level3AddOrderModel{..} = (\level3AddOrderModelIsSideBuy -> Level3AddOrderModel { level3AddOrderModelIsSideBuy, ..} ) <$> f level3AddOrderModelIsSideBuy
-{-# INLINE level3AddOrderModelIsSideBuyL #-}
-
--- | 'level3AddOrderModelSize' Lens
-level3AddOrderModelSizeL :: Lens_' Level3AddOrderModel (Maybe Int)
-level3AddOrderModelSizeL f Level3AddOrderModel{..} = (\level3AddOrderModelSize -> Level3AddOrderModel { level3AddOrderModelSize, ..} ) <$> f level3AddOrderModelSize
-{-# INLINE level3AddOrderModelSizeL #-}
-
--- | 'level3AddOrderModelPrice' Lens
-level3AddOrderModelPriceL :: Lens_' Level3AddOrderModel (Maybe Double)
-level3AddOrderModelPriceL f Level3AddOrderModel{..} = (\level3AddOrderModelPrice -> Level3AddOrderModel { level3AddOrderModelPrice, ..} ) <$> f level3AddOrderModelPrice
-{-# INLINE level3AddOrderModelPriceL #-}
-
--- | 'level3AddOrderModelOrderId' Lens
-level3AddOrderModelOrderIdL :: Lens_' Level3AddOrderModel (Maybe Integer)
-level3AddOrderModelOrderIdL f Level3AddOrderModel{..} = (\level3AddOrderModelOrderId -> Level3AddOrderModel { level3AddOrderModelOrderId, ..} ) <$> f level3AddOrderModelOrderId
-{-# INLINE level3AddOrderModelOrderIdL #-}
-
-
-
--- * Level3ClearBookModel
-
--- | 'level3ClearBookModelSymbol' Lens
-level3ClearBookModelSymbolL :: Lens_' Level3ClearBookModel (Maybe Text)
-level3ClearBookModelSymbolL f Level3ClearBookModel{..} = (\level3ClearBookModelSymbol -> Level3ClearBookModel { level3ClearBookModelSymbol, ..} ) <$> f level3ClearBookModelSymbol
-{-# INLINE level3ClearBookModelSymbolL #-}
-
--- | 'level3ClearBookModelTimestampNanos' Lens
-level3ClearBookModelTimestampNanosL :: Lens_' Level3ClearBookModel (Maybe Integer)
-level3ClearBookModelTimestampNanosL f Level3ClearBookModel{..} = (\level3ClearBookModelTimestampNanos -> Level3ClearBookModel { level3ClearBookModelTimestampNanos, ..} ) <$> f level3ClearBookModelTimestampNanos
-{-# INLINE level3ClearBookModelTimestampNanosL #-}
-
--- | 'level3ClearBookModelTimestamp' Lens
-level3ClearBookModelTimestampL :: Lens_' Level3ClearBookModel (Maybe DateTime)
-level3ClearBookModelTimestampL f Level3ClearBookModel{..} = (\level3ClearBookModelTimestamp -> Level3ClearBookModel { level3ClearBookModelTimestamp, ..} ) <$> f level3ClearBookModelTimestamp
-{-# INLINE level3ClearBookModelTimestampL #-}
-
-
-
--- * Level3DeleteOrderModel
-
--- | 'level3DeleteOrderModelSymbol' Lens
-level3DeleteOrderModelSymbolL :: Lens_' Level3DeleteOrderModel (Maybe Text)
-level3DeleteOrderModelSymbolL f Level3DeleteOrderModel{..} = (\level3DeleteOrderModelSymbol -> Level3DeleteOrderModel { level3DeleteOrderModelSymbol, ..} ) <$> f level3DeleteOrderModelSymbol
-{-# INLINE level3DeleteOrderModelSymbolL #-}
-
--- | 'level3DeleteOrderModelTimestampNanos' Lens
-level3DeleteOrderModelTimestampNanosL :: Lens_' Level3DeleteOrderModel (Maybe Integer)
-level3DeleteOrderModelTimestampNanosL f Level3DeleteOrderModel{..} = (\level3DeleteOrderModelTimestampNanos -> Level3DeleteOrderModel { level3DeleteOrderModelTimestampNanos, ..} ) <$> f level3DeleteOrderModelTimestampNanos
-{-# INLINE level3DeleteOrderModelTimestampNanosL #-}
-
--- | 'level3DeleteOrderModelTimestamp' Lens
-level3DeleteOrderModelTimestampL :: Lens_' Level3DeleteOrderModel (Maybe DateTime)
-level3DeleteOrderModelTimestampL f Level3DeleteOrderModel{..} = (\level3DeleteOrderModelTimestamp -> Level3DeleteOrderModel { level3DeleteOrderModelTimestamp, ..} ) <$> f level3DeleteOrderModelTimestamp
-{-# INLINE level3DeleteOrderModelTimestampL #-}
-
--- | 'level3DeleteOrderModelOrderIdReference' Lens
-level3DeleteOrderModelOrderIdReferenceL :: Lens_' Level3DeleteOrderModel (Maybe Integer)
-level3DeleteOrderModelOrderIdReferenceL f Level3DeleteOrderModel{..} = (\level3DeleteOrderModelOrderIdReference -> Level3DeleteOrderModel { level3DeleteOrderModelOrderIdReference, ..} ) <$> f level3DeleteOrderModelOrderIdReference
-{-# INLINE level3DeleteOrderModelOrderIdReferenceL #-}
-
-
-
--- * Level3ExecutedOrderModel
-
--- | 'level3ExecutedOrderModelSymbol' Lens
-level3ExecutedOrderModelSymbolL :: Lens_' Level3ExecutedOrderModel (Maybe Text)
-level3ExecutedOrderModelSymbolL f Level3ExecutedOrderModel{..} = (\level3ExecutedOrderModelSymbol -> Level3ExecutedOrderModel { level3ExecutedOrderModelSymbol, ..} ) <$> f level3ExecutedOrderModelSymbol
-{-# INLINE level3ExecutedOrderModelSymbolL #-}
-
--- | 'level3ExecutedOrderModelTimestampNanos' Lens
-level3ExecutedOrderModelTimestampNanosL :: Lens_' Level3ExecutedOrderModel (Maybe Integer)
-level3ExecutedOrderModelTimestampNanosL f Level3ExecutedOrderModel{..} = (\level3ExecutedOrderModelTimestampNanos -> Level3ExecutedOrderModel { level3ExecutedOrderModelTimestampNanos, ..} ) <$> f level3ExecutedOrderModelTimestampNanos
-{-# INLINE level3ExecutedOrderModelTimestampNanosL #-}
-
--- | 'level3ExecutedOrderModelTimestamp' Lens
-level3ExecutedOrderModelTimestampL :: Lens_' Level3ExecutedOrderModel (Maybe DateTime)
-level3ExecutedOrderModelTimestampL f Level3ExecutedOrderModel{..} = (\level3ExecutedOrderModelTimestamp -> Level3ExecutedOrderModel { level3ExecutedOrderModelTimestamp, ..} ) <$> f level3ExecutedOrderModelTimestamp
-{-# INLINE level3ExecutedOrderModelTimestampL #-}
-
--- | 'level3ExecutedOrderModelOrderIdReference' Lens
-level3ExecutedOrderModelOrderIdReferenceL :: Lens_' Level3ExecutedOrderModel (Maybe Integer)
-level3ExecutedOrderModelOrderIdReferenceL f Level3ExecutedOrderModel{..} = (\level3ExecutedOrderModelOrderIdReference -> Level3ExecutedOrderModel { level3ExecutedOrderModelOrderIdReference, ..} ) <$> f level3ExecutedOrderModelOrderIdReference
-{-# INLINE level3ExecutedOrderModelOrderIdReferenceL #-}
-
--- | 'level3ExecutedOrderModelSaleConditionFlags' Lens
-level3ExecutedOrderModelSaleConditionFlagsL :: Lens_' Level3ExecutedOrderModel (Maybe Int)
-level3ExecutedOrderModelSaleConditionFlagsL f Level3ExecutedOrderModel{..} = (\level3ExecutedOrderModelSaleConditionFlags -> Level3ExecutedOrderModel { level3ExecutedOrderModelSaleConditionFlags, ..} ) <$> f level3ExecutedOrderModelSaleConditionFlags
-{-# INLINE level3ExecutedOrderModelSaleConditionFlagsL #-}
-
--- | 'level3ExecutedOrderModelIsIntermarketSweep' Lens
-level3ExecutedOrderModelIsIntermarketSweepL :: Lens_' Level3ExecutedOrderModel (Maybe Bool)
-level3ExecutedOrderModelIsIntermarketSweepL f Level3ExecutedOrderModel{..} = (\level3ExecutedOrderModelIsIntermarketSweep -> Level3ExecutedOrderModel { level3ExecutedOrderModelIsIntermarketSweep, ..} ) <$> f level3ExecutedOrderModelIsIntermarketSweep
-{-# INLINE level3ExecutedOrderModelIsIntermarketSweepL #-}
-
--- | 'level3ExecutedOrderModelIsExtendedHoursTrade' Lens
-level3ExecutedOrderModelIsExtendedHoursTradeL :: Lens_' Level3ExecutedOrderModel (Maybe Bool)
-level3ExecutedOrderModelIsExtendedHoursTradeL f Level3ExecutedOrderModel{..} = (\level3ExecutedOrderModelIsExtendedHoursTrade -> Level3ExecutedOrderModel { level3ExecutedOrderModelIsExtendedHoursTrade, ..} ) <$> f level3ExecutedOrderModelIsExtendedHoursTrade
-{-# INLINE level3ExecutedOrderModelIsExtendedHoursTradeL #-}
-
--- | 'level3ExecutedOrderModelIsOddLotTrade' Lens
-level3ExecutedOrderModelIsOddLotTradeL :: Lens_' Level3ExecutedOrderModel (Maybe Bool)
-level3ExecutedOrderModelIsOddLotTradeL f Level3ExecutedOrderModel{..} = (\level3ExecutedOrderModelIsOddLotTrade -> Level3ExecutedOrderModel { level3ExecutedOrderModelIsOddLotTrade, ..} ) <$> f level3ExecutedOrderModelIsOddLotTrade
-{-# INLINE level3ExecutedOrderModelIsOddLotTradeL #-}
-
--- | 'level3ExecutedOrderModelIsTradeThroughExempt' Lens
-level3ExecutedOrderModelIsTradeThroughExemptL :: Lens_' Level3ExecutedOrderModel (Maybe Bool)
-level3ExecutedOrderModelIsTradeThroughExemptL f Level3ExecutedOrderModel{..} = (\level3ExecutedOrderModelIsTradeThroughExempt -> Level3ExecutedOrderModel { level3ExecutedOrderModelIsTradeThroughExempt, ..} ) <$> f level3ExecutedOrderModelIsTradeThroughExempt
-{-# INLINE level3ExecutedOrderModelIsTradeThroughExemptL #-}
-
--- | 'level3ExecutedOrderModelIsSinglePriceCrossTrade' Lens
-level3ExecutedOrderModelIsSinglePriceCrossTradeL :: Lens_' Level3ExecutedOrderModel (Maybe Bool)
-level3ExecutedOrderModelIsSinglePriceCrossTradeL f Level3ExecutedOrderModel{..} = (\level3ExecutedOrderModelIsSinglePriceCrossTrade -> Level3ExecutedOrderModel { level3ExecutedOrderModelIsSinglePriceCrossTrade, ..} ) <$> f level3ExecutedOrderModelIsSinglePriceCrossTrade
-{-# INLINE level3ExecutedOrderModelIsSinglePriceCrossTradeL #-}
-
--- | 'level3ExecutedOrderModelSize' Lens
-level3ExecutedOrderModelSizeL :: Lens_' Level3ExecutedOrderModel (Maybe Int)
-level3ExecutedOrderModelSizeL f Level3ExecutedOrderModel{..} = (\level3ExecutedOrderModelSize -> Level3ExecutedOrderModel { level3ExecutedOrderModelSize, ..} ) <$> f level3ExecutedOrderModelSize
-{-# INLINE level3ExecutedOrderModelSizeL #-}
-
--- | 'level3ExecutedOrderModelPrice' Lens
-level3ExecutedOrderModelPriceL :: Lens_' Level3ExecutedOrderModel (Maybe Double)
-level3ExecutedOrderModelPriceL f Level3ExecutedOrderModel{..} = (\level3ExecutedOrderModelPrice -> Level3ExecutedOrderModel { level3ExecutedOrderModelPrice, ..} ) <$> f level3ExecutedOrderModelPrice
-{-# INLINE level3ExecutedOrderModelPriceL #-}
-
--- | 'level3ExecutedOrderModelTradeId' Lens
-level3ExecutedOrderModelTradeIdL :: Lens_' Level3ExecutedOrderModel (Maybe Integer)
-level3ExecutedOrderModelTradeIdL f Level3ExecutedOrderModel{..} = (\level3ExecutedOrderModelTradeId -> Level3ExecutedOrderModel { level3ExecutedOrderModelTradeId, ..} ) <$> f level3ExecutedOrderModelTradeId
-{-# INLINE level3ExecutedOrderModelTradeIdL #-}
-
-
-
--- * Level3ModifyOrderModel
-
--- | 'level3ModifyOrderModelSymbol' Lens
-level3ModifyOrderModelSymbolL :: Lens_' Level3ModifyOrderModel (Maybe Text)
-level3ModifyOrderModelSymbolL f Level3ModifyOrderModel{..} = (\level3ModifyOrderModelSymbol -> Level3ModifyOrderModel { level3ModifyOrderModelSymbol, ..} ) <$> f level3ModifyOrderModelSymbol
-{-# INLINE level3ModifyOrderModelSymbolL #-}
-
--- | 'level3ModifyOrderModelTimestampNanos' Lens
-level3ModifyOrderModelTimestampNanosL :: Lens_' Level3ModifyOrderModel (Maybe Integer)
-level3ModifyOrderModelTimestampNanosL f Level3ModifyOrderModel{..} = (\level3ModifyOrderModelTimestampNanos -> Level3ModifyOrderModel { level3ModifyOrderModelTimestampNanos, ..} ) <$> f level3ModifyOrderModelTimestampNanos
-{-# INLINE level3ModifyOrderModelTimestampNanosL #-}
-
--- | 'level3ModifyOrderModelTimestamp' Lens
-level3ModifyOrderModelTimestampL :: Lens_' Level3ModifyOrderModel (Maybe DateTime)
-level3ModifyOrderModelTimestampL f Level3ModifyOrderModel{..} = (\level3ModifyOrderModelTimestamp -> Level3ModifyOrderModel { level3ModifyOrderModelTimestamp, ..} ) <$> f level3ModifyOrderModelTimestamp
-{-# INLINE level3ModifyOrderModelTimestampL #-}
-
--- | 'level3ModifyOrderModelOrderIdReference' Lens
-level3ModifyOrderModelOrderIdReferenceL :: Lens_' Level3ModifyOrderModel (Maybe Integer)
-level3ModifyOrderModelOrderIdReferenceL f Level3ModifyOrderModel{..} = (\level3ModifyOrderModelOrderIdReference -> Level3ModifyOrderModel { level3ModifyOrderModelOrderIdReference, ..} ) <$> f level3ModifyOrderModelOrderIdReference
-{-# INLINE level3ModifyOrderModelOrderIdReferenceL #-}
-
--- | 'level3ModifyOrderModelIsPriorityReset' Lens
-level3ModifyOrderModelIsPriorityResetL :: Lens_' Level3ModifyOrderModel (Maybe Bool)
-level3ModifyOrderModelIsPriorityResetL f Level3ModifyOrderModel{..} = (\level3ModifyOrderModelIsPriorityReset -> Level3ModifyOrderModel { level3ModifyOrderModelIsPriorityReset, ..} ) <$> f level3ModifyOrderModelIsPriorityReset
-{-# INLINE level3ModifyOrderModelIsPriorityResetL #-}
-
--- | 'level3ModifyOrderModelSize' Lens
-level3ModifyOrderModelSizeL :: Lens_' Level3ModifyOrderModel (Maybe Int)
-level3ModifyOrderModelSizeL f Level3ModifyOrderModel{..} = (\level3ModifyOrderModelSize -> Level3ModifyOrderModel { level3ModifyOrderModelSize, ..} ) <$> f level3ModifyOrderModelSize
-{-# INLINE level3ModifyOrderModelSizeL #-}
-
--- | 'level3ModifyOrderModelPrice' Lens
-level3ModifyOrderModelPriceL :: Lens_' Level3ModifyOrderModel (Maybe Double)
-level3ModifyOrderModelPriceL f Level3ModifyOrderModel{..} = (\level3ModifyOrderModelPrice -> Level3ModifyOrderModel { level3ModifyOrderModelPrice, ..} ) <$> f level3ModifyOrderModelPrice
-{-# INLINE level3ModifyOrderModelPriceL #-}
-
-
-
--- * Level3OrderBookModel
-
--- | 'level3OrderBookModelAddOrder' Lens
-level3OrderBookModelAddOrderL :: Lens_' Level3OrderBookModel (Maybe Level3AddOrderModel)
-level3OrderBookModelAddOrderL f Level3OrderBookModel{..} = (\level3OrderBookModelAddOrder -> Level3OrderBookModel { level3OrderBookModelAddOrder, ..} ) <$> f level3OrderBookModelAddOrder
-{-# INLINE level3OrderBookModelAddOrderL #-}
-
--- | 'level3OrderBookModelDeleteOrder' Lens
-level3OrderBookModelDeleteOrderL :: Lens_' Level3OrderBookModel (Maybe Level3DeleteOrderModel)
-level3OrderBookModelDeleteOrderL f Level3OrderBookModel{..} = (\level3OrderBookModelDeleteOrder -> Level3OrderBookModel { level3OrderBookModelDeleteOrder, ..} ) <$> f level3OrderBookModelDeleteOrder
-{-# INLINE level3OrderBookModelDeleteOrderL #-}
-
--- | 'level3OrderBookModelModifyOrder' Lens
-level3OrderBookModelModifyOrderL :: Lens_' Level3OrderBookModel (Maybe Level3ModifyOrderModel)
-level3OrderBookModelModifyOrderL f Level3OrderBookModel{..} = (\level3OrderBookModelModifyOrder -> Level3OrderBookModel { level3OrderBookModelModifyOrder, ..} ) <$> f level3OrderBookModelModifyOrder
-{-# INLINE level3OrderBookModelModifyOrderL #-}
-
--- | 'level3OrderBookModelExecutedOrder' Lens
-level3OrderBookModelExecutedOrderL :: Lens_' Level3OrderBookModel (Maybe Level3ExecutedOrderModel)
-level3OrderBookModelExecutedOrderL f Level3OrderBookModel{..} = (\level3OrderBookModelExecutedOrder -> Level3OrderBookModel { level3OrderBookModelExecutedOrder, ..} ) <$> f level3OrderBookModelExecutedOrder
-{-# INLINE level3OrderBookModelExecutedOrderL #-}
-
--- | 'level3OrderBookModelClearBook' Lens
-level3OrderBookModelClearBookL :: Lens_' Level3OrderBookModel (Maybe Level3ClearBookModel)
-level3OrderBookModelClearBookL f Level3OrderBookModel{..} = (\level3OrderBookModelClearBook -> Level3OrderBookModel { level3OrderBookModelClearBook, ..} ) <$> f level3OrderBookModelClearBook
-{-# INLINE level3OrderBookModelClearBookL #-}
-
-
-
--- * OHLCVExchangeTimeseriesItem
-
--- | 'oHLCVExchangeTimeseriesItemTimePeriodStart' Lens
-oHLCVExchangeTimeseriesItemTimePeriodStartL :: Lens_' OHLCVExchangeTimeseriesItem (Maybe DateTime)
-oHLCVExchangeTimeseriesItemTimePeriodStartL f OHLCVExchangeTimeseriesItem{..} = (\oHLCVExchangeTimeseriesItemTimePeriodStart -> OHLCVExchangeTimeseriesItem { oHLCVExchangeTimeseriesItemTimePeriodStart, ..} ) <$> f oHLCVExchangeTimeseriesItemTimePeriodStart
-{-# INLINE oHLCVExchangeTimeseriesItemTimePeriodStartL #-}
-
--- | 'oHLCVExchangeTimeseriesItemTimePeriodEnd' Lens
-oHLCVExchangeTimeseriesItemTimePeriodEndL :: Lens_' OHLCVExchangeTimeseriesItem (Maybe DateTime)
-oHLCVExchangeTimeseriesItemTimePeriodEndL f OHLCVExchangeTimeseriesItem{..} = (\oHLCVExchangeTimeseriesItemTimePeriodEnd -> OHLCVExchangeTimeseriesItem { oHLCVExchangeTimeseriesItemTimePeriodEnd, ..} ) <$> f oHLCVExchangeTimeseriesItemTimePeriodEnd
-{-# INLINE oHLCVExchangeTimeseriesItemTimePeriodEndL #-}
-
--- | 'oHLCVExchangeTimeseriesItemTimeOpen' Lens
-oHLCVExchangeTimeseriesItemTimeOpenL :: Lens_' OHLCVExchangeTimeseriesItem (Maybe DateTime)
-oHLCVExchangeTimeseriesItemTimeOpenL f OHLCVExchangeTimeseriesItem{..} = (\oHLCVExchangeTimeseriesItemTimeOpen -> OHLCVExchangeTimeseriesItem { oHLCVExchangeTimeseriesItemTimeOpen, ..} ) <$> f oHLCVExchangeTimeseriesItemTimeOpen
-{-# INLINE oHLCVExchangeTimeseriesItemTimeOpenL #-}
-
--- | 'oHLCVExchangeTimeseriesItemTimeClose' Lens
-oHLCVExchangeTimeseriesItemTimeCloseL :: Lens_' OHLCVExchangeTimeseriesItem (Maybe DateTime)
-oHLCVExchangeTimeseriesItemTimeCloseL f OHLCVExchangeTimeseriesItem{..} = (\oHLCVExchangeTimeseriesItemTimeClose -> OHLCVExchangeTimeseriesItem { oHLCVExchangeTimeseriesItemTimeClose, ..} ) <$> f oHLCVExchangeTimeseriesItemTimeClose
-{-# INLINE oHLCVExchangeTimeseriesItemTimeCloseL #-}
-
--- | 'oHLCVExchangeTimeseriesItemPriceOpen' Lens
-oHLCVExchangeTimeseriesItemPriceOpenL :: Lens_' OHLCVExchangeTimeseriesItem (Maybe Double)
-oHLCVExchangeTimeseriesItemPriceOpenL f OHLCVExchangeTimeseriesItem{..} = (\oHLCVExchangeTimeseriesItemPriceOpen -> OHLCVExchangeTimeseriesItem { oHLCVExchangeTimeseriesItemPriceOpen, ..} ) <$> f oHLCVExchangeTimeseriesItemPriceOpen
-{-# INLINE oHLCVExchangeTimeseriesItemPriceOpenL #-}
-
--- | 'oHLCVExchangeTimeseriesItemPriceHigh' Lens
-oHLCVExchangeTimeseriesItemPriceHighL :: Lens_' OHLCVExchangeTimeseriesItem (Maybe Double)
-oHLCVExchangeTimeseriesItemPriceHighL f OHLCVExchangeTimeseriesItem{..} = (\oHLCVExchangeTimeseriesItemPriceHigh -> OHLCVExchangeTimeseriesItem { oHLCVExchangeTimeseriesItemPriceHigh, ..} ) <$> f oHLCVExchangeTimeseriesItemPriceHigh
-{-# INLINE oHLCVExchangeTimeseriesItemPriceHighL #-}
-
--- | 'oHLCVExchangeTimeseriesItemPriceLow' Lens
-oHLCVExchangeTimeseriesItemPriceLowL :: Lens_' OHLCVExchangeTimeseriesItem (Maybe Double)
-oHLCVExchangeTimeseriesItemPriceLowL f OHLCVExchangeTimeseriesItem{..} = (\oHLCVExchangeTimeseriesItemPriceLow -> OHLCVExchangeTimeseriesItem { oHLCVExchangeTimeseriesItemPriceLow, ..} ) <$> f oHLCVExchangeTimeseriesItemPriceLow
-{-# INLINE oHLCVExchangeTimeseriesItemPriceLowL #-}
-
--- | 'oHLCVExchangeTimeseriesItemPriceClose' Lens
-oHLCVExchangeTimeseriesItemPriceCloseL :: Lens_' OHLCVExchangeTimeseriesItem (Maybe Double)
-oHLCVExchangeTimeseriesItemPriceCloseL f OHLCVExchangeTimeseriesItem{..} = (\oHLCVExchangeTimeseriesItemPriceClose -> OHLCVExchangeTimeseriesItem { oHLCVExchangeTimeseriesItemPriceClose, ..} ) <$> f oHLCVExchangeTimeseriesItemPriceClose
-{-# INLINE oHLCVExchangeTimeseriesItemPriceCloseL #-}
-
--- | 'oHLCVExchangeTimeseriesItemVolumeTraded' Lens
-oHLCVExchangeTimeseriesItemVolumeTradedL :: Lens_' OHLCVExchangeTimeseriesItem (Maybe Double)
-oHLCVExchangeTimeseriesItemVolumeTradedL f OHLCVExchangeTimeseriesItem{..} = (\oHLCVExchangeTimeseriesItemVolumeTraded -> OHLCVExchangeTimeseriesItem { oHLCVExchangeTimeseriesItemVolumeTraded, ..} ) <$> f oHLCVExchangeTimeseriesItemVolumeTraded
-{-# INLINE oHLCVExchangeTimeseriesItemVolumeTradedL #-}
-
--- | 'oHLCVExchangeTimeseriesItemTradesCount' Lens
-oHLCVExchangeTimeseriesItemTradesCountL :: Lens_' OHLCVExchangeTimeseriesItem (Maybe Integer)
-oHLCVExchangeTimeseriesItemTradesCountL f OHLCVExchangeTimeseriesItem{..} = (\oHLCVExchangeTimeseriesItemTradesCount -> OHLCVExchangeTimeseriesItem { oHLCVExchangeTimeseriesItemTradesCount, ..} ) <$> f oHLCVExchangeTimeseriesItemTradesCount
-{-# INLINE oHLCVExchangeTimeseriesItemTradesCountL #-}
-
--- | 'oHLCVExchangeTimeseriesItemSymbolIdExchange' Lens
-oHLCVExchangeTimeseriesItemSymbolIdExchangeL :: Lens_' OHLCVExchangeTimeseriesItem (Maybe Text)
-oHLCVExchangeTimeseriesItemSymbolIdExchangeL f OHLCVExchangeTimeseriesItem{..} = (\oHLCVExchangeTimeseriesItemSymbolIdExchange -> OHLCVExchangeTimeseriesItem { oHLCVExchangeTimeseriesItemSymbolIdExchange, ..} ) <$> f oHLCVExchangeTimeseriesItemSymbolIdExchange
-{-# INLINE oHLCVExchangeTimeseriesItemSymbolIdExchangeL #-}
-
-
-
--- * OHLCVTimeseriesItem
-
--- | 'oHLCVTimeseriesItemTimePeriodStart' Lens
-oHLCVTimeseriesItemTimePeriodStartL :: Lens_' OHLCVTimeseriesItem (Maybe DateTime)
-oHLCVTimeseriesItemTimePeriodStartL f OHLCVTimeseriesItem{..} = (\oHLCVTimeseriesItemTimePeriodStart -> OHLCVTimeseriesItem { oHLCVTimeseriesItemTimePeriodStart, ..} ) <$> f oHLCVTimeseriesItemTimePeriodStart
-{-# INLINE oHLCVTimeseriesItemTimePeriodStartL #-}
-
--- | 'oHLCVTimeseriesItemTimePeriodEnd' Lens
-oHLCVTimeseriesItemTimePeriodEndL :: Lens_' OHLCVTimeseriesItem (Maybe DateTime)
-oHLCVTimeseriesItemTimePeriodEndL f OHLCVTimeseriesItem{..} = (\oHLCVTimeseriesItemTimePeriodEnd -> OHLCVTimeseriesItem { oHLCVTimeseriesItemTimePeriodEnd, ..} ) <$> f oHLCVTimeseriesItemTimePeriodEnd
-{-# INLINE oHLCVTimeseriesItemTimePeriodEndL #-}
-
--- | 'oHLCVTimeseriesItemTimeOpen' Lens
-oHLCVTimeseriesItemTimeOpenL :: Lens_' OHLCVTimeseriesItem (Maybe DateTime)
-oHLCVTimeseriesItemTimeOpenL f OHLCVTimeseriesItem{..} = (\oHLCVTimeseriesItemTimeOpen -> OHLCVTimeseriesItem { oHLCVTimeseriesItemTimeOpen, ..} ) <$> f oHLCVTimeseriesItemTimeOpen
-{-# INLINE oHLCVTimeseriesItemTimeOpenL #-}
-
--- | 'oHLCVTimeseriesItemTimeClose' Lens
-oHLCVTimeseriesItemTimeCloseL :: Lens_' OHLCVTimeseriesItem (Maybe DateTime)
-oHLCVTimeseriesItemTimeCloseL f OHLCVTimeseriesItem{..} = (\oHLCVTimeseriesItemTimeClose -> OHLCVTimeseriesItem { oHLCVTimeseriesItemTimeClose, ..} ) <$> f oHLCVTimeseriesItemTimeClose
-{-# INLINE oHLCVTimeseriesItemTimeCloseL #-}
-
--- | 'oHLCVTimeseriesItemPriceOpen' Lens
-oHLCVTimeseriesItemPriceOpenL :: Lens_' OHLCVTimeseriesItem (Maybe Double)
-oHLCVTimeseriesItemPriceOpenL f OHLCVTimeseriesItem{..} = (\oHLCVTimeseriesItemPriceOpen -> OHLCVTimeseriesItem { oHLCVTimeseriesItemPriceOpen, ..} ) <$> f oHLCVTimeseriesItemPriceOpen
-{-# INLINE oHLCVTimeseriesItemPriceOpenL #-}
-
--- | 'oHLCVTimeseriesItemPriceHigh' Lens
-oHLCVTimeseriesItemPriceHighL :: Lens_' OHLCVTimeseriesItem (Maybe Double)
-oHLCVTimeseriesItemPriceHighL f OHLCVTimeseriesItem{..} = (\oHLCVTimeseriesItemPriceHigh -> OHLCVTimeseriesItem { oHLCVTimeseriesItemPriceHigh, ..} ) <$> f oHLCVTimeseriesItemPriceHigh
-{-# INLINE oHLCVTimeseriesItemPriceHighL #-}
-
--- | 'oHLCVTimeseriesItemPriceLow' Lens
-oHLCVTimeseriesItemPriceLowL :: Lens_' OHLCVTimeseriesItem (Maybe Double)
-oHLCVTimeseriesItemPriceLowL f OHLCVTimeseriesItem{..} = (\oHLCVTimeseriesItemPriceLow -> OHLCVTimeseriesItem { oHLCVTimeseriesItemPriceLow, ..} ) <$> f oHLCVTimeseriesItemPriceLow
-{-# INLINE oHLCVTimeseriesItemPriceLowL #-}
-
--- | 'oHLCVTimeseriesItemPriceClose' Lens
-oHLCVTimeseriesItemPriceCloseL :: Lens_' OHLCVTimeseriesItem (Maybe Double)
-oHLCVTimeseriesItemPriceCloseL f OHLCVTimeseriesItem{..} = (\oHLCVTimeseriesItemPriceClose -> OHLCVTimeseriesItem { oHLCVTimeseriesItemPriceClose, ..} ) <$> f oHLCVTimeseriesItemPriceClose
-{-# INLINE oHLCVTimeseriesItemPriceCloseL #-}
-
--- | 'oHLCVTimeseriesItemVolumeTraded' Lens
-oHLCVTimeseriesItemVolumeTradedL :: Lens_' OHLCVTimeseriesItem (Maybe Double)
-oHLCVTimeseriesItemVolumeTradedL f OHLCVTimeseriesItem{..} = (\oHLCVTimeseriesItemVolumeTraded -> OHLCVTimeseriesItem { oHLCVTimeseriesItemVolumeTraded, ..} ) <$> f oHLCVTimeseriesItemVolumeTraded
-{-# INLINE oHLCVTimeseriesItemVolumeTradedL #-}
-
--- | 'oHLCVTimeseriesItemTradesCount' Lens
-oHLCVTimeseriesItemTradesCountL :: Lens_' OHLCVTimeseriesItem (Maybe Integer)
-oHLCVTimeseriesItemTradesCountL f OHLCVTimeseriesItem{..} = (\oHLCVTimeseriesItemTradesCount -> OHLCVTimeseriesItem { oHLCVTimeseriesItemTradesCount, ..} ) <$> f oHLCVTimeseriesItemTradesCount
-{-# INLINE oHLCVTimeseriesItemTradesCountL #-}
-
-
-
--- * OHLCVTimeseriesPeriod
-
--- | 'oHLCVTimeseriesPeriodPeriodId' Lens
-oHLCVTimeseriesPeriodPeriodIdL :: Lens_' OHLCVTimeseriesPeriod (Maybe Text)
-oHLCVTimeseriesPeriodPeriodIdL f OHLCVTimeseriesPeriod{..} = (\oHLCVTimeseriesPeriodPeriodId -> OHLCVTimeseriesPeriod { oHLCVTimeseriesPeriodPeriodId, ..} ) <$> f oHLCVTimeseriesPeriodPeriodId
-{-# INLINE oHLCVTimeseriesPeriodPeriodIdL #-}
-
--- | 'oHLCVTimeseriesPeriodLengthSeconds' Lens
-oHLCVTimeseriesPeriodLengthSecondsL :: Lens_' OHLCVTimeseriesPeriod (Maybe Int)
-oHLCVTimeseriesPeriodLengthSecondsL f OHLCVTimeseriesPeriod{..} = (\oHLCVTimeseriesPeriodLengthSeconds -> OHLCVTimeseriesPeriod { oHLCVTimeseriesPeriodLengthSeconds, ..} ) <$> f oHLCVTimeseriesPeriodLengthSeconds
-{-# INLINE oHLCVTimeseriesPeriodLengthSecondsL #-}
-
--- | 'oHLCVTimeseriesPeriodLengthMonths' Lens
-oHLCVTimeseriesPeriodLengthMonthsL :: Lens_' OHLCVTimeseriesPeriod (Maybe Int)
-oHLCVTimeseriesPeriodLengthMonthsL f OHLCVTimeseriesPeriod{..} = (\oHLCVTimeseriesPeriodLengthMonths -> OHLCVTimeseriesPeriod { oHLCVTimeseriesPeriodLengthMonths, ..} ) <$> f oHLCVTimeseriesPeriodLengthMonths
-{-# INLINE oHLCVTimeseriesPeriodLengthMonthsL #-}
-
--- | 'oHLCVTimeseriesPeriodUnitCount' Lens
-oHLCVTimeseriesPeriodUnitCountL :: Lens_' OHLCVTimeseriesPeriod (Maybe Int)
-oHLCVTimeseriesPeriodUnitCountL f OHLCVTimeseriesPeriod{..} = (\oHLCVTimeseriesPeriodUnitCount -> OHLCVTimeseriesPeriod { oHLCVTimeseriesPeriodUnitCount, ..} ) <$> f oHLCVTimeseriesPeriodUnitCount
-{-# INLINE oHLCVTimeseriesPeriodUnitCountL #-}
-
--- | 'oHLCVTimeseriesPeriodUnitName' Lens
-oHLCVTimeseriesPeriodUnitNameL :: Lens_' OHLCVTimeseriesPeriod (Maybe Text)
-oHLCVTimeseriesPeriodUnitNameL f OHLCVTimeseriesPeriod{..} = (\oHLCVTimeseriesPeriodUnitName -> OHLCVTimeseriesPeriod { oHLCVTimeseriesPeriodUnitName, ..} ) <$> f oHLCVTimeseriesPeriodUnitName
-{-# INLINE oHLCVTimeseriesPeriodUnitNameL #-}
-
--- | 'oHLCVTimeseriesPeriodDisplayName' Lens
-oHLCVTimeseriesPeriodDisplayNameL :: Lens_' OHLCVTimeseriesPeriod (Maybe Text)
-oHLCVTimeseriesPeriodDisplayNameL f OHLCVTimeseriesPeriod{..} = (\oHLCVTimeseriesPeriodDisplayName -> OHLCVTimeseriesPeriod { oHLCVTimeseriesPeriodDisplayName, ..} ) <$> f oHLCVTimeseriesPeriodDisplayName
-{-# INLINE oHLCVTimeseriesPeriodDisplayNameL #-}
-
-
-
--- * TradeTradeModel
-
--- | 'tradeTradeModelIsTradeBreak' Lens
-tradeTradeModelIsTradeBreakL :: Lens_' TradeTradeModel (Maybe Bool)
-tradeTradeModelIsTradeBreakL f TradeTradeModel{..} = (\tradeTradeModelIsTradeBreak -> TradeTradeModel { tradeTradeModelIsTradeBreak, ..} ) <$> f tradeTradeModelIsTradeBreak
-{-# INLINE tradeTradeModelIsTradeBreakL #-}
-
--- | 'tradeTradeModelSymbol' Lens
-tradeTradeModelSymbolL :: Lens_' TradeTradeModel (Maybe Text)
-tradeTradeModelSymbolL f TradeTradeModel{..} = (\tradeTradeModelSymbol -> TradeTradeModel { tradeTradeModelSymbol, ..} ) <$> f tradeTradeModelSymbol
-{-# INLINE tradeTradeModelSymbolL #-}
-
--- | 'tradeTradeModelTimestampNanos' Lens
-tradeTradeModelTimestampNanosL :: Lens_' TradeTradeModel (Maybe Integer)
-tradeTradeModelTimestampNanosL f TradeTradeModel{..} = (\tradeTradeModelTimestampNanos -> TradeTradeModel { tradeTradeModelTimestampNanos, ..} ) <$> f tradeTradeModelTimestampNanos
-{-# INLINE tradeTradeModelTimestampNanosL #-}
-
--- | 'tradeTradeModelTimestamp' Lens
-tradeTradeModelTimestampL :: Lens_' TradeTradeModel (Maybe DateTime)
-tradeTradeModelTimestampL f TradeTradeModel{..} = (\tradeTradeModelTimestamp -> TradeTradeModel { tradeTradeModelTimestamp, ..} ) <$> f tradeTradeModelTimestamp
-{-# INLINE tradeTradeModelTimestampL #-}
-
--- | 'tradeTradeModelSize' Lens
-tradeTradeModelSizeL :: Lens_' TradeTradeModel (Maybe Int)
-tradeTradeModelSizeL f TradeTradeModel{..} = (\tradeTradeModelSize -> TradeTradeModel { tradeTradeModelSize, ..} ) <$> f tradeTradeModelSize
-{-# INLINE tradeTradeModelSizeL #-}
-
--- | 'tradeTradeModelPrice' Lens
-tradeTradeModelPriceL :: Lens_' TradeTradeModel (Maybe Double)
-tradeTradeModelPriceL f TradeTradeModel{..} = (\tradeTradeModelPrice -> TradeTradeModel { tradeTradeModelPrice, ..} ) <$> f tradeTradeModelPrice
-{-# INLINE tradeTradeModelPriceL #-}
-
--- | 'tradeTradeModelTradeId' Lens
-tradeTradeModelTradeIdL :: Lens_' TradeTradeModel (Maybe Integer)
-tradeTradeModelTradeIdL f TradeTradeModel{..} = (\tradeTradeModelTradeId -> TradeTradeModel { tradeTradeModelTradeId, ..} ) <$> f tradeTradeModelTradeId
-{-# INLINE tradeTradeModelTradeIdL #-}
-
--- | 'tradeTradeModelIsIntermarketSweep' Lens
-tradeTradeModelIsIntermarketSweepL :: Lens_' TradeTradeModel (Maybe Bool)
-tradeTradeModelIsIntermarketSweepL f TradeTradeModel{..} = (\tradeTradeModelIsIntermarketSweep -> TradeTradeModel { tradeTradeModelIsIntermarketSweep, ..} ) <$> f tradeTradeModelIsIntermarketSweep
-{-# INLINE tradeTradeModelIsIntermarketSweepL #-}
-
--- | 'tradeTradeModelIsExtendedHoursTrade' Lens
-tradeTradeModelIsExtendedHoursTradeL :: Lens_' TradeTradeModel (Maybe Bool)
-tradeTradeModelIsExtendedHoursTradeL f TradeTradeModel{..} = (\tradeTradeModelIsExtendedHoursTrade -> TradeTradeModel { tradeTradeModelIsExtendedHoursTrade, ..} ) <$> f tradeTradeModelIsExtendedHoursTrade
-{-# INLINE tradeTradeModelIsExtendedHoursTradeL #-}
-
--- | 'tradeTradeModelIsOddLotTrade' Lens
-tradeTradeModelIsOddLotTradeL :: Lens_' TradeTradeModel (Maybe Bool)
-tradeTradeModelIsOddLotTradeL f TradeTradeModel{..} = (\tradeTradeModelIsOddLotTrade -> TradeTradeModel { tradeTradeModelIsOddLotTrade, ..} ) <$> f tradeTradeModelIsOddLotTrade
-{-# INLINE tradeTradeModelIsOddLotTradeL #-}
-
--- | 'tradeTradeModelIsTradeThroughExempt' Lens
-tradeTradeModelIsTradeThroughExemptL :: Lens_' TradeTradeModel (Maybe Bool)
-tradeTradeModelIsTradeThroughExemptL f TradeTradeModel{..} = (\tradeTradeModelIsTradeThroughExempt -> TradeTradeModel { tradeTradeModelIsTradeThroughExempt, ..} ) <$> f tradeTradeModelIsTradeThroughExempt
-{-# INLINE tradeTradeModelIsTradeThroughExemptL #-}
-
--- | 'tradeTradeModelIsSinglePriceCrossTrade' Lens
-tradeTradeModelIsSinglePriceCrossTradeL :: Lens_' TradeTradeModel (Maybe Bool)
-tradeTradeModelIsSinglePriceCrossTradeL f TradeTradeModel{..} = (\tradeTradeModelIsSinglePriceCrossTrade -> TradeTradeModel { tradeTradeModelIsSinglePriceCrossTrade, ..} ) <$> f tradeTradeModelIsSinglePriceCrossTrade
-{-# INLINE tradeTradeModelIsSinglePriceCrossTradeL #-}
+-- * IEXPriceLevelUpdatePriceLevelUpdateModel
+
+-- | 'iEXPriceLevelUpdatePriceLevelUpdateModelSymbol' Lens
+iEXPriceLevelUpdatePriceLevelUpdateModelSymbolL :: Lens_' IEXPriceLevelUpdatePriceLevelUpdateModel (Maybe Text)
+iEXPriceLevelUpdatePriceLevelUpdateModelSymbolL f IEXPriceLevelUpdatePriceLevelUpdateModel{..} = (\iEXPriceLevelUpdatePriceLevelUpdateModelSymbol -> IEXPriceLevelUpdatePriceLevelUpdateModel { iEXPriceLevelUpdatePriceLevelUpdateModelSymbol, ..} ) <$> f iEXPriceLevelUpdatePriceLevelUpdateModelSymbol
+{-# INLINE iEXPriceLevelUpdatePriceLevelUpdateModelSymbolL #-}
+
+-- | 'iEXPriceLevelUpdatePriceLevelUpdateModelTimestampNanos' Lens
+iEXPriceLevelUpdatePriceLevelUpdateModelTimestampNanosL :: Lens_' IEXPriceLevelUpdatePriceLevelUpdateModel (Maybe Integer)
+iEXPriceLevelUpdatePriceLevelUpdateModelTimestampNanosL f IEXPriceLevelUpdatePriceLevelUpdateModel{..} = (\iEXPriceLevelUpdatePriceLevelUpdateModelTimestampNanos -> IEXPriceLevelUpdatePriceLevelUpdateModel { iEXPriceLevelUpdatePriceLevelUpdateModelTimestampNanos, ..} ) <$> f iEXPriceLevelUpdatePriceLevelUpdateModelTimestampNanos
+{-# INLINE iEXPriceLevelUpdatePriceLevelUpdateModelTimestampNanosL #-}
+
+-- | 'iEXPriceLevelUpdatePriceLevelUpdateModelTimestamp' Lens
+iEXPriceLevelUpdatePriceLevelUpdateModelTimestampL :: Lens_' IEXPriceLevelUpdatePriceLevelUpdateModel (Maybe DateTime)
+iEXPriceLevelUpdatePriceLevelUpdateModelTimestampL f IEXPriceLevelUpdatePriceLevelUpdateModel{..} = (\iEXPriceLevelUpdatePriceLevelUpdateModelTimestamp -> IEXPriceLevelUpdatePriceLevelUpdateModel { iEXPriceLevelUpdatePriceLevelUpdateModelTimestamp, ..} ) <$> f iEXPriceLevelUpdatePriceLevelUpdateModelTimestamp
+{-# INLINE iEXPriceLevelUpdatePriceLevelUpdateModelTimestampL #-}
+
+-- | 'iEXPriceLevelUpdatePriceLevelUpdateModelIsSideBuy' Lens
+iEXPriceLevelUpdatePriceLevelUpdateModelIsSideBuyL :: Lens_' IEXPriceLevelUpdatePriceLevelUpdateModel (Maybe Bool)
+iEXPriceLevelUpdatePriceLevelUpdateModelIsSideBuyL f IEXPriceLevelUpdatePriceLevelUpdateModel{..} = (\iEXPriceLevelUpdatePriceLevelUpdateModelIsSideBuy -> IEXPriceLevelUpdatePriceLevelUpdateModel { iEXPriceLevelUpdatePriceLevelUpdateModelIsSideBuy, ..} ) <$> f iEXPriceLevelUpdatePriceLevelUpdateModelIsSideBuy
+{-# INLINE iEXPriceLevelUpdatePriceLevelUpdateModelIsSideBuyL #-}
+
+-- | 'iEXPriceLevelUpdatePriceLevelUpdateModelIsEventProcessingComplete' Lens
+iEXPriceLevelUpdatePriceLevelUpdateModelIsEventProcessingCompleteL :: Lens_' IEXPriceLevelUpdatePriceLevelUpdateModel (Maybe Bool)
+iEXPriceLevelUpdatePriceLevelUpdateModelIsEventProcessingCompleteL f IEXPriceLevelUpdatePriceLevelUpdateModel{..} = (\iEXPriceLevelUpdatePriceLevelUpdateModelIsEventProcessingComplete -> IEXPriceLevelUpdatePriceLevelUpdateModel { iEXPriceLevelUpdatePriceLevelUpdateModelIsEventProcessingComplete, ..} ) <$> f iEXPriceLevelUpdatePriceLevelUpdateModelIsEventProcessingComplete
+{-# INLINE iEXPriceLevelUpdatePriceLevelUpdateModelIsEventProcessingCompleteL #-}
+
+-- | 'iEXPriceLevelUpdatePriceLevelUpdateModelSize' Lens
+iEXPriceLevelUpdatePriceLevelUpdateModelSizeL :: Lens_' IEXPriceLevelUpdatePriceLevelUpdateModel (Maybe Int)
+iEXPriceLevelUpdatePriceLevelUpdateModelSizeL f IEXPriceLevelUpdatePriceLevelUpdateModel{..} = (\iEXPriceLevelUpdatePriceLevelUpdateModelSize -> IEXPriceLevelUpdatePriceLevelUpdateModel { iEXPriceLevelUpdatePriceLevelUpdateModelSize, ..} ) <$> f iEXPriceLevelUpdatePriceLevelUpdateModelSize
+{-# INLINE iEXPriceLevelUpdatePriceLevelUpdateModelSizeL #-}
+
+-- | 'iEXPriceLevelUpdatePriceLevelUpdateModelPrice' Lens
+iEXPriceLevelUpdatePriceLevelUpdateModelPriceL :: Lens_' IEXPriceLevelUpdatePriceLevelUpdateModel (Maybe Double)
+iEXPriceLevelUpdatePriceLevelUpdateModelPriceL f IEXPriceLevelUpdatePriceLevelUpdateModel{..} = (\iEXPriceLevelUpdatePriceLevelUpdateModelPrice -> IEXPriceLevelUpdatePriceLevelUpdateModel { iEXPriceLevelUpdatePriceLevelUpdateModelPrice, ..} ) <$> f iEXPriceLevelUpdatePriceLevelUpdateModelPrice
+{-# INLINE iEXPriceLevelUpdatePriceLevelUpdateModelPriceL #-}
+
+
+
+-- * IEXQuoteUpdateQuoteUpdateModel
+
+-- | 'iEXQuoteUpdateQuoteUpdateModelSymbol' Lens
+iEXQuoteUpdateQuoteUpdateModelSymbolL :: Lens_' IEXQuoteUpdateQuoteUpdateModel (Maybe Text)
+iEXQuoteUpdateQuoteUpdateModelSymbolL f IEXQuoteUpdateQuoteUpdateModel{..} = (\iEXQuoteUpdateQuoteUpdateModelSymbol -> IEXQuoteUpdateQuoteUpdateModel { iEXQuoteUpdateQuoteUpdateModelSymbol, ..} ) <$> f iEXQuoteUpdateQuoteUpdateModelSymbol
+{-# INLINE iEXQuoteUpdateQuoteUpdateModelSymbolL #-}
+
+-- | 'iEXQuoteUpdateQuoteUpdateModelTimestampNanos' Lens
+iEXQuoteUpdateQuoteUpdateModelTimestampNanosL :: Lens_' IEXQuoteUpdateQuoteUpdateModel (Maybe Integer)
+iEXQuoteUpdateQuoteUpdateModelTimestampNanosL f IEXQuoteUpdateQuoteUpdateModel{..} = (\iEXQuoteUpdateQuoteUpdateModelTimestampNanos -> IEXQuoteUpdateQuoteUpdateModel { iEXQuoteUpdateQuoteUpdateModelTimestampNanos, ..} ) <$> f iEXQuoteUpdateQuoteUpdateModelTimestampNanos
+{-# INLINE iEXQuoteUpdateQuoteUpdateModelTimestampNanosL #-}
+
+-- | 'iEXQuoteUpdateQuoteUpdateModelTimestamp' Lens
+iEXQuoteUpdateQuoteUpdateModelTimestampL :: Lens_' IEXQuoteUpdateQuoteUpdateModel (Maybe DateTime)
+iEXQuoteUpdateQuoteUpdateModelTimestampL f IEXQuoteUpdateQuoteUpdateModel{..} = (\iEXQuoteUpdateQuoteUpdateModelTimestamp -> IEXQuoteUpdateQuoteUpdateModel { iEXQuoteUpdateQuoteUpdateModelTimestamp, ..} ) <$> f iEXQuoteUpdateQuoteUpdateModelTimestamp
+{-# INLINE iEXQuoteUpdateQuoteUpdateModelTimestampL #-}
+
+-- | 'iEXQuoteUpdateQuoteUpdateModelIsSymbolAvailable' Lens
+iEXQuoteUpdateQuoteUpdateModelIsSymbolAvailableL :: Lens_' IEXQuoteUpdateQuoteUpdateModel (Maybe Bool)
+iEXQuoteUpdateQuoteUpdateModelIsSymbolAvailableL f IEXQuoteUpdateQuoteUpdateModel{..} = (\iEXQuoteUpdateQuoteUpdateModelIsSymbolAvailable -> IEXQuoteUpdateQuoteUpdateModel { iEXQuoteUpdateQuoteUpdateModelIsSymbolAvailable, ..} ) <$> f iEXQuoteUpdateQuoteUpdateModelIsSymbolAvailable
+{-# INLINE iEXQuoteUpdateQuoteUpdateModelIsSymbolAvailableL #-}
+
+-- | 'iEXQuoteUpdateQuoteUpdateModelIsPrePostMarketSession' Lens
+iEXQuoteUpdateQuoteUpdateModelIsPrePostMarketSessionL :: Lens_' IEXQuoteUpdateQuoteUpdateModel (Maybe Bool)
+iEXQuoteUpdateQuoteUpdateModelIsPrePostMarketSessionL f IEXQuoteUpdateQuoteUpdateModel{..} = (\iEXQuoteUpdateQuoteUpdateModelIsPrePostMarketSession -> IEXQuoteUpdateQuoteUpdateModel { iEXQuoteUpdateQuoteUpdateModelIsPrePostMarketSession, ..} ) <$> f iEXQuoteUpdateQuoteUpdateModelIsPrePostMarketSession
+{-# INLINE iEXQuoteUpdateQuoteUpdateModelIsPrePostMarketSessionL #-}
+
+-- | 'iEXQuoteUpdateQuoteUpdateModelAskSize' Lens
+iEXQuoteUpdateQuoteUpdateModelAskSizeL :: Lens_' IEXQuoteUpdateQuoteUpdateModel (Maybe Int)
+iEXQuoteUpdateQuoteUpdateModelAskSizeL f IEXQuoteUpdateQuoteUpdateModel{..} = (\iEXQuoteUpdateQuoteUpdateModelAskSize -> IEXQuoteUpdateQuoteUpdateModel { iEXQuoteUpdateQuoteUpdateModelAskSize, ..} ) <$> f iEXQuoteUpdateQuoteUpdateModelAskSize
+{-# INLINE iEXQuoteUpdateQuoteUpdateModelAskSizeL #-}
+
+-- | 'iEXQuoteUpdateQuoteUpdateModelAskPrice' Lens
+iEXQuoteUpdateQuoteUpdateModelAskPriceL :: Lens_' IEXQuoteUpdateQuoteUpdateModel (Maybe Double)
+iEXQuoteUpdateQuoteUpdateModelAskPriceL f IEXQuoteUpdateQuoteUpdateModel{..} = (\iEXQuoteUpdateQuoteUpdateModelAskPrice -> IEXQuoteUpdateQuoteUpdateModel { iEXQuoteUpdateQuoteUpdateModelAskPrice, ..} ) <$> f iEXQuoteUpdateQuoteUpdateModelAskPrice
+{-# INLINE iEXQuoteUpdateQuoteUpdateModelAskPriceL #-}
+
+-- | 'iEXQuoteUpdateQuoteUpdateModelBidPrice' Lens
+iEXQuoteUpdateQuoteUpdateModelBidPriceL :: Lens_' IEXQuoteUpdateQuoteUpdateModel (Maybe Double)
+iEXQuoteUpdateQuoteUpdateModelBidPriceL f IEXQuoteUpdateQuoteUpdateModel{..} = (\iEXQuoteUpdateQuoteUpdateModelBidPrice -> IEXQuoteUpdateQuoteUpdateModel { iEXQuoteUpdateQuoteUpdateModelBidPrice, ..} ) <$> f iEXQuoteUpdateQuoteUpdateModelBidPrice
+{-# INLINE iEXQuoteUpdateQuoteUpdateModelBidPriceL #-}
+
+-- | 'iEXQuoteUpdateQuoteUpdateModelBidSize' Lens
+iEXQuoteUpdateQuoteUpdateModelBidSizeL :: Lens_' IEXQuoteUpdateQuoteUpdateModel (Maybe Int)
+iEXQuoteUpdateQuoteUpdateModelBidSizeL f IEXQuoteUpdateQuoteUpdateModel{..} = (\iEXQuoteUpdateQuoteUpdateModelBidSize -> IEXQuoteUpdateQuoteUpdateModel { iEXQuoteUpdateQuoteUpdateModelBidSize, ..} ) <$> f iEXQuoteUpdateQuoteUpdateModelBidSize
+{-# INLINE iEXQuoteUpdateQuoteUpdateModelBidSizeL #-}
+
+
+
+-- * IEXSystemEventSystemEventModel
+
+-- | 'iEXSystemEventSystemEventModelTimestampNanos' Lens
+iEXSystemEventSystemEventModelTimestampNanosL :: Lens_' IEXSystemEventSystemEventModel (Maybe Integer)
+iEXSystemEventSystemEventModelTimestampNanosL f IEXSystemEventSystemEventModel{..} = (\iEXSystemEventSystemEventModelTimestampNanos -> IEXSystemEventSystemEventModel { iEXSystemEventSystemEventModelTimestampNanos, ..} ) <$> f iEXSystemEventSystemEventModelTimestampNanos
+{-# INLINE iEXSystemEventSystemEventModelTimestampNanosL #-}
+
+-- | 'iEXSystemEventSystemEventModelTimestamp' Lens
+iEXSystemEventSystemEventModelTimestampL :: Lens_' IEXSystemEventSystemEventModel (Maybe DateTime)
+iEXSystemEventSystemEventModelTimestampL f IEXSystemEventSystemEventModel{..} = (\iEXSystemEventSystemEventModelTimestamp -> IEXSystemEventSystemEventModel { iEXSystemEventSystemEventModelTimestamp, ..} ) <$> f iEXSystemEventSystemEventModelTimestamp
+{-# INLINE iEXSystemEventSystemEventModelTimestampL #-}
+
+-- | 'iEXSystemEventSystemEventModelSystemEvent' Lens
+iEXSystemEventSystemEventModelSystemEventL :: Lens_' IEXSystemEventSystemEventModel (Maybe Int)
+iEXSystemEventSystemEventModelSystemEventL f IEXSystemEventSystemEventModel{..} = (\iEXSystemEventSystemEventModelSystemEvent -> IEXSystemEventSystemEventModel { iEXSystemEventSystemEventModelSystemEvent, ..} ) <$> f iEXSystemEventSystemEventModelSystemEvent
+{-# INLINE iEXSystemEventSystemEventModelSystemEventL #-}
+
+-- | 'iEXSystemEventSystemEventModelSystemEventCode' Lens
+iEXSystemEventSystemEventModelSystemEventCodeL :: Lens_' IEXSystemEventSystemEventModel (Maybe Text)
+iEXSystemEventSystemEventModelSystemEventCodeL f IEXSystemEventSystemEventModel{..} = (\iEXSystemEventSystemEventModelSystemEventCode -> IEXSystemEventSystemEventModel { iEXSystemEventSystemEventModelSystemEventCode, ..} ) <$> f iEXSystemEventSystemEventModelSystemEventCode
+{-# INLINE iEXSystemEventSystemEventModelSystemEventCodeL #-}
+
+-- | 'iEXSystemEventSystemEventModelSystemEventText' Lens
+iEXSystemEventSystemEventModelSystemEventTextL :: Lens_' IEXSystemEventSystemEventModel (Maybe Text)
+iEXSystemEventSystemEventModelSystemEventTextL f IEXSystemEventSystemEventModel{..} = (\iEXSystemEventSystemEventModelSystemEventText -> IEXSystemEventSystemEventModel { iEXSystemEventSystemEventModelSystemEventText, ..} ) <$> f iEXSystemEventSystemEventModelSystemEventText
+{-# INLINE iEXSystemEventSystemEventModelSystemEventTextL #-}
+
+-- | 'iEXSystemEventSystemEventModelIsSystemEventStartOfMessages' Lens
+iEXSystemEventSystemEventModelIsSystemEventStartOfMessagesL :: Lens_' IEXSystemEventSystemEventModel (Maybe Bool)
+iEXSystemEventSystemEventModelIsSystemEventStartOfMessagesL f IEXSystemEventSystemEventModel{..} = (\iEXSystemEventSystemEventModelIsSystemEventStartOfMessages -> IEXSystemEventSystemEventModel { iEXSystemEventSystemEventModelIsSystemEventStartOfMessages, ..} ) <$> f iEXSystemEventSystemEventModelIsSystemEventStartOfMessages
+{-# INLINE iEXSystemEventSystemEventModelIsSystemEventStartOfMessagesL #-}
+
+-- | 'iEXSystemEventSystemEventModelIsSystemEventStartOfSystemHours' Lens
+iEXSystemEventSystemEventModelIsSystemEventStartOfSystemHoursL :: Lens_' IEXSystemEventSystemEventModel (Maybe Bool)
+iEXSystemEventSystemEventModelIsSystemEventStartOfSystemHoursL f IEXSystemEventSystemEventModel{..} = (\iEXSystemEventSystemEventModelIsSystemEventStartOfSystemHours -> IEXSystemEventSystemEventModel { iEXSystemEventSystemEventModelIsSystemEventStartOfSystemHours, ..} ) <$> f iEXSystemEventSystemEventModelIsSystemEventStartOfSystemHours
+{-# INLINE iEXSystemEventSystemEventModelIsSystemEventStartOfSystemHoursL #-}
+
+-- | 'iEXSystemEventSystemEventModelIsSystemEventStartOfRegularMarketHours' Lens
+iEXSystemEventSystemEventModelIsSystemEventStartOfRegularMarketHoursL :: Lens_' IEXSystemEventSystemEventModel (Maybe Bool)
+iEXSystemEventSystemEventModelIsSystemEventStartOfRegularMarketHoursL f IEXSystemEventSystemEventModel{..} = (\iEXSystemEventSystemEventModelIsSystemEventStartOfRegularMarketHours -> IEXSystemEventSystemEventModel { iEXSystemEventSystemEventModelIsSystemEventStartOfRegularMarketHours, ..} ) <$> f iEXSystemEventSystemEventModelIsSystemEventStartOfRegularMarketHours
+{-# INLINE iEXSystemEventSystemEventModelIsSystemEventStartOfRegularMarketHoursL #-}
+
+-- | 'iEXSystemEventSystemEventModelIsSystemEventEndOfRegularMarketHours' Lens
+iEXSystemEventSystemEventModelIsSystemEventEndOfRegularMarketHoursL :: Lens_' IEXSystemEventSystemEventModel (Maybe Bool)
+iEXSystemEventSystemEventModelIsSystemEventEndOfRegularMarketHoursL f IEXSystemEventSystemEventModel{..} = (\iEXSystemEventSystemEventModelIsSystemEventEndOfRegularMarketHours -> IEXSystemEventSystemEventModel { iEXSystemEventSystemEventModelIsSystemEventEndOfRegularMarketHours, ..} ) <$> f iEXSystemEventSystemEventModelIsSystemEventEndOfRegularMarketHours
+{-# INLINE iEXSystemEventSystemEventModelIsSystemEventEndOfRegularMarketHoursL #-}
+
+-- | 'iEXSystemEventSystemEventModelIsSystemEventEndOfSystemHours' Lens
+iEXSystemEventSystemEventModelIsSystemEventEndOfSystemHoursL :: Lens_' IEXSystemEventSystemEventModel (Maybe Bool)
+iEXSystemEventSystemEventModelIsSystemEventEndOfSystemHoursL f IEXSystemEventSystemEventModel{..} = (\iEXSystemEventSystemEventModelIsSystemEventEndOfSystemHours -> IEXSystemEventSystemEventModel { iEXSystemEventSystemEventModelIsSystemEventEndOfSystemHours, ..} ) <$> f iEXSystemEventSystemEventModelIsSystemEventEndOfSystemHours
+{-# INLINE iEXSystemEventSystemEventModelIsSystemEventEndOfSystemHoursL #-}
+
+-- | 'iEXSystemEventSystemEventModelIsSystemEventEndOfMessages' Lens
+iEXSystemEventSystemEventModelIsSystemEventEndOfMessagesL :: Lens_' IEXSystemEventSystemEventModel (Maybe Bool)
+iEXSystemEventSystemEventModelIsSystemEventEndOfMessagesL f IEXSystemEventSystemEventModel{..} = (\iEXSystemEventSystemEventModelIsSystemEventEndOfMessages -> IEXSystemEventSystemEventModel { iEXSystemEventSystemEventModelIsSystemEventEndOfMessages, ..} ) <$> f iEXSystemEventSystemEventModelIsSystemEventEndOfMessages
+{-# INLINE iEXSystemEventSystemEventModelIsSystemEventEndOfMessagesL #-}
+
+
+
+-- * IEXTradeTradeModel
+
+-- | 'iEXTradeTradeModelIsTradeBreak' Lens
+iEXTradeTradeModelIsTradeBreakL :: Lens_' IEXTradeTradeModel (Maybe Bool)
+iEXTradeTradeModelIsTradeBreakL f IEXTradeTradeModel{..} = (\iEXTradeTradeModelIsTradeBreak -> IEXTradeTradeModel { iEXTradeTradeModelIsTradeBreak, ..} ) <$> f iEXTradeTradeModelIsTradeBreak
+{-# INLINE iEXTradeTradeModelIsTradeBreakL #-}
+
+-- | 'iEXTradeTradeModelSymbol' Lens
+iEXTradeTradeModelSymbolL :: Lens_' IEXTradeTradeModel (Maybe Text)
+iEXTradeTradeModelSymbolL f IEXTradeTradeModel{..} = (\iEXTradeTradeModelSymbol -> IEXTradeTradeModel { iEXTradeTradeModelSymbol, ..} ) <$> f iEXTradeTradeModelSymbol
+{-# INLINE iEXTradeTradeModelSymbolL #-}
+
+-- | 'iEXTradeTradeModelTimestampNanos' Lens
+iEXTradeTradeModelTimestampNanosL :: Lens_' IEXTradeTradeModel (Maybe Integer)
+iEXTradeTradeModelTimestampNanosL f IEXTradeTradeModel{..} = (\iEXTradeTradeModelTimestampNanos -> IEXTradeTradeModel { iEXTradeTradeModelTimestampNanos, ..} ) <$> f iEXTradeTradeModelTimestampNanos
+{-# INLINE iEXTradeTradeModelTimestampNanosL #-}
+
+-- | 'iEXTradeTradeModelTimestamp' Lens
+iEXTradeTradeModelTimestampL :: Lens_' IEXTradeTradeModel (Maybe DateTime)
+iEXTradeTradeModelTimestampL f IEXTradeTradeModel{..} = (\iEXTradeTradeModelTimestamp -> IEXTradeTradeModel { iEXTradeTradeModelTimestamp, ..} ) <$> f iEXTradeTradeModelTimestamp
+{-# INLINE iEXTradeTradeModelTimestampL #-}
+
+-- | 'iEXTradeTradeModelSize' Lens
+iEXTradeTradeModelSizeL :: Lens_' IEXTradeTradeModel (Maybe Int)
+iEXTradeTradeModelSizeL f IEXTradeTradeModel{..} = (\iEXTradeTradeModelSize -> IEXTradeTradeModel { iEXTradeTradeModelSize, ..} ) <$> f iEXTradeTradeModelSize
+{-# INLINE iEXTradeTradeModelSizeL #-}
+
+-- | 'iEXTradeTradeModelPrice' Lens
+iEXTradeTradeModelPriceL :: Lens_' IEXTradeTradeModel (Maybe Double)
+iEXTradeTradeModelPriceL f IEXTradeTradeModel{..} = (\iEXTradeTradeModelPrice -> IEXTradeTradeModel { iEXTradeTradeModelPrice, ..} ) <$> f iEXTradeTradeModelPrice
+{-# INLINE iEXTradeTradeModelPriceL #-}
+
+-- | 'iEXTradeTradeModelTradeId' Lens
+iEXTradeTradeModelTradeIdL :: Lens_' IEXTradeTradeModel (Maybe Integer)
+iEXTradeTradeModelTradeIdL f IEXTradeTradeModel{..} = (\iEXTradeTradeModelTradeId -> IEXTradeTradeModel { iEXTradeTradeModelTradeId, ..} ) <$> f iEXTradeTradeModelTradeId
+{-# INLINE iEXTradeTradeModelTradeIdL #-}
+
+-- | 'iEXTradeTradeModelIsIntermarketSweep' Lens
+iEXTradeTradeModelIsIntermarketSweepL :: Lens_' IEXTradeTradeModel (Maybe Bool)
+iEXTradeTradeModelIsIntermarketSweepL f IEXTradeTradeModel{..} = (\iEXTradeTradeModelIsIntermarketSweep -> IEXTradeTradeModel { iEXTradeTradeModelIsIntermarketSweep, ..} ) <$> f iEXTradeTradeModelIsIntermarketSweep
+{-# INLINE iEXTradeTradeModelIsIntermarketSweepL #-}
+
+-- | 'iEXTradeTradeModelIsExtendedHoursTrade' Lens
+iEXTradeTradeModelIsExtendedHoursTradeL :: Lens_' IEXTradeTradeModel (Maybe Bool)
+iEXTradeTradeModelIsExtendedHoursTradeL f IEXTradeTradeModel{..} = (\iEXTradeTradeModelIsExtendedHoursTrade -> IEXTradeTradeModel { iEXTradeTradeModelIsExtendedHoursTrade, ..} ) <$> f iEXTradeTradeModelIsExtendedHoursTrade
+{-# INLINE iEXTradeTradeModelIsExtendedHoursTradeL #-}
+
+-- | 'iEXTradeTradeModelIsOddLotTrade' Lens
+iEXTradeTradeModelIsOddLotTradeL :: Lens_' IEXTradeTradeModel (Maybe Bool)
+iEXTradeTradeModelIsOddLotTradeL f IEXTradeTradeModel{..} = (\iEXTradeTradeModelIsOddLotTrade -> IEXTradeTradeModel { iEXTradeTradeModelIsOddLotTrade, ..} ) <$> f iEXTradeTradeModelIsOddLotTrade
+{-# INLINE iEXTradeTradeModelIsOddLotTradeL #-}
+
+-- | 'iEXTradeTradeModelIsTradeThroughExempt' Lens
+iEXTradeTradeModelIsTradeThroughExemptL :: Lens_' IEXTradeTradeModel (Maybe Bool)
+iEXTradeTradeModelIsTradeThroughExemptL f IEXTradeTradeModel{..} = (\iEXTradeTradeModelIsTradeThroughExempt -> IEXTradeTradeModel { iEXTradeTradeModelIsTradeThroughExempt, ..} ) <$> f iEXTradeTradeModelIsTradeThroughExempt
+{-# INLINE iEXTradeTradeModelIsTradeThroughExemptL #-}
+
+-- | 'iEXTradeTradeModelIsSinglePriceCrossTrade' Lens
+iEXTradeTradeModelIsSinglePriceCrossTradeL :: Lens_' IEXTradeTradeModel (Maybe Bool)
+iEXTradeTradeModelIsSinglePriceCrossTradeL f IEXTradeTradeModel{..} = (\iEXTradeTradeModelIsSinglePriceCrossTrade -> IEXTradeTradeModel { iEXTradeTradeModelIsSinglePriceCrossTrade, ..} ) <$> f iEXTradeTradeModelIsSinglePriceCrossTrade
+{-# INLINE iEXTradeTradeModelIsSinglePriceCrossTradeL #-}
+
+
+
+-- * ModelsAddOrderModel
+
+-- | 'modelsAddOrderModelSymbol' Lens
+modelsAddOrderModelSymbolL :: Lens_' ModelsAddOrderModel (Maybe Text)
+modelsAddOrderModelSymbolL f ModelsAddOrderModel{..} = (\modelsAddOrderModelSymbol -> ModelsAddOrderModel { modelsAddOrderModelSymbol, ..} ) <$> f modelsAddOrderModelSymbol
+{-# INLINE modelsAddOrderModelSymbolL #-}
+
+-- | 'modelsAddOrderModelTimestampNanos' Lens
+modelsAddOrderModelTimestampNanosL :: Lens_' ModelsAddOrderModel (Maybe Integer)
+modelsAddOrderModelTimestampNanosL f ModelsAddOrderModel{..} = (\modelsAddOrderModelTimestampNanos -> ModelsAddOrderModel { modelsAddOrderModelTimestampNanos, ..} ) <$> f modelsAddOrderModelTimestampNanos
+{-# INLINE modelsAddOrderModelTimestampNanosL #-}
+
+-- | 'modelsAddOrderModelTimestamp' Lens
+modelsAddOrderModelTimestampL :: Lens_' ModelsAddOrderModel (Maybe DateTime)
+modelsAddOrderModelTimestampL f ModelsAddOrderModel{..} = (\modelsAddOrderModelTimestamp -> ModelsAddOrderModel { modelsAddOrderModelTimestamp, ..} ) <$> f modelsAddOrderModelTimestamp
+{-# INLINE modelsAddOrderModelTimestampL #-}
+
+-- | 'modelsAddOrderModelIsSideBuy' Lens
+modelsAddOrderModelIsSideBuyL :: Lens_' ModelsAddOrderModel (Maybe Bool)
+modelsAddOrderModelIsSideBuyL f ModelsAddOrderModel{..} = (\modelsAddOrderModelIsSideBuy -> ModelsAddOrderModel { modelsAddOrderModelIsSideBuy, ..} ) <$> f modelsAddOrderModelIsSideBuy
+{-# INLINE modelsAddOrderModelIsSideBuyL #-}
+
+-- | 'modelsAddOrderModelSize' Lens
+modelsAddOrderModelSizeL :: Lens_' ModelsAddOrderModel (Maybe Int)
+modelsAddOrderModelSizeL f ModelsAddOrderModel{..} = (\modelsAddOrderModelSize -> ModelsAddOrderModel { modelsAddOrderModelSize, ..} ) <$> f modelsAddOrderModelSize
+{-# INLINE modelsAddOrderModelSizeL #-}
+
+-- | 'modelsAddOrderModelPrice' Lens
+modelsAddOrderModelPriceL :: Lens_' ModelsAddOrderModel (Maybe Double)
+modelsAddOrderModelPriceL f ModelsAddOrderModel{..} = (\modelsAddOrderModelPrice -> ModelsAddOrderModel { modelsAddOrderModelPrice, ..} ) <$> f modelsAddOrderModelPrice
+{-# INLINE modelsAddOrderModelPriceL #-}
+
+-- | 'modelsAddOrderModelOrderId' Lens
+modelsAddOrderModelOrderIdL :: Lens_' ModelsAddOrderModel (Maybe Integer)
+modelsAddOrderModelOrderIdL f ModelsAddOrderModel{..} = (\modelsAddOrderModelOrderId -> ModelsAddOrderModel { modelsAddOrderModelOrderId, ..} ) <$> f modelsAddOrderModelOrderId
+{-# INLINE modelsAddOrderModelOrderIdL #-}
+
+
+
+-- * ModelsAdminMessageModel
+
+-- | 'modelsAdminMessageModelTradingStatus' Lens
+modelsAdminMessageModelTradingStatusL :: Lens_' ModelsAdminMessageModel (Maybe ModelsTradingStatusModel)
+modelsAdminMessageModelTradingStatusL f ModelsAdminMessageModel{..} = (\modelsAdminMessageModelTradingStatus -> ModelsAdminMessageModel { modelsAdminMessageModelTradingStatus, ..} ) <$> f modelsAdminMessageModelTradingStatus
+{-# INLINE modelsAdminMessageModelTradingStatusL #-}
+
+-- | 'modelsAdminMessageModelOfficialPrice' Lens
+modelsAdminMessageModelOfficialPriceL :: Lens_' ModelsAdminMessageModel (Maybe ModelsOfficialPriceModel)
+modelsAdminMessageModelOfficialPriceL f ModelsAdminMessageModel{..} = (\modelsAdminMessageModelOfficialPrice -> ModelsAdminMessageModel { modelsAdminMessageModelOfficialPrice, ..} ) <$> f modelsAdminMessageModelOfficialPrice
+{-# INLINE modelsAdminMessageModelOfficialPriceL #-}
+
+-- | 'modelsAdminMessageModelSecurityEvent' Lens
+modelsAdminMessageModelSecurityEventL :: Lens_' ModelsAdminMessageModel (Maybe ModelsSecurityEventModel)
+modelsAdminMessageModelSecurityEventL f ModelsAdminMessageModel{..} = (\modelsAdminMessageModelSecurityEvent -> ModelsAdminMessageModel { modelsAdminMessageModelSecurityEvent, ..} ) <$> f modelsAdminMessageModelSecurityEvent
+{-# INLINE modelsAdminMessageModelSecurityEventL #-}
+
+-- | 'modelsAdminMessageModelAuctionInformation' Lens
+modelsAdminMessageModelAuctionInformationL :: Lens_' ModelsAdminMessageModel (Maybe ModelsAuctionInformationModel)
+modelsAdminMessageModelAuctionInformationL f ModelsAdminMessageModel{..} = (\modelsAdminMessageModelAuctionInformation -> ModelsAdminMessageModel { modelsAdminMessageModelAuctionInformation, ..} ) <$> f modelsAdminMessageModelAuctionInformation
+{-# INLINE modelsAdminMessageModelAuctionInformationL #-}
+
+-- | 'modelsAdminMessageModelShortSalePriceTest' Lens
+modelsAdminMessageModelShortSalePriceTestL :: Lens_' ModelsAdminMessageModel (Maybe ModelsShortSalePriceTestStatusModel)
+modelsAdminMessageModelShortSalePriceTestL f ModelsAdminMessageModel{..} = (\modelsAdminMessageModelShortSalePriceTest -> ModelsAdminMessageModel { modelsAdminMessageModelShortSalePriceTest, ..} ) <$> f modelsAdminMessageModelShortSalePriceTest
+{-# INLINE modelsAdminMessageModelShortSalePriceTestL #-}
+
+-- | 'modelsAdminMessageModelOperationalHaltStatus' Lens
+modelsAdminMessageModelOperationalHaltStatusL :: Lens_' ModelsAdminMessageModel (Maybe ModelsOperationalHaltStatusModel)
+modelsAdminMessageModelOperationalHaltStatusL f ModelsAdminMessageModel{..} = (\modelsAdminMessageModelOperationalHaltStatus -> ModelsAdminMessageModel { modelsAdminMessageModelOperationalHaltStatus, ..} ) <$> f modelsAdminMessageModelOperationalHaltStatus
+{-# INLINE modelsAdminMessageModelOperationalHaltStatusL #-}
+
+-- | 'modelsAdminMessageModelRetailLiquidityIndicator' Lens
+modelsAdminMessageModelRetailLiquidityIndicatorL :: Lens_' ModelsAdminMessageModel (Maybe ModelsRetailLiquidityIndicatorModel)
+modelsAdminMessageModelRetailLiquidityIndicatorL f ModelsAdminMessageModel{..} = (\modelsAdminMessageModelRetailLiquidityIndicator -> ModelsAdminMessageModel { modelsAdminMessageModelRetailLiquidityIndicator, ..} ) <$> f modelsAdminMessageModelRetailLiquidityIndicator
+{-# INLINE modelsAdminMessageModelRetailLiquidityIndicatorL #-}
+
+-- | 'modelsAdminMessageModelSystemEvent' Lens
+modelsAdminMessageModelSystemEventL :: Lens_' ModelsAdminMessageModel (Maybe IEXSystemEventSystemEventModel)
+modelsAdminMessageModelSystemEventL f ModelsAdminMessageModel{..} = (\modelsAdminMessageModelSystemEvent -> ModelsAdminMessageModel { modelsAdminMessageModelSystemEvent, ..} ) <$> f modelsAdminMessageModelSystemEvent
+{-# INLINE modelsAdminMessageModelSystemEventL #-}
+
+-- | 'modelsAdminMessageModelSecurityDirectory' Lens
+modelsAdminMessageModelSecurityDirectoryL :: Lens_' ModelsAdminMessageModel (Maybe ModelsSecurityDirectoryModel)
+modelsAdminMessageModelSecurityDirectoryL f ModelsAdminMessageModel{..} = (\modelsAdminMessageModelSecurityDirectory -> ModelsAdminMessageModel { modelsAdminMessageModelSecurityDirectory, ..} ) <$> f modelsAdminMessageModelSecurityDirectory
+{-# INLINE modelsAdminMessageModelSecurityDirectoryL #-}
+
+
+
+-- * ModelsAuctionInformationModel
+
+-- | 'modelsAuctionInformationModelSymbol' Lens
+modelsAuctionInformationModelSymbolL :: Lens_' ModelsAuctionInformationModel (Maybe Text)
+modelsAuctionInformationModelSymbolL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelSymbol -> ModelsAuctionInformationModel { modelsAuctionInformationModelSymbol, ..} ) <$> f modelsAuctionInformationModelSymbol
+{-# INLINE modelsAuctionInformationModelSymbolL #-}
+
+-- | 'modelsAuctionInformationModelTimestampNanos' Lens
+modelsAuctionInformationModelTimestampNanosL :: Lens_' ModelsAuctionInformationModel (Maybe Integer)
+modelsAuctionInformationModelTimestampNanosL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelTimestampNanos -> ModelsAuctionInformationModel { modelsAuctionInformationModelTimestampNanos, ..} ) <$> f modelsAuctionInformationModelTimestampNanos
+{-# INLINE modelsAuctionInformationModelTimestampNanosL #-}
+
+-- | 'modelsAuctionInformationModelTimestamp' Lens
+modelsAuctionInformationModelTimestampL :: Lens_' ModelsAuctionInformationModel (Maybe DateTime)
+modelsAuctionInformationModelTimestampL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelTimestamp -> ModelsAuctionInformationModel { modelsAuctionInformationModelTimestamp, ..} ) <$> f modelsAuctionInformationModelTimestamp
+{-# INLINE modelsAuctionInformationModelTimestampL #-}
+
+-- | 'modelsAuctionInformationModelAuctionType' Lens
+modelsAuctionInformationModelAuctionTypeL :: Lens_' ModelsAuctionInformationModel (Maybe Int)
+modelsAuctionInformationModelAuctionTypeL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelAuctionType -> ModelsAuctionInformationModel { modelsAuctionInformationModelAuctionType, ..} ) <$> f modelsAuctionInformationModelAuctionType
+{-# INLINE modelsAuctionInformationModelAuctionTypeL #-}
+
+-- | 'modelsAuctionInformationModelAuctionTypeCode' Lens
+modelsAuctionInformationModelAuctionTypeCodeL :: Lens_' ModelsAuctionInformationModel (Maybe Text)
+modelsAuctionInformationModelAuctionTypeCodeL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelAuctionTypeCode -> ModelsAuctionInformationModel { modelsAuctionInformationModelAuctionTypeCode, ..} ) <$> f modelsAuctionInformationModelAuctionTypeCode
+{-# INLINE modelsAuctionInformationModelAuctionTypeCodeL #-}
+
+-- | 'modelsAuctionInformationModelAuctionTypeText' Lens
+modelsAuctionInformationModelAuctionTypeTextL :: Lens_' ModelsAuctionInformationModel (Maybe Text)
+modelsAuctionInformationModelAuctionTypeTextL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelAuctionTypeText -> ModelsAuctionInformationModel { modelsAuctionInformationModelAuctionTypeText, ..} ) <$> f modelsAuctionInformationModelAuctionTypeText
+{-# INLINE modelsAuctionInformationModelAuctionTypeTextL #-}
+
+-- | 'modelsAuctionInformationModelIsAuctionTypeOpening' Lens
+modelsAuctionInformationModelIsAuctionTypeOpeningL :: Lens_' ModelsAuctionInformationModel (Maybe Bool)
+modelsAuctionInformationModelIsAuctionTypeOpeningL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelIsAuctionTypeOpening -> ModelsAuctionInformationModel { modelsAuctionInformationModelIsAuctionTypeOpening, ..} ) <$> f modelsAuctionInformationModelIsAuctionTypeOpening
+{-# INLINE modelsAuctionInformationModelIsAuctionTypeOpeningL #-}
+
+-- | 'modelsAuctionInformationModelIsAuctionTypeClosing' Lens
+modelsAuctionInformationModelIsAuctionTypeClosingL :: Lens_' ModelsAuctionInformationModel (Maybe Bool)
+modelsAuctionInformationModelIsAuctionTypeClosingL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelIsAuctionTypeClosing -> ModelsAuctionInformationModel { modelsAuctionInformationModelIsAuctionTypeClosing, ..} ) <$> f modelsAuctionInformationModelIsAuctionTypeClosing
+{-# INLINE modelsAuctionInformationModelIsAuctionTypeClosingL #-}
+
+-- | 'modelsAuctionInformationModelIsAuctionTypeIpo' Lens
+modelsAuctionInformationModelIsAuctionTypeIpoL :: Lens_' ModelsAuctionInformationModel (Maybe Bool)
+modelsAuctionInformationModelIsAuctionTypeIpoL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelIsAuctionTypeIpo -> ModelsAuctionInformationModel { modelsAuctionInformationModelIsAuctionTypeIpo, ..} ) <$> f modelsAuctionInformationModelIsAuctionTypeIpo
+{-# INLINE modelsAuctionInformationModelIsAuctionTypeIpoL #-}
+
+-- | 'modelsAuctionInformationModelIsAuctionTypeHalt' Lens
+modelsAuctionInformationModelIsAuctionTypeHaltL :: Lens_' ModelsAuctionInformationModel (Maybe Bool)
+modelsAuctionInformationModelIsAuctionTypeHaltL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelIsAuctionTypeHalt -> ModelsAuctionInformationModel { modelsAuctionInformationModelIsAuctionTypeHalt, ..} ) <$> f modelsAuctionInformationModelIsAuctionTypeHalt
+{-# INLINE modelsAuctionInformationModelIsAuctionTypeHaltL #-}
+
+-- | 'modelsAuctionInformationModelIsAuctionTypeVolatility' Lens
+modelsAuctionInformationModelIsAuctionTypeVolatilityL :: Lens_' ModelsAuctionInformationModel (Maybe Bool)
+modelsAuctionInformationModelIsAuctionTypeVolatilityL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelIsAuctionTypeVolatility -> ModelsAuctionInformationModel { modelsAuctionInformationModelIsAuctionTypeVolatility, ..} ) <$> f modelsAuctionInformationModelIsAuctionTypeVolatility
+{-# INLINE modelsAuctionInformationModelIsAuctionTypeVolatilityL #-}
+
+-- | 'modelsAuctionInformationModelPairedShares' Lens
+modelsAuctionInformationModelPairedSharesL :: Lens_' ModelsAuctionInformationModel (Maybe Int)
+modelsAuctionInformationModelPairedSharesL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelPairedShares -> ModelsAuctionInformationModel { modelsAuctionInformationModelPairedShares, ..} ) <$> f modelsAuctionInformationModelPairedShares
+{-# INLINE modelsAuctionInformationModelPairedSharesL #-}
+
+-- | 'modelsAuctionInformationModelReferencePrice' Lens
+modelsAuctionInformationModelReferencePriceL :: Lens_' ModelsAuctionInformationModel (Maybe Double)
+modelsAuctionInformationModelReferencePriceL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelReferencePrice -> ModelsAuctionInformationModel { modelsAuctionInformationModelReferencePrice, ..} ) <$> f modelsAuctionInformationModelReferencePrice
+{-# INLINE modelsAuctionInformationModelReferencePriceL #-}
+
+-- | 'modelsAuctionInformationModelIndicativeClearingPrice' Lens
+modelsAuctionInformationModelIndicativeClearingPriceL :: Lens_' ModelsAuctionInformationModel (Maybe Double)
+modelsAuctionInformationModelIndicativeClearingPriceL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelIndicativeClearingPrice -> ModelsAuctionInformationModel { modelsAuctionInformationModelIndicativeClearingPrice, ..} ) <$> f modelsAuctionInformationModelIndicativeClearingPrice
+{-# INLINE modelsAuctionInformationModelIndicativeClearingPriceL #-}
+
+-- | 'modelsAuctionInformationModelImbalanceShares' Lens
+modelsAuctionInformationModelImbalanceSharesL :: Lens_' ModelsAuctionInformationModel (Maybe Int)
+modelsAuctionInformationModelImbalanceSharesL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelImbalanceShares -> ModelsAuctionInformationModel { modelsAuctionInformationModelImbalanceShares, ..} ) <$> f modelsAuctionInformationModelImbalanceShares
+{-# INLINE modelsAuctionInformationModelImbalanceSharesL #-}
+
+-- | 'modelsAuctionInformationModelImbalanceSide' Lens
+modelsAuctionInformationModelImbalanceSideL :: Lens_' ModelsAuctionInformationModel (Maybe Int)
+modelsAuctionInformationModelImbalanceSideL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelImbalanceSide -> ModelsAuctionInformationModel { modelsAuctionInformationModelImbalanceSide, ..} ) <$> f modelsAuctionInformationModelImbalanceSide
+{-# INLINE modelsAuctionInformationModelImbalanceSideL #-}
+
+-- | 'modelsAuctionInformationModelImbalanceSideCode' Lens
+modelsAuctionInformationModelImbalanceSideCodeL :: Lens_' ModelsAuctionInformationModel (Maybe Text)
+modelsAuctionInformationModelImbalanceSideCodeL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelImbalanceSideCode -> ModelsAuctionInformationModel { modelsAuctionInformationModelImbalanceSideCode, ..} ) <$> f modelsAuctionInformationModelImbalanceSideCode
+{-# INLINE modelsAuctionInformationModelImbalanceSideCodeL #-}
+
+-- | 'modelsAuctionInformationModelImbalanceSideText' Lens
+modelsAuctionInformationModelImbalanceSideTextL :: Lens_' ModelsAuctionInformationModel (Maybe Text)
+modelsAuctionInformationModelImbalanceSideTextL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelImbalanceSideText -> ModelsAuctionInformationModel { modelsAuctionInformationModelImbalanceSideText, ..} ) <$> f modelsAuctionInformationModelImbalanceSideText
+{-# INLINE modelsAuctionInformationModelImbalanceSideTextL #-}
+
+-- | 'modelsAuctionInformationModelIsImbalanceSideBuy' Lens
+modelsAuctionInformationModelIsImbalanceSideBuyL :: Lens_' ModelsAuctionInformationModel (Maybe Bool)
+modelsAuctionInformationModelIsImbalanceSideBuyL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelIsImbalanceSideBuy -> ModelsAuctionInformationModel { modelsAuctionInformationModelIsImbalanceSideBuy, ..} ) <$> f modelsAuctionInformationModelIsImbalanceSideBuy
+{-# INLINE modelsAuctionInformationModelIsImbalanceSideBuyL #-}
+
+-- | 'modelsAuctionInformationModelIsImbalanceSideSell' Lens
+modelsAuctionInformationModelIsImbalanceSideSellL :: Lens_' ModelsAuctionInformationModel (Maybe Bool)
+modelsAuctionInformationModelIsImbalanceSideSellL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelIsImbalanceSideSell -> ModelsAuctionInformationModel { modelsAuctionInformationModelIsImbalanceSideSell, ..} ) <$> f modelsAuctionInformationModelIsImbalanceSideSell
+{-# INLINE modelsAuctionInformationModelIsImbalanceSideSellL #-}
+
+-- | 'modelsAuctionInformationModelIsImbalanceSideNone' Lens
+modelsAuctionInformationModelIsImbalanceSideNoneL :: Lens_' ModelsAuctionInformationModel (Maybe Bool)
+modelsAuctionInformationModelIsImbalanceSideNoneL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelIsImbalanceSideNone -> ModelsAuctionInformationModel { modelsAuctionInformationModelIsImbalanceSideNone, ..} ) <$> f modelsAuctionInformationModelIsImbalanceSideNone
+{-# INLINE modelsAuctionInformationModelIsImbalanceSideNoneL #-}
+
+-- | 'modelsAuctionInformationModelExtensionNumber' Lens
+modelsAuctionInformationModelExtensionNumberL :: Lens_' ModelsAuctionInformationModel (Maybe Int)
+modelsAuctionInformationModelExtensionNumberL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelExtensionNumber -> ModelsAuctionInformationModel { modelsAuctionInformationModelExtensionNumber, ..} ) <$> f modelsAuctionInformationModelExtensionNumber
+{-# INLINE modelsAuctionInformationModelExtensionNumberL #-}
+
+-- | 'modelsAuctionInformationModelScheduledAuctionTimeSeconds' Lens
+modelsAuctionInformationModelScheduledAuctionTimeSecondsL :: Lens_' ModelsAuctionInformationModel (Maybe Int)
+modelsAuctionInformationModelScheduledAuctionTimeSecondsL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelScheduledAuctionTimeSeconds -> ModelsAuctionInformationModel { modelsAuctionInformationModelScheduledAuctionTimeSeconds, ..} ) <$> f modelsAuctionInformationModelScheduledAuctionTimeSeconds
+{-# INLINE modelsAuctionInformationModelScheduledAuctionTimeSecondsL #-}
+
+-- | 'modelsAuctionInformationModelScheduledAuctionTime' Lens
+modelsAuctionInformationModelScheduledAuctionTimeL :: Lens_' ModelsAuctionInformationModel (Maybe DateTime)
+modelsAuctionInformationModelScheduledAuctionTimeL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelScheduledAuctionTime -> ModelsAuctionInformationModel { modelsAuctionInformationModelScheduledAuctionTime, ..} ) <$> f modelsAuctionInformationModelScheduledAuctionTime
+{-# INLINE modelsAuctionInformationModelScheduledAuctionTimeL #-}
+
+-- | 'modelsAuctionInformationModelAuctionBookClearingPrice' Lens
+modelsAuctionInformationModelAuctionBookClearingPriceL :: Lens_' ModelsAuctionInformationModel (Maybe Double)
+modelsAuctionInformationModelAuctionBookClearingPriceL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelAuctionBookClearingPrice -> ModelsAuctionInformationModel { modelsAuctionInformationModelAuctionBookClearingPrice, ..} ) <$> f modelsAuctionInformationModelAuctionBookClearingPrice
+{-# INLINE modelsAuctionInformationModelAuctionBookClearingPriceL #-}
+
+-- | 'modelsAuctionInformationModelCollarReferencePrice' Lens
+modelsAuctionInformationModelCollarReferencePriceL :: Lens_' ModelsAuctionInformationModel (Maybe Double)
+modelsAuctionInformationModelCollarReferencePriceL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelCollarReferencePrice -> ModelsAuctionInformationModel { modelsAuctionInformationModelCollarReferencePrice, ..} ) <$> f modelsAuctionInformationModelCollarReferencePrice
+{-# INLINE modelsAuctionInformationModelCollarReferencePriceL #-}
+
+-- | 'modelsAuctionInformationModelLowerAuctionCollar' Lens
+modelsAuctionInformationModelLowerAuctionCollarL :: Lens_' ModelsAuctionInformationModel (Maybe Double)
+modelsAuctionInformationModelLowerAuctionCollarL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelLowerAuctionCollar -> ModelsAuctionInformationModel { modelsAuctionInformationModelLowerAuctionCollar, ..} ) <$> f modelsAuctionInformationModelLowerAuctionCollar
+{-# INLINE modelsAuctionInformationModelLowerAuctionCollarL #-}
+
+-- | 'modelsAuctionInformationModelUpperAuctionCollar' Lens
+modelsAuctionInformationModelUpperAuctionCollarL :: Lens_' ModelsAuctionInformationModel (Maybe Double)
+modelsAuctionInformationModelUpperAuctionCollarL f ModelsAuctionInformationModel{..} = (\modelsAuctionInformationModelUpperAuctionCollar -> ModelsAuctionInformationModel { modelsAuctionInformationModelUpperAuctionCollar, ..} ) <$> f modelsAuctionInformationModelUpperAuctionCollar
+{-# INLINE modelsAuctionInformationModelUpperAuctionCollarL #-}
+
+
+
+-- * ModelsClearBookModel
+
+-- | 'modelsClearBookModelSymbol' Lens
+modelsClearBookModelSymbolL :: Lens_' ModelsClearBookModel (Maybe Text)
+modelsClearBookModelSymbolL f ModelsClearBookModel{..} = (\modelsClearBookModelSymbol -> ModelsClearBookModel { modelsClearBookModelSymbol, ..} ) <$> f modelsClearBookModelSymbol
+{-# INLINE modelsClearBookModelSymbolL #-}
+
+-- | 'modelsClearBookModelTimestampNanos' Lens
+modelsClearBookModelTimestampNanosL :: Lens_' ModelsClearBookModel (Maybe Integer)
+modelsClearBookModelTimestampNanosL f ModelsClearBookModel{..} = (\modelsClearBookModelTimestampNanos -> ModelsClearBookModel { modelsClearBookModelTimestampNanos, ..} ) <$> f modelsClearBookModelTimestampNanos
+{-# INLINE modelsClearBookModelTimestampNanosL #-}
+
+-- | 'modelsClearBookModelTimestamp' Lens
+modelsClearBookModelTimestampL :: Lens_' ModelsClearBookModel (Maybe DateTime)
+modelsClearBookModelTimestampL f ModelsClearBookModel{..} = (\modelsClearBookModelTimestamp -> ModelsClearBookModel { modelsClearBookModelTimestamp, ..} ) <$> f modelsClearBookModelTimestamp
+{-# INLINE modelsClearBookModelTimestampL #-}
+
+
+
+-- * ModelsDeleteOrderModel
+
+-- | 'modelsDeleteOrderModelSymbol' Lens
+modelsDeleteOrderModelSymbolL :: Lens_' ModelsDeleteOrderModel (Maybe Text)
+modelsDeleteOrderModelSymbolL f ModelsDeleteOrderModel{..} = (\modelsDeleteOrderModelSymbol -> ModelsDeleteOrderModel { modelsDeleteOrderModelSymbol, ..} ) <$> f modelsDeleteOrderModelSymbol
+{-# INLINE modelsDeleteOrderModelSymbolL #-}
+
+-- | 'modelsDeleteOrderModelTimestampNanos' Lens
+modelsDeleteOrderModelTimestampNanosL :: Lens_' ModelsDeleteOrderModel (Maybe Integer)
+modelsDeleteOrderModelTimestampNanosL f ModelsDeleteOrderModel{..} = (\modelsDeleteOrderModelTimestampNanos -> ModelsDeleteOrderModel { modelsDeleteOrderModelTimestampNanos, ..} ) <$> f modelsDeleteOrderModelTimestampNanos
+{-# INLINE modelsDeleteOrderModelTimestampNanosL #-}
+
+-- | 'modelsDeleteOrderModelTimestamp' Lens
+modelsDeleteOrderModelTimestampL :: Lens_' ModelsDeleteOrderModel (Maybe DateTime)
+modelsDeleteOrderModelTimestampL f ModelsDeleteOrderModel{..} = (\modelsDeleteOrderModelTimestamp -> ModelsDeleteOrderModel { modelsDeleteOrderModelTimestamp, ..} ) <$> f modelsDeleteOrderModelTimestamp
+{-# INLINE modelsDeleteOrderModelTimestampL #-}
+
+-- | 'modelsDeleteOrderModelOrderIdReference' Lens
+modelsDeleteOrderModelOrderIdReferenceL :: Lens_' ModelsDeleteOrderModel (Maybe Integer)
+modelsDeleteOrderModelOrderIdReferenceL f ModelsDeleteOrderModel{..} = (\modelsDeleteOrderModelOrderIdReference -> ModelsDeleteOrderModel { modelsDeleteOrderModelOrderIdReference, ..} ) <$> f modelsDeleteOrderModelOrderIdReference
+{-# INLINE modelsDeleteOrderModelOrderIdReferenceL #-}
+
+
+
+-- * ModelsExecutedOrderModel
+
+-- | 'modelsExecutedOrderModelSymbol' Lens
+modelsExecutedOrderModelSymbolL :: Lens_' ModelsExecutedOrderModel (Maybe Text)
+modelsExecutedOrderModelSymbolL f ModelsExecutedOrderModel{..} = (\modelsExecutedOrderModelSymbol -> ModelsExecutedOrderModel { modelsExecutedOrderModelSymbol, ..} ) <$> f modelsExecutedOrderModelSymbol
+{-# INLINE modelsExecutedOrderModelSymbolL #-}
+
+-- | 'modelsExecutedOrderModelTimestampNanos' Lens
+modelsExecutedOrderModelTimestampNanosL :: Lens_' ModelsExecutedOrderModel (Maybe Integer)
+modelsExecutedOrderModelTimestampNanosL f ModelsExecutedOrderModel{..} = (\modelsExecutedOrderModelTimestampNanos -> ModelsExecutedOrderModel { modelsExecutedOrderModelTimestampNanos, ..} ) <$> f modelsExecutedOrderModelTimestampNanos
+{-# INLINE modelsExecutedOrderModelTimestampNanosL #-}
+
+-- | 'modelsExecutedOrderModelTimestamp' Lens
+modelsExecutedOrderModelTimestampL :: Lens_' ModelsExecutedOrderModel (Maybe DateTime)
+modelsExecutedOrderModelTimestampL f ModelsExecutedOrderModel{..} = (\modelsExecutedOrderModelTimestamp -> ModelsExecutedOrderModel { modelsExecutedOrderModelTimestamp, ..} ) <$> f modelsExecutedOrderModelTimestamp
+{-# INLINE modelsExecutedOrderModelTimestampL #-}
+
+-- | 'modelsExecutedOrderModelOrderIdReference' Lens
+modelsExecutedOrderModelOrderIdReferenceL :: Lens_' ModelsExecutedOrderModel (Maybe Integer)
+modelsExecutedOrderModelOrderIdReferenceL f ModelsExecutedOrderModel{..} = (\modelsExecutedOrderModelOrderIdReference -> ModelsExecutedOrderModel { modelsExecutedOrderModelOrderIdReference, ..} ) <$> f modelsExecutedOrderModelOrderIdReference
+{-# INLINE modelsExecutedOrderModelOrderIdReferenceL #-}
+
+-- | 'modelsExecutedOrderModelSaleConditionFlags' Lens
+modelsExecutedOrderModelSaleConditionFlagsL :: Lens_' ModelsExecutedOrderModel (Maybe Int)
+modelsExecutedOrderModelSaleConditionFlagsL f ModelsExecutedOrderModel{..} = (\modelsExecutedOrderModelSaleConditionFlags -> ModelsExecutedOrderModel { modelsExecutedOrderModelSaleConditionFlags, ..} ) <$> f modelsExecutedOrderModelSaleConditionFlags
+{-# INLINE modelsExecutedOrderModelSaleConditionFlagsL #-}
+
+-- | 'modelsExecutedOrderModelIsIntermarketSweep' Lens
+modelsExecutedOrderModelIsIntermarketSweepL :: Lens_' ModelsExecutedOrderModel (Maybe Bool)
+modelsExecutedOrderModelIsIntermarketSweepL f ModelsExecutedOrderModel{..} = (\modelsExecutedOrderModelIsIntermarketSweep -> ModelsExecutedOrderModel { modelsExecutedOrderModelIsIntermarketSweep, ..} ) <$> f modelsExecutedOrderModelIsIntermarketSweep
+{-# INLINE modelsExecutedOrderModelIsIntermarketSweepL #-}
+
+-- | 'modelsExecutedOrderModelIsExtendedHoursTrade' Lens
+modelsExecutedOrderModelIsExtendedHoursTradeL :: Lens_' ModelsExecutedOrderModel (Maybe Bool)
+modelsExecutedOrderModelIsExtendedHoursTradeL f ModelsExecutedOrderModel{..} = (\modelsExecutedOrderModelIsExtendedHoursTrade -> ModelsExecutedOrderModel { modelsExecutedOrderModelIsExtendedHoursTrade, ..} ) <$> f modelsExecutedOrderModelIsExtendedHoursTrade
+{-# INLINE modelsExecutedOrderModelIsExtendedHoursTradeL #-}
+
+-- | 'modelsExecutedOrderModelIsOddLotTrade' Lens
+modelsExecutedOrderModelIsOddLotTradeL :: Lens_' ModelsExecutedOrderModel (Maybe Bool)
+modelsExecutedOrderModelIsOddLotTradeL f ModelsExecutedOrderModel{..} = (\modelsExecutedOrderModelIsOddLotTrade -> ModelsExecutedOrderModel { modelsExecutedOrderModelIsOddLotTrade, ..} ) <$> f modelsExecutedOrderModelIsOddLotTrade
+{-# INLINE modelsExecutedOrderModelIsOddLotTradeL #-}
+
+-- | 'modelsExecutedOrderModelIsTradeThroughExempt' Lens
+modelsExecutedOrderModelIsTradeThroughExemptL :: Lens_' ModelsExecutedOrderModel (Maybe Bool)
+modelsExecutedOrderModelIsTradeThroughExemptL f ModelsExecutedOrderModel{..} = (\modelsExecutedOrderModelIsTradeThroughExempt -> ModelsExecutedOrderModel { modelsExecutedOrderModelIsTradeThroughExempt, ..} ) <$> f modelsExecutedOrderModelIsTradeThroughExempt
+{-# INLINE modelsExecutedOrderModelIsTradeThroughExemptL #-}
+
+-- | 'modelsExecutedOrderModelIsSinglePriceCrossTrade' Lens
+modelsExecutedOrderModelIsSinglePriceCrossTradeL :: Lens_' ModelsExecutedOrderModel (Maybe Bool)
+modelsExecutedOrderModelIsSinglePriceCrossTradeL f ModelsExecutedOrderModel{..} = (\modelsExecutedOrderModelIsSinglePriceCrossTrade -> ModelsExecutedOrderModel { modelsExecutedOrderModelIsSinglePriceCrossTrade, ..} ) <$> f modelsExecutedOrderModelIsSinglePriceCrossTrade
+{-# INLINE modelsExecutedOrderModelIsSinglePriceCrossTradeL #-}
+
+-- | 'modelsExecutedOrderModelSize' Lens
+modelsExecutedOrderModelSizeL :: Lens_' ModelsExecutedOrderModel (Maybe Int)
+modelsExecutedOrderModelSizeL f ModelsExecutedOrderModel{..} = (\modelsExecutedOrderModelSize -> ModelsExecutedOrderModel { modelsExecutedOrderModelSize, ..} ) <$> f modelsExecutedOrderModelSize
+{-# INLINE modelsExecutedOrderModelSizeL #-}
+
+-- | 'modelsExecutedOrderModelPrice' Lens
+modelsExecutedOrderModelPriceL :: Lens_' ModelsExecutedOrderModel (Maybe Double)
+modelsExecutedOrderModelPriceL f ModelsExecutedOrderModel{..} = (\modelsExecutedOrderModelPrice -> ModelsExecutedOrderModel { modelsExecutedOrderModelPrice, ..} ) <$> f modelsExecutedOrderModelPrice
+{-# INLINE modelsExecutedOrderModelPriceL #-}
+
+-- | 'modelsExecutedOrderModelTradeId' Lens
+modelsExecutedOrderModelTradeIdL :: Lens_' ModelsExecutedOrderModel (Maybe Integer)
+modelsExecutedOrderModelTradeIdL f ModelsExecutedOrderModel{..} = (\modelsExecutedOrderModelTradeId -> ModelsExecutedOrderModel { modelsExecutedOrderModelTradeId, ..} ) <$> f modelsExecutedOrderModelTradeId
+{-# INLINE modelsExecutedOrderModelTradeIdL #-}
+
+
+
+-- * ModelsModifyOrderModel
+
+-- | 'modelsModifyOrderModelSymbol' Lens
+modelsModifyOrderModelSymbolL :: Lens_' ModelsModifyOrderModel (Maybe Text)
+modelsModifyOrderModelSymbolL f ModelsModifyOrderModel{..} = (\modelsModifyOrderModelSymbol -> ModelsModifyOrderModel { modelsModifyOrderModelSymbol, ..} ) <$> f modelsModifyOrderModelSymbol
+{-# INLINE modelsModifyOrderModelSymbolL #-}
+
+-- | 'modelsModifyOrderModelTimestampNanos' Lens
+modelsModifyOrderModelTimestampNanosL :: Lens_' ModelsModifyOrderModel (Maybe Integer)
+modelsModifyOrderModelTimestampNanosL f ModelsModifyOrderModel{..} = (\modelsModifyOrderModelTimestampNanos -> ModelsModifyOrderModel { modelsModifyOrderModelTimestampNanos, ..} ) <$> f modelsModifyOrderModelTimestampNanos
+{-# INLINE modelsModifyOrderModelTimestampNanosL #-}
+
+-- | 'modelsModifyOrderModelTimestamp' Lens
+modelsModifyOrderModelTimestampL :: Lens_' ModelsModifyOrderModel (Maybe DateTime)
+modelsModifyOrderModelTimestampL f ModelsModifyOrderModel{..} = (\modelsModifyOrderModelTimestamp -> ModelsModifyOrderModel { modelsModifyOrderModelTimestamp, ..} ) <$> f modelsModifyOrderModelTimestamp
+{-# INLINE modelsModifyOrderModelTimestampL #-}
+
+-- | 'modelsModifyOrderModelOrderIdReference' Lens
+modelsModifyOrderModelOrderIdReferenceL :: Lens_' ModelsModifyOrderModel (Maybe Integer)
+modelsModifyOrderModelOrderIdReferenceL f ModelsModifyOrderModel{..} = (\modelsModifyOrderModelOrderIdReference -> ModelsModifyOrderModel { modelsModifyOrderModelOrderIdReference, ..} ) <$> f modelsModifyOrderModelOrderIdReference
+{-# INLINE modelsModifyOrderModelOrderIdReferenceL #-}
+
+-- | 'modelsModifyOrderModelIsPriorityReset' Lens
+modelsModifyOrderModelIsPriorityResetL :: Lens_' ModelsModifyOrderModel (Maybe Bool)
+modelsModifyOrderModelIsPriorityResetL f ModelsModifyOrderModel{..} = (\modelsModifyOrderModelIsPriorityReset -> ModelsModifyOrderModel { modelsModifyOrderModelIsPriorityReset, ..} ) <$> f modelsModifyOrderModelIsPriorityReset
+{-# INLINE modelsModifyOrderModelIsPriorityResetL #-}
+
+-- | 'modelsModifyOrderModelSize' Lens
+modelsModifyOrderModelSizeL :: Lens_' ModelsModifyOrderModel (Maybe Int)
+modelsModifyOrderModelSizeL f ModelsModifyOrderModel{..} = (\modelsModifyOrderModelSize -> ModelsModifyOrderModel { modelsModifyOrderModelSize, ..} ) <$> f modelsModifyOrderModelSize
+{-# INLINE modelsModifyOrderModelSizeL #-}
+
+-- | 'modelsModifyOrderModelPrice' Lens
+modelsModifyOrderModelPriceL :: Lens_' ModelsModifyOrderModel (Maybe Double)
+modelsModifyOrderModelPriceL f ModelsModifyOrderModel{..} = (\modelsModifyOrderModelPrice -> ModelsModifyOrderModel { modelsModifyOrderModelPrice, ..} ) <$> f modelsModifyOrderModelPrice
+{-# INLINE modelsModifyOrderModelPriceL #-}
+
+
+
+-- * ModelsOfficialPriceModel
+
+-- | 'modelsOfficialPriceModelSymbol' Lens
+modelsOfficialPriceModelSymbolL :: Lens_' ModelsOfficialPriceModel (Maybe Text)
+modelsOfficialPriceModelSymbolL f ModelsOfficialPriceModel{..} = (\modelsOfficialPriceModelSymbol -> ModelsOfficialPriceModel { modelsOfficialPriceModelSymbol, ..} ) <$> f modelsOfficialPriceModelSymbol
+{-# INLINE modelsOfficialPriceModelSymbolL #-}
+
+-- | 'modelsOfficialPriceModelTimestampNanos' Lens
+modelsOfficialPriceModelTimestampNanosL :: Lens_' ModelsOfficialPriceModel (Maybe Integer)
+modelsOfficialPriceModelTimestampNanosL f ModelsOfficialPriceModel{..} = (\modelsOfficialPriceModelTimestampNanos -> ModelsOfficialPriceModel { modelsOfficialPriceModelTimestampNanos, ..} ) <$> f modelsOfficialPriceModelTimestampNanos
+{-# INLINE modelsOfficialPriceModelTimestampNanosL #-}
+
+-- | 'modelsOfficialPriceModelTimestamp' Lens
+modelsOfficialPriceModelTimestampL :: Lens_' ModelsOfficialPriceModel (Maybe DateTime)
+modelsOfficialPriceModelTimestampL f ModelsOfficialPriceModel{..} = (\modelsOfficialPriceModelTimestamp -> ModelsOfficialPriceModel { modelsOfficialPriceModelTimestamp, ..} ) <$> f modelsOfficialPriceModelTimestamp
+{-# INLINE modelsOfficialPriceModelTimestampL #-}
+
+-- | 'modelsOfficialPriceModelPriceType' Lens
+modelsOfficialPriceModelPriceTypeL :: Lens_' ModelsOfficialPriceModel (Maybe Int)
+modelsOfficialPriceModelPriceTypeL f ModelsOfficialPriceModel{..} = (\modelsOfficialPriceModelPriceType -> ModelsOfficialPriceModel { modelsOfficialPriceModelPriceType, ..} ) <$> f modelsOfficialPriceModelPriceType
+{-# INLINE modelsOfficialPriceModelPriceTypeL #-}
+
+-- | 'modelsOfficialPriceModelPriceTypeCode' Lens
+modelsOfficialPriceModelPriceTypeCodeL :: Lens_' ModelsOfficialPriceModel (Maybe Text)
+modelsOfficialPriceModelPriceTypeCodeL f ModelsOfficialPriceModel{..} = (\modelsOfficialPriceModelPriceTypeCode -> ModelsOfficialPriceModel { modelsOfficialPriceModelPriceTypeCode, ..} ) <$> f modelsOfficialPriceModelPriceTypeCode
+{-# INLINE modelsOfficialPriceModelPriceTypeCodeL #-}
+
+-- | 'modelsOfficialPriceModelPriceTypeText' Lens
+modelsOfficialPriceModelPriceTypeTextL :: Lens_' ModelsOfficialPriceModel (Maybe Text)
+modelsOfficialPriceModelPriceTypeTextL f ModelsOfficialPriceModel{..} = (\modelsOfficialPriceModelPriceTypeText -> ModelsOfficialPriceModel { modelsOfficialPriceModelPriceTypeText, ..} ) <$> f modelsOfficialPriceModelPriceTypeText
+{-# INLINE modelsOfficialPriceModelPriceTypeTextL #-}
+
+-- | 'modelsOfficialPriceModelIsPriceTypeOpening' Lens
+modelsOfficialPriceModelIsPriceTypeOpeningL :: Lens_' ModelsOfficialPriceModel (Maybe Bool)
+modelsOfficialPriceModelIsPriceTypeOpeningL f ModelsOfficialPriceModel{..} = (\modelsOfficialPriceModelIsPriceTypeOpening -> ModelsOfficialPriceModel { modelsOfficialPriceModelIsPriceTypeOpening, ..} ) <$> f modelsOfficialPriceModelIsPriceTypeOpening
+{-# INLINE modelsOfficialPriceModelIsPriceTypeOpeningL #-}
+
+-- | 'modelsOfficialPriceModelIsPriceTypeClosing' Lens
+modelsOfficialPriceModelIsPriceTypeClosingL :: Lens_' ModelsOfficialPriceModel (Maybe Bool)
+modelsOfficialPriceModelIsPriceTypeClosingL f ModelsOfficialPriceModel{..} = (\modelsOfficialPriceModelIsPriceTypeClosing -> ModelsOfficialPriceModel { modelsOfficialPriceModelIsPriceTypeClosing, ..} ) <$> f modelsOfficialPriceModelIsPriceTypeClosing
+{-# INLINE modelsOfficialPriceModelIsPriceTypeClosingL #-}
+
+-- | 'modelsOfficialPriceModelOfficialPrice' Lens
+modelsOfficialPriceModelOfficialPriceL :: Lens_' ModelsOfficialPriceModel (Maybe Double)
+modelsOfficialPriceModelOfficialPriceL f ModelsOfficialPriceModel{..} = (\modelsOfficialPriceModelOfficialPrice -> ModelsOfficialPriceModel { modelsOfficialPriceModelOfficialPrice, ..} ) <$> f modelsOfficialPriceModelOfficialPrice
+{-# INLINE modelsOfficialPriceModelOfficialPriceL #-}
+
+
+
+-- * ModelsOperationalHaltStatusModel
+
+-- | 'modelsOperationalHaltStatusModelSymbol' Lens
+modelsOperationalHaltStatusModelSymbolL :: Lens_' ModelsOperationalHaltStatusModel (Maybe Text)
+modelsOperationalHaltStatusModelSymbolL f ModelsOperationalHaltStatusModel{..} = (\modelsOperationalHaltStatusModelSymbol -> ModelsOperationalHaltStatusModel { modelsOperationalHaltStatusModelSymbol, ..} ) <$> f modelsOperationalHaltStatusModelSymbol
+{-# INLINE modelsOperationalHaltStatusModelSymbolL #-}
+
+-- | 'modelsOperationalHaltStatusModelTimestampNanos' Lens
+modelsOperationalHaltStatusModelTimestampNanosL :: Lens_' ModelsOperationalHaltStatusModel (Maybe Integer)
+modelsOperationalHaltStatusModelTimestampNanosL f ModelsOperationalHaltStatusModel{..} = (\modelsOperationalHaltStatusModelTimestampNanos -> ModelsOperationalHaltStatusModel { modelsOperationalHaltStatusModelTimestampNanos, ..} ) <$> f modelsOperationalHaltStatusModelTimestampNanos
+{-# INLINE modelsOperationalHaltStatusModelTimestampNanosL #-}
+
+-- | 'modelsOperationalHaltStatusModelTimestamp' Lens
+modelsOperationalHaltStatusModelTimestampL :: Lens_' ModelsOperationalHaltStatusModel (Maybe DateTime)
+modelsOperationalHaltStatusModelTimestampL f ModelsOperationalHaltStatusModel{..} = (\modelsOperationalHaltStatusModelTimestamp -> ModelsOperationalHaltStatusModel { modelsOperationalHaltStatusModelTimestamp, ..} ) <$> f modelsOperationalHaltStatusModelTimestamp
+{-# INLINE modelsOperationalHaltStatusModelTimestampL #-}
+
+-- | 'modelsOperationalHaltStatusModelOperationalHaltStatus' Lens
+modelsOperationalHaltStatusModelOperationalHaltStatusL :: Lens_' ModelsOperationalHaltStatusModel (Maybe Int)
+modelsOperationalHaltStatusModelOperationalHaltStatusL f ModelsOperationalHaltStatusModel{..} = (\modelsOperationalHaltStatusModelOperationalHaltStatus -> ModelsOperationalHaltStatusModel { modelsOperationalHaltStatusModelOperationalHaltStatus, ..} ) <$> f modelsOperationalHaltStatusModelOperationalHaltStatus
+{-# INLINE modelsOperationalHaltStatusModelOperationalHaltStatusL #-}
+
+-- | 'modelsOperationalHaltStatusModelOperationalHaltStatusCode' Lens
+modelsOperationalHaltStatusModelOperationalHaltStatusCodeL :: Lens_' ModelsOperationalHaltStatusModel (Maybe Text)
+modelsOperationalHaltStatusModelOperationalHaltStatusCodeL f ModelsOperationalHaltStatusModel{..} = (\modelsOperationalHaltStatusModelOperationalHaltStatusCode -> ModelsOperationalHaltStatusModel { modelsOperationalHaltStatusModelOperationalHaltStatusCode, ..} ) <$> f modelsOperationalHaltStatusModelOperationalHaltStatusCode
+{-# INLINE modelsOperationalHaltStatusModelOperationalHaltStatusCodeL #-}
+
+-- | 'modelsOperationalHaltStatusModelOperationalHaltStatusText' Lens
+modelsOperationalHaltStatusModelOperationalHaltStatusTextL :: Lens_' ModelsOperationalHaltStatusModel (Maybe Text)
+modelsOperationalHaltStatusModelOperationalHaltStatusTextL f ModelsOperationalHaltStatusModel{..} = (\modelsOperationalHaltStatusModelOperationalHaltStatusText -> ModelsOperationalHaltStatusModel { modelsOperationalHaltStatusModelOperationalHaltStatusText, ..} ) <$> f modelsOperationalHaltStatusModelOperationalHaltStatusText
+{-# INLINE modelsOperationalHaltStatusModelOperationalHaltStatusTextL #-}
+
+-- | 'modelsOperationalHaltStatusModelIsOperationallyHalted' Lens
+modelsOperationalHaltStatusModelIsOperationallyHaltedL :: Lens_' ModelsOperationalHaltStatusModel (Maybe Bool)
+modelsOperationalHaltStatusModelIsOperationallyHaltedL f ModelsOperationalHaltStatusModel{..} = (\modelsOperationalHaltStatusModelIsOperationallyHalted -> ModelsOperationalHaltStatusModel { modelsOperationalHaltStatusModelIsOperationallyHalted, ..} ) <$> f modelsOperationalHaltStatusModelIsOperationallyHalted
+{-# INLINE modelsOperationalHaltStatusModelIsOperationallyHaltedL #-}
+
+-- | 'modelsOperationalHaltStatusModelIsNotOperationallyHalted' Lens
+modelsOperationalHaltStatusModelIsNotOperationallyHaltedL :: Lens_' ModelsOperationalHaltStatusModel (Maybe Bool)
+modelsOperationalHaltStatusModelIsNotOperationallyHaltedL f ModelsOperationalHaltStatusModel{..} = (\modelsOperationalHaltStatusModelIsNotOperationallyHalted -> ModelsOperationalHaltStatusModel { modelsOperationalHaltStatusModelIsNotOperationallyHalted, ..} ) <$> f modelsOperationalHaltStatusModelIsNotOperationallyHalted
+{-# INLINE modelsOperationalHaltStatusModelIsNotOperationallyHaltedL #-}
+
+
+
+-- * ModelsOrderBookModel
+
+-- | 'modelsOrderBookModelAddOrder' Lens
+modelsOrderBookModelAddOrderL :: Lens_' ModelsOrderBookModel (Maybe ModelsAddOrderModel)
+modelsOrderBookModelAddOrderL f ModelsOrderBookModel{..} = (\modelsOrderBookModelAddOrder -> ModelsOrderBookModel { modelsOrderBookModelAddOrder, ..} ) <$> f modelsOrderBookModelAddOrder
+{-# INLINE modelsOrderBookModelAddOrderL #-}
+
+-- | 'modelsOrderBookModelDeleteOrder' Lens
+modelsOrderBookModelDeleteOrderL :: Lens_' ModelsOrderBookModel (Maybe ModelsDeleteOrderModel)
+modelsOrderBookModelDeleteOrderL f ModelsOrderBookModel{..} = (\modelsOrderBookModelDeleteOrder -> ModelsOrderBookModel { modelsOrderBookModelDeleteOrder, ..} ) <$> f modelsOrderBookModelDeleteOrder
+{-# INLINE modelsOrderBookModelDeleteOrderL #-}
+
+-- | 'modelsOrderBookModelModifyOrder' Lens
+modelsOrderBookModelModifyOrderL :: Lens_' ModelsOrderBookModel (Maybe ModelsModifyOrderModel)
+modelsOrderBookModelModifyOrderL f ModelsOrderBookModel{..} = (\modelsOrderBookModelModifyOrder -> ModelsOrderBookModel { modelsOrderBookModelModifyOrder, ..} ) <$> f modelsOrderBookModelModifyOrder
+{-# INLINE modelsOrderBookModelModifyOrderL #-}
+
+-- | 'modelsOrderBookModelExecutedOrder' Lens
+modelsOrderBookModelExecutedOrderL :: Lens_' ModelsOrderBookModel (Maybe ModelsExecutedOrderModel)
+modelsOrderBookModelExecutedOrderL f ModelsOrderBookModel{..} = (\modelsOrderBookModelExecutedOrder -> ModelsOrderBookModel { modelsOrderBookModelExecutedOrder, ..} ) <$> f modelsOrderBookModelExecutedOrder
+{-# INLINE modelsOrderBookModelExecutedOrderL #-}
+
+-- | 'modelsOrderBookModelClearBook' Lens
+modelsOrderBookModelClearBookL :: Lens_' ModelsOrderBookModel (Maybe ModelsClearBookModel)
+modelsOrderBookModelClearBookL f ModelsOrderBookModel{..} = (\modelsOrderBookModelClearBook -> ModelsOrderBookModel { modelsOrderBookModelClearBook, ..} ) <$> f modelsOrderBookModelClearBook
+{-# INLINE modelsOrderBookModelClearBookL #-}
+
+
+
+-- * ModelsRetailLiquidityIndicatorModel
+
+-- | 'modelsRetailLiquidityIndicatorModelSymbol' Lens
+modelsRetailLiquidityIndicatorModelSymbolL :: Lens_' ModelsRetailLiquidityIndicatorModel (Maybe Text)
+modelsRetailLiquidityIndicatorModelSymbolL f ModelsRetailLiquidityIndicatorModel{..} = (\modelsRetailLiquidityIndicatorModelSymbol -> ModelsRetailLiquidityIndicatorModel { modelsRetailLiquidityIndicatorModelSymbol, ..} ) <$> f modelsRetailLiquidityIndicatorModelSymbol
+{-# INLINE modelsRetailLiquidityIndicatorModelSymbolL #-}
+
+-- | 'modelsRetailLiquidityIndicatorModelTimestampNanos' Lens
+modelsRetailLiquidityIndicatorModelTimestampNanosL :: Lens_' ModelsRetailLiquidityIndicatorModel (Maybe Integer)
+modelsRetailLiquidityIndicatorModelTimestampNanosL f ModelsRetailLiquidityIndicatorModel{..} = (\modelsRetailLiquidityIndicatorModelTimestampNanos -> ModelsRetailLiquidityIndicatorModel { modelsRetailLiquidityIndicatorModelTimestampNanos, ..} ) <$> f modelsRetailLiquidityIndicatorModelTimestampNanos
+{-# INLINE modelsRetailLiquidityIndicatorModelTimestampNanosL #-}
+
+-- | 'modelsRetailLiquidityIndicatorModelTimestamp' Lens
+modelsRetailLiquidityIndicatorModelTimestampL :: Lens_' ModelsRetailLiquidityIndicatorModel (Maybe DateTime)
+modelsRetailLiquidityIndicatorModelTimestampL f ModelsRetailLiquidityIndicatorModel{..} = (\modelsRetailLiquidityIndicatorModelTimestamp -> ModelsRetailLiquidityIndicatorModel { modelsRetailLiquidityIndicatorModelTimestamp, ..} ) <$> f modelsRetailLiquidityIndicatorModelTimestamp
+{-# INLINE modelsRetailLiquidityIndicatorModelTimestampL #-}
+
+-- | 'modelsRetailLiquidityIndicatorModelRetailLiquidityIndicator' Lens
+modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorL :: Lens_' ModelsRetailLiquidityIndicatorModel (Maybe Int)
+modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorL f ModelsRetailLiquidityIndicatorModel{..} = (\modelsRetailLiquidityIndicatorModelRetailLiquidityIndicator -> ModelsRetailLiquidityIndicatorModel { modelsRetailLiquidityIndicatorModelRetailLiquidityIndicator, ..} ) <$> f modelsRetailLiquidityIndicatorModelRetailLiquidityIndicator
+{-# INLINE modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorL #-}
+
+-- | 'modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode' Lens
+modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorCodeL :: Lens_' ModelsRetailLiquidityIndicatorModel (Maybe Text)
+modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorCodeL f ModelsRetailLiquidityIndicatorModel{..} = (\modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode -> ModelsRetailLiquidityIndicatorModel { modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode, ..} ) <$> f modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorCode
+{-# INLINE modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorCodeL #-}
+
+-- | 'modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorText' Lens
+modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorTextL :: Lens_' ModelsRetailLiquidityIndicatorModel (Maybe Text)
+modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorTextL f ModelsRetailLiquidityIndicatorModel{..} = (\modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorText -> ModelsRetailLiquidityIndicatorModel { modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorText, ..} ) <$> f modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorText
+{-# INLINE modelsRetailLiquidityIndicatorModelRetailLiquidityIndicatorTextL #-}
+
+-- | 'modelsRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable' Lens
+modelsRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicableL :: Lens_' ModelsRetailLiquidityIndicatorModel (Maybe Bool)
+modelsRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicableL f ModelsRetailLiquidityIndicatorModel{..} = (\modelsRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable -> ModelsRetailLiquidityIndicatorModel { modelsRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable, ..} ) <$> f modelsRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicable
+{-# INLINE modelsRetailLiquidityIndicatorModelIsRetailIndicatorNotApplicableL #-}
+
+-- | 'modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest' Lens
+modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterestL :: Lens_' ModelsRetailLiquidityIndicatorModel (Maybe Bool)
+modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterestL f ModelsRetailLiquidityIndicatorModel{..} = (\modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest -> ModelsRetailLiquidityIndicatorModel { modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest, ..} ) <$> f modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterest
+{-# INLINE modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyInterestL #-}
+
+-- | 'modelsRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest' Lens
+modelsRetailLiquidityIndicatorModelIsRetailIndicatorSellInterestL :: Lens_' ModelsRetailLiquidityIndicatorModel (Maybe Bool)
+modelsRetailLiquidityIndicatorModelIsRetailIndicatorSellInterestL f ModelsRetailLiquidityIndicatorModel{..} = (\modelsRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest -> ModelsRetailLiquidityIndicatorModel { modelsRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest, ..} ) <$> f modelsRetailLiquidityIndicatorModelIsRetailIndicatorSellInterest
+{-# INLINE modelsRetailLiquidityIndicatorModelIsRetailIndicatorSellInterestL #-}
+
+-- | 'modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest' Lens
+modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterestL :: Lens_' ModelsRetailLiquidityIndicatorModel (Maybe Bool)
+modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterestL f ModelsRetailLiquidityIndicatorModel{..} = (\modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest -> ModelsRetailLiquidityIndicatorModel { modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest, ..} ) <$> f modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterest
+{-# INLINE modelsRetailLiquidityIndicatorModelIsRetailIndicatorBuyAndSellInterestL #-}
+
+
+
+-- * ModelsSecurityDirectoryModel
+
+-- | 'modelsSecurityDirectoryModelSymbol' Lens
+modelsSecurityDirectoryModelSymbolL :: Lens_' ModelsSecurityDirectoryModel (Maybe Text)
+modelsSecurityDirectoryModelSymbolL f ModelsSecurityDirectoryModel{..} = (\modelsSecurityDirectoryModelSymbol -> ModelsSecurityDirectoryModel { modelsSecurityDirectoryModelSymbol, ..} ) <$> f modelsSecurityDirectoryModelSymbol
+{-# INLINE modelsSecurityDirectoryModelSymbolL #-}
+
+-- | 'modelsSecurityDirectoryModelTimestampNanos' Lens
+modelsSecurityDirectoryModelTimestampNanosL :: Lens_' ModelsSecurityDirectoryModel (Maybe Integer)
+modelsSecurityDirectoryModelTimestampNanosL f ModelsSecurityDirectoryModel{..} = (\modelsSecurityDirectoryModelTimestampNanos -> ModelsSecurityDirectoryModel { modelsSecurityDirectoryModelTimestampNanos, ..} ) <$> f modelsSecurityDirectoryModelTimestampNanos
+{-# INLINE modelsSecurityDirectoryModelTimestampNanosL #-}
+
+-- | 'modelsSecurityDirectoryModelTimestamp' Lens
+modelsSecurityDirectoryModelTimestampL :: Lens_' ModelsSecurityDirectoryModel (Maybe DateTime)
+modelsSecurityDirectoryModelTimestampL f ModelsSecurityDirectoryModel{..} = (\modelsSecurityDirectoryModelTimestamp -> ModelsSecurityDirectoryModel { modelsSecurityDirectoryModelTimestamp, ..} ) <$> f modelsSecurityDirectoryModelTimestamp
+{-# INLINE modelsSecurityDirectoryModelTimestampL #-}
+
+-- | 'modelsSecurityDirectoryModelFlags' Lens
+modelsSecurityDirectoryModelFlagsL :: Lens_' ModelsSecurityDirectoryModel (Maybe Int)
+modelsSecurityDirectoryModelFlagsL f ModelsSecurityDirectoryModel{..} = (\modelsSecurityDirectoryModelFlags -> ModelsSecurityDirectoryModel { modelsSecurityDirectoryModelFlags, ..} ) <$> f modelsSecurityDirectoryModelFlags
+{-# INLINE modelsSecurityDirectoryModelFlagsL #-}
+
+-- | 'modelsSecurityDirectoryModelRoundLotSize' Lens
+modelsSecurityDirectoryModelRoundLotSizeL :: Lens_' ModelsSecurityDirectoryModel (Maybe Int)
+modelsSecurityDirectoryModelRoundLotSizeL f ModelsSecurityDirectoryModel{..} = (\modelsSecurityDirectoryModelRoundLotSize -> ModelsSecurityDirectoryModel { modelsSecurityDirectoryModelRoundLotSize, ..} ) <$> f modelsSecurityDirectoryModelRoundLotSize
+{-# INLINE modelsSecurityDirectoryModelRoundLotSizeL #-}
+
+-- | 'modelsSecurityDirectoryModelAdjustedPocPrice' Lens
+modelsSecurityDirectoryModelAdjustedPocPriceL :: Lens_' ModelsSecurityDirectoryModel (Maybe Double)
+modelsSecurityDirectoryModelAdjustedPocPriceL f ModelsSecurityDirectoryModel{..} = (\modelsSecurityDirectoryModelAdjustedPocPrice -> ModelsSecurityDirectoryModel { modelsSecurityDirectoryModelAdjustedPocPrice, ..} ) <$> f modelsSecurityDirectoryModelAdjustedPocPrice
+{-# INLINE modelsSecurityDirectoryModelAdjustedPocPriceL #-}
+
+-- | 'modelsSecurityDirectoryModelLuldTier' Lens
+modelsSecurityDirectoryModelLuldTierL :: Lens_' ModelsSecurityDirectoryModel (Maybe Int)
+modelsSecurityDirectoryModelLuldTierL f ModelsSecurityDirectoryModel{..} = (\modelsSecurityDirectoryModelLuldTier -> ModelsSecurityDirectoryModel { modelsSecurityDirectoryModelLuldTier, ..} ) <$> f modelsSecurityDirectoryModelLuldTier
+{-# INLINE modelsSecurityDirectoryModelLuldTierL #-}
+
+-- | 'modelsSecurityDirectoryModelLuldTierCode' Lens
+modelsSecurityDirectoryModelLuldTierCodeL :: Lens_' ModelsSecurityDirectoryModel (Maybe Text)
+modelsSecurityDirectoryModelLuldTierCodeL f ModelsSecurityDirectoryModel{..} = (\modelsSecurityDirectoryModelLuldTierCode -> ModelsSecurityDirectoryModel { modelsSecurityDirectoryModelLuldTierCode, ..} ) <$> f modelsSecurityDirectoryModelLuldTierCode
+{-# INLINE modelsSecurityDirectoryModelLuldTierCodeL #-}
+
+-- | 'modelsSecurityDirectoryModelLuldTierText' Lens
+modelsSecurityDirectoryModelLuldTierTextL :: Lens_' ModelsSecurityDirectoryModel (Maybe Text)
+modelsSecurityDirectoryModelLuldTierTextL f ModelsSecurityDirectoryModel{..} = (\modelsSecurityDirectoryModelLuldTierText -> ModelsSecurityDirectoryModel { modelsSecurityDirectoryModelLuldTierText, ..} ) <$> f modelsSecurityDirectoryModelLuldTierText
+{-# INLINE modelsSecurityDirectoryModelLuldTierTextL #-}
+
+-- | 'modelsSecurityDirectoryModelIsLuldTierNotApplicable' Lens
+modelsSecurityDirectoryModelIsLuldTierNotApplicableL :: Lens_' ModelsSecurityDirectoryModel (Maybe Bool)
+modelsSecurityDirectoryModelIsLuldTierNotApplicableL f ModelsSecurityDirectoryModel{..} = (\modelsSecurityDirectoryModelIsLuldTierNotApplicable -> ModelsSecurityDirectoryModel { modelsSecurityDirectoryModelIsLuldTierNotApplicable, ..} ) <$> f modelsSecurityDirectoryModelIsLuldTierNotApplicable
+{-# INLINE modelsSecurityDirectoryModelIsLuldTierNotApplicableL #-}
+
+-- | 'modelsSecurityDirectoryModelIsLuldTier1' Lens
+modelsSecurityDirectoryModelIsLuldTier1L :: Lens_' ModelsSecurityDirectoryModel (Maybe Bool)
+modelsSecurityDirectoryModelIsLuldTier1L f ModelsSecurityDirectoryModel{..} = (\modelsSecurityDirectoryModelIsLuldTier1 -> ModelsSecurityDirectoryModel { modelsSecurityDirectoryModelIsLuldTier1, ..} ) <$> f modelsSecurityDirectoryModelIsLuldTier1
+{-# INLINE modelsSecurityDirectoryModelIsLuldTier1L #-}
+
+-- | 'modelsSecurityDirectoryModelIsLuldTier2' Lens
+modelsSecurityDirectoryModelIsLuldTier2L :: Lens_' ModelsSecurityDirectoryModel (Maybe Bool)
+modelsSecurityDirectoryModelIsLuldTier2L f ModelsSecurityDirectoryModel{..} = (\modelsSecurityDirectoryModelIsLuldTier2 -> ModelsSecurityDirectoryModel { modelsSecurityDirectoryModelIsLuldTier2, ..} ) <$> f modelsSecurityDirectoryModelIsLuldTier2
+{-# INLINE modelsSecurityDirectoryModelIsLuldTier2L #-}
+
+
+
+-- * ModelsSecurityEventModel
+
+-- | 'modelsSecurityEventModelSymbol' Lens
+modelsSecurityEventModelSymbolL :: Lens_' ModelsSecurityEventModel (Maybe Text)
+modelsSecurityEventModelSymbolL f ModelsSecurityEventModel{..} = (\modelsSecurityEventModelSymbol -> ModelsSecurityEventModel { modelsSecurityEventModelSymbol, ..} ) <$> f modelsSecurityEventModelSymbol
+{-# INLINE modelsSecurityEventModelSymbolL #-}
+
+-- | 'modelsSecurityEventModelTimestampNanos' Lens
+modelsSecurityEventModelTimestampNanosL :: Lens_' ModelsSecurityEventModel (Maybe Integer)
+modelsSecurityEventModelTimestampNanosL f ModelsSecurityEventModel{..} = (\modelsSecurityEventModelTimestampNanos -> ModelsSecurityEventModel { modelsSecurityEventModelTimestampNanos, ..} ) <$> f modelsSecurityEventModelTimestampNanos
+{-# INLINE modelsSecurityEventModelTimestampNanosL #-}
+
+-- | 'modelsSecurityEventModelTimestamp' Lens
+modelsSecurityEventModelTimestampL :: Lens_' ModelsSecurityEventModel (Maybe DateTime)
+modelsSecurityEventModelTimestampL f ModelsSecurityEventModel{..} = (\modelsSecurityEventModelTimestamp -> ModelsSecurityEventModel { modelsSecurityEventModelTimestamp, ..} ) <$> f modelsSecurityEventModelTimestamp
+{-# INLINE modelsSecurityEventModelTimestampL #-}
+
+-- | 'modelsSecurityEventModelSecurityEvent' Lens
+modelsSecurityEventModelSecurityEventL :: Lens_' ModelsSecurityEventModel (Maybe Int)
+modelsSecurityEventModelSecurityEventL f ModelsSecurityEventModel{..} = (\modelsSecurityEventModelSecurityEvent -> ModelsSecurityEventModel { modelsSecurityEventModelSecurityEvent, ..} ) <$> f modelsSecurityEventModelSecurityEvent
+{-# INLINE modelsSecurityEventModelSecurityEventL #-}
+
+-- | 'modelsSecurityEventModelSecurityEventCode' Lens
+modelsSecurityEventModelSecurityEventCodeL :: Lens_' ModelsSecurityEventModel (Maybe Text)
+modelsSecurityEventModelSecurityEventCodeL f ModelsSecurityEventModel{..} = (\modelsSecurityEventModelSecurityEventCode -> ModelsSecurityEventModel { modelsSecurityEventModelSecurityEventCode, ..} ) <$> f modelsSecurityEventModelSecurityEventCode
+{-# INLINE modelsSecurityEventModelSecurityEventCodeL #-}
+
+-- | 'modelsSecurityEventModelSecurityEventText' Lens
+modelsSecurityEventModelSecurityEventTextL :: Lens_' ModelsSecurityEventModel (Maybe Text)
+modelsSecurityEventModelSecurityEventTextL f ModelsSecurityEventModel{..} = (\modelsSecurityEventModelSecurityEventText -> ModelsSecurityEventModel { modelsSecurityEventModelSecurityEventText, ..} ) <$> f modelsSecurityEventModelSecurityEventText
+{-# INLINE modelsSecurityEventModelSecurityEventTextL #-}
+
+-- | 'modelsSecurityEventModelIsOpeningProcessComplete' Lens
+modelsSecurityEventModelIsOpeningProcessCompleteL :: Lens_' ModelsSecurityEventModel (Maybe Bool)
+modelsSecurityEventModelIsOpeningProcessCompleteL f ModelsSecurityEventModel{..} = (\modelsSecurityEventModelIsOpeningProcessComplete -> ModelsSecurityEventModel { modelsSecurityEventModelIsOpeningProcessComplete, ..} ) <$> f modelsSecurityEventModelIsOpeningProcessComplete
+{-# INLINE modelsSecurityEventModelIsOpeningProcessCompleteL #-}
+
+-- | 'modelsSecurityEventModelIsClosingProcessComplete' Lens
+modelsSecurityEventModelIsClosingProcessCompleteL :: Lens_' ModelsSecurityEventModel (Maybe Bool)
+modelsSecurityEventModelIsClosingProcessCompleteL f ModelsSecurityEventModel{..} = (\modelsSecurityEventModelIsClosingProcessComplete -> ModelsSecurityEventModel { modelsSecurityEventModelIsClosingProcessComplete, ..} ) <$> f modelsSecurityEventModelIsClosingProcessComplete
+{-# INLINE modelsSecurityEventModelIsClosingProcessCompleteL #-}
+
+
+
+-- * ModelsShortSalePriceTestStatusModel
+
+-- | 'modelsShortSalePriceTestStatusModelSymbol' Lens
+modelsShortSalePriceTestStatusModelSymbolL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Text)
+modelsShortSalePriceTestStatusModelSymbolL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelSymbol -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelSymbol, ..} ) <$> f modelsShortSalePriceTestStatusModelSymbol
+{-# INLINE modelsShortSalePriceTestStatusModelSymbolL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelTimestampNanos' Lens
+modelsShortSalePriceTestStatusModelTimestampNanosL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Integer)
+modelsShortSalePriceTestStatusModelTimestampNanosL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelTimestampNanos -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelTimestampNanos, ..} ) <$> f modelsShortSalePriceTestStatusModelTimestampNanos
+{-# INLINE modelsShortSalePriceTestStatusModelTimestampNanosL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelTimestamp' Lens
+modelsShortSalePriceTestStatusModelTimestampL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe DateTime)
+modelsShortSalePriceTestStatusModelTimestampL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelTimestamp -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelTimestamp, ..} ) <$> f modelsShortSalePriceTestStatusModelTimestamp
+{-# INLINE modelsShortSalePriceTestStatusModelTimestampL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelShortSalePriceTestStatus' Lens
+modelsShortSalePriceTestStatusModelShortSalePriceTestStatusL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Int)
+modelsShortSalePriceTestStatusModelShortSalePriceTestStatusL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelShortSalePriceTestStatus -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelShortSalePriceTestStatus, ..} ) <$> f modelsShortSalePriceTestStatusModelShortSalePriceTestStatus
+{-# INLINE modelsShortSalePriceTestStatusModelShortSalePriceTestStatusL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelShortSalePriceTestStatusCode' Lens
+modelsShortSalePriceTestStatusModelShortSalePriceTestStatusCodeL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Text)
+modelsShortSalePriceTestStatusModelShortSalePriceTestStatusCodeL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelShortSalePriceTestStatusCode -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelShortSalePriceTestStatusCode, ..} ) <$> f modelsShortSalePriceTestStatusModelShortSalePriceTestStatusCode
+{-# INLINE modelsShortSalePriceTestStatusModelShortSalePriceTestStatusCodeL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelShortSalePriceTestStatusText' Lens
+modelsShortSalePriceTestStatusModelShortSalePriceTestStatusTextL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Text)
+modelsShortSalePriceTestStatusModelShortSalePriceTestStatusTextL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelShortSalePriceTestStatusText -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelShortSalePriceTestStatusText, ..} ) <$> f modelsShortSalePriceTestStatusModelShortSalePriceTestStatusText
+{-# INLINE modelsShortSalePriceTestStatusModelShortSalePriceTestStatusTextL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect' Lens
+modelsShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffectL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Bool)
+modelsShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffectL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect, ..} ) <$> f modelsShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffect
+{-# INLINE modelsShortSalePriceTestStatusModelIsShortSalePriceTestNotInEffectL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelIsShortSalePriceTestInEffect' Lens
+modelsShortSalePriceTestStatusModelIsShortSalePriceTestInEffectL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Bool)
+modelsShortSalePriceTestStatusModelIsShortSalePriceTestInEffectL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelIsShortSalePriceTestInEffect -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelIsShortSalePriceTestInEffect, ..} ) <$> f modelsShortSalePriceTestStatusModelIsShortSalePriceTestInEffect
+{-# INLINE modelsShortSalePriceTestStatusModelIsShortSalePriceTestInEffectL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelDetail' Lens
+modelsShortSalePriceTestStatusModelDetailL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Int)
+modelsShortSalePriceTestStatusModelDetailL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelDetail -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelDetail, ..} ) <$> f modelsShortSalePriceTestStatusModelDetail
+{-# INLINE modelsShortSalePriceTestStatusModelDetailL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelDetailCode' Lens
+modelsShortSalePriceTestStatusModelDetailCodeL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Text)
+modelsShortSalePriceTestStatusModelDetailCodeL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelDetailCode -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelDetailCode, ..} ) <$> f modelsShortSalePriceTestStatusModelDetailCode
+{-# INLINE modelsShortSalePriceTestStatusModelDetailCodeL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelDetailText' Lens
+modelsShortSalePriceTestStatusModelDetailTextL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Text)
+modelsShortSalePriceTestStatusModelDetailTextL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelDetailText -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelDetailText, ..} ) <$> f modelsShortSalePriceTestStatusModelDetailText
+{-# INLINE modelsShortSalePriceTestStatusModelDetailTextL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelIsDetailNoPriceTest' Lens
+modelsShortSalePriceTestStatusModelIsDetailNoPriceTestL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Bool)
+modelsShortSalePriceTestStatusModelIsDetailNoPriceTestL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelIsDetailNoPriceTest -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelIsDetailNoPriceTest, ..} ) <$> f modelsShortSalePriceTestStatusModelIsDetailNoPriceTest
+{-# INLINE modelsShortSalePriceTestStatusModelIsDetailNoPriceTestL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelIsDetailActivated' Lens
+modelsShortSalePriceTestStatusModelIsDetailActivatedL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Bool)
+modelsShortSalePriceTestStatusModelIsDetailActivatedL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelIsDetailActivated -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelIsDetailActivated, ..} ) <$> f modelsShortSalePriceTestStatusModelIsDetailActivated
+{-# INLINE modelsShortSalePriceTestStatusModelIsDetailActivatedL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelIsDetailContinued' Lens
+modelsShortSalePriceTestStatusModelIsDetailContinuedL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Bool)
+modelsShortSalePriceTestStatusModelIsDetailContinuedL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelIsDetailContinued -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelIsDetailContinued, ..} ) <$> f modelsShortSalePriceTestStatusModelIsDetailContinued
+{-# INLINE modelsShortSalePriceTestStatusModelIsDetailContinuedL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelIsDetailDeactivated' Lens
+modelsShortSalePriceTestStatusModelIsDetailDeactivatedL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Bool)
+modelsShortSalePriceTestStatusModelIsDetailDeactivatedL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelIsDetailDeactivated -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelIsDetailDeactivated, ..} ) <$> f modelsShortSalePriceTestStatusModelIsDetailDeactivated
+{-# INLINE modelsShortSalePriceTestStatusModelIsDetailDeactivatedL #-}
+
+-- | 'modelsShortSalePriceTestStatusModelIsDetailNotAvailable' Lens
+modelsShortSalePriceTestStatusModelIsDetailNotAvailableL :: Lens_' ModelsShortSalePriceTestStatusModel (Maybe Bool)
+modelsShortSalePriceTestStatusModelIsDetailNotAvailableL f ModelsShortSalePriceTestStatusModel{..} = (\modelsShortSalePriceTestStatusModelIsDetailNotAvailable -> ModelsShortSalePriceTestStatusModel { modelsShortSalePriceTestStatusModelIsDetailNotAvailable, ..} ) <$> f modelsShortSalePriceTestStatusModelIsDetailNotAvailable
+{-# INLINE modelsShortSalePriceTestStatusModelIsDetailNotAvailableL #-}
+
+
+
+-- * ModelsTradingStatusModel
+
+-- | 'modelsTradingStatusModelSymbol' Lens
+modelsTradingStatusModelSymbolL :: Lens_' ModelsTradingStatusModel (Maybe Text)
+modelsTradingStatusModelSymbolL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelSymbol -> ModelsTradingStatusModel { modelsTradingStatusModelSymbol, ..} ) <$> f modelsTradingStatusModelSymbol
+{-# INLINE modelsTradingStatusModelSymbolL #-}
+
+-- | 'modelsTradingStatusModelTimestampNanos' Lens
+modelsTradingStatusModelTimestampNanosL :: Lens_' ModelsTradingStatusModel (Maybe Integer)
+modelsTradingStatusModelTimestampNanosL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelTimestampNanos -> ModelsTradingStatusModel { modelsTradingStatusModelTimestampNanos, ..} ) <$> f modelsTradingStatusModelTimestampNanos
+{-# INLINE modelsTradingStatusModelTimestampNanosL #-}
+
+-- | 'modelsTradingStatusModelTimestamp' Lens
+modelsTradingStatusModelTimestampL :: Lens_' ModelsTradingStatusModel (Maybe DateTime)
+modelsTradingStatusModelTimestampL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelTimestamp -> ModelsTradingStatusModel { modelsTradingStatusModelTimestamp, ..} ) <$> f modelsTradingStatusModelTimestamp
+{-# INLINE modelsTradingStatusModelTimestampL #-}
+
+-- | 'modelsTradingStatusModelIsTradingLive' Lens
+modelsTradingStatusModelIsTradingLiveL :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsTradingLiveL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsTradingLive -> ModelsTradingStatusModel { modelsTradingStatusModelIsTradingLive, ..} ) <$> f modelsTradingStatusModelIsTradingLive
+{-# INLINE modelsTradingStatusModelIsTradingLiveL #-}
+
+-- | 'modelsTradingStatusModelIsTradingHalted' Lens
+modelsTradingStatusModelIsTradingHaltedL :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsTradingHaltedL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsTradingHalted -> ModelsTradingStatusModel { modelsTradingStatusModelIsTradingHalted, ..} ) <$> f modelsTradingStatusModelIsTradingHalted
+{-# INLINE modelsTradingStatusModelIsTradingHaltedL #-}
+
+-- | 'modelsTradingStatusModelIsTradingInOrderAcceptancePeriod' Lens
+modelsTradingStatusModelIsTradingInOrderAcceptancePeriodL :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsTradingInOrderAcceptancePeriodL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsTradingInOrderAcceptancePeriod -> ModelsTradingStatusModel { modelsTradingStatusModelIsTradingInOrderAcceptancePeriod, ..} ) <$> f modelsTradingStatusModelIsTradingInOrderAcceptancePeriod
+{-# INLINE modelsTradingStatusModelIsTradingInOrderAcceptancePeriodL #-}
+
+-- | 'modelsTradingStatusModelIsTradingPaused' Lens
+modelsTradingStatusModelIsTradingPausedL :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsTradingPausedL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsTradingPaused -> ModelsTradingStatusModel { modelsTradingStatusModelIsTradingPaused, ..} ) <$> f modelsTradingStatusModelIsTradingPaused
+{-# INLINE modelsTradingStatusModelIsTradingPausedL #-}
+
+-- | 'modelsTradingStatusModelIsReasonHaltNewsPending' Lens
+modelsTradingStatusModelIsReasonHaltNewsPendingL :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsReasonHaltNewsPendingL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsReasonHaltNewsPending -> ModelsTradingStatusModel { modelsTradingStatusModelIsReasonHaltNewsPending, ..} ) <$> f modelsTradingStatusModelIsReasonHaltNewsPending
+{-# INLINE modelsTradingStatusModelIsReasonHaltNewsPendingL #-}
+
+-- | 'modelsTradingStatusModelIsReasonIpoNotYetTrading' Lens
+modelsTradingStatusModelIsReasonIpoNotYetTradingL :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsReasonIpoNotYetTradingL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsReasonIpoNotYetTrading -> ModelsTradingStatusModel { modelsTradingStatusModelIsReasonIpoNotYetTrading, ..} ) <$> f modelsTradingStatusModelIsReasonIpoNotYetTrading
+{-# INLINE modelsTradingStatusModelIsReasonIpoNotYetTradingL #-}
+
+-- | 'modelsTradingStatusModelIsReasonIpoDeferred' Lens
+modelsTradingStatusModelIsReasonIpoDeferredL :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsReasonIpoDeferredL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsReasonIpoDeferred -> ModelsTradingStatusModel { modelsTradingStatusModelIsReasonIpoDeferred, ..} ) <$> f modelsTradingStatusModelIsReasonIpoDeferred
+{-# INLINE modelsTradingStatusModelIsReasonIpoDeferredL #-}
+
+-- | 'modelsTradingStatusModelIsReasonHaltNewsDissemination' Lens
+modelsTradingStatusModelIsReasonHaltNewsDisseminationL :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsReasonHaltNewsDisseminationL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsReasonHaltNewsDissemination -> ModelsTradingStatusModel { modelsTradingStatusModelIsReasonHaltNewsDissemination, ..} ) <$> f modelsTradingStatusModelIsReasonHaltNewsDissemination
+{-# INLINE modelsTradingStatusModelIsReasonHaltNewsDisseminationL #-}
+
+-- | 'modelsTradingStatusModelIsReasonIpoOrderAcceptancePeriod' Lens
+modelsTradingStatusModelIsReasonIpoOrderAcceptancePeriodL :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsReasonIpoOrderAcceptancePeriodL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsReasonIpoOrderAcceptancePeriod -> ModelsTradingStatusModel { modelsTradingStatusModelIsReasonIpoOrderAcceptancePeriod, ..} ) <$> f modelsTradingStatusModelIsReasonIpoOrderAcceptancePeriod
+{-# INLINE modelsTradingStatusModelIsReasonIpoOrderAcceptancePeriodL #-}
+
+-- | 'modelsTradingStatusModelIsReasonIpoPreLaunchPeriod' Lens
+modelsTradingStatusModelIsReasonIpoPreLaunchPeriodL :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsReasonIpoPreLaunchPeriodL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsReasonIpoPreLaunchPeriod -> ModelsTradingStatusModel { modelsTradingStatusModelIsReasonIpoPreLaunchPeriod, ..} ) <$> f modelsTradingStatusModelIsReasonIpoPreLaunchPeriod
+{-# INLINE modelsTradingStatusModelIsReasonIpoPreLaunchPeriodL #-}
+
+-- | 'modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1' Lens
+modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1L :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1L f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1 -> ModelsTradingStatusModel { modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1, ..} ) <$> f modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1
+{-# INLINE modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel1L #-}
+
+-- | 'modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2' Lens
+modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2L :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2L f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2 -> ModelsTradingStatusModel { modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2, ..} ) <$> f modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2
+{-# INLINE modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel2L #-}
+
+-- | 'modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3' Lens
+modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3L :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3L f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3 -> ModelsTradingStatusModel { modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3, ..} ) <$> f modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3
+{-# INLINE modelsTradingStatusModelIsReasonMarketWideCircuitBreakerLevel3L #-}
+
+-- | 'modelsTradingStatusModelIsReasonNotApplicable' Lens
+modelsTradingStatusModelIsReasonNotApplicableL :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsReasonNotApplicableL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsReasonNotApplicable -> ModelsTradingStatusModel { modelsTradingStatusModelIsReasonNotApplicable, ..} ) <$> f modelsTradingStatusModelIsReasonNotApplicable
+{-# INLINE modelsTradingStatusModelIsReasonNotApplicableL #-}
+
+-- | 'modelsTradingStatusModelIsReasonNotAvailable' Lens
+modelsTradingStatusModelIsReasonNotAvailableL :: Lens_' ModelsTradingStatusModel (Maybe Bool)
+modelsTradingStatusModelIsReasonNotAvailableL f ModelsTradingStatusModel{..} = (\modelsTradingStatusModelIsReasonNotAvailable -> ModelsTradingStatusModel { modelsTradingStatusModelIsReasonNotAvailable, ..} ) <$> f modelsTradingStatusModelIsReasonNotAvailable
+{-# INLINE modelsTradingStatusModelIsReasonNotAvailableL #-}
+
+
+
+-- * OHLCVTimeSeriesExchangeTimeseriesItem
+
+-- | 'oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodStart' Lens
+oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodStartL :: Lens_' OHLCVTimeSeriesExchangeTimeseriesItem (Maybe DateTime)
+oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodStartL f OHLCVTimeSeriesExchangeTimeseriesItem{..} = (\oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodStart -> OHLCVTimeSeriesExchangeTimeseriesItem { oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodStart, ..} ) <$> f oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodStart
+{-# INLINE oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodStartL #-}
+
+-- | 'oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodEnd' Lens
+oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodEndL :: Lens_' OHLCVTimeSeriesExchangeTimeseriesItem (Maybe DateTime)
+oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodEndL f OHLCVTimeSeriesExchangeTimeseriesItem{..} = (\oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodEnd -> OHLCVTimeSeriesExchangeTimeseriesItem { oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodEnd, ..} ) <$> f oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodEnd
+{-# INLINE oHLCVTimeSeriesExchangeTimeseriesItemTimePeriodEndL #-}
+
+-- | 'oHLCVTimeSeriesExchangeTimeseriesItemTimeOpen' Lens
+oHLCVTimeSeriesExchangeTimeseriesItemTimeOpenL :: Lens_' OHLCVTimeSeriesExchangeTimeseriesItem (Maybe DateTime)
+oHLCVTimeSeriesExchangeTimeseriesItemTimeOpenL f OHLCVTimeSeriesExchangeTimeseriesItem{..} = (\oHLCVTimeSeriesExchangeTimeseriesItemTimeOpen -> OHLCVTimeSeriesExchangeTimeseriesItem { oHLCVTimeSeriesExchangeTimeseriesItemTimeOpen, ..} ) <$> f oHLCVTimeSeriesExchangeTimeseriesItemTimeOpen
+{-# INLINE oHLCVTimeSeriesExchangeTimeseriesItemTimeOpenL #-}
+
+-- | 'oHLCVTimeSeriesExchangeTimeseriesItemTimeClose' Lens
+oHLCVTimeSeriesExchangeTimeseriesItemTimeCloseL :: Lens_' OHLCVTimeSeriesExchangeTimeseriesItem (Maybe DateTime)
+oHLCVTimeSeriesExchangeTimeseriesItemTimeCloseL f OHLCVTimeSeriesExchangeTimeseriesItem{..} = (\oHLCVTimeSeriesExchangeTimeseriesItemTimeClose -> OHLCVTimeSeriesExchangeTimeseriesItem { oHLCVTimeSeriesExchangeTimeseriesItemTimeClose, ..} ) <$> f oHLCVTimeSeriesExchangeTimeseriesItemTimeClose
+{-# INLINE oHLCVTimeSeriesExchangeTimeseriesItemTimeCloseL #-}
+
+-- | 'oHLCVTimeSeriesExchangeTimeseriesItemPriceOpen' Lens
+oHLCVTimeSeriesExchangeTimeseriesItemPriceOpenL :: Lens_' OHLCVTimeSeriesExchangeTimeseriesItem (Maybe Double)
+oHLCVTimeSeriesExchangeTimeseriesItemPriceOpenL f OHLCVTimeSeriesExchangeTimeseriesItem{..} = (\oHLCVTimeSeriesExchangeTimeseriesItemPriceOpen -> OHLCVTimeSeriesExchangeTimeseriesItem { oHLCVTimeSeriesExchangeTimeseriesItemPriceOpen, ..} ) <$> f oHLCVTimeSeriesExchangeTimeseriesItemPriceOpen
+{-# INLINE oHLCVTimeSeriesExchangeTimeseriesItemPriceOpenL #-}
+
+-- | 'oHLCVTimeSeriesExchangeTimeseriesItemPriceHigh' Lens
+oHLCVTimeSeriesExchangeTimeseriesItemPriceHighL :: Lens_' OHLCVTimeSeriesExchangeTimeseriesItem (Maybe Double)
+oHLCVTimeSeriesExchangeTimeseriesItemPriceHighL f OHLCVTimeSeriesExchangeTimeseriesItem{..} = (\oHLCVTimeSeriesExchangeTimeseriesItemPriceHigh -> OHLCVTimeSeriesExchangeTimeseriesItem { oHLCVTimeSeriesExchangeTimeseriesItemPriceHigh, ..} ) <$> f oHLCVTimeSeriesExchangeTimeseriesItemPriceHigh
+{-# INLINE oHLCVTimeSeriesExchangeTimeseriesItemPriceHighL #-}
+
+-- | 'oHLCVTimeSeriesExchangeTimeseriesItemPriceLow' Lens
+oHLCVTimeSeriesExchangeTimeseriesItemPriceLowL :: Lens_' OHLCVTimeSeriesExchangeTimeseriesItem (Maybe Double)
+oHLCVTimeSeriesExchangeTimeseriesItemPriceLowL f OHLCVTimeSeriesExchangeTimeseriesItem{..} = (\oHLCVTimeSeriesExchangeTimeseriesItemPriceLow -> OHLCVTimeSeriesExchangeTimeseriesItem { oHLCVTimeSeriesExchangeTimeseriesItemPriceLow, ..} ) <$> f oHLCVTimeSeriesExchangeTimeseriesItemPriceLow
+{-# INLINE oHLCVTimeSeriesExchangeTimeseriesItemPriceLowL #-}
+
+-- | 'oHLCVTimeSeriesExchangeTimeseriesItemPriceClose' Lens
+oHLCVTimeSeriesExchangeTimeseriesItemPriceCloseL :: Lens_' OHLCVTimeSeriesExchangeTimeseriesItem (Maybe Double)
+oHLCVTimeSeriesExchangeTimeseriesItemPriceCloseL f OHLCVTimeSeriesExchangeTimeseriesItem{..} = (\oHLCVTimeSeriesExchangeTimeseriesItemPriceClose -> OHLCVTimeSeriesExchangeTimeseriesItem { oHLCVTimeSeriesExchangeTimeseriesItemPriceClose, ..} ) <$> f oHLCVTimeSeriesExchangeTimeseriesItemPriceClose
+{-# INLINE oHLCVTimeSeriesExchangeTimeseriesItemPriceCloseL #-}
+
+-- | 'oHLCVTimeSeriesExchangeTimeseriesItemVolumeTraded' Lens
+oHLCVTimeSeriesExchangeTimeseriesItemVolumeTradedL :: Lens_' OHLCVTimeSeriesExchangeTimeseriesItem (Maybe Double)
+oHLCVTimeSeriesExchangeTimeseriesItemVolumeTradedL f OHLCVTimeSeriesExchangeTimeseriesItem{..} = (\oHLCVTimeSeriesExchangeTimeseriesItemVolumeTraded -> OHLCVTimeSeriesExchangeTimeseriesItem { oHLCVTimeSeriesExchangeTimeseriesItemVolumeTraded, ..} ) <$> f oHLCVTimeSeriesExchangeTimeseriesItemVolumeTraded
+{-# INLINE oHLCVTimeSeriesExchangeTimeseriesItemVolumeTradedL #-}
+
+-- | 'oHLCVTimeSeriesExchangeTimeseriesItemTradesCount' Lens
+oHLCVTimeSeriesExchangeTimeseriesItemTradesCountL :: Lens_' OHLCVTimeSeriesExchangeTimeseriesItem (Maybe Integer)
+oHLCVTimeSeriesExchangeTimeseriesItemTradesCountL f OHLCVTimeSeriesExchangeTimeseriesItem{..} = (\oHLCVTimeSeriesExchangeTimeseriesItemTradesCount -> OHLCVTimeSeriesExchangeTimeseriesItem { oHLCVTimeSeriesExchangeTimeseriesItemTradesCount, ..} ) <$> f oHLCVTimeSeriesExchangeTimeseriesItemTradesCount
+{-# INLINE oHLCVTimeSeriesExchangeTimeseriesItemTradesCountL #-}
+
+-- | 'oHLCVTimeSeriesExchangeTimeseriesItemSymbolIdExchange' Lens
+oHLCVTimeSeriesExchangeTimeseriesItemSymbolIdExchangeL :: Lens_' OHLCVTimeSeriesExchangeTimeseriesItem (Maybe Text)
+oHLCVTimeSeriesExchangeTimeseriesItemSymbolIdExchangeL f OHLCVTimeSeriesExchangeTimeseriesItem{..} = (\oHLCVTimeSeriesExchangeTimeseriesItemSymbolIdExchange -> OHLCVTimeSeriesExchangeTimeseriesItem { oHLCVTimeSeriesExchangeTimeseriesItemSymbolIdExchange, ..} ) <$> f oHLCVTimeSeriesExchangeTimeseriesItemSymbolIdExchange
+{-# INLINE oHLCVTimeSeriesExchangeTimeseriesItemSymbolIdExchangeL #-}
+
+
+
+-- * OHLCVTimeSeriesTimeseriesItem
+
+-- | 'oHLCVTimeSeriesTimeseriesItemTimePeriodStart' Lens
+oHLCVTimeSeriesTimeseriesItemTimePeriodStartL :: Lens_' OHLCVTimeSeriesTimeseriesItem (Maybe DateTime)
+oHLCVTimeSeriesTimeseriesItemTimePeriodStartL f OHLCVTimeSeriesTimeseriesItem{..} = (\oHLCVTimeSeriesTimeseriesItemTimePeriodStart -> OHLCVTimeSeriesTimeseriesItem { oHLCVTimeSeriesTimeseriesItemTimePeriodStart, ..} ) <$> f oHLCVTimeSeriesTimeseriesItemTimePeriodStart
+{-# INLINE oHLCVTimeSeriesTimeseriesItemTimePeriodStartL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesItemTimePeriodEnd' Lens
+oHLCVTimeSeriesTimeseriesItemTimePeriodEndL :: Lens_' OHLCVTimeSeriesTimeseriesItem (Maybe DateTime)
+oHLCVTimeSeriesTimeseriesItemTimePeriodEndL f OHLCVTimeSeriesTimeseriesItem{..} = (\oHLCVTimeSeriesTimeseriesItemTimePeriodEnd -> OHLCVTimeSeriesTimeseriesItem { oHLCVTimeSeriesTimeseriesItemTimePeriodEnd, ..} ) <$> f oHLCVTimeSeriesTimeseriesItemTimePeriodEnd
+{-# INLINE oHLCVTimeSeriesTimeseriesItemTimePeriodEndL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesItemTimeOpen' Lens
+oHLCVTimeSeriesTimeseriesItemTimeOpenL :: Lens_' OHLCVTimeSeriesTimeseriesItem (Maybe DateTime)
+oHLCVTimeSeriesTimeseriesItemTimeOpenL f OHLCVTimeSeriesTimeseriesItem{..} = (\oHLCVTimeSeriesTimeseriesItemTimeOpen -> OHLCVTimeSeriesTimeseriesItem { oHLCVTimeSeriesTimeseriesItemTimeOpen, ..} ) <$> f oHLCVTimeSeriesTimeseriesItemTimeOpen
+{-# INLINE oHLCVTimeSeriesTimeseriesItemTimeOpenL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesItemTimeClose' Lens
+oHLCVTimeSeriesTimeseriesItemTimeCloseL :: Lens_' OHLCVTimeSeriesTimeseriesItem (Maybe DateTime)
+oHLCVTimeSeriesTimeseriesItemTimeCloseL f OHLCVTimeSeriesTimeseriesItem{..} = (\oHLCVTimeSeriesTimeseriesItemTimeClose -> OHLCVTimeSeriesTimeseriesItem { oHLCVTimeSeriesTimeseriesItemTimeClose, ..} ) <$> f oHLCVTimeSeriesTimeseriesItemTimeClose
+{-# INLINE oHLCVTimeSeriesTimeseriesItemTimeCloseL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesItemPriceOpen' Lens
+oHLCVTimeSeriesTimeseriesItemPriceOpenL :: Lens_' OHLCVTimeSeriesTimeseriesItem (Maybe Double)
+oHLCVTimeSeriesTimeseriesItemPriceOpenL f OHLCVTimeSeriesTimeseriesItem{..} = (\oHLCVTimeSeriesTimeseriesItemPriceOpen -> OHLCVTimeSeriesTimeseriesItem { oHLCVTimeSeriesTimeseriesItemPriceOpen, ..} ) <$> f oHLCVTimeSeriesTimeseriesItemPriceOpen
+{-# INLINE oHLCVTimeSeriesTimeseriesItemPriceOpenL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesItemPriceHigh' Lens
+oHLCVTimeSeriesTimeseriesItemPriceHighL :: Lens_' OHLCVTimeSeriesTimeseriesItem (Maybe Double)
+oHLCVTimeSeriesTimeseriesItemPriceHighL f OHLCVTimeSeriesTimeseriesItem{..} = (\oHLCVTimeSeriesTimeseriesItemPriceHigh -> OHLCVTimeSeriesTimeseriesItem { oHLCVTimeSeriesTimeseriesItemPriceHigh, ..} ) <$> f oHLCVTimeSeriesTimeseriesItemPriceHigh
+{-# INLINE oHLCVTimeSeriesTimeseriesItemPriceHighL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesItemPriceLow' Lens
+oHLCVTimeSeriesTimeseriesItemPriceLowL :: Lens_' OHLCVTimeSeriesTimeseriesItem (Maybe Double)
+oHLCVTimeSeriesTimeseriesItemPriceLowL f OHLCVTimeSeriesTimeseriesItem{..} = (\oHLCVTimeSeriesTimeseriesItemPriceLow -> OHLCVTimeSeriesTimeseriesItem { oHLCVTimeSeriesTimeseriesItemPriceLow, ..} ) <$> f oHLCVTimeSeriesTimeseriesItemPriceLow
+{-# INLINE oHLCVTimeSeriesTimeseriesItemPriceLowL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesItemPriceClose' Lens
+oHLCVTimeSeriesTimeseriesItemPriceCloseL :: Lens_' OHLCVTimeSeriesTimeseriesItem (Maybe Double)
+oHLCVTimeSeriesTimeseriesItemPriceCloseL f OHLCVTimeSeriesTimeseriesItem{..} = (\oHLCVTimeSeriesTimeseriesItemPriceClose -> OHLCVTimeSeriesTimeseriesItem { oHLCVTimeSeriesTimeseriesItemPriceClose, ..} ) <$> f oHLCVTimeSeriesTimeseriesItemPriceClose
+{-# INLINE oHLCVTimeSeriesTimeseriesItemPriceCloseL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesItemVolumeTraded' Lens
+oHLCVTimeSeriesTimeseriesItemVolumeTradedL :: Lens_' OHLCVTimeSeriesTimeseriesItem (Maybe Double)
+oHLCVTimeSeriesTimeseriesItemVolumeTradedL f OHLCVTimeSeriesTimeseriesItem{..} = (\oHLCVTimeSeriesTimeseriesItemVolumeTraded -> OHLCVTimeSeriesTimeseriesItem { oHLCVTimeSeriesTimeseriesItemVolumeTraded, ..} ) <$> f oHLCVTimeSeriesTimeseriesItemVolumeTraded
+{-# INLINE oHLCVTimeSeriesTimeseriesItemVolumeTradedL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesItemTradesCount' Lens
+oHLCVTimeSeriesTimeseriesItemTradesCountL :: Lens_' OHLCVTimeSeriesTimeseriesItem (Maybe Integer)
+oHLCVTimeSeriesTimeseriesItemTradesCountL f OHLCVTimeSeriesTimeseriesItem{..} = (\oHLCVTimeSeriesTimeseriesItemTradesCount -> OHLCVTimeSeriesTimeseriesItem { oHLCVTimeSeriesTimeseriesItemTradesCount, ..} ) <$> f oHLCVTimeSeriesTimeseriesItemTradesCount
+{-# INLINE oHLCVTimeSeriesTimeseriesItemTradesCountL #-}
+
+
+
+-- * OHLCVTimeSeriesTimeseriesPeriod
+
+-- | 'oHLCVTimeSeriesTimeseriesPeriodPeriodId' Lens
+oHLCVTimeSeriesTimeseriesPeriodPeriodIdL :: Lens_' OHLCVTimeSeriesTimeseriesPeriod (Maybe Text)
+oHLCVTimeSeriesTimeseriesPeriodPeriodIdL f OHLCVTimeSeriesTimeseriesPeriod{..} = (\oHLCVTimeSeriesTimeseriesPeriodPeriodId -> OHLCVTimeSeriesTimeseriesPeriod { oHLCVTimeSeriesTimeseriesPeriodPeriodId, ..} ) <$> f oHLCVTimeSeriesTimeseriesPeriodPeriodId
+{-# INLINE oHLCVTimeSeriesTimeseriesPeriodPeriodIdL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesPeriodLengthSeconds' Lens
+oHLCVTimeSeriesTimeseriesPeriodLengthSecondsL :: Lens_' OHLCVTimeSeriesTimeseriesPeriod (Maybe Int)
+oHLCVTimeSeriesTimeseriesPeriodLengthSecondsL f OHLCVTimeSeriesTimeseriesPeriod{..} = (\oHLCVTimeSeriesTimeseriesPeriodLengthSeconds -> OHLCVTimeSeriesTimeseriesPeriod { oHLCVTimeSeriesTimeseriesPeriodLengthSeconds, ..} ) <$> f oHLCVTimeSeriesTimeseriesPeriodLengthSeconds
+{-# INLINE oHLCVTimeSeriesTimeseriesPeriodLengthSecondsL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesPeriodLengthMonths' Lens
+oHLCVTimeSeriesTimeseriesPeriodLengthMonthsL :: Lens_' OHLCVTimeSeriesTimeseriesPeriod (Maybe Int)
+oHLCVTimeSeriesTimeseriesPeriodLengthMonthsL f OHLCVTimeSeriesTimeseriesPeriod{..} = (\oHLCVTimeSeriesTimeseriesPeriodLengthMonths -> OHLCVTimeSeriesTimeseriesPeriod { oHLCVTimeSeriesTimeseriesPeriodLengthMonths, ..} ) <$> f oHLCVTimeSeriesTimeseriesPeriodLengthMonths
+{-# INLINE oHLCVTimeSeriesTimeseriesPeriodLengthMonthsL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesPeriodUnitCount' Lens
+oHLCVTimeSeriesTimeseriesPeriodUnitCountL :: Lens_' OHLCVTimeSeriesTimeseriesPeriod (Maybe Int)
+oHLCVTimeSeriesTimeseriesPeriodUnitCountL f OHLCVTimeSeriesTimeseriesPeriod{..} = (\oHLCVTimeSeriesTimeseriesPeriodUnitCount -> OHLCVTimeSeriesTimeseriesPeriod { oHLCVTimeSeriesTimeseriesPeriodUnitCount, ..} ) <$> f oHLCVTimeSeriesTimeseriesPeriodUnitCount
+{-# INLINE oHLCVTimeSeriesTimeseriesPeriodUnitCountL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesPeriodUnitName' Lens
+oHLCVTimeSeriesTimeseriesPeriodUnitNameL :: Lens_' OHLCVTimeSeriesTimeseriesPeriod (Maybe Text)
+oHLCVTimeSeriesTimeseriesPeriodUnitNameL f OHLCVTimeSeriesTimeseriesPeriod{..} = (\oHLCVTimeSeriesTimeseriesPeriodUnitName -> OHLCVTimeSeriesTimeseriesPeriod { oHLCVTimeSeriesTimeseriesPeriodUnitName, ..} ) <$> f oHLCVTimeSeriesTimeseriesPeriodUnitName
+{-# INLINE oHLCVTimeSeriesTimeseriesPeriodUnitNameL #-}
+
+-- | 'oHLCVTimeSeriesTimeseriesPeriodDisplayName' Lens
+oHLCVTimeSeriesTimeseriesPeriodDisplayNameL :: Lens_' OHLCVTimeSeriesTimeseriesPeriod (Maybe Text)
+oHLCVTimeSeriesTimeseriesPeriodDisplayNameL f OHLCVTimeSeriesTimeseriesPeriod{..} = (\oHLCVTimeSeriesTimeseriesPeriodDisplayName -> OHLCVTimeSeriesTimeseriesPeriod { oHLCVTimeSeriesTimeseriesPeriodDisplayName, ..} ) <$> f oHLCVTimeSeriesTimeseriesPeriodDisplayName
+{-# INLINE oHLCVTimeSeriesTimeseriesPeriodDisplayNameL #-}
 
 

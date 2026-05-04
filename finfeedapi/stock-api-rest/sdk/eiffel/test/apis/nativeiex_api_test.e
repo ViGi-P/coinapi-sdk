@@ -18,7 +18,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: LIST [ADMIN_ADMIN_MESSAGE_MODEL]
+            l_response: LIST [MODELS_ADMIN_MESSAGE_MODEL]
             l_symbol: STRING_32
             l_date: DATE_TIME
         do
@@ -35,7 +35,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: LIST [ADMIN_SYSTEM_EVENT_MODEL]
+            l_response: LIST [IEX_SYSTEM_EVENT_SYSTEM_EVENT_MODEL]
             l_date: DATE_TIME
         do
             -- TODO: Initialize required params.
@@ -50,7 +50,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: LIST [LEVEL1_QUOTE_UPDATE_MODEL]
+            l_response: LIST [IEX_QUOTE_UPDATE_QUOTE_UPDATE_MODEL]
             l_symbol: STRING_32
             l_date: DATE_TIME
         do
@@ -67,7 +67,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: LIST [LEVEL2_PRICE_LEVEL_UPDATE_MODEL]
+            l_response: LIST [IEX_PRICE_LEVEL_UPDATE_PRICE_LEVEL_UPDATE_MODEL]
             l_symbol: STRING_32
             l_date: DATE_TIME
         do
@@ -84,7 +84,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: LIST [LEVEL3_ORDER_BOOK_MODEL]
+            l_response: LIST [MODELS_ORDER_BOOK_MODEL]
             l_symbol: STRING_32
             l_date: DATE_TIME
         do
@@ -101,7 +101,7 @@ feature -- Test routines
             --
             -- 
         local
-            l_response: LIST [TRADE_TRADE_MODEL]
+            l_response: LIST [IEX_TRADE_TRADE_MODEL]
             l_symbol: STRING_32
             l_date: DATE_TIME
         do

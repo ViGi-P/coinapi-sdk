@@ -64,7 +64,7 @@ class NativeIEXApi {
   ///
   /// * [DateTime] date (required):
   ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<List<AdminAdminMessageModel>?> v1NativeIexAdminMessagesSymbolGet(String symbol, DateTime date,) async {
+  Future<List<ModelsAdminMessageModel>?> v1NativeIexAdminMessagesSymbolGet(String symbol, DateTime date,) async {
     final response = await v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol, date,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -74,8 +74,8 @@ class NativeIEXApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<AdminAdminMessageModel>') as List)
-        .cast<AdminAdminMessageModel>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<ModelsAdminMessageModel>') as List)
+        .cast<ModelsAdminMessageModel>()
         .toList(growable: false);
 
     }
@@ -123,7 +123,7 @@ class NativeIEXApi {
   ///
   /// * [DateTime] date (required):
   ///   Date in format YYYY-MM-DD
-  Future<List<AdminSystemEventModel>?> v1NativeIexAdminSystemEventGet(DateTime date,) async {
+  Future<List<IEXSystemEventSystemEventModel>?> v1NativeIexAdminSystemEventGet(DateTime date,) async {
     final response = await v1NativeIexAdminSystemEventGetWithHttpInfo(date,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -133,8 +133,8 @@ class NativeIEXApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<AdminSystemEventModel>') as List)
-        .cast<AdminSystemEventModel>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<IEXSystemEventSystemEventModel>') as List)
+        .cast<IEXSystemEventSystemEventModel>()
         .toList(growable: false);
 
     }
@@ -189,7 +189,7 @@ class NativeIEXApi {
   ///
   /// * [DateTime] date (required):
   ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<List<Level1QuoteUpdateModel>?> v1NativeIexLevel1QuoteSymbolGet(String symbol, DateTime date,) async {
+  Future<List<IEXQuoteUpdateQuoteUpdateModel>?> v1NativeIexLevel1QuoteSymbolGet(String symbol, DateTime date,) async {
     final response = await v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol, date,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -199,8 +199,8 @@ class NativeIEXApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<Level1QuoteUpdateModel>') as List)
-        .cast<Level1QuoteUpdateModel>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<IEXQuoteUpdateQuoteUpdateModel>') as List)
+        .cast<IEXQuoteUpdateQuoteUpdateModel>()
         .toList(growable: false);
 
     }
@@ -255,7 +255,7 @@ class NativeIEXApi {
   ///
   /// * [DateTime] date (required):
   ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<List<Level2PriceLevelUpdateModel>?> v1NativeIexLevel2PriceLevelUpdateSymbolGet(String symbol, DateTime date,) async {
+  Future<List<IEXPriceLevelUpdatePriceLevelUpdateModel>?> v1NativeIexLevel2PriceLevelUpdateSymbolGet(String symbol, DateTime date,) async {
     final response = await v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol, date,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -265,8 +265,8 @@ class NativeIEXApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<Level2PriceLevelUpdateModel>') as List)
-        .cast<Level2PriceLevelUpdateModel>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<IEXPriceLevelUpdatePriceLevelUpdateModel>') as List)
+        .cast<IEXPriceLevelUpdatePriceLevelUpdateModel>()
         .toList(growable: false);
 
     }
@@ -321,7 +321,7 @@ class NativeIEXApi {
   ///
   /// * [DateTime] date (required):
   ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<List<Level3OrderBookModel>?> v1NativeIexLevel3OrderBookSymbolGet(String symbol, DateTime date,) async {
+  Future<List<ModelsOrderBookModel>?> v1NativeIexLevel3OrderBookSymbolGet(String symbol, DateTime date,) async {
     final response = await v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol, date,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -331,8 +331,8 @@ class NativeIEXApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<Level3OrderBookModel>') as List)
-        .cast<Level3OrderBookModel>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<ModelsOrderBookModel>') as List)
+        .cast<ModelsOrderBookModel>()
         .toList(growable: false);
 
     }
@@ -387,7 +387,7 @@ class NativeIEXApi {
   ///
   /// * [DateTime] date (required):
   ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<List<TradeTradeModel>?> v1NativeIexTradeSymbolGet(String symbol, DateTime date,) async {
+  Future<List<IEXTradeTradeModel>?> v1NativeIexTradeSymbolGet(String symbol, DateTime date,) async {
     final response = await v1NativeIexTradeSymbolGetWithHttpInfo(symbol, date,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
@@ -397,8 +397,8 @@ class NativeIEXApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       final responseBody = await _decodeBodyBytes(response);
-      return (await apiClient.deserializeAsync(responseBody, 'List<TradeTradeModel>') as List)
-        .cast<TradeTradeModel>()
+      return (await apiClient.deserializeAsync(responseBody, 'List<IEXTradeTradeModel>') as List)
+        .cast<IEXTradeTradeModel>()
         .toList(growable: false);
 
     }

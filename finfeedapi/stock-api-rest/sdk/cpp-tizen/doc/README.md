@@ -81,28 +81,28 @@ Method | HTTP request | Description
 ## What are the Model files for the data structures/objects?
 Class | Description
 ------------- | -------------
- *Admin.AdminMessageModel* | Represents the response DTO for IEX admin information, combining all symbol-based admin message types
- *Admin.AuctionInformationModel* | Represents the response DTO for auction information
- *Admin.OfficialPriceModel* | Represents the response DTO for official price information
- *Admin.OperationalHaltStatusModel* | Represents the response DTO for operational halt status information
- *Admin.RetailLiquidityIndicatorModel* | Represents the response DTO for retail liquidity indicator information
- *Admin.SecurityDirectoryModel* | Represents the response DTO for security directory information
- *Admin.SecurityEventModel* | Represents the response DTO for security event information
- *Admin.ShortSalePriceTestStatusModel* | Represents the response DTO for short sale price test status information
- *Admin.SystemEventModel* | Represents the response DTO for system event information
- *Admin.TradingStatusModel* | Represents the response DTO for trading status information
  *FinFeedAPI.ExchangeModel* | 
  *FinFeedAPI.SymbolModel* | 
- *Level1.QuoteUpdateModel* | Represents the response DTO for quote update information
- *Level2.PriceLevelUpdateModel* | Represents the response DTO for price level update information
- *Level3.AddOrderModel* | Represents the response DTO for add order information
- *Level3.ClearBookModel* | Represents the response DTO for clear book information
- *Level3.DeleteOrderModel* | Represents the response DTO for order delete information
- *Level3.ExecutedOrderModel* | Represents the response DTO for order executed information
- *Level3.ModifyOrderModel* | Represents the response DTO for order modify information
- *Level3.OrderBookModel* | Represents the response DTO for Level-3 order book information
- *OHLCV.ExchangeTimeseriesItem* | Represents a timeseries item with price and volume information.
- *OHLCV.TimeseriesItem* | Represents a timeseries item with price and volume information.
- *OHLCV.TimeseriesPeriod* | Represents a timeseries period used in exchange rate data.
- *Trade.TradeModel* | Represents the response DTO for a single trade event (report or break).
+ *IEXPriceLevelUpdate.PriceLevelUpdateModel* | Represents the response DTO for price level update information
+ *IEXQuoteUpdate.QuoteUpdateModel* | Represents the response DTO for quote update information
+ *IEXSystemEvent.SystemEventModel* | Represents the response DTO for system event information
+ *IEXTrade.TradeModel* | Represents the response DTO for a single trade event (report or break).
+ *Models.AddOrderModel* | Represents the response DTO for add order information
+ *Models.AdminMessageModel* | Represents the response DTO for IEX admin information, combining all symbol-based admin message types
+ *Models.AuctionInformationModel* | Represents the response DTO for auction information
+ *Models.ClearBookModel* | Represents the response DTO for clear book information
+ *Models.DeleteOrderModel* | Represents the response DTO for order delete information
+ *Models.ExecutedOrderModel* | Represents the response DTO for order executed information
+ *Models.ModifyOrderModel* | Represents the response DTO for order modify information
+ *Models.OfficialPriceModel* | Represents the response DTO for official price information
+ *Models.OperationalHaltStatusModel* | Represents the response DTO for operational halt status information
+ *Models.OrderBookModel* | Represents the response DTO for Level-3 order book information
+ *Models.RetailLiquidityIndicatorModel* | Represents the response DTO for retail liquidity indicator information
+ *Models.SecurityDirectoryModel* | Represents the response DTO for security directory information
+ *Models.SecurityEventModel* | Represents the response DTO for security event information
+ *Models.ShortSalePriceTestStatusModel* | Represents the response DTO for short sale price test status information
+ *Models.TradingStatusModel* | Represents the response DTO for trading status information
+ *OHLCVTimeSeries.ExchangeTimeseriesItem* | Represents a timeseries item with price and volume information.
+ *OHLCVTimeSeries.TimeseriesItem* | Represents a timeseries item with price and volume information.
+ *OHLCVTimeSeries.TimeseriesPeriod* | Represents a timeseries period used in exchange rate data.
 

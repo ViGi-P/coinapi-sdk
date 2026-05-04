@@ -1,12 +1,12 @@
 package org.openapitools.api;
 
 import org.openapitools.api.ApiUtils
-import org.openapitools.model.AdminAdminMessageModel
-import org.openapitools.model.AdminSystemEventModel
-import org.openapitools.model.Level1QuoteUpdateModel
-import org.openapitools.model.Level2PriceLevelUpdateModel
-import org.openapitools.model.Level3OrderBookModel
-import org.openapitools.model.TradeTradeModel
+import org.openapitools.model.IEXPriceLevelUpdatePriceLevelUpdateModel
+import org.openapitools.model.IEXQuoteUpdateQuoteUpdateModel
+import org.openapitools.model.IEXSystemEventSystemEventModel
+import org.openapitools.model.IEXTradeTradeModel
+import org.openapitools.model.ModelsAdminMessageModel
+import org.openapitools.model.ModelsOrderBookModel
 
 class NativeIexApi {
     String basePath = "https://api-historical.stock.finfeedapi.com"
@@ -43,7 +43,7 @@ class NativeIexApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    AdminAdminMessageModel.class )
+                    ModelsAdminMessageModel.class )
 
     }
 
@@ -73,7 +73,7 @@ class NativeIexApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    AdminSystemEventModel.class )
+                    IEXSystemEventSystemEventModel.class )
 
     }
 
@@ -107,7 +107,7 @@ class NativeIexApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    Level1QuoteUpdateModel.class )
+                    IEXQuoteUpdateQuoteUpdateModel.class )
 
     }
 
@@ -141,7 +141,7 @@ class NativeIexApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    Level2PriceLevelUpdateModel.class )
+                    IEXPriceLevelUpdatePriceLevelUpdateModel.class )
 
     }
 
@@ -175,7 +175,7 @@ class NativeIexApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    Level3OrderBookModel.class )
+                    ModelsOrderBookModel.class )
 
     }
 
@@ -209,7 +209,7 @@ class NativeIexApi {
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, accept, contentType,
                     "GET", "array",
-                    TradeTradeModel.class )
+                    IEXTradeTradeModel.class )
 
     }
 
