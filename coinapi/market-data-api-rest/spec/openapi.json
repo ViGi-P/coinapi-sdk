@@ -67,7 +67,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-05-04T06:03:24.6862789Z",
+  "time": "2026-05-05T06:20:40.8367437Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -82,7 +82,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-05-04T06:03:24.6862789Z",
+  "time": "2026-05-05T06:20:40.8367437Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -97,7 +97,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-05-04T06:03:24.6862789Z",
+  "time": "2026-05-05T06:20:40.8367437Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -112,7 +112,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-05-04T06:03:24.6862789Z",
+  "time": "2026-05-05T06:20:40.8367437Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -3001,7 +3001,7 @@
     "/v1/metrics/listing": {
       "get": {
         "tags": [
-          "MetricsV1"
+          "Metrics V1"
         ],
         "summary": "Listing of all supported metrics by CoinAPI",
         "description": "Get all data metrics.",
@@ -3105,7 +3105,7 @@
     "/v1/metrics/exchange/listing": {
       "get": {
         "tags": [
-          "MetricsV1"
+          "Metrics V1"
         ],
         "summary": "Listing of all supported exchange metrics",
         "description": "Get data metrics for exchange. Returns both exchange-level and symbol-level metrics.\nFor exchange-level metrics, the `symbol_id` field will be null.\nFor symbol-level metrics, the `symbol_id` field contains the CoinAPI symbol identifier.",
@@ -3244,7 +3244,7 @@
     "/v1/metrics/exchange/current": {
       "get": {
         "tags": [
-          "MetricsV1"
+          "Metrics V1"
         ],
         "summary": "Current metrics for given exchange",
         "description": "Get current exchange metrics values.",
@@ -3419,7 +3419,7 @@
     "/v1/metrics/exchange/history": {
       "get": {
         "tags": [
-          "MetricsV1"
+          "Metrics V1"
         ],
         "summary": "Historical metrics for the exchange",
         "description": "Get exchange metrics history.",
@@ -3699,7 +3699,7 @@
     "/v1/metrics/symbol/listing": {
       "get": {
         "tags": [
-          "MetricsV1"
+          "Metrics V1"
         ],
         "summary": "Listing of all supported metrics for symbol",
         "description": "Get data metrics for symbol. Returns only symbol-level metrics (entries that have a symbol associated).\nThe `symbol_id` field is always populated with the CoinAPI symbol identifier.",
@@ -3857,7 +3857,7 @@
     "/v1/metrics/symbol/current": {
       "get": {
         "tags": [
-          "MetricsV1"
+          "Metrics V1"
         ],
         "summary": "Current metrics for given symbol",
         "description": "Get current symbol metrics.",
@@ -4083,7 +4083,7 @@
     "/v1/metrics/symbol/history": {
       "get": {
         "tags": [
-          "MetricsV1"
+          "Metrics V1"
         ],
         "summary": "Historical metrics for symbol",
         "description": "Get symbol metrics history.",
@@ -4363,7 +4363,7 @@
     "/v1/metrics/asset/listing": {
       "get": {
         "tags": [
-          "MetricsV1"
+          "Metrics V1"
         ],
         "summary": "Listing of all supported metrics for asset",
         "description": "Get data metrics for asset.",
@@ -4545,7 +4545,7 @@
     "/v1/metrics/asset/current": {
       "get": {
         "tags": [
-          "MetricsV1"
+          "Metrics V1"
         ],
         "summary": "Current metrics for given asset",
         "description": "Get current asset metrics.",
@@ -4735,7 +4735,7 @@
     "/v1/metrics/asset/history": {
       "get": {
         "tags": [
-          "MetricsV1"
+          "Metrics V1"
         ],
         "summary": "Historical metrics for asset",
         "description": "Get asset metrics history.",
@@ -4863,7 +4863,7 @@
     "/v2/metrics/listing": {
       "get": {
         "tags": [
-          "MetricsV2"
+          "Metrics V2"
         ],
         "summary": "Listing of all supported metrics",
         "description": "Get all metrics available in the system.",
@@ -5016,7 +5016,7 @@
     "/v2/metrics/exchange/listing": {
       "get": {
         "tags": [
-          "MetricsV2"
+          "Metrics V2"
         ],
         "summary": "Listing of metrics available for specific exchange",
         "description": "Get all metrics that are actually available for the specified exchange.",
@@ -5164,7 +5164,7 @@
     "/v2/metrics/exchange/history": {
       "get": {
         "tags": [
-          "MetricsV2"
+          "Metrics V2"
         ],
         "summary": "Historical metrics for the exchange",
         "description": "Get exchange metrics history.",
@@ -5419,7 +5419,7 @@
     "/v2/metrics/asset/history": {
       "get": {
         "tags": [
-          "MetricsV2"
+          "Metrics V2"
         ],
         "summary": "Historical metrics for the asset",
         "description": "Get asset metrics history.",
@@ -5658,7 +5658,7 @@
     "/v2/metrics/chain/history": {
       "get": {
         "tags": [
-          "MetricsV2"
+          "Metrics V2"
         ],
         "summary": "Historical metrics for the chain",
         "description": "Get chain metrics history.",
@@ -5897,7 +5897,7 @@
     "/v2/metrics/asset/listing": {
       "get": {
         "tags": [
-          "MetricsV2"
+          "Metrics V2"
         ],
         "summary": "Listing of metrics available for specific asset",
         "description": "Get all metrics that are actually available for the specified asset.",
@@ -6029,7 +6029,7 @@
     "/v2/metrics/chain/listing": {
       "get": {
         "tags": [
-          "MetricsV2"
+          "Metrics V2"
         ],
         "summary": "Listing of metrics available for specific chain",
         "description": "Get all metrics that are actually available for the specified blockchain chain.",
@@ -10840,14 +10840,14 @@
       "x-displayName": "OHLCV"
     },
     {
-      "name": "MetricsV1",
+      "name": "Metrics V1",
       "description": "Exchange and symbol metrics: listing, current values, and history in API v1.",
-      "x-displayName": "MetricsV1"
+      "x-displayName": "Metrics V1"
     },
     {
-      "name": "MetricsV2",
+      "name": "Metrics V2",
       "description": "Metrics listing and time series in API v2; preferred for new integrations.",
-      "x-displayName": "MetricsV2"
+      "x-displayName": "Metrics V2"
     },
     {
       "name": "Exchange Rates",
