@@ -1,6 +1,6 @@
 # OpenAPI\Client\MetricsV2Api
 
-Metrics listing and time series in API v2; preferred for new integrations.
+
 
 All URIs are relative to https://rest.coinapi.io, except if the operation defines another base path.
 

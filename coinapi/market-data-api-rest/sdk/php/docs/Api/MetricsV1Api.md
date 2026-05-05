@@ -1,6 +1,6 @@
 # OpenAPI\Client\MetricsV1Api
 
-Exchange and symbol metrics: listing, current values, and history in API v1.
+
 
 All URIs are relative to https://rest.coinapi.io, except if the operation defines another base path.
 

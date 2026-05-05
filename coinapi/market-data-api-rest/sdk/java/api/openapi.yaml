@@ -46,11 +46,11 @@ tags:
   x-displayName: OHLCV
 - description: "Exchange and symbol metrics: listing, current values, and history\
     \ in API v1."
-  name: MetricsV1
-  x-displayName: MetricsV1
+  name: Metrics V1
+  x-displayName: Metrics V1
 - description: Metrics listing and time series in API v2; preferred for new integrations.
-  name: MetricsV2
-  x-displayName: MetricsV2
+  name: Metrics V2
+  x-displayName: Metrics V2
 - description: Spot rates as a twenty-four hour rolling VWAP across curated markets
     and pairs.
   name: Exchange Rates
@@ -100,7 +100,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-05-04T06:03:24.6862789Z
+                    time: 2026-05-05T06:20:40.8367437Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -110,7 +110,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-05-04T06:03:24.6862789Z
+                    time: 2026-05-05T06:20:40.8367437Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -120,7 +120,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-05-04T06:03:24.6862789Z
+                    time: 2026-05-05T06:20:40.8367437Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -130,7 +130,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-05-04T06:03:24.6862789Z
+                    time: 2026-05-05T06:20:40.8367437Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -2535,7 +2535,7 @@ paths:
           description: successful operation
       summary: Listing of all supported metrics by CoinAPI
       tags:
-      - MetricsV1
+      - Metrics V1
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -2626,7 +2626,7 @@ paths:
           description: successful operation
       summary: Listing of all supported exchange metrics
       tags:
-      - MetricsV1
+      - Metrics V1
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -2750,7 +2750,7 @@ paths:
           description: successful operation
       summary: Current metrics for given exchange
       tags:
-      - MetricsV1
+      - Metrics V1
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -2982,7 +2982,7 @@ paths:
           description: successful operation
       summary: Historical metrics for the exchange
       tags:
-      - MetricsV1
+      - Metrics V1
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -3092,7 +3092,7 @@ paths:
           description: successful operation
       summary: Listing of all supported metrics for symbol
       tags:
-      - MetricsV1
+      - Metrics V1
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -3260,7 +3260,7 @@ paths:
           description: successful operation
       summary: Current metrics for given symbol
       tags:
-      - MetricsV1
+      - Metrics V1
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -3492,7 +3492,7 @@ paths:
           description: successful operation
       summary: Historical metrics for symbol
       tags:
-      - MetricsV1
+      - Metrics V1
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -3624,7 +3624,7 @@ paths:
           description: successful operation
       summary: Listing of all supported metrics for asset
       tags:
-      - MetricsV1
+      - Metrics V1
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -3764,7 +3764,7 @@ paths:
           description: successful operation
       summary: Current metrics for given asset
       tags:
-      - MetricsV1
+      - Metrics V1
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -3880,7 +3880,7 @@ paths:
           description: successful operation
       summary: Historical metrics for asset
       tags:
-      - MetricsV1
+      - Metrics V1
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -3968,7 +3968,7 @@ paths:
           description: successful operation
       summary: Listing of all supported metrics
       tags:
-      - MetricsV2
+      - Metrics V2
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -4057,7 +4057,7 @@ paths:
           description: successful operation
       summary: Listing of metrics available for specific exchange
       tags:
-      - MetricsV2
+      - Metrics V2
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -4263,7 +4263,7 @@ paths:
           description: Internal server error.
       summary: Historical metrics for the exchange
       tags:
-      - MetricsV2
+      - Metrics V2
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -4461,7 +4461,7 @@ paths:
           description: Internal server error.
       summary: Historical metrics for the asset
       tags:
-      - MetricsV2
+      - Metrics V2
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -4659,7 +4659,7 @@ paths:
           description: Internal server error.
       summary: Historical metrics for the chain
       tags:
-      - MetricsV2
+      - Metrics V2
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -4740,7 +4740,7 @@ paths:
           description: successful operation
       summary: Listing of metrics available for specific asset
       tags:
-      - MetricsV2
+      - Metrics V2
       x-accepts:
       - application/json
       - application/x-msgpack
@@ -4822,7 +4822,7 @@ paths:
           description: successful operation
       summary: Listing of metrics available for specific chain
       tags:
-      - MetricsV2
+      - Metrics V2
       x-accepts:
       - application/json
       - application/x-msgpack
