@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents symbol mapping information for exchange symbols.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-07T06:03:58.160437084Z[Etc/UTC]", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-08T06:04:08.662928199Z[Etc/UTC]", comments = "Generator version: 7.22.0")
 public class V1SymbolMapping {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
