@@ -48,6 +48,11 @@ paths:
     "exchange_id": "MANIFOLD",
     "market_name_institution_description": "The world's largest social prediction market (play‑money).",
     "website": "https://manifold.markets"
+  },
+  {
+    "exchange_id": "HYPERLIQUIDOUTCOME",
+    "market_name_institution_description": "Hyperliquid HIP-4 outcome markets — fully collateralized binary and multi-outcome contracts.",
+    "website": "https://hyperliquid.xyz"
   }
 ]
             application/json:
@@ -77,6 +82,11 @@ paths:
     "exchange_id": "MANIFOLD",
     "market_name_institution_description": "The world's largest social prediction market (play‑money).",
     "website": "https://manifold.markets"
+  },
+  {
+    "exchange_id": "HYPERLIQUIDOUTCOME",
+    "market_name_institution_description": "Hyperliquid HIP-4 outcome markets — fully collateralized binary and multi-outcome contracts.",
+    "website": "https://hyperliquid.xyz"
   }
 ]
             text/json:
@@ -106,6 +116,11 @@ paths:
     "exchange_id": "MANIFOLD",
     "market_name_institution_description": "The world's largest social prediction market (play‑money).",
     "website": "https://manifold.markets"
+  },
+  {
+    "exchange_id": "HYPERLIQUIDOUTCOME",
+    "market_name_institution_description": "Hyperliquid HIP-4 outcome markets — fully collateralized binary and multi-outcome contracts.",
+    "website": "https://hyperliquid.xyz"
   }
 ]
             application/x-msgpack:
@@ -135,6 +150,11 @@ paths:
     "exchange_id": "MANIFOLD",
     "market_name_institution_description": "The world's largest social prediction market (play‑money).",
     "website": "https://manifold.markets"
+  },
+  {
+    "exchange_id": "HYPERLIQUIDOUTCOME",
+    "market_name_institution_description": "Hyperliquid HIP-4 outcome markets — fully collateralized binary and multi-outcome contracts.",
+    "website": "https://hyperliquid.xyz"
   }
 ]
   '/v1/exchanges/{exchange_id}':
