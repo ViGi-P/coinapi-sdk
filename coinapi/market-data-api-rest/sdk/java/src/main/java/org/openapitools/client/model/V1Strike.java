@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a strike within the option exchange group.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-08T06:04:08.662928199Z[Etc/UTC]", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-11T06:04:36.769931841Z[Etc/UTC]", comments = "Generator version: 7.22.0")
 public class V1Strike {
   public static final String SERIALIZED_NAME_STRIKE_PRICE = "strike_price";
   @SerializedName(SERIALIZED_NAME_STRIKE_PRICE)
