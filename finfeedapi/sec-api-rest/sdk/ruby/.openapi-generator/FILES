@@ -17,7 +17,7 @@ docs/FilingsApi.md
 docs/FullTextApi.md
 docs/MvcProblemDetails.md
 docs/MvcValidationProblemDetails.md
-docs/XbrlConverterApi.md
+docs/XBRLConverterApi.md
 git_push.sh
 lib/openapi_client.rb
 lib/openapi_client/api/download_api.rb

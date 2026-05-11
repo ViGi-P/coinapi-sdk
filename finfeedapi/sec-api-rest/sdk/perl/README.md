@@ -236,7 +236,7 @@ use WWW::OpenAPIClient::DownloadApi;
 use WWW::OpenAPIClient::ExtractorApi;
 use WWW::OpenAPIClient::FilingsApi;
 use WWW::OpenAPIClient::FullTextApi;
-use WWW::OpenAPIClient::XbrlConverterApi;
+use WWW::OpenAPIClient::XBRLConverterApi;
 
 ```
 
@@ -263,7 +263,7 @@ use WWW::OpenAPIClient::DownloadApi;
 use WWW::OpenAPIClient::ExtractorApi;
 use WWW::OpenAPIClient::FilingsApi;
 use WWW::OpenAPIClient::FullTextApi;
-use WWW::OpenAPIClient::XbrlConverterApi;
+use WWW::OpenAPIClient::XBRLConverterApi;
 
 # load the models
 use WWW::OpenAPIClient::Object::DTOExtractorType;
@@ -307,7 +307,7 @@ Class | Method | HTTP request | Description
 *ExtractorApi* | [**v1_extractor_item_get**](docs/ExtractorApi.md#v1_extractor_item_get) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
 *FilingsApi* | [**v1_filings_get**](docs/FilingsApi.md#v1_filings_get) | **GET** /v1/filings | Query SEC filing metadata
 *FullTextApi* | [**v1_full_text_get**](docs/FullTextApi.md#v1_full_text_get) | **GET** /v1/full-text | Full-text search of SEC filing documents
-*XbrlConverterApi* | [**v1_xbrl_converter_get**](docs/XbrlConverterApi.md#v1_xbrl_converter_get) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
+*XBRLConverterApi* | [**v1_xbrl_converter_get**](docs/XBRLConverterApi.md#v1_xbrl_converter_get) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
 
 
 # DOCUMENTATION FOR MODELS

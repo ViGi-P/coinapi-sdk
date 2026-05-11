@@ -6,7 +6,7 @@ api/downloadApi.ts
 api/extractorApi.ts
 api/filingsApi.ts
 api/fullTextApi.ts
-api/xbrlConverterApi.ts
+api/xBRLConverterApi.ts
 git_push.sh
 model/dTOExtractorType.ts
 model/dTOFilingMetadataDto.ts

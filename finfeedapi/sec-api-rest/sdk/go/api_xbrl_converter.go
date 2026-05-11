@@ -20,12 +20,12 @@ import (
 )
 
 
-// XbrlConverterAPIService XbrlConverterAPI service
-type XbrlConverterAPIService service
+// XBRLConverterAPIService XBRLConverterAPI service
+type XBRLConverterAPIService service
 
 type ApiV1XbrlConverterGetRequest struct {
 	ctx context.Context
-	ApiService *XbrlConverterAPIService
+	ApiService *XBRLConverterAPIService
 	htmUrl *string
 	xbrlUrl *string
 	accessionNo *string
@@ -119,7 +119,7 @@ The API returns a JSON object containing:
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiV1XbrlConverterGetRequest
 */
-func (a *XbrlConverterAPIService) V1XbrlConverterGet(ctx context.Context) ApiV1XbrlConverterGetRequest {
+func (a *XBRLConverterAPIService) V1XbrlConverterGet(ctx context.Context) ApiV1XbrlConverterGetRequest {
 	return ApiV1XbrlConverterGetRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -128,7 +128,7 @@ func (a *XbrlConverterAPIService) V1XbrlConverterGet(ctx context.Context) ApiV1X
 
 // Execute executes the request
 //  @return map[string]interface{}
-func (a *XbrlConverterAPIService) V1XbrlConverterGetExecute(r ApiV1XbrlConverterGetRequest) (map[string]interface{}, *http.Response, error) {
+func (a *XBRLConverterAPIService) V1XbrlConverterGetExecute(r ApiV1XbrlConverterGetRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -136,7 +136,7 @@ func (a *XbrlConverterAPIService) V1XbrlConverterGetExecute(r ApiV1XbrlConverter
 		localVarReturnValue  map[string]interface{}
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "XbrlConverterAPIService.V1XbrlConverterGet")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "XBRLConverterAPIService.V1XbrlConverterGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

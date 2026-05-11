@@ -9,4 +9,4 @@ API/Client/FilingsApi.js
 API/Client/FullTextApi.js
 API/Client/MvcProblemDetails.js
 API/Client/MvcValidationProblemDetails.js
-API/Client/XbrlConverterApi.js
+API/Client/XBRLConverterApi.js

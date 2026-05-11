@@ -8,7 +8,7 @@ docs/apis/DownloadApi.md
 docs/apis/ExtractorApi.md
 docs/apis/FilingsApi.md
 docs/apis/FullTextApi.md
-docs/apis/XbrlConverterApi.md
+docs/apis/XBRLConverterApi.md
 docs/models/DTOExtractorType.md
 docs/models/DTOFilingMetadataDto.md
 docs/models/DTOFilingSortBy.md
@@ -24,7 +24,7 @@ src/APIBricks.FinFeedAPI.SECAPI.REST.V1.Test/Api/DownloadApiTests.cs
 src/APIBricks.FinFeedAPI.SECAPI.REST.V1.Test/Api/ExtractorApiTests.cs
 src/APIBricks.FinFeedAPI.SECAPI.REST.V1.Test/Api/FilingsApiTests.cs
 src/APIBricks.FinFeedAPI.SECAPI.REST.V1.Test/Api/FullTextApiTests.cs
-src/APIBricks.FinFeedAPI.SECAPI.REST.V1.Test/Api/XbrlConverterApiTests.cs
+src/APIBricks.FinFeedAPI.SECAPI.REST.V1.Test/Api/XBRLConverterApiTests.cs
 src/APIBricks.FinFeedAPI.SECAPI.REST.V1.Test/Model/DTOExtractorTypeTests.cs
 src/APIBricks.FinFeedAPI.SECAPI.REST.V1.Test/Model/DTOFilingMetadataDtoTests.cs
 src/APIBricks.FinFeedAPI.SECAPI.REST.V1.Test/Model/DTOFilingSortByTests.cs
@@ -38,7 +38,7 @@ src/APIBricks.FinFeedAPI.SECAPI.REST.V1/Api/ExtractorApi.cs
 src/APIBricks.FinFeedAPI.SECAPI.REST.V1/Api/FilingsApi.cs
 src/APIBricks.FinFeedAPI.SECAPI.REST.V1/Api/FullTextApi.cs
 src/APIBricks.FinFeedAPI.SECAPI.REST.V1/Api/IApi.cs
-src/APIBricks.FinFeedAPI.SECAPI.REST.V1/Api/XbrlConverterApi.cs
+src/APIBricks.FinFeedAPI.SECAPI.REST.V1/Api/XBRLConverterApi.cs
 src/APIBricks.FinFeedAPI.SECAPI.REST.V1/Client/ApiException.cs
 src/APIBricks.FinFeedAPI.SECAPI.REST.V1/Client/ApiFactory.cs
 src/APIBricks.FinFeedAPI.SECAPI.REST.V1/Client/ApiKeyToken.cs

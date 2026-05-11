@@ -15,14 +15,14 @@
 
 import unittest
 
-from api_bricks_sec_api_rest.api.xbrl_converter_api import XbrlConverterApi
+from api_bricks_sec_api_rest.api.xbrl_converter_api import XBRLConverterApi
 
 
-class TestXbrlConverterApi(unittest.TestCase):
-    """XbrlConverterApi unit test stubs"""
+class TestXBRLConverterApi(unittest.TestCase):
+    """XBRLConverterApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = XbrlConverterApi()
+        self.api = XBRLConverterApi()
 
     def tearDown(self) -> None:
         pass

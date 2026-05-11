@@ -14,7 +14,7 @@ docs/FilingsApi.md
 docs/FullTextApi.md
 docs/MvcProblemDetails.md
 docs/MvcValidationProblemDetails.md
-docs/XbrlConverterApi.md
+docs/XBRLConverterApi.md
 git_push.sh
 lib/WWW/OpenAPIClient/ApiClient.pm
 lib/WWW/OpenAPIClient/ApiFactory.pm
@@ -31,7 +31,7 @@ lib/WWW/OpenAPIClient/Object/MvcProblemDetails.pm
 lib/WWW/OpenAPIClient/Object/MvcValidationProblemDetails.pm
 lib/WWW/OpenAPIClient/Role.pm
 lib/WWW/OpenAPIClient/Role/AutoDoc.pm
-lib/WWW/OpenAPIClient/XbrlConverterApi.pm
+lib/WWW/OpenAPIClient/XBRLConverterApi.pm
 t/DTOExtractorTypeTest.t
 t/DTOFilingMetadataDtoTest.t
 t/DTOFilingSortByTest.t
@@ -42,4 +42,4 @@ t/FilingsApiTest.t
 t/FullTextApiTest.t
 t/MvcProblemDetailsTest.t
 t/MvcValidationProblemDetailsTest.t
-t/XbrlConverterApiTest.t
+t/XBRLConverterApiTest.t

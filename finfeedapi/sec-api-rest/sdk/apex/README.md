@@ -70,7 +70,7 @@ Class | Method | HTTP request | Description
 *OASExtractorApi* | [**v1ExtractorItemGet**](OASExtractorApi.md#v1ExtractorItemGet) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
 *OASFilingsApi* | [**v1FilingsGet**](OASFilingsApi.md#v1FilingsGet) | **GET** /v1/filings | Query SEC filing metadata
 *OASFullTextApi* | [**v1FullTextGet**](OASFullTextApi.md#v1FullTextGet) | **GET** /v1/full-text | Full-text search of SEC filing documents
-*OASXbrlConverterApi* | [**v1XbrlConverterGet**](OASXbrlConverterApi.md#v1XbrlConverterGet) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
+*OASXBRLConverterApi* | [**v1XbrlConverterGet**](OASXBRLConverterApi.md#v1XbrlConverterGet) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
 
 
 ## Documentation for Models
