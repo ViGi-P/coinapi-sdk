@@ -405,7 +405,7 @@ paths:
     get:
       tags:
         - Markets
-      summary: Lists markets for a specific exchange.
+      summary: Lists markets for a specific exchange using cursor-based pagination.
       parameters:
         - name: exchange_id
           in: path
@@ -415,27 +415,23 @@ paths:
             type: string
         - name: limit
           in: query
-          description: 'Maximum number of markets to return (1-1000, default 100).'
+          description: 'Maximum number of markets to return (1-10000, default 100).'
           schema:
             type: integer
             format: int32
             default: 100
-        - name: page
+        - name: cursor
           in: query
-          description: 'Page number (1-based, >= 1, default 1). Internally converted to offset = (page - 1) * limit.'
+          description: Cursor from the previous response's `next_cursor` field. Omit for the first page.
           schema:
-            type: integer
-            format: int32
-            default: 1
+            type: string
       responses:
         '200':
-          description: A list of markets for the given exchange.
+          description: A page of markets for the given exchange.
           content:
             text/plain:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Markets.MarketModel'
+                $ref: '#/components/schemas/Markets.MarketsPage'
               examples:
                 Example list:
                   value: [
@@ -461,9 +457,7 @@ paths:
 ]
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Markets.MarketModel'
+                $ref: '#/components/schemas/Markets.MarketsPage'
               examples:
                 Example list:
                   value: [
@@ -489,9 +483,7 @@ paths:
 ]
             text/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Markets.MarketModel'
+                $ref: '#/components/schemas/Markets.MarketsPage'
               examples:
                 Example list:
                   value: [
@@ -517,9 +509,7 @@ paths:
 ]
             application/x-msgpack:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Markets.MarketModel'
+                $ref: '#/components/schemas/Markets.MarketsPage'
               examples:
                 Example list:
                   value: [
@@ -544,7 +534,7 @@ paths:
   }
 ]
         '400':
-          description: Bad request - invalid limit/offset
+          description: Bad request - invalid limit
         '404':
           description: Market not found
   '/v1/markets/{exchange_id}/active':
@@ -562,7 +552,7 @@ paths:
             type: string
         - name: limit
           in: query
-          description: 'Maximum number of market IDs to return (1-1000, default 100).'
+          description: 'Maximum number of market IDs to return (1-10000, default 100).'
           schema:
             type: integer
             format: int32
@@ -638,6 +628,126 @@ paths:
           description: Bad request - invalid limit/offset
         '404':
           description: No active markets found
+  '/v1/markets/{exchange_id}/{market_id}':
+    get:
+      tags:
+        - Markets
+      summary: Gets a specific market by its unique identifier.
+      parameters:
+        - name: exchange_id
+          in: path
+          description: 'The unique identifier of the exchange (e.g., `POLYMARKET`).'
+          required: true
+          schema:
+            type: string
+        - name: market_id
+          in: path
+          description: 'The unique identifier of the market including outcome suffix, e.g., `WILL-THE-BOSTON-RED-SOX-WIN-THE-2025-WORLD-SERIES_YES`.'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The detailed information for the requested market.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Markets.MarketModel'
+              examples:
+                Example market:
+                  value: {
+  "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+  "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+  "description": "Resolves based on official reporting by the Trump Administration.",
+  "outcome_name": "Yes",
+  "price": 0.1234,
+  "status": "Open",
+  "exchange": {
+    "exchange_id": "POLYMARKET",
+    "market_name_institution_description": "The world's largest prediction market.",
+    "website": "https://polymarket.com"
+  },
+  "exchange_id": "POLYMARKET",
+  "outcome_type": "Binary",
+  "mechanism": "CPMM",
+  "source_specific_data": {
+    "market_slug": "will-trump-sell-10k-25k-gold-cards-in-2025"
+  }
+}
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Markets.MarketModel'
+              examples:
+                Example market:
+                  value: {
+  "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+  "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+  "description": "Resolves based on official reporting by the Trump Administration.",
+  "outcome_name": "Yes",
+  "price": 0.1234,
+  "status": "Open",
+  "exchange": {
+    "exchange_id": "POLYMARKET",
+    "market_name_institution_description": "The world's largest prediction market.",
+    "website": "https://polymarket.com"
+  },
+  "exchange_id": "POLYMARKET",
+  "outcome_type": "Binary",
+  "mechanism": "CPMM",
+  "source_specific_data": {
+    "market_slug": "will-trump-sell-10k-25k-gold-cards-in-2025"
+  }
+}
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Markets.MarketModel'
+              examples:
+                Example market:
+                  value: {
+  "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+  "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+  "description": "Resolves based on official reporting by the Trump Administration.",
+  "outcome_name": "Yes",
+  "price": 0.1234,
+  "status": "Open",
+  "exchange": {
+    "exchange_id": "POLYMARKET",
+    "market_name_institution_description": "The world's largest prediction market.",
+    "website": "https://polymarket.com"
+  },
+  "exchange_id": "POLYMARKET",
+  "outcome_type": "Binary",
+  "mechanism": "CPMM",
+  "source_specific_data": {
+    "market_slug": "will-trump-sell-10k-25k-gold-cards-in-2025"
+  }
+}
+            application/x-msgpack:
+              schema:
+                $ref: '#/components/schemas/Markets.MarketModel'
+              examples:
+                Example market:
+                  value: {
+  "market_id": "WILL-TRUMP-SELL-10K-25K-GOLD-CARDS-IN-2025_YES",
+  "title": "Will Trump sell 10k-25k Gold Cards in 2025?",
+  "description": "Resolves based on official reporting by the Trump Administration.",
+  "outcome_name": "Yes",
+  "price": 0.1234,
+  "status": "Open",
+  "exchange": {
+    "exchange_id": "POLYMARKET",
+    "market_name_institution_description": "The world's largest prediction market.",
+    "website": "https://polymarket.com"
+  },
+  "exchange_id": "POLYMARKET",
+  "outcome_type": "Binary",
+  "mechanism": "CPMM",
+  "source_specific_data": {
+    "market_slug": "will-trump-sell-10k-25k-gold-cards-in-2025"
+  }
+}
+        '404':
+          description: Market not found
   /v1/ohlcv/periods:
     get:
       tags:
@@ -1221,6 +1331,19 @@ components:
         - Suspended
       type: string
       description: The status of a prediction market.
+    Markets.MarketsPage:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Markets.MarketModel'
+          nullable: true
+        next_cursor:
+          type: string
+          nullable: true
+      additionalProperties: false
+      description: "Paginated response for the /history endpoint when using cursor-based pagination.\nPass `next_cursor` as the `cursor` query parameter in the next request to get the following page.\nWhen `next_cursor` is null, there are no more results."
     Markets.OutcomeType:
       enum:
         - Binary
