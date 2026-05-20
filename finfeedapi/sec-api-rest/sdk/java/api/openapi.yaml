@@ -15,22 +15,24 @@ security:
 - APIKey: []
 - JWT: []
 tags:
-- description: Convert SEC filing XBRL sources into structured JSON output.
-  name: XBRL Converter
-  x-displayName: XBRL Converter
-- description: Search SEC filing document contents using full-text queries and filters.
-  name: Full Text
-  x-displayName: Full Text
-- description: "Query historical SEC filing metadata with filters such as CIK, forms,\
-    \ and dates."
+- description: Provides endpoints for converting XBRL data to JSON format from various
+    SEC filing sources.
+  name: XbrlConverter
+- description: |-
+    Provides endpoints for performing full-text searches on historical SEC filing documents.
+    Allows users to query filings based on various criteria such as form type, date ranges, and text content.
+  name: FullText
+- description: |-
+    Provides endpoints for querying historical SEC filing metadata.
+    Allows users to filter filings based on criteria like CIK, form type, date ranges, etc.
   name: Filings
-  x-displayName: Filings
-- description: Extract and classify sections from SEC filing HTML documents.
+- description: Provides endpoints for extracting and classifying content from SEC
+    filing HTML documents.
   name: Extractor
-  x-displayName: Extractor
-- description: Download original filing documents directly from the SEC EDGAR archive.
+- description: |-
+    Provides endpoints for downloading files directly from the SEC EDGAR archive.
+    Allows users to download specific filing documents by accession number and filename.
   name: Download
-  x-displayName: Download
 paths:
   /v1/download:
     get:
@@ -594,7 +596,7 @@ paths:
           description: Server error
       summary: Full-text search of SEC filing documents
       tags:
-      - Full Text
+      - FullText
       x-accepts:
       - application/json
   /v1/xbrl-converter:
@@ -836,7 +838,7 @@ paths:
           description: Server error
       summary: Convert XBRL data to JSON format
       tags:
-      - XBRL Converter
+      - XbrlConverter
       x-accepts:
       - application/json
 components:

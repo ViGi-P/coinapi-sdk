@@ -18,11 +18,11 @@ module FinFeedAPISECREST.API
   , module FinFeedAPISECREST.API.Extractor
   , module FinFeedAPISECREST.API.Filings
   , module FinFeedAPISECREST.API.FullText
-  , module FinFeedAPISECREST.API.XBRLConverter
+  , module FinFeedAPISECREST.API.XbrlConverter
   ) where
 
 import FinFeedAPISECREST.API.Download
 import FinFeedAPISECREST.API.Extractor
 import FinFeedAPISECREST.API.Filings
 import FinFeedAPISECREST.API.FullText
-import FinFeedAPISECREST.API.XBRLConverter
+import FinFeedAPISECREST.API.XbrlConverter

@@ -8,5 +8,5 @@ src/Api/Request/Download.elm
 src/Api/Request/Extractor.elm
 src/Api/Request/Filings.elm
 src/Api/Request/FullText.elm
-src/Api/Request/XBRLConverter.elm
+src/Api/Request/XbrlConverter.elm
 src/Api/Time.elm

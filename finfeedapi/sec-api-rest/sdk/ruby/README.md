@@ -95,7 +95,7 @@ Class | Method | HTTP request | Description
 *OpenapiClient::ExtractorApi* | [**v1_extractor_item_get**](docs/ExtractorApi.md#v1_extractor_item_get) | **GET** /v1/extractor/item | Extract specific item content from SEC filing
 *OpenapiClient::FilingsApi* | [**v1_filings_get**](docs/FilingsApi.md#v1_filings_get) | **GET** /v1/filings | Query SEC filing metadata
 *OpenapiClient::FullTextApi* | [**v1_full_text_get**](docs/FullTextApi.md#v1_full_text_get) | **GET** /v1/full-text | Full-text search of SEC filing documents
-*OpenapiClient::XBRLConverterApi* | [**v1_xbrl_converter_get**](docs/XBRLConverterApi.md#v1_xbrl_converter_get) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
+*OpenapiClient::XbrlConverterApi* | [**v1_xbrl_converter_get**](docs/XbrlConverterApi.md#v1_xbrl_converter_get) | **GET** /v1/xbrl-converter | Convert XBRL data to JSON format
 
 
 ## Documentation for Models

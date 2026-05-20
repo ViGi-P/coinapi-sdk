@@ -634,7 +634,7 @@ read -r -d '' ops <<EOF
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
-    echo -e "${BOLD}${WHITE}[xBRLConverter]${OFF}"
+    echo -e "${BOLD}${WHITE}[xbrlConverter]${OFF}"
 read -r -d '' ops <<EOF
   ${CYAN}v1XbrlConverterGet${OFF};Convert XBRL data to JSON format (AUTH) (AUTH)
 EOF

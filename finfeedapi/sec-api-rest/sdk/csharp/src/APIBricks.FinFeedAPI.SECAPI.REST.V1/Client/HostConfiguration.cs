@@ -63,8 +63,8 @@ namespace APIBricks.FinFeedAPI.SECAPI.REST.V1.Client
             _services.AddTransient<IFilingsApi, FilingsApi>();
             _services.AddSingleton<FullTextApiEvents>();
             _services.AddTransient<IFullTextApi, FullTextApi>();
-            _services.AddSingleton<XBRLConverterApiEvents>();
-            _services.AddTransient<IXBRLConverterApi, XBRLConverterApi>();
+            _services.AddSingleton<XbrlConverterApiEvents>();
+            _services.AddTransient<IXbrlConverterApi, XbrlConverterApi>();
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace APIBricks.FinFeedAPI.SECAPI.REST.V1.Client
             builders.Add(_services.AddHttpClient<IExtractorApi, ExtractorApi>(client));
             builders.Add(_services.AddHttpClient<IFilingsApi, FilingsApi>(client));
             builders.Add(_services.AddHttpClient<IFullTextApi, FullTextApi>(client));
-            builders.Add(_services.AddHttpClient<IXBRLConverterApi, XBRLConverterApi>(client));
+            builders.Add(_services.AddHttpClient<IXbrlConverterApi, XbrlConverterApi>(client));
             
             if (builder != null)
                 foreach (IHttpClientBuilder instance in builders)

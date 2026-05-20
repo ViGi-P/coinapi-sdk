@@ -30,5 +30,5 @@ src/NetClient.cpp
 src/NetClient.h
 src/Object.h
 src/RequestInfo.h
-src/XBRLConverterManager.cpp
-src/XBRLConverterManager.h
+src/XbrlConverterManager.cpp
+src/XbrlConverterManager.h

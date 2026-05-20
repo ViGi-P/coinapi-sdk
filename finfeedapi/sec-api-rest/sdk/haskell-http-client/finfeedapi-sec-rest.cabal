@@ -70,7 +70,7 @@ library
       FinFeedAPISECREST.API.Extractor
       FinFeedAPISECREST.API.Filings
       FinFeedAPISECREST.API.FullText
-      FinFeedAPISECREST.API.XBRLConverter
+      FinFeedAPISECREST.API.XbrlConverter
       FinFeedAPISECREST.Client
       FinFeedAPISECREST.Core
       FinFeedAPISECREST.Logging

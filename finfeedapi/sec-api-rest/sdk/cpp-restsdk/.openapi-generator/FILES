@@ -18,7 +18,7 @@ include/CppRestOpenAPIClient/api/DownloadApi.h
 include/CppRestOpenAPIClient/api/ExtractorApi.h
 include/CppRestOpenAPIClient/api/FilingsApi.h
 include/CppRestOpenAPIClient/api/FullTextApi.h
-include/CppRestOpenAPIClient/api/XBRLConverterApi.h
+include/CppRestOpenAPIClient/api/XbrlConverterApi.h
 include/CppRestOpenAPIClient/model/DTO_ExtractorType.h
 include/CppRestOpenAPIClient/model/DTO_FilingMetadataDto.h
 include/CppRestOpenAPIClient/model/DTO_FilingSortBy.h
@@ -38,7 +38,7 @@ src/api/DownloadApi.cpp
 src/api/ExtractorApi.cpp
 src/api/FilingsApi.cpp
 src/api/FullTextApi.cpp
-src/api/XBRLConverterApi.cpp
+src/api/XbrlConverterApi.cpp
 src/model/DTO_ExtractorType.cpp
 src/model/DTO_FilingMetadataDto.cpp
 src/model/DTO_FilingSortBy.cpp

@@ -58,7 +58,7 @@ type APIClient struct {
 
 	FullTextAPI *FullTextAPIService
 
-	XBRLConverterAPI *XBRLConverterAPIService
+	XbrlConverterAPI *XbrlConverterAPIService
 }
 
 type service struct {
@@ -81,7 +81,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ExtractorAPI = (*ExtractorAPIService)(&c.common)
 	c.FilingsAPI = (*FilingsAPIService)(&c.common)
 	c.FullTextAPI = (*FullTextAPIService)(&c.common)
-	c.XBRLConverterAPI = (*XBRLConverterAPIService)(&c.common)
+	c.XbrlConverterAPI = (*XbrlConverterAPIService)(&c.common)
 
 	return c
 }

@@ -4,7 +4,7 @@ apis/DownloadApi.ts
 apis/ExtractorApi.ts
 apis/FilingsApi.ts
 apis/FullTextApi.ts
-apis/XBRLConverterApi.ts
+apis/XbrlConverterApi.ts
 apis/index.ts
 index.ts
 models/DTOExtractorType.ts

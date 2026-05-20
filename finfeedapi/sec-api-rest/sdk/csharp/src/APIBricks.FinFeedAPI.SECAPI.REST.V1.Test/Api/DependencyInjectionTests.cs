@@ -95,8 +95,8 @@ namespace APIBricks.FinFeedAPI.SECAPI.REST.V1.Test.Api
             var fullTextApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IFullTextApi>();
             Assert.True(fullTextApi.HttpClient.BaseAddress != null);
 
-            var xBRLConverterApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IXBRLConverterApi>();
-            Assert.True(xBRLConverterApi.HttpClient.BaseAddress != null);
+            var xbrlConverterApi = _hostUsingConfigureWithAClient.Services.GetRequiredService<IXbrlConverterApi>();
+            Assert.True(xbrlConverterApi.HttpClient.BaseAddress != null);
         }
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace APIBricks.FinFeedAPI.SECAPI.REST.V1.Test.Api
             var fullTextApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IFullTextApi>();
             Assert.True(fullTextApi.HttpClient.BaseAddress != null);
 
-            var xBRLConverterApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IXBRLConverterApi>();
-            Assert.True(xBRLConverterApi.HttpClient.BaseAddress != null);
+            var xbrlConverterApi = _hostUsingConfigureWithoutAClient.Services.GetRequiredService<IXbrlConverterApi>();
+            Assert.True(xbrlConverterApi.HttpClient.BaseAddress != null);
         }
 
         /// <summary>
@@ -139,8 +139,8 @@ namespace APIBricks.FinFeedAPI.SECAPI.REST.V1.Test.Api
             var fullTextApi = _hostUsingAddWithAClient.Services.GetRequiredService<IFullTextApi>();
             Assert.True(fullTextApi.HttpClient.BaseAddress != null);
             
-            var xBRLConverterApi = _hostUsingAddWithAClient.Services.GetRequiredService<IXBRLConverterApi>();
-            Assert.True(xBRLConverterApi.HttpClient.BaseAddress != null);
+            var xbrlConverterApi = _hostUsingAddWithAClient.Services.GetRequiredService<IXbrlConverterApi>();
+            Assert.True(xbrlConverterApi.HttpClient.BaseAddress != null);
         }
 
         /// <summary>
@@ -161,8 +161,8 @@ namespace APIBricks.FinFeedAPI.SECAPI.REST.V1.Test.Api
             var fullTextApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IFullTextApi>();
             Assert.True(fullTextApi.HttpClient.BaseAddress != null);
 
-            var xBRLConverterApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IXBRLConverterApi>();
-            Assert.True(xBRLConverterApi.HttpClient.BaseAddress != null);
+            var xbrlConverterApi = _hostUsingAddWithoutAClient.Services.GetRequiredService<IXbrlConverterApi>();
+            Assert.True(xbrlConverterApi.HttpClient.BaseAddress != null);
         }
     }
 }

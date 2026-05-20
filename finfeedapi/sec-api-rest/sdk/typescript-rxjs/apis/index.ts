@@ -2,4 +2,4 @@ export * from './DownloadApi';
 export * from './ExtractorApi';
 export * from './FilingsApi';
 export * from './FullTextApi';
-export * from './XBRLConverterApi';
+export * from './XbrlConverterApi';

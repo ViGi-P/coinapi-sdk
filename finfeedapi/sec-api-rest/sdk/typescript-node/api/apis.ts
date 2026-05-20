@@ -6,8 +6,8 @@ export * from './filingsApi';
 import { FilingsApi } from './filingsApi';
 export * from './fullTextApi';
 import { FullTextApi } from './fullTextApi';
-export * from './xBRLConverterApi';
-import { XBRLConverterApi } from './xBRLConverterApi';
+export * from './xbrlConverterApi';
+import { XbrlConverterApi } from './xbrlConverterApi';
 import * as http from 'http';
 
 export class HttpError extends Error {
@@ -19,4 +19,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [DownloadApi, ExtractorApi, FilingsApi, FullTextApi, XBRLConverterApi];
+export const APIS = [DownloadApi, ExtractorApi, FilingsApi, FullTextApi, XbrlConverterApi];

@@ -11,8 +11,8 @@
 part of openapi.api;
 
 
-class XBRLConverterApi {
-  XBRLConverterApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
+class XbrlConverterApi {
+  XbrlConverterApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 

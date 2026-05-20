@@ -11,7 +11,7 @@ docs/FilingsApi.md
 docs/FullTextApi.md
 docs/MvcProblemDetails.md
 docs/MvcValidationProblemDetails.md
-docs/XBRLConverterApi.md
+docs/XbrlConverterApi.md
 pom.xml
 project/build.properties
 src/main/resources/reference.conf
@@ -20,7 +20,7 @@ src/main/scala/org/openapitools/client/api/EnumsSerializers.scala
 src/main/scala/org/openapitools/client/api/ExtractorApi.scala
 src/main/scala/org/openapitools/client/api/FilingsApi.scala
 src/main/scala/org/openapitools/client/api/FullTextApi.scala
-src/main/scala/org/openapitools/client/api/XBRLConverterApi.scala
+src/main/scala/org/openapitools/client/api/XbrlConverterApi.scala
 src/main/scala/org/openapitools/client/core/ApiInvoker.scala
 src/main/scala/org/openapitools/client/core/ApiRequest.scala
 src/main/scala/org/openapitools/client/core/ApiSettings.scala

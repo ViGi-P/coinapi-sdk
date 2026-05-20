@@ -8,7 +8,7 @@ api/download.service.ts
 api/extractor.service.ts
 api/filings.service.ts
 api/fullText.service.ts
-api/xBRLConverter.service.ts
+api/xbrlConverter.service.ts
 configuration.ts
 encoder.ts
 git_push.sh

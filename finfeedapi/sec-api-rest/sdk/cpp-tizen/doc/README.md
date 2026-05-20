@@ -69,7 +69,7 @@ Method | HTTP request | Description
 *v1FullTextGetASync* | *GET* /v1/full-text | Full-text search of SEC filing documents.
 
 
-### XBRLConverterManager
+### XbrlConverterManager
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 *v1XbrlConverterGetSync* | *GET* /v1/xbrl-converter | Convert XBRL data to JSON format.

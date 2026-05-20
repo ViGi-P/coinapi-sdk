@@ -1,7 +1,7 @@
 /*
 FinFeedAPI SEC REST API
 
-Testing XBRLConverterAPIService
+Testing XbrlConverterAPIService
 
 */
 
@@ -17,16 +17,16 @@ import (
 	openapiclient "github.com/GIT_USER_ID/GIT_REPO_ID"
 )
 
-func Test_openapi_XBRLConverterAPIService(t *testing.T) {
+func Test_openapi_XbrlConverterAPIService(t *testing.T) {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test XBRLConverterAPIService V1XbrlConverterGet", func(t *testing.T) {
+	t.Run("Test XbrlConverterAPIService V1XbrlConverterGet", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.XBRLConverterAPI.V1XbrlConverterGet(context.Background()).Execute()
+		resp, httpRes, err := apiClient.XbrlConverterAPI.V1XbrlConverterGet(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

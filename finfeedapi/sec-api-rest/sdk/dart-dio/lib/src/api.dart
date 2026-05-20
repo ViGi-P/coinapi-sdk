@@ -93,9 +93,9 @@ class Openapi {
     return FullTextApi(dio, serializers);
   }
 
-  /// Get XBRLConverterApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get XbrlConverterApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  XBRLConverterApi getXBRLConverterApi() {
-    return XBRLConverterApi(dio, serializers);
+  XbrlConverterApi getXbrlConverterApi() {
+    return XbrlConverterApi(dio, serializers);
   }
 }

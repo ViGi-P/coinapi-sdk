@@ -49,9 +49,9 @@ force-app/main/default/classes/OASResponseMock.cls
 force-app/main/default/classes/OASResponseMock.cls-meta.xml
 force-app/main/default/classes/OASTest.cls
 force-app/main/default/classes/OASTest.cls-meta.xml
-force-app/main/default/classes/OASXBRLConverterApi.cls
-force-app/main/default/classes/OASXBRLConverterApi.cls-meta.xml
-force-app/main/default/classes/OASXBRLConverterApiTest.cls
-force-app/main/default/classes/OASXBRLConverterApiTest.cls-meta.xml
+force-app/main/default/classes/OASXbrlConverterApi.cls
+force-app/main/default/classes/OASXbrlConverterApi.cls-meta.xml
+force-app/main/default/classes/OASXbrlConverterApiTest.cls
+force-app/main/default/classes/OASXbrlConverterApiTest.cls-meta.xml
 force-app/main/default/namedCredentials/FinFeedAPI_SEC_REST_API.namedCredential-meta.xml
 sfdx-project.json

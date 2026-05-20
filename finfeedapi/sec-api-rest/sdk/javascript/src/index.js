@@ -23,7 +23,7 @@ import DownloadApi from './api/DownloadApi';
 import ExtractorApi from './api/ExtractorApi';
 import FilingsApi from './api/FilingsApi';
 import FullTextApi from './api/FullTextApi';
-import XBRLConverterApi from './api/XBRLConverterApi';
+import XbrlConverterApi from './api/XbrlConverterApi';
 
 
 /**
@@ -125,8 +125,8 @@ export {
     FullTextApi,
 
     /**
-    * The XBRLConverterApi service constructor.
-    * @property {module:api/XBRLConverterApi}
+    * The XbrlConverterApi service constructor.
+    * @property {module:api/XbrlConverterApi}
     */
-    XBRLConverterApi
+    XbrlConverterApi
 };

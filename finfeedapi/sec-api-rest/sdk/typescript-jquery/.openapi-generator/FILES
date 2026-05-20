@@ -3,7 +3,7 @@ api/DownloadApi.ts
 api/ExtractorApi.ts
 api/FilingsApi.ts
 api/FullTextApi.ts
-api/XBRLConverterApi.ts
+api/XbrlConverterApi.ts
 api/api.ts
 configuration.ts
 git_push.sh

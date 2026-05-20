@@ -13,7 +13,7 @@ doc/FilingsApi.md
 doc/FullTextApi.md
 doc/MvcProblemDetails.md
 doc/MvcValidationProblemDetails.md
-doc/XBRLConverterApi.md
+doc/XbrlConverterApi.md
 git_push.sh
 lib/api.dart
 lib/api/download_api.dart
