@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * DTOSecFilingResultDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-20T06:08:59.091336655Z[Etc/UTC]", comments = "Generator version: 7.13.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-26T06:07:31.563545518Z[Etc/UTC]", comments = "Generator version: 7.13.0")
 public class DTOSecFilingResultDto {
   public static final String SERIALIZED_NAME_ACCESSION_NUMBER = "accession_number";
   @SerializedName(SERIALIZED_NAME_ACCESSION_NUMBER)

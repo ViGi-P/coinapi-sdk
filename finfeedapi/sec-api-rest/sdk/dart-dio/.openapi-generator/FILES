@@ -12,7 +12,7 @@ doc/FilingsApi.md
 doc/FullTextApi.md
 doc/MvcProblemDetails.md
 doc/MvcValidationProblemDetails.md
-doc/XbrlConverterApi.md
+doc/XBRLConverterApi.md
 lib/openapi.dart
 lib/src/api.dart
 lib/src/api/download_api.dart

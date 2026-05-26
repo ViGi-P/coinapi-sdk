@@ -58,7 +58,7 @@ set(SRCS
     api/ExtractorAPI.c
     api/FilingsAPI.c
     api/FullTextAPI.c
-    api/XbrlConverterAPI.c
+    api/XBRLConverterAPI.c
 
 )
 
@@ -80,7 +80,7 @@ set(HDRS
     api/ExtractorAPI.h
     api/FilingsAPI.h
     api/FullTextAPI.h
-    api/XbrlConverterAPI.h
+    api/XBRLConverterAPI.h
 
 )
 
@@ -166,7 +166,7 @@ set(HDRS "")
 #    unit-tests/manual-ExtractorAPI.c
 #    unit-tests/manual-FilingsAPI.c
 #    unit-tests/manual-FullTextAPI.c
-#    unit-tests/manual-XbrlConverterAPI.c
+#    unit-tests/manual-XBRLConverterAPI.c
 #)
 
 ##set header files

@@ -13,7 +13,7 @@ Generator version: 7.13.0
 require 'cgi'
 
 module OpenapiClient
-  class XbrlConverterApi
+  class XBRLConverterApi
     attr_accessor :api_client
 
     def initialize(api_client = ApiClient.default)
@@ -40,7 +40,7 @@ module OpenapiClient
     # @return [Array<(Hash<String, Object>, Integer, Hash)>] Hash<String, Object> data, response status code and response headers
     def v1_xbrl_converter_get_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: XbrlConverterApi.v1_xbrl_converter_get ...'
+        @api_client.config.logger.debug 'Calling API: XBRLConverterApi.v1_xbrl_converter_get ...'
       end
       # resource path
       local_var_path = '/v1/xbrl-converter'
@@ -69,7 +69,7 @@ module OpenapiClient
       auth_names = opts[:debug_auth_names] || ['APIKey', 'JWT']
 
       new_options = opts.merge(
-        :operation => :"XbrlConverterApi.v1_xbrl_converter_get",
+        :operation => :"XBRLConverterApi.v1_xbrl_converter_get",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -80,7 +80,7 @@ module OpenapiClient
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: XbrlConverterApi#v1_xbrl_converter_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: XBRLConverterApi#v1_xbrl_converter_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

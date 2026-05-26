@@ -11,13 +11,13 @@ api/FilingsAPI.c
 api/FilingsAPI.h
 api/FullTextAPI.c
 api/FullTextAPI.h
-api/XbrlConverterAPI.c
-api/XbrlConverterAPI.h
+api/XBRLConverterAPI.c
+api/XBRLConverterAPI.h
 docs/DownloadAPI.md
 docs/ExtractorAPI.md
 docs/FilingsAPI.md
 docs/FullTextAPI.md
-docs/XbrlConverterAPI.md
+docs/XBRLConverterAPI.md
 docs/dto_extractor_type.md
 docs/dto_filing_metadata_dto.md
 docs/dto_filing_sort_by.md

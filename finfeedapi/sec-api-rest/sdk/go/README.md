@@ -84,7 +84,7 @@ Class | Method | HTTP request | Description
 *ExtractorAPI* | [**V1ExtractorItemGet**](docs/ExtractorAPI.md#v1extractoritemget) | **Get** /v1/extractor/item | Extract specific item content from SEC filing
 *FilingsAPI* | [**V1FilingsGet**](docs/FilingsAPI.md#v1filingsget) | **Get** /v1/filings | Query SEC filing metadata
 *FullTextAPI* | [**V1FullTextGet**](docs/FullTextAPI.md#v1fulltextget) | **Get** /v1/full-text | Full-text search of SEC filing documents
-*XbrlConverterAPI* | [**V1XbrlConverterGet**](docs/XbrlConverterAPI.md#v1xbrlconverterget) | **Get** /v1/xbrl-converter | Convert XBRL data to JSON format
+*XBRLConverterAPI* | [**V1XbrlConverterGet**](docs/XBRLConverterAPI.md#v1xbrlconverterget) | **Get** /v1/xbrl-converter | Convert XBRL data to JSON format
 
 
 ## Documentation For Models

@@ -30,7 +30,7 @@ docs/FilingsApi.md
 docs/FullTextApi.md
 docs/MvcProblemDetails.md
 docs/MvcValidationProblemDetails.md
-docs/XbrlConverterApi.md
+docs/XBRLConverterApi.md
 git_push.sh
 tests/testthat.R
 tests/testthat/test_download_api.R

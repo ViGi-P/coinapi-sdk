@@ -19,7 +19,7 @@ api_bricks_sec_api_rest/docs/FilingsApi.md
 api_bricks_sec_api_rest/docs/FullTextApi.md
 api_bricks_sec_api_rest/docs/MvcProblemDetails.md
 api_bricks_sec_api_rest/docs/MvcValidationProblemDetails.md
-api_bricks_sec_api_rest/docs/XbrlConverterApi.md
+api_bricks_sec_api_rest/docs/XBRLConverterApi.md
 api_bricks_sec_api_rest/exceptions.py
 api_bricks_sec_api_rest/models/__init__.py
 api_bricks_sec_api_rest/models/dto_extractor_type.py

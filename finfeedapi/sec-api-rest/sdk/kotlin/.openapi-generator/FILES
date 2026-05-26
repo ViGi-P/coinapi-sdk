@@ -11,7 +11,7 @@ docs/FilingsApi.md
 docs/FullTextApi.md
 docs/MvcProblemDetails.md
 docs/MvcValidationProblemDetails.md
-docs/XbrlConverterApi.md
+docs/XBRLConverterApi.md
 gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
 gradlew
@@ -21,7 +21,7 @@ src/main/kotlin/org/openapitools/client/apis/DownloadApi.kt
 src/main/kotlin/org/openapitools/client/apis/ExtractorApi.kt
 src/main/kotlin/org/openapitools/client/apis/FilingsApi.kt
 src/main/kotlin/org/openapitools/client/apis/FullTextApi.kt
-src/main/kotlin/org/openapitools/client/apis/XbrlConverterApi.kt
+src/main/kotlin/org/openapitools/client/apis/XBRLConverterApi.kt
 src/main/kotlin/org/openapitools/client/infrastructure/ApiAbstractions.kt
 src/main/kotlin/org/openapitools/client/infrastructure/ApiClient.kt
 src/main/kotlin/org/openapitools/client/infrastructure/ApiResponse.kt
@@ -49,7 +49,7 @@ src/test/kotlin/org/openapitools/client/apis/DownloadApiTest.kt
 src/test/kotlin/org/openapitools/client/apis/ExtractorApiTest.kt
 src/test/kotlin/org/openapitools/client/apis/FilingsApiTest.kt
 src/test/kotlin/org/openapitools/client/apis/FullTextApiTest.kt
-src/test/kotlin/org/openapitools/client/apis/XbrlConverterApiTest.kt
+src/test/kotlin/org/openapitools/client/apis/XBRLConverterApiTest.kt
 src/test/kotlin/org/openapitools/client/models/DTOExtractorTypeTest.kt
 src/test/kotlin/org/openapitools/client/models/DTOFilingMetadataDtoTest.kt
 src/test/kotlin/org/openapitools/client/models/DTOFilingSortByTest.kt

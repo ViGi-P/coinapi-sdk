@@ -12,12 +12,12 @@ docs/FilingsApi.md
 docs/FullTextApi.md
 docs/MvcProblemDetails.md
 docs/MvcValidationProblemDetails.md
-docs/XbrlConverterApi.md
+docs/XBRLConverterApi.md
 src/PSOpenAPITools/Api/DownloadApi.ps1
 src/PSOpenAPITools/Api/ExtractorApi.ps1
 src/PSOpenAPITools/Api/FilingsApi.ps1
 src/PSOpenAPITools/Api/FullTextApi.ps1
-src/PSOpenAPITools/Api/XbrlConverterApi.ps1
+src/PSOpenAPITools/Api/XBRLConverterApi.ps1
 src/PSOpenAPITools/Client/Configuration.ps1
 src/PSOpenAPITools/Model/DTOExtractorType.ps1
 src/PSOpenAPITools/Model/DTOFilingMetadataDto.ps1
@@ -36,7 +36,7 @@ tests/Api/DownloadApi.Tests.ps1
 tests/Api/ExtractorApi.Tests.ps1
 tests/Api/FilingsApi.Tests.ps1
 tests/Api/FullTextApi.Tests.ps1
-tests/Api/XbrlConverterApi.Tests.ps1
+tests/Api/XBRLConverterApi.Tests.ps1
 tests/Model/DTOExtractorType.Tests.ps1
 tests/Model/DTOFilingMetadataDto.Tests.ps1
 tests/Model/DTOFilingSortBy.Tests.ps1

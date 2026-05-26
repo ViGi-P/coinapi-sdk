@@ -20,7 +20,7 @@ docs/FilingsAPI.md
 docs/FullTextAPI.md
 docs/MvcProblemDetails.md
 docs/MvcValidationProblemDetails.md
-docs/XbrlConverterAPI.md
+docs/XBRLConverterAPI.md
 git_push.sh
 go.mod
 go.sum
