@@ -251,7 +251,7 @@ Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
 Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
 
 .PARAMETER LimitLevels
-Maximum amount of levels from each side of the book to include in response (optional)
+Maximum amount of levels from each side of the book to include in response (optional, maximum is 50)
 
 .PARAMETER ReturnType
 

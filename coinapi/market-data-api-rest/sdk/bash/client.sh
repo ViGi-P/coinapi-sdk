@@ -2142,7 +2142,7 @@ print_v1OrderbooksSymbolIdHistoryGet_help() {
     echo -e "Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.
             
 :::info
-The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.
+The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels.
 :::
             
 This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
@@ -2162,7 +2162,7 @@ For querying a full day of data, use the 'date' parameter. For specific time ran
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}limit_levels${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - Maximum amount of levels from each side of the book to include in response (optional)${YELLOW} Specify as: limit_levels=value${OFF}" \
+    echo -e "  * ${GREEN}limit_levels${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - Maximum amount of levels from each side of the book to include in response (optional, maximum is 50)${YELLOW} Specify as: limit_levels=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"

@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 Historical data
 
-Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
+Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
 
 ### Example
 ```R
@@ -134,7 +134,7 @@ var_date <- "date_example" # character | Date in ISO 8601, returned data is for 
 var_time_start <- "time_start_example" # character | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (Optional)
 var_time_end <- "time_end_example" # character | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (Optional)
 var_limit <- 100 # integer | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (Optional)
-var_limit_levels <- 56 # integer | Maximum amount of levels from each side of the book to include in response (optional) (Optional)
+var_limit_levels <- 56 # integer | Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (Optional)
 
 api_instance <- OrderBookApi$new()
 # Configure API key authorization: APIKey
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
  **time_start** | **character**| Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) | [optional] 
  **time_end** | **character**| Timeseries ending time in ISO 8601 (optional, supports cross-day queries) | [optional] 
  **limit** | **integer**| Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **limit_levels** | **integer**| Maximum amount of levels from each side of the book to include in response (optional) | [optional] 
+ **limit_levels** | **integer**| Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) | [optional] 
 
 ### Return type
 

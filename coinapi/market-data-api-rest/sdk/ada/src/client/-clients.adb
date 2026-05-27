@@ -1047,7 +1047,7 @@ package body .Clients is
    --  Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.
    --              
    --  :::info
-   --  The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.
+   --  The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels.
    --  :::
    --              
    --  This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.

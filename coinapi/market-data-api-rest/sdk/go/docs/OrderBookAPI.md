@@ -180,7 +180,7 @@ func main() {
 	timeStart := "timeStart_example" // string | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
 	timeEnd := "timeEnd_example" // string | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
 	limit := int32(56) // int32 | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional) (default to 100)
-	limitLevels := int32(56) // int32 | Maximum amount of levels from each side of the book to include in response (optional) (optional)
+	limitLevels := int32(56) // int32 | Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
  **timeStart** | **string** | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) | 
  **timeEnd** | **string** | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) | 
  **limit** | **int32** | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [default to 100]
- **limitLevels** | **int32** | Maximum amount of levels from each side of the book to include in response (optional) | 
+ **limitLevels** | **int32** | Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) | 
 
 ### Return type
 

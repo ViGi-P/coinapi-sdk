@@ -313,7 +313,7 @@ func (r ApiV1OrderbooksSymbolIdHistoryGetRequest) Limit(limit int32) ApiV1Orderb
 	return r
 }
 
-// Maximum amount of levels from each side of the book to include in response (optional)
+// Maximum amount of levels from each side of the book to include in response (optional, maximum is 50)
 func (r ApiV1OrderbooksSymbolIdHistoryGetRequest) LimitLevels(limitLevels int32) ApiV1OrderbooksSymbolIdHistoryGetRequest {
 	r.limitLevels = &limitLevels
 	return r
@@ -329,7 +329,7 @@ V1OrderbooksSymbolIdHistoryGet Historical data
 Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.
             
 :::info
-The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.
+The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels.
 :::
             
 This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.

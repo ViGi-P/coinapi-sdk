@@ -4254,7 +4254,7 @@ export const OrderBookApiFetchParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the \'date\' parameter. For specific time ranges (including cross-day or multi-hour queries), use \'time_start\' and \'time_end\'. :::
+         * Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the \'date\' parameter. For specific time ranges (including cross-day or multi-hour queries), use \'time_start\' and \'time_end\'. :::
          * @summary Historical data
          * @throws {RequiredError}
          */
@@ -4359,7 +4359,7 @@ export const OrderBookApi = function(configuration?: Configuration, fetch: Fetch
             });
         },
         /**
-         * Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the \'date\' parameter. For specific time ranges (including cross-day or multi-hour queries), use \'time_start\' and \'time_end\'. :::
+         * Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the \'date\' parameter. For specific time ranges (including cross-day or multi-hour queries), use \'time_start\' and \'time_end\'. :::
          * @summary Historical data
          * @throws {RequiredError}
          */

@@ -100,7 +100,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-05-26T06:09:12.0715262Z
+                    time: 2026-05-27T06:03:35.9796551Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -110,7 +110,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-05-26T06:09:12.0715262Z
+                    time: 2026-05-27T06:03:35.9796551Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -120,7 +120,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-05-26T06:09:12.0715262Z
+                    time: 2026-05-27T06:03:35.9796551Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -130,7 +130,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-05-26T06:09:12.0715262Z
+                    time: 2026-05-27T06:03:35.9796551Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -5626,7 +5626,7 @@ paths:
       description: "Get historical order book snapshots for a specific symbol within\
         \ time range, returned in time ascending order.\n            \n:::info\nThe\
         \ historical order book data via the REST API is currently limited by a number\
-        \ of updates and to the maximum number of 20 levels.\n:::\n            \n\
+        \ of updates and to the maximum number of 50 levels.\n:::\n            \n\
         This endpoint supports hourly granularity for APITP data with automatic fallback\
         \ to daily data for older records.\nTimestamps are normalized to hour boundaries,\
         \ and data is fetched per hour with precise filtering to your exact time range.\n\
@@ -5682,8 +5682,8 @@ paths:
           format: int32
           type: integer
         style: form
-      - description: Maximum amount of levels from each side of the book to include
-          in response (optional)
+      - description: "Maximum amount of levels from each side of the book to include\
+          \ in response (optional, maximum is 50)"
         explode: true
         in: query
         name: limit_levels

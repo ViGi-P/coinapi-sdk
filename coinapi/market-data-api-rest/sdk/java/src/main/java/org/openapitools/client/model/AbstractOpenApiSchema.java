@@ -21,7 +21,7 @@ import java.util.Map;
 /**
  * Abstract class for oneOf,anyOf schemas defined in OpenAPI spec
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-26T06:09:48.091185429Z[Etc/UTC]", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-27T06:04:15.076698312Z[Etc/UTC]", comments = "Generator version: 7.22.0")
 public abstract class AbstractOpenApiSchema {
 
     // store the actual instance of the schema/object

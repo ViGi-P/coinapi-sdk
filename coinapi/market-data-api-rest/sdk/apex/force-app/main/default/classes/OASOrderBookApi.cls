@@ -87,13 +87,13 @@ public class OASOrderBookApi {
     }
     /**
      * Historical data
-     * Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.\n            \n:::info\nThe historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.\n:::\n            \nThis endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.\nTimestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.\n            \n:::tip\nFor querying a full day of data, use the \&#39;date\&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use \&#39;time_start\&#39; and \&#39;time_end\&#39;.\n:::
+     * Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.\n            \n:::info\nThe historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels.\n:::\n            \nThis endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.\nTimestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.\n            \n:::tip\nFor querying a full day of data, use the \&#39;date\&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use \&#39;time_start\&#39; and \&#39;time_end\&#39;.\n:::
      * @param symbolId Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols) (required)
      * @param r_date Date in ISO 8601, returned data is for the whole given day (required if \&#39;time_start\&#39; is not provided) (optional)
      * @param timeStart Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
      * @param timeEnd Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
      * @param r_limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param limitLevels Maximum amount of levels from each side of the book to include in response (optional) (optional)
+     * @param limitLevels Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (optional)
      * @return List<OASV1OrderBook>
      * @throws OAS.ApiException if fails to make API call
      */

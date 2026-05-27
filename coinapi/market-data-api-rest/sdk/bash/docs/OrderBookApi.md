@@ -89,7 +89,7 @@ Historical data
 Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.
             
 :::info
-The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels.
+The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels.
 :::
             
 This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records.
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
  **timeStart** | **string** | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) | [optional] [default to null]
  **timeEnd** | **string** | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) | [optional] [default to null]
  **limit** | **integer** | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **limitLevels** | **integer** | Maximum amount of levels from each side of the book to include in response (optional) | [optional] [default to null]
+ **limitLevels** | **integer** | Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) | [optional] [default to null]
 
 ### Return type
 

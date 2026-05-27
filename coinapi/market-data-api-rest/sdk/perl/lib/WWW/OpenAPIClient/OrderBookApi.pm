@@ -214,7 +214,7 @@ sub v1_orderbooks_symbol_id_depth_current_get {
 # @param string $time_start Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
 # @param string $time_end Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
 # @param int $limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-# @param int $limit_levels Maximum amount of levels from each side of the book to include in response (optional) (optional)
+# @param int $limit_levels Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (optional)
 {
     my $params = {
     'symbol_id' => {
@@ -244,7 +244,7 @@ sub v1_orderbooks_symbol_id_depth_current_get {
     },
     'limit_levels' => {
         data_type => 'int',
-        description => 'Maximum amount of levels from each side of the book to include in response (optional)',
+        description => 'Maximum amount of levels from each side of the book to include in response (optional, maximum is 50)',
         required => '0',
     },
     };

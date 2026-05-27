@@ -156,7 +156,7 @@ class OrderBookApi {
 
   /// Historical data
   ///
-  /// Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
+  /// Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -178,7 +178,7 @@ class OrderBookApi {
   ///   Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   ///
   /// * [int] limitLevels:
-  ///   Maximum amount of levels from each side of the book to include in response (optional)
+  ///   Maximum amount of levels from each side of the book to include in response (optional, maximum is 50)
   Future<Response> v1OrderbooksSymbolIdHistoryGetWithHttpInfo(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, int? limitLevels, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/orderbooks/{symbol_id}/history'
@@ -223,7 +223,7 @@ class OrderBookApi {
 
   /// Historical data
   ///
-  /// Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
+  /// Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the 'date' parameter. For specific time ranges (including cross-day or multi-hour queries), use 'time_start' and 'time_end'. :::
   ///
   /// Parameters:
   ///
@@ -243,7 +243,7 @@ class OrderBookApi {
   ///   Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
   ///
   /// * [int] limitLevels:
-  ///   Maximum amount of levels from each side of the book to include in response (optional)
+  ///   Maximum amount of levels from each side of the book to include in response (optional, maximum is 50)
   Future<List<V1OrderBook>?> v1OrderbooksSymbolIdHistoryGet(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, int? limitLevels, }) async {
     final response = await v1OrderbooksSymbolIdHistoryGetWithHttpInfo(symbolId,  date: date, timeStart: timeStart, timeEnd: timeEnd, limit: limit, limitLevels: limitLevels, );
     if (response.statusCode >= HttpStatus.badRequest) {

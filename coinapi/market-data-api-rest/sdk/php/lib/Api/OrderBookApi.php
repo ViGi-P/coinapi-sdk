@@ -726,7 +726,7 @@ class OrderBookApi
      * @param  string|null $time_start Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
      * @param  int|null $limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional) (optional)
+     * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OrderbooksSymbolIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -749,7 +749,7 @@ class OrderBookApi
      * @param  string|null $time_start Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
      * @param  int|null $limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional) (optional)
+     * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OrderbooksSymbolIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
@@ -839,7 +839,7 @@ class OrderBookApi
      * @param  string|null $time_start Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
      * @param  int|null $limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional) (optional)
+     * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OrderbooksSymbolIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -865,7 +865,7 @@ class OrderBookApi
      * @param  string|null $time_start Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
      * @param  int|null $limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional) (optional)
+     * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OrderbooksSymbolIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -920,7 +920,7 @@ class OrderBookApi
      * @param  string|null $time_start Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)
      * @param  string|null $time_end Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)
      * @param  int|null $limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
-     * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional) (optional)
+     * @param  int|null $limit_levels Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OrderbooksSymbolIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException

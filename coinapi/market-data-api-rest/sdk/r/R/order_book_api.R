@@ -64,7 +64,7 @@
 #' var_time_start <- "time_start_example" # character | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (Optional)
 #' var_time_end <- "time_end_example" # character | Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (Optional)
 #' var_limit <- 100 # integer | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (Optional)
-#' var_limit_levels <- 56 # integer | Maximum amount of levels from each side of the book to include in response (optional) (Optional)
+#' var_limit_levels <- 56 # integer | Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (Optional)
 #'
 #' #Historical data
 #' api_instance <- OrderBookApi$new()
@@ -364,7 +364,7 @@ OrderBookApi <- R6::R6Class(
     #' @param time_start (optional) Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
     #' @param time_end (optional) Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
     #' @param limit (optional) Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
-    #' @param limit_levels (optional) Maximum amount of levels from each side of the book to include in response (optional)
+    #' @param limit_levels (optional) Maximum amount of levels from each side of the book to include in response (optional, maximum is 50)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
@@ -391,7 +391,7 @@ OrderBookApi <- R6::R6Class(
     #' @param time_start (optional) Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
     #' @param time_end (optional) Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
     #' @param limit (optional) Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (default value: 100)
-    #' @param limit_levels (optional) Maximum amount of levels from each side of the book to include in response (optional)
+    #' @param limit_levels (optional) Maximum amount of levels from each side of the book to include in response (optional, maximum is 50)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.

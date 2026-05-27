@@ -62,7 +62,7 @@ class OrderBookApiTest : ShouldSpec() {
             //val timeStart : kotlin.String = timeStart_example // kotlin.String | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
             //val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
             //val limit : kotlin.Int = 56 // kotlin.Int | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-            //val limitLevels : kotlin.Int = 56 // kotlin.Int | Maximum amount of levels from each side of the book to include in response (optional)
+            //val limitLevels : kotlin.Int = 56 // kotlin.Int | Maximum amount of levels from each side of the book to include in response (optional, maximum is 50)
             //val result : kotlin.collections.List<V1OrderBook> = apiInstance.v1OrderbooksSymbolIdHistoryGet(symbolId, date, timeStart, timeEnd, limit, limitLevels)
             //result shouldBe ("TODO")
         }

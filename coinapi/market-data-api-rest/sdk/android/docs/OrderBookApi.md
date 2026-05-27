@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 Historical data
 
-Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
+Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
 
 ### Example
 
@@ -126,7 +126,7 @@ String date = null; // String | Date in ISO 8601, returned data is for the whole
 String timeStart = null; // String | Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z)
 String timeEnd = null; // String | Timeseries ending time in ISO 8601 (optional, supports cross-day queries)
 Integer limit = 100; // Integer | Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-Integer limitLevels = null; // Integer | Maximum amount of levels from each side of the book to include in response (optional)
+Integer limitLevels = null; // Integer | Maximum amount of levels from each side of the book to include in response (optional, maximum is 50)
 try {
     List<V1OrderBook> result = apiInstance.v1OrderbooksSymbolIdHistoryGet(symbolId, date, timeStart, timeEnd, limit, limitLevels);
     System.out.println(result);
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
  **timeStart** | **String**| Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) | [optional] [default to null]
  **timeEnd** | **String**| Timeseries ending time in ISO 8601 (optional, supports cross-day queries) | [optional] [default to null]
  **limit** | **Integer**| Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) | [optional] [default to 100]
- **limitLevels** | **Integer**| Maximum amount of levels from each side of the book to include in response (optional) | [optional] [default to null]
+ **limitLevels** | **Integer**| Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) | [optional] [default to null]
 
 ### Return type
 

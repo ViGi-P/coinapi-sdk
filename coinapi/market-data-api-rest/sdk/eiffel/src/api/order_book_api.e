@@ -104,7 +104,7 @@ feature -- API Access
 
 	v1_orderbooks_symbol_id_history_get (symbol_id: STRING_32; date: STRING_32; time_start: STRING_32; time_end: STRING_32; limit: INTEGER_32; limit_levels: INTEGER_32): detachable LIST [V1_ORDER_BOOK]
 			-- Historical data
-			-- Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
+			-- Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
 			-- 
 			-- argument: symbol_id Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols) (required)
 			-- 
@@ -116,7 +116,7 @@ feature -- API Access
 			-- 
 			-- argument: limit Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)
 			-- 
-			-- argument: limit_levels Maximum amount of levels from each side of the book to include in response (optional) (optional, default to null)
+			-- argument: limit_levels Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (optional, default to null)
 			-- 
 			-- 
 			-- Result LIST [V1_ORDER_BOOK]

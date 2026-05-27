@@ -92,7 +92,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// Historical data
         /// </summary>
         /// <remarks>
-        /// Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
+        /// Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbolId">Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols)</param>
@@ -100,7 +100,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeStart">Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)</param>
         /// <param name="limit">Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
-        /// <param name="limitLevels">Maximum amount of levels from each side of the book to include in response (optional) (optional)</param>
+        /// <param name="limitLevels">Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OrderbooksSymbolIdHistoryGetApiResponse"/>&gt;</returns>
         Task<IV1OrderbooksSymbolIdHistoryGetApiResponse> V1OrderbooksSymbolIdHistoryGetAsync(string symbolId, Option<string> date = default, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, Option<int> limitLevels = default, System.Threading.CancellationToken cancellationToken = default);
@@ -109,14 +109,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// Historical data
         /// </summary>
         /// <remarks>
-        /// Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
+        /// Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
         /// </remarks>
         /// <param name="symbolId">Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols)</param>
         /// <param name="date">Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) (optional)</param>
         /// <param name="timeStart">Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)</param>
         /// <param name="limit">Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
-        /// <param name="limitLevels">Maximum amount of levels from each side of the book to include in response (optional) (optional)</param>
+        /// <param name="limitLevels">Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OrderbooksSymbolIdHistoryGetApiResponse"/>?&gt;</returns>
         Task<IV1OrderbooksSymbolIdHistoryGetApiResponse?> V1OrderbooksSymbolIdHistoryGetOrDefaultAsync(string symbolId, Option<string> date = default, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, Option<int> limitLevels = default, System.Threading.CancellationToken cancellationToken = default);
@@ -916,14 +916,14 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         partial void OnErrorV1OrderbooksSymbolIdHistoryGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string symbolId, Option<string> date, Option<string> timeStart, Option<string> timeEnd, Option<int> limit, Option<int> limitLevels);
 
         /// <summary>
-        /// Historical data Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
+        /// Historical data Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
         /// </summary>
         /// <param name="symbolId">Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols)</param>
         /// <param name="date">Date in ISO 8601, returned data is for the whole given day (required if &#39;time_start&#39; is not provided) (optional)</param>
         /// <param name="timeStart">Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)</param>
         /// <param name="limit">Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
-        /// <param name="limitLevels">Maximum amount of levels from each side of the book to include in response (optional) (optional)</param>
+        /// <param name="limitLevels">Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OrderbooksSymbolIdHistoryGetApiResponse"/>&gt;</returns>
         public async Task<IV1OrderbooksSymbolIdHistoryGetApiResponse?> V1OrderbooksSymbolIdHistoryGetOrDefaultAsync(string symbolId, Option<string> date = default, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, Option<int> limitLevels = default, System.Threading.CancellationToken cancellationToken = default)
@@ -939,7 +939,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         }
 
         /// <summary>
-        /// Historical data Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 20 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
+        /// Historical data Get historical order book snapshots for a specific symbol within time range, returned in time ascending order.              :::info The historical order book data via the REST API is currently limited by a number of updates and to the maximum number of 50 levels. :::              This endpoint supports hourly granularity for APITP data with automatic fallback to daily data for older records. Timestamps are normalized to hour boundaries, and data is fetched per hour with precise filtering to your exact time range.              :::tip For querying a full day of data, use the &#39;date&#39; parameter. For specific time ranges (including cross-day or multi-hour queries), use &#39;time_start&#39; and &#39;time_end&#39;. :::
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="symbolId">Symbol identifier for requested timeseries (from the Metadata -&gt; Symbols)</param>
@@ -947,7 +947,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Api
         /// <param name="timeStart">Starting time in ISO 8601 (supports hourly precision, e.g., 2026-01-16T11:00:00Z) (optional)</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601 (optional, supports cross-day queries) (optional)</param>
         /// <param name="limit">Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request) (optional, default to 100)</param>
-        /// <param name="limitLevels">Maximum amount of levels from each side of the book to include in response (optional) (optional)</param>
+        /// <param name="limitLevels">Maximum amount of levels from each side of the book to include in response (optional, maximum is 50) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OrderbooksSymbolIdHistoryGetApiResponse"/>&gt;</returns>
         public async Task<IV1OrderbooksSymbolIdHistoryGetApiResponse> V1OrderbooksSymbolIdHistoryGetAsync(string symbolId, Option<string> date = default, Option<string> timeStart = default, Option<string> timeEnd = default, Option<int> limit = default, Option<int> limitLevels = default, System.Threading.CancellationToken cancellationToken = default)
