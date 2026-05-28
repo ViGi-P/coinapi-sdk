@@ -48,7 +48,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-05-27T06:03:36.2061014Z",
+  "time": "2026-05-28T06:03:36.8429782Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -59,7 +59,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-05-27T06:03:36.2061014Z",
+  "time": "2026-05-28T06:03:36.8429782Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -70,7 +70,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-05-27T06:03:36.2061014Z",
+  "time": "2026-05-28T06:03:36.8429782Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -81,7 +81,7 @@ paths:
               examples:
                 Example response:
                   value: {
-  "time": "2026-05-27T06:03:36.2061014Z",
+  "time": "2026-05-28T06:03:36.8429782Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -8742,6 +8742,14 @@ components:
         id_order_taker:
           type: string
           description: The order taker identifier.
+          nullable: true
+        user_taker:
+          type: string
+          description: Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+          nullable: true
+        user_maker:
+          type: string
+          description: Wallet address of the maker (passive) side. Present only for L4 data sources.
           nullable: true
       additionalProperties: false
       description: Represents a trade executed on the exchange.
