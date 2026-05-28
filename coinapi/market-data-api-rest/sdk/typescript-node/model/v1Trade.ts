@@ -56,6 +56,14 @@ export class V1Trade {
     * The order taker identifier.
     */
     'idOrderTaker'?: string | null;
+    /**
+    * Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+    */
+    'userTaker'?: string | null;
+    /**
+    * Wallet address of the maker (passive) side. Present only for L4 data sources.
+    */
+    'userMaker'?: string | null;
 
     static discriminator: string | undefined = undefined;
 
@@ -108,6 +116,16 @@ export class V1Trade {
         {
             "name": "idOrderTaker",
             "baseName": "id_order_taker",
+            "type": "string"
+        },
+        {
+            "name": "userTaker",
+            "baseName": "user_taker",
+            "type": "string"
+        },
+        {
+            "name": "userMaker",
+            "baseName": "user_maker",
             "type": "string"
         }    ];
 

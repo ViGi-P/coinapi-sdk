@@ -1327,4 +1327,14 @@ v1TradeIdOrderTakerL :: Lens_' V1Trade (Maybe Text)
 v1TradeIdOrderTakerL f V1Trade{..} = (\v1TradeIdOrderTaker -> V1Trade { v1TradeIdOrderTaker, ..} ) <$> f v1TradeIdOrderTaker
 {-# INLINE v1TradeIdOrderTakerL #-}
 
+-- | 'v1TradeUserTaker' Lens
+v1TradeUserTakerL :: Lens_' V1Trade (Maybe Text)
+v1TradeUserTakerL f V1Trade{..} = (\v1TradeUserTaker -> V1Trade { v1TradeUserTaker, ..} ) <$> f v1TradeUserTaker
+{-# INLINE v1TradeUserTakerL #-}
+
+-- | 'v1TradeUserMaker' Lens
+v1TradeUserMakerL :: Lens_' V1Trade (Maybe Text)
+v1TradeUserMakerL f V1Trade{..} = (\v1TradeUserMaker -> V1Trade { v1TradeUserMaker, ..} ) <$> f v1TradeUserMaker
+{-# INLINE v1TradeUserMakerL #-}
+
 

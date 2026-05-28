@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **idTrade** | **String** | The trade identifier. |  [optional]
 **idOrderMaker** | **String** | The order maker identifier. |  [optional]
 **idOrderTaker** | **String** | The order taker identifier. |  [optional]
+**userTaker** | **String** | Wallet address of the taker (aggressive) side. Present only for L4 data sources. |  [optional]
+**userMaker** | **String** | Wallet address of the maker (passive) side. Present only for L4 data sources. |  [optional]
 
 
 

@@ -21,6 +21,8 @@ part 'v1_trade.g.dart';
 /// * [idTrade] - The trade identifier.
 /// * [idOrderMaker] - The order maker identifier.
 /// * [idOrderTaker] - The order taker identifier.
+/// * [userTaker] - Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+/// * [userMaker] - Wallet address of the maker (passive) side. Present only for L4 data sources.
 @BuiltValue()
 abstract class V1Trade implements Built<V1Trade, V1TradeBuilder> {
   /// The symbol identifier.
@@ -62,6 +64,14 @@ abstract class V1Trade implements Built<V1Trade, V1TradeBuilder> {
   /// The order taker identifier.
   @BuiltValueField(wireName: r'id_order_taker')
   String? get idOrderTaker;
+
+  /// Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+  @BuiltValueField(wireName: r'user_taker')
+  String? get userTaker;
+
+  /// Wallet address of the maker (passive) side. Present only for L4 data sources.
+  @BuiltValueField(wireName: r'user_maker')
+  String? get userMaker;
 
   V1Trade._();
 
@@ -153,6 +163,20 @@ class _$V1TradeSerializer implements PrimitiveSerializer<V1Trade> {
       yield r'id_order_taker';
       yield serializers.serialize(
         object.idOrderTaker,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.userTaker != null) {
+      yield r'user_taker';
+      yield serializers.serialize(
+        object.userTaker,
+        specifiedType: const FullType.nullable(String),
+      );
+    }
+    if (object.userMaker != null) {
+      yield r'user_maker';
+      yield serializers.serialize(
+        object.userMaker,
         specifiedType: const FullType.nullable(String),
       );
     }
@@ -253,6 +277,22 @@ class _$V1TradeSerializer implements PrimitiveSerializer<V1Trade> {
           ) as String?;
           if (valueDes == null) continue;
           result.idOrderTaker = valueDes;
+          break;
+        case r'user_taker':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.userTaker = valueDes;
+          break;
+        case r'user_maker':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(String),
+          ) as String?;
+          if (valueDes == null) continue;
+          result.userMaker = valueDes;
           break;
         default:
           unhandled.add(key);

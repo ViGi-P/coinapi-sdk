@@ -120,4 +120,20 @@ public class V1TradeTest {
         // TODO: test idOrderTaker
     }
 
+    /**
+     * Test the property 'userTaker'
+     */
+    @Test
+    public void userTakerTest() {
+        // TODO: test userTaker
+    }
+
+    /**
+     * Test the property 'userMaker'
+     */
+    @Test
+    public void userMakerTest() {
+        // TODO: test userMaker
+    }
+
 }

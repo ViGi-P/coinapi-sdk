@@ -10,7 +10,7 @@ Describe -tag 'PSOpenAPITools' -name 'V1Trade' {
     Context 'V1Trade' {
         It 'Initialize-V1Trade' {
             # a simple test to create an object
-            #$NewObject = Initialize-V1Trade -SymbolId "TEST_VALUE" -TimeExchange "TEST_VALUE" -TimeCoinapi "TEST_VALUE" -Uuid "TEST_VALUE" -Price "TEST_VALUE" -Size "TEST_VALUE" -TakerSide "TEST_VALUE" -IdTrade "TEST_VALUE" -IdOrderMaker "TEST_VALUE" -IdOrderTaker "TEST_VALUE"
+            #$NewObject = Initialize-V1Trade -SymbolId "TEST_VALUE" -TimeExchange "TEST_VALUE" -TimeCoinapi "TEST_VALUE" -Uuid "TEST_VALUE" -Price "TEST_VALUE" -Size "TEST_VALUE" -TakerSide "TEST_VALUE" -IdTrade "TEST_VALUE" -IdOrderMaker "TEST_VALUE" -IdOrderTaker "TEST_VALUE" -UserTaker "TEST_VALUE" -UserMaker "TEST_VALUE"
             #$NewObject | Should -BeOfType V1Trade
             #$NewObject.property | Should -Be 0
         }

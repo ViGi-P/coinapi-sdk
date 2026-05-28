@@ -169,4 +169,22 @@ class V1TradeTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "user_taker"
+     */
+    public function testPropertyUserTaker()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "user_maker"
+     */
+    public function testPropertyUserMaker()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

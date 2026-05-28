@@ -14,6 +14,8 @@
 | **id_trade** | **String** | The trade identifier. | [optional] |
 | **id_order_maker** | **String** | The order maker identifier. | [optional] |
 | **id_order_taker** | **String** | The order taker identifier. | [optional] |
+| **user_taker** | **String** | Wallet address of the taker (aggressive) side. Present only for L4 data sources. | [optional] |
+| **user_maker** | **String** | Wallet address of the maker (passive) side. Present only for L4 data sources. | [optional] |
 
 ## Example
 
@@ -30,7 +32,9 @@ instance = OpenapiClient::V1Trade.new(
   taker_side: null,
   id_trade: null,
   id_order_maker: null,
-  id_order_taker: null
+  id_order_taker: null,
+  user_taker: null,
+  user_maker: null
 )
 ```
 

@@ -14,6 +14,8 @@
 | **idTrade** | **kotlin.String** | The trade identifier. |  [optional] |
 | **idOrderMaker** | **kotlin.String** | The order maker identifier. |  [optional] |
 | **idOrderTaker** | **kotlin.String** | The order taker identifier. |  [optional] |
+| **userTaker** | **kotlin.String** | Wallet address of the taker (aggressive) side. Present only for L4 data sources. |  [optional] |
+| **userMaker** | **kotlin.String** | Wallet address of the maker (passive) side. Present only for L4 data sources. |  [optional] |
 
 
 

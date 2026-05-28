@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **idUnderscoretrade** | **string** |  | [optional] [default to null]
 **idUnderscoreorderUnderscoremaker** | **string** |  | [optional] [default to null]
 **idUnderscoreorderUnderscoretaker** | **string** |  | [optional] [default to null]
+**userUnderscoretaker** | **string** |  | [optional] [default to null]
+**userUnderscoremaker** | **string** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

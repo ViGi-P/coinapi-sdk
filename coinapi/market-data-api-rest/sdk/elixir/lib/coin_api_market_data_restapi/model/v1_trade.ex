@@ -17,7 +17,9 @@ defmodule CoinAPIMarketDataRESTAPI.Model.V1Trade do
     :taker_side,
     :id_trade,
     :id_order_maker,
-    :id_order_taker
+    :id_order_taker,
+    :user_taker,
+    :user_maker
   ]
 
   @type t :: %__MODULE__{
@@ -30,7 +32,9 @@ defmodule CoinAPIMarketDataRESTAPI.Model.V1Trade do
     :taker_side => String.t | nil,
     :id_trade => String.t | nil,
     :id_order_maker => String.t | nil,
-    :id_order_taker => String.t | nil
+    :id_order_taker => String.t | nil,
+    :user_taker => String.t | nil,
+    :user_maker => String.t | nil
   }
 
   def decode(value) do

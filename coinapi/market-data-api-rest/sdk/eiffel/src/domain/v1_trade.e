@@ -39,6 +39,10 @@ feature --Access
       -- The order maker identifier.
     id_order_taker: detachable STRING_32
       -- The order taker identifier.
+    user_taker: detachable STRING_32
+      -- Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+    user_maker: detachable STRING_32
+      -- Wallet address of the maker (passive) side. Present only for L4 data sources.
 
 feature -- Change Element
 
@@ -122,6 +126,22 @@ feature -- Change Element
         id_order_taker_set: id_order_taker = a_name
       end
 
+    set_user_taker (a_name: like user_taker)
+        -- Set 'user_taker' with 'a_name'.
+      do
+        user_taker := a_name
+      ensure
+        user_taker_set: user_taker = a_name
+      end
+
+    set_user_maker (a_name: like user_maker)
+        -- Set 'user_maker' with 'a_name'.
+      do
+        user_maker := a_name
+      ensure
+        user_maker_set: user_maker = a_name
+      end
+
 
  feature -- Status Report
 
@@ -178,6 +198,16 @@ feature -- Change Element
         if attached id_order_taker as l_id_order_taker then
           Result.append ("%Nid_order_taker:")
           Result.append (l_id_order_taker.out)
+          Result.append ("%N")
+        end
+        if attached user_taker as l_user_taker then
+          Result.append ("%Nuser_taker:")
+          Result.append (l_user_taker.out)
+          Result.append ("%N")
+        end
+        if attached user_maker as l_user_maker then
+          Result.append ("%Nuser_maker:")
+          Result.append (l_user_maker.out)
           Result.append ("%N")
         end
       end

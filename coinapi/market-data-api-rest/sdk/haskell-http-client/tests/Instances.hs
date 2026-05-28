@@ -544,6 +544,8 @@ genV1Trade n =
     <*> arbitraryReducedMaybe n -- v1TradeIdTrade :: Maybe Text
     <*> arbitraryReducedMaybe n -- v1TradeIdOrderMaker :: Maybe Text
     <*> arbitraryReducedMaybe n -- v1TradeIdOrderTaker :: Maybe Text
+    <*> arbitraryReducedMaybe n -- v1TradeUserTaker :: Maybe Text
+    <*> arbitraryReducedMaybe n -- v1TradeUserMaker :: Maybe Text
   
 
 

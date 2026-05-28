@@ -45,7 +45,9 @@ class TestV1Trade(unittest.TestCase):
                 taker_side = '',
                 id_trade = '',
                 id_order_maker = '',
-                id_order_taker = ''
+                id_order_taker = '',
+                user_taker = '',
+                user_maker = ''
             )
         else:
             return V1Trade(

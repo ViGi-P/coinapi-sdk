@@ -15,7 +15,9 @@ static v1_trade_t *v1_trade_create_internal(
     char *taker_side,
     char *id_trade,
     char *id_order_maker,
-    char *id_order_taker
+    char *id_order_taker,
+    char *user_taker,
+    char *user_maker
     ) {
     v1_trade_t *v1_trade_local_var = malloc(sizeof(v1_trade_t));
     if (!v1_trade_local_var) {
@@ -33,6 +35,8 @@ static v1_trade_t *v1_trade_create_internal(
     v1_trade_local_var->id_trade = id_trade;
     v1_trade_local_var->id_order_maker = id_order_maker;
     v1_trade_local_var->id_order_taker = id_order_taker;
+    v1_trade_local_var->user_taker = user_taker;
+    v1_trade_local_var->user_maker = user_maker;
     return v1_trade_local_var;
 }
 
@@ -46,7 +50,9 @@ __attribute__((deprecated)) v1_trade_t *v1_trade_create(
     char *taker_side,
     char *id_trade,
     char *id_order_maker,
-    char *id_order_taker
+    char *id_order_taker,
+    char *user_taker,
+    char *user_maker
     ) {
     double *price_copy = NULL;
     if (price) {
@@ -68,7 +74,9 @@ __attribute__((deprecated)) v1_trade_t *v1_trade_create(
         taker_side,
         id_trade,
         id_order_maker,
-        id_order_taker
+        id_order_taker,
+        user_taker,
+        user_maker
         );
     if (!result) {
         free(price_copy);
@@ -125,6 +133,14 @@ void v1_trade_free(v1_trade_t *v1_trade) {
     if (v1_trade->id_order_taker) {
         free(v1_trade->id_order_taker);
         v1_trade->id_order_taker = NULL;
+    }
+    if (v1_trade->user_taker) {
+        free(v1_trade->user_taker);
+        v1_trade->user_taker = NULL;
+    }
+    if (v1_trade->user_maker) {
+        free(v1_trade->user_maker);
+        v1_trade->user_maker = NULL;
     }
     free(v1_trade);
 }
@@ -211,6 +227,22 @@ cJSON *v1_trade_convertToJSON(v1_trade_t *v1_trade) {
     }
     }
 
+
+    // v1_trade->user_taker
+    if(v1_trade->user_taker) {
+    if(cJSON_AddStringToObject(item, "user_taker", v1_trade->user_taker) == NULL) {
+    goto fail; //String
+    }
+    }
+
+
+    // v1_trade->user_maker
+    if(v1_trade->user_maker) {
+    if(cJSON_AddStringToObject(item, "user_maker", v1_trade->user_maker) == NULL) {
+    goto fail; //String
+    }
+    }
+
     return item;
 fail:
     if (item) {
@@ -244,6 +276,10 @@ v1_trade_t *v1_trade_parseFromJSON(cJSON *v1_tradeJSON){
     char *id_order_maker_local_str = NULL;
 
     char *id_order_taker_local_str = NULL;
+
+    char *user_taker_local_str = NULL;
+
+    char *user_maker_local_str = NULL;
 
     // v1_trade->symbol_id
     cJSON *symbol_id = cJSON_GetObjectItemCaseSensitive(v1_tradeJSON, "symbol_id");
@@ -377,6 +413,30 @@ v1_trade_t *v1_trade_parseFromJSON(cJSON *v1_tradeJSON){
     }
     }
 
+    // v1_trade->user_taker
+    cJSON *user_taker = cJSON_GetObjectItemCaseSensitive(v1_tradeJSON, "user_taker");
+    if (cJSON_IsNull(user_taker)) {
+        user_taker = NULL;
+    }
+    if (user_taker) { 
+    if(!cJSON_IsString(user_taker) && !cJSON_IsNull(user_taker))
+    {
+    goto end; //String
+    }
+    }
+
+    // v1_trade->user_maker
+    cJSON *user_maker = cJSON_GetObjectItemCaseSensitive(v1_tradeJSON, "user_maker");
+    if (cJSON_IsNull(user_maker)) {
+        user_maker = NULL;
+    }
+    if (user_maker) { 
+    if(!cJSON_IsString(user_maker) && !cJSON_IsNull(user_maker))
+    {
+    goto end; //String
+    }
+    }
+
 
     if (symbol_id && !cJSON_IsNull(symbol_id)) symbol_id_local_str = strdup(symbol_id->valuestring);
     if (time_exchange && !cJSON_IsNull(time_exchange)) time_exchange_local_str = strdup(time_exchange->valuestring);
@@ -386,6 +446,8 @@ v1_trade_t *v1_trade_parseFromJSON(cJSON *v1_tradeJSON){
     if (id_trade && !cJSON_IsNull(id_trade)) id_trade_local_str = strdup(id_trade->valuestring);
     if (id_order_maker && !cJSON_IsNull(id_order_maker)) id_order_maker_local_str = strdup(id_order_maker->valuestring);
     if (id_order_taker && !cJSON_IsNull(id_order_taker)) id_order_taker_local_str = strdup(id_order_taker->valuestring);
+    if (user_taker && !cJSON_IsNull(user_taker)) user_taker_local_str = strdup(user_taker->valuestring);
+    if (user_maker && !cJSON_IsNull(user_maker)) user_maker_local_str = strdup(user_maker->valuestring);
 
     v1_trade_local_var = v1_trade_create_internal (
         symbol_id_local_str,
@@ -397,7 +459,9 @@ v1_trade_t *v1_trade_parseFromJSON(cJSON *v1_tradeJSON){
         taker_side_local_str,
         id_trade_local_str,
         id_order_maker_local_str,
-        id_order_taker_local_str
+        id_order_taker_local_str,
+        user_taker_local_str,
+        user_maker_local_str
         );
 
     if (!v1_trade_local_var) {
@@ -445,6 +509,14 @@ end:
     if (id_order_taker_local_str) {
         free(id_order_taker_local_str);
         id_order_taker_local_str = NULL;
+    }
+    if (user_taker_local_str) {
+        free(user_taker_local_str);
+        user_taker_local_str = NULL;
+    }
+    if (user_maker_local_str) {
+        free(user_maker_local_str);
+        user_maker_local_str = NULL;
     }
     return NULL;
 

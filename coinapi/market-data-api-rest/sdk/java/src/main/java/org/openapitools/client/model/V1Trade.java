@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents a trade executed on the exchange.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-27T06:04:15.076698312Z[Etc/UTC]", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T06:04:17.397329996Z[Etc/UTC]", comments = "Generator version: 7.22.0")
 public class V1Trade {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
@@ -102,6 +102,16 @@ public class V1Trade {
   @SerializedName(SERIALIZED_NAME_ID_ORDER_TAKER)
   @javax.annotation.Nullable
   private String idOrderTaker;
+
+  public static final String SERIALIZED_NAME_USER_TAKER = "user_taker";
+  @SerializedName(SERIALIZED_NAME_USER_TAKER)
+  @javax.annotation.Nullable
+  private String userTaker;
+
+  public static final String SERIALIZED_NAME_USER_MAKER = "user_maker";
+  @SerializedName(SERIALIZED_NAME_USER_MAKER)
+  @javax.annotation.Nullable
+  private String userMaker;
 
   public V1Trade() {
   }
@@ -296,6 +306,44 @@ public class V1Trade {
   }
 
 
+  public V1Trade userTaker(@javax.annotation.Nullable String userTaker) {
+    this.userTaker = userTaker;
+    return this;
+  }
+
+  /**
+   * Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+   * @return userTaker
+   */
+  @javax.annotation.Nullable
+  public String getUserTaker() {
+    return userTaker;
+  }
+
+  public void setUserTaker(@javax.annotation.Nullable String userTaker) {
+    this.userTaker = userTaker;
+  }
+
+
+  public V1Trade userMaker(@javax.annotation.Nullable String userMaker) {
+    this.userMaker = userMaker;
+    return this;
+  }
+
+  /**
+   * Wallet address of the maker (passive) side. Present only for L4 data sources.
+   * @return userMaker
+   */
+  @javax.annotation.Nullable
+  public String getUserMaker() {
+    return userMaker;
+  }
+
+  public void setUserMaker(@javax.annotation.Nullable String userMaker) {
+    this.userMaker = userMaker;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -315,7 +363,9 @@ public class V1Trade {
         Objects.equals(this.takerSide, v1Trade.takerSide) &&
         Objects.equals(this.idTrade, v1Trade.idTrade) &&
         Objects.equals(this.idOrderMaker, v1Trade.idOrderMaker) &&
-        Objects.equals(this.idOrderTaker, v1Trade.idOrderTaker);
+        Objects.equals(this.idOrderTaker, v1Trade.idOrderTaker) &&
+        Objects.equals(this.userTaker, v1Trade.userTaker) &&
+        Objects.equals(this.userMaker, v1Trade.userMaker);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -324,7 +374,7 @@ public class V1Trade {
 
   @Override
   public int hashCode() {
-    return Objects.hash(symbolId, timeExchange, timeCoinapi, uuid, price, size, takerSide, idTrade, idOrderMaker, idOrderTaker);
+    return Objects.hash(symbolId, timeExchange, timeCoinapi, uuid, price, size, takerSide, idTrade, idOrderMaker, idOrderTaker, userTaker, userMaker);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -348,6 +398,8 @@ public class V1Trade {
     sb.append("    idTrade: ").append(toIndentedString(idTrade)).append("\n");
     sb.append("    idOrderMaker: ").append(toIndentedString(idOrderMaker)).append("\n");
     sb.append("    idOrderTaker: ").append(toIndentedString(idOrderTaker)).append("\n");
+    sb.append("    userTaker: ").append(toIndentedString(userTaker)).append("\n");
+    sb.append("    userMaker: ").append(toIndentedString(userMaker)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -366,7 +418,7 @@ public class V1Trade {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("symbol_id", "time_exchange", "time_coinapi", "uuid", "price", "size", "taker_side", "id_trade", "id_order_maker", "id_order_taker"));
+    openapiFields = new HashSet<String>(Arrays.asList("symbol_id", "time_exchange", "time_coinapi", "uuid", "price", "size", "taker_side", "id_trade", "id_order_maker", "id_order_taker", "user_taker", "user_maker"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -410,6 +462,12 @@ public class V1Trade {
       }
       if ((jsonObj.get("id_order_taker") != null && !jsonObj.get("id_order_taker").isJsonNull()) && !jsonObj.get("id_order_taker").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `id_order_taker` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id_order_taker").toString()));
+      }
+      if ((jsonObj.get("user_taker") != null && !jsonObj.get("user_taker").isJsonNull()) && !jsonObj.get("user_taker").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `user_taker` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_taker").toString()));
+      }
+      if ((jsonObj.get("user_maker") != null && !jsonObj.get("user_maker").isJsonNull()) && !jsonObj.get("user_maker").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `user_maker` to be a primitive type in the JSON string but got `%s`", jsonObj.get("user_maker").toString()));
       }
   }
 

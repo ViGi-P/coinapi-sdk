@@ -289,6 +289,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'user_taker' => {
+        datatype => 'string',
+        base_name => 'user_taker',
+        description => 'Wallet address of the taker (aggressive) side. Present only for L4 data sources.',
+        format => '',
+        read_only => '',
+            },
+    'user_maker' => {
+        datatype => 'string',
+        base_name => 'user_maker',
+        description => 'Wallet address of the maker (passive) side. Present only for L4 data sources.',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -301,7 +315,9 @@ __PACKAGE__->openapi_types( {
     'taker_side' => 'string',
     'id_trade' => 'string',
     'id_order_maker' => 'string',
-    'id_order_taker' => 'string'
+    'id_order_taker' => 'string',
+    'user_taker' => 'string',
+    'user_maker' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -314,7 +330,9 @@ __PACKAGE__->attribute_map( {
     'taker_side' => 'taker_side',
     'id_trade' => 'id_trade',
     'id_order_maker' => 'id_order_maker',
-    'id_order_taker' => 'id_order_taker'
+    'id_order_taker' => 'id_order_taker',
+    'user_taker' => 'user_taker',
+    'user_maker' => 'user_maker'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

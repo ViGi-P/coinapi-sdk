@@ -114,6 +114,18 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property userTaker (base name: "user_taker")', function() {
+      // uncomment below and update the code to test the property userTaker
+      //var instance = new CoinApiMarketDataRestApi.V1Trade();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property userMaker (base name: "user_maker")', function() {
+      // uncomment below and update the code to test the property userMaker
+      //var instance = new CoinApiMarketDataRestApi.V1Trade();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

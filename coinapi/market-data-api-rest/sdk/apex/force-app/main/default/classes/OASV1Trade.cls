@@ -74,6 +74,18 @@ public class OASV1Trade implements OAS.MappedProperties {
      */
     public String idOrderTaker { get; set; }
 
+    /**
+     * Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+     * @return userTaker
+     */
+    public String userTaker { get; set; }
+
+    /**
+     * Wallet address of the maker (passive) side. Present only for L4 data sources.
+     * @return userMaker
+     */
+    public String userMaker { get; set; }
+
     private static final Map<String, String> propertyMappings = new Map<String, String>{
         'symbol_id' => 'symbolId',
         'time_exchange' => 'timeExchange',
@@ -81,7 +93,9 @@ public class OASV1Trade implements OAS.MappedProperties {
         'taker_side' => 'takerSide',
         'id_trade' => 'idTrade',
         'id_order_maker' => 'idOrderMaker',
-        'id_order_taker' => 'idOrderTaker'
+        'id_order_taker' => 'idOrderTaker',
+        'user_taker' => 'userTaker',
+        'user_maker' => 'userMaker'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -95,7 +109,9 @@ public class OASV1Trade implements OAS.MappedProperties {
         'taker_side' => 'takerSide',
         'id_trade' => 'idTrade',
         'id_order_maker' => 'idOrderMaker',
-        'id_order_taker' => 'idOrderTaker'
+        'id_order_taker' => 'idOrderTaker',
+        'user_taker' => 'userTaker',
+        'user_maker' => 'userMaker'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -109,7 +125,9 @@ public class OASV1Trade implements OAS.MappedProperties {
         'taker_side' => 'takerSide',
         'id_trade' => 'idTrade',
         'id_order_maker' => 'idOrderMaker',
-        'id_order_taker' => 'idOrderTaker'
+        'id_order_taker' => 'idOrderTaker',
+        'user_taker' => 'userTaker',
+        'user_maker' => 'userMaker'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -123,7 +141,9 @@ public class OASV1Trade implements OAS.MappedProperties {
         'taker_side' => 'takerSide',
         'id_trade' => 'idTrade',
         'id_order_maker' => 'idOrderMaker',
-        'id_order_taker' => 'idOrderTaker'
+        'id_order_taker' => 'idOrderTaker',
+        'user_taker' => 'userTaker',
+        'user_maker' => 'userMaker'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -137,7 +157,9 @@ public class OASV1Trade implements OAS.MappedProperties {
         'taker_side' => 'takerSide',
         'id_trade' => 'idTrade',
         'id_order_maker' => 'idOrderMaker',
-        'id_order_taker' => 'idOrderTaker'
+        'id_order_taker' => 'idOrderTaker',
+        'user_taker' => 'userTaker',
+        'user_maker' => 'userMaker'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -151,7 +173,9 @@ public class OASV1Trade implements OAS.MappedProperties {
         'taker_side' => 'takerSide',
         'id_trade' => 'idTrade',
         'id_order_maker' => 'idOrderMaker',
-        'id_order_taker' => 'idOrderTaker'
+        'id_order_taker' => 'idOrderTaker',
+        'user_taker' => 'userTaker',
+        'user_maker' => 'userMaker'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -165,7 +189,41 @@ public class OASV1Trade implements OAS.MappedProperties {
         'taker_side' => 'takerSide',
         'id_trade' => 'idTrade',
         'id_order_maker' => 'idOrderMaker',
-        'id_order_taker' => 'idOrderTaker'
+        'id_order_taker' => 'idOrderTaker',
+        'user_taker' => 'userTaker',
+        'user_maker' => 'userMaker'
+    };
+
+    public Map<String, String> getPropertyMappings() {
+        return propertyMappings;
+    }
+
+    private static final Map<String, String> propertyMappings = new Map<String, String>{
+        'symbol_id' => 'symbolId',
+        'time_exchange' => 'timeExchange',
+        'time_coinapi' => 'timeCoinapi',
+        'taker_side' => 'takerSide',
+        'id_trade' => 'idTrade',
+        'id_order_maker' => 'idOrderMaker',
+        'id_order_taker' => 'idOrderTaker',
+        'user_taker' => 'userTaker',
+        'user_maker' => 'userMaker'
+    };
+
+    public Map<String, String> getPropertyMappings() {
+        return propertyMappings;
+    }
+
+    private static final Map<String, String> propertyMappings = new Map<String, String>{
+        'symbol_id' => 'symbolId',
+        'time_exchange' => 'timeExchange',
+        'time_coinapi' => 'timeCoinapi',
+        'taker_side' => 'takerSide',
+        'id_trade' => 'idTrade',
+        'id_order_maker' => 'idOrderMaker',
+        'id_order_taker' => 'idOrderTaker',
+        'user_taker' => 'userTaker',
+        'user_maker' => 'userMaker'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -184,6 +242,8 @@ public class OASV1Trade implements OAS.MappedProperties {
           v1Trade.idTrade = '';
           v1Trade.idOrderMaker = '';
           v1Trade.idOrderTaker = '';
+          v1Trade.userTaker = '';
+          v1Trade.userMaker = '';
         return v1Trade;
     }
 
@@ -199,7 +259,9 @@ public class OASV1Trade implements OAS.MappedProperties {
                 && this.takerSide == v1Trade.takerSide
                 && this.idTrade == v1Trade.idTrade
                 && this.idOrderMaker == v1Trade.idOrderMaker
-                && this.idOrderTaker == v1Trade.idOrderTaker;
+                && this.idOrderTaker == v1Trade.idOrderTaker
+                && this.userTaker == v1Trade.userTaker
+                && this.userMaker == v1Trade.userMaker;
         }
         return false;
     }
@@ -216,6 +278,8 @@ public class OASV1Trade implements OAS.MappedProperties {
         hashCode = (17 * hashCode) + (idTrade == null ? 0 : System.hashCode(idTrade));
         hashCode = (17 * hashCode) + (idOrderMaker == null ? 0 : System.hashCode(idOrderMaker));
         hashCode = (17 * hashCode) + (idOrderTaker == null ? 0 : System.hashCode(idOrderTaker));
+        hashCode = (17 * hashCode) + (userTaker == null ? 0 : System.hashCode(userTaker));
+        hashCode = (17 * hashCode) + (userMaker == null ? 0 : System.hashCode(userMaker));
         return hashCode;
     }
 }

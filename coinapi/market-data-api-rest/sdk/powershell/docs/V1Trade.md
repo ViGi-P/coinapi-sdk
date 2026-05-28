@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **IdTrade** | **String** | The trade identifier. | [optional] 
 **IdOrderMaker** | **String** | The order maker identifier. | [optional] 
 **IdOrderTaker** | **String** | The order taker identifier. | [optional] 
+**UserTaker** | **String** | Wallet address of the taker (aggressive) side. Present only for L4 data sources. | [optional] 
+**UserMaker** | **String** | Wallet address of the maker (passive) side. Present only for L4 data sources. | [optional] 
 
 ## Examples
 
@@ -27,7 +29,9 @@ $V1Trade = Initialize-PSOpenAPIToolsV1Trade  -SymbolId null `
  -TakerSide null `
  -IdTrade null `
  -IdOrderMaker null `
- -IdOrderTaker null
+ -IdOrderTaker null `
+ -UserTaker null `
+ -UserMaker null
 ```
 
 - Convert the resource to JSON

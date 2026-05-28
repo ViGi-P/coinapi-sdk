@@ -66,4 +66,14 @@ export interface V1Trade {
      */
     id_order_taker?: string;
 
+    /**
+     * Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+     */
+    user_taker?: string;
+
+    /**
+     * Wallet address of the maker (passive) side. Present only for L4 data sources.
+     */
+    user_maker?: string;
+
 }

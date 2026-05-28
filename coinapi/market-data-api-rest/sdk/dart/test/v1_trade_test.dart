@@ -76,6 +76,18 @@ void main() {
       // TODO
     });
 
+    // Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+    // String userTaker
+    test('to test the property `userTaker`', () async {
+      // TODO
+    });
+
+    // Wallet address of the maker (passive) side. Present only for L4 data sources.
+    // String userMaker
+    test('to test the property `userMaker`', () async {
+      // TODO
+    });
+
 
   });
 

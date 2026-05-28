@@ -95,6 +95,16 @@ web::json::value V1_Trade::toJson() const
         
         val[utility::conversions::to_string_t(_XPLATSTR("id_order_taker"))] = ModelBase::toJson(m_Id_order_taker.get());
     }
+    if(m_User_taker.has_value())
+    {
+        
+        val[utility::conversions::to_string_t(_XPLATSTR("user_taker"))] = ModelBase::toJson(m_User_taker.get());
+    }
+    if(m_User_maker.has_value())
+    {
+        
+        val[utility::conversions::to_string_t(_XPLATSTR("user_maker"))] = ModelBase::toJson(m_User_maker.get());
+    }
 
     return val;
 }
@@ -212,6 +222,28 @@ bool V1_Trade::fromJson(const web::json::value& val)
             
         }
     }
+    if(val.has_field(utility::conversions::to_string_t(_XPLATSTR("user_taker"))))
+    {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t(_XPLATSTR("user_taker")));
+        if(!fieldValue.is_null())
+        {
+            utility::string_t refVal_setUserTaker;
+            ok &= ModelBase::fromJson(fieldValue, refVal_setUserTaker);
+            setUserTaker(refVal_setUserTaker);
+            
+        }
+    }
+    if(val.has_field(utility::conversions::to_string_t(_XPLATSTR("user_maker"))))
+    {
+        const web::json::value& fieldValue = val.at(utility::conversions::to_string_t(_XPLATSTR("user_maker")));
+        if(!fieldValue.is_null())
+        {
+            utility::string_t refVal_setUserMaker;
+            ok &= ModelBase::fromJson(fieldValue, refVal_setUserMaker);
+            setUserMaker(refVal_setUserMaker);
+            
+        }
+    }
     return ok;
 }
 
@@ -261,6 +293,14 @@ void V1_Trade::toMultipart(std::shared_ptr<MultipartFormData> multipart, const u
     if(m_Id_order_taker.has_value())
     {
         multipart->add(ModelBase::toHttpContent(namePrefix + utility::conversions::to_string_t(_XPLATSTR("id_order_taker")), m_Id_order_taker.get()));
+    }
+    if(m_User_taker.has_value())
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + utility::conversions::to_string_t(_XPLATSTR("user_taker")), m_User_taker.get()));
+    }
+    if(m_User_maker.has_value())
+    {
+        multipart->add(ModelBase::toHttpContent(namePrefix + utility::conversions::to_string_t(_XPLATSTR("user_maker")), m_User_maker.get()));
     }
 }
 
@@ -332,6 +372,18 @@ bool V1_Trade::fromMultiPart(std::shared_ptr<MultipartFormData> multipart, const
         utility::string_t refVal_setIdOrderTaker;
         ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(_XPLATSTR("id_order_taker"))), refVal_setIdOrderTaker );
         setIdOrderTaker(refVal_setIdOrderTaker);
+    }
+    if(multipart->hasContent(utility::conversions::to_string_t(_XPLATSTR("user_taker"))))
+    {
+        utility::string_t refVal_setUserTaker;
+        ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(_XPLATSTR("user_taker"))), refVal_setUserTaker );
+        setUserTaker(refVal_setUserTaker);
+    }
+    if(multipart->hasContent(utility::conversions::to_string_t(_XPLATSTR("user_maker"))))
+    {
+        utility::string_t refVal_setUserMaker;
+        ok &= ModelBase::fromHttpContent(multipart->getContent(utility::conversions::to_string_t(_XPLATSTR("user_maker"))), refVal_setUserMaker );
+        setUserMaker(refVal_setUserMaker);
     }
     return ok;
 }
@@ -539,6 +591,46 @@ bool V1_Trade::idOrderTakerIsSet() const
 void V1_Trade::unsetId_order_taker()
 {
     m_Id_order_taker.reset();
+}
+utility::string_t V1_Trade::getUserTaker() const
+{
+    return m_User_taker.get();
+}
+
+
+void V1_Trade::setUserTaker(const utility::string_t& value)
+{
+    m_User_taker = value;
+}
+
+bool V1_Trade::userTakerIsSet() const
+{
+    return m_User_taker.has_value();
+}
+
+void V1_Trade::unsetUser_taker()
+{
+    m_User_taker.reset();
+}
+utility::string_t V1_Trade::getUserMaker() const
+{
+    return m_User_maker.get();
+}
+
+
+void V1_Trade::setUserMaker(const utility::string_t& value)
+{
+    m_User_maker = value;
+}
+
+bool V1_Trade::userMakerIsSet() const
+{
+    return m_User_maker.has_value();
+}
+
+void V1_Trade::unsetUser_maker()
+{
+    m_User_maker.reset();
 }
 
 }

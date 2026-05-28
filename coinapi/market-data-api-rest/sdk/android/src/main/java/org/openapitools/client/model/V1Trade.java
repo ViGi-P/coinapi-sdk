@@ -43,6 +43,10 @@ public class V1Trade {
   private String idOrderMaker = null;
   @SerializedName("id_order_taker")
   private String idOrderTaker = null;
+  @SerializedName("user_taker")
+  private String userTaker = null;
+  @SerializedName("user_maker")
+  private String userMaker = null;
 
   /**
    * The symbol identifier.
@@ -154,6 +158,28 @@ public class V1Trade {
     this.idOrderTaker = idOrderTaker;
   }
 
+  /**
+   * Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+   **/
+  @ApiModelProperty(value = "Wallet address of the taker (aggressive) side. Present only for L4 data sources.")
+  public String getUserTaker() {
+    return userTaker;
+  }
+  public void setUserTaker(String userTaker) {
+    this.userTaker = userTaker;
+  }
+
+  /**
+   * Wallet address of the maker (passive) side. Present only for L4 data sources.
+   **/
+  @ApiModelProperty(value = "Wallet address of the maker (passive) side. Present only for L4 data sources.")
+  public String getUserMaker() {
+    return userMaker;
+  }
+  public void setUserMaker(String userMaker) {
+    this.userMaker = userMaker;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -173,7 +199,9 @@ public class V1Trade {
         (this.takerSide == null ? v1Trade.takerSide == null : this.takerSide.equals(v1Trade.takerSide)) &&
         (this.idTrade == null ? v1Trade.idTrade == null : this.idTrade.equals(v1Trade.idTrade)) &&
         (this.idOrderMaker == null ? v1Trade.idOrderMaker == null : this.idOrderMaker.equals(v1Trade.idOrderMaker)) &&
-        (this.idOrderTaker == null ? v1Trade.idOrderTaker == null : this.idOrderTaker.equals(v1Trade.idOrderTaker));
+        (this.idOrderTaker == null ? v1Trade.idOrderTaker == null : this.idOrderTaker.equals(v1Trade.idOrderTaker)) &&
+        (this.userTaker == null ? v1Trade.userTaker == null : this.userTaker.equals(v1Trade.userTaker)) &&
+        (this.userMaker == null ? v1Trade.userMaker == null : this.userMaker.equals(v1Trade.userMaker));
   }
 
   @Override
@@ -189,6 +217,8 @@ public class V1Trade {
     result = 31 * result + (this.idTrade == null ? 0: this.idTrade.hashCode());
     result = 31 * result + (this.idOrderMaker == null ? 0: this.idOrderMaker.hashCode());
     result = 31 * result + (this.idOrderTaker == null ? 0: this.idOrderTaker.hashCode());
+    result = 31 * result + (this.userTaker == null ? 0: this.userTaker.hashCode());
+    result = 31 * result + (this.userMaker == null ? 0: this.userMaker.hashCode());
     return result;
   }
 
@@ -207,6 +237,8 @@ public class V1Trade {
     sb.append("  idTrade: ").append(idTrade).append("\n");
     sb.append("  idOrderMaker: ").append(idOrderMaker).append("\n");
     sb.append("  idOrderTaker: ").append(idOrderTaker).append("\n");
+    sb.append("  userTaker: ").append(userTaker).append("\n");
+    sb.append("  userMaker: ").append(userMaker).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

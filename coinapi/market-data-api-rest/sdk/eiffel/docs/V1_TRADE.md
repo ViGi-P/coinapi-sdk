@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **id_trade** | [**STRING_32**](STRING_32.md) | The trade identifier. | [optional] [default to null]
 **id_order_maker** | [**STRING_32**](STRING_32.md) | The order maker identifier. | [optional] [default to null]
 **id_order_taker** | [**STRING_32**](STRING_32.md) | The order taker identifier. | [optional] [default to null]
+**user_taker** | [**STRING_32**](STRING_32.md) | Wallet address of the taker (aggressive) side. Present only for L4 data sources. | [optional] [default to null]
+**user_maker** | [**STRING_32**](STRING_32.md) | Wallet address of the maker (passive) side. Present only for L4 data sources. | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

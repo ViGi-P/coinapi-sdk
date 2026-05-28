@@ -41,6 +41,10 @@ type V1Trade struct {
 	IdOrderMaker NullableString `json:"id_order_maker,omitempty"`
 	// The order taker identifier.
 	IdOrderTaker NullableString `json:"id_order_taker,omitempty"`
+	// Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+	UserTaker NullableString `json:"user_taker,omitempty"`
+	// Wallet address of the maker (passive) side. Present only for L4 data sources.
+	UserMaker NullableString `json:"user_maker,omitempty"`
 }
 
 // NewV1Trade instantiates a new V1Trade object
@@ -430,6 +434,90 @@ func (o *V1Trade) UnsetIdOrderTaker() {
 	o.IdOrderTaker.Unset()
 }
 
+// GetUserTaker returns the UserTaker field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *V1Trade) GetUserTaker() string {
+	if o == nil || IsNil(o.UserTaker.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.UserTaker.Get()
+}
+
+// GetUserTakerOk returns a tuple with the UserTaker field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *V1Trade) GetUserTakerOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.UserTaker.Get(), o.UserTaker.IsSet()
+}
+
+// HasUserTaker returns a boolean if a field has been set.
+func (o *V1Trade) HasUserTaker() bool {
+	if o != nil && o.UserTaker.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetUserTaker gets a reference to the given NullableString and assigns it to the UserTaker field.
+func (o *V1Trade) SetUserTaker(v string) {
+	o.UserTaker.Set(&v)
+}
+// SetUserTakerNil sets the value for UserTaker to be an explicit nil
+func (o *V1Trade) SetUserTakerNil() {
+	o.UserTaker.Set(nil)
+}
+
+// UnsetUserTaker ensures that no value is present for UserTaker, not even an explicit nil
+func (o *V1Trade) UnsetUserTaker() {
+	o.UserTaker.Unset()
+}
+
+// GetUserMaker returns the UserMaker field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *V1Trade) GetUserMaker() string {
+	if o == nil || IsNil(o.UserMaker.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.UserMaker.Get()
+}
+
+// GetUserMakerOk returns a tuple with the UserMaker field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *V1Trade) GetUserMakerOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.UserMaker.Get(), o.UserMaker.IsSet()
+}
+
+// HasUserMaker returns a boolean if a field has been set.
+func (o *V1Trade) HasUserMaker() bool {
+	if o != nil && o.UserMaker.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetUserMaker gets a reference to the given NullableString and assigns it to the UserMaker field.
+func (o *V1Trade) SetUserMaker(v string) {
+	o.UserMaker.Set(&v)
+}
+// SetUserMakerNil sets the value for UserMaker to be an explicit nil
+func (o *V1Trade) SetUserMakerNil() {
+	o.UserMaker.Set(nil)
+}
+
+// UnsetUserMaker ensures that no value is present for UserMaker, not even an explicit nil
+func (o *V1Trade) UnsetUserMaker() {
+	o.UserMaker.Unset()
+}
+
 func (o V1Trade) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -469,6 +557,12 @@ func (o V1Trade) ToMap() (map[string]interface{}, error) {
 	}
 	if o.IdOrderTaker.IsSet() {
 		toSerialize["id_order_taker"] = o.IdOrderTaker.Get()
+	}
+	if o.UserTaker.IsSet() {
+		toSerialize["user_taker"] = o.UserTaker.Get()
+	}
+	if o.UserMaker.IsSet() {
+		toSerialize["user_maker"] = o.UserMaker.Get()
 	}
 	return toSerialize, nil
 }

@@ -143,5 +143,23 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Test.Model
         {
             // TODO unit test for the property 'IdOrderTaker'
         }
+
+        /// <summary>
+        /// Test the property 'UserTaker'
+        /// </summary>
+        [Fact]
+        public void UserTakerTest()
+        {
+            // TODO unit test for the property 'UserTaker'
+        }
+
+        /// <summary>
+        /// Test the property 'UserMaker'
+        /// </summary>
+        [Fact]
+        public void UserMakerTest()
+        {
+            // TODO unit test for the property 'UserMaker'
+        }
     }
 }

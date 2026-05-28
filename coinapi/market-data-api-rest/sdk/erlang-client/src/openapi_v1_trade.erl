@@ -14,7 +14,9 @@
        'taker_side' => binary(),
        'id_trade' => binary(),
        'id_order_maker' => binary(),
-       'id_order_taker' => binary()
+       'id_order_taker' => binary(),
+       'user_taker' => binary(),
+       'user_maker' => binary()
      }.
 
 encode(#{ 'symbol_id' := SymbolId,
@@ -26,7 +28,9 @@ encode(#{ 'symbol_id' := SymbolId,
           'taker_side' := TakerSide,
           'id_trade' := IdTrade,
           'id_order_maker' := IdOrderMaker,
-          'id_order_taker' := IdOrderTaker
+          'id_order_taker' := IdOrderTaker,
+          'user_taker' := UserTaker,
+          'user_maker' := UserMaker
         }) ->
     #{ 'symbol_id' => SymbolId,
        'time_exchange' => TimeExchange,
@@ -37,5 +41,7 @@ encode(#{ 'symbol_id' := SymbolId,
        'taker_side' => TakerSide,
        'id_trade' => IdTrade,
        'id_order_maker' => IdOrderMaker,
-       'id_order_taker' => IdOrderTaker
+       'id_order_taker' => IdOrderTaker,
+       'user_taker' => UserTaker,
+       'user_maker' => UserMaker
      }.

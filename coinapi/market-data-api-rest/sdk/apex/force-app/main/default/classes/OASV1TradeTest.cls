@@ -80,5 +80,7 @@ private class OASV1TradeTest {
         System.assertEquals('idTrade', x-property-mappings.get('id_trade'));
         System.assertEquals('idOrderMaker', x-property-mappings.get('id_order_maker'));
         System.assertEquals('idOrderTaker', x-property-mappings.get('id_order_taker'));
+        System.assertEquals('userTaker', x-property-mappings.get('user_taker'));
+        System.assertEquals('userMaker', x-property-mappings.get('user_maker'));
     }
 }

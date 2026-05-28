@@ -35,6 +35,10 @@ The trade identifier.
 The order maker identifier.
 .PARAMETER IdOrderTaker
 The order taker identifier.
+.PARAMETER UserTaker
+Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+.PARAMETER UserMaker
+Wallet address of the maker (passive) side. Present only for L4 data sources.
 .OUTPUTS
 
 V1Trade<PSCustomObject>
@@ -72,7 +76,13 @@ function Initialize-V1Trade {
         ${IdOrderMaker},
         [Parameter(Position = 9, ValueFromPipelineByPropertyName = $true)]
         [String]
-        ${IdOrderTaker}
+        ${IdOrderTaker},
+        [Parameter(Position = 10, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${UserTaker},
+        [Parameter(Position = 11, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${UserMaker}
     )
 
     Process {
@@ -91,6 +101,8 @@ function Initialize-V1Trade {
             'id_trade' = ${IdTrade}
             'id_order_maker' = ${IdOrderMaker}
             'id_order_taker' = ${IdOrderTaker}
+            'user_taker' = ${UserTaker}
+            'user_maker' = ${UserMaker}
         }
 
 
@@ -128,7 +140,7 @@ function ConvertFrom-JsonToV1Trade {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in V1Trade
-        $AllProperties = ('symbol_id', 'time_exchange', 'time_coinapi', 'uuid', 'price', 'size', 'taker_side', 'id_trade', 'id_order_maker', 'id_order_taker')
+        $AllProperties = ('symbol_id', 'time_exchange', 'time_coinapi', 'uuid', 'price', 'size', 'taker_side', 'id_trade', 'id_order_maker', 'id_order_taker', 'user_taker', 'user_maker')
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
@@ -195,6 +207,18 @@ function ConvertFrom-JsonToV1Trade {
             $IdOrderTaker = $JsonParameters.PSobject.Properties['id_order_taker'].value
         }
 
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'user_taker'))) { #optional property not found
+            $UserTaker = $null
+        } else {
+            $UserTaker = $JsonParameters.PSobject.Properties['user_taker'].value
+        }
+
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match 'user_maker'))) { #optional property not found
+            $UserMaker = $null
+        } else {
+            $UserMaker = $JsonParameters.PSobject.Properties['user_maker'].value
+        }
+
         $PSO = [PSCustomObject]@{
             'symbol_id' = ${SymbolId}
             'time_exchange' = ${TimeExchange}
@@ -206,6 +230,8 @@ function ConvertFrom-JsonToV1Trade {
             'id_trade' = ${IdTrade}
             'id_order_maker' = ${IdOrderMaker}
             'id_order_taker' = ${IdOrderTaker}
+            'user_taker' = ${UserTaker}
+            'user_maker' = ${UserMaker}
         }
 
         return $PSO

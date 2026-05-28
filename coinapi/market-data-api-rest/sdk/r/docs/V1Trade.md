@@ -15,5 +15,7 @@ Name | Type | Description | Notes
 **id_trade** | **character** | The trade identifier. | [optional] 
 **id_order_maker** | **character** | The order maker identifier. | [optional] 
 **id_order_taker** | **character** | The order taker identifier. | [optional] 
+**user_taker** | **character** | Wallet address of the taker (aggressive) side. Present only for L4 data sources. | [optional] 
+**user_maker** | **character** | Wallet address of the maker (passive) side. Present only for L4 data sources. | [optional] 
 
 

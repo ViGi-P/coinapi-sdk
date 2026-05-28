@@ -46,6 +46,12 @@ module OpenapiClient
     # The order taker identifier.
     attr_accessor :id_order_taker
 
+    # Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+    attr_accessor :user_taker
+
+    # Wallet address of the maker (passive) side. Present only for L4 data sources.
+    attr_accessor :user_maker
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -58,7 +64,9 @@ module OpenapiClient
         :'taker_side' => :'taker_side',
         :'id_trade' => :'id_trade',
         :'id_order_maker' => :'id_order_maker',
-        :'id_order_taker' => :'id_order_taker'
+        :'id_order_taker' => :'id_order_taker',
+        :'user_taker' => :'user_taker',
+        :'user_maker' => :'user_maker'
       }
     end
 
@@ -84,7 +92,9 @@ module OpenapiClient
         :'taker_side' => :'String',
         :'id_trade' => :'String',
         :'id_order_maker' => :'String',
-        :'id_order_taker' => :'String'
+        :'id_order_taker' => :'String',
+        :'user_taker' => :'String',
+        :'user_maker' => :'String'
       }
     end
 
@@ -95,7 +105,9 @@ module OpenapiClient
         :'taker_side',
         :'id_trade',
         :'id_order_maker',
-        :'id_order_taker'
+        :'id_order_taker',
+        :'user_taker',
+        :'user_maker'
       ])
     end
 
@@ -154,6 +166,14 @@ module OpenapiClient
       if attributes.key?(:'id_order_taker')
         self.id_order_taker = attributes[:'id_order_taker']
       end
+
+      if attributes.key?(:'user_taker')
+        self.user_taker = attributes[:'user_taker']
+      end
+
+      if attributes.key?(:'user_maker')
+        self.user_maker = attributes[:'user_maker']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -185,7 +205,9 @@ module OpenapiClient
           taker_side == o.taker_side &&
           id_trade == o.id_trade &&
           id_order_maker == o.id_order_maker &&
-          id_order_taker == o.id_order_taker
+          id_order_taker == o.id_order_taker &&
+          user_taker == o.user_taker &&
+          user_maker == o.user_maker
     end
 
     # @see the `==` method
@@ -197,7 +219,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [symbol_id, time_exchange, time_coinapi, uuid, price, size, taker_side, id_trade, id_order_maker, id_order_taker].hash
+      [symbol_id, time_exchange, time_coinapi, uuid, price, size, taker_side, id_trade, id_order_maker, id_order_taker, user_taker, user_maker].hash
     end
 
     # Builds the object from hash

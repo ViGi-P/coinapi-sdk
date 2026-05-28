@@ -19,6 +19,8 @@
   | {'id_trade', binary() }
   | {'id_order_maker', binary() }
   | {'id_order_taker', binary() }
+  | {'user_taker', binary() }
+  | {'user_maker', binary() }
   ].
 
 
@@ -36,6 +38,8 @@ openapi_v1_trade(Fields) ->
             , {'id_trade', binary() }
             , {'id_order_maker', binary() }
             , {'id_order_taker', binary() }
+            , {'user_taker', binary() }
+            , {'user_maker', binary() }
             ],
   lists:ukeymerge(1, lists:sort(Fields), lists:sort(Default)).
 

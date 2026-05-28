@@ -138,6 +138,22 @@ public:
     void unsetId_order_taker();
     void setIdOrderTaker(const utility::string_t& value);
 
+    /// <summary>
+    /// Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+    /// </summary>
+    utility::string_t getUserTaker() const;
+    bool userTakerIsSet() const;
+    void unsetUser_taker();
+    void setUserTaker(const utility::string_t& value);
+
+    /// <summary>
+    /// Wallet address of the maker (passive) side. Present only for L4 data sources.
+    /// </summary>
+    utility::string_t getUserMaker() const;
+    bool userMakerIsSet() const;
+    void unsetUser_maker();
+    void setUserMaker(const utility::string_t& value);
+
 
 protected:
     boost::optional<utility::string_t> m_Symbol_id;
@@ -164,6 +180,10 @@ protected:
     boost::optional<utility::string_t> m_Id_order_maker;
 
     boost::optional<utility::string_t> m_Id_order_taker;
+
+    boost::optional<utility::string_t> m_User_taker;
+
+    boost::optional<utility::string_t> m_User_maker;
 
 };
 

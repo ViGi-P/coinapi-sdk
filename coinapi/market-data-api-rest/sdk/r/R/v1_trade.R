@@ -17,6 +17,8 @@
 #' @field id_trade The trade identifier. character [optional]
 #' @field id_order_maker The order maker identifier. character [optional]
 #' @field id_order_taker The order taker identifier. character [optional]
+#' @field user_taker Wallet address of the taker (aggressive) side. Present only for L4 data sources. character [optional]
+#' @field user_maker Wallet address of the maker (passive) side. Present only for L4 data sources. character [optional]
 #' @importFrom R6 R6Class
 #' @importFrom jsonlite fromJSON toJSON
 #' @export
@@ -33,6 +35,8 @@ V1Trade <- R6::R6Class(
     `id_trade` = NULL,
     `id_order_maker` = NULL,
     `id_order_taker` = NULL,
+    `user_taker` = NULL,
+    `user_maker` = NULL,
 
     #' @description
     #' Initialize a new V1Trade class.
@@ -47,8 +51,10 @@ V1Trade <- R6::R6Class(
     #' @param id_trade The trade identifier.
     #' @param id_order_maker The order maker identifier.
     #' @param id_order_taker The order taker identifier.
+    #' @param user_taker Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+    #' @param user_maker Wallet address of the maker (passive) side. Present only for L4 data sources.
     #' @param ... Other optional arguments.
-    initialize = function(`symbol_id` = NULL, `time_exchange` = NULL, `time_coinapi` = NULL, `uuid` = NULL, `price` = NULL, `size` = NULL, `taker_side` = NULL, `id_trade` = NULL, `id_order_maker` = NULL, `id_order_taker` = NULL, ...) {
+    initialize = function(`symbol_id` = NULL, `time_exchange` = NULL, `time_coinapi` = NULL, `uuid` = NULL, `price` = NULL, `size` = NULL, `taker_side` = NULL, `id_trade` = NULL, `id_order_maker` = NULL, `id_order_taker` = NULL, `user_taker` = NULL, `user_maker` = NULL, ...) {
       if (!is.null(`symbol_id`)) {
         if (!(is.character(`symbol_id`) && length(`symbol_id`) == 1)) {
           stop(paste("Error! Invalid data for `symbol_id`. Must be a string:", `symbol_id`))
@@ -108,6 +114,18 @@ V1Trade <- R6::R6Class(
           stop(paste("Error! Invalid data for `id_order_taker`. Must be a string:", `id_order_taker`))
         }
         self$`id_order_taker` <- `id_order_taker`
+      }
+      if (!is.null(`user_taker`)) {
+        if (!(is.character(`user_taker`) && length(`user_taker`) == 1)) {
+          stop(paste("Error! Invalid data for `user_taker`. Must be a string:", `user_taker`))
+        }
+        self$`user_taker` <- `user_taker`
+      }
+      if (!is.null(`user_maker`)) {
+        if (!(is.character(`user_maker`) && length(`user_maker`) == 1)) {
+          stop(paste("Error! Invalid data for `user_maker`. Must be a string:", `user_maker`))
+        }
+        self$`user_maker` <- `user_maker`
       }
     },
 
@@ -182,6 +200,14 @@ V1Trade <- R6::R6Class(
         V1TradeObject[["id_order_taker"]] <-
           self$`id_order_taker`
       }
+      if (!is.null(self$`user_taker`)) {
+        V1TradeObject[["user_taker"]] <-
+          self$`user_taker`
+      }
+      if (!is.null(self$`user_maker`)) {
+        V1TradeObject[["user_maker"]] <-
+          self$`user_maker`
+      }
       return(V1TradeObject)
     },
 
@@ -222,6 +248,12 @@ V1Trade <- R6::R6Class(
       if (!is.null(this_object$`id_order_taker`)) {
         self$`id_order_taker` <- this_object$`id_order_taker`
       }
+      if (!is.null(this_object$`user_taker`)) {
+        self$`user_taker` <- this_object$`user_taker`
+      }
+      if (!is.null(this_object$`user_maker`)) {
+        self$`user_maker` <- this_object$`user_maker`
+      }
       self
     },
 
@@ -253,6 +285,8 @@ V1Trade <- R6::R6Class(
       self$`id_trade` <- this_object$`id_trade`
       self$`id_order_maker` <- this_object$`id_order_maker`
       self$`id_order_taker` <- this_object$`id_order_taker`
+      self$`user_taker` <- this_object$`user_taker`
+      self$`user_maker` <- this_object$`user_maker`
       self
     },
 

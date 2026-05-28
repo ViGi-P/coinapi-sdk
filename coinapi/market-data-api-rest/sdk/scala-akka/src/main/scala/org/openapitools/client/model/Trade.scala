@@ -35,6 +35,10 @@ case class Trade (
   /* The order maker identifier. */
   idOrderMaker: Option[String] = None,
   /* The order taker identifier. */
-  idOrderTaker: Option[String] = None
+  idOrderTaker: Option[String] = None,
+  /* Wallet address of the taker (aggressive) side. Present only for L4 data sources. */
+  userTaker: Option[String] = None,
+  /* Wallet address of the maker (passive) side. Present only for L4 data sources. */
+  userMaker: Option[String] = None
 ) extends ApiModel
 

@@ -84,3 +84,19 @@ test_that("id_order_taker", {
   # uncomment below to test the property
   #expect_equal(model.instance$`id_order_taker`, "EXPECTED_RESULT")
 })
+
+test_that("user_taker", {
+  # tests for the property `user_taker` (character)
+  # Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`user_taker`, "EXPECTED_RESULT")
+})
+
+test_that("user_maker", {
+  # tests for the property `user_maker` (character)
+  # Wallet address of the maker (passive) side. Present only for L4 data sources.
+
+  # uncomment below to test the property
+  #expect_equal(model.instance$`user_maker`, "EXPECTED_RESULT")
+})

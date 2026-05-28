@@ -28,4 +28,8 @@ class V1Trade {
     String idOrderMaker
     /* The order taker identifier. */
     String idOrderTaker
+    /* Wallet address of the taker (aggressive) side. Present only for L4 data sources. */
+    String userTaker
+    /* Wallet address of the maker (passive) side. Present only for L4 data sources. */
+    String userMaker
 }

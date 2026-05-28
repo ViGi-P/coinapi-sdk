@@ -23,6 +23,8 @@ class V1Trade {
     this.idTrade,
     this.idOrderMaker,
     this.idOrderTaker,
+    this.userTaker,
+    this.userMaker,
   });
 
   /// The symbol identifier.
@@ -85,6 +87,12 @@ class V1Trade {
   /// The order taker identifier.
   String? idOrderTaker;
 
+  /// Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+  String? userTaker;
+
+  /// Wallet address of the maker (passive) side. Present only for L4 data sources.
+  String? userMaker;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is V1Trade &&
     other.symbolId == symbolId &&
@@ -96,7 +104,9 @@ class V1Trade {
     other.takerSide == takerSide &&
     other.idTrade == idTrade &&
     other.idOrderMaker == idOrderMaker &&
-    other.idOrderTaker == idOrderTaker;
+    other.idOrderTaker == idOrderTaker &&
+    other.userTaker == userTaker &&
+    other.userMaker == userMaker;
 
   @override
   int get hashCode =>
@@ -110,10 +120,12 @@ class V1Trade {
     (takerSide == null ? 0 : takerSide!.hashCode) +
     (idTrade == null ? 0 : idTrade!.hashCode) +
     (idOrderMaker == null ? 0 : idOrderMaker!.hashCode) +
-    (idOrderTaker == null ? 0 : idOrderTaker!.hashCode);
+    (idOrderTaker == null ? 0 : idOrderTaker!.hashCode) +
+    (userTaker == null ? 0 : userTaker!.hashCode) +
+    (userMaker == null ? 0 : userMaker!.hashCode);
 
   @override
-  String toString() => 'V1Trade[symbolId=$symbolId, timeExchange=$timeExchange, timeCoinapi=$timeCoinapi, uuid=$uuid, price=$price, size=$size, takerSide=$takerSide, idTrade=$idTrade, idOrderMaker=$idOrderMaker, idOrderTaker=$idOrderTaker]';
+  String toString() => 'V1Trade[symbolId=$symbolId, timeExchange=$timeExchange, timeCoinapi=$timeCoinapi, uuid=$uuid, price=$price, size=$size, takerSide=$takerSide, idTrade=$idTrade, idOrderMaker=$idOrderMaker, idOrderTaker=$idOrderTaker, userTaker=$userTaker, userMaker=$userMaker]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -167,6 +179,16 @@ class V1Trade {
     } else {
       json[r'id_order_taker'] = null;
     }
+    if (this.userTaker != null) {
+      json[r'user_taker'] = this.userTaker;
+    } else {
+      json[r'user_taker'] = null;
+    }
+    if (this.userMaker != null) {
+      json[r'user_maker'] = this.userMaker;
+    } else {
+      json[r'user_maker'] = null;
+    }
     return json;
   }
 
@@ -195,6 +217,8 @@ class V1Trade {
         idTrade: mapValueOfType<String>(json, r'id_trade'),
         idOrderMaker: mapValueOfType<String>(json, r'id_order_maker'),
         idOrderTaker: mapValueOfType<String>(json, r'id_order_taker'),
+        userTaker: mapValueOfType<String>(json, r'user_taker'),
+        userMaker: mapValueOfType<String>(json, r'user_maker'),
       );
     }
     return null;

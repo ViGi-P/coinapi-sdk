@@ -86,4 +86,18 @@ describe("v1_trade", function()
     end)
   end)
 
+  -- unit tests for the property 'user_taker'
+  describe("property user_taker test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
+  -- unit tests for the property 'user_maker'
+  describe("property user_maker test", function()
+    it("should work", function()
+      -- TODO assertion here: http://olivinelabs.com/busted/#asserts
+    end)
+  end)
+
 end)

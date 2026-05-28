@@ -100,7 +100,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-05-27T06:03:35.9796551Z
+                    time: 2026-05-28T06:03:36.6149886Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -110,7 +110,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-05-27T06:03:35.9796551Z
+                    time: 2026-05-28T06:03:36.6149886Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -120,7 +120,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-05-27T06:03:35.9796551Z
+                    time: 2026-05-28T06:03:36.6149886Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -130,7 +130,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-05-27T06:03:35.9796551Z
+                    time: 2026-05-28T06:03:36.6149886Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -8564,6 +8564,7 @@ components:
         time_exchange: 2000-01-23T04:56:07.000+00:00
         id_order_taker: id_order_taker
         size: 6.027456183070403
+        user_maker: user_maker
         price: 0.8008281904610115
         time_coinapi: 2000-01-23T04:56:07.000+00:00
         taker_side: taker_side
@@ -8571,6 +8572,7 @@ components:
         uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         symbol_id: symbol_id
         id_trade: id_trade
+        user_taker: user_taker
       properties:
         symbol_id:
           description: The symbol identifier.
@@ -8612,6 +8614,16 @@ components:
           type: string
         id_order_taker:
           description: The order taker identifier.
+          nullable: true
+          type: string
+        user_taker:
+          description: Wallet address of the taker (aggressive) side. Present only
+            for L4 data sources.
+          nullable: true
+          type: string
+        user_maker:
+          description: Wallet address of the maker (passive) side. Present only for
+            L4 data sources.
           nullable: true
           type: string
       type: object

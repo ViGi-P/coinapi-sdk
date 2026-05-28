@@ -1179,6 +1179,8 @@ package body .Models is
       Into.Write_Entity ("id_trade", Value.Id_Trade);
       Into.Write_Entity ("id_order_maker", Value.Id_Order_Maker);
       Into.Write_Entity ("id_order_taker", Value.Id_Order_Taker);
+      Into.Write_Entity ("user_taker", Value.User_Taker);
+      Into.Write_Entity ("user_maker", Value.User_Maker);
       Into.End_Entity (Name);
    end Serialize;
 
@@ -1209,6 +1211,8 @@ package body .Models is
       Swagger.Streams.Deserialize (Object, "id_trade", Value.Id_Trade);
       Swagger.Streams.Deserialize (Object, "id_order_maker", Value.Id_Order_Maker);
       Swagger.Streams.Deserialize (Object, "id_order_taker", Value.Id_Order_Taker);
+      Swagger.Streams.Deserialize (Object, "user_taker", Value.User_Taker);
+      Swagger.Streams.Deserialize (Object, "user_maker", Value.User_Maker);
    end Deserialize;
 
    procedure Deserialize (From  : in Swagger.Value_Type;

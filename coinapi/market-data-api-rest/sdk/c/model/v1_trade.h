@@ -29,6 +29,8 @@ typedef struct v1_trade_t {
     char *id_trade; // string
     char *id_order_maker; // string
     char *id_order_taker; // string
+    char *user_taker; // string
+    char *user_maker; // string
 
     int _library_owned; // Is the library responsible for freeing this object?
 } v1_trade_t;
@@ -43,7 +45,9 @@ __attribute__((deprecated)) v1_trade_t *v1_trade_create(
     char *taker_side,
     char *id_trade,
     char *id_order_maker,
-    char *id_order_taker
+    char *id_order_taker,
+    char *user_taker,
+    char *user_maker
 );
 
 void v1_trade_free(v1_trade_t *v1_trade);

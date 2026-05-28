@@ -513,6 +513,8 @@ type alias V1Trade =
     , idTrade : Maybe String
     , idOrderMaker : Maybe String
     , idOrderTaker : Maybe String
+    , userTaker : Maybe String
+    , userMaker : Maybe String
     }
 
 
@@ -1282,6 +1284,8 @@ encodeV1TradePairs model =
             , maybeEncodeNullable "id_trade" Json.Encode.string model.idTrade
             , maybeEncodeNullable "id_order_maker" Json.Encode.string model.idOrderMaker
             , maybeEncodeNullable "id_order_taker" Json.Encode.string model.idOrderTaker
+            , maybeEncodeNullable "user_taker" Json.Encode.string model.userTaker
+            , maybeEncodeNullable "user_maker" Json.Encode.string model.userMaker
             ]
     in
     pairs
@@ -1664,6 +1668,8 @@ v1TradeDecoder =
         |> maybeDecodeNullable "id_trade" Json.Decode.string Nothing
         |> maybeDecodeNullable "id_order_maker" Json.Decode.string Nothing
         |> maybeDecodeNullable "id_order_taker" Json.Decode.string Nothing
+        |> maybeDecodeNullable "user_taker" Json.Decode.string Nothing
+        |> maybeDecodeNullable "user_maker" Json.Decode.string Nothing
 
 
 

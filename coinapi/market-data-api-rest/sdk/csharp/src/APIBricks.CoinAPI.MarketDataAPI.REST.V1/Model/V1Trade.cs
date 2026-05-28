@@ -45,8 +45,10 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         /// <param name="idTrade">The trade identifier.</param>
         /// <param name="idOrderMaker">The order maker identifier.</param>
         /// <param name="idOrderTaker">The order taker identifier.</param>
+        /// <param name="userTaker">Wallet address of the taker (aggressive) side. Present only for L4 data sources.</param>
+        /// <param name="userMaker">Wallet address of the maker (passive) side. Present only for L4 data sources.</param>
         [JsonConstructor]
-        public V1Trade(Option<string?> symbolId = default, Option<DateTime?> timeExchange = default, Option<DateTime?> timeCoinapi = default, Option<Guid?> uuid = default, Option<double?> price = default, Option<double?> size = default, Option<string?> takerSide = default, Option<string?> idTrade = default, Option<string?> idOrderMaker = default, Option<string?> idOrderTaker = default)
+        public V1Trade(Option<string?> symbolId = default, Option<DateTime?> timeExchange = default, Option<DateTime?> timeCoinapi = default, Option<Guid?> uuid = default, Option<double?> price = default, Option<double?> size = default, Option<string?> takerSide = default, Option<string?> idTrade = default, Option<string?> idOrderMaker = default, Option<string?> idOrderTaker = default, Option<string?> userTaker = default, Option<string?> userMaker = default)
         {
             SymbolIdOption = symbolId;
             TimeExchangeOption = timeExchange;
@@ -58,6 +60,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
             IdTradeOption = idTrade;
             IdOrderMakerOption = idOrderMaker;
             IdOrderTakerOption = idOrderTaker;
+            UserTakerOption = userTaker;
+            UserMakerOption = userMaker;
             OnCreated();
         }
 
@@ -204,6 +208,34 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
         public string? IdOrderTaker { get { return this.IdOrderTakerOption.Value; } set { this.IdOrderTakerOption = new(value); } }
 
         /// <summary>
+        /// Used to track the state of UserTaker
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<string?> UserTakerOption { get; private set; }
+
+        /// <summary>
+        /// Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+        /// </summary>
+        /// <value>Wallet address of the taker (aggressive) side. Present only for L4 data sources.</value>
+        [JsonPropertyName("user_taker")]
+        public string? UserTaker { get { return this.UserTakerOption.Value; } set { this.UserTakerOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of UserMaker
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<string?> UserMakerOption { get; private set; }
+
+        /// <summary>
+        /// Wallet address of the maker (passive) side. Present only for L4 data sources.
+        /// </summary>
+        /// <value>Wallet address of the maker (passive) side. Present only for L4 data sources.</value>
+        [JsonPropertyName("user_maker")]
+        public string? UserMaker { get { return this.UserMakerOption.Value; } set { this.UserMakerOption = new(value); } }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -221,6 +253,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
             sb.Append("  IdTrade: ").Append(IdTrade).Append("\n");
             sb.Append("  IdOrderMaker: ").Append(IdOrderMaker).Append("\n");
             sb.Append("  IdOrderTaker: ").Append(IdOrderTaker).Append("\n");
+            sb.Append("  UserTaker: ").Append(UserTaker).Append("\n");
+            sb.Append("  UserMaker: ").Append(UserMaker).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -278,6 +312,8 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
             Option<string?> idTrade = default;
             Option<string?> idOrderMaker = default;
             Option<string?> idOrderTaker = default;
+            Option<string?> userTaker = default;
+            Option<string?> userMaker = default;
 
             while (utf8JsonReader.Read())
             {
@@ -324,6 +360,12 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
                         case "id_order_taker":
                             idOrderTaker = new Option<string?>(utf8JsonReader.GetString());
                             break;
+                        case "user_taker":
+                            userTaker = new Option<string?>(utf8JsonReader.GetString());
+                            break;
+                        case "user_maker":
+                            userMaker = new Option<string?>(utf8JsonReader.GetString());
+                            break;
                         default:
                             break;
                     }
@@ -345,7 +387,7 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
             if (size.IsSet && size.Value == null)
                 throw new ArgumentNullException(nameof(size), "Property is not nullable for class V1Trade.");
 
-            return new V1Trade(symbolId, timeExchange, timeCoinapi, uuid, price, size, takerSide, idTrade, idOrderMaker, idOrderTaker);
+            return new V1Trade(symbolId, timeExchange, timeCoinapi, uuid, price, size, takerSide, idTrade, idOrderMaker, idOrderTaker, userTaker, userMaker);
         }
 
         /// <summary>
@@ -416,6 +458,18 @@ namespace APIBricks.CoinAPI.MarketDataAPI.REST.V1.Model
                     writer.WriteString("id_order_taker", v1Trade.IdOrderTaker);
                 else
                     writer.WriteNull("id_order_taker");
+
+            if (v1Trade.UserTakerOption.IsSet)
+                if (v1Trade.UserTakerOption.Value != null)
+                    writer.WriteString("user_taker", v1Trade.UserTaker);
+                else
+                    writer.WriteNull("user_taker");
+
+            if (v1Trade.UserMakerOption.IsSet)
+                if (v1Trade.UserMakerOption.Value != null)
+                    writer.WriteString("user_maker", v1Trade.UserMaker);
+                else
+                    writer.WriteNull("user_maker");
         }
     }
 }

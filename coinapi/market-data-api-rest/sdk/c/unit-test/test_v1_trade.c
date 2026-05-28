@@ -31,6 +31,8 @@ v1_trade_t* instantiate_v1_trade(int include_optional) {
       "0",
       "0",
       "0",
+      "0",
+      "0",
       "0"
     );
   } else {
@@ -41,6 +43,8 @@ v1_trade_t* instantiate_v1_trade(int include_optional) {
       "0",
       1.337,
       1.337,
+      "0",
+      "0",
       "0",
       "0",
       "0",

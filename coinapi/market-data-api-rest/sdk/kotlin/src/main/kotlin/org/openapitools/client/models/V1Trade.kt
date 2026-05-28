@@ -40,6 +40,8 @@ import com.squareup.moshi.JsonClass
  * @param idTrade The trade identifier.
  * @param idOrderMaker The order maker identifier.
  * @param idOrderTaker The order taker identifier.
+ * @param userTaker Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+ * @param userMaker Wallet address of the maker (passive) side. Present only for L4 data sources.
  */
 
 
@@ -83,7 +85,15 @@ data class V1Trade (
 
     /* The order taker identifier. */
     @Json(name = "id_order_taker")
-    val idOrderTaker: kotlin.String? = null
+    val idOrderTaker: kotlin.String? = null,
+
+    /* Wallet address of the taker (aggressive) side. Present only for L4 data sources. */
+    @Json(name = "user_taker")
+    val userTaker: kotlin.String? = null,
+
+    /* Wallet address of the maker (passive) side. Present only for L4 data sources. */
+    @Json(name = "user_maker")
+    val userMaker: kotlin.String? = null
 
 ) {
 

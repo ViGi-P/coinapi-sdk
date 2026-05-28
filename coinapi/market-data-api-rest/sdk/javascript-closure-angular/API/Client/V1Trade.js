@@ -76,3 +76,17 @@ API.Client.V1Trade.prototype.idOrderMaker;
  */
 API.Client.V1Trade.prototype.idOrderTaker;
 
+/**
+ * Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+ * @type {!string}
+ * @export
+ */
+API.Client.V1Trade.prototype.userTaker;
+
+/**
+ * Wallet address of the maker (passive) side. Present only for L4 data sources.
+ * @type {!string}
+ * @export
+ */
+API.Client.V1Trade.prototype.userMaker;
+

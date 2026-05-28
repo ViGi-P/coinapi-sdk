@@ -115,6 +115,20 @@ public:
 	/*! \brief Set The order taker identifier.
 	 */
 	void setIdOrderTaker(std::string  id_order_taker);
+	/*! \brief Get Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+	 */
+	std::string getUserTaker();
+
+	/*! \brief Set Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+	 */
+	void setUserTaker(std::string  user_taker);
+	/*! \brief Get Wallet address of the maker (passive) side. Present only for L4 data sources.
+	 */
+	std::string getUserMaker();
+
+	/*! \brief Set Wallet address of the maker (passive) side. Present only for L4 data sources.
+	 */
+	void setUserMaker(std::string  user_maker);
 
 private:
 	std::string symbol_id;
@@ -127,6 +141,8 @@ private:
 	std::string id_trade;
 	std::string id_order_maker;
 	std::string id_order_taker;
+	std::string user_taker;
+	std::string user_maker;
 	void __init();
 	void __cleanup();
 

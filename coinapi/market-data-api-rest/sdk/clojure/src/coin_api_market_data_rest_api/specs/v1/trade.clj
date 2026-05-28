@@ -17,6 +17,8 @@
    (ds/opt :id_trade) string?
    (ds/opt :id_order_maker) string?
    (ds/opt :id_order_taker) string?
+   (ds/opt :user_taker) string?
+   (ds/opt :user_maker) string?
    })
 
 (def v1/trade-spec

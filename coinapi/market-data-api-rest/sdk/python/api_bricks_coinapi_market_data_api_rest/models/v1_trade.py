@@ -40,7 +40,9 @@ class V1Trade(BaseModel):
     id_trade: Optional[StrictStr] = Field(default=None, description="The trade identifier.")
     id_order_maker: Optional[StrictStr] = Field(default=None, description="The order maker identifier.")
     id_order_taker: Optional[StrictStr] = Field(default=None, description="The order taker identifier.")
-    __properties: ClassVar[List[str]] = ["symbol_id", "time_exchange", "time_coinapi", "uuid", "price", "size", "taker_side", "id_trade", "id_order_maker", "id_order_taker"]
+    user_taker: Optional[StrictStr] = Field(default=None, description="Wallet address of the taker (aggressive) side. Present only for L4 data sources.")
+    user_maker: Optional[StrictStr] = Field(default=None, description="Wallet address of the maker (passive) side. Present only for L4 data sources.")
+    __properties: ClassVar[List[str]] = ["symbol_id", "time_exchange", "time_coinapi", "uuid", "price", "size", "taker_side", "id_trade", "id_order_maker", "id_order_taker", "user_taker", "user_maker"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -106,6 +108,16 @@ class V1Trade(BaseModel):
         if self.id_order_taker is None and "id_order_taker" in self.model_fields_set:
             _dict['id_order_taker'] = None
 
+        # set to None if user_taker (nullable) is None
+        # and model_fields_set contains the field
+        if self.user_taker is None and "user_taker" in self.model_fields_set:
+            _dict['user_taker'] = None
+
+        # set to None if user_maker (nullable) is None
+        # and model_fields_set contains the field
+        if self.user_maker is None and "user_maker" in self.model_fields_set:
+            _dict['user_maker'] = None
+
         return _dict
 
     @classmethod
@@ -127,7 +139,9 @@ class V1Trade(BaseModel):
             "taker_side": obj.get("taker_side"),
             "id_trade": obj.get("id_trade"),
             "id_order_maker": obj.get("id_order_maker"),
-            "id_order_taker": obj.get("id_order_taker")
+            "id_order_taker": obj.get("id_order_taker"),
+            "user_taker": obj.get("user_taker"),
+            "user_maker": obj.get("user_maker")
         })
         return _obj
 

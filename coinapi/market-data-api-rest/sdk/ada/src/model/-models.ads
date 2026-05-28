@@ -640,6 +640,8 @@ package .Models is
        Id_Trade : Swagger.Nullable_UString;
        Id_Order_Maker : Swagger.Nullable_UString;
        Id_Order_Taker : Swagger.Nullable_UString;
+       User_Taker : Swagger.Nullable_UString;
+       User_Maker : Swagger.Nullable_UString;
      end record;
 
 

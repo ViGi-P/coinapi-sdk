@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **id_trade** | **char \*** | The trade identifier. | [optional] 
 **id_order_maker** | **char \*** | The order maker identifier. | [optional] 
 **id_order_taker** | **char \*** | The order taker identifier. | [optional] 
+**user_taker** | **char \*** | Wallet address of the taker (aggressive) side. Present only for L4 data sources. | [optional] 
+**user_maker** | **char \*** | Wallet address of the maker (passive) side. Present only for L4 data sources. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -19,7 +19,7 @@ local function cast_v1_trade(t)
 	return setmetatable(t, v1_trade_mt)
 end
 
-local function new_v1_trade(symbol_id, time_exchange, time_coinapi, uuid, price, size, taker_side, id_trade, id_order_maker, id_order_taker)
+local function new_v1_trade(symbol_id, time_exchange, time_coinapi, uuid, price, size, taker_side, id_trade, id_order_maker, id_order_taker, user_taker, user_maker)
 	return cast_v1_trade({
 		["symbol_id"] = symbol_id;
 		["time_exchange"] = time_exchange;
@@ -31,6 +31,8 @@ local function new_v1_trade(symbol_id, time_exchange, time_coinapi, uuid, price,
 		["id_trade"] = id_trade;
 		["id_order_maker"] = id_order_maker;
 		["id_order_taker"] = id_order_taker;
+		["user_taker"] = user_taker;
+		["user_maker"] = user_maker;
 	})
 end
 

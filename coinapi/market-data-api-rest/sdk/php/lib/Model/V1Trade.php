@@ -68,7 +68,9 @@ class V1Trade implements ModelInterface, ArrayAccess, \JsonSerializable
         'taker_side' => 'string',
         'id_trade' => 'string',
         'id_order_maker' => 'string',
-        'id_order_taker' => 'string'
+        'id_order_taker' => 'string',
+        'user_taker' => 'string',
+        'user_maker' => 'string'
     ];
 
     /**
@@ -88,7 +90,9 @@ class V1Trade implements ModelInterface, ArrayAccess, \JsonSerializable
         'taker_side' => null,
         'id_trade' => null,
         'id_order_maker' => null,
-        'id_order_taker' => null
+        'id_order_taker' => null,
+        'user_taker' => null,
+        'user_maker' => null
     ];
 
     /**
@@ -106,7 +110,9 @@ class V1Trade implements ModelInterface, ArrayAccess, \JsonSerializable
         'taker_side' => true,
         'id_trade' => true,
         'id_order_maker' => true,
-        'id_order_taker' => true
+        'id_order_taker' => true,
+        'user_taker' => true,
+        'user_maker' => true
     ];
 
     /**
@@ -204,7 +210,9 @@ class V1Trade implements ModelInterface, ArrayAccess, \JsonSerializable
         'taker_side' => 'taker_side',
         'id_trade' => 'id_trade',
         'id_order_maker' => 'id_order_maker',
-        'id_order_taker' => 'id_order_taker'
+        'id_order_taker' => 'id_order_taker',
+        'user_taker' => 'user_taker',
+        'user_maker' => 'user_maker'
     ];
 
     /**
@@ -222,7 +230,9 @@ class V1Trade implements ModelInterface, ArrayAccess, \JsonSerializable
         'taker_side' => 'setTakerSide',
         'id_trade' => 'setIdTrade',
         'id_order_maker' => 'setIdOrderMaker',
-        'id_order_taker' => 'setIdOrderTaker'
+        'id_order_taker' => 'setIdOrderTaker',
+        'user_taker' => 'setUserTaker',
+        'user_maker' => 'setUserMaker'
     ];
 
     /**
@@ -240,7 +250,9 @@ class V1Trade implements ModelInterface, ArrayAccess, \JsonSerializable
         'taker_side' => 'getTakerSide',
         'id_trade' => 'getIdTrade',
         'id_order_maker' => 'getIdOrderMaker',
-        'id_order_taker' => 'getIdOrderTaker'
+        'id_order_taker' => 'getIdOrderTaker',
+        'user_taker' => 'getUserTaker',
+        'user_maker' => 'getUserMaker'
     ];
 
     /**
@@ -310,6 +322,8 @@ class V1Trade implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id_trade', $data ?? [], null);
         $this->setIfExists('id_order_maker', $data ?? [], null);
         $this->setIfExists('id_order_taker', $data ?? [], null);
+        $this->setIfExists('user_taker', $data ?? [], null);
+        $this->setIfExists('user_maker', $data ?? [], null);
     }
 
     /**
@@ -655,6 +669,74 @@ class V1Trade implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['id_order_taker'] = $id_order_taker;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_taker
+     *
+     * @return string|null
+     */
+    public function getUserTaker()
+    {
+        return $this->container['user_taker'];
+    }
+
+    /**
+     * Sets user_taker
+     *
+     * @param string|null $user_taker Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+     *
+     * @return self
+     */
+    public function setUserTaker($user_taker)
+    {
+        if (is_null($user_taker)) {
+            array_push($this->openAPINullablesSetToNull, 'user_taker');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('user_taker', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['user_taker'] = $user_taker;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_maker
+     *
+     * @return string|null
+     */
+    public function getUserMaker()
+    {
+        return $this->container['user_maker'];
+    }
+
+    /**
+     * Sets user_maker
+     *
+     * @param string|null $user_maker Wallet address of the maker (passive) side. Present only for L4 data sources.
+     *
+     * @return self
+     */
+    public function setUserMaker($user_maker)
+    {
+        if (is_null($user_maker)) {
+            array_push($this->openAPINullablesSetToNull, 'user_maker');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('user_maker', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['user_maker'] = $user_maker;
 
         return $this;
     }

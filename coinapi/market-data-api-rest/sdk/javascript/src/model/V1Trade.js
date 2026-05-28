@@ -78,6 +78,12 @@ class V1Trade {
             if (data.hasOwnProperty('id_order_taker')) {
                 obj['id_order_taker'] = ApiClient.convertToType(data['id_order_taker'], 'String');
             }
+            if (data.hasOwnProperty('user_taker')) {
+                obj['user_taker'] = ApiClient.convertToType(data['user_taker'], 'String');
+            }
+            if (data.hasOwnProperty('user_maker')) {
+                obj['user_maker'] = ApiClient.convertToType(data['user_maker'], 'String');
+            }
         }
         return obj;
     }
@@ -111,6 +117,14 @@ class V1Trade {
         // ensure the json data is a string
         if (data['id_order_taker'] && !(typeof data['id_order_taker'] === 'string' || data['id_order_taker'] instanceof String)) {
             throw new Error("Expected the field `id_order_taker` to be a primitive type in the JSON string but got " + data['id_order_taker']);
+        }
+        // ensure the json data is a string
+        if (data['user_taker'] && !(typeof data['user_taker'] === 'string' || data['user_taker'] instanceof String)) {
+            throw new Error("Expected the field `user_taker` to be a primitive type in the JSON string but got " + data['user_taker']);
+        }
+        // ensure the json data is a string
+        if (data['user_maker'] && !(typeof data['user_maker'] === 'string' || data['user_maker'] instanceof String)) {
+            throw new Error("Expected the field `user_maker` to be a primitive type in the JSON string but got " + data['user_maker']);
         }
 
         return true;
@@ -180,6 +194,18 @@ V1Trade.prototype['id_order_maker'] = undefined;
  * @member {String} id_order_taker
  */
 V1Trade.prototype['id_order_taker'] = undefined;
+
+/**
+ * Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+ * @member {String} user_taker
+ */
+V1Trade.prototype['user_taker'] = undefined;
+
+/**
+ * Wallet address of the maker (passive) side. Present only for L4 data sources.
+ * @member {String} user_maker
+ */
+V1Trade.prototype['user_maker'] = undefined;
 
 
 

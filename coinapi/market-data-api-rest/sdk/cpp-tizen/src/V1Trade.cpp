@@ -33,6 +33,8 @@ V1.Trade::__init()
 	//id_trade = std::string();
 	//id_order_maker = std::string();
 	//id_order_taker = std::string();
+	//user_taker = std::string();
+	//user_maker = std::string();
 }
 
 void
@@ -87,6 +89,16 @@ V1.Trade::__cleanup()
 	//
 	//delete id_order_taker;
 	//id_order_taker = NULL;
+	//}
+	//if(user_taker != NULL) {
+	//
+	//delete user_taker;
+	//user_taker = NULL;
+	//}
+	//if(user_maker != NULL) {
+	//
+	//delete user_maker;
+	//user_maker = NULL;
 	//}
 	//
 }
@@ -206,6 +218,28 @@ V1.Trade::fromJson(char* jsonStr)
 			
 		}
 	}
+	const gchar *user_takerKey = "user_taker";
+	node = json_object_get_member(pJsonObject, user_takerKey);
+	if (node !=NULL) {
+	
+
+		if (isprimitive("std::string")) {
+			jsonToValue(&user_taker, node, "std::string", "");
+		} else {
+			
+		}
+	}
+	const gchar *user_makerKey = "user_maker";
+	node = json_object_get_member(pJsonObject, user_makerKey);
+	if (node !=NULL) {
+	
+
+		if (isprimitive("std::string")) {
+			jsonToValue(&user_maker, node, "std::string", "");
+		} else {
+			
+		}
+	}
 }
 
 V1.Trade::V1.Trade(char* json)
@@ -308,6 +342,24 @@ V1.Trade::toJson()
 	}
 	const gchar *id_order_takerKey = "id_order_taker";
 	json_object_set_member(pJsonObject, id_order_takerKey, node);
+	if (isprimitive("std::string")) {
+		std::string obj = getUserTaker();
+		node = converttoJson(&obj, "std::string", "");
+	}
+	else {
+		
+	}
+	const gchar *user_takerKey = "user_taker";
+	json_object_set_member(pJsonObject, user_takerKey, node);
+	if (isprimitive("std::string")) {
+		std::string obj = getUserMaker();
+		node = converttoJson(&obj, "std::string", "");
+	}
+	else {
+		
+	}
+	const gchar *user_makerKey = "user_maker";
+	json_object_set_member(pJsonObject, user_makerKey, node);
 	node = json_node_alloc();
 	json_node_init(node, JSON_NODE_OBJECT);
 	json_node_take_object(node, pJsonObject);
@@ -434,6 +486,30 @@ void
 V1.Trade::setIdOrderTaker(std::string  id_order_taker)
 {
 	this->id_order_taker = id_order_taker;
+}
+
+std::string
+V1.Trade::getUserTaker()
+{
+	return user_taker;
+}
+
+void
+V1.Trade::setUserTaker(std::string  user_taker)
+{
+	this->user_taker = user_taker;
+}
+
+std::string
+V1.Trade::getUserMaker()
+{
+	return user_maker;
+}
+
+void
+V1.Trade::setUserMaker(std::string  user_maker)
+{
+	this->user_maker = user_maker;
 }
 
 

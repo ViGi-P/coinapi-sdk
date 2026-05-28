@@ -93,5 +93,17 @@ class V1TradeTest : ShouldSpec() {
             //modelInstance.idOrderTaker shouldBe ("TODO")
         }
 
+        // to test the property `userTaker` - Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+        should("test userTaker") {
+            // uncomment below to test the property
+            //modelInstance.userTaker shouldBe ("TODO")
+        }
+
+        // to test the property `userMaker` - Wallet address of the maker (passive) side. Present only for L4 data sources.
+        should("test userMaker") {
+            // uncomment below to test the property
+            //modelInstance.userMaker shouldBe ("TODO")
+        }
+
     }
 }

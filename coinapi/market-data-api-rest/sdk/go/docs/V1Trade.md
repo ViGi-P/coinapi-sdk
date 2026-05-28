@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **IdTrade** | Pointer to **NullableString** | The trade identifier. | [optional] 
 **IdOrderMaker** | Pointer to **NullableString** | The order maker identifier. | [optional] 
 **IdOrderTaker** | Pointer to **NullableString** | The order taker identifier. | [optional] 
+**UserTaker** | Pointer to **NullableString** | Wallet address of the taker (aggressive) side. Present only for L4 data sources. | [optional] 
+**UserMaker** | Pointer to **NullableString** | Wallet address of the maker (passive) side. Present only for L4 data sources. | [optional] 
 
 ## Methods
 
@@ -334,6 +336,76 @@ HasIdOrderTaker returns a boolean if a field has been set.
 `func (o *V1Trade) UnsetIdOrderTaker()`
 
 UnsetIdOrderTaker ensures that no value is present for IdOrderTaker, not even an explicit nil
+### GetUserTaker
+
+`func (o *V1Trade) GetUserTaker() string`
+
+GetUserTaker returns the UserTaker field if non-nil, zero value otherwise.
+
+### GetUserTakerOk
+
+`func (o *V1Trade) GetUserTakerOk() (*string, bool)`
+
+GetUserTakerOk returns a tuple with the UserTaker field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserTaker
+
+`func (o *V1Trade) SetUserTaker(v string)`
+
+SetUserTaker sets UserTaker field to given value.
+
+### HasUserTaker
+
+`func (o *V1Trade) HasUserTaker() bool`
+
+HasUserTaker returns a boolean if a field has been set.
+
+### SetUserTakerNil
+
+`func (o *V1Trade) SetUserTakerNil(b bool)`
+
+ SetUserTakerNil sets the value for UserTaker to be an explicit nil
+
+### UnsetUserTaker
+`func (o *V1Trade) UnsetUserTaker()`
+
+UnsetUserTaker ensures that no value is present for UserTaker, not even an explicit nil
+### GetUserMaker
+
+`func (o *V1Trade) GetUserMaker() string`
+
+GetUserMaker returns the UserMaker field if non-nil, zero value otherwise.
+
+### GetUserMakerOk
+
+`func (o *V1Trade) GetUserMakerOk() (*string, bool)`
+
+GetUserMakerOk returns a tuple with the UserMaker field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserMaker
+
+`func (o *V1Trade) SetUserMaker(v string)`
+
+SetUserMaker sets UserMaker field to given value.
+
+### HasUserMaker
+
+`func (o *V1Trade) HasUserMaker() bool`
+
+HasUserMaker returns a boolean if a field has been set.
+
+### SetUserMakerNil
+
+`func (o *V1Trade) SetUserMakerNil(b bool)`
+
+ SetUserMakerNil sets the value for UserMaker to be an explicit nil
+
+### UnsetUserMaker
+`func (o *V1Trade) UnsetUserMaker()`
+
+UnsetUserMaker ensures that no value is present for UserMaker, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

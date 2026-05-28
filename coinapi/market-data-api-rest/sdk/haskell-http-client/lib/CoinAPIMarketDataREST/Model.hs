@@ -1745,6 +1745,8 @@ data V1Trade = V1Trade
   , v1TradeIdTrade :: !(Maybe Text) -- ^ "id_trade" - The trade identifier.
   , v1TradeIdOrderMaker :: !(Maybe Text) -- ^ "id_order_maker" - The order maker identifier.
   , v1TradeIdOrderTaker :: !(Maybe Text) -- ^ "id_order_taker" - The order taker identifier.
+  , v1TradeUserTaker :: !(Maybe Text) -- ^ "user_taker" - Wallet address of the taker (aggressive) side. Present only for L4 data sources.
+  , v1TradeUserMaker :: !(Maybe Text) -- ^ "user_maker" - Wallet address of the maker (passive) side. Present only for L4 data sources.
   } deriving (P.Show, P.Eq, P.Typeable)
 
 -- | FromJSON V1Trade
@@ -1761,6 +1763,8 @@ instance A.FromJSON V1Trade where
       <*> (o .:? "id_trade")
       <*> (o .:? "id_order_maker")
       <*> (o .:? "id_order_taker")
+      <*> (o .:? "user_taker")
+      <*> (o .:? "user_maker")
 
 -- | ToJSON V1Trade
 instance A.ToJSON V1Trade where
@@ -1776,6 +1780,8 @@ instance A.ToJSON V1Trade where
       , "id_trade" .= v1TradeIdTrade
       , "id_order_maker" .= v1TradeIdOrderMaker
       , "id_order_taker" .= v1TradeIdOrderTaker
+      , "user_taker" .= v1TradeUserTaker
+      , "user_maker" .= v1TradeUserMaker
       ]
 
 
@@ -1794,6 +1800,8 @@ mkV1Trade =
   , v1TradeIdTrade = Nothing
   , v1TradeIdOrderMaker = Nothing
   , v1TradeIdOrderTaker = Nothing
+  , v1TradeUserTaker = Nothing
+  , v1TradeUserMaker = Nothing
   }
 
 
