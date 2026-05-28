@@ -24,6 +24,7 @@ package .Clients is
    procedure V_1Symbols_Exchange_Id_Get
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;
+       Filter_Symbol_Id : in Swagger.Nullable_UString;
        Result : out .Models.FinFeedAPISymbolModel_Type_Vectors.Vector);
 
    --  Get Admin Messages

@@ -34,7 +34,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_symbols_exchange_id_get**
-> v1_symbols_exchange_id_get (exchange_id: STRING_32 ): detachable LIST [FIN_FEED_API_SYMBOL_MODEL]
+> v1_symbols_exchange_id_get (exchange_id: STRING_32 ; filter_symbol_id:  detachable STRING_32 ): detachable LIST [FIN_FEED_API_SYMBOL_MODEL]
 
 
 List of symbols for the exchange
@@ -44,7 +44,8 @@ List of symbols for the exchange
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exchange_id** | **STRING_32**|  | [default to null]
+ **exchange_id** | **STRING_32**| The ID of the exchange (from the Metadata -&gt; Exchanges) | [default to null]
+ **filter_symbol_id** | **STRING_32**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] [default to null]
 
 ### Return type
 

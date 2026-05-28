@@ -66,10 +66,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeId"></param>
+        /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
+        /// <param name="filterSymbolId">Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdGetApiResponse"/>&gt;</returns>
-        Task<IV1SymbolsExchangeIdGetApiResponse> V1SymbolsExchangeIdGetAsync(string exchangeId, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1SymbolsExchangeIdGetApiResponse> V1SymbolsExchangeIdGetAsync(string exchangeId, Option<string> filterSymbolId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List of symbols for the exchange
@@ -77,10 +78,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <param name="exchangeId"></param>
+        /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
+        /// <param name="filterSymbolId">Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdGetApiResponse"/>?&gt;</returns>
-        Task<IV1SymbolsExchangeIdGetApiResponse?> V1SymbolsExchangeIdGetOrDefaultAsync(string exchangeId, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1SymbolsExchangeIdGetApiResponse?> V1SymbolsExchangeIdGetOrDefaultAsync(string exchangeId, Option<string> filterSymbolId = default, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -442,17 +444,21 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatV1SymbolsExchangeIdGet(ref string exchangeId);
+        partial void FormatV1SymbolsExchangeIdGet(ref string exchangeId, ref Option<string> filterSymbolId);
 
         /// <summary>
         /// Validates the request parameters
         /// </summary>
         /// <param name="exchangeId"></param>
+        /// <param name="filterSymbolId"></param>
         /// <returns></returns>
-        private void ValidateV1SymbolsExchangeIdGet(string exchangeId)
+        private void ValidateV1SymbolsExchangeIdGet(string exchangeId, Option<string> filterSymbolId)
         {
             if (exchangeId == null)
                 throw new ArgumentNullException(nameof(exchangeId));
+
+            if (filterSymbolId.IsSet && filterSymbolId.Value == null)
+                throw new ArgumentNullException(nameof(filterSymbolId));
         }
 
         /// <summary>
@@ -460,10 +466,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// </summary>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="exchangeId"></param>
-        private void AfterV1SymbolsExchangeIdGetDefaultImplementation(IV1SymbolsExchangeIdGetApiResponse apiResponseLocalVar, string exchangeId)
+        /// <param name="filterSymbolId"></param>
+        private void AfterV1SymbolsExchangeIdGetDefaultImplementation(IV1SymbolsExchangeIdGetApiResponse apiResponseLocalVar, string exchangeId, Option<string> filterSymbolId)
         {
             bool suppressDefaultLog = false;
-            AfterV1SymbolsExchangeIdGet(ref suppressDefaultLog, apiResponseLocalVar, exchangeId);
+            AfterV1SymbolsExchangeIdGet(ref suppressDefaultLog, apiResponseLocalVar, exchangeId, filterSymbolId);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -474,7 +481,8 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// <param name="suppressDefaultLog"></param>
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="exchangeId"></param>
-        partial void AfterV1SymbolsExchangeIdGet(ref bool suppressDefaultLog, IV1SymbolsExchangeIdGetApiResponse apiResponseLocalVar, string exchangeId);
+        /// <param name="filterSymbolId"></param>
+        partial void AfterV1SymbolsExchangeIdGet(ref bool suppressDefaultLog, IV1SymbolsExchangeIdGetApiResponse apiResponseLocalVar, string exchangeId, Option<string> filterSymbolId);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -483,10 +491,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="exchangeId"></param>
-        private void OnErrorV1SymbolsExchangeIdGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId)
+        /// <param name="filterSymbolId"></param>
+        private void OnErrorV1SymbolsExchangeIdGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, Option<string> filterSymbolId)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorV1SymbolsExchangeIdGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, exchangeId);
+            OnErrorV1SymbolsExchangeIdGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, exchangeId, filterSymbolId);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -499,19 +508,21 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// <param name="pathFormatLocalVar"></param>
         /// <param name="pathLocalVar"></param>
         /// <param name="exchangeId"></param>
-        partial void OnErrorV1SymbolsExchangeIdGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId);
+        /// <param name="filterSymbolId"></param>
+        partial void OnErrorV1SymbolsExchangeIdGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, Option<string> filterSymbolId);
 
         /// <summary>
         /// List of symbols for the exchange 
         /// </summary>
-        /// <param name="exchangeId"></param>
+        /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
+        /// <param name="filterSymbolId">Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdGetApiResponse"/>&gt;</returns>
-        public async Task<IV1SymbolsExchangeIdGetApiResponse?> V1SymbolsExchangeIdGetOrDefaultAsync(string exchangeId, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1SymbolsExchangeIdGetApiResponse?> V1SymbolsExchangeIdGetOrDefaultAsync(string exchangeId, Option<string> filterSymbolId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await V1SymbolsExchangeIdGetAsync(exchangeId, cancellationToken).ConfigureAwait(false);
+                return await V1SymbolsExchangeIdGetAsync(exchangeId, filterSymbolId, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -523,18 +534,19 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// List of symbols for the exchange 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-        /// <param name="exchangeId"></param>
+        /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
+        /// <param name="filterSymbolId">Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdGetApiResponse"/>&gt;</returns>
-        public async Task<IV1SymbolsExchangeIdGetApiResponse> V1SymbolsExchangeIdGetAsync(string exchangeId, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1SymbolsExchangeIdGetApiResponse> V1SymbolsExchangeIdGetAsync(string exchangeId, Option<string> filterSymbolId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
             try
             {
-                ValidateV1SymbolsExchangeIdGet(exchangeId);
+                ValidateV1SymbolsExchangeIdGet(exchangeId, filterSymbolId);
 
-                FormatV1SymbolsExchangeIdGet(ref exchangeId);
+                FormatV1SymbolsExchangeIdGet(ref exchangeId, ref filterSymbolId);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -545,6 +557,13 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                         ? "/v1/symbols/{exchange_id}"
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/v1/symbols/{exchange_id}");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bexchange_id%7D", Uri.EscapeDataString(exchangeId.ToString()));
+
+                    System.Collections.Specialized.NameValueCollection parseQueryStringLocalVar = System.Web.HttpUtility.ParseQueryString(string.Empty);
+
+                    if (filterSymbolId.IsSet)
+                        parseQueryStringLocalVar["filter_symbol_id"] = ClientUtils.ParameterToString(filterSymbolId.Value);
+
+                    uriBuilderLocalVar.Query = parseQueryStringLocalVar.ToString();
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     ApiKeyToken apiKeyTokenLocalVar1 = (ApiKeyToken) await ApiKeyProvider.GetAsync("Authorization", cancellationToken).ConfigureAwait(false);
@@ -588,7 +607,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                             }
                         }
 
-                        AfterV1SymbolsExchangeIdGetDefaultImplementation(apiResponseLocalVar, exchangeId);
+                        AfterV1SymbolsExchangeIdGetDefaultImplementation(apiResponseLocalVar, exchangeId, filterSymbolId);
 
                         Events.ExecuteOnV1SymbolsExchangeIdGet(apiResponseLocalVar);
 
@@ -602,7 +621,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorV1SymbolsExchangeIdGetDefaultImplementation(e, "/v1/symbols/{exchange_id}", uriBuilderLocalVar.Path, exchangeId);
+                OnErrorV1SymbolsExchangeIdGetDefaultImplementation(e, "/v1/symbols/{exchange_id}", uriBuilderLocalVar.Path, exchangeId, filterSymbolId);
                 Events.ExecuteOnErrorV1SymbolsExchangeIdGet(e);
                 throw;
             }

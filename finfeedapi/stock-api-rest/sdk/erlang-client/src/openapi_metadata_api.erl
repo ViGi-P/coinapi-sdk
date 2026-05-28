@@ -39,7 +39,7 @@ v1_symbols_exchange_id_get(Ctx, ExchangeId, Optional) ->
 
     Method = get,
     Path = [?BASE_URL, "/v1/symbols/", ExchangeId, ""],
-    QS = [],
+    QS = lists:flatten([])++openapi_utils:optional_params(['filter_symbol_id'], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),

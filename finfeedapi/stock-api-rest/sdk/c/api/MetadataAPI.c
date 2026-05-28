@@ -92,9 +92,9 @@ end:
 // List of symbols for the exchange
 //
 list_t*
-MetadataAPI_v1SymbolsExchangeIdGet(apiClient_t *apiClient, char *exchange_id)
+MetadataAPI_v1SymbolsExchangeIdGet(apiClient_t *apiClient, char *exchange_id, char *filter_symbol_id)
 {
-    list_t    *localVarQueryParameters = NULL;
+    list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
     list_t    *localVarFormParameters = NULL;
     list_t *localVarHeaderType = list_createList();
@@ -123,6 +123,18 @@ MetadataAPI_v1SymbolsExchangeIdGet(apiClient_t *apiClient, char *exchange_id)
     localVarPath = strReplace(localVarPath, localVarToReplace_exchange_id, exchange_id);
 
 
+
+    // query parameters
+    char *keyQuery_filter_symbol_id = NULL;
+    char * valueQuery_filter_symbol_id = NULL;
+    keyValuePair_t *keyPairQuery_filter_symbol_id = 0;
+    if (filter_symbol_id)
+    {
+        keyQuery_filter_symbol_id = strdup("filter_symbol_id");
+        valueQuery_filter_symbol_id = strdup((filter_symbol_id));
+        keyPairQuery_filter_symbol_id = keyValuePair_create(keyQuery_filter_symbol_id, valueQuery_filter_symbol_id);
+        list_addElement(localVarQueryParameters,keyPairQuery_filter_symbol_id);
+    }
     list_addElement(localVarHeaderType,"text/plain"); //produces
     list_addElement(localVarHeaderType,"application/json"); //produces
     list_addElement(localVarHeaderType,"text/json"); //produces
@@ -168,13 +180,25 @@ MetadataAPI_v1SymbolsExchangeIdGet(apiClient_t *apiClient, char *exchange_id)
         apiClient->dataReceived = NULL;
         apiClient->dataReceivedLen = 0;
     }
-    
+    list_freeList(localVarQueryParameters);
     
     
     list_freeList(localVarHeaderType);
     
     free(localVarPath);
     free(localVarToReplace_exchange_id);
+    if(keyQuery_filter_symbol_id){
+        free(keyQuery_filter_symbol_id);
+        keyQuery_filter_symbol_id = NULL;
+    }
+    if(valueQuery_filter_symbol_id){
+        free(valueQuery_filter_symbol_id);
+        valueQuery_filter_symbol_id = NULL;
+    }
+    if(keyPairQuery_filter_symbol_id){
+        keyValuePair_free(keyPairQuery_filter_symbol_id);
+        keyPairQuery_filter_symbol_id = NULL;
+    }
     return elementToReturn;
 end:
     free(localVarPath);

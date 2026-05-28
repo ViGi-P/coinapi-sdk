@@ -73,7 +73,7 @@ This endpoint does not need any parameter.
 ## `v1SymbolsExchangeIdGet()`
 
 ```php
-v1SymbolsExchangeIdGet($exchange_id): \OpenAPI\Client\Model\FinFeedAPISymbolModel[]
+v1SymbolsExchangeIdGet($exchange_id, $filter_symbol_id): \OpenAPI\Client\Model\FinFeedAPISymbolModel[]
 ```
 
 List of symbols for the exchange
@@ -100,10 +100,11 @@ $apiInstance = new OpenAPI\Client\Api\MetadataApi(
     new GuzzleHttp\Client(),
     $config
 );
-$exchange_id = 'exchange_id_example'; // string
+$exchange_id = 'exchange_id_example'; // string | The ID of the exchange (from the Metadata -> Exchanges)
+$filter_symbol_id = 'filter_symbol_id_example'; // string | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
 
 try {
-    $result = $apiInstance->v1SymbolsExchangeIdGet($exchange_id);
+    $result = $apiInstance->v1SymbolsExchangeIdGet($exchange_id, $filter_symbol_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MetadataApi->v1SymbolsExchangeIdGet: ', $e->getMessage(), PHP_EOL;
@@ -114,7 +115,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **exchange_id** | **string**|  | |
+| **exchange_id** | **string**| The ID of the exchange (from the Metadata -&gt; Exchanges) | |
+| **filter_symbol_id** | **string**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] |
 
 ### Return type
 

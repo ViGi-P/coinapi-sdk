@@ -53,7 +53,8 @@ private class OASMetadataApiTest {
         Test.setMock(HttpCalloutMock.class, new OASResponseMock(res));
 
         Map<String, Object> params = new Map<String, Object>{
-            'exchangeId' => 'null'
+            'exchangeId' => 'null',
+            'filterSymbolId' => 'null'
         };
 
         OASClient client;

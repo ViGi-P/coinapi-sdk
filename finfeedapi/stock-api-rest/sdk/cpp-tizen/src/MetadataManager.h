@@ -54,26 +54,28 @@ bool v1ExchangesGetAsync(char * accessToken,
 /*! \brief List of symbols for the exchange. *Synchronous*
  *
  * 
- * \param exchangeId  *Required*
+ * \param exchangeId The ID of the exchange (from the Metadata -> Exchanges) *Required*
+ * \param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1SymbolsExchangeIdGetSync(char * accessToken,
-	std::string exchangeId, 
+	std::string exchangeId, std::string filterSymbolId, 
 	void(* handler)(std::list<FinFeedAPI.SymbolModel>, Error, void* )
 	, void* userData);
 
 /*! \brief List of symbols for the exchange. *Asynchronous*
  *
  * 
- * \param exchangeId  *Required*
+ * \param exchangeId The ID of the exchange (from the Metadata -> Exchanges) *Required*
+ * \param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1SymbolsExchangeIdGetAsync(char * accessToken,
-	std::string exchangeId, 
+	std::string exchangeId, std::string filterSymbolId, 
 	void(* handler)(std::list<FinFeedAPI.SymbolModel>, Error, void* )
 	, void* userData);
 

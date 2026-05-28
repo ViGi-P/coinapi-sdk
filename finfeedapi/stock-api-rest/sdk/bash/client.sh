@@ -97,6 +97,7 @@ declare -a result_color_table=( "$WHITE" "$WHITE" "$GREEN" "$YELLOW" "$WHITE" "$
 # 1 - required
 declare -A operation_parameters_minimum_occurrences
 operation_parameters_minimum_occurrences["v1SymbolsExchangeIdGet:::exchange_id"]=1
+operation_parameters_minimum_occurrences["v1SymbolsExchangeIdGet:::filter_symbol_id"]=0
 operation_parameters_minimum_occurrences["v1NativeIexAdminMessagesSymbolGet:::symbol"]=1
 operation_parameters_minimum_occurrences["v1NativeIexAdminMessagesSymbolGet:::date"]=1
 operation_parameters_minimum_occurrences["v1NativeIexAdminSystemEventGet:::date"]=1
@@ -131,6 +132,7 @@ operation_parameters_minimum_occurrences["v1OhlcvExchangeSymbolExchangeIdSymbolI
 # 0 - unlimited
 declare -A operation_parameters_maximum_occurrences
 operation_parameters_maximum_occurrences["v1SymbolsExchangeIdGet:::exchange_id"]=0
+operation_parameters_maximum_occurrences["v1SymbolsExchangeIdGet:::filter_symbol_id"]=0
 operation_parameters_maximum_occurrences["v1NativeIexAdminMessagesSymbolGet:::symbol"]=0
 operation_parameters_maximum_occurrences["v1NativeIexAdminMessagesSymbolGet:::date"]=0
 operation_parameters_maximum_occurrences["v1NativeIexAdminSystemEventGet:::date"]=0
@@ -162,6 +164,7 @@ operation_parameters_maximum_occurrences["v1OhlcvExchangeSymbolExchangeIdSymbolI
 # - multi, csv, ssv, tsv
 declare -A operation_parameters_collection_type
 operation_parameters_collection_type["v1SymbolsExchangeIdGet:::exchange_id"]=""
+operation_parameters_collection_type["v1SymbolsExchangeIdGet:::filter_symbol_id"]=""
 operation_parameters_collection_type["v1NativeIexAdminMessagesSymbolGet:::symbol"]=""
 operation_parameters_collection_type["v1NativeIexAdminMessagesSymbolGet:::date"]=""
 operation_parameters_collection_type["v1NativeIexAdminSystemEventGet:::date"]=""
@@ -695,7 +698,9 @@ print_v1SymbolsExchangeIdGet_help() {
     echo -e "${BOLD}${WHITE}v1SymbolsExchangeIdGet - List of symbols for the exchange${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
-    echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} -  ${YELLOW}Specify as: exchange_id=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The ID of the exchange (from the Metadata -> Exchanges) ${YELLOW}Specify as: exchange_id=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}filter_symbol_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. 'TSLA' or 'TSLA,NVDA')${YELLOW} Specify as: filter_symbol_id=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
@@ -967,7 +972,7 @@ call_v1SymbolsExchangeIdGet() {
     local path_parameter_names=(exchange_id)
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(    )
+    local query_parameter_names=(filter_symbol_id    )
     local path
 
     if ! path=$(build_request_path "/v1/symbols/{exchange_id}" path_parameter_names query_parameter_names); then

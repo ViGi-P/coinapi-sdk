@@ -51,7 +51,8 @@ public class MetadataApiTest {
     @Test
     public void v1SymbolsExchangeIdGetTest() throws ApiException {
         String exchangeId = null;
-        List<FinFeedAPISymbolModel> response = api.v1SymbolsExchangeIdGet(exchangeId);
+        String filterSymbolId = null;
+        List<FinFeedAPISymbolModel> response = api.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId);
         // TODO: test validations
     }
 

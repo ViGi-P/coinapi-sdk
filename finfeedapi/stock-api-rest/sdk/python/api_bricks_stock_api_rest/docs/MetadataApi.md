@@ -88,7 +88,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_symbols_exchange_id_get**
-> List[FinFeedAPISymbolModel] v1_symbols_exchange_id_get(exchange_id)
+> List[FinFeedAPISymbolModel] v1_symbols_exchange_id_get(exchange_id, filter_symbol_id=filter_symbol_id)
 
 List of symbols for the exchange
 
@@ -129,11 +129,12 @@ configuration = api_bricks_stock_api_rest.Configuration(
 with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = api_bricks_stock_api_rest.MetadataApi(api_client)
-    exchange_id = 'exchange_id_example' # str | 
+    exchange_id = 'exchange_id_example' # str | The ID of the exchange (from the Metadata -> Exchanges)
+    filter_symbol_id = 'filter_symbol_id_example' # str | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`) (optional)
 
     try:
         # List of symbols for the exchange
-        api_response = api_instance.v1_symbols_exchange_id_get(exchange_id)
+        api_response = api_instance.v1_symbols_exchange_id_get(exchange_id, filter_symbol_id=filter_symbol_id)
         print("The response of MetadataApi->v1_symbols_exchange_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -147,7 +148,8 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exchange_id** | **str**|  | 
+ **exchange_id** | **str**| The ID of the exchange (from the Metadata -&gt; Exchanges) | 
+ **filter_symbol_id** | **str**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] 
 
 ### Return type
 

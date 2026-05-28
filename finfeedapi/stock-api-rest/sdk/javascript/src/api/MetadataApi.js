@@ -81,11 +81,14 @@ export default class MetadataApi {
 
     /**
      * List of symbols for the exchange
-     * @param {String} exchangeId 
+     * @param {String} exchangeId The ID of the exchange (from the Metadata -> Exchanges)
+     * @param {Object} opts Optional parameters
+     * @param {String} [filterSymbolId] Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
      * @param {module:api/MetadataApi~v1SymbolsExchangeIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/FinFeedAPISymbolModel>}
      */
-    v1SymbolsExchangeIdGet(exchangeId, callback) {
+    v1SymbolsExchangeIdGet(exchangeId, opts, callback) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'exchangeId' is set
       if (exchangeId === undefined || exchangeId === null) {
@@ -96,6 +99,7 @@ export default class MetadataApi {
         'exchange_id': exchangeId
       };
       let queryParams = {
+        'filter_symbol_id': opts['filterSymbolId']
       };
       let headerParams = {
       };

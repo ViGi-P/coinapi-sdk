@@ -45,8 +45,9 @@ class MetadataApiTest : ShouldSpec() {
         // to test v1SymbolsExchangeIdGet
         should("test v1SymbolsExchangeIdGet") {
             // uncomment below to test v1SymbolsExchangeIdGet
-            //val exchangeId : kotlin.String = exchangeId_example // kotlin.String | 
-            //val result : kotlin.collections.List<FinFeedAPISymbolModel> = apiInstance.v1SymbolsExchangeIdGet(exchangeId)
+            //val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of the exchange (from the Metadata -> Exchanges)
+            //val filterSymbolId : kotlin.String = filterSymbolId_example // kotlin.String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
+            //val result : kotlin.collections.List<FinFeedAPISymbolModel> = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId)
             //result shouldBe ("TODO")
         }
 

@@ -43,6 +43,7 @@ package body .Clients is
    procedure V_1Symbols_Exchange_Id_Get
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;
+       Filter_Symbol_Id : in Swagger.Nullable_UString;
        Result : out .Models.FinFeedAPISymbolModel_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -50,6 +51,7 @@ package body .Clients is
       Client.Set_Accept (Media_List_1);
 
 
+      URI.Add_Param ("filter_symbol_id", Filter_Symbol_Id);
       URI.Set_Path ("/v1/symbols/{exchange_id}");
       URI.Set_Path_Param ("exchange_id", Exchange_Id);
       Client.Call (Swagger.Clients.GET, URI, Reply);

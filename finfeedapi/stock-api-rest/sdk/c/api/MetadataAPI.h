@@ -18,6 +18,6 @@ MetadataAPI_v1ExchangesGet(apiClient_t *apiClient);
 // List of symbols for the exchange
 //
 list_t*
-MetadataAPI_v1SymbolsExchangeIdGet(apiClient_t *apiClient, char *exchange_id);
+MetadataAPI_v1SymbolsExchangeIdGet(apiClient_t *apiClient, char *exchange_id, char *filter_symbol_id);
 
 

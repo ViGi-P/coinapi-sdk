@@ -36,7 +36,8 @@
 #' ####################  V1SymbolsExchangeIdGet  ####################
 #'
 #' library(openapi)
-#' var_exchange_id <- "exchange_id_example" # character | 
+#' var_exchange_id <- "exchange_id_example" # character | The ID of the exchange (from the Metadata -> Exchanges)
+#' var_filter_symbol_id <- "filter_symbol_id_example" # character | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`) (Optional)
 #'
 #' #List of symbols for the exchange
 #' api_instance <- MetadataApi$new()
@@ -48,8 +49,8 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1SymbolsExchangeIdGet(var_exchange_iddata_file = "result.txt")
-#' result <- api_instance$V1SymbolsExchangeIdGet(var_exchange_id)
+#' # result <- api_instance$V1SymbolsExchangeIdGet(var_exchange_id, filter_symbol_id = var_filter_symbol_iddata_file = "result.txt")
+#' result <- api_instance$V1SymbolsExchangeIdGet(var_exchange_id, filter_symbol_id = var_filter_symbol_id)
 #' dput(result)
 #'
 #'
@@ -182,14 +183,15 @@ MetadataApi <- R6::R6Class(
     #' @description
     #' List of symbols for the exchange
     #'
-    #' @param exchange_id 
+    #' @param exchange_id The ID of the exchange (from the Metadata -> Exchanges)
+    #' @param filter_symbol_id (optional) Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[FinFeedAPISymbolModel]
-    V1SymbolsExchangeIdGet = function(exchange_id, data_file = NULL, ..., .parse = TRUE) {
-      local_var_response <- self$V1SymbolsExchangeIdGetWithHttpInfo(exchange_id, data_file = data_file, ..., .parse = .parse)
+    V1SymbolsExchangeIdGet = function(exchange_id, filter_symbol_id = NULL, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1SymbolsExchangeIdGetWithHttpInfo(exchange_id, filter_symbol_id, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -204,13 +206,14 @@ MetadataApi <- R6::R6Class(
     #' @description
     #' List of symbols for the exchange
     #'
-    #' @param exchange_id 
+    #' @param exchange_id The ID of the exchange (from the Metadata -> Exchanges)
+    #' @param filter_symbol_id (optional) Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[FinFeedAPISymbolModel]) with additional information such as HTTP status code, headers
-    V1SymbolsExchangeIdGetWithHttpInfo = function(exchange_id, data_file = NULL, ..., .parse = TRUE) {
+    V1SymbolsExchangeIdGetWithHttpInfo = function(exchange_id, filter_symbol_id = NULL, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -227,6 +230,12 @@ MetadataApi <- R6::R6Class(
       if (!missing(`exchange_id`) && is.null(`exchange_id`)) {
         stop("Invalid value for `exchange_id` when calling MetadataApi$V1SymbolsExchangeIdGet, `exchange_id` is not nullable")
       }
+
+      if (!missing(`filter_symbol_id`) && is.null(`filter_symbol_id`)) {
+        stop("Invalid value for `filter_symbol_id` when calling MetadataApi$V1SymbolsExchangeIdGet, `filter_symbol_id` is not nullable")
+      }
+
+      query_params[["filter_symbol_id"]] <- `filter_symbol_id`
 
       local_var_url_path <- "/v1/symbols/{exchange_id}"
       if (!missing(`exchange_id`)) {

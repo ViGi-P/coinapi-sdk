@@ -166,9 +166,10 @@ export class MetadataApi {
     /**
      * 
      * @summary List of symbols for the exchange
-     * @param exchangeId 
+     * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
+     * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
      */
-    public async v1SymbolsExchangeIdGet (exchangeId: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<FinFeedAPISymbolModel>;  }> {
+    public async v1SymbolsExchangeIdGet (exchangeId: string, filterSymbolId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<FinFeedAPISymbolModel>;  }> {
         const localVarPath = this.basePath + '/v1/symbols/{exchange_id}'
             .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
@@ -185,6 +186,10 @@ export class MetadataApi {
         // verify required parameter 'exchangeId' is not null or undefined
         if (exchangeId === null || exchangeId === undefined) {
             throw new Error('Required parameter exchangeId was null or undefined when calling v1SymbolsExchangeIdGet.');
+        }
+
+        if (filterSymbolId !== undefined) {
+            localVarQueryParameters['filter_symbol_id'] = ObjectSerializer.serialize(filterSymbolId, "string");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);

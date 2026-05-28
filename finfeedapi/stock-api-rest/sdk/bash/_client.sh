@@ -323,8 +323,9 @@ case $state in
       v1SymbolsExchangeIdGet)
         local -a _op_arguments
         _op_arguments=(
-          "exchange_id=:[PATH] "
-                    )
+          "exchange_id=:[PATH] The ID of the exchange (from the Metadata -&gt; Exchanges)"
+          "filter_symbol_id=:[QUERY] Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#39;TSLA&#39; or &#39;TSLA,NVDA&#39;)"
+          )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       v1NativeIexAdminMessagesSymbolGet)

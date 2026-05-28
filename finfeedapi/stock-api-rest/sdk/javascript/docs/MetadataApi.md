@@ -59,7 +59,7 @@ This endpoint does not need any parameter.
 
 ## v1SymbolsExchangeIdGet
 
-> [FinFeedAPISymbolModel] v1SymbolsExchangeIdGet(exchangeId)
+> [FinFeedAPISymbolModel] v1SymbolsExchangeIdGet(exchangeId, opts)
 
 List of symbols for the exchange
 
@@ -78,8 +78,11 @@ let JWT = defaultClient.authentications['JWT'];
 JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new FinFeedApiStockRestApi.MetadataApi();
-let exchangeId = "exchangeId_example"; // String | 
-apiInstance.v1SymbolsExchangeIdGet(exchangeId, (error, data, response) => {
+let exchangeId = "exchangeId_example"; // String | The ID of the exchange (from the Metadata -> Exchanges)
+let opts = {
+  'filterSymbolId': "filterSymbolId_example" // String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
+};
+apiInstance.v1SymbolsExchangeIdGet(exchangeId, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -93,7 +96,8 @@ apiInstance.v1SymbolsExchangeIdGet(exchangeId, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exchangeId** | **String**|  | 
+ **exchangeId** | **String**| The ID of the exchange (from the Metadata -&gt; Exchanges) | 
+ **filterSymbolId** | **String**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] 
 
 ### Return type
 

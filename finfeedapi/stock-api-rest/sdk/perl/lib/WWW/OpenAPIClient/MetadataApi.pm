@@ -102,13 +102,19 @@ sub v1_exchanges_get {
 #
 # List of symbols for the exchange
 #
-# @param string $exchange_id  (required)
+# @param string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
+# @param string $filter_symbol_id Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
 {
     my $params = {
     'exchange_id' => {
         data_type => 'string',
-        description => '',
+        description => 'The ID of the exchange (from the Metadata -&gt; Exchanges)',
         required => '1',
+    },
+    'filter_symbol_id' => {
+        data_type => 'string',
+        description => 'Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)',
+        required => '0',
     },
     };
     __PACKAGE__->method_documentation->{ 'v1_symbols_exchange_id_get' } = {
@@ -141,6 +147,11 @@ sub v1_symbols_exchange_id_get {
         $header_params->{'Accept'} = $_header_accept;
     }
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # query params
+    if ( exists $args{'filter_symbol_id'}) {
+        $query_params->{'filter_symbol_id'} = $self->{api_client}->to_query_value($args{'filter_symbol_id'});
+    }
 
     # path params
     if ( exists $args{'exchange_id'}) {

@@ -100,18 +100,30 @@ export class MetadataService extends BaseService {
     /**
      * List of symbols for the exchange
      * @endpoint get /v1/symbols/{exchange_id}
-     * @param exchangeId 
+     * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
+     * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1SymbolsExchangeIdGet(exchangeId: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<FinFeedAPISymbolModel>>;
-    public v1SymbolsExchangeIdGet(exchangeId: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<FinFeedAPISymbolModel>>>;
-    public v1SymbolsExchangeIdGet(exchangeId: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<FinFeedAPISymbolModel>>>;
-    public v1SymbolsExchangeIdGet(exchangeId: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<FinFeedAPISymbolModel>>;
+    public v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<FinFeedAPISymbolModel>>>;
+    public v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<FinFeedAPISymbolModel>>>;
+    public v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (exchangeId === null || exchangeId === undefined) {
             throw new Error('Required parameter exchangeId was null or undefined when calling v1SymbolsExchangeIdGet.');
         }
+
+        let localVarQueryParameters = new OpenApiHttpParams(this.encoder);
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'filter_symbol_id',
+            <any>filterSymbolId,
+            QueryParamStyle.Form,
+            true,
+        );
+
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -151,6 +163,7 @@ export class MetadataService extends BaseService {
         return this.httpClient.request<Array<FinFeedAPISymbolModel>>('get', `${basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
+                params: localVarQueryParameters.toHttpParams(),
                 responseType: <any>responseType_,
                 ...(withCredentials ? { withCredentials } : {}),
                 headers: localVarHeaders,

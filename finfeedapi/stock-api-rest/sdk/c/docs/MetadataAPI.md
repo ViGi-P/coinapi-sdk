@@ -40,14 +40,15 @@ Name | Type | Description  | Notes
 ```c
 // List of symbols for the exchange
 //
-list_t* MetadataAPI_v1SymbolsExchangeIdGet(apiClient_t *apiClient, char *exchange_id);
+list_t* MetadataAPI_v1SymbolsExchangeIdGet(apiClient_t *apiClient, char *exchange_id, char *filter_symbol_id);
 ```
 
 ### Parameters
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **apiClient** | **apiClient_t \*** | context containing the client configuration |
-**exchange_id** | **char \*** |  | 
+**exchange_id** | **char \*** | The ID of the exchange (from the Metadata -&gt; Exchanges) | 
+**filter_symbol_id** | **char \*** | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] 
 
 ### Return type
 

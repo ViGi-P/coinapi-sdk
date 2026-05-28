@@ -17,7 +17,7 @@ Describe -tag 'PSOpenAPITools' -name 'MetadataApi' {
 
     Context 'Invoke-V1SymbolsExchangeIdGet' {
         It 'Test Invoke-V1SymbolsExchangeIdGet' {
-            #$TestResult = Invoke-V1SymbolsExchangeIdGet -ExchangeId "TEST_VALUE"
+            #$TestResult = Invoke-V1SymbolsExchangeIdGet -ExchangeId "TEST_VALUE" -FilterSymbolId "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }

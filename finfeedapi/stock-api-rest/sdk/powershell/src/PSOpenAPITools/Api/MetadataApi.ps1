@@ -106,7 +106,10 @@ List of symbols for the exchange
 No description available.
 
 .PARAMETER ExchangeId
-No description available.
+The ID of the exchange (from the Metadata -> Exchanges)
+
+.PARAMETER FilterSymbolId
+Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
 
 .PARAMETER ReturnType
 
@@ -126,6 +129,9 @@ function Invoke-V1SymbolsExchangeIdGet {
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
         ${ExchangeId},
+        [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${FilterSymbolId},
         [String]
         [ValidateSet("text/plain", "application/json", "text/json")]
         $ReturnType,
@@ -160,6 +166,10 @@ function Invoke-V1SymbolsExchangeIdGet {
             throw "Error! The required parameter `ExchangeId` missing when calling v1SymbolsExchangeIdGet."
         }
         $LocalVarUri = $LocalVarUri.replace('{exchange_id}', [System.Web.HTTPUtility]::UrlEncode($ExchangeId))
+
+        if ($FilterSymbolId) {
+            $LocalVarQueryParameters['filter_symbol_id'] = $FilterSymbolId
+        }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
             $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]

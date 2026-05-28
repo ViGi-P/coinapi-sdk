@@ -44,8 +44,9 @@ describe 'MetadataApi' do
 
   # unit tests for v1_symbols_exchange_id_get
   # List of symbols for the exchange
-  # @param exchange_id 
+  # @param exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges)
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :filter_symbol_id Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
   # @return [Array<FinFeedAPISymbolModel>]
   describe 'v1_symbols_exchange_id_get test' do
     it 'should work' do

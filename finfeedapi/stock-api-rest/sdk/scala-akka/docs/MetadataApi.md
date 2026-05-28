@@ -122,9 +122,11 @@ object Example extends App {
 
     val apiInvoker = ApiInvoker()
     val apiInstance = MetadataApi("https://api-historical.stock.finfeedapi.com")
-    val exchangeId: String = exchangeId_example // String | 
+    val exchangeId: String = exchangeId_example // String | The ID of the exchange (from the Metadata -> Exchanges)
+
+    val filterSymbolId: String = filterSymbolId_example // String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
     
-    val request = apiInstance.v1SymbolsExchangeIdGet(exchangeId)
+    val request = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -152,7 +154,8 @@ object Example extends App {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exchangeId** | **String**|  |
+ **exchangeId** | **String**| The ID of the exchange (from the Metadata -&gt; Exchanges) |
+ **filterSymbolId** | **String**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional]
 
 ### Return type
 

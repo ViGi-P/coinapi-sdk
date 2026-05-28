@@ -86,7 +86,7 @@ _()
     # Only include path, query and header parameters
     declare -A operation_parameters
     operation_parameters["v1ExchangesGet"]=""
-    operation_parameters["v1SymbolsExchangeIdGet"]="exchange_id= "
+    operation_parameters["v1SymbolsExchangeIdGet"]="exchange_id= filter_symbol_id= "
     operation_parameters["v1NativeIexAdminMessagesSymbolGet"]="symbol= date= "
     operation_parameters["v1NativeIexAdminSystemEventGet"]="date= "
     operation_parameters["v1NativeIexLevel1QuoteSymbolGet"]="symbol= date= "

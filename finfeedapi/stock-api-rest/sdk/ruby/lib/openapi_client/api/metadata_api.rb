@@ -75,8 +75,9 @@ module OpenapiClient
     end
 
     # List of symbols for the exchange
-    # @param exchange_id [String] 
+    # @param exchange_id [String] The ID of the exchange (from the Metadata -&gt; Exchanges)
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :filter_symbol_id Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
     # @return [Array<FinFeedAPISymbolModel>]
     def v1_symbols_exchange_id_get(exchange_id, opts = {})
       data, _status_code, _headers = v1_symbols_exchange_id_get_with_http_info(exchange_id, opts)
@@ -84,8 +85,9 @@ module OpenapiClient
     end
 
     # List of symbols for the exchange
-    # @param exchange_id [String] 
+    # @param exchange_id [String] The ID of the exchange (from the Metadata -&gt; Exchanges)
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :filter_symbol_id Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
     # @return [Array<(Array<FinFeedAPISymbolModel>, Integer, Hash)>] Array<FinFeedAPISymbolModel> data, response status code and response headers
     def v1_symbols_exchange_id_get_with_http_info(exchange_id, opts = {})
       if @api_client.config.debugging
@@ -100,6 +102,7 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'filter_symbol_id'] = opts[:'filter_symbol_id'] if !opts[:'filter_symbol_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

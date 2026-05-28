@@ -32,7 +32,7 @@ class MetadataApi {
 
     }
 
-    def v1SymbolsExchangeIdGet ( String exchangeId, Closure onSuccess, Closure onFailure)  {
+    def v1SymbolsExchangeIdGet ( String exchangeId, String filterSymbolId, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/symbols/${exchange_id}"
 
         // params
@@ -47,6 +47,9 @@ class MetadataApi {
             throw new RuntimeException("missing required params exchangeId")
         }
 
+        if (filterSymbolId != null) {
+            queryParams.put("filter_symbol_id", filterSymbolId)
+        }
 
 
 

@@ -109,7 +109,8 @@ class MetadataApi {
   /// 
   ///
   /// Parameters:
-  /// * [exchangeId] 
+  /// * [exchangeId] - The ID of the exchange (from the Metadata -> Exchanges)
+  /// * [filterSymbolId] - Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -121,6 +122,7 @@ class MetadataApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<FinFeedAPISymbolModel>>> v1SymbolsExchangeIdGet({ 
     required String exchangeId,
+    String? filterSymbolId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -152,9 +154,14 @@ class MetadataApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (filterSymbolId != null) r'filter_symbol_id': encodeQueryParameter(_serializers, filterSymbolId, const FullType(String)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

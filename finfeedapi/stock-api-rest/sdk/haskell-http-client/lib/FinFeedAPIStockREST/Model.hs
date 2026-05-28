@@ -71,6 +71,9 @@ import qualified Prelude as P
 -- ** ExchangeId
 newtype ExchangeId = ExchangeId { unExchangeId :: Text } deriving (P.Eq, P.Show)
 
+-- ** FilterSymbolId
+newtype FilterSymbolId = FilterSymbolId { unFilterSymbolId :: Text } deriving (P.Eq, P.Show)
+
 -- ** Limit
 newtype Limit = Limit { unLimit :: Int } deriving (P.Eq, P.Show)
 

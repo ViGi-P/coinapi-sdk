@@ -26,7 +26,7 @@ void main() {
 
     // List of symbols for the exchange
     //
-    //Future<List<FinFeedAPISymbolModel>> v1SymbolsExchangeIdGet(String exchangeId) async
+    //Future<List<FinFeedAPISymbolModel>> v1SymbolsExchangeIdGet(String exchangeId, { String filterSymbolId }) async
     test('test v1SymbolsExchangeIdGet', () async {
       // TODO
     });

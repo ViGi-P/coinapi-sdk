@@ -43,13 +43,13 @@ v1ExchangesGet auth_token =
 
 {-| List of symbols for the exchange
 -}
-v1SymbolsExchangeIdGet : String -> String -> Api.Request (List FinFeedAPISymbolModel)
-v1SymbolsExchangeIdGet exchangeId_path auth_token =
+v1SymbolsExchangeIdGet : String -> Maybe String -> String -> Api.Request (List FinFeedAPISymbolModel)
+v1SymbolsExchangeIdGet exchangeId_path filterSymbolId_query auth_token =
     Api.request
         "GET"
         "/v1/symbols/{exchange_id}"
         [ ( "exchange_id", identity exchangeId_path ) ]
-        []
+        [ ( "filter_symbol_id", Maybe.map identity filterSymbolId_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.finFeedAPISymbolModelDecoder)
