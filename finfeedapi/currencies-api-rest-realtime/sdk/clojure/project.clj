@@ -1,5 +1,5 @@
-(defproject fx-realtime-rest-api "v1"
-  :description "Client library of fx-realtime-rest-api"
+(defproject fin-feed-api-currencies-realtime-rest-api "v1"
+  :description "Client library of fin-feed-api-currencies-realtime-rest-api"
   :url "https://www.finfeedapi.com"
   :license {:name "MIT License"
             :url "https://github.com/api-bricks/api-bricks-sdk/blob/master/LICENSE"}

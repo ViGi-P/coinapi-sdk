@@ -1,4 +1,4 @@
-# FxRealtimeRestApi.V1ExchangeRatesRate
+# FinFeedApiCurrenciesRealtimeRestApi.V1ExchangeRatesRate
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# FxRealtimeRestApi.ExchangeRatesApi
+# FinFeedApiCurrenciesRealtimeRestApi.ExchangeRatesApi
 
 All URIs are relative to *https://api-realtime.fx.finfeedapi.com*
 
@@ -20,8 +20,8 @@ Retrieves the exchange rate for a specific base and quote asset at a given time 
 ### Example
 
 ```javascript
-import FxRealtimeRestApi from 'fx_realtime_rest_api';
-let defaultClient = FxRealtimeRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesRealtimeRestApi from 'fin_feed_api_currencies_realtime_rest_api';
+let defaultClient = FinFeedApiCurrenciesRealtimeRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
@@ -31,7 +31,7 @@ APIKey.apiKey = 'YOUR API KEY';
 let JWT = defaultClient.authentications['JWT'];
 JWT.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new FxRealtimeRestApi.ExchangeRatesApi();
+let apiInstance = new FinFeedApiCurrenciesRealtimeRestApi.ExchangeRatesApi();
 let assetIdBase = "assetIdBase_example"; // String | Requested exchange rate base asset identifier (from the Metadata -> Assets)
 let assetIdQuote = "assetIdQuote_example"; // String | Requested exchange rate quote asset identifier (from the Metadata -> Assets)
 apiInstance.getSpecificRate(assetIdBase, assetIdQuote, (error, data, response) => {
@@ -76,8 +76,8 @@ Get the current exchange rate between requested asset and all other assets.     
 ### Example
 
 ```javascript
-import FxRealtimeRestApi from 'fx_realtime_rest_api';
-let defaultClient = FxRealtimeRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesRealtimeRestApi from 'fin_feed_api_currencies_realtime_rest_api';
+let defaultClient = FinFeedApiCurrenciesRealtimeRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
@@ -87,7 +87,7 @@ APIKey.apiKey = 'YOUR API KEY';
 let JWT = defaultClient.authentications['JWT'];
 JWT.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new FxRealtimeRestApi.ExchangeRatesApi();
+let apiInstance = new FinFeedApiCurrenciesRealtimeRestApi.ExchangeRatesApi();
 let assetIdBase = "assetIdBase_example"; // String | Requested exchange rates base asset identifier (from the Metadata -> Assets)
 let opts = {
   'filterAssetId': "filterAssetId_example", // String | Comma or semicolon delimited asset identifiers used to filter response (optional)

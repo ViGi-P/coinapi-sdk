@@ -1,6 +1,6 @@
-## OpenAPI Auto-Generated [http-client](https://www.stackage.org/lts-10.0/package/http-client-0.5.7.1) Bindings to `FX Realtime REST API`
+## OpenAPI Auto-Generated [http-client](https://www.stackage.org/lts-10.0/package/http-client-0.5.7.1) Bindings to `FinFeedAPI Currencies Realtime REST API`
 
-The library in `lib` provides auto-generated-from-OpenAPI [http-client](https://www.stackage.org/lts-10.0/package/http-client-0.5.7.1) bindings to the FX Realtime REST API API.
+The library in `lib` provides auto-generated-from-OpenAPI [http-client](https://www.stackage.org/lts-10.0/package/http-client-0.5.7.1) bindings to the FinFeedAPI Currencies Realtime REST API API.
 
 OpenApi Version: 3.0.4
 
@@ -59,11 +59,11 @@ These options allow some customization of the code generation process.
 | allowFromJsonNulls              | allow JSON Null during model decoding from JSON                                                                               | true     | true              |
 | allowNonUniqueOperationIds      | allow *different* API modules to contain the same operationId. Each API must be imported qualified                            | false    | false    |
 | allowToJsonNulls                | allow emitting JSON Null during model encoding to JSON                                                                        | false    | false                |
-| baseModule                      | Set the base module namespace                                                                                                 |          | FXRealtimeREST                      |
-| cabalPackage                    | Set the cabal package name, which consists of one or more alphanumeric words separated by hyphens                             |          | fx-realtime-rest                    |
+| baseModule                      | Set the base module namespace                                                                                                 |          | FinFeedAPICurrenciesRealtimeREST                      |
+| cabalPackage                    | Set the cabal package name, which consists of one or more alphanumeric words separated by hyphens                             |          | finfeedapi-currencies-realtime-rest                    |
 | cabalVersion                    | Set the cabal version number, consisting of a sequence of one or more integers separated by dots                              | 0.1.0.0  | 0.1.0.0                    |
 | customTestInstanceModule        | test module used to provide typeclass instances for types not known by the generator                                          |          |         |
-| configType                      | Set the name of the type used for configuration                                                                               |          | FXRealtimeRESTConfig                      |
+| configType                      | Set the name of the type used for configuration                                                                               |          | FinFeedAPICurrenciesRealtimeRESTConfig                      |
 | dateFormat                      | format string used to parse/render a date                                                                                     | %Y-%m-%d | %Y-%m-%d                      |
 | dateTimeFormat                  | format string used to parse/render a datetime. (Defaults to [formatISO8601Millis][1] when not provided)                       |          |                   |
 | dateTimeParseFormat             | overrides the format string used to parse a datetime                                                                          |          |              |
@@ -73,7 +73,7 @@ These options allow some customization of the code generation process.
 | generateModelConstructors       | Generate smart constructors (only supply required fields) for models                                                          | true     | true       |
 | inlineMimeTypes                 | Inline (hardcode) the content-type and accept parameters on operations, when there is only 1 option                           | true     | true                 |
 | modelDeriving                   | Additional classes to include in the deriving() clause of Models                                                              |          |                    |
-| requestType                     | Set the name of the type used to generate requests                                                                            |          | FXRealtimeRESTRequest                     |
+| requestType                     | Set the name of the type used to generate requests                                                                            |          | FinFeedAPICurrenciesRealtimeRESTRequest                     |
 | strictFields                    | Add strictness annotations to all model fields                                                                                | true     | true                  |
 | useKatip                        | Sets the default value for the UseKatip cabal flag. If true, the katip package provides logging instead of monad-logger       | true     | true                      |
 | queryExtraUnreserved            | Configures additional querystring characters which must not be URI encoded, e.g. '+' or ':'                                   |          |           |
@@ -112,13 +112,13 @@ This library is intended to be imported qualified.
 
 | MODULE              | NOTES                                               |
 | ------------------- | --------------------------------------------------- |
-| FXRealtimeREST.Client    | use the "dispatch" functions to send requests       |
-| FXRealtimeREST.Core      | core functions, config and request types            |
-| FXRealtimeREST.API       | construct api requests                              |
-| FXRealtimeREST.Model     | describes api models                                |
-| FXRealtimeREST.MimeTypes | encoding/decoding MIME types (content-types/accept) |
-| FXRealtimeREST.ModelLens | lenses for model fields                             |
-| FXRealtimeREST.Logging   | logging functions and utils                         |
+| FinFeedAPICurrenciesRealtimeREST.Client    | use the "dispatch" functions to send requests       |
+| FinFeedAPICurrenciesRealtimeREST.Core      | core functions, config and request types            |
+| FinFeedAPICurrenciesRealtimeREST.API       | construct api requests                              |
+| FinFeedAPICurrenciesRealtimeREST.Model     | describes api models                                |
+| FinFeedAPICurrenciesRealtimeREST.MimeTypes | encoding/decoding MIME types (content-types/accept) |
+| FinFeedAPICurrenciesRealtimeREST.ModelLens | lenses for model fields                             |
+| FinFeedAPICurrenciesRealtimeREST.Logging   | logging functions and utils                         |
 
 
 ### MimeTypes

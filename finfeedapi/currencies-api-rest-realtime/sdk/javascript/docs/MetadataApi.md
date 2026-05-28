@@ -1,4 +1,4 @@
-# FxRealtimeRestApi.MetadataApi
+# FinFeedApiCurrenciesRealtimeRestApi.MetadataApi
 
 All URIs are relative to *https://api-realtime.fx.finfeedapi.com*
 
@@ -19,8 +19,8 @@ List all assets by asset ID
 ### Example
 
 ```javascript
-import FxRealtimeRestApi from 'fx_realtime_rest_api';
-let defaultClient = FxRealtimeRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesRealtimeRestApi from 'fin_feed_api_currencies_realtime_rest_api';
+let defaultClient = FinFeedApiCurrenciesRealtimeRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
@@ -30,7 +30,7 @@ APIKey.apiKey = 'YOUR API KEY';
 let JWT = defaultClient.authentications['JWT'];
 JWT.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new FxRealtimeRestApi.MetadataApi();
+let apiInstance = new FinFeedApiCurrenciesRealtimeRestApi.MetadataApi();
 let assetId = "assetId_example"; // String | The asset ID.
 apiInstance.v1AssetsAssetIdGet(assetId, (error, data, response) => {
   if (error) {
@@ -73,8 +73,8 @@ Retrieves all assets.              :::info Our asset identifiers are aligned wit
 ### Example
 
 ```javascript
-import FxRealtimeRestApi from 'fx_realtime_rest_api';
-let defaultClient = FxRealtimeRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesRealtimeRestApi from 'fin_feed_api_currencies_realtime_rest_api';
+let defaultClient = FinFeedApiCurrenciesRealtimeRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
@@ -84,7 +84,7 @@ APIKey.apiKey = 'YOUR API KEY';
 let JWT = defaultClient.authentications['JWT'];
 JWT.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new FxRealtimeRestApi.MetadataApi();
+let apiInstance = new FinFeedApiCurrenciesRealtimeRestApi.MetadataApi();
 let opts = {
   'filterAssetId': "filterAssetId_example" // String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
 };
@@ -129,8 +129,8 @@ Gets the list of icons (of the given size) for all the assets.
 ### Example
 
 ```javascript
-import FxRealtimeRestApi from 'fx_realtime_rest_api';
-let defaultClient = FxRealtimeRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesRealtimeRestApi from 'fin_feed_api_currencies_realtime_rest_api';
+let defaultClient = FinFeedApiCurrenciesRealtimeRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
@@ -140,7 +140,7 @@ APIKey.apiKey = 'YOUR API KEY';
 let JWT = defaultClient.authentications['JWT'];
 JWT.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new FxRealtimeRestApi.MetadataApi();
+let apiInstance = new FinFeedApiCurrenciesRealtimeRestApi.MetadataApi();
 let size = 56; // Number | The size of the icons.
 apiInstance.v1AssetsIconsSizeGet(size, (error, data, response) => {
   if (error) {

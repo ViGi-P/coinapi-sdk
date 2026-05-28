@@ -7,7 +7,7 @@
 # General application configuration
 import Config
 
-config :fx_realtime_restapi, base_url: "https://api-realtime.fx.finfeedapi.com"
+config :fin_feed_api_currencies_realtime_restapi, base_url: "https://api-realtime.fx.finfeedapi.com"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

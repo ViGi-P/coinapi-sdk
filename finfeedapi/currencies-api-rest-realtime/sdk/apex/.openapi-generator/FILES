@@ -45,5 +45,5 @@ force-app/main/default/classes/OASV1Icon.cls
 force-app/main/default/classes/OASV1Icon.cls-meta.xml
 force-app/main/default/classes/OASV1IconTest.cls
 force-app/main/default/classes/OASV1IconTest.cls-meta.xml
-force-app/main/default/namedCredentials/FX_Realtime_REST_API.namedCredential-meta.xml
+force-app/main/default/namedCredentials/FinFeedAPI_Currencies_Realtime_REST_API.namedCredential-meta.xml
 sfdx-project.json

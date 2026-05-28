@@ -1,5 +1,5 @@
 /**
- * FX Realtime REST API
+ * FinFeedAPI Currencies Realtime REST API
  *
  * Contact: support@apibricks.io
  *

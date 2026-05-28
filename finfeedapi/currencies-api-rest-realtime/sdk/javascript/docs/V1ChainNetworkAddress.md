@@ -1,4 +1,4 @@
-# FxRealtimeRestApi.V1ChainNetworkAddress
+# FinFeedApiCurrenciesRealtimeRestApi.V1ChainNetworkAddress
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# FxRealtimeRestApi.RateLimitApi
+# FinFeedApiCurrenciesRealtimeRestApi.RateLimitApi
 
 All URIs are relative to *https://api-realtime.fx.finfeedapi.com*
 
@@ -19,8 +19,8 @@ Method | HTTP request | Description
 ### Example
 
 ```javascript
-import FxRealtimeRestApi from 'fx_realtime_rest_api';
-let defaultClient = FxRealtimeRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesRealtimeRestApi from 'fin_feed_api_currencies_realtime_rest_api';
+let defaultClient = FinFeedApiCurrenciesRealtimeRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
@@ -30,7 +30,7 @@ APIKey.apiKey = 'YOUR API KEY';
 let JWT = defaultClient.authentications['JWT'];
 JWT.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new FxRealtimeRestApi.RateLimitApi();
+let apiInstance = new FinFeedApiCurrenciesRealtimeRestApi.RateLimitApi();
 apiInstance.internalRatelimitWsconconApikeyGet((error, data, response) => {
   if (error) {
     console.error(error);
@@ -67,8 +67,8 @@ null (empty response body)
 ### Example
 
 ```javascript
-import FxRealtimeRestApi from 'fx_realtime_rest_api';
-let defaultClient = FxRealtimeRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesRealtimeRestApi from 'fin_feed_api_currencies_realtime_rest_api';
+let defaultClient = FinFeedApiCurrenciesRealtimeRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
@@ -78,7 +78,7 @@ APIKey.apiKey = 'YOUR API KEY';
 let JWT = defaultClient.authentications['JWT'];
 JWT.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new FxRealtimeRestApi.RateLimitApi();
+let apiInstance = new FinFeedApiCurrenciesRealtimeRestApi.RateLimitApi();
 apiInstance.internalRatelimitWshelloIpGet((error, data, response) => {
   if (error) {
     console.error(error);
@@ -115,8 +115,8 @@ null (empty response body)
 ### Example
 
 ```javascript
-import FxRealtimeRestApi from 'fx_realtime_rest_api';
-let defaultClient = FxRealtimeRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesRealtimeRestApi from 'fin_feed_api_currencies_realtime_rest_api';
+let defaultClient = FinFeedApiCurrenciesRealtimeRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
@@ -126,7 +126,7 @@ APIKey.apiKey = 'YOUR API KEY';
 let JWT = defaultClient.authentications['JWT'];
 JWT.accessToken = "YOUR ACCESS TOKEN"
 
-let apiInstance = new FxRealtimeRestApi.RateLimitApi();
+let apiInstance = new FinFeedApiCurrenciesRealtimeRestApi.RateLimitApi();
 apiInstance.internalRatelimitWsreqIpGet((error, data, response) => {
   if (error) {
     console.error(error);

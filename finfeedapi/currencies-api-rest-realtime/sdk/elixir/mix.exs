@@ -1,9 +1,9 @@
-defmodule FXRealtimeRESTAPI.Mixfile do
+defmodule FinFeedAPICurrenciesRealtimeRESTAPI.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :fx_realtime_restapi,
+      app: :fin_feed_api_currencies_realtime_restapi,
       version: "1.0.0",
       elixir: "~> 1.18",
       build_embedded: Mix.env() == :prod,
@@ -43,7 +43,7 @@ defmodule FXRealtimeRESTAPI.Mixfile do
 
    defp package do
       [
-        name: "fx_realtime_restapi",
+        name: "fin_feed_api_currencies_realtime_restapi",
         files: ~w(.formatter.exs config lib mix.exs README* LICENSE*),
       ]
   end

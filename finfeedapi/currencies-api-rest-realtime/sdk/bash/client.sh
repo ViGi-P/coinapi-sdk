@@ -13,7 +13,7 @@
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #
-# This is a Bash client for FX Realtime REST API.
+# This is a Bash client for FinFeedAPI Currencies Realtime REST API.
 #
 # LICENSE:
 # https://github.com/api-bricks/api-bricks-sdk/blob/master/LICENSE
@@ -506,7 +506,7 @@ build_request_path() {
 print_help() {
 cat <<EOF
 
-${BOLD}${WHITE}FX Realtime REST API command line client (API version v1)${OFF}
+${BOLD}${WHITE}FinFeedAPI Currencies Realtime REST API command line client (API version v1)${OFF}
 
 ${BOLD}${WHITE}Usage${OFF}
 
@@ -589,7 +589,7 @@ echo -e "              \\t\\t\\t\\t(e.g. 'https://api-realtime.fx.finfeedapi.com
 ##############################################################################
 print_about() {
     echo ""
-    echo -e "${BOLD}${WHITE}FX Realtime REST API command line client (API version v1)${OFF}"
+    echo -e "${BOLD}${WHITE}FinFeedAPI Currencies Realtime REST API command line client (API version v1)${OFF}"
     echo ""
     echo -e "License: MIT License"
     echo -e "Contact: support@apibricks.io"
@@ -609,7 +609,7 @@ echo "$appdescription" | paste -sd' ' - | fold -sw 80
 ##############################################################################
 print_version() {
     echo ""
-    echo -e "${BOLD}FX Realtime REST API command line client (API version v1)${OFF}"
+    echo -e "${BOLD}FinFeedAPI Currencies Realtime REST API command line client (API version v1)${OFF}"
     echo ""
 }
 

@@ -7,6 +7,6 @@ import Config
 # any compile-time configuration in here, as it won't be applied.
 # The block below contains prod specific runtime configuration.
 
-if base_url = System.get_env("FX_REALTIME_RESTAPI_BASE_URI") do
-  config :fx_realtime_restapi, base_url: base_url
+if base_url = System.get_env("FIN_FEED_API_CURRENCIES_REALTIME_RESTAPI_BASE_URI") do
+  config :fin_feed_api_currencies_realtime_restapi, base_url: base_url
 end

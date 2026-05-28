@@ -1,6 +1,6 @@
 # openapi-client
 
-FX Realtime REST API
+FinFeedAPI Currencies Realtime REST API
 - API version: v1
   - Generator version: 7.22.0
 

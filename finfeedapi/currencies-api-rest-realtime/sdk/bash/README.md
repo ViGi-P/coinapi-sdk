@@ -1,8 +1,8 @@
-# FX Realtime REST API Bash client
+# FinFeedAPI Currencies Realtime REST API Bash client
 
 ## Overview
 
-This is a Bash client script for accessing FX Realtime REST API service.
+This is a Bash client script for accessing FinFeedAPI Currencies Realtime REST API service.
 
 The script uses cURL underneath for making all REST calls.
 

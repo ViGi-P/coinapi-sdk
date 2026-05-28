@@ -3,8 +3,8 @@
 
 module Instances where
 
-import FXRealtimeREST.Model
-import FXRealtimeREST.Core
+import FinFeedAPICurrenciesRealtimeREST.Model
+import FinFeedAPICurrenciesRealtimeREST.Core
 
 import qualified Data.Aeson as A
 import qualified Data.ByteString.Lazy as BL
