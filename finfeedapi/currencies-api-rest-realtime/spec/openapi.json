@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.4",
   "info": {
-    "title": "FX Realtime REST API",
+    "title": "FinFeedAPI Currencies Realtime REST API",
     "contact": {
       "name": "API BRICKS LTD",
       "url": "https://www.finfeedapi.com",
@@ -58,7 +58,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-05-26T06:08:01.0429281Z",
+  "time": "2026-05-28T06:04:38.6363972Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -73,7 +73,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-05-26T06:08:01.0429281Z",
+  "time": "2026-05-28T06:04:38.6363972Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -88,7 +88,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-05-26T06:08:01.0429281Z",
+  "time": "2026-05-28T06:04:38.6363972Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -103,7 +103,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-05-26T06:08:01.0429281Z",
+  "time": "2026-05-28T06:04:38.6363972Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
