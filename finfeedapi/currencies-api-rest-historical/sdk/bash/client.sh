@@ -13,7 +13,7 @@
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #
-# This is a Bash client for FX Historical REST API.
+# This is a Bash client for FinFeedAPI Currencies Historical REST API.
 #
 # LICENSE:
 # https://github.com/api-bricks/api-bricks-sdk/blob/master/LICENSE
@@ -533,7 +533,7 @@ build_request_path() {
 print_help() {
 cat <<EOF
 
-${BOLD}${WHITE}FX Historical REST API command line client (API version v1)${OFF}
+${BOLD}${WHITE}FinFeedAPI Currencies Historical REST API command line client (API version v1)${OFF}
 
 ${BOLD}${WHITE}Usage${OFF}
 
@@ -610,7 +610,7 @@ echo -e "              \\t\\t\\t\\t(e.g. 'https://api-historical.fx.finfeedapi.c
 ##############################################################################
 print_about() {
     echo ""
-    echo -e "${BOLD}${WHITE}FX Historical REST API command line client (API version v1)${OFF}"
+    echo -e "${BOLD}${WHITE}FinFeedAPI Currencies Historical REST API command line client (API version v1)${OFF}"
     echo ""
     echo -e "License: MIT License"
     echo -e "Contact: support@apibricks.io"
@@ -630,7 +630,7 @@ echo "$appdescription" | paste -sd' ' - | fold -sw 80
 ##############################################################################
 print_version() {
     echo ""
-    echo -e "${BOLD}FX Historical REST API command line client (API version v1)${OFF}"
+    echo -e "${BOLD}FinFeedAPI Currencies Historical REST API command line client (API version v1)${OFF}"
     echo ""
 }
 

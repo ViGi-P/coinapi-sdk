@@ -1,4 +1,4 @@
-# FxHistoricalRestApi.V1TimeseriesPeriod
+# FinFeedApiCurrenciesHistoricalRestApi.V1TimeseriesPeriod
 
 ## Properties
 

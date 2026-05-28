@@ -13,7 +13,7 @@ on:
 
 jobs:
   build:
-    name: Build FX Historical REST API
+    name: Build FinFeedAPI Currencies Historical REST API
     runs-on: ubuntu-latest
     strategy:
       matrix:

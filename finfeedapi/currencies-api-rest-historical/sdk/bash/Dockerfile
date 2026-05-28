@@ -23,8 +23,8 @@ source /etc/bash-completion.d/client.sh\n\
 #
 # Setup prompt
 #
-RUN echo 'export PS1="[FX Historical REST API] \$ "' >> ~/.bashrc
-RUN echo 'export PROMPT="[FX Historical REST API] \$ "' >> ~/.zshrc
+RUN echo 'export PS1="[FinFeedAPI Currencies Historical REST API] \$ "' >> ~/.bashrc
+RUN echo 'export PROMPT="[FinFeedAPI Currencies Historical REST API] \$ "' >> ~/.zshrc
 
 #
 # Setup a welcome message with basic instruction
@@ -32,7 +32,7 @@ RUN echo 'export PROMPT="[FX Historical REST API] \$ "' >> ~/.zshrc
 RUN echo -e 'echo "\
 \n\
 This Docker provides preconfigured environment for running the command\n\
-line REST client for $(tput setaf 6)FX Historical REST API$(tput sgr0).\n\
+line REST client for $(tput setaf 6)FinFeedAPI Currencies Historical REST API$(tput sgr0).\n\
 \n\
 For convenience, you can export the following environment variables:\n\
 \n\

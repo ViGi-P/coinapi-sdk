@@ -15,7 +15,7 @@ import Test.QuickCheck
 import Test.QuickCheck.Property
 import Test.Hspec.QuickCheck (prop)
 
-import FXHistoricalREST.MimeTypes
+import FinFeedAPICurrenciesHistoricalREST.MimeTypes
 
 import ApproxEq
 

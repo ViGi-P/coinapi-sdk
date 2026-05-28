@@ -7,7 +7,7 @@
 # General application configuration
 import Config
 
-config :fx_historical_restapi, base_url: "https://api-historical.fx.finfeedapi.com"
+config :fin_feed_api_currencies_historical_restapi, base_url: "https://api-historical.fx.finfeedapi.com"
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

@@ -12,8 +12,8 @@ import Test.Hspec.QuickCheck
 import PropMime
 import Instances ()
 
-import FXHistoricalREST.Model
-import FXHistoricalREST.MimeTypes
+import FinFeedAPICurrenciesHistoricalREST.Model
+import FinFeedAPICurrenciesHistoricalREST.MimeTypes
 
 main :: IO ()
 main =

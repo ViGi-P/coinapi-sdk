@@ -23,7 +23,7 @@ if (OPENSSL_FOUND)
     endif()
 endif()
 
-set(pkgName "fx_historical_rest_api")
+set(pkgName "finfeedapi_currencies_historical_rest_api")
 
 # this default version can be overridden in PreTarget.cmake
 set(PROJECT_VERSION_MAJOR 0)

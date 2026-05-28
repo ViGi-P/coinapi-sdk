@@ -1,4 +1,4 @@
-# FxHistoricalRestApi.V1Asset
+# FinFeedApiCurrenciesHistoricalRestApi.V1Asset
 
 ## Properties
 

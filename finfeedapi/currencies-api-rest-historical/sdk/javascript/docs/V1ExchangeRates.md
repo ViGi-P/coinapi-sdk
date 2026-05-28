@@ -1,4 +1,4 @@
-# FxHistoricalRestApi.V1ExchangeRates
+# FinFeedApiCurrenciesHistoricalRestApi.V1ExchangeRates
 
 ## Properties
 

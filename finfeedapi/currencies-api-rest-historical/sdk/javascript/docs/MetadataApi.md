@@ -1,4 +1,4 @@
-# FxHistoricalRestApi.MetadataApi
+# FinFeedApiCurrenciesHistoricalRestApi.MetadataApi
 
 All URIs are relative to *https://api-historical.fx.finfeedapi.com*
 
@@ -19,15 +19,15 @@ List all assets by asset ID
 ### Example
 
 ```javascript
-import FxHistoricalRestApi from 'fx_historical_rest_api';
-let defaultClient = FxHistoricalRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesHistoricalRestApi from 'fin_feed_api_currencies_historical_rest_api';
+let defaultClient = FinFeedApiCurrenciesHistoricalRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new FxHistoricalRestApi.MetadataApi();
+let apiInstance = new FinFeedApiCurrenciesHistoricalRestApi.MetadataApi();
 let assetId = "assetId_example"; // String | The asset ID.
 apiInstance.v1AssetsAssetIdGet(assetId, (error, data, response) => {
   if (error) {
@@ -70,15 +70,15 @@ Retrieves all assets.              :::info Our asset identifiers are aligned wit
 ### Example
 
 ```javascript
-import FxHistoricalRestApi from 'fx_historical_rest_api';
-let defaultClient = FxHistoricalRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesHistoricalRestApi from 'fin_feed_api_currencies_historical_rest_api';
+let defaultClient = FinFeedApiCurrenciesHistoricalRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new FxHistoricalRestApi.MetadataApi();
+let apiInstance = new FinFeedApiCurrenciesHistoricalRestApi.MetadataApi();
 let opts = {
   'filterAssetId': "filterAssetId_example" // String | Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
 };
@@ -123,15 +123,15 @@ Gets the list of icons (of the given size) for all the assets.
 ### Example
 
 ```javascript
-import FxHistoricalRestApi from 'fx_historical_rest_api';
-let defaultClient = FxHistoricalRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesHistoricalRestApi from 'fin_feed_api_currencies_historical_rest_api';
+let defaultClient = FinFeedApiCurrenciesHistoricalRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new FxHistoricalRestApi.MetadataApi();
+let apiInstance = new FinFeedApiCurrenciesHistoricalRestApi.MetadataApi();
 let size = 56; // Number | The size of the icons.
 apiInstance.v1AssetsIconsSizeGet(size, (error, data, response) => {
   if (error) {

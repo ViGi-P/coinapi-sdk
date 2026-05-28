@@ -1,9 +1,9 @@
-defmodule FXHistoricalRESTAPI.Mixfile do
+defmodule FinFeedAPICurrenciesHistoricalRESTAPI.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :fx_historical_restapi,
+      app: :fin_feed_api_currencies_historical_restapi,
       version: "1.0.0",
       elixir: "~> 1.18",
       build_embedded: Mix.env() == :prod,
@@ -43,7 +43,7 @@ defmodule FXHistoricalRESTAPI.Mixfile do
 
    defp package do
       [
-        name: "fx_historical_restapi",
+        name: "fin_feed_api_currencies_historical_restapi",
         files: ~w(.formatter.exs config lib mix.exs README* LICENSE*),
       ]
   end

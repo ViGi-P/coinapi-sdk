@@ -1,4 +1,4 @@
-# FxHistoricalRestApi.V1ChainNetworkAddress
+# FinFeedApiCurrenciesHistoricalRestApi.V1ChainNetworkAddress
 
 ## Properties
 

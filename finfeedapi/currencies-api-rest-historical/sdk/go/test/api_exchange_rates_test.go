@@ -1,5 +1,5 @@
 /*
-FX Historical REST API
+FinFeedAPI Currencies Historical REST API
 
 Testing ExchangeRatesAPIService
 

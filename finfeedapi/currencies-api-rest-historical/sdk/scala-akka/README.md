@@ -1,6 +1,6 @@
 # openapi-client
 
-FX Historical REST API
+FinFeedAPI Currencies Historical REST API
 - API version: v1
   - Generator version: 7.22.0
 

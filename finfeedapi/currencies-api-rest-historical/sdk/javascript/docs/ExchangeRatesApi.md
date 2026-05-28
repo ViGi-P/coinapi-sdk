@@ -1,4 +1,4 @@
-# FxHistoricalRestApi.ExchangeRatesApi
+# FinFeedApiCurrenciesHistoricalRestApi.ExchangeRatesApi
 
 All URIs are relative to *https://api-historical.fx.finfeedapi.com*
 
@@ -22,15 +22,15 @@ Retrieves the exchange rate for a specific base and quote asset at a given time 
 ### Example
 
 ```javascript
-import FxHistoricalRestApi from 'fx_historical_rest_api';
-let defaultClient = FxHistoricalRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesHistoricalRestApi from 'fin_feed_api_currencies_historical_rest_api';
+let defaultClient = FinFeedApiCurrenciesHistoricalRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new FxHistoricalRestApi.ExchangeRatesApi();
+let apiInstance = new FinFeedApiCurrenciesHistoricalRestApi.ExchangeRatesApi();
 let assetIdBase = "assetIdBase_example"; // String | Requested exchange rate base asset identifier (from the Metadata -> Assets)
 let assetIdQuote = "assetIdQuote_example"; // String | Requested exchange rate quote asset identifier (from the Metadata -> Assets)
 let opts = {
@@ -79,15 +79,15 @@ Get the historical exchange rates between two assets in the form of the timeseri
 ### Example
 
 ```javascript
-import FxHistoricalRestApi from 'fx_historical_rest_api';
-let defaultClient = FxHistoricalRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesHistoricalRestApi from 'fin_feed_api_currencies_historical_rest_api';
+let defaultClient = FinFeedApiCurrenciesHistoricalRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new FxHistoricalRestApi.ExchangeRatesApi();
+let apiInstance = new FinFeedApiCurrenciesHistoricalRestApi.ExchangeRatesApi();
 let assetIdBase = "assetIdBase_example"; // String | Requested exchange rates base asset identifier (from the Metadata -> Assets)
 let assetIdQuote = "assetIdQuote_example"; // String | Requested exchange rates base asset identifier (from the Metadata -> Assets)
 let opts = {
@@ -144,15 +144,15 @@ Get the current exchange rate between requested asset and all other assets.     
 ### Example
 
 ```javascript
-import FxHistoricalRestApi from 'fx_historical_rest_api';
-let defaultClient = FxHistoricalRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesHistoricalRestApi from 'fin_feed_api_currencies_historical_rest_api';
+let defaultClient = FinFeedApiCurrenciesHistoricalRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new FxHistoricalRestApi.ExchangeRatesApi();
+let apiInstance = new FinFeedApiCurrenciesHistoricalRestApi.ExchangeRatesApi();
 let assetIdBase = "assetIdBase_example"; // String | Requested exchange rates base asset identifier (from the Metadata -> Assets)
 let opts = {
   'filterAssetId': "filterAssetId_example", // String | Comma or semicolon delimited asset identifiers used to filter response (optional)
@@ -203,15 +203,15 @@ You can also obtain historical exchange rates of any asset pair, grouped into ti
 ### Example
 
 ```javascript
-import FxHistoricalRestApi from 'fx_historical_rest_api';
-let defaultClient = FxHistoricalRestApi.ApiClient.instance;
+import FinFeedApiCurrenciesHistoricalRestApi from 'fin_feed_api_currencies_historical_rest_api';
+let defaultClient = FinFeedApiCurrenciesHistoricalRestApi.ApiClient.instance;
 // Configure API key authorization: APIKey
 let APIKey = defaultClient.authentications['APIKey'];
 APIKey.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //APIKey.apiKeyPrefix = 'Token';
 
-let apiInstance = new FxHistoricalRestApi.ExchangeRatesApi();
+let apiInstance = new FinFeedApiCurrenciesHistoricalRestApi.ExchangeRatesApi();
 apiInstance.v1ExchangerateHistoryPeriodsGet((error, data, response) => {
   if (error) {
     console.error(error);

@@ -1,6 +1,6 @@
-## OpenAPI Auto-Generated [http-client](https://www.stackage.org/lts-10.0/package/http-client-0.5.7.1) Bindings to `FX Historical REST API`
+## OpenAPI Auto-Generated [http-client](https://www.stackage.org/lts-10.0/package/http-client-0.5.7.1) Bindings to `FinFeedAPI Currencies Historical REST API`
 
-The library in `lib` provides auto-generated-from-OpenAPI [http-client](https://www.stackage.org/lts-10.0/package/http-client-0.5.7.1) bindings to the FX Historical REST API API.
+The library in `lib` provides auto-generated-from-OpenAPI [http-client](https://www.stackage.org/lts-10.0/package/http-client-0.5.7.1) bindings to the FinFeedAPI Currencies Historical REST API API.
 
 OpenApi Version: 3.0.4
 
@@ -59,11 +59,11 @@ These options allow some customization of the code generation process.
 | allowFromJsonNulls              | allow JSON Null during model decoding from JSON                                                                               | true     | true              |
 | allowNonUniqueOperationIds      | allow *different* API modules to contain the same operationId. Each API must be imported qualified                            | false    | false    |
 | allowToJsonNulls                | allow emitting JSON Null during model encoding to JSON                                                                        | false    | false                |
-| baseModule                      | Set the base module namespace                                                                                                 |          | FXHistoricalREST                      |
-| cabalPackage                    | Set the cabal package name, which consists of one or more alphanumeric words separated by hyphens                             |          | fx-historical-rest                    |
+| baseModule                      | Set the base module namespace                                                                                                 |          | FinFeedAPICurrenciesHistoricalREST                      |
+| cabalPackage                    | Set the cabal package name, which consists of one or more alphanumeric words separated by hyphens                             |          | finfeedapi-currencies-historical-rest                    |
 | cabalVersion                    | Set the cabal version number, consisting of a sequence of one or more integers separated by dots                              | 0.1.0.0  | 0.1.0.0                    |
 | customTestInstanceModule        | test module used to provide typeclass instances for types not known by the generator                                          |          |         |
-| configType                      | Set the name of the type used for configuration                                                                               |          | FXHistoricalRESTConfig                      |
+| configType                      | Set the name of the type used for configuration                                                                               |          | FinFeedAPICurrenciesHistoricalRESTConfig                      |
 | dateFormat                      | format string used to parse/render a date                                                                                     | %Y-%m-%d | %Y-%m-%d                      |
 | dateTimeFormat                  | format string used to parse/render a datetime. (Defaults to [formatISO8601Millis][1] when not provided)                       |          |                   |
 | dateTimeParseFormat             | overrides the format string used to parse a datetime                                                                          |          |              |
@@ -73,7 +73,7 @@ These options allow some customization of the code generation process.
 | generateModelConstructors       | Generate smart constructors (only supply required fields) for models                                                          | true     | true       |
 | inlineMimeTypes                 | Inline (hardcode) the content-type and accept parameters on operations, when there is only 1 option                           | true     | true                 |
 | modelDeriving                   | Additional classes to include in the deriving() clause of Models                                                              |          |                    |
-| requestType                     | Set the name of the type used to generate requests                                                                            |          | FXHistoricalRESTRequest                     |
+| requestType                     | Set the name of the type used to generate requests                                                                            |          | FinFeedAPICurrenciesHistoricalRESTRequest                     |
 | strictFields                    | Add strictness annotations to all model fields                                                                                | true     | true                  |
 | useKatip                        | Sets the default value for the UseKatip cabal flag. If true, the katip package provides logging instead of monad-logger       | true     | true                      |
 | queryExtraUnreserved            | Configures additional querystring characters which must not be URI encoded, e.g. '+' or ':'                                   |          |           |
@@ -112,13 +112,13 @@ This library is intended to be imported qualified.
 
 | MODULE              | NOTES                                               |
 | ------------------- | --------------------------------------------------- |
-| FXHistoricalREST.Client    | use the "dispatch" functions to send requests       |
-| FXHistoricalREST.Core      | core functions, config and request types            |
-| FXHistoricalREST.API       | construct api requests                              |
-| FXHistoricalREST.Model     | describes api models                                |
-| FXHistoricalREST.MimeTypes | encoding/decoding MIME types (content-types/accept) |
-| FXHistoricalREST.ModelLens | lenses for model fields                             |
-| FXHistoricalREST.Logging   | logging functions and utils                         |
+| FinFeedAPICurrenciesHistoricalREST.Client    | use the "dispatch" functions to send requests       |
+| FinFeedAPICurrenciesHistoricalREST.Core      | core functions, config and request types            |
+| FinFeedAPICurrenciesHistoricalREST.API       | construct api requests                              |
+| FinFeedAPICurrenciesHistoricalREST.Model     | describes api models                                |
+| FinFeedAPICurrenciesHistoricalREST.MimeTypes | encoding/decoding MIME types (content-types/accept) |
+| FinFeedAPICurrenciesHistoricalREST.ModelLens | lenses for model fields                             |
+| FinFeedAPICurrenciesHistoricalREST.Logging   | logging functions and utils                         |
 
 
 ### MimeTypes

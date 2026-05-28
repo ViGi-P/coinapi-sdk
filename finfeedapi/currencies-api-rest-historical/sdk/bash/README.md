@@ -1,8 +1,8 @@
-# FX Historical REST API Bash client
+# FinFeedAPI Currencies Historical REST API Bash client
 
 ## Overview
 
-This is a Bash client script for accessing FX Historical REST API service.
+This is a Bash client script for accessing FinFeedAPI Currencies Historical REST API service.
 
 The script uses cURL underneath for making all REST calls.
 
