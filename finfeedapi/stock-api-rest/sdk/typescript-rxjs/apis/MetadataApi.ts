@@ -14,7 +14,7 @@
 import type { Observable } from 'rxjs';
 import type { AjaxResponse } from 'rxjs/ajax';
 import { BaseAPI, throwIfNullOrUndefined, encodeURI } from '../runtime';
-import type { OperationOpts, HttpHeaders } from '../runtime';
+import type { OperationOpts, HttpHeaders, HttpQuery } from '../runtime';
 import type {
     FinFeedAPIExchangeModel,
     FinFeedAPISymbolModel,
@@ -22,6 +22,7 @@ import type {
 
 export interface V1SymbolsExchangeIdGetRequest {
     exchangeId: string;
+    filterSymbolId?: string;
 }
 
 /**
@@ -49,19 +50,24 @@ export class MetadataApi extends BaseAPI {
     /**
      * List of symbols for the exchange
      */
-    v1SymbolsExchangeIdGet({ exchangeId }: V1SymbolsExchangeIdGetRequest): Observable<Array<FinFeedAPISymbolModel>>
-    v1SymbolsExchangeIdGet({ exchangeId }: V1SymbolsExchangeIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<FinFeedAPISymbolModel>>>
-    v1SymbolsExchangeIdGet({ exchangeId }: V1SymbolsExchangeIdGetRequest, opts?: OperationOpts): Observable<Array<FinFeedAPISymbolModel> | AjaxResponse<Array<FinFeedAPISymbolModel>>> {
+    v1SymbolsExchangeIdGet({ exchangeId, filterSymbolId }: V1SymbolsExchangeIdGetRequest): Observable<Array<FinFeedAPISymbolModel>>
+    v1SymbolsExchangeIdGet({ exchangeId, filterSymbolId }: V1SymbolsExchangeIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<FinFeedAPISymbolModel>>>
+    v1SymbolsExchangeIdGet({ exchangeId, filterSymbolId }: V1SymbolsExchangeIdGetRequest, opts?: OperationOpts): Observable<Array<FinFeedAPISymbolModel> | AjaxResponse<Array<FinFeedAPISymbolModel>>> {
         throwIfNullOrUndefined(exchangeId, 'exchangeId', 'v1SymbolsExchangeIdGet');
 
         const headers: HttpHeaders = {
             ...(this.configuration.apiKey && { 'Authorization': this.configuration.apiKey('Authorization') }), // APIKey authentication
         };
 
+        const query: HttpQuery = {};
+
+        if (filterSymbolId != null) { query['filter_symbol_id'] = filterSymbolId; }
+
         return this.request<Array<FinFeedAPISymbolModel>>({
             url: '/v1/symbols/{exchange_id}'.replace('{exchange_id}', encodeURI(exchangeId)),
             method: 'GET',
             headers,
+            query,
         }, opts?.responseOpts);
     };
 

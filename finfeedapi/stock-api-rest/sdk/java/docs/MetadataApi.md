@@ -77,7 +77,7 @@ This endpoint does not need any parameter.
 
 <a id="v1SymbolsExchangeIdGet"></a>
 # **v1SymbolsExchangeIdGet**
-> List&lt;FinFeedAPISymbolModel&gt; v1SymbolsExchangeIdGet(exchangeId)
+> List&lt;FinFeedAPISymbolModel&gt; v1SymbolsExchangeIdGet(exchangeId, filterSymbolId)
 
 List of symbols for the exchange
 
@@ -107,9 +107,10 @@ public class Example {
     JWT.setBearerToken("BEARER TOKEN");
 
     MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String exchangeId = "exchangeId_example"; // String | 
+    String exchangeId = "exchangeId_example"; // String | The ID of the exchange (from the Metadata -> Exchanges)
+    String filterSymbolId = "filterSymbolId_example"; // String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
     try {
-      List<FinFeedAPISymbolModel> result = apiInstance.v1SymbolsExchangeIdGet(exchangeId);
+      List<FinFeedAPISymbolModel> result = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetadataApi#v1SymbolsExchangeIdGet");
@@ -126,7 +127,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **exchangeId** | **String**|  | |
+| **exchangeId** | **String**| The ID of the exchange (from the Metadata -&gt; Exchanges) | |
+| **filterSymbolId** | **String**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] |
 
 ### Return type
 

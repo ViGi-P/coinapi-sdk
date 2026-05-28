@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1SymbolsExchangeIdGet**
-> BuiltList<FinFeedAPISymbolModel> v1SymbolsExchangeIdGet(exchangeId)
+> BuiltList<FinFeedAPISymbolModel> v1SymbolsExchangeIdGet(exchangeId, filterSymbolId)
 
 List of symbols for the exchange
 
@@ -68,10 +68,11 @@ import 'package:openapi/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('APIKey').apiKeyPrefix = 'Bearer';
 
 final api = Openapi().getMetadataApi();
-final String exchangeId = exchangeId_example; // String | 
+final String exchangeId = exchangeId_example; // String | The ID of the exchange (from the Metadata -> Exchanges)
+final String filterSymbolId = filterSymbolId_example; // String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
 
 try {
-    final response = api.v1SymbolsExchangeIdGet(exchangeId);
+    final response = api.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling MetadataApi->v1SymbolsExchangeIdGet: $e\n');
@@ -82,7 +83,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exchangeId** | **String**|  | 
+ **exchangeId** | **String**| The ID of the exchange (from the Metadata -> Exchanges) | 
+ **filterSymbolId** | **String**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`) | [optional] 
 
 ### Return type
 

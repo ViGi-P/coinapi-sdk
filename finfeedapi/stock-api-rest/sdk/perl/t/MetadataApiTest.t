@@ -40,7 +40,8 @@ isa_ok($api, 'WWW::OpenAPIClient::MetadataApi');
 #
 # uncomment below and update the test
 #my $v1_symbols_exchange_id_get_exchange_id = undef; # replace NULL with a proper value
-#my $v1_symbols_exchange_id_get_result = $api->v1_symbols_exchange_id_get(exchange_id => $v1_symbols_exchange_id_get_exchange_id);
+#my $v1_symbols_exchange_id_get_filter_symbol_id = undef; # replace NULL with a proper value
+#my $v1_symbols_exchange_id_get_result = $api->v1_symbols_exchange_id_get(exchange_id => $v1_symbols_exchange_id_get_exchange_id, filter_symbol_id => $v1_symbols_exchange_id_get_filter_symbol_id);
 
 
 done_testing();

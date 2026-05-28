@@ -56,7 +56,7 @@ Configure JWT:
 
 <a id="v1SymbolsExchangeIdGet"></a>
 # **v1SymbolsExchangeIdGet**
-> kotlin.collections.List&lt;FinFeedAPISymbolModel&gt; v1SymbolsExchangeIdGet(exchangeId)
+> kotlin.collections.List&lt;FinFeedAPISymbolModel&gt; v1SymbolsExchangeIdGet(exchangeId, filterSymbolId)
 
 List of symbols for the exchange
 
@@ -67,9 +67,10 @@ List of symbols for the exchange
 //import org.openapitools.client.models.*
 
 val apiInstance = MetadataApi()
-val exchangeId : kotlin.String = exchangeId_example // kotlin.String | 
+val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of the exchange (from the Metadata -> Exchanges)
+val filterSymbolId : kotlin.String = filterSymbolId_example // kotlin.String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
 try {
-    val result : kotlin.collections.List<FinFeedAPISymbolModel> = apiInstance.v1SymbolsExchangeIdGet(exchangeId)
+    val result : kotlin.collections.List<FinFeedAPISymbolModel> = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MetadataApi#v1SymbolsExchangeIdGet")
@@ -81,9 +82,10 @@ try {
 ```
 
 ### Parameters
+| **exchangeId** | **kotlin.String**| The ID of the exchange (from the Metadata -&gt; Exchanges) | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **exchangeId** | **kotlin.String**|  | |
+| **filterSymbolId** | **kotlin.String**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] |
 
 ### Return type
 

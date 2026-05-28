@@ -51,7 +51,7 @@ This endpoint does not need any parameter.
 
 ## v1SymbolsExchangeIdGet
 
-> List&lt;FinFeedAPISymbolModel&gt; v1SymbolsExchangeIdGet(exchangeId)
+> List&lt;FinFeedAPISymbolModel&gt; v1SymbolsExchangeIdGet(exchangeId, filterSymbolId)
 
 List of symbols for the exchange
 
@@ -62,9 +62,10 @@ List of symbols for the exchange
 //import org.openapitools.client.api.MetadataApi;
 
 MetadataApi apiInstance = new MetadataApi();
-String exchangeId = null; // String | 
+String exchangeId = null; // String | The ID of the exchange (from the Metadata -> Exchanges)
+String filterSymbolId = null; // String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
 try {
-    List<FinFeedAPISymbolModel> result = apiInstance.v1SymbolsExchangeIdGet(exchangeId);
+    List<FinFeedAPISymbolModel> result = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MetadataApi#v1SymbolsExchangeIdGet");
@@ -77,7 +78,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exchangeId** | **String**|  | [default to null]
+ **exchangeId** | **String**| The ID of the exchange (from the Metadata -&gt; Exchanges) | [default to null]
+ **filterSymbolId** | **String**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] [default to null]
 
 ### Return type
 

@@ -70,7 +70,11 @@ class MetadataApi {
   /// Parameters:
   ///
   /// * [String] exchangeId (required):
-  Future<Response> v1SymbolsExchangeIdGetWithHttpInfo(String exchangeId,) async {
+  ///   The ID of the exchange (from the Metadata -> Exchanges)
+  ///
+  /// * [String] filterSymbolId:
+  ///   Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
+  Future<Response> v1SymbolsExchangeIdGetWithHttpInfo(String exchangeId, { String? filterSymbolId, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/symbols/{exchange_id}'
       .replaceAll('{exchange_id}', exchangeId);
@@ -81,6 +85,10 @@ class MetadataApi {
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
+
+    if (filterSymbolId != null) {
+      queryParams.addAll(_queryParams('', 'filter_symbol_id', filterSymbolId));
+    }
 
     const contentTypes = <String>[];
 
@@ -101,8 +109,12 @@ class MetadataApi {
   /// Parameters:
   ///
   /// * [String] exchangeId (required):
-  Future<List<FinFeedAPISymbolModel>?> v1SymbolsExchangeIdGet(String exchangeId,) async {
-    final response = await v1SymbolsExchangeIdGetWithHttpInfo(exchangeId,);
+  ///   The ID of the exchange (from the Metadata -> Exchanges)
+  ///
+  /// * [String] filterSymbolId:
+  ///   Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
+  Future<List<FinFeedAPISymbolModel>?> v1SymbolsExchangeIdGet(String exchangeId, { String? filterSymbolId, }) async {
+    final response = await v1SymbolsExchangeIdGetWithHttpInfo(exchangeId,  filterSymbolId: filterSymbolId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

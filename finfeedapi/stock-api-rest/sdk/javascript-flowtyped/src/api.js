@@ -1852,7 +1852,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
          * @summary List of symbols for the exchange
          * @throws {RequiredError}
          */
-        v1SymbolsExchangeIdGet(exchangeId: string, options: RequestOptions): FetchArgs {
+        v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, options: RequestOptions): FetchArgs {
             // verify required parameter 'exchangeId' is not null or undefined
             if (exchangeId === null || exchangeId === undefined) {
                 throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling v1SymbolsExchangeIdGet.');
@@ -1874,6 +1874,10 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
 
             // authentication JWT required
 
+            if (filterSymbolId !== undefined) {
+                localVarQueryParameter['filter_symbol_id'] = ((filterSymbolId:any):string);
+            }
+
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             localVarUrlObj.search = null;
@@ -1890,7 +1894,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
 export type MetadataApiType = { 
     v1ExchangesGet(options?: RequestOptions): Promise<Array<FinFeedAPIExchangeModel>>,
 
-    v1SymbolsExchangeIdGet(exchangeId: string, options?: RequestOptions): Promise<Array<FinFeedAPISymbolModel>>,
+    v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, options?: RequestOptions): Promise<Array<FinFeedAPISymbolModel>>,
 }
 
 /**
@@ -1920,8 +1924,8 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
          * @summary List of symbols for the exchange
          * @throws {RequiredError}
          */
-        v1SymbolsExchangeIdGet(exchangeId: string, options?: RequestOptions = {}): Promise<Array<FinFeedAPISymbolModel>> {
-            const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1SymbolsExchangeIdGet(exchangeId, options);
+        v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, options?: RequestOptions = {}): Promise<Array<FinFeedAPISymbolModel>> {
+            const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1SymbolsExchangeIdGet(exchangeId, filterSymbolId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();

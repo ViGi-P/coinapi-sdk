@@ -39,7 +39,7 @@ This endpoint does not need any parameter.
 
 <a id="v1symbolsexchangeidget"></a>
 # **V1SymbolsExchangeIdGet**
-> List&lt;FinFeedAPISymbolModel&gt; V1SymbolsExchangeIdGet (string exchangeId)
+> List&lt;FinFeedAPISymbolModel&gt; V1SymbolsExchangeIdGet (string exchangeId, string filterSymbolId = null)
 
 List of symbols for the exchange
 
@@ -48,7 +48,8 @@ List of symbols for the exchange
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **exchangeId** | **string** |  |  |
+| **exchangeId** | **string** | The ID of the exchange (from the Metadata -&gt; Exchanges) |  |
+| **filterSymbolId** | **string** | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional]  |
 
 ### Return type
 

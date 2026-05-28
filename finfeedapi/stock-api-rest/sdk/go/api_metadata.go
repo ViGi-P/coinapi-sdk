@@ -139,6 +139,13 @@ type ApiV1SymbolsExchangeIdGetRequest struct {
 	ctx context.Context
 	ApiService *MetadataAPIService
 	exchangeId string
+	filterSymbolId *string
+}
+
+// Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
+func (r ApiV1SymbolsExchangeIdGetRequest) FilterSymbolId(filterSymbolId string) ApiV1SymbolsExchangeIdGetRequest {
+	r.filterSymbolId = &filterSymbolId
+	return r
 }
 
 func (r ApiV1SymbolsExchangeIdGetRequest) Execute() ([]FinFeedAPISymbolModel, *http.Response, error) {
@@ -149,7 +156,7 @@ func (r ApiV1SymbolsExchangeIdGetRequest) Execute() ([]FinFeedAPISymbolModel, *h
 V1SymbolsExchangeIdGet List of symbols for the exchange
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param exchangeId
+ @param exchangeId The ID of the exchange (from the Metadata -> Exchanges)
  @return ApiV1SymbolsExchangeIdGetRequest
 */
 func (a *MetadataAPIService) V1SymbolsExchangeIdGet(ctx context.Context, exchangeId string) ApiV1SymbolsExchangeIdGetRequest {
@@ -182,6 +189,9 @@ func (a *MetadataAPIService) V1SymbolsExchangeIdGetExecute(r ApiV1SymbolsExchang
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.filterSymbolId != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filter_symbol_id", r.filterSymbolId, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

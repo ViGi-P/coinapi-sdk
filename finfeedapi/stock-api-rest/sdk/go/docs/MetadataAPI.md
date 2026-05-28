@@ -70,7 +70,7 @@ Other parameters are passed through a pointer to a apiV1ExchangesGetRequest stru
 
 ## V1SymbolsExchangeIdGet
 
-> []FinFeedAPISymbolModel V1SymbolsExchangeIdGet(ctx, exchangeId).Execute()
+> []FinFeedAPISymbolModel V1SymbolsExchangeIdGet(ctx, exchangeId).FilterSymbolId(filterSymbolId).Execute()
 
 List of symbols for the exchange
 
@@ -87,11 +87,12 @@ import (
 )
 
 func main() {
-	exchangeId := "exchangeId_example" // string | 
+	exchangeId := "exchangeId_example" // string | The ID of the exchange (from the Metadata -> Exchanges)
+	filterSymbolId := "filterSymbolId_example" // string | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`) (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetadataAPI.V1SymbolsExchangeIdGet(context.Background(), exchangeId).Execute()
+	resp, r, err := apiClient.MetadataAPI.V1SymbolsExchangeIdGet(context.Background(), exchangeId).FilterSymbolId(filterSymbolId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1SymbolsExchangeIdGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -107,7 +108,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**exchangeId** | **string** |  | 
+**exchangeId** | **string** | The ID of the exchange (from the Metadata -&gt; Exchanges) | 
 
 ### Other Parameters
 
@@ -117,6 +118,7 @@ Other parameters are passed through a pointer to a apiV1SymbolsExchangeIdGetRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **filterSymbolId** | **string** | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | 
 
 ### Return type
 

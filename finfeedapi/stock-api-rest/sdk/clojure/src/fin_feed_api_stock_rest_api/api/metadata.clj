@@ -54,23 +54,25 @@
 
 (defn-spec v1-symbols-exchange-id-get-with-http-info any?
   "List of symbols for the exchange"
-  [exchange_id string?]
-  (check-required-params exchange_id)
-  (call-api "/v1/symbols/{exchange_id}" :get
-            {:path-params   {"exchange_id" exchange_id }
-             :header-params {}
-             :query-params  {}
-             :form-params   {}
-             :content-types []
-             :accepts       ["text/plain" "application/json" "text/json"]
-             :auth-names    ["APIKey" "JWT"]}))
+  ([exchange_id string?, ] (v1-symbols-exchange-id-get-with-http-info exchange_id nil))
+  ([exchange_id string?, {:keys [filter_symbol_id]} (s/map-of keyword? any?)]
+   (check-required-params exchange_id)
+   (call-api "/v1/symbols/{exchange_id}" :get
+             {:path-params   {"exchange_id" exchange_id }
+              :header-params {}
+              :query-params  {"filter_symbol_id" filter_symbol_id }
+              :form-params   {}
+              :content-types []
+              :accepts       ["text/plain" "application/json" "text/json"]
+              :auth-names    ["APIKey" "JWT"]})))
 
 (defn-spec v1-symbols-exchange-id-get (s/coll-of fin-feed-api/symbol-model-spec)
   "List of symbols for the exchange"
-  [exchange_id string?]
-  (let [res (:data (v1-symbols-exchange-id-get-with-http-info exchange_id))]
-    (if (:decode-models *api-context*)
-       (st/decode (s/coll-of fin-feed-api/symbol-model-spec) res st/string-transformer)
-       res)))
+  ([exchange_id string?, ] (v1-symbols-exchange-id-get exchange_id nil))
+  ([exchange_id string?, optional-params any?]
+   (let [res (:data (v1-symbols-exchange-id-get-with-http-info exchange_id optional-params))]
+     (if (:decode-models *api-context*)
+        (st/decode (s/coll-of fin-feed-api/symbol-model-spec) res st/string-transformer)
+        res))))
 
 

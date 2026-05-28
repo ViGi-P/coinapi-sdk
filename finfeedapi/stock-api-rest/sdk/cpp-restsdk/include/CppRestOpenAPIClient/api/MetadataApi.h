@@ -60,9 +60,11 @@ public:
     /// <remarks>
     /// 
     /// </remarks>
-    /// <param name="exchangeId"></param>
+    /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
+    /// <param name="filterSymbolId">Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
     pplx::task<std::vector<std::shared_ptr<FinFeedAPI_SymbolModel>>> v1SymbolsExchangeIdGet(
-        utility::string_t exchangeId
+        utility::string_t exchangeId,
+        boost::optional<utility::string_t> filterSymbolId
     ) const;
 
 protected:

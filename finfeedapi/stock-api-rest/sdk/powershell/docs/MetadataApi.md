@@ -56,6 +56,7 @@ This endpoint does not need any parameter.
 # **Invoke-V1SymbolsExchangeIdGet**
 > FinFeedAPISymbolModel[] Invoke-V1SymbolsExchangeIdGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ExchangeId] <String><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FilterSymbolId] <String><br>
 
 List of symbols for the exchange
 
@@ -69,11 +70,12 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 #$Configuration.ApiKeyPrefix.Authorization = "Bearer"
 
 
-$ExchangeId = "MyExchangeId" # String | 
+$ExchangeId = "MyExchangeId" # String | The ID of the exchange (from the Metadata -> Exchanges)
+$FilterSymbolId = "MyFilterSymbolId" # String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`) (optional)
 
 # List of symbols for the exchange
 try {
-    $Result = Invoke-V1SymbolsExchangeIdGet -ExchangeId $ExchangeId
+    $Result = Invoke-V1SymbolsExchangeIdGet -ExchangeId $ExchangeId -FilterSymbolId $FilterSymbolId
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1SymbolsExchangeIdGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -84,7 +86,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ExchangeId** | **String**|  | 
+ **ExchangeId** | **String**| The ID of the exchange (from the Metadata -&gt; Exchanges) | 
+ **FilterSymbolId** | **String**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] 
 
 ### Return type
 

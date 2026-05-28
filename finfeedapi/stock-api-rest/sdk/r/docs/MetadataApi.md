@@ -53,7 +53,7 @@ This endpoint does not need any parameter.
 | **200** | successful operation |  -  |
 
 # **V1SymbolsExchangeIdGet**
-> array[FinFeedAPISymbolModel] V1SymbolsExchangeIdGet(exchange_id)
+> array[FinFeedAPISymbolModel] V1SymbolsExchangeIdGet(exchange_id, filter_symbol_id = var.filter_symbol_id)
 
 List of symbols for the exchange
 
@@ -64,7 +64,8 @@ library(openapi)
 # List of symbols for the exchange
 #
 # prepare function argument(s)
-var_exchange_id <- "exchange_id_example" # character | 
+var_exchange_id <- "exchange_id_example" # character | The ID of the exchange (from the Metadata -> Exchanges)
+var_filter_symbol_id <- "filter_symbol_id_example" # character | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`) (Optional)
 
 api_instance <- MetadataApi$new()
 # Configure API key authorization: APIKey
@@ -72,8 +73,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$V1SymbolsExchangeIdGet(var_exchange_iddata_file = "result.txt")
-result <- api_instance$V1SymbolsExchangeIdGet(var_exchange_id)
+# result <- api_instance$V1SymbolsExchangeIdGet(var_exchange_id, filter_symbol_id = var_filter_symbol_iddata_file = "result.txt")
+result <- api_instance$V1SymbolsExchangeIdGet(var_exchange_id, filter_symbol_id = var_filter_symbol_id)
 dput(result)
 ```
 
@@ -81,7 +82,8 @@ dput(result)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exchange_id** | **character**|  | 
+ **exchange_id** | **character**| The ID of the exchange (from the Metadata -&gt; Exchanges) | 
+ **filter_symbol_id** | **character**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] 
 
 ### Return type
 

@@ -79,7 +79,7 @@ This endpoint does not need any parameter.
 
 ## v1_symbols_exchange_id_get
 
-> <Array<FinFeedAPISymbolModel>> v1_symbols_exchange_id_get(exchange_id)
+> <Array<FinFeedAPISymbolModel>> v1_symbols_exchange_id_get(exchange_id, opts)
 
 List of symbols for the exchange
 
@@ -100,11 +100,14 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::MetadataApi.new
-exchange_id = 'exchange_id_example' # String | 
+exchange_id = 'exchange_id_example' # String | The ID of the exchange (from the Metadata -> Exchanges)
+opts = {
+  filter_symbol_id: 'filter_symbol_id_example' # String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
+}
 
 begin
   # List of symbols for the exchange
-  result = api_instance.v1_symbols_exchange_id_get(exchange_id)
+  result = api_instance.v1_symbols_exchange_id_get(exchange_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling MetadataApi->v1_symbols_exchange_id_get: #{e}"
@@ -115,12 +118,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<FinFeedAPISymbolModel>>, Integer, Hash)> v1_symbols_exchange_id_get_with_http_info(exchange_id)
+> <Array(<Array<FinFeedAPISymbolModel>>, Integer, Hash)> v1_symbols_exchange_id_get_with_http_info(exchange_id, opts)
 
 ```ruby
 begin
   # List of symbols for the exchange
-  data, status_code, headers = api_instance.v1_symbols_exchange_id_get_with_http_info(exchange_id)
+  data, status_code, headers = api_instance.v1_symbols_exchange_id_get_with_http_info(exchange_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<FinFeedAPISymbolModel>>
@@ -133,7 +136,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **exchange_id** | **String** |  |  |
+| **exchange_id** | **String** | The ID of the exchange (from the Metadata -&gt; Exchanges) |  |
+| **filter_symbol_id** | **String** | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] |
 
 ### Return type
 

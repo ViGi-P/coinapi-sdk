@@ -46,7 +46,7 @@ List of symbols for the exchange
 ### Example
 
 ```bash
- v1SymbolsExchangeIdGet exchange_id=value
+ v1SymbolsExchangeIdGet exchange_id=value  filter_symbol_id=value
 ```
 
 ### Parameters
@@ -54,7 +54,8 @@ List of symbols for the exchange
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exchangeId** | **string** |  | [default to null]
+ **exchangeId** | **string** | The ID of the exchange (from the Metadata -> Exchanges) | [default to null]
+ **filterSymbolId** | **string** | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. 'TSLA' or 'TSLA,NVDA') | [optional] [default to null]
 
 ### Return type
 

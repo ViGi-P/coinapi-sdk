@@ -49,13 +49,18 @@ public class OASMetadataApi {
     /**
      * List of symbols for the exchange
      * 
-     * @param exchangeId  (required)
+     * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
+     * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
      * @return List<OASFinFeedAPISymbolModel>
      * @throws OAS.ApiException if fails to make API call
      */
     public List<OASFinFeedAPISymbolModel> v1SymbolsExchangeIdGet(Map<String, Object> params) {
         client.assertNotNull(params.get('exchangeId'), 'exchangeId');
         List<OAS.Param> query = new List<OAS.Param>();
+
+        // cast query params to verify their expected type
+        query.addAll(client.makeParam('filter_symbol_id', (String) params.get('filterSymbolId')));
+
         List<OAS.Param> form = new List<OAS.Param>();
 
         return (List<OASFinFeedAPISymbolModel>) client.invoke(

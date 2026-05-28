@@ -43,8 +43,9 @@ defmodule FinFeedAPIStockRESTAPI.Api.Metadata do
   ### Parameters
 
   - `connection` (FinFeedAPIStockRESTAPI.Connection): Connection to server
-  - `exchange_id` (String.t): 
+  - `exchange_id` (String.t): The ID of the exchange (from the Metadata -> Exchanges)
   - `opts` (keyword): Optional parameters
+    - `:filter_symbol_id` (String.t): Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
 
   ### Returns
 
@@ -52,11 +53,16 @@ defmodule FinFeedAPIStockRESTAPI.Api.Metadata do
   - `{:error, Tesla.Env.t}` on failure
   """
   @spec v1_symbols_exchange_id_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [FinFeedAPIStockRESTAPI.Model.FinFeedApiSymbolModel.t]} | {:error, Tesla.Env.t}
-  def v1_symbols_exchange_id_get(connection, exchange_id, _opts \\ []) do
+  def v1_symbols_exchange_id_get(connection, exchange_id, opts \\ []) do
+    optional_params = %{
+      :filter_symbol_id => :query
+    }
+
     request =
       %{}
       |> method(:get)
       |> url("/v1/symbols/#{exchange_id}")
+      |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection

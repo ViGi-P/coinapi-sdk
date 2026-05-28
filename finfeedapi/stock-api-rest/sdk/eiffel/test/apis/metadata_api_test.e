@@ -33,11 +33,12 @@ feature -- Test routines
         local
             l_response: LIST [FIN_FEED_API_SYMBOL_MODEL]
             l_exchange_id: STRING_32
+            l_filter_symbol_id: STRING_32
         do
             -- TODO: Initialize required params.
             -- l_exchange_id
 
-            -- l_response := api.v1_symbols_exchange_id_get(l_exchange_id)
+            -- l_response := api.v1_symbols_exchange_id_get(l_exchange_id, l_filter_symbol_id)
             assert ("not_implemented", False)
         end
 

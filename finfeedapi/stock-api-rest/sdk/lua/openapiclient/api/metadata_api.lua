@@ -98,13 +98,13 @@ function metadata_api:v1_exchanges_get()
 	end
 end
 
-function metadata_api:v1_symbols_exchange_id_get(exchange_id)
+function metadata_api:v1_symbols_exchange_id_get(exchange_id, filter_symbol_id)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/v1/symbols/%s",
-			self.basePath, exchange_id);
+		path = string.format("%s/v1/symbols/%s?filter_symbol_id=%s",
+			self.basePath, exchange_id, http_util.encodeURIComponent(filter_symbol_id));
 	})
 
 	-- set HTTP verb

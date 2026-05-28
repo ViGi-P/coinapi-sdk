@@ -128,7 +128,8 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * GET /v1/symbols/{exchange_id}
      * List of symbols for the exchange
      * 
-     * @param exchangeId 
+     * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
+     * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
      * @return kotlin.collections.List<FinFeedAPISymbolModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -138,8 +139,8 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1SymbolsExchangeIdGet(exchangeId: kotlin.String) : kotlin.collections.List<FinFeedAPISymbolModel> {
-        val localVarResponse = v1SymbolsExchangeIdGetWithHttpInfo(exchangeId = exchangeId)
+    fun v1SymbolsExchangeIdGet(exchangeId: kotlin.String, filterSymbolId: kotlin.String? = null) : kotlin.collections.List<FinFeedAPISymbolModel> {
+        val localVarResponse = v1SymbolsExchangeIdGetWithHttpInfo(exchangeId = exchangeId, filterSymbolId = filterSymbolId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<FinFeedAPISymbolModel>
@@ -160,15 +161,16 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      * GET /v1/symbols/{exchange_id}
      * List of symbols for the exchange
      * 
-     * @param exchangeId 
+     * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
+     * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
      * @return ApiResponse<kotlin.collections.List<FinFeedAPISymbolModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1SymbolsExchangeIdGetWithHttpInfo(exchangeId: kotlin.String) : ApiResponse<kotlin.collections.List<FinFeedAPISymbolModel>?> {
-        val localVariableConfig = v1SymbolsExchangeIdGetRequestConfig(exchangeId = exchangeId)
+    fun v1SymbolsExchangeIdGetWithHttpInfo(exchangeId: kotlin.String, filterSymbolId: kotlin.String?) : ApiResponse<kotlin.collections.List<FinFeedAPISymbolModel>?> {
+        val localVariableConfig = v1SymbolsExchangeIdGetRequestConfig(exchangeId = exchangeId, filterSymbolId = filterSymbolId)
 
         return request<Unit, kotlin.collections.List<FinFeedAPISymbolModel>>(
             localVariableConfig
@@ -178,12 +180,18 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * To obtain the request config of the operation v1SymbolsExchangeIdGet
      *
-     * @param exchangeId 
+     * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
+     * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
      * @return RequestConfig
      */
-    fun v1SymbolsExchangeIdGetRequestConfig(exchangeId: kotlin.String) : RequestConfig<Unit> {
+    fun v1SymbolsExchangeIdGetRequestConfig(exchangeId: kotlin.String, filterSymbolId: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
+            .apply {
+                if (filterSymbolId != null) {
+                    put("filter_symbol_id", listOf(filterSymbolId.toString()))
+                }
+            }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "text/plain, application/json"
 

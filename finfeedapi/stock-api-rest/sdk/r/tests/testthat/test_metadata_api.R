@@ -19,7 +19,8 @@ test_that("V1SymbolsExchangeIdGet", {
   # tests for V1SymbolsExchangeIdGet
   # base path: https://api-historical.stock.finfeedapi.com
   # List of symbols for the exchange
-  # @param exchange_id character 
+  # @param exchange_id character The ID of the exchange (from the Metadata -> Exchanges)
+  # @param filter_symbol_id character Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`) (optional)
   # @return [array[FinFeedAPISymbolModel]]
 
   # uncomment below to test the operation

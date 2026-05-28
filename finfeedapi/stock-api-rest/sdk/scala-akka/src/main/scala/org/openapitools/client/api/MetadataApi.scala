@@ -46,12 +46,14 @@ class MetadataApi(baseUrl: String) {
    *   APIKey (apiKey)
    *   JWT (http)
    * 
-   * @param exchangeId 
+   * @param exchangeId The ID of the exchange (from the Metadata -> Exchanges)
+   * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
    */
-  def v1SymbolsExchangeIdGet(exchangeId: String)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[SymbolModel]] =
+  def v1SymbolsExchangeIdGet(exchangeId: String, filterSymbolId: Option[String] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[SymbolModel]] =
     ApiRequest[Seq[SymbolModel]](ApiMethods.GET, baseUrl, "/v1/symbols/{exchange_id}", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
-      .withCredentials(bearerToken).withPathParam("exchange_id", exchangeId)
+      .withCredentials(bearerToken).withQueryParam("filter_symbol_id", filterSymbolId)
+      .withPathParam("exchange_id", exchangeId)
       .withSuccessResponse[Seq[SymbolModel]](200)
       
 

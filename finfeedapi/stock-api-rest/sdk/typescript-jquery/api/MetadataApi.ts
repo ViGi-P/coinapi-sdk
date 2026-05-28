@@ -113,9 +113,10 @@ export class MetadataApi {
     /**
      * 
      * @summary List of symbols for the exchange
-     * @param exchangeId 
+     * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
+     * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
      */
-    public v1SymbolsExchangeIdGet(exchangeId: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.FinFeedAPISymbolModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -128,6 +129,9 @@ export class MetadataApi {
             throw new Error('Required parameter exchangeId was null or undefined when calling v1SymbolsExchangeIdGet.');
         }
 
+        if (filterSymbolId !== null && filterSymbolId !== undefined) {
+            queryParameters['filter_symbol_id'] = <string><any>filterSymbolId;
+        }
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);
         // to determine the Content-Type header

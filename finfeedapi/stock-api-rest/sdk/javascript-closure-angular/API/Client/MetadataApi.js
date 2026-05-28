@@ -79,11 +79,12 @@ API.Client.MetadataApi.prototype.v1ExchangesGet = function(opt_extraHttpRequestP
 /**
  * List of symbols for the exchange
  * 
- * @param {!string} exchangeId 
+ * @param {!string} exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
+ * @param {!string=} opt_filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.FinFeedAPI.SymbolModel>>}
  */
-API.Client.MetadataApi.prototype.v1SymbolsExchangeIdGet = function(exchangeId, opt_extraHttpRequestParams) {
+API.Client.MetadataApi.prototype.v1SymbolsExchangeIdGet = function(exchangeId, opt_filterSymbolId, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/symbols/{exchange_id}'
       .replace('{exchange_id}', String(exchangeId));
@@ -97,6 +98,10 @@ API.Client.MetadataApi.prototype.v1SymbolsExchangeIdGet = function(exchangeId, o
   if (!exchangeId) {
     throw new Error('Missing required parameter exchangeId when calling v1SymbolsExchangeIdGet');
   }
+  if (opt_filterSymbolId !== undefined) {
+    queryParameters['filter_symbol_id'] = opt_filterSymbolId;
+  }
+
   /** @type {!Object} */
   var httpRequestParams = {
     method: 'GET',

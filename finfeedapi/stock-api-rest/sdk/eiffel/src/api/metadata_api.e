@@ -57,11 +57,13 @@ feature -- API Access
 			end
 		end
 
-	v1_symbols_exchange_id_get (exchange_id: STRING_32): detachable LIST [FIN_FEED_API_SYMBOL_MODEL]
+	v1_symbols_exchange_id_get (exchange_id: STRING_32; filter_symbol_id: STRING_32): detachable LIST [FIN_FEED_API_SYMBOL_MODEL]
 			-- List of symbols for the exchange
 			-- 
 			-- 
-			-- argument: exchange_id  (required)
+			-- argument: exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
+			-- 
+			-- argument: filter_symbol_id Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional, default to null)
 			-- 
 			-- 
 			-- Result LIST [FIN_FEED_API_SYMBOL_MODEL]
@@ -76,6 +78,7 @@ feature -- API Access
 			
 			l_path := "/v1/symbols/{exchange_id}"
 			l_path.replace_substring_all ("{"+"exchange_id"+"}", api_client.url_encode (exchange_id.out))
+			l_request.fill_query_params(api_client.parameter_to_tuple("", "filter_symbol_id", filter_symbol_id));
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"text/plain", "application/json", "text/json">>)  as l_accept then

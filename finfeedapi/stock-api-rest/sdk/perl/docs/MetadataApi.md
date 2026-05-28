@@ -62,7 +62,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_symbols_exchange_id_get**
-> ARRAY[FinFeedAPISymbolModel] v1_symbols_exchange_id_get(exchange_id => $exchange_id)
+> ARRAY[FinFeedAPISymbolModel] v1_symbols_exchange_id_get(exchange_id => $exchange_id, filter_symbol_id => $filter_symbol_id)
 
 List of symbols for the exchange
 
@@ -81,10 +81,11 @@ my $api_instance = WWW::OpenAPIClient::MetadataApi->new(
     
 );
 
-my $exchange_id = "exchange_id_example"; # string | 
+my $exchange_id = "exchange_id_example"; # string | The ID of the exchange (from the Metadata -> Exchanges)
+my $filter_symbol_id = "filter_symbol_id_example"; # string | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
 
 eval {
-    my $result = $api_instance->v1_symbols_exchange_id_get(exchange_id => $exchange_id);
+    my $result = $api_instance->v1_symbols_exchange_id_get(exchange_id => $exchange_id, filter_symbol_id => $filter_symbol_id);
     print Dumper($result);
 };
 if ($@) {
@@ -96,7 +97,8 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exchange_id** | **string**|  | 
+ **exchange_id** | **string**| The ID of the exchange (from the Metadata -&gt; Exchanges) | 
+ **filter_symbol_id** | **string**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] 
 
 ### Return type
 

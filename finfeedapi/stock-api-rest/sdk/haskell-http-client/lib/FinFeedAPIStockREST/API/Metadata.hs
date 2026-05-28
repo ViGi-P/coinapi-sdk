@@ -93,7 +93,7 @@ instance Produces V1ExchangesGet MimePlainText
 -- 
 v1SymbolsExchangeIdGet
   :: Accept accept -- ^ request accept ('MimeType')
-  -> ExchangeId -- ^ "exchangeId"
+  -> ExchangeId -- ^ "exchangeId" -  The ID of the exchange (from the Metadata -> Exchanges)
   -> FinFeedAPIStockRESTRequest V1SymbolsExchangeIdGet MimeNoContent [FinFeedAPISymbolModel] accept
 v1SymbolsExchangeIdGet  _ (ExchangeId exchangeId) =
   _mkRequest "GET" ["/v1/symbols/",toPath exchangeId]
@@ -101,6 +101,11 @@ v1SymbolsExchangeIdGet  _ (ExchangeId exchangeId) =
     `_hasAuthType` (P.Proxy :: P.Proxy AuthBasicJWT)
 
 data V1SymbolsExchangeIdGet  
+
+-- | /Optional Param/ "filter_symbol_id" - Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
+instance HasOptionalParam V1SymbolsExchangeIdGet FilterSymbolId where
+  applyOptionalParam req (FilterSymbolId xs) =
+    req `addQuery` toQuery ("filter_symbol_id", Just xs)
 -- | @application/json@
 instance Produces V1SymbolsExchangeIdGet MimeJSON
 -- | @text/json@
