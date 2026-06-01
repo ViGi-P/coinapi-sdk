@@ -54,7 +54,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an asset.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-28T06:04:17.397329996Z[Etc/UTC]", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-01T06:04:42.848818929Z[Etc/UTC]", comments = "Generator version: 7.22.0")
 public class V1Asset {
   public static final String SERIALIZED_NAME_ASSET_ID = "asset_id";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
