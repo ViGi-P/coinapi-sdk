@@ -337,10 +337,12 @@
           "Market Activity"
         ],
         "summary": "Returns recent trades and recent quotes for a market.",
+        "description": "Trades and quotes are returned as separate lists. The `limit` applies independently to each list\n(default 100, max 10000 per list).",
         "parameters": [
           {
             "name": "exchange_id",
             "in": "path",
+            "description": "The unique identifier of the exchange.",
             "required": true,
             "schema": {
               "type": "string"
@@ -349,9 +351,20 @@
           {
             "name": "market_id",
             "in": "path",
+            "description": "The unique identifier of the market, including the outcome suffix.",
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of trades and quotes to return in each list (1-10000, default 100)",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
             }
           }
         ],
@@ -393,7 +406,7 @@
           "Market Activity"
         ],
         "summary": "Returns historical trades for a market from flat files.",
-        "description": "Retrieves historical trade data from flat files stored in external storage (S3).\nSupports hourly granularity with automatic fallback to daily files.\nUse either 'date' for full day or 'time_start'/'time_end' for specific time ranges.\n            \n**Important:** Results are filtered by data processing time (time_coinapi) - the time when CoinAPI\nreceived and processed the data from the exchange. Each trade also includes time_exchange showing\nwhen the trade actually occurred on the exchange. Due to API polling delays, time_exchange may be\nearlier than time_coinapi.",
+        "description": "Retrieves historical trade data from flat files stored in external storage (S3).\nSupports hourly granularity with automatic fallback to daily files.\nUse either 'date' for full day or 'time_start'/'time_end' for specific time ranges.\nThe `limit` parameter applies in both cases (default 100, max 10000), including when `date` selects a full day.\n            \n**Important:** Results are filtered by data processing time (time_coinapi) - the time when CoinAPI\nreceived and processed the data from the exchange. Each trade also includes time_exchange showing\nwhen the trade actually occurred on the exchange. Due to API polling delays, time_exchange may be\nearlier than time_coinapi.",
         "parameters": [
           {
             "name": "exchange_id",
@@ -414,6 +427,7 @@
           {
             "name": "date",
             "in": "query",
+            "description": "Full day in ISO 8601 or YYYY-MM-DD (mutually exclusive with time_start/time_end)",
             "schema": {
               "type": "string"
             }
@@ -421,6 +435,7 @@
           {
             "name": "time_start",
             "in": "query",
+            "description": "Range start in ISO 8601 (required if date is omitted)",
             "schema": {
               "type": "string"
             }
@@ -428,6 +443,7 @@
           {
             "name": "time_end",
             "in": "query",
+            "description": "Range end in ISO 8601 (optional)",
             "schema": {
               "type": "string"
             }
@@ -435,6 +451,7 @@
           {
             "name": "limit",
             "in": "query",
+            "description": "Maximum number of trades to return (1-10000, default 100). Applies even when date selects a full day.",
             "schema": {
               "type": "integer",
               "format": "int32",
@@ -489,7 +506,7 @@
           "Market Activity"
         ],
         "summary": "Returns historical quotes for a market from flat files.",
-        "description": "Retrieves historical quote (bid/ask) data from flat files stored in external storage (S3).\nSupports hourly granularity with automatic fallback to daily files.\nUse either 'date' for full day or 'time_start'/'time_end' for specific time ranges.\n            \n**Important:** Results are filtered by data processing time (time_coinapi) - the time when CoinAPI\nreceived and processed the data from the exchange. Each quote also includes time_exchange showing\nwhen the quote was created on the exchange. Due to API polling delays, time_exchange may be\nearlier than time_coinapi.",
+        "description": "Retrieves historical quote (bid/ask) data from flat files stored in external storage (S3).\nSupports hourly granularity with automatic fallback to daily files.\nUse either 'date' for full day or 'time_start'/'time_end' for specific time ranges.\nThe `limit` parameter applies in both cases (default 100, max 10000), including when `date` selects a full day.\n            \n**Important:** Results are filtered by data processing time (time_coinapi) - the time when CoinAPI\nreceived and processed the data from the exchange. Each quote also includes time_exchange showing\nwhen the quote was created on the exchange. Due to API polling delays, time_exchange may be\nearlier than time_coinapi.",
         "parameters": [
           {
             "name": "exchange_id",
@@ -510,6 +527,7 @@
           {
             "name": "date",
             "in": "query",
+            "description": "Full day in ISO 8601 or YYYY-MM-DD (mutually exclusive with time_start/time_end)",
             "schema": {
               "type": "string"
             }
@@ -517,6 +535,7 @@
           {
             "name": "time_start",
             "in": "query",
+            "description": "Range start in ISO 8601 (required if date is omitted)",
             "schema": {
               "type": "string"
             }
@@ -524,6 +543,7 @@
           {
             "name": "time_end",
             "in": "query",
+            "description": "Range end in ISO 8601 (optional)",
             "schema": {
               "type": "string"
             }
@@ -531,6 +551,7 @@
           {
             "name": "limit",
             "in": "query",
+            "description": "Maximum number of quotes to return (1-10000, default 100). Applies even when date selects a full day.",
             "schema": {
               "type": "integer",
               "format": "int32",
@@ -1202,7 +1223,7 @@
           "OHLCV"
         ],
         "summary": "Historical data for an exchange",
-        "description": "Get OHLCV timeseries data for an exchange, returned in time ascending order.",
+        "description": "Get OHLCV timeseries data for an exchange, returned in time ascending order.\nTime range is limited to 24 hours. Use `limit` to cap the number of market rows returned.",
         "parameters": [
           {
             "name": "exchange_id",
@@ -1236,6 +1257,16 @@
             "description": "Timeseries ending time in ISO 8601",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of market rows to return (1-10000, default 100)",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
             }
           }
         ],
@@ -1582,7 +1613,7 @@
           "Orderbooks"
         ],
         "summary": "Returns historical orderbook limit orders for a market from flat files.",
-        "description": "Retrieves historical limit order data from flat files stored in external storage (S3).\nReturns raw limit order updates (adds, updates, deletes) rather than reconstructed snapshots.\nSupports hourly granularity with automatic fallback to daily files.\nUse either 'date' for full day or 'time_start'/'time_end' for specific time ranges.\n            \n**Important:** Results are filtered by data processing time (time_coinapi) - the time when CoinAPI\nreceived and processed the data from the exchange. Each order also includes time_exchange showing\nwhen the order was created/updated on the exchange. Due to API polling delays, time_exchange may be\nearlier than time_coinapi.",
+        "description": "Retrieves historical limit order data from flat files stored in external storage (S3).\nReturns raw limit order updates (adds, updates, deletes) rather than reconstructed snapshots.\nSupports hourly granularity with automatic fallback to daily files.\nUse either 'date' for full day or 'time_start'/'time_end' for specific time ranges.\nThe `limit` parameter applies in both cases (default 100, max 10000), including when `date` selects a full day.\n            \n**Important:** Results are filtered by data processing time (time_coinapi) - the time when CoinAPI\nreceived and processed the data from the exchange. Each order also includes time_exchange showing\nwhen the order was created/updated on the exchange. Due to API polling delays, time_exchange may be\nearlier than time_coinapi.",
         "parameters": [
           {
             "name": "exchange_id",
@@ -1603,6 +1634,7 @@
           {
             "name": "date",
             "in": "query",
+            "description": "Full day in ISO 8601 or YYYY-MM-DD (mutually exclusive with time_start/time_end)",
             "schema": {
               "type": "string"
             }
@@ -1610,6 +1642,7 @@
           {
             "name": "time_start",
             "in": "query",
+            "description": "Range start in ISO 8601 (required if date is omitted)",
             "schema": {
               "type": "string"
             }
@@ -1617,6 +1650,7 @@
           {
             "name": "time_end",
             "in": "query",
+            "description": "Range end in ISO 8601 (optional)",
             "schema": {
               "type": "string"
             }
@@ -1624,6 +1658,7 @@
           {
             "name": "limit",
             "in": "query",
+            "description": "Maximum number of limit order updates to return (1-10000, default 100). Applies even when date selects a full day.",
             "schema": {
               "type": "integer",
               "format": "int32",
