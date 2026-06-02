@@ -64,11 +64,13 @@ import qualified Prelude as P
 -- 
 -- Get Admin Messages
 -- 
+-- Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+-- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1NativeIexAdminMessagesSymbolGet
   :: Symbol -- ^ "symbol" -  The symbol identifier
-  -> ParamDate -- ^ "date" -  Optional date in format YYYY-MM-DD (defaults to latest available data)
+  -> ParamDate -- ^ "date" -  Date in format YYYY-MM-DD
   -> FinFeedAPIStockRESTRequest V1NativeIexAdminMessagesSymbolGet MimeNoContent [ModelsAdminMessageModel] MimeJSON
 v1NativeIexAdminMessagesSymbolGet (Symbol symbol) (ParamDate date) =
   _mkRequest "GET" ["/v1/native/iex/admin/messages/",toPath symbol]
@@ -77,6 +79,11 @@ v1NativeIexAdminMessagesSymbolGet (Symbol symbol) (ParamDate date) =
     `addQuery` toQuery ("date", Just date)
 
 data V1NativeIexAdminMessagesSymbolGet  
+
+-- | /Optional Param/ "limit" - Maximum number of records to return (1-10000, default 100)
+instance HasOptionalParam V1NativeIexAdminMessagesSymbolGet Limit where
+  applyOptionalParam req (Limit xs) =
+    req `addQuery` toQuery ("limit", Just xs)
 -- | @application/json@
 instance Produces V1NativeIexAdminMessagesSymbolGet MimeJSON
 
@@ -86,6 +93,8 @@ instance Produces V1NativeIexAdminMessagesSymbolGet MimeJSON
 -- | @GET \/v1\/native\/iex\/admin\/system-event@
 -- 
 -- Get System Events
+-- 
+-- Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 -- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
@@ -99,6 +108,11 @@ v1NativeIexAdminSystemEventGet (ParamDate date) =
     `addQuery` toQuery ("date", Just date)
 
 data V1NativeIexAdminSystemEventGet  
+
+-- | /Optional Param/ "limit" - Maximum number of records to return (1-10000, default 100)
+instance HasOptionalParam V1NativeIexAdminSystemEventGet Limit where
+  applyOptionalParam req (Limit xs) =
+    req `addQuery` toQuery ("limit", Just xs)
 -- | @application/json@
 instance Produces V1NativeIexAdminSystemEventGet MimeJSON
 
@@ -109,11 +123,13 @@ instance Produces V1NativeIexAdminSystemEventGet MimeJSON
 -- 
 -- Get Level-1 Quotes
 -- 
+-- Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+-- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1NativeIexLevel1QuoteSymbolGet
   :: Symbol -- ^ "symbol" -  The symbol identifier
-  -> ParamDate -- ^ "date" -  Optional date in format YYYY-MM-DD (defaults to latest available data)
+  -> ParamDate -- ^ "date" -  Date in format YYYY-MM-DD
   -> FinFeedAPIStockRESTRequest V1NativeIexLevel1QuoteSymbolGet MimeNoContent [IEXQuoteUpdateQuoteUpdateModel] MimeJSON
 v1NativeIexLevel1QuoteSymbolGet (Symbol symbol) (ParamDate date) =
   _mkRequest "GET" ["/v1/native/iex/level1-quote/",toPath symbol]
@@ -122,6 +138,11 @@ v1NativeIexLevel1QuoteSymbolGet (Symbol symbol) (ParamDate date) =
     `addQuery` toQuery ("date", Just date)
 
 data V1NativeIexLevel1QuoteSymbolGet  
+
+-- | /Optional Param/ "limit" - Maximum number of records to return (1-10000, default 100)
+instance HasOptionalParam V1NativeIexLevel1QuoteSymbolGet Limit where
+  applyOptionalParam req (Limit xs) =
+    req `addQuery` toQuery ("limit", Just xs)
 -- | @application/json@
 instance Produces V1NativeIexLevel1QuoteSymbolGet MimeJSON
 
@@ -132,11 +153,13 @@ instance Produces V1NativeIexLevel1QuoteSymbolGet MimeJSON
 -- 
 -- Get Level-2 Price Level Book
 -- 
+-- Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+-- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1NativeIexLevel2PriceLevelUpdateSymbolGet
   :: Symbol -- ^ "symbol" -  The symbol identifier
-  -> ParamDate -- ^ "date" -  Optional date in format YYYY-MM-DD (defaults to latest available data)
+  -> ParamDate -- ^ "date" -  Date in format YYYY-MM-DD
   -> FinFeedAPIStockRESTRequest V1NativeIexLevel2PriceLevelUpdateSymbolGet MimeNoContent [IEXPriceLevelUpdatePriceLevelUpdateModel] MimeJSON
 v1NativeIexLevel2PriceLevelUpdateSymbolGet (Symbol symbol) (ParamDate date) =
   _mkRequest "GET" ["/v1/native/iex/level2-price-level-update/",toPath symbol]
@@ -145,6 +168,11 @@ v1NativeIexLevel2PriceLevelUpdateSymbolGet (Symbol symbol) (ParamDate date) =
     `addQuery` toQuery ("date", Just date)
 
 data V1NativeIexLevel2PriceLevelUpdateSymbolGet  
+
+-- | /Optional Param/ "limit" - Maximum number of records to return (1-10000, default 100)
+instance HasOptionalParam V1NativeIexLevel2PriceLevelUpdateSymbolGet Limit where
+  applyOptionalParam req (Limit xs) =
+    req `addQuery` toQuery ("limit", Just xs)
 -- | @application/json@
 instance Produces V1NativeIexLevel2PriceLevelUpdateSymbolGet MimeJSON
 
@@ -155,11 +183,13 @@ instance Produces V1NativeIexLevel2PriceLevelUpdateSymbolGet MimeJSON
 -- 
 -- Get Level-3 Order Book
 -- 
+-- Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+-- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1NativeIexLevel3OrderBookSymbolGet
   :: Symbol -- ^ "symbol" -  The symbol identifier
-  -> ParamDate -- ^ "date" -  Optional date in format YYYY-MM-DD (defaults to latest available data)
+  -> ParamDate -- ^ "date" -  Date in format YYYY-MM-DD
   -> FinFeedAPIStockRESTRequest V1NativeIexLevel3OrderBookSymbolGet MimeNoContent [ModelsOrderBookModel] MimeJSON
 v1NativeIexLevel3OrderBookSymbolGet (Symbol symbol) (ParamDate date) =
   _mkRequest "GET" ["/v1/native/iex/level3-order-book/",toPath symbol]
@@ -168,6 +198,11 @@ v1NativeIexLevel3OrderBookSymbolGet (Symbol symbol) (ParamDate date) =
     `addQuery` toQuery ("date", Just date)
 
 data V1NativeIexLevel3OrderBookSymbolGet  
+
+-- | /Optional Param/ "limit" - Maximum number of records to return (1-10000, default 100)
+instance HasOptionalParam V1NativeIexLevel3OrderBookSymbolGet Limit where
+  applyOptionalParam req (Limit xs) =
+    req `addQuery` toQuery ("limit", Just xs)
 -- | @application/json@
 instance Produces V1NativeIexLevel3OrderBookSymbolGet MimeJSON
 
@@ -178,11 +213,13 @@ instance Produces V1NativeIexLevel3OrderBookSymbolGet MimeJSON
 -- 
 -- Get Trades
 -- 
+-- Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
+-- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1NativeIexTradeSymbolGet
   :: Symbol -- ^ "symbol" -  The symbol identifier
-  -> ParamDate -- ^ "date" -  Optional date in format YYYY-MM-DD (defaults to latest available data)
+  -> ParamDate -- ^ "date" -  Date in format YYYY-MM-DD
   -> FinFeedAPIStockRESTRequest V1NativeIexTradeSymbolGet MimeNoContent [IEXTradeTradeModel] MimeJSON
 v1NativeIexTradeSymbolGet (Symbol symbol) (ParamDate date) =
   _mkRequest "GET" ["/v1/native/iex/trade/",toPath symbol]
@@ -191,6 +228,11 @@ v1NativeIexTradeSymbolGet (Symbol symbol) (ParamDate date) =
     `addQuery` toQuery ("date", Just date)
 
 data V1NativeIexTradeSymbolGet  
+
+-- | /Optional Param/ "limit" - Maximum number of records to return (1-10000, default 100)
+instance HasOptionalParam V1NativeIexTradeSymbolGet Limit where
+  applyOptionalParam req (Limit xs) =
+    req `addQuery` toQuery ("limit", Just xs)
 -- | @application/json@
 instance Produces V1NativeIexTradeSymbolGet MimeJSON
 

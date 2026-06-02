@@ -96,7 +96,7 @@ static bool v1NativeIexAdminMessagesSymbolGetProcessor(MemoryStruct_s p_chunk, l
 }
 
 static bool v1NativeIexAdminMessagesSymbolGetHelper(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<Models.AdminMessageModel>, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -116,6 +116,13 @@ static bool v1NativeIexAdminMessagesSymbolGetHelper(char * accessToken,
 
 	itemAtq = stringify(&date, "std::string");
 	queryParams.insert(pair<string, string>("date", itemAtq));
+
+
+	itemAtq = stringify(&limit, "int");
+	queryParams.insert(pair<string, string>("limit", itemAtq));
+	if( itemAtq.empty()==true){
+		queryParams.erase("limit");
+	}
 
 	string mBody = "";
 	JsonNode* node;
@@ -177,22 +184,22 @@ static bool v1NativeIexAdminMessagesSymbolGetHelper(char * accessToken,
 
 
 bool NativeIEXManager::v1NativeIexAdminMessagesSymbolGetAsync(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<Models.AdminMessageModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexAdminMessagesSymbolGetHelper(accessToken,
-	symbol, date, 
+	symbol, date, limit, 
 	handler, userData, true);
 }
 
 bool NativeIEXManager::v1NativeIexAdminMessagesSymbolGetSync(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<Models.AdminMessageModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexAdminMessagesSymbolGetHelper(accessToken,
-	symbol, date, 
+	symbol, date, limit, 
 	handler, userData, false);
 }
 
@@ -244,7 +251,7 @@ static bool v1NativeIexAdminSystemEventGetProcessor(MemoryStruct_s p_chunk, long
 }
 
 static bool v1NativeIexAdminSystemEventGetHelper(char * accessToken,
-	std::string date, 
+	std::string date, int limit, 
 	void(* handler)(std::list<IEXSystemEvent.SystemEventModel>, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -264,6 +271,13 @@ static bool v1NativeIexAdminSystemEventGetHelper(char * accessToken,
 
 	itemAtq = stringify(&date, "std::string");
 	queryParams.insert(pair<string, string>("date", itemAtq));
+
+
+	itemAtq = stringify(&limit, "int");
+	queryParams.insert(pair<string, string>("limit", itemAtq));
+	if( itemAtq.empty()==true){
+		queryParams.erase("limit");
+	}
 
 	string mBody = "";
 	JsonNode* node;
@@ -319,22 +333,22 @@ static bool v1NativeIexAdminSystemEventGetHelper(char * accessToken,
 
 
 bool NativeIEXManager::v1NativeIexAdminSystemEventGetAsync(char * accessToken,
-	std::string date, 
+	std::string date, int limit, 
 	void(* handler)(std::list<IEXSystemEvent.SystemEventModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexAdminSystemEventGetHelper(accessToken,
-	date, 
+	date, limit, 
 	handler, userData, true);
 }
 
 bool NativeIEXManager::v1NativeIexAdminSystemEventGetSync(char * accessToken,
-	std::string date, 
+	std::string date, int limit, 
 	void(* handler)(std::list<IEXSystemEvent.SystemEventModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexAdminSystemEventGetHelper(accessToken,
-	date, 
+	date, limit, 
 	handler, userData, false);
 }
 
@@ -386,7 +400,7 @@ static bool v1NativeIexLevel1QuoteSymbolGetProcessor(MemoryStruct_s p_chunk, lon
 }
 
 static bool v1NativeIexLevel1QuoteSymbolGetHelper(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<IEXQuoteUpdate.QuoteUpdateModel>, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -406,6 +420,13 @@ static bool v1NativeIexLevel1QuoteSymbolGetHelper(char * accessToken,
 
 	itemAtq = stringify(&date, "std::string");
 	queryParams.insert(pair<string, string>("date", itemAtq));
+
+
+	itemAtq = stringify(&limit, "int");
+	queryParams.insert(pair<string, string>("limit", itemAtq));
+	if( itemAtq.empty()==true){
+		queryParams.erase("limit");
+	}
 
 	string mBody = "";
 	JsonNode* node;
@@ -467,22 +488,22 @@ static bool v1NativeIexLevel1QuoteSymbolGetHelper(char * accessToken,
 
 
 bool NativeIEXManager::v1NativeIexLevel1QuoteSymbolGetAsync(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<IEXQuoteUpdate.QuoteUpdateModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexLevel1QuoteSymbolGetHelper(accessToken,
-	symbol, date, 
+	symbol, date, limit, 
 	handler, userData, true);
 }
 
 bool NativeIEXManager::v1NativeIexLevel1QuoteSymbolGetSync(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<IEXQuoteUpdate.QuoteUpdateModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexLevel1QuoteSymbolGetHelper(accessToken,
-	symbol, date, 
+	symbol, date, limit, 
 	handler, userData, false);
 }
 
@@ -534,7 +555,7 @@ static bool v1NativeIexLevel2PriceLevelUpdateSymbolGetProcessor(MemoryStruct_s p
 }
 
 static bool v1NativeIexLevel2PriceLevelUpdateSymbolGetHelper(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<IEXPriceLevelUpdate.PriceLevelUpdateModel>, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -554,6 +575,13 @@ static bool v1NativeIexLevel2PriceLevelUpdateSymbolGetHelper(char * accessToken,
 
 	itemAtq = stringify(&date, "std::string");
 	queryParams.insert(pair<string, string>("date", itemAtq));
+
+
+	itemAtq = stringify(&limit, "int");
+	queryParams.insert(pair<string, string>("limit", itemAtq));
+	if( itemAtq.empty()==true){
+		queryParams.erase("limit");
+	}
 
 	string mBody = "";
 	JsonNode* node;
@@ -615,22 +643,22 @@ static bool v1NativeIexLevel2PriceLevelUpdateSymbolGetHelper(char * accessToken,
 
 
 bool NativeIEXManager::v1NativeIexLevel2PriceLevelUpdateSymbolGetAsync(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<IEXPriceLevelUpdate.PriceLevelUpdateModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexLevel2PriceLevelUpdateSymbolGetHelper(accessToken,
-	symbol, date, 
+	symbol, date, limit, 
 	handler, userData, true);
 }
 
 bool NativeIEXManager::v1NativeIexLevel2PriceLevelUpdateSymbolGetSync(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<IEXPriceLevelUpdate.PriceLevelUpdateModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexLevel2PriceLevelUpdateSymbolGetHelper(accessToken,
-	symbol, date, 
+	symbol, date, limit, 
 	handler, userData, false);
 }
 
@@ -682,7 +710,7 @@ static bool v1NativeIexLevel3OrderBookSymbolGetProcessor(MemoryStruct_s p_chunk,
 }
 
 static bool v1NativeIexLevel3OrderBookSymbolGetHelper(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<Models.OrderBookModel>, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -702,6 +730,13 @@ static bool v1NativeIexLevel3OrderBookSymbolGetHelper(char * accessToken,
 
 	itemAtq = stringify(&date, "std::string");
 	queryParams.insert(pair<string, string>("date", itemAtq));
+
+
+	itemAtq = stringify(&limit, "int");
+	queryParams.insert(pair<string, string>("limit", itemAtq));
+	if( itemAtq.empty()==true){
+		queryParams.erase("limit");
+	}
 
 	string mBody = "";
 	JsonNode* node;
@@ -763,22 +798,22 @@ static bool v1NativeIexLevel3OrderBookSymbolGetHelper(char * accessToken,
 
 
 bool NativeIEXManager::v1NativeIexLevel3OrderBookSymbolGetAsync(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<Models.OrderBookModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexLevel3OrderBookSymbolGetHelper(accessToken,
-	symbol, date, 
+	symbol, date, limit, 
 	handler, userData, true);
 }
 
 bool NativeIEXManager::v1NativeIexLevel3OrderBookSymbolGetSync(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<Models.OrderBookModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexLevel3OrderBookSymbolGetHelper(accessToken,
-	symbol, date, 
+	symbol, date, limit, 
 	handler, userData, false);
 }
 
@@ -830,7 +865,7 @@ static bool v1NativeIexTradeSymbolGetProcessor(MemoryStruct_s p_chunk, long code
 }
 
 static bool v1NativeIexTradeSymbolGetHelper(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<IEXTrade.TradeModel>, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -850,6 +885,13 @@ static bool v1NativeIexTradeSymbolGetHelper(char * accessToken,
 
 	itemAtq = stringify(&date, "std::string");
 	queryParams.insert(pair<string, string>("date", itemAtq));
+
+
+	itemAtq = stringify(&limit, "int");
+	queryParams.insert(pair<string, string>("limit", itemAtq));
+	if( itemAtq.empty()==true){
+		queryParams.erase("limit");
+	}
 
 	string mBody = "";
 	JsonNode* node;
@@ -911,22 +953,22 @@ static bool v1NativeIexTradeSymbolGetHelper(char * accessToken,
 
 
 bool NativeIEXManager::v1NativeIexTradeSymbolGetAsync(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<IEXTrade.TradeModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexTradeSymbolGetHelper(accessToken,
-	symbol, date, 
+	symbol, date, limit, 
 	handler, userData, true);
 }
 
 bool NativeIEXManager::v1NativeIexTradeSymbolGetSync(char * accessToken,
-	std::string symbol, std::string date, 
+	std::string symbol, std::string date, int limit, 
 	void(* handler)(std::list<IEXTrade.TradeModel>, Error, void* )
 	, void* userData)
 {
 	return v1NativeIexTradeSymbolGetHelper(accessToken,
-	symbol, date, 
+	symbol, date, limit, 
 	handler, userData, false);
 }
 

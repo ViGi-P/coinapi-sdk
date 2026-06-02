@@ -11,10 +11,10 @@
 
 // Historical data by exchange
 //
-// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
 //
 list_t*
-OhlcvAPI_v1OhlcvExchangeExchangeIdHistoryGet(apiClient_t *apiClient, char *exchange_id, char *period_id, char *time_start, char *time_end)
+OhlcvAPI_v1OhlcvExchangeExchangeIdHistoryGet(apiClient_t *apiClient, char *exchange_id, char *period_id, char *time_start, char *time_end, int *limit)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -80,6 +80,19 @@ OhlcvAPI_v1OhlcvExchangeExchangeIdHistoryGet(apiClient_t *apiClient, char *excha
         valueQuery_time_end = strdup((time_end));
         keyPairQuery_time_end = keyValuePair_create(keyQuery_time_end, valueQuery_time_end);
         list_addElement(localVarQueryParameters,keyPairQuery_time_end);
+    }
+
+    // query parameters
+    char *keyQuery_limit = NULL;
+    char * valueQuery_limit = NULL;
+    keyValuePair_t *keyPairQuery_limit = 0;
+    if (limit)
+    {
+        keyQuery_limit = strdup("limit");
+        valueQuery_limit = calloc(1,MAX_NUMBER_LENGTH);
+        snprintf(valueQuery_limit, MAX_NUMBER_LENGTH, "%d", *limit);
+        keyPairQuery_limit = keyValuePair_create(keyQuery_limit, valueQuery_limit);
+        list_addElement(localVarQueryParameters,keyPairQuery_limit);
     }
     list_addElement(localVarHeaderType,"text/plain"); //produces
     list_addElement(localVarHeaderType,"application/json"); //produces
@@ -168,6 +181,18 @@ OhlcvAPI_v1OhlcvExchangeExchangeIdHistoryGet(apiClient_t *apiClient, char *excha
     if(keyPairQuery_time_end){
         keyValuePair_free(keyPairQuery_time_end);
         keyPairQuery_time_end = NULL;
+    }
+    if(keyQuery_limit){
+        free(keyQuery_limit);
+        keyQuery_limit = NULL;
+    }
+    if(valueQuery_limit){
+        free(valueQuery_limit);
+        valueQuery_limit = NULL;
+    }
+    if(keyPairQuery_limit){
+        keyValuePair_free(keyPairQuery_limit);
+        keyPairQuery_limit = NULL;
     }
     return elementToReturn;
 end:

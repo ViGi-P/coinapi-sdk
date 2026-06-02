@@ -11,12 +11,12 @@ Feature | HTTP request | Description
 
 
 # **v1_ohlcv_exchange_exchange_id_history_get**
-> v1_ohlcv_exchange_exchange_id_history_get (exchange_id: STRING_32 ; period_id: STRING_32 ; time_start: STRING_32 ; time_end: STRING_32 ): detachable LIST [OHLCV_TIME_SERIES_EXCHANGE_TIMESERIES_ITEM]
+> v1_ohlcv_exchange_exchange_id_history_get (exchange_id: STRING_32 ; period_id: STRING_32 ; time_start: STRING_32 ; time_end: STRING_32 ; limit:  detachable INTEGER_32 ): detachable LIST [OHLCV_TIME_SERIES_EXCHANGE_TIMESERIES_ITEM]
 
 
 Historical data by exchange
 
-Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
 
 
 ### Parameters
@@ -27,6 +27,7 @@ Name | Type | Description  | Notes
  **period_id** | **STRING_32**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) | [default to null]
  **time_start** | **STRING_32**| Timeseries starting time in ISO 8601 | [default to null]
  **time_end** | **STRING_32**| Timeseries ending time in ISO 8601 | [default to null]
+ **limit** | **INTEGER_32**| Maximum number of symbol rows to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 

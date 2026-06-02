@@ -31,16 +31,16 @@ import Json.Encode
 
 {-| Historical data by exchange
 
-Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
 
 -}
-v1OhlcvExchangeExchangeIdHistoryGet : String -> String -> String -> String -> String -> Api.Request (List Api.Data.OHLCVTimeSeriesExchangeTimeseriesItem)
-v1OhlcvExchangeExchangeIdHistoryGet exchangeId_path periodId_query timeStart_query timeEnd_query auth_token =
+v1OhlcvExchangeExchangeIdHistoryGet : String -> String -> String -> String -> Maybe Int -> String -> Api.Request (List Api.Data.OHLCVTimeSeriesExchangeTimeseriesItem)
+v1OhlcvExchangeExchangeIdHistoryGet exchangeId_path periodId_query timeStart_query timeEnd_query limit_query auth_token =
     Api.request
         "GET"
         "/v1/ohlcv/exchange/{exchange_id}/history"
         [ ( "exchange_id", identity exchangeId_path ) ]
-        [ ( "period_id", Just <| identity periodId_query ), ( "time_start", Just <| identity timeStart_query ), ( "time_end", Just <| identity timeEnd_query ) ]
+        [ ( "period_id", Just <| identity periodId_query ), ( "time_start", Just <| identity timeStart_query ), ( "time_end", Just <| identity timeEnd_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.oHLCVTimeSeriesExchangeTimeseriesItemDecoder)

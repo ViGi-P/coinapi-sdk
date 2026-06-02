@@ -20,9 +20,11 @@ module OpenapiClient
       @api_client = api_client
     end
     # Get Admin Messages
+    # Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
     # @param symbol [String] The symbol identifier
-    # @param date [Time] Optional date in format YYYY-MM-DD (defaults to latest available data)
+    # @param date [Time] Date in format YYYY-MM-DD
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100) (default to 100)
     # @return [Array<ModelsAdminMessageModel>]
     def v1_native_iex_admin_messages_symbol_get(symbol, date, opts = {})
       data, _status_code, _headers = v1_native_iex_admin_messages_symbol_get_with_http_info(symbol, date, opts)
@@ -30,9 +32,11 @@ module OpenapiClient
     end
 
     # Get Admin Messages
+    # Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
     # @param symbol [String] The symbol identifier
-    # @param date [Time] Optional date in format YYYY-MM-DD (defaults to latest available data)
+    # @param date [Time] Date in format YYYY-MM-DD
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100) (default to 100)
     # @return [Array<(Array<ModelsAdminMessageModel>, Integer, Hash)>] Array<ModelsAdminMessageModel> data, response status code and response headers
     def v1_native_iex_admin_messages_symbol_get_with_http_info(symbol, date, opts = {})
       if @api_client.config.debugging
@@ -52,6 +56,7 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'date'] = date
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -88,8 +93,10 @@ module OpenapiClient
     end
 
     # Get System Events
+    # Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
     # @param date [Time] Date in format YYYY-MM-DD
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100) (default to 100)
     # @return [Array<IEXSystemEventSystemEventModel>]
     def v1_native_iex_admin_system_event_get(date, opts = {})
       data, _status_code, _headers = v1_native_iex_admin_system_event_get_with_http_info(date, opts)
@@ -97,8 +104,10 @@ module OpenapiClient
     end
 
     # Get System Events
+    # Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
     # @param date [Time] Date in format YYYY-MM-DD
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100) (default to 100)
     # @return [Array<(Array<IEXSystemEventSystemEventModel>, Integer, Hash)>] Array<IEXSystemEventSystemEventModel> data, response status code and response headers
     def v1_native_iex_admin_system_event_get_with_http_info(date, opts = {})
       if @api_client.config.debugging
@@ -114,6 +123,7 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'date'] = date
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -150,9 +160,11 @@ module OpenapiClient
     end
 
     # Get Level-1 Quotes
+    # Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
     # @param symbol [String] The symbol identifier
-    # @param date [Time] Optional date in format YYYY-MM-DD (defaults to latest available data)
+    # @param date [Time] Date in format YYYY-MM-DD
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100) (default to 100)
     # @return [Array<IEXQuoteUpdateQuoteUpdateModel>]
     def v1_native_iex_level1_quote_symbol_get(symbol, date, opts = {})
       data, _status_code, _headers = v1_native_iex_level1_quote_symbol_get_with_http_info(symbol, date, opts)
@@ -160,9 +172,11 @@ module OpenapiClient
     end
 
     # Get Level-1 Quotes
+    # Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
     # @param symbol [String] The symbol identifier
-    # @param date [Time] Optional date in format YYYY-MM-DD (defaults to latest available data)
+    # @param date [Time] Date in format YYYY-MM-DD
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100) (default to 100)
     # @return [Array<(Array<IEXQuoteUpdateQuoteUpdateModel>, Integer, Hash)>] Array<IEXQuoteUpdateQuoteUpdateModel> data, response status code and response headers
     def v1_native_iex_level1_quote_symbol_get_with_http_info(symbol, date, opts = {})
       if @api_client.config.debugging
@@ -182,6 +196,7 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'date'] = date
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -218,9 +233,11 @@ module OpenapiClient
     end
 
     # Get Level-2 Price Level Book
+    # Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
     # @param symbol [String] The symbol identifier
-    # @param date [Time] Optional date in format YYYY-MM-DD (defaults to latest available data)
+    # @param date [Time] Date in format YYYY-MM-DD
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100) (default to 100)
     # @return [Array<IEXPriceLevelUpdatePriceLevelUpdateModel>]
     def v1_native_iex_level2_price_level_update_symbol_get(symbol, date, opts = {})
       data, _status_code, _headers = v1_native_iex_level2_price_level_update_symbol_get_with_http_info(symbol, date, opts)
@@ -228,9 +245,11 @@ module OpenapiClient
     end
 
     # Get Level-2 Price Level Book
+    # Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
     # @param symbol [String] The symbol identifier
-    # @param date [Time] Optional date in format YYYY-MM-DD (defaults to latest available data)
+    # @param date [Time] Date in format YYYY-MM-DD
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100) (default to 100)
     # @return [Array<(Array<IEXPriceLevelUpdatePriceLevelUpdateModel>, Integer, Hash)>] Array<IEXPriceLevelUpdatePriceLevelUpdateModel> data, response status code and response headers
     def v1_native_iex_level2_price_level_update_symbol_get_with_http_info(symbol, date, opts = {})
       if @api_client.config.debugging
@@ -250,6 +269,7 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'date'] = date
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -286,9 +306,11 @@ module OpenapiClient
     end
 
     # Get Level-3 Order Book
+    # Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
     # @param symbol [String] The symbol identifier
-    # @param date [Time] Optional date in format YYYY-MM-DD (defaults to latest available data)
+    # @param date [Time] Date in format YYYY-MM-DD
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100) (default to 100)
     # @return [Array<ModelsOrderBookModel>]
     def v1_native_iex_level3_order_book_symbol_get(symbol, date, opts = {})
       data, _status_code, _headers = v1_native_iex_level3_order_book_symbol_get_with_http_info(symbol, date, opts)
@@ -296,9 +318,11 @@ module OpenapiClient
     end
 
     # Get Level-3 Order Book
+    # Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
     # @param symbol [String] The symbol identifier
-    # @param date [Time] Optional date in format YYYY-MM-DD (defaults to latest available data)
+    # @param date [Time] Date in format YYYY-MM-DD
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100) (default to 100)
     # @return [Array<(Array<ModelsOrderBookModel>, Integer, Hash)>] Array<ModelsOrderBookModel> data, response status code and response headers
     def v1_native_iex_level3_order_book_symbol_get_with_http_info(symbol, date, opts = {})
       if @api_client.config.debugging
@@ -318,6 +342,7 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'date'] = date
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -354,9 +379,11 @@ module OpenapiClient
     end
 
     # Get Trades
+    # Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
     # @param symbol [String] The symbol identifier
-    # @param date [Time] Optional date in format YYYY-MM-DD (defaults to latest available data)
+    # @param date [Time] Date in format YYYY-MM-DD
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100) (default to 100)
     # @return [Array<IEXTradeTradeModel>]
     def v1_native_iex_trade_symbol_get(symbol, date, opts = {})
       data, _status_code, _headers = v1_native_iex_trade_symbol_get_with_http_info(symbol, date, opts)
@@ -364,9 +391,11 @@ module OpenapiClient
     end
 
     # Get Trades
+    # Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
     # @param symbol [String] The symbol identifier
-    # @param date [Time] Optional date in format YYYY-MM-DD (defaults to latest available data)
+    # @param date [Time] Date in format YYYY-MM-DD
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100) (default to 100)
     # @return [Array<(Array<IEXTradeTradeModel>, Integer, Hash)>] Array<IEXTradeTradeModel> data, response status code and response headers
     def v1_native_iex_trade_symbol_get_with_http_info(symbol, date, opts = {})
       if @api_client.config.debugging
@@ -386,6 +415,7 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'date'] = date
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

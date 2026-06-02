@@ -32,7 +32,7 @@ class MetadataApi {
 
     }
 
-    def v1SymbolsExchangeIdGet ( String exchangeId, String filterSymbolId, Closure onSuccess, Closure onFailure)  {
+    def v1SymbolsExchangeIdGet ( String exchangeId, String filterSymbolId, Integer limit, Integer page, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/symbols/${exchange_id}"
 
         // params
@@ -49,6 +49,12 @@ class MetadataApi {
 
         if (filterSymbolId != null) {
             queryParams.put("filter_symbol_id", filterSymbolId)
+        }
+        if (limit != null) {
+            queryParams.put("limit", limit)
+        }
+        if (page != null) {
+            queryParams.put("page", page)
         }
 
 

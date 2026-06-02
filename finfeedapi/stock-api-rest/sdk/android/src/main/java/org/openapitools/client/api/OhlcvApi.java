@@ -60,14 +60,15 @@ public class OhlcvApi {
 
   /**
   * Historical data by exchange
-  * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+  * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
    * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)
    * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
    * @param timeStart Timeseries starting time in ISO 8601
    * @param timeEnd Timeseries ending time in ISO 8601
+   * @param limit Maximum number of symbol rows to return (1-10000, default 100)
    * @return List<OHLCVTimeSeriesExchangeTimeseriesItem>
   */
-  public List<OHLCVTimeSeriesExchangeTimeseriesItem> v1OhlcvExchangeExchangeIdHistoryGet (String exchangeId, String periodId, String timeStart, String timeEnd) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<OHLCVTimeSeriesExchangeTimeseriesItem> v1OhlcvExchangeExchangeIdHistoryGet (String exchangeId, String periodId, String timeStart, String timeEnd, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'exchangeId' is set
     if (exchangeId == null) {
@@ -102,6 +103,7 @@ public class OhlcvApi {
     queryParams.addAll(ApiInvoker.parameterToPairs("", "period_id", periodId));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "time_start", timeStart));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "time_end", timeEnd));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -143,10 +145,10 @@ public class OhlcvApi {
 
       /**
    * Historical data by exchange
-   * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
-   * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)   * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)   * @param timeStart Timeseries starting time in ISO 8601   * @param timeEnd Timeseries ending time in ISO 8601
+   * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
+   * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)   * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)   * @param timeStart Timeseries starting time in ISO 8601   * @param timeEnd Timeseries ending time in ISO 8601   * @param limit Maximum number of symbol rows to return (1-10000, default 100)
   */
-  public void v1OhlcvExchangeExchangeIdHistoryGet (String exchangeId, String periodId, String timeStart, String timeEnd, final Response.Listener<List<OHLCVTimeSeriesExchangeTimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1OhlcvExchangeExchangeIdHistoryGet (String exchangeId, String periodId, String timeStart, String timeEnd, Integer limit, final Response.Listener<List<OHLCVTimeSeriesExchangeTimeseriesItem>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'exchangeId' is set
@@ -183,6 +185,7 @@ public class OhlcvApi {
     queryParams.addAll(ApiInvoker.parameterToPairs("", "period_id", periodId));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "time_start", timeStart));
     queryParams.addAll(ApiInvoker.parameterToPairs("", "time_end", timeEnd));
+    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
 
 
     String[] contentTypes = {

@@ -57,13 +57,17 @@ feature -- API Access
 			end
 		end
 
-	v1_symbols_exchange_id_get (exchange_id: STRING_32; filter_symbol_id: STRING_32): detachable LIST [FIN_FEED_API_SYMBOL_MODEL]
+	v1_symbols_exchange_id_get (exchange_id: STRING_32; filter_symbol_id: STRING_32; limit: INTEGER_32; page: INTEGER_32): detachable LIST [FIN_FEED_API_SYMBOL_MODEL]
 			-- List of symbols for the exchange
-			-- 
+			-- Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
 			-- 
 			-- argument: exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
 			-- 
 			-- argument: filter_symbol_id Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional, default to null)
+			-- 
+			-- argument: limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
+			-- 
+			-- argument: page Page number (1-based, default 1) (optional, default to 1)
 			-- 
 			-- 
 			-- Result LIST [FIN_FEED_API_SYMBOL_MODEL]
@@ -79,6 +83,8 @@ feature -- API Access
 			l_path := "/v1/symbols/{exchange_id}"
 			l_path.replace_substring_all ("{"+"exchange_id"+"}", api_client.url_encode (exchange_id.out))
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "filter_symbol_id", filter_symbol_id));
+			l_request.fill_query_params(api_client.parameter_to_tuple("", "limit", limit));
+			l_request.fill_query_params(api_client.parameter_to_tuple("", "page", page));
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"text/plain", "application/json", "text/json">>)  as l_accept then

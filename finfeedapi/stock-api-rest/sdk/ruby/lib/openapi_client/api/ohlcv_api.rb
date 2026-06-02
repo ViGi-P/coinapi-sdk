@@ -20,12 +20,13 @@ module OpenapiClient
       @api_client = api_client
     end
     # Historical data by exchange
-    # Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+    # Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
     # @param exchange_id [String] Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)
     # @param period_id [String] Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
     # @param time_start [String] Timeseries starting time in ISO 8601
     # @param time_end [String] Timeseries ending time in ISO 8601
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of symbol rows to return (1-10000, default 100) (default to 100)
     # @return [Array<OHLCVTimeSeriesExchangeTimeseriesItem>]
     def v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end, opts = {})
       data, _status_code, _headers = v1_ohlcv_exchange_exchange_id_history_get_with_http_info(exchange_id, period_id, time_start, time_end, opts)
@@ -33,12 +34,13 @@ module OpenapiClient
     end
 
     # Historical data by exchange
-    # Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+    # Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
     # @param exchange_id [String] Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)
     # @param period_id [String] Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
     # @param time_start [String] Timeseries starting time in ISO 8601
     # @param time_end [String] Timeseries ending time in ISO 8601
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :limit Maximum number of symbol rows to return (1-10000, default 100) (default to 100)
     # @return [Array<(Array<OHLCVTimeSeriesExchangeTimeseriesItem>, Integer, Hash)>] Array<OHLCVTimeSeriesExchangeTimeseriesItem> data, response status code and response headers
     def v1_ohlcv_exchange_exchange_id_history_get_with_http_info(exchange_id, period_id, time_start, time_end, opts = {})
       if @api_client.config.debugging
@@ -68,6 +70,7 @@ module OpenapiClient
       query_params[:'period_id'] = period_id
       query_params[:'time_start'] = time_start
       query_params[:'time_end'] = time_end
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

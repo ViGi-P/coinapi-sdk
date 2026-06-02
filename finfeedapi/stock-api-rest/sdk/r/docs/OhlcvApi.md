@@ -11,11 +11,11 @@ Method | HTTP request | Description
 
 
 # **V1OhlcvExchangeExchangeIdHistoryGet**
-> array[OHLCVTimeSeriesExchangeTimeseriesItem] V1OhlcvExchangeExchangeIdHistoryGet(exchange_id, period_id, time_start, time_end)
+> array[OHLCVTimeSeriesExchangeTimeseriesItem] V1OhlcvExchangeExchangeIdHistoryGet(exchange_id, period_id, time_start, time_end, limit = 100)
 
 Historical data by exchange
 
-Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
 
 ### Example
 ```R
@@ -28,6 +28,7 @@ var_exchange_id <- "exchange_id_example" # character | Exchange identifier of re
 var_period_id <- "period_id_example" # character | Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
 var_time_start <- "time_start_example" # character | Timeseries starting time in ISO 8601
 var_time_end <- "time_end_example" # character | Timeseries ending time in ISO 8601
+var_limit <- 100 # integer | Maximum number of symbol rows to return (1-10000, default 100) (Optional)
 
 api_instance <- OhlcvApi$new()
 # Configure API key authorization: APIKey
@@ -35,8 +36,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$V1OhlcvExchangeExchangeIdHistoryGet(var_exchange_id, var_period_id, var_time_start, var_time_enddata_file = "result.txt")
-result <- api_instance$V1OhlcvExchangeExchangeIdHistoryGet(var_exchange_id, var_period_id, var_time_start, var_time_end)
+# result <- api_instance$V1OhlcvExchangeExchangeIdHistoryGet(var_exchange_id, var_period_id, var_time_start, var_time_end, limit = var_limitdata_file = "result.txt")
+result <- api_instance$V1OhlcvExchangeExchangeIdHistoryGet(var_exchange_id, var_period_id, var_time_start, var_time_end, limit = var_limit)
 dput(result)
 ```
 
@@ -48,6 +49,7 @@ Name | Type | Description  | Notes
  **period_id** | **character**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) | 
  **time_start** | **character**| Timeseries starting time in ISO 8601 | 
  **time_end** | **character**| Timeseries ending time in ISO 8601 | 
+ **limit** | **integer**| Maximum number of symbol rows to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 

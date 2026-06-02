@@ -140,11 +140,25 @@ type ApiV1SymbolsExchangeIdGetRequest struct {
 	ApiService *MetadataAPIService
 	exchangeId string
 	filterSymbolId *string
+	limit *int32
+	page *int32
 }
 
 // Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
 func (r ApiV1SymbolsExchangeIdGetRequest) FilterSymbolId(filterSymbolId string) ApiV1SymbolsExchangeIdGetRequest {
 	r.filterSymbolId = &filterSymbolId
+	return r
+}
+
+// Maximum number of symbols to return (1-10000, default 100)
+func (r ApiV1SymbolsExchangeIdGetRequest) Limit(limit int32) ApiV1SymbolsExchangeIdGetRequest {
+	r.limit = &limit
+	return r
+}
+
+// Page number (1-based, default 1)
+func (r ApiV1SymbolsExchangeIdGetRequest) Page(page int32) ApiV1SymbolsExchangeIdGetRequest {
+	r.page = &page
 	return r
 }
 
@@ -154,6 +168,9 @@ func (r ApiV1SymbolsExchangeIdGetRequest) Execute() ([]FinFeedAPISymbolModel, *h
 
 /*
 V1SymbolsExchangeIdGet List of symbols for the exchange
+
+Results are paginated. Use `limit` and `page` to control page size and offset
+(default limit: 100, max: 10000, default page: 1).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param exchangeId The ID of the exchange (from the Metadata -> Exchanges)
@@ -191,6 +208,20 @@ func (a *MetadataAPIService) V1SymbolsExchangeIdGetExecute(r ApiV1SymbolsExchang
 
 	if r.filterSymbolId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "filter_symbol_id", r.filterSymbolId, "form", "")
+	}
+	if r.limit != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
+	} else {
+		var defaultValue int32 = 100
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
+		r.limit = &defaultValue
+	}
+	if r.page != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
+	} else {
+		var defaultValue int32 = 1
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", defaultValue, "form", "")
+		r.page = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

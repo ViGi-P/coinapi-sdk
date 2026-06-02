@@ -16,7 +16,9 @@ Method | HTTP request | Description
 ```c
 // Get Admin Messages
 //
-list_t* NativeIEXAPI_v1NativeIexAdminMessagesSymbolGet(apiClient_t *apiClient, char *symbol, char date);
+// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+//
+list_t* NativeIEXAPI_v1NativeIexAdminMessagesSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit);
 ```
 
 ### Parameters
@@ -24,7 +26,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **apiClient** | **apiClient_t \*** | context containing the client configuration |
 **symbol** | **char \*** | The symbol identifier | 
-**date** | **char** | Optional date in format YYYY-MM-DD (defaults to latest available data) | 
+**date** | **char** | Date in format YYYY-MM-DD | 
+**limit** | **int \*** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -46,7 +49,9 @@ Name | Type | Description  | Notes
 ```c
 // Get System Events
 //
-list_t* NativeIEXAPI_v1NativeIexAdminSystemEventGet(apiClient_t *apiClient, char date);
+// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+//
+list_t* NativeIEXAPI_v1NativeIexAdminSystemEventGet(apiClient_t *apiClient, char date, int *limit);
 ```
 
 ### Parameters
@@ -54,6 +59,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **apiClient** | **apiClient_t \*** | context containing the client configuration |
 **date** | **char** | Date in format YYYY-MM-DD | 
+**limit** | **int \*** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -75,7 +81,9 @@ Name | Type | Description  | Notes
 ```c
 // Get Level-1 Quotes
 //
-list_t* NativeIEXAPI_v1NativeIexLevel1QuoteSymbolGet(apiClient_t *apiClient, char *symbol, char date);
+// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+//
+list_t* NativeIEXAPI_v1NativeIexLevel1QuoteSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit);
 ```
 
 ### Parameters
@@ -83,7 +91,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **apiClient** | **apiClient_t \*** | context containing the client configuration |
 **symbol** | **char \*** | The symbol identifier | 
-**date** | **char** | Optional date in format YYYY-MM-DD (defaults to latest available data) | 
+**date** | **char** | Date in format YYYY-MM-DD | 
+**limit** | **int \*** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -105,7 +114,9 @@ Name | Type | Description  | Notes
 ```c
 // Get Level-2 Price Level Book
 //
-list_t* NativeIEXAPI_v1NativeIexLevel2PriceLevelUpdateSymbolGet(apiClient_t *apiClient, char *symbol, char date);
+// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+//
+list_t* NativeIEXAPI_v1NativeIexLevel2PriceLevelUpdateSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit);
 ```
 
 ### Parameters
@@ -113,7 +124,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **apiClient** | **apiClient_t \*** | context containing the client configuration |
 **symbol** | **char \*** | The symbol identifier | 
-**date** | **char** | Optional date in format YYYY-MM-DD (defaults to latest available data) | 
+**date** | **char** | Date in format YYYY-MM-DD | 
+**limit** | **int \*** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -135,7 +147,9 @@ Name | Type | Description  | Notes
 ```c
 // Get Level-3 Order Book
 //
-list_t* NativeIEXAPI_v1NativeIexLevel3OrderBookSymbolGet(apiClient_t *apiClient, char *symbol, char date);
+// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+//
+list_t* NativeIEXAPI_v1NativeIexLevel3OrderBookSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit);
 ```
 
 ### Parameters
@@ -143,7 +157,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **apiClient** | **apiClient_t \*** | context containing the client configuration |
 **symbol** | **char \*** | The symbol identifier | 
-**date** | **char** | Optional date in format YYYY-MM-DD (defaults to latest available data) | 
+**date** | **char** | Date in format YYYY-MM-DD | 
+**limit** | **int \*** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -165,7 +180,9 @@ Name | Type | Description  | Notes
 ```c
 // Get Trades
 //
-list_t* NativeIEXAPI_v1NativeIexTradeSymbolGet(apiClient_t *apiClient, char *symbol, char date);
+// Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
+//
+list_t* NativeIEXAPI_v1NativeIexTradeSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit);
 ```
 
 ### Parameters
@@ -173,7 +190,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **apiClient** | **apiClient_t \*** | context containing the client configuration |
 **symbol** | **char \*** | The symbol identifier | 
-**date** | **char** | Optional date in format YYYY-MM-DD (defaults to latest available data) | 
+**date** | **char** | Date in format YYYY-MM-DD | 
+**limit** | **int \*** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 

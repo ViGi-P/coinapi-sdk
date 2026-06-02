@@ -17,7 +17,9 @@ MetadataAPI_v1ExchangesGet(apiClient_t *apiClient);
 
 // List of symbols for the exchange
 //
+// Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
+//
 list_t*
-MetadataAPI_v1SymbolsExchangeIdGet(apiClient_t *apiClient, char *exchange_id, char *filter_symbol_id);
+MetadataAPI_v1SymbolsExchangeIdGet(apiClient_t *apiClient, char *exchange_id, char *filter_symbol_id, int *limit, int *page);
 
 

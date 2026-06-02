@@ -19,8 +19,11 @@ test_that("V1SymbolsExchangeIdGet", {
   # tests for V1SymbolsExchangeIdGet
   # base path: https://api-historical.stock.finfeedapi.com
   # List of symbols for the exchange
+  # Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
   # @param exchange_id character The ID of the exchange (from the Metadata -> Exchanges)
   # @param filter_symbol_id character Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`) (optional)
+  # @param limit integer Maximum number of symbols to return (1-10000, default 100) (optional)
+  # @param page integer Page number (1-based, default 1) (optional)
   # @return [array[FinFeedAPISymbolModel]]
 
   # uncomment below to test the operation

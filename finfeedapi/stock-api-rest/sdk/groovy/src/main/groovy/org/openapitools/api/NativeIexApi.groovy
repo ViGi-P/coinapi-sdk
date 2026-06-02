@@ -13,7 +13,7 @@ class NativeIexApi {
     String versionPath = ""
     ApiUtils apiUtils = new ApiUtils();
 
-    def v1NativeIexAdminMessagesSymbolGet ( String symbol, Date date, Closure onSuccess, Closure onFailure)  {
+    def v1NativeIexAdminMessagesSymbolGet ( String symbol, Date date, Integer limit, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/native/iex/admin/messages/${symbol}"
 
         // params
@@ -35,6 +35,9 @@ class NativeIexApi {
         if (date != null) {
             queryParams.put("date", date)
         }
+        if (limit != null) {
+            queryParams.put("limit", limit)
+        }
 
 
 
@@ -47,7 +50,7 @@ class NativeIexApi {
 
     }
 
-    def v1NativeIexAdminSystemEventGet ( Date date, Closure onSuccess, Closure onFailure)  {
+    def v1NativeIexAdminSystemEventGet ( Date date, Integer limit, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/native/iex/admin/system-event"
 
         // params
@@ -65,6 +68,9 @@ class NativeIexApi {
         if (date != null) {
             queryParams.put("date", date)
         }
+        if (limit != null) {
+            queryParams.put("limit", limit)
+        }
 
 
 
@@ -77,7 +83,7 @@ class NativeIexApi {
 
     }
 
-    def v1NativeIexLevel1QuoteSymbolGet ( String symbol, Date date, Closure onSuccess, Closure onFailure)  {
+    def v1NativeIexLevel1QuoteSymbolGet ( String symbol, Date date, Integer limit, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/native/iex/level1-quote/${symbol}"
 
         // params
@@ -99,6 +105,9 @@ class NativeIexApi {
         if (date != null) {
             queryParams.put("date", date)
         }
+        if (limit != null) {
+            queryParams.put("limit", limit)
+        }
 
 
 
@@ -111,7 +120,7 @@ class NativeIexApi {
 
     }
 
-    def v1NativeIexLevel2PriceLevelUpdateSymbolGet ( String symbol, Date date, Closure onSuccess, Closure onFailure)  {
+    def v1NativeIexLevel2PriceLevelUpdateSymbolGet ( String symbol, Date date, Integer limit, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/native/iex/level2-price-level-update/${symbol}"
 
         // params
@@ -133,6 +142,9 @@ class NativeIexApi {
         if (date != null) {
             queryParams.put("date", date)
         }
+        if (limit != null) {
+            queryParams.put("limit", limit)
+        }
 
 
 
@@ -145,7 +157,7 @@ class NativeIexApi {
 
     }
 
-    def v1NativeIexLevel3OrderBookSymbolGet ( String symbol, Date date, Closure onSuccess, Closure onFailure)  {
+    def v1NativeIexLevel3OrderBookSymbolGet ( String symbol, Date date, Integer limit, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/native/iex/level3-order-book/${symbol}"
 
         // params
@@ -167,6 +179,9 @@ class NativeIexApi {
         if (date != null) {
             queryParams.put("date", date)
         }
+        if (limit != null) {
+            queryParams.put("limit", limit)
+        }
 
 
 
@@ -179,7 +194,7 @@ class NativeIexApi {
 
     }
 
-    def v1NativeIexTradeSymbolGet ( String symbol, Date date, Closure onSuccess, Closure onFailure)  {
+    def v1NativeIexTradeSymbolGet ( String symbol, Date date, Integer limit, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/native/iex/trade/${symbol}"
 
         // params
@@ -200,6 +215,9 @@ class NativeIexApi {
 
         if (date != null) {
             queryParams.put("date", date)
+        }
+        if (limit != null) {
+            queryParams.put("limit", limit)
         }
 
 

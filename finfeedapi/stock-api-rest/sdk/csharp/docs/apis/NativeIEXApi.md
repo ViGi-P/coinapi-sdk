@@ -13,9 +13,11 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 <a id="v1nativeiexadminmessagessymbolget"></a>
 # **V1NativeIexAdminMessagesSymbolGet**
-> List&lt;ModelsAdminMessageModel&gt; V1NativeIexAdminMessagesSymbolGet (string symbol, DateTime date)
+> List&lt;ModelsAdminMessageModel&gt; V1NativeIexAdminMessagesSymbolGet (string symbol, DateTime date, int limit = null)
 
 Get Admin Messages
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 
 ### Parameters
@@ -23,7 +25,8 @@ Get Admin Messages
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **symbol** | **string** | The symbol identifier |  |
-| **date** | **DateTime** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
+| **date** | **DateTime** | Date in format YYYY-MM-DD |  |
+| **limit** | **int** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -48,9 +51,11 @@ Get Admin Messages
 
 <a id="v1nativeiexadminsystemeventget"></a>
 # **V1NativeIexAdminSystemEventGet**
-> List&lt;IEXSystemEventSystemEventModel&gt; V1NativeIexAdminSystemEventGet (DateTime date)
+> List&lt;IEXSystemEventSystemEventModel&gt; V1NativeIexAdminSystemEventGet (DateTime date, int limit = null)
 
 Get System Events
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 
 ### Parameters
@@ -58,6 +63,7 @@ Get System Events
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **date** | **DateTime** | Date in format YYYY-MM-DD |  |
+| **limit** | **int** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -82,9 +88,11 @@ Get System Events
 
 <a id="v1nativeiexlevel1quotesymbolget"></a>
 # **V1NativeIexLevel1QuoteSymbolGet**
-> List&lt;IEXQuoteUpdateQuoteUpdateModel&gt; V1NativeIexLevel1QuoteSymbolGet (string symbol, DateTime date)
+> List&lt;IEXQuoteUpdateQuoteUpdateModel&gt; V1NativeIexLevel1QuoteSymbolGet (string symbol, DateTime date, int limit = null)
 
 Get Level-1 Quotes
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 
 ### Parameters
@@ -92,7 +100,8 @@ Get Level-1 Quotes
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **symbol** | **string** | The symbol identifier |  |
-| **date** | **DateTime** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
+| **date** | **DateTime** | Date in format YYYY-MM-DD |  |
+| **limit** | **int** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -117,9 +126,11 @@ Get Level-1 Quotes
 
 <a id="v1nativeiexlevel2pricelevelupdatesymbolget"></a>
 # **V1NativeIexLevel2PriceLevelUpdateSymbolGet**
-> List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt; V1NativeIexLevel2PriceLevelUpdateSymbolGet (string symbol, DateTime date)
+> List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt; V1NativeIexLevel2PriceLevelUpdateSymbolGet (string symbol, DateTime date, int limit = null)
 
 Get Level-2 Price Level Book
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 
 ### Parameters
@@ -127,7 +138,8 @@ Get Level-2 Price Level Book
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **symbol** | **string** | The symbol identifier |  |
-| **date** | **DateTime** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
+| **date** | **DateTime** | Date in format YYYY-MM-DD |  |
+| **limit** | **int** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -152,9 +164,11 @@ Get Level-2 Price Level Book
 
 <a id="v1nativeiexlevel3orderbooksymbolget"></a>
 # **V1NativeIexLevel3OrderBookSymbolGet**
-> List&lt;ModelsOrderBookModel&gt; V1NativeIexLevel3OrderBookSymbolGet (string symbol, DateTime date)
+> List&lt;ModelsOrderBookModel&gt; V1NativeIexLevel3OrderBookSymbolGet (string symbol, DateTime date, int limit = null)
 
 Get Level-3 Order Book
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 
 ### Parameters
@@ -162,7 +176,8 @@ Get Level-3 Order Book
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **symbol** | **string** | The symbol identifier |  |
-| **date** | **DateTime** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
+| **date** | **DateTime** | Date in format YYYY-MM-DD |  |
+| **limit** | **int** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -187,9 +202,11 @@ Get Level-3 Order Book
 
 <a id="v1nativeiextradesymbolget"></a>
 # **V1NativeIexTradeSymbolGet**
-> List&lt;IEXTradeTradeModel&gt; V1NativeIexTradeSymbolGet (string symbol, DateTime date)
+> List&lt;IEXTradeTradeModel&gt; V1NativeIexTradeSymbolGet (string symbol, DateTime date, int limit = null)
 
 Get Trades
+
+Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
 
 
 ### Parameters
@@ -197,7 +214,8 @@ Get Trades
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **symbol** | **string** | The symbol identifier |  |
-| **date** | **DateTime** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
+| **date** | **DateTime** | Date in format YYYY-MM-DD |  |
+| **limit** | **int** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 

@@ -33,84 +33,102 @@ import Json.Encode
 
 
 {-| Get Admin Messages
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+
 -}
-v1NativeIexAdminMessagesSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.ModelsAdminMessageModel)
-v1NativeIexAdminMessagesSymbolGet symbol_path date_query auth_token =
+v1NativeIexAdminMessagesSymbolGet : String -> Posix -> Maybe Int -> String -> Api.Request (List Api.Data.ModelsAdminMessageModel)
+v1NativeIexAdminMessagesSymbolGet symbol_path date_query limit_query auth_token =
     Api.request
         "GET"
         "/v1/native/iex/admin/messages/{symbol}"
         [ ( "symbol", identity symbol_path ) ]
-        [ ( "date", Just <| Api.Time.dateTimeToString date_query ) ]
+        [ ( "date", Just <| Api.Time.dateTimeToString date_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.modelsAdminMessageModelDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Get System Events
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+
 -}
-v1NativeIexAdminSystemEventGet : Posix -> String -> Api.Request (List Api.Data.IEXSystemEventSystemEventModel)
-v1NativeIexAdminSystemEventGet date_query auth_token =
+v1NativeIexAdminSystemEventGet : Posix -> Maybe Int -> String -> Api.Request (List Api.Data.IEXSystemEventSystemEventModel)
+v1NativeIexAdminSystemEventGet date_query limit_query auth_token =
     Api.request
         "GET"
         "/v1/native/iex/admin/system-event"
         []
-        [ ( "date", Just <| Api.Time.dateTimeToString date_query ) ]
+        [ ( "date", Just <| Api.Time.dateTimeToString date_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.iEXSystemEventSystemEventModelDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Get Level-1 Quotes
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+
 -}
-v1NativeIexLevel1QuoteSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.IEXQuoteUpdateQuoteUpdateModel)
-v1NativeIexLevel1QuoteSymbolGet symbol_path date_query auth_token =
+v1NativeIexLevel1QuoteSymbolGet : String -> Posix -> Maybe Int -> String -> Api.Request (List Api.Data.IEXQuoteUpdateQuoteUpdateModel)
+v1NativeIexLevel1QuoteSymbolGet symbol_path date_query limit_query auth_token =
     Api.request
         "GET"
         "/v1/native/iex/level1-quote/{symbol}"
         [ ( "symbol", identity symbol_path ) ]
-        [ ( "date", Just <| Api.Time.dateTimeToString date_query ) ]
+        [ ( "date", Just <| Api.Time.dateTimeToString date_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.iEXQuoteUpdateQuoteUpdateModelDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Get Level-2 Price Level Book
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+
 -}
-v1NativeIexLevel2PriceLevelUpdateSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.IEXPriceLevelUpdatePriceLevelUpdateModel)
-v1NativeIexLevel2PriceLevelUpdateSymbolGet symbol_path date_query auth_token =
+v1NativeIexLevel2PriceLevelUpdateSymbolGet : String -> Posix -> Maybe Int -> String -> Api.Request (List Api.Data.IEXPriceLevelUpdatePriceLevelUpdateModel)
+v1NativeIexLevel2PriceLevelUpdateSymbolGet symbol_path date_query limit_query auth_token =
     Api.request
         "GET"
         "/v1/native/iex/level2-price-level-update/{symbol}"
         [ ( "symbol", identity symbol_path ) ]
-        [ ( "date", Just <| Api.Time.dateTimeToString date_query ) ]
+        [ ( "date", Just <| Api.Time.dateTimeToString date_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.iEXPriceLevelUpdatePriceLevelUpdateModelDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Get Level-3 Order Book
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+
 -}
-v1NativeIexLevel3OrderBookSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.ModelsOrderBookModel)
-v1NativeIexLevel3OrderBookSymbolGet symbol_path date_query auth_token =
+v1NativeIexLevel3OrderBookSymbolGet : String -> Posix -> Maybe Int -> String -> Api.Request (List Api.Data.ModelsOrderBookModel)
+v1NativeIexLevel3OrderBookSymbolGet symbol_path date_query limit_query auth_token =
     Api.request
         "GET"
         "/v1/native/iex/level3-order-book/{symbol}"
         [ ( "symbol", identity symbol_path ) ]
-        [ ( "date", Just <| Api.Time.dateTimeToString date_query ) ]
+        [ ( "date", Just <| Api.Time.dateTimeToString date_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.modelsOrderBookModelDecoder)
         |> Api.withBearerToken auth_token
 
 {-| Get Trades
+
+Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
+
 -}
-v1NativeIexTradeSymbolGet : String -> Posix -> String -> Api.Request (List Api.Data.IEXTradeTradeModel)
-v1NativeIexTradeSymbolGet symbol_path date_query auth_token =
+v1NativeIexTradeSymbolGet : String -> Posix -> Maybe Int -> String -> Api.Request (List Api.Data.IEXTradeTradeModel)
+v1NativeIexTradeSymbolGet symbol_path date_query limit_query auth_token =
     Api.request
         "GET"
         "/v1/native/iex/trade/{symbol}"
         [ ( "symbol", identity symbol_path ) ]
-        [ ( "date", Just <| Api.Time.dateTimeToString date_query ) ]
+        [ ( "date", Just <| Api.Time.dateTimeToString date_query ), ( "limit", Maybe.map String.fromInt limit_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.iEXTradeTradeModelDecoder)

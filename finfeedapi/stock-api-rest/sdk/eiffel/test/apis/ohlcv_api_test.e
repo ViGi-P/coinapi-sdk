@@ -16,13 +16,14 @@ feature -- Test routines
     test_v1_ohlcv_exchange_exchange_id_history_get
             -- Historical data by exchange
             --
-            -- Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+            -- Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
         local
             l_response: LIST [OHLCV_TIME_SERIES_EXCHANGE_TIMESERIES_ITEM]
             l_exchange_id: STRING_32
             l_period_id: STRING_32
             l_time_start: STRING_32
             l_time_end: STRING_32
+            l_limit: INTEGER_32
         do
             -- TODO: Initialize required params.
             -- l_exchange_id
@@ -30,7 +31,7 @@ feature -- Test routines
             -- l_time_start
             -- l_time_end
 
-            -- l_response := api.v1_ohlcv_exchange_exchange_id_history_get(l_exchange_id, l_period_id, l_time_start, l_time_end)
+            -- l_response := api.v1_ohlcv_exchange_exchange_id_history_get(l_exchange_id, l_period_id, l_time_start, l_time_end, l_limit)
             assert ("not_implemented", False)
         end
 

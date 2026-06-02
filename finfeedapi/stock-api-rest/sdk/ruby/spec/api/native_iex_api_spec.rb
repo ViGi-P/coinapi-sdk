@@ -34,9 +34,11 @@ describe 'NativeIEXApi' do
 
   # unit tests for v1_native_iex_admin_messages_symbol_get
   # Get Admin Messages
+  # Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
   # @param symbol The symbol identifier
-  # @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+  # @param date Date in format YYYY-MM-DD
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100)
   # @return [Array<ModelsAdminMessageModel>]
   describe 'v1_native_iex_admin_messages_symbol_get test' do
     it 'should work' do
@@ -46,8 +48,10 @@ describe 'NativeIEXApi' do
 
   # unit tests for v1_native_iex_admin_system_event_get
   # Get System Events
+  # Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
   # @param date Date in format YYYY-MM-DD
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100)
   # @return [Array<IEXSystemEventSystemEventModel>]
   describe 'v1_native_iex_admin_system_event_get test' do
     it 'should work' do
@@ -57,9 +61,11 @@ describe 'NativeIEXApi' do
 
   # unit tests for v1_native_iex_level1_quote_symbol_get
   # Get Level-1 Quotes
+  # Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
   # @param symbol The symbol identifier
-  # @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+  # @param date Date in format YYYY-MM-DD
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100)
   # @return [Array<IEXQuoteUpdateQuoteUpdateModel>]
   describe 'v1_native_iex_level1_quote_symbol_get test' do
     it 'should work' do
@@ -69,9 +75,11 @@ describe 'NativeIEXApi' do
 
   # unit tests for v1_native_iex_level2_price_level_update_symbol_get
   # Get Level-2 Price Level Book
+  # Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
   # @param symbol The symbol identifier
-  # @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+  # @param date Date in format YYYY-MM-DD
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100)
   # @return [Array<IEXPriceLevelUpdatePriceLevelUpdateModel>]
   describe 'v1_native_iex_level2_price_level_update_symbol_get test' do
     it 'should work' do
@@ -81,9 +89,11 @@ describe 'NativeIEXApi' do
 
   # unit tests for v1_native_iex_level3_order_book_symbol_get
   # Get Level-3 Order Book
+  # Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
   # @param symbol The symbol identifier
-  # @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+  # @param date Date in format YYYY-MM-DD
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100)
   # @return [Array<ModelsOrderBookModel>]
   describe 'v1_native_iex_level3_order_book_symbol_get test' do
     it 'should work' do
@@ -93,9 +103,11 @@ describe 'NativeIEXApi' do
 
   # unit tests for v1_native_iex_trade_symbol_get
   # Get Trades
+  # Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
   # @param symbol The symbol identifier
-  # @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+  # @param date Date in format YYYY-MM-DD
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :limit Maximum number of records to return (1-10000, default 100)
   # @return [Array<IEXTradeTradeModel>]
   describe 'v1_native_iex_trade_symbol_get test' do
     it 'should work' do

@@ -325,6 +325,8 @@ case $state in
         _op_arguments=(
           "exchange_id=:[PATH] The ID of the exchange (from the Metadata -&gt; Exchanges)"
           "filter_symbol_id=:[QUERY] Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#39;TSLA&#39; or &#39;TSLA,NVDA&#39;)"
+"limit=:[QUERY] Maximum number of symbols to return (1-10000, default 100)"
+"page=:[QUERY] Page number (1-based, default 1)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -332,7 +334,8 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
           "symbol=:[PATH] The symbol identifier"
-          "date=:[QUERY] Optional date in format YYYY-MM-DD (defaults to latest available data)"
+          "date=:[QUERY] Date in format YYYY-MM-DD"
+"limit=:[QUERY] Maximum number of records to return (1-10000, default 100)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -340,6 +343,7 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                     "date=:[QUERY] Date in format YYYY-MM-DD"
+"limit=:[QUERY] Maximum number of records to return (1-10000, default 100)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -347,7 +351,8 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
           "symbol=:[PATH] The symbol identifier"
-          "date=:[QUERY] Optional date in format YYYY-MM-DD (defaults to latest available data)"
+          "date=:[QUERY] Date in format YYYY-MM-DD"
+"limit=:[QUERY] Maximum number of records to return (1-10000, default 100)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -355,7 +360,8 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
           "symbol=:[PATH] The symbol identifier"
-          "date=:[QUERY] Optional date in format YYYY-MM-DD (defaults to latest available data)"
+          "date=:[QUERY] Date in format YYYY-MM-DD"
+"limit=:[QUERY] Maximum number of records to return (1-10000, default 100)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -363,7 +369,8 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
           "symbol=:[PATH] The symbol identifier"
-          "date=:[QUERY] Optional date in format YYYY-MM-DD (defaults to latest available data)"
+          "date=:[QUERY] Date in format YYYY-MM-DD"
+"limit=:[QUERY] Maximum number of records to return (1-10000, default 100)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -371,7 +378,8 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
           "symbol=:[PATH] The symbol identifier"
-          "date=:[QUERY] Optional date in format YYYY-MM-DD (defaults to latest available data)"
+          "date=:[QUERY] Date in format YYYY-MM-DD"
+"limit=:[QUERY] Maximum number of records to return (1-10000, default 100)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
@@ -382,6 +390,7 @@ case $state in
           "period_id=:[QUERY] Identifier of requested timeseries period (e.g. &#39;5SEC&#39; or &#39;1DAY&#39;)"
 "time_start=:[QUERY] Timeseries starting time in ISO 8601"
 "time_end=:[QUERY] Timeseries ending time in ISO 8601"
+"limit=:[QUERY] Maximum number of symbol rows to return (1-10000, default 100)"
           )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;

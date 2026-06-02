@@ -78,13 +78,15 @@ API.Client.MetadataApi.prototype.v1ExchangesGet = function(opt_extraHttpRequestP
 
 /**
  * List of symbols for the exchange
- * 
+ * Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
  * @param {!string} exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
  * @param {!string=} opt_filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
+ * @param {!number=} opt_limit Maximum number of symbols to return (1-10000, default 100)
+ * @param {!number=} opt_page Page number (1-based, default 1)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.FinFeedAPI.SymbolModel>>}
  */
-API.Client.MetadataApi.prototype.v1SymbolsExchangeIdGet = function(exchangeId, opt_filterSymbolId, opt_extraHttpRequestParams) {
+API.Client.MetadataApi.prototype.v1SymbolsExchangeIdGet = function(exchangeId, opt_filterSymbolId, opt_limit, opt_page, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/symbols/{exchange_id}'
       .replace('{exchange_id}', String(exchangeId));
@@ -100,6 +102,14 @@ API.Client.MetadataApi.prototype.v1SymbolsExchangeIdGet = function(exchangeId, o
   }
   if (opt_filterSymbolId !== undefined) {
     queryParameters['filter_symbol_id'] = opt_filterSymbolId;
+  }
+
+  if (opt_limit !== undefined) {
+    queryParameters['limit'] = opt_limit;
+  }
+
+  if (opt_page !== undefined) {
+    queryParameters['page'] = opt_page;
   }
 
   /** @type {!Object} */

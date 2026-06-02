@@ -19,7 +19,10 @@ No description available.
 The symbol identifier
 
 .PARAMETER Date
-Optional date in format YYYY-MM-DD (defaults to latest available data)
+Date in format YYYY-MM-DD
+
+.PARAMETER Limit
+Maximum number of records to return (1-10000, default 100)
 
 .PARAMETER WithHttpInfo
 
@@ -38,6 +41,9 @@ function Invoke-V1NativeIexAdminMessagesSymbolGet {
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [System.DateTime]
         ${Date},
+        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [System.Nullable[Int32]]
+        ${Limit},
         [Switch]
         $WithHttpInfo
     )
@@ -69,6 +75,10 @@ function Invoke-V1NativeIexAdminMessagesSymbolGet {
             throw "Error! The required parameter `Date` missing when calling v1NativeIexAdminMessagesSymbolGet."
         }
         $LocalVarQueryParameters['date'] = $Date
+
+        if ($Limit) {
+            $LocalVarQueryParameters['limit'] = $Limit
+        }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
             $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
@@ -117,6 +127,9 @@ No description available.
 .PARAMETER Date
 Date in format YYYY-MM-DD
 
+.PARAMETER Limit
+Maximum number of records to return (1-10000, default 100)
+
 .PARAMETER WithHttpInfo
 
 A switch when turned on will return a hash table of Response, StatusCode and Headers instead of just the Response
@@ -131,6 +144,9 @@ function Invoke-V1NativeIexAdminSystemEventGet {
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [System.DateTime]
         ${Date},
+        [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [System.Nullable[Int32]]
+        ${Limit},
         [Switch]
         $WithHttpInfo
     )
@@ -158,6 +174,10 @@ function Invoke-V1NativeIexAdminSystemEventGet {
             throw "Error! The required parameter `Date` missing when calling v1NativeIexAdminSystemEventGet."
         }
         $LocalVarQueryParameters['date'] = $Date
+
+        if ($Limit) {
+            $LocalVarQueryParameters['limit'] = $Limit
+        }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
             $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
@@ -207,7 +227,10 @@ No description available.
 The symbol identifier
 
 .PARAMETER Date
-Optional date in format YYYY-MM-DD (defaults to latest available data)
+Date in format YYYY-MM-DD
+
+.PARAMETER Limit
+Maximum number of records to return (1-10000, default 100)
 
 .PARAMETER WithHttpInfo
 
@@ -226,6 +249,9 @@ function Invoke-V1NativeIexLevel1QuoteSymbolGet {
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [System.DateTime]
         ${Date},
+        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [System.Nullable[Int32]]
+        ${Limit},
         [Switch]
         $WithHttpInfo
     )
@@ -257,6 +283,10 @@ function Invoke-V1NativeIexLevel1QuoteSymbolGet {
             throw "Error! The required parameter `Date` missing when calling v1NativeIexLevel1QuoteSymbolGet."
         }
         $LocalVarQueryParameters['date'] = $Date
+
+        if ($Limit) {
+            $LocalVarQueryParameters['limit'] = $Limit
+        }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
             $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
@@ -306,7 +336,10 @@ No description available.
 The symbol identifier
 
 .PARAMETER Date
-Optional date in format YYYY-MM-DD (defaults to latest available data)
+Date in format YYYY-MM-DD
+
+.PARAMETER Limit
+Maximum number of records to return (1-10000, default 100)
 
 .PARAMETER WithHttpInfo
 
@@ -325,6 +358,9 @@ function Invoke-V1NativeIexLevel2PriceLevelUpdateSymbolGet {
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [System.DateTime]
         ${Date},
+        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [System.Nullable[Int32]]
+        ${Limit},
         [Switch]
         $WithHttpInfo
     )
@@ -356,6 +392,10 @@ function Invoke-V1NativeIexLevel2PriceLevelUpdateSymbolGet {
             throw "Error! The required parameter `Date` missing when calling v1NativeIexLevel2PriceLevelUpdateSymbolGet."
         }
         $LocalVarQueryParameters['date'] = $Date
+
+        if ($Limit) {
+            $LocalVarQueryParameters['limit'] = $Limit
+        }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
             $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
@@ -405,7 +445,10 @@ No description available.
 The symbol identifier
 
 .PARAMETER Date
-Optional date in format YYYY-MM-DD (defaults to latest available data)
+Date in format YYYY-MM-DD
+
+.PARAMETER Limit
+Maximum number of records to return (1-10000, default 100)
 
 .PARAMETER WithHttpInfo
 
@@ -424,6 +467,9 @@ function Invoke-V1NativeIexLevel3OrderBookSymbolGet {
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [System.DateTime]
         ${Date},
+        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [System.Nullable[Int32]]
+        ${Limit},
         [Switch]
         $WithHttpInfo
     )
@@ -455,6 +501,10 @@ function Invoke-V1NativeIexLevel3OrderBookSymbolGet {
             throw "Error! The required parameter `Date` missing when calling v1NativeIexLevel3OrderBookSymbolGet."
         }
         $LocalVarQueryParameters['date'] = $Date
+
+        if ($Limit) {
+            $LocalVarQueryParameters['limit'] = $Limit
+        }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
             $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]
@@ -504,7 +554,10 @@ No description available.
 The symbol identifier
 
 .PARAMETER Date
-Optional date in format YYYY-MM-DD (defaults to latest available data)
+Date in format YYYY-MM-DD
+
+.PARAMETER Limit
+Maximum number of records to return (1-10000, default 100)
 
 .PARAMETER WithHttpInfo
 
@@ -523,6 +576,9 @@ function Invoke-V1NativeIexTradeSymbolGet {
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [System.DateTime]
         ${Date},
+        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [System.Nullable[Int32]]
+        ${Limit},
         [Switch]
         $WithHttpInfo
     )
@@ -554,6 +610,10 @@ function Invoke-V1NativeIexTradeSymbolGet {
             throw "Error! The required parameter `Date` missing when calling v1NativeIexTradeSymbolGet."
         }
         $LocalVarQueryParameters['date'] = $Date
+
+        if ($Limit) {
+            $LocalVarQueryParameters['limit'] = $Limit
+        }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
             $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]

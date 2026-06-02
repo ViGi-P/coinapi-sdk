@@ -46,13 +46,17 @@ public class MetadataApiTest {
     /**
      * List of symbols for the exchange
      *
+     * Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void v1SymbolsExchangeIdGetTest() throws ApiException {
         String exchangeId = null;
         String filterSymbolId = null;
-        List<FinFeedAPISymbolModel> response = api.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId);
+        Integer limit = null;
+        Integer page = null;
+        List<FinFeedAPISymbolModel> response = api.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId, limit, page);
         // TODO: test validations
     }
 

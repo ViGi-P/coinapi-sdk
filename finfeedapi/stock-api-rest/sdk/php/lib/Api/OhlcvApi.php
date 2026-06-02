@@ -144,15 +144,16 @@ class OhlcvApi
      * @param  string $period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
      * @param  string $time_start Timeseries starting time in ISO 8601 (required)
      * @param  string $time_end Timeseries ending time in ISO 8601 (required)
+     * @param  int|null $limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\OHLCVTimeSeriesExchangeTimeseriesItem[]
      */
-    public function v1OhlcvExchangeExchangeIdHistoryGet($exchange_id, $period_id, $time_start, $time_end, string $contentType = self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'][0])
+    public function v1OhlcvExchangeExchangeIdHistoryGet($exchange_id, $period_id, $time_start, $time_end, $limit = 100, string $contentType = self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'][0])
     {
-        list($response) = $this->v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo($exchange_id, $period_id, $time_start, $time_end, $contentType);
+        list($response) = $this->v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo($exchange_id, $period_id, $time_start, $time_end, $limit, $contentType);
         return $response;
     }
 
@@ -165,15 +166,16 @@ class OhlcvApi
      * @param  string $period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
      * @param  string $time_start Timeseries starting time in ISO 8601 (required)
      * @param  string $time_end Timeseries ending time in ISO 8601 (required)
+     * @param  int|null $limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\OHLCVTimeSeriesExchangeTimeseriesItem[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo($exchange_id, $period_id, $time_start, $time_end, string $contentType = self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'][0])
+    public function v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo($exchange_id, $period_id, $time_start, $time_end, $limit = 100, string $contentType = self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'][0])
     {
-        $request = $this->v1OhlcvExchangeExchangeIdHistoryGetRequest($exchange_id, $period_id, $time_start, $time_end, $contentType);
+        $request = $this->v1OhlcvExchangeExchangeIdHistoryGetRequest($exchange_id, $period_id, $time_start, $time_end, $limit, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -253,14 +255,15 @@ class OhlcvApi
      * @param  string $period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
      * @param  string $time_start Timeseries starting time in ISO 8601 (required)
      * @param  string $time_end Timeseries ending time in ISO 8601 (required)
+     * @param  int|null $limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1OhlcvExchangeExchangeIdHistoryGetAsync($exchange_id, $period_id, $time_start, $time_end, string $contentType = self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'][0])
+    public function v1OhlcvExchangeExchangeIdHistoryGetAsync($exchange_id, $period_id, $time_start, $time_end, $limit = 100, string $contentType = self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'][0])
     {
-        return $this->v1OhlcvExchangeExchangeIdHistoryGetAsyncWithHttpInfo($exchange_id, $period_id, $time_start, $time_end, $contentType)
+        return $this->v1OhlcvExchangeExchangeIdHistoryGetAsyncWithHttpInfo($exchange_id, $period_id, $time_start, $time_end, $limit, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -277,15 +280,16 @@ class OhlcvApi
      * @param  string $period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
      * @param  string $time_start Timeseries starting time in ISO 8601 (required)
      * @param  string $time_end Timeseries ending time in ISO 8601 (required)
+     * @param  int|null $limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1OhlcvExchangeExchangeIdHistoryGetAsyncWithHttpInfo($exchange_id, $period_id, $time_start, $time_end, string $contentType = self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'][0])
+    public function v1OhlcvExchangeExchangeIdHistoryGetAsyncWithHttpInfo($exchange_id, $period_id, $time_start, $time_end, $limit = 100, string $contentType = self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'][0])
     {
         $returnType = '\OpenAPI\Client\Model\OHLCVTimeSeriesExchangeTimeseriesItem[]';
-        $request = $this->v1OhlcvExchangeExchangeIdHistoryGetRequest($exchange_id, $period_id, $time_start, $time_end, $contentType);
+        $request = $this->v1OhlcvExchangeExchangeIdHistoryGetRequest($exchange_id, $period_id, $time_start, $time_end, $limit, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -330,12 +334,13 @@ class OhlcvApi
      * @param  string $period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
      * @param  string $time_start Timeseries starting time in ISO 8601 (required)
      * @param  string $time_end Timeseries ending time in ISO 8601 (required)
+     * @param  int|null $limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v1OhlcvExchangeExchangeIdHistoryGetRequest($exchange_id, $period_id, $time_start, $time_end, string $contentType = self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'][0])
+    public function v1OhlcvExchangeExchangeIdHistoryGetRequest($exchange_id, $period_id, $time_start, $time_end, $limit = 100, string $contentType = self::contentTypes['v1OhlcvExchangeExchangeIdHistoryGet'][0])
     {
 
         // verify the required parameter 'exchange_id' is set
@@ -365,6 +370,7 @@ class OhlcvApi
                 'Missing the required parameter $time_end when calling v1OhlcvExchangeExchangeIdHistoryGet'
             );
         }
+
 
 
         $resourcePath = '/v1/ohlcv/exchange/{exchange_id}/history';
@@ -400,6 +406,15 @@ class OhlcvApi
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
 
 

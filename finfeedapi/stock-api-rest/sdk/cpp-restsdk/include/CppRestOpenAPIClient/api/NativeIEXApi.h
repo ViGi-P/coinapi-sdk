@@ -54,71 +54,83 @@ public:
     /// Get Admin Messages
     /// </summary>
     /// <remarks>
-    /// 
+    /// Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
     /// </remarks>
     /// <param name="symbol">The symbol identifier</param>
-    /// <param name="date">Optional date in format YYYY-MM-DD (defaults to latest available data)</param>
+    /// <param name="date">Date in format YYYY-MM-DD</param>
+    /// <param name="limit">Maximum number of records to return (1-10000, default 100) (optional, default to 0)</param>
     pplx::task<std::vector<std::shared_ptr<Models_AdminMessageModel>>> v1NativeIexAdminMessagesSymbolGet(
         utility::string_t symbol,
-        utility::datetime date
+        utility::datetime date,
+        boost::optional<int32_t> limit
     ) const;
     /// <summary>
     /// Get System Events
     /// </summary>
     /// <remarks>
-    /// 
+    /// Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
     /// </remarks>
     /// <param name="date">Date in format YYYY-MM-DD</param>
+    /// <param name="limit">Maximum number of records to return (1-10000, default 100) (optional, default to 0)</param>
     pplx::task<std::vector<std::shared_ptr<IEXSystemEvent_SystemEventModel>>> v1NativeIexAdminSystemEventGet(
-        utility::datetime date
+        utility::datetime date,
+        boost::optional<int32_t> limit
     ) const;
     /// <summary>
     /// Get Level-1 Quotes
     /// </summary>
     /// <remarks>
-    /// 
+    /// Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
     /// </remarks>
     /// <param name="symbol">The symbol identifier</param>
-    /// <param name="date">Optional date in format YYYY-MM-DD (defaults to latest available data)</param>
+    /// <param name="date">Date in format YYYY-MM-DD</param>
+    /// <param name="limit">Maximum number of records to return (1-10000, default 100) (optional, default to 0)</param>
     pplx::task<std::vector<std::shared_ptr<IEXQuoteUpdate_QuoteUpdateModel>>> v1NativeIexLevel1QuoteSymbolGet(
         utility::string_t symbol,
-        utility::datetime date
+        utility::datetime date,
+        boost::optional<int32_t> limit
     ) const;
     /// <summary>
     /// Get Level-2 Price Level Book
     /// </summary>
     /// <remarks>
-    /// 
+    /// Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
     /// </remarks>
     /// <param name="symbol">The symbol identifier</param>
-    /// <param name="date">Optional date in format YYYY-MM-DD (defaults to latest available data)</param>
+    /// <param name="date">Date in format YYYY-MM-DD</param>
+    /// <param name="limit">Maximum number of records to return (1-10000, default 100) (optional, default to 0)</param>
     pplx::task<std::vector<std::shared_ptr<IEXPriceLevelUpdate_PriceLevelUpdateModel>>> v1NativeIexLevel2PriceLevelUpdateSymbolGet(
         utility::string_t symbol,
-        utility::datetime date
+        utility::datetime date,
+        boost::optional<int32_t> limit
     ) const;
     /// <summary>
     /// Get Level-3 Order Book
     /// </summary>
     /// <remarks>
-    /// 
+    /// Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
     /// </remarks>
     /// <param name="symbol">The symbol identifier</param>
-    /// <param name="date">Optional date in format YYYY-MM-DD (defaults to latest available data)</param>
+    /// <param name="date">Date in format YYYY-MM-DD</param>
+    /// <param name="limit">Maximum number of records to return (1-10000, default 100) (optional, default to 0)</param>
     pplx::task<std::vector<std::shared_ptr<Models_OrderBookModel>>> v1NativeIexLevel3OrderBookSymbolGet(
         utility::string_t symbol,
-        utility::datetime date
+        utility::datetime date,
+        boost::optional<int32_t> limit
     ) const;
     /// <summary>
     /// Get Trades
     /// </summary>
     /// <remarks>
-    /// 
+    /// Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
     /// </remarks>
     /// <param name="symbol">The symbol identifier</param>
-    /// <param name="date">Optional date in format YYYY-MM-DD (defaults to latest available data)</param>
+    /// <param name="date">Date in format YYYY-MM-DD</param>
+    /// <param name="limit">Maximum number of records to return (1-10000, default 100) (optional, default to 0)</param>
     pplx::task<std::vector<std::shared_ptr<IEXTrade_TradeModel>>> v1NativeIexTradeSymbolGet(
         utility::string_t symbol,
-        utility::datetime date
+        utility::datetime date,
+        boost::optional<int32_t> limit
     ) const;
 
 protected:

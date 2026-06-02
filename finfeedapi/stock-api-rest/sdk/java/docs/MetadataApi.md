@@ -77,9 +77,11 @@ This endpoint does not need any parameter.
 
 <a id="v1SymbolsExchangeIdGet"></a>
 # **v1SymbolsExchangeIdGet**
-> List&lt;FinFeedAPISymbolModel&gt; v1SymbolsExchangeIdGet(exchangeId, filterSymbolId)
+> List&lt;FinFeedAPISymbolModel&gt; v1SymbolsExchangeIdGet(exchangeId, filterSymbolId, limit, page)
 
 List of symbols for the exchange
+
+Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
 
 ### Example
 ```java
@@ -109,8 +111,10 @@ public class Example {
     MetadataApi apiInstance = new MetadataApi(defaultClient);
     String exchangeId = "exchangeId_example"; // String | The ID of the exchange (from the Metadata -> Exchanges)
     String filterSymbolId = "filterSymbolId_example"; // String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
+    Integer limit = 100; // Integer | Maximum number of symbols to return (1-10000, default 100)
+    Integer page = 1; // Integer | Page number (1-based, default 1)
     try {
-      List<FinFeedAPISymbolModel> result = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId);
+      List<FinFeedAPISymbolModel> result = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId, limit, page);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling MetadataApi#v1SymbolsExchangeIdGet");
@@ -129,6 +133,8 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **exchangeId** | **String**| The ID of the exchange (from the Metadata -&gt; Exchanges) | |
 | **filterSymbolId** | **String**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] |
+| **limit** | **Integer**| Maximum number of symbols to return (1-10000, default 100) | [optional] [default to 100] |
+| **page** | **Integer**| Page number (1-based, default 1) | [optional] [default to 1] |
 
 ### Return type
 
