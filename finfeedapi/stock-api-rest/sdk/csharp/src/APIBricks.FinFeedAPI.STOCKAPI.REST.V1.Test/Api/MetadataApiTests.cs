@@ -70,7 +70,9 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
         {
             string exchangeId = default!;
             Client.Option<string> filterSymbolId = default!;
-            var response = await _instance.V1SymbolsExchangeIdGetAsync(exchangeId, filterSymbolId);
+            Client.Option<int> limit = default!;
+            Client.Option<int> page = default!;
+            var response = await _instance.V1SymbolsExchangeIdGetAsync(exchangeId, filterSymbolId, limit, page);
             var model = response.Ok();
             Assert.IsType<List<FinFeedAPISymbolModel>>(model);
         }

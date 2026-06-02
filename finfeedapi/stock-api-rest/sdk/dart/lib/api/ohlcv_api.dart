@@ -18,7 +18,7 @@ class OhlcvApi {
 
   /// Historical data by exchange
   ///
-  /// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+  /// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -35,7 +35,10 @@ class OhlcvApi {
   ///
   /// * [String] timeEnd (required):
   ///   Timeseries ending time in ISO 8601
-  Future<Response> v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(String exchangeId, String periodId, String timeStart, String timeEnd,) async {
+  ///
+  /// * [int] limit:
+  ///   Maximum number of symbol rows to return (1-10000, default 100)
+  Future<Response> v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(String exchangeId, String periodId, String timeStart, String timeEnd, { int? limit, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/ohlcv/exchange/{exchange_id}/history'
       .replaceAll('{exchange_id}', exchangeId);
@@ -50,6 +53,9 @@ class OhlcvApi {
       queryParams.addAll(_queryParams('', 'period_id', periodId));
       queryParams.addAll(_queryParams('', 'time_start', timeStart));
       queryParams.addAll(_queryParams('', 'time_end', timeEnd));
+    if (limit != null) {
+      queryParams.addAll(_queryParams('', 'limit', limit));
+    }
 
     const contentTypes = <String>[];
 
@@ -67,7 +73,7 @@ class OhlcvApi {
 
   /// Historical data by exchange
   ///
-  /// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+  /// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
   ///
   /// Parameters:
   ///
@@ -82,8 +88,11 @@ class OhlcvApi {
   ///
   /// * [String] timeEnd (required):
   ///   Timeseries ending time in ISO 8601
-  Future<List<OHLCVTimeSeriesExchangeTimeseriesItem>?> v1OhlcvExchangeExchangeIdHistoryGet(String exchangeId, String periodId, String timeStart, String timeEnd,) async {
-    final response = await v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId, periodId, timeStart, timeEnd,);
+  ///
+  /// * [int] limit:
+  ///   Maximum number of symbol rows to return (1-10000, default 100)
+  Future<List<OHLCVTimeSeriesExchangeTimeseriesItem>?> v1OhlcvExchangeExchangeIdHistoryGet(String exchangeId, String periodId, String timeStart, String timeEnd, { int? limit, }) async {
+    final response = await v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId, periodId, timeStart, timeEnd,  limit: limit, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

@@ -9,9 +9,9 @@ void main() {
   group(OhlcvApi, () {
     // Historical data by exchange
     //
-    // Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+    // Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
     //
-    //Future<BuiltList<OHLCVTimeSeriesExchangeTimeseriesItem>> v1OhlcvExchangeExchangeIdHistoryGet(String exchangeId, String periodId, String timeStart, String timeEnd) async
+    //Future<BuiltList<OHLCVTimeSeriesExchangeTimeseriesItem>> v1OhlcvExchangeExchangeIdHistoryGet(String exchangeId, String periodId, String timeStart, String timeEnd, { int limit }) async
     test('test v1OhlcvExchangeExchangeIdHistoryGet', () async {
       // TODO
     });

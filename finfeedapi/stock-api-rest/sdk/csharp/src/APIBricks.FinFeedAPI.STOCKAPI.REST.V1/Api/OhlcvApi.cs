@@ -42,30 +42,32 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// Historical data by exchange
         /// </summary>
         /// <remarks>
-        /// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+        /// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeId">Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)</param>
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)</param>
         /// <param name="timeStart">Timeseries starting time in ISO 8601</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601</param>
+        /// <param name="limit">Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OhlcvExchangeExchangeIdHistoryGetApiResponse"/>&gt;</returns>
-        Task<IV1OhlcvExchangeExchangeIdHistoryGetApiResponse> V1OhlcvExchangeExchangeIdHistoryGetAsync(string exchangeId, string periodId, string timeStart, string timeEnd, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1OhlcvExchangeExchangeIdHistoryGetApiResponse> V1OhlcvExchangeExchangeIdHistoryGetAsync(string exchangeId, string periodId, string timeStart, string timeEnd, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Historical data by exchange
         /// </summary>
         /// <remarks>
-        /// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+        /// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
         /// </remarks>
         /// <param name="exchangeId">Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)</param>
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)</param>
         /// <param name="timeStart">Timeseries starting time in ISO 8601</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601</param>
+        /// <param name="limit">Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OhlcvExchangeExchangeIdHistoryGetApiResponse"/>?&gt;</returns>
-        Task<IV1OhlcvExchangeExchangeIdHistoryGetApiResponse?> V1OhlcvExchangeExchangeIdHistoryGetOrDefaultAsync(string exchangeId, string periodId, string timeStart, string timeEnd, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1OhlcvExchangeExchangeIdHistoryGetApiResponse?> V1OhlcvExchangeExchangeIdHistoryGetOrDefaultAsync(string exchangeId, string periodId, string timeStart, string timeEnd, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Historical data
@@ -339,7 +341,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             BearerTokenProvider = bearerTokenProvider;
         }
 
-        partial void FormatV1OhlcvExchangeExchangeIdHistoryGet(ref string exchangeId, ref string periodId, ref string timeStart, ref string timeEnd);
+        partial void FormatV1OhlcvExchangeExchangeIdHistoryGet(ref string exchangeId, ref string periodId, ref string timeStart, ref string timeEnd, ref Option<int> limit);
 
         /// <summary>
         /// Validates the request parameters
@@ -372,10 +374,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// <param name="periodId"></param>
         /// <param name="timeStart"></param>
         /// <param name="timeEnd"></param>
-        private void AfterV1OhlcvExchangeExchangeIdHistoryGetDefaultImplementation(IV1OhlcvExchangeExchangeIdHistoryGetApiResponse apiResponseLocalVar, string exchangeId, string periodId, string timeStart, string timeEnd)
+        /// <param name="limit"></param>
+        private void AfterV1OhlcvExchangeExchangeIdHistoryGetDefaultImplementation(IV1OhlcvExchangeExchangeIdHistoryGetApiResponse apiResponseLocalVar, string exchangeId, string periodId, string timeStart, string timeEnd, Option<int> limit)
         {
             bool suppressDefaultLog = false;
-            AfterV1OhlcvExchangeExchangeIdHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, exchangeId, periodId, timeStart, timeEnd);
+            AfterV1OhlcvExchangeExchangeIdHistoryGet(ref suppressDefaultLog, apiResponseLocalVar, exchangeId, periodId, timeStart, timeEnd, limit);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -389,7 +392,8 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// <param name="periodId"></param>
         /// <param name="timeStart"></param>
         /// <param name="timeEnd"></param>
-        partial void AfterV1OhlcvExchangeExchangeIdHistoryGet(ref bool suppressDefaultLog, IV1OhlcvExchangeExchangeIdHistoryGetApiResponse apiResponseLocalVar, string exchangeId, string periodId, string timeStart, string timeEnd);
+        /// <param name="limit"></param>
+        partial void AfterV1OhlcvExchangeExchangeIdHistoryGet(ref bool suppressDefaultLog, IV1OhlcvExchangeExchangeIdHistoryGetApiResponse apiResponseLocalVar, string exchangeId, string periodId, string timeStart, string timeEnd, Option<int> limit);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -401,10 +405,11 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// <param name="periodId"></param>
         /// <param name="timeStart"></param>
         /// <param name="timeEnd"></param>
-        private void OnErrorV1OhlcvExchangeExchangeIdHistoryGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, string periodId, string timeStart, string timeEnd)
+        /// <param name="limit"></param>
+        private void OnErrorV1OhlcvExchangeExchangeIdHistoryGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, string periodId, string timeStart, string timeEnd, Option<int> limit)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorV1OhlcvExchangeExchangeIdHistoryGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, exchangeId, periodId, timeStart, timeEnd);
+            OnErrorV1OhlcvExchangeExchangeIdHistoryGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, exchangeId, periodId, timeStart, timeEnd, limit);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -420,22 +425,24 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// <param name="periodId"></param>
         /// <param name="timeStart"></param>
         /// <param name="timeEnd"></param>
-        partial void OnErrorV1OhlcvExchangeExchangeIdHistoryGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, string periodId, string timeStart, string timeEnd);
+        /// <param name="limit"></param>
+        partial void OnErrorV1OhlcvExchangeExchangeIdHistoryGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, string periodId, string timeStart, string timeEnd, Option<int> limit);
 
         /// <summary>
-        /// Historical data by exchange Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+        /// Historical data by exchange Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
         /// </summary>
         /// <param name="exchangeId">Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)</param>
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)</param>
         /// <param name="timeStart">Timeseries starting time in ISO 8601</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601</param>
+        /// <param name="limit">Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OhlcvExchangeExchangeIdHistoryGetApiResponse"/>&gt;</returns>
-        public async Task<IV1OhlcvExchangeExchangeIdHistoryGetApiResponse?> V1OhlcvExchangeExchangeIdHistoryGetOrDefaultAsync(string exchangeId, string periodId, string timeStart, string timeEnd, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1OhlcvExchangeExchangeIdHistoryGetApiResponse?> V1OhlcvExchangeExchangeIdHistoryGetOrDefaultAsync(string exchangeId, string periodId, string timeStart, string timeEnd, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await V1OhlcvExchangeExchangeIdHistoryGetAsync(exchangeId, periodId, timeStart, timeEnd, cancellationToken).ConfigureAwait(false);
+                return await V1OhlcvExchangeExchangeIdHistoryGetAsync(exchangeId, periodId, timeStart, timeEnd, limit, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -444,16 +451,17 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         }
 
         /// <summary>
-        /// Historical data by exchange Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+        /// Historical data by exchange Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeId">Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)</param>
         /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)</param>
         /// <param name="timeStart">Timeseries starting time in ISO 8601</param>
         /// <param name="timeEnd">Timeseries ending time in ISO 8601</param>
+        /// <param name="limit">Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1OhlcvExchangeExchangeIdHistoryGetApiResponse"/>&gt;</returns>
-        public async Task<IV1OhlcvExchangeExchangeIdHistoryGetApiResponse> V1OhlcvExchangeExchangeIdHistoryGetAsync(string exchangeId, string periodId, string timeStart, string timeEnd, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1OhlcvExchangeExchangeIdHistoryGetApiResponse> V1OhlcvExchangeExchangeIdHistoryGetAsync(string exchangeId, string periodId, string timeStart, string timeEnd, Option<int> limit = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -461,7 +469,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             {
                 ValidateV1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd);
 
-                FormatV1OhlcvExchangeExchangeIdHistoryGet(ref exchangeId, ref periodId, ref timeStart, ref timeEnd);
+                FormatV1OhlcvExchangeExchangeIdHistoryGet(ref exchangeId, ref periodId, ref timeStart, ref timeEnd, ref limit);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -478,6 +486,9 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                     parseQueryStringLocalVar["period_id"] = ClientUtils.ParameterToString(periodId);
                     parseQueryStringLocalVar["time_start"] = ClientUtils.ParameterToString(timeStart);
                     parseQueryStringLocalVar["time_end"] = ClientUtils.ParameterToString(timeEnd);
+
+                    if (limit.IsSet)
+                        parseQueryStringLocalVar["limit"] = ClientUtils.ParameterToString(limit.Value);
 
                     uriBuilderLocalVar.Query = parseQueryStringLocalVar.ToString();
 
@@ -523,7 +534,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                             }
                         }
 
-                        AfterV1OhlcvExchangeExchangeIdHistoryGetDefaultImplementation(apiResponseLocalVar, exchangeId, periodId, timeStart, timeEnd);
+                        AfterV1OhlcvExchangeExchangeIdHistoryGetDefaultImplementation(apiResponseLocalVar, exchangeId, periodId, timeStart, timeEnd, limit);
 
                         Events.ExecuteOnV1OhlcvExchangeExchangeIdHistoryGet(apiResponseLocalVar);
 
@@ -537,7 +548,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorV1OhlcvExchangeExchangeIdHistoryGetDefaultImplementation(e, "/v1/ohlcv/exchange/{exchange_id}/history", uriBuilderLocalVar.Path, exchangeId, periodId, timeStart, timeEnd);
+                OnErrorV1OhlcvExchangeExchangeIdHistoryGetDefaultImplementation(e, "/v1/ohlcv/exchange/{exchange_id}/history", uriBuilderLocalVar.Path, exchangeId, periodId, timeStart, timeEnd, limit);
                 Events.ExecuteOnErrorV1OhlcvExchangeExchangeIdHistoryGet(e);
                 throw;
             }

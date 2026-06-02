@@ -42,14 +42,17 @@ v1ExchangesGet auth_token =
         |> Api.withBearerToken auth_token
 
 {-| List of symbols for the exchange
+
+Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
+
 -}
-v1SymbolsExchangeIdGet : String -> Maybe String -> String -> Api.Request (List FinFeedAPISymbolModel)
-v1SymbolsExchangeIdGet exchangeId_path filterSymbolId_query auth_token =
+v1SymbolsExchangeIdGet : String -> Maybe String -> Maybe Int -> Maybe Int -> String -> Api.Request (List FinFeedAPISymbolModel)
+v1SymbolsExchangeIdGet exchangeId_path filterSymbolId_query limit_query page_query auth_token =
     Api.request
         "GET"
         "/v1/symbols/{exchange_id}"
         [ ( "exchange_id", identity exchangeId_path ) ]
-        [ ( "filter_symbol_id", Maybe.map identity filterSymbolId_query ) ]
+        [ ( "filter_symbol_id", Maybe.map identity filterSymbolId_query ), ( "limit", Maybe.map String.fromInt limit_query ), ( "page", Maybe.map String.fromInt page_query ) ]
         []
         Nothing
         (Json.Decode.list Api.Data.finFeedAPISymbolModelDecoder)

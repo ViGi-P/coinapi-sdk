@@ -27,30 +27,36 @@ import type {
 export interface V1NativeIexAdminMessagesSymbolGetRequest {
     symbol: string;
     date: string;
+    limit?: number;
 }
 
 export interface V1NativeIexAdminSystemEventGetRequest {
     date: string;
+    limit?: number;
 }
 
 export interface V1NativeIexLevel1QuoteSymbolGetRequest {
     symbol: string;
     date: string;
+    limit?: number;
 }
 
 export interface V1NativeIexLevel2PriceLevelUpdateSymbolGetRequest {
     symbol: string;
     date: string;
+    limit?: number;
 }
 
 export interface V1NativeIexLevel3OrderBookSymbolGetRequest {
     symbol: string;
     date: string;
+    limit?: number;
 }
 
 export interface V1NativeIexTradeSymbolGetRequest {
     symbol: string;
     date: string;
+    limit?: number;
 }
 
 /**
@@ -59,11 +65,12 @@ export interface V1NativeIexTradeSymbolGetRequest {
 export class NativeIEXApi extends BaseAPI {
 
     /**
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * Get Admin Messages
      */
-    v1NativeIexAdminMessagesSymbolGet({ symbol, date }: V1NativeIexAdminMessagesSymbolGetRequest): Observable<Array<ModelsAdminMessageModel>>
-    v1NativeIexAdminMessagesSymbolGet({ symbol, date }: V1NativeIexAdminMessagesSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsAdminMessageModel>>>
-    v1NativeIexAdminMessagesSymbolGet({ symbol, date }: V1NativeIexAdminMessagesSymbolGetRequest, opts?: OperationOpts): Observable<Array<ModelsAdminMessageModel> | AjaxResponse<Array<ModelsAdminMessageModel>>> {
+    v1NativeIexAdminMessagesSymbolGet({ symbol, date, limit }: V1NativeIexAdminMessagesSymbolGetRequest): Observable<Array<ModelsAdminMessageModel>>
+    v1NativeIexAdminMessagesSymbolGet({ symbol, date, limit }: V1NativeIexAdminMessagesSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsAdminMessageModel>>>
+    v1NativeIexAdminMessagesSymbolGet({ symbol, date, limit }: V1NativeIexAdminMessagesSymbolGetRequest, opts?: OperationOpts): Observable<Array<ModelsAdminMessageModel> | AjaxResponse<Array<ModelsAdminMessageModel>>> {
         throwIfNullOrUndefined(symbol, 'symbol', 'v1NativeIexAdminMessagesSymbolGet');
         throwIfNullOrUndefined(date, 'date', 'v1NativeIexAdminMessagesSymbolGet');
 
@@ -75,6 +82,8 @@ export class NativeIEXApi extends BaseAPI {
             'date': (date as any).toISOString(),
         };
 
+        if (limit != null) { query['limit'] = limit; }
+
         return this.request<Array<ModelsAdminMessageModel>>({
             url: '/v1/native/iex/admin/messages/{symbol}'.replace('{symbol}', encodeURI(symbol)),
             method: 'GET',
@@ -84,11 +93,12 @@ export class NativeIEXApi extends BaseAPI {
     };
 
     /**
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * Get System Events
      */
-    v1NativeIexAdminSystemEventGet({ date }: V1NativeIexAdminSystemEventGetRequest): Observable<Array<IEXSystemEventSystemEventModel>>
-    v1NativeIexAdminSystemEventGet({ date }: V1NativeIexAdminSystemEventGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IEXSystemEventSystemEventModel>>>
-    v1NativeIexAdminSystemEventGet({ date }: V1NativeIexAdminSystemEventGetRequest, opts?: OperationOpts): Observable<Array<IEXSystemEventSystemEventModel> | AjaxResponse<Array<IEXSystemEventSystemEventModel>>> {
+    v1NativeIexAdminSystemEventGet({ date, limit }: V1NativeIexAdminSystemEventGetRequest): Observable<Array<IEXSystemEventSystemEventModel>>
+    v1NativeIexAdminSystemEventGet({ date, limit }: V1NativeIexAdminSystemEventGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IEXSystemEventSystemEventModel>>>
+    v1NativeIexAdminSystemEventGet({ date, limit }: V1NativeIexAdminSystemEventGetRequest, opts?: OperationOpts): Observable<Array<IEXSystemEventSystemEventModel> | AjaxResponse<Array<IEXSystemEventSystemEventModel>>> {
         throwIfNullOrUndefined(date, 'date', 'v1NativeIexAdminSystemEventGet');
 
         const headers: HttpHeaders = {
@@ -99,6 +109,8 @@ export class NativeIEXApi extends BaseAPI {
             'date': (date as any).toISOString(),
         };
 
+        if (limit != null) { query['limit'] = limit; }
+
         return this.request<Array<IEXSystemEventSystemEventModel>>({
             url: '/v1/native/iex/admin/system-event',
             method: 'GET',
@@ -108,11 +120,12 @@ export class NativeIEXApi extends BaseAPI {
     };
 
     /**
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * Get Level-1 Quotes
      */
-    v1NativeIexLevel1QuoteSymbolGet({ symbol, date }: V1NativeIexLevel1QuoteSymbolGetRequest): Observable<Array<IEXQuoteUpdateQuoteUpdateModel>>
-    v1NativeIexLevel1QuoteSymbolGet({ symbol, date }: V1NativeIexLevel1QuoteSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IEXQuoteUpdateQuoteUpdateModel>>>
-    v1NativeIexLevel1QuoteSymbolGet({ symbol, date }: V1NativeIexLevel1QuoteSymbolGetRequest, opts?: OperationOpts): Observable<Array<IEXQuoteUpdateQuoteUpdateModel> | AjaxResponse<Array<IEXQuoteUpdateQuoteUpdateModel>>> {
+    v1NativeIexLevel1QuoteSymbolGet({ symbol, date, limit }: V1NativeIexLevel1QuoteSymbolGetRequest): Observable<Array<IEXQuoteUpdateQuoteUpdateModel>>
+    v1NativeIexLevel1QuoteSymbolGet({ symbol, date, limit }: V1NativeIexLevel1QuoteSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IEXQuoteUpdateQuoteUpdateModel>>>
+    v1NativeIexLevel1QuoteSymbolGet({ symbol, date, limit }: V1NativeIexLevel1QuoteSymbolGetRequest, opts?: OperationOpts): Observable<Array<IEXQuoteUpdateQuoteUpdateModel> | AjaxResponse<Array<IEXQuoteUpdateQuoteUpdateModel>>> {
         throwIfNullOrUndefined(symbol, 'symbol', 'v1NativeIexLevel1QuoteSymbolGet');
         throwIfNullOrUndefined(date, 'date', 'v1NativeIexLevel1QuoteSymbolGet');
 
@@ -124,6 +137,8 @@ export class NativeIEXApi extends BaseAPI {
             'date': (date as any).toISOString(),
         };
 
+        if (limit != null) { query['limit'] = limit; }
+
         return this.request<Array<IEXQuoteUpdateQuoteUpdateModel>>({
             url: '/v1/native/iex/level1-quote/{symbol}'.replace('{symbol}', encodeURI(symbol)),
             method: 'GET',
@@ -133,11 +148,12 @@ export class NativeIEXApi extends BaseAPI {
     };
 
     /**
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * Get Level-2 Price Level Book
      */
-    v1NativeIexLevel2PriceLevelUpdateSymbolGet({ symbol, date }: V1NativeIexLevel2PriceLevelUpdateSymbolGetRequest): Observable<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>
-    v1NativeIexLevel2PriceLevelUpdateSymbolGet({ symbol, date }: V1NativeIexLevel2PriceLevelUpdateSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>>
-    v1NativeIexLevel2PriceLevelUpdateSymbolGet({ symbol, date }: V1NativeIexLevel2PriceLevelUpdateSymbolGetRequest, opts?: OperationOpts): Observable<Array<IEXPriceLevelUpdatePriceLevelUpdateModel> | AjaxResponse<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>> {
+    v1NativeIexLevel2PriceLevelUpdateSymbolGet({ symbol, date, limit }: V1NativeIexLevel2PriceLevelUpdateSymbolGetRequest): Observable<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>
+    v1NativeIexLevel2PriceLevelUpdateSymbolGet({ symbol, date, limit }: V1NativeIexLevel2PriceLevelUpdateSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>>
+    v1NativeIexLevel2PriceLevelUpdateSymbolGet({ symbol, date, limit }: V1NativeIexLevel2PriceLevelUpdateSymbolGetRequest, opts?: OperationOpts): Observable<Array<IEXPriceLevelUpdatePriceLevelUpdateModel> | AjaxResponse<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>> {
         throwIfNullOrUndefined(symbol, 'symbol', 'v1NativeIexLevel2PriceLevelUpdateSymbolGet');
         throwIfNullOrUndefined(date, 'date', 'v1NativeIexLevel2PriceLevelUpdateSymbolGet');
 
@@ -149,6 +165,8 @@ export class NativeIEXApi extends BaseAPI {
             'date': (date as any).toISOString(),
         };
 
+        if (limit != null) { query['limit'] = limit; }
+
         return this.request<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>({
             url: '/v1/native/iex/level2-price-level-update/{symbol}'.replace('{symbol}', encodeURI(symbol)),
             method: 'GET',
@@ -158,11 +176,12 @@ export class NativeIEXApi extends BaseAPI {
     };
 
     /**
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * Get Level-3 Order Book
      */
-    v1NativeIexLevel3OrderBookSymbolGet({ symbol, date }: V1NativeIexLevel3OrderBookSymbolGetRequest): Observable<Array<ModelsOrderBookModel>>
-    v1NativeIexLevel3OrderBookSymbolGet({ symbol, date }: V1NativeIexLevel3OrderBookSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsOrderBookModel>>>
-    v1NativeIexLevel3OrderBookSymbolGet({ symbol, date }: V1NativeIexLevel3OrderBookSymbolGetRequest, opts?: OperationOpts): Observable<Array<ModelsOrderBookModel> | AjaxResponse<Array<ModelsOrderBookModel>>> {
+    v1NativeIexLevel3OrderBookSymbolGet({ symbol, date, limit }: V1NativeIexLevel3OrderBookSymbolGetRequest): Observable<Array<ModelsOrderBookModel>>
+    v1NativeIexLevel3OrderBookSymbolGet({ symbol, date, limit }: V1NativeIexLevel3OrderBookSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<ModelsOrderBookModel>>>
+    v1NativeIexLevel3OrderBookSymbolGet({ symbol, date, limit }: V1NativeIexLevel3OrderBookSymbolGetRequest, opts?: OperationOpts): Observable<Array<ModelsOrderBookModel> | AjaxResponse<Array<ModelsOrderBookModel>>> {
         throwIfNullOrUndefined(symbol, 'symbol', 'v1NativeIexLevel3OrderBookSymbolGet');
         throwIfNullOrUndefined(date, 'date', 'v1NativeIexLevel3OrderBookSymbolGet');
 
@@ -174,6 +193,8 @@ export class NativeIEXApi extends BaseAPI {
             'date': (date as any).toISOString(),
         };
 
+        if (limit != null) { query['limit'] = limit; }
+
         return this.request<Array<ModelsOrderBookModel>>({
             url: '/v1/native/iex/level3-order-book/{symbol}'.replace('{symbol}', encodeURI(symbol)),
             method: 'GET',
@@ -183,11 +204,12 @@ export class NativeIEXApi extends BaseAPI {
     };
 
     /**
+     * Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
      * Get Trades
      */
-    v1NativeIexTradeSymbolGet({ symbol, date }: V1NativeIexTradeSymbolGetRequest): Observable<Array<IEXTradeTradeModel>>
-    v1NativeIexTradeSymbolGet({ symbol, date }: V1NativeIexTradeSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IEXTradeTradeModel>>>
-    v1NativeIexTradeSymbolGet({ symbol, date }: V1NativeIexTradeSymbolGetRequest, opts?: OperationOpts): Observable<Array<IEXTradeTradeModel> | AjaxResponse<Array<IEXTradeTradeModel>>> {
+    v1NativeIexTradeSymbolGet({ symbol, date, limit }: V1NativeIexTradeSymbolGetRequest): Observable<Array<IEXTradeTradeModel>>
+    v1NativeIexTradeSymbolGet({ symbol, date, limit }: V1NativeIexTradeSymbolGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<IEXTradeTradeModel>>>
+    v1NativeIexTradeSymbolGet({ symbol, date, limit }: V1NativeIexTradeSymbolGetRequest, opts?: OperationOpts): Observable<Array<IEXTradeTradeModel> | AjaxResponse<Array<IEXTradeTradeModel>>> {
         throwIfNullOrUndefined(symbol, 'symbol', 'v1NativeIexTradeSymbolGet');
         throwIfNullOrUndefined(date, 'date', 'v1NativeIexTradeSymbolGet');
 
@@ -198,6 +220,8 @@ export class NativeIEXApi extends BaseAPI {
         const query: HttpQuery = { // required parameters are used directly since they are already checked by throwIfNullOrUndefined
             'date': (date as any).toISOString(),
         };
+
+        if (limit != null) { query['limit'] = limit; }
 
         return this.request<Array<IEXTradeTradeModel>>({
             url: '/v1/native/iex/trade/{symbol}'.replace('{symbol}', encodeURI(symbol)),

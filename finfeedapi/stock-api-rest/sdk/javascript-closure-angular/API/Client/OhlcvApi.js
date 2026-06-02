@@ -48,15 +48,16 @@ API.Client.OhlcvApi.$inject = ['$http', '$httpParamSerializer', '$injector'];
 
 /**
  * Historical data by exchange
- * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+ * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
  * @param {!string} exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)
  * @param {!string} periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
  * @param {!string} timeStart Timeseries starting time in ISO 8601
  * @param {!string} timeEnd Timeseries ending time in ISO 8601
+ * @param {!number=} opt_limit Maximum number of symbol rows to return (1-10000, default 100)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.OHLCVTimeSeries.ExchangeTimeseriesItem>>}
  */
-API.Client.OhlcvApi.prototype.v1OhlcvExchangeExchangeIdHistoryGet = function(exchangeId, periodId, timeStart, timeEnd, opt_extraHttpRequestParams) {
+API.Client.OhlcvApi.prototype.v1OhlcvExchangeExchangeIdHistoryGet = function(exchangeId, periodId, timeStart, timeEnd, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/ohlcv/exchange/{exchange_id}/history'
       .replace('{exchange_id}', String(exchangeId));
@@ -92,6 +93,10 @@ API.Client.OhlcvApi.prototype.v1OhlcvExchangeExchangeIdHistoryGet = function(exc
 
   if (timeEnd !== undefined) {
     queryParameters['time_end'] = timeEnd;
+  }
+
+  if (opt_limit !== undefined) {
+    queryParameters['limit'] = opt_limit;
   }
 
   /** @type {!Object} */

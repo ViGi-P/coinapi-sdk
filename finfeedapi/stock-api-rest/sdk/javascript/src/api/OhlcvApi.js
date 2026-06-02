@@ -46,15 +46,18 @@ export default class OhlcvApi {
 
     /**
      * Historical data by exchange
-     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
      * @param {String} exchangeId Exchange identifier of requested timeseries (from the Metadata -> Exchanges)
      * @param {String} periodId Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
      * @param {String} timeStart Timeseries starting time in ISO 8601
      * @param {String} timeEnd Timeseries ending time in ISO 8601
+     * @param {Object} opts Optional parameters
+     * @param {Number} [limit = 100)] Maximum number of symbol rows to return (1-10000, default 100)
      * @param {module:api/OhlcvApi~v1OhlcvExchangeExchangeIdHistoryGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/OHLCVTimeSeriesExchangeTimeseriesItem>}
      */
-    v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, callback) {
+    v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, opts, callback) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'exchangeId' is set
       if (exchangeId === undefined || exchangeId === null) {
@@ -79,7 +82,8 @@ export default class OhlcvApi {
       let queryParams = {
         'period_id': periodId,
         'time_start': timeStart,
-        'time_end': timeEnd
+        'time_end': timeEnd,
+        'limit': opts['limit']
       };
       let headerParams = {
       };

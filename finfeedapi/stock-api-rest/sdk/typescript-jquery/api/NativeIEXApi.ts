@@ -47,12 +47,13 @@ export class NativeIEXApi {
     }
 
     /**
-     * 
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * @summary Get Admin Messages
      * @param symbol The symbol identifier
-     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param date Date in format YYYY-MM-DD
+     * @param limit Maximum number of records to return (1-10000, default 100)
      */
-    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.ModelsAdminMessageModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -72,6 +73,9 @@ export class NativeIEXApi {
 
         if (date !== null && date !== undefined) {
             queryParameters['date'] = date.toISOString();
+        }
+        if (limit !== null && limit !== undefined) {
+            queryParameters['limit'] = <string><any>limit;
         }
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);
@@ -124,11 +128,12 @@ export class NativeIEXApi {
     }
 
     /**
-     * 
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * @summary Get System Events
      * @param date Date in format YYYY-MM-DD
+     * @param limit Maximum number of records to return (1-10000, default 100)
      */
-    public v1NativeIexAdminSystemEventGet(date: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public v1NativeIexAdminSystemEventGet(date: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.IEXSystemEventSystemEventModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -143,6 +148,9 @@ export class NativeIEXApi {
 
         if (date !== null && date !== undefined) {
             queryParameters['date'] = date.toISOString();
+        }
+        if (limit !== null && limit !== undefined) {
+            queryParameters['limit'] = <string><any>limit;
         }
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);
@@ -195,12 +203,13 @@ export class NativeIEXApi {
     }
 
     /**
-     * 
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * @summary Get Level-1 Quotes
      * @param symbol The symbol identifier
-     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param date Date in format YYYY-MM-DD
+     * @param limit Maximum number of records to return (1-10000, default 100)
      */
-    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.IEXQuoteUpdateQuoteUpdateModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -220,6 +229,9 @@ export class NativeIEXApi {
 
         if (date !== null && date !== undefined) {
             queryParameters['date'] = date.toISOString();
+        }
+        if (limit !== null && limit !== undefined) {
+            queryParameters['limit'] = <string><any>limit;
         }
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);
@@ -272,12 +284,13 @@ export class NativeIEXApi {
     }
 
     /**
-     * 
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * @summary Get Level-2 Price Level Book
      * @param symbol The symbol identifier
-     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param date Date in format YYYY-MM-DD
+     * @param limit Maximum number of records to return (1-10000, default 100)
      */
-    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.IEXPriceLevelUpdatePriceLevelUpdateModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -297,6 +310,9 @@ export class NativeIEXApi {
 
         if (date !== null && date !== undefined) {
             queryParameters['date'] = date.toISOString();
+        }
+        if (limit !== null && limit !== undefined) {
+            queryParameters['limit'] = <string><any>limit;
         }
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);
@@ -349,12 +365,13 @@ export class NativeIEXApi {
     }
 
     /**
-     * 
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * @summary Get Level-3 Order Book
      * @param symbol The symbol identifier
-     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param date Date in format YYYY-MM-DD
+     * @param limit Maximum number of records to return (1-10000, default 100)
      */
-    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.ModelsOrderBookModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -374,6 +391,9 @@ export class NativeIEXApi {
 
         if (date !== null && date !== undefined) {
             queryParameters['date'] = date.toISOString();
+        }
+        if (limit !== null && limit !== undefined) {
+            queryParameters['limit'] = <string><any>limit;
         }
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);
@@ -426,12 +446,13 @@ export class NativeIEXApi {
     }
 
     /**
-     * 
+     * Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
      * @summary Get Trades
      * @param symbol The symbol identifier
-     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param date Date in format YYYY-MM-DD
+     * @param limit Maximum number of records to return (1-10000, default 100)
      */
-    public v1NativeIexTradeSymbolGet(symbol: string, date: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public v1NativeIexTradeSymbolGet(symbol: string, date: string, limit?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.IEXTradeTradeModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -451,6 +472,9 @@ export class NativeIEXApi {
 
         if (date !== null && date !== undefined) {
             queryParameters['date'] = date.toISOString();
+        }
+        if (limit !== null && limit !== undefined) {
+            queryParameters['limit'] = <string><any>limit;
         }
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);

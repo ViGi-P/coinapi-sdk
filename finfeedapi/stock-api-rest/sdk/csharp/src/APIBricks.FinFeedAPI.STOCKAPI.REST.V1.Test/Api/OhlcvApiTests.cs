@@ -61,7 +61,8 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
             string periodId = default!;
             string timeStart = default!;
             string timeEnd = default!;
-            var response = await _instance.V1OhlcvExchangeExchangeIdHistoryGetAsync(exchangeId, periodId, timeStart, timeEnd);
+            Client.Option<int> limit = default!;
+            var response = await _instance.V1OhlcvExchangeExchangeIdHistoryGetAsync(exchangeId, periodId, timeStart, timeEnd, limit);
             var model = response.Ok();
             Assert.IsType<List<OHLCVTimeSeriesExchangeTimeseriesItem>>(model);
         }

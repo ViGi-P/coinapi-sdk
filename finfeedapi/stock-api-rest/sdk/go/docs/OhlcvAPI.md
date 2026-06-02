@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## V1OhlcvExchangeExchangeIdHistoryGet
 
-> []OHLCVTimeSeriesExchangeTimeseriesItem V1OhlcvExchangeExchangeIdHistoryGet(ctx, exchangeId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Execute()
+> []OHLCVTimeSeriesExchangeTimeseriesItem V1OhlcvExchangeExchangeIdHistoryGet(ctx, exchangeId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).Execute()
 
 Historical data by exchange
 
@@ -36,10 +36,11 @@ func main() {
 	periodId := "periodId_example" // string | Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
 	timeStart := "timeStart_example" // string | Timeseries starting time in ISO 8601
 	timeEnd := "timeEnd_example" // string | Timeseries ending time in ISO 8601
+	limit := int32(56) // int32 | Maximum number of symbol rows to return (1-10000, default 100) (optional) (default to 100)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.OhlcvAPI.V1OhlcvExchangeExchangeIdHistoryGet(context.Background(), exchangeId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Execute()
+	resp, r, err := apiClient.OhlcvAPI.V1OhlcvExchangeExchangeIdHistoryGet(context.Background(), exchangeId).PeriodId(periodId).TimeStart(timeStart).TimeEnd(timeEnd).Limit(limit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `OhlcvAPI.V1OhlcvExchangeExchangeIdHistoryGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -68,6 +69,7 @@ Name | Type | Description  | Notes
  **periodId** | **string** | Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) | 
  **timeStart** | **string** | Timeseries starting time in ISO 8601 | 
  **timeEnd** | **string** | Timeseries ending time in ISO 8601 | 
+ **limit** | **int32** | Maximum number of symbol rows to return (1-10000, default 100) | [default to 100]
 
 ### Return type
 

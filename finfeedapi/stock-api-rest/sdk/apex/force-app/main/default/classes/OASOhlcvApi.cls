@@ -27,11 +27,12 @@ public class OASOhlcvApi {
 
     /**
      * Historical data by exchange
-     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.\nTime range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
      * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges) (required)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
+     * @param r_limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
      * @return List<OASOHLCVTimeSeriesExchangeTimeseries>
      * @throws OAS.ApiException if fails to make API call
      */
@@ -46,6 +47,7 @@ public class OASOhlcvApi {
         query.addAll(client.makeParam('period_id', (String) params.get('periodId')));
         query.addAll(client.makeParam('time_start', (String) params.get('timeStart')));
         query.addAll(client.makeParam('time_end', (String) params.get('timeEnd')));
+        query.addAll(client.makeParam('limit', (Integer) params.get('r_limit')));
 
         List<OAS.Param> form = new List<OAS.Param>();
 

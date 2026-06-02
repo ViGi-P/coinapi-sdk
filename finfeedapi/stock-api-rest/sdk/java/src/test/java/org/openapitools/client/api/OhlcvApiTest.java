@@ -36,7 +36,7 @@ public class OhlcvApiTest {
     /**
      * Historical data by exchange
      *
-     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
      *
      * @throws ApiException if the Api call fails
      */
@@ -46,7 +46,8 @@ public class OhlcvApiTest {
         String periodId = null;
         String timeStart = null;
         String timeEnd = null;
-        List<OHLCVTimeSeriesExchangeTimeseriesItem> response = api.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd);
+        Integer limit = null;
+        List<OHLCVTimeSeriesExchangeTimeseriesItem> response = api.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, limit);
         // TODO: test validations
     }
 

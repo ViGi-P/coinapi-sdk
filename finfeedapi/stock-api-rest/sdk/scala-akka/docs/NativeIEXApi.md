@@ -25,6 +25,8 @@ Method | HTTP request | Description
 
 Get Admin Messages
 
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+
 ### Example
 
 ```scala
@@ -54,9 +56,11 @@ object Example extends App {
     val apiInstance = NativeIEXApi("https://api-historical.stock.finfeedapi.com")
     val symbol: String = symbol_example // String | The symbol identifier
 
-    val date: OffsetDateTime = 2013-10-20T19:20:30+01:00 // OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+    val date: OffsetDateTime = 2013-10-20T19:20:30+01:00 // OffsetDateTime | Date in format YYYY-MM-DD
+
+    val limit: Int = 56 // Int | Maximum number of records to return (1-10000, default 100)
     
-    val request = apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date)
+    val request = apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date, limit)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -85,7 +89,8 @@ object Example extends App {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier |
- **date** | **OffsetDateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) |
+ **date** | **OffsetDateTime**| Date in format YYYY-MM-DD |
+ **limit** | **Int**| Maximum number of records to return (1-10000, default 100) | [optional]
 
 ### Return type
 
@@ -112,6 +117,8 @@ ApiRequest[[**Seq[AdminMessageModel]**](AdminMessageModel.md)]
 > v1NativeIexAdminSystemEventGet(v1NativeIexAdminSystemEventGetRequest): ApiRequest[Seq[SystemEventModel]]
 
 Get System Events
+
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -141,8 +148,10 @@ object Example extends App {
     val apiInvoker = ApiInvoker()
     val apiInstance = NativeIEXApi("https://api-historical.stock.finfeedapi.com")
     val date: OffsetDateTime = 2013-10-20T19:20:30+01:00 // OffsetDateTime | Date in format YYYY-MM-DD
+
+    val limit: Int = 56 // Int | Maximum number of records to return (1-10000, default 100)
     
-    val request = apiInstance.v1NativeIexAdminSystemEventGet(date)
+    val request = apiInstance.v1NativeIexAdminSystemEventGet(date, limit)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -171,6 +180,7 @@ object Example extends App {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | **OffsetDateTime**| Date in format YYYY-MM-DD |
+ **limit** | **Int**| Maximum number of records to return (1-10000, default 100) | [optional]
 
 ### Return type
 
@@ -198,6 +208,8 @@ ApiRequest[[**Seq[SystemEventModel]**](SystemEventModel.md)]
 
 Get Level-1 Quotes
 
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+
 ### Example
 
 ```scala
@@ -227,9 +239,11 @@ object Example extends App {
     val apiInstance = NativeIEXApi("https://api-historical.stock.finfeedapi.com")
     val symbol: String = symbol_example // String | The symbol identifier
 
-    val date: OffsetDateTime = 2013-10-20T19:20:30+01:00 // OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+    val date: OffsetDateTime = 2013-10-20T19:20:30+01:00 // OffsetDateTime | Date in format YYYY-MM-DD
+
+    val limit: Int = 56 // Int | Maximum number of records to return (1-10000, default 100)
     
-    val request = apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date)
+    val request = apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date, limit)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -258,7 +272,8 @@ object Example extends App {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier |
- **date** | **OffsetDateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) |
+ **date** | **OffsetDateTime**| Date in format YYYY-MM-DD |
+ **limit** | **Int**| Maximum number of records to return (1-10000, default 100) | [optional]
 
 ### Return type
 
@@ -286,6 +301,8 @@ ApiRequest[[**Seq[QuoteUpdateModel]**](QuoteUpdateModel.md)]
 
 Get Level-2 Price Level Book
 
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+
 ### Example
 
 ```scala
@@ -315,9 +332,11 @@ object Example extends App {
     val apiInstance = NativeIEXApi("https://api-historical.stock.finfeedapi.com")
     val symbol: String = symbol_example // String | The symbol identifier
 
-    val date: OffsetDateTime = 2013-10-20T19:20:30+01:00 // OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+    val date: OffsetDateTime = 2013-10-20T19:20:30+01:00 // OffsetDateTime | Date in format YYYY-MM-DD
+
+    val limit: Int = 56 // Int | Maximum number of records to return (1-10000, default 100)
     
-    val request = apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
+    val request = apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, limit)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -346,7 +365,8 @@ object Example extends App {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier |
- **date** | **OffsetDateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) |
+ **date** | **OffsetDateTime**| Date in format YYYY-MM-DD |
+ **limit** | **Int**| Maximum number of records to return (1-10000, default 100) | [optional]
 
 ### Return type
 
@@ -374,6 +394,8 @@ ApiRequest[[**Seq[PriceLevelUpdateModel]**](PriceLevelUpdateModel.md)]
 
 Get Level-3 Order Book
 
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+
 ### Example
 
 ```scala
@@ -403,9 +425,11 @@ object Example extends App {
     val apiInstance = NativeIEXApi("https://api-historical.stock.finfeedapi.com")
     val symbol: String = symbol_example // String | The symbol identifier
 
-    val date: OffsetDateTime = 2013-10-20T19:20:30+01:00 // OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+    val date: OffsetDateTime = 2013-10-20T19:20:30+01:00 // OffsetDateTime | Date in format YYYY-MM-DD
+
+    val limit: Int = 56 // Int | Maximum number of records to return (1-10000, default 100)
     
-    val request = apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
+    val request = apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date, limit)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -434,7 +458,8 @@ object Example extends App {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier |
- **date** | **OffsetDateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) |
+ **date** | **OffsetDateTime**| Date in format YYYY-MM-DD |
+ **limit** | **Int**| Maximum number of records to return (1-10000, default 100) | [optional]
 
 ### Return type
 
@@ -462,6 +487,8 @@ ApiRequest[[**Seq[OrderBookModel]**](OrderBookModel.md)]
 
 Get Trades
 
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
+
 ### Example
 
 ```scala
@@ -491,9 +518,11 @@ object Example extends App {
     val apiInstance = NativeIEXApi("https://api-historical.stock.finfeedapi.com")
     val symbol: String = symbol_example // String | The symbol identifier
 
-    val date: OffsetDateTime = 2013-10-20T19:20:30+01:00 // OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+    val date: OffsetDateTime = 2013-10-20T19:20:30+01:00 // OffsetDateTime | Date in format YYYY-MM-DD
+
+    val limit: Int = 56 // Int | Maximum number of records to return (1-10000, default 100)
     
-    val request = apiInstance.v1NativeIexTradeSymbolGet(symbol, date)
+    val request = apiInstance.v1NativeIexTradeSymbolGet(symbol, date, limit)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -522,7 +551,8 @@ object Example extends App {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier |
- **date** | **OffsetDateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) |
+ **date** | **OffsetDateTime**| Date in format YYYY-MM-DD |
+ **limit** | **Int**| Maximum number of records to return (1-10000, default 100) | [optional]
 
 ### Return type
 

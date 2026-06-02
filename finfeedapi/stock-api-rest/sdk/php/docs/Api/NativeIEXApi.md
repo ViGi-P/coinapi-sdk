@@ -17,10 +17,12 @@ All URIs are relative to https://api-historical.stock.finfeedapi.com, except if 
 ## `v1NativeIexAdminMessagesSymbolGet()`
 
 ```php
-v1NativeIexAdminMessagesSymbolGet($symbol, $date): \OpenAPI\Client\Model\ModelsAdminMessageModel[]
+v1NativeIexAdminMessagesSymbolGet($symbol, $date, $limit): \OpenAPI\Client\Model\ModelsAdminMessageModel[]
 ```
 
 Get Admin Messages
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -45,10 +47,11 @@ $apiInstance = new OpenAPI\Client\Api\NativeIEXApi(
     $config
 );
 $symbol = 'symbol_example'; // string | The symbol identifier
-$date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+$date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Date in format YYYY-MM-DD
+$limit = 100; // int | Maximum number of records to return (1-10000, default 100)
 
 try {
-    $result = $apiInstance->v1NativeIexAdminMessagesSymbolGet($symbol, $date);
+    $result = $apiInstance->v1NativeIexAdminMessagesSymbolGet($symbol, $date, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NativeIEXApi->v1NativeIexAdminMessagesSymbolGet: ', $e->getMessage(), PHP_EOL;
@@ -60,7 +63,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **symbol** | **string**| The symbol identifier | |
-| **date** | **\DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | |
+| **date** | **\DateTime**| Date in format YYYY-MM-DD | |
+| **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -82,10 +86,12 @@ try {
 ## `v1NativeIexAdminSystemEventGet()`
 
 ```php
-v1NativeIexAdminSystemEventGet($date): \OpenAPI\Client\Model\IEXSystemEventSystemEventModel[]
+v1NativeIexAdminSystemEventGet($date, $limit): \OpenAPI\Client\Model\IEXSystemEventSystemEventModel[]
 ```
 
 Get System Events
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -110,9 +116,10 @@ $apiInstance = new OpenAPI\Client\Api\NativeIEXApi(
     $config
 );
 $date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Date in format YYYY-MM-DD
+$limit = 100; // int | Maximum number of records to return (1-10000, default 100)
 
 try {
-    $result = $apiInstance->v1NativeIexAdminSystemEventGet($date);
+    $result = $apiInstance->v1NativeIexAdminSystemEventGet($date, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NativeIEXApi->v1NativeIexAdminSystemEventGet: ', $e->getMessage(), PHP_EOL;
@@ -124,6 +131,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **date** | **\DateTime**| Date in format YYYY-MM-DD | |
+| **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -145,10 +153,12 @@ try {
 ## `v1NativeIexLevel1QuoteSymbolGet()`
 
 ```php
-v1NativeIexLevel1QuoteSymbolGet($symbol, $date): \OpenAPI\Client\Model\IEXQuoteUpdateQuoteUpdateModel[]
+v1NativeIexLevel1QuoteSymbolGet($symbol, $date, $limit): \OpenAPI\Client\Model\IEXQuoteUpdateQuoteUpdateModel[]
 ```
 
 Get Level-1 Quotes
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -173,10 +183,11 @@ $apiInstance = new OpenAPI\Client\Api\NativeIEXApi(
     $config
 );
 $symbol = 'symbol_example'; // string | The symbol identifier
-$date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+$date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Date in format YYYY-MM-DD
+$limit = 100; // int | Maximum number of records to return (1-10000, default 100)
 
 try {
-    $result = $apiInstance->v1NativeIexLevel1QuoteSymbolGet($symbol, $date);
+    $result = $apiInstance->v1NativeIexLevel1QuoteSymbolGet($symbol, $date, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NativeIEXApi->v1NativeIexLevel1QuoteSymbolGet: ', $e->getMessage(), PHP_EOL;
@@ -188,7 +199,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **symbol** | **string**| The symbol identifier | |
-| **date** | **\DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | |
+| **date** | **\DateTime**| Date in format YYYY-MM-DD | |
+| **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -210,10 +222,12 @@ try {
 ## `v1NativeIexLevel2PriceLevelUpdateSymbolGet()`
 
 ```php
-v1NativeIexLevel2PriceLevelUpdateSymbolGet($symbol, $date): \OpenAPI\Client\Model\IEXPriceLevelUpdatePriceLevelUpdateModel[]
+v1NativeIexLevel2PriceLevelUpdateSymbolGet($symbol, $date, $limit): \OpenAPI\Client\Model\IEXPriceLevelUpdatePriceLevelUpdateModel[]
 ```
 
 Get Level-2 Price Level Book
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -238,10 +252,11 @@ $apiInstance = new OpenAPI\Client\Api\NativeIEXApi(
     $config
 );
 $symbol = 'symbol_example'; // string | The symbol identifier
-$date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+$date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Date in format YYYY-MM-DD
+$limit = 100; // int | Maximum number of records to return (1-10000, default 100)
 
 try {
-    $result = $apiInstance->v1NativeIexLevel2PriceLevelUpdateSymbolGet($symbol, $date);
+    $result = $apiInstance->v1NativeIexLevel2PriceLevelUpdateSymbolGet($symbol, $date, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NativeIEXApi->v1NativeIexLevel2PriceLevelUpdateSymbolGet: ', $e->getMessage(), PHP_EOL;
@@ -253,7 +268,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **symbol** | **string**| The symbol identifier | |
-| **date** | **\DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | |
+| **date** | **\DateTime**| Date in format YYYY-MM-DD | |
+| **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -275,10 +291,12 @@ try {
 ## `v1NativeIexLevel3OrderBookSymbolGet()`
 
 ```php
-v1NativeIexLevel3OrderBookSymbolGet($symbol, $date): \OpenAPI\Client\Model\ModelsOrderBookModel[]
+v1NativeIexLevel3OrderBookSymbolGet($symbol, $date, $limit): \OpenAPI\Client\Model\ModelsOrderBookModel[]
 ```
 
 Get Level-3 Order Book
+
+Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -303,10 +321,11 @@ $apiInstance = new OpenAPI\Client\Api\NativeIEXApi(
     $config
 );
 $symbol = 'symbol_example'; // string | The symbol identifier
-$date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+$date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Date in format YYYY-MM-DD
+$limit = 100; // int | Maximum number of records to return (1-10000, default 100)
 
 try {
-    $result = $apiInstance->v1NativeIexLevel3OrderBookSymbolGet($symbol, $date);
+    $result = $apiInstance->v1NativeIexLevel3OrderBookSymbolGet($symbol, $date, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NativeIEXApi->v1NativeIexLevel3OrderBookSymbolGet: ', $e->getMessage(), PHP_EOL;
@@ -318,7 +337,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **symbol** | **string**| The symbol identifier | |
-| **date** | **\DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | |
+| **date** | **\DateTime**| Date in format YYYY-MM-DD | |
+| **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -340,10 +360,12 @@ try {
 ## `v1NativeIexTradeSymbolGet()`
 
 ```php
-v1NativeIexTradeSymbolGet($symbol, $date): \OpenAPI\Client\Model\IEXTradeTradeModel[]
+v1NativeIexTradeSymbolGet($symbol, $date, $limit): \OpenAPI\Client\Model\IEXTradeTradeModel[]
 ```
 
 Get Trades
+
+Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
 
 ### Example
 
@@ -368,10 +390,11 @@ $apiInstance = new OpenAPI\Client\Api\NativeIEXApi(
     $config
 );
 $symbol = 'symbol_example'; // string | The symbol identifier
-$date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+$date = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Date in format YYYY-MM-DD
+$limit = 100; // int | Maximum number of records to return (1-10000, default 100)
 
 try {
-    $result = $apiInstance->v1NativeIexTradeSymbolGet($symbol, $date);
+    $result = $apiInstance->v1NativeIexTradeSymbolGet($symbol, $date, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NativeIEXApi->v1NativeIexTradeSymbolGet: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +406,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **symbol** | **string**| The symbol identifier | |
-| **date** | **\DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | |
+| **date** | **\DateTime**| Date in format YYYY-MM-DD | |
+| **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 

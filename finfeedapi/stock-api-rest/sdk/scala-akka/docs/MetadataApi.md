@@ -96,6 +96,8 @@ ApiRequest[[**Seq[ExchangeModel]**](ExchangeModel.md)]
 
 List of symbols for the exchange
 
+Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
+
 ### Example
 
 ```scala
@@ -125,8 +127,12 @@ object Example extends App {
     val exchangeId: String = exchangeId_example // String | The ID of the exchange (from the Metadata -> Exchanges)
 
     val filterSymbolId: String = filterSymbolId_example // String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
+
+    val limit: Int = 56 // Int | Maximum number of symbols to return (1-10000, default 100)
+
+    val page: Int = 56 // Int | Page number (1-based, default 1)
     
-    val request = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId)
+    val request = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId, limit, page)
     val response = apiInvoker.execute(request)
 
     response.onComplete {
@@ -156,6 +162,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exchangeId** | **String**| The ID of the exchange (from the Metadata -&gt; Exchanges) |
  **filterSymbolId** | **String**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional]
+ **limit** | **Int**| Maximum number of symbols to return (1-10000, default 100) | [optional]
+ **page** | **Int**| Page number (1-based, default 1) | [optional]
 
 ### Return type
 

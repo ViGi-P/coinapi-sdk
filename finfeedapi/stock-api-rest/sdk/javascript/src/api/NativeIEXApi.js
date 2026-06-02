@@ -49,12 +49,16 @@ export default class NativeIEXApi {
 
     /**
      * Get Admin Messages
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * @param {String} symbol The symbol identifier
-     * @param {Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param {Date} date Date in format YYYY-MM-DD
+     * @param {Object} opts Optional parameters
+     * @param {Number} [limit = 100)] Maximum number of records to return (1-10000, default 100)
      * @param {module:api/NativeIEXApi~v1NativeIexAdminMessagesSymbolGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/ModelsAdminMessageModel>}
      */
-    v1NativeIexAdminMessagesSymbolGet(symbol, date, callback) {
+    v1NativeIexAdminMessagesSymbolGet(symbol, date, opts, callback) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'symbol' is set
       if (symbol === undefined || symbol === null) {
@@ -69,7 +73,8 @@ export default class NativeIEXApi {
         'symbol': symbol
       };
       let queryParams = {
-        'date': date
+        'date': date,
+        'limit': opts['limit']
       };
       let headerParams = {
       };
@@ -97,11 +102,15 @@ export default class NativeIEXApi {
 
     /**
      * Get System Events
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * @param {Date} date Date in format YYYY-MM-DD
+     * @param {Object} opts Optional parameters
+     * @param {Number} [limit = 100)] Maximum number of records to return (1-10000, default 100)
      * @param {module:api/NativeIEXApi~v1NativeIexAdminSystemEventGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/IEXSystemEventSystemEventModel>}
      */
-    v1NativeIexAdminSystemEventGet(date, callback) {
+    v1NativeIexAdminSystemEventGet(date, opts, callback) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'date' is set
       if (date === undefined || date === null) {
@@ -111,7 +120,8 @@ export default class NativeIEXApi {
       let pathParams = {
       };
       let queryParams = {
-        'date': date
+        'date': date,
+        'limit': opts['limit']
       };
       let headerParams = {
       };
@@ -139,12 +149,16 @@ export default class NativeIEXApi {
 
     /**
      * Get Level-1 Quotes
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * @param {String} symbol The symbol identifier
-     * @param {Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param {Date} date Date in format YYYY-MM-DD
+     * @param {Object} opts Optional parameters
+     * @param {Number} [limit = 100)] Maximum number of records to return (1-10000, default 100)
      * @param {module:api/NativeIEXApi~v1NativeIexLevel1QuoteSymbolGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/IEXQuoteUpdateQuoteUpdateModel>}
      */
-    v1NativeIexLevel1QuoteSymbolGet(symbol, date, callback) {
+    v1NativeIexLevel1QuoteSymbolGet(symbol, date, opts, callback) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'symbol' is set
       if (symbol === undefined || symbol === null) {
@@ -159,7 +173,8 @@ export default class NativeIEXApi {
         'symbol': symbol
       };
       let queryParams = {
-        'date': date
+        'date': date,
+        'limit': opts['limit']
       };
       let headerParams = {
       };
@@ -187,12 +202,16 @@ export default class NativeIEXApi {
 
     /**
      * Get Level-2 Price Level Book
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * @param {String} symbol The symbol identifier
-     * @param {Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param {Date} date Date in format YYYY-MM-DD
+     * @param {Object} opts Optional parameters
+     * @param {Number} [limit = 100)] Maximum number of records to return (1-10000, default 100)
      * @param {module:api/NativeIEXApi~v1NativeIexLevel2PriceLevelUpdateSymbolGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/IEXPriceLevelUpdatePriceLevelUpdateModel>}
      */
-    v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, callback) {
+    v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, opts, callback) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'symbol' is set
       if (symbol === undefined || symbol === null) {
@@ -207,7 +226,8 @@ export default class NativeIEXApi {
         'symbol': symbol
       };
       let queryParams = {
-        'date': date
+        'date': date,
+        'limit': opts['limit']
       };
       let headerParams = {
       };
@@ -235,12 +255,16 @@ export default class NativeIEXApi {
 
     /**
      * Get Level-3 Order Book
+     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
      * @param {String} symbol The symbol identifier
-     * @param {Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param {Date} date Date in format YYYY-MM-DD
+     * @param {Object} opts Optional parameters
+     * @param {Number} [limit = 100)] Maximum number of records to return (1-10000, default 100)
      * @param {module:api/NativeIEXApi~v1NativeIexLevel3OrderBookSymbolGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/ModelsOrderBookModel>}
      */
-    v1NativeIexLevel3OrderBookSymbolGet(symbol, date, callback) {
+    v1NativeIexLevel3OrderBookSymbolGet(symbol, date, opts, callback) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'symbol' is set
       if (symbol === undefined || symbol === null) {
@@ -255,7 +279,8 @@ export default class NativeIEXApi {
         'symbol': symbol
       };
       let queryParams = {
-        'date': date
+        'date': date,
+        'limit': opts['limit']
       };
       let headerParams = {
       };
@@ -283,12 +308,16 @@ export default class NativeIEXApi {
 
     /**
      * Get Trades
+     * Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
      * @param {String} symbol The symbol identifier
-     * @param {Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param {Date} date Date in format YYYY-MM-DD
+     * @param {Object} opts Optional parameters
+     * @param {Number} [limit = 100)] Maximum number of records to return (1-10000, default 100)
      * @param {module:api/NativeIEXApi~v1NativeIexTradeSymbolGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/IEXTradeTradeModel>}
      */
-    v1NativeIexTradeSymbolGet(symbol, date, callback) {
+    v1NativeIexTradeSymbolGet(symbol, date, opts, callback) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'symbol' is set
       if (symbol === undefined || symbol === null) {
@@ -303,7 +332,8 @@ export default class NativeIEXApi {
         'symbol': symbol
       };
       let queryParams = {
-        'date': date
+        'date': date,
+        'limit': opts['limit']
       };
       let headerParams = {
       };

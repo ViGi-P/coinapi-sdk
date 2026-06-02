@@ -8,7 +8,7 @@
 -define(BASE_URL, <<"">>).
 
 %% @doc Historical data by exchange
-%% Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+%% Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
 -spec v1_ohlcv_exchange_exchange_id_history_get(ctx:ctx(), binary(), binary(), binary(), binary()) -> {ok, [openapi_o_hlcv_time_series_exchange_timeseries_item:openapi_o_hlcv_time_series_exchange_timeseries_item()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_ohlcv_exchange_exchange_id_history_get(Ctx, ExchangeId, PeriodId, TimeStart, TimeEnd) ->
     v1_ohlcv_exchange_exchange_id_history_get(Ctx, ExchangeId, PeriodId, TimeStart, TimeEnd, #{}).
@@ -20,7 +20,7 @@ v1_ohlcv_exchange_exchange_id_history_get(Ctx, ExchangeId, PeriodId, TimeStart, 
 
     Method = get,
     Path = [?BASE_URL, "/v1/ohlcv/exchange/", ExchangeId, "/history"],
-    QS = lists:flatten([{<<"period_id">>, PeriodId}, {<<"time_start">>, TimeStart}, {<<"time_end">>, TimeEnd}])++openapi_utils:optional_params([], _OptionalParams),
+    QS = lists:flatten([{<<"period_id">>, PeriodId}, {<<"time_start">>, TimeStart}, {<<"time_end">>, TimeEnd}])++openapi_utils:optional_params(['limit'], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),

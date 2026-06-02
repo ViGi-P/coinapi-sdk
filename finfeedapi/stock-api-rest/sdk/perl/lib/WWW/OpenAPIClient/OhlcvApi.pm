@@ -57,6 +57,7 @@ sub new {
 # @param string $period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
 # @param string $time_start Timeseries starting time in ISO 8601 (required)
 # @param string $time_end Timeseries ending time in ISO 8601 (required)
+# @param int $limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
 {
     my $params = {
     'exchange_id' => {
@@ -78,6 +79,11 @@ sub new {
         data_type => 'string',
         description => 'Timeseries ending time in ISO 8601',
         required => '1',
+    },
+    'limit' => {
+        data_type => 'int',
+        description => 'Maximum number of symbol rows to return (1-10000, default 100)',
+        required => '0',
     },
     };
     __PACKAGE__->method_documentation->{ 'v1_ohlcv_exchange_exchange_id_history_get' } = {
@@ -139,6 +145,11 @@ sub v1_ohlcv_exchange_exchange_id_history_get {
     # query params
     if ( exists $args{'time_end'}) {
         $query_params->{'time_end'} = $self->{api_client}->to_query_value($args{'time_end'});
+    }
+
+    # query params
+    if ( exists $args{'limit'}) {
+        $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
     }
 
     # path params

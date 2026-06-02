@@ -12,11 +12,11 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 ## v1_ohlcv_exchange_exchange_id_history_get
 
-> <Array<OHLCVTimeSeriesExchangeTimeseriesItem>> v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end)
+> <Array<OHLCVTimeSeriesExchangeTimeseriesItem>> v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end, opts)
 
 Historical data by exchange
 
-Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
 
 ### Examples
 
@@ -39,10 +39,13 @@ exchange_id = 'exchange_id_example' # String | Exchange identifier of requested 
 period_id = 'period_id_example' # String | Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
 time_start = 'time_start_example' # String | Timeseries starting time in ISO 8601
 time_end = 'time_end_example' # String | Timeseries ending time in ISO 8601
+opts = {
+  limit: 56 # Integer | Maximum number of symbol rows to return (1-10000, default 100)
+}
 
 begin
   # Historical data by exchange
-  result = api_instance.v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end)
+  result = api_instance.v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling OhlcvApi->v1_ohlcv_exchange_exchange_id_history_get: #{e}"
@@ -53,12 +56,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>, Integer, Hash)> v1_ohlcv_exchange_exchange_id_history_get_with_http_info(exchange_id, period_id, time_start, time_end)
+> <Array(<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>, Integer, Hash)> v1_ohlcv_exchange_exchange_id_history_get_with_http_info(exchange_id, period_id, time_start, time_end, opts)
 
 ```ruby
 begin
   # Historical data by exchange
-  data, status_code, headers = api_instance.v1_ohlcv_exchange_exchange_id_history_get_with_http_info(exchange_id, period_id, time_start, time_end)
+  data, status_code, headers = api_instance.v1_ohlcv_exchange_exchange_id_history_get_with_http_info(exchange_id, period_id, time_start, time_end, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<OHLCVTimeSeriesExchangeTimeseriesItem>>
@@ -75,6 +78,7 @@ end
 | **period_id** | **String** | Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) |  |
 | **time_start** | **String** | Timeseries starting time in ISO 8601 |  |
 | **time_end** | **String** | Timeseries ending time in ISO 8601 |  |
+| **limit** | **Integer** | Maximum number of symbol rows to return (1-10000, default 100) | [optional][default to 100] |
 
 ### Return type
 

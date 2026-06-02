@@ -17,8 +17,8 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from datetime import datetime
-from pydantic import Field, StrictStr
-from typing import List
+from pydantic import Field, StrictInt, StrictStr
+from typing import List, Optional
 from typing_extensions import Annotated
 from api_bricks_stock_api_rest.models.iex_price_level_update_price_level_update_model import IEXPriceLevelUpdatePriceLevelUpdateModel
 from api_bricks_stock_api_rest.models.iex_quote_update_quote_update_model import IEXQuoteUpdateQuoteUpdateModel
@@ -49,7 +49,8 @@ class NativeIEXApi:
     def v1_native_iex_admin_messages_symbol_get(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -65,11 +66,14 @@ class NativeIEXApi:
     ) -> List[ModelsAdminMessageModel]:
         """Get Admin Messages
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -95,6 +99,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_admin_messages_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -119,7 +124,8 @@ class NativeIEXApi:
     def v1_native_iex_admin_messages_symbol_get_with_http_info(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -135,11 +141,14 @@ class NativeIEXApi:
     ) -> ApiResponse[List[ModelsAdminMessageModel]]:
         """Get Admin Messages
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -165,6 +174,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_admin_messages_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -189,7 +199,8 @@ class NativeIEXApi:
     def v1_native_iex_admin_messages_symbol_get_without_preload_content(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -205,11 +216,14 @@ class NativeIEXApi:
     ) -> RESTResponseType:
         """Get Admin Messages
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -235,6 +249,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_admin_messages_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -255,6 +270,7 @@ class NativeIEXApi:
         self,
         symbol,
         var_date,
+        limit,
         _request_auth,
         _content_type,
         _headers,
@@ -291,6 +307,10 @@ class NativeIEXApi:
                 )
             else:
                 _query_params.append(('date', var_date))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
             
         # process the header parameters
         # process the form parameters
@@ -334,6 +354,7 @@ class NativeIEXApi:
     def v1_native_iex_admin_system_event_get(
         self,
         var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -349,9 +370,12 @@ class NativeIEXApi:
     ) -> List[IEXSystemEventSystemEventModel]:
         """Get System Events
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -376,6 +400,7 @@ class NativeIEXApi:
 
         _param = self._v1_native_iex_admin_system_event_get_serialize(
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -400,6 +425,7 @@ class NativeIEXApi:
     def v1_native_iex_admin_system_event_get_with_http_info(
         self,
         var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -415,9 +441,12 @@ class NativeIEXApi:
     ) -> ApiResponse[List[IEXSystemEventSystemEventModel]]:
         """Get System Events
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -442,6 +471,7 @@ class NativeIEXApi:
 
         _param = self._v1_native_iex_admin_system_event_get_serialize(
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -466,6 +496,7 @@ class NativeIEXApi:
     def v1_native_iex_admin_system_event_get_without_preload_content(
         self,
         var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -481,9 +512,12 @@ class NativeIEXApi:
     ) -> RESTResponseType:
         """Get System Events
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -508,6 +542,7 @@ class NativeIEXApi:
 
         _param = self._v1_native_iex_admin_system_event_get_serialize(
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -527,6 +562,7 @@ class NativeIEXApi:
     def _v1_native_iex_admin_system_event_get_serialize(
         self,
         var_date,
+        limit,
         _request_auth,
         _content_type,
         _headers,
@@ -561,6 +597,10 @@ class NativeIEXApi:
                 )
             else:
                 _query_params.append(('date', var_date))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
             
         # process the header parameters
         # process the form parameters
@@ -604,7 +644,8 @@ class NativeIEXApi:
     def v1_native_iex_level1_quote_symbol_get(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -620,11 +661,14 @@ class NativeIEXApi:
     ) -> List[IEXQuoteUpdateQuoteUpdateModel]:
         """Get Level-1 Quotes
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -650,6 +694,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_level1_quote_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -674,7 +719,8 @@ class NativeIEXApi:
     def v1_native_iex_level1_quote_symbol_get_with_http_info(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -690,11 +736,14 @@ class NativeIEXApi:
     ) -> ApiResponse[List[IEXQuoteUpdateQuoteUpdateModel]]:
         """Get Level-1 Quotes
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -720,6 +769,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_level1_quote_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -744,7 +794,8 @@ class NativeIEXApi:
     def v1_native_iex_level1_quote_symbol_get_without_preload_content(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -760,11 +811,14 @@ class NativeIEXApi:
     ) -> RESTResponseType:
         """Get Level-1 Quotes
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -790,6 +844,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_level1_quote_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -810,6 +865,7 @@ class NativeIEXApi:
         self,
         symbol,
         var_date,
+        limit,
         _request_auth,
         _content_type,
         _headers,
@@ -846,6 +902,10 @@ class NativeIEXApi:
                 )
             else:
                 _query_params.append(('date', var_date))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
             
         # process the header parameters
         # process the form parameters
@@ -889,7 +949,8 @@ class NativeIEXApi:
     def v1_native_iex_level2_price_level_update_symbol_get(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -905,11 +966,14 @@ class NativeIEXApi:
     ) -> List[IEXPriceLevelUpdatePriceLevelUpdateModel]:
         """Get Level-2 Price Level Book
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -935,6 +999,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_level2_price_level_update_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -959,7 +1024,8 @@ class NativeIEXApi:
     def v1_native_iex_level2_price_level_update_symbol_get_with_http_info(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -975,11 +1041,14 @@ class NativeIEXApi:
     ) -> ApiResponse[List[IEXPriceLevelUpdatePriceLevelUpdateModel]]:
         """Get Level-2 Price Level Book
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1005,6 +1074,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_level2_price_level_update_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1029,7 +1099,8 @@ class NativeIEXApi:
     def v1_native_iex_level2_price_level_update_symbol_get_without_preload_content(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1045,11 +1116,14 @@ class NativeIEXApi:
     ) -> RESTResponseType:
         """Get Level-2 Price Level Book
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1075,6 +1149,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_level2_price_level_update_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1095,6 +1170,7 @@ class NativeIEXApi:
         self,
         symbol,
         var_date,
+        limit,
         _request_auth,
         _content_type,
         _headers,
@@ -1131,6 +1207,10 @@ class NativeIEXApi:
                 )
             else:
                 _query_params.append(('date', var_date))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
             
         # process the header parameters
         # process the form parameters
@@ -1174,7 +1254,8 @@ class NativeIEXApi:
     def v1_native_iex_level3_order_book_symbol_get(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1190,11 +1271,14 @@ class NativeIEXApi:
     ) -> List[ModelsOrderBookModel]:
         """Get Level-3 Order Book
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1220,6 +1304,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_level3_order_book_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1244,7 +1329,8 @@ class NativeIEXApi:
     def v1_native_iex_level3_order_book_symbol_get_with_http_info(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1260,11 +1346,14 @@ class NativeIEXApi:
     ) -> ApiResponse[List[ModelsOrderBookModel]]:
         """Get Level-3 Order Book
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1290,6 +1379,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_level3_order_book_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1314,7 +1404,8 @@ class NativeIEXApi:
     def v1_native_iex_level3_order_book_symbol_get_without_preload_content(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1330,11 +1421,14 @@ class NativeIEXApi:
     ) -> RESTResponseType:
         """Get Level-3 Order Book
 
+        Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1360,6 +1454,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_level3_order_book_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1380,6 +1475,7 @@ class NativeIEXApi:
         self,
         symbol,
         var_date,
+        limit,
         _request_auth,
         _content_type,
         _headers,
@@ -1416,6 +1512,10 @@ class NativeIEXApi:
                 )
             else:
                 _query_params.append(('date', var_date))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
             
         # process the header parameters
         # process the form parameters
@@ -1459,7 +1559,8 @@ class NativeIEXApi:
     def v1_native_iex_trade_symbol_get(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1475,11 +1576,14 @@ class NativeIEXApi:
     ) -> List[IEXTradeTradeModel]:
         """Get Trades
 
+        Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1505,6 +1609,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_trade_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1529,7 +1634,8 @@ class NativeIEXApi:
     def v1_native_iex_trade_symbol_get_with_http_info(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1545,11 +1651,14 @@ class NativeIEXApi:
     ) -> ApiResponse[List[IEXTradeTradeModel]]:
         """Get Trades
 
+        Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1575,6 +1684,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_trade_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1599,7 +1709,8 @@ class NativeIEXApi:
     def v1_native_iex_trade_symbol_get_without_preload_content(
         self,
         symbol: Annotated[StrictStr, Field(description="The symbol identifier")],
-        var_date: Annotated[datetime, Field(description="Optional date in format YYYY-MM-DD (defaults to latest available data)")],
+        var_date: Annotated[datetime, Field(description="Date in format YYYY-MM-DD")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of records to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1615,11 +1726,14 @@ class NativeIEXApi:
     ) -> RESTResponseType:
         """Get Trades
 
+        Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
 
         :param symbol: The symbol identifier (required)
         :type symbol: str
-        :param var_date: Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+        :param var_date: Date in format YYYY-MM-DD (required)
         :type var_date: datetime
+        :param limit: Maximum number of records to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1645,6 +1759,7 @@ class NativeIEXApi:
         _param = self._v1_native_iex_trade_symbol_get_serialize(
             symbol=symbol,
             var_date=var_date,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1665,6 +1780,7 @@ class NativeIEXApi:
         self,
         symbol,
         var_date,
+        limit,
         _request_auth,
         _content_type,
         _headers,
@@ -1701,6 +1817,10 @@ class NativeIEXApi:
                 )
             else:
                 _query_params.append(('date', var_date))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
             
         # process the header parameters
         # process the form parameters

@@ -3,7 +3,7 @@ private class OASNativeIEXApiTest {
     /**
      * Get Admin Messages
      *
-     * 
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      */
     @isTest
     private static void v1NativeIexAdminMessagesSymbolGetTest() {
@@ -14,7 +14,8 @@ private class OASNativeIEXApiTest {
 
         Map<String, Object> params = new Map<String, Object>{
             'symbol' => 'null',
-            'r_date' => Datetime.newInstanceGmt(2013, 11, 12, 3, 3, 3)
+            'r_date' => Datetime.newInstanceGmt(2013, 11, 12, 3, 3, 3),
+            'r_limit' => ''
         };
 
         OASClient client;
@@ -48,7 +49,7 @@ private class OASNativeIEXApiTest {
     /**
      * Get System Events
      *
-     * 
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      */
     @isTest
     private static void v1NativeIexAdminSystemEventGetTest() {
@@ -58,7 +59,8 @@ private class OASNativeIEXApiTest {
         Test.setMock(HttpCalloutMock.class, new OASResponseMock(res));
 
         Map<String, Object> params = new Map<String, Object>{
-            'r_date' => Datetime.newInstanceGmt(2013, 11, 12, 3, 3, 3)
+            'r_date' => Datetime.newInstanceGmt(2013, 11, 12, 3, 3, 3),
+            'r_limit' => ''
         };
 
         OASClient client;
@@ -92,7 +94,7 @@ private class OASNativeIEXApiTest {
     /**
      * Get Level-1 Quotes
      *
-     * 
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      */
     @isTest
     private static void v1NativeIexLevel1QuoteSymbolGetTest() {
@@ -103,7 +105,8 @@ private class OASNativeIEXApiTest {
 
         Map<String, Object> params = new Map<String, Object>{
             'symbol' => 'null',
-            'r_date' => Datetime.newInstanceGmt(2013, 11, 12, 3, 3, 3)
+            'r_date' => Datetime.newInstanceGmt(2013, 11, 12, 3, 3, 3),
+            'r_limit' => ''
         };
 
         OASClient client;
@@ -137,7 +140,7 @@ private class OASNativeIEXApiTest {
     /**
      * Get Level-2 Price Level Book
      *
-     * 
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      */
     @isTest
     private static void v1NativeIexLevel2PriceLevelUpdateSymbolGetTest() {
@@ -148,7 +151,8 @@ private class OASNativeIEXApiTest {
 
         Map<String, Object> params = new Map<String, Object>{
             'symbol' => 'null',
-            'r_date' => Datetime.newInstanceGmt(2013, 11, 12, 3, 3, 3)
+            'r_date' => Datetime.newInstanceGmt(2013, 11, 12, 3, 3, 3),
+            'r_limit' => ''
         };
 
         OASClient client;
@@ -182,7 +186,7 @@ private class OASNativeIEXApiTest {
     /**
      * Get Level-3 Order Book
      *
-     * 
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      */
     @isTest
     private static void v1NativeIexLevel3OrderBookSymbolGetTest() {
@@ -193,7 +197,8 @@ private class OASNativeIEXApiTest {
 
         Map<String, Object> params = new Map<String, Object>{
             'symbol' => 'null',
-            'r_date' => Datetime.newInstanceGmt(2013, 11, 12, 3, 3, 3)
+            'r_date' => Datetime.newInstanceGmt(2013, 11, 12, 3, 3, 3),
+            'r_limit' => ''
         };
 
         OASClient client;
@@ -227,7 +232,7 @@ private class OASNativeIEXApiTest {
     /**
      * Get Trades
      *
-     * 
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
      */
     @isTest
     private static void v1NativeIexTradeSymbolGetTest() {
@@ -238,7 +243,8 @@ private class OASNativeIEXApiTest {
 
         Map<String, Object> params = new Map<String, Object>{
             'symbol' => 'null',
-            'r_date' => Datetime.newInstanceGmt(2013, 11, 12, 3, 3, 3)
+            'r_date' => Datetime.newInstanceGmt(2013, 11, 12, 3, 3, 3),
+            'r_limit' => ''
         };
 
         OASClient client;

@@ -70,9 +70,11 @@ Other parameters are passed through a pointer to a apiV1ExchangesGetRequest stru
 
 ## V1SymbolsExchangeIdGet
 
-> []FinFeedAPISymbolModel V1SymbolsExchangeIdGet(ctx, exchangeId).FilterSymbolId(filterSymbolId).Execute()
+> []FinFeedAPISymbolModel V1SymbolsExchangeIdGet(ctx, exchangeId).FilterSymbolId(filterSymbolId).Limit(limit).Page(page).Execute()
 
 List of symbols for the exchange
+
+
 
 ### Example
 
@@ -89,10 +91,12 @@ import (
 func main() {
 	exchangeId := "exchangeId_example" // string | The ID of the exchange (from the Metadata -> Exchanges)
 	filterSymbolId := "filterSymbolId_example" // string | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`) (optional)
+	limit := int32(56) // int32 | Maximum number of symbols to return (1-10000, default 100) (optional) (default to 100)
+	page := int32(56) // int32 | Page number (1-based, default 1) (optional) (default to 1)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetadataAPI.V1SymbolsExchangeIdGet(context.Background(), exchangeId).FilterSymbolId(filterSymbolId).Execute()
+	resp, r, err := apiClient.MetadataAPI.V1SymbolsExchangeIdGet(context.Background(), exchangeId).FilterSymbolId(filterSymbolId).Limit(limit).Page(page).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.V1SymbolsExchangeIdGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -119,6 +123,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **filterSymbolId** | **string** | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | 
+ **limit** | **int32** | Maximum number of symbols to return (1-10000, default 100) | [default to 100]
+ **page** | **int32** | Page number (1-based, default 1) | [default to 1]
 
 ### Return type
 

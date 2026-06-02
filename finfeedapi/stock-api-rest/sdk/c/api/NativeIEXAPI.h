@@ -15,37 +15,49 @@
 
 // Get Admin Messages
 //
+// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+//
 list_t*
-NativeIEXAPI_v1NativeIexAdminMessagesSymbolGet(apiClient_t *apiClient, char *symbol, char date);
+NativeIEXAPI_v1NativeIexAdminMessagesSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit);
 
 
 // Get System Events
 //
+// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+//
 list_t*
-NativeIEXAPI_v1NativeIexAdminSystemEventGet(apiClient_t *apiClient, char date);
+NativeIEXAPI_v1NativeIexAdminSystemEventGet(apiClient_t *apiClient, char date, int *limit);
 
 
 // Get Level-1 Quotes
 //
+// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+//
 list_t*
-NativeIEXAPI_v1NativeIexLevel1QuoteSymbolGet(apiClient_t *apiClient, char *symbol, char date);
+NativeIEXAPI_v1NativeIexLevel1QuoteSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit);
 
 
 // Get Level-2 Price Level Book
 //
+// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+//
 list_t*
-NativeIEXAPI_v1NativeIexLevel2PriceLevelUpdateSymbolGet(apiClient_t *apiClient, char *symbol, char date);
+NativeIEXAPI_v1NativeIexLevel2PriceLevelUpdateSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit);
 
 
 // Get Level-3 Order Book
 //
+// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+//
 list_t*
-NativeIEXAPI_v1NativeIexLevel3OrderBookSymbolGet(apiClient_t *apiClient, char *symbol, char date);
+NativeIEXAPI_v1NativeIexLevel3OrderBookSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit);
 
 
 // Get Trades
 //
+// Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
+//
 list_t*
-NativeIEXAPI_v1NativeIexTradeSymbolGet(apiClient_t *apiClient, char *symbol, char date);
+NativeIEXAPI_v1NativeIexTradeSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit);
 
 

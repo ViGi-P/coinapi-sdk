@@ -34,12 +34,13 @@ describe 'OhlcvApi' do
 
   # unit tests for v1_ohlcv_exchange_exchange_id_history_get
   # Historical data by exchange
-  # Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+  # Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
   # @param exchange_id Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)
   # @param period_id Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
   # @param time_start Timeseries starting time in ISO 8601
   # @param time_end Timeseries ending time in ISO 8601
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :limit Maximum number of symbol rows to return (1-10000, default 100)
   # @return [Array<OHLCVTimeSeriesExchangeTimeseriesItem>]
   describe 'v1_ohlcv_exchange_exchange_id_history_get test' do
     it 'should work' do
