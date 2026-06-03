@@ -27,7 +27,7 @@ v1_exchanges_get(Ctx, Optional) ->
     openapi_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
 %% @doc List of symbols for the exchange
-%% Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
+%% 
 -spec v1_symbols_exchange_id_get(ctx:ctx(), binary()) -> {ok, [openapi_fin_feed_api_symbol_model:openapi_fin_feed_api_symbol_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_symbols_exchange_id_get(Ctx, ExchangeId) ->
     v1_symbols_exchange_id_get(Ctx, ExchangeId, #{}).
@@ -39,7 +39,7 @@ v1_symbols_exchange_id_get(Ctx, ExchangeId, Optional) ->
 
     Method = get,
     Path = [?BASE_URL, "/v1/symbols/", ExchangeId, ""],
-    QS = lists:flatten([])++openapi_utils:optional_params(['filter_symbol_id', 'limit', 'page'], _OptionalParams),
+    QS = lists:flatten([])++openapi_utils:optional_params(['filter_symbol_id'], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),

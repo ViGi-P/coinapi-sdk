@@ -64,13 +64,12 @@ public class NativeIEXApi {
 
   /**
   * Get Admin Messages
-  * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+  * 
    * @param symbol The symbol identifier
-   * @param date Date in format YYYY-MM-DD
-   * @param limit Maximum number of records to return (1-10000, default 100)
+   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
    * @return List<ModelsAdminMessageModel>
   */
-  public List<ModelsAdminMessageModel> v1NativeIexAdminMessagesSymbolGet (String symbol, Date date, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ModelsAdminMessageModel> v1NativeIexAdminMessagesSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'symbol' is set
     if (symbol == null) {
@@ -93,7 +92,6 @@ public class NativeIEXApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "date", date));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -135,10 +133,10 @@ public class NativeIEXApi {
 
       /**
    * Get Admin Messages
-   * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
-   * @param symbol The symbol identifier   * @param date Date in format YYYY-MM-DD   * @param limit Maximum number of records to return (1-10000, default 100)
+   * 
+   * @param symbol The symbol identifier   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
   */
-  public void v1NativeIexAdminMessagesSymbolGet (String symbol, Date date, Integer limit, final Response.Listener<List<ModelsAdminMessageModel>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1NativeIexAdminMessagesSymbolGet (String symbol, Date date, final Response.Listener<List<ModelsAdminMessageModel>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'symbol' is set
@@ -163,7 +161,6 @@ public class NativeIEXApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "date", date));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
 
 
     String[] contentTypes = {
@@ -207,12 +204,11 @@ public class NativeIEXApi {
   }
   /**
   * Get System Events
-  * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+  * 
    * @param date Date in format YYYY-MM-DD
-   * @param limit Maximum number of records to return (1-10000, default 100)
    * @return List<IEXSystemEventSystemEventModel>
   */
-  public List<IEXSystemEventSystemEventModel> v1NativeIexAdminSystemEventGet (Date date, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<IEXSystemEventSystemEventModel> v1NativeIexAdminSystemEventGet (Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'date' is set
     if (date == null) {
@@ -230,7 +226,6 @@ public class NativeIEXApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "date", date));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -272,10 +267,10 @@ public class NativeIEXApi {
 
       /**
    * Get System Events
-   * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
-   * @param date Date in format YYYY-MM-DD   * @param limit Maximum number of records to return (1-10000, default 100)
+   * 
+   * @param date Date in format YYYY-MM-DD
   */
-  public void v1NativeIexAdminSystemEventGet (Date date, Integer limit, final Response.Listener<List<IEXSystemEventSystemEventModel>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1NativeIexAdminSystemEventGet (Date date, final Response.Listener<List<IEXSystemEventSystemEventModel>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'date' is set
@@ -295,7 +290,6 @@ public class NativeIEXApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "date", date));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
 
 
     String[] contentTypes = {
@@ -339,13 +333,12 @@ public class NativeIEXApi {
   }
   /**
   * Get Level-1 Quotes
-  * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+  * 
    * @param symbol The symbol identifier
-   * @param date Date in format YYYY-MM-DD
-   * @param limit Maximum number of records to return (1-10000, default 100)
+   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
    * @return List<IEXQuoteUpdateQuoteUpdateModel>
   */
-  public List<IEXQuoteUpdateQuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet (String symbol, Date date, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<IEXQuoteUpdateQuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'symbol' is set
     if (symbol == null) {
@@ -368,7 +361,6 @@ public class NativeIEXApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "date", date));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -410,10 +402,10 @@ public class NativeIEXApi {
 
       /**
    * Get Level-1 Quotes
-   * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
-   * @param symbol The symbol identifier   * @param date Date in format YYYY-MM-DD   * @param limit Maximum number of records to return (1-10000, default 100)
+   * 
+   * @param symbol The symbol identifier   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
   */
-  public void v1NativeIexLevel1QuoteSymbolGet (String symbol, Date date, Integer limit, final Response.Listener<List<IEXQuoteUpdateQuoteUpdateModel>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1NativeIexLevel1QuoteSymbolGet (String symbol, Date date, final Response.Listener<List<IEXQuoteUpdateQuoteUpdateModel>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'symbol' is set
@@ -438,7 +430,6 @@ public class NativeIEXApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "date", date));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
 
 
     String[] contentTypes = {
@@ -482,13 +473,12 @@ public class NativeIEXApi {
   }
   /**
   * Get Level-2 Price Level Book
-  * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+  * 
    * @param symbol The symbol identifier
-   * @param date Date in format YYYY-MM-DD
-   * @param limit Maximum number of records to return (1-10000, default 100)
+   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
    * @return List<IEXPriceLevelUpdatePriceLevelUpdateModel>
   */
-  public List<IEXPriceLevelUpdatePriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet (String symbol, Date date, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<IEXPriceLevelUpdatePriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'symbol' is set
     if (symbol == null) {
@@ -511,7 +501,6 @@ public class NativeIEXApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "date", date));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -553,10 +542,10 @@ public class NativeIEXApi {
 
       /**
    * Get Level-2 Price Level Book
-   * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
-   * @param symbol The symbol identifier   * @param date Date in format YYYY-MM-DD   * @param limit Maximum number of records to return (1-10000, default 100)
+   * 
+   * @param symbol The symbol identifier   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
   */
-  public void v1NativeIexLevel2PriceLevelUpdateSymbolGet (String symbol, Date date, Integer limit, final Response.Listener<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1NativeIexLevel2PriceLevelUpdateSymbolGet (String symbol, Date date, final Response.Listener<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'symbol' is set
@@ -581,7 +570,6 @@ public class NativeIEXApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "date", date));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
 
 
     String[] contentTypes = {
@@ -625,13 +613,12 @@ public class NativeIEXApi {
   }
   /**
   * Get Level-3 Order Book
-  * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+  * 
    * @param symbol The symbol identifier
-   * @param date Date in format YYYY-MM-DD
-   * @param limit Maximum number of records to return (1-10000, default 100)
+   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
    * @return List<ModelsOrderBookModel>
   */
-  public List<ModelsOrderBookModel> v1NativeIexLevel3OrderBookSymbolGet (String symbol, Date date, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<ModelsOrderBookModel> v1NativeIexLevel3OrderBookSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'symbol' is set
     if (symbol == null) {
@@ -654,7 +641,6 @@ public class NativeIEXApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "date", date));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -696,10 +682,10 @@ public class NativeIEXApi {
 
       /**
    * Get Level-3 Order Book
-   * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
-   * @param symbol The symbol identifier   * @param date Date in format YYYY-MM-DD   * @param limit Maximum number of records to return (1-10000, default 100)
+   * 
+   * @param symbol The symbol identifier   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
   */
-  public void v1NativeIexLevel3OrderBookSymbolGet (String symbol, Date date, Integer limit, final Response.Listener<List<ModelsOrderBookModel>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1NativeIexLevel3OrderBookSymbolGet (String symbol, Date date, final Response.Listener<List<ModelsOrderBookModel>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'symbol' is set
@@ -724,7 +710,6 @@ public class NativeIEXApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "date", date));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
 
 
     String[] contentTypes = {
@@ -768,13 +753,12 @@ public class NativeIEXApi {
   }
   /**
   * Get Trades
-  * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
+  * 
    * @param symbol The symbol identifier
-   * @param date Date in format YYYY-MM-DD
-   * @param limit Maximum number of records to return (1-10000, default 100)
+   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
    * @return List<IEXTradeTradeModel>
   */
-  public List<IEXTradeTradeModel> v1NativeIexTradeSymbolGet (String symbol, Date date, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<IEXTradeTradeModel> v1NativeIexTradeSymbolGet (String symbol, Date date) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'symbol' is set
     if (symbol == null) {
@@ -797,7 +781,6 @@ public class NativeIEXApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "date", date));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -839,10 +822,10 @@ public class NativeIEXApi {
 
       /**
    * Get Trades
-   * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
-   * @param symbol The symbol identifier   * @param date Date in format YYYY-MM-DD   * @param limit Maximum number of records to return (1-10000, default 100)
+   * 
+   * @param symbol The symbol identifier   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
   */
-  public void v1NativeIexTradeSymbolGet (String symbol, Date date, Integer limit, final Response.Listener<List<IEXTradeTradeModel>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1NativeIexTradeSymbolGet (String symbol, Date date, final Response.Listener<List<IEXTradeTradeModel>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'symbol' is set
@@ -867,7 +850,6 @@ public class NativeIEXApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "date", date));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
 
 
     String[] contentTypes = {

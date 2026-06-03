@@ -33,30 +33,26 @@
 
 (defn-spec v1-ohlcv-exchange-exchange-id-history-get-with-http-info any?
   "Historical data by exchange
-  Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
-Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned."
-  ([exchange_id string?, period_id string?, time_start string?, time_end string?, ] (v1-ohlcv-exchange-exchange-id-history-get-with-http-info exchange_id period_id time_start time_end nil))
-  ([exchange_id string?, period_id string?, time_start string?, time_end string?, {:keys [limit]} (s/map-of keyword? any?)]
-   (check-required-params exchange_id period_id time_start time_end)
-   (call-api "/v1/ohlcv/exchange/{exchange_id}/history" :get
-             {:path-params   {"exchange_id" exchange_id }
-              :header-params {}
-              :query-params  {"period_id" period_id "time_start" time_start "time_end" time_end "limit" limit }
-              :form-params   {}
-              :content-types []
-              :accepts       ["text/plain" "application/json" "text/json"]
-              :auth-names    ["APIKey" "JWT"]})))
+  Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange."
+  [exchange_id string?, period_id string?, time_start string?, time_end string?]
+  (check-required-params exchange_id period_id time_start time_end)
+  (call-api "/v1/ohlcv/exchange/{exchange_id}/history" :get
+            {:path-params   {"exchange_id" exchange_id }
+             :header-params {}
+             :query-params  {"period_id" period_id "time_start" time_start "time_end" time_end }
+             :form-params   {}
+             :content-types []
+             :accepts       ["text/plain" "application/json" "text/json"]
+             :auth-names    ["APIKey" "JWT"]}))
 
 (defn-spec v1-ohlcv-exchange-exchange-id-history-get (s/coll-of ohlcv-time-series/exchange-timeseries-item-spec)
   "Historical data by exchange
-  Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
-Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned."
-  ([exchange_id string?, period_id string?, time_start string?, time_end string?, ] (v1-ohlcv-exchange-exchange-id-history-get exchange_id period_id time_start time_end nil))
-  ([exchange_id string?, period_id string?, time_start string?, time_end string?, optional-params any?]
-   (let [res (:data (v1-ohlcv-exchange-exchange-id-history-get-with-http-info exchange_id period_id time_start time_end optional-params))]
-     (if (:decode-models *api-context*)
-        (st/decode (s/coll-of ohlcv-time-series/exchange-timeseries-item-spec) res st/string-transformer)
-        res))))
+  Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange."
+  [exchange_id string?, period_id string?, time_start string?, time_end string?]
+  (let [res (:data (v1-ohlcv-exchange-exchange-id-history-get-with-http-info exchange_id period_id time_start time_end))]
+    (if (:decode-models *api-context*)
+       (st/decode (s/coll-of ohlcv-time-series/exchange-timeseries-item-spec) res st/string-transformer)
+       res)))
 
 
 (defn-spec v1-ohlcv-exchange-symbol-exchange-id-symbol-id-history-get-with-http-info any?

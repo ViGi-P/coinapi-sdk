@@ -18,8 +18,7 @@
 #'
 #' library(openapi)
 #' var_symbol <- "symbol_example" # character | The symbol identifier
-#' var_date <- "date_example" # character | Date in format YYYY-MM-DD
-#' var_limit <- 100 # integer | Maximum number of records to return (1-10000, default 100) (Optional)
+#' var_date <- "date_example" # character | Optional date in format YYYY-MM-DD (defaults to latest available data)
 #'
 #' #Get Admin Messages
 #' api_instance <- NativeIEXApi$new()
@@ -31,8 +30,8 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1NativeIexAdminMessagesSymbolGet(var_symbol, var_date, limit = var_limitdata_file = "result.txt")
-#' result <- api_instance$V1NativeIexAdminMessagesSymbolGet(var_symbol, var_date, limit = var_limit)
+#' # result <- api_instance$V1NativeIexAdminMessagesSymbolGet(var_symbol, var_datedata_file = "result.txt")
+#' result <- api_instance$V1NativeIexAdminMessagesSymbolGet(var_symbol, var_date)
 #' dput(result)
 #'
 #'
@@ -40,7 +39,6 @@
 #'
 #' library(openapi)
 #' var_date <- "date_example" # character | Date in format YYYY-MM-DD
-#' var_limit <- 100 # integer | Maximum number of records to return (1-10000, default 100) (Optional)
 #'
 #' #Get System Events
 #' api_instance <- NativeIEXApi$new()
@@ -52,8 +50,8 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1NativeIexAdminSystemEventGet(var_date, limit = var_limitdata_file = "result.txt")
-#' result <- api_instance$V1NativeIexAdminSystemEventGet(var_date, limit = var_limit)
+#' # result <- api_instance$V1NativeIexAdminSystemEventGet(var_datedata_file = "result.txt")
+#' result <- api_instance$V1NativeIexAdminSystemEventGet(var_date)
 #' dput(result)
 #'
 #'
@@ -61,8 +59,7 @@
 #'
 #' library(openapi)
 #' var_symbol <- "symbol_example" # character | The symbol identifier
-#' var_date <- "date_example" # character | Date in format YYYY-MM-DD
-#' var_limit <- 100 # integer | Maximum number of records to return (1-10000, default 100) (Optional)
+#' var_date <- "date_example" # character | Optional date in format YYYY-MM-DD (defaults to latest available data)
 #'
 #' #Get Level-1 Quotes
 #' api_instance <- NativeIEXApi$new()
@@ -74,8 +71,8 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1NativeIexLevel1QuoteSymbolGet(var_symbol, var_date, limit = var_limitdata_file = "result.txt")
-#' result <- api_instance$V1NativeIexLevel1QuoteSymbolGet(var_symbol, var_date, limit = var_limit)
+#' # result <- api_instance$V1NativeIexLevel1QuoteSymbolGet(var_symbol, var_datedata_file = "result.txt")
+#' result <- api_instance$V1NativeIexLevel1QuoteSymbolGet(var_symbol, var_date)
 #' dput(result)
 #'
 #'
@@ -83,8 +80,7 @@
 #'
 #' library(openapi)
 #' var_symbol <- "symbol_example" # character | The symbol identifier
-#' var_date <- "date_example" # character | Date in format YYYY-MM-DD
-#' var_limit <- 100 # integer | Maximum number of records to return (1-10000, default 100) (Optional)
+#' var_date <- "date_example" # character | Optional date in format YYYY-MM-DD (defaults to latest available data)
 #'
 #' #Get Level-2 Price Level Book
 #' api_instance <- NativeIEXApi$new()
@@ -96,8 +92,8 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1NativeIexLevel2PriceLevelUpdateSymbolGet(var_symbol, var_date, limit = var_limitdata_file = "result.txt")
-#' result <- api_instance$V1NativeIexLevel2PriceLevelUpdateSymbolGet(var_symbol, var_date, limit = var_limit)
+#' # result <- api_instance$V1NativeIexLevel2PriceLevelUpdateSymbolGet(var_symbol, var_datedata_file = "result.txt")
+#' result <- api_instance$V1NativeIexLevel2PriceLevelUpdateSymbolGet(var_symbol, var_date)
 #' dput(result)
 #'
 #'
@@ -105,8 +101,7 @@
 #'
 #' library(openapi)
 #' var_symbol <- "symbol_example" # character | The symbol identifier
-#' var_date <- "date_example" # character | Date in format YYYY-MM-DD
-#' var_limit <- 100 # integer | Maximum number of records to return (1-10000, default 100) (Optional)
+#' var_date <- "date_example" # character | Optional date in format YYYY-MM-DD (defaults to latest available data)
 #'
 #' #Get Level-3 Order Book
 #' api_instance <- NativeIEXApi$new()
@@ -118,8 +113,8 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1NativeIexLevel3OrderBookSymbolGet(var_symbol, var_date, limit = var_limitdata_file = "result.txt")
-#' result <- api_instance$V1NativeIexLevel3OrderBookSymbolGet(var_symbol, var_date, limit = var_limit)
+#' # result <- api_instance$V1NativeIexLevel3OrderBookSymbolGet(var_symbol, var_datedata_file = "result.txt")
+#' result <- api_instance$V1NativeIexLevel3OrderBookSymbolGet(var_symbol, var_date)
 #' dput(result)
 #'
 #'
@@ -127,8 +122,7 @@
 #'
 #' library(openapi)
 #' var_symbol <- "symbol_example" # character | The symbol identifier
-#' var_date <- "date_example" # character | Date in format YYYY-MM-DD
-#' var_limit <- 100 # integer | Maximum number of records to return (1-10000, default 100) (Optional)
+#' var_date <- "date_example" # character | Optional date in format YYYY-MM-DD (defaults to latest available data)
 #'
 #' #Get Trades
 #' api_instance <- NativeIEXApi$new()
@@ -140,8 +134,8 @@
 #' api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 #'
 #' # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-#' # result <- api_instance$V1NativeIexTradeSymbolGet(var_symbol, var_date, limit = var_limitdata_file = "result.txt")
-#' result <- api_instance$V1NativeIexTradeSymbolGet(var_symbol, var_date, limit = var_limit)
+#' # result <- api_instance$V1NativeIexTradeSymbolGet(var_symbol, var_datedata_file = "result.txt")
+#' result <- api_instance$V1NativeIexTradeSymbolGet(var_symbol, var_date)
 #' dput(result)
 #'
 #'
@@ -170,15 +164,14 @@ NativeIEXApi <- R6::R6Class(
     #' Get Admin Messages
     #'
     #' @param symbol The symbol identifier
-    #' @param date Date in format YYYY-MM-DD
-    #' @param limit (optional) Maximum number of records to return (1-10000, default 100) (default value: 100)
+    #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[ModelsAdminMessageModel]
-    V1NativeIexAdminMessagesSymbolGet = function(symbol, date, limit = 100, data_file = NULL, ..., .parse = TRUE) {
-      local_var_response <- self$V1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol, date, limit, data_file = data_file, ..., .parse = .parse)
+    V1NativeIexAdminMessagesSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -194,14 +187,13 @@ NativeIEXApi <- R6::R6Class(
     #' Get Admin Messages
     #'
     #' @param symbol The symbol identifier
-    #' @param date Date in format YYYY-MM-DD
-    #' @param limit (optional) Maximum number of records to return (1-10000, default 100) (default value: 100)
+    #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[ModelsAdminMessageModel]) with additional information such as HTTP status code, headers
-    V1NativeIexAdminMessagesSymbolGetWithHttpInfo = function(symbol, date, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+    V1NativeIexAdminMessagesSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -227,13 +219,7 @@ NativeIEXApi <- R6::R6Class(
         stop("Invalid value for `date` when calling NativeIEXApi$V1NativeIexAdminMessagesSymbolGet, `date` is not nullable")
       }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling NativeIEXApi$V1NativeIexAdminMessagesSymbolGet, `limit` is not nullable")
-      }
-
       query_params[["date"]] <- `date`
-
-      query_params[["limit"]] <- `limit`
 
       local_var_url_path <- "/v1/native/iex/admin/messages/{symbol}"
       if (!missing(`symbol`)) {
@@ -309,14 +295,13 @@ NativeIEXApi <- R6::R6Class(
     #' Get System Events
     #'
     #' @param date Date in format YYYY-MM-DD
-    #' @param limit (optional) Maximum number of records to return (1-10000, default 100) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[IEXSystemEventSystemEventModel]
-    V1NativeIexAdminSystemEventGet = function(date, limit = 100, data_file = NULL, ..., .parse = TRUE) {
-      local_var_response <- self$V1NativeIexAdminSystemEventGetWithHttpInfo(date, limit, data_file = data_file, ..., .parse = .parse)
+    V1NativeIexAdminSystemEventGet = function(date, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1NativeIexAdminSystemEventGetWithHttpInfo(date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -332,13 +317,12 @@ NativeIEXApi <- R6::R6Class(
     #' Get System Events
     #'
     #' @param date Date in format YYYY-MM-DD
-    #' @param limit (optional) Maximum number of records to return (1-10000, default 100) (default value: 100)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[IEXSystemEventSystemEventModel]) with additional information such as HTTP status code, headers
-    V1NativeIexAdminSystemEventGetWithHttpInfo = function(date, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+    V1NativeIexAdminSystemEventGetWithHttpInfo = function(date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -356,13 +340,7 @@ NativeIEXApi <- R6::R6Class(
         stop("Invalid value for `date` when calling NativeIEXApi$V1NativeIexAdminSystemEventGet, `date` is not nullable")
       }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling NativeIEXApi$V1NativeIexAdminSystemEventGet, `limit` is not nullable")
-      }
-
       query_params[["date"]] <- `date`
-
-      query_params[["limit"]] <- `limit`
 
       local_var_url_path <- "/v1/native/iex/admin/system-event"
       # API key authentication
@@ -434,15 +412,14 @@ NativeIEXApi <- R6::R6Class(
     #' Get Level-1 Quotes
     #'
     #' @param symbol The symbol identifier
-    #' @param date Date in format YYYY-MM-DD
-    #' @param limit (optional) Maximum number of records to return (1-10000, default 100) (default value: 100)
+    #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[IEXQuoteUpdateQuoteUpdateModel]
-    V1NativeIexLevel1QuoteSymbolGet = function(symbol, date, limit = 100, data_file = NULL, ..., .parse = TRUE) {
-      local_var_response <- self$V1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol, date, limit, data_file = data_file, ..., .parse = .parse)
+    V1NativeIexLevel1QuoteSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -458,14 +435,13 @@ NativeIEXApi <- R6::R6Class(
     #' Get Level-1 Quotes
     #'
     #' @param symbol The symbol identifier
-    #' @param date Date in format YYYY-MM-DD
-    #' @param limit (optional) Maximum number of records to return (1-10000, default 100) (default value: 100)
+    #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[IEXQuoteUpdateQuoteUpdateModel]) with additional information such as HTTP status code, headers
-    V1NativeIexLevel1QuoteSymbolGetWithHttpInfo = function(symbol, date, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+    V1NativeIexLevel1QuoteSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -491,13 +467,7 @@ NativeIEXApi <- R6::R6Class(
         stop("Invalid value for `date` when calling NativeIEXApi$V1NativeIexLevel1QuoteSymbolGet, `date` is not nullable")
       }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling NativeIEXApi$V1NativeIexLevel1QuoteSymbolGet, `limit` is not nullable")
-      }
-
       query_params[["date"]] <- `date`
-
-      query_params[["limit"]] <- `limit`
 
       local_var_url_path <- "/v1/native/iex/level1-quote/{symbol}"
       if (!missing(`symbol`)) {
@@ -573,15 +543,14 @@ NativeIEXApi <- R6::R6Class(
     #' Get Level-2 Price Level Book
     #'
     #' @param symbol The symbol identifier
-    #' @param date Date in format YYYY-MM-DD
-    #' @param limit (optional) Maximum number of records to return (1-10000, default 100) (default value: 100)
+    #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[IEXPriceLevelUpdatePriceLevelUpdateModel]
-    V1NativeIexLevel2PriceLevelUpdateSymbolGet = function(symbol, date, limit = 100, data_file = NULL, ..., .parse = TRUE) {
-      local_var_response <- self$V1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol, date, limit, data_file = data_file, ..., .parse = .parse)
+    V1NativeIexLevel2PriceLevelUpdateSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -597,14 +566,13 @@ NativeIEXApi <- R6::R6Class(
     #' Get Level-2 Price Level Book
     #'
     #' @param symbol The symbol identifier
-    #' @param date Date in format YYYY-MM-DD
-    #' @param limit (optional) Maximum number of records to return (1-10000, default 100) (default value: 100)
+    #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[IEXPriceLevelUpdatePriceLevelUpdateModel]) with additional information such as HTTP status code, headers
-    V1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo = function(symbol, date, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+    V1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -630,13 +598,7 @@ NativeIEXApi <- R6::R6Class(
         stop("Invalid value for `date` when calling NativeIEXApi$V1NativeIexLevel2PriceLevelUpdateSymbolGet, `date` is not nullable")
       }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling NativeIEXApi$V1NativeIexLevel2PriceLevelUpdateSymbolGet, `limit` is not nullable")
-      }
-
       query_params[["date"]] <- `date`
-
-      query_params[["limit"]] <- `limit`
 
       local_var_url_path <- "/v1/native/iex/level2-price-level-update/{symbol}"
       if (!missing(`symbol`)) {
@@ -712,15 +674,14 @@ NativeIEXApi <- R6::R6Class(
     #' Get Level-3 Order Book
     #'
     #' @param symbol The symbol identifier
-    #' @param date Date in format YYYY-MM-DD
-    #' @param limit (optional) Maximum number of records to return (1-10000, default 100) (default value: 100)
+    #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[ModelsOrderBookModel]
-    V1NativeIexLevel3OrderBookSymbolGet = function(symbol, date, limit = 100, data_file = NULL, ..., .parse = TRUE) {
-      local_var_response <- self$V1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol, date, limit, data_file = data_file, ..., .parse = .parse)
+    V1NativeIexLevel3OrderBookSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -736,14 +697,13 @@ NativeIEXApi <- R6::R6Class(
     #' Get Level-3 Order Book
     #'
     #' @param symbol The symbol identifier
-    #' @param date Date in format YYYY-MM-DD
-    #' @param limit (optional) Maximum number of records to return (1-10000, default 100) (default value: 100)
+    #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[ModelsOrderBookModel]) with additional information such as HTTP status code, headers
-    V1NativeIexLevel3OrderBookSymbolGetWithHttpInfo = function(symbol, date, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+    V1NativeIexLevel3OrderBookSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -769,13 +729,7 @@ NativeIEXApi <- R6::R6Class(
         stop("Invalid value for `date` when calling NativeIEXApi$V1NativeIexLevel3OrderBookSymbolGet, `date` is not nullable")
       }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling NativeIEXApi$V1NativeIexLevel3OrderBookSymbolGet, `limit` is not nullable")
-      }
-
       query_params[["date"]] <- `date`
-
-      query_params[["limit"]] <- `limit`
 
       local_var_url_path <- "/v1/native/iex/level3-order-book/{symbol}"
       if (!missing(`symbol`)) {
@@ -851,15 +805,14 @@ NativeIEXApi <- R6::R6Class(
     #' Get Trades
     #'
     #' @param symbol The symbol identifier
-    #' @param date Date in format YYYY-MM-DD
-    #' @param limit (optional) Maximum number of records to return (1-10000, default 100) (default value: 100)
+    #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return array[IEXTradeTradeModel]
-    V1NativeIexTradeSymbolGet = function(symbol, date, limit = 100, data_file = NULL, ..., .parse = TRUE) {
-      local_var_response <- self$V1NativeIexTradeSymbolGetWithHttpInfo(symbol, date, limit, data_file = data_file, ..., .parse = .parse)
+    V1NativeIexTradeSymbolGet = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
+      local_var_response <- self$V1NativeIexTradeSymbolGetWithHttpInfo(symbol, date, data_file = data_file, ..., .parse = .parse)
       if (local_var_response$status_code >= 200 && local_var_response$status_code <= 299) {
         return(local_var_response$content)
       } else if (local_var_response$status_code >= 300 && local_var_response$status_code <= 399) {
@@ -875,14 +828,13 @@ NativeIEXApi <- R6::R6Class(
     #' Get Trades
     #'
     #' @param symbol The symbol identifier
-    #' @param date Date in format YYYY-MM-DD
-    #' @param limit (optional) Maximum number of records to return (1-10000, default 100) (default value: 100)
+    #' @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
     #' @param data_file (optional) name of the data file to save the result
     #' @param ... Other optional arguments
     #' @param .parse Logical. If \code{TRUE} then the response will be parsed to a generated type. If \code{FALSE} the response will be returned as unparsed text.
     #'
     #' @return API response (array[IEXTradeTradeModel]) with additional information such as HTTP status code, headers
-    V1NativeIexTradeSymbolGetWithHttpInfo = function(symbol, date, limit = 100, data_file = NULL, ..., .parse = TRUE) {
+    V1NativeIexTradeSymbolGetWithHttpInfo = function(symbol, date, data_file = NULL, ..., .parse = TRUE) {
       args <- list(...)
       query_params <- list()
       header_params <- c()
@@ -908,13 +860,7 @@ NativeIEXApi <- R6::R6Class(
         stop("Invalid value for `date` when calling NativeIEXApi$V1NativeIexTradeSymbolGet, `date` is not nullable")
       }
 
-      if (!missing(`limit`) && is.null(`limit`)) {
-        stop("Invalid value for `limit` when calling NativeIEXApi$V1NativeIexTradeSymbolGet, `limit` is not nullable")
-      }
-
       query_params[["date"]] <- `date`
-
-      query_params[["limit"]] <- `limit`
 
       local_var_url_path <- "/v1/native/iex/trade/{symbol}"
       if (!missing(`symbol`)) {

@@ -23,14 +23,13 @@ class OhlcvApi {
   const OhlcvApi(this._dio, this._serializers);
 
   /// Historical data by exchange
-  /// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
+  /// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
   ///
   /// Parameters:
   /// * [exchangeId] - Exchange identifier of requested timeseries (from the Metadata -> Exchanges)
   /// * [periodId] - Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
   /// * [timeStart] - Timeseries starting time in ISO 8601
   /// * [timeEnd] - Timeseries ending time in ISO 8601
-  /// * [limit] - Maximum number of symbol rows to return (1-10000, default 100)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -45,7 +44,6 @@ class OhlcvApi {
     required String periodId,
     required String timeStart,
     required String timeEnd,
-    int? limit = 100,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -81,7 +79,6 @@ class OhlcvApi {
       r'period_id': encodeQueryParameter(_serializers, periodId, const FullType(String)),
       r'time_start': encodeQueryParameter(_serializers, timeStart, const FullType(String)),
       r'time_end': encodeQueryParameter(_serializers, timeEnd, const FullType(String)),
-      if (limit != null) r'limit': encodeQueryParameter(_serializers, limit, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(

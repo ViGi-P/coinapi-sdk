@@ -175,14 +175,12 @@ public class MetadataApi {
   }
   /**
   * List of symbols for the exchange
-  * Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
+  * 
    * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
    * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
-   * @param limit Maximum number of symbols to return (1-10000, default 100)
-   * @param page Page number (1-based, default 1)
    * @return List<FinFeedAPISymbolModel>
   */
-  public List<FinFeedAPISymbolModel> v1SymbolsExchangeIdGet (String exchangeId, String filterSymbolId, Integer limit, Integer page) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<FinFeedAPISymbolModel> v1SymbolsExchangeIdGet (String exchangeId, String filterSymbolId) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
     Object postBody = null;
     // verify the required parameter 'exchangeId' is set
     if (exchangeId == null) {
@@ -200,8 +198,6 @@ public class MetadataApi {
     // form params
     Map<String, String> formParams = new HashMap<String, String>();
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_symbol_id", filterSymbolId));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "page", page));
     String[] contentTypes = {
     };
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
@@ -243,10 +239,10 @@ public class MetadataApi {
 
       /**
    * List of symbols for the exchange
-   * Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
-   * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)   * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)   * @param limit Maximum number of symbols to return (1-10000, default 100)   * @param page Page number (1-based, default 1)
+   * 
+   * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)   * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
   */
-  public void v1SymbolsExchangeIdGet (String exchangeId, String filterSymbolId, Integer limit, Integer page, final Response.Listener<List<FinFeedAPISymbolModel>> responseListener, final Response.ErrorListener errorListener) {
+  public void v1SymbolsExchangeIdGet (String exchangeId, String filterSymbolId, final Response.Listener<List<FinFeedAPISymbolModel>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
     // verify the required parameter 'exchangeId' is set
@@ -266,8 +262,6 @@ public class MetadataApi {
     Map<String, String> formParams = new HashMap<String, String>();
 
     queryParams.addAll(ApiInvoker.parameterToPairs("", "filter_symbol_id", filterSymbolId));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "limit", limit));
-    queryParams.addAll(ApiInvoker.parameterToPairs("", "page", page));
 
 
     String[] contentTypes = {

@@ -3,7 +3,7 @@ private class OASOhlcvApiTest {
     /**
      * Historical data by exchange
      *
-     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.\nTime range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
+     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
      */
     @isTest
     private static void v1OhlcvExchangeExchangeIdHistoryGetTest() {
@@ -16,8 +16,7 @@ private class OASOhlcvApiTest {
             'exchangeId' => 'null',
             'periodId' => 'null',
             'timeStart' => 'null',
-            'timeEnd' => 'null',
-            'r_limit' => ''
+            'timeEnd' => 'null'
         };
 
         OASClient client;

@@ -48,11 +48,9 @@ public class OASMetadataApi {
     }
     /**
      * List of symbols for the exchange
-     * Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset\n(default limit: 100, max: 10000, default page: 1).
+     * 
      * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
-     * @param r_limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
-     * @param page Page number (1-based, default 1) (optional, default to 1)
      * @return List<OASFinFeedAPISymbolModel>
      * @throws OAS.ApiException if fails to make API call
      */
@@ -62,8 +60,6 @@ public class OASMetadataApi {
 
         // cast query params to verify their expected type
         query.addAll(client.makeParam('filter_symbol_id', (String) params.get('filterSymbolId')));
-        query.addAll(client.makeParam('limit', (Integer) params.get('r_limit')));
-        query.addAll(client.makeParam('page', (Integer) params.get('page')));
 
         List<OAS.Param> form = new List<OAS.Param>();
 

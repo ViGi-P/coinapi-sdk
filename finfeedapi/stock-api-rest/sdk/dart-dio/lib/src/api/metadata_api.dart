@@ -106,13 +106,11 @@ class MetadataApi {
   }
 
   /// List of symbols for the exchange
-  /// Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
+  /// 
   ///
   /// Parameters:
   /// * [exchangeId] - The ID of the exchange (from the Metadata -> Exchanges)
   /// * [filterSymbolId] - Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
-  /// * [limit] - Maximum number of symbols to return (1-10000, default 100)
-  /// * [page] - Page number (1-based, default 1)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -125,8 +123,6 @@ class MetadataApi {
   Future<Response<BuiltList<FinFeedAPISymbolModel>>> v1SymbolsExchangeIdGet({ 
     required String exchangeId,
     String? filterSymbolId,
-    int? limit = 100,
-    int? page = 1,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -160,8 +156,6 @@ class MetadataApi {
 
     final _queryParameters = <String, dynamic>{
       if (filterSymbolId != null) r'filter_symbol_id': encodeQueryParameter(_serializers, filterSymbolId, const FullType(String)),
-      if (limit != null) r'limit': encodeQueryParameter(_serializers, limit, const FullType(int)),
-      if (page != null) r'page': encodeQueryParameter(_serializers, page, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(

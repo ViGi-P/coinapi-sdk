@@ -43,7 +43,7 @@ private class OASMetadataApiTest {
     /**
      * List of symbols for the exchange
      *
-     * Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset\n(default limit: 100, max: 10000, default page: 1).
+     * 
      */
     @isTest
     private static void v1SymbolsExchangeIdGetTest() {
@@ -54,9 +54,7 @@ private class OASMetadataApiTest {
 
         Map<String, Object> params = new Map<String, Object>{
             'exchangeId' => 'null',
-            'filterSymbolId' => 'null',
-            'r_limit' => '',
-            'page' => ''
+            'filterSymbolId' => 'null'
         };
 
         OASClient client;

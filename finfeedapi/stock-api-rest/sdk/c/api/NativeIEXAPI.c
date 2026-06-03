@@ -11,10 +11,8 @@
 
 // Get Admin Messages
 //
-// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-//
 list_t*
-NativeIEXAPI_v1NativeIexAdminMessagesSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit)
+NativeIEXAPI_v1NativeIexAdminMessagesSymbolGet(apiClient_t *apiClient, char *symbol, char date)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -57,19 +55,6 @@ NativeIEXAPI_v1NativeIexAdminMessagesSymbolGet(apiClient_t *apiClient, char *sym
         keyPairQuery_date = keyValuePair_create(keyQuery_date, &valueQuery_date);
         list_addElement(localVarQueryParameters,keyPairQuery_date);
     }
-
-    // query parameters
-    char *keyQuery_limit = NULL;
-    char * valueQuery_limit = NULL;
-    keyValuePair_t *keyPairQuery_limit = 0;
-    if (limit)
-    {
-        keyQuery_limit = strdup("limit");
-        valueQuery_limit = calloc(1,MAX_NUMBER_LENGTH);
-        snprintf(valueQuery_limit, MAX_NUMBER_LENGTH, "%d", *limit);
-        keyPairQuery_limit = keyValuePair_create(keyQuery_limit, valueQuery_limit);
-        list_addElement(localVarQueryParameters,keyPairQuery_limit);
-    }
     list_addElement(localVarHeaderType,"application/json"); //produces
     apiClient_invoke(apiClient,
                     localVarPath,
@@ -128,18 +113,6 @@ NativeIEXAPI_v1NativeIexAdminMessagesSymbolGet(apiClient_t *apiClient, char *sym
         keyValuePair_free(keyPairQuery_date);
         keyPairQuery_date = NULL;
     }
-    if(keyQuery_limit){
-        free(keyQuery_limit);
-        keyQuery_limit = NULL;
-    }
-    if(valueQuery_limit){
-        free(valueQuery_limit);
-        valueQuery_limit = NULL;
-    }
-    if(keyPairQuery_limit){
-        keyValuePair_free(keyPairQuery_limit);
-        keyPairQuery_limit = NULL;
-    }
     return elementToReturn;
 end:
     free(localVarPath);
@@ -149,10 +122,8 @@ end:
 
 // Get System Events
 //
-// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-//
 list_t*
-NativeIEXAPI_v1NativeIexAdminSystemEventGet(apiClient_t *apiClient, char date, int *limit)
+NativeIEXAPI_v1NativeIexAdminSystemEventGet(apiClient_t *apiClient, char date)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -182,19 +153,6 @@ NativeIEXAPI_v1NativeIexAdminSystemEventGet(apiClient_t *apiClient, char date, i
         valueQuery_date = (date);
         keyPairQuery_date = keyValuePair_create(keyQuery_date, &valueQuery_date);
         list_addElement(localVarQueryParameters,keyPairQuery_date);
-    }
-
-    // query parameters
-    char *keyQuery_limit = NULL;
-    char * valueQuery_limit = NULL;
-    keyValuePair_t *keyPairQuery_limit = 0;
-    if (limit)
-    {
-        keyQuery_limit = strdup("limit");
-        valueQuery_limit = calloc(1,MAX_NUMBER_LENGTH);
-        snprintf(valueQuery_limit, MAX_NUMBER_LENGTH, "%d", *limit);
-        keyPairQuery_limit = keyValuePair_create(keyQuery_limit, valueQuery_limit);
-        list_addElement(localVarQueryParameters,keyPairQuery_limit);
     }
     list_addElement(localVarHeaderType,"application/json"); //produces
     apiClient_invoke(apiClient,
@@ -253,18 +211,6 @@ NativeIEXAPI_v1NativeIexAdminSystemEventGet(apiClient_t *apiClient, char date, i
         keyValuePair_free(keyPairQuery_date);
         keyPairQuery_date = NULL;
     }
-    if(keyQuery_limit){
-        free(keyQuery_limit);
-        keyQuery_limit = NULL;
-    }
-    if(valueQuery_limit){
-        free(valueQuery_limit);
-        valueQuery_limit = NULL;
-    }
-    if(keyPairQuery_limit){
-        keyValuePair_free(keyPairQuery_limit);
-        keyPairQuery_limit = NULL;
-    }
     return elementToReturn;
 end:
     free(localVarPath);
@@ -274,10 +220,8 @@ end:
 
 // Get Level-1 Quotes
 //
-// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-//
 list_t*
-NativeIEXAPI_v1NativeIexLevel1QuoteSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit)
+NativeIEXAPI_v1NativeIexLevel1QuoteSymbolGet(apiClient_t *apiClient, char *symbol, char date)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -320,19 +264,6 @@ NativeIEXAPI_v1NativeIexLevel1QuoteSymbolGet(apiClient_t *apiClient, char *symbo
         keyPairQuery_date = keyValuePair_create(keyQuery_date, &valueQuery_date);
         list_addElement(localVarQueryParameters,keyPairQuery_date);
     }
-
-    // query parameters
-    char *keyQuery_limit = NULL;
-    char * valueQuery_limit = NULL;
-    keyValuePair_t *keyPairQuery_limit = 0;
-    if (limit)
-    {
-        keyQuery_limit = strdup("limit");
-        valueQuery_limit = calloc(1,MAX_NUMBER_LENGTH);
-        snprintf(valueQuery_limit, MAX_NUMBER_LENGTH, "%d", *limit);
-        keyPairQuery_limit = keyValuePair_create(keyQuery_limit, valueQuery_limit);
-        list_addElement(localVarQueryParameters,keyPairQuery_limit);
-    }
     list_addElement(localVarHeaderType,"application/json"); //produces
     apiClient_invoke(apiClient,
                     localVarPath,
@@ -391,18 +322,6 @@ NativeIEXAPI_v1NativeIexLevel1QuoteSymbolGet(apiClient_t *apiClient, char *symbo
         keyValuePair_free(keyPairQuery_date);
         keyPairQuery_date = NULL;
     }
-    if(keyQuery_limit){
-        free(keyQuery_limit);
-        keyQuery_limit = NULL;
-    }
-    if(valueQuery_limit){
-        free(valueQuery_limit);
-        valueQuery_limit = NULL;
-    }
-    if(keyPairQuery_limit){
-        keyValuePair_free(keyPairQuery_limit);
-        keyPairQuery_limit = NULL;
-    }
     return elementToReturn;
 end:
     free(localVarPath);
@@ -412,10 +331,8 @@ end:
 
 // Get Level-2 Price Level Book
 //
-// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-//
 list_t*
-NativeIEXAPI_v1NativeIexLevel2PriceLevelUpdateSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit)
+NativeIEXAPI_v1NativeIexLevel2PriceLevelUpdateSymbolGet(apiClient_t *apiClient, char *symbol, char date)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -458,19 +375,6 @@ NativeIEXAPI_v1NativeIexLevel2PriceLevelUpdateSymbolGet(apiClient_t *apiClient, 
         keyPairQuery_date = keyValuePair_create(keyQuery_date, &valueQuery_date);
         list_addElement(localVarQueryParameters,keyPairQuery_date);
     }
-
-    // query parameters
-    char *keyQuery_limit = NULL;
-    char * valueQuery_limit = NULL;
-    keyValuePair_t *keyPairQuery_limit = 0;
-    if (limit)
-    {
-        keyQuery_limit = strdup("limit");
-        valueQuery_limit = calloc(1,MAX_NUMBER_LENGTH);
-        snprintf(valueQuery_limit, MAX_NUMBER_LENGTH, "%d", *limit);
-        keyPairQuery_limit = keyValuePair_create(keyQuery_limit, valueQuery_limit);
-        list_addElement(localVarQueryParameters,keyPairQuery_limit);
-    }
     list_addElement(localVarHeaderType,"application/json"); //produces
     apiClient_invoke(apiClient,
                     localVarPath,
@@ -529,18 +433,6 @@ NativeIEXAPI_v1NativeIexLevel2PriceLevelUpdateSymbolGet(apiClient_t *apiClient, 
         keyValuePair_free(keyPairQuery_date);
         keyPairQuery_date = NULL;
     }
-    if(keyQuery_limit){
-        free(keyQuery_limit);
-        keyQuery_limit = NULL;
-    }
-    if(valueQuery_limit){
-        free(valueQuery_limit);
-        valueQuery_limit = NULL;
-    }
-    if(keyPairQuery_limit){
-        keyValuePair_free(keyPairQuery_limit);
-        keyPairQuery_limit = NULL;
-    }
     return elementToReturn;
 end:
     free(localVarPath);
@@ -550,10 +442,8 @@ end:
 
 // Get Level-3 Order Book
 //
-// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-//
 list_t*
-NativeIEXAPI_v1NativeIexLevel3OrderBookSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit)
+NativeIEXAPI_v1NativeIexLevel3OrderBookSymbolGet(apiClient_t *apiClient, char *symbol, char date)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -596,19 +486,6 @@ NativeIEXAPI_v1NativeIexLevel3OrderBookSymbolGet(apiClient_t *apiClient, char *s
         keyPairQuery_date = keyValuePair_create(keyQuery_date, &valueQuery_date);
         list_addElement(localVarQueryParameters,keyPairQuery_date);
     }
-
-    // query parameters
-    char *keyQuery_limit = NULL;
-    char * valueQuery_limit = NULL;
-    keyValuePair_t *keyPairQuery_limit = 0;
-    if (limit)
-    {
-        keyQuery_limit = strdup("limit");
-        valueQuery_limit = calloc(1,MAX_NUMBER_LENGTH);
-        snprintf(valueQuery_limit, MAX_NUMBER_LENGTH, "%d", *limit);
-        keyPairQuery_limit = keyValuePair_create(keyQuery_limit, valueQuery_limit);
-        list_addElement(localVarQueryParameters,keyPairQuery_limit);
-    }
     list_addElement(localVarHeaderType,"application/json"); //produces
     apiClient_invoke(apiClient,
                     localVarPath,
@@ -667,18 +544,6 @@ NativeIEXAPI_v1NativeIexLevel3OrderBookSymbolGet(apiClient_t *apiClient, char *s
         keyValuePair_free(keyPairQuery_date);
         keyPairQuery_date = NULL;
     }
-    if(keyQuery_limit){
-        free(keyQuery_limit);
-        keyQuery_limit = NULL;
-    }
-    if(valueQuery_limit){
-        free(valueQuery_limit);
-        valueQuery_limit = NULL;
-    }
-    if(keyPairQuery_limit){
-        keyValuePair_free(keyPairQuery_limit);
-        keyPairQuery_limit = NULL;
-    }
     return elementToReturn;
 end:
     free(localVarPath);
@@ -688,10 +553,8 @@ end:
 
 // Get Trades
 //
-// Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
-//
 list_t*
-NativeIEXAPI_v1NativeIexTradeSymbolGet(apiClient_t *apiClient, char *symbol, char date, int *limit)
+NativeIEXAPI_v1NativeIexTradeSymbolGet(apiClient_t *apiClient, char *symbol, char date)
 {
     list_t    *localVarQueryParameters = list_createList();
     list_t    *localVarHeaderParameters = NULL;
@@ -734,19 +597,6 @@ NativeIEXAPI_v1NativeIexTradeSymbolGet(apiClient_t *apiClient, char *symbol, cha
         keyPairQuery_date = keyValuePair_create(keyQuery_date, &valueQuery_date);
         list_addElement(localVarQueryParameters,keyPairQuery_date);
     }
-
-    // query parameters
-    char *keyQuery_limit = NULL;
-    char * valueQuery_limit = NULL;
-    keyValuePair_t *keyPairQuery_limit = 0;
-    if (limit)
-    {
-        keyQuery_limit = strdup("limit");
-        valueQuery_limit = calloc(1,MAX_NUMBER_LENGTH);
-        snprintf(valueQuery_limit, MAX_NUMBER_LENGTH, "%d", *limit);
-        keyPairQuery_limit = keyValuePair_create(keyQuery_limit, valueQuery_limit);
-        list_addElement(localVarQueryParameters,keyPairQuery_limit);
-    }
     list_addElement(localVarHeaderType,"application/json"); //produces
     apiClient_invoke(apiClient,
                     localVarPath,
@@ -804,18 +654,6 @@ NativeIEXAPI_v1NativeIexTradeSymbolGet(apiClient_t *apiClient, char *symbol, cha
     if(keyPairQuery_date){
         keyValuePair_free(keyPairQuery_date);
         keyPairQuery_date = NULL;
-    }
-    if(keyQuery_limit){
-        free(keyQuery_limit);
-        keyQuery_limit = NULL;
-    }
-    if(valueQuery_limit){
-        free(valueQuery_limit);
-        valueQuery_limit = NULL;
-    }
-    if(keyPairQuery_limit){
-        keyValuePair_free(keyPairQuery_limit);
-        keyPairQuery_limit = NULL;
     }
     return elementToReturn;
 end:

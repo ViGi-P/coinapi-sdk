@@ -23,8 +23,6 @@ import type {
 export interface V1SymbolsExchangeIdGetRequest {
     exchangeId: string;
     filterSymbolId?: string;
-    limit?: number;
-    page?: number;
 }
 
 /**
@@ -50,12 +48,11 @@ export class MetadataApi extends BaseAPI {
     };
 
     /**
-     * Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
      * List of symbols for the exchange
      */
-    v1SymbolsExchangeIdGet({ exchangeId, filterSymbolId, limit, page }: V1SymbolsExchangeIdGetRequest): Observable<Array<FinFeedAPISymbolModel>>
-    v1SymbolsExchangeIdGet({ exchangeId, filterSymbolId, limit, page }: V1SymbolsExchangeIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<FinFeedAPISymbolModel>>>
-    v1SymbolsExchangeIdGet({ exchangeId, filterSymbolId, limit, page }: V1SymbolsExchangeIdGetRequest, opts?: OperationOpts): Observable<Array<FinFeedAPISymbolModel> | AjaxResponse<Array<FinFeedAPISymbolModel>>> {
+    v1SymbolsExchangeIdGet({ exchangeId, filterSymbolId }: V1SymbolsExchangeIdGetRequest): Observable<Array<FinFeedAPISymbolModel>>
+    v1SymbolsExchangeIdGet({ exchangeId, filterSymbolId }: V1SymbolsExchangeIdGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<FinFeedAPISymbolModel>>>
+    v1SymbolsExchangeIdGet({ exchangeId, filterSymbolId }: V1SymbolsExchangeIdGetRequest, opts?: OperationOpts): Observable<Array<FinFeedAPISymbolModel> | AjaxResponse<Array<FinFeedAPISymbolModel>>> {
         throwIfNullOrUndefined(exchangeId, 'exchangeId', 'v1SymbolsExchangeIdGet');
 
         const headers: HttpHeaders = {
@@ -65,8 +62,6 @@ export class MetadataApi extends BaseAPI {
         const query: HttpQuery = {};
 
         if (filterSymbolId != null) { query['filter_symbol_id'] = filterSymbolId; }
-        if (limit != null) { query['limit'] = limit; }
-        if (page != null) { query['page'] = page; }
 
         return this.request<Array<FinFeedAPISymbolModel>>({
             url: '/v1/symbols/{exchange_id}'.replace('{exchange_id}', encodeURI(exchangeId)),

@@ -16,11 +16,11 @@ Method | HTTP request | Description
 
 
 # **v1_ohlcv_exchange_exchange_id_history_get**
-> ARRAY[OHLCVTimeSeriesExchangeTimeseriesItem] v1_ohlcv_exchange_exchange_id_history_get(exchange_id => $exchange_id, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit)
+> ARRAY[OHLCVTimeSeriesExchangeTimeseriesItem] v1_ohlcv_exchange_exchange_id_history_get(exchange_id => $exchange_id, period_id => $period_id, time_start => $time_start, time_end => $time_end)
 
 Historical data by exchange
 
-Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
+Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
 
 ### Example
 ```perl
@@ -41,10 +41,9 @@ my $exchange_id = "exchange_id_example"; # string | Exchange identifier of reque
 my $period_id = "period_id_example"; # string | Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
 my $time_start = "time_start_example"; # string | Timeseries starting time in ISO 8601
 my $time_end = "time_end_example"; # string | Timeseries ending time in ISO 8601
-my $limit = 100; # int | Maximum number of symbol rows to return (1-10000, default 100)
 
 eval {
-    my $result = $api_instance->v1_ohlcv_exchange_exchange_id_history_get(exchange_id => $exchange_id, period_id => $period_id, time_start => $time_start, time_end => $time_end, limit => $limit);
+    my $result = $api_instance->v1_ohlcv_exchange_exchange_id_history_get(exchange_id => $exchange_id, period_id => $period_id, time_start => $time_start, time_end => $time_end);
     print Dumper($result);
 };
 if ($@) {
@@ -60,7 +59,6 @@ Name | Type | Description  | Notes
  **period_id** | **string**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) | 
  **time_start** | **string**| Timeseries starting time in ISO 8601 | 
  **time_end** | **string**| Timeseries ending time in ISO 8601 | 
- **limit** | **int**| Maximum number of symbol rows to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 

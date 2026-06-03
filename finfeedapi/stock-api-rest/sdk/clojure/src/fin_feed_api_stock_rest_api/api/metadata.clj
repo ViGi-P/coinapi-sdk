@@ -53,25 +53,21 @@
 
 
 (defn-spec v1-symbols-exchange-id-get-with-http-info any?
-  "List of symbols for the exchange
-  Results are paginated. Use `limit` and `page` to control page size and offset
-(default limit: 100, max: 10000, default page: 1)."
+  "List of symbols for the exchange"
   ([exchange_id string?, ] (v1-symbols-exchange-id-get-with-http-info exchange_id nil))
-  ([exchange_id string?, {:keys [filter_symbol_id limit page]} (s/map-of keyword? any?)]
+  ([exchange_id string?, {:keys [filter_symbol_id]} (s/map-of keyword? any?)]
    (check-required-params exchange_id)
    (call-api "/v1/symbols/{exchange_id}" :get
              {:path-params   {"exchange_id" exchange_id }
               :header-params {}
-              :query-params  {"filter_symbol_id" filter_symbol_id "limit" limit "page" page }
+              :query-params  {"filter_symbol_id" filter_symbol_id }
               :form-params   {}
               :content-types []
               :accepts       ["text/plain" "application/json" "text/json"]
               :auth-names    ["APIKey" "JWT"]})))
 
 (defn-spec v1-symbols-exchange-id-get (s/coll-of fin-feed-api/symbol-model-spec)
-  "List of symbols for the exchange
-  Results are paginated. Use `limit` and `page` to control page size and offset
-(default limit: 100, max: 10000, default page: 1)."
+  "List of symbols for the exchange"
   ([exchange_id string?, ] (v1-symbols-exchange-id-get exchange_id nil))
   ([exchange_id string?, optional-params any?]
    (let [res (:data (v1-symbols-exchange-id-get-with-http-info exchange_id optional-params))]

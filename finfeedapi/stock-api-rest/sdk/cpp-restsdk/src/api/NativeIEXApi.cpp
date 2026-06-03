@@ -36,7 +36,7 @@ NativeIEXApi::~NativeIEXApi()
 {
 }
 
-pplx::task<std::vector<std::shared_ptr<Models_AdminMessageModel>>> NativeIEXApi::v1NativeIexAdminMessagesSymbolGet(utility::string_t symbol, utility::datetime date, boost::optional<int32_t> limit) const
+pplx::task<std::vector<std::shared_ptr<Models_AdminMessageModel>>> NativeIEXApi::v1NativeIexAdminMessagesSymbolGet(utility::string_t symbol, utility::datetime date) const
 {
 
 
@@ -80,10 +80,6 @@ pplx::task<std::vector<std::shared_ptr<Models_AdminMessageModel>>> NativeIEXApi:
 
     {
         localVarQueryParams[utility::conversions::to_string_t("date")] = ApiClient::parameterToString(date);
-    }
-    if (limit)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -179,7 +175,7 @@ pplx::task<std::vector<std::shared_ptr<Models_AdminMessageModel>>> NativeIEXApi:
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<IEXSystemEvent_SystemEventModel>>> NativeIEXApi::v1NativeIexAdminSystemEventGet(utility::datetime date, boost::optional<int32_t> limit) const
+pplx::task<std::vector<std::shared_ptr<IEXSystemEvent_SystemEventModel>>> NativeIEXApi::v1NativeIexAdminSystemEventGet(utility::datetime date) const
 {
 
 
@@ -222,10 +218,6 @@ pplx::task<std::vector<std::shared_ptr<IEXSystemEvent_SystemEventModel>>> Native
 
     {
         localVarQueryParams[utility::conversions::to_string_t("date")] = ApiClient::parameterToString(date);
-    }
-    if (limit)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -321,7 +313,7 @@ pplx::task<std::vector<std::shared_ptr<IEXSystemEvent_SystemEventModel>>> Native
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<IEXQuoteUpdate_QuoteUpdateModel>>> NativeIEXApi::v1NativeIexLevel1QuoteSymbolGet(utility::string_t symbol, utility::datetime date, boost::optional<int32_t> limit) const
+pplx::task<std::vector<std::shared_ptr<IEXQuoteUpdate_QuoteUpdateModel>>> NativeIEXApi::v1NativeIexLevel1QuoteSymbolGet(utility::string_t symbol, utility::datetime date) const
 {
 
 
@@ -365,10 +357,6 @@ pplx::task<std::vector<std::shared_ptr<IEXQuoteUpdate_QuoteUpdateModel>>> Native
 
     {
         localVarQueryParams[utility::conversions::to_string_t("date")] = ApiClient::parameterToString(date);
-    }
-    if (limit)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -464,7 +452,7 @@ pplx::task<std::vector<std::shared_ptr<IEXQuoteUpdate_QuoteUpdateModel>>> Native
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<IEXPriceLevelUpdate_PriceLevelUpdateModel>>> NativeIEXApi::v1NativeIexLevel2PriceLevelUpdateSymbolGet(utility::string_t symbol, utility::datetime date, boost::optional<int32_t> limit) const
+pplx::task<std::vector<std::shared_ptr<IEXPriceLevelUpdate_PriceLevelUpdateModel>>> NativeIEXApi::v1NativeIexLevel2PriceLevelUpdateSymbolGet(utility::string_t symbol, utility::datetime date) const
 {
 
 
@@ -508,10 +496,6 @@ pplx::task<std::vector<std::shared_ptr<IEXPriceLevelUpdate_PriceLevelUpdateModel
 
     {
         localVarQueryParams[utility::conversions::to_string_t("date")] = ApiClient::parameterToString(date);
-    }
-    if (limit)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -607,7 +591,7 @@ pplx::task<std::vector<std::shared_ptr<IEXPriceLevelUpdate_PriceLevelUpdateModel
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<Models_OrderBookModel>>> NativeIEXApi::v1NativeIexLevel3OrderBookSymbolGet(utility::string_t symbol, utility::datetime date, boost::optional<int32_t> limit) const
+pplx::task<std::vector<std::shared_ptr<Models_OrderBookModel>>> NativeIEXApi::v1NativeIexLevel3OrderBookSymbolGet(utility::string_t symbol, utility::datetime date) const
 {
 
 
@@ -651,10 +635,6 @@ pplx::task<std::vector<std::shared_ptr<Models_OrderBookModel>>> NativeIEXApi::v1
 
     {
         localVarQueryParams[utility::conversions::to_string_t("date")] = ApiClient::parameterToString(date);
-    }
-    if (limit)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;
@@ -750,7 +730,7 @@ pplx::task<std::vector<std::shared_ptr<Models_OrderBookModel>>> NativeIEXApi::v1
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<IEXTrade_TradeModel>>> NativeIEXApi::v1NativeIexTradeSymbolGet(utility::string_t symbol, utility::datetime date, boost::optional<int32_t> limit) const
+pplx::task<std::vector<std::shared_ptr<IEXTrade_TradeModel>>> NativeIEXApi::v1NativeIexTradeSymbolGet(utility::string_t symbol, utility::datetime date) const
 {
 
 
@@ -794,10 +774,6 @@ pplx::task<std::vector<std::shared_ptr<IEXTrade_TradeModel>>> NativeIEXApi::v1Na
 
     {
         localVarQueryParams[utility::conversions::to_string_t("date")] = ApiClient::parameterToString(date);
-    }
-    if (limit)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

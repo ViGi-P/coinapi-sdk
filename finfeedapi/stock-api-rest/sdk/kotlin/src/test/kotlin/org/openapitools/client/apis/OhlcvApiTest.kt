@@ -43,8 +43,7 @@ class OhlcvApiTest : ShouldSpec() {
             //val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
             //val timeStart : kotlin.String = timeStart_example // kotlin.String | Timeseries starting time in ISO 8601
             //val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601
-            //val limit : kotlin.Int = 56 // kotlin.Int | Maximum number of symbol rows to return (1-10000, default 100)
-            //val result : kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem> = apiInstance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, limit)
+            //val result : kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem> = apiInstance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
             //result shouldBe ("TODO")
         }
 

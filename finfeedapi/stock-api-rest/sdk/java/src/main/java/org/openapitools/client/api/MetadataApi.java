@@ -196,8 +196,6 @@ public class MetadataApi {
      * Build call for v1SymbolsExchangeIdGet
      * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
-     * @param limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
-     * @param page Page number (1-based, default 1) (optional, default to 1)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -208,7 +206,7 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1SymbolsExchangeIdGetCall(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer page, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1SymbolsExchangeIdGetCall(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -238,14 +236,6 @@ public class MetadataApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("filter_symbol_id", filterSymbolId));
         }
 
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
-        }
-
-        if (page != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("page", page));
-        }
-
         final String[] localVarAccepts = {
             "text/plain",
             "application/json",
@@ -268,23 +258,21 @@ public class MetadataApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1SymbolsExchangeIdGetValidateBeforeCall(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer page, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1SymbolsExchangeIdGetValidateBeforeCall(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'exchangeId' is set
         if (exchangeId == null) {
             throw new ApiException("Missing the required parameter 'exchangeId' when calling v1SymbolsExchangeIdGet(Async)");
         }
 
-        return v1SymbolsExchangeIdGetCall(exchangeId, filterSymbolId, limit, page, _callback);
+        return v1SymbolsExchangeIdGetCall(exchangeId, filterSymbolId, _callback);
 
     }
 
     /**
      * List of symbols for the exchange
-     * Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
+     * 
      * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
-     * @param limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
-     * @param page Page number (1-based, default 1) (optional, default to 1)
      * @return List&lt;FinFeedAPISymbolModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -294,18 +282,16 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<FinFeedAPISymbolModel> v1SymbolsExchangeIdGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer page) throws ApiException {
-        ApiResponse<List<FinFeedAPISymbolModel>> localVarResp = v1SymbolsExchangeIdGetWithHttpInfo(exchangeId, filterSymbolId, limit, page);
+    public List<FinFeedAPISymbolModel> v1SymbolsExchangeIdGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId) throws ApiException {
+        ApiResponse<List<FinFeedAPISymbolModel>> localVarResp = v1SymbolsExchangeIdGetWithHttpInfo(exchangeId, filterSymbolId);
         return localVarResp.getData();
     }
 
     /**
      * List of symbols for the exchange
-     * Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
+     * 
      * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
-     * @param limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
-     * @param page Page number (1-based, default 1) (optional, default to 1)
      * @return ApiResponse&lt;List&lt;FinFeedAPISymbolModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -315,19 +301,17 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<FinFeedAPISymbolModel>> v1SymbolsExchangeIdGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer page) throws ApiException {
-        okhttp3.Call localVarCall = v1SymbolsExchangeIdGetValidateBeforeCall(exchangeId, filterSymbolId, limit, page, null);
+    public ApiResponse<List<FinFeedAPISymbolModel>> v1SymbolsExchangeIdGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId) throws ApiException {
+        okhttp3.Call localVarCall = v1SymbolsExchangeIdGetValidateBeforeCall(exchangeId, filterSymbolId, null);
         Type localVarReturnType = new TypeToken<List<FinFeedAPISymbolModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * List of symbols for the exchange (asynchronously)
-     * Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
+     * 
      * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
-     * @param limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
-     * @param page Page number (1-based, default 1) (optional, default to 1)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -338,9 +322,9 @@ public class MetadataApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1SymbolsExchangeIdGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer page, final ApiCallback<List<FinFeedAPISymbolModel>> _callback) throws ApiException {
+    public okhttp3.Call v1SymbolsExchangeIdGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nullable String filterSymbolId, final ApiCallback<List<FinFeedAPISymbolModel>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1SymbolsExchangeIdGetValidateBeforeCall(exchangeId, filterSymbolId, limit, page, _callback);
+        okhttp3.Call localVarCall = v1SymbolsExchangeIdGetValidateBeforeCall(exchangeId, filterSymbolId, _callback);
         Type localVarReturnType = new TypeToken<List<FinFeedAPISymbolModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -58,12 +58,11 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /v1/ohlcv/exchange/{exchange_id}/history
      * Historical data by exchange
-     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
+     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
      * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
      * @param timeStart Timeseries starting time in ISO 8601
      * @param timeEnd Timeseries ending time in ISO 8601
-     * @param limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
      * @return kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -73,8 +72,8 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String, limit: kotlin.Int? = 100) : kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem> {
-        val localVarResponse = v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId = exchangeId, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd, limit = limit)
+    fun v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String) : kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem> {
+        val localVarResponse = v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId = exchangeId, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem>
@@ -94,20 +93,19 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * GET /v1/ohlcv/exchange/{exchange_id}/history
      * Historical data by exchange
-     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
+     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
      * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
      * @param timeStart Timeseries starting time in ISO 8601
      * @param timeEnd Timeseries ending time in ISO 8601
-     * @param limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
      * @return ApiResponse<kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem>?> {
-        val localVariableConfig = v1OhlcvExchangeExchangeIdHistoryGetRequestConfig(exchangeId = exchangeId, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd, limit = limit)
+    fun v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String) : ApiResponse<kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem>?> {
+        val localVariableConfig = v1OhlcvExchangeExchangeIdHistoryGetRequestConfig(exchangeId = exchangeId, periodId = periodId, timeStart = timeStart, timeEnd = timeEnd)
 
         return request<Unit, kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem>>(
             localVariableConfig
@@ -121,19 +119,15 @@ open class OhlcvApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
      * @param timeStart Timeseries starting time in ISO 8601
      * @param timeEnd Timeseries ending time in ISO 8601
-     * @param limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
      * @return RequestConfig
      */
-    fun v1OhlcvExchangeExchangeIdHistoryGetRequestConfig(exchangeId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String, limit: kotlin.Int?) : RequestConfig<Unit> {
+    fun v1OhlcvExchangeExchangeIdHistoryGetRequestConfig(exchangeId: kotlin.String, periodId: kotlin.String, timeStart: kotlin.String, timeEnd: kotlin.String) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("period_id", listOf(periodId.toString()))
                 put("time_start", listOf(timeStart.toString()))
                 put("time_end", listOf(timeEnd.toString()))
-                if (limit != null) {
-                    put("limit", listOf(limit.toString()))
-                }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "text/plain, application/json"

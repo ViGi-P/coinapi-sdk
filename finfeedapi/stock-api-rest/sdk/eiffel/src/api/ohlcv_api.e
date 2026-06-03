@@ -24,9 +24,9 @@ inherit
 feature -- API Access
 
 
-	v1_ohlcv_exchange_exchange_id_history_get (exchange_id: STRING_32; period_id: STRING_32; time_start: STRING_32; time_end: STRING_32; limit: INTEGER_32): detachable LIST [OHLCV_TIME_SERIES_EXCHANGE_TIMESERIES_ITEM]
+	v1_ohlcv_exchange_exchange_id_history_get (exchange_id: STRING_32; period_id: STRING_32; time_start: STRING_32; time_end: STRING_32): detachable LIST [OHLCV_TIME_SERIES_EXCHANGE_TIMESERIES_ITEM]
 			-- Historical data by exchange
-			-- Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
+			-- Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
 			-- 
 			-- argument: exchange_id Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges) (required)
 			-- 
@@ -35,8 +35,6 @@ feature -- API Access
 			-- argument: time_start Timeseries starting time in ISO 8601 (required)
 			-- 
 			-- argument: time_end Timeseries ending time in ISO 8601 (required)
-			-- 
-			-- argument: limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
 			-- 
 			-- 
 			-- Result LIST [OHLCV_TIME_SERIES_EXCHANGE_TIMESERIES_ITEM]
@@ -54,7 +52,6 @@ feature -- API Access
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "period_id", period_id));
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "time_start", time_start));
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "time_end", time_end));
-			l_request.fill_query_params(api_client.parameter_to_tuple("", "limit", limit));
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"text/plain", "application/json", "text/json">>)  as l_accept then

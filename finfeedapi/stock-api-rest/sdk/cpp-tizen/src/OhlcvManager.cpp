@@ -96,7 +96,7 @@ static bool v1OhlcvExchangeExchangeIdHistoryGetProcessor(MemoryStruct_s p_chunk,
 }
 
 static bool v1OhlcvExchangeExchangeIdHistoryGetHelper(char * accessToken,
-	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
+	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, 
 	void(* handler)(std::list<OHLCVTimeSeries.ExchangeTimeseriesItem>, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -124,13 +124,6 @@ static bool v1OhlcvExchangeExchangeIdHistoryGetHelper(char * accessToken,
 
 	itemAtq = stringify(&timeEnd, "std::string");
 	queryParams.insert(pair<string, string>("time_end", itemAtq));
-
-
-	itemAtq = stringify(&limit, "int");
-	queryParams.insert(pair<string, string>("limit", itemAtq));
-	if( itemAtq.empty()==true){
-		queryParams.erase("limit");
-	}
 
 	string mBody = "";
 	JsonNode* node;
@@ -192,22 +185,22 @@ static bool v1OhlcvExchangeExchangeIdHistoryGetHelper(char * accessToken,
 
 
 bool OhlcvManager::v1OhlcvExchangeExchangeIdHistoryGetAsync(char * accessToken,
-	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
+	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, 
 	void(* handler)(std::list<OHLCVTimeSeries.ExchangeTimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1OhlcvExchangeExchangeIdHistoryGetHelper(accessToken,
-	exchangeId, periodId, timeStart, timeEnd, limit, 
+	exchangeId, periodId, timeStart, timeEnd, 
 	handler, userData, true);
 }
 
 bool OhlcvManager::v1OhlcvExchangeExchangeIdHistoryGetSync(char * accessToken,
-	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
+	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, 
 	void(* handler)(std::list<OHLCVTimeSeries.ExchangeTimeseriesItem>, Error, void* )
 	, void* userData)
 {
 	return v1OhlcvExchangeExchangeIdHistoryGetHelper(accessToken,
-	exchangeId, periodId, timeStart, timeEnd, limit, 
+	exchangeId, periodId, timeStart, timeEnd, 
 	handler, userData, false);
 }
 

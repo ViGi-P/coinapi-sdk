@@ -58,17 +58,13 @@ public:
     /// List of symbols for the exchange
     /// </summary>
     /// <remarks>
-    /// Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
+    /// 
     /// </remarks>
     /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
     /// <param name="filterSymbolId">Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional, default to utility::conversions::to_string_t(&quot;&quot;))</param>
-    /// <param name="limit">Maximum number of symbols to return (1-10000, default 100) (optional, default to 0)</param>
-    /// <param name="page">Page number (1-based, default 1) (optional, default to 0)</param>
     pplx::task<std::vector<std::shared_ptr<FinFeedAPI_SymbolModel>>> v1SymbolsExchangeIdGet(
         utility::string_t exchangeId,
-        boost::optional<utility::string_t> filterSymbolId,
-        boost::optional<int32_t> limit,
-        boost::optional<int32_t> page
+        boost::optional<utility::string_t> filterSymbolId
     ) const;
 
 protected:

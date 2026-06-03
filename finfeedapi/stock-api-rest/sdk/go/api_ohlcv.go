@@ -31,7 +31,6 @@ type ApiV1OhlcvExchangeExchangeIdHistoryGetRequest struct {
 	periodId *string
 	timeStart *string
 	timeEnd *string
-	limit *int32
 }
 
 // Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
@@ -52,12 +51,6 @@ func (r ApiV1OhlcvExchangeExchangeIdHistoryGetRequest) TimeEnd(timeEnd string) A
 	return r
 }
 
-// Maximum number of symbol rows to return (1-10000, default 100)
-func (r ApiV1OhlcvExchangeExchangeIdHistoryGetRequest) Limit(limit int32) ApiV1OhlcvExchangeExchangeIdHistoryGetRequest {
-	r.limit = &limit
-	return r
-}
-
 func (r ApiV1OhlcvExchangeExchangeIdHistoryGetRequest) Execute() ([]OHLCVTimeSeriesExchangeTimeseriesItem, *http.Response, error) {
 	return r.ApiService.V1OhlcvExchangeExchangeIdHistoryGetExecute(r)
 }
@@ -66,7 +59,6 @@ func (r ApiV1OhlcvExchangeExchangeIdHistoryGetRequest) Execute() ([]OHLCVTimeSer
 V1OhlcvExchangeExchangeIdHistoryGet Historical data by exchange
 
 Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
-Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param exchangeId Exchange identifier of requested timeseries (from the Metadata -> Exchanges)
@@ -114,13 +106,6 @@ func (a *OhlcvAPIService) V1OhlcvExchangeExchangeIdHistoryGetExecute(r ApiV1Ohlc
 	parameterAddToHeaderOrQuery(localVarQueryParams, "period_id", r.periodId, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "time_start", r.timeStart, "form", "")
 	parameterAddToHeaderOrQuery(localVarQueryParams, "time_end", r.timeEnd, "form", "")
-	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
-	} else {
-		var defaultValue int32 = 100
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-		r.limit = &defaultValue
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

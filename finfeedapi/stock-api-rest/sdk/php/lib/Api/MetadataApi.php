@@ -393,17 +393,15 @@ class MetadataApi
      *
      * @param  string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param  string|null $filter_symbol_id Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
-     * @param  int|null $limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
-     * @param  int|null $page Page number (1-based, default 1) (optional, default to 1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\FinFeedAPISymbolModel[]
      */
-    public function v1SymbolsExchangeIdGet($exchange_id, $filter_symbol_id = null, $limit = 100, $page = 1, string $contentType = self::contentTypes['v1SymbolsExchangeIdGet'][0])
+    public function v1SymbolsExchangeIdGet($exchange_id, $filter_symbol_id = null, string $contentType = self::contentTypes['v1SymbolsExchangeIdGet'][0])
     {
-        list($response) = $this->v1SymbolsExchangeIdGetWithHttpInfo($exchange_id, $filter_symbol_id, $limit, $page, $contentType);
+        list($response) = $this->v1SymbolsExchangeIdGetWithHttpInfo($exchange_id, $filter_symbol_id, $contentType);
         return $response;
     }
 
@@ -414,17 +412,15 @@ class MetadataApi
      *
      * @param  string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param  string|null $filter_symbol_id Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
-     * @param  int|null $limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
-     * @param  int|null $page Page number (1-based, default 1) (optional, default to 1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdGet'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\FinFeedAPISymbolModel[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function v1SymbolsExchangeIdGetWithHttpInfo($exchange_id, $filter_symbol_id = null, $limit = 100, $page = 1, string $contentType = self::contentTypes['v1SymbolsExchangeIdGet'][0])
+    public function v1SymbolsExchangeIdGetWithHttpInfo($exchange_id, $filter_symbol_id = null, string $contentType = self::contentTypes['v1SymbolsExchangeIdGet'][0])
     {
-        $request = $this->v1SymbolsExchangeIdGetRequest($exchange_id, $filter_symbol_id, $limit, $page, $contentType);
+        $request = $this->v1SymbolsExchangeIdGetRequest($exchange_id, $filter_symbol_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -502,16 +498,14 @@ class MetadataApi
      *
      * @param  string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param  string|null $filter_symbol_id Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
-     * @param  int|null $limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
-     * @param  int|null $page Page number (1-based, default 1) (optional, default to 1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1SymbolsExchangeIdGetAsync($exchange_id, $filter_symbol_id = null, $limit = 100, $page = 1, string $contentType = self::contentTypes['v1SymbolsExchangeIdGet'][0])
+    public function v1SymbolsExchangeIdGetAsync($exchange_id, $filter_symbol_id = null, string $contentType = self::contentTypes['v1SymbolsExchangeIdGet'][0])
     {
-        return $this->v1SymbolsExchangeIdGetAsyncWithHttpInfo($exchange_id, $filter_symbol_id, $limit, $page, $contentType)
+        return $this->v1SymbolsExchangeIdGetAsyncWithHttpInfo($exchange_id, $filter_symbol_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -526,17 +520,15 @@ class MetadataApi
      *
      * @param  string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param  string|null $filter_symbol_id Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
-     * @param  int|null $limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
-     * @param  int|null $page Page number (1-based, default 1) (optional, default to 1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function v1SymbolsExchangeIdGetAsyncWithHttpInfo($exchange_id, $filter_symbol_id = null, $limit = 100, $page = 1, string $contentType = self::contentTypes['v1SymbolsExchangeIdGet'][0])
+    public function v1SymbolsExchangeIdGetAsyncWithHttpInfo($exchange_id, $filter_symbol_id = null, string $contentType = self::contentTypes['v1SymbolsExchangeIdGet'][0])
     {
         $returnType = '\OpenAPI\Client\Model\FinFeedAPISymbolModel[]';
-        $request = $this->v1SymbolsExchangeIdGetRequest($exchange_id, $filter_symbol_id, $limit, $page, $contentType);
+        $request = $this->v1SymbolsExchangeIdGetRequest($exchange_id, $filter_symbol_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -579,14 +571,12 @@ class MetadataApi
      *
      * @param  string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
      * @param  string|null $filter_symbol_id Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
-     * @param  int|null $limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
-     * @param  int|null $page Page number (1-based, default 1) (optional, default to 1)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1SymbolsExchangeIdGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function v1SymbolsExchangeIdGetRequest($exchange_id, $filter_symbol_id = null, $limit = 100, $page = 1, string $contentType = self::contentTypes['v1SymbolsExchangeIdGet'][0])
+    public function v1SymbolsExchangeIdGetRequest($exchange_id, $filter_symbol_id = null, string $contentType = self::contentTypes['v1SymbolsExchangeIdGet'][0])
     {
 
         // verify the required parameter 'exchange_id' is set
@@ -595,8 +585,6 @@ class MetadataApi
                 'Missing the required parameter $exchange_id when calling v1SymbolsExchangeIdGet'
             );
         }
-
-
 
 
 
@@ -612,24 +600,6 @@ class MetadataApi
             $filter_symbol_id,
             'filter_symbol_id', // param base name
             'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $limit,
-            'limit', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $page,
-            'page', // param base name
-            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

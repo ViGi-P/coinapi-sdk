@@ -111,14 +111,12 @@ export class MetadataApi {
     }
 
     /**
-     * Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
+     * 
      * @summary List of symbols for the exchange
      * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
      * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
-     * @param limit Maximum number of symbols to return (1-10000, default 100)
-     * @param page Page number (1-based, default 1)
      */
-    public v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, limit?: number, page?: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    public v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: Array<models.FinFeedAPISymbolModel>;  },
     { response: JQueryXHR; errorThrown: string }
     > {
@@ -133,12 +131,6 @@ export class MetadataApi {
 
         if (filterSymbolId !== null && filterSymbolId !== undefined) {
             queryParameters['filter_symbol_id'] = <string><any>filterSymbolId;
-        }
-        if (limit !== null && limit !== undefined) {
-            queryParameters['limit'] = <string><any>limit;
-        }
-        if (page !== null && page !== undefined) {
-            queryParameters['page'] = <string><any>page;
         }
 
         localVarPath = localVarPath + "?" + $.param(queryParameters);

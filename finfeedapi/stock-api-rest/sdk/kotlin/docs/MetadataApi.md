@@ -56,11 +56,9 @@ Configure JWT:
 
 <a id="v1SymbolsExchangeIdGet"></a>
 # **v1SymbolsExchangeIdGet**
-> kotlin.collections.List&lt;FinFeedAPISymbolModel&gt; v1SymbolsExchangeIdGet(exchangeId, filterSymbolId, limit, page)
+> kotlin.collections.List&lt;FinFeedAPISymbolModel&gt; v1SymbolsExchangeIdGet(exchangeId, filterSymbolId)
 
 List of symbols for the exchange
-
-Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
 
 ### Example
 ```kotlin
@@ -71,10 +69,8 @@ Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control pag
 val apiInstance = MetadataApi()
 val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of the exchange (from the Metadata -> Exchanges)
 val filterSymbolId : kotlin.String = filterSymbolId_example // kotlin.String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
-val limit : kotlin.Int = 56 // kotlin.Int | Maximum number of symbols to return (1-10000, default 100)
-val page : kotlin.Int = 56 // kotlin.Int | Page number (1-based, default 1)
 try {
-    val result : kotlin.collections.List<FinFeedAPISymbolModel> = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId, limit, page)
+    val result : kotlin.collections.List<FinFeedAPISymbolModel> = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling MetadataApi#v1SymbolsExchangeIdGet")
@@ -87,11 +83,9 @@ try {
 
 ### Parameters
 | **exchangeId** | **kotlin.String**| The ID of the exchange (from the Metadata -&gt; Exchanges) | |
-| **filterSymbolId** | **kotlin.String**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] |
-| **limit** | **kotlin.Int**| Maximum number of symbols to return (1-10000, default 100) | [optional] [default to 100] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **page** | **kotlin.Int**| Page number (1-based, default 1) | [optional] [default to 1] |
+| **filterSymbolId** | **kotlin.String**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] |
 
 ### Return type
 

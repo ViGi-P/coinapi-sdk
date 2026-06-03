@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictInt, StrictStr
+from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
 from api_bricks_stock_api_rest.models.fin_feed_api_exchange_model import FinFeedAPIExchangeModel
@@ -291,8 +291,6 @@ class MetadataApi:
         self,
         exchange_id: Annotated[StrictStr, Field(description="The ID of the exchange (from the Metadata -> Exchanges)")],
         filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of symbols to return (1-10000, default 100)")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number (1-based, default 1)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -308,16 +306,11 @@ class MetadataApi:
     ) -> List[FinFeedAPISymbolModel]:
         """List of symbols for the exchange
 
-        Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
 
         :param exchange_id: The ID of the exchange (from the Metadata -> Exchanges) (required)
         :type exchange_id: str
         :param filter_symbol_id: Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
         :type filter_symbol_id: str
-        :param limit: Maximum number of symbols to return (1-10000, default 100)
-        :type limit: int
-        :param page: Page number (1-based, default 1)
-        :type page: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -343,8 +336,6 @@ class MetadataApi:
         _param = self._v1_symbols_exchange_id_get_serialize(
             exchange_id=exchange_id,
             filter_symbol_id=filter_symbol_id,
-            limit=limit,
-            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -370,8 +361,6 @@ class MetadataApi:
         self,
         exchange_id: Annotated[StrictStr, Field(description="The ID of the exchange (from the Metadata -> Exchanges)")],
         filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of symbols to return (1-10000, default 100)")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number (1-based, default 1)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -387,16 +376,11 @@ class MetadataApi:
     ) -> ApiResponse[List[FinFeedAPISymbolModel]]:
         """List of symbols for the exchange
 
-        Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
 
         :param exchange_id: The ID of the exchange (from the Metadata -> Exchanges) (required)
         :type exchange_id: str
         :param filter_symbol_id: Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
         :type filter_symbol_id: str
-        :param limit: Maximum number of symbols to return (1-10000, default 100)
-        :type limit: int
-        :param page: Page number (1-based, default 1)
-        :type page: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -422,8 +406,6 @@ class MetadataApi:
         _param = self._v1_symbols_exchange_id_get_serialize(
             exchange_id=exchange_id,
             filter_symbol_id=filter_symbol_id,
-            limit=limit,
-            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -449,8 +431,6 @@ class MetadataApi:
         self,
         exchange_id: Annotated[StrictStr, Field(description="The ID of the exchange (from the Metadata -> Exchanges)")],
         filter_symbol_id: Annotated[Optional[StrictStr], Field(description="Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)")] = None,
-        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of symbols to return (1-10000, default 100)")] = None,
-        page: Annotated[Optional[StrictInt], Field(description="Page number (1-based, default 1)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -466,16 +446,11 @@ class MetadataApi:
     ) -> RESTResponseType:
         """List of symbols for the exchange
 
-        Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
 
         :param exchange_id: The ID of the exchange (from the Metadata -> Exchanges) (required)
         :type exchange_id: str
         :param filter_symbol_id: Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
         :type filter_symbol_id: str
-        :param limit: Maximum number of symbols to return (1-10000, default 100)
-        :type limit: int
-        :param page: Page number (1-based, default 1)
-        :type page: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -501,8 +476,6 @@ class MetadataApi:
         _param = self._v1_symbols_exchange_id_get_serialize(
             exchange_id=exchange_id,
             filter_symbol_id=filter_symbol_id,
-            limit=limit,
-            page=page,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -523,8 +496,6 @@ class MetadataApi:
         self,
         exchange_id,
         filter_symbol_id,
-        limit,
-        page,
         _request_auth,
         _content_type,
         _headers,
@@ -552,14 +523,6 @@ class MetadataApi:
         if filter_symbol_id is not None:
             
             _query_params.append(('filter_symbol_id', filter_symbol_id))
-            
-        if limit is not None:
-            
-            _query_params.append(('limit', limit))
-            
-        if page is not None:
-            
-            _query_params.append(('page', page))
             
         # process the header parameters
         # process the form parameters

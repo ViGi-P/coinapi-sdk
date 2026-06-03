@@ -111,12 +111,6 @@ The ID of the exchange (from the Metadata -> Exchanges)
 .PARAMETER FilterSymbolId
 Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
 
-.PARAMETER Limit
-Maximum number of symbols to return (1-10000, default 100)
-
-.PARAMETER Page
-Page number (1-based, default 1)
-
 .PARAMETER ReturnType
 
 Select the return type (optional): text/plain, application/json, text/json
@@ -138,12 +132,6 @@ function Invoke-V1SymbolsExchangeIdGet {
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
         ${FilterSymbolId},
-        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int32]]
-        ${Limit},
-        [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int32]]
-        ${Page},
         [String]
         [ValidateSet("text/plain", "application/json", "text/json")]
         $ReturnType,
@@ -181,14 +169,6 @@ function Invoke-V1SymbolsExchangeIdGet {
 
         if ($FilterSymbolId) {
             $LocalVarQueryParameters['filter_symbol_id'] = $FilterSymbolId
-        }
-
-        if ($Limit) {
-            $LocalVarQueryParameters['limit'] = $Limit
-        }
-
-        if ($Page) {
-            $LocalVarQueryParameters['page'] = $Page
         }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {

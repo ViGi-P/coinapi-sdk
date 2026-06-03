@@ -234,7 +234,7 @@ static bool v1SymbolsExchangeIdGetProcessor(MemoryStruct_s p_chunk, long code, c
 }
 
 static bool v1SymbolsExchangeIdGetHelper(char * accessToken,
-	std::string exchangeId, std::string filterSymbolId, int limit, int page, 
+	std::string exchangeId, std::string filterSymbolId, 
 	void(* handler)(std::list<FinFeedAPI.SymbolModel>, Error, void* )
 	, void* userData, bool isAsync)
 {
@@ -256,20 +256,6 @@ static bool v1SymbolsExchangeIdGetHelper(char * accessToken,
 	queryParams.insert(pair<string, string>("filter_symbol_id", itemAtq));
 	if( itemAtq.empty()==true){
 		queryParams.erase("filter_symbol_id");
-	}
-
-
-	itemAtq = stringify(&limit, "int");
-	queryParams.insert(pair<string, string>("limit", itemAtq));
-	if( itemAtq.empty()==true){
-		queryParams.erase("limit");
-	}
-
-
-	itemAtq = stringify(&page, "int");
-	queryParams.insert(pair<string, string>("page", itemAtq));
-	if( itemAtq.empty()==true){
-		queryParams.erase("page");
 	}
 
 	string mBody = "";
@@ -332,22 +318,22 @@ static bool v1SymbolsExchangeIdGetHelper(char * accessToken,
 
 
 bool MetadataManager::v1SymbolsExchangeIdGetAsync(char * accessToken,
-	std::string exchangeId, std::string filterSymbolId, int limit, int page, 
+	std::string exchangeId, std::string filterSymbolId, 
 	void(* handler)(std::list<FinFeedAPI.SymbolModel>, Error, void* )
 	, void* userData)
 {
 	return v1SymbolsExchangeIdGetHelper(accessToken,
-	exchangeId, filterSymbolId, limit, page, 
+	exchangeId, filterSymbolId, 
 	handler, userData, true);
 }
 
 bool MetadataManager::v1SymbolsExchangeIdGetSync(char * accessToken,
-	std::string exchangeId, std::string filterSymbolId, int limit, int page, 
+	std::string exchangeId, std::string filterSymbolId, 
 	void(* handler)(std::list<FinFeedAPI.SymbolModel>, Error, void* )
 	, void* userData)
 {
 	return v1SymbolsExchangeIdGetHelper(accessToken,
-	exchangeId, filterSymbolId, limit, page, 
+	exchangeId, filterSymbolId, 
 	handler, userData, false);
 }
 

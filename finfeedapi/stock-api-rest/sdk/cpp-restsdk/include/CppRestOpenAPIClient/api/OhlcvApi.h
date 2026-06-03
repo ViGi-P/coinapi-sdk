@@ -51,19 +51,17 @@ public:
     /// Historical data by exchange
     /// </summary>
     /// <remarks>
-    /// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
+    /// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
     /// </remarks>
     /// <param name="exchangeId">Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)</param>
     /// <param name="periodId">Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)</param>
     /// <param name="timeStart">Timeseries starting time in ISO 8601</param>
     /// <param name="timeEnd">Timeseries ending time in ISO 8601</param>
-    /// <param name="limit">Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 0)</param>
     pplx::task<std::vector<std::shared_ptr<OHLCVTimeSeries_ExchangeTimeseriesItem>>> v1OhlcvExchangeExchangeIdHistoryGet(
         utility::string_t exchangeId,
         utility::string_t periodId,
         utility::string_t timeStart,
-        utility::string_t timeEnd,
-        boost::optional<int32_t> limit
+        utility::string_t timeEnd
     ) const;
     /// <summary>
     /// Historical data

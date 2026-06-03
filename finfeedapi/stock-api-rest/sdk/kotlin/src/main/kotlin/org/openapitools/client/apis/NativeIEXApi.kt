@@ -61,10 +61,9 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /v1/native/iex/admin/messages/{symbol}
      * Get Admin Messages
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return kotlin.collections.List<ModelsAdminMessageModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -74,8 +73,8 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1NativeIexAdminMessagesSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int? = 100) : kotlin.collections.List<ModelsAdminMessageModel> {
-        val localVarResponse = v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol = symbol, date = date, limit = limit)
+    fun v1NativeIexAdminMessagesSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<ModelsAdminMessageModel> {
+        val localVarResponse = v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol = symbol, date = date)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ModelsAdminMessageModel>
@@ -95,18 +94,17 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /v1/native/iex/admin/messages/{symbol}
      * Get Admin Messages
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return ApiResponse<kotlin.collections.List<ModelsAdminMessageModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<ModelsAdminMessageModel>?> {
-        val localVariableConfig = v1NativeIexAdminMessagesSymbolGetRequestConfig(symbol = symbol, date = date, limit = limit)
+    fun v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<ModelsAdminMessageModel>?> {
+        val localVariableConfig = v1NativeIexAdminMessagesSymbolGetRequestConfig(symbol = symbol, date = date)
 
         return request<Unit, kotlin.collections.List<ModelsAdminMessageModel>>(
             localVariableConfig
@@ -117,18 +115,14 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * To obtain the request config of the operation v1NativeIexAdminMessagesSymbolGet
      *
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return RequestConfig
      */
-    fun v1NativeIexAdminMessagesSymbolGetRequestConfig(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int?) : RequestConfig<Unit> {
+    fun v1NativeIexAdminMessagesSymbolGetRequestConfig(symbol: kotlin.String, date: java.time.OffsetDateTime) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("date", listOf(parseDateToQueryString<java.time.OffsetDateTime>(date)))
-                if (limit != null) {
-                    put("limit", listOf(limit.toString()))
-                }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -146,9 +140,8 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /v1/native/iex/admin/system-event
      * Get System Events
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
      * @return kotlin.collections.List<IEXSystemEventSystemEventModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -158,8 +151,8 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1NativeIexAdminSystemEventGet(date: java.time.OffsetDateTime, limit: kotlin.Int? = 100) : kotlin.collections.List<IEXSystemEventSystemEventModel> {
-        val localVarResponse = v1NativeIexAdminSystemEventGetWithHttpInfo(date = date, limit = limit)
+    fun v1NativeIexAdminSystemEventGet(date: java.time.OffsetDateTime) : kotlin.collections.List<IEXSystemEventSystemEventModel> {
+        val localVarResponse = v1NativeIexAdminSystemEventGetWithHttpInfo(date = date)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IEXSystemEventSystemEventModel>
@@ -179,17 +172,16 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /v1/native/iex/admin/system-event
      * Get System Events
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
      * @return ApiResponse<kotlin.collections.List<IEXSystemEventSystemEventModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1NativeIexAdminSystemEventGetWithHttpInfo(date: java.time.OffsetDateTime, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<IEXSystemEventSystemEventModel>?> {
-        val localVariableConfig = v1NativeIexAdminSystemEventGetRequestConfig(date = date, limit = limit)
+    fun v1NativeIexAdminSystemEventGetWithHttpInfo(date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<IEXSystemEventSystemEventModel>?> {
+        val localVariableConfig = v1NativeIexAdminSystemEventGetRequestConfig(date = date)
 
         return request<Unit, kotlin.collections.List<IEXSystemEventSystemEventModel>>(
             localVariableConfig
@@ -200,17 +192,13 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * To obtain the request config of the operation v1NativeIexAdminSystemEventGet
      *
      * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
      * @return RequestConfig
      */
-    fun v1NativeIexAdminSystemEventGetRequestConfig(date: java.time.OffsetDateTime, limit: kotlin.Int?) : RequestConfig<Unit> {
+    fun v1NativeIexAdminSystemEventGetRequestConfig(date: java.time.OffsetDateTime) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("date", listOf(parseDateToQueryString<java.time.OffsetDateTime>(date)))
-                if (limit != null) {
-                    put("limit", listOf(limit.toString()))
-                }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -228,10 +216,9 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /v1/native/iex/level1-quote/{symbol}
      * Get Level-1 Quotes
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -241,8 +228,8 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1NativeIexLevel1QuoteSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int? = 100) : kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel> {
-        val localVarResponse = v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol = symbol, date = date, limit = limit)
+    fun v1NativeIexLevel1QuoteSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel> {
+        val localVarResponse = v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol = symbol, date = date)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel>
@@ -262,18 +249,17 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /v1/native/iex/level1-quote/{symbol}
      * Get Level-1 Quotes
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return ApiResponse<kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel>?> {
-        val localVariableConfig = v1NativeIexLevel1QuoteSymbolGetRequestConfig(symbol = symbol, date = date, limit = limit)
+    fun v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel>?> {
+        val localVariableConfig = v1NativeIexLevel1QuoteSymbolGetRequestConfig(symbol = symbol, date = date)
 
         return request<Unit, kotlin.collections.List<IEXQuoteUpdateQuoteUpdateModel>>(
             localVariableConfig
@@ -284,18 +270,14 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * To obtain the request config of the operation v1NativeIexLevel1QuoteSymbolGet
      *
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return RequestConfig
      */
-    fun v1NativeIexLevel1QuoteSymbolGetRequestConfig(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int?) : RequestConfig<Unit> {
+    fun v1NativeIexLevel1QuoteSymbolGetRequestConfig(symbol: kotlin.String, date: java.time.OffsetDateTime) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("date", listOf(parseDateToQueryString<java.time.OffsetDateTime>(date)))
-                if (limit != null) {
-                    put("limit", listOf(limit.toString()))
-                }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -313,10 +295,9 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /v1/native/iex/level2-price-level-update/{symbol}
      * Get Level-2 Price Level Book
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -326,8 +307,8 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int? = 100) : kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel> {
-        val localVarResponse = v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol = symbol, date = date, limit = limit)
+    fun v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel> {
+        val localVarResponse = v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol = symbol, date = date)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel>
@@ -347,18 +328,17 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /v1/native/iex/level2-price-level-update/{symbol}
      * Get Level-2 Price Level Book
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return ApiResponse<kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel>?> {
-        val localVariableConfig = v1NativeIexLevel2PriceLevelUpdateSymbolGetRequestConfig(symbol = symbol, date = date, limit = limit)
+    fun v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel>?> {
+        val localVariableConfig = v1NativeIexLevel2PriceLevelUpdateSymbolGetRequestConfig(symbol = symbol, date = date)
 
         return request<Unit, kotlin.collections.List<IEXPriceLevelUpdatePriceLevelUpdateModel>>(
             localVariableConfig
@@ -369,18 +349,14 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * To obtain the request config of the operation v1NativeIexLevel2PriceLevelUpdateSymbolGet
      *
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return RequestConfig
      */
-    fun v1NativeIexLevel2PriceLevelUpdateSymbolGetRequestConfig(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int?) : RequestConfig<Unit> {
+    fun v1NativeIexLevel2PriceLevelUpdateSymbolGetRequestConfig(symbol: kotlin.String, date: java.time.OffsetDateTime) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("date", listOf(parseDateToQueryString<java.time.OffsetDateTime>(date)))
-                if (limit != null) {
-                    put("limit", listOf(limit.toString()))
-                }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -398,10 +374,9 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /v1/native/iex/level3-order-book/{symbol}
      * Get Level-3 Order Book
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return kotlin.collections.List<ModelsOrderBookModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -411,8 +386,8 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1NativeIexLevel3OrderBookSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int? = 100) : kotlin.collections.List<ModelsOrderBookModel> {
-        val localVarResponse = v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol = symbol, date = date, limit = limit)
+    fun v1NativeIexLevel3OrderBookSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<ModelsOrderBookModel> {
+        val localVarResponse = v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol = symbol, date = date)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<ModelsOrderBookModel>
@@ -432,18 +407,17 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /v1/native/iex/level3-order-book/{symbol}
      * Get Level-3 Order Book
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return ApiResponse<kotlin.collections.List<ModelsOrderBookModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<ModelsOrderBookModel>?> {
-        val localVariableConfig = v1NativeIexLevel3OrderBookSymbolGetRequestConfig(symbol = symbol, date = date, limit = limit)
+    fun v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<ModelsOrderBookModel>?> {
+        val localVariableConfig = v1NativeIexLevel3OrderBookSymbolGetRequestConfig(symbol = symbol, date = date)
 
         return request<Unit, kotlin.collections.List<ModelsOrderBookModel>>(
             localVariableConfig
@@ -454,18 +428,14 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * To obtain the request config of the operation v1NativeIexLevel3OrderBookSymbolGet
      *
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return RequestConfig
      */
-    fun v1NativeIexLevel3OrderBookSymbolGetRequestConfig(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int?) : RequestConfig<Unit> {
+    fun v1NativeIexLevel3OrderBookSymbolGetRequestConfig(symbol: kotlin.String, date: java.time.OffsetDateTime) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("date", listOf(parseDateToQueryString<java.time.OffsetDateTime>(date)))
-                if (limit != null) {
-                    put("limit", listOf(limit.toString()))
-                }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -483,10 +453,9 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /v1/native/iex/trade/{symbol}
      * Get Trades
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return kotlin.collections.List<IEXTradeTradeModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -496,8 +465,8 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1NativeIexTradeSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int? = 100) : kotlin.collections.List<IEXTradeTradeModel> {
-        val localVarResponse = v1NativeIexTradeSymbolGetWithHttpInfo(symbol = symbol, date = date, limit = limit)
+    fun v1NativeIexTradeSymbolGet(symbol: kotlin.String, date: java.time.OffsetDateTime) : kotlin.collections.List<IEXTradeTradeModel> {
+        val localVarResponse = v1NativeIexTradeSymbolGetWithHttpInfo(symbol = symbol, date = date)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<IEXTradeTradeModel>
@@ -517,18 +486,17 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
     /**
      * GET /v1/native/iex/trade/{symbol}
      * Get Trades
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return ApiResponse<kotlin.collections.List<IEXTradeTradeModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1NativeIexTradeSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int?) : ApiResponse<kotlin.collections.List<IEXTradeTradeModel>?> {
-        val localVariableConfig = v1NativeIexTradeSymbolGetRequestConfig(symbol = symbol, date = date, limit = limit)
+    fun v1NativeIexTradeSymbolGetWithHttpInfo(symbol: kotlin.String, date: java.time.OffsetDateTime) : ApiResponse<kotlin.collections.List<IEXTradeTradeModel>?> {
+        val localVariableConfig = v1NativeIexTradeSymbolGetRequestConfig(symbol = symbol, date = date)
 
         return request<Unit, kotlin.collections.List<IEXTradeTradeModel>>(
             localVariableConfig
@@ -539,18 +507,14 @@ open class NativeIEXApi(basePath: kotlin.String = defaultBasePath, client: Call.
      * To obtain the request config of the operation v1NativeIexTradeSymbolGet
      *
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      * @return RequestConfig
      */
-    fun v1NativeIexTradeSymbolGetRequestConfig(symbol: kotlin.String, date: java.time.OffsetDateTime, limit: kotlin.Int?) : RequestConfig<Unit> {
+    fun v1NativeIexTradeSymbolGetRequestConfig(symbol: kotlin.String, date: java.time.OffsetDateTime) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("date", listOf(parseDateToQueryString<java.time.OffsetDateTime>(date)))
-                if (limit != null) {
-                    put("limit", listOf(limit.toString()))
-                }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"

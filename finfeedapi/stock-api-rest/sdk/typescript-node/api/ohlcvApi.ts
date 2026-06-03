@@ -97,15 +97,14 @@ export class OhlcvApi {
     }
 
     /**
-     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
+     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
      * @summary Historical data by exchange
      * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
      * @param timeStart Timeseries starting time in ISO 8601
      * @param timeEnd Timeseries ending time in ISO 8601
-     * @param limit Maximum number of symbol rows to return (1-10000, default 100)
      */
-    public async v1OhlcvExchangeExchangeIdHistoryGet (exchangeId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeSeriesExchangeTimeseriesItem>;  }> {
+    public async v1OhlcvExchangeExchangeIdHistoryGet (exchangeId: string, periodId: string, timeStart: string, timeEnd: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<OHLCVTimeSeriesExchangeTimeseriesItem>;  }> {
         const localVarPath = this.basePath + '/v1/ohlcv/exchange/{exchange_id}/history'
             .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
@@ -149,10 +148,6 @@ export class OhlcvApi {
 
         if (timeEnd !== undefined) {
             localVarQueryParameters['time_end'] = ObjectSerializer.serialize(timeEnd, "string");
-        }
-
-        if (limit !== undefined) {
-            localVarQueryParameters['limit'] = ObjectSerializer.serialize(limit, "number");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);

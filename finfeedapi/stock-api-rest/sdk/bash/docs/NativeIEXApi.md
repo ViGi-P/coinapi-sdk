@@ -17,12 +17,10 @@ Method | HTTP request | Description
 
 Get Admin Messages
 
-Streaming endpoint. Use 'limit' to cap the number of records returned (default 100, max 10000).
-
 ### Example
 
 ```bash
- v1NativeIexAdminMessagesSymbolGet symbol=value  date=value  limit=value
+ v1NativeIexAdminMessagesSymbolGet symbol=value  date=value
 ```
 
 ### Parameters
@@ -31,8 +29,7 @@ Streaming endpoint. Use 'limit' to cap the number of records returned (default 1
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **string** | The symbol identifier | [default to null]
- **date** | **string** | Date in format YYYY-MM-DD | [default to null]
- **limit** | **integer** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **string** | Optional date in format YYYY-MM-DD (defaults to latest available data) | [default to null]
 
 ### Return type
 
@@ -54,12 +51,10 @@ Name | Type | Description  | Notes
 
 Get System Events
 
-Streaming endpoint. Use 'limit' to cap the number of records returned (default 100, max 10000).
-
 ### Example
 
 ```bash
- v1NativeIexAdminSystemEventGet  date=value  limit=value
+ v1NativeIexAdminSystemEventGet  date=value
 ```
 
 ### Parameters
@@ -68,7 +63,6 @@ Streaming endpoint. Use 'limit' to cap the number of records returned (default 1
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | **string** | Date in format YYYY-MM-DD | [default to null]
- **limit** | **integer** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -90,12 +84,10 @@ Name | Type | Description  | Notes
 
 Get Level-1 Quotes
 
-Streaming endpoint. Use 'limit' to cap the number of records returned (default 100, max 10000).
-
 ### Example
 
 ```bash
- v1NativeIexLevel1QuoteSymbolGet symbol=value  date=value  limit=value
+ v1NativeIexLevel1QuoteSymbolGet symbol=value  date=value
 ```
 
 ### Parameters
@@ -104,8 +96,7 @@ Streaming endpoint. Use 'limit' to cap the number of records returned (default 1
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **string** | The symbol identifier | [default to null]
- **date** | **string** | Date in format YYYY-MM-DD | [default to null]
- **limit** | **integer** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **string** | Optional date in format YYYY-MM-DD (defaults to latest available data) | [default to null]
 
 ### Return type
 
@@ -127,12 +118,10 @@ Name | Type | Description  | Notes
 
 Get Level-2 Price Level Book
 
-Streaming endpoint. Use 'limit' to cap the number of records returned (default 100, max 10000).
-
 ### Example
 
 ```bash
- v1NativeIexLevel2PriceLevelUpdateSymbolGet symbol=value  date=value  limit=value
+ v1NativeIexLevel2PriceLevelUpdateSymbolGet symbol=value  date=value
 ```
 
 ### Parameters
@@ -141,8 +130,7 @@ Streaming endpoint. Use 'limit' to cap the number of records returned (default 1
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **string** | The symbol identifier | [default to null]
- **date** | **string** | Date in format YYYY-MM-DD | [default to null]
- **limit** | **integer** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **string** | Optional date in format YYYY-MM-DD (defaults to latest available data) | [default to null]
 
 ### Return type
 
@@ -164,12 +152,10 @@ Name | Type | Description  | Notes
 
 Get Level-3 Order Book
 
-Streaming endpoint. Use 'limit' to cap the number of records returned (default 100, max 10000).
-
 ### Example
 
 ```bash
- v1NativeIexLevel3OrderBookSymbolGet symbol=value  date=value  limit=value
+ v1NativeIexLevel3OrderBookSymbolGet symbol=value  date=value
 ```
 
 ### Parameters
@@ -178,8 +164,7 @@ Streaming endpoint. Use 'limit' to cap the number of records returned (default 1
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **string** | The symbol identifier | [default to null]
- **date** | **string** | Date in format YYYY-MM-DD | [default to null]
- **limit** | **integer** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **string** | Optional date in format YYYY-MM-DD (defaults to latest available data) | [default to null]
 
 ### Return type
 
@@ -201,12 +186,10 @@ Name | Type | Description  | Notes
 
 Get Trades
 
-Streaming endpoint. Use 'limit' to cap the number of trade records returned (default 100, max 10000).
-
 ### Example
 
 ```bash
- v1NativeIexTradeSymbolGet symbol=value  date=value  limit=value
+ v1NativeIexTradeSymbolGet symbol=value  date=value
 ```
 
 ### Parameters
@@ -215,8 +198,7 @@ Streaming endpoint. Use 'limit' to cap the number of trade records returned (def
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **string** | The symbol identifier | [default to null]
- **date** | **string** | Date in format YYYY-MM-DD | [default to null]
- **limit** | **integer** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **string** | Optional date in format YYYY-MM-DD (defaults to latest available data) | [default to null]
 
 ### Return type
 

@@ -44,12 +44,9 @@ describe 'MetadataApi' do
 
   # unit tests for v1_symbols_exchange_id_get
   # List of symbols for the exchange
-  # Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
   # @param exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges)
   # @param [Hash] opts the optional parameters
   # @option opts [String] :filter_symbol_id Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
-  # @option opts [Integer] :limit Maximum number of symbols to return (1-10000, default 100)
-  # @option opts [Integer] :page Page number (1-based, default 1)
   # @return [Array<FinFeedAPISymbolModel>]
   describe 'v1_symbols_exchange_id_get test' do
     it 'should work' do

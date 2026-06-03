@@ -39,8 +39,6 @@ class MetadataApi(baseUrl: String) {
       
 
   /**
-   * Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
-   * 
    * Expected answers:
    *   code 200 : Seq[SymbolModel] (successful operation)
    * 
@@ -50,15 +48,11 @@ class MetadataApi(baseUrl: String) {
    * 
    * @param exchangeId The ID of the exchange (from the Metadata -> Exchanges)
    * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
-   * @param limit Maximum number of symbols to return (1-10000, default 100)
-   * @param page Page number (1-based, default 1)
    */
-  def v1SymbolsExchangeIdGet(exchangeId: String, filterSymbolId: Option[String] = None, limit: Option[Int] = None, page: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[SymbolModel]] =
+  def v1SymbolsExchangeIdGet(exchangeId: String, filterSymbolId: Option[String] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[SymbolModel]] =
     ApiRequest[Seq[SymbolModel]](ApiMethods.GET, baseUrl, "/v1/symbols/{exchange_id}", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("filter_symbol_id", filterSymbolId)
-      .withQueryParam("limit", limit)
-      .withQueryParam("page", page)
       .withPathParam("exchange_id", exchangeId)
       .withSuccessResponse[Seq[SymbolModel]](200)
       

@@ -15,11 +15,9 @@ Method | HTTP request | Description
 
 ## v1NativeIexAdminMessagesSymbolGet
 
-> [ModelsAdminMessageModel] v1NativeIexAdminMessagesSymbolGet(symbol, date, opts)
+> [ModelsAdminMessageModel] v1NativeIexAdminMessagesSymbolGet(symbol, date)
 
 Get Admin Messages
-
-Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -37,11 +35,8 @@ JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new FinFeedApiStockRestApi.NativeIEXApi();
 let symbol = "symbol_example"; // String | The symbol identifier
-let date = new Date("2013-10-20T19:20:30+01:00"); // Date | Date in format YYYY-MM-DD
-let opts = {
-  'limit': 100 // Number | Maximum number of records to return (1-10000, default 100)
-};
-apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date, opts, (error, data, response) => {
+let date = new Date("2013-10-20T19:20:30+01:00"); // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
+apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -56,8 +51,7 @@ apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date, opts, (error, data, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | 
- **date** | **Date**| Date in format YYYY-MM-DD | 
- **limit** | **Number**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **Date**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -75,11 +69,9 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexAdminSystemEventGet
 
-> [IEXSystemEventSystemEventModel] v1NativeIexAdminSystemEventGet(date, opts)
+> [IEXSystemEventSystemEventModel] v1NativeIexAdminSystemEventGet(date)
 
 Get System Events
-
-Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -97,10 +89,7 @@ JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new FinFeedApiStockRestApi.NativeIEXApi();
 let date = new Date("2013-10-20T19:20:30+01:00"); // Date | Date in format YYYY-MM-DD
-let opts = {
-  'limit': 100 // Number | Maximum number of records to return (1-10000, default 100)
-};
-apiInstance.v1NativeIexAdminSystemEventGet(date, opts, (error, data, response) => {
+apiInstance.v1NativeIexAdminSystemEventGet(date, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -115,7 +104,6 @@ apiInstance.v1NativeIexAdminSystemEventGet(date, opts, (error, data, response) =
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | **Date**| Date in format YYYY-MM-DD | 
- **limit** | **Number**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -133,11 +121,9 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexLevel1QuoteSymbolGet
 
-> [IEXQuoteUpdateQuoteUpdateModel] v1NativeIexLevel1QuoteSymbolGet(symbol, date, opts)
+> [IEXQuoteUpdateQuoteUpdateModel] v1NativeIexLevel1QuoteSymbolGet(symbol, date)
 
 Get Level-1 Quotes
-
-Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -155,11 +141,8 @@ JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new FinFeedApiStockRestApi.NativeIEXApi();
 let symbol = "symbol_example"; // String | The symbol identifier
-let date = new Date("2013-10-20T19:20:30+01:00"); // Date | Date in format YYYY-MM-DD
-let opts = {
-  'limit': 100 // Number | Maximum number of records to return (1-10000, default 100)
-};
-apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date, opts, (error, data, response) => {
+let date = new Date("2013-10-20T19:20:30+01:00"); // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
+apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -174,8 +157,7 @@ apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date, opts, (error, data, re
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | 
- **date** | **Date**| Date in format YYYY-MM-DD | 
- **limit** | **Number**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **Date**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -193,11 +175,9 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexLevel2PriceLevelUpdateSymbolGet
 
-> [IEXPriceLevelUpdatePriceLevelUpdateModel] v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, opts)
+> [IEXPriceLevelUpdatePriceLevelUpdateModel] v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
 
 Get Level-2 Price Level Book
-
-Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -215,11 +195,8 @@ JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new FinFeedApiStockRestApi.NativeIEXApi();
 let symbol = "symbol_example"; // String | The symbol identifier
-let date = new Date("2013-10-20T19:20:30+01:00"); // Date | Date in format YYYY-MM-DD
-let opts = {
-  'limit': 100 // Number | Maximum number of records to return (1-10000, default 100)
-};
-apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, opts, (error, data, response) => {
+let date = new Date("2013-10-20T19:20:30+01:00"); // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
+apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -234,8 +211,7 @@ apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, opts, (erro
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | 
- **date** | **Date**| Date in format YYYY-MM-DD | 
- **limit** | **Number**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **Date**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -253,11 +229,9 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexLevel3OrderBookSymbolGet
 
-> [ModelsOrderBookModel] v1NativeIexLevel3OrderBookSymbolGet(symbol, date, opts)
+> [ModelsOrderBookModel] v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
 
 Get Level-3 Order Book
-
-Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -275,11 +249,8 @@ JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new FinFeedApiStockRestApi.NativeIEXApi();
 let symbol = "symbol_example"; // String | The symbol identifier
-let date = new Date("2013-10-20T19:20:30+01:00"); // Date | Date in format YYYY-MM-DD
-let opts = {
-  'limit': 100 // Number | Maximum number of records to return (1-10000, default 100)
-};
-apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date, opts, (error, data, response) => {
+let date = new Date("2013-10-20T19:20:30+01:00"); // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
+apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -294,8 +265,7 @@ apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date, opts, (error, data
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | 
- **date** | **Date**| Date in format YYYY-MM-DD | 
- **limit** | **Number**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **Date**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -313,11 +283,9 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexTradeSymbolGet
 
-> [IEXTradeTradeModel] v1NativeIexTradeSymbolGet(symbol, date, opts)
+> [IEXTradeTradeModel] v1NativeIexTradeSymbolGet(symbol, date)
 
 Get Trades
-
-Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
 
 ### Example
 
@@ -335,11 +303,8 @@ JWT.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new FinFeedApiStockRestApi.NativeIEXApi();
 let symbol = "symbol_example"; // String | The symbol identifier
-let date = new Date("2013-10-20T19:20:30+01:00"); // Date | Date in format YYYY-MM-DD
-let opts = {
-  'limit': 100 // Number | Maximum number of records to return (1-10000, default 100)
-};
-apiInstance.v1NativeIexTradeSymbolGet(symbol, date, opts, (error, data, response) => {
+let date = new Date("2013-10-20T19:20:30+01:00"); // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
+apiInstance.v1NativeIexTradeSymbolGet(symbol, date, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -354,8 +319,7 @@ apiInstance.v1NativeIexTradeSymbolGet(symbol, date, opts, (error, data, response
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | 
- **date** | **Date**| Date in format YYYY-MM-DD | 
- **limit** | **Number**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **Date**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 

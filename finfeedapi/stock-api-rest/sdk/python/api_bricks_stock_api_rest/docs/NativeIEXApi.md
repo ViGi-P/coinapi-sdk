@@ -13,11 +13,9 @@ Method | HTTP request | Description
 
 
 # **v1_native_iex_admin_messages_symbol_get**
-> List[ModelsAdminMessageModel] v1_native_iex_admin_messages_symbol_get(symbol, var_date, limit=limit)
+> List[ModelsAdminMessageModel] v1_native_iex_admin_messages_symbol_get(symbol, var_date)
 
 Get Admin Messages
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -57,12 +55,11 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = api_bricks_stock_api_rest.NativeIEXApi(api_client)
     symbol = 'symbol_example' # str | The symbol identifier
-    var_date = '2013-10-20T19:20:30+01:00' # datetime | Date in format YYYY-MM-DD
-    limit = 100 # int | Maximum number of records to return (1-10000, default 100) (optional) (default to 100)
+    var_date = '2013-10-20T19:20:30+01:00' # datetime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
     try:
         # Get Admin Messages
-        api_response = api_instance.v1_native_iex_admin_messages_symbol_get(symbol, var_date, limit=limit)
+        api_response = api_instance.v1_native_iex_admin_messages_symbol_get(symbol, var_date)
         print("The response of NativeIEXApi->v1_native_iex_admin_messages_symbol_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -77,8 +74,7 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **str**| The symbol identifier | 
- **var_date** | **datetime**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **var_date** | **datetime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -102,11 +98,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_admin_system_event_get**
-> List[IEXSystemEventSystemEventModel] v1_native_iex_admin_system_event_get(var_date, limit=limit)
+> List[IEXSystemEventSystemEventModel] v1_native_iex_admin_system_event_get(var_date)
 
 Get System Events
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -146,11 +140,10 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = api_bricks_stock_api_rest.NativeIEXApi(api_client)
     var_date = '2013-10-20T19:20:30+01:00' # datetime | Date in format YYYY-MM-DD
-    limit = 100 # int | Maximum number of records to return (1-10000, default 100) (optional) (default to 100)
 
     try:
         # Get System Events
-        api_response = api_instance.v1_native_iex_admin_system_event_get(var_date, limit=limit)
+        api_response = api_instance.v1_native_iex_admin_system_event_get(var_date)
         print("The response of NativeIEXApi->v1_native_iex_admin_system_event_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -165,7 +158,6 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **var_date** | **datetime**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -189,11 +181,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level1_quote_symbol_get**
-> List[IEXQuoteUpdateQuoteUpdateModel] v1_native_iex_level1_quote_symbol_get(symbol, var_date, limit=limit)
+> List[IEXQuoteUpdateQuoteUpdateModel] v1_native_iex_level1_quote_symbol_get(symbol, var_date)
 
 Get Level-1 Quotes
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -233,12 +223,11 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = api_bricks_stock_api_rest.NativeIEXApi(api_client)
     symbol = 'symbol_example' # str | The symbol identifier
-    var_date = '2013-10-20T19:20:30+01:00' # datetime | Date in format YYYY-MM-DD
-    limit = 100 # int | Maximum number of records to return (1-10000, default 100) (optional) (default to 100)
+    var_date = '2013-10-20T19:20:30+01:00' # datetime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
     try:
         # Get Level-1 Quotes
-        api_response = api_instance.v1_native_iex_level1_quote_symbol_get(symbol, var_date, limit=limit)
+        api_response = api_instance.v1_native_iex_level1_quote_symbol_get(symbol, var_date)
         print("The response of NativeIEXApi->v1_native_iex_level1_quote_symbol_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -253,8 +242,7 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **str**| The symbol identifier | 
- **var_date** | **datetime**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **var_date** | **datetime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -278,11 +266,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level2_price_level_update_symbol_get**
-> List[IEXPriceLevelUpdatePriceLevelUpdateModel] v1_native_iex_level2_price_level_update_symbol_get(symbol, var_date, limit=limit)
+> List[IEXPriceLevelUpdatePriceLevelUpdateModel] v1_native_iex_level2_price_level_update_symbol_get(symbol, var_date)
 
 Get Level-2 Price Level Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -322,12 +308,11 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = api_bricks_stock_api_rest.NativeIEXApi(api_client)
     symbol = 'symbol_example' # str | The symbol identifier
-    var_date = '2013-10-20T19:20:30+01:00' # datetime | Date in format YYYY-MM-DD
-    limit = 100 # int | Maximum number of records to return (1-10000, default 100) (optional) (default to 100)
+    var_date = '2013-10-20T19:20:30+01:00' # datetime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
     try:
         # Get Level-2 Price Level Book
-        api_response = api_instance.v1_native_iex_level2_price_level_update_symbol_get(symbol, var_date, limit=limit)
+        api_response = api_instance.v1_native_iex_level2_price_level_update_symbol_get(symbol, var_date)
         print("The response of NativeIEXApi->v1_native_iex_level2_price_level_update_symbol_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -342,8 +327,7 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **str**| The symbol identifier | 
- **var_date** | **datetime**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **var_date** | **datetime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -367,11 +351,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level3_order_book_symbol_get**
-> List[ModelsOrderBookModel] v1_native_iex_level3_order_book_symbol_get(symbol, var_date, limit=limit)
+> List[ModelsOrderBookModel] v1_native_iex_level3_order_book_symbol_get(symbol, var_date)
 
 Get Level-3 Order Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -411,12 +393,11 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = api_bricks_stock_api_rest.NativeIEXApi(api_client)
     symbol = 'symbol_example' # str | The symbol identifier
-    var_date = '2013-10-20T19:20:30+01:00' # datetime | Date in format YYYY-MM-DD
-    limit = 100 # int | Maximum number of records to return (1-10000, default 100) (optional) (default to 100)
+    var_date = '2013-10-20T19:20:30+01:00' # datetime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
     try:
         # Get Level-3 Order Book
-        api_response = api_instance.v1_native_iex_level3_order_book_symbol_get(symbol, var_date, limit=limit)
+        api_response = api_instance.v1_native_iex_level3_order_book_symbol_get(symbol, var_date)
         print("The response of NativeIEXApi->v1_native_iex_level3_order_book_symbol_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -431,8 +412,7 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **str**| The symbol identifier | 
- **var_date** | **datetime**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **var_date** | **datetime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -456,11 +436,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_trade_symbol_get**
-> List[IEXTradeTradeModel] v1_native_iex_trade_symbol_get(symbol, var_date, limit=limit)
+> List[IEXTradeTradeModel] v1_native_iex_trade_symbol_get(symbol, var_date)
 
 Get Trades
-
-Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
 
 ### Example
 
@@ -500,12 +478,11 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = api_bricks_stock_api_rest.NativeIEXApi(api_client)
     symbol = 'symbol_example' # str | The symbol identifier
-    var_date = '2013-10-20T19:20:30+01:00' # datetime | Date in format YYYY-MM-DD
-    limit = 100 # int | Maximum number of records to return (1-10000, default 100) (optional) (default to 100)
+    var_date = '2013-10-20T19:20:30+01:00' # datetime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
     try:
         # Get Trades
-        api_response = api_instance.v1_native_iex_trade_symbol_get(symbol, var_date, limit=limit)
+        api_response = api_instance.v1_native_iex_trade_symbol_get(symbol, var_date)
         print("The response of NativeIEXApi->v1_native_iex_trade_symbol_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -520,8 +497,7 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **str**| The symbol identifier | 
- **var_date** | **datetime**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **var_date** | **datetime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 

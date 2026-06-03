@@ -27,9 +27,6 @@ Timeseries starting time in ISO 8601
 .PARAMETER TimeEnd
 Timeseries ending time in ISO 8601
 
-.PARAMETER Limit
-Maximum number of symbol rows to return (1-10000, default 100)
-
 .PARAMETER ReturnType
 
 Select the return type (optional): text/plain, application/json, text/json
@@ -57,9 +54,6 @@ function Invoke-V1OhlcvExchangeExchangeIdHistoryGet {
         [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
         ${TimeEnd},
-        [Parameter(Position = 4, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int32]]
-        ${Limit},
         [String]
         [ValidateSet("text/plain", "application/json", "text/json")]
         $ReturnType,
@@ -109,10 +103,6 @@ function Invoke-V1OhlcvExchangeExchangeIdHistoryGet {
             throw "Error! The required parameter `TimeEnd` missing when calling v1OhlcvExchangeExchangeIdHistoryGet."
         }
         $LocalVarQueryParameters['time_end'] = $TimeEnd
-
-        if ($Limit) {
-            $LocalVarQueryParameters['limit'] = $Limit
-        }
 
         if ($Configuration["ApiKeyPrefix"] -and $Configuration["ApiKeyPrefix"]["Authorization"]) {
             $apiKeyPrefix = $Configuration["ApiKeyPrefix"]["Authorization"]

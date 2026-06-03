@@ -12,10 +12,10 @@
 
 // Historical data by exchange
 //
-// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
+// Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
 //
 list_t*
-OhlcvAPI_v1OhlcvExchangeExchangeIdHistoryGet(apiClient_t *apiClient, char *exchange_id, char *period_id, char *time_start, char *time_end, int *limit);
+OhlcvAPI_v1OhlcvExchangeExchangeIdHistoryGet(apiClient_t *apiClient, char *exchange_id, char *period_id, char *time_start, char *time_end);
 
 
 // Historical data

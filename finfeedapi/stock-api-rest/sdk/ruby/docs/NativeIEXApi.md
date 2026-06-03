@@ -14,11 +14,9 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 ## v1_native_iex_admin_messages_symbol_get
 
-> <Array<ModelsAdminMessageModel>> v1_native_iex_admin_messages_symbol_get(symbol, date, opts)
+> <Array<ModelsAdminMessageModel>> v1_native_iex_admin_messages_symbol_get(symbol, date)
 
 Get Admin Messages
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Examples
 
@@ -38,14 +36,11 @@ end
 
 api_instance = OpenapiClient::NativeIEXApi.new
 symbol = 'symbol_example' # String | The symbol identifier
-date = Time.parse('2013-10-20T19:20:30+01:00') # Time | Date in format YYYY-MM-DD
-opts = {
-  limit: 56 # Integer | Maximum number of records to return (1-10000, default 100)
-}
+date = Time.parse('2013-10-20T19:20:30+01:00') # Time | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 begin
   # Get Admin Messages
-  result = api_instance.v1_native_iex_admin_messages_symbol_get(symbol, date, opts)
+  result = api_instance.v1_native_iex_admin_messages_symbol_get(symbol, date)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NativeIEXApi->v1_native_iex_admin_messages_symbol_get: #{e}"
@@ -56,12 +51,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<ModelsAdminMessageModel>>, Integer, Hash)> v1_native_iex_admin_messages_symbol_get_with_http_info(symbol, date, opts)
+> <Array(<Array<ModelsAdminMessageModel>>, Integer, Hash)> v1_native_iex_admin_messages_symbol_get_with_http_info(symbol, date)
 
 ```ruby
 begin
   # Get Admin Messages
-  data, status_code, headers = api_instance.v1_native_iex_admin_messages_symbol_get_with_http_info(symbol, date, opts)
+  data, status_code, headers = api_instance.v1_native_iex_admin_messages_symbol_get_with_http_info(symbol, date)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<ModelsAdminMessageModel>>
@@ -75,8 +70,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **symbol** | **String** | The symbol identifier |  |
-| **date** | **Time** | Date in format YYYY-MM-DD |  |
-| **limit** | **Integer** | Maximum number of records to return (1-10000, default 100) | [optional][default to 100] |
+| **date** | **Time** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
 
 ### Return type
 
@@ -94,11 +88,9 @@ end
 
 ## v1_native_iex_admin_system_event_get
 
-> <Array<IEXSystemEventSystemEventModel>> v1_native_iex_admin_system_event_get(date, opts)
+> <Array<IEXSystemEventSystemEventModel>> v1_native_iex_admin_system_event_get(date)
 
 Get System Events
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Examples
 
@@ -118,13 +110,10 @@ end
 
 api_instance = OpenapiClient::NativeIEXApi.new
 date = Time.parse('2013-10-20T19:20:30+01:00') # Time | Date in format YYYY-MM-DD
-opts = {
-  limit: 56 # Integer | Maximum number of records to return (1-10000, default 100)
-}
 
 begin
   # Get System Events
-  result = api_instance.v1_native_iex_admin_system_event_get(date, opts)
+  result = api_instance.v1_native_iex_admin_system_event_get(date)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NativeIEXApi->v1_native_iex_admin_system_event_get: #{e}"
@@ -135,12 +124,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<IEXSystemEventSystemEventModel>>, Integer, Hash)> v1_native_iex_admin_system_event_get_with_http_info(date, opts)
+> <Array(<Array<IEXSystemEventSystemEventModel>>, Integer, Hash)> v1_native_iex_admin_system_event_get_with_http_info(date)
 
 ```ruby
 begin
   # Get System Events
-  data, status_code, headers = api_instance.v1_native_iex_admin_system_event_get_with_http_info(date, opts)
+  data, status_code, headers = api_instance.v1_native_iex_admin_system_event_get_with_http_info(date)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<IEXSystemEventSystemEventModel>>
@@ -154,7 +143,6 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **date** | **Time** | Date in format YYYY-MM-DD |  |
-| **limit** | **Integer** | Maximum number of records to return (1-10000, default 100) | [optional][default to 100] |
 
 ### Return type
 
@@ -172,11 +160,9 @@ end
 
 ## v1_native_iex_level1_quote_symbol_get
 
-> <Array<IEXQuoteUpdateQuoteUpdateModel>> v1_native_iex_level1_quote_symbol_get(symbol, date, opts)
+> <Array<IEXQuoteUpdateQuoteUpdateModel>> v1_native_iex_level1_quote_symbol_get(symbol, date)
 
 Get Level-1 Quotes
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Examples
 
@@ -196,14 +182,11 @@ end
 
 api_instance = OpenapiClient::NativeIEXApi.new
 symbol = 'symbol_example' # String | The symbol identifier
-date = Time.parse('2013-10-20T19:20:30+01:00') # Time | Date in format YYYY-MM-DD
-opts = {
-  limit: 56 # Integer | Maximum number of records to return (1-10000, default 100)
-}
+date = Time.parse('2013-10-20T19:20:30+01:00') # Time | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 begin
   # Get Level-1 Quotes
-  result = api_instance.v1_native_iex_level1_quote_symbol_get(symbol, date, opts)
+  result = api_instance.v1_native_iex_level1_quote_symbol_get(symbol, date)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NativeIEXApi->v1_native_iex_level1_quote_symbol_get: #{e}"
@@ -214,12 +197,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<IEXQuoteUpdateQuoteUpdateModel>>, Integer, Hash)> v1_native_iex_level1_quote_symbol_get_with_http_info(symbol, date, opts)
+> <Array(<Array<IEXQuoteUpdateQuoteUpdateModel>>, Integer, Hash)> v1_native_iex_level1_quote_symbol_get_with_http_info(symbol, date)
 
 ```ruby
 begin
   # Get Level-1 Quotes
-  data, status_code, headers = api_instance.v1_native_iex_level1_quote_symbol_get_with_http_info(symbol, date, opts)
+  data, status_code, headers = api_instance.v1_native_iex_level1_quote_symbol_get_with_http_info(symbol, date)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<IEXQuoteUpdateQuoteUpdateModel>>
@@ -233,8 +216,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **symbol** | **String** | The symbol identifier |  |
-| **date** | **Time** | Date in format YYYY-MM-DD |  |
-| **limit** | **Integer** | Maximum number of records to return (1-10000, default 100) | [optional][default to 100] |
+| **date** | **Time** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
 
 ### Return type
 
@@ -252,11 +234,9 @@ end
 
 ## v1_native_iex_level2_price_level_update_symbol_get
 
-> <Array<IEXPriceLevelUpdatePriceLevelUpdateModel>> v1_native_iex_level2_price_level_update_symbol_get(symbol, date, opts)
+> <Array<IEXPriceLevelUpdatePriceLevelUpdateModel>> v1_native_iex_level2_price_level_update_symbol_get(symbol, date)
 
 Get Level-2 Price Level Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Examples
 
@@ -276,14 +256,11 @@ end
 
 api_instance = OpenapiClient::NativeIEXApi.new
 symbol = 'symbol_example' # String | The symbol identifier
-date = Time.parse('2013-10-20T19:20:30+01:00') # Time | Date in format YYYY-MM-DD
-opts = {
-  limit: 56 # Integer | Maximum number of records to return (1-10000, default 100)
-}
+date = Time.parse('2013-10-20T19:20:30+01:00') # Time | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 begin
   # Get Level-2 Price Level Book
-  result = api_instance.v1_native_iex_level2_price_level_update_symbol_get(symbol, date, opts)
+  result = api_instance.v1_native_iex_level2_price_level_update_symbol_get(symbol, date)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NativeIEXApi->v1_native_iex_level2_price_level_update_symbol_get: #{e}"
@@ -294,12 +271,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>, Integer, Hash)> v1_native_iex_level2_price_level_update_symbol_get_with_http_info(symbol, date, opts)
+> <Array(<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>, Integer, Hash)> v1_native_iex_level2_price_level_update_symbol_get_with_http_info(symbol, date)
 
 ```ruby
 begin
   # Get Level-2 Price Level Book
-  data, status_code, headers = api_instance.v1_native_iex_level2_price_level_update_symbol_get_with_http_info(symbol, date, opts)
+  data, status_code, headers = api_instance.v1_native_iex_level2_price_level_update_symbol_get_with_http_info(symbol, date)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>
@@ -313,8 +290,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **symbol** | **String** | The symbol identifier |  |
-| **date** | **Time** | Date in format YYYY-MM-DD |  |
-| **limit** | **Integer** | Maximum number of records to return (1-10000, default 100) | [optional][default to 100] |
+| **date** | **Time** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
 
 ### Return type
 
@@ -332,11 +308,9 @@ end
 
 ## v1_native_iex_level3_order_book_symbol_get
 
-> <Array<ModelsOrderBookModel>> v1_native_iex_level3_order_book_symbol_get(symbol, date, opts)
+> <Array<ModelsOrderBookModel>> v1_native_iex_level3_order_book_symbol_get(symbol, date)
 
 Get Level-3 Order Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Examples
 
@@ -356,14 +330,11 @@ end
 
 api_instance = OpenapiClient::NativeIEXApi.new
 symbol = 'symbol_example' # String | The symbol identifier
-date = Time.parse('2013-10-20T19:20:30+01:00') # Time | Date in format YYYY-MM-DD
-opts = {
-  limit: 56 # Integer | Maximum number of records to return (1-10000, default 100)
-}
+date = Time.parse('2013-10-20T19:20:30+01:00') # Time | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 begin
   # Get Level-3 Order Book
-  result = api_instance.v1_native_iex_level3_order_book_symbol_get(symbol, date, opts)
+  result = api_instance.v1_native_iex_level3_order_book_symbol_get(symbol, date)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NativeIEXApi->v1_native_iex_level3_order_book_symbol_get: #{e}"
@@ -374,12 +345,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<ModelsOrderBookModel>>, Integer, Hash)> v1_native_iex_level3_order_book_symbol_get_with_http_info(symbol, date, opts)
+> <Array(<Array<ModelsOrderBookModel>>, Integer, Hash)> v1_native_iex_level3_order_book_symbol_get_with_http_info(symbol, date)
 
 ```ruby
 begin
   # Get Level-3 Order Book
-  data, status_code, headers = api_instance.v1_native_iex_level3_order_book_symbol_get_with_http_info(symbol, date, opts)
+  data, status_code, headers = api_instance.v1_native_iex_level3_order_book_symbol_get_with_http_info(symbol, date)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<ModelsOrderBookModel>>
@@ -393,8 +364,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **symbol** | **String** | The symbol identifier |  |
-| **date** | **Time** | Date in format YYYY-MM-DD |  |
-| **limit** | **Integer** | Maximum number of records to return (1-10000, default 100) | [optional][default to 100] |
+| **date** | **Time** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
 
 ### Return type
 
@@ -412,11 +382,9 @@ end
 
 ## v1_native_iex_trade_symbol_get
 
-> <Array<IEXTradeTradeModel>> v1_native_iex_trade_symbol_get(symbol, date, opts)
+> <Array<IEXTradeTradeModel>> v1_native_iex_trade_symbol_get(symbol, date)
 
 Get Trades
-
-Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
 
 ### Examples
 
@@ -436,14 +404,11 @@ end
 
 api_instance = OpenapiClient::NativeIEXApi.new
 symbol = 'symbol_example' # String | The symbol identifier
-date = Time.parse('2013-10-20T19:20:30+01:00') # Time | Date in format YYYY-MM-DD
-opts = {
-  limit: 56 # Integer | Maximum number of records to return (1-10000, default 100)
-}
+date = Time.parse('2013-10-20T19:20:30+01:00') # Time | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 begin
   # Get Trades
-  result = api_instance.v1_native_iex_trade_symbol_get(symbol, date, opts)
+  result = api_instance.v1_native_iex_trade_symbol_get(symbol, date)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling NativeIEXApi->v1_native_iex_trade_symbol_get: #{e}"
@@ -454,12 +419,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<Array<IEXTradeTradeModel>>, Integer, Hash)> v1_native_iex_trade_symbol_get_with_http_info(symbol, date, opts)
+> <Array(<Array<IEXTradeTradeModel>>, Integer, Hash)> v1_native_iex_trade_symbol_get_with_http_info(symbol, date)
 
 ```ruby
 begin
   # Get Trades
-  data, status_code, headers = api_instance.v1_native_iex_trade_symbol_get_with_http_info(symbol, date, opts)
+  data, status_code, headers = api_instance.v1_native_iex_trade_symbol_get_with_http_info(symbol, date)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <Array<IEXTradeTradeModel>>
@@ -473,8 +438,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **symbol** | **String** | The symbol identifier |  |
-| **date** | **Time** | Date in format YYYY-MM-DD |  |
-| **limit** | **Integer** | Maximum number of records to return (1-10000, default 100) | [optional][default to 100] |
+| **date** | **Time** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
 
 ### Return type
 

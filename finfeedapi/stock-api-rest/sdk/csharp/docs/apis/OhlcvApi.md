@@ -11,11 +11,11 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 <a id="v1ohlcvexchangeexchangeidhistoryget"></a>
 # **V1OhlcvExchangeExchangeIdHistoryGet**
-> List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt; V1OhlcvExchangeExchangeIdHistoryGet (string exchangeId, string periodId, string timeStart, string timeEnd, int limit = null)
+> List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt; V1OhlcvExchangeExchangeIdHistoryGet (string exchangeId, string periodId, string timeStart, string timeEnd)
 
 Historical data by exchange
 
-Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
+Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
 
 
 ### Parameters
@@ -26,7 +26,6 @@ Get OHLCV timeseries data returned in time ascending order. Data can be requeste
 | **periodId** | **string** | Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) |  |
 | **timeStart** | **string** | Timeseries starting time in ISO 8601 |  |
 | **timeEnd** | **string** | Timeseries ending time in ISO 8601 |  |
-| **limit** | **int** | Maximum number of symbol rows to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 

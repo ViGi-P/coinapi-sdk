@@ -13,11 +13,9 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 <a id="v1nativeiexadminmessagessymbolget"></a>
 # **V1NativeIexAdminMessagesSymbolGet**
-> List&lt;ModelsAdminMessageModel&gt; V1NativeIexAdminMessagesSymbolGet (string symbol, DateTime date, int limit = null)
+> List&lt;ModelsAdminMessageModel&gt; V1NativeIexAdminMessagesSymbolGet (string symbol, DateTime date)
 
 Get Admin Messages
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 
 ### Parameters
@@ -25,8 +23,7 @@ Streaming endpoint. Use `limit` to cap the number of records returned (default 1
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **symbol** | **string** | The symbol identifier |  |
-| **date** | **DateTime** | Date in format YYYY-MM-DD |  |
-| **limit** | **int** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
+| **date** | **DateTime** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
 
 ### Return type
 
@@ -51,11 +48,9 @@ Streaming endpoint. Use `limit` to cap the number of records returned (default 1
 
 <a id="v1nativeiexadminsystemeventget"></a>
 # **V1NativeIexAdminSystemEventGet**
-> List&lt;IEXSystemEventSystemEventModel&gt; V1NativeIexAdminSystemEventGet (DateTime date, int limit = null)
+> List&lt;IEXSystemEventSystemEventModel&gt; V1NativeIexAdminSystemEventGet (DateTime date)
 
 Get System Events
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 
 ### Parameters
@@ -63,7 +58,6 @@ Streaming endpoint. Use `limit` to cap the number of records returned (default 1
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **date** | **DateTime** | Date in format YYYY-MM-DD |  |
-| **limit** | **int** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -88,11 +82,9 @@ Streaming endpoint. Use `limit` to cap the number of records returned (default 1
 
 <a id="v1nativeiexlevel1quotesymbolget"></a>
 # **V1NativeIexLevel1QuoteSymbolGet**
-> List&lt;IEXQuoteUpdateQuoteUpdateModel&gt; V1NativeIexLevel1QuoteSymbolGet (string symbol, DateTime date, int limit = null)
+> List&lt;IEXQuoteUpdateQuoteUpdateModel&gt; V1NativeIexLevel1QuoteSymbolGet (string symbol, DateTime date)
 
 Get Level-1 Quotes
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 
 ### Parameters
@@ -100,8 +92,7 @@ Streaming endpoint. Use `limit` to cap the number of records returned (default 1
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **symbol** | **string** | The symbol identifier |  |
-| **date** | **DateTime** | Date in format YYYY-MM-DD |  |
-| **limit** | **int** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
+| **date** | **DateTime** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
 
 ### Return type
 
@@ -126,11 +117,9 @@ Streaming endpoint. Use `limit` to cap the number of records returned (default 1
 
 <a id="v1nativeiexlevel2pricelevelupdatesymbolget"></a>
 # **V1NativeIexLevel2PriceLevelUpdateSymbolGet**
-> List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt; V1NativeIexLevel2PriceLevelUpdateSymbolGet (string symbol, DateTime date, int limit = null)
+> List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt; V1NativeIexLevel2PriceLevelUpdateSymbolGet (string symbol, DateTime date)
 
 Get Level-2 Price Level Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 
 ### Parameters
@@ -138,8 +127,7 @@ Streaming endpoint. Use `limit` to cap the number of records returned (default 1
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **symbol** | **string** | The symbol identifier |  |
-| **date** | **DateTime** | Date in format YYYY-MM-DD |  |
-| **limit** | **int** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
+| **date** | **DateTime** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
 
 ### Return type
 
@@ -164,11 +152,9 @@ Streaming endpoint. Use `limit` to cap the number of records returned (default 1
 
 <a id="v1nativeiexlevel3orderbooksymbolget"></a>
 # **V1NativeIexLevel3OrderBookSymbolGet**
-> List&lt;ModelsOrderBookModel&gt; V1NativeIexLevel3OrderBookSymbolGet (string symbol, DateTime date, int limit = null)
+> List&lt;ModelsOrderBookModel&gt; V1NativeIexLevel3OrderBookSymbolGet (string symbol, DateTime date)
 
 Get Level-3 Order Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 
 ### Parameters
@@ -176,8 +162,7 @@ Streaming endpoint. Use `limit` to cap the number of records returned (default 1
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **symbol** | **string** | The symbol identifier |  |
-| **date** | **DateTime** | Date in format YYYY-MM-DD |  |
-| **limit** | **int** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
+| **date** | **DateTime** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
 
 ### Return type
 
@@ -202,11 +187,9 @@ Streaming endpoint. Use `limit` to cap the number of records returned (default 1
 
 <a id="v1nativeiextradesymbolget"></a>
 # **V1NativeIexTradeSymbolGet**
-> List&lt;IEXTradeTradeModel&gt; V1NativeIexTradeSymbolGet (string symbol, DateTime date, int limit = null)
+> List&lt;IEXTradeTradeModel&gt; V1NativeIexTradeSymbolGet (string symbol, DateTime date)
 
 Get Trades
-
-Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
 
 
 ### Parameters
@@ -214,8 +197,7 @@ Streaming endpoint. Use `limit` to cap the number of trade records returned (def
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **symbol** | **string** | The symbol identifier |  |
-| **date** | **DateTime** | Date in format YYYY-MM-DD |  |
-| **limit** | **int** | Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
+| **date** | **DateTime** | Optional date in format YYYY-MM-DD (defaults to latest available data) |  |
 
 ### Return type
 

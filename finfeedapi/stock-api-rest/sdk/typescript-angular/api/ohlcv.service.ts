@@ -41,21 +41,20 @@ export class OhlcvService extends BaseService {
 
     /**
      * Historical data by exchange
-     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
+     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
      * @endpoint get /v1/ohlcv/exchange/{exchange_id}/history
      * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;)
      * @param timeStart Timeseries starting time in ISO 8601
      * @param timeEnd Timeseries ending time in ISO 8601
-     * @param limit Maximum number of symbol rows to return (1-10000, default 100)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>;
-    public v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>>;
-    public v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>>;
-    public v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>;
+    public v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>>;
+    public v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>>;
+    public v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'text/plain' | 'application/json' | 'text/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (exchangeId === null || exchangeId === undefined) {
             throw new Error('Required parameter exchangeId was null or undefined when calling v1OhlcvExchangeExchangeIdHistoryGet.');
         }
@@ -93,15 +92,6 @@ export class OhlcvService extends BaseService {
             localVarQueryParameters,
             'time_end',
             <any>timeEnd,
-            QueryParamStyle.Form,
-            true,
-        );
-
-
-        localVarQueryParameters = this.addToHttpParams(
-            localVarQueryParameters,
-            'limit',
-            <any>limit,
             QueryParamStyle.Form,
             true,
         );

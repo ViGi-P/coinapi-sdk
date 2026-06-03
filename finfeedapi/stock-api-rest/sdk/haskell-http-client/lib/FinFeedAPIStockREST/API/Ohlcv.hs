@@ -64,7 +64,7 @@ import qualified Prelude as P
 -- 
 -- Historical data by exchange
 -- 
--- Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
+-- Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
 -- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
@@ -84,11 +84,6 @@ v1OhlcvExchangeExchangeIdHistoryGet  _ (ExchangeId exchangeId) (PeriodId periodI
     `addQuery` toQuery ("time_end", Just timeEnd)
 
 data V1OhlcvExchangeExchangeIdHistoryGet  
-
--- | /Optional Param/ "limit" - Maximum number of symbol rows to return (1-10000, default 100)
-instance HasOptionalParam V1OhlcvExchangeExchangeIdHistoryGet Limit where
-  applyOptionalParam req (Limit xs) =
-    req `addQuery` toQuery ("limit", Just xs)
 -- | @application/json@
 instance Produces V1OhlcvExchangeExchangeIdHistoryGet MimeJSON
 -- | @text/json@

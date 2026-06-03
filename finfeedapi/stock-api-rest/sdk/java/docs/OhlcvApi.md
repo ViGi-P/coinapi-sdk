@@ -12,11 +12,11 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 <a id="v1OhlcvExchangeExchangeIdHistoryGet"></a>
 # **v1OhlcvExchangeExchangeIdHistoryGet**
-> List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt; v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, limit)
+> List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt; v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
 
 Historical data by exchange
 
-Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
+Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
 
 ### Example
 ```java
@@ -48,9 +48,8 @@ public class Example {
     String periodId = "periodId_example"; // String | Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
     String timeStart = "timeStart_example"; // String | Timeseries starting time in ISO 8601
     String timeEnd = "timeEnd_example"; // String | Timeseries ending time in ISO 8601
-    Integer limit = 100; // Integer | Maximum number of symbol rows to return (1-10000, default 100)
     try {
-      List<OHLCVTimeSeriesExchangeTimeseriesItem> result = apiInstance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, limit);
+      List<OHLCVTimeSeriesExchangeTimeseriesItem> result = apiInstance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OhlcvApi#v1OhlcvExchangeExchangeIdHistoryGet");
@@ -71,7 +70,6 @@ public class Example {
 | **periodId** | **String**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) | |
 | **timeStart** | **String**| Timeseries starting time in ISO 8601 | |
 | **timeEnd** | **String**| Timeseries ending time in ISO 8601 | |
-| **limit** | **Integer**| Maximum number of symbol rows to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 

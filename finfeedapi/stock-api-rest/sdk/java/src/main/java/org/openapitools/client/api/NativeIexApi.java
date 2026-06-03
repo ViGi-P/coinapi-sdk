@@ -81,8 +81,7 @@ public class NativeIexApi {
     /**
      * Build call for v1NativeIexAdminMessagesSymbolGet
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -93,7 +92,7 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexAdminMessagesSymbolGetCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexAdminMessagesSymbolGetCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -123,10 +122,6 @@ public class NativeIexApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("date", date));
         }
 
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -147,7 +142,7 @@ public class NativeIexApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1NativeIexAdminMessagesSymbolGetValidateBeforeCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1NativeIexAdminMessagesSymbolGetValidateBeforeCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'symbol' is set
         if (symbol == null) {
             throw new ApiException("Missing the required parameter 'symbol' when calling v1NativeIexAdminMessagesSymbolGet(Async)");
@@ -158,16 +153,15 @@ public class NativeIexApi {
             throw new ApiException("Missing the required parameter 'date' when calling v1NativeIexAdminMessagesSymbolGet(Async)");
         }
 
-        return v1NativeIexAdminMessagesSymbolGetCall(symbol, date, limit, _callback);
+        return v1NativeIexAdminMessagesSymbolGetCall(symbol, date, _callback);
 
     }
 
     /**
      * Get Admin Messages
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @return List&lt;ModelsAdminMessageModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -177,17 +171,16 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<ModelsAdminMessageModel> v1NativeIexAdminMessagesSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<ModelsAdminMessageModel>> localVarResp = v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol, date, limit);
+    public List<ModelsAdminMessageModel> v1NativeIexAdminMessagesSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        ApiResponse<List<ModelsAdminMessageModel>> localVarResp = v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol, date);
         return localVarResp.getData();
     }
 
     /**
      * Get Admin Messages
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @return ApiResponse&lt;List&lt;ModelsAdminMessageModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -197,18 +190,17 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ModelsAdminMessageModel>> v1NativeIexAdminMessagesSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = v1NativeIexAdminMessagesSymbolGetValidateBeforeCall(symbol, date, limit, null);
+    public ApiResponse<List<ModelsAdminMessageModel>> v1NativeIexAdminMessagesSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        okhttp3.Call localVarCall = v1NativeIexAdminMessagesSymbolGetValidateBeforeCall(symbol, date, null);
         Type localVarReturnType = new TypeToken<List<ModelsAdminMessageModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get Admin Messages (asynchronously)
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -219,9 +211,9 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexAdminMessagesSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback<List<ModelsAdminMessageModel>> _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexAdminMessagesSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<ModelsAdminMessageModel>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1NativeIexAdminMessagesSymbolGetValidateBeforeCall(symbol, date, limit, _callback);
+        okhttp3.Call localVarCall = v1NativeIexAdminMessagesSymbolGetValidateBeforeCall(symbol, date, _callback);
         Type localVarReturnType = new TypeToken<List<ModelsAdminMessageModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -229,7 +221,6 @@ public class NativeIexApi {
     /**
      * Build call for v1NativeIexAdminSystemEventGet
      * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -240,7 +231,7 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexAdminSystemEventGetCall(@javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexAdminSystemEventGetCall(@javax.annotation.Nonnull OffsetDateTime date, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -269,10 +260,6 @@ public class NativeIexApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("date", date));
         }
 
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -293,21 +280,20 @@ public class NativeIexApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1NativeIexAdminSystemEventGetValidateBeforeCall(@javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1NativeIexAdminSystemEventGetValidateBeforeCall(@javax.annotation.Nonnull OffsetDateTime date, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'date' is set
         if (date == null) {
             throw new ApiException("Missing the required parameter 'date' when calling v1NativeIexAdminSystemEventGet(Async)");
         }
 
-        return v1NativeIexAdminSystemEventGetCall(date, limit, _callback);
+        return v1NativeIexAdminSystemEventGetCall(date, _callback);
 
     }
 
     /**
      * Get System Events
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
      * @return List&lt;IEXSystemEventSystemEventModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -317,16 +303,15 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<IEXSystemEventSystemEventModel> v1NativeIexAdminSystemEventGet(@javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<IEXSystemEventSystemEventModel>> localVarResp = v1NativeIexAdminSystemEventGetWithHttpInfo(date, limit);
+    public List<IEXSystemEventSystemEventModel> v1NativeIexAdminSystemEventGet(@javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        ApiResponse<List<IEXSystemEventSystemEventModel>> localVarResp = v1NativeIexAdminSystemEventGetWithHttpInfo(date);
         return localVarResp.getData();
     }
 
     /**
      * Get System Events
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
      * @return ApiResponse&lt;List&lt;IEXSystemEventSystemEventModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -336,17 +321,16 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<IEXSystemEventSystemEventModel>> v1NativeIexAdminSystemEventGetWithHttpInfo(@javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = v1NativeIexAdminSystemEventGetValidateBeforeCall(date, limit, null);
+    public ApiResponse<List<IEXSystemEventSystemEventModel>> v1NativeIexAdminSystemEventGetWithHttpInfo(@javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        okhttp3.Call localVarCall = v1NativeIexAdminSystemEventGetValidateBeforeCall(date, null);
         Type localVarReturnType = new TypeToken<List<IEXSystemEventSystemEventModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get System Events (asynchronously)
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -357,9 +341,9 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexAdminSystemEventGetAsync(@javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback<List<IEXSystemEventSystemEventModel>> _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexAdminSystemEventGetAsync(@javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<IEXSystemEventSystemEventModel>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1NativeIexAdminSystemEventGetValidateBeforeCall(date, limit, _callback);
+        okhttp3.Call localVarCall = v1NativeIexAdminSystemEventGetValidateBeforeCall(date, _callback);
         Type localVarReturnType = new TypeToken<List<IEXSystemEventSystemEventModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -367,8 +351,7 @@ public class NativeIexApi {
     /**
      * Build call for v1NativeIexLevel1QuoteSymbolGet
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -379,7 +362,7 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexLevel1QuoteSymbolGetCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexLevel1QuoteSymbolGetCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -409,10 +392,6 @@ public class NativeIexApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("date", date));
         }
 
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -433,7 +412,7 @@ public class NativeIexApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1NativeIexLevel1QuoteSymbolGetValidateBeforeCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1NativeIexLevel1QuoteSymbolGetValidateBeforeCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'symbol' is set
         if (symbol == null) {
             throw new ApiException("Missing the required parameter 'symbol' when calling v1NativeIexLevel1QuoteSymbolGet(Async)");
@@ -444,16 +423,15 @@ public class NativeIexApi {
             throw new ApiException("Missing the required parameter 'date' when calling v1NativeIexLevel1QuoteSymbolGet(Async)");
         }
 
-        return v1NativeIexLevel1QuoteSymbolGetCall(symbol, date, limit, _callback);
+        return v1NativeIexLevel1QuoteSymbolGetCall(symbol, date, _callback);
 
     }
 
     /**
      * Get Level-1 Quotes
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @return List&lt;IEXQuoteUpdateQuoteUpdateModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -463,17 +441,16 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<IEXQuoteUpdateQuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<IEXQuoteUpdateQuoteUpdateModel>> localVarResp = v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol, date, limit);
+    public List<IEXQuoteUpdateQuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        ApiResponse<List<IEXQuoteUpdateQuoteUpdateModel>> localVarResp = v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol, date);
         return localVarResp.getData();
     }
 
     /**
      * Get Level-1 Quotes
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @return ApiResponse&lt;List&lt;IEXQuoteUpdateQuoteUpdateModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -483,18 +460,17 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<IEXQuoteUpdateQuoteUpdateModel>> v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = v1NativeIexLevel1QuoteSymbolGetValidateBeforeCall(symbol, date, limit, null);
+    public ApiResponse<List<IEXQuoteUpdateQuoteUpdateModel>> v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        okhttp3.Call localVarCall = v1NativeIexLevel1QuoteSymbolGetValidateBeforeCall(symbol, date, null);
         Type localVarReturnType = new TypeToken<List<IEXQuoteUpdateQuoteUpdateModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get Level-1 Quotes (asynchronously)
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -505,9 +481,9 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexLevel1QuoteSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback<List<IEXQuoteUpdateQuoteUpdateModel>> _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexLevel1QuoteSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<IEXQuoteUpdateQuoteUpdateModel>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1NativeIexLevel1QuoteSymbolGetValidateBeforeCall(symbol, date, limit, _callback);
+        okhttp3.Call localVarCall = v1NativeIexLevel1QuoteSymbolGetValidateBeforeCall(symbol, date, _callback);
         Type localVarReturnType = new TypeToken<List<IEXQuoteUpdateQuoteUpdateModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -515,8 +491,7 @@ public class NativeIexApi {
     /**
      * Build call for v1NativeIexLevel2PriceLevelUpdateSymbolGet
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -527,7 +502,7 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexLevel2PriceLevelUpdateSymbolGetCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexLevel2PriceLevelUpdateSymbolGetCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -557,10 +532,6 @@ public class NativeIexApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("date", date));
         }
 
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -581,7 +552,7 @@ public class NativeIexApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1NativeIexLevel2PriceLevelUpdateSymbolGetValidateBeforeCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1NativeIexLevel2PriceLevelUpdateSymbolGetValidateBeforeCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'symbol' is set
         if (symbol == null) {
             throw new ApiException("Missing the required parameter 'symbol' when calling v1NativeIexLevel2PriceLevelUpdateSymbolGet(Async)");
@@ -592,16 +563,15 @@ public class NativeIexApi {
             throw new ApiException("Missing the required parameter 'date' when calling v1NativeIexLevel2PriceLevelUpdateSymbolGet(Async)");
         }
 
-        return v1NativeIexLevel2PriceLevelUpdateSymbolGetCall(symbol, date, limit, _callback);
+        return v1NativeIexLevel2PriceLevelUpdateSymbolGetCall(symbol, date, _callback);
 
     }
 
     /**
      * Get Level-2 Price Level Book
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @return List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -611,17 +581,16 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<IEXPriceLevelUpdatePriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> localVarResp = v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol, date, limit);
+    public List<IEXPriceLevelUpdatePriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        ApiResponse<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> localVarResp = v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol, date);
         return localVarResp.getData();
     }
 
     /**
      * Get Level-2 Price Level Book
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @return ApiResponse&lt;List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -631,18 +600,17 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = v1NativeIexLevel2PriceLevelUpdateSymbolGetValidateBeforeCall(symbol, date, limit, null);
+    public ApiResponse<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        okhttp3.Call localVarCall = v1NativeIexLevel2PriceLevelUpdateSymbolGetValidateBeforeCall(symbol, date, null);
         Type localVarReturnType = new TypeToken<List<IEXPriceLevelUpdatePriceLevelUpdateModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get Level-2 Price Level Book (asynchronously)
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -653,9 +621,9 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexLevel2PriceLevelUpdateSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexLevel2PriceLevelUpdateSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1NativeIexLevel2PriceLevelUpdateSymbolGetValidateBeforeCall(symbol, date, limit, _callback);
+        okhttp3.Call localVarCall = v1NativeIexLevel2PriceLevelUpdateSymbolGetValidateBeforeCall(symbol, date, _callback);
         Type localVarReturnType = new TypeToken<List<IEXPriceLevelUpdatePriceLevelUpdateModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -663,8 +631,7 @@ public class NativeIexApi {
     /**
      * Build call for v1NativeIexLevel3OrderBookSymbolGet
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -675,7 +642,7 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexLevel3OrderBookSymbolGetCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexLevel3OrderBookSymbolGetCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -705,10 +672,6 @@ public class NativeIexApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("date", date));
         }
 
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -729,7 +692,7 @@ public class NativeIexApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1NativeIexLevel3OrderBookSymbolGetValidateBeforeCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1NativeIexLevel3OrderBookSymbolGetValidateBeforeCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'symbol' is set
         if (symbol == null) {
             throw new ApiException("Missing the required parameter 'symbol' when calling v1NativeIexLevel3OrderBookSymbolGet(Async)");
@@ -740,16 +703,15 @@ public class NativeIexApi {
             throw new ApiException("Missing the required parameter 'date' when calling v1NativeIexLevel3OrderBookSymbolGet(Async)");
         }
 
-        return v1NativeIexLevel3OrderBookSymbolGetCall(symbol, date, limit, _callback);
+        return v1NativeIexLevel3OrderBookSymbolGetCall(symbol, date, _callback);
 
     }
 
     /**
      * Get Level-3 Order Book
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @return List&lt;ModelsOrderBookModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -759,17 +721,16 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<ModelsOrderBookModel> v1NativeIexLevel3OrderBookSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<ModelsOrderBookModel>> localVarResp = v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol, date, limit);
+    public List<ModelsOrderBookModel> v1NativeIexLevel3OrderBookSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        ApiResponse<List<ModelsOrderBookModel>> localVarResp = v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol, date);
         return localVarResp.getData();
     }
 
     /**
      * Get Level-3 Order Book
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @return ApiResponse&lt;List&lt;ModelsOrderBookModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -779,18 +740,17 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<ModelsOrderBookModel>> v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = v1NativeIexLevel3OrderBookSymbolGetValidateBeforeCall(symbol, date, limit, null);
+    public ApiResponse<List<ModelsOrderBookModel>> v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        okhttp3.Call localVarCall = v1NativeIexLevel3OrderBookSymbolGetValidateBeforeCall(symbol, date, null);
         Type localVarReturnType = new TypeToken<List<ModelsOrderBookModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get Level-3 Order Book (asynchronously)
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -801,9 +761,9 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexLevel3OrderBookSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback<List<ModelsOrderBookModel>> _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexLevel3OrderBookSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<ModelsOrderBookModel>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1NativeIexLevel3OrderBookSymbolGetValidateBeforeCall(symbol, date, limit, _callback);
+        okhttp3.Call localVarCall = v1NativeIexLevel3OrderBookSymbolGetValidateBeforeCall(symbol, date, _callback);
         Type localVarReturnType = new TypeToken<List<ModelsOrderBookModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -811,8 +771,7 @@ public class NativeIexApi {
     /**
      * Build call for v1NativeIexTradeSymbolGet
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -823,7 +782,7 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexTradeSymbolGetCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexTradeSymbolGetCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -853,10 +812,6 @@ public class NativeIexApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("date", date));
         }
 
-        if (limit != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -877,7 +832,7 @@ public class NativeIexApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1NativeIexTradeSymbolGetValidateBeforeCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1NativeIexTradeSymbolGetValidateBeforeCall(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'symbol' is set
         if (symbol == null) {
             throw new ApiException("Missing the required parameter 'symbol' when calling v1NativeIexTradeSymbolGet(Async)");
@@ -888,16 +843,15 @@ public class NativeIexApi {
             throw new ApiException("Missing the required parameter 'date' when calling v1NativeIexTradeSymbolGet(Async)");
         }
 
-        return v1NativeIexTradeSymbolGetCall(symbol, date, limit, _callback);
+        return v1NativeIexTradeSymbolGetCall(symbol, date, _callback);
 
     }
 
     /**
      * Get Trades
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @return List&lt;IEXTradeTradeModel&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -907,17 +861,16 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<IEXTradeTradeModel> v1NativeIexTradeSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit) throws ApiException {
-        ApiResponse<List<IEXTradeTradeModel>> localVarResp = v1NativeIexTradeSymbolGetWithHttpInfo(symbol, date, limit);
+    public List<IEXTradeTradeModel> v1NativeIexTradeSymbolGet(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        ApiResponse<List<IEXTradeTradeModel>> localVarResp = v1NativeIexTradeSymbolGetWithHttpInfo(symbol, date);
         return localVarResp.getData();
     }
 
     /**
      * Get Trades
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @return ApiResponse&lt;List&lt;IEXTradeTradeModel&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -927,18 +880,17 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<IEXTradeTradeModel>> v1NativeIexTradeSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit) throws ApiException {
-        okhttp3.Call localVarCall = v1NativeIexTradeSymbolGetValidateBeforeCall(symbol, date, limit, null);
+    public ApiResponse<List<IEXTradeTradeModel>> v1NativeIexTradeSymbolGetWithHttpInfo(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date) throws ApiException {
+        okhttp3.Call localVarCall = v1NativeIexTradeSymbolGetValidateBeforeCall(symbol, date, null);
         Type localVarReturnType = new TypeToken<List<IEXTradeTradeModel>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get Trades (asynchronously)
-     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
+     * 
      * @param symbol The symbol identifier (required)
-     * @param date Date in format YYYY-MM-DD (required)
-     * @param limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -949,9 +901,9 @@ public class NativeIexApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1NativeIexTradeSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, @javax.annotation.Nullable Integer limit, final ApiCallback<List<IEXTradeTradeModel>> _callback) throws ApiException {
+    public okhttp3.Call v1NativeIexTradeSymbolGetAsync(@javax.annotation.Nonnull String symbol, @javax.annotation.Nonnull OffsetDateTime date, final ApiCallback<List<IEXTradeTradeModel>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1NativeIexTradeSymbolGetValidateBeforeCall(symbol, date, limit, _callback);
+        okhttp3.Call localVarCall = v1NativeIexTradeSymbolGetValidateBeforeCall(symbol, date, _callback);
         Type localVarReturnType = new TypeToken<List<IEXTradeTradeModel>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

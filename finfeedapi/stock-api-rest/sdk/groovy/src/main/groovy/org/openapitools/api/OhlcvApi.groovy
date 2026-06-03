@@ -10,7 +10,7 @@ class OhlcvApi {
     String versionPath = ""
     ApiUtils apiUtils = new ApiUtils();
 
-    def v1OhlcvExchangeExchangeIdHistoryGet ( String exchangeId, String periodId, String timeStart, String timeEnd, Integer limit, Closure onSuccess, Closure onFailure)  {
+    def v1OhlcvExchangeExchangeIdHistoryGet ( String exchangeId, String periodId, String timeStart, String timeEnd, Closure onSuccess, Closure onFailure)  {
         String resourcePath = "/v1/ohlcv/exchange/${exchange_id}/history"
 
         // params
@@ -45,9 +45,6 @@ class OhlcvApi {
         }
         if (timeEnd != null) {
             queryParams.put("time_end", timeEnd)
-        }
-        if (limit != null) {
-            queryParams.put("limit", limit)
         }
 
 

@@ -15,12 +15,12 @@ All URIs are relative to https://api-historical.stock.finfeedapi.com, except if 
 ## `v1OhlcvExchangeExchangeIdHistoryGet()`
 
 ```php
-v1OhlcvExchangeExchangeIdHistoryGet($exchange_id, $period_id, $time_start, $time_end, $limit): \OpenAPI\Client\Model\OHLCVTimeSeriesExchangeTimeseriesItem[]
+v1OhlcvExchangeExchangeIdHistoryGet($exchange_id, $period_id, $time_start, $time_end): \OpenAPI\Client\Model\OHLCVTimeSeriesExchangeTimeseriesItem[]
 ```
 
 Historical data by exchange
 
-Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
+Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
 
 ### Example
 
@@ -48,10 +48,9 @@ $exchange_id = 'exchange_id_example'; // string | Exchange identifier of request
 $period_id = 'period_id_example'; // string | Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
 $time_start = 'time_start_example'; // string | Timeseries starting time in ISO 8601
 $time_end = 'time_end_example'; // string | Timeseries ending time in ISO 8601
-$limit = 100; // int | Maximum number of symbol rows to return (1-10000, default 100)
 
 try {
-    $result = $apiInstance->v1OhlcvExchangeExchangeIdHistoryGet($exchange_id, $period_id, $time_start, $time_end, $limit);
+    $result = $apiInstance->v1OhlcvExchangeExchangeIdHistoryGet($exchange_id, $period_id, $time_start, $time_end);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OhlcvApi->v1OhlcvExchangeExchangeIdHistoryGet: ', $e->getMessage(), PHP_EOL;
@@ -66,7 +65,6 @@ try {
 | **period_id** | **string**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) | |
 | **time_start** | **string**| Timeseries starting time in ISO 8601 | |
 | **time_end** | **string**| Timeseries ending time in ISO 8601 | |
-| **limit** | **int**| Maximum number of symbol rows to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 

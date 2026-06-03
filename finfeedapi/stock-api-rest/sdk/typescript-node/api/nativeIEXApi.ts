@@ -100,13 +100,12 @@ export class NativeIEXApi {
     }
 
     /**
-     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+     * 
      * @summary Get Admin Messages
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
-    public async v1NativeIexAdminMessagesSymbolGet (symbol: string, date: Date, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsAdminMessageModel>;  }> {
+    public async v1NativeIexAdminMessagesSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsAdminMessageModel>;  }> {
         const localVarPath = this.basePath + '/v1/native/iex/admin/messages/{symbol}'
             .replace('{symbol}', encodeURIComponent(String(symbol)));
         let localVarQueryParameters: any = {};
@@ -132,10 +131,6 @@ export class NativeIEXApi {
 
         if (date !== undefined) {
             localVarQueryParameters['date'] = ObjectSerializer.serialize(date, "Date");
-        }
-
-        if (limit !== undefined) {
-            localVarQueryParameters['limit'] = ObjectSerializer.serialize(limit, "number");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -190,12 +185,11 @@ export class NativeIEXApi {
         });
     }
     /**
-     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+     * 
      * @summary Get System Events
      * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100)
      */
-    public async v1NativeIexAdminSystemEventGet (date: Date, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IEXSystemEventSystemEventModel>;  }> {
+    public async v1NativeIexAdminSystemEventGet (date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IEXSystemEventSystemEventModel>;  }> {
         const localVarPath = this.basePath + '/v1/native/iex/admin/system-event';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
@@ -215,10 +209,6 @@ export class NativeIEXApi {
 
         if (date !== undefined) {
             localVarQueryParameters['date'] = ObjectSerializer.serialize(date, "Date");
-        }
-
-        if (limit !== undefined) {
-            localVarQueryParameters['limit'] = ObjectSerializer.serialize(limit, "number");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -273,13 +263,12 @@ export class NativeIEXApi {
         });
     }
     /**
-     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+     * 
      * @summary Get Level-1 Quotes
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
-    public async v1NativeIexLevel1QuoteSymbolGet (symbol: string, date: Date, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IEXQuoteUpdateQuoteUpdateModel>;  }> {
+    public async v1NativeIexLevel1QuoteSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IEXQuoteUpdateQuoteUpdateModel>;  }> {
         const localVarPath = this.basePath + '/v1/native/iex/level1-quote/{symbol}'
             .replace('{symbol}', encodeURIComponent(String(symbol)));
         let localVarQueryParameters: any = {};
@@ -305,10 +294,6 @@ export class NativeIEXApi {
 
         if (date !== undefined) {
             localVarQueryParameters['date'] = ObjectSerializer.serialize(date, "Date");
-        }
-
-        if (limit !== undefined) {
-            localVarQueryParameters['limit'] = ObjectSerializer.serialize(limit, "number");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -363,13 +348,12 @@ export class NativeIEXApi {
         });
     }
     /**
-     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+     * 
      * @summary Get Level-2 Price Level Book
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
-    public async v1NativeIexLevel2PriceLevelUpdateSymbolGet (symbol: string, date: Date, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IEXPriceLevelUpdatePriceLevelUpdateModel>;  }> {
+    public async v1NativeIexLevel2PriceLevelUpdateSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IEXPriceLevelUpdatePriceLevelUpdateModel>;  }> {
         const localVarPath = this.basePath + '/v1/native/iex/level2-price-level-update/{symbol}'
             .replace('{symbol}', encodeURIComponent(String(symbol)));
         let localVarQueryParameters: any = {};
@@ -395,10 +379,6 @@ export class NativeIEXApi {
 
         if (date !== undefined) {
             localVarQueryParameters['date'] = ObjectSerializer.serialize(date, "Date");
-        }
-
-        if (limit !== undefined) {
-            localVarQueryParameters['limit'] = ObjectSerializer.serialize(limit, "number");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -453,13 +433,12 @@ export class NativeIEXApi {
         });
     }
     /**
-     * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+     * 
      * @summary Get Level-3 Order Book
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
-    public async v1NativeIexLevel3OrderBookSymbolGet (symbol: string, date: Date, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsOrderBookModel>;  }> {
+    public async v1NativeIexLevel3OrderBookSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<ModelsOrderBookModel>;  }> {
         const localVarPath = this.basePath + '/v1/native/iex/level3-order-book/{symbol}'
             .replace('{symbol}', encodeURIComponent(String(symbol)));
         let localVarQueryParameters: any = {};
@@ -485,10 +464,6 @@ export class NativeIEXApi {
 
         if (date !== undefined) {
             localVarQueryParameters['date'] = ObjectSerializer.serialize(date, "Date");
-        }
-
-        if (limit !== undefined) {
-            localVarQueryParameters['limit'] = ObjectSerializer.serialize(limit, "number");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);
@@ -543,13 +518,12 @@ export class NativeIEXApi {
         });
     }
     /**
-     * Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
+     * 
      * @summary Get Trades
      * @param symbol The symbol identifier
-     * @param date Date in format YYYY-MM-DD
-     * @param limit Maximum number of records to return (1-10000, default 100)
+     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
      */
-    public async v1NativeIexTradeSymbolGet (symbol: string, date: Date, limit?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IEXTradeTradeModel>;  }> {
+    public async v1NativeIexTradeSymbolGet (symbol: string, date: Date, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<IEXTradeTradeModel>;  }> {
         const localVarPath = this.basePath + '/v1/native/iex/trade/{symbol}'
             .replace('{symbol}', encodeURIComponent(String(symbol)));
         let localVarQueryParameters: any = {};
@@ -575,10 +549,6 @@ export class NativeIEXApi {
 
         if (date !== undefined) {
             localVarQueryParameters['date'] = ObjectSerializer.serialize(date, "Date");
-        }
-
-        if (limit !== undefined) {
-            localVarQueryParameters['limit'] = ObjectSerializer.serialize(limit, "number");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);

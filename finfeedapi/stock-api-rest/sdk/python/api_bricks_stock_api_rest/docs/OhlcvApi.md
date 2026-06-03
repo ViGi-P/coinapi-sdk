@@ -11,12 +11,11 @@ Method | HTTP request | Description
 
 
 # **v1_ohlcv_exchange_exchange_id_history_get**
-> List[OHLCVTimeSeriesExchangeTimeseriesItem] v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end, limit=limit)
+> List[OHLCVTimeSeriesExchangeTimeseriesItem] v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end)
 
 Historical data by exchange
 
 Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
-Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
 
 ### Example
 
@@ -59,11 +58,10 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
     period_id = 'period_id_example' # str | Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
     time_start = 'time_start_example' # str | Timeseries starting time in ISO 8601
     time_end = 'time_end_example' # str | Timeseries ending time in ISO 8601
-    limit = 100 # int | Maximum number of symbol rows to return (1-10000, default 100) (optional) (default to 100)
 
     try:
         # Historical data by exchange
-        api_response = api_instance.v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end, limit=limit)
+        api_response = api_instance.v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end)
         print("The response of OhlcvApi->v1_ohlcv_exchange_exchange_id_history_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -81,7 +79,6 @@ Name | Type | Description  | Notes
  **period_id** | **str**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) | 
  **time_start** | **str**| Timeseries starting time in ISO 8601 | 
  **time_end** | **str**| Timeseries ending time in ISO 8601 | 
- **limit** | **int**| Maximum number of symbol rows to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 

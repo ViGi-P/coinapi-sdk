@@ -12,11 +12,11 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 <a id="v1OhlcvExchangeExchangeIdHistoryGet"></a>
 # **v1OhlcvExchangeExchangeIdHistoryGet**
-> kotlin.collections.List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt; v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, limit)
+> kotlin.collections.List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt; v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
 
 Historical data by exchange
 
-Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
+Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
 
 ### Example
 ```kotlin
@@ -29,9 +29,8 @@ val exchangeId : kotlin.String = exchangeId_example // kotlin.String | Exchange 
 val periodId : kotlin.String = periodId_example // kotlin.String | Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
 val timeStart : kotlin.String = timeStart_example // kotlin.String | Timeseries starting time in ISO 8601
 val timeEnd : kotlin.String = timeEnd_example // kotlin.String | Timeseries ending time in ISO 8601
-val limit : kotlin.Int = 56 // kotlin.Int | Maximum number of symbol rows to return (1-10000, default 100)
 try {
-    val result : kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem> = apiInstance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, limit)
+    val result : kotlin.collections.List<OHLCVTimeSeriesExchangeTimeseriesItem> = apiInstance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling OhlcvApi#v1OhlcvExchangeExchangeIdHistoryGet")
@@ -46,10 +45,9 @@ try {
 | **exchangeId** | **kotlin.String**| Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges) | |
 | **periodId** | **kotlin.String**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) | |
 | **timeStart** | **kotlin.String**| Timeseries starting time in ISO 8601 | |
-| **timeEnd** | **kotlin.String**| Timeseries ending time in ISO 8601 | |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **limit** | **kotlin.Int**| Maximum number of symbol rows to return (1-10000, default 100) | [optional] [default to 100] |
+| **timeEnd** | **kotlin.String**| Timeseries ending time in ISO 8601 | |
 
 ### Return type
 

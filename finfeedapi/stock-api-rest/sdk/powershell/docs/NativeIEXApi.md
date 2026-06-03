@@ -17,11 +17,8 @@ Method | HTTP request | Description
 > ModelsAdminMessageModel[] Invoke-V1NativeIexAdminMessagesSymbolGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Symbol] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Date] <System.DateTime><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Limit] <System.Nullable[Int32]><br>
 
 Get Admin Messages
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```powershell
@@ -34,12 +31,11 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 
 
 $Symbol = "MySymbol" # String | The symbol identifier
-$Date = (Get-Date) # System.DateTime | Date in format YYYY-MM-DD
-$Limit = 56 # Int32 | Maximum number of records to return (1-10000, default 100) (optional) (default to 100)
+$Date = (Get-Date) # System.DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 # Get Admin Messages
 try {
-    $Result = Invoke-V1NativeIexAdminMessagesSymbolGet -Symbol $Symbol -Date $Date -Limit $Limit
+    $Result = Invoke-V1NativeIexAdminMessagesSymbolGet -Symbol $Symbol -Date $Date
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1NativeIexAdminMessagesSymbolGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -51,8 +47,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Symbol** | **String**| The symbol identifier | 
- **Date** | **System.DateTime**| Date in format YYYY-MM-DD | 
- **Limit** | **Int32**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **Date** | **System.DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -73,11 +68,8 @@ Name | Type | Description  | Notes
 # **Invoke-V1NativeIexAdminSystemEventGet**
 > IEXSystemEventSystemEventModel[] Invoke-V1NativeIexAdminSystemEventGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Date] <System.DateTime><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Limit] <System.Nullable[Int32]><br>
 
 Get System Events
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```powershell
@@ -90,11 +82,10 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 
 
 $Date = (Get-Date) # System.DateTime | Date in format YYYY-MM-DD
-$Limit = 56 # Int32 | Maximum number of records to return (1-10000, default 100) (optional) (default to 100)
 
 # Get System Events
 try {
-    $Result = Invoke-V1NativeIexAdminSystemEventGet -Date $Date -Limit $Limit
+    $Result = Invoke-V1NativeIexAdminSystemEventGet -Date $Date
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1NativeIexAdminSystemEventGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -106,7 +97,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Date** | **System.DateTime**| Date in format YYYY-MM-DD | 
- **Limit** | **Int32**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -128,11 +118,8 @@ Name | Type | Description  | Notes
 > IEXQuoteUpdateQuoteUpdateModel[] Invoke-V1NativeIexLevel1QuoteSymbolGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Symbol] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Date] <System.DateTime><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Limit] <System.Nullable[Int32]><br>
 
 Get Level-1 Quotes
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```powershell
@@ -145,12 +132,11 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 
 
 $Symbol = "MySymbol" # String | The symbol identifier
-$Date = (Get-Date) # System.DateTime | Date in format YYYY-MM-DD
-$Limit = 56 # Int32 | Maximum number of records to return (1-10000, default 100) (optional) (default to 100)
+$Date = (Get-Date) # System.DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 # Get Level-1 Quotes
 try {
-    $Result = Invoke-V1NativeIexLevel1QuoteSymbolGet -Symbol $Symbol -Date $Date -Limit $Limit
+    $Result = Invoke-V1NativeIexLevel1QuoteSymbolGet -Symbol $Symbol -Date $Date
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1NativeIexLevel1QuoteSymbolGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -162,8 +148,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Symbol** | **String**| The symbol identifier | 
- **Date** | **System.DateTime**| Date in format YYYY-MM-DD | 
- **Limit** | **Int32**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **Date** | **System.DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -185,11 +170,8 @@ Name | Type | Description  | Notes
 > IEXPriceLevelUpdatePriceLevelUpdateModel[] Invoke-V1NativeIexLevel2PriceLevelUpdateSymbolGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Symbol] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Date] <System.DateTime><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Limit] <System.Nullable[Int32]><br>
 
 Get Level-2 Price Level Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```powershell
@@ -202,12 +184,11 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 
 
 $Symbol = "MySymbol" # String | The symbol identifier
-$Date = (Get-Date) # System.DateTime | Date in format YYYY-MM-DD
-$Limit = 56 # Int32 | Maximum number of records to return (1-10000, default 100) (optional) (default to 100)
+$Date = (Get-Date) # System.DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 # Get Level-2 Price Level Book
 try {
-    $Result = Invoke-V1NativeIexLevel2PriceLevelUpdateSymbolGet -Symbol $Symbol -Date $Date -Limit $Limit
+    $Result = Invoke-V1NativeIexLevel2PriceLevelUpdateSymbolGet -Symbol $Symbol -Date $Date
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1NativeIexLevel2PriceLevelUpdateSymbolGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -219,8 +200,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Symbol** | **String**| The symbol identifier | 
- **Date** | **System.DateTime**| Date in format YYYY-MM-DD | 
- **Limit** | **Int32**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **Date** | **System.DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -242,11 +222,8 @@ Name | Type | Description  | Notes
 > ModelsOrderBookModel[] Invoke-V1NativeIexLevel3OrderBookSymbolGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Symbol] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Date] <System.DateTime><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Limit] <System.Nullable[Int32]><br>
 
 Get Level-3 Order Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```powershell
@@ -259,12 +236,11 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 
 
 $Symbol = "MySymbol" # String | The symbol identifier
-$Date = (Get-Date) # System.DateTime | Date in format YYYY-MM-DD
-$Limit = 56 # Int32 | Maximum number of records to return (1-10000, default 100) (optional) (default to 100)
+$Date = (Get-Date) # System.DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 # Get Level-3 Order Book
 try {
-    $Result = Invoke-V1NativeIexLevel3OrderBookSymbolGet -Symbol $Symbol -Date $Date -Limit $Limit
+    $Result = Invoke-V1NativeIexLevel3OrderBookSymbolGet -Symbol $Symbol -Date $Date
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1NativeIexLevel3OrderBookSymbolGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -276,8 +252,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Symbol** | **String**| The symbol identifier | 
- **Date** | **System.DateTime**| Date in format YYYY-MM-DD | 
- **Limit** | **Int32**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **Date** | **System.DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -299,11 +274,8 @@ Name | Type | Description  | Notes
 > IEXTradeTradeModel[] Invoke-V1NativeIexTradeSymbolGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Symbol] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Date] <System.DateTime><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Limit] <System.Nullable[Int32]><br>
 
 Get Trades
-
-Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
 
 ### Example
 ```powershell
@@ -316,12 +288,11 @@ $Configuration.ApiKey.Authorization = "YOUR_API_KEY"
 
 
 $Symbol = "MySymbol" # String | The symbol identifier
-$Date = (Get-Date) # System.DateTime | Date in format YYYY-MM-DD
-$Limit = 56 # Int32 | Maximum number of records to return (1-10000, default 100) (optional) (default to 100)
+$Date = (Get-Date) # System.DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 # Get Trades
 try {
-    $Result = Invoke-V1NativeIexTradeSymbolGet -Symbol $Symbol -Date $Date -Limit $Limit
+    $Result = Invoke-V1NativeIexTradeSymbolGet -Symbol $Symbol -Date $Date
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1NativeIexTradeSymbolGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -333,8 +304,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Symbol** | **String**| The symbol identifier | 
- **Date** | **System.DateTime**| Date in format YYYY-MM-DD | 
- **Limit** | **Int32**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **Date** | **System.DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 

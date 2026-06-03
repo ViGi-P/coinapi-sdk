@@ -26,7 +26,6 @@ export interface V1OhlcvExchangeExchangeIdHistoryGetRequest {
     periodId: string;
     timeStart: string;
     timeEnd: string;
-    limit?: number;
 }
 
 export interface V1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetRequest {
@@ -51,12 +50,12 @@ export interface V1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetRequest {
 export class OhlcvApi extends BaseAPI {
 
     /**
-     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
+     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
      * Historical data by exchange
      */
-    v1OhlcvExchangeExchangeIdHistoryGet({ exchangeId, periodId, timeStart, timeEnd, limit }: V1OhlcvExchangeExchangeIdHistoryGetRequest): Observable<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>
-    v1OhlcvExchangeExchangeIdHistoryGet({ exchangeId, periodId, timeStart, timeEnd, limit }: V1OhlcvExchangeExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>>
-    v1OhlcvExchangeExchangeIdHistoryGet({ exchangeId, periodId, timeStart, timeEnd, limit }: V1OhlcvExchangeExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<Array<OHLCVTimeSeriesExchangeTimeseriesItem> | AjaxResponse<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>> {
+    v1OhlcvExchangeExchangeIdHistoryGet({ exchangeId, periodId, timeStart, timeEnd }: V1OhlcvExchangeExchangeIdHistoryGetRequest): Observable<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>
+    v1OhlcvExchangeExchangeIdHistoryGet({ exchangeId, periodId, timeStart, timeEnd }: V1OhlcvExchangeExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<AjaxResponse<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>>
+    v1OhlcvExchangeExchangeIdHistoryGet({ exchangeId, periodId, timeStart, timeEnd }: V1OhlcvExchangeExchangeIdHistoryGetRequest, opts?: OperationOpts): Observable<Array<OHLCVTimeSeriesExchangeTimeseriesItem> | AjaxResponse<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>> {
         throwIfNullOrUndefined(exchangeId, 'exchangeId', 'v1OhlcvExchangeExchangeIdHistoryGet');
         throwIfNullOrUndefined(periodId, 'periodId', 'v1OhlcvExchangeExchangeIdHistoryGet');
         throwIfNullOrUndefined(timeStart, 'timeStart', 'v1OhlcvExchangeExchangeIdHistoryGet');
@@ -71,8 +70,6 @@ export class OhlcvApi extends BaseAPI {
             'time_start': timeStart,
             'time_end': timeEnd,
         };
-
-        if (limit != null) { query['limit'] = limit; }
 
         return this.request<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>({
             url: '/v1/ohlcv/exchange/{exchange_id}/history'.replace('{exchange_id}', encodeURI(exchangeId)),

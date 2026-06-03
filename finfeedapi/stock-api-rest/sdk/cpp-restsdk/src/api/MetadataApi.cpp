@@ -173,7 +173,7 @@ pplx::task<std::vector<std::shared_ptr<FinFeedAPI_ExchangeModel>>> MetadataApi::
         return localVarResult;
     });
 }
-pplx::task<std::vector<std::shared_ptr<FinFeedAPI_SymbolModel>>> MetadataApi::v1SymbolsExchangeIdGet(utility::string_t exchangeId, boost::optional<utility::string_t> filterSymbolId, boost::optional<int32_t> limit, boost::optional<int32_t> page) const
+pplx::task<std::vector<std::shared_ptr<FinFeedAPI_SymbolModel>>> MetadataApi::v1SymbolsExchangeIdGet(utility::string_t exchangeId, boost::optional<utility::string_t> filterSymbolId) const
 {
 
 
@@ -220,14 +220,6 @@ pplx::task<std::vector<std::shared_ptr<FinFeedAPI_SymbolModel>>> MetadataApi::v1
     if (filterSymbolId)
     {
         localVarQueryParams[utility::conversions::to_string_t("filter_symbol_id")] = ApiClient::parameterToString(*filterSymbolId);
-    }
-    if (limit)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
-    }
-    if (page)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("page")] = ApiClient::parameterToString(*page);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

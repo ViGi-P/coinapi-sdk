@@ -1848,11 +1848,11 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
             };
         },
         /**
-         * Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
+         * 
          * @summary List of symbols for the exchange
          * @throws {RequiredError}
          */
-        v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, limit?: number, page?: number, options: RequestOptions): FetchArgs {
+        v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, options: RequestOptions): FetchArgs {
             // verify required parameter 'exchangeId' is not null or undefined
             if (exchangeId === null || exchangeId === undefined) {
                 throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling v1SymbolsExchangeIdGet.');
@@ -1878,14 +1878,6 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
                 localVarQueryParameter['filter_symbol_id'] = ((filterSymbolId:any):string);
             }
 
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = ((limit:any):string);
-            }
-
-            if (page !== undefined) {
-                localVarQueryParameter['page'] = ((page:any):string);
-            }
-
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             localVarUrlObj.search = null;
@@ -1902,7 +1894,7 @@ export const MetadataApiFetchParamCreator = function (configuration?: Configurat
 export type MetadataApiType = { 
     v1ExchangesGet(options?: RequestOptions): Promise<Array<FinFeedAPIExchangeModel>>,
 
-    v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, limit?: number, page?: number, options?: RequestOptions): Promise<Array<FinFeedAPISymbolModel>>,
+    v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, options?: RequestOptions): Promise<Array<FinFeedAPISymbolModel>>,
 }
 
 /**
@@ -1928,12 +1920,12 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
             });
         },
         /**
-         * Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
+         * 
          * @summary List of symbols for the exchange
          * @throws {RequiredError}
          */
-        v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, limit?: number, page?: number, options?: RequestOptions = {}): Promise<Array<FinFeedAPISymbolModel>> {
-            const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1SymbolsExchangeIdGet(exchangeId, filterSymbolId, limit, page, options);
+        v1SymbolsExchangeIdGet(exchangeId: string, filterSymbolId?: string, options?: RequestOptions = {}): Promise<Array<FinFeedAPISymbolModel>> {
+            const localVarFetchArgs = MetadataApiFetchParamCreator(configuration).v1SymbolsExchangeIdGet(exchangeId, filterSymbolId, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -1953,11 +1945,11 @@ export const MetadataApi = function(configuration?: Configuration, fetch: FetchA
 export const NativeIEXApiFetchParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+         * 
          * @summary Get Admin Messages
          * @throws {RequiredError}
          */
-        v1NativeIexAdminMessagesSymbolGet(symbol: string, _date: Date, limit?: number, options: RequestOptions): FetchArgs {
+        v1NativeIexAdminMessagesSymbolGet(symbol: string, _date: Date, options: RequestOptions): FetchArgs {
             // verify required parameter 'symbol' is not null or undefined
             if (symbol === null || symbol === undefined) {
                 throw new RequiredError('symbol','Required parameter symbol was null or undefined when calling v1NativeIexAdminMessagesSymbolGet.');
@@ -1987,10 +1979,6 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
                 localVarQueryParameter['date'] = ((_date:any):Date).toISOString();
             }
 
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = ((limit:any):string);
-            }
-
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             localVarUrlObj.search = null;
@@ -2002,11 +1990,11 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+         * 
          * @summary Get System Events
          * @throws {RequiredError}
          */
-        v1NativeIexAdminSystemEventGet(_date: Date, limit?: number, options: RequestOptions): FetchArgs {
+        v1NativeIexAdminSystemEventGet(_date: Date, options: RequestOptions): FetchArgs {
             // verify required parameter '_date' is not null or undefined
             if (_date === null || _date === undefined) {
                 throw new RequiredError('_date','Required parameter _date was null or undefined when calling v1NativeIexAdminSystemEventGet.');
@@ -2031,10 +2019,6 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
                 localVarQueryParameter['date'] = ((_date:any):Date).toISOString();
             }
 
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = ((limit:any):string);
-            }
-
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             localVarUrlObj.search = null;
@@ -2046,11 +2030,11 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+         * 
          * @summary Get Level-1 Quotes
          * @throws {RequiredError}
          */
-        v1NativeIexLevel1QuoteSymbolGet(symbol: string, _date: Date, limit?: number, options: RequestOptions): FetchArgs {
+        v1NativeIexLevel1QuoteSymbolGet(symbol: string, _date: Date, options: RequestOptions): FetchArgs {
             // verify required parameter 'symbol' is not null or undefined
             if (symbol === null || symbol === undefined) {
                 throw new RequiredError('symbol','Required parameter symbol was null or undefined when calling v1NativeIexLevel1QuoteSymbolGet.');
@@ -2080,10 +2064,6 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
                 localVarQueryParameter['date'] = ((_date:any):Date).toISOString();
             }
 
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = ((limit:any):string);
-            }
-
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             localVarUrlObj.search = null;
@@ -2095,11 +2075,11 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+         * 
          * @summary Get Level-2 Price Level Book
          * @throws {RequiredError}
          */
-        v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, _date: Date, limit?: number, options: RequestOptions): FetchArgs {
+        v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, _date: Date, options: RequestOptions): FetchArgs {
             // verify required parameter 'symbol' is not null or undefined
             if (symbol === null || symbol === undefined) {
                 throw new RequiredError('symbol','Required parameter symbol was null or undefined when calling v1NativeIexLevel2PriceLevelUpdateSymbolGet.');
@@ -2129,10 +2109,6 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
                 localVarQueryParameter['date'] = ((_date:any):Date).toISOString();
             }
 
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = ((limit:any):string);
-            }
-
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             localVarUrlObj.search = null;
@@ -2144,11 +2120,11 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+         * 
          * @summary Get Level-3 Order Book
          * @throws {RequiredError}
          */
-        v1NativeIexLevel3OrderBookSymbolGet(symbol: string, _date: Date, limit?: number, options: RequestOptions): FetchArgs {
+        v1NativeIexLevel3OrderBookSymbolGet(symbol: string, _date: Date, options: RequestOptions): FetchArgs {
             // verify required parameter 'symbol' is not null or undefined
             if (symbol === null || symbol === undefined) {
                 throw new RequiredError('symbol','Required parameter symbol was null or undefined when calling v1NativeIexLevel3OrderBookSymbolGet.');
@@ -2178,10 +2154,6 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
                 localVarQueryParameter['date'] = ((_date:any):Date).toISOString();
             }
 
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = ((limit:any):string);
-            }
-
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             localVarUrlObj.search = null;
@@ -2193,11 +2165,11 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
             };
         },
         /**
-         * Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
+         * 
          * @summary Get Trades
          * @throws {RequiredError}
          */
-        v1NativeIexTradeSymbolGet(symbol: string, _date: Date, limit?: number, options: RequestOptions): FetchArgs {
+        v1NativeIexTradeSymbolGet(symbol: string, _date: Date, options: RequestOptions): FetchArgs {
             // verify required parameter 'symbol' is not null or undefined
             if (symbol === null || symbol === undefined) {
                 throw new RequiredError('symbol','Required parameter symbol was null or undefined when calling v1NativeIexTradeSymbolGet.');
@@ -2227,10 +2199,6 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
                 localVarQueryParameter['date'] = ((_date:any):Date).toISOString();
             }
 
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = ((limit:any):string);
-            }
-
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             localVarUrlObj.search = null;
@@ -2245,17 +2213,17 @@ export const NativeIEXApiFetchParamCreator = function (configuration?: Configura
 };
 
 export type NativeIEXApiType = { 
-    v1NativeIexAdminMessagesSymbolGet(symbol: string, _date: Date, limit?: number, options?: RequestOptions): Promise<Array<ModelsAdminMessageModel>>,
+    v1NativeIexAdminMessagesSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<ModelsAdminMessageModel>>,
 
-    v1NativeIexAdminSystemEventGet(_date: Date, limit?: number, options?: RequestOptions): Promise<Array<IEXSystemEventSystemEventModel>>,
+    v1NativeIexAdminSystemEventGet(_date: Date, options?: RequestOptions): Promise<Array<IEXSystemEventSystemEventModel>>,
 
-    v1NativeIexLevel1QuoteSymbolGet(symbol: string, _date: Date, limit?: number, options?: RequestOptions): Promise<Array<IEXQuoteUpdateQuoteUpdateModel>>,
+    v1NativeIexLevel1QuoteSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<IEXQuoteUpdateQuoteUpdateModel>>,
 
-    v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, _date: Date, limit?: number, options?: RequestOptions): Promise<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>,
+    v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>,
 
-    v1NativeIexLevel3OrderBookSymbolGet(symbol: string, _date: Date, limit?: number, options?: RequestOptions): Promise<Array<ModelsOrderBookModel>>,
+    v1NativeIexLevel3OrderBookSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<ModelsOrderBookModel>>,
 
-    v1NativeIexTradeSymbolGet(symbol: string, _date: Date, limit?: number, options?: RequestOptions): Promise<Array<IEXTradeTradeModel>>,
+    v1NativeIexTradeSymbolGet(symbol: string, _date: Date, options?: RequestOptions): Promise<Array<IEXTradeTradeModel>>,
 }
 
 /**
@@ -2266,12 +2234,12 @@ export const NativeIEXApi = function(configuration?: Configuration, fetch: Fetch
     const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
     return {
         /**
-         * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+         * 
          * @summary Get Admin Messages
          * @throws {RequiredError}
          */
-        v1NativeIexAdminMessagesSymbolGet(symbol: string, _date: Date, limit?: number, options?: RequestOptions = {}): Promise<Array<ModelsAdminMessageModel>> {
-            const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexAdminMessagesSymbolGet(symbol, _date, limit, options);
+        v1NativeIexAdminMessagesSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<ModelsAdminMessageModel>> {
+            const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexAdminMessagesSymbolGet(symbol, _date, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -2281,12 +2249,12 @@ export const NativeIEXApi = function(configuration?: Configuration, fetch: Fetch
             });
         },
         /**
-         * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+         * 
          * @summary Get System Events
          * @throws {RequiredError}
          */
-        v1NativeIexAdminSystemEventGet(_date: Date, limit?: number, options?: RequestOptions = {}): Promise<Array<IEXSystemEventSystemEventModel>> {
-            const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexAdminSystemEventGet(_date, limit, options);
+        v1NativeIexAdminSystemEventGet(_date: Date, options?: RequestOptions = {}): Promise<Array<IEXSystemEventSystemEventModel>> {
+            const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexAdminSystemEventGet(_date, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -2296,12 +2264,12 @@ export const NativeIEXApi = function(configuration?: Configuration, fetch: Fetch
             });
         },
         /**
-         * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+         * 
          * @summary Get Level-1 Quotes
          * @throws {RequiredError}
          */
-        v1NativeIexLevel1QuoteSymbolGet(symbol: string, _date: Date, limit?: number, options?: RequestOptions = {}): Promise<Array<IEXQuoteUpdateQuoteUpdateModel>> {
-            const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexLevel1QuoteSymbolGet(symbol, _date, limit, options);
+        v1NativeIexLevel1QuoteSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<IEXQuoteUpdateQuoteUpdateModel>> {
+            const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexLevel1QuoteSymbolGet(symbol, _date, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -2311,12 +2279,12 @@ export const NativeIEXApi = function(configuration?: Configuration, fetch: Fetch
             });
         },
         /**
-         * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+         * 
          * @summary Get Level-2 Price Level Book
          * @throws {RequiredError}
          */
-        v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, _date: Date, limit?: number, options?: RequestOptions = {}): Promise<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>> {
-            const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, _date, limit, options);
+        v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>> {
+            const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, _date, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -2326,12 +2294,12 @@ export const NativeIEXApi = function(configuration?: Configuration, fetch: Fetch
             });
         },
         /**
-         * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+         * 
          * @summary Get Level-3 Order Book
          * @throws {RequiredError}
          */
-        v1NativeIexLevel3OrderBookSymbolGet(symbol: string, _date: Date, limit?: number, options?: RequestOptions = {}): Promise<Array<ModelsOrderBookModel>> {
-            const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexLevel3OrderBookSymbolGet(symbol, _date, limit, options);
+        v1NativeIexLevel3OrderBookSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<ModelsOrderBookModel>> {
+            const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexLevel3OrderBookSymbolGet(symbol, _date, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -2341,12 +2309,12 @@ export const NativeIEXApi = function(configuration?: Configuration, fetch: Fetch
             });
         },
         /**
-         * Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
+         * 
          * @summary Get Trades
          * @throws {RequiredError}
          */
-        v1NativeIexTradeSymbolGet(symbol: string, _date: Date, limit?: number, options?: RequestOptions = {}): Promise<Array<IEXTradeTradeModel>> {
-            const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexTradeSymbolGet(symbol, _date, limit, options);
+        v1NativeIexTradeSymbolGet(symbol: string, _date: Date, options?: RequestOptions = {}): Promise<Array<IEXTradeTradeModel>> {
+            const localVarFetchArgs = NativeIEXApiFetchParamCreator(configuration).v1NativeIexTradeSymbolGet(symbol, _date, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();
@@ -2366,11 +2334,11 @@ export const NativeIEXApi = function(configuration?: Configuration, fetch: Fetch
 export const OhlcvApiFetchParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
+         * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
          * @summary Historical data by exchange
          * @throws {RequiredError}
          */
-        v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, options: RequestOptions): FetchArgs {
+        v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, options: RequestOptions): FetchArgs {
             // verify required parameter 'exchangeId' is not null or undefined
             if (exchangeId === null || exchangeId === undefined) {
                 throw new RequiredError('exchangeId','Required parameter exchangeId was null or undefined when calling v1OhlcvExchangeExchangeIdHistoryGet.');
@@ -2414,10 +2382,6 @@ export const OhlcvApiFetchParamCreator = function (configuration?: Configuration
 
             if (timeEnd !== undefined) {
                 localVarQueryParameter['time_end'] = ((timeEnd:any):string);
-            }
-
-            if (limit !== undefined) {
-                localVarQueryParameter['limit'] = ((limit:any):string);
             }
 
             localVarUrlObj.query = Object.assign({}, localVarUrlObj.query, localVarQueryParameter, options.query);
@@ -2582,7 +2546,7 @@ export const OhlcvApiFetchParamCreator = function (configuration?: Configuration
 };
 
 export type OhlcvApiType = { 
-    v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, options?: RequestOptions): Promise<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>,
+    v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, options?: RequestOptions): Promise<Array<OHLCVTimeSeriesExchangeTimeseriesItem>>,
 
     v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(exchangeId: string, symbolId: string, periodId: string, timeStart?: string, timeEnd?: string, limit?: number, options?: RequestOptions): Promise<Array<OHLCVTimeSeriesTimeseriesItem>>,
 
@@ -2599,12 +2563,12 @@ export const OhlcvApi = function(configuration?: Configuration, fetch: FetchAPI 
     const basePath: string = (configuration && configuration.basePath) || BASE_PATH;
     return {
         /**
-         * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
+         * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
          * @summary Historical data by exchange
          * @throws {RequiredError}
          */
-        v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, limit?: number, options?: RequestOptions = {}): Promise<Array<OHLCVTimeSeriesExchangeTimeseriesItem>> {
-            const localVarFetchArgs = OhlcvApiFetchParamCreator(configuration).v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, limit, options);
+        v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: string, periodId: string, timeStart: string, timeEnd: string, options?: RequestOptions = {}): Promise<Array<OHLCVTimeSeriesExchangeTimeseriesItem>> {
+            const localVarFetchArgs = OhlcvApiFetchParamCreator(configuration).v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, options);
             return fetch(basePath + localVarFetchArgs.url, localVarFetchArgs.options).then((response) => {
                 if (response.status >= 200 && response.status < 300) {
                     return response.json();

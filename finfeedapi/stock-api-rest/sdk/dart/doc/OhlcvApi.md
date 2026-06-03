@@ -16,11 +16,11 @@ Method | HTTP request | Description
 
 
 # **v1OhlcvExchangeExchangeIdHistoryGet**
-> List<OHLCVTimeSeriesExchangeTimeseriesItem> v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, limit)
+> List<OHLCVTimeSeriesExchangeTimeseriesItem> v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd)
 
 Historical data by exchange
 
-Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
+Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
 
 ### Example
 ```dart
@@ -41,10 +41,9 @@ final exchangeId = exchangeId_example; // String | Exchange identifier of reques
 final periodId = periodId_example; // String | Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
 final timeStart = timeStart_example; // String | Timeseries starting time in ISO 8601
 final timeEnd = timeEnd_example; // String | Timeseries ending time in ISO 8601
-final limit = 56; // int | Maximum number of symbol rows to return (1-10000, default 100)
 
 try {
-    final result = api_instance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd, limit);
+    final result = api_instance.v1OhlcvExchangeExchangeIdHistoryGet(exchangeId, periodId, timeStart, timeEnd);
     print(result);
 } catch (e) {
     print('Exception when calling OhlcvApi->v1OhlcvExchangeExchangeIdHistoryGet: $e\n');
@@ -59,7 +58,6 @@ Name | Type | Description  | Notes
  **periodId** | **String**| Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`) | 
  **timeStart** | **String**| Timeseries starting time in ISO 8601 | 
  **timeEnd** | **String**| Timeseries ending time in ISO 8601 | 
- **limit** | **int**| Maximum number of symbol rows to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 

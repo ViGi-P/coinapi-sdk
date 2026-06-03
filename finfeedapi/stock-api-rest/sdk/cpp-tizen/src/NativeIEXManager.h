@@ -32,184 +32,172 @@ public:
 
 /*! \brief Get Admin Messages. *Synchronous*
  *
- * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+ * 
  * \param symbol The symbol identifier *Required*
- * \param date Date in format YYYY-MM-DD *Required*
- * \param limit Maximum number of records to return (1-10000, default 100)
+ * \param date Optional date in format YYYY-MM-DD (defaults to latest available data) *Required*
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1NativeIexAdminMessagesSymbolGetSync(char * accessToken,
-	std::string symbol, std::string date, int limit, 
+	std::string symbol, std::string date, 
 	void(* handler)(std::list<Models.AdminMessageModel>, Error, void* )
 	, void* userData);
 
 /*! \brief Get Admin Messages. *Asynchronous*
  *
- * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+ * 
  * \param symbol The symbol identifier *Required*
- * \param date Date in format YYYY-MM-DD *Required*
- * \param limit Maximum number of records to return (1-10000, default 100)
+ * \param date Optional date in format YYYY-MM-DD (defaults to latest available data) *Required*
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1NativeIexAdminMessagesSymbolGetAsync(char * accessToken,
-	std::string symbol, std::string date, int limit, 
+	std::string symbol, std::string date, 
 	void(* handler)(std::list<Models.AdminMessageModel>, Error, void* )
 	, void* userData);
 
 
 /*! \brief Get System Events. *Synchronous*
  *
- * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+ * 
  * \param date Date in format YYYY-MM-DD *Required*
- * \param limit Maximum number of records to return (1-10000, default 100)
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1NativeIexAdminSystemEventGetSync(char * accessToken,
-	std::string date, int limit, 
+	std::string date, 
 	void(* handler)(std::list<IEXSystemEvent.SystemEventModel>, Error, void* )
 	, void* userData);
 
 /*! \brief Get System Events. *Asynchronous*
  *
- * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+ * 
  * \param date Date in format YYYY-MM-DD *Required*
- * \param limit Maximum number of records to return (1-10000, default 100)
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1NativeIexAdminSystemEventGetAsync(char * accessToken,
-	std::string date, int limit, 
+	std::string date, 
 	void(* handler)(std::list<IEXSystemEvent.SystemEventModel>, Error, void* )
 	, void* userData);
 
 
 /*! \brief Get Level-1 Quotes. *Synchronous*
  *
- * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+ * 
  * \param symbol The symbol identifier *Required*
- * \param date Date in format YYYY-MM-DD *Required*
- * \param limit Maximum number of records to return (1-10000, default 100)
+ * \param date Optional date in format YYYY-MM-DD (defaults to latest available data) *Required*
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1NativeIexLevel1QuoteSymbolGetSync(char * accessToken,
-	std::string symbol, std::string date, int limit, 
+	std::string symbol, std::string date, 
 	void(* handler)(std::list<IEXQuoteUpdate.QuoteUpdateModel>, Error, void* )
 	, void* userData);
 
 /*! \brief Get Level-1 Quotes. *Asynchronous*
  *
- * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+ * 
  * \param symbol The symbol identifier *Required*
- * \param date Date in format YYYY-MM-DD *Required*
- * \param limit Maximum number of records to return (1-10000, default 100)
+ * \param date Optional date in format YYYY-MM-DD (defaults to latest available data) *Required*
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1NativeIexLevel1QuoteSymbolGetAsync(char * accessToken,
-	std::string symbol, std::string date, int limit, 
+	std::string symbol, std::string date, 
 	void(* handler)(std::list<IEXQuoteUpdate.QuoteUpdateModel>, Error, void* )
 	, void* userData);
 
 
 /*! \brief Get Level-2 Price Level Book. *Synchronous*
  *
- * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+ * 
  * \param symbol The symbol identifier *Required*
- * \param date Date in format YYYY-MM-DD *Required*
- * \param limit Maximum number of records to return (1-10000, default 100)
+ * \param date Optional date in format YYYY-MM-DD (defaults to latest available data) *Required*
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1NativeIexLevel2PriceLevelUpdateSymbolGetSync(char * accessToken,
-	std::string symbol, std::string date, int limit, 
+	std::string symbol, std::string date, 
 	void(* handler)(std::list<IEXPriceLevelUpdate.PriceLevelUpdateModel>, Error, void* )
 	, void* userData);
 
 /*! \brief Get Level-2 Price Level Book. *Asynchronous*
  *
- * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+ * 
  * \param symbol The symbol identifier *Required*
- * \param date Date in format YYYY-MM-DD *Required*
- * \param limit Maximum number of records to return (1-10000, default 100)
+ * \param date Optional date in format YYYY-MM-DD (defaults to latest available data) *Required*
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1NativeIexLevel2PriceLevelUpdateSymbolGetAsync(char * accessToken,
-	std::string symbol, std::string date, int limit, 
+	std::string symbol, std::string date, 
 	void(* handler)(std::list<IEXPriceLevelUpdate.PriceLevelUpdateModel>, Error, void* )
 	, void* userData);
 
 
 /*! \brief Get Level-3 Order Book. *Synchronous*
  *
- * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+ * 
  * \param symbol The symbol identifier *Required*
- * \param date Date in format YYYY-MM-DD *Required*
- * \param limit Maximum number of records to return (1-10000, default 100)
+ * \param date Optional date in format YYYY-MM-DD (defaults to latest available data) *Required*
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1NativeIexLevel3OrderBookSymbolGetSync(char * accessToken,
-	std::string symbol, std::string date, int limit, 
+	std::string symbol, std::string date, 
 	void(* handler)(std::list<Models.OrderBookModel>, Error, void* )
 	, void* userData);
 
 /*! \brief Get Level-3 Order Book. *Asynchronous*
  *
- * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+ * 
  * \param symbol The symbol identifier *Required*
- * \param date Date in format YYYY-MM-DD *Required*
- * \param limit Maximum number of records to return (1-10000, default 100)
+ * \param date Optional date in format YYYY-MM-DD (defaults to latest available data) *Required*
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1NativeIexLevel3OrderBookSymbolGetAsync(char * accessToken,
-	std::string symbol, std::string date, int limit, 
+	std::string symbol, std::string date, 
 	void(* handler)(std::list<Models.OrderBookModel>, Error, void* )
 	, void* userData);
 
 
 /*! \brief Get Trades. *Synchronous*
  *
- * Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
+ * 
  * \param symbol The symbol identifier *Required*
- * \param date Date in format YYYY-MM-DD *Required*
- * \param limit Maximum number of records to return (1-10000, default 100)
+ * \param date Optional date in format YYYY-MM-DD (defaults to latest available data) *Required*
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1NativeIexTradeSymbolGetSync(char * accessToken,
-	std::string symbol, std::string date, int limit, 
+	std::string symbol, std::string date, 
 	void(* handler)(std::list<IEXTrade.TradeModel>, Error, void* )
 	, void* userData);
 
 /*! \brief Get Trades. *Asynchronous*
  *
- * Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
+ * 
  * \param symbol The symbol identifier *Required*
- * \param date Date in format YYYY-MM-DD *Required*
- * \param limit Maximum number of records to return (1-10000, default 100)
+ * \param date Optional date in format YYYY-MM-DD (defaults to latest available data) *Required*
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1NativeIexTradeSymbolGetAsync(char * accessToken,
-	std::string symbol, std::string date, int limit, 
+	std::string symbol, std::string date, 
 	void(* handler)(std::list<IEXTrade.TradeModel>, Error, void* )
 	, void* userData);
 

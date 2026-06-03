@@ -30,8 +30,6 @@ object NativeIEXApi {
 class NativeIEXApi(baseUrl: String) {
 
   /**
-   * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-   * 
    * Expected answers:
    *   code 200 : Seq[AdminMessageModel] (successful operation)
    * 
@@ -40,21 +38,17 @@ class NativeIEXApi(baseUrl: String) {
    *   JWT (http)
    * 
    * @param symbol The symbol identifier
-   * @param date Date in format YYYY-MM-DD
-   * @param limit Maximum number of records to return (1-10000, default 100)
+   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
    */
-  def v1NativeIexAdminMessagesSymbolGet(symbol: String, date: OffsetDateTime, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[AdminMessageModel]] =
+  def v1NativeIexAdminMessagesSymbolGet(symbol: String, date: OffsetDateTime)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[AdminMessageModel]] =
     ApiRequest[Seq[AdminMessageModel]](ApiMethods.GET, baseUrl, "/v1/native/iex/admin/messages/{symbol}", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("date", date)
-      .withQueryParam("limit", limit)
       .withPathParam("symbol", symbol)
       .withSuccessResponse[Seq[AdminMessageModel]](200)
       
 
   /**
-   * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-   * 
    * Expected answers:
    *   code 200 : Seq[SystemEventModel] (successful operation)
    * 
@@ -63,19 +57,15 @@ class NativeIEXApi(baseUrl: String) {
    *   JWT (http)
    * 
    * @param date Date in format YYYY-MM-DD
-   * @param limit Maximum number of records to return (1-10000, default 100)
    */
-  def v1NativeIexAdminSystemEventGet(date: OffsetDateTime, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[SystemEventModel]] =
+  def v1NativeIexAdminSystemEventGet(date: OffsetDateTime)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[SystemEventModel]] =
     ApiRequest[Seq[SystemEventModel]](ApiMethods.GET, baseUrl, "/v1/native/iex/admin/system-event", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("date", date)
-      .withQueryParam("limit", limit)
       .withSuccessResponse[Seq[SystemEventModel]](200)
       
 
   /**
-   * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-   * 
    * Expected answers:
    *   code 200 : Seq[QuoteUpdateModel] (successful operation)
    * 
@@ -84,21 +74,17 @@ class NativeIEXApi(baseUrl: String) {
    *   JWT (http)
    * 
    * @param symbol The symbol identifier
-   * @param date Date in format YYYY-MM-DD
-   * @param limit Maximum number of records to return (1-10000, default 100)
+   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
    */
-  def v1NativeIexLevel1QuoteSymbolGet(symbol: String, date: OffsetDateTime, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[QuoteUpdateModel]] =
+  def v1NativeIexLevel1QuoteSymbolGet(symbol: String, date: OffsetDateTime)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[QuoteUpdateModel]] =
     ApiRequest[Seq[QuoteUpdateModel]](ApiMethods.GET, baseUrl, "/v1/native/iex/level1-quote/{symbol}", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("date", date)
-      .withQueryParam("limit", limit)
       .withPathParam("symbol", symbol)
       .withSuccessResponse[Seq[QuoteUpdateModel]](200)
       
 
   /**
-   * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-   * 
    * Expected answers:
    *   code 200 : Seq[PriceLevelUpdateModel] (successful operation)
    * 
@@ -107,21 +93,17 @@ class NativeIEXApi(baseUrl: String) {
    *   JWT (http)
    * 
    * @param symbol The symbol identifier
-   * @param date Date in format YYYY-MM-DD
-   * @param limit Maximum number of records to return (1-10000, default 100)
+   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
    */
-  def v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: String, date: OffsetDateTime, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[PriceLevelUpdateModel]] =
+  def v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: String, date: OffsetDateTime)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[PriceLevelUpdateModel]] =
     ApiRequest[Seq[PriceLevelUpdateModel]](ApiMethods.GET, baseUrl, "/v1/native/iex/level2-price-level-update/{symbol}", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("date", date)
-      .withQueryParam("limit", limit)
       .withPathParam("symbol", symbol)
       .withSuccessResponse[Seq[PriceLevelUpdateModel]](200)
       
 
   /**
-   * Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-   * 
    * Expected answers:
    *   code 200 : Seq[OrderBookModel] (successful operation)
    * 
@@ -130,21 +112,17 @@ class NativeIEXApi(baseUrl: String) {
    *   JWT (http)
    * 
    * @param symbol The symbol identifier
-   * @param date Date in format YYYY-MM-DD
-   * @param limit Maximum number of records to return (1-10000, default 100)
+   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
    */
-  def v1NativeIexLevel3OrderBookSymbolGet(symbol: String, date: OffsetDateTime, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[OrderBookModel]] =
+  def v1NativeIexLevel3OrderBookSymbolGet(symbol: String, date: OffsetDateTime)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[OrderBookModel]] =
     ApiRequest[Seq[OrderBookModel]](ApiMethods.GET, baseUrl, "/v1/native/iex/level3-order-book/{symbol}", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("date", date)
-      .withQueryParam("limit", limit)
       .withPathParam("symbol", symbol)
       .withSuccessResponse[Seq[OrderBookModel]](200)
       
 
   /**
-   * Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
-   * 
    * Expected answers:
    *   code 200 : Seq[TradeModel] (successful operation)
    * 
@@ -153,14 +131,12 @@ class NativeIEXApi(baseUrl: String) {
    *   JWT (http)
    * 
    * @param symbol The symbol identifier
-   * @param date Date in format YYYY-MM-DD
-   * @param limit Maximum number of records to return (1-10000, default 100)
+   * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
    */
-  def v1NativeIexTradeSymbolGet(symbol: String, date: OffsetDateTime, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[TradeModel]] =
+  def v1NativeIexTradeSymbolGet(symbol: String, date: OffsetDateTime)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[TradeModel]] =
     ApiRequest[Seq[TradeModel]](ApiMethods.GET, baseUrl, "/v1/native/iex/trade/{symbol}", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("date", date)
-      .withQueryParam("limit", limit)
       .withPathParam("symbol", symbol)
       .withSuccessResponse[Seq[TradeModel]](200)
       

@@ -164,14 +164,12 @@ export class MetadataApi {
         });
     }
     /**
-     * Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
+     * 
      * @summary List of symbols for the exchange
      * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
      * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)
-     * @param limit Maximum number of symbols to return (1-10000, default 100)
-     * @param page Page number (1-based, default 1)
      */
-    public async v1SymbolsExchangeIdGet (exchangeId: string, filterSymbolId?: string, limit?: number, page?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<FinFeedAPISymbolModel>;  }> {
+    public async v1SymbolsExchangeIdGet (exchangeId: string, filterSymbolId?: string, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: Array<FinFeedAPISymbolModel>;  }> {
         const localVarPath = this.basePath + '/v1/symbols/{exchange_id}'
             .replace('{exchange_id}', encodeURIComponent(String(exchangeId)));
         let localVarQueryParameters: any = {};
@@ -192,14 +190,6 @@ export class MetadataApi {
 
         if (filterSymbolId !== undefined) {
             localVarQueryParameters['filter_symbol_id'] = ObjectSerializer.serialize(filterSymbolId, "string");
-        }
-
-        if (limit !== undefined) {
-            localVarQueryParameters['limit'] = ObjectSerializer.serialize(limit, "number");
-        }
-
-        if (page !== undefined) {
-            localVarQueryParameters['page'] = ObjectSerializer.serialize(page, "number");
         }
 
         (<any>Object).assign(localVarHeaderParams, options.headers);

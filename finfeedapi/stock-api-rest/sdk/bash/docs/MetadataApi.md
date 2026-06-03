@@ -43,13 +43,10 @@ This endpoint does not need any parameter.
 
 List of symbols for the exchange
 
-Results are paginated. Use 'limit' and 'page' to control page size and offset
-(default limit: 100, max: 10000, default page: 1).
-
 ### Example
 
 ```bash
- v1SymbolsExchangeIdGet exchange_id=value  filter_symbol_id=value  limit=value  page=value
+ v1SymbolsExchangeIdGet exchange_id=value  filter_symbol_id=value
 ```
 
 ### Parameters
@@ -59,8 +56,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exchangeId** | **string** | The ID of the exchange (from the Metadata -> Exchanges) | [default to null]
  **filterSymbolId** | **string** | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. 'TSLA' or 'TSLA,NVDA') | [optional] [default to null]
- **limit** | **integer** | Maximum number of symbols to return (1-10000, default 100) | [optional] [default to 100]
- **page** | **integer** | Page number (1-based, default 1) | [optional] [default to 1]
 
 ### Return type
 

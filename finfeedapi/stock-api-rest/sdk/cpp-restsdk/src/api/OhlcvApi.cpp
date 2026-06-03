@@ -36,7 +36,7 @@ OhlcvApi::~OhlcvApi()
 {
 }
 
-pplx::task<std::vector<std::shared_ptr<OHLCVTimeSeries_ExchangeTimeseriesItem>>> OhlcvApi::v1OhlcvExchangeExchangeIdHistoryGet(utility::string_t exchangeId, utility::string_t periodId, utility::string_t timeStart, utility::string_t timeEnd, boost::optional<int32_t> limit) const
+pplx::task<std::vector<std::shared_ptr<OHLCVTimeSeries_ExchangeTimeseriesItem>>> OhlcvApi::v1OhlcvExchangeExchangeIdHistoryGet(utility::string_t exchangeId, utility::string_t periodId, utility::string_t timeStart, utility::string_t timeEnd) const
 {
 
 
@@ -88,10 +88,6 @@ pplx::task<std::vector<std::shared_ptr<OHLCVTimeSeries_ExchangeTimeseriesItem>>>
     }
     {
         localVarQueryParams[utility::conversions::to_string_t("time_end")] = ApiClient::parameterToString(timeEnd);
-    }
-    if (limit)
-    {
-        localVarQueryParams[utility::conversions::to_string_t("limit")] = ApiClient::parameterToString(*limit);
     }
 
     std::shared_ptr<IHttpBody> localVarHttpBody;

@@ -63,8 +63,6 @@ This endpoint does not need any parameter.
 
 List of symbols for the exchange
 
-Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
-
 ### Example
 
 ```javascript
@@ -82,9 +80,7 @@ JWT.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new FinFeedApiStockRestApi.MetadataApi();
 let exchangeId = "exchangeId_example"; // String | The ID of the exchange (from the Metadata -> Exchanges)
 let opts = {
-  'filterSymbolId': "filterSymbolId_example", // String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
-  'limit': 100, // Number | Maximum number of symbols to return (1-10000, default 100)
-  'page': 1 // Number | Page number (1-based, default 1)
+  'filterSymbolId': "filterSymbolId_example" // String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
 };
 apiInstance.v1SymbolsExchangeIdGet(exchangeId, opts, (error, data, response) => {
   if (error) {
@@ -102,8 +98,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exchangeId** | **String**| The ID of the exchange (from the Metadata -&gt; Exchanges) | 
  **filterSymbolId** | **String**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] 
- **limit** | **Number**| Maximum number of symbols to return (1-10000, default 100) | [optional] [default to 100]
- **page** | **Number**| Page number (1-based, default 1) | [optional] [default to 1]
 
 ### Return type
 

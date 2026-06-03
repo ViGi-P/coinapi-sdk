@@ -81,12 +81,9 @@ export default class MetadataApi {
 
     /**
      * List of symbols for the exchange
-     * Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
      * @param {String} exchangeId The ID of the exchange (from the Metadata -> Exchanges)
      * @param {Object} opts Optional parameters
      * @param {String} [filterSymbolId] Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
-     * @param {Number} [limit = 100)] Maximum number of symbols to return (1-10000, default 100)
-     * @param {Number} [page = 1)] Page number (1-based, default 1)
      * @param {module:api/MetadataApi~v1SymbolsExchangeIdGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/FinFeedAPISymbolModel>}
      */
@@ -102,9 +99,7 @@ export default class MetadataApi {
         'exchange_id': exchangeId
       };
       let queryParams = {
-        'filter_symbol_id': opts['filterSymbolId'],
-        'limit': opts['limit'],
-        'page': opts['page']
+        'filter_symbol_id': opts['filterSymbolId']
       };
       let headerParams = {
       };

@@ -24,15 +24,13 @@ inherit
 feature -- API Access
 
 
-	v1_native_iex_admin_messages_symbol_get (symbol: STRING_32; date: DATE_TIME; limit: INTEGER_32): detachable LIST [MODELS_ADMIN_MESSAGE_MODEL]
+	v1_native_iex_admin_messages_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [MODELS_ADMIN_MESSAGE_MODEL]
 			-- Get Admin Messages
-			-- Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+			-- 
 			-- 
 			-- argument: symbol The symbol identifier (required)
 			-- 
-			-- argument: date Date in format YYYY-MM-DD (required)
-			-- 
-			-- argument: limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+			-- argument: date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
 			-- 
 			-- 
 			-- Result LIST [MODELS_ADMIN_MESSAGE_MODEL]
@@ -48,7 +46,6 @@ feature -- API Access
 			l_path := "/v1/native/iex/admin/messages/{symbol}"
 			l_path.replace_substring_all ("{"+"symbol"+"}", api_client.url_encode (symbol.out))
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "date", date));
-			l_request.fill_query_params(api_client.parameter_to_tuple("", "limit", limit));
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"application/json">>)  as l_accept then
@@ -66,13 +63,11 @@ feature -- API Access
 			end
 		end
 
-	v1_native_iex_admin_system_event_get (date: DATE_TIME; limit: INTEGER_32): detachable LIST [IEX_SYSTEM_EVENT_SYSTEM_EVENT_MODEL]
+	v1_native_iex_admin_system_event_get (date: DATE_TIME): detachable LIST [IEX_SYSTEM_EVENT_SYSTEM_EVENT_MODEL]
 			-- Get System Events
-			-- Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+			-- 
 			-- 
 			-- argument: date Date in format YYYY-MM-DD (required)
-			-- 
-			-- argument: limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
 			-- 
 			-- 
 			-- Result LIST [IEX_SYSTEM_EVENT_SYSTEM_EVENT_MODEL]
@@ -87,7 +82,6 @@ feature -- API Access
 			
 			l_path := "/v1/native/iex/admin/system-event"
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "date", date));
-			l_request.fill_query_params(api_client.parameter_to_tuple("", "limit", limit));
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"application/json">>)  as l_accept then
@@ -105,15 +99,13 @@ feature -- API Access
 			end
 		end
 
-	v1_native_iex_level1_quote_symbol_get (symbol: STRING_32; date: DATE_TIME; limit: INTEGER_32): detachable LIST [IEX_QUOTE_UPDATE_QUOTE_UPDATE_MODEL]
+	v1_native_iex_level1_quote_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [IEX_QUOTE_UPDATE_QUOTE_UPDATE_MODEL]
 			-- Get Level-1 Quotes
-			-- Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+			-- 
 			-- 
 			-- argument: symbol The symbol identifier (required)
 			-- 
-			-- argument: date Date in format YYYY-MM-DD (required)
-			-- 
-			-- argument: limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+			-- argument: date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
 			-- 
 			-- 
 			-- Result LIST [IEX_QUOTE_UPDATE_QUOTE_UPDATE_MODEL]
@@ -129,7 +121,6 @@ feature -- API Access
 			l_path := "/v1/native/iex/level1-quote/{symbol}"
 			l_path.replace_substring_all ("{"+"symbol"+"}", api_client.url_encode (symbol.out))
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "date", date));
-			l_request.fill_query_params(api_client.parameter_to_tuple("", "limit", limit));
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"application/json">>)  as l_accept then
@@ -147,15 +138,13 @@ feature -- API Access
 			end
 		end
 
-	v1_native_iex_level2_price_level_update_symbol_get (symbol: STRING_32; date: DATE_TIME; limit: INTEGER_32): detachable LIST [IEX_PRICE_LEVEL_UPDATE_PRICE_LEVEL_UPDATE_MODEL]
+	v1_native_iex_level2_price_level_update_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [IEX_PRICE_LEVEL_UPDATE_PRICE_LEVEL_UPDATE_MODEL]
 			-- Get Level-2 Price Level Book
-			-- Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+			-- 
 			-- 
 			-- argument: symbol The symbol identifier (required)
 			-- 
-			-- argument: date Date in format YYYY-MM-DD (required)
-			-- 
-			-- argument: limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+			-- argument: date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
 			-- 
 			-- 
 			-- Result LIST [IEX_PRICE_LEVEL_UPDATE_PRICE_LEVEL_UPDATE_MODEL]
@@ -171,7 +160,6 @@ feature -- API Access
 			l_path := "/v1/native/iex/level2-price-level-update/{symbol}"
 			l_path.replace_substring_all ("{"+"symbol"+"}", api_client.url_encode (symbol.out))
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "date", date));
-			l_request.fill_query_params(api_client.parameter_to_tuple("", "limit", limit));
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"application/json">>)  as l_accept then
@@ -189,15 +177,13 @@ feature -- API Access
 			end
 		end
 
-	v1_native_iex_level3_order_book_symbol_get (symbol: STRING_32; date: DATE_TIME; limit: INTEGER_32): detachable LIST [MODELS_ORDER_BOOK_MODEL]
+	v1_native_iex_level3_order_book_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [MODELS_ORDER_BOOK_MODEL]
 			-- Get Level-3 Order Book
-			-- Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+			-- 
 			-- 
 			-- argument: symbol The symbol identifier (required)
 			-- 
-			-- argument: date Date in format YYYY-MM-DD (required)
-			-- 
-			-- argument: limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+			-- argument: date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
 			-- 
 			-- 
 			-- Result LIST [MODELS_ORDER_BOOK_MODEL]
@@ -213,7 +199,6 @@ feature -- API Access
 			l_path := "/v1/native/iex/level3-order-book/{symbol}"
 			l_path.replace_substring_all ("{"+"symbol"+"}", api_client.url_encode (symbol.out))
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "date", date));
-			l_request.fill_query_params(api_client.parameter_to_tuple("", "limit", limit));
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"application/json">>)  as l_accept then
@@ -231,15 +216,13 @@ feature -- API Access
 			end
 		end
 
-	v1_native_iex_trade_symbol_get (symbol: STRING_32; date: DATE_TIME; limit: INTEGER_32): detachable LIST [IEX_TRADE_TRADE_MODEL]
+	v1_native_iex_trade_symbol_get (symbol: STRING_32; date: DATE_TIME): detachable LIST [IEX_TRADE_TRADE_MODEL]
 			-- Get Trades
-			-- Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
+			-- 
 			-- 
 			-- argument: symbol The symbol identifier (required)
 			-- 
-			-- argument: date Date in format YYYY-MM-DD (required)
-			-- 
-			-- argument: limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
+			-- argument: date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
 			-- 
 			-- 
 			-- Result LIST [IEX_TRADE_TRADE_MODEL]
@@ -255,7 +238,6 @@ feature -- API Access
 			l_path := "/v1/native/iex/trade/{symbol}"
 			l_path.replace_substring_all ("{"+"symbol"+"}", api_client.url_encode (symbol.out))
 			l_request.fill_query_params(api_client.parameter_to_tuple("", "date", date));
-			l_request.fill_query_params(api_client.parameter_to_tuple("", "limit", limit));
 
 
 			if attached {STRING} api_client.select_header_accept ({ARRAY [STRING]}<<"application/json">>)  as l_accept then

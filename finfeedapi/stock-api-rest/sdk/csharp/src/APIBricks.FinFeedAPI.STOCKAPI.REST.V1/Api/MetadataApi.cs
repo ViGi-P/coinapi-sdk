@@ -63,30 +63,26 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// List of symbols for the exchange
         /// </summary>
         /// <remarks>
-        /// Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
+        /// 
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
         /// <param name="filterSymbolId">Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)</param>
-        /// <param name="limit">Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)</param>
-        /// <param name="page">Page number (1-based, default 1) (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdGetApiResponse"/>&gt;</returns>
-        Task<IV1SymbolsExchangeIdGetApiResponse> V1SymbolsExchangeIdGetAsync(string exchangeId, Option<string> filterSymbolId = default, Option<int> limit = default, Option<int> page = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1SymbolsExchangeIdGetApiResponse> V1SymbolsExchangeIdGetAsync(string exchangeId, Option<string> filterSymbolId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List of symbols for the exchange
         /// </summary>
         /// <remarks>
-        /// Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
+        /// 
         /// </remarks>
         /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
         /// <param name="filterSymbolId">Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)</param>
-        /// <param name="limit">Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)</param>
-        /// <param name="page">Page number (1-based, default 1) (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdGetApiResponse"/>?&gt;</returns>
-        Task<IV1SymbolsExchangeIdGetApiResponse?> V1SymbolsExchangeIdGetOrDefaultAsync(string exchangeId, Option<string> filterSymbolId = default, Option<int> limit = default, Option<int> page = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IV1SymbolsExchangeIdGetApiResponse?> V1SymbolsExchangeIdGetOrDefaultAsync(string exchangeId, Option<string> filterSymbolId = default, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -448,7 +444,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatV1SymbolsExchangeIdGet(ref string exchangeId, ref Option<string> filterSymbolId, ref Option<int> limit, ref Option<int> page);
+        partial void FormatV1SymbolsExchangeIdGet(ref string exchangeId, ref Option<string> filterSymbolId);
 
         /// <summary>
         /// Validates the request parameters
@@ -471,12 +467,10 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="exchangeId"></param>
         /// <param name="filterSymbolId"></param>
-        /// <param name="limit"></param>
-        /// <param name="page"></param>
-        private void AfterV1SymbolsExchangeIdGetDefaultImplementation(IV1SymbolsExchangeIdGetApiResponse apiResponseLocalVar, string exchangeId, Option<string> filterSymbolId, Option<int> limit, Option<int> page)
+        private void AfterV1SymbolsExchangeIdGetDefaultImplementation(IV1SymbolsExchangeIdGetApiResponse apiResponseLocalVar, string exchangeId, Option<string> filterSymbolId)
         {
             bool suppressDefaultLog = false;
-            AfterV1SymbolsExchangeIdGet(ref suppressDefaultLog, apiResponseLocalVar, exchangeId, filterSymbolId, limit, page);
+            AfterV1SymbolsExchangeIdGet(ref suppressDefaultLog, apiResponseLocalVar, exchangeId, filterSymbolId);
             if (!suppressDefaultLog)
                 Logger.LogInformation("{0,-9} | {1} | {2}", (apiResponseLocalVar.DownloadedAt - apiResponseLocalVar.RequestedAt).TotalSeconds, apiResponseLocalVar.StatusCode, apiResponseLocalVar.Path);
         }
@@ -488,9 +482,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="exchangeId"></param>
         /// <param name="filterSymbolId"></param>
-        /// <param name="limit"></param>
-        /// <param name="page"></param>
-        partial void AfterV1SymbolsExchangeIdGet(ref bool suppressDefaultLog, IV1SymbolsExchangeIdGetApiResponse apiResponseLocalVar, string exchangeId, Option<string> filterSymbolId, Option<int> limit, Option<int> page);
+        partial void AfterV1SymbolsExchangeIdGet(ref bool suppressDefaultLog, IV1SymbolsExchangeIdGetApiResponse apiResponseLocalVar, string exchangeId, Option<string> filterSymbolId);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -500,12 +492,10 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="exchangeId"></param>
         /// <param name="filterSymbolId"></param>
-        /// <param name="limit"></param>
-        /// <param name="page"></param>
-        private void OnErrorV1SymbolsExchangeIdGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, Option<string> filterSymbolId, Option<int> limit, Option<int> page)
+        private void OnErrorV1SymbolsExchangeIdGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, Option<string> filterSymbolId)
         {
             bool suppressDefaultLogLocalVar = false;
-            OnErrorV1SymbolsExchangeIdGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, exchangeId, filterSymbolId, limit, page);
+            OnErrorV1SymbolsExchangeIdGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, exchangeId, filterSymbolId);
             if (!suppressDefaultLogLocalVar)
                 Logger.LogError(exceptionLocalVar, "An error occurred while sending the request to the server.");
         }
@@ -519,24 +509,20 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="exchangeId"></param>
         /// <param name="filterSymbolId"></param>
-        /// <param name="limit"></param>
-        /// <param name="page"></param>
-        partial void OnErrorV1SymbolsExchangeIdGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, Option<string> filterSymbolId, Option<int> limit, Option<int> page);
+        partial void OnErrorV1SymbolsExchangeIdGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string exchangeId, Option<string> filterSymbolId);
 
         /// <summary>
-        /// List of symbols for the exchange Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
+        /// List of symbols for the exchange 
         /// </summary>
         /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
         /// <param name="filterSymbolId">Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)</param>
-        /// <param name="limit">Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)</param>
-        /// <param name="page">Page number (1-based, default 1) (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdGetApiResponse"/>&gt;</returns>
-        public async Task<IV1SymbolsExchangeIdGetApiResponse?> V1SymbolsExchangeIdGetOrDefaultAsync(string exchangeId, Option<string> filterSymbolId = default, Option<int> limit = default, Option<int> page = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1SymbolsExchangeIdGetApiResponse?> V1SymbolsExchangeIdGetOrDefaultAsync(string exchangeId, Option<string> filterSymbolId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await V1SymbolsExchangeIdGetAsync(exchangeId, filterSymbolId, limit, page, cancellationToken).ConfigureAwait(false);
+                return await V1SymbolsExchangeIdGetAsync(exchangeId, filterSymbolId, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -545,16 +531,14 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
         }
 
         /// <summary>
-        /// List of symbols for the exchange Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
+        /// List of symbols for the exchange 
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="exchangeId">The ID of the exchange (from the Metadata -&gt; Exchanges)</param>
         /// <param name="filterSymbolId">Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)</param>
-        /// <param name="limit">Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)</param>
-        /// <param name="page">Page number (1-based, default 1) (optional, default to 1)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IV1SymbolsExchangeIdGetApiResponse"/>&gt;</returns>
-        public async Task<IV1SymbolsExchangeIdGetApiResponse> V1SymbolsExchangeIdGetAsync(string exchangeId, Option<string> filterSymbolId = default, Option<int> limit = default, Option<int> page = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IV1SymbolsExchangeIdGetApiResponse> V1SymbolsExchangeIdGetAsync(string exchangeId, Option<string> filterSymbolId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -562,7 +546,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             {
                 ValidateV1SymbolsExchangeIdGet(exchangeId, filterSymbolId);
 
-                FormatV1SymbolsExchangeIdGet(ref exchangeId, ref filterSymbolId, ref limit, ref page);
+                FormatV1SymbolsExchangeIdGet(ref exchangeId, ref filterSymbolId);
 
                 using (HttpRequestMessage httpRequestMessageLocalVar = new HttpRequestMessage())
                 {
@@ -578,12 +562,6 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
 
                     if (filterSymbolId.IsSet)
                         parseQueryStringLocalVar["filter_symbol_id"] = ClientUtils.ParameterToString(filterSymbolId.Value);
-
-                    if (limit.IsSet)
-                        parseQueryStringLocalVar["limit"] = ClientUtils.ParameterToString(limit.Value);
-
-                    if (page.IsSet)
-                        parseQueryStringLocalVar["page"] = ClientUtils.ParameterToString(page.Value);
 
                     uriBuilderLocalVar.Query = parseQueryStringLocalVar.ToString();
 
@@ -629,7 +607,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
                             }
                         }
 
-                        AfterV1SymbolsExchangeIdGetDefaultImplementation(apiResponseLocalVar, exchangeId, filterSymbolId, limit, page);
+                        AfterV1SymbolsExchangeIdGetDefaultImplementation(apiResponseLocalVar, exchangeId, filterSymbolId);
 
                         Events.ExecuteOnV1SymbolsExchangeIdGet(apiResponseLocalVar);
 
@@ -643,7 +621,7 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Api
             }
             catch(Exception e)
             {
-                OnErrorV1SymbolsExchangeIdGetDefaultImplementation(e, "/v1/symbols/{exchange_id}", uriBuilderLocalVar.Path, exchangeId, filterSymbolId, limit, page);
+                OnErrorV1SymbolsExchangeIdGetDefaultImplementation(e, "/v1/symbols/{exchange_id}", uriBuilderLocalVar.Path, exchangeId, filterSymbolId);
                 Events.ExecuteOnErrorV1SymbolsExchangeIdGet(e);
                 throw;
             }

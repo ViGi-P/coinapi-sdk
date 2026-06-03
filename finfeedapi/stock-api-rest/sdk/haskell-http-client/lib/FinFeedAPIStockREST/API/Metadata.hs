@@ -89,8 +89,6 @@ instance Produces V1ExchangesGet MimePlainText
 -- 
 -- List of symbols for the exchange
 -- 
--- Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
--- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
 v1SymbolsExchangeIdGet
@@ -108,16 +106,6 @@ data V1SymbolsExchangeIdGet
 instance HasOptionalParam V1SymbolsExchangeIdGet FilterSymbolId where
   applyOptionalParam req (FilterSymbolId xs) =
     req `addQuery` toQuery ("filter_symbol_id", Just xs)
-
--- | /Optional Param/ "limit" - Maximum number of symbols to return (1-10000, default 100)
-instance HasOptionalParam V1SymbolsExchangeIdGet Limit where
-  applyOptionalParam req (Limit xs) =
-    req `addQuery` toQuery ("limit", Just xs)
-
--- | /Optional Param/ "page" - Page number (1-based, default 1)
-instance HasOptionalParam V1SymbolsExchangeIdGet Page where
-  applyOptionalParam req (Page xs) =
-    req `addQuery` toQuery ("page", Just xs)
 -- | @application/json@
 instance Produces V1SymbolsExchangeIdGet MimeJSON
 -- | @text/json@

@@ -13,11 +13,9 @@ Method | HTTP request | Description
 
 
 # **V1NativeIexAdminMessagesSymbolGet**
-> array[ModelsAdminMessageModel] V1NativeIexAdminMessagesSymbolGet(symbol, date, limit = 100)
+> array[ModelsAdminMessageModel] V1NativeIexAdminMessagesSymbolGet(symbol, date)
 
 Get Admin Messages
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```R
@@ -27,8 +25,7 @@ library(openapi)
 #
 # prepare function argument(s)
 var_symbol <- "symbol_example" # character | The symbol identifier
-var_date <- "date_example" # character | Date in format YYYY-MM-DD
-var_limit <- 100 # integer | Maximum number of records to return (1-10000, default 100) (Optional)
+var_date <- "date_example" # character | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 api_instance <- NativeIEXApi$new()
 # Configure API key authorization: APIKey
@@ -36,8 +33,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$V1NativeIexAdminMessagesSymbolGet(var_symbol, var_date, limit = var_limitdata_file = "result.txt")
-result <- api_instance$V1NativeIexAdminMessagesSymbolGet(var_symbol, var_date, limit = var_limit)
+# result <- api_instance$V1NativeIexAdminMessagesSymbolGet(var_symbol, var_datedata_file = "result.txt")
+result <- api_instance$V1NativeIexAdminMessagesSymbolGet(var_symbol, var_date)
 dput(result)
 ```
 
@@ -46,8 +43,7 @@ dput(result)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **character**| The symbol identifier | 
- **date** | **character**| Date in format YYYY-MM-DD | 
- **limit** | **integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **character**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -68,11 +64,9 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1NativeIexAdminSystemEventGet**
-> array[IEXSystemEventSystemEventModel] V1NativeIexAdminSystemEventGet(date, limit = 100)
+> array[IEXSystemEventSystemEventModel] V1NativeIexAdminSystemEventGet(date)
 
 Get System Events
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```R
@@ -82,7 +76,6 @@ library(openapi)
 #
 # prepare function argument(s)
 var_date <- "date_example" # character | Date in format YYYY-MM-DD
-var_limit <- 100 # integer | Maximum number of records to return (1-10000, default 100) (Optional)
 
 api_instance <- NativeIEXApi$new()
 # Configure API key authorization: APIKey
@@ -90,8 +83,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$V1NativeIexAdminSystemEventGet(var_date, limit = var_limitdata_file = "result.txt")
-result <- api_instance$V1NativeIexAdminSystemEventGet(var_date, limit = var_limit)
+# result <- api_instance$V1NativeIexAdminSystemEventGet(var_datedata_file = "result.txt")
+result <- api_instance$V1NativeIexAdminSystemEventGet(var_date)
 dput(result)
 ```
 
@@ -100,7 +93,6 @@ dput(result)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | **character**| Date in format YYYY-MM-DD | 
- **limit** | **integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -121,11 +113,9 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1NativeIexLevel1QuoteSymbolGet**
-> array[IEXQuoteUpdateQuoteUpdateModel] V1NativeIexLevel1QuoteSymbolGet(symbol, date, limit = 100)
+> array[IEXQuoteUpdateQuoteUpdateModel] V1NativeIexLevel1QuoteSymbolGet(symbol, date)
 
 Get Level-1 Quotes
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```R
@@ -135,8 +125,7 @@ library(openapi)
 #
 # prepare function argument(s)
 var_symbol <- "symbol_example" # character | The symbol identifier
-var_date <- "date_example" # character | Date in format YYYY-MM-DD
-var_limit <- 100 # integer | Maximum number of records to return (1-10000, default 100) (Optional)
+var_date <- "date_example" # character | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 api_instance <- NativeIEXApi$new()
 # Configure API key authorization: APIKey
@@ -144,8 +133,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$V1NativeIexLevel1QuoteSymbolGet(var_symbol, var_date, limit = var_limitdata_file = "result.txt")
-result <- api_instance$V1NativeIexLevel1QuoteSymbolGet(var_symbol, var_date, limit = var_limit)
+# result <- api_instance$V1NativeIexLevel1QuoteSymbolGet(var_symbol, var_datedata_file = "result.txt")
+result <- api_instance$V1NativeIexLevel1QuoteSymbolGet(var_symbol, var_date)
 dput(result)
 ```
 
@@ -154,8 +143,7 @@ dput(result)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **character**| The symbol identifier | 
- **date** | **character**| Date in format YYYY-MM-DD | 
- **limit** | **integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **character**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -176,11 +164,9 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1NativeIexLevel2PriceLevelUpdateSymbolGet**
-> array[IEXPriceLevelUpdatePriceLevelUpdateModel] V1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, limit = 100)
+> array[IEXPriceLevelUpdatePriceLevelUpdateModel] V1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
 
 Get Level-2 Price Level Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```R
@@ -190,8 +176,7 @@ library(openapi)
 #
 # prepare function argument(s)
 var_symbol <- "symbol_example" # character | The symbol identifier
-var_date <- "date_example" # character | Date in format YYYY-MM-DD
-var_limit <- 100 # integer | Maximum number of records to return (1-10000, default 100) (Optional)
+var_date <- "date_example" # character | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 api_instance <- NativeIEXApi$new()
 # Configure API key authorization: APIKey
@@ -199,8 +184,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$V1NativeIexLevel2PriceLevelUpdateSymbolGet(var_symbol, var_date, limit = var_limitdata_file = "result.txt")
-result <- api_instance$V1NativeIexLevel2PriceLevelUpdateSymbolGet(var_symbol, var_date, limit = var_limit)
+# result <- api_instance$V1NativeIexLevel2PriceLevelUpdateSymbolGet(var_symbol, var_datedata_file = "result.txt")
+result <- api_instance$V1NativeIexLevel2PriceLevelUpdateSymbolGet(var_symbol, var_date)
 dput(result)
 ```
 
@@ -209,8 +194,7 @@ dput(result)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **character**| The symbol identifier | 
- **date** | **character**| Date in format YYYY-MM-DD | 
- **limit** | **integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **character**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -231,11 +215,9 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1NativeIexLevel3OrderBookSymbolGet**
-> array[ModelsOrderBookModel] V1NativeIexLevel3OrderBookSymbolGet(symbol, date, limit = 100)
+> array[ModelsOrderBookModel] V1NativeIexLevel3OrderBookSymbolGet(symbol, date)
 
 Get Level-3 Order Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```R
@@ -245,8 +227,7 @@ library(openapi)
 #
 # prepare function argument(s)
 var_symbol <- "symbol_example" # character | The symbol identifier
-var_date <- "date_example" # character | Date in format YYYY-MM-DD
-var_limit <- 100 # integer | Maximum number of records to return (1-10000, default 100) (Optional)
+var_date <- "date_example" # character | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 api_instance <- NativeIEXApi$new()
 # Configure API key authorization: APIKey
@@ -254,8 +235,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$V1NativeIexLevel3OrderBookSymbolGet(var_symbol, var_date, limit = var_limitdata_file = "result.txt")
-result <- api_instance$V1NativeIexLevel3OrderBookSymbolGet(var_symbol, var_date, limit = var_limit)
+# result <- api_instance$V1NativeIexLevel3OrderBookSymbolGet(var_symbol, var_datedata_file = "result.txt")
+result <- api_instance$V1NativeIexLevel3OrderBookSymbolGet(var_symbol, var_date)
 dput(result)
 ```
 
@@ -264,8 +245,7 @@ dput(result)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **character**| The symbol identifier | 
- **date** | **character**| Date in format YYYY-MM-DD | 
- **limit** | **integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **character**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -286,11 +266,9 @@ Name | Type | Description  | Notes
 | **200** | successful operation |  -  |
 
 # **V1NativeIexTradeSymbolGet**
-> array[IEXTradeTradeModel] V1NativeIexTradeSymbolGet(symbol, date, limit = 100)
+> array[IEXTradeTradeModel] V1NativeIexTradeSymbolGet(symbol, date)
 
 Get Trades
-
-Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
 
 ### Example
 ```R
@@ -300,8 +278,7 @@ library(openapi)
 #
 # prepare function argument(s)
 var_symbol <- "symbol_example" # character | The symbol identifier
-var_date <- "date_example" # character | Date in format YYYY-MM-DD
-var_limit <- 100 # integer | Maximum number of records to return (1-10000, default 100) (Optional)
+var_date <- "date_example" # character | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 api_instance <- NativeIEXApi$new()
 # Configure API key authorization: APIKey
@@ -309,8 +286,8 @@ api_instance$api_client$api_keys["Authorization"] <- Sys.getenv("API_KEY")
 # Configure HTTP bearer authorization: JWT
 # api_instance$api_client$bearer_token <- Sys.getenv("BEARER_TOKEN")
 # to save the result into a file, simply add the optional `data_file` parameter, e.g.
-# result <- api_instance$V1NativeIexTradeSymbolGet(var_symbol, var_date, limit = var_limitdata_file = "result.txt")
-result <- api_instance$V1NativeIexTradeSymbolGet(var_symbol, var_date, limit = var_limit)
+# result <- api_instance$V1NativeIexTradeSymbolGet(var_symbol, var_datedata_file = "result.txt")
+result <- api_instance$V1NativeIexTradeSymbolGet(var_symbol, var_date)
 dput(result)
 ```
 
@@ -319,8 +296,7 @@ dput(result)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **character**| The symbol identifier | 
- **date** | **character**| Date in format YYYY-MM-DD | 
- **limit** | **integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **character**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 

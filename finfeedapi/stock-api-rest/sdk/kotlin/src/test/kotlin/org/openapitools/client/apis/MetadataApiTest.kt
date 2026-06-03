@@ -47,9 +47,7 @@ class MetadataApiTest : ShouldSpec() {
             // uncomment below to test v1SymbolsExchangeIdGet
             //val exchangeId : kotlin.String = exchangeId_example // kotlin.String | The ID of the exchange (from the Metadata -> Exchanges)
             //val filterSymbolId : kotlin.String = filterSymbolId_example // kotlin.String | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
-            //val limit : kotlin.Int = 56 // kotlin.Int | Maximum number of symbols to return (1-10000, default 100)
-            //val page : kotlin.Int = 56 // kotlin.Int | Page number (1-based, default 1)
-            //val result : kotlin.collections.List<FinFeedAPISymbolModel> = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId, limit, page)
+            //val result : kotlin.collections.List<FinFeedAPISymbolModel> = apiInstance.v1SymbolsExchangeIdGet(exchangeId, filterSymbolId)
             //result shouldBe ("TODO")
         }
 

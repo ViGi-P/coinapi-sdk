@@ -9,12 +9,11 @@ test_that("V1OhlcvExchangeExchangeIdHistoryGet", {
   # tests for V1OhlcvExchangeExchangeIdHistoryGet
   # base path: https://api-historical.stock.finfeedapi.com
   # Historical data by exchange
-  # Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
+  # Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
   # @param exchange_id character Exchange identifier of requested timeseries (from the Metadata -> Exchanges)
   # @param period_id character Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
   # @param time_start character Timeseries starting time in ISO 8601
   # @param time_end character Timeseries ending time in ISO 8601
-  # @param limit integer Maximum number of symbol rows to return (1-10000, default 100) (optional)
   # @return [array[OHLCVTimeSeriesExchangeTimeseriesItem]]
 
   # uncomment below to test the operation

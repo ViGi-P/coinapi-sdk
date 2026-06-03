@@ -17,11 +17,10 @@ Method | HTTP request | Description
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-PeriodId] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TimeStart] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TimeEnd] <String><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Limit] <System.Nullable[Int32]><br>
 
 Historical data by exchange
 
-Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
+Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
 
 ### Example
 ```powershell
@@ -37,11 +36,10 @@ $ExchangeId = "MyExchangeId" # String | Exchange identifier of requested timeser
 $PeriodId = "MyPeriodId" # String | Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
 $TimeStart = "MyTimeStart" # String | Timeseries starting time in ISO 8601
 $TimeEnd = "MyTimeEnd" # String | Timeseries ending time in ISO 8601
-$Limit = 56 # Int32 | Maximum number of symbol rows to return (1-10000, default 100) (optional) (default to 100)
 
 # Historical data by exchange
 try {
-    $Result = Invoke-V1OhlcvExchangeExchangeIdHistoryGet -ExchangeId $ExchangeId -PeriodId $PeriodId -TimeStart $TimeStart -TimeEnd $TimeEnd -Limit $Limit
+    $Result = Invoke-V1OhlcvExchangeExchangeIdHistoryGet -ExchangeId $ExchangeId -PeriodId $PeriodId -TimeStart $TimeStart -TimeEnd $TimeEnd
 } catch {
     Write-Host ("Exception occurred when calling Invoke-V1OhlcvExchangeExchangeIdHistoryGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -56,7 +54,6 @@ Name | Type | Description  | Notes
  **PeriodId** | **String**| Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) | 
  **TimeStart** | **String**| Timeseries starting time in ISO 8601 | 
  **TimeEnd** | **String**| Timeseries ending time in ISO 8601 | 
- **Limit** | **Int32**| Maximum number of symbol rows to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 

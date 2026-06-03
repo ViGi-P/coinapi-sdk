@@ -40,14 +40,10 @@ package body .Clients is
    end V_1Exchanges_Get;
 
    --  List of symbols for the exchange
-   --  Results are paginated. Use `limit` and `page` to control page size and offset
-   --  (default limit: 100, max: 10000, default page: 1).
    procedure V_1Symbols_Exchange_Id_Get
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;
        Filter_Symbol_Id : in Swagger.Nullable_UString;
-       Limit : in Swagger.Nullable_Integer;
-       Page : in Swagger.Nullable_Integer;
        Result : out .Models.FinFeedAPISymbolModel_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -56,8 +52,6 @@ package body .Clients is
 
 
       URI.Add_Param ("filter_symbol_id", Filter_Symbol_Id);
-      URI.Add_Param ("limit", Limit);
-      URI.Add_Param ("page", Page);
       URI.Set_Path ("/v1/symbols/{exchange_id}");
       URI.Set_Path_Param ("exchange_id", Exchange_Id);
       Client.Call (Swagger.Clients.GET, URI, Reply);
@@ -65,12 +59,10 @@ package body .Clients is
    end V_1Symbols_Exchange_Id_Get;
 
    --  Get Admin Messages
-   --  Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
    procedure V_1Native_Iex_Admin_Messages_Symbol_Get
       (Client : in out Client_Type;
        Symbol : in Swagger.UString;
        Date : in Swagger.Datetime;
-       Limit : in Swagger.Nullable_Integer;
        Result : out .Models.ModelsAdminMessageModel_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -80,7 +72,6 @@ package body .Clients is
 
       URI.Add_Param ("date", Date);
       URI.Add_Param ("date", Date);
-      URI.Add_Param ("limit", Limit);
       URI.Set_Path ("/v1/native/iex/admin/messages/{symbol}");
       URI.Set_Path_Param ("symbol", Symbol);
       Client.Call (Swagger.Clients.GET, URI, Reply);
@@ -88,11 +79,9 @@ package body .Clients is
    end V_1Native_Iex_Admin_Messages_Symbol_Get;
 
    --  Get System Events
-   --  Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
    procedure V_1Native_Iex_Admin_System_Event_Get
       (Client : in out Client_Type;
        Date : in Swagger.Datetime;
-       Limit : in Swagger.Nullable_Integer;
        Result : out .Models.IEXSystemEventSystemEventModel_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -102,19 +91,16 @@ package body .Clients is
 
       URI.Add_Param ("date", Date);
       URI.Add_Param ("date", Date);
-      URI.Add_Param ("limit", Limit);
       URI.Set_Path ("/v1/native/iex/admin/system-event");
       Client.Call (Swagger.Clients.GET, URI, Reply);
       .Models.Deserialize (Reply, "", Result);
    end V_1Native_Iex_Admin_System_Event_Get;
 
    --  Get Level_1 Quotes
-   --  Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
    procedure V_1Native_Iex_Level_1Quote_Symbol_Get
       (Client : in out Client_Type;
        Symbol : in Swagger.UString;
        Date : in Swagger.Datetime;
-       Limit : in Swagger.Nullable_Integer;
        Result : out .Models.IEXQuoteUpdateQuoteUpdateModel_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -124,7 +110,6 @@ package body .Clients is
 
       URI.Add_Param ("date", Date);
       URI.Add_Param ("date", Date);
-      URI.Add_Param ("limit", Limit);
       URI.Set_Path ("/v1/native/iex/level1-quote/{symbol}");
       URI.Set_Path_Param ("symbol", Symbol);
       Client.Call (Swagger.Clients.GET, URI, Reply);
@@ -132,12 +117,10 @@ package body .Clients is
    end V_1Native_Iex_Level_1Quote_Symbol_Get;
 
    --  Get Level_2 Price Level Book
-   --  Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
    procedure V_1Native_Iex_Level_2Price_Level_Update_Symbol_Get
       (Client : in out Client_Type;
        Symbol : in Swagger.UString;
        Date : in Swagger.Datetime;
-       Limit : in Swagger.Nullable_Integer;
        Result : out .Models.IEXPriceLevelUpdatePriceLevelUpdateModel_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -147,7 +130,6 @@ package body .Clients is
 
       URI.Add_Param ("date", Date);
       URI.Add_Param ("date", Date);
-      URI.Add_Param ("limit", Limit);
       URI.Set_Path ("/v1/native/iex/level2-price-level-update/{symbol}");
       URI.Set_Path_Param ("symbol", Symbol);
       Client.Call (Swagger.Clients.GET, URI, Reply);
@@ -155,12 +137,10 @@ package body .Clients is
    end V_1Native_Iex_Level_2Price_Level_Update_Symbol_Get;
 
    --  Get Level_3 Order Book
-   --  Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
    procedure V_1Native_Iex_Level_3Order_Book_Symbol_Get
       (Client : in out Client_Type;
        Symbol : in Swagger.UString;
        Date : in Swagger.Datetime;
-       Limit : in Swagger.Nullable_Integer;
        Result : out .Models.ModelsOrderBookModel_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -170,7 +150,6 @@ package body .Clients is
 
       URI.Add_Param ("date", Date);
       URI.Add_Param ("date", Date);
-      URI.Add_Param ("limit", Limit);
       URI.Set_Path ("/v1/native/iex/level3-order-book/{symbol}");
       URI.Set_Path_Param ("symbol", Symbol);
       Client.Call (Swagger.Clients.GET, URI, Reply);
@@ -178,12 +157,10 @@ package body .Clients is
    end V_1Native_Iex_Level_3Order_Book_Symbol_Get;
 
    --  Get Trades
-   --  Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
    procedure V_1Native_Iex_Trade_Symbol_Get
       (Client : in out Client_Type;
        Symbol : in Swagger.UString;
        Date : in Swagger.Datetime;
-       Limit : in Swagger.Nullable_Integer;
        Result : out .Models.IEXTradeTradeModel_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -193,7 +170,6 @@ package body .Clients is
 
       URI.Add_Param ("date", Date);
       URI.Add_Param ("date", Date);
-      URI.Add_Param ("limit", Limit);
       URI.Set_Path ("/v1/native/iex/trade/{symbol}");
       URI.Set_Path_Param ("symbol", Symbol);
       Client.Call (Swagger.Clients.GET, URI, Reply);
@@ -202,14 +178,12 @@ package body .Clients is
 
    --  Historical data by exchange
    --  Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
-   --  Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
    procedure V_1Ohlcv_Exchange_Exchange_Id_History_Get
       (Client : in out Client_Type;
        Exchange_Id : in Swagger.UString;
        Period_Id : in Swagger.UString;
        Time_Start : in Swagger.UString;
        Time_End : in Swagger.UString;
-       Limit : in Swagger.Nullable_Integer;
        Result : out .Models.OHLCVTimeSeriesExchangeTimeseriesItem_Type_Vectors.Vector) is
       URI   : Swagger.Clients.URI_Type;
       Reply : Swagger.Value_Type;
@@ -220,7 +194,6 @@ package body .Clients is
       URI.Add_Param ("period_id", Period_Id);
       URI.Add_Param ("time_start", Time_Start);
       URI.Add_Param ("time_end", Time_End);
-      URI.Add_Param ("limit", Limit);
       URI.Set_Path ("/v1/ohlcv/exchange/{exchange_id}/history");
       URI.Set_Path_Param ("exchange_id", Exchange_Id);
       Client.Call (Swagger.Clients.GET, URI, Reply);

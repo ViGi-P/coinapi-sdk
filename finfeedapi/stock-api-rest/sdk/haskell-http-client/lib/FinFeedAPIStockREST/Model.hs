@@ -77,9 +77,6 @@ newtype FilterSymbolId = FilterSymbolId { unFilterSymbolId :: Text } deriving (P
 -- ** Limit
 newtype Limit = Limit { unLimit :: Int } deriving (P.Eq, P.Show)
 
--- ** Page
-newtype Page = Page { unPage :: Int } deriving (P.Eq, P.Show)
-
 -- ** ParamDate
 newtype ParamDate = ParamDate { unParamDate :: DateTime } deriving (P.Eq, P.Show)
 

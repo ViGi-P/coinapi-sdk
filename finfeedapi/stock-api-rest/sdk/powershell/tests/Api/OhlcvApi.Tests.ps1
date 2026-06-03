@@ -9,7 +9,7 @@
 Describe -tag 'PSOpenAPITools' -name 'OhlcvApi' {
     Context 'Invoke-V1OhlcvExchangeExchangeIdHistoryGet' {
         It 'Test Invoke-V1OhlcvExchangeExchangeIdHistoryGet' {
-            #$TestResult = Invoke-V1OhlcvExchangeExchangeIdHistoryGet -ExchangeId "TEST_VALUE" -PeriodId "TEST_VALUE" -TimeStart "TEST_VALUE" -TimeEnd "TEST_VALUE" -Limit "TEST_VALUE"
+            #$TestResult = Invoke-V1OhlcvExchangeExchangeIdHistoryGet -ExchangeId "TEST_VALUE" -PeriodId "TEST_VALUE" -TimeStart "TEST_VALUE" -TimeEnd "TEST_VALUE"
             #$TestResult | Should -BeOfType TODO
             #$TestResult.property | Should -Be 0
         }

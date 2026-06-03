@@ -10,7 +10,7 @@
 -define(BASE_URL, <<"">>).
 
 %% @doc Get Admin Messages
-%% Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+%% 
 -spec v1_native_iex_admin_messages_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_models_admin_message_model:openapi_models_admin_message_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_admin_messages_symbol_get(Ctx, Symbol, Date) ->
     v1_native_iex_admin_messages_symbol_get(Ctx, Symbol, Date, #{}).
@@ -22,7 +22,7 @@ v1_native_iex_admin_messages_symbol_get(Ctx, Symbol, Date, Optional) ->
 
     Method = get,
     Path = [?BASE_URL, "/v1/native/iex/admin/messages/", Symbol, ""],
-    QS = lists:flatten([{<<"date">>, Date}])++openapi_utils:optional_params(['limit'], _OptionalParams),
+    QS = lists:flatten([{<<"date">>, Date}])++openapi_utils:optional_params([], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),
@@ -31,7 +31,7 @@ v1_native_iex_admin_messages_symbol_get(Ctx, Symbol, Date, Optional) ->
     openapi_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
 %% @doc Get System Events
-%% Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+%% 
 -spec v1_native_iex_admin_system_event_get(ctx:ctx(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_i_ex_system_event_system_event_model:openapi_i_ex_system_event_system_event_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_admin_system_event_get(Ctx, Date) ->
     v1_native_iex_admin_system_event_get(Ctx, Date, #{}).
@@ -43,7 +43,7 @@ v1_native_iex_admin_system_event_get(Ctx, Date, Optional) ->
 
     Method = get,
     Path = [?BASE_URL, "/v1/native/iex/admin/system-event"],
-    QS = lists:flatten([{<<"date">>, Date}])++openapi_utils:optional_params(['limit'], _OptionalParams),
+    QS = lists:flatten([{<<"date">>, Date}])++openapi_utils:optional_params([], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),
@@ -52,7 +52,7 @@ v1_native_iex_admin_system_event_get(Ctx, Date, Optional) ->
     openapi_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
 %% @doc Get Level-1 Quotes
-%% Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+%% 
 -spec v1_native_iex_level1_quote_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_i_ex_quote_update_quote_update_model:openapi_i_ex_quote_update_quote_update_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_level1_quote_symbol_get(Ctx, Symbol, Date) ->
     v1_native_iex_level1_quote_symbol_get(Ctx, Symbol, Date, #{}).
@@ -64,7 +64,7 @@ v1_native_iex_level1_quote_symbol_get(Ctx, Symbol, Date, Optional) ->
 
     Method = get,
     Path = [?BASE_URL, "/v1/native/iex/level1-quote/", Symbol, ""],
-    QS = lists:flatten([{<<"date">>, Date}])++openapi_utils:optional_params(['limit'], _OptionalParams),
+    QS = lists:flatten([{<<"date">>, Date}])++openapi_utils:optional_params([], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),
@@ -73,7 +73,7 @@ v1_native_iex_level1_quote_symbol_get(Ctx, Symbol, Date, Optional) ->
     openapi_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
 %% @doc Get Level-2 Price Level Book
-%% Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+%% 
 -spec v1_native_iex_level2_price_level_update_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_i_ex_price_level_update_price_level_update_model:openapi_i_ex_price_level_update_price_level_update_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_level2_price_level_update_symbol_get(Ctx, Symbol, Date) ->
     v1_native_iex_level2_price_level_update_symbol_get(Ctx, Symbol, Date, #{}).
@@ -85,7 +85,7 @@ v1_native_iex_level2_price_level_update_symbol_get(Ctx, Symbol, Date, Optional) 
 
     Method = get,
     Path = [?BASE_URL, "/v1/native/iex/level2-price-level-update/", Symbol, ""],
-    QS = lists:flatten([{<<"date">>, Date}])++openapi_utils:optional_params(['limit'], _OptionalParams),
+    QS = lists:flatten([{<<"date">>, Date}])++openapi_utils:optional_params([], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),
@@ -94,7 +94,7 @@ v1_native_iex_level2_price_level_update_symbol_get(Ctx, Symbol, Date, Optional) 
     openapi_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
 %% @doc Get Level-3 Order Book
-%% Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+%% 
 -spec v1_native_iex_level3_order_book_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_models_order_book_model:openapi_models_order_book_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_level3_order_book_symbol_get(Ctx, Symbol, Date) ->
     v1_native_iex_level3_order_book_symbol_get(Ctx, Symbol, Date, #{}).
@@ -106,7 +106,7 @@ v1_native_iex_level3_order_book_symbol_get(Ctx, Symbol, Date, Optional) ->
 
     Method = get,
     Path = [?BASE_URL, "/v1/native/iex/level3-order-book/", Symbol, ""],
-    QS = lists:flatten([{<<"date">>, Date}])++openapi_utils:optional_params(['limit'], _OptionalParams),
+    QS = lists:flatten([{<<"date">>, Date}])++openapi_utils:optional_params([], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),
@@ -115,7 +115,7 @@ v1_native_iex_level3_order_book_symbol_get(Ctx, Symbol, Date, Optional) ->
     openapi_utils:request(Ctx, Method, Path, QS, ContentTypeHeader++Headers, Body1, Opts, Cfg).
 
 %% @doc Get Trades
-%% Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
+%% 
 -spec v1_native_iex_trade_symbol_get(ctx:ctx(), binary(), openapi_date_time:openapi_date_time()) -> {ok, [openapi_i_ex_trade_trade_model:openapi_i_ex_trade_trade_model()], openapi_utils:response_info()} | {ok, hackney:client_ref()} | {error, term(), openapi_utils:response_info()}.
 v1_native_iex_trade_symbol_get(Ctx, Symbol, Date) ->
     v1_native_iex_trade_symbol_get(Ctx, Symbol, Date, #{}).
@@ -127,7 +127,7 @@ v1_native_iex_trade_symbol_get(Ctx, Symbol, Date, Optional) ->
 
     Method = get,
     Path = [?BASE_URL, "/v1/native/iex/trade/", Symbol, ""],
-    QS = lists:flatten([{<<"date">>, Date}])++openapi_utils:optional_params(['limit'], _OptionalParams),
+    QS = lists:flatten([{<<"date">>, Date}])++openapi_utils:optional_params([], _OptionalParams),
     Headers = [],
     Body1 = [],
     ContentTypeHeader = openapi_utils:select_header_content_type([]),

@@ -30,18 +30,11 @@ type ApiV1NativeIexAdminMessagesSymbolGetRequest struct {
 	ApiService *NativeIEXAPIService
 	symbol string
 	date *time.Time
-	limit *int32
 }
 
-// Date in format YYYY-MM-DD
+// Optional date in format YYYY-MM-DD (defaults to latest available data)
 func (r ApiV1NativeIexAdminMessagesSymbolGetRequest) Date(date time.Time) ApiV1NativeIexAdminMessagesSymbolGetRequest {
 	r.date = &date
-	return r
-}
-
-// Maximum number of records to return (1-10000, default 100)
-func (r ApiV1NativeIexAdminMessagesSymbolGetRequest) Limit(limit int32) ApiV1NativeIexAdminMessagesSymbolGetRequest {
-	r.limit = &limit
 	return r
 }
 
@@ -51,8 +44,6 @@ func (r ApiV1NativeIexAdminMessagesSymbolGetRequest) Execute() ([]ModelsAdminMes
 
 /*
 V1NativeIexAdminMessagesSymbolGet Get Admin Messages
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param symbol The symbol identifier
@@ -92,13 +83,6 @@ func (a *NativeIEXAPIService) V1NativeIexAdminMessagesSymbolGetExecute(r ApiV1Na
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "form", "")
-	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
-	} else {
-		var defaultValue int32 = 100
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-		r.limit = &defaultValue
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -171,18 +155,11 @@ type ApiV1NativeIexAdminSystemEventGetRequest struct {
 	ctx context.Context
 	ApiService *NativeIEXAPIService
 	date *time.Time
-	limit *int32
 }
 
 // Date in format YYYY-MM-DD
 func (r ApiV1NativeIexAdminSystemEventGetRequest) Date(date time.Time) ApiV1NativeIexAdminSystemEventGetRequest {
 	r.date = &date
-	return r
-}
-
-// Maximum number of records to return (1-10000, default 100)
-func (r ApiV1NativeIexAdminSystemEventGetRequest) Limit(limit int32) ApiV1NativeIexAdminSystemEventGetRequest {
-	r.limit = &limit
 	return r
 }
 
@@ -192,8 +169,6 @@ func (r ApiV1NativeIexAdminSystemEventGetRequest) Execute() ([]IEXSystemEventSys
 
 /*
 V1NativeIexAdminSystemEventGet Get System Events
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiV1NativeIexAdminSystemEventGetRequest
@@ -230,13 +205,6 @@ func (a *NativeIEXAPIService) V1NativeIexAdminSystemEventGetExecute(r ApiV1Nativ
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "form", "")
-	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
-	} else {
-		var defaultValue int32 = 100
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-		r.limit = &defaultValue
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -310,18 +278,11 @@ type ApiV1NativeIexLevel1QuoteSymbolGetRequest struct {
 	ApiService *NativeIEXAPIService
 	symbol string
 	date *time.Time
-	limit *int32
 }
 
-// Date in format YYYY-MM-DD
+// Optional date in format YYYY-MM-DD (defaults to latest available data)
 func (r ApiV1NativeIexLevel1QuoteSymbolGetRequest) Date(date time.Time) ApiV1NativeIexLevel1QuoteSymbolGetRequest {
 	r.date = &date
-	return r
-}
-
-// Maximum number of records to return (1-10000, default 100)
-func (r ApiV1NativeIexLevel1QuoteSymbolGetRequest) Limit(limit int32) ApiV1NativeIexLevel1QuoteSymbolGetRequest {
-	r.limit = &limit
 	return r
 }
 
@@ -331,8 +292,6 @@ func (r ApiV1NativeIexLevel1QuoteSymbolGetRequest) Execute() ([]IEXQuoteUpdateQu
 
 /*
 V1NativeIexLevel1QuoteSymbolGet Get Level-1 Quotes
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param symbol The symbol identifier
@@ -372,13 +331,6 @@ func (a *NativeIEXAPIService) V1NativeIexLevel1QuoteSymbolGetExecute(r ApiV1Nati
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "form", "")
-	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
-	} else {
-		var defaultValue int32 = 100
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-		r.limit = &defaultValue
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -452,18 +404,11 @@ type ApiV1NativeIexLevel2PriceLevelUpdateSymbolGetRequest struct {
 	ApiService *NativeIEXAPIService
 	symbol string
 	date *time.Time
-	limit *int32
 }
 
-// Date in format YYYY-MM-DD
+// Optional date in format YYYY-MM-DD (defaults to latest available data)
 func (r ApiV1NativeIexLevel2PriceLevelUpdateSymbolGetRequest) Date(date time.Time) ApiV1NativeIexLevel2PriceLevelUpdateSymbolGetRequest {
 	r.date = &date
-	return r
-}
-
-// Maximum number of records to return (1-10000, default 100)
-func (r ApiV1NativeIexLevel2PriceLevelUpdateSymbolGetRequest) Limit(limit int32) ApiV1NativeIexLevel2PriceLevelUpdateSymbolGetRequest {
-	r.limit = &limit
 	return r
 }
 
@@ -473,8 +418,6 @@ func (r ApiV1NativeIexLevel2PriceLevelUpdateSymbolGetRequest) Execute() ([]IEXPr
 
 /*
 V1NativeIexLevel2PriceLevelUpdateSymbolGet Get Level-2 Price Level Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param symbol The symbol identifier
@@ -514,13 +457,6 @@ func (a *NativeIEXAPIService) V1NativeIexLevel2PriceLevelUpdateSymbolGetExecute(
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "form", "")
-	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
-	} else {
-		var defaultValue int32 = 100
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-		r.limit = &defaultValue
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -594,18 +530,11 @@ type ApiV1NativeIexLevel3OrderBookSymbolGetRequest struct {
 	ApiService *NativeIEXAPIService
 	symbol string
 	date *time.Time
-	limit *int32
 }
 
-// Date in format YYYY-MM-DD
+// Optional date in format YYYY-MM-DD (defaults to latest available data)
 func (r ApiV1NativeIexLevel3OrderBookSymbolGetRequest) Date(date time.Time) ApiV1NativeIexLevel3OrderBookSymbolGetRequest {
 	r.date = &date
-	return r
-}
-
-// Maximum number of records to return (1-10000, default 100)
-func (r ApiV1NativeIexLevel3OrderBookSymbolGetRequest) Limit(limit int32) ApiV1NativeIexLevel3OrderBookSymbolGetRequest {
-	r.limit = &limit
 	return r
 }
 
@@ -615,8 +544,6 @@ func (r ApiV1NativeIexLevel3OrderBookSymbolGetRequest) Execute() ([]ModelsOrderB
 
 /*
 V1NativeIexLevel3OrderBookSymbolGet Get Level-3 Order Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param symbol The symbol identifier
@@ -656,13 +583,6 @@ func (a *NativeIEXAPIService) V1NativeIexLevel3OrderBookSymbolGetExecute(r ApiV1
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "form", "")
-	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
-	} else {
-		var defaultValue int32 = 100
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-		r.limit = &defaultValue
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -736,18 +656,11 @@ type ApiV1NativeIexTradeSymbolGetRequest struct {
 	ApiService *NativeIEXAPIService
 	symbol string
 	date *time.Time
-	limit *int32
 }
 
-// Date in format YYYY-MM-DD
+// Optional date in format YYYY-MM-DD (defaults to latest available data)
 func (r ApiV1NativeIexTradeSymbolGetRequest) Date(date time.Time) ApiV1NativeIexTradeSymbolGetRequest {
 	r.date = &date
-	return r
-}
-
-// Maximum number of records to return (1-10000, default 100)
-func (r ApiV1NativeIexTradeSymbolGetRequest) Limit(limit int32) ApiV1NativeIexTradeSymbolGetRequest {
-	r.limit = &limit
 	return r
 }
 
@@ -757,8 +670,6 @@ func (r ApiV1NativeIexTradeSymbolGetRequest) Execute() ([]IEXTradeTradeModel, *h
 
 /*
 V1NativeIexTradeSymbolGet Get Trades
-
-Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param symbol The symbol identifier
@@ -798,13 +709,6 @@ func (a *NativeIEXAPIService) V1NativeIexTradeSymbolGetExecute(r ApiV1NativeIexT
 	}
 
 	parameterAddToHeaderOrQuery(localVarQueryParams, "date", r.date, "form", "")
-	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
-	} else {
-		var defaultValue int32 = 100
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", defaultValue, "form", "")
-		r.limit = &defaultValue
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

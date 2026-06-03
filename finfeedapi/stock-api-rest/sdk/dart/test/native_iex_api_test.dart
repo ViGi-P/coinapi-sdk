@@ -19,54 +19,42 @@ void main() {
   group('tests for NativeIEXApi', () {
     // Get Admin Messages
     //
-    // Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-    //
-    //Future<List<ModelsAdminMessageModel>> v1NativeIexAdminMessagesSymbolGet(String symbol, DateTime date, { int limit }) async
+    //Future<List<ModelsAdminMessageModel>> v1NativeIexAdminMessagesSymbolGet(String symbol, DateTime date) async
     test('test v1NativeIexAdminMessagesSymbolGet', () async {
       // TODO
     });
 
     // Get System Events
     //
-    // Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-    //
-    //Future<List<IEXSystemEventSystemEventModel>> v1NativeIexAdminSystemEventGet(DateTime date, { int limit }) async
+    //Future<List<IEXSystemEventSystemEventModel>> v1NativeIexAdminSystemEventGet(DateTime date) async
     test('test v1NativeIexAdminSystemEventGet', () async {
       // TODO
     });
 
     // Get Level-1 Quotes
     //
-    // Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-    //
-    //Future<List<IEXQuoteUpdateQuoteUpdateModel>> v1NativeIexLevel1QuoteSymbolGet(String symbol, DateTime date, { int limit }) async
+    //Future<List<IEXQuoteUpdateQuoteUpdateModel>> v1NativeIexLevel1QuoteSymbolGet(String symbol, DateTime date) async
     test('test v1NativeIexLevel1QuoteSymbolGet', () async {
       // TODO
     });
 
     // Get Level-2 Price Level Book
     //
-    // Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-    //
-    //Future<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> v1NativeIexLevel2PriceLevelUpdateSymbolGet(String symbol, DateTime date, { int limit }) async
+    //Future<List<IEXPriceLevelUpdatePriceLevelUpdateModel>> v1NativeIexLevel2PriceLevelUpdateSymbolGet(String symbol, DateTime date) async
     test('test v1NativeIexLevel2PriceLevelUpdateSymbolGet', () async {
       // TODO
     });
 
     // Get Level-3 Order Book
     //
-    // Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
-    //
-    //Future<List<ModelsOrderBookModel>> v1NativeIexLevel3OrderBookSymbolGet(String symbol, DateTime date, { int limit }) async
+    //Future<List<ModelsOrderBookModel>> v1NativeIexLevel3OrderBookSymbolGet(String symbol, DateTime date) async
     test('test v1NativeIexLevel3OrderBookSymbolGet', () async {
       // TODO
     });
 
     // Get Trades
     //
-    // Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
-    //
-    //Future<List<IEXTradeTradeModel>> v1NativeIexTradeSymbolGet(String symbol, DateTime date, { int limit }) async
+    //Future<List<IEXTradeTradeModel>> v1NativeIexTradeSymbolGet(String symbol, DateTime date) async
     test('test v1NativeIexTradeSymbolGet', () async {
       // TODO
     });

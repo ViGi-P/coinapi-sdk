@@ -18,11 +18,9 @@ Method | HTTP request | Description
 
 
 # **v1NativeIexAdminMessagesSymbolGet**
-> BuiltList<ModelsAdminMessageModel> v1NativeIexAdminMessagesSymbolGet(symbol, date, limit)
+> BuiltList<ModelsAdminMessageModel> v1NativeIexAdminMessagesSymbolGet(symbol, date)
 
 Get Admin Messages
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```dart
@@ -34,11 +32,10 @@ import 'package:openapi/api.dart';
 
 final api = Openapi().getNativeIEXApi();
 final String symbol = symbol_example; // String | The symbol identifier
-final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Date in format YYYY-MM-DD
-final int limit = 56; // int | Maximum number of records to return (1-10000, default 100)
+final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 try {
-    final response = api.v1NativeIexAdminMessagesSymbolGet(symbol, date, limit);
+    final response = api.v1NativeIexAdminMessagesSymbolGet(symbol, date);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling NativeIEXApi->v1NativeIexAdminMessagesSymbolGet: $e\n');
@@ -50,8 +47,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | 
- **date** | **DateTime**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -69,11 +65,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexAdminSystemEventGet**
-> BuiltList<IEXSystemEventSystemEventModel> v1NativeIexAdminSystemEventGet(date, limit)
+> BuiltList<IEXSystemEventSystemEventModel> v1NativeIexAdminSystemEventGet(date)
 
 Get System Events
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```dart
@@ -85,10 +79,9 @@ import 'package:openapi/api.dart';
 
 final api = Openapi().getNativeIEXApi();
 final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Date in format YYYY-MM-DD
-final int limit = 56; // int | Maximum number of records to return (1-10000, default 100)
 
 try {
-    final response = api.v1NativeIexAdminSystemEventGet(date, limit);
+    final response = api.v1NativeIexAdminSystemEventGet(date);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling NativeIEXApi->v1NativeIexAdminSystemEventGet: $e\n');
@@ -100,7 +93,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | **DateTime**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -118,11 +110,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexLevel1QuoteSymbolGet**
-> BuiltList<IEXQuoteUpdateQuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet(symbol, date, limit)
+> BuiltList<IEXQuoteUpdateQuoteUpdateModel> v1NativeIexLevel1QuoteSymbolGet(symbol, date)
 
 Get Level-1 Quotes
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```dart
@@ -134,11 +124,10 @@ import 'package:openapi/api.dart';
 
 final api = Openapi().getNativeIEXApi();
 final String symbol = symbol_example; // String | The symbol identifier
-final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Date in format YYYY-MM-DD
-final int limit = 56; // int | Maximum number of records to return (1-10000, default 100)
+final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 try {
-    final response = api.v1NativeIexLevel1QuoteSymbolGet(symbol, date, limit);
+    final response = api.v1NativeIexLevel1QuoteSymbolGet(symbol, date);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling NativeIEXApi->v1NativeIexLevel1QuoteSymbolGet: $e\n');
@@ -150,8 +139,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | 
- **date** | **DateTime**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -169,11 +157,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexLevel2PriceLevelUpdateSymbolGet**
-> BuiltList<IEXPriceLevelUpdatePriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, limit)
+> BuiltList<IEXPriceLevelUpdatePriceLevelUpdateModel> v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
 
 Get Level-2 Price Level Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```dart
@@ -185,11 +171,10 @@ import 'package:openapi/api.dart';
 
 final api = Openapi().getNativeIEXApi();
 final String symbol = symbol_example; // String | The symbol identifier
-final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Date in format YYYY-MM-DD
-final int limit = 56; // int | Maximum number of records to return (1-10000, default 100)
+final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 try {
-    final response = api.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, limit);
+    final response = api.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling NativeIEXApi->v1NativeIexLevel2PriceLevelUpdateSymbolGet: $e\n');
@@ -201,8 +186,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | 
- **date** | **DateTime**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -220,11 +204,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexLevel3OrderBookSymbolGet**
-> BuiltList<ModelsOrderBookModel> v1NativeIexLevel3OrderBookSymbolGet(symbol, date, limit)
+> BuiltList<ModelsOrderBookModel> v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
 
 Get Level-3 Order Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```dart
@@ -236,11 +218,10 @@ import 'package:openapi/api.dart';
 
 final api = Openapi().getNativeIEXApi();
 final String symbol = symbol_example; // String | The symbol identifier
-final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Date in format YYYY-MM-DD
-final int limit = 56; // int | Maximum number of records to return (1-10000, default 100)
+final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 try {
-    final response = api.v1NativeIexLevel3OrderBookSymbolGet(symbol, date, limit);
+    final response = api.v1NativeIexLevel3OrderBookSymbolGet(symbol, date);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling NativeIEXApi->v1NativeIexLevel3OrderBookSymbolGet: $e\n');
@@ -252,8 +233,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | 
- **date** | **DateTime**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -271,11 +251,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1NativeIexTradeSymbolGet**
-> BuiltList<IEXTradeTradeModel> v1NativeIexTradeSymbolGet(symbol, date, limit)
+> BuiltList<IEXTradeTradeModel> v1NativeIexTradeSymbolGet(symbol, date)
 
 Get Trades
-
-Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
 
 ### Example
 ```dart
@@ -287,11 +265,10 @@ import 'package:openapi/api.dart';
 
 final api = Openapi().getNativeIEXApi();
 final String symbol = symbol_example; // String | The symbol identifier
-final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Date in format YYYY-MM-DD
-final int limit = 56; // int | Maximum number of records to return (1-10000, default 100)
+final DateTime date = 2013-10-20T19:20:30+01:00; // DateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 try {
-    final response = api.v1NativeIexTradeSymbolGet(symbol, date, limit);
+    final response = api.v1NativeIexTradeSymbolGet(symbol, date);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling NativeIEXApi->v1NativeIexTradeSymbolGet: $e\n');
@@ -303,8 +280,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | 
- **date** | **DateTime**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **DateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 

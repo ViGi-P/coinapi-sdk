@@ -18,11 +18,9 @@ Method | HTTP request | Description
 
 
 # **v1_native_iex_admin_messages_symbol_get**
-> ARRAY[ModelsAdminMessageModel] v1_native_iex_admin_messages_symbol_get(symbol => $symbol, date => $date, limit => $limit)
+> ARRAY[ModelsAdminMessageModel] v1_native_iex_admin_messages_symbol_get(symbol => $symbol, date => $date)
 
 Get Admin Messages
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```perl
@@ -40,11 +38,10 @@ my $api_instance = WWW::OpenAPIClient::NativeIEXApi->new(
 );
 
 my $symbol = "symbol_example"; # string | The symbol identifier
-my $date = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Date in format YYYY-MM-DD
-my $limit = 100; # int | Maximum number of records to return (1-10000, default 100)
+my $date = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 eval {
-    my $result = $api_instance->v1_native_iex_admin_messages_symbol_get(symbol => $symbol, date => $date, limit => $limit);
+    my $result = $api_instance->v1_native_iex_admin_messages_symbol_get(symbol => $symbol, date => $date);
     print Dumper($result);
 };
 if ($@) {
@@ -57,8 +54,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **string**| The symbol identifier | 
- **date** | **DATE_TIME**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **DATE_TIME**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -76,11 +72,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_admin_system_event_get**
-> ARRAY[IEXSystemEventSystemEventModel] v1_native_iex_admin_system_event_get(date => $date, limit => $limit)
+> ARRAY[IEXSystemEventSystemEventModel] v1_native_iex_admin_system_event_get(date => $date)
 
 Get System Events
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```perl
@@ -98,10 +92,9 @@ my $api_instance = WWW::OpenAPIClient::NativeIEXApi->new(
 );
 
 my $date = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Date in format YYYY-MM-DD
-my $limit = 100; # int | Maximum number of records to return (1-10000, default 100)
 
 eval {
-    my $result = $api_instance->v1_native_iex_admin_system_event_get(date => $date, limit => $limit);
+    my $result = $api_instance->v1_native_iex_admin_system_event_get(date => $date);
     print Dumper($result);
 };
 if ($@) {
@@ -114,7 +107,6 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | **DATE_TIME**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -132,11 +124,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level1_quote_symbol_get**
-> ARRAY[IEXQuoteUpdateQuoteUpdateModel] v1_native_iex_level1_quote_symbol_get(symbol => $symbol, date => $date, limit => $limit)
+> ARRAY[IEXQuoteUpdateQuoteUpdateModel] v1_native_iex_level1_quote_symbol_get(symbol => $symbol, date => $date)
 
 Get Level-1 Quotes
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```perl
@@ -154,11 +144,10 @@ my $api_instance = WWW::OpenAPIClient::NativeIEXApi->new(
 );
 
 my $symbol = "symbol_example"; # string | The symbol identifier
-my $date = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Date in format YYYY-MM-DD
-my $limit = 100; # int | Maximum number of records to return (1-10000, default 100)
+my $date = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 eval {
-    my $result = $api_instance->v1_native_iex_level1_quote_symbol_get(symbol => $symbol, date => $date, limit => $limit);
+    my $result = $api_instance->v1_native_iex_level1_quote_symbol_get(symbol => $symbol, date => $date);
     print Dumper($result);
 };
 if ($@) {
@@ -171,8 +160,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **string**| The symbol identifier | 
- **date** | **DATE_TIME**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **DATE_TIME**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -190,11 +178,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level2_price_level_update_symbol_get**
-> ARRAY[IEXPriceLevelUpdatePriceLevelUpdateModel] v1_native_iex_level2_price_level_update_symbol_get(symbol => $symbol, date => $date, limit => $limit)
+> ARRAY[IEXPriceLevelUpdatePriceLevelUpdateModel] v1_native_iex_level2_price_level_update_symbol_get(symbol => $symbol, date => $date)
 
 Get Level-2 Price Level Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```perl
@@ -212,11 +198,10 @@ my $api_instance = WWW::OpenAPIClient::NativeIEXApi->new(
 );
 
 my $symbol = "symbol_example"; # string | The symbol identifier
-my $date = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Date in format YYYY-MM-DD
-my $limit = 100; # int | Maximum number of records to return (1-10000, default 100)
+my $date = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 eval {
-    my $result = $api_instance->v1_native_iex_level2_price_level_update_symbol_get(symbol => $symbol, date => $date, limit => $limit);
+    my $result = $api_instance->v1_native_iex_level2_price_level_update_symbol_get(symbol => $symbol, date => $date);
     print Dumper($result);
 };
 if ($@) {
@@ -229,8 +214,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **string**| The symbol identifier | 
- **date** | **DATE_TIME**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **DATE_TIME**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -248,11 +232,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_level3_order_book_symbol_get**
-> ARRAY[ModelsOrderBookModel] v1_native_iex_level3_order_book_symbol_get(symbol => $symbol, date => $date, limit => $limit)
+> ARRAY[ModelsOrderBookModel] v1_native_iex_level3_order_book_symbol_get(symbol => $symbol, date => $date)
 
 Get Level-3 Order Book
-
-Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```perl
@@ -270,11 +252,10 @@ my $api_instance = WWW::OpenAPIClient::NativeIEXApi->new(
 );
 
 my $symbol = "symbol_example"; # string | The symbol identifier
-my $date = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Date in format YYYY-MM-DD
-my $limit = 100; # int | Maximum number of records to return (1-10000, default 100)
+my $date = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 eval {
-    my $result = $api_instance->v1_native_iex_level3_order_book_symbol_get(symbol => $symbol, date => $date, limit => $limit);
+    my $result = $api_instance->v1_native_iex_level3_order_book_symbol_get(symbol => $symbol, date => $date);
     print Dumper($result);
 };
 if ($@) {
@@ -287,8 +268,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **string**| The symbol identifier | 
- **date** | **DATE_TIME**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **DATE_TIME**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 
@@ -306,11 +286,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_native_iex_trade_symbol_get**
-> ARRAY[IEXTradeTradeModel] v1_native_iex_trade_symbol_get(symbol => $symbol, date => $date, limit => $limit)
+> ARRAY[IEXTradeTradeModel] v1_native_iex_trade_symbol_get(symbol => $symbol, date => $date)
 
 Get Trades
-
-Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
 
 ### Example
 ```perl
@@ -328,11 +306,10 @@ my $api_instance = WWW::OpenAPIClient::NativeIEXApi->new(
 );
 
 my $symbol = "symbol_example"; # string | The symbol identifier
-my $date = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Date in format YYYY-MM-DD
-my $limit = 100; # int | Maximum number of records to return (1-10000, default 100)
+my $date = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Optional date in format YYYY-MM-DD (defaults to latest available data)
 
 eval {
-    my $result = $api_instance->v1_native_iex_trade_symbol_get(symbol => $symbol, date => $date, limit => $limit);
+    my $result = $api_instance->v1_native_iex_trade_symbol_get(symbol => $symbol, date => $date);
     print Dumper($result);
 };
 if ($@) {
@@ -345,8 +322,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **string**| The symbol identifier | 
- **date** | **DATE_TIME**| Date in format YYYY-MM-DD | 
- **limit** | **int**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
+ **date** | **DATE_TIME**| Optional date in format YYYY-MM-DD (defaults to latest available data) | 
 
 ### Return type
 

@@ -104,8 +104,6 @@ sub v1_exchanges_get {
 #
 # @param string $exchange_id The ID of the exchange (from the Metadata -&gt; Exchanges) (required)
 # @param string $filter_symbol_id Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
-# @param int $limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
-# @param int $page Page number (1-based, default 1) (optional, default to 1)
 {
     my $params = {
     'exchange_id' => {
@@ -116,16 +114,6 @@ sub v1_exchanges_get {
     'filter_symbol_id' => {
         data_type => 'string',
         description => 'Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;)',
-        required => '0',
-    },
-    'limit' => {
-        data_type => 'int',
-        description => 'Maximum number of symbols to return (1-10000, default 100)',
-        required => '0',
-    },
-    'page' => {
-        data_type => 'int',
-        description => 'Page number (1-based, default 1)',
         required => '0',
     },
     };
@@ -163,16 +151,6 @@ sub v1_symbols_exchange_id_get {
     # query params
     if ( exists $args{'filter_symbol_id'}) {
         $query_params->{'filter_symbol_id'} = $self->{api_client}->to_query_value($args{'filter_symbol_id'});
-    }
-
-    # query params
-    if ( exists $args{'limit'}) {
-        $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
-    }
-
-    # query params
-    if ( exists $args{'page'}) {
-        $query_params->{'page'} = $self->{api_client}->to_query_value($args{'page'});
     }
 
     # path params
