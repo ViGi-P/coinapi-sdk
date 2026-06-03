@@ -17,7 +17,6 @@ paths:
       tags:
         - Metadata
       summary: List of symbols for the exchange
-      description: "Results are paginated. Use `limit` and `page` to control page size and offset\n(default limit: 100, max: 10000, default page: 1)."
       parameters:
         - name: exchange_id
           in: path
@@ -30,20 +29,6 @@ paths:
           description: 'Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)'
           schema:
             type: string
-        - name: limit
-          in: query
-          description: 'Maximum number of symbols to return (1-10000, default 100)'
-          schema:
-            type: integer
-            format: int32
-            default: 100
-        - name: page
-          in: query
-          description: 'Page number (1-based, default 1)'
-          schema:
-            type: integer
-            format: int32
-            default: 1
       responses:
         '200':
           description: successful operation
@@ -61,14 +46,14 @@ paths:
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "TESLA INC",
-    "date": "2026-06-02"
+    "date": "2026-06-03"
   },
   {
     "symbol_id": "NVDA",
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "NVIDIA CORP",
-    "date": "2026-06-02"
+    "date": "2026-06-03"
   }
 ]
             application/json:
@@ -84,14 +69,14 @@ paths:
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "TESLA INC",
-    "date": "2026-06-02"
+    "date": "2026-06-03"
   },
   {
     "symbol_id": "NVDA",
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "NVIDIA CORP",
-    "date": "2026-06-02"
+    "date": "2026-06-03"
   }
 ]
             text/json:
@@ -107,14 +92,14 @@ paths:
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "TESLA INC",
-    "date": "2026-06-02"
+    "date": "2026-06-03"
   },
   {
     "symbol_id": "NVDA",
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "NVIDIA CORP",
-    "date": "2026-06-02"
+    "date": "2026-06-03"
   }
 ]
   /v1/exchanges:
@@ -251,7 +236,6 @@ paths:
       tags:
         - NativeIEX
       summary: Get Trades
-      description: 'Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).'
       parameters:
         - name: symbol
           in: path
@@ -261,18 +245,11 @@ paths:
             type: string
         - name: date
           in: query
-          description: Date in format YYYY-MM-DD
+          description: Optional date in format YYYY-MM-DD (defaults to latest available data)
           required: true
           schema:
             type: string
             format: date-time
-        - name: limit
-          in: query
-          description: 'Maximum number of records to return (1-10000, default 100)'
-          schema:
-            type: integer
-            format: int32
-            default: 100
       responses:
         '200':
           description: successful operation
@@ -287,7 +264,6 @@ paths:
       tags:
         - NativeIEX
       summary: Get System Events
-      description: 'Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).'
       parameters:
         - name: date
           in: query
@@ -296,13 +272,6 @@ paths:
           schema:
             type: string
             format: date-time
-        - name: limit
-          in: query
-          description: 'Maximum number of records to return (1-10000, default 100)'
-          schema:
-            type: integer
-            format: int32
-            default: 100
       responses:
         '200':
           description: successful operation
@@ -317,7 +286,6 @@ paths:
       tags:
         - NativeIEX
       summary: Get Level-1 Quotes
-      description: 'Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).'
       parameters:
         - name: symbol
           in: path
@@ -327,18 +295,11 @@ paths:
             type: string
         - name: date
           in: query
-          description: Date in format YYYY-MM-DD
+          description: Optional date in format YYYY-MM-DD (defaults to latest available data)
           required: true
           schema:
             type: string
             format: date-time
-        - name: limit
-          in: query
-          description: 'Maximum number of records to return (1-10000, default 100)'
-          schema:
-            type: integer
-            format: int32
-            default: 100
       responses:
         '200':
           description: successful operation
@@ -353,7 +314,6 @@ paths:
       tags:
         - NativeIEX
       summary: Get Level-2 Price Level Book
-      description: 'Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).'
       parameters:
         - name: symbol
           in: path
@@ -363,18 +323,11 @@ paths:
             type: string
         - name: date
           in: query
-          description: Date in format YYYY-MM-DD
+          description: Optional date in format YYYY-MM-DD (defaults to latest available data)
           required: true
           schema:
             type: string
             format: date-time
-        - name: limit
-          in: query
-          description: 'Maximum number of records to return (1-10000, default 100)'
-          schema:
-            type: integer
-            format: int32
-            default: 100
       responses:
         '200':
           description: successful operation
@@ -389,7 +342,6 @@ paths:
       tags:
         - NativeIEX
       summary: Get Level-3 Order Book
-      description: 'Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).'
       parameters:
         - name: symbol
           in: path
@@ -399,18 +351,11 @@ paths:
             type: string
         - name: date
           in: query
-          description: Date in format YYYY-MM-DD
+          description: Optional date in format YYYY-MM-DD (defaults to latest available data)
           required: true
           schema:
             type: string
             format: date-time
-        - name: limit
-          in: query
-          description: 'Maximum number of records to return (1-10000, default 100)'
-          schema:
-            type: integer
-            format: int32
-            default: 100
       responses:
         '200':
           description: successful operation
@@ -424,8 +369,8 @@ paths:
   {
     "add_order": {
       "symbol": "AAPL",
-      "timestamp_nanos": 1780380378251000000,
-      "timestamp": "2026-06-02T06:06:18.2510000Z",
+      "timestamp_nanos": 1780466821238000000,
+      "timestamp": "2026-06-03T06:07:01.2380000Z",
       "is_side_buy": true,
       "size": 100,
       "price": 176.42,
@@ -435,16 +380,16 @@ paths:
   {
     "delete_order": {
       "symbol": "TSLA",
-      "timestamp_nanos": 1780380378251000000,
-      "timestamp": "2026-06-02T06:06:18.2510000Z",
+      "timestamp_nanos": 1780466821238000000,
+      "timestamp": "2026-06-03T06:07:01.2380000Z",
       "order_id_reference": 987654321
     }
   },
   {
     "modify_order": {
       "symbol": "NFLX",
-      "timestamp_nanos": 1780380378251000000,
-      "timestamp": "2026-06-02T06:06:18.2510000Z",
+      "timestamp_nanos": 1780466821238000000,
+      "timestamp": "2026-06-03T06:07:01.2380000Z",
       "order_id_reference": 789456123,
       "is_priority_reset": false,
       "size": 150,
@@ -454,8 +399,8 @@ paths:
   {
     "executed_order": {
       "symbol": "META",
-      "timestamp_nanos": 1780380378251000000,
-      "timestamp": "2026-06-02T06:06:18.2510000Z",
+      "timestamp_nanos": 1780466821238000000,
+      "timestamp": "2026-06-03T06:07:01.2380000Z",
       "order_id_reference": 555123456,
       "sale_condition_flags": 0,
       "is_intermarket_sweep": false,
@@ -471,8 +416,8 @@ paths:
   {
     "clear_book": {
       "symbol": "MSFT",
-      "timestamp_nanos": 1780380378251000000,
-      "timestamp": "2026-06-02T06:06:18.2510000Z"
+      "timestamp_nanos": 1780466821238000000,
+      "timestamp": "2026-06-03T06:07:01.2380000Z"
     }
   }
 ]
@@ -481,7 +426,6 @@ paths:
       tags:
         - NativeIEX
       summary: Get Admin Messages
-      description: 'Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).'
       parameters:
         - name: symbol
           in: path
@@ -491,18 +435,11 @@ paths:
             type: string
         - name: date
           in: query
-          description: Date in format YYYY-MM-DD
+          description: Optional date in format YYYY-MM-DD (defaults to latest available data)
           required: true
           schema:
             type: string
             format: date-time
-        - name: limit
-          in: query
-          description: 'Maximum number of records to return (1-10000, default 100)'
-          schema:
-            type: integer
-            format: int32
-            default: 100
       responses:
         '200':
           description: successful operation
@@ -516,8 +453,8 @@ paths:
   {
     "trading_status": {
       "symbol": "PYPL",
-      "timestamp_nanos": 1780380378260000000,
-      "timestamp": "2026-06-02T06:06:18.2600000Z",
+      "timestamp_nanos": 1780466821242000000,
+      "timestamp": "2026-06-03T06:07:01.2420000Z",
       "is_trading_live": true,
       "is_trading_halted": false,
       "is_trading_in_order_acceptance_period": false,
@@ -538,8 +475,8 @@ paths:
   {
     "official_price": {
       "symbol": "AAPL",
-      "timestamp_nanos": 1780380378260000000,
-      "timestamp": "2026-06-02T06:06:18.2600000Z",
+      "timestamp_nanos": 1780466821242000000,
+      "timestamp": "2026-06-03T06:07:01.2420000Z",
       "price_type": 81,
       "price_type_code": "Q",
       "price_type_text": "IEX Official Opening Price",
@@ -551,8 +488,8 @@ paths:
   {
     "security_event": {
       "symbol": "CRM",
-      "timestamp_nanos": 1780380378260000000,
-      "timestamp": "2026-06-02T06:06:18.2600000Z",
+      "timestamp_nanos": 1780466821242000000,
+      "timestamp": "2026-06-03T06:07:01.2420000Z",
       "security_event": 79,
       "security_event_code": "O",
       "security_event_text": "Opening Process Complete",
@@ -563,8 +500,8 @@ paths:
   {
     "auction_information": {
       "symbol": "AAPL",
-      "timestamp_nanos": 1780380378260000000,
-      "timestamp": "2026-06-02T06:06:18.2600000Z",
+      "timestamp_nanos": 1780466821242000000,
+      "timestamp": "2026-06-03T06:07:01.2420000Z",
       "auction_type": 79,
       "auction_type_code": "O",
       "auction_type_text": "Opening Auction",
@@ -584,8 +521,8 @@ paths:
       "is_imbalance_side_sell": false,
       "is_imbalance_side_none": false,
       "extension_number": 0,
-      "scheduled_auction_time_seconds": 1780380678,
-      "scheduled_auction_time": "2026-06-02T06:11:18.0000000Z",
+      "scheduled_auction_time_seconds": 1780467121,
+      "scheduled_auction_time": "2026-06-03T06:12:01.0000000Z",
       "auction_book_clearing_price": 156.45,
       "collar_reference_price": 157,
       "lower_auction_collar": 152.5,
@@ -595,8 +532,8 @@ paths:
   {
     "short_sale_price_test": {
       "symbol": "MSFT",
-      "timestamp_nanos": 1780380378260000000,
-      "timestamp": "2026-06-02T06:06:18.2600000Z",
+      "timestamp_nanos": 1780466821242000000,
+      "timestamp": "2026-06-03T06:07:01.2420000Z",
       "short_sale_price_test_status": 1,
       "short_sale_price_test_status_code": "1",
       "short_sale_price_test_status_text": "Short Sale Price Test in Effect",
@@ -615,8 +552,8 @@ paths:
   {
     "operational_halt_status": {
       "symbol": "AAPL",
-      "timestamp_nanos": 1780380378260000000,
-      "timestamp": "2026-06-02T06:06:18.2600000Z",
+      "timestamp_nanos": 1780466821242000000,
+      "timestamp": "2026-06-03T06:07:01.2420000Z",
       "operational_halt_status": 79,
       "operational_halt_status_code": "O",
       "operational_halt_status_text": "IEX specific operational trading halt",
@@ -627,8 +564,8 @@ paths:
   {
     "retail_liquidity_indicator": {
       "symbol": "GOOG",
-      "timestamp_nanos": 1780380378260000000,
-      "timestamp": "2026-06-02T06:06:18.2600000Z",
+      "timestamp_nanos": 1780466821242000000,
+      "timestamp": "2026-06-03T06:07:01.2420000Z",
       "retail_liquidity_indicator": 65,
       "retail_liquidity_indicator_code": "A",
       "retail_liquidity_indicator_text": "Buy interest for Retail",
@@ -640,8 +577,8 @@ paths:
   },
   {
     "system_event": {
-      "timestamp_nanos": 1780380378260000000,
-      "timestamp": "2026-06-02T06:06:18.2600000Z",
+      "timestamp_nanos": 1780466821242000000,
+      "timestamp": "2026-06-03T06:07:01.2420000Z",
       "system_event": 79,
       "system_event_code": "O",
       "system_event_text": "Start of Messages – Outside of heartbeat messages on the lower level protocol, the start of day message is the first message sent in any trading session.",
@@ -656,8 +593,8 @@ paths:
   {
     "security_directory": {
       "symbol": "INTC",
-      "timestamp_nanos": 1780380378260000000,
-      "timestamp": "2026-06-02T06:06:18.2600000Z",
+      "timestamp_nanos": 1780466821242000000,
+      "timestamp": "2026-06-03T06:07:01.2420000Z",
       "flags": 0,
       "round_lot_size": 100,
       "adjusted_poc_price": 35.36,
@@ -929,7 +866,7 @@ paths:
       tags:
         - Ohlcv
       summary: Historical data by exchange
-      description: "Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.\nTime range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned."
+      description: Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
       parameters:
         - name: exchange_id
           in: path
@@ -955,13 +892,6 @@ paths:
           required: true
           schema:
             type: string
-        - name: limit
-          in: query
-          description: 'Maximum number of symbol rows to return (1-10000, default 100)'
-          schema:
-            type: integer
-            format: int32
-            default: 100
       responses:
         '200':
           description: successful operation
