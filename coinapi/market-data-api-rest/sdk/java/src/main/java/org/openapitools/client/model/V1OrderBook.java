@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents an order book with additional information and functionality.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-03T06:05:55.251286835Z[Etc/UTC]", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-04T06:06:02.141081610Z[Etc/UTC]", comments = "Generator version: 7.22.0")
 public class V1OrderBook {
   public static final String SERIALIZED_NAME_SYMBOL_ID = "symbol_id";
   @SerializedName(SERIALIZED_NAME_SYMBOL_ID)
