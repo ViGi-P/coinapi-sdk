@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * Represents the response DTO for auction information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-03T06:07:34.810215539Z[Etc/UTC]", comments = "Generator version: 7.22.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-05T06:07:13.747453265Z[Etc/UTC]", comments = "Generator version: 7.22.0")
 public class ModelsAuctionInformationModel {
   public static final String SERIALIZED_NAME_SYMBOL = "symbol";
   @SerializedName(SERIALIZED_NAME_SYMBOL)
