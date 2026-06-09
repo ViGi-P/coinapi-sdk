@@ -342,8 +342,8 @@ case $state in
 "report_date_start=:[QUERY] Filter by report date start (inclusive), format YYYY-MM-DD"
 "report_date_end=:[QUERY] Filter by report date end (inclusive), format YYYY-MM-DD"
 "items_contain=:[QUERY] Filter filings where the &#39;Items&#39; field contains the specified text"
-"page_size=:[QUERY] Number of results per page (default: 50, max: 200)"
-"page_number=:[QUERY] Page number to retrieve (default: 1)"
+"page_size=:[QUERY] Number of results per page (default: 50, max: 200). Always applied; omit to use defaults."
+"page_number=:[QUERY] Page number to retrieve (default: 1). Always applied; omit to use defaults."
 "sort_by=:[QUERY] Field to sort results by (default: AccessionNumber)"
 "sort_order=:[QUERY] Sort order (asc or desc, default: desc)"
           )
@@ -357,8 +357,8 @@ case $state in
 "filling_date_end=:[QUERY] Filter by filling date end (inclusive), format YYYY-MM-DD"
 "text_contains=:[QUERY] Keywords that the text must contain. Multiple values can be comma-separated"
 "text_not_contain=:[QUERY] Keywords that the text must not contain. Multiple values can be comma-separated"
-"page_size=:[QUERY] Number of results per page (default: 100)"
-"page_number=:[QUERY] Page number to retrieve (default: 1)"
+"page_size=:[QUERY] Number of results per page (default: 100, max: 200). Always applied; omit to use defaults."
+"page_number=:[QUERY] Page number to retrieve (default: 1). Always applied; omit to use defaults."
 "sort_by=:[QUERY] Field to sort by (default: AccessionNumber)"
 "sort_order=:[QUERY] Sort order (asc or desc). Defaults to asc"
           )

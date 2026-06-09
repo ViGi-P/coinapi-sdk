@@ -853,6 +853,10 @@ All dates must be provided in YYYY-MM-DD format
 ### Form Types
 Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"
 
+### Pagination
+Results are always paginated. When 'page_size' or 'page_number' are omitted, defaults apply
+('page_size': 50, 'page_number': 1). Maximum 'page_size' is 200. Use 'page_number' to fetch additional pages.
+
 :::tip
 For optimal performance, use date ranges and form types to narrow down your search
 :::" | paste -sd' ' | fold -sw 80
@@ -874,9 +878,9 @@ For optimal performance, use date ranges and form types to narrow down your sear
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}items_contain${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Filter filings where the 'Items' field contains the specified text${YELLOW} Specify as: items_contain=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}page_size${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - Number of results per page (default: 50, max: 200)${YELLOW} Specify as: page_size=value${OFF}" \
+    echo -e "  * ${GREEN}page_size${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.${YELLOW} Specify as: page_size=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}page_number${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - Page number to retrieve (default: 1)${YELLOW} Specify as: page_number=value${OFF}" \
+    echo -e "  * ${GREEN}page_number${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - Page number to retrieve (default: 1). Always applied; omit to use defaults.${YELLOW} Specify as: page_number=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}sort_by${OFF} ${BLUE}[DTOFilingSortBy]${OFF} ${CYAN}(default: null)${OFF} - Field to sort results by (default: AccessionNumber)${YELLOW} Specify as: sort_by=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
@@ -924,6 +928,10 @@ text_not_contain | Keywords that must not appear in the document
 ### Date Format
 All dates must be provided in YYYY-MM-DD format
 
+### Pagination
+Results are always paginated. When 'page_size' or 'page_number' are omitted, defaults apply
+('page_size': 100, 'page_number': 1). Maximum 'page_size' is 200. Use 'page_number' to fetch additional pages.
+
 :::tip
 Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches
 :::
@@ -943,9 +951,9 @@ The search is case-insensitive and supports partial word matches
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}text_not_contain${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Keywords that the text must not contain. Multiple values can be comma-separated${YELLOW} Specify as: text_not_contain=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}page_size${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - Number of results per page (default: 100)${YELLOW} Specify as: page_size=value${OFF}" \
+    echo -e "  * ${GREEN}page_size${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.${YELLOW} Specify as: page_size=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}page_number${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - Page number to retrieve (default: 1)${YELLOW} Specify as: page_number=value${OFF}" \
+    echo -e "  * ${GREEN}page_number${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: null)${OFF} - Page number to retrieve (default: 1). Always applied; omit to use defaults.${YELLOW} Specify as: page_number=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}sort_by${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: AccessionNumber)${OFF} - Field to sort by (default: AccessionNumber)${YELLOW} Specify as: sort_by=value${OFF}" \
         | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'

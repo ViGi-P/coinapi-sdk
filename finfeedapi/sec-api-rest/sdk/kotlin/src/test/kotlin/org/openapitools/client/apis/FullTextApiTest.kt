@@ -36,8 +36,8 @@ class FullTextApiTest : ShouldSpec() {
             //val fillingDateEnd : kotlin.String = fillingDateEnd_example // kotlin.String | Filter by filling date end (inclusive), format YYYY-MM-DD
             //val textContains : kotlin.String = textContains_example // kotlin.String | Keywords that the text must contain. Multiple values can be comma-separated
             //val textNotContain : kotlin.String = textNotContain_example // kotlin.String | Keywords that the text must not contain. Multiple values can be comma-separated
-            //val pageSize : kotlin.Int = 56 // kotlin.Int | Number of results per page (default: 100)
-            //val pageNumber : kotlin.Int = 56 // kotlin.Int | Page number to retrieve (default: 1)
+            //val pageSize : kotlin.Int = 56 // kotlin.Int | Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
+            //val pageNumber : kotlin.Int = 56 // kotlin.Int | Page number to retrieve (default: 1). Always applied; omit to use defaults.
             //val sortBy : kotlin.String = sortBy_example // kotlin.String | Field to sort by (default: AccessionNumber)
             //val sortOrder : kotlin.String = sortOrder_example // kotlin.String | Sort order (asc or desc). Defaults to asc
             //val result : kotlin.collections.List<DTOSecFilingResultDto> = apiInstance.v1FullTextGet(formType, fillingDateStart, fillingDateEnd, textContains, textNotContain, pageSize, pageNumber, sortBy, sortOrder)

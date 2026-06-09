@@ -40,8 +40,8 @@ class FilingsApiTest : ShouldSpec() {
             //val reportDateStart : kotlin.String = reportDateStart_example // kotlin.String | Filter by report date start (inclusive), format YYYY-MM-DD
             //val reportDateEnd : kotlin.String = reportDateEnd_example // kotlin.String | Filter by report date end (inclusive), format YYYY-MM-DD
             //val itemsContain : kotlin.String = itemsContain_example // kotlin.String | Filter filings where the 'Items' field contains the specified text
-            //val pageSize : kotlin.Int = 56 // kotlin.Int | Number of results per page (default: 50, max: 200)
-            //val pageNumber : kotlin.Int = 56 // kotlin.Int | Page number to retrieve (default: 1)
+            //val pageSize : kotlin.Int = 56 // kotlin.Int | Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
+            //val pageNumber : kotlin.Int = 56 // kotlin.Int | Page number to retrieve (default: 1). Always applied; omit to use defaults.
             //val sortBy : DTOFilingSortBy =  // DTOFilingSortBy | Field to sort results by (default: AccessionNumber)
             //val sortOrder : kotlin.String = sortOrder_example // kotlin.String | Sort order (asc or desc, default: desc)
             //val result : kotlin.collections.List<DTOFilingMetadataDto> = apiInstance.v1FilingsGet(cik, ticker, formType, fillingDateStart, fillingDateEnd, reportDateStart, reportDateEnd, itemsContain, pageSize, pageNumber, sortBy, sortOrder)

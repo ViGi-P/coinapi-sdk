@@ -52,8 +52,8 @@ class FilingsApi:
         report_date_start: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by report date start (inclusive), format YYYY-MM-DD")] = None,
         report_date_end: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by report date end (inclusive), format YYYY-MM-DD")] = None,
         items_contain: Annotated[Optional[StrictStr], Field(description="Filter filings where the 'Items' field contains the specified text")] = None,
-        page_size: Annotated[Optional[Annotated[int, Field(le=200, strict=True, ge=1)]], Field(description="Number of results per page (default: 50, max: 200)")] = None,
-        page_number: Annotated[Optional[Annotated[int, Field(le=2147483647, strict=True, ge=1)]], Field(description="Page number to retrieve (default: 1)")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(le=200, strict=True, ge=1)]], Field(description="Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.")] = None,
+        page_number: Annotated[Optional[Annotated[int, Field(le=2147483647, strict=True, ge=1)]], Field(description="Page number to retrieve (default: 1). Always applied; omit to use defaults.")] = None,
         sort_by: Annotated[Optional[DTOFilingSortBy], Field(description="Field to sort results by (default: AccessionNumber)")] = None,
         sort_order: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Sort order (asc or desc, default: desc)")] = None,
         _request_timeout: Union[
@@ -71,7 +71,7 @@ class FilingsApi:
     ) -> List[DTOFilingMetadataDto]:
         """Query SEC filing metadata
 
-        Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
+        Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 50, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
 
         :param cik: Filter by Central Index Key (CIK)
         :type cik: int
@@ -89,9 +89,9 @@ class FilingsApi:
         :type report_date_end: str
         :param items_contain: Filter filings where the 'Items' field contains the specified text
         :type items_contain: str
-        :param page_size: Number of results per page (default: 50, max: 200)
+        :param page_size: Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
         :type page_size: int
-        :param page_number: Page number to retrieve (default: 1)
+        :param page_number: Page number to retrieve (default: 1). Always applied; omit to use defaults.
         :type page_number: int
         :param sort_by: Field to sort results by (default: AccessionNumber)
         :type sort_by: DTOFilingSortBy
@@ -165,8 +165,8 @@ class FilingsApi:
         report_date_start: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by report date start (inclusive), format YYYY-MM-DD")] = None,
         report_date_end: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by report date end (inclusive), format YYYY-MM-DD")] = None,
         items_contain: Annotated[Optional[StrictStr], Field(description="Filter filings where the 'Items' field contains the specified text")] = None,
-        page_size: Annotated[Optional[Annotated[int, Field(le=200, strict=True, ge=1)]], Field(description="Number of results per page (default: 50, max: 200)")] = None,
-        page_number: Annotated[Optional[Annotated[int, Field(le=2147483647, strict=True, ge=1)]], Field(description="Page number to retrieve (default: 1)")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(le=200, strict=True, ge=1)]], Field(description="Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.")] = None,
+        page_number: Annotated[Optional[Annotated[int, Field(le=2147483647, strict=True, ge=1)]], Field(description="Page number to retrieve (default: 1). Always applied; omit to use defaults.")] = None,
         sort_by: Annotated[Optional[DTOFilingSortBy], Field(description="Field to sort results by (default: AccessionNumber)")] = None,
         sort_order: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Sort order (asc or desc, default: desc)")] = None,
         _request_timeout: Union[
@@ -184,7 +184,7 @@ class FilingsApi:
     ) -> ApiResponse[List[DTOFilingMetadataDto]]:
         """Query SEC filing metadata
 
-        Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
+        Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 50, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
 
         :param cik: Filter by Central Index Key (CIK)
         :type cik: int
@@ -202,9 +202,9 @@ class FilingsApi:
         :type report_date_end: str
         :param items_contain: Filter filings where the 'Items' field contains the specified text
         :type items_contain: str
-        :param page_size: Number of results per page (default: 50, max: 200)
+        :param page_size: Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
         :type page_size: int
-        :param page_number: Page number to retrieve (default: 1)
+        :param page_number: Page number to retrieve (default: 1). Always applied; omit to use defaults.
         :type page_number: int
         :param sort_by: Field to sort results by (default: AccessionNumber)
         :type sort_by: DTOFilingSortBy
@@ -278,8 +278,8 @@ class FilingsApi:
         report_date_start: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by report date start (inclusive), format YYYY-MM-DD")] = None,
         report_date_end: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by report date end (inclusive), format YYYY-MM-DD")] = None,
         items_contain: Annotated[Optional[StrictStr], Field(description="Filter filings where the 'Items' field contains the specified text")] = None,
-        page_size: Annotated[Optional[Annotated[int, Field(le=200, strict=True, ge=1)]], Field(description="Number of results per page (default: 50, max: 200)")] = None,
-        page_number: Annotated[Optional[Annotated[int, Field(le=2147483647, strict=True, ge=1)]], Field(description="Page number to retrieve (default: 1)")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(le=200, strict=True, ge=1)]], Field(description="Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.")] = None,
+        page_number: Annotated[Optional[Annotated[int, Field(le=2147483647, strict=True, ge=1)]], Field(description="Page number to retrieve (default: 1). Always applied; omit to use defaults.")] = None,
         sort_by: Annotated[Optional[DTOFilingSortBy], Field(description="Field to sort results by (default: AccessionNumber)")] = None,
         sort_order: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Sort order (asc or desc, default: desc)")] = None,
         _request_timeout: Union[
@@ -297,7 +297,7 @@ class FilingsApi:
     ) -> RESTResponseType:
         """Query SEC filing metadata
 
-        Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
+        Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 50, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
 
         :param cik: Filter by Central Index Key (CIK)
         :type cik: int
@@ -315,9 +315,9 @@ class FilingsApi:
         :type report_date_end: str
         :param items_contain: Filter filings where the 'Items' field contains the specified text
         :type items_contain: str
-        :param page_size: Number of results per page (default: 50, max: 200)
+        :param page_size: Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
         :type page_size: int
-        :param page_number: Page number to retrieve (default: 1)
+        :param page_number: Page number to retrieve (default: 1). Always applied; omit to use defaults.
         :type page_number: int
         :param sort_by: Field to sort results by (default: AccessionNumber)
         :type sort_by: DTOFilingSortBy

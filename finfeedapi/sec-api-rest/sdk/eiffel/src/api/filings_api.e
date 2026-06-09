@@ -26,7 +26,7 @@ feature -- API Access
 
 	v1_filings_get (cik: INTEGER_64; ticker: STRING_32; form_type: STRING_32; filling_date_start: STRING_32; filling_date_end: STRING_32; report_date_start: STRING_32; report_date_end: STRING_32; items_contain: STRING_32; page_size: INTEGER_32; page_number: INTEGER_32; sort_by: detachable DTO_FILING_SORT_BY; sort_order: STRING_32): detachable LIST [DTO_FILING_METADATA_DTO]
 			-- Query SEC filing metadata
-			-- Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \&quot;10-K,8-K,10-Q\&quot;  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
+			-- Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \&quot;10-K,8-K,10-Q\&quot;  ### Pagination Results are always paginated. When &#x60;page_size&#x60; or &#x60;page_number&#x60; are omitted, defaults apply (&#x60;page_size&#x60;: 50, &#x60;page_number&#x60;: 1). Maximum &#x60;page_size&#x60; is 200. Use &#x60;page_number&#x60; to fetch additional pages.  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
 			-- 
 			-- argument: cik Filter by Central Index Key (CIK) (optional, default to null)
 			-- 
@@ -44,9 +44,9 @@ feature -- API Access
 			-- 
 			-- argument: items_contain Filter filings where the &#39;Items&#39; field contains the specified text (optional, default to null)
 			-- 
-			-- argument: page_size Number of results per page (default: 50, max: 200) (optional, default to null)
+			-- argument: page_size Number of results per page (default: 50, max: 200). Always applied; omit to use defaults. (optional, default to null)
 			-- 
-			-- argument: page_number Page number to retrieve (default: 1) (optional, default to null)
+			-- argument: page_number Page number to retrieve (default: 1). Always applied; omit to use defaults. (optional, default to null)
 			-- 
 			-- argument: sort_by Field to sort results by (default: AccessionNumber) (optional, default to null)
 			-- 

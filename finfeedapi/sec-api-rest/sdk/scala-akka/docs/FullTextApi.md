@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 Full-text search of SEC filing documents
 
-Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When &#x60;page_size&#x60; or &#x60;page_number&#x60; are omitted, defaults apply (&#x60;page_size&#x60;: 100, &#x60;page_number&#x60;: 1). Maximum &#x60;page_size&#x60; is 200. Use &#x60;page_number&#x60; to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
 
 ### Example
 
@@ -55,9 +55,9 @@ object Example extends App {
 
     val textNotContain: String = textNotContain_example // String | Keywords that the text must not contain. Multiple values can be comma-separated
 
-    val pageSize: Int = 56 // Int | Number of results per page (default: 100)
+    val pageSize: Int = 56 // Int | Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
 
-    val pageNumber: Int = 56 // Int | Page number to retrieve (default: 1)
+    val pageNumber: Int = 56 // Int | Page number to retrieve (default: 1). Always applied; omit to use defaults.
 
     val sortBy: String = sortBy_example // String | Field to sort by (default: AccessionNumber)
 
@@ -96,8 +96,8 @@ Name | Type | Description  | Notes
  **fillingDateEnd** | **String**| Filter by filling date end (inclusive), format YYYY-MM-DD | [optional]
  **textContains** | **String**| Keywords that the text must contain. Multiple values can be comma-separated | [optional]
  **textNotContain** | **String**| Keywords that the text must not contain. Multiple values can be comma-separated | [optional]
- **pageSize** | **Int**| Number of results per page (default: 100) | [optional]
- **pageNumber** | **Int**| Page number to retrieve (default: 1) | [optional]
+ **pageSize** | **Int**| Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. | [optional]
+ **pageNumber** | **Int**| Page number to retrieve (default: 1). Always applied; omit to use defaults. | [optional]
  **sortBy** | **String**| Field to sort by (default: AccessionNumber) | [optional]
  **sortOrder** | **String**| Sort order (asc or desc). Defaults to asc | [optional]
 

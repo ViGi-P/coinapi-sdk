@@ -64,7 +64,7 @@ import qualified Prelude as P
 -- 
 -- Query SEC filing metadata
 -- 
--- Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
+-- Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 50, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
 -- 
 -- AuthMethod: 'AuthApiKeyAPIKey', 'AuthBasicJWT'
 -- 
@@ -117,12 +117,12 @@ instance HasOptionalParam V1FilingsGet ItemsContain where
   applyOptionalParam req (ItemsContain xs) =
     req `addQuery` toQuery ("items_contain", Just xs)
 
--- | /Optional Param/ "page_size" - Number of results per page (default: 50, max: 200)
+-- | /Optional Param/ "page_size" - Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
 instance HasOptionalParam V1FilingsGet PageSize where
   applyOptionalParam req (PageSize xs) =
     req `addQuery` toQuery ("page_size", Just xs)
 
--- | /Optional Param/ "page_number" - Page number to retrieve (default: 1)
+-- | /Optional Param/ "page_number" - Page number to retrieve (default: 1). Always applied; omit to use defaults.
 instance HasOptionalParam V1FilingsGet PageNumber where
   applyOptionalParam req (PageNumber xs) =
     req `addQuery` toQuery ("page_number", Just xs)

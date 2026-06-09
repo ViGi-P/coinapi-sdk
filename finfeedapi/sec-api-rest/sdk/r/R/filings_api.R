@@ -25,8 +25,8 @@
 #' var_report_date_start <- "report_date_start_example" # character | Filter by report date start (inclusive), format YYYY-MM-DD (Optional)
 #' var_report_date_end <- "report_date_end_example" # character | Filter by report date end (inclusive), format YYYY-MM-DD (Optional)
 #' var_items_contain <- "items_contain_example" # character | Filter filings where the 'Items' field contains the specified text (Optional)
-#' var_page_size <- 56 # integer | Number of results per page (default: 50, max: 200) (Optional)
-#' var_page_number <- 56 # integer | Page number to retrieve (default: 1) (Optional)
+#' var_page_size <- 56 # integer | Number of results per page (default: 50, max: 200). Always applied; omit to use defaults. (Optional)
+#' var_page_number <- 56 # integer | Page number to retrieve (default: 1). Always applied; omit to use defaults. (Optional)
 #' var_sort_by <- DTO.FilingSortBy$new() # DTOFilingSortBy | Field to sort results by (default: AccessionNumber) (Optional)
 #' var_sort_order <- "desc" # character | Sort order (asc or desc, default: desc) (Optional)
 #'
@@ -77,8 +77,8 @@ FilingsApi <- R6::R6Class(
     #' @param report_date_start (optional) Filter by report date start (inclusive), format YYYY-MM-DD
     #' @param report_date_end (optional) Filter by report date end (inclusive), format YYYY-MM-DD
     #' @param items_contain (optional) Filter filings where the 'Items' field contains the specified text
-    #' @param page_size (optional) Number of results per page (default: 50, max: 200)
-    #' @param page_number (optional) Page number to retrieve (default: 1)
+    #' @param page_size (optional) Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
+    #' @param page_number (optional) Page number to retrieve (default: 1). Always applied; omit to use defaults.
     #' @param sort_by (optional) Field to sort results by (default: AccessionNumber)
     #' @param sort_order (optional) Sort order (asc or desc, default: desc) (default value: "desc")
     #' @param data_file (optional) name of the data file to save the result
@@ -109,8 +109,8 @@ FilingsApi <- R6::R6Class(
     #' @param report_date_start (optional) Filter by report date start (inclusive), format YYYY-MM-DD
     #' @param report_date_end (optional) Filter by report date end (inclusive), format YYYY-MM-DD
     #' @param items_contain (optional) Filter filings where the 'Items' field contains the specified text
-    #' @param page_size (optional) Number of results per page (default: 50, max: 200)
-    #' @param page_number (optional) Page number to retrieve (default: 1)
+    #' @param page_size (optional) Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
+    #' @param page_number (optional) Page number to retrieve (default: 1). Always applied; omit to use defaults.
     #' @param sort_by (optional) Field to sort results by (default: AccessionNumber)
     #' @param sort_order (optional) Sort order (asc or desc, default: desc) (default value: "desc")
     #' @param data_file (optional) name of the data file to save the result

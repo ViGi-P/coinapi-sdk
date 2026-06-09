@@ -37,8 +37,8 @@ func main() {
 	reportDateStart := "reportDateStart_example" // string | Filter by report date start (inclusive), format YYYY-MM-DD (optional)
 	reportDateEnd := "reportDateEnd_example" // string | Filter by report date end (inclusive), format YYYY-MM-DD (optional)
 	itemsContain := "itemsContain_example" // string | Filter filings where the 'Items' field contains the specified text (optional)
-	pageSize := int32(56) // int32 | Number of results per page (default: 50, max: 200) (optional)
-	pageNumber := int32(56) // int32 | Page number to retrieve (default: 1) (optional)
+	pageSize := int32(56) // int32 | Number of results per page (default: 50, max: 200). Always applied; omit to use defaults. (optional)
+	pageNumber := int32(56) // int32 | Page number to retrieve (default: 1). Always applied; omit to use defaults. (optional)
 	sortBy := openapiclient.DTO.FilingSortBy("AccessionNumber") // DTOFilingSortBy | Field to sort results by (default: AccessionNumber) (optional)
 	sortOrder := "sortOrder_example" // string | Sort order (asc or desc, default: desc) (optional) (default to "desc")
 
@@ -73,8 +73,8 @@ Name | Type | Description  | Notes
  **reportDateStart** | **string** | Filter by report date start (inclusive), format YYYY-MM-DD | 
  **reportDateEnd** | **string** | Filter by report date end (inclusive), format YYYY-MM-DD | 
  **itemsContain** | **string** | Filter filings where the &#39;Items&#39; field contains the specified text | 
- **pageSize** | **int32** | Number of results per page (default: 50, max: 200) | 
- **pageNumber** | **int32** | Page number to retrieve (default: 1) | 
+ **pageSize** | **int32** | Number of results per page (default: 50, max: 200). Always applied; omit to use defaults. | 
+ **pageNumber** | **int32** | Page number to retrieve (default: 1). Always applied; omit to use defaults. | 
  **sortBy** | [**DTOFilingSortBy**](DTOFilingSortBy.md) | Field to sort results by (default: AccessionNumber) | 
  **sortOrder** | **string** | Sort order (asc or desc, default: desc) | [default to &quot;desc&quot;]
 

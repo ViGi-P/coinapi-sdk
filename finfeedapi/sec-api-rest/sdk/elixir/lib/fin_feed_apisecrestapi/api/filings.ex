@@ -11,7 +11,7 @@ defmodule FinFeedAPISECRESTAPI.Api.Filings do
 
   @doc """
   Query SEC filing metadata
-  Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
+  Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 50, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
 
   ### Parameters
 
@@ -25,8 +25,8 @@ defmodule FinFeedAPISECRESTAPI.Api.Filings do
     - `:report_date_start` (String.t): Filter by report date start (inclusive), format YYYY-MM-DD
     - `:report_date_end` (String.t): Filter by report date end (inclusive), format YYYY-MM-DD
     - `:items_contain` (String.t): Filter filings where the 'Items' field contains the specified text
-    - `:page_size` (integer()): Number of results per page (default: 50, max: 200)
-    - `:page_number` (integer()): Page number to retrieve (default: 1)
+    - `:page_size` (integer()): Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
+    - `:page_number` (integer()): Page number to retrieve (default: 1). Always applied; omit to use defaults.
     - `:sort_by` (DtoFilingSortBy): Field to sort results by (default: AccessionNumber)
     - `:sort_order` (String.t): Sort order (asc or desc, default: desc)
 

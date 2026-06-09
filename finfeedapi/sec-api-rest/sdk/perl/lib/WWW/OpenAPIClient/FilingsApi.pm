@@ -61,8 +61,8 @@ sub new {
 # @param string $report_date_start Filter by report date start (inclusive), format YYYY-MM-DD (optional)
 # @param string $report_date_end Filter by report date end (inclusive), format YYYY-MM-DD (optional)
 # @param string $items_contain Filter filings where the &#39;Items&#39; field contains the specified text (optional)
-# @param int $page_size Number of results per page (default: 50, max: 200) (optional)
-# @param int $page_number Page number to retrieve (default: 1) (optional)
+# @param int $page_size Number of results per page (default: 50, max: 200). Always applied; omit to use defaults. (optional)
+# @param int $page_number Page number to retrieve (default: 1). Always applied; omit to use defaults. (optional)
 # @param DTOFilingSortBy $sort_by Field to sort results by (default: AccessionNumber) (optional)
 # @param string $sort_order Sort order (asc or desc, default: desc) (optional, default to 'desc')
 {
@@ -109,12 +109,12 @@ sub new {
     },
     'page_size' => {
         data_type => 'int',
-        description => 'Number of results per page (default: 50, max: 200)',
+        description => 'Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.',
         required => '0',
     },
     'page_number' => {
         data_type => 'int',
-        description => 'Page number to retrieve (default: 1)',
+        description => 'Page number to retrieve (default: 1). Always applied; omit to use defaults.',
         required => '0',
     },
     'sort_by' => {

@@ -9,14 +9,14 @@ test_that("V1FullTextGet", {
   # tests for V1FullTextGet
   # base path: https://api.sec.finfeedapi.com
   # Full-text search of SEC filing documents
-  # Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+  # Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When &#x60;page_size&#x60; or &#x60;page_number&#x60; are omitted, defaults apply (&#x60;page_size&#x60;: 100, &#x60;page_number&#x60;: 1). Maximum &#x60;page_size&#x60; is 200. Use &#x60;page_number&#x60; to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
   # @param form_type character Filter by form type (e.g., \"10-K\", \"8-K\"). Multiple values can be comma-separated (optional)
   # @param filling_date_start character Filter by filling date start (inclusive), format YYYY-MM-DD (optional)
   # @param filling_date_end character Filter by filling date end (inclusive), format YYYY-MM-DD (optional)
   # @param text_contains character Keywords that the text must contain. Multiple values can be comma-separated (optional)
   # @param text_not_contain character Keywords that the text must not contain. Multiple values can be comma-separated (optional)
-  # @param page_size integer Number of results per page (default: 100) (optional)
-  # @param page_number integer Page number to retrieve (default: 1) (optional)
+  # @param page_size integer Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. (optional)
+  # @param page_number integer Page number to retrieve (default: 1). Always applied; omit to use defaults. (optional)
   # @param sort_by character Field to sort by (default: AccessionNumber) (optional)
   # @param sort_order character Sort order (asc or desc). Defaults to asc (optional)
   # @return [array[DTOSecFilingResultDto]]

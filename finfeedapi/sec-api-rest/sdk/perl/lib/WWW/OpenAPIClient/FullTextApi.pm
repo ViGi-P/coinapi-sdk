@@ -58,8 +58,8 @@ sub new {
 # @param string $filling_date_end Filter by filling date end (inclusive), format YYYY-MM-DD (optional)
 # @param string $text_contains Keywords that the text must contain. Multiple values can be comma-separated (optional)
 # @param string $text_not_contain Keywords that the text must not contain. Multiple values can be comma-separated (optional)
-# @param int $page_size Number of results per page (default: 100) (optional)
-# @param int $page_number Page number to retrieve (default: 1) (optional)
+# @param int $page_size Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. (optional)
+# @param int $page_number Page number to retrieve (default: 1). Always applied; omit to use defaults. (optional)
 # @param string $sort_by Field to sort by (default: AccessionNumber) (optional, default to 'AccessionNumber')
 # @param string $sort_order Sort order (asc or desc). Defaults to asc (optional, default to 'asc')
 {
@@ -91,12 +91,12 @@ sub new {
     },
     'page_size' => {
         data_type => 'int',
-        description => 'Number of results per page (default: 100)',
+        description => 'Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.',
         required => '0',
     },
     'page_number' => {
         data_type => 'int',
-        description => 'Page number to retrieve (default: 1)',
+        description => 'Page number to retrieve (default: 1). Always applied; omit to use defaults.',
         required => '0',
     },
     'sort_by' => {

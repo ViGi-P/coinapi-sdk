@@ -136,8 +136,8 @@ class FullTextApi
      * @param  string|null $filling_date_end Filter by filling date end (inclusive), format YYYY-MM-DD (optional)
      * @param  string|null $text_contains Keywords that the text must contain. Multiple values can be comma-separated (optional)
      * @param  string|null $text_not_contain Keywords that the text must not contain. Multiple values can be comma-separated (optional)
-     * @param  int|null $page_size Number of results per page (default: 100) (optional)
-     * @param  int|null $page_number Page number to retrieve (default: 1) (optional)
+     * @param  int|null $page_size Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. (optional)
+     * @param  int|null $page_number Page number to retrieve (default: 1). Always applied; omit to use defaults. (optional)
      * @param  string|null $sort_by Field to sort by (default: AccessionNumber) (optional, default to 'AccessionNumber')
      * @param  string|null $sort_order Sort order (asc or desc). Defaults to asc (optional, default to 'asc')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1FullTextGet'] to see the possible values for this operation
@@ -162,8 +162,8 @@ class FullTextApi
      * @param  string|null $filling_date_end Filter by filling date end (inclusive), format YYYY-MM-DD (optional)
      * @param  string|null $text_contains Keywords that the text must contain. Multiple values can be comma-separated (optional)
      * @param  string|null $text_not_contain Keywords that the text must not contain. Multiple values can be comma-separated (optional)
-     * @param  int|null $page_size Number of results per page (default: 100) (optional)
-     * @param  int|null $page_number Page number to retrieve (default: 1) (optional)
+     * @param  int|null $page_size Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. (optional)
+     * @param  int|null $page_number Page number to retrieve (default: 1). Always applied; omit to use defaults. (optional)
      * @param  string|null $sort_by Field to sort by (default: AccessionNumber) (optional, default to 'AccessionNumber')
      * @param  string|null $sort_order Sort order (asc or desc). Defaults to asc (optional, default to 'asc')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1FullTextGet'] to see the possible values for this operation
@@ -283,8 +283,8 @@ class FullTextApi
      * @param  string|null $filling_date_end Filter by filling date end (inclusive), format YYYY-MM-DD (optional)
      * @param  string|null $text_contains Keywords that the text must contain. Multiple values can be comma-separated (optional)
      * @param  string|null $text_not_contain Keywords that the text must not contain. Multiple values can be comma-separated (optional)
-     * @param  int|null $page_size Number of results per page (default: 100) (optional)
-     * @param  int|null $page_number Page number to retrieve (default: 1) (optional)
+     * @param  int|null $page_size Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. (optional)
+     * @param  int|null $page_number Page number to retrieve (default: 1). Always applied; omit to use defaults. (optional)
      * @param  string|null $sort_by Field to sort by (default: AccessionNumber) (optional, default to 'AccessionNumber')
      * @param  string|null $sort_order Sort order (asc or desc). Defaults to asc (optional, default to 'asc')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1FullTextGet'] to see the possible values for this operation
@@ -312,8 +312,8 @@ class FullTextApi
      * @param  string|null $filling_date_end Filter by filling date end (inclusive), format YYYY-MM-DD (optional)
      * @param  string|null $text_contains Keywords that the text must contain. Multiple values can be comma-separated (optional)
      * @param  string|null $text_not_contain Keywords that the text must not contain. Multiple values can be comma-separated (optional)
-     * @param  int|null $page_size Number of results per page (default: 100) (optional)
-     * @param  int|null $page_number Page number to retrieve (default: 1) (optional)
+     * @param  int|null $page_size Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. (optional)
+     * @param  int|null $page_number Page number to retrieve (default: 1). Always applied; omit to use defaults. (optional)
      * @param  string|null $sort_by Field to sort by (default: AccessionNumber) (optional, default to 'AccessionNumber')
      * @param  string|null $sort_order Sort order (asc or desc). Defaults to asc (optional, default to 'asc')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1FullTextGet'] to see the possible values for this operation
@@ -370,8 +370,8 @@ class FullTextApi
      * @param  string|null $filling_date_end Filter by filling date end (inclusive), format YYYY-MM-DD (optional)
      * @param  string|null $text_contains Keywords that the text must contain. Multiple values can be comma-separated (optional)
      * @param  string|null $text_not_contain Keywords that the text must not contain. Multiple values can be comma-separated (optional)
-     * @param  int|null $page_size Number of results per page (default: 100) (optional)
-     * @param  int|null $page_number Page number to retrieve (default: 1) (optional)
+     * @param  int|null $page_size Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. (optional)
+     * @param  int|null $page_number Page number to retrieve (default: 1). Always applied; omit to use defaults. (optional)
      * @param  string|null $sort_by Field to sort by (default: AccessionNumber) (optional, default to 'AccessionNumber')
      * @param  string|null $sort_order Sort order (asc or desc). Defaults to asc (optional, default to 'asc')
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['v1FullTextGet'] to see the possible values for this operation
@@ -393,8 +393,20 @@ class FullTextApi
         
 
 
-
-
+        if ($page_size !== null && $page_size > 200) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling FullTextApi.v1FullTextGet, must be smaller than or equal to 200.');
+        }
+        if ($page_size !== null && $page_size < 1) {
+            throw new \InvalidArgumentException('invalid value for "$page_size" when calling FullTextApi.v1FullTextGet, must be bigger than or equal to 1.');
+        }
+        
+        if ($page_number !== null && $page_number > 2147483647) {
+            throw new \InvalidArgumentException('invalid value for "$page_number" when calling FullTextApi.v1FullTextGet, must be smaller than or equal to 2147483647.');
+        }
+        if ($page_number !== null && $page_number < 1) {
+            throw new \InvalidArgumentException('invalid value for "$page_number" when calling FullTextApi.v1FullTextGet, must be bigger than or equal to 1.');
+        }
+        
         if ($sort_by !== null && !preg_match("/^(AccessionNumber|FormType|FilingDate|CompanyName|CIK|DocumentFilename|DocumentDescription)$/", $sort_by)) {
             throw new \InvalidArgumentException("invalid value for \"sort_by\" when calling FullTextApi.v1FullTextGet, must conform to the pattern /^(AccessionNumber|FormType|FilingDate|CompanyName|CIK|DocumentFilename|DocumentDescription)$/.");
         }

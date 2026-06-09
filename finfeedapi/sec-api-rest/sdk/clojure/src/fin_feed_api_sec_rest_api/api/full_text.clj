@@ -39,6 +39,10 @@ text_not_contain | Keywords that must not appear in the document
 ### Date Format
 All dates must be provided in YYYY-MM-DD format
 
+### Pagination
+Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply
+(`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.
+
 :::tip
 Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches
 :::
@@ -82,6 +86,10 @@ text_not_contain | Keywords that must not appear in the document
 
 ### Date Format
 All dates must be provided in YYYY-MM-DD format
+
+### Pagination
+Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply
+(`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.
 
 :::tip
 Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches

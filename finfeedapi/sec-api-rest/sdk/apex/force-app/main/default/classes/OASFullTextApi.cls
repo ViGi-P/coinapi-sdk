@@ -27,14 +27,14 @@ public class OASFullTextApi {
 
     /**
      * Full-text search of SEC filing documents
-     * Search across SEC filing documents with advanced filtering and sorting capabilities.\n\n### Available Sort Fields\n\nField Name | Description\n-----------|-------------\nAccessionNumber | SEC filing accession number\nFormType | Type of the filing document\nFilingDate | Date when filing was submitted\nCompanyName | Name of the company\nCIK | Central Index Key\nDocumentFilename | Name of the filing document\nDocumentDescription | Description of the document\n\n### Search Options\n\nOption | Description\n--------|-------------\ntext_contains | Keywords that must appear in the document\ntext_not_contain | Keywords that must not appear in the document\n\n### Date Format\nAll dates must be provided in YYYY-MM-DD format\n\n:::tip\nUse text_contains and text_not_contain with multiple keywords separated by commas for more precise searches\n:::\n\n:::note\nThe search is case-insensitive and supports partial word matches\n:::
+     * Search across SEC filing documents with advanced filtering and sorting capabilities.\n\n### Available Sort Fields\n\nField Name | Description\n-----------|-------------\nAccessionNumber | SEC filing accession number\nFormType | Type of the filing document\nFilingDate | Date when filing was submitted\nCompanyName | Name of the company\nCIK | Central Index Key\nDocumentFilename | Name of the filing document\nDocumentDescription | Description of the document\n\n### Search Options\n\nOption | Description\n--------|-------------\ntext_contains | Keywords that must appear in the document\ntext_not_contain | Keywords that must not appear in the document\n\n### Date Format\nAll dates must be provided in YYYY-MM-DD format\n\n### Pagination\nResults are always paginated. When &#x60;page_size&#x60; or &#x60;page_number&#x60; are omitted, defaults apply\n(&#x60;page_size&#x60;: 100, &#x60;page_number&#x60;: 1). Maximum &#x60;page_size&#x60; is 200. Use &#x60;page_number&#x60; to fetch additional pages.\n\n:::tip\nUse text_contains and text_not_contain with multiple keywords separated by commas for more precise searches\n:::\n\n:::note\nThe search is case-insensitive and supports partial word matches\n:::
      * @param formType Filter by form type (e.g., &quot;10-K&quot;, &quot;8-K&quot;). Multiple values can be comma-separated (optional)
      * @param fillingDateStart Filter by filling date start (inclusive), format YYYY-MM-DD (optional)
      * @param fillingDateEnd Filter by filling date end (inclusive), format YYYY-MM-DD (optional)
      * @param textContains Keywords that the text must contain. Multiple values can be comma-separated (optional)
      * @param textNotContain Keywords that the text must not contain. Multiple values can be comma-separated (optional)
-     * @param pageSize Number of results per page (default: 100) (optional)
-     * @param pageNumber Page number to retrieve (default: 1) (optional)
+     * @param pageSize Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. (optional)
+     * @param pageNumber Page number to retrieve (default: 1). Always applied; omit to use defaults. (optional)
      * @param sortBy Field to sort by (default: AccessionNumber) (optional, default to 'AccessionNumber')
      * @param sortOrder Sort order (asc or desc). Defaults to asc (optional, default to 'asc')
      * @return List<OASDTOSecFilingResultDto>

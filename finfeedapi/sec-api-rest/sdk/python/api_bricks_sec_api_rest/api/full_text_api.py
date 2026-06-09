@@ -17,7 +17,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import Field, StrictInt, StrictStr, field_validator
+from pydantic import Field, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
 from api_bricks_sec_api_rest.models.dto_sec_filing_result_dto import DTOSecFilingResultDto
@@ -48,8 +48,8 @@ class FullTextApi:
         filling_date_end: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by filling date end (inclusive), format YYYY-MM-DD")] = None,
         text_contains: Annotated[Optional[StrictStr], Field(description="Keywords that the text must contain. Multiple values can be comma-separated")] = None,
         text_not_contain: Annotated[Optional[StrictStr], Field(description="Keywords that the text must not contain. Multiple values can be comma-separated")] = None,
-        page_size: Annotated[Optional[StrictInt], Field(description="Number of results per page (default: 100)")] = None,
-        page_number: Annotated[Optional[StrictInt], Field(description="Page number to retrieve (default: 1)")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(le=200, strict=True, ge=1)]], Field(description="Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.")] = None,
+        page_number: Annotated[Optional[Annotated[int, Field(le=2147483647, strict=True, ge=1)]], Field(description="Page number to retrieve (default: 1). Always applied; omit to use defaults.")] = None,
         sort_by: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Field to sort by (default: AccessionNumber)")] = None,
         sort_order: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Sort order (asc or desc). Defaults to asc")] = None,
         _request_timeout: Union[
@@ -67,7 +67,7 @@ class FullTextApi:
     ) -> List[DTOSecFilingResultDto]:
         """Full-text search of SEC filing documents
 
-        Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+        Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
 
         :param form_type: Filter by form type (e.g., \"10-K\", \"8-K\"). Multiple values can be comma-separated
         :type form_type: str
@@ -79,9 +79,9 @@ class FullTextApi:
         :type text_contains: str
         :param text_not_contain: Keywords that the text must not contain. Multiple values can be comma-separated
         :type text_not_contain: str
-        :param page_size: Number of results per page (default: 100)
+        :param page_size: Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
         :type page_size: int
-        :param page_number: Page number to retrieve (default: 1)
+        :param page_number: Page number to retrieve (default: 1). Always applied; omit to use defaults.
         :type page_number: int
         :param sort_by: Field to sort by (default: AccessionNumber)
         :type sort_by: str
@@ -149,8 +149,8 @@ class FullTextApi:
         filling_date_end: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by filling date end (inclusive), format YYYY-MM-DD")] = None,
         text_contains: Annotated[Optional[StrictStr], Field(description="Keywords that the text must contain. Multiple values can be comma-separated")] = None,
         text_not_contain: Annotated[Optional[StrictStr], Field(description="Keywords that the text must not contain. Multiple values can be comma-separated")] = None,
-        page_size: Annotated[Optional[StrictInt], Field(description="Number of results per page (default: 100)")] = None,
-        page_number: Annotated[Optional[StrictInt], Field(description="Page number to retrieve (default: 1)")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(le=200, strict=True, ge=1)]], Field(description="Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.")] = None,
+        page_number: Annotated[Optional[Annotated[int, Field(le=2147483647, strict=True, ge=1)]], Field(description="Page number to retrieve (default: 1). Always applied; omit to use defaults.")] = None,
         sort_by: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Field to sort by (default: AccessionNumber)")] = None,
         sort_order: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Sort order (asc or desc). Defaults to asc")] = None,
         _request_timeout: Union[
@@ -168,7 +168,7 @@ class FullTextApi:
     ) -> ApiResponse[List[DTOSecFilingResultDto]]:
         """Full-text search of SEC filing documents
 
-        Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+        Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
 
         :param form_type: Filter by form type (e.g., \"10-K\", \"8-K\"). Multiple values can be comma-separated
         :type form_type: str
@@ -180,9 +180,9 @@ class FullTextApi:
         :type text_contains: str
         :param text_not_contain: Keywords that the text must not contain. Multiple values can be comma-separated
         :type text_not_contain: str
-        :param page_size: Number of results per page (default: 100)
+        :param page_size: Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
         :type page_size: int
-        :param page_number: Page number to retrieve (default: 1)
+        :param page_number: Page number to retrieve (default: 1). Always applied; omit to use defaults.
         :type page_number: int
         :param sort_by: Field to sort by (default: AccessionNumber)
         :type sort_by: str
@@ -250,8 +250,8 @@ class FullTextApi:
         filling_date_end: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Filter by filling date end (inclusive), format YYYY-MM-DD")] = None,
         text_contains: Annotated[Optional[StrictStr], Field(description="Keywords that the text must contain. Multiple values can be comma-separated")] = None,
         text_not_contain: Annotated[Optional[StrictStr], Field(description="Keywords that the text must not contain. Multiple values can be comma-separated")] = None,
-        page_size: Annotated[Optional[StrictInt], Field(description="Number of results per page (default: 100)")] = None,
-        page_number: Annotated[Optional[StrictInt], Field(description="Page number to retrieve (default: 1)")] = None,
+        page_size: Annotated[Optional[Annotated[int, Field(le=200, strict=True, ge=1)]], Field(description="Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.")] = None,
+        page_number: Annotated[Optional[Annotated[int, Field(le=2147483647, strict=True, ge=1)]], Field(description="Page number to retrieve (default: 1). Always applied; omit to use defaults.")] = None,
         sort_by: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Field to sort by (default: AccessionNumber)")] = None,
         sort_order: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Sort order (asc or desc). Defaults to asc")] = None,
         _request_timeout: Union[
@@ -269,7 +269,7 @@ class FullTextApi:
     ) -> RESTResponseType:
         """Full-text search of SEC filing documents
 
-        Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+        Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
 
         :param form_type: Filter by form type (e.g., \"10-K\", \"8-K\"). Multiple values can be comma-separated
         :type form_type: str
@@ -281,9 +281,9 @@ class FullTextApi:
         :type text_contains: str
         :param text_not_contain: Keywords that the text must not contain. Multiple values can be comma-separated
         :type text_not_contain: str
-        :param page_size: Number of results per page (default: 100)
+        :param page_size: Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
         :type page_size: int
-        :param page_number: Page number to retrieve (default: 1)
+        :param page_number: Page number to retrieve (default: 1). Always applied; omit to use defaults.
         :type page_number: int
         :param sort_by: Field to sort by (default: AccessionNumber)
         :type sort_by: str
