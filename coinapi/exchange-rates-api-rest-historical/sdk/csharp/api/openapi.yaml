@@ -69,7 +69,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-08T06:07:41.7053628Z
+                    time: 2026-06-09T06:07:15.1652793Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -79,7 +79,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-08T06:07:41.7053628Z
+                    time: 2026-06-09T06:07:15.1652793Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -89,7 +89,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-08T06:07:41.7053628Z
+                    time: 2026-06-09T06:07:15.1652793Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -899,33 +899,33 @@ components:
       additionalProperties: false
       description: Represents an asset.
       example:
-        price_usd: 2.3021358869347655
-        volume_1mth_usd: 5.637376656633329
-        data_end: data_end
-        id_icon: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        data_orderbook_end: 2000-01-23T04:56:07.000+00:00
-        data_start: data_start
+        asset_id: asset_id
+        name: name
         type_is_crypto: 0
         data_quote_start: 2000-01-23T04:56:07.000+00:00
-        asset_id: asset_id
-        volume_1hrs_usd: 1.4658129805029452
-        supply_current: 7.061401241503109
         data_quote_end: 2000-01-23T04:56:07.000+00:00
         data_orderbook_start: 2000-01-23T04:56:07.000+00:00
+        data_orderbook_end: 2000-01-23T04:56:07.000+00:00
         data_trade_start: 2000-01-23T04:56:07.000+00:00
-        supply_max: 3.616076749251911
-        name: name
-        data_symbols_count: 6
-        chain_addresses:
-        - network_id: network_id
-          address: address
-          chain_id: chain_id
-        - network_id: network_id
-          address: address
-          chain_id: chain_id
-        supply_total: 9.301444243932576
         data_trade_end: 2000-01-23T04:56:07.000+00:00
+        data_symbols_count: 6
+        volume_1hrs_usd: 1.4658129805029452
         volume_1day_usd: 5.962133916683182
+        volume_1mth_usd: 5.637376656633329
+        price_usd: 2.3021358869347655
+        id_icon: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        supply_current: 7.061401241503109
+        supply_total: 9.301444243932576
+        supply_max: 3.616076749251911
+        chain_addresses:
+        - chain_id: chain_id
+          network_id: network_id
+          address: address
+        - chain_id: chain_id
+          network_id: network_id
+          address: address
+        data_start: data_start
+        data_end: data_end
       properties:
         asset_id:
           description: Gets or sets the asset ID.
@@ -1033,9 +1033,9 @@ components:
       additionalProperties: false
       description: Contains information about assets' chain network addresses
       example:
+        chain_id: chain_id
         network_id: network_id
         address: address
-        chain_id: chain_id
       properties:
         chain_id:
           description: Gets or sets chain id
@@ -1054,10 +1054,10 @@ components:
       additionalProperties: false
       description: Represents an exchange rate.
       example:
-        asset_id_base: asset_id_base
-        rate: 0.8008281904610115
-        asset_id_quote: asset_id_quote
         time: 2000-01-23T04:56:07.000+00:00
+        asset_id_base: asset_id_base
+        asset_id_quote: asset_id_quote
+        rate: 0.8008281904610115
       properties:
         time:
           description: Gets or sets the time of the exchange rate.
@@ -1082,12 +1082,12 @@ components:
       example:
         asset_id_base: asset_id_base
         rates:
-        - rate: 0.8008281904610115
+        - time: 2000-01-23T04:56:07.000+00:00
           asset_id_quote: asset_id_quote
-          time: 2000-01-23T04:56:07.000+00:00
-        - rate: 0.8008281904610115
+          rate: 0.8008281904610115
+        - time: 2000-01-23T04:56:07.000+00:00
           asset_id_quote: asset_id_quote
-          time: 2000-01-23T04:56:07.000+00:00
+          rate: 0.8008281904610115
       properties:
         asset_id_base:
           description: Gets or sets the base asset ID.
@@ -1104,9 +1104,9 @@ components:
       additionalProperties: false
       description: Represents an exchange rate within a collection of exchange rates.
       example:
-        rate: 0.8008281904610115
-        asset_id_quote: asset_id_quote
         time: 2000-01-23T04:56:07.000+00:00
+        asset_id_quote: asset_id_quote
+        rate: 0.8008281904610115
       properties:
         time:
           description: Gets or sets the time of the exchange rate.
@@ -1125,14 +1125,14 @@ components:
       additionalProperties: false
       description: Represents an item in the exchange rate timeseries.
       example:
+        time_period_start: 2000-01-23T04:56:07.000+00:00
         time_period_end: 2000-01-23T04:56:07.000+00:00
         time_open: 2000-01-23T04:56:07.000+00:00
+        time_close: 2000-01-23T04:56:07.000+00:00
+        rate_open: 0.8008281904610115
         rate_high: 6.027456183070403
         rate_low: 1.4658129805029452
-        time_close: 2000-01-23T04:56:07.000+00:00
         rate_close: 5.962133916683182
-        time_period_start: 2000-01-23T04:56:07.000+00:00
-        rate_open: 0.8008281904610115
       properties:
         time_period_start:
           description: Gets or sets the start time of the period.
@@ -1198,12 +1198,12 @@ components:
       additionalProperties: false
       description: Represents a timeseries period used in exchange rate data.
       example:
-        unit_name: unit_name
-        length_months: 6
-        length_seconds: 0
         period_id: period_id
-        display_name: display_name
+        length_seconds: 0
+        length_months: 6
         unit_count: 1
+        unit_name: unit_name
+        display_name: display_name
       properties:
         period_id:
           description: The period ID.

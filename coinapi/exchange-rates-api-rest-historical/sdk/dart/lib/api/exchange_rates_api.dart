@@ -32,7 +32,7 @@ class ExchangeRatesApi {
   ///
   /// * [String] time:
   ///   Time at which exchange rate is calculated (optional, if not supplied then current rate is returned)
-  Future<Response> getSpecificRateWithHttpInfo(String assetIdBase, String assetIdQuote, { String? time, }) async {
+  Future<Response> getSpecificRateWithHttpInfo(String assetIdBase, String assetIdQuote, { String? time, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/exchangerate/{asset_id_base}/{asset_id_quote}'
       .replaceAll('{asset_id_base}', assetIdBase)
@@ -60,6 +60,7 @@ class ExchangeRatesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -77,8 +78,8 @@ class ExchangeRatesApi {
   ///
   /// * [String] time:
   ///   Time at which exchange rate is calculated (optional, if not supplied then current rate is returned)
-  Future<V1ExchangeRate?> getSpecificRate(String assetIdBase, String assetIdQuote, { String? time, }) async {
-    final response = await getSpecificRateWithHttpInfo(assetIdBase, assetIdQuote,  time: time, );
+  Future<V1ExchangeRate?> getSpecificRate(String assetIdBase, String assetIdQuote, { String? time, Future<void>? abortTrigger, }) async {
+    final response = await getSpecificRateWithHttpInfo(assetIdBase, assetIdQuote, time: time, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -120,7 +121,7 @@ class ExchangeRatesApi {
   ///
   /// * [bool] extendedGapFilling:
   ///   If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
-  Future<Response> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(String assetIdBase, String assetIdQuote, { String? periodId, String? timeStart, String? timeEnd, int? limit, bool? extendedGapFilling, }) async {
+  Future<Response> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(String assetIdBase, String assetIdQuote, { String? periodId, String? timeStart, String? timeEnd, int? limit, bool? extendedGapFilling, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/exchangerate/{asset_id_base}/{asset_id_quote}/history'
       .replaceAll('{asset_id_base}', assetIdBase)
@@ -160,6 +161,7 @@ class ExchangeRatesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -189,8 +191,8 @@ class ExchangeRatesApi {
   ///
   /// * [bool] extendedGapFilling:
   ///   If true, enables extended gap filling that considers rates before time_start and after time_end for proper gap filling at boundaries (optional, default is false)
-  Future<List<V1ExchangeRatesTimeseriesItem>?> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(String assetIdBase, String assetIdQuote, { String? periodId, String? timeStart, String? timeEnd, int? limit, bool? extendedGapFilling, }) async {
-    final response = await v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(assetIdBase, assetIdQuote,  periodId: periodId, timeStart: timeStart, timeEnd: timeEnd, limit: limit, extendedGapFilling: extendedGapFilling, );
+  Future<List<V1ExchangeRatesTimeseriesItem>?> v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGet(String assetIdBase, String assetIdQuote, { String? periodId, String? timeStart, String? timeEnd, int? limit, bool? extendedGapFilling, Future<void>? abortTrigger, }) async {
+    final response = await v1ExchangerateAssetIdBaseAssetIdQuoteHistoryGetWithHttpInfo(assetIdBase, assetIdQuote, periodId: periodId, timeStart: timeStart, timeEnd: timeEnd, limit: limit, extendedGapFilling: extendedGapFilling, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -226,7 +228,7 @@ class ExchangeRatesApi {
   ///
   /// * [String] time:
   ///   Time for historical rates (optional)
-  Future<Response> v1ExchangerateAssetIdBaseGetWithHttpInfo(String assetIdBase, { String? filterAssetId, bool? invert, String? time, }) async {
+  Future<Response> v1ExchangerateAssetIdBaseGetWithHttpInfo(String assetIdBase, { String? filterAssetId, bool? invert, String? time, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/exchangerate/{asset_id_base}'
       .replaceAll('{asset_id_base}', assetIdBase);
@@ -259,6 +261,7 @@ class ExchangeRatesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -279,8 +282,8 @@ class ExchangeRatesApi {
   ///
   /// * [String] time:
   ///   Time for historical rates (optional)
-  Future<V1ExchangeRates?> v1ExchangerateAssetIdBaseGet(String assetIdBase, { String? filterAssetId, bool? invert, String? time, }) async {
-    final response = await v1ExchangerateAssetIdBaseGetWithHttpInfo(assetIdBase,  filterAssetId: filterAssetId, invert: invert, time: time, );
+  Future<V1ExchangeRates?> v1ExchangerateAssetIdBaseGet(String assetIdBase, { String? filterAssetId, bool? invert, String? time, Future<void>? abortTrigger, }) async {
+    final response = await v1ExchangerateAssetIdBaseGetWithHttpInfo(assetIdBase, filterAssetId: filterAssetId, invert: invert, time: time, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -299,7 +302,7 @@ class ExchangeRatesApi {
   /// You can also obtain historical exchange rates of any asset pair, grouped into time periods. Get full list of supported time periods available for requesting exchange rates historical timeseries data.              ## Timeseries periods Time unit | Period identifiers --- | --- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> v1ExchangerateHistoryPeriodsGetWithHttpInfo() async {
+  Future<Response> v1ExchangerateHistoryPeriodsGetWithHttpInfo({ Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/exchangerate/history/periods';
 
@@ -321,14 +324,15 @@ class ExchangeRatesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
   /// Timeseries periods
   ///
   /// You can also obtain historical exchange rates of any asset pair, grouped into time periods. Get full list of supported time periods available for requesting exchange rates historical timeseries data.              ## Timeseries periods Time unit | Period identifiers --- | --- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY
-  Future<List<V1TimeseriesPeriod>?> v1ExchangerateHistoryPeriodsGet() async {
-    final response = await v1ExchangerateHistoryPeriodsGetWithHttpInfo();
+  Future<List<V1TimeseriesPeriod>?> v1ExchangerateHistoryPeriodsGet({ Future<void>? abortTrigger, }) async {
+    final response = await v1ExchangerateHistoryPeriodsGetWithHttpInfo(abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
