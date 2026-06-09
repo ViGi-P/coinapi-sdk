@@ -67,13 +67,13 @@ func (r ApiV1FullTextGetRequest) TextNotContain(textNotContain string) ApiV1Full
 	return r
 }
 
-// Number of results per page (default: 100)
+// Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
 func (r ApiV1FullTextGetRequest) PageSize(pageSize int32) ApiV1FullTextGetRequest {
 	r.pageSize = &pageSize
 	return r
 }
 
-// Page number to retrieve (default: 1)
+// Page number to retrieve (default: 1). Always applied; omit to use defaults.
 func (r ApiV1FullTextGetRequest) PageNumber(pageNumber int32) ApiV1FullTextGetRequest {
 	r.pageNumber = &pageNumber
 	return r
@@ -121,6 +121,10 @@ text_not_contain | Keywords that must not appear in the document
 
 ### Date Format
 All dates must be provided in YYYY-MM-DD format
+
+### Pagination
+Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply
+(`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.
 
 :::tip
 Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches

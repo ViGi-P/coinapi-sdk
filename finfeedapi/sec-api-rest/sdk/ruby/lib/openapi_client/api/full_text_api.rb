@@ -20,15 +20,15 @@ module OpenapiClient
       @api_client = api_client
     end
     # Full-text search of SEC filing documents
-    # Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+    # Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
     # @param [Hash] opts the optional parameters
     # @option opts [String] :form_type Filter by form type (e.g., \&quot;10-K\&quot;, \&quot;8-K\&quot;). Multiple values can be comma-separated
     # @option opts [String] :filling_date_start Filter by filling date start (inclusive), format YYYY-MM-DD
     # @option opts [String] :filling_date_end Filter by filling date end (inclusive), format YYYY-MM-DD
     # @option opts [String] :text_contains Keywords that the text must contain. Multiple values can be comma-separated
     # @option opts [String] :text_not_contain Keywords that the text must not contain. Multiple values can be comma-separated
-    # @option opts [Integer] :page_size Number of results per page (default: 100)
-    # @option opts [Integer] :page_number Page number to retrieve (default: 1)
+    # @option opts [Integer] :page_size Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
+    # @option opts [Integer] :page_number Page number to retrieve (default: 1). Always applied; omit to use defaults.
     # @option opts [String] :sort_by Field to sort by (default: AccessionNumber) (default to 'AccessionNumber')
     # @option opts [String] :sort_order Sort order (asc or desc). Defaults to asc (default to 'asc')
     # @return [Array<DTOSecFilingResultDto>]
@@ -38,15 +38,15 @@ module OpenapiClient
     end
 
     # Full-text search of SEC filing documents
-    # Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+    # Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When &#x60;page_size&#x60; or &#x60;page_number&#x60; are omitted, defaults apply (&#x60;page_size&#x60;: 100, &#x60;page_number&#x60;: 1). Maximum &#x60;page_size&#x60; is 200. Use &#x60;page_number&#x60; to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
     # @param [Hash] opts the optional parameters
     # @option opts [String] :form_type Filter by form type (e.g., \&quot;10-K\&quot;, \&quot;8-K\&quot;). Multiple values can be comma-separated
     # @option opts [String] :filling_date_start Filter by filling date start (inclusive), format YYYY-MM-DD
     # @option opts [String] :filling_date_end Filter by filling date end (inclusive), format YYYY-MM-DD
     # @option opts [String] :text_contains Keywords that the text must contain. Multiple values can be comma-separated
     # @option opts [String] :text_not_contain Keywords that the text must not contain. Multiple values can be comma-separated
-    # @option opts [Integer] :page_size Number of results per page (default: 100)
-    # @option opts [Integer] :page_number Page number to retrieve (default: 1)
+    # @option opts [Integer] :page_size Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
+    # @option opts [Integer] :page_number Page number to retrieve (default: 1). Always applied; omit to use defaults.
     # @option opts [String] :sort_by Field to sort by (default: AccessionNumber) (default to 'AccessionNumber')
     # @option opts [String] :sort_order Sort order (asc or desc). Defaults to asc (default to 'asc')
     # @return [Array<(Array<DTOSecFilingResultDto>, Integer, Hash)>] Array<DTOSecFilingResultDto> data, response status code and response headers
@@ -62,6 +62,22 @@ module OpenapiClient
       pattern = Regexp.new(/^\d{4}-\d{2}-\d{2}$/)
       if @api_client.config.client_side_validation && !opts[:'filling_date_end'].nil? && opts[:'filling_date_end'] !~ pattern
         fail ArgumentError, "invalid value for 'opts[:\"filling_date_end\"]' when calling FullTextApi.v1_full_text_get, must conform to the pattern #{pattern}."
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'page_size'].nil? && opts[:'page_size'] > 200
+        fail ArgumentError, 'invalid value for "opts[:"page_size"]" when calling FullTextApi.v1_full_text_get, must be smaller than or equal to 200.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'page_size'].nil? && opts[:'page_size'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"page_size"]" when calling FullTextApi.v1_full_text_get, must be greater than or equal to 1.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'page_number'].nil? && opts[:'page_number'] > 2147483647
+        fail ArgumentError, 'invalid value for "opts[:"page_number"]" when calling FullTextApi.v1_full_text_get, must be smaller than or equal to 2147483647.'
+      end
+
+      if @api_client.config.client_side_validation && !opts[:'page_number'].nil? && opts[:'page_number'] < 1
+        fail ArgumentError, 'invalid value for "opts[:"page_number"]" when calling FullTextApi.v1_full_text_get, must be greater than or equal to 1.'
       end
 
       pattern = Regexp.new(/^(AccessionNumber|FormType|FilingDate|CompanyName|CIK|DocumentFilename|DocumentDescription)$/)

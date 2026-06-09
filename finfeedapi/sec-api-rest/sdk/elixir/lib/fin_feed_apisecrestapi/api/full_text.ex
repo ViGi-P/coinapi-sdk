@@ -11,7 +11,7 @@ defmodule FinFeedAPISECRESTAPI.Api.FullText do
 
   @doc """
   Full-text search of SEC filing documents
-  Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+  Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
 
   ### Parameters
 
@@ -22,8 +22,8 @@ defmodule FinFeedAPISECRESTAPI.Api.FullText do
     - `:filling_date_end` (String.t): Filter by filling date end (inclusive), format YYYY-MM-DD
     - `:text_contains` (String.t): Keywords that the text must contain. Multiple values can be comma-separated
     - `:text_not_contain` (String.t): Keywords that the text must not contain. Multiple values can be comma-separated
-    - `:page_size` (integer()): Number of results per page (default: 100)
-    - `:page_number` (integer()): Page number to retrieve (default: 1)
+    - `:page_size` (integer()): Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
+    - `:page_number` (integer()): Page number to retrieve (default: 1). Always applied; omit to use defaults.
     - `:sort_by` (String.t): Field to sort by (default: AccessionNumber)
     - `:sort_order` (String.t): Sort order (asc or desc). Defaults to asc
 

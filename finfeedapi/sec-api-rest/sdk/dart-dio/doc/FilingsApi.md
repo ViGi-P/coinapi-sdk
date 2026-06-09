@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Query SEC filing metadata
 
-Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
+Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 50, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
 
 ### Example
 ```dart
@@ -36,8 +36,8 @@ final String fillingDateEnd = fillingDateEnd_example; // String | Filter by fill
 final String reportDateStart = reportDateStart_example; // String | Filter by report date start (inclusive), format YYYY-MM-DD
 final String reportDateEnd = reportDateEnd_example; // String | Filter by report date end (inclusive), format YYYY-MM-DD
 final String itemsContain = itemsContain_example; // String | Filter filings where the 'Items' field contains the specified text
-final int pageSize = 56; // int | Number of results per page (default: 50, max: 200)
-final int pageNumber = 56; // int | Page number to retrieve (default: 1)
+final int pageSize = 56; // int | Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
+final int pageNumber = 56; // int | Page number to retrieve (default: 1). Always applied; omit to use defaults.
 final DTOFilingSortBy sortBy = ; // DTOFilingSortBy | Field to sort results by (default: AccessionNumber)
 final String sortOrder = sortOrder_example; // String | Sort order (asc or desc, default: desc)
 
@@ -61,8 +61,8 @@ Name | Type | Description  | Notes
  **reportDateStart** | **String**| Filter by report date start (inclusive), format YYYY-MM-DD | [optional] 
  **reportDateEnd** | **String**| Filter by report date end (inclusive), format YYYY-MM-DD | [optional] 
  **itemsContain** | **String**| Filter filings where the 'Items' field contains the specified text | [optional] 
- **pageSize** | **int**| Number of results per page (default: 50, max: 200) | [optional] 
- **pageNumber** | **int**| Page number to retrieve (default: 1) | [optional] 
+ **pageSize** | **int**| Number of results per page (default: 50, max: 200). Always applied; omit to use defaults. | [optional] 
+ **pageNumber** | **int**| Page number to retrieve (default: 1). Always applied; omit to use defaults. | [optional] 
  **sortBy** | [**DTOFilingSortBy**](.md)| Field to sort results by (default: AccessionNumber) | [optional] 
  **sortOrder** | **String**| Sort order (asc or desc, default: desc) | [optional] [default to 'desc']
 

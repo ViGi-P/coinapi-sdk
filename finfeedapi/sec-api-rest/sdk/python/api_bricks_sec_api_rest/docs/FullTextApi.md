@@ -36,6 +36,10 @@ text_not_contain | Keywords that must not appear in the document
 ### Date Format
 All dates must be provided in YYYY-MM-DD format
 
+### Pagination
+Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply
+(`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.
+
 :::tip
 Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches
 :::
@@ -86,8 +90,8 @@ with api_bricks_sec_api_rest.ApiClient(configuration) as api_client:
     filling_date_end = 'filling_date_end_example' # str | Filter by filling date end (inclusive), format YYYY-MM-DD (optional)
     text_contains = 'text_contains_example' # str | Keywords that the text must contain. Multiple values can be comma-separated (optional)
     text_not_contain = 'text_not_contain_example' # str | Keywords that the text must not contain. Multiple values can be comma-separated (optional)
-    page_size = 56 # int | Number of results per page (default: 100) (optional)
-    page_number = 56 # int | Page number to retrieve (default: 1) (optional)
+    page_size = 56 # int | Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. (optional)
+    page_number = 56 # int | Page number to retrieve (default: 1). Always applied; omit to use defaults. (optional)
     sort_by = 'AccessionNumber' # str | Field to sort by (default: AccessionNumber) (optional) (default to 'AccessionNumber')
     sort_order = 'asc' # str | Sort order (asc or desc). Defaults to asc (optional) (default to 'asc')
 
@@ -112,8 +116,8 @@ Name | Type | Description  | Notes
  **filling_date_end** | **str**| Filter by filling date end (inclusive), format YYYY-MM-DD | [optional] 
  **text_contains** | **str**| Keywords that the text must contain. Multiple values can be comma-separated | [optional] 
  **text_not_contain** | **str**| Keywords that the text must not contain. Multiple values can be comma-separated | [optional] 
- **page_size** | **int**| Number of results per page (default: 100) | [optional] 
- **page_number** | **int**| Page number to retrieve (default: 1) | [optional] 
+ **page_size** | **int**| Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. | [optional] 
+ **page_number** | **int**| Page number to retrieve (default: 1). Always applied; omit to use defaults. | [optional] 
  **sort_by** | **str**| Field to sort by (default: AccessionNumber) | [optional] [default to &#39;AccessionNumber&#39;]
  **sort_order** | **str**| Sort order (asc or desc). Defaults to asc | [optional] [default to &#39;asc&#39;]
 

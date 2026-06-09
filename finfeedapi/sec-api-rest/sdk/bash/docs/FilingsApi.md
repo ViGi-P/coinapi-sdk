@@ -30,6 +30,10 @@ All dates must be provided in YYYY-MM-DD format
 ### Form Types
 Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"
 
+### Pagination
+Results are always paginated. When 'page_size' or 'page_number' are omitted, defaults apply
+('page_size': 50, 'page_number': 1). Maximum 'page_size' is 200. Use 'page_number' to fetch additional pages.
+
 :::tip
 For optimal performance, use date ranges and form types to narrow down your search
 :::
@@ -53,8 +57,8 @@ Name | Type | Description  | Notes
  **reportDateStart** | **string** | Filter by report date start (inclusive), format YYYY-MM-DD | [optional] [default to null]
  **reportDateEnd** | **string** | Filter by report date end (inclusive), format YYYY-MM-DD | [optional] [default to null]
  **itemsContain** | **string** | Filter filings where the 'Items' field contains the specified text | [optional] [default to null]
- **pageSize** | **integer** | Number of results per page (default: 50, max: 200) | [optional] [default to null]
- **pageNumber** | **integer** | Page number to retrieve (default: 1) | [optional] [default to null]
+ **pageSize** | **integer** | Number of results per page (default: 50, max: 200). Always applied; omit to use defaults. | [optional] [default to null]
+ **pageNumber** | **integer** | Page number to retrieve (default: 1). Always applied; omit to use defaults. | [optional] [default to null]
  **sortBy** | [**DTOFilingSortBy**](.md) | Field to sort results by (default: AccessionNumber) | [optional] [default to null]
  **sortOrder** | **string** | Sort order (asc or desc, default: desc) | [optional] [default to desc]
 

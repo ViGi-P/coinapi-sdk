@@ -46,15 +46,15 @@ export default class FullTextApi {
 
     /**
      * Full-text search of SEC filing documents
-     * Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+     * Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
      * @param {Object} opts Optional parameters
      * @param {String} [formType] Filter by form type (e.g., \"10-K\", \"8-K\"). Multiple values can be comma-separated
      * @param {String} [fillingDateStart] Filter by filling date start (inclusive), format YYYY-MM-DD
      * @param {String} [fillingDateEnd] Filter by filling date end (inclusive), format YYYY-MM-DD
      * @param {String} [textContains] Keywords that the text must contain. Multiple values can be comma-separated
      * @param {String} [textNotContain] Keywords that the text must not contain. Multiple values can be comma-separated
-     * @param {Number} [pageSize] Number of results per page (default: 100)
-     * @param {Number} [pageNumber] Page number to retrieve (default: 1)
+     * @param {Number} [pageSize] Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
+     * @param {Number} [pageNumber] Page number to retrieve (default: 1). Always applied; omit to use defaults.
      * @param {String} [sortBy = 'AccessionNumber')] Field to sort by (default: AccessionNumber)
      * @param {String} [sortOrder = 'asc')] Sort order (asc or desc). Defaults to asc
      * @param {module:api/FullTextApi~v1FullTextGetCallback} callback The callback function, accepting three arguments: error, data, response

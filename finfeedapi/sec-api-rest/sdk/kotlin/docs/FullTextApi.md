@@ -13,7 +13,7 @@ All URIs are relative to *https://api.sec.finfeedapi.com*
 
 Full-text search of SEC filing documents
 
-Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When &#x60;page_size&#x60; or &#x60;page_number&#x60; are omitted, defaults apply (&#x60;page_size&#x60;: 100, &#x60;page_number&#x60;: 1). Maximum &#x60;page_size&#x60; is 200. Use &#x60;page_number&#x60; to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
 
 ### Example
 ```kotlin
@@ -27,8 +27,8 @@ val fillingDateStart : kotlin.String = fillingDateStart_example // kotlin.String
 val fillingDateEnd : kotlin.String = fillingDateEnd_example // kotlin.String | Filter by filling date end (inclusive), format YYYY-MM-DD
 val textContains : kotlin.String = textContains_example // kotlin.String | Keywords that the text must contain. Multiple values can be comma-separated
 val textNotContain : kotlin.String = textNotContain_example // kotlin.String | Keywords that the text must not contain. Multiple values can be comma-separated
-val pageSize : kotlin.Int = 56 // kotlin.Int | Number of results per page (default: 100)
-val pageNumber : kotlin.Int = 56 // kotlin.Int | Page number to retrieve (default: 1)
+val pageSize : kotlin.Int = 56 // kotlin.Int | Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
+val pageNumber : kotlin.Int = 56 // kotlin.Int | Page number to retrieve (default: 1). Always applied; omit to use defaults.
 val sortBy : kotlin.String = sortBy_example // kotlin.String | Field to sort by (default: AccessionNumber)
 val sortOrder : kotlin.String = sortOrder_example // kotlin.String | Sort order (asc or desc). Defaults to asc
 try {
@@ -49,8 +49,8 @@ try {
 | **fillingDateEnd** | **kotlin.String**| Filter by filling date end (inclusive), format YYYY-MM-DD | [optional] |
 | **textContains** | **kotlin.String**| Keywords that the text must contain. Multiple values can be comma-separated | [optional] |
 | **textNotContain** | **kotlin.String**| Keywords that the text must not contain. Multiple values can be comma-separated | [optional] |
-| **pageSize** | **kotlin.Int**| Number of results per page (default: 100) | [optional] |
-| **pageNumber** | **kotlin.Int**| Page number to retrieve (default: 1) | [optional] |
+| **pageSize** | **kotlin.Int**| Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. | [optional] |
+| **pageNumber** | **kotlin.Int**| Page number to retrieve (default: 1). Always applied; omit to use defaults. | [optional] |
 | **sortBy** | **kotlin.String**| Field to sort by (default: AccessionNumber) | [optional] [default to &quot;AccessionNumber&quot;] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |

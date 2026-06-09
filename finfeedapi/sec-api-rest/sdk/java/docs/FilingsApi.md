@@ -13,7 +13,7 @@ All URIs are relative to *https://api.sec.finfeedapi.com*
 
 Query SEC filing metadata
 
-Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \&quot;10-K,8-K,10-Q\&quot;  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
+Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \&quot;10-K,8-K,10-Q\&quot;  ### Pagination Results are always paginated. When &#x60;page_size&#x60; or &#x60;page_number&#x60; are omitted, defaults apply (&#x60;page_size&#x60;: 50, &#x60;page_number&#x60;: 1). Maximum &#x60;page_size&#x60; is 200. Use &#x60;page_number&#x60; to fetch additional pages.  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
 
 ### Example
 ```java
@@ -49,8 +49,8 @@ public class Example {
     String reportDateStart = "reportDateStart_example"; // String | Filter by report date start (inclusive), format YYYY-MM-DD
     String reportDateEnd = "reportDateEnd_example"; // String | Filter by report date end (inclusive), format YYYY-MM-DD
     String itemsContain = "itemsContain_example"; // String | Filter filings where the 'Items' field contains the specified text
-    Integer pageSize = 56; // Integer | Number of results per page (default: 50, max: 200)
-    Integer pageNumber = 56; // Integer | Page number to retrieve (default: 1)
+    Integer pageSize = 56; // Integer | Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
+    Integer pageNumber = 56; // Integer | Page number to retrieve (default: 1). Always applied; omit to use defaults.
     DTOFilingSortBy sortBy = DTOFilingSortBy.fromValue("AccessionNumber"); // DTOFilingSortBy | Field to sort results by (default: AccessionNumber)
     String sortOrder = "desc"; // String | Sort order (asc or desc, default: desc)
     try {
@@ -79,8 +79,8 @@ public class Example {
 | **reportDateStart** | **String**| Filter by report date start (inclusive), format YYYY-MM-DD | [optional] |
 | **reportDateEnd** | **String**| Filter by report date end (inclusive), format YYYY-MM-DD | [optional] |
 | **itemsContain** | **String**| Filter filings where the &#39;Items&#39; field contains the specified text | [optional] |
-| **pageSize** | **Integer**| Number of results per page (default: 50, max: 200) | [optional] |
-| **pageNumber** | **Integer**| Page number to retrieve (default: 1) | [optional] |
+| **pageSize** | **Integer**| Number of results per page (default: 50, max: 200). Always applied; omit to use defaults. | [optional] |
+| **pageNumber** | **Integer**| Page number to retrieve (default: 1). Always applied; omit to use defaults. | [optional] |
 | **sortBy** | [**DTOFilingSortBy**](.md)| Field to sort results by (default: AccessionNumber) | [optional] [enum: AccessionNumber, FilingDate, ReportDate, AcceptanceDateTime, Size] |
 | **sortOrder** | **String**| Sort order (asc or desc, default: desc) | [optional] [default to desc] |
 

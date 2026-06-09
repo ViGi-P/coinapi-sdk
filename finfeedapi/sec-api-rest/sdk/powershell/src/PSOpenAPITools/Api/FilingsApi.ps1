@@ -40,10 +40,10 @@ Filter by report date end (inclusive), format YYYY-MM-DD
 Filter filings where the 'Items' field contains the specified text
 
 .PARAMETER PageSize
-Number of results per page (default: 50, max: 200)
+Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
 
 .PARAMETER PageNumber
-Page number to retrieve (default: 1)
+Page number to retrieve (default: 1). Always applied; omit to use defaults.
 
 .PARAMETER SortBy
 Field to sort results by (default: AccessionNumber)

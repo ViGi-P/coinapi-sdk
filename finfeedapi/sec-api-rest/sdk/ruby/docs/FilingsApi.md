@@ -13,7 +13,7 @@ All URIs are relative to *https://api.sec.finfeedapi.com*
 
 Query SEC filing metadata
 
-Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
+Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 50, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
 
 ### Examples
 
@@ -41,8 +41,8 @@ opts = {
   report_date_start: 'report_date_start_example', # String | Filter by report date start (inclusive), format YYYY-MM-DD
   report_date_end: 'report_date_end_example', # String | Filter by report date end (inclusive), format YYYY-MM-DD
   items_contain: 'items_contain_example', # String | Filter filings where the 'Items' field contains the specified text
-  page_size: 56, # Integer | Number of results per page (default: 50, max: 200)
-  page_number: 56, # Integer | Page number to retrieve (default: 1)
+  page_size: 56, # Integer | Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
+  page_number: 56, # Integer | Page number to retrieve (default: 1). Always applied; omit to use defaults.
   sort_by: OpenapiClient::DTOFilingSortBy::ACCESSION_NUMBER, # DTOFilingSortBy | Field to sort results by (default: AccessionNumber)
   sort_order: 'sort_order_example' # String | Sort order (asc or desc, default: desc)
 }
@@ -86,8 +86,8 @@ end
 | **report_date_start** | **String** | Filter by report date start (inclusive), format YYYY-MM-DD | [optional] |
 | **report_date_end** | **String** | Filter by report date end (inclusive), format YYYY-MM-DD | [optional] |
 | **items_contain** | **String** | Filter filings where the &#39;Items&#39; field contains the specified text | [optional] |
-| **page_size** | **Integer** | Number of results per page (default: 50, max: 200) | [optional] |
-| **page_number** | **Integer** | Page number to retrieve (default: 1) | [optional] |
+| **page_size** | **Integer** | Number of results per page (default: 50, max: 200). Always applied; omit to use defaults. | [optional] |
+| **page_number** | **Integer** | Page number to retrieve (default: 1). Always applied; omit to use defaults. | [optional] |
 | **sort_by** | [**DTOFilingSortBy**](.md) | Field to sort results by (default: AccessionNumber) | [optional] |
 | **sort_order** | **String** | Sort order (asc or desc, default: desc) | [optional][default to &#39;desc&#39;] |
 

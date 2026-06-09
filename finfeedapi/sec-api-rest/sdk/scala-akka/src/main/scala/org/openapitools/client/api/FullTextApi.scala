@@ -26,7 +26,7 @@ object FullTextApi {
 class FullTextApi(baseUrl: String) {
 
   /**
-   * Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+   * Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
    * 
    * Expected answers:
    *   code 200 : Seq[SecFilingResultDto] (Successful operation)
@@ -42,8 +42,8 @@ class FullTextApi(baseUrl: String) {
    * @param fillingDateEnd Filter by filling date end (inclusive), format YYYY-MM-DD
    * @param textContains Keywords that the text must contain. Multiple values can be comma-separated
    * @param textNotContain Keywords that the text must not contain. Multiple values can be comma-separated
-   * @param pageSize Number of results per page (default: 100)
-   * @param pageNumber Page number to retrieve (default: 1)
+   * @param pageSize Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
+   * @param pageNumber Page number to retrieve (default: 1). Always applied; omit to use defaults.
    * @param sortBy Field to sort by (default: AccessionNumber)
    * @param sortOrder Sort order (asc or desc). Defaults to asc
    */

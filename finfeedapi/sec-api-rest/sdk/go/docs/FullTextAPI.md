@@ -34,8 +34,8 @@ func main() {
 	fillingDateEnd := "fillingDateEnd_example" // string | Filter by filling date end (inclusive), format YYYY-MM-DD (optional)
 	textContains := "textContains_example" // string | Keywords that the text must contain. Multiple values can be comma-separated (optional)
 	textNotContain := "textNotContain_example" // string | Keywords that the text must not contain. Multiple values can be comma-separated (optional)
-	pageSize := int32(56) // int32 | Number of results per page (default: 100) (optional)
-	pageNumber := int32(56) // int32 | Page number to retrieve (default: 1) (optional)
+	pageSize := int32(56) // int32 | Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. (optional)
+	pageNumber := int32(56) // int32 | Page number to retrieve (default: 1). Always applied; omit to use defaults. (optional)
 	sortBy := "sortBy_example" // string | Field to sort by (default: AccessionNumber) (optional) (default to "AccessionNumber")
 	sortOrder := "sortOrder_example" // string | Sort order (asc or desc). Defaults to asc (optional) (default to "asc")
 
@@ -67,8 +67,8 @@ Name | Type | Description  | Notes
  **fillingDateEnd** | **string** | Filter by filling date end (inclusive), format YYYY-MM-DD | 
  **textContains** | **string** | Keywords that the text must contain. Multiple values can be comma-separated | 
  **textNotContain** | **string** | Keywords that the text must not contain. Multiple values can be comma-separated | 
- **pageSize** | **int32** | Number of results per page (default: 100) | 
- **pageNumber** | **int32** | Page number to retrieve (default: 1) | 
+ **pageSize** | **int32** | Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. | 
+ **pageNumber** | **int32** | Page number to retrieve (default: 1). Always applied; omit to use defaults. | 
  **sortBy** | **string** | Field to sort by (default: AccessionNumber) | [default to &quot;AccessionNumber&quot;]
  **sortOrder** | **string** | Sort order (asc or desc). Defaults to asc | [default to &quot;asc&quot;]
 

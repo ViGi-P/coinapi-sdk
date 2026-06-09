@@ -49,7 +49,7 @@ API.Client.FilingsApi.$inject = ['$http', '$httpParamSerializer', '$injector'];
 
 /**
  * Query SEC filing metadata
- * Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \&quot;10-K,8-K,10-Q\&quot;  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
+ * Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \&quot;10-K,8-K,10-Q\&quot;  ### Pagination Results are always paginated. When &#x60;page_size&#x60; or &#x60;page_number&#x60; are omitted, defaults apply (&#x60;page_size&#x60;: 50, &#x60;page_number&#x60;: 1). Maximum &#x60;page_size&#x60; is 200. Use &#x60;page_number&#x60; to fetch additional pages.  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
  * @param {!number=} opt_cik Filter by Central Index Key (CIK)
  * @param {!string=} opt_ticker Filter by stock ticker symbol
  * @param {!string=} opt_formType Filter by form type(s) (e.g., \&quot;10-K\&quot;, \&quot;8-K\&quot;). Multiple values can be comma-separated
@@ -58,8 +58,8 @@ API.Client.FilingsApi.$inject = ['$http', '$httpParamSerializer', '$injector'];
  * @param {!string=} opt_reportDateStart Filter by report date start (inclusive), format YYYY-MM-DD
  * @param {!string=} opt_reportDateEnd Filter by report date end (inclusive), format YYYY-MM-DD
  * @param {!string=} opt_itemsContain Filter filings where the &#39;Items&#39; field contains the specified text
- * @param {!number=} opt_pageSize Number of results per page (default: 50, max: 200)
- * @param {!number=} opt_pageNumber Page number to retrieve (default: 1)
+ * @param {!number=} opt_pageSize Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
+ * @param {!number=} opt_pageNumber Page number to retrieve (default: 1). Always applied; omit to use defaults.
  * @param {!DTOFilingSortBy=} opt_sortBy Field to sort results by (default: AccessionNumber)
  * @param {!string=} opt_sortOrder Sort order (asc or desc, default: desc)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.

@@ -31,10 +31,10 @@ Keywords that the text must contain. Multiple values can be comma-separated
 Keywords that the text must not contain. Multiple values can be comma-separated
 
 .PARAMETER PageSize
-Number of results per page (default: 100)
+Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
 
 .PARAMETER PageNumber
-Page number to retrieve (default: 1)
+Page number to retrieve (default: 1). Always applied; omit to use defaults.
 
 .PARAMETER SortBy
 Field to sort by (default: AccessionNumber)

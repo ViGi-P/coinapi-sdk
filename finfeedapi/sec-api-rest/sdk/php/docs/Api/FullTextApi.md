@@ -15,7 +15,7 @@ v1FullTextGet($form_type, $filling_date_start, $filling_date_end, $text_contains
 
 Full-text search of SEC filing documents
 
-Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
 
 ### Example
 
@@ -44,8 +44,8 @@ $filling_date_start = 'filling_date_start_example'; // string | Filter by fillin
 $filling_date_end = 'filling_date_end_example'; // string | Filter by filling date end (inclusive), format YYYY-MM-DD
 $text_contains = 'text_contains_example'; // string | Keywords that the text must contain. Multiple values can be comma-separated
 $text_not_contain = 'text_not_contain_example'; // string | Keywords that the text must not contain. Multiple values can be comma-separated
-$page_size = 56; // int | Number of results per page (default: 100)
-$page_number = 56; // int | Page number to retrieve (default: 1)
+$page_size = 56; // int | Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
+$page_number = 56; // int | Page number to retrieve (default: 1). Always applied; omit to use defaults.
 $sort_by = 'AccessionNumber'; // string | Field to sort by (default: AccessionNumber)
 $sort_order = 'asc'; // string | Sort order (asc or desc). Defaults to asc
 
@@ -66,8 +66,8 @@ try {
 | **filling_date_end** | **string**| Filter by filling date end (inclusive), format YYYY-MM-DD | [optional] |
 | **text_contains** | **string**| Keywords that the text must contain. Multiple values can be comma-separated | [optional] |
 | **text_not_contain** | **string**| Keywords that the text must not contain. Multiple values can be comma-separated | [optional] |
-| **page_size** | **int**| Number of results per page (default: 100) | [optional] |
-| **page_number** | **int**| Page number to retrieve (default: 1) | [optional] |
+| **page_size** | **int**| Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. | [optional] |
+| **page_number** | **int**| Page number to retrieve (default: 1). Always applied; omit to use defaults. | [optional] |
 | **sort_by** | **string**| Field to sort by (default: AccessionNumber) | [optional] [default to &#39;AccessionNumber&#39;] |
 | **sort_order** | **string**| Sort order (asc or desc). Defaults to asc | [optional] [default to &#39;asc&#39;] |
 

@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Full-text search of SEC filing documents
 
-Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
 
 ### Example
 ```dart
@@ -33,8 +33,8 @@ final String fillingDateStart = fillingDateStart_example; // String | Filter by 
 final String fillingDateEnd = fillingDateEnd_example; // String | Filter by filling date end (inclusive), format YYYY-MM-DD
 final String textContains = textContains_example; // String | Keywords that the text must contain. Multiple values can be comma-separated
 final String textNotContain = textNotContain_example; // String | Keywords that the text must not contain. Multiple values can be comma-separated
-final int pageSize = 56; // int | Number of results per page (default: 100)
-final int pageNumber = 56; // int | Page number to retrieve (default: 1)
+final int pageSize = 56; // int | Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
+final int pageNumber = 56; // int | Page number to retrieve (default: 1). Always applied; omit to use defaults.
 final String sortBy = sortBy_example; // String | Field to sort by (default: AccessionNumber)
 final String sortOrder = sortOrder_example; // String | Sort order (asc or desc). Defaults to asc
 
@@ -55,8 +55,8 @@ Name | Type | Description  | Notes
  **fillingDateEnd** | **String**| Filter by filling date end (inclusive), format YYYY-MM-DD | [optional] 
  **textContains** | **String**| Keywords that the text must contain. Multiple values can be comma-separated | [optional] 
  **textNotContain** | **String**| Keywords that the text must not contain. Multiple values can be comma-separated | [optional] 
- **pageSize** | **int**| Number of results per page (default: 100) | [optional] 
- **pageNumber** | **int**| Page number to retrieve (default: 1) | [optional] 
+ **pageSize** | **int**| Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. | [optional] 
+ **pageNumber** | **int**| Page number to retrieve (default: 1). Always applied; omit to use defaults. | [optional] 
  **sortBy** | **String**| Field to sort by (default: AccessionNumber) | [optional] [default to 'AccessionNumber']
  **sortOrder** | **String**| Sort order (asc or desc). Defaults to asc | [optional] [default to 'asc']
 

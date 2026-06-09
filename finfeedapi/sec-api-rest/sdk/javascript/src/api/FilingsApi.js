@@ -47,7 +47,7 @@ export default class FilingsApi {
 
     /**
      * Query SEC filing metadata
-     * Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
+     * Retrieves metadata for SEC filings based on various filter criteria with pagination and sorting support.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FilingDate | Date when filing was submitted AcceptanceDateTime | Date and time of filing acceptance ReportDate | Date of the report Size | Size of the filing document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Form Types Form types can be provided as comma-separated values, e.g.: \"10-K,8-K,10-Q\"  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 50, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip For optimal performance, use date ranges and form types to narrow down your search :::
      * @param {Object} opts Optional parameters
      * @param {Number} [cik] Filter by Central Index Key (CIK)
      * @param {String} [ticker] Filter by stock ticker symbol
@@ -57,8 +57,8 @@ export default class FilingsApi {
      * @param {String} [reportDateStart] Filter by report date start (inclusive), format YYYY-MM-DD
      * @param {String} [reportDateEnd] Filter by report date end (inclusive), format YYYY-MM-DD
      * @param {String} [itemsContain] Filter filings where the 'Items' field contains the specified text
-     * @param {Number} [pageSize] Number of results per page (default: 50, max: 200)
-     * @param {Number} [pageNumber] Page number to retrieve (default: 1)
+     * @param {Number} [pageSize] Number of results per page (default: 50, max: 200). Always applied; omit to use defaults.
+     * @param {Number} [pageNumber] Page number to retrieve (default: 1). Always applied; omit to use defaults.
      * @param {module:model/DTOFilingSortBy} [sortBy] Field to sort results by (default: AccessionNumber)
      * @param {String} [sortOrder = 'desc')] Sort order (asc or desc, default: desc)
      * @param {module:api/FilingsApi~v1FilingsGetCallback} callback The callback function, accepting three arguments: error, data, response

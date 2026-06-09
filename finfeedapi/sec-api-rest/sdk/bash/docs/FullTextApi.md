@@ -36,6 +36,10 @@ text_not_contain | Keywords that must not appear in the document
 ### Date Format
 All dates must be provided in YYYY-MM-DD format
 
+### Pagination
+Results are always paginated. When 'page_size' or 'page_number' are omitted, defaults apply
+('page_size': 100, 'page_number': 1). Maximum 'page_size' is 200. Use 'page_number' to fetch additional pages.
+
 :::tip
 Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches
 :::
@@ -60,8 +64,8 @@ Name | Type | Description  | Notes
  **fillingDateEnd** | **string** | Filter by filling date end (inclusive), format YYYY-MM-DD | [optional] [default to null]
  **textContains** | **string** | Keywords that the text must contain. Multiple values can be comma-separated | [optional] [default to null]
  **textNotContain** | **string** | Keywords that the text must not contain. Multiple values can be comma-separated | [optional] [default to null]
- **pageSize** | **integer** | Number of results per page (default: 100) | [optional] [default to null]
- **pageNumber** | **integer** | Page number to retrieve (default: 1) | [optional] [default to null]
+ **pageSize** | **integer** | Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. | [optional] [default to null]
+ **pageNumber** | **integer** | Page number to retrieve (default: 1). Always applied; omit to use defaults. | [optional] [default to null]
  **sortBy** | **string** | Field to sort by (default: AccessionNumber) | [optional] [default to AccessionNumber]
  **sortOrder** | **string** | Sort order (asc or desc). Defaults to asc | [optional] [default to asc]
 

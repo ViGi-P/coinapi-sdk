@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ```c
 // Full-text search of SEC filing documents
 //
-// Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
+// Search across SEC filing documents with advanced filtering and sorting capabilities.  ### Available Sort Fields  Field Name | Description -----------|------------- AccessionNumber | SEC filing accession number FormType | Type of the filing document FilingDate | Date when filing was submitted CompanyName | Name of the company CIK | Central Index Key DocumentFilename | Name of the filing document DocumentDescription | Description of the document  ### Search Options  Option | Description --------|------------- text_contains | Keywords that must appear in the document text_not_contain | Keywords that must not appear in the document  ### Date Format All dates must be provided in YYYY-MM-DD format  ### Pagination Results are always paginated. When `page_size` or `page_number` are omitted, defaults apply (`page_size`: 100, `page_number`: 1). Maximum `page_size` is 200. Use `page_number` to fetch additional pages.  :::tip Use text_contains and text_not_contain with multiple keywords separated by commas for more precise searches :::  :::note The search is case-insensitive and supports partial word matches :::
 //
 list_t* FullTextAPI_v1FullTextGet(apiClient_t *apiClient, char *form_type, char *filling_date_start, char *filling_date_end, char *text_contains, char *text_not_contain, int *page_size, int *page_number, char *sort_by, char *sort_order);
 ```
@@ -25,8 +25,8 @@ Name | Type | Description  | Notes
 **filling_date_end** | **char \*** | Filter by filling date end (inclusive), format YYYY-MM-DD | [optional] 
 **text_contains** | **char \*** | Keywords that the text must contain. Multiple values can be comma-separated | [optional] 
 **text_not_contain** | **char \*** | Keywords that the text must not contain. Multiple values can be comma-separated | [optional] 
-**page_size** | **int \*** | Number of results per page (default: 100) | [optional] 
-**page_number** | **int \*** | Page number to retrieve (default: 1) | [optional] 
+**page_size** | **int \*** | Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. | [optional] 
+**page_number** | **int \*** | Page number to retrieve (default: 1). Always applied; omit to use defaults. | [optional] 
 **sort_by** | **char \*** | Field to sort by (default: AccessionNumber) | [optional] [default to &#39;AccessionNumber&#39;]
 **sort_order** | **char \*** | Sort order (asc or desc). Defaults to asc | [optional] [default to &#39;asc&#39;]
 

@@ -22,8 +22,8 @@
 #' var_filling_date_end <- "filling_date_end_example" # character | Filter by filling date end (inclusive), format YYYY-MM-DD (Optional)
 #' var_text_contains <- "text_contains_example" # character | Keywords that the text must contain. Multiple values can be comma-separated (Optional)
 #' var_text_not_contain <- "text_not_contain_example" # character | Keywords that the text must not contain. Multiple values can be comma-separated (Optional)
-#' var_page_size <- 56 # integer | Number of results per page (default: 100) (Optional)
-#' var_page_number <- 56 # integer | Page number to retrieve (default: 1) (Optional)
+#' var_page_size <- 56 # integer | Number of results per page (default: 100, max: 200). Always applied; omit to use defaults. (Optional)
+#' var_page_number <- 56 # integer | Page number to retrieve (default: 1). Always applied; omit to use defaults. (Optional)
 #' var_sort_by <- "AccessionNumber" # character | Field to sort by (default: AccessionNumber) (Optional)
 #' var_sort_order <- "asc" # character | Sort order (asc or desc). Defaults to asc (Optional)
 #'
@@ -71,8 +71,8 @@ FullTextApi <- R6::R6Class(
     #' @param filling_date_end (optional) Filter by filling date end (inclusive), format YYYY-MM-DD
     #' @param text_contains (optional) Keywords that the text must contain. Multiple values can be comma-separated
     #' @param text_not_contain (optional) Keywords that the text must not contain. Multiple values can be comma-separated
-    #' @param page_size (optional) Number of results per page (default: 100)
-    #' @param page_number (optional) Page number to retrieve (default: 1)
+    #' @param page_size (optional) Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
+    #' @param page_number (optional) Page number to retrieve (default: 1). Always applied; omit to use defaults.
     #' @param sort_by (optional) Field to sort by (default: AccessionNumber) (default value: "AccessionNumber")
     #' @param sort_order (optional) Sort order (asc or desc). Defaults to asc (default value: "asc")
     #' @param data_file (optional) name of the data file to save the result
@@ -100,8 +100,8 @@ FullTextApi <- R6::R6Class(
     #' @param filling_date_end (optional) Filter by filling date end (inclusive), format YYYY-MM-DD
     #' @param text_contains (optional) Keywords that the text must contain. Multiple values can be comma-separated
     #' @param text_not_contain (optional) Keywords that the text must not contain. Multiple values can be comma-separated
-    #' @param page_size (optional) Number of results per page (default: 100)
-    #' @param page_number (optional) Page number to retrieve (default: 1)
+    #' @param page_size (optional) Number of results per page (default: 100, max: 200). Always applied; omit to use defaults.
+    #' @param page_number (optional) Page number to retrieve (default: 1). Always applied; omit to use defaults.
     #' @param sort_by (optional) Field to sort by (default: AccessionNumber) (default value: "AccessionNumber")
     #' @param sort_order (optional) Sort order (asc or desc). Defaults to asc (default value: "asc")
     #' @param data_file (optional) name of the data file to save the result
@@ -129,7 +129,19 @@ FullTextApi <- R6::R6Class(
 
 
 
+      if (`page_size` > 200) {
+        stop("Invalid value for `page_size` when calling FullTextApi$V1FullTextGet, must be smaller than or equal to 200.")
+      }
+      if (`page_size` < 1) {
+        stop("Invalid value for `page_size` when calling FullTextApi$V1FullTextGet, must be bigger than or equal to 1.")
+      }
 
+      if (`page_number` > 2147483647) {
+        stop("Invalid value for `page_number` when calling FullTextApi$V1FullTextGet, must be smaller than or equal to 2147483647.")
+      }
+      if (`page_number` < 1) {
+        stop("Invalid value for `page_number` when calling FullTextApi$V1FullTextGet, must be bigger than or equal to 1.")
+      }
 
       if (!str_detect(`sort_by`, "^(AccessionNumber|FormType|FilingDate|CompanyName|CIK|DocumentFilename|DocumentDescription)$")) {
         stop("Invalid value for `sort_by` when calling FullTextApi$V1FullTextGet, must conform to the pattern ^(AccessionNumber|FormType|FilingDate|CompanyName|CIK|DocumentFilename|DocumentDescription)$.")
