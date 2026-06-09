@@ -29,7 +29,7 @@ class ExchangeRatesApi {
   ///
   /// * [String] assetIdQuote (required):
   ///   Requested exchange rate quote asset identifier (from the Metadata -> Assets)
-  Future<Response> getSpecificRateWithHttpInfo(String assetIdBase, String assetIdQuote,) async {
+  Future<Response> getSpecificRateWithHttpInfo(String assetIdBase, String assetIdQuote, { Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/exchangerate/{asset_id_base}/{asset_id_quote}'
       .replaceAll('{asset_id_base}', assetIdBase)
@@ -53,6 +53,7 @@ class ExchangeRatesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -67,8 +68,8 @@ class ExchangeRatesApi {
   ///
   /// * [String] assetIdQuote (required):
   ///   Requested exchange rate quote asset identifier (from the Metadata -> Assets)
-  Future<V1ExchangeRate?> getSpecificRate(String assetIdBase, String assetIdQuote,) async {
-    final response = await getSpecificRateWithHttpInfo(assetIdBase, assetIdQuote,);
+  Future<V1ExchangeRate?> getSpecificRate(String assetIdBase, String assetIdQuote, { Future<void>? abortTrigger, }) async {
+    final response = await getSpecificRateWithHttpInfo(assetIdBase, assetIdQuote, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -98,7 +99,7 @@ class ExchangeRatesApi {
   ///
   /// * [bool] invert:
   ///   True will invert all the rates (optional, if true then rates will be calculated as `rate = 1 / actual_rate` eg. `USD/BTC` as `BTC/USD`)
-  Future<Response> v1ExchangerateAssetIdBaseGetWithHttpInfo(String assetIdBase, { String? filterAssetId, bool? invert, }) async {
+  Future<Response> v1ExchangerateAssetIdBaseGetWithHttpInfo(String assetIdBase, { String? filterAssetId, bool? invert, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/exchangerate/{asset_id_base}'
       .replaceAll('{asset_id_base}', assetIdBase);
@@ -128,6 +129,7 @@ class ExchangeRatesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -145,8 +147,8 @@ class ExchangeRatesApi {
   ///
   /// * [bool] invert:
   ///   True will invert all the rates (optional, if true then rates will be calculated as `rate = 1 / actual_rate` eg. `USD/BTC` as `BTC/USD`)
-  Future<V1ExchangeRates?> v1ExchangerateAssetIdBaseGet(String assetIdBase, { String? filterAssetId, bool? invert, }) async {
-    final response = await v1ExchangerateAssetIdBaseGetWithHttpInfo(assetIdBase,  filterAssetId: filterAssetId, invert: invert, );
+  Future<V1ExchangeRates?> v1ExchangerateAssetIdBaseGet(String assetIdBase, { String? filterAssetId, bool? invert, Future<void>? abortTrigger, }) async {
+    final response = await v1ExchangerateAssetIdBaseGetWithHttpInfo(assetIdBase, filterAssetId: filterAssetId, invert: invert, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

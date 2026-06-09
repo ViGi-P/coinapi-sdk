@@ -17,7 +17,7 @@ class RateLimitApi {
   final ApiClient apiClient;
 
   /// Performs an HTTP 'GET /internal/ratelimit/wsconcon/apikey' operation and returns the [Response].
-  Future<Response> internalRatelimitWsconconApikeyGetWithHttpInfo() async {
+  Future<Response> internalRatelimitWsconconApikeyGetWithHttpInfo({ Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/internal/ratelimit/wsconcon/apikey';
 
@@ -39,18 +39,19 @@ class RateLimitApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
-  Future<void> internalRatelimitWsconconApikeyGet() async {
-    final response = await internalRatelimitWsconconApikeyGetWithHttpInfo();
+  Future<void> internalRatelimitWsconconApikeyGet({ Future<void>? abortTrigger, }) async {
+    final response = await internalRatelimitWsconconApikeyGetWithHttpInfo(abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
   /// Performs an HTTP 'GET /internal/ratelimit/wshello/ip' operation and returns the [Response].
-  Future<Response> internalRatelimitWshelloIpGetWithHttpInfo() async {
+  Future<Response> internalRatelimitWshelloIpGetWithHttpInfo({ Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/internal/ratelimit/wshello/ip';
 
@@ -72,18 +73,19 @@ class RateLimitApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
-  Future<void> internalRatelimitWshelloIpGet() async {
-    final response = await internalRatelimitWshelloIpGetWithHttpInfo();
+  Future<void> internalRatelimitWshelloIpGet({ Future<void>? abortTrigger, }) async {
+    final response = await internalRatelimitWshelloIpGetWithHttpInfo(abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
 
   /// Performs an HTTP 'GET /internal/ratelimit/wsreq/ip' operation and returns the [Response].
-  Future<Response> internalRatelimitWsreqIpGetWithHttpInfo() async {
+  Future<Response> internalRatelimitWsreqIpGetWithHttpInfo({ Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/internal/ratelimit/wsreq/ip';
 
@@ -105,11 +107,12 @@ class RateLimitApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
-  Future<void> internalRatelimitWsreqIpGet() async {
-    final response = await internalRatelimitWsreqIpGetWithHttpInfo();
+  Future<void> internalRatelimitWsreqIpGet({ Future<void>? abortTrigger, }) async {
+    final response = await internalRatelimitWsreqIpGetWithHttpInfo(abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

@@ -24,7 +24,7 @@ class MetadataApi {
   ///
   /// * [String] assetId (required):
   ///   The asset ID.
-  Future<Response> v1AssetsAssetIdGetWithHttpInfo(String assetId,) async {
+  Future<Response> v1AssetsAssetIdGetWithHttpInfo(String assetId, { Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/assets/{asset_id}'
       .replaceAll('{asset_id}', assetId);
@@ -47,6 +47,7 @@ class MetadataApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -56,8 +57,8 @@ class MetadataApi {
   ///
   /// * [String] assetId (required):
   ///   The asset ID.
-  Future<List<V1Asset>?> v1AssetsAssetIdGet(String assetId,) async {
-    final response = await v1AssetsAssetIdGetWithHttpInfo(assetId,);
+  Future<List<V1Asset>?> v1AssetsAssetIdGet(String assetId, { Future<void>? abortTrigger, }) async {
+    final response = await v1AssetsAssetIdGetWithHttpInfo(assetId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -84,7 +85,7 @@ class MetadataApi {
   ///
   /// * [String] filterAssetId:
   ///   Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
-  Future<Response> v1AssetsGetWithHttpInfo({ String? filterAssetId, }) async {
+  Future<Response> v1AssetsGetWithHttpInfo({ String? filterAssetId, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/assets';
 
@@ -110,6 +111,7 @@ class MetadataApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -121,8 +123,8 @@ class MetadataApi {
   ///
   /// * [String] filterAssetId:
   ///   Comma or semicolon delimited asset identifiers used to filter response. (optional, eg. `BTC;ETH`).
-  Future<List<V1Asset>?> v1AssetsGet({ String? filterAssetId, }) async {
-    final response = await v1AssetsGetWithHttpInfo( filterAssetId: filterAssetId, );
+  Future<List<V1Asset>?> v1AssetsGet({ String? filterAssetId, Future<void>? abortTrigger, }) async {
+    final response = await v1AssetsGetWithHttpInfo(filterAssetId: filterAssetId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -149,7 +151,7 @@ class MetadataApi {
   ///
   /// * [int] size (required):
   ///   The size of the icons.
-  Future<Response> v1AssetsIconsSizeGetWithHttpInfo(int size,) async {
+  Future<Response> v1AssetsIconsSizeGetWithHttpInfo(int size, { Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/assets/icons/{size}'
       .replaceAll('{size}', size.toString());
@@ -172,6 +174,7 @@ class MetadataApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -183,8 +186,8 @@ class MetadataApi {
   ///
   /// * [int] size (required):
   ///   The size of the icons.
-  Future<List<V1Icon>?> v1AssetsIconsSizeGet(int size,) async {
-    final response = await v1AssetsIconsSizeGetWithHttpInfo(size,);
+  Future<List<V1Icon>?> v1AssetsIconsSizeGet(int size, { Future<void>? abortTrigger, }) async {
+    final response = await v1AssetsIconsSizeGetWithHttpInfo(size, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
