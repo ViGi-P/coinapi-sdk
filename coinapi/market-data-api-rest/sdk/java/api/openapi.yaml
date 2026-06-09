@@ -100,7 +100,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-08T06:03:45.0280035Z
+                    time: 2026-06-09T06:03:40.2583966Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -110,7 +110,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-08T06:03:45.0280035Z
+                    time: 2026-06-09T06:03:40.2583966Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -120,7 +120,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-08T06:03:45.0280035Z
+                    time: 2026-06-09T06:03:40.2583966Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -130,7 +130,7 @@ paths:
               examples:
                 Example response:
                   value:
-                    time: 2026-06-08T06:03:45.0280035Z
+                    time: 2026-06-09T06:03:40.2583966Z
                     asset_id_base: BTC
                     asset_id_quote: USD
                     rate: 10000.0
@@ -7286,18 +7286,18 @@ components:
       additionalProperties: false
       description: Represents a timeseries item with price and volume information.
       example:
-        time_period_end: 2000-01-23T04:56:07.000+00:00
-        symbol_id_coinapi: symbol_id_coinapi
-        time_open: 2000-01-23T04:56:07.000+00:00
-        price_close: 5.962133916683182
-        trades_count: 2
-        time_close: 2000-01-23T04:56:07.000+00:00
-        symbol_id_exchange: symbol_id_exchange
-        price_open: 0.8008281904610115
         time_period_start: 2000-01-23T04:56:07.000+00:00
+        time_period_end: 2000-01-23T04:56:07.000+00:00
+        time_open: 2000-01-23T04:56:07.000+00:00
+        time_close: 2000-01-23T04:56:07.000+00:00
+        price_open: 0.8008281904610115
         price_high: 6.027456183070403
-        volume_traded: 5.637376656633329
         price_low: 1.4658129805029452
+        price_close: 5.962133916683182
+        volume_traded: 5.637376656633329
+        trades_count: 2
+        symbol_id_exchange: symbol_id_exchange
+        symbol_id_coinapi: symbol_id_coinapi
       properties:
         time_period_start:
           description: Gets or sets the start time of the time period.
@@ -7357,33 +7357,33 @@ components:
       additionalProperties: false
       description: Represents an asset.
       example:
-        price_usd: 2.3021358869347655
-        volume_1mth_usd: 5.637376656633329
-        data_end: data_end
-        id_icon: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        data_orderbook_end: 2000-01-23T04:56:07.000+00:00
-        data_start: data_start
+        asset_id: asset_id
+        name: name
         type_is_crypto: 0
         data_quote_start: 2000-01-23T04:56:07.000+00:00
-        asset_id: asset_id
-        volume_1hrs_usd: 1.4658129805029452
-        supply_current: 7.061401241503109
         data_quote_end: 2000-01-23T04:56:07.000+00:00
         data_orderbook_start: 2000-01-23T04:56:07.000+00:00
+        data_orderbook_end: 2000-01-23T04:56:07.000+00:00
         data_trade_start: 2000-01-23T04:56:07.000+00:00
-        supply_max: 3.616076749251911
-        name: name
-        data_symbols_count: 6
-        chain_addresses:
-        - network_id: network_id
-          address: address
-          chain_id: chain_id
-        - network_id: network_id
-          address: address
-          chain_id: chain_id
-        supply_total: 9.301444243932576
         data_trade_end: 2000-01-23T04:56:07.000+00:00
+        data_symbols_count: 6
+        volume_1hrs_usd: 1.4658129805029452
         volume_1day_usd: 5.962133916683182
+        volume_1mth_usd: 5.637376656633329
+        price_usd: 2.3021358869347655
+        id_icon: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        supply_current: 7.061401241503109
+        supply_total: 9.301444243932576
+        supply_max: 3.616076749251911
+        chain_addresses:
+        - chain_id: chain_id
+          network_id: network_id
+          address: address
+        - chain_id: chain_id
+          network_id: network_id
+          address: address
+        data_start: data_start
+        data_end: data_end
       properties:
         asset_id:
           description: Gets or sets the asset ID.
@@ -7511,9 +7511,9 @@ components:
       additionalProperties: false
       description: Contains information about assets' chain network addresses
       example:
+        chain_id: chain_id
         network_id: network_id
         address: address
-        chain_id: chain_id
       properties:
         chain_id:
           description: Gets or sets chain id
@@ -7532,16 +7532,25 @@ components:
       additionalProperties: false
       description: Represents an exchange.
       example:
+        exchange_id: exchange_id
+        website: website
+        name: name
+        data_start: data_start
         data_end: data_end
+        data_quote_start: 2000-01-23T04:56:07.000+00:00
+        data_quote_end: 2000-01-23T04:56:07.000+00:00
+        data_orderbook_start: 2000-01-23T04:56:07.000+00:00
+        data_orderbook_end: 2000-01-23T04:56:07.000+00:00
+        data_trade_start: 2000-01-23T04:56:07.000+00:00
+        data_trade_end: 2000-01-23T04:56:07.000+00:00
+        data_trade_count: 0
+        data_symbols_count: 6
+        volume_1hrs_usd: 1.4658129805029452
+        volume_1day_usd: 5.962133916683182
         volume_1mth_usd: 5.637376656633329
         metric_id:
         - metric_id
         - metric_id
-        website: website
-        data_orderbook_end: 2000-01-23T04:56:07.000+00:00
-        data_start: data_start
-        data_quote_start: 2000-01-23T04:56:07.000+00:00
-        volume_1hrs_usd: 1.4658129805029452
         icons:
         - exchange_id: exchange_id
           asset_id: asset_id
@@ -7549,17 +7558,8 @@ components:
         - exchange_id: exchange_id
           asset_id: asset_id
           url: url
-        integration_status: integration_status
-        exchange_id: exchange_id
-        data_quote_end: 2000-01-23T04:56:07.000+00:00
-        data_orderbook_start: 2000-01-23T04:56:07.000+00:00
-        data_trade_start: 2000-01-23T04:56:07.000+00:00
-        name: name
-        data_symbols_count: 6
         rank: 2.3021358869347655
-        data_trade_end: 2000-01-23T04:56:07.000+00:00
-        data_trade_count: 0
-        volume_1day_usd: 5.962133916683182
+        integration_status: integration_status
       properties:
         exchange_id:
           description: Gets or sets the exchange ID.
@@ -7664,10 +7664,10 @@ components:
       additionalProperties: false
       description: Represents an exchange rate.
       example:
-        asset_id_base: asset_id_base
-        rate: 0.8008281904610115
-        asset_id_quote: asset_id_quote
         time: 2000-01-23T04:56:07.000+00:00
+        asset_id_base: asset_id_base
+        asset_id_quote: asset_id_quote
+        rate: 0.8008281904610115
       properties:
         time:
           description: Gets or sets the time of the exchange rate.
@@ -7692,12 +7692,12 @@ components:
       example:
         asset_id_base: asset_id_base
         rates:
-        - rate: 0.8008281904610115
+        - time: 2000-01-23T04:56:07.000+00:00
           asset_id_quote: asset_id_quote
-          time: 2000-01-23T04:56:07.000+00:00
-        - rate: 0.8008281904610115
+          rate: 0.8008281904610115
+        - time: 2000-01-23T04:56:07.000+00:00
           asset_id_quote: asset_id_quote
-          time: 2000-01-23T04:56:07.000+00:00
+          rate: 0.8008281904610115
       properties:
         asset_id_base:
           description: Gets or sets the base asset ID.
@@ -7714,9 +7714,9 @@ components:
       additionalProperties: false
       description: Represents an exchange rate within a collection of exchange rates.
       example:
-        rate: 0.8008281904610115
-        asset_id_quote: asset_id_quote
         time: 2000-01-23T04:56:07.000+00:00
+        asset_id_quote: asset_id_quote
+        rate: 0.8008281904610115
       properties:
         time:
           description: Gets or sets the time of the exchange rate.
@@ -7735,14 +7735,14 @@ components:
       additionalProperties: false
       description: Represents an item in the exchange rate timeseries.
       example:
+        time_period_start: 2000-01-23T04:56:07.000+00:00
         time_period_end: 2000-01-23T04:56:07.000+00:00
         time_open: 2000-01-23T04:56:07.000+00:00
+        time_close: 2000-01-23T04:56:07.000+00:00
+        rate_open: 0.8008281904610115
         rate_high: 6.027456183070403
         rate_low: 1.4658129805029452
-        time_close: 2000-01-23T04:56:07.000+00:00
         rate_close: 5.962133916683182
-        time_period_start: 2000-01-23T04:56:07.000+00:00
-        rate_open: 0.8008281904610115
       properties:
         time_period_start:
           description: Gets or sets the start time of the period.
@@ -7789,14 +7789,14 @@ components:
         type with name "general_data" and inherits from the BaseCsvModel class.
       example:
         entry_time: 2000-01-23T04:56:07.000+00:00
-        metric_id: metric_id
-        value_text: value_text
-        value_time: 2000-01-23T04:56:07.000+00:00
-        exchange_id: exchange_id
         recv_time: 2000-01-23T04:56:07.000+00:00
+        exchange_id: exchange_id
         asset_id: asset_id
         symbol_id: symbol_id
+        metric_id: metric_id
         value_decimal: 0.8008281904610115
+        value_text: value_text
+        value_time: 2000-01-23T04:56:07.000+00:00
       properties:
         entry_time:
           description: Gets or sets the entry time for the data point.
@@ -7864,11 +7864,11 @@ components:
       description: Represents the last executed transaction.
       example:
         time_exchange: 2000-01-23T04:56:07.000+00:00
-        size: 9.301444243932576
-        price: 7.061401241503109
         time_coinapi: 2000-01-23T04:56:07.000+00:00
-        taker_side: taker_side
         uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        price: 7.061401241503109
+        size: 9.301444243932576
+        taker_side: taker_side
       properties:
         time_exchange:
           description: Gets or sets the exchange time of the last trade.
@@ -7900,13 +7900,13 @@ components:
       description: Represents a listing data item.
       example:
         metric_id: metric_id
-        exchange_id: exchange_id
-        network_id: network_id
-        chain_id: chain_id
-        asset_id: asset_id
-        asset_id_external: asset_id_external
         symbol_id: symbol_id
         symbol_id_external: symbol_id_external
+        exchange_id: exchange_id
+        asset_id: asset_id
+        asset_id_external: asset_id_external
+        chain_id: chain_id
+        network_id: network_id
       properties:
         metric_id:
           description: Gets or sets the metric ID.
@@ -7963,9 +7963,9 @@ components:
       additionalProperties: false
       description: Represents a data model for metric data.
       example:
+        symbol_id: symbol_id
         time: 2000-01-23T04:56:07.000+00:00
         value: 0.8008281904610115
-        symbol_id: symbol_id
       properties:
         symbol_id:
           description: Gets or sets the symbol id.
@@ -8006,72 +8006,72 @@ components:
       description: Represents an option exchange group data model.
       example:
         asset_id_base: asset_id_base
+        asset_id_quote: asset_id_quote
         underlying_price: 0.8008281904610115
         time_expiration: 2000-01-23T04:56:07.000+00:00
         strikes:
-        - call:
+        - strike_price: 6.027456183070403
+          call:
+            symbol_id: symbol_id
             time_exchange: 2000-01-23T04:56:07.000+00:00
+            time_coinapi: 2000-01-23T04:56:07.000+00:00
+            ask_price: 1.4658129805029452
             ask_size: 5.962133916683182
+            bid_price: 5.637376656633329
+            bid_size: 2.3021358869347655
             last_trade:
               time_exchange: 2000-01-23T04:56:07.000+00:00
-              size: 9.301444243932576
-              price: 7.061401241503109
               time_coinapi: 2000-01-23T04:56:07.000+00:00
-              taker_side: taker_side
               uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-            bid_size: 2.3021358869347655
-            time_coinapi: 2000-01-23T04:56:07.000+00:00
-            symbol_id: symbol_id
-            bid_price: 5.637376656633329
-            ask_price: 1.4658129805029452
+              price: 7.061401241503109
+              size: 9.301444243932576
+              taker_side: taker_side
           put:
+            symbol_id: symbol_id
             time_exchange: 2000-01-23T04:56:07.000+00:00
+            time_coinapi: 2000-01-23T04:56:07.000+00:00
+            ask_price: 1.4658129805029452
             ask_size: 5.962133916683182
+            bid_price: 5.637376656633329
+            bid_size: 2.3021358869347655
             last_trade:
               time_exchange: 2000-01-23T04:56:07.000+00:00
-              size: 9.301444243932576
-              price: 7.061401241503109
               time_coinapi: 2000-01-23T04:56:07.000+00:00
-              taker_side: taker_side
               uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-            bid_size: 2.3021358869347655
-            time_coinapi: 2000-01-23T04:56:07.000+00:00
+              price: 7.061401241503109
+              size: 9.301444243932576
+              taker_side: taker_side
+        - strike_price: 6.027456183070403
+          call:
             symbol_id: symbol_id
-            bid_price: 5.637376656633329
-            ask_price: 1.4658129805029452
-          strike_price: 6.027456183070403
-        - call:
             time_exchange: 2000-01-23T04:56:07.000+00:00
+            time_coinapi: 2000-01-23T04:56:07.000+00:00
+            ask_price: 1.4658129805029452
             ask_size: 5.962133916683182
+            bid_price: 5.637376656633329
+            bid_size: 2.3021358869347655
             last_trade:
               time_exchange: 2000-01-23T04:56:07.000+00:00
-              size: 9.301444243932576
-              price: 7.061401241503109
               time_coinapi: 2000-01-23T04:56:07.000+00:00
-              taker_side: taker_side
               uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-            bid_size: 2.3021358869347655
-            time_coinapi: 2000-01-23T04:56:07.000+00:00
-            symbol_id: symbol_id
-            bid_price: 5.637376656633329
-            ask_price: 1.4658129805029452
+              price: 7.061401241503109
+              size: 9.301444243932576
+              taker_side: taker_side
           put:
+            symbol_id: symbol_id
             time_exchange: 2000-01-23T04:56:07.000+00:00
+            time_coinapi: 2000-01-23T04:56:07.000+00:00
+            ask_price: 1.4658129805029452
             ask_size: 5.962133916683182
+            bid_price: 5.637376656633329
+            bid_size: 2.3021358869347655
             last_trade:
               time_exchange: 2000-01-23T04:56:07.000+00:00
-              size: 9.301444243932576
-              price: 7.061401241503109
               time_coinapi: 2000-01-23T04:56:07.000+00:00
-              taker_side: taker_side
               uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-            bid_size: 2.3021358869347655
-            time_coinapi: 2000-01-23T04:56:07.000+00:00
-            symbol_id: symbol_id
-            bid_price: 5.637376656633329
-            ask_price: 1.4658129805029452
-          strike_price: 6.027456183070403
-        asset_id_quote: asset_id_quote
+              price: 7.061401241503109
+              size: 9.301444243932576
+              taker_side: taker_side
       properties:
         asset_id_base:
           description: Gets or sets the base asset identifier.
@@ -8101,11 +8101,11 @@ components:
       additionalProperties: false
       description: Represents an order book with additional information and functionality.
       example:
+        symbol_id: symbol_id
         time_exchange: 2000-01-23T04:56:07.000+00:00
+        time_coinapi: 2000-01-23T04:56:07.000+00:00
         asks: ""
         bids: ""
-        time_coinapi: 2000-01-23T04:56:07.000+00:00
-        symbol_id: symbol_id
       properties:
         symbol_id:
           description: Gets or sets the symbol identifier.
@@ -8130,11 +8130,11 @@ components:
       additionalProperties: false
       description: Represents the base model for order book data.
       example:
+        symbol_id: symbol_id
         time_exchange: 2000-01-23T04:56:07.000+00:00
+        time_coinapi: 2000-01-23T04:56:07.000+00:00
         asks: ""
         bids: ""
-        time_coinapi: 2000-01-23T04:56:07.000+00:00
-        symbol_id: symbol_id
       properties:
         symbol_id:
           description: Gets or sets the symbol identifier.
@@ -8159,13 +8159,13 @@ components:
       additionalProperties: false
       description: Represents the depth of an order book.
       example:
-        ask_depth: 1.4658129805029452
+        symbol_id: symbol_id
         time_exchange: 2000-01-23T04:56:07.000+00:00
+        time_coinapi: 2000-01-23T04:56:07.000+00:00
         ask_levels: 0
         bid_levels: 6
-        time_coinapi: 2000-01-23T04:56:07.000+00:00
+        ask_depth: 1.4658129805029452
         bid_depth: 5.962133916683182
-        symbol_id: symbol_id
       properties:
         symbol_id:
           description: Gets or sets the symbol identifier.
@@ -8200,13 +8200,13 @@ components:
       additionalProperties: false
       description: Represents a quote data model.
       example:
-        time_exchange: 2000-01-23T04:56:07.000+00:00
-        ask_size: 6.027456183070403
-        bid_size: 5.962133916683182
-        time_coinapi: 2000-01-23T04:56:07.000+00:00
         symbol_id: symbol_id
-        bid_price: 1.4658129805029452
+        time_exchange: 2000-01-23T04:56:07.000+00:00
+        time_coinapi: 2000-01-23T04:56:07.000+00:00
         ask_price: 0.8008281904610115
+        ask_size: 6.027456183070403
+        bid_price: 1.4658129805029452
+        bid_size: 5.962133916683182
       properties:
         symbol_id:
           description: Gets or sets the symbol identifier.
@@ -8249,20 +8249,20 @@ components:
       additionalProperties: false
       description: Represents a quote trade data model.
       example:
+        symbol_id: symbol_id
         time_exchange: 2000-01-23T04:56:07.000+00:00
+        time_coinapi: 2000-01-23T04:56:07.000+00:00
+        ask_price: 1.4658129805029452
         ask_size: 5.962133916683182
+        bid_price: 5.637376656633329
+        bid_size: 2.3021358869347655
         last_trade:
           time_exchange: 2000-01-23T04:56:07.000+00:00
-          size: 9.301444243932576
-          price: 7.061401241503109
           time_coinapi: 2000-01-23T04:56:07.000+00:00
-          taker_side: taker_side
           uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-        bid_size: 2.3021358869347655
-        time_coinapi: 2000-01-23T04:56:07.000+00:00
-        symbol_id: symbol_id
-        bid_price: 5.637376656633329
-        ask_price: 1.4658129805029452
+          price: 7.061401241503109
+          size: 9.301444243932576
+          taker_side: taker_side
       properties:
         symbol_id:
           description: Gets or sets the symbol identifier.
@@ -8307,37 +8307,37 @@ components:
       additionalProperties: false
       description: Represents a strike within the option exchange group.
       example:
-        call:
-          time_exchange: 2000-01-23T04:56:07.000+00:00
-          ask_size: 5.962133916683182
-          last_trade:
-            time_exchange: 2000-01-23T04:56:07.000+00:00
-            size: 9.301444243932576
-            price: 7.061401241503109
-            time_coinapi: 2000-01-23T04:56:07.000+00:00
-            taker_side: taker_side
-            uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          bid_size: 2.3021358869347655
-          time_coinapi: 2000-01-23T04:56:07.000+00:00
-          symbol_id: symbol_id
-          bid_price: 5.637376656633329
-          ask_price: 1.4658129805029452
-        put:
-          time_exchange: 2000-01-23T04:56:07.000+00:00
-          ask_size: 5.962133916683182
-          last_trade:
-            time_exchange: 2000-01-23T04:56:07.000+00:00
-            size: 9.301444243932576
-            price: 7.061401241503109
-            time_coinapi: 2000-01-23T04:56:07.000+00:00
-            taker_side: taker_side
-            uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
-          bid_size: 2.3021358869347655
-          time_coinapi: 2000-01-23T04:56:07.000+00:00
-          symbol_id: symbol_id
-          bid_price: 5.637376656633329
-          ask_price: 1.4658129805029452
         strike_price: 6.027456183070403
+        call:
+          symbol_id: symbol_id
+          time_exchange: 2000-01-23T04:56:07.000+00:00
+          time_coinapi: 2000-01-23T04:56:07.000+00:00
+          ask_price: 1.4658129805029452
+          ask_size: 5.962133916683182
+          bid_price: 5.637376656633329
+          bid_size: 2.3021358869347655
+          last_trade:
+            time_exchange: 2000-01-23T04:56:07.000+00:00
+            time_coinapi: 2000-01-23T04:56:07.000+00:00
+            uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            price: 7.061401241503109
+            size: 9.301444243932576
+            taker_side: taker_side
+        put:
+          symbol_id: symbol_id
+          time_exchange: 2000-01-23T04:56:07.000+00:00
+          time_coinapi: 2000-01-23T04:56:07.000+00:00
+          ask_price: 1.4658129805029452
+          ask_size: 5.962133916683182
+          bid_price: 5.637376656633329
+          bid_size: 2.3021358869347655
+          last_trade:
+            time_exchange: 2000-01-23T04:56:07.000+00:00
+            time_coinapi: 2000-01-23T04:56:07.000+00:00
+            uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+            price: 7.061401241503109
+            size: 9.301444243932576
+            taker_side: taker_side
       properties:
         strike_price:
           description: Gets or sets the strike price.
@@ -8352,59 +8352,59 @@ components:
       additionalProperties: false
       description: Represents a symbol data model.
       example:
-        option_barrier_down_price: 6.84685269835264
-        option_barrier_up_price: 1.4894159098541704
-        contract_id: contract_id
-        data_start: data_start
-        raw_kvp:
-          key: raw_kvp
-        volume_1hrs_usd: 2.3021358869347655
-        index_display_name: index_display_name
-        option_contract_unit: 1.4658129805029452
-        asset_id_base: asset_id_base
-        contract_unit_asset: contract_unit_asset
-        option_barrier_down_type: option_barrier_down_type
-        data_quote_end: 2000-01-23T04:56:07.000+00:00
-        symbol_id_int: 7
-        future_contract_unit_asset: future_contract_unit_asset
-        price: 4.145608029883936
-        option_barrier_up_type: option_barrier_up_type
-        volume_to_usd: 1.0246457001441578
-        index_id: index_id
         symbol_id: symbol_id
-        index_display_description: index_display_description
-        future_delivery_time: 2000-01-23T04:56:07.000+00:00
+        exchange_id: exchange_id
+        symbol_type: symbol_type
+        asset_id_base: asset_id_base
         asset_id_quote: asset_id_quote
-        data_quote_start: 2000-01-23T04:56:07.000+00:00
-        option_expiration_time: 2000-01-23T04:56:07.000+00:00
-        price_precision: 7.386281948385884
+        asset_id_unit: asset_id_unit
+        future_contract_unit: 0.8008281904610115
+        future_contract_unit_asset: future_contract_unit_asset
+        future_delivery_time: 2000-01-23T04:56:07.000+00:00
         option_type_is_call: true
         option_strike_price: 6.027456183070403
-        future_is_inverse: true
-        contract_delivery_time: 2000-01-23T04:56:07.000+00:00
-        size_precision: 1.2315135367772556
-        future_is_quanto: true
-        data_trade_end: 2000-01-23T04:56:07.000+00:00
-        contract_display_name: contract_display_name
-        exchange_id: exchange_id
-        contract_display_description: contract_display_description
-        data_trade_start: 2000-01-23T04:56:07.000+00:00
-        symbol_type: symbol_type
-        asset_id_quote_exchange: asset_id_quote_exchange
-        data_end: data_end
-        volume_1mth_usd: 2.027123023002322
-        volume_1hrs: 5.637376656633329
-        asset_id_unit: asset_id_unit
-        data_orderbook_end: 2000-01-23T04:56:07.000+00:00
-        symbol_id_exchange: symbol_id_exchange
-        contract_unit: 5.962133916683182
-        asset_id_base_exchange: asset_id_base_exchange
-        volume_1mth: 3.616076749251911
-        volume_1day: 7.061401241503109
-        future_contract_unit: 0.8008281904610115
+        option_contract_unit: 1.4658129805029452
         option_exercise_style: option_exercise_style
+        option_expiration_time: 2000-01-23T04:56:07.000+00:00
+        contract_delivery_time: 2000-01-23T04:56:07.000+00:00
+        contract_unit: 5.962133916683182
+        contract_unit_asset: contract_unit_asset
+        contract_id: contract_id
+        contract_display_name: contract_display_name
+        contract_display_description: contract_display_description
+        data_start: data_start
+        data_end: data_end
+        data_quote_start: 2000-01-23T04:56:07.000+00:00
+        data_quote_end: 2000-01-23T04:56:07.000+00:00
         data_orderbook_start: 2000-01-23T04:56:07.000+00:00
+        data_orderbook_end: 2000-01-23T04:56:07.000+00:00
+        data_trade_start: 2000-01-23T04:56:07.000+00:00
+        data_trade_end: 2000-01-23T04:56:07.000+00:00
+        index_id: index_id
+        index_display_name: index_display_name
+        index_display_description: index_display_description
+        volume_1hrs: 5.637376656633329
+        volume_1hrs_usd: 2.3021358869347655
+        volume_1day: 7.061401241503109
         volume_1day_usd: 9.301444243932576
+        volume_1mth: 3.616076749251911
+        volume_1mth_usd: 2.027123023002322
+        price: 4.145608029883936
+        symbol_id_exchange: symbol_id_exchange
+        asset_id_base_exchange: asset_id_base_exchange
+        asset_id_quote_exchange: asset_id_quote_exchange
+        price_precision: 7.386281948385884
+        size_precision: 1.2315135367772556
+        raw_kvp:
+          key: raw_kvp
+        future_is_inverse: true
+        future_is_quanto: true
+        volume_to_usd: 1.0246457001441578
+        option_barrier_up_price: 1.4894159098541704
+        option_barrier_up_type: option_barrier_up_type
+        option_barrier_down_price: 6.84685269835264
+        option_barrier_down_type: option_barrier_down_type
+        symbol_id_int: 7
       properties:
         symbol_id:
           description: Gets or sets the symbol identifier.
@@ -8658,15 +8658,15 @@ components:
       additionalProperties: false
       description: Represents symbol mapping information for exchange symbols.
       example:
-        asset_id_base: asset_id_base
-        symbol_id_exchange: symbol_id_exchange
-        asset_id_quote: asset_id_quote
-        asset_id_base_exchange: asset_id_base_exchange
-        coinapi_datainfo_id: 0
-        asset_id_quote_exchange: asset_id_quote_exchange
-        size_precision: 1.4658129805029452
         symbol_id: symbol_id
+        symbol_id_exchange: symbol_id_exchange
+        coinapi_datainfo_id: 0
+        asset_id_base_exchange: asset_id_base_exchange
+        asset_id_quote_exchange: asset_id_quote_exchange
+        asset_id_base: asset_id_base
+        asset_id_quote: asset_id_quote
         price_precision: 6.027456183070403
+        size_precision: 1.4658129805029452
       properties:
         symbol_id:
           description: Gets or sets the symbol ID.
@@ -8711,16 +8711,16 @@ components:
       additionalProperties: false
       description: Represents a timeseries item with price and volume information.
       example:
+        time_period_start: 2000-01-23T04:56:07.000+00:00
         time_period_end: 2000-01-23T04:56:07.000+00:00
         time_open: 2000-01-23T04:56:07.000+00:00
-        price_close: 5.962133916683182
-        trades_count: 2
         time_close: 2000-01-23T04:56:07.000+00:00
         price_open: 0.8008281904610115
-        time_period_start: 2000-01-23T04:56:07.000+00:00
         price_high: 6.027456183070403
-        volume_traded: 5.637376656633329
         price_low: 1.4658129805029452
+        price_close: 5.962133916683182
+        volume_traded: 5.637376656633329
+        trades_count: 2
       properties:
         time_period_start:
           description: Gets or sets the start time of the time period.
@@ -8774,12 +8774,12 @@ components:
       additionalProperties: false
       description: Represents a timeseries period used in exchange rate data.
       example:
-        unit_name: unit_name
-        length_months: 6
-        length_seconds: 0
         period_id: period_id
-        display_name: display_name
+        length_seconds: 0
+        length_months: 6
         unit_count: 1
+        unit_name: unit_name
+        display_name: display_name
       properties:
         period_id:
           description: Gets or sets the period ID.
@@ -8811,18 +8811,18 @@ components:
       additionalProperties: false
       description: Represents a trade executed on the exchange.
       example:
-        time_exchange: 2000-01-23T04:56:07.000+00:00
-        id_order_taker: id_order_taker
-        size: 6.027456183070403
-        user_maker: user_maker
-        price: 0.8008281904610115
-        time_coinapi: 2000-01-23T04:56:07.000+00:00
-        taker_side: taker_side
-        id_order_maker: id_order_maker
-        uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         symbol_id: symbol_id
+        time_exchange: 2000-01-23T04:56:07.000+00:00
+        time_coinapi: 2000-01-23T04:56:07.000+00:00
+        uuid: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        price: 0.8008281904610115
+        size: 6.027456183070403
+        taker_side: taker_side
         id_trade: id_trade
+        id_order_maker: id_order_maker
+        id_order_taker: id_order_taker
         user_taker: user_taker
+        user_maker: user_maker
       properties:
         symbol_id:
           description: The symbol identifier.

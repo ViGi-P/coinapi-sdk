@@ -29,7 +29,7 @@ class OrderBookApi {
   ///
   /// * [int] limitLevels:
   ///   The maximum number of levels to include in the response.
-  Future<Response> v1OrderbooksSymbolIdCurrentGetWithHttpInfo(String symbolId, { int? limitLevels, }) async {
+  Future<Response> v1OrderbooksSymbolIdCurrentGetWithHttpInfo(String symbolId, { int? limitLevels, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/orderbooks/{symbol_id}/current'
       .replaceAll('{symbol_id}', symbolId);
@@ -56,6 +56,7 @@ class OrderBookApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -70,8 +71,8 @@ class OrderBookApi {
   ///
   /// * [int] limitLevels:
   ///   The maximum number of levels to include in the response.
-  Future<V1OrderBookBase?> v1OrderbooksSymbolIdCurrentGet(String symbolId, { int? limitLevels, }) async {
-    final response = await v1OrderbooksSymbolIdCurrentGetWithHttpInfo(symbolId,  limitLevels: limitLevels, );
+  Future<V1OrderBookBase?> v1OrderbooksSymbolIdCurrentGet(String symbolId, { int? limitLevels, Future<void>? abortTrigger, }) async {
+    final response = await v1OrderbooksSymbolIdCurrentGetWithHttpInfo(symbolId, limitLevels: limitLevels, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -98,7 +99,7 @@ class OrderBookApi {
   ///
   /// * [int] limitLevels:
   ///   The maximum number of levels to include in the response.
-  Future<Response> v1OrderbooksSymbolIdDepthCurrentGetWithHttpInfo(String symbolId, { int? limitLevels, }) async {
+  Future<Response> v1OrderbooksSymbolIdDepthCurrentGetWithHttpInfo(String symbolId, { int? limitLevels, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/orderbooks/{symbol_id}/depth/current'
       .replaceAll('{symbol_id}', symbolId);
@@ -125,6 +126,7 @@ class OrderBookApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -139,8 +141,8 @@ class OrderBookApi {
   ///
   /// * [int] limitLevels:
   ///   The maximum number of levels to include in the response.
-  Future<V1OrderBookDepth?> v1OrderbooksSymbolIdDepthCurrentGet(String symbolId, { int? limitLevels, }) async {
-    final response = await v1OrderbooksSymbolIdDepthCurrentGetWithHttpInfo(symbolId,  limitLevels: limitLevels, );
+  Future<V1OrderBookDepth?> v1OrderbooksSymbolIdDepthCurrentGet(String symbolId, { int? limitLevels, Future<void>? abortTrigger, }) async {
+    final response = await v1OrderbooksSymbolIdDepthCurrentGetWithHttpInfo(symbolId, limitLevels: limitLevels, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -179,7 +181,7 @@ class OrderBookApi {
   ///
   /// * [int] limitLevels:
   ///   Maximum amount of levels from each side of the book to include in response (optional, maximum is 50)
-  Future<Response> v1OrderbooksSymbolIdHistoryGetWithHttpInfo(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, int? limitLevels, }) async {
+  Future<Response> v1OrderbooksSymbolIdHistoryGetWithHttpInfo(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, int? limitLevels, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/orderbooks/{symbol_id}/history'
       .replaceAll('{symbol_id}', symbolId);
@@ -218,6 +220,7 @@ class OrderBookApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -244,8 +247,8 @@ class OrderBookApi {
   ///
   /// * [int] limitLevels:
   ///   Maximum amount of levels from each side of the book to include in response (optional, maximum is 50)
-  Future<List<V1OrderBook>?> v1OrderbooksSymbolIdHistoryGet(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, int? limitLevels, }) async {
-    final response = await v1OrderbooksSymbolIdHistoryGetWithHttpInfo(symbolId,  date: date, timeStart: timeStart, timeEnd: timeEnd, limit: limit, limitLevels: limitLevels, );
+  Future<List<V1OrderBook>?> v1OrderbooksSymbolIdHistoryGet(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, int? limitLevels, Future<void>? abortTrigger, }) async {
+    final response = await v1OrderbooksSymbolIdHistoryGetWithHttpInfo(symbolId, date: date, timeStart: timeStart, timeEnd: timeEnd, limit: limit, limitLevels: limitLevels, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

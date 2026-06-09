@@ -35,7 +35,7 @@ class MetricsV1Api {
   ///
   /// * [String] exchangeId:
   ///   Exchange identifier (from the Metadata -> Exchanges)
-  Future<Response> v1MetricsAssetCurrentGetWithHttpInfo({ String? metricId, String? assetId, String? assetIdExternal, String? exchangeId, }) async {
+  Future<Response> v1MetricsAssetCurrentGetWithHttpInfo({ String? metricId, String? assetId, String? assetIdExternal, String? exchangeId, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/metrics/asset/current';
 
@@ -70,6 +70,7 @@ class MetricsV1Api {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -90,8 +91,8 @@ class MetricsV1Api {
   ///
   /// * [String] exchangeId:
   ///   Exchange identifier (from the Metadata -> Exchanges)
-  Future<List<V1GeneralData>?> v1MetricsAssetCurrentGet({ String? metricId, String? assetId, String? assetIdExternal, String? exchangeId, }) async {
-    final response = await v1MetricsAssetCurrentGetWithHttpInfo( metricId: metricId, assetId: assetId, assetIdExternal: assetIdExternal, exchangeId: exchangeId, );
+  Future<List<V1GeneralData>?> v1MetricsAssetCurrentGet({ String? metricId, String? assetId, String? assetIdExternal, String? exchangeId, Future<void>? abortTrigger, }) async {
+    final response = await v1MetricsAssetCurrentGetWithHttpInfo(metricId: metricId, assetId: assetId, assetIdExternal: assetIdExternal, exchangeId: exchangeId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -142,7 +143,7 @@ class MetricsV1Api {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> v1MetricsAssetHistoryGetWithHttpInfo(String metricId, String exchangeId, { String? assetId, String? assetIdExternal, DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
+  Future<Response> v1MetricsAssetHistoryGetWithHttpInfo(String metricId, String exchangeId, { String? assetId, String? assetIdExternal, DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/metrics/asset/history';
 
@@ -188,6 +189,7 @@ class MetricsV1Api {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -223,8 +225,8 @@ class MetricsV1Api {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<V1MetricData>?> v1MetricsAssetHistoryGet(String metricId, String exchangeId, { String? assetId, String? assetIdExternal, DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
-    final response = await v1MetricsAssetHistoryGetWithHttpInfo(metricId, exchangeId,  assetId: assetId, assetIdExternal: assetIdExternal, timeStart: timeStart, timeEnd: timeEnd, timeFormat: timeFormat, periodId: periodId, limit: limit, );
+  Future<List<V1MetricData>?> v1MetricsAssetHistoryGet(String metricId, String exchangeId, { String? assetId, String? assetIdExternal, DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1MetricsAssetHistoryGetWithHttpInfo(metricId, exchangeId, assetId: assetId, assetIdExternal: assetIdExternal, timeStart: timeStart, timeEnd: timeEnd, timeFormat: timeFormat, periodId: periodId, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -266,7 +268,7 @@ class MetricsV1Api {
   ///
   /// * [String] assetIdExternal:
   ///   The asset external identifier
-  Future<Response> v1MetricsAssetListingGetWithHttpInfo({ String? metricId, String? exchangeId, String? chainId, String? networkId, String? assetId, String? assetIdExternal, }) async {
+  Future<Response> v1MetricsAssetListingGetWithHttpInfo({ String? metricId, String? exchangeId, String? chainId, String? networkId, String? assetId, String? assetIdExternal, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/metrics/asset/listing';
 
@@ -307,6 +309,7 @@ class MetricsV1Api {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -333,8 +336,8 @@ class MetricsV1Api {
   ///
   /// * [String] assetIdExternal:
   ///   The asset external identifier
-  Future<List<V1ListingItem>?> v1MetricsAssetListingGet({ String? metricId, String? exchangeId, String? chainId, String? networkId, String? assetId, String? assetIdExternal, }) async {
-    final response = await v1MetricsAssetListingGetWithHttpInfo( metricId: metricId, exchangeId: exchangeId, chainId: chainId, networkId: networkId, assetId: assetId, assetIdExternal: assetIdExternal, );
+  Future<List<V1ListingItem>?> v1MetricsAssetListingGet({ String? metricId, String? exchangeId, String? chainId, String? networkId, String? assetId, String? assetIdExternal, Future<void>? abortTrigger, }) async {
+    final response = await v1MetricsAssetListingGetWithHttpInfo(metricId: metricId, exchangeId: exchangeId, chainId: chainId, networkId: networkId, assetId: assetId, assetIdExternal: assetIdExternal, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -364,7 +367,7 @@ class MetricsV1Api {
   ///
   /// * [String] metricId:
   ///   The metric identifier (from the Metrics -> Listing)
-  Future<Response> v1MetricsExchangeCurrentGetWithHttpInfo(String exchangeId, { String? metricId, }) async {
+  Future<Response> v1MetricsExchangeCurrentGetWithHttpInfo(String exchangeId, { String? metricId, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/metrics/exchange/current';
 
@@ -391,6 +394,7 @@ class MetricsV1Api {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -405,8 +409,8 @@ class MetricsV1Api {
   ///
   /// * [String] metricId:
   ///   The metric identifier (from the Metrics -> Listing)
-  Future<List<V1GeneralData>?> v1MetricsExchangeCurrentGet(String exchangeId, { String? metricId, }) async {
-    final response = await v1MetricsExchangeCurrentGetWithHttpInfo(exchangeId,  metricId: metricId, );
+  Future<List<V1GeneralData>?> v1MetricsExchangeCurrentGet(String exchangeId, { String? metricId, Future<void>? abortTrigger, }) async {
+    final response = await v1MetricsExchangeCurrentGetWithHttpInfo(exchangeId, metricId: metricId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -451,7 +455,7 @@ class MetricsV1Api {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> v1MetricsExchangeHistoryGetWithHttpInfo(String metricId, String exchangeId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
+  Future<Response> v1MetricsExchangeHistoryGetWithHttpInfo(String metricId, String exchangeId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/metrics/exchange/history';
 
@@ -491,6 +495,7 @@ class MetricsV1Api {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -520,8 +525,8 @@ class MetricsV1Api {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<V1MetricData>?> v1MetricsExchangeHistoryGet(String metricId, String exchangeId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
-    final response = await v1MetricsExchangeHistoryGetWithHttpInfo(metricId, exchangeId,  timeStart: timeStart, timeEnd: timeEnd, timeFormat: timeFormat, periodId: periodId, limit: limit, );
+  Future<List<V1MetricData>?> v1MetricsExchangeHistoryGet(String metricId, String exchangeId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1MetricsExchangeHistoryGetWithHttpInfo(metricId, exchangeId, timeStart: timeStart, timeEnd: timeEnd, timeFormat: timeFormat, periodId: periodId, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -551,7 +556,7 @@ class MetricsV1Api {
   ///
   /// * [String] metricId:
   ///   The metric identifier (from the Metrics -> Listing)
-  Future<Response> v1MetricsExchangeListingGetWithHttpInfo(String exchangeId, { String? metricId, }) async {
+  Future<Response> v1MetricsExchangeListingGetWithHttpInfo(String exchangeId, { String? metricId, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/metrics/exchange/listing';
 
@@ -578,6 +583,7 @@ class MetricsV1Api {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -592,8 +598,8 @@ class MetricsV1Api {
   ///
   /// * [String] metricId:
   ///   The metric identifier (from the Metrics -> Listing)
-  Future<List<V1ListingItem>?> v1MetricsExchangeListingGet(String exchangeId, { String? metricId, }) async {
-    final response = await v1MetricsExchangeListingGetWithHttpInfo(exchangeId,  metricId: metricId, );
+  Future<List<V1ListingItem>?> v1MetricsExchangeListingGet(String exchangeId, { String? metricId, Future<void>? abortTrigger, }) async {
+    final response = await v1MetricsExchangeListingGetWithHttpInfo(exchangeId, metricId: metricId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -615,7 +621,7 @@ class MetricsV1Api {
   /// Get all data metrics.
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> v1MetricsListingGetWithHttpInfo() async {
+  Future<Response> v1MetricsListingGetWithHttpInfo({ Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/metrics/listing';
 
@@ -637,14 +643,15 @@ class MetricsV1Api {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
   /// Listing of all supported metrics by CoinAPI
   ///
   /// Get all data metrics.
-  Future<List<V1Metric>?> v1MetricsListingGet() async {
-    final response = await v1MetricsListingGetWithHttpInfo();
+  Future<List<V1Metric>?> v1MetricsListingGet({ Future<void>? abortTrigger, }) async {
+    final response = await v1MetricsListingGetWithHttpInfo(abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -677,7 +684,7 @@ class MetricsV1Api {
   ///
   /// * [String] exchangeId:
   ///   Exchange id (from the Metadata -> Exchanges)
-  Future<Response> v1MetricsSymbolCurrentGetWithHttpInfo({ String? metricId, String? symbolId, String? exchangeId, }) async {
+  Future<Response> v1MetricsSymbolCurrentGetWithHttpInfo({ String? metricId, String? symbolId, String? exchangeId, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/metrics/symbol/current';
 
@@ -709,6 +716,7 @@ class MetricsV1Api {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -726,8 +734,8 @@ class MetricsV1Api {
   ///
   /// * [String] exchangeId:
   ///   Exchange id (from the Metadata -> Exchanges)
-  Future<List<V1GeneralData>?> v1MetricsSymbolCurrentGet({ String? metricId, String? symbolId, String? exchangeId, }) async {
-    final response = await v1MetricsSymbolCurrentGetWithHttpInfo( metricId: metricId, symbolId: symbolId, exchangeId: exchangeId, );
+  Future<List<V1GeneralData>?> v1MetricsSymbolCurrentGet({ String? metricId, String? symbolId, String? exchangeId, Future<void>? abortTrigger, }) async {
+    final response = await v1MetricsSymbolCurrentGetWithHttpInfo(metricId: metricId, symbolId: symbolId, exchangeId: exchangeId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -772,7 +780,7 @@ class MetricsV1Api {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> v1MetricsSymbolHistoryGetWithHttpInfo(String metricId, String symbolId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
+  Future<Response> v1MetricsSymbolHistoryGetWithHttpInfo(String metricId, String symbolId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/metrics/symbol/history';
 
@@ -812,6 +820,7 @@ class MetricsV1Api {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -841,8 +850,8 @@ class MetricsV1Api {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<V1MetricData>?> v1MetricsSymbolHistoryGet(String metricId, String symbolId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, }) async {
-    final response = await v1MetricsSymbolHistoryGetWithHttpInfo(metricId, symbolId,  timeStart: timeStart, timeEnd: timeEnd, timeFormat: timeFormat, periodId: periodId, limit: limit, );
+  Future<List<V1MetricData>?> v1MetricsSymbolHistoryGet(String metricId, String symbolId, { DateTime? timeStart, DateTime? timeEnd, String? timeFormat, String? periodId, int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1MetricsSymbolHistoryGetWithHttpInfo(metricId, symbolId, timeStart: timeStart, timeEnd: timeEnd, timeFormat: timeFormat, periodId: periodId, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -875,7 +884,7 @@ class MetricsV1Api {
   ///
   /// * [String] symbolId:
   ///   Symbol identifier (from the Metadata -> Symbols)
-  Future<Response> v1MetricsSymbolListingGetWithHttpInfo({ String? metricId, String? exchangeId, String? symbolId, }) async {
+  Future<Response> v1MetricsSymbolListingGetWithHttpInfo({ String? metricId, String? exchangeId, String? symbolId, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/metrics/symbol/listing';
 
@@ -907,6 +916,7 @@ class MetricsV1Api {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -924,8 +934,8 @@ class MetricsV1Api {
   ///
   /// * [String] symbolId:
   ///   Symbol identifier (from the Metadata -> Symbols)
-  Future<List<V1ListingItem>?> v1MetricsSymbolListingGet({ String? metricId, String? exchangeId, String? symbolId, }) async {
-    final response = await v1MetricsSymbolListingGetWithHttpInfo( metricId: metricId, exchangeId: exchangeId, symbolId: symbolId, );
+  Future<List<V1ListingItem>?> v1MetricsSymbolListingGet({ String? metricId, String? exchangeId, String? symbolId, Future<void>? abortTrigger, }) async {
+    final response = await v1MetricsSymbolListingGetWithHttpInfo(metricId: metricId, exchangeId: exchangeId, symbolId: symbolId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

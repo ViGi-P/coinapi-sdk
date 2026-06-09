@@ -266,7 +266,7 @@ void main() {
     });
 
     // Key Value Pair store with raw data from the data source.
-    // BuiltMap<String, String> rawKvp
+    // BuiltMap<String, String?> rawKvp
     test('to test the property `rawKvp`', () async {
       // TODO
     });

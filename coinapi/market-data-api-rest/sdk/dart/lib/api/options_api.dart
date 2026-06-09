@@ -26,7 +26,7 @@ class OptionsApi {
   ///
   /// * [String] exchangeId (required):
   ///   Exchange identifier (from the Metadata -> Exchanges)
-  Future<Response> v1OptionsExchangeIdCurrentGetWithHttpInfo(String exchangeId,) async {
+  Future<Response> v1OptionsExchangeIdCurrentGetWithHttpInfo(String exchangeId, { Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/options/{exchange_id}/current'
       .replaceAll('{exchange_id}', exchangeId);
@@ -49,6 +49,7 @@ class OptionsApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -60,8 +61,8 @@ class OptionsApi {
   ///
   /// * [String] exchangeId (required):
   ///   Exchange identifier (from the Metadata -> Exchanges)
-  Future<List<V1OptionExchangeGroup>?> v1OptionsExchangeIdCurrentGet(String exchangeId,) async {
-    final response = await v1OptionsExchangeIdCurrentGetWithHttpInfo(exchangeId,);
+  Future<List<V1OptionExchangeGroup>?> v1OptionsExchangeIdCurrentGet(String exchangeId, { Future<void>? abortTrigger, }) async {
+    final response = await v1OptionsExchangeIdCurrentGetWithHttpInfo(exchangeId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

@@ -275,7 +275,7 @@ void main() {
     });
 
     // Key Value Pair store with raw data from the data source.
-    // Map<String, String> rawKvp (default value: const {})
+    // Map<String, String?> rawKvp (default value: const {})
     test('to test the property `rawKvp`', () async {
       // TODO
     });

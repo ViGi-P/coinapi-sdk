@@ -32,7 +32,7 @@ class TradesApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> v1TradesLatestGetWithHttpInfo({ String? filterSymbolId, bool? includeId, int? limit, }) async {
+  Future<Response> v1TradesLatestGetWithHttpInfo({ String? filterSymbolId, bool? includeId, int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/trades/latest';
 
@@ -64,6 +64,7 @@ class TradesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -81,8 +82,8 @@ class TradesApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<V1Trade>?> v1TradesLatestGet({ String? filterSymbolId, bool? includeId, int? limit, }) async {
-    final response = await v1TradesLatestGetWithHttpInfo( filterSymbolId: filterSymbolId, includeId: includeId, limit: limit, );
+  Future<List<V1Trade>?> v1TradesLatestGet({ String? filterSymbolId, bool? includeId, int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1TradesLatestGetWithHttpInfo(filterSymbolId: filterSymbolId, includeId: includeId, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -124,7 +125,7 @@ class TradesApi {
   ///
   /// * [bool] includeId:
   ///   Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers.
-  Future<Response> v1TradesSymbolIdHistoryGetWithHttpInfo(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, bool? includeId, }) async {
+  Future<Response> v1TradesSymbolIdHistoryGetWithHttpInfo(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, bool? includeId, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/trades/{symbol_id}/history'
       .replaceAll('{symbol_id}', symbolId);
@@ -163,6 +164,7 @@ class TradesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -189,8 +191,8 @@ class TradesApi {
   ///
   /// * [bool] includeId:
   ///   Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers.
-  Future<List<V1Trade>?> v1TradesSymbolIdHistoryGet(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, bool? includeId, }) async {
-    final response = await v1TradesSymbolIdHistoryGetWithHttpInfo(symbolId,  date: date, timeStart: timeStart, timeEnd: timeEnd, limit: limit, includeId: includeId, );
+  Future<List<V1Trade>?> v1TradesSymbolIdHistoryGet(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, bool? includeId, Future<void>? abortTrigger, }) async {
+    final response = await v1TradesSymbolIdHistoryGetWithHttpInfo(symbolId, date: date, timeStart: timeStart, timeEnd: timeEnd, limit: limit, includeId: includeId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -223,7 +225,7 @@ class TradesApi {
   ///
   /// * [bool] includeId:
   ///   Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers.
-  Future<Response> v1TradesSymbolIdLatestGetWithHttpInfo(String symbolId, { int? limit, bool? includeId, }) async {
+  Future<Response> v1TradesSymbolIdLatestGetWithHttpInfo(String symbolId, { int? limit, bool? includeId, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/trades/{symbol_id}/latest'
       .replaceAll('{symbol_id}', symbolId);
@@ -253,6 +255,7 @@ class TradesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -270,8 +273,8 @@ class TradesApi {
   ///
   /// * [bool] includeId:
   ///   Information that additional exchange trade identifier should be included in the `id_trade` parameter of the trade if exchange providing identifiers.
-  Future<List<V1Trade>?> v1TradesSymbolIdLatestGet(String symbolId, { int? limit, bool? includeId, }) async {
-    final response = await v1TradesSymbolIdLatestGetWithHttpInfo(symbolId,  limit: limit, includeId: includeId, );
+  Future<List<V1Trade>?> v1TradesSymbolIdLatestGet(String symbolId, { int? limit, bool? includeId, Future<void>? abortTrigger, }) async {
+    final response = await v1TradesSymbolIdLatestGetWithHttpInfo(symbolId, limit: limit, includeId: includeId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

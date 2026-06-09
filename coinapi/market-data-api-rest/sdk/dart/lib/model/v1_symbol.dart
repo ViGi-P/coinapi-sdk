@@ -197,7 +197,7 @@ class V1Symbol {
   double? sizePrecision;
 
   /// Key Value Pair store with raw data from the data source.
-  Map<String, String>? rawKvp;
+  Map<String, String?>? rawKvp;
 
   /// Gets or sets a value indicating whether the futures contract is inverse (coin-margined).
   bool? futureIsInverse;

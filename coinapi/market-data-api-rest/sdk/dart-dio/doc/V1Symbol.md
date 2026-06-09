@@ -51,7 +51,7 @@ Name | Type | Description | Notes
 **assetIdQuoteExchange** | **String** | Gets or sets the quote asset identifier in the exchange. | [optional] 
 **pricePrecision** | **double** | Gets or sets the price precision. | [optional] 
 **sizePrecision** | **double** | Gets or sets the size precision. | [optional] 
-**rawKvp** | **BuiltMap&lt;String, String&gt;** | Key Value Pair store with raw data from the data source. | [optional] 
+**rawKvp** | **BuiltMap&lt;String, String?&gt;** | Key Value Pair store with raw data from the data source. | [optional] 
 **futureIsInverse** | **bool** | Gets or sets a value indicating whether the futures contract is inverse (coin-margined). | [optional] 
 **futureIsQuanto** | **bool** | Gets or sets a value indicating whether the futures contract is quanto. | [optional] 
 **volumeToUsd** | **double** | Gets or sets the volume in USD. | [optional] 

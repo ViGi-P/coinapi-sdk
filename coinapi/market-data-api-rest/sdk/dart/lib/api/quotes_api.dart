@@ -26,7 +26,7 @@ class QuotesApi {
   ///
   /// * [String] filterSymbolId:
   ///   Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
-  Future<Response> v1QuotesCurrentGetWithHttpInfo({ String? filterSymbolId, }) async {
+  Future<Response> v1QuotesCurrentGetWithHttpInfo({ String? filterSymbolId, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/quotes/current';
 
@@ -52,6 +52,7 @@ class QuotesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -63,8 +64,8 @@ class QuotesApi {
   ///
   /// * [String] filterSymbolId:
   ///   Comma or semicolon delimited parts of symbol identifier used to filter response. (optional)
-  Future<List<V1QuoteTrade>?> v1QuotesCurrentGet({ String? filterSymbolId, }) async {
-    final response = await v1QuotesCurrentGetWithHttpInfo( filterSymbolId: filterSymbolId, );
+  Future<List<V1QuoteTrade>?> v1QuotesCurrentGet({ String? filterSymbolId, Future<void>? abortTrigger, }) async {
+    final response = await v1QuotesCurrentGetWithHttpInfo(filterSymbolId: filterSymbolId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -94,7 +95,7 @@ class QuotesApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> v1QuotesLatestGetWithHttpInfo({ String? filterSymbolId, int? limit, }) async {
+  Future<Response> v1QuotesLatestGetWithHttpInfo({ String? filterSymbolId, int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/quotes/latest';
 
@@ -123,6 +124,7 @@ class QuotesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -137,8 +139,8 @@ class QuotesApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<V1Quote>?> v1QuotesLatestGet({ String? filterSymbolId, int? limit, }) async {
-    final response = await v1QuotesLatestGetWithHttpInfo( filterSymbolId: filterSymbolId, limit: limit, );
+  Future<List<V1Quote>?> v1QuotesLatestGet({ String? filterSymbolId, int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1QuotesLatestGetWithHttpInfo(filterSymbolId: filterSymbolId, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -163,7 +165,7 @@ class QuotesApi {
   ///
   /// * [String] symbolId (required):
   ///   The symbol identifier (from the Metadata -> Symbols)
-  Future<Response> v1QuotesSymbolIdCurrentGetWithHttpInfo(String symbolId,) async {
+  Future<Response> v1QuotesSymbolIdCurrentGetWithHttpInfo(String symbolId, { Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/quotes/{symbol_id}/current'
       .replaceAll('{symbol_id}', symbolId);
@@ -186,6 +188,7 @@ class QuotesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -195,8 +198,8 @@ class QuotesApi {
   ///
   /// * [String] symbolId (required):
   ///   The symbol identifier (from the Metadata -> Symbols)
-  Future<V1QuoteTrade?> v1QuotesSymbolIdCurrentGet(String symbolId,) async {
-    final response = await v1QuotesSymbolIdCurrentGetWithHttpInfo(symbolId,);
+  Future<V1QuoteTrade?> v1QuotesSymbolIdCurrentGet(String symbolId, { Future<void>? abortTrigger, }) async {
+    final response = await v1QuotesSymbolIdCurrentGetWithHttpInfo(symbolId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -232,7 +235,7 @@ class QuotesApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> v1QuotesSymbolIdHistoryGetWithHttpInfo(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, }) async {
+  Future<Response> v1QuotesSymbolIdHistoryGetWithHttpInfo(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/quotes/{symbol_id}/history'
       .replaceAll('{symbol_id}', symbolId);
@@ -268,6 +271,7 @@ class QuotesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -291,8 +295,8 @@ class QuotesApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, minimum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<V1Quote>?> v1QuotesSymbolIdHistoryGet(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, }) async {
-    final response = await v1QuotesSymbolIdHistoryGetWithHttpInfo(symbolId,  date: date, timeStart: timeStart, timeEnd: timeEnd, limit: limit, );
+  Future<List<V1Quote>?> v1QuotesSymbolIdHistoryGet(String symbolId, { String? date, String? timeStart, String? timeEnd, int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1QuotesSymbolIdHistoryGetWithHttpInfo(symbolId, date: date, timeStart: timeStart, timeEnd: timeEnd, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -320,7 +324,7 @@ class QuotesApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> v1QuotesSymbolIdLatestGetWithHttpInfo(String symbolId, { int? limit, }) async {
+  Future<Response> v1QuotesSymbolIdLatestGetWithHttpInfo(String symbolId, { int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/quotes/{symbol_id}/latest'
       .replaceAll('{symbol_id}', symbolId);
@@ -347,6 +351,7 @@ class QuotesApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -359,8 +364,8 @@ class QuotesApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (optional, mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<V1Quote>?> v1QuotesSymbolIdLatestGet(String symbolId, { int? limit, }) async {
-    final response = await v1QuotesSymbolIdLatestGetWithHttpInfo(symbolId,  limit: limit, );
+  Future<List<V1Quote>?> v1QuotesSymbolIdLatestGet(String symbolId, { int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1QuotesSymbolIdLatestGetWithHttpInfo(symbolId, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
