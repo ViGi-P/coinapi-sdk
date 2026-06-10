@@ -57,12 +57,12 @@ paths:
                     exchange_id: IEXG
                     security_category: Common Stock
                     name: TESLA INC
-                    date: 2026-06-08
+                    date: 2026-06-10
                   - symbol_id: NVDA
                     exchange_id: IEXG
                     security_category: Common Stock
                     name: NVIDIA CORP
-                    date: 2026-06-08
+                    date: 2026-06-10
               schema:
                 items:
                   $ref: "#/components/schemas/FinFeedAPI.SymbolModel"
@@ -75,12 +75,12 @@ paths:
                     exchange_id: IEXG
                     security_category: Common Stock
                     name: TESLA INC
-                    date: 2026-06-08
+                    date: 2026-06-10
                   - symbol_id: NVDA
                     exchange_id: IEXG
                     security_category: Common Stock
                     name: NVIDIA CORP
-                    date: 2026-06-08
+                    date: 2026-06-10
               schema:
                 items:
                   $ref: "#/components/schemas/FinFeedAPI.SymbolModel"
@@ -93,12 +93,12 @@ paths:
                     exchange_id: IEXG
                     security_category: Common Stock
                     name: TESLA INC
-                    date: 2026-06-08
+                    date: 2026-06-10
                   - symbol_id: NVDA
                     exchange_id: IEXG
                     security_category: Common Stock
                     name: NVIDIA CORP
-                    date: 2026-06-08
+                    date: 2026-06-10
               schema:
                 items:
                   $ref: "#/components/schemas/FinFeedAPI.SymbolModel"
@@ -372,29 +372,29 @@ paths:
               example:
               - add_order:
                   symbol: AAPL
-                  timestamp_nanos: 1780898895701000000
-                  timestamp: 2026-06-08T06:08:15.7010000Z
+                  timestamp_nanos: 1781071518905000000
+                  timestamp: 2026-06-10T06:05:18.9050000Z
                   is_side_buy: true
                   size: 100
                   price: 176.42
                   order_id: 123456789
               - delete_order:
                   symbol: TSLA
-                  timestamp_nanos: 1780898895701000000
-                  timestamp: 2026-06-08T06:08:15.7010000Z
+                  timestamp_nanos: 1781071518905000000
+                  timestamp: 2026-06-10T06:05:18.9050000Z
                   order_id_reference: 987654321
               - modify_order:
                   symbol: NFLX
-                  timestamp_nanos: 1780898895701000000
-                  timestamp: 2026-06-08T06:08:15.7010000Z
+                  timestamp_nanos: 1781071518905000000
+                  timestamp: 2026-06-10T06:05:18.9050000Z
                   order_id_reference: 789456123
                   is_priority_reset: false
                   size: 150
                   price: 625.85
               - executed_order:
                   symbol: META
-                  timestamp_nanos: 1780898895701000000
-                  timestamp: 2026-06-08T06:08:15.7010000Z
+                  timestamp_nanos: 1781071518905000000
+                  timestamp: 2026-06-10T06:05:18.9050000Z
                   order_id_reference: 555123456
                   sale_condition_flags: 0
                   is_intermarket_sweep: false
@@ -407,8 +407,8 @@ paths:
                   trade_id: 123987456
               - clear_book:
                   symbol: MSFT
-                  timestamp_nanos: 1780898895701000000
-                  timestamp: 2026-06-08T06:08:15.7010000Z
+                  timestamp_nanos: 1781071518905000000
+                  timestamp: 2026-06-10T06:05:18.9050000Z
               schema:
                 items:
                   $ref: "#/components/schemas/Models.OrderBookModel"
@@ -445,8 +445,8 @@ paths:
               example:
               - trading_status:
                   symbol: PYPL
-                  timestamp_nanos: 1780898895702000000
-                  timestamp: 2026-06-08T06:08:15.7020000Z
+                  timestamp_nanos: 1781071518907000000
+                  timestamp: 2026-06-10T06:05:18.9070000Z
                   is_trading_live: true
                   is_trading_halted: false
                   is_trading_in_order_acceptance_period: false
@@ -464,8 +464,8 @@ paths:
                   is_reason_not_available: false
               - official_price:
                   symbol: AAPL
-                  timestamp_nanos: 1780898895702000000
-                  timestamp: 2026-06-08T06:08:15.7020000Z
+                  timestamp_nanos: 1781071518907000000
+                  timestamp: 2026-06-10T06:05:18.9070000Z
                   price_type: 81
                   price_type_code: Q
                   price_type_text: IEX Official Opening Price
@@ -474,8 +474,8 @@ paths:
                   official_price: 12.3456
               - security_event:
                   symbol: CRM
-                  timestamp_nanos: 1780898895702000000
-                  timestamp: 2026-06-08T06:08:15.7020000Z
+                  timestamp_nanos: 1781071518907000000
+                  timestamp: 2026-06-10T06:05:18.9070000Z
                   security_event: 79
                   security_event_code: O
                   security_event_text: Opening Process Complete
@@ -483,8 +483,8 @@ paths:
                   is_closing_process_complete: false
               - auction_information:
                   symbol: AAPL
-                  timestamp_nanos: 1780898895702000000
-                  timestamp: 2026-06-08T06:08:15.7020000Z
+                  timestamp_nanos: 1781071518907000000
+                  timestamp: 2026-06-10T06:05:18.9070000Z
                   auction_type: 79
                   auction_type_code: O
                   auction_type_text: Opening Auction
@@ -504,16 +504,16 @@ paths:
                   is_imbalance_side_sell: false
                   is_imbalance_side_none: false
                   extension_number: 0
-                  scheduled_auction_time_seconds: 1780899195
-                  scheduled_auction_time: 2026-06-08T06:13:15.0000000Z
+                  scheduled_auction_time_seconds: 1781071818
+                  scheduled_auction_time: 2026-06-10T06:10:18.0000000Z
                   auction_book_clearing_price: 156.45
                   collar_reference_price: 157
                   lower_auction_collar: 152.5
                   upper_auction_collar: 161.5
               - short_sale_price_test:
                   symbol: MSFT
-                  timestamp_nanos: 1780898895702000000
-                  timestamp: 2026-06-08T06:08:15.7020000Z
+                  timestamp_nanos: 1781071518907000000
+                  timestamp: 2026-06-10T06:05:18.9070000Z
                   short_sale_price_test_status: 1
                   short_sale_price_test_status_code: "1"
                   short_sale_price_test_status_text: Short Sale Price Test in Effect
@@ -530,8 +530,8 @@ paths:
                   is_detail_not_available: false
               - operational_halt_status:
                   symbol: AAPL
-                  timestamp_nanos: 1780898895702000000
-                  timestamp: 2026-06-08T06:08:15.7020000Z
+                  timestamp_nanos: 1781071518907000000
+                  timestamp: 2026-06-10T06:05:18.9070000Z
                   operational_halt_status: 79
                   operational_halt_status_code: O
                   operational_halt_status_text: IEX specific operational trading halt
@@ -539,8 +539,8 @@ paths:
                   is_not_operationally_halted: false
               - retail_liquidity_indicator:
                   symbol: GOOG
-                  timestamp_nanos: 1780898895702000000
-                  timestamp: 2026-06-08T06:08:15.7020000Z
+                  timestamp_nanos: 1781071518907000000
+                  timestamp: 2026-06-10T06:05:18.9070000Z
                   retail_liquidity_indicator: 65
                   retail_liquidity_indicator_code: A
                   retail_liquidity_indicator_text: Buy interest for Retail
@@ -549,8 +549,8 @@ paths:
                   is_retail_indicator_sell_interest: false
                   is_retail_indicator_buy_and_sell_interest: false
               - system_event:
-                  timestamp_nanos: 1780898895702000000
-                  timestamp: 2026-06-08T06:08:15.7020000Z
+                  timestamp_nanos: 1781071518907000000
+                  timestamp: 2026-06-10T06:05:18.9070000Z
                   system_event: 79
                   system_event_code: O
                   system_event_text: "Start of Messages – Outside of heartbeat messages\
@@ -564,8 +564,8 @@ paths:
                   is_system_event_end_of_messages: false
               - security_directory:
                   symbol: INTC
-                  timestamp_nanos: 1780898895702000000
-                  timestamp: 2026-06-08T06:08:15.7020000Z
+                  timestamp_nanos: 1781071518907000000
+                  timestamp: 2026-06-10T06:05:18.9070000Z
                   flags: 0
                   round_lot_size: 100
                   adjusted_poc_price: 35.36
@@ -1033,25 +1033,25 @@ components:
     FinFeedAPI.ExchangeModel:
       additionalProperties: {}
       example:
+        exchange_id: exchange_id
+        last_datapoint_date: last_datapoint_date
+        mic: mic
         operating_mic: operating_mic
+        oprt_sgmt: oprt_sgmt
         market_name_institution_description: market_name_institution_description
-        website: website
-        comments: comments
+        legal_entity_name: legal_entity_name
+        lei: lei
+        market_category_code: market_category_code
         acronym: acronym
         iso_country_code: iso_country_code
         city: city
-        mic: mic
-        expiry_date: 2000-01-23T04:56:07.000+00:00
-        last_validation_date: 2000-01-23T04:56:07.000+00:00
-        creation_date: 2000-01-23T04:56:07.000+00:00
-        last_datapoint_date: last_datapoint_date
-        oprt_sgmt: oprt_sgmt
-        lei: lei
-        exchange_id: exchange_id
-        market_category_code: market_category_code
-        legal_entity_name: legal_entity_name
+        website: website
         status: status
+        creation_date: 2000-01-23T04:56:07.000+00:00
         last_update_date: 2000-01-23T04:56:07.000+00:00
+        last_validation_date: 2000-01-23T04:56:07.000+00:00
+        expiry_date: 2000-01-23T04:56:07.000+00:00
+        comments: comments
       properties:
         exchange_id:
           nullable: true
@@ -1118,25 +1118,25 @@ components:
     FinFeedAPI.SymbolModel:
       additionalProperties: {}
       example:
+        symbol_id: symbol_id
+        exchange_id: exchange_id
+        security_category: security_category
+        name: name
         date: date
-        cfi_code: cfi_code
         asset_class: asset_class
-        cfi_attribute1_desc: cfi_attribute1_desc
+        cfi_code: cfi_code
+        cfi_category: cfi_category
+        cfi_group: cfi_group
         cfi_attribute1: cfi_attribute1
         cfi_attribute2: cfi_attribute2
-        cfi_category: cfi_category
-        cfi_attribute3_desc: cfi_attribute3_desc
-        exchange_id: exchange_id
         cfi_attribute3: cfi_attribute3
         cfi_attribute4: cfi_attribute4
-        cfi_group_desc: cfi_group_desc
-        name: name
-        cfi_attribute2_desc: cfi_attribute2_desc
-        security_category: security_category
-        cfi_group: cfi_group
-        cfi_attribute4_desc: cfi_attribute4_desc
-        symbol_id: symbol_id
         cfi_category_desc: cfi_category_desc
+        cfi_group_desc: cfi_group_desc
+        cfi_attribute1_desc: cfi_attribute1_desc
+        cfi_attribute2_desc: cfi_attribute2_desc
+        cfi_attribute3_desc: cfi_attribute3_desc
+        cfi_attribute4_desc: cfi_attribute4_desc
       properties:
         symbol_id:
           nullable: true
@@ -1215,11 +1215,11 @@ components:
       example:
         symbol: symbol
         timestamp_nanos: 0
-        size: 6
-        is_side_buy: true
-        price: 1.4658129805029452
-        is_event_processing_complete: true
         timestamp: 2000-01-23T04:56:07.000+00:00
+        is_side_buy: true
+        is_event_processing_complete: true
+        size: 6
+        price: 1.4658129805029452
       properties:
         symbol:
           description: The stock symbol
@@ -1254,13 +1254,13 @@ components:
       example:
         symbol: symbol
         timestamp_nanos: 0
+        timestamp: 2000-01-23T04:56:07.000+00:00
+        is_symbol_available: true
         is_pre_post_market_session: true
         ask_size: 6
-        bid_size: 5
-        is_symbol_available: true
-        bid_price: 5.962133916683182
-        timestamp: 2000-01-23T04:56:07.000+00:00
         ask_price: 1.4658129805029452
+        bid_price: 5.962133916683182
+        bid_size: 5
       properties:
         symbol:
           description: The stock symbol
@@ -1305,17 +1305,17 @@ components:
       additionalProperties: false
       description: Represents the response DTO for system event information
       example:
-        is_system_event_start_of_system_hours: true
-        is_system_event_end_of_regular_market_hours: true
         timestamp_nanos: 0
-        is_system_event_end_of_system_hours: true
+        timestamp: 2000-01-23T04:56:07.000+00:00
+        system_event: 6
+        system_event_code: system_event_code
         system_event_text: system_event_text
         is_system_event_start_of_messages: true
-        is_system_event_end_of_messages: true
-        system_event_code: system_event_code
-        system_event: 6
+        is_system_event_start_of_system_hours: true
         is_system_event_start_of_regular_market_hours: true
-        timestamp: 2000-01-23T04:56:07.000+00:00
+        is_system_event_end_of_regular_market_hours: true
+        is_system_event_end_of_system_hours: true
+        is_system_event_end_of_messages: true
       properties:
         timestamp_nanos:
           description: Original timestamp in nanoseconds since epoch
@@ -1375,18 +1375,18 @@ components:
       description: Represents the response DTO for a single trade event (report or
         break).
       example:
+        is_trade_break: true
         symbol: symbol
         timestamp_nanos: 0
-        trade_id: 5
-        is_extended_hours_trade: true
+        timestamp: 2000-01-23T04:56:07.000+00:00
         size: 6
         price: 1.4658129805029452
-        is_single_price_cross_trade: true
-        is_odd_lot_trade: true
+        trade_id: 5
         is_intermarket_sweep: true
-        is_trade_break: true
+        is_extended_hours_trade: true
+        is_odd_lot_trade: true
         is_trade_through_exempt: true
-        timestamp: 2000-01-23T04:56:07.000+00:00
+        is_single_price_cross_trade: true
       properties:
         is_trade_break:
           description: Indicates if this record represents a trade break (true) or
@@ -1458,11 +1458,11 @@ components:
       example:
         symbol: symbol
         timestamp_nanos: 0
-        size: 6
+        timestamp: 2000-01-23T04:56:07.000+00:00
         is_side_buy: true
+        size: 6
         price: 1.4658129805029452
         order_id: 5
-        timestamp: 2000-01-23T04:56:07.000+00:00
       properties:
         symbol:
           description: The stock symbol
@@ -1497,135 +1497,135 @@ components:
       description: "Represents the response DTO for IEX admin information, combining\
         \ all symbol-based admin message types"
       example:
-        operational_halt_status:
-          symbol: symbol
-          timestamp_nanos: 6
-          is_operationally_halted: true
-          operational_halt_status: 8
-          operational_halt_status_code: operational_halt_status_code
-          operational_halt_status_text: operational_halt_status_text
-          is_not_operationally_halted: true
-          timestamp: 2000-01-23T04:56:07.000+00:00
-        security_event:
-          symbol: symbol
-          timestamp_nanos: 5
-          security_event_text: security_event_text
-          security_event: 2
-          is_opening_process_complete: true
-          is_closing_process_complete: true
-          security_event_code: security_event_code
-          timestamp: 2000-01-23T04:56:07.000+00:00
-        short_sale_price_test:
-          symbol: symbol
-          is_detail_deactivated: true
-          short_sale_price_test_status_code: short_sale_price_test_status_code
-          is_short_sale_price_test_in_effect: true
-          short_sale_price_test_status: 9
-          is_short_sale_price_test_not_in_effect: true
-          is_detail_no_price_test: true
-          short_sale_price_test_status_text: short_sale_price_test_status_text
-          timestamp_nanos: 5
-          is_detail_activated: true
-          detail_text: detail_text
-          is_detail_continued: true
-          detail: 9
-          is_detail_not_available: true
-          detail_code: detail_code
-          timestamp: 2000-01-23T04:56:07.000+00:00
-        security_directory:
-          symbol: symbol
-          timestamp_nanos: 3
-          round_lot_size: 1
-          luld_tier_text: luld_tier_text
-          is_luld_tier_not_applicable: true
-          flags: 6
-          adjusted_poc_price: 2.8841621266687802
-          luld_tier_code: luld_tier_code
-          is_luld_tier1: true
-          is_luld_tier2: true
-          luld_tier: 6
-          timestamp: 2000-01-23T04:56:07.000+00:00
         trading_status:
           symbol: symbol
-          is_trading_live: true
-          is_reason_ipo_order_acceptance_period: true
-          is_trading_in_order_acceptance_period: true
-          is_reason_market_wide_circuit_breaker_level3: true
-          is_reason_halt_news_dissemination: true
-          is_reason_market_wide_circuit_breaker_level2: true
-          is_reason_market_wide_circuit_breaker_level1: true
-          is_reason_not_available: true
           timestamp_nanos: 0
+          timestamp: 2000-01-23T04:56:07.000+00:00
+          is_trading_live: true
+          is_trading_halted: true
+          is_trading_in_order_acceptance_period: true
           is_trading_paused: true
+          is_reason_halt_news_pending: true
           is_reason_ipo_not_yet_trading: true
           is_reason_ipo_deferred: true
-          is_reason_not_applicable: true
-          is_trading_halted: true
-          is_reason_halt_news_pending: true
-          timestamp: 2000-01-23T04:56:07.000+00:00
+          is_reason_halt_news_dissemination: true
+          is_reason_ipo_order_acceptance_period: true
           is_reason_ipo_pre_launch_period: true
-        system_event:
-          is_system_event_start_of_system_hours: true
-          is_system_event_end_of_regular_market_hours: true
-          timestamp_nanos: 0
-          is_system_event_end_of_system_hours: true
-          system_event_text: system_event_text
-          is_system_event_start_of_messages: true
-          is_system_event_end_of_messages: true
-          system_event_code: system_event_code
-          system_event: 6
-          is_system_event_start_of_regular_market_hours: true
-          timestamp: 2000-01-23T04:56:07.000+00:00
-        auction_information:
-          lower_auction_collar: 1.1730742509559433
-          symbol: symbol
-          is_auction_type_ipo: true
-          scheduled_auction_time_seconds: 1
-          reference_price: 2.027123023002322
-          is_imbalance_side_none: true
-          imbalance_shares: 7
-          auction_type_code: auction_type_code
-          is_imbalance_side_sell: true
-          paired_shares: 3
-          imbalance_side: 1
-          indicative_clearing_price: 4.145608029883936
-          scheduled_auction_time: 2000-01-23T04:56:07.000+00:00
-          timestamp: 2000-01-23T04:56:07.000+00:00
-          imbalance_side_code: imbalance_side_code
-          upper_auction_collar: 4.965218492984954
-          auction_book_clearing_price: 6.84685269835264
-          auction_type: 9
-          is_imbalance_side_buy: true
-          is_auction_type_opening: true
-          collar_reference_price: 7.457744773683766
-          timestamp_nanos: 7
-          is_auction_type_closing: true
-          auction_type_text: auction_type_text
-          extension_number: 1
-          is_auction_type_halt: true
-          imbalance_side_text: imbalance_side_text
-          is_auction_type_volatility: true
+          is_reason_market_wide_circuit_breaker_level1: true
+          is_reason_market_wide_circuit_breaker_level2: true
+          is_reason_market_wide_circuit_breaker_level3: true
+          is_reason_not_applicable: true
+          is_reason_not_available: true
         official_price:
           symbol: symbol
           timestamp_nanos: 6
+          timestamp: 2000-01-23T04:56:07.000+00:00
+          price_type: 1
+          price_type_code: price_type_code
+          price_type_text: price_type_text
           is_price_type_opening: true
           is_price_type_closing: true
-          price_type_code: price_type_code
-          price_type: 1
           official_price: 5.962133916683182
+        security_event:
+          symbol: symbol
+          timestamp_nanos: 5
           timestamp: 2000-01-23T04:56:07.000+00:00
-          price_type_text: price_type_text
+          security_event: 2
+          security_event_code: security_event_code
+          security_event_text: security_event_text
+          is_opening_process_complete: true
+          is_closing_process_complete: true
+        auction_information:
+          symbol: symbol
+          timestamp_nanos: 7
+          timestamp: 2000-01-23T04:56:07.000+00:00
+          auction_type: 9
+          auction_type_code: auction_type_code
+          auction_type_text: auction_type_text
+          is_auction_type_opening: true
+          is_auction_type_closing: true
+          is_auction_type_ipo: true
+          is_auction_type_halt: true
+          is_auction_type_volatility: true
+          paired_shares: 3
+          reference_price: 2.027123023002322
+          indicative_clearing_price: 4.145608029883936
+          imbalance_shares: 7
+          imbalance_side: 1
+          imbalance_side_code: imbalance_side_code
+          imbalance_side_text: imbalance_side_text
+          is_imbalance_side_buy: true
+          is_imbalance_side_sell: true
+          is_imbalance_side_none: true
+          extension_number: 1
+          scheduled_auction_time_seconds: 1
+          scheduled_auction_time: 2000-01-23T04:56:07.000+00:00
+          auction_book_clearing_price: 6.84685269835264
+          collar_reference_price: 7.457744773683766
+          lower_auction_collar: 1.1730742509559433
+          upper_auction_collar: 4.965218492984954
+        short_sale_price_test:
+          symbol: symbol
+          timestamp_nanos: 5
+          timestamp: 2000-01-23T04:56:07.000+00:00
+          short_sale_price_test_status: 9
+          short_sale_price_test_status_code: short_sale_price_test_status_code
+          short_sale_price_test_status_text: short_sale_price_test_status_text
+          is_short_sale_price_test_not_in_effect: true
+          is_short_sale_price_test_in_effect: true
+          detail: 9
+          detail_code: detail_code
+          detail_text: detail_text
+          is_detail_no_price_test: true
+          is_detail_activated: true
+          is_detail_continued: true
+          is_detail_deactivated: true
+          is_detail_not_available: true
+        operational_halt_status:
+          symbol: symbol
+          timestamp_nanos: 6
+          timestamp: 2000-01-23T04:56:07.000+00:00
+          operational_halt_status: 8
+          operational_halt_status_code: operational_halt_status_code
+          operational_halt_status_text: operational_halt_status_text
+          is_operationally_halted: true
+          is_not_operationally_halted: true
         retail_liquidity_indicator:
           symbol: symbol
           timestamp_nanos: 9
-          retail_liquidity_indicator_text: retail_liquidity_indicator_text
-          is_retail_indicator_buy_and_sell_interest: true
-          retail_liquidity_indicator_code: retail_liquidity_indicator_code
-          is_retail_indicator_not_applicable: true
-          is_retail_indicator_sell_interest: true
-          retail_liquidity_indicator: 6
-          is_retail_indicator_buy_interest: true
           timestamp: 2000-01-23T04:56:07.000+00:00
+          retail_liquidity_indicator: 6
+          retail_liquidity_indicator_code: retail_liquidity_indicator_code
+          retail_liquidity_indicator_text: retail_liquidity_indicator_text
+          is_retail_indicator_not_applicable: true
+          is_retail_indicator_buy_interest: true
+          is_retail_indicator_sell_interest: true
+          is_retail_indicator_buy_and_sell_interest: true
+        system_event:
+          timestamp_nanos: 0
+          timestamp: 2000-01-23T04:56:07.000+00:00
+          system_event: 6
+          system_event_code: system_event_code
+          system_event_text: system_event_text
+          is_system_event_start_of_messages: true
+          is_system_event_start_of_system_hours: true
+          is_system_event_start_of_regular_market_hours: true
+          is_system_event_end_of_regular_market_hours: true
+          is_system_event_end_of_system_hours: true
+          is_system_event_end_of_messages: true
+        security_directory:
+          symbol: symbol
+          timestamp_nanos: 3
+          timestamp: 2000-01-23T04:56:07.000+00:00
+          flags: 6
+          round_lot_size: 1
+          adjusted_poc_price: 2.8841621266687802
+          luld_tier: 6
+          luld_tier_code: luld_tier_code
+          luld_tier_text: luld_tier_text
+          is_luld_tier_not_applicable: true
+          is_luld_tier1: true
+          is_luld_tier2: true
       properties:
         trading_status:
           $ref: "#/components/schemas/Models.TradingStatusModel"
@@ -1650,34 +1650,34 @@ components:
       additionalProperties: false
       description: Represents the response DTO for auction information
       example:
-        lower_auction_collar: 1.1730742509559433
         symbol: symbol
-        is_auction_type_ipo: true
-        scheduled_auction_time_seconds: 1
-        reference_price: 2.027123023002322
-        is_imbalance_side_none: true
-        imbalance_shares: 7
-        auction_type_code: auction_type_code
-        is_imbalance_side_sell: true
-        paired_shares: 3
-        imbalance_side: 1
-        indicative_clearing_price: 4.145608029883936
-        scheduled_auction_time: 2000-01-23T04:56:07.000+00:00
-        timestamp: 2000-01-23T04:56:07.000+00:00
-        imbalance_side_code: imbalance_side_code
-        upper_auction_collar: 4.965218492984954
-        auction_book_clearing_price: 6.84685269835264
-        auction_type: 9
-        is_imbalance_side_buy: true
-        is_auction_type_opening: true
-        collar_reference_price: 7.457744773683766
         timestamp_nanos: 7
-        is_auction_type_closing: true
+        timestamp: 2000-01-23T04:56:07.000+00:00
+        auction_type: 9
+        auction_type_code: auction_type_code
         auction_type_text: auction_type_text
-        extension_number: 1
+        is_auction_type_opening: true
+        is_auction_type_closing: true
+        is_auction_type_ipo: true
         is_auction_type_halt: true
-        imbalance_side_text: imbalance_side_text
         is_auction_type_volatility: true
+        paired_shares: 3
+        reference_price: 2.027123023002322
+        indicative_clearing_price: 4.145608029883936
+        imbalance_shares: 7
+        imbalance_side: 1
+        imbalance_side_code: imbalance_side_code
+        imbalance_side_text: imbalance_side_text
+        is_imbalance_side_buy: true
+        is_imbalance_side_sell: true
+        is_imbalance_side_none: true
+        extension_number: 1
+        scheduled_auction_time_seconds: 1
+        scheduled_auction_time: 2000-01-23T04:56:07.000+00:00
+        auction_book_clearing_price: 6.84685269835264
+        collar_reference_price: 7.457744773683766
+        lower_auction_collar: 1.1730742509559433
+        upper_auction_collar: 4.965218492984954
       properties:
         symbol:
           description: The stock symbol
@@ -1811,8 +1811,8 @@ components:
       example:
         symbol: symbol
         timestamp_nanos: 5
-        order_id_reference: 2
         timestamp: 2000-01-23T04:56:07.000+00:00
+        order_id_reference: 2
       properties:
         symbol:
           description: The stock symbol
@@ -1835,19 +1835,19 @@ components:
       additionalProperties: false
       description: Represents the response DTO for order executed information
       example:
-        sale_condition_flags: 1
         symbol: symbol
-        is_intermarket_sweep: true
-        is_trade_through_exempt: true
         timestamp_nanos: 4
-        is_extended_hours_trade: true
-        trade_id: 6
-        size: 1
-        is_single_price_cross_trade: true
-        price: 1.4894159098541704
-        is_odd_lot_trade: true
-        order_id_reference: 7
         timestamp: 2000-01-23T04:56:07.000+00:00
+        order_id_reference: 7
+        sale_condition_flags: 1
+        is_intermarket_sweep: true
+        is_extended_hours_trade: true
+        is_odd_lot_trade: true
+        is_trade_through_exempt: true
+        is_single_price_cross_trade: true
+        size: 1
+        price: 1.4894159098541704
+        trade_id: 6
       properties:
         symbol:
           description: The stock symbol
@@ -1916,13 +1916,13 @@ components:
       additionalProperties: false
       description: Represents the response DTO for order modify information
       example:
-        is_priority_reset: true
         symbol: symbol
         timestamp_nanos: 7
+        timestamp: 2000-01-23T04:56:07.000+00:00
+        order_id_reference: 9
+        is_priority_reset: true
         size: 3
         price: 2.027123023002322
-        order_id_reference: 9
-        timestamp: 2000-01-23T04:56:07.000+00:00
       properties:
         symbol:
           description: The stock symbol
@@ -1958,13 +1958,13 @@ components:
       example:
         symbol: symbol
         timestamp_nanos: 6
+        timestamp: 2000-01-23T04:56:07.000+00:00
+        price_type: 1
+        price_type_code: price_type_code
+        price_type_text: price_type_text
         is_price_type_opening: true
         is_price_type_closing: true
-        price_type_code: price_type_code
-        price_type: 1
         official_price: 5.962133916683182
-        timestamp: 2000-01-23T04:56:07.000+00:00
-        price_type_text: price_type_text
       properties:
         symbol:
           description: The stock symbol
@@ -2009,12 +2009,12 @@ components:
       example:
         symbol: symbol
         timestamp_nanos: 6
-        is_operationally_halted: true
+        timestamp: 2000-01-23T04:56:07.000+00:00
         operational_halt_status: 8
         operational_halt_status_code: operational_halt_status_code
         operational_halt_status_text: operational_halt_status_text
+        is_operationally_halted: true
         is_not_operationally_halted: true
-        timestamp: 2000-01-23T04:56:07.000+00:00
       properties:
         symbol:
           description: The stock symbol
@@ -2056,41 +2056,41 @@ components:
         add_order:
           symbol: symbol
           timestamp_nanos: 0
-          size: 6
+          timestamp: 2000-01-23T04:56:07.000+00:00
           is_side_buy: true
+          size: 6
           price: 1.4658129805029452
           order_id: 5
-          timestamp: 2000-01-23T04:56:07.000+00:00
-        clear_book:
-          symbol: symbol
-          timestamp_nanos: 7
-          timestamp: 2000-01-23T04:56:07.000+00:00
-        executed_order:
-          sale_condition_flags: 1
-          symbol: symbol
-          is_intermarket_sweep: true
-          is_trade_through_exempt: true
-          timestamp_nanos: 4
-          is_extended_hours_trade: true
-          trade_id: 6
-          size: 1
-          is_single_price_cross_trade: true
-          price: 1.4894159098541704
-          is_odd_lot_trade: true
-          order_id_reference: 7
-          timestamp: 2000-01-23T04:56:07.000+00:00
         delete_order:
           symbol: symbol
           timestamp_nanos: 5
-          order_id_reference: 2
           timestamp: 2000-01-23T04:56:07.000+00:00
+          order_id_reference: 2
         modify_order:
-          is_priority_reset: true
           symbol: symbol
           timestamp_nanos: 7
+          timestamp: 2000-01-23T04:56:07.000+00:00
+          order_id_reference: 9
+          is_priority_reset: true
           size: 3
           price: 2.027123023002322
-          order_id_reference: 9
+        executed_order:
+          symbol: symbol
+          timestamp_nanos: 4
+          timestamp: 2000-01-23T04:56:07.000+00:00
+          order_id_reference: 7
+          sale_condition_flags: 1
+          is_intermarket_sweep: true
+          is_extended_hours_trade: true
+          is_odd_lot_trade: true
+          is_trade_through_exempt: true
+          is_single_price_cross_trade: true
+          size: 1
+          price: 1.4894159098541704
+          trade_id: 6
+        clear_book:
+          symbol: symbol
+          timestamp_nanos: 7
           timestamp: 2000-01-23T04:56:07.000+00:00
       properties:
         add_order:
@@ -2110,14 +2110,14 @@ components:
       example:
         symbol: symbol
         timestamp_nanos: 9
-        retail_liquidity_indicator_text: retail_liquidity_indicator_text
-        is_retail_indicator_buy_and_sell_interest: true
-        retail_liquidity_indicator_code: retail_liquidity_indicator_code
-        is_retail_indicator_not_applicable: true
-        is_retail_indicator_sell_interest: true
-        retail_liquidity_indicator: 6
-        is_retail_indicator_buy_interest: true
         timestamp: 2000-01-23T04:56:07.000+00:00
+        retail_liquidity_indicator: 6
+        retail_liquidity_indicator_code: retail_liquidity_indicator_code
+        retail_liquidity_indicator_text: retail_liquidity_indicator_text
+        is_retail_indicator_not_applicable: true
+        is_retail_indicator_buy_interest: true
+        is_retail_indicator_sell_interest: true
+        is_retail_indicator_buy_and_sell_interest: true
       properties:
         symbol:
           description: The stock symbol
@@ -2162,16 +2162,16 @@ components:
       example:
         symbol: symbol
         timestamp_nanos: 3
+        timestamp: 2000-01-23T04:56:07.000+00:00
+        flags: 6
         round_lot_size: 1
+        adjusted_poc_price: 2.8841621266687802
+        luld_tier: 6
+        luld_tier_code: luld_tier_code
         luld_tier_text: luld_tier_text
         is_luld_tier_not_applicable: true
-        flags: 6
-        adjusted_poc_price: 2.8841621266687802
-        luld_tier_code: luld_tier_code
         is_luld_tier1: true
         is_luld_tier2: true
-        luld_tier: 6
-        timestamp: 2000-01-23T04:56:07.000+00:00
       properties:
         symbol:
           description: The stock symbol
@@ -2226,12 +2226,12 @@ components:
       example:
         symbol: symbol
         timestamp_nanos: 5
-        security_event_text: security_event_text
+        timestamp: 2000-01-23T04:56:07.000+00:00
         security_event: 2
+        security_event_code: security_event_code
+        security_event_text: security_event_text
         is_opening_process_complete: true
         is_closing_process_complete: true
-        security_event_code: security_event_code
-        timestamp: 2000-01-23T04:56:07.000+00:00
       properties:
         symbol:
           description: The stock symbol
@@ -2271,21 +2271,21 @@ components:
       description: Represents the response DTO for short sale price test status information
       example:
         symbol: symbol
-        is_detail_deactivated: true
-        short_sale_price_test_status_code: short_sale_price_test_status_code
-        is_short_sale_price_test_in_effect: true
-        short_sale_price_test_status: 9
-        is_short_sale_price_test_not_in_effect: true
-        is_detail_no_price_test: true
-        short_sale_price_test_status_text: short_sale_price_test_status_text
         timestamp_nanos: 5
-        is_detail_activated: true
-        detail_text: detail_text
-        is_detail_continued: true
-        detail: 9
-        is_detail_not_available: true
-        detail_code: detail_code
         timestamp: 2000-01-23T04:56:07.000+00:00
+        short_sale_price_test_status: 9
+        short_sale_price_test_status_code: short_sale_price_test_status_code
+        short_sale_price_test_status_text: short_sale_price_test_status_text
+        is_short_sale_price_test_not_in_effect: true
+        is_short_sale_price_test_in_effect: true
+        detail: 9
+        detail_code: detail_code
+        detail_text: detail_text
+        is_detail_no_price_test: true
+        is_detail_activated: true
+        is_detail_continued: true
+        is_detail_deactivated: true
+        is_detail_not_available: true
       properties:
         symbol:
           description: The stock symbol
@@ -2353,23 +2353,23 @@ components:
       description: Represents the response DTO for trading status information
       example:
         symbol: symbol
-        is_trading_live: true
-        is_reason_ipo_order_acceptance_period: true
-        is_trading_in_order_acceptance_period: true
-        is_reason_market_wide_circuit_breaker_level3: true
-        is_reason_halt_news_dissemination: true
-        is_reason_market_wide_circuit_breaker_level2: true
-        is_reason_market_wide_circuit_breaker_level1: true
-        is_reason_not_available: true
         timestamp_nanos: 0
+        timestamp: 2000-01-23T04:56:07.000+00:00
+        is_trading_live: true
+        is_trading_halted: true
+        is_trading_in_order_acceptance_period: true
         is_trading_paused: true
+        is_reason_halt_news_pending: true
         is_reason_ipo_not_yet_trading: true
         is_reason_ipo_deferred: true
-        is_reason_not_applicable: true
-        is_trading_halted: true
-        is_reason_halt_news_pending: true
-        timestamp: 2000-01-23T04:56:07.000+00:00
+        is_reason_halt_news_dissemination: true
+        is_reason_ipo_order_acceptance_period: true
         is_reason_ipo_pre_launch_period: true
+        is_reason_market_wide_circuit_breaker_level1: true
+        is_reason_market_wide_circuit_breaker_level2: true
+        is_reason_market_wide_circuit_breaker_level3: true
+        is_reason_not_applicable: true
+        is_reason_not_available: true
       properties:
         symbol:
           description: The stock symbol
@@ -2441,17 +2441,17 @@ components:
       additionalProperties: false
       description: Represents a timeseries item with price and volume information.
       example:
+        time_period_start: 2000-01-23T04:56:07.000+00:00
         time_period_end: 2000-01-23T04:56:07.000+00:00
         time_open: 2000-01-23T04:56:07.000+00:00
-        price_close: 5.962133916683182
-        trades_count: 2
         time_close: 2000-01-23T04:56:07.000+00:00
-        symbol_id_exchange: symbol_id_exchange
         price_open: 0.8008281904610115
-        time_period_start: 2000-01-23T04:56:07.000+00:00
         price_high: 6.027456183070403
-        volume_traded: 5.637376656633329
         price_low: 1.4658129805029452
+        price_close: 5.962133916683182
+        volume_traded: 5.637376656633329
+        trades_count: 2
+        symbol_id_exchange: symbol_id_exchange
       properties:
         time_period_start:
           description: Gets or sets the start time of the time period.
@@ -2508,16 +2508,16 @@ components:
       additionalProperties: false
       description: Represents a timeseries item with price and volume information.
       example:
+        time_period_start: 2000-01-23T04:56:07.000+00:00
         time_period_end: 2000-01-23T04:56:07.000+00:00
         time_open: 2000-01-23T04:56:07.000+00:00
-        price_close: 5.962133916683182
-        trades_count: 2
         time_close: 2000-01-23T04:56:07.000+00:00
         price_open: 0.8008281904610115
-        time_period_start: 2000-01-23T04:56:07.000+00:00
         price_high: 6.027456183070403
-        volume_traded: 5.637376656633329
         price_low: 1.4658129805029452
+        price_close: 5.962133916683182
+        volume_traded: 5.637376656633329
+        trades_count: 2
       properties:
         time_period_start:
           description: Gets or sets the start time of the time period.
@@ -2571,12 +2571,12 @@ components:
       additionalProperties: false
       description: Represents a timeseries period used in exchange rate data.
       example:
-        unit_name: unit_name
-        length_months: 6
-        length_seconds: 0
         period_id: period_id
-        display_name: display_name
+        length_seconds: 0
+        length_months: 6
         unit_count: 1
+        unit_name: unit_name
+        display_name: display_name
       properties:
         period_id:
           description: Gets or sets the period ID.

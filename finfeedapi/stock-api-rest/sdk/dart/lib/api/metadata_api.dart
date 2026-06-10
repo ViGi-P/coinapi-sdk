@@ -19,7 +19,7 @@ class MetadataApi {
   /// List of exchanges
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> v1ExchangesGetWithHttpInfo() async {
+  Future<Response> v1ExchangesGetWithHttpInfo({ Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/exchanges';
 
@@ -41,12 +41,13 @@ class MetadataApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
   /// List of exchanges
-  Future<List<FinFeedAPIExchangeModel>?> v1ExchangesGet() async {
-    final response = await v1ExchangesGetWithHttpInfo();
+  Future<List<FinFeedAPIExchangeModel>?> v1ExchangesGet({ Future<void>? abortTrigger, }) async {
+    final response = await v1ExchangesGetWithHttpInfo(abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -74,7 +75,7 @@ class MetadataApi {
   ///
   /// * [String] filterSymbolId:
   ///   Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
-  Future<Response> v1SymbolsExchangeIdGetWithHttpInfo(String exchangeId, { String? filterSymbolId, }) async {
+  Future<Response> v1SymbolsExchangeIdGetWithHttpInfo(String exchangeId, { String? filterSymbolId, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/symbols/{exchange_id}'
       .replaceAll('{exchange_id}', exchangeId);
@@ -101,6 +102,7 @@ class MetadataApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -113,8 +115,8 @@ class MetadataApi {
   ///
   /// * [String] filterSymbolId:
   ///   Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
-  Future<List<FinFeedAPISymbolModel>?> v1SymbolsExchangeIdGet(String exchangeId, { String? filterSymbolId, }) async {
-    final response = await v1SymbolsExchangeIdGetWithHttpInfo(exchangeId,  filterSymbolId: filterSymbolId, );
+  Future<List<FinFeedAPISymbolModel>?> v1SymbolsExchangeIdGet(String exchangeId, { String? filterSymbolId, Future<void>? abortTrigger, }) async {
+    final response = await v1SymbolsExchangeIdGetWithHttpInfo(exchangeId, filterSymbolId: filterSymbolId, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

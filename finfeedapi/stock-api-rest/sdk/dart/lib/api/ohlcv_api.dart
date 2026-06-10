@@ -35,7 +35,7 @@ class OhlcvApi {
   ///
   /// * [String] timeEnd (required):
   ///   Timeseries ending time in ISO 8601
-  Future<Response> v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(String exchangeId, String periodId, String timeStart, String timeEnd,) async {
+  Future<Response> v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(String exchangeId, String periodId, String timeStart, String timeEnd, { Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/ohlcv/exchange/{exchange_id}/history'
       .replaceAll('{exchange_id}', exchangeId);
@@ -62,6 +62,7 @@ class OhlcvApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -82,8 +83,8 @@ class OhlcvApi {
   ///
   /// * [String] timeEnd (required):
   ///   Timeseries ending time in ISO 8601
-  Future<List<OHLCVTimeSeriesExchangeTimeseriesItem>?> v1OhlcvExchangeExchangeIdHistoryGet(String exchangeId, String periodId, String timeStart, String timeEnd,) async {
-    final response = await v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId, periodId, timeStart, timeEnd,);
+  Future<List<OHLCVTimeSeriesExchangeTimeseriesItem>?> v1OhlcvExchangeExchangeIdHistoryGet(String exchangeId, String periodId, String timeStart, String timeEnd, { Future<void>? abortTrigger, }) async {
+    final response = await v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId, periodId, timeStart, timeEnd, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -125,7 +126,7 @@ class OhlcvApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(String exchangeId, String symbolId, String periodId, { String? timeStart, String? timeEnd, int? limit, }) async {
+  Future<Response> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(String exchangeId, String symbolId, String periodId, { String? timeStart, String? timeEnd, int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/history'
       .replaceAll('{exchange_id}', exchangeId)
@@ -160,6 +161,7 @@ class OhlcvApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -186,8 +188,8 @@ class OhlcvApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<OHLCVTimeSeriesTimeseriesItem>?> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(String exchangeId, String symbolId, String periodId, { String? timeStart, String? timeEnd, int? limit, }) async {
-    final response = await v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(exchangeId, symbolId, periodId,  timeStart: timeStart, timeEnd: timeEnd, limit: limit, );
+  Future<List<OHLCVTimeSeriesTimeseriesItem>?> v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet(String exchangeId, String symbolId, String periodId, { String? timeStart, String? timeEnd, int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGetWithHttpInfo(exchangeId, symbolId, periodId, timeStart: timeStart, timeEnd: timeEnd, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -223,7 +225,7 @@ class OhlcvApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<Response> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(String exchangeId, String symbolId, String periodId, { int? limit, }) async {
+  Future<Response> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(String exchangeId, String symbolId, String periodId, { int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/ohlcv/exchange-symbol/{exchange_id}/{symbol_id}/latest'
       .replaceAll('{exchange_id}', exchangeId)
@@ -252,6 +254,7 @@ class OhlcvApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
@@ -272,8 +275,8 @@ class OhlcvApi {
   ///
   /// * [int] limit:
   ///   Amount of items to return (mininum is 1, maximum is 100000, default value is 100, if the parameter is used then every 100 output items are counted as one request)
-  Future<List<OHLCVTimeSeriesTimeseriesItem>?> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(String exchangeId, String symbolId, String periodId, { int? limit, }) async {
-    final response = await v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(exchangeId, symbolId, periodId,  limit: limit, );
+  Future<List<OHLCVTimeSeriesTimeseriesItem>?> v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGet(String exchangeId, String symbolId, String periodId, { int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1OhlcvExchangeSymbolExchangeIdSymbolIdLatestGetWithHttpInfo(exchangeId, symbolId, periodId, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -295,7 +298,7 @@ class OhlcvApi {
   /// Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
   ///
   /// Note: This method returns the HTTP [Response].
-  Future<Response> v1OhlcvPeriodsGetWithHttpInfo() async {
+  Future<Response> v1OhlcvPeriodsGetWithHttpInfo({ Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/ohlcv/periods';
 
@@ -317,14 +320,15 @@ class OhlcvApi {
       headerParams,
       formParams,
       contentTypes.isEmpty ? null : contentTypes.first,
+      abortTrigger: abortTrigger,
     );
   }
 
   /// List all periods
   ///
   /// Get full list of supported time periods available for requesting OHLCV timeseries data.              ### Available periods              Time unit | Period identifiers --------- | ----------- Second | 1SEC, 2SEC, 3SEC, 4SEC, 5SEC, 6SEC, 10SEC, 15SEC, 20SEC, 30SEC Minute | 1MIN, 2MIN, 3MIN, 4MIN, 5MIN, 6MIN, 10MIN, 15MIN, 20MIN, 30MIN Hour | 1HRS, 2HRS, 3HRS, 4HRS, 6HRS, 8HRS, 12HRS Day | 1DAY, 2DAY, 3DAY, 5DAY, 7DAY, 10DAY Month | 1MTH, 2MTH, 3MTH, 4MTH, 6MTH Year | 1YRS, 2YRS, 3YRS, 4YRS, 5YRS              :::tip You can assume that we will not remove any periods from this response, however, we may add new ones. :::
-  Future<List<OHLCVTimeSeriesTimeseriesPeriod>?> v1OhlcvPeriodsGet() async {
-    final response = await v1OhlcvPeriodsGetWithHttpInfo();
+  Future<List<OHLCVTimeSeriesTimeseriesPeriod>?> v1OhlcvPeriodsGet({ Future<void>? abortTrigger, }) async {
+    final response = await v1OhlcvPeriodsGetWithHttpInfo(abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
