@@ -11,7 +11,7 @@ defmodule FinFeedAPIStockRESTAPI.Api.Ohlcv do
 
   @doc """
   Historical data by exchange
-  Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+  Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
 
   ### Parameters
 
@@ -21,6 +21,7 @@ defmodule FinFeedAPIStockRESTAPI.Api.Ohlcv do
   - `time_start` (String.t): Timeseries starting time in ISO 8601
   - `time_end` (String.t): Timeseries ending time in ISO 8601
   - `opts` (keyword): Optional parameters
+    - `:limit` (integer()): Maximum number of symbol rows to return (1-10000, default 100)
 
   ### Returns
 
@@ -28,7 +29,11 @@ defmodule FinFeedAPIStockRESTAPI.Api.Ohlcv do
   - `{:error, Tesla.Env.t}` on failure
   """
   @spec v1_ohlcv_exchange_exchange_id_history_get(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, [FinFeedAPIStockRESTAPI.Model.OhlcvTimeSeriesExchangeTimeseriesItem.t]} | {:error, Tesla.Env.t}
-  def v1_ohlcv_exchange_exchange_id_history_get(connection, exchange_id, period_id, time_start, time_end, _opts \\ []) do
+  def v1_ohlcv_exchange_exchange_id_history_get(connection, exchange_id, period_id, time_start, time_end, opts \\ []) do
+    optional_params = %{
+      :limit => :query
+    }
+
     request =
       %{}
       |> method(:get)
@@ -36,6 +41,7 @@ defmodule FinFeedAPIStockRESTAPI.Api.Ohlcv do
       |> add_param(:query, :period_id, period_id)
       |> add_param(:query, :time_start, time_start)
       |> add_param(:query, :time_end, time_end)
+      |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
     connection

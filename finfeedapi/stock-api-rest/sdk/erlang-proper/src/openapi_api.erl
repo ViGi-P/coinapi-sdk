@@ -9,14 +9,14 @@
 -define(BASE_URL, "").
 
 %% @doc Historical data by exchange
-%% Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+%% Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
 -spec v1_ohlcv_exchange_exchange_id_history_get(binary(), binary(), binary(), binary()) ->
   openapi_utils:response().
 v1_ohlcv_exchange_exchange_id_history_get(ExchangeId, PeriodId, TimeStart, TimeEnd) ->
   Method      = get,
   Host        = application:get_env(openapi, host, "http://localhost:8080"),
   Path        = ["/v1/ohlcv/exchange/", ExchangeId, "/history"],
-  QueryString = [<<"period_id=">>, PeriodId, <<"&">>, <<"time_start=">>, TimeStart, <<"&">>, <<"time_end=">>, TimeEnd, <<"&">>],
+  QueryString = [<<"period_id=">>, PeriodId, <<"&">>, <<"time_start=">>, TimeStart, <<"&">>, <<"time_end=">>, TimeEnd, <<"&">>, <<"limit=">>, Limit, <<"&">>],
 
   openapi_utils:request(Method, [Host, ?BASE_URL, Path, <<"?">>, QueryString]).
 

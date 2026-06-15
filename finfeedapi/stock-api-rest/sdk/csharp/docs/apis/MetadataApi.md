@@ -39,9 +39,11 @@ This endpoint does not need any parameter.
 
 <a id="v1symbolsexchangeidget"></a>
 # **V1SymbolsExchangeIdGet**
-> List&lt;FinFeedAPISymbolModel&gt; V1SymbolsExchangeIdGet (string exchangeId, string filterSymbolId = null)
+> List&lt;FinFeedAPISymbolModel&gt; V1SymbolsExchangeIdGet (string exchangeId, string filterSymbolId = null, int limit = null, int page = null)
 
 List of symbols for the exchange
+
+Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
 
 
 ### Parameters
@@ -50,6 +52,8 @@ List of symbols for the exchange
 |------|------|-------------|-------|
 | **exchangeId** | **string** | The ID of the exchange (from the Metadata -&gt; Exchanges) |  |
 | **filterSymbolId** | **string** | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional]  |
+| **limit** | **int** | Maximum number of symbols to return (1-10000, default 100) | [optional] [default to 100] |
+| **page** | **int** | Page number (1-based, default 1) | [optional] [default to 1] |
 
 ### Return type
 

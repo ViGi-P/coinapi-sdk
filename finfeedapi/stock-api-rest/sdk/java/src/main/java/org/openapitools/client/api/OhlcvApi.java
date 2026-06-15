@@ -80,6 +80,7 @@ public class OhlcvApi {
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
+     * @param limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -90,7 +91,7 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OhlcvExchangeExchangeIdHistoryGetCall(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call v1OhlcvExchangeExchangeIdHistoryGetCall(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -128,6 +129,10 @@ public class OhlcvApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("time_end", timeEnd));
         }
 
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
         final String[] localVarAccepts = {
             "text/plain",
             "application/json",
@@ -150,7 +155,7 @@ public class OhlcvApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call v1OhlcvExchangeExchangeIdHistoryGetValidateBeforeCall(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call v1OhlcvExchangeExchangeIdHistoryGetValidateBeforeCall(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'exchangeId' is set
         if (exchangeId == null) {
             throw new ApiException("Missing the required parameter 'exchangeId' when calling v1OhlcvExchangeExchangeIdHistoryGet(Async)");
@@ -171,17 +176,18 @@ public class OhlcvApi {
             throw new ApiException("Missing the required parameter 'timeEnd' when calling v1OhlcvExchangeExchangeIdHistoryGet(Async)");
         }
 
-        return v1OhlcvExchangeExchangeIdHistoryGetCall(exchangeId, periodId, timeStart, timeEnd, _callback);
+        return v1OhlcvExchangeExchangeIdHistoryGetCall(exchangeId, periodId, timeStart, timeEnd, limit, _callback);
 
     }
 
     /**
      * Historical data by exchange
-     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
      * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges) (required)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
+     * @param limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
      * @return List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -191,18 +197,19 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public List<OHLCVTimeSeriesExchangeTimeseriesItem> v1OhlcvExchangeExchangeIdHistoryGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd) throws ApiException {
-        ApiResponse<List<OHLCVTimeSeriesExchangeTimeseriesItem>> localVarResp = v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId, periodId, timeStart, timeEnd);
+    public List<OHLCVTimeSeriesExchangeTimeseriesItem> v1OhlcvExchangeExchangeIdHistoryGet(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
+        ApiResponse<List<OHLCVTimeSeriesExchangeTimeseriesItem>> localVarResp = v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(exchangeId, periodId, timeStart, timeEnd, limit);
         return localVarResp.getData();
     }
 
     /**
      * Historical data by exchange
-     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
      * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges) (required)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
+     * @param limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
      * @return ApiResponse&lt;List&lt;OHLCVTimeSeriesExchangeTimeseriesItem&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -212,19 +219,20 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<OHLCVTimeSeriesExchangeTimeseriesItem>> v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd) throws ApiException {
-        okhttp3.Call localVarCall = v1OhlcvExchangeExchangeIdHistoryGetValidateBeforeCall(exchangeId, periodId, timeStart, timeEnd, null);
+    public ApiResponse<List<OHLCVTimeSeriesExchangeTimeseriesItem>> v1OhlcvExchangeExchangeIdHistoryGetWithHttpInfo(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, @javax.annotation.Nullable Integer limit) throws ApiException {
+        okhttp3.Call localVarCall = v1OhlcvExchangeExchangeIdHistoryGetValidateBeforeCall(exchangeId, periodId, timeStart, timeEnd, limit, null);
         Type localVarReturnType = new TypeToken<List<OHLCVTimeSeriesExchangeTimeseriesItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Historical data by exchange (asynchronously)
-     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+     * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use &#x60;limit&#x60; to cap the number of symbol rows returned.
      * @param exchangeId Exchange identifier of requested timeseries (from the Metadata -&gt; Exchanges) (required)
      * @param periodId Identifier of requested timeseries period (e.g. &#x60;5SEC&#x60; or &#x60;1DAY&#x60;) (required)
      * @param timeStart Timeseries starting time in ISO 8601 (required)
      * @param timeEnd Timeseries ending time in ISO 8601 (required)
+     * @param limit Maximum number of symbol rows to return (1-10000, default 100) (optional, default to 100)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -235,9 +243,9 @@ public class OhlcvApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call v1OhlcvExchangeExchangeIdHistoryGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, final ApiCallback<List<OHLCVTimeSeriesExchangeTimeseriesItem>> _callback) throws ApiException {
+    public okhttp3.Call v1OhlcvExchangeExchangeIdHistoryGetAsync(@javax.annotation.Nonnull String exchangeId, @javax.annotation.Nonnull String periodId, @javax.annotation.Nonnull String timeStart, @javax.annotation.Nonnull String timeEnd, @javax.annotation.Nullable Integer limit, final ApiCallback<List<OHLCVTimeSeriesExchangeTimeseriesItem>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = v1OhlcvExchangeExchangeIdHistoryGetValidateBeforeCall(exchangeId, periodId, timeStart, timeEnd, _callback);
+        okhttp3.Call localVarCall = v1OhlcvExchangeExchangeIdHistoryGetValidateBeforeCall(exchangeId, periodId, timeStart, timeEnd, limit, _callback);
         Type localVarReturnType = new TypeToken<List<OHLCVTimeSeriesExchangeTimeseriesItem>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

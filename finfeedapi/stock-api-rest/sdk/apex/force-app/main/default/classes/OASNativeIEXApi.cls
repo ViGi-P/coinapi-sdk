@@ -27,9 +27,10 @@ public class OASNativeIEXApi {
 
     /**
      * Get Admin Messages
-     * 
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      * @param symbol The symbol identifier (required)
-     * @param r_date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+     * @param r_date Date in format YYYY-MM-DD (required)
+     * @param r_limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
      * @return List<OASModelsAdminMessageModel>
      * @throws OAS.ApiException if fails to make API call
      */
@@ -40,6 +41,7 @@ public class OASNativeIEXApi {
 
         // cast query params to verify their expected type
         query.addAll(client.makeParam('date', (Datetime) params.get('r_date')));
+        query.addAll(client.makeParam('limit', (Integer) params.get('r_limit')));
 
         List<OAS.Param> form = new List<OAS.Param>();
 
@@ -58,8 +60,9 @@ public class OASNativeIEXApi {
     }
     /**
      * Get System Events
-     * 
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      * @param r_date Date in format YYYY-MM-DD (required)
+     * @param r_limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
      * @return List<OASIEXSystemEventSystemEventModel>
      * @throws OAS.ApiException if fails to make API call
      */
@@ -69,6 +72,7 @@ public class OASNativeIEXApi {
 
         // cast query params to verify their expected type
         query.addAll(client.makeParam('date', (Datetime) params.get('r_date')));
+        query.addAll(client.makeParam('limit', (Integer) params.get('r_limit')));
 
         List<OAS.Param> form = new List<OAS.Param>();
 
@@ -85,9 +89,10 @@ public class OASNativeIEXApi {
     }
     /**
      * Get Level-1 Quotes
-     * 
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      * @param symbol The symbol identifier (required)
-     * @param r_date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+     * @param r_date Date in format YYYY-MM-DD (required)
+     * @param r_limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
      * @return List<OASIEXQuoteUpdateQuoteUpdateModel>
      * @throws OAS.ApiException if fails to make API call
      */
@@ -98,6 +103,7 @@ public class OASNativeIEXApi {
 
         // cast query params to verify their expected type
         query.addAll(client.makeParam('date', (Datetime) params.get('r_date')));
+        query.addAll(client.makeParam('limit', (Integer) params.get('r_limit')));
 
         List<OAS.Param> form = new List<OAS.Param>();
 
@@ -116,9 +122,10 @@ public class OASNativeIEXApi {
     }
     /**
      * Get Level-2 Price Level Book
-     * 
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      * @param symbol The symbol identifier (required)
-     * @param r_date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+     * @param r_date Date in format YYYY-MM-DD (required)
+     * @param r_limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
      * @return List<OASIEXPriceLevelUpdatePriceLevelUpda>
      * @throws OAS.ApiException if fails to make API call
      */
@@ -129,6 +136,7 @@ public class OASNativeIEXApi {
 
         // cast query params to verify their expected type
         query.addAll(client.makeParam('date', (Datetime) params.get('r_date')));
+        query.addAll(client.makeParam('limit', (Integer) params.get('r_limit')));
 
         List<OAS.Param> form = new List<OAS.Param>();
 
@@ -147,9 +155,10 @@ public class OASNativeIEXApi {
     }
     /**
      * Get Level-3 Order Book
-     * 
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      * @param symbol The symbol identifier (required)
-     * @param r_date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+     * @param r_date Date in format YYYY-MM-DD (required)
+     * @param r_limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
      * @return List<OASModelsOrderBookModel>
      * @throws OAS.ApiException if fails to make API call
      */
@@ -160,6 +169,7 @@ public class OASNativeIEXApi {
 
         // cast query params to verify their expected type
         query.addAll(client.makeParam('date', (Datetime) params.get('r_date')));
+        query.addAll(client.makeParam('limit', (Integer) params.get('r_limit')));
 
         List<OAS.Param> form = new List<OAS.Param>();
 
@@ -178,9 +188,10 @@ public class OASNativeIEXApi {
     }
     /**
      * Get Trades
-     * 
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
      * @param symbol The symbol identifier (required)
-     * @param r_date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+     * @param r_date Date in format YYYY-MM-DD (required)
+     * @param r_limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
      * @return List<OASIEXTradeTradeModel>
      * @throws OAS.ApiException if fails to make API call
      */
@@ -191,6 +202,7 @@ public class OASNativeIEXApi {
 
         // cast query params to verify their expected type
         query.addAll(client.makeParam('date', (Datetime) params.get('r_date')));
+        query.addAll(client.makeParam('limit', (Integer) params.get('r_limit')));
 
         List<OAS.Param> form = new List<OAS.Param>();
 

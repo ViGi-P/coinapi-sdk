@@ -26,11 +26,12 @@ class NativeIEXApi {
   const NativeIEXApi(this._dio, this._serializers);
 
   /// Get Admin Messages
-  /// 
+  /// Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
   ///
   /// Parameters:
   /// * [symbol] - The symbol identifier
-  /// * [date] - Optional date in format YYYY-MM-DD (defaults to latest available data)
+  /// * [date] - Date in format YYYY-MM-DD
+  /// * [limit] - Maximum number of records to return (1-10000, default 100)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -43,6 +44,7 @@ class NativeIEXApi {
   Future<Response<BuiltList<ModelsAdminMessageModel>>> v1NativeIexAdminMessagesSymbolGet({ 
     required String symbol,
     required DateTime date,
+    int? limit = 100,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -76,6 +78,7 @@ class NativeIEXApi {
 
     final _queryParameters = <String, dynamic>{
       r'date': encodeQueryParameter(_serializers, date, const FullType(DateTime)),
+      if (limit != null) r'limit': encodeQueryParameter(_serializers, limit, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -119,10 +122,11 @@ class NativeIEXApi {
   }
 
   /// Get System Events
-  /// 
+  /// Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
   ///
   /// Parameters:
   /// * [date] - Date in format YYYY-MM-DD
+  /// * [limit] - Maximum number of records to return (1-10000, default 100)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -134,6 +138,7 @@ class NativeIEXApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<IEXSystemEventSystemEventModel>>> v1NativeIexAdminSystemEventGet({ 
     required DateTime date,
+    int? limit = 100,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -167,6 +172,7 @@ class NativeIEXApi {
 
     final _queryParameters = <String, dynamic>{
       r'date': encodeQueryParameter(_serializers, date, const FullType(DateTime)),
+      if (limit != null) r'limit': encodeQueryParameter(_serializers, limit, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -210,11 +216,12 @@ class NativeIEXApi {
   }
 
   /// Get Level-1 Quotes
-  /// 
+  /// Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
   ///
   /// Parameters:
   /// * [symbol] - The symbol identifier
-  /// * [date] - Optional date in format YYYY-MM-DD (defaults to latest available data)
+  /// * [date] - Date in format YYYY-MM-DD
+  /// * [limit] - Maximum number of records to return (1-10000, default 100)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -227,6 +234,7 @@ class NativeIEXApi {
   Future<Response<BuiltList<IEXQuoteUpdateQuoteUpdateModel>>> v1NativeIexLevel1QuoteSymbolGet({ 
     required String symbol,
     required DateTime date,
+    int? limit = 100,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -260,6 +268,7 @@ class NativeIEXApi {
 
     final _queryParameters = <String, dynamic>{
       r'date': encodeQueryParameter(_serializers, date, const FullType(DateTime)),
+      if (limit != null) r'limit': encodeQueryParameter(_serializers, limit, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -303,11 +312,12 @@ class NativeIEXApi {
   }
 
   /// Get Level-2 Price Level Book
-  /// 
+  /// Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
   ///
   /// Parameters:
   /// * [symbol] - The symbol identifier
-  /// * [date] - Optional date in format YYYY-MM-DD (defaults to latest available data)
+  /// * [date] - Date in format YYYY-MM-DD
+  /// * [limit] - Maximum number of records to return (1-10000, default 100)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -320,6 +330,7 @@ class NativeIEXApi {
   Future<Response<BuiltList<IEXPriceLevelUpdatePriceLevelUpdateModel>>> v1NativeIexLevel2PriceLevelUpdateSymbolGet({ 
     required String symbol,
     required DateTime date,
+    int? limit = 100,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -353,6 +364,7 @@ class NativeIEXApi {
 
     final _queryParameters = <String, dynamic>{
       r'date': encodeQueryParameter(_serializers, date, const FullType(DateTime)),
+      if (limit != null) r'limit': encodeQueryParameter(_serializers, limit, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -396,11 +408,12 @@ class NativeIEXApi {
   }
 
   /// Get Level-3 Order Book
-  /// 
+  /// Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
   ///
   /// Parameters:
   /// * [symbol] - The symbol identifier
-  /// * [date] - Optional date in format YYYY-MM-DD (defaults to latest available data)
+  /// * [date] - Date in format YYYY-MM-DD
+  /// * [limit] - Maximum number of records to return (1-10000, default 100)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -413,6 +426,7 @@ class NativeIEXApi {
   Future<Response<BuiltList<ModelsOrderBookModel>>> v1NativeIexLevel3OrderBookSymbolGet({ 
     required String symbol,
     required DateTime date,
+    int? limit = 100,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -446,6 +460,7 @@ class NativeIEXApi {
 
     final _queryParameters = <String, dynamic>{
       r'date': encodeQueryParameter(_serializers, date, const FullType(DateTime)),
+      if (limit != null) r'limit': encodeQueryParameter(_serializers, limit, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -489,11 +504,12 @@ class NativeIEXApi {
   }
 
   /// Get Trades
-  /// 
+  /// Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
   ///
   /// Parameters:
   /// * [symbol] - The symbol identifier
-  /// * [date] - Optional date in format YYYY-MM-DD (defaults to latest available data)
+  /// * [date] - Date in format YYYY-MM-DD
+  /// * [limit] - Maximum number of records to return (1-10000, default 100)
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -506,6 +522,7 @@ class NativeIEXApi {
   Future<Response<BuiltList<IEXTradeTradeModel>>> v1NativeIexTradeSymbolGet({ 
     required String symbol,
     required DateTime date,
+    int? limit = 100,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -539,6 +556,7 @@ class NativeIEXApi {
 
     final _queryParameters = <String, dynamic>{
       r'date': encodeQueryParameter(_serializers, date, const FullType(DateTime)),
+      if (limit != null) r'limit': encodeQueryParameter(_serializers, limit, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(

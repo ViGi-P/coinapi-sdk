@@ -98,21 +98,30 @@ declare -a result_color_table=( "$WHITE" "$WHITE" "$GREEN" "$YELLOW" "$WHITE" "$
 declare -A operation_parameters_minimum_occurrences
 operation_parameters_minimum_occurrences["v1SymbolsExchangeIdGet:::exchange_id"]=1
 operation_parameters_minimum_occurrences["v1SymbolsExchangeIdGet:::filter_symbol_id"]=0
+operation_parameters_minimum_occurrences["v1SymbolsExchangeIdGet:::limit"]=0
+operation_parameters_minimum_occurrences["v1SymbolsExchangeIdGet:::page"]=0
 operation_parameters_minimum_occurrences["v1NativeIexAdminMessagesSymbolGet:::symbol"]=1
 operation_parameters_minimum_occurrences["v1NativeIexAdminMessagesSymbolGet:::date"]=1
+operation_parameters_minimum_occurrences["v1NativeIexAdminMessagesSymbolGet:::limit"]=0
 operation_parameters_minimum_occurrences["v1NativeIexAdminSystemEventGet:::date"]=1
+operation_parameters_minimum_occurrences["v1NativeIexAdminSystemEventGet:::limit"]=0
 operation_parameters_minimum_occurrences["v1NativeIexLevel1QuoteSymbolGet:::symbol"]=1
 operation_parameters_minimum_occurrences["v1NativeIexLevel1QuoteSymbolGet:::date"]=1
+operation_parameters_minimum_occurrences["v1NativeIexLevel1QuoteSymbolGet:::limit"]=0
 operation_parameters_minimum_occurrences["v1NativeIexLevel2PriceLevelUpdateSymbolGet:::symbol"]=1
 operation_parameters_minimum_occurrences["v1NativeIexLevel2PriceLevelUpdateSymbolGet:::date"]=1
+operation_parameters_minimum_occurrences["v1NativeIexLevel2PriceLevelUpdateSymbolGet:::limit"]=0
 operation_parameters_minimum_occurrences["v1NativeIexLevel3OrderBookSymbolGet:::symbol"]=1
 operation_parameters_minimum_occurrences["v1NativeIexLevel3OrderBookSymbolGet:::date"]=1
+operation_parameters_minimum_occurrences["v1NativeIexLevel3OrderBookSymbolGet:::limit"]=0
 operation_parameters_minimum_occurrences["v1NativeIexTradeSymbolGet:::symbol"]=1
 operation_parameters_minimum_occurrences["v1NativeIexTradeSymbolGet:::date"]=1
+operation_parameters_minimum_occurrences["v1NativeIexTradeSymbolGet:::limit"]=0
 operation_parameters_minimum_occurrences["v1OhlcvExchangeExchangeIdHistoryGet:::exchange_id"]=1
 operation_parameters_minimum_occurrences["v1OhlcvExchangeExchangeIdHistoryGet:::period_id"]=1
 operation_parameters_minimum_occurrences["v1OhlcvExchangeExchangeIdHistoryGet:::time_start"]=1
 operation_parameters_minimum_occurrences["v1OhlcvExchangeExchangeIdHistoryGet:::time_end"]=1
+operation_parameters_minimum_occurrences["v1OhlcvExchangeExchangeIdHistoryGet:::limit"]=0
 operation_parameters_minimum_occurrences["v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet:::exchange_id"]=1
 operation_parameters_minimum_occurrences["v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet:::symbol_id"]=1
 operation_parameters_minimum_occurrences["v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet:::period_id"]=1
@@ -133,21 +142,30 @@ operation_parameters_minimum_occurrences["v1OhlcvExchangeSymbolExchangeIdSymbolI
 declare -A operation_parameters_maximum_occurrences
 operation_parameters_maximum_occurrences["v1SymbolsExchangeIdGet:::exchange_id"]=0
 operation_parameters_maximum_occurrences["v1SymbolsExchangeIdGet:::filter_symbol_id"]=0
+operation_parameters_maximum_occurrences["v1SymbolsExchangeIdGet:::limit"]=0
+operation_parameters_maximum_occurrences["v1SymbolsExchangeIdGet:::page"]=0
 operation_parameters_maximum_occurrences["v1NativeIexAdminMessagesSymbolGet:::symbol"]=0
 operation_parameters_maximum_occurrences["v1NativeIexAdminMessagesSymbolGet:::date"]=0
+operation_parameters_maximum_occurrences["v1NativeIexAdminMessagesSymbolGet:::limit"]=0
 operation_parameters_maximum_occurrences["v1NativeIexAdminSystemEventGet:::date"]=0
+operation_parameters_maximum_occurrences["v1NativeIexAdminSystemEventGet:::limit"]=0
 operation_parameters_maximum_occurrences["v1NativeIexLevel1QuoteSymbolGet:::symbol"]=0
 operation_parameters_maximum_occurrences["v1NativeIexLevel1QuoteSymbolGet:::date"]=0
+operation_parameters_maximum_occurrences["v1NativeIexLevel1QuoteSymbolGet:::limit"]=0
 operation_parameters_maximum_occurrences["v1NativeIexLevel2PriceLevelUpdateSymbolGet:::symbol"]=0
 operation_parameters_maximum_occurrences["v1NativeIexLevel2PriceLevelUpdateSymbolGet:::date"]=0
+operation_parameters_maximum_occurrences["v1NativeIexLevel2PriceLevelUpdateSymbolGet:::limit"]=0
 operation_parameters_maximum_occurrences["v1NativeIexLevel3OrderBookSymbolGet:::symbol"]=0
 operation_parameters_maximum_occurrences["v1NativeIexLevel3OrderBookSymbolGet:::date"]=0
+operation_parameters_maximum_occurrences["v1NativeIexLevel3OrderBookSymbolGet:::limit"]=0
 operation_parameters_maximum_occurrences["v1NativeIexTradeSymbolGet:::symbol"]=0
 operation_parameters_maximum_occurrences["v1NativeIexTradeSymbolGet:::date"]=0
+operation_parameters_maximum_occurrences["v1NativeIexTradeSymbolGet:::limit"]=0
 operation_parameters_maximum_occurrences["v1OhlcvExchangeExchangeIdHistoryGet:::exchange_id"]=0
 operation_parameters_maximum_occurrences["v1OhlcvExchangeExchangeIdHistoryGet:::period_id"]=0
 operation_parameters_maximum_occurrences["v1OhlcvExchangeExchangeIdHistoryGet:::time_start"]=0
 operation_parameters_maximum_occurrences["v1OhlcvExchangeExchangeIdHistoryGet:::time_end"]=0
+operation_parameters_maximum_occurrences["v1OhlcvExchangeExchangeIdHistoryGet:::limit"]=0
 operation_parameters_maximum_occurrences["v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet:::exchange_id"]=0
 operation_parameters_maximum_occurrences["v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet:::symbol_id"]=0
 operation_parameters_maximum_occurrences["v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet:::period_id"]=0
@@ -165,21 +183,30 @@ operation_parameters_maximum_occurrences["v1OhlcvExchangeSymbolExchangeIdSymbolI
 declare -A operation_parameters_collection_type
 operation_parameters_collection_type["v1SymbolsExchangeIdGet:::exchange_id"]=""
 operation_parameters_collection_type["v1SymbolsExchangeIdGet:::filter_symbol_id"]=""
+operation_parameters_collection_type["v1SymbolsExchangeIdGet:::limit"]=""
+operation_parameters_collection_type["v1SymbolsExchangeIdGet:::page"]=""
 operation_parameters_collection_type["v1NativeIexAdminMessagesSymbolGet:::symbol"]=""
 operation_parameters_collection_type["v1NativeIexAdminMessagesSymbolGet:::date"]=""
+operation_parameters_collection_type["v1NativeIexAdminMessagesSymbolGet:::limit"]=""
 operation_parameters_collection_type["v1NativeIexAdminSystemEventGet:::date"]=""
+operation_parameters_collection_type["v1NativeIexAdminSystemEventGet:::limit"]=""
 operation_parameters_collection_type["v1NativeIexLevel1QuoteSymbolGet:::symbol"]=""
 operation_parameters_collection_type["v1NativeIexLevel1QuoteSymbolGet:::date"]=""
+operation_parameters_collection_type["v1NativeIexLevel1QuoteSymbolGet:::limit"]=""
 operation_parameters_collection_type["v1NativeIexLevel2PriceLevelUpdateSymbolGet:::symbol"]=""
 operation_parameters_collection_type["v1NativeIexLevel2PriceLevelUpdateSymbolGet:::date"]=""
+operation_parameters_collection_type["v1NativeIexLevel2PriceLevelUpdateSymbolGet:::limit"]=""
 operation_parameters_collection_type["v1NativeIexLevel3OrderBookSymbolGet:::symbol"]=""
 operation_parameters_collection_type["v1NativeIexLevel3OrderBookSymbolGet:::date"]=""
+operation_parameters_collection_type["v1NativeIexLevel3OrderBookSymbolGet:::limit"]=""
 operation_parameters_collection_type["v1NativeIexTradeSymbolGet:::symbol"]=""
 operation_parameters_collection_type["v1NativeIexTradeSymbolGet:::date"]=""
+operation_parameters_collection_type["v1NativeIexTradeSymbolGet:::limit"]=""
 operation_parameters_collection_type["v1OhlcvExchangeExchangeIdHistoryGet:::exchange_id"]=""
 operation_parameters_collection_type["v1OhlcvExchangeExchangeIdHistoryGet:::period_id"]=""
 operation_parameters_collection_type["v1OhlcvExchangeExchangeIdHistoryGet:::time_start"]=""
 operation_parameters_collection_type["v1OhlcvExchangeExchangeIdHistoryGet:::time_end"]=""
+operation_parameters_collection_type["v1OhlcvExchangeExchangeIdHistoryGet:::limit"]=""
 operation_parameters_collection_type["v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet:::exchange_id"]=""
 operation_parameters_collection_type["v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet:::symbol_id"]=""
 operation_parameters_collection_type["v1OhlcvExchangeSymbolExchangeIdSymbolIdHistoryGet:::period_id"]=""
@@ -697,9 +724,16 @@ print_v1SymbolsExchangeIdGet_help() {
     echo ""
     echo -e "${BOLD}${WHITE}v1SymbolsExchangeIdGet - List of symbols for the exchange${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
+    echo -e "Results are paginated. Use 'limit' and 'page' to control page size and offset
+(default limit: 100, max: 10000, default page: 1)." | paste -sd' ' - | fold -sw 80
+    echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The ID of the exchange (from the Metadata -> Exchanges) ${YELLOW}Specify as: exchange_id=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}filter_symbol_id${OFF} ${BLUE}[string]${OFF} ${CYAN}(default: null)${OFF} - Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. 'TSLA' or 'TSLA,NVDA')${YELLOW} Specify as: filter_symbol_id=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Maximum number of symbols to return (1-10000, default 100)${YELLOW} Specify as: limit=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}page${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 1)${OFF} - Page number (1-based, default 1)${YELLOW} Specify as: page=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -715,9 +749,13 @@ print_v1NativeIexAdminMessagesSymbolGet_help() {
     echo ""
     echo -e "${BOLD}${WHITE}v1NativeIexAdminMessagesSymbolGet - Get Admin Messages${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
+    echo -e "Streaming endpoint. Use 'limit' to cap the number of records returned (default 100, max 10000)." | paste -sd' ' - | fold -sw 80
+    echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}symbol${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The symbol identifier ${YELLOW}Specify as: symbol=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Optional date in format YYYY-MM-DD (defaults to latest available data)${YELLOW} Specify as: date=value${OFF}" \
+    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Date in format YYYY-MM-DD${YELLOW} Specify as: date=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Maximum number of records to return (1-10000, default 100)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -733,8 +771,12 @@ print_v1NativeIexAdminSystemEventGet_help() {
     echo ""
     echo -e "${BOLD}${WHITE}v1NativeIexAdminSystemEventGet - Get System Events${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
+    echo -e "Streaming endpoint. Use 'limit' to cap the number of records returned (default 100, max 10000)." | paste -sd' ' - | fold -sw 80
+    echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Date in format YYYY-MM-DD${YELLOW} Specify as: date=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Maximum number of records to return (1-10000, default 100)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -750,9 +792,13 @@ print_v1NativeIexLevel1QuoteSymbolGet_help() {
     echo ""
     echo -e "${BOLD}${WHITE}v1NativeIexLevel1QuoteSymbolGet - Get Level-1 Quotes${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
+    echo -e "Streaming endpoint. Use 'limit' to cap the number of records returned (default 100, max 10000)." | paste -sd' ' - | fold -sw 80
+    echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}symbol${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The symbol identifier ${YELLOW}Specify as: symbol=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Optional date in format YYYY-MM-DD (defaults to latest available data)${YELLOW} Specify as: date=value${OFF}" \
+    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Date in format YYYY-MM-DD${YELLOW} Specify as: date=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Maximum number of records to return (1-10000, default 100)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -768,9 +814,13 @@ print_v1NativeIexLevel2PriceLevelUpdateSymbolGet_help() {
     echo ""
     echo -e "${BOLD}${WHITE}v1NativeIexLevel2PriceLevelUpdateSymbolGet - Get Level-2 Price Level Book${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
+    echo -e "Streaming endpoint. Use 'limit' to cap the number of records returned (default 100, max 10000)." | paste -sd' ' - | fold -sw 80
+    echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}symbol${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The symbol identifier ${YELLOW}Specify as: symbol=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Optional date in format YYYY-MM-DD (defaults to latest available data)${YELLOW} Specify as: date=value${OFF}" \
+    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Date in format YYYY-MM-DD${YELLOW} Specify as: date=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Maximum number of records to return (1-10000, default 100)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -786,9 +836,13 @@ print_v1NativeIexLevel3OrderBookSymbolGet_help() {
     echo ""
     echo -e "${BOLD}${WHITE}v1NativeIexLevel3OrderBookSymbolGet - Get Level-3 Order Book${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
+    echo -e "Streaming endpoint. Use 'limit' to cap the number of records returned (default 100, max 10000)." | paste -sd' ' - | fold -sw 80
+    echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}symbol${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The symbol identifier ${YELLOW}Specify as: symbol=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Optional date in format YYYY-MM-DD (defaults to latest available data)${YELLOW} Specify as: date=value${OFF}" \
+    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Date in format YYYY-MM-DD${YELLOW} Specify as: date=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Maximum number of records to return (1-10000, default 100)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -804,9 +858,13 @@ print_v1NativeIexTradeSymbolGet_help() {
     echo ""
     echo -e "${BOLD}${WHITE}v1NativeIexTradeSymbolGet - Get Trades${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
+    echo -e "Streaming endpoint. Use 'limit' to cap the number of trade records returned (default 100, max 10000)." | paste -sd' ' - | fold -sw 80
+    echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}symbol${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - The symbol identifier ${YELLOW}Specify as: symbol=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
-    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Optional date in format YYYY-MM-DD (defaults to latest available data)${YELLOW} Specify as: date=value${OFF}" \
+    echo -e "  * ${GREEN}date${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Date in format YYYY-MM-DD${YELLOW} Specify as: date=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Maximum number of records to return (1-10000, default 100)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -822,7 +880,8 @@ print_v1OhlcvExchangeExchangeIdHistoryGet_help() {
     echo ""
     echo -e "${BOLD}${WHITE}v1OhlcvExchangeExchangeIdHistoryGet - Historical data by exchange${OFF}${BLUE}(AUTH - HEADER)${OFF}${BLUE}(AUTH - )${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e ""
-    echo -e "Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange." | paste -sd' ' - | fold -sw 80
+    echo -e "Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+Time range is limited to 24 hours. Use 'limit' to cap the number of symbol rows returned." | paste -sd' ' - | fold -sw 80
     echo -e ""
     echo -e "${BOLD}${WHITE}Parameters${OFF}"
     echo -e "  * ${GREEN}exchange_id${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Exchange identifier of requested timeseries (from the Metadata -> Exchanges) ${YELLOW}Specify as: exchange_id=value${OFF}" | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
@@ -831,6 +890,8 @@ print_v1OhlcvExchangeExchangeIdHistoryGet_help() {
     echo -e "  * ${GREEN}time_start${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Timeseries starting time in ISO 8601${YELLOW} Specify as: time_start=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo -e "  * ${GREEN}time_end${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - Timeseries ending time in ISO 8601${YELLOW} Specify as: time_end=value${OFF}" \
+        | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}limit${OFF} ${BLUE}[integer]${OFF} ${CYAN}(default: 100)${OFF} - Maximum number of symbol rows to return (1-10000, default 100)${YELLOW} Specify as: limit=value${OFF}" \
         | paste -sd' ' - | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
@@ -972,7 +1033,7 @@ call_v1SymbolsExchangeIdGet() {
     local path_parameter_names=(exchange_id)
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(filter_symbol_id    )
+    local query_parameter_names=(filter_symbol_id limit page    )
     local path
 
     if ! path=$(build_request_path "/v1/symbols/{exchange_id}" path_parameter_names query_parameter_names); then
@@ -1008,7 +1069,7 @@ call_v1NativeIexAdminMessagesSymbolGet() {
     local path_parameter_names=(symbol)
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(date    )
+    local query_parameter_names=(date limit    )
     local path
 
     if ! path=$(build_request_path "/v1/native/iex/admin/messages/{symbol}" path_parameter_names query_parameter_names); then
@@ -1044,7 +1105,7 @@ call_v1NativeIexAdminSystemEventGet() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(date    )
+    local query_parameter_names=(date limit    )
     local path
 
     if ! path=$(build_request_path "/v1/native/iex/admin/system-event" path_parameter_names query_parameter_names); then
@@ -1080,7 +1141,7 @@ call_v1NativeIexLevel1QuoteSymbolGet() {
     local path_parameter_names=(symbol)
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(date    )
+    local query_parameter_names=(date limit    )
     local path
 
     if ! path=$(build_request_path "/v1/native/iex/level1-quote/{symbol}" path_parameter_names query_parameter_names); then
@@ -1116,7 +1177,7 @@ call_v1NativeIexLevel2PriceLevelUpdateSymbolGet() {
     local path_parameter_names=(symbol)
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(date    )
+    local query_parameter_names=(date limit    )
     local path
 
     if ! path=$(build_request_path "/v1/native/iex/level2-price-level-update/{symbol}" path_parameter_names query_parameter_names); then
@@ -1152,7 +1213,7 @@ call_v1NativeIexLevel3OrderBookSymbolGet() {
     local path_parameter_names=(symbol)
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(date    )
+    local query_parameter_names=(date limit    )
     local path
 
     if ! path=$(build_request_path "/v1/native/iex/level3-order-book/{symbol}" path_parameter_names query_parameter_names); then
@@ -1188,7 +1249,7 @@ call_v1NativeIexTradeSymbolGet() {
     local path_parameter_names=(symbol)
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(date    )
+    local query_parameter_names=(date limit    )
     local path
 
     if ! path=$(build_request_path "/v1/native/iex/trade/{symbol}" path_parameter_names query_parameter_names); then
@@ -1224,7 +1285,7 @@ call_v1OhlcvExchangeExchangeIdHistoryGet() {
     local path_parameter_names=(exchange_id)
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(period_id time_start time_end    )
+    local query_parameter_names=(period_id time_start time_end limit    )
     local path
 
     if ! path=$(build_request_path "/v1/ohlcv/exchange/{exchange_id}/history" path_parameter_names query_parameter_names); then

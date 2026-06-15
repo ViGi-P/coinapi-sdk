@@ -127,9 +127,11 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * GET /v1/symbols/{exchange_id}
      * List of symbols for the exchange
-     * 
+     * Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
      * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
      * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
+     * @param limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
+     * @param page Page number (1-based, default 1) (optional, default to 1)
      * @return kotlin.collections.List<FinFeedAPISymbolModel>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -139,8 +141,8 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun v1SymbolsExchangeIdGet(exchangeId: kotlin.String, filterSymbolId: kotlin.String? = null) : kotlin.collections.List<FinFeedAPISymbolModel> {
-        val localVarResponse = v1SymbolsExchangeIdGetWithHttpInfo(exchangeId = exchangeId, filterSymbolId = filterSymbolId)
+    fun v1SymbolsExchangeIdGet(exchangeId: kotlin.String, filterSymbolId: kotlin.String? = null, limit: kotlin.Int? = 100, page: kotlin.Int? = 1) : kotlin.collections.List<FinFeedAPISymbolModel> {
+        val localVarResponse = v1SymbolsExchangeIdGetWithHttpInfo(exchangeId = exchangeId, filterSymbolId = filterSymbolId, limit = limit, page = page)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<FinFeedAPISymbolModel>
@@ -160,17 +162,19 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
     /**
      * GET /v1/symbols/{exchange_id}
      * List of symbols for the exchange
-     * 
+     * Results are paginated. Use &#x60;limit&#x60; and &#x60;page&#x60; to control page size and offset (default limit: 100, max: 10000, default page: 1).
      * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
      * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
+     * @param limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
+     * @param page Page number (1-based, default 1) (optional, default to 1)
      * @return ApiResponse<kotlin.collections.List<FinFeedAPISymbolModel>?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun v1SymbolsExchangeIdGetWithHttpInfo(exchangeId: kotlin.String, filterSymbolId: kotlin.String?) : ApiResponse<kotlin.collections.List<FinFeedAPISymbolModel>?> {
-        val localVariableConfig = v1SymbolsExchangeIdGetRequestConfig(exchangeId = exchangeId, filterSymbolId = filterSymbolId)
+    fun v1SymbolsExchangeIdGetWithHttpInfo(exchangeId: kotlin.String, filterSymbolId: kotlin.String?, limit: kotlin.Int?, page: kotlin.Int?) : ApiResponse<kotlin.collections.List<FinFeedAPISymbolModel>?> {
+        val localVariableConfig = v1SymbolsExchangeIdGetRequestConfig(exchangeId = exchangeId, filterSymbolId = filterSymbolId, limit = limit, page = page)
 
         return request<Unit, kotlin.collections.List<FinFeedAPISymbolModel>>(
             localVariableConfig
@@ -182,14 +186,22 @@ open class MetadataApi(basePath: kotlin.String = defaultBasePath, client: Call.F
      *
      * @param exchangeId The ID of the exchange (from the Metadata -&gt; Exchanges)
      * @param filterSymbolId Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) (optional)
+     * @param limit Maximum number of symbols to return (1-10000, default 100) (optional, default to 100)
+     * @param page Page number (1-based, default 1) (optional, default to 1)
      * @return RequestConfig
      */
-    fun v1SymbolsExchangeIdGetRequestConfig(exchangeId: kotlin.String, filterSymbolId: kotlin.String?) : RequestConfig<Unit> {
+    fun v1SymbolsExchangeIdGetRequestConfig(exchangeId: kotlin.String, filterSymbolId: kotlin.String?, limit: kotlin.Int?, page: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (filterSymbolId != null) {
                     put("filter_symbol_id", listOf(filterSymbolId.toString()))
+                }
+                if (limit != null) {
+                    put("limit", listOf(limit.toString()))
+                }
+                if (page != null) {
+                    put("page", listOf(page.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

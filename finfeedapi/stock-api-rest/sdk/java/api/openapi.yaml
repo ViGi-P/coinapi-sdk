@@ -28,6 +28,9 @@ tags:
 paths:
   /v1/symbols/{exchange_id}:
     get:
+      description: |-
+        Results are paginated. Use `limit` and `page` to control page size and offset
+        (default limit: 100, max: 10000, default page: 1).
       parameters:
       - description: The ID of the exchange (from the Metadata -> Exchanges)
         explode: false
@@ -46,6 +49,26 @@ paths:
         schema:
           type: string
         style: form
+      - description: "Maximum number of symbols to return (1-10000, default 100)"
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 100
+          format: int32
+          type: integer
+        style: form
+      - description: "Page number (1-based, default 1)"
+        explode: true
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int32
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -57,12 +80,12 @@ paths:
                     exchange_id: IEXG
                     security_category: Common Stock
                     name: TESLA INC
-                    date: 2026-06-10
+                    date: 2026-06-15
                   - symbol_id: NVDA
                     exchange_id: IEXG
                     security_category: Common Stock
                     name: NVIDIA CORP
-                    date: 2026-06-10
+                    date: 2026-06-15
               schema:
                 items:
                   $ref: "#/components/schemas/FinFeedAPI.SymbolModel"
@@ -75,12 +98,12 @@ paths:
                     exchange_id: IEXG
                     security_category: Common Stock
                     name: TESLA INC
-                    date: 2026-06-10
+                    date: 2026-06-15
                   - symbol_id: NVDA
                     exchange_id: IEXG
                     security_category: Common Stock
                     name: NVIDIA CORP
-                    date: 2026-06-10
+                    date: 2026-06-15
               schema:
                 items:
                   $ref: "#/components/schemas/FinFeedAPI.SymbolModel"
@@ -93,12 +116,12 @@ paths:
                     exchange_id: IEXG
                     security_category: Common Stock
                     name: TESLA INC
-                    date: 2026-06-10
+                    date: 2026-06-15
                   - symbol_id: NVDA
                     exchange_id: IEXG
                     security_category: Common Stock
                     name: NVIDIA CORP
-                    date: 2026-06-10
+                    date: 2026-06-15
               schema:
                 items:
                   $ref: "#/components/schemas/FinFeedAPI.SymbolModel"
@@ -231,6 +254,8 @@ paths:
       - text/plain
   /v1/native/iex/trade/{symbol}:
     get:
+      description: "Streaming endpoint. Use `limit` to cap the number of trade records\
+        \ returned (default 100, max 10000)."
       parameters:
       - description: The symbol identifier
         explode: false
@@ -240,8 +265,7 @@ paths:
         schema:
           type: string
         style: simple
-      - description: Optional date in format YYYY-MM-DD (defaults to latest available
-          data)
+      - description: Date in format YYYY-MM-DD
         explode: true
         in: query
         name: date
@@ -249,6 +273,16 @@ paths:
         schema:
           format: date-time
           type: string
+        style: form
+      - description: "Maximum number of records to return (1-10000, default 100)"
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 100
+          format: int32
+          type: integer
         style: form
       responses:
         "200":
@@ -266,6 +300,8 @@ paths:
       - application/json
   /v1/native/iex/admin/system-event:
     get:
+      description: "Streaming endpoint. Use `limit` to cap the number of records returned\
+        \ (default 100, max 10000)."
       parameters:
       - description: Date in format YYYY-MM-DD
         explode: true
@@ -275,6 +311,16 @@ paths:
         schema:
           format: date-time
           type: string
+        style: form
+      - description: "Maximum number of records to return (1-10000, default 100)"
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 100
+          format: int32
+          type: integer
         style: form
       responses:
         "200":
@@ -292,6 +338,8 @@ paths:
       - application/json
   /v1/native/iex/level1-quote/{symbol}:
     get:
+      description: "Streaming endpoint. Use `limit` to cap the number of records returned\
+        \ (default 100, max 10000)."
       parameters:
       - description: The symbol identifier
         explode: false
@@ -301,8 +349,7 @@ paths:
         schema:
           type: string
         style: simple
-      - description: Optional date in format YYYY-MM-DD (defaults to latest available
-          data)
+      - description: Date in format YYYY-MM-DD
         explode: true
         in: query
         name: date
@@ -310,6 +357,16 @@ paths:
         schema:
           format: date-time
           type: string
+        style: form
+      - description: "Maximum number of records to return (1-10000, default 100)"
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 100
+          format: int32
+          type: integer
         style: form
       responses:
         "200":
@@ -327,6 +384,8 @@ paths:
       - application/json
   /v1/native/iex/level2-price-level-update/{symbol}:
     get:
+      description: "Streaming endpoint. Use `limit` to cap the number of records returned\
+        \ (default 100, max 10000)."
       parameters:
       - description: The symbol identifier
         explode: false
@@ -336,8 +395,7 @@ paths:
         schema:
           type: string
         style: simple
-      - description: Optional date in format YYYY-MM-DD (defaults to latest available
-          data)
+      - description: Date in format YYYY-MM-DD
         explode: true
         in: query
         name: date
@@ -345,6 +403,16 @@ paths:
         schema:
           format: date-time
           type: string
+        style: form
+      - description: "Maximum number of records to return (1-10000, default 100)"
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 100
+          format: int32
+          type: integer
         style: form
       responses:
         "200":
@@ -362,6 +430,8 @@ paths:
       - application/json
   /v1/native/iex/level3-order-book/{symbol}:
     get:
+      description: "Streaming endpoint. Use `limit` to cap the number of records returned\
+        \ (default 100, max 10000)."
       parameters:
       - description: The symbol identifier
         explode: false
@@ -371,8 +441,7 @@ paths:
         schema:
           type: string
         style: simple
-      - description: Optional date in format YYYY-MM-DD (defaults to latest available
-          data)
+      - description: Date in format YYYY-MM-DD
         explode: true
         in: query
         name: date
@@ -381,6 +450,16 @@ paths:
           format: date-time
           type: string
         style: form
+      - description: "Maximum number of records to return (1-10000, default 100)"
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 100
+          format: int32
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -388,29 +467,29 @@ paths:
               example:
               - add_order:
                   symbol: AAPL
-                  timestamp_nanos: 1781071518905000000
-                  timestamp: 2026-06-10T06:05:18.9050000Z
+                  timestamp_nanos: 1781503626864000000
+                  timestamp: 2026-06-15T06:07:06.8640000Z
                   is_side_buy: true
                   size: 100
                   price: 176.42
                   order_id: 123456789
               - delete_order:
                   symbol: TSLA
-                  timestamp_nanos: 1781071518905000000
-                  timestamp: 2026-06-10T06:05:18.9050000Z
+                  timestamp_nanos: 1781503626864000000
+                  timestamp: 2026-06-15T06:07:06.8640000Z
                   order_id_reference: 987654321
               - modify_order:
                   symbol: NFLX
-                  timestamp_nanos: 1781071518905000000
-                  timestamp: 2026-06-10T06:05:18.9050000Z
+                  timestamp_nanos: 1781503626864000000
+                  timestamp: 2026-06-15T06:07:06.8640000Z
                   order_id_reference: 789456123
                   is_priority_reset: false
                   size: 150
                   price: 625.85
               - executed_order:
                   symbol: META
-                  timestamp_nanos: 1781071518905000000
-                  timestamp: 2026-06-10T06:05:18.9050000Z
+                  timestamp_nanos: 1781503626864000000
+                  timestamp: 2026-06-15T06:07:06.8640000Z
                   order_id_reference: 555123456
                   sale_condition_flags: 0
                   is_intermarket_sweep: false
@@ -423,8 +502,8 @@ paths:
                   trade_id: 123987456
               - clear_book:
                   symbol: MSFT
-                  timestamp_nanos: 1781071518905000000
-                  timestamp: 2026-06-10T06:05:18.9050000Z
+                  timestamp_nanos: 1781503626864000000
+                  timestamp: 2026-06-15T06:07:06.8640000Z
               schema:
                 items:
                   $ref: "#/components/schemas/Models.OrderBookModel"
@@ -437,6 +516,8 @@ paths:
       - application/json
   /v1/native/iex/admin/messages/{symbol}:
     get:
+      description: "Streaming endpoint. Use `limit` to cap the number of records returned\
+        \ (default 100, max 10000)."
       parameters:
       - description: The symbol identifier
         explode: false
@@ -446,8 +527,7 @@ paths:
         schema:
           type: string
         style: simple
-      - description: Optional date in format YYYY-MM-DD (defaults to latest available
-          data)
+      - description: Date in format YYYY-MM-DD
         explode: true
         in: query
         name: date
@@ -456,6 +536,16 @@ paths:
           format: date-time
           type: string
         style: form
+      - description: "Maximum number of records to return (1-10000, default 100)"
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 100
+          format: int32
+          type: integer
+        style: form
       responses:
         "200":
           content:
@@ -463,8 +553,8 @@ paths:
               example:
               - trading_status:
                   symbol: PYPL
-                  timestamp_nanos: 1781071518907000000
-                  timestamp: 2026-06-10T06:05:18.9070000Z
+                  timestamp_nanos: 1781503626867000000
+                  timestamp: 2026-06-15T06:07:06.8670000Z
                   is_trading_live: true
                   is_trading_halted: false
                   is_trading_in_order_acceptance_period: false
@@ -482,8 +572,8 @@ paths:
                   is_reason_not_available: false
               - official_price:
                   symbol: AAPL
-                  timestamp_nanos: 1781071518907000000
-                  timestamp: 2026-06-10T06:05:18.9070000Z
+                  timestamp_nanos: 1781503626867000000
+                  timestamp: 2026-06-15T06:07:06.8670000Z
                   price_type: 81
                   price_type_code: Q
                   price_type_text: IEX Official Opening Price
@@ -492,8 +582,8 @@ paths:
                   official_price: 12.3456
               - security_event:
                   symbol: CRM
-                  timestamp_nanos: 1781071518907000000
-                  timestamp: 2026-06-10T06:05:18.9070000Z
+                  timestamp_nanos: 1781503626867000000
+                  timestamp: 2026-06-15T06:07:06.8670000Z
                   security_event: 79
                   security_event_code: O
                   security_event_text: Opening Process Complete
@@ -501,8 +591,8 @@ paths:
                   is_closing_process_complete: false
               - auction_information:
                   symbol: AAPL
-                  timestamp_nanos: 1781071518907000000
-                  timestamp: 2026-06-10T06:05:18.9070000Z
+                  timestamp_nanos: 1781503626867000000
+                  timestamp: 2026-06-15T06:07:06.8670000Z
                   auction_type: 79
                   auction_type_code: O
                   auction_type_text: Opening Auction
@@ -522,16 +612,16 @@ paths:
                   is_imbalance_side_sell: false
                   is_imbalance_side_none: false
                   extension_number: 0
-                  scheduled_auction_time_seconds: 1781071818
-                  scheduled_auction_time: 2026-06-10T06:10:18.0000000Z
+                  scheduled_auction_time_seconds: 1781503926
+                  scheduled_auction_time: 2026-06-15T06:12:06.0000000Z
                   auction_book_clearing_price: 156.45
                   collar_reference_price: 157
                   lower_auction_collar: 152.5
                   upper_auction_collar: 161.5
               - short_sale_price_test:
                   symbol: MSFT
-                  timestamp_nanos: 1781071518907000000
-                  timestamp: 2026-06-10T06:05:18.9070000Z
+                  timestamp_nanos: 1781503626867000000
+                  timestamp: 2026-06-15T06:07:06.8670000Z
                   short_sale_price_test_status: 1
                   short_sale_price_test_status_code: "1"
                   short_sale_price_test_status_text: Short Sale Price Test in Effect
@@ -548,8 +638,8 @@ paths:
                   is_detail_not_available: false
               - operational_halt_status:
                   symbol: AAPL
-                  timestamp_nanos: 1781071518907000000
-                  timestamp: 2026-06-10T06:05:18.9070000Z
+                  timestamp_nanos: 1781503626867000000
+                  timestamp: 2026-06-15T06:07:06.8670000Z
                   operational_halt_status: 79
                   operational_halt_status_code: O
                   operational_halt_status_text: IEX specific operational trading halt
@@ -557,8 +647,8 @@ paths:
                   is_not_operationally_halted: false
               - retail_liquidity_indicator:
                   symbol: GOOG
-                  timestamp_nanos: 1781071518907000000
-                  timestamp: 2026-06-10T06:05:18.9070000Z
+                  timestamp_nanos: 1781503626867000000
+                  timestamp: 2026-06-15T06:07:06.8670000Z
                   retail_liquidity_indicator: 65
                   retail_liquidity_indicator_code: A
                   retail_liquidity_indicator_text: Buy interest for Retail
@@ -567,8 +657,8 @@ paths:
                   is_retail_indicator_sell_interest: false
                   is_retail_indicator_buy_and_sell_interest: false
               - system_event:
-                  timestamp_nanos: 1781071518907000000
-                  timestamp: 2026-06-10T06:05:18.9070000Z
+                  timestamp_nanos: 1781503626867000000
+                  timestamp: 2026-06-15T06:07:06.8670000Z
                   system_event: 79
                   system_event_code: O
                   system_event_text: "Start of Messages – Outside of heartbeat messages\
@@ -582,8 +672,8 @@ paths:
                   is_system_event_end_of_messages: false
               - security_directory:
                   symbol: INTC
-                  timestamp_nanos: 1781071518907000000
-                  timestamp: 2026-06-10T06:05:18.9070000Z
+                  timestamp_nanos: 1781503626867000000
+                  timestamp: 2026-06-15T06:07:06.8670000Z
                   flags: 0
                   round_lot_size: 100
                   adjusted_poc_price: 35.36
@@ -858,8 +948,9 @@ paths:
       - text/plain
   /v1/ohlcv/exchange/{exchange_id}/history:
     get:
-      description: Get OHLCV timeseries data returned in time ascending order. Data
-        can be requested by the period and for the specific exchange.
+      description: |-
+        Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+        Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
       parameters:
       - description: Exchange identifier of requested timeseries (from the Metadata
           -> Exchanges)
@@ -893,6 +984,16 @@ paths:
         required: true
         schema:
           type: string
+        style: form
+      - description: "Maximum number of symbol rows to return (1-10000, default 100)"
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 100
+          format: int32
+          type: integer
         style: form
       responses:
         "200":

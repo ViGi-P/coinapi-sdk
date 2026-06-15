@@ -26,7 +26,7 @@ object OhlcvApi {
 class OhlcvApi(baseUrl: String) {
 
   /**
-   * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+   * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
    * 
    * Expected answers:
    *   code 200 : Seq[ExchangeTimeseriesItem] (successful operation)
@@ -39,13 +39,15 @@ class OhlcvApi(baseUrl: String) {
    * @param periodId Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)
    * @param timeStart Timeseries starting time in ISO 8601
    * @param timeEnd Timeseries ending time in ISO 8601
+   * @param limit Maximum number of symbol rows to return (1-10000, default 100)
    */
-  def v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: String, periodId: String, timeStart: String, timeEnd: String)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[ExchangeTimeseriesItem]] =
+  def v1OhlcvExchangeExchangeIdHistoryGet(exchangeId: String, periodId: String, timeStart: String, timeEnd: String, limit: Option[Int] = None)(implicit apiKey: ApiKeyValue, bearerToken: BearerToken): ApiRequest[Seq[ExchangeTimeseriesItem]] =
     ApiRequest[Seq[ExchangeTimeseriesItem]](ApiMethods.GET, baseUrl, "/v1/ohlcv/exchange/{exchange_id}/history", "application/json")
       .withApiKey(apiKey, "Authorization", HEADER)
       .withCredentials(bearerToken).withQueryParam("period_id", periodId)
       .withQueryParam("time_start", timeStart)
       .withQueryParam("time_end", timeEnd)
+      .withQueryParam("limit", limit)
       .withPathParam("exchange_id", exchangeId)
       .withSuccessResponse[Seq[ExchangeTimeseriesItem]](200)
       

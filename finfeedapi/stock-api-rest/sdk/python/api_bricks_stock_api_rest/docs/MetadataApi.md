@@ -88,9 +88,12 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_symbols_exchange_id_get**
-> List[FinFeedAPISymbolModel] v1_symbols_exchange_id_get(exchange_id, filter_symbol_id=filter_symbol_id)
+> List[FinFeedAPISymbolModel] v1_symbols_exchange_id_get(exchange_id, filter_symbol_id=filter_symbol_id, limit=limit, page=page)
 
 List of symbols for the exchange
+
+Results are paginated. Use `limit` and `page` to control page size and offset
+(default limit: 100, max: 10000, default page: 1).
 
 ### Example
 
@@ -131,10 +134,12 @@ with api_bricks_stock_api_rest.ApiClient(configuration) as api_client:
     api_instance = api_bricks_stock_api_rest.MetadataApi(api_client)
     exchange_id = 'exchange_id_example' # str | The ID of the exchange (from the Metadata -> Exchanges)
     filter_symbol_id = 'filter_symbol_id_example' # str | Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`) (optional)
+    limit = 100 # int | Maximum number of symbols to return (1-10000, default 100) (optional) (default to 100)
+    page = 1 # int | Page number (1-based, default 1) (optional) (default to 1)
 
     try:
         # List of symbols for the exchange
-        api_response = api_instance.v1_symbols_exchange_id_get(exchange_id, filter_symbol_id=filter_symbol_id)
+        api_response = api_instance.v1_symbols_exchange_id_get(exchange_id, filter_symbol_id=filter_symbol_id, limit=limit, page=page)
         print("The response of MetadataApi->v1_symbols_exchange_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -150,6 +155,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **exchange_id** | **str**| The ID of the exchange (from the Metadata -&gt; Exchanges) | 
  **filter_symbol_id** | **str**| Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. &#x60;TSLA&#x60; or &#x60;TSLA,NVDA&#x60;) | [optional] 
+ **limit** | **int**| Maximum number of symbols to return (1-10000, default 100) | [optional] [default to 100]
+ **page** | **int**| Page number (1-based, default 1) | [optional] [default to 1]
 
 ### Return type
 

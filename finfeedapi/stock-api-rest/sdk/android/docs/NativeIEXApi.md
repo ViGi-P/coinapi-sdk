@@ -15,9 +15,11 @@ Method | HTTP request | Description
 
 ## v1NativeIexAdminMessagesSymbolGet
 
-> List&lt;ModelsAdminMessageModel&gt; v1NativeIexAdminMessagesSymbolGet(symbol, date)
+> List&lt;ModelsAdminMessageModel&gt; v1NativeIexAdminMessagesSymbolGet(symbol, date, limit)
 
 Get Admin Messages
+
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -27,9 +29,10 @@ Get Admin Messages
 
 NativeIEXApi apiInstance = new NativeIEXApi();
 String symbol = null; // String | The symbol identifier
-Date date = null; // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
+Date date = null; // Date | Date in format YYYY-MM-DD
+Integer limit = 100; // Integer | Maximum number of records to return (1-10000, default 100)
 try {
-    List<ModelsAdminMessageModel> result = apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date);
+    List<ModelsAdminMessageModel> result = apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NativeIEXApi#v1NativeIexAdminMessagesSymbolGet");
@@ -43,7 +46,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | [default to null]
- **date** | **Date**| Optional date in format YYYY-MM-DD (defaults to latest available data) | [default to null]
+ **date** | **Date**| Date in format YYYY-MM-DD | [default to null]
+ **limit** | **Integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -61,9 +65,11 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexAdminSystemEventGet
 
-> List&lt;IEXSystemEventSystemEventModel&gt; v1NativeIexAdminSystemEventGet(date)
+> List&lt;IEXSystemEventSystemEventModel&gt; v1NativeIexAdminSystemEventGet(date, limit)
 
 Get System Events
+
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -73,8 +79,9 @@ Get System Events
 
 NativeIEXApi apiInstance = new NativeIEXApi();
 Date date = null; // Date | Date in format YYYY-MM-DD
+Integer limit = 100; // Integer | Maximum number of records to return (1-10000, default 100)
 try {
-    List<IEXSystemEventSystemEventModel> result = apiInstance.v1NativeIexAdminSystemEventGet(date);
+    List<IEXSystemEventSystemEventModel> result = apiInstance.v1NativeIexAdminSystemEventGet(date, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NativeIEXApi#v1NativeIexAdminSystemEventGet");
@@ -88,6 +95,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | **Date**| Date in format YYYY-MM-DD | [default to null]
+ **limit** | **Integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -105,9 +113,11 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexLevel1QuoteSymbolGet
 
-> List&lt;IEXQuoteUpdateQuoteUpdateModel&gt; v1NativeIexLevel1QuoteSymbolGet(symbol, date)
+> List&lt;IEXQuoteUpdateQuoteUpdateModel&gt; v1NativeIexLevel1QuoteSymbolGet(symbol, date, limit)
 
 Get Level-1 Quotes
+
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -117,9 +127,10 @@ Get Level-1 Quotes
 
 NativeIEXApi apiInstance = new NativeIEXApi();
 String symbol = null; // String | The symbol identifier
-Date date = null; // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
+Date date = null; // Date | Date in format YYYY-MM-DD
+Integer limit = 100; // Integer | Maximum number of records to return (1-10000, default 100)
 try {
-    List<IEXQuoteUpdateQuoteUpdateModel> result = apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date);
+    List<IEXQuoteUpdateQuoteUpdateModel> result = apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NativeIEXApi#v1NativeIexLevel1QuoteSymbolGet");
@@ -133,7 +144,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | [default to null]
- **date** | **Date**| Optional date in format YYYY-MM-DD (defaults to latest available data) | [default to null]
+ **date** | **Date**| Date in format YYYY-MM-DD | [default to null]
+ **limit** | **Integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -151,9 +163,11 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexLevel2PriceLevelUpdateSymbolGet
 
-> List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt; v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
+> List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt; v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, limit)
 
 Get Level-2 Price Level Book
+
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -163,9 +177,10 @@ Get Level-2 Price Level Book
 
 NativeIEXApi apiInstance = new NativeIEXApi();
 String symbol = null; // String | The symbol identifier
-Date date = null; // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
+Date date = null; // Date | Date in format YYYY-MM-DD
+Integer limit = 100; // Integer | Maximum number of records to return (1-10000, default 100)
 try {
-    List<IEXPriceLevelUpdatePriceLevelUpdateModel> result = apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date);
+    List<IEXPriceLevelUpdatePriceLevelUpdateModel> result = apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NativeIEXApi#v1NativeIexLevel2PriceLevelUpdateSymbolGet");
@@ -179,7 +194,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | [default to null]
- **date** | **Date**| Optional date in format YYYY-MM-DD (defaults to latest available data) | [default to null]
+ **date** | **Date**| Date in format YYYY-MM-DD | [default to null]
+ **limit** | **Integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -197,9 +213,11 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexLevel3OrderBookSymbolGet
 
-> List&lt;ModelsOrderBookModel&gt; v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
+> List&lt;ModelsOrderBookModel&gt; v1NativeIexLevel3OrderBookSymbolGet(symbol, date, limit)
 
 Get Level-3 Order Book
+
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 
@@ -209,9 +227,10 @@ Get Level-3 Order Book
 
 NativeIEXApi apiInstance = new NativeIEXApi();
 String symbol = null; // String | The symbol identifier
-Date date = null; // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
+Date date = null; // Date | Date in format YYYY-MM-DD
+Integer limit = 100; // Integer | Maximum number of records to return (1-10000, default 100)
 try {
-    List<ModelsOrderBookModel> result = apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date);
+    List<ModelsOrderBookModel> result = apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NativeIEXApi#v1NativeIexLevel3OrderBookSymbolGet");
@@ -225,7 +244,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | [default to null]
- **date** | **Date**| Optional date in format YYYY-MM-DD (defaults to latest available data) | [default to null]
+ **date** | **Date**| Date in format YYYY-MM-DD | [default to null]
+ **limit** | **Integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 
@@ -243,9 +263,11 @@ Name | Type | Description  | Notes
 
 ## v1NativeIexTradeSymbolGet
 
-> List&lt;IEXTradeTradeModel&gt; v1NativeIexTradeSymbolGet(symbol, date)
+> List&lt;IEXTradeTradeModel&gt; v1NativeIexTradeSymbolGet(symbol, date, limit)
 
 Get Trades
+
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
 
 ### Example
 
@@ -255,9 +277,10 @@ Get Trades
 
 NativeIEXApi apiInstance = new NativeIEXApi();
 String symbol = null; // String | The symbol identifier
-Date date = null; // Date | Optional date in format YYYY-MM-DD (defaults to latest available data)
+Date date = null; // Date | Date in format YYYY-MM-DD
+Integer limit = 100; // Integer | Maximum number of records to return (1-10000, default 100)
 try {
-    List<IEXTradeTradeModel> result = apiInstance.v1NativeIexTradeSymbolGet(symbol, date);
+    List<IEXTradeTradeModel> result = apiInstance.v1NativeIexTradeSymbolGet(symbol, date, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling NativeIEXApi#v1NativeIexTradeSymbolGet");
@@ -271,7 +294,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **symbol** | **String**| The symbol identifier | [default to null]
- **date** | **Date**| Optional date in format YYYY-MM-DD (defaults to latest available data) | [default to null]
+ **date** | **Date**| Date in format YYYY-MM-DD | [default to null]
+ **limit** | **Integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100]
 
 ### Return type
 

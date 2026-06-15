@@ -29,33 +29,35 @@ public:
 
 /*! \brief Historical data by exchange. *Synchronous*
  *
- * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+ * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
  * \param exchangeId Exchange identifier of requested timeseries (from the Metadata -> Exchanges) *Required*
  * \param periodId Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`) *Required*
  * \param timeStart Timeseries starting time in ISO 8601 *Required*
  * \param timeEnd Timeseries ending time in ISO 8601 *Required*
+ * \param limit Maximum number of symbol rows to return (1-10000, default 100)
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1OhlcvExchangeExchangeIdHistoryGetSync(char * accessToken,
-	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, 
+	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
 	void(* handler)(std::list<OHLCVTimeSeries.ExchangeTimeseriesItem>, Error, void* )
 	, void* userData);
 
 /*! \brief Historical data by exchange. *Asynchronous*
  *
- * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+ * Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
  * \param exchangeId Exchange identifier of requested timeseries (from the Metadata -> Exchanges) *Required*
  * \param periodId Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`) *Required*
  * \param timeStart Timeseries starting time in ISO 8601 *Required*
  * \param timeEnd Timeseries ending time in ISO 8601 *Required*
+ * \param limit Maximum number of symbol rows to return (1-10000, default 100)
  * \param handler The callback function to be invoked on completion. *Required*
  * \param accessToken The Authorization token. *Required*
  * \param userData The user data to be passed to the callback function.
  */
 bool v1OhlcvExchangeExchangeIdHistoryGetAsync(char * accessToken,
-	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, 
+	std::string exchangeId, std::string periodId, std::string timeStart, std::string timeEnd, int limit, 
 	void(* handler)(std::list<OHLCVTimeSeries.ExchangeTimeseriesItem>, Error, void* )
 	, void* userData);
 

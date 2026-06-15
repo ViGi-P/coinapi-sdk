@@ -35,14 +35,16 @@ isa_ok($api, 'WWW::OpenAPIClient::NativeIEXApi');
 # uncomment below and update the test
 #my $v1_native_iex_admin_messages_symbol_get_symbol = undef; # replace NULL with a proper value
 #my $v1_native_iex_admin_messages_symbol_get_date = undef; # replace NULL with a proper value
-#my $v1_native_iex_admin_messages_symbol_get_result = $api->v1_native_iex_admin_messages_symbol_get(symbol => $v1_native_iex_admin_messages_symbol_get_symbol, date => $v1_native_iex_admin_messages_symbol_get_date);
+#my $v1_native_iex_admin_messages_symbol_get_limit = undef; # replace NULL with a proper value
+#my $v1_native_iex_admin_messages_symbol_get_result = $api->v1_native_iex_admin_messages_symbol_get(symbol => $v1_native_iex_admin_messages_symbol_get_symbol, date => $v1_native_iex_admin_messages_symbol_get_date, limit => $v1_native_iex_admin_messages_symbol_get_limit);
 
 #
 # v1_native_iex_admin_system_event_get test
 #
 # uncomment below and update the test
 #my $v1_native_iex_admin_system_event_get_date = undef; # replace NULL with a proper value
-#my $v1_native_iex_admin_system_event_get_result = $api->v1_native_iex_admin_system_event_get(date => $v1_native_iex_admin_system_event_get_date);
+#my $v1_native_iex_admin_system_event_get_limit = undef; # replace NULL with a proper value
+#my $v1_native_iex_admin_system_event_get_result = $api->v1_native_iex_admin_system_event_get(date => $v1_native_iex_admin_system_event_get_date, limit => $v1_native_iex_admin_system_event_get_limit);
 
 #
 # v1_native_iex_level1_quote_symbol_get test
@@ -50,7 +52,8 @@ isa_ok($api, 'WWW::OpenAPIClient::NativeIEXApi');
 # uncomment below and update the test
 #my $v1_native_iex_level1_quote_symbol_get_symbol = undef; # replace NULL with a proper value
 #my $v1_native_iex_level1_quote_symbol_get_date = undef; # replace NULL with a proper value
-#my $v1_native_iex_level1_quote_symbol_get_result = $api->v1_native_iex_level1_quote_symbol_get(symbol => $v1_native_iex_level1_quote_symbol_get_symbol, date => $v1_native_iex_level1_quote_symbol_get_date);
+#my $v1_native_iex_level1_quote_symbol_get_limit = undef; # replace NULL with a proper value
+#my $v1_native_iex_level1_quote_symbol_get_result = $api->v1_native_iex_level1_quote_symbol_get(symbol => $v1_native_iex_level1_quote_symbol_get_symbol, date => $v1_native_iex_level1_quote_symbol_get_date, limit => $v1_native_iex_level1_quote_symbol_get_limit);
 
 #
 # v1_native_iex_level2_price_level_update_symbol_get test
@@ -58,7 +61,8 @@ isa_ok($api, 'WWW::OpenAPIClient::NativeIEXApi');
 # uncomment below and update the test
 #my $v1_native_iex_level2_price_level_update_symbol_get_symbol = undef; # replace NULL with a proper value
 #my $v1_native_iex_level2_price_level_update_symbol_get_date = undef; # replace NULL with a proper value
-#my $v1_native_iex_level2_price_level_update_symbol_get_result = $api->v1_native_iex_level2_price_level_update_symbol_get(symbol => $v1_native_iex_level2_price_level_update_symbol_get_symbol, date => $v1_native_iex_level2_price_level_update_symbol_get_date);
+#my $v1_native_iex_level2_price_level_update_symbol_get_limit = undef; # replace NULL with a proper value
+#my $v1_native_iex_level2_price_level_update_symbol_get_result = $api->v1_native_iex_level2_price_level_update_symbol_get(symbol => $v1_native_iex_level2_price_level_update_symbol_get_symbol, date => $v1_native_iex_level2_price_level_update_symbol_get_date, limit => $v1_native_iex_level2_price_level_update_symbol_get_limit);
 
 #
 # v1_native_iex_level3_order_book_symbol_get test
@@ -66,7 +70,8 @@ isa_ok($api, 'WWW::OpenAPIClient::NativeIEXApi');
 # uncomment below and update the test
 #my $v1_native_iex_level3_order_book_symbol_get_symbol = undef; # replace NULL with a proper value
 #my $v1_native_iex_level3_order_book_symbol_get_date = undef; # replace NULL with a proper value
-#my $v1_native_iex_level3_order_book_symbol_get_result = $api->v1_native_iex_level3_order_book_symbol_get(symbol => $v1_native_iex_level3_order_book_symbol_get_symbol, date => $v1_native_iex_level3_order_book_symbol_get_date);
+#my $v1_native_iex_level3_order_book_symbol_get_limit = undef; # replace NULL with a proper value
+#my $v1_native_iex_level3_order_book_symbol_get_result = $api->v1_native_iex_level3_order_book_symbol_get(symbol => $v1_native_iex_level3_order_book_symbol_get_symbol, date => $v1_native_iex_level3_order_book_symbol_get_date, limit => $v1_native_iex_level3_order_book_symbol_get_limit);
 
 #
 # v1_native_iex_trade_symbol_get test
@@ -74,7 +79,8 @@ isa_ok($api, 'WWW::OpenAPIClient::NativeIEXApi');
 # uncomment below and update the test
 #my $v1_native_iex_trade_symbol_get_symbol = undef; # replace NULL with a proper value
 #my $v1_native_iex_trade_symbol_get_date = undef; # replace NULL with a proper value
-#my $v1_native_iex_trade_symbol_get_result = $api->v1_native_iex_trade_symbol_get(symbol => $v1_native_iex_trade_symbol_get_symbol, date => $v1_native_iex_trade_symbol_get_date);
+#my $v1_native_iex_trade_symbol_get_limit = undef; # replace NULL with a proper value
+#my $v1_native_iex_trade_symbol_get_result = $api->v1_native_iex_trade_symbol_get(symbol => $v1_native_iex_trade_symbol_get_symbol, date => $v1_native_iex_trade_symbol_get_date, limit => $v1_native_iex_trade_symbol_get_limit);
 
 
 done_testing();

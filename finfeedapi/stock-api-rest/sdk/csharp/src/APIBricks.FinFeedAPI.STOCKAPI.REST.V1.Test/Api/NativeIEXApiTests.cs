@@ -59,7 +59,8 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
         {
             string symbol = default!;
             DateTime date = default!;
-            var response = await _instance.V1NativeIexAdminMessagesSymbolGetAsync(symbol, date);
+            Client.Option<int> limit = default!;
+            var response = await _instance.V1NativeIexAdminMessagesSymbolGetAsync(symbol, date, limit);
             var model = response.Ok();
             Assert.IsType<List<ModelsAdminMessageModel>>(model);
         }
@@ -71,7 +72,8 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
         public async Task V1NativeIexAdminSystemEventGetAsyncTest()
         {
             DateTime date = default!;
-            var response = await _instance.V1NativeIexAdminSystemEventGetAsync(date);
+            Client.Option<int> limit = default!;
+            var response = await _instance.V1NativeIexAdminSystemEventGetAsync(date, limit);
             var model = response.Ok();
             Assert.IsType<List<IEXSystemEventSystemEventModel>>(model);
         }
@@ -84,7 +86,8 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
         {
             string symbol = default!;
             DateTime date = default!;
-            var response = await _instance.V1NativeIexLevel1QuoteSymbolGetAsync(symbol, date);
+            Client.Option<int> limit = default!;
+            var response = await _instance.V1NativeIexLevel1QuoteSymbolGetAsync(symbol, date, limit);
             var model = response.Ok();
             Assert.IsType<List<IEXQuoteUpdateQuoteUpdateModel>>(model);
         }
@@ -97,7 +100,8 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
         {
             string symbol = default!;
             DateTime date = default!;
-            var response = await _instance.V1NativeIexLevel2PriceLevelUpdateSymbolGetAsync(symbol, date);
+            Client.Option<int> limit = default!;
+            var response = await _instance.V1NativeIexLevel2PriceLevelUpdateSymbolGetAsync(symbol, date, limit);
             var model = response.Ok();
             Assert.IsType<List<IEXPriceLevelUpdatePriceLevelUpdateModel>>(model);
         }
@@ -110,7 +114,8 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
         {
             string symbol = default!;
             DateTime date = default!;
-            var response = await _instance.V1NativeIexLevel3OrderBookSymbolGetAsync(symbol, date);
+            Client.Option<int> limit = default!;
+            var response = await _instance.V1NativeIexLevel3OrderBookSymbolGetAsync(symbol, date, limit);
             var model = response.Ok();
             Assert.IsType<List<ModelsOrderBookModel>>(model);
         }
@@ -123,7 +128,8 @@ namespace APIBricks.FinFeedAPI.STOCKAPI.REST.V1.Test.Api
         {
             string symbol = default!;
             DateTime date = default!;
-            var response = await _instance.V1NativeIexTradeSymbolGetAsync(symbol, date);
+            Client.Option<int> limit = default!;
+            var response = await _instance.V1NativeIexTradeSymbolGetAsync(symbol, date, limit);
             var model = response.Ok();
             Assert.IsType<List<IEXTradeTradeModel>>(model);
         }

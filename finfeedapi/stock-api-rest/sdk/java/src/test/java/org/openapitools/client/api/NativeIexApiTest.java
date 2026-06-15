@@ -40,30 +40,38 @@ public class NativeIexApiTest {
     /**
      * Get Admin Messages
      *
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void v1NativeIexAdminMessagesSymbolGetTest() throws ApiException {
         String symbol = null;
         OffsetDateTime date = null;
-        List<ModelsAdminMessageModel> response = api.v1NativeIexAdminMessagesSymbolGet(symbol, date);
+        Integer limit = null;
+        List<ModelsAdminMessageModel> response = api.v1NativeIexAdminMessagesSymbolGet(symbol, date, limit);
         // TODO: test validations
     }
 
     /**
      * Get System Events
      *
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
+     *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void v1NativeIexAdminSystemEventGetTest() throws ApiException {
         OffsetDateTime date = null;
-        List<IEXSystemEventSystemEventModel> response = api.v1NativeIexAdminSystemEventGet(date);
+        Integer limit = null;
+        List<IEXSystemEventSystemEventModel> response = api.v1NativeIexAdminSystemEventGet(date, limit);
         // TODO: test validations
     }
 
     /**
      * Get Level-1 Quotes
+     *
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      *
      * @throws ApiException if the Api call fails
      */
@@ -71,12 +79,15 @@ public class NativeIexApiTest {
     public void v1NativeIexLevel1QuoteSymbolGetTest() throws ApiException {
         String symbol = null;
         OffsetDateTime date = null;
-        List<IEXQuoteUpdateQuoteUpdateModel> response = api.v1NativeIexLevel1QuoteSymbolGet(symbol, date);
+        Integer limit = null;
+        List<IEXQuoteUpdateQuoteUpdateModel> response = api.v1NativeIexLevel1QuoteSymbolGet(symbol, date, limit);
         // TODO: test validations
     }
 
     /**
      * Get Level-2 Price Level Book
+     *
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      *
      * @throws ApiException if the Api call fails
      */
@@ -84,12 +95,15 @@ public class NativeIexApiTest {
     public void v1NativeIexLevel2PriceLevelUpdateSymbolGetTest() throws ApiException {
         String symbol = null;
         OffsetDateTime date = null;
-        List<IEXPriceLevelUpdatePriceLevelUpdateModel> response = api.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date);
+        Integer limit = null;
+        List<IEXPriceLevelUpdatePriceLevelUpdateModel> response = api.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, limit);
         // TODO: test validations
     }
 
     /**
      * Get Level-3 Order Book
+     *
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      *
      * @throws ApiException if the Api call fails
      */
@@ -97,12 +111,15 @@ public class NativeIexApiTest {
     public void v1NativeIexLevel3OrderBookSymbolGetTest() throws ApiException {
         String symbol = null;
         OffsetDateTime date = null;
-        List<ModelsOrderBookModel> response = api.v1NativeIexLevel3OrderBookSymbolGet(symbol, date);
+        Integer limit = null;
+        List<ModelsOrderBookModel> response = api.v1NativeIexLevel3OrderBookSymbolGet(symbol, date, limit);
         // TODO: test validations
     }
 
     /**
      * Get Trades
+     *
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
      *
      * @throws ApiException if the Api call fails
      */
@@ -110,7 +127,8 @@ public class NativeIexApiTest {
     public void v1NativeIexTradeSymbolGetTest() throws ApiException {
         String symbol = null;
         OffsetDateTime date = null;
-        List<IEXTradeTradeModel> response = api.v1NativeIexTradeSymbolGet(symbol, date);
+        Integer limit = null;
+        List<IEXTradeTradeModel> response = api.v1NativeIexTradeSymbolGet(symbol, date, limit);
         // TODO: test validations
     }
 

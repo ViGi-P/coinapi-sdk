@@ -18,6 +18,8 @@ class NativeIEXApi {
 
   /// Get Admin Messages
   ///
+  /// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+  ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
@@ -26,8 +28,11 @@ class NativeIEXApi {
   ///   The symbol identifier
   ///
   /// * [DateTime] date (required):
-  ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<Response> v1NativeIexAdminMessagesSymbolGetWithHttpInfo(String symbol, DateTime date, { Future<void>? abortTrigger, }) async {
+  ///   Date in format YYYY-MM-DD
+  ///
+  /// * [int] limit:
+  ///   Maximum number of records to return (1-10000, default 100)
+  Future<Response> v1NativeIexAdminMessagesSymbolGetWithHttpInfo(String symbol, DateTime date, { int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/native/iex/admin/messages/{symbol}'
       .replaceAll('{symbol}', symbol);
@@ -40,6 +45,9 @@ class NativeIEXApi {
     final formParams = <String, String>{};
 
       queryParams.addAll(_queryParams('', 'date', date));
+    if (limit != null) {
+      queryParams.addAll(_queryParams('', 'limit', limit));
+    }
 
     const contentTypes = <String>[];
 
@@ -58,15 +66,20 @@ class NativeIEXApi {
 
   /// Get Admin Messages
   ///
+  /// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+  ///
   /// Parameters:
   ///
   /// * [String] symbol (required):
   ///   The symbol identifier
   ///
   /// * [DateTime] date (required):
-  ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<List<ModelsAdminMessageModel>?> v1NativeIexAdminMessagesSymbolGet(String symbol, DateTime date, { Future<void>? abortTrigger, }) async {
-    final response = await v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol, date, abortTrigger: abortTrigger,);
+  ///   Date in format YYYY-MM-DD
+  ///
+  /// * [int] limit:
+  ///   Maximum number of records to return (1-10000, default 100)
+  Future<List<ModelsAdminMessageModel>?> v1NativeIexAdminMessagesSymbolGet(String symbol, DateTime date, { int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1NativeIexAdminMessagesSymbolGetWithHttpInfo(symbol, date, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -85,13 +98,18 @@ class NativeIEXApi {
 
   /// Get System Events
   ///
+  /// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+  ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
   ///
   /// * [DateTime] date (required):
   ///   Date in format YYYY-MM-DD
-  Future<Response> v1NativeIexAdminSystemEventGetWithHttpInfo(DateTime date, { Future<void>? abortTrigger, }) async {
+  ///
+  /// * [int] limit:
+  ///   Maximum number of records to return (1-10000, default 100)
+  Future<Response> v1NativeIexAdminSystemEventGetWithHttpInfo(DateTime date, { int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/native/iex/admin/system-event';
 
@@ -103,6 +121,9 @@ class NativeIEXApi {
     final formParams = <String, String>{};
 
       queryParams.addAll(_queryParams('', 'date', date));
+    if (limit != null) {
+      queryParams.addAll(_queryParams('', 'limit', limit));
+    }
 
     const contentTypes = <String>[];
 
@@ -121,12 +142,17 @@ class NativeIEXApi {
 
   /// Get System Events
   ///
+  /// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+  ///
   /// Parameters:
   ///
   /// * [DateTime] date (required):
   ///   Date in format YYYY-MM-DD
-  Future<List<IEXSystemEventSystemEventModel>?> v1NativeIexAdminSystemEventGet(DateTime date, { Future<void>? abortTrigger, }) async {
-    final response = await v1NativeIexAdminSystemEventGetWithHttpInfo(date, abortTrigger: abortTrigger,);
+  ///
+  /// * [int] limit:
+  ///   Maximum number of records to return (1-10000, default 100)
+  Future<List<IEXSystemEventSystemEventModel>?> v1NativeIexAdminSystemEventGet(DateTime date, { int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1NativeIexAdminSystemEventGetWithHttpInfo(date, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -145,6 +171,8 @@ class NativeIEXApi {
 
   /// Get Level-1 Quotes
   ///
+  /// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+  ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
@@ -153,8 +181,11 @@ class NativeIEXApi {
   ///   The symbol identifier
   ///
   /// * [DateTime] date (required):
-  ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<Response> v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(String symbol, DateTime date, { Future<void>? abortTrigger, }) async {
+  ///   Date in format YYYY-MM-DD
+  ///
+  /// * [int] limit:
+  ///   Maximum number of records to return (1-10000, default 100)
+  Future<Response> v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(String symbol, DateTime date, { int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/native/iex/level1-quote/{symbol}'
       .replaceAll('{symbol}', symbol);
@@ -167,6 +198,9 @@ class NativeIEXApi {
     final formParams = <String, String>{};
 
       queryParams.addAll(_queryParams('', 'date', date));
+    if (limit != null) {
+      queryParams.addAll(_queryParams('', 'limit', limit));
+    }
 
     const contentTypes = <String>[];
 
@@ -185,15 +219,20 @@ class NativeIEXApi {
 
   /// Get Level-1 Quotes
   ///
+  /// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+  ///
   /// Parameters:
   ///
   /// * [String] symbol (required):
   ///   The symbol identifier
   ///
   /// * [DateTime] date (required):
-  ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<List<IEXQuoteUpdateQuoteUpdateModel>?> v1NativeIexLevel1QuoteSymbolGet(String symbol, DateTime date, { Future<void>? abortTrigger, }) async {
-    final response = await v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol, date, abortTrigger: abortTrigger,);
+  ///   Date in format YYYY-MM-DD
+  ///
+  /// * [int] limit:
+  ///   Maximum number of records to return (1-10000, default 100)
+  Future<List<IEXQuoteUpdateQuoteUpdateModel>?> v1NativeIexLevel1QuoteSymbolGet(String symbol, DateTime date, { int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1NativeIexLevel1QuoteSymbolGetWithHttpInfo(symbol, date, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -212,6 +251,8 @@ class NativeIEXApi {
 
   /// Get Level-2 Price Level Book
   ///
+  /// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+  ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
@@ -220,8 +261,11 @@ class NativeIEXApi {
   ///   The symbol identifier
   ///
   /// * [DateTime] date (required):
-  ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<Response> v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(String symbol, DateTime date, { Future<void>? abortTrigger, }) async {
+  ///   Date in format YYYY-MM-DD
+  ///
+  /// * [int] limit:
+  ///   Maximum number of records to return (1-10000, default 100)
+  Future<Response> v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(String symbol, DateTime date, { int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/native/iex/level2-price-level-update/{symbol}'
       .replaceAll('{symbol}', symbol);
@@ -234,6 +278,9 @@ class NativeIEXApi {
     final formParams = <String, String>{};
 
       queryParams.addAll(_queryParams('', 'date', date));
+    if (limit != null) {
+      queryParams.addAll(_queryParams('', 'limit', limit));
+    }
 
     const contentTypes = <String>[];
 
@@ -252,15 +299,20 @@ class NativeIEXApi {
 
   /// Get Level-2 Price Level Book
   ///
+  /// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+  ///
   /// Parameters:
   ///
   /// * [String] symbol (required):
   ///   The symbol identifier
   ///
   /// * [DateTime] date (required):
-  ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<List<IEXPriceLevelUpdatePriceLevelUpdateModel>?> v1NativeIexLevel2PriceLevelUpdateSymbolGet(String symbol, DateTime date, { Future<void>? abortTrigger, }) async {
-    final response = await v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol, date, abortTrigger: abortTrigger,);
+  ///   Date in format YYYY-MM-DD
+  ///
+  /// * [int] limit:
+  ///   Maximum number of records to return (1-10000, default 100)
+  Future<List<IEXPriceLevelUpdatePriceLevelUpdateModel>?> v1NativeIexLevel2PriceLevelUpdateSymbolGet(String symbol, DateTime date, { int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1NativeIexLevel2PriceLevelUpdateSymbolGetWithHttpInfo(symbol, date, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -279,6 +331,8 @@ class NativeIEXApi {
 
   /// Get Level-3 Order Book
   ///
+  /// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+  ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
@@ -287,8 +341,11 @@ class NativeIEXApi {
   ///   The symbol identifier
   ///
   /// * [DateTime] date (required):
-  ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<Response> v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(String symbol, DateTime date, { Future<void>? abortTrigger, }) async {
+  ///   Date in format YYYY-MM-DD
+  ///
+  /// * [int] limit:
+  ///   Maximum number of records to return (1-10000, default 100)
+  Future<Response> v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(String symbol, DateTime date, { int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/native/iex/level3-order-book/{symbol}'
       .replaceAll('{symbol}', symbol);
@@ -301,6 +358,9 @@ class NativeIEXApi {
     final formParams = <String, String>{};
 
       queryParams.addAll(_queryParams('', 'date', date));
+    if (limit != null) {
+      queryParams.addAll(_queryParams('', 'limit', limit));
+    }
 
     const contentTypes = <String>[];
 
@@ -319,15 +379,20 @@ class NativeIEXApi {
 
   /// Get Level-3 Order Book
   ///
+  /// Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).
+  ///
   /// Parameters:
   ///
   /// * [String] symbol (required):
   ///   The symbol identifier
   ///
   /// * [DateTime] date (required):
-  ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<List<ModelsOrderBookModel>?> v1NativeIexLevel3OrderBookSymbolGet(String symbol, DateTime date, { Future<void>? abortTrigger, }) async {
-    final response = await v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol, date, abortTrigger: abortTrigger,);
+  ///   Date in format YYYY-MM-DD
+  ///
+  /// * [int] limit:
+  ///   Maximum number of records to return (1-10000, default 100)
+  Future<List<ModelsOrderBookModel>?> v1NativeIexLevel3OrderBookSymbolGet(String symbol, DateTime date, { int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1NativeIexLevel3OrderBookSymbolGetWithHttpInfo(symbol, date, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -346,6 +411,8 @@ class NativeIEXApi {
 
   /// Get Trades
   ///
+  /// Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
+  ///
   /// Note: This method returns the HTTP [Response].
   ///
   /// Parameters:
@@ -354,8 +421,11 @@ class NativeIEXApi {
   ///   The symbol identifier
   ///
   /// * [DateTime] date (required):
-  ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<Response> v1NativeIexTradeSymbolGetWithHttpInfo(String symbol, DateTime date, { Future<void>? abortTrigger, }) async {
+  ///   Date in format YYYY-MM-DD
+  ///
+  /// * [int] limit:
+  ///   Maximum number of records to return (1-10000, default 100)
+  Future<Response> v1NativeIexTradeSymbolGetWithHttpInfo(String symbol, DateTime date, { int? limit, Future<void>? abortTrigger, }) async {
     // ignore: prefer_const_declarations
     final path = r'/v1/native/iex/trade/{symbol}'
       .replaceAll('{symbol}', symbol);
@@ -368,6 +438,9 @@ class NativeIEXApi {
     final formParams = <String, String>{};
 
       queryParams.addAll(_queryParams('', 'date', date));
+    if (limit != null) {
+      queryParams.addAll(_queryParams('', 'limit', limit));
+    }
 
     const contentTypes = <String>[];
 
@@ -386,15 +459,20 @@ class NativeIEXApi {
 
   /// Get Trades
   ///
+  /// Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).
+  ///
   /// Parameters:
   ///
   /// * [String] symbol (required):
   ///   The symbol identifier
   ///
   /// * [DateTime] date (required):
-  ///   Optional date in format YYYY-MM-DD (defaults to latest available data)
-  Future<List<IEXTradeTradeModel>?> v1NativeIexTradeSymbolGet(String symbol, DateTime date, { Future<void>? abortTrigger, }) async {
-    final response = await v1NativeIexTradeSymbolGetWithHttpInfo(symbol, date, abortTrigger: abortTrigger,);
+  ///   Date in format YYYY-MM-DD
+  ///
+  /// * [int] limit:
+  ///   Maximum number of records to return (1-10000, default 100)
+  Future<List<IEXTradeTradeModel>?> v1NativeIexTradeSymbolGet(String symbol, DateTime date, { int? limit, Future<void>? abortTrigger, }) async {
+    final response = await v1NativeIexTradeSymbolGetWithHttpInfo(symbol, date, limit: limit, abortTrigger: abortTrigger,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

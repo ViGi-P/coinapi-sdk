@@ -39,6 +39,7 @@ defmodule FinFeedAPIStockRESTAPI.Api.Metadata do
 
   @doc """
   List of symbols for the exchange
+  Results are paginated. Use `limit` and `page` to control page size and offset (default limit: 100, max: 10000, default page: 1).
 
   ### Parameters
 
@@ -46,6 +47,8 @@ defmodule FinFeedAPIStockRESTAPI.Api.Metadata do
   - `exchange_id` (String.t): The ID of the exchange (from the Metadata -> Exchanges)
   - `opts` (keyword): Optional parameters
     - `:filter_symbol_id` (String.t): Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)
+    - `:limit` (integer()): Maximum number of symbols to return (1-10000, default 100)
+    - `:page` (integer()): Page number (1-based, default 1)
 
   ### Returns
 
@@ -55,7 +58,9 @@ defmodule FinFeedAPIStockRESTAPI.Api.Metadata do
   @spec v1_symbols_exchange_id_get(Tesla.Env.client, String.t, keyword()) :: {:ok, [FinFeedAPIStockRESTAPI.Model.FinFeedApiSymbolModel.t]} | {:error, Tesla.Env.t}
   def v1_symbols_exchange_id_get(connection, exchange_id, opts \\ []) do
     optional_params = %{
-      :filter_symbol_id => :query
+      :filter_symbol_id => :query,
+      :limit => :query,
+      :page => :query
     }
 
     request =

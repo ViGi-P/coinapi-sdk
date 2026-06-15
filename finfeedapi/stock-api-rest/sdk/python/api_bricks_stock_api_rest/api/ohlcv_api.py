@@ -48,6 +48,7 @@ class OhlcvApi:
         period_id: Annotated[StrictStr, Field(description="Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)")],
         time_start: Annotated[StrictStr, Field(description="Timeseries starting time in ISO 8601")],
         time_end: Annotated[StrictStr, Field(description="Timeseries ending time in ISO 8601")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of symbol rows to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -63,7 +64,7 @@ class OhlcvApi:
     ) -> List[OHLCVTimeSeriesExchangeTimeseriesItem]:
         """Historical data by exchange
 
-        Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+        Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
 
         :param exchange_id: Exchange identifier of requested timeseries (from the Metadata -> Exchanges) (required)
         :type exchange_id: str
@@ -73,6 +74,8 @@ class OhlcvApi:
         :type time_start: str
         :param time_end: Timeseries ending time in ISO 8601 (required)
         :type time_end: str
+        :param limit: Maximum number of symbol rows to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -100,6 +103,7 @@ class OhlcvApi:
             period_id=period_id,
             time_start=time_start,
             time_end=time_end,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -127,6 +131,7 @@ class OhlcvApi:
         period_id: Annotated[StrictStr, Field(description="Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)")],
         time_start: Annotated[StrictStr, Field(description="Timeseries starting time in ISO 8601")],
         time_end: Annotated[StrictStr, Field(description="Timeseries ending time in ISO 8601")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of symbol rows to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -142,7 +147,7 @@ class OhlcvApi:
     ) -> ApiResponse[List[OHLCVTimeSeriesExchangeTimeseriesItem]]:
         """Historical data by exchange
 
-        Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+        Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
 
         :param exchange_id: Exchange identifier of requested timeseries (from the Metadata -> Exchanges) (required)
         :type exchange_id: str
@@ -152,6 +157,8 @@ class OhlcvApi:
         :type time_start: str
         :param time_end: Timeseries ending time in ISO 8601 (required)
         :type time_end: str
+        :param limit: Maximum number of symbol rows to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -179,6 +186,7 @@ class OhlcvApi:
             period_id=period_id,
             time_start=time_start,
             time_end=time_end,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -206,6 +214,7 @@ class OhlcvApi:
         period_id: Annotated[StrictStr, Field(description="Identifier of requested timeseries period (e.g. `5SEC` or `1DAY`)")],
         time_start: Annotated[StrictStr, Field(description="Timeseries starting time in ISO 8601")],
         time_end: Annotated[StrictStr, Field(description="Timeseries ending time in ISO 8601")],
+        limit: Annotated[Optional[StrictInt], Field(description="Maximum number of symbol rows to return (1-10000, default 100)")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -221,7 +230,7 @@ class OhlcvApi:
     ) -> RESTResponseType:
         """Historical data by exchange
 
-        Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.
+        Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange. Time range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.
 
         :param exchange_id: Exchange identifier of requested timeseries (from the Metadata -> Exchanges) (required)
         :type exchange_id: str
@@ -231,6 +240,8 @@ class OhlcvApi:
         :type time_start: str
         :param time_end: Timeseries ending time in ISO 8601 (required)
         :type time_end: str
+        :param limit: Maximum number of symbol rows to return (1-10000, default 100)
+        :type limit: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -258,6 +269,7 @@ class OhlcvApi:
             period_id=period_id,
             time_start=time_start,
             time_end=time_end,
+            limit=limit,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -280,6 +292,7 @@ class OhlcvApi:
         period_id,
         time_start,
         time_end,
+        limit,
         _request_auth,
         _content_type,
         _headers,
@@ -315,6 +328,10 @@ class OhlcvApi:
         if time_end is not None:
             
             _query_params.append(('time_end', time_end))
+            
+        if limit is not None:
+            
+            _query_params.append(('limit', limit))
             
         # process the header parameters
         # process the form parameters

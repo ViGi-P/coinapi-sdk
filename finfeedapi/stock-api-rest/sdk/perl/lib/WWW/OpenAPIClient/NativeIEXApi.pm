@@ -54,7 +54,8 @@ sub new {
 # Get Admin Messages
 #
 # @param string $symbol The symbol identifier (required)
-# @param DATE_TIME $date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+# @param DATE_TIME $date Date in format YYYY-MM-DD (required)
+# @param int $limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
 {
     my $params = {
     'symbol' => {
@@ -64,8 +65,13 @@ sub new {
     },
     'date' => {
         data_type => 'DATE_TIME',
-        description => 'Optional date in format YYYY-MM-DD (defaults to latest available data)',
+        description => 'Date in format YYYY-MM-DD',
         required => '1',
+    },
+    'limit' => {
+        data_type => 'int',
+        description => 'Maximum number of records to return (1-10000, default 100)',
+        required => '0',
     },
     };
     __PACKAGE__->method_documentation->{ 'v1_native_iex_admin_messages_symbol_get' } = {
@@ -109,6 +115,11 @@ sub v1_native_iex_admin_messages_symbol_get {
         $query_params->{'date'} = $self->{api_client}->to_query_value($args{'date'});
     }
 
+    # query params
+    if ( exists $args{'limit'}) {
+        $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
+    }
+
     # path params
     if ( exists $args{'symbol'}) {
         my $_base_variable = "{" . "symbol" . "}";
@@ -137,12 +148,18 @@ sub v1_native_iex_admin_messages_symbol_get {
 # Get System Events
 #
 # @param DATE_TIME $date Date in format YYYY-MM-DD (required)
+# @param int $limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
 {
     my $params = {
     'date' => {
         data_type => 'DATE_TIME',
         description => 'Date in format YYYY-MM-DD',
         required => '1',
+    },
+    'limit' => {
+        data_type => 'int',
+        description => 'Maximum number of records to return (1-10000, default 100)',
+        required => '0',
     },
     };
     __PACKAGE__->method_documentation->{ 'v1_native_iex_admin_system_event_get' } = {
@@ -181,6 +198,11 @@ sub v1_native_iex_admin_system_event_get {
         $query_params->{'date'} = $self->{api_client}->to_query_value($args{'date'});
     }
 
+    # query params
+    if ( exists $args{'limit'}) {
+        $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
+    }
+
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw(APIKey JWT )];
@@ -202,7 +224,8 @@ sub v1_native_iex_admin_system_event_get {
 # Get Level-1 Quotes
 #
 # @param string $symbol The symbol identifier (required)
-# @param DATE_TIME $date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+# @param DATE_TIME $date Date in format YYYY-MM-DD (required)
+# @param int $limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
 {
     my $params = {
     'symbol' => {
@@ -212,8 +235,13 @@ sub v1_native_iex_admin_system_event_get {
     },
     'date' => {
         data_type => 'DATE_TIME',
-        description => 'Optional date in format YYYY-MM-DD (defaults to latest available data)',
+        description => 'Date in format YYYY-MM-DD',
         required => '1',
+    },
+    'limit' => {
+        data_type => 'int',
+        description => 'Maximum number of records to return (1-10000, default 100)',
+        required => '0',
     },
     };
     __PACKAGE__->method_documentation->{ 'v1_native_iex_level1_quote_symbol_get' } = {
@@ -257,6 +285,11 @@ sub v1_native_iex_level1_quote_symbol_get {
         $query_params->{'date'} = $self->{api_client}->to_query_value($args{'date'});
     }
 
+    # query params
+    if ( exists $args{'limit'}) {
+        $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
+    }
+
     # path params
     if ( exists $args{'symbol'}) {
         my $_base_variable = "{" . "symbol" . "}";
@@ -285,7 +318,8 @@ sub v1_native_iex_level1_quote_symbol_get {
 # Get Level-2 Price Level Book
 #
 # @param string $symbol The symbol identifier (required)
-# @param DATE_TIME $date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+# @param DATE_TIME $date Date in format YYYY-MM-DD (required)
+# @param int $limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
 {
     my $params = {
     'symbol' => {
@@ -295,8 +329,13 @@ sub v1_native_iex_level1_quote_symbol_get {
     },
     'date' => {
         data_type => 'DATE_TIME',
-        description => 'Optional date in format YYYY-MM-DD (defaults to latest available data)',
+        description => 'Date in format YYYY-MM-DD',
         required => '1',
+    },
+    'limit' => {
+        data_type => 'int',
+        description => 'Maximum number of records to return (1-10000, default 100)',
+        required => '0',
     },
     };
     __PACKAGE__->method_documentation->{ 'v1_native_iex_level2_price_level_update_symbol_get' } = {
@@ -340,6 +379,11 @@ sub v1_native_iex_level2_price_level_update_symbol_get {
         $query_params->{'date'} = $self->{api_client}->to_query_value($args{'date'});
     }
 
+    # query params
+    if ( exists $args{'limit'}) {
+        $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
+    }
+
     # path params
     if ( exists $args{'symbol'}) {
         my $_base_variable = "{" . "symbol" . "}";
@@ -368,7 +412,8 @@ sub v1_native_iex_level2_price_level_update_symbol_get {
 # Get Level-3 Order Book
 #
 # @param string $symbol The symbol identifier (required)
-# @param DATE_TIME $date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+# @param DATE_TIME $date Date in format YYYY-MM-DD (required)
+# @param int $limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
 {
     my $params = {
     'symbol' => {
@@ -378,8 +423,13 @@ sub v1_native_iex_level2_price_level_update_symbol_get {
     },
     'date' => {
         data_type => 'DATE_TIME',
-        description => 'Optional date in format YYYY-MM-DD (defaults to latest available data)',
+        description => 'Date in format YYYY-MM-DD',
         required => '1',
+    },
+    'limit' => {
+        data_type => 'int',
+        description => 'Maximum number of records to return (1-10000, default 100)',
+        required => '0',
     },
     };
     __PACKAGE__->method_documentation->{ 'v1_native_iex_level3_order_book_symbol_get' } = {
@@ -423,6 +473,11 @@ sub v1_native_iex_level3_order_book_symbol_get {
         $query_params->{'date'} = $self->{api_client}->to_query_value($args{'date'});
     }
 
+    # query params
+    if ( exists $args{'limit'}) {
+        $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
+    }
+
     # path params
     if ( exists $args{'symbol'}) {
         my $_base_variable = "{" . "symbol" . "}";
@@ -451,7 +506,8 @@ sub v1_native_iex_level3_order_book_symbol_get {
 # Get Trades
 #
 # @param string $symbol The symbol identifier (required)
-# @param DATE_TIME $date Optional date in format YYYY-MM-DD (defaults to latest available data) (required)
+# @param DATE_TIME $date Date in format YYYY-MM-DD (required)
+# @param int $limit Maximum number of records to return (1-10000, default 100) (optional, default to 100)
 {
     my $params = {
     'symbol' => {
@@ -461,8 +517,13 @@ sub v1_native_iex_level3_order_book_symbol_get {
     },
     'date' => {
         data_type => 'DATE_TIME',
-        description => 'Optional date in format YYYY-MM-DD (defaults to latest available data)',
+        description => 'Date in format YYYY-MM-DD',
         required => '1',
+    },
+    'limit' => {
+        data_type => 'int',
+        description => 'Maximum number of records to return (1-10000, default 100)',
+        required => '0',
     },
     };
     __PACKAGE__->method_documentation->{ 'v1_native_iex_trade_symbol_get' } = {
@@ -504,6 +565,11 @@ sub v1_native_iex_trade_symbol_get {
     # query params
     if ( exists $args{'date'}) {
         $query_params->{'date'} = $self->{api_client}->to_query_value($args{'date'});
+    }
+
+    # query params
+    if ( exists $args{'limit'}) {
+        $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
     }
 
     # path params

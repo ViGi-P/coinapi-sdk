@@ -47,17 +47,19 @@ export class NativeIEXService extends BaseService {
 
     /**
      * Get Admin Messages
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      * @endpoint get /v1/native/iex/admin/messages/{symbol}
      * @param symbol The symbol identifier
-     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param date Date in format YYYY-MM-DD
+     * @param limit Maximum number of records to return (1-10000, default 100)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<ModelsAdminMessageModel>>;
-    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<ModelsAdminMessageModel>>>;
-    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<ModelsAdminMessageModel>>>;
-    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<ModelsAdminMessageModel>>;
+    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<ModelsAdminMessageModel>>>;
+    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<ModelsAdminMessageModel>>>;
+    public v1NativeIexAdminMessagesSymbolGet(symbol: string, date: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (symbol === null || symbol === undefined) {
             throw new Error('Required parameter symbol was null or undefined when calling v1NativeIexAdminMessagesSymbolGet.');
         }
@@ -71,6 +73,15 @@ export class NativeIEXService extends BaseService {
             localVarQueryParameters,
             'date',
             <any>date,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
             QueryParamStyle.Form,
             true,
         );
@@ -125,16 +136,18 @@ export class NativeIEXService extends BaseService {
 
     /**
      * Get System Events
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      * @endpoint get /v1/native/iex/admin/system-event
      * @param date Date in format YYYY-MM-DD
+     * @param limit Maximum number of records to return (1-10000, default 100)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1NativeIexAdminSystemEventGet(date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<IEXSystemEventSystemEventModel>>;
-    public v1NativeIexAdminSystemEventGet(date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IEXSystemEventSystemEventModel>>>;
-    public v1NativeIexAdminSystemEventGet(date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IEXSystemEventSystemEventModel>>>;
-    public v1NativeIexAdminSystemEventGet(date: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v1NativeIexAdminSystemEventGet(date: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<IEXSystemEventSystemEventModel>>;
+    public v1NativeIexAdminSystemEventGet(date: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IEXSystemEventSystemEventModel>>>;
+    public v1NativeIexAdminSystemEventGet(date: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IEXSystemEventSystemEventModel>>>;
+    public v1NativeIexAdminSystemEventGet(date: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (date === null || date === undefined) {
             throw new Error('Required parameter date was null or undefined when calling v1NativeIexAdminSystemEventGet.');
         }
@@ -145,6 +158,15 @@ export class NativeIEXService extends BaseService {
             localVarQueryParameters,
             'date',
             <any>date,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
             QueryParamStyle.Form,
             true,
         );
@@ -199,17 +221,19 @@ export class NativeIEXService extends BaseService {
 
     /**
      * Get Level-1 Quotes
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      * @endpoint get /v1/native/iex/level1-quote/{symbol}
      * @param symbol The symbol identifier
-     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param date Date in format YYYY-MM-DD
+     * @param limit Maximum number of records to return (1-10000, default 100)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<IEXQuoteUpdateQuoteUpdateModel>>;
-    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IEXQuoteUpdateQuoteUpdateModel>>>;
-    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IEXQuoteUpdateQuoteUpdateModel>>>;
-    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<IEXQuoteUpdateQuoteUpdateModel>>;
+    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IEXQuoteUpdateQuoteUpdateModel>>>;
+    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IEXQuoteUpdateQuoteUpdateModel>>>;
+    public v1NativeIexLevel1QuoteSymbolGet(symbol: string, date: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (symbol === null || symbol === undefined) {
             throw new Error('Required parameter symbol was null or undefined when calling v1NativeIexLevel1QuoteSymbolGet.');
         }
@@ -223,6 +247,15 @@ export class NativeIEXService extends BaseService {
             localVarQueryParameters,
             'date',
             <any>date,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
             QueryParamStyle.Form,
             true,
         );
@@ -277,17 +310,19 @@ export class NativeIEXService extends BaseService {
 
     /**
      * Get Level-2 Price Level Book
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      * @endpoint get /v1/native/iex/level2-price-level-update/{symbol}
      * @param symbol The symbol identifier
-     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param date Date in format YYYY-MM-DD
+     * @param limit Maximum number of records to return (1-10000, default 100)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>;
-    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>>;
-    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>>;
-    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>;
+    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>>;
+    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IEXPriceLevelUpdatePriceLevelUpdateModel>>>;
+    public v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol: string, date: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (symbol === null || symbol === undefined) {
             throw new Error('Required parameter symbol was null or undefined when calling v1NativeIexLevel2PriceLevelUpdateSymbolGet.');
         }
@@ -301,6 +336,15 @@ export class NativeIEXService extends BaseService {
             localVarQueryParameters,
             'date',
             <any>date,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
             QueryParamStyle.Form,
             true,
         );
@@ -355,17 +399,19 @@ export class NativeIEXService extends BaseService {
 
     /**
      * Get Level-3 Order Book
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
      * @endpoint get /v1/native/iex/level3-order-book/{symbol}
      * @param symbol The symbol identifier
-     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param date Date in format YYYY-MM-DD
+     * @param limit Maximum number of records to return (1-10000, default 100)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<ModelsOrderBookModel>>;
-    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<ModelsOrderBookModel>>>;
-    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<ModelsOrderBookModel>>>;
-    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<ModelsOrderBookModel>>;
+    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<ModelsOrderBookModel>>>;
+    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<ModelsOrderBookModel>>>;
+    public v1NativeIexLevel3OrderBookSymbolGet(symbol: string, date: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (symbol === null || symbol === undefined) {
             throw new Error('Required parameter symbol was null or undefined when calling v1NativeIexLevel3OrderBookSymbolGet.');
         }
@@ -379,6 +425,15 @@ export class NativeIEXService extends BaseService {
             localVarQueryParameters,
             'date',
             <any>date,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
             QueryParamStyle.Form,
             true,
         );
@@ -433,17 +488,19 @@ export class NativeIEXService extends BaseService {
 
     /**
      * Get Trades
+     * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
      * @endpoint get /v1/native/iex/trade/{symbol}
      * @param symbol The symbol identifier
-     * @param date Optional date in format YYYY-MM-DD (defaults to latest available data)
+     * @param date Date in format YYYY-MM-DD
+     * @param limit Maximum number of records to return (1-10000, default 100)
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      * @param options additional options
      */
-    public v1NativeIexTradeSymbolGet(symbol: string, date: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<IEXTradeTradeModel>>;
-    public v1NativeIexTradeSymbolGet(symbol: string, date: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IEXTradeTradeModel>>>;
-    public v1NativeIexTradeSymbolGet(symbol: string, date: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IEXTradeTradeModel>>>;
-    public v1NativeIexTradeSymbolGet(symbol: string, date: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
+    public v1NativeIexTradeSymbolGet(symbol: string, date: string, limit?: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<Array<IEXTradeTradeModel>>;
+    public v1NativeIexTradeSymbolGet(symbol: string, date: string, limit?: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpResponse<Array<IEXTradeTradeModel>>>;
+    public v1NativeIexTradeSymbolGet(symbol: string, date: string, limit?: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<HttpEvent<Array<IEXTradeTradeModel>>>;
+    public v1NativeIexTradeSymbolGet(symbol: string, date: string, limit?: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext, transferCache?: boolean}): Observable<any> {
         if (symbol === null || symbol === undefined) {
             throw new Error('Required parameter symbol was null or undefined when calling v1NativeIexTradeSymbolGet.');
         }
@@ -457,6 +514,15 @@ export class NativeIEXService extends BaseService {
             localVarQueryParameters,
             'date',
             <any>date,
+            QueryParamStyle.Form,
+            true,
+        );
+
+
+        localVarQueryParameters = this.addToHttpParams(
+            localVarQueryParameters,
+            'limit',
+            <any>limit,
             QueryParamStyle.Form,
             true,
         );

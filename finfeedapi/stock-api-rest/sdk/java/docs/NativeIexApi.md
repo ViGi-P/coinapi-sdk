@@ -14,9 +14,11 @@ All URIs are relative to *https://api-historical.stock.finfeedapi.com*
 
 <a id="v1NativeIexAdminMessagesSymbolGet"></a>
 # **v1NativeIexAdminMessagesSymbolGet**
-> List&lt;ModelsAdminMessageModel&gt; v1NativeIexAdminMessagesSymbolGet(symbol, date)
+> List&lt;ModelsAdminMessageModel&gt; v1NativeIexAdminMessagesSymbolGet(symbol, date, limit)
 
 Get Admin Messages
+
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```java
@@ -45,9 +47,10 @@ public class Example {
 
     NativeIexApi apiInstance = new NativeIexApi(defaultClient);
     String symbol = "symbol_example"; // String | The symbol identifier
-    OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+    OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | Date in format YYYY-MM-DD
+    Integer limit = 100; // Integer | Maximum number of records to return (1-10000, default 100)
     try {
-      List<ModelsAdminMessageModel> result = apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date);
+      List<ModelsAdminMessageModel> result = apiInstance.v1NativeIexAdminMessagesSymbolGet(symbol, date, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NativeIexApi#v1NativeIexAdminMessagesSymbolGet");
@@ -65,7 +68,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **symbol** | **String**| The symbol identifier | |
-| **date** | **OffsetDateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | |
+| **date** | **OffsetDateTime**| Date in format YYYY-MM-DD | |
+| **limit** | **Integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -87,9 +91,11 @@ public class Example {
 
 <a id="v1NativeIexAdminSystemEventGet"></a>
 # **v1NativeIexAdminSystemEventGet**
-> List&lt;IEXSystemEventSystemEventModel&gt; v1NativeIexAdminSystemEventGet(date)
+> List&lt;IEXSystemEventSystemEventModel&gt; v1NativeIexAdminSystemEventGet(date, limit)
 
 Get System Events
+
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```java
@@ -118,8 +124,9 @@ public class Example {
 
     NativeIexApi apiInstance = new NativeIexApi(defaultClient);
     OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | Date in format YYYY-MM-DD
+    Integer limit = 100; // Integer | Maximum number of records to return (1-10000, default 100)
     try {
-      List<IEXSystemEventSystemEventModel> result = apiInstance.v1NativeIexAdminSystemEventGet(date);
+      List<IEXSystemEventSystemEventModel> result = apiInstance.v1NativeIexAdminSystemEventGet(date, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NativeIexApi#v1NativeIexAdminSystemEventGet");
@@ -137,6 +144,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **date** | **OffsetDateTime**| Date in format YYYY-MM-DD | |
+| **limit** | **Integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -158,9 +166,11 @@ public class Example {
 
 <a id="v1NativeIexLevel1QuoteSymbolGet"></a>
 # **v1NativeIexLevel1QuoteSymbolGet**
-> List&lt;IEXQuoteUpdateQuoteUpdateModel&gt; v1NativeIexLevel1QuoteSymbolGet(symbol, date)
+> List&lt;IEXQuoteUpdateQuoteUpdateModel&gt; v1NativeIexLevel1QuoteSymbolGet(symbol, date, limit)
 
 Get Level-1 Quotes
+
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```java
@@ -189,9 +199,10 @@ public class Example {
 
     NativeIexApi apiInstance = new NativeIexApi(defaultClient);
     String symbol = "symbol_example"; // String | The symbol identifier
-    OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+    OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | Date in format YYYY-MM-DD
+    Integer limit = 100; // Integer | Maximum number of records to return (1-10000, default 100)
     try {
-      List<IEXQuoteUpdateQuoteUpdateModel> result = apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date);
+      List<IEXQuoteUpdateQuoteUpdateModel> result = apiInstance.v1NativeIexLevel1QuoteSymbolGet(symbol, date, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NativeIexApi#v1NativeIexLevel1QuoteSymbolGet");
@@ -209,7 +220,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **symbol** | **String**| The symbol identifier | |
-| **date** | **OffsetDateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | |
+| **date** | **OffsetDateTime**| Date in format YYYY-MM-DD | |
+| **limit** | **Integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -231,9 +243,11 @@ public class Example {
 
 <a id="v1NativeIexLevel2PriceLevelUpdateSymbolGet"></a>
 # **v1NativeIexLevel2PriceLevelUpdateSymbolGet**
-> List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt; v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date)
+> List&lt;IEXPriceLevelUpdatePriceLevelUpdateModel&gt; v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, limit)
 
 Get Level-2 Price Level Book
+
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```java
@@ -262,9 +276,10 @@ public class Example {
 
     NativeIexApi apiInstance = new NativeIexApi(defaultClient);
     String symbol = "symbol_example"; // String | The symbol identifier
-    OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+    OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | Date in format YYYY-MM-DD
+    Integer limit = 100; // Integer | Maximum number of records to return (1-10000, default 100)
     try {
-      List<IEXPriceLevelUpdatePriceLevelUpdateModel> result = apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date);
+      List<IEXPriceLevelUpdatePriceLevelUpdateModel> result = apiInstance.v1NativeIexLevel2PriceLevelUpdateSymbolGet(symbol, date, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NativeIexApi#v1NativeIexLevel2PriceLevelUpdateSymbolGet");
@@ -282,7 +297,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **symbol** | **String**| The symbol identifier | |
-| **date** | **OffsetDateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | |
+| **date** | **OffsetDateTime**| Date in format YYYY-MM-DD | |
+| **limit** | **Integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -304,9 +320,11 @@ public class Example {
 
 <a id="v1NativeIexLevel3OrderBookSymbolGet"></a>
 # **v1NativeIexLevel3OrderBookSymbolGet**
-> List&lt;ModelsOrderBookModel&gt; v1NativeIexLevel3OrderBookSymbolGet(symbol, date)
+> List&lt;ModelsOrderBookModel&gt; v1NativeIexLevel3OrderBookSymbolGet(symbol, date, limit)
 
 Get Level-3 Order Book
+
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
 
 ### Example
 ```java
@@ -335,9 +353,10 @@ public class Example {
 
     NativeIexApi apiInstance = new NativeIexApi(defaultClient);
     String symbol = "symbol_example"; // String | The symbol identifier
-    OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+    OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | Date in format YYYY-MM-DD
+    Integer limit = 100; // Integer | Maximum number of records to return (1-10000, default 100)
     try {
-      List<ModelsOrderBookModel> result = apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date);
+      List<ModelsOrderBookModel> result = apiInstance.v1NativeIexLevel3OrderBookSymbolGet(symbol, date, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NativeIexApi#v1NativeIexLevel3OrderBookSymbolGet");
@@ -355,7 +374,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **symbol** | **String**| The symbol identifier | |
-| **date** | **OffsetDateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | |
+| **date** | **OffsetDateTime**| Date in format YYYY-MM-DD | |
+| **limit** | **Integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 
@@ -377,9 +397,11 @@ public class Example {
 
 <a id="v1NativeIexTradeSymbolGet"></a>
 # **v1NativeIexTradeSymbolGet**
-> List&lt;IEXTradeTradeModel&gt; v1NativeIexTradeSymbolGet(symbol, date)
+> List&lt;IEXTradeTradeModel&gt; v1NativeIexTradeSymbolGet(symbol, date, limit)
 
 Get Trades
+
+Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
 
 ### Example
 ```java
@@ -408,9 +430,10 @@ public class Example {
 
     NativeIexApi apiInstance = new NativeIexApi(defaultClient);
     String symbol = "symbol_example"; // String | The symbol identifier
-    OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | Optional date in format YYYY-MM-DD (defaults to latest available data)
+    OffsetDateTime date = OffsetDateTime.now(); // OffsetDateTime | Date in format YYYY-MM-DD
+    Integer limit = 100; // Integer | Maximum number of records to return (1-10000, default 100)
     try {
-      List<IEXTradeTradeModel> result = apiInstance.v1NativeIexTradeSymbolGet(symbol, date);
+      List<IEXTradeTradeModel> result = apiInstance.v1NativeIexTradeSymbolGet(symbol, date, limit);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NativeIexApi#v1NativeIexTradeSymbolGet");
@@ -428,7 +451,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **symbol** | **String**| The symbol identifier | |
-| **date** | **OffsetDateTime**| Optional date in format YYYY-MM-DD (defaults to latest available data) | |
+| **date** | **OffsetDateTime**| Date in format YYYY-MM-DD | |
+| **limit** | **Integer**| Maximum number of records to return (1-10000, default 100) | [optional] [default to 100] |
 
 ### Return type
 

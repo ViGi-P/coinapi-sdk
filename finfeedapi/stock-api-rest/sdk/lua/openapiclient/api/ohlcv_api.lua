@@ -46,13 +46,13 @@ local function new_ohlcv_api(authority, basePath, schemes)
 	}, ohlcv_api_mt)
 end
 
-function ohlcv_api:v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end)
+function ohlcv_api:v1_ohlcv_exchange_exchange_id_history_get(exchange_id, period_id, time_start, time_end, limit)
 	local req = http_request.new_from_uri({
 		scheme = self.default_scheme;
 		host = self.host;
 		port = self.port;
-		path = string.format("%s/v1/ohlcv/exchange/%s/history?period_id=%s&time_start=%s&time_end=%s",
-			self.basePath, exchange_id, http_util.encodeURIComponent(period_id), http_util.encodeURIComponent(time_start), http_util.encodeURIComponent(time_end));
+		path = string.format("%s/v1/ohlcv/exchange/%s/history?period_id=%s&time_start=%s&time_end=%s&limit=%s",
+			self.basePath, exchange_id, http_util.encodeURIComponent(period_id), http_util.encodeURIComponent(time_start), http_util.encodeURIComponent(time_end), http_util.encodeURIComponent(limit));
 	})
 
 	-- set HTTP verb

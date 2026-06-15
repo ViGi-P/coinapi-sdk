@@ -51,13 +51,14 @@ API.Client.NativeIEXApi.$inject = ['$http', '$httpParamSerializer', '$injector']
 
 /**
  * Get Admin Messages
- * 
+ * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
  * @param {!string} symbol The symbol identifier
- * @param {!Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
+ * @param {!Date} date Date in format YYYY-MM-DD
+ * @param {!number=} opt_limit Maximum number of records to return (1-10000, default 100)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.Models.AdminMessageModel>>}
  */
-API.Client.NativeIEXApi.prototype.v1NativeIexAdminMessagesSymbolGet = function(symbol, date, opt_extraHttpRequestParams) {
+API.Client.NativeIEXApi.prototype.v1NativeIexAdminMessagesSymbolGet = function(symbol, date, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/native/iex/admin/messages/{symbol}'
       .replace('{symbol}', String(symbol));
@@ -79,6 +80,10 @@ API.Client.NativeIEXApi.prototype.v1NativeIexAdminMessagesSymbolGet = function(s
     queryParameters['date'] = date;
   }
 
+  if (opt_limit !== undefined) {
+    queryParameters['limit'] = opt_limit;
+  }
+
   /** @type {!Object} */
   var httpRequestParams = {
     method: 'GET',
@@ -97,12 +102,13 @@ API.Client.NativeIEXApi.prototype.v1NativeIexAdminMessagesSymbolGet = function(s
 
 /**
  * Get System Events
- * 
+ * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
  * @param {!Date} date Date in format YYYY-MM-DD
+ * @param {!number=} opt_limit Maximum number of records to return (1-10000, default 100)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.IEXSystemEvent.SystemEventModel>>}
  */
-API.Client.NativeIEXApi.prototype.v1NativeIexAdminSystemEventGet = function(date, opt_extraHttpRequestParams) {
+API.Client.NativeIEXApi.prototype.v1NativeIexAdminSystemEventGet = function(date, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/native/iex/admin/system-event';
 
@@ -117,6 +123,10 @@ API.Client.NativeIEXApi.prototype.v1NativeIexAdminSystemEventGet = function(date
   }
   if (date !== undefined) {
     queryParameters['date'] = date;
+  }
+
+  if (opt_limit !== undefined) {
+    queryParameters['limit'] = opt_limit;
   }
 
   /** @type {!Object} */
@@ -137,13 +147,14 @@ API.Client.NativeIEXApi.prototype.v1NativeIexAdminSystemEventGet = function(date
 
 /**
  * Get Level-1 Quotes
- * 
+ * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
  * @param {!string} symbol The symbol identifier
- * @param {!Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
+ * @param {!Date} date Date in format YYYY-MM-DD
+ * @param {!number=} opt_limit Maximum number of records to return (1-10000, default 100)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.IEXQuoteUpdate.QuoteUpdateModel>>}
  */
-API.Client.NativeIEXApi.prototype.v1NativeIexLevel1QuoteSymbolGet = function(symbol, date, opt_extraHttpRequestParams) {
+API.Client.NativeIEXApi.prototype.v1NativeIexLevel1QuoteSymbolGet = function(symbol, date, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/native/iex/level1-quote/{symbol}'
       .replace('{symbol}', String(symbol));
@@ -165,6 +176,10 @@ API.Client.NativeIEXApi.prototype.v1NativeIexLevel1QuoteSymbolGet = function(sym
     queryParameters['date'] = date;
   }
 
+  if (opt_limit !== undefined) {
+    queryParameters['limit'] = opt_limit;
+  }
+
   /** @type {!Object} */
   var httpRequestParams = {
     method: 'GET',
@@ -183,13 +198,14 @@ API.Client.NativeIEXApi.prototype.v1NativeIexLevel1QuoteSymbolGet = function(sym
 
 /**
  * Get Level-2 Price Level Book
- * 
+ * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
  * @param {!string} symbol The symbol identifier
- * @param {!Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
+ * @param {!Date} date Date in format YYYY-MM-DD
+ * @param {!number=} opt_limit Maximum number of records to return (1-10000, default 100)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.IEXPriceLevelUpdate.PriceLevelUpdateModel>>}
  */
-API.Client.NativeIEXApi.prototype.v1NativeIexLevel2PriceLevelUpdateSymbolGet = function(symbol, date, opt_extraHttpRequestParams) {
+API.Client.NativeIEXApi.prototype.v1NativeIexLevel2PriceLevelUpdateSymbolGet = function(symbol, date, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/native/iex/level2-price-level-update/{symbol}'
       .replace('{symbol}', String(symbol));
@@ -211,6 +227,10 @@ API.Client.NativeIEXApi.prototype.v1NativeIexLevel2PriceLevelUpdateSymbolGet = f
     queryParameters['date'] = date;
   }
 
+  if (opt_limit !== undefined) {
+    queryParameters['limit'] = opt_limit;
+  }
+
   /** @type {!Object} */
   var httpRequestParams = {
     method: 'GET',
@@ -229,13 +249,14 @@ API.Client.NativeIEXApi.prototype.v1NativeIexLevel2PriceLevelUpdateSymbolGet = f
 
 /**
  * Get Level-3 Order Book
- * 
+ * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of records returned (default 100, max 10000).
  * @param {!string} symbol The symbol identifier
- * @param {!Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
+ * @param {!Date} date Date in format YYYY-MM-DD
+ * @param {!number=} opt_limit Maximum number of records to return (1-10000, default 100)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.Models.OrderBookModel>>}
  */
-API.Client.NativeIEXApi.prototype.v1NativeIexLevel3OrderBookSymbolGet = function(symbol, date, opt_extraHttpRequestParams) {
+API.Client.NativeIEXApi.prototype.v1NativeIexLevel3OrderBookSymbolGet = function(symbol, date, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/native/iex/level3-order-book/{symbol}'
       .replace('{symbol}', String(symbol));
@@ -257,6 +278,10 @@ API.Client.NativeIEXApi.prototype.v1NativeIexLevel3OrderBookSymbolGet = function
     queryParameters['date'] = date;
   }
 
+  if (opt_limit !== undefined) {
+    queryParameters['limit'] = opt_limit;
+  }
+
   /** @type {!Object} */
   var httpRequestParams = {
     method: 'GET',
@@ -275,13 +300,14 @@ API.Client.NativeIEXApi.prototype.v1NativeIexLevel3OrderBookSymbolGet = function
 
 /**
  * Get Trades
- * 
+ * Streaming endpoint. Use &#x60;limit&#x60; to cap the number of trade records returned (default 100, max 10000).
  * @param {!string} symbol The symbol identifier
- * @param {!Date} date Optional date in format YYYY-MM-DD (defaults to latest available data)
+ * @param {!Date} date Date in format YYYY-MM-DD
+ * @param {!number=} opt_limit Maximum number of records to return (1-10000, default 100)
  * @param {!angular.$http.Config=} opt_extraHttpRequestParams Extra HTTP parameters to send.
  * @return {!angular.$q.Promise<!Array<!API.Client.IEXTrade.TradeModel>>}
  */
-API.Client.NativeIEXApi.prototype.v1NativeIexTradeSymbolGet = function(symbol, date, opt_extraHttpRequestParams) {
+API.Client.NativeIEXApi.prototype.v1NativeIexTradeSymbolGet = function(symbol, date, opt_limit, opt_extraHttpRequestParams) {
   /** @const {string} */
   var path = this.basePath_ + '/v1/native/iex/trade/{symbol}'
       .replace('{symbol}', String(symbol));
@@ -301,6 +327,10 @@ API.Client.NativeIEXApi.prototype.v1NativeIexTradeSymbolGet = function(symbol, d
   }
   if (date !== undefined) {
     queryParameters['date'] = date;
+  }
+
+  if (opt_limit !== undefined) {
+    queryParameters['limit'] = opt_limit;
   }
 
   /** @type {!Object} */
