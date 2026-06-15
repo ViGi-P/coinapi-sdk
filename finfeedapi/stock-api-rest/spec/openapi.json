@@ -25,6 +25,7 @@
           "Metadata"
         ],
         "summary": "List of symbols for the exchange",
+        "description": "Results are paginated. Use `limit` and `page` to control page size and offset\n(default limit: 100, max: 10000, default page: 1).",
         "parameters": [
           {
             "name": "exchange_id",
@@ -41,6 +42,26 @@
             "description": "Comma or semicolon delimited symbol identifiers used to filter response (optional, eg. `TSLA` or `TSLA,NVDA`)",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of symbols to return (1-10000, default 100)",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page number (1-based, default 1)",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
             }
           }
         ],
@@ -63,14 +84,14 @@
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "TESLA INC",
-    "date": "2026-06-11"
+    "date": "2026-06-15"
   },
   {
     "symbol_id": "NVDA",
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "NVIDIA CORP",
-    "date": "2026-06-11"
+    "date": "2026-06-15"
   }
 ]
                   }
@@ -91,14 +112,14 @@
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "TESLA INC",
-    "date": "2026-06-11"
+    "date": "2026-06-15"
   },
   {
     "symbol_id": "NVDA",
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "NVIDIA CORP",
-    "date": "2026-06-11"
+    "date": "2026-06-15"
   }
 ]
                   }
@@ -119,14 +140,14 @@
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "TESLA INC",
-    "date": "2026-06-11"
+    "date": "2026-06-15"
   },
   {
     "symbol_id": "NVDA",
     "exchange_id": "IEXG",
     "security_category": "Common Stock",
     "name": "NVIDIA CORP",
-    "date": "2026-06-11"
+    "date": "2026-06-15"
   }
 ]
                   }
@@ -293,6 +314,7 @@
           "NativeIEX"
         ],
         "summary": "Get Trades",
+        "description": "Streaming endpoint. Use `limit` to cap the number of trade records returned (default 100, max 10000).",
         "parameters": [
           {
             "name": "symbol",
@@ -306,11 +328,21 @@
           {
             "name": "date",
             "in": "query",
-            "description": "Optional date in format YYYY-MM-DD (defaults to latest available data)",
+            "description": "Date in format YYYY-MM-DD",
             "required": true,
             "schema": {
               "type": "string",
               "format": "date-time"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of records to return (1-10000, default 100)",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
             }
           }
         ],
@@ -337,6 +369,7 @@
           "NativeIEX"
         ],
         "summary": "Get System Events",
+        "description": "Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).",
         "parameters": [
           {
             "name": "date",
@@ -346,6 +379,16 @@
             "schema": {
               "type": "string",
               "format": "date-time"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of records to return (1-10000, default 100)",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
             }
           }
         ],
@@ -372,6 +415,7 @@
           "NativeIEX"
         ],
         "summary": "Get Level-1 Quotes",
+        "description": "Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).",
         "parameters": [
           {
             "name": "symbol",
@@ -385,11 +429,21 @@
           {
             "name": "date",
             "in": "query",
-            "description": "Optional date in format YYYY-MM-DD (defaults to latest available data)",
+            "description": "Date in format YYYY-MM-DD",
             "required": true,
             "schema": {
               "type": "string",
               "format": "date-time"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of records to return (1-10000, default 100)",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
             }
           }
         ],
@@ -416,6 +470,7 @@
           "NativeIEX"
         ],
         "summary": "Get Level-2 Price Level Book",
+        "description": "Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).",
         "parameters": [
           {
             "name": "symbol",
@@ -429,11 +484,21 @@
           {
             "name": "date",
             "in": "query",
-            "description": "Optional date in format YYYY-MM-DD (defaults to latest available data)",
+            "description": "Date in format YYYY-MM-DD",
             "required": true,
             "schema": {
               "type": "string",
               "format": "date-time"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of records to return (1-10000, default 100)",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
             }
           }
         ],
@@ -460,6 +525,7 @@
           "NativeIEX"
         ],
         "summary": "Get Level-3 Order Book",
+        "description": "Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).",
         "parameters": [
           {
             "name": "symbol",
@@ -473,11 +539,21 @@
           {
             "name": "date",
             "in": "query",
-            "description": "Optional date in format YYYY-MM-DD (defaults to latest available data)",
+            "description": "Date in format YYYY-MM-DD",
             "required": true,
             "schema": {
               "type": "string",
               "format": "date-time"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of records to return (1-10000, default 100)",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
             }
           }
         ],
@@ -496,8 +572,8 @@
   {
     "add_order": {
       "symbol": "AAPL",
-      "timestamp_nanos": 1781157907825000000,
-      "timestamp": "2026-06-11T06:05:07.8250000Z",
+      "timestamp_nanos": 1781503626864000000,
+      "timestamp": "2026-06-15T06:07:06.8640000Z",
       "is_side_buy": true,
       "size": 100,
       "price": 176.42,
@@ -507,16 +583,16 @@
   {
     "delete_order": {
       "symbol": "TSLA",
-      "timestamp_nanos": 1781157907825000000,
-      "timestamp": "2026-06-11T06:05:07.8250000Z",
+      "timestamp_nanos": 1781503626864000000,
+      "timestamp": "2026-06-15T06:07:06.8640000Z",
       "order_id_reference": 987654321
     }
   },
   {
     "modify_order": {
       "symbol": "NFLX",
-      "timestamp_nanos": 1781157907825000000,
-      "timestamp": "2026-06-11T06:05:07.8250000Z",
+      "timestamp_nanos": 1781503626864000000,
+      "timestamp": "2026-06-15T06:07:06.8640000Z",
       "order_id_reference": 789456123,
       "is_priority_reset": false,
       "size": 150,
@@ -526,8 +602,8 @@
   {
     "executed_order": {
       "symbol": "META",
-      "timestamp_nanos": 1781157907825000000,
-      "timestamp": "2026-06-11T06:05:07.8250000Z",
+      "timestamp_nanos": 1781503626864000000,
+      "timestamp": "2026-06-15T06:07:06.8640000Z",
       "order_id_reference": 555123456,
       "sale_condition_flags": 0,
       "is_intermarket_sweep": false,
@@ -543,8 +619,8 @@
   {
     "clear_book": {
       "symbol": "MSFT",
-      "timestamp_nanos": 1781157907825000000,
-      "timestamp": "2026-06-11T06:05:07.8250000Z"
+      "timestamp_nanos": 1781503626864000000,
+      "timestamp": "2026-06-15T06:07:06.8640000Z"
     }
   }
 ]
@@ -560,6 +636,7 @@
           "NativeIEX"
         ],
         "summary": "Get Admin Messages",
+        "description": "Streaming endpoint. Use `limit` to cap the number of records returned (default 100, max 10000).",
         "parameters": [
           {
             "name": "symbol",
@@ -573,11 +650,21 @@
           {
             "name": "date",
             "in": "query",
-            "description": "Optional date in format YYYY-MM-DD (defaults to latest available data)",
+            "description": "Date in format YYYY-MM-DD",
             "required": true,
             "schema": {
               "type": "string",
               "format": "date-time"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of records to return (1-10000, default 100)",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
             }
           }
         ],
@@ -596,8 +683,8 @@
   {
     "trading_status": {
       "symbol": "PYPL",
-      "timestamp_nanos": 1781157907826000000,
-      "timestamp": "2026-06-11T06:05:07.8260000Z",
+      "timestamp_nanos": 1781503626867000000,
+      "timestamp": "2026-06-15T06:07:06.8670000Z",
       "is_trading_live": true,
       "is_trading_halted": false,
       "is_trading_in_order_acceptance_period": false,
@@ -618,8 +705,8 @@
   {
     "official_price": {
       "symbol": "AAPL",
-      "timestamp_nanos": 1781157907826000000,
-      "timestamp": "2026-06-11T06:05:07.8260000Z",
+      "timestamp_nanos": 1781503626867000000,
+      "timestamp": "2026-06-15T06:07:06.8670000Z",
       "price_type": 81,
       "price_type_code": "Q",
       "price_type_text": "IEX Official Opening Price",
@@ -631,8 +718,8 @@
   {
     "security_event": {
       "symbol": "CRM",
-      "timestamp_nanos": 1781157907826000000,
-      "timestamp": "2026-06-11T06:05:07.8260000Z",
+      "timestamp_nanos": 1781503626867000000,
+      "timestamp": "2026-06-15T06:07:06.8670000Z",
       "security_event": 79,
       "security_event_code": "O",
       "security_event_text": "Opening Process Complete",
@@ -643,8 +730,8 @@
   {
     "auction_information": {
       "symbol": "AAPL",
-      "timestamp_nanos": 1781157907826000000,
-      "timestamp": "2026-06-11T06:05:07.8260000Z",
+      "timestamp_nanos": 1781503626867000000,
+      "timestamp": "2026-06-15T06:07:06.8670000Z",
       "auction_type": 79,
       "auction_type_code": "O",
       "auction_type_text": "Opening Auction",
@@ -664,8 +751,8 @@
       "is_imbalance_side_sell": false,
       "is_imbalance_side_none": false,
       "extension_number": 0,
-      "scheduled_auction_time_seconds": 1781158207,
-      "scheduled_auction_time": "2026-06-11T06:10:07.0000000Z",
+      "scheduled_auction_time_seconds": 1781503926,
+      "scheduled_auction_time": "2026-06-15T06:12:06.0000000Z",
       "auction_book_clearing_price": 156.45,
       "collar_reference_price": 157,
       "lower_auction_collar": 152.5,
@@ -675,8 +762,8 @@
   {
     "short_sale_price_test": {
       "symbol": "MSFT",
-      "timestamp_nanos": 1781157907826000000,
-      "timestamp": "2026-06-11T06:05:07.8260000Z",
+      "timestamp_nanos": 1781503626867000000,
+      "timestamp": "2026-06-15T06:07:06.8670000Z",
       "short_sale_price_test_status": 1,
       "short_sale_price_test_status_code": "1",
       "short_sale_price_test_status_text": "Short Sale Price Test in Effect",
@@ -695,8 +782,8 @@
   {
     "operational_halt_status": {
       "symbol": "AAPL",
-      "timestamp_nanos": 1781157907826000000,
-      "timestamp": "2026-06-11T06:05:07.8260000Z",
+      "timestamp_nanos": 1781503626867000000,
+      "timestamp": "2026-06-15T06:07:06.8670000Z",
       "operational_halt_status": 79,
       "operational_halt_status_code": "O",
       "operational_halt_status_text": "IEX specific operational trading halt",
@@ -707,8 +794,8 @@
   {
     "retail_liquidity_indicator": {
       "symbol": "GOOG",
-      "timestamp_nanos": 1781157907826000000,
-      "timestamp": "2026-06-11T06:05:07.8260000Z",
+      "timestamp_nanos": 1781503626867000000,
+      "timestamp": "2026-06-15T06:07:06.8670000Z",
       "retail_liquidity_indicator": 65,
       "retail_liquidity_indicator_code": "A",
       "retail_liquidity_indicator_text": "Buy interest for Retail",
@@ -720,8 +807,8 @@
   },
   {
     "system_event": {
-      "timestamp_nanos": 1781157907826000000,
-      "timestamp": "2026-06-11T06:05:07.8260000Z",
+      "timestamp_nanos": 1781503626867000000,
+      "timestamp": "2026-06-15T06:07:06.8670000Z",
       "system_event": 79,
       "system_event_code": "O",
       "system_event_text": "Start of Messages – Outside of heartbeat messages on the lower level protocol, the start of day message is the first message sent in any trading session.",
@@ -736,8 +823,8 @@
   {
     "security_directory": {
       "symbol": "INTC",
-      "timestamp_nanos": 1781157907826000000,
-      "timestamp": "2026-06-11T06:05:07.8260000Z",
+      "timestamp_nanos": 1781503626867000000,
+      "timestamp": "2026-06-15T06:07:06.8670000Z",
       "flags": 0,
       "round_lot_size": 100,
       "adjusted_poc_price": 35.36,
@@ -1077,7 +1164,7 @@
           "Ohlcv"
         ],
         "summary": "Historical data by exchange",
-        "description": "Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.",
+        "description": "Get OHLCV timeseries data returned in time ascending order. Data can be requested by the period and for the specific exchange.\nTime range is limited to 24 hours. Use `limit` to cap the number of symbol rows returned.",
         "parameters": [
           {
             "name": "exchange_id",
@@ -1113,6 +1200,16 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of symbol rows to return (1-10000, default 100)",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 100
             }
           }
         ],
