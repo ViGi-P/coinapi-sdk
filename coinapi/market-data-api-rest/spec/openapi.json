@@ -67,7 +67,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-06-16T06:03:16.2200016Z",
+  "time": "2026-06-17T06:04:45.4901710Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -82,7 +82,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-06-16T06:03:16.2200016Z",
+  "time": "2026-06-17T06:04:45.4901710Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -97,7 +97,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-06-16T06:03:16.2200016Z",
+  "time": "2026-06-17T06:04:45.4901710Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -112,7 +112,7 @@
                 "examples": {
                   "Example response": {
                     "value": {
-  "time": "2026-06-16T06:03:16.2200016Z",
+  "time": "2026-06-17T06:04:45.4901710Z",
   "asset_id_base": "BTC",
   "asset_id_quote": "USD",
   "rate": 10000.0
@@ -827,7 +827,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Symbol"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Symbol"
                   }
                 },
                 "examples": {
@@ -899,7 +899,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Symbol"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Symbol"
                   }
                 },
                 "examples": {
@@ -971,7 +971,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Symbol"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Symbol"
                   }
                 },
                 "examples": {
@@ -1043,7 +1043,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Symbol"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Symbol"
                   }
                 },
                 "examples": {
@@ -1162,7 +1162,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Symbol"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Symbol"
                   }
                 },
                 "examples": {
@@ -1234,7 +1234,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Symbol"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Symbol"
                   }
                 },
                 "examples": {
@@ -1306,7 +1306,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Symbol"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Symbol"
                   }
                 },
                 "examples": {
@@ -1378,7 +1378,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Symbol"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Symbol"
                   }
                 },
                 "examples": {
@@ -1476,7 +1476,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Exchange"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Exchange"
                   }
                 },
                 "examples": {
@@ -1522,7 +1522,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Exchange"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Exchange"
                   }
                 },
                 "examples": {
@@ -1568,7 +1568,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Exchange"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Exchange"
                   }
                 },
                 "examples": {
@@ -1614,7 +1614,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Exchange"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Exchange"
                   }
                 },
                 "examples": {
@@ -1686,7 +1686,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Exchange"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Exchange"
                   }
                 },
                 "examples": {
@@ -1732,7 +1732,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Exchange"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Exchange"
                   }
                 },
                 "examples": {
@@ -1778,7 +1778,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Exchange"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Exchange"
                   }
                 },
                 "examples": {
@@ -1824,7 +1824,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Exchange"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Exchange"
                   }
                 },
                 "examples": {
@@ -1897,7 +1897,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Icon"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Icon"
                   }
                 },
                 "examples": {
@@ -1923,7 +1923,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Icon"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Icon"
                   }
                 },
                 "examples": {
@@ -1949,7 +1949,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Icon"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Icon"
                   }
                 },
                 "examples": {
@@ -1975,7 +1975,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Icon"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Icon"
                   }
                 },
                 "examples": {
@@ -2027,7 +2027,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Chain"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Chain"
                   }
                 },
                 "examples": {
@@ -2053,7 +2053,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Chain"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Chain"
                   }
                 },
                 "examples": {
@@ -2079,7 +2079,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Chain"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Chain"
                   }
                 },
                 "examples": {
@@ -2105,7 +2105,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Chain"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Chain"
                   }
                 },
                 "examples": {
@@ -2157,7 +2157,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Chain"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Chain"
                   }
                 },
                 "examples": {
@@ -2183,7 +2183,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Chain"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Chain"
                   }
                 },
                 "examples": {
@@ -2209,7 +2209,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Chain"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Chain"
                   }
                 },
                 "examples": {
@@ -2235,7 +2235,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Chain"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Chain"
                   }
                 },
                 "examples": {
@@ -2287,7 +2287,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Asset"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Asset"
                   }
                 },
                 "examples": {
@@ -2356,7 +2356,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Asset"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Asset"
                   }
                 },
                 "examples": {
@@ -2425,7 +2425,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Asset"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Asset"
                   }
                 },
                 "examples": {
@@ -2494,7 +2494,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Asset"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Asset"
                   }
                 },
                 "examples": {
@@ -2589,7 +2589,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Asset"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Asset"
                   }
                 },
                 "examples": {
@@ -2658,7 +2658,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Asset"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Asset"
                   }
                 },
                 "examples": {
@@ -2727,7 +2727,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Asset"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Asset"
                   }
                 },
                 "examples": {
@@ -2796,7 +2796,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Asset"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Asset"
                   }
                 },
                 "examples": {
@@ -2893,7 +2893,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Icon"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Icon"
                   }
                 },
                 "examples": {
@@ -2919,7 +2919,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Icon"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Icon"
                   }
                 },
                 "examples": {
@@ -2945,7 +2945,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Icon"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Icon"
                   }
                 },
                 "examples": {
@@ -2971,7 +2971,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/v1.Icon"
+                    "$ref": "#/components/schemas/MarketDataMetadata.Icon"
                   }
                 },
                 "examples": {
@@ -9300,82 +9300,7 @@
   },
   "components": {
     "schemas": {
-      "Models.BaseCsvModel": {
-        "type": "object",
-        "additionalProperties": false
-      },
-      "Ohlcv.ExchangeTimeseriesItem": {
-        "type": "object",
-        "properties": {
-          "time_period_start": {
-            "type": "string",
-            "description": "Gets or sets the start time of the time period.",
-            "format": "date-time"
-          },
-          "time_period_end": {
-            "type": "string",
-            "description": "Gets or sets the end time of the time period.",
-            "format": "date-time"
-          },
-          "time_open": {
-            "type": "string",
-            "description": "Gets or sets the time when the price opened.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "time_close": {
-            "type": "string",
-            "description": "Gets or sets the time when the price closed.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "price_open": {
-            "type": "number",
-            "description": "Gets or sets the opening price.",
-            "format": "double",
-            "nullable": true
-          },
-          "price_high": {
-            "type": "number",
-            "description": "Gets or sets the highest price during the time period.",
-            "format": "double",
-            "nullable": true
-          },
-          "price_low": {
-            "type": "number",
-            "description": "Gets or sets the lowest price during the time period.",
-            "format": "double",
-            "nullable": true
-          },
-          "price_close": {
-            "type": "number",
-            "description": "Gets or sets the closing price.",
-            "format": "double",
-            "nullable": true
-          },
-          "volume_traded": {
-            "type": "number",
-            "description": "Gets or sets the total volume traded during the time period.",
-            "format": "double"
-          },
-          "trades_count": {
-            "type": "integer",
-            "description": "Gets or sets the number of trades executed during the time period.",
-            "format": "int64"
-          },
-          "symbol_id_exchange": {
-            "type": "string",
-            "nullable": true
-          },
-          "symbol_id_coinapi": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a timeseries item with price and volume information."
-      },
-      "v1.Asset": {
+      "MarketDataMetadata.Asset": {
         "type": "object",
         "properties": {
           "asset_id": {
@@ -9493,13 +9418,11 @@
           },
           "data_start": {
             "type": "string",
-            "description": "Gets the start date of the available data as a string in the format \"yyyy-MM-dd\".",
             "nullable": true,
             "readOnly": true
           },
           "data_end": {
             "type": "string",
-            "description": "Gets the end date of the available data as a string in the format \"yyyy-MM-dd\".",
             "nullable": true,
             "readOnly": true
           }
@@ -9507,7 +9430,7 @@
         "additionalProperties": false,
         "description": "Represents an asset."
       },
-      "v1.Chain": {
+      "MarketDataMetadata.Chain": {
         "type": "object",
         "properties": {
           "chain_id": {
@@ -9524,29 +9447,7 @@
         "additionalProperties": false,
         "description": "Represents a blockchain chain."
       },
-      "v1.ChainNetworkAddress": {
-        "type": "object",
-        "properties": {
-          "chain_id": {
-            "type": "string",
-            "description": "Gets or sets chain id",
-            "nullable": true
-          },
-          "network_id": {
-            "type": "string",
-            "description": "Gets or sets network id",
-            "nullable": true
-          },
-          "address": {
-            "type": "string",
-            "description": "Gets or sets chain address",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Contains information about assets' chain network addresses"
-      },
-      "v1.Exchange": {
+      "MarketDataMetadata.Exchange": {
         "type": "object",
         "properties": {
           "exchange_id": {
@@ -9566,13 +9467,11 @@
           },
           "data_start": {
             "type": "string",
-            "description": "Gets the start date of the exchange's data.",
             "nullable": true,
             "readOnly": true
           },
           "data_end": {
             "type": "string",
-            "description": "Gets the end date of the exchange's data.",
             "nullable": true,
             "readOnly": true
           },
@@ -9653,7 +9552,7 @@
           "icons": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/v1.Icon"
+              "$ref": "#/components/schemas/MarketDataMetadata.Icon"
             },
             "description": "Gets or sets the list of icons for the exchange.",
             "nullable": true,
@@ -9661,7 +9560,7 @@
           },
           "rank": {
             "type": "number",
-            "description": "Rank of the exchange - higher rank means exchange is more reliable",
+            "description": "Rank of the exchange.",
             "format": "double"
           },
           "integration_status": {
@@ -9672,6 +9571,423 @@
         },
         "additionalProperties": false,
         "description": "Represents an exchange."
+      },
+      "MarketDataMetadata.Icon": {
+        "type": "object",
+        "properties": {
+          "exchange_id": {
+            "type": "string",
+            "description": "Gets or sets the exchange ID associated with the icon.",
+            "nullable": true
+          },
+          "asset_id": {
+            "type": "string",
+            "description": "Gets or sets the asset ID associated with the icon.",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "description": "Gets or sets the URL of the icon.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents an icon."
+      },
+      "MarketDataMetadata.Symbol": {
+        "type": "object",
+        "properties": {
+          "symbol_id": {
+            "type": "string",
+            "description": "The symbol identifier.",
+            "nullable": true
+          },
+          "exchange_id": {
+            "type": "string",
+            "description": "The exchange identifier.",
+            "nullable": true
+          },
+          "symbol_type": {
+            "type": "string",
+            "description": "The symbol type.",
+            "nullable": true
+          },
+          "asset_id_base": {
+            "type": "string",
+            "description": "The base asset identifier.",
+            "nullable": true
+          },
+          "asset_id_quote": {
+            "type": "string",
+            "description": "The quote asset identifier.",
+            "nullable": true
+          },
+          "asset_id_unit": {
+            "type": "string",
+            "description": "The unit asset identifier.",
+            "nullable": true
+          },
+          "future_contract_unit": {
+            "type": "number",
+            "description": "The contract unit for futures.",
+            "format": "double",
+            "nullable": true
+          },
+          "future_contract_unit_asset": {
+            "type": "string",
+            "description": "The asset used as the unit for futures contract.",
+            "nullable": true
+          },
+          "future_delivery_time": {
+            "type": "string",
+            "description": "The future delivery time for futures contract.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "option_type_is_call": {
+            "type": "boolean",
+            "description": "Indicates whether the option type is a call.",
+            "nullable": true
+          },
+          "option_strike_price": {
+            "type": "number",
+            "description": "The strike price for options.",
+            "format": "double",
+            "nullable": true
+          },
+          "option_contract_unit": {
+            "type": "number",
+            "description": "The contract unit for options.",
+            "format": "double",
+            "nullable": true
+          },
+          "option_exercise_style": {
+            "type": "string",
+            "description": "The exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.",
+            "nullable": true
+          },
+          "option_expiration_time": {
+            "type": "string",
+            "description": "The expiration time for options.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "contract_delivery_time": {
+            "type": "string",
+            "description": "The delivery time for contracts.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "contract_unit": {
+            "type": "number",
+            "description": "The contract unit for contracts.",
+            "format": "double",
+            "nullable": true
+          },
+          "contract_unit_asset": {
+            "type": "string",
+            "description": "The asset used as the unit for contracts.",
+            "nullable": true
+          },
+          "contract_id": {
+            "type": "string",
+            "description": "The contract identifier.",
+            "nullable": true
+          },
+          "contract_display_name": {
+            "type": "string",
+            "description": "The display name of the contract.",
+            "nullable": true
+          },
+          "contract_display_description": {
+            "type": "string",
+            "description": "The display description of the contract.",
+            "nullable": true
+          },
+          "data_start": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "data_end": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "data_quote_start": {
+            "type": "string",
+            "description": "The start date of quote data.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "data_quote_end": {
+            "type": "string",
+            "description": "The end date of quote data.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "data_orderbook_start": {
+            "type": "string",
+            "description": "The start date of order book data.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "data_orderbook_end": {
+            "type": "string",
+            "description": "The end date of order book data.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "data_trade_start": {
+            "type": "string",
+            "description": "The start date of trade data.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "data_trade_end": {
+            "type": "string",
+            "description": "The end date of trade data.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "index_id": {
+            "type": "string",
+            "description": "The index identifier.",
+            "nullable": true
+          },
+          "index_display_name": {
+            "type": "string",
+            "description": "The display name of the index.",
+            "nullable": true
+          },
+          "index_display_description": {
+            "type": "string",
+            "description": "The display description of the index.",
+            "nullable": true
+          },
+          "volume_1hrs": {
+            "type": "number",
+            "description": "The volume in the last 1 hour.",
+            "format": "double",
+            "nullable": true
+          },
+          "volume_1hrs_usd": {
+            "type": "number",
+            "description": "The volume in USD in the last 1 hour.",
+            "format": "double",
+            "nullable": true
+          },
+          "volume_1day": {
+            "type": "number",
+            "description": "The volume in the last 1 day.",
+            "format": "double",
+            "nullable": true
+          },
+          "volume_1day_usd": {
+            "type": "number",
+            "description": "The volume in USD in the last 1 day.",
+            "format": "double",
+            "nullable": true
+          },
+          "volume_1mth": {
+            "type": "number",
+            "description": "The volume in the last 1 month.",
+            "format": "double",
+            "nullable": true
+          },
+          "volume_1mth_usd": {
+            "type": "number",
+            "description": "The volume in USD in the last 1 month.",
+            "format": "double",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "description": "The price.",
+            "format": "double",
+            "nullable": true
+          },
+          "symbol_id_exchange": {
+            "type": "string",
+            "description": "The symbol identifier in the exchange.",
+            "nullable": true
+          },
+          "asset_id_base_exchange": {
+            "type": "string",
+            "description": "The base asset identifier in the exchange.",
+            "nullable": true
+          },
+          "asset_id_quote_exchange": {
+            "type": "string",
+            "description": "The quote asset identifier in the exchange.",
+            "nullable": true
+          },
+          "price_precision": {
+            "type": "number",
+            "description": "The price precision.",
+            "format": "double",
+            "nullable": true
+          },
+          "size_precision": {
+            "type": "number",
+            "description": "The size precision.",
+            "format": "double",
+            "nullable": true
+          },
+          "raw_kvp": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "nullable": true
+            },
+            "description": "Key Value Pair store with raw data from the data source.",
+            "nullable": true
+          },
+          "future_is_inverse": {
+            "type": "boolean",
+            "description": "Indicates whether the futures contract is inverse (coin-margined).",
+            "nullable": true
+          },
+          "future_is_quanto": {
+            "type": "boolean",
+            "description": "Indicates whether the futures contract is quanto.",
+            "nullable": true
+          },
+          "volume_to_usd": {
+            "type": "number",
+            "description": "Volume unit in USD.",
+            "format": "double",
+            "nullable": true
+          },
+          "option_barrier_up_price": {
+            "type": "number",
+            "description": "The up barrier price for barrier options.",
+            "format": "double",
+            "nullable": true
+          },
+          "option_barrier_up_type": {
+            "type": "string",
+            "description": "The up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.",
+            "nullable": true
+          },
+          "option_barrier_down_price": {
+            "type": "number",
+            "description": "The down barrier price for barrier options.",
+            "format": "double",
+            "nullable": true
+          },
+          "option_barrier_down_type": {
+            "type": "string",
+            "description": "The down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.",
+            "nullable": true
+          },
+          "symbol_id_int": {
+            "type": "integer",
+            "description": "The symbol identifier in integer immutable format, used to correlate data across different APIs.",
+            "format": "int32",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a symbol data model."
+      },
+      "Models.BaseCsvModel": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "Ohlcv.ExchangeTimeseriesItem": {
+        "type": "object",
+        "properties": {
+          "time_period_start": {
+            "type": "string",
+            "description": "Gets or sets the start time of the time period.",
+            "format": "date-time"
+          },
+          "time_period_end": {
+            "type": "string",
+            "description": "Gets or sets the end time of the time period.",
+            "format": "date-time"
+          },
+          "time_open": {
+            "type": "string",
+            "description": "Gets or sets the time when the price opened.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "time_close": {
+            "type": "string",
+            "description": "Gets or sets the time when the price closed.",
+            "format": "date-time",
+            "nullable": true
+          },
+          "price_open": {
+            "type": "number",
+            "description": "Gets or sets the opening price.",
+            "format": "double",
+            "nullable": true
+          },
+          "price_high": {
+            "type": "number",
+            "description": "Gets or sets the highest price during the time period.",
+            "format": "double",
+            "nullable": true
+          },
+          "price_low": {
+            "type": "number",
+            "description": "Gets or sets the lowest price during the time period.",
+            "format": "double",
+            "nullable": true
+          },
+          "price_close": {
+            "type": "number",
+            "description": "Gets or sets the closing price.",
+            "format": "double",
+            "nullable": true
+          },
+          "volume_traded": {
+            "type": "number",
+            "description": "Gets or sets the total volume traded during the time period.",
+            "format": "double"
+          },
+          "trades_count": {
+            "type": "integer",
+            "description": "Gets or sets the number of trades executed during the time period.",
+            "format": "int64"
+          },
+          "symbol_id_exchange": {
+            "type": "string",
+            "nullable": true
+          },
+          "symbol_id_coinapi": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents a timeseries item with price and volume information."
+      },
+      "v1.ChainNetworkAddress": {
+        "type": "object",
+        "properties": {
+          "chain_id": {
+            "type": "string",
+            "description": "Gets or sets chain id",
+            "nullable": true
+          },
+          "network_id": {
+            "type": "string",
+            "description": "Gets or sets network id",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "description": "Gets or sets chain address",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Contains information about assets' chain network addresses"
       },
       "v1.ExchangeRate": {
         "type": "object",
@@ -9848,28 +10164,6 @@
         },
         "additionalProperties": false,
         "description": "Class representation of general metric data. This class is an XML type with name \"general_data\" and inherits from the BaseCsvModel class."
-      },
-      "v1.Icon": {
-        "type": "object",
-        "properties": {
-          "exchange_id": {
-            "type": "string",
-            "description": "Gets or sets the exchange ID associated with the icon.",
-            "nullable": true
-          },
-          "asset_id": {
-            "type": "string",
-            "description": "Gets or sets the asset ID associated with the icon.",
-            "nullable": true
-          },
-          "url": {
-            "type": "string",
-            "description": "Gets or sets the URL of the icon.",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents an icon."
       },
       "v1.LastTrade": {
         "type": "object",
@@ -10266,306 +10560,6 @@
         },
         "additionalProperties": false,
         "description": "Represents a strike within the option exchange group."
-      },
-      "v1.Symbol": {
-        "type": "object",
-        "properties": {
-          "symbol_id": {
-            "type": "string",
-            "description": "Gets or sets the symbol identifier.",
-            "nullable": true
-          },
-          "exchange_id": {
-            "type": "string",
-            "description": "Gets or sets the exchange identifier.",
-            "nullable": true
-          },
-          "symbol_type": {
-            "type": "string",
-            "description": "Gets or sets the symbol type.",
-            "nullable": true
-          },
-          "asset_id_base": {
-            "type": "string",
-            "description": "Gets or sets the base asset identifier.",
-            "nullable": true
-          },
-          "asset_id_quote": {
-            "type": "string",
-            "description": "Gets or sets the quote asset identifier.",
-            "nullable": true
-          },
-          "asset_id_unit": {
-            "type": "string",
-            "description": "Gets or sets the unit asset identifier.",
-            "nullable": true
-          },
-          "future_contract_unit": {
-            "type": "number",
-            "description": "Gets or sets the contract unit for futures.",
-            "format": "double",
-            "nullable": true
-          },
-          "future_contract_unit_asset": {
-            "type": "string",
-            "description": "Gets or sets the asset used as the unit for futures contract.",
-            "nullable": true
-          },
-          "future_delivery_time": {
-            "type": "string",
-            "description": "Gets or sets the future delivery time for futures contract.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "option_type_is_call": {
-            "type": "boolean",
-            "description": "Gets or sets a value indicating whether the option type is a call.",
-            "nullable": true
-          },
-          "option_strike_price": {
-            "type": "number",
-            "description": "Gets or sets the strike price for options.",
-            "format": "double",
-            "nullable": true
-          },
-          "option_contract_unit": {
-            "type": "number",
-            "description": "Gets or sets the contract unit for options.",
-            "format": "double",
-            "nullable": true
-          },
-          "option_exercise_style": {
-            "type": "string",
-            "description": "Gets or sets the exercise style for options. Possible values: AMERICAN, ASIAN, BARRIER, BERMUDAN, BINARY, EUROPEAN, EXOTIC.",
-            "nullable": true
-          },
-          "option_expiration_time": {
-            "type": "string",
-            "description": "Gets or sets the expiration time for options.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "contract_delivery_time": {
-            "type": "string",
-            "description": "Gets or sets the delivery time for contracts.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "contract_unit": {
-            "type": "number",
-            "description": "Gets or sets the contract unit for contracts.",
-            "format": "double",
-            "nullable": true
-          },
-          "contract_unit_asset": {
-            "type": "string",
-            "description": "Gets or sets the asset used as the unit for contracts.",
-            "nullable": true
-          },
-          "contract_id": {
-            "type": "string",
-            "description": "Gets or sets the contract identifier.",
-            "nullable": true
-          },
-          "contract_display_name": {
-            "type": "string",
-            "description": "Gets or sets the display name of the contract.",
-            "nullable": true
-          },
-          "contract_display_description": {
-            "type": "string",
-            "description": "Gets or sets the display description of the contract.",
-            "nullable": true
-          },
-          "data_start": {
-            "type": "string",
-            "description": "Gets the start date of the data in string format (\"yyyy-MM-dd\").",
-            "nullable": true,
-            "readOnly": true
-          },
-          "data_end": {
-            "type": "string",
-            "description": "Gets the end date of the data in string format (\"yyyy-MM-dd\").",
-            "nullable": true,
-            "readOnly": true
-          },
-          "data_quote_start": {
-            "type": "string",
-            "description": "Gets or sets the start date of quote data.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "data_quote_end": {
-            "type": "string",
-            "description": "Gets or sets the end date of quote data.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "data_orderbook_start": {
-            "type": "string",
-            "description": "Gets or sets the start date of order book data.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "data_orderbook_end": {
-            "type": "string",
-            "description": "Gets or sets the end date of order book data.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "data_trade_start": {
-            "type": "string",
-            "description": "Gets or sets the start date of trade data.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "data_trade_end": {
-            "type": "string",
-            "description": "Gets or sets the end date of trade data.",
-            "format": "date-time",
-            "nullable": true
-          },
-          "index_id": {
-            "type": "string",
-            "description": "Gets or sets the index identifier.",
-            "nullable": true
-          },
-          "index_display_name": {
-            "type": "string",
-            "description": "Gets or sets the display name of the index.",
-            "nullable": true
-          },
-          "index_display_description": {
-            "type": "string",
-            "description": "Gets or sets the display description of the index.",
-            "nullable": true
-          },
-          "volume_1hrs": {
-            "type": "number",
-            "description": "Gets or sets the volume in the last 1 hour.",
-            "format": "double",
-            "nullable": true
-          },
-          "volume_1hrs_usd": {
-            "type": "number",
-            "description": "Gets or sets the volume in USD in the last 1 hour.",
-            "format": "double",
-            "nullable": true
-          },
-          "volume_1day": {
-            "type": "number",
-            "description": "Gets or sets the volume in the last 1 day.",
-            "format": "double",
-            "nullable": true
-          },
-          "volume_1day_usd": {
-            "type": "number",
-            "description": "Gets or sets the volume in USD in the last 1 day.",
-            "format": "double",
-            "nullable": true
-          },
-          "volume_1mth": {
-            "type": "number",
-            "description": "Gets or sets the volume in the last 1 month.",
-            "format": "double",
-            "nullable": true
-          },
-          "volume_1mth_usd": {
-            "type": "number",
-            "description": "Gets or sets the volume in USD in the last 1 month.",
-            "format": "double",
-            "nullable": true
-          },
-          "price": {
-            "type": "number",
-            "description": "Gets or sets the price.",
-            "format": "double",
-            "nullable": true
-          },
-          "symbol_id_exchange": {
-            "type": "string",
-            "description": "Gets or sets the symbol identifier in the exchange.",
-            "nullable": true
-          },
-          "asset_id_base_exchange": {
-            "type": "string",
-            "description": "Gets or sets the base asset identifier in the exchange.",
-            "nullable": true
-          },
-          "asset_id_quote_exchange": {
-            "type": "string",
-            "description": "Gets or sets the quote asset identifier in the exchange.",
-            "nullable": true
-          },
-          "price_precision": {
-            "type": "number",
-            "description": "Gets or sets the price precision.",
-            "format": "double",
-            "nullable": true
-          },
-          "size_precision": {
-            "type": "number",
-            "description": "Gets or sets the size precision.",
-            "format": "double",
-            "nullable": true
-          },
-          "raw_kvp": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string",
-              "nullable": true
-            },
-            "description": "Key Value Pair store with raw data from the data source.",
-            "nullable": true
-          },
-          "future_is_inverse": {
-            "type": "boolean",
-            "description": "Gets or sets a value indicating whether the futures contract is inverse (coin-margined).",
-            "nullable": true
-          },
-          "future_is_quanto": {
-            "type": "boolean",
-            "description": "Gets or sets a value indicating whether the futures contract is quanto.",
-            "nullable": true
-          },
-          "volume_to_usd": {
-            "type": "number",
-            "description": "Gets or sets the volume in USD.",
-            "format": "double",
-            "nullable": true
-          },
-          "option_barrier_up_price": {
-            "type": "number",
-            "description": "Gets or sets the up barrier price for barrier options.",
-            "format": "double",
-            "nullable": true
-          },
-          "option_barrier_up_type": {
-            "type": "string",
-            "description": "Gets or sets the up barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.",
-            "nullable": true
-          },
-          "option_barrier_down_price": {
-            "type": "number",
-            "description": "Gets or sets the down barrier price for barrier options.",
-            "format": "double",
-            "nullable": true
-          },
-          "option_barrier_down_type": {
-            "type": "string",
-            "description": "Gets or sets the down barrier type for barrier options. Possible values: EXPIRATION, IN, OUT.",
-            "nullable": true
-          },
-          "symbol_id_int": {
-            "type": "integer",
-            "description": "Gets or sets the symbol identifier in integer immutable format, used to correlate data across different APIs.",
-            "format": "int32",
-            "nullable": true,
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false,
-        "description": "Represents a symbol data model."
       },
       "v1.SymbolMapping": {
         "type": "object",
